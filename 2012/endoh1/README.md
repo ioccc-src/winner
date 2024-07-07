@@ -259,7 +259,46 @@ a usage of `I` (complex's imaginary unit), but I bet this is cygwin's issue;
 it is surely a C99 feature.
 
 
-### Obfuscation
+### Notes about Additional Files
+
+[logo.txt](logo.txt) is a source of the logo in this remark file.
+
+[column.txt](column.txt) is a water column collapse, which is a popular demo of SPH.
+
+[pour-out.txt](pour-out.txt) pours you a cup of tea.
+
+[tanada.txt](tanada.txt) simulates "Terrace farming".  ("Tanada" means a
+"[terraced rice](https://en.wikipedia.org/wiki/Terrace_&#x28;earthworks&#x29; fields)" in Japanese.)
+
+[clock.txt](clock.txt) is a "water" clock created by HAMANO Tsukasa.
+
+Other `*.txt` files are from the judges.
+
+
+[endoh1_color.c](%%REPO_URL%%/2012/endoh1/endoh1_color.c) is a variant that shows the density by using terminal 256
+colors.
+
+
+### Acknowledgments
+
+I would like to thank my wife @hirekoke for her teaching me the SPH method.
+
+The judges <del>ordered</del> suggested creating a color version
+after the contest.
+
+The judges and HAMANO Tsukasa (The silver medalist at this IOCCC) kindly
+provided many configuration files.
+
+
+### NOTICE to those who wish for a greater challenge
+
+**If you want a greater challenge, don't read any further**:
+just try to understand the program via the source.
+
+If you get stuck, come back and read below for additional hints and information.
+
+
+### How this entry works:
 
 First of all, the source code itself serves as an initial configuration.
 Preprocessing directives (such as `#include`)'s `#` serve as walls.
@@ -281,36 +320,6 @@ gravity, pressure, and viscosity forces.
 Though some assignments may look meaningless, they are actually meaningful; they
 extract "integer part of real part" from a complex value by assigning (and
 casting) it to an integer-type variable.
-
-
-### Notes about Additional Files
-
-[logo.txt](logo.txt) is a source of the logo in this remark file.
-
-[column.txt](column.txt) is a water column collapse, which is a popular demo of SPH.
-
-[pour-out.txt](pour-out.txt) pours you a cup of tea.
-
-[tanada.txt](tanada.txt) simulates "Terrace farming".  ("Tanada" means a
-"[terraced rice](https://en.wikipedia.org/wiki/Terrace_&#x28;earthworks&#x29; fields)" in Japanese.)
-
-[clock.txt](clock.txt) is a "water" clock created by HAMANO Tsukasa.
-
-Other `*.txt` files are from the judges.
-
-
-[endoh1_color.c](%%REPO_URL%%/2012/endoh1/endoh1_color.c) is a variant that shows the density by using terminal 256
-colors.
-
-### Acknowledgments
-
-I would like to thank my wife @hirekoke for her teaching me the SPH method.
-
-The judges <del>ordered</del> suggested creating a color version
-after the contest.
-
-The judges and HAMANO Tsukasa (The silver medalist at this IOCCC) kindly
-provided many configuration files.
 
 
 <!--

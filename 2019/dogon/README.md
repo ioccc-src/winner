@@ -225,20 +225,6 @@ character juxtaposed against a very ancient one, not to mention the program
 includes some famous name dropping and documents itself as usual.
 
 
-### Further spoilers, engineering, and obfuscation galore:
-
-Those wait for you, curious and intrepid reader, in the attached
-[apholife.c](%%REPO_URL%%/2019/dogon/apholife.c) file, which is a partially obfuscated version of the
-program I wrote with a lot of helpful annotations and comments for myself and
-posterity, revealing some of the magic under the hood. This program is also a
-somewhat improved version which uses `ldexp()`s in the draw routine and has
-bigger constants, so it can zoom up to level 1024 if memory allows, and it tries
-its best to avoid dumping core on the poor user when its memory runs out, rather
-it enters freeze mode where you can still travel in calculated frozen
-space-time. Well, it's not nice and tame, it even has an escape key, usage
-message, and to top it all it even avoids `gets(3)`!
-
-
 ### Special thanks:
 
 To Tom Rockiki, the original co-writer of Golly, a personal friend and hashlife
@@ -257,6 +243,28 @@ most obfuscated way of calculating the GOL function on a 64 bits `8*8` leaf:
 
 This uses only 19 bitwise operations and six shifts to calculate the inner 6x6
 next generation bits of the input 8x8 !
+
+
+### NOTICE to those who wish for a greater challenge
+
+**If you want a greater challenge, don't read any further**:
+just try to understand the program via the source.
+
+If you get stuck, come back and read below for additional hints and information.
+
+
+### Further information, engineering, and obfuscation galore:
+
+Those wait for you, curious and intrepid reader, in the attached
+[apholife.c](%%REPO_URL%%/2019/dogon/apholife.c) file, which is a partially obfuscated version of the
+program I wrote with a lot of helpful annotations and comments for myself and
+posterity, revealing some of the magic under the hood. This program is also a
+somewhat improved version which uses `ldexp()`s in the draw routine and has
+bigger constants, so it can zoom up to level 1024 if memory allows, and it tries
+its best to avoid dumping core on the poor user when its memory runs out, rather
+it enters freeze mode where you can still travel in calculated frozen
+space-time. Well, it's not nice and tame, it even has an escape key, usage
+message, and to top it all it even avoids `gets(3)`!
 
 <!--
 

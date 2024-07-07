@@ -42,15 +42,6 @@ reveal messages and one more tool that can be used to reveal the final message
 hidden in the original source.  All of these can be created using combinations
 of `./left`, `./right` and `./shift` and the additionally generated programs.
 
-The final message can be revealed using
-
-``` <!---sh-->
-    ./msg9 < prog.c
-```
-
-But what combinations will generate `./msg3`, `./msg4`, `./msg5`, `./msg6`,
-`./msg7`, `./msg8` and finally `./msg9`?
-
 
 ## Author's remarks:
 
@@ -168,6 +159,34 @@ will look weird after rotation, for example.
 
 `Nuko` compiles without warnings with all compilers above, even with
 `-Wall -Wextra -pedantic` for gcc and clang.
+
+
+### NOTICE to those who wish for a greater challenge
+
+**If you want a greater challenge, don't read any further**:
+just try to understand the program without running the command below.
+
+If you get stuck, come back and run the following command:
+
+``` <!---sh-->
+    ./msg9 < prog.c
+```
+
+But what combinations will generate `./msg3`, `./msg4`, `./msg5`, `./msg6`,
+`./msg7`, `./msg8` and finally `./msg9`?
+
+For more hints try:
+
+``` <!---sh-->
+    make details
+```
+
+And for the last word, try:
+
+``` <!---sh-->
+    make the_last_word
+```
+
 
 <!--
 

@@ -181,7 +181,15 @@ For the same reason, do not post a score that contains only `z1092`.
 You know, it is ["the famous song"](http://en.wikipedia.org/wiki/4%E2%80%B233%E2%80%B3).
 
 
-### Spoiler
+### NOTICE to those who wish for a greater challenge
+
+**If you want a greater challenge, don't read any further**:
+just try to understand the program via the source.
+
+If you get stuck, come back and read below for additional hints and information.
+
+
+### How this entry works:
 
 Here is a magical expression which I found by brute-force:
 

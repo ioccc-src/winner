@@ -83,6 +83,14 @@ You might also wish to redirect the output to another file,
 compile it and compare how it works to the original code.
 
 
+### NOTICE to those who wish for a greater challenge
+
+**If you want a greater challenge, don't read any further**:
+just try to understand the program via the source.
+
+If you get stuck, come back and read below for additional hints and information.
+
+
 ## Author's remarks:
 
 This is a program which takes any text file as input and 'flips'

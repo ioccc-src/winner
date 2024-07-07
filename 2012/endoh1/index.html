@@ -554,22 +554,6 @@ used to clear screen and move cursor to home.</p>
 and gcc-4.5.3 and clang-3.1 on Cygwin. On Cygwin, gcc and clang complain about
 a usage of <code>I</code> (complex’s imaginary unit), but I bet this is cygwin’s issue;
 it is surely a C99 feature.</p>
-<h3 id="obfuscation">Obfuscation</h3>
-<p>First of all, the source code itself serves as an initial configuration.
-Preprocessing directives (such as <code>#include</code>)’s <code>#</code> serve as walls.</p>
-<p>This program uses <code>double complex</code> to represent any 2D vector. But, note that
-the <code>x-axis</code> and <code>y-axis</code> are swapped (real axis = y-axis, imaginary axis =
-x-axis). The purpose of swapping is not only obfuscation, but also short
-coding: for example, to add gravity to total force, <code>force += G</code> suffices,
-rather than <code>force += G*I</code>.</p>
-<p>(Incidentally, you can exert horizontal gravity by using for instance <code>-DG=I</code>)</p>
-<p>Every five entries of <code>double complex a[]</code> contain information of one particle:
-position, wall-flag, density, force, and velocity, in turn.</p>
-<p>You can use <code>G</code>, <code>P</code>, and <code>V</code> as a guide to find the calculation code of
-gravity, pressure, and viscosity forces.</p>
-<p>Though some assignments may look meaningless, they are actually meaningful; they
-extract “integer part of real part” from a complex value by assigning (and
-casting) it to an integer-type variable.</p>
 <h3 id="notes-about-additional-files">Notes about Additional Files</h3>
 <p><a href="logo.txt">logo.txt</a> is a source of the logo in this remark file.</p>
 <p><a href="column.txt">column.txt</a> is a water column collapse, which is a popular demo of SPH.</p>
@@ -586,6 +570,26 @@ colors.</p>
 after the contest.</p>
 <p>The judges and HAMANO Tsukasa (The silver medalist at this IOCCC) kindly
 provided many configuration files.</p>
+<h3 id="notice-to-those-who-wish-for-a-greater-challenge">NOTICE to those who wish for a greater challenge</h3>
+<p><strong>If you want a greater challenge, don’t read any further</strong>:
+just try to understand the program via the source.</p>
+<p>If you get stuck, come back and read below for additional hints and information.</p>
+<h3 id="how-this-entry-works">How this entry works:</h3>
+<p>First of all, the source code itself serves as an initial configuration.
+Preprocessing directives (such as <code>#include</code>)’s <code>#</code> serve as walls.</p>
+<p>This program uses <code>double complex</code> to represent any 2D vector. But, note that
+the <code>x-axis</code> and <code>y-axis</code> are swapped (real axis = y-axis, imaginary axis =
+x-axis). The purpose of swapping is not only obfuscation, but also short
+coding: for example, to add gravity to total force, <code>force += G</code> suffices,
+rather than <code>force += G*I</code>.</p>
+<p>(Incidentally, you can exert horizontal gravity by using for instance <code>-DG=I</code>)</p>
+<p>Every five entries of <code>double complex a[]</code> contain information of one particle:
+position, wall-flag, density, force, and velocity, in turn.</p>
+<p>You can use <code>G</code>, <code>P</code>, and <code>V</code> as a guide to find the calculation code of
+gravity, pressure, and viscosity forces.</p>
+<p>Though some assignments may look meaningless, they are actually meaningful; they
+extract “integer part of real part” from a complex value by assigning (and
+casting) it to an integer-type variable.</p>
 <!--
 
     Copyright © 1984-2024 by Landon Curt Noll. All Rights Reserved.

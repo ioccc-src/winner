@@ -34,12 +34,19 @@ NOTE: `n` is an integer.
 
 ## Judges' remarks:
 
-Don't read the author's remarks until you're ready for the spoiler.
 Just stop and read the program; it won't take long.  Once you've figured
 out what it does, run it.  It may surprise you.
 
 This entry won, not because the obfuscation is impenetrable, but because
 it successfully fooled half of the judges, including me.
+
+
+### NOTICE to those who wish for a greater challenge
+
+**If you want a greater challenge, don't read any further**:
+just try to understand the program via the source.
+
+If you get stuck, come back and read below for additional hints and information.
 
 
 ## Author's remarks:

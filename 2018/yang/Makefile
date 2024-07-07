@@ -169,17 +169,16 @@ generated5.c: ${PROG}.c right shift
 	@${RM} -f $@
 	./shift < $< | ./right > $@
 
-############
-# spoilers #
-############
+########################
+# detailed information #
+########################
 
-spoiler: spoilers
+details:
+	@echo "Really show the detailed information?  If you must see it run:"
+	@echo
+	@echo "   make i_give_up_show_me_the_details"
 
-spoilers:
-	@echo "Really show spoilers?  Please build this target to confirm:"
-	@echo "   i_give_up_show_me_the_spoilers"
-
-i_give_up_show_me_the_spoilers: msg3 msg4 msg5 msg6 msg7 msg8 msg9
+i_give_up_show_me_the_details: msg3 msg4 msg5 msg6 msg7 msg8 msg9
 
 msg3: generated6.c
 	$(CC) $(CFLAGS) $< -o $@
@@ -229,13 +228,11 @@ generated11.c: generated10.c right shift
 generated12.c: msg7
 	./msg7 > $@
 
-####################################
-# spoilers for the truly impatient #
-####################################
+#####################################################
+# final information message for the truly impatient #
+#####################################################
 
-spoiler_for_the_truly_impatient: i_just_want_to_see_the_final_message
-
-i_just_want_to_see_the_final_message: msg11.txt
+the_last_word: msg11.txt
 	@${CAT} $<
 
 msg11.txt: msg11 ${PROG}.c

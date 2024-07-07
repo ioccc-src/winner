@@ -142,10 +142,18 @@ eliminated.  As AG also refrains from abusing the preprocessor, it
 doesn't really have much to offer in terms of "surface obfuscation".
 Instead, it tries to achieve both its speed and its obscurity through a
 careful choice of algorithms.  Some of the finer points of those
-algorithms are outlined in the spoiler below.
+algorithms are outlined the section below.
 
 
-### How it works:
+### NOTICE to those who wish for a greater challenge
+
+**If you want a greater challenge, don't read any further**:
+just try to understand the program via the source.
+
+If you get stuck, come back and read below for additional hints and information.
+
+
+### How this entry works:
 
 Here follows a description of some of the data structures and
 algorithms used by AG.  It is by no means complete, but it may help

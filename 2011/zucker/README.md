@@ -153,7 +153,15 @@ reflection ray at an object's surface, given the incoming
 direction and surface normal.
 
 
-#### Further details:
+### NOTICE to those who wish for a greater challenge
+
+**If you want a greater challenge, don't read any further**:
+just try to understand the program via the source.
+
+If you get stuck, come back and read below for additional hints and information.
+
+
+### How this entry works:
 
 The program is not quite a traditional [ray
 tracer](https://en.wikipedia.org/wiki/Ray_tracing_&#x28;graphics&#x29;), but a "[sphere

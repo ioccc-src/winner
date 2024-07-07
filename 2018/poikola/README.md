@@ -65,7 +65,15 @@ So I had to sit down and solve those tricky questions with Nano and a C
 compiler.
 
 
-### Little spoilers:
+### NOTICE to those who wish for a greater challenge
+
+**If you want a greater challenge, don't read any further**:
+just try to understand the program via the source.
+
+If you get stuck, come back and read below for additional hints and information.
+
+
+### Little hints:
 
 Basically, the program draws animated ASCII art of the Big Dipper using Annie
 Jump Cannon's spectral classification system of stars and I think the colors of
@@ -121,7 +129,7 @@ mostly is okay. YMMV, as they say.
 Please do not feed little babies chocolate.
 
 
-### Major spoilers:
+### Major hints:
 
 I incorporated the [Fletcher 16 checksum
 algorithm](https://en.wikipedia.org/wiki/Fletcher%27s_checksum) into the source

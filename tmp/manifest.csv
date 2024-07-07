@@ -1905,7 +1905,7 @@
 2004,hibachi,src/localhost/test/perl/yahoo-ticker.pl,150,true,perl,true,stock price fetch example in Perl
 2004,hibachi,src/configure.in,200,true,shellscript,true,GNU Autoconf script
 2004,hibachi,src/hibachi-start.sh.in,200,true,shellscript,true,hibachi-start.sh declarations
-2004,hibachi,src/localhost/CHANGES-SPOILER.TXT,200,true,text,false,spoiler change log
+2004,hibachi,src/localhost/CHANGELOG.TXT,200,true,text,false,obfuscation change log
 2004,hibachi,2004_hibachi.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 2004,hibachi,README.md,4000000000,true,markdown,true,markdown source for this web page
 2004,hibachi,.entry.json,4000000000,true,json,true,entry summary and manifest in JSON

@@ -424,10 +424,6 @@ that this remark is completely misleading.</p>
 reveal messages and one more tool that can be used to reveal the final message
 hidden in the original source. All of these can be created using combinations
 of <code>./left</code>, <code>./right</code> and <code>./shift</code> and the additionally generated programs.</p>
-<p>The final message can be revealed using</p>
-<pre><code>    ./msg9 &lt; prog.c</code></pre>
-<p>But what combinations will generate <code>./msg3</code>, <code>./msg4</code>, <code>./msg5</code>, <code>./msg6</code>,
-<code>./msg7</code>, <code>./msg8</code> and finally <code>./msg9</code>?</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <h3 id="tools-usage">Tools’ usage:</h3>
 <p><code>Nuko</code> is a text rotator: given some text in <code>stdin</code>, <code>Nuko</code> will write the
@@ -509,6 +505,17 @@ will look weird after rotation, for example.</p>
 </ul>
 <p><code>Nuko</code> compiles without warnings with all compilers above, even with
 <code>-Wall -Wextra -pedantic</code> for gcc and clang.</p>
+<h3 id="notice-to-those-who-wish-for-a-greater-challenge">NOTICE to those who wish for a greater challenge</h3>
+<p><strong>If you want a greater challenge, don’t read any further</strong>:
+just try to understand the program without running the command below.</p>
+<p>If you get stuck, come back and run the following command:</p>
+<pre><code>    ./msg9 &lt; prog.c</code></pre>
+<p>But what combinations will generate <code>./msg3</code>, <code>./msg4</code>, <code>./msg5</code>, <code>./msg6</code>,
+<code>./msg7</code>, <code>./msg8</code> and finally <code>./msg9</code>?</p>
+<p>For more hints try:</p>
+<pre><code>    make details</code></pre>
+<p>And for the last word, try:</p>
+<pre><code>    make the_last_word</code></pre>
 <!--
 
     Copyright © 1984-2024 by Landon Curt Noll. All Rights Reserved.

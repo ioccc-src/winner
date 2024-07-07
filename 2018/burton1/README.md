@@ -64,10 +64,16 @@ This code has been compiled and tested on:
 * UNIX V7 pcc (Johnson's C compiler) on a [simulated PDP-11/45](http://simh.trailing-edge.com/)
   (see the "**SPOILER** section below for further detail)
 
-<div style="margin-bottom:60em;margin-top:4em"><strong>Spoiler below; scroll down.</strong></div>
+
+### NOTICE to those who wish for a greater challenge
+
+**If you want a greater challenge, don't read any further**:
+just try to understand the program via the source.
+
+If you get stuck, come back and read below for additional hints and information.
 
 
-### SPOILER:
+### How this entry works:
 
 This started life as a personal challenge: write the shortest hex dump utility
 in C.

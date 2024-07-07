@@ -248,6 +248,14 @@ changing the definitions of `W`, `H` and `I` at the beginning of the code.
   parameter.
 
 
+### NOTICE to those who wish for a greater challenge
+
+**If you want a greater challenge, don't read any further**:
+just try to understand the program via the source.
+
+If you get stuck, come back and read below for additional hints and information.
+
+
 ### Obfuscation
 
 Sure, I don't want to deprive you of the pleasure of digging

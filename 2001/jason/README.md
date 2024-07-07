@@ -117,7 +117,15 @@ the game entertaining, see if you can find
 in the source code.)
 
 
-### GAME STRATEGY SPOILER
+### NOTICE to those who wish for a greater challenge
+
+**If you want a greater challenge, don't read any further**:
+just try to understand the program via the source.
+
+If you get stuck, come back and read below for additional hints and information.
+
+
+### GAME STRATEGY
 
 The trick, of course, is to drop items in empty rooms to mark them.  That way
 you usually know if you're in a room you've seen before.  It greatly aids

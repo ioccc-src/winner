@@ -86,7 +86,16 @@ In other words, even if we took steps to present the algorithm clearly, (we
 haven't) the relation of the computation performed to the specification of what
 the program was supposed to do would still be hard to understand.
 
-### Quasi-spoiler on internals:
+
+### NOTICE to those who wish for a greater challenge
+
+**If you want a greater challenge, don't read any further**:
+just try to understand the program via the source.
+
+If you get stuck, come back and read below for additional hints and information.
+
+
+### How this entry works:
 
 The program plays [Conway's Game of
 Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life) in the root window's

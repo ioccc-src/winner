@@ -44,7 +44,16 @@ parameter or an invalid parameter is given, then 5 is assumed.  The
 maximum parameter is determined only by the amount of CPU time, virtual
 memory and display (or file) space available.
 
-### OBFUSCATION:
+
+### NOTICE to those who wish for a greater challenge
+
+**If you want a greater challenge, don't read any further**:
+just try to understand the program via the source.
+
+If you get stuck, come back and read below for additional hints and information.
+
+
+### How this entry works:
 
 OK, so you have probably seen magic square printers before.  But what
 about one that deals with even sizes as well as odd ones, or one that

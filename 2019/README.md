@@ -38,7 +38,7 @@ These nods to not run afoul of the guideline:
 because the entry [2019/dogon](dogon/index.html) appropriately pays homage
 to past entries without blatantly reusing their code.
 
-...We'll stop spouting spoilers now. Have fun exploring all the entries!
+...We'll stop spouting too many details now. Have fun exploring all the entries!
 
 
 ## Remarks on some of submissions that did not win

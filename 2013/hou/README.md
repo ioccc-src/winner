@@ -192,7 +192,15 @@ quite memory consuming, requires IEEE754-compliant `double`, and assumes `int` t
 doesn't copy saved sessions across different endianness.
 
 
-### Spoiler
+### NOTICE to those who wish for a greater challenge
+
+**If you want a greater challenge, don't read any further**:
+just try to understand the program via the source.
+
+If you get stuck, come back and read below for additional hints and information.
+
+
+### How this entry works:
 
 ```
     3225  3225  3225  9  9    3225  3225

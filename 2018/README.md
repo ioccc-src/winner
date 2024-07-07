@@ -40,7 +40,7 @@ The [Most likely to be awarded - 2018/ciura](ciura/index.html) has an amazing vo
 There are also nods to entries of the years [2000/bellard](../2000/bellard/index.html),
 [2015/yang](../2015/yang/index.html), ...
 
-...We'll stop spouting spoilers now. Have fun exploring all the entries!
+...We'll stop spouting too many details now. Have fun exploring all the entries!
 
 ### Historical note:
 

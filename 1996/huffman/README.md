@@ -32,12 +32,18 @@ For more detailed information see [1996/huffman in bugs.html](../../bugs.html#19
 
 ## Judges' remarks:
 
-If you are still confused and want to read a spoiler, check out
+If you are still confused, check out
 the source and it will be clear as mud!
 
 And for a misleading hint, consider who won!  :-)
 
-And if you really can't see what is going on, here is an extra spoiler:
+
+### NOTICE to those who wish for a greater challenge
+
+**If you want a greater challenge, don't read any further**:
+just try to understand the program without running the command below.
+
+If you get stuck, come back and run the following command:
 
 ``` <!---sh-->
     ./huffman < huffman.c 2>/dev/null

@@ -1259,8 +1259,8 @@
 2004/hibachi/src/configure.in
 2004/hibachi/src/hibachi-start.sh
 2004/hibachi/src/hibachi-start.sh.in
+2004/hibachi/src/localhost/CHANGELOG.TXT
 2004/hibachi/src/localhost/CHANGES-OBFUSCATED.TXT
-2004/hibachi/src/localhost/CHANGES-SPOILER.TXT
 2004/hibachi/src/localhost/Img/cygwin-icon.gif
 2004/hibachi/src/localhost/Img/freebsd.gif
 2004/hibachi/src/localhost/Img/hibachi-256-oc-nc-300x150.gif

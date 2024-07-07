@@ -39,10 +39,18 @@ Mode may be a value from 0 to 12.
 
 ## Alternate code:
 
-The author provided us a spoiler version that might be of interest to some.
+
+### NOTICE to those who wish for a greater challenge
+
+**If you want a greater challenge, don't read any further**:
+just try to understand the program without looking at the Alternate code.
+
+If you get stuck, come back and look at the Alternate code.
 
 
 ### Alternate build:
+
+The author provided us a less obfuscated version that might be of interest to some.
 
 ``` <!---sh-->
     make alt

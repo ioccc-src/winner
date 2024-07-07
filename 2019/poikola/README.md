@@ -228,7 +228,15 @@ compilers. Small change in code can produce really unexpected results, i.e. the
 compiler can skip a few expressions or statements without obvious reason.
 
 
-### Major spoilers
+### NOTICE to those who wish for a greater challenge
+
+**If you want a greater challenge, don't read any further**:
+just try to understand the program via the source.
+
+If you get stuck, come back and read below for additional hints and information.
+
+
+### How this entry works:
 
 It is commonly believed that [Mike Keith's
 algorithm](http://www.cadaeic.net/calendar.htm) published in _Journal of

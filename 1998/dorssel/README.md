@@ -111,12 +111,28 @@ is the same as
     ./dorssel < dorssel.c | ./dorssel
 ```
 
-- The file [dorssel.html](dorssel.html) contains all the information needed to
-understand this program.  For spoiler information, try:
+
+### NOTICE to those who wish for a greater challenge
+
+**If you want a greater challenge, don't read any further**:
+just try to understand the program without running the command below.
+
+If you get stuck, come back and run the following command:
 
 ``` <!---sh-->
     ./dorssel < dorssel.md
 ```
+
+
+### NOTICE to those who wish for a greater challenge
+
+**If you want a greater challenge, don't read any further**:
+just try to understand the program via the source.
+
+If you get stuck, come back and read below for additional hints and information.
+
+- The file [dorssel.html](dorssel.html) contains all the information needed to
+understand this program.  For spoiler information, try:
 
 
 <!--

@@ -68,7 +68,15 @@ numbers to get a pleasing result, or use it for your high school algebra
 class.
 
 
-### SPOILER:
+### NOTICE to those who wish for a greater challenge
+
+**If you want a greater challenge, don't read any further**:
+just try to understand the program via the source.
+
+If you get stuck, come back and read below for additional hints and information.
+
+
+### What this entry does:
 
 As should be obvious from 20 feet away, the program is a cubic plotter.
 It plots against certain artists, splattering their cubes with graphs
@@ -84,6 +92,9 @@ See the [gtface](%%REPO_URL%%/1994/horton/gtface.c) program for another example.
     make gtface
     ./gtface < gtface.data
 ```
+
+
+### How this entry works:
 
 For more information, see my article
 

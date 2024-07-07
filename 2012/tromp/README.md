@@ -520,11 +520,6 @@ The program has been tested to work correctly on Linux/Solaris/MacOSX both in 32
 and 64 bits.
 
 
-### How the program works
-
-See the file [how.html](how.html).
-
-
 ### Acknowledgements
 
 Christopher Hendrie, Bertram Felgenhauer, Alex Stangl, Seong-hoon Kang,
@@ -545,6 +540,19 @@ Jean-Louis Krivine. 2007.
 A call-by-name lambda-calculus machine
 Higher Order Symbol. Comput. 20, 3 (September 2007), 199-207.
 <http://www.pps.univ-paris-diderot.fr/~krivine/articles/lazymach.pdf>
+
+
+### NOTICE to those who wish for a greater challenge
+
+**If you want a greater challenge, don't read any further**:
+just try to understand the program via the source.
+
+If you get stuck, come back and read below for additional hints and information.
+
+
+### How this entry works:
+
+See the file [how.html](how.html).
 
 
 <!--

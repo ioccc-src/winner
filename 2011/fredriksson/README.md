@@ -199,7 +199,15 @@ Just say
   (Btw, tcc has its roots in IOCCC...)
 
 
-### Obfuscation
+### NOTICE to those who wish for a greater challenge
+
+**If you want a greater challenge, don't read any further**:
+just try to understand the program via the source.
+
+If you get stuck, come back and read below for additional hints and information.
+
+
+### How this entry works:
 
 * The initialized char array includes the source code of the real program,
   as well as its name and commands to build and run it, all

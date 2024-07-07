@@ -110,7 +110,15 @@ the actual `argv` strings to be writable, though.
 - Some seemingly redundant code works to eliminate warnings and evade a gcc bug.
 
 
-### Spoilers
+### NOTICE to those who wish for a greater challenge
+
+**If you want a greater challenge, don't read any further**:
+just try to understand the program via the source.
+
+If you get stuck, come back and read below for additional hints and information.
+
+
+### How this entry works:
 
 The parser parses function names, subtraction, and division as single-letter
 unary operators. A bitmask encoded hash table is used to check no-ops/digits

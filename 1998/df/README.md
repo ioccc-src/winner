@@ -110,6 +110,17 @@ My first private version would only run when compiled on a Friday.
 I decided it would be better this way...
 These restrictions have been removed for your convenience.
 
+
+### NOTICE to those who wish for a greater challenge
+
+**If you want a greater challenge, don't read any further**:
+just try to understand the program via the source.
+
+If you get stuck, come back and read below for additional hints and information.
+
+
+### How this entry works:
+
 The following lines describe how this program works; if you don't
 want to know it at this time, please skip them. If this entry would
 by some mistake win the contest, please do not rot13 this - I hate
@@ -117,9 +128,6 @@ rot13 spoilers since it is somewhat complicated on a Mac to
 reverse them. Anyone out there should have enough discipline and
 rot13 shouldn't be required, really. After all, we are not children
 anymore :-)
-
-
-## Obfuscation information:
 
 <hr style="width:10%;text-align:left;margin-left:0">
 

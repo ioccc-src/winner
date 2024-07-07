@@ -254,13 +254,21 @@ were shuffled both for `S` functions and Apply functions in the same way to hide
 the meaning of `f` and `r` prefixes.
 
 
-### Identification spoiler:
+### NOTICE to those who wish for a greater challenge
+
+**If you want a greater challenge, don't read any further**:
+just try to understand the program via the source.
+
+If you get stuck, come back and read below for additional hints and information.
+
+
+### Identification
 
 The alternative build path `make identify` output commemorates a [previous IOCCC
 winning entry][9] which uses similar methods to mess with the size tool.
 
 
-### Judges' spoiler:
+### How this entry works:
 
 It is not a bug, it is a feature. :)
 

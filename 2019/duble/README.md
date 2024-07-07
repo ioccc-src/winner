@@ -184,7 +184,7 @@ You will probably have a hard time analyzing this entry, because:
 ### A few more things:
 
 Did you notice the `enum` declaration? Could it be just an `int` or `const int`
-variable, instead? (spoiler: <http://c-faq.com/ansi/constasconst.html>)
+variable, instead?
 
 If your keyboard has no arrow keys, you can probably find alternate keys by
 reading the source code.
@@ -249,6 +249,19 @@ maybe not reduce consumption, but consume them differently...  And I obtained
 [prog.c](%%REPO_URL%%/2019/duble/prog.c). With this version, no need to touch `sysctl` parameters, and
 it works on macOS too!  I must confess it was challenging to remain below the
 size limit with this little change.
+
+
+### NOTICE to those who wish for a greater challenge
+
+**If you want a greater challenge, don't read any further**:
+just try to understand the program via the source.
+
+If you get stuck, come back and read below for additional hints and information.
+
+
+### For more information
+
+See <http://c-faq.com/ansi/constasconst.html> for more information.
 
 <!--
 

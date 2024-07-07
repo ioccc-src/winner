@@ -89,10 +89,18 @@ and shows GHC also accepts our subset of Haskell:
 
 #### Self-hosting compiler:
 
-To avoid spoiling this entry by revealing the original Haskell source, we
+To avoid revealing the original Haskell source, we
 instead provide [hint.hs](%%REPO_URL%%/2019/lynn/hint.hs), the output of a certain stage of the
 compiler when run on itself. This intermediate output is hopefully difficult to
 understand, yet is accepted by our compiler:
+
+
+### NOTICE to those who wish for a greater challenge
+
+**If you want a greater challenge, don't read any further**:
+just try to understand the program without running the command below.
+
+If you get stuck, come back and run the following command:
 
 ``` <!---sh-->
     (./prog < hint.hs ; cat prog.c) > hint.c

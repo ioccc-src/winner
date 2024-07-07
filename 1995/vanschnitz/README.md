@@ -33,6 +33,14 @@ For more detailed information see [1995/vanschnitz in bugs.html](../../bugs.html
 ```
 
 
+### NOTICE to those who wish for a greater challenge
+
+**If you want a greater challenge, don't read any further**:
+just try to understand the program without looking at the Alternate code.
+
+If you get stuck, come back and look at the Alternate code.
+
+
 ## Alternate code:
 
 The authors provided a deobfuscated version of the program. Originally uuencoded we

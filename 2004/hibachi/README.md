@@ -159,7 +159,7 @@ style](https://wiki.c2.com/?OneTrueBraceStyle).
 
 *  `Hibachi` can serve [www.ioccc.org](https://www.ioccc.org).
 
-*  Commented spoiler information available.
+*  Commented obfuscation change log information available.
 
 ### Known Issues
 
@@ -177,6 +177,19 @@ style](https://wiki.c2.com/?OneTrueBraceStyle).
 * Most Likely to Cook Apache
 * Best Interpretation of RFC 2616
 * Winner of The Far Too Much Free Time Award
+
+
+### NOTICE to those who wish for a greater challenge
+
+**If you want a greater challenge, don't read any further**:
+just try to understand the program via the source.
+
+If you get stuck, come back and read below for additional hints and information.
+
+
+### Obfuscation change log
+
+For additional hints about how the source was obfuscated, read [src/localhost/CHANGELOG.TXT](src/localhost/CHANGELOG.TXT).
 
 
 <!--

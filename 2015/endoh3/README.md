@@ -64,7 +64,15 @@ the source code from all angles..
 * Find `main()` function.
 
 
-### Spoiler
+### NOTICE to those who wish for a greater challenge
+
+**If you want a greater challenge, don't read any further**:
+just try to understand the program via the source.
+
+If you get stuck, come back and read below for additional hints and information.
+
+
+### What this entry does:
 
 This program is a joke PDP-11 emulator.  ("ll-dpd" is embedded in the code.
 Read it upside down.)
@@ -80,7 +88,7 @@ You got it?  This program is supposed to be used in this way:
 You can enjoy the legendary winning entry of the first IOCCC, again.
 
 
-### Internal
+### How this entry works:
 
 This program uses `__attribute__((constructor))`, which is a GCC extension, to
 hijack the `main()` function call.  And then it interprets `main()` as an

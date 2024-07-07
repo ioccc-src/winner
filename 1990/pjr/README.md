@@ -55,7 +55,15 @@ By use of pointers to functions returning a struct of pointers
 to functions!
 
 
-### Spoiler:
+### NOTICE to those who wish for a greater challenge
+
+**If you want a greater challenge, don't read any further**:
+just try to understand the program via the source.
+
+If you get stuck, come back and read below for additional hints and information.
+
+
+### What this entry does:
 
 This program prints out the string:
 

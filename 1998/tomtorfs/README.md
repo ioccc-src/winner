@@ -99,7 +99,15 @@ Count the number of non-whitespace characters in the source
 file to find out what dark force drove me to write this ;-).
 
 
-### Obfuscation
+### NOTICE to those who wish for a greater challenge
+
+**If you want a greater challenge, don't read any further**:
+just try to understand the program via the source.
+
+If you get stuck, come back and read below for additional hints and information.
+
+
+### How this entry works:
 
 First of all, if you run a C beautifier on the program (thereby of course losing
 the nice code shape I worked so hard on ;-) ) the code will become a bit more
