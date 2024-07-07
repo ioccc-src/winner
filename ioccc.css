@@ -724,12 +724,13 @@ transition: all .3s ease;
 
 blockquote {
     margin: 1em 0 1em 1.7em;
-    padding-left: 1em;
     border-top: 4px solid darkgreen;
     border-left: 4px solid darkgreen;
     border-bottom: 4px solid darkgreen;
     border-right: 4px solid darkgreen;
-    font-style: italic;
+    font-style: normal;
+    overflow-wrap: break-word;
+    width: fit-content;
 }
 
 /* This rule makes sure that text in <blockquote><p>..</p></blockquote> is
