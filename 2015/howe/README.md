@@ -4,8 +4,20 @@
     make
 ```
 
-There is an alternate version provided. See [Alternate code](#alternate-code)
-below.
+There are two alternate versions provided by the author. See [Alternate
+code](#alternate-code) and the author's remarks below for more details.
+
+
+### Bugs and (Mis)features:
+
+The current status of this entry is:
+
+```
+    STATUS: known bug - please help us fix
+```
+
+For more detailed information see [2015/howe in bugs.html](../../bugs.html#2015_howe).
+
 
 
 ## To use:
@@ -27,10 +39,14 @@ below.
 ## Alternate code:
 
 This alternate version does not use a 64-bit FNV hash. This was the original
-entry but was changed to be the alt version.
+entry but was changed to be the alt version. Later, in 2024, the author provided
+an unobfuscated version which is in
+[prog.alt2.c](%%REPO_URL%%/2015/howe/prog.alt2.c).
 
 
 ### Alternate build:
+
+To build these versions:
 
 ``` <!---sh-->
     make alt
@@ -39,7 +55,14 @@ entry but was changed to be the alt version.
 
 ### Alternate use:
 
-Use `prog.alt` as you would `prog` above.
+Use `prog.alt` and/or `prog.alt2` as you would `prog` above.
+
+
+### Alternate try:
+
+``` <!---sh-->
+    ./try.alt.sh
+```
 
 
 ## Judges' remarks:
@@ -55,9 +78,9 @@ Is this code a bug or a feature? :-)  Or is this an attempt to corrupt the
 programming of our youth?  Should we heed Kyle's mom words that she uttered
 during a South Park P.T.A. Meeting?
 
-   "We must stop dirty (C) language from getting to our children's ears!"
-
-   [Blame Canada](https://www.youtube.com/watch?v=bOR38552MJA)
+> "We must stop dirty (C) language from getting to our children's ears!"
+>
+> [Blame Canada](https://www.youtube.com/watch?v=bOR38552MJA)
 
 Or should we teach our youth to understand the intricacies of this code?
 Ying Tong Iddle I Po!  We suggest you read the source for yourself, which

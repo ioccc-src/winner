@@ -1461,32 +1461,25 @@ Cody also added the [try.sh](%%REPO_URL%%/1990/westley/try.sh) script.
 
 
 The author, [Anthony C Howe](authors.html#Anthony_C_Howe), provided a
-deobfuscated version which was put in by [Cody](#cody) with thanks to Anthony!
-The `deobfuscated` directory has the code and Makefile. The entry's Makefile was
-updated to compile the alt code, if `make alt` is used, but in a way that keeps
-both directories clean (the deobfuscated version will not be in the entry's
-directory and vice versa) but also allowing one to just do `./ant.alt2` (see
-below for why `alt2`). There are two versions here,
-[deobfuscated/ant.c](%%REPO_URL%%/1991/ant/deobfuscated/ant.c) and
-[deobfuscated/ant-c89.c](%%REPO_URL%%/1991/ant/deobfuscated/ant-c89.c) along
-with the `Makefile`. The latter C file was converted from `K&R` by Anthony (the
-other one did not compile without a few fixes made by Cody).
+unobfuscated version which was put in by [Cody](#cody) with thanks to Anthony!
+This was put in as [ant.alt.c](%%REPO_URL%%/1991/ant/ant.alt.c). There were two
+versions, one which was converted from `K&R` and worked without modification and
+another which Cody had to slightly modify to get it to work in modern systems.
+But since only one was needed the one that worked already was used.
 
-[Cody](#cody) also added [alternate code](%%REPO_URL%%/1991/ant/ant.alt.c) that
+[Cody](#cody) also added [another version](%%REPO_URL%%/1991/ant/ant.alt2.c) that
 will be a bit easier to use for those familiar with vim in the following ways
 (we don't want vi users to also not be able to use it or exit it, now do we ?
 :-) ):
 
 - Use `0` to go to first column.
 - Use `$` to go to last column.
-- Hit ESC to go back to command mode (instead of form-feed, ctrl-L).
+- Hit ESC to go back to command mode (instead of form-feed, ctrl-L like the original).
 - Use `w` to go forwards one word.
 - Use `b` to go backwards one word.
 - Use `q` to exit.
 
 The other keys were left unchanged.
-
-(As this was done first it was left as `alt` and not changed to `alt2`.)
 
 
 <div id="1991_brnstnd">
@@ -1888,12 +1881,9 @@ systems too.
 
 Cody also added the [try.sh](%%REPO_URL%%/1992/ant/try.sh) script.
 
-The author, [Anthony C Howe](authors.html#Anthony_C_Howe), provided a
-deobfuscated version that Cody added in, with thanks to Anthony! The source code
-and the `Makefile` as well as `sleep.c` are in the `deobfuscated/` directory.
-The entry's Makefile was updated in a way that keeps the deobfuscated code
-separate from the entry's code but which allows one to use the deobfuscated
-Makefile when compiling the alt code (via `make alt`). For this version,
+The author, [Anthony C Howe](authors.html#Anthony_C_Howe), provided an
+[unobfuscated version](%%REPO_URL%%/1992/ant/ant.alt.c) that Cody added in, with
+thanks to Anthony! For this version,
 [try.alt.sh](%%REPO_URL%%/1992/ant/try.alt.sh) was added and an alternate test
 Makefile (along the lines of the author's provided test Makefile) was added,
 updated to use `ant.alt`.
@@ -2122,13 +2112,12 @@ encourage you to try the original without two args :-)
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/1993/ant/try.sh) script and a data file,
 [ants.txt](1993/ant/ants.txt), full of ants for the script.
 
-The author, [Anthony C Howe](authors.html#Anthony_C_Howe), provided a
-deobfuscated version that Cody added in, with thanks to Anthony! The source code
-(which might have had to be fixed to compile with modern compilers whereas the
-`-c89` version was converted from `K&R` and worked without any fixes) and its
-Makefile was put in the `deobfuscated` subdirectory to keep them separate. The
-entry's Makefile was updated so that it uses the deobfuscated version's Makefile
-but allowing one to run `./ant.alt`.
+The author, [Anthony C Howe](authors.html#Anthony_C_Howe), provided an
+unobfuscated version that Cody added in, with thanks to Anthony! The source code
+This was put in as [ant.alt.c](%%REPO_URL%%/1991/ant/ant.alt.c). There were two
+versions, one which was converted from `K&R` and worked without modification and
+another which Cody had to slightly modify to get it to work in modern systems.
+But since only one was needed the one that worked already was used.
 
 
 <div id="1993_cmills">
@@ -5396,6 +5385,16 @@ and Peace text file, fixed the [avgtime.sh](%%REPO_URL%%/2015/howe/avgtime.sh) s
 resulted in standard input errors in piping to `bc(1)`) and added the
 [cc.1](%%REPO_URL%%/2015/howe/cc.1) man page as not all systems have it (in fact it's
 `gcc(1)` from Rocky Linux).
+
+The author, [Anthony C Howe](authors.html#Anthony_C_Howe), provided an
+unobfuscated version that Cody added in, with thanks to Anthony! As the author
+had already provided an alternate version (which was actually the original
+entry), this was put in [prog.alt2.c](%%REPO_URL%%/2015/howe/prog.alt2.c). This
+addition prompted the [try.alt.sh](%%REPO_URL%%/2015/howe/try.alt.sh) script.
+
+The fact there are alternate versions necessitated the
+[prog.alt-test.sh](%%REPO_URL%%/2015/howe/prog.alt-test.sh) which Cody added as
+well.
 
 
 <div id="2015_mills1">

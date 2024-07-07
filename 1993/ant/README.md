@@ -4,7 +4,7 @@
     make all
 ```
 
-The author provided a deobfuscated version. See [Alternate
+The author provided an unobfuscated version. See [Alternate
 code](#alternate-code) below.
 
 
@@ -36,8 +36,8 @@ For more detailed information see [1993/ant in bugs.html](../../bugs.html#1993_a
 
 ## Alternate code:
 
-The [ant.c in deobfuscated/](%%REPO_URL%%/1993/ant/deobfuscated/ant.c) is a
-deobfuscated version provided by the author. You can look at this code if you
+The [ant.alt.c](%%REPO_URL%%/1993/ant/ant.alt.c) is an
+unobfuscated version provided by the author. You can look at this code if you
 want some clues in how it works.
 
 

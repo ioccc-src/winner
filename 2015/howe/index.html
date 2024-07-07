@@ -403,8 +403,12 @@ Location: <a href="../../location.html#CA">CA</a> - <em>Canada</em></li>
 <!-- BEFORE: 1st line of markdown file: 2015/howe/README.md -->
 <h2 id="to-build">To build:</h2>
 <pre><code>    make</code></pre>
-<p>There is an alternate version provided. See <a href="#alternate-code">Alternate code</a>
-below.</p>
+<p>There are two alternate versions provided by the author. See <a href="#alternate-code">Alternate
+code</a> and the author’s remarks below for more details.</p>
+<h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
+<p>The current status of this entry is:</p>
+<pre><code>    STATUS: known bug - please help us fix</code></pre>
+<p>For more detailed information see <a href="../../bugs.html#2015_howe">2015/howe in bugs.html</a>.</p>
 <h2 id="to-use">To use:</h2>
 <pre><code>    ./prog file1 file2
 
@@ -413,11 +417,16 @@ below.</p>
 <pre><code>    ./try.sh</code></pre>
 <h2 id="alternate-code">Alternate code:</h2>
 <p>This alternate version does not use a 64-bit FNV hash. This was the original
-entry but was changed to be the alt version.</p>
+entry but was changed to be the alt version. Later, in 2024, the author provided
+an unobfuscated version which is in
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/howe/prog.alt2.c">prog.alt2.c</a>.</p>
 <h3 id="alternate-build">Alternate build:</h3>
+<p>To build these versions:</p>
 <pre><code>    make alt</code></pre>
 <h3 id="alternate-use">Alternate use:</h3>
-<p>Use <code>prog.alt</code> as you would <code>prog</code> above.</p>
+<p>Use <code>prog.alt</code> and/or <code>prog.alt2</code> as you would <code>prog</code> above.</p>
+<h3 id="alternate-try">Alternate try:</h3>
+<pre><code>    ./try.alt.sh</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>This is the best use of the FNV that we have seen in the IOCCC so far!
 The output, when used without <code>-d</code>, is compatible with POSIX <code>diff(1)</code> and
@@ -427,8 +436,10 @@ entries have been submitted.</p>
 <p>Is this code a bug or a feature? :-) Or is this an attempt to corrupt the
 programming of our youth? Should we heed Kyle’s mom words that she uttered
 during a South Park P.T.A. Meeting?</p>
+<blockquote>
 <p>“We must stop dirty (C) language from getting to our children’s ears!”</p>
 <p><a href="https://www.youtube.com/watch?v=bOR38552MJA">Blame Canada</a></p>
+</blockquote>
 <p>Or should we teach our youth to understand the intricacies of this code?
 Ying Tong Iddle I Po! We suggest you read the source for yourself, which
 might be easier than the academic papers it was inspired by.</p>
@@ -521,12 +532,13 @@ Comm. of ACM, Vol. 18, June 1975, pages 341-343<br>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/howe/prog.orig.c">prog.orig.c</a> - original source code</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/howe/avgtime.sh">avgtime.sh</a> - support script</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/howe/makeholes.c">makeholes.c</a> - C code to add random holes to a file</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/howe/prog.alt-test.sh">prog.alt-test.sh</a> - script to run test suite with alternate code</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/howe/prog-test.sh">prog-test.sh</a> - script to run test suite</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/howe/try.alt.sh">try.alt.sh</a> - script to try alternate code</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/howe/try.sh">try.sh</a> - script to try entry</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/howe/cc.1">cc.1</a> - cc man page</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/howe/deobfuscated/Makefile">deobfuscated/Makefile</a> - deobfuscated Makefile</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/howe/deobfuscated/err.h">deobfuscated/err.h</a> - deobfuscated err.h header file</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/howe/deobfuscated/prog.c">deobfuscated/prog.c</a> - deobfuscated source code</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/howe/err.h">err.h</a> - unobfuscated err.h header file</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/howe/prog.alt2.c">prog.alt2.c</a> - unobfuscated source code</li>
 <li><a href="war-and-peace.txt">war-and-peace.txt</a> - War and Peace translated to English</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>

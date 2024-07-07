@@ -29,8 +29,8 @@ where `Makefile` is a Makefile to use and `rule` is an optional rule to use.
 
 ## Alternate code:
 
-This version, [ant.c in deobfuscated/](%%REPO_URL%%/1992/ant/deobfuscated/ant.c), was provided by the
-author in 2024, and is a deobfuscated version.
+This version, [ant.alt.c](%%REPO_URL%%/1992/ant/ant.alt.c), was provided by the
+author in 2024, and is an unobfuscated version.
 
 
 ## Alternate build:

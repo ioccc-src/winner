@@ -10,7 +10,7 @@ PRG=./ant.alt
 all: ant.alt char word anchor literal wild closure option branch sub class
 
 #
-# Built the entry
+# Build the entry
 #
 ant.alt: Makefile
 	make -f Makefile ant.alt

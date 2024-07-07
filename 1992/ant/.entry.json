@@ -42,15 +42,15 @@
 	    "entry_text" : "script to try entry"
 	},
 	{
-	    "file_path" : "deobfuscated/ant.c",
+	    "file_path" : "ant.alt.c",
 	    "inventory_order" : 140,
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "author provided deobfuscated code"
+	    "entry_text" : "author provided unobfuscated code"
 	},
 	{
-	    "file_path" : "deobfuscated/sleep.c",
+	    "file_path" : "sleep.c",
 	    "inventory_order" : 140,
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
@@ -74,20 +74,12 @@
 	    "entry_text" : "Makefile to demonstrate entry"
 	},
 	{
-	    "file_path" : "deobfuscated/Makefile",
-	    "inventory_order" : 150,
-	    "OK_to_edit" : true,
-	    "display_as" : "makefile",
-	    "display_via_github" : true,
-	    "entry_text" : "author provided Makefile for deobfuscated code"
-	},
-	{
 	    "file_path" : "try.alt.sh",
 	    "inventory_order" : 150,
 	    "OK_to_edit" : true,
 	    "display_as" : "shellscript",
 	    "display_via_github" : true,
-	    "entry_text" : "script to try deobfuscated code"
+	    "entry_text" : "script to try unobfuscated code"
 	},
 	{
 	    "file_path" : "ant.test.alt.mk",
@@ -95,7 +87,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "makefile",
 	    "display_via_github" : true,
-	    "entry_text" : "Makefile to demonstrate deobfuscated code"
+	    "entry_text" : "Makefile to demonstrate unobfuscated code"
 	},
 	{
 	    "file_path" : "1992_ant.tar.bz2",

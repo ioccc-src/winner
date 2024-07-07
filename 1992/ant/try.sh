@@ -10,7 +10,7 @@ if [[ -z "$CC" ]]; then
     CC="cc"
 fi
 
-make CC="$CC" all >/dev/null || exit 1
+make clobber CC="$CC" all >/dev/null || exit 1
 
 # clear screen after compilation so that only the entry is shown
 clear

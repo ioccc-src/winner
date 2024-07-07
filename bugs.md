@@ -3690,6 +3690,7 @@ they will properly get:
 <hr style="width:10%;text-align:left;margin-left:0">
 
 
+
 <div id="2015_hou">
 ## 2015/hou
 </div>
@@ -3721,6 +3722,33 @@ takes care to warn about this issue after printing an incorrect big-endian
 result. Error messages become garbled, though.
 
 --
+
+<div id="2015_howe">
+## 2015/howe
+</div>
+
+### STATUS: known bug - please help us fix
+
+The test scripts do not seem to work properly with bash but this would be ideal
+as not all systems have a compatible shell (they assume a POSIX compliant
+shell). One, with bash, might see:
+
+``` <!---sh-->
+    ./prog-test.sh
+    <<< A='1' B='1'
+    prog: : No such file or directory
+    >>> got=0 expect=0 -OK-
+    <<< A='1' B='A'
+    prog: : No such file or directory
+    >>> got=0 expect=2 FAIL
+```
+
+It would appear that the variable passed to the command in the function,
+`distance`, is empty.
+
+The same problem exists in the
+[prog.alt-test.sh](%%REPO_URL%%/2015/howe/prog.alt-test.sh), particularly
+because it is the same thing as the other, just updated to use `prog.alt`.
 
 
 <div id="2015_mills2">

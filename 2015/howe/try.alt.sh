@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# try.sh - demonstrate IOCCC entry 2015/howe
+# try.sh - demonstrate IOCCC entry 2015/howe alt code
 #
 
 # make sure CC is set so that when we do make CC="$CC" it isn't empty. Doing it
@@ -10,15 +10,15 @@ if [[ -z "$CC" ]]; then
     CC="cc"
 fi
 
-make CC="$CC" all >/dev/null || exit 1
+make CC="$CC" alt >/dev/null || exit 1
 
 # clear screen after compilation so that only the entry is shown
 clear
 
 
-read -r -n 1 -p "Press any key to run: ./prog prog.alt.c prog.c: "
+read -r -n 1 -p "Press any key to run: ./prog.alt prog.alt.c prog.c: "
 echo 1>&2
-./prog prog.alt.c prog.c
+./prog.alt prog.alt.c prog.c
 echo 1>&2
 
 read -r -n 1 -p "Press any key to run: make test (space = next page, q = quit): "
@@ -26,14 +26,14 @@ echo 1>&2
 make test | less -rEXFK
 echo 1>&2
 
-read -r -n 1 -p "Press any key to run: ./prog -d ABXYEFCD.tmp ACDBECFD.tmp: "
+read -r -n 1 -p "Press any key to run: ./prog.alt -d ABXYEFCD.tmp ACDBECFD.tmp: "
 echo 1>&2
-./prog -d ABXYEFCD.tmp ACDBECFD.tmp
+./prog.alt -d ABXYEFCD.tmp ACDBECFD.tmp
 echo 1>&2
 
-read -r -n 1 -p "Press any key to run: ./prog ABXYEFCD.tmp ACDBECFD.tmp: "
+read -r -n 1 -p "Press any key to run: ./prog.alt ABXYEFCD.tmp ACDBECFD.tmp: "
 echo 1>&2
-./prog ABXYEFCD.tmp ACDBECFD.tmp
+./prog.alt ABXYEFCD.tmp ACDBECFD.tmp
 echo 1>&2
 
 rm -f curds.tmp whey.tmp
@@ -62,14 +62,14 @@ echo 1>&2
 ./makeholes -n 1000 whey.tmp
 echo 1>&2
 
-read -r -n 1 -p "Press any key to run: ./prog curds.tmp whey.tmp (space = next page, q = quit): "
+read -r -n 1 -p "Press any key to run: ./prog.alt curds.tmp whey.tmp (space = next page, q = quit): "
 echo 1>&2
-./prog curds.tmp whey.tmp | less -rEXFK
+./prog.alt curds.tmp whey.tmp | less -rEXFK
 echo 1>&2
 
-read -r -n 1 -p "Press any key to run: ./avgtime.sh 100 ./prog curds.tmp whey.tmp: "
+read -r -n 1 -p "Press any key to run: ./avgtime.sh 100 ./prog.alt curds.tmp whey.tmp: "
 echo 1>&2
-./avgtime.sh 100 ./prog curds.tmp whey.tmp
+./avgtime.sh 100 ./prog.alt curds.tmp whey.tmp
 echo 1>&2
 
 read -r -n 1 -p "Press any key to run: cp -vf war-and-peace.txt nuked.tmp: "
@@ -82,14 +82,14 @@ echo 1>&2
 ./makeholes -c'~' -n 1000 nuked.tmp
 echo 1>&2
 
-echo "$ ./prog war-and-peace.txt nuked.tmp" 1>&2
+echo "$ ./prog.alt war-and-peace.txt nuked.tmp" 1>&2
 read -r -n 1 -p "Press any key to continue (space = next page, q = quit): "
 echo 1>&2
-./prog war-and-peace.txt nuked.tmp | less -rEXFK
+./prog.alt war-and-peace.txt nuked.tmp | less -rEXFK
 echo 1>&2
 
-echo "$ ./avgtime.sh 100 ./prog war-and-peace.txt nuked.tmp" 1>&2
+echo "$ ./avgtime.sh 100 ./prog.alt war-and-peace.txt nuked.tmp" 1>&2
 read -r -n 1 -p "Press any key to continue: "
 echo 1>&2
-./avgtime.sh 100 ./prog war-and-peace.txt nuked.tmp
+./avgtime.sh 100 ./prog.alt war-and-peace.txt nuked.tmp
 echo 1>&2
