@@ -2949,6 +2949,25 @@ takes care to warn about this issue after printing an incorrect big-endian
 result. Error messages become garbled, though.</p></li>
 </ul>
 <p>–</p>
+<div id="2015_howe">
+<h2 id="howe">2015/howe</h2>
+</div>
+<h3 id="status-known-bug---please-help-us-fix-12">STATUS: known bug - please help us fix</h3>
+<p>The test scripts do not seem to work properly with bash but this would be ideal
+as not all systems have a compatible shell (they assume a POSIX compliant
+shell). One, with bash, might see:</p>
+<pre><code>    ./prog-test.sh
+    &lt;&lt;&lt; A=&#39;1&#39; B=&#39;1&#39;
+    prog: : No such file or directory
+    &gt;&gt;&gt; got=0 expect=0 -OK-
+    &lt;&lt;&lt; A=&#39;1&#39; B=&#39;A&#39;
+    prog: : No such file or directory
+    &gt;&gt;&gt; got=0 expect=2 FAIL</code></pre>
+<p>It would appear that the variable passed to the command in the function,
+<code>distance</code>, is empty.</p>
+<p>The same problem exists in the
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/howe/prog.alt-test.sh">prog.alt-test.sh</a>, particularly
+because it is the same thing as the other, just updated to use <code>prog.alt</code>.</p>
 <div id="2015_mills2">
 <h2 id="mills2">2015/mills2</h2>
 </div>
@@ -3028,7 +3047,7 @@ fixing the syntax error in the generated <code>ioccc.json</code> file.</p>
 <div id="2018_mills">
 <h2 id="mills-1">2018/mills</h2>
 </div>
-<h3 id="status-known-bug---please-help-us-fix-12">STATUS: known bug - please help us fix</h3>
+<h3 id="status-known-bug---please-help-us-fix-13">STATUS: known bug - please help us fix</h3>
 <h3 id="source-code-2018millsprog.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/mills/prog.c">2018/mills/prog.c</a></h3>
 <h3 id="information-2018millsindex.html">Information: <a href="2018/mills/index.html">2018/mills/index.html</a></h3>
 <p>After exiting the program (with ctrl-e) if you try running it again you will

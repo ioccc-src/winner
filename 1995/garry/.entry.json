@@ -71,7 +71,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "deobfuscated and formatted source code"
+	    "entry_text" : "unobfuscated and formatted source code"
 	},
 	{
 	    "file_path" : "1995_garry.tar.bz2",

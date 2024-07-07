@@ -50,20 +50,12 @@
 	    "entry_text" : "script to try entry"
 	},
 	{
-	    "file_path" : "deobfuscated/ant-c89.c",
+	    "file_path" : "ant.alt.c",
 	    "inventory_order" : 120,
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "author provided deobfuscated code converted from K&R"
-	},
-	{
-	    "file_path" : "deobfuscated/ant.c",
-	    "inventory_order" : 120,
-	    "OK_to_edit" : true,
-	    "display_as" : "c",
-	    "display_via_github" : true,
-	    "entry_text" : "author provided deobfuscated code"
+	    "entry_text" : "author provided unobfuscated code"
 	},
 	{
 	    "file_path" : "try.alt.sh",
@@ -71,23 +63,15 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "shellscript",
 	    "display_via_github" : true,
-	    "entry_text" : "script to try deobfuscated code"
+	    "entry_text" : "script to try unobfuscated code"
 	},
 	{
-	    "file_path" : "deobfuscated/Makefile",
+	    "file_path" : "test.alt.mk",
 	    "inventory_order" : 140,
 	    "OK_to_edit" : true,
 	    "display_as" : "makefile",
 	    "display_via_github" : true,
-	    "entry_text" : "author provided Makefile for deobfuscated code"
-	},
-	{
-	    "file_path" : "deobfuscated/test.mk",
-	    "inventory_order" : 140,
-	    "OK_to_edit" : true,
-	    "display_as" : "makefile",
-	    "display_via_github" : true,
-	    "entry_text" : "author provided test suite Makefile for deobfuscated code"
+	    "entry_text" : "author provided test suite Makefile for unobfuscated code"
 	},
 	{
 	    "file_path" : "ant.test.mk",
@@ -111,7 +95,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "makefile",
 	    "display_via_github" : true,
-	    "entry_text" : "test suite Makefile for deobfuscated code"
+	    "entry_text" : "test suite Makefile for unobfuscated code"
 	},
 	{
 	    "file_path" : "1993_ant.tar.bz2",

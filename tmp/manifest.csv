@@ -570,11 +570,9 @@
 1990,westley,index.html,4294967295,false,html,false,this web page
 1991,ant,ant.c,20,true,c,true,entry source code
 1991,ant,Makefile,30,true,makefile,true,entry Makefile
-1991,ant,ant.alt.c,40,true,c,true,alternate source code
+1991,ant,ant.alt2.c,40,true,c,true,alternate source code
 1991,ant,ant.orig.c,50,false,c,true,original source code
-1991,ant,deobfuscated/ant.c,140,true,c,true,author provided deobfuscated code
-1991,ant,deobfuscated/ant-c89.c,140,true,c,true,author provided deobfuscated code converted from K&R
-1991,ant,deobfuscated/Makefile,150,true,c,true,author provided Makefile for deobfuscated code
+1991,ant,ant.alt.c,140,true,c,true,author provided unobfuscated code
 1991,ant,1991_ant.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 1991,ant,README.md,4000000000,true,markdown,true,markdown source for this web page
 1991,ant,.entry.json,4000000000,true,json,true,entry summary and manifest in JSON
@@ -712,13 +710,12 @@
 1992,ant,Makefile,30,true,makefile,true,entry Makefile
 1992,ant,ant.orig.c,50,false,c,true,original source code
 1992,ant,try.sh,100,true,shellscript,true,script to try entry
-1992,ant,deobfuscated/ant.c,140,true,c,true,author provided deobfuscated code
-1992,ant,deobfuscated/sleep.c,140,true,c,true,author provided code for those who need a nap
+1992,ant,ant.alt.c,140,true,c,true,author provided unobfuscated code
+1992,ant,sleep.c,140,true,c,true,author provided code for those who need a nap
 1992,ant,ant.README.txt,150,true,text,true,am man page
 1992,ant,ant.test.mk,150,true,makefile,true,Makefile to demonstrate entry
-1992,ant,deobfuscated/Makefile,150,true,makefile,true,author provided Makefile for deobfuscated code
-1992,ant,try.alt.sh,150,true,shellscript,true,script to try deobfuscated code
-1992,ant,ant.test.alt.mk,160,true,makefile,true,Makefile to demonstrate deobfuscated code
+1992,ant,try.alt.sh,150,true,shellscript,true,script to try unobfuscated code
+1992,ant,ant.test.alt.mk,160,true,makefile,true,Makefile to demonstrate unobfuscated code
 1992,ant,1992_ant.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 1992,ant,README.md,4000000000,true,markdown,true,markdown source for this web page
 1992,ant,.entry.json,4000000000,true,json,true,entry summary and manifest in JSON
@@ -848,14 +845,12 @@
 1993,ant,ant.orig.c,50,false,c,true,original source code
 1993,ant,ant.txt,100,true,text,false,ag man page
 1993,ant,try.sh,100,true,shellscript,true,script to try entry
-1993,ant,deobfuscated/ant.c,120,true,c,true,author provided deobfuscated code
-1993,ant,deobfuscated/ant-c89.c,120,true,c,true,author provided deobfuscated code converted from K&R
-1993,ant,try.alt.sh,130,true,shellscript,true,script to try deobfuscated code
-1993,ant,deobfuscated/Makefile,140,true,makefile,true,author provided Makefile for deobfuscated code
-1993,ant,deobfuscated/test.mk,140,true,makefile,true,author provided test suite Makefile for deobfuscated code
+1993,ant,ant.alt.c,120,true,c,true,author provided unobfuscated code
+1993,ant,try.alt.sh,130,true,shellscript,true,script to try unobfuscated code
+1993,ant,test.alt.mk,140,true,makefile,true,author provided test suite Makefile for unobfuscated code
 1993,ant,ants.txt,150,false,text,false,lyrics of the Ants Go Marching song
 1993,ant,ant.test.mk,150,true,makefile,true,test suite Makefile
-1993,ant,ant.alt.test.mk,160,true,makefile,true,test suite Makefile for deobfuscated code
+1993,ant,ant.alt.test.mk,160,true,makefile,true,test suite Makefile for unobfuscated code
 1993,ant,1993_ant.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 1993,ant,README.md,4000000000,true,markdown,true,markdown source for this web page
 1993,ant,.entry.json,4000000000,true,json,true,entry summary and manifest in JSON
@@ -1158,7 +1153,7 @@
 1995,garry,garry.data,100,true,text,true,modified README.md for input to program
 1995,garry,try.alt.sh,100,true,shellscript,true,script to try alternate code
 1995,garry,try.sh,100,true,shellscript,true,script to try entry
-1995,garry,garry.fmt.c,150,true,c,true,deobfuscated and formatted source code
+1995,garry,garry.fmt.c,150,true,c,true,unobfuscated and formatted source code
 1995,garry,1995_garry.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 1995,garry,README.md,4000000000,true,markdown,true,markdown source for this web page
 1995,garry,.entry.json,4000000000,true,json,true,entry summary and manifest in JSON
@@ -3527,12 +3522,13 @@
 2015,howe,prog.orig.c,50,false,c,true,original source code
 2015,howe,avgtime.sh,100,true,shellscript,true,support script
 2015,howe,makeholes.c,100,true,c,true,C code to add random holes to a file
+2015,howe,prog.alt-test.sh,100,true,shellscript,true,script to run test suite with alternate code
 2015,howe,prog-test.sh,100,true,shellscript,true,script to run test suite
+2015,howe,try.alt.sh,100,true,shellscript,true,script to try alternate code
 2015,howe,try.sh,100,true,shellscript,true,script to try entry
 2015,howe,cc.1,159,true,man,true,cc man page
-2015,howe,deobfuscated/Makefile,200,true,makefile,true,deobfuscated Makefile
-2015,howe,deobfuscated/err.h,210,true,c,true,deobfuscated err.h header file
-2015,howe,deobfuscated/prog.c,210,true,c,true,deobfuscated source code
+2015,howe,err.h,210,true,c,true,unobfuscated err.h header file
+2015,howe,prog.alt2.c,210,true,c,true,unobfuscated source code
 2015,howe,war-and-peace.txt,250,true,text,false,War and Peace translated to English
 2015,howe,2015_howe.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 2015,howe,README.md,4000000000,true,markdown,true,markdown source for this web page
@@ -4121,7 +4117,7 @@
 2020,endoh2,obfuscation/gen.rb,200,true,ruby,true,ruby code to compose items and prog.c in artistic way
 2020,endoh2,obfuscation/glyphs.txt,200,true,text,false,glyphs data for deobfuscation/gen.rb
 2020,endoh2,obfuscation/index.html,200,true,html,false,deobfuscation information web page
-2020,endoh2,obfuscation/prog.c,200,true,c,true,deobfuscated source code
+2020,endoh2,obfuscation/prog.c,200,true,c,true,unobfuscated source code
 2020,endoh2,obfuscation/tmpl.txt,200,true,text,false,template for deobfuscation/gen.rb output
 2020,endoh2,2020_endoh2.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 2020,endoh2,README.md,4000000000,true,markdown,true,markdown source for this web page

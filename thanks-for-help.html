@@ -1409,30 +1409,24 @@ been fixed so that if one passes no arg it will still likely crash.</p>
 <h3 id="winning-entry-source-code-ant.c">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1991/ant/ant.c">ant.c</a></h3>
 </div>
 <p>The author, <a href="authors.html#Anthony_C_Howe">Anthony C Howe</a>, provided a
-deobfuscated version which was put in by <a href="#cody">Cody</a> with thanks to Anthony!
-The <code>deobfuscated</code> directory has the code and Makefile. The entry’s Makefile was
-updated to compile the alt code, if <code>make alt</code> is used, but in a way that keeps
-both directories clean (the deobfuscated version will not be in the entry’s
-directory and vice versa) but also allowing one to just do <code>./ant.alt2</code> (see
-below for why <code>alt2</code>). There are two versions here,
-<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1991/ant/deobfuscated/ant.c">deobfuscated/ant.c</a> and
-<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1991/ant/deobfuscated/ant-c89.c">deobfuscated/ant-c89.c</a> along
-with the <code>Makefile</code>. The latter C file was converted from <code>K&amp;R</code> by Anthony (the
-other one did not compile without a few fixes made by Cody).</p>
-<p><a href="#cody">Cody</a> also added <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1991/ant/ant.alt.c">alternate code</a> that
+unobfuscated version which was put in by <a href="#cody">Cody</a> with thanks to Anthony!
+This was put in as <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1991/ant/ant.alt.c">ant.alt.c</a>. There were two
+versions, one which was converted from <code>K&amp;R</code> and worked without modification and
+another which Cody had to slightly modify to get it to work in modern systems.
+But since only one was needed the one that worked already was used.</p>
+<p><a href="#cody">Cody</a> also added <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1991/ant/ant.alt2.c">another version</a> that
 will be a bit easier to use for those familiar with vim in the following ways
 (we don’t want vi users to also not be able to use it or exit it, now do we ?
 :-) ):</p>
 <ul>
 <li>Use <code>0</code> to go to first column.</li>
 <li>Use <code>$</code> to go to last column.</li>
-<li>Hit ESC to go back to command mode (instead of form-feed, ctrl-L).</li>
+<li>Hit ESC to go back to command mode (instead of form-feed, ctrl-L like the original).</li>
 <li>Use <code>w</code> to go forwards one word.</li>
 <li>Use <code>b</code> to go backwards one word.</li>
 <li>Use <code>q</code> to exit.</li>
 </ul>
 <p>The other keys were left unchanged.</p>
-<p>(As this was done first it was left as <code>alt</code> and not changed to <code>alt2</code>.)</p>
 <div id="1991_brnstnd">
 <h2 id="winning-entry-1991brnstnd">Winning entry: <a href="1991/brnstnd/index.html">1991/brnstnd</a></h2>
 <h3 id="winning-entry-source-code-brnstnd.c">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1991/brnstnd/brnstnd.c">brnstnd.c</a></h3>
@@ -1704,12 +1698,9 @@ rule where a line was not ended with a <code>\</code> but should have been.</p>
 necessary to include <code>time.h</code> so Cody did this as well as this exists in other
 systems too.</p>
 <p>Cody also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/ant/try.sh">try.sh</a> script.</p>
-<p>The author, <a href="authors.html#Anthony_C_Howe">Anthony C Howe</a>, provided a
-deobfuscated version that Cody added in, with thanks to Anthony! The source code
-and the <code>Makefile</code> as well as <code>sleep.c</code> are in the <code>deobfuscated/</code> directory.
-The entry’s Makefile was updated in a way that keeps the deobfuscated code
-separate from the entry’s code but which allows one to use the deobfuscated
-Makefile when compiling the alt code (via <code>make alt</code>). For this version,
+<p>The author, <a href="authors.html#Anthony_C_Howe">Anthony C Howe</a>, provided an
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/ant/ant.alt.c">unobfuscated version</a> that Cody added in, with
+thanks to Anthony! For this version,
 <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/ant/try.alt.sh">try.alt.sh</a> was added and an alternate test
 Makefile (along the lines of the author’s provided test Makefile) was added,
 updated to use <code>ant.alt</code>.</p>
@@ -1878,13 +1869,12 @@ encourage you to try the original without two args :-)</p>
 </div>
 <p><a href="#cody">Cody</a> added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1993/ant/try.sh">try.sh</a> script and a data file,
 <a href="1993/ant/ants.txt">ants.txt</a>, full of ants for the script.</p>
-<p>The author, <a href="authors.html#Anthony_C_Howe">Anthony C Howe</a>, provided a
-deobfuscated version that Cody added in, with thanks to Anthony! The source code
-(which might have had to be fixed to compile with modern compilers whereas the
-<code>-c89</code> version was converted from <code>K&amp;R</code> and worked without any fixes) and its
-Makefile was put in the <code>deobfuscated</code> subdirectory to keep them separate. The
-entry’s Makefile was updated so that it uses the deobfuscated version’s Makefile
-but allowing one to run <code>./ant.alt</code>.</p>
+<p>The author, <a href="authors.html#Anthony_C_Howe">Anthony C Howe</a>, provided an
+unobfuscated version that Cody added in, with thanks to Anthony! The source code
+This was put in as <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1991/ant/ant.alt.c">ant.alt.c</a>. There were two
+versions, one which was converted from <code>K&amp;R</code> and worked without modification and
+another which Cody had to slightly modify to get it to work in modern systems.
+But since only one was needed the one that worked already was used.</p>
 <div id="1993_cmills">
 <h2 id="winning-entry-1993cmills">Winning entry: <a href="1993/cmills/index.html">1993/cmills</a></h2>
 <h3 id="winning-entry-source-code-cmills.c-1">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1993/cmills/cmills.c">cmills.c</a></h3>
@@ -4207,6 +4197,11 @@ and Peace text file, fixed the <a href="https://github.com/ioccc-src/temp-test-i
 resulted in standard input errors in piping to <code>bc(1)</code>) and added the
 <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/howe/cc.1">cc.1</a> man page as not all systems have it (in fact it’s
 <code>gcc(1)</code> from Rocky Linux).</p>
+<p>The author, <a href="authors.html#Anthony_C_Howe">Anthony C Howe</a>, provided an
+unobfuscated version that Cody added in, with thanks to Anthony! As the author
+had already provided an alternate version (which was actually the original
+entry), this was put in <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/howe/prog.alt2.c">prog.alt2.c</a>. This
+addition prompted the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/howe/try.alt.sh">try.alt.sh</a> script.</p>
 <div id="2015_mills1">
 <h2 id="winning-entry-2015mills1">Winning entry: <a href="2015/mills1/index.html">2015/mills1</a></h2>
 <h3 id="winning-entry-source-code-prog.c-19">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/mills1//prog.c">prog.c</a></h3>

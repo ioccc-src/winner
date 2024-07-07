@@ -112,11 +112,11 @@ PROG= prog
 #
 OBJ= ${PROG}.o
 CSRC= ${PROG}.o
-DATA= deobfuscated/Makefile deobfuscated/err.h deobfuscated/prog.c
+DATA=
 TARGET= ${PROG}
 #
-ALT_OBJ= ${PROG}.alt.o
-ALT_TARGET= ${PROG}.alt
+ALT_OBJ= ${PROG}.alt.o ${PROG}.alt2.o
+ALT_TARGET= ${PROG}.alt ${PROG}.alt2
 
 
 #################
@@ -147,6 +147,13 @@ alt: data ${ALT_TARGET}
 
 ${PROG}.alt: ${PROG}.alt.c
 	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
+
+${PROG}.alt2: ${PROG}.alt2.c
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
+
+# Test suite for alt code
+test.alt: makeholes prog.alt-test.sh ${TARGET}
+	${SHELL} ./prog.alt-test.sh
 
 # data files
 #

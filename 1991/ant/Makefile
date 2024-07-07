@@ -119,8 +119,8 @@ OBJ= ${PROG}.o
 DATA= README.md
 TARGET= ${PROG} hill mole
 #
-ALT_OBJ= ${PROG}.alt.o deobfuscated/${PROG}.o
-ALT_TARGET= ${PROG}.alt deobfuscated/${PROG}
+ALT_OBJ= ${PROG}.alt.o ${PROG}.alt2.o
+ALT_TARGET= ${PROG}.alt ${PROG}.alt2
 
 
 #################
@@ -154,25 +154,16 @@ alt: data ${ALT_TARGET}
 ${PROG}.alt: ${PROG}.alt.c hill
 	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
-# We keep the deobfuscated source code and Makefile in deobfuscated/, and use
-# that Makefile but then move the compiled programs to the entry's directory to
-# keep both directories clean and to allow the deobfuscated Makefile and code to
-# be used but not require the user to do:
-#
-#	./deobfuscated/ant
-#	./deobfuscated/ant-c89
-#
-# but rather simply:
-#
-#	./ant.alt2
-#	./ant.alt2-c89
-#
-# The alt2 is because this is the secondary alt.
-deobfuscated/${PROG}: deobfuscated/${PROG}.c deobfuscated/${PROG}-c89.c
-	${MAKE} -C deobfuscated ant
-	${MV} -vf deobfuscated/ant ant.alt2
-	${MAKE} -C deobfuscated ant-c89
-	${MV} -vf deobfuscated/ant-c89 ant.alt2-c89
+${PROG}.alt2: ${PROG}.alt2.c
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
+
+hill.alt: README.md
+	${RM} -f $@
+	${CP} -f -v $? $@
+
+mole.alt: ${PROG}.c hill
+	${RM} -f $@
+	${CAT} ${PROG}.c hill.alt > $@
 
 # data files
 #
@@ -240,7 +231,7 @@ clean:
 
 clobber: clean
 	${RM} -f ${TARGET} ${ALT_TARGET}
-	${RM} -rf *.dSYM ant.alt ant.alt2 ant.alt2-c89
+	${RM} -rf *.dSYM ant.alt ant.alt2
 	@-if [ -e sandwich ]; then \
 	    ${RM} -f sandwich; \
 	    echo 'ate sandwich'; \

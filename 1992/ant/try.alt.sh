@@ -10,7 +10,7 @@ if [[ -z "$CC" ]]; then
     CC="cc"
 fi
 
-make CC="$CC" alt >/dev/null || exit 1
+make clobber CC="$CC" alt >/dev/null || exit 1
 
 # clear screen after compilation so that only the entry is shown
 clear
@@ -23,13 +23,13 @@ echo 1>&2
 
 
 
-echo "$ ./am.alt Makefile am_clobber    # clobber everything except am" 1>&2
+echo "$ ./am.alt Makefile am_alt_clobber    # clobber everything except am" 1>&2
 read -r -n 1 -p "Press any key to continue: "
 echo 1>&2
-./am.alt Makefile am_clobber	# clobber everything except am
+./am.alt Makefile am_alt_clobber # clobber everything except am.alt
 echo 1>&2
 
-echo "$ ./am.alt ant.test.alt.mk    # run the test Makefile with am" 1>&2
+echo "$ ./am.alt ant.test.alt.mk    # run the test Makefile with am.alt" 1>&2
 read -r -n 1 -p "Press any key to continue: "
 echo 1>&2
 ./am.alt ant.test.alt.mk		# run the test Makefile with am.alt

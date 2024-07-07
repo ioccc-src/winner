@@ -66,6 +66,22 @@
 	    "entry_text" : "script to run test suite"
 	},
 	{
+	    "file_path" : "prog.alt-test.sh",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "shellscript",
+	    "display_via_github" : true,
+	    "entry_text" : "script to run test suite with alternate code"
+	},
+	{
+	    "file_path" : "try.alt.sh",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "shellscript",
+	    "display_via_github" : true,
+	    "entry_text" : "script to try alternate code"
+	},
+	{
 	    "file_path" : "try.sh",
 	    "inventory_order" : 100,
 	    "OK_to_edit" : true,
@@ -82,28 +98,20 @@
 	    "entry_text" : "cc man page"
 	},
 	{
-	    "file_path" : "deobfuscated/Makefile",
-	    "inventory_order" : 200,
-	    "OK_to_edit" : true,
-	    "display_as" : "makefile",
-	    "display_via_github" : true,
-	    "entry_text" : "deobfuscated Makefile"
-	},
-	{
-	    "file_path" : "deobfuscated/err.h",
+	    "file_path" : "err.h",
 	    "inventory_order" : 210,
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "deobfuscated err.h header file"
+	    "entry_text" : "unobfuscated err.h header file"
 	},
 	{
-	    "file_path" : "deobfuscated/prog.c",
+	    "file_path" : "prog.alt2.c",
 	    "inventory_order" : 210,
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "deobfuscated source code"
+	    "entry_text" : "unobfuscated source code"
 	},
 	{
 	    "file_path" : "war-and-peace.txt",

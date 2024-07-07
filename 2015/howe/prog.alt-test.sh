@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 # Assume a POSIX compliant shell.
 
-make all || exit 1
-PROG="./prog"
+make alt || exit 1
+PROG="./prog.alt"
 
 args=$(getopt 'f:w' "$@")
 status="$?"
 if [[ $status -ne 0 ]]; then
-	echo "usage: prog-test.sh [-w][-f flags]"
+	echo "usage: prog.alt-test.sh [-w][-f flags]"
 	exit 2
 fi
 set -- "$args"
