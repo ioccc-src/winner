@@ -43,7 +43,7 @@ writing by [contacting the judges](../contact.html).
 ## IOCCC Guidelines version
 </div>
 
-**`|`**   These [IOCCC guidelines](guidelines.html) are version **28.5 2024-07-05**.
+**`|`**   These [IOCCC guidelines](guidelines.html) are version **28.6 2024-07-06**.
 
 **IMPORTANT**: Be **SURE** to read the [IOCCC rules](rules.html).
 
@@ -956,18 +956,18 @@ We believe that Mark Twain's quote:
 
 ... is a good motto for those writing code for the IOCCC.
 
-**`|`**   The [IOCCC size tool source](https://github.com/ioccc-src/mkiocccentry/blob/master/iocccsize.c)
-is not an original work, unless you are [Anthony C
+The IOCCC size tool source is not an original work, unless you are [Anthony C
 Howe](../authors.html#Anthony_C_Howe), in which case it is original!  :-)
-Submitting source that uses the content of iocccsize.c, unless you are
+Submitting source that uses the content of
+[iocccsize.c](https://github.com/ioccc-src/mkiocccentry/blob/master/iocccsize.c), unless you are
 [Anthony C Howe](../authors.html#Anthony_C_Howe), might run the risk of
 violating [Rule 7](rules.html#rule7).
 
-**`|`**   The [txzchk
-tool source](https://github.com/ioccc-src/mkiocccentry/blob/master/txzchk.c)
-is not an original work, unless you are [Cody Boone
+**`|`**   The `txzchk`
+tool source is not an original work, unless you are [Cody Boone
 Ferguson](../authors.html#Cody_Boone_Ferguson), in which case it is original!  :-)
-Submitting source that uses the content of txzchk.c, unless you are
+Submitting source that uses the content of
+[txzchk.c](https://github.com/ioccc-src/mkiocccentry/blob/master/txzchk.c), unless you are
 [Cody Boone Ferguson](../authors.html#Cody_Boone_Ferguson), might run the risk of
 violating [Rule 7](rules.html#rule7).
 
@@ -985,7 +985,7 @@ Submitting source that uses the content of these tools, unless you are
 [Landon Curt Noll](http://www.isthe.com/chongo/index.html), might run the risk of
 violating [Rule 7](rules.html#rule7).
 
-**`|`**   Neither the [jparse tool and
+**`|`**   Neither the [JSON parser and
 library](https://github.com/ioccc-src/mkiocccentry/blob/master/jparse/README.md)
 nor [jstrencode](https://github.com/ioccc-src/mkiocccentry/blob/master/jparse/jstrencode.c)
 nor [jstrdecode](https://github.com/ioccc-src/mkiocccentry/blob/master/jparse/jstrdecode.c)
@@ -1061,7 +1061,7 @@ and doing something interesting.  So you might want to code accordingly and stat
 >   This submission factors integers between 1 and `2305567963945518424753102147331756070`.
 >   Attempting to factor anything else will cause the program to insult your pet fish Eric.
 
-The [judges](../judges.html) might not have a pet fish named Eric, so might want to state:
+The [judges](../judges.html) might not have a pet fish named Eric, so you might want to state:
 
 >   This submission factors integers between 1 and
 `2305567963945518424753102147331756070`.  Attempting to factor anything else
