@@ -110,7 +110,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.4.1 2024-04-28"
+export VERSION="1.4.2 2024-07-07"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -222,7 +222,7 @@ function output_award
 	echo "$0: ERROR: in output_award: no award found in .entry.json file: $ENTRY_JSON_PATH" 1>&2
 	return 5
     fi
-    echo "**$AWARD_STRING**"
+    echo "$AWARD_STRING"
     return 0
 }
 
@@ -648,7 +648,7 @@ for YYYY_DIR in $(< "$YEAR_FILE"); do
     #
     ENTRY_NAME=$(basename "$YYYY_DIR")
     export ENTRY_NAME
-    echo "* [**$YYYY_DIR**]($ENTRY_NAME/index.html) - $AWARD"
+    echo "* [**$YYYY_DIR**]($ENTRY_NAME/index.html) - **$AWARD**"
 done | if [[ -z $NOOP ]]; then
     cat >> "$TMP_FILE"
 else

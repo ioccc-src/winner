@@ -85,7 +85,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.3.2 2024-05-19"
+export VERSION="1.3.3 2024-07-07"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -227,7 +227,7 @@ function output_award
 	echo "$0: ERROR: in output_award: no award found in .entry.json file: $ENTRY_JSON_PATH" 1>&2
 	return 5
     fi
-    echo "**$AWARD_STRING**"
+    echo "$AWARD_STRING"
     return 0
 }
 
@@ -797,7 +797,7 @@ for YYYY in $("$TAC_TOOL" "$TOP_FILE"); do
 
 	# output markdown for this entry
 	#
-	echo "* <div id=\"${YEAR_DIR}_${ENTRY_DIR}\">[**$YYYY_DIR**]($YYYY_DIR/index.html) - $AWARD</div>"
+	echo "* <div id=\"${YEAR_DIR}_${ENTRY_DIR}\">[**$YYYY_DIR**]($YYYY_DIR/index.html) - **$AWARD**</div>"
     done | if [[ -z $NOOP ]]; then
         cat >> "$TMP_YEARS_MD"
     else
