@@ -3520,7 +3520,7 @@
 2015,howe,Makefile,30,true,makefile,true,entry Makefile
 2015,howe,prog.alt.c,40,true,c,true,alternate source code
 2015,howe,prog.orig.c,50,false,c,true,original source code
-2015,howe,avgtime.sh,100,true,shellscript,true,support script
+2015,howe,avgtime.sh,100,true,shellscript,true,report average time running a command N times
 2015,howe,makeholes.c,100,true,c,true,C code to add random holes to a file
 2015,howe,prog.alt-test.sh,100,true,shellscript,true,script to run test suite with alternate code
 2015,howe,prog-test.sh,100,true,shellscript,true,script to run test suite

@@ -134,6 +134,7 @@ a region of edits are highly unlikely.
     Basic test program verifies known test edit distances and `patch(1)` support.
 
 * [avgtime.sh](%%REPO_URL%%/2015/howe/avgtime.sh)
+    Run `time(1)` on a command `N` times to determine its average runtime.
 
 * [makeholes.c](%%REPO_URL%%/2015/howe/makeholes.c)
     Random edits (holes) made to a file in-place.
