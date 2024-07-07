@@ -4,6 +4,8 @@
 #
 # Copyright (c) 2024 by Landon Curt Noll.  All Rights Reserved.
 #
+# ... with a slight improvement by Cody Boone Ferguson.
+#
 # Permission to use, copy, modify, and distribute this software and
 # its documentation for any purpose and without fee is hereby granted,
 # provided that the above copyright, this permission notice and text
@@ -449,7 +451,12 @@ fi
 #
 # We also add ioccc.css and var.mk from the top level.
 #
-git ls-files "$ENTRY_PATH" > "$TMP_FILE_LIST"
+# At the suggestion of Cody Boone Ferguson / @xexyl we use git ls-files instead
+# of find(1) because this way one needn't worry about other files that might be
+# in an entry's directory, be it a swap file or something else, that used to
+# cause a problem when updating the manifest. Since only files that are under
+# git control matter using git ls-files addresses this problem in a nice way.
+"$GIT_TOOL" ls-files "$ENTRY_PATH" > "$TMP_FILE_LIST"
 status="$?"
 if [[ $status -ne 0 ]]; then
     echo "$0: ERROR: find $ENTRY_PATH -type f -print > $TMP_FILE_LIST failed, error: $status" 1>&2
