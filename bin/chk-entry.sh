@@ -83,7 +83,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.1.7 2024-04-28"
+export VERSION="1.1.8 2024-07-06"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -449,7 +449,7 @@ fi
 #
 # We also add ioccc.css and var.mk from the top level.
 #
-find "$ENTRY_PATH" -type f ! -iname .DS_Store ! -iname '.*.swp' ! -iname '*~' -print > "$TMP_FILE_LIST"
+git ls-files "$ENTRY_PATH" > "$TMP_FILE_LIST"
 status="$?"
 if [[ $status -ne 0 ]]; then
     echo "$0: ERROR: find $ENTRY_PATH -type f -print > $TMP_FILE_LIST failed, error: $status" 1>&2
