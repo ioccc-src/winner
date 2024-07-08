@@ -403,12 +403,24 @@ Location: <a href="../../location.html#CA">CA</a> - <em>Canada</em></li>
 <!-- BEFORE: 1st line of markdown file: 2004/hibachi/README.md -->
 <h2 id="to-build">To build:</h2>
 <pre><code>    make</code></pre>
+<p>There is an alternate version that is unobfuscated, provided by the author in
+2024. See <a href="#alternate-code">Alternate code</a> below.</p>
 <h2 id="to-use">To use:</h2>
 <pre><code>    cd build; ./hibachi-start.sh &amp;</code></pre>
 <p>Then use your web browser to visit <code>http://localhost:8008/</code>. When you’re
 finished make sure to kill <code>hibachi</code>.</p>
 <p>NOTE: you must be in the <code>build</code> directory when running <code>hibachi-start.sh</code> for
 this to work right.</p>
+<h2 id="alternate-code">Alternate code:</h2>
+<p>This version, contained in <code>src-alt/</code>, is an unobfuscated version provided by
+the author in 2024.</p>
+<h3 id="alternate-build">Alternate build:</h3>
+<pre><code>    make alt</code></pre>
+<p>This will run the <code>configure</code> script and then compile and link in (in
+<code>build-alt/</code>) the binary <code>hibachi</code>.</p>
+<h3 id="alternate-use">Alternate use:</h3>
+<pre><code>    cd build-alt ; ./hibachi-start.sh &amp;</code></pre>
+<p>Then with your browser do the same as for the original source.</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>This entry violates the <a href="../../2004/guidelines.txt">guidelines</a> in so many ways! We
 are not exactly sure how many organisations will be upset with this entry, but
@@ -534,19 +546,35 @@ just try to understand the program via the source.</p>
 </div>
 <h2 id="primary-files">Primary files</h2>
 <ul>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/hibachi/hibachi.alt.c">hibachi.alt.c</a> - author provided unobfuscated code</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/hibachi/hibachi.c">hibachi.c</a> - entry source code</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/hibachi/Makefile">Makefile</a> - entry Makefile</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/hibachi/hibachi.orig.c">hibachi.orig.c</a> - original source code</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/hibachi/src-alt/configure">src-alt/configure</a> - GNU Autoconf script for alt server</li>
+<li><a href="src-alt/localhost/index.html">src-alt/localhost/index.html</a> - home page of alt HIBACHI web server</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/hibachi/src/configure">src/configure</a> - GNU Autoconf script</li>
-<li><a href="src/localhost/index.html">src/localhost/index.html</a> - home page of HIBACHI web server</li>
+<li><a href="src/localhost/index.html">src/localhost/index.html</a> - home page of alt HIBACHI web server</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/hibachi/src-alt/IOCCC-2004/mkentry.c">src-alt/IOCCC-2004/mkentry.c</a> - IOCCC tool of 2004 to package entries</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/hibachi/src-alt/ioccc.c">src-alt/ioccc.c</a> - IOCCC size tool</li>
+<li><a href="src-alt/localhost/reference/rfc2616.html">src-alt/localhost/reference/rfc2616.html</a> - RFC 2616 - Hypertext Transfer Protocol - alt server</li>
+<li><a href="src-alt/localhost/test/perl/index.html">src-alt/localhost/test/perl/index.html</a> - perl test page of alt HIBACHI server</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/hibachi/src-alt/localhost/test/php/index.php">src-alt/localhost/test/php/index.php</a> - PHP making an ISO 8601:2000 calendar for alt server</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/hibachi/src-alt/localhost/test/ruby/index.rb">src-alt/localhost/test/ruby/index.rb</a> - ruby home page for alt server</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/hibachi/src-alt/localhost/test/shell/test0.sh">src-alt/localhost/test/shell/test0.sh</a> - POSIX shell CGI home page for alt server</li>
 <li><a href="src/localhost/CHANGES-OBFUSCATED.TXT">src/localhost/CHANGES-OBFUSCATED.TXT</a> - obfuscated changelog for code</li>
 <li><a href="src/localhost/reference/rfc2616.html">src/localhost/reference/rfc2616.html</a> - RFC 2616 - Hypertext Transfer Protocol</li>
 <li><a href="src/localhost/test/perl/index.html">src/localhost/test/perl/index.html</a> - perl test page of HIBACHI server</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/hibachi/src/localhost/test/php/index.php">src/localhost/test/php/index.php</a> - PHP making an ISO 8601:2000 calendar</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/hibachi/src/localhost/test/ruby/index.rb">src/localhost/test/ruby/index.rb</a> - ruby home page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/hibachi/src/localhost/test/shell/test0.sh">src/localhost/test/shell/test0.sh</a> - POSIX shell CGI home page</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/hibachi/src-alt/transform.sed">src-alt/transform.sed</a> - sed(1) script for building unobfuscated code</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/hibachi/src-alt/hibachi-start.sh">src-alt/hibachi-start.sh</a> - start the alt web server</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/hibachi/src-alt/localhost/test/perl/yahoo-ticker.pl">src-alt/localhost/test/perl/yahoo-ticker.pl</a> - stock price fetch example in Perl for alt server</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/hibachi/src/hibachi-start.sh">src/hibachi-start.sh</a> - start the web server</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/hibachi/src/localhost/test/perl/yahoo-ticker.pl">src/localhost/test/perl/yahoo-ticker.pl</a> - stock price fetch example in Perl</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/hibachi/src-alt/configure.in">src-alt/configure.in</a> - GNU Autoconf script for alt server</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/hibachi/src-alt/hibachi-start.sh.in">src-alt/hibachi-start.sh.in</a> - hibachi-start.sh declarations for alt server</li>
+<li><a href="src-alt/localhost/CHANGELOG.TXT">src-alt/localhost/CHANGELOG.TXT</a> - obfuscation change log for alt server</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/hibachi/src/configure.in">src/configure.in</a> - GNU Autoconf script</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/hibachi/src/hibachi-start.sh.in">src/hibachi-start.sh.in</a> - hibachi-start.sh declarations</li>
 <li><a href="src/localhost/CHANGELOG.TXT">src/localhost/CHANGELOG.TXT</a> - obfuscation change log</li>
@@ -558,6 +586,31 @@ just try to understand the program via the source.</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/hibachi/.entry.json">.entry.json</a> - entry summary and manifest in JSON</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/hibachi/.gitignore">.gitignore</a> - list of files that should not be committed under git</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/hibachi/.path">.path</a> - directory path from top level directory</li>
+<li><a href="src-alt/localhost/Img/cygwin-icon.gif">src-alt/localhost/Img/cygwin-icon.gif</a> - image for home page for alt server</li>
+<li><a href="src-alt/localhost/Img/freebsd.gif">src-alt/localhost/Img/freebsd.gif</a> - image for home page for alt server</li>
+<li><a href="src-alt/localhost/Img/hibachi-256-oc-nc-300x150.gif">src-alt/localhost/Img/hibachi-256-oc-nc-300x150.gif</a> - image for home page for alt server</li>
+<li><a href="src-alt/localhost/Img/hot-coal-edge-110-indent.png">src-alt/localhost/Img/hot-coal-edge-110-indent.png</a> - image for home page for alt server</li>
+<li><a href="src-alt/localhost/Img/logosml.256.png">src-alt/localhost/Img/logosml.256.png</a> - image for home page for alt server</li>
+<li><a href="src-alt/localhost/Img/php-small-trans-light.gif">src-alt/localhost/Img/php-small-trans-light.gif</a> - image for home page for alt server</li>
+<li><a href="src-alt/localhost/Img/powered-by-hibachi-150x75.png">src-alt/localhost/Img/powered-by-hibachi-150x75.png</a> - image for home page for alt server</li>
+<li><a href="src-alt/localhost/Img/rectangle_power_perl.gif">src-alt/localhost/Img/rectangle_power_perl.gif</a> - image for home page for alt server</li>
+<li><a href="src-alt/localhost/Img/sun_logo.gif">src-alt/localhost/Img/sun_logo.gif</a> - image for home page for alt server</li>
+<li><a href="src-alt/localhost/Img/win.gif">src-alt/localhost/Img/win.gif</a> - image for home page for alt server</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/hibachi/src-alt/localhost/style.css">src-alt/localhost/style.css</a> - CSS for home page for alt server</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/hibachi/src-alt/localhost/test/perl/yahoo-ticker.pl.in">src-alt/localhost/test/perl/yahoo-ticker.pl.in</a> - stock price fetch declarations for alt server</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/hibachi/src-alt/localhost/test/php/Date.php">src-alt/localhost/test/php/Date.php</a> - PHP example page support file for alt server</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/hibachi/src-alt/localhost/test/php/index_php.in">src-alt/localhost/test/php/index_php.in</a> - PHP example page support file for alt server</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/hibachi/src-alt/localhost/test/php/info.php">src-alt/localhost/test/php/info.php</a> - PHP example support file for alt server</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/hibachi/src-alt/localhost/test/php/info.php.in">src-alt/localhost/test/php/info.php.in</a> - PHP example page support file for alt server</li>
+<li><a href="src-alt/localhost/test/php/sendform.html">src-alt/localhost/test/php/sendform.html</a> - php example page support file for alt server</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/hibachi/src-alt/localhost/test/php/sendform.php">src-alt/localhost/test/php/sendform.php</a> - PHP example page support file for alt server</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/hibachi/src-alt/localhost/test/php/sendform.php.in">src-alt/localhost/test/php/sendform.php.in</a> - PHP example page support file for alt server</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/hibachi/src-alt/localhost/test/ruby/LUHN.rb">src-alt/localhost/test/ruby/LUHN.rb</a> - ruby example page support file for alt server</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/hibachi/src-alt/localhost/test/ruby/index_rb.in">src-alt/localhost/test/ruby/index_rb.in</a> - ruby example page support file for alt server</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/hibachi/src-alt/localhost/test/shell/dump.sh">src-alt/localhost/test/shell/dump.sh</a> - POSIX shell script support file for alt server</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/hibachi/src-alt/localhost/test/shell/test1.sh">src-alt/localhost/test/shell/test1.sh</a> - POSIX shell script support file for alt server</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/hibachi/src-alt/localhost/test/shell/test2.sh">src-alt/localhost/test/shell/test2.sh</a> - POSIX shell script support file for alt server</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/hibachi/src-alt/makefile.in">src-alt/makefile.in</a> - makefile template for alt server</li>
 <li><a href="src/localhost/Img/cygwin-icon.gif">src/localhost/Img/cygwin-icon.gif</a> - image for home page</li>
 <li><a href="src/localhost/Img/freebsd.gif">src/localhost/Img/freebsd.gif</a> - image for home page</li>
 <li><a href="src/localhost/Img/hibachi-256-oc-nc-300x150.gif">src/localhost/Img/hibachi-256-oc-nc-300x150.gif</a> - image for home page</li>

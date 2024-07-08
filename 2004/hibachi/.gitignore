@@ -2,6 +2,7 @@
 # sort with: ../../bin/sgi.sh
 *.dSYM
 build
+build-alt
 hibachi.orig
 indent
 indent.c
@@ -12,3 +13,9 @@ src/config.status
 src/hibachi
 src/hibachi.c
 src/makefile
+src-alt/config.log
+src-alt/config.status
+src-alt/hibachi
+src-alt/hibachi.alt
+src-alt/hibachi.alt.c
+src-alt/makefile

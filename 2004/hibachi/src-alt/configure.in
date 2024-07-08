@@ -1,0 +1,138 @@
+#######################################################################
+#	Thus it begins...
+#######################################################################
+
+AC_INIT(hibachi, 1.0, [Anthony Howe <achowe@snert.com>])
+
+dnl The autoconf version I learned to deal with.
+AC_PREREQ(2.57)
+
+dnl Yes I wrote this mess.
+AC_COPYRIGHT([Public Domain 2004 by Anthony Howe.])
+
+AC_SUBST(package_copyright, ['Public Domain 2004 by Anthony Howe.'])
+
+AC_SUBST(package_major, [[`echo $PACKAGE_VERSION | sed -e 's/^\([0-9]*\)\.\([0-9]*\)/\1/'`]])
+AC_SUBST(package_minor, [[`echo $PACKAGE_VERSION | sed -e 's/^\([0-9]*\)\.\([0-9]*\)/\2/'`]])
+AC_SUBST(package_author, $PACKAGE_BUGREPORT)
+
+AC_DEFINE_UNQUOTED(_NAME, ["$PACKAGE_NAME"])
+AC_DEFINE_UNQUOTED(_MAJOR, $package_major)
+AC_DEFINE_UNQUOTED(_MINOR, $package_minor)
+AC_DEFINE_UNQUOTED(_AUTHOR, ["$package_author"])
+AC_DEFINE_UNQUOTED(_VERSION, ["$PACKAGE_NAME/$PACKAGE_VERSION"])
+AC_DEFINE_UNQUOTED(_COPYRIGHT, ["$package_copyright"])
+
+OS=`uname -s`
+
+#######################################################################
+#	Setup paths
+#######################################################################
+
+# The total perspective vortex "You are here..."
+AC_CONFIG_SRCDIR($PACKAGE_NAME.alt.c)
+
+dnl AC_SUBST(srcdir)
+dnl AC_SUBST(top_srcdir)
+dnl AC_SUBST(abs_srcdir)
+dnl AC_SUBST(abs_top_srcdir)
+dnl 
+dnl AC_SUBST(builddir)
+dnl AC_SUBST(top_builddir)
+dnl AC_SUBST(abs_builddir)
+dnl AC_SUBST(abs_top_builddir)
+
+# If localstatedir still has its original value, then use our prefered default.
+if test "$localstatedir" = '${prefix}/var'; then
+	if test "$OS" = 'Linux'; then
+		localstatedir='/var/lib'
+	elif test "$OS" = 'FreeBSD'; then
+		localstatedir='/var/state'
+	elif test "$OS" = 'SunOS'; then
+		localstatedir='/var/opt'
+	else		
+		localstatedir='/var'
+	fi 
+fi
+
+#######################################################################
+#	Auxliary files to be modified later
+#######################################################################
+
+AC_CONFIG_FILES(makefile)
+AC_CONFIG_FILES(hibachi-start.sh, [find . -name '*.sh' -exec chmod 755 \{\} \;])
+
+#######################################################################
+#	Configuration options
+#######################################################################
+
+AC_ARG_ENABLE(port, 
+	[AC_HELP_STRING([--enable-port=number],[specifiy the server port number, default is 8008])],
+	[], [enable_port=8008]
+)
+AC_SUBST(enable_port)
+
+#######################################################################
+#	Setup compiler predefines and exceptions.
+#######################################################################
+
+# Tradional cc options.
+AC_SUBST(CC_E, '-o')
+AC_SUBST(CC_E_NAME, '-o $@')
+AC_SUBST(CC_O, '-o')
+AC_SUBST(CC_O_NAME, '-o $*$O')
+
+AC_PROG_CC
+AC_PROG_LN_S
+dnl AC_PROG_MAKE_SET
+
+dnl AC_CHECK_TOOL(RANLIB, ranlib, true)
+
+#######################################################################
+#	Check for libraries.
+#######################################################################
+
+AC_SEARCH_LIBS(socket, [socket nsl],[AC_DEFINE_UNQUOTED([AS_TR_CPP([HAVE_SOCKET])])])
+AC_SEARCH_LIBS(inet_ntoa, [socket nsl resolv],[AC_DEFINE_UNQUOTED([AS_TR_CPP([HAVE_INET_NTOA])])])
+
+#######################################################################
+#	Check for headers.
+#######################################################################
+
+# Need this ANSI C headers.
+AC_CHECK_HEADERS(
+	[stdio.h stdlib.h string.h],
+	[], [AC_MSG_FAILURE([Missing required ANSI C header.], 1)]
+)
+
+# Need these I/O headers.
+AC_CHECK_HEADERS(
+	[arpa/inet.h dirent.h fcntl.h netinet/in.h sys/socket.h sys/stat.h sys/wait.h unistd.h],
+	[], [AC_MSG_FAILURE([Missing required I/O header.], 1)]
+)
+
+#######################################################################
+#	Check for functions.
+#######################################################################
+
+AC_CHECK_FUNCS(
+	[ accept bind close closedir dup2 fork getenv inet_ntoa listen open opendir putenv read readdir recv send shutdown snprintf socket sscanf stat strcspn strncat strncmp strstr strtol system tolower waitpid],
+	[], [AC_MSG_FAILURE([Missing required function.], 1)]
+)
+
+#######################################################################
+#	Generate output.
+#######################################################################
+
+AC_OUTPUT()
+
+echo
+echo $PACKAGE_NAME/$package_major.$package_minor
+echo $package_copyright
+echo
+AC_MSG_RESULT([  prefix..................: $prefix])
+AC_MSG_RESULT([  datadir.................: $datadir])
+AC_MSG_RESULT([  CFLAGS..................: $CFLAGS])
+AC_MSG_RESULT([  LDFLAGS.................: $LDFLAGS])
+AC_MSG_RESULT([  LIBS....................: $LIBS])
+echo
