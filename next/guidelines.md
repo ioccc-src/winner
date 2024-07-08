@@ -1185,7 +1185,7 @@ Submitting source that uses the content of
 [Anthony C Howe](../authors.html#Anthony_C_Howe), might run the risk of
 violating [Rule 7](rules.html#rule7).
 
-<p class="leftbar"> The `txzchk` tool source is not an original work,
+<p class="leftbar"> The `txzchk(1)` tool source is not an original work,
 unless you are [Cody Boone Ferguson](../authors.html#Cody_Boone_Ferguson), in
 which case it is original!  :-) Submitting source that uses the content of
 [txzchk.c](https://github.com/ioccc-src/mkiocccentry/blob/master/txzchk.c),
