@@ -4,10 +4,11 @@
     make
 ```
 
-There is an alternate version that scans for (_ONLY_ scans) the string `https`
-as a starting point in case anyone wishes to add support or come up with a
-pipeline to let it work, as many websites no longer work with `http`.
-See [alternate code](#alternate-code) below.
+The author provided us with an unobfuscated version. There is also a version
+that scans (**ONLY** scans) the string `https` as a starting point in case
+anyone wishes to add support or come up with a pipeline to make it work, as many
+websites no longer work with `http`. See [alternate code](#alternate-code)
+below.
 
 
 ### Bugs and (Mis)features:
@@ -42,20 +43,28 @@ the issue of https.
 
 ## Alternate code:
 
-Obviously this will not work with `https` as it only scans for `http` in the URL
-(if not specified it tries to open it as a local file). But even if it scanned
+The author's provided unobfuscated code,
+[mynx.alt.c](%%REPO_URL%%/2005/mynx/mynx.alt.c) can be compiled and evaluated if
+you wish to not try and decipher the original entry.
+
+The other version, [mynx.alt2.c](%%REPO_URL%%/2005/mynx/mynx.alt2.c) is a
+starting point for anyone who wishes to come up with a version (or pipeline)
+that works with `https`.
+
+Obviously this will not work with `https` without so easily as it only scans for `http` in the URL
+(if not specified it tries to open it as a local file). But even though it scans
 for `https` one would need to do more work as it would have to set up a secure
 connection before http commands could be sent.  Fortunately or unfortunately
-many more websites use https so this entry will not work as well as it  used to.
+many more websites use https so this entry will not work as well as it used to.
 If one were to try and connect to <https://ioccc.org> with this entry they'll
 just get a 301 error.
 
-The alternate code is a starting point that scans for `https` too (note you have
-to specify the port in this case) but that is all it does. It will not work with
-https websites as it does not set up a secure connection. But should anyone wish
-to either come up with a pipeline (or some other command line) that allows it to
-work with https or to update the code to support https they may. Otherwise you
-must just appreciate the entry for what it once was.
+This alternate code is a starting point that scans for `https` too (note you
+have to specify the port in this case) but that is all it does. It will not work
+with https websites as it stands as it does not set up a secure connection. But
+should anyone wish to either come up with a pipeline (or some other command
+line) that allows it to work with https or to update the code to support https
+they may. Otherwise you must just appreciate the entry for what it once was.
 
 
 ### Alternate build:
@@ -67,11 +76,14 @@ must just appreciate the entry for what it once was.
 
 ### Alternate use:
 
-Use `mynx.alt` as you would `mynx`. You'd have to specify a port at the end of
-the URL like:
+Use `mynx.alt` as you would `mynx`.
+
+For the version that also scans for `https` you'll have to specify a port at the
+end of the URL like:
+
 
 ``` <!---sh-->
-    ./mynx.alt https://www.ioccc.org:443
+    ./mynx.alt2 https://www.ioccc.org:443
 ```
 
 but again unless you have a clever workaround or hack to the problem, this sadly

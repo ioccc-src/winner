@@ -1885,19 +1885,35 @@
 2004,gavin,.gitignore,4000000000,true,gitignore,true,list of files that should not be committed under git
 2004,gavin,.path,4000000000,false,path,true,directory path from top level directory
 2004,gavin,index.html,4294967295,false,html,false,this web page
+2004,hibachi,hibachi.alt.c,20,true,c,true,author provided unobfuscated code
 2004,hibachi,hibachi.c,20,true,c,true,entry source code
 2004,hibachi,Makefile,30,true,makefile,true,entry Makefile
 2004,hibachi,hibachi.orig.c,50,false,c,true,original source code
+2004,hibachi,src-alt/configure,100,true,shellscript,true,GNU Autoconf script for alt server
+2004,hibachi,src-alt/localhost/index.html,100,true,html,false,home page of alt HIBACHI web server
 2004,hibachi,src/configure,100,true,shellscript,true,GNU Autoconf script
-2004,hibachi,src/localhost/index.html,100,true,html,false,home page of HIBACHI web server
+2004,hibachi,src/localhost/index.html,100,true,html,false,home page of alt HIBACHI web server
+2004,hibachi,src-alt/IOCCC-2004/mkentry.c,120,true,c,true,IOCCC tool of 2004 to package entries
+2004,hibachi,src-alt/ioccc.c,120,true,c,true,IOCCC size tool
+2004,hibachi,src-alt/localhost/reference/rfc2616.html,125,true,html,false,RFC 2616 - Hypertext Transfer Protocol - alt server
+2004,hibachi,src-alt/localhost/test/perl/index.html,125,true,html,false,perl test page of alt HIBACHI server
+2004,hibachi,src-alt/localhost/test/php/index.php,125,true,php,true,PHP making an ISO 8601:2000 calendar for alt server
+2004,hibachi,src-alt/localhost/test/ruby/index.rb,125,true,ruby,true,ruby home page for alt server
+2004,hibachi,src-alt/localhost/test/shell/test0.sh,125,true,shellscript,true,POSIX shell CGI home page for alt server
 2004,hibachi,src/localhost/CHANGES-OBFUSCATED.TXT,125,true,text,false,obfuscated changelog for code
 2004,hibachi,src/localhost/reference/rfc2616.html,125,true,html,false,RFC 2616 - Hypertext Transfer Protocol
 2004,hibachi,src/localhost/test/perl/index.html,125,true,html,false,perl test page of HIBACHI server
 2004,hibachi,src/localhost/test/php/index.php,125,true,php,true,PHP making an ISO 8601:2000 calendar
 2004,hibachi,src/localhost/test/ruby/index.rb,125,true,ruby,true,ruby home page
 2004,hibachi,src/localhost/test/shell/test0.sh,125,true,shellscript,true,POSIX shell CGI home page
+2004,hibachi,src-alt/transform.sed,130,true,sed,true,sed(1) script for building unobfuscated code
+2004,hibachi,src-alt/hibachi-start.sh,150,true,shellscript,true,start the alt web server
+2004,hibachi,src-alt/localhost/test/perl/yahoo-ticker.pl,150,true,perl,true,stock price fetch example in Perl for alt server
 2004,hibachi,src/hibachi-start.sh,150,true,shellscript,true,start the web server
 2004,hibachi,src/localhost/test/perl/yahoo-ticker.pl,150,true,perl,true,stock price fetch example in Perl
+2004,hibachi,src-alt/configure.in,200,true,shellscript,true,GNU Autoconf script for alt server
+2004,hibachi,src-alt/hibachi-start.sh.in,200,true,shellscript,true,hibachi-start.sh declarations for alt server
+2004,hibachi,src-alt/localhost/CHANGELOG.TXT,200,true,text,false,obfuscation change log for alt server
 2004,hibachi,src/configure.in,200,true,shellscript,true,GNU Autoconf script
 2004,hibachi,src/hibachi-start.sh.in,200,true,shellscript,true,hibachi-start.sh declarations
 2004,hibachi,src/localhost/CHANGELOG.TXT,200,true,text,false,obfuscation change log
@@ -1906,6 +1922,31 @@
 2004,hibachi,.entry.json,4000000000,true,json,true,entry summary and manifest in JSON
 2004,hibachi,.gitignore,4000000000,true,gitignore,true,list of files that should not be committed under git
 2004,hibachi,.path,4000000000,false,path,true,directory path from top level directory
+2004,hibachi,src-alt/localhost/Img/cygwin-icon.gif,4000000000,true,image,false,image for home page for alt server
+2004,hibachi,src-alt/localhost/Img/freebsd.gif,4000000000,true,image,false,image for home page for alt server
+2004,hibachi,src-alt/localhost/Img/hibachi-256-oc-nc-300x150.gif,4000000000,true,image,false,image for home page for alt server
+2004,hibachi,src-alt/localhost/Img/hot-coal-edge-110-indent.png,4000000000,true,image,false,image for home page for alt server
+2004,hibachi,src-alt/localhost/Img/logosml.256.png,4000000000,true,image,false,image for home page for alt server
+2004,hibachi,src-alt/localhost/Img/php-small-trans-light.gif,4000000000,true,image,false,image for home page for alt server
+2004,hibachi,src-alt/localhost/Img/powered-by-hibachi-150x75.png,4000000000,true,image,false,image for home page for alt server
+2004,hibachi,src-alt/localhost/Img/rectangle_power_perl.gif,4000000000,true,image,false,image for home page for alt server
+2004,hibachi,src-alt/localhost/Img/sun_logo.gif,4000000000,true,image,false,image for home page for alt server
+2004,hibachi,src-alt/localhost/Img/win.gif,4000000000,true,image,false,image for home page for alt server
+2004,hibachi,src-alt/localhost/style.css,4000000000,true,css,true,CSS for home page for alt server
+2004,hibachi,src-alt/localhost/test/perl/yahoo-ticker.pl.in,4000000000,true,perl,true,stock price fetch declarations for alt server
+2004,hibachi,src-alt/localhost/test/php/Date.php,4000000000,true,php,true,PHP example page support file for alt server
+2004,hibachi,src-alt/localhost/test/php/index_php.in,4000000000,true,php,true,PHP example page support file for alt server
+2004,hibachi,src-alt/localhost/test/php/info.php,4000000000,true,php,true,PHP example support file for alt server
+2004,hibachi,src-alt/localhost/test/php/info.php.in,4000000000,true,php,true,PHP example page support file for alt server
+2004,hibachi,src-alt/localhost/test/php/sendform.html,4000000000,true,html,false,php example page support file for alt server
+2004,hibachi,src-alt/localhost/test/php/sendform.php,4000000000,true,php,true,PHP example page support file for alt server
+2004,hibachi,src-alt/localhost/test/php/sendform.php.in,4000000000,true,php,true,PHP example page support file for alt server
+2004,hibachi,src-alt/localhost/test/ruby/LUHN.rb,4000000000,true,ruby,true,ruby example page support file for alt server
+2004,hibachi,src-alt/localhost/test/ruby/index_rb.in,4000000000,true,ruby,true,ruby example page support file for alt server
+2004,hibachi,src-alt/localhost/test/shell/dump.sh,4000000000,true,shellscript,true,POSIX shell script support file for alt server
+2004,hibachi,src-alt/localhost/test/shell/test1.sh,4000000000,true,shellscript,true,POSIX shell script support file for alt server
+2004,hibachi,src-alt/localhost/test/shell/test2.sh,4000000000,true,shellscript,true,POSIX shell script support file for alt server
+2004,hibachi,src-alt/makefile.in,4000000000,true,man,true,makefile template for alt server
 2004,hibachi,src/localhost/Img/cygwin-icon.gif,4000000000,true,image,false,image for home page
 2004,hibachi,src/localhost/Img/freebsd.gif,4000000000,true,image,false,image for home page
 2004,hibachi,src/localhost/Img/hibachi-256-oc-nc-300x150.gif,4000000000,true,image,false,image for home page
@@ -2139,10 +2180,15 @@
 2005,mikeash,index.html,4294967295,false,html,false,this web page
 2005,mynx,mynx.c,20,true,c,true,entry source code
 2005,mynx,Makefile,30,true,makefile,true,entry Makefile
-2005,mynx,mynx.alt.c,40,true,c,true,alternate source code
+2005,mynx,mynx.alt2.c,40,true,c,true,alternate source code
+2005,mynx,mynx.alt.c,40,true,c,true,author provided unobfuscated code
 2005,mynx,mynx.orig.c,50,false,c,true,original source code
 2005,mynx,manual.html,100,true,html,false,manual for the Mynx web browser
 2005,mynx,entities.txt,120,true,text,false,ISO 8859-1 entitles
+2005,mynx,source-alt/transform.sed,130,true,sed,true,sed(1) script for building unobfuscated code
+2005,mynx,source-alt/configure,150,true,shellscript,true,pre-built configure script for unobfuscated code
+2005,mynx,source-alt/configure.in,150,true,shellscript,true,GNU Autoconf script for unobfuscated code
+2005,mynx,source-alt/makefile.in,150,true,shellscript,true,GNU Automake script for unobfuscated code
 2005,mynx,source/configure,150,true,shellscript,true,pre-built configure script
 2005,mynx,source/configure.in,150,true,shellscript,true,GNU Autoconf script
 2005,mynx,source/makefile.in,150,true,shellscript,true,GNU Automake script

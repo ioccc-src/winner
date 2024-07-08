@@ -10,13 +10,13 @@
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
 #include <unistd.h>
 #include <sys/stat.h>
 #include <sys/wait.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <arpa/inet.h>
-#include <ctype.h>
 #define Z				8192
 char r[Z], q[Z], l[Z], w[Z], *o, *m = "404 Not Found", *e = "500 Error";
 void
@@ -43,6 +43,7 @@ main(int c, char **p)
 				struct stat g;
 				struct sockaddr_in a;
 				char *v, *u;
+								R 1;
 				Q (v = V "SERVER_PORT")) == 0) {
 								R 4;
 				}

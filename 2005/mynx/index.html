@@ -403,10 +403,11 @@ Location: <a href="../../location.html#CA">CA</a> - <em>Canada</em></li>
 <!-- BEFORE: 1st line of markdown file: 2005/mynx/README.md -->
 <h2 id="to-build">To build:</h2>
 <pre><code>    make</code></pre>
-<p>There is an alternate version that scans for (<em>ONLY</em> scans) the string <code>https</code>
-as a starting point in case anyone wishes to add support or come up with a
-pipeline to let it work, as many websites no longer work with <code>http</code>.
-See <a href="#alternate-code">alternate code</a> below.</p>
+<p>The author provided us with an unobfuscated version. There is also a version
+that scans (<strong>ONLY</strong> scans) the string <code>https</code> as a starting point in case
+anyone wishes to add support or come up with a pipeline to make it work, as many
+websites no longer work with <code>http</code>. See <a href="#alternate-code">alternate code</a>
+below.</p>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
 <p>The current status of this entry is:</p>
 <pre><code>    STATUS: INABIAF - please DO NOT fix</code></pre>
@@ -420,25 +421,32 @@ the issue of https.</p>
 
     ./mynx manual.html</code></pre>
 <h2 id="alternate-code">Alternate code:</h2>
-<p>Obviously this will not work with <code>https</code> as it only scans for <code>http</code> in the URL
-(if not specified it tries to open it as a local file). But even if it scanned
+<p>The author’s provided unobfuscated code,
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2005/mynx/mynx.alt.c">mynx.alt.c</a> can be compiled and evaluated if
+you wish to not try and decipher the original entry.</p>
+<p>The other version, <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2005/mynx/mynx.alt2.c">mynx.alt2.c</a> is a
+starting point for anyone who wishes to come up with a version (or pipeline)
+that works with <code>https</code>.</p>
+<p>Obviously this will not work with <code>https</code> without so easily as it only scans for <code>http</code> in the URL
+(if not specified it tries to open it as a local file). But even though it scans
 for <code>https</code> one would need to do more work as it would have to set up a secure
 connection before http commands could be sent. Fortunately or unfortunately
 many more websites use https so this entry will not work as well as it used to.
 If one were to try and connect to <a href="https://ioccc.org" class="uri">https://ioccc.org</a> with this entry they’ll
 just get a 301 error.</p>
-<p>The alternate code is a starting point that scans for <code>https</code> too (note you have
-to specify the port in this case) but that is all it does. It will not work with
-https websites as it does not set up a secure connection. But should anyone wish
-to either come up with a pipeline (or some other command line) that allows it to
-work with https or to update the code to support https they may. Otherwise you
-must just appreciate the entry for what it once was.</p>
+<p>This alternate code is a starting point that scans for <code>https</code> too (note you
+have to specify the port in this case) but that is all it does. It will not work
+with https websites as it stands as it does not set up a secure connection. But
+should anyone wish to either come up with a pipeline (or some other command
+line) that allows it to work with https or to update the code to support https
+they may. Otherwise you must just appreciate the entry for what it once was.</p>
 <h3 id="alternate-build">Alternate build:</h3>
 <pre><code>    make alt</code></pre>
 <h3 id="alternate-use">Alternate use:</h3>
-<p>Use <code>mynx.alt</code> as you would <code>mynx</code>. You’d have to specify a port at the end of
-the URL like:</p>
-<pre><code>    ./mynx.alt https://www.ioccc.org:443</code></pre>
+<p>Use <code>mynx.alt</code> as you would <code>mynx</code>.</p>
+<p>For the version that also scans for <code>https</code> you’ll have to specify a port at the
+end of the URL like:</p>
+<pre><code>    ./mynx.alt2 https://www.ioccc.org:443</code></pre>
 <p>but again unless you have a clever workaround or hack to the problem, this sadly
 won’t work.</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
@@ -488,10 +496,15 @@ command sequence would be:</p>
 <ul>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2005/mynx/mynx.c">mynx.c</a> - entry source code</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2005/mynx/Makefile">Makefile</a> - entry Makefile</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2005/mynx/mynx.alt.c">mynx.alt.c</a> - alternate source code</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2005/mynx/mynx.alt2.c">mynx.alt2.c</a> - alternate source code</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2005/mynx/mynx.alt.c">mynx.alt.c</a> - author provided unobfuscated code</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2005/mynx/mynx.orig.c">mynx.orig.c</a> - original source code</li>
 <li><a href="manual.html">manual.html</a> - manual for the Mynx web browser</li>
 <li><a href="entities.txt">entities.txt</a> - ISO 8859-1 entitles</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2005/mynx/source-alt/transform.sed">source-alt/transform.sed</a> - sed(1) script for building unobfuscated code</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2005/mynx/source-alt/configure">source-alt/configure</a> - pre-built configure script for unobfuscated code</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2005/mynx/source-alt/configure.in">source-alt/configure.in</a> - GNU Autoconf script for unobfuscated code</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2005/mynx/source-alt/makefile.in">source-alt/makefile.in</a> - GNU Automake script for unobfuscated code</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2005/mynx/source/configure">source/configure</a> - pre-built configure script</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2005/mynx/source/configure.in">source/configure.in</a> - GNU Autoconf script</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2005/mynx/source/makefile.in">source/makefile.in</a> - GNU Automake script</li>

@@ -3740,6 +3740,15 @@ instead of `http` for instance). In most cases a new link or change to https was
 all that was necessary but at least one or two URLs required the Internet
 Wayback Machine.
 
+It is believed that a slight fix in the code had to be done too, possibly an
+inclusion of `ctype.h`.
+
+The author, [Anthony C Howe](authors.html#Anthony_C_Howe), provided an
+unobfuscated version that Cody added in, with thanks to Anthony! This also
+required a minor fix in the inclusion of `ctype.h` and various other fixes as
+well, namely to get the program to work as `alt` rather than `-spoiler` (it is
+not even known if it would work otherwise).
+
 
 <div id="2004_hoyle">
 ## Winning entry: [2004/hoyle](2004/hoyle/index.html)
@@ -4105,15 +4114,19 @@ Cody also added the [try.sh](%%REPO_URL%%/2005/mikeash/try.sh) script.
 ### Winning entry source code: [mynx.c](%%REPO_URL%%/2005/mynx//mynx.c)
 </div>
 
-[Cody](#cody) fixed this so that the [configure](%%REPO_URL%%/2005/mynx/source/configure) script (which is not
-needed but part of the entry) would work with compilers that have by default
-`-Werror` like `clang` in macOS.
+[Cody](#cody) fixed this so that the
+[configure](%%REPO_URL%%/2005/mynx/source/configure) script (which is not needed
+but part of the entry) would work with compilers that have by default `-Werror`
+like `clang` in macOS.
 
-Cody also added the [alternate code](%%REPO_URL%%/2005/mynx/mynx.alt.c) which
+The author, [Anthony C Howe](authors.html#Anthony_C_Howe), provided an
+unobfuscated version that Cody added in, with thanks to Anthony!
+
+Cody also added the [second alternate code](%%REPO_URL%%/2005/mynx/mynx.alt2.c) which
 does scan for `https`. Futile, maybe, based on how `https` is set up, in which
 case just enjoy it for what it was, without it working with websites that do not
 support `http`. But there might be some command line that will let it work that
-way or perhaps someone wants to add the necessary code.
+way or perhaps someone wants to add the necessary code, updating the file.
 
 
 <div id="2005_persano">

@@ -116,8 +116,8 @@ OBJ= ${PROG}.o
 DATA=
 TARGET= build/${PROG}
 #
-ALT_OBJ=
-ALT_TARGET=
+ALT_OBJ= ${PROG}.alt.o
+ALT_TARGET= build-alt/${PROG}.alt
 
 
 #################
@@ -149,6 +149,20 @@ src/hibachi.c: hibachi.c
 #
 alt: data ${ALT_TARGET}
 	@${TRUE}
+
+build-alt/${PROG}.alt: src-alt/hibachi.alt.c src-alt
+	${RM} -rf build-alt
+	${CP} -v -r src-alt build-alt
+	@echo "This next step may take some time to complete:"
+	cd build-alt; CFLAGS="${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}" \
+	    LDFLAGS="${LDFLAGS}" \
+	    CC="${CC}" \
+	    ${SHELL} ./configure
+	cd build-alt; ${MAKE}
+
+src-alt/hibachi.alt.c: hibachi.alt.c
+	${CP} -f -v $? $@
+
 
 # data files
 #
@@ -216,9 +230,9 @@ clean:
 
 clobber: clean
 	${RM} -f ${TARGET} ${ALT_TARGET}
-	${RM} -f src/hibachi.c src/config.log
+	${RM} -f src/hibachi.c src/config.log src-alt/hibachi.c src-alt/hibachi.c
 	${RM} -rf *.dSYM
-	${RM} -rf build
+	${RM} -rf build build-alt
 	@-if [ -e sandwich ]; then \
 	    ${RM} -f sandwich; \
 	    echo 'ate sandwich'; \

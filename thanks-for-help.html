@@ -3034,6 +3034,13 @@ files and causing <code>make clobber</code> to wipe some of them out.</p>
 instead of <code>http</code> for instance). In most cases a new link or change to https was
 all that was necessary but at least one or two URLs required the Internet
 Wayback Machine.</p>
+<p>It is believed that a slight fix in the code had to be done too, possibly an
+inclusion of <code>ctype.h</code>.</p>
+<p>The author, <a href="authors.html#Anthony_C_Howe">Anthony C Howe</a>, provided an
+unobfuscated version that Cody added in, with thanks to Anthony! This also
+required a minor fix in the inclusion of <code>ctype.h</code> and various other fixes as
+well, namely to get the program to work as <code>alt</code> rather than <code>-spoiler</code> (it is
+not even known if it would work otherwise).</p>
 <div id="2004_hoyle">
 <h2 id="winning-entry-2004hoyle">Winning entry: <a href="2004/hoyle/index.html">2004/hoyle</a></h2>
 <h3 id="winning-entry-source-code-hoyle.c">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/hoyle//hoyle.c">hoyle.c</a></h3>
@@ -3293,14 +3300,17 @@ also show correct output though.</p>
 <h2 id="winning-entry-2005mynx">Winning entry: <a href="2005/mynx/index.html">2005/mynx</a></h2>
 <h3 id="winning-entry-source-code-mynx.c">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2005/mynx//mynx.c">mynx.c</a></h3>
 </div>
-<p><a href="#cody">Cody</a> fixed this so that the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2005/mynx/source/configure">configure</a> script (which is not
-needed but part of the entry) would work with compilers that have by default
-<code>-Werror</code> like <code>clang</code> in macOS.</p>
-<p>Cody also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2005/mynx/mynx.alt.c">alternate code</a> which
+<p><a href="#cody">Cody</a> fixed this so that the
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2005/mynx/source/configure">configure</a> script (which is not needed
+but part of the entry) would work with compilers that have by default <code>-Werror</code>
+like <code>clang</code> in macOS.</p>
+<p>The author, <a href="authors.html#Anthony_C_Howe">Anthony C Howe</a>, provided an
+unobfuscated version that Cody added in, with thanks to Anthony!</p>
+<p>Cody also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2005/mynx/mynx.alt2.c">second alternate code</a> which
 does scan for <code>https</code>. Futile, maybe, based on how <code>https</code> is set up, in which
 case just enjoy it for what it was, without it working with websites that do not
 support <code>http</code>. But there might be some command line that will let it work that
-way or perhaps someone wants to add the necessary code.</p>
+way or perhaps someone wants to add the necessary code, updating the file.</p>
 <div id="2005_persano">
 <h2 id="winning-entry-2005persano">Winning entry: <a href="2005/persano/index.html">2005/persano</a></h2>
 <h3 id="winning-entry-source-code-persano.c">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2005/persano//persano.c">persano.c</a></h3>

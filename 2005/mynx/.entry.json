@@ -31,6 +31,14 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
+	    "entry_text" : "author provided unobfuscated code"
+	},
+	{
+	    "file_path" : "mynx.alt2.c",
+	    "inventory_order" : 40,
+	    "OK_to_edit" : true,
+	    "display_as" : "c",
+	    "display_via_github" : true,
 	    "entry_text" : "alternate source code"
 	},
 	{
@@ -56,6 +64,38 @@
 	    "display_as" : "text",
 	    "display_via_github" : false,
 	    "entry_text" : "ISO 8859-1 entitles"
+	},
+	{
+	    "file_path" : "source-alt/transform.sed",
+	    "inventory_order" : 130,
+	    "OK_to_edit" : true,
+	    "display_as" : "sed",
+	    "display_via_github" : true,
+	    "entry_text" : "sed(1) script for building unobfuscated code"
+	},
+	{
+	    "file_path" : "source-alt/configure",
+	    "inventory_order" : 150,
+	    "OK_to_edit" : true,
+	    "display_as" : "shellscript",
+	    "display_via_github" : true,
+	    "entry_text" : "pre-built configure script for unobfuscated code"
+	},
+	{
+	    "file_path" : "source-alt/configure.in",
+	    "inventory_order" : 150,
+	    "OK_to_edit" : true,
+	    "display_as" : "shellscript",
+	    "display_via_github" : true,
+	    "entry_text" : "GNU Autoconf script for unobfuscated code"
+	},
+	{
+	    "file_path" : "source-alt/makefile.in",
+	    "inventory_order" : 150,
+	    "OK_to_edit" : true,
+	    "display_as" : "shellscript",
+	    "display_via_github" : true,
+	    "entry_text" : "GNU Automake script for unobfuscated code"
 	},
 	{
 	    "file_path" : "source/configure",

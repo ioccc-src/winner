@@ -4,6 +4,9 @@
     make
 ```
 
+There is an alternate version that is unobfuscated, provided by the author in
+2024\. See [Alternate code](#alternate-code) below.
+
 
 ## To use:
 
@@ -16,6 +19,32 @@ finished make sure to kill `hibachi`.
 
 NOTE: you must be in the `build` directory when running `hibachi-start.sh` for
 this to work right.
+
+
+## Alternate code:
+
+This version, contained in `src-alt/`, is an unobfuscated version provided by
+the author in 2024.
+
+
+### Alternate build:
+
+``` <!---sh-->
+    make alt
+```
+
+This will run the `configure` script and then compile and link in (in
+`build-alt/`) the binary `hibachi`.
+
+
+### Alternate use:
+
+``` <!---sh-->
+    cd build-alt ; ./hibachi-start.sh &
+```
+
+Then with your browser do the same as for the original source.
+
 
 
 ## Judges' remarks:
