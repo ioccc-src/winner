@@ -796,6 +796,13 @@ blockquote {
     color: DarkBlue;
 }
 
+/* Guidelines / Rules change bar ============================================================================ */
+
+.leftbar {
+    border-left: 4px solid black;
+}
+
+
 /* Footer  ======================================================================================== */
 
 /* Style footer */
