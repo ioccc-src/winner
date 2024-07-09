@@ -1932,12 +1932,6 @@ for [ShellCheck](https://www.shellcheck.net)
 because the author deliberately obfuscated it so **PLEASE *DO NOT* FIX THIS OR
 MODERNISE IT**.
 
-Cody also changed the buffer size in such a way that `gets(3)` should be safe
-(well, theoretically) as it comes from the command line (though it can also read input
-from `stdin` after starting the program). Ideally `fgets(3)` would be used but this
-is a more problematic. See [1992/gson in bugs.html](bugs.html#1992_gson) for more
-details if you're interested in trying to understand it (or fix?).
-
 
 <div id="1992_imc">
 ## Winning entry: [1992/imc](1992/imc/index.html)

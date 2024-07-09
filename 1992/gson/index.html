@@ -407,31 +407,36 @@ Location: <a href="../../location.html#FI">FI</a> - <em>Republic of Finland </em
 some invocations to crash in some systems.</p>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
 <p>The current status of this entry is:</p>
-<pre><code>    STATUS: uses gets() - change to fgets() if possible</code></pre>
+<pre><code>    STATUS: uses gets() - change to fgets() if possible
+    STATUS: INABIAF - please DO NOT fix</code></pre>
 <p>For more detailed information see <a href="../../bugs.html#1992_gson">1992/gson in bugs.html</a>.</p>
 <h2 id="to-use">To use:</h2>
-<pre><code>    ./ag word word2 word3 &lt; /path/to/dictionary</code></pre>
+<pre><code>    ./ag word word2 word3 &lt; dictionary</code></pre>
 <h2 id="try">Try:</h2>
 <pre><code>    ./try.sh</code></pre>
 <p>This script will determine (or try and determine) where your system dictionary
 is located and assuming that it can find one it’ll use that. It checks the
 following locations though the last one is more ironic:</p>
-<pre><code>    /usr/share/dict/words
-    /usr/share/lib/spell/words
-    /usr/ucblib/dict/words
-    /dev/null                   # &lt;-- for machines with nothing to say</code></pre>
-<p>Then using the proper dictionary file it does:</p>
-<pre><code>    ./ag free software foundation       &lt; /usr/share/dict/words
-    ./ag obfuscated c contest   &lt; /usr/share/dict/words
-    ./ag unix international             &lt; /usr/share/dict/words
-    ./ag george bush            &lt; /usr/share/dict/words
-    ./ag bill clinton           &lt; /usr/share/dict/words
-    ./ag ross perot                     &lt; /usr/share/dict/words
-    ./ag paul e tsongas         &lt; /usr/share/dict/words</code></pre>
-<p>where <code>/usr/share/dict/words</code> is the dictionary file.</p>
+<ul>
+<li><code>/usr/share/dict/words</code></li>
+<li><code>/usr/share/lib/spell/words</code></li>
+<li><code>/usr/ucblib/dict/words</code></li>
+<li><code>/dev/null</code> # &lt;– for machines with nothing to say</li>
+</ul>
+<p>Then it runs the program with the following strings, using the proper dictionary
+file:</p>
+<ul>
+<li><code>free software foundation</code></li>
+<li><code>obfuscated c contest</code></li>
+<li><code>unix international</code></li>
+<li><code>george bush</code></li>
+<li><code>bill clinton</code></li>
+<li><code>ross perot</code></li>
+<li><code>paul e tsongas</code></li>
+</ul>
 <p>Then it uses the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/gson/mkdict.sh">mkdict.sh</a> script to create a dictionary file out
-of the files <a href="index.html">index.html</a>, <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/gson/try.sh">try.sh</a> (itself) and
-<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/gson/Makefile">Makefile</a> and it repeats the same commands as above. In the case no
+of the files <a href="README.md">README.md</a>, <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/gson/try.sh">try.sh</a> (itself) and
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/gson/Makefile">Makefile</a> and it repeats the same process as above. In the case no
 dictionary file can be found in the first step it only runs the commands once
 with the created dictionary file.</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
@@ -444,23 +449,23 @@ dictionaries which has been put in as <a href="https://github.com/ioccc-src/temp
 <p>Then try using the program as shown above with the file <code>words</code>.</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <p>The name of the game:</p>
-<p>AG is short for either Anagram Generator or simply AnaGram. It might also be
-construed to mean Alphabet Game, and by pure coincidence it happens to be the
+<p><code>AG</code> is short for either <code>Anagram Generator</code> or simply <code>AnaGram</code>. It might also be
+construed to mean <code>Alphabet Game</code>, and by pure coincidence it happens to be the
 author’s initials.</p>
 <h3 id="what-it-does">What it does</h3>
-<p>AG takes one or more words as arguments, and tries to find anagrams of those
+<p><code>AG</code> takes one or more words as arguments, and tries to find anagrams of those
 words, i.e. words or sentences containing exactly the same letters.</p>
 <h3 id="how-to-use-it">How to use it</h3>
-<p>To run AG, you need a dictionary file consisting of distinct words in the
+<p>To run <code>AG</code>, you need a dictionary file consisting of distinct words in the
 natural language of your choice, one word on each line. If your machine doesn’t
 have one already, you can make your own dictionary by concatenating a few
 hundred of your favourite Usenet articles and piping them through the following
 obfuscated shell script:</p>
 <pre><code>    #!/bin/sh
     z=a-z];tr [A-Z\] \[$z|sed s/[\^$z[\^$z*/_/g|tr _ \\012|grep ..|sort -u</code></pre>
-<p>Using articles from alt.folklore.computers is likely to make
-a more professional-looking dictionary than rec.arts.erotica.</p>
-<p>AG must be run with the dictionary file as standard input.</p>
+<p>Using articles from <code>alt.folklore.computers</code> is likely to make
+a more professional-looking dictionary than <code>rec.arts.erotica</code>.</p>
+<p><code>AG</code> must be run with the dictionary file as standard input.</p>
 <p>Because anagrams consisting of just a few words are generally more
 meaningful than those consisting of dozens of very short words, the
 number of words in the anagrams is limited to 3 by default. This
@@ -469,35 +474,35 @@ limit can be changed using a numeric command line option, as in
 <h3 id="bugs-and-limitations">Bugs and limitations</h3>
 <ul>
 <li>There is no error checking.</li>
-<li>Standard input must be seekable, so you can’t pipe the dictionary into AG.</li>
+<li>Standard input must be seekable, so you can’t pipe the dictionary into <code>AG</code>.</li>
 <li>The input sentence and each line in the dictionary may contain at most 32
 distinct letters, and each letter may occur at most 15 times.</li>
 <li>Words in the dictionary may be at most 255 bytes long.</li>
-<li>AG cannot handle characters that sign-extend to negative values.</li>
-<li>Although AG works on both 16-bit and 32-bit machines, the size of the problems
+<li><code>AG</code> cannot handle characters that sign-extend to negative values.</li>
+<li>Although <code>AG</code> works on both 16-bit and 32-bit machines, the size of the problems
 it can solve is severely limited on machines that limit the stack size to 64k or
 less.</li>
 </ul>
+<h3 id="notice-to-those-who-wish-for-a-greater-challenge">NOTICE to those who wish for a greater challenge:</h3>
+<p><strong>If you want a greater challenge, don’t read any further</strong>:
+just try to understand the program via the source.</p>
+<p>If you get stuck, come back and read below for additional hints and information.</p>
 <h3 id="obfuscatory-notes">Obfuscatory notes</h3>
-<p>As you can see, AG takes advantage of the new ‘92 whitespace rules’ to
+<p>As you can see, <code>AG</code> takes advantage of the new ‘92 whitespace rules’ to
 achieve a clear, readable, self-documenting layout. The identifiers
 have been chosen in a way appropriate for an alphabet game, and common
 sources of bugs such as goto statements and malloc/free have been
-eliminated. As AG also refrains from abusing the preprocessor, it
+eliminated. As <code>AG</code> also refrains from abusing the preprocessor, it
 doesn’t really have much to offer in terms of “surface obfuscation”.
 Instead, it tries to achieve both its speed and its obscurity through a
 careful choice of algorithms. Some of the finer points of those
 algorithms are outlined the section below.</p>
-<h3 id="notice-to-those-who-wish-for-a-greater-challenge">NOTICE to those who wish for a greater challenge</h3>
-<p><strong>If you want a greater challenge, don’t read any further</strong>:
-just try to understand the program via the source.</p>
-<p>If you get stuck, come back and read below for additional hints and information.</p>
 <h3 id="how-this-entry-works">How this entry works:</h3>
 <p>Here follows a description of some of the data structures and
-algorithms used by AG. It is by no means complete, but it may help
+algorithms used by <code>AG</code>. It is by no means complete, but it may help
 you get an idea about the general principles.</p>
 <hr style="width:10%;text-align:left;margin-left:0">
-<p>Internally, AG represents words and sentences as arrays of 32
+<p>Internally, <code>AG</code> represents words and sentences as arrays of 32
 4-bit integer elements. Each element represents the number of
 times a letter occurs in the word/sentence. There are 32 elements
 because 32 is a convenient power of two larger than the number of
@@ -519,21 +524,21 @@ Thus, 32 independent 4-bit additions can be performed by just four
 iterations of a loop containing some 32-bit bitwise logical
 operations, but no arithmetic operations other than those implied
 by array indexing.</p>
-<p>Subtraction works similarly, and in fact AG only implements
+<p>Subtraction works similarly, and in fact <code>AG</code> only implements
 subtraction directly, handling addition by means of the identity
 <code>a+b = a-(0-b)</code>.</p>
-<p>In addition to this <code>32*4</code>-bit representation, AG also forms a so-called
+<p>In addition to this <code>32*4</code>-bit representation, <code>AG</code> also forms a so-called
 “signature” that is the bitwise OR of the four <code>long</code>s, which is
 equivalent to saying that the signature of a word contains a logical 1
 in the bit positions corresponding to letters occurring at least once
 in that word.</p>
-<p>The first thing AG does is to construct a lookup table of 256
+<p>The first thing <code>AG</code> does is to construct a lookup table of 256
 <code>long</code>s, one for each 8-bit character value. The entry for a
 character will be zero if that character doesn’t appear in the
 sentence given on the command line, or it will have a single bit
 set if the character does appear in the sentence. By adding
 together the bit masks for all the letters in the input sentence
-using the transpose addition method described above, AG forms the
+using the transpose addition method described above, <code>AG</code> forms the
 <code>32*4</code> bit array representation of the input sentence.</p>
 <p>The next action performed is reading the dictionary. Those words that
 contain letters not in the input sentence are immediately discarded.
@@ -568,11 +573,11 @@ remaining letters. The depth of the recursion is limited to the
 maximum number of words in the anagram, as specified by the user.</p>
 <p>When the deepest recursion level has been reached, an optimization can
 be applied: because no further recursion will be done, there is no
-need to look for partial anagrams, and therefore AG only needs to
+need to look for partial anagrams, and therefore <code>AG</code> only needs to
 check for words that contain exactly the same letters as the current
 sentence. Those words can be found simply by indexing the hash table
 with the signature of the current sentence.</p>
-<p>Even when not on the deepest recursion level, AG generally avoids
+<p>Even when not on the deepest recursion level, <code>AG</code> generally avoids
 examining all the entries of the hash table. The idea is that we are
 not interested in hash buckets whose words contain any letters not
 in the current sentence; these buckets are exactly those whose index
@@ -589,7 +594,7 @@ those bits that should remain zero. For example, the following
 program prints all those 16-bit integers that contain zeroes in all
 even bit positions:</p>
 <pre><code>    main(){int i=0,s=0xAAAA;do{printf(&quot;%04x\t&quot;,i);}while(i=((i|~s)+1)&amp;s);}</code></pre>
-<p>AG uses a similar method but works in the opposite direction, finding
+<p><code>AG</code> uses a similar method but works in the opposite direction, finding
 the next lower value with zeroes in given bit positions by propagating
 borrows across those bits. Some additional adjustments are made
 to the hash table index when initiating a recursive search, using
