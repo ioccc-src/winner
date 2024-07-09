@@ -1504,9 +1504,7 @@ previous round.  Thus, a submission gets at least two readings.
 
 A reading consists of a number of actions:
 
-<p class="leftbar">
-* reading `prog.c`, the C source, reviewing the `remarks.md` information
-</p>
+* <p class="leftbar">reading `prog.c`, the C source, reviewing the `remarks.md` information</p>
 * briefly looking any any supplied data files
 * passing the source thru the C pre-processor
     skipping over any `#include`d files
