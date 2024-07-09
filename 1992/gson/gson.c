@@ -1,16 +1,12 @@
 #include <stdio.h> 
-#include <unistd.h>
-#include <limits.h>
-#ifndef ARG_MAX
-#define ARG_MAX _POSIX_ARG_MAX
-#endif
+
 long a
 [4],b[
 4],c[4]
 ,d[0400],e=1;
 typedef struct f{long g
 ,h,i[4]	   ,j;struct f*k;}f;f g,*
-l[4096		     ]; char h[ARG_MAX+1],*m,k=3;
+l[4096		     ]; char h[256],*m,k=3;
 		     long n	(o, p,q)long*o,*p,*q;{
 		     long r		  =4,s,i=0;for(;r--;s=i^
 		     *o^*p,			    i=i&*p|(i|*p)&~*o++,*q
@@ -37,7 +33,7 @@ s,i=o->h;q.k=o;r>i?j=l[r=i]:r<i&&
  j;char								       *z,*p;
 for(;m									? j.j=
 ftell(									stdin)
-,7,(m=			     gets(m          				))||w(
+,7,(m=			     gets(m					))||w(
 &g,315			     *13,l[					4095]
  ,k,64*			     64)&0:				       0;n(g
   .i,j.i,		     b)||(u				    (&j),j.

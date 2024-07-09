@@ -1735,11 +1735,6 @@ included in their remarks. See the index.html for its purpose. It was NOT fixed
 for <a href="https://www.shellcheck.net">ShellCheck</a>
 because the author deliberately obfuscated it so <strong>PLEASE <em>DO NOT</em> FIX THIS OR
 MODERNISE IT</strong>.</p>
-<p>Cody also changed the buffer size in such a way that <code>gets(3)</code> should be safe
-(well, theoretically) as it comes from the command line (though it can also read input
-from <code>stdin</code> after starting the program). Ideally <code>fgets(3)</code> would be used but this
-is a more problematic. See <a href="bugs.html#1992_gson">1992/gson in bugs.html</a> for more
-details if you’re interested in trying to understand it (or fix?).</p>
 <div id="1992_imc">
 <h2 id="winning-entry-1992imc">Winning entry: <a href="1992/imc/index.html">1992/imc</a></h2>
 <h3 id="winning-entry-source-code-imc.c">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/imc/imc.c">imc.c</a></h3>

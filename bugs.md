@@ -1071,21 +1071,33 @@ entry itself. Can you fix the actual entry? You are welcome to try and do so.
 ### Information: [1992/gson/index.html](1992/gson/index.html)
 
 Cody changed it so that the buffer size is `ARG_MAX+1` to try and get past the
-problem of `gets()` being used in a more complex way.
+problem of `gets()` being used in a more complex way. It is most unlikely that
+the dictionary file will ever have a line longer than 256 but even so it would
+be ideal if the code used `fgets(3)` instead. A tip on how `gets(3)` is being
+used:
 
-It would be ideal if it were to use `fgets()` though. A tip on how
-`gets()` is being used from Cody:
-
-Previously it had a buffer size of 256 which could easily overflow. In this
+Previously it had a buffer size of 256 for reading in the dictionary lines. In this
 entry `gets(3)` is used in a more complicated way: first `m` is set to `*++p` in
 a for loop where `p` is argv. Later `m` is set to point to `h` which was of size
 256\. `gets(3)` is called as `m = gets(m)`) but trying to change it to use
-`fgets(3)` proved more a problem. Since the input must come from the command
-line Cody changed the buffer size to `ARG_MAX+1` which should be enough (again
-theoretically) especially since the command expects redirecting a dictionary
-file as part of the command line. This also makes it possible for longer strings
-to be read (in case the `gets(3)` was not used in a loop).
 
+
+### STATUS: INABIAF - please **DO NOT** fix
+
+On the other hand, the author noted the following bugs and limitations:
+
+- There is no error checking.
+- Standard input must be seekable, so you can't pipe the dictionary into `AG`.
+- The input sentence and each line in the dictionary may contain at most 32
+distinct letters, and each letter may occur at most 15 times.
+- Words in the dictionary may be at most 255 bytes long.
+- `AG` cannot handle characters that sign-extend to negative values.
+- Although `AG` works on both 16-bit and 32-bit machines, the size of the problems
+it can solve is severely limited on machines that limit the stack size to 64k or
+less.
+
+... so whether or not the `gets(3)` should be changed to `fgets(3)` is up to
+debate.
 
 
 <div id="1992_kivinen">
