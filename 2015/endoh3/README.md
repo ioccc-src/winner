@@ -64,7 +64,7 @@ the source code from all angles..
 * Find `main()` function.
 
 
-### NOTICE to those who wish for a greater challenge
+### NOTICE to those who wish for a greater challenge:
 
 **If you want a greater challenge, don't read any further**:
 just try to understand the program via the source.

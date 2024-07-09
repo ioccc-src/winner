@@ -44,7 +44,7 @@ If my preprocessor could hack it, I could write this as one single line rather
 than 4, but when I do that I get a complaint "defines nested too deeply".
 
 
-### NOTICE to those who wish for a greater challenge
+### NOTICE to those who wish for a greater challenge:
 
 **If you want a greater challenge, don't read any further**:
 just try to understand the program via the source.

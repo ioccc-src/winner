@@ -245,7 +245,7 @@ This uses only 19 bitwise operations and six shifts to calculate the inner 6x6
 next generation bits of the input 8x8 !
 
 
-### NOTICE to those who wish for a greater challenge
+### NOTICE to those who wish for a greater challenge:
 
 **If you want a greater challenge, don't read any further**:
 just try to understand the program via the source.

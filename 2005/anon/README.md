@@ -281,7 +281,7 @@ It probably will also compile and work on many (all?) other \*nix platforms as
 well. How does it achieve this incredible feat?
 
 
-### NOTICE to those who wish for a greater challenge
+### NOTICE to those who wish for a greater challenge:
 
 **If you want a greater challenge, don't read any further**:
 just try to understand the program via the source.

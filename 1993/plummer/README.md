@@ -126,7 +126,7 @@ compilers) complain that there is no control path leading to a return from
 who don't mind ruining our eyes with 132 column screens).
 
 
-### NOTICE to those who wish for a greater challenge
+### NOTICE to those who wish for a greater challenge:
 
 **If you want a greater challenge, don't read any further**:
 just try to understand the program via the source.

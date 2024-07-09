@@ -193,7 +193,7 @@ Note that on MingW, `stdin` and `stdout` are not opened in binary mode by
 default, this means `Nyaruko` may not faithfully encode files on MingW.
 
 
-### NOTICE to those who wish for a greater challenge
+### NOTICE to those who wish for a greater challenge:
 
 **If you want a greater challenge, don't read any further**:
 just try to understand the program via the source.

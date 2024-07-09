@@ -5,7 +5,7 @@
 ```
 
 
-The author provided a spoiler version as alternate code. See [Alternate
+The author provided a less obfuscated version as alternate code. See [Alternate
 code](#alternate-code) below.
 
 
@@ -40,7 +40,7 @@ Mode may be a value from 0 to 12.
 ## Alternate code:
 
 
-### NOTICE to those who wish for a greater challenge
+### NOTICE to those who wish for a greater challenge:
 
 **If you want a greater challenge, don't read any further**:
 just try to understand the program without looking at the Alternate code.

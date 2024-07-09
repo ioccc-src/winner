@@ -41,7 +41,8 @@ better debugger or trace could easily be added.
 
 ## Judges' remarks:
 
-The author's comments is a detailed program explanation, if you wish to learn more about the obfuscation method used.
+The author's comments are a detailed program explanation, if you wish to learn
+more about the obfuscation method used.
 
 
 ### Historical note:
@@ -54,7 +55,7 @@ However as this is no longer a problem the trailing `\` has been restored in all
 versions, both the original and the fixed for modern systems version.
 
 
-### NOTICE to those who wish for a greater challenge
+### NOTICE to those who wish for a greater challenge:
 
 **If you want a greater challenge, don't read any further**:
 just try to understand the program via the source.
