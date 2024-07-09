@@ -566,7 +566,7 @@ practices](../faq.html#markdown).
 
 <p class="leftbar">
 See also the [markdown syntax](https://www.markdownguide.org/basic-syntax) guide
-and the [CommonMark Spec](https://spec.commonmark.org/current/).</p>
+and the [CommonMark Spec](https://spec.commonmark.org/current/).
 </p>
 
 <p class="leftbar">
