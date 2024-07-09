@@ -1127,15 +1127,14 @@ entry itself. Can you fix the actual entry? You are welcome to try and do so.</p
 <h3 id="status-uses-gets---change-to-fgets-if-possible">STATUS: uses gets() - change to fgets() if possible</h3>
 <h3 id="source-code-1992gsongson.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/gson/gson.c">1992/gson/gson.c</a></h3>
 <h3 id="information-1992gsonindex.html">Information: <a href="1992/gson/index.html">1992/gson/index.html</a></h3>
-<p>Cody changed it so that the buffer size is <code>ARG_MAX+1</code> to try and get past the
-problem of <code>gets()</code> being used in a more complex way. It is most unlikely that
-the dictionary file will ever have a line longer than 256 but even so it would
-be ideal if the code used <code>fgets(3)</code> instead. A tip on how <code>gets(3)</code> is being
-used:</p>
-<p>Previously it had a buffer size of 256 for reading in the dictionary lines. In this
-entry <code>gets(3)</code> is used in a more complicated way: first <code>m</code> is set to <code>*++p</code> in
-a for loop where <code>p</code> is argv. Later <code>m</code> is set to point to <code>h</code> which was of size
-256. <code>gets(3)</code> is called as <code>m = gets(m)</code>) but trying to change it to use</p>
+<p>This code uses <code>gets(3)</code> on a buffer size of 256 to read from the dictionary. It
+is highly unlikely that a line in a dictionary file will be this long but it
+could happen and it would be ideal if the code used <code>fgets(3)</code> instead.
+Unfortunately with this entry it’s not as simple due to how <code>gets(3)</code> is used,
+which can be described simply as: first <code>m</code> is set to <code>*++p</code> in a for loop where
+<code>p</code> is argv. Later <code>m</code> is set to point to <code>h</code> which was of size 256. <code>gets(3)</code>
+is called as <code>m = gets(m)</code>) but trying to change it to use <code>fgets(3)</code> breaks the
+program.</p>
 <h3 id="status-inabiaf---please-do-not-fix-15">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <p>On the other hand, the author noted the following bugs and limitations:</p>
 <ul>
