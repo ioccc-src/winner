@@ -1070,16 +1070,14 @@ entry itself. Can you fix the actual entry? You are welcome to try and do so.
 ### Source code: [1992/gson/gson.c](%%REPO_URL%%/1992/gson/gson.c)
 ### Information: [1992/gson/index.html](1992/gson/index.html)
 
-Cody changed it so that the buffer size is `ARG_MAX+1` to try and get past the
-problem of `gets()` being used in a more complex way. It is most unlikely that
-the dictionary file will ever have a line longer than 256 but even so it would
-be ideal if the code used `fgets(3)` instead. A tip on how `gets(3)` is being
-used:
-
-Previously it had a buffer size of 256 for reading in the dictionary lines. In this
-entry `gets(3)` is used in a more complicated way: first `m` is set to `*++p` in
-a for loop where `p` is argv. Later `m` is set to point to `h` which was of size
-256\. `gets(3)` is called as `m = gets(m)`) but trying to change it to use
+This code uses `gets(3)` on a buffer size of 256 to read from the dictionary. It
+is highly unlikely that a line in a dictionary file will be this long but it
+could happen and it would be ideal if the code used `fgets(3)` instead.
+Unfortunately with this entry it's not as simple due to how `gets(3)` is used,
+which can be described simply as: first `m` is set to `*++p` in a for loop where
+`p` is argv. Later `m` is set to point to `h` which was of size 256\. `gets(3)`
+is called as `m = gets(m)`) but trying to change it to use `fgets(3)` breaks the
+program.
 
 
 ### STATUS: INABIAF - please **DO NOT** fix
