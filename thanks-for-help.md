@@ -1,7 +1,7 @@
 # Thanks for all the help
 
 
-## .. and [thanks for all the fish](https://hitchhikers.fandom.com/wiki/So_Long,_and_Thanks_for_All_the_Fish). :-)
+## .. and [Thanks for All the Fish](https://hitchhikers.fandom.com/wiki/So_Long,_and_Thanks_for_All_the_Fish). :-)
 
 To avoid having to change numerous "_index.html_" files to add thank you notes,
 we centralize them below.
