@@ -31,7 +31,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "alternate source code"
+	    "entry_text" : "author provided source code without 64-bit FNV hash"
 	},
 	{
 	    "file_path" : "prog.orig.c",
@@ -103,7 +103,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "unobfuscated err.h header file"
+	    "entry_text" : "author provided header file for unobfuscated code"
 	},
 	{
 	    "file_path" : "prog.alt2.c",
@@ -111,7 +111,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "unobfuscated source code"
+	    "entry_text" : "author provided unobfuscated code"
 	},
 	{
 	    "file_path" : "war-and-peace.txt",
