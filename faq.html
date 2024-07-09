@@ -435,6 +435,7 @@
 <li><a href="#faq3_18">3.18 - How do I compile and install OpenGL for entries that require it?</a></li>
 <li><a href="#faq3_19">3.19 - What kind of make(1) compatibility does the IOCCC support and will it support other kinds?</a></li>
 <li><a href="#faq3_20">3.20 - How do I download individual winning entries or all winning entries of a given year?</a></li>
+<li><a href="#faq3_21">3.21 - What are <code>try.sh</code> and <code>try.alt.sh</code> scripts and why should I use them?</a></li>
 </ul>
 <h2 id="section-4---changes-made-to-ioccc-entries">Section 4 - <a href="#faq4">Changes made to IOCCC entries</a></h2>
 <ul>
@@ -446,6 +447,8 @@ other inconsistencies with the original entry?</a></li>
 <li><a href="#faq4_4">4.4 - What is the meaning of the file ending in .orig.c in IOCCC entries?</a></li>
 <li><a href="#faq4_5">4.5 - Why were alternate versions added to some entries when the original entry worked fine and well?</a></li>
 <li><a href="#faq4_6">4.6 - Why was arg count and/or type changed in main() in some older entries?</a></li>
+<li><a href="#faq4_7">4.7 - Why were some filenames changed?</a></li>
+<li><a href="#faq4_8">4.8 - Why were files added or removed from some entries?</a></li>
 </ul>
 <h2 id="section-5---helping-the-ioccc">Section 5 - <a href="#faq5">Helping the IOCCC</a></h2>
 <ul>
@@ -2041,6 +2044,25 @@ interest you, as if you downloaded that entry’s individual tarball.</p>
 year’s <code>index.html</code> file and then <code>1984/mullender/index.html</code> you could point your
 browser to <code>1984/index.html</code>, scroll down to <code>Winning Entries of 1984 - The 1st IOCCC</code> and click on the link <code>1984/mullender</code> which will take you to the
 <code>index.html</code> file. Of course the caveats listed above still will apply.</p>
+<div id="faq3_21">
+<div id="try">
+<h3 id="what-are-try.sh-and-try.alt.sh-scripts-and-why-should-i-use-them">3.21 - What are <code>try.sh</code> and <code>try.alt.sh</code> scripts and why should I use them?</h3>
+</div>
+</div>
+<p>A lot of the entries, old and otherwise, have complicated uses or if not
+complicated uses then numerous uses (sometimes both), and having a script that
+automates these for viewers improves the usability of these entries so one can
+enjoy them better.</p>
+<p>The <code>try.sh</code> script is for the original entry and the <code>try.alt.sh</code> script is for
+alternate versions. These scripts are usually for the <code>Try:</code> and <code>Alternate try:</code> sections in the <code>index.html</code> files.</p>
+<p>Some entries provide additional scripts that are meant to run the entry as well
+but might not fit in the <code>try</code> model though some are used by a <code>try.sh</code> /
+<code>try.alt.sh</code> script.</p>
+<p>Although you’re certainly welcome to copy and paste or type the commands in
+manually, sometimes the scripts will do additional things that you might miss
+and there are some other benefits as well which you would miss if you did not
+use them. Nevertheless, if you prefer to do it manually, whether to help you
+process or appreciate the entry more, then please do so.</p>
 <div id="faq4">
 <h2 id="section-4-changes-made-to-ioccc-entries">Section 4: Changes made to IOCCC entries</h2>
 </div>
@@ -2222,6 +2244,45 @@ changed to two.</p>
 could no longer be so: <code>main()</code> instead had to call another function that has
 the body of the old <code>main()</code> and that function would call itself again. In some
 cases, however, this had to be done even without <code>clang</code> objections.</p>
+<div id="faq4_7">
+<h3 id="faq-4.7-why-were-some-filenames-changed">FAQ 4.7: Why were some filenames changed?</h3>
+</div>
+<p>The reasons this was done varies. One of the earliest changes was making the old
+<code>.hint</code> or <code>.text</code> files <code>README.md</code> files. The first time this was done was for
+<code>2019/README.text</code> and <code>2020/README.text</code> with <a href="https://github.com/ioccc-src/temp-test-ioccc/commit/87c41a787fa334f6696ec8f23284eacea63e3e89">commit
+87c41a787fa334f6696ec8f23284eacea63e3e89</a>.
+With <a href="https://github.com/ioccc-src/temp-test-ioccc/commit/77fb0f11a2ddc8584a1ebe8d68fb0cccf3b959a6">commit
+77fb0f11a2ddc8584a1ebe8d68fb0cccf3b959a6</a><code>index.html</code>
+and <code>hint.html</code> files were removed in favour of <code>README.md</code> files;
+<a href="https://github.com/ioccc-src/temp-test-ioccc/commit/851e191519953c743cdd363dc19099e89210319c">commit
+851e191519953c743cdd363dc19099e89210319c</a>
+renamed <code>hint.txt</code> and <code>hint.text</code> to <code>README.md</code>. There were most likely other
+commits that fixed some issues with this.</p>
+<p>Other files were also renamed, though, sometimes being converted to markdown as
+well. Shell scripts were often renamed to end with <code>.sh</code> to indicate it is a
+shell script and to help browsers know how to deal with it (this was before the
+method of how to display files was devised).</p>
+<p>Another example is for more consistency, sometimes to do with alternate code and
+other times something else.</p>
+<p>There were certainly other reasons as well.</p>
+<div id="faq4_8">
+<h3 id="faq-4.7-why-were-files-added-or-removed-from-some-entries">FAQ 4.7: Why were files added or removed from some entries?</h3>
+</div>
+<p>Like with files being renamed, there are multiple reasons files were added or
+removed. The addition of the <code>try.sh</code> and <code>try.alt.sh</code> scripts is the most
+significant example of files being added. These scripts, as the <a href="#try">FAQ about this
+says</a>, help demonstrate entries by automating commands, sometimes many
+commands and not always simple commands, that one would previously have to run
+manually (there are other benefits as well).</p>
+<p>Alternate code, sometimes provided by the author, sometimes provided by the
+judges and sometimes other people, was added to some entries as well.</p>
+<p>In the case that a link might end up with a 404 the files, if possible, were
+downloaded and put into the entry’s directory. Sometimes the links were already
+dead but with the help of the Internet Wayback Machine we could get the files
+back.</p>
+<p>In a few cases files were removed and there are multiple reasons for this too.</p>
+<p>The end result is to help improve the presentation of the entries in some way or
+ways.</p>
 <div id="faq5">
 <h2 id="section-5-updating-or-correcting-ioccc-website-content">Section 5: Updating or correcting IOCCC website content</h2>
 </div>

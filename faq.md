@@ -53,6 +53,7 @@
 - [3.18 - How do I compile and install OpenGL for entries that require it?](#faq3_18)
 - [3.19 - What kind of make&#x28;1&#x29; compatibility does the IOCCC support and will it support other kinds?](#faq3_19)
 - [3.20 - How do I download individual winning entries or all winning entries of a given year?](#faq3_20)
+- [3.21 - What are `try.sh` and `try.alt.sh` scripts and why should I use them?](#faq3_21)
 
 
 ## Section  4 - [Changes made to IOCCC entries](#faq4)
@@ -64,6 +65,8 @@ other inconsistencies with the original entry?](#faq4_3)
 - [4.4  - What is the meaning of the file ending in .orig.c in IOCCC entries?](#faq4_4)
 - [4.5  - Why were alternate versions added to some entries when the original entry worked fine and well?](#faq4_5)
 - [4.6  - Why was arg count and/or type changed in main&#x28;&#x29; in some older entries?](#faq4_6)
+- [4.7  - Why were some filenames changed?](#faq4_7)
+- [4.8  - Why were files added or removed from some entries?](#faq4_8)
 
 
 ## Section  5 - [Helping the IOCCC](#faq5)
@@ -2429,6 +2432,31 @@ browser to `1984/index.html`, scroll down to `Winning Entries of 1984 - The 1st
 IOCCC` and click on the link `1984/mullender` which will take you to the
 `index.html` file. Of course the caveats listed above still will apply.
 
+<div id="faq3_21">
+<div id="try">
+### 3.21 - What are `try.sh` and `try.alt.sh` scripts and why should I use them?
+</div>
+</div>
+
+A lot of the entries, old and otherwise, have complicated uses or if not
+complicated uses then numerous uses (sometimes both), and having a script that
+automates these for viewers improves the usability of these entries so one can
+enjoy them better.
+
+The `try.sh` script is for the original entry and the `try.alt.sh` script is for
+alternate versions. These scripts are usually for the `Try:` and `Alternate
+try:` sections in the `index.html` files.
+
+Some entries provide additional scripts that are meant to run the entry as well
+but might not fit in the `try` model though some are used by a `try.sh` /
+`try.alt.sh` script.
+
+Although you're certainly welcome to copy and paste or type the commands in
+manually, sometimes the scripts will do additional things that you might miss
+and there are some other benefits as well which you would miss if you did not
+use them. Nevertheless, if you prefer to do it manually, whether to help you
+process or appreciate the entry more, then please do so.
+
 
 <div id="faq4">
 ## Section 4: Changes made to IOCCC entries
@@ -2669,6 +2697,58 @@ The above also meant that some entries that were recursive calls to `main()`
 could no longer be so: `main()` instead had to call another function that has
 the body of the old `main()` and that function would call itself again. In some
 cases, however, this had to be done even without `clang` objections.
+
+
+<div id="faq4_7">
+### FAQ 4.7: Why were some filenames changed?
+</div>
+
+The reasons this was done varies. One of the earliest changes was making the old
+`.hint` or `.text` files `README.md` files. The first time this was done was for
+`2019/README.text` and `2020/README.text` with [commit
+87c41a787fa334f6696ec8f23284eacea63e3e89](https://github.com/ioccc-src/temp-test-ioccc/commit/87c41a787fa334f6696ec8f23284eacea63e3e89).
+With [commit
+77fb0f11a2ddc8584a1ebe8d68fb0cccf3b959a6](https://github.com/ioccc-src/temp-test-ioccc/commit/77fb0f11a2ddc8584a1ebe8d68fb0cccf3b959a6)`index.html`
+and `hint.html` files were removed in favour of `README.md` files;
+[commit
+851e191519953c743cdd363dc19099e89210319c](https://github.com/ioccc-src/temp-test-ioccc/commit/851e191519953c743cdd363dc19099e89210319c)
+renamed `hint.txt` and `hint.text` to `README.md`. There were most likely other
+commits that fixed some issues with this.
+
+Other files were also renamed, though, sometimes being converted to markdown as
+well. Shell scripts were often renamed to end with `.sh` to indicate it is a
+shell script and to help browsers know how to deal with it (this was before the
+method of how to display files was devised).
+
+Another example is for more consistency, sometimes to do with alternate code and
+other times something else.
+
+There were certainly other reasons as well.
+
+
+<div id="faq4_8">
+### FAQ 4.7: Why were files added or removed from some entries?
+</div>
+
+Like with files being renamed, there are multiple reasons files were added or
+removed. The addition of the `try.sh` and `try.alt.sh` scripts is the most
+significant example of files being added. These scripts, as the [FAQ about this
+says](#try), help demonstrate entries by automating commands, sometimes many
+commands and not always simple commands, that one would previously have to run
+manually (there are other benefits as well).
+
+Alternate code, sometimes provided by the author, sometimes provided by the
+judges and sometimes other people, was added to some entries as well.
+
+In the case that a link might end up with a 404 the files, if possible, were
+downloaded and put into the entry's directory. Sometimes the links were already
+dead but with the help of the Internet Wayback Machine we could get the files
+back.
+
+In a few cases files were removed and there are multiple reasons for this too.
+
+The end result is to help improve the presentation of the entries in some way or
+ways.
 
 
 <div id="faq5">
