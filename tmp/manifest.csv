@@ -3564,7 +3564,7 @@
 2015,hou,index.html,4294967295,false,html,false,this web page
 2015,howe,prog.c,20,true,c,true,entry source code
 2015,howe,Makefile,30,true,makefile,true,entry Makefile
-2015,howe,prog.alt.c,40,true,c,true,alternate source code
+2015,howe,prog.alt.c,40,true,c,true,author provided source code without 64-bit FNV hash
 2015,howe,prog.orig.c,50,false,c,true,original source code
 2015,howe,avgtime.sh,100,true,shellscript,true,report average time running a command N times
 2015,howe,makeholes.c,100,true,c,true,C code to add random holes to a file
@@ -3573,8 +3573,8 @@
 2015,howe,try.alt.sh,100,true,shellscript,true,script to try alternate code
 2015,howe,try.sh,100,true,shellscript,true,script to try entry
 2015,howe,cc.1,159,true,man,true,cc man page
-2015,howe,err.h,210,true,c,true,unobfuscated err.h header file
-2015,howe,prog.alt2.c,210,true,c,true,unobfuscated source code
+2015,howe,err.h,210,true,c,true,author provided header file for unobfuscated code
+2015,howe,prog.alt2.c,210,true,c,true,author provided unobfuscated code
 2015,howe,war-and-peace.txt,250,true,text,false,War and Peace translated to English
 2015,howe,2015_howe.tar.bz2,1415926535,false,tbz2,false,download entry tarball
 2015,howe,README.md,4000000000,true,markdown,true,markdown source for this web page
