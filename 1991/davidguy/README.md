@@ -87,7 +87,7 @@ haven't) the relation of the computation performed to the specification of what
 the program was supposed to do would still be hard to understand.
 
 
-### NOTICE to those who wish for a greater challenge
+### NOTICE to those who wish for a greater challenge:
 
 **If you want a greater challenge, don't read any further**:
 just try to understand the program via the source.

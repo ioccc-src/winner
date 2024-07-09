@@ -33,7 +33,7 @@ For more detailed information see [1995/vanschnitz in bugs.html](../../bugs.html
 ```
 
 
-### NOTICE to those who wish for a greater challenge
+### NOTICE to those who wish for a greater challenge:
 
 **If you want a greater challenge, don't read any further**:
 just try to understand the program without looking at the Alternate code.

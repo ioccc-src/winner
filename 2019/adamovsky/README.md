@@ -254,7 +254,7 @@ were shuffled both for `S` functions and Apply functions in the same way to hide
 the meaning of `f` and `r` prefixes.
 
 
-### NOTICE to those who wish for a greater challenge
+### NOTICE to those who wish for a greater challenge:
 
 **If you want a greater challenge, don't read any further**:
 just try to understand the program via the source.

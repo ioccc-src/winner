@@ -83,7 +83,7 @@ You might also wish to redirect the output to another file,
 compile it and compare how it works to the original code.
 
 
-### NOTICE to those who wish for a greater challenge
+### NOTICE to those who wish for a greater challenge:
 
 **If you want a greater challenge, don't read any further**:
 just try to understand the program via the source.

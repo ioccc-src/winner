@@ -62,7 +62,7 @@ Included is a test script, useful for the corner cases.  As in all good Unix
 programs, it is silent upon success; any output demonstrates an error.
 
 
-### NOTICE to those who wish for a greater challenge
+### NOTICE to those who wish for a greater challenge:
 
 **If you want a greater challenge, don't read any further**:
 just try to understand the program without running the command below.

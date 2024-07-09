@@ -542,7 +542,7 @@ Higher Order Symbol. Comput. 20, 3 (September 2007), 199-207.
 <http://www.pps.univ-paris-diderot.fr/~krivine/articles/lazymach.pdf>
 
 
-### NOTICE to those who wish for a greater challenge
+### NOTICE to those who wish for a greater challenge:
 
 **If you want a greater challenge, don't read any further**:
 just try to understand the program via the source.

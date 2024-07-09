@@ -251,7 +251,7 @@ it works on macOS too!  I must confess it was challenging to remain below the
 size limit with this little change.
 
 
-### NOTICE to those who wish for a greater challenge
+### NOTICE to those who wish for a greater challenge:
 
 **If you want a greater challenge, don't read any further**:
 just try to understand the program via the source.
