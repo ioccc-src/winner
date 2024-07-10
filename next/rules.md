@@ -451,7 +451,7 @@ been published may be disqualified.
 ### TL;DR Rule 17 - Use `mkiocccentry(1)`
 
 <p class="leftbar">
-This is a **COMPLEX** rule.  **Violating this rule will cause your submission to REJECTED**!
+This is a **COMPLEX** rule.  **Violating this rule will cause your submission to REJECTED!**
 To help you avoid such a rejection, you are **HIGHLY ENCOURAGED** to use the `mkiocccentry(1)` tool,
 based on the latest release of the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry),
 to form your submission's xz compressed tarball.
@@ -476,7 +476,8 @@ conforms to [Rule 17](#rule17).
 
 <p class="leftbar">
 Each above mentioned tools has a `-h` option that provides command
-line help.  For additional details, see the tools' man pages.
+line help.  For additional details, see the tools' man pages and the
+[guidelines](guidelines.html).
 </p>
 
 <p class="leftbar">
@@ -630,7 +631,7 @@ The `txzchk(1)` tool will verify these (and other things) for you and
 the `chkentry(1)` tool will do additional checks on the contents of the
 `.auth.json` and `.info.json` files including JSON validity. If these checks
 fail it is an error and `mkiocccentry(1)` will fail. In this case it is very
-**possibly** a bug; please [report it at the mkiocccentry issues
+**possibly** a bug; please [report it as a bug at the mkiocccentry issues
 page](https://github.com/ioccc-src/mkiocccentry/issues/new?assignees=&labels=bug&projects=&template=bug_report.yml&title=%5BBug%5D+%3Ctitle%3E).
 </p>
 
@@ -685,7 +686,7 @@ use parts of the library as well.
 
 <p class="leftbar">
 If you run into a problem with one or more of these tools, **PLEASE** [report it
-at the mkiocccentry issues
+as a bug at the mkiocccentry issues
 page](https://github.com/ioccc-src/mkiocccentry/issues/new?assignees=&labels=bug&projects=&template=bug_report.yml&title=%5BBug%5D+%3Ctitle%3E),
 **making sure to run `bug_report.sh`**. See the [guidelines](guidelines.html)
 for help here and also read [the FAQ about reporting bugs in the mkiocccentry

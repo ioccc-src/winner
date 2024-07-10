@@ -705,7 +705,7 @@ been published may be disqualified.</p>
 </div>
 <h3 id="tldr-rule-17---use-mkiocccentry1">TL;DR Rule 17 - Use <code>mkiocccentry(1)</code></h3>
 <p class="leftbar">
-This is a <strong>COMPLEX</strong> rule. <strong>Violating this rule will cause your submission to REJECTED</strong>!
+This is a <strong>COMPLEX</strong> rule. <strong>Violating this rule will cause your submission to REJECTED!</strong>
 To help you avoid such a rejection, you are <strong>HIGHLY ENCOURAGED</strong> to use the <code>mkiocccentry(1)</code> tool,
 based on the latest release of the <a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry repo</a>,
 to form your submission’s xz compressed tarball.
@@ -740,7 +740,8 @@ conforms to <a href="#rule17">Rule 17</a>.
 </p>
 <p class="leftbar">
 Each above mentioned tools has a <code>-h</code> option that provides command
-line help. For additional details, see the tools’ man pages.
+line help. For additional details, see the tools’ man pages and the
+<a href="guidelines.html">guidelines</a>.
 </p>
 <p class="leftbar">
 You do not explicitly need to invoke <code>jparse(1)</code> but the <code>jparse(8)</code>
@@ -900,7 +901,7 @@ The <code>txzchk(1)</code> tool will verify these (and other things) for you and
 the <code>chkentry(1)</code> tool will do additional checks on the contents of the
 <code>.auth.json</code> and <code>.info.json</code> files including JSON validity. If these checks
 fail it is an error and <code>mkiocccentry(1)</code> will fail. In this case it is very
-<strong>possibly</strong> a bug; please <a href="https://github.com/ioccc-src/mkiocccentry/issues/new?assignees=&amp;labels=bug&amp;projects=&amp;template=bug_report.yml&amp;title=%5BBug%5D+%3Ctitle%3E">report it at the mkiocccentry issues
+<strong>possibly</strong> a bug; please <a href="https://github.com/ioccc-src/mkiocccentry/issues/new?assignees=&amp;labels=bug&amp;projects=&amp;template=bug_report.yml&amp;title=%5BBug%5D+%3Ctitle%3E">report it as a bug at the mkiocccentry issues
 page</a>.
 </p>
 <p class="leftbar">
@@ -946,7 +947,7 @@ use parts of the library as well.
 </p>
 <p class="leftbar">
 If you run into a problem with one or more of these tools, <strong>PLEASE</strong> <a href="https://github.com/ioccc-src/mkiocccentry/issues/new?assignees=&amp;labels=bug&amp;projects=&amp;template=bug_report.yml&amp;title=%5BBug%5D+%3Ctitle%3E">report it
-at the mkiocccentry issues
+as a bug at the mkiocccentry issues
 page</a>,
 <strong>making sure to run <code>bug_report.sh</code></strong>. See the <a href="guidelines.html">guidelines</a>
 for help here and also read <a href="../faq.html#mkiocccentry_bugs">the FAQ about reporting bugs in the mkiocccentry
