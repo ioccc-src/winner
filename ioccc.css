@@ -420,6 +420,7 @@ a {
     outline-color: transparent;
     text-decoration: none;
     padding: 2px 1px 0;
+    font-weight: bold;
 }
 
 a:link {
