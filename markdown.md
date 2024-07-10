@@ -61,9 +61,9 @@ While some browsers will still recognize the HTML construct `<a
 name="string">...</a>`, it is possible they might NOT in the future.
 
 
-## Please do NOT use the `<strike>` nor the `<s>` HTML element
+## Please do NOT use the `<strike>` or the `<s>` HTML element
 
-Please NOT use the obsolete `<strike>` nor the obsolete `<s>` (<del>_strikeout_</del>) HTML elements:
+Please do NOT use the obsolete `<strike>` or the obsolete `<s>` (<del>_strikeout_</del>) HTML elements:
 
 ```
     <strike>...</strike>                                      <=== no thank you
@@ -176,14 +176,14 @@ For example:
 ````
 
 And to clarify, we are only talking about markdown files,
-not C code nor any other non-markdown content:
+not C code or any other non-markdown content:
 
 ````
 	printf("Is is fine	to	use tabs in Obfucated C code.\n");
 		/*	if	you	wish	*/
 
     // We ask that you to NOT use ASCII tab characters in your remarks.md writeup,
-    // nor in any other markdown files within your entry, please.
+    // or in any other markdown files within your entry, please.
 ````
 
 **NOTE**: Again, you are **perfectly welcome** to use ASCII tab characters in
@@ -443,9 +443,9 @@ C compilers cannot be given a -Wno-main-arg-errors flag.
 **BTW**: Please note the blank line after the code block.
 
 
-## Please do NOT put "("s nor ")"s in markdown link titles
+## Please do NOT put "("s or ")"s in markdown link titles
 
-Please do **NOT** use parenthesis inside the markdown link titles.
+Please do **NOT** use literal parentheses inside the markdown link titles.
 
 Instead of:
 

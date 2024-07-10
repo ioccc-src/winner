@@ -415,8 +415,8 @@ for the given page URL.</p>
     # This will work
     &lt;/div&gt;</code></pre>
 <p>While some browsers will still recognize the HTML construct <code>&lt;a name="string"&gt;...&lt;/a&gt;</code>, it is possible they might NOT in the future.</p>
-<h2 id="please-do-not-use-the-strike-nor-the-s-html-element">Please do NOT use the <code>&lt;strike&gt;</code> nor the <code>&lt;s&gt;</code> HTML element</h2>
-<p>Please NOT use the obsolete <code>&lt;strike&gt;</code> nor the obsolete <code>&lt;s&gt;</code> (<del><em>strikeout</em></del>) HTML elements:</p>
+<h2 id="please-do-not-use-the-strike-or-the-s-html-element">Please do NOT use the <code>&lt;strike&gt;</code> or the <code>&lt;s&gt;</code> HTML element</h2>
+<p>Please do NOT use the obsolete <code>&lt;strike&gt;</code> or the obsolete <code>&lt;s&gt;</code> (<del><em>strikeout</em></del>) HTML elements:</p>
 <pre><code>    &lt;strike&gt;...&lt;/strike&gt;                                      &lt;=== no thank you
     &lt;s&gt;...&lt;/s&gt;                                                &lt;=== no thank you</code></pre>
 <p>Use instead:</p>
@@ -473,12 +473,12 @@ ASCII tab characters anywhere inside a markdown file:</p>
      We just ask that you NOT use them in markdown files.
 ```</code></pre>
 <p>And to clarify, we are only talking about markdown files,
-not C code nor any other non-markdown content:</p>
+not C code or any other non-markdown content:</p>
 <pre><code>        printf(&quot;Is is fine      to      use tabs in Obfucated C code.\n&quot;);
                 /*      if      you     wish    */
 
     // We ask that you to NOT use ASCII tab characters in your remarks.md writeup,
-    // nor in any other markdown files within your entry, please.</code></pre>
+    // or in any other markdown files within your entry, please.</code></pre>
 <p><strong>NOTE</strong>: Again, you are <strong>perfectly welcome</strong> to use ASCII tab characters in
 your C code and other non-markdown files. We simply ask that you <strong>NOT</strong> use any
 ASCII tab characters in markdown files.</p>
@@ -610,8 +610,8 @@ C compilers cannot be given a -Wno-main-arg-errors flag.      &lt;=== no thank y
 
 C compilers cannot be given a -Wno-main-arg-errors flag.</code></pre>
 <p><strong>BTW</strong>: Please note the blank line after the code block.</p>
-<h2 id="please-do-not-put-s-nor-s-in-markdown-link-titles">Please do NOT put “(”s nor “)”s in markdown link titles</h2>
-<p>Please do <strong>NOT</strong> use parenthesis inside the markdown link titles.</p>
+<h2 id="please-do-not-put-s-or-s-in-markdown-link-titles">Please do NOT put “(”s or “)”s in markdown link titles</h2>
+<p>Please do <strong>NOT</strong> use literal parentheses inside the markdown link titles.</p>
 <p>Instead of:</p>
 <pre><code>    [some (text)](https://example.com/cyrds)                  &lt;=== no thank you</code></pre>
 <p>Use:</p>
