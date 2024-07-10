@@ -46,7 +46,7 @@ writing by [contacting the judges](../contact.html).
 </div>
 
 <p class="leftbar">
-These [IOCCC rules](rules.html) are version **28.5 2024-07-08**.
+These [IOCCC rules](rules.html) are version **28.6 2024-07-10**.
 </p>
 
 **IMPORTANT**: Be sure to read the [IOCCC guidelines](guidelines.html).
@@ -387,7 +387,7 @@ it is needed in your submissions `remarks.md` file.
 </div>
 
 **Legal** abuse of the rules is somewhat encouraged.  **A submission that, in
-the opinion of the judges, **violates the rules will be disqualified**.
+the opinion of the [judges](../judges.html), **violates the rules will be disqualified**.
 Submissions that attempt to abuse the rules **MUST** try to justify why
 their rule abuse is legal, in the `remarks.md` file.
 
@@ -424,7 +424,7 @@ any control-M at the end of remark file lines.
 In order to register for the IOCCC, you **MUST** have a valid email address.
 </p>
 
-The judges **are not responsible for delays in email**, please plan
+The [judges](../judges.html) **are not responsible for delays in email**, please plan
 enough time for one automated exchange of email as part of your
 submission.
 
@@ -794,7 +794,7 @@ directory name or filename you create.
 Catch 22:
 
 Your source code, data files, remarks and program output **MUST NOT**
-identify the authors of your code.  The judges **STRONGLY PREFER** to
+identify the authors of your code.  The [judges](../judges.html) **STRONGLY PREFER** to
 **NOT** know who is submitting entries to the IOCCC.
 
 Even if you are a previous IOCCC winner, catch 22 still applies.

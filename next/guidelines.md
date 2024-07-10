@@ -46,7 +46,7 @@ writing by [contacting the judges](../contact.html).
 </div>
 
 <p class="leftbar">
-These [IOCCC guidelines](guidelines.html) are version **28.7 2024-07-08**.
+These [IOCCC guidelines](guidelines.html) are version **28.8 2024-07-10**.
 </p>
 
 **IMPORTANT**: Be **SURE** to read the [IOCCC rules](rules.html).
@@ -302,7 +302,7 @@ counted by the IOCCC size tool.  This is a feature, not a bug!</p>
 
 In cases where the above summary and the algorithm implemented by
 the IOCCC size tool source code conflict, the algorithm implemented
-by the IOCCC size tool source code is preferred by the judges.
+by the IOCCC size tool source code is preferred by the [judges](../judges.html).
 
 <p class="leftbar">
 There are at least 2 other reasons for selecting 2503 as the 2nd limit besides
@@ -767,7 +767,7 @@ of nested functions such as:
      }
 ```
 
-On 2012 July 20, the judges rescinded the encouragement of
+On 2012 July 20, the [judges](../judges.html) rescinded the encouragement of
 nested functions.  Such constructions, while interesting and sometimes
 amusing, will have to wait until they required by a C standard that are
 actually implemented in **BOTH** `gcc` **AND** `clang`.
@@ -900,7 +900,7 @@ marks the spot**".  Yet on the third hand, windows are best when they are
 "unseen" (i.e., not dirty).  :-)
 </p>
 
-The judges, as a group, have a history giving wide degree of latitude
+The [judges](../judges.html), as a group, have a history giving wide degree of latitude
 to reasonable entries.  And recently they have had as much longitudinal
 variation as it is possible to have on [Earth](https://science.nasa.gov/earth/).  :-)
 
@@ -922,7 +922,7 @@ operating systems (e.g., Linux, GNU Hurd, BSD, Unix, etc.).
 
 > You are in a maze of twisty _guidelines_, all different.
 
-There are at least zero judges who think that
+There are at least zero [judges](../judges.html) who think that
 [Fideism](https://en.wikipedia.org/wiki/Fideism) has little
 or nothing to do with the IOCCC judging process.
 
@@ -1226,7 +1226,7 @@ Noll](http://www.isthe.com/chongo/index.html), might run the risk of violating
 [Rule 7](rules.html#rule7) does not prohibit you from writing your own
 obfuscated versions of these tools, unless of course you are [Landon Curt
 Noll](http://www.isthe.com/chongo/index.html), in which case you _probably_ won't
-win since judges are disqualified! :-)
+win since [judges](../judges.html) are disqualified! :-)
 However, _**if you do** write your own version, **you might wish** to make it do something more
 interesting_ than simply implementing the [IOCCC](../index.html) tools' algorithms. On the other
 hand, writing an obfuscated version of a library runs the risk of violating
@@ -1282,7 +1282,7 @@ However the [judges](../judges.html) might try to also factor 0, so you want to 
 `2305567963945518424753102147331756070`.  Attempting to factor values outside
 that range will produce unpredictable results.
 
-Moreover the try to also factor 3.5 or 0x7, or Fred, so you want to might state:
+Moreover the might try to also factor 3.5 or 0x7, or Fred, so you want to might state:
 
 >   This submission factors integers between 1 and
 `2305567963945518424753102147331756070`.  Attempting to factor anything else
@@ -1369,7 +1369,7 @@ the next year's [IOCCC rules](rules.html) and [IOCCC guidelines](guidelines.html
 
 Legal abuse of the [IOCCC rules](rules.html) is **NOT** an invitation to violate the
 [IOCCC rules](rules.html). A submission that violates the [rules](rules.html) in the
-opinion of the judges, **WILL** be
+opinion of the [judges](../judges.html), **WILL** be
 disqualified.  **_RULE ABUSE CARRIES A CERTAIN LEVEL OF RISK!_**  If you
 have a submission that might otherwise be interesting, you might want to
 submit two versions; one that does not abuse the [IOCCC rules](rules.html) and one that
@@ -1390,7 +1390,7 @@ submitting an alternate version that conforms to the
 If you do bypass the `mkiocccentry(1)` warnings about [Rule
 2a](rules.html#rule2a) and/or about [Rule 2b](rules.html#rule2b)
 and submit a submission anyway, you **MUST** try to justify why the IOCCC
-judges should not reject your submission due to a rule violation.
+[judges](../judges.html) should not reject your submission due to a rule violation.
 </p>
 
 Abusing the web submission procedure tends to annoy us more
@@ -1431,7 +1431,7 @@ submission files including, but not limited to `prog.c`, `Makefile`,
 `remarks.md` as well as any data files that you submit, are all placed under
 their own directory and stored and judged from this directory.
 
-Any information about the authors is not read by the judges until
+Any information about the authors is not read by the [judges](../judges.html) until
 the judging process is complete, and then only from entries that have
 won an award.  Because we do not read this information for entries that
 do not win, we do not know who did not win.
@@ -1446,7 +1446,7 @@ and outside the scope of the above paragraph.
 
 Some people, in the past, have attempted to obfuscate their identity by
 including comments of famous Internet personalities such as [Peter
-Honeyman](http://www.citi.umich.edu/u/honey).  The judges are on to this trick
+Honeyman](http://www.citi.umich.edu/u/honey).  The [judges](../judges.html) are on to this trick
 and therefore consider any obfuscated source or data file claiming to be from
 Honeyman to not be from Honeyman.  This of course creates an interesting paradox
 known as the "**obfuscated Peter Honeyman paradox**".  Should Peter Honeyman
