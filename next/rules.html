@@ -416,7 +416,7 @@ writing by <a href="../contact.html">contacting the judges</a>.</p>
 <h2 id="ioccc-rules-version">IOCCC Rules version</h2>
 </div>
 <p class="leftbar">
-These <a href="rules.html">IOCCC rules</a> are version <strong>28.6 2024-07-10</strong>.
+These <a href="rules.html">IOCCC rules</a> are version <strong>28.7 2024-07-11</strong>.
 </p>
 <p><strong>IMPORTANT</strong>: Be sure to read the <a href="guidelines.html">IOCCC guidelines</a>.</p>
 <div id="change_marks">
@@ -899,7 +899,7 @@ entry.
 <p class="leftbar">
 The <code>txzchk(1)</code> tool will verify these (and other things) for you and
 the <code>chkentry(1)</code> tool will do additional checks on the contents of the
-<code>.auth.json</code> and <code>.info.json</code> files including JSON validity. If these checks
+<code>.auth.json</code> and <code>.info.json</code> files (including JSON validity). If these checks
 fail it is an error and <code>mkiocccentry(1)</code> will fail. In this case it is very
 <strong>possibly</strong> a bug; please <a href="https://github.com/ioccc-src/mkiocccentry/issues/new?assignees=&amp;labels=bug&amp;projects=&amp;template=bug_report.yml&amp;title=%5BBug%5D+%3Ctitle%3E">report it as a bug at the mkiocccentry issues
 page</a>.
@@ -908,7 +908,8 @@ page</a>.
 The tarball filename <strong>MUST</strong> pass <code>fnamchk(1)</code>; the tool <code>txzchk(1)</code>
 will run <code>fnamchk(1)</code> as part of its algorithm. If you use <code>mkiocccentry(1)</code>
 there should be no problem but if you were to package things manually it is
-possible there could be a problem and this is a big risk.
+possible there could be a problem and this poses a big risk of violating <a href="#rule17">Rule
+17</a>.
 </p>
 <p class="leftbar">
 The <code>fnamchk(1)</code>, which <code>txzchk(1)</code> executes, will verify that the

@@ -416,7 +416,7 @@ writing by <a href="../contact.html">contacting the judges</a>.</p>
 <h2 id="ioccc-guidelines-version">IOCCC Guidelines version</h2>
 </div>
 <p class="leftbar">
-These <a href="guidelines.html">IOCCC guidelines</a> are version <strong>28.8 2024-07-10</strong>.
+These <a href="guidelines.html">IOCCC guidelines</a> are version <strong>28.9 2024-07-11</strong>.
 </p>
 <p><strong>IMPORTANT</strong>: Be <strong>SURE</strong> to read the <a href="rules.html">IOCCC rules</a>.</p>
 <div id="change_marks">
@@ -602,11 +602,11 @@ The overall size limit (see <a href="rules.html#rule2a">Rule 2a</a>) on <code>pr
 </p>
 <p class="leftbar">
 Your submission must satisfy BOTH the maximum size <a href="rules.html#rule2a">Rule
-2a</a> AND the IOCCC size tool <a href="rules.html#rule2b">Rule 2b</a>.
+2a</a> <strong>AND</strong> the IOCCC size tool <a href="rules.html#rule2b">Rule 2b</a>.
 </p>
 <p class="leftbar">
-This IOCCC size tool imposes a 2nd limit on C code size (see <a href="rules.html#rule2a">Rule 2a</a>. To check your
-code against <a href="rules.html#rule2">Rule 2</a>:
+This IOCCC size tool imposes a 2nd limit on C code size (see <a href="rules.html#rule2a">Rule
+2a</a>). To check your code against <a href="rules.html#rule2">Rule 2</a>:
 </p>
 <pre><code>    iocccsize prog.c</code></pre>
 <p>The IOCCC size tool algorithm may be summarized as follows:</p>
@@ -621,7 +621,7 @@ before the end of file.</p>
 ASCII formfeed, and ASCII carriage return.</p>
 <p class="leftbar">
 When ‘<code>;</code>’, ‘<code>{</code>’ or ‘<code>}</code>’ are within a C string, they may still not be
-counted by the IOCCC size tool. This is a feature, not a bug!
+counted by the IOCCC size tool. This is a <em>feature</em>, not a bug!
 </p>
 <p>In cases where the above summary and the algorithm implemented by
 the IOCCC size tool source code conflict, the algorithm implemented
@@ -643,24 +643,59 @@ The <a href="rules.html#rule2a">Rule 2a</a> size was changed from
 value similar to the <a href="../faq.html#size_rule2001-2012">2001-2012</a> and
 <a href="../faq.html#size_rule2013-2020">2013-2020</a> IOCCC eras.
 </p>
+<h2 id="mkiocccentry"><code>mkiocccentry</code></h2>
 <p class="leftbar">
 <a href="rules.html#rule17">Rule 17</a> (the <code>mkiocccentry(1)</code> rule) states that
 you <strong>MUST</strong> use the <code>mkiocccentry(1)</code> tool to package your submission tarball.
 </p>
 <p class="leftbar">
 See the <a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry repo</a>
-for the <code>mkiocccentry(1)</code> tool.
+for the <code>mkiocccentry(1)</code> tool and below for more details.
 </p>
 <p class="leftbar">
-This tool invokes a number of other tools and one, <code>txzchk(1)</code>,
-invokes another, <code>fnamchk(1)</code>.
+<code>mkiocccentry</code> runs a number of checks, by the tool itself and by executing other
+tools, <em>before</em> packaging your xz compressed tarball. Once the tarball is
+packaged it will run <code>txzchk(1)</code>, which runs <code>fnamchk(1)</code> as part of its
+algorithm.
 </p>
 <p class="leftbar">
-Although the <code>mkiocccentry(1)</code> tool will verify everything for you,
-you may wish to validate each part individually. As the <a href="rules.html">rules</a>
-state, each of these tools have a <code>-h</code> option. However, to help simplify
-matters, we give you a brief overview below.
+If <code>mkiocccentry</code> encounters an <strong>error</strong> the program will exit and the xz
+compressed tarball <strong>will not be formed</strong>. For instance, if <code>chkentry(1)</code> (see
+below) fails to validate the <code>.auth.json</code> or <code>.info.json</code>
+<a href="https://www.json.org/json-en.html">JSON</a> files that <code>mkiocccentry(1)</code> creates,
+it is an error and possibly a bug that you should <a href="https://github.com/ioccc-src/mkiocccentry/issues/new?assignees=&amp;labels=bug&amp;projects=&amp;template=bug_report.yml&amp;title=%5BBug%5D+%3Ctitle%3E">report as a bug at the
+mkiocccentry issues
+page</a>.
+<strong>PLEASE run the <code>bug_report.sh</code> script to help us out here!</strong> See the <a href="../faq.html#mkiocccentry_bugs">the FAQ
+about reporting bugs in the mkiocccentry repo</a>.
 </p>
+<p class="leftbar">
+However, just because there are errors <strong>does not</strong> mean it is a bug in the
+code. It might be an issue with your submission. Thus if you report an error as
+a bug it might not be something that will be fixed as there might not be
+anything wrong.
+</p>
+<p class="leftbar">
+On the other hand, some conditions are <strong>warnings</strong> and it allows you to
+override these, if you wish. If you’re brave enough you can use the <code>-W</code> option
+to ignore all warnings but this is a big risk; the <code>-y</code> option will assume
+‘<em>yes</em>’ to most questions but this is also a big risk. Needless to say, we do
+NOT recommend these options.
+</p>
+<p class="leftbar">
+In many places it will prompt you to verify what you input, allowing you to
+correct details as you go along.
+</p>
+<p class="leftbar">
+Although the <code>mkiocccentry(1)</code> tool will verify everything for you, you may wish
+to validate different parts individually with the different tools. As the
+<a href="rules.html">rules</a> state, each of these tools has a <code>-h</code> option. However, to
+help simplify matters, we give you a brief overview below, which should also
+help you understand some of the checks the tool makes.
+</p>
+<div id="mkiocccentry-synopsis">
+<h2 id="mkiocccentry1-synopsis"><code>mkiocccentry(1)</code> synopsis</h2>
+</div>
 <p class="leftbar">
 The synopsis of the <code>mkiocccentry(1)</code> tool is:
 </p>
@@ -670,7 +705,7 @@ The synopsis of the <code>mkiocccentry(1)</code> tool is:
 … where <code>work_dir</code> is a directory that will be used to build the submission
 tarball, <code>prog.c</code> is your submission source code, <code>Makefile</code> is your submission’s
 <code>Makefile</code>, <code>remarks.md</code> are your remarks (that will be the basis of the
-<code>README.md</code> file which will be used to form the <code>index.html</code> file if your
+<code>README.md</code> file which will be used to form the <code>index.html</code> file, if your
 submission wins) and the remaining args are the paths to any other files you
 wish to submit.
 </p>
@@ -680,96 +715,32 @@ the requirements of these files.
 </p>
 <p class="leftbar">
 The <code>work_dir</code> <strong>MUST</strong> already exist, as a directory, and it is an error if it
-is not a directory that can be written to. In this directory your submission
-directory will be created, with the name based on your IOCCC registration
-username <strong>in the form of a UUID</strong> and submission number; see the
+is not a directory that can be written to. In <strong>this</strong> directory your <strong>submission
+directory</strong> will be created, with the name based on your IOCCC registration
+username, which is <strong>in the form of a UUID</strong> and submission number; see the
 <a href="rules.html">rules</a> for more details on this, and in particular <a href="rules.html#rule17">Rule
 17</a>.
 </p>
 <p class="leftbar">
-If the subdirectory in the work directory already exists, you will have to move
-it or remove it or otherwise specify a different work directory as it needs to
-be empty and the <code>mkiocccentry(1)</code> tool does not check this for you
-as it could do nothing about anyway. This subdirectory is where your files will be
-<strong>copied</strong> to. Your submission tarball (which you will upload to the submit
-server) that <code>txzchk(1)</code> will validate will be placed in the work directory, and
-its contents will be the subdirectory with your submission’s files.
+If the <strong><em>subdirectory</em> in the <em>work directory</em></strong> already exists, you will have to
+move it, remove it or otherwise specify a different work directory (<strong>NOT</strong>
+subdirectory), as it needs to be empty and the <code>mkiocccentry(1)</code> tool does not
+check this for you as it could not do anything about anyway. This <em>subdirectory is
+where your files will be <strong>copied</strong> to</em>. Your <em>submission tarball</em> (which you will
+upload to the submit server) that <code>txzchk(1)</code> will validate <em>will be placed in
+the <strong>work directory</strong></em>, and <strong>its <em>contents</em> will be the <em>subdirectory</em> with your
+submission’s files</strong>.
 </p>
 <p class="leftbar">
 The <code>mkiocccentry(1)</code> tool will ask you for information about your
-submission as well as author details and it will run the <code>iocccsize(1)</code> tool; if
-either <a href="rules.html#rule2a">Rule 2a</a> or <a href="rules.html#rule2b">Rule 2b</a> are broken,
-it will give you the option to ignore them, if you are willing to risk this.
-</p>
-<p class="leftbar">
-The tool will also do a rudimentary check on the <code>Makefile</code> and run other checks as
-well. You can override warnings as well but doing so puts you at risk of
-violating the <a href="rules.html">rules</a>.
-</p>
-<p class="leftbar">
-If you’re brave you can use the <code>-W</code> option to ignore all warnings but this is a
-big risk; the <code>-y</code> option will assume ‘<em>yes</em>’ to most questions but this is also a
-big risk.
-</p>
-<p class="leftbar">
-On the other hand, some <strong>issues are an error</strong> and the xz compressed
-tarball <strong>will not be formed</strong>. For instance, if <code>chkentry(1)</code> fails to validate
-the <code>.auth.json</code> or <code>.info.json</code> <a href="https://www.json.org/json-en.html">JSON</a> files
-that <code>mkiocccentry(1)</code> creates, it is an error and possibly a bug that you
-should <a href="https://github.com/ioccc-src/mkiocccentry/issues/new?assignees=&amp;labels=bug&amp;projects=&amp;template=bug_report.yml&amp;title=%5BBug%5D+%3Ctitle%3E">report as a bug at the mkiocccentry issues
-page</a>. <strong>PLEASE run the
-<code>bug_report.sh</code> script to help us out here!</strong> See the <a href="../faq.html#mkiocccentry_bugs">the FAQ about reporting
-bugs in the mkiocccentry repo</a>.
-</p>
-<p class="leftbar">
-However, just because there are errors <strong>does not</strong> mean it is a bug in the
-code. It might be an issue with your submission. Thus if you report an error as
-a bug it might not be something that will be fixed as there is nothing to be
-fixed in the first place.
-</p>
-<p class="leftbar">
-Assuming that <code>chkentry(1)</code> validates both <code>.auth.json</code> and
-<code>.info.json</code> then the tarball will be formed and then <code>txzchk(1)</code> will be
-executed. In this case, there should be no problems as <code>mkiocccentry(1)</code> should
-<strong>NOT</strong> form a tarball if there are any issues. If there is an issue reported,
-however, this is possibly a bug in one or more of the tools and you should <a href="https://github.com/ioccc-src/mkiocccentry/issues/new?assignees=&amp;labels=bug&amp;projects=&amp;template=bug_report.yml&amp;title=%5BBug%5D+%3Ctitle%3E">report
-it as a bug at the mkiocccentry issues
-page</a>.
-See the <a href="../faq.html#mkiocccentry_bugs">the FAQ about reporting
-bugs in the mkiocccentry repo</a>.
-</p>
-<p class="leftbar">
-<code>txzchk(1)</code> performs a wide number of sanity checks on the xz
-compressed tarball; if any issues are found (‘<code>feathers are stuck in the tarball</code>’ :-) ) <strong>AND if and <em>ONLY IF</em> you used
-<code>mkiocccentry(1)</code></strong>, then it is very possibly a bug in one of the tools and you
-should <a href="https://github.com/ioccc-src/mkiocccentry/issues/new?assignees=&amp;labels=bug&amp;projects=&amp;template=bug_report.yml&amp;title=%5BBug%5D+%3Ctitle%3E">report it as a bug at the mkiocccentry issues
-page</a>. <strong>PLEASE run the
-<code>bug_report.sh</code> script to help us out here!</strong> See <a href="../faq.html#mkiocccentry_bugs">the FAQ about reporting bugs
-in the mkiocccentry repo</a>.
-</p>
-<p class="leftbar">
-As part of its sanity checks, <code>txzchk(1)</code> will run <code>fnamchk(1)</code> on the
-<em>filename</em> to verify that the name is valid.
-</p>
-<p class="leftbar">
-It is extremely unlikely that <code>fnamchk(1)</code> reporting an invalid filename is a
-bug in <code>fnamchk(1)</code> and as such, ignoring such an issue risks violating <a href="rules.html#rule17">Rule
-17</a> which is a big risk. Of course, using <code>mkiocccentry(1)</code>
-would prevent this from happening as it would not create such a file anyway. If
-<code>mkiocccentry(1)</code> was used it would rather suggest a bug in one of the tools and
-you should <a href="https://github.com/ioccc-src/mkiocccentry/issues/new?assignees=&amp;labels=bug&amp;projects=&amp;template=bug_report.yml&amp;title=%5BBug%5D+%3Ctitle%3E">report it as a bug at the mkiocccentry issues
-page</a>.
-See <a href="../faq.html#mkiocccentry_bugs">the FAQ about reporting bugs in the mkiocccentry
-repo</a>.
-</p>
-<p class="leftbar">
-By default, <code>txzchk(1)</code> will show the contents of the tarball which is
-how the <code>mkiocccentry(1)</code> shows you the tarball contents for you to review.
+submission <em>as well as author details</em> (that will only be looked at if the
+submission wins), run some tests and run a number of other tools, as already
+mentioned and as described below.
 </p>
 <p class="leftbar">
 To help you with editing a submission, the <code>mkiocccentry(1)</code> tool has
 some options to write <em>OR</em> read from an answers file so you do not have to input
-the information about the author(s) and the entry itself after saving the
+the information about the author(s) and the submission itself, after saving the
 answers to a file. To write to <code>answers.txt</code> try:
 </p>
 <pre><code>    mkiocccentry -a answers.txt ...</code></pre>
@@ -782,50 +753,152 @@ overwrite your <code>prog.c</code> or some other important file!
 To make use of the answers file, use the <code>-i answers</code> option like:
 </p>
 <pre><code>    mkiocccentry -i answers.txt ...</code></pre>
+<h3 id="mkiocccentry-checks"><code>mkiocccentry</code> checks</h3>
 <p class="leftbar">
-If you wish to manually run the commands that <code>mkiocccentry(1)</code> runs, to test
-your submission, you can do so. For instance, to check the validity of the
-tarball <code>submit.12345678-1234-4321-abcd-1234567890ab-2.1720636351.txz</code> you can
-do:
+<code>mkiocccentry(1)</code> will check and warn about the following conditions:
 </p>
-<pre><code>    txzchk submit.12345678-1234-4321-abcd-1234567890ab-2.1720636351.txz</code></pre>
+<ul>
+<li><p class="leftbar">
+if the files do not exist, are not regular files or cannot be read.
+</p></li>
+<li><p class="leftbar">
+if <code>prog.c</code> violates <a href="rules.html#rule2">Rule 2</a> (see
+<a href="https://github.com/ioccc-src/mkiocccentry/blob/master/iocccsize.c">iocccsize.c</a>).
+</p></li>
+<li><p class="leftbar">
+if <code>prog.c</code> is empty.
+</p></li>
+<li><p class="leftbar">
+if <code>prog.c</code> has any high bit char (see
+<a href="https://github.com/ioccc-src/mkiocccentry/blob/master/iocccsize.c">iocccsize.c</a>).
+</p></li>
+<li><p class="leftbar">
+if <code>prog.c</code> has any NUL char (see
+<a href="https://github.com/ioccc-src/mkiocccentry/blob/master/iocccsize.c">iocccsize.c</a>).
+</p></li>
+<li><p class="leftbar">
+if <code>prog.c</code> has any unknown or invalid trigraph (see
+<a href="https://github.com/ioccc-src/mkiocccentry/blob/master/iocccsize.c">iocccsize.c</a>).
+</p></li>
+<li><p class="leftbar">
+if <code>prog.c</code> triggers a word buffer overflow (see
+<a href="https://github.com/ioccc-src/mkiocccentry/blob/master/iocccsize.c">iocccsize.c</a>).
+</p></li>
+<li><p class="leftbar">
+if <code>prog.c</code> triggers an <code>ungetc(3)</code> error (see
+<a href="https://github.com/ioccc-src/mkiocccentry/blob/master/iocccsize.c">iocccsize.c</a>).
+</p></li>
+<li><p class="leftbar">
+if the first rule in the <code>Makefile</code> is not <code>all</code>.
+</p></li>
+<li><p class="leftbar">
+if the <code>Makefile</code> does not have a <code>clean</code> rule.
+</p></li>
+<li><p class="leftbar">
+if the <code>Makefile</code> does not have a <code>clobber</code> rule.
+</p></li>
+<li><p class="leftbar">
+if the <code>Makefile</code> does not have a <code>try</code> rule.
+</p></li>
+<li><p class="leftbar">
+if the <code>remarks.md</code> is empty.
+</p></li>
+</ul>
 <p class="leftbar">
-Assuming that the tarball exists and is valid, you should see the
-contents of the tarball, along with a few other minor details, and the words:
+Conditions that one must correct, and which <code>mkiocccentry(1)</code> will prompt until
+it is correct, are:
 </p>
-<blockquote>
-<p>No feathers stuck in tarball.</p>
-</blockquote>
+<ul>
+<li><p class="leftbar">
+your <em>title</em> is not in the range of 1 through <code>MAX_TITLE_LEN</code> chars (see
+<a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h">limit_ioccc.h</a>).
+</p></li>
+<li><p class="leftbar">
+your <em>title</em> does not match the regexp <code>^[0-9a-z][0-9a-z._+-]*$</code>.
+</p></li>
+<li><p class="leftbar">
+your <em>abstract</em> is not between 1 and <code>MAX_ABSTRACT_LEN</code> chars
+(see <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h">limit_ioccc.h</a>).
+</p></li>
+<li><p class="leftbar">
+the author count is not 1 through <code>MAX_AUTHORS</code> (see
+<a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h">limit_ioccc.h</a>).
+</p></li>
+<li><p class="leftbar">
+an author <em>name</em> is not 1 through <code>MAX_NAME_LEN</code> chars (see
+<a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h">limit_ioccc.h</a>).
+</p></li>
+<li><p class="leftbar">
+duplicate author <em>name</em>.
+</p></li>
+<li><p class="leftbar">
+<em>country code</em> is invalid (not ISO 3166-1 2 character
+codes).
+</p></li>
+<li><p class="leftbar">
+an <em>email</em>, if provided, is not in the format of <code>x@y</code> or
+if <code>x</code> or <code>y</code> contain a <code>@</code>, are empty or if the total length is longer than
+<code>MAX_EMAIL_LEN</code> (see <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h">limit_ioccc.h</a>).
+</p></li>
+<li><p class="leftbar">
+a <em>URL</em> or <em>alt URL</em>, if provided, does not start with <code>http://</code>
+or <code>https://</code> or is longer than <code>MAX_URL_LEN</code> chars (see
+<a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h">limit_ioccc.h</a>)
+or does not have anything after the <code>http://</code> or <code>https://</code>.
+</p></li>
+<li><p class="leftbar">
+a <em>mastodon handle</em>, if provided, is not in the form of
+<code>@user@site</code> (i.e. starts with an <code>@</code>, has text following it and then another
+<code>@</code> followed by more text and has no other <code>@</code>) or is longer than <code>MAX_MASTODON_LEN</code> (see
+<a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h">limit_ioccc.h</a>).
+</p></li>
+<li><p class="leftbar">
+a <em>GitHub account</em>, if provided, does not start with an <code>@</code>,
+has more than one <code>@</code> or is longer than <code>MAX_GITHUB_LEN</code> (see
+<a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h">limit_ioccc.h</a>).
+</p></li>
+<li><p class="leftbar">
+an <em>affiliation</em>, if provided, is longer than
+<code>MAX_AFFILIATION_LEN</code> (see <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h">limit_ioccc.h</a>).
+</p></li>
+<li><p class="leftbar">
+an <em>author handle</em>, if the default is not accepted, does
+not match the regexp <code>^[0-9A-Za-z][0-9A-Za-z._+-]*$</code>.
+</p></li>
+<li><p class="leftbar">
+an <em>author handle</em> is repeated.
+</p></li>
+<li><p class="leftbar">
+the output of <code>ls</code> on the submission directory is
+incorrect.
+</p></li>
+</ul>
 <p class="leftbar">
-If you give the option <code>-q</code> it will not report anything unless there are certain
-error conditions; issues (‘feathers’ :-) ) found in the tarball are not
-considered errors so that one can get an overview of all the issues in the
-tarball but with <code>-q</code> these will not be reported unless <code>-w</code> is used (but as
-<code>-w</code> is meant for the test suite you do not need to concern yourself with that).
-Thus you should check the exit code if you use <code>-q</code>.
+Below are the tools that <code>mkiocccentry(1)</code> will run.
+</p>
+<h2 id="iocccsize"><code>iocccsize</code></h2>
+<p class="leftbar">
+<code>mkiocccentry(1)</code> will use code from <code>iocccsize(1)</code> which
+detects a number of issues that you may ignore, if you wish, as described above.
+As we already discussed how to invoke this we will not include it here again.
+</p>
+<h2 id="chkentry"><code>chkentry</code></h2>
+<p class="leftbar">
+<code>mkiocccentry(1)</code> will write two JSON files: <code>.auth.json</code> and
+<code>.info.json</code>. These files contain information about the author(s) and about the
+submission. These files <strong>MUST</strong> pass the checks of <code>chkentry(1)</code>. If it does
+not pass and you used <code>mkiocccentry(1)</code> it is very possibly a bug and you should
+<a href="https://github.com/ioccc-src/mkiocccentry/issues/new?assignees=&amp;labels=bug&amp;projects=&amp;template=bug_report.yml&amp;title=%5BBug%5D+%3Ctitle%3E">report
+it as a bug at the mkiocccentry issues
+page</a>.
+See the <a href="../faq.html#mkiocccentry_bugs">the FAQ about reporting
+bugs in the mkiocccentry repo</a>.
 </p>
 <p class="leftbar">
-For instance, the following command will not show anything unless there is a
-problem with the tarball, in which case it will show <code>Feathers stuck in tarball :-(</code>.
-</p>
-<pre><code>    txzchk -q submit.12345678-1234-4321-abcd-1234567890ab-2.1720636351.txz || \
-    echo &#39;Feathers stuck in tarball :-(&#39;</code></pre>
-<p class="leftbar">
-Alternatively you could just check the exit code with <code>echo $?</code>; a value of 0
-indicates all is OK.
-</p>
-<p class="leftbar">
-If you wish to run <code>fnamchk(1)</code> directly you can do so like:
-</p>
-<pre><code>    fnamchk submit.12345678-1234-4321-abcd-1234567890ab-2.1720636351.txz</code></pre>
-<p class="leftbar">
-Assuming everything is OK, it would show:
-</p>
-<blockquote>
-<p><code>12345678-1234-4321-abcd-1234567890ab-2</code></p>
-</blockquote>
-<p class="leftbar">
-… which, as stated earlier, <code>txzchk(1)</code> uses.
+Assuming that <code>chkentry(1)</code> validates both <code>.auth.json</code> and
+<code>.info.json</code> then the tarball will be formed and then <code>txzchk(1)</code> will be
+executed. In this case, there should be no problems as <code>mkiocccentry(1)</code> should
+<strong>NOT</strong> form a tarball if there are any issues.
 </p>
 <p class="leftbar">
 If you want to validate the <code>.auth.json</code> or <code>.info.json</code> files you
@@ -853,6 +926,70 @@ there <em>is an issue</em> in one or both of the
 <a href="https://www.json.org/json-en.html">JSON</a> files in <em>the context of the IOCCC</em>,
 it will report this as an error</strong>. Thus, if you were to package this manually
 then you would be violating <a href="rules.html#rule17">Rule 17</a>.
+</p>
+<h2 id="txzchk"><code>txzchk</code></h2>
+<p class="leftbar">
+<code>txzchk(1)</code> performs a wide number of sanity checks on the xz
+compressed tarball; if any issues are found (‘<code>feathers are stuck in the tarball</code>’ :-) ) <strong>AND if and <em>ONLY IF</em> you used
+<code>mkiocccentry(1)</code></strong>, then it is very possibly a bug in one of the tools and you
+should <a href="https://github.com/ioccc-src/mkiocccentry/issues/new?assignees=&amp;labels=bug&amp;projects=&amp;template=bug_report.yml&amp;title=%5BBug%5D+%3Ctitle%3E">report it as a bug at the mkiocccentry issues
+page</a>. <strong>PLEASE run the
+<code>bug_report.sh</code> script to help us out here!</strong> See <a href="../faq.html#mkiocccentry_bugs">the FAQ about reporting bugs
+in the mkiocccentry repo</a>.
+</p>
+<p class="leftbar">
+As part of its sanity checks, <code>txzchk(1)</code> will run <code>fnamchk(1)</code> on the
+<em>filename</em> to verify that the name is valid.
+</p>
+<p class="leftbar">
+It is extremely unlikely that <code>fnamchk(1)</code> reporting an invalid filename is a
+bug in <code>fnamchk(1)</code> and as such, ignoring such an issue risks violating <a href="rules.html#rule17">Rule
+17</a> which is a big risk. Of course, using <code>mkiocccentry(1)</code>
+would prevent this from happening as it would not create such a file anyway. If
+<code>mkiocccentry(1)</code> was used it would rather suggest a bug in one of the tools and
+you should <a href="https://github.com/ioccc-src/mkiocccentry/issues/new?assignees=&amp;labels=bug&amp;projects=&amp;template=bug_report.yml&amp;title=%5BBug%5D+%3Ctitle%3E">report it as a bug at the mkiocccentry issues
+page</a>.
+See <a href="../faq.html#mkiocccentry_bugs">the FAQ about reporting bugs in the mkiocccentry
+repo</a>.
+</p>
+<p class="leftbar">
+If verbosity level is &gt; 0, <code>txzchk(1)</code> will show the contents of the tarball which is
+how the <code>mkiocccentry(1)</code> shows you the tarball contents for you to review.
+</p>
+<p class="leftbar">
+It is beyond the scope of this document to discuss the many tests that
+<code>txzchk(1)</code> do. In this case we refer you to the <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/txzchk.c">source
+code</a> or the man
+page. You might find a fun option if you do either of these!
+</p>
+<p class="leftbar">
+If you wish to validate the tarball without running the <code>mkiocccentry(1)</code> tool,
+for instance the tarball <code>submit.12345678-1234-4321-abcd-1234567890ab-2.1720636351.txz</code> you can
+do:
+</p>
+<pre><code>    txzchk submit.12345678-1234-4321-abcd-1234567890ab-2.1720636351.txz</code></pre>
+<p class="leftbar">
+Assuming that the tarball exists and is valid, you should see no output.
+</p>
+<p class="leftbar">
+If you wish to see the contents, for instance like <code>mkiocccentry(1)</code> does, you
+could do:
+</p>
+<pre><code>    txzchk -v 1 submit.12345678-1234-4321-abcd-1234567890ab-2.1720636351.txz</code></pre>
+<h2 id="fnamchk"><code>fnamchk</code></h2>
+<p class="leftbar">
+A tool that <a href="#txzchk">txzchk</a> runs is <code>fnamchk</code>. This is an important part of
+its algorithm but if you wish to validate a submission filename you can do so:
+</p>
+<pre><code>    fnamchk submit.12345678-1234-4321-abcd-1234567890ab-2.1720636351.txz</code></pre>
+<p class="leftbar">
+Assuming everything is OK, it would show:
+</p>
+<blockquote>
+<p><code>12345678-1234-4321-abcd-1234567890ab-2</code></p>
+</blockquote>
+<p class="leftbar">
+… which, as stated earlier, <code>txzchk(1)</code> uses.
 </p>
 <p class="leftbar">
 At the risk of stating the obvious: you run <strong>a very big risk</strong> of having
