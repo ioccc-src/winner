@@ -46,7 +46,7 @@ writing by [contacting the judges](../contact.html).
 </div>
 
 <p class="leftbar">
-These [IOCCC rules](rules.html) are version **28.6 2024-07-10**.
+These [IOCCC rules](rules.html) are version **28.7 2024-07-11**.
 </p>
 
 **IMPORTANT**: Be sure to read the [IOCCC guidelines](guidelines.html).
@@ -629,7 +629,7 @@ entry.</p>
 <p class="leftbar">
 The `txzchk(1)` tool will verify these (and other things) for you and
 the `chkentry(1)` tool will do additional checks on the contents of the
-`.auth.json` and `.info.json` files including JSON validity. If these checks
+`.auth.json` and `.info.json` files (including JSON validity). If these checks
 fail it is an error and `mkiocccentry(1)` will fail. In this case it is very
 **possibly** a bug; please [report it as a bug at the mkiocccentry issues
 page](https://github.com/ioccc-src/mkiocccentry/issues/new?assignees=&labels=bug&projects=&template=bug_report.yml&title=%5BBug%5D+%3Ctitle%3E).
@@ -639,7 +639,8 @@ page](https://github.com/ioccc-src/mkiocccentry/issues/new?assignees=&labels=bug
 The tarball filename **MUST** pass `fnamchk(1)`; the tool `txzchk(1)`
 will run `fnamchk(1)` as part of its algorithm. If you use `mkiocccentry(1)`
 there should be no problem but if you were to package things manually it is
-possible there could be a problem and this is a big risk.
+possible there could be a problem and this poses a big risk of violating [Rule
+17](#rule17).
 </p>
 
 <p class="leftbar">
