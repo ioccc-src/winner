@@ -2537,15 +2537,16 @@ provided which is input we suggested one try with the entry.
 [Cody](#cody) fixed the alternate code so that it will compile with modern compilers. The
 problem was a missing `int` for the `f` variable. He felt it was even more
 important that it works because the layout does indeed look to him like a rat is
-dropping core :-), something that the judges suggested.
+dropping core :-), something that [the judges
+suggested](1995/garry/index.html#alternate-code).
 
-Cody also renamed `garry.test.sh` to [try.sh](%%REPO_URL%%/1995/garry/try.sh) and improved it
-to to make sure the program is compiled before trying to use it as well as
-adding a few enhancements. For the alt version he also added the
-[try.alt.sh](%%REPO_URL%%/1995/garry/try.alt.sh) script to use the alt version, though the
-alt version is not as important as alternate code in other entries. In order to get
-the paging to work right for the `garry.data` file leading blank lines had to be
-added.
+In this entry, because of the number of things it does (some added by Cody),
+Cody moved the renamed `garry.test.sh` to
+[try.sh](%%REPO_URL%%/1995/garry/try.sh) script (improved and fixed). For the
+alt version he also added the [try.alt.sh](%%REPO_URL%%/1995/garry/try.alt.sh)
+script to use the alt code, though the alt version is not as important as
+alternate code in other entries.  In order to get the paging to work right for
+the `garry.data` file leading blank lines had to be added.
 
 
 <div id="1995_heathbar">
@@ -3644,11 +3645,6 @@ allows those like himself used to `h`, `j`, `k` and `l` movement keys to not get
 lost. Non rogue players, vi users and Dvorak typists are invited to get lost (or
 use the original version)! :-)
 
-Cody also renamed the `arachnid.info` file to
-[arachnid.txt](2004/arachnid/arachnid.txt) as it's not really an informative
-file but a maze file. The extension `.maz` was not chosen to help with (some?)
-browsers knowing what to do with it.
-
 
 <div id="2004_burley">
 ## Winning entry: [2004/burley](2004/burley/index.html)
@@ -4303,7 +4299,7 @@ back for arrow keys in the [alternate version](%%REPO_URL%%/2006/night/night.alt
 latter args.
 
 Cody also provided the [alternate version](%%REPO_URL%%/2006/sloane/sloane.alt.c), which
-allows one to see what is going on in modern systems, and which we recommend one
+allows one to see what it looked like back in 2006, and which we recommend one
 use _first_.
 
 Curiously, although `clang` requires the types of args to be strictly correct,
@@ -5512,9 +5508,8 @@ version as well.
 ### Winning entry source code: [prog.c](%%REPO_URL%%/2018/burton1//prog.c)
 </div>
 
-[Cody](#cody) fixed the `scripthd` script (referred to `prog` not `./prog`) and
-renamed it to [scripthd.sh](%%REPO_URL%%/2018/burton1/scripthd.sh) to help browsers and
-GitHub as far as downloading/displaying goes.
+[Cody](#cody) fixed the [scripthd.sh](%%REPO_URL%%/2018/burton1/scripthd.sh)
+script (it referred to `prog` not `./prog`).
 
 Cody also added the [try.sh](%%REPO_URL%%/2018/burton1/try.sh) script which also uses
 `scripthd.sh` to show how it differs from `prog` itself.
@@ -5527,19 +5522,10 @@ Cody also added the [try.sh](%%REPO_URL%%/2018/burton1/try.sh) script which also
 
 [Cody](#cody) fixed the `make test` rule: it tried to run `tac(1)` (in systems
 that have that command) rather than the entry itself which is called `tac`. Also
-the `runtest` script (which he renamed to `runtest.sh` for download/browser
-display purposes) was not executable.
-
-Cody also renamed `manpage` to `manpage.sh` for download/browser purposes and he
-did the same with `tokenfix` to `tokenfix.sh` as well as `spotcheck` to
-`spotcheck.sh`, `spotdiff` to `spotdiff.sh`, `freqcount` to `freqcount.sh` and
-`mkkeywords` to `mkkeywords.sh`.
+the [runtest.sh](%%REPO_URL%%/2018/burton2/runtest.sh) script was not executable.
 
 Cody also made the man page properly formatted for `man(1)` and renamed it the
 file `tac.1`.
-
-Cody also renamed `discrepancies` to `discrepancies.html` and made it markdown
-format.
 
 Cody also added the [tokcount.sh](%%REPO_URL%%/2018/burton2/tokcount.sh) script which was
 included in the remarks of the author but not an included file.
@@ -5668,23 +5654,20 @@ to what can crash it - but it's not a bug, it's a feature.
 ### Winning entry source code: [prog.c](%%REPO_URL%%/2019/burton//prog.c)
 </div>
 
-[Cody](#cody) fixed the `Makefile` which had a bad character, a '%' instead of a '$' which
+[Cody](#cody) fixed the `Makefile` which had a bad character, a `%` instead of a `$` which
 caused a rule to fail.
 
 Cody also added the [try.sh](%%REPO_URL%%/2019/burton/try.sh) script which shows a
 side-by-side comparison on several files of the entry and `wc(1)` as well as
 running `make test`.
 
-Cody also fixed the script [check.sh](%%REPO_URL%%/2019/burton/check.sh) (renamed from
-`check`) in case `x` is specified and is not executable and also made it satisfy
-ShellCheck. He also made ShellCheck not be a cow and/or (to use Bart Simpson's
-advice :-) ) `'not have a cow` about certain things (including one thing it was
-wrong about) in [cow.sh](%%REPO_URL%%/2019/burton/cow.sh) (which was renamed from `cow`)
-<del>moo</del>too.
-
-Cody also renamed the file `on.one.liners` to
-[on.one.liners.txt](2019/burton/on.one.liners.txt) to help with
-browsers/GitHub.
+Cody also fixed the script [check.sh](%%REPO_URL%%/2019/burton/check.sh) in case
+`x` is specified and is not executable and also made it satisfy ShellCheck.
+ShellCheck was fixed to not be a
+[cow](https://en.wikipedia.org/wiki/Cattle) and/or (to use [Bart
+Simpson](https://simpsons.fandom.com/wiki/Bart_Simpson)'s advice :-) )
+'[not have a cow](https://en.wikipedia.org/wiki/Don%27t_have_a_cow)' about certain things (including one thing it was wrong about)
+in [cow.sh](%%REPO_URL%%/2019/burton/cow.sh) <del>moo</del>too.
 
 
 <div id="2019_ciura">
@@ -5732,11 +5715,11 @@ entry by themselves.
 ### Winning entry source code: [prog.c](%%REPO_URL%%/2019/diels-grabsch2//prog.c)
 </div>
 
-[Cody](#cody) added the [try.sh](%%REPO_URL%%/2019/diels-grabsch2/try.sh) script. This
-script will try and show the difference (i.e. the same output) between the
-program and the result of `sha512sum` or `shasum -a 512` if either of those
-tools can be found but otherwise it'll just run the program itself, showing its
-own sha512sum value.
+[Cody](#cody) added the [try.sh](%%REPO_URL%%/2019/diels-grabsch2/try.sh)
+script. This script will try and show the difference (i.e. the same output)
+between the program and the result of `sha512sum` or `shasum -a 512`, if these
+tools can be found, or otherwise just run the program itself, showing its own
+[sha512](https://en.wikipedia.org/wiki/SHA-2) value.
 
 
 <div id="2019_dogon">
