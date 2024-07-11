@@ -2179,14 +2179,15 @@ provided which is input we suggested one try with the entry.</p>
 <p><a href="#cody">Cody</a> fixed the alternate code so that it will compile with modern compilers. The
 problem was a missing <code>int</code> for the <code>f</code> variable. He felt it was even more
 important that it works because the layout does indeed look to him like a rat is
-dropping core :-), something that the judges suggested.</p>
-<p>Cody also renamed <code>garry.test.sh</code> to <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1995/garry/try.sh">try.sh</a> and improved it
-to to make sure the program is compiled before trying to use it as well as
-adding a few enhancements. For the alt version he also added the
-<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1995/garry/try.alt.sh">try.alt.sh</a> script to use the alt version, though the
-alt version is not as important as alternate code in other entries. In order to get
-the paging to work right for the <code>garry.data</code> file leading blank lines had to be
-added.</p>
+dropping core :-), something that <a href="1995/garry/index.html#alternate-code">the judges
+suggested</a>.</p>
+<p>In this entry, because of the number of things it does (some added by Cody),
+Cody moved the renamed <code>garry.test.sh</code> to
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1995/garry/try.sh">try.sh</a> script (improved and fixed). For the
+alt version he also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1995/garry/try.alt.sh">try.alt.sh</a>
+script to use the alt code, though the alt version is not as important as
+alternate code in other entries. In order to get the paging to work right for
+the <code>garry.data</code> file leading blank lines had to be added.</p>
 <div id="1995_heathbar">
 <h2 id="winning-entry-1995heathbar">Winning entry: <a href="1995/heathbar/index.html">1995/heathbar</a></h2>
 <h3 id="winning-entry-source-code-1995heathbar">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1995/heathbar/heathbar.c">1995/heathbar</a></h3>
@@ -2958,10 +2959,6 @@ version</a> which
 allows those like himself used to <code>h</code>, <code>j</code>, <code>k</code> and <code>l</code> movement keys to not get
 lost. Non rogue players, vi users and Dvorak typists are invited to get lost (or
 use the original version)! :-)</p>
-<p>Cody also renamed the <code>arachnid.info</code> file to
-<a href="2004/arachnid/arachnid.txt">arachnid.txt</a> as it’s not really an informative
-file but a maze file. The extension <code>.maz</code> was not chosen to help with (some?)
-browsers knowing what to do with it.</p>
 <div id="2004_burley">
 <h2 id="winning-entry-2004burley">Winning entry: <a href="2004/burley/index.html">2004/burley</a></h2>
 <h3 id="winning-entry-source-code-burley.c">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/burley//burley.c">burley.c</a></h3>
@@ -3429,7 +3426,7 @@ back for arrow keys in the <a href="https://github.com/ioccc-src/temp-test-ioccc
 <code>main()</code>: it requires specific types: <code>int</code> and <code>char **</code> for the first and
 latter args.</p>
 <p>Cody also provided the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2006/sloane/sloane.alt.c">alternate version</a>, which
-allows one to see what is going on in modern systems, and which we recommend one
+allows one to see what it looked like back in 2006, and which we recommend one
 use <em>first</em>.</p>
 <p>Curiously, although <code>clang</code> requires the types of args to be strictly correct,
 some versions do allow only one arg. This was done at first because it’s not
@@ -4282,9 +4279,8 @@ version as well.</p>
 <h2 id="winning-entry-2018burton1">Winning entry: <a href="2018/burton1/index.html">2018/burton1</a></h2>
 <h3 id="winning-entry-source-code-prog.c-27">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton1//prog.c">prog.c</a></h3>
 </div>
-<p><a href="#cody">Cody</a> fixed the <code>scripthd</code> script (referred to <code>prog</code> not <code>./prog</code>) and
-renamed it to <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton1/scripthd.sh">scripthd.sh</a> to help browsers and
-GitHub as far as downloading/displaying goes.</p>
+<p><a href="#cody">Cody</a> fixed the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton1/scripthd.sh">scripthd.sh</a>
+script (it referred to <code>prog</code> not <code>./prog</code>).</p>
 <p>Cody also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton1/try.sh">try.sh</a> script which also uses
 <code>scripthd.sh</code> to show how it differs from <code>prog</code> itself.</p>
 <div id="2018_burton2">
@@ -4293,16 +4289,9 @@ GitHub as far as downloading/displaying goes.</p>
 </div>
 <p><a href="#cody">Cody</a> fixed the <code>make test</code> rule: it tried to run <code>tac(1)</code> (in systems
 that have that command) rather than the entry itself which is called <code>tac</code>. Also
-the <code>runtest</code> script (which he renamed to <code>runtest.sh</code> for download/browser
-display purposes) was not executable.</p>
-<p>Cody also renamed <code>manpage</code> to <code>manpage.sh</code> for download/browser purposes and he
-did the same with <code>tokenfix</code> to <code>tokenfix.sh</code> as well as <code>spotcheck</code> to
-<code>spotcheck.sh</code>, <code>spotdiff</code> to <code>spotdiff.sh</code>, <code>freqcount</code> to <code>freqcount.sh</code> and
-<code>mkkeywords</code> to <code>mkkeywords.sh</code>.</p>
+the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/runtest.sh">runtest.sh</a> script was not executable.</p>
 <p>Cody also made the man page properly formatted for <code>man(1)</code> and renamed it the
 file <code>tac.1</code>.</p>
-<p>Cody also renamed <code>discrepancies</code> to <code>discrepancies.html</code> and made it markdown
-format.</p>
 <p>Cody also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/tokcount.sh">tokcount.sh</a> script which was
 included in the remarks of the author but not an included file.</p>
 <p>Finally Cody added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/try.sh">try.sh</a> script.</p>
@@ -4393,20 +4382,17 @@ to what can crash it - but it’s not a bug, it’s a feature.</p>
 <h2 id="winning-entry-2019burton">Winning entry: <a href="2019/burton/index.html">2019/burton</a></h2>
 <h3 id="winning-entry-source-code-prog.c-38">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/burton//prog.c">prog.c</a></h3>
 </div>
-<p><a href="#cody">Cody</a> fixed the <code>Makefile</code> which had a bad character, a ‘%’ instead of a ‘$’ which
+<p><a href="#cody">Cody</a> fixed the <code>Makefile</code> which had a bad character, a <code>%</code> instead of a <code>$</code> which
 caused a rule to fail.</p>
 <p>Cody also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/burton/try.sh">try.sh</a> script which shows a
 side-by-side comparison on several files of the entry and <code>wc(1)</code> as well as
 running <code>make test</code>.</p>
-<p>Cody also fixed the script <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/burton/check.sh">check.sh</a> (renamed from
-<code>check</code>) in case <code>x</code> is specified and is not executable and also made it satisfy
-ShellCheck. He also made ShellCheck not be a cow and/or (to use Bart Simpson’s
-advice :-) ) <code>'not have a cow</code> about certain things (including one thing it was
-wrong about) in <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/burton/cow.sh">cow.sh</a> (which was renamed from <code>cow</code>)
-<del>moo</del>too.</p>
-<p>Cody also renamed the file <code>on.one.liners</code> to
-<a href="2019/burton/on.one.liners.txt">on.one.liners.txt</a> to help with
-browsers/GitHub.</p>
+<p>Cody also fixed the script <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/burton/check.sh">check.sh</a> in case
+<code>x</code> is specified and is not executable and also made it satisfy ShellCheck.
+ShellCheck was fixed to not be a
+<a href="https://en.wikipedia.org/wiki/Cattle">cow</a> and/or (to use <a href="https://simpsons.fandom.com/wiki/Bart_Simpson">Bart
+Simpson</a>‘s advice :-) )’<a href="https://en.wikipedia.org/wiki/Don%27t_have_a_cow">not have a cow</a>’ about certain things (including one thing it was wrong about)
+in <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/burton/cow.sh">cow.sh</a> <del>moo</del>too.</p>
 <div id="2019_ciura">
 <h2 id="winning-entry-2019ciura">Winning entry: <a href="2019/ciura/index.html">2019/ciura</a></h2>
 <h3 id="winning-entry-source-code-prog.c-39">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/ciura//prog.c">prog.c</a></h3>
@@ -4439,11 +4425,11 @@ entry by themselves.</p>
 <h2 id="winning-entry-2019diels-grabsch2">Winning entry: <a href="2019/diels-grabsch2/index.html">2019/diels-grabsch2</a></h2>
 <h3 id="winning-entry-source-code-prog.c-41">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/diels-grabsch2//prog.c">prog.c</a></h3>
 </div>
-<p><a href="#cody">Cody</a> added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/diels-grabsch2/try.sh">try.sh</a> script. This
-script will try and show the difference (i.e. the same output) between the
-program and the result of <code>sha512sum</code> or <code>shasum -a 512</code> if either of those
-tools can be found but otherwise it’ll just run the program itself, showing its
-own sha512sum value.</p>
+<p><a href="#cody">Cody</a> added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/diels-grabsch2/try.sh">try.sh</a>
+script. This script will try and show the difference (i.e. the same output)
+between the program and the result of <code>sha512sum</code> or <code>shasum -a 512</code>, if these
+tools can be found, or otherwise just run the program itself, showing its own
+<a href="https://en.wikipedia.org/wiki/SHA-2">sha512</a> value.</p>
 <div id="2019_dogon">
 <h2 id="winning-entry-2019dogon">Winning entry: <a href="2019/dogon/index.html">2019/dogon</a></h2>
 <h3 id="winning-entry-source-code-prog.c-42">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/dogon//prog.c">prog.c</a></h3>
