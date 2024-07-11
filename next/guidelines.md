@@ -282,7 +282,7 @@ code against [Rule 2](rules.html#rule2):
 </p>
 
 ``` <!---sh-->
-    ./iocccsize prog.c
+    iocccsize prog.c
 ```
 
 The IOCCC size tool algorithm may be summarized as follows:
@@ -352,31 +352,60 @@ The synopsis of the `mkiocccentry(1)` tool is:
 </p>
 
 ``` <!---sh-->
-    ./mkiocccentry [options] work_dir prog.c \
+    mkiocccentry [options] work_dir prog.c \
          Makefile remarks.md [file ...]
 ```
 
 <p class="leftbar">
-... where the `work_dir` is a directory that is used to form the
-xz compressed tarball that `txzchk(1)` validates, `prog.c` is your submission
-source code, `Makefile` is your `Makefile`, `remarks.md` is your remarks and
-`[file ...]` are any additional files you wish to provide.
+... where `work_dir` is a directory that will be used to build the submission
+tarball, `prog.c` is your submission source code, `Makefile` is your submission's
+`Makefile`, `remarks.md` are your remarks (that will be the basis of the
+`README.md` file which will be used to form the `index.html` file if your
+submission wins) and the remaining args are the paths to any other files you
+wish to submit.
 </p>
 
 <p class="leftbar">
-If the `work_dir` already exists it is an error. In the case this happens you
-will have to choose a different directory, or if it is safe to remove, you may
-do so and try again.
+See the [Rules](rules.html) and in particular [Rule 17](rules.html#rule17) for
+the requirements of these files.
+</p>
+
+<p class="leftbar">
+The `work_dir` **MUST** already exist, as a directory, and it is an error if it
+is not a directory that can be written to. In this directory your submission
+directory will be created, with the name based on your IOCCC registration
+username **in the form of a UUID** and submission number; see the
+[rules](rules.html) for more details on this, and in particular [Rule
+17](rules.html#rule17).
+</p>
+
+<p class="leftbar">
+If the subdirectory in the work directory already exists, you will have to move
+it or remove it or otherwise specify a different work directory as it needs to
+be empty and the `mkiocccentry(1)` tool does not check this for you
+as it could do nothing about anyway. This subdirectory is where your files will be
+**copied** to. Your submission tarball (which you will upload to the submit
+server) that `txzchk(1)` will validate will be placed in the work directory, and
+its contents will be the subdirectory with your submission's files.
 </p>
 
 <p class="leftbar">
 The `mkiocccentry(1)` tool will ask you for information about your
 submission as well as author details and it will run the `iocccsize(1)` tool; if
 either [Rule 2a](rules.html#rule2a) or [Rule 2b](rules.html#rule2b) are broken,
-it will give you the option to ignore them, if you are willing to risk this. The
-tool will also do a rudimentary check on the `Makefile` and run other checks as
-well. You can override warnings but doing so puts you at risk of violating
-[rules](rules.html).
+it will give you the option to ignore them, if you are willing to risk this.
+</p>
+
+<p class="leftbar">
+The tool will also do a rudimentary check on the `Makefile` and run other checks as
+well. You can override warnings as well but doing so puts you at risk of
+violating the [rules](rules.html).
+</p>
+
+<p class="leftbar">
+If you're brave you can use the `-W` option to ignore all warnings but this is a
+big risk; the `-y` option will assume '_yes_' to most questions but this is also a
+big risk.
 </p>
 
 <p class="leftbar">
@@ -384,35 +413,57 @@ On the other hand, some **issues are an error** and the xz compressed
 tarball **will not be formed**. For instance, if `chkentry(1)` fails to validate
 the `.auth.json` or `.info.json` [JSON](https://www.json.org/json-en.html) files
 that `mkiocccentry(1)` creates, it is an error and possibly a bug that you
-should report at the [mkiocccentry issues
-page](https://github.com/ioccc-src/mkiocccentry/issues). **PLEASE run the
+should [report as a bug at the mkiocccentry issues
+page](https://github.com/ioccc-src/mkiocccentry/issues/new?assignees=&labels=bug&projects=&template=bug_report.yml&title=%5BBug%5D+%3Ctitle%3E). **PLEASE run the
 `bug_report.sh` script to help us out here!** See the [the FAQ about reporting
 bugs in the mkiocccentry repo](../faq.html#mkiocccentry_bugs).
 </p>
 
 <p class="leftbar">
-Assuming that `chkentry(1)` passes for both `.auth.json` and
+However, just because there are errors **does not** mean it is a bug in the
+code. It might be an issue with your submission. Thus if you report an error as
+a bug it might not be something that will be fixed as there is nothing to be
+fixed in the first place.
+</p>
+
+<p class="leftbar">
+Assuming that `chkentry(1)` validates both `.auth.json` and
 `.info.json` then the tarball will be formed and then `txzchk(1)` will be
-executed. In this case, there should be no problems as `mkiocccentry(1)` would
-**NOT** form a tarball if there are any issues.
+executed. In this case, there should be no problems as `mkiocccentry(1)` should
+**NOT** form a tarball if there are any issues. If there is an issue reported,
+however, this is possibly a bug in one or more of the tools and you should [report
+it as a bug at the mkiocccentry issues
+page](https://github.com/ioccc-src/mkiocccentry/issues/new?assignees=&labels=bug&projects=&template=bug_report.yml&title=%5BBug%5D+%3Ctitle%3E).
+See the [the FAQ about reporting
+bugs in the mkiocccentry repo](../faq.html#mkiocccentry_bugs).
 </p>
 
 <p class="leftbar">
 `txzchk(1)` performs a wide number of sanity checks on the xz
-compressed tarball and if any issues (`feathers` :-) ) are found and if you used
-`mkiocccentry(1)`, then it is very possibly a bug in one of the tools and you
-should report it at the [mkiocccentry issues
-page](https://github.com/ioccc-src/mkiocccentry/issues). **PLEASE run the
+compressed tarball; if any issues are found ('`feathers are stuck in the
+tarball`' :-) ) **AND if and _ONLY IF_ you used
+`mkiocccentry(1)`**, then it is very possibly a bug in one of the tools and you
+should [report it as a bug at the mkiocccentry issues
+page](https://github.com/ioccc-src/mkiocccentry/issues/new?assignees=&labels=bug&projects=&template=bug_report.yml&title=%5BBug%5D+%3Ctitle%3E). **PLEASE run the
 `bug_report.sh` script to help us out here!** See [the FAQ about reporting bugs
 in the mkiocccentry repo](../faq.html#mkiocccentry_bugs).
 </p>
 
 <p class="leftbar">
 As part of its sanity checks, `txzchk(1)` will run `fnamchk(1)` on the
-_filename_ to verify that the name is valid. If this test does not pass, then it
-is flagged by `txzchk(1)` but it is not an error if you wish to ignore it.
-Ignoring this, however, risks violating [Rule 17](rules.html#rule17) which is a
-big risk. Of course, using `mkiocccentry(1)` would prevent this from happening.
+_filename_ to verify that the name is valid.
+</p>
+
+<p class="leftbar">
+It is extremely unlikely that `fnamchk(1)` reporting an invalid filename is a
+bug in `fnamchk(1)` and as such, ignoring such an issue risks violating [Rule
+17](rules.html#rule17) which is a big risk. Of course, using `mkiocccentry(1)`
+would prevent this from happening as it would not create such a file anyway. If
+`mkiocccentry(1)` was used it would rather suggest a bug in one of the tools and
+you should [report it as a bug at the mkiocccentry issues
+page](https://github.com/ioccc-src/mkiocccentry/issues/new?assignees=&labels=bug&projects=&template=bug_report.yml&title=%5BBug%5D+%3Ctitle%3E).
+See [the FAQ about reporting bugs in the mkiocccentry
+repo](../faq.html#mkiocccentry_bugs).
 </p>
 
 <p class="leftbar">
@@ -423,17 +474,18 @@ how the `mkiocccentry(1)` shows you the tarball contents for you to review.
 <p class="leftbar">
 To help you with editing a submission, the `mkiocccentry(1)` tool has
 some options to write _OR_ read from an answers file so you do not have to input
-the information again. To write to `answers.txt` try:
+the information about the author(s) and the entry itself after saving the
+answers to a file. To write to `answers.txt` try:
 </p>
 
 ``` <!---sh-->
-    ./mkiocccentry -a answers.txt ...
+    mkiocccentry -a answers.txt ...
 ```
 
 <p class="leftbar">
 Alternatively, if you wish to overwrite a file, you can use the `-A`
-flag with the same option argument. Be careful that you do not accidentally
-overwrite your `prog.c`!
+flag with the same option argument. Be **very careful** that you do not accidentally
+overwrite your `prog.c` or some other important file!
 </p>
 
 <p class="leftbar">
@@ -441,31 +493,50 @@ To make use of the answers file, use the `-i answers` option like:
 </p>
 
 ``` <!---sh-->
-    ./mkiocccentry -i answers.txt ...
+    mkiocccentry -i answers.txt ...
 ```
 
 <p class="leftbar">
-If you wish to manually run the commands you can do so. For instance, to check
-the validity of the tarball
-`submit.12345678-1234-4321-abcd-1234567890ab-2.1719574527.txz ` you can do:
+If you wish to manually run the commands that `mkiocccentry(1)` runs, to test
+your submission, you can do so. For instance, to check the validity of the
+tarball `submit.12345678-1234-4321-abcd-1234567890ab-2.1720636351.txz` you can
+do:
 </p>
 
 ``` <!---sh-->
-    ./txzchk submit.12345678-1234-4321-abcd-1234567890ab-2.1719574527.txz
+    txzchk submit.12345678-1234-4321-abcd-1234567890ab-2.1720636351.txz
 ```
 
 <p class="leftbar">
 Assuming that the tarball exists and is valid, you should see the
-contents of the tarball and the words:
+contents of the tarball, along with a few other minor details, and the words:
 </p>
 
 > No feathers stuck in tarball.
 
 <p class="leftbar">
-If you give the option `-q` it will not report anything unless there
-are certain error conditions, for instance if `fnamchk(1)` reports there is a
-problem with the filename; if `txzchk(1)` exits 0 then there are no problems
-detected.
+If you give the option `-q` it will not report anything unless there are certain
+error conditions; issues ('feathers' :-) ) found in the tarball are not
+considered errors so that one can get an overview of all the issues in the
+tarball but with `-q` these will not be reported unless `-w` is used (but as
+`-w` is meant for the test suite you do not need to concern yourself with that).
+Thus you should check the exit code if you use `-q`.
+</p>
+
+<p class="leftbar">
+For instance, the following command will not show anything unless there is a
+problem with the tarball, in which case it will show `Feathers stuck in tarball
+:-(`.
+</p>
+
+``` <!---sh-->
+    txzchk -q submit.12345678-1234-4321-abcd-1234567890ab-2.1720636351.txz || \
+    echo 'Feathers stuck in tarball :-('
+```
+
+<p class="leftbar">
+Alternatively you could just check the exit code with `echo $?`; a value of 0
+indicates all is OK.
 </p>
 
 <p class="leftbar">
@@ -473,7 +544,7 @@ If you wish to run `fnamchk(1)` directly you can do so like:
 </p>
 
 ``` <!---sh-->
-    ./fnamchk submit.12345678-1234-4321-abcd-1234567890ab-2.1719574527.txz
+    fnamchk submit.12345678-1234-4321-abcd-1234567890ab-2.1720636351.txz
 ```
 
 <p class="leftbar">
@@ -483,7 +554,7 @@ Assuming everything is OK, it would show:
 > `12345678-1234-4321-abcd-1234567890ab-2`
 
 <p class="leftbar">
-... which `txzchk(1)` uses.
+... which, as stated earlier, `txzchk(1)` uses.
 </p>
 
 <p class="leftbar">
@@ -496,16 +567,16 @@ If you pass a single argument, it is expected to be a directory that has both
 
 ``` <!---sh-->
     # test entry directory test_work:
-    ./chkentry test_work
+    chkentry test_work
 
     # run checks on .info.json:
-    ./chkentry .info.json .
+    chkentry .info.json .
 
     # run checks on .auth.json:
-    ./chkentry . .auth.json
+    chkentry . .auth.json
 
     # run checks on .info.json and .auth.json:
-    ./chkentry .info.json .auth.json
+    chkentry .info.json .auth.json
 ```
 
 <p class="leftbar">
@@ -513,8 +584,8 @@ If there is a [JSON](https://www.json.org/json-en.html) issue detected
 by `jparse(8)`, **then there is a [JSON](https://www.json.org/json-en.html)
 error and `chkentry(1)` will report it as an _error_**. If the parsing is OK **but
 there _is an issue_ in one or both of the
-[JSON](https://www.json.org/json-en.html)** files **in the context of the IOCCC**,
-_it will **report this as an error**_. Thus, if you were to package this manually
+[JSON](https://www.json.org/json-en.html) files in _the context of the IOCCC_,
+it will report this as an error**. Thus, if you were to package this manually
 then you would be violating [Rule 17](rules.html#rule17).
 </p>
 
