@@ -44,8 +44,18 @@ How does this program work?  Which 3 bytes of C code can be changed
 into 2 bytes, allowing the program to still work, but also stripping
 the high bit off some input?
 
+### NOTICE to those who wish for a greater challenge:
+
+**If you want a greater challenge, don't read any further**:
+just try to understand the program via the source.
+
+If you get stuck, come back and read the author's remarks for additional hints
+and information.
+
+
 
 ## Author's remarks:
+
 
 The author wishes to thank J Greely for the last 6 bytes.
 
