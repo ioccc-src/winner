@@ -593,10 +593,10 @@ information about the author or authors of the submission, in JSON format. The
 JSON `authors` **array** holds the following information about the authors of the
 submission:
 
-- `name` (string)
+- `name` (double quoted string)
      * The **name** of this author.
 
-- `location_code` (string)
+- `location_code` (double quoted string)
      * The **location code** of this author (an ISO 3166-1 2 character code).
      See
      <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements>
@@ -604,24 +604,24 @@ submission:
 
      **NOTE:** in `mkiocccentry` use `XX` if you want your location to be anonymous.
 
-- `email` (string)
+- `email` (null or double quoted string)
      * The **email** of this author in the form of `x@y`, or `null` if not provided.
 
-- `url` (string)
+- `url` (null or double quoted string)
      * The primary **URL** of this author, or `null` if not provided.
 
-- `alt_url` (string)
+- `alt_url` (null or double quoted string)
      * The **alt URL** of this author, or `null` if not provided.
 
-- `mastodon` (string)
+- `mastodon` (null or double quoted string)
      * The **[Mastodon](#try_mastodon) handle** of this author in the form of `@user@domain`, or
      `null` if not provided.
 
-- `github` (string)
+- `github` (null or double quoted string)
      * The **[GitHub](https://github.com) account** of this author in the form of `@user`, or `null` if not
      provided.
 
-- `affiliation` (string)
+- `affiliation` (null or double quoted string)
      * This author's **affiliation**, if any, or `null` if not provided.
 
     **NOTE:** if provided, the length of the **affiliation** **MUST** be within
@@ -643,7 +643,7 @@ submission:
      * `true` if this default handle was accepted, `false` if one is provided
      by this author.
 
-- `author_handle` (string)
+- `author_handle` (double quoted string)
      * This author's handle (custom or default provided).
 
      **NOTE:** if you have won before, we **ENCOURAGE** you to use the same handle of
@@ -660,11 +660,19 @@ submission:
 
 The file also contains the following details:
 
-- `no_comment` (string)
-    * We can provide `no comment` about `no_comment` so we ask you to please
-    **NOT** `comment` about our `no comments`. :-)
+- `no_comment` (double quoted string)
+    * We can provide `no comment` about `no_comment` other than to state that unless
+    `no_comment` matches this quote:
 
-- `IOCCC_auth_version` (string)
+>   "mandatory comment: because comments were removed from the original JSON spec"
+
+    your submission **WILL BE** rejected!
+
+    Are we suggesting that removing comments from the JSON spec was a mistake?
+
+>    "You might very well think that; but of course I couldn't possibly comment." -- Francis Urquhart
+
+- `IOCCC_auth_version` (double quoted string)
     * The current version of the `.auth.json` file.
 
     **NOTE:** this **MUST** match **THIS** IOCCC's `.auth.json` version, defined as
@@ -673,7 +681,7 @@ The file also contains the following details:
     in the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry/). If
     this is not the case your submission **WILL BE** rejected!
 
-- `IOCCC_contest` (string)
+- `IOCCC_contest` (double quoted string)
     * Which contest number this is (e.g. 1 for 1984, 2 for 1985, 27 for 2020).
 
     **NOTE:** this **MUST** match **THIS** IOCCC's contest value, defined as
@@ -694,7 +702,7 @@ The file also contains the following details:
     in the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry/). If
     this is not the case your submission **WILL BE** rejected!
 
-- `mkiocccentry_version` (string)
+- `mkiocccentry_version` (double quoted string)
     * The version of `mkiocccentry` that formed this `.auth.json` file.
 
     **NOTE:** this **MUST** match **THIS** IOCCC's `mkiocccentry` version,
@@ -703,7 +711,7 @@ The file also contains the following details:
     in the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry/). If
     this is not the case your submission **WILL BE** rejected!
 
-- `chkentry_version` (string)
+- `chkentry_version` (double quoted string)
     * The version of `chkentry` that was used to validate this `.auth.json`,
     assuming that it was created by `mkiocccentry`.
 
@@ -713,14 +721,14 @@ The file also contains the following details:
     in the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry/). If
     this is not the case your submission **WILL BE** rejected!
 
-- `fnamchk_version` (string)
+- `fnamchk_version` (double quoted string)
     * The version of `fnamchk` that `txzchk` uses to validate the filename of
     the xz compressed tarball.
 
     **NOTE:** this **MUST** match **THIS** IOCCC's `fnamchk` version in order for it
     to be valid. If this is not the case your submission **WILL BE** rejected!
 
-- `IOCCC_contest_id` (string)
+- `IOCCC_contest_id` (double quoted string)
     * The IOCCC contestant ID used as a username in the form of **in the form of
     a UUID** and submission number; see the [Rules](next/rules.html) for more details
     on this, and in particular [Rule 17](next/rules.html#rule17).
@@ -730,7 +738,7 @@ The file also contains the following details:
     violating [Rule 17](next/rules.html#rule17)!
 
 
-- `tarball` (string)
+- `tarball` (double quoted string)
     * The xz compressed tarball filename.
 
     **NOTE:** this **MUST** match the actual tarball's **filename** in order for
@@ -792,7 +800,7 @@ The file also contains the following details:
     this is not the case `chkentry(1)` will report an **error** and your
     submission **WILL BE** rejected!
 
-- `timestamp_epoch` (string)
+- `timestamp_epoch` (double quoted string)
     * `"Thu Jan 01 00:00:00 1970 UTC"`  (`gettimeofday(2)` epoch).
 
     **NOTE:** this **MUST** be `"Thu Jan 01 00:00:00 1970 UTC"` which is `#define`d
@@ -846,7 +854,7 @@ JSON `manifest` array contains information about the files of the submission,
 **including** the **mandatory** [.auth.json](#auth_json), [.info.json](#info_json),
 C source and [remarks](#remarks) files. In particular:
 
-- `info_JSON` (string)
+- `info_JSON` (double quoted string)
     * This `MUST` be `".info.json"`, defined as `INFO_JSON_FILENAME` in
     [soup/entry_util.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/entry_util.h)
     in the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry/), and
@@ -855,7 +863,7 @@ C source and [remarks](#remarks) files. In particular:
     **NOTE:** if this is **NOT** the case you stand a great chance of having your
     submission rejected for violating [Rule 17](next/rules.html#rule17)!
 
-- `auth_JSON` (string)
+- `auth_JSON` (double quoted string)
     * This `MUST` be `".auth.json"`, defined as `AUTH_JSON_FILENAME` in
     [soup/entry_util.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/entry_util.h)
     in the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry/), and
@@ -864,7 +872,7 @@ C source and [remarks](#remarks) files. In particular:
     **NOTE:** if this is **NOT** the case you stand a great chance of having your
     submission rejected for violating [Rule 17](next/rules.html#rule17)!
 
-- `c_src` (string)
+- `c_src` (double quoted string)
     * This `MUST` be `"prog.c"`, defined as `PROG_C_FILENAME` in
     [soup/entry_util.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/entry_util.h)
     in the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry/), and
@@ -877,7 +885,7 @@ C source and [remarks](#remarks) files. In particular:
     copied to `prog.c`.
 
 
-- `Makefile` (string)
+- `Makefile` (double quoted string)
     * This `MUST` be `"Makefile"`, defined as `MAKEFILE_FILENAME` in
     [soup/entry_util.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/entry_util.h)
     in the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry/), and
@@ -889,7 +897,7 @@ C source and [remarks](#remarks) files. In particular:
     **NOTE:** if you provide to `mkiocccentry` a different filename it will be
     copied to `Makefile`.
 
-- `remarks` (string)
+- `remarks` (double quoted string)
     * This `MUST` be `"remarks.md"`, defined as `REMARKS_FILENAME` in
     [soup/entry_util.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/entry_util.h)
     in the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry/), and
@@ -904,7 +912,7 @@ C source and [remarks](#remarks) files. In particular:
 
 The `manifest` array also optionally has one or more of the field:
 
-- `extra_file` (string)
+- `extra_file` (double quoted string)
 
     * Any additional file that you need or want to include with your submission.
 
@@ -922,11 +930,19 @@ The `manifest` array also optionally has one or more of the field:
 
 The file also contains the following details:
 
-- `no_comment` (string)
-    * We can provide `no comment` about `no_comment` so we ask you to please
-    **NOT** `comment` about our `no comments`. :-)
+- `no_comment` (double quoted string)
+    * We can provide `no comment` about `no_comment` other than to state that unless
+    `no_comment` matches this quote:
 
-- `IOCCC_info_version` (string)
+>   "mandatory comment: because comments were removed from the original JSON spec"
+
+    your submission **WILL BE** rejected!
+
+    Are we suggesting that removing comments from the JSON spec was a mistake?
+
+>    "You might very well think that; but of course I couldn't possibly comment." -- Francis Urquhart
+
+- `IOCCC_info_version` (double quoted string)
     * The current version of the `.info.json` files.
 
     **NOTE:** this **MUST** match **THIS** IOCCC's `.info.json` version, defined as
@@ -935,7 +951,7 @@ The file also contains the following details:
     in the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry/). If
     this is not the case your submission **WILL BE** rejected!
 
-- `IOCCC_contest` (string)
+- `IOCCC_contest` (double quoted string)
     * Which contest number this is (e.g. 1 for 1984, 2 for 1985, 27 for 2020).
 
     **NOTE:** this **MUST** match **THIS** IOCCC's contest value, defined as
@@ -956,7 +972,7 @@ The file also contains the following details:
     in the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry/). If
     this is not the case your submission **WILL BE** rejected!
 
-- `mkiocccentry_version` (string)
+- `mkiocccentry_version` (double quoted string)
     * The version of `mkiocccentry` that formed this `.auth.json` file.
 
     **NOTE:** this **MUST** match **THIS** IOCCC's `mkiocccentry` version,
@@ -965,7 +981,7 @@ The file also contains the following details:
     in the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry/). If
     this is not the case your submission **WILL BE** rejected!
 
-- `iocccsize_version` (string)
+- `iocccsize_version` (double quoted string)
     * The version of `iocccsize` that was used for this `.info.json` file.
 
     **NOTE:** this **MUST** match **THIS** IOCCC's `iocccentry` version,
@@ -974,7 +990,7 @@ The file also contains the following details:
     in the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry/). If
     this is not the case your submission **WILL BE** rejected!
 
-- `chkentry_version` (string)
+- `chkentry_version` (double quoted string)
     * The version of `chkentry` that was used to validate this `.info.json`,
     assuming that it was created by `mkiocccentry`.
 
@@ -984,7 +1000,7 @@ The file also contains the following details:
     in the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry/). If
     this is not the case your submission **WILL BE** rejected!
 
-- `fnamchk_version` (string)
+- `fnamchk_version` (double quoted string)
     * The version of `fnamchk` that `txzchk` uses to validate the filename of
     the xz compressed tarball.
 
@@ -994,7 +1010,7 @@ The file also contains the following details:
     in the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry/). If
     this is not the case your submission **WILL BE** rejected!
 
-- `txzchk_version` (string)
+- `txzchk_version` (double quoted string)
     * The version of `txzchk` used to validate the xz compressed tarball.
 
     **NOTE:** this **MUST** match **THIS** IOCCC's `txzchk` version, defined
@@ -1003,7 +1019,7 @@ The file also contains the following details:
     in the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry/). If
     this is not the case your submission **WILL BE** rejected!
 
-- `IOCCC_contest_id` (string)
+- `IOCCC_contest_id` (double quoted string)
     * The IOCCC contestant ID used as a username in the form of **in the form of
     a UUID** and submission number; see the [rules](next/rules.html) for more details
     on this, and in particular [Rule 17](next/rules.html#rule17).
@@ -1023,7 +1039,7 @@ The file also contains the following details:
     this is not the case you stand a great risk of having your submission
     rejected for violating [Rule 17](next/rules.html#rule17)!
 
-- `title` (string)
+- `title` (double quoted string)
     * A short name (length >= 1 **THROUGH** `MAX_TITLE_LEN`, defined in
     [soup/limit_ioccc.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h)
     in the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry/)) that
@@ -1032,7 +1048,7 @@ The file also contains the following details:
     **NOTE:** if this is **NOT** the case you stand a great risk of having your submission
     rejected for violating [Rule 17](next/rules.html#rule17)!
 
-- `abstract` (string)
+- `abstract` (double quoted string)
     * A one line summary of your submission, with a length of 1 **THROUGH**
     `MAX_ABSTRACT_LEN`, defined in
     [soup/limit_ioccc.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h)
@@ -1042,8 +1058,7 @@ The file also contains the following details:
     stand a great risk of having your submission rejected for violating [Rule
     17](next/rules.html#rule17)!
 
-
-- `tarball` (string)
+- `tarball` (double quoted string)
     * The xz compressed tarball filename.
 
     **NOTE:** this **MUST** match the actual tarball's **filename** in order for
@@ -1054,7 +1069,6 @@ The file also contains the following details:
     17](next/rules.html#rule17). If `txzchk` does not detect this, though, it
     does not mean it's a bug but rather that the directory in the tarball
     matches the filename.
-
 
 - `rule_2a_size` (number)
     * The size calculated of [Rule 2a](next/rules.html#rule2a).
@@ -1170,7 +1184,7 @@ The file also contains the following details:
     this is not the case `chkentry(1)` will report an **error** and your
     submission **WILL BE** rejected!
 
-- `timestamp_epoch` (string)
+- `timestamp_epoch` (double quoted string)
     * `"Thu Jan 01 00:00:00 1970 UTC"`  (`gettimeofday(2)` epoch).
 
     **NOTE:** this **MUST** be `"Thu Jan 01 00:00:00 1970 UTC"` which is `#define`d
@@ -1581,6 +1595,7 @@ By tradition, we do not say.
 <div id="remarks_md">
 <div id="remarks">
 ### FAQ 2.1: What should I put in the remarks.md file of my submission?
+</div>
 </div>
 </div>
 

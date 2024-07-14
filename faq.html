@@ -835,11 +835,11 @@ information about the author or authors of the submission, in JSON format. The
 JSON <code>authors</code> <strong>array</strong> holds the following information about the authors of the
 submission:</p>
 <ul>
-<li><p><code>name</code> (string)</p>
+<li><p><code>name</code> (double quoted string)</p>
 <ul>
 <li>The <strong>name</strong> of this author.</li>
 </ul></li>
-<li><p><code>location_code</code> (string)</p>
+<li><p><code>location_code</code> (double quoted string)</p>
 <ul>
 <li>The <strong>location code</strong> of this author (an ISO 3166-1 2 character code).
 See
@@ -847,29 +847,29 @@ See
 for a list of valid codes.</li>
 </ul>
 <p><strong>NOTE:</strong> in <code>mkiocccentry</code> use <code>XX</code> if you want your location to be anonymous.</p></li>
-<li><p><code>email</code> (string)</p>
+<li><p><code>email</code> (null or double quoted string)</p>
 <ul>
 <li>The <strong>email</strong> of this author in the form of <code>x@y</code>, or <code>null</code> if not provided.</li>
 </ul></li>
-<li><p><code>url</code> (string)</p>
+<li><p><code>url</code> (null or double quoted string)</p>
 <ul>
 <li>The primary <strong>URL</strong> of this author, or <code>null</code> if not provided.</li>
 </ul></li>
-<li><p><code>alt_url</code> (string)</p>
+<li><p><code>alt_url</code> (null or double quoted string)</p>
 <ul>
 <li>The <strong>alt URL</strong> of this author, or <code>null</code> if not provided.</li>
 </ul></li>
-<li><p><code>mastodon</code> (string)</p>
+<li><p><code>mastodon</code> (null or double quoted string)</p>
 <ul>
 <li>The <strong><a href="#try_mastodon">Mastodon</a> handle</strong> of this author in the form of <code>@user@domain</code>, or
 <code>null</code> if not provided.</li>
 </ul></li>
-<li><p><code>github</code> (string)</p>
+<li><p><code>github</code> (null or double quoted string)</p>
 <ul>
 <li>The <strong><a href="https://github.com">GitHub</a> account</strong> of this author in the form of <code>@user</code>, or <code>null</code> if not
 provided.</li>
 </ul></li>
-<li><p><code>affiliation</code> (string)</p>
+<li><p><code>affiliation</code> (null or double quoted string)</p>
 <ul>
 <li>This author’s <strong>affiliation</strong>, if any, or <code>null</code> if not provided.</li>
 </ul>
@@ -891,7 +891,7 @@ author has <strong>NOT</strong> won before.</li>
 <li><code>true</code> if this default handle was accepted, <code>false</code> if one is provided
 by this author.</li>
 </ul></li>
-<li><p><code>author_handle</code> (string)</p>
+<li><p><code>author_handle</code> (double quoted string)</p>
 <ul>
 <li>This author’s handle (custom or default provided).</li>
 </ul>
@@ -908,12 +908,22 @@ file and how are they used?</a>).</p></li>
 <h3 id="additional-fields-in-.auth.json">Additional fields in <code>.auth.json</code>:</h3>
 <p>The file also contains the following details:</p>
 <ul>
-<li><p><code>no_comment</code> (string)</p>
+<li><code>no_comment</code> (double quoted string)
 <ul>
-<li>We can provide <code>no comment</code> about <code>no_comment</code> so we ask you to please
-<strong>NOT</strong> <code>comment</code> about our <code>no comments</code>. :-)</li>
+<li>We can provide <code>no comment</code> about <code>no_comment</code> other than to state that unless
+<code>no_comment</code> matches the string:</li>
 </ul></li>
-<li><p><code>IOCCC_auth_version</code> (string)</p>
+</ul>
+<blockquote>
+<p>mandatory comment: because comments were removed from the original JSON spec</p>
+</blockquote>
+<p>your submission <strong>WILL BE</strong> rejected!</p>
+<p>Are we suggesting that removing comments from the JSON spec was a mistake?</p>
+<blockquote>
+<p>“You might very well think that; I couldn’t possibly comment” – Francis Urquhart</p>
+</blockquote>
+<ul>
+<li><p><code>IOCCC_auth_version</code> (double quoted string)</p>
 <ul>
 <li>The current version of the <code>.auth.json</code> file.</li>
 </ul>
@@ -922,7 +932,7 @@ file and how are they used?</a>).</p></li>
 <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/version.h">soup/version.h</a>
 in the <a href="https://github.com/ioccc-src/mkiocccentry/">mkiocccentry repo</a>. If
 this is not the case your submission <strong>WILL BE</strong> rejected!</p></li>
-<li><p><code>IOCCC_contest</code> (string)</p>
+<li><p><code>IOCCC_contest</code> (double quoted string)</p>
 <ul>
 <li>Which contest number this is (e.g. 1 for 1984, 2 for 1985, 27 for 2020).</li>
 </ul>
@@ -942,7 +952,7 @@ might not match when it ends.</p>
 <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h">soup/limit_ioccc.h</a>
 in the <a href="https://github.com/ioccc-src/mkiocccentry/">mkiocccentry repo</a>. If
 this is not the case your submission <strong>WILL BE</strong> rejected!</p></li>
-<li><p><code>mkiocccentry_version</code> (string)</p>
+<li><p><code>mkiocccentry_version</code> (double quoted string)</p>
 <ul>
 <li>The version of <code>mkiocccentry</code> that formed this <code>.auth.json</code> file.</li>
 </ul>
@@ -951,7 +961,7 @@ defined as <code>MKIOCCCENTRY_VERSION</code> in
 <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/version.h">soup/version.h</a>
 in the <a href="https://github.com/ioccc-src/mkiocccentry/">mkiocccentry repo</a>. If
 this is not the case your submission <strong>WILL BE</strong> rejected!</p></li>
-<li><p><code>chkentry_version</code> (string)</p>
+<li><p><code>chkentry_version</code> (double quoted string)</p>
 <ul>
 <li>The version of <code>chkentry</code> that was used to validate this <code>.auth.json</code>,
 assuming that it was created by <code>mkiocccentry</code>.</li>
@@ -961,14 +971,14 @@ as <code>CHKENTRY_VERSION</code> in
 <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/version.h">soup/version.h</a>
 in the <a href="https://github.com/ioccc-src/mkiocccentry/">mkiocccentry repo</a>. If
 this is not the case your submission <strong>WILL BE</strong> rejected!</p></li>
-<li><p><code>fnamchk_version</code> (string)</p>
+<li><p><code>fnamchk_version</code> (double quoted string)</p>
 <ul>
 <li>The version of <code>fnamchk</code> that <code>txzchk</code> uses to validate the filename of
 the xz compressed tarball.</li>
 </ul>
 <p><strong>NOTE:</strong> this <strong>MUST</strong> match <strong>THIS</strong> IOCCC’s <code>fnamchk</code> version in order for it
 to be valid. If this is not the case your submission <strong>WILL BE</strong> rejected!</p></li>
-<li><p><code>IOCCC_contest_id</code> (string)</p>
+<li><p><code>IOCCC_contest_id</code> (double quoted string)</p>
 <ul>
 <li>The IOCCC contestant ID used as a username in the form of <strong>in the form of
 a UUID</strong> and submission number; see the <a href="next/rules.html">Rules</a> for more details
@@ -977,7 +987,7 @@ on this, and in particular <a href="next/rules.html#rule17">Rule 17</a>.</li>
 <p><strong>NOTE:</strong> if the contest ID is <strong>NOT</strong> in this format then <code>fnamchk</code> will
 report it as an <strong>error</strong> and your submission <strong>WILL BE</strong> rejected for
 violating <a href="next/rules.html#rule17">Rule 17</a>!</p></li>
-<li><p><code>tarball</code> (string)</p>
+<li><p><code>tarball</code> (double quoted string)</p>
 <ul>
 <li>The xz compressed tarball filename.</li>
 </ul>
@@ -1037,7 +1047,7 @@ formed - see <code>gettimeofday(2)</code>) second.</li>
 in the <a href="https://github.com/ioccc-src/mkiocccentry/">mkiocccentry repo</a>. If
 this is not the case <code>chkentry(1)</code> will report an <strong>error</strong> and your
 submission <strong>WILL BE</strong> rejected!</p></li>
-<li><p><code>timestamp_epoch</code> (string)</p>
+<li><p><code>timestamp_epoch</code> (double quoted string)</p>
 <ul>
 <li><code>"Thu Jan 01 00:00:00 1970 UTC"</code> (<code>gettimeofday(2)</code> epoch).</li>
 </ul>
@@ -1086,7 +1096,7 @@ JSON <code>manifest</code> array contains information about the files of the sub
 <strong>including</strong> the <strong>mandatory</strong> <a href="#auth_json">.auth.json</a>, <a href="#info_json">.info.json</a>,
 C source and <a href="#remarks">remarks</a> files. In particular:</p>
 <ul>
-<li><p><code>info_JSON</code> (string)</p>
+<li><p><code>info_JSON</code> (double quoted string)</p>
 <ul>
 <li>This <code>MUST</code> be <code>".info.json"</code>, defined as <code>INFO_JSON_FILENAME</code> in
 <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/entry_util.h">soup/entry_util.h</a>
@@ -1095,7 +1105,7 @@ it is the <a href="#info_json">.info.json</a> file that <code>mkiocccentry</code
 </ul>
 <p><strong>NOTE:</strong> if this is <strong>NOT</strong> the case you stand a great chance of having your
 submission rejected for violating <a href="next/rules.html#rule17">Rule 17</a>!</p></li>
-<li><p><code>auth_JSON</code> (string)</p>
+<li><p><code>auth_JSON</code> (double quoted string)</p>
 <ul>
 <li>This <code>MUST</code> be <code>".auth.json"</code>, defined as <code>AUTH_JSON_FILENAME</code> in
 <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/entry_util.h">soup/entry_util.h</a>
@@ -1104,7 +1114,7 @@ it is the <a href="#auth_json">.auth.json</a> file that <code>mkiocccentry</code
 </ul>
 <p><strong>NOTE:</strong> if this is <strong>NOT</strong> the case you stand a great chance of having your
 submission rejected for violating <a href="next/rules.html#rule17">Rule 17</a>!</p></li>
-<li><p><code>c_src</code> (string)</p>
+<li><p><code>c_src</code> (double quoted string)</p>
 <ul>
 <li>This <code>MUST</code> be <code>"prog.c"</code>, defined as <code>PROG_C_FILENAME</code> in
 <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/entry_util.h">soup/entry_util.h</a>
@@ -1115,7 +1125,7 @@ is your submission source code.</li>
 submission rejected for violating <a href="next/rules.html#rule17">Rule 17</a>!</p>
 <p><strong>NOTE:</strong> if you provide to <code>mkiocccentry</code> a different filename it will be
 copied to <code>prog.c</code>.</p></li>
-<li><p><code>Makefile</code> (string)</p>
+<li><p><code>Makefile</code> (double quoted string)</p>
 <ul>
 <li>This <code>MUST</code> be <code>"Makefile"</code>, defined as <code>MAKEFILE_FILENAME</code> in
 <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/entry_util.h">soup/entry_util.h</a>
@@ -1126,7 +1136,7 @@ is your <a href="#makefile">Makefile</a>.</li>
 submission rejected for violating <a href="next/rules.html#rule17">Rule 17</a>!</p>
 <p><strong>NOTE:</strong> if you provide to <code>mkiocccentry</code> a different filename it will be
 copied to <code>Makefile</code>.</p></li>
-<li><p><code>remarks</code> (string)</p>
+<li><p><code>remarks</code> (double quoted string)</p>
 <ul>
 <li>This <code>MUST</code> be <code>"remarks.md"</code>, defined as <code>REMARKS_FILENAME</code> in
 <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/entry_util.h">soup/entry_util.h</a>
@@ -1140,7 +1150,7 @@ copied to <code>remarks.md</code>.</p></li>
 </ul>
 <p>The <code>manifest</code> array also optionally has one or more of the field:</p>
 <ul>
-<li><p><code>extra_file</code> (string)</p>
+<li><p><code>extra_file</code> (double quoted string)</p>
 <ul>
 <li>Any additional file that you need or want to include with your submission.</li>
 </ul>
@@ -1157,12 +1167,22 @@ documented!</p></li>
 </ul>
 <p>The file also contains the following details:</p>
 <ul>
-<li><p><code>no_comment</code> (string)</p>
+<li><code>no_comment</code> (double quoted string)
 <ul>
-<li>We can provide <code>no comment</code> about <code>no_comment</code> so we ask you to please
-<strong>NOT</strong> <code>comment</code> about our <code>no comments</code>. :-)</li>
+<li>We can provide <code>no comment</code> about <code>no_comment</code> other than to state that unless
+<code>no_comment</code> matches the string:</li>
 </ul></li>
-<li><p><code>IOCCC_info_version</code> (string)</p>
+</ul>
+<blockquote>
+<p>mandatory comment: because comments were removed from the original JSON spec</p>
+</blockquote>
+<p>your submission <strong>WILL BE</strong> rejected!</p>
+<p>Are we suggesting that removing comments from the JSON spec was a mistake?</p>
+<blockquote>
+<p>“You might very well think that; I couldn’t possibly comment” – Francis Urquhart</p>
+</blockquote>
+<ul>
+<li><p><code>IOCCC_info_version</code> (double quoted string)</p>
 <ul>
 <li>The current version of the <code>.info.json</code> files.</li>
 </ul>
@@ -1171,7 +1191,7 @@ documented!</p></li>
 <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/version.h">soup/version.h</a>
 in the <a href="https://github.com/ioccc-src/mkiocccentry/">mkiocccentry repo</a>. If
 this is not the case your submission <strong>WILL BE</strong> rejected!</p></li>
-<li><p><code>IOCCC_contest</code> (string)</p>
+<li><p><code>IOCCC_contest</code> (double quoted string)</p>
 <ul>
 <li>Which contest number this is (e.g. 1 for 1984, 2 for 1985, 27 for 2020).</li>
 </ul>
@@ -1191,7 +1211,7 @@ might not match when it ends.</p>
 <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h">soup/limit_ioccc.h</a>
 in the <a href="https://github.com/ioccc-src/mkiocccentry/">mkiocccentry repo</a>. If
 this is not the case your submission <strong>WILL BE</strong> rejected!</p></li>
-<li><p><code>mkiocccentry_version</code> (string)</p>
+<li><p><code>mkiocccentry_version</code> (double quoted string)</p>
 <ul>
 <li>The version of <code>mkiocccentry</code> that formed this <code>.auth.json</code> file.</li>
 </ul>
@@ -1200,7 +1220,7 @@ defined as <code>MKIOCCCENTRY_VERSION</code> in
 <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/version.h">soup/version.h</a>
 in the <a href="https://github.com/ioccc-src/mkiocccentry/">mkiocccentry repo</a>. If
 this is not the case your submission <strong>WILL BE</strong> rejected!</p></li>
-<li><p><code>iocccsize_version</code> (string)</p>
+<li><p><code>iocccsize_version</code> (double quoted string)</p>
 <ul>
 <li>The version of <code>iocccsize</code> that was used for this <code>.info.json</code> file.</li>
 </ul>
@@ -1209,7 +1229,7 @@ defined as <code>IOCCCSIZE_VERSION</code> in
 <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/version.h">soup/version.h</a>
 in the <a href="https://github.com/ioccc-src/mkiocccentry/">mkiocccentry repo</a>. If
 this is not the case your submission <strong>WILL BE</strong> rejected!</p></li>
-<li><p><code>chkentry_version</code> (string)</p>
+<li><p><code>chkentry_version</code> (double quoted string)</p>
 <ul>
 <li>The version of <code>chkentry</code> that was used to validate this <code>.info.json</code>,
 assuming that it was created by <code>mkiocccentry</code>.</li>
@@ -1219,7 +1239,7 @@ as <code>CHKENTRY_VERSION</code> in
 <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/version.h">soup/version.h</a>
 in the <a href="https://github.com/ioccc-src/mkiocccentry/">mkiocccentry repo</a>. If
 this is not the case your submission <strong>WILL BE</strong> rejected!</p></li>
-<li><p><code>fnamchk_version</code> (string)</p>
+<li><p><code>fnamchk_version</code> (double quoted string)</p>
 <ul>
 <li>The version of <code>fnamchk</code> that <code>txzchk</code> uses to validate the filename of
 the xz compressed tarball.</li>
@@ -1229,7 +1249,7 @@ as <code>FNAMCHK_VERSION</code> in
 <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/version.h">soup/version.h</a>
 in the <a href="https://github.com/ioccc-src/mkiocccentry/">mkiocccentry repo</a>. If
 this is not the case your submission <strong>WILL BE</strong> rejected!</p></li>
-<li><p><code>txzchk_version</code> (string)</p>
+<li><p><code>txzchk_version</code> (double quoted string)</p>
 <ul>
 <li>The version of <code>txzchk</code> used to validate the xz compressed tarball.</li>
 </ul>
@@ -1238,7 +1258,7 @@ as <code>TXZCHK_VERSION</code> in
 <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/version.h">soup/version.h</a>
 in the <a href="https://github.com/ioccc-src/mkiocccentry/">mkiocccentry repo</a>. If
 this is not the case your submission <strong>WILL BE</strong> rejected!</p></li>
-<li><p><code>IOCCC_contest_id</code> (string)</p>
+<li><p><code>IOCCC_contest_id</code> (double quoted string)</p>
 <ul>
 <li>The IOCCC contestant ID used as a username in the form of <strong>in the form of
 a UUID</strong> and submission number; see the <a href="next/rules.html">rules</a> for more details
@@ -1257,7 +1277,7 @@ violating <a href="next/rules.html#rule17">Rule 17</a>!</p></li>
 in the <a href="https://github.com/ioccc-src/mkiocccentry/">mkiocccentry repo</a>). If
 this is not the case you stand a great risk of having your submission
 rejected for violating <a href="next/rules.html#rule17">Rule 17</a>!</p></li>
-<li><p><code>title</code> (string)</p>
+<li><p><code>title</code> (double quoted string)</p>
 <ul>
 <li>A short name (length &gt;= 1 <strong>THROUGH</strong> <code>MAX_TITLE_LEN</code>, defined in
 <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h">soup/limit_ioccc.h</a>
@@ -1266,7 +1286,7 @@ matches the regexp <code>[a-z0-9][a-z0-9_+-]*</code>.</li>
 </ul>
 <p><strong>NOTE:</strong> if this is <strong>NOT</strong> the case you stand a great risk of having your submission
 rejected for violating <a href="next/rules.html#rule17">Rule 17</a>!</p></li>
-<li><p><code>abstract</code> (string)</p>
+<li><p><code>abstract</code> (double quoted string)</p>
 <ul>
 <li>A one line summary of your submission, with a length of 1 <strong>THROUGH</strong>
 <code>MAX_ABSTRACT_LEN</code>, defined in
@@ -1276,7 +1296,7 @@ in the <a href="https://github.com/ioccc-src/mkiocccentry/">mkiocccentry repo</a
 <p><strong>NOTE:</strong> if your abstract is 0 in length or &gt; the maximum abstract length you
 stand a great risk of having your submission rejected for violating <a href="next/rules.html#rule17">Rule
 17</a>!</p></li>
-<li><p><code>tarball</code> (string)</p>
+<li><p><code>tarball</code> (double quoted string)</p>
 <ul>
 <li>The xz compressed tarball filename.</li>
 </ul>
@@ -1413,7 +1433,7 @@ formed - see <code>gettimeofday(2)</code>) second.</li>
 in the <a href="https://github.com/ioccc-src/mkiocccentry/">mkiocccentry repo</a>. If
 this is not the case <code>chkentry(1)</code> will report an <strong>error</strong> and your
 submission <strong>WILL BE</strong> rejected!</p></li>
-<li><p><code>timestamp_epoch</code> (string)</p>
+<li><p><code>timestamp_epoch</code> (double quoted string)</p>
 <ul>
 <li><code>"Thu Jan 01 00:00:00 1970 UTC"</code> (<code>gettimeofday(2)</code> epoch).</li>
 </ul>
@@ -1747,6 +1767,7 @@ to the <a href="https://www.ioccc.org">official IOCCC website</a>.</p>
 <div id="remarks_md">
 <div id="remarks">
 <h3 id="faq-2.1-what-should-i-put-in-the-remarks.md-file-of-my-submission">FAQ 2.1: What should I put in the remarks.md file of my submission?</h3>
+</div>
 </div>
 </div>
 <p>First, <strong>PLEASE</strong> read the <a href="markdown.html">IOCCC markdown guidelines</a>.</p>
