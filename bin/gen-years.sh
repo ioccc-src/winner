@@ -85,7 +85,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.3.3 2024-07-07"
+export VERSION="1.3.4 2024-07-13"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -670,8 +670,8 @@ for YYYY in $("$TAC_TOOL" "$TOP_FILE"); do
 	echo "<div id=\"$YYYY\">"
 	echo "## $YYYY - The $ORDINAL IOCCC"
 	echo
-	echo "[**About the $ORDINAL IOCCC &#40;$YYYY&#41;**]($YYYY/index.html).<br>"
-	echo "[**Download all IOCCC winning entries of $YYYY**]($YYYY/$YYYY.tar.bz2).</div>"
+	echo "<a class=\"normal\" href=\"$YYYY/index.html\">About the $ORDINAL IOCCC &#40;$YYYY&#41;</a><br>"
+	echo "<a class=\"normal\" href=\"$YYYY/$YYYY.tar.bz2\">Download all IOCCC winning entries of $YYYY</a></div>"
 	echo
     } | if [[ -z $NOOP ]]; then
 	cat >> "$TMP_YEARS_MD"
@@ -797,7 +797,7 @@ for YYYY in $("$TAC_TOOL" "$TOP_FILE"); do
 
 	# output markdown for this entry
 	#
-	echo "* <div id=\"${YEAR_DIR}_${ENTRY_DIR}\">[**$YYYY_DIR**]($YYYY_DIR/index.html) - **$AWARD**</div>"
+	echo "* <div id=\"${YEAR_DIR}_${ENTRY_DIR}\"><a class=\"normal\" href=\"$YYYY_DIR/index.html\">$YYYY_DIR</a> - $AWARD</div>"
     done | if [[ -z $NOOP ]]; then
         cat >> "$TMP_YEARS_MD"
     else
@@ -836,7 +836,7 @@ done
     echo '</div></div>'
     echo
     for YYYY in $("$TAC_TOOL" "$TOP_FILE"); do
-	echo "[**Download all IOCCC winning entries of $YYYY**]($YYYY/$YYYY.tar.bz2).<br>"
+	echo "<a class=\"normal\" href=\"$YYYY/$YYYY.tar.bz2\">Download all IOCCC winning entries of $YYYY</a><br>"
     done
     echo
     echo '&nbsp;**Jump to:** [top](#)'

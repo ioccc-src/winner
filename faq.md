@@ -2,103 +2,103 @@
 
 
 ## Section  0 - [Submitting entries to a new IOCCC](#faq0)
-- [0.0  - How may I enter the IOCCC?](#faq0_0)
-- [0.1  - What types of entries have been frequently submitted to the IOCCC?](#faq0_1)
-- [0.2  - What should I put in my entry's Makefile?](#faq0_2)
-- [0.3  - May I use a different source or compiled filename than prog.c or prog?](#faq0_3)
-- [0.4  - What platform should I assume for my entry?](#faq0_4)
-- [0.5  - How may I comment or make a suggestion on IOCCC rules, guidelines and tools?](#faq0_5)
-- [0.6  - What is the best way to ask a question about the IOCCC rules, guideline and tools?](#faq0_6)
-- [0.7  - What are the IOCCC best practices for using markdown?](#faq0_7)
-- [0.8  - How do I report bugs in a `mkiocccentry` tool?](#faq0_8)
+- <a class="normal" href="#faq0_0">0.0  - How may I enter the IOCCC?</a>
+- <a class="normal" href="#faq0_1">0.1  - What types of entries have been frequently submitted to the IOCCC?</a>
+- <a class="normal" href="#faq0_2">0.2  - What should I put in my entry's Makefile?</a>
+- <a class="normal" href="#faq0_3">0.3  - May I use a different source or compiled filename than prog.c or prog?</a>
+- <a class="normal" href="#faq0_4">0.4  - What platform should I assume for my entry?</a>
+- <a class="normal" href="#faq0_5">0.5  - How may I comment or make a suggestion on IOCCC rules, guidelines and tools?</a>
+- <a class="normal" href="#faq0_6">0.6  - What is the best way to ask a question about the IOCCC rules, guideline and tools?</a>
+- <a class="normal" href="#faq0_7">0.7  - What are the IOCCC best practices for using markdown?</a>
+- <a class="normal" href="#faq0_8">0.8  - How do I report bugs in a `mkiocccentry` tool?</a>
 
 
 
 ## Section  1 - [History of the IOCCC](#faq1)
-- [1.0  - How did the IOCCC get started?](#faq1_0)
-- [1.1  - Why are some years missing IOCCC entries?](#faq1_1)
-- [1.2  - What is the history of the IOCCC website?](#faq1_2)
-- [1.3  - How has the IOCCC size limit rule changed over the years?](#faq1_3)
+- <a class="normal" href="#faq1_0">1.0  - How did the IOCCC get started?</a>
+- <a class="normal" href="#faq1_1">1.1  - Why are some years missing IOCCC entries?</a>
+- <a class="normal" href="#faq1_2">1.2  - What is the history of the IOCCC website?</a>
+- <a class="normal" href="#faq1_3">1.3  - How has the IOCCC size limit rule changed over the years?</a>
 
 
 ## Section  2 - [IOCCC Judging process](#faq2)
-- [2.0  - How many entries do the judges receive for a given IOCCC?](#faq2_0)
-- [2.1  - What should I put in the remarks.md file of my entry?](#faq2_1)
-- [2.2  - Why don't you publish entries that do not win?](#faq2_2)
-- [2.3  - How much time does it take to judge the contest?](#faq2_3)
-- [2.4  - How many judging rounds do you have?](#faq2_4)
-- [2.5  - Why do some IOCCC entries receive the Grand Prize or Best of Show award?](#faq2_5)
-- [2.6  - How are IOCCC entries announced?](#faq2_6)
+- <a class="normal" href="#faq2_0">2.0  - How many entries do the judges receive for a given IOCCC?</a>
+- <a class="normal" href="#faq2_1">2.1  - What should I put in the remarks.md file of my entry?</a>
+- <a class="normal" href="#faq2_2">2.2  - Why don't you publish entries that do not win?</a>
+- <a class="normal" href="#faq2_3">2.3  - How much time does it take to judge the contest?</a>
+- <a class="normal" href="#faq2_4">2.4  - How many judging rounds do you have?</a>
+- <a class="normal" href="#faq2_5">2.5  - Why do some IOCCC entries receive the Grand Prize or Best of Show award?</a>
+- <a class="normal" href="#faq2_6">2.6  - How are IOCCC entries announced?</a>
 
 
 ## Section  3 - [Compiling and running IOCCC entries](#faq3)
-- [3.0  - What Makefile rules are available to build or clean up IOCCC entries?](#faq3_0)
-- [3.1  - Why doesn't an IOCCC entry compile?](#faq3_1)
-- [3.2  - Why does an IOCCC entry fail on my 64-bit system?](#faq3_2)
-- [3.3  - Why do some IOCCC entries fail to compile under macOS?](#faq3_3)
-- [3.4  - Why does clang or gcc fail to compile an IOCCC entry?](#faq3_4)
-- [3.5  - What is this cb tool that is mentioned in the IOCCC?](#faq3_5)
-- [3.6  - An IOCCC entry messed up my terminal application, how do I fix this?](#faq3_6)
-- [3.7  - How do I run an IOCCC entry that requires X11?](#faq3_7)
-- [3.8  - How do I compile an IOCCC entry that requires SDL1 or SDL2?](#faq3_8)
-- [3.9  - How do I compile an IOCCC entry that requires &#x28;n&#x29;curses?](#faq3_9)
-- [3.10 - How do I compile and use an IOCCC entry that requires sound?](#faq3_10)
-- [3.11 - Why do Makefiles use -Weverything with clang?](#faq3_11)
-- [3.12 - How do I find out how to send interrupt/EOF etc. for entries that require it?](#faq3_12)
-- [3.13 - Why does an IOCCC entry fail to compile and/or fail to run?](#faq3_13)
-- [3.14 - How do I compile and install tcpserver for entries that require it?](#faq3_14)
-- [3.15 - How do I compile and install netpbm for entries that require it?](#faq3_15)
-- [3.16 - How do I compile and install libjpeg-turbo for entries that require it?](#faq3_16)
-- [3.17 - How do I compile and install ImageMagick for entries that require it?](#faq3_17)
-- [3.18 - How do I compile and install OpenGL for entries that require it?](#faq3_18)
-- [3.19 - What kind of make&#x28;1&#x29; compatibility does the IOCCC support and will it support other kinds?](#faq3_19)
-- [3.20 - How do I download individual winning entries or all winning entries of a given year?](#faq3_20)
-- [3.21 - What are `try.sh` and `try.alt.sh` scripts and why should I use them?](#faq3_21)
+- <a class="normal" href="#faq3_0">3.0  - What Makefile rules are available to build or clean up IOCCC entries?</a>
+- <a class="normal" href="#faq3_1">3.1  - Why doesn't an IOCCC entry compile?</a>
+- <a class="normal" href="#faq3_2">3.2  - Why does an IOCCC entry fail on my 64-bit system?</a>
+- <a class="normal" href="#faq3_3">3.3  - Why do some IOCCC entries fail to compile under macOS?</a>
+- <a class="normal" href="#faq3_4">3.4  - Why does clang or gcc fail to compile an IOCCC entry?</a>
+- <a class="normal" href="#faq3_5">3.5  - What is this cb tool that is mentioned in the IOCCC?</a>
+- <a class="normal" href="#faq3_6">3.6  - An IOCCC entry messed up my terminal application, how do I fix this?</a>
+- <a class="normal" href="#faq3_7">3.7  - How do I run an IOCCC entry that requires X11?</a>
+- <a class="normal" href="#faq3_8">3.8  - How do I compile an IOCCC entry that requires SDL1 or SDL2?</a>
+- <a class="normal" href="#faq3_9">3.9  - How do I compile an IOCCC entry that requires &#x28;n&#x29;curses?</a>
+- <a class="normal" href="#faq3_10">3.10 - How do I compile and use an IOCCC entry that requires sound?</a>
+- <a class="normal" href="#faq3_11">3.11 - Why do Makefiles use -Weverything with clang?</a>
+- <a class="normal" href="#faq3_12">3.12 - How do I find out how to send interrupt/EOF etc. for entries that require it?</a>
+- <a class="normal" href="#faq3_13">3.13 - Why does an IOCCC entry fail to compile and/or fail to run?</a>
+- <a class="normal" href="#faq3_14">3.14 - How do I compile and install tcpserver for entries that require it?</a>
+- <a class="normal" href="#faq3_15">3.15 - How do I compile and install netpbm for entries that require it?</a>
+- <a class="normal" href="#faq3_16">3.16 - How do I compile and install libjpeg-turbo for entries that require it?</a>
+- <a class="normal" href="#faq3_17">3.17 - How do I compile and install ImageMagick for entries that require it?</a>
+- <a class="normal" href="#faq3_18">3.18 - How do I compile and install OpenGL for entries that require it?</a>
+- <a class="normal" href="#faq3_19">3.19 - What kind of make&#x28;1&#x29; compatibility does the IOCCC support and will it support other kinds?</a>
+- <a class="normal" href="#faq3_20">3.20 - How do I download individual winning entries or all winning entries of a given year?</a>
+- <a class="normal" href="#faq3_21">3.21 - What are `try.sh` and `try.alt.sh` scripts and why should I use them?</a>
 
 
 ## Section  4 - [Changes made to IOCCC entries](#faq4)
-- [4.0  - Why are some winning author remarks incongruent with the winning IOCCC code?](#faq4_0)
-- [4.1  - Why were some calls to the libc function gets&#x28;3&#x29; changed to use fgets&#x28;3&#x29;?](#faq4_1)
-- [4.2  - What was changed in an IOCCC entry source code?](#faq4_2)
+- <a class="normal" href="#faq4_0">4.0  - Why are some winning author remarks incongruent with the winning IOCCC code?</a>
+- <a class="normal" href="#faq4_1">4.1  - Why were some calls to the libc function gets&#x28;3&#x29; changed to use fgets&#x28;3&#x29;?</a>
+- <a class="normal" href="#faq4_2">4.2  - What was changed in an IOCCC entry source code?</a>
 - [4.3  - Why do author remarks sometimes not match the source and/or why are there
 other inconsistencies with the original entry?](#faq4_3)
-- [4.4  - What is the meaning of the file ending in .orig.c in IOCCC entries?](#faq4_4)
-- [4.5  - Why were alternate versions added to some entries when the original entry worked fine and well?](#faq4_5)
-- [4.6  - Why was arg count and/or type changed in main&#x28;&#x29; in some older entries?](#faq4_6)
-- [4.7  - Why were some filenames changed?](#faq4_7)
-- [4.8  - Why were files added or removed from some entries?](#faq4_8)
+- <a class="normal" href="#faq4_4">4.4  - What is the meaning of the file ending in .orig.c in IOCCC entries?</a>
+- <a class="normal" href="#faq4_5">4.5  - Why were alternate versions added to some entries when the original entry worked fine and well?</a>
+- <a class="normal" href="#faq4_6">4.6  - Why was arg count and/or type changed in main&#x28;&#x29; in some older entries?</a>
+- <a class="normal" href="#faq4_7">4.7  - Why were some filenames changed?</a>
+- <a class="normal" href="#faq4_8">4.8  - Why were files added or removed from some entries?</a>
 
 
 ## Section  5 - [Helping the IOCCC](#faq5)
-- [5.0  - How may I help the IOCCC?](#faq5_0)
-- [5.1  - How do I report a bug in an IOCCC entry?](#faq5_1)
-- [5.2  - How may I submit a fix to an IOCCC entry?](#faq5_2)
-- [5.3  - How may I report an IOCCC website problem?](#faq5_3)
-- [5.4  - How may I submit a fix to the IOCCC website?](#faq5_4)
-- [5.5  - How may I correct or update IOCCC author information?](#faq5_5)
-- [5.6  - What should I do if I find a broken or wrong web link?](#faq5_6)
-- [5.7  - How may I support the IOCCC?](#faq5_7)
-- [5.8 - I deobfuscated some entry code, how may I contribute the source?](#faq5_8)
+- <a class="normal" href="#faq5_0">5.0  - How may I help the IOCCC?</a>
+- <a class="normal" href="#faq5_1">5.1  - How do I report a bug in an IOCCC entry?</a>
+- <a class="normal" href="#faq5_2">5.2  - How may I submit a fix to an IOCCC entry?</a>
+- <a class="normal" href="#faq5_3">5.3  - How may I report an IOCCC website problem?</a>
+- <a class="normal" href="#faq5_4">5.4  - How may I submit a fix to the IOCCC website?</a>
+- <a class="normal" href="#faq5_5">5.5  - How may I correct or update IOCCC author information?</a>
+- <a class="normal" href="#faq5_6">5.6  - What should I do if I find a broken or wrong web link?</a>
+- <a class="normal" href="#faq5_7">5.7  - How may I support the IOCCC?</a>
+- <a class="normal" href="#faq5_8">5.8 - I deobfuscated some entry code, how may I contribute the source?</a>
 
 
 ## Section  6 - [Miscellaneous IOCCC](#faq6)
-- [6.0  - How did an entry that breaks the size rule 2 win the IOCCC?](#faq6_0)
-- [6.1  - Is there a list of known bugs and &#x28;mis&#x29;features of IOCCC entries?](#faq6_1)
-- [6.2  - May I mirror the IOCCC website?](#faq6_2)
-- [6.3  - May I use parts of the IOCCC in an article, book, newsletter, or instructional material?](#faq6_3)
-- [6.4  - Why do you sometimes use the first person plural?](#faq6_4)
-- [6.5  - What is an `author handle`?](#faq6_5)
-- [6.6  - What is an author_handle.json file and how are they used?](#faq6_6)
-- [6.7  - What is an `entry_id`?](#faq6_7)
-- [6.8 -  What is the purpose of the .top, .year and .path files?](#faq6_8)
-- [6.9 -  What is the current meaning of the IOCCC terms Author, Entry, and Submission?](#faq6_9)
-- [6.10 - How does someone make a change to a file and submit that change as a GitHub pull request?](#faq6_10)
-- [6.11 - Am I allowed to use IOCCC content?](#faq6_11)
-- [6.12 - What is Mastodon and why does IOCCC use it?](#faq6_12)
-- [6.13 - How may I find my author handle?](#faq6_13)
-- [6.14 - How do I set certain tabstops for viewing source code in vi&#x28;m&#x29;?](#faq6_14)
-- [6.15 - How do the menus on the website work and what can I do if they don't work?](#faq6_15)
-- [6.16 - How do I find more information about a winning author of an entry?](#faq6_16)
+- <a class="normal" href="#faq6_0">6.0  - How did an entry that breaks the size rule 2 win the IOCCC?</a>
+- <a class="normal" href="#faq6_1">6.1  - Is there a list of known bugs and &#x28;mis&#x29;features of IOCCC entries?</a>
+- <a class="normal" href="#faq6_2">6.2  - May I mirror the IOCCC website?</a>
+- <a class="normal" href="#faq6_3">6.3  - May I use parts of the IOCCC in an article, book, newsletter, or instructional material?</a>
+- <a class="normal" href="#faq6_4">6.4  - Why do you sometimes use the first person plural?</a>
+- <a class="normal" href="#faq6_5">6.5  - What is an `author handle`?</a>
+- <a class="normal" href="#faq6_6">6.6  - What is an author_handle.json file and how are they used?</a>
+- <a class="normal" href="#faq6_7">6.7  - What is an `entry_id`?</a>
+- <a class="normal" href="#faq6_8">6.8 -  What is the purpose of the .top, .year and .path files?</a>
+- <a class="normal" href="#faq6_9">6.9 -  What is the current meaning of the IOCCC terms Author, Entry, and Submission?</a>
+- <a class="normal" href="#faq6_10">6.10 - How does someone make a change to a file and submit that change as a GitHub pull request?</a>
+- <a class="normal" href="#faq6_11">6.11 - Am I allowed to use IOCCC content?</a>
+- <a class="normal" href="#faq6_12">6.12 - What is Mastodon and why does IOCCC use it?</a>
+- <a class="normal" href="#faq6_13">6.13 - How may I find my author handle?</a>
+- <a class="normal" href="#faq6_14">6.14 - How do I set certain tabstops for viewing source code in vi&#x28;m&#x29;?</a>
+- <a class="normal" href="#faq6_15">6.15 - How do the menus on the website work and what can I do if they don't work?</a>
+- <a class="normal" href="#faq6_16">6.16 - How do I find more information about a winning author of an entry?</a>
 
 
 # The IOCCC FAQ

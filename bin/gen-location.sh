@@ -84,7 +84,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.4.2 2024-05-19"
+export VERSION="1.4.3 2024-07-13"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -551,7 +551,7 @@ fi
 
 	    # output the author from the location
 	    #
-	    echo "  * [$FULL_NAME](authors.html#$AUTHOR_HANDLE)"
+	    echo "  * <a class=\"normal\" href=\"authors.html#$AUTHOR_HANDLE\">$FULL_NAME</a>"
 	done
 	echo '<p></p>'
 	echo

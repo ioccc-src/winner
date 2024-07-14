@@ -85,7 +85,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.10.3 2024-05-24"
+export VERSION="1.10.4 2024-07-13"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -1248,11 +1248,11 @@ EOF
 	    echo "<div id=\"$AUTHOR_HANDLE\">**$FULL_NAME**</div>"
 	    echo "<p></p>"
 	    if [[ $LOCATION_NAME == "$LOCATION_COMMON_NAME" ]]; then
-		echo "Location: [$LOCATION_CODE](location.html#$LOCATION_CODE) -" \
+		echo "Location: <a class=\"normal\" href=\"location.html#$LOCATION_CODE\">$LOCATION_CODE</a> -" \
 		     "_${LOCATION_NAME}_"
 	    else
-		echo "Location: [$LOCATION_CODE](location.html#$LOCATION_CODE) -" \
-		     "_${LOCATION_NAME}_ (_${LOCATION_COMMON_NAME}_)"
+		echo "Location: <a class=\"normal\" href=\"location.html#$LOCATION_CODE\">$LOCATION_CODE</a> -" \
+		     "_${LOCATION_COMMON_NAME}_"
 	    fi
 	    if [[ -n $AUTHOR_AFFILIATION ]]; then
 		echo "<br>"
@@ -1260,22 +1260,22 @@ EOF
 	    fi
 	    if [[ -n $AUTHOR_URL ]]; then
 		echo "<br>"
-	        echo "URL: [$AUTHOR_URL]($AUTHOR_URL)"
+	        echo "URL: <a class=\"normal\" href=\"$AUTHOR_URL\">$AUTHOR_URL</a>"
 	    fi
 	    if [[ -n $AUTHOR_ALT_URL ]]; then
 		echo "<br>"
-	        echo "Alternate URL: [$AUTHOR_ALT_URL]($AUTHOR_ALT_URL)"
+	        echo "Alternate URL: <a class=\"normal\" href=\"$AUTHOR_ALT_URL\">$AUTHOR_ALT_URL</a>"
 	    fi
 	    if [[ -n $AUTHOR_MASTODON_HANDLE && -n $AUTHOR_MASTODON_URL ]]; then
 		echo "<br>"
-		echo "Mastodon: [$AUTHOR_MASTODON_HANDLE]($AUTHOR_MASTODON_URL)"
+		echo "Mastodon: <a class=\"normal\" href=\"$AUTHOR_MASTODON_URL\">$AUTHOR_MASTODON_HANDLE</a>"
 	    fi
 	    if [[ -n $AUTHOR_GITHUB ]]; then
 		echo "<br>"
-	        echo "GitHub: [$AUTHOR_GITHUB](https://github.com/$AUTHOR_GUTHUB_USERNAME)"
+	        echo "GitHub: <a class=\"normal\" href=\"https://github.com/$AUTHOR_GUTHUB_USERNAME\">$AUTHOR_GITHUB</a>"
 	    fi
 	    echo "<br>"
-	    echo "author_handle: [$AUTHOR_HANDLE](%%REPO_URL%%/author/$AUTHOR_HANDLE.json)"
+	    echo "author_handle: <a class=\"normal\" href=\"$%%REPO_URL%%/author/$AUTHOR_HANDLE.jsonE\">$AUTHOR_HANDLE</a>"
 	    echo "<p></p>"
 
 	    # output YYYY/dir set made by this author
@@ -1334,7 +1334,7 @@ EOF
 
 		# output the YYYY/dir entry for this author
 		#
-		echo "* **<a href=\"$YYYY_DIR/index.html\">$YYYY_DIR</a>** - **$AWARD**"
+		echo "* <a class=\"normal\" href=\"$YYYY_DIR/index.html\">$YYYY_DIR</a> - $AWARD"
 	    done
 	    echo
 	fi

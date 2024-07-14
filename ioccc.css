@@ -439,6 +439,13 @@ a:active {
     color: red;
 }
 
+/*
+ * To make a link non-bold, use: <a class="normal" href="url">link text</a>
+ */
+a.normal {
+    font-weight: normal;
+}
+
 img {
     height: auto;
     max-width: 95%;
