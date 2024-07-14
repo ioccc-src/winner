@@ -413,7 +413,7 @@ pre, code {
     overflow-wrap: normal;
     overflow: visible;
     white-space: pre-wrap;
-    color: Indigo;
+    color: DarkGreen;
 }
 
 a {
@@ -720,7 +720,7 @@ transition: all .3s ease;
     font-weight: bold;
     padding-top: 0;
     padding-bottom: 0;
-    color: Indigo;
+    color: DarkGreen;
 }
 
 /* content text */
@@ -828,7 +828,7 @@ blockquote {
     font-weight: bold;
     padding-top: 0;
     padding-bottom: 0;
-    color: Indigo;
+    color: DarkGreen;
 }
 
 /* footer text */
