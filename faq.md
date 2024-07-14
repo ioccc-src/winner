@@ -1,5 +1,7 @@
 # FAQ Table of Contents
 
+This is FAQ version **28.0 2024-07-14**.
+
 
 ## Section  0 - [Submitting entries to a new IOCCC](#faq0)
 - <a class="normal" href="#faq0_0">0.0  - How may I enter the IOCCC?</a>
