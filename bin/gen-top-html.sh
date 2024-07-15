@@ -137,6 +137,7 @@ TOP_MD_SET+=("next/rules")
 TOP_MD_SET+=("nojs-menu")
 TOP_MD_SET+=("status")
 TOP_MD_SET+=("thanks-for-help")
+TOP_MD_SET+=("SECURITY")
 declare -ag TOP_MD_SELECT_SET
 #
 export NOOP=

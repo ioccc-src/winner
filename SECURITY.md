@@ -9,6 +9,6 @@ Use code in this repo at your own risk!  We will **NOT** provide security update
 ## Reporting a Vulnerability
 
 Even though **ALL IOCCC ENTRY CODE IS UNSUPPORTED**,
-if you wish to discuss a security concen regarding this repo then
+if you wish to discuss a security concern regarding this repo then
 please **send email the IOCCC judges** by consulting the bottom section
-of the "[How to contact the IOCCC](https://www.ioccc.org/contact.html)" web page.
+of the [How to contact the IOCCC](https://www.ioccc.org/contact.html) web page.
