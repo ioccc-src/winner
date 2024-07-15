@@ -253,10 +253,6 @@ indent.c:
 # the tools needed to build the website, but it does print out a friendly
 # reminder to those who understand it. For all else, there is "RTFS". :-)
 #
-# Note: there is one rule that should not be in this list. We want to make sure
-# to thank people for not adding it if they find it, perhaps with a hint right
-# here!
-#
 help:
 	@echo '# Rules for those who wish to expore the winning IOCCC entries:'
 	@echo
@@ -296,11 +292,12 @@ help:
 	@echo
 	@echo '# Rules for building specific web pages - a subset of rules mentioned above:'
 	@echo
-	@echo 'make thanks		 - generqte thanks-for-help.html'
-	@echo 'make bugs		 - generqte bugs.html'
-	@echo 'make rules		 - generqte next/rules.hmtl'
-	@echo 'make guidelines		 - generqte next/guidelines.hmtl'
-	@echo 'make faq		 - generqte faq.html'
+	@echo 'make thanks		 - generate thanks-for-help.html'
+	@echo 'make bugs		 - generate bugs.html'
+	@echo 'make rules		 - generate next/rules.hmtl'
+	@echo 'make guidelines		 - generate next/guidelines.hmtl'
+	@echo 'make faq		         - generate faq.html'
+	@echo 'make security		 - generate SECURITY.html'
 	@echo
 	@echo '# Compound make rules for building a local copy of the IOCCC website:'
 	@echo
@@ -540,6 +537,12 @@ faq: ${GEN_TOP_HTML} faq.md
 	${GEN_TOP_HTML} -v 1 faq
 	@echo "Perhaps the FAQ might help!"
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+
+security: ${GEN_TOP_HTML} SECURITY.md
+	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	${GEN_TOP_HTML} -v 1 SECURITY
+	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+
 
 
 ####################################################################
