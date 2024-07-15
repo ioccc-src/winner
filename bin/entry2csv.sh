@@ -100,7 +100,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.0 2024-07-14"
+export VERSION="1.0.1 2024-07-14"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -971,7 +971,7 @@ if [[ -z $NOOP ]]; then
 	         "error code: $status" 1>&2
             EXIT_CODE=8 # exit 8
         elif [[ $V_FLAG -ge 1 ]]; then
-            echo "$0: debug[1]: built replaced author_wins.csv file: $AUTHOR_WINS_CSV" 1>&2
+            echo "$0: debug[1]: replaced author_wins.csv file: $AUTHOR_WINS_CSV" 1>&2
         fi
         if [[ ! -s $AUTHOR_WINS_CSV ]]; then
             echo "$0: ERROR: not a non-empty author_wins.csv file: $AUTHOR_WINS_CSV" 1>&2
@@ -1036,7 +1036,7 @@ if [[ -z $NOOP ]]; then
 	         "error code: $status" 1>&2
             EXIT_CODE=8 # exit 8
         elif [[ $V_FLAG -ge 1 ]]; then
-            echo "$0: debug[1]: built replaced manifest.csv file: $MANIFEST_CSV" 1>&2
+            echo "$0: debug[1]: replaced manifest.csv file: $MANIFEST_CSV" 1>&2
         fi
         if [[ ! -s $MANIFEST_CSV ]]; then
             echo "$0: ERROR: not a non-empty manifest.csv file: $MANIFEST_CSV" 1>&2
@@ -1101,7 +1101,7 @@ if [[ -z $NOOP ]]; then
 	         "error code: $status" 1>&2
             EXIT_CODE=8 # exit 8
         elif [[ $V_FLAG -ge 1 ]]; then
-            echo "$0: debug[1]: built replaced year_prize.csv file: $YEAR_PRIZE_CSV" 1>&2
+            echo "$0: debug[1]: replaced year_prize.csv file: $YEAR_PRIZE_CSV" 1>&2
         fi
         if [[ ! -s $YEAR_PRIZE_CSV ]]; then
             echo "$0: ERROR: not a non-empty year_prize.csv file: $YEAR_PRIZE_CSV" 1>&2
