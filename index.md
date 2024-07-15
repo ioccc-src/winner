@@ -67,6 +67,13 @@ View the [current status of the IOCCC](status.html) to see of the IOCCC is open 
 See [the FAQ about how to enter the IOCCC](faq.html#submit) for more information.
 
 
+# Important Disclaimer
+
+IOCCC code is for **educational and entertainment purposes only**. We do **NOT** recommend installing any winning IOCCC entry code. Use code found the IOCCC repo and in the IOCCC web site **at your own risk!**
+
+The [IOCCC](index.html) and the [IOCCC judges](judges.html) DISCLAIM ALL WARRANTIES WITH REGARD TO THIS SOFTWARE, INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THEY BE LIABLE FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
+
 <!--
 
     Copyright © 1984-2024 by Landon Curt Noll. All Rights Reserved.
