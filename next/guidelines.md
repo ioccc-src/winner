@@ -46,7 +46,7 @@ writing by [contacting the judges](../contact.html).
 </div>
 
 <p class="leftbar">
-These [IOCCC guidelines](guidelines.html) are version **28.9 2024-07-11**.
+These [IOCCC guidelines](guidelines.html) are version **28.10 2024-07-15**.
 </p>
 
 **IMPORTANT**: Be **SURE** to read the [IOCCC rules](rules.html).
@@ -1869,7 +1869,7 @@ given IOCCC?](../faq.html#how_many).
 </p>
 
 Often, winning entries are published in selected magazines from around the
-world.  Winners have appeared in books ('`The New Hackers Dictionary`',
+world.  Winners have appeared in books ('`The New Hacker's Dictionary`',
 '`Obfuscated C and Other Mysteries`', '`Pointers On C`', others) and on t-shirts.
 More than one winner has been turned into a tattoo!
 
