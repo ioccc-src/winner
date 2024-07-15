@@ -26,5 +26,6 @@
 * [IOCCC Home](index.html)
 * [The IOCCC Judges](contact.html)
 * [Contacting the IOCCC](contact.html)
+* [IOCCC Security Policy](SECURITY.html)
 * [Thanks for the help](thanks-for-help.html)
 * [IOCCC markdown](markdown.html)
