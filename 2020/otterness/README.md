@@ -4,6 +4,9 @@
     make
 ```
 
+There is an unobfuscated version for those who wish to see the original final
+prior to obfuscation. See [Alternate code](#alternate-code) below.
+
 
 ### Bugs and (Mis)features:
 
@@ -31,6 +34,37 @@ For more detailed information see [2020/otterness in bugs.html](../../bugs.html#
 
 Now play `output.mid` and `output2.mid` in an audio player that can play MIDI
 files.
+
+
+## Alternate code:
+
+### NOTICE to those who wish for a greater challenge:
+
+**If you want a greater challenge, don't check this version**:
+just try to understand the program via the entry source.
+
+If you get stuck, come back and take a look at the alternate, unobfuscated code,
+described by the author as:
+
+> If you're curious about the un-obfuscated program that I originally wrote,
+this was the final working version. I tried to keep the functions names and
+comments understandable, but it will make a lot more sense to readers familiar
+with the MIDI "SMF" file format.
+
+... at their [web page about the
+entry](https://www.nathanotterness.com/2021/04/obfuscated_c_2020.html).
+
+
+## Alternate use:
+
+Use `prog.alt` as you would `prog`.
+
+
+### Alternate try:
+
+``` <!---sh-->
+     ./try.alt.sh
+```
 
 
 ## Judges' remarks:
@@ -104,6 +138,13 @@ especially true for "live performance" .mid files.
 3. There may be some types of MIDI messages that the program is unable to
 correctly parse, but I have rarely seen this in practice.  The largest
 cause of program failures, in my experience, has been Limitation 2.
+
+### NOTICE to those who wish for a greater challenge:
+
+**If you want a greater challenge, don't read any further**:
+just try to understand the program via the source.
+
+If you get stuck, come back and read below for additional hints and information.
 
 
 #### Obfuscation notes

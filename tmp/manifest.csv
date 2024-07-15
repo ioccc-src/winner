@@ -4319,7 +4319,9 @@
 2020,otterness,prog.c,20,true,c,true,entry source code
 2020,otterness,Makefile,30,true,makefile,true,entry Makefile
 2020,otterness,prog.orig.c,50,false,c,true,original source code
+2020,otterness,try.alt.sh,100,true,shellscript,true,script to try alternate code
 2020,otterness,try.sh,100,true,shellscript,true,script to try entry
+2020,otterness,prog.alt.c,120,true,c,true,unobfuscated source code
 2020,otterness,cvikl.mid,150,true,midi,false,sample MIDI file
 2020,otterness,entertainer.mid,159,true,midi,false,sample MIDI file
 2020,otterness,2020_otterness.tar.bz2,1415926535,false,tbz2,false,download entry tarball
