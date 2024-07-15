@@ -6038,7 +6038,10 @@ Tolkien](https://www.tolkienestate.com/life/biography/).
 that one need not download them and to make sure they can always be obtained
 even if the domain or link goes dead.
 
-Cody also added the [try.sh](%%REPO_URL%%/2020/otterness/try.sh) script.
+Cody also added the [try.sh](%%REPO_URL%%/2020/otterness/try.sh) script and the
+[try.alt.sh](%%REPO_URL%%/2020/otterness/try.alt.sh) script for the author's
+unobfuscated version that Cody added as
+[prog.alt.c](%%REPO_URL%%/2020/otterness/prog.alt.c).
 
 
 <div id="2020_tsoj">

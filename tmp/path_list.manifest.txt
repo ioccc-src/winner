@@ -4324,8 +4324,10 @@
 2020/otterness/cvikl.mid
 2020/otterness/entertainer.mid
 2020/otterness/index.html
+2020/otterness/prog.alt.c
 2020/otterness/prog.c
 2020/otterness/prog.orig.c
+2020/otterness/try.alt.sh
 2020/otterness/try.sh
 2020/tsoj/.entry.json
 2020/tsoj/.gitignore

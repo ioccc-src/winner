@@ -409,6 +409,8 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <!-- BEFORE: 1st line of markdown file: 2020/otterness/README.md -->
 <h2 id="to-build">To build:</h2>
 <pre><code>    make</code></pre>
+<p>There is an unobfuscated version for those who wish to see the original final
+prior to obfuscation. See <a href="#alternate-code">Alternate code</a> below.</p>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
 <p>The current status of this entry is:</p>
 <pre><code>    STATUS: INABIAF - please DO NOT fix</code></pre>
@@ -419,6 +421,24 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <pre><code>    ./try.sh</code></pre>
 <p>Now play <code>output.mid</code> and <code>output2.mid</code> in an audio player that can play MIDI
 files.</p>
+<h2 id="alternate-code">Alternate code:</h2>
+<h3 id="notice-to-those-who-wish-for-a-greater-challenge">NOTICE to those who wish for a greater challenge:</h3>
+<p><strong>If you want a greater challenge, don’t check this version</strong>:
+just try to understand the program via the entry source.</p>
+<p>If you get stuck, come back and take a look at the alternate, unobfuscated code,
+described by the author as:</p>
+<blockquote>
+<p>If you’re curious about the un-obfuscated program that I originally wrote,
+this was the final working version. I tried to keep the functions names and
+comments understandable, but it will make a lot more sense to readers familiar
+with the MIDI “SMF” file format.</p>
+</blockquote>
+<p>… at their <a href="https://www.nathanotterness.com/2021/04/obfuscated_c_2020.html">web page about the
+entry</a>.</p>
+<h2 id="alternate-use">Alternate use:</h2>
+<p>Use <code>prog.alt</code> as you would <code>prog</code>.</p>
+<h3 id="alternate-try">Alternate try:</h3>
+<pre><code>     ./try.alt.sh</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>In an entry that boasts not using literals, one would expect to see
 straightforward ways to produce small integers like <code>!(x^x)&lt;&lt;!(x^x)</code>, etc. but
@@ -537,7 +557,9 @@ very thoroughly).</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/otterness/prog.c">prog.c</a> - entry source code</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/otterness/Makefile">Makefile</a> - entry Makefile</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/otterness/prog.orig.c">prog.orig.c</a> - original source code</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/otterness/try.alt.sh">try.alt.sh</a> - script to try alternate code</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/otterness/try.sh">try.sh</a> - script to try entry</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/otterness/prog.alt.c">prog.alt.c</a> - unobfuscated source code</li>
 <li><a href="cvikl.mid">cvikl.mid</a> - sample MIDI file</li>
 <li><a href="entertainer.mid">entertainer.mid</a> - sample MIDI file</li>
 </ul>

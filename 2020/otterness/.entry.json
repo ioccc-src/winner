@@ -34,12 +34,28 @@
 	    "entry_text" : "original source code"
 	},
 	{
+	    "file_path" : "try.alt.sh",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "shellscript",
+	    "display_via_github" : true,
+	    "entry_text" : "script to try alternate code"
+	},
+	{
 	    "file_path" : "try.sh",
 	    "inventory_order" : 100,
 	    "OK_to_edit" : true,
 	    "display_as" : "shellscript",
 	    "display_via_github" : true,
 	    "entry_text" : "script to try entry"
+	},
+	{
+	    "file_path" : "prog.alt.c",
+	    "inventory_order" : 120,
+	    "OK_to_edit" : true,
+	    "display_as" : "c",
+	    "display_via_github" : true,
+	    "entry_text" : "unobfuscated source code"
 	},
 	{
 	    "file_path" : "cvikl.mid",
