@@ -219,7 +219,7 @@ be 0, 2 or 3. The version this has been observed in does not actually object to
 1 arg but it is entirely possible that this changes so a second arg (that's not
 needed and is unused) has been added just in case. See [FAQ 4.6  - Why was arg
 count and/or type changed in main&#x28;&#x29; in some older
-entries?](faq.html#faq4_6) for more details.
+entries?](faq.html#arg_count) for more details.
 
 Cody also added the script [primes.sh](%%REPO_URL%%/1985/august/primes.sh) which allows one
 to check the output for the first `N` prime numbers of the output, where `N` is
@@ -405,7 +405,7 @@ Cody also added the [try.sh](%%REPO_URL%%/1985/sicherman/try.sh) and
 
 [Cody](#cody) made this use `fgets()`. See [FAQ 4.1  - Why were some calls to
 the libc function gets&#x28;3&#x29; changed to use
-fgets&#x28;3&#x29;?](faq.html#faq4_1) for why this was done.
+fgets&#x28;3&#x29;?](faq.html#gets) for why this was done.
 
 Cody also added the [try.sh](%%REPO_URL%%/1986/hague/try.sh) script which also feeds to the
 program the `input.txt` text file that Cody added.
@@ -726,7 +726,7 @@ size constraints of the contest).
 
 [Cody](#cody) made this use `fgets(3)`. See [FAQ 4.1  - Why were some calls to
 the libc function gets&#x28;3&#x29; changed to use
-fgets&#x28;3&#x29;?](faq.html#faq4_1) for why this was done.
+fgets&#x28;3&#x29;?](faq.html#gets) for why this was done.
 
 
 Cody also added the [try.sh](%%REPO_URL%%/1987/wall/try.sh) script.
@@ -892,7 +892,7 @@ same code, just a `p` instead of an `m` in the name. Additionally, `main()` retu
 
 [Cody](#cody) made this use `fgets(3)`. See [FAQ 4.1  - Why were some calls to
 the libc function gets&#x28;3&#x29; changed to use
-fgets&#x28;3&#x29;?](faq.html#faq4_1) for why this was done.
+fgets&#x28;3&#x29;?](faq.html#gets) for why this was done.
 
 
 
@@ -1249,7 +1249,7 @@ error).
 
 [Cody](#cody) made this use `fgets(3)`. See [FAQ 4.1  - Why were some calls to
 the libc function gets&#x28;3&#x29; changed to use
-fgets&#x28;3&#x29;?](faq.html#faq4_1) for why this was done.
+fgets&#x28;3&#x29;?](faq.html#gets) for why this was done.
 
 
 
@@ -1272,7 +1272,7 @@ Cody fixed another compiler error by removing the erroneous prototype to
 
 Cody also made this use `fgets(3)`. See [FAQ 4.1  - Why were some calls to
 the libc function gets&#x28;3&#x29; changed to use
-fgets&#x28;3&#x29;?](faq.html#faq4_1) for why this was done.
+fgets&#x28;3&#x29;?](faq.html#gets) for why this was done.
 
 
 
@@ -1363,7 +1363,7 @@ Cody also changed the code (in both versions) to use `fgets(3)` instead of
 time or execution, the latter of which was causing confusing output due to the
 warning being interspersed with the program's interactive output. See [FAQ 4.1
 - Why were some calls to the libc function gets&#x28;3&#x29; changed to use
-fgets&#x28;3&#x29;?](faq.html#faq4_1) for more details on why this change was
+fgets&#x28;3&#x29;?](faq.html#gets) for more details on why this change was
 done more generally.
 
 
@@ -1396,7 +1396,7 @@ tell us!
 
 Cody also changed the code to use `fgets(3)`. See [FAQ 4.1  - Why were some calls to
 the libc function gets&#x28;3&#x29; changed to use
-fgets&#x28;3&#x29;?](faq.html#faq4_1) for why this was done.
+fgets&#x28;3&#x29;?](faq.html#gets) for why this was done.
 
 
 Since this program is so incredible the extra fixes were deemed worth having and
@@ -1547,7 +1547,7 @@ and the generated code work for `clang`.
 Furthermore Cody changed it so that the C from the BASIC uses `fgets()`, not
 `gets()`. See [FAQ 4.1  - Why were some calls to
 the libc function gets&#x28;3&#x29; changed to use
-fgets&#x28;3&#x29;?](faq.html#faq4_1) for why this was done.
+fgets&#x28;3&#x29;?](faq.html#gets) for why this was done.
 
 For the magic of `clang` (which was done manually except the returning a value
 in `main()` in the generated code and possibly `fgets(3)`) and `fgets(3)`, see
@@ -1801,7 +1801,7 @@ though it's questionable how much more (if at all) obscure that is :-)
 Cody also changed the location that it used `gets()` to be `fgets(3)`.
 See [FAQ 4.1  - Why were some calls to
 the libc function gets&#x28;3&#x29; changed to use
-fgets&#x28;3&#x29;?](faq.html#faq4_1) for why this was done.
+fgets&#x28;3&#x29;?](faq.html#gets) for why this was done.
 This was complicated because of how the other source files are generated (as
 above); simply changing the code could cause invalid output in the program which
 made other files fail to compile (for this example specifically, see below).
@@ -1972,7 +1972,7 @@ only in an error message if say 4 args are used. This is out of an abundance of
 caution as it's quite possible that `clang` or the ANSI C committee end up further
 changing this.  See [FAQ 4.6  - Why was arg
 count and/or type changed in main&#x28;&#x29; in some older
-entries?](faq.html#faq4_6) for more details.
+entries?](faq.html#arg_count) for more details.
 
 
 Yusuke also noted that there is a bug in the program where right after starting
@@ -1994,7 +1994,7 @@ demonstrate it as using make was problematic.
 
 Cody made it use `fgets()` instead of `gets()`. See [FAQ 4.1  - Why were some calls to
 the libc function gets&#x29;3&#x28; changed to use
-fgets&#x28;3&#x29;?](faq.html#faq4_1) for why this was done.
+fgets&#x28;3&#x29;?](faq.html#gets) for why this was done.
 
 NOTE: this entry cannot work with `clang` due to different compiler messages (it
 will compile fine but it won't work). See [1992/lush in
@@ -2234,7 +2234,7 @@ compile time. See the index.html for details.
 
 [Cody](#cody) made this use `fgets(3)` not `gets(3)`. See [FAQ 4.1  - Why were some calls to
 the libc function gets&#x28;3&#x29; changed to use
-fgets&#x28;3&#x29;?](faq.html#faq4_1) for why this was done.
+fgets&#x28;3&#x29;?](faq.html#gets) for why this was done.
 
 
 
@@ -2361,7 +2361,7 @@ but what was being passed to it is an `int`).
 Cody also changed the entry to use `fgets(3)` instead of `gets(3)`.
 (See [FAQ 4.1  - Why were some calls to
 the libc function gets&#x28;3&#x29; changed to use
-fgets&#x28;3&#x29;?](faq.html#faq4_1) for why this was done.)
+fgets&#x28;3&#x29;?](faq.html#gets) for why this was done.)
 
 This one has
 a minor annoyance in that it now prints a newline after the output but this
@@ -2442,7 +2442,7 @@ each mode allowed with two sizes, 128 and 256, allowing one to quit or skip each
 Cody also made this use `fgets(3)` instead of `gets(3)`.
 See [FAQ 4.1  - Why were some calls to
 the libc function gets&#x29;3&#x28; changed to use
-fgets&#x28;3&#x29;?](faq.html#faq4_1) for why this was done.
+fgets&#x28;3&#x29;?](faq.html#gets) for why this was done.
 In this case the newline had
 to be terminated but it was a pretty straightforward fix. `gets()` was defined
 to use `fgets()` and the inclusion of `stdio.h` had to be added but to make it
@@ -2508,7 +2508,7 @@ It actually appears to allow 1 but if you specify 4 it says 0, 2 or 3 and it is
 an error but it's entirely possible that they will eventually make the defect
 function as the error message claims.  See [FAQ 4.6  - Why was arg
 count and/or type changed in main&#x28;&#x29; in some older
-entries?](faq.html#faq4_6) for more details.
+entries?](faq.html#arg_count) for more details.
 
 
 
@@ -2810,7 +2810,7 @@ appears that they do allow 1 but for instance 4 is not allowed. However as it's
 quite possible they will 'fix' this defect it would be better to have this not
 be a problem at such a time. See [FAQ 4.6  - Why was arg
 count and/or type changed in main&#x28;&#x29; in some older
-entries?](faq.html#faq4_6) for more details.
+entries?](faq.html#arg_count) for more details.
 
 
 Cody also added the [bas1.sh](%%REPO_URL%%/1998/bas1/bas1.sh) script to simplify running the
@@ -2908,7 +2908,7 @@ possible though that this will change so it is fixed in case this happens. As it
 is mostly just through the C pre-processor Cody added a new macro to make the
 code look like the original with just an extra arg. See [FAQ 4.6  - Why was arg
 count and/or type changed in main&#x28;&#x29; in some older
-entries?](faq.html#faq4_6) for more details.
+entries?](faq.html#arg_count) for more details.
 
 
 In some versions of `clang` `-Wno-int-conversion` had to be added to the
@@ -3048,7 +3048,7 @@ of `clang` say that `main()` can only have 0, 2 or 3 args. These versions accept
 arg but it is entirely possible that they fix this so this should prevent it
 from breaking if that happens. See [FAQ 4.6  - Why was arg
 count and/or type changed in main&#x28;&#x29; in some older
-entries?](faq.html#faq4_6) for more details.
+entries?](faq.html#arg_count) for more details.
 
 
 Cody added the [try.sh](%%REPO_URL%%/1998/schweikh3/try.sh) script to make it easier to try
@@ -3106,7 +3106,7 @@ commands that we recommended.
 [Cody](#cody) changed this entry to use `fgets(3)` instead of `gets(3)`.
 See [FAQ 4.1  - Why were some calls to
 the libc function gets&#x28;3&#x29; changed to use
-fgets&#x28;3&#x29;?](faq.html#faq4_1) for why this was done.
+fgets&#x28;3&#x29;?](faq.html#gets) for why this was done.
 This involved changing the `K` arg to `gets(3)` to `&K` in `fgets(3)`.
 
 Cody also added the [try.sh](%%REPO_URL%%/2000/anderson/try.sh) script.
@@ -3800,7 +3800,7 @@ Cody, out of an abundance of caution for `clang`, added a second arg to `main()`
 as some versions complain about the number of args and although they accept 1 it
 is entirely possible it will eventually be that they don't. See [FAQ 4.6  - Why was arg
 count and/or type changed in main&#x28;&#x29; in some older
-entries?](faq.html#faq4_6) for more details.
+entries?](faq.html#arg_count) for more details.
 
 Cody also added the [try.sh](%%REPO_URL%%/2004/kopczynski/try.sh) script and various data
 files: [kopczynski-a](%%REPO_URL%%/2004/kopczynski/kopczynski-a) to demonstrate what happens when art more
@@ -3836,7 +3836,7 @@ chose the word `IOCCC` instead of `AAA`).
 
 [Cody](#cody) made this use `fgets(3)`.  See [FAQ 4.1  - Why were some calls to
 the libc function gets&#x28;3&#x29; changed to use
-fgets&#x28;3&#x29;?](faq.html#faq4_1) for why this was done.
+fgets&#x28;3&#x29;?](faq.html#gets) for why this was done.
 
 
 He also changed the time factor in the data files as the animations went too
@@ -4356,7 +4356,7 @@ it to the repo as well.
 2 args instead of 1 as some versions report that `main()` must have 0, 2 or 3
 args, even though at least one of those versions allows 1 arg only.  See [FAQ 4.6  - Why was arg
 count and/or type changed in main&#x28;&#x29; in some older
-entries?](faq.html#faq4_6) for more details.
+entries?](faq.html#arg_count) for more details.
 
 
 Cody also added the [try.sh](%%REPO_URL%%/2006/sykes2/try.sh) script for easier use of the
@@ -4440,7 +4440,7 @@ We're not able to test this.
 versions of `clang` complain about not only the type of each arg to `main()` but
 the number of args as well. See [FAQ 4.6  - Why was arg
 count and/or type changed in main&#x28;&#x29; in some older
-entries?](faq.html#faq4_6) for more details.
+entries?](faq.html#arg_count) for more details.
 
 
 Cody also added the [try.sh](%%REPO_URL%%/2011/borsanyi/try.sh) script.
@@ -4681,7 +4681,7 @@ abundance of caution in case `clang`, which already imposes restrictions on the
 types of args to `main()` including to do with `char **`, decides to further
 restrict them. See [FAQ 4.6  - Why was arg
 count and/or type changed in main&#x28;&#x29; in some older
-entries?](faq.html#faq4_6) for more details.
+entries?](faq.html#arg_count) for more details.
 
 
 Cody also restored the original code from the archive.
@@ -4975,7 +4975,7 @@ The entry can still be enjoyed if you do not have these tools, however.
 Cody also (out of an abundance of caution for `clang(1)` which is strict with
 arg type and count to `main()`) added a second (unused) arg to `main()`. See
 [FAQ 4.6  - Why was arg count and/or type changed in main&#x28;&#x29; in some
-older entries?](faq.html#faq4_6) for more details.
+older entries?](faq.html#arg_count) for more details.
 
 
 
@@ -5491,7 +5491,7 @@ must be 0, 2 or 3. The version this has been observed in does not actually
 object to 1 arg but it is entirely possible that this changes so a second arg
 (that's not needed and is unused) has been added just in case. See [FAQ 4.6  -
 Why was arg count and/or type changed in main&#x28;&#x29; in some older
-entries?](faq.html#faq4_6) for more details.
+entries?](faq.html#arg_count) for more details.
 
 
 Cody also added explicit linking of libm (`-lm`) for systems that do not do this

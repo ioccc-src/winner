@@ -67,7 +67,7 @@ for any changes that may have been made while the [IOCCC](index.html) was
 </div>
 
 The [IOCCC](index.html) is [closed](#closed) to new submissions.  The [IOCCC judges](judges.html)
-are in the process of judging the [submissions](faq.html#faq2_0) they received while
+are in the process of judging the [submissions](faq.html#how_many) they received while
 the [IOCCC](index.html) was open.
 
 Watch the [@IOCCC mastodon feed](https://fosstodon.org/@ioccc) for updates.

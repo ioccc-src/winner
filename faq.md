@@ -523,7 +523,7 @@ information, they will ask (either in public or suggest a private conversation).
 Again, **please** don't hesitate to ask: Your question may be something that
 others are wondering about as well!
 
-See also [FAQ about making suggestions](#faq0_5).
+See also [FAQ about making suggestions](#feedback).
 
 
 <div id="faq0_7">
@@ -1757,7 +1757,9 @@ winning entries page](years.html).
 
 
 <div id="faq3_0">
+<div id="make_rules">
 ### FAQ 3.0: What Makefile rules are available to build or clean up IOCCC entries?
+</div>
 </div>
 
 In general the best way to compile everything in an entry directory is to run:
@@ -3013,7 +3015,7 @@ then do:
 to compile all versions and then run the alternate version (if you have
 a PDP-11 or VAX-11 you would be able to run the original version). For more help
 on compiling entries, see also [3.0  - What Makefile rules are available to
-build or clean up IOCCC entries?](#faq3_0).
+build or clean up IOCCC entries?](#make_rules).
 
 If you want to view the `index.html` file you can point your browser to the
 `index.html` file of the winning entry (e.g. `1984/mullender/index.html`) with the
@@ -3065,7 +3067,7 @@ entry:
 ```
 
 For more help on compiling entries, see also [3.0  - What Makefile rules are
-available to build or clean up IOCCC entries?](#faq3_0).
+available to build or clean up IOCCC entries?](#make_rules).
 
 Of course in this case you can also switch to individual entries and look at the
 `index.html` file (or any other file in the entry) and try out the entries that
@@ -3325,7 +3327,9 @@ judgement call.
 
 
 <div id="faq4_6">
+<div id="arg_count">
 ### FAQ 4.6: Why was arg count and/or type changed in main&#x28;&#x29; in some older entries?
+</div>
 </div>
 
 There are a number of reasons this was done but they usually come down to a

@@ -788,7 +788,7 @@ with your submission. If the <a href="judges.html">IOCCC judges</a> truly need m
 information, they will ask (either in public or suggest a private conversation).</p>
 <p>Again, <strong>please</strong> don’t hesitate to ask: Your question may be something that
 others are wondering about as well!</p>
-<p>See also <a href="#faq0_5">FAQ about making suggestions</a>.</p>
+<p>See also <a href="#feedback">FAQ about making suggestions</a>.</p>
 <div id="faq0_7">
 <div id="markdown">
 <h3 id="faq-0.7---what-are-the-ioccc-best-practices-for-using-markdown">FAQ 0.7: - What are the IOCCC best practices for using markdown?</h3>
@@ -1898,7 +1898,9 @@ winning entries page</a>.</p></li>
 <h2 id="section-3-compiling-and-running-ioccc-entries">Section 3: Compiling and running IOCCC entries</h2>
 </div>
 <div id="faq3_0">
+<div id="make_rules">
 <h3 id="faq-3.0-what-makefile-rules-are-available-to-build-or-clean-up-ioccc-entries">FAQ 3.0: What Makefile rules are available to build or clean up IOCCC entries?</h3>
+</div>
 </div>
 <p>In general the best way to compile everything in an entry directory is to run:</p>
 <pre><code>    make clobber all</code></pre>
@@ -2650,7 +2652,7 @@ then do:</p>
 <span id="cb59-3"><a href="#cb59-3" aria-hidden="true" tabindex="-1"></a>        <span class="ex">./mullender.alt</span></span></code></pre></div>
 <p>to compile all versions and then run the alternate version (if you have
 a PDP-11 or VAX-11 you would be able to run the original version). For more help
-on compiling entries, see also <a href="#faq3_0">3.0 - What Makefile rules are available to
+on compiling entries, see also <a href="#make_rules">3.0 - What Makefile rules are available to
 build or clean up IOCCC entries?</a>.</p>
 <p>If you want to view the <code>index.html</code> file you can point your browser to the
 <code>index.html</code> file of the winning entry (e.g. <code>1984/mullender/index.html</code>) with the
@@ -2690,7 +2692,7 @@ extract it and then switch to the directory and compile everything of each
 entry:</p>
 <div class="sourceCode" id="cb60"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>        <span class="bu">cd</span> 1984</span>
 <span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a>        <span class="fu">make</span> everything</span></code></pre></div>
-<p>For more help on compiling entries, see also <a href="#faq3_0">3.0 - What Makefile rules are
+<p>For more help on compiling entries, see also <a href="#make_rules">3.0 - What Makefile rules are
 available to build or clean up IOCCC entries?</a>.</p>
 <p>Of course in this case you can also switch to individual entries and look at the
 <code>index.html</code> file (or any other file in the entry) and try out the entries that
@@ -2885,7 +2887,9 @@ as well, for fun.</p>
 <p>In some cases it might be better to not have them but as noted this is a
 judgement call.</p>
 <div id="faq4_6">
+<div id="arg_count">
 <h3 id="faq-4.6-why-was-arg-count-andor-type-changed-in-main-in-some-older-entries">FAQ 4.6: Why was arg count and/or type changed in main() in some older entries?</h3>
+</div>
 </div>
 <p>There are a number of reasons this was done but they usually come down to a
 mis-feature or defect in the <code>clang</code> compiler.</p>
