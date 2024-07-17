@@ -13,9 +13,7 @@ code](#alternate-code) below.
 
 The current status of this entry is:
 
-```
-    STATUS: missing or dead link - please provide them
-```
+> **STATUS: missing or dead link or links - please provide it or them**
 
 For more detailed information see [1998/dloweneil in bugs.html](../../bugs.html#1998_dloweneil).
 

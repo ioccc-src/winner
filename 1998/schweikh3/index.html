@@ -519,7 +519,7 @@ more than a couple dozen files of the same size.</p>
 <p>For the ftp and WWW admins:
 How much space is wasted below our site’s /pub directory?</p>
 <pre><code>    find /pub -type f | samefile | awk &#39;{sum += $1} END {print sum}&#39;</code></pre>
-<h4 id="exit-status">EXIT STATUS</h4>
+<h4 id="exit-status">EXIT &gt; STATUS</h4>
 <p>If <code>samefile</code> runs out of memory the exit status is 1, zero
 otherwise.</p>
 <h4 id="see-also">SEE ALSO</h4>

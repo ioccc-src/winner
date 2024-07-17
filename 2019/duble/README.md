@@ -12,9 +12,7 @@ See [Alternate code](#alternate-code) below if you are curious.
 
 The current status of this entry is:
 
-```
-    STATUS: INABIAF - please DO NOT fix
-```
+> **STATUS: INABIAF - please DO NOT fix**
 
 For more detailed information see [2019/duble in bugs.html](../../bugs.html#2019_duble).
 

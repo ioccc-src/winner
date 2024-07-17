@@ -9,9 +9,7 @@
 
 The current status of this entry is:
 
-```
-    STATUS: missing files - please provide them
-```
+> **STATUS: missing files - please provide them**
 
 For more detailed information see [2001/rosten in bugs.html](../../bugs.html#2001_rosten).
 

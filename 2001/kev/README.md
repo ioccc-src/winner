@@ -12,9 +12,7 @@ awkward `,` and `.` keys. See [alternate code](#alternate-code) below.
 
 The current status of this entry is:
 
-```
-    STATUS: INABIAF - please DO NOT fix
-```
+> **STATUS: INABIAF - please DO NOT fix**
 
 For more detailed information see [2001/kev in bugs.html](../../bugs.html#2001_kev).
 

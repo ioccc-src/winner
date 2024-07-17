@@ -13,9 +13,7 @@ See the [Alternate code](#alternate-code) section below.
 
 The current status of this entry is:
 
-```
-    STATUS: INABIAF - please DO NOT fix
-```
+> **STATUS: INABIAF - please DO NOT fix**
 
 For more detailed information see [bugs report with 1993/rince](../../bugs.html#1993_rince).
 

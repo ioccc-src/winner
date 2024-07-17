@@ -9,9 +9,7 @@
 
 The current status of this entry is:
 
-```
-    STATUS: INABIAF - please DO NOT fix
-```
+> **STATUS: INABIAF - please DO NOT fix**
 
 For more detailed information see [2006/borsanyi in bugs.html](../../bugs.html#2006_borsanyi).
 
@@ -29,9 +27,11 @@ For more detailed information see [2006/borsanyi in bugs.html](../../bugs.html#2
     ./try.sh
 ```
 
-We recommend you input for the filename `example.gif` and for the string
-`ioccc@example.com`. The script will not overwrite files. It runs the program in
-a loop until you answer that you do not wish to make another.
+We recommend you first try inputting for the filename `example.gif` and for the
+string `ioccc@example.com`. Of course you could also provide a different
+filename and even include your own email address or something else entirely.
+The script will not overwrite files. It runs the program in a loop until you
+answer that you do not wish to make another.
 
 
 ## Judges' remarks:

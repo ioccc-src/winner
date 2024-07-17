@@ -9,9 +9,7 @@
 
 The current status of this entry is:
 
-```
-    STATUS: INABIAF - please DO NOT fix
-```
+> **STATUS: INABIAF - please DO NOT fix**
 
 For more detailed information see [1998/schnitzi in bugs.html](../../bugs.html#1998_schnitzi).
 
@@ -53,8 +51,8 @@ Why does this happen?
 ## Judges' remarks:
 
 This is a beautiful program.  How can a program with no conditional (except for
-the fixes for modern systems) behavior at all have output which
-depends on anything?
+the fixes for modern systems though still no `if`s) behavior at all have output
+which depends on anything?
 
 For hints on deciphering this, see below past the Author's remarks;
 they're a nice summary, but they leave the mystery intact.

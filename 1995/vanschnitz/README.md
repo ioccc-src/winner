@@ -12,9 +12,7 @@ in 2023. See [Alternate code](#alternate-code) below.
 
 The current status of this entry is:
 
-```
-    STATUS: missing file - please provide it
-```
+> **STATUS: missing file - please provide it**
 
 For more detailed information see [1995/vanschnitz in bugs.html](../../bugs.html#1995_vanschnitz).
 

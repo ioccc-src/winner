@@ -9,9 +9,7 @@
 
 The current status of this entry is:
 
-```
-    STATUS: INABIAF - please DO NOT fix
-```
+> **STATUS: INABIAF - please DO NOT fix**
 
 For more detailed information see [1992/adrian in bugs.html](../../bugs.html#1992_adrian).
 

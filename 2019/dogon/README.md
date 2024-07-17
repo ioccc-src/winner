@@ -9,9 +9,7 @@
 
 The current status of this entry is:
 
-```
-    STATUS: uses gets() - change to fgets() if possible
-```
+> **STATUS: uses gets() - change to fgets() if possible**
 
 For more detailed information see [2019/dogon in bugs.html](../../bugs.html#2019_dogon).
 

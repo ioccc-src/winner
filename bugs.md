@@ -1724,7 +1724,7 @@ We would appreciate anyone who has it or even just knows the name! Thank you.
 ## 1996/gandalf
 </div>
 
-### STATUS: missing or dead link - please provide them
+### STATUS: missing or dead link or links - please provide it or them
 ### Source code: [1996/gandalf/gandalf.c](%%REPO_URL%%/1996/gandalf/gandalf.c)
 ### Information: [1996/gandalf/index.html](1996/gandalf/index.html)
 
@@ -1792,7 +1792,7 @@ NOTE: the two boards will be on top of each other so you will have to drag one
 off the other so that you can properly play.
 
 
-### STATUS: missing or dead link - please provide them
+### STATUS: missing or dead link or links - please provide it or them
 
 As well: the link which was http://www.uio.no/~jonth is no longer valid and
 there's no archive on the Internet Wayback Machine. Do you know of a proper URL?
@@ -1819,7 +1819,7 @@ There was no IOCCC in 1997.
 ## 1998/dlowe
 </div>
 
-### STATUS: missing or dead link - please provide them
+### STATUS: missing or dead link or links - please provide it or them
 ### Source code: [1998/dlowe/dlowe.c](%%REPO_URL%%/1998/dlowe/dlowe.c)
 ### Information: [1998/dlowe/index.html](1998/dlowe/index.html)
 
@@ -1834,7 +1834,7 @@ to the page as well!  You'll have IOCCC fame for reviving a pootifier! :-)
 ## 1998/dloweneil
 </div>
 
-### STATUS: missing or dead link - please provide them
+### STATUS: missing or dead link or links - please provide it or them
 ### Source code: [1998/dloweneil/dloweneil.c](%%REPO_URL%%/1998/dloweneil/dloweneil.c)
 ### Information: [1998/dloweneil/index.html](1998/dloweneil/index.html)
 
@@ -2228,7 +2228,7 @@ elves of Imladris :-(
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
-### STATUS: doesn't work with some platforms - please help us fix
+### STATUS: doesn't work with some platforms - please help us fix it
 ### Source code: [2001/bellard/bellard.c](%%REPO_URL%%/2001/bellard/bellard.c)
 ### Information: [2001/bellard/index.html](2001/bellard/index.html)
 
@@ -2528,7 +2528,7 @@ There was no IOCCC in 2003.
 </div>
 
 ### STATUS: compiled executable crashes - please help us fix
-### STATUS: doesn't work with some platforms - please help us fix
+### STATUS: doesn't work with some platforms - please help us fix it
 ### Source code: [2004/gavin/gavin.c](%%REPO_URL%%/2004/gavin/gavin.c)
 ### Information: [2004/gavin//index.html](2004/gavin//index.html)
 
@@ -2874,7 +2874,7 @@ This program will likely crash or do something funny without an arg.
 ## 2006/monge
 </div>
 
-### STATUS: doesn't work with some platforms - please help us fix
+### STATUS: doesn't work with some platforms - please help us fix it
 ### Source code: [2006/monge/monge.c](%%REPO_URL%%/2006/monge/monge.c)
 ### Information: [2006/monge/index.html](2006/monge/index.html)
 
@@ -3033,7 +3033,7 @@ bins at the edges.
 ## 2011/dlowe
 </div>
 
-### STATUS: missing or dead link - please provide them
+### STATUS: missing or dead link or links - please provide it or them
 ### Source code: [2011/dlowe/dlowe.c](%%REPO_URL%%/2011/dlowe/dlowe.c)
 ### Information: [2011/dlowe/index.html](2011/dlowe/index.html)
 
@@ -3089,7 +3089,7 @@ This program will very likely crash or do something funny without an arg.
 ## 2011/richards
 </div>
 
-### STATUS: doesn't work with some platforms - please help us fix
+### STATUS: doesn't work with some platforms - please help us fix it
 ### Source code: [2011/richards/richards.c](%%REPO_URL%%/2011/richards/richards.c)
 ### Information: [2011/richards/index.html](2011/richards/index.html)
 

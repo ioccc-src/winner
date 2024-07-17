@@ -12,9 +12,7 @@ code](#alternate-code) and the author's remarks below for more details.
 
 The current status of this entry is:
 
-```
-    STATUS: known bug - please help us fix
-```
+> **STATUS: known bug - please help us fix**
 
 For more detailed information see [2015/howe in bugs.html](../../bugs.html#2015_howe).
 

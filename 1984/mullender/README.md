@@ -15,9 +15,7 @@ the original version.
 
 The current status of this entry is:
 
-```
-    STATUS: INABIAF - please DO NOT fix
-```
+> **STATUS: INABIAF - please DO NOT fix**
 
 For more detailed information see [1984/mullender in bugs.html](../../bugs.html#1984_mullender).
 
