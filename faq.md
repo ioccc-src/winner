@@ -81,7 +81,7 @@ other inconsistencies with the original entry?](#faq4_3)
 - <a class="normal" href="#faq5_5">5.5  - How may I correct or update IOCCC author information?</a>
 - <a class="normal" href="#faq5_6">5.6  - What should I do if I find a broken or wrong web link?</a>
 - <a class="normal" href="#faq5_7">5.7  - How may I support the IOCCC?</a>
-- <a class="normal" href="#faq5_8">5.8 - I deobfuscated some entry code, how may I contribute the source?</a>
+- <a class="normal" href="#faq5_8">5.8  - I deobfuscated some entry code, may I contribute the source?</a>
 
 
 ## Section  6 - [Miscellaneous IOCCC](#faq6)
@@ -1707,7 +1707,7 @@ entries that do not win on their web page for everyone to see.
 ### FAQ 2.3: How much time does it take to judge the contest?
 </div>
 
-It takes a fair amount of time to setup, run, answer email, process entries,
+It takes a fair amount of time to setup, run, respond to messages, process entries,
 review entries, trim down the set entries to a set of winning entries, doing the
 write-up of the entries, announcing the entries, reviewing final edits of the
 winning entry set, posting the winning entries, being flamed :-), tell folks who send in
@@ -3756,43 +3756,9 @@ As these files are JSON you should verify that they are validly formed (e.g. you
 didn't make a typo).
 
 Please make sure that you run `make www` after updating the file or files. This unfortunately
-takes quite a while but it is the safest way to do it. There are other ways to go
-about this that can speed things up. Here is one such way which was done when
-fixing two authors in 1995 (in one commit as they were the authors of the same
-two entries):
-
-First, the two files, [author/Heather_Downs.json](author/Heather_Downs.json) and
-[author/Selene_Makarios.json](author/Selene_Makarios.json) were fixed (the
-location was set as `ZZ` but Cody Boone Ferguson knew from the archive that it
-was the US for both of them and he also noticed that the URL, the same for
-both, was no longer valid and it was also known that the email was no longer
-valid as it referred to the same domain). Thus the `location_code`, `url` (it was on the Internet Wayback Machine) and
-in one case the `email` lines to look like:
-
-``` <--json-->
-    "location_code" : "US",
-    "email" : null,
-    "url" : "https://web.archive.org/web/19961019045145/http://www.bungalow.com/",
-```
-
-Now since only two entries (the same entries) were won by these two individuals
-it means that only two index.html files had to be updated, besides the
-[authors.html](authors.html) and [location.html](location.html) files. These
-are: [1995/heathbar/index.html](1995/heathbar/index.html) and
-[1995/makarios/index.html](1995/makarios/index.html). Thus the following
-procedure was done:
-
-``` <!--sh-->
-        touch 1995/heathbar/README.md 1995/makarios/README.md
-        make quick_www
-```
-
-That works because the `quick_www` rule will update the `authors.html` and
-`location.html` pages and it will also check the timestamps of the `index.html`
-files versus the `README.md` files. Since they were touched and thus the
-timestamp was updated, the
-[bin/quick-readme2index.sh](%%REPO_URL%%/bin/quick-readme2index.sh) tool would
-only worry about those two files. This greatly speeds things along.
+takes quite a while but it is the safest way to do it.  And while `make quick_www`
+can greatly speed up your testing, we still recommend running a final `make www` just before
+you form your pull request.
 
 Once that command finishes a proper `git status` and `git diff` shows that
 everything is in order. In the end the safest way is to run `make www`, however.
@@ -3896,74 +3862,93 @@ efforts, we suggest making an **Anonymous** gift via the
 
 <div id="faq5_8">
 <div id="deobfuscated">
-### FAQ 5.8: I deobfuscated some entry code, how may I contribute the source?
+### FAQ 5.8: I deobfuscated some entry code, may I contribute the source?
 </div>
 </div>
 
-The [IOCCC judges](judges.html) welcome those who wish to contribute
-a **deobfuscated** version of a winning IOCCC entry: from either
-the [author&#x28;s&#x29;](authors.html) or from people such as
-yourself who are willing to contribute **deobfuscated** code.
-We also welcome contributions to improve existing **deobfuscated** code.
+**PLEASE NOTE**: **many [winning authors](authors.html)** have unobfuscated code
+of their **own entries** and you should look for this first, often on GitHub or on
+their website; see the FAQ on [how to find more information about a winning
+author of an entry](#author-information) for how you might find this
+information. We ask you to, if you can find them, please ask them what they
+think as they can often provide invaluable information; this is less of an issue
+for fixes of bugs - not features - found in the [bugs.html](bugs.html) file.
 
-**HISTORICAL NOTE**: The IOCCC web site has shifted to a more
+The [IOCCC judges](judges.html) welcome those who wish to contribute a
+**deobfuscated** version of a winning IOCCC entry: from either the [author or
+authors](authors.html) (**which is much, much preferred**) or from people such
+as yourself (assuming you are not the author :-) ) who are willing to contribute
+**deobfuscated** code.  We also welcome contributions to improve existing
+**deobfuscated** code. You might wish to look at their URL or alt URL (see below
+for more details) **first** as quite a few [authors](authors.html) have provided
+unobfuscated code of their entries and this is far more fair to the [winning
+authors](authors.html) (and it is much more likely to be identical functionality
+as well, though many [authors](authors.html) are experienced and skilled enough
+to add features **after or during obfuscation!** and many in fact do).
+
+**HISTORICAL NOTE**: The IOCCC website has shifted to a more
 educational theme: preferring to explain entries rather than hiding
 things under the guise of such information being a "_spoiler_".  We
-now use the term **deobfuscated** instead of "_spoiler_" for this reason.
+now use the term **deobfuscated** instead of "_spoiler_" for this reason, at
+least in most cases; other terms might be used, including on a rare occasion
+_spoiler_, this depending on context.
 
-We ask that the **deobfuscated** code be identical to the
-functionality of the winning IOCCC entry code.
+We ask that the **deobfuscated** code be **identical in functionality**
+to the winning IOCCC entry code.
 
-**NOTE**: Be aware that IOCCC entry code may contain **extremely
-subtle and obscure side effects** (i.e., features).  Those wishing
-to contribute a **deobfuscated** version of code should **strive
-to mimic** the original (or existing `prog.c`code) IOCCC entry
-code as much as possible.
+**NOTE**: Be aware that IOCCC entry code may contain **extremely subtle and
+obscure side effects** (i.e., features).  Those wishing to contribute a
+**deobfuscated** version of code should **strive to mimic** the original (or
+existing) IOCCC entry code as much as possible. Some authors can be contacted
+(see above for more details on this) and you could ask them for details and if
+possible it would be good to include them in the discussion as well (see below)
+as it is **very likely** there are things that will be missed when trying to
+deobfuscate the code, some of which might be important to the author.
 
 To contribute your **deobfuscated** code, please open up a
-[Show and tell new discussion](https://github.com/ioccc-src/temp-test-ioccc/discussions/new?category=show-and-tell).
+[Show and tell new discussion](https://github.com/ioccc-src/temp-test-ioccc/discussions/new?category=show-and-tell)
 with a title of the form:
 
-```
-    Enhancement: deobfuscated code for YYYY/dirname
-```
+> Enhancement: deobfuscated code for YYYY/dirname
 
-where "_YYYY/dirname_" refers to the winning IOCCC entry for which you are de-obfuscating.
+where "`YYYY/dirname`" refers to the winning IOCCC entry for which you are deobfuscating.
 
 In the **body** of your new discussion, **PLEASE** provide us with a **URL** of
 your **deobfuscated** code, along with whatever notes and/or comments you
-think might be helpful.
+think might be helpful. If the author has a GitHub handle **please** mention
+them in the discussion (see above part for how you might find out if they have a
+GitHub account)!
 
 If you are providing an improved version of some existing **deobfuscated** code, please
 mention that in the **body** of your new discussion as well.
 
-If there are **limitations** to how well the your **deobfuscated** code minics
-the original (or existing `prog.c`code) IOCCC entry code, **PLEASE** mention those **limitations**
+If there are **limitations** to how well the your **deobfuscated** code mimics
+the original (or existing) IOCCC entry code, **PLEASE** mention those **limitations**
 in the **body** of your new discussion as well.
 
-Any questions that may arise arise will be added as comments to the discussion.
+Any questions that may arise will be added as comments to the discussion.
 
 **SUGGESTION**: **PLEASE** try to make your **deobfuscated** code readable.  **PLEASE**
 add comments as needed to help the reader of your **deobfuscated** code understand it.
 
 **SUGGESTION**: Where useful, consider providing, as **C comments**,
-code fragments of from the original (or existing `prog.c`code) IOCCC
+code fragments of from the original (or existing) IOCCC
 entry code.  While it is **NOT** necessary to include the entire
 original code as **C comments**, including key parts from the
-original (or existing `prog.c`code) IOCCC entry code may be helpful
+original (or existing) IOCCC entry code may be helpful
 to others who wish to read your **deobfuscated** code.
 
 If your **deobfuscated** is accepted (in some form), the [IOCCC judges](judges.html)
 will be happy to **thank you** for your contribution in the
-[Thanking people for their help](thanks-for-help.html) file.
+[thanking people for their help file](thanks-for-help.html).
 
 The [IOCCC judges](judges.html) will do the rest of the work in integrate your
- **deobfuscated** code as an "_alt_" code for the entry **AND** will reference
- your **deobfuscated** code in the entry's `index.html` file.  We will be
- happy to include any whatever notes and/or comments from your new discussion
- that be prove helpful.
+**deobfuscated** code as an "_alt_" code for the entry **AND** will reference
+your **deobfuscated** code in the entry's `index.html` file.  We will be
+happy to include any whatever notes and/or comments from your new discussion
+that be prove helpful.
 
- **THANK YOU** in advance for your willingness to assist!
+**THANK YOU** in advance for your willingness to assist!
 
 
 <div id="faq6">
@@ -5324,17 +5309,18 @@ information on, you should see a section called `Author`. All you have to do is
 click on the author's name (it's a link) and it will take you to their
 information in the [authors.html](authors.html) page.
 
-There you will find various information, sometimes just location (if that's
-known) and other times their mastodon handle (as a link), a link to their
-website (and sometimes an alt website), their GitHub handle (as a link) and a
-link to their `author.json` file (the link title is their name). That
-`author.json` file might have additional information. In all cases there is a
-link to each of their winning entries.
+There you will find various information including a link to their
+[authors.html](authors.html) information which includes various things like
+their GitHub account (if known), a URL or alternate UL, mastodon handle,
+location (if known and not anonymous location) and a link to their JSON author file.
+
+**NOTE**: you might wish to search google (or some other search engine) by their
+name as sometimes you can find out their GitHub account even if it's not in our
+JSON files.
 
 Of course if you know the author's name you can go directly to
 [authors.html](authors.html) and click on their surname's/last name's/second
 name's initial and then scroll down (if necessary) to the author in question.
-
 
 <hr style="width:10%;text-align:left;margin-left:0">
 
