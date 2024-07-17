@@ -14,9 +14,7 @@ code](#alternate-code) section for how to use.
 
 The current status of this entry is:
 
-```
-    STATUS: uses gets() - change to fgets() if possible
-```
+> **STATUS: uses gets() - change to fgets() if possible**
 
 For more detailed information see [1994/schnitzi in bugs.html](../../bugs.html#1994_schnitzi).
 

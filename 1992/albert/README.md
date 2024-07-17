@@ -12,9 +12,7 @@ An [alternate version](#alternate-code) exists that fixes a bug.
 
 The current status of this entry is:
 
-```
-    STATUS: known bug - please help us fix
-```
+> **STATUS: known bug - please help us fix**
 
 For more detailed information see [1992/albert in bugs.html](../../bugs.html#1992_albert).
 

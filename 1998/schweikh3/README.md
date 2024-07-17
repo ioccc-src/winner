@@ -197,7 +197,7 @@ How much space is wasted below our site's /pub directory?
 ```
 
 
-#### EXIT STATUS
+#### EXIT > STATUS
 
 If  `samefile` runs out of memory the exit status is 1, zero
 otherwise.

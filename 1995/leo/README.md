@@ -9,9 +9,7 @@
 
 The current status of this entry is:
 
-```
-    STATUS: known bug - please help us fix
-```
+> **STATUS: known bug - please help us fix**
 
 For more detailed information see [1995/leo in bugs.html](../../bugs.html#1995_leo).
 

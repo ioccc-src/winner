@@ -14,10 +14,8 @@ entry.
 
 The current status of this entry is:
 
-```
-    STATUS: INABIAF - please DO NOT fix
-    STATUS: missing or dead link - please provide them
-```
+> **STATUS: INABIAF - please DO NOT fix**<br>
+> **STATUS: missing or dead link or links - please provide it or them**
 
 For more detailed information see [1996/jonth in bugs.html](../../bugs.html#1996_jonth).
 

@@ -9,10 +9,8 @@
 
 The current status of this entry is:
 
-```
-    STATUS: missing files - please provide them
-    STATUS: known bug - please help us fix
-```
+> **STATUS: missing files - please provide them**<br>
+> **STATUS: known bug - please help us fix**
 
 For more detailed information see [2001/herrmann1 in bugs.html](../../bugs.html#2001_herrmann1).
 

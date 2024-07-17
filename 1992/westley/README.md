@@ -9,10 +9,8 @@
 
 The current status of this entry is:
 
-```
-    STATUS: INABIAF - please DO NOT fix
-    STATUS: known bug - please help us fix
-```
+> **STATUS: INABIAF - please DO NOT fix**<br>
+> **STATUS: known bug - please help us fix**
 
 For more detailed information see [1992/westley in bugs.html](../../bugs.html#1992_westley).
 

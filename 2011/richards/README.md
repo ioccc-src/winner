@@ -9,9 +9,7 @@
 
 The current status of this entry is:
 
-```
-    STATUS: doesn't work with some platforms - please help us fix
-```
+> **STATUS: doesn't work with some platforms - please help us fix it**
 
 For more detailed information see [2011/richards in bugs.html](../../bugs.html#2011_richards).
 

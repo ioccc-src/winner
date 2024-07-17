@@ -12,9 +12,7 @@ code](#alternate-code) below.
 
 The current status of this entry is:
 
-```
-    STATUS: INABIAF - please DO NOT fix
-```
+> **STATUS: INABIAF - please DO NOT fix**
 
 For more detailed information see [2011/vik in bugs.html](../../bugs.html#2011_vik).
 

@@ -14,11 +14,9 @@ code](#alternate-code) below.
 
 The current status of this entry is:
 
-```
-    STATUS: uses gets() - change to fgets() if possible
-    STATUS: missing files - please provide them
-    STATUS: main() has only one arg - try and make it have 2 or 3
-```
+> **STATUS: uses gets() - change to fgets() if possible**<br>
+> **STATUS: missing files - please provide them**<br>
+> **STATUS: main() has only one arg - try and make it have 2 or 3**
 
 For more detailed information see [2001/westley in bugs.html](../../bugs.html#2001_westley).
 

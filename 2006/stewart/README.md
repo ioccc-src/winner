@@ -9,9 +9,7 @@
 
 The current status of this entry is:
 
-```
-    STATUS: INABIAF - please DO NOT fix
-```
+> **STATUS: INABIAF - please DO NOT fix**
 
 For more detailed information see [2006/stewart in bugs.html](../../bugs.html#2006_stewart).
 
@@ -26,13 +24,14 @@ For more detailed information see [2006/stewart in bugs.html](../../bugs.html#20
 
 where `file` is one of:
 
-```
-    altar box box2 box3 build carpet circles cross cross2 cross3
-    crystal curve diamonds diamonds2 dragon dragon2 dragon3
-    fern gasket gasket_mod gasket_mod2 ioccc maze octagon
-    pentagon pentagons rings rings2 spirals spirals2 spirals3
-    spirals4 squares stars stars2 tree tree2 tree3 tree4 triangle
-```
+> altar box box2 box3 build carpet<br>
+> circles cross cross2 cross3 crystal<br>
+> curve diamonds diamonds2 dragon<br>
+> dragon2 dragon3 fern gasket gasket_mod<br>
+> gasket_mod2 ioccc maze octagon pentagon<br>
+> pentagons rings rings2 spirals spirals2<br>
+> spirals3 spirals4 squares stars stars2<br>
+> tree tree2 tree3 tree4 triangle
 
 NOTE: you cannot specify a different width from height; it's one number.
 

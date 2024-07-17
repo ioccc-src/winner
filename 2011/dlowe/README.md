@@ -9,10 +9,8 @@
 
 The current status of this entry is:
 
-```
-    STATUS: missing or dead link - please provide them
-    STATUS: INABIAF - please DO NOT fix
-```
+> **STATUS: missing or dead link or links - please provide it or them**<br>
+> **STATUS: INABIAF - please DO NOT fix**
 
 For more detailed information see [2011/dlowe in bugs.html](../../bugs.html#2011_dlowe).
 

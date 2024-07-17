@@ -12,10 +12,8 @@ some invocations to crash in some systems.
 
 The current status of this entry is:
 
-```
-    STATUS: uses gets() - change to fgets() if possible
-    STATUS: INABIAF - please DO NOT fix
-```
+> **STATUS: uses gets() - change to fgets() if possible**<br>
+> **STATUS: INABIAF - please DO NOT fix**
 
 For more detailed information see [1992/gson in bugs.html](../../bugs.html#1992_gson).
 

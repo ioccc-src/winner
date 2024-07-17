@@ -9,9 +9,7 @@
 
 The current status of this entry is:
 
-```
-    STATUS: INABIAF - please DO NOT fix
-```
+> **STATUS: INABIAF - please DO NOT fix**
 
 For more detailed information see [2015/schweikhardt in bugs.html](../../bugs.html#2015_schweikhardt).
 
@@ -22,7 +20,7 @@ For more detailed information see [2015/schweikhardt in bugs.html](../../bugs.ht
     ./prog n
 ```
 
-where n is a base 16 number of any size.
+where `n` is a base 16 number of any size.
 
 NOTE: although it's supposed to be a base 16 number nothing will stop you from
 doing something else. The author explains this in more details.

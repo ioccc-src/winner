@@ -15,9 +15,7 @@ original should you wish to see what we mean.
 
 The current status of this entry is:
 
-```
-    STATUS: known bug - please help us fix
-```
+> **STATUS: known bug - please help us fix**
 
 For more detailed information see [1992/kivinen in bugs.html](../../bugs.html#1992_kivinen).
 

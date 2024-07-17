@@ -18,9 +18,7 @@ whatever your system will compile them as).
 
 The current status of this entry is:
 
-```
-    STATUS: INABIAF - please DO NOT fix
-```
+> **STATUS: INABIAF - please DO NOT fix**
 
 For more detailed information see [2001/anonymous in bugs.html](../../bugs.html#2001_anonymous).
 
