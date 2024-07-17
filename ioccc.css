@@ -410,9 +410,8 @@ body {
 pre, code {
     margin: 1em 0;
     hyphens: manual;
-    overflow-wrap: normal;
-    overflow: visible;
-    white-space: pre-wrap;
+    overflow-x: scroll;
+    overflow-y: scroll;
     color: DarkGreen;
 }
 
@@ -721,6 +720,7 @@ transition: all .3s ease;
     padding-top: 0;
     padding-bottom: 0;
     color: DarkGreen;
+    overflow-x: scroll;
 }
 
 /* content text */
