@@ -1707,7 +1707,7 @@ entries that do not win on their web page for everyone to see.
 ### FAQ 2.3: How much time does it take to judge the contest?
 </div>
 
-It takes a fair amount of time to setup, run, answer email, process entries,
+It takes a fair amount of time to setup, run, respond to messages, process entries,
 review entries, trim down the set entries to a set of winning entries, doing the
 write-up of the entries, announcing the entries, reviewing final edits of the
 winning entry set, posting the winning entries, being flamed :-), tell folks who send in
@@ -3756,43 +3756,9 @@ As these files are JSON you should verify that they are validly formed (e.g. you
 didn't make a typo).
 
 Please make sure that you run `make www` after updating the file or files. This unfortunately
-takes quite a while but it is the safest way to do it. There are other ways to go
-about this that can speed things up. Here is one such way which was done when
-fixing two authors in 1995 (in one commit as they were the authors of the same
-two entries):
-
-First, the two files, [author/Heather_Downs.json](author/Heather_Downs.json) and
-[author/Selene_Makarios.json](author/Selene_Makarios.json) were fixed (the
-location was set as `ZZ` but Cody Boone Ferguson knew from the archive that it
-was the US for both of them and he also noticed that the URL, the same for
-both, was no longer valid and it was also known that the email was no longer
-valid as it referred to the same domain). Thus the `location_code`, `url` (it was on the Internet Wayback Machine) and
-in one case the `email` lines to look like:
-
-``` <--json-->
-    "location_code" : "US",
-    "email" : null,
-    "url" : "https://web.archive.org/web/19961019045145/http://www.bungalow.com/",
-```
-
-Now since only two entries (the same entries) were won by these two individuals
-it means that only two index.html files had to be updated, besides the
-[authors.html](authors.html) and [location.html](location.html) files. These
-are: [1995/heathbar/index.html](1995/heathbar/index.html) and
-[1995/makarios/index.html](1995/makarios/index.html). Thus the following
-procedure was done:
-
-``` <!--sh-->
-        touch 1995/heathbar/README.md 1995/makarios/README.md
-        make quick_www
-```
-
-That works because the `quick_www` rule will update the `authors.html` and
-`location.html` pages and it will also check the timestamps of the `index.html`
-files versus the `README.md` files. Since they were touched and thus the
-timestamp was updated, the
-[bin/quick-readme2index.sh](%%REPO_URL%%/bin/quick-readme2index.sh) tool would
-only worry about those two files. This greatly speeds things along.
+takes quite a while but it is the safest way to do it.  And while `make quick_www`
+can greatly speed up your testing, we still recommend running a final `make www` just before
+you form your pull request.
 
 Once that command finishes a proper `git status` and `git diff` shows that
 everything is in order. In the end the safest way is to run `make www`, however.
@@ -5346,8 +5312,7 @@ information in the [authors.html](authors.html) page.
 There you will find various information including a link to their
 [authors.html](authors.html) information which includes various things like
 their GitHub account (if known), a URL or alternate UL, mastodon handle,
-location (if known and not anonymous location) and a link to their JSON author
-file which has more information like email (if known).
+location (if known and not anonymous location) and a link to their JSON author file.
 
 **NOTE**: you might wish to search google (or some other search engine) by their
 name as sometimes you can find out their GitHub account even if it's not in our
@@ -5356,13 +5321,6 @@ JSON files.
 Of course if you know the author's name you can go directly to
 [authors.html](authors.html) and click on their surname's/last name's/second
 name's initial and then scroll down (if necessary) to the author in question.
-
-**NOTE**: previously we included email in the [authors.html](authors.html) page
-but we have decided against this. Nevertheless, the `author_handle` link under
-the author links to a JSON file which has the email address if it is known,
-which you might wish to consult. You might also wish to look at their URL or
-alternate URL for more information.
-
 
 <hr style="width:10%;text-align:left;margin-left:0">
 

@@ -1864,7 +1864,7 @@ entries that do not win on their web page for everyone to see.</p>
 <div id="faq2_3">
 <h3 id="faq-2.3-how-much-time-does-it-take-to-judge-the-contest">FAQ 2.3: How much time does it take to judge the contest?</h3>
 </div>
-<p>It takes a fair amount of time to setup, run, answer email, process entries,
+<p>It takes a fair amount of time to setup, run, respond to messages, process entries,
 review entries, trim down the set entries to a set of winning entries, doing the
 write-up of the entries, announcing the entries, reviewing final edits of the
 winning entry set, posting the winning entries, being flamed :-), tell folks who send in
@@ -3221,34 +3221,9 @@ of the <a href="https://github.com/ioccc-src/winner">ioccc-src/winner repo</a>.<
 <p>As these files are JSON you should verify that they are validly formed (e.g. you
 didn’t make a typo).</p>
 <p>Please make sure that you run <code>make www</code> after updating the file or files. This unfortunately
-takes quite a while but it is the safest way to do it. There are other ways to go
-about this that can speed things up. Here is one such way which was done when
-fixing two authors in 1995 (in one commit as they were the authors of the same
-two entries):</p>
-<p>First, the two files, <a href="author/Heather_Downs.json">author/Heather_Downs.json</a> and
-<a href="author/Selene_Makarios.json">author/Selene_Makarios.json</a> were fixed (the
-location was set as <code>ZZ</code> but Cody Boone Ferguson knew from the archive that it
-was the US for both of them and he also noticed that the URL, the same for
-both, was no longer valid and it was also known that the email was no longer
-valid as it referred to the same domain). Thus the <code>location_code</code>, <code>url</code> (it was on the Internet Wayback Machine) and
-in one case the <code>email</code> lines to look like:</p>
-<pre class="&lt;--json--&gt;"><code>    &quot;location_code&quot; : &quot;US&quot;,
-    &quot;email&quot; : null,
-    &quot;url&quot; : &quot;https://web.archive.org/web/19961019045145/http://www.bungalow.com/&quot;,</code></pre>
-<p>Now since only two entries (the same entries) were won by these two individuals
-it means that only two index.html files had to be updated, besides the
-<a href="authors.html">authors.html</a> and <a href="location.html">location.html</a> files. These
-are: <a href="1995/heathbar/index.html">1995/heathbar/index.html</a> and
-<a href="1995/makarios/index.html">1995/makarios/index.html</a>. Thus the following
-procedure was done:</p>
-<pre class="&lt;!--sh--&gt;"><code>        touch 1995/heathbar/README.md 1995/makarios/README.md
-        make quick_www</code></pre>
-<p>That works because the <code>quick_www</code> rule will update the <code>authors.html</code> and
-<code>location.html</code> pages and it will also check the timestamps of the <code>index.html</code>
-files versus the <code>README.md</code> files. Since they were touched and thus the
-timestamp was updated, the
-<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/quick-readme2index.sh">bin/quick-readme2index.sh</a> tool would
-only worry about those two files. This greatly speeds things along.</p>
+takes quite a while but it is the safest way to do it. And while <code>make quick_www</code>
+can greatly speed up your testing, we still recommend running a final <code>make www</code> just before
+you form your pull request.</p>
 <p>Once that command finishes a proper <code>git status</code> and <code>git diff</code> shows that
 everything is in order. In the end the safest way is to run <code>make www</code>, however.</p>
 <p>Please see
@@ -4274,19 +4249,13 @@ information in the <a href="authors.html">authors.html</a> page.</p>
 <p>There you will find various information including a link to their
 <a href="authors.html">authors.html</a> information which includes various things like
 their GitHub account (if known), a URL or alternate UL, mastodon handle,
-location (if known and not anonymous location) and a link to their JSON author
-file which has more information like email (if known).</p>
+location (if known and not anonymous location) and a link to their JSON author file.</p>
 <p><strong>NOTE</strong>: you might wish to search google (or some other search engine) by their
 name as sometimes you can find out their GitHub account even if it’s not in our
 JSON files.</p>
 <p>Of course if you know the author’s name you can go directly to
 <a href="authors.html">authors.html</a> and click on their surname’s/last name’s/second
 name’s initial and then scroll down (if necessary) to the author in question.</p>
-<p><strong>NOTE</strong>: previously we included email in the <a href="authors.html">authors.html</a> page
-but we have decided against this. Nevertheless, the <code>author_handle</code> link under
-the author links to a JSON file which has the email address if it is known,
-which you might wish to consult. You might also wish to look at their URL or
-alternate URL for more information.</p>
 <hr style="width:10%;text-align:left;margin-left:0">
 <p>Jump to: <a href="#">top</a></p>
 <!--
