@@ -29,7 +29,7 @@ Journal](https://www.vintage-computer.com/publications.php?microsystemsjournal).
 
 **IMPORTANT NOTE**: See [contact.html](../contact.html) for up to date contact details
 as well as details on how to provide fixes to any of the entries.
-See also [the IOCCC FAQ](../faq.html) for additional information on the IOCCC.
+See also the [IOCCC FAQ](../faq.html) for additional information on the IOCCC.
 
 
 <!--

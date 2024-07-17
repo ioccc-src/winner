@@ -34,7 +34,8 @@ On a **touchscreen mobile device** browser **wider than 1024 pixels**,
 **press and hold** the menu you wish to activate (in the upper right corner) in
 order to activate the pull-down. If this does not work or you prefer to use a
 plaintext menu even with JavaScript enabled, you can do so
-[here](nojs-menu.html). See also the [FAQ on menus](faq.html#menus).
+[here](nojs-menu.html). See also the
+FAQ on "[website menus](faq.html#menus)".
 
 
 # Obfuscate defined:
@@ -64,7 +65,9 @@ The goals of the IOCCC:
 
 View the [current status of the IOCCC](status.html) to see of the IOCCC is open for submissions.
 
-See [the FAQ about how to enter the IOCCC](faq.html#submit) for more information.
+See
+FAQ on "[how to submit](faq.html#submit)"
+for more information.
 
 
 # Important Disclaimer

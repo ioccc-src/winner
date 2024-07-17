@@ -5,8 +5,8 @@
 ```
 
 To use this entry requires, in some invocations, a sound processing program.
-This can be ALSA or SoX but we recommend the latter. See [FAQ 3.10 - How do I
-compile and use an IOCCC entry that requires sound?](../../faq.html#sox).
+This can be ALSA or SoX but we recommend the latter. See
+FAQ on "[SDL1 and SDL2](../../faq.html#sox)".
 
 
 ### Bugs and (Mis)features:

@@ -10,8 +10,8 @@ section below to run the original (the bug also exists here).
 ```
 
 NOTE: this entry requires the `X11/Xlib.h` header file and the X11 library to
-compile. If you don't have the X11 installed see the [FAQ on how to compile and
-run an entry that requires X11](../../faq.html#X11).
+compile. If you don't have the X11 installed see the
+FAQ on "[X11](../../faq.html#X11)".
 
 To configure how many microseconds to sleep before updates try:
 

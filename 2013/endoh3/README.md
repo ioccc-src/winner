@@ -22,8 +22,9 @@ For more detailed information see [2013/endoh3 in bugs.html](../../bugs.html#201
     ./endoh3
 ```
 
-This program plays sound. See [FAQ 3.10 - How do I compile and use an IOCCC
-entry that requires sound?](../../faq.html#sox) if you do not know how to set your
+This program plays sound. See
+FAQ on "[compile with sound](../../faq.html#sox)"
+if you do not know how to set your
 system up for this or if you want to verify that everything is oky.
 
 

@@ -109,7 +109,7 @@ Send such email to:
 purposes only, and should not be used today.  See
 [contact.html](../contact.html) for up to date contact details
 as well as details on how to provide fixes to any of the entries.
-See also [the IOCCC FAQ](../faq.html) for additional information on the IOCCC.
+See also the [IOCCC FAQ](../faq.html) for additional information on the IOCCC.
 
 If you use, distribute or publish these entries in some way, please drop
 us a line.  We enjoy seeing who, where and how the contest is used.

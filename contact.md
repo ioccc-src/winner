@@ -2,9 +2,14 @@
 
 If you are trying to:
 
-* **Fix a winning IOCCC entry** - See [FAQ 5.2](faq.html#fix_an_entry)
-* **Update winning author information** - See [FAQ 5.5](faq.html#fix_author)
-* **Correct a website problem** - See [FAQ 5.4](faq.html#fix_web_site) or [FAQ 5.6](faq.html#fix_link)
+* **Fix a winning IOCCC entry** - See
+FAQ on "[fix entry](faq.html#fix_an_entry)"
+* **Update winning author information** - See
+FAQ on "[fixing author information](faq.html#fix_author)"
+* **Correct a website problem** - See
+FAQ on "[fixing the website](faq.html#fix_web_site)"
+or
+FAQ on "[fix URL](faq.html#fix_link)"
 
 Instead of sending us email, **Please** consider using the [GitHub
 pull request](https://github.com/ioccc-src/winner/pulls) process
@@ -13,9 +18,12 @@ of the [ioccc-src/winner repo](https://github.com/ioccc-src/winner).
 
 If you are trying to:
 
-* **Report a bug in an IOCCC winning entry** - See [FAQ 5.1](faq.html#report_bug)
-* **Report an IOCCC website problem** - See [FAQ 5.3](faq.html#report_web_problem)
-* **Report a broken or wrong web link** - See [FAQ 5.6](faq.html#fix_link)
+* **Report a bug in an IOCCC winning entry** - See
+FAQ on "[report entry bug](faq.html#report_bug)"
+* **Report an IOCCC website problem** - See
+FAQ on "[report website problem](faq.html#report_web_problem)"
+* **Report a broken or wrong web link** - See
+FAQ on "[report broken link](faq.html#fix_link)"
 
 In general, unless you have a fix, if you want to report something, you should instead first look at the [IOCCC
 issues](https://github.com/ioccc-src/winner/issues) to see if the
@@ -26,9 +34,12 @@ issue](https://github.com/ioccc-src/winner/issues/new).
 
 If you are trying to:
 
-* **Comment or make a suggestion on IOCCC rules** - See [FAQ 0.5](faq.html#feedback)
-* **Comment or make a suggestion on IOCCC guidelines** - See [FAQ 0.5](faq.html#feedback)
-* **Comment or make a suggestion on IOCCC tools** - See [FAQ 0.5](faq.html#feedback)
+* **Comment or make a suggestion on IOCCC rules** - See
+FAQ on "[rules feedback](faq.html#feedback)"
+* **Comment or make a suggestion on IOCCC guidelines** - See
+FAQ on "[guidelines feedback](faq.html#feedback)"
+* **Comment or make a suggestion on IOCCC tools** - See
+FAQ on "[tools feedback](faq.html#feedback)"
 
 Those FAQ entries will help guide you on how to make public comments
 and suggestion in the relevant places.
@@ -45,8 +56,9 @@ See the above FAQ entries for more details.
 We use Mastodon to make minor announcements, in addition announcing
 major events such as the opening of a new IOCCC, or who won.
 
-See "[FAQ 6.12: What is Mastodon and why does IOCCC use it?](faq.html#try_mastodon)" for more
-information on Mastodon.
+See
+FAQ on "[Mastodon](faq.html#try_mastodon)"
+for more information on Mastodon.
 
 
 # If you really need to send email the IOCCC judges

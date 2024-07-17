@@ -206,7 +206,9 @@ bytes following `O`, addressed via `o`, and this code only needs 17. This is
 _undefined_ behavior, but as shown, it is widely available.
 
 The [1979 Seventh Edition UNIX][1] (v7) system pre-dates the IOCCC by several years,
-and the source code to `sh`(1) was a [significant inspiration for this contest](../../faq.html#ioccc_start).
+and the source code to `sh`(1) was a **significant inspiration for this contest**.
+See the
+FAQ on "[IOCCC beginnings](../../faq.html#ioccc_start)".
 There are two C compilers present: `cc` written by Dennis Ritchie, and `pcc` written by Steven Johnson.
 The nested conditional expressions in 116 and smaller are too complex for `cc` ("Illegal conditional")
 but `pcc` handles them correctly, and neither compiler accepts `char o[]` or

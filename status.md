@@ -54,7 +54,11 @@ scheduled opening date.
 #### "**open**"
 </div>
 
-The [IOCCC](index.html) is [open](#open) for [submissions](faq.html#submit).
+The [IOCCC](index.html) is [open](#open) for submissions.
+
+See the
+FAQ on "[how to submit](faq.html#submit)"
+for more information.
 
 See the [IOCCC news](news.html) page for details on rules, guidelines, tools and deadlines.
 
@@ -96,8 +100,7 @@ winning entries page](years.html).
 
 #### "**closed**"
 
-The [IOCCC](index.html) is closed and is **NOT** accepting [new
-submissions](faq.html#submit).
+The [IOCCC](index.html) is closed and is **NOT** accepting submissions.
 
 See the [IOCCC winning entries page](years.html) for the entries that have won
 the [IOCCC](index.html).
@@ -108,6 +111,10 @@ the [IOCCC](index.html).
 Watch both [this IOCCC status page](status.html) and the [@IOCCC
 mastodon feed](https://fosstodon.org/@ioccc) for information about future
 [IOCCC](index.html) [openings](#open).
+
+See the
+FAQ on "[how to submit](faq.html#submit)"
+for more information on the submission process when the IOCCC reopens.
 
 
 <div id="news_update">

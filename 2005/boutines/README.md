@@ -9,8 +9,8 @@
 
 You will need an [SVG](https://www.w3.org/TR/SVG11/expanded-toc.html) viewer or
 a converter like [ImageMagick](https://imagemagick.org/index.php)'s `convert`.
-See [FAQ 3.17 - How do I compile and install ImageMagick for entries that
-require it?](../../faq.html#imagemagick).
+See
+FAQ on "[ImageMagick](../../faq.html#imagemagick)".
 
 Look here to find some [SVG Viewer
 Implementations](https://www.w3.org/Graphics/SVG/WG/wiki/Implementations).

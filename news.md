@@ -5,8 +5,9 @@
 We use Mastodon to make minor announcements, in addition to announcing
 major events such as the opening of a new IOCCC, or who won.
 
-See "[FAQ 6.12: What is Mastodon and why does IOCCC use it?](faq.html#try_mastodon)" for more
-information on Mastodon.
+See
+FAQ on "[Mastodon](faq.html#try_mastodon)"
+for more information on Mastodon.
 
 <div id="news">
 # News
@@ -22,7 +23,7 @@ One of the [largest html
 files](thanks-for-help.html) has
 been checked for broken links which leaves two longer files to go. These two
 files are the [bugs.html](bugs.html)
-file and the [FAQ](faq.html).
+file and the "[IOCCC FAQ](faq.html)".
 
 However, where it was thought that those two files would be looked at before the
 other html files, it has been decided that they will be done after the other
@@ -41,7 +42,7 @@ will have to be checked.
 
 Once those are done the html files of all the entries will be looked at. As
 those are being reviewed it the [bugs.html](bugs.html) might very well be
-updated and the [FAQ](faq.html) might be as well.  This is why, as noted above,
+updated and the "[IOCCC FAQ](faq.html)" might be as well.  This is why, as noted above,
 we have decided to review these files last, in order to save time and effort in
 not having to look at them more than once on a whole, other than possible
 entries that have to be added at the end, like the example below.

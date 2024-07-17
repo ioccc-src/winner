@@ -1,7 +1,8 @@
 ## To build:
 
-This entry requires SDL to be installed. See [FAQ 3.8](../../faq.html#SDL) if you
-don't know how to do this for your system.
+This entry requires SDL to be installed. See
+FAQ on "[SDL1 and SDL2](../../faq.html#SDL)"
+if you don't know how to do this for your system.
 
 ``` <!---sh-->
     make

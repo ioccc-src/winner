@@ -96,8 +96,9 @@ best viewing experience is achieved when the terminal in use supports 24-bit
 colors, has a black background and the size is at least 125x38.
 
 Special note for Mac users: `Terminal.app` does not work as expected; you might
-need xterm from XQuartz, see [FAQ 3.7: How do I compile and use on macOS, an
-IOCCC entry that requires X11?](../../faq.html#X11macos), or some other working
+need xterm from XQuartz, see
+FAQ on "[X11 on macOS](../../faq.html#X11macos)",
+or some other working
 terminal. Thanks to [Dave Burton](../../authors.html#Dave_Burton) for spotting this
 problem.
 

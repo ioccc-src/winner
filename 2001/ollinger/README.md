@@ -59,7 +59,7 @@ character printed on the screen.
 ### Why did I write this ?
 
 
-Let's just quote the [FAQ](../../faq.html):
+Let's just quote the [IOCCC FAQ](../../faq.html):
 
 Q: Are there types of entries that are submitted so frequently that the
    judges get tired of them?

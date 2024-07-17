@@ -49,10 +49,13 @@ You decide. :-)
 **Historic note**: The award title use of the word "**tweeted**"
 should be regarded as a IOCCC anachronism.  Over the years the
 maximum size of a _tweet_ changed since this entry won the IOCCC.
-Moreover, the [IOCCC now uses Mastodon](../../faq.html#try_mastodon)
+Moreover, the **IOCCC uses Mastodon**.
 instead of whatever someone (and especially those who appear to
 have poor impulse control) chooses to call the platform where people
 used to tweet.
+
+See the
+FAQ on "[Mastodon](../../faq.html#try_mastodon)".
 
 
 ## Author's remarks:

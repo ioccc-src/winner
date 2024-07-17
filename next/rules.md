@@ -8,9 +8,11 @@ They are are provided as a **VERY TENTATIVE** hint at **what
 MIGHT** be used in the next IOCCC.  In some cases they might
 even be a copy of the rules from the previous IOCCC.
 
-See our [FAQ about providing feedback](../faq.html#feedback) as well
-as our [FAQ about asking questions](../faq.html#question) about
-these rules.
+See our
+FAQ on "[rules, guidelines, tools feedback](#feedback)".
+as well as our
+FAQ on "[about asking questions](../faq.html#question)"
+about these rules.
 
 
 # The IOCCC is closed
@@ -112,7 +114,8 @@ When the IOCCC is open, the submission URL is:
 [https://submit.ioccc.org](https://submit.ioccc.org); at all other
 times that link is likely to be unresponsive.
 
-Please check the [How to enter FAQ](../faq.html#submit)
+Please check the
+FAQ on "[how to submit](../faq.html#submit)"
 for **important information** on how to submit to the IOCCC.
 
 <p class="leftbar">
@@ -125,7 +128,7 @@ Please wait to submit your entries until after that time.
 The official [IOCCC rules](rules.html) and [IOCCC guidelines](guidelines.html) will be
 available on the [official IOCCC website](../index.html) on or slightly before
 the start of this IOCCC. The `mkiocccentry` toolkit may be obtained at any time
-at the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry).
+at the [report mkiocccentry bugs](https://github.com/ioccc-src/mkiocccentry).
 
 **Please recheck on or after the start of this IOCCC to be sure you
 are using the correct versions of these items _before using the IOCCC
@@ -249,7 +252,8 @@ as a command like argument to the `iocccsize(1)` tool. For example:
 </div>
 
 Submissions should be performed using the instructions outlined at:
-the [How to enter FAQ](../faq.html#submit).
+the
+FAQ on "[how to submit](../faq.html#submit)"
 
 To submit to an open IOCCC, you must use the [IOCCC submit
 server](https://submit.ioccc.org/). Unless the IOCCC is open, that link will
@@ -429,8 +433,9 @@ enough time for one automated exchange of email as part of your
 submission.
 
 <p class="leftbar">
-See [the FAQ on how to register for the IOCCC](../faq.html#register) in the
-[FAQ](../faq.html) for details.
+See
+FAQ on "[how to register](../faq.html#register)"
+for details.
 </p>
 
 <div id="rule16">
@@ -554,15 +559,19 @@ those requirements.
 The `Makefile` **MUST** be a **non**-empty file in **[GNU
 Makefile](https://www.gnu.org/software/make/manual/make.html)** form. See the
 [Makefile.example](https://github.com/ioccc-src/mkiocccentry/blob/master/Makefile.example),
-the [FAQ about your submission's Makefile](../faq.html#submission_makefiles) and
-the [FAQ about IOCCC Makefile compatibility](../faq.html#make_compatibility) for help.
+the
+FAQ on "[submission Makefile](../faq.html#submission_makefiles)"
+and the
+FAQ on "[Makefile compatibility](../faq.html#make_compatibility)"
+for help.
 </p>
 
 <p class="leftbar">
 The `remarks.md` **MUST** be a **non**-empty file in markdown form.  See also
-[Rule 18](#rule18) and our [FAQ about what to put in your
-remarks.md](../faq.html#remarks_md) and the [FAQ about IOCCC best markdown
-practices](../faq.html#markdown).
+[Rule 18](#rule18) and our
+FAQ on "[remarks.md](../faq.html#remarks_md)"
+and the
+FAQ on "[markdown practices](../faq.html#markdown)".
 </p>
 
 <p class="leftbar">
@@ -690,8 +699,8 @@ If you run into a problem with one or more of these tools, **PLEASE** [report it
 as a bug at the mkiocccentry issues
 page](https://github.com/ioccc-src/mkiocccentry/issues/new?assignees=&labels=bug&projects=&template=bug_report.yml&title=%5BBug%5D+%3Ctitle%3E),
 **making sure to run `bug_report.sh`**. See the [guidelines](guidelines.html)
-for help here and also read [the FAQ about reporting bugs in the mkiocccentry
-repo](../faq.html#mkiocccentry_bugs).
+for help here and also read
+FAQ on "[mkiocccentry repo bugs](../faq.html#mkiocccentry_bugs)".
 </p>
 
 <p class="leftbar">At the risk of stating the obvious: submissions that violate [Rule
@@ -735,8 +744,7 @@ We currently use [pandoc](https://pandoc.org) to convert markdown to HTML.
 </p>
 
 <p class="leftbar">
-Please see our [FAQ about what to put in your
-remarks.md](../faq.html#remarks_md) and the [IOCCC markdown
+Please see our FAQ "[remarks.md](../faq.html#remarks_md)" and the [IOCCC markdown
 guidelines](../markdown.html) for additional markdown guidance.
 </p>
 
@@ -890,7 +898,8 @@ See the [Official IOCCC website news](../news.html) for additional information.
 <p class="leftbar">
 For the updates and breaking IOCCC news, you are encouraged to follow
 the [IOCCC on Mastodon](https://fosstodon.org/@ioccc) account.  See our
-[FAQ about Mastodon](../faq.html#try_mastodon) for more information. Please do note that unless
+FAQ on "[Mastodon](../faq.html#try_mastodon)"
+for more information. Please do note that unless
 you are mentioned by us you will **NOT** get a notification from the app _so you
 should refresh the page **even if you do follow us**_.
 </p>

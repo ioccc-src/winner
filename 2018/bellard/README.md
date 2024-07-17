@@ -27,10 +27,10 @@ graphics viewer of choice.  After that try:
 
 NOTE: the script uses the tools `pngtopam(1)` (or `pngtopnm(1)` for older
 versions) and `pnmscale` come from the netpbm project and `cjpeg(1)` comes from
-`libjpeg-turbo`. If you don't have these tools already see [FAQ 3.15 - How do I
-compile and install netpbm for entries that require it?](../../faq.html#netpbm) and
-[FAQ 3.16 - How do I compile and install libjpeg-turbo for entries that require
-it?](../../faq.html#libjpeg).
+`libjpeg-turbo`. If you don't have these tools already see
+FAQ on "[netpbm](../../faq.html#netpbm)"
+and
+FAQ on "[libjpeg-turbo](../../faq.html#libjpeg)".
 
 NOTE: [Lenna.png](Lenna.png) is from
 <https://upload.wikimedia.org/wikipedia/en/7/7d/Lenna_%28test_image%29.png>.

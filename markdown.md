@@ -1,7 +1,8 @@
 # IOCCC markdown guidelines
 
 The IOCCC makes extensive use of [markdown](https://daringfireball.net/projects/markdown/).
-For example, when [submitting to the IOCCC](faq.html#submit), we have people
+For example, when submitting to the IOCCC
+we have people
 submit remarks about their entry in markdown format.  Every
 [winning IOCCC entry](years.html) uses a `README.md` markdown file
 as the basis for forming the `index.html` web page for that entry.
@@ -10,6 +11,8 @@ start with some markdown content.
 
 See the [markdown syntax](https://www.markdownguide.org/basic-syntax) guide.
 See also the [CommonMark Spec](https://spec.commonmark.org/current/).
+See the
+FAQ on "[how to submit](faq.html#submit)".
 
 Nevertheless, the IOCCC does have certain practices that we ask authors to follow.
 Some of these relate to use of markdown directly and others relate to injecting HTML

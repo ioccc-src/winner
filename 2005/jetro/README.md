@@ -1,7 +1,8 @@
 ## To build:
 
-This entry requires SDL. See [3.8  - How do I compile an IOCCC entry that
-requires SDL1 or SDL2?](../../faq.html#SDL) for information on how to install it if you
+This entry requires SDL. See
+FAQ on "[SDL1 and SDL2](../../faq.html#SDL)"
+for information on how to install it if you
 haven't already.
 
 If you have SDL installed:

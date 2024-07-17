@@ -1,8 +1,9 @@
 ## To build:
 
 NOTE: this entry requires the `X11/Xlib.h` header file and the X11 library to
-compile. See [the FAQ on how to run entries that require X11](../../faq.html#X11) if
-you need help.
+compile. See the
+FAQ on "[X11](../../faq.html#X11)"
+if you need help.
 
 
 ``` <!---sh-->

@@ -8,9 +8,11 @@ They are are provided as a **VERY TENTATIVE** hint at **what
 MIGHT** be used in the next IOCCC.  In some cases they might
 even be a copy of the guidelines from the previous IOCCC.
 
-See our [FAQ about providing feedback](../faq.html#feedback) as well
-as our [FAQ about asking questions](../faq.html#question) about
-these guidelines.
+See our
+FAQ on "[rules, guidelines, tools feedback](#feedback)".
+as well as our
+FAQ on "[asking questions](../faq.html#question)"
+about these guidelines.
 
 
 # The IOCCC is closed
@@ -115,8 +117,8 @@ The submit URL should be active on or slightly before **2024-MMM-DD HH:MM:SS UTC
 The [IOCCC rules](rules.html), [IOCCC
 guidelines](guidelines.html) will be available on the [Official IOCCC
 website](https://www.ioccc.org) on or slightly before start of this IOCCC.  Please check
-[the IOCCC FAQ about how to submit](../faq.html#submit) to see how
-to submit entries, on or after the start of this IOCCC, to be sure
+FAQ on "[how to submit](../faq.html#submit)"
+to see how to submit entries, on or after the start of this IOCCC, to be sure
 you are using the correct versions of these items before using the
 IOCCC submission URL.
 </p>
@@ -354,8 +356,8 @@ below) fails to validate the `.auth.json` or `.info.json`
 it is an error and possibly a bug that you should [report as a bug at the
 mkiocccentry issues
 page](https://github.com/ioccc-src/mkiocccentry/issues/new?assignees=&labels=bug&projects=&template=bug_report.yml&title=%5BBug%5D+%3Ctitle%3E).
-**PLEASE run the `bug_report.sh` script to help us out here!** See the [the FAQ
-about reporting bugs in the mkiocccentry repo](../faq.html#mkiocccentry_bugs).
+**PLEASE run the `bug_report.sh` script to help us out here!** See the
+FAQ on "[report mkiocccentry bugs](../faq.html#mkiocccentry_bugs)".
 </p>
 
 <p class="leftbar">
@@ -558,8 +560,8 @@ not pass and you used `mkiocccentry(1)` it is very possibly a bug and you should
 [report
 it as a bug at the mkiocccentry issues
 page](https://github.com/ioccc-src/mkiocccentry/issues/new?assignees=&labels=bug&projects=&template=bug_report.yml&title=%5BBug%5D+%3Ctitle%3E).
-See the [the FAQ about reporting
-bugs in the mkiocccentry repo](../faq.html#mkiocccentry_bugs).
+See the
+FAQ on "[report mkiocccentry bugs](../faq.html#mkiocccentry_bugs)".
 </p>
 
 <p class="leftbar">
@@ -613,8 +615,8 @@ tarball`' :-) ) **AND if and _ONLY IF_ you used
 `mkiocccentry(1)`**, then it is very possibly a bug in one of the tools and you
 should [report it as a bug at the mkiocccentry issues
 page](https://github.com/ioccc-src/mkiocccentry/issues/new?assignees=&labels=bug&projects=&template=bug_report.yml&title=%5BBug%5D+%3Ctitle%3E). **PLEASE run the
-`bug_report.sh` script to help us out here!** See [the FAQ about reporting bugs
-in the mkiocccentry repo](../faq.html#mkiocccentry_bugs).
+`bug_report.sh` script to help us out here!** See
+FAQ on "[report mkiocccentry bugs](../faq.html#mkiocccentry_bugs)".
 </p>
 
 <p class="leftbar">
@@ -630,8 +632,8 @@ would prevent this from happening as it would not create such a file anyway. If
 `mkiocccentry(1)` was used it would rather suggest a bug in one of the tools and
 you should [report it as a bug at the mkiocccentry issues
 page](https://github.com/ioccc-src/mkiocccentry/issues/new?assignees=&labels=bug&projects=&template=bug_report.yml&title=%5BBug%5D+%3Ctitle%3E).
-See [the FAQ about reporting bugs in the mkiocccentry
-repo](../faq.html#mkiocccentry_bugs).
+See
+FAQ on "[report mkiocccentry bugs](../faq.html#mkiocccentry_bugs)".
 </p>
 
 <p class="leftbar">
@@ -753,8 +755,9 @@ by modifying the `CSTD` Makefile variable.  For example, to use `c17` instead:
 
 <p class="leftbar">
 For compilers, such as `clang`, that have the `-Weverything` option,
-while you may wish to try it, you should look at [the FAQ about clang
--Weverything](../faq.html#weverything).  We do **NOT** recommend that you put
+while you may wish to try it, you should look at
+FAQ on "[clang -Weverything](../faq.html#weverything)".
+We do **NOT** recommend that you put
 the use of `-Weverything` into your submission's `Makefile` for the reasons
 cited there. This goes even if your version does not trigger a warning as some
 other version might!
@@ -1768,7 +1771,8 @@ It has been shown that receiving  **anonymous** gifts provides the
 </p>
 
 <p class="leftbar">
-See [FAQ: How may I support the IOCCC?](../faq.html#support).
+See
+FAQ on "[support the IOCCC](../faq.html#support)".
 </p>
 
 More often than not, we select a small submission (usually one line) and a
@@ -1903,7 +1907,8 @@ See the [Official IOCCC website news](../news.html) for additional information.
 <p class="change marker">
 For the updates and breaking [IOCCC news](../news.html), you are encouraged to follow
 the [IOCCC on Mastodon](https://fosstodon.org/@ioccc).  See our
-[FAQ on Mastodon](../faq.html#try_mastodon) for more information. **Please be
+FAQ on "[Mastodon](../faq.html#try_mastodon)"
+for more information. **Please be
 aware** that unless you are mentioned you most likely will **NOT** get a
 notification so you should make sure to check the page.
 </p>

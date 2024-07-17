@@ -203,7 +203,9 @@ where:
 
 * remarks.md
 
-    Remarks about your entry in markdown format: see [FAQ 2.1](#remarks_md) for more info.
+    Remarks about your entry in markdown format: see
+    FAQ on "[remarks.md](#remarks_md)"
+    for more info.
 
 * [file ...]
 
@@ -258,7 +260,8 @@ frequently submitted theme, be sure that it is obfuscated in several
 new and novel ways.
 
 **IMPORTANT HINT**: Be sure to **clearly explain** near the beginning
-of your `remarks.md` file, see [FAQ 2.1](#remarks_md),
+of your `remarks.md` file, see
+FAQ on "[remarks.md](#remarks_md)",
 **why you are submitting a entry based on a frequently
 submitted theme** and **how compares with previous IOCCC winners**
 of the same theme.
@@ -358,7 +361,8 @@ state something along the lines of:
 ```
 
 **FAIR WARNING**: Be sure to **clearly explain** near the beginning
-of your `remarks.md` file, see [FAQ 2.1](#remarks_md),
+of your `remarks.md` file, see
+FAQ on "[remarks.md](#remarks_md)",
 **why you are submitting a entry based on a frequently
 submitted theme** and **how compares with previous IOCCC winners**
 of the same theme.
@@ -523,7 +527,8 @@ information, they will ask (either in public or suggest a private conversation).
 Again, **please** don't hesitate to ask: Your question may be something that
 others are wondering about as well!
 
-See also [FAQ about making suggestions](#feedback).
+See also
+FAQ on "[rules, guidelines, tools feedback](#feedback)".
 
 
 <div id="faq0_7">
@@ -533,7 +538,7 @@ See also [FAQ about making suggestions](#feedback).
 </div>
 
 The IOCCC makes extensive use of [markdown](https://daringfireball.net/projects/markdown/).
-For example, we [submitting to the IOCCC](faq.html#submit), we have people
+For example, we [submitting to the IOCCC](#submit), we have people
 to submit remarks about entry in markdown format.  Every
 [winning IOCCC entry](years.html) uses a `README.md` markdown file
 as the basis for forming the `index.html` web page for that entry.
@@ -616,8 +621,10 @@ submission:
      * The **alt URL** of this author, or `null` if not provided.
 
 - `mastodon` (null or double quoted string)
-     * The **[Mastodon](#try_mastodon) handle** of this author in the form of `@user@domain`, or
-     `null` if not provided.
+     * The Mastodon handle of this author in the form of `@user@domain`, or
+     `null` if not provided.  See
+     FAQ on "[Mastodon](#try_mastodon)"
+     for more information.
 
 - `github` (null or double quoted string)
      * The **[GitHub](https://github.com) account** of this author in the form of `@user`, or `null` if not
@@ -650,9 +657,12 @@ submission:
 
      **NOTE:** if you have won before, we **ENCOURAGE** you to use the same handle of
      your previous winning entries, to help in organising the
-     [authors.html](authors.html) page and the author JSON file (see: [What is an
-     author handle?](#author_handle_faq) and [What is an `author_handle.json`
-     file and how are they used?](#author_json)).
+     [authors.html](authors.html) page and the author JSON file.
+     See
+     FAQ on "[author handle](#author_handle_faq)"
+     and
+     FAQ on "[author_handle.json](#author_json)"
+     for more information.
 
 - `author_number` (number)
      * This author number in the `authors` array.
@@ -783,7 +793,10 @@ The file also contains the following details:
     **NOT** email the [Judges](judges.html) your submission!
 
 - `formed_timestamp` (number)
-    * Seconds since epoch when `.auth.json`/[.info json](#info_json) was formed (see `gettimeofday(2)`).
+    * Seconds since epoch when `.auth.json was formed (see `gettimeofday(2)`).
+    See also
+    FAQ on "[.info.json](#info_json)"
+    for more inforation.
 
     **NOTE:** this **MUST** be greater than or equal to `MIN_TIMESTAMP` (see
     [soup/limit_ioccc.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h)
@@ -853,14 +866,23 @@ This file is constructed by the `mkiocccentry(1)` **prior to** forming the xz
 compressed tarball of your submission. The `.info.json` file contains
 information about the submission, in JSON format. The
 JSON `manifest` array contains information about the files of the submission,
-**including** the **mandatory** [.auth.json](#auth_json), [.info.json](#info_json),
-C source and [remarks](#remarks) files. In particular:
+**including** the **mandatory** `.auth.json` file,
+the  **mandatory** `remarks.md` file,
+and the **mandatory** C source file.
+See the
+FAQ on "[.auth.json](#auth_json)"
+and
+FAQ on "[remarks.md](#remarks_md)"
+for more inforation.
 
 - `info_JSON` (double quoted string)
     * This `MUST` be `".info.json"`, defined as `INFO_JSON_FILENAME` in
     [soup/entry_util.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/entry_util.h)
     in the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry/), and
-    it is the [.info.json](#info_json) file that `mkiocccentry` forms.
+    it is the `.info.json` file that `mkiocccentry` forms.
+    See the
+    FAQ on "[.info.json](#info_json)"
+    for more information.
 
     **NOTE:** if this is **NOT** the case you stand a great chance of having your
     submission rejected for violating [Rule 17](next/rules.html#rule17)!
@@ -869,7 +891,10 @@ C source and [remarks](#remarks) files. In particular:
     * This `MUST` be `".auth.json"`, defined as `AUTH_JSON_FILENAME` in
     [soup/entry_util.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/entry_util.h)
     in the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry/), and
-    it is the [.auth.json](#auth_json) file that `mkiocccentry` forms.
+    it is the `.auth.json` file that `mkiocccentry` forms.
+    See the
+    FAQ on "[.auth.json](#auth_json)"
+    for more inforation.
 
     **NOTE:** if this is **NOT** the case you stand a great chance of having your
     submission rejected for violating [Rule 17](next/rules.html#rule17)!
@@ -891,7 +916,10 @@ C source and [remarks](#remarks) files. In particular:
     * This `MUST` be `"Makefile"`, defined as `MAKEFILE_FILENAME` in
     [soup/entry_util.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/entry_util.h)
     in the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry/), and
-    is your [Makefile](#makefile).
+    is your `Makefile` file.
+    See the
+    FAQ on "[Makefile](#makefile)"
+    for more information.
 
     **NOTE:** if this is **NOT** the case you stand a great chance of having your
     submission rejected for violating [Rule 17](next/rules.html#rule17)!
@@ -903,7 +931,10 @@ C source and [remarks](#remarks) files. In particular:
     * This `MUST` be `"remarks.md"`, defined as `REMARKS_FILENAME` in
     [soup/entry_util.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/entry_util.h)
     in the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry/), and
-    is your [remarks.md](#remarks).
+    is your `remarks.md]` file.
+    See the
+    FAQ on "[remarks.md](#remarks_md)"
+    for more information.
 
     **NOTE:** if this is **NOT** the case you stand a great chance of having your
     submission rejected for violating [Rule 17](next/rules.html#rule17)!
@@ -1134,31 +1165,50 @@ The file also contains the following details:
 
 - `Makefile_override` (boolean)
     * `true` if the user overrides any warnings about an incomplete/incorrect
-    [Makefile](#makefile), else `false`.
+    `Makefile file, else `false`.
 
-    **NOTE:** if the [Makefile](#makefile) has no problems and this is `true` then
+    **NOTE:** if the `Makefile` file has no problems and this is `true` then
     you stand a good chance of having your submission rejected for violating
     [Rule 17](next/rules.html#rule17)!
 
+    See the
+    FAQ on "[Makefile](#makefile)"
+    for more information.
+
 - `first_rule_is_all` (boolean)
-    * `true` if the first rule in the [Makefile](#makefile) is
-    `all`, else `false`.
+    * `true` if the first rule in the `Makefile` file is `all`, else `false`.
+
+    See the
+    FAQ on "[Makefile](#makefile)"
+    for more information.
 
 - `found_all_rule` (boolean)
-    * `true` if the [Makefile](#makefile) has an `all` rule, else
-    `false`.
+    * `true` if the `Makefile` file has an `all` rule, else `false`.
+
+    See the
+    FAQ on "[Makefile](#makefile)"
+    for more information.
 
 - `found_clean_rule` (boolean)
-    * `true` if the [Makefile](#makefile) has a `clean` rule, else
-    `false`.
+    * `true` if the `Makefile` file has a `clean` rule, else `false`.
+
+    See the
+    FAQ on "[Makefile](#makefile)"
+    for more information.
 
 - `found_clobber_rule` (boolean)
-    * `true` if the [Makefile](#makefile) has a `clobber` rule,
-    else `false`.
+    * `true` if the `Makefile` file has a `clobber` rule, else `false`.
+
+    See the
+    FAQ on "[Makefile](#makefile)"
+    for more information.
 
 - `found_try_rule` (boolean)
-    * `true` if the [Makefile](#makefile) has a `try` rule, else
-    `false`.
+    * `true` if the `Makefile` file has a `try` rule, else `false`.
+
+    See the
+    FAQ on "[Makefile](#makefile)"
+    for more information.
 
 - `test_mode` (boolean)
     * `true` if the `test` ID was used to form the tarball, else `false`.
@@ -1167,7 +1217,7 @@ The file also contains the following details:
     contest! Please do **NOT** email the [Judges](judges.html) your submission!
 
 - `formed_timestamp` (number)
-    * Seconds since epoch when [.auth.json](#auth_json)/`.info json` was formed (see `gettimeofday(2)`).
+    * Seconds since epoch when JSON (`.auth.json` or `.info.json`) file was formed (see `gettimeofday(2)`).
 
     **NOTE:** this **MUST** be greater than or equal to `MIN_TIMESTAMP` (see
     [soup/limit_ioccc.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h)
@@ -1836,10 +1886,11 @@ Please see the [bugs.html](bugs.html) file for details about known problems with
 
 If you have a fix that makes a minimal impact to the entry, then
 please consider submitting that change in the form of a pull request.
-Please see [FAQ 5.2 How may I submit a fix to an IOCCC
-entry](#fix_an_entry).  See also the [FAQ 6.10 How does someone
-make a change to a file and submit that change as a GitHub pull
-request](#pull_request) for more information about pull requests.
+Please see
+FAQ on "[fixing an entry](#fix_an_entry)".
+See also the
+FAQ on "[GitHub pull request](#pull_request)"
+for more information about pull requests.
 
 In some cases alternative code has been added that does compile on some or most
 systems.  Check the write up for the entry for "alt" code and possible ways to
@@ -1880,10 +1931,10 @@ in question to see if the problem is known, and if a fix is wanted,
 consider trying to port the code to a 64-bit system and submitting
 a pull request with that change.  Pull requests that fix such code
 while trying to minimize the impact of any changes and preserving
-the spirit of the original code are very welcome!  Please see [FAQ
-5.2 How may I submit a fix to an IOCCC entry](#fix_an_entry) for
-details.  See also the [FAQ 6.10 How does someone make a change to
-a file and submit that change as a GitHub pull request](#pull_request)
+the spirit of the original code are very welcome!  Please see
+FAQ on "[fixing an entry](#fix_an_entry)"
+for details.  See also the
+FAQ on "[GitHub pull request](#pull_request)"
 for more information about pull requests.
 
 
@@ -1902,7 +1953,8 @@ In some cases the [bugs.html](bugs.html) file may note a known macOS problem
 with an entry.  Should you manage to port the entry, and assuming your changes
 also attempt to preserve the original intent of the IOCCC entry, we would
 encourage you to submit a pull request with your ported code.
-Please see [FAQ 5.2 How may I submit a fix to an IOCCC entry](#fix_an_entry)
+Please see
+FAQ on "[fixing an entry](#fix_an_entry)"
 for details.
 
 
@@ -1927,10 +1979,11 @@ other things that have to be done plus remembering to do it.
 See if the problem is mentioned in [bugs.html](bugs.html).  If you have a change
 that fixes the problem (even if it just a change to the `Makefile`) that doesn't
 negatively impact the entry too much, consider submitting that change in the
-form of a pull request.  Please see [FAQ 5.2 How may I submit a fix to an IOCCC
-entry](#fix_an_entry).  See also the [FAQ 6.10 How does someone
-make a change to a file and submit that change as a GitHub pull
-request](#pull_request) for more information about pull requests.
+form of a pull request.  Please see
+FAQ on "[fixing an entry](#fix_an_entry)".
+See also the
+FAQ on "[GitHub pull request](#pull_request)"
+for more information about pull requests.
 
 
 <div id="faq3_5">
@@ -2021,10 +2074,15 @@ information.
 If your system uses **Wayland** and not X11, you might give the IOCCC entries
 that use X11 a try.  They might work but again we do not know.
 
-**IMPORTANT NOTE**: The [IOCCC judges](judges.html) [do not support IOCCC entries](#no_support).
+**IMPORTANT NOTE**: The [IOCCC judges](judges.html) **do not support IOCCC entries**.
+See the
+FAQ on "[no entry support](#no_support)".
 So if an IOCCC entry that uses X11 fails under **Wayland**, and you wish to
 provide a fix to the IOCCC entry so that it will run under **Wayland**,
-then consider [submitting a fix](#fix_an_entry) so that it will run under **Wayland**.
+then consider submitting a fix so that it will run under **Wayland**.
+See the
+FAQ on "[fixing an entry](#fix_an_entry)"
+for more information.
 
 Basically: if you discover an entry does not work in Wayland you are welcome to
 provide **alternate code** that works for Wayland. We will happily credit you in
@@ -2033,7 +2091,8 @@ the [thanks-for-help.html](thanks-for-help.html) file.
 
 #### Red Hat based Linux
 
-First, see the above note on [installing and starting Xorg](#X11_general).
+First, see
+FAQ on "[general X11](#X11_general)".
 
 Install Xorg and related packages:
 
@@ -2045,13 +2104,16 @@ See also:
 
 * [How to Configure X11 in Linux](https://www.wikihow.com/Configure-X11-in-Linux)
 
-**IMPORTANT NOTE**: The [X.org server has been deprecated](#Xorg_deprecated).
-See the above note for details.
+**IMPORTANT NOTE**: The X.org server has been deprecated.
+See the
+FAQ on "[X.org deprecated](#Xorg_deprecated)"
+for more information.
 
 
 #### macOS
 
-First, see the above note on [installing and starting Xorg](#X11_general).
+First, see the
+FAQ on "[general X11](#X11_general)".
 However, for macOS, instead of installing the Xorg server, you need to install and launch
 the [most recent XQuartz](https://www.xquartz.org) application
 and then run the IOCCC entry from the [Xterm window
@@ -2089,13 +2151,16 @@ Note that you can compile the code in your regular terminal prior to opening
 XQuartz, should you wish to. You can even run it from that terminal and it
 should open XQuartz.
 
-**IMPORTANT NOTE**: The [X.org server has been deprecated](#Xorg_deprecated).
-See the above note for details.
+**IMPORTANT NOTE**: The X.org server has been deprecated.
+See the
+FAQ on "[X.org deprecated](#Xorg_deprecated)"
+for more information.
 
 
 #### Debian based Linux
 
-First, see the above note on [installing and starting Xorg](#X11_general).
+First, see the
+FAQ on "[general X11](#X11_general)".
 
 According to the [Debian Xorg wiki](https://wiki.debian.org/Xorg), installing
 X11 requires:
@@ -2104,13 +2169,16 @@ X11 requires:
     sudo apt install xorg
 ```
 
-**IMPORTANT NOTE**: The [X.org server has been deprecated](#Xorg_deprecated).
-See the above note for details.
+**IMPORTANT NOTE**: The X.org server has been deprecated.
+See the
+FAQ on "[X.org deprecated](#Xorg_deprecated)"
+for more information.
 
 
 #### Other Linux distributions
 
-First, see the above note on [installing and starting Xorg](#X11_general).
+First, see the
+FAQ on "[general X11](#X11_general)".
 
 For general documentation on installing  X11, this [ServerGUI for
 Ubuntu](https://help.ubuntu.com/community/ServerGUI), and in particular, these
@@ -2136,18 +2204,23 @@ For systems that have the `yum(1)` command:
     sudo yum install --skip-broken --best --exclude xorgxrdp --exclude xorgxrdp-glamor '*xorg*' 'libx*' 'libX*' 'fontconfig*'
 ```
 
-**IMPORTANT NOTE**: The [X.org server has been deprecated](#Xorg_deprecated).
-See the above note for details.
+**IMPORTANT NOTE**: The X.org server has been deprecated.
+See the
+FAQ on "[X.org deprecated](#Xorg_deprecated)"
+for more information.
 
 
 #### Package website
 
-First, see the above note on [installing and starting Xorg](#X11_general).
+First, see the
+FAQ on "[general X11](#X11_general)".
 
 See the [X.org](https://x.org/wiki/) foundation website.
 
-**IMPORTANT NOTE**: The [X.org server has been deprecated](#Xorg_deprecated).
-See the above note for details.
+**IMPORTANT NOTE**: The X.org server has been deprecated.
+See the
+FAQ on "[X.org deprecated](#Xorg_deprecated)"
+for more information.
 
 
 <div id="faq3_8">
@@ -2187,7 +2260,9 @@ but this might not be necessary in more modern days especially as we use
 `sdl-config` and `sdl2-config` which should find the proper paths.
 
 
+<div id="X11macos">
 #### macOS
+</div>
 
 If you're using macOS there are at least three ways to obtain it. You can
 use Homebrew or MacPorts.  If you do not wish to use either of those
@@ -2268,8 +2343,9 @@ be that you need additional SDL libraries. See the entry's index.html for
 details. If something is not noted you're welcome to report it as an issue or
 fix it and make a pull request.
 
-See the [FAQ 6.10 How does someone make a change to a file and submit that change
-as a GitHub pull request](#pull_request) for more information about pull requests.
+See the
+FAQ on "[GitHub pull request](#pull_request)"
+for more information about pull requests.
 
 
 <div id="faq3_9">
@@ -2582,7 +2658,9 @@ It also possible that you may have discovered a bug in an winning IOCCC
 entry.  If so, you are invited to try and fix the IOCCC entry and
 submit that fix by way of a [GitHub pull
 request](https://github.com/ioccc-src/winner/pulls).
-Please see [FAQ 5.2](#fix_an_entry) for how to submit a fix to an IOCCC entry.
+Please see
+FAQ on "[fixing an entry](#fix_an_entry)"
+for how to submit a fix to an IOCCC entry.
 
 
 <div id="faq3_14">
@@ -2861,9 +2939,9 @@ We recommend trying a method suitable for your environment first, if possible.
 
 This depends on your operating system for which we describe a couple below.
 
-In general OpenGL needs X11 to be installed and the X Window Server to be running.
-See [FAQ 3.7: How do I run an IOCCC entry that requires X11?](#X11_general) for
-general information about X11.
+In general OpenGL needs X11 to be installed and the X Window Server to be running.  See
+FAQ on "[X11](#X11)"
+for general information about X11.
 
 Once X11 is install and the X Window Server is running, one needs to compile
 and link with the two libraries, _GL_ and _GLU_:
@@ -3014,8 +3092,8 @@ then do:
 
 to compile all versions and then run the alternate version (if you have
 a PDP-11 or VAX-11 you would be able to run the original version). For more help
-on compiling entries, see also [3.0  - What Makefile rules are available to
-build or clean up IOCCC entries?](#make_rules).
+on compiling entries, see also the
+FAQ on "[IOCCC Makefile rules](#make_rules)".
 
 If you want to view the `index.html` file you can point your browser to the
 `index.html` file of the winning entry (e.g. `1984/mullender/index.html`) with the
@@ -3066,8 +3144,8 @@ entry:
         make everything
 ```
 
-For more help on compiling entries, see also [3.0  - What Makefile rules are
-available to build or clean up IOCCC entries?](#make_rules).
+For more help on compiling entries, see also the
+FAQ on "[IOCCC Makefile rules](#make_rules)".
 
 Of course in this case you can also switch to individual entries and look at the
 `index.html` file (or any other file in the entry) and try out the entries that
@@ -3298,7 +3376,8 @@ some cases, such as `1984/mullender`, the original code is the same as the code
 as no changes were made (there is an alt version for systems that are not
 VAX-11/PDP-11, however).
 
-See also [FAQ 4.2: What was changed in an IOCCC entry source code?](#what_changed)
+See also
+FAQ on "[entry source code changes](#what_changed)"
 
 
 <div id="faq4_4">
@@ -3381,8 +3460,9 @@ There were certainly other reasons as well.
 
 Like with files being renamed, there are multiple reasons files were added or
 removed. The addition of the `try.sh` and `try.alt.sh` scripts is the most
-significant example of files being added. These scripts, as the [FAQ about this
-says](#try), help demonstrate entries by automating commands, sometimes many
+significant example of files being added. These scripts, as the
+FAQ on "[try.sh and try.alt.sh](#try)",
+help demonstrate entries by automating commands, sometimes many
 commands and not always simple commands, that one would previously have to run
 manually (there are other benefits as well).
 
@@ -3417,7 +3497,9 @@ The [known bugs](bugs.html) file, order by IOCCC years, contains a
 list of known bugs & (mis)features.  If you are looking for an IOCCC entry
 to try and fix, this file is a good place to start.
 
-See [FAQ 5.2](#fix_an_entry) for information on how to submit a fix to
+See
+FAQ on "[fixing an entry](#fix_an_entry)"
+for information on how to submit a fix to
 an IOCCC entry.  Before you consider trying to fix an IOCCC winning entry,
 please check the [known bugs](bugs.html) file for the IOCCC entry
 in question.  Note that in several cases what you may have discovered,
@@ -3448,10 +3530,11 @@ fix. If it is accepted we'll be happy to credit you in the
 [thanks](thanks-for-help.html) file. If you're a previous author of a winning IOCCC entry we will happily
 link to your entries; if you're not we can link to your website if you wish.
 
-Please see [FAQ 5.2 How may I submit a fix to an IOCCC
-entry](#fix_an_entry) for information on how to submit a fix to an
-IOCCC entry.  See also the [FAQ 6.10 How does someone make a change
-to a file and submit that change as a GitHub pull request](#pull_request)
+Please see
+FAQ on "[fixing an entry](#fix_an_entry)"
+for information on how to submit a fix to an
+IOCCC entry.  See also the
+FAQ on "[GitHub pull request](#pull_request)"
 for more information about pull requests.
 
 
@@ -3494,10 +3577,11 @@ And of course, an IOCCC author may update their own entries
 against the [master branch](https://github.com/ioccc-src/winner/branches)
 of the [ioccc-src/winner repo](https://github.com/ioccc-src/winner).
 
-Please see [FAQ 5.2 How may I submit a fix to an IOCCC
-entry](#fix_an_entry).  See also the [FAQ 6.10 How does someone
-make a change to a file and submit that change as a GitHub pull
-request](#pull_request) for more information about pull requests.
+Please see
+FAQ on "[fixing an entry](#fix_an_entry)".
+See also the
+FAQ on "[GitHub pull request](#pull_request)"
+for more information about pull requests.
 
 Note that we're much more inclined to accept an author's fixes but the judges
 have the final say in the matter.
@@ -3510,14 +3594,18 @@ have the final say in the matter.
 </div>
 
 If you discover a problem with the IOCCC website that is related
-to a particular IOCCC entry, please see [FAQ 5.1](#report_bug) for
-information about reporting a bug in an IOCCC entry, and see [FAQ
-5.2](#fix_an_entry) for information on how to submit a fix to an IOCCC entry.
+to a particular IOCCC entry, please see
+FAQ on "[report entry bug](#report_bug)"
+for information about reporting a bug in an IOCCC entry, and see
+FAQ on "[fixing an entry](#fix_an_entry)"
+for information on how to submit a fix to an IOCCC entry.
 
 If you discover a problem with the IOCCC website (such as a broken link, which
 may or may not be specific to a particular IOCCC entry) that is **not related
 to a particular IOCCC entry**, the best way you can help is to submit a fix to
-the IOCCC website.  See [FAQ 5.4](#fix_web_site) for information on submitting fixes
+the IOCCC website.  See
+FAQ on "[fixing the website](#fix_web_site)"
+for information on submitting fixes
 to the IOCCC website.
 
 If you do not have an IOCCC website fix, and just wish to report a general IOCCC
@@ -3535,17 +3623,20 @@ to [open a new IOCCC issue](https://github.com/ioccc-src/winner/issues/new).
 </div>
 
 For IOCCC website problems that relate to a particular IOCCC entry, please
-see [FAQ 5.2](#fix_an_entry) for information on how submit a fix to an IOCCC entry.
+see
+FAQ on "[fixing an entry](#fix_an_entry)"
+for information on how submit a fix to an IOCCC entry.
 
 You may open a [GitHub pull request](https://github.com/ioccc-src/winner/pulls)
 against the [master branch](https://github.com/ioccc-src/winner/branches)
 of the [ioccc-src/winner repo](https://github.com/ioccc-src/winner)
 to submit a fix.
 
-Please see [FAQ 5.2 How may I submit a fix to an IOCCC
-entry](#fix_an_entry).  See also the [FAQ 6.10 How does someone
-make a change to a file and submit that change as a GitHub pull
-request](#pull_request) for more information about pull requests.
+Please see
+FAQ on "[fixing an entry](#fix_an_entry)".
+See also the
+FAQ on "[GitHub pull request](#pull_request)"
+for more information about pull requests.
 
 #### Some HTML files should NOT be directly modified
 
@@ -3576,15 +3667,17 @@ For example, in [contact.html](contact.html), one may read:
 ```
 
 This means that you could consider editing the referenced markdown file
-AND then run `make www` from the top level directory in your [IOCCC pull
-request](#pull_request). There are quicker ways but to be sure you get
+AND then run `make www` from the top level directory in your IOCCC pull
+request. There are quicker ways but to be sure you get
 everything built you should do this. If you modified a markdown and you do not
 see the same file as a html file then you did not complete the fix.
 
-Please see [FAQ 5.2 How may I submit a fix to an IOCCC
-entry](#fix_an_entry).  See also the [FAQ 6.10 How does someone
-make a change to a file and submit that change as a GitHub pull
-request](#pull_request) for more information about pull requests.
+Please see
+FAQ on "[fixing an entry](#fix_an_entry)".
+
+See also the
+FAQ on "[GitHub pull request](#pull_request)"
+for more information about pull requests.
 
 In some cases, the HTML file is **NOT** based on markdown content, but instead
 came from JSON and other data files.  So instead of the above reference to a
@@ -3604,7 +3697,9 @@ This means there is **NOT even a markdown file to edit**.  Instead one must
 modify JSON files and/or change a [bin directory tool](bin/index.html).
 
 If this happens, consider opening up an [IOCCC issue](https://github.com/ioccc-src/winner/issues)
-and ask for help.  See [FAQ 5.3](#fix_an_entry) for information on opening up an IOCCC issue.
+and ask for help.  See
+FAQ on "[fixing an entry](#fix_an_entry)"
+for information on opening up an IOCCC issue.
 
 
 <div id="faq5_5">
@@ -3620,8 +3715,12 @@ If you know the location of an author listed under:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**[ZZ - Unknown location](location.html#ZZ)**
 
 or if you find IOCCC author location that is incorrect,
-then **please [submit a pull request](faq.html#pull_request)**,
+then **please submit a pull request**,
 or at least [inform the IOCCC judges](contact.html).
+
+See the
+FAQ on "[GitHub pull request](#pull_request)"
+for more information.
 
 Authors of IOCCC winning entries are kept in JSON files of the form:
 
@@ -3631,19 +3730,25 @@ Authors of IOCCC winning entries are kept in JSON files of the form:
 
 where `author_handle` is an author handle.
 
-See [FAQ 6.5](#author_handle_faq) for more information about author handles.
+See the
+FAQ on "[author handle](#author_handle_faq)"
+for more information about author handles.
 
-See [FAQ 6.6](#author_json) for information about the contents of these JSON file and
-how they are used.
+See the
+FAQ on "[author_handle.json](#author_json)"
+for information about the contents of these JSON file and how they are used.
 
-See [FAQ 6.13](#find_author_handle) for how to find your own _author_handle_.
+See the
+FAQ on "[finding author handles](#find_author_handle)"
+for how to find your own _author_handle_.
 
 The contents of these JSON files contain the best known information
-about authors of IOCCC entries.  See [FAQ 6.6](#author_json) for information
-about the contents of these JSON file and how they are used.
+about authors of IOCCC entries.  See
+FAQ on "[author_handle.json](#author_json)"
+for information about the contents of these JSON file and how they are used.
 
 You may update IOCCC author information in a `author_handle.json` file
-by [submitting  a pull request](faq.html#pull_request)
+by [submitting  a pull request](#pull_request)
 against the [master branch](https://github.com/ioccc-src/winner/branches)
 of the [ioccc-src/winner repo](https://github.com/ioccc-src/winner).
 
@@ -3692,11 +3797,12 @@ only worry about those two files. This greatly speeds things along.
 Once that command finishes a proper `git status` and `git diff` shows that
 everything is in order. In the end the safest way is to run `make www`, however.
 
-Please see [FAQ 5.2 How may I submit a fix to an IOCCC entry?](#fix_an_entry).
+Please see
+FAQ on "[fixing an entry](#fix_an_entry)".
 
-See also the [FAQ 6.10 How does someone
-make a change to a file and submit that change as a GitHub pull
-request](#pull_request) for more information about pull requests.
+See also the
+FAQ on "[GitHub pull request](#pull_request)"
+for more information about pull requests.
 
 **FYI**: The [ZZ - Unknown location](location.html#ZZ) is used for
 historic winning authors whose location or country is not known,
@@ -3720,11 +3826,12 @@ want to have the location known but not their name and/or other details.
 We would appreciate if you try to fix the broken (the link goes nowhere) or wrong
 (the link goes to something that clearly is not the original intent) web link.
 If wish to fix such links, you may open a GitHub pull request as described in
-[FAQ 5.4](#fix_web_site). In the case of dead links or invalid links it doesn't matter
+FAQ on "[fixing the website](#fix_web_site)".
+In the case of dead links or invalid links it doesn't matter
 if it's a specific winner or not; the procedure is the same: open a pull request
-to fix the problem.  See also the [FAQ 6.10 How does someone
-make a change to a file and submit that change as a GitHub pull
-request](#pull_request) for more information about pull requests.
+to fix the problem.  See also the
+FAQ on "[GitHub pull request](#pull_request)"
+for more information about pull requests.
 
 As far as how to find the updated link you can try using the [Internet Wayback
 Machine](https://web.archive.org) and see if you can find the last non 4xx non
@@ -3761,7 +3868,8 @@ replace that text with:
     See the **author's description of the program** (sorry the content is no longer available) for more information.
 ```
 
-If you just wish to report the bad link issue, see [FAQ 5.3](#report_web_problem).
+If you just wish to report the bad link issue, see
+FAQ on "[report website problem](#report_web_problem)".
 
 
 <div id="faq5_7">
@@ -3910,11 +4018,13 @@ we request that you ask the [IOCCC judges](judges.html) first.
 Please send your request using the instructions on the [contacting
 the IOCCC Judges](contact.html) page.
 
-Please note that the content of the IOCCC is [Copyrighted and is under
-the CC BY-SA 4.0 License](#copyright).
+Please note that the content of the IOCCC
+**Copyrighted and is under the CC BY-SA 4.0 License**.
+See the [Copyright](#copyright) at the bottom of IOCCC web pages for more details.
 
-See [FAQ 6.11](#license) for additional information on the
-[Copyright and CC BY-SA 4.0 License](license.html).
+See
+FAQ on "[using IOCCC content](#license)".
+For additional information on the [Copyright and CC BY-SA 4.0 License](license.html).
 
 
 <div id="faq6_4">
@@ -3972,13 +4082,19 @@ For each `author_handle`, there will be a JSON file of the form:
     author/author_handle.json
 ```
 
-See [FAQ 5.5](#fix_author) for information about how to update
+See the
+FAQ on "[fixing author information](#fix_author)"
+for information about how to update
 and/or correct IOCCC author information.
 
-See [FAQ 6.6](#author_json) for information about the contents of these JSON file and
+See the
+FAQ on "[.auth.json](#auth_json)"
+for information about the contents of these JSON file and
 how they are used.
 
-See [FAQ 6.13](#find_author_handle) for how to find your own _author_handle_.
+See the
+FAQ on "[finding author handle](#find_author_handle)"
+for how to find your own _author_handle_.
 
 Because the `author_handle` is used to form a JSON filename, the string must be
 POSIX safe string plus the use of `+` (for technical reasons beyond this
@@ -4060,8 +4176,9 @@ of the form:
     author/author_handle.json
 ```
 
-where _author_handle_ is an author handle.  See [FAQ 6.5](#author_handle_faq) for more
-information about an author handles.
+where _author_handle_ is an author handle.  See
+FAQ on "[author handle](#author_handle_faq)"
+for more information about an author handles.
 
 #### `author_handle.json` JSON file contents
 
@@ -4215,7 +4332,9 @@ This _JSON member_ holds the author handle of the author.
 There **MUST** be one and only one `author_handle` _JSON member_
 and the _JSON value_ **MUST** be a _JSON string_ that is also a value author handle.
 
-See [FAQ 6.5](#author_handle_faq) for more information about an author handles.
+See
+FAQ on "[author handle](#author_handle_faq)"
+for more information about an author handles.
 
 Normally the _author_handle_ _JSON value_ should **NOT** be changed
 **unless there is a strong reason to do so**.  If the  _JSON value_
@@ -4451,7 +4570,7 @@ be a _JSON string_ or it **MUST** be a _JSON null_.  The _JSON string_ just be a
 If the `mastodon` handle is a _JSON null_, them the `mastodon_url` **MUST** be a _JSON null_.
 If the `mastodon` handle is a _JSON string_, then the `mastodon_url` **MUST** be a _JSON string_.
 
-The `mastodon_url` is just a translation of the above mentioned [mastodon](#mastodon) handle.
+The `mastodon_url` is just a translation of the above mentioned Mastodon handle.
 For example, if the Mastodon handle is:
 
 ```
@@ -4474,8 +4593,9 @@ For example:
 
 NOTE: The _JSON null_ is **NOT** enclosed in quotes!
 
-See [the FAQ on what is Mastodon and why does IOCCC uses it](faq.html#try_mastodon) for more
-information on Mastodon.
+See
+FAQ on "[Mastodon](#try_mastodon)"
+for more information on Mastodon.
 
 
 ##### github
@@ -4565,9 +4685,13 @@ is a valid entry ID.
 Due to the nature of the  _So-called JSON spec_, the last value of the `winning_entry_set`
 _JSON array_ cannot end in a comma (_,_).
 
-See [FAQ 6.7](#author_json) for information about entry ids.
+See
+FAQ on "[author_handle.json](#author_json)"
+for information about entry ids.
 
-See [FAQ 5.5](#fix_author) for information about how to update
+See
+FAQ on "[fixing author information](#fix_author)"
+for information about how to update
 and/or correct IOCCC author information.
 
 
@@ -5016,7 +5140,9 @@ by going to your entry in the [authors.html](authors.html) web page and viewing 
 that follows the _author_handle_: line.
 
 If you are not someone who has won a previous IOCCC, you will be able to select
-a potential _author_handle_ when you form your _submission_ tarball (see [FAQ 0.0](#submit)).
+a potential _author_handle_ when you form your _submission_ tarball (see
+FAQ on "[how to submit](#submit)"
+).
 
 **Helpful Hint**: If an _author_ clicks on their _author_handle:_
 line link, you will be taken to that author's `author_handle.json` file.
@@ -5029,15 +5155,23 @@ the [Brian_Westley.json](%%REPO_URL%%/author/Brian_Westley.json) file.
 **IMPORTANT NOTE**: An `author` who has won a previous IOCCC is encouraged to reuse their
 `author_handle` so that new winning entries can be associated with the same author.
 
-See [FAQ 5.5](#fix_author) for information about how to update
+See
+FAQ on "[fixing author information](#fix_author)"
+for information about how to update
 and/or correct IOCCC author information.
 
-See [FAQ 6.5](#author_handle_faq) for more information about author handles.
+See
+FAQ on "[author handle](#author_handle_faq)"
+for more information about author handles.
 
-See [FAQ 6.6](#author_json) for information about the contents of these JSON file and
+See
+FAQ on "[author_handle.json](#author_json)"
+for information about the contents of these JSON file and
 how they are used.
 
-See [FAQ 6.9](#terms) for more information on terms such as _author_, _entry_, and _submission_.
+See
+FAQ on "[Author, Entry, Submission](#terms)"
+for more information on terms such as _author_, _entry_, and _submission_.
 
 <div id="faq6_14">
 <div id="tabstops">
@@ -5080,8 +5214,8 @@ Simply move your mouse cursor over the category you want and then click on the
 item you wish to view that drops down from the category.
 
 This is likely how it will appear with a [tablet device in landscape
-mode](faq.html#tablet_menu), too, unless [JavaScript is
-disabled](faq.html#no_javascript_menu).
+mode](#tablet_menu), too, unless [JavaScript is
+disabled](#no_javascript_menu).
 
 
 <div id="mobile_menus">
@@ -5134,11 +5268,11 @@ to <https://ioccc-src.github.io/temp-test-ioccc/nojs-menu.html>.
 
 With tablets, it likely depends on the orientation you have your device in. If it's
 in portrait mode you likely will see the [menu that one will get on a mobile
-phone](faq.html#mobile_phone_menu).
+phone](#mobile_phone_menu).
 
 If, on the other hand, you are using landscape mode, say on an iPad Pro 11 inch
 4th generation, then you will likely see the [menu as you would on a desktop or
-laptop](faq.html#desktop_menu).
+laptop](#desktop_menu).
 
 
 <div id="1024px_menu">
@@ -5153,7 +5287,7 @@ very possibly have to **press and hold** the menu icon:
  width=24 height=24>
 
 to activate it. You can then use it [as you would on a mobile
-phone](faq.html#mobile_phone_menu).
+phone](#mobile_phone_menu).
 
 
 <div id="browser_bug_menu">
@@ -5171,9 +5305,9 @@ Notice how the menu icon is not even there! This happens in both portrait mode
 and landscape mode.
 
 In this case one will have to use the [no JavaScript
-menu](faq.html#no_javascript_menu). If you have a fix for this that **does NOT
+menu](#no_javascript_menu). If you have a fix for this that **does NOT
 affect the usability of desktops, laptops or other mobile devices**, please
-consider fixing it and [opening a pull request](faq.html#pull_request) or at
+consider fixing it and [opening a pull request](#pull_request) or at
 least [report it as an
 issue](https://github.com/ioccc-src/temp-test-ioccc/issues/new/choose) (choose
 the category _Website issue_).

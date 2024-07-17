@@ -5,8 +5,8 @@
 ```
 
 NOTE: this program requires the tool `tcpserver` to use. If you do not have this
-program see [FAQ 3.14 - How do I compile and install tcpserver for entries that
-require it](../../faq.html#tcpserver).
+program see
+FAQ on "[tcpserver](../../faq.html#tcpserver)".
 
 
 ## To use:

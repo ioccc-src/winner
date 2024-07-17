@@ -543,7 +543,9 @@ with nothing following: thus, there are plenty of available and unused zero
 bytes following <code>O</code>, addressed via <code>o</code>, and this code only needs 17. This is
 <em>undefined</em> behavior, but as shown, it is widely available.</p>
 <p>The <a href="http://minnie.tuhs.org/cgi-bin/utree.pl">1979 Seventh Edition UNIX</a> (v7) system pre-dates the IOCCC by several years,
-and the source code to <code>sh</code>(1) was a <a href="../../faq.html#ioccc_start">significant inspiration for this contest</a>.
+and the source code to <code>sh</code>(1) was a <strong>significant inspiration for this contest</strong>.
+See the
+FAQ on “<a href="../../faq.html#ioccc_start">IOCCC beginnings</a>”.
 There are two C compilers present: <code>cc</code> written by Dennis Ritchie, and <code>pcc</code> written by Steven Johnson.
 The nested conditional expressions in 116 and smaller are too complex for <code>cc</code> (“Illegal conditional”)
 but <code>pcc</code> handles them correctly, and neither compiler accepts <code>char o[]</code> or
