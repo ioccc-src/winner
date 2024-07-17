@@ -1707,7 +1707,7 @@ entries that do not win on their web page for everyone to see.
 ### FAQ 2.3: How much time does it take to judge the contest?
 </div>
 
-It takes a fair amount of time to setup, run, answer email, process entries,
+It takes a fair amount of time to setup, run, respond to messages, process entries,
 review entries, trim down the set entries to a set of winning entries, doing the
 write-up of the entries, announcing the entries, reviewing final edits of the
 winning entry set, posting the winning entries, being flamed :-), tell folks who send in
@@ -3708,19 +3708,22 @@ for information on opening up an IOCCC issue.
 </div>
 </div>
 
-#### PLEASE HELP us identify proper locations for IOCCC authors
+You may correct or update IOCCC author information by submitting a
+GitHub pull request that modifies an author's `author_handle.json` file.
 
-If you know the location of an author listed under:
+For example, if a given `author_handle.json` file contained:
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**[ZZ - Unknown location](location.html#ZZ)**
+``` <!---json-->
+    "url" : "https://www.example.com/employee/username",
+```
 
-or if you find IOCCC author location that is incorrect,
-then **please submit a pull request**,
-or at least [inform the IOCCC judges](contact.html).
+and you knew that the author has long ago left the `www.example.com` company,
+and that they have a new faculty web page at `www.example.edu`, then you should
+submit a GitHub pull request to change the above line to:
 
-See the
-FAQ on "[GitHub pull request](#pull_request)"
-for more information.
+``` <!---json-->
+    "url" : "https://www.example.edu/faculty/department/user.name",
+```
 
 Authors of IOCCC winning entries are kept in JSON files of the form:
 
@@ -3736,66 +3739,38 @@ for more information about author handles.
 
 See the
 FAQ on "[author_handle.json](#author_json)"
-for information about the contents of these JSON file and how they are used.
+for information about the contents of these JSON files and how they are used.
 
 See the
 FAQ on "[finding author handles](#find_author_handle)"
-for how to find your own _author_handle_.
-
-The contents of these JSON files contain the best known information
-about authors of IOCCC entries.  See
-FAQ on "[author_handle.json](#author_json)"
-for information about the contents of these JSON file and how they are used.
+for how to find an _author_handle_.
 
 You may update IOCCC author information in a `author_handle.json` file
 by [submitting  a pull request](#pull_request)
 against the [master branch](https://github.com/ioccc-src/winner/branches)
 of the [ioccc-src/winner repo](https://github.com/ioccc-src/winner).
 
-As these files are JSON you should verify that they are validly formed (e.g. you
-didn't make a typo).
+See the
+FAQ on "[GitHub pull request](#pull_request)"
+for more information.
 
-Please make sure that you run `make www` after updating the file or files. This unfortunately
-takes quite a while but it is the safest way to do it. There are other ways to go
-about this that can speed things up. Here is one such way which was done when
-fixing two authors in 1995 (in one commit as they were the authors of the same
-two entries):
+**IMPORTANT NOTE**: As these files are JSON you should verify that
+they are validly formed (e.g., you didn't make a typo).
 
-First, the two files, [author/Heather_Downs.json](author/Heather_Downs.json) and
-[author/Selene_Makarios.json](author/Selene_Makarios.json) were fixed (the
-location was set as `ZZ` but Cody Boone Ferguson knew from the archive that it
-was the US for both of them and he also noticed that the URL, the same for
-both, was no longer valid and it was also known that the email was no longer
-valid as it referred to the same domain). Thus the `location_code`, `url` (it was on the Internet Wayback Machine) and
-in one case the `email` lines to look like:
+Before you form your GitHub pull request that modifies a
+`author_handle.json` file, please run the `make www` command.  This
+unfortunately takes quite a while but it is the safest way to do
+it.  So you may wish to test your edits by running the somewhat
+quicker `make quick_www` as this can speed up your testing.
 
-``` <--json-->
-    "location_code" : "US",
-    "email" : null,
-    "url" : "https://web.archive.org/web/19961019045145/http://www.bungalow.com/",
-```
-
-Now since only two entries (the same entries) were won by these two individuals
-it means that only two index.html files had to be updated, besides the
-[authors.html](authors.html) and [location.html](location.html) files. These
-are: [1995/heathbar/index.html](1995/heathbar/index.html) and
-[1995/makarios/index.html](1995/makarios/index.html). Thus the following
-procedure was done:
-
-``` <!--sh-->
-        touch 1995/heathbar/README.md 1995/makarios/README.md
-        make quick_www
-```
-
-That works because the `quick_www` rule will update the `authors.html` and
+The `make quick_www` rule will update the `authors.html` and
 `location.html` pages and it will also check the timestamps of the `index.html`
 files versus the `README.md` files. Since they were touched and thus the
 timestamp was updated, the
 [bin/quick-readme2index.sh](%%REPO_URL%%/bin/quick-readme2index.sh) tool would
-only worry about those two files. This greatly speeds things along.
-
-Once that command finishes a proper `git status` and `git diff` shows that
-everything is in order. In the end the safest way is to run `make www`, however.
+only worry about those two files. This greatly speeds things along while testing.
+Nevertheless, doing a final `make www` is still recommended best practice
+before you form your pull request.
 
 Please see
 FAQ on "[fixing an entry](#fix_an_entry)".
@@ -3804,10 +3779,39 @@ See also the
 FAQ on "[GitHub pull request](#pull_request)"
 for more information about pull requests.
 
+#### PLEASE HELP us identify proper locations for IOCCC authors
+
+If you know the location of an author listed under:
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**[ZZ - Unknown location](location.html#ZZ)**
+
+or if you find IOCCC author location that is incorrect,
+then **please submit a pull request**,
+or at least [inform the IOCCC judges](contact.html).
+
 **FYI**: The [ZZ - Unknown location](location.html#ZZ) is used for
 historic winning authors whose location or country is not known,
 whereas the [XX - Anonymous location](location.html#XX) is used when the
 winning author does **not wish to disclose their location**.
+
+The contents of these JSON files contain the best known information
+about authors of IOCCC entries.  See
+FAQ on "[author_handle.json](#author_json)"
+for information about the contents of these JSON files and how they are used.
+
+For example, if a given `author_handle.json` file contained:
+
+``` <!---json-->
+    "location_code" : "ZZ",
+```
+
+and you knew that the author was located in [Australia](location.html#AU)
+(location code **AU**), we encourage you to submit a **GitHub pull
+request** to change that line to:
+
+``` <!---json-->
+    "location_code" : "AU",
+```
 
 ### Important note about **XX - Anonymous location**:
 
@@ -4108,7 +4112,7 @@ and/or correct IOCCC author information.
 
 See the
 FAQ on "[.auth.json](#auth_json)"
-for information about the contents of these JSON file and
+for information about the contents of these JSON files and
 how they are used.
 
 See the
@@ -5346,8 +5350,7 @@ information in the [authors.html](authors.html) page.
 There you will find various information including a link to their
 [authors.html](authors.html) information which includes various things like
 their GitHub account (if known), a URL or alternate UL, mastodon handle,
-location (if known and not anonymous location) and a link to their JSON author
-file which has more information like email (if known).
+location (if known and not anonymous location) and a link to their JSON author file.
 
 **NOTE**: you might wish to search google (or some other search engine) by their
 name as sometimes you can find out their GitHub account even if it's not in our
@@ -5356,12 +5359,6 @@ JSON files.
 Of course if you know the author's name you can go directly to
 [authors.html](authors.html) and click on their surname's/last name's/second
 name's initial and then scroll down (if necessary) to the author in question.
-
-**NOTE**: previously we included email in the [authors.html](authors.html) page
-but we have decided against this. Nevertheless, the `author_handle` link under
-the author links to a JSON file which has the email address if it is known,
-which you might wish to consult. You might also wish to look at their URL or
-alternate URL for more information.
 
 
 <hr style="width:10%;text-align:left;margin-left:0">
