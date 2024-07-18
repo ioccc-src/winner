@@ -1,5 +1,10 @@
 # bin
 
+> "After 50+ years, the UNIX command line remains very powerful." -- Landon Noll
+>
+> An answer to (Monty)? Pythonesque question of why these tools
+> weren't written in a certain language.  :-)
+
 The [bin directory](index.html) holds tools that build files, such as HTML
 content, for the [official IOCCC website](https://www.ioccc.org).
 
