@@ -4,6 +4,9 @@
     make all
 ```
 
+There are two alternate versions that relate to the US specifically. See
+[Alternate code](#alternate-code) below.
+
 
 ### Bugs and (Mis)features:
 
@@ -26,10 +29,8 @@ If lost:
 
 Where `lat` and `long` correspond to your latitude and longitude.
 
-**NOTE**: you **MUST** have a terminal that is at least 80 columns for this to show
-properly. The `whereami.sh` and `whereami.alt.sh` scripts check this but if you
-do not have such a terminal you can run the `whereami` (or for the alternate code
-described below, `whereami.alt`) directly.
+**NOTE**: you **MUST** have a terminal that is **at least 80 columns** for this
+to show properly. The `whereami.sh` and `whereami.alt.sh` scripts check this.
 
 
 ## Try:
@@ -41,13 +42,35 @@ described below, `whereami.alt`) directly.
 
 ## Alternate code:
 
-The author provided a version for the US which we added.
+The author provided a version for the US which we added in two files: the first
+one is fixed to work for clang; the second one is more for show than for use: if
+you have your terminal set at 80 columns you will see that the source code
+documents itself. The author explains this but what is meant is it will look
+like:
+
+> main(l,a,n,d)...<br>
+> [A M E R I C A]...
+
+That version, which will not compile with `clang`, is the second alternate
+version, [westley.alt2.c](%%REPO_URL%%/1992/westley/westley.alt2.c).
 
 
 ### Alternate build:
 
 ``` <!---sh-->
     make alt
+```
+
+If you have `gcc` you can also compile the second alternate version, though it
+is functionally equivalent to the first. The original limitation where one has
+to have a terminal that wraps at 80 columns is unfortunately in this version
+because it requires a specific length so if you do not have this it will not
+look right; use the first alternate version if you want to see correct output
+with wider terminals.
+
+
+``` <!---sh-->
+    make alt2
 ```
 
 
@@ -57,8 +80,8 @@ The author provided a version for the US which we added.
     ./whereami.alt.sh lat long
 ```
 
-**NOTE**: this alternative version also needs a terminal with at least 80 columns
-but if you do not have such a terminal you can run `whereami.alt` directly.
+**NOTE**: this alternative version also needs a terminal with **at least 80
+columns**.
 
 
 ### Alternate try:

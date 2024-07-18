@@ -829,6 +829,7 @@
 1992,westley,westley.c,20,true,c,true,entry source code
 1992,westley,Makefile,30,true,makefile,true,entry Makefile
 1992,westley,westley.alt.c,40,true,c,true,alternate source code
+1992,westley,westley.alt2.c,45,true,c,true,one line alternate code that documents itself at 80 columns
 1992,westley,westley.alt.orig.c,50,true,c,true,original source code
 1992,westley,westley.orig.c,50,true,c,true,original source code
 1992,westley,try.sh,100,true,shellscript,true,script to try entry

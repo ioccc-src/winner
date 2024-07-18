@@ -409,6 +409,8 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <!-- BEFORE: 1st line of markdown file: 1992/westley/README.md -->
 <h2 id="to-build">To build:</h2>
 <pre><code>    make all</code></pre>
+<p>There are two alternate versions that relate to the US specifically. See
+<a href="#alternate-code">Alternate code</a> below.</p>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
 <p>The current status of this entry is:</p>
 <blockquote>
@@ -420,20 +422,35 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <p>If lost:</p>
 <pre><code>    ./whereami.sh lat long</code></pre>
 <p>Where <code>lat</code> and <code>long</code> correspond to your latitude and longitude.</p>
-<p><strong>NOTE</strong>: you <strong>MUST</strong> have a terminal that is at least 80 columns for this to show
-properly. The <code>whereami.sh</code> and <code>whereami.alt.sh</code> scripts check this but if you
-do not have such a terminal you can run the <code>whereami</code> (or for the alternate code
-described below, <code>whereami.alt</code>) directly.</p>
+<p><strong>NOTE</strong>: you <strong>MUST</strong> have a terminal that is <strong>at least 80 columns</strong> for this
+to show properly. The <code>whereami.sh</code> and <code>whereami.alt.sh</code> scripts check this.</p>
 <h2 id="try">Try:</h2>
 <pre><code>    ./try.sh</code></pre>
 <h2 id="alternate-code">Alternate code:</h2>
-<p>The author provided a version for the US which we added.</p>
+<p>The author provided a version for the US which we added in two files: the first
+one is fixed to work for clang; the second one is more for show than for use: if
+you have your terminal set at 80 columns you will see that the source code
+documents itself. The author explains this but what is meant is it will look
+like:</p>
+<blockquote>
+<p>main(l,a,n,d)…<br>
+[A M E R I C A]…</p>
+</blockquote>
+<p>That version, which will not compile with <code>clang</code>, is the second alternate
+version, <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/westley.alt2.c">westley.alt2.c</a>.</p>
 <h3 id="alternate-build">Alternate build:</h3>
 <pre><code>    make alt</code></pre>
+<p>If you have <code>gcc</code> you can also compile the second alternate version, though it
+is functionally equivalent to the first. The original limitation where one has
+to have a terminal that wraps at 80 columns is unfortunately in this version
+because it requires a specific length so if you do not have this it will not
+look right; use the first alternate version if you want to see correct output
+with wider terminals.</p>
+<pre><code>    make alt2</code></pre>
 <h3 id="alternate-use">Alternate use:</h3>
 <pre><code>    ./whereami.alt.sh lat long</code></pre>
-<p><strong>NOTE</strong>: this alternative version also needs a terminal with at least 80 columns
-but if you do not have such a terminal you can run <code>whereami.alt</code> directly.</p>
+<p><strong>NOTE</strong>: this alternative version also needs a terminal with <strong>at least 80
+columns</strong>.</p>
 <h3 id="alternate-try">Alternate try:</h3>
 <p>The <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/westley/try.sh">try.sh</a> script uses both the original
 entry and the alternate code so one can try the same script for both:</p>
@@ -555,6 +572,7 @@ joined together as one 160-character line and listed. You should see:</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/westley/westley.c">westley.c</a> - entry source code</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/westley/Makefile">Makefile</a> - entry Makefile</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/westley/westley.alt.c">westley.alt.c</a> - alternate source code</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/westley/westley.alt2.c">westley.alt2.c</a> - one line alternate code that documents itself at 80 columns</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/westley/westley.alt.orig.c">westley.alt.orig.c</a> - original source code</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/westley/westley.orig.c">westley.orig.c</a> - original source code</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/westley/try.sh">try.sh</a> - script to try entry</li>

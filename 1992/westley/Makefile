@@ -135,17 +135,25 @@ all: data ${TARGET}
 ${PROG}: ${PROG}.c
 	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 	${LN} -sf ${PROG} whereami
-	@echo "NOTE: your terminal must be at least 80 columns wide for this to work right"
+	@echo "NOTE: your terminal must be AT LEAST 80 columns wide for this to work right"
 
 # alternative executable
 #
 alt: data ${ALT_TARGET}
 	@${TRUE}
 
+alt2: data ${ALT_TARGET}2
+	@${TRUE}
+
 ${PROG}.alt: ${PROG}.alt.c
 	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 	${LN} -sf ${PROG}.alt whereami.alt
-	@echo "NOTE: your terminal must be at least 80 columns wide for this to work right"
+	@echo "NOTE: your terminal must be AT LEAST 80 columns wide for this to work right"
+
+${PROG}.alt2: ${PROG}.alt2.c
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
+	${LN} -sf ${PROG}.alt whereami.alt2
+	@echo "NOTE: your terminal must WRAP AT 80 columns this to work right"
 
 
 # data files
@@ -213,9 +221,9 @@ clean:
 	fi
 
 clobber: clean
-	${RM} -f ${TARGET} ${ALT_TARGET}
+	${RM} -f ${TARGET} ${ALT_TARGET} ${ALT_TARGET}2
 	${RM} -rf *.dSYM
-	${RM} -f whereami whereami.alt
+	${RM} -f whereami whereami.alt whereami.alt2
 	@-if [ -e sandwich ]; then \
 	    ${RM} -f sandwich; \
 	    echo 'ate sandwich'; \
