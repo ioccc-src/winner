@@ -100,7 +100,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.0.1 2024-07-14"
+export VERSION="1.0.2 2024-07-14"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -270,6 +270,7 @@ Exit codes:
 
 $NAME version: $VERSION"
 
+
 # parse command line
 #
 while getopts :hv:Vd:D:nNj: flag; do
@@ -308,6 +309,7 @@ while getopts :hv:Vd:D:nNj: flag; do
   esac
 done
 
+
 # remove the options
 #
 shift $(( OPTIND - 1 ));
@@ -327,6 +329,7 @@ case "$#" in
    ;;
 esac
 
+
 # if CSV files exist, verify that they are in a writable directory
 #
 if [[ -z $AUTHOR_WINS_CSV ]]; then
@@ -340,8 +343,8 @@ if [[ ! -w $AUTHOR_WINS_CSV_DIR ]]; then
     exit 8
 fi
 #
-if [[ -z $AUTHOR_WINS_CSV ]]; then
-    echo "$0: ERROR: AUTHOR_WINS_CSV is empty" 1>&2
+if [[ -z $MANIFEST_CSV ]]; then
+    echo "$0: ERROR: MANIFEST_CSV is empty" 1>&2
     exit 8
 fi
 MANIFEST_WINS_CSV_DIR=$(dirname "$MANIFEST_CSV")
@@ -362,6 +365,7 @@ if [[ ! -w $YEAR_PRIZE_CSV_DIR ]]; then
     exit 8
 fi
 
+
 # verify that we have a topdir directory
 #
 if [[ -z $TOPDIR ]]; then
@@ -376,6 +380,7 @@ if [[ ! -d $TOPDIR ]]; then
     echo "$0: ERROR: TOPDIR is not a directory: $TOPDIR" 1>&2
     exit 6
 fi
+
 
 # cd to topdir
 #
@@ -400,6 +405,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: now in directory: $(/bin/pwd)" 1>&2
 fi
 
+
 # verify we have a non-empty readable .top file
 #
 export TOP_FILE=".top"
@@ -419,6 +425,7 @@ if [[ ! -s $TOP_FILE ]]; then
     echo  "$0: ERROR: .top is not a non-empty readable file: $TOP_FILE" 1>&2
     exit 6
 fi
+
 
 # verify that we have a bin subdirectory
 #
@@ -445,6 +452,7 @@ if [[ ! -r $MANIFEST_ENTRY_CSV_ENTRY_AWK ]]; then
     exit 6
 fi
 
+
 # verify jparse tool
 #
 if [[ -z "$JPARSE_TOOL" ]]; then
@@ -459,6 +467,7 @@ if [[ ! -x "$JPARSE_TOOL" ]]; then
     echo "$0: ERROR: jparse is not an executable file: $JPARSE_TOOL" 1>&2
     exit 5
 fi
+
 
 # print running info if verbose
 #
@@ -486,6 +495,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: BIN_DIR=$BIN_DIR" 1>&2
     echo "$0: debug[3]: MANIFEST_ENTRY_CSV_ENTRY_AWK=$MANIFEST_ENTRY_CSV_ENTRY_AWK" 1>&2
 fi
+
 
 # -N stops early before any processing is performed
 #
@@ -590,7 +600,6 @@ if [[ -z $NOOP ]]; then
 elif [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: because of -n, temporary CSV author_win file is not used: $TMP_AUTHOR_WIN" 1>&2
 fi
-
 
 
 # process each year
@@ -830,7 +839,7 @@ for YYYY in $(< "$TOP_FILE"); do
 	    awk -f "$MANIFEST_ENTRY_CSV_ENTRY_AWK" "$ENTRY_JSON" >> "$TMP_MANIFEST_CSV"
 	    status="$?"
 	    if [[ status -ne 0 ]]; then
-		echo "$0: ERROR: awk -f $MANIFEST_ENTRY_CSV_ENTRY_AWK $ENTRY_JSON >> $TMP_MANIFEST_CSV," \
+		echo "$0: ERROR: awk -f $MANIFEST_ENTRY_CSV_ENTRY_AWK $ENTRY_JSON >> $TMP_MANIFEST_CSV failed," \
 		     "error code: $status" 1>&2
 		exit 8
 	    fi
@@ -860,7 +869,7 @@ if [[ -z $NOOP ]]; then
     sort "$TMP_AUTHOR_WIN" -o "$TMP_AUTHOR_WIN"
     status="$?"
     if [[ status -ne 0 ]]; then
-	echo "$0: ERROR: sort $TMP_AUTHOR_WIN -o $TMP_AUTHOR_WIN," \
+	echo "$0: ERROR: sort $TMP_AUTHOR_WIN -o $TMP_AUTHOR_WIN failed," \
 	     "error code: $status" 1>&2
 	exit 8
     elif [[ $V_FLAG -ge 3 ]]; then
@@ -929,7 +938,7 @@ if [[ -z $NOOP ]]; then
     sort -t, -k1d,1 -k2d,2 "$TMP_AUTHOR_WINS_CSV" -o "$TMP_AUTHOR_WINS_CSV"
     status="$?"
     if [[ status -ne 0 ]]; then
-	echo "$0: ERROR: sort -t, -k1d,1 -k2d,2 $TMP_AUTHOR_WINS_CSV -o $TMP_AUTHOR_WINS_CSV," \
+	echo "$0: ERROR: sort -t, -k1d,1 -k2d,2 $TMP_AUTHOR_WINS_CSV -o $TMP_AUTHOR_WINS_CSV failed," \
 	     "error code: $status" 1>&2
 	EXIT_CODE=8 # exit 8
     elif [[ $V_FLAG -ge 3 ]]; then
@@ -994,7 +1003,7 @@ if [[ -z $NOOP ]]; then
     sort -t, -k1,1 -k2d,2 -k4g,4 -k3d,3 -k5d,8 "$TMP_MANIFEST_CSV" -o "$TMP_MANIFEST_CSV"
     status="$?"
     if [[ status -ne 0 ]]; then
-	echo "$0: ERROR: sort -t, -k1,1 -k2d,2 -k4n,4 -k3d,3 -k5d,8 $TMP_MANIFEST_CSV -o $TMP_MANIFEST_CSV," \
+	echo "$0: ERROR: sort -t, -k1,1 -k2d,2 -k4n,4 -k3d,3 -k5d,8 $TMP_MANIFEST_CSV -o $TMP_MANIFEST_CSV failed," \
 	     "error code: $status" 1>&2
 	EXIT_CODE=8 # exit 8
     elif [[ $V_FLAG -ge 3 ]]; then
@@ -1059,7 +1068,7 @@ if [[ -z $NOOP ]]; then
     sort -t, -k1d,1 -k2d,2 "$TMP_YEAR_PRIZE_CSV" -o "$TMP_YEAR_PRIZE_CSV"
     status="$?"
     if [[ status -ne 0 ]]; then
-	echo "$0: ERROR: sort -t, -k1d,1 -k2d,2 $TMP_YEAR_PRIZE_CSV -o $TMP_YEAR_PRIZE_CSV," \
+	echo "$0: ERROR: sort -t, -k1d,1 -k2d,2 $TMP_YEAR_PRIZE_CSV -o $TMP_YEAR_PRIZE_CSV failed," \
 	     "error code: $status" 1>&2
 	EXIT_CODE=8 # exit 8
     elif [[ $V_FLAG -ge 3 ]]; then

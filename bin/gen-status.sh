@@ -84,7 +84,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.5.3 2024-06-21"
+export VERSION="1.5.4 2024-07-18"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -1114,7 +1114,7 @@ if [[ -z $NOOP ]]; then
         "$RULES_MD" >> "$TMP_RULES_MD"
     status="$?"
     if [[ $status -ne 0 ]]; then
-	echo "$0: ERROR: failed to sed -e '1,/<!--- ... -->/d' $RULES_MD >> $TMP_RULES_MD," \
+	echo "$0: ERROR: failed to sed -e '1,/<!--- ... -->/d' $RULES_MD >> $TMP_RULES_MD failed," \
 	     "error code: $status" 1>&2
 	exit 26
     fi
@@ -1198,7 +1198,7 @@ if [[ -z $NOOP ]]; then
         "$GUIDELINES_MD" >> "$TMP_GUIDELINES_MD"
     status="$?"
     if [[ $status -ne 0 ]]; then
-	echo "$0: ERROR: failed to sed -e '1,/<!--- ... -->/d' $GUIDELINES_MD >> $TMP_GUIDELINES_MD," \
+	echo "$0: ERROR: failed to sed -e '1,/<!--- ... -->/d' $GUIDELINES_MD >> $TMP_GUIDELINES_MD failed," \
 	     "error code: $status" 1>&2
 	exit 30
     fi

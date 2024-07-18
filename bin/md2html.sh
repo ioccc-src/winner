@@ -141,7 +141,7 @@ shopt -s lastpipe	# run last command of a pipeline not executed in the backgroun
 
 # set variables referenced in the usage message
 #
-export VERSION="1.5.1 2024-04-28"
+export VERSION="1.5.2 2024-07-18"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -978,7 +978,7 @@ function append_html_phase
 	sed -f "$SED_SCRIPT" "$PHASE_FILE" > "$TMP_PHASE_FILE"
 	status="$?"
 	if [[ $status -ne 0 ]]; then
-	    echo "$0: ERROR: sed error on HTML phase $PHASE_NUMBER ($NAME_OF_PHASE) file: $PHASE_FILE," \
+	    echo "$0: ERROR: sed error on HTML phase $PHASE_NUMBER ($NAME_OF_PHASE) file: $PHASE_FILE failed," \
 		 "error code: $status" 1>&2
 	    return $(( STARTING_EXIT_CODE+1 ))
 	fi
@@ -1022,7 +1022,7 @@ function append_html_phase
 	cat "$TMP_PHASE_FILE" >> "$TMP_APPEND"
 	status="$?"
 	if [[ $status -ne 0 ]]; then
-	    echo "$0: ERROR: cat $TMP_PHASE_FILE >> $TMP_APPEND for HTML phase $PHASE_NUMBER ($NAME_OF_PHASE)," \
+	    echo "$0: ERROR: cat $TMP_PHASE_FILE >> $TMP_APPEND for HTML phase $PHASE_NUMBER ($NAME_OF_PHASE) failed," \
 		 "error code: $status" 1>&2
 	    return $(( STARTING_EXIT_CODE+3 ))
 	fi
@@ -1798,7 +1798,7 @@ append_html_phase "$CUR_PHASE_NUM" "$CUR_PHASE_NAME" "$BASE_EXIT_CODE" "$TMP_SED
 status="$?"
 if [[ $status -ne 0 ]]; then
     echo "$0: ERROR: append_html_phase" \
-	 "$CUR_PHASE_NUM $CUR_PHASE_NAME $BASE_EXIT_CODE $TMP_SED_SCRIPT $TMP_PHASE $TMP_INDEX_HTML," \
+	 "$CUR_PHASE_NUM $CUR_PHASE_NAME $BASE_EXIT_CODE $TMP_SED_SCRIPT $TMP_PHASE $TMP_INDEX_HTML failed," \
 	 "error code: $status" 1>&2
     exit "$status"
 fi
@@ -1817,7 +1817,7 @@ append_html_phase "$CUR_PHASE_NUM" "$CUR_PHASE_NAME" "$BASE_EXIT_CODE" "$TMP_SED
 status="$?"
 if [[ $status -ne 0 ]]; then
     echo "$0: ERROR: append_html_phase" \
-         "$CUR_PHASE_NUM $CUR_PHASE_NAME $BASE_EXIT_CODE $TMP_SED_SCRIPT $TMP_PHASE $TMP_INDEX_HTML," \
+         "$CUR_PHASE_NUM $CUR_PHASE_NAME $BASE_EXIT_CODE $TMP_SED_SCRIPT $TMP_PHASE $TMP_INDEX_HTML failed," \
 	 "error code: $status" 1>&2
     exit "$status"
 fi
@@ -1867,7 +1867,7 @@ append_html_phase "$CUR_PHASE_NUM" "$CUR_PHASE_NAME" "$BASE_EXIT_CODE" "$TMP_SED
 status="$?"
 if [[ $status -ne 0 ]]; then
     echo "$0: ERROR: append_html_phase" \
-         "$CUR_PHASE_NUM $CUR_PHASE_NAME $BASE_EXIT_CODE $TMP_SED_SCRIPT $TMP_PHASE $TMP_INDEX_HTML," \
+         "$CUR_PHASE_NUM $CUR_PHASE_NAME $BASE_EXIT_CODE $TMP_SED_SCRIPT $TMP_PHASE $TMP_INDEX_HTML failed," \
 	 "error code: $status" 1>&2
     exit "$status"
 fi
@@ -1886,7 +1886,7 @@ append_html_phase "$CUR_PHASE_NUM" "$CUR_PHASE_NAME" "$BASE_EXIT_CODE" "$TMP_SED
 status="$?"
 if [[ $status -ne 0 ]]; then
     echo "$0: ERROR: append_html_phase" \
-         "$CUR_PHASE_NUM $CUR_PHASE_NAME $BASE_EXIT_CODE $TMP_SED_SCRIPT $TMP_PHASE $TMP_INDEX_HTML," \
+         "$CUR_PHASE_NUM $CUR_PHASE_NAME $BASE_EXIT_CODE $TMP_SED_SCRIPT $TMP_PHASE $TMP_INDEX_HTML failed," \
 	 "error code: $status" 1>&2
     exit "$status"
 fi
@@ -1905,7 +1905,7 @@ append_html_phase "$CUR_PHASE_NUM" "$CUR_PHASE_NAME" "$BASE_EXIT_CODE" "$TMP_SED
 status="$?"
 if [[ $status -ne 0 ]]; then
     echo "$0: ERROR: append_html_phase" \
-         "$CUR_PHASE_NUM $CUR_PHASE_NAME $BASE_EXIT_CODE $TMP_SED_SCRIPT $TMP_PHASE $TMP_INDEX_HTML," \
+         "$CUR_PHASE_NUM $CUR_PHASE_NAME $BASE_EXIT_CODE $TMP_SED_SCRIPT $TMP_PHASE $TMP_INDEX_HTML failed," \
 	 "error code: $status" 1>&2
     exit "$status"
 fi
@@ -1924,7 +1924,7 @@ append_html_phase "$CUR_PHASE_NUM" "$CUR_PHASE_NAME" "$BASE_EXIT_CODE" "$TMP_SED
 status="$?"
 if [[ $status -ne 0 ]]; then
     echo "$0: ERROR: append_html_phase" \
-         "$CUR_PHASE_NUM $CUR_PHASE_NAME $BASE_EXIT_CODE $TMP_SED_SCRIPT $TMP_PHASE $TMP_INDEX_HTML," \
+         "$CUR_PHASE_NUM $CUR_PHASE_NAME $BASE_EXIT_CODE $TMP_SED_SCRIPT $TMP_PHASE $TMP_INDEX_HTML failed," \
 	 "error code: $status" 1>&2
     exit "$status"
 fi
@@ -1943,7 +1943,7 @@ append_html_phase "$CUR_PHASE_NUM" "$CUR_PHASE_NAME" "$BASE_EXIT_CODE" "$TMP_SED
 status="$?"
 if [[ $status -ne 0 ]]; then
     echo "$0: ERROR: append_html_phase" \
-         "$CUR_PHASE_NUM $CUR_PHASE_NAME $BASE_EXIT_CODE $TMP_SED_SCRIPT $TMP_PHASE $TMP_INDEX_HTML," \
+         "$CUR_PHASE_NUM $CUR_PHASE_NAME $BASE_EXIT_CODE $TMP_SED_SCRIPT $TMP_PHASE $TMP_INDEX_HTML failed," \
 	 "error code: $status" 1>&2
     exit "$status"
 fi
@@ -2187,7 +2187,7 @@ append_html_phase "$CUR_PHASE_NUM" "$CUR_PHASE_NAME" "$BASE_EXIT_CODE" "$TMP_SED
 status="$?"
 if [[ $status -ne 0 ]]; then
     echo "$0: ERROR: append_html_phase" \
-         "$CUR_PHASE_NUM $CUR_PHASE_NAME $BASE_EXIT_CODE $TMP_SED_SCRIPT $TMP_PHASE $TMP_INDEX_HTML," \
+         "$CUR_PHASE_NUM $CUR_PHASE_NAME $BASE_EXIT_CODE $TMP_SED_SCRIPT $TMP_PHASE $TMP_INDEX_HTML failed," \
 	 "error code: $status" 1>&2
     exit "$status"
 fi
@@ -2206,7 +2206,7 @@ append_html_phase "$CUR_PHASE_NUM" "$CUR_PHASE_NAME" "$BASE_EXIT_CODE" "$TMP_SED
 status="$?"
 if [[ $status -ne 0 ]]; then
     echo "$0: ERROR: append_html_phase" \
-         "$CUR_PHASE_NUM $CUR_PHASE_NAME $BASE_EXIT_CODE $TMP_SED_SCRIPT $TMP_PHASE $TMP_INDEX_HTML," \
+         "$CUR_PHASE_NUM $CUR_PHASE_NAME $BASE_EXIT_CODE $TMP_SED_SCRIPT $TMP_PHASE $TMP_INDEX_HTML failed," \
 	 "error code: $status" 1>&2
     exit "$status"
 fi
@@ -2225,7 +2225,7 @@ append_html_phase "$CUR_PHASE_NUM" "$CUR_PHASE_NAME" "$BASE_EXIT_CODE" "$TMP_SED
 status="$?"
 if [[ $status -ne 0 ]]; then
     echo "$0: ERROR: append_html_phase" \
-         "$CUR_PHASE_NUM $CUR_PHASE_NAME $BASE_EXIT_CODE $TMP_SED_SCRIPT $TMP_PHASE $TMP_INDEX_HTML," \
+         "$CUR_PHASE_NUM $CUR_PHASE_NAME $BASE_EXIT_CODE $TMP_SED_SCRIPT $TMP_PHASE $TMP_INDEX_HTML failed," \
 	 "error code: $status" 1>&2
     exit "$status"
 fi
@@ -2238,17 +2238,17 @@ fi
 #
 if [[ -z $NOOP ]]; then
     if [[ ! -e $TMP_INDEX_HTML ]]; then
-	echo "$0: ERROR: after HTML phase $CUR_PHASE_NUM ($CUR_PHASE_NAME)," \
+	echo "$0: ERROR: after HTML phase $CUR_PHASE_NUM ($CUR_PHASE_NAME) failed," \
 	     "temporary index HTML file is missing: $TMP_INDEX_HTML" 1>&2
 	exit 135
     fi
     if [[ ! -f $TMP_INDEX_HTML ]]; then
-	echo "$0: ERROR: after HTML phase $CUR_PHASE_NUM ($CUR_PHASE_NAME)," \
+	echo "$0: ERROR: after HTML phase $CUR_PHASE_NUM ($CUR_PHASE_NAME) failed," \
 	     "temporary index HTML file is not a file: $TMP_INDEX_HTML" 1>&2
 	exit 136
     fi
     if [[ ! -r $TMP_INDEX_HTML ]]; then
-	echo "$0: ERROR: after HTML phase $CUR_PHASE_NUM ($CUR_PHASE_NAME)," \
+	echo "$0: ERROR: after HTML phase $CUR_PHASE_NUM ($CUR_PHASE_NAME) failed," \
 	     "temporary index HTML file is not a readable file: $TMP_INDEX_HTML" 1>&2
 	exit 137
     fi
