@@ -835,6 +835,7 @@
 1992/westley/try.sh
 1992/westley/westley.alt.c
 1992/westley/westley.alt.orig.c
+1992/westley/westley.alt2.c
 1992/westley/westley.c
 1992/westley/westley.orig.c
 1992/westley/whereami.alt.sh

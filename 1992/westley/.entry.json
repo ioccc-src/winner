@@ -34,6 +34,14 @@
 	    "entry_text" : "alternate source code"
 	},
 	{
+	    "file_path" : "westley.alt2.c",
+	    "inventory_order" : 45,
+	    "OK_to_edit" : true,
+	    "display_as" : "c",
+	    "display_via_github" : true,
+	    "entry_text" : "one line alternate code that documents itself at 80 columns"
+	},
+	{
 	    "file_path" : "westley.alt.orig.c",
 	    "inventory_order" : 50,
 	    "OK_to_edit" : true,
