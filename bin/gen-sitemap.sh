@@ -84,7 +84,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.3.9 2024-06-21"
+export VERSION="1.3.10 2024-07-18"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -160,11 +160,11 @@ function output_modtime
     #
     RHEL_stat)
 	TZ=UTC "$STAT_TOOL" -c '%y' "$FILENAME" | sed -e 's/ /T/' -e 's/\.[0-9]* //' -e 's/\([0-9][0-9]\)$/:&/'
-	status0="${PIPESTATUS[0]}"
-	status1="${PIPESTATUS[1]}"
-	if [[ $status0 -ne 0 || $status1 -ne 0 ]]; then
+	status_codes=("${PIPESTATUS[@]}")
+	if [[ ${status_codes[*]} =~ [1-9] ]]; then
 	    echo "$0: ERROR: in output_modtime:" \
-		 "TZ=UTC $STAT_TOOL -c '%y' $FILENAME | sed .. failed, error codes: $status0 and $status1" 1>&2
+		 "TZ=UTC $STAT_TOOL -c '%y' $FILENAME | sed .. failed," \
+		 "error codes: ${status_codes[*]}" 1>&2
 	    exit 1
 	fi
 	;;
@@ -175,12 +175,12 @@ function output_modtime
 	# SC2012 (info): Use find instead of ls to better handle non-alphanumeric filenames.
 	# https://www.shellcheck.net/wiki/SC2012
 	# shellcheck disable=SC2012
+	status_codes=("${PIPESTATUS[@]}")
+	if [[ ${status_codes[*]} =~ [1-9] ]]; then
 	TZ=UTZ "$LS_TOOL" -D '%FT%T+00:00' -ld "$FILENAME" | awk '{print $6;}'
-	status0="${PIPESTATUS[0]}"
-	status1="${PIPESTATUS[1]}"
-	if [[ $status0 -ne 0 || $status1 -ne 0 ]]; then
 	    echo "$0: ERROR: in output_modtime:" \
-		 "TZ=UTZ $LS_TOOL -D '%FT%T+00:00' -ld $FILENAME | awk .. failed, error codes: $status0 and $status1" 1>&2
+		 "TZ=UTZ $LS_TOOL -D '%FT%T+00:00' -ld $FILENAME | awk .. failed," \
+		 "error codes: ${status_codes[*]}" 1>&2
 	    exit 1
 	fi
 	;;
