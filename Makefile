@@ -66,6 +66,9 @@ GEN_STATUS= bin/gen-status.sh
 GEN_SITEMAP= bin/gen-sitemap.sh
 SORT_GITIGNORE= bin/sort.gitignore.sh
 FIND_MISSING_LINKS= bin/find-missing-links.sh
+CSV2ENTRY= bin/csv2entry.sh
+ENTRY2CSV= bin/entry2csv.sh
+
 
 
 #############
@@ -242,10 +245,9 @@ indent.c:
 
 .PHONY: help genpath genfilelist verify_entry_files gen_authors gen_location gen_years \
 	find_missing_links test entry_index gen_top_html thanks gen_other_html quick_entry_index \
-	gen_year_index quick_www www \
-	untar_entry_tarball untar_year_tarball \
-	form_entry_tarball form_year_tarball tar \
-	gen_status gen_sitemap sitemap timestamp update
+	gen_year_index quick_www www untar_entry_tarball untar_year_tarball \
+	form_entry_tarball form_year_tarball tar gen_status gen_sitemap \
+	sitemap timestamp update csv2entry entry2csv
 
 # Suggest rules in this section
 #
@@ -469,6 +471,21 @@ find_missing_links:
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
 	${FIND_MISSING_LINKS} -v 1
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+
+# csv2entry.sh
+#
+csv2entry:
+	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	${CVS2ENTRY} -v 1
+	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+
+# entry2csv.sh
+#
+entry2csv:
+	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	${ENTRY2CSV} -v 1
+	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+
 
 # mostly harmless tests
 #
