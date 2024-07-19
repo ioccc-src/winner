@@ -134,6 +134,109 @@ the top level `Makefile` by:
 ```
 
 
+<div id="csv2entry">
+### [csv2entry.sh](%%REPO_URL%%/bin/csv2entry.sh)
+</div>
+
+Convert CSV files into `.entry.json` for all entries.
+
+This tool takes as input, the following CSV files:
+
+- [author_wins.csv](#author_wins_csv) - author_handle followed by all their entry_ids
+- [manifest.csv](#manifest_csv) - information about files under a entry
+- [year_prize.csv](#year_prize_csv) - entry_id followed by the entry's award
+
+This tool updates `.entry.json` files for all entries.
+Only those `.entry.json` files whose content is modified are written.
+
+For example:
+
+``` <!---sh-->
+    bin/csv2entry.sh -v 1
+```
+
+There is no requirement to sort the CSV files, nor convert
+them to UNIX format, nor append a final newline to the file.
+
+This tool will canonicalize CSV files before using them
+as input.  Thus, if one wishes to import the CSV file into
+some spreadsheet such as the [macOS](https://www.apple.com/macos)
+[Numbers](https://www.apple.com/numbers/) spreadsheet,
+modifies the content and final exports back to the CSV file,
+this tool will modify the CSV file (if needed) in order
+to restore the CSV order and other canonicalizing processes.
+
+This tool will flag as an error, any empty fields, fields that are
+an un-quoted _NULL_ or _null_, fields that start with whitespace,
+fields that ends with whitespace, or fields that contain consecutive
+whitespace characters.
+
+
+#### Internal details of `bin/csv2entry.sh`
+
+We first canonicalize the CSV files by replacing any "carriage
+return line feeds" with "newlines.  We also make sure that the CSV
+file ends in a newline.  We do this because some spreadsheet
+applications, when exporting to a CSV file, do not do this.
+
+We also sort the CSV files in the same way that `bin/entry2csv.sh`
+sorts its CSV output files.  We do this in case the
+CSV files were imported into a spreadsheet where their order
+was changed before exporting.  This means one is free
+to order the CSV file content as you wish as this
+tool will reset these CSV file.
+
+Next this tool processes the non-CSV comment lines in manifest.csv.
+The 1st and 2nd fields of [manifest.csv](#manifest_csv) prefer to entry YYYY and
+entry sub-directory (i.e., the YYYY/dir directory under the
+root of the git repository).  From that list of YYYY/dir
+IOCCC entry directories, we will create the `.entry.json` files.
+We only modify those `.entry.json` files when their content changes.
+
+**NOTE**:
+
+While this tool uses `jparse(1)` to verify that the modified
+`.entry.json` contains valid JSON content, this tool does NOT
+perform any semantic checks.  For example, this tool does NOT
+verify that the manifest in the `.entry.json` file matches the
+files in the YYYY/dir directory, or even that the `.entry.json`
+contains a manifest (or any of the other required JSON content).
+
+
+<div id="entry2csv2">
+### [entry2csv.sh](%%REPO_URL%%/bin/entry2csv.sh)
+</div>
+
+This tool takes as input, all entry `.entry.json` files
+and updates 3 CSV files:
+
+- [author_wins.csv](#author_wins_csv) - author_handle followed by all their entry_ids
+- [manifest.csv](#manifest_csv) - information about files under a entry
+- [year_prize.csv](#year_prize_csv) - entry_id followed by the entry's award
+
+The CSV files are written in a canonical UNIX format form.
+
+Only those CSV files files whose content is modified are written.
+
+#### Internal details of `bin/entry2csv.sh`
+
+We generate CSV files from the `.entry.json` files from winning
+IOCCC entries listed under years listed in the `.top` file,
+and in sub-directories listed in the `YYYY/.year` file for the
+given year.  Only those entries so listed are processed.
+
+All IOCCC entry directories must have a `.path` file that lists
+the path of the entry's directory from the TOPDIR.
+
+**NOTE**:
+
+When adding a new IOCCC years entries, the `.top` file MUST
+be updated, and the new IOCCC year `YYYY/.year` files MUST
+reference the directory of the new IOCCC entries.  They
+must also contain a `.path` file that contains the path
+of the IOCCC entry directory from the TOPDIR.
+
+
 <div id="filelist-entry-json-awk">
 ### [filelist.entry.json.awk](%%REPO_URL%%/bin/filelist.entry.json.awk)
 </div>
@@ -1303,6 +1406,113 @@ A string that identifies the winning entry.  The string is of the form:
 ```
     year_dir
 ```
+
+
+<div id="csv">
+# CSV files
+</div>
+
+The `bin/csv2entry.sh` and `bin/entry2csv.sh` tools use the following
+3 CSV files.  In the case of `bin/entry2csv.sh`, these 3 CSV files
+are created / updated.  In the case of `bin/csv2entry.sh`, these 3
+CSV files are used as input.
+
+
+<div id="author_wins_csv">
+## author_wins.csv
+</div>
+
+A CSV spreadsheet: one line per `author`.
+
+The first field is an `author_handle`.
+
+The other fields are the `entry_id`'s of all _YYYY/dir_ entry's won by the `author`.
+
+
+<div id="manifest_csv">
+## manifest.csv
+</div>
+
+A CSV spreadsheet contains information about files in _YYYY/dir_ entry directories under year directories.
+This file has the following fields:
+
+1. year:
+
+   IOCCC year as a 4-character string.  Normally this would be a 4 digit year string,
+   however it may also be a string such as "mock".
+
+   NOTE: If year begins with "#", then dir is a comment, and the
+   rest of the row is to be ignored.  Rows of this form do NOT
+   contain manifest information for a file.
+
+2. dir:
+
+   Directory name number the IOCCC year.
+
+3. path:
+
+   Path under the IOCCC/directory.  In a few cases this is a path,
+   not just a simple filename under the IOCCC/directory.
+
+4. inventory_order:
+
+   This number is the rank showing the order
+   that this file is to be listed for the given entry's in
+   the winning entry's `index.html` file.
+
+   If the number is 9 digits or less, then the given file
+   is considered a primary file when listed in the inventory
+   of files for a given winning _YYYY/dir_ entry.
+
+   If the number is 10 digits or more, then the given file
+   is considered a secondary file when listed in the inventory
+   of files for a given winning _YYYY/dir_ entry  We recommend using the
+   value **4294967295** (2^32-1) for secondary files.
+
+5. OK_to_edit:
+
+   If the value is `true`, then the file is one that may be
+   edited directly.
+
+   If the value is `false`, then the file should **NOT** be
+   edited, because the given file is generated by a tool.
+   One should **NOT** modify such a file directly, but
+   instead modify source files (i.e., markdown files,
+   JSON files, etc.)
+
+6. display_as:
+
+   The type of given file.
+
+7. display_via_github
+
+   If `true`, then the contents of the file should be viewed
+   via the GitHub repo.
+
+   If `false`, then the contents of the file should be viewed
+   in the web browser directly.  In some cases this may
+   result in the file being downloaded instead of being displayed.
+
+8. entry_text:
+
+    Any text that should be displayed at the end of line in `index.html`
+    (with a preceding " - "), or null is no such text is to be displayed.
+
+
+NOTE: Cells containing true or false are JSON booleans.
+NOTE: All other cells are JSON strings that need to be double quoted, including the year.
+NOTE: Do not put commas, nor quotes, nor newlines in fields as these are bound to cause problems.
+
+
+<div id="year_prize_csv">
+## year_prize.csv
+</div>
+
+A CSV spreadsheet: one line per _YYYY/dir_ entry directory.
+
+The first field is a `entry_id`.
+
+The second field is the name of the award for given _YYYY/dir_ entry.
 
 
 <!--

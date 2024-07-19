@@ -2,6 +2,19 @@
 #
 # entry2csv.sh - convert .entry.json data into CSV files
 #
+# This tool takes as input, all entry `.entry.json` files
+# and updates 3 CSV files:
+#
+# author_wins.csv - author_handle followed by all their entry_ids
+# manifest.csv - information about files under a entry
+# year_prize.csv - entry_id followed by the entry's award
+#
+# The CSV files are written in a canonical UNIX format form.
+#
+# Only those CSV files files whose content is modified are written.
+#
+# Internal details of entry2csv.sh
+#
 # We generate CSV files from the `.entry.json` files from winning
 # IOCCC entries listed under years listed in the `.top` file,
 # and in sub-directories listed in the `YYYY/.year` file for the
@@ -10,11 +23,13 @@
 # All IOCCC entry directories must have a `.path` file that lists
 # the path of the entry's directory from the TOPDIR.
 #
-# NOTE: When adding a new IOCCC years entries, the `.top` file MUST
-#	be updated, and the new IOCCC year `YYYY/.year` files MUST
-#	reference the directory of the new IOCCC entries.  They
-#	must also contain a `.path` file that contains the path
-#	of the IOCCC entry directory from the TOPDIR.
+# NOTE:
+#
+# When adding a new IOCCC years entries, the `.top` file MUST
+# be updated, and the new IOCCC year `YYYY/.year` files MUST
+# reference the directory of the new IOCCC entries.  They
+# must also contain a `.path` file that contains the path
+# of the IOCCC entry directory from the TOPDIR.
 #
 # NOTE: All IOCCC entries MUST have a valid `.entry.json` file.
 #
@@ -41,6 +56,7 @@
 # chongo (Landon Curt Noll, http://www.isthe.com/chongo/index.html) /\oo/\
 #
 # Share and enjoy! :-)
+
 
 # firewall - run only with a bash that is version 5.1.8 or later
 #
@@ -100,7 +116,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.0.2 2024-07-14"
+export VERSION="1.0.3 2024-07-19"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -998,12 +1014,12 @@ fi
 if [[ -z $NOOP ]]; then
 
     if [[ $V_FLAG -ge 5 ]]; then
-	echo "$0: debug[5]: about to: sort -t, -k1,1 -k2d,2 -k4n,4 -k3d,3 -k5d,8 $TMP_MANIFEST_CSV -o $TMP_MANIFEST_CSV" 1>&2
+	echo "$0: debug[5]: about to: sort -t, -k1,1 -k2d,2 -k4n,4 -k3,3 -k5d,8 $TMP_MANIFEST_CSV -o $TMP_MANIFEST_CSV" 1>&2
     fi
     sort -t, -k1,1 -k2d,2 -k4g,4 -k3d,3 -k5d,8 "$TMP_MANIFEST_CSV" -o "$TMP_MANIFEST_CSV"
     status="$?"
     if [[ status -ne 0 ]]; then
-	echo "$0: ERROR: sort -t, -k1,1 -k2d,2 -k4n,4 -k3d,3 -k5d,8 $TMP_MANIFEST_CSV -o $TMP_MANIFEST_CSV failed," \
+	echo "$0: ERROR: sort -t, -k1,1 -k2d,2 -k4n,4 -k3,3 -k5d,8 $TMP_MANIFEST_CSV -o $TMP_MANIFEST_CSV failed," \
 	     "error code: $status" 1>&2
 	EXIT_CODE=8 # exit 8
     elif [[ $V_FLAG -ge 3 ]]; then

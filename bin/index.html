@@ -459,6 +459,82 @@ need to do so.</p>
 <p>If you wish to run it on all entries, we recommend that this tool be invoked via
 the top level <code>Makefile</code> by:</p>
 <pre><code>    make verify_entry_files</code></pre>
+<div id="csv2entry">
+<h3 id="csv2entry.sh"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/csv2entry.sh">csv2entry.sh</a></h3>
+</div>
+<p>Convert CSV files into <code>.entry.json</code> for all entries.</p>
+<p>This tool takes as input, the following CSV files:</p>
+<ul>
+<li><a href="#author_wins_csv">author_wins.csv</a> - author_handle followed by all their entry_ids</li>
+<li><a href="#manifest_csv">manifest.csv</a> - information about files under a entry</li>
+<li><a href="#year_prize_csv">year_prize.csv</a> - entry_id followed by the entry’s award</li>
+</ul>
+<p>This tool updates <code>.entry.json</code> files for all entries.
+Only those <code>.entry.json</code> files whose content is modified are written.</p>
+<p>For example:</p>
+<pre><code>    bin/csv2entry.sh -v 1</code></pre>
+<p>There is no requirement to sort the CSV files, nor convert
+them to UNIX format, nor append a final newline to the file.</p>
+<p>This tool will canonicalize CSV files before using them
+as input. Thus, if one wishes to import the CSV file into
+some spreadsheet such as the <a href="https://www.apple.com/macos">macOS</a>
+<a href="https://www.apple.com/numbers/">Numbers</a> spreadsheet,
+modifies the content and final exports back to the CSV file,
+this tool will modify the CSV file (if needed) in order
+to restore the CSV order and other canonicalizing processes.</p>
+<p>This tool will flag as an error, any empty fields, fields that are
+an un-quoted <em>NULL</em> or <em>null</em>, fields that start with whitespace,
+fields that ends with whitespace, or fields that contain consecutive
+whitespace characters.</p>
+<h4 id="internal-details-of-bincsv2entry.sh">Internal details of <code>bin/csv2entry.sh</code></h4>
+<p>We first canonicalize the CSV files by replacing any “carriage
+return line feeds” with “newlines. We also make sure that the CSV
+file ends in a newline. We do this because some spreadsheet
+applications, when exporting to a CSV file, do not do this.</p>
+<p>We also sort the CSV files in the same way that <code>bin/entry2csv.sh</code>
+sorts its CSV output files. We do this in case the
+CSV files were imported into a spreadsheet where their order
+was changed before exporting. This means one is free
+to order the CSV file content as you wish as this
+tool will reset these CSV file.</p>
+<p>Next this tool processes the non-CSV comment lines in manifest.csv.
+The 1st and 2nd fields of <a href="#manifest_csv">manifest.csv</a> prefer to entry YYYY and
+entry sub-directory (i.e., the YYYY/dir directory under the
+root of the git repository). From that list of YYYY/dir
+IOCCC entry directories, we will create the <code>.entry.json</code> files.
+We only modify those <code>.entry.json</code> files when their content changes.</p>
+<p><strong>NOTE</strong>:</p>
+<p>While this tool uses <code>jparse(1)</code> to verify that the modified
+<code>.entry.json</code> contains valid JSON content, this tool does NOT
+perform any semantic checks. For example, this tool does NOT
+verify that the manifest in the <code>.entry.json</code> file matches the
+files in the YYYY/dir directory, or even that the <code>.entry.json</code>
+contains a manifest (or any of the other required JSON content).</p>
+<div id="entry2csv2">
+<h3 id="entry2csv.sh"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/entry2csv.sh">entry2csv.sh</a></h3>
+</div>
+<p>This tool takes as input, all entry <code>.entry.json</code> files
+and updates 3 CSV files:</p>
+<ul>
+<li><a href="#author_wins_csv">author_wins.csv</a> - author_handle followed by all their entry_ids</li>
+<li><a href="#manifest_csv">manifest.csv</a> - information about files under a entry</li>
+<li><a href="#year_prize_csv">year_prize.csv</a> - entry_id followed by the entry’s award</li>
+</ul>
+<p>The CSV files are written in a canonical UNIX format form.</p>
+<p>Only those CSV files files whose content is modified are written.</p>
+<h4 id="internal-details-of-binentry2csv.sh">Internal details of <code>bin/entry2csv.sh</code></h4>
+<p>We generate CSV files from the <code>.entry.json</code> files from winning
+IOCCC entries listed under years listed in the <code>.top</code> file,
+and in sub-directories listed in the <code>YYYY/.year</code> file for the
+given year. Only those entries so listed are processed.</p>
+<p>All IOCCC entry directories must have a <code>.path</code> file that lists
+the path of the entry’s directory from the TOPDIR.</p>
+<p><strong>NOTE</strong>:</p>
+<p>When adding a new IOCCC years entries, the <code>.top</code> file MUST
+be updated, and the new IOCCC year <code>YYYY/.year</code> files MUST
+reference the directory of the new IOCCC entries. They
+must also contain a <code>.path</code> file that contains the path
+of the IOCCC entry directory from the TOPDIR.</p>
 <div id="filelist-entry-json-awk">
 <h3 id="filelist.entry.json.awk"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/filelist.entry.json.awk">filelist.entry.json.awk</a></h3>
 </div>
@@ -1110,6 +1186,76 @@ is directly under a <code>year</code> directory.</p>
 </div>
 <p>A string that identifies the winning entry. The string is of the form:</p>
 <pre><code>    year_dir</code></pre>
+<div id="csv">
+<h1 id="csv-files">CSV files</h1>
+</div>
+<p>The <code>bin/csv2entry.sh</code> and <code>bin/entry2csv.sh</code> tools use the following
+3 CSV files. In the case of <code>bin/entry2csv.sh</code>, these 3 CSV files
+are created / updated. In the case of <code>bin/csv2entry.sh</code>, these 3
+CSV files are used as input.</p>
+<div id="author_wins_csv">
+<h2 id="author_wins.csv">author_wins.csv</h2>
+</div>
+<p>A CSV spreadsheet: one line per <code>author</code>.</p>
+<p>The first field is an <code>author_handle</code>.</p>
+<p>The other fields are the <code>entry_id</code>’s of all <em>YYYY/dir</em> entry’s won by the <code>author</code>.</p>
+<div id="manifest_csv">
+<h2 id="manifest.csv">manifest.csv</h2>
+</div>
+<p>A CSV spreadsheet contains information about files in <em>YYYY/dir</em> entry directories under year directories.
+This file has the following fields:</p>
+<ol type="1">
+<li><p>year:</p>
+<p>IOCCC year as a 4-character string. Normally this would be a 4 digit year string,
+however it may also be a string such as “mock”.</p>
+<p>NOTE: If year begins with “#”, then dir is a comment, and the
+rest of the row is to be ignored. Rows of this form do NOT
+contain manifest information for a file.</p></li>
+<li><p>dir:</p>
+<p>Directory name number the IOCCC year.</p></li>
+<li><p>path:</p>
+<p>Path under the IOCCC/directory. In a few cases this is a path,
+not just a simple filename under the IOCCC/directory.</p></li>
+<li><p>inventory_order:</p>
+<p>This number is the rank showing the order
+that this file is to be listed for the given entry’s in
+the winning entry’s <code>index.html</code> file.</p>
+<p>If the number is 9 digits or less, then the given file
+is considered a primary file when listed in the inventory
+of files for a given winning <em>YYYY/dir</em> entry.</p>
+<p>If the number is 10 digits or more, then the given file
+is considered a secondary file when listed in the inventory
+of files for a given winning <em>YYYY/dir</em> entry We recommend using the
+value <strong>4294967295</strong> (2^32-1) for secondary files.</p></li>
+<li><p>OK_to_edit:</p>
+<p>If the value is <code>true</code>, then the file is one that may be
+edited directly.</p>
+<p>If the value is <code>false</code>, then the file should <strong>NOT</strong> be
+edited, because the given file is generated by a tool.
+One should <strong>NOT</strong> modify such a file directly, but
+instead modify source files (i.e., markdown files,
+JSON files, etc.)</p></li>
+<li><p>display_as:</p>
+<p>The type of given file.</p></li>
+<li><p>display_via_github</p>
+<p>If <code>true</code>, then the contents of the file should be viewed
+via the GitHub repo.</p>
+<p>If <code>false</code>, then the contents of the file should be viewed
+in the web browser directly. In some cases this may
+result in the file being downloaded instead of being displayed.</p></li>
+<li><p>entry_text:</p>
+<p>Any text that should be displayed at the end of line in <code>index.html</code>
+(with a preceding ” - “), or null is no such text is to be displayed.</p></li>
+</ol>
+<p>NOTE: Cells containing true or false are JSON booleans.
+NOTE: All other cells are JSON strings that need to be double quoted, including the year.
+NOTE: Do not put commas, nor quotes, nor newlines in fields as these are bound to cause problems.</p>
+<div id="year_prize_csv">
+<h2 id="year_prize.csv">year_prize.csv</h2>
+</div>
+<p>A CSV spreadsheet: one line per <em>YYYY/dir</em> entry directory.</p>
+<p>The first field is a <code>entry_id</code>.</p>
+<p>The second field is the name of the award for given <em>YYYY/dir</em> entry.</p>
 <!--
 
     Copyright © 1984-2024 by Landon Curt Noll. All Rights Reserved.
