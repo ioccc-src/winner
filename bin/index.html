@@ -465,9 +465,11 @@ the top level <code>Makefile</code> by:</p>
 <p>Convert CSV files into <code>.entry.json</code> for all entries.</p>
 <p>This tool takes as input, the following CSV files:</p>
 <ul>
-<li><a href="#author_wins_csv">author_wins.csv</a> - author_handle followed by all their entry_ids</li>
-<li><a href="#manifest_csv">manifest.csv</a> - information about files under a entry</li>
-<li><a href="#year_prize_csv">year_prize.csv</a> - entry_id followed by the entry’s award</li>
+<li><a href="#author_wins_csv">author_wins.csv</a> - <code>author_handle</code> followed by all their
+<code>entry_id</code>s</li>
+<li><a href="#manifest_csv">manifest.csv</a> - information about files under an entry</li>
+<li><a href="#year_prize_csv">year_prize.csv</a> - <code>entry_id</code> followed by the entry’s award
+title</li>
 </ul>
 <p>This tool updates <code>.entry.json</code> files for all entries.
 Only those <code>.entry.json</code> files whose content is modified are written.</p>
@@ -483,7 +485,7 @@ modifies the content and final exports back to the CSV file,
 this tool will modify the CSV file (if needed) in order
 to restore the CSV order and other canonicalizing processes.</p>
 <p>This tool will flag as an error, any empty fields, fields that are
-an un-quoted <em>NULL</em> or <em>null</em>, fields that start with whitespace,
+an unquoted <code>NULL</code> or <code>null</code>, fields that start with whitespace,
 fields that ends with whitespace, or fields that contain consecutive
 whitespace characters.</p>
 <h4 id="internal-details-of-bincsv2entry.sh">Internal details of <code>bin/csv2entry.sh</code></h4>
@@ -491,50 +493,51 @@ whitespace characters.</p>
 return line feeds” with “newlines. We also make sure that the CSV
 file ends in a newline. We do this because some spreadsheet
 applications, when exporting to a CSV file, do not do this.</p>
-<p>We also sort the CSV files in the same way that <code>bin/entry2csv.sh</code>
-sorts its CSV output files. We do this in case the
-CSV files were imported into a spreadsheet where their order
-was changed before exporting. This means one is free
-to order the CSV file content as you wish as this
-tool will reset these CSV file.</p>
-<p>Next this tool processes the non-CSV comment lines in manifest.csv.
-The 1st and 2nd fields of <a href="#manifest_csv">manifest.csv</a> prefer to entry YYYY and
-entry sub-directory (i.e., the YYYY/dir directory under the
-root of the git repository). From that list of YYYY/dir
-IOCCC entry directories, we will create the <code>.entry.json</code> files.
-We only modify those <code>.entry.json</code> files when their content changes.</p>
+<p>We also sort the CSV files in the same way that <a href="#entry2csv">entry2csv</a> sorts
+its CSV output files. We do this in case the CSV files were imported into a
+spreadsheet where their order was changed before exporting. This means one is
+free to order the CSV file content as you wish as this tool will reset these CSV
+file.</p>
+<p>Next this tool processes the non-CSV comment lines in
+<a href="#manifest_csv">manifest.csv</a>. The 1st and 2nd fields of
+<a href="#manifest_csv">manifest.csv</a> refer to entry YYYY and entry subdirectory (i.e.,
+the <code>YYYY/dir</code> directory under the root of the git repository). From that list of
+<code>YYYY/dir</code> IOCCC entry directories, we will create the <code>.entry.json</code> files. We
+only modify those <code>.entry.json</code> files when their content changes.</p>
 <p><strong>NOTE</strong>:</p>
 <p>While this tool uses <code>jparse(1)</code> to verify that the modified
-<code>.entry.json</code> contains valid JSON content, this tool does NOT
-perform any semantic checks. For example, this tool does NOT
+<code>.entry.json</code> contains valid JSON content, <strong>this tool does NOT
+perform any semantic checks</strong>. For example, this tool does NOT
 verify that the manifest in the <code>.entry.json</code> file matches the
-files in the YYYY/dir directory, or even that the <code>.entry.json</code>
+files in the <code>YYYY/dir directory</code>, or even that the <code>.entry.json</code>
 contains a manifest (or any of the other required JSON content).</p>
-<div id="entry2csv2">
+<div id="entry2csv">
 <h3 id="entry2csv.sh"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/entry2csv.sh">entry2csv.sh</a></h3>
 </div>
 <p>This tool takes as input, all entry <code>.entry.json</code> files
 and updates 3 CSV files:</p>
 <ul>
-<li><a href="#author_wins_csv">author_wins.csv</a> - author_handle followed by all their entry_ids</li>
+<li><a href="#author_wins_csv">author_wins.csv</a> - <code>author_handle</code> followed by all their
+<code>entry_id</code>s</li>
 <li><a href="#manifest_csv">manifest.csv</a> - information about files under a entry</li>
-<li><a href="#year_prize_csv">year_prize.csv</a> - entry_id followed by the entry’s award</li>
+<li><a href="#year_prize_csv">year_prize.csv</a> - <code>entry_id</code> followed by the entry’s award
+title</li>
 </ul>
 <p>The CSV files are written in a canonical UNIX format form.</p>
 <p>Only those CSV files files whose content is modified are written.</p>
 <h4 id="internal-details-of-binentry2csv.sh">Internal details of <code>bin/entry2csv.sh</code></h4>
 <p>We generate CSV files from the <code>.entry.json</code> files from winning
 IOCCC entries listed under years listed in the <code>.top</code> file,
-and in sub-directories listed in the <code>YYYY/.year</code> file for the
+and in subdirectories listed in the <code>YYYY/.year</code> file for the
 given year. Only those entries so listed are processed.</p>
 <p>All IOCCC entry directories must have a <code>.path</code> file that lists
-the path of the entry’s directory from the TOPDIR.</p>
+the path of the entry’s directory from the <code>TOPDIR</code>.</p>
 <p><strong>NOTE</strong>:</p>
-<p>When adding a new IOCCC years entries, the <code>.top</code> file MUST
-be updated, and the new IOCCC year <code>YYYY/.year</code> files MUST
+<p>When adding new IOCCC years’ entries, the <code>.top</code> file <strong>MUST</strong>
+be updated, and the new IOCCC year <code>YYYY/.year</code> files <strong>MUST</strong>
 reference the directory of the new IOCCC entries. They
 must also contain a <code>.path</code> file that contains the path
-of the IOCCC entry directory from the TOPDIR.</p>
+of the IOCCC entry directory from the <code>TOPDIR</code>.</p>
 <div id="filelist-entry-json-awk">
 <h3 id="filelist.entry.json.awk"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/filelist.entry.json.awk">filelist.entry.json.awk</a></h3>
 </div>
