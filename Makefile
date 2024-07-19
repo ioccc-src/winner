@@ -478,7 +478,7 @@ find_missing_links:
 #
 csv2entry:
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
-	${CVS2ENTRY} -v 1
+	${CSV2ENTRY} -v 1
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 # convert .entry.json files to author_wins.csv, manifest.csv and year_prize.csv

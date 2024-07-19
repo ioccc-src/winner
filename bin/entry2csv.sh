@@ -116,7 +116,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.0.3 2024-07-19"
+export VERSION="1.0.4 2024-07-19"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -142,6 +142,7 @@ export JPARSE_TOOL
 export AUTHOR_WINS_CSV="author_wins.csv"
 export MANIFEST_CSV="manifest.csv"
 export YEAR_PRIZE_CSV="year_prize.csv"
+export AUTHOR_DIR="author"
 
 
 # output_award
@@ -282,6 +283,7 @@ Exit codes:
      6	       problems found with or in the topdir or topdir/YYYY directory
      7	       problems found with or in the entry topdir/YYYY/dir directory
      8         unable to write a CSV or temporary file
+     9	       unknown author_handle found
  >= 10         internal error
 
 $NAME version: $VERSION"
@@ -505,6 +507,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: AUTHOR_WINS_CSV_DIR=$AUTHOR_WINS_CSV_DIR" 1>&2
     echo "$0: debug[3]: MANIFEST_WINS_CSV_DIR=$MANIFEST_WINS_CSV_DIR" 1>&2
     echo "$0: debug[3]: YEAR_PRIZE_CSV_DIR=$YEAR_PRIZE_CSV_DIR" 1>&2
+    echo "$0: debug[3]: AUTHOR_DIR=$AUTHOR_DIR" 1>&2
     echo "$0: debug[3]: CD_FAILED=$CD_FAILED" 1>&2
     echo "$0: debug[3]: TOP_FILE=$TOP_FILE" 1>&2
     echo "$0: debug[3]: BIN_PATH=$BIN_DIR" 1>&2
@@ -529,21 +532,17 @@ export TMP_AUTHOR_WINS_CSV=".tmp.$NAME.AUTHOR_WINS_CSV.$$.tmp"
 if [[ $V_FLAG -ge 3 ]]; then
     echo  "$0: debug[3]: temporary CSV author.csv file: $TMP_AUTHOR_WINS_CSV" 1>&2
 fi
-if [[ -z $NOOP ]]; then
-    trap 'rm -f $TMP_AUTHOR_WINS_CSV; exit' 0 1 2 3 15
-    rm -f "$TMP_AUTHOR_WINS_CSV"
-    if [[ -e $TMP_AUTHOR_WINS_CSV ]]; then
-	echo "$0: ERROR: cannot remove temporary CSV author.csv file: $TMP_AUTHOR_WINS_CSV" 1>&2
-	exit 10
-    fi
-    echo '# author_handle,entry_id,entry_id,entry_id,…,,,,,,,,,,,,,,,' > \
-      "$TMP_AUTHOR_WINS_CSV"
-    if [[ ! -e $TMP_AUTHOR_WINS_CSV ]]; then
-	echo "$0: ERROR: cannot create temporary CSV author.csv file: $TMP_AUTHOR_WINS_CSV" 1>&2
-	exit 13
-    fi
-elif [[ $V_FLAG -ge 3 ]]; then
-    echo "$0: debug[3]: because of -n, temporary CSV author.csv file is not used: $TMP_AUTHOR_WINS_CSV" 1>&2
+trap 'rm -f $TMP_AUTHOR_WINS_CSV; exit' 0 1 2 3 15
+rm -f "$TMP_AUTHOR_WINS_CSV"
+if [[ -e $TMP_AUTHOR_WINS_CSV ]]; then
+    echo "$0: ERROR: cannot remove temporary CSV author.csv file: $TMP_AUTHOR_WINS_CSV" 1>&2
+    exit 10
+fi
+echo '# author_handle,entry_id,entry_id,entry_id,…,,,,,,,,,,,,,,,' > \
+  "$TMP_AUTHOR_WINS_CSV"
+if [[ ! -e $TMP_AUTHOR_WINS_CSV ]]; then
+    echo "$0: ERROR: cannot create temporary CSV author.csv file: $TMP_AUTHOR_WINS_CSV" 1>&2
+    exit 13
 fi
 
 
@@ -553,21 +552,17 @@ export TMP_MANIFEST_CSV=".tmp.$NAME.MANIFEST_CSV.$$.tmp"
 if [[ $V_FLAG -ge 3 ]]; then
     echo  "$0: debug[3]: temporary CSV manifest.csv file: $TMP_MANIFEST_CSV" 1>&2
 fi
-if [[ -z $NOOP ]]; then
-    trap 'rm -f $TMP_AUTHOR_WINS_CSV $TMP_MANIFEST_CSV; exit' 0 1 2 3 15
-    rm -f "$TMP_MANIFEST_CSV"
-    if [[ -e $TMP_MANIFEST_CSV ]]; then
-	echo "$0: ERROR: cannot remove temporary CSV manifest.csv file: $TMP_MANIFEST_CSV" 1>&2
-	exit 12
-    fi
-    echo '# year,dir,file_path,inventory_order,OK_to_edit,display_as,display_via_github,entry_text' > \
-      "$TMP_MANIFEST_CSV"
-    if [[ ! -e $TMP_MANIFEST_CSV ]]; then
-	echo "$0: ERROR: cannot create temporary CSV manifest.csv file: $TMP_MANIFEST_CSV" 1>&2
-	exit 13
-    fi
-elif [[ $V_FLAG -ge 3 ]]; then
-    echo "$0: debug[3]: because of -n, temporary CSV file manifest.csv is not used: $TMP_MANIFEST_CSV" 1>&2
+trap 'rm -f $TMP_AUTHOR_WINS_CSV $TMP_MANIFEST_CSV; exit' 0 1 2 3 15
+rm -f "$TMP_MANIFEST_CSV"
+if [[ -e $TMP_MANIFEST_CSV ]]; then
+    echo "$0: ERROR: cannot remove temporary CSV manifest.csv file: $TMP_MANIFEST_CSV" 1>&2
+    exit 12
+fi
+echo '# year,dir,file_path,inventory_order,OK_to_edit,display_as,display_via_github,entry_text' > \
+  "$TMP_MANIFEST_CSV"
+if [[ ! -e $TMP_MANIFEST_CSV ]]; then
+    echo "$0: ERROR: cannot create temporary CSV manifest.csv file: $TMP_MANIFEST_CSV" 1>&2
+    exit 13
 fi
 
 
@@ -577,21 +572,17 @@ export TMP_YEAR_PRIZE_CSV=".tmp.$NAME.YEAR_PRIZE_CSV.$$.tmp"
 if [[ $V_FLAG -ge 3 ]]; then
     echo  "$0: debug[3]: temporary CSV year_prize.csv file: $TMP_YEAR_PRIZE_CSV" 1>&2
 fi
-if [[ -z $NOOP ]]; then
-    trap 'rm -f $TMP_AUTHOR_WINS_CSV $TMP_MANIFEST_CSV $TMP_YEAR_PRIZE_CSV; exit' 0 1 2 3 15
-    rm -f "$TMP_YEAR_PRIZE_CSV"
-    if [[ -e $TMP_YEAR_PRIZE_CSV ]]; then
-	echo "$0: ERROR: cannot remove temporary CSV year_prize.csv file: $TMP_YEAR_PRIZE_CSV" 1>&2
-	exit 12
-    fi
-    echo '# year_handle,award name' > \
-      "$TMP_YEAR_PRIZE_CSV"
-    if [[ ! -e $TMP_YEAR_PRIZE_CSV ]]; then
-	echo "$0: ERROR: cannot create temporary CSV year_prize.csv file: $TMP_YEAR_PRIZE_CSV" 1>&2
-	exit 13
-    fi
-elif [[ $V_FLAG -ge 3 ]]; then
-    echo "$0: debug[3]: because of -n, temporary CSV year_prize.csv file is not used: $TMP_YEAR_PRIZE_CSV" 1>&2
+trap 'rm -f $TMP_AUTHOR_WINS_CSV $TMP_MANIFEST_CSV $TMP_YEAR_PRIZE_CSV; exit' 0 1 2 3 15
+rm -f "$TMP_YEAR_PRIZE_CSV"
+if [[ -e $TMP_YEAR_PRIZE_CSV ]]; then
+    echo "$0: ERROR: cannot remove temporary CSV year_prize.csv file: $TMP_YEAR_PRIZE_CSV" 1>&2
+    exit 12
+fi
+echo '# year_handle,award name' > \
+  "$TMP_YEAR_PRIZE_CSV"
+if [[ ! -e $TMP_YEAR_PRIZE_CSV ]]; then
+    echo "$0: ERROR: cannot create temporary CSV year_prize.csv file: $TMP_YEAR_PRIZE_CSV" 1>&2
+    exit 13
 fi
 
 
@@ -601,20 +592,38 @@ export TMP_AUTHOR_WIN=".tmp.$NAME.AUTHOR_WIN.$$.tmp"
 if [[ $V_FLAG -ge 3 ]]; then
     echo  "$0: debug[3]: temporary CSV author_win file: $TMP_AUTHOR_WIN" 1>&2
 fi
-if [[ -z $NOOP ]]; then
-    trap 'rm -f $TMP_AUTHOR_WINS_CSV $TMP_MANIFEST_CSV $TMP_YEAR_PRIZE_CSV $TMP_AUTHOR_WIN; exit' 0 1 2 3 15
-    rm -f "$TMP_AUTHOR_WIN"
-    if [[ -e $TMP_AUTHOR_WIN ]]; then
-	echo "$0: ERROR: cannot remove temporary CSV author_win file: $TMP_AUTHOR_WIN" 1>&2
-	exit 14
-    fi
-    :> "$TMP_AUTHOR_WIN"
-    if [[ ! -e $TMP_AUTHOR_WIN ]]; then
-	echo "$0: ERROR: cannot create temporary CSV author_win file: $TMP_AUTHOR_WIN" 1>&2
-	exit 15
-    fi
-elif [[ $V_FLAG -ge 3 ]]; then
-    echo "$0: debug[3]: because of -n, temporary CSV author_win file is not used: $TMP_AUTHOR_WIN" 1>&2
+trap 'rm -f $TMP_AUTHOR_WINS_CSV $TMP_MANIFEST_CSV $TMP_YEAR_PRIZE_CSV $TMP_AUTHOR_WIN; exit' 0 1 2 3 15
+rm -f "$TMP_AUTHOR_WIN"
+if [[ -e $TMP_AUTHOR_WIN ]]; then
+    echo "$0: ERROR: cannot remove temporary CSV author_win file: $TMP_AUTHOR_WIN" 1>&2
+    exit 14
+fi
+:> "$TMP_AUTHOR_WIN"
+if [[ ! -e $TMP_AUTHOR_WIN ]]; then
+    echo "$0: ERROR: cannot create temporary CSV author_win file: $TMP_AUTHOR_WIN" 1>&2
+    exit 15
+fi
+
+
+# create a temporary exit code
+#
+# It is a pain to set the EXIT_CODE deep inside a loop, so we write the EXIT_CODE into a file
+# and read the file (setting EXIT_CODE again) after the loop.  A hack, but good enough for our needs.
+#
+export TMP_EXIT_CODE=".tmp.$NAME.EXIT_CODE.$$.tmp"
+if [[ $V_FLAG -ge 3 ]]; then
+    echo  "$0: debug[3]: temporary exit code: $TMP_EXIT_CODE" 1>&2
+fi
+trap 'rm -f $TMP_AUTHOR_WINS_CSV $TMP_MANIFEST_CSV $TMP_YEAR_PRIZE_CSV $TMP_AUTHOR_WIN $TMP_EXIT_CODE; exit' 0 1 2 3 15
+rm -f "$TMP_EXIT_CODE"
+if [[ -e $TMP_EXIT_CODE ]]; then
+    echo "$0: ERROR: cannot remove temporary exit code: $TMP_EXIT_CODE" 1>&2
+    exit 16
+fi
+echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
+if [[ ! -e $TMP_EXIT_CODE ]]; then
+    echo "$0: ERROR: cannot create temporary exit code: $TMP_EXIT_CODE" 1>&2
+    exit 17
 fi
 
 
@@ -635,18 +644,21 @@ for YYYY in $(< "$TOP_FILE"); do
 	echo  "$0: ERROR: YYYY does not exist: $YYYY" 1>&2
 	EXIT_CODE="6"  # exit 6
 	echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+	echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
 	continue
     fi
     if [[ ! -d $YYYY ]]; then
 	echo  "$0: ERROR: YYYY is not a directory: $YYYY" 1>&2
 	EXIT_CODE="6"  # exit 6
 	echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+	echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
 	continue
     fi
     if [[ ! -r $YYYY ]]; then
 	echo  "$0: ERROR: YYYY is not an readable directory: $YYYY" 1>&2
 	EXIT_CODE="6"  # exit 6
 	echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+	echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
 	continue
     fi
 
@@ -657,24 +669,28 @@ for YYYY in $(< "$TOP_FILE"); do
 	echo  "$0: ERROR: YYYY/.year does not exist: $YEAR_FILE" 1>&2
 	EXIT_CODE="6"  # exit 6
 	echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+	echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
 	continue
     fi
     if [[ ! -f $YEAR_FILE ]]; then
 	echo  "$0: ERROR: YYYY/.year is not a regular file: $YEAR_FILE" 1>&2
 	EXIT_CODE="6"  # exit 6
 	echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+	echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
 	continue
     fi
     if [[ ! -r $YEAR_FILE ]]; then
 	echo  "$0: ERROR: YYYY/.year is not an readable file: $YEAR_FILE" 1>&2
 	EXIT_CODE="6"  # exit 6
 	echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+	echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
 	continue
     fi
     if [[ ! -s $YEAR_FILE ]]; then
 	echo  "$0: ERROR: YYYY/.year is not a non-empty readable file: $YEAR_FILE" 1>&2
 	EXIT_CODE="6"  # exit 6
 	echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+	echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
 	continue
     fi
 
@@ -695,12 +711,14 @@ for YYYY in $(< "$TOP_FILE"); do
 	    echo "$0: ERROR: YYYY_DIR is not a directory: $YYYY_DIR" 1>&2
 	    EXIT_CODE="6"  # exit 6
 	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+	    echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
 	    continue
 	fi
 	if [[ ! -w $YYYY_DIR ]]; then
 	    echo "$0: ERROR: YYYY_DIR is not a writable directory: $YYYY_DIR" 1>&2
 	    EXIT_CODE="6"  # exit 6
 	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+	    echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
 	    continue
 	fi
 	export YEAR_DIR=${YYYY_DIR%%/*}
@@ -708,6 +726,7 @@ for YYYY in $(< "$TOP_FILE"); do
 	    echo "$0: ERROR: YYYY_DIR not in YYYY/dir form: $YYYY_DIR" 1>&2
 	    EXIT_CODE="6"  # exit 6
 	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+	    echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
 	    continue
 	fi
 	export ENTRY_DIR=${YYYY_DIR#*/}
@@ -715,12 +734,14 @@ for YYYY in $(< "$TOP_FILE"); do
 	    echo "$0: ERROR: YYYY_DIR not in $YEAR_DIR/dir form: $YYYY_DIR" 1>&2
 	    EXIT_CODE="6"  # exit 6
 	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+	    echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
 	    continue
 	fi
 	if [[ $ENTRY_DIR = */* ]]; then
 	    echo "$0: ERROR: YYYY_DIR: $YYYY_DIR dir contains a /: $ENTRY_DIR" 1>&2
 	    EXIT_CODE="6"  # exit 6
 	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+	    echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
 	    continue
 	fi
 	export ENTRY_ID="${YEAR_DIR}_${ENTRY_DIR}"
@@ -731,18 +752,21 @@ for YYYY in $(< "$TOP_FILE"); do
 	    echo  "$0: ERROR: YYYY_DIR does not exist: $YYYY_DIR" 1>&2
 	    EXIT_CODE="7"  # exit 7
 	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+	    echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
 	    continue
 	fi
 	if [[ ! -d $YYYY_DIR ]]; then
 	    echo  "$0: ERROR: YYYY_DIR is not a directory: $YYYY_DIR" 1>&2
 	    EXIT_CODE="7"  # exit 7
 	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+	    echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
 	    continue
 	fi
 	if [[ ! -w $YYYY_DIR ]]; then
 	    echo  "$0: ERROR: YYYY_DIR is not an writable directory: $YYYY_DIR" 1>&2
 	    EXIT_CODE="7"  # exit 7
 	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+	    echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
 	    continue
 	fi
 
@@ -753,6 +777,7 @@ for YYYY in $(< "$TOP_FILE"); do
 	    echo "$0: ERROR: not a non-empty file: $DOT_PATH" 1>&2
 	    EXIT_CODE="7"  # exit 7
 	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+	    echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
 	    continue
 	fi
 	DOT_PATH_CONTENT=$(< "$DOT_PATH")
@@ -760,6 +785,7 @@ for YYYY in $(< "$TOP_FILE"); do
 	    echo "$0: ERROR: arg: $YYYY_DIR does not match $DOT_PATH contents: $DOT_PATH_CONTENT" 1>&2
 	    EXIT_CODE="7"  # exit 7
 	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+	    echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
 	    continue
 	fi
 
@@ -776,24 +802,28 @@ for YYYY in $(< "$TOP_FILE"); do
 	    echo "$0: ERROR: .entry.json does not exist: $ENTRY_JSON" 1>&2
 	    EXIT_CODE="7"  # exit 7
 	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+	    echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
 	    continue
 	fi
 	if [[ ! -f $ENTRY_JSON ]]; then
 	    echo "$0: ERROR: .entry.json is not a file: $ENTRY_JSON" 1>&2
 	    EXIT_CODE="7"  # exit 7
 	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+	    echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
 	    continue
 	fi
 	if [[ ! -r $ENTRY_JSON ]]; then
 	    echo "$0: ERROR: .entry.json is not a readable file: $ENTRY_JSON" 1>&2
 	    EXIT_CODE="7"  # exit 7
 	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+	    echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
 	    continue
 	fi
 	if [[ ! -s $ENTRY_JSON ]]; then
 	    echo "$0: ERROR: .entry.json is not a readable non-empty file: $ENTRY_JSON" 1>&2
 	    EXIT_CODE="7"  # exit 7
 	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+	    echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
 	    continue
 	fi
 	#
@@ -808,6 +838,7 @@ for YYYY in $(< "$TOP_FILE"); do
 	    echo "$0: ERROR: .entry.json is not valid JSON: $ENTRY_JSON" 1>&2
 	    EXIT_CODE="1"  # exit 1
 	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+	    echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
 	    continue
 	fi
 
@@ -815,9 +846,10 @@ for YYYY in $(< "$TOP_FILE"); do
 	#
 	AWARD=$(output_award "$ENTRY_JSON")
 	if [[ -z $AWARD ]]; then
-	    echo "$0: ERROR: award name empty or not found in: $$ENTRY_JSON" 1>&2
+	    echo "$0: ERROR: award name empty or not found in: $ENTRY_JSON" 1>&2
 	    EXIT_CODE="1"  # exit 1
 	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+	    echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
 	    continue
 	fi
 	if [[ -z $NOOP ]]; then
@@ -833,6 +865,7 @@ for YYYY in $(< "$TOP_FILE"); do
 	    echo "$0: ERROR: output_author_handles returned empty string for: $$ENTRY_JSON" 1>&2
 	    EXIT_CODE="1"  # exit 1
 	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+	    echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
 	    continue
 	fi
 	if [[ $V_FLAG -ge 7 ]]; then
@@ -840,6 +873,22 @@ for YYYY in $(< "$TOP_FILE"); do
 	fi
 	if [[ -z $NOOP ]]; then
 	    echo "$AUTHOR_HANDLES" | while read -r AUTHOR_HANDLE; do
+
+		# look for unknown author handles
+		#
+		export AUTHOR_HANDLE_JSON="$AUTHOR_DIR/$AUTHOR_HANDLE.json"
+		if [[ ! -f $AUTHOR_DIR/$AUTHOR_HANDLE.json ]]; then
+		    echo "$0: Warning: .entry.json: $ENTRY_JSON refers to an unknown author_handle: $AUTHOR_HANDLE" 1>&2
+		    echo "$0: Warning: .entry.json: $ENTRY_JSON refers a missing author_handle file: $AUTHOR_HANDLE_JSON" 1>&2
+		    echo "$0: ERROR: Flagging unknown author_handle as an error, but continuing anyway: $YYYY_DIR" 1>&2
+		    EXIT_CODE="9"  # exit 9
+		    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+		    echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
+		    # NOTE: We do NOT want to stop processing via continue - proceeding instead
+		fi
+
+		# record the author handle / entry id pair
+		#
 		echo "$AUTHOR_HANDLE $ENTRY_ID" >> "$TMP_AUTHOR_WIN"
 	    done
 	elif [[ $V_FLAG -ge 9 ]]; then
@@ -874,7 +923,7 @@ if [[ -z $NOOP ]]; then
     #
     if [[ ! -s $TMP_AUTHOR_WIN ]]; then
 	echo "$0: ERROR: temporary author win file is empty: $TMP_AUTHOR_WIN" 1>&2
-	exit 16
+	exit 18
     fi
 
     # sort author win file
@@ -903,15 +952,15 @@ if [[ -z $NOOP ]]; then
 	((++line))
         if [[ -z $AUTHOR_ID ]]; then
 	    echo "$0: line $line of $TMP_AUTHOR_WIN has an empty 1st field for AUTHOR_ID" 1>&2
-	    exit 17
+	    exit 19
 	fi
         if [[ -z $ENTRY_ID ]]; then
 	    echo "$0: line $line of $TMP_AUTHOR_WIN has an empty 2nd field for ENTRY_ID" 1>&2
-	    exit 18
+	    exit 20
 	fi
         if [[ ! -z $extra ]]; then
 	    echo "$0: line $line of $TMP_AUTHOR_WIN has 3 or more fields" 1>&2
-	    exit 19
+	    exit 21
 	fi
 
 	# case: first author win file line
@@ -957,6 +1006,8 @@ if [[ -z $NOOP ]]; then
 	echo "$0: ERROR: sort -t, -k1d,1 -k2d,2 $TMP_AUTHOR_WINS_CSV -o $TMP_AUTHOR_WINS_CSV failed," \
 	     "error code: $status" 1>&2
 	EXIT_CODE=8 # exit 8
+	echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+	echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
     elif [[ $V_FLAG -ge 3 ]]; then
 	echo "$0: debug[3]: sorted temporary author_wins.csv file: $TMP_AUTHOR_WINS_CSV" 1>&2
     fi
@@ -995,12 +1046,16 @@ if [[ -z $NOOP ]]; then
             echo "$0: ERROR: mv -f -- $TMP_AUTHOR_WINS_CSV $AUTHOR_WINS_CSV filed," \
 	         "error code: $status" 1>&2
             EXIT_CODE=8 # exit 8
+	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+	    echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
         elif [[ $V_FLAG -ge 1 ]]; then
             echo "$0: debug[1]: replaced author_wins.csv file: $AUTHOR_WINS_CSV" 1>&2
         fi
         if [[ ! -s $AUTHOR_WINS_CSV ]]; then
             echo "$0: ERROR: not a non-empty author_wins.csv file: $AUTHOR_WINS_CSV" 1>&2
             EXIT_CODE=8 # exit 8
+	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+	    echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
         fi
     fi
 
@@ -1016,12 +1071,14 @@ if [[ -z $NOOP ]]; then
     if [[ $V_FLAG -ge 5 ]]; then
 	echo "$0: debug[5]: about to: sort -t, -k1,1 -k2d,2 -k4n,4 -k3,3 -k5d,8 $TMP_MANIFEST_CSV -o $TMP_MANIFEST_CSV" 1>&2
     fi
-    sort -t, -k1,1 -k2d,2 -k4g,4 -k3d,3 -k5d,8 "$TMP_MANIFEST_CSV" -o "$TMP_MANIFEST_CSV"
+    sort -t, -k1,1 -k2d,2 -k4n,4 -k3,3 -k5d,8 "$TMP_MANIFEST_CSV" -o "$TMP_MANIFEST_CSV"
     status="$?"
     if [[ status -ne 0 ]]; then
 	echo "$0: ERROR: sort -t, -k1,1 -k2d,2 -k4n,4 -k3,3 -k5d,8 $TMP_MANIFEST_CSV -o $TMP_MANIFEST_CSV failed," \
 	     "error code: $status" 1>&2
 	EXIT_CODE=8 # exit 8
+	echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+	echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
     elif [[ $V_FLAG -ge 3 ]]; then
 	echo "$0: debug[3]: sorted temporary manifest.csv file: $TMP_MANIFEST_CSV" 1>&2
     fi
@@ -1060,12 +1117,16 @@ if [[ -z $NOOP ]]; then
             echo "$0: ERROR: mv -f -- $TMP_MANIFEST_CSV $MANIFEST_CSV filed," \
 	         "error code: $status" 1>&2
             EXIT_CODE=8 # exit 8
+	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+	    echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
         elif [[ $V_FLAG -ge 1 ]]; then
             echo "$0: debug[1]: replaced manifest.csv file: $MANIFEST_CSV" 1>&2
         fi
         if [[ ! -s $MANIFEST_CSV ]]; then
             echo "$0: ERROR: not a non-empty manifest.csv file: $MANIFEST_CSV" 1>&2
             EXIT_CODE=8 # exit 8
+	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+	    echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
         fi
     fi
 
@@ -1087,6 +1148,8 @@ if [[ -z $NOOP ]]; then
 	echo "$0: ERROR: sort -t, -k1d,1 -k2d,2 $TMP_YEAR_PRIZE_CSV -o $TMP_YEAR_PRIZE_CSV failed," \
 	     "error code: $status" 1>&2
 	EXIT_CODE=8 # exit 8
+	echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+	echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
     elif [[ $V_FLAG -ge 3 ]]; then
 	echo "$0: debug[3]: sorted temporary year_prize.csv file: $TMP_YEAR_PRIZE_CSV" 1>&2
     fi
@@ -1125,12 +1188,16 @@ if [[ -z $NOOP ]]; then
             echo "$0: ERROR: mv -f -- $TMP_YEAR_PRIZE_CSV $YEAR_PRIZE_CSV filed," \
 	         "error code: $status" 1>&2
             EXIT_CODE=8 # exit 8
+	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+	    echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
         elif [[ $V_FLAG -ge 1 ]]; then
             echo "$0: debug[1]: replaced year_prize.csv file: $YEAR_PRIZE_CSV" 1>&2
         fi
         if [[ ! -s $YEAR_PRIZE_CSV ]]; then
             echo "$0: ERROR: not a non-empty year_prize.csv file: $YEAR_PRIZE_CSV" 1>&2
             EXIT_CODE=8 # exit 8
+	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+	    echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
         fi
     fi
 
@@ -1141,6 +1208,7 @@ fi
 
 # All Done!!! All Done!!! -- Jessica Noll, Age 2
 #
+EXIT_CODE=$(< "$TMP_EXIT_CODE")
 if [[ $EXIT_CODE -ne 0 ]]; then
     echo "$0: Warning: about to exit non-zero: $EXIT_CODE" 1>&2
 elif [[ $V_FLAG -ge 1 ]]; then
