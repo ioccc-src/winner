@@ -39,7 +39,7 @@ unobfuscated version provided by the author. You can look at this code if you
 want some clues in how it works.
 
 
-## Alternate build:
+### Alternate build:
 
 If you wish to build this deobfuscated version, you can do so like:
 
@@ -49,12 +49,12 @@ If you wish to build this deobfuscated version, you can do so like:
 ```
 
 
-## Alternate use:
+### Alternate use:
 
 Use `ant.alt` like you would `ant` above.
 
 
-## Alternate try:
+### Alternate try:
 
 ``` <!---sh-->
     ./try.alt.sh

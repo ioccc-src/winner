@@ -22,6 +22,7 @@ temp-test-ioccc GitHub repo.
 <!-- XXX - remove down to here in the final stages of the Great Fork Merge -->
 # The International Obfuscated C Code Contest
 
+
 ## **Obfuscate** | *verb* [with object]
 
 - render obscure, unclear, or unintelligible: the spelling changes will deform
@@ -33,6 +34,7 @@ obfuscatory | adjective
     late Middle English (as adjective): from late Latin **obfuscat-**
     'darkened', from the verb **obfuscare**, based on Latin **fuscus** 'dark'.
 
+
 ## **Obfuscation** | *noun*
 
 - the action of making something obscure, unclear, or unintelligible: when
@@ -43,6 +45,7 @@ mealy-mouthed denials and obfuscations.
     'to darken or obscure' (see *obfuscate*).
 
 The official IOCCC website is [www.ioccc.org](https://www.ioccc.org).
+
 
 ## How it was started:
 

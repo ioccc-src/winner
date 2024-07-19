@@ -14,7 +14,6 @@ The current status of this entry is:
 For more detailed information see [2001/ollinger in bugs.html](../../bugs.html#2001_ollinger).
 
 
-
 ## To use:
 
 ``` <!---sh-->

@@ -33,14 +33,14 @@ This version, [ant.alt.c](%%REPO_URL%%/1992/ant/ant.alt.c), was provided by the
 author in 2024, and is an unobfuscated version.
 
 
-## Alternate build:
+### Alternate build:
 
 ``` <!---sh-->
     make alt
 ```
 
 
-## Alternate use:
+### Alternate use:
 
 Use `ant.alt` as you would `ant` above.
 

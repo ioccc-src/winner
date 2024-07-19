@@ -14,7 +14,6 @@ The current status of this entry is:
 For more detailed information see [2011/konno in bugs.html](../../bugs.html#2011_konno).
 
 
-
 ## To use:
 
 ``` <!---sh-->

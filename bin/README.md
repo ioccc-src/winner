@@ -49,6 +49,7 @@ to set the verbosity level to `3`. The default for verbosity is `0`, no
 verbosity, though using the [top level Makefile](%%REPO_URL%%/Makefile) will,
 for some tools, set a verbosity level.
 
+
 ### Get version string of a tool
 
 If you just want to know what version the tool is, you can use the `-V` option.
@@ -111,6 +112,7 @@ Or for example:
     bin/all-years.sh -v 1 bin/chk-entry.sh
 ```
 
+
 <div id="chk-entry">
 ### [chk-entry.sh](%%REPO_URL%%/bin/chk-entry.sh)
 </div>
@@ -130,6 +132,7 @@ the top level `Makefile` by:
 ``` <!---sh-->
     make verify_entry_files
 ```
+
 
 <div id="filelist-entry-json-awk">
 ### [filelist.entry.json.awk](%%REPO_URL%%/bin/filelist.entry.json.awk)
@@ -186,6 +189,20 @@ We recommend that this tool be invoked via the top level `Makefile` by:
     make find_missing_links
 ```
 
+
+<div id="format-headers">
+### [format-headers.sh](%%REPO_URL%%/bin/format-headers.sh)
+</div>
+
+Format select headers and preceding empty lines in entry README.md files.
+
+Usage:
+
+``` <!---sh-->
+    bin/format-headers.sh
+```
+
+
 <div id="gen-authors">
 ### [gen-authors.sh](%%REPO_URL%%/bin/gen-authors.sh)
 </div>
@@ -223,6 +240,7 @@ We recommend that this tool be invoked via the top level `Makefile` by:
     make gen_location
 ```
 
+
 <div id="gen-other-html">
 ### [gen-other-html.sh](%%REPO_URL%%/bin/gen-other-html.sh)
 </div>
@@ -241,6 +259,7 @@ We recommend that this tool be invoked via the top level `Makefile` by:
 ``` <!---sh-->
     make gen_other_html
 ```
+
 
 <div id="gen-sitemap">
 ### [gen-sitemap.sh](%%REPO_URL%%/bin/gen-sitemap.sh)
@@ -309,6 +328,7 @@ We recommend that this tool be invoked via the top level `Makefile` by:
 unless the `contest_status` is to be changed, but since only the judges should
 do that, that is not a problem.
 
+
 <div id="gen-top-html">
 ### [gen-top-html.sh](%%REPO_URL%%/bin/gen-top-html.sh)
 </div>
@@ -364,6 +384,7 @@ We recommend that this tool be invoked via the top level `Makefile` by:
 
 which will create the `index.html` for every IOCCC year (`1984/index.html`,
 `1985/index.html` etc.).
+
 
 <div id="gen-years">
 ### [gen-years.sh](%%REPO_URL%%/bin/gen-years.sh)
@@ -447,7 +468,9 @@ This tool is used in the [bin/md2html.cfg](%%REPO_URL%%/bin/md2html.cfg) file as
 the [md2html tool](index.html#md2html).
 
 
+<div id="output-year-index">
 ### [output-year-index.sh](%%REPO_URL%%/bin/output-year-index.sh)
+</div>
 
 Output the inventory for a given year's winning entries in HTML form. In other
 words in [1984](../1984/index.html) it would list, as links, the four winning
@@ -458,7 +481,9 @@ This tool is used in the [bin/md2html.cfg](%%REPO_URL%%/bin/md2html.cfg) file as
 the [md2html tool](index.html#md2html).
 
 
+<div id="pandoc-wrapper">
 ### [pandoc-wrapper.sh](%%REPO_URL%%/bin/pandoc-wrapper.sh)
+</div>
 
 Wrapper tool to run `pandoc(1)`.
 
@@ -595,6 +620,7 @@ Print substitutions for an entry's `index.html`.
 
 This tool is used in the [bin/md2html.cfg](%%REPO_URL%%/bin/md2html.cfg) file.
 
+
 <div id="subst-entry-navbar-awk">
 ### [subst.entry-navbar.awk](%%REPO_URL%%/bin/subst.entry-navbar.awk)
 </div>
@@ -612,6 +638,7 @@ Print substitutions for a year level `index.html`.
 
 This tool is used in the [bin/md2html.cfg](%%REPO_URL%%/bin/md2html.cfg) file.
 
+
 <div id="subst-year-navbar-awk">
 ### [subst.year-navbar.awk](%%REPO_URL%%/bin/subst.year-navbar.awk)
 </div>
@@ -619,6 +646,7 @@ This tool is used in the [bin/md2html.cfg](%%REPO_URL%%/bin/md2html.cfg) file.
 Output substitutions for `navbar` on behalf of a year level `index.html`.
 
 This tool is used in [subst.year-index.sh](index.html#subst-year-index).
+
 
 <div id="tar-entry">
 ## [tar-entry.sh](%%REPO_URL%%/bin/tar-entry.sh)
@@ -766,7 +794,6 @@ For example:
 will cause no HTML content to be produced during the `footer` HTML phase.
 
 
-
 <div id="html">
 ## HTML phases
 </div>
@@ -831,6 +858,7 @@ it is a file under topdir.
 `getopt` phase 0 is the only `getopt` phase where `-d topdir` and `-c
 md2html.cfg` may be used.
 
+
 <div id="getopt-1">
 ### `getopt` phase 1
 </div>
@@ -845,6 +873,7 @@ The `-o "output tool"` is not allowed to output another `"-o tool"` or a `"-O
 tool=optstr"`. Instead a `-o "output tool"` may execute another `-o "output
 tool"` and merge the output into its own.
 
+
 <div id="getopt-2">
 ### `getopt` phase 2
 </div>
@@ -853,6 +882,7 @@ In `getopt` phase 2 we parse the `cfg_options` from the first `md2html.cfg` line
 matched by a saved argument.
 
 The match is made with the (possibly modified) phase 0 argument.
+
 
 <div id="getopt-3">
 ### `getopt` phase 3
@@ -867,6 +897,7 @@ by the phase 0 argument.
 The `-o "output tool"` is not allowed to output another `"-o tool"` or a `"-O
 tool=optstr"`.  Instead a `-o "output tool"` may execute another `-o "output
 tool"` and merge the output into its own.
+
 
 <div id="command-line-option-order">
 ### Command line option order
@@ -930,6 +961,7 @@ tools and merge the output from those tools into its own.
 When `-E exitcode` is evaluated, the application will exit with the `exitcode`
 value.  If one wishes to also output a message to `stderr`, the `-e string` must
 come **BEFORE** any `-E exitcode` in the command line.
+
 
 <div id="substitution-tokens">
 ### Substitution tokens

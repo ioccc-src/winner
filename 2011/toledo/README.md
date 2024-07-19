@@ -18,7 +18,7 @@ Windows](%%REPO_URL%%/2011/toledo/toledo.alt2.c). See [Alternate code](#alternat
 ```
 
 
-## Alternate code
+## Alternate code:
 
 The first alt version, [toledo.alt.c](%%REPO_URL%%/2011/toledo/toledo.alt.c), allows you to reconfigure
 the controls and the dimensions more easily.

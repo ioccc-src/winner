@@ -46,7 +46,6 @@ This will run the `configure` script and then compile and link in (in
 Then with your browser do the same as for the original source.
 
 
-
 ## Judges' remarks:
 
 This entry violates the [guidelines](../../2004/guidelines.txt) in so many ways!  We

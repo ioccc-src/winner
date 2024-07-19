@@ -53,9 +53,7 @@ If you get stuck, come back and read the author's remarks for additional hints
 and information.
 
 
-
 ## Author's remarks:
-
 
 The author wishes to thank J Greely for the last 6 bytes.
 

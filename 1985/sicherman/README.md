@@ -36,7 +36,6 @@ The [sicherman.alt.c](%%REPO_URL%%/1985/sicherman/sicherman.alt.c) is a slight c
 
 ### Alternate build:
 
-
 ``` <!---sh-->
     make alt
 ```

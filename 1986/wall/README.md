@@ -27,6 +27,7 @@ supports the `-traditional-cpp` option.
         make alt
 ```
 
+
 ### Alternate use:
 
 Use `wall.alt` as you would `wall` above.

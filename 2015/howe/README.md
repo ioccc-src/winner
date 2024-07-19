@@ -17,7 +17,6 @@ The current status of this entry is:
 For more detailed information see [2015/howe in bugs.html](../../bugs.html#2015_howe).
 
 
-
 ## To use:
 
 ``` <!---sh-->

@@ -14,8 +14,6 @@ The current status of this entry is:
 For more detailed information see [2006/hamre in bugs.html](../../bugs.html#2006_hamre).
 
 
-
-
 ## To use:
 
 ``` <!---sh-->

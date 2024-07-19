@@ -53,7 +53,7 @@ with the MIDI "SMF" file format.
 entry](https://www.nathanotterness.com/2021/04/obfuscated_c_2020.html).
 
 
-## Alternate use:
+### Alternate use:
 
 Use `prog.alt` as you would `prog`.
 

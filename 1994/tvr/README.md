@@ -37,7 +37,6 @@ Mode may be a value from 0 to 12.
 
 ## Alternate code:
 
-
 ### NOTICE to those who wish for a greater challenge:
 
 **If you want a greater challenge, don't read any further**:

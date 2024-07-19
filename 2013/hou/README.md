@@ -75,8 +75,6 @@ even needing to create a temporary file but as the author refers to it and its
 uses it can still be generated to follow along.
 
 
-
-
 ## Author's remarks:
 
 ### Using hou

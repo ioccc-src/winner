@@ -18,7 +18,6 @@ The current status of this entry is:
 For more detailed information see [1990/westley in bugs.html](../../bugs.html#1990_westley).
 
 
-
 ## To use:
 
 ``` <!---sh-->
