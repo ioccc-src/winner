@@ -258,70 +258,71 @@ indent.c:
 help:
 	@echo '# Rules for those who wish to expore the winning IOCCC entries:'
 	@echo
-	@echo 'make clobber		 - Remove all temporary, compiled and constructed files from all winning IOCCC entries'
-	@echo 'make all		 - Compile all winning IOCCC entries'
+	@echo 'make clobber		;: remove all temporary, compiled and constructed files from all winning IOCCC entries'
+	@echo 'make all		;: compile all winning IOCCC entries'
 	@echo
-	@echo 'make alt		 - Compile all alternative executables for winning IOCCC entries'
-	@echo 'make everything		 - make all and make alt'
+	@echo 'make alt		;: compile all alternative executables for winning IOCCC entries'
+	@echo 'make everything		;: make all and make alt'
 	@echo
-	@echo 'make diff_orig_prog	- diff original source and current source'
-	@echo 'make diff_prog_orig	- diff current source and original source'
-	@echo
-	@echo 'make diff_alt_prog	- diff alternative source and current source'
-	@echo 'make diff_prog_alt	- diff current source and alternative source'
-	@echo
-	@echo 'make diff_alt_orig	- diff alternative source and original source'
-	@echo 'make diff_orig_alt	- diff original source and alternative source'
+	@echo 'make diff_orig_prog	;: diff original source and current source'
+	@echo 'make diff_prog_orig	;: diff current source and original source'
+	@echo 'make diff_alt_prog	;: diff alternative source and current source'
+	@echo 'make diff_prog_alt	;: diff current source and alternative source'
+	@echo 'make diff_alt_orig	;: diff alternative source and original source'
+	@echo 'make diff_orig_alt	;: diff original source and alternative source'
 	@echo
 	@echo '# Rules for building a local copy of the IOCCC website:'
 	@echo
-	@echo 'make tab_check		 - check for ASCII tabs in markdown files'
-	@echo 'make genpath		 - form top level .top, YYYY level .year and winner .path files'
-	@echo 'make genfilelist	 - generate YYYY level .filelist'
-	@echo 'make verify_entry_files	 - check to be sure all files in all entries exist'
-	@echo 'make gen_authors	 - generate the top level authors.html page'
-	@echo 'make gen_location	 - generate the top level location.html page'
-	@echo 'make gen_years		 - generate the top level years.html page'
-	@echo 'make entry_index	 - force the build of ALL winner index.html files'
-	@echo 'make gen_other_html	 - build entry HTML files from markdown other than README.md'
-	@echo 'make gen_year_index	 - generate year level index.html files using from README.md files'
-	@echo 'make gen_top_html	 - generate a number of the top level HTML files from markdown'
-	@echo 'make gen_next		 - generate the HTML files in next/'
-	@echo 'make quick_entry_index	 - build winner index.html files that might be out of date'
-	@echo 'make find_missing_links	 - find markdown links to missing local files'
+	@echo 'make tab_check		;: check for ASCII tabs in markdown files'
+	@echo 'make genpath		;: form top level .top, YYYY level .year and winner .path files'
+	@echo 'make genfilelist	;: generate YYYY level .filelist'
+	@echo 'make verify_entry_files	;: check to be sure all files in all entries exist'
+	@echo 'make gen_authors	;: generate the top level authors.html page'
+	@echo 'make gen_location	;: generate the top level location.html page'
+	@echo 'make gen_years		;: generate the top level years.html page'
+	@echo 'make entry_index	;: force the build of ALL winner index.html files'
+	@echo 'make gen_other_html	;: build entry HTML files from markdown other than README.md'
+	@echo 'make gen_year_index	;: generate year level index.html files using from README.md files'
+	@echo 'make gen_top_html	;: generate a number of the top level HTML files from markdown'
+	@echo 'make gen_next		;: generate the HTML files in next/'
+	@echo 'make quick_entry_index	;: build winner index.html files that might be out of date'
+	@echo 'make find_missing_links	;: find markdown links to missing local files'
 	@echo
-	@echo 'make test		 - a summary of mostly harmless tests'
+	@echo 'make test		;: summary of mostly harmless tests'
 	@echo
-	@echo '# Rules for building specific web pages - a subset of rules mentioned above:'
+	@echo 'make entry2csv		;: convert all .entry.json files into 3 CSV spreadsheets'
+	@echo 'make csv2entry		;: rebuild all all .entry.json files from 3 CSV spreadsheets'
 	@echo
-	@echo 'make thanks		 - generate thanks-for-help.html'
-	@echo 'make bugs		 - generate bugs.html'
-	@echo 'make rules		 - generate next/rules.hmtl'
-	@echo 'make guidelines		 - generate next/guidelines.hmtl'
-	@echo 'make faq		         - generate faq.html'
-	@echo 'make security		 - generate SECURITY.html'
+	@echo '# Rules for building specific web pages, a subset of rules mentioned above:'
+	@echo
+	@echo 'make thanks		;: generate thanks-for-help.html'
+	@echo 'make bugs		;: generate bugs.html'
+	@echo 'make rules		;: generate next/rules.hmtl'
+	@echo 'make guidelines		;: generate next/guidelines.hmtl'
+	@echo 'make faq	        ;: generate faq.html'
+	@echo 'make security		;: generate SECURITY.html'
 	@echo
 	@echo '# Compound make rules for building a local copy of the IOCCC website:'
 	@echo
-	@echo 'make quick_www		 - generate html files more quickly, checking timestamps'
-	@echo 'make www		 - build html pages for website'
+	@echo 'make quick_www		;: generate html files more quickly, checking timestamps'
+	@echo 'make www		;: build html pages for website'
 	@echo
 	@echo '# Rules that are useful only for those IOCCC judges who maintain the official IOCCC website:'
 	@echo
-	@echo 'make sort_gitignore	 - sort .gitignore files according to rules in bin/sgi.sh'
+	@echo 'make sort_gitignore	;: sort .gitignore files according to rules in bin/sgi.sh'
 	@echo
-	@echo 'make untar_entry_tarball - untar all entry tarballs'
-	@echo 'make untar_year_tarball	 - untar all year level tarballs'
+	@echo 'make untar_entry_tarball;: untar all entry tarballs'
+	@echo 'make untar_year_tarball	;: untar all year level tarballs'
 	@echo
-	@echo 'make form_entry_tarball	 - form all entry compressed tarballs'
-	@echo 'make form_year_tarball	 - form all IOCCC year level compressed tarballs'
-	@echo 'make tar		 - build all tarballs'
+	@echo 'make form_entry_tarball	;: form all entry compressed tarballs'
+	@echo 'make form_year_tarball	;: form all IOCCC year level compressed tarballs'
+	@echo 'make tar		;: build all tarballs'
 	@echo
-	@echo 'make gen_status		 - generate status.json and status.html'
-	@echo 'make gen_sitemap	 - generate the XML sitemap'
-	@echo 'make timestamp		 - generate things with timestamps (status, sitemap etc.)'
+	@echo 'make gen_status		;: generate status.json and status.html'
+	@echo 'make gen_sitemap	;: generate the XML sitemap'
+	@echo 'make timestamp		;: generate things with timestamps (status, sitemap etc.)'
 	@echo
-	@echo 'make update		 - update everything in a local copy of the website'
+	@echo 'make update		;: update everything in a local copy of the website'
 
 
 ######################################################
