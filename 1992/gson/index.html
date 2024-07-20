@@ -419,34 +419,27 @@ some invocations to crash in some systems.</p>
 </blockquote>
 <p>For more detailed information see <a href="../../bugs.html#1992_gson">1992/gson in bugs.html</a>.</p>
 <h2 id="to-use">To use:</h2>
-<pre><code>    ./ag word word2 word3 &lt; dictionary</code></pre>
+<pre><code>    ./ag word word2 word3 &lt; dictionary | less</code></pre>
 <h2 id="try">Try:</h2>
 <pre><code>    ./try.sh</code></pre>
-<p>This script will determine (or try and determine) where your system dictionary
-is located and assuming that it can find one it’ll use that. It checks the
-following locations though the last one is more ironic:</p>
+<p>The script first will use the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/gson/mkdict.sh">mkdict.sh</a> script to create
+a dictionary file out of the files
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/gson/README.md">README.md</a>,
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/gson/try.sh">try.sh</a> (itself) and
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/gson/Makefile">Makefile</a> runs the program with a number of
+strings on that dictionary file.</p>
+<p>Then the script will determine (or try and determine) where your system
+dictionary is located and assuming that it can find one it’ll use that. It
+checks the following locations though the last one is more ironic:</p>
 <ul>
 <li><code>/usr/share/dict/words</code></li>
 <li><code>/usr/share/lib/spell/words</code></li>
 <li><code>/usr/ucblib/dict/words</code></li>
 <li><code>/dev/null</code> # &lt;– for machines with nothing to say</li>
 </ul>
-<p>Then it runs the program with the following strings, using the proper dictionary
-file:</p>
-<ul>
-<li><code>free software foundation</code></li>
-<li><code>obfuscated c contest</code></li>
-<li><code>unix international</code></li>
-<li><code>george bush</code></li>
-<li><code>bill clinton</code></li>
-<li><code>ross perot</code></li>
-<li><code>paul e tsongas</code></li>
-</ul>
-<p>Then it uses the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/gson/mkdict.sh">mkdict.sh</a> script to create a dictionary file out
-of the files <a href="README.md">README.md</a>, <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/gson/try.sh">try.sh</a> (itself) and
-<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/gson/Makefile">Makefile</a> and it repeats the same process as above. In the case no
-dictionary file can be found in the first step it only runs the commands once
-with the created dictionary file.</p>
+<p>If a file is found then it will run the same process as above. The reason the
+made up dictionary is used first is it provides shorter and a bit more fun
+output.</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>Recently some newspapers printed amusing anagrams of one of the
 names listed above. Run this program to find the anagrams they
@@ -454,7 +447,7 @@ weren’t allowed to print!</p>
 <p>The author provided an obfuscated script that can be used to construct
 dictionaries which has been put in as <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/gson/mkdict.sh">mkdict.sh</a>. To use try:</p>
 <pre><code>    cat README.md | ./mkdict.sh &gt; words</code></pre>
-<p>Then try using the program as shown above with the file <code>words</code>.</p>
+<p>Then try using the program <a href="#to-use">as shown above</a> with the file <code>words</code>.</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <p>The name of the game:</p>
 <p><code>AG</code> is short for either <code>Anagram Generator</code> or simply <code>AnaGram</code>. It might also be
