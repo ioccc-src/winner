@@ -414,7 +414,7 @@ from the root directory, you would do:</p>
 going on more, you should use the <code>-v level</code> option. For instance if you wish to
 see what is going on with the
 <a href="index.html#quick-readme2index">quick-readme2index.sh</a> tool, you might do:</p>
-<pre><code>        bin/quick-readme2index.sh -v 3</code></pre>
+<pre><code>    bin/quick-readme2index.sh -v 3</code></pre>
 <p>to set the verbosity level to <code>3</code>. The default for verbosity is <code>0</code>, no
 verbosity, though using the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/Makefile">top level Makefile</a> will,
 for some tools, set a verbosity level.</p>
@@ -422,7 +422,7 @@ for some tools, set a verbosity level.</p>
 <p>If you just want to know what version the tool is, you can use the <code>-V</code> option.
 For instance to see what version the <a href="index.html#chk-entry">chk-entry.sh</a> tool
 is, you would do:</p>
-<pre><code>        bin/chk-entry.sh -V</code></pre>
+<pre><code>    bin/chk-entry.sh -V</code></pre>
 <h3 id="other-notes">Other notes</h3>
 <p>These options, and especially <code>-h</code> and <code>-v level</code>, can be very useful to get
 basic usage information and to see what is going on when the tool is running.
@@ -457,12 +457,12 @@ need to do so.</p>
 <p>For example:</p>
 <pre><code>    bin/chk-entry.sh 2020/ferguson1</code></pre>
 <p>If you wish to run it on all entries, we recommend that this tool be invoked via
-the top level <code>Makefile</code> by:</p>
+the top level <code>Makefile</code>:</p>
 <pre><code>    make verify_entry_files</code></pre>
 <div id="csv2entry">
 <h3 id="csv2entry.sh"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/csv2entry.sh">csv2entry.sh</a></h3>
 </div>
-<p>Convert CSV files into <code>.entry.json</code> for all entries.</p>
+<p>Convert CSV files into <code>.entry.json</code> for all winning IOCCC entries.</p>
 <p>This tool takes as input, the following CSV files:</p>
 <ul>
 <li><a href="#author_wins_csv">author_wins.csv</a> - <code>author_handle</code> followed by all their
@@ -471,27 +471,26 @@ the top level <code>Makefile</code> by:</p>
 <li><a href="#year_prize_csv">year_prize.csv</a> - <code>entry_id</code> followed by the entry’s award
 title</li>
 </ul>
-<p>This tool updates <code>.entry.json</code> files for all entries.
-Only those <code>.entry.json</code> files whose content is modified are written.</p>
+<p>This tool updates <code>.entry.json</code> files entries whose content is modified.</p>
 <p>For example:</p>
 <pre><code>    bin/csv2entry.sh -v 1</code></pre>
 <p>There is no requirement to sort the CSV files, nor convert
 them to UNIX format, nor append a final newline to the file.</p>
-<p>This tool will canonicalize CSV files before using them
+<p>This tool will canonicalize the CSV files before using them
 as input. Thus, if one wishes to import the CSV file into
 some spreadsheet such as the <a href="https://www.apple.com/macos">macOS</a>
-<a href="https://www.apple.com/numbers/">Numbers</a> spreadsheet,
-modifies the content and final exports back to the CSV file,
+<a href="https://www.apple.com/numbers/">Numbers</a> spreadsheet application,
+modify the content and finally export back to the CSV file,
 this tool will modify the CSV file (if needed) in order
 to restore the CSV order and other canonicalizing processes.</p>
 <p>This tool will flag as an error, any empty fields, fields that are
 an unquoted <code>NULL</code> or <code>null</code>, fields that start with whitespace,
-fields that ends with whitespace, or fields that contain consecutive
+fields that end with whitespace, or fields that contain consecutive
 whitespace characters.</p>
 <h4 id="internal-details-of-bincsv2entry.sh">Internal details of <code>bin/csv2entry.sh</code></h4>
 <p>We first canonicalize the CSV files by replacing any “carriage
-return line feeds” with “newlines. We also make sure that the CSV
-file ends in a newline. We do this because some spreadsheet
+return line feeds” with “newlines”. We also make sure that the CSV
+files end in a newline. We do this because some spreadsheet
 applications, when exporting to a CSV file, do not do this.</p>
 <p>We also sort the CSV files in the same way that <a href="#entry2csv">entry2csv</a> sorts
 its CSV output files. We do this in case the CSV files were imported into a
@@ -504,24 +503,21 @@ file.</p>
 the <code>YYYY/dir</code> directory under the root of the git repository). From that list of
 <code>YYYY/dir</code> IOCCC entry directories, we will create the <code>.entry.json</code> files. We
 only modify those <code>.entry.json</code> files when their content changes.</p>
-<p><strong>NOTE</strong>:</p>
-<p>While this tool uses <code>jparse(1)</code> to verify that the modified
-<code>.entry.json</code> contains valid JSON content, <strong>this tool does NOT
-perform any semantic checks</strong>. For example, this tool does NOT
-verify that the manifest in the <code>.entry.json</code> file matches the
-files in the <code>YYYY/dir directory</code>, or even that the <code>.entry.json</code>
-contains a manifest (or any of the other required JSON content).</p>
+<p><strong>IMPORTANT NOTE</strong>: while this tool uses <code>jparse(1)</code> to verify that the modified
+<code>.entry.json</code> contains valid JSON content, <strong>this tool does NOT perform ANY
+semantic checks</strong>. For example, this tool does <strong>NOT</strong> verify that the manifest in
+the <code>.entry.json</code> file matches the files in the <code>YYYY/dir directory</code>, or even
+that the <code>.entry.json</code> contains a manifest (or any of the other required JSON
+content).</p>
 <div id="entry2csv">
 <h3 id="entry2csv.sh"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/entry2csv.sh">entry2csv.sh</a></h3>
 </div>
 <p>This tool takes as input, all entry <code>.entry.json</code> files
 and updates 3 CSV files:</p>
 <ul>
-<li><a href="#author_wins_csv">author_wins.csv</a> - <code>author_handle</code> followed by all their
-<code>entry_id</code>s</li>
-<li><a href="#manifest_csv">manifest.csv</a> - information about files under a entry</li>
-<li><a href="#year_prize_csv">year_prize.csv</a> - <code>entry_id</code> followed by the entry’s award
-title</li>
+<li><a href="#author_wins_csv">author_wins.csv</a> - each <code>author_handle</code> followed their <code>entry_id</code>s</li>
+<li><a href="#manifest_csv">manifest.csv</a> - information about all files in all entries</li>
+<li><a href="#year_prize_csv">year_prize.csv</a> - each <code>entry_id</code> followed by the entry’s award title</li>
 </ul>
 <p>The CSV files are written in a canonical UNIX format form.</p>
 <p>Only those CSV files files whose content is modified are written.</p>
@@ -532,12 +528,11 @@ and in subdirectories listed in the <code>YYYY/.year</code> file for the
 given year. Only those entries so listed are processed.</p>
 <p>All IOCCC entry directories must have a <code>.path</code> file that lists
 the path of the entry’s directory from the <code>TOPDIR</code>.</p>
-<p><strong>NOTE</strong>:</p>
-<p>When adding new IOCCC years’ entries, the <code>.top</code> file <strong>MUST</strong>
-be updated, and the new IOCCC year <code>YYYY/.year</code> files <strong>MUST</strong>
-reference the directory of the new IOCCC entries. They
-must also contain a <code>.path</code> file that contains the path
-of the IOCCC entry directory from the <code>TOPDIR</code>.</p>
+<p><strong>IMPORTANT NOTE</strong>: when adding new IOCCC winning entries, the <code>.top</code> file
+<strong>MUST</strong> be updated, and the new IOCCC year <code>YYYY/.year</code> files <strong>MUST</strong>
+reference the directory of the new IOCCC entries. Each entry directory <strong>MUST</strong>
+also contain a <code>.path</code> file that contains the path of the IOCCC entry directory
+from the <code>TOPDIR</code>.</p>
 <div id="filelist-entry-json-awk">
 <h3 id="filelist.entry.json.awk"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/filelist.entry.json.awk">filelist.entry.json.awk</a></h3>
 </div>
@@ -567,7 +562,7 @@ look for a malformed markdown line and/or use of markdown
 that is <strong>NOT</strong> an IOCCC markdown best practice.</p>
 <p>See also the <a href="../markdown.html">IOCCC markdown best practices</a> document for more
 details.</p>
-<p>We recommend that this tool be invoked via the top level <code>Makefile</code> by:</p>
+<p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
 <pre><code>    make find_missing_links</code></pre>
 <div id="format-headers">
 <h3 id="format-headers.sh"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/format-headers.sh">format-headers.sh</a></h3>
@@ -581,7 +576,7 @@ details.</p>
 <p>Generate the top level <a href="../authors.html">authors.html</a> page.</p>
 <p>Usage:</p>
 <pre><code>    bin/gen-authors.sh -v 1</code></pre>
-<p>We recommend that this tool be invoked via the top level <code>Makefile</code> by:</p>
+<p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
 <pre><code>    make gen_authors</code></pre>
 <div id="gen-location">
 <h3 id="gen-location.sh"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/gen-location.sh">gen-location.sh</a></h3>
@@ -589,7 +584,7 @@ details.</p>
 <p>Generate the top level <a href="../location.html">location.html</a> page.</p>
 <p>Usage:</p>
 <pre><code>    bin/gen-location.sh -v 1</code></pre>
-<p>We recommend that this tool be invoked via the top level <code>Makefile</code> by:</p>
+<p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
 <pre><code>    make gen_location</code></pre>
 <div id="gen-other-html">
 <h3 id="gen-other-html.sh"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/gen-other-html.sh">gen-other-html.sh</a></h3>
@@ -598,7 +593,7 @@ details.</p>
 markdown files, of all entries.</p>
 <p>Usage:</p>
 <pre><code>    bin/gen-other-html.sh -v 1</code></pre>
-<p>We recommend that this tool be invoked via the top level <code>Makefile</code> by:</p>
+<p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
 <pre><code>    make gen_other_html</code></pre>
 <div id="gen-sitemap">
 <h3 id="gen-sitemap.sh"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/gen-sitemap.sh">gen-sitemap.sh</a></h3>
@@ -607,7 +602,7 @@ markdown files, of all entries.</p>
 <p>Usage:</p>
 <pre><code>    bin/gen-sitemap.sh -v 1</code></pre>
 <p>This would generate the <a href="../sitemap.xml">sitemap.xml</a> file.</p>
-<p>We recommend that this tool be invoked via the top level <code>Makefile</code> by:</p>
+<p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
 <pre><code>    make gen_sitemap</code></pre>
 <p><strong>IMPORTANT NOTE</strong>: if a file is open with vim or some editor that creates a swap
 file, this will cause a problem with the output.</p>
@@ -626,7 +621,7 @@ at the command line.</p>
 <pre><code>    bin/gen-status.sh -v 1 open</code></pre>
 <p>To see other valid statuses:</p>
 <pre><code>    bin/gen-status -h</code></pre>
-<p>We recommend that this tool be invoked via the top level <code>Makefile</code> by:</p>
+<p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
 <pre><code>    make gen_status</code></pre>
 <p>unless the <code>contest_status</code> is to be changed, but since only the judges should
 do that, that is not a problem.</p>
@@ -650,7 +645,7 @@ do that, that is not a problem.</p>
 <li><a href="../news.html">news.html</a></li>
 <li><a href="../thanks-for-help.html">thanks-for-help.html</a></li>
 </ul>
-<p>We recommend that this tool be invoked via the top level <code>Makefile</code> by:</p>
+<p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
 <pre><code>    make gen_top_html</code></pre>
 <div id="gen-year-index">
 <h3 id="gen-year-index.sh"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/gen-year-index.sh">gen-year-index.sh</a></h3>
@@ -659,7 +654,7 @@ do that, that is not a problem.</p>
 <p>Usage:</p>
 <pre><code>    bin/gen-year-index.sh -v 1 2020</code></pre>
 <p>This would create the <a href="../2020/index.html">2020/index.html</a> file.</p>
-<p>We recommend that this tool be invoked via the top level <code>Makefile</code> by:</p>
+<p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
 <pre><code>    make gen_year_index</code></pre>
 <p>which will create the <code>index.html</code> for every IOCCC year (<code>1984/index.html</code>,
 <code>1985/index.html</code> etc.).</p>
@@ -669,7 +664,7 @@ do that, that is not a problem.</p>
 <p>Generate the top level <a href="../years.html">years.html</a> page.</p>
 <p>Usage:</p>
 <pre><code>    bin/gen-years.sh -v 1</code></pre>
-<p>We recommend that this tool be invoked via the top level <code>Makefile</code> by:</p>
+<p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
 <pre><code>    make gen_years</code></pre>
 <div id="md2html_cfg">
 <h3 id="md2html.cfg"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/md2html.cfg">md2html.cfg</a></h3>
@@ -679,15 +674,19 @@ Although a configuration file it is also something of a script file.</p>
 <p>To not down descend into the depths of <code>pandoc(1)</code> and to have to explain how
 this file can change all the HTML files, we advise you to let
 <a href="https://www.glyphweb.com/arda/s/smaug.html">Smaug</a> (the dragon of
-<a href="https://www.glyphweb.com/arda/e/erebor.html">Erebor</a>), famously visited by a
-<a href="https://www.glyphweb.com/arda/h/hobbits.html">Hobbit</a> and 13
+<a href="https://www.glyphweb.com/arda/e/erebor.html">Erebor</a> famously visited by a
+<a href="https://www.glyphweb.com/arda/h/hobbits.html">Hobbit</a> called <a href="https://www.glyphweb.com/arda/b/bilbobaggins.html">Bilbo
+Baggins</a> and 13
 <a href="https://www.glyphweb.com/arda/d/dwarves.html">Dwarves</a> in the
 <a href="https://www.glyphweb.com/arda/t/thirdage.html">T.A.</a> 2941 or 1341
-in the <a href="https://www.glyphweb.com/arda/s/shirereckoning.html">Shire-reckoning</a>, slumber as
-“here be dragons”. If you still need convincing, we wish to remind you of <a href="https://www.glyphweb.com/arda/b/bilbobaggins.html">Bilbo
+in the <a href="https://www.glyphweb.com/arda/s/shirereckoning.html">Shire-reckoning</a>)), slumber as
+“<code>here be dragons</code>”. If you still need convincing, we wish to remind you of <a href="https://www.glyphweb.com/arda/b/bilbobaggins.html">Bilbo
 Baggins</a>’ famous words:</p>
-<pre><code>        &quot;Never laugh at live dragons, Bilbo you fool!&quot; he said to himself, and it
-        became a favourite saying of his later, and passed into a proverb.</code></pre>
+<blockquote>
+<p>“Never laugh at live dragons,
+<a href="https://www.glyphweb.com/arda/b/bilbobaggins.html">Bilbo</a> you fool!” he said to himself, and it
+became a favourite saying of his later, and passed into a proverb.</p>
+</blockquote>
 <div id="md2html">
 <h3 id="md2html.sh"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/md2html.sh">md2html.sh</a></h3>
 </div>
@@ -742,16 +741,16 @@ up.</p>
 this command will only briefly pause while the
 <a href="index.html#readme2index">readme2index.sh</a> can take much longer.</p>
 <p>Usage:</p>
-<pre><code>        # For all entries:
+<pre><code>    # For all entries:
     bin/all-run.sh -v 3 bin/quick-readme2index.sh -v 1
 
-        # For an individual entry:
-        bin/quick-readme2index.sh -v 1 2020/ferguson2</code></pre>
+    # For an individual entry:
+    bin/quick-readme2index.sh -v 1 2020/ferguson2</code></pre>
 <p><strong>NOTE</strong>: This command assumes that the relative
 modification times for <code>README.md</code>, <code>.entry.json</code>,
 and <code>index.html</code> are correct. If in doubt, use
 <a href="index.html#readme2index">readme2index.sh</a>.</p>
-<p>We recommend that this tool be invoked via the top level <code>Makefile</code> by:</p>
+<p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
 <pre><code>    make quick_entry_index</code></pre>
 <div id="readme2index">
 <h3 id="readme2index.sh"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/readme2index.sh">readme2index.sh</a></h3>
@@ -761,7 +760,7 @@ and <code>index.html</code> are correct. If in doubt, use
 <pre><code>    bin/readme2index.sh -v 3 1984/mullender</code></pre>
 <p>To build <code>index.html</code> files for all entries:</p>
 <pre><code>    bin/all-run.sh -v 3 bin/readme2index.sh -v 1</code></pre>
-<p>We recommend that this tool be invoked via the top level <code>Makefile</code> by:</p>
+<p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
 <pre><code>    make entry_index</code></pre>
 <div id="status2html">
 <h3 id="status2html.sh"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/status2html.sh">status2html.sh</a></h3>
@@ -786,7 +785,7 @@ We sort with lines starting with <code>!</code> fourth.</p>
 <pre><code>    bin/sort.gitignore.sh -v 1 YYYY/dir</code></pre>
 <p>Suggested usage (for all <code>.gitignore</code> files):</p>
 <pre><code>    bin/all-run.sh bin/sort.gitignore.sh -v 1</code></pre>
-<p>We recommend that this tool be invoked via the top level <code>Makefile</code> by:</p>
+<p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
 <pre><code>    make sort_gitignore</code></pre>
 <div id="subst-default">
 <h3 id="subst.default.sh"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/subst.default.sh">subst.default.sh</a></h3>
@@ -829,7 +828,7 @@ We sort with lines starting with <code>!</code> fourth.</p>
 <pre><code>    bin/tar-year.sh -v 1 YYYY</code></pre>
 <p>Suggested usage:</p>
 <pre><code>    bin/all-years.sh -v 3 bin/tar-year.sh -v 1 -W</code></pre>
-<p>We recommend that this tool be invoked via the top level <code>Makefile</code> by:</p>
+<p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
 <pre><code>    make form_year_tarball</code></pre>
 <div id="untar-entry">
 <h2 id="untar-entry.sh"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/untar-entry.sh">untar-entry.sh</a></h2>
@@ -839,7 +838,7 @@ We sort with lines starting with <code>!</code> fourth.</p>
 <pre><code>    bin/untar-entry.sh -v 1 YYYY/dir</code></pre>
 <p>Suggested usage:</p>
 <pre><code>    bin/all-run.sh -v 3 bin/untar-entry.sh -v 1</code></pre>
-<p>We recommend that this tool be invoked via the top level <code>Makefile</code> by:</p>
+<p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
 <pre><code>    make untar_entry_tarball</code></pre>
 <div id="untar-year">
 <h2 id="untar-year.sh"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/untar-year.sh">untar-year.sh</a></h2>
@@ -849,7 +848,7 @@ We sort with lines starting with <code>!</code> fourth.</p>
 <pre><code>    bin/untar-year.sh -v 1 YYYY</code></pre>
 <p>Suggested usage:</p>
 <pre><code>    bin/all-years.sh -v 3 bin/untar-year.sh -v 1</code></pre>
-<p>We recommend that this tool be invoked via the top level <code>Makefile</code> by:</p>
+<p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
 <pre><code>    make untar_year_tarball</code></pre>
 <div id="how">
 <h1 id="how-ioccc-html-content-is-built">How IOCCC HTML content is built</h1>
@@ -1049,7 +1048,7 @@ available to the IOCCC.</p>
 </div>
 <p>The <a href="https://pages.github.com">GitHub pages</a> have the distributed server capacity needed to handle
 the <strong>huge download volume</strong> or <a href="https://en.wikipedia.org/wiki/Slashdot_effect">Slashdot effect</a>
-that happens when a IOCCC entries are published.</p>
+that happens when new IOCCC winning entries are published.</p>
 <p>Most so-called low cost web hosting sites have a somewhat hidden excessive bandwidth charge
 and/or cap bandwidth when the volume gets too high, and/or do not have the infrastructure
 that can handle the <a href="https://en.wikipedia.org/wiki/Slashdot_effect">Slashdot effect</a>.</p>
@@ -1093,75 +1092,86 @@ C source code, we will do so in such a way that someone will be able to view
 disabled.</p>
 <p>The IOCCC will <strong>NOT MANDATE USE OF JavaScript</strong> to view <a href="https://www.ioccc.org">official IOCCC web
 site</a> (except for some mobile devices for the menu).</p>
-<p>For this reason, we cannot use JavaScript include HTML content.</p>
+<p>For this reason, we cannot use JavaScript to include HTML content.</p>
 <div id="terms">
-<h1 id="ioccc-terms">IOCCC terms</h1>
+<h1 id="ioccc-terms">IOCCC Terms</h1>
 </div>
-<p>The following IOCCC terms apply to tools, JSON files, and the directory structure of this repo.</p>
+<p>The following IOCCC terms apply to tools, JSON files, and the directory
+structure of this repo that forms the <a href="https://www.ioccc.org">Official IOCCC
+website</a>.</p>
 <h2 id="author"><code>author</code></h2>
-<p>An individual who was an <code>author</code> of at least one winning IOCCC entry.</p>
+<p>An <strong>individual</strong> who was won at least one winning IOCCC <a href="#entry">entry</a>.</p>
 <p>Some authors have submitted more than one IOCCC entry that won. Some winning
-IOCCC entries have more than one author. In that case we might use the word
+IOCCC entries have more than one author; in that case we might use the word
 <code>authors</code>.</p>
 <div id="author-handle">
 <h2 id="author_handle"><code>author_handle</code></h2>
 </div>
-<p>An <code>author_handle</code> is string that refers to a given author and is unique to the
-IOCCC. Each author has <strong>EXACTLY ONE</strong> <code>author_handle</code>.</p>
+<p>An <code>author_handle</code> is string that refers to a given <a href="#author">author</a> and <strong>is unique to the
+IOCCC</strong>. Each <a href="#author">author</a> has <strong>EXACTLY ONE</strong> <code>author_handle</code>.</p>
 <p>For each <code>author_handle</code>, there will be a JSON file located at:</p>
 <pre><code>    author/author_handle.json</code></pre>
-<p>where <code>author_handle</code> is the author’s <code>author_handle</code>.</p>
-<p>Because the <code>author_handle</code> is used to form a JSON filename, the string must be
+<p>where <code>author_handle</code> is the <a href="#author">author</a>’s <code>author_handle</code>.</p>
+<p>Because the <code>author_handle</code> is used to form a JSON filename, the string <strong>MUST</strong> be
 a POSIX safe string with the addition of <code>+</code> (for technical reasons beyond this
-document). In particular, the <code>author_handle</code> must be an ASCII
+document). In particular, the <code>author_handle</code> <strong>MUST</strong> be an ASCII
 string that matches this regexp:</p>
 <pre><code>    ^[0-9A-Za-z][0-9A-Za-z._+-]*$&quot;</code></pre>
 <p>Default <code>author_handle</code>s do not have multiple consecutive <code>_</code> (underscore)
 characters. Nevertheless, multiple consecutive <code>_</code> (underscore) characters are
-allowed. Contest submitters who wish to override the <code>author_handle</code> may do so.</p>
-<p>The <code>author_handle</code> is derived from the name of the author. While there is a
-algorithm that maps the name of the author (which can contain any UTF-8
-characters) into a default <code>author_handle</code> string, those who submit an entry to
-the IOCCC are free to choose a different <code>author_handle</code> string if they so
-desire.</p>
-<p>An <code>author</code> who has won a previous IOCCC is encouraged to reuse their
-<code>author_handle</code> so that new winning entries can be associated with the same
-author.</p>
+allowed; contest submitters who wish to override the <code>author_handle</code> may do so.</p>
+<p>The <code>author_handle</code> is derived from the name of the <a href="#author">author</a>. While
+there is an algorithm that maps the name of the <a href="#author">author</a> (which may contain any UTF-8
+characters) into a default <code>author_handle</code> string, those who submit to the IOCCC
+are free to choose a different <code>author_handle</code> string if they so desire.</p>
+<p><strong>NOTE</strong>: an <a href="#author">author</a> who has won a <a href="../years.html">previous IOCCC</a>
+<strong>is encouraged to reuse their <code>author_handle</code></strong> so that new winning
+<a href="#entry">entries</a> can be associated with the same <a href="#author">author</a>.</p>
 <p>For an anonymous <code>author</code>, their handle is one of these forms:</p>
 <pre><code>    Anonymous_year</code></pre>
 <p>or:</p>
 <pre><code>    Anonymous_year.digits</code></pre>
-<p>The latter form is in case there are more than one anonymous author in a given
+<p>The latter form is in case there is more than one anonymous author in a given
 year.</p>
-<p>NOTE: even if the directory name is not <code>anonymous</code> the above rules apply as in
+<p><strong>NOTE</strong>: even if the directory name is not <code>anonymous</code> the above rules apply as in
 in the case of <a href="../2005/anon/index.html">2005/anon</a>.</p>
 <p>Anonymous <code>author_handle</code>’s match this regexp:</p>
 <pre><code>    Anonymous_[0-9][0-9][0-9][0-9][.0-9]*$</code></pre>
 <h2 id="entry"><code>entry</code></h2>
-<p>An IOCCC entry that won an award for a given IOCCC.</p>
+<p>An IOCCC <a href="#submission">submission</a> that won an award for a given IOCCC.</p>
 <p>An <code>entry</code> has one or more <code>author</code>s.</p>
 <p>Each <code>entry</code> is contained under its own directory. The parent of the entry
 directory is the year’s directory.</p>
 <p>While in most cases an <code>entry</code> consists of files under an entry’s directory,
 there are a few cases where an <code>entry</code> directory contains subdirectories.</p>
 <p>Use of subdirectories under an <code>entry</code> directory is discouraged and
-may be limited to previous <code>entry</code>s that used them.</p>
-<p>NOTE: In the past, the term <code>winner</code> was used in instead of today’s term of
-<code>entry</code>.</p>
+may be limited to previous entries that used them.</p>
+<p><strong>HISTORICAL NOTE</strong>: in the past, the term <code>winner</code> was used in instead of
+today’s term of <code>entry</code>.</p>
+<h2 id="submission"><code>submission</code></h2>
+<p>In the past, the IOCCC used the term <a href="#entry">entry</a> for both a hopeful
+<a href="#submission">submission</a> and a <a href="#entry">winning entry</a>. It was decided,
+however, in 2024, to remove this ambiguity by introducing the term
+<a href="#submission">submission</a>. This does mean that if one wishes to win the IOCCC they
+must submit to the <a href="../judges.html">Judges</a>! :-)</p>
+<h2 id="submitter"><code>submitter</code></h2>
+<p>A person who submits a <a href="#submission">submission</a>.</p>
 <h2 id="year"><code>year</code></h2>
 <p>A <code>year</code> is a 4 character string. Most years are 4-digit strings that
 represent the year. Some special <code>year</code> strings are possible, such as <code>mock</code>.
-Non-numeric <code>year</code> strings are lower case.</p>
+Non-numeric <code>year</code> strings are lower case (hence <code>mock</code> and not <code>MOCK</code>).</p>
 <p>A <code>year</code> string matches this regexp:</p>
 <pre><code>    [0-9a-z][0-9a-z][0-9a-z][0-9a-z]</code></pre>
-<p>The <code>year</code> directories reside directly below the top level directory.</p>
+<p>The <code>year</code> (<code>1984</code>, <code>1985</code>, …, <code>2020</code>, …) directories reside directly below
+the top level directory.</p>
 <div id="dot-year">
 <h2 id="year-1"><code>.year</code></h2>
 </div>
-<p>Each <code>year</code> directory will have a file under it named <code>.year</code>.</p>
-<p>The contents of the <code>.year</code> file is the year string of the directory. For
-instance, <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/.year">2020/.year</a> lists, one directory per line,
-the directories of the winning entries of that year. For instance, for 2020:</p>
+<p>Each <a href="#year">year</a> directory will have a file under it named <code>.year</code>.</p>
+<p>The content of each <code>.year</code> file is the <a href="#year">year string</a> of that year’s winning
+<a href="#entry">entries’</a> (directory names). For instance, <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/.year">2020/.year</a>
+lists, one directory per line, the directories of the winning entries of
+<a href="../2020/index.html">2020</a>. For instance, for <a href="../2020/index.html">2020</a>:</p>
 <pre class="&lt;!--sh--&gt;"><code>        $ cat 2020/.year
         2020/burton
         2020/carlini
@@ -1179,58 +1189,63 @@ the directories of the winning entries of that year. For instance, for 2020:</p>
         2020/tsoj
         2020/yang</code></pre>
 <h2 id="dir"><code>dir</code></h2>
-<p>A <code>dir</code> is a POSIX safe string that holds an entry.</p>
+<p>A <code>dir</code> is a POSIX safe string (directory name) that holds an entry.</p>
 <p>A <code>dir</code> is a string that matches this regexp:</p>
 <pre><code>    ^[a-z][0-9a-z.-]*$</code></pre>
-<p>Each <code>entry</code> is under its own individual directory. This directory
-is directly under a <code>year</code> directory.</p>
+<p>Each <a href="#entry">entry</a> is under its own individual directory. This directory
+is directly under a <a href="#year">year</a> directory.</p>
 <div id="entry-id">
 <h3 id="entry_id"><code>entry_id</code></h3>
 </div>
-<p>A string that identifies the winning entry. The string is of the form:</p>
+<p>A string that identifies <a href="#entry">winning entries</a>. The string is of the form:</p>
 <pre><code>    year_dir</code></pre>
+<p>where <code>year</code> is the <a href="#year">year</a> and <code>dir</code> is the <a href="#dir">dir</a>.</p>
+<p>For instance, the <code>entry_id</code> for <a href="../2020/endoh2/index.html">2020/endoh2</a>
+is:</p>
+<pre><code>    2020_endoh2</code></pre>
 <div id="csv">
-<h1 id="csv-files">CSV files</h1>
+<h1 id="csv-files">CSV Files</h1>
 </div>
-<p>The <code>bin/csv2entry.sh</code> and <code>bin/entry2csv.sh</code> tools use the following
-3 CSV files. In the case of <code>bin/entry2csv.sh</code>, these 3 CSV files
-are created / updated. In the case of <code>bin/csv2entry.sh</code>, these 3
+<p>The <code>bin/csv2entry.sh</code> and <code>bin/entry2csv.sh</code> tools use the below
+three CSV files. In the case of <code>bin/entry2csv.sh</code>, these CSV files
+are created / updated; in the case of <code>bin/csv2entry.sh</code>, these
 CSV files are used as input.</p>
 <div id="author_wins_csv">
-<h2 id="author_wins.csv">author_wins.csv</h2>
+<h2 id="author_wins.csv"><code>author_wins.csv</code></h2>
 </div>
-<p>A CSV spreadsheet: one line per <code>author</code>.</p>
-<p>The first field is an <code>author_handle</code>.</p>
-<p>The other fields are the <code>entry_id</code>’s of all <em>YYYY/dir</em> entry’s won by the <code>author</code>.</p>
+<p>A CSV file exported from a spreadsheet, one line per <a href="#author">author</a>.</p>
+<p>The first field is an <a href="#author-handle">author_handle</a>.</p>
+<p>The other fields are the <a href="#entry-id">entry_id</a>s of all <code>YYYY/dir</code>
+<a href="#entry">entries</a> won by the <a href="#author">author</a>.</p>
 <div id="manifest_csv">
-<h2 id="manifest.csv">manifest.csv</h2>
+<h2 id="manifest.csv"><code>manifest.csv</code></h2>
 </div>
-<p>A CSV spreadsheet contains information about files in <em>YYYY/dir</em> entry directories under year directories.
-This file has the following fields:</p>
+<p>A CSV file exported from a spreadsheet that contains information about files in
+<code>YYYY/dir</code> entry directories under year directories. This file has the
+following fields:</p>
 <ol type="1">
-<li><p>year:</p>
+<li><p><code>year</code>:</p>
 <p>IOCCC year as a 4-character string. Normally this would be a 4 digit year string,
 however it may also be a string such as “mock”.</p>
-<p>NOTE: If year begins with “#”, then dir is a comment, and the
-rest of the row is to be ignored. Rows of this form do NOT
-contain manifest information for a file.</p></li>
-<li><p>dir:</p>
-<p>Directory name number the IOCCC year.</p></li>
-<li><p>path:</p>
+<p>NOTE: If year begins with <code>#</code>, then <code>dir</code> (see below) is a comment, and the
+rest of the row is to be ignored. Rows of this form do <strong>NOT</strong> contain
+manifest information for a file.</p></li>
+<li><p><code>dir</code>:</p>
+<p>Directory name (number of the IOCCC year).</p></li>
+<li><p><code>path</code>:</p>
 <p>Path under the IOCCC/directory. In a few cases this is a path,
 not just a simple filename under the IOCCC/directory.</p></li>
-<li><p>inventory_order:</p>
-<p>This number is the rank showing the order
-that this file is to be listed for the given entry’s in
-the winning entry’s <code>index.html</code> file.</p>
-<p>If the number is 9 digits or less, then the given file
+<li><p><code>inventory_order</code>:</p>
+<p>This number is the rank showing the order that this file is to be listed in
+the list of files for the given entry in the <code>index.html</code> file.</p>
+<p>If the number is under 10 digits, then the given file
 is considered a primary file when listed in the inventory
-of files for a given winning <em>YYYY/dir</em> entry.</p>
+of files for a given winning <code>YYYY/dir</code> entry.</p>
 <p>If the number is 10 digits or more, then the given file
 is considered a secondary file when listed in the inventory
-of files for a given winning <em>YYYY/dir</em> entry We recommend using the
-value <strong>4294967295</strong> (2^32-1) for secondary files.</p></li>
-<li><p>OK_to_edit:</p>
+of files for a given winning <code>YYYY/dir</code> entry. We recommend using the
+value <code>4294967295</code> (<code>2^32-1</code>) for secondary files.</p></li>
+<li><p><code>OK_to_edit</code>:</p>
 <p>If the value is <code>true</code>, then the file is one that may be
 edited directly.</p>
 <p>If the value is <code>false</code>, then the file should <strong>NOT</strong> be
@@ -1238,27 +1253,30 @@ edited, because the given file is generated by a tool.
 One should <strong>NOT</strong> modify such a file directly, but
 instead modify source files (i.e., markdown files,
 JSON files, etc.)</p></li>
-<li><p>display_as:</p>
-<p>The type of given file.</p></li>
-<li><p>display_via_github</p>
+<li><p><code>display_as</code>:</p>
+<p>The type of given file (e.g. C, JSON, shellscript etc.)</p>
+<p><strong>NOTE</strong>: these are lower case words.</p></li>
+<li><p><code>display_via_github</code>:</p>
 <p>If <code>true</code>, then the contents of the file should be viewed
 via the GitHub repo.</p>
 <p>If <code>false</code>, then the contents of the file should be viewed
 in the web browser directly. In some cases this may
 result in the file being downloaded instead of being displayed.</p></li>
-<li><p>entry_text:</p>
+<li><p><code>entry_text</code>:</p>
 <p>Any text that should be displayed at the end of line in <code>index.html</code>
-(with a preceding ” - “), or null is no such text is to be displayed.</p></li>
+(with a preceding ” - “), or <code>null</code> if no such text is to be displayed.</p></li>
 </ol>
-<p>NOTE: Cells containing true or false are JSON booleans.
-NOTE: All other cells are JSON strings that need to be double quoted, including the year.
-NOTE: Do not put commas, nor quotes, nor newlines in fields as these are bound to cause problems.</p>
+<p><strong>NOTE</strong>: Cells containing <code>true</code> or <code>false</code> are JSON booleans.</p>
+<p><strong>NOTE</strong>: All other cells are JSON strings that need to be double quoted (in the
+JSON files), including the year.</p>
+<p><strong>NOTE</strong>: Do not put commas, or quotes, or newlines in fields as these are bound
+to cause problems.</p>
 <div id="year_prize_csv">
-<h2 id="year_prize.csv">year_prize.csv</h2>
+<h2 id="year_prize.csv"><code>year_prize.csv</code></h2>
 </div>
-<p>A CSV spreadsheet: one line per <em>YYYY/dir</em> entry directory.</p>
-<p>The first field is a <code>entry_id</code>.</p>
-<p>The second field is the name of the award for given <em>YYYY/dir</em> entry.</p>
+<p>A CSV spreadsheet, one line per <code>YYYY/dir</code> entry directory.</p>
+<p>The first field is an <a href="#entry-id">entry_id</a>.</p>
+<p>The second field is the name of the award for a given <code>YYYY/dir</code> entry.</p>
 <!--
 
     Copyright © 1984-2024 by Landon Curt Noll. All Rights Reserved.

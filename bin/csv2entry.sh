@@ -1177,7 +1177,7 @@ if ! cmp -s "$TMP_YEAR_PRIZE_CSV" "$YEAR_PRIZE_CSV"; then
 
     # report author_wins.csv inventory problem
     #
-    echo "$0: ERROR: The entries referenced in author_wins.csv: $AUTHOR_WINS_CSV to not match YYYY/dir tree" 1>&2
+    echo "$0: ERROR: The entries referenced in author_wins.csv: $AUTHOR_WINS_CSV do not match YYYY/dir tree" 1>&2
     echo "$0: Warning: difference between YYYY/dir tree and author_wins.csv entries starts below: $AUTHOR_WINS_CSV" 1>&2
     diff -u "$TMP_YEAR_PRIZE_CSV" "$YEAR_PRIZE_CSV" 1>&2
     echo "$0: Warning: difference between YYYY/dir tree and author_wins.csv entries ends above" 1>&2
@@ -1208,7 +1208,7 @@ if ! cmp -s "$TMP_YEAR_PRIZE_CSV" "$YEAR_PRIZE_CSV"; then
 
     # report author_wins.csv inventory problem
     #
-    echo "$0: ERROR: The entries referenced in manifest.csv $MANIFEST_CSV to not match YYYY/dir tree" 1>&2
+    echo "$0: ERROR: The entries referenced in manifest.csv $MANIFEST_CSV do not match YYYY/dir tree" 1>&2
     echo "$0: Warning: difference between YYYY/dir tree and manifest.csv entries starts below: $MANIFEST_CSV" 1>&2
     diff -u "$TMP_YEAR_PRIZE_CSV" "$YEAR_PRIZE_CSV" 1>&2
     echo "$0: Warning: difference between YYYY/dir tree and manifest.csv entries ends above" 1>&2
@@ -1239,7 +1239,7 @@ if ! cmp -s "$TMP_YEAR_PRIZE_CSV" "$YEAR_PRIZE_CSV"; then
 
     # report author_wins.csv inventory problem
     #
-    echo "$0: ERROR: The entries referenced in year_prize.csv $YEAR_PRIZE_CSV to not match YYYY/dir tree" 1>&2
+    echo "$0: ERROR: The entries referenced in year_prize.csv $YEAR_PRIZE_CSV do not match YYYY/dir tree" 1>&2
     echo "$0: Warning: difference between YYYY/dir tree and year_prize.csv entries starts below: $YEAR_PRIZE_CSV" 1>&2
     diff -u "$TMP_YEAR_PRIZE_CSV" "$YEAR_PRIZE_CSV" 1>&2
     echo "$0: Warning: difference between YYYY/dir tree and year_prize.csv entries ends above" 1>&2

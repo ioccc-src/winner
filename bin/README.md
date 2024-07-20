@@ -42,7 +42,7 @@ see what is going on with the
 
 
 ``` <!---sh-->
-        bin/quick-readme2index.sh -v 3
+    bin/quick-readme2index.sh -v 3
 ```
 
 to set the verbosity level to `3`. The default for verbosity is `0`, no
@@ -57,7 +57,7 @@ For instance to see what version the [chk-entry.sh](index.html#chk-entry) tool
 is, you would do:
 
 ``` <!---sh-->
-        bin/chk-entry.sh -V
+    bin/chk-entry.sh -V
 ```
 
 
@@ -127,7 +127,7 @@ For example:
 ```
 
 If you wish to run it on all entries, we recommend that this tool be invoked via
-the top level `Makefile` by:
+the top level `Makefile`:
 
 ``` <!---sh-->
     make verify_entry_files
@@ -138,7 +138,7 @@ the top level `Makefile` by:
 ### [csv2entry.sh](%%REPO_URL%%/bin/csv2entry.sh)
 </div>
 
-Convert CSV files into `.entry.json` for all entries.
+Convert CSV files into `.entry.json` for all winning IOCCC entries.
 
 This tool takes as input, the following CSV files:
 
@@ -148,8 +148,7 @@ This tool takes as input, the following CSV files:
 - [year_prize.csv](#year_prize_csv) - `entry_id` followed by the entry's award
 title
 
-This tool updates `.entry.json` files for all entries.
-Only those `.entry.json` files whose content is modified are written.
+This tool updates `.entry.json` files entries whose content is modified.
 
 For example:
 
@@ -160,25 +159,25 @@ For example:
 There is no requirement to sort the CSV files, nor convert
 them to UNIX format, nor append a final newline to the file.
 
-This tool will canonicalize CSV files before using them
+This tool will canonicalize the CSV files before using them
 as input.  Thus, if one wishes to import the CSV file into
 some spreadsheet such as the [macOS](https://www.apple.com/macos)
-[Numbers](https://www.apple.com/numbers/) spreadsheet,
-modifies the content and final exports back to the CSV file,
+[Numbers](https://www.apple.com/numbers/) spreadsheet application,
+modify the content and finally export back to the CSV file,
 this tool will modify the CSV file (if needed) in order
 to restore the CSV order and other canonicalizing processes.
 
 This tool will flag as an error, any empty fields, fields that are
 an unquoted `NULL` or `null`, fields that start with whitespace,
-fields that ends with whitespace, or fields that contain consecutive
+fields that end with whitespace, or fields that contain consecutive
 whitespace characters.
 
 
 #### Internal details of `bin/csv2entry.sh`
 
 We first canonicalize the CSV files by replacing any "carriage
-return line feeds" with "newlines.  We also make sure that the CSV
-file ends in a newline.  We do this because some spreadsheet
+return line feeds" with "newlines".  We also make sure that the CSV
+files end in a newline.  We do this because some spreadsheet
 applications, when exporting to a CSV file, do not do this.
 
 We also sort the CSV files in the same way that [entry2csv](#entry2csv) sorts
@@ -194,14 +193,12 @@ the `YYYY/dir` directory under the root of the git repository).  From that list 
 `YYYY/dir` IOCCC entry directories, we will create the `.entry.json` files.  We
 only modify those `.entry.json` files when their content changes.
 
-**NOTE**:
-
-While this tool uses `jparse(1)` to verify that the modified
-`.entry.json` contains valid JSON content, **this tool does NOT
-perform any semantic checks**.  For example, this tool does NOT
-verify that the manifest in the `.entry.json` file matches the
-files in the `YYYY/dir directory`, or even that the `.entry.json`
-contains a manifest (or any of the other required JSON content).
+**IMPORTANT NOTE**: while this tool uses `jparse(1)` to verify that the modified
+`.entry.json` contains valid JSON content, **this tool does NOT perform ANY
+semantic checks**.  For example, this tool does **NOT** verify that the manifest in
+the `.entry.json` file matches the files in the `YYYY/dir directory`, or even
+that the `.entry.json` contains a manifest (or any of the other required JSON
+content).
 
 
 <div id="entry2csv">
@@ -211,15 +208,14 @@ contains a manifest (or any of the other required JSON content).
 This tool takes as input, all entry `.entry.json` files
 and updates 3 CSV files:
 
-- [author_wins.csv](#author_wins_csv) - `author_handle` followed by all their
-`entry_id`s
-- [manifest.csv](#manifest_csv) - information about files under a entry
-- [year_prize.csv](#year_prize_csv) - `entry_id` followed by the entry's award
-title
+- [author_wins.csv](#author_wins_csv) - each `author_handle` followed their `entry_id`s
+- [manifest.csv](#manifest_csv) - information about all files in all entries
+- [year_prize.csv](#year_prize_csv) - each `entry_id` followed by the entry's award title
 
 The CSV files are written in a canonical UNIX format form.
 
 Only those CSV files files whose content is modified are written.
+
 
 #### Internal details of `bin/entry2csv.sh`
 
@@ -231,13 +227,11 @@ given year.  Only those entries so listed are processed.
 All IOCCC entry directories must have a `.path` file that lists
 the path of the entry's directory from the `TOPDIR`.
 
-**NOTE**:
-
-When adding new IOCCC years' entries, the `.top` file **MUST**
-be updated, and the new IOCCC year `YYYY/.year` files **MUST**
-reference the directory of the new IOCCC entries.  They
-must also contain a `.path` file that contains the path
-of the IOCCC entry directory from the `TOPDIR`.
+**IMPORTANT NOTE**: when adding new IOCCC winning entries, the `.top` file
+**MUST** be updated, and the new IOCCC year `YYYY/.year` files **MUST**
+reference the directory of the new IOCCC entries.  Each entry directory **MUST**
+also contain a `.path` file that contains the path of the IOCCC entry directory
+from the `TOPDIR`.
 
 
 <div id="filelist-entry-json-awk">
@@ -289,7 +283,7 @@ that is **NOT** an IOCCC markdown best practice.
 See also the [IOCCC markdown best practices](../markdown.html) document for more
 details.
 
-We recommend that this tool be invoked via the top level `Makefile` by:
+We recommend that this tool be invoked via the top level `Makefile`:
 
 ``` <!---sh-->
     make find_missing_links
@@ -321,7 +315,7 @@ Usage:
     bin/gen-authors.sh -v 1
 ```
 
-We recommend that this tool be invoked via the top level `Makefile` by:
+We recommend that this tool be invoked via the top level `Makefile`:
 
 ``` <!---sh-->
     make gen_authors
@@ -340,7 +334,7 @@ Usage:
     bin/gen-location.sh -v 1
 ```
 
-We recommend that this tool be invoked via the top level `Makefile` by:
+We recommend that this tool be invoked via the top level `Makefile`:
 
 ``` <!---sh-->
     make gen_location
@@ -360,7 +354,7 @@ Usage:
     bin/gen-other-html.sh -v 1
 ```
 
-We recommend that this tool be invoked via the top level `Makefile` by:
+We recommend that this tool be invoked via the top level `Makefile`:
 
 ``` <!---sh-->
     make gen_other_html
@@ -381,7 +375,7 @@ Usage:
 
 This would generate the [sitemap.xml](../sitemap.xml) file.
 
-We recommend that this tool be invoked via the top level `Makefile` by:
+We recommend that this tool be invoked via the top level `Makefile`:
 
 ``` <!---sh-->
     make gen_sitemap
@@ -425,7 +419,7 @@ To see other valid statuses:
     bin/gen-status -h
 ```
 
-We recommend that this tool be invoked via the top level `Makefile` by:
+We recommend that this tool be invoked via the top level `Makefile`:
 
 ``` <!---sh-->
     make gen_status
@@ -461,7 +455,7 @@ Examples of top level HTML pages built by this tool include:
 - [news.html](../news.html)
 - [thanks-for-help.html](../thanks-for-help.html)
 
-We recommend that this tool be invoked via the top level `Makefile` by:
+We recommend that this tool be invoked via the top level `Makefile`:
 
 ``` <!---sh-->
     make gen_top_html
@@ -482,7 +476,7 @@ Usage:
 
 This would create the [2020/index.html](../2020/index.html) file.
 
-We recommend that this tool be invoked via the top level `Makefile` by:
+We recommend that this tool be invoked via the top level `Makefile`:
 
 ``` <!---sh-->
     make gen_year_index
@@ -504,7 +498,7 @@ Usage:
     bin/gen-years.sh -v 1
 ```
 
-We recommend that this tool be invoked via the top level `Makefile` by:
+We recommend that this tool be invoked via the top level `Makefile`:
 
 ``` <!---sh-->
     make gen_years
@@ -521,19 +515,18 @@ Although a configuration file it is also something of a script file.
 To not down descend into the depths of `pandoc(1)` and to have to explain how
 this file can change all the HTML files, we advise you to let
 [Smaug](https://www.glyphweb.com/arda/s/smaug.html) (the dragon of
-[Erebor](https://www.glyphweb.com/arda/e/erebor.html)), famously visited by a
-[Hobbit](https://www.glyphweb.com/arda/h/hobbits.html) and 13
+[Erebor](https://www.glyphweb.com/arda/e/erebor.html) famously visited by a
+[Hobbit](https://www.glyphweb.com/arda/h/hobbits.html) called [Bilbo
+Baggins](https://www.glyphweb.com/arda/b/bilbobaggins.html) and 13
 [Dwarves](https://www.glyphweb.com/arda/d/dwarves.html) in the
 [T.A.](https://www.glyphweb.com/arda/t/thirdage.html) 2941 or 1341
-in the [Shire-reckoning](https://www.glyphweb.com/arda/s/shirereckoning.html), slumber as
-"here be dragons". If you still need convincing, we wish to remind you of [Bilbo
+in the [Shire-reckoning](https://www.glyphweb.com/arda/s/shirereckoning.html))), slumber as
+"`here be dragons`". If you still need convincing, we wish to remind you of [Bilbo
 Baggins](https://www.glyphweb.com/arda/b/bilbobaggins.html)' famous words:
 
-
-```
-        "Never laugh at live dragons, Bilbo you fool!" he said to himself, and it
-        became a favourite saying of his later, and passed into a proverb.
-```
+> "Never laugh at live dragons,
+[Bilbo](https://www.glyphweb.com/arda/b/bilbobaggins.html) you fool!" he said to himself, and it
+became a favourite saying of his later, and passed into a proverb.
 
 
 <div id="md2html">
@@ -616,11 +609,11 @@ this command will only briefly pause while the
 Usage:
 
 ``` <!---sh-->
-        # For all entries:
+    # For all entries:
     bin/all-run.sh -v 3 bin/quick-readme2index.sh -v 1
 
-        # For an individual entry:
-        bin/quick-readme2index.sh -v 1 2020/ferguson2
+    # For an individual entry:
+    bin/quick-readme2index.sh -v 1 2020/ferguson2
 ```
 
 **NOTE**: This command assumes that the relative
@@ -628,7 +621,7 @@ modification times for `README.md`, `.entry.json`,
 and `index.html` are correct.  If in doubt, use
 [readme2index.sh](index.html#readme2index).
 
-We recommend that this tool be invoked via the top level `Makefile` by:
+We recommend that this tool be invoked via the top level `Makefile`:
 
 ``` <!---sh-->
     make quick_entry_index
@@ -653,7 +646,7 @@ To build `index.html` files for all entries:
     bin/all-run.sh -v 3 bin/readme2index.sh -v 1
 ```
 
-We recommend that this tool be invoked via the top level `Makefile` by:
+We recommend that this tool be invoked via the top level `Makefile`:
 
 ``` <!---sh-->
     make entry_index
@@ -702,7 +695,7 @@ Suggested usage (for all `.gitignore` files):
     bin/all-run.sh bin/sort.gitignore.sh -v 1
 ```
 
-We recommend that this tool be invoked via the top level `Makefile` by:
+We recommend that this tool be invoked via the top level `Makefile`:
 
 ``` <!---sh-->
     make sort_gitignore
@@ -791,7 +784,7 @@ Suggested usage:
     bin/all-years.sh -v 3 bin/tar-year.sh -v 1 -W
 ```
 
-We recommend that this tool be invoked via the top level `Makefile` by:
+We recommend that this tool be invoked via the top level `Makefile`:
 
 ``` <!---sh-->
     make form_year_tarball
@@ -816,7 +809,7 @@ Suggested usage:
     bin/all-run.sh -v 3 bin/untar-entry.sh -v 1
 ```
 
-We recommend that this tool be invoked via the top level `Makefile` by:
+We recommend that this tool be invoked via the top level `Makefile`:
 
 ``` <!---sh-->
     make untar_entry_tarball
@@ -841,7 +834,7 @@ Suggested usage:
     bin/all-years.sh -v 3 bin/untar-year.sh -v 1
 ```
 
-We recommend that this tool be invoked via the top level `Makefile` by:
+We recommend that this tool be invoked via the top level `Makefile`:
 
 ``` <!---sh-->
     make untar_year_tarball
@@ -1166,7 +1159,7 @@ available to the IOCCC.
 
 The [GitHub pages](https://pages.github.com) have the distributed server capacity needed to handle
 the **huge download volume** or [Slashdot effect](https://en.wikipedia.org/wiki/Slashdot_effect)
-that happens when a IOCCC entries are published.
+that happens when new IOCCC winning entries are published.
 
 Most so-called low cost web hosting sites have a somewhat hidden excessive bandwidth charge
 and/or cap bandwidth when the volume gets too high, and/or do not have the infrastructure
@@ -1231,24 +1224,26 @@ disabled.
 The IOCCC will **NOT MANDATE USE OF JavaScript** to view [official IOCCC web
 site](https://www.ioccc.org) (except for some mobile devices for the menu).
 
-For this reason, we cannot use JavaScript include HTML content.
+For this reason, we cannot use JavaScript to include HTML content.
 
 
 <div id="terms">
-# IOCCC terms
+# IOCCC Terms
 </div>
 
-The following IOCCC terms apply to tools, JSON files, and the directory structure of this repo.
+The following IOCCC terms apply to tools, JSON files, and the directory
+structure of this repo that forms the [Official IOCCC
+website](https://www.ioccc.org).
 
 
 <div id="author">
 ## `author`
 </div>
 
-An individual who was an `author` of at least one winning IOCCC entry.
+An **individual** who was won at least one winning IOCCC [entry](#entry).
 
 Some authors have submitted more than one IOCCC entry that won.  Some winning
-IOCCC entries have more than one author. In that case we might use the word
+IOCCC entries have more than one author; in that case we might use the word
 `authors`.
 
 
@@ -1256,8 +1251,8 @@ IOCCC entries have more than one author. In that case we might use the word
 ## `author_handle`
 </div>
 
-An `author_handle` is string that refers to a given author and is unique to the
-IOCCC.  Each author has **EXACTLY ONE** `author_handle`.
+An `author_handle` is string that refers to a given [author](#author) and **is unique to the
+IOCCC**.  Each [author](#author) has **EXACTLY ONE** `author_handle`.
 
 For each `author_handle`, there will be a JSON file located at:
 
@@ -1265,11 +1260,11 @@ For each `author_handle`, there will be a JSON file located at:
     author/author_handle.json
 ```
 
-where `author_handle` is the author's `author_handle`.
+where `author_handle` is the [author](#author)'s `author_handle`.
 
-Because the `author_handle` is used to form a JSON filename, the string must be
+Because the `author_handle` is used to form a JSON filename, the string **MUST** be
 a POSIX safe string with the addition of `+` (for technical reasons beyond this
-document).  In particular, the `author_handle` must be an ASCII
+document).  In particular, the `author_handle` **MUST** be an ASCII
 string that matches this regexp:
 
 ``` <!---re-->
@@ -1278,17 +1273,16 @@ string that matches this regexp:
 
 Default `author_handle`s do not have multiple consecutive `_` (underscore)
 characters.  Nevertheless, multiple consecutive `_` (underscore) characters are
-allowed. Contest submitters who wish to override the `author_handle` may do so.
+allowed; contest submitters who wish to override the `author_handle` may do so.
 
-The `author_handle` is derived from the name of the author.  While there is a
-algorithm that maps the name of the author (which can contain any UTF-8
-characters) into a default `author_handle` string, those who submit an entry to
-the IOCCC are free to choose a different `author_handle` string if they so
-desire.
+The `author_handle` is derived from the name of the [author](#author).  While
+there is an algorithm that maps the name of the [author](#author) (which may contain any UTF-8
+characters) into a default `author_handle` string, those who submit to the IOCCC
+are free to choose a different `author_handle` string if they so desire.
 
-An `author` who has won a previous IOCCC is encouraged to reuse their
-`author_handle` so that new winning entries can be associated with the same
-author.
+**NOTE**: an [author](#author) who has won a [previous IOCCC](../years.html)
+**is encouraged to reuse their `author_handle`** so that new winning
+[entries](#entry) can be associated with the same [author](#author).
 
 For an anonymous `author`, their handle is one of these forms:
 
@@ -1303,10 +1297,10 @@ or:
 ```
 
 
-The latter form is in case there are more than one anonymous author in a given
+The latter form is in case there is more than one anonymous author in a given
 year.
 
-NOTE: even if the directory name is not `anonymous` the above rules apply as in
+**NOTE**: even if the directory name is not `anonymous` the above rules apply as in
 in the case of [2005/anon](../2005/anon/index.html).
 
 Anonymous `author_handle`'s match this regexp:
@@ -1320,7 +1314,7 @@ Anonymous `author_handle`'s match this regexp:
 ## `entry`
 </div>
 
-An IOCCC entry that won an award for a given IOCCC.
+An IOCCC [submission](#submission) that won an award for a given IOCCC.
 
 An `entry` has one or more `author`s.
 
@@ -1331,10 +1325,26 @@ While in most cases an `entry` consists of files under an entry's directory,
 there are a few cases where an `entry` directory contains subdirectories.
 
 Use of subdirectories under an `entry` directory is discouraged and
-may be limited to previous `entry`s that used them.
+may be limited to previous entries that used them.
 
-NOTE: In the past, the term `winner` was used in instead of today's term of
-`entry`.
+**HISTORICAL NOTE**: in the past, the term `winner` was used in instead of
+today's term of `entry`.
+
+<div id="submission">
+## `submission`
+</div>
+
+In the past, the IOCCC used the term [entry](#entry) for both a hopeful
+[submission](#submission) and a [winning entry](#entry). It was decided,
+however, in 2024, to remove this ambiguity by introducing the term
+[submission](#submission). This does mean that if one wishes to win the IOCCC they
+must submit to the [Judges](../judges.html)! :-)
+
+<div id="submitter">
+## `submitter`
+</div>
+
+A person who submits a [submission](#submission).
 
 
 <div id="year">
@@ -1343,7 +1353,7 @@ NOTE: In the past, the term `winner` was used in instead of today's term of
 
 A `year` is a 4 character string.  Most years are 4-digit strings that
 represent the year.  Some special `year` strings are possible, such as `mock`.
-Non-numeric `year` strings are lower case.
+Non-numeric `year` strings are lower case (hence `mock` and not `MOCK`).
 
 A `year` string matches this regexp:
 
@@ -1351,18 +1361,20 @@ A `year` string matches this regexp:
     [0-9a-z][0-9a-z][0-9a-z][0-9a-z]
 ```
 
-The `year` directories reside directly below the top level directory.
+The `year` (`1984`, `1985`, ..., `2020`, ...) directories reside directly below
+the top level directory.
 
 
 <div id="dot-year">
 ## `.year`
 </div>
 
-Each `year` directory will have a file under it named `.year`.
+Each [year](#year) directory will have a file under it named `.year`.
 
-The contents of the `.year` file is the year string of the directory. For
-instance, [2020/.year](%%REPO_URL%%/2020/.year) lists, one directory per line,
-the directories of the winning entries of that year. For instance, for 2020:
+The content of each `.year` file is the [year string](#year) of that year's winning
+[entries'](#entry) (directory names). For instance, [2020/.year](%%REPO_URL%%/2020/.year)
+lists, one directory per line, the directories of the winning entries of
+[2020](../2020/index.html). For instance, for [2020](../2020/index.html):
 
 ``` <!--sh-->
         $ cat 2020/.year
@@ -1388,7 +1400,7 @@ the directories of the winning entries of that year. For instance, for 2020:
 ## `dir`
 </div>
 
-A `dir` is a POSIX safe string that holds an entry.
+A `dir` is a POSIX safe string (directory name) that holds an entry.
 
 A `dir` is a string that matches this regexp:
 
@@ -1396,83 +1408,94 @@ A `dir` is a string that matches this regexp:
     ^[a-z][0-9a-z.-]*$
 ```
 
-Each `entry` is under its own individual directory.  This directory
-is directly under a `year` directory.
+Each [entry](#entry) is under its own individual directory.  This directory
+is directly under a [year](#year) directory.
 
 
 <div id="entry-id">
 ### `entry_id`
 </div>
 
-A string that identifies the winning entry.  The string is of the form:
+A string that identifies [winning entries](#entry).  The string is of the form:
 
 ```
     year_dir
 ```
 
+where `year` is the [year](#year) and `dir` is the [dir](#dir).
+
+For instance, the `entry_id` for [2020/endoh2](../2020/endoh2/index.html)
+is:
+
+
+```
+    2020_endoh2
+```
+
 
 <div id="csv">
-# CSV files
+# CSV Files
 </div>
 
-The `bin/csv2entry.sh` and `bin/entry2csv.sh` tools use the following
-3 CSV files.  In the case of `bin/entry2csv.sh`, these 3 CSV files
-are created / updated.  In the case of `bin/csv2entry.sh`, these 3
+The `bin/csv2entry.sh` and `bin/entry2csv.sh` tools use the below
+three CSV files.  In the case of `bin/entry2csv.sh`, these CSV files
+are created / updated; in the case of `bin/csv2entry.sh`, these
 CSV files are used as input.
 
 
 <div id="author_wins_csv">
-## author_wins.csv
+## `author_wins.csv`
 </div>
 
-A CSV spreadsheet: one line per `author`.
+A CSV file exported from a spreadsheet, one line per [author](#author).
 
-The first field is an `author_handle`.
+The first field is an [author_handle](#author-handle).
 
-The other fields are the `entry_id`'s of all _YYYY/dir_ entry's won by the `author`.
+The other fields are the [entry_id](#entry-id)s of all `YYYY/dir`
+[entries](#entry) won by the [author](#author).
 
 
 <div id="manifest_csv">
-## manifest.csv
+## `manifest.csv`
 </div>
 
-A CSV spreadsheet contains information about files in _YYYY/dir_ entry directories under year directories.
-This file has the following fields:
+A CSV file exported from a spreadsheet that contains information about files in
+`YYYY/dir` entry directories under year directories.  This file has the
+following fields:
 
-1. year:
+1. `year`:
 
    IOCCC year as a 4-character string.  Normally this would be a 4 digit year string,
    however it may also be a string such as "mock".
 
-   NOTE: If year begins with "#", then dir is a comment, and the
-   rest of the row is to be ignored.  Rows of this form do NOT
-   contain manifest information for a file.
+   NOTE: If year begins with `#`, then `dir` (see below) is a comment, and the
+   rest of the row is to be ignored.  Rows of this form do **NOT** contain
+   manifest information for a file.
 
-2. dir:
+2. `dir`:
 
-   Directory name number the IOCCC year.
+   Directory name (number of the IOCCC year).
 
-3. path:
+3. `path`:
 
    Path under the IOCCC/directory.  In a few cases this is a path,
    not just a simple filename under the IOCCC/directory.
 
-4. inventory_order:
+4. `inventory_order`:
 
-   This number is the rank showing the order
-   that this file is to be listed for the given entry's in
-   the winning entry's `index.html` file.
+   This number is the rank showing the order that this file is to be listed in
+   the list of files for the given entry in the `index.html` file.
 
-   If the number is 9 digits or less, then the given file
+   If the number is under 10 digits, then the given file
    is considered a primary file when listed in the inventory
-   of files for a given winning _YYYY/dir_ entry.
+   of files for a given winning `YYYY/dir` entry.
 
    If the number is 10 digits or more, then the given file
    is considered a secondary file when listed in the inventory
-   of files for a given winning _YYYY/dir_ entry  We recommend using the
-   value **4294967295** (2^32-1) for secondary files.
+   of files for a given winning `YYYY/dir` entry.  We recommend using the
+   value `4294967295` (`2^32-1`) for secondary files.
 
-5. OK_to_edit:
+5. `OK_to_edit`:
 
    If the value is `true`, then the file is one that may be
    edited directly.
@@ -1483,11 +1506,13 @@ This file has the following fields:
    instead modify source files (i.e., markdown files,
    JSON files, etc.)
 
-6. display_as:
+6. `display_as`:
 
-   The type of given file.
+   The type of given file (e.g. C, JSON, shellscript etc.)
 
-7. display_via_github
+   **NOTE**: these are lower case words.
+
+7. `display_via_github`:
 
    If `true`, then the contents of the file should be viewed
    via the GitHub repo.
@@ -1496,26 +1521,30 @@ This file has the following fields:
    in the web browser directly.  In some cases this may
    result in the file being downloaded instead of being displayed.
 
-8. entry_text:
+8. `entry_text`:
 
     Any text that should be displayed at the end of line in `index.html`
-    (with a preceding " - "), or null is no such text is to be displayed.
+    (with a preceding " - "), or `null` if no such text is to be displayed.
 
 
-NOTE: Cells containing true or false are JSON booleans.
-NOTE: All other cells are JSON strings that need to be double quoted, including the year.
-NOTE: Do not put commas, nor quotes, nor newlines in fields as these are bound to cause problems.
+**NOTE**: Cells containing `true` or `false` are JSON booleans.
+
+**NOTE**: All other cells are JSON strings that need to be double quoted (in the
+JSON files), including the year.
+
+**NOTE**: Do not put commas, or quotes, or newlines in fields as these are bound
+to cause problems.
 
 
 <div id="year_prize_csv">
-## year_prize.csv
+## `year_prize.csv`
 </div>
 
-A CSV spreadsheet: one line per _YYYY/dir_ entry directory.
+A CSV spreadsheet, one line per `YYYY/dir` entry directory.
 
-The first field is a `entry_id`.
+The first field is an [entry_id](#entry-id).
 
-The second field is the name of the award for given _YYYY/dir_ entry.
+The second field is the name of the award for a given `YYYY/dir` entry.
 
 
 <!--
