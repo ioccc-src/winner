@@ -290,7 +290,7 @@ help:
 	@echo
 	@echo 'make test		;: summary of mostly harmless tests'
 	@echo
-	@echo 'make entry2csv		;: convert all .entry.json files into 3 CSV spreadsheets'
+	@echo 'make entry2csv		;: convert all .entry.json files into 3 CSV files'
 	@echo 'make csv2entry		;: rebuild all all .entry.json files from 3 CSV spreadsheets'
 	@echo
 	@echo '# Rules for building specific web pages, a subset of rules mentioned above:'
