@@ -1247,20 +1247,12 @@ terminal try:
 
 The author stated that:
 
-```
-    The expression `(a*)*` compiles but loops forever.
-
-    There is no check for trailing backslash (`\`) in the pattern.
-
-    There is no check for unbalanced brackets.  Omitting a closing bracket
-    will generate a "Pattern too long" error, which is not the real error.
-```
-
-### STATUS: missing file - please provide it
-
-The author wrote in the documentation file [ant.txt](1993/ant/ant.txt) that
-there is a version of the code that is not obfuscated. This file, `agag.c` does
-not exist in the archive. Do you have it? Please provide it!
+> The expression `(a*)*` compiles but loops forever.
+>
+> There is no check for trailing backslash (`\`) in the pattern.
+>
+> There is no check for unbalanced brackets.  Omitting a closing bracket will
+generate a "Pattern too long" error, which is not the real error.
 
 
 <div id="1993_cmills">

@@ -12,8 +12,7 @@ code](#alternate-code) below.
 
 The current status of this entry is:
 
-> **STATUS: INABIAF - please DO NOT fix**<br>
-> **STATUS: missing file - please provide it**
+> **STATUS: INABIAF - please DO NOT fix**
 
 For more detailed information see [1993/ant in bugs.html](../../bugs.html#1993_ant).
 
