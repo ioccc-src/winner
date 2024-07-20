@@ -1110,7 +1110,7 @@ When you start the program everything starts to move over to the right side and
 then ends.  [Yusuke Endoh](authors.html#Yusuke_Endoh) pointed out that if you
 click the mouse it takes it back towards the centre.
 
-If you want to try and fix this (mis)feature, you are welcome to try.
+If you want to try and fix this, you are welcome to try.
 
 
 <div id="1992_lush">
@@ -2308,7 +2308,7 @@ animation but this does not seem to work with modern gcc versions. It appears
 that version 2.95 works but maybe others do as well. Do you have a fix? We would
 appreciate your help!
 
-If you want to try and fix this (mis)feature, you are welcome to try.
+If you want to try and fix this, you are welcome to try.
 
 
 <div id="2001_kev">
@@ -3036,7 +3036,6 @@ tends to result in empty output.
 
 * Will crash and die horribly if it runs out of memory.
 
-If you want to try and fix this (mis)feature, you are welcome to try.
 
 
 <div id="2011_fredriksson">
