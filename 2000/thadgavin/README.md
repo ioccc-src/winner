@@ -7,7 +7,7 @@
 NOTE: if you don't have curses or SDL1 installed both modes will fail to compile. In
 that case see the
 FAQ on "[SDL1 and SDL2](../../faq.html#SDL)"
-and
+and the
 FAQ on "[ncurses](../../faq.html#curses)"
 for more information.
 

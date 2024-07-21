@@ -203,7 +203,7 @@ where:
 
 * remarks.md
 
-    Remarks about your entry in markdown format: see
+    Remarks about your entry in markdown format: see the
     FAQ on "[remarks.md](#remarks_md)"
     for more info.
 
@@ -260,7 +260,7 @@ frequently submitted theme, be sure that it is obfuscated in several
 new and novel ways.
 
 **IMPORTANT HINT**: Be sure to **clearly explain** near the beginning
-of your `remarks.md` file, see
+of your `remarks.md` file, see the
 FAQ on "[remarks.md](#remarks_md)",
 **why you are submitting a entry based on a frequently
 submitted theme** and **how compares with previous IOCCC winners**
@@ -361,7 +361,7 @@ state something along the lines of:
 ```
 
 **FAIR WARNING**: Be sure to **clearly explain** near the beginning
-of your `remarks.md` file, see
+of your `remarks.md` file, see the
 FAQ on "[remarks.md](#remarks_md)",
 **why you are submitting a entry based on a frequently
 submitted theme** and **how compares with previous IOCCC winners**
@@ -527,7 +527,7 @@ information, they will ask (either in public or suggest a private conversation).
 Again, **please** don't hesitate to ask: Your question may be something that
 others are wondering about as well!
 
-See also
+See also the
 FAQ on "[rules, guidelines, tools feedback](#feedback)".
 
 
@@ -622,7 +622,7 @@ submission:
 
 - `mastodon` (null or double quoted string)
      * The Mastodon handle of this author in the form of `@user@domain`, or
-     `null` if not provided.  See
+     `null` if not provided.  See the
      FAQ on "[Mastodon](#try_mastodon)"
      for more information.
 
@@ -658,9 +658,9 @@ submission:
      **NOTE:** if you have won before, we **ENCOURAGE** you to use the same handle of
      your previous winning entries, to help in organising the
      [authors.html](authors.html) page and the author JSON file.
-     See
+     See the
      FAQ on "[author handle](#author_handle_faq)"
-     and
+     and the
      FAQ on "[author_handle.json](#author_json)"
      for more information.
 
@@ -794,7 +794,7 @@ The file also contains the following details:
 
 - `formed_timestamp` (number)
     * Seconds since epoch when `.auth.json was formed (see `gettimeofday(2)`).
-    See also
+    See also the
     FAQ on "[.info.json](#info_json)"
     for more inforation.
 
@@ -871,7 +871,7 @@ the  **mandatory** `remarks.md` file,
 and the **mandatory** C source file.
 See the
 FAQ on "[.auth.json](#auth_json)"
-and
+and the
 FAQ on "[remarks.md](#remarks_md)"
 for more inforation.
 
@@ -1931,7 +1931,7 @@ in question to see if the problem is known, and if a fix is wanted,
 consider trying to port the code to a 64-bit system and submitting
 a pull request with that change.  Pull requests that fix such code
 while trying to minimize the impact of any changes and preserving
-the spirit of the original code are very welcome!  Please see
+the spirit of the original code are very welcome!  Please see the
 FAQ on "[fixing an entry](#fix_an_entry)"
 for details.  See also the
 FAQ on "[GitHub pull request](#pull_request)"
@@ -1953,7 +1953,7 @@ In some cases the [bugs.html](bugs.html) file may note a known macOS problem
 with an entry.  Should you manage to port the entry, and assuming your changes
 also attempt to preserve the original intent of the IOCCC entry, we would
 encourage you to submit a pull request with your ported code.
-Please see
+Please see the
 FAQ on "[fixing an entry](#fix_an_entry)"
 for details.
 
@@ -1979,7 +1979,7 @@ other things that have to be done plus remembering to do it.
 See if the problem is mentioned in [bugs.html](bugs.html).  If you have a change
 that fixes the problem (even if it just a change to the `Makefile`) that doesn't
 negatively impact the entry too much, consider submitting that change in the
-form of a pull request.  Please see
+form of a pull request.  Please see the
 FAQ on "[fixing an entry](#fix_an_entry)".
 See also the
 FAQ on "[GitHub pull request](#pull_request)"
@@ -2091,7 +2091,7 @@ the [thanks-for-help.html](thanks-for-help.html) file.
 
 #### Red Hat based Linux
 
-First, see
+First, see the
 FAQ on "[general X11](#X11_general)".
 
 Install Xorg and related packages:
@@ -2658,7 +2658,7 @@ It also possible that you may have discovered a bug in an winning IOCCC
 entry.  If so, you are invited to try and fix the IOCCC entry and
 submit that fix by way of a [GitHub pull
 request](https://github.com/ioccc-src/winner/pulls).
-Please see
+Please see the
 FAQ on "[fixing an entry](#fix_an_entry)"
 for how to submit a fix to an IOCCC entry.
 
@@ -2939,7 +2939,7 @@ We recommend trying a method suitable for your environment first, if possible.
 
 This depends on your operating system for which we describe a couple below.
 
-In general OpenGL needs X11 to be installed and the X Window Server to be running.  See
+In general OpenGL needs X11 to be installed and the X Window Server to be running.  See the
 FAQ on "[X11](#X11)"
 for general information about X11.
 
@@ -3376,7 +3376,7 @@ some cases, such as `1984/mullender`, the original code is the same as the code
 as no changes were made (there is an alt version for systems that are not
 VAX-11/PDP-11, however).
 
-See also
+See also the
 FAQ on "[entry source code changes](#what_changed)"
 
 
@@ -3461,10 +3461,14 @@ There were certainly other reasons as well.
 Like with files being renamed, there are multiple reasons files were added or
 removed. The addition of the `try.sh` and `try.alt.sh` scripts is the most
 significant example of files being added. These scripts, as the
-FAQ on "[try.sh and try.alt.sh](#try)",
+`try.sh` sometimes the `try.alt.sh` scripts
 help demonstrate entries by automating commands, sometimes many
 commands and not always simple commands, that one would previously have to run
 manually (there are other benefits as well).
+
+See the
+FAQ on "[try.sh and try.alt.sh](#try)"
+for more details.
 
 Alternate code, sometimes provided by the author, sometimes provided by the
 judges and sometimes other people, was added to some entries as well.
@@ -3497,7 +3501,7 @@ The [known bugs](bugs.html) file, order by IOCCC years, contains a
 list of known bugs & (mis)features.  If you are looking for an IOCCC entry
 to try and fix, this file is a good place to start.
 
-See
+See the
 FAQ on "[fixing an entry](#fix_an_entry)"
 for information on how to submit a fix to
 an IOCCC entry.  Before you consider trying to fix an IOCCC winning entry,
@@ -3530,7 +3534,7 @@ fix. If it is accepted we'll be happy to credit you in the
 [thanks](thanks-for-help.html) file. If you're a previous author of a winning IOCCC entry we will happily
 link to your entries; if you're not we can link to your website if you wish.
 
-Please see
+Please see the
 FAQ on "[fixing an entry](#fix_an_entry)"
 for information on how to submit a fix to an
 IOCCC entry.  See also the
@@ -3577,7 +3581,7 @@ And of course, an IOCCC author may update their own entries
 against the [master branch](https://github.com/ioccc-src/winner/branches)
 of the [ioccc-src/winner repo](https://github.com/ioccc-src/winner).
 
-Please see
+Please see the
 FAQ on "[fixing an entry](#fix_an_entry)".
 See also the
 FAQ on "[GitHub pull request](#pull_request)"
@@ -3594,16 +3598,16 @@ have the final say in the matter.
 </div>
 
 If you discover a problem with the IOCCC website that is related
-to a particular IOCCC entry, please see
+to a particular IOCCC entry, please see the
 FAQ on "[report entry bug](#report_bug)"
-for information about reporting a bug in an IOCCC entry, and see
+for information about reporting a bug in an IOCCC entry, and see the
 FAQ on "[fixing an entry](#fix_an_entry)"
 for information on how to submit a fix to an IOCCC entry.
 
 If you discover a problem with the IOCCC website (such as a broken link, which
 may or may not be specific to a particular IOCCC entry) that is **not related
 to a particular IOCCC entry**, the best way you can help is to submit a fix to
-the IOCCC website.  See
+the IOCCC website.  See the
 FAQ on "[fixing the website](#fix_web_site)"
 for information on submitting fixes
 to the IOCCC website.
@@ -3623,7 +3627,7 @@ to [open a new IOCCC issue](https://github.com/ioccc-src/winner/issues/new).
 </div>
 
 For IOCCC website problems that relate to a particular IOCCC entry, please
-see
+see the
 FAQ on "[fixing an entry](#fix_an_entry)"
 for information on how submit a fix to an IOCCC entry.
 
@@ -3632,7 +3636,7 @@ against the [master branch](https://github.com/ioccc-src/winner/branches)
 of the [ioccc-src/winner repo](https://github.com/ioccc-src/winner)
 to submit a fix.
 
-Please see
+Please see the
 FAQ on "[fixing an entry](#fix_an_entry)".
 See also the
 FAQ on "[GitHub pull request](#pull_request)"
@@ -3672,7 +3676,7 @@ request. There are quicker ways but to be sure you get
 everything built you should do this. If you modified a markdown and you do not
 see the same file as a html file then you did not complete the fix.
 
-Please see
+Please see the
 FAQ on "[fixing an entry](#fix_an_entry)".
 
 See also the

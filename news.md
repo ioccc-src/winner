@@ -5,7 +5,7 @@
 We use Mastodon to make minor announcements, in addition to announcing
 major events such as the opening of a new IOCCC, or who won.
 
-See
+See the
 FAQ on "[Mastodon](faq.html#try_mastodon)"
 for more information on Mastodon.
 

@@ -549,7 +549,8 @@ returning to the shell. The original code does not have this change.</p>
 versions of <code>clang</code> object to the number of args of <code>main()</code>, saying that it must
 be 0, 2 or 3. The version this has been observed in does not actually object to
 1 arg but it is entirely possible that this changes so a second arg (that’s not
-needed and is unused) has been added just in case. See
+needed and is unused) has been added just in case.</p>
+<p>See the
 FAQ on “<a href="faq.html#arg_count">main function args</a>”
 for more details.</p>
 <p>Cody also added the script <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1985/august/primes.sh">primes.sh</a> which allows one
@@ -682,11 +683,12 @@ should they object to <code>main()</code> having only one arg.</p>
 <h2 id="winning-entry-1986hague">Winning entry: <a href="1986/hague/index.html">1986/hague</a></h2>
 <h3 id="winning-entry-source-code-hague.c">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1986/hague/hague.c">hague.c</a></h3>
 </div>
-<p><a href="#cody">Cody</a> made this use <code>fgets()</code>. See
-FAQ on “<a href="faq.html#gets">gets and fgets</a>”
-for why this was done.
+<p><a href="#cody">Cody</a> made this use <code>fgets()</code>.
 Cody also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1986/hague/try.sh">try.sh</a> script which also feeds to the
 program the <code>input.txt</code> text file that Cody added.</p>
+<p>See the
+FAQ on “<a href="faq.html#gets">gets and fgets</a>”
+for why this was done.</p>
 <div id="1986_holloway">
 <h2 id="winning-entry-1986holloway">Winning entry: <a href="1986/holloway/index.html">1986/holloway</a></h2>
 <h3 id="winning-entry-source-code-holloway.c">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1986/holloway/holloway.c">holloway.c</a></h3>
@@ -894,7 +896,8 @@ size constraints of the contest).</p>
 <h2 id="winning-entry-1987wall">Winning entry: <a href="1987/wall/index.html">1987/wall</a></h2>
 <h3 id="winning-entry-source-code-wall.c-1">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1987/wall/wall.c">wall.c</a></h3>
 </div>
-<p><a href="#cody">Cody</a> made this use <code>fgets(3)</code>. See
+<p><a href="#cody">Cody</a> made this use <code>fgets(3)</code>.</p>
+<p>See the
 FAQ on “<a href="faq.html#gets">gets and fgets</a>”
 for why this was done.</p>
 <p>Cody also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1987/wall/try.sh">try.sh</a> script.</p>
@@ -1009,7 +1012,8 @@ same code, just a <code>p</code> instead of an <code>m</code> in the name. Addit
 <h2 id="winning-entry-1988reddy">Winning entry: <a href="1988/reddy/index.html">1988/reddy</a></h2>
 <h3 id="winning-entry-source-code-reddy.c">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1988/reddy/reddy.c">reddy.c</a></h3>
 </div>
-<p><a href="#cody">Cody</a> made this use <code>fgets(3)</code>. See
+<p><a href="#cody">Cody</a> made this use <code>fgets(3)</code>.</p>
+<p>See the
 FAQ on “<a href="faq.html#gets">gets and fgets</a>”
 for why this was done.</p>
 <div id="1988_spinellis">
@@ -1270,7 +1274,8 @@ judges was retained.</p>
 </div>
 <p><a href="#yusuke">Yusuke</a> got this to work in modern systems (it previously resulted in a bus
 error).</p>
-<p><a href="#cody">Cody</a> made this use <code>fgets(3)</code>. See
+<p><a href="#cody">Cody</a> made this use <code>fgets(3)</code>.</p>
+<p>See the
 FAQ on “<a href="faq.html#gets">gets and fgets</a>”
 for why this was done.</p>
 <div id="1990_dds">
@@ -1285,7 +1290,8 @@ more like the original in this way by redefining <code>free</code> to have the c
 operator itself.</p>
 <p>Cody fixed another compiler error by removing the erroneous prototype to
 <code>fopen(3)</code>. Cody also changed a <code>char *</code> used for file I/O to be a proper <code>FILE *</code> and fixed a typo in <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1990/dds/LANDER.BAS">LANDER.BAS</a>.</p>
-<p>Cody also made this use <code>fgets(3)</code>. See
+<p>Cody also made this use <code>fgets(3)</code>.</p>
+<p>See the
 FAQ on “<a href="faq.html#gets">gets and fgets</a>”
 for why this was done.</p>
 <div id="1990_dg">
@@ -1347,7 +1353,8 @@ author.</p>
 <p>Cody also changed the code (in both versions) to use <code>fgets(3)</code> instead of
 <code>gets(3)</code> so one would not get a warning about the use of <code>gets(3)</code> at linking
 time or execution, the latter of which was causing confusing output due to the
-warning being interspersed with the program’s interactive output. See
+warning being interspersed with the program’s interactive output.</p>
+<p>See the
 FAQ on “<a href="faq.html#gets">gets and fgets</a>”
 for more details on why this change was
 done more generally.</p>
@@ -1370,7 +1377,8 @@ but as he was testing the <code>fibonacci.c</code> bug he ended up changing it a
 <pre><code>    if (a[1]==NULL||a[2]==NULL||a[3]==NULL||a[4]==NULL||a[5]==NULL) return 1;</code></pre>
 <p>be changed to just test the value of <code>A</code> when <code>a</code> is argv and <code>A</code> is argc? You
 tell us!</p>
-<p>Cody also changed the code to use <code>fgets(3)</code>. See
+<p>Cody also changed the code to use <code>fgets(3)</code>.</p>
+<p>See the
 FAQ on “<a href="faq.html#gets">gets and fgets</a>”
 for why this was done.</p>
 <p>Since this program is so incredible the extra fixes were deemed worth having and
@@ -1481,7 +1489,8 @@ being a problem not being declared first, to hopefully future-proof it.</p>
 condition (the <code>char *s</code> had to be changed to <code>char s[]</code>) and he also made it
 and the generated code work for <code>clang</code>.</p>
 <p>Furthermore Cody changed it so that the C from the BASIC uses <code>fgets()</code>, not
-<code>gets()</code>. See
+<code>gets()</code>.</p>
+<p>See the
 FAQ on “<a href="faq.html#gets">gets and fgets</a>”
 for why this was done.</p>
 <p>For the magic of <code>clang</code> (which was done manually except the returning a value
@@ -1642,11 +1651,11 @@ true of another change as further below.</p>
 <pre><code>    -   putc(&quot;}|uutsrq`_^bji`[Zkediml[PO]a_M__]ISOYIRGTNR&quot;[i]+i-9,stderr);
     +   putc(i[&quot;}|uutsrq`_^bji`[Zkediml[PO]a_M__]ISOYIRGTNR&quot;]+i-9,stderr);</code></pre>
 <p>though it’s questionable how much more (if at all) obscure that is :-)</p>
-<p>Cody also changed the location that it used <code>gets()</code> to be <code>fgets(3)</code>.
-See
+<p>Cody also changed the location that it used <code>gets()</code> to be <code>fgets(3)</code>.</p>
+<p>See the
 FAQ on “<a href="faq.html#gets">gets and fgets</a>”
-for why this was done.
-This was complicated because of how the other source files are generated (as
+for general information about to why this was done.</p>
+<p>This was complicated because of how the other source files are generated (as
 above); simply changing the code could cause invalid output in the program which
 made other files fail to compile (for this example specifically, see below).</p>
 <p>One might think that simply changing the <code>gets(3)</code> to <code>fgets(3)</code> (with <code>stdin</code>)
@@ -1770,7 +1779,8 @@ start and end character.</p>
 defect with the number of args to <code>main()</code> though when it comes to 1 arg it is
 only in an error message if say 4 args are used. This is out of an abundance of
 caution as it’s quite possible that <code>clang</code> or the ANSI C committee end up further
-changing this. See
+changing this.</p>
+<p>See the
 FAQ on “<a href="faq.html#arg_count">main function args</a>”
 for more details.</p>
 <p>Yusuke also noted that there is a bug in the program where right after starting
@@ -1785,7 +1795,8 @@ it works (see <a href="1992/lush/index.html#judges-remarks">Judges’ remarks in
 file</a>) this will not work with <code>clang</code>.</p>
 <p><a href="#cody">Cody</a> also provided the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/lush/lush.sh">lush.sh</a> script to
 demonstrate it as using make was problematic.</p>
-<p>Cody made it use <code>fgets()</code> instead of <code>gets()</code>. See
+<p>Cody made it use <code>fgets()</code> instead of <code>gets()</code>.</p>
+<p>See the
 FAQ on “<a href="faq.html#gets">gets and fgets</a>”
 for why this was done.</p>
 <p>NOTE: this entry cannot work with <code>clang</code> due to different compiler messages (it
@@ -1959,7 +1970,8 @@ compile time. See the index.html for details.</p>
 <h2 id="winning-entry-1993schnitzi">Winning entry: <a href="1993/schnitzi/index.html">1993/schnitzi</a></h2>
 <h3 id="winning-entry-source-code-schnitzi.c">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1993/schnitzi/schnitzi.c">schnitzi.c</a></h3>
 </div>
-<p><a href="#cody">Cody</a> made this use <code>fgets(3)</code> not <code>gets(3)</code>. See
+<p><a href="#cody">Cody</a> made this use <code>fgets(3)</code> not <code>gets(3)</code>.</p>
+<p>See the
 FAQ on “<a href="faq.html#gets">gets and fgets</a>”
 for why this was done.</p>
 <div id="1993_vanb">
@@ -2049,10 +2061,10 @@ comma operator was needed.</p>
 <p>Cody also fixed it for <code>clang</code> under Linux which objected to incompatible pointer
 type (because <code>time(2)</code> takes a <code>time_t *</code> which in some systems is a <code>long *</code>
 but what was being passed to it is an <code>int</code>).</p>
-<p>Cody also changed the entry to use <code>fgets(3)</code> instead of <code>gets(3)</code>.
-(See
+<p>Cody also changed the entry to use <code>fgets(3)</code> instead of <code>gets(3)</code>.</p>
+<p>See the
 FAQ on “<a href="faq.html#gets">gets and fgets</a>”
-for why this was done.)</p>
+for why this was done.</p>
 <p>This one has
 a minor annoyance in that it now prints a newline after the output but this
 seems like a worthy compromise for preventing the interspersed output in macOS
@@ -2112,15 +2124,15 @@ remarks), <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994
 <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994/tvr/try.alt.bw.sh">try.alt.bw.sh</a>, respectively. The scripts go through
 each mode allowed with two sizes, 128 and 256, allowing one to quit or skip each
 (given that there are a lot of invocations this seemed like a good idea).</p>
-<p>Cody also made this use <code>fgets(3)</code> instead of <code>gets(3)</code>.
-See
-FAQ on “<a href="faq.html#gets">gets and fgets</a>”
-]for why this was done.
-In this case the newline had
+<p>Cody also made this use <code>fgets(3)</code> instead of <code>gets(3)</code>.</p>
+<p>In this case the newline had
 to be terminated but it was a pretty straightforward fix. <code>gets()</code> was defined
 to use <code>fgets()</code> and the inclusion of <code>stdio.h</code> had to be added but to make it
 more like the original entry this was done in the Makefile. The alternate code was
 also changed to use <code>fgets(3)</code>.</p>
+<p>See the
+FAQ on “<a href="faq.html#gets">gets and fgets</a>”
+for why this was done.</p>
 <div id="1994_weisberg">
 <h2 id="winning-entry-1994weisberg">Winning entry: <a href="1994/weisberg/index.html">1994/weisberg</a></h2>
 <h3 id="winning-entry-source-code-weisberg.c">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994/weisberg/weisberg.c">weisberg.c</a></h3>
@@ -2164,7 +2176,8 @@ details on this.</p>
 type of args. In particular some versions supposedly only allow 0, 2 or 3 args.
 It actually appears to allow 1 but if you specify 4 it says 0, 2 or 3 and it is
 an error but it’s entirely possible that they will eventually make the defect
-function as the error message claims. See
+function as the error message claims.</p>
+<p>See the
 FAQ on “<a href="faq.html#arg_count">main function args</a>”
 for more details.</p>
 <div id="1995_dodsond1">
@@ -2381,7 +2394,8 @@ versions of <code>clang</code> whine about the number of args on top of what typ
 In particular some versions claim that they only allow 0, 2 or 3 args. It
 appears that they do allow 1 but for instance 4 is not allowed. However as it’s
 quite possible they will ‘fix’ this defect it would be better to have this not
-be a problem at such a time. See
+be a problem at such a time.</p>
+<p>See the
 FAQ on “<a href="faq.html#arg_count">main function args</a>”
 for more details.</p>
 <p>Cody also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/bas1/bas1.sh">bas1.sh</a> script to simplify running the
@@ -2451,7 +2465,8 @@ versions of <code>clang</code> complain about the number of args to <code>main()
 claim that only 0, 2 or 3 are allowed but it does allow 1 anyway. It is quite
 possible though that this will change so it is fixed in case this happens. As it
 is mostly just through the C pre-processor Cody added a new macro to make the
-code look like the original with just an extra arg. See
+code look like the original with just an extra arg.</p>
+<p>See the
 FAQ on “<a href="faq.html#arg_count">main function args</a>”
 for more details.</p>
 <p>In some versions of <code>clang</code> <code>-Wno-int-conversion</code> had to be added to the
@@ -2550,7 +2565,8 @@ occurs.</p>
 <p>Cody made <code>main()</code> have two args out of an abundance of caution as some versions
 of <code>clang</code> say that <code>main()</code> can only have 0, 2 or 3 args. These versions accept 1
 arg but it is entirely possible that they fix this so this should prevent it
-from breaking if that happens. See
+from breaking if that happens.</p>
+<p>See the
 FAQ on “<a href="faq.html#arg_count">main function args</a>”
 for more details.</p>
 <p>Cody added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/schweikh3/try.sh">try.sh</a> script to make it easier to try
@@ -2589,11 +2605,11 @@ commands that we recommended.</p>
 <h3 id="winning-entry-source-code-anderson.c">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2000/anderson//anderson.c">anderson.c</a></h3>
 </div>
 <p><a href="#cody">Cody</a> changed this entry to use <code>fgets(3)</code> instead of <code>gets(3)</code>.
-See
+This involved changing the <code>K</code> arg to <code>gets(3)</code> to <code>&amp;K</code> in <code>fgets(3)</code>.
+Cody also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2000/anderson/try.sh">try.sh</a> script.</p>
+<p>See the
 FAQ on “<a href="faq.html#gets">gets and fgets</a>”
-for why this was done.
-This involved changing the <code>K</code> arg to <code>gets(3)</code> to <code>&amp;K</code> in <code>fgets(3)</code>.</p>
-<p>Cody also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2000/anderson/try.sh">try.sh</a> script.</p>
+for why this was done.</p>
 <div id="2000_bmeyer">
 <h2 id="winning-entry-2000bmeyer">Winning entry: <a href="2000/bmeyer/index.html">2000/bmeyer</a></h2>
 <h3 id="winning-entry-source-code-bmeyer.c">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2000/bmeyer//bmeyer.c">bmeyer.c</a></h3>
@@ -3082,7 +3098,8 @@ a lot of numbers this will be harder to see).</p>
 discovered it will not work otherwise.</p>
 <p>Cody, out of an abundance of caution for <code>clang</code>, added a second arg to <code>main()</code>
 as some versions complain about the number of args and although they accept 1 it
-is entirely possible it will eventually be that they don’t. See
+is entirely possible it will eventually be that they don’t.</p>
+<p>See the
 FAQ on “<a href="faq.html#arg_count">main function args</a>”
 for more details.</p>
 <p>Cody also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/kopczynski/try.sh">try.sh</a> script and various data
@@ -3107,7 +3124,8 @@ chose the word <code>IOCCC</code> instead of <code>AAA</code>).</p>
 <h2 id="winning-entry-2004schnitzi">Winning entry: <a href="2004/schnitzi/index.html">2004/schnitzi</a></h2>
 <h3 id="winning-entry-source-code-schnitzi.c-4">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/schnitzi//schnitzi.c">schnitzi.c</a></h3>
 </div>
-<p><a href="#cody">Cody</a> made this use <code>fgets(3)</code>. See
+<p><a href="#cody">Cody</a> made this use <code>fgets(3)</code>.</p>
+<p>See the
 FAQ on “<a href="faq.html#gets">gets and fgets</a>”
 for why this was done.</p>
 <p>He also changed the time factor in the data files as the animations went too
@@ -3472,7 +3490,8 @@ it to the repo as well.</p>
 </div>
 <p><a href="#cody">Cody</a>, out of an abundance of caution for <code>clang</code>’s defects, made <code>main()</code> have
 2 args instead of 1 as some versions report that <code>main()</code> must have 0, 2 or 3
-args, even though at least one of those versions allows 1 arg only. See
+args, even though at least one of those versions allows 1 arg only.</p>
+<p>See the
 FAQ on “<a href="faq.html#arg_count">main function args</a>”
 for more details.</p>
 <p>Cody also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2006/sykes2/try.sh">try.sh</a> script for easier use of the
@@ -3530,7 +3549,8 @@ We’re not able to test this.</p>
 </div>
 <p><a href="#cody">Cody</a>, out of an abundance of caution, added a second arg to <code>main()</code> as some
 versions of <code>clang</code> complain about not only the type of each arg to <code>main()</code> but
-the number of args as well. See
+the number of args as well.</p>
+<p>See the
 FAQ on “<a href="faq.html#arg_count">main function args</a>”
 for more details.</p>
 <p>Cody also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/borsanyi/try.sh">try.sh</a> script.</p>
@@ -3702,7 +3722,8 @@ everything, filtered through less.</p>
 <p>Cody also changed <code>argv</code> to be not <code>const char **</code> but <code>char **</code>, mostly out of an
 abundance of caution in case <code>clang</code>, which already imposes restrictions on the
 types of args to <code>main()</code> including to do with <code>char **</code>, decides to further
-restrict them. See
+restrict them.</p>
+<p>See the
 FAQ on “<a href="faq.html#arg_count">main function args</a>”
 for more details.</p>
 <p>Cody also restored the original code from the archive.</p>
@@ -3917,7 +3938,8 @@ also appear to be an issue with the script even if you know of <code>convert</co
 </div>
 <p><a href="#cody">Cody</a> added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/endoh3/try.sh">try.sh</a> script.</p>
 <p>Cody also (out of an abundance of caution for <code>clang(1)</code> which is strict with
-arg type and count to <code>main()</code>) added a second (unused) arg to <code>main()</code>. See
+arg type and count to <code>main()</code>) added a second (unused) arg to <code>main()</code>.</p>
+<p>See the
 FAQ on “<a href="faq.html#arg_count">main function args</a>”
 for more details.</p>
 <div id="2013_endoh4">
@@ -4272,7 +4294,8 @@ the repo.</p>
 some versions of <code>clang</code> object to the number of args of <code>main()</code>, saying that it
 must be 0, 2 or 3. The version this has been observed in does not actually
 object to 1 arg but it is entirely possible that this changes so a second arg
-(that’s not needed and is unused) has been added just in case. See
+(that’s not needed and is unused) has been added just in case.</p>
+<p>See the
 FAQ on “<a href="faq.html#arg_count">main function args</a>”
 for more details.</p>
 <p>Cody also added explicit linking of libm (<code>-lm</code>) for systems that do not do this

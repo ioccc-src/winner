@@ -1,6 +1,6 @@
 ## To build:
 
-This entry requires SDL2 to be installed. See
+This entry requires SDL2 to be installed.  See the
 FAQ on "[SDL1 and SDL2](../../faq.html#SDL)"
 if you don't have it
 installed and don't know how to do so.

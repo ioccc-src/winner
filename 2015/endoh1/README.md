@@ -5,7 +5,7 @@
 ```
 
 NOTE: this program requires the tool `tcpserver` to use. If you do not have this
-program see
+program see the
 FAQ on "[tcpserver](../../faq.html#tcpserver)".
 
 

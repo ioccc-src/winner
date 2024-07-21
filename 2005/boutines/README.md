@@ -9,7 +9,7 @@
 
 You will need an [SVG](https://www.w3.org/TR/SVG11/expanded-toc.html) viewer or
 a converter like [ImageMagick](https://imagemagick.org/index.php)'s `convert`.
-See
+See the
 FAQ on "[ImageMagick](../../faq.html#imagemagick)".
 
 Look here to find some [SVG Viewer

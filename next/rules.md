@@ -114,7 +114,7 @@ When the IOCCC is open, the submission URL is:
 [https://submit.ioccc.org](https://submit.ioccc.org); at all other
 times that link is likely to be unresponsive.
 
-Please check the
+Please review our
 FAQ on "[how to submit](../faq.html#submit)"
 for **important information** on how to submit to the IOCCC.
 
@@ -251,8 +251,7 @@ as a command like argument to the `iocccsize(1)` tool. For example:
 ## Rule 3
 </div>
 
-Submissions should be performed using the instructions outlined at:
-the
+Submissions should be performed using the instructions outlined in our
 FAQ on "[how to submit](../faq.html#submit)"
 
 To submit to an open IOCCC, you must use the [IOCCC submit
@@ -433,7 +432,7 @@ enough time for one automated exchange of email as part of your
 submission.
 
 <p class="leftbar">
-See
+See the
 FAQ on "[how to register](../faq.html#register)"
 for details.
 </p>
@@ -570,7 +569,7 @@ for help.
 The `remarks.md` **MUST** be a **non**-empty file in markdown form.  See also
 [Rule 18](#rule18) and our
 FAQ on "[remarks.md](../faq.html#remarks_md)"
-and the
+and our
 FAQ on "[markdown practices](../faq.html#markdown)".
 </p>
 
@@ -699,7 +698,7 @@ If you run into a problem with one or more of these tools, **PLEASE** [report it
 as a bug at the mkiocccentry issues
 page](https://github.com/ioccc-src/mkiocccentry/issues/new?assignees=&labels=bug&projects=&template=bug_report.yml&title=%5BBug%5D+%3Ctitle%3E),
 **making sure to run `bug_report.sh`**. See the [guidelines](guidelines.html)
-for help here and also read
+for help here and also read our
 FAQ on "[mkiocccentry repo bugs](../faq.html#mkiocccentry_bugs)".
 </p>
 

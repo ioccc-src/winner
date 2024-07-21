@@ -40,7 +40,7 @@ will be converted to the DTMF sound!
 ```
 
 If the script [try.sh](%%REPO_URL%%/2020/giles/try.sh) did not play a WAV file, it means you do not have
-SoX installed; see
+SoX installed; see the
 FAQ on "[SDL1 and SDL2](../../faq.html#sox)".
 In this case install it and try it again or
 play the files `jenny.wav` and `ioccc28.wav` in a program that can play WAV

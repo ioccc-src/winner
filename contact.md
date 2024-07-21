@@ -2,13 +2,13 @@
 
 If you are trying to:
 
-* **Fix a winning IOCCC entry** - See
+* **Fix a winning IOCCC entry** - See our
 FAQ on "[fix entry](faq.html#fix_an_entry)"
-* **Update winning author information** - See
+* **Update winning author information** - See our
 FAQ on "[fixing author information](faq.html#fix_author)"
-* **Correct a website problem** - See
+* **Correct a website problem** - See our
 FAQ on "[fixing the website](faq.html#fix_web_site)"
-or
+or our
 FAQ on "[fix URL](faq.html#fix_link)"
 
 Instead of sending us email, **Please** consider using the [GitHub
@@ -18,11 +18,11 @@ of the [ioccc-src/winner repo](https://github.com/ioccc-src/winner).
 
 If you are trying to:
 
-* **Report a bug in an IOCCC winning entry** - See
+* **Report a bug in an IOCCC winning entry** - See our
 FAQ on "[report entry bug](faq.html#report_bug)"
-* **Report an IOCCC website problem** - See
+* **Report an IOCCC website problem** - See our
 FAQ on "[report website problem](faq.html#report_web_problem)"
-* **Report a broken or wrong web link** - See
+* **Report a broken or wrong web link** - See our
 FAQ on "[report broken link](faq.html#fix_link)"
 
 In general, unless you have a fix, if you want to report something, you should instead first look at the [IOCCC
@@ -34,11 +34,11 @@ issue](https://github.com/ioccc-src/winner/issues/new).
 
 If you are trying to:
 
-* **Comment or make a suggestion on IOCCC rules** - See
+* **Comment or make a suggestion on IOCCC rules** - See our
 FAQ on "[rules feedback](faq.html#feedback)"
-* **Comment or make a suggestion on IOCCC guidelines** - See
+* **Comment or make a suggestion on IOCCC guidelines** - See our
 FAQ on "[guidelines feedback](faq.html#feedback)"
-* **Comment or make a suggestion on IOCCC tools** - See
+* **Comment or make a suggestion on IOCCC tools** - See our
 FAQ on "[tools feedback](faq.html#feedback)"
 
 Those FAQ entries will help guide you on how to make public comments
@@ -56,7 +56,7 @@ See the above FAQ entries for more details.
 We use Mastodon to make minor announcements, in addition announcing
 major events such as the opening of a new IOCCC, or who won.
 
-See
+See the
 FAQ on "[Mastodon](faq.html#try_mastodon)"
 for more information on Mastodon.
 

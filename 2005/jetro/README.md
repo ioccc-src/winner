@@ -1,6 +1,6 @@
 ## To build:
 
-This entry requires SDL. See
+This entry requires SDL.  See the
 FAQ on "[SDL1 and SDL2](../../faq.html#SDL)"
 for information on how to install it if you
 haven't already.

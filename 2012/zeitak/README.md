@@ -64,8 +64,9 @@ NOTE: if you use vim to view the code, make sure to do:
     :set tabstop=4
 ```
 
-in command mode, before looking at the code, to see the correct layout. For more
-help see the
+in command mode, before looking at the code, to see the correct layout.
+
+For more help, see the
 FAQ on "[tabstops](../../faq.html#tabstops)".
 
 

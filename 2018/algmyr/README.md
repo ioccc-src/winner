@@ -5,7 +5,7 @@
 ```
 
 To use this entry requires, in some invocations, a sound processing program.
-This can be ALSA or SoX but we recommend the latter. See
+This can be ALSA or SoX but we recommend the latter.  See the
 FAQ on "[SDL1 and SDL2](../../faq.html#sox)".
 
 
