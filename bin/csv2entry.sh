@@ -137,10 +137,12 @@ shopt -u dotglob	# disable matching files starting with .
 shopt -u nocaseglob	# disable strict case matching
 shopt -u extglob	# enable extended globbing patterns
 shopt -s globstar	# enable ** to match all files and zero or more directories and subdirectories
+shopt -s lastpipe	# explicitly run the last command of the pipe line in the current shell
+
 
 # set variables referenced in the usage message
 #
-export VERSION="1.0.1 2024-07-19"
+export VERSION="1.1 2024-07-20"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -315,7 +317,7 @@ Exit codes:
      6	       problems found with or in the topdir or topdir/YYYY directory
      7	       problems found with or in the entry topdir/YYYY/dir directory
      8         unable to write or invalid CSV or temporary file
-     9	       unknown author_handle found
+     9	       unknown author_handle or not found in author/author_handle.json or invalid JSON
  >= 10         internal error
 
 $NAME version: $VERSION"
@@ -582,13 +584,13 @@ trap 'rm -f $TMP_AUTHOR_WINS_CSV $TMP_MANIFEST_CSV $TMP_YEAR_PRIZE_CSV; exit' 0 
 rm -f "$TMP_YEAR_PRIZE_CSV"
 if [[ -e $TMP_YEAR_PRIZE_CSV ]]; then
     echo "$0: ERROR: cannot remove temporary CSV year_prize.csv file: $TMP_YEAR_PRIZE_CSV" 1>&2
-    exit 12
+    exit 14
 fi
 echo '# year_handle,award name' > \
   "$TMP_YEAR_PRIZE_CSV"
 if [[ ! -e $TMP_YEAR_PRIZE_CSV ]]; then
     echo "$0: ERROR: cannot create temporary CSV year_prize.csv file: $TMP_YEAR_PRIZE_CSV" 1>&2
-    exit 13
+    exit 15
 fi
 
 
@@ -602,12 +604,12 @@ trap 'rm -f $TMP_AUTHOR_WINS_CSV $TMP_MANIFEST_CSV $TMP_YEAR_PRIZE_CSV $TMP_YYYY
 rm -f "$TMP_YYYY_DIR_INV"
 if [[ -e $TMP_YYYY_DIR_INV ]]; then
     echo "$0: ERROR: cannot remove temporary CSV temporary YYYY_DIR inventory file: $TMP_YYYY_DIR_INV" 1>&2
-    exit 14
+    exit 16
 fi
 : > "$TMP_YYYY_DIR_INV"
 if [[ ! -e $TMP_YYYY_DIR_INV ]]; then
     echo "$0: ERROR: cannot create temporary CSV temporary YYYY_DIR inventory file: $TMP_YYYY_DIR_INV" 1>&2
-    exit 15
+    exit 17
 fi
 
 
@@ -622,12 +624,12 @@ trap 'rm -f $TMP_AUTHOR_WINS_CSV $TMP_MANIFEST_CSV $TMP_YEAR_PRIZE_CSV $TMP_YYYY
 rm -f "$TMP_2ND_YYYY_DIR_INV"
 if [[ -e $TMP_2ND_YYYY_DIR_INV ]]; then
     echo "$0: ERROR: cannot remove temporary CSV temporary 2nd YYYY_DIR inventory file: $TMP_2ND_YYYY_DIR_INV" 1>&2
-    exit 16
+    exit 18
 fi
 : > "$TMP_2ND_YYYY_DIR_INV"
 if [[ ! -e $TMP_2ND_YYYY_DIR_INV ]]; then
     echo "$0: ERROR: cannot create temporary CSV temporary 2nd YYYY_DIR inventory file: $TMP_2ND_YYYY_DIR_INV" 1>&2
-    exit 17
+    exit 19
 fi
 
 
@@ -642,12 +644,12 @@ trap 'rm -f $TMP_AUTHOR_WINS_CSV $TMP_MANIFEST_CSV $TMP_YEAR_PRIZE_CSV $TMP_YYYY
 rm -f "$TMP_ENTRY_JSON"
 if [[ -e $TMP_ENTRY_JSON ]]; then
     echo "$0: ERROR: cannot remove temporary CSV temporary .entry.json file: $TMP_ENTRY_JSON" 1>&2
-    exit 16
+    exit 20
 fi
 : > "$TMP_ENTRY_JSON"
 if [[ ! -e $TMP_ENTRY_JSON ]]; then
     echo "$0: ERROR: cannot create temporary CSV temporary .entry.json file: $TMP_ENTRY_JSON" 1>&2
-    exit 17
+    exit 21
 fi
 
 
@@ -660,17 +662,37 @@ export TMP_EXIT_CODE=".tmp.$NAME.EXIT_CODE.$$.tmp"
 if [[ $V_FLAG -ge 3 ]]; then
     echo  "$0: debug[3]: temporary exit code: $TMP_EXIT_CODE" 1>&2
 fi
-trap 'rm -f $TMP_AUTHOR_WINS_CSV $TMP_MANIFEST_CSV $TMP_YEAR_PRIZE_CSV $TMP_YYYY_DIR_INV \
-	        $TMP_YYYY_DIR_INV $TMP_2ND_YYYY_DIR_INV $TMP_ENTRY_JSON; exit' 0 1 2 3 15
+trap 'rm -f $TMP_AUTHOR_WINS_CSV $TMP_MANIFEST_CSV $TMP_YEAR_PRIZE_CSV $TMP_YYYY_DIR_INV $TMP_YYYY_DIR_INV \
+	    $TMP_2ND_YYYY_DIR_INV $TMP_ENTRY_JSON $TMP_EXIT_CODE; exit' 0 1 2 3 15
 rm -f "$TMP_EXIT_CODE"
 if [[ -e $TMP_EXIT_CODE ]]; then
     echo "$0: ERROR: cannot remove temporary exit code: $TMP_EXIT_CODE" 1>&2
-    exit 18
+    exit 22
 fi
 echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
 if [[ ! -e $TMP_EXIT_CODE ]]; then
     echo "$0: ERROR: cannot create temporary exit code: $TMP_EXIT_CODE" 1>&2
-    exit 19
+    exit 23
+fi
+
+
+# create a temporary author_handle inventory file
+#
+export TMP_AUTHOR_HANDLE_INVENTORY=".tmp.$NAME.AUTHOR_HANDLE_INVENTORY.$$.tmp"
+if [[ $V_FLAG -ge 3 ]]; then
+    echo  "$0: debug[3]: temporary author_handle inventory file: $TMP_AUTHOR_HANDLE_INVENTORY" 1>&2
+fi
+trap 'rm -f $TMP_AUTHOR_WINS_CSV $TMP_MANIFEST_CSV $TMP_YEAR_PRIZE_CSV $TMP_YYYY_DIR_INV $TMP_YYYY_DIR_INV \
+	    $TMP_2ND_YYYY_DIR_INV $TMP_ENTRY_JSON $TMP_EXIT_CODE $TMP_AUTHOR_HANDLE_INVENTORY; exit' 0 1 2 3 15
+rm -f "$TMP_AUTHOR_HANDLE_INVENTORY"
+if [[ -e $TMP_AUTHOR_HANDLE_INVENTORY ]]; then
+    echo "$0: ERROR: cannot remove temporary author_handle inventory file: $TMP_AUTHOR_HANDLE_INVENTORY" 1>&2
+    exit 24
+fi
+: > "$TMP_AUTHOR_HANDLE_INVENTORY"
+if [[ ! -e $TMP_AUTHOR_HANDLE_INVENTORY ]]; then
+    echo "$0: ERROR: cannot create temporary author_handle inventory file: $TMP_AUTHOR_HANDLE_INVENTORY" 1>&2
+    exit 25
 fi
 
 
@@ -678,19 +700,17 @@ fi
 #
 if [[ -z $NOOP ]]; then
 
-    if [[ $V_FLAG -ge 5 ]]; then
-	echo "$0: debug[5]: about to: canonicalize $AUTHOR_WINS_CSV $TMP_AUTHOR_WINS_CSV" 1>&2
+    if [[ $V_FLAG -ge 1 ]]; then
+	echo "$0: debug[1]: about to: canonicalize $AUTHOR_WINS_CSV" 1>&2
     fi
     canonicalize_csv "$AUTHOR_WINS_CSV" "$TMP_AUTHOR_WINS_CSV"
     status="$?"
     if [[ status -ne 0 ]]; then
 	echo "$0: ERROR: canonicalize_csv $AUTHOR_WINS_CSV $TMP_AUTHOR_WINS_CSV failed," \
 	     "error code: $status" 1>&2
-	EXIT_CODE=8 # exit 8
-	echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
+	exit 8
     elif [[ $V_FLAG -ge 3 ]]; then
-	echo "$0: debug[3]: sorted temporary author_wins.csv file: $TMP_AUTHOR_WINS_CSV" 1>&2
+	echo "$0: debug[3]: canonicalize temporary author_wins.csv file: $TMP_AUTHOR_WINS_CSV" 1>&2
     fi
 
 elif [[ $V_FLAG -ge 3 ]]; then
@@ -710,9 +730,7 @@ if [[ -z $NOOP ]]; then
     if [[ status -ne 0 ]]; then
 	echo "$0: ERROR: sort -t, -k1d,1 -k2d,2 $TMP_AUTHOR_WINS_CSV -o $TMP_AUTHOR_WINS_CSV failed," \
 	     "error code: $status" 1>&2
-	EXIT_CODE=8 # exit 8
-	echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
+	exit 8
     elif [[ $V_FLAG -ge 3 ]]; then
 	echo "$0: debug[3]: sorted temporary author_wins.csv file: $TMP_AUTHOR_WINS_CSV" 1>&2
     fi
@@ -750,17 +768,13 @@ if [[ -z $NOOP ]]; then
         if [[ status -ne 0 ]]; then
             echo "$0: ERROR: mv -f -- $TMP_AUTHOR_WINS_CSV $AUTHOR_WINS_CSV filed," \
 	         "error code: $status" 1>&2
-            EXIT_CODE=8 # exit 8
-	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	    echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
+            exit 8
         elif [[ $V_FLAG -ge 1 ]]; then
             echo "$0: debug[1]: replaced author_wins.csv file: $AUTHOR_WINS_CSV" 1>&2
         fi
         if [[ ! -s $AUTHOR_WINS_CSV ]]; then
             echo "$0: ERROR: not a non-empty author_wins.csv file: $AUTHOR_WINS_CSV" 1>&2
-            EXIT_CODE=8 # exit 8
-	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	    echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
+            exit 8
         fi
     fi
 
@@ -769,23 +783,176 @@ elif [[ $V_FLAG -ge 3 ]]; then
 fi
 
 
+# scan author_wins.csv file for unknown author handles and
+#      author handles w/o author/author_handle.json file and
+#      author/author_handle.json file that do not reference the entry id
+#
+# XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
+# XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
+# XXX - until we have the jnamval command, we must FAKE PARSE the .entry.json file  - XXX
+# XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
+# XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
+#
+export PATTERN_BEFORE_ENTRY_ID='^[[:space:]]*{[[:space:]]*"entry_id"[[:space:]]*:[[:space:]]*"'
+export PATTERN_AFTER_ENTRY_ID='"[[:space:]]*},?[[:space:]]*$'
+#
+if [[ $V_FLAG -ge 1 ]]; then
+    echo "$0: debug[1]: about to: scan for unknown author handles" 1>&2
+fi
+export line=0
+sed -e 's/,/ /g' "$AUTHOR_WINS_CSV" | while read -r AUTHOR_HANDLE ENTRY_ID_SET; do
+
+    # skip comment lines
+    #
+    ((++line))
+    if [[ $AUTHOR_HANDLE =~ '#' ]]; then
+	continue;
+    fi
+
+    # look for unknown author handles
+    #
+    export AUTHOR_HANDLE_JSON="$AUTHOR_DIR/$AUTHOR_HANDLE.json"
+    if [[ ! -f $AUTHOR_DIR/$AUTHOR_HANDLE.json ]]; then
+	echo "$0: ERROR: entry_id $ENTRY_ID refers to an unknown author_handle: $AUTHOR_HANDLE" 1>&2
+	echo "$0: Warning: no such author_handle file: $AUTHOR_HANDLE_JSON" 1>&2
+	echo "$0: Warning: line: $line for: $AUTHOR_WINS_CSV flagging unknown author_handle as an error: continuing" 1>&2
+	EXIT_CODE="9"  # exit 9
+	echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+	echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
+	# NOTE: We do NOT want to stop processing via continue - proceeding instead
+
+    # look for lines with no entry ids
+    #
+    elif [[ -z $ENTRY_ID_SET ]]; then
+	echo "$0: ERROR: line: $line of author_wins.csv: $AUTHOR_WINS_CSV as no entry ids on the line" 1>&2
+	EXIT_CODE="8"  # exit 8
+	echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+	echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
+	# NOTE: We do NOT want to stop processing via continue - proceeding instead
+
+    # look for unknown entry_id's
+    #
+    else
+
+	# verify the JSON of author/author_handle.json
+	#
+	if [[ $V_FLAG -ge 7 ]]; then
+	    echo "$0: debug[7]: about to run: $JPARSE_TOOL -q -- $AUTHOR_HANDLE_JSON" 1>&2
+	fi
+	echo "$AUTHOR_HANDLE_JSON" >> "$TMP_AUTHOR_HANDLE_INVENTORY"
+	if "$JPARSE_TOOL" -q -- "$AUTHOR_HANDLE_JSON"; then
+
+	    # case: author/author_handle.json file is valid JSON
+	    #
+	    if [[ $V_FLAG -ge 9 ]]; then
+		echo "$0: debug[9]: valid JSON for: $AUTHOR_HANDLE_JSON" 1>&2
+	    fi
+
+	    # check each entry id on the line
+	    #
+	    echo "$ENTRY_ID_SET" | sed -e 's/ /\n/g' | while read -r ENTRY_ID; do
+
+		# convert ENTRY_ID into YYYY_DIR
+		#
+		export YEAR_DIR=${ENTRY_ID%%_*}
+		export ENTRY_DIR=${ENTRY_ID#*_}
+		export YYYY_DIR="${YEAR_DIR}/${ENTRY_DIR}"
+
+		# verify that the entry exists
+		#
+		if [[ ! -d $YYYY_DIR ]]; then
+
+		    # case: entry does not exist
+		    #
+		    echo "$0: ERROR: line: $line of author_wins.csv: $AUTHOR_WINS_CSV" \
+			 "refers to unknown entry id: $ENTRY_ID" 1>&2
+		    EXIT_CODE="7"  # exit 7
+		    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+		    echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
+		    # NOTE: We do NOT want to stop processing via continue - proceeding instead
+
+		# verify that the author/author_handle.json file refers to the entry id
+		#
+		# XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
+		# XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
+		# XXX - until we have the jnamval command, we must FAKE PARSE the .entry.json file  - XXX
+		# XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
+		# XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
+		#
+		else
+
+		    # check if the author/author_handle.json file refers to the entry id
+		    #
+		    FOUND=$(grep -E "${PATTERN_BEFORE_ENTRY_ID}${ENTRY_ID}${PATTERN_AFTER_ENTRY_ID}" \
+				    "$AUTHOR_HANDLE_JSON" 2>/dev/null)
+		    if [[ -z $FOUND ]]; then
+			echo "$0: ERROR: line: $line of author_wins.csv: $AUTHOR_WINS_CSV" \
+			     "entry id: $ENTRY_ID not in winning_entry_set of: $AUTHOR_HANDLE_JSON" 1>&2
+			EXIT_CODE="9"  # exit 9
+			echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+			echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
+			# NOTE: We do NOT want to stop processing via continue - proceeding instead
+		    fi
+		fi
+	    done
+
+	# case: author/author_handle.json is not valid JSON
+	#
+	else
+	    echo "$0: ERROR: line: $line of author_wins.csv: $AUTHOR_WINS_CSV" \
+		 "is not valid JSON for: $AUTHOR_HANDLE_JSON" 1>&2
+	    EXIT_CODE="1"  # exit 1
+	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+	    echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
+	    # NOTE: We do NOT want to stop processing via continue - proceeding instead
+	fi
+    fi
+done
+
+
+# verify that the author directory contains only author_handle.json files referenced by author_wins.csv
+#
+if [[ $V_FLAG -ge 5 ]]; then
+    echo "$0: debug[5]: about to: sort $TMP_AUTHOR_HANDLE_INVENTORY -o $TMP_AUTHOR_HANDLE_INVENTORY" 1>&2
+fi
+sort "$TMP_AUTHOR_HANDLE_INVENTORY" -o "$TMP_AUTHOR_HANDLE_INVENTORY"
+status="$?"
+if [[ status -ne 0 ]]; then
+    echo "$0: ERROR: sort $TMP_AUTHOR_HANDLE_INVENTORY -o $TMP_AUTHOR_HANDLE_INVENTORY failed," \
+	 "error code: $status" 1>&2
+    exit 9
+fi
+AUTHOR_DIFF=$(find "$AUTHOR_DIR" -mindepth 1 -maxdepth 1 -type f -name '*.json' 2>&1 |
+	      sort |
+	      diff -u - "$TMP_AUTHOR_HANDLE_INVENTORY")
+export AUTHOR_DIFF
+if [[ -n $AUTHOR_DIFF ]]; then
+    echo "$0: ERROR: author handles in author_wins.csv: $AUTHOR_WINS_CSV differs from author directory: $AUTHOR_DIR" 1>&2
+    echo "$0: Warning: author directory differences start below" 1>&2
+    echo "$AUTHOR_DIFF" 1>&2
+    echo "$0: Warning: author directory differences end above" 1>&2
+    EXIT_CODE="9"  # exit 1
+    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+    echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
+    # NOTE: We do NOT want to stop processing via continue - proceeding instead
+fi
+
+
 # canonicalize manifest.csv into temporary manifest.csv file
 #
 if [[ -z $NOOP ]]; then
 
-    if [[ $V_FLAG -ge 5 ]]; then
-	echo "$0: debug[5]: about to: canonicalize $MANIFEST_CSV $TMP_MANIFEST_CSV" 1>&2
+    if [[ $V_FLAG -ge 1 ]]; then
+	echo "$0: debug[1]: about to: canonicalize $MANIFEST_CSV" 1>&2
     fi
     canonicalize_csv "$MANIFEST_CSV" "$TMP_MANIFEST_CSV"
     status="$?"
     if [[ status -ne 0 ]]; then
 	echo "$0: ERROR: canonicalize_csv $MANIFEST_CSV $TMP_MANIFEST_CSV failed," \
 	     "error code: $status" 1>&2
-	EXIT_CODE=8 # exit 8
-	echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
+	exit 8
     elif [[ $V_FLAG -ge 3 ]]; then
-	echo "$0: debug[3]: sorted temporary author_wins.csv file: $TMP_MANIFEST_CSV" 1>&2
+	echo "$0: debug[3]: sorted temporary manifest.csv file: $TMP_MANIFEST_CSV" 1>&2
     fi
 
 elif [[ $V_FLAG -ge 3 ]]; then
@@ -805,9 +972,7 @@ if [[ -z $NOOP ]]; then
     if [[ status -ne 0 ]]; then
 	echo "$0: ERROR: sort -t, -k1,1 -k2d,2 -k4n,4 -k3,3 -k5d,8 $TMP_MANIFEST_CSV -o $TMP_MANIFEST_CSV failed," \
 	     "error code: $status" 1>&2
-	EXIT_CODE=8 # exit 8
-	echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
+	exit 8
     elif [[ $V_FLAG -ge 3 ]]; then
 	echo "$0: debug[3]: sorted temporary manifest.csv file: $TMP_MANIFEST_CSV" 1>&2
     fi
@@ -845,17 +1010,13 @@ if [[ -z $NOOP ]]; then
         if [[ status -ne 0 ]]; then
             echo "$0: ERROR: mv -f -- $TMP_MANIFEST_CSV $MANIFEST_CSV filed," \
 	         "error code: $status" 1>&2
-            EXIT_CODE=8 # exit 8
-	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	    echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
+            exit 8
         elif [[ $V_FLAG -ge 1 ]]; then
             echo "$0: debug[1]: replaced manifest.csv file: $MANIFEST_CSV" 1>&2
         fi
         if [[ ! -s $MANIFEST_CSV ]]; then
             echo "$0: ERROR: not a non-empty manifest.csv file: $MANIFEST_CSV" 1>&2
-            EXIT_CODE=8 # exit 8
-	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	    echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
+            exit 8
         fi
     fi
 
@@ -868,19 +1029,17 @@ fi
 #
 if [[ -z $NOOP ]]; then
 
-    if [[ $V_FLAG -ge 5 ]]; then
-	echo "$0: debug[5]: about to: canonicalize $YEAR_PRIZE_CSV $TMP_YEAR_PRIZE_CSV" 1>&2
+    if [[ $V_FLAG -ge 1 ]]; then
+	echo "$0: debug[1]: about to: canonicalize $YEAR_PRIZE_CSV" 1>&2
     fi
     canonicalize_csv "$YEAR_PRIZE_CSV" "$TMP_YEAR_PRIZE_CSV"
     status="$?"
     if [[ status -ne 0 ]]; then
 	echo "$0: ERROR: canonicalize_csv $YEAR_PRIZE_CSV $TMP_YEAR_PRIZE_CSV failed," \
 	     "error code: $status" 1>&2
-	EXIT_CODE=8 # exit 8
-	echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
+	exit 8
     elif [[ $V_FLAG -ge 3 ]]; then
-	echo "$0: debug[3]: sorted temporary author_wins.csv file: $TMP_YEAR_PRIZE_CSV" 1>&2
+	echo "$0: debug[3]: sorted temporary year_prize.csv file: $TMP_YEAR_PRIZE_CSV" 1>&2
     fi
 
 elif [[ $V_FLAG -ge 3 ]]; then
@@ -900,9 +1059,7 @@ if [[ -z $NOOP ]]; then
     if [[ status -ne 0 ]]; then
 	echo "$0: ERROR: sort -t, -k1d,1 -k2d,2 $TMP_YEAR_PRIZE_CSV -o $TMP_YEAR_PRIZE_CSV," \
 	     "error code: $status" 1>&2
-	EXIT_CODE=8 # exit 8
-	echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
+	exit 8
     elif [[ $V_FLAG -ge 3 ]]; then
 	echo "$0: debug[3]: sorted temporary year_prize.csv file: $TMP_YEAR_PRIZE_CSV" 1>&2
     fi
@@ -940,17 +1097,13 @@ if [[ -z $NOOP ]]; then
         if [[ status -ne 0 ]]; then
             echo "$0: ERROR: mv -f -- $TMP_YEAR_PRIZE_CSV $YEAR_PRIZE_CSV filed," \
 	         "error code: $status" 1>&2
-            EXIT_CODE=8 # exit 8
-	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	    echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
+            exit 8
         elif [[ $V_FLAG -ge 1 ]]; then
             echo "$0: debug[1]: replaced year_prize.csv file: $YEAR_PRIZE_CSV" 1>&2
         fi
         if [[ ! -s $YEAR_PRIZE_CSV ]]; then
             echo "$0: ERROR: not a non-empty year_prize.csv file: $YEAR_PRIZE_CSV" 1>&2
-            EXIT_CODE=8 # exit 8
-	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	    echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
+            exit 8
         fi
     fi
 
@@ -1126,21 +1279,13 @@ for YYYY in $(< "$TOP_FILE"); do
 	echo "$YYYY_DIR" >> "$TMP_YYYY_DIR_INV"
     done
 done
-#
-EXIT_CODE=$(< "$TMP_EXIT_CODE")
-if [[ $EXIT_CODE -ne 0 ]]; then
-    if [[ $V_FLAG -ge 1 ]]; then
-	echo "$0: debug[1]: about to exit $EXIT_CODE" 1>&2
-    fi
-    exit "$EXIT_CODE"
-fi
 
 
 # canonicalize the YYYY_DIR inventory file
 #
 if [[ ! -s $TMP_YYYY_DIR_INV ]]; then
     echo "$0: ERROR: arg: YYYY_DIR inventory file is not a non-empty file: $TMP_YYYY_DIR_INV" 1>&2
-    exit 20
+    exit 26
 fi
 #
 if [[ $V_FLAG -ge 5 ]]; then
@@ -1167,7 +1312,7 @@ status_codes=("${PIPESTATUS[@]}")
 if [[ ${status_codes[*]} =~ [1-9] ]]; then
    echo "$0: ERROR: sed .. $AUTHOR_WINS_CSV | sort -t/ -d > $TMP_2ND_YYYY_DIR_INV failed," \
         "error codes: ${status_codes[*]}" 1>&2
-   exit 21
+   exit 27
 fi
 
 
@@ -1181,7 +1326,7 @@ if ! cmp -s "$TMP_YEAR_PRIZE_CSV" "$YEAR_PRIZE_CSV"; then
     echo "$0: Warning: difference between YYYY/dir tree and author_wins.csv entries starts below: $AUTHOR_WINS_CSV" 1>&2
     diff -u "$TMP_YEAR_PRIZE_CSV" "$YEAR_PRIZE_CSV" 1>&2
     echo "$0: Warning: difference between YYYY/dir tree and author_wins.csv entries ends above" 1>&2
-    exit 22
+    exit 28
 
 elif [[ $V_FLAG -ge 5 ]]; then
     echo "$0: debug[5]: author_wins.csv entry inventory is correct" 1>&2
@@ -1198,7 +1343,7 @@ status_codes=("${PIPESTATUS[@]}")
 if [[ ${status_codes[*]} =~ [1-9] ]]; then
    echo "$0: ERROR: sed .. $MANIFEST_CSV | sort -t/ -d | uniq > $TMP_2ND_YYYY_DIR_INV failed," \
         "error codes: ${status_codes[*]}" 1>&2
-   exit 23
+   exit 29
 fi
 
 
@@ -1206,13 +1351,13 @@ fi
 #
 if ! cmp -s "$TMP_YEAR_PRIZE_CSV" "$YEAR_PRIZE_CSV"; then
 
-    # report author_wins.csv inventory problem
+    # report manifest.csv inventory problem
     #
     echo "$0: ERROR: The entries referenced in manifest.csv $MANIFEST_CSV to not match YYYY/dir tree" 1>&2
     echo "$0: Warning: difference between YYYY/dir tree and manifest.csv entries starts below: $MANIFEST_CSV" 1>&2
     diff -u "$TMP_YEAR_PRIZE_CSV" "$YEAR_PRIZE_CSV" 1>&2
     echo "$0: Warning: difference between YYYY/dir tree and manifest.csv entries ends above" 1>&2
-    exit 24
+    exit 30
 
 elif [[ $V_FLAG -ge 5 ]]; then
     echo "$0: debug[5]: manifest.csv.csv entry inventory is correct" 1>&2
@@ -1229,7 +1374,7 @@ status_codes=("${PIPESTATUS[@]}")
 if [[ ${status_codes[*]} =~ [1-9] ]]; then
    echo "$0: ERROR: sed .. $YEAR_PRIZE_CSV | sort -t/ -d > $TMP_2ND_YYYY_DIR_INV failed," \
         "error codes: ${status_codes[*]}" 1>&2
-   exit 25
+   exit 31
 fi
 
 
@@ -1243,7 +1388,7 @@ if ! cmp -s "$TMP_YEAR_PRIZE_CSV" "$YEAR_PRIZE_CSV"; then
     echo "$0: Warning: difference between YYYY/dir tree and year_prize.csv entries starts below: $YEAR_PRIZE_CSV" 1>&2
     diff -u "$TMP_YEAR_PRIZE_CSV" "$YEAR_PRIZE_CSV" 1>&2
     echo "$0: Warning: difference between YYYY/dir tree and year_prize.csv entries ends above" 1>&2
-    exit 26
+    exit 32
 
 elif [[ $V_FLAG -ge 5 ]]; then
     echo "$0: debug[5]: year_prize.csv entry inventory is correct" 1>&2
@@ -1433,7 +1578,7 @@ sed -e '/^#/d' -e 's/,/ /g' "$MANIFEST_CSV" |
 	author_number=0
 	grep -F "$ENTRY_ID" "$AUTHOR_WINS_CSV" |
 	  grep -E ",$ENTRY_ID,|,$ENTRY_ID$" |
-	  sed -e 's/,.*//' |
+	  sed -e 's/,.*//g' |
 	  while read -r AUTHOR_HANDLE; do
 
 	    # case: not first author
@@ -1441,19 +1586,6 @@ sed -e '/^#/d' -e 's/,/ /g' "$MANIFEST_CSV" |
 	    ((++author_number))
 	    if [[ $author_number -gt 1 ]]; then
 		printf ",\n" >> "$TMP_ENTRY_JSON"
-	    fi
-
-	    # look for unknown author handles
-	    #
-	    export AUTHOR_HANDLE_JSON="$AUTHOR_DIR/$AUTHOR_HANDLE.json"
-	    if [[ ! -f $AUTHOR_DIR/$AUTHOR_HANDLE.json ]]; then
-		echo "$0: Warning: entry_id $ENTRY_ID refers to an unknown author_handle: $AUTHOR_HANDLE" 1>&2
-		echo "$0: Warning: entry_id $ENTRY_ID refers a missing author_handle file: $AUTHOR_HANDLE_JSON" 1>&2
-		echo "$0: ERROR: Flagging unknown author_handle as an error, but continuing anyway: $YYYY_DIR" 1>&2
-		EXIT_CODE="9"  # exit 9
-		echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-		echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
-		# NOTE: We do NOT want to stop processing via continue - proceeding instead
 	    fi
 
 	    # write start of author JSON member
@@ -1506,6 +1638,9 @@ sed -e '/^#/d' -e 's/,/ /g' "$MANIFEST_CSV" |
 	} >> "$TMP_ENTRY_JSON"
     fi
 done
+
+
+# XXX - update `author/author_handle.json` files as needed based on canonicalized author_wins.csv data - XXX #
 
 
 # All Done!!! All Done!!! -- Jessica Noll, Age 2
