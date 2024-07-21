@@ -556,7 +556,7 @@ the [md2html tool](index.html#md2html).
 
 
 <div id="new_year">
-### [new_year.sh](%%REPO_URL%%/bin/new_year.sh)
+### [new-year.sh](%%REPO_URL%%/bin/new-year.sh)
 </div>
 
 This tool is used my the [Judges](../judges.html) as part of the final
@@ -567,7 +567,7 @@ For example:
 ``` <!---sh-->
     mkdir -p YYYY
     chmod +w .top
-    bin/new_year.sh YYYY
+    bin/new-year.sh YYYY
     chmod -w .top
 ```
 

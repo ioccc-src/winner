@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# new_year.sh - add a new IOCCC year
+# new-year.sh - add a new IOCCC year
 #
 # We update .top with a new 4-digit IOCCC year if such a sub-directory exists
 # and the IOCCC year is not already in the .top file.
