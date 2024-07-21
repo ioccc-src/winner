@@ -32,7 +32,7 @@ best thing to it.  Still, you might consider installing
 it in `/usr/games/nathan`.  :-)
 
 
-### Note from the judges about the winning category::
+### Note from the judges about the winning category:
 
 The 'winning' category is also open to question.  One could say
 that it is a 'file obfuscator'.  One could also say that it
@@ -65,9 +65,30 @@ read HIS instructions of how to obtain his winning program one was able to run:
 
 to learn how to get a copy of the code.
 
-See the 1992/nathan.c file in the
-[archive/historic/archive-1992.tar.bz2](../../archive/historic/archive-1992.tar.bz2)
-tarball if you're interested in this file.
+When someone compiled and ran the code as originally distributed (see:
+[nathan.orig.c](%%REPO_URL%%/1992/nathan/nathan.orig.c) the code printed
+the following message (sic):
+
+> Export of this program from the USA is governed by the US<br>
+> Munitions List from the ITAR (International Traffic in Arms<br>
+> Regulations). This list gives the specific categories of<br>
+> restricted exports and includes cryptographic exports. Traffic<br>
+> entirely external to, entirely internal to, or into the USA is<br>
+> not restricted.<br>
+> To obtain a copy of the program, email to __EMAIL_ADDRESS_OMITTED__<br>
+> with a subject "IOCCC request". If you know that your 'From'<br>
+> line is incorrect, add a single line<br>
+> "replyto you@your.correct.address" to the body of the message.<br>
+> A deamon will autoreply.<br>
+> WARNING: You must not re-export this out of the USA, or else<br>
+> the men in black might get you.
+
+Today, the [nathan.c](%%REPO_URL%%/1992/nathan/nathan.c) source code
+is the source code is what you would have received had you
+successfully completed the above instructions.
+
+Today, the above instructions are **no longer necessary**.
+There have been reproduced above to provide historical context.
 
 
 ### Personal note from chongo:
@@ -76,6 +97,19 @@ I think the situation showed just how ridiculous US crypto regulations really
 were/are.  Certain US federal officials can get away with shipping arms to
 certain nations in apparent violation of US laws, but I personally can't
 re-distribute a program contest entry to the network!
+
+
+### Updated personal note from chongo:
+
+We removed the Email address from the above quote (although you can
+still see it in the [nathan.orig.c](%%REPO_URL%%/1992/nathan/nathan.orig.c)
+code) because sending Email to that address is not requirement today.
+The [nathan.c](%%REPO_URL%%/1992/nathan/nathan.c) file now contains
+the source you would have received in reply.
+
+Thankfully much of the ridiculous US crypto regulations has been
+amended to the extent where the above historical "_workaround_" is
+**no longer required**.
 
 
 ## Author's remarks:

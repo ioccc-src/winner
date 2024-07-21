@@ -421,7 +421,7 @@ Location: <a href="../../location.html#GB">GB</a> - <em>United Kingdom of Great 
 of this program. It is likely to be nil, or the next
 best thing to it. Still, you might consider installing
 it in <code>/usr/games/nathan</code>. :-)</p>
-<h3 id="note-from-the-judges-about-the-winning-category">Note from the judges about the winning category::</h3>
+<h3 id="note-from-the-judges-about-the-winning-category">Note from the judges about the winning category:</h3>
 <p>The ‘winning’ category is also open to question. One could say
 that it is a ‘file obfuscator’. One could also say that it
 unintentionally abused the intent of rule #7 (that programs
@@ -443,14 +443,43 @@ read HIS instructions of how to obtain his winning program one was able to run:<
 <pre><code>    make nathan
     ./nathan</code></pre>
 <p>to learn how to get a copy of the code.</p>
-<p>See the 1992/nathan.c file in the
-<a href="../../archive/historic/archive-1992.tar.bz2">archive/historic/archive-1992.tar.bz2</a>
-tarball if you’re interested in this file.</p>
+<p>When someone compiled and ran the code as originally distributed (see:
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/nathan/nathan.orig.c">nathan.orig.c</a> the code printed
+the following message (sic):</p>
+<blockquote>
+<p>Export of this program from the USA is governed by the US<br>
+Munitions List from the ITAR (International Traffic in Arms<br>
+Regulations). This list gives the specific categories of<br>
+restricted exports and includes cryptographic exports. Traffic<br>
+entirely external to, entirely internal to, or into the USA is<br>
+not restricted.<br>
+To obtain a copy of the program, email to <strong>EMAIL_ADDRESS_OMITTED</strong><br>
+with a subject “IOCCC request”. If you know that your ‘From’<br>
+line is incorrect, add a single line<br>
+“replyto you@your.correct.address” to the body of the message.<br>
+A deamon will autoreply.<br>
+WARNING: You must not re-export this out of the USA, or else<br>
+the men in black might get you.</p>
+</blockquote>
+<p>Today, the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/nathan/nathan.c">nathan.c</a> source code
+is the source code is what you would have received had you
+successfully completed the above instructions.</p>
+<p>Today, the above instructions are <strong>no longer necessary</strong>.
+There have been reproduced above to provide historical context.</p>
 <h3 id="personal-note-from-chongo">Personal note from chongo:</h3>
 <p>I think the situation showed just how ridiculous US crypto regulations really
 were/are. Certain US federal officials can get away with shipping arms to
 certain nations in apparent violation of US laws, but I personally can’t
 re-distribute a program contest entry to the network!</p>
+<h3 id="updated-personal-note-from-chongo">Updated personal note from chongo:</h3>
+<p>We removed the Email address from the above quote (although you can
+still see it in the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/nathan/nathan.orig.c">nathan.orig.c</a>
+code) because sending Email to that address is not requirement today.
+The <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/nathan/nathan.c">nathan.c</a> file now contains
+the source you would have received in reply.</p>
+<p>Thankfully much of the ridiculous US crypto regulations has been
+amended to the extent where the above historical “<em>workaround</em>” is
+<strong>no longer required</strong>.</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <h3 id="program-use">Program use</h3>
 <p>This program is a hello world text encryptor/decryptor. It uses an
