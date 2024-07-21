@@ -21,7 +21,7 @@ For more detailed information see [1992/gson in bugs.html](../../bugs.html#1992_
 ## To use:
 
 ``` <!---sh-->
-    ./ag word word2 word3 < dictionary
+    ./ag word word2 word3 < dictionary | less
 ```
 
 
@@ -31,31 +31,25 @@ For more detailed information see [1992/gson in bugs.html](../../bugs.html#1992_
     ./try.sh
 ```
 
-This script will determine (or try and determine) where your system dictionary
-is located and assuming that it can find one it'll use that. It checks the
-following locations though the last one is more ironic:
+The script first will use the [mkdict.sh](%%REPO_URL%%/1992/gson/mkdict.sh) script to create
+a dictionary file out of the files
+[README.md](%%REPO_URL%%/1992/gson/README.md),
+[try.sh](%%REPO_URL%%/1992/gson/try.sh) (itself) and
+[Makefile](%%REPO_URL%%/1992/gson/Makefile) runs the program with a number of
+strings on that dictionary file.
+
+Then the script will determine (or try and determine) where your system
+dictionary is located and assuming that it can find one it'll use that. It
+checks the following locations though the last one is more ironic:
 
 * `/usr/share/dict/words`
 * `/usr/share/lib/spell/words`
 * `/usr/ucblib/dict/words`
 * `/dev/null`   # <-- for machines with nothing to say
 
-Then it runs the program with the following strings, using the proper dictionary
-file:
-
-* `free software foundation`
-* `obfuscated c contest`
-* `unix international`
-* `george bush`
-* `bill clinton`
-* `ross perot`
-* `paul e tsongas`
-
-Then it uses the [mkdict.sh](%%REPO_URL%%/1992/gson/mkdict.sh) script to create a dictionary file out
-of the files [README.md](README.md), [try.sh](%%REPO_URL%%/1992/gson/try.sh) (itself) and
-[Makefile](%%REPO_URL%%/1992/gson/Makefile) and it repeats the same process as above. In the case no
-dictionary file can be found in the first step it only runs the commands once
-with the created dictionary file.
+If a file is found then it will run the same process as above. The reason the
+made up dictionary is used first is it provides shorter and a bit more fun
+output.
 
 
 ## Judges' remarks:
@@ -71,7 +65,7 @@ dictionaries which has been put in as [mkdict.sh](%%REPO_URL%%/1992/gson/mkdict.
     cat README.md | ./mkdict.sh > words
 ```
 
-Then try using the program as shown above with the file `words`.
+Then try using the program [as shown above](#to-use) with the file `words`.
 
 
 ## Author's remarks:
