@@ -433,6 +433,15 @@ that you use the <code>-h</code> option on it first.</p>
 <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/md2html.cfg">bin/md2html.cfg</a> file but some of these tools can be directly
 invoked as well, should you wish to see their output or if you have some odd
 need to do so.</p>
+<div id="add-dir">
+<h3 id="add-dir.sh"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/add-dir.sh">add-dir.sh</a></h3>
+</div>
+<p>This tool is used my the <a href="../judges.html">Judges</a> as part of the final
+steps to announce a new winning IOCCC entry.</p>
+<p>For example:</p>
+<pre><code>    mkdir -p YYYY/dir
+    bin/add-dir.sh YYYY/dir</code></pre>
+<p>Here, <code>YYYY/dir</code> must the path to the winning IOCCC entry.</p>
 <div id="all-run">
 <h3 id="all-run.sh"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/all-run.sh">all-run.sh</a></h3>
 </div>

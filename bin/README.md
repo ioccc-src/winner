@@ -75,6 +75,23 @@ invoked as well, should you wish to see their output or if you have some odd
 need to do so.
 
 
+<div id="add-dir">
+### [add-dir.sh](%%REPO_URL%%/bin/add-dir.sh)
+</div>
+
+This tool is used my the [Judges](../judges.html) as part of the final
+steps to announce a new winning IOCCC entry.
+
+For example:
+
+``` <!---sh-->
+    mkdir -p YYYY/dir
+    bin/add-dir.sh YYYY/dir
+```
+
+Here, `YYYY/dir` must the path to the winning IOCCC entry.
+
+
 <div id="all-run">
 ### [all-run.sh](%%REPO_URL%%/bin/all-run.sh)
 </div>
