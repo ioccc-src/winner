@@ -9,7 +9,7 @@ If `ctrl` is 1, the point is used as control point for quadratic [b&eacute;zier
 curve](https://en.wikipedia.org/wiki/B&eacute;zier_curve).
 
 [code.c](%%REPO_URL%%/2020/endoh2/obfuscation/code.c) is the main logic for the program, which has some placeholders
-for font data and something.
+for font data and something else.
 
 It decompresses the font data and renders a given text by projection.  It
 exploits `C99`'s `double complex` type to represent 2D points, but carefully

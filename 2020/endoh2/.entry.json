@@ -71,7 +71,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "debofuscated code main logic"
+	    "entry_text" : "main logic to program to obfuscate entry"
 	},
 	{
 	    "file_path" : "obfuscation/gen.rb",
@@ -87,7 +87,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : false,
-	    "entry_text" : "glyphs data for deobfuscation/gen.rb"
+	    "entry_text" : "glyphs data for obfuscation/gen.rb"
 	},
 	{
 	    "file_path" : "obfuscation/index.html",
@@ -95,7 +95,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "html",
 	    "display_via_github" : false,
-	    "entry_text" : "deobfuscation information web page"
+	    "entry_text" : "obfuscation information web page"
 	},
 	{
 	    "file_path" : "obfuscation/prog.c",
@@ -103,7 +103,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "unobfuscated source code"
+	    "entry_text" : "obfuscated source code"
 	},
 	{
 	    "file_path" : "obfuscation/tmpl.txt",
@@ -111,7 +111,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : false,
-	    "entry_text" : "template for deobfuscation/gen.rb output"
+	    "entry_text" : "template for obfuscation/gen.rb output"
 	},
 	{
 	    "file_path" : "2020_endoh2.tar.bz2",
