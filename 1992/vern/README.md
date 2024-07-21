@@ -109,11 +109,19 @@ ply of 3).  A ply of 3 is in general good enough to avoid not only flaming
 blunders but also immediately stupid moves altogether.  A ply of 4 will find all
 mate-in-two's.
 
+### NOTICE to those who wish for a greater challenge:
+
+**If you want a greater challenge, don't read any further**:
+just try to understand the program via the source.
+
+If you get stuck, come back and read below for additional hints and information.
+
 
 ### Obfuscation
 
+
 This program is obfuscated in a number of ways.  First, it abuses the
-contest rule regarding ';', '{', and '}' in the source not counting
+contest rule regarding `;`, `{`, and `}` in the source not counting
 against the non-whitespace character limit if followed by whitespace.
 As can be seen from the build file, certain combinations of these
 characters followed by a particular whitespace character are expanded
@@ -154,7 +162,8 @@ Finally, there are three key constants that occur throughout the program:  `64`,
 which provides a hint as to what the program is up to, they are computed
 probabilistically at run-time.  An instance of the ["Inspection
 Paradox"](https://en.wikipedia.org/wiki/Renewal_theory#Inspection_paradox) is
-used which happens to produce a value that on average is close to `.64`.
+used which happens to produce a value that on average is close to `64`.
+
 `10000` instances of this value are computed, added up, and then divided by
 `100`.  Sometimes the value produced will be `63` or `65` instead of `64` (but
 I've never observed any other values), so the result is then rounded to the

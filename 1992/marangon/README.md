@@ -14,9 +14,9 @@
 
 ## Judges' remarks:
 
-The object is to refill the table with 5's, by incrementing or decrementing
+The object is to refill the table with `5`s, by incrementing or decrementing
 numbers as needed.  It is the side effects that get you into trouble.  If you
-are not careful, you may find things "at 6's and 7's".  :-)
+are not careful, you may find things "at `6`s and `7`s".  :-)
 
 NOTE: Some compilers have had trouble optimizing this entry.
 
@@ -31,8 +31,8 @@ avoids this problem.
 
 ## Author's remarks:
 
-It starts off by creating a table with number 5 in all places.  The CPU melts
-the numbers and you must return them in original state.  When you increase a
+It starts off by creating a table with the number `5` in all places.  The CPU melts
+the numbers and you must return them to the original state.  When you increase a
 number, all the other eight numbers next to it decrease and vice-versa.
 
 

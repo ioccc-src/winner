@@ -12,8 +12,7 @@ There are two alternate versions that relate to the US specifically. See
 
 The current status of this entry is:
 
-> **STATUS: INABIAF - please DO NOT fix**<br>
-> **STATUS: known bug - please help us fix**
+> **STATUS: INABIAF - please DO NOT fix**
 
 For more detailed information see [1992/westley in bugs.html](../../bugs.html#1992_westley).
 
@@ -66,8 +65,7 @@ is functionally equivalent to the first. The original limitation where one has
 to have a terminal that wraps at 80 columns is unfortunately in this version
 because it requires a specific length so if you do not have this it will not
 look right; use the first alternate version if you want to see correct output
-with wider terminals.
-
+with wider terminals. To compile the second alternate version:
 
 ``` <!---sh-->
     make alt2

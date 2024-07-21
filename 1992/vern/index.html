@@ -484,9 +484,13 @@ a little under 4 CPU minutes (and for <code>PK4</code> comes up with the same re
 ply of 3). A ply of 3 is in general good enough to avoid not only flaming
 blunders but also immediately stupid moves altogether. A ply of 4 will find all
 mate-in-two’s.</p>
+<h3 id="notice-to-those-who-wish-for-a-greater-challenge">NOTICE to those who wish for a greater challenge:</h3>
+<p><strong>If you want a greater challenge, don’t read any further</strong>:
+just try to understand the program via the source.</p>
+<p>If you get stuck, come back and read below for additional hints and information.</p>
 <h3 id="obfuscation">Obfuscation</h3>
 <p>This program is obfuscated in a number of ways. First, it abuses the
-contest rule regarding ‘;’, ‘{’, and ‘}’ in the source not counting
+contest rule regarding <code>;</code>, <code>{</code>, and <code>}</code> in the source not counting
 against the non-whitespace character limit if followed by whitespace.
 As can be seen from the build file, certain combinations of these
 characters followed by a particular whitespace character are expanded
@@ -519,8 +523,8 @@ tactic somewhat obfuscates the algorithm used by the program.</p>
 which provides a hint as to what the program is up to, they are computed
 probabilistically at run-time. An instance of the <a href="https://en.wikipedia.org/wiki/Renewal_theory#Inspection_paradox">“Inspection
 Paradox”</a> is
-used which happens to produce a value that on average is close to <code>.64</code>.
-<code>10000</code> instances of this value are computed, added up, and then divided by
+used which happens to produce a value that on average is close to <code>64</code>.</p>
+<p><code>10000</code> instances of this value are computed, added up, and then divided by
 <code>100</code>. Sometimes the value produced will be <code>63</code> or <code>65</code> instead of <code>64</code> (but
 I’ve never observed any other values), so the result is then rounded to the
 nearest multiple of <code>4</code>, and then the other constants are derived from it.</p>
