@@ -39,7 +39,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : false,
-	    "entry_text" : "ag man page"
+	    "entry_text" : "ag man page in text format"
 	},
 	{
 	    "file_path" : "try.sh",
