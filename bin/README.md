@@ -555,6 +555,25 @@ This tool is used in the [bin/md2html.cfg](%%REPO_URL%%/bin/md2html.cfg) file as
 the [md2html tool](index.html#md2html).
 
 
+<div id="new_year">
+### [new_year.sh](%%REPO_URL%%/bin/new_year.sh)
+</div>
+
+This tool is used my the [Judges](../judges.html) as part of the final
+steps to announce a new set of winning IOCCC entries.
+
+For example:
+
+``` <!---sh-->
+    mkdir -p YYYY
+    chmod +w .top
+    bin/new_year.sh YYYY
+    chmod -w .top
+```
+
+Here, `YYYY` must be a new 4-digit IOCCC year.
+
+
 <div id="output-index-inventory">
 ### [output-index-inventory.sh](%%REPO_URL%%/bin/output-index-inventory.sh)
 </div>

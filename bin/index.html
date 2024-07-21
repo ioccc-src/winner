@@ -704,6 +704,17 @@ page.</p>
 1984/anonymous</a>.</p>
 <p>This tool is used in the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/md2html.cfg">bin/md2html.cfg</a> file as part of
 the <a href="index.html#md2html">md2html tool</a>.</p>
+<div id="new_year">
+<h3 id="new_year.sh"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/new_year.sh">new_year.sh</a></h3>
+</div>
+<p>This tool is used my the <a href="../judges.html">Judges</a> as part of the final
+steps to announce a new set of winning IOCCC entries.</p>
+<p>For example:</p>
+<pre><code>    mkdir -p YYYY
+    chmod +w .top
+    bin/new_year.sh YYYY
+    chmod -w .top</code></pre>
+<p>Here, <code>YYYY</code> must be a new 4-digit IOCCC year.</p>
 <div id="output-index-inventory">
 <h3 id="output-index-inventory.sh"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/output-index-inventory.sh">output-index-inventory.sh</a></h3>
 </div>
