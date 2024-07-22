@@ -2036,16 +2036,17 @@ bugs.html](bugs.html#1992_lush) for details.
 ### Winning entry source code: [nathan.c](%%REPO_URL%%/1992/nathan/nathan.c)
 </div>
 
-[Cody](#cody) added the original file back as it was deemed that the export restrictions
-should no longer be a cause of concern for this entry. Doing this did require a
-change to Cody's [2020/ferguson2](2020/ferguson2/index.html) entry as it's
-referenced.
+[Cody](#cody) added the original file back as it was deemed that the export
+restrictions should no longer be a cause of concern for this entry. An entry
+that referred to this previous code was updated and the originally published
+code is now also in [nathan.alt.c](%%REPO_URL%%/1992/nathan/nathan.alt.c). The astute
+viewer would note that it has the same typos as the originally published code.
 
 Cody cynically noted that if he goes quiet, for instance if he no longer
 participates in the IOCCC, that it must be our fault! :-)
 
-Cody also added the [try.sh](%%REPO_URL%%/1992/nathan/try.sh) script that runs a few commands
-that we suggested as well as one he provided.
+Cody also added the [try.sh](%%REPO_URL%%/1992/nathan/try.sh) script that runs a
+few commands that we suggested as well as one he provided.
 
 
 <div id="1992_vern">

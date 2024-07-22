@@ -7,5 +7,6 @@ indent
 indent.c
 indent.o
 nathan
+nathan.alt
 nathan.orig
 prog.orig

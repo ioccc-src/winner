@@ -26,6 +26,14 @@
 	    "entry_text" : "entry Makefile"
 	},
 	{
+	    "file_path" : "nathan.alt.c",
+	    "inventory_order" : 40,
+	    "OK_to_edit" : true,
+	    "display_as" : "c",
+	    "display_via_github" : true,
+	    "entry_text" : "alternate source code"
+	},
+	{
 	    "file_path" : "nathan.orig.c",
 	    "inventory_order" : 50,
 	    "OK_to_edit" : false,
