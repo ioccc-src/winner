@@ -21,7 +21,7 @@ To guess the computer's number:
 
 where:
 
-[colors] is the number of possible colors (1 to 15) (default: 6)
+`[colors]` is the number of possible colors (1 to 15) (default: 6)
 
 
 ## Judges' remarks:
