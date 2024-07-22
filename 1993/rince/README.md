@@ -75,15 +75,17 @@ The author has provided several CABBAGE files for your amusement:
 [Breakout](https://en.wikipedia.org/wiki/Breakout_&#x28;video_game&#x29;).  Keys are `,`
 for left, `/` for right, and `.` for 'fire the ball'.
 
-- [rince.data2](%%REPO_URL%%/1993/rince/rince.data2) plays the old [James Bonfield](../../authors.html#James_Bonfield)'s
+- [rince.data2](%%REPO_URL%%/1993/rince/rince.data2) plays the old [James Bonfield](../../authors.html#James_Bonfield)
 ([1991/rince](../../1991/rince/index.html) game from [IOCCC
 1991](../../1991/index.html)).
 
-- [rince.data3](%%REPO_URL%%/1993/rince/rince.data3) Sokoban screen 11. You are the `o` character.
+- [rince.data3](%%REPO_URL%%/1993/rince/rince.data3)
+[Sokoban](https://en.wikipedia.org/wiki/Sokoban) screen 11. You are the `o` character.
 You must push the money `m` into the dotted region of the screen. The game is
 considered finished when all the `m`s are then `M`s.
 
-- [rince.data4](%%REPO_URL%%/1993/rince/rince.data4) Sokoban screen 13. Same rules as above.
+- [rince.data4](%%REPO_URL%%/1993/rince/rince.data4)
+[Sokoban](https://en.wikipedia.org/wiki/Sokoban) screen 13. Same rules as above.
 
 For a brief design description, see [design.html](design.html).
 
