@@ -4,6 +4,10 @@
     make
 ```
 
+NOTE: this entry requires the `X11/Xlib.h` header file and the X11 library to
+compile.  For more information see the
+FAQ on "[X11](../../faq.html#X11)".
+
 The author provided two alternate versions, one which adds a status bar and
 another that makes it text only. The author also provided a version that they
 tested with Windows.  See [alternate code](#alternate-code) below.

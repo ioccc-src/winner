@@ -4,6 +4,9 @@
     make all
 ```
 
+NOTE: this entry requires the `X11/Xlib.h` header file and the X11 library to
+compile.  For more information see the
+FAQ on "[X11](../../faq.html#X11)".
 
 The author provided a less obfuscated version as alternate code. See [Alternate
 code](#alternate-code) below.

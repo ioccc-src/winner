@@ -4,6 +4,10 @@
     make
 ```
 
+NOTE: this entry requires the `X11/Xlib.h` header file and the X11 library to
+compile.  For more information see the
+FAQ on "[X11](../../faq.html#X11)".
+
 To change the dimensions you can use the `WIDTH` and `HEIGHT` variables when
 compiling (default 1024 x 800):
 

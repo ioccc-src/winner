@@ -4,6 +4,10 @@
     make all
 ```
 
+NOTE: this entry requires the `X11/Xlib.h` header file and the X11 library to
+compile.  For more information see the
+FAQ on "[X11](../../faq.html#X11)".
+
 If you do not have a page up or page down key you might wish to see the
 [Alternate code](#alternate-code) section below. You may redefine all the keys
 and the time step with predefined macros, however, so one lacking page up / page

@@ -6,6 +6,11 @@ If your machine support the X Window System, Version 11:
     make alt
 ```
 
+NOTE: this entry requires the `X11/Xlib.h` header file and the X11 library to
+compile.  See the
+FAQ on "[X11](../../faq.html#X11)"
+if you need help.
+
 We recommend that you try the alt version first so you can get a better idea of
 what this looked like back in 1992. See [original code](#original-code) for the
 original should you wish to see what we mean.

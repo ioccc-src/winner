@@ -1,10 +1,12 @@
 ## To build:
 
-If you have X11 installed:
-
 ``` <!---sh-->
     make
 ```
+
+NOTE: this entry requires the `X11/Xlib.h` header file and the X11 library to
+compile.  For more information see the
+FAQ on "[X11](../../faq.html#X11)".
 
 There are two alternate versions, [one that lets you reconfigure the
 controls and size](%%REPO_URL%%/2011/toledo/toledo.alt.c) and [another that should work for

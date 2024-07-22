@@ -4,10 +4,9 @@
     make all
 ```
 
-NOTE: this entry requires `X11/Xlib.h` header file and the X11 library to
-compile. macOS users running Mountain Lion and later will need to download and
-install [XQuartz](https://www.xquartz.org) in order to compile and run this
-entry.
+NOTE: this entry requires the `X11/Xlib.h` header file and the X11 library to
+compile.  For more information see the
+FAQ on "[X11](../../faq.html#X11)".
 
 
 ### Bugs and (Mis)features:
