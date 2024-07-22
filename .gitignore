@@ -30,10 +30,12 @@
 /archive/historic/2018
 /archive/historic/2019
 /archive/historic/2020
+.auth.json
 author_wins.csv
 author_wins.numbers
 debug.input.md
 debug.output.html
+.info.json
 manifest.csv
 manifest.numbers
 .su[a-z]
