@@ -88,7 +88,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.0 2024-07-21"
+export VERSION="1.1 2024-07-21"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -201,6 +201,7 @@ else
     exit 1
 fi
 
+
 # verify that we have a topdir directory
 #
 REPO_NAME=$(basename "$REPO_URL")
@@ -220,6 +221,7 @@ if [[ ! -d $TOPDIR ]]; then
     echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_URL; cd $REPO_NAME" 1>&2
     exit 6
 fi
+
 
 # cd to topdir
 #
@@ -244,7 +246,8 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: now in directory: $(/bin/pwd)" 1>&2
 fi
 
-# verify we have a non-empty writable .top file
+
+# verify we have a non-empty readable .top file
 #
 export TOP_FILE=".top"
 if [[ ! -e $TOP_FILE ]]; then
@@ -255,14 +258,36 @@ if [[ ! -f $TOP_FILE ]]; then
     echo  "$0: ERROR: .top is not a regular file: $TOP_FILE" 1>&2
     exit 6
 fi
-if [[ ! -w $TOP_FILE ]]; then
-    echo  "$0: ERROR: .top is not an writable file: $TOP_FILE" 1>&2
+if [[ ! -r $TOP_FILE ]]; then
+    echo  "$0: ERROR: .top is not an readable file: $TOP_FILE" 1>&2
     exit 6
 fi
 if [[ ! -s $TOP_FILE ]]; then
-    echo  "$0: ERROR: .top is not a non-empty writable file: $TOP_FILE" 1>&2
+    echo  "$0: ERROR: .top is not a non-empty readable file: $TOP_FILE" 1>&2
     exit 6
 fi
+
+
+# verify we have a non-empty readable Makefile
+
+export MAKE_FILE="Makefile"
+if [[ ! -e $MAKE_FILE ]]; then
+    echo  "$0: ERROR: .top does not exist: $MAKE_FILE" 1>&2
+    exit 6
+fi
+if [[ ! -f $MAKE_FILE ]]; then
+    echo  "$0: ERROR: .top is not a regular file: $MAKE_FILE" 1>&2
+    exit 6
+fi
+if [[ ! -r $MAKE_FILE ]]; then
+    echo  "$0: ERROR: .top is not an readable file: $MAKE_FILE" 1>&2
+    exit 6
+fi
+if [[ ! -s $MAKE_FILE ]]; then
+    echo  "$0: ERROR: .top is not a non-empty readable file: $MAKE_FILE" 1>&2
+    exit 6
+fi
+
 
 # print running info if verbose
 #
@@ -281,6 +306,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: REPO_NAME=$REPO_NAME" 1>&2
     echo "$0: debug[3]: CD_FAILED=$CD_FAILED" 1>&2
     echo "$0: debug[3]: TOP_FILE=$TOP_FILE" 1>&2
+    echo "$0: debug[3]: MAKE_FILE=$MAKE_FILE" 1>&2
 fi
 
 # -N stops early before any processing is performed
@@ -293,64 +319,100 @@ if [[ -n $DO_NOT_PROCESS ]]; then
 fi
 
 
-# verify that YEAR is not already in .top
+# create a temporary Makefile
 #
-if grep -E -q "^$YEAR$" "$TOP_FILE"; then
-    echo "$0: notice: YEAR: $YEAR already found in: $TOP_FILE" 1>&2
+export TMP_MAKEFILE=".tmp.$NAME.MAKEFILE.$$.tmp"
+if [[ $V_FLAG -ge 3 ]]; then
+    echo  "$0: debug[3]: temporary Makefile: $TMP_MAKEFILE" 1>&2
+fi
+trap 'rm -f $TMP_MAKEFILE; exit' 0 1 2 3 15
+rm -f "$TMP_MAKEFILE"
+if [[ -e $TMP_MAKEFILE ]]; then
+    echo "$0: ERROR: cannot remove temporary Makefile: $TMP_MAKEFILE" 1>&2
+    exit 10
+fi
+echo '# author_handle,entry_id,entry_id,entry_id,…,,,,,,,,,,,,,,,' > \
+  "$TMP_MAKEFILE"
+if [[ ! -e $TMP_MAKEFILE ]]; then
+    echo "$0: ERROR: cannot create temporary Makefile: $TMP_MAKEFILE" 1>&2
+    exit 11
 fi
 
-# year directory must exist
+
+# form the temporary Makefile with the added year
 #
-if [[ ! -e $YEAR ]]; then
-    echo  "$0: ERROR: year directory does not exist: $YEAR" 1>&2
-    exit 1
+if [[ $V_FLAG -ge 3 ]]; then
+    echo "$0: debug[3]: forming temporary Makefile: $TMP_MAKEFILE" 1>&2
 fi
-if [[ ! -d $YEAR ]]; then
-    echo  "$0: ERROR: year is not a directory: $YEAR" 1>&2
-    exit 1
+sed -n -e '1,/^# BEGIN - DO NOT REMOVE THIS LINE - make new_year uses this line #/p' "$MAKE_FILE" > "$TMP_MAKEFILE"
+make new_year NEW_YEAR="$YEAR" >> "$TMP_MAKEFILE"
+status="$?"
+if [[ $status -ne 0 ]]; then
+    echo "$0: ERROR: make new_year NEW_YEAR=\"$YEAR\" >> \"$TMP_MAKEFILE\" failed," \
+	 "error code: $status" 1>&2
+    exit 12
 fi
+sed -n -e '/^# END - DO NOT REMOVE THIS LINE - make new_year also uses this #/,$p' "$MAKE_FILE" >> "$TMP_MAKEFILE"
 
 
-# case: without -n
+# Update Makefile if different and not -n
 #
 if [[ -z $NOOP ]]; then
 
-    # append year to .top
-    #
-    if [[ $V_FLAG -ge 3 ]]; then
-	echo "$0: debug[3]: appending YEAR: $YEAR to: $TOP_FILE" 1>&2
-    fi
-    echo "$YEAR" >> "$TOP_FILE"
+    if cmp -s "$TMP_MAKEFILE" "$MAKE_FILE"; then
 
-    # sort .top numerically
-    #
-    if [[ $V_FLAG -ge 3 ]]; then
-	echo "$0: debug[3]: about to: sort -n -u $TOP_FILE -o $TOP_FILE" 1>&2
-    fi
-    sort -n -u "$TOP_FILE" -o "$TOP_FILE"
-    status="$?"
-    if [[ $status -ne 0 ]]; then
-	echo "$0: ERROR: sort -n -u $TOP_FILE -o $TOP_FILE failed," \
-	     "error code: $status" 1>&2
-	exit 10
-    fi
+	# case: author_wins.csv did not change
+	#
+	if [[ $V_FLAG -ge 5 ]]; then
+            echo "$0: debug[5]: Makefile file did not change: $MAKE_FILE" 1>&2
+        fi
 
-    # firewall
-    #
-    if grep -E -q "^$YEAR$" "$TOP_FILE"; then
-	if [[ $V_FLAG -ge 1 ]]; then
-	    echo "$0: debug[1]: YEAR: $YEAR is in: $TOP_FILE" 1>&2
-	    echo "$0: debug[1]: Happy New IOCCC Year!!!" 1>&2
-	fi
     else
-	echo "$0: ERROR: failed to add YEAR: $YEAR to: $TOP_FILE" 1>&2
-	exit 11
+
+        # case: Makefile file changed, update the file
+        #
+        if [[ $V_FLAG -ge 5 ]]; then
+            echo "$0: debug[5]: about to: mv -f -- $TMP_MAKEFILE $MAKE_FILE" 1>&2
+        fi
+        if [[ $V_FLAG -ge 3 ]]; then
+            mv -f -v -- "$TMP_MAKEFILE" "$MAKE_FILE"
+            status="$?"
+        else
+            mv -f -- "$TMP_MAKEFILE" "$MAKE_FILE"
+            status="$?"
+        fi
+        if [[ status -ne 0 ]]; then
+            echo "$0: ERROR: mv -f -- $TMP_MAKEFILE $MAKE_FILE filed," \
+	         "error code: $status" 1>&2
+            exit 13
+        elif [[ $V_FLAG -ge 1 ]]; then
+            echo "$0: debug[1]: updated Makefile: $MAKE_FILE" 1>&2
+        fi
+        if [[ ! -s $MAKE_FILE ]]; then
+            echo "$0: ERROR: not a non-empty Makefile: $MAKE_FILE" 1>&2
+            exit 14
+        fi
+
+	# update .top and friends
+	#
+	if [[ $V_FLAG -ge 3 ]]; then
+            echo "$0: debug[3]: about to run: make genpath >/dev/null" 1>&2
+        fi
+	make genpath >/dev/null
+	status="$?"
+        if [[ status -ne 0 ]]; then
+	    echo "$0: ERROR: make genpath >/dev/null failed," \
+		 "error code: $status" 1>&2
+	    exit 15
+        elif [[ $V_FLAG -ge 1 ]]; then
+            echo "$0: debug[1]: updated .top and friends" 1>&2
+	fi
     fi
 
 # case: with -n
 #
 elif [[ $V_FLAG -ge 3 ]]; then
-    echo "$0: debug[3]: -n disabled adding YEAR: $YEAR to $TOP_FILE" 1>&2
+    echo "$0: debug[3]: -n disabled updating: $MAKE_FILE" 1>&2
 fi
 
 

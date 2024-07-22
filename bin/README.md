@@ -583,9 +583,7 @@ For example:
 
 ``` <!---sh-->
     mkdir -p YYYY
-    chmod +w .top
-    bin/new-year.sh YYYY
-    chmod -w .top
+    bin/new-year.sh -v 1 YYYY
 ```
 
 Here, `YYYY` must be a new 4-digit IOCCC year.
