@@ -118,7 +118,7 @@ shopt -s lastpipe	# explicitly run the last command of the pipe line in the curr
 
 # set variables referenced in the usage message
 #
-export VERSION="1.1 2024-07-20"
+export VERSION="1.1.1 2024-07-22"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -926,7 +926,7 @@ for YYYY in $(< "$TOP_FILE"); do
 	if [[ -z $NOOP ]]; then
 	    awk -f "$MANIFEST_ENTRY_CSV_ENTRY_AWK" "$ENTRY_JSON" >> "$TMP_MANIFEST_CSV"
 	    status="$?"
-	    if [[ status -ne 0 ]]; then
+	    if [[ $status -ne 0 ]]; then
 		echo "$0: ERROR: awk -f $MANIFEST_ENTRY_CSV_ENTRY_AWK $ENTRY_JSON >> $TMP_MANIFEST_CSV failed," \
 		     "error code: $status" 1>&2
 		exit 8
@@ -959,7 +959,7 @@ if [[ -z $NOOP ]]; then
     fi
     sort "$TMP_AUTHOR_WIN" -o "$TMP_AUTHOR_WIN"
     status="$?"
-    if [[ status -ne 0 ]]; then
+    if [[ $status -ne 0 ]]; then
 	echo "$0: ERROR: sort $TMP_AUTHOR_WIN -o $TMP_AUTHOR_WIN failed," \
 	     "error code: $status" 1>&2
 	exit 8
@@ -1028,7 +1028,7 @@ if [[ -z $NOOP ]]; then
     fi
     sort -t, -k1d,1 -k2d,2 "$TMP_AUTHOR_WINS_CSV" -o "$TMP_AUTHOR_WINS_CSV"
     status="$?"
-    if [[ status -ne 0 ]]; then
+    if [[ $status -ne 0 ]]; then
 	echo "$0: ERROR: sort -t, -k1d,1 -k2d,2 $TMP_AUTHOR_WINS_CSV -o $TMP_AUTHOR_WINS_CSV failed," \
 	     "error code: $status" 1>&2
 	exit 8
@@ -1066,7 +1066,7 @@ if [[ -z $NOOP ]]; then
             mv -f -- "$TMP_AUTHOR_WINS_CSV" "$AUTHOR_WINS_CSV"
             status="$?"
         fi
-        if [[ status -ne 0 ]]; then
+        if [[ $status -ne 0 ]]; then
             echo "$0: ERROR: mv -f -- $TMP_AUTHOR_WINS_CSV $AUTHOR_WINS_CSV filed," \
 	         "error code: $status" 1>&2
             exit 8
@@ -1218,7 +1218,7 @@ if [[ $V_FLAG -ge 5 ]]; then
 fi
 sort "$TMP_AUTHOR_HANDLE_INVENTORY" -o "$TMP_AUTHOR_HANDLE_INVENTORY"
 status="$?"
-if [[ status -ne 0 ]]; then
+if [[ $status -ne 0 ]]; then
     echo "$0: ERROR: sort $TMP_AUTHOR_HANDLE_INVENTORY -o $TMP_AUTHOR_HANDLE_INVENTORY failed," \
 	 "error code: $status" 1>&2
     exit 9
@@ -1251,7 +1251,7 @@ if [[ -z $NOOP ]]; then
     fi
     sort -t, -k1,1 -k2d,2 -k4n,4 -k3,3 -k5d,8 "$TMP_MANIFEST_CSV" -o "$TMP_MANIFEST_CSV"
     status="$?"
-    if [[ status -ne 0 ]]; then
+    if [[ $status -ne 0 ]]; then
 	echo "$0: ERROR: sort -t, -k1,1 -k2d,2 -k4n,4 -k3,3 -k5d,8 $TMP_MANIFEST_CSV -o $TMP_MANIFEST_CSV failed," \
 	     "error code: $status" 1>&2
 	exit 8
@@ -1289,7 +1289,7 @@ if [[ -z $NOOP ]]; then
             mv -f -- "$TMP_MANIFEST_CSV" "$MANIFEST_CSV"
             status="$?"
         fi
-        if [[ status -ne 0 ]]; then
+        if [[ $status -ne 0 ]]; then
             echo "$0: ERROR: mv -f -- $TMP_MANIFEST_CSV $MANIFEST_CSV filed," \
 	         "error code: $status" 1>&2
             exit 8
@@ -1319,7 +1319,7 @@ if [[ -z $NOOP ]]; then
     fi
     sort -t, -k1d,1 -k2d,2 "$TMP_YEAR_PRIZE_CSV" -o "$TMP_YEAR_PRIZE_CSV"
     status="$?"
-    if [[ status -ne 0 ]]; then
+    if [[ $status -ne 0 ]]; then
 	echo "$0: ERROR: sort -t, -k1d,1 -k2d,2 $TMP_YEAR_PRIZE_CSV -o $TMP_YEAR_PRIZE_CSV failed," \
 	     "error code: $status" 1>&2
 	exit 8
@@ -1357,7 +1357,7 @@ if [[ -z $NOOP ]]; then
             mv -f -- "$TMP_YEAR_PRIZE_CSV" "$YEAR_PRIZE_CSV"
             status="$?"
         fi
-        if [[ status -ne 0 ]]; then
+        if [[ $status -ne 0 ]]; then
             echo "$0: ERROR: mv -f -- $TMP_YEAR_PRIZE_CSV $YEAR_PRIZE_CSV filed," \
 	         "error code: $status" 1>&2
             exit 8

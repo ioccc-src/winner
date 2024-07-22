@@ -83,7 +83,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.3.6 2024-04-28"
+export VERSION="1.3.7 2024-07-22"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -811,7 +811,7 @@ if [[ -n $REBUILD_TARBALL ]]; then
 	    mv -f -- "$TMP_TARBALL" "$TARBALL"
 	    status="$?"
 	fi
-	if [[ status -ne 0 ]]; then
+	if [[ $status -ne 0 ]]; then
 	    echo "$0: ERROR: mv -f -- $TMP_TARBALL $TARBALL filed, error code: $status" 1>&2
 	    exit 8
 	elif [[ $V_FLAG -ge 1 ]]; then

@@ -84,7 +84,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.5.5 2024-07-18"
+export VERSION="1.5.6 2024-07-22"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -1143,7 +1143,7 @@ if [[ -z $NOOP ]]; then
             mv -f -- "$TMP_RULES_MD" "$RULES_MD"
             status="$?"
         fi
-	if [[ status -ne 0 ]]; then
+	if [[ $status -ne 0 ]]; then
             echo "$0: ERROR: mv -f -- $TMP_RULES_MD $RULES_MD filed, error code: $status" 1>&2
 	elif [[ $V_FLAG -ge 1 ]]; then
             echo "$0: debug[1]: built replaced rules.md: $RULES_MD" 1>&2
@@ -1227,7 +1227,7 @@ if [[ -z $NOOP ]]; then
             mv -f -- "$TMP_GUIDELINES_MD" "$GUIDELINES_MD"
             status="$?"
         fi
-	if [[ status -ne 0 ]]; then
+	if [[ $status -ne 0 ]]; then
             echo "$0: ERROR: mv -f -- $TMP_GUIDELINES_MD $GUIDELINES_MD filed, error code: $status" 1>&2
 	elif [[ $V_FLAG -ge 1 ]]; then
             echo "$0: debug[1]: built replaced guidelines.md: $GUIDELINES_MD" 1>&2

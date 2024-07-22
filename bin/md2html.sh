@@ -141,7 +141,7 @@ shopt -s lastpipe	# run last command of a pipeline not executed in the backgroun
 
 # set variables referenced in the usage message
 #
-export VERSION="1.5.2 2024-07-18"
+export VERSION="1.5.3 2024-07-22"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -2300,7 +2300,7 @@ if [[ -z $NOOP ]]; then
 	    mv -f -- "$TMP_INDEX_HTML" "$OUTPUT_HTML"
 	    status="$?"
 	fi
-	if [[ status -ne 0 ]]; then
+	if [[ $status -ne 0 ]]; then
 	    echo "$0: ERROR: mv -f -- $TMP_INDEX_HTML $OUTPUT_HTML filed, error code: $status" 1>&2
 	    exit 139
 	elif [[ $V_FLAG -ge 1 ]]; then

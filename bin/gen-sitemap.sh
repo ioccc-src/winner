@@ -84,7 +84,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.3.10 2024-07-18"
+export VERSION="1.3.11 2024-07-22"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -924,7 +924,7 @@ if [[ -z $NOOP ]]; then
 	    mv -f -- "$TMP_SITEMAP" "$SITEMAP"
 	    status="$?"
 	fi
-	if [[ status -ne 0 ]]; then
+	if [[ $status -ne 0 ]]; then
 	    echo "$0: ERROR: mv -f -- $TMP_SITEMAP $SITEMAP filed, error code: $status" 1>&2
 	    EXIT_CODE=8 # exit 8
 	elif [[ $V_FLAG -ge 1 ]]; then
