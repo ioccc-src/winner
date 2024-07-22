@@ -4,6 +4,9 @@
     make all
 ```
 
+There is an Alternate version which is what was originally published. See
+[Alternate code](#alternate-code) below for more information.
+
 
 ## To use:
 
@@ -20,6 +23,34 @@ To see some other fun uses:
 ``` <!---sh-->
     ./try.sh
 ```
+
+
+## Alternate code:
+
+At the time of publication, the judges could not publish the code due to the
+US export control over encryption. The code that was published would, if run,
+allow one to get the instructions of how to receive (via email) the actual
+entry. However, on Sat Mar 4 20:09:35 2023 UTC, the previously unseen code was
+published. This meant that the old code was not set to compile via the Makefile.
+This alternate code is that previous version.
+
+
+## Alternate build:
+
+``` <!---sh-->
+     make alt
+```
+
+
+### Alternate use:
+
+``` <!---sh-->
+    ./nathan.alt
+```
+
+**IMPORTANT NOTE**: it is unknown if the email in the code is still valid and as
+one does not need to email the author for the submitted code one should not
+email it. In other words, please do **NOT** send such an email.
 
 
 ## Judges' remarks:
@@ -41,7 +72,7 @@ should be freely re-distributable).  We suspect that the author
 may not have intended to do this, but that is the way things go
 sometimes.
 
-BTW, 'abuse of the rules' entries do not violate the rules.
+BTW, '_abuse of the rules_' entries do not violate the rules.
 Entries that violate the rules are disqualified.  Abuse of the
 rules entries are ones that tend to 'stretch' the limits and
 take the contest into unexpected territory.
@@ -88,7 +119,9 @@ is the source code is what you would have received had you
 successfully completed the above instructions.
 
 Today, the above instructions are **no longer necessary**.
-There have been reproduced above to provide historical context.
+There have been reproduced above to provide historical context. Even so, the
+[Alternate code](#alternate-code) allows you to see what the originally
+published code did.
 
 
 ### Personal note from chongo:
@@ -101,11 +134,12 @@ re-distribute a program contest entry to the network!
 
 ### Updated personal note from chongo:
 
-We removed the Email address from the above quote (although you can
-still see it in the [nathan.orig.c](%%REPO_URL%%/1992/nathan/nathan.orig.c)
-code) because sending Email to that address is not requirement today.
-The [nathan.c](%%REPO_URL%%/1992/nathan/nathan.c) file now contains
-the source you would have received in reply.
+We removed the email address from the above quote (although you can still see it
+in the [nathan.orig.c](%%REPO_URL%%/1992/nathan/nathan.orig.c) and
+[nathan.alt.c](%%REPO_URL%%/1992/nathan/nathan.alt.c) code) because sending
+email to that address is not required today and it is unknown if it is still
+valid.  The [nathan.c](%%REPO_URL%%/1992/nathan/nathan.c) file now contains the
+source you would have received in reply.
 
 Thankfully much of the ridiculous US crypto regulations has been
 amended to the extent where the above historical "_workaround_" is
