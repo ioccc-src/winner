@@ -381,7 +381,7 @@ if [[ -z $NOOP ]]; then
             mv -f -- "$TMP_MAKEFILE" "$MAKE_FILE"
             status="$?"
         fi
-        if [[ status -ne 0 ]]; then
+        if [[ $status -ne 0 ]]; then
             echo "$0: ERROR: mv -f -- $TMP_MAKEFILE $MAKE_FILE filed," \
 	         "error code: $status" 1>&2
             exit 13
@@ -400,7 +400,7 @@ if [[ -z $NOOP ]]; then
         fi
 	make genpath >/dev/null
 	status="$?"
-        if [[ status -ne 0 ]]; then
+        if [[ $status -ne 0 ]]; then
 	    echo "$0: ERROR: make genpath >/dev/null failed," \
 		 "error code: $status" 1>&2
 	    exit 15
