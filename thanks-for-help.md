@@ -2039,7 +2039,7 @@ bugs.html](bugs.html#1992_lush) for details.
 [Cody](#cody) added the original file back as it was deemed that the export
 restrictions should no longer be a cause of concern for this entry. An entry
 that referred to this previous code was updated and the originally published
-code is now also in [nathan.alt.c](%%REPO_URL%%/1992/nathan.alt.c). The astute
+code is now also in [nathan.alt.c](%%REPO_URL%%/1992/nathan/nathan.alt.c). The astute
 viewer would note that it has the same typos as the originally published code.
 
 Cody cynically noted that if he goes quiet, for instance if he no longer
