@@ -99,7 +99,7 @@ all:
 
 .PHONY: all alt data everything diff_orig_prog diff_prog_orig \
 	diff_alt_prog diff_prog_alt diff_orig_alt diff_alt_orig \
-	clean clobber install genpath new_year love haste waste maker \
+	clean clobber install genpath new_year genpath_top love haste waste maker \
 	easter_egg sandwich supernova deep_magic magic charon pluto
 
 # alternative executable
@@ -409,9 +409,8 @@ tab_check:
 #
 genpath:
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
-	@${RM} -f .tmp.genpath
+	@${MAKE} genpath_top
 	@-for i in ${YEARS}; do \
-	    echo "$$i" >> .tmp.genpath; \
 	    if [[ -f $$i/Makefile ]]; then \
 		echo "cd $$i; make $@"; \
 		(cd $$i; make $@); \
@@ -419,14 +418,6 @@ genpath:
 		echo "Warning: $$i/Makefile not found, skipping $$i for $@ processing" 1>&2 ; \
 	    fi; \
         done
-	${SORT} -n -u .tmp.genpath -o .tmp.genpath;
-	@-if ${CMP} -s .tmp.genpath .top; then \
-	    ${RM} -f .tmp.genpath; \
-	else \
-	    ${MV} -f .tmp.genpath .top; \
-	    ${CHMOD} 0444 .top; \
-	    echo "updated .top"; \
-	fi
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 # generate YYYY level .filelist
@@ -782,6 +773,24 @@ new_year:
 	@(echo 'YEARS= '; \
 	  (echo ${YEARS} ${NEW_YEAR}) | ${TR} ' ' '\012' | ${SORT} -n) | \
 	  ${FMT} -p | ${SED} -e '2,$$s/^/\t/' -e 's/$$/ \\/' -e '$$s/ \\//'
+
+# form the top level .top only
+#
+genpath_top:
+	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@${RM} -f .tmp.genpath
+	@-for i in ${YEARS}; do \
+	    echo "$$i" >> .tmp.genpath; \
+        done
+	${SORT} -n -u .tmp.genpath -o .tmp.genpath;
+	@-if ${CMP} -s .tmp.genpath .top; then \
+	    ${RM} -f .tmp.genpath; \
+	else \
+	    ${MV} -f .tmp.genpath .top; \
+	    ${CHMOD} 0444 .top; \
+	    echo "updated .top"; \
+	fi
+	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 
 ##################

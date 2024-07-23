@@ -1,9 +1,23 @@
 #!/usr/bin/env bash
 #
-# add-dir.sh - add a new entry directory under an IOCCC year
+# cvt-submission.sh - convert a submission into an entry
 #
-# We update YYYY/.year to reference a new entry directory under
-# a given IOCCC year.
+# Given a submission (that has won the IOCCC), with a `.auth.json`
+# and `.info.json` and NO `.entry.json` file, we convert the
+# `.auth.json` and `.info.json` into a new `.entry.json` file.
+#
+# We will form, as needed, new `author/author_handle.json`
+# files for new authors, and update `author/author_handle.json`
+# for authors who won previously.
+#
+# There are functions that this tool will NOT do:
+#
+#   * This tool will not remove `.auth.json`
+#   * This tool will not remove `.info.json`
+#   * This tool will not remove `remarks.md`
+#   * This tool will not verify that Makefile has the required rules
+#   * This will will not form `README.md` author notes from `remarks.md`
+#   * This will will not add this entry to the year level Makefile
 #
 # Copyright (c) 2024 by Landon Curt Noll.  All Rights Reserved.
 #
@@ -88,7 +102,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.0 2024-07-21"
+export VERSION="1.0 2024-07-22"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -191,6 +205,7 @@ if [[ $# -ne 1 ]]; then
 fi
 export ENTRY_PATH="$1"
 
+
 # verify that we have a topdir directory
 #
 REPO_NAME=$(basename "$REPO_URL")
@@ -234,6 +249,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: now in directory: $(/bin/pwd)" 1>&2
 fi
 
+
 # verify we have a non-empty readable .top file
 #
 export TOP_FILE=".top"
@@ -254,6 +270,7 @@ if [[ ! -s $TOP_FILE ]]; then
     exit 6
 fi
 
+
 # verify that we have an bin subdirectory
 #
 export BIN_PATH="$TOPDIR/bin"
@@ -262,6 +279,7 @@ if [[ ! -d $BIN_PATH ]]; then
     exit 6
 fi
 export BIN_DIR="bin"
+
 
 # verify that ENTRY_PATH is a entry directory
 #
@@ -307,6 +325,7 @@ if [[ ! -w $YYYY_DIR ]]; then
     echo "$0: ERROR: YYYY/dir from arg: $ENTRY_PATH is not a writable directory: $YYYY_DIR" 1>&2
     exit 7
 fi
+
 
 # print running info if verbose
 #
@@ -357,36 +376,7 @@ fi
 #
 if [[ -z $NOOP ]]; then
 
-    # append entry directory path to .year
-    #
-    if [[ $V_FLAG -ge 3 ]]; then
-	echo "$0: debug[3]: appending YYYY_DIR: $YYYY_DIR to: $DOT_YEAR" 1>&2
-    fi
-    echo "$YYYY_DIR" >> "$DOT_YEAR"
-
-    # sort .year
-    #
-    if [[ $V_FLAG -ge 3 ]]; then
-	echo "$0: debug[3]: about to: sort -u $DOT_YEAR -o $DOT_YEAR" 1>&2
-    fi
-    sort -u "$DOT_YEAR" -o "$DOT_YEAR"
-    status="$?"
-    if [[ $status -ne 0 ]]; then
-	echo "$0: ERROR: sort -u $DOT_YEAR -o $DOT_YEAR failed," \
-	     "error code: $status" 1>&2
-	exit 11
-    fi
-
-    # firewall - verify YYYY_DIR in .year
-    #
-    if grep -E -q "^$YYYY_DIR$" "$DOT_YEAR"; then
-	if [[ $V_FLAG -ge 1 ]]; then
-	    echo "$0: debug[1]: YYYY_DIR: $YYYY_DIR is in: $DOT_YEAR" 1>&2
-	fi
-    else
-	echo "$0: ERROR: failed to add YYYY_DIR: $YYYY_DIR to: $DOT_YEAR" 1>&2
-	exit 11
-    fi
+    : # XXX - add code here - XXX #
 
 # case: with -n
 #

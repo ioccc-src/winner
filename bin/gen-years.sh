@@ -85,7 +85,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.3.4 2024-07-13"
+export VERSION="1.3.5 2024-07-22"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -663,6 +663,19 @@ for YYYY in $("$TAC_TOOL" "$TOP_FILE"); do
 	continue
     fi
 
+    # Verify $YYYY/$YYYY.tar.bz2
+    #
+    if [[ ! -e $YYYY/$YYYY.tar.bz2 ]]; then
+	echo "$0: ERROR: compressed tarball for YYYY: $YYYY is missing: $YYYY/$YYYY.tar.bz2" 1>&2
+	EXIT_CODE="6"  # exit 6
+	echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+	continue
+    fi
+    if [[ ! -s $YYYY/$YYYY.tar.bz2 ]]; then
+	echo "$0: Warning: compressed tarball for YYYY: $YYYY is empty: $YYYY/$YYYY.tar.bz2" 1>&2
+	echo "$0: notice: continuing the processing of YYYY: $YYYY" 1>&2
+    fi
+
     # write leading markdown for this IOCCC year
     #
     {
@@ -793,6 +806,19 @@ for YYYY in $("$TAC_TOOL" "$TOP_FILE"); do
 	    EXIT_CODE="7"  # exit 7
 	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
 	    continue
+	fi
+
+	# Verify $YYYY_DIR/README.md
+	#
+	if [[ ! -e $YYYY_DIR/README.md ]]; then
+	    echo "$0: ERROR: README.md for YYYY: $YYYY is missing: $YYYY_DIR/README.md" 1>&2
+	    EXIT_CODE="7"  # exit 7
+	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+	    continue
+	fi
+	if [[ ! -s $YYYY_DIR/README.md ]]; then
+	    echo "$0: Warning: README.md for YYYY/dir: $YYYY_DIR/README.md is empty: $YYYY_DIR/README.md" 1>&2
+	    echo "$0: notice: continuing the processing of YYYY: $YYYY" 1>&2
 	fi
 
 	# output markdown for this entry

@@ -82,7 +82,7 @@ need to do so.
 This tool is used my the [Judges](../judges.html) as part of the final
 steps to announce a new winning IOCCC entry.
 
-For example:
+Usage:
 
 ``` <!---sh-->
     mkdir -p YYYY/dir
@@ -98,13 +98,13 @@ Here, `YYYY/dir` must the path to the winning IOCCC entry.
 
 Run a command on all winning entries.
 
-For example:
+Usage:
 
 ``` <!---sh-->
     bin/all-run.sh -v 3 bin/quick-readme2index.sh -v 1
 ```
 
-Or for example:
+Alternate usage:
 
 ``` <!---sh-->
     bin/all-run.sh -v 3 bin/readme2index.sh -v 1
@@ -117,13 +117,13 @@ Or for example:
 
 Run a command on all IOCCC years.
 
-For example:
+Usage:
 
 ``` <!---sh-->
     bin/all-years.sh -v 1 bin/gen-year-index.sh -v 1
 ```
 
-Or for example:
+Alternate usage:
 
 ``` <!---sh-->
     bin/all-years.sh -v 1 bin/chk-entry.sh
@@ -137,7 +137,7 @@ Or for example:
 Check an entry directory to verify that both the files in its manifest
 (`.entry.json`) exist and that no other files exist.
 
-For example:
+Usage:
 
 ``` <!---sh-->
     bin/chk-entry.sh 2020/ferguson1
@@ -167,7 +167,7 @@ title
 
 This tool updates `.entry.json` files entries whose content is modified.
 
-For example:
+Usage:
 
 ``` <!---sh-->
     bin/csv2entry.sh -v 1
@@ -218,6 +218,28 @@ that the `.entry.json` contains a manifest (or any of the other required JSON
 content).
 
 
+<div id="cvt-submission">
+### [cvt-submission.sh](%%REPO_URL%%/bin/cvt-submission.sh)
+</div>
+
+Given a submission (that has won the IOCCC), with a `.auth.json`
+and `.info.json` and NO `.entry.json` file, we convert the
+`.auth.json` and `.info.json` into a new `.entry.json` file.
+
+We will also form, as needed, new `author/author_handle.json`
+files for new authors, and update `author/author_handle.json`
+for authors who won previously.
+
+Usage:
+
+``` <!---sh-->
+    bin/cvt-submission.sh -v 1 YYYY/dir
+```
+
+Here, `YYYY/dir` is the path of the submission under the `YYYY`
+year directory.
+
+
 <div id="entry2csv">
 ### [entry2csv.sh](%%REPO_URL%%/bin/entry2csv.sh)
 </div>
@@ -257,7 +279,7 @@ from the `TOPDIR`.
 
 Generate a list of files in an entry's manifest (the `.entry.json` file).
 
-For example:
+Usage:
 
 ``` <!---sh-->
     awk -f bin/filelist.entry.json.awk 2020/ferguson1/.entry.json
@@ -579,10 +601,9 @@ the [md2html tool](index.html#md2html).
 This tool is used my the [Judges](../judges.html) as part of the final
 steps to announce a new set of winning IOCCC entries.
 
-For example:
+Usage:
 
 ``` <!---sh-->
-    mkdir -p YYYY
     bin/new-year.sh -v 1 YYYY
 ```
 

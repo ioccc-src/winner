@@ -438,7 +438,7 @@ need to do so.</p>
 </div>
 <p>This tool is used my the <a href="../judges.html">Judges</a> as part of the final
 steps to announce a new winning IOCCC entry.</p>
-<p>For example:</p>
+<p>Usage:</p>
 <pre><code>    mkdir -p YYYY/dir
     bin/add-dir.sh YYYY/dir</code></pre>
 <p>Here, <code>YYYY/dir</code> must the path to the winning IOCCC entry.</p>
@@ -446,24 +446,24 @@ steps to announce a new winning IOCCC entry.</p>
 <h3 id="all-run.sh"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/all-run.sh">all-run.sh</a></h3>
 </div>
 <p>Run a command on all winning entries.</p>
-<p>For example:</p>
+<p>Usage:</p>
 <pre><code>    bin/all-run.sh -v 3 bin/quick-readme2index.sh -v 1</code></pre>
-<p>Or for example:</p>
+<p>Alternate usage:</p>
 <pre><code>    bin/all-run.sh -v 3 bin/readme2index.sh -v 1</code></pre>
 <div id="all-years">
 <h3 id="all-years.sh"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/all-years.sh">all-years.sh</a></h3>
 </div>
 <p>Run a command on all IOCCC years.</p>
-<p>For example:</p>
+<p>Usage:</p>
 <pre><code>    bin/all-years.sh -v 1 bin/gen-year-index.sh -v 1</code></pre>
-<p>Or for example:</p>
+<p>Alternate usage:</p>
 <pre><code>    bin/all-years.sh -v 1 bin/chk-entry.sh</code></pre>
 <div id="chk-entry">
 <h3 id="chk-entry.sh"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/chk-entry.sh">chk-entry.sh</a></h3>
 </div>
 <p>Check an entry directory to verify that both the files in its manifest
 (<code>.entry.json</code>) exist and that no other files exist.</p>
-<p>For example:</p>
+<p>Usage:</p>
 <pre><code>    bin/chk-entry.sh 2020/ferguson1</code></pre>
 <p>If you wish to run it on all entries, we recommend that this tool be invoked via
 the top level <code>Makefile</code>:</p>
@@ -481,7 +481,7 @@ the top level <code>Makefile</code>:</p>
 title</li>
 </ul>
 <p>This tool updates <code>.entry.json</code> files entries whose content is modified.</p>
-<p>For example:</p>
+<p>Usage:</p>
 <pre><code>    bin/csv2entry.sh -v 1</code></pre>
 <p>There is no requirement to sort the CSV files, nor convert
 them to UNIX format, nor append a final newline to the file.</p>
@@ -518,6 +518,19 @@ semantic checks</strong>. For example, this tool does <strong>NOT</strong> verif
 the <code>.entry.json</code> file matches the files in the <code>YYYY/dir directory</code>, or even
 that the <code>.entry.json</code> contains a manifest (or any of the other required JSON
 content).</p>
+<div id="cvt-submission">
+<h3 id="cvt-submission.sh"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/cvt-submission.sh">cvt-submission.sh</a></h3>
+</div>
+<p>Given a submission (that has won the IOCCC), with a <code>.auth.json</code>
+and <code>.info.json</code> and NO <code>.entry.json</code> file, we convert the
+<code>.auth.json</code> and <code>.info.json</code> into a new <code>.entry.json</code> file.</p>
+<p>We will also form, as needed, new <code>author/author_handle.json</code>
+files for new authors, and update <code>author/author_handle.json</code>
+for authors who won previously.</p>
+<p>Usage:</p>
+<pre><code>    bin/cvt-submission.sh -v 1 YYYY/dir</code></pre>
+<p>Here, <code>YYYY/dir</code> is the path of the submission under the <code>YYYY</code>
+year directory.</p>
 <div id="entry2csv">
 <h3 id="entry2csv.sh"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/entry2csv.sh">entry2csv.sh</a></h3>
 </div>
@@ -546,7 +559,7 @@ from the <code>TOPDIR</code>.</p>
 <h3 id="filelist.entry.json.awk"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/filelist.entry.json.awk">filelist.entry.json.awk</a></h3>
 </div>
 <p>Generate a list of files in an entry’s manifest (the <code>.entry.json</code> file).</p>
-<p>For example:</p>
+<p>Usage:</p>
 <pre><code>    awk -f bin/filelist.entry.json.awk 2020/ferguson1/.entry.json</code></pre>
 <p>In this case the command will list all the files of the
 <a href="../2020/ferguson1/index.html">2020/ferguson1</a> winning entry.</p>
@@ -718,9 +731,8 @@ the <a href="index.html#md2html">md2html tool</a>.</p>
 </div>
 <p>This tool is used my the <a href="../judges.html">Judges</a> as part of the final
 steps to announce a new set of winning IOCCC entries.</p>
-<p>For example:</p>
-<pre><code>    mkdir -p YYYY
-    bin/new-year.sh -v 1 YYYY</code></pre>
+<p>Usage:</p>
+<pre><code>    bin/new-year.sh -v 1 YYYY</code></pre>
 <p>Here, <code>YYYY</code> must be a new 4-digit IOCCC year.</p>
 <div id="output-index-inventory">
 <h3 id="output-index-inventory.sh"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/output-index-inventory.sh">output-index-inventory.sh</a></h3>

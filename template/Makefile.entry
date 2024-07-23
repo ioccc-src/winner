@@ -1,0 +1,287 @@
+#!/usr/bin/env make
+#
+# prog - an example Makefile <<=== change "an example Makefile" to a suitable title for entry
+#
+# Please copy this file into your entry directory under the name: Makefile
+# Modify the resulting Makefile as needed.
+
+
+#############################
+# shell used by this Makefile
+#############################
+#
+SHELL= bash
+
+#######################
+# common tool locations
+#######################
+#
+CC= cc
+GINDENT= gindent
+MV= mv
+RM= rm
+TRUE= true
+
+# Common C compiler warnings to silence
+#
+# Example: CSILENCE= -Wno-some-thing -Wno-another-thing
+#
+# NOTE: If you add -Wno-stuff to CSILENCE, please update
+#	CUNKNOWN in the next comment block.
+#
+# NOTE: Please don't add -Wno-unknown-warning-option to CSILENCE.
+#
+#
+CSILENCE=
+
+# Attempt to silence unknown warnings
+#
+# If you add -Wno-stuff to CSILENCE, then please change CUNKNOWN to read:
+#
+#	CUNKNOWN= -Wno-unknown-warning-option
+#
+CUNKNOWN=
+
+# Common C compiler warning flags
+#
+CWARN= -Wall -Wextra -pedantic ${CSILENCE} ${CUNKNOWN}
+
+# The standard to compile against
+#
+# Your IOCCC submission is free to require older C standards, or
+# even not specify a C standard at all.  We suggest trying
+# for -std=gnu17, but that is not a requirement and you won't
+# be penalized if you name CSTD empty or use another
+# well known and reasonably widely implemented C standard.
+#
+CSTD= -std=gnu17
+
+# Compiler bit architecture
+#
+# Example for 32-bitness: ARCH= -m32
+# Example for 64-bitness: ARCH= -m64
+#
+# NOTE: Normally one should not specify a specific architecture.
+#
+ARCH=
+
+# Defines that are needed to compile
+#
+# Example: -Dfoo -Dbar=baz
+#
+CDEFINE=
+
+# Include files that are needed to compile
+#
+# Example: CINCLUDE= -include stdio.h
+#
+CINCLUDE=
+
+# Other flags to pass to the C compiler
+#
+# Example: COTHER= -fno-math-errno
+#
+COTHER=
+
+# Optimization
+#
+OPT= -O3 -g3
+
+# Default flags for ANSI C compilation
+#
+CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${COTHER} ${OPT}
+
+# Libraries needed to build
+#
+LDFLAGS=
+
+# C compiler to use
+#
+CC= cc
+
+# Compiler add-ons or replacements for clang only
+#
+ifeq "$(findstring $(CLANG),${CC})" "$(CLANG)"
+#
+CSILENCE+=
+#
+CWARN+= -Weverything
+#
+endif
+
+# Specific add-ons or replacements for gcc only
+#
+ifeq "$(findstring $(GCC),${CC})" "$(GCC)"
+#
+CSILENCE+=
+#
+CWARN+=
+#
+endif
+
+
+###########################################
+# Special Makefile variables for this entry
+###########################################
+
+# what to build
+#
+PROG= prog
+OBJ= ${PROG}.o
+TARGET= ${PROG}
+
+# list any data files supplied with the submission
+#
+DATA=
+
+
+#################
+# build the entry
+#################
+#
+all: data ${TARGET}
+	@${TRUE}
+
+.PHONY: all data clean clobber
+
+# how to compile
+#
+${PROG}: ${PROG}.c
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
+
+# data files
+#
+data: ${DATA}
+	@${TRUE}
+
+# one suggested way to run the program
+#
+try: ${PROG} ${DATA}
+	@# remove these comments
+	@# notice how we do not assume . is in the path
+	@# change this next line as needed
+	echo ./${PROG} some arguments
+
+
+###############
+# utility rules
+###############
+#
+clean:
+	${RM} -f ${OBJ}
+	@-if [ -f indent.c ]; then \
+	    echo ${RM} -f indent.c; \
+	    ${RM} -f indent.c; \
+	fi
+
+clobber: clean
+	${RM} -f ${TARGET}
+	@-if [ -e sandwich ]; then \
+	    ${RM} -f sandwich; \
+	    echo 'ate sandwich'; \
+	fi
+
+# Do not install prog, please!
+#
+install:
+	@echo "Dr. Spock says that is not logical!"
+	@${TRUE}
+
+# you may be able to misunderstand the source by reading indent.c
+#
+indent.c: ${PROG}.c
+	@if which "${GINDENT}" >/dev/null 2>&1; then \
+	    echo ${RM} -f $@; \
+	    ${RM} -f $@; \
+	    echo "${GINDENT} < $< > $@"; \
+	    ${GINDENT} < $< > $@; \
+	elif which "${INDENT}" >/dev/null 2>&1; then \
+	    echo ${RM} -f $@; \
+	    ${RM} -f $@; \
+	    echo "${INDENT} < $< > $@"; \
+	    ${INDENT} < $< > $@; \
+	else \
+	    echo "no indent tool found, ident $< yourself, sorry"; \
+	    echo "exit 17"; \
+	    exit 17; \
+	fi
+
+
+# NOTE: Don't worry if you don't understand stuff below
+#
+##################
+# 133t hacker rulz
+##################
+#
+love:
+	@echo 'not war?'
+
+waste:
+	@echo $@
+
+haste:
+	${MAKE} waste
+
+maker: haste
+	@echo 'Participate in a maker faire'
+	${MAKE} love
+
+easter_egg: maker
+	@echo "You are expected to often misunderstand this $${RANDOM} magic, Eggy!"
+	@echo "chongo '<was here>' /\\oo/\\"
+	@echo "p.s.: Careful with That Axe, Eugene!"
+
+sandwich: easter_egg
+	@if [ `id -u` -eq 0 ]; then \
+	    echo 'Okay.'; \
+	    echo "$${RANDOM}`date +%s`$${RANDOM}" > $@; \
+	else \
+	    echo 'What? Make it yourself.'; \
+	    echo "Did you forget the magic word?"; \
+	fi
+
+# Understand the history of the Homebrew Computer Club
+# as well as the West Coast Computer Faire and
+# you might be confused different.  :-)
+#
+supernova: sandwich
+	@-if [ -r .code_anal ]; then \
+	    ${RM} -f .code_anal_v6; \
+	else \
+	    echo "Planet deniers, like some members of the IAU, are so cute when they try to defend their logic"; \
+	fi
+	@echo "A $@ helps ${MAKE} the elements that help form planets"
+
+deep_magic: supernova
+	@-if [ -r .code_anal ]; then \
+	    ccode_analysis --deep_magic 7889066cdbdf09b0408021754586e895be641cc9be29e7eafd3ca65359541f17 \
+			   --FNV1a_hash_512_bit -v2 "${PROG}" "${PROG}.c"; \
+	else \
+	    echo "Wrong! Do it again!"; \
+	    sleep 1; \
+	    echo "Wrong! Do it again!"; \
+	    sleep 1; \
+	    echo "Wrong! Do it again!"; \
+	fi
+
+magic: deep_magic
+	@-if [ -r .code_anal ]; then \
+	    ccode_analysis --level 20003 --mode 5717175 --FNV1a_hash_512_bit -v2 "${PROG}" "${PROG}.c"; \
+	else \
+	    echo "If you don't eat yer meat, you can't have any pudding!"; \
+	    echo "How can you have any pudding if you don't eat yer meat?!"; \
+	fi
+
+# The IOCCC resident astronomer states
+#
+charon: magic
+	@echo "$@ is a dwarf planet"
+	@echo "Dwarf planets are a type of planet"
+	@echo "Therefore IAU, $@ is a planet"
+
+pluto: charon
+	@echo "See https://www.hou.usra.edu/meetings/lpsc2017/pdf/1448.pdf for a good definition of a planet"
+	@echo "$@ is a dwarf planet"
+	@echo "Dwarf planets are a type of planet"
+	@echo "Therefore, $@ is a planet"
+	@echo "The geophysical definition of planet gives us ~110 planets in our solar system"
