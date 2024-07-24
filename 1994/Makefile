@@ -16,7 +16,7 @@
 #
 ################################################################################
 #
-# This file is Copyright (c) 2023 by Landon Curt Noll.  All Rights Reserved.
+# This file is Copyright (c) 2024 by Landon Curt Noll.  All Rights Reserved.
 # You are free to share and adapt this file under the terms of this license:
 #
 #	Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
@@ -41,7 +41,10 @@ include ../var.mk
 # IOCCC entries
 ###############
 #
-ENTRIES= dodsond1 dodsond2 horton imc ldb schnitzi shapiro smr tvr weisberg westley
+# BEGIN - DO NOT REMOVE THIS LINE - make new_entry uses this line #
+ENTRIES= dodsond1 dodsond2 horton imc ldb schnitzi shapiro smr tvr \
+	weisberg westley
+# END - DO NOT REMOVE THIS LINE - make new_entry also uses this #
 
 YEAR= 1994
 
@@ -65,7 +68,7 @@ all:
 .PHONY: all alt data everything diff_orig_prog diff_prog_orig \
 	diff_alt_prog diff_prog_alt diff_orig_alt diff_alt_orig \
 	clean clobber install genpath love haste waste maker \
-	easter_egg sandwich supernova deep_magic magic charon pluto
+	easter_egg sandwich supernova more_magic magic charon pluto
 
 # alternative executable
 #
@@ -277,10 +280,22 @@ genpath:
 	@echo '=-=-= IOCCC complete make $@ =-=-='
 
 
-##################
-# 133t hacker rulz
-##################
+#############################################################
+# NOTE: 'Don't Panic' if you don't understand the stuff below
+#############################################################
+
+# add ${NEW_ENTRY} to the list of ${ENTRIES} and output Makefile lines to set updated ${ENTRIES} value
 #
+new_entry:
+	@(echo 'ENTRIES= '; \
+	  (echo ${ENTRIES} ${NEW_ENTRY}) | ${TR} ' ' '\012' | ${SORT} -d -u) | \
+	  ${FMT} -p | ${SED} -e '2,$$s/^/\t/' -e 's/$$/ \\/' -e '$$s/ \\//'
+
+
+##################
+# 1337 hacker rulz
+##################
+
 love:
 	@echo '=-=-= ${YEAR} begin make $@ =-=-='
 	@echo
@@ -368,7 +383,7 @@ supernova:
 	done
 	@echo '=-=-= ${YEAR} complete make $@ =-=-='
 
-deep_magic:
+more_magic:
 	@echo '=-=-= ${YEAR} begin make $@ =-=-='
 	@echo
 	@for i in ${ENTRIES}; do \

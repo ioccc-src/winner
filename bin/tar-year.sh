@@ -82,8 +82,8 @@ shopt -u extglob	# enable extended globbing patterns
 shopt -s globstar	# enable ** to match all files and zero or more directories and subdirectories
 
 # set variables referenced in the usage message
-#
-export VERSION="1.2.5 2024-07-22"
+
+export VERSION="1.2.6 2024-07-23"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -326,6 +326,26 @@ if [[ ! -s $VAR_MK ]]; then
     exit 6
 fi
 
+# verify we have non-empty readable 1337.mk
+#
+export LEET_MK="1337.mk"
+if [[ ! -e $LEET_MK ]]; then
+    echo "$0: ERROR: 1337.mk does not exist: $LEET_MK" 1>&2
+    exit 6
+fi
+if [[ ! -f $LEET_MK ]]; then
+    echo "$0: ERROR: 1337.mk is not a file: $LEET_MK" 1>&2
+    exit 6
+fi
+if [[ ! -r $LEET_MK ]]; then
+    echo "$0: ERROR: 1337.mk is not a readable file: $LEET_MK" 1>&2
+    exit 6
+fi
+if [[ ! -s $LEET_MK ]]; then
+    echo "$0: ERROR: 1337.mk is not a not a non-empty readable file: $LEET_MK" 1>&2
+    exit 6
+fi
+
 # verify we have non-empty readable year level .filelist file
 #
 export FILELIST="$YYYY/.filelist"
@@ -377,6 +397,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: FILELIST_ENTRY_JSON_AWK=$FILELIST_ENTRY_JSON_AWK" 1>&2
     echo "$0: debug[3]: IOCCC_CSS=$IOCCC_CSS" 1>&2
     echo "$0: debug[3]: VAR_MK=$VAR_MK" 1>&2
+    echo "$0: debug[3]: LEET_MK=$LEET_MK" 1>&2
     echo "$0: debug[3]: FILELIST=$FILELIST" 1>&2
     echo "$0: debug[3]: TARBALL=$TARBALL" 1>&2
     echo "$0: debug[3]: REBUILD_TARBALL=$REBUILD_TARBALL" 1>&2
@@ -503,6 +524,7 @@ if [[ -z $NOOP ]]; then
 	grep -F -v "$TARBALL" "$FILELIST"
 	echo "$IOCCC_CSS"
 	echo "$VAR_MK"
+	echo "$LEET_MK"
     } >> "$TMP_MANIFEST_LIST"
 
     # verify that YYYY is a readable directory

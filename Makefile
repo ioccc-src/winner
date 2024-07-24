@@ -99,8 +99,7 @@ all:
 
 .PHONY: all alt data everything diff_orig_prog diff_prog_orig \
 	diff_alt_prog diff_prog_alt diff_orig_alt diff_alt_orig \
-	clean clobber install genpath new_year genpath_top love haste waste maker \
-	easter_egg sandwich supernova deep_magic magic charon pluto
+	clean clobber install genpath new_year genpath_top
 
 # alternative executable
 #
@@ -771,7 +770,7 @@ update:
 #
 new_year:
 	@(echo 'YEARS= '; \
-	  (echo ${YEARS} ${NEW_YEAR}) | ${TR} ' ' '\012' | ${SORT} -n) | \
+	  (echo ${YEARS} ${NEW_YEAR}) | ${TR} ' ' '\012' | ${SORT} -n -u) | \
 	  ${FMT} -p | ${SED} -e '2,$$s/^/\t/' -e 's/$$/ \\/' -e '$$s/ \\//'
 
 # form the top level .top only
@@ -793,10 +792,15 @@ genpath_top:
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 
+#############################################################
+# NOTE: 'Don't Panic' if you don't understand the stuff below
+#############################################################
+
+
 ##################
-# 133t hacker rulz
+# 1337 hacker rulz
 ##################
-#
+
 love:
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
 	@-for i in ${YEARS}; do \
@@ -884,7 +888,7 @@ supernova:
         done
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
-deep_magic:
+more_magic:
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
 	@-for i in ${YEARS}; do \
 	    if [[ -f $$i/Makefile ]]; then \

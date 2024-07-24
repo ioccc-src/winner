@@ -242,79 +242,8 @@ indent.c: ${PROG}.c
 	fi
 
 
-##################
-# 133t hacker rulz
-##################
-#
-love:
-	@echo 'not war?'
+######################################
+# optional include of 1337 hacker rulz
+######################################
 
-waste:
-	@echo $@
-
-haste:
-	${MAKE} waste
-
-maker: haste
-	@echo 'Participate in a maker faire'
-	${MAKE} love
-
-easter_egg: maker
-	@echo "You are expected to often misunderstand this $${RANDOM} magic, Eggy!"
-	@echo "chongo '<was here>' /\\oo/\\"
-	@echo "p.s.: Careful with That Axe, Eugene!"
-
-sandwich: easter_egg
-	@if [ `id -u` -eq 0 ]; then \
-	    echo 'Okay.'; \
-	    echo "$${RANDOM}`date +%s`$${RANDOM}" > $@; \
-	else \
-	    echo 'What? Make it yourself.'; \
-	    echo "Did you forget the magic word?"; \
-	fi
-
-# Understand the history of the Homebrew Computer Club
-# as well as the West Coast Computer Faire and
-# you might be confused different.  :-)
-#
-supernova: sandwich
-	@-if [ -r .code_anal ]; then \
-	    ${RM} -f .code_anal_v6; \
-	else \
-	    echo "Planet deniers, like some members of the IAU, are so cute when they try to defend their logic"; \
-	fi
-	@echo "A $@ helps ${MAKE} the elements that help form planets"
-
-deep_magic: supernova
-	@-if [ -r .code_anal ]; then \
-	    ccode_analysis --deep_magic 7889066cdbdf09b0408021754586e895be641cc9be29e7eafd3ca65359541f17 \
-			   --FNV1a_hash_512_bit -v2 "${PROG}" "${PROG}.c"; \
-	else \
-	    echo "Wrong! Do it again!"; \
-	    sleep 1; \
-	    echo "Wrong! Do it again!"; \
-	    sleep 1; \
-	    echo "Wrong! Do it again!"; \
-	fi
-
-magic: deep_magic
-	@-if [ -r .code_anal ]; then \
-	    ccode_analysis --level 20003 --mode 5717175 --FNV1a_hash_512_bit -v2 "${PROG}" "${PROG}.c"; \
-	else \
-	    echo "If you don't eat yer meat, you can't have any pudding!"; \
-	    echo "How can you have any pudding if you don't eat yer meat?!"; \
-	fi
-
-# The IOCCC resident astronomer states
-#
-charon: magic
-	@echo "$@ is a dwarf planet"
-	@echo "Dwarf planets are a type of planet"
-	@echo "Therefore IAU, $@ is a planet"
-
-pluto: charon
-	@echo "See https://www.hou.usra.edu/meetings/lpsc2017/pdf/1448.pdf for a good definition of a planet"
-	@echo "$@ is a dwarf planet"
-	@echo "Dwarf planets are a type of planet"
-	@echo "Therefore, $@ is a planet"
-	@echo "The geophysical definition of planet gives us ~110 planets in our solar system"
+-include 1337.mk ../1337.mk ../../1337.mk

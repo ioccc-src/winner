@@ -87,7 +87,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.3 2024-07-23"
+export VERSION="1.3.1 2024-07-23"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -358,19 +358,19 @@ fi
 #
 export MAKE_FILE="Makefile"
 if [[ ! -e $MAKE_FILE ]]; then
-    echo  "$0: ERROR: .top does not exist: $MAKE_FILE" 1>&2
+    echo  "$0: ERROR: Makefile does not exist: $MAKE_FILE" 1>&2
     exit 6
 fi
 if [[ ! -f $MAKE_FILE ]]; then
-    echo  "$0: ERROR: .top is not a regular file: $MAKE_FILE" 1>&2
+    echo  "$0: ERROR: Makefile is not a regular file: $MAKE_FILE" 1>&2
     exit 6
 fi
 if [[ ! -r $MAKE_FILE ]]; then
-    echo  "$0: ERROR: .top is not an readable file: $MAKE_FILE" 1>&2
+    echo  "$0: ERROR: Makefile is not an readable file: $MAKE_FILE" 1>&2
     exit 6
 fi
 if [[ ! -s $MAKE_FILE ]]; then
-    echo  "$0: ERROR: .top is not a non-empty readable file: $MAKE_FILE" 1>&2
+    echo  "$0: ERROR: Makefile is not a non-empty readable file: $MAKE_FILE" 1>&2
     exit 6
 fi
 
@@ -536,8 +536,7 @@ if [[ -e $TMP_MAKEFILE ]]; then
     echo "$0: ERROR: cannot remove temporary Makefile: $TMP_MAKEFILE" 1>&2
     exit 18
 fi
-echo '# author_handle,entry_id,entry_id,entry_id,…,,,,,,,,,,,,,,,' > \
-  "$TMP_MAKEFILE"
+touch "$TMP_MAKEFILE"
 if [[ ! -e $TMP_MAKEFILE ]]; then
     echo "$0: ERROR: cannot create temporary Makefile: $TMP_MAKEFILE" 1>&2
     exit 19

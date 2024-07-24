@@ -88,7 +88,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.0 2024-07-21"
+export VERSION="1.1 2024-07-23"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -308,6 +308,28 @@ if [[ ! -w $YYYY_DIR ]]; then
     exit 7
 fi
 
+
+# verify we have a non-empty readable Makefile
+#
+export MAKE_FILE="$YEAR_DIR/Makefile"
+if [[ ! -e $MAKE_FILE ]]; then
+    echo  "$0: ERROR: Makefile does not exist: $MAKE_FILE" 1>&2
+    exit 6
+fi
+if [[ ! -f $MAKE_FILE ]]; then
+    echo  "$0: ERROR: Makefile is not a regular file: $MAKE_FILE" 1>&2
+    exit 6
+fi
+if [[ ! -r $MAKE_FILE ]]; then
+    echo  "$0: ERROR: Makefile is not an readable file: $MAKE_FILE" 1>&2
+    exit 6
+fi
+if [[ ! -s $MAKE_FILE ]]; then
+    echo  "$0: ERROR: Makefile is not a non-empty readable file: $MAKE_FILE" 1>&2
+    exit 6
+fi
+
+
 # print running info if verbose
 #
 # If -v 3 or higher, print exported variables in order that they were exported.
@@ -332,6 +354,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: ENTRY_ID=$ENTRY_ID" 1>&2
     echo "$0: debug[3]: DOT_YEAR=$DOT_YEAR" 1>&2
     echo "$0: debug[3]: YYYY_DIR=$YYYY_DIR" 1>&2
+    echo "$0: debug[3]: MAKE_FILE=$MAKE_FILE" 1>&2
 fi
 
 # -N stops early before any processing is performed
@@ -385,13 +408,94 @@ if [[ -z $NOOP ]]; then
 	fi
     else
 	echo "$0: ERROR: failed to add YYYY_DIR: $YYYY_DIR to: $DOT_YEAR" 1>&2
-	exit 11
+	exit 12
     fi
 
 # case: with -n
 #
 elif [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: -n disabled adding YYYY_DIR: $YYYY_DIR to $DOT_YEAR" 1>&2
+fi
+
+
+# create a temporary Makefile
+#
+export TMP_MAKEFILE=".tmp.$NAME.MAKEFILE.$$.tmp"
+if [[ $V_FLAG -ge 3 ]]; then
+    echo  "$0: debug[3]: temporary Makefile: $TMP_MAKEFILE" 1>&2
+fi
+trap 'rm -f $TMP_MAKEFILE; exit' 0 1 2 3 15
+rm -f "$TMP_MAKEFILE"
+if [[ -e $TMP_MAKEFILE ]]; then
+    echo "$0: ERROR: cannot remove temporary Makefile: $TMP_MAKEFILE" 1>&2
+    exit 13
+fi
+touch "$TMP_MAKEFILE"
+if [[ ! -e $TMP_MAKEFILE ]]; then
+    echo "$0: ERROR: cannot create temporary Makefile: $TMP_MAKEFILE" 1>&2
+    exit 14
+fi
+
+
+# form the temporary Makefile with the added year
+#
+if [[ $V_FLAG -ge 3 ]]; then
+    echo "$0: debug[3]: forming temporary Makefile: $TMP_MAKEFILE" 1>&2
+fi
+sed -n -e '1,/^# BEGIN - DO NOT REMOVE THIS LINE - make new_entry uses this line #/p' "$MAKE_FILE" > "$TMP_MAKEFILE"
+make -C "$YEAR_DIR" new_entry NEW_ENTRY="$ENTRY_DIR" >> "$TMP_MAKEFILE"
+status="$?"
+if [[ $status -ne 0 ]]; then
+    echo "$0: ERROR: make -C $YEAR_DIR new_entry NEW_ENTRY=\"$ENTRY_DIR\" >> \"$TMP_MAKEFILE\" failed," \
+	 "error code: $status" 1>&2
+    exit 15
+fi
+sed -n -e '/^# END - DO NOT REMOVE THIS LINE - make new_entry also uses this #/,$p' "$MAKE_FILE" >> "$TMP_MAKEFILE"
+
+
+# Update Makefile if is changes and not -n
+#
+if [[ -z $NOOP ]]; then
+
+    if cmp -s "$TMP_MAKEFILE" "$MAKE_FILE"; then
+
+	# case: Makefile did not change
+	#
+	if [[ $V_FLAG -ge 5 ]]; then
+            echo "$0: debug[5]: Makefile file did not change: $MAKE_FILE" 1>&2
+        fi
+
+    else
+
+        # case: Makefile file changed, update the file
+        #
+        if [[ $V_FLAG -ge 5 ]]; then
+            echo "$0: debug[5]: about to: mv -f -- $TMP_MAKEFILE $MAKE_FILE" 1>&2
+        fi
+        if [[ $V_FLAG -ge 3 ]]; then
+            mv -f -v -- "$TMP_MAKEFILE" "$MAKE_FILE"
+            status="$?"
+        else
+            mv -f -- "$TMP_MAKEFILE" "$MAKE_FILE"
+            status="$?"
+        fi
+        if [[ $status -ne 0 ]]; then
+            echo "$0: ERROR: mv -f -- $TMP_MAKEFILE $MAKE_FILE filed," \
+	         "error code: $status" 1>&2
+            exit 16
+        elif [[ $V_FLAG -ge 1 ]]; then
+            echo "$0: debug[1]: updated Makefile: $MAKE_FILE" 1>&2
+        fi
+        if [[ ! -s $MAKE_FILE ]]; then
+            echo "$0: ERROR: not a non-empty Makefile: $MAKE_FILE" 1>&2
+            exit 17
+        fi
+    fi
+
+# case: with -n
+#
+elif [[ $V_FLAG -ge 3 ]]; then
+    echo "$0: debug[3]: -n disabled updating: $MAKE_FILE" 1>&2
 fi
 
 

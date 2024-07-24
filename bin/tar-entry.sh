@@ -83,7 +83,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.3.7 2024-07-22"
+export VERSION="1.3.8 2024-07-23"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -379,7 +379,7 @@ if [[ ! -s $IOCCC_CSS ]]; then
     exit 6
 fi
 
-# verify we have non-empty readable ioccc.css file
+# verify we have non-empty readable var.mk file
 #
 export VAR_MK="var.mk"
 if [[ ! -e $VAR_MK ]]; then
@@ -396,6 +396,26 @@ if [[ ! -r $VAR_MK ]]; then
 fi
 if [[ ! -s $VAR_MK ]]; then
     echo "$0: ERROR: var.mk is not a not a non-empty readable file: $VAR_MK" 1>&2
+    exit 6
+fi
+
+# verify we have non-empty readable 1337.mk
+#
+export LEET_MK="1337.mk"
+if [[ ! -e $LEET_MK ]]; then
+    echo "$0: ERROR: 1337.mk does not exist: $LEET_MK" 1>&2
+    exit 6
+fi
+if [[ ! -f $LEET_MK ]]; then
+    echo "$0: ERROR: 1337.mk is not a file: $LEET_MK" 1>&2
+    exit 6
+fi
+if [[ ! -r $LEET_MK ]]; then
+    echo "$0: ERROR: 1337.mk is not a readable file: $LEET_MK" 1>&2
+    exit 6
+fi
+if [[ ! -s $LEET_MK ]]; then
+    echo "$0: ERROR: 1337.mk is not a not a non-empty readable file: $LEET_MK" 1>&2
     exit 6
 fi
 
@@ -437,6 +457,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: FILELIST_ENTRY_JSON_AWK=$FILELIST_ENTRY_JSON_AWK" 1>&2
     echo "$0: debug[3]: IOCCC_CSS=$IOCCC_CSS" 1>&2
     echo "$0: debug[3]: VAR_MK=$VAR_MK" 1>&2
+    echo "$0: debug[3]: LEET_MK=$LEET_MK" 1>&2
     echo "$0: debug[3]: TARBALL=$TARBALL" 1>&2
     echo "$0: debug[3]: REBUILD_TARBALL=$REBUILD_TARBALL" 1>&2
 fi
@@ -563,6 +584,7 @@ if [[ -z $NOOP ]]; then
     fi
     echo "$IOCCC_CSS" >> "$TMP_MANIFEST_LIST"
     echo "$VAR_MK" >> "$TMP_MANIFEST_LIST"
+    echo "$LEET_MK" >> "$TMP_MANIFEST_LIST"
     LC_ALL=C sort -d "$TMP_MANIFEST_LIST" -o "$TMP_MANIFEST_LIST"
     status="$?"
     if [[ $status -ne 0 ]]; then
