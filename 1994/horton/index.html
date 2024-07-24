@@ -409,19 +409,22 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <!-- BEFORE: 1st line of markdown file: 1994/horton/README.md -->
 <h2 id="to-build">To build:</h2>
 <pre><code>    make all</code></pre>
+<p>There is an unobfuscated and enhanced version provided by the author. See <a href="#alternate-code">Alternate
+code</a> below.</p>
 <h2 id="to-use">To use:</h2>
 <pre><code>    ./horton A B C D</code></pre>
 <p><code>A</code>, <code>B</code>, <code>C</code> and <code>D</code> are numeric arguments.</p>
 <h2 id="try">Try:</h2>
 <pre><code>    ./try.sh</code></pre>
 <h2 id="alternate-code">Alternate code:</h2>
-<p>This confuses cb greatly. See <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994/horton/horton.alt.c">horton.alt.c</a> for an unobfuscated/enhanced
-version.</p>
+<p>This confuses cb greatly. See
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994/horton/horton.alt.c">horton.alt.c</a> for an
+unobfuscated and enhanced version.</p>
 <h3 id="alternate-build">Alternate build:</h3>
 <pre><code>    make alt</code></pre>
 <h3 id="alternate-use">Alternate use:</h3>
 <pre><code>    ./horton.alt A B C D</code></pre>
-<p>Where A, B, C and D are numbers like with <code>horton</code>.</p>
+<p>Where <code>A</code>, <code>B</code>, <code>C</code> and <code>D</code> are numbers, just like with <code>horton</code>.</p>
 <h3 id="alternate-try">Alternate try:</h3>
 <pre><code>    ./try.alt.sh</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
@@ -429,8 +432,7 @@ version.</p>
 right character. And for extra credit, try to figure out which
 character is at the bottom of this hint file. :-)</p>
 <p>You might be interested in the author’s article that they cite towards the end
-of their remarks, included as PDF files for your convenience, the full
-newsletter and a PDF file of just the pages cited.</p>
+of their remarks, included as a PDF file for your convenience.</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <p>Run it with any 4 numeric arguments, e.g. <code>./horton 3 2 1 0</code>. Play with the
 numbers to get a pleasing result, or use it for your high school algebra
@@ -441,7 +443,7 @@ just try to understand the program via the source.</p>
 <p>If you get stuck, come back and read below for additional hints and information.</p>
 <h3 id="what-this-entry-does">What this entry does:</h3>
 <p>As should be obvious from 20 feet away, the program is a cubic plotter.
-It plots against certain artists, splattering their cubes with graphs
+It plots against certain arguments, splattering their cubes with graphs
 of their cubic equations. Those dastardly arguments are mere coefficients,
 cogs in the wheels of the grand plot to overthrow the cubics!</p>
 <p>Oh, by the way, it uses a self-contained graphtab and frame buffer.
@@ -503,7 +505,7 @@ It’s easily modified to graph <em>any</em> 96x160 bitmap on a dumb terminal.</
 <ul>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994/horton/horton.c">horton.c</a> - entry source code</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994/horton/Makefile">Makefile</a> - entry Makefile</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994/horton/horton.alt.c">horton.alt.c</a> - alternate source code</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994/horton/horton.alt.c">horton.alt.c</a> - author provided unobfuscated and enhanced code</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994/horton/horton.orig.c">horton.orig.c</a> - original source code</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994/horton/gtface.c">gtface.c</a> - gtface source code</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994/horton/try.alt.sh">try.alt.sh</a> - script to try alternate code</li>
