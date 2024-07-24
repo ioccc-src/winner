@@ -9,8 +9,8 @@
 
 The current status of this entry is:
 
-> **STATUS: missing file - please provide it**<br>
-> **STATUS: INABIAF - please DO NOT fix**
+> **STATUS: INABIAF - please DO NOT fix**<br>
+> **STATUS: missing file - please provide it**
 
 For more detailed information see [1994/shapiro in bugs.html](../../bugs.html#1994_shapiro).
 
@@ -48,10 +48,11 @@ source file is self documenting.  :-)
 
 From time to time, run `ps(1)` and look at the new processes.
 
-See [shapiro.html](shapiro.html) for more information in the internals of this program.
-The file `shapiro.alt.c` contains a non-obfuscated version of
-this program. Note that this alt file is currently missing. See
-[1994/shapiro in bugs.html](../../bugs.html#1994_shapiro) for details.
+If you want more information on the internals of this program, see
+[shapiro.html](shapiro.html).
+
+The missing file `shapiro.alt.c` is an unobfuscated version of this program. See
+[1994/shapiro in bugs.html](../../bugs.html#1994_shapiro).
 
 
 ## Author's remarks:
@@ -59,10 +60,15 @@ this program. Note that this alt file is currently missing. See
 The basic theme (pun) of this program is:
 
 
-```
-    "This time (everything) is not where it should be."
-          ~~~~
-```
+> "This **time** (everything) is not where it should be."
+
+
+### NOTICE to those who wish for a greater challenge:
+
+**If you want a greater challenge, don't read any further**:
+just try to understand the program via the source.
+
+If you get stuck, come back and read below for additional hints and information.
 
 
 My entry, [shapiro.c](%%REPO_URL%%/1994/shapiro/shapiro.c), is mostly comments, formatted in the shape of a

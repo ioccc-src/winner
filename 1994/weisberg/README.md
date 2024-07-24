@@ -4,8 +4,8 @@
     make all
 ```
 
-There is an alternate version that uses more memory. See [alternate
-code](#alternate-code) below for more details.
+There is an alternate build (same code, alternate build) that uses more memory.
+See [Alternate code](#alternate-code) below for more details.
 
 
 ## To use:
@@ -27,15 +27,16 @@ If you have `primes(1)` installed you might also wish to try:
     ./primes.sh number
 ```
 
-where `number` is a positive number, defaulting to 15. The [try.sh](%%REPO_URL%%/1994/weisberg/try.sh)
-script will also do this.
+where `number` is a positive number, defaulting to 15. The
+[try.sh](%%REPO_URL%%/1994/weisberg/try.sh) script will also `try` :-) and do
+this.
 
 
 ## Alternate code:
 
 If you liked what you saw from the above program, and happen to
-have some 512 Megabytes of virtual memory lying around with to do
-something with you might try this version.
+have some 512 megabytes of virtual memory lying around with to do
+something with you might try this build.
 
 
 ### Alternate build:
@@ -77,7 +78,7 @@ event of a system shutdown or reboot.
 
 ### Bugs
 
-The alternative version ([weisberg.c](%%REPO_URL%%/1994/weisberg/weisberg.c)
+The alternative build ([weisberg.c](%%REPO_URL%%/1994/weisberg/weisberg.c)
 compiled to `weisberg.alt`) has never actually run
 to completion. After running for close to a week it had reached somewhere around
 250e6, when it became necessary to test the reboot feature (which worked

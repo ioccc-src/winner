@@ -8,10 +8,10 @@
 ## To use:
 
 ``` <!---sh-->
-    ./imc [NUMBER]
+    ./imc number
 ```
 
-where `[NUMBER]` is an optional number. Default is 5.
+where `number` is an optional number. Default is 5.
 
 
 ## Try:
@@ -69,9 +69,9 @@ useful the exclusive-or operator was while writing function `s()`.
 
 Here are the descriptions of the functions in the library:
 
-> o(n,a,q,d): makes a magic square of order n when n is odd and at least 3.<br>
-> s(n,a,q,d): makes a magic square of order n when n equals 4.<br>
-> e(n,a,q,d): makes a magic square of order n when n is even and at least 6.
+> `o(n,a,q,d)`: makes a magic square of order `n` when `n` is odd and at least 3.<br>
+> `s(n,a,q,d)`: makes a magic square of order `n` when `n` equals 4.<br>
+> `e(n,a,q,d)`: makes a magic square of order `n` when `n` is even and at least 6.
 
 In the above, `a` (of type `int *`) points to an area of memory in which
 the magic square will be stored and `q` (also of type `int *`) points to

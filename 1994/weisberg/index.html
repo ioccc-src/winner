@@ -409,20 +409,21 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <!-- BEFORE: 1st line of markdown file: 1994/weisberg/README.md -->
 <h2 id="to-build">To build:</h2>
 <pre><code>    make all</code></pre>
-<p>There is an alternate version that uses more memory. See <a href="#alternate-code">alternate
-code</a> below for more details.</p>
+<p>There is an alternate build (same code, alternate build) that uses more memory.
+See <a href="#alternate-code">Alternate code</a> below for more details.</p>
 <h2 id="to-use">To use:</h2>
 <pre><code>    ./weisberg</code></pre>
 <h2 id="try">Try:</h2>
 <pre><code>    ./try.sh</code></pre>
 <p>If you have <code>primes(1)</code> installed you might also wish to try:</p>
 <pre><code>    ./primes.sh number</code></pre>
-<p>where <code>number</code> is a positive number, defaulting to 15. The <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994/weisberg/try.sh">try.sh</a>
-script will also do this.</p>
+<p>where <code>number</code> is a positive number, defaulting to 15. The
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994/weisberg/try.sh">try.sh</a> script will also <code>try</code> :-) and do
+this.</p>
 <h2 id="alternate-code">Alternate code:</h2>
 <p>If you liked what you saw from the above program, and happen to
-have some 512 Megabytes of virtual memory lying around with to do
-something with you might try this version.</p>
+have some 512 megabytes of virtual memory lying around with to do
+something with you might try this build.</p>
 <h3 id="alternate-build">Alternate build:</h3>
 <pre><code>    make alt</code></pre>
 <h3 id="alternate-use">Alternate use:</h3>
@@ -443,7 +444,7 @@ run to completion, so as an added feature, it will cease execution upon
 reception of a signal (any will do equally well), as well as in the
 event of a system shutdown or reboot.</p>
 <h3 id="bugs">Bugs</h3>
-<p>The alternative version (<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994/weisberg/weisberg.c">weisberg.c</a>
+<p>The alternative build (<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994/weisberg/weisberg.c">weisberg.c</a>
 compiled to <code>weisberg.alt</code>) has never actually run
 to completion. After running for close to a week it had reached somewhere around
 250e6, when it became necessary to test the reboot feature (which worked

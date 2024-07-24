@@ -16,7 +16,7 @@ code](#alternate-code) below.
 
 The current status of this entry is:
 
-> **STATUS: known bug - please help us fix**
+> **STATUS: INABIAF - please DO NOT fix**
 
 For more detailed information see [1994/tvr in bugs.html](../../bugs.html#1994_tvr).
 
@@ -47,10 +47,10 @@ just try to understand the program without looking at the Alternate code.
 
 If you get stuck, come back and look at the Alternate code.
 
+The author provided us a less obfuscated version that might be of interest to some.
+
 
 ### Alternate build:
-
-The author provided us a less obfuscated version that might be of interest to some.
 
 ``` <!---sh-->
     make alt
@@ -152,7 +152,7 @@ and may confuse paging algorithms easily).  This means that for 512x512 windows
 you will need 4M of memory.
 
 
-### `colormapfile`
+#### colormapfile
 
 This is the file from which program reads colors for screen `colormap`. The
 first line of the file must be a number between `3..254`. This informs the

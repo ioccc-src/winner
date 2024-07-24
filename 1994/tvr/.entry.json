@@ -31,7 +31,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "alternate source code"
+	    "entry_text" : "less obfuscated source code"
 	},
 	{
 	    "file_path" : "tvr.orig.c",
