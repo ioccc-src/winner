@@ -4,7 +4,7 @@
     make all
 ```
 
-The authors provided a deobfuscated version, originally uuencoded but uudecoded by us
+The authors provided an unobfuscated version, originally uuencoded but uudecoded by us
 in 2023. See [Alternate code](#alternate-code) below.
 
 
@@ -41,8 +41,9 @@ If you get stuck, come back and look at the Alternate code.
 
 ## Alternate code:
 
-The authors provided a deobfuscated version of the program. Originally uuencoded we
-have decoded it for the wider audience in [vanschnitz.alt.c](%%REPO_URL%%/1995/vanschnitz/vanschnitz.alt.c).
+The authors provided unobfuscated version of the program. Originally uuencoded
+we have decoded it for the wider audience in
+[vanschnitz.alt.c](%%REPO_URL%%/1995/vanschnitz/vanschnitz.alt.c).
 
 They encourage you to first try and figure out the program without reading the
 deobfuscated version.
