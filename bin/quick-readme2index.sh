@@ -524,7 +524,7 @@ fi
 
 # determine if we need to run the tool
 #
-# If the non-empty index.html is newer than the .entry.json file,
+# Check if the non-empty index.html is newer than the .entry.json file.
 #
 if [[ $V_FLAG -ge 5 ]]; then
     echo "$0: debug[5]: listing of important files, if they exist, starts below" 1>&2
