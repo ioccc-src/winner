@@ -417,7 +417,7 @@ code</a> below.</p>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
 <p>The current status of this entry is:</p>
 <blockquote>
-<p><strong>STATUS: known bug - please help us fix</strong></p>
+<p><strong>STATUS: INABIAF - please DO NOT fix</strong></p>
 </blockquote>
 <p>For more detailed information see <a href="../../bugs.html#1994_tvr">1994/tvr in bugs.html</a>.</p>
 <h2 id="to-use">To use:</h2>
@@ -431,8 +431,8 @@ code</a> below.</p>
 <p><strong>If you want a greater challenge, don’t read any further</strong>:
 just try to understand the program without looking at the Alternate code.</p>
 <p>If you get stuck, come back and look at the Alternate code.</p>
-<h3 id="alternate-build">Alternate build:</h3>
 <p>The author provided us a less obfuscated version that might be of interest to some.</p>
+<h3 id="alternate-build">Alternate build:</h3>
 <pre><code>    make alt</code></pre>
 <h3 id="alternate-use">Alternate use:</h3>
 <pre><code>    ./tvr.alt altmode screensize/2 &lt; colormapfile</code></pre>
@@ -497,7 +497,7 @@ parameter as shown above.</p>
 main memory or the machine will swap heavily (memory references are quite random
 and may confuse paging algorithms easily). This means that for 512x512 windows
 you will need 4M of memory.</p>
-<h3 id="colormapfile"><code>colormapfile</code></h3>
+<h4 id="colormapfile">colormapfile</h4>
 <p>This is the file from which program reads colors for screen <code>colormap</code>. The
 first line of the file must be a number between <code>3..254</code>. This informs the
 program how many colors there are to be expected. This is also the maximum
@@ -600,7 +600,7 @@ mono).</li>
 <ul>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994/tvr/tvr.c">tvr.c</a> - entry source code</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994/tvr/Makefile">Makefile</a> - entry Makefile</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994/tvr/tvr.alt.c">tvr.alt.c</a> - alternate source code</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994/tvr/tvr.alt.c">tvr.alt.c</a> - less obfuscated source code</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994/tvr/tvr.orig.c">tvr.orig.c</a> - original source code</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994/tvr/try.alt.bw.sh">try.alt.bw.sh</a> - script to try alternate code in black and white mode</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994/tvr/try.alt.color.sh">try.alt.color.sh</a> - script to try alternate code in colour mode</li>

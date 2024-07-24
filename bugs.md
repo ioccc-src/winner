@@ -1395,16 +1395,22 @@ there.
 ### Information: [1994/ldb/index.html](1994/ldb/index.html)
 
 [Cody Boone Ferguson](authors.html#Cody_Boone_Ferguson) fixed this to compile
-with modern systems but the entry also used `gets()` which in some systems would
+with modern systems but the entry also used `gets(3)` which in some systems would
 print out a warning along with the output of the program. Naturally it could
-also overflow long lines.  Cody changed it to `fgets()` to prevent the display
-problem but this introduces another problem namely that newlines can be printed
-if the line length < 231.
+also overflow long lines, of which there are many, though that is more
+considered a feature, not a bug, as it was documented by the author.
+
+Cody changed it to `fgets(3)` to prevent the display problem but this introduces
+another problem namely that newlines can be printed if the line length < 231.
 
 This seems like a worthy compromise to not have messed up output and although it
-would be ideal for it to never print a newline unless that's the line itself it
-might be tampering too much with the entry as it's not a real problem and as a
-one liner it's already quite long.
+would be ideal for it to never print a newline (unless that's the line itself)
+it might be tampering too much with the entry to fix this problem, as it's not a
+real problem and as a one liner it's already quite long.
+
+See the
+FAQ on "[gets and fgets](faq.html#gets)"
+for more information on the change to `fgets(3)`.
 
 
 <div id="1994_schnitzi">
@@ -1433,9 +1439,8 @@ writing this on 02 November 2023, only just noticed the author's remarks and
 will later on look at this if nobody takes up the challenge. More important work
 like getting to a place that the next contest can run must be done first.
 
-[Cody Boone Ferguson](authors.html#Cody_Boone_Ferguson) explains the magic of
-how this entry works, which will be necessary if this entry is to be fixed,
-below.
+Cody explains the magic of how this entry works, which will be necessary if this
+entry is to be fixed, below.
 
 You might wish to run the command:
 
@@ -1451,8 +1456,8 @@ Furthermore you will want to look at:
     diff schnitzi.alt.c schnitzi.alt2.c
 ```
 
-as the `fgets()` version can compile it just can't generate compilable code (let
-alone using `fgets()`) when fed itself (to reiterate, just changing the call to
+as the `fgets(3)` version can compile it just can't generate compilable code (let
+alone using `fgets(3)`) when fed itself (to reiterate, just changing the call to
 `fgets(3)` does not mean it can compile and there's a further problem in that
 `fgets(3)` retains the newline whereas `gets(3)` does not). Nevertheless looking
 at these commands will be of help to understand how it works.
@@ -1470,13 +1475,16 @@ and these are the bugs here.
 The buffer size, when using `gets()` is still the same but as noted above the
 original code has had a buffer size increase.
 
-The real problem is with formatting the code. Take a look at the interesting
-comment as well as the `int r=0,x,y=0` at the top of the file. If you look at
-each column go down that column you can see how it spells out the code! For
-instance the first column looks like:
+The real problem is with formatting the code. Take a look at the `#include
+<stdio.h>`, `int r=0,x,y=0` and the interesting comment below it, at the top of
+the file.
+
+If you look at each column and go down that column you can see how it spells out
+the code! For instance the first column looks like:
 
 
 ```
+    #
     i
     n
     c
@@ -1503,8 +1511,6 @@ If you join the lines you end up with:
     #include <stdio.h>
 ```
 
-(well, you get `include <stdio.h>` but it ends up as `#include <stdio.h>`.)
-
 If you look at column 25 which is the end of the word 'mh111' and you go down to
 the next row you'll see a 0 and if you go one row down another 0. This is the
 buffer size, 100, for `u`! The column to the left is the same for the `t`
@@ -1517,10 +1523,10 @@ changing the buffer size, see below).
 
 ### Important points:
 
-Getting this entry to use `fgets()` is easy but the problem is you're supposed
+Getting this entry to use `fgets(3)` is easy but the problem is you're supposed
 to be able to feed the source to the program and the output of that will be
 compilable. It however will create compiler errors. So it's not just changing
-the code to get it to use fgets()! I (Cody) already did this before I noticed
+the code to get it to use `fgets(3)`! I (Cody) already did this before I noticed
 the other part which is why I rolled that part back. I did increase the buffer
 size but that only works on the original source.
 
@@ -1547,29 +1553,15 @@ compiled!
 This program will likely crash if the source code file (by the name of the file
 that's compiled) cannot be opened in the directory it is run from.
 
-
-### STATUS: missing file - please provide it
-
-[Cody Boone Ferguson](authors.html#Cody_Boone_Ferguson) noted that the
-index.html file refers to an alternative version of the code that is not
-obfuscated but it is missing from the entry directory and the archive. Do you
-have this file?
-
-We would be grateful if you could provide it to us.  If you can provide this
-file you might consider removing this entry from this file as well but if not
-we'll take care of it.
-
 ### Important reminder and a note about the `-1` value check for `getc()`:
 
-[Cody Boone Ferguson](authors.html#Cody_Boone_Ferguson) fixed the code to not
-use `-1` for the return value of `getc()`; this is important because `EOF` is
-**NOT** guaranteed to be `-1` but rather any negative value. On systems where
-`EOF != -1` the program would enter an infinite loop until the program crashed,
-by chance reads a `-1` or was killed (it is for this same reason that one should
-not use `EOF` for the `getopt()` functions as they return `-1` when all options
-are parsed (for details on the definition of `EOF` see `7.21
-Input/output<stdio.h>` subsection 1 of the standard)).
-
+Cody fixed the code to not use `-1` for the return value of `getc()`; this is
+important because `EOF` is **NOT** guaranteed to be `-1` but rather any negative
+value. On systems where `EOF != -1` the program would enter an infinite loop
+until the program crashed, by chance reads a `-1` or was killed (it is for this
+same reason that one should not use `EOF` for the `getopt()` functions as they
+return `-1` when all options are parsed (for details on the definition of `EOF`
+see `7.21 Input/output<stdio.h>` subsection 1 of the standard)).
 
 An interesting problem occurred where changing the `-1` to `EOF` caused both
 `warning: illegal character encoding in string literal` and `error: source file
@@ -1581,11 +1573,22 @@ if it checked for `!= EOF`.
 Since it works there is no need to fix this except for a challenge to yourself.
 
 
+### STATUS: missing file - please provide it
+
+The index.html file refers to an alternate version of the code that is not
+obfuscated but it is missing from the entry directory and the archive. Do you
+have this file?
+
+We would be grateful if you could provide it to us.  If you can provide this
+file you might consider removing this status from this file as well but if not
+we'll take care of it.
+
+
 <div id="1994_tvr">
 ## 1994/tvr
 </div>
 
-### STATUS: known bug - please help us fix
+### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1994/tvr/tvr.c](%%REPO_URL%%/1994/tvr/tvr.c)
 ### Information: [1994/tvr/index.html](1994/tvr/index.html)
 
@@ -1597,8 +1600,9 @@ The judges said the following in their remarks:
 Mandelbrot/Julian sets correctly.  Can you find the bug?  Better still, can you
 fix it without breaking something else?
 
-You are welcome to try and fix it and open a pull request, providing that it
-doesn't break something else.
+However, the author stated that this is a feature so this should not be fixed.
+See also the other [bugs](1994/tvr/index.html#bugs) the author mentioned that,
+as documented, are considered features.
 
 
 <hr style="width:10%;text-align:left;margin-left:0">

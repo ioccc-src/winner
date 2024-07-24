@@ -410,8 +410,8 @@ Location: <a href="../../location.html#GB">GB</a> - <em>United Kingdom of Great 
 <h2 id="to-build">To build:</h2>
 <pre><code>    make all</code></pre>
 <h2 id="to-use">To use:</h2>
-<pre><code>    ./imc [NUMBER]</code></pre>
-<p>where <code>[NUMBER]</code> is an optional number. Default is 5.</p>
+<pre><code>    ./imc number</code></pre>
+<p>where <code>number</code> is an optional number. Default is 5.</p>
 <h2 id="try">Try:</h2>
 <pre><code>    ./try.sh</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
@@ -447,9 +447,9 @@ in obfuscated code! :-) Incidentally, I was surprised to find out how
 useful the exclusive-or operator was while writing function <code>s()</code>.</p>
 <p>Here are the descriptions of the functions in the library:</p>
 <blockquote>
-<p>o(n,a,q,d): makes a magic square of order n when n is odd and at least 3.<br>
-s(n,a,q,d): makes a magic square of order n when n equals 4.<br>
-e(n,a,q,d): makes a magic square of order n when n is even and at least 6.</p>
+<p><code>o(n,a,q,d)</code>: makes a magic square of order <code>n</code> when <code>n</code> is odd and at least 3.<br>
+<code>s(n,a,q,d)</code>: makes a magic square of order <code>n</code> when <code>n</code> equals 4.<br>
+<code>e(n,a,q,d)</code>: makes a magic square of order <code>n</code> when <code>n</code> is even and at least 6.</p>
 </blockquote>
 <p>In the above, <code>a</code> (of type <code>int *</code>) points to an area of memory in which
 the magic square will be stored and <code>q</code> (also of type <code>int *</code>) points to

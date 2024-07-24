@@ -5,8 +5,8 @@
 ```
 
 There are two alternate versions, one that has an increased buffer size and one
-that uses `fgets()`; neither are completely functional.
-See below section bugs and (mis)features for details and the [alternate
+that uses `fgets()`; neither are completely functional.  See below section [Bugs
+and &#x28;mis&#x29;features](#bugs-and-misfeatures) for details and the [Alternate
 code](#alternate-code) section for how to use.
 
 
@@ -35,14 +35,19 @@ For more detailed information see [1994/schnitzi in bugs.html](../../bugs.html#1
 
 ## Alternate code:
 
+These alternate versions are for those who wish to help with getting the entry
+to use `fgets(3)`. See the
+FAQ on "[gets and fgets](../../faq.html#gets)"
+for why this is desired.
+
 The first version, `schnitzi.alt.c`, uses `fgets(3)` but when fed its own code
-it will generate code that still uses `gets(3)`. What's more is it will not
-compile. Other functionality works fine.
+it will generate code that still uses `gets(3)`. What's more that code will not
+compile. Other functionality of the alt version works fine.
 
 The second version, `schnitzi.alt2.c`, has an increased buffer size but when fed
-its own source code it will generate code that can compile but with the original
-buffer size. This is due to a comment which is explained in more detail in
-[1994/schnitzi in bugs.html](../../bugs.html#1994_schnitzi).
+its own source code it will generate code that, although it can compile but, it
+has the original buffer size. This is due to a comment which is explained in
+more detail in [1994/schnitzi in bugs.html](../../bugs.html#1994_schnitzi).
 
 
 ### Alternate build:
