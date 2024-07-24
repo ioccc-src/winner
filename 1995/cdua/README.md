@@ -1,7 +1,7 @@
 ## To build:
 
 We recommend that you try the alternate version first so you can see what this
-entry looked like back in 1995 (with a configurable speed).  See the [original
+entry looked like back in 1995 (with a configurable speed).  See the [Original
 code](#original-code) section below for the original entry.
 
 ``` <!---sh-->

@@ -11,7 +11,7 @@
     ./esde data-file word
 ```
 
-where data-file contains lines of < 255 chars in length.
+where `data-file` contains lines of < 255 chars in length.
 
 
 ## Try:

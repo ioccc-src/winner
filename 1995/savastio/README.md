@@ -62,13 +62,13 @@ the number 8347108947139478934713847134 is represented as:
 
 ### Platform limitations
 
-Long integers must be at least 4 bytes.
+`long` integers must be at least 4 bytes.
 
 ### Features
 
 In order to prevent the user from wasting too much time computing
 useless factorials, the maximum factorial that can be computed is
-429539!  This limit was selected through extensive research in
+`429539!`  This limit was selected through extensive research in
 time management studies and the factorial arts.
 
 

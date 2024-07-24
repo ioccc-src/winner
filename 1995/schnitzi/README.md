@@ -12,14 +12,17 @@
 ```
 
 
+**WARNING**: the author warns to not use too high a number (with the same effect as a
+fork bomb)! If you wish to ignore the warning it is an exercise to determine how high
+is too high. :-)
+
+
 ## Try:
 
 ``` <!---sh-->
     ./try.sh
 ```
 
-WARNING: the author warns to not use too high a number! If you wish to ignore
-the warning it is an exercise to determine how high is too high. :-)
 
 
 ## Judges' remarks:

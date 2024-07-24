@@ -32,7 +32,7 @@ for the use of their machines.
 Due to changes in the [USENIX
 conference](https://www.usenix.org/conferences/all) calendar, the [1996
 contest](../years.html#1996) will be delayed.  Because there will be no Summer
-1996 USENIX conference, the 1996 IOCCC entries will be announced at the Jan 1997
+1996 USENIX conference, the 1996 IOCCC winning entries will be announced at the Jan 1997
 USENIX conference.
 
 The 1996 contest will not open until sometime in October 1996, and will close
