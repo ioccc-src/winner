@@ -4,6 +4,9 @@
     make all
 ```
 
+There is an unobfuscated and enhanced version provided by the author. See [Alternate
+code](#alternate-code) below.
+
 
 ## To use:
 
@@ -23,8 +26,9 @@
 
 ## Alternate code:
 
-This confuses cb greatly. See [horton.alt.c](%%REPO_URL%%/1994/horton/horton.alt.c) for an unobfuscated/enhanced
-version.
+This confuses cb greatly. See
+[horton.alt.c](%%REPO_URL%%/1994/horton/horton.alt.c) for an
+unobfuscated and enhanced version.
 
 
 ### Alternate build:
@@ -40,7 +44,7 @@ version.
     ./horton.alt A B C D
 ```
 
-Where A, B, C and D are numbers like with `horton`.
+Where `A`, `B`, `C` and `D` are numbers, just like with `horton`.
 
 
 ### Alternate try:
@@ -57,8 +61,7 @@ right character.  And for extra credit, try to figure out which
 character is at the bottom of this hint file.  :-)
 
 You might be interested in the author's article that they cite towards the end
-of their remarks, included as PDF files for your convenience, the full
-newsletter and a PDF file of just the pages cited.
+of their remarks, included as a PDF file for your convenience.
 
 
 ## Author's remarks:
@@ -79,7 +82,7 @@ If you get stuck, come back and read below for additional hints and information.
 ### What this entry does:
 
 As should be obvious from 20 feet away, the program is a cubic plotter.
-It plots against certain artists, splattering their cubes with graphs
+It plots against certain arguments, splattering their cubes with graphs
 of their cubic equations.  Those dastardly arguments are mere coefficients,
 cogs in the wheels of the grand plot to overthrow the cubics!
 

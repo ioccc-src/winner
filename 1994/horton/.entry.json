@@ -31,7 +31,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "c",
 	    "display_via_github" : true,
-	    "entry_text" : "alternate source code"
+	    "entry_text" : "author provided unobfuscated and enhanced code"
 	},
 	{
 	    "file_path" : "horton.orig.c",
