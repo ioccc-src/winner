@@ -389,7 +389,7 @@
 
 <!-- BEFORE: 1st line of markdown file: faq.md -->
 <h1 id="faq-table-of-contents">FAQ Table of Contents</h1>
-<p>This is FAQ version <strong>28.0 2024-07-14</strong>.</p>
+<p>This is FAQ version <strong>28.0.1 2024-07-25</strong>.</p>
 <h2 id="section-0---submitting-entries-to-a-new-ioccc">Section 0 - <a href="#faq0">Submitting entries to a new IOCCC</a></h2>
 <ul>
 <li><a class="normal" href="#faq0_0">0.0 - How may I enter the IOCCC?</a></li>
@@ -534,7 +534,7 @@ to our submission portal.</p>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">git</span> rebase</span></code></pre></div>
 <h4 id="make-the-mkiocccentry-toolkit">4. Make the mkiocccentry toolkit</h4>
 <div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> clobber all</span></code></pre></div>
-<h4 id="run-the-mkiocccentry-tool-to-form-your-entry-tarball">5. Run the mkiocccentry tool to form your entry tarball</h4>
+<h4 id="run-the-mkiocccentry-tool-to-form-your-submission-tarball">5. Run the mkiocccentry tool to form your submission tarball</h4>
 <div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">mkiocccentry</span> work_dir prog.c Makefile remarks.md [file ...]</span></code></pre></div>
 <p>where:</p>
 <ul>
@@ -553,9 +553,11 @@ for more info.</p></li>
 </ul>
 <p>NOTE: Please see our <a href="markdown.html">IOCCC markdown guide</a> for <strong>important information</strong> on using markdown in the IOCCC.</p>
 <p>NOTE: It is <em>NOT</em> necessary to install the tools to use them as you can run
-the tools from the top of the <em>mkiocccentry repo</em> directory just fine.</p>
-<p>If <code>mkiocccentry</code> tool indicates that there is a problem with your entry,
-especially if it identifies a <a href="next/rules.html#2">rule 2</a> related problem,
+the tools from the top of the <em>mkiocccentry repo</em> directory just fine. However,
+installing it will make it easier for you as you can run it from your
+submission’s directory.</p>
+<p>If the <code>mkiocccentry</code> tool indicates that there is a problem with your entry,
+especially if it identifies a <a href="next/rules.html#rule2">Rule 2</a> related problem,
 you are <strong>strongly</strong> encouraged to revise and correct your entry and
 then re-run the <code>mkiocccentry</code> tool.</p>
 <p>If you choose to risk violating rules, be sure an explain your reason
@@ -843,87 +845,8 @@ you attach the log file we will see those too.</p>
 </div>
 <p>This file is constructed by the <code>mkiocccentry(1)</code> <strong>prior to</strong> forming the xz
 compressed tarball of your submission. The <code>.auth.json</code> file contains
-information about the author or authors of the submission, in JSON format. The
-JSON <code>authors</code> <strong>array</strong> holds the following information about the authors of the
-submission:</p>
-<ul>
-<li><p><code>name</code> (double quoted string)</p>
-<ul>
-<li>The <strong>name</strong> of this author.</li>
-</ul></li>
-<li><p><code>location_code</code> (double quoted string)</p>
-<ul>
-<li>The <strong>location code</strong> of this author (an ISO 3166-1 2 character code).
-See
-<a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements" class="uri">https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements</a>
-for a list of valid codes.</li>
-</ul>
-<p><strong>NOTE:</strong> in <code>mkiocccentry</code> use <code>XX</code> if you want your location to be anonymous.</p></li>
-<li><p><code>email</code> (null or double quoted string)</p>
-<ul>
-<li>The <strong>email</strong> of this author in the form of <code>x@y</code>, or <code>null</code> if not provided.</li>
-</ul></li>
-<li><p><code>url</code> (null or double quoted string)</p>
-<ul>
-<li>The primary <strong>URL</strong> of this author, or <code>null</code> if not provided.</li>
-</ul></li>
-<li><p><code>alt_url</code> (null or double quoted string)</p>
-<ul>
-<li>The <strong>alt URL</strong> of this author, or <code>null</code> if not provided.</li>
-</ul></li>
-<li><p><code>mastodon</code> (null or double quoted string)</p>
-<ul>
-<li>The Mastodon handle of this author in the form of <code>@user@domain</code>, or
-<code>null</code> if not provided. See the
-FAQ on “<a href="#try_mastodon">Mastodon</a>”
-for more information.</li>
-</ul></li>
-<li><p><code>github</code> (null or double quoted string)</p>
-<ul>
-<li>The <strong><a href="https://github.com">GitHub</a> account</strong> of this author in the form of <code>@user</code>, or <code>null</code> if not
-provided.</li>
-</ul></li>
-<li><p><code>affiliation</code> (null or double quoted string)</p>
-<ul>
-<li>This author’s <strong>affiliation</strong>, if any, or <code>null</code> if not provided.</li>
-</ul>
-<p><strong>NOTE:</strong> if provided, the length of the <strong>affiliation</strong> <strong>MUST</strong> be within
-the range of 1 <strong>THROUGH</strong> <code>MAX_AFFILIATION_LEN</code> (see
-<a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h">soup/limit_ioccc.h</a>
-in the <a href="https://github.com/ioccc-src/mkiocccentry/">mkiocccentry repo</a>). If
-this is not the case you stand a great risk of having your submission
-rejected for violating <a href="next/rules.html#rule17">Rule 17</a>!</p>
-<p><strong>NOTE:</strong> an <strong>affiliation</strong> does <strong>NOT</strong> have any affect on whether you will win or not.</p></li>
-<li><p><code>past_winning_author</code> (boolean)</p>
-<ul>
-<li><code>true</code> if this author claims to have won a past IOCCC, <code>false</code> if this
-author has <strong>NOT</strong> won before.</li>
-</ul>
-<p><strong>NOTE:</strong> this has <strong>NO</strong> effect on whether you will win or not.</p></li>
-<li><p><code>default_handle</code> (boolean)</p>
-<ul>
-<li><code>true</code> if this default handle was accepted, <code>false</code> if one is provided
-by this author.</li>
-</ul></li>
-<li><p><code>author_handle</code> (double quoted string)</p>
-<ul>
-<li>This author’s handle (custom or default provided).</li>
-</ul>
-<p><strong>NOTE:</strong> if you have won before, we <strong>ENCOURAGE</strong> you to use the same handle of
-your previous winning entries, to help in organising the
-<a href="authors.html">authors.html</a> page and the author JSON file.
-See the
-FAQ on “<a href="#author_handle_faq">author handle</a>”
-and the
-FAQ on “<a href="#author_json">author_handle.json</a>”
-for more information.</p></li>
-<li><p><code>author_number</code> (number)</p>
-<ul>
-<li>This author number in the <code>authors</code> array.</li>
-</ul></li>
-</ul>
-<h3 id="additional-fields-in-.auth.json">Additional fields in <code>.auth.json</code>:</h3>
-<p>The file also contains the following details:</p>
+information about the author or authors of the submission, in JSON format.</p>
+<p>In order of the file’s contents we describe each required field, below:</p>
 <ul>
 <li><code>no_comment</code> (double quoted string)
 <ul>
@@ -1044,12 +967,92 @@ array your submission <strong>will be</strong> invalid.</p></li>
 </ul>
 <p><strong>NOTE:</strong> if <code>true</code> then this may <strong>NOT</strong> be submitted to the contest! Please do
 <strong>NOT</strong> email the <a href="judges.html">Judges</a> your submission!</p></li>
+</ul>
+<p>Next, the JSON <code>authors</code> <strong>array</strong> holds the following information about the
+author(s) of the submission:</p>
+<ul>
+<li><p><code>name</code> (double quoted string)</p>
+<ul>
+<li>The <strong>name</strong> of this author.</li>
+</ul></li>
+<li><p><code>location_code</code> (double quoted string)</p>
+<ul>
+<li>The <strong>location code</strong> of this author (an ISO 3166-1 2 character code).
+See
+<a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements" class="uri">https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements</a>
+for a list of valid codes.</li>
+</ul>
+<p><strong>NOTE:</strong> in <code>mkiocccentry</code> use <code>XX</code> if you want your location to be anonymous.</p></li>
+<li><p><code>email</code> (null or double quoted string)</p>
+<ul>
+<li>The <strong>email</strong> of this author in the form of <code>x@y</code>, or <code>null</code> if not provided.</li>
+</ul></li>
+<li><p><code>url</code> (null or double quoted string)</p>
+<ul>
+<li>The primary <strong>URL</strong> of this author, or <code>null</code> if not provided.</li>
+</ul></li>
+<li><p><code>alt_url</code> (null or double quoted string)</p>
+<ul>
+<li>The <strong>alt URL</strong> of this author, or <code>null</code> if not provided.</li>
+</ul></li>
+<li><p><code>mastodon</code> (null or double quoted string)</p>
+<ul>
+<li>The Mastodon handle of this author in the form of <code>@user@domain</code>, or
+<code>null</code> if not provided. See the
+FAQ on “<a href="#try_mastodon">Mastodon</a>”
+for more information.</li>
+</ul></li>
+<li><p><code>github</code> (null or double quoted string)</p>
+<ul>
+<li>The <strong><a href="https://github.com">GitHub</a> account</strong> of this author in the form of <code>@user</code>, or <code>null</code> if not
+provided.</li>
+</ul></li>
+<li><p><code>affiliation</code> (null or double quoted string)</p>
+<ul>
+<li>This author’s <strong>affiliation</strong>, if any, or <code>null</code> if not provided.</li>
+</ul>
+<p><strong>NOTE:</strong> if provided, the length of the <strong>affiliation</strong> <strong>MUST</strong> be within
+the range of 1 <strong>THROUGH</strong> <code>MAX_AFFILIATION_LEN</code> (see
+<a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h">soup/limit_ioccc.h</a>
+in the <a href="https://github.com/ioccc-src/mkiocccentry/">mkiocccentry repo</a>). If
+this is not the case you stand a great risk of having your submission
+rejected for violating <a href="next/rules.html#rule17">Rule 17</a>!</p>
+<p><strong>NOTE:</strong> an <strong>affiliation</strong> does <strong>NOT</strong> have any affect on whether you will win or not.</p></li>
+<li><p><code>past_winning_author</code> (boolean)</p>
+<ul>
+<li><code>true</code> if this author claims to have won a past IOCCC, <code>false</code> if this
+author has <strong>NOT</strong> won before.</li>
+</ul>
+<p><strong>NOTE:</strong> this has <strong>NO</strong> effect on whether you will win or not.</p></li>
+<li><p><code>default_handle</code> (boolean)</p>
+<ul>
+<li><code>true</code> if this default handle was accepted, <code>false</code> if one is provided
+by this author.</li>
+</ul></li>
+<li><p><code>author_handle</code> (double quoted string)</p>
+<ul>
+<li>This author’s handle (custom or default provided).</li>
+</ul>
+<p><strong>NOTE:</strong> if you have won before, we <strong>ENCOURAGE</strong> you to use the same handle of
+your previous winning entries, to help in organising the
+<a href="authors.html">authors.html</a> page and the author JSON file.
+See the
+FAQ on “<a href="#author_handle_faq">author handle</a>”
+and the
+FAQ on “<a href="#author_json">author_handle.json</a>”
+for more information.</p></li>
+<li><p><code>author_number</code> (number)</p>
+<ul>
+<li>This author number in the <code>authors</code> array.</li>
+</ul></li>
+</ul>
+<p>After the <code>authors</code> <strong>array</strong> the remaining of a <code>.auth.json</code> file holds:</p>
+<ul>
 <li><p><code>formed_timestamp</code> (number)</p>
 <ul>
-<li>Seconds since epoch when <code>.auth.json was formed (see</code>gettimeofday(2)`).
-See also the
+<li>Seconds since epoch when <code>.auth.json</code> was formed (see <code>gettimeofday(2)</code>). See also the
 FAQ on “<a href="#info_json">.info.json</a>”
-for more inforation.</li>
+for more information.</li>
 </ul>
 <p><strong>NOTE:</strong> this <strong>MUST</strong> be greater than or equal to <code>MIN_TIMESTAMP</code> (see
 <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h">soup/limit_ioccc.h</a>
@@ -1104,6 +1107,9 @@ filed is in the file. In these cases (and any others that must be established as
 valid by <code>chkentry</code>) your submission would be rejected for violating <a href="next/rules.html#rule17">Rule
 17</a> and in particular because <code>chkentry</code> would not
 validate the <code>.auth.json</code> file.</p>
+<p>If you wish to <strong>verify</strong> that your <code>.auth.json</code> file is valid <strong>JSON</strong> then see the
+<a href="#validating_json">validating JSON documents</a> in the
+FAQ on “<a href="#author_json">author_handle.json</a>”.</p>
 <div id="faq0_10">
 <div id="info_json">
 <h3 id="faq-0.10-what-is-a-.info.json-file">FAQ 0.10: What is a <code>.info.json</code> file?</h3>
@@ -1120,90 +1126,8 @@ See the
 FAQ on “<a href="#auth_json">.auth.json</a>”
 and the
 FAQ on “<a href="#remarks_md">remarks.md</a>”
-for more inforation.</p>
-<ul>
-<li><p><code>info_JSON</code> (double quoted string)</p>
-<ul>
-<li>This <code>MUST</code> be <code>".info.json"</code>, defined as <code>INFO_JSON_FILENAME</code> in
-<a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/entry_util.h">soup/entry_util.h</a>
-in the <a href="https://github.com/ioccc-src/mkiocccentry/">mkiocccentry repo</a>, and
-it is the <code>.info.json</code> file that <code>mkiocccentry</code> forms.
-See the
-FAQ on “<a href="#info_json">.info.json</a>”
-for more information.</li>
-</ul>
-<p><strong>NOTE:</strong> if this is <strong>NOT</strong> the case you stand a great chance of having your
-submission rejected for violating <a href="next/rules.html#rule17">Rule 17</a>!</p></li>
-<li><p><code>auth_JSON</code> (double quoted string)</p>
-<ul>
-<li>This <code>MUST</code> be <code>".auth.json"</code>, defined as <code>AUTH_JSON_FILENAME</code> in
-<a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/entry_util.h">soup/entry_util.h</a>
-in the <a href="https://github.com/ioccc-src/mkiocccentry/">mkiocccentry repo</a>, and
-it is the <code>.auth.json</code> file that <code>mkiocccentry</code> forms.
-See the
-FAQ on “<a href="#auth_json">.auth.json</a>”
-for more inforation.</li>
-</ul>
-<p><strong>NOTE:</strong> if this is <strong>NOT</strong> the case you stand a great chance of having your
-submission rejected for violating <a href="next/rules.html#rule17">Rule 17</a>!</p></li>
-<li><p><code>c_src</code> (double quoted string)</p>
-<ul>
-<li>This <code>MUST</code> be <code>"prog.c"</code>, defined as <code>PROG_C_FILENAME</code> in
-<a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/entry_util.h">soup/entry_util.h</a>
-in the <a href="https://github.com/ioccc-src/mkiocccentry/">mkiocccentry repo</a>, and
-is your submission source code.</li>
-</ul>
-<p><strong>NOTE:</strong> if this is <strong>NOT</strong> the case you stand a great chance of having your
-submission rejected for violating <a href="next/rules.html#rule17">Rule 17</a>!</p>
-<p><strong>NOTE:</strong> if you provide to <code>mkiocccentry</code> a different filename it will be
-copied to <code>prog.c</code>.</p></li>
-<li><p><code>Makefile</code> (double quoted string)</p>
-<ul>
-<li>This <code>MUST</code> be <code>"Makefile"</code>, defined as <code>MAKEFILE_FILENAME</code> in
-<a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/entry_util.h">soup/entry_util.h</a>
-in the <a href="https://github.com/ioccc-src/mkiocccentry/">mkiocccentry repo</a>, and
-is your <code>Makefile</code> file.
-See the
-FAQ on “<a href="#makefile">Makefile</a>”
-for more information.</li>
-</ul>
-<p><strong>NOTE:</strong> if this is <strong>NOT</strong> the case you stand a great chance of having your
-submission rejected for violating <a href="next/rules.html#rule17">Rule 17</a>!</p>
-<p><strong>NOTE:</strong> if you provide to <code>mkiocccentry</code> a different filename it will be
-copied to <code>Makefile</code>.</p></li>
-<li><p><code>remarks</code> (double quoted string)</p>
-<ul>
-<li>This <code>MUST</code> be <code>"remarks.md"</code>, defined as <code>REMARKS_FILENAME</code> in
-<a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/entry_util.h">soup/entry_util.h</a>
-in the <a href="https://github.com/ioccc-src/mkiocccentry/">mkiocccentry repo</a>, and
-is your <code>remarks.md]</code> file.
-See the
-FAQ on “<a href="#remarks_md">remarks.md</a>”
-for more information.</li>
-</ul>
-<p><strong>NOTE:</strong> if this is <strong>NOT</strong> the case you stand a great chance of having your
-submission rejected for violating <a href="next/rules.html#rule17">Rule 17</a>!</p>
-<p><strong>NOTE:</strong> if you provide to <code>mkiocccentry</code> a different filename it will be
-copied to <code>remarks.md</code>.</p></li>
-</ul>
-<p>The <code>manifest</code> array also optionally has one or more of the field:</p>
-<ul>
-<li><p><code>extra_file</code> (double quoted string)</p>
-<ul>
-<li>Any additional file that you need or want to include with your submission.</li>
-</ul>
-<p><strong>NOTE:</strong> this MUST <strong>NOT</strong> match a mandatory filename (see above list) and
-<code>chkentry</code> will verify this for you; it is <strong>also</strong> an <strong>error</strong> if it the
-filenames are not unique. In these cases you stand a great risk of having
-your submission rejected for violating <a href="next/rules.html#rule17">Rule 17</a>! On
-the other hand, <strong>ONLY</strong> <code>mkiocccentry</code> will verify that the files exist and
-can be read; <code>txzchk(1)</code> will <strong>NOT</strong> do this for you as it only <strong>LISTS</strong>
-the tarball: it does <strong>NOT</strong> extract it. Even so, the <a href="judges.html">Judges</a>
-<strong>WILL</strong> extract the tarball and if a file listed in the manifest does not
-exist your submission will very likely be rejected for not being as
-documented!</p></li>
-</ul>
-<p>The file also contains the following details:</p>
+for more information.</p>
+<p>In order of the file’s contents we describe each required field, below:</p>
 <ul>
 <li><code>no_comment</code> (double quoted string)
 <ul>
@@ -1415,7 +1339,7 @@ overflows in general.</p></li>
 <li><p><code>Makefile_override</code> (boolean)</p>
 <ul>
 <li><code>true</code> if the user overrides any warnings about an incomplete/incorrect
-<code>Makefile file, else</code>false`.</li>
+<code>Makefile</code> file, else <code>false</code>.</li>
 </ul>
 <p><strong>NOTE:</strong> if the <code>Makefile</code> file has no problems and this is <code>true</code> then
 you stand a good chance of having your submission rejected for violating
@@ -1427,6 +1351,9 @@ for more information.</p></li>
 <ul>
 <li><code>true</code> if the first rule in the <code>Makefile</code> file is <code>all</code>, else <code>false</code>.</li>
 </ul>
+<p><strong>NOTE:</strong> if the <code>Makefile</code> file does <strong>NOT</strong> have an <code>all</code> rule or it is not
+first and this boolean is <code>true</code> then you stand a good chance of having your
+submission rejected for violating <a href="next/rules.html#rule17">Rule 17</a>!</p>
 <p>See the
 FAQ on “<a href="#makefile">Makefile</a>”
 for more information.</p></li>
@@ -1434,6 +1361,10 @@ for more information.</p></li>
 <ul>
 <li><code>true</code> if the <code>Makefile</code> file has an <code>all</code> rule, else <code>false</code>.</li>
 </ul>
+<p><strong>NOTE:</strong> if the <code>Makefile</code> file does <strong>NOT</strong> have an <code>all</code> rule and this
+boolean is <code>true</code>, or if it does <strong>NOT</strong> have an <code>all</code> rule but
+<code>first_rule_is_all</code> is <code>true</code> then you stand a good chance of having your
+submission rejected for violating <a href="next/rules.html#rule17">Rule 17</a>!</p>
 <p>See the
 FAQ on “<a href="#makefile">Makefile</a>”
 for more information.</p></li>
@@ -1441,6 +1372,9 @@ for more information.</p></li>
 <ul>
 <li><code>true</code> if the <code>Makefile</code> file has a <code>clean</code> rule, else <code>false</code>.</li>
 </ul>
+<p><strong>NOTE:</strong> if the <code>Makefile</code> file does <strong>NOT</strong> have a <code>clean</code> rule and this
+boolean is <code>true</code> then you stand a good chance of having your submission
+rejected for violating <a href="next/rules.html#rule17">Rule 17</a>!</p>
 <p>See the
 FAQ on “<a href="#makefile">Makefile</a>”
 for more information.</p></li>
@@ -1448,6 +1382,9 @@ for more information.</p></li>
 <ul>
 <li><code>true</code> if the <code>Makefile</code> file has a <code>clobber</code> rule, else <code>false</code>.</li>
 </ul>
+<p><strong>NOTE:</strong> if the <code>Makefile</code> file does <strong>NOT</strong> have an <code>clobber</code> rule and this
+boolean is <code>true</code> then you stand a good chance of having your submission
+rejected for violating <a href="next/rules.html#rule17">Rule 17</a>!</p>
 <p>See the
 FAQ on “<a href="#makefile">Makefile</a>”
 for more information.</p></li>
@@ -1455,6 +1392,9 @@ for more information.</p></li>
 <ul>
 <li><code>true</code> if the <code>Makefile</code> file has a <code>try</code> rule, else <code>false</code>.</li>
 </ul>
+<p><strong>NOTE:</strong> if the <code>Makefile</code> file does <strong>NOT</strong> have an <code>try</code> rule and this
+boolean is <code>true</code> then you stand a good chance of having your submission
+rejected for violating <a href="next/rules.html#rule17">Rule 17</a>!</p>
 <p>See the
 FAQ on “<a href="#makefile">Makefile</a>”
 for more information.</p></li>
@@ -1464,6 +1404,93 @@ for more information.</p></li>
 </ul>
 <p><strong>NOTE:</strong> if this is <code>true</code> then this may <strong>NOT</strong> be submitted to the
 contest! Please do <strong>NOT</strong> email the <a href="judges.html">Judges</a> your submission!</p></li>
+</ul>
+<p>Next comes the <code>manifest</code> <strong>array</strong> which <strong>MUST</strong> have AT LEAST the following.
+The <code>mkiocccentry(1)</code> tool will write it in this order:</p>
+<ul>
+<li><p><code>info_JSON</code> (double quoted string)</p>
+<ul>
+<li>This <code>MUST</code> be <code>".info.json"</code>, defined as <code>INFO_JSON_FILENAME</code> in
+<a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/entry_util.h">soup/entry_util.h</a>
+in the <a href="https://github.com/ioccc-src/mkiocccentry/">mkiocccentry repo</a>, and
+it is the <code>.info.json</code> file that <code>mkiocccentry</code> forms.
+See the
+FAQ on “<a href="#info_json">.info.json</a>”
+for more information.</li>
+</ul>
+<p><strong>NOTE:</strong> if this is <strong>NOT</strong> the case you stand a great chance of having your
+submission rejected for violating <a href="next/rules.html#rule17">Rule 17</a>!</p></li>
+<li><p><code>auth_JSON</code> (double quoted string)</p>
+<ul>
+<li>This <code>MUST</code> be <code>".auth.json"</code>, defined as <code>AUTH_JSON_FILENAME</code> in
+<a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/entry_util.h">soup/entry_util.h</a>
+in the <a href="https://github.com/ioccc-src/mkiocccentry/">mkiocccentry repo</a>, and
+it is the <code>.auth.json</code> file that <code>mkiocccentry</code> forms.
+See the
+FAQ on “<a href="#auth_json">.auth.json</a>”
+for more information.</li>
+</ul>
+<p><strong>NOTE:</strong> if this is <strong>NOT</strong> the case you stand a great chance of having your
+submission rejected for violating <a href="next/rules.html#rule17">Rule 17</a>!</p></li>
+<li><p><code>c_src</code> (double quoted string)</p>
+<ul>
+<li>This <code>MUST</code> be <code>"prog.c"</code>, defined as <code>PROG_C_FILENAME</code> in
+<a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/entry_util.h">soup/entry_util.h</a>
+in the <a href="https://github.com/ioccc-src/mkiocccentry/">mkiocccentry repo</a>, and
+is your submission source code.</li>
+</ul>
+<p><strong>NOTE:</strong> if this is <strong>NOT</strong> the case you stand a great chance of having your
+submission rejected for violating <a href="next/rules.html#rule17">Rule 17</a>!</p>
+<p><strong>NOTE:</strong> if you provide to <code>mkiocccentry</code> a different filename it will be
+copied to <code>prog.c</code>.</p></li>
+<li><p><code>Makefile</code> (double quoted string)</p>
+<ul>
+<li>This <code>MUST</code> be <code>"Makefile"</code>, defined as <code>MAKEFILE_FILENAME</code> in
+<a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/entry_util.h">soup/entry_util.h</a>
+in the <a href="https://github.com/ioccc-src/mkiocccentry/">mkiocccentry repo</a>, and
+is your <code>Makefile</code> file.
+See the
+FAQ on “<a href="#makefile">Makefile</a>”
+for more information.</li>
+</ul>
+<p><strong>NOTE:</strong> if this is <strong>NOT</strong> the case you stand a great chance of having your
+submission rejected for violating <a href="next/rules.html#rule17">Rule 17</a>!</p>
+<p><strong>NOTE:</strong> if you provide to <code>mkiocccentry</code> a different filename it will be
+copied to <code>Makefile</code>.</p></li>
+<li><p><code>remarks</code> (double quoted string)</p>
+<ul>
+<li>This <code>MUST</code> be <code>"remarks.md"</code>, defined as <code>REMARKS_FILENAME</code> in
+<a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/entry_util.h">soup/entry_util.h</a>
+in the <a href="https://github.com/ioccc-src/mkiocccentry/">mkiocccentry repo</a>, and
+is your <code>remarks.md]</code> file.
+See the
+FAQ on “<a href="#remarks_md">remarks.md</a>”
+for more information.</li>
+</ul>
+<p><strong>NOTE:</strong> if this is <strong>NOT</strong> the case you stand a great chance of having your
+submission rejected for violating <a href="next/rules.html#rule17">Rule 17</a>!</p>
+<p><strong>NOTE:</strong> if you provide to <code>mkiocccentry</code> a different filename it will be
+copied to <code>remarks.md</code>.</p></li>
+</ul>
+<p>The <code>manifest</code> <strong>array</strong> also <strong>OPTIONALLY</strong> has one or more of the field:</p>
+<ul>
+<li><p><code>extra_file</code> (double quoted string)</p>
+<ul>
+<li>Any additional file that you need or want to include with your submission.</li>
+</ul>
+<p><strong>NOTE:</strong> this MUST <strong>NOT</strong> match a mandatory filename (see above list) and
+<code>chkentry</code> will verify this for you; it is <strong>ALSO</strong> an <strong>error</strong> if the
+filenames are not unique. In these cases you stand a great risk of having
+your submission rejected for violating <a href="next/rules.html#rule17">Rule 17</a>! On
+the other hand, <strong>ONLY</strong> <code>mkiocccentry</code> will verify that the files exist and
+can be read; <code>txzchk(1)</code> will <strong>NOT</strong> do this for you as it only <strong>LISTS</strong>
+the tarball: it does <strong>NOT</strong> extract it. Even so, the <a href="judges.html">Judges</a>
+<strong>WILL</strong> extract the tarball and if a file listed in the manifest does not
+exist your submission will very likely be rejected for not being as
+documented!</p></li>
+</ul>
+<p>Finally, after the <code>manifest</code> <strong>array</strong>, the following fields <strong>MUST</strong> exist:</p>
+<ul>
 <li><p><code>formed_timestamp</code> (number)</p>
 <ul>
 <li>Seconds since epoch when JSON (<code>.auth.json</code> or <code>.info.json</code>) file was formed (see <code>gettimeofday(2)</code>).</li>
@@ -1503,9 +1530,8 @@ in the <a href="https://github.com/ioccc-src/mkiocccentry/">mkiocccentry repo</a
 this is not the case your submission <strong>WILL BE</strong> rejected!</p></li>
 </ul>
 <p>This file will be verified with the <code>chkentry(1)</code> tool and if there are any
-problems <strong>it is an error</strong>. If there is an error the tarball will <strong>NOT</strong> be
-formed by <code>mkiocccentry</code>; otherwise the <code>txzchk(1)</code> tool will be executed on the
-tarball.</p>
+problems <strong>it is an error</strong> and the tarball will <strong>NOT</strong> be formed by
+<code>mkiocccentry</code>; otherwise the <code>txzchk(1)</code> tool will be executed on the tarball.</p>
 <p>The <a href="judges.html">Judges</a> <strong>WILL</strong> use <code>chkentry(1)</code> on this file during the
 judging process and if it does not pass your submission <strong>WILL BE</strong> rejected.</p>
 <p>An obvious example where <code>chkentry</code> would fail to validate <code>.info.json</code> is if
@@ -1517,6 +1543,9 @@ filed is in the file. In these cases (and any others that must be established as
 valid by <code>chkentry</code>) your submission would be rejected for violating <a href="next/rules.html#rule17">Rule
 17</a> and in particular because <code>chkentry</code> would not
 validate the <code>.info.json</code> file.</p>
+<p>If you wish to <strong>verify</strong> that your <code>.info.json</code> file is valid <strong>JSON</strong> then see the
+<a href="#validating_json">validating JSON documents</a> in the
+FAQ on “<a href="#author_json">author_handle.json</a>”.</p>
 <div id="faq1">
 <h2 id="section-1-history-of-the-ioccc">Section 1: History of the IOCCC</h2>
 </div>
