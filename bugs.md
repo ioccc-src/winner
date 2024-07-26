@@ -1770,7 +1770,7 @@ off the other so that you can properly play.
 
 ### STATUS: missing or dead link or links - please provide it or them
 
-As well: the link which was http://www.uio.no/~jonth is no longer valid and
+As well: the link which was `http://www.uio.no/~jonth` is no longer valid and
 there's no archive on the Internet Wayback Machine. Do you know of a proper URL?
 We greatly appreciate your help here!
 
@@ -1799,11 +1799,12 @@ There was no IOCCC in 1997.
 ### Source code: [1998/dlowe/dlowe.c](%%REPO_URL%%/1998/dlowe/dlowe.c)
 ### Information: [1998/dlowe/index.html](1998/dlowe/index.html)
 
-The domain http://pootpoot.com no longer exists as it once did. The judges have
+The domain `http://pootpoot.com` no longer exists as it once did. The judges have
 given a script that can be used to make a similar page (**warning: not checked
 for security in modern days!**). Do you have a server with enough bandwidth and
-would like to set it up?  We'll gladly thank you in the index.html file and link
-to the page as well!  You'll have IOCCC fame for reviving a pootifier! :-)
+would like to set it up?  We'll gladly thank you in the [thanks
+file](thanks-for-help.html) file and link to the page as well!  You'll also have
+IOCCC fame for reviving a pootifier! :-)
 
 
 <div id="1998_dloweneil">
@@ -1814,7 +1815,14 @@ to the page as well!  You'll have IOCCC fame for reviving a pootifier! :-)
 ### Source code: [1998/dloweneil/dloweneil.c](%%REPO_URL%%/1998/dloweneil/dloweneil.c)
 ### Information: [1998/dloweneil/index.html](1998/dloweneil/index.html)
 
-See above entry [1998/dlowe](%%REPO_URL%%/1998/dlowe/dlowe.c).
+The domain `http://pootpoot.com` no longer exists as it once did. The judges have
+given a script that can be used to make a similar page (**warning: not checked
+for security in modern days!**). Do you have a server with enough bandwidth and
+would like to set it up?  We'll gladly thank you in the [thanks
+file](thanks-for-help.html) file and link to the page as well!  You'll also have
+IOCCC fame for reviving a pootifier! :-)
+
+
 
 
 <div id="1998_schnitzi">
@@ -3013,10 +3021,13 @@ bins at the edges.
 ### Source code: [2011/dlowe/dlowe.c](%%REPO_URL%%/2011/dlowe/dlowe.c)
 ### Information: [2011/dlowe/index.html](2011/dlowe/index.html)
 
-The author's website, http://www.pootpoot.net, no longer exists as it once did,
-instead being something else entirely. The Internet Wayback Machine, although it
-archived it, did not load scripts. Do you know if the domain was moved? Do you
-have an archive or mirror? Please provide us it! Thank you.
+The domain `http://pootpoot.com` no longer exists as it once did. The judges have
+given a script that can be used to make a similar page (**warning: not checked
+for security in modern days!**). Do you have a server with enough bandwidth and
+would like to set it up?  We'll gladly thank you in the [thanks
+file](thanks-for-help.html) file and link to the page as well!  You'll also have
+IOCCC fame for reviving a pootifier! :-)
+
 
 
 ### STATUS: INABIAF - please **DO NOT** fix
