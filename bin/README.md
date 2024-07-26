@@ -25,7 +25,7 @@ If you need to remember the syntax of the tool or get certain notes about
 different options, you can use the `-h` option.
 
 For instance if you want help on the [all-run.sh](index.html#all-run) tool
-from the root directory, you would do:
+from the root directory (of the repo/website), you would do:
 
 
 ``` <!---sh-->
@@ -35,7 +35,7 @@ from the root directory, you would do:
 
 ### Set verbosity level of a tool
 
-If, however, you want verbosity, say for debugging purposes or to see what is
+If you want verbosity, say for debugging purposes or to see what is
 going on more, you should use the `-v level` option. For instance if you wish to
 see what is going on with the
 [quick-readme2index.sh](index.html#quick-readme2index) tool, you might do:
@@ -61,7 +61,7 @@ is, you would do:
 ```
 
 
-### Other notes
+### Other notes about some of the common options
 
 These options, and especially `-h` and `-v level`, can be very useful to get
 basic usage information and to see what is going on when the tool is running.
@@ -70,16 +70,16 @@ you go through each tool, if you need to understand more of it, we recommend
 that you use the `-h` option on it first.
 
 There are some scripts that are invoked by the
-[bin/md2html.cfg](%%REPO_URL%%/bin/md2html.cfg) file but some of these tools can be directly
-invoked as well, should you wish to see their output or if you have some odd
-need to do so.
+[bin/md2html.cfg](%%REPO_URL%%/bin/md2html.cfg) file but some of these tools can
+be directly invoked as well, should you wish to see their output or if you have
+some odd need to do so.
 
 
 <div id="add-dir">
 ### [add-dir.sh](%%REPO_URL%%/bin/add-dir.sh)
 </div>
 
-This tool is used my the [Judges](../judges.html) as part of the final
+This tool is used by the [Judges](../judges.html) as part of the final
 steps to announce a new winning IOCCC entry.
 
 Usage:
@@ -89,7 +89,7 @@ Usage:
     bin/add-dir.sh YYYY/dir
 ```
 
-Here, `YYYY/dir` must the path to the winning IOCCC entry.
+Here, `YYYY/dir` must be the path to the winning IOCCC entry.
 
 
 <div id="all-run">
@@ -134,8 +134,8 @@ Alternate usage:
 ### [chk-entry.sh](%%REPO_URL%%/bin/chk-entry.sh)
 </div>
 
-Check an entry directory to verify that both the files in its manifest
-(`.entry.json`) exist and that no other files exist.
+Check an entry directory to verify that all the files in its manifest
+(`.entry.json`) exist in the git repo.
 
 Usage:
 
@@ -150,6 +150,9 @@ the top level `Makefile`:
     make verify_entry_files
 ```
 
+**NOTE**: see the
+FAQ on "[.entry.json files](../faq.html#entry_json)"
+for more details on `.entry.json` files.
 
 <div id="csv2entry">
 ### [csv2entry.sh](%%REPO_URL%%/bin/csv2entry.sh)
@@ -173,8 +176,9 @@ Usage:
     bin/csv2entry.sh -v 1
 ```
 
-There is no requirement to sort the CSV files, nor convert
-them to UNIX format, nor append a final newline to the file.
+There is no requirement to sort the CSV files (say through the spreadsheet
+application prior to exporting), convert them to UNIX format, or append a final
+newline to the file.
 
 This tool will canonicalize the CSV files before using them
 as input.  Thus, if one wishes to import the CSV file into
@@ -188,6 +192,10 @@ This tool will flag as an error, any empty fields, fields that are
 an unquoted `NULL` or `null`, fields that start with whitespace,
 fields that end with whitespace, or fields that contain consecutive
 whitespace characters.
+
+**NOTE**: see the
+FAQ on "[.entry.json files](../faq.html#entry_json)"
+for more details on `.entry.json` files.
 
 
 #### Internal details of `bin/csv2entry.sh`
@@ -222,13 +230,29 @@ content).
 ### [cvt-submission.sh](%%REPO_URL%%/bin/cvt-submission.sh)
 </div>
 
-Given a submission (that has won the IOCCC), with a `.auth.json`
-and `.info.json` and NO `.entry.json` file, we convert the
+This tool is used by the [Judges](../judges.html) as part of the final
+steps to announce a new set of winning IOCCC entries.
+
+Given a submission (that has won the IOCCC and thus will become an entry), with a `.auth.json`
+and `.info.json` and **NO** `.entry.json` file (since it just won), we convert the
 `.auth.json` and `.info.json` into a new `.entry.json` file.
 
-We will also form, as needed, new `author/author_handle.json`
-files for new authors, and update `author/author_handle.json`
-for authors who won previously.
+This tool will, given a submission that has won the IOCCC (and thus will become a published entry), with
+a `.auth.json` and `.info.json` and NO `.entry.json` file (since it's new), we
+convert the `.auth.json` and `.info.json` into a new `.entry.json` file.
+
+**NOTE**: the `.auth.json` and `.info.json` files are formed by the
+`mkiocccentry(1)` tool from the [mkiocccentry GitHub
+repo](https://github.com/ioccc-src/mkiocccentry) as part of packaging
+submissions.
+
+We will also form new `author/author_handle.json` (see the
+FAQ on "[author_handle.json files](../faq.html#author_json)"
+for more information) and update `author/author_handle.json`
+for [authors](../authors.html) who previously won. See also the
+FAQ on "[author_handle](../faq.html#author_handle_faq)".
+See also the
+FAQ on "[.entry.json](../faq.html#entry_json)".
 
 Usage:
 
@@ -237,7 +261,7 @@ Usage:
 ```
 
 Here, `YYYY/dir` is the path of the submission under the `YYYY`
-year directory.
+year directory. For instance
 
 
 <div id="entry2csv">
@@ -598,7 +622,7 @@ the [md2html tool](index.html#md2html).
 ### [new-year.sh](%%REPO_URL%%/bin/new-year.sh)
 </div>
 
-This tool is used my the [Judges](../judges.html) as part of the final
+This tool is used by the [Judges](../judges.html) as part of the final
 steps to announce a new set of winning IOCCC entries.
 
 Usage:
