@@ -341,7 +341,7 @@ if [[ ! -d $INC_PATH ]]; then
 fi
 export INC_DIR="inc"
 
-# verify that we have an bin subdirectory
+# verify that we have a bin subdirectory
 #
 export BIN_PATH="$TOPDIR/bin"
 if [[ ! -d $BIN_PATH ]]; then

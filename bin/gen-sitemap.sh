@@ -355,7 +355,7 @@ if [[ ! -d $AUTHOR_PATH ]]; then
 fi
 export AUTHOR_DIR="author"
 
-# verify that we have an bin subdirectory
+# verify that we have a bin subdirectory
 #
 export BIN_PATH="$TOPDIR/bin"
 if [[ ! -d $BIN_PATH ]]; then
