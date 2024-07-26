@@ -418,13 +418,14 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>For a good no-op try:</p>
 <pre><code>    gzip -c &lt; rcm.c | ./rcm</code></pre>
-<p>NOTE: this is done in the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1996/rcm/try.sh">try.sh</a> script as well, along with some other
-commands including a way to do the above command but with more steps.</p>
+<p><strong>NOTE</strong>: this is done in the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1996/rcm/try.sh">try.sh</a> script as
+well, along with some other commands including a way to do the above command but
+with more steps.</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <p>Except for some silly requirements regarding input validation, CRC checking, and
 similar unimportant fluff, this program is a fully compliant
-<a href="https://www.ietf.org/rfc/rfc1951.txt">RFC1951</a>/<a href="https://www.ietf.org/rfc/rfc1952.txt">RFC1952</a>,
-<a href="https://www.gnu.org/software/gzip/">GNU Gzip</a>, file uncompressor. Feed it a
+<a href="https://www.ietf.org/rfc/rfc1951.txt">RFC1951</a>/<a href="https://www.ietf.org/rfc/rfc1952.txt">RFC1952</a>
+<a href="https://www.gnu.org/software/gzip/">GNU Gzip</a> file uncompressor. Feed it a
 <code>gzip</code> compressed file on standard input, and it will write the fully
 uncompressed original file to standard output.</p>
 <h3 id="objustifications-for-this-entry">ObJustifications for this entry:</h3>
@@ -439,10 +440,16 @@ meets and actually exceeds specification.”</p>
 <p>“The program source is less than 3,100 characters in length and uncompresses the
 file
 <a href="https://ftp.gnu.org/old-gnu/emacs/emacs-19.34b.tar.gz">emacs-19.34b.tar.gz</a> in
-about 130 seconds on my HP 9000/735. The now obsolete source file `inflate.c’
+about 130 seconds on my HP 9000/735. The now obsolete source file <code>inflate.c</code>
 from the GNU gzip source tree is 31,613 characters in length and uncompresses
 the emacs distribution file in slightly under 25 seconds. Thus:</p>
-<pre><code>    3100 / 130 = 23.85       -vs-      31613 / 25 = 1264.52</code></pre>
+<blockquote>
+<p>3100 / 130 = 23.85</p>
+</blockquote>
+<p>vs:</p>
+<blockquote>
+<p>31613 / 25 = 1264.52</p>
+</blockquote>
 <p>which represents a better than 530% improvement in the ratio of
 source file size to execution time.”</p>
 <h4 id="the-whining-programmers-argument">The Whining Programmer’s Argument:</h4>

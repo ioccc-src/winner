@@ -47,33 +47,29 @@ for anni domini within the [Gregorian
 Calendar](https://en.wikipedia.org/wiki/Gregorian_calendar), that is, from ad 1582
 to ad 2199:
 
-```
-    Let J be the year.
-    If J is from 1582 to 1699, let M be 22, let N be 2
-    If J is from 1700 to 1799, let M be 23, let N be 3
-    If J is from 1800 to 1899, let M be 23, let N be 4
-    If J is from 1900 to 2099, let M be 24, let N be 5
-    If J is from 2100 to 2199, let M be 24, let N be 6
-    Let a be the modulus of J divided by 19
-    Let b be the modulus of J divided by 4
-    Let c be the modulus of J divided by 7
-    Let d be the modulus of (19a + M) divided by 30
-    Let e be the modulus of (2b + 4c + 6d + N) divided by 7
-```
+> Let `J` be the year.<br>
+> If `J` is from `1582` to `1699`, let `M` be `22` and `N` be `2`.<br>
+> If `J` is from `1700` to `1799`, let `M` be `23` and `N` be `3`.<br>
+> If `J` is from `1800` to `1899`, let `M` be `23` and `N` be `4`.<br>
+> If `J` is from `1900` to `2099`, let `M` be `24`, let `N` be `5`.<br>
+> If `J` is from `2100` to `2199`, let `M` be `24`, let `N` be `6`.<br>
+> Let `a` be the modulus of `J` divided by `19`.<br>
+> Let `b` be the modulus of `J` divided by `4`.<br>
+> Let `c` be the modulus of `J` divided by `7`.<br>
+> Let `d` be the modulus of `(19a + M)` divided by `30`.<br>
+> Let `e` be the modulus of `(2b + 4c + 6d + N)` divided by `7`.
 
-The interesting Sunday is either:
+The interesting Sunday is either (only one of them is a valid date):
 
-```
-    March 22 + d + e   or
-    April d + e - 9    (only one of them is a valid date)
-```
+> March `22 + d + e`; or<br>
+> April `d + e - 9`
+
 
 with the following exceptions:
 
-```
-    April 26 must always be changed to April 19
-    April 25 must be changed to April 18 if d is 28 and a is greater than 10
-```
+> April 26 must always be changed to April 19.<br>
+> April 25 must be changed to April 18 if `d` is `28` and `a` is greater than
+`10`.
 
 ### Example:
 
@@ -125,13 +121,13 @@ Try to be as precise as can be and no one will comprehend what you mean.
 
 #### The interpretation:
 
-"Say nothing and everybody will understand."
+> "Say nothing and everybody will understand."
 
 The `-I/usr/include` in the build file is needed by gcc on Solaris because
 `gcc`'s "fixed" header in `gcc-lib/sparc-sun-solaris2.5/2.7.2/include/errno.h`
-is broken (sort of) because it has *two* identical extern declarations of errno.
-This leads to an error due to the redefinition of main. The `-I` option makes
-sure the working /usr/include/errno.h is found first, which shouldn't cause any
+is broken (sort of) because it has *two* identical extern declarations of `errno`.
+This leads to an error due to the redefinition of `main`. The `-I` option makes
+sure the working `/usr/include/errno.h` is found first, which shouldn't cause any
 problems on other systems.
 
 

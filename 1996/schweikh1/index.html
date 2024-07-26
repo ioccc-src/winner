@@ -433,23 +433,30 @@ ueber das Weltall” ‘Handbook About Space’, Meyer, 5th Edition, 1973, p149]
 for anni domini within the <a href="https://en.wikipedia.org/wiki/Gregorian_calendar">Gregorian
 Calendar</a>, that is, from ad 1582
 to ad 2199:</p>
-<pre><code>    Let J be the year.
-    If J is from 1582 to 1699, let M be 22, let N be 2
-    If J is from 1700 to 1799, let M be 23, let N be 3
-    If J is from 1800 to 1899, let M be 23, let N be 4
-    If J is from 1900 to 2099, let M be 24, let N be 5
-    If J is from 2100 to 2199, let M be 24, let N be 6
-    Let a be the modulus of J divided by 19
-    Let b be the modulus of J divided by 4
-    Let c be the modulus of J divided by 7
-    Let d be the modulus of (19a + M) divided by 30
-    Let e be the modulus of (2b + 4c + 6d + N) divided by 7</code></pre>
-<p>The interesting Sunday is either:</p>
-<pre><code>    March 22 + d + e   or
-    April d + e - 9    (only one of them is a valid date)</code></pre>
+<blockquote>
+<p>Let <code>J</code> be the year.<br>
+If <code>J</code> is from <code>1582</code> to <code>1699</code>, let <code>M</code> be <code>22</code> and <code>N</code> be <code>2</code>.<br>
+If <code>J</code> is from <code>1700</code> to <code>1799</code>, let <code>M</code> be <code>23</code> and <code>N</code> be <code>3</code>.<br>
+If <code>J</code> is from <code>1800</code> to <code>1899</code>, let <code>M</code> be <code>23</code> and <code>N</code> be <code>4</code>.<br>
+If <code>J</code> is from <code>1900</code> to <code>2099</code>, let <code>M</code> be <code>24</code>, let <code>N</code> be <code>5</code>.<br>
+If <code>J</code> is from <code>2100</code> to <code>2199</code>, let <code>M</code> be <code>24</code>, let <code>N</code> be <code>6</code>.<br>
+Let <code>a</code> be the modulus of <code>J</code> divided by <code>19</code>.<br>
+Let <code>b</code> be the modulus of <code>J</code> divided by <code>4</code>.<br>
+Let <code>c</code> be the modulus of <code>J</code> divided by <code>7</code>.<br>
+Let <code>d</code> be the modulus of <code>(19a + M)</code> divided by <code>30</code>.<br>
+Let <code>e</code> be the modulus of <code>(2b + 4c + 6d + N)</code> divided by <code>7</code>.</p>
+</blockquote>
+<p>The interesting Sunday is either (only one of them is a valid date):</p>
+<blockquote>
+<p>March <code>22 + d + e</code>; or<br>
+April <code>d + e - 9</code></p>
+</blockquote>
 <p>with the following exceptions:</p>
-<pre><code>    April 26 must always be changed to April 19
-    April 25 must be changed to April 18 if d is 28 and a is greater than 10</code></pre>
+<blockquote>
+<p>April 26 must always be changed to April 19.<br>
+April 25 must be changed to April 18 if <code>d</code> is <code>28</code> and <code>a</code> is greater than
+<code>10</code>.</p>
+</blockquote>
 <h3 id="example">Example:</h3>
 <pre><code>    J = 1962, M = 24, N = 5
     a = J % 19 == 5
@@ -481,12 +488,14 @@ these easy to remember language elements is justified in my opinion.</p>
 <h4 id="the-formula">The formula:</h4>
 <pre><code>    comprehension = 1/(2**precision)</code></pre>
 <h4 id="the-interpretation">The interpretation:</h4>
+<blockquote>
 <p>“Say nothing and everybody will understand.”</p>
+</blockquote>
 <p>The <code>-I/usr/include</code> in the build file is needed by gcc on Solaris because
 <code>gcc</code>’s “fixed” header in <code>gcc-lib/sparc-sun-solaris2.5/2.7.2/include/errno.h</code>
-is broken (sort of) because it has <em>two</em> identical extern declarations of errno.
-This leads to an error due to the redefinition of main. The <code>-I</code> option makes
-sure the working /usr/include/errno.h is found first, which shouldn’t cause any
+is broken (sort of) because it has <em>two</em> identical extern declarations of <code>errno</code>.
+This leads to an error due to the redefinition of <code>main</code>. The <code>-I</code> option makes
+sure the working <code>/usr/include/errno.h</code> is found first, which shouldn’t cause any
 problems on other systems.</p>
 <h3 id="usage">Usage:</h3>
 <p>The program is run without arguments. It prints all dates in order.</p>

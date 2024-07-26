@@ -412,9 +412,6 @@ Location: <a href="../../location.html#SE">SE</a> - <em>Kingdom of Sweden</em> (
 <h2 id="to-use">To use:</h2>
 <pre><code>    cat august.c test.oc | ./august &gt; test.oo
     ./august &lt; test.oo</code></pre>
-<p>NOTE: some compilers will compile this code into infinite loops! If the above
-cat line (or one of the ones later in the try section) does not execute in a
-very short amount of time, then you may need to fix your compiler or use gcc.</p>
 <p>The above should print a <code>!</code> followed by a newline.</p>
 <h2 id="try">Try:</h2>
 <pre><code>    ./try.sh</code></pre>
@@ -487,7 +484,7 @@ level of interpretation:</p>
 <pre><code>    cat august.oo august.oo test.oo | ./august</code></pre>
 <p>And another…</p>
 <pre><code>    cat august.oo august.oo august.oo test.oo | ./august</code></pre>
-<hr style="width:10%;text-align:left;margin-left:0">
+<hr>
 <p>Fitting the byte code for the compiler into the initial comment
 was a challenge. I had to strip the compiler/interpreter of
 a lot of functionality to bring down their sizes. The initial
@@ -507,7 +504,7 @@ the code further with a better entropy coder (e.g. an arithmetic
 coder), but decompression then takes up too much code. Maybe this
 would be a way to fit it all into the 1536 bytes, but I don’t have
 time to try it.</p>
-<hr style="width:10%;text-align:left;margin-left:0">
+<hr>
 <p>Execution starts at <code>main()</code>. Nothing can be used before it is
 defined. <code>getchar()</code> and <code>putchar()</code> are predefined functions.</p>
 <p>Below is a description of the OC grammar.</p>
@@ -568,7 +565,7 @@ defined. <code>getchar()</code> and <code>putchar()</code> are predefined functi
                     &quot;char&quot; stars
 
     stars:      &quot;*&quot;*</code></pre>
-<hr style="width:10%;text-align:left;margin-left:0">
+<hr>
 <p>Well, that is enough ranting for now.</p>
 <!--
 

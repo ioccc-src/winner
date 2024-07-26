@@ -20,7 +20,7 @@ You have been warned.
 ## Judges' remarks:
 
 The source fails to compile on compilers that recognize the inline
-keyword by default.  For gcc, you may need to use `-ansi`.
+keyword by default.  For `gcc`, you may need to use `-ansi`.
 
 See the file [schweikh3.info](%%REPO_URL%%/1996/schweikh3/schweikh3.info) for example output from various
 systems.
@@ -47,7 +47,7 @@ uncompilable on many systems that have not yet incorporated
 Amendment One to The Standard.  If you, dear reader, suffer from
 this disease, just read `iso646.h`.
 
-There are no `if' statements. They have been replaced by
+There are no `if` statements. They have been replaced by
 `switch () case 1:` or `switch () case 0:` etc. At least one
 `switch` has a declaration after the opening brace, booh!
 Identifiers are named after random programming languages, BASIC (as `Basic`),
@@ -55,7 +55,7 @@ COBOL, F77, awk etc.
 
 You have to select maximum ANSI C conformance of your
 compiler. The source fails to compile under a C++ compiler due to
-the `new' identifier which is a C++ reserved word:
+the `new` identifier which is a C++ reserved word:
 
 ``` <!---sh-->
     $ g++ schweikh3.c
@@ -69,7 +69,7 @@ the `new' identifier which is a C++ reserved word:
 ```
 
 The source fails to compile on compilers that recognize the inline
-keyword by default, e.g. gcc:
+keyword by default, e.g. `gcc`:
 
 ``` <!---sh-->
     $ gcc schweikh3.c
@@ -80,14 +80,14 @@ keyword by default, e.g. gcc:
     schweikh3.c:97: parse error before `void'
 ```
 
-The `-ansi` option to gcc fixes this.
+The `-ansi` option to `gcc` fixes this.
 
 The source fails to compile on obsolete systems with obsolete
 memory models due to the identifier `far` (to be honest: this is
 untested :-) ).
 
-Does your indent cope with backslash/newline pairs in between keywords like in
-`re\turn` where the `re\` is at the end of a line? ? Solaris' indent inserts
+Does your `indent(1)` cope with backslash/newline pairs in between keywords like in
+`re\turn` where the `re\` is at the end of a line? ? Solaris' `indent(1)` inserts
 spaces and thereby renders the source uncompilable...
 
 The indented source will exhibit different semantics when indenting

@@ -31,16 +31,17 @@ For a good no-op try:
     gzip -c < rcm.c | ./rcm
 ```
 
-NOTE: this is done in the [try.sh](%%REPO_URL%%/1996/rcm/try.sh) script as well, along with some other
-commands including a way to do the above command but with more steps.
+**NOTE**: this is done in the [try.sh](%%REPO_URL%%/1996/rcm/try.sh) script as
+well, along with some other commands including a way to do the above command but
+with more steps.
 
 
 ## Author's remarks:
 
 Except for some silly requirements regarding input validation, CRC checking, and
 similar unimportant fluff, this program is a fully compliant
-[RFC1951](https://www.ietf.org/rfc/rfc1951.txt)/[RFC1952](https://www.ietf.org/rfc/rfc1952.txt),
-[GNU Gzip](https://www.gnu.org/software/gzip/), file uncompressor.  Feed it a
+[RFC1951](https://www.ietf.org/rfc/rfc1951.txt)/[RFC1952](https://www.ietf.org/rfc/rfc1952.txt)
+[GNU Gzip](https://www.gnu.org/software/gzip/) file uncompressor.  Feed it a
 `gzip` compressed file on standard input, and it will write the fully
 uncompressed original file to standard output.
 
@@ -66,13 +67,15 @@ meets and actually exceeds specification."
 "The program source is less than 3,100 characters in length and uncompresses the
 file
 [emacs-19.34b.tar.gz](https://ftp.gnu.org/old-gnu/emacs/emacs-19.34b.tar.gz) in
-about 130 seconds on my HP 9000/735.  The now obsolete source file `inflate.c'
+about 130 seconds on my HP 9000/735.  The now obsolete source file `inflate.c`
 from the GNU gzip source tree is 31,613 characters in length and uncompresses
 the emacs distribution file in slightly under 25 seconds.  Thus:
 
-```
-    3100 / 130 = 23.85       -vs-      31613 / 25 = 1264.52
-```
+> 3100 / 130 = 23.85
+
+vs:
+
+> 31613 / 25 = 1264.52
 
 which represents a better than 530% improvement in the ratio of
 source file size to execution time."

@@ -17,7 +17,7 @@ section.
 
 To quit send intr (typically ctrl-c).
 
-NOTE: to reset the sanity of your terminal after this program ends try `reset`.
+**NOTE**: to reset the sanity of your terminal after this program ends try `reset`.
 
 
 ## Try:
@@ -60,7 +60,7 @@ in a very small chunk of code.
 ## Author's remarks:
 
 This program shows flying spheres. The program eats CPU on lesser
-equipped systems. The program will run until termination. Terminal
+equipped systems. The program will run until termination. Terminals
 must be VT100 or better with 80 columns and 24 rows or more.
 
 
