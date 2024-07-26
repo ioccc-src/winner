@@ -254,7 +254,7 @@ if [[ ! -s $TOP_FILE ]]; then
     exit 6
 fi
 
-# verify that we have an bin subdirectory
+# verify that we have a bin subdirectory
 #
 export BIN_PATH="$TOPDIR/bin"
 if [[ ! -d $BIN_PATH ]]; then
