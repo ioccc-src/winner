@@ -4,7 +4,7 @@
     make all
 ```
 
-NOTE: this entry requires the `X11/Xlib.h` header file and the X11 library to
+**NOTE**: this entry requires the `X11/Xlib.h` header file and the X11 library to
 compile.  For more information see the
 FAQ on "[X11](../../faq.html#X11)".
 
@@ -25,22 +25,15 @@ For more detailed information see [1996/jonth in bugs.html](../../bugs.html#1996
     ./jonth :0 :0
 ```
 
-NOTE: the two boards will be on top of each other so you will have to drag one
+**NOTE**: the two boards will be on top of each other so you will have to drag one
 off the other so that you can properly play.
 
 
-NOTE: if there is no X service open this will crash. If this is the case you
+**NOTE**: if there is no X service open this will crash. If this is the case you
 might try:
 
 ``` <!---sh-->
     ./jonth
-```
-
-These are supposed to happen.  As is written in the
-[The Jargon File](http://catb.org/jargon/html/F/feature.html):
-
-```
-    That's not a bug, that's a feature.
 ```
 
 
@@ -67,7 +60,7 @@ as arguments to this game.
 Sometimes on Solaris, X gets confused and this program core dumps. The solution:
 give two display arguments (`./jonth host:0 host:0`).
 
-If one (or both) windows look like a copy of the window(s) below, try
+If one (or both) windows look like a copy of the window(s) below, try the
 `xrefresh(1)` command.
 
 Have a `nice(1)` day.

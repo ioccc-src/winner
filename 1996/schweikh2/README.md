@@ -57,7 +57,7 @@ appropriately. Try:
     perl ./hunni.pl < hunni.c
 ```
 
-NOTE: the [try.sh](%%REPO_URL%%/1996/schweikh2/try.sh) does this if you have
+**NOTE**: the [try.sh](%%REPO_URL%%/1996/schweikh2/try.sh) script does this if you have
 `perl(1)` installed to show how the output is the same as
 [schweikh2.c](%%REPO_URL%%/1996/schweikh2/schweikh2.c) itself.
 
@@ -66,7 +66,7 @@ This entry was another crowd pleaser at the IOCCC BOF.
 
 ## Author's remarks:
 
-Note: the source must be viewed with tabstop 8. To appreciate the
+**NOTE**: the source must be viewed with tabstop 8. To appreciate the
 beauty have your eyes half closed.
 
 
@@ -91,7 +91,7 @@ round even swaps the tokens, so all keywords must be spelled backwards
 (sort of, can you spot `printf` in the `P` macro?).
 
 Try to indent the source. The unbalanced parentheses confuse Solaris'
-indent to the max (although the result does compile):
+`indent` to the max (although the result does compile):
 
 Looking at the indented source is even *less* fun, because the nice
 diamond pattern has been replaced by something that looks like, uhm,
@@ -102,7 +102,7 @@ Lint the source. It's clean. How obfuscated...
 What's the exit status? The program exits with `J - 1` where `J` is the
 return value from several non-void functions (needed to shut up
 lint). The last assignment is `J = printf ("%c", 10);` so the exit
-status is 0 unless the last `printf` failed, which is even a *useful*
+status is `0` unless the last `printf` failed, which is even a *useful*
 status. A further obfuscation is the use of `10` instead of `'\n'`.
 `'\n'` can not be constructed by token pasting, AFAIK. That's why `schweikh2`
 is likely to produce occasional garbage on non-ASCII execution character

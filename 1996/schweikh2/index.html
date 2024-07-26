@@ -434,12 +434,12 @@ appropriately. Try:</p>
 <pre><code>    less hunni.c
 
     perl ./hunni.pl &lt; hunni.c</code></pre>
-<p>NOTE: the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1996/schweikh2/try.sh">try.sh</a> does this if you have
+<p><strong>NOTE</strong>: the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1996/schweikh2/try.sh">try.sh</a> script does this if you have
 <code>perl(1)</code> installed to show how the output is the same as
 <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1996/schweikh2/schweikh2.c">schweikh2.c</a> itself.</p>
 <p>This entry was another crowd pleaser at the IOCCC BOF.</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
-<p>Note: the source must be viewed with tabstop 8. To appreciate the
+<p><strong>NOTE</strong>: the source must be viewed with tabstop 8. To appreciate the
 beauty have your eyes half closed.</p>
 <h3 id="why-i-think-this-program-is-obfuscated">Why I think this program is obfuscated:</h3>
 <p>C is a free format language. It is therefore a question of style how
@@ -460,7 +460,7 @@ you intend to generate object names from 9 or more components. The final
 round even swaps the tokens, so all keywords must be spelled backwards
 (sort of, can you spot <code>printf</code> in the <code>P</code> macro?).</p>
 <p>Try to indent the source. The unbalanced parentheses confuse Solaris’
-indent to the max (although the result does compile):</p>
+<code>indent</code> to the max (although the result does compile):</p>
 <p>Looking at the indented source is even <em>less</em> fun, because the nice
 diamond pattern has been replaced by something that looks like, uhm,
 modem noise.</p>
@@ -468,7 +468,7 @@ modem noise.</p>
 <p>What’s the exit status? The program exits with <code>J - 1</code> where <code>J</code> is the
 return value from several non-void functions (needed to shut up
 lint). The last assignment is <code>J = printf ("%c", 10);</code> so the exit
-status is 0 unless the last <code>printf</code> failed, which is even a <em>useful</em>
+status is <code>0</code> unless the last <code>printf</code> failed, which is even a <em>useful</em>
 status. A further obfuscation is the use of <code>10</code> instead of <code>'\n'</code>.
 <code>'\n'</code> can not be constructed by token pasting, AFAIK. That’s why <code>schweikh2</code>
 is likely to produce occasional garbage on non-ASCII execution character

@@ -1704,7 +1704,7 @@ We would appreciate anyone who has it or even just knows the name! Thank you.
 ### Source code: [1996/gandalf/gandalf.c](%%REPO_URL%%/1996/gandalf/gandalf.c)
 ### Information: [1996/gandalf/index.html](1996/gandalf/index.html)
 
-The link was http://www.tc3.co.uk/~gandalf/G.HTML but this no longer exists as
+The link was `http://www.tc3.co.uk/~gandalf/G.HTML` but this no longer exists as
 it was instead requiring a login / password.
 
 Do you have an updated link? We welcome your help!
@@ -1764,7 +1764,7 @@ But since it does not for the time being it is advisable to just redirect
 If X is not running this program will very likely crash or do something funny.
 This should NOT be fixed.
 
-NOTE: the two boards will be on top of each other so you will have to drag one
+**NOTE**: the two boards will be on top of each other so you will have to drag one
 off the other so that you can properly play.
 
 

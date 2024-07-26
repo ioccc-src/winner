@@ -4,9 +4,9 @@
     make all
     ```
 
-    There is another version which is the original entry. See [alternate
-    version](#alternate-code) for details as to how to use and why it was made the
-    alt version.
+There is another version which is the original entry. See [Alternate
+code](#alternate-code) for details as to how to use and why it was made the
+alt version.
 
 
 ## To use:

@@ -417,7 +417,7 @@ You have been warned.</p>
 <pre><code>    ./schweikh3</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>The source fails to compile on compilers that recognize the inline
-keyword by default. For gcc, you may need to use <code>-ansi</code>.</p>
+keyword by default. For <code>gcc</code>, you may need to use <code>-ansi</code>.</p>
 <p>See the file <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1996/schweikh3/schweikh3.info">schweikh3.info</a> for example output from various
 systems.</p>
 <p>But still it is a useful utility. To use try:</p>
@@ -433,11 +433,14 @@ disgusting. Besides, requiring <code>iso646.h</code> will render the program
 uncompilable on many systems that have not yet incorporated
 Amendment One to The Standard. If you, dear reader, suffer from
 this disease, just read <code>iso646.h</code>.</p>
-<p>There are no <code>if' statements. They have been replaced by</code>switch () case 1:<code>or</code>switch () case 0:<code>etc. At least one</code>switch<code>has a declaration after the opening brace, booh! Identifiers are named after random programming languages, BASIC (as</code>Basic`),
+<p>There are no <code>if</code> statements. They have been replaced by
+<code>switch () case 1:</code> or <code>switch () case 0:</code> etc. At least one
+<code>switch</code> has a declaration after the opening brace, booh!
+Identifiers are named after random programming languages, BASIC (as <code>Basic</code>),
 COBOL, F77, awk etc.</p>
 <p>You have to select maximum ANSI C conformance of your
 compiler. The source fails to compile under a C++ compiler due to
-the `new’ identifier which is a C++ reserved word:</p>
+the <code>new</code> identifier which is a C++ reserved word:</p>
 <pre><code>    $ g++ schweikh3.c
     schweikh3.c:9: parse error before `new&#39;
     schweikh3.c:16: parse error before `new&#39;
@@ -447,19 +450,19 @@ the `new’ identifier which is a C++ reserved word:</p>
     [...]
     schweikh3.c:91: confused by earlier errors, bailing out</code></pre>
 <p>The source fails to compile on compilers that recognize the inline
-keyword by default, e.g. gcc:</p>
+keyword by default, e.g. <code>gcc</code>:</p>
 <pre><code>    $ gcc schweikh3.c
     schweikh3.c:46: parse error before `void&#39;
     schweikh3.c: In function `main&#39;:
     schweikh3.c:91: parse error before `inline&#39;
     schweikh3.c: At top level:
     schweikh3.c:97: parse error before `void&#39;</code></pre>
-<p>The <code>-ansi</code> option to gcc fixes this.</p>
+<p>The <code>-ansi</code> option to <code>gcc</code> fixes this.</p>
 <p>The source fails to compile on obsolete systems with obsolete
 memory models due to the identifier <code>far</code> (to be honest: this is
 untested :-) ).</p>
-<p>Does your indent cope with backslash/newline pairs in between keywords like in
-<code>re\turn</code> where the <code>re\</code> is at the end of a line? ? Solaris’ indent inserts
+<p>Does your <code>indent(1)</code> cope with backslash/newline pairs in between keywords like in
+<code>re\turn</code> where the <code>re\</code> is at the end of a line? ? Solaris’ <code>indent(1)</code> inserts
 spaces and thereby renders the source uncompilable…</p>
 <p>The indented source will exhibit different semantics when indenting
 changes the number of lines (due to using the <code>__LINE__</code> macro in an
