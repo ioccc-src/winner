@@ -5670,14 +5670,14 @@ A shortened manifest for our example entry is:
 
 ``` <!---json-->
     "manifest" : [
-	{
-	    "file_path" : "laman.c",
-	    "inventory_order" : 20,
-	    "OK_to_edit" : true,
-	    "display_as" : "c",
-	    "display_via_github" : true,
-	    "entry_text" : "entry source code"
-	}
+        {
+            "file_path" : "laman.c",
+            "inventory_order" : 20,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "entry source code"
+        }
     ]
 ```
 
