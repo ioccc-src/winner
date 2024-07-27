@@ -389,7 +389,7 @@
 
 <!-- BEFORE: 1st line of markdown file: faq.md -->
 <h1 id="faq-table-of-contents">FAQ Table of Contents</h1>
-<p>This is FAQ version <strong>28.0.2 2024-07-26</strong>.</p>
+<p>This is FAQ version <strong>28.0.3 2024-07-27</strong>.</p>
 <h2 id="section-0---submitting-entries-to-a-new-ioccc">Section 0 - <a href="#faq0">Submitting entries to a new IOCCC</a></h2>
 <ul>
 <li><a class="normal" href="#faq0_0">0.0 - How may I enter the IOCCC?</a></li>
@@ -403,6 +403,11 @@
 <li><a class="normal" href="#faq0_8">0.8 - How do I report bugs in a <code>mkiocccentry</code> tool?</a></li>
 <li><a class="normal" href="#faq0_9">0.9 - What is a <code>.auth.json</code> file?</a></li>
 <li><a class="normal" href="#faq0_10">0.10 - What is a <code>.info.json</code> file?</a></li>
+<li><a class="normal" href="#faq0_11">0.11 - How can I validate any JSON document?</a></li>
+<li><a class="normal" href="#faq0_12">0.12 - How can I validate my <code>.auth.json</code> and/or <code>.info.json</code> files?</a></li>
+<li><a class="normal" href="#faq0_13">0.13 - How can I validate my submission tarball?</a></li>
+<li><a class="normal" href="#faq0_14">0.14 - What is the <code>fnamchk</code> tool?</a></li>
+<li><a class="normal" href="#faq0_15">0.15 - What is the <code>mkiocccentry</code> tool and how do I use it?</a></li>
 </ul>
 <h2 id="section-1---history-of-the-ioccc">Section 1 - <a href="#faq1">History of the IOCCC</a></h2>
 <ul>
@@ -984,31 +989,31 @@ See
 for a list of valid codes.</li>
 </ul>
 <p><strong>NOTE:</strong> in <code>mkiocccentry</code> use <code>XX</code> if you want your location to be anonymous.</p></li>
-<li><p><code>email</code> (null or double quoted string)</p>
+<li><p><code>email</code> (<code>null</code> or double quoted string)</p>
 <ul>
 <li>The <strong>email</strong> of this author in the form of <code>x@y</code>, or <code>null</code> if not provided.</li>
 </ul></li>
-<li><p><code>url</code> (null or double quoted string)</p>
+<li><p><code>url</code> (<code>null</code> or double quoted string)</p>
 <ul>
 <li>The primary <strong>URL</strong> of this author, or <code>null</code> if not provided.</li>
 </ul></li>
-<li><p><code>alt_url</code> (null or double quoted string)</p>
+<li><p><code>alt_url</code> (<code>null</code> or double quoted string)</p>
 <ul>
 <li>The <strong>alt URL</strong> of this author, or <code>null</code> if not provided.</li>
 </ul></li>
-<li><p><code>mastodon</code> (null or double quoted string)</p>
+<li><p><code>mastodon</code> (<code>null</code> or double quoted string)</p>
 <ul>
 <li>The Mastodon handle of this author in the form of <code>@user@domain</code>, or
 <code>null</code> if not provided. See the
 FAQ on “<a href="#try_mastodon">Mastodon</a>”
 for more information.</li>
 </ul></li>
-<li><p><code>github</code> (null or double quoted string)</p>
+<li><p><code>github</code> (<code>null</code> or double quoted string)</p>
 <ul>
 <li>The <strong><a href="https://github.com">GitHub</a> account</strong> of this author in the form of <code>@user</code>, or <code>null</code> if not
 provided.</li>
 </ul></li>
-<li><p><code>affiliation</code> (null or double quoted string)</p>
+<li><p><code>affiliation</code> (<code>null</code> or double quoted string)</p>
 <ul>
 <li>This author’s <strong>affiliation</strong>, if any, or <code>null</code> if not provided.</li>
 </ul>
@@ -1109,8 +1114,7 @@ valid by <code>chkentry</code>) your submission would be rejected for violating 
 17</a> and in particular because <code>chkentry</code> would not
 validate the <code>.auth.json</code> file.</p>
 <p>If you wish to <strong>verify</strong> that your <code>.auth.json</code> file is valid <strong>JSON</strong> then see the
-<a href="#validating_json">validating JSON documents</a> in the
-FAQ on “<a href="#author_json">author_handle.json</a>”.</p>
+FAQ on “<a href="#validating_json">validating JSON documents</a>”.</p>
 <div id="faq0_10">
 <div id="info_json">
 <h3 id="faq-0.10-what-is-a-.info.json-file">FAQ 0.10: What is a <code>.info.json</code> file?</h3>
@@ -1545,8 +1549,262 @@ valid by <code>chkentry</code>) your submission would be rejected for violating 
 17</a> and in particular because <code>chkentry</code> would not
 validate the <code>.info.json</code> file.</p>
 <p>If you wish to <strong>verify</strong> that your <code>.info.json</code> file is valid <strong>JSON</strong> then see the
-<a href="#validating_json">validating JSON documents</a> in the
-FAQ on “<a href="#author_json">author_handle.json</a>”.</p>
+FAQ on “<a href="#validating_json">validating JSON documents</a>”.</p>
+<div id="faq0_11">
+<div id="validating_json">
+<div id="jparse">
+<h3 id="faq-0.11-how-can-i-validate-any-json-document">FAQ 0.11: How can I validate any JSON document?</h3>
+</div>
+</div>
+</div>
+<p>If you want or need to verify that a JSON document (as a string or file) is
+valid, you can use the
+<a href="https://github.com/ioccc-src/mkiocccentry/blob/master/jparse/README.md">jparse</a>
+tool. This tool, <code>jparse(1)</code>, is, for the time being, in the <a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry
+repo</a>, but <!--XXX - update the above
+URL to point to the jparse repo when it is populated --> will later be in a
+separate repo. In any case you need to download the repo or <code>git clone</code> it and
+then compile it (cd to the directory and then run <code>make all</code>). If you wish to
+make it easier you can then do <code>make install</code> either as root or via <code>sudo</code> so
+you can run the tool from any path.</p>
+<p>The syntax of <code>jparse(1)</code> is very simple:</p>
+<pre class="&lt;!--sh--&gt;"><code>    jparse foo.json</code></pre>
+<p>If the tool shows <code>valid JSON</code> then the document is valid JSON; otherwise it’ll
+show an error message. If you don’t want to see any output unless it is invalid
+you can specify the <code>-q</code> option to <code>jparse</code>. In that case an exit code of 0
+indicates the JSON is valid.</p>
+<p>If you want to see more information about the parsing you can increase the
+verbosity with the <code>-v</code> option. For instance:</p>
+<pre class="&lt;!--sh--&gt;"><code>    jparse -v 3 foo.json</code></pre>
+<p>If the tool is not installed then you will obviously have to specify the path of
+the tool.</p>
+<div id="faq0_12">
+<div id="validating_auth_info_json">
+<div id="chkentry">
+<h3 id="faq-0.12-how-can-i-validate-my-.auth.json-andor-.info.json-files">FAQ 0.12: How can I validate my <code>.auth.json</code> and/or <code>.info.json</code> files?</h3>
+</div>
+</div>
+</div>
+<p>If you want to validate the <code>.auth.json</code> or <code>.info.json</code> files you
+should use <code>chkentry(1)</code> from the <a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry
+repo</a>.</p>
+<p><code>chkentry</code> uses the <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/jparse/README.md">jparse</a>
+API; you can use the <code>jparse</code> tool itself to validate JSON documents, discussed
+above in the
+FAQ on “<a href="#validating_json">validating JSON documents</a>”
+but the <code>chkentry</code> tool has <strong>additional</strong> checks on these two IOCCC specific files.
+See the
+FAQ on “<a href="#auth_json">.auth.json</a>”
+and
+FAQ on “<a href="#info_json">.info.json</a>”
+for more details on these files.</p>
+<p>The <code>chkentry(1)</code> tool accepts more than one command line form.
+If you pass a single argument, it is expected to be a directory that has both
+<code>.auth.json</code> and <code>.info.json</code> in it. You can also specify a <code>.auth.json</code> and/or
+<code>.info.json</code> file. An argument of “<code>.</code>” will skip that file. For instance:</p>
+<pre><code>    # test entry directory test_work:
+    chkentry test_work
+
+    # run checks on .info.json:
+    chkentry .info.json .
+
+    # run checks on .auth.json:
+    chkentry . .auth.json
+
+    # run checks on .info.json and .auth.json:
+    chkentry .info.json .auth.json</code></pre>
+<p>If there is a <a href="https://www.json.org/json-en.html">JSON</a> issue detected by
+<code>jparse(3)</code>, then there is a <a href="https://www.json.org/json-en.html">JSON</a> error and
+<code>chkentry(1)</code> will report it as an <strong>error</strong>. If the parsing is OK (i.e. valid
+JSON) but there is an issue in one or both of the
+<a href="https://www.json.org/json-en.html">JSON</a> files in <strong>the context of the IOCCC</strong>,
+it will report this as an <strong>error</strong>. Thus, if you were to package your
+submission manually then you would be violating <a href="next/rules.html#rule17">Rule
+17</a>.</p>
+<div id="faq0_13">
+<div id="txzchk">
+<div id="tarball">
+<h3 id="faq-0.13---how-can-i-validate-my-submission-tarball">FAQ 0.13 - How can I validate my submission tarball?</a></h3>
+</div>
+</div>
+</div>
+<p>The tool that validates submission tarballs can be obtained from the <a href="https://github.com/ioccc-src/mkiocccentry">IOCCC
+mkiocccentry repo</a>. The
+<code>mkiocccentry</code> tool itself will run the validator <strong>after</strong> forming the tarball.
+However, you may wish to manually validate the tarball. The tool that does this
+is <code>txzchk</code>.</p>
+<p>If you wish to validate the tarball without running the <code>mkiocccentry(1)</code> tool,
+for instance the tarball
+<code>submit.12345678-1234-4321-abcd-1234567890ab-2.1720636351.txz</code> you can, after
+installing the tools, do:</p>
+<pre><code>    txzchk submit.12345678-1234-4321-abcd-1234567890ab-2.1720636351.txz</code></pre>
+<p>Assuming that the tarball exists and is valid, you should see no output.</p>
+<p>If you wish to see the contents, for instance like <code>mkiocccentry(1)</code> does, you
+could do:</p>
+<pre><code>    txzchk -v 1 submit.12345678-1234-4321-abcd-1234567890ab-2.1720636351.txz</code></pre>
+<p>As the <a href="next/guidelines.html#txzchk">guidelines state</a>, it is beyond the scope
+of this document to discuss the many tests that <code>txzchk(1)</code> runs; if you must
+know we refer you to the <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/txzchk.c">source
+code</a>.</p>
+<div id="faq0_14">
+<div id="fnamchk">
+<div id="tarball_filename">
+<h3 id="faq-0.14---what-is-the-fnamchk-tool">FAQ 0.14 - What is the <code>fnamchk</code> tool?</h3>
+</div>
+</div>
+</div>
+<p>This tool, which is in the <a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry
+repo</a>, validates the directory name
+of your submission.</p>
+<p>Rather than <code>mkiocccentry</code> running this tool manually, <code>txzchk</code>’s algorithm uses
+the output of this tool. If you wish to validate your tarball filename manually,
+you can do so. For instance:</p>
+<pre><code>    fnamchk submit.12345678-1234-4321-abcd-1234567890ab-2.1720636351.txz</code></pre>
+<p>Assuming everything is OK, it would show:</p>
+<blockquote>
+<p><code>12345678-1234-4321-abcd-1234567890ab-2</code></p>
+</blockquote>
+<p>See also the
+FAQ on “<a href="#txzchk">validating your submission tarball</a>”
+for more information.</p>
+<div id="faq0_15">
+<div id="mkiocccentry">
+<h3 id="faq-0.15---what-is-the-mkiocccentry-tool-and-how-do-i-use-it">FAQ 0.15 - What is the <code>mkiocccentry</code> tool and how do I use it?</h3>
+</div>
+</div>
+<p>This tool also comes from the <a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry
+repo</a> and it is <strong>required</strong> that you
+use it to package your submission. Not doing so puts you at a great risk of
+violating the <a href="next/rules.html">Rules</a> and in particular <a href="next/rules.html#rule17">Rule
+17</a>. The <code>mkiocccentry</code> tool first gathers your source
+code, your Makefile, your remarks, other information about your submission,
+information about the author (or authors) and then runs a lot of tests before (if
+all is OK) forming your tarball. After this is done it will additionally run the
+<code>txzchk(1)</code> tool (which runs the <code>fnamchk(1)</code> tool) on the submission tarball.</p>
+<p>See the
+FAQ on “<a href="#submit">submitting to the IOCCC</a>”
+for details on how to register for the IOCCC.</p>
+<p>Once you have registered, you will need to package your entry with the
+<code>mkiocccentry</code> tool. The below details discuss this very important tool. As it
+is complicated we will explain how to use this tool.</p>
+<p>As the <a href="next/guidelines.html">Guidelines</a> state, the synopsis is:</p>
+<pre><code>    mkiocccentry [options] work_dir prog.c \
+         Makefile remarks.md [file ...]</code></pre>
+<p>… where <code>work_dir</code> is a directory that will be used to build the submission
+tarball, <code>prog.c</code> is your submission source code, <code>Makefile</code> is your submission’s
+<code>Makefile</code>, <code>remarks.md</code> are your remarks (that will be the basis of the
+<code>README.md</code> file which will be used to form the <code>index.html</code> file, if your
+submission wins) and the remaining args are the paths to any other files you
+wish to submit.</p>
+<p>The <code>work_dir</code> <strong>MUST</strong> already exist, as a directory, and it is an error if it
+is not a directory that can be written to. In <strong>this</strong> directory your <strong>submission
+directory</strong> will be created, with the name based on your IOCCC registration
+username, which is <strong>in the form of a UUID</strong> and submission number; see the
+<a href="next/rules.html">rules</a> for more details on this, and in particular <a href="next/rules.html#rule17">Rule
+17</a>.</p>
+<p>If the <strong><em>subdirectory</em> in the <em>work directory</em></strong> already exists, you will have to
+move it, remove it or otherwise specify a different work directory (<strong>NOT</strong> the
+subdirectory), as it needs to be empty and the <code>mkiocccentry(1)</code> tool does not
+check this for you as it could not do anything about anyway.</p>
+<p>This <em>subdirectory is where your files will be <strong>copied</strong> to</em>. Your <em>submission
+tarball</em> (which you will upload to the submit server) that <code>txzchk(1)</code> will
+validate <em>will be placed in the <strong>work directory</strong></em>, and <strong>its <em>contents</em> will
+be the <em>subdirectory</em> with your submission’s files</strong>.</p>
+<p>The <code>mkiocccentry(1)</code> tool will ask you for information about your
+submission <em>as well as author details</em> (that will only be looked at if the
+submission wins), run some tests and run a number of other tools, as already
+mentioned and as described below.</p>
+<p>To help you with editing a submission, the <code>mkiocccentry(1)</code> tool has
+some options to write <em>OR</em> read from an answers file so you do not have to input
+the information about the author(s) and the submission itself, after saving the
+answers to a file. To write to <code>answers.txt</code> try:</p>
+<pre><code>    mkiocccentry -a answers.txt ...</code></pre>
+<p>Alternatively, if you wish to overwrite a file, you can use the <code>-A</code>
+flag with the same option argument. Be <strong>very careful</strong> that you do not accidentally
+overwrite your <code>prog.c</code> or some other important file!</p>
+<p>To make use of the answers file, use the <code>-i answers</code> option like:</p>
+<pre><code>    mkiocccentry -i answers.txt ...</code></pre>
+<div id="mkiocccentry_checks">
+<h4 id="mkiocccentry-checks"><code>mkiocccentry</code> checks</h4>
+</div>
+<p><code>mkiocccentry(1)</code> will check and warn about the following conditions:</p>
+<ul>
+<li>If the files do not exist, are not regular files or cannot be read.</li>
+<li>If <code>prog.c</code> violates <a href="next/rules.html#rule2">Rule 2</a> (see
+<a href="https://github.com/ioccc-src/mkiocccentry/blob/master/iocccsize.c">iocccsize.c</a>).</li>
+<li>If <code>prog.c</code> is empty.</li>
+<li>If <code>prog.c</code> has any high bit char (see
+<a href="https://github.com/ioccc-src/mkiocccentry/blob/master/iocccsize.c">iocccsize.c</a>).</li>
+<li>If <code>prog.c</code> has any NUL char (see
+<a href="https://github.com/ioccc-src/mkiocccentry/blob/master/iocccsize.c">iocccsize.c</a>).</li>
+<li>If <code>prog.c</code> has any unknown or invalid trigraph (see
+<a href="https://github.com/ioccc-src/mkiocccentry/blob/master/iocccsize.c">iocccsize.c</a>).</li>
+<li>If <code>prog.c</code> triggers a word buffer overflow (see
+<a href="https://github.com/ioccc-src/mkiocccentry/blob/master/iocccsize.c">iocccsize.c</a>).</li>
+<li>If <code>prog.c</code> triggers an <code>ungetc(3)</code> error (see
+<a href="https://github.com/ioccc-src/mkiocccentry/blob/master/iocccsize.c">iocccsize.c</a>).</li>
+<li>If the first rule in the <code>Makefile</code> is not <code>all</code>.</li>
+<li>If the <code>Makefile</code> does not have a <code>clean</code> rule.</li>
+<li>If the <code>Makefile</code> does not have a <code>clobber</code> rule.</li>
+<li>If the <code>Makefile</code> does not have a <code>try</code> rule.</li>
+<li>If the <code>remarks.md</code> is empty.</li>
+</ul>
+<p>Conditions that one must correct, and which <code>mkiocccentry(1)</code> will prompt until
+they are correct, are:</p>
+<ul>
+<li>Your <em>title</em> is not in the range of 1 through <code>MAX_TITLE_LEN</code> chars (see
+<a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h">limit_ioccc.h</a>).</li>
+<li>Your <em>title</em> does not match the regexp <code>^[0-9a-z][0-9a-z._+-]*$</code>.</li>
+<li>Your <em>abstract</em> is not between 1 and <code>MAX_ABSTRACT_LEN</code> chars
+(see <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h">limit_ioccc.h</a>).</li>
+<li>the author count is not 1 through <code>MAX_AUTHORS</code> (see
+<a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h">limit_ioccc.h</a>).</li>
+<li>An author <em>name</em> is not 1 through <code>MAX_NAME_LEN</code> chars (see
+<a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h">limit_ioccc.h</a>).</li>
+<li>Duplicate author <em>name</em>.</li>
+<li><em>Country code</em> is invalid (not ISO 3166-1 2 character
+codes).</li>
+<li>An <em>email</em>, if provided, is not in the format of <code>x@y</code> or
+if <code>x</code> or <code>y</code> contain a <code>@</code>, are empty or if the total length is longer than
+<code>MAX_EMAIL_LEN</code> (see <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h">limit_ioccc.h</a>).</li>
+<li>A <em>URL</em> or <em>alt URL</em>, if provided, does not start with <code>http://</code>
+or <code>https://</code> or is longer than <code>MAX_URL_LEN</code> chars (see
+<a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h">limit_ioccc.h</a>)
+or does not have anything after the <code>http://</code> or <code>https://</code>.</li>
+<li>A <em>mastodon handle</em>, if provided, is not in the form of
+<code>@user@site</code> (i.e. starts with an <code>@</code>, has text following it and then another
+<code>@</code> followed by more text and has no other <code>@</code>) or is longer than <code>MAX_MASTODON_LEN</code> (see
+<a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h">limit_ioccc.h</a>).</li>
+<li>A <em>GitHub account</em>, if provided, does not start with an <code>@</code>,
+has more than one <code>@</code> or is longer than <code>MAX_GITHUB_LEN</code> (see
+<a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h">limit_ioccc.h</a>).</li>
+<li>An <em>affiliation</em>, if provided, is longer than
+<code>MAX_AFFILIATION_LEN</code> (see <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h">limit_ioccc.h</a>).</li>
+<li>An <em>author handle</em>, if the default is not accepted, does
+not match the regexp <code>^[0-9A-Za-z][0-9A-Za-z._+-]*$</code>.</li>
+<li>An <em>author handle</em> is repeated.</li>
+<li>The output of <code>ls</code> on the submission directory is incorrect.</li>
+</ul>
+<p>Although the <code>mkiocccentry(1)</code> tool will verify everything for you, you may wish
+to validate different parts individually with the different tools. As the
+<a href="rules.html">rules</a> state, each of these tools has a <code>-h</code> option.</p>
+<p>See the
+FAQ on “<a href="#jparse">jparse</a>”,
+the
+FAQ on “<a href="#auth_json">.auth.json</a>”,
+the
+FAQ on “<a href="#info_json">.info.json</a>”,
+the
+FAQ on “<a href="#chkentry">chkentry</a>”,
+the
+FAQ on “<a href="#txzchk">txzchk</a>”
+and the
+FAQ on “<a href="#fnamchk">fnamchk</a>”
+for more details on the tools that <code>mkiocccentry</code> either executes directly or
+indirectly as part of the packaging process, especially if you wish to run one
+or more of these tools manually.</p>
+<p>See also the <a href="next/guidelines.html">Guidelines</a> and the <a href="next/rules.html">Rules</a>
+(and in particular <a href="next/rules.html#rule17">Rule 17</a>).</p>
 <div id="faq1">
 <h2 id="section-1-history-of-the-ioccc">Section 1: History of the IOCCC</h2>
 </div>
@@ -2751,9 +3009,9 @@ provided by the author and any other file in the winning entry, found under the
 entry’s subdirectory.</p>
 <p>If you downloaded <code>1984/mullender/1984_mullender.tar.bz2</code>, for instance, you might
 then do:</p>
-<div class="sourceCode" id="cb59"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a>        <span class="bu">cd</span> 1984/mullender</span>
-<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a>        <span class="fu">make</span> everything</span>
-<span id="cb59-3"><a href="#cb59-3" aria-hidden="true" tabindex="-1"></a>        <span class="ex">./mullender.alt</span></span></code></pre></div>
+<div class="sourceCode" id="cb68"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a>        <span class="bu">cd</span> 1984/mullender</span>
+<span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a>        <span class="fu">make</span> everything</span>
+<span id="cb68-3"><a href="#cb68-3" aria-hidden="true" tabindex="-1"></a>        <span class="ex">./mullender.alt</span></span></code></pre></div>
 <p>to compile all versions and then run the alternate version (if you have
 a PDP-11 or VAX-11 you would be able to run the original version). For more help
 on compiling entries, see also the
@@ -2794,8 +3052,8 @@ if you switched to each entry’s directory and ran <code>make everything</code>
 <p>If you download the 1984 tarball, i.e. <code>1984/1984.tar.bz2</code>, then you might
 extract it and then switch to the directory and compile everything of each
 entry:</p>
-<div class="sourceCode" id="cb60"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>        <span class="bu">cd</span> 1984</span>
-<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a>        <span class="fu">make</span> everything</span></code></pre></div>
+<div class="sourceCode" id="cb69"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a>        <span class="bu">cd</span> 1984</span>
+<span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a>        <span class="fu">make</span> everything</span></code></pre></div>
 <p>For more help on compiling entries, see also the
 FAQ on “<a href="#make_rules">IOCCC Makefile rules</a>”.</p>
 <p>Of course in this case you can also switch to individual entries and look at the
@@ -3558,12 +3816,17 @@ in the case of <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master
 <p><strong>TL:DR</strong>: The contents of these JSON files contain the best known
 information about authors of IOCCC entries and is used to help form
 HTML files as well to contact an author.</p>
-<p>The content of these JSON files are used by tools from a <a href="bin/index.html">bin directory tool</a>
-to help build HTML content for the <a href="https://www.ioccc.org">official IOCCC website</a>.
-For example, the <code>index.html</code> file for each IOCCC entry contains
-selected information about the authors. Tools from the <a href="bin/index.html">bin directory</a>
-use the content of these JSON files to generate the <code>index.html</code> files for each IOCCC
-winning entry.</p>
+<p><strong>NOTE</strong>: tools to validate the <code>author_handle.json</code> files, which are only for
+winning authors, are in the works (which will be documented after they are
+developed). See the
+FAQ on “<a href="#author_handle_faq">author handles</a>”
+for more information on author handles.</p>
+<p>The content of these JSON files are used by tools from the <a href="bin/index.html">bin directory</a>
+to help build HTML content for the <a href="https://www.ioccc.org">official IOCCC website</a>.</p>
+<p>For example, the <code>index.html</code> file for each IOCCC entry contains selected
+information about the authors. Tools from the <a href="bin/index.html">bin directory</a>
+use the content of these JSON files to generate the <code>index.html</code> files for each
+IOCCC winning entry.</p>
 <p>Moreover, should the <a href="judges.html">IOCCC judges</a> need to
 contact an authors of an IOCCC entry, they will consult the contents
 of the author’s JSON file for ways to contact them.</p>
@@ -3617,33 +3880,12 @@ is to look at an example, the <code>author_handle.json</code> file for Yusuke En
             { &quot;entry_id&quot; : &quot;2020_endoh3&quot; }
         ]
     }</code></pre>
-<p>Before we walk you through the above JSON document, we will show you how to
-validate that the JSON is validly formed.</p>
-<div id="validating_json">
-<h5 id="validating-json-documents">Validating JSON documents</h5>
-</div>
-<p>Although special tools (that will validate <code>author_handle.json</code> files) are in
-the works (which will be documented here after they are developed) there is a
-way to validate all JSON documents including these files. Until those special
-tools are developed (which will do the same as this next tool but more) we
-request that you validate the JSON with this tool that we co-developed with Cody
-Boone Ferguson. This tool, <code>jparse(1)</code>, for the time being is in the
-<a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry repo</a> but will later be
-in a separate repo. In any case you need to download the repo or <code>git clone</code> it
-and then compile it (cd to the directory and then run <code>make</code>). If you wish to
-make it easier you can do <code>make install</code> so you can run the tool from any path
-but in any case the syntax is:</p>
-<pre class="&lt;!--sh--&gt;"><code>        jparse foo.json</code></pre>
-<p>If the tool exits 0 (and shows no output) then the JSON is valid. If it is
-invalid you should get an error but for more details you can increase the
-verbosity with the <code>-v</code> flag like:</p>
-<pre class="&lt;!--sh--&gt;"><code>        jparse -v 3 foo.json</code></pre>
-<p>If the tool is not installed then you will obviously have to specify the path of
-the tool.</p>
-<p>If you wish to validate every JSON file in <code>author/</code> then you could do so like:</p>
-<pre class="&lt;!--sh--&gt;"><code>        for auth in *.json; do jparse 2&gt;/dev/null &quot;$auth&quot; || echo &quot;$auth is invalid JSON&quot; ; done</code></pre>
+<p><strong>NOTE</strong>: if you need to just check the validity of a JSON document then see the
+FAQ on “<a href="#validating_json">validating JSON documents</a>”. Taking that FAQ in mind,
+if you wish to validate every JSON file in <code>author/</code> then you could do so like:</p>
+<pre class="&lt;!--sh--&gt;"><code>        for auth in *.json; do jparse -q &quot;$auth&quot; || echo &quot;$auth is invalid JSON&quot; ; done</code></pre>
 <p>If you see any output then it will say which file or files are invalid JSON
-(this should not actually happen).</p>
+(this should not actually happen, however).</p>
 <div id="walk_through_author_json">
 <h5 id="walk-through-of-an-author_handle.json-file">Walk through of an <code>author_handle.json</code> file</h5>
 </div>

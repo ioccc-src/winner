@@ -1,6 +1,6 @@
 # FAQ Table of Contents
 
-This is FAQ version **28.0.2 2024-07-26**.
+This is FAQ version **28.0.3 2024-07-27**.
 
 
 ## Section  0 - [Submitting entries to a new IOCCC](#faq0)
@@ -15,6 +15,11 @@ This is FAQ version **28.0.2 2024-07-26**.
 - <a class="normal" href="#faq0_8">0.8  - How do I report bugs in a `mkiocccentry` tool?</a>
 - <a class="normal" href="#faq0_9">0.9  - What is a `.auth.json` file?</a>
 - <a class="normal" href="#faq0_10">0.10 - What is a `.info.json` file?</a>
+- <a class="normal" href="#faq0_11">0.11 - How can I validate any JSON document?</a>
+- <a class="normal" href="#faq0_12">0.12 - How can I validate my `.auth.json` and/or `.info.json` files?</a>
+- <a class="normal" href="#faq0_13">0.13 - How can I validate my submission tarball?</a>
+- <a class="normal" href="#faq0_14">0.14 - What is the `fnamchk` tool?</a>
+- <a class="normal" href="#faq0_15">0.15 - What is the `mkiocccentry` tool and how do I use it?</a>
 
 
 ## Section  1 - [History of the IOCCC](#faq1)
@@ -736,26 +741,26 @@ author(s) of the submission:
 
      **NOTE:** in `mkiocccentry` use `XX` if you want your location to be anonymous.
 
-- `email` (null or double quoted string)
+- `email` (`null` or double quoted string)
      * The **email** of this author in the form of `x@y`, or `null` if not provided.
 
-- `url` (null or double quoted string)
+- `url` (`null` or double quoted string)
      * The primary **URL** of this author, or `null` if not provided.
 
-- `alt_url` (null or double quoted string)
+- `alt_url` (`null` or double quoted string)
      * The **alt URL** of this author, or `null` if not provided.
 
-- `mastodon` (null or double quoted string)
+- `mastodon` (`null` or double quoted string)
      * The Mastodon handle of this author in the form of `@user@domain`, or
      `null` if not provided.  See the
      FAQ on "[Mastodon](#try_mastodon)"
      for more information.
 
-- `github` (null or double quoted string)
+- `github` (`null` or double quoted string)
      * The **[GitHub](https://github.com) account** of this author in the form of `@user`, or `null` if not
      provided.
 
-- `affiliation` (null or double quoted string)
+- `affiliation` (`null` or double quoted string)
      * This author's **affiliation**, if any, or `null` if not provided.
 
     **NOTE:** if provided, the length of the **affiliation** **MUST** be within
@@ -859,8 +864,7 @@ valid by `chkentry`) your submission would be rejected for violating [Rule
 validate the `.auth.json` file.
 
 If you wish to **verify** that your `.auth.json` file is valid **JSON** then see the
-[validating JSON documents](#validating_json) in the
-FAQ on "[author_handle.json](#author_json)".
+FAQ on "[validating JSON documents](#validating_json)".
 
 
 <div id="faq0_10">
@@ -1304,8 +1308,332 @@ valid by `chkentry`) your submission would be rejected for violating [Rule
 validate the `.info.json` file.
 
 If you wish to **verify** that your `.info.json` file is valid **JSON** then see the
-[validating JSON documents](#validating_json) in the
-FAQ on "[author_handle.json](#author_json)".
+FAQ on "[validating JSON documents](#validating_json)".
+
+
+<div id="faq0_11">
+<div id="validating_json">
+<div id="jparse">
+### FAQ 0.11: How can I validate any JSON document?
+</div>
+</div>
+</div>
+
+If you want or need to verify that a JSON document (as a string or file) is
+valid, you can use the
+[jparse](https://github.com/ioccc-src/mkiocccentry/blob/master/jparse/README.md)
+tool. This tool, `jparse(1)`, is, for the time being, in the [mkiocccentry
+repo](https://github.com/ioccc-src/mkiocccentry), but <!--XXX - update the above
+URL to point to the jparse repo when it is populated --> will later be in a
+separate repo. In any case you need to download the repo or `git clone` it and
+then compile it (cd to the directory and then run `make all`). If you wish to
+make it easier you can then do `make install` either as root or via `sudo` so
+you can run the tool from any path.
+
+The syntax of `jparse(1)` is very simple:
+
+
+``` <!--sh-->
+    jparse foo.json
+```
+
+If the tool shows `valid JSON` then the document is valid JSON; otherwise it'll
+show an error message. If you don't want to see any output unless it is invalid
+you can specify the `-q` option to `jparse`. In that case an exit code of 0
+indicates the JSON is valid.
+
+If you want to see more information about the parsing you can increase the
+verbosity with the `-v` option. For instance:
+
+``` <!--sh-->
+    jparse -v 3 foo.json
+```
+
+If the tool is not installed then you will obviously have to specify the path of
+the tool.
+
+
+<div id="faq0_12">
+<div id="validating_auth_info_json">
+<div id="chkentry">
+### FAQ 0.12: How can I validate my `.auth.json` and/or `.info.json` files?
+</div>
+</div>
+</div>
+
+If you want to validate the `.auth.json` or `.info.json` files you
+should use `chkentry(1)` from the [mkiocccentry
+repo](https://github.com/ioccc-src/mkiocccentry).
+
+`chkentry` uses the [jparse](https://github.com/ioccc-src/mkiocccentry/blob/master/jparse/README.md)
+API; you can use the `jparse` tool itself to validate JSON documents, discussed
+above in the
+FAQ on "[validating JSON documents](#validating_json)"
+but the `chkentry` tool has **additional** checks on these two IOCCC specific files.
+See the
+FAQ on "[.auth.json](#auth_json)"
+and
+FAQ on "[.info.json](#info_json)"
+for more details on these files.
+
+The `chkentry(1)` tool accepts more than one command line form.
+If you pass a single argument, it is expected to be a directory that has both
+`.auth.json` and `.info.json` in it. You can also specify a `.auth.json` and/or
+`.info.json` file. An argument of "`.`" will skip that file. For instance:
+
+``` <!---sh-->
+    # test entry directory test_work:
+    chkentry test_work
+
+    # run checks on .info.json:
+    chkentry .info.json .
+
+    # run checks on .auth.json:
+    chkentry . .auth.json
+
+    # run checks on .info.json and .auth.json:
+    chkentry .info.json .auth.json
+```
+
+If there is a [JSON](https://www.json.org/json-en.html) issue detected by
+`jparse(3)`, then there is a [JSON](https://www.json.org/json-en.html) error and
+`chkentry(1)` will report it as an **error**. If the parsing is OK (i.e. valid
+JSON) but there is an issue in one or both of the
+[JSON](https://www.json.org/json-en.html) files in **the context of the IOCCC**,
+it will report this as an **error**. Thus, if you were to package your
+submission manually then you would be violating [Rule
+17](next/rules.html#rule17).
+
+<div id="faq0_13">
+<div id="txzchk">
+<div id="tarball">
+### FAQ 0.13 - How can I validate my submission tarball?</a>
+</div>
+</div>
+</div>
+
+The tool that validates submission tarballs can be obtained from the [IOCCC
+mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry). The
+`mkiocccentry` tool itself will run the validator **after** forming the tarball.
+However, you may wish to manually validate the tarball. The tool that does this
+is `txzchk`.
+
+If you wish to validate the tarball without running the `mkiocccentry(1)` tool,
+for instance the tarball
+`submit.12345678-1234-4321-abcd-1234567890ab-2.1720636351.txz` you can, after
+installing the tools, do:
+
+``` <!---sh-->
+    txzchk submit.12345678-1234-4321-abcd-1234567890ab-2.1720636351.txz
+```
+
+Assuming that the tarball exists and is valid, you should see no output.
+
+If you wish to see the contents, for instance like `mkiocccentry(1)` does, you
+could do:
+
+``` <!---sh-->
+    txzchk -v 1 submit.12345678-1234-4321-abcd-1234567890ab-2.1720636351.txz
+```
+
+As the [guidelines state](next/guidelines.html#txzchk), it is beyond the scope
+of this document to discuss the many tests that `txzchk(1)` runs; if you must
+know we refer you to the [source
+code](https://github.com/ioccc-src/mkiocccentry/blob/master/txzchk.c).
+
+<div id="faq0_14">
+<div id="fnamchk">
+<div id="tarball_filename">
+### FAQ 0.14 - What is the `fnamchk` tool?
+</div>
+</div>
+</div>
+
+This tool, which is in the [mkiocccentry
+repo](https://github.com/ioccc-src/mkiocccentry), validates the directory name
+of your submission.
+
+Rather than `mkiocccentry` running this tool manually, `txzchk`'s algorithm uses
+the output of this tool. If you wish to validate your tarball filename manually,
+you can do so. For instance:
+
+``` <!---sh-->
+    fnamchk submit.12345678-1234-4321-abcd-1234567890ab-2.1720636351.txz
+```
+
+Assuming everything is OK, it would show:
+
+> `12345678-1234-4321-abcd-1234567890ab-2`
+
+See also the
+FAQ on "[validating your submission tarball](#txzchk)"
+for more information.
+
+
+
+<div id="faq0_15">
+<div id="mkiocccentry">
+### FAQ 0.15 - What is the `mkiocccentry` tool and how do I use it?
+</div>
+</div>
+
+This tool also comes from the [mkiocccentry
+repo](https://github.com/ioccc-src/mkiocccentry) and it is **required** that you
+use it to package your submission. Not doing so puts you at a great risk of
+violating the [Rules](next/rules.html) and in particular [Rule
+17](next/rules.html#rule17). The `mkiocccentry` tool first gathers your source
+code, your Makefile, your remarks, other information about your submission,
+information about the author (or authors) and then runs a lot of tests before (if
+all is OK) forming your tarball. After this is done it will additionally run the
+`txzchk(1)` tool (which runs the `fnamchk(1)` tool) on the submission tarball.
+
+See the
+FAQ on "[submitting to the IOCCC](#submit)"
+for details on how to register for the IOCCC.
+
+Once you have registered, you will need to package your entry with the
+`mkiocccentry` tool. The below details discuss this very important tool. As it
+is complicated we will explain how to use this tool.
+
+As the [Guidelines](next/guidelines.html) state, the synopsis is:
+
+``` <!---sh-->
+    mkiocccentry [options] work_dir prog.c \
+         Makefile remarks.md [file ...]
+```
+
+... where `work_dir` is a directory that will be used to build the submission
+tarball, `prog.c` is your submission source code, `Makefile` is your submission's
+`Makefile`, `remarks.md` are your remarks (that will be the basis of the
+`README.md` file which will be used to form the `index.html` file, if your
+submission wins) and the remaining args are the paths to any other files you
+wish to submit.
+
+The `work_dir` **MUST** already exist, as a directory, and it is an error if it
+is not a directory that can be written to. In **this** directory your **submission
+directory** will be created, with the name based on your IOCCC registration
+username, which is **in the form of a UUID** and submission number; see the
+[rules](next/rules.html) for more details on this, and in particular [Rule
+17](next/rules.html#rule17).
+
+If the **_subdirectory_ in the _work directory_** already exists, you will have to
+move it, remove it or otherwise specify a different work directory (**NOT** the
+subdirectory), as it needs to be empty and the `mkiocccentry(1)` tool does not
+check this for you as it could not do anything about anyway.
+
+This _subdirectory is where your files will be **copied** to_. Your _submission
+tarball_ (which you will upload to the submit server) that `txzchk(1)` will
+validate _will be placed in the **work directory**_, and **its _contents_ will
+be the _subdirectory_ with your submission's files**.
+
+The `mkiocccentry(1)` tool will ask you for information about your
+submission _as well as author details_ (that will only be looked at if the
+submission wins), run some tests and run a number of other tools, as already
+mentioned and as described below.
+
+To help you with editing a submission, the `mkiocccentry(1)` tool has
+some options to write _OR_ read from an answers file so you do not have to input
+the information about the author(s) and the submission itself, after saving the
+answers to a file. To write to `answers.txt` try:
+
+``` <!---sh-->
+    mkiocccentry -a answers.txt ...
+```
+
+Alternatively, if you wish to overwrite a file, you can use the `-A`
+flag with the same option argument. Be **very careful** that you do not accidentally
+overwrite your `prog.c` or some other important file!
+
+To make use of the answers file, use the `-i answers` option like:
+
+``` <!---sh-->
+    mkiocccentry -i answers.txt ...
+```
+
+<div id="mkiocccentry_checks">
+#### `mkiocccentry` checks
+</div>
+
+`mkiocccentry(1)` will check and warn about the following conditions:
+
+- If the files do not exist, are not regular files or cannot be read.
+- If `prog.c` violates [Rule 2](next/rules.html#rule2) (see
+[iocccsize.c](https://github.com/ioccc-src/mkiocccentry/blob/master/iocccsize.c)).
+- If `prog.c` is empty.
+- If `prog.c` has any high bit char (see
+[iocccsize.c](https://github.com/ioccc-src/mkiocccentry/blob/master/iocccsize.c)).
+- If `prog.c` has any NUL char (see
+[iocccsize.c](https://github.com/ioccc-src/mkiocccentry/blob/master/iocccsize.c)).
+- If `prog.c` has any unknown or invalid trigraph (see
+[iocccsize.c](https://github.com/ioccc-src/mkiocccentry/blob/master/iocccsize.c)).
+- If `prog.c` triggers a word buffer overflow (see
+[iocccsize.c](https://github.com/ioccc-src/mkiocccentry/blob/master/iocccsize.c)).
+- If `prog.c` triggers an `ungetc(3)` error (see
+[iocccsize.c](https://github.com/ioccc-src/mkiocccentry/blob/master/iocccsize.c)).
+- If the first rule in the `Makefile` is not `all`.
+- If the `Makefile` does not have a `clean` rule.
+- If the `Makefile` does not have a `clobber` rule.
+- If the `Makefile` does not have a `try` rule.
+- If the `remarks.md` is empty.
+
+Conditions that one must correct, and which `mkiocccentry(1)` will prompt until
+they are correct, are:
+
+- Your _title_ is not in the range of 1 through `MAX_TITLE_LEN` chars (see
+[limit_ioccc.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h)).
+- Your _title_ does not match the regexp `^[0-9a-z][0-9a-z._+-]*$`.
+- Your _abstract_ is not between 1 and `MAX_ABSTRACT_LEN` chars
+(see [limit_ioccc.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h)).
+- the author count is not 1 through `MAX_AUTHORS` (see
+[limit_ioccc.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h)).
+- An author _name_ is not 1 through `MAX_NAME_LEN` chars (see
+[limit_ioccc.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h)).
+- Duplicate author _name_.
+- _Country code_ is invalid (not ISO 3166-1 2 character
+codes).
+- An _email_, if provided, is not in the format of `x@y` or
+if `x` or `y` contain a `@`, are empty or if the total length is longer than
+`MAX_EMAIL_LEN` (see [limit_ioccc.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h)).
+- A _URL_ or _alt URL_, if provided, does not start with `http://`
+or `https://` or is longer than `MAX_URL_LEN` chars (see
+[limit_ioccc.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h))
+or does not have anything after the `http://` or `https://`.
+- A _mastodon handle_, if provided, is not in the form of
+`@user@site` (i.e. starts with an `@`, has text following it and then another
+`@` followed by more text and has no other `@`)  or is longer than `MAX_MASTODON_LEN` (see
+[limit_ioccc.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h)).
+- A _GitHub account_, if provided, does not start with an `@`,
+has more than one `@` or is longer than `MAX_GITHUB_LEN` (see
+[limit_ioccc.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h)).
+- An _affiliation_, if provided, is longer than
+`MAX_AFFILIATION_LEN` (see [limit_ioccc.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h)).
+- An _author handle_, if the default is not accepted, does
+not match the regexp `^[0-9A-Za-z][0-9A-Za-z._+-]*$`.
+- An _author handle_ is repeated.
+- The output of `ls` on the submission directory is incorrect.
+
+Although the `mkiocccentry(1)` tool will verify everything for you, you may wish
+to validate different parts individually with the different tools. As the
+[rules](rules.html) state, each of these tools has a `-h` option.
+
+See the
+FAQ on "[jparse](#jparse)",
+the
+FAQ on "[.auth.json](#auth_json)",
+the
+FAQ on "[.info.json](#info_json)",
+the
+FAQ on "[chkentry](#chkentry)",
+the
+FAQ on "[txzchk](#txzchk)"
+and the
+FAQ on "[fnamchk](#fnamchk)"
+for more details on the tools that `mkiocccentry` either executes directly or
+indirectly as part of the packaging process, especially if you wish to run one
+or more of these tools manually.
+
+See also the [Guidelines](next/guidelines.html) and the [Rules](next/rules.html)
+(and in particular [Rule 17](next/rules.html#rule17)).
 
 <div id="faq1">
 ## Section 1: History of the IOCCC
@@ -4222,12 +4550,19 @@ Anonymous `author_handle`'s match this regexp:
 information about authors of IOCCC entries and is used to help form
 HTML files as well to contact an author.
 
-The content of these JSON files are used by tools from a [bin directory tool](bin/index.html)
+**NOTE**: tools to validate the `author_handle.json` files, which are only for
+winning authors, are in the works (which will be documented after they are
+developed). See the
+FAQ on "[author handles](#author_handle_faq)"
+for more information on author handles.
+
+The content of these JSON files are used by tools from the [bin directory](bin/index.html)
 to help build HTML content for the [official IOCCC website](https://www.ioccc.org).
-For example, the `index.html` file for each IOCCC entry contains
-selected information about the authors.  Tools from the [bin directory](bin/index.html)
-use the content of these JSON files to generate the `index.html` files for each IOCCC
-winning entry.
+
+For example, the `index.html` file for each IOCCC entry contains selected
+information about the authors.  Tools from the [bin directory](bin/index.html)
+use the content of these JSON files to generate the `index.html` files for each
+IOCCC winning entry.
 
 Moreover, should the [IOCCC judges](judges.html) need to
 contact an authors of an IOCCC entry, they will consult the contents
@@ -4298,48 +4633,16 @@ As of _Thu Nov 30 23:51:12 UTC 2023_, the contents was as follows:
     }
 ```
 
-Before we walk you through the above JSON document, we will show you how to
-validate that the JSON is validly formed.
-
-<div id="validating_json">
-##### Validating JSON documents
-</div>
-
-Although special tools (that will validate `author_handle.json` files) are in
-the works (which will be documented here after they are developed) there is a
-way to validate all JSON documents including these files. Until those special
-tools are developed (which will do the same as this next tool but more) we
-request that you validate the JSON with this tool that we co-developed with Cody
-Boone Ferguson. This tool, `jparse(1)`, for the time being is in the
-[mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry) but will later be
-in a separate repo. In any case you need to download the repo or `git clone` it
-and then compile it (cd to the directory and then run `make`). If you wish to
-make it easier you can do `make install` so you can run the tool from any path
-but in any case the syntax is:
+**NOTE**: if you need to just check the validity of a JSON document then see the
+FAQ on "[validating JSON documents](#validating_json)". Taking that FAQ in mind,
+if you wish to validate every JSON file in `author/` then you could do so like:
 
 ``` <!--sh-->
-        jparse foo.json
-```
-
-If the tool exits 0 (and shows no output) then the JSON is valid. If it is
-invalid you should get an error but for more details you can increase the
-verbosity with the `-v` flag like:
-
-``` <!--sh-->
-        jparse -v 3 foo.json
-```
-
-If the tool is not installed then you will obviously have to specify the path of
-the tool.
-
-If you wish to validate every JSON file in `author/` then you could do so like:
-
-``` <!--sh-->
-        for auth in *.json; do jparse 2>/dev/null "$auth" || echo "$auth is invalid JSON" ; done
+        for auth in *.json; do jparse -q "$auth" || echo "$auth is invalid JSON" ; done
 ```
 
 If you see any output then it will say which file or files are invalid JSON
-(this should not actually happen).
+(this should not actually happen, however).
 
 
 
