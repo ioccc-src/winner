@@ -1614,7 +1614,7 @@ not match the regexp `^[0-9A-Za-z][0-9A-Za-z._+-]*$`.
 
 Although the `mkiocccentry(1)` tool will verify everything for you, you may wish
 to validate different parts individually with the different tools. As the
-[rules](rules.html) state, each of these tools has a `-h` option.
+[rules](next/rules.html) state, each of these tools has a `-h` option.
 
 See the
 FAQ on "[jparse](#jparse)",
