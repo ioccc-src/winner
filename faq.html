@@ -389,7 +389,7 @@
 
 <!-- BEFORE: 1st line of markdown file: faq.md -->
 <h1 id="faq-table-of-contents">FAQ Table of Contents</h1>
-<p>This is FAQ version <strong>28.0.1 2024-07-25</strong>.</p>
+<p>This is FAQ version <strong>28.0.2 2024-07-26</strong>.</p>
 <h2 id="section-0---submitting-entries-to-a-new-ioccc">Section 0 - <a href="#faq0">Submitting entries to a new IOCCC</a></h2>
 <ul>
 <li><a class="normal" href="#faq0_0">0.0 - How may I enter the IOCCC?</a></li>
@@ -490,6 +490,7 @@ other inconsistencies with the original entry?</a></li>
 <li><a class="normal" href="#faq6_14">6.14 - How do I set certain tabstops for viewing source code in vi(m)?</a></li>
 <li><a class="normal" href="#faq6_15">6.15 - How do the menus on the website work and what can I do if they don’t work?</a></li>
 <li><a class="normal" href="#faq6_16">6.16 - How do I find more information about a winning author of an entry?</a></li>
+<li><a class="normal" href="#faq6_17">6.17 - What is a <code>.entry.json</code> file and how is it used?</a></li>
 </ul>
 <h1 id="the-ioccc-faq">The IOCCC FAQ</h1>
 <div id="faq0">
@@ -2716,7 +2717,9 @@ it like:</p>
 <p>though of course for both you may specify a rule or rules to run.</p>
 <div id="faq3_20">
 <div id="entry_downloads">
+<div id="tarball">
 <h3 id="how-do-i-download-individual-winning-entries-or-all-winning-entries-of-a-given-year">3.20 - How do I download individual winning entries or all winning entries of a given year?</h3>
+</div>
 </div>
 </div>
 <p>Although one can clone the entire <a href="https://github.com/ioccc-src/winner">winner
@@ -3572,8 +3575,8 @@ FAQ on “<a href="#author_handle_faq">author handle</a>”
 for more information about an author handles.</p>
 <h4 id="author_handle.json-json-file-contents"><code>author_handle.json</code> JSON file contents</h4>
 <p>The syntax of a <code>author_handle.json</code> follows the <em>So-called JSON spec</em>.
-See <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/jparse/json_index.html#so_called_json_spec">json_index.html</a>
-for information on the <em>So-called JSON spec</em>.</p>
+See <a href="https://www.json.org/json-en.html" class="uri">https://www.json.org/json-en.html</a> for information on the <em>So-called JSON
+spec</em>.</p>
 <p>A good way to understand the JSON file contents of a <code>author_handle.json</code> file
 is to look at an example, the <code>author_handle.json</code> file for Yusuke Endoh:</p>
 <pre><code>    author/Yusuke_Endoh.json</code></pre>
@@ -4309,6 +4312,330 @@ JSON files.</p>
 <p>Of course if you know the author’s name you can go directly to
 <a href="authors.html">authors.html</a> and click on their surname’s/last name’s/second
 name’s initial and then scroll down (if necessary) to the author in question.</p>
+<div id="faq6_17">
+<div id="entry_json">
+<h3 id="faq-6.17-what-is-a-.entry.json-file-and-how-is-they-used">FAQ 6.17: What is a <code>.entry.json</code> file and how is they used?</h3>
+</div>
+</div>
+<p><strong>TL:DR</strong>: The contents of this JSON file contain information about each winning
+entry in JSON format.</p>
+<p>Each winning entry has a <code>.entry.json</code> file that includes data in JSON format
+about the entry. We describe the fields below in order to help you understand
+its contents.</p>
+<p>This file is created by the <a href="bin/index.html#cvt-submission">cvt-submission.sh</a>
+tool as part of the final steps to announce a new set of winning IOCCC entries.</p>
+<p>Each winning entry has its own <code>.entry.json</code> filename of the form:</p>
+<pre><code>    YYYY/winner/.entry.json</code></pre>
+<p>where <em>winner</em> is the entry directory name, usually the name of the author.</p>
+<p><strong>IMPORTANT NOTE</strong>: this file should <strong>NOT</strong> be manually modified! It is created
+by the <a href="bin/index.html#csv2entry">csv2entry</a> tool when updating the manifest.</p>
+<h4 id="entry.json-json-file-contents"><code>.entry.json</code> JSON file contents</h4>
+<p>The syntax of a <code>.entry.json</code> follows the <em>So-called JSON spec</em>.
+See <a href="https://www.json.org/json-en.html" class="uri">https://www.json.org/json-en.html</a> for information on the <em>So-called JSON
+spec</em>.</p>
+<p>A good way to understand the JSON file contents of a <code>.entry.json</code> file
+is to look at an example, for instance the
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1984/laman/.entry.json">1984/laman/.entry.json</a> file, as
+it is shorter than some of the others.</p>
+<p>As of <em>Fri 26 Jul 2024 17:29:15 UTC</em>, it contains:</p>
+<pre><code>    {
+        &quot;no_comment&quot; : &quot;mandatory comment: because comments were removed from the original JSON spec&quot;,
+        &quot;entry_JSON_format_version&quot; : &quot;1.1 2024-02-11&quot;,
+        &quot;award&quot; : &quot;Third Place&quot;,
+        &quot;year&quot; : 1984,
+        &quot;dir&quot; : &quot;laman&quot;,
+        &quot;entry_id&quot; : &quot;1984_laman&quot;,
+        &quot;author_set&quot; : [
+            { &quot;author_handle&quot; : &quot;Mike_Laman&quot; }
+        ],
+        &quot;manifest&quot; : [
+            {
+                &quot;file_path&quot; : &quot;laman.c&quot;,
+                &quot;inventory_order&quot; : 20,
+                &quot;OK_to_edit&quot; : true,
+                &quot;display_as&quot; : &quot;c&quot;,
+                &quot;display_via_github&quot; : true,
+                &quot;entry_text&quot; : &quot;entry source code&quot;
+            },
+            {
+                &quot;file_path&quot; : &quot;Makefile&quot;,
+                &quot;inventory_order&quot; : 30,
+                &quot;OK_to_edit&quot; : true,
+                &quot;display_as&quot; : &quot;makefile&quot;,
+                &quot;display_via_github&quot; : true,
+                &quot;entry_text&quot; : &quot;entry Makefile&quot;
+            },
+            {
+                &quot;file_path&quot; : &quot;laman.orig.c&quot;,
+                &quot;inventory_order&quot; : 50,
+                &quot;OK_to_edit&quot; : false,
+                &quot;display_as&quot; : &quot;c&quot;,
+                &quot;display_via_github&quot; : true,
+                &quot;entry_text&quot; : &quot;original source code&quot;
+            },
+            {
+                &quot;file_path&quot; : &quot;try.sh&quot;,
+                &quot;inventory_order&quot; : 100,
+                &quot;OK_to_edit&quot; : true,
+                &quot;display_as&quot; : &quot;shellscript&quot;,
+                &quot;display_via_github&quot; : true,
+                &quot;entry_text&quot; : &quot;script to try entry&quot;
+            },
+            {
+                &quot;file_path&quot; : &quot;1984_laman.tar.bz2&quot;,
+                &quot;inventory_order&quot; : 1415926535,
+                &quot;OK_to_edit&quot; : false,
+                &quot;display_as&quot; : &quot;tbz2&quot;,
+                &quot;display_via_github&quot; : false,
+                &quot;entry_text&quot; : &quot;download entry tarball&quot;
+            },
+            {
+                &quot;file_path&quot; : &quot;.entry.json&quot;,
+                &quot;inventory_order&quot; : 4000000000,
+                &quot;OK_to_edit&quot; : true,
+                &quot;display_as&quot; : &quot;json&quot;,
+                &quot;display_via_github&quot; : true,
+                &quot;entry_text&quot; : &quot;entry summary and manifest in JSON&quot;
+            },
+            {
+                &quot;file_path&quot; : &quot;.gitignore&quot;,
+                &quot;inventory_order&quot; : 4000000000,
+                &quot;OK_to_edit&quot; : true,
+                &quot;display_as&quot; : &quot;gitignore&quot;,
+                &quot;display_via_github&quot; : true,
+                &quot;entry_text&quot; : &quot;list of files that should not be committed under git&quot;
+            },
+            {
+                &quot;file_path&quot; : &quot;.path&quot;,
+                &quot;inventory_order&quot; : 4000000000,
+                &quot;OK_to_edit&quot; : false,
+                &quot;display_as&quot; : &quot;path&quot;,
+                &quot;display_via_github&quot; : true,
+                &quot;entry_text&quot; : &quot;directory path from top level directory&quot;
+            },
+            {
+                &quot;file_path&quot; : &quot;README.md&quot;,
+                &quot;inventory_order&quot; : 4000000000,
+                &quot;OK_to_edit&quot; : true,
+                &quot;display_as&quot; : &quot;markdown&quot;,
+                &quot;display_via_github&quot; : true,
+                &quot;entry_text&quot; : &quot;markdown source for this web page&quot;
+            },
+            {
+                &quot;file_path&quot; : &quot;index.html&quot;,
+                &quot;inventory_order&quot; : 4294967295,
+                &quot;OK_to_edit&quot; : false,
+                &quot;display_as&quot; : &quot;html&quot;,
+                &quot;display_via_github&quot; : false,
+                &quot;entry_text&quot; : &quot;this web page&quot;
+            }
+        ]
+    }
+</code></pre>
+<div id="walk_through_entry_json">
+<h5 id="walk-through-of-a-.entry.json-file">Walk through of a <code>.entry.json</code> file</h5>
+</div>
+<p>We now will walk through the above JSON document looking at all the JSON
+members:</p>
+<h5 id="no_comment-1"><code>no_comment</code></h5>
+<pre><code>    &quot;no_comment&quot; : &quot;mandatory comment: because comments were removed from the original JSON spec&quot;,</code></pre>
+<p>Because the authors of the so-called JSON spec removed the ability to use comments in JSON
+(for reason(s) that seem to be less than credible), the IOCCC mandates this <em>JSON member</em>
+be present in all IOCCC related JSON files.</p>
+<p>There <strong>MUST</strong> be one and only one <code>no_comment</code> <em>JSON member</em> and the <em>JSON value</em> <strong>MUST</strong>
+be the exact <em>JSON string</em> as shown above.</p>
+<h5 id="entry_json_format_version"><code>entry_JSON_format_version</code></h5>
+<pre><code>        &quot;entry_JSON_format_version&quot; : &quot;1.1 2024-02-11&quot;,</code></pre>
+<p>This <em>JSON member</em> holds the format version of the <code>.entry.json</code> JSON file.</p>
+<p>There <strong>MUST</strong> be one and only one <code>entry_JSON_format_version</code>
+<em>JSON member</em> and the <em>JSON value</em> <strong>MUST</strong> be a <em>JSON string</em>.</p>
+<p>This is <strong>NOT</strong> the version of the contents!</p>
+<p>The <code>entry_JSON_format_version</code> would only changed when the overall format
+of the these files is modified: and then only those who maintain the
+<a href="https://www.ioccc.org">official IOCCC website</a> would be the one to do this
+in conjunction with changes to <a href="bin/index.html">bin directory tools</a>.</p>
+<h5 id="award"><code>award</code></h5>
+<pre><code>    &quot;award&quot; : &quot;Third Place&quot;,</code></pre>
+<p>This JSON string is the award title of the entry which the <a href="judges.html">Judges</a>
+decide/decided when it becomes/became a winning entry.</p>
+<h5 id="year"><code>year</code></h5>
+<pre><code>    &quot;year&quot; : 1984,</code></pre>
+<p>This JSON number is the year the contest ran, ended or was announced in.</p>
+<h5 id="dir"><code>dir</code></h5>
+<pre><code>    &quot;dir&quot; : &quot;laman&quot;,</code></pre>
+<p>This JSON string is the subdirectory of the entry, <strong>under</strong> the year directory,
+in this case <a href="1984/index.html">1984</a>. With the above member, <code>year</code>, and this
+one, one can determine the directory of the entry, here being
+<a href="1984/laman/index.html">1984/laman</a>.</p>
+<h5 id="entry_id-1"><code>entry_id</code></h5>
+<pre><code>    &quot;entry_id&quot; : &quot;1984_laman&quot;,</code></pre>
+<p>This is the ID of the entry in question and corresponds to the <code>entry_id</code> in the
+<code>author/author_handle.json</code> file.</p>
+<p>See
+FAQ on “<a href="#author_handle_faq">author handle</a>”
+for more information about author handles.</p>
+<p>See
+FAQ on “<a href="#author_json">author_handle.json</a>”
+for information about the contents of these JSON file and
+how they are used.</p>
+<h5 id="author_set"><code>author_set</code></h5>
+<pre><code>    &quot;author_set&quot; : [
+        { &quot;author_handle&quot; : &quot;Mike_Laman&quot; }
+    ],</code></pre>
+<p>This JSON <strong>array</strong> has a list of <code>author_handle</code>s that indicate who won this
+entry.</p>
+<p>That <em>JSON member</em> holds the author handle of the author.</p>
+<p>In most cases there is only one <code>author_handle</code> in a <code>.entry.json</code> file but in
+some there is more than one.</p>
+<p>See
+FAQ on “<a href="#author_handle_faq">author handle</a>”
+for more information about an author handles.</p>
+<p>Normally the <code>author_handle</code> <em>JSON value</em> should <strong>NOT</strong> be changed
+<strong>unless there is a strong reason to do so</strong>. If the <em>JSON value</em>
+changes, then all of the <code>.entry.json</code> files for all of this author’s
+winning IOCCC entries should also be changed. The <code>author_handle</code>
+<em>JSON value</em> must match the basename (without the leading path and
+without the trailing <code>.json</code>) of the <code>author_handle.json</code> file. So
+a change of <code>author_handle</code> <em>JSON value</em> would also require the
+<code>author_handle.json</code> file to also be renamed.</p>
+<p>The full name of an author may use non-ASCII characters so long as the
+full name is properly encoded as a <em>JSON string</em>.</p>
+<h5 id="manifest"><code>manifest</code></h5>
+<p>Finally there is the manifest JSON <strong>array</strong> that lists the files of the winning
+entry. Because each array member (a file) has the same fields we will only list
+one of the files in the manifest, providing comments about each field. After
+that we will list some files that are mandatory files, also with comments.</p>
+<p>There <strong>MUST</strong> be one and only one <code>manifest</code> <em>JSON member</em> and the <em>JSON value</em>
+<strong>MUST</strong> be a <em>JSON</em> array.</p>
+<p>A shortened manifest for our example entry is:</p>
+<pre><code>    &quot;manifest&quot; : [
+        {
+            &quot;file_path&quot; : &quot;laman.c&quot;,
+            &quot;inventory_order&quot; : 20,
+            &quot;OK_to_edit&quot; : true,
+            &quot;display_as&quot; : &quot;c&quot;,
+            &quot;display_via_github&quot; : true,
+            &quot;entry_text&quot; : &quot;entry source code&quot;
+        }
+    ]</code></pre>
+<p>Now we will describe each field of each file in the manifest:</p>
+<ul>
+<li><code>file_path</code> (string)
+<ul>
+<li>This <em>JSON</em> <strong>string</strong> is the name of the file in question.</li>
+</ul></li>
+<li><code>inventory_order</code> (number)
+<ul>
+<li>This <em>JSON</em> <strong>number</strong> decides which file list in the <code>index.html</code> file this
+file is listed and its order in that list. The details are beyond the scope
+of this document and it is only necessary to understand this if you are
+adding a file to the manifest. However as the <a href="judges.html">Judges</a> are the
+ones who will be doing this this need not concern you.</li>
+</ul></li>
+<li><code>OK_to_edit</code> (boolean)
+<ul>
+<li>This <em>JSON</em> <strong>boolean</strong> indicates whether this file may be edited or not. An
+example file that can be edited is the winning source code; an example that
+would be <code>false</code> is the original source code file (see below for details on
+this).</li>
+</ul></li>
+<li><code>display_as</code> (string)
+<ul>
+<li>This <em>JSON</em> <strong>string</strong> describes what kind of file it is and in particular
+how to <strong>display</strong> it. An entry source code file would be (all strings are
+lower case) <code>c</code>, a shell script would be <code>shellscript</code> and a <code>Makefile</code>
+would be <code>makefile</code>, for three examples of others. As updating the manifest
+is mostly a task for the <a href="judges.html">Judges</a> you need not concern yourself
+with all the different names.</li>
+</ul></li>
+<li><code>display_via_github</code> (boolean)
+<ul>
+<li>This <em>JSON</em> <strong>boolean</strong> indicates whether the file should be viewed at
+(that is linked to) GitHub or not. A good reason it might be viewed at
+GitHub is for syntax highlighting or if it should not be downloaded but
+would likely be downloaded by the browser otherwise.</li>
+</ul></li>
+<li><code>entry_text</code> (string)
+<ul>
+<li>This <em>JSON</em> <strong>string</strong> is a short string that gives a summary of what the
+file is, for purposes of the file lists in the <code>index.html</code> inventory.</li>
+</ul></li>
+</ul>
+<p>Now that we have discussed the <em>JSON members</em> of each file in the <code>manifest</code> we
+will give a list of <strong>MANDATORY</strong> files (for winning entry source code the names
+will depend on the year).</p>
+<ul>
+<li><p>the entry source code</p>
+<ul>
+<li>This file is typically called <code>winner.c</code>, where <code>winner</code> is as described
+above, or <code>prog.c</code> (for later years). The <code>entry_text</code> is always <code>"entry   source code"</code>.</li>
+</ul></li>
+<li><p>the entry Makefile</p>
+<ul>
+<li>This is the submission’s Makefile <strong>modified</strong> by the <a href="judges.html">Judges</a>,
+should the submission win. The <code>entry_text</code> is always <code>"entry Makefile"</code> and
+the <code>file_path</code> is <strong>ALWAYS</strong> <code>"Makefile"</code>.</li>
+</ul></li>
+<li><p>the original source code file</p>
+<ul>
+<li>This is the entry source code file that was submitted and that won. This
+will be named either <code>winner.orig.c</code> or <code>prog.orig.c</code>, depending on the
+year. This file may <strong>NOT</strong> be modified. The <code>entry_text</code> for this file is
+always <code>"original source code"</code>.</li>
+</ul></li>
+<li><p>the <a href="#tarball">entry tarball</a></p>
+<ul>
+<li>This is the tarball of just the top level Makefile (and those included by
+it) and the entry itself, for convenience. It is named in the form of
+<code>YYYY_winner.tar.bz2</code>. For instance, for <a href="1984/laman/index.html">1984/laman</a>
+it is called <code>1984_laman.tar.bz2</code>. This file is <strong>NOT</strong> displayed via
+GitHub. The <code>entry_text</code> is always <code>download entry tarball</code> as it is a file
+that is to be downloaded, should one wish to.</li>
+</ul></li>
+<li><p><a href="#entry_json">.entry.json</a> file</p>
+<ul>
+<li>This is the file we’re currently discussing, the <code>.entry.json</code> file. The
+<code>entry_text</code> is always <code>"entry summary and manifest in JSON"</code> and the
+<code>file_path</code> is <strong>ALWAYS</strong> <code>".entry.json"</code>.</li>
+</ul></li>
+<li><p><code>.gitignore</code></p>
+<ul>
+<li>The list of files that should not be committed under git. Its <code>entry_text</code>
+is always <code>"list of files that should not be committed under git"</code> and the
+<code>file_path</code> is <strong>ALWAYS</strong> <code>".gitignore"</code>.</li>
+</ul></li>
+<li><p><code>.path</code></p>
+<ul>
+<li>This file contains the path to the entry subdirectory from the top level
+directory. For instance for <a href="1984/laman/index.html">1984/laman</a> it is
+<code>"1984/laman"</code>. This file’s <code>entry_text</code> is always <code>"directory path from top   level directory"</code> and the <code>file_path</code> is <strong>ALWAYS</strong> <code>".path"</code>.</li>
+</ul></li>
+<li><p><code>README.md</code></p>
+<ul>
+<li>This file is the markdown source file for the <code>index.html</code> file. Its
+<code>entry_text</code> is always <code>"markdown source for this web page"</code> (because it is
+listed in <code>index.html</code>) and the <code>file_path</code> is <strong>ALWAYS</strong> <code>"README.md"</code>
+(renamed from the <code>remarks.md</code> provided in submissions).</li>
+</ul>
+<p>In most cases, if the entry has other html files then they are also formed
+from markdown files and the <code>entry_text</code> will be similar; the <code>file_path</code> in
+these cases will be the same as the html file except it will have the
+extension <code>.md</code>.</p></li>
+<li><p><code>index.html</code></p>
+<ul>
+<li>This is the main page of the entry, formed from the <code>README.md</code> file. Its
+<code>entry_text</code> is always <code>"this web page"</code> and its <code>file_path</code> is <strong>ALWAYS</strong>
+<code>"index.html"</code>.</li>
+</ul></li>
+</ul>
+<p>If the entry has an alternate source code file, often it will be in the form of
+<code>"winner.alt.c"</code> or <code>"prog.alt.c"</code>; this is also what the <code>file_path</code> will be.
+The <code>entry_text</code> will typically (not always but almost always) be <code>"alternate source code"</code>.</p>
+<p>Many entries have a script (or scripts) for the <code>Try</code> section in their index.html file.
+Usually this is called <code>try.sh</code> for the entry and <code>try.alt.sh</code> for the alternate
+source code (if there is an alternate version). Some, however, have another file
+name. The <code>entry_text</code> for the <code>try</code> scripts will be <code>script to try entry</code> or
+something along those lines.</p>
 <hr style="width:10%;text-align:left;margin-left:0">
 <p>Jump to: <a href="#">top</a></p>
 <!--

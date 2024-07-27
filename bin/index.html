@@ -407,10 +407,10 @@ help, diagnose problems, see progress etc. These options are as follows:</p>
 <p>If you need to remember the syntax of the tool or get certain notes about
 different options, you can use the <code>-h</code> option.</p>
 <p>For instance if you want help on the <a href="index.html#all-run">all-run.sh</a> tool
-from the root directory, you would do:</p>
+from the root directory (of the repo/website), you would do:</p>
 <pre><code>    bin/all-run.sh -h</code></pre>
 <h3 id="set-verbosity-level-of-a-tool">Set verbosity level of a tool</h3>
-<p>If, however, you want verbosity, say for debugging purposes or to see what is
+<p>If you want verbosity, say for debugging purposes or to see what is
 going on more, you should use the <code>-v level</code> option. For instance if you wish to
 see what is going on with the
 <a href="index.html#quick-readme2index">quick-readme2index.sh</a> tool, you might do:</p>
@@ -423,25 +423,25 @@ for some tools, set a verbosity level.</p>
 For instance to see what version the <a href="index.html#chk-entry">chk-entry.sh</a> tool
 is, you would do:</p>
 <pre><code>    bin/chk-entry.sh -V</code></pre>
-<h3 id="other-notes">Other notes</h3>
+<h3 id="other-notes-about-some-of-the-common-options">Other notes about some of the common options</h3>
 <p>These options, and especially <code>-h</code> and <code>-v level</code>, can be very useful to get
 basic usage information and to see what is going on when the tool is running.
 For more details on each tool, including the ones mentioned above, see below. As
 you go through each tool, if you need to understand more of it, we recommend
 that you use the <code>-h</code> option on it first.</p>
 <p>There are some scripts that are invoked by the
-<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/md2html.cfg">bin/md2html.cfg</a> file but some of these tools can be directly
-invoked as well, should you wish to see their output or if you have some odd
-need to do so.</p>
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/md2html.cfg">bin/md2html.cfg</a> file but some of these tools can
+be directly invoked as well, should you wish to see their output or if you have
+some odd need to do so.</p>
 <div id="add-dir">
 <h3 id="add-dir.sh"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/add-dir.sh">add-dir.sh</a></h3>
 </div>
-<p>This tool is used my the <a href="../judges.html">Judges</a> as part of the final
+<p>This tool is used by the <a href="../judges.html">Judges</a> as part of the final
 steps to announce a new winning IOCCC entry.</p>
 <p>Usage:</p>
 <pre><code>    mkdir -p YYYY/dir
     bin/add-dir.sh YYYY/dir</code></pre>
-<p>Here, <code>YYYY/dir</code> must the path to the winning IOCCC entry.</p>
+<p>Here, <code>YYYY/dir</code> must be the path to the winning IOCCC entry.</p>
 <div id="all-run">
 <h3 id="all-run.sh"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/all-run.sh">all-run.sh</a></h3>
 </div>
@@ -461,13 +461,16 @@ steps to announce a new winning IOCCC entry.</p>
 <div id="chk-entry">
 <h3 id="chk-entry.sh"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/chk-entry.sh">chk-entry.sh</a></h3>
 </div>
-<p>Check an entry directory to verify that both the files in its manifest
-(<code>.entry.json</code>) exist and that no other files exist.</p>
+<p>Check an entry directory to verify that all the files in its manifest
+(<code>.entry.json</code>) exist in the git repo.</p>
 <p>Usage:</p>
 <pre><code>    bin/chk-entry.sh 2020/ferguson1</code></pre>
 <p>If you wish to run it on all entries, we recommend that this tool be invoked via
 the top level <code>Makefile</code>:</p>
 <pre><code>    make verify_entry_files</code></pre>
+<p><strong>NOTE</strong>: see the
+FAQ on “<a href="../faq.html#entry_json">.entry.json files</a>”
+for more details on <code>.entry.json</code> files.</p>
 <div id="csv2entry">
 <h3 id="csv2entry.sh"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/csv2entry.sh">csv2entry.sh</a></h3>
 </div>
@@ -483,8 +486,9 @@ title</li>
 <p>This tool updates <code>.entry.json</code> files entries whose content is modified.</p>
 <p>Usage:</p>
 <pre><code>    bin/csv2entry.sh -v 1</code></pre>
-<p>There is no requirement to sort the CSV files, nor convert
-them to UNIX format, nor append a final newline to the file.</p>
+<p>There is no requirement to sort the CSV files (say through the spreadsheet
+application prior to exporting), convert them to UNIX format, or append a final
+newline to the file.</p>
 <p>This tool will canonicalize the CSV files before using them
 as input. Thus, if one wishes to import the CSV file into
 some spreadsheet such as the <a href="https://www.apple.com/macos">macOS</a>
@@ -496,6 +500,9 @@ to restore the CSV order and other canonicalizing processes.</p>
 an unquoted <code>NULL</code> or <code>null</code>, fields that start with whitespace,
 fields that end with whitespace, or fields that contain consecutive
 whitespace characters.</p>
+<p><strong>NOTE</strong>: see the
+FAQ on “<a href="../faq.html#entry_json">.entry.json files</a>”
+for more details on <code>.entry.json</code> files.</p>
 <h4 id="internal-details-of-bincsv2entry.sh">Internal details of <code>bin/csv2entry.sh</code></h4>
 <p>We first canonicalize the CSV files by replacing any “carriage
 return line feeds” with “newlines”. We also make sure that the CSV
@@ -521,16 +528,29 @@ content).</p>
 <div id="cvt-submission">
 <h3 id="cvt-submission.sh"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/cvt-submission.sh">cvt-submission.sh</a></h3>
 </div>
-<p>Given a submission (that has won the IOCCC), with a <code>.auth.json</code>
-and <code>.info.json</code> and NO <code>.entry.json</code> file, we convert the
+<p>This tool is used by the <a href="../judges.html">Judges</a> as part of the final
+steps to announce a new set of winning IOCCC entries.</p>
+<p>Given a submission (that has won the IOCCC and thus will become an entry), with a <code>.auth.json</code>
+and <code>.info.json</code> and <strong>NO</strong> <code>.entry.json</code> file (since it just won), we convert the
 <code>.auth.json</code> and <code>.info.json</code> into a new <code>.entry.json</code> file.</p>
-<p>We will also form, as needed, new <code>author/author_handle.json</code>
-files for new authors, and update <code>author/author_handle.json</code>
-for authors who won previously.</p>
+<p>This tool will, given a submission that has won the IOCCC (and thus will become a published entry), with
+a <code>.auth.json</code> and <code>.info.json</code> and NO <code>.entry.json</code> file (since it’s new), we
+convert the <code>.auth.json</code> and <code>.info.json</code> into a new <code>.entry.json</code> file.</p>
+<p><strong>NOTE</strong>: the <code>.auth.json</code> and <code>.info.json</code> files are formed by the
+<code>mkiocccentry(1)</code> tool from the <a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry GitHub
+repo</a> as part of packaging
+submissions.</p>
+<p>We will also form new <code>author/author_handle.json</code> (see the
+FAQ on “<a href="../faq.html#author_json">author_handle.json files</a>”
+for more information) and update <code>author/author_handle.json</code>
+for <a href="../authors.html">authors</a> who previously won. See also the
+FAQ on “<a href="../faq.html#author_handle_faq">author_handle</a>”.
+See also the
+FAQ on “<a href="../faq.html#entry_json">.entry.json</a>”.</p>
 <p>Usage:</p>
 <pre><code>    bin/cvt-submission.sh -v 1 YYYY/dir</code></pre>
 <p>Here, <code>YYYY/dir</code> is the path of the submission under the <code>YYYY</code>
-year directory.</p>
+year directory. For instance</p>
 <div id="entry2csv">
 <h3 id="entry2csv.sh"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/entry2csv.sh">entry2csv.sh</a></h3>
 </div>
@@ -729,7 +749,7 @@ the <a href="index.html#md2html">md2html tool</a>.</p>
 <div id="new_year">
 <h3 id="new-year.sh"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/new-year.sh">new-year.sh</a></h3>
 </div>
-<p>This tool is used my the <a href="../judges.html">Judges</a> as part of the final
+<p>This tool is used by the <a href="../judges.html">Judges</a> as part of the final
 steps to announce a new set of winning IOCCC entries.</p>
 <p>Usage:</p>
 <pre><code>    bin/new-year.sh -v 1 YYYY</code></pre>

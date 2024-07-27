@@ -1,6 +1,6 @@
 # FAQ Table of Contents
 
-This is FAQ version **28.0.1 2024-07-25**.
+This is FAQ version **28.0.2 2024-07-26**.
 
 
 ## Section  0 - [Submitting entries to a new IOCCC](#faq0)
@@ -102,10 +102,10 @@ other inconsistencies with the original entry?](#faq4_3)
 - <a class="normal" href="#faq6_14">6.14 - How do I set certain tabstops for viewing source code in vi&#x28;m&#x29;?</a>
 - <a class="normal" href="#faq6_15">6.15 - How do the menus on the website work and what can I do if they don't work?</a>
 - <a class="normal" href="#faq6_16">6.16 - How do I find more information about a winning author of an entry?</a>
+- <a class="normal" href="#faq6_17">6.17 - What is a `.entry.json` file and how is it used?</a>
 
 
 # The IOCCC FAQ
-
 
 <div id="faq0">
 ## Section 0: Submitting entries to a new IOCCC
@@ -3079,7 +3079,9 @@ though of course for both you may specify a rule or rules to run.
 
 <div id="faq3_20">
 <div id="entry_downloads">
+<div id="tarball">
 ### 3.20 - How do I download individual winning entries or all winning entries of a given year?
+</div>
 </div>
 </div>
 
@@ -4245,8 +4247,8 @@ for more information about an author handles.
 #### `author_handle.json` JSON file contents
 
 The syntax of a `author_handle.json` follows the _So-called JSON spec_.
-See [json_index.html](https://github.com/ioccc-src/mkiocccentry/blob/master/jparse/json_index.html#so_called_json_spec)
-for information on the _So-called JSON spec_.
+See <https://www.json.org/json-en.html> for information on the _So-called JSON
+spec_.
 
 A good way to understand the JSON file contents of a `author_handle.json` file
 is to look at an example, the `author_handle.json` file for Yusuke Endoh:
@@ -5398,6 +5400,399 @@ JSON files.
 Of course if you know the author's name you can go directly to
 [authors.html](authors.html) and click on their surname's/last name's/second
 name's initial and then scroll down (if necessary) to the author in question.
+
+<div id="faq6_17">
+<div id="entry_json">
+### FAQ 6.17: What is a `.entry.json` file and how is they used?
+</div>
+</div>
+
+**TL:DR**: The contents of this JSON file contain information about each winning
+entry in JSON format.
+
+Each winning entry has a `.entry.json` file that includes data in JSON format
+about the entry. We describe the fields below in order to help you understand
+its contents.
+
+This file is created by the [cvt-submission.sh](bin/index.html#cvt-submission)
+tool as part of the final steps to announce a new set of winning IOCCC entries.
+
+Each winning entry has its own `.entry.json` filename of the form:
+
+```
+    YYYY/winner/.entry.json
+```
+
+where _winner_ is the entry directory name, usually the name of the author.
+
+**IMPORTANT NOTE**: this file should **NOT** be manually modified! It is created
+by the [csv2entry](bin/index.html#csv2entry) tool when updating the manifest.
+
+#### `.entry.json` JSON file contents
+
+The syntax of a `.entry.json` follows the _So-called JSON spec_.
+See <https://www.json.org/json-en.html> for information on the _So-called JSON
+spec_.
+
+A good way to understand the JSON file contents of a `.entry.json` file
+is to look at an example, for instance the
+[1984/laman/.entry.json](%%REPO_URL%%/1984/laman/.entry.json) file, as
+it is shorter than some of the others.
+
+As of _Fri 26 Jul 2024 17:29:15 UTC_, it contains:
+
+``` <!---json-->
+    {
+        "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
+        "entry_JSON_format_version" : "1.1 2024-02-11",
+        "award" : "Third Place",
+        "year" : 1984,
+        "dir" : "laman",
+        "entry_id" : "1984_laman",
+        "author_set" : [
+            { "author_handle" : "Mike_Laman" }
+        ],
+        "manifest" : [
+            {
+                "file_path" : "laman.c",
+                "inventory_order" : 20,
+                "OK_to_edit" : true,
+                "display_as" : "c",
+                "display_via_github" : true,
+                "entry_text" : "entry source code"
+            },
+            {
+                "file_path" : "Makefile",
+                "inventory_order" : 30,
+                "OK_to_edit" : true,
+                "display_as" : "makefile",
+                "display_via_github" : true,
+                "entry_text" : "entry Makefile"
+            },
+            {
+                "file_path" : "laman.orig.c",
+                "inventory_order" : 50,
+                "OK_to_edit" : false,
+                "display_as" : "c",
+                "display_via_github" : true,
+                "entry_text" : "original source code"
+            },
+            {
+                "file_path" : "try.sh",
+                "inventory_order" : 100,
+                "OK_to_edit" : true,
+                "display_as" : "shellscript",
+                "display_via_github" : true,
+                "entry_text" : "script to try entry"
+            },
+            {
+                "file_path" : "1984_laman.tar.bz2",
+                "inventory_order" : 1415926535,
+                "OK_to_edit" : false,
+                "display_as" : "tbz2",
+                "display_via_github" : false,
+                "entry_text" : "download entry tarball"
+            },
+            {
+                "file_path" : ".entry.json",
+                "inventory_order" : 4000000000,
+                "OK_to_edit" : true,
+                "display_as" : "json",
+                "display_via_github" : true,
+                "entry_text" : "entry summary and manifest in JSON"
+            },
+            {
+                "file_path" : ".gitignore",
+                "inventory_order" : 4000000000,
+                "OK_to_edit" : true,
+                "display_as" : "gitignore",
+                "display_via_github" : true,
+                "entry_text" : "list of files that should not be committed under git"
+            },
+            {
+                "file_path" : ".path",
+                "inventory_order" : 4000000000,
+                "OK_to_edit" : false,
+                "display_as" : "path",
+                "display_via_github" : true,
+                "entry_text" : "directory path from top level directory"
+            },
+            {
+                "file_path" : "README.md",
+                "inventory_order" : 4000000000,
+                "OK_to_edit" : true,
+                "display_as" : "markdown",
+                "display_via_github" : true,
+                "entry_text" : "markdown source for this web page"
+            },
+            {
+                "file_path" : "index.html",
+                "inventory_order" : 4294967295,
+                "OK_to_edit" : false,
+                "display_as" : "html",
+                "display_via_github" : false,
+                "entry_text" : "this web page"
+            }
+        ]
+    }
+
+```
+
+<div id="walk_through_entry_json">
+##### Walk through of a `.entry.json` file
+</div>
+
+We now will walk through the above JSON document looking at all the JSON
+members:
+
+##### `no_comment`
+
+``` <!--- json-->
+    "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
+```
+
+Because the authors of the so-called JSON spec removed the ability to use comments in JSON
+(for reason(s) that seem to be less than credible), the IOCCC mandates this _JSON member_
+be present in all IOCCC related JSON files.
+
+There **MUST** be one and only one `no_comment` _JSON member_ and the _JSON value_ **MUST**
+be the exact _JSON string_ as shown above.
+
+##### `entry_JSON_format_version`
+
+``` <!---json-->
+        "entry_JSON_format_version" : "1.1 2024-02-11",
+```
+
+This _JSON member_ holds the format version of the `.entry.json` JSON file.
+
+There **MUST** be one and only one `entry_JSON_format_version`
+_JSON member_ and the _JSON value_ **MUST** be a _JSON string_.
+
+This is **NOT** the version of the contents!
+
+The `entry_JSON_format_version` would only changed when the overall format
+of the these files is modified: and then only those who maintain the
+[official IOCCC website](https://www.ioccc.org) would be the one to do this
+in conjunction with changes to [bin directory tools](bin/index.html).
+
+##### `award`
+
+``` <!---json-->
+    "award" : "Third Place",
+```
+
+This JSON string is the award title of the entry which the [Judges](judges.html)
+decide/decided when it becomes/became a winning entry.
+
+##### `year`
+
+``` <!---json-->
+    "year" : 1984,
+```
+
+This JSON number is the year the contest ran, ended or was announced in.
+
+##### `dir`
+
+``` <!---json-->
+    "dir" : "laman",
+```
+
+This JSON string is the subdirectory of the entry, **under** the year directory,
+in this case [1984](1984/index.html). With the above member, `year`, and this
+one, one can determine the directory of the entry, here being
+[1984/laman](1984/laman/index.html).
+
+##### `entry_id`
+
+``` <!---json-->
+    "entry_id" : "1984_laman",
+```
+
+This is the ID of the entry in question and corresponds to the `entry_id` in the
+`author/author_handle.json` file.
+
+See
+FAQ on "[author handle](#author_handle_faq)"
+for more information about author handles.
+
+See
+FAQ on "[author_handle.json](#author_json)"
+for information about the contents of these JSON file and
+how they are used.
+
+
+##### `author_set`
+
+
+``` <!---json-->
+    "author_set" : [
+        { "author_handle" : "Mike_Laman" }
+    ],
+```
+
+This JSON **array** has a list of `author_handle`s that indicate who won this
+entry.
+
+That _JSON member_ holds the author handle of the author.
+
+In most cases there is only one `author_handle` in a `.entry.json` file but in
+some there is more than one.
+
+See
+FAQ on "[author handle](#author_handle_faq)"
+for more information about an author handles.
+
+Normally the `author_handle` _JSON value_ should **NOT** be changed
+**unless there is a strong reason to do so**.  If the  _JSON value_
+changes, then all of the `.entry.json` files for all of this author's
+winning IOCCC entries should also be changed.  The `author_handle`
+_JSON value_ must match the basename (without the leading path and
+without the trailing `.json`) of the `author_handle.json` file.  So
+a change of `author_handle` _JSON value_ would also require the
+`author_handle.json` file to also be renamed.
+
+The full name of an author may use non-ASCII characters so long as the
+full name is properly encoded as a _JSON string_.
+
+##### `manifest`
+
+Finally there is the manifest JSON **array** that lists the files of the winning
+entry. Because each array member (a file) has the same fields we will only list
+one of the files in the manifest, providing comments about each field. After
+that we will list some files that are mandatory files, also with comments.
+
+There **MUST** be one and only one `manifest` _JSON member_ and the _JSON value_
+**MUST** be a _JSON_ array.
+
+A shortened manifest for our example entry is:
+
+``` <!---json-->
+    "manifest" : [
+        {
+            "file_path" : "laman.c",
+            "inventory_order" : 20,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "entry source code"
+        }
+    ]
+```
+
+
+Now we will describe each field of each file in the manifest:
+
+- `file_path` (string)
+    * This _JSON_ **string** is the name of the file in question.
+
+- `inventory_order` (number)
+    * This _JSON_ **number** decides which file list in the `index.html` file this
+    file is listed and its order in that list. The details are beyond the scope
+    of this document and it is only necessary to understand this if you are
+    adding a file to the manifest. However as the [Judges](judges.html) are the
+    ones who will be doing this this need not concern you.
+
+- `OK_to_edit` (boolean)
+    * This _JSON_ **boolean** indicates whether this file may be edited or not. An
+    example file that can be edited is the winning source code; an example that
+    would be `false` is the original source code file (see below for details on
+    this).
+
+- `display_as` (string)
+    * This _JSON_ **string** describes what kind of file it is and in particular
+    how to **display** it. An entry source code file would be (all strings are
+    lower case) `c`, a shell script would be `shellscript` and a `Makefile`
+    would be `makefile`, for three examples of others. As updating the manifest
+    is mostly a task for the [Judges](judges.html) you need not concern yourself
+    with all the different names.
+
+- `display_via_github` (boolean)
+    * This _JSON_ **boolean** indicates whether the file should be viewed at
+    (that is linked to) GitHub or not. A good reason it might be viewed at
+    GitHub is for syntax highlighting or if it should not be downloaded but
+    would likely be downloaded by the browser otherwise.
+
+- `entry_text` (string)
+    * This _JSON_ **string** is a short string that gives a summary of what the
+    file is, for purposes of the file lists in the `index.html` inventory.
+
+
+Now that we have discussed the _JSON members_ of each file in the `manifest` we
+will give a list of **MANDATORY** files (for winning entry source code the names
+will depend on the year).
+
+- the entry source code
+    * This file is typically called `winner.c`, where `winner` is as described
+    above, or `prog.c` (for later years). The `entry_text` is always `"entry
+    source code"`.
+
+- the entry Makefile
+    * This is the submission's Makefile **modified** by the [Judges](judges.html),
+    should the submission win. The `entry_text` is always `"entry Makefile"` and
+    the `file_path` is **ALWAYS** `"Makefile"`.
+
+- the original source code file
+    * This is the entry source code file that was submitted and that won. This
+    will be named either `winner.orig.c` or `prog.orig.c`, depending on the
+    year. This file may **NOT** be modified. The `entry_text` for this file is
+    always `"original source code"`.
+
+- the [entry tarball](#tarball)
+    * This is the tarball of just the top level Makefile (and those included by
+    it) and the entry itself, for convenience. It is named in the form of
+    `YYYY_winner.tar.bz2`. For instance, for [1984/laman](1984/laman/index.html)
+    it is called `1984_laman.tar.bz2`. This file is **NOT** displayed via
+    GitHub. The `entry_text` is always `download entry tarball` as it is a file
+    that is to be downloaded, should one wish to.
+
+- [.entry.json](#entry_json) file
+    * This is the file we're currently discussing, the `.entry.json` file. The
+    `entry_text` is always `"entry summary and manifest in JSON"` and the
+    `file_path` is **ALWAYS** `".entry.json"`.
+
+- `.gitignore`
+    * The list of files that should not be committed under git. Its `entry_text`
+    is always `"list of files that should not be committed under git"` and the
+    `file_path` is **ALWAYS** `".gitignore"`.
+
+- `.path`
+    * This file contains the path to the entry subdirectory from the top level
+    directory. For instance for [1984/laman](1984/laman/index.html) it is
+    `"1984/laman"`. This file's `entry_text` is always `"directory path from top
+    level directory"` and the `file_path` is **ALWAYS** `".path"`.
+
+- `README.md`
+    * This file is the markdown source file for the `index.html` file. Its
+    `entry_text` is always `"markdown source for this web page"` (because it is
+    listed in `index.html`) and the `file_path` is **ALWAYS** `"README.md"`
+    (renamed from the `remarks.md` provided in submissions).
+
+    In most cases, if the entry has other html files then they are also formed
+    from markdown files and the `entry_text` will be similar; the `file_path` in
+    these cases will be the same as the html file except it will have the
+    extension `.md`.
+
+- `index.html`
+    * This is the main page of the entry, formed from the `README.md` file. Its
+    `entry_text` is always `"this web page"` and its `file_path` is **ALWAYS**
+    `"index.html"`.
+
+
+If the entry has an alternate source code file, often it will be in the form of
+`"winner.alt.c"` or `"prog.alt.c"`; this is also what the `file_path` will be.
+The `entry_text` will typically (not always but almost always) be `"alternate
+source code"`.
+
+Many entries have a script (or scripts) for the `Try` section in their index.html file.
+Usually this is called `try.sh` for the entry and `try.alt.sh` for the alternate
+source code (if there is an alternate version). Some, however, have another file
+name. The `entry_text` for the `try` scripts will be `script to try entry` or
+something along those lines.
+
+
+
 
 
 <hr style="width:10%;text-align:left;margin-left:0">
