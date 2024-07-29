@@ -577,7 +577,7 @@ test:
 thanks: ${GEN_TOP_HTML} thanks-for-help.md
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
 	@echo "Thanks for all the help ..."
-	@${GEN_TOP_HTML} -v 1 thanks-for-help
+	${GEN_TOP_HTML} -v 1 thanks-for-help
 	@echo "... and thanks for all the fish :-)"
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
@@ -585,7 +585,7 @@ thanks: ${GEN_TOP_HTML} thanks-for-help.md
 bugs: ${GEN_TOP_HTML} bugs.md
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
 	@echo "Shhh. Be vewy vewy quiet, I'm hunting wabbits .. and bugs."
-	@${GEN_TOP_HTML} bugs
+	${GEN_TOP_HTML} bugs
 	@echo "Eh, what's up, doc?"
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
