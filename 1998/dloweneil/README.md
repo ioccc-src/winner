@@ -60,11 +60,9 @@ clockwise `l` does as well. Instead of using `d` to drop the letter you can do
 Read the authors' remarks below to find out how to play.  We believe that your
 experience may mirror one of our experiences:
 
-```
-    Originally, I didn't appreciate the game.  Then I actually read the
-    description of the controls.  I started playing.  I struggled.
-    I spelled my first "poot".  I was hooked ...
-```
+> Originally, I didn't appreciate the game.  Then I actually read the
+description of the controls.  I started playing.  I struggled.  I spelled my
+first "poot".  I was hooked ...
 
 
 ## Author's remarks:
@@ -79,7 +77,7 @@ experience may mirror one of our experiences:
 
 The object of this game is to spell `POOT` as much as possible.  There
 is no time pressure.  You're given one letter at a time (sort of randomly
-chosen from the set 'P', 'O', and 'T') and you get to move it freely
+chosen from the set '`P`', '`O`', and '`T`') and you get to move it freely
 around the border of the playing board, and decide when and where to drop
 it into the board.  Sound easy?  Of course, there's a catch...
 

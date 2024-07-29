@@ -423,7 +423,7 @@ counter before shifting out each symbol, such as</p>
             encoding &gt;&gt;= 1;
     } while (length--);</code></pre>
 <p>We can also use the remaining bits to <em>include</em> the counter</p>
-<pre><code>    length 1: 00000.1x     E &gt; 00000.11
+<pre><code>    length 1: 00000.1x     `E &gt; 00000.11
     length 2: 0000.1xx
     length 3: 000.1xxx
     length 4: 00.1xxxx     Z &gt; 00.11100
@@ -438,11 +438,11 @@ this is not very pleasant, as some Morse sequences will end up having
 an ASCII value &lt; 32, i.e. they will be control codes. This would make
 the initializing (encoding) string awkward. Hence I came up with the
 following</p>
-<pre><code>    length 1: 0010010x     E &gt; 00100101  (= &#39;%&#39;)
-    length 2: 001010xx
-    length 3: 00110xxx
-    length 4: 0100xxxx     Z &gt; 01001100  (= &#39;L&#39;)
-    length 5: 011xxxxx     3 &gt; 01100111  (= &#39;g&#39;)</code></pre>
+<pre><code>length 1: 0010010x     E &gt; 00100101  (= &#39;%&#39;)
+length 2: 001010xx
+length 3: 00110xxx
+length 4: 0100xxxx     Z &gt; 01001100  (= &#39;L&#39;)
+length 5: 011xxxxx     3 &gt; 01100111  (= &#39;g&#39;)</code></pre>
 <p>Notice these encodings in the initialization string. Only the coding for
 <code>5</code> needs an escape (<code>5 = ..... &gt; 01111111 = '\177'</code>). The way the length
 is encoded still allows the encoding to be its own counter:</p>
@@ -454,13 +454,14 @@ is encoded still allows the encoding to be its own counter:</p>
 Note that the calculation for the next value of <code>encoding</code> is done at <code>int</code>
 precision, so that the actual value of the <code>char</code> remains <code>&lt;= 127</code>.</p>
 <p>The character <code>'-'</code> (ASCII 45) and <code>'.'</code> (ASCII 46) are conveniently in
-sequence, so the putchar can simply be</p>
+sequence, so the <code>putchar(3)</code> can simply be</p>
 <pre><code>    putchar(45 + encoding % 2);</code></pre>
 <p>I used the modulo operator this time, because <code>+</code> takes precedence over <code>&amp;</code>.
 The assignment can be incorporated into the <code>while</code> control test, and a
 <code>do-while</code> loop with a body of a single expression statement can be written
 as a <code>while</code> loop with a comma operator in the test:</p>
-<pre><code>    while(putchar(45 + encoding % 2), encoding = encoding + 32 &gt;&gt; 1);</code></pre>
+<pre><code>    while(putchar(45 + encoding % 2),
+        encoding = encoding + 32 &gt;&gt; 1);</code></pre>
 <p>Voila.</p>
 <p>Now, the decoding of Morse codes is just the reverse. We shift in <code>0</code>s
 and <code>1</code>s as we scan the line. But: we have to scan from back to front
@@ -484,23 +485,23 @@ and letters. This is OK, since neither of these characters, or the <code>'\0'</c
 is a valid encoding ! We must, however, use <code>memchr(3)</code> instead of <code>strchr(3)</code> in
 the decoding lookup because of this <code>'\0'</code>. Since it is far more obscure
 this way, I hope you’ll forgive me.</p>
-<p>The outline of the program is roughly as follows</p>
+<p>The outline of the program is roughly as follows (pseudo C):</p>
 <pre><code>    while (more lines) {
-            if (line is in morse) {
-                    while (more characters) {
-                            skip next sequence
-                            if (&#39; &#39;)
-                                    putchar(&#39; &#39;);
-                            else
-                                    decode_sequence; /* backwards */
-                    }
-            } else {
-                    while (more characters) {
-                            if (isalnum)
-                                    encode_character;
-                            putchar(&#39; &#39;);
-                    }
-            }</code></pre>
+        if (line is in morse) {
+            while (more characters) {
+                skip next sequence
+                    if (&#39; &#39;)
+                        putchar(&#39; &#39;);
+                    else
+                        decode_sequence; /* backwards */
+            }
+        } else {
+            while (more characters) {
+                if (isalnum)
+                    encode_character;
+                    putchar(&#39; &#39;);
+            }
+        }</code></pre>
 <p>Because of the <em>two</em> <code>while(more characters)</code> loops are the same, I’ve
 exchanged the <code>if(line is in morse)</code> and the two <code>while</code> loops (so there
 is <em>single</em> <code>while</code> loop). However, we must now store the <code>if(line is in morse)</code> test for efficiency (it would be stupid to test the entire line
@@ -512,27 +513,48 @@ line of text. This does not disturb the <code>if (line is in morse)</code> test,
 as the temporary <code>l[0]</code> will remain <code>!= 0</code>.</p>
 <p>I’ve put the <code>if</code>s in the above layout into a single switch. Hope you don’t
 mind ;-)</p>
-<p>Summary of the use of l[999]:</p>
-<pre><code>    l[0]            result of &quot;is this line in morse&quot; test
-    l[0]            temporary shift during encoding
-    l[0]  - l[33]   Morse codings (letters and digits, plus garbage)
-    l[11] - l[14]   strspn argument
-    l[12] - l[14]   strspn argument
-    l[34]           terminator for backward decoding
-    l[35] - l[998]  input line</code></pre>
+<p>Summary of the use of <code>l[999]</code>:</p>
+<ul>
+<li><code>l[0]</code>
+<ul>
+<li><strong>result of “is this line in morse” test</strong></li>
+</ul></li>
+<li><code>l[0]</code>
+<ul>
+<li><strong>temporary shift during encoding</strong></li>
+</ul></li>
+<li><code>l[0]  - l[33]</code>
+<ul>
+<li><strong>Morse codings (letters and digits, plus garbage)</strong></li>
+</ul></li>
+<li><code>l[11] - l[14]</code>
+<ul>
+<li><strong><code>strspn(3)</code> argument</strong></li>
+</ul></li>
+<li><code>l[12] - l[14]</code>
+<ul>
+<li><strong><code>strspn(3)</code> argument</strong></li>
+</ul></li>
+<li><code>l[34]</code>
+<ul>
+<li><strong>terminator for backward decoding</strong></li>
+</ul></li>
+<li><code>l[35] - l[998]</code>
+<ul>
+<li><strong>input line</strong></li>
+</ul></li>
+</ul>
 <hr style="width:10%;text-align:left;margin-left:0">
 <p>Selected notes:</p>
 <ul>
-<li>We don’t need to declare <code>isalnum(3)</code> (or include ctype.h) as its implicit
-declaration is correct (int argument, int result). This is not so for
+<li>We don’t need to declare <code>isalnum(3)</code> (or include <code>ctype.h</code>) as its implicit
+declaration is correct (<code>int</code> argument, <code>int</code> result). This is not so for
 <code>strlen(3)</code>, <code>strspn(3)</code>, and <code>memchr(3)</code> as they use <code>size_t</code>.</li>
 <li>During development, my gcc 2.7.2.3 had an internal compiler error (signal
-<ol start="6" type="1">
-<li>on code that was correct !</li>
-</ol></li>
+6) on code that was correct !</li>
 <li>lclint 2.4b thinks that “the observer is modified” a couple of times,
 whereas it is not. Well, it is, but there is a sequence point in between.</li>
-<li>lclint 2.4b parses line 13 as <code>&lt;error&gt;</code>, whereas it is correct code.</li>
+<li>lclint 2.4b parses <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/dorssel/dorssel.c:L13">line 13</a> as <code>&lt;error&gt;</code>, whereas it is correct code.</li>
 <li>lclint 2.4b is positive the second <code>while</code> loop is infinite, whereas it is
 not.</li>
 </ul>

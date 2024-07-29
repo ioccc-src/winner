@@ -410,18 +410,17 @@ Location: <a href="../../location.html#DE">DE</a> - <em>Federal Republic of Germ
 <h2 id="to-build">To build:</h2>
 <pre><code>    make all</code></pre>
 <p>There is an alternate version of this entry that will work with macOS. See the
-<a href="#alternate-code">Alternate code</a> section below. We recommend you look at it
-even if you don’t have a Mac, unless you want to figure it out yourself, as it
-includes some interesting details about the entry.</p>
+<a href="#alternate-code">Alternate code</a> section below. We recommend you look at the
+code at the last, even if you don’t have a Mac.</p>
 <h2 id="to-use">To use:</h2>
 <pre><code>    ./schweikh1</code></pre>
 <h2 id="alternate-code">Alternate code:</h2>
 <p>As noted above this entry will not work as it stands for macOS and there are
 some important notes as well as a description of how the fixed version works
 (the details of which are relevant to the original entry that no longer works as
-well as the fixed version but are described in the context of the macOS
+well as the fixed version, but are described in the context of the macOS
 adjustments). For details of what had to change, see <a href="macos.html">macos.html</a>.
-Unless you wish to figure it out yourself, we recommend that you read this even
+<strong>Unless you wish to figure it out yourself</strong>, we recommend that you read this even
 if you don’t have a Mac as it has some interesting details about the entry.</p>
 <h3 id="alternate-build">Alternate build:</h3>
 <pre><code>    make alt</code></pre>
@@ -444,13 +443,12 @@ Do not read them if you want to figure this out yourself. “Amendment
 One” refers to “NA1”, the add-on to C89 which added some fairly
 crufty internationalization support.</p>
 <h4 id="historical-note">Historical note:</h4>
-<p>Some non-gcc compilers that were not fully ANSI standard did not
-compile this entry correctly. Using cc by default was not helpful
-most of the time on this entry, because the program had a hardcoded
-gcc invocation anyway. Anyone who uses egcs and has no plain gcc
-will need to frob the source anyway and can be expected to do the
-right thing with <code>${CC}</code>. This limitation was removed in 2023 but in the past
-one should have used gcc.</p>
+<p>Some non-<code>gcc</code> compilers that were not fully ANSI standard did not compile this
+entry correctly. Using cc by default was not helpful most of the time on this
+entry, because the program had a hardcoded <code>gcc</code> invocation anyway. Anyone who
+uses egcs and has no plain <code>gcc</code> will need to frob the source anyway and can be
+expected to do the right thing with <code>${CC}</code>. This limitation was removed in 2023
+but in the past one should have used <code>gcc</code>.</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <p>Important! This program, if it compiles at all, is mis-compiled by many
 compilers due to compiler bugs. It could be the “least likely
@@ -474,12 +472,11 @@ itself. Just load it in your favorite editor.</p>
 <h3 id="requirements">Requirements</h3>
 <p><code>gcc</code> (the GNU C compiler) must be available at runtime. It is assumed that your
 C implementation keeps headers as files in the <code>/usr/include</code> directory. The
-<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/schweikh1/info">info</a> file must be readable and reside in the current working directory.
-The current working directory must be writable in order to create a temporary
-file (which is removed upon program termination). In case you don’t have gcc at
-runtime, not all is lost if your compiler or preprocessor can produce a list of
-defined macros in the format output by <code>gcc -dM</code>, i.e. lines of the form
-<code>#define MACRO value</code>.</p>
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/schweikh1/info">info</a> file must be readable and reside in the
+current working directory. The current working directory must be writable in
+order to create a temporary file (which is removed upon program termination). In
+case you don’t have gcc at runtime, not all is lost if your compiler or
+preprocessor can produce a list of defined macros in the format output by <code>gcc -dM</code>, i.e. lines of the form <code>#define MACRO value</code>.</p>
 <p>Edit the source at line 55 in this case.</p>
 <h3 id="background">Background</h3>
 <p>ISO C has a very strict idea of visibility of identifiers. All possible
@@ -500,6 +497,10 @@ programs that may fail to compile due to syntax errors: supposing that
     }</code></pre>
 <p>is expected to compile and meet the assertion. If it does not, your
 compiler compiles some other language than ISO C.</p>
+<h3 id="notice-to-those-who-wish-for-a-greater-challenge">NOTICE to those who wish for a greater challenge:</h3>
+<p><strong>If you want a greater challenge, don’t read any further</strong>:
+just try to understand the program via the source.</p>
+<p>If you get stuck, come back and read below for additional hints and information.</p>
 <h3 id="why-i-think-my-program-is-obfuscated">Why I think my program is obfuscated</h3>
 <p>Not only is the program’s purpose a thorough standard conformance
 test, the source itself is a beast and has uncovered bugs in many
@@ -590,16 +591,15 @@ The advantages of an independent clean room approach…</p>
     print length ($_),&quot;\n&quot;;</code></pre>
 <p>To use, try:</p>
 <pre><code>    perl ./charcount.pl schweikh1.c</code></pre>
-<p>I have tried, as suggested in the guidelines, to let the code look
-like ordinary C code. Apart from a few long lines I think I left
-the indentation like I would in RL. You should however not try to
-use <code>indent</code> on the source. The code is extremely fragile because of the
-myriads of <code>__LINE__</code> macros – indenting is a sure way to break
-the program. Don’t even think of maintaining that beast; I’ve
-had my share of core dumps during development :-) A test suite
-was used after every minor change to find out if the program still
+<p>I have tried, as suggested in the <a href="../guidelines.txt">guidelines</a>, to let the
+code look like ordinary C code. Apart from a few long lines I think I left the
+indentation like I would in RL. You should however not try to use <code>indent</code> on
+the source. The code is extremely fragile because of the myriads of <code>__LINE__</code>
+macros – indenting is a sure way to break the program. Don’t even think of
+maintaining that beast; I’ve had my share of core dumps during development :-) A
+test suite was used after every minor change to find out if the program still
 does what it should.</p>
-<p>From the goals: “To stress C compilers with unusual code.”
+<p>From the goals: “<code>To stress C compilers with unusual code.</code>”
 That describes exactly my modest attempts…</p>
 <!--
 

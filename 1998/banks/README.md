@@ -46,8 +46,8 @@ because in the header file you can see that `XK_u` corresponds to `u` and `XK_d`
 corresponds to `d`:
 
 ``` <!---c-->
-    #define XK_d                             0x0064  /* U+0064 LATIN SMALL LETTER D */
-    #define XK_u                             0x0075  /* U+0075 LATIN SMALL LETTER U */
+    #define XK_d 0x0064  /* U+0064 LATIN SMALL LETTER D */
+    #define XK_u 0x0075  /* U+0075 LATIN SMALL LETTER U */
 ```
 
 Note that the [keysym.h](%%REPO_URL%%/1998/banks/keysym.h) file is not complete from X11; it's just the

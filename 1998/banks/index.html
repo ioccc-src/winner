@@ -437,8 +437,8 @@ the throttle up and down to <code>u</code> and <code>d</code>:</p>
 <pre><code>    make clobber IT=XK_u DT=XK_d all</code></pre>
 <p>because in the header file you can see that <code>XK_u</code> corresponds to <code>u</code> and <code>XK_d</code>
 corresponds to <code>d</code>:</p>
-<pre><code>    #define XK_d                             0x0064  /* U+0064 LATIN SMALL LETTER D */
-    #define XK_u                             0x0075  /* U+0075 LATIN SMALL LETTER U */</code></pre>
+<pre><code>    #define XK_d 0x0064  /* U+0064 LATIN SMALL LETTER D */
+    #define XK_u 0x0075  /* U+0075 LATIN SMALL LETTER U */</code></pre>
 <p>Note that the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/banks/keysym.h">keysym.h</a> file is not complete from X11; it’s just the
 more likely candidates (and some that are probably unlikely :-) ).</p>
 <p>The upper case letters would be <code>XK_U</code> and <code>XK_D</code> and you can search the header

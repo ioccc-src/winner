@@ -53,7 +53,7 @@ counter before shifting out each symbol, such as
 We can also use the remaining bits to *include* the counter
 
 ```
-    length 1: 00000.1x     E > 00000.11
+    length 1: 00000.1x     `E > 00000.11
     length 2: 0000.1xx
     length 3: 000.1xxx
     length 4: 00.1xxxx     Z > 00.11100
@@ -76,11 +76,11 @@ the initializing (encoding) string awkward.  Hence I came up with the
 following
 
 ```
-    length 1: 0010010x     E > 00100101  (= '%')
-    length 2: 001010xx
-    length 3: 00110xxx
-    length 4: 0100xxxx     Z > 01001100  (= 'L')
-    length 5: 011xxxxx     3 > 01100111  (= 'g')
+length 1: 0010010x     E > 00100101  (= '%')
+length 2: 001010xx
+length 3: 00110xxx
+length 4: 0100xxxx     Z > 01001100  (= 'L')
+length 5: 011xxxxx     3 > 01100111  (= 'g')
 ```
 
 Notice these encodings in the initialization string.  Only the coding for
@@ -99,7 +99,7 @@ Note that the calculation for the next value of `encoding` is done at `int`
 precision, so that the actual value of the `char` remains `<= 127`.
 
 The character `'-'` (ASCII 45) and `'.'` (ASCII 46) are conveniently in
-sequence, so the putchar can simply be
+sequence, so the `putchar(3)` can simply be
 
 ``` <!---c-->
     putchar(45 + encoding % 2);
@@ -111,7 +111,8 @@ The assignment can be incorporated into the `while` control test, and a
 as a `while` loop with a comma operator in the test:
 
 ``` <!---c-->
-    while(putchar(45 + encoding % 2), encoding = encoding + 32 >> 1);
+    while(putchar(45 + encoding % 2),
+        encoding = encoding + 32 >> 1);
 ```
 
 Voila.
@@ -141,25 +142,25 @@ is a valid encoding !  We must, however, use `memchr(3)` instead of `strchr(3)` 
 the decoding lookup because of this `'\0'`.  Since it is far more obscure
 this way, I hope you'll forgive me.
 
-The outline of the program is roughly as follows
+The outline of the program is roughly as follows (pseudo C):
 
 ```
     while (more lines) {
-            if (line is in morse) {
-                    while (more characters) {
-                            skip next sequence
-                            if (' ')
-                                    putchar(' ');
-                            else
-                                    decode_sequence; /* backwards */
-                    }
-            } else {
-                    while (more characters) {
-                            if (isalnum)
-                                    encode_character;
-                            putchar(' ');
-                    }
+        if (line is in morse) {
+            while (more characters) {
+                skip next sequence
+                    if (' ')
+                        putchar(' ');
+                    else
+                        decode_sequence; /* backwards */
             }
+        } else {
+            while (more characters) {
+                if (isalnum)
+                    encode_character;
+                    putchar(' ');
+            }
+        }
 ```
 
 Because of the *two* `while(more characters)` loops are the same, I've
@@ -176,30 +177,41 @@ as the temporary `l[0]` will remain `!= 0`.
 I've put the `if`s in the above layout into a single switch.  Hope you don't
 mind ;-)
 
-Summary of the use of l[999]:
+Summary of the use of `l[999]`:
 
-```
-    l[0]            result of "is this line in morse" test
-    l[0]            temporary shift during encoding
-    l[0]  - l[33]   Morse codings (letters and digits, plus garbage)
-    l[11] - l[14]   strspn argument
-    l[12] - l[14]   strspn argument
-    l[34]           terminator for backward decoding
-    l[35] - l[998]  input line
-```
+- `l[0]`
+  * **result of "is this line in morse" test**
+
+- `l[0]`
+  * **temporary shift during encoding**
+
+- `l[0]  - l[33]`
+  * **Morse codings (letters and digits, plus garbage)**
+
+- `l[11] - l[14]`
+  * **`strspn(3)` argument**
+
+- `l[12] - l[14]`
+  * **`strspn(3)` argument**
+
+- `l[34]`
+  * **terminator for backward decoding**
+
+- `l[35] - l[998]`
+  * **input line**
 
 <hr style="width:10%;text-align:left;margin-left:0">
 
 Selected notes:
 
-- We don't need to declare `isalnum(3)` (or include ctype.h) as its implicit
-  declaration is correct (int argument, int result).  This is not so for
+- We don't need to declare `isalnum(3)` (or include `ctype.h`) as its implicit
+  declaration is correct (`int` argument, `int` result).  This is not so for
   `strlen(3)`, `strspn(3)`, and `memchr(3)` as they use `size_t`.
 - During development, my gcc 2.7.2.3 had an internal compiler error (signal
-  6) on code that was correct !
+  6\) on code that was correct !
 - lclint 2.4b thinks that "the observer is modified" a couple of times,
   whereas it is not.  Well, it is, but there is a sequence point in between.
-- lclint 2.4b parses line 13 as `<error>`, whereas it is correct code.
+- lclint 2.4b parses [line 13](%%REPO_URL%%/1998/dorssel/dorssel.c:L13) as `<error>`, whereas it is correct code.
 - lclint 2.4b is positive the second `while` loop is infinite, whereas it is
   not.
 

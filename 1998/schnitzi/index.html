@@ -419,8 +419,10 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <pre><code>    ./schnitzi n &gt; sort.c
     make sort
     ./sort
-    # enter three numbers, space separated
+    # enter three numbers, space
+    # separated
 
+    # then try:
     echo x y z | ./sort</code></pre>
 <p>where <code>n</code> and <code>x</code>, <code>y</code> and <code>z</code> are numbers.</p>
 <h2 id="try">Try:</h2>
@@ -430,32 +432,36 @@ program expects? For instance try:</p>
 <pre><code>    ./schnitzi 5 &gt; sort.c
     make sort
 
-    # try running the next command four or five times:
+    # now try running the next
+    # command four or five times:
     echo 2 5 3 1 | ./sort</code></pre>
 <p>Why does this happen?</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>This is a beautiful program. How can a program with no conditional (except for
-the fixes for modern systems though still no <code>if</code>s) behavior at all have output
-which depends on anything?</p>
+the fixes for modern systems although there are still no <code>if</code>s) behavior at all
+have output which depends on anything?</p>
 <p>For hints on deciphering this, see below past the Author’s remarks;
 they’re a nice summary, but they leave the mystery intact.</p>
-<p>BTW: the author notes an incredible lipogram story called
+<p>BTW: the author notes an incredible
+<a href="https://en.wikipedia.org/wiki/Lipogram">lipogram</a> story called
 <a href="https://www.gutenberg.org/cache/epub/47342/pg47342.txt">Gadsby</a> which has no
-letter E in the story. He did not note this but it has over 50000 (50 thousand)
-(!!) words without the letter E which is one of the most common letters!</p>
+letter <code>E</code> in the story. He did not note this but it has over <code>50000</code> (50
+thousand) (!!) words without the letter <code>E</code> which is one of the most common
+letters!</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
-<p>In literary circles, there is a poetic form called a “lipogram”,
-which is a poem in which a specific letter has been distinctly
-avoided. This principle can be applied in other ways. For
-instance, in this paragraph, the vowel which immediately follows
-<code>t</code> in the alphabet is nowhere to be seen. There is even an
-entire novel (E. V. Wright’s “Gadsby”) in which no word contains
-the letter <code>e</code>.</p>
+<p>In literary circles, there is a poetic form called a
+“<a href="https://en.wikipedia.org/wiki/Lipogram">lipogram</a>”, which is a poem in which a
+specific letter has been distinctly avoided. This principle can be applied in
+other ways. For instance, in this paragraph, the vowel which immediately
+follows <code>t</code> in the alphabet is nowhere to be seen. There is even an entire
+novel (E. V. Wright’s
+“<a href="https://www.gutenberg.org/cache/epub/47342/pg47342.txt">Gadsby</a>”) in which no
+word contains the letter <code>e</code>.</p>
 <p>The IOCCC has been no stranger to this concept. Several winning entries from
 years past have accomplished interesting feats while completely avoiding the use
 of certain C constructs thought to be essential (e.g.,
-<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1988/robison/robison.c">1988/robison.c</a> file). If you have to ask why they would
-do it this way, then this contest just isn’t for you.</p>
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1988/robison/robison.c">1988/robison.c</a> file). If you have to ask
+why they would do it this way, then this contest just isn’t for you.</p>
 <p>In continuing with this fine tradition, this program suggests to the ANSI
 committee some new practical simplifications for the C language. For instance,
 it appears that CONDITIONAL BRANCHING isn’t really necessary. So, we can do

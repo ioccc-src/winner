@@ -6,14 +6,12 @@
 
 The author stated:
 
-```
-    In the remote event that the input has more than `8192` files with
-    the same size (on systems where `sizeof (char *) == 4`, or `4096` when
-    `sizeof (char *) == 8`), increase the manifest constant 32767 on line
-    31.
-```
+> In the remote event that the input has more than `8192` files with the same
+size (on systems where `sizeof (char *) == 4`, or `4096` when `sizeof (char *)
+== 8`), increase the manifest constant 32767 on [line
+31](%%REPO_URL%%/1998/schweikh3/schweikh3.c#L31).
 
-An alternate version allows one to fix this; see [alternate
+An alternate version allows one to fix this; see [Alternate
 code](#alternate-code) below.
 
 
@@ -78,10 +76,11 @@ The source is expected to conform to IEEE Std 1003.1-1990 ("POSIX").
 Thank God the IEEE does not standardize a coding style...
 
 
-###    What this program does
+### What this program does
 
-This is best explained in the man page. The troff source for this
-man page can be found in the file [samefile.1](%%REPO_URL%%/1998/schweikh3/samefile.1). To render try:
+This is best explained in the man page. The troff source for this man page can
+be found in the file [samefile.1](%%REPO_URL%%/1998/schweikh3/samefile.1). To
+render try:
 
 ``` <!---sh-->
     `man ./samefile.1
@@ -205,6 +204,14 @@ otherwise.
 #### SEE ALSO
 
 `find(1)`, `ln(1)`, `rm(1)`
+
+
+### NOTICE to those who wish for a greater challenge
+
+**If you want a greater challenge, don't read any further**:
+just try to understand the program via the source.
+
+If you get stuck, come back and read below for additional hints and information.
 
 
 ### Why I think it is obfuscated

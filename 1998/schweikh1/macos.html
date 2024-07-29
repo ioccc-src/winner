@@ -389,11 +389,18 @@
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <!-- BEFORE: 1st line of markdown file: 1998/schweikh1/macos.md -->
+<h1 id="introduction-to-this-document">Introduction to this document:</h1>
 <p>This document describes how this was fixed to work with macOS as well as some of
 the magic in the entry. Even if you don’t have a Mac it might be worth your time
 reading especially as some of it details some important fixes and changes in the
 original entry as well.</p>
-<h1 id="macos-changes">macOS changes</h1>
+<h2 id="notice-to-those-who-wish-for-a-greater-challenge">NOTICE to those who wish for a greater challenge:</h2>
+<p><strong>If you want a greater challenge, don’t read any further</strong>:
+just try to understand the program via the source.</p>
+<p>If you get stuck, come back and read below for additional hints and information.
+Of course, if you do not have a Mac the code might make less sense, so you might
+just wish to read this in that case, should you wish to understand it.</p>
+<h1 id="macos-aside">macOS aside:</h1>
 <p>As an aside: if you have a Mac with the Apple chip, some of the header files
 will report an unsupported architecture and unsupported compiler (error,
 warning). This will not make the program abort, however, but even with an Intel
@@ -401,20 +408,26 @@ CPU though, the original entry will not work in macOS as it stands because
 <code>/usr/include</code> is hard-coded in the code and macOS does not have it.</p>
 <p>Nevertheless, although some of it would not work in other systems where
 <code>/usr/include</code> exists, the <code>#define</code>s would still be found okay, at least until
-a file was not found (this limitation was removed in both versions in 2023). see</p>
+a file was not found (this limitation was removed in both versions in 2023).</p>
 <p>However, as noted, macOS does <strong>not</strong> have <code>/usr/include</code> so this would never
 work for macOS without some changes, described next. For macOS you will need the
 command line tools installed which can be done like:</p>
 <pre><code>    sudo xcode-select --install</code></pre>
+<h1 id="important-point-about-the-hard-coded-compiler">Important point about the hard-coded compiler:</h1>
 <p>An important point is that the original version hard-coded <code>gcc</code> but just like
 the entry, the alternate version has also removed this limitation despite <code>gcc</code>
-existing (though it’s <code>clang</code>) in macOS.</p>
+existing (though it’s <code>clang</code>) in macOS; instead it is <code>cc</code>.</p>
+<h1 id="how-this-entry-works-the-magic">How this entry works (the magic):</h1>
 <p>Now as far as how this works if you look at the code of
-<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/schweikh1/schweikh1.c">schweikh1.c</a>, on line 55 you’ll see a funny command (this goes for
-the alternate version as well but a bit different).</p>
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/schweikh1/schweikh1.c">schweikh1.c</a>, on <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/schweikh1/schweikh1.c#L55">line
+55</a> you’ll see a funny command
+(this goes for the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/schweikh1/schweikh1.alt.c">alternate
+version</a>, also on <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/schweikh1/schweikh1.c#L55">line
+55</a>, but the command is necessarily
+different).</p>
 <p>Now the key is two magic numbers, one (two times) on a different line shortly below the
 string and the other a couple lines further below.</p>
-<p>In the original the numbers are, respectively, <code>44</code> and <code>46</code>, but with the gcc
+<p>In the original the numbers are, respectively, <code>44</code> and <code>46</code>, but with the <code>gcc</code>
 limitation removed the numbers now are <code>43</code> and <code>45</code>. But how does this work? Well
 the command is:</p>
 <pre><code>    &quot;0gcc -ansi -E -dM -undef %s /usr/include/%s&gt;r\0 (&quot;</code></pre>

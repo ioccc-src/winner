@@ -139,11 +139,8 @@ where the first one would show the text as rendered but without links, images
 etc. and the second one would write the html to `ms.html` so that you could open
 it in a browser.
 
-For an old example of it working as a CGI script see:
-
-``` <!---sh-->
-    https://web.archive.org/web/20040326083431/http://www.pootpoot.com/poot/pootify/?URL=http%3A%2F%2Fwww.ioccc.org
-```
+For an old example of it working as a CGI script see
+<https://web.archive.org/web/20040326083431/http://www.pootpoot.com/poot/pootify/?URL=http%3A%2F%2Fwww.ioccc.org>.
 
 
 ## Author's remarks:

@@ -412,12 +412,32 @@ Location: <a href="../../location.html#BE">BE</a> - <em>Kingdom of Belgium</em> 
 <h2 id="to-use">To use:</h2>
 <pre><code>    ./tomtorfs filename bitwidth polynom reflected init xor</code></pre>
 <p>where:</p>
-<pre><code>    filename  : file to calculate the CRC of
-    bitwidth  : width of the CRC in bits (decimal)
-    polynom   : polynomial used for the CRC (hexadecimal)
-    reflected : 0 if the CRC is not reflected, 1 if it is
-    init      : initial value for the CRC (hexadecimal)
-    xor       : value to xor the final CRC with (hexadecimal)</code></pre>
+<ul>
+<li><code>filename</code>
+<ul>
+<li>file to calculate the CRC of</li>
+</ul></li>
+<li><code>bitwidth</code>
+<ul>
+<li>width of the CRC in bits (decimal)</li>
+</ul></li>
+<li><code>polynom</code>
+<ul>
+<li>polynomial used for the CRC (hexadecimal)</li>
+</ul></li>
+<li><code>reflected</code>
+<ul>
+<li>0 if the CRC is not reflected, 1 if it is</li>
+</ul></li>
+<li><code>init</code>
+<ul>
+<li>initial value for the CRC (hexadecimal)</li>
+</ul></li>
+<li><code>xor</code>
+<ul>
+<li>value to xor the final CRC with (hexadecimal)</li>
+</ul></li>
+</ul>
 <h2 id="try">Try:</h2>
 <pre><code>    ./try.sh</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
@@ -425,15 +445,35 @@ Location: <a href="../../location.html#BE">BE</a> - <em>Kingdom of Belgium</em> 
 of the program with the value of CRCs computed by PKZIP or any other
 archiver that uses the CRC-32 algorithm.</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
-<pre><code>    Usage:
-    ./tomtorfs filename bitwidth polynom reflected init xor
-
-    filename  : file to calculate the CRC of
-    bitwidth  : width of the CRC in bits (decimal)
-    polynom   : polynomial used for the CRC (hexadecimal)
-    reflected : 0 if the CRC is not reflected, 1 if it is
-    init      : initial value for the CRC (hexadecimal)
-    xor       : value to xor the final CRC with (hexadecimal)</code></pre>
+<p>Usage:</p>
+<pre><code>    ./tomtorfs filename bitwidth polynom reflected init xor</code></pre>
+<p>where:</p>
+<ul>
+<li><code>filename</code>
+<ul>
+<li>file to calculate the CRC of</li>
+</ul></li>
+<li><code>bitwidth</code>
+<ul>
+<li>width of the CRC in bits (decimal)</li>
+</ul></li>
+<li><code>polynom</code>
+<ul>
+<li>polynomial used for the CRC (hexadecimal)</li>
+</ul></li>
+<li><code>reflected</code>
+<ul>
+<li>0 if the CRC is not reflected, 1 if it is</li>
+</ul></li>
+<li><code>init</code>
+<ul>
+<li>initial value for the CRC (hexadecimal)</li>
+</ul></li>
+<li><code>xor</code>
+<ul>
+<li>value to xor the final CRC with (hexadecimal)</li>
+</ul></li>
+</ul>
 <h3 id="examples">Examples</h3>
 <h4 id="crc-16">CRC-16:</h4>
 <pre><code>    ./tomtorfs filename 16 1021 0 FFFF 0000</code></pre>
@@ -461,22 +501,60 @@ the nice code shape I worked so hard on ;-) ) the code will become a bit more
 readable.</p>
 <p>The variable names are not very descriptive. They have the
 following meanings:</p>
-<pre><code>    a = argc
-    A = argv
-
-    b = array of unsigned long variables
-        b[0] = bit-width of the CRC (argv[2])
-        b[1] = CRC polynomial (argv[3])
-        b[2] = nonzero if CRC is reflected (argv[4])
-        b[3] = initial value of CRC (argv[5])
-        b[4] = value final CRC is XORed with (argv[6])
-        b[5] = CRC value
-        b[6] = byte from file
-        b[7] = counter
-
-    B = FILE * through which the file argv[1] is opened
-
-    C = typedef for unsigned long</code></pre>
+<ul>
+<li><code>a</code>
+<ul>
+<li>argc</li>
+</ul></li>
+<li><code>A</code>
+<ul>
+<li>argv</li>
+</ul></li>
+<li><code>b</code>
+<ul>
+<li>array of <code>unsigned long</code> variables:</li>
+<li><code>b[0]</code>
+<ul>
+<li>bit-width of the CRC (<code>argv[2]</code>)</li>
+</ul></li>
+<li><code>b[1]</code>
+<ul>
+<li>CRC polynomial (<code>argv[3]</code>)</li>
+</ul></li>
+<li><code>b[2]</code>
+<ul>
+<li>nonzero if CRC is reflected (argv[4])</li>
+</ul></li>
+<li><code>b[3]</code>
+<ul>
+<li>initial value of CRC (argv[5])</li>
+</ul></li>
+<li><code>b[4]</code>
+<ul>
+<li>value final CRC is XORed with (argv[6])</li>
+</ul></li>
+<li><code>b[5]</code>
+<ul>
+<li>CRC value</li>
+</ul></li>
+<li><code>b[6]</code>
+<ul>
+<li>byte from file</li>
+</ul></li>
+<li><code>b[7]</code>
+<ul>
+<li>counter</li>
+</ul></li>
+</ul></li>
+<li><code>B</code>
+<ul>
+<li><code>FILE *</code> through which the file <code>argv[1]</code> is opened</li>
+</ul></li>
+<li><code>C</code>
+<ul>
+<li><code>typedef</code> for <code>unsigned long</code></li>
+</ul></li>
+</ul>
 <p>The first <code>for</code> loop simply reads the command-line arguments
 in the <code>b[]</code> array. The third parameter to <code>strtoul(3)</code> causes
 all arguments to be in base-16 (hex) except the first one,
