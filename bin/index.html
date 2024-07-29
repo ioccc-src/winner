@@ -708,6 +708,33 @@ do that, that is not a problem.</p>
 <pre><code>    bin/gen-years.sh -v 1</code></pre>
 <p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
 <pre><code>    make gen_years</code></pre>
+<div id="jfmt-wrapper">
+<h3 id="jfmt-wrapper.sh"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/jfmt-wrapper.sh">jfmt-wrapper.sh</a></h3>
+</div>
+<p>The <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/jfmt-wrapper.sh">jfmt-wrapper.sh</a> tool is a wrapper
+tool for <code>jfmt(1)</code>, a tool that will format a JSON
+# file into a canonical style.</p>
+<p>NOTE: As of 2024 July 28 the <code>jfmt(1)</code> tool has not been written,
+so <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/jfmt-wrapper.sh">jfmt-wrapper.sh</a> uses the
+<code>JSONPath.sh(1)</code> tool from the recently forked and modified
+<a href="https://github.com/lcn2/JSONPath.sh">JSONPath.sh tool</a>.</p>
+<p>Usage:</p>
+<pre><code>    bin/jfmt-wrapper.sh .entry.json</code></pre>
+<div id="jprint-wrapper">
+<h3 id="jprint-wrapper.sh"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/jprint-wrapper.sh">jprint-wrapper.sh</a></h3>
+</div>
+<p>The <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/jprint-wrapper.sh">jprint-wrapper.sh</a> tool is a wrapper
+tool for <code>jprint(1)</code>, a tool that will format JSON in a canonical style
+to stdout.</p>
+<p>NOTE: <code>jprint(1)</code> is a planned tool based on <code>jfmt(1)</code>.
+As of 2024 July 28 that tool has not been written, so
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/jprint-wrapper.sh">jprint-wrapper.sh</a> uses
+the <code>JSONPath.sh(1)</code> tool from the recently forked and modified
+<a href="https://github.com/lcn2/JSONPath.sh">JSONPath.sh tool</a>.</p>
+<p>Usage:</p>
+<pre><code>    bin/jprint-wrapper.sh .entry.json</code></pre>
+<p>Or use in a pipe:</p>
+<pre><code>    cat .info.json | bin/jprint-wrapper.sh</code></pre>
 <div id="md2html_cfg">
 <h3 id="md2html.cfg"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/md2html.cfg">md2html.cfg</a></h3>
 </div>

@@ -568,6 +568,53 @@ We recommend that this tool be invoked via the top level `Makefile`:
 ```
 
 
+<div id="jfmt-wrapper">
+### [jfmt-wrapper.sh](%%REPO_URL%%/bin/jfmt-wrapper.sh)
+</div>
+
+The [jfmt-wrapper.sh](%%REPO_URL%%/bin/jfmt-wrapper.sh) tool is a wrapper
+tool for `jfmt(1)`, a tool that will format a JSON
+# file into a canonical style.
+
+NOTE: As of 2024 July 28 the `jfmt(1)` tool has not been written,
+so [jfmt-wrapper.sh](%%REPO_URL%%/bin/jfmt-wrapper.sh) uses the
+`JSONPath.sh(1)` tool from the recently forked and modified
+[JSONPath.sh tool](https://github.com/lcn2/JSONPath.sh).
+
+Usage:
+
+``` <!---sh-->
+    bin/jfmt-wrapper.sh .entry.json
+```
+
+
+<div id="jprint-wrapper">
+### [jprint-wrapper.sh](%%REPO_URL%%/bin/jprint-wrapper.sh)
+</div>
+
+The [jprint-wrapper.sh](%%REPO_URL%%/bin/jprint-wrapper.sh) tool is a wrapper
+tool for `jprint(1)`, a tool that will format JSON in a canonical style
+to stdout.
+
+NOTE: `jprint(1)` is a planned tool based on `jfmt(1)`.
+As of 2024 July 28 that tool has not been written, so
+[jprint-wrapper.sh](%%REPO_URL%%/bin/jprint-wrapper.sh) uses
+the `JSONPath.sh(1)` tool from the recently forked and modified
+[JSONPath.sh tool](https://github.com/lcn2/JSONPath.sh).
+
+Usage:
+
+``` <!---sh-->
+    bin/jprint-wrapper.sh .entry.json
+```
+
+Or use in a pipe:
+
+``` <!---sh-->
+    cat .info.json | bin/jprint-wrapper.sh
+```
+
+
 <div id="md2html_cfg">
 ### [md2html.cfg](%%REPO_URL%%/bin/md2html.cfg)
 </div>
