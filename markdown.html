@@ -467,7 +467,7 @@ anchors.</p>
 </div>
 <p>Please do <strong>NOT</strong> use the obsolete <code>&lt;tt&gt;</code>
 (<span style="font-family: monospace;"><strong>teletype</strong></span>) HTML element:</p>
-<pre><code>    &lt;tt&gt;The tt element is obsolete&lt;/tt&gt;              &lt;=== no thank you</code></pre>
+<pre><code>    &lt;tt&gt;The tt element is obsolete&lt;/tt&gt;                       &lt;=== no thank you</code></pre>
 <p>Instead use either a monospaced <code>&lt;span&gt;</code> or an inline markdown code block:</p>
 <pre><code>    &lt;span style=&quot;font-family: monospace;&quot;&gt;Use of a monospaced font
                                           is one option,
@@ -482,7 +482,7 @@ anchors.</p>
 <p>Please do <strong>NOT</strong> start code blocks at the first column.</p>
 <p>For example:</p>
 <pre class="&lt;!---markdown--&gt;"><code>``` &lt;!---sh--&gt;
-echo &quot;This code block is NOT indented&quot;                       &lt;=== no thank you
+echo &quot;This code block is NOT indented&quot;                        &lt;=== no thank you
 ```</code></pre>
 <p>We request that you indent the code block by multiples of 4 ASCII <strong>SPACES</strong>:</p>
 <pre class="&lt;!---markdown--&gt;"><code>``` &lt;!---sh--&gt;
@@ -513,10 +513,10 @@ used as part of the leading whitespace within a markdown file.</p>
 ASCII tab characters anywhere inside a markdown file:</p>
 <p>For example:</p>
 <pre class="&lt;!---markdown--&gt;"><code>```
-    Please do **NOT**   use ASCII tabs  in markdown files.      &lt;=== no thank you
-        Please do **NOT** indent markdown with ASCII tabs.      &lt;=== no thank you
+    Please do **NOT**   use ASCII tabs  in markdown files.    &lt;=== no thank you
+        Please do **NOT** indent markdown with ASCII tabs.    &lt;=== no thank you
 
-        We      don&#39;t   mind    tabs    in      general,        &lt;=== no thank you
+        We      don&#39;t   mind    tabs    in      general,      &lt;=== no thank you
      We just ask that you NOT use them in markdown files.
 ```</code></pre>
 <p>And to clarify, we are only talking about markdown files,
@@ -556,7 +556,7 @@ spaces.</p>
 blocks</a>
 <strong>NOT</strong> specify a language directly.</p>
 <p>For example:</p>
-<pre class="&lt;!---markdown--&gt;"><code>```c                                                            &lt;=== no thank you
+<pre class="&lt;!---markdown--&gt;"><code>```c                                                          &lt;=== no thank you
     int main(void) {return 0;}
 ```</code></pre>
 <p>Instead, put the language inside an HTML comment, separated from the
@@ -732,12 +732,12 @@ an underscore (<code>_</code>). Using an asterisk can complicate parsing and som
 to incorrect results. This can especially go for when it is <strong><em>bold and
 italic</em></strong>.</p>
 <p>For example, instead of:</p>
-<pre><code>     *this text is italic*        &lt;=== no thank you</code></pre>
+<pre><code>     *this text is italic*                                    &lt;=== no thank you</code></pre>
 <p>use:</p>
 <pre><code>     _this text is italic_</code></pre>
 <p>Another example, for <strong><em>bold italic</em></strong>:</p>
 <p>Do <strong>NOT</strong> use:</p>
-<pre><code>     ***this text is bold italic***         &lt;=== no thank you</code></pre>
+<pre><code>     ***this text is bold italic***                           &lt;=== no thank you</code></pre>
 <p>Instead use:</p>
 <pre><code>     **_this text is bold italic_**</code></pre>
 <p>or:</p>

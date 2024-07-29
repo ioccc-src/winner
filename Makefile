@@ -352,12 +352,13 @@ help:
 	@echo
 	@echo '# Rules for building specific web pages, a subset of rules mentioned above:'
 	@echo
-	@echo 'make thanks		;: generate thanks-for-help.html'
 	@echo 'make bugs		;: generate bugs.html'
-	@echo 'make rules		;: generate next/rules.hmtl'
+	@echo 'make faq		;: generate faq.html'
 	@echo 'make guidelines		;: generate next/guidelines.hmtl'
-	@echo 'make faq	        ;: generate faq.html'
+	@echo 'make markdown		;: generate markdown.hmtl'
+	@echo 'make rules		;: generate next/rules.hmtl'
 	@echo 'make security		;: generate SECURITY.html'
+	@echo 'make thanks		;: generate thanks-for-help.html'
 	@echo
 	@echo '# Compound make rules for building a local copy of the IOCCC website:'
 	@echo
@@ -588,6 +589,13 @@ bugs: ${GEN_TOP_HTML} bugs.md
 	@echo "Eh, what's up, doc?"
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
+faq: ${GEN_TOP_HTML} faq.md
+	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo "You have a question?"
+	${GEN_TOP_HTML} -v 1 faq
+	@echo "Perhaps the FAQ might help!"
+	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+
 gen_next: ${GEN_TOP_HTML} next/README.md next/guidelines.md next/rules.md
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
 	${GEN_TOP_HTML} -v 1 next/README
@@ -595,21 +603,14 @@ gen_next: ${GEN_TOP_HTML} next/README.md next/guidelines.md next/rules.md
 	${GEN_TOP_HTML} -v 1 next/rules
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
+markdown: ${GEN_TOP_HTML} markdown.md
+	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	${GEN_TOP_HTML} -v 1 markdown
+	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+
 rules: ${GEN_TOP_HTML} next/rules.md
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
 	${GEN_TOP_HTML} -v 1 next/rules
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
-
-guidelines: ${GEN_TOP_HTML} next/guidelines.md
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
-	${GEN_TOP_HTML} -v 1 next/guidelines
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
-
-faq: ${GEN_TOP_HTML} faq.md
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
-	@echo "You have a question?"
-	${GEN_TOP_HTML} -v 1 faq
-	@echo "Perhaps the FAQ might help!"
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 security: ${GEN_TOP_HTML} SECURITY.md

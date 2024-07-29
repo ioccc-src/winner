@@ -145,7 +145,7 @@ Please do **NOT** use the obsolete `<tt>`
 (<span style="font-family: monospace;">**teletype**</span>) HTML element:
 
 ``` <!---html-->
-    <tt>The tt element is obsolete</tt>              <=== no thank you
+    <tt>The tt element is obsolete</tt>                       <=== no thank you
 ```
 
 Instead use either a monospaced `<span>` or an inline markdown code block:
@@ -175,7 +175,7 @@ For example:
 
 ```` <!---markdown-->
 ``` <%%NO_COMMENT%%!---sh-->
-echo "This code block is NOT indented"                       <=== no thank you
+echo "This code block is NOT indented"                        <=== no thank you
 ```
 ````
 
@@ -223,10 +223,10 @@ For example:
 
 ```` <!---markdown-->
 ```
-    Please do **NOT**	use ASCII tabs	in markdown files.      <=== no thank you
-	Please do **NOT** indent markdown with ASCII tabs.      <=== no thank you
+    Please do **NOT**	use ASCII tabs	in markdown files.    <=== no thank you
+	Please do **NOT** indent markdown with ASCII tabs.    <=== no thank you
 
-	We	don't	mind	tabs	in	general,        <=== no thank you
+	We	don't	mind	tabs	in	general,      <=== no thank you
      We just ask that you NOT use them in markdown files.
 ```
 ````
@@ -294,7 +294,7 @@ blocks](https://www.markdownguide.org/extended-syntax/#fenced-code-blocks)
 For example:
 
 ```` <!---markdown-->
-```c                                                            <=== no thank you
+```c                                                          <=== no thank you
     int main(void) {return 0;}
 ```
 ````
@@ -617,7 +617,7 @@ italic_**.
 For example, instead of:
 
 ``` <!---markdown-->
-     *this text is italic*        <=== no thank you
+     *this text is italic*                                    <=== no thank you
 ```
 
 use:
@@ -632,7 +632,7 @@ Do **NOT** use:
 
 
 ``` <!---markdown-->
-     ***this text is bold italic***         <=== no thank you
+     ***this text is bold italic***                           <=== no thank you
 ```
 
 Instead use:
@@ -646,4 +646,3 @@ or:
 ``` <!---markdown-->
      _**this text is bold italic**_
 ```
-
