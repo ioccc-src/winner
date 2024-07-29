@@ -20,6 +20,7 @@ This is FAQ version **28.0.3 2024-07-27**.
 - <a class="normal" href="#faq0_13">0.13 - How can I validate my submission tarball?</a>
 - <a class="normal" href="#faq0_14">0.14 - What is the `fnamchk` tool?</a>
 - <a class="normal" href="#faq0_15">0.15 - What is the `mkiocccentry` tool and how do I use it?</a>
+- <a class="normal" href="#faq0_16">0.16 - How to I compile `mkiocccentry` and related tools?</a>
 
 
 ## Section  1 - [History of the IOCCC](#faq1)
@@ -1470,7 +1471,6 @@ FAQ on "[validating your submission tarball](#txzchk)"
 for more information.
 
 
-
 <div id="faq0_15">
 <div id="mkiocccentry">
 ### FAQ 0.15 - What is the `mkiocccentry` tool and how do I use it?
@@ -1634,6 +1634,31 @@ or more of these tools manually.
 
 See also the [Guidelines](next/guidelines.html) and the [Rules](next/rules.html)
 (and in particular [Rule 17](next/rules.html#rule17)).
+
+
+<div id="faq0_16">
+<div id="mkiocccentry_compile">
+### FAQ 0.16 - How to I compile `mkiocccentry` and its related tools?
+</div>
+</div>
+
+After you
+[downloaded the mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry/blob/master/FAQ.md#download)
+
+>   Quoting the mkiocccentry repo FAQ:
+>
+>   git clone https://github.com/ioccc-src/mkiocccentry.git
+
+You need to [compile the mkiocccentry and related tools](https://github.com/ioccc-src/mkiocccentry/blob/master/FAQ.md#compiling).
+
+>   Quoting the mkiocccentry repo FAQ:
+>
+>   cd mkiocccentry ; make clobber
+
+See the
+[mkiocccentry repo FAQ](https://github.com/ioccc-src/mkiocccentry/blob/master/FAQ.md)
+for more up to date information on downloading, compiling, and related FAQ information.
+
 
 <div id="faq1">
 ## Section 1: History of the IOCCC
