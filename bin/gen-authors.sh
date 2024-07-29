@@ -85,7 +85,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.10.5 2024-07-28"
+export VERSION="1.10.6 2024-07-28"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -1278,7 +1278,7 @@ EOF
 	        echo "GitHub: <a class=\"normal\" href=\"https://github.com/$AUTHOR_GITHUB_USERNAME\">$AUTHOR_GITHUB</a>"
 	    fi
 	    echo "<br>"
-	    echo "author_handle: <a class=\"normal\" href=\"$%%REPO_URL%%/author/$AUTHOR_HANDLE.json\">$AUTHOR_HANDLE</a>"
+	    echo "author_handle: <a class=\"normal\" href=\"%%REPO_URL%%/author/$AUTHOR_HANDLE.json\">$AUTHOR_HANDLE</a>"
 	    echo "<p></p>"
 
 	    # output YYYY/dir set made by this author
