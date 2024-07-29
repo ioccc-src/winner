@@ -84,7 +84,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.3.11 2024-07-22"
+export VERSION="1.3.12 2024-07-28"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -100,7 +100,9 @@ if [[ $status -eq 0 ]]; then
     TOPDIR=$("$GIT_TOOL" rev-parse --show-toplevel)
 fi
 export TOPDIR
-export REPO_URL="https://github.com/ioccc-src/temp-test-ioccc/blob/master"
+export REPO_TOP_URL="https://github.com/ioccc-src/temp-test-ioccc"
+# GitHub puts individual files under the "blob/master" sub-directory.
+export REPO_URL="$REPO_TOP_URL/blob/master"
 export SITE_URL="https://ioccc-src.github.io/temp-test-ioccc"
 export CAP_W_FLAG_FOUND=
 export MODTIME_METHOD=""
@@ -195,7 +197,7 @@ function output_modtime
 # set usage message
 #
 export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-n] [-N]
-			[-u repo_url] [-w site_url] [-W]
+			[-u repo_top_url] [-w site_url] [-W]
 
 	-h		print help message and exit
 	-v level	set verbosity level (def level: 0)
@@ -206,8 +208,7 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-n] [-N]
 	-n		go thru the actions, but do not update any files (def: do the action)
 	-N		do not process file, just parse arguments and ignore the file (def: process the file)
 
-	-u repo_url	Base level URL of target git repo (def: $REPO_URL)
-			NOTE: The '-u repo_url' is passed as leading options on tool command lines.
+	-u repo_top_url	Top level URL of target git repo (def: $REPO_TOP_URL)
 
 	-w site_url	Base URL of the website (def: $SITE_URL)
 			NOTE: The '-w site_url' is passed as leading options on tool command lines.
@@ -253,7 +254,9 @@ while getopts :hv:Vd:nNu:w:W flag; do
 	;;
     N) DO_NOT_PROCESS="-N"
 	;;
-    u) REPO_URL="$OPTARG"
+    u) REPO_TOP_URL="$OPTARG"
+	# GitHub puts individual files under the "blob/master" sub-directory.
+	export REPO_URL="$REPO_TOP_URL/blob/master"
 	;;
     w) SITE_URL="$OPTARG"
 	;;
@@ -296,21 +299,21 @@ fi
 
 # verify that we have a topdir directory
 #
-REPO_NAME=$(basename "$REPO_URL")
+REPO_NAME=$(basename "$REPO_TOP_URL")
 export REPO_NAME
 if [[ -z $TOPDIR ]]; then
     echo "$0: ERROR: cannot find top of git repo directory" 1>&2
-    echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_URL; cd $REPO_NAME" 1>&2
+    echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_TOP_URL; cd $REPO_NAME" 1>&2
     exit 6
 fi
 if [[ ! -e $TOPDIR ]]; then
     echo "$0: ERROR: TOPDIR does not exist: $TOPDIR" 1>&2
-    echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_URL; cd $REPO_NAME" 1>&2
+    echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_TOP_URL; cd $REPO_NAME" 1>&2
     exit 6
 fi
 if [[ ! -d $TOPDIR ]]; then
     echo "$0: ERROR: TOPDIR is not a directory: $TOPDIR" 1>&2
-    echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_URL; cd $REPO_NAME" 1>&2
+    echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_TOP_URL; cd $REPO_NAME" 1>&2
     exit 6
 fi
 
@@ -482,6 +485,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: V_FLAG=$V_FLAG" 1>&2
     echo "$0: debug[3]: GIT_TOOL=$GIT_TOOL" 1>&2
     echo "$0: debug[3]: TOPDIR=$TOPDIR" 1>&2
+    echo "$0: debug[3]: REPO_TOP_URL=$REPO_TOP_URL" 1>&2
     echo "$0: debug[3]: REPO_URL=$REPO_URL" 1>&2
     echo "$0: debug[3]: SITE_URL=$SITE_URL" 1>&2
     echo "$0: debug[3]: CAP_W_FLAG_FOUND=$CAP_W_FLAG_FOUND" 1>&2

@@ -84,7 +84,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.5.6 2024-07-22"
+export VERSION="1.5.7 2024-07-28"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -103,7 +103,9 @@ export TOPDIR
 export DOCROOT_SLASH="./"
 export TAGLINE="bin/$NAME"
 export MD2HTML_SH="bin/md2html.sh"
-export REPO_URL="https://github.com/ioccc-src/temp-test-ioccc/blob/master"
+export REPO_TOP_URL="https://github.com/ioccc-src/temp-test-ioccc"
+# GitHub puts individual files under the "blob/master" sub-directory.
+export REPO_URL="$REPO_TOP_URL/blob/master"
 export SITE_URL="https://ioccc-src.github.io/temp-test-ioccc"
 JPARSE_TOOL=$(type -P jparse)
 export JPARSE_TOOL
@@ -334,7 +336,7 @@ function output_status_json
 # usage
 #
 export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-n] [-N]
-			[-t tagline] [-T md2html.sh] [-u repo_url]
+			[-t tagline] [-T md2html.sh] [-u repo_top_url]
 			[p | pending | o | open | j | judging | c | closed]
 
 	-h		print help message and exit
@@ -355,8 +357,8 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-n] [-N]
 			NOTE: 'tagline' may be enclosed within, but may NOT contain an internal single-quote, or double-quote.
 	-T md2html.sh	run 'markdown to html tool' to convert markdown into HTML (def: $MD2HTML_SH)
 
-	-u repo_url	Base level URL of target git repo (def: $REPO_URL)
-			NOTE: The '-u repo_url' is passed as leading options on tool command lines.
+	-u repo_top_url	Top level URL of target git repo (def: $REPO_TOP_URL)
+			NOTE: The '-u repo_top_url' is passed as leading options on tool command lines.
 	-w site_url	Base URL of the website (def: $SITE_URL)
 			NOTE: The '-w site_url' is passed as leading options on tool command lines.
 
@@ -368,7 +370,7 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-n] [-N]
 
 NOTE: The '-v level' is passed as initial command line options to the 'markdown to html tool' (md2html.sh).
       The 'tagline' is passed as '-t tagline' to the 'markdown to html tool' (md2html.sh), after the '-v level'.
-      Any '-T md2html.sh', '-p tool', '-P pandoc_opts', '-u repo_url', '-U top_url'
+      Any '-T md2html.sh', '-p tool', '-P pandoc_opts', '-u repo_top_url', '-U top_url'
       are passed to the 'markdown to html tool' (md2html.sh), and will be before any command line arguments.
 
 Exit codes:
@@ -438,9 +440,9 @@ while getopts :hv:Vd:D:nNt:T:u:w: flag; do
 	TOOL_OPTION+=("-T")
 	TOOL_OPTION+=("$MD2HTML_SH")
 	;;
-    u) REPO_URL="$OPTARG"
+    u) REPO_TOP_URL="$OPTARG"
 	TOOL_OPTION+=("-u")
-	TOOL_OPTION+=("$REPO_URL")
+	TOOL_OPTION+=("$REPO_TOP_URL")
 	;;
     w) SITE_URL="$OPTARG"
 	TOOL_OPTION+=("-w")
@@ -523,21 +525,21 @@ TOOL_OPTION+=("$DOCROOT_SLASH")
 
 # verify that we have a topdir directory
 #
-REPO_NAME=$(basename "$REPO_URL")
+REPO_NAME=$(basename "$REPO_TOP_URL")
 export REPO_NAME
 if [[ -z $TOPDIR ]]; then
     echo "$0: ERROR: cannot find top of git repo directory" 1>&2
-    echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_URL; cd $REPO_NAME" 1>&2
+    echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_TOP_URL; cd $REPO_NAME" 1>&2
     exit 6
 fi
 if [[ ! -e $TOPDIR ]]; then
     echo "$0: ERROR: TOPDIR does not exist: $TOPDIR" 1>&2
-    echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_URL; cd $REPO_NAME" 1>&2
+    echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_TOP_URL; cd $REPO_NAME" 1>&2
     exit 6
 fi
 if [[ ! -d $TOPDIR ]]; then
     echo "$0: ERROR: TOPDIR is not a directory: $TOPDIR" 1>&2
-    echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_URL; cd $REPO_NAME" 1>&2
+    echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_TOP_URL; cd $REPO_NAME" 1>&2
     exit 6
 fi
 
@@ -751,6 +753,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: DOCROOT_SLASH=$DOCROOT_SLASH" 1>&2
     echo "$0: debug[3]: TAGLINE=$TAGLINE" 1>&2
     echo "$0: debug[3]: MD2HTML_SH=$MD2HTML_SH" 1>&2
+    echo "$0: debug[3]: REPO_TOP_URL=$REPO_TOP_URL" 1>&2
     echo "$0: debug[3]: REPO_URL=$REPO_URL" 1>&2
     echo "$0: debug[3]: SITE_URL=$SITE_URL" 1>&2
     echo "$0: debug[3]: JPARSE_TOOL=$JPARSE_TOOL" 1>&2

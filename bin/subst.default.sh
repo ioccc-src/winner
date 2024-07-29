@@ -92,7 +92,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.3 2024-04-20"
+export VERSION="1.3.1 2024-07-28"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -109,14 +109,16 @@ if [[ $status -eq 0 ]]; then
 fi
 export TOPDIR
 export DOCROOT_SLASH="../../"
-export REPO_URL="https://github.com/ioccc-src/temp-test-ioccc/blob/master"
+export REPO_TOP_URL="https://github.com/ioccc-src/temp-test-ioccc"
+# GitHub puts individual files under the "blob/master" sub-directory.
+export REPO_URL="$REPO_TOP_URL/blob/master"
 export SITE_URL="https://ioccc-src.github.io/temp-test-ioccc"
 export URL="#"
 
 # set usage message
 #
 export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
-			[-u repo_url] [-U url] [-w site_url] [-e string ..] [-E exitcode]
+			[-u repo_top_url] [-U url] [-w site_url] [-e string ..] [-E exitcode]
 			[ignored]
 
 	-h		print help message and exit
@@ -130,7 +132,7 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
 	-n		go thru the actions, but do not update any files (def: do the action)
 	-N		do not process file, just parse arguments and ignore the file (def: process the file)
 
-	-u repo_url	Base level URL of target git repo (def: $REPO_URL)
+	-u repo_top_url	Top level URL of target git repo (def: $REPO_TOP_URL)
 	-U url		URL of HTML file being formed (def: $URL)
 	-w site_url	Base URL of the website (def: $SITE_URL)
 
@@ -184,7 +186,9 @@ while getopts :hv:Vd:D:nNu:U:w:e:E: flag; do
 	;;
     N) DO_NOT_PROCESS="-N"
 	;;
-    u) REPO_URL="$OPTARG"
+    u) REPO_TOP_URL="$OPTARG"
+	# GitHub puts individual files under the "blob/master" sub-directory.
+	export REPO_URL="$REPO_TOP_URL/blob/master"
 	;;
     U) URL="$OPTARG"
 	;;
@@ -238,6 +242,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: GIT_TOOL=$GIT_TOOL" 1>&2
     echo "$0: debug[3]: TOPDIR=$TOPDIR" 1>&2
     echo "$0: debug[3]: DOCROOT_SLASH=$DOCROOT_SLASH" 1>&2
+    echo "$0: debug[3]: REPO_TOP_URL=$REPO_TOP_URL" 1>&2
     echo "$0: debug[3]: REPO_URL=$REPO_URL" 1>&2
     echo "$0: debug[3]: SITE_URL=$SITE_URL" 1>&2
     echo "$0: debug[3]: URL=$URL" 1>&2

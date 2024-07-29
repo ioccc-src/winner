@@ -141,7 +141,7 @@ shopt -s lastpipe	# run last command of a pipeline not executed in the backgroun
 
 # set variables referenced in the usage message
 #
-export VERSION="1.5.3 2024-07-22"
+export VERSION="1.5.4 2024-07-28"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -165,7 +165,9 @@ fi
 export TOPDIR
 export DOCROOT_SLASH="./"
 export PANDOC_WRAPPER="bin/pandoc-wrapper.sh"
-export REPO_URL="https://github.com/ioccc-src/temp-test-ioccc/blob/master"
+export REPO_TOP_URL="https://github.com/ioccc-src/temp-test-ioccc"
+# GitHub puts individual files under the "blob/master" sub-directory.
+export REPO_URL="$REPO_TOP_URL/blob/master"
 export SITE_URL="https://ioccc-src.github.io/temp-test-ioccc"
 export URL="#"
 
@@ -175,7 +177,7 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
 	[-c md2html.cfg] [-H phase=name ..] [-t tagline]
 	[-b tool] [-p tool] [-a tool]
 	[-s token=value ..] [-S] [-o tool ..]
-	[-u repo_url] [-U url] [-w site_url] [-m mdtag] [-e string ..] [-E exitcode]
+	[-u repo_top_url] [-U url] [-w site_url] [-m mdtag] [-e string ..] [-E exitcode]
 	[match.md] input.md output.html
 
 	-h		print help message and exit
@@ -224,11 +226,12 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
 	-o .		disable use of 'output tool' (def: do not use an 'output tool')
 			NOTE: -o may only be used in command_options and md2html.cfg cfg_options (getopt phases 0 and 2)
 
-	-u repo_url	base level URL of target git repo (def: $REPO_URL)
-			NOTE: The '-u repo_url' is passed as leading options on -b tool, -a tool, and -o tool command lines.
+	-u repo_top_url	Top level URL of target git repo (def: $REPO_TOP_URL)
+			NOTE: The '-u repo_top_url' is passed as leading options on -b tool, -a tool, and -o tool command lines.
 	-U url		URL of HTML being formed (def: $URL)
 			NOTE: The '-U url' is passed as leading options on -b tool, -a tool, and -o tool command lines.
 	-w site_url	Base URL of the website (def: $SITE_URL)
+			NOTE: The '-w site_url' is passed as leading options on -b tool, -a tool, and -o tool command lines.
 	-m mdtag	string to write about the markdown file used to form HTML content (def: no markdown file is used)
 
 	-e string	output 'string', followed by newline, to stderr (def: do not)
@@ -275,15 +278,18 @@ function global_variable_setup
     export NOOP=
     export DO_NOT_PROCESS=
     export TOPDIR=
+    # REPO_TOP_URL set above the export USAGE line
     # REPO_URL set above the export USAGE line
     export MD2HTML_CFG=
     export BEFORE_TOOL=
     # DOCROOT_SLASH set above the export USAGE line
     # PANDOC_WRAPPER set above the export USAGE line
+    # REPO_TOP_URL set above the export USAGE line
     # REPO_URL set above the export USAGE line
     # SITE_URL set above the export USAGE line
     export P_FLAG_FOUND=
     export CAP_P_FLAG_FOUND=
+    # REPO_TOP_URL set above the export USAGE line
     # REPO_URL set above the export USAGE line
     export U_FLAG_FOUND=
     # URL set above the export USAGE line
@@ -634,15 +640,15 @@ function parse_command_line
 	    #
 	    OUTPUT_TOOL+=("$OPTARG")
 	    ;;
-	u) REPO_URL="$OPTARG"
+	u) REPO_TOP_URL="$OPTARG"
 	    B_OPTION+=("-u")
-	    B_OPTION+=("$REPO_URL")
+	    B_OPTION+=("$REPO_TOP_URL")
 	    P_OPTION+=("-u")
-	    P_OPTION+=("$REPO_URL")
+	    P_OPTION+=("$REPO_TOP_URL")
 	    A_OPTION+=("-u")
-	    A_OPTION+=("$REPO_URL")
+	    A_OPTION+=("$REPO_TOP_URL")
 	    O_OPTION+=("-u")
-	    O_OPTION+=("$REPO_URL")
+	    O_OPTION+=("$REPO_TOP_URL")
 	    ;;
 	U) URL="$OPTARG"
 	    B_OPTION+=("-U")
@@ -723,6 +729,7 @@ function debug_parameters
     echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: TOPDIR=$TOPDIR" 1>&2
     echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: DOCROOT_SLASH=$DOCROOT_SLASH" 1>&2
     echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: PANDOC_WRAPPER=$PANDOC_WRAPPER" 1>&2
+    echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: REPO_TOP_URL=$REPO_TOP_URL" 1>&2
     echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: REPO_URL=$REPO_URL" 1>&2
     echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: SITE_URL=$SITE_URL" 1>&2
     echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: URL=$URL" 1>&2
@@ -1106,21 +1113,21 @@ export WORKING_DIR
 
 # verify that we have a topdir directory
 #
-REPO_NAME=$(basename "$REPO_URL")
+REPO_NAME=$(basename "$REPO_TOP_URL")
 export REPO_NAME
 if [[ -z $TOPDIR ]]; then
     echo "$0: ERROR: cannot find top of git repo directory" 1>&2
-    echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_URL; cd $REPO_NAME" 1>&2
+    echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_TOP_URL; cd $REPO_NAME" 1>&2
     exit 6
 fi
 if [[ ! -e $TOPDIR ]]; then
     echo "$0: ERROR: TOPDIR does not exist: $TOPDIR" 1>&2
-    echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_URL; cd $REPO_NAME" 1>&2
+    echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_TOP_URL; cd $REPO_NAME" 1>&2
     exit 6
 fi
 if [[ ! -d $TOPDIR ]]; then
     echo "$0: ERROR: TOPDIR is not a directory: $TOPDIR" 1>&2
-    echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_URL; cd $REPO_NAME" 1>&2
+    echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_TOP_URL; cd $REPO_NAME" 1>&2
     exit 6
 fi
 
@@ -1470,6 +1477,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: after parse in getopt phase: $GETOPT_PHASE: GIT_TOOL=$GIT_TOOL" 1>&2
     echo "$0: debug[3]: after parse in getopt phase: $GETOPT_PHASE: DOCROOT_SLASH=$DOCROOT_SLASH" 1>&2
     echo "$0: debug[3]: after parse in getopt phase: $GETOPT_PHASE: PANDOC_WRAPPER=$PANDOC_WRAPPER" 1>&2
+    echo "$0: debug[3]: after parse in getopt phase: $GETOPT_PHASE: REPO_TOP_URL=$REPO_TOP_URL" 1>&2
     echo "$0: debug[3]: after parse in getopt phase: $GETOPT_PHASE: REPO_URL=$REPO_URL" 1>&2
     echo "$0: debug[3]: after parse in getopt phase: $GETOPT_PHASE: SITE_URL=$SITE_URL" 1>&2
     echo "$0: debug[3]: after parse in getopt phase: $GETOPT_PHASE: URL=$URL" 1>&2

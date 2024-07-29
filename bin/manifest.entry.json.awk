@@ -10,7 +10,8 @@
 #
 #	YYYY		IOCCC year or mock
 #	dir		name of entry's directory under YYYY containing .entry.json
-#	REPO_URL	GitHub repo URL, e.g., https://github.com/ioccc-src/winner
+#	REPO_URL	GitHub repo URL, e.g., https://github.com/ioccc-src/winner/blob/master/blob/master
+#		        We append blob/master to account for how GitHub forms file URLs.
 
 # XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
 # XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
@@ -22,7 +23,7 @@ BEGIN {
 
     # setup
     #
-    VERSION="1.1.1 2024-04-13"
+    VERSION="1.1.2 2024-07-28"
     found_manifest_array = 0;	# 1 ==> we found the manifest ARRAY
     within_manifest_array = 0;	# 1 ==> found start of "manifest" : [ JSON array
     begin_manifest_element = 0;	# 1 ==> we have found the start of the manifest array element

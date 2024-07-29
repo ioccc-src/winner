@@ -101,7 +101,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.7.1 2024-04-28"
+export VERSION="1.7.2 2024-07-28"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -119,14 +119,16 @@ fi
 export TOPDIR
 export DOCROOT_SLASH="../../"
 export PANDOC_WRAPPER="bin/pandoc-wrapper.sh"
-export REPO_URL="https://github.com/ioccc-src/temp-test-ioccc/blob/master"
+export REPO_TOP_URL="https://github.com/ioccc-src/temp-test-ioccc"
+# GitHub puts individual files under the "blob/master" sub-directory.
+export REPO_URL="$REPO_TOP_URL/blob/master"
 export SITE_URL="https://ioccc-src.github.io/temp-test-ioccc"
 export URL="#"
 
 # set usage message
 #
 export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
-			[-p tool] [-u repo_url] [-U url] [-w site_url] [-e string ..] [-E exitcode]
+			[-p tool] [-u repo_top_url] [-U url] [-w site_url] [-e string ..] [-E exitcode]
 			YYYY/dir
 
 	-h		print help message and exit
@@ -142,7 +144,7 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
 
 	-p tool		run 'pandoc wrapper tool' (not pandoc path) during HTML phase number 21 (def: use $PANDOC_WRAPPER)
 
-	-u repo_url	Base level URL of target git repo (def: $REPO_URL)
+	-u repo_top_url	Top level URL of target git repo (def: $REPO_TOP_URL)
 	-U url		URL of HTML file being formed (def: $URL)
 	-w site_url	Base URL of the website (def: $SITE_URL)
 
@@ -401,7 +403,9 @@ while getopts :hv:Vd:D:nNp:u:U:w:e:E: flag; do
 	;;
     p) PANDOC_WRAPPER="$OPTARG"
 	;;
-    u) REPO_URL="$OPTARG"
+    u) REPO_TOP_URL="$OPTARG"
+	# GitHub puts individual files under the "blob/master" sub-directory.
+	export REPO_URL="$REPO_TOP_URL/blob/master"
 	;;
     U) URL="$OPTARG"
 	;;
@@ -449,21 +453,21 @@ export ENTRY_PATH="$1"
 
 # verify that we have a topdir directory
 #
-REPO_NAME=$(basename "$REPO_URL")
+REPO_NAME=$(basename "$REPO_TOP_URL")
 export REPO_NAME
 if [[ -z $TOPDIR ]]; then
     echo "$0: ERROR: cannot find top of git repo directory" 1>&2
-    echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_URL; cd $REPO_NAME" 1>&2
+    echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_TOP_URL; cd $REPO_NAME" 1>&2
     exit 6
 fi
 if [[ ! -e $TOPDIR ]]; then
     echo "$0: ERROR: TOPDIR does not exist: $TOPDIR" 1>&2
-    echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_URL; cd $REPO_NAME" 1>&2
+    echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_TOP_URL; cd $REPO_NAME" 1>&2
     exit 6
 fi
 if [[ ! -d $TOPDIR ]]; then
     echo "$0: ERROR: TOPDIR is not a directory: $TOPDIR" 1>&2
-    echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_URL; cd $REPO_NAME" 1>&2
+    echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_TOP_URL; cd $REPO_NAME" 1>&2
     exit 6
 fi
 
@@ -630,6 +634,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: TOPDIR=$TOPDIR" 1>&2
     echo "$0: debug[3]: DOCROOT_SLASH=$DOCROOT_SLASH" 1>&2
     echo "$0: debug[3]: PANDOC_WRAPPER=$PANDOC_WRAPPER" 1>&2
+    echo "$0: debug[3]: REPO_TOP_URL=$REPO_TOP_URL" 1>&2
     echo "$0: debug[3]: REPO_URL=$REPO_URL" 1>&2
     echo "$0: debug[3]: SITE_URL=$SITE_URL" 1>&2
     echo "$0: debug[3]: URL=$URL" 1>&2

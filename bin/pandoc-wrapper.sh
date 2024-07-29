@@ -99,7 +99,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.7 2024-06-22"
+export VERSION="1.7.1 2024-07-28"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -136,12 +136,14 @@ PANDOC_OPTION+=("html5")
 PANDOC_OPTION+=("--wrap=preserve")
 PANDOC_OPTION+=("--fail-if-warnings")
 PANDOC_OPTION+=("--tab-stop=8")
-export REPO_URL="https://github.com/ioccc-src/temp-test-ioccc/blob/master"
+export REPO_TOP_URL="https://github.com/ioccc-src/temp-test-ioccc"
+# GitHub puts individual files under the "blob/master" sub-directory.
+export REPO_URL="$REPO_TOP_URL/blob/master"
 
 # set usage message
 #
 export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-n] [-N]
-			[-p pandoc_tool] [-u repo_url] [-e string ..] [-E exitcode]
+			[-p pandoc_tool] [-u repo_top_url] [-e string ..] [-E exitcode]
 			file.md output.html
 
 	-h		print help message and exit
@@ -155,7 +157,7 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-n] [-N]
 
 	-p pandoc_tool	path to the pandoc tool (not the wrapper) (def: $PANDOC_TOOL)
 
-	-u repo_url	Base level URL of target git repo (def: $REPO_URL)
+	-u repo_top_url	Top level URL of target git repo (def: $REPO_TOP_URL)
 
 	-e string	output string, followed by newline, to stderr (def: do not)
 	-E exitcode	force exit with exitcode (def: exit based on success or failure of the action)
@@ -203,7 +205,9 @@ while getopts :hv:Vd:nNp:u:e:E: flag; do
 	;;
     p) PANDOC_TOOL="$OPTARG"
 	;;
-    u) REPO_URL="$OPTARG"
+    u) REPO_TOP_URL="$OPTARG"
+	# GitHub puts individual files under the "blob/master" sub-directory.
+	export REPO_URL="$REPO_TOP_URL/blob/master"
 	;;
     e) echo "$OPTARG" 1>&2
 	;;
@@ -283,21 +287,21 @@ export PANDOC_MIN_VERSION="3.1.12.2"
 
 # verify that we have a topdir directory
 #
-REPO_NAME=$(basename "$REPO_URL")
+REPO_NAME=$(basename "$REPO_TOP_URL")
 export REPO_NAME
 if [[ -z $TOPDIR ]]; then
     echo "$0: ERROR: cannot find top of git repo directory" 1>&2
-    echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_URL; cd $REPO_NAME" 1>&2
+    echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_TOP_URL; cd $REPO_NAME" 1>&2
     exit 6
 fi
 if [[ ! -e $TOPDIR ]]; then
     echo "$0: ERROR: TOPDIR does not exist: $TOPDIR" 1>&2
-    echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_URL; cd $REPO_NAME" 1>&2
+    echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_TOP_URL; cd $REPO_NAME" 1>&2
     exit 6
 fi
 if [[ ! -d $TOPDIR ]]; then
     echo "$0: ERROR: TOPDIR is not a directory: $TOPDIR" 1>&2
-    echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_URL; cd $REPO_NAME" 1>&2
+    echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_TOP_URL; cd $REPO_NAME" 1>&2
     exit 6
 fi
 
@@ -365,6 +369,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     for index in "${!PANDOC_OPTION[@]}"; do
 	echo "$0: debug[3]: PANDOC_OPTION[$index]=${PANDOC_OPTION[$index]}" 1>&2
     done
+    echo "$0: debug[3]: REPO_TOP_URL=$REPO_TOP_URL" 1>&2
     echo "$0: debug[3]: REPO_URL=$REPO_URL" 1>&2
     echo "$0: debug[3]: NOOP=$NOOP" 1>&2
     echo "$0: debug[3]: DO_NOT_PROCESS=$DO_NOT_PROCESS" 1>&2

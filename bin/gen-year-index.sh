@@ -85,7 +85,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.1 2024-04-16"
+export VERSION="1.1.1 2024-07-28"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -104,7 +104,9 @@ export TOPDIR
 export DOCROOT_SLASH="../../"
 export TAGLINE="bin/$NAME"
 export MD2HTML_SH="bin/md2html.sh"
-export REPO_URL="https://github.com/ioccc-src/temp-test-ioccc/blob/master"
+export REPO_TOP_URL="https://github.com/ioccc-src/temp-test-ioccc"
+# GitHub puts individual files under the "blob/master" sub-directory.
+export REPO_URL="$REPO_TOP_URL/blob/master"
 export SITE_URL="https://ioccc-src.github.io/temp-test-ioccc"
 
 # clear options we will add to tools
@@ -115,7 +117,7 @@ declare -ag TOOL_OPTION
 # set usage message
 #
 export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-n] [-N]
-			[-t tagline] [-T md2html.sh] [-u repo_url] [-w site_url]
+			[-t tagline] [-T md2html.sh] [-u repo_top_url] [-w site_url]
 			YYYY [more_options]
 
 	-h		print help message and exit
@@ -132,8 +134,10 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-n] [-N]
 	-t tagline	string to write about the tool that formed the markdown content (def: $TAGLINE)
 	-T md2html.sh	run 'markdown to html tool' to convert markdown into HTML (def: $MD2HTML_SH)
 
-	-u repo_url	Base level URL of target git repo (def: $REPO_URL)
+	-u repo_top_url	Top level URL of target git repo (def: $REPO_TOP_URL)
+			NOTE: The '-u repo_top_url' is passed as leading options on tool command lines.
 	-w site_url	Base URL of the website (def: $SITE_URL)
+			NOTE: The '-w site_url' is passed as leading options on tool command lines.
 
 	YYYY		path from topdir to year directory: must contain the files: README.md, .path and .entry.json
 	[more_options]	additional tool command line options to use before the YYYY argument
@@ -210,9 +214,9 @@ while getopts :hv:Vd:D:nNt:T:u:w: flag; do
 	TOOL_OPTION+=("-T")
 	TOOL_OPTION+=("$MD2HTML_SH")
 	;;
-    u) REPO_URL="$OPTARG"
+    u) REPO_TOP_URL="$OPTARG"
 	TOOL_OPTION+=("-u")
-	TOOL_OPTION+=("$REPO_URL")
+	TOOL_OPTION+=("$REPO_TOP_URL")
 	;;
     w) SITE_URL="$OPTARG"
 	TOOL_OPTION+=("-w")
@@ -271,21 +275,21 @@ fi
 
 # verify that we have a topdir directory
 #
-REPO_NAME=$(basename "$REPO_URL")
+REPO_NAME=$(basename "$REPO_TOP_URL")
 export REPO_NAME
 if [[ -z $TOPDIR ]]; then
     echo "$0: ERROR: cannot find top of git repo directory" 1>&2
-    echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_URL; cd $REPO_NAME" 1>&2
+    echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_TOP_URL; cd $REPO_NAME" 1>&2
     exit 6
 fi
 if [[ ! -e $TOPDIR ]]; then
     echo "$0: ERROR: TOPDIR does not exist: $TOPDIR" 1>&2
-    echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_URL; cd $REPO_NAME" 1>&2
+    echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_TOP_URL; cd $REPO_NAME" 1>&2
     exit 6
 fi
 if [[ ! -d $TOPDIR ]]; then
     echo "$0: ERROR: TOPDIR is not a directory: $TOPDIR" 1>&2
-    echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_URL; cd $REPO_NAME" 1>&2
+    echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_TOP_URL; cd $REPO_NAME" 1>&2
     exit 6
 fi
 
@@ -398,6 +402,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: DOCROOT_SLASH=$DOCROOT_SLASH" 1>&2
     echo "$0: debug[3]: TAGLINE=$TAGLINE" 1>&2
     echo "$0: debug[3]: MD2HTML_SH=$MD2HTML_SH" 1>&2
+    echo "$0: debug[3]: REPO_TOP_URL=$REPO_TOP_URL" 1>&2
     echo "$0: debug[3]: REPO_URL=$REPO_URL" 1>&2
     echo "$0: debug[3]: SITE_URL=$SITE_URL" 1>&2
     for index in "${!TOOL_OPTION[@]}"; do

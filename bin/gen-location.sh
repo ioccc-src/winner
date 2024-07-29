@@ -84,7 +84,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.4.3 2024-07-13"
+export VERSION="1.4.4 2024-07-28"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -104,7 +104,9 @@ export DOCROOT_SLASH="./"
 export TAGLINE="bin/$NAME"
 export MD2HTML_SH="bin/md2html.sh"
 export PANDOC_WRAPPER="bin/pandoc-wrapper.sh"
-export REPO_URL="https://github.com/ioccc-src/temp-test-ioccc/blob/master"
+export REPO_TOP_URL="https://github.com/ioccc-src/temp-test-ioccc"
+# GitHub puts individual files under the "blob/master" sub-directory.
+export REPO_URL="$REPO_TOP_URL/blob/master"
 export SITE_URL="https://ioccc-src.github.io/temp-test-ioccc"
 #
 export NOOP=
@@ -119,7 +121,7 @@ declare -ag TOOL_OPTION
 # usage
 #
 export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
-			[-t tagline] [-T md2html.sh] [-p tool] [-u repo_url]
+			[-t tagline] [-T md2html.sh] [-p tool] [-u repo_top_url]
 
 	-h		print help message and exit
 	-v level	set verbosity level (def level: 0)
@@ -142,14 +144,14 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
 	-p tool		run 'pandoc wrapper tool' (not pandoc path) during HTML phase number 21 (def: use $PANDOC_WRAPPER)
 			NOTE: The '-p tool' is passed as leading options on tool command lines.
 
-	-u repo_url	Base level URL of target git repo (def: $REPO_URL)
-			NOTE: The '-u repo_url' is passed as leading options on tool command lines.
+	-u repo_top_url	Top level URL of target git repo (def: $REPO_TOP_URL)
+			NOTE: The '-u repo_top_url' is passed as leading options on tool command lines.
 	-w site_url	Base URL of the website (def: $SITE_URL)
 			NOTE: The '-w site_url' is passed as leading options on tool command lines.
 
 NOTE: The '-v level' is passed as initial command line options to the 'markdown to html tool' (md2html.sh).
       The 'tagline' is passed as '-t tagline' to the 'markdown to html tool' (md2html.sh), after the '-v level'.
-      Any '-T md2html.sh', '-p tool', '-P pandoc_opts', '-u repo_url', '-U top_url'
+      Any '-T md2html.sh', '-p tool', '-P pandoc_opts', '-u repo_top_url', '-U top_url'
       are passed to the 'markdown to html tool' (md2html.sh), and will be before any command line arguments.
 
 Exit codes:
@@ -224,9 +226,9 @@ while getopts :hv:Vd:D:nNt:T:p:u:w: flag; do
 	TOOL_OPTION+=("-p")
 	TOOL_OPTION+=("$PANDOC_WRAPPER")
 	;;
-    u) REPO_URL="$OPTARG"
+    u) REPO_TOP_URL="$OPTARG"
 	TOOL_OPTION+=("-u")
-	TOOL_OPTION+=("$REPO_URL")
+	TOOL_OPTION+=("$REPO_TOP_URL")
 	;;
     w) SITE_URL="$OPTARG"
 	TOOL_OPTION+=("-w")
@@ -291,21 +293,21 @@ TOOL_OPTION+=("$DOCROOT_SLASH")
 
 # verify that we have a topdir directory
 #
-REPO_NAME=$(basename "$REPO_URL")
+REPO_NAME=$(basename "$REPO_TOP_URL")
 export REPO_NAME
 if [[ -z $TOPDIR ]]; then
     echo "$0: ERROR: cannot find top of git repo directory" 1>&2
-    echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_URL; cd $REPO_NAME" 1>&2
+    echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_TOP_URL; cd $REPO_NAME" 1>&2
     exit 6
 fi
 if [[ ! -e $TOPDIR ]]; then
     echo "$0: ERROR: TOPDIR does not exist: $TOPDIR" 1>&2
-    echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_URL; cd $REPO_NAME" 1>&2
+    echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_TOP_URL; cd $REPO_NAME" 1>&2
     exit 6
 fi
 if [[ ! -d $TOPDIR ]]; then
     echo "$0: ERROR: TOPDIR is not a directory: $TOPDIR" 1>&2
-    echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_URL; cd $REPO_NAME" 1>&2
+    echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_TOP_URL; cd $REPO_NAME" 1>&2
     exit 6
 fi
 
@@ -398,6 +400,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: TAGLINE=$TAGLINE" 1>&2
     echo "$0: debug[3]: MD2HTML_SH=$MD2HTML_SH" 1>&2
     echo "$0: debug[3]: PANDOC_WRAPPER=$PANDOC_WRAPPER" 1>&2
+    echo "$0: debug[3]: REPO_TOP_URL=$REPO_TOP_URL" 1>&2
     echo "$0: debug[3]: REPO_URL=$REPO_URL" 1>&2
     echo "$0: debug[3]: SITE_URL=$SITE_URL" 1>&2
     echo "$0: debug[3]: NOOP=$NOOP" 1>&2
