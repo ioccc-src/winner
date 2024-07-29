@@ -4028,8 +4028,11 @@ in the de.sh/de.alt.sh scripts:
 ### Source code: [2019/dogon/prog.c](%%REPO_URL%%/2019/dogon/prog.c)
 ### Information: [2019/dogon/index.html](2019/dogon/index.html)
 
-The author does not it uses `gets()` and one will get warnings but it would be
-ideal if this was not the case.
+The entry calls `gets(3)` and it would be better if the code called `fgets()` instead.
+
+See the
+FAQ on "[gets and fgets](faq.html#gets)"
+for more information on the change to `fgets(3)`.
 
 
 <div id="2019_duble">

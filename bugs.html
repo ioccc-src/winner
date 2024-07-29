@@ -3175,8 +3175,10 @@ in the de.sh/de.alt.sh scripts:</p>
 <h3 id="status-uses-gets---change-to-fgets-if-possible-5">STATUS: uses gets() - change to fgets() if possible</h3>
 <h3 id="source-code-2019dogonprog.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/dogon/prog.c">2019/dogon/prog.c</a></h3>
 <h3 id="information-2019dogonindex.html">Information: <a href="2019/dogon/index.html">2019/dogon/index.html</a></h3>
-<p>The author does not it uses <code>gets()</code> and one will get warnings but it would be
-ideal if this was not the case.</p>
+<p>The entry calls <code>gets(3)</code> and it would be better if the code called <code>fgets()</code> instead.</p>
+<p>See the
+FAQ on “<a href="faq.html#gets">gets and fgets</a>”
+for more information on the change to <code>fgets(3)</code>.</p>
 <div id="2019_duble">
 <h2 id="duble">2019/duble</h2>
 </div>
