@@ -1645,15 +1645,15 @@ See also the [Guidelines](next/guidelines.html) and the [Rules](next/rules.html)
 After you
 [downloaded the mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry/blob/master/FAQ.md#download)
 
->   Quoting the mkiocccentry repo FAQ:
->
->   git clone https://github.com/ioccc-src/mkiocccentry.git
+Quoting from the mkiocccentry repo FAQ:
+
+>   **git clone https://github.com/ioccc-src/mkiocccentry.git**
 
 You need to [compile the mkiocccentry and related tools](https://github.com/ioccc-src/mkiocccentry/blob/master/FAQ.md#compiling).
 
->   Quoting the mkiocccentry repo FAQ:
->
->   cd mkiocccentry ; make clobber
+Quoting from the mkiocccentry repo FAQ:
+
+>   **cd mkiocccentry ; make clobber all**
 
 See the
 [mkiocccentry repo FAQ](https://github.com/ioccc-src/mkiocccentry/blob/master/FAQ.md)
