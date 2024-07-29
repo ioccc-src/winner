@@ -211,7 +211,7 @@ Selected notes:
   6\) on code that was correct !
 - lclint 2.4b thinks that "the observer is modified" a couple of times,
   whereas it is not.  Well, it is, but there is a sequence point in between.
-- lclint 2.4b parses [line 13](%%REPO_URL%%/1998/dorssel/dorssel.c:L13) as `<error>`, whereas it is correct code.
+- lclint 2.4b parses [line 13](%%REPO_URL%%/1998/dorssel/dorssel.c:#L13) as `<error>`, whereas it is correct code.
 - lclint 2.4b is positive the second `while` loop is infinite, whereas it is
   not.
 
