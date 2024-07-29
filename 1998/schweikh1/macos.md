@@ -1,9 +1,20 @@
+# Introduction to this document:
+
 This document describes how this was fixed to work with macOS as well as some of
 the magic in the entry. Even if you don't have a Mac it might be worth your time
 reading especially as some of it details some important fixes and changes in the
 original entry as well.
 
-# macOS changes
+## NOTICE to those who wish for a greater challenge:
+
+**If you want a greater challenge, don't read any further**:
+just try to understand the program via the source.
+
+If you get stuck, come back and read below for additional hints and information.
+Of course, if you do not have a Mac the code might make less sense, so you might
+just wish to read this in that case, should you wish to understand it.
+
+# macOS aside:
 
 As an aside: if you have a Mac with the Apple chip, some of the header files
 will report an unsupported architecture and unsupported compiler (error,
@@ -13,7 +24,7 @@ CPU though, the original entry will not work in macOS as it stands because
 
 Nevertheless, although some of it would not work in other systems where
 `/usr/include` exists, the `#define`s would still be found okay, at least until
-a file was not found (this limitation was removed in both versions in 2023). see
+a file was not found (this limitation was removed in both versions in 2023).
 
 However, as noted, macOS does **not** have `/usr/include` so this would never
 work for macOS without some changes, described next. For macOS you will need the
@@ -23,18 +34,26 @@ command line tools installed which can be done like:
     sudo xcode-select --install
 ```
 
+# Important point about the hard-coded compiler:
+
 An important point is that the original version hard-coded `gcc` but just like
 the entry, the alternate version has also removed this limitation despite `gcc`
-existing (though it's `clang`) in macOS.
+existing (though it's `clang`) in macOS; instead it is `cc`.
+
+# How this entry works (the magic):
 
 Now as far as how this works if you look at the code of
-[schweikh1.c](%%REPO_URL%%/1998/schweikh1/schweikh1.c), on line 55 you'll see a funny command (this goes for
-the alternate version as well but a bit different).
+[schweikh1.c](%%REPO_URL%%/1998/schweikh1/schweikh1.c), on [line
+55](%%REPO_URL%%/1998/schweikh1/schweikh1.c#L55) you'll see a funny command
+(this goes for the [alternate
+version](%%REPO_URL%%/1998/schweikh1/schweikh1.alt.c), also on [line
+55](%%REPO_URL%%/1998/schweikh1/schweikh1.c#L55), but the command is necessarily
+different).
 
 Now the key is two magic numbers, one (two times) on a different line shortly below the
 string and the other a couple lines further below.
 
-In the original the numbers are, respectively, `44` and `46`, but with the gcc
+In the original the numbers are, respectively, `44` and `46`, but with the `gcc`
 limitation removed the numbers now are `43` and `45`. But how does this work? Well
 the command is:
 

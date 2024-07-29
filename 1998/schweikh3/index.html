@@ -410,11 +410,12 @@ Location: <a href="../../location.html#DE">DE</a> - <em>Federal Republic of Germ
 <h2 id="to-build">To build:</h2>
 <pre><code>    make all</code></pre>
 <p>The author stated:</p>
-<pre><code>    In the remote event that the input has more than `8192` files with
-    the same size (on systems where `sizeof (char *) == 4`, or `4096` when
-    `sizeof (char *) == 8`), increase the manifest constant 32767 on line
-    31.</code></pre>
-<p>An alternate version allows one to fix this; see <a href="#alternate-code">alternate
+<blockquote>
+<p>In the remote event that the input has more than <code>8192</code> files with the same
+size (on systems where <code>sizeof (char *) == 4</code>, or <code>4096</code> when <code>sizeof (char *) == 8</code>), increase the manifest constant 32767 on <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/schweikh3/schweikh3.c#L31">line
+31</a>.</p>
+</blockquote>
+<p>An alternate version allows one to fix this; see <a href="#alternate-code">Alternate
 code</a> below.</p>
 <h2 id="to-use">To use:</h2>
 <p>If <code>dir</code> is the directory (or a directory tree) where you keep
@@ -446,8 +447,9 @@ the tool as well at <a href="http://www.schweikhardt.net/samefile" class="uri">h
 <p>The source is expected to conform to IEEE Std 1003.1-1990 (“POSIX”).
 Thank God the IEEE does not standardize a coding style…</p>
 <h3 id="what-this-program-does">What this program does</h3>
-<p>This is best explained in the man page. The troff source for this
-man page can be found in the file <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/schweikh3/samefile.1">samefile.1</a>. To render try:</p>
+<p>This is best explained in the man page. The troff source for this man page can
+be found in the file <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1998/schweikh3/samefile.1">samefile.1</a>. To
+render try:</p>
 <pre><code>    `man ./samefile.1</code></pre>
 <p>Otherwise:</p>
 <h3 id="samefile1-user-manuals-samefile1">SAMEFILE(1) User Manuals SAMEFILE(1)</h3>
@@ -524,6 +526,10 @@ How much space is wasted below our site’s /pub directory?</p>
 otherwise.</p>
 <h4 id="see-also">SEE ALSO</h4>
 <p><code>find(1)</code>, <code>ln(1)</code>, <code>rm(1)</code></p>
+<h3 id="notice-to-those-who-wish-for-a-greater-challenge">NOTICE to those who wish for a greater challenge</h3>
+<p><strong>If you want a greater challenge, don’t read any further</strong>:
+just try to understand the program via the source.</p>
+<p>If you get stuck, come back and read below for additional hints and information.</p>
 <h3 id="why-i-think-it-is-obfuscated">Why I think it is obfuscated</h3>
 <ul>
 <li>The code is commented but this gives only an <em>extremely</em> faint clue.</li>

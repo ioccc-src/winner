@@ -13,14 +13,18 @@
 
 where:
 
-```
-    filename  : file to calculate the CRC of
-    bitwidth  : width of the CRC in bits (decimal)
-    polynom   : polynomial used for the CRC (hexadecimal)
-    reflected : 0 if the CRC is not reflected, 1 if it is
-    init      : initial value for the CRC (hexadecimal)
-    xor       : value to xor the final CRC with (hexadecimal)
-```
+- `filename`
+    * file to calculate the CRC of
+- `bitwidth`
+    * width of the CRC in bits (decimal)
+- `polynom`
+    * polynomial used for the CRC (hexadecimal)
+- `reflected`
+    * 0 if the CRC is not reflected, 1 if it is
+- `init`
+    * initial value for the CRC (hexadecimal)
+- `xor`
+    * value to xor the final CRC with (hexadecimal)
 
 
 ## Try:
@@ -39,17 +43,27 @@ archiver that uses the CRC-32 algorithm.
 
 ## Author's remarks:
 
-```
-    Usage:
-    ./tomtorfs filename bitwidth polynom reflected init xor
+Usage:
 
-    filename  : file to calculate the CRC of
-    bitwidth  : width of the CRC in bits (decimal)
-    polynom   : polynomial used for the CRC (hexadecimal)
-    reflected : 0 if the CRC is not reflected, 1 if it is
-    init      : initial value for the CRC (hexadecimal)
-    xor       : value to xor the final CRC with (hexadecimal)
+``` <!---sh-->
+    ./tomtorfs filename bitwidth polynom reflected init xor
 ```
+
+where:
+
+- `filename`
+    * file to calculate the CRC of
+- `bitwidth`
+    * width of the CRC in bits (decimal)
+- `polynom`
+    * polynomial used for the CRC (hexadecimal)
+- `reflected`
+    * 0 if the CRC is not reflected, 1 if it is
+- `init`
+    * initial value for the CRC (hexadecimal)
+- `xor`
+    * value to xor the final CRC with (hexadecimal)
+
 
 ### Examples
 
@@ -116,24 +130,34 @@ readable.
 The variable names are not very descriptive. They have the
 following meanings:
 
-```
-    a = argc
-    A = argv
+- `a`
+    * argc
+- `A`
+    * argv
+- `b`
+    * array of `unsigned long` variables:
+    - `b[0]`
+        * bit-width of the CRC (`argv[2]`)
+    * `b[1]`
+        - CRC polynomial (`argv[3]`)
+    * `b[2]`
+        - nonzero if CRC is reflected (argv[4])
+    * `b[3]`
+        - initial value of CRC (argv[5])
+    * `b[4]`
+        - value final CRC is XORed with (argv[6])
+    * `b[5]`
+        - CRC value
+    * `b[6]`
+        - byte from file
+    * `b[7]`
+        - counter
 
-    b = array of unsigned long variables
-        b[0] = bit-width of the CRC (argv[2])
-        b[1] = CRC polynomial (argv[3])
-        b[2] = nonzero if CRC is reflected (argv[4])
-        b[3] = initial value of CRC (argv[5])
-        b[4] = value final CRC is XORed with (argv[6])
-        b[5] = CRC value
-        b[6] = byte from file
-        b[7] = counter
+- `B`
+    * `FILE *` through which the file `argv[1]` is opened
 
-    B = FILE * through which the file argv[1] is opened
-
-    C = typedef for unsigned long
-```
+- `C`
+    - `typedef` for `unsigned long`
 
 The first `for` loop simply reads the command-line arguments
 in the `b[]` array. The third parameter to `strtoul(3)` causes

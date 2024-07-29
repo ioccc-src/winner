@@ -1,7 +1,10 @@
 .\"
 .\" To format this file into a text file say
 .\"
-.\"    nroff -man samefile.1              or
+.\"    nroff -man samefile.1              
+.\"
+.\" or
+.\"
 .\"    groff -man -Tascii samefile.1
 .\"
 .TH SAMEFILE 1 "OCTOBER 1997" IOCCC "User Manuals"

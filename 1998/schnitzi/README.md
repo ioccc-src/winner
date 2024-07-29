@@ -20,8 +20,10 @@ For more detailed information see [1998/schnitzi in bugs.html](../../bugs.html#1
     ./schnitzi n > sort.c
     make sort
     ./sort
-    # enter three numbers, space separated
+    # enter three numbers, space
+    # separated
 
+    # then try:
     echo x y z | ./sort
 ```
 
@@ -41,7 +43,8 @@ program expects? For instance try:
     ./schnitzi 5 > sort.c
     make sort
 
-    # try running the next command four or five times:
+    # now try running the next
+    # command four or five times:
     echo 2 5 3 1 | ./sort
 ```
 
@@ -51,33 +54,36 @@ Why does this happen?
 ## Judges' remarks:
 
 This is a beautiful program.  How can a program with no conditional (except for
-the fixes for modern systems though still no `if`s) behavior at all have output
-which depends on anything?
+the fixes for modern systems although there are still no `if`s) behavior at all
+have output which depends on anything?
 
 For hints on deciphering this, see below past the Author's remarks;
 they're a nice summary, but they leave the mystery intact.
 
-BTW: the author notes an incredible lipogram story called
+BTW: the author notes an incredible
+[lipogram](https://en.wikipedia.org/wiki/Lipogram) story called
 [Gadsby](https://www.gutenberg.org/cache/epub/47342/pg47342.txt) which has no
-letter E in the story. He did not note this but it has over 50000 (50 thousand)
-(!!) words without the letter E which is one of the most common letters!
+letter `E` in the story. He did not note this but it has over `50000` (50
+thousand) (!!) words without the letter `E` which is one of the most common
+letters!
 
 
 ## Author's remarks:
 
-In literary circles, there is a poetic form called a "lipogram",
-which is a poem in which a specific letter has been distinctly
-avoided.  This principle can be applied in other ways.  For
-instance, in this paragraph, the vowel which immediately follows
-`t` in the alphabet is nowhere to be seen.  There is even an
-entire novel (E. V. Wright's "Gadsby") in which no word contains
-the letter `e`.
+In literary circles, there is a poetic form called a
+"[lipogram](https://en.wikipedia.org/wiki/Lipogram)", which is a poem in which a
+specific letter has been distinctly avoided.  This principle can be applied in
+other ways.  For instance, in this paragraph, the vowel which immediately
+follows `t` in the alphabet is nowhere to be seen.  There is even an entire
+novel (E. V. Wright's
+"[Gadsby](https://www.gutenberg.org/cache/epub/47342/pg47342.txt)") in which no
+word contains the letter `e`.
 
 The IOCCC has been no stranger to this concept.  Several winning entries from
 years past have accomplished interesting feats while completely avoiding the use
 of certain C constructs thought to be essential (e.g.,
-[1988/robison.c](%%REPO_URL%%/1988/robison/robison.c) file).  If you have to ask why they would
-do it this way, then this contest just isn't for you.
+[1988/robison.c](%%REPO_URL%%/1988/robison/robison.c) file).  If you have to ask
+why they would do it this way, then this contest just isn't for you.
 
 In continuing with this fine tradition, this program suggests to the ANSI
 committee some new practical simplifications for the C language.  For instance,

@@ -5,12 +5,21 @@
 ```
 
 NOTE: Some systems do not implement `halfdelay()` in their `libcurses`.
-You might try compiling with -lncurses if you have that library.
+You might try compiling with `-lncurses` if you have that library.
 Or you can build this entry without the `halfdelay()` call by:
 
 ``` <!---sh-->
     make chaos_nohalf
 ```
+
+### Bugs and (Mis)features:
+
+The current status of this entry is:
+
+> **STATUS: INABIAF - please DO NOT fix**
+
+For more detailed information see [1998/chaos in bugs.html](../../bugs.html#1998_chaos).
+
 
 
 ## To use:

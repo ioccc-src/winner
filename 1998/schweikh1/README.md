@@ -5,9 +5,8 @@
 ```
 
 There is an alternate version of this entry that will work with macOS. See the
-[Alternate code](#alternate-code) section below. We recommend you look at it
-even if you don't have a Mac, unless you want to figure it out yourself, as it
-includes some interesting details about the entry.
+[Alternate code](#alternate-code) section below. We recommend you look at the
+code at the last, even if you don't have a Mac.
 
 
 ## To use:
@@ -22,9 +21,9 @@ includes some interesting details about the entry.
 As noted above this entry will not work as it stands for macOS and there are
 some important notes as well as a description of how the fixed version works
 (the details of which are relevant to the original entry that no longer works as
-well as the fixed version but are described in the context of the macOS
+well as the fixed version, but are described in the context of the macOS
 adjustments). For details of what had to change, see [macos.html](macos.html).
-Unless you wish to figure it out yourself, we recommend that you read this even
+**Unless you wish to figure it out yourself**, we recommend that you read this even
 if you don't have a Mac as it has some interesting details about the entry.
 
 
@@ -66,13 +65,12 @@ crufty internationalization support.
 
 #### Historical note:
 
-Some non-gcc compilers that were not fully ANSI standard did not
-compile this entry correctly.  Using cc by default was not helpful
-most of the time on this entry, because the program had a hardcoded
-gcc invocation anyway.  Anyone who uses egcs and has no plain gcc
-will need to frob the source anyway and can be expected to do the
-right thing with `${CC}`. This limitation was removed in 2023 but in the past
-one should have used gcc.
+Some non-`gcc` compilers that were not fully ANSI standard did not compile this
+entry correctly.  Using cc by default was not helpful most of the time on this
+entry, because the program had a hardcoded `gcc` invocation anyway.  Anyone who
+uses egcs and has no plain `gcc` will need to frob the source anyway and can be
+expected to do the right thing with `${CC}`. This limitation was removed in 2023
+but in the past one should have used `gcc`.
 
 
 ## Author's remarks:
@@ -109,12 +107,12 @@ itself. Just load it in your favorite editor.
 
 `gcc` (the GNU C compiler) must be available at runtime. It is assumed that your
 C implementation keeps headers as files in the `/usr/include` directory. The
-[info](%%REPO_URL%%/1998/schweikh1/info) file must be readable and reside in the current working directory.
-The current working directory must be writable in order to create a temporary
-file (which is removed upon program termination). In case you don't have gcc at
-runtime, not all is lost if your compiler or preprocessor can produce a list of
-defined macros in the format output by `gcc -dM`, i.e. lines of the form
-`#define MACRO value`.
+[info](%%REPO_URL%%/1998/schweikh1/info) file must be readable and reside in the
+current working directory.  The current working directory must be writable in
+order to create a temporary file (which is removed upon program termination). In
+case you don't have gcc at runtime, not all is lost if your compiler or
+preprocessor can produce a list of defined macros in the format output by `gcc
+-dM`, i.e. lines of the form `#define MACRO value`.
 
 Edit the source at line 55 in this case.
 
@@ -143,6 +141,12 @@ programs that may fail to compile due to syntax errors: supposing that
 is expected to compile and meet the assertion. If it does not, your
 compiler compiles some other language than ISO C.
 
+### NOTICE to those who wish for a greater challenge:
+
+**If you want a greater challenge, don't read any further**:
+just try to understand the program via the source.
+
+If you get stuck, come back and read below for additional hints and information.
 
 ### Why I think my program is obfuscated
 
@@ -271,17 +275,16 @@ To use, try:
 ```
 
 
-I have tried, as suggested in the guidelines, to let the code look
-like ordinary C code. Apart from a few long lines I think I left
-the indentation like I would in RL. You should however not try to
-use `indent` on the source. The code is extremely fragile because of the
-myriads of `__LINE__` macros -- indenting is a sure way to break
-the program. Don't even think of maintaining that beast; I've
-had my share of core dumps during development :-) A test suite
-was used after every minor change to find out if the program still
+I have tried, as suggested in the [guidelines](../guidelines.txt), to let the
+code look like ordinary C code. Apart from a few long lines I think I left the
+indentation like I would in RL. You should however not try to use `indent` on
+the source. The code is extremely fragile because of the myriads of `__LINE__`
+macros -- indenting is a sure way to break the program. Don't even think of
+maintaining that beast; I've had my share of core dumps during development :-) A
+test suite was used after every minor change to find out if the program still
 does what it should.
 
-From the goals: "To stress C compilers with unusual code."
+From the goals: "`To stress C compilers with unusual code.`"
 That describes exactly my modest attempts...
 
 
