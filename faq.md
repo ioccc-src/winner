@@ -20,7 +20,7 @@ This is FAQ version **28.0.3 2024-07-27**.
 - <a class="normal" href="#faq0_13">0.13 - How can I validate my submission tarball?</a>
 - <a class="normal" href="#faq0_14">0.14 - What is the `fnamchk` tool?</a>
 - <a class="normal" href="#faq0_15">0.15 - What is the `mkiocccentry` tool and how do I use it?</a>
-- <a class="normal" href="#faq0_16">0.16 - How to I compile `mkiocccentry` and related tools?</a>
+- <a class="normal" href="#faq0_16">0.16 - How do I compile `mkiocccentry` and related tools?</a>
 
 
 ## Section  1 - [History of the IOCCC](#faq1)
@@ -217,10 +217,10 @@ where:
 
     Optional extra data files to include with your entry
 
-NOTE: Please see our [IOCCC markdown guide](markdown.html) for **important information** on using markdown in the IOCCC.
+**NOTE**: Please see our [IOCCC markdown guide](markdown.html) for **important information** on using markdown in the IOCCC.
 
-NOTE: It is *NOT* necessary to install the tools to use them as you can run
-the tools from the top of the _mkiocccentry repo_ directory just fine. However,
+**NOTE**: It is *NOT* necessary to install the tools to use them as you can run
+the tools from the top of the `mkiocccentry` repo directory just fine. However,
 installing it will make it easier for you as you can run it from your
 submission's directory.
 
@@ -231,6 +231,8 @@ then re-run the `mkiocccentry` tool.
 
 If you choose to risk violating rules, be sure an explain your reason
 for doing so in your `remarks.md` file.
+
+See also [Rule 17](next/rules.html#rule17)!
 
 
 #### 6. Upload your entry to the IOCCC submit server
@@ -245,7 +247,9 @@ for an announcement of the availability of the **IOCCC submit server**.
 
 
 <div id="faq0_1">
+<div id="frequent-themes">
 ### FAQ 0.1: What types of entries have been frequently submitted to the IOCCC?
+</div>
 </div>
 
 There are types of entries that are frequently submitted to the IOCCC.
@@ -254,7 +258,7 @@ a submission to the IOCCC on a frequently submitted theme,
 we do wish to provide a **fair warning** to those who do.
 
 
-#### Fair warnings on frequently submitted themes
+#### Fair warnings on frequently submitted themes:
 
 **IMPORTANT HINT**: It is **not fatal** to send in those types of
 entries, it is just **HARDER to win** with such a submission.  A
@@ -411,7 +415,9 @@ command that is compatible with GNU Make version 3.81.
 
 
 <div id="faq0_3">
+<div id="prog">
 ### FAQ 0.3: May I use a different source or compiled filename than prog.c or prog?
+</div>
 </div>
 
 While your entry's source filename, as submitted, must be `prog.c`, your entry's `Makefile`
@@ -1638,7 +1644,7 @@ See also the [Guidelines](next/guidelines.html) and the [Rules](next/rules.html)
 
 <div id="faq0_16">
 <div id="mkiocccentry_compile">
-### FAQ 0.16 - How to I compile `mkiocccentry` and its related tools?
+### FAQ 0.16 - How do I compile `mkiocccentry` and its related tools?
 </div>
 </div>
 

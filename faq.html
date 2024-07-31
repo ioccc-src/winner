@@ -408,7 +408,7 @@
 <li><a class="normal" href="#faq0_13">0.13 - How can I validate my submission tarball?</a></li>
 <li><a class="normal" href="#faq0_14">0.14 - What is the <code>fnamchk</code> tool?</a></li>
 <li><a class="normal" href="#faq0_15">0.15 - What is the <code>mkiocccentry</code> tool and how do I use it?</a></li>
-<li><a class="normal" href="#faq0_16">0.16 - How to I compile <code>mkiocccentry</code> and related tools?</a></li>
+<li><a class="normal" href="#faq0_16">0.16 - How do I compile <code>mkiocccentry</code> and related tools?</a></li>
 </ul>
 <h2 id="section-1---history-of-the-ioccc">Section 1 - <a href="#faq1">History of the IOCCC</a></h2>
 <ul>
@@ -558,9 +558,9 @@ for more info.</p></li>
 <li><p>[file …]</p>
 <p>Optional extra data files to include with your entry</p></li>
 </ul>
-<p>NOTE: Please see our <a href="markdown.html">IOCCC markdown guide</a> for <strong>important information</strong> on using markdown in the IOCCC.</p>
-<p>NOTE: It is <em>NOT</em> necessary to install the tools to use them as you can run
-the tools from the top of the <em>mkiocccentry repo</em> directory just fine. However,
+<p><strong>NOTE</strong>: Please see our <a href="markdown.html">IOCCC markdown guide</a> for <strong>important information</strong> on using markdown in the IOCCC.</p>
+<p><strong>NOTE</strong>: It is <em>NOT</em> necessary to install the tools to use them as you can run
+the tools from the top of the <code>mkiocccentry</code> repo directory just fine. However,
 installing it will make it easier for you as you can run it from your
 submission’s directory.</p>
 <p>If the <code>mkiocccentry</code> tool indicates that there is a problem with your entry,
@@ -569,6 +569,7 @@ you are <strong>strongly</strong> encouraged to revise and correct your entry an
 then re-run the <code>mkiocccentry</code> tool.</p>
 <p>If you choose to risk violating rules, be sure an explain your reason
 for doing so in your <code>remarks.md</code> file.</p>
+<p>See also <a href="next/rules.html#rule17">Rule 17</a>!</p>
 <h4 id="upload-your-entry-to-the-ioccc-submit-server">6. Upload your entry to the IOCCC submit server</h4>
 <p>The <strong>IOCCC submit server</strong> is still being written.
 <!--XXX--> As such, we do not yet have instructions
@@ -577,13 +578,15 @@ on how upload your entry to the <strong>IOCCC submit server</strong>. Once
 with the proper instructions. Watch the <a href="news.html">IOCCC news</a>
 for an announcement of the availability of the <strong>IOCCC submit server</strong>.</p>
 <div id="faq0_1">
+<div id="frequent-themes">
 <h3 id="faq-0.1-what-types-of-entries-have-been-frequently-submitted-to-the-ioccc">FAQ 0.1: What types of entries have been frequently submitted to the IOCCC?</h3>
+</div>
 </div>
 <p>There are types of entries that are frequently submitted to the IOCCC.
 While we <strong>do not wish to prevent</strong> people from sending
 a submission to the IOCCC on a frequently submitted theme,
 we do wish to provide a <strong>fair warning</strong> to those who do.</p>
-<h4 id="fair-warnings-on-frequently-submitted-themes">Fair warnings on frequently submitted themes</h4>
+<h4 id="fair-warnings-on-frequently-submitted-themes">Fair warnings on frequently submitted themes:</h4>
 <p><strong>IMPORTANT HINT</strong>: It is <strong>not fatal</strong> to send in those types of
 entries, it is just <strong>HARDER to win</strong> with such a submission. A
 submission on a frequently submitted theme will have to do something
@@ -706,7 +709,9 @@ your <code>Makefile</code> should copy <code>prog.c</code> into the desired file
 make compatible</a> <code>make(1)</code>
 command that is compatible with GNU Make version 3.81.</p>
 <div id="faq0_3">
+<div id="prog">
 <h3 id="faq-0.3-may-i-use-a-different-source-or-compiled-filename-than-prog.c-or-prog">FAQ 0.3: May I use a different source or compiled filename than prog.c or prog?</h3>
+</div>
 </div>
 <p>While your entry’s source filename, as submitted, must be <code>prog.c</code>, your entry’s <code>Makefile</code>
 may copy <code>prog.c</code> to a different filename as part of the compiling/building process. For example:</p>
@@ -1808,7 +1813,7 @@ or more of these tools manually.</p>
 (and in particular <a href="next/rules.html#rule17">Rule 17</a>).</p>
 <div id="faq0_16">
 <div id="mkiocccentry_compile">
-<h3 id="faq-0.16---how-to-i-compile-mkiocccentry-and-its-related-tools">FAQ 0.16 - How to I compile <code>mkiocccentry</code> and its related tools?</h3>
+<h3 id="faq-0.16---how-do-i-compile-mkiocccentry-and-its-related-tools">FAQ 0.16 - How do I compile <code>mkiocccentry</code> and its related tools?</h3>
 </div>
 </div>
 <p>After you
