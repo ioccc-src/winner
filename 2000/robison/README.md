@@ -34,7 +34,7 @@ Highly Compressed Program for Playing Hygienic Checkers
 ### FIELD OF INVENTION
 
 The present invention generally relates to
-[checkers](https://en.wikipedia.org/wiki/Checkers).
+[Checkers](https://en.wikipedia.org/wiki/Checkers).
 
 
 ### BACKGROUND OF THE INVENTION

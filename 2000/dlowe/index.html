@@ -428,8 +428,8 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 the use of embedded language interpreters. The judges considered
 disqualifying this entry because of the use of perl, but on the other
 hand it qualifies as the Worst Abuse of the Rules. As a previous author,
-<a href="../../authors.html#J_David_Lowe">David Lowe</a> continues to inflict the highest quality “poot” on the
-Judges.</p>
+<a href="../../authors.html#J_David_Lowe">David Lowe</a> continues to inflict the highest
+quality “<code>poot</code>” on the Judges.</p>
 <p>The program also contains an undocumented command for Chad and Chongo (Landon).
 The judges’ remarks contain a clue to the hidden command :-).</p>
 <ul>
@@ -445,25 +445,65 @@ calculator</a>, loosely
 based on the <code>dc(1)</code> unix calculator.</p>
 <h1 id="syntax">Syntax</h1>
 <p>This program understands the following <code>dc(1)</code> commands:</p>
-<pre><code>    p   prints the top stack value without altering the stack.
-    P   prints the top stack value, removing it from the stack, and
-        doesn&#39;t print a trailing newline.
-    f   prints the contents of the stack, one number per line,
-        without modifying it.
-    c   clears the stack.
-    d   pushes a copy of the top stack value onto the stack.
-    r   reverses the order of the top two stack values.</code></pre>
+<ul>
+<li><code>p</code>
+<ul>
+<li>prints the top stack value without altering the stack.</li>
+</ul></li>
+<li><code>P</code>
+<ul>
+<li>prints the top stack value, removing it from the stack, and
+doesn’t print a trailing newline.</li>
+</ul></li>
+<li><code>f</code>
+<ul>
+<li>prints the contents of the stack, one number per line,
+without modifying it.</li>
+</ul></li>
+<li><code>c</code>
+<ul>
+<li>clears the stack.</li>
+</ul></li>
+<li><code>d</code>
+<ul>
+<li>pushes a copy of the top stack value onto the stack.</li>
+</ul></li>
+<li><code>r</code>
+<ul>
+<li>reverses the order of the top two stack values.</li>
+</ul></li>
+</ul>
 <p>And the following arithmetic operators are supported:</p>
-<pre><code>    +   Pops 2 values and pushes their sum.
-    -   Pops 2 values and pushes the result of subtracting the first
-        from the second.
-    *   Pops 2 values and pushes their product.
-    /   Pops 2 values and pushes the result of dividing the second
-        by the first.
-    ^   Pops 2 values and pushes the result of raising the second
-        to the power of the first.
-    %   Pops 2 values and pushes the remainder of the division that
-        / would do.</code></pre>
+<ul>
+<li><code>+</code>
+<ul>
+<li>Pops 2 values and pushes their sum.</li>
+</ul></li>
+<li><code>-</code>
+<ul>
+<li>Pops 2 values and pushes the result of subtracting the first
+from the second.</li>
+</ul></li>
+<li><code>*</code>
+<ul>
+<li>Pops 2 values and pushes their product.</li>
+</ul></li>
+<li><code>/</code>
+<ul>
+<li>Pops 2 values and pushes the result of dividing the second
+by the first.</li>
+</ul></li>
+<li><code>^</code>
+<ul>
+<li>Pops 2 values and pushes the result of raising the second
+to the power of the first.</li>
+</ul></li>
+<li><code>%</code>
+<ul>
+<li>Pops 2 values and pushes the remainder of the division that
+<code>/</code> would do.</li>
+</ul></li>
+</ul>
 <p>The precision and range are double, like it or not, except that the
 modulus operator actually returns <code>(p1 - (p2 * (p1 / p2)))</code>, but with
 the innermost division calculated at integer precision. This is
@@ -473,14 +513,26 @@ the command line. Unlike <code>dc(1)</code>, multiple commands on the same line
 must be space separated. Commands are only executed when a newline
 or EOF is encountered.</p>
 <h3 id="diagnostics">Diagnostics:</h3>
-<pre><code>    &quot;stack empty&quot;       Not enough on the stack for the requested command
-    &quot;divide by zero&quot;    Attempt to divide by zero
-    &quot;unimplemented&quot;     Invalid input
-
-    Floating point exception (core dumped) (or something to that effect)
-                        Bug in Perl_sv_upgrade causes this in some cases when
-                        the results of an operation are really huge (&gt; 10^308)
-                        This bug appears to be fixed in perl5.6.0</code></pre>
+<ul>
+<li>“stack empty”
+<ul>
+<li>Not enough on the stack for the requested command</li>
+</ul></li>
+<li>“divide by zero”
+<ul>
+<li>Attempt to divide by zero</li>
+</ul></li>
+<li>“unimplemented”
+<ul>
+<li>Invalid input</li>
+</ul></li>
+<li>“Floating point exception (core dumped)” (or something to that effect)
+<ul>
+<li>Bug in Perl_sv_upgrade causes this in some cases when the results of an
+operation are really huge (&gt; 10^308) This bug appears to be fixed in
+perl5.6.0.</li>
+</ul></li>
+</ul>
 <h3 id="examples">Examples:</h3>
 <pre><code>    $ echo &#39;12 13 14 15 16 + + + + f&#39; | ./dlowe
     70
@@ -577,8 +629,8 @@ easier to remember, <code>=</code> is synonymous with <code>d</code>. This also 
 possible to write (even more) obfuscated reverse Polish commands
 (I figure this explanation moves the synonyms from ‘bug’ to
 ‘feature’!)</p></li>
+<li><p>The first IOCCC entry with an “easter egg”?…</p></li>
 </ul>
-<p>. The first IOCCC entry with an “easter egg”?…</p>
 <h3 id="aside-on-unobfuscated-perl">Aside: on unobfuscated Perl</h3>
 <p>My original intent was to write obfuscated C and crystal-clear Perl,
 to highlight my bending of the rules. Unfortunately, Perl really
@@ -590,12 +642,13 @@ the list of qualifications for judges… Oh dear, I guess your C
 beautifier won’t help too much, either ;)</p>
 <p>If you don’t change the rules, it’ll be embedded Ada next year!</p>
 <h3 id="auto-defend">Auto defend</h3>
-<p>A. Isn’t this the obfuscated C contest? What’s this Perl <code>$#_&amp;&amp;$_</code>?</p>
-<p>D. Hey, this program <em>is</em> 100% C, and does not exec an external Perl
+<ol start="0" type="1">
+<li><p>Isn’t this the obfuscated C contest? What’s this Perl <code>$#_&amp;&amp;$_</code>?</p></li>
+<li><p>Hey, this program <em>is</em> 100% C, and does not exec an external Perl
 interpreter. It simply links against the Perl language library.
-The “Perl code” is just a C string constant.</p>
-<p>A. Perl isn’t portable enough, or ubiquitous enough.</p>
-<p>D. I’d argue that it is more portable than X. According to the Perl
+The “Perl code” is just a C string constant.</p></li>
+<li><p>Perl isn’t portable enough, or ubiquitous enough.</p></li>
+<li><p>I’d argue that it is more portable than X. According to the Perl
 folks, it runs on the following platforms: Acorn, AIX, Amiga, AS/400,
 BeOS, Concurrent, Debian, DEC OSF/1, Digital UNIX, EPOC, FreeBSD,
 Guardian, HP-UX, IRIX, LinuxPPC, LynxOS, MacOS, MachTen, Minix, MPE/iX,
@@ -603,7 +656,8 @@ MS-DOS, MVS, NetBSD, Netware, NextStep, OpenBSD, OpenLinux, ODT, OpenVMS,
 OS/2, OS390, OSR, PowerMAX, Psion, QNX, Redhat, Reliant UNIX, RISCOS,
 SCO, SGI, SINIX, Slackware, Solaris, Sun, SuSE, Tandem, Tru64, UNIX,
 U/WIN, Unixware, VMS, Win31, Win32, Windows 3.1, and Windows 95/98/NT/2K.
-Granted, embeddable Perl isn’t quite so portable, but still…</p>
+Granted, embeddable Perl isn’t quite so portable, but still…</p></li>
+</ol>
 <p>Also, Perl 5 is bundled with the following OS distributions: AIX 4.3.3+,
 FreeBSD 3.0+, IRIX 6.4+, every Linux distribution, NetBSD, OpenBSD, and
 DEC Tru64 5.0+, again according to the Perl people.</p>

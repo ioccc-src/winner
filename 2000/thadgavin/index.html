@@ -414,15 +414,15 @@ Location: <a href="../../location.html#GB">GB</a> - <em>United Kingdom of Great 
 <!-- BEFORE: 1st line of markdown file: 2000/thadgavin/README.md -->
 <h2 id="to-build">To build:</h2>
 <pre><code>    make alt</code></pre>
-<p>NOTE: if you don’t have curses or SDL1 installed both modes will fail to compile. In
+<p><strong>NOTE</strong>: if you don’t have curses or SDL1 installed both modes will fail to compile. In
 that case see the
 FAQ on “<a href="../../faq.html#SDL">SDL1 and SDL2</a>”
 and the
-FAQ on “<a href="../../faq.html#curses">ncurses</a>”
+FAQ on “<a href="../../faq.html#curses">(n)curses</a>”
 for more information.</p>
 <p>We recommend that you use the alternate code so you can see what this entry
 looked like back in 2000 (with a configurable speed). See the
-<a href="#original-code">original code</a> section for the original entry.</p>
+<a href="#original-code">Original code</a> section for the original entry.</p>
 <h2 id="to-use">To use:</h2>
 <pre><code>    ./thadgavin.alt</code></pre>
 <p>You can press ‘q’ at any time to exit.</p>
@@ -446,13 +446,13 @@ microseconds) for the SDL version.</p>
 it’s better to not tie the two values together. You may of course redefine both
 in the same command.</p>
 <h2 id="original-code">Original code:</h2>
-<p>WARNING: if you are sensitive to rapid movement or if you want to see better
-what is going on then please use the alternate code as described above. If you
+<p><strong>WARNING</strong>: if you are sensitive to rapid movement or if you want to see better
+what is going on then please use the <a href="#to-build">Alternate code</a> as described above. If you
 wish to see the original entry see below.</p>
-<p>NOTE: in curses mode you might want to type <code>reset</code> after execution of this
+<p><strong>NOTE</strong>: in curses mode you might want to type <code>reset</code> after execution of this
 program if your terminal is messed up after exiting the program (send intr,
 typically ctrl-c) as the program does not call <code>endwin()</code>. Using <code>reset</code> will
-clear the screen. The alternate code, as noted above, allows one to quit early so this
+clear the screen. The <a href="#to-build">Alternate code</a>, as noted above, allows one to quit early so this
 is not a problem there.</p>
 <h3 id="original-build">Original build:</h3>
 <pre><code>    make all</code></pre>

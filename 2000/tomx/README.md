@@ -4,8 +4,8 @@
     make
 ```
 
-There is an alternate version that compiles [mkentry.c](%%REPO_URL%%/2000/mkentry.c). See
-[alternate code](#alternate-code).
+There is an alternate version that compiles [mkentry.c](%%REPO_URL%%/2000/tomx/mkentry.c). See
+[Alternate code](#alternate-code).
 
 
 ## To use:
@@ -100,7 +100,7 @@ the `main()`, leaving the complexities of the C file elsewhere and making this
 source still acceptable to `make` and `sh`. The following modification to the
 last few lines will compile the IOCCC's famous [mkentry.c](%%REPO_URL%%/2000/tomx/mkentry.c).
 
-```
+``` <!---makefile-->
     .PHONY: /* true clean */
     #undef   true
     #include "mkentry.c"

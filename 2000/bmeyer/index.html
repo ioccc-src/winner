@@ -412,7 +412,7 @@ Location: <a href="../../location.html#AU">AU</a> - <em>Commonwealth of Australi
 <h2 id="to-use">To use:</h2>
 <pre><code>    ./bmeyer</code></pre>
 <h2 id="try">Try:</h2>
-<p>In a video window (white text on black background):</p>
+<p>In a terminal window (white text on black background):</p>
 <pre><code>    ./try.sh</code></pre>
 <p>The script will suggest you compare the output of the program with images,
 prompting you to press any key to continue so that you may do so.</p>
@@ -421,7 +421,7 @@ prompting you to press any key to continue so that you may do so.</p>
 dashed argument) for compression and decompression! You’ve been warned.</p>
 <p>The author recommended on linux/x86, glibc 2.0, libc4/5:</p>
 <pre><code>    bmeyer: bmeyer.c
-            CC -DY=&quot;__setfpucw(0x127f)&quot; -O6 $? -o $@ -lm</code></pre>
+            cc -DY=&quot;__setfpucw(0x127f)&quot; -O6 $? -o $@ -lm</code></pre>
 <p>However many compilers use <code>-O3</code> as the maximum level for <code>-O</code> optimization.</p>
 <p>And on linux/x86, glibc 2.1:</p>
 <pre><code>    bmeyer: bmeyer.c
@@ -446,9 +446,9 @@ chance any given file produced might not be portable.</p>
 <p><code>GLICBAWLS</code> stands for “Grey Level Image Compression By Adaptive Weighted Least
 Squares”.</p>
 <p>And that’s exactly what this program does — feed it a .PGM file
-(either raw [i.e. P5] or ASCII [i.e. P2]) on stdin, and it will
-output a compressed version to stdout. Feed it a compressed file
-on stdin, and it will decompress it to stdout — as either raw or
+(either raw [i.e. P5] or ASCII [i.e. P2]) on <code>stdin</code>, and it will
+output a compressed version to <code>stdout</code>. Feed it a compressed file
+on <code>stdin</code>, and it will decompress it to <code>stdout</code> — as either raw or
 ASCII .PGM, depending on what format it was compressed from. For
 example:</p>
 <pre><code>    ./glicbawls &lt; michael.pgm &gt; michael.glic</code></pre>
@@ -614,16 +614,16 @@ interval halving repeated until the precise value has been
 en/decoded<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>.</p>
 <h3 id="photo-credit">Photo Credit:</h3>
 <p><a href="lavabus.pgm">Lavabus</a> was taken by the judge, Landon Curt Noll.
-<a href="michael.pgm">Michael</a> was provided by the author. <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2000/bmeyer/lenna.glic">Lenna</a> is a
+<a href="michael.pgm">Michael</a> was provided by the author. <a href="lenna.glic">Lenna</a> is a
 1972 Playboy centerfold (doesn’t show very much).</p>
 <ul>
 <li><p><a href="michael.pgm">michael.pgm</a></p>
 <p>The author’s Godchild and nephew.</p></li>
 <li><p><a href="lavabus.pgm">lavabus.pgm</a></p>
-<p>A bus that was trapped by lava from <a href="https://en.wikipedia.org/wiki/Kīlauea">Kilauea
+<p>A bus that was trapped by lava from <a href="https://en.wikipedia.org/wiki/Kīlauea">Kīlauea
 volcano</a> in Hawaii, US. Nobody was
 in the bus at the time, BTW. Photo date: 1981.</p></li>
-<li><p><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2000/bmeyer/lenna.glic">lenna.glic</a></p>
+<li><p><a href="lenna.glic">lenna.glic</a></p>
 <p>A November 1972 Playboy centerfold was scanned in long ago and has been used
 for image compression research since then. Playboy originally threatened to
 prosecute unauthorized use, but eventually granted that, having been in use

@@ -77,7 +77,7 @@
 	{
 	    "file_path" : "finance.sheet",
 	    "inventory_order" : 4000000000,
-	    "OK_to_edit" : true,
+	    "OK_to_edit" : false,
 	    "display_as" : "spreadsheet",
 	    "display_via_github" : false,
 	    "entry_text" : "example spreadsheet file"

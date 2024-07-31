@@ -4,16 +4,16 @@
     make alt
 ```
 
-NOTE: if you don't have curses or SDL1 installed both modes will fail to compile. In
+**NOTE**: if you don't have curses or SDL1 installed both modes will fail to compile. In
 that case see the
 FAQ on "[SDL1 and SDL2](../../faq.html#SDL)"
 and the
-FAQ on "[ncurses](../../faq.html#curses)"
+FAQ on "[&#40;n&#41;curses](../../faq.html#curses)"
 for more information.
 
 We recommend that you use the alternate code so you can see what this entry
 looked like back in 2000 (with a configurable speed). See the
-[original code](#original-code) section for the original entry.
+[Original code](#original-code) section for the original entry.
 
 
 ## To use:
@@ -64,14 +64,14 @@ in the same command.
 
 ## Original code:
 
-WARNING: if you are sensitive to rapid movement or if you want to see better
-what is going on then please use the alternate code as described above. If you
+**WARNING**: if you are sensitive to rapid movement or if you want to see better
+what is going on then please use the [Alternate code](#to-build) as described above. If you
 wish to see the original entry see below.
 
-NOTE: in curses mode you might want to type `reset` after execution of this
+**NOTE**: in curses mode you might want to type `reset` after execution of this
 program if your terminal is messed up after exiting the program (send intr,
 typically ctrl-c) as the program does not call `endwin()`. Using `reset` will
-clear the screen. The alternate code, as noted above, allows one to quit early so this
+clear the screen. The [Alternate code](#to-build), as noted above, allows one to quit early so this
 is not a problem there.
 
 

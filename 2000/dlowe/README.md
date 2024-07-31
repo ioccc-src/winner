@@ -43,8 +43,8 @@ When this entry was submitted the rules of the IOCCC did not prohibit
 the use of embedded language interpreters.  The judges considered
 disqualifying this entry because of the use of perl, but on the other
 hand it qualifies as the Worst Abuse of the Rules.  As a previous author,
-[David Lowe](../../authors.html#J_David_Lowe) continues to inflict the highest quality "poot" on the
-Judges.
+[David Lowe](../../authors.html#J_David_Lowe) continues to inflict the highest
+quality "`poot`" on the Judges.
 
 The program also contains an undocumented command for Chad and Chongo (Landon).
 The judges' remarks contain a clue to the hidden command :-).
@@ -71,31 +71,41 @@ based on the `dc(1)` unix calculator.
 
 This program understands the following `dc(1)` commands:
 
-```
-    p   prints the top stack value without altering the stack.
-    P   prints the top stack value, removing it from the stack, and
-        doesn't print a trailing newline.
-    f   prints the contents of the stack, one number per line,
-        without modifying it.
-    c   clears the stack.
-    d   pushes a copy of the top stack value onto the stack.
-    r   reverses the order of the top two stack values.
-```
+- `p`
+    * prints the top stack value without altering the stack.
+- `P`
+    * prints the top stack value, removing it from the stack, and
+      doesn't print a trailing newline.
+- `f`
+    * prints the contents of the stack, one number per line,
+      without modifying it.
+- `c`
+    * clears the stack.
+- `d`
+    * pushes a copy of the top stack value onto the stack.
+- `r`
+    * reverses the order of the top two stack values.
 
 And the following arithmetic operators are supported:
 
-```
-    +   Pops 2 values and pushes their sum.
-    -   Pops 2 values and pushes the result of subtracting the first
-        from the second.
-    *   Pops 2 values and pushes their product.
-    /   Pops 2 values and pushes the result of dividing the second
-        by the first.
-    ^   Pops 2 values and pushes the result of raising the second
-        to the power of the first.
-    %   Pops 2 values and pushes the remainder of the division that
-        / would do.
-```
+- `+`
+    * Pops 2 values and pushes their sum.
+
+- `-`
+    *  Pops 2 values and pushes the result of subtracting the first
+    from the second.
+
+- `*`
+    * Pops 2 values and pushes their product.
+- `/`
+    * Pops 2 values and pushes the result of dividing the second
+      by the first.
+- `^`
+    * Pops 2 values and pushes the result of raising the second
+    to the power of the first.
+- `%`
+    * Pops 2 values and pushes the remainder of the division that
+    `/` would do.
 
 The precision and range are double, like it or not, except that the
 modulus operator actually returns `(p1 - (p2 * (p1 / p2)))`, but with
@@ -110,16 +120,16 @@ or EOF is encountered.
 
 ### Diagnostics:
 
-```
-    "stack empty"       Not enough on the stack for the requested command
-    "divide by zero"    Attempt to divide by zero
-    "unimplemented"     Invalid input
-
-    Floating point exception (core dumped) (or something to that effect)
-                        Bug in Perl_sv_upgrade causes this in some cases when
-                        the results of an operation are really huge (> 10^308)
-                        This bug appears to be fixed in perl5.6.0
-```
+- "stack empty"
+    * Not enough on the stack for the requested command
+- "divide by zero"
+    * Attempt to divide by zero
+- "unimplemented"
+    * Invalid input
+- "Floating point exception (core dumped)" (or something to that effect)
+    * Bug in Perl_sv_upgrade causes this in some cases when the results of an
+    operation are really huge (> 10^308) This bug appears to be fixed in
+    perl5.6.0.
 
 
 ### Examples:
@@ -244,7 +254,7 @@ possible to write (even more) obfuscated reverse Polish commands
 (I figure this explanation moves the synonyms from 'bug' to
 'feature'!)
 
-. The first IOCCC entry with an "easter egg"?...
+- The first IOCCC entry with an "easter egg"?...
 
 
 ### Aside: on unobfuscated Perl
@@ -266,15 +276,15 @@ If you don't change the rules, it'll be embedded Ada next year!
 
 ### Auto defend
 
-A. Isn't this the obfuscated C contest?  What's this Perl `$#_&&$_`?
+0. Isn't this the obfuscated C contest?  What's this Perl `$#_&&$_`?
 
-D. Hey, this program *is* 100% C, and does not exec an external Perl
+1. Hey, this program *is* 100% C, and does not exec an external Perl
 interpreter.  It simply links against the Perl language library.
 The "Perl code" is just a C string constant.
 
-A. Perl isn't portable enough, or ubiquitous enough.
+2. Perl isn't portable enough, or ubiquitous enough.
 
-D. I'd argue that it is more portable than X.  According to the Perl
+3. I'd argue that it is more portable than X.  According to the Perl
 folks, it runs on the following platforms: Acorn, AIX, Amiga, AS/400,
 BeOS, Concurrent, Debian, DEC OSF/1, Digital UNIX, EPOC, FreeBSD,
 Guardian, HP-UX, IRIX, LinuxPPC, LynxOS, MacOS, MachTen, Minix, MPE/iX,
