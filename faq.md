@@ -117,6 +117,20 @@ other inconsistencies with the original entry?](#faq4_3)
 ## Section 0: Submitting entries to a new IOCCC
 </div>
 
+XXX - test text - XXX
+
+
+<div id="xfaq0"></div>
+## Test heading for xfaq0
+
+XXX - xfaq0 test text - XXX
+
+
+<a id="yfaq0"></a>
+## Test heading for yfaq0
+
+XXX - yfaq0 test text - XXX
+
 
 <div id="faq0_0">
 <div id="submit">
