@@ -153,7 +153,7 @@ Output code has these features:
 * Uses a fairly efficient encoding scheme, better than `uuencode` for
  files larger than ~13K, and better than `base64` for files larger
  than 20K.
-* Encryption with [ISAAC](https://en.wikipedia.org/wiki/ISAAC_&#x28;cipher&#x29;), a
+* Encryption with [ISAAC](https://en.wikipedia.org/wiki/ISAAC_&lpar;cipher&rpar;), a
 cryptographically secure pseudorandom number generator.
 * Trivial 3 language polyglot.
 

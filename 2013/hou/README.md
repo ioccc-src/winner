@@ -61,7 +61,7 @@ really just a decompressor to generate the real source code of the
 program.
 
 This program will loop infinitely while progressively refining a
-[raytraced](https://en.wikipedia.org/wiki/Ray_tracing_&#x28;graphics&#x29;) image.
+[raytraced](https://en.wikipedia.org/wiki/Ray_tracing_&lpar;graphics&rpar;) image.
 
 NOTE: the author refers to `a.c`, placed in a gzipped file `a.c.gz`. We do not
 include it but it can be generated like:

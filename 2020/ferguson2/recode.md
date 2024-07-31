@@ -18,7 +18,7 @@ have to if you don't wish to.
 -   [Only write config file](#onlyconfig)
 -   [Reusing a configuration](#reuseconfig)
 -   [Write config file, read data file and pass to Enigma simulator](#passtoenigma)
--   [Piping directly to the Enigma code once &#x28;with randomised settings, saved&#x29;](#directlytoenigma)
+-   [Piping directly to the Enigma code once &lpar;with randomised settings, saved&rpar;](#directlytoenigma)
 -   [Usage conclusion](#conclusion)
 -   [Example additions](#additions)
 -   [Example uses](#exampleuses)

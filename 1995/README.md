@@ -51,7 +51,7 @@ us with your comments and suggestions today.
 
 For those who appreciate a bit of Internet history, this is how
 people used to contact the IOCCC in this given year, via [Unix to Unix CoPy
-&#x28;UUCP&#x29;](https://en.wikipedia.org/wiki/UUCP#Mail_routing):
+&lpar;UUCP&rpar;](https://en.wikipedia.org/wiki/UUCP#Mail_routing):
 
 >   ...!{sun,pacbell,uunet,pyramid}!hoptoad!judges<br>
 >   judges@toad.com

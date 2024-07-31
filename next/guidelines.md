@@ -73,7 +73,7 @@ block or blockquote, just a vertical bar).
 
 This file contains _guidelines_ intended to help people who wish to
 participate in the [International Obfuscated C Code Contest
-&#x28;IOCCC&#x29;](https://www.ioccc.org).
+&lpar;IOCCC&rpar;](https://www.ioccc.org).
 
 These are **NOT the [IOCCC rules](rules.html)**, though it does contain comments
 about them.  The [IOCCC guidelines](guidelines.html) should be viewed as

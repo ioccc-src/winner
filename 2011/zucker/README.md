@@ -164,7 +164,7 @@ If you get stuck, come back and read below for additional hints and information.
 ### How this entry works:
 
 The program is not quite a traditional [ray
-tracer](https://en.wikipedia.org/wiki/Ray_tracing_&#x28;graphics&#x29;), but a "[sphere
+tracer](https://en.wikipedia.org/wiki/Ray_tracing_&lpar;graphics&rpar;), but a "[sphere
 tracer](sphere-tracing.pdf)" which uses distance fields to encode proximity to
 objects in the scene. Using sphere tracing to compute visibility instead of
 analytic ray tracing provides two advantages: first, it greatly eases the

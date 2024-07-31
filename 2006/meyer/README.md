@@ -91,8 +91,8 @@ include:
 - virtual method tables (all the virtual method tables have been combined to a
 single [vtable](https://en.wikipedia.org/wiki/Virtual_method_table) table).
 - runtime method binding.
-- [inheritance](https://en.wikipedia.org/wiki/Inheritance_&#x28;object-oriented_programming&#x29;)
-and [polymorphism](https://en.wikipedia.org/wiki/Polymorphism_&#x28;computer_science&#x29;).
+- [inheritance](https://en.wikipedia.org/wiki/Inheritance_&lpar;object-oriented_programming&rpar;)
+and [polymorphism](https://en.wikipedia.org/wiki/Polymorphism_&lpar;computer_science&rpar;).
 
 It is left as an exercise to the reader to find a corresponding
 implementation in a popular object-oriented programming language.

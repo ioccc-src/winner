@@ -137,7 +137,7 @@ part.
 
 For more information on what you can do once you've piped [third](%%REPO_URL%%/1992/buzzard.2/third) into
 first, type `help` and consult
-[FORTH](https://en.wikipedia.org/wiki/Forth_&#x28;programming_language&#x29;) manuals for
+[FORTH](https://en.wikipedia.org/wiki/Forth_&lpar;programming_language&rpar;) manuals for
 further reference.  Six sample THIRD programs are included in the files
 `demo1.th` through `demo6.th`.  See [buzzard.2.README.html](buzzard.2.README.html)
 for more information.
@@ -157,7 +157,7 @@ tackle this project.
 on smaller machines; `m[]` needs to be at least 2000 long, though.
 
 I say `first` is portable mainly because it uses native types.  Unlike
-[FORTH](https://en.wikipedia.org/wiki/Forth_&#x28;programming_language&#x29;), which
+[FORTH](https://en.wikipedia.org/wiki/Forth_&lpar;programming_language&rpar;), which
 traditionally allows byte and multi-byte operations, all operations are
 performed on C `int`s.  That means `first` code is only as portable as the same
 code would be in C.  As in C, the result of dividing `-1` by `2` is machine (or
@@ -190,7 +190,7 @@ answer the question "what will this do when I run it".  A reader who has
 deciphered `first` to this point may think they know the answer to this
 question, but they may not know the answer to the more important question, "what
 will this program do when given the right input?"
-[FORTH](https://en.wikipedia.org/wiki/Forth_&#x28;programming_language&#x29;) aficionados,
+[FORTH](https://en.wikipedia.org/wiki/Forth_&lpar;programming_language&rpar;) aficionados,
 and especially FORTH implementers, may recognize the similarity of the internal
 compiler format to many FORTH internal representations, and, being aware that
 FORTH interpreters can often be self-compiling, may be suspicious that this
@@ -205,7 +205,7 @@ represents a step backwards, in more ways than one.)
 ### What exactly is `first`, then?
 
 `first` is a tiny interpreter which implements a sufficient pseudo-subset of
-[FORTH](https://en.wikipedia.org/wiki/Forth_&#x28;programming_language&#x29;) to allow it
+[FORTH](https://en.wikipedia.org/wiki/Forth_&lpar;programming_language&rpar;) to allow it
 to bootstrap a relatively complete version of FORTH (based loosely on forth79),
 which I call THIRD.  Complete relative to what, I'm not sure.
 
@@ -217,11 +217,11 @@ the design file, design, I give a justification for why each primitive in
 
 THIRD is sorta slow, because `first` has so few primitives that many things that
 are primitives in
-[FORTH](https://en.wikipedia.org/wiki/Forth_&#x28;programming_language&#x29;) (like swap)
+[FORTH](https://en.wikipedia.org/wiki/Forth_&lpar;programming_language&rpar;) (like swap)
 take a significant amount of time in THIRD.
 
 When you get the `Ok.` message from `third`, try out some sample
-[FORTH](https://en.wikipedia.org/wiki/Forth_&#x28;programming_language&#x29;) code
+[FORTH](https://en.wikipedia.org/wiki/Forth_&lpar;programming_language&rpar;) code
 (`first` has no way of knowing if keyboard input is waiting, so it can't actually prompt
 you in a normal way.  It only prints `'Ok.'` after you define a word).
 
@@ -266,7 +266,7 @@ If you compile the basic THIRD system without the help word (strings take up one
 1000 `int`s (plus the return stack).
 
 Thus THIRD gives you a relatively complete
-[FORTH](https://en.wikipedia.org/wiki/Forth_&#x28;programming_language&#x29;) system in
+[FORTH](https://en.wikipedia.org/wiki/Forth_&lpar;programming_language&rpar;) system in
 less than 700 chars of C source + about 1000 `int`s of memory--and it's portable
 too (you could copy over the THIRD memory dump to another machine, in theory).
 If the above numbers seem to you to be mixing apples and oranges (C source and

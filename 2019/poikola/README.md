@@ -86,9 +86,9 @@ Do you have the time to see what this program does?  Think again, come back and
 try again.
 
 Note that [2](https://t5k.org/curios/page.php/2.html) can be said to be the
-least [odd](https://en.wikipedia.org/wiki/Parity_&#x28;mathematics&#x29;)
+least [odd](https://en.wikipedia.org/wiki/Parity_&lpar;mathematics&rpar;)
 [prime](https://en.wikipedia.org/wiki/Prime_number) because it is the greatest
-[even](https://en.wikipedia.org/wiki/Parity_&#x28;mathematics&#x29;) prime.  Moreover `2`
+[even](https://en.wikipedia.org/wiki/Parity_&lpar;mathematics&rpar;) prime.  Moreover `2`
 can be also said to be the greatest odd prime because it is the least even
 prime.
 

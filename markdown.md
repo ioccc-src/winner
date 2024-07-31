@@ -211,13 +211,15 @@ Please do **NOT** indent using ASCII tab characters in markdown files.
 </div>
 </div>
 
+Please do **NOT** indent with ASCII tabs, **OR** use any
+ASCII tab characters anywhere inside a markdown file.
+
 While we have nothing against the ASCII tab character in general,
 we have discovered that ASCII tab characters create problems when
 used as part of the leading whitespace within a markdown file.
 
 If you need to indent 2 or more levels, use multiples of 4 ASCII
-**SPACES**.  Please do **NOT** indent with ASCII tabs, **OR** use any
-ASCII tab characters anywhere inside a markdown file:
+**SPACES**.
 
 For example:
 
@@ -243,7 +245,7 @@ not C code or any other non-markdown content:
 ````
 
 **NOTE**: Again, you are **perfectly welcome** to use ASCII tab characters in
-your C code and other non-markdown files.  We simply ask that you **NOT** use any
+your C code and other non-markdown files.  We simply ask that you do **NOT** use any
 ASCII tab characters in markdown files.
 
 <div id="vim-tabs">
@@ -283,7 +285,7 @@ If you're in insert mode hit `ESC` first.
 
 <div id="languages">
 <div id="code">
-## Please do NOT _directly_ specify a language for a code block
+## Please use HTML comments to specify a language for a code block
 </div>
 </div>
 
@@ -407,8 +409,7 @@ use:
     a code block
 ```
 
-Again, use of a trailing backslash (`\`) inside a markdown [**fenced code
-block**](https://www.markdownguide.org/extended-syntax/#fenced-code-blocks) is fine:
+Again, use of a trailing backslash (`\`) inside a markdown code block is fine:
 
 ```` <!---markdown-->
 ```
@@ -419,8 +420,14 @@ block**](https://www.markdownguide.org/extended-syntax/#fenced-code-blocks) is f
 ```
 ````
 
-This will prevent `pandoc(1)` from generating deprecated HTML elements such as
-`<br />`.
+as is:
+
+``` <!---markdown-->
+    `This is OK\`
+```
+
+Doing it this way will prevent `pandoc(1)` from generating deprecated HTML
+elements such as `<br />`.
 
 
 <div id="images">
@@ -498,6 +505,37 @@ If a short line is needed, use:
 
 
 
+<div id="parentheses">
+## Please do NOT put a LITERAL "`(`" or "`)`" in markdown link titles
+</div>
+
+Please do **NOT** use literal parentheses inside markdown link titles.
+
+Instead of:
+
+``` <!---markdown-->
+    [some (text)](https://example.com/curds)                  <=== no thank you
+```
+
+use:
+
+``` <!---markdown-->
+    [some &lpar;text&rpar;](https://example.com/curds)
+```
+
+Instead of:
+
+``` <!---markdown-->
+    [ls(1)](https://example.com/ls-man-page.1)                <=== no thank you
+```
+
+use:
+
+``` <!---markdown-->
+    [ls&lpar;1&rpar;](https://example.com/ls-man-page.1)
+```
+
+
 <div id="closing-parentheses">
 ## Please do NOT end markdown links with "`))`"
 </div>
@@ -516,8 +554,10 @@ Instead of:
 use:
 
 ``` <!---markdown-->
-    [some text](https://example.com/foo_&#x28;bar&#x29;)
+    [some text](https://example.com/foo_&lpar;bar&rpar;)
 ```
+
+
 
 As another example, instead of:
 
@@ -529,37 +569,6 @@ use:
 
 ``` <!---markdown-->
     This thing, [some text](some/path), is better.
-```
-
-
-<div id="parentheses">
-## Please do NOT put a LITERAL "`(`" or "`)`" in markdown link titles
-</div>
-
-Please do **NOT** use literal parentheses inside markdown link titles.
-
-Instead of:
-
-``` <!---markdown-->
-    [some (text)](https://example.com/cyrds)                  <=== no thank you
-```
-
-use:
-
-``` <!---markdown-->
-    [some &#x28;text&#x29;](https://example.com/cyrds)
-```
-
-Instead of:
-
-``` <!---markdown-->
-    [ls(1)](https://example.com/ls-man-page.1)                <=== no thank you
-```
-
-use:
-
-``` <!---markdown-->
-    [ls&#x28;1&#x29;](https://example.com/ls-man-page.1)
 ```
 
 <div id="code-text">

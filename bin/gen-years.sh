@@ -686,7 +686,7 @@ for YYYY in $("$TAC_TOOL" "$TOP_FILE"); do
 	echo "<div id=\"$YYYY\">"
 	echo "## $YYYY - The $ORDINAL IOCCC"
 	echo
-	echo "<a class=\"normal\" href=\"$YYYY/index.html\">About the $ORDINAL IOCCC &#40;$YYYY&#41;</a><br>"
+	echo "<a class=\"normal\" href=\"$YYYY/index.html\">About the $ORDINAL IOCCC &lpar;$YYYY&rpar;</a><br>"
 	echo "<a class=\"normal\" href=\"$YYYY/$YYYY.tar.bz2\">Download all IOCCC winning entries of $YYYY</a></div>"
 	echo
     } | if [[ -z $NOOP ]]; then

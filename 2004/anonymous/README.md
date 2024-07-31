@@ -49,7 +49,7 @@ It was not until a sequel was called for that this was changed.
 
 If you want to read the first edition they reprinted it some years back: `The
 Hobbit Facsimile First Edition`. The details are also discussed in [History of
-Middle-earth &#40;HoMe&#41;](https://tolkiengateway.net/wiki/The_History_of_Middle-earth) VI, [The Return of the
+Middle-earth &lpar;HoMe&rpar;](https://tolkiengateway.net/wiki/The_History_of_Middle-earth) VI, [The Return of the
 Shadow](https://tolkiengateway.net/wiki/The_Return_of_the_Shadow), part one of
 the history of [The Lord of the
 Rings](https://en.wikipedia.org/wiki/The_Lord_of_the_Rings) of a twelve volume set - as well as in [The

@@ -33,7 +33,7 @@ sure to pay attention to commas! :-)
 ## Author's remarks:
 
 This entry is a [Wolfenstein](https://en.wikipedia.org/wiki/Wolfenstein) style
-[graphics engine](https://en.wikipedia.org/wiki/Rendering_&#x28;computer_graphics&#x29;)
+[graphics engine](https://en.wikipedia.org/wiki/Rendering_&lpar;computer_graphics&rpar;)
 where a user can navigate in a
 [3D](https://en.wikipedia.org/wiki/3D_computer_graphics) world. The
 [maze](https://en.wikipedia.org/wiki/Maze) has walls with [bitmap

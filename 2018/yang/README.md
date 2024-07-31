@@ -32,7 +32,7 @@ this program left and recompiling will reveal other tools including a right rota
 and a shift program.
 
 Strange things happen [when the world is upside
-down](https://en.wikipedia.org/wiki/Wacky_Wednesday_&#x28;book&#x29;)! It is entirely possible
+down](https://en.wikipedia.org/wiki/Wacky_Wednesday_&lpar;book&rpar;)! It is entirely possible
 that this remark is completely misleading.
 
 What exactly does the shift program do?

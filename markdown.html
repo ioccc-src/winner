@@ -505,12 +505,13 @@ echo &quot;This code block is NOT indented&quot;                        &lt;=== 
 <h2 id="please-do-not-use-ascii-tabs-in-markdown-files">Please do NOT use ASCII tabs in markdown files</h2>
 </div>
 </div>
+<p>Please do <strong>NOT</strong> indent with ASCII tabs, <strong>OR</strong> use any
+ASCII tab characters anywhere inside a markdown file.</p>
 <p>While we have nothing against the ASCII tab character in general,
 we have discovered that ASCII tab characters create problems when
 used as part of the leading whitespace within a markdown file.</p>
 <p>If you need to indent 2 or more levels, use multiples of 4 ASCII
-<strong>SPACES</strong>. Please do <strong>NOT</strong> indent with ASCII tabs, <strong>OR</strong> use any
-ASCII tab characters anywhere inside a markdown file:</p>
+<strong>SPACES</strong>.</p>
 <p>For example:</p>
 <pre class="&lt;!---markdown--&gt;"><code>```
     Please do **NOT**   use ASCII tabs  in markdown files.    &lt;=== no thank you
@@ -527,7 +528,7 @@ not C code or any other non-markdown content:</p>
     // We ask that you to NOT use ASCII tab characters in your remarks.md writeup,
     // or in any other markdown files within your entry, please.</code></pre>
 <p><strong>NOTE</strong>: Again, you are <strong>perfectly welcome</strong> to use ASCII tab characters in
-your C code and other non-markdown files. We simply ask that you <strong>NOT</strong> use any
+your C code and other non-markdown files. We simply ask that you do <strong>NOT</strong> use any
 ASCII tab characters in markdown files.</p>
 <div id="vim-tabs">
 <h3 id="tip-for-vim-users">Tip for <code>vim</code> users</h3>
@@ -549,7 +550,7 @@ spaces.</p>
 <p>If you’re in insert mode hit <code>ESC</code> first.</p>
 <div id="languages">
 <div id="code">
-<h2 id="please-do-not-directly-specify-a-language-for-a-code-block">Please do NOT <em>directly</em> specify a language for a code block</h2>
+<h2 id="please-use-html-comments-to-specify-a-language-for-a-code-block">Please use HTML comments to specify a language for a code block</h2>
 </div>
 </div>
 <p>We request that <a href="https://www.markdownguide.org/extended-syntax/#fenced-code-blocks">fenced markdown code
@@ -616,16 +617,17 @@ a trailing <code>&lt;br&gt;</code>.</p>
     use trailing&lt;br&gt;
     br&#39;s outside of&lt;br&gt;
     a code block</code></pre>
-<p>Again, use of a trailing backslash (<code>\</code>) inside a markdown <a href="https://www.markdownguide.org/extended-syntax/#fenced-code-blocks"><strong>fenced code
-block</strong></a> is fine:</p>
+<p>Again, use of a trailing backslash (<code>\</code>) inside a markdown code block is fine:</p>
 <pre class="&lt;!---markdown--&gt;"><code>```
     This is OK\
     inside a\
     markdown code\
     block
 ```</code></pre>
-<p>This will prevent <code>pandoc(1)</code> from generating deprecated HTML elements such as
-<code>&lt;br /&gt;</code>.</p>
+<p>as is:</p>
+<pre><code>    `This is OK\`</code></pre>
+<p>Doing it this way will prevent <code>pandoc(1)</code> from generating deprecated HTML
+elements such as <code>&lt;br /&gt;</code>.</p>
 <div id="images">
 <div id="img">
 <h2 id="please-do-not-use-markdown-style-images">Please do NOT use markdown style images</h2>
@@ -667,6 +669,18 @@ effect in standard HTML 5 and interacts badly with unquoted attribute values.</p
 <pre><code>    &lt;hr&gt;</code></pre>
 <p>If a short line is needed, use:</p>
 <pre><code>    &lt;hr style=&quot;width:10%;text-align:left;margin-left:0&quot;&gt;</code></pre>
+<div id="parentheses">
+<h2 id="please-do-not-put-a-literal-or-in-markdown-link-titles">Please do NOT put a LITERAL “<code>(</code>” or “<code>)</code>” in markdown link titles</h2>
+</div>
+<p>Please do <strong>NOT</strong> use literal parentheses inside markdown link titles.</p>
+<p>Instead of:</p>
+<pre><code>    [some (text)](https://example.com/curds)                  &lt;=== no thank you</code></pre>
+<p>use:</p>
+<pre><code>    [some &amp;lpar;text&amp;rpar;](https://example.com/curds)</code></pre>
+<p>Instead of:</p>
+<pre><code>    [ls(1)](https://example.com/ls-man-page.1)                &lt;=== no thank you</code></pre>
+<p>use:</p>
+<pre><code>    [ls&amp;lpar;1&amp;rpar;](https://example.com/ls-man-page.1)</code></pre>
 <div id="closing-parentheses">
 <h2 id="please-do-not-end-markdown-links-with">Please do NOT end markdown links with “<code>))</code>”</h2>
 </div>
@@ -676,23 +690,11 @@ to incorrect URLs or file paths.</p>
 <p>Instead of:</p>
 <pre><code>    [some text](https://example.com/foo_(bar))                &lt;=== no thank you</code></pre>
 <p>use:</p>
-<pre><code>    [some text](https://example.com/foo_&amp;#x28;bar&amp;#x29;)</code></pre>
+<pre><code>    [some text](https://example.com/foo_&amp;lpar;bar&amp;rpar;)</code></pre>
 <p>As another example, instead of:</p>
 <pre><code>    This thing, ([some text](some/path)), is NOT ideal.       &lt;=== no thank you</code></pre>
 <p>use:</p>
 <pre><code>    This thing, [some text](some/path), is better.</code></pre>
-<div id="parentheses">
-<h2 id="please-do-not-put-a-literal-or-in-markdown-link-titles">Please do NOT put a LITERAL “<code>(</code>” or “<code>)</code>” in markdown link titles</h2>
-</div>
-<p>Please do <strong>NOT</strong> use literal parentheses inside markdown link titles.</p>
-<p>Instead of:</p>
-<pre><code>    [some (text)](https://example.com/cyrds)                  &lt;=== no thank you</code></pre>
-<p>use:</p>
-<pre><code>    [some &amp;#x28;text&amp;#x29;](https://example.com/cyrds)</code></pre>
-<p>Instead of:</p>
-<pre><code>    [ls(1)](https://example.com/ls-man-page.1)                &lt;=== no thank you</code></pre>
-<p>use:</p>
-<pre><code>    [ls&amp;#x28;1&amp;#x29;](https://example.com/ls-man-page.1)</code></pre>
 <div id="code-text">
 <div id="code-and-text">
 <div id="text">

@@ -46,7 +46,7 @@ parenthesis](mikeash/index.html) is self reproducing).
 + The [Most sonorous output - 2005/jetro](jetro/index.html) might `sound` :-) like a good idea.
 
 + The [Best 2D puzzle - 2005/giljade](giljade/index.html) takes editorial license with expressions as well as the
-with the [vi editor](https://en.wikipedia.org/wiki/Vi_&#x28;text_editor&#x29;).
+with the [vi editor](https://en.wikipedia.org/wiki/Vi_&lpar;text_editor&rpar;).
 
 + The [Most ambiguous language - 2005/chia](chia/index.html) entry is really a C program.
 

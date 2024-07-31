@@ -268,7 +268,7 @@ it is surely a C99 feature.
 [pour-out.txt](pour-out.txt) pours you a cup of tea.
 
 [tanada.txt](tanada.txt) simulates "Terrace farming".  ("Tanada" means a
-"[terraced rice](https://en.wikipedia.org/wiki/Terrace_&#x28;earthworks&#x29; fields)" in Japanese.)
+"[terraced rice](https://en.wikipedia.org/wiki/Terrace_&lpar;earthworks&rpar; fields)" in Japanese.)
 
 [clock.txt](clock.txt) is a "water" clock created by HAMANO Tsukasa.
 

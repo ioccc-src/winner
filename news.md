@@ -131,7 +131,7 @@ Nearly all of the [temp-test-ioccc website](https://ioccc-src.github.io/temp-tes
 website has undergone editorial review.  Nearly all [IOCCC winning entries](years.html)
 compile on modern systems and many have `try.sh` scripts to help you run them.
 For those that cannot compile and/or do not work, we have made a
-[Bugs and &#x28;Mis&#x29;features](bugs.html) page.
+[Bugs and &lpar;Mis&rpar;features](bugs.html) page.
 
 We have made nearly 4823 changes to date!
 
@@ -248,7 +248,7 @@ of the most recent news item.
 ## 2022-12-18
 
 As per the suggestion of [Toni Mikkola
-&#x28;@Virtaava@home.social&#x29;](https://fosstodon.org/@Virtaava@home.social)
+&lpar;@Virtaava@home.social&rpar;](https://fosstodon.org/@Virtaava@home.social)
 we now maintain a [status.json](status.json) page on this website.
 
 In addition to the IOCCC-style _Easter egg_, you may count on

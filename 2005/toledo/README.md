@@ -68,14 +68,14 @@ get the first mode, run the program without arguments:
 ```
 
 The other mode is accessible running the program with one argument
-(5-[ply](https://en.wikipedia.org/wiki/Ply_&#x28;game_theory&#x29;)
+(5-[ply](https://en.wikipedia.org/wiki/Ply_&lpar;game_theory&rpar;)
 analysis):
 
 ``` <!---sh-->
     ./toledo a
 ```
 
-Two arguments for 6-[ply](https://en.wikipedia.org/wiki/Ply_&#x28;game_theory&#x29;)
+Two arguments for 6-[ply](https://en.wikipedia.org/wiki/Ply_&lpar;game_theory&rpar;)
 analysis:
 
 ``` <!---sh-->
@@ -83,7 +83,7 @@ analysis:
 ```
 
 And each successive argument will analyze one
-[ply](https://en.wikipedia.org/wiki/Ply_&#x28;game_theory&#x29;) more. There is no ply
+[ply](https://en.wikipedia.org/wiki/Ply_&lpar;game_theory&rpar;) more. There is no ply
 limit, but beyond 7 ply is very slow, try it at your own risk and computing
 time.
 
@@ -125,7 +125,7 @@ algorithms.
 
 The interface accounts for only a fraction of the code, the core does multiples
 functions: it is called recursively to analyze and evaluate each
-[ply](https://en.wikipedia.org/wiki/Ply_&#x28;game_theory&#x29;), does [alpha-beta
+[ply](https://en.wikipedia.org/wiki/Ply_&lpar;game_theory&rpar;), does [alpha-beta
 pruning](https://en.wikipedia.org/wiki/Alpha-beta_pruning), move generation,
 machine playing, check detection, illegal move verification and does moves after
 they are verified.
@@ -142,7 +142,7 @@ Other features are:
 * [Checkmate](https://en.wikipedia.org/wiki/Checkmate) detection.
 * Stalemate detection.
 * Computer is tough (check
-7-[ply](https://en.wikipedia.org/wiki/Ply_&#x28;game_theory&#x29;) and even in 5 ply can give a surprise to
+7-[ply](https://en.wikipedia.org/wiki/Ply_&lpar;game_theory&rpar;) and even in 5 ply can give a surprise to
 amateur players.
 
 

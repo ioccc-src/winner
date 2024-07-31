@@ -507,7 +507,7 @@ snakeskin has some other purpose?
 
 ## Snake moves faster over time
 
-In the game [Surround](https://en.wikipedia.org/wiki/Surround_&#x28;video_game&#x29;) you
+In the game [Surround](https://en.wikipedia.org/wiki/Surround_&lpar;video_game&rpar;) you
 have no control over the speed. I believe there are five different speed levels
 but the player has no control over it except the drawing mode. It would be
 possible to make it so the snake moves faster over time. How often and by what
