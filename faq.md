@@ -578,28 +578,9 @@ crucial in the contest, both for submitters and the judges, if you find a bug
 the [mkiocccentry issues
 page](https://github.com/ioccc-src/mkiocccentry/issues).
 
-When opening an issue for what you think is a bug, **PLEASE** use the ['Bug report'
-option](https://github.com/ioccc-src/mkiocccentry/issues/new?assignees=&labels=bug&projects=&template=bug_report.yml&title=%5BBug%5D+%3Ctitle%3E)
-and **PLEASE state in the _title_ what tool you think has a bug**.
-
-When reporting a bug, **PLEASE make sure to run the `bug_report.sh` script**.
-**This is extremely helpful** and without it it makes it much harder to determine
-the problem (at least in some cases :-) ). Describing the problem in as much
-detail as you can and attaching any relevant screenshots, other files (in
-addition to the bug report log file) and so on will also be very helpful.
-
-To run the `bug_report.sh` script, switch to the `mkiocccentry` directory and
-then run:
-
-``` <!---sh-->
-     ./bug_report.sh
-```
-
-Let it do its thing and when it's done it will tell you the name of the log
-file. If it does not find a problem but you think there is a problem, please
-still do feel free to report it and do make sure you attach the log nonetheless.
-If it does find problems, it will give you a summary of the problems and when
-you attach the log file we will see those too.
+Please see the
+FAQ on "[reporting bugs and other issues in the mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry/blob/master/FAQ.md#bugs)"
+in the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry).
 
 
 <div id="faq0_9">

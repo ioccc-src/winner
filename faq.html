@@ -834,22 +834,9 @@ crucial in the contest, both for submitters and the judges, if you find a bug
 (or you think you find a bug) we would be grateful if you were to report it at
 the <a href="https://github.com/ioccc-src/mkiocccentry/issues">mkiocccentry issues
 page</a>.</p>
-<p>When opening an issue for what you think is a bug, <strong>PLEASE</strong> use the <a href="https://github.com/ioccc-src/mkiocccentry/issues/new?assignees=&amp;labels=bug&amp;projects=&amp;template=bug_report.yml&amp;title=%5BBug%5D+%3Ctitle%3E">‘Bug report’
-option</a>
-and <strong>PLEASE state in the <em>title</em> what tool you think has a bug</strong>.</p>
-<p>When reporting a bug, <strong>PLEASE make sure to run the <code>bug_report.sh</code> script</strong>.
-<strong>This is extremely helpful</strong> and without it it makes it much harder to determine
-the problem (at least in some cases :-) ). Describing the problem in as much
-detail as you can and attaching any relevant screenshots, other files (in
-addition to the bug report log file) and so on will also be very helpful.</p>
-<p>To run the <code>bug_report.sh</code> script, switch to the <code>mkiocccentry</code> directory and
-then run:</p>
-<pre><code>     ./bug_report.sh</code></pre>
-<p>Let it do its thing and when it’s done it will tell you the name of the log
-file. If it does not find a problem but you think there is a problem, please
-still do feel free to report it and do make sure you attach the log nonetheless.
-If it does find problems, it will give you a summary of the problems and when
-you attach the log file we will see those too.</p>
+<p>Please see the
+FAQ on “<a href="https://github.com/ioccc-src/mkiocccentry/blob/master/FAQ.md#bugs">reporting bugs and other issues in the mkiocccentry repo</a>”
+in the <a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry repo</a>.</p>
 <div id="faq0_9">
 <div id="auth_json">
 <h3 id="faq-0.9-what-is-a-.auth.json-file">FAQ 0.9: What is a <code>.auth.json</code> file?</h3>
@@ -3032,9 +3019,9 @@ provided by the author and any other file in the winning entry, found under the
 entry’s subdirectory.</p>
 <p>If you downloaded <code>1984/mullender/1984_mullender.tar.bz2</code>, for instance, you might
 then do:</p>
-<div class="sourceCode" id="cb68"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a>        <span class="bu">cd</span> 1984/mullender</span>
-<span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a>        <span class="fu">make</span> everything</span>
-<span id="cb68-3"><a href="#cb68-3" aria-hidden="true" tabindex="-1"></a>        <span class="ex">./mullender.alt</span></span></code></pre></div>
+<div class="sourceCode" id="cb67"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a>        <span class="bu">cd</span> 1984/mullender</span>
+<span id="cb67-2"><a href="#cb67-2" aria-hidden="true" tabindex="-1"></a>        <span class="fu">make</span> everything</span>
+<span id="cb67-3"><a href="#cb67-3" aria-hidden="true" tabindex="-1"></a>        <span class="ex">./mullender.alt</span></span></code></pre></div>
 <p>to compile all versions and then run the alternate version (if you have
 a PDP-11 or VAX-11 you would be able to run the original version). For more help
 on compiling entries, see also the
@@ -3075,8 +3062,8 @@ if you switched to each entry’s directory and ran <code>make everything</code>
 <p>If you download the 1984 tarball, i.e. <code>1984/1984.tar.bz2</code>, then you might
 extract it and then switch to the directory and compile everything of each
 entry:</p>
-<div class="sourceCode" id="cb69"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a>        <span class="bu">cd</span> 1984</span>
-<span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a>        <span class="fu">make</span> everything</span></code></pre></div>
+<div class="sourceCode" id="cb68"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a>        <span class="bu">cd</span> 1984</span>
+<span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a>        <span class="fu">make</span> everything</span></code></pre></div>
 <p>For more help on compiling entries, see also the
 FAQ on “<a href="#make_rules">IOCCC Makefile rules</a>”.</p>
 <p>Of course in this case you can also switch to individual entries and look at the
