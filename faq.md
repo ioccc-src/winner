@@ -69,13 +69,14 @@ This is FAQ version **28.0.3 2024-07-27**.
 - <a class="normal" href="#faq4_0">4.0  - Why are some winning author remarks incongruent with the winning IOCCC code?</a>
 - <a class="normal" href="#faq4_1">4.1  - Why were some calls to the libc function gets&lpar;3&rpar; changed to use fgets&lpar;3&rpar;?</a>
 - <a class="normal" href="#faq4_2">4.2  - What was changed in an IOCCC entry source code?</a>
-- [4.3  - Why do author remarks sometimes not match the source and/or why are there
-other inconsistencies with the original entry?](#faq4_3)
+- <a class="normal" href="#faq4_3">4.3  - Why do author remarks sometimes not match the source and/or why are there
+other inconsistencies with the original entry?</a>
 - <a class="normal" href="#faq4_4">4.4  - What is the meaning of the file ending in .orig.c in IOCCC entries?</a>
 - <a class="normal" href="#faq4_5">4.5  - Why were alternate versions added to some entries when the original entry worked fine and well?</a>
 - <a class="normal" href="#faq4_6">4.6  - Why was arg count and/or type changed in main&lpar;&rpar; in some older entries?</a>
 - <a class="normal" href="#faq4_7">4.7  - Why were some filenames changed?</a>
 - <a class="normal" href="#faq4_8">4.8  - Why were files added or removed from some entries?</a>
+- <a class="normal" href="#faq4_9">4.9  - What is the original source file?</a>
 
 
 ## Section  5 - [Helping the IOCCC](#faq5)
@@ -2274,6 +2275,10 @@ the `.orig.c` file!) with code that works for modern systems but one can view
 the original code in the `.orig.c` files (sometimes the original code is also in
 the directory as a `dirname.alt.c` or `prog.alt.c`).
 
+See the
+FAQ on "[original source code](#original_source_code)"
+for more information.
+
 It might also be worth noting that almost all entries, have been
 fixed so that they can compile in modern systems though just because an entry
 compiles does not mean it will run on your specific system.
@@ -3576,6 +3581,10 @@ the entry's dirname there would be `mullender`. Sometimes the original is in an 
 version like `dirname.alt.c` or `prog.alt.c`. In fact it is advisable to look at
 the original code when reading the author's (and sometimes authors') remarks.
 
+See the
+FAQ on "[original source code](#original_source_code)"
+for more information.
+
 
 <div id="faq4_1">
 <div id="gets">
@@ -3730,6 +3739,10 @@ just do:
 Obviously if you want to view the alternate code or the orig code you can just open
 the files as described above.
 
+See the
+FAQ on "[original source code](#original_source_code)"
+for more information.
+
 
 <div id="faq4_3">
 ###  FAQ 4.3  - Why do author remarks sometimes not match the source and/or why are there other inconsistencies with the original entry?
@@ -3778,6 +3791,10 @@ as well, for fun.
 
 In some cases it might be better to not have them but as noted this is a
 judgement call.
+
+See the
+FAQ on "[original source code](#original_source_code)"
+for more information.
 
 
 <div id="faq4_6">
@@ -3830,7 +3847,7 @@ There were certainly other reasons as well.
 
 
 <div id="faq4_8">
-### FAQ 4.7: Why were files added or removed from some entries?
+### FAQ 4.8: Why were files added or removed from some entries?
 </div>
 
 Like with files being renamed, there are multiple reasons files were added or
@@ -3857,6 +3874,56 @@ In a few cases files were removed and there are multiple reasons for this too.
 
 The end result is to help improve the presentation of the entries in some way or
 ways.
+
+
+<div id="faq4_9">
+<div id="original_source_code">
+### FAQ 4.9:- What is the original source file?
+</div>
+</div>
+
+Every entry has what is called the "**original source file**".  This is
+a copy of the original source code (usually `prog.c`) that the
+[IOCCC judges](judges.html) used when declaring that submission is a
+winning IOCCC entry.
+
+There are a number of reasons why the source code (usually `prog.c`) needs
+to be modified.  Reasons include things such as:
+
+* modification as requested by the [IOCCC judges](judges.html)
+* modification as requested by the author(s)
+* modification as requested by a pull request from [someone else](thanks-for-help.html)
+* bug fix
+* portability improvement
+* etc.
+
+We seek to preserve the "**original source file**", for historical purposes,
+by preserving the original source code (usually as 'prog.orig.c`).
+for more infornation.
+
+**IMPORTANT NOTE**: The "**original source file**", because it is a historic
+record, should **NOT** be modified.
+
+Unless one can demonstrate that a mistake has been made regarding
+the "**original source file**" and that, for some reason, the file
+is **NOT** the original source code, please do **NOT** attempt to modify it.
+
+**IMPORTANT NOTE**: If you believe that the "**original source file**" is
+**NOT** the original source code, then plesse open an
+[IOCCC issue](https://github.com/ioccc-src/winner/issues) and describe the
+problem to the [IOCCC judges](judges.html), including that you believe
+is the correct "**original source file**".
+
+**FYI**: To determine the difference between the "**original source file**" and
+the the source code as it is now now, try:
+
+``` <!---sh-->
+    make diff_orig_prog
+```
+
+See the
+FAQ on "[what changed](#what_changed)"
+for more inforaiton and make rules relating to "**original source file**" differences.
 
 
 <div id="faq5">
@@ -4101,7 +4168,7 @@ and that they have a new faculty web page at `www.example.edu`, then you should
 submit a GitHub pull request to change the above line to:
 
 ``` <!---json-->
-    "url" : "https://www.example.edu/faculty/department/user.name",
+    "url" : "https://www.example.edu/faculty/deartment/user.name",
 ```
 
 Authors of IOCCC winning entries are kept in JSON files of the form:
@@ -5098,7 +5165,13 @@ The `entry_id` for that winning entry is:
 
 
 <div id="faq6_8">
+<div id="dot_path">
+<div id="dot_year">
+<div id="dot_top">
 ### FAQ 6.8: What is the purpose of the .top, .year and .path files?
+</div>
+</div>
+</div>
 </div>
 
 The [.top](.top) file resides at the top directory.  This file contains the complete list
@@ -6008,10 +6081,102 @@ Now we will describe each field of each file in the manifest:
     ones who will be doing this this need not concern you.
 
 - `OK_to_edit` (boolean)
-    * This _JSON_ **boolean** indicates whether this file may be edited or not. An
-    example file that can be edited is the winning source code; an example that
-    would be `false` is the original source code file (see below for details on
-    this).
+    * This _JSON_ **boolean** indicates whether this file should be modified,
+    edited, replaced, or even removed directly.
+
+    If `true` then a modification (i.e., edit) of the file, replacement of the file,
+    or even removal os the file would be welcome via a pull request.
+
+    See the
+    FAQ on "[GitHub pull request](#pull_request)"
+    for more information about pull requests.
+
+    If `false`, then the file almost certainlty should **NOT** be modified
+    (i.e., edited), replaced or removed.  Submitting a pull request that impacts
+    such a `false` `OK_to_edit` file is likely to cause the pull request
+    to be modifed or rejected.
+
+    **IMPORTANT NOTE**: In most all cases, `OK_to_edit` should be set to `true`.
+    There are only a few cases when `OK_to_edit` needs to be `false` that are documented below:
+
+    * **Reason for `OK_to_edit == false` # 0**:
+
+    The file is original source code file.
+
+    Modifications of the **original source code** is only permitted it can
+    be shown at the file is not the true **original source code**.
+
+    See the
+    FAQ on "[original source code](#original_source_file)"
+    for more information including how to open an [IOCCC issue](https://github.com/ioccc-src/winner/issues)
+    if you believe the **original source code** is not a true original.
+
+    * **Reason for `OK_to_edit == false` # 1**:
+
+    The HTML file is generated by a [set of tools and scripts](bin/index.html)(including a related `Makefile` rule).
+
+    Modifing HTML files that contain comments such as "_DO NOT MODIFY THIS FILE ..._"
+    or "_Do not modify this web page ..._" will not have the desired effect
+    because any modications will be overridden when the [set of tools and scripts](bin/index.html)
+    (includeing a related `Makefile` rule).
+
+    In order to properly change a generated HTML file, files such as a markdown file
+    (often `README.md`) and/or sometimes JSON files (such as `.entry.json` or
+    the `author/author_handle.json` JSON files)
+
+    See the
+    FAQ on "[fix web site](#fix_web_site)"
+    for information on submitting fixes to the IOCCC website.
+
+    See the
+    FAQ on "[update IOCCC author information](#fix_author)"
+    for information how to modify `author/author_handle.json` JSON files.
+
+    * **Reason for `OK_to_edit == false` # 2**:
+
+    The file is a compressed tarball for an entry or set of entries for a given IOCCC year.
+
+    Compressed tarball files are provided as a conveience for those who wish th download
+    an IOCCC entry or all IOCCC entries for a given IOCCC year.  These files are generate
+    by [set of tools and scripts](bin/index.html)(including a related `Makefile` rules).
+
+    Instead of trying to modify a compressed tarball, individual files that make
+    up the compressed tarball should be modified instead.  When you pull request to modify
+    such individual files, the [IOCCC judges](judges.html) will run the appropriate
+    [set of tools and scripts](bin/index.html) to update the compressed tarballs as needed.
+
+    * **Reason for `OK_to_edit == false` # 3**:
+
+    The file is a `.path` file.
+
+    As the `.path` file is related to the path of the entry under an IOCCC year,
+    this file should be consider as **read-only**.
+
+    If you believe a `.path` file is in error, then please open up an
+    [IOCCC issue](https://github.com/ioccc-src/winner/issues).
+
+    See the
+    FAQ on "[.path files](#dot_path)"
+    for more information on `.path` files.
+
+    See also the
+    FAQ on "[fixing an entry](#fix_an_entry)"
+    for information on opening up an IOCCC issue.
+
+    * **Reason for `OK_to_edit == false` # 4**:
+
+    There is some rare case or reason we forgot to document.
+
+    The reasons previously listed for why the `OK_to_edit` set to `false` may be incomplete,
+    or there is some special rare case.  More likely, however, if some other file has
+    `OK_to_edit` set to `false`, is a mistake.
+
+    If you believe if `OK_to_edit` has the wrong value, please open a GitHub pull request.
+
+    See the
+    FAQ on "[GitHub pull request](#pull_request)"
+    for more information about pull requests.
+
 
 - `display_as` (string)
     * This _JSON_ **string** describes what kind of file it is and in particular
@@ -6051,6 +6216,10 @@ will depend on the year).
     will be named either `winner.orig.c` or `prog.orig.c`, depending on the
     year. This file may **NOT** be modified. The `entry_text` for this file is
     always `"original source code"`.
+
+    See the
+    FAQ on "[original source code](#original_source_code)"
+    for more information.
 
 - the [entry tarball](#tarball)
     * This is the tarball of just the top level Makefile (and those included by

@@ -457,13 +457,14 @@
 <li><a class="normal" href="#faq4_0">4.0 - Why are some winning author remarks incongruent with the winning IOCCC code?</a></li>
 <li><a class="normal" href="#faq4_1">4.1 - Why were some calls to the libc function gets(3) changed to use fgets(3)?</a></li>
 <li><a class="normal" href="#faq4_2">4.2 - What was changed in an IOCCC entry source code?</a></li>
-<li><a href="#faq4_3">4.3 - Why do author remarks sometimes not match the source and/or why are there
+<li><a class="normal" href="#faq4_3">4.3 - Why do author remarks sometimes not match the source and/or why are there
 other inconsistencies with the original entry?</a></li>
 <li><a class="normal" href="#faq4_4">4.4 - What is the meaning of the file ending in .orig.c in IOCCC entries?</a></li>
 <li><a class="normal" href="#faq4_5">4.5 - Why were alternate versions added to some entries when the original entry worked fine and well?</a></li>
 <li><a class="normal" href="#faq4_6">4.6 - Why was arg count and/or type changed in main() in some older entries?</a></li>
 <li><a class="normal" href="#faq4_7">4.7 - Why were some filenames changed?</a></li>
 <li><a class="normal" href="#faq4_8">4.8 - Why were files added or removed from some entries?</a></li>
+<li><a class="normal" href="#faq4_9">4.9 - What is the original source file?</a></li>
 </ul>
 <h2 id="section-5---helping-the-ioccc">Section 5 - <a href="#faq5">Helping the IOCCC</a></h2>
 <ul>
@@ -2305,6 +2306,9 @@ compile and run that code. In some cases we replaced the original code (but not
 the <code>.orig.c</code> file!) with code that works for modern systems but one can view
 the original code in the <code>.orig.c</code> files (sometimes the original code is also in
 the directory as a <code>dirname.alt.c</code> or <code>prog.alt.c</code>).</p>
+<p>See the
+FAQ on “<a href="#original_source_code">original source code</a>”
+for more information.</p>
 <p>It might also be worth noting that almost all entries, have been
 fixed so that they can compile in modern systems though just because an entry
 compiles does not mean it will run on your specific system.</p>
@@ -3106,6 +3110,9 @@ favourite entries of all time is <a href="1984/mullender/index.html">1984/mullen
 the entry’s dirname there would be <code>mullender</code>. Sometimes the original is in an alt
 version like <code>dirname.alt.c</code> or <code>prog.alt.c</code>. In fact it is advisable to look at
 the original code when reading the author’s (and sometimes authors’) remarks.</p>
+<p>See the
+FAQ on “<a href="#original_source_code">original source code</a>”
+for more information.</p>
 <div id="faq4_1">
 <div id="gets">
 <h3 id="faq-4.1-why-were-some-calls-to-the-libc-function-gets3-changed-to-use-fgets3">FAQ 4.1: Why were some calls to the libc function gets(3) changed to use fgets(3)?</h3>
@@ -3222,6 +3229,9 @@ just do:</p>
     make DIFF=colordiff diff_alt_prog           # for alt to prog diff</code></pre>
 <p>Obviously if you want to view the alternate code or the orig code you can just open
 the files as described above.</p>
+<p>See the
+FAQ on “<a href="#original_source_code">original source code</a>”
+for more information.</p>
 <div id="faq4_3">
 <h3 id="faq-4.3---why-do-author-remarks-sometimes-not-match-the-source-andor-why-are-there-other-inconsistencies-with-the-original-entry">FAQ 4.3 - Why do author remarks sometimes not match the source and/or why are there other inconsistencies with the original entry?</h3>
 </div>
@@ -3259,6 +3269,9 @@ prevented the entry from working properly and it seemed like it should be added
 as well, for fun.</p>
 <p>In some cases it might be better to not have them but as noted this is a
 judgement call.</p>
+<p>See the
+FAQ on “<a href="#original_source_code">original source code</a>”
+for more information.</p>
 <div id="faq4_6">
 <div id="arg_count">
 <h3 id="faq-4.6-why-was-arg-count-andor-type-changed-in-main-in-some-older-entries">FAQ 4.6: Why was arg count and/or type changed in main() in some older entries?</h3>
@@ -3298,7 +3311,7 @@ method of how to display files was devised).</p>
 other times something else.</p>
 <p>There were certainly other reasons as well.</p>
 <div id="faq4_8">
-<h3 id="faq-4.7-why-were-files-added-or-removed-from-some-entries">FAQ 4.7: Why were files added or removed from some entries?</h3>
+<h3 id="faq-4.8-why-were-files-added-or-removed-from-some-entries">FAQ 4.8: Why were files added or removed from some entries?</h3>
 </div>
 <p>Like with files being renamed, there are multiple reasons files were added or
 removed. The addition of the <code>try.sh</code> and <code>try.alt.sh</code> scripts is the most
@@ -3319,6 +3332,44 @@ back.</p>
 <p>In a few cases files were removed and there are multiple reasons for this too.</p>
 <p>The end result is to help improve the presentation of the entries in some way or
 ways.</p>
+<div id="faq4_9">
+<div id="original_source_code">
+<h3 id="faq-4.9--what-is-the-original-source-file">FAQ 4.9:- What is the original source file?</h3>
+</div>
+</div>
+<p>Every entry has what is called the “<strong>original source file</strong>”. This is
+a copy of the original source code (usually <code>prog.c</code>) that the
+<a href="judges.html">IOCCC judges</a> used when declaring that submission is a
+winning IOCCC entry.</p>
+<p>There are a number of reasons why the source code (usually <code>prog.c</code>) needs
+to be modified. Reasons include things such as:</p>
+<ul>
+<li>modification as requested by the <a href="judges.html">IOCCC judges</a></li>
+<li>modification as requested by the author(s)</li>
+<li>modification as requested by a pull request from <a href="thanks-for-help.html">someone else</a></li>
+<li>bug fix</li>
+<li>portability improvement</li>
+<li>etc.</li>
+</ul>
+<p>We seek to preserve the “<strong>original source file</strong>”, for historical purposes,
+by preserving the original source code (usually as ’prog.orig.c`).
+for more infornation.</p>
+<p><strong>IMPORTANT NOTE</strong>: The “<strong>original source file</strong>”, because it is a historic
+record, should <strong>NOT</strong> be modified.</p>
+<p>Unless one can demonstrate that a mistake has been made regarding
+the “<strong>original source file</strong>” and that, for some reason, the file
+is <strong>NOT</strong> the original source code, please do <strong>NOT</strong> attempt to modify it.</p>
+<p><strong>IMPORTANT NOTE</strong>: If you believe that the “<strong>original source file</strong>” is
+<strong>NOT</strong> the original source code, then plesse open an
+<a href="https://github.com/ioccc-src/winner/issues">IOCCC issue</a> and describe the
+problem to the <a href="judges.html">IOCCC judges</a>, including that you believe
+is the correct “<strong>original source file</strong>”.</p>
+<p><strong>FYI</strong>: To determine the difference between the “<strong>original source file</strong>” and
+the the source code as it is now now, try:</p>
+<pre><code>    make diff_orig_prog</code></pre>
+<p>See the
+FAQ on “<a href="#what_changed">what changed</a>”
+for more inforaiton and make rules relating to “<strong>original source file</strong>” differences.</p>
 <div id="faq5">
 <h2 id="section-5-updating-or-correcting-ioccc-website-content">Section 5: Updating or correcting IOCCC website content</h2>
 </div>
@@ -3499,7 +3550,7 @@ GitHub pull request that modifies an author’s <code>author_handle.json</code> 
 <p>and you knew that the author has long ago left the <code>www.example.com</code> company,
 and that they have a new faculty web page at <code>www.example.edu</code>, then you should
 submit a GitHub pull request to change the above line to:</p>
-<pre><code>    &quot;url&quot; : &quot;https://www.example.edu/faculty/department/user.name&quot;,</code></pre>
+<pre><code>    &quot;url&quot; : &quot;https://www.example.edu/faculty/deartment/user.name&quot;,</code></pre>
 <p>Authors of IOCCC winning entries are kept in JSON files of the form:</p>
 <pre><code>    author/author_handle.json</code></pre>
 <p>where <code>author_handle</code> is an author handle.</p>
@@ -4135,7 +4186,13 @@ of 2020 is found under the following directory:</p>
 <p>The <code>entry_id</code> for that winning entry is:</p>
 <pre><code>    2020_ferguson2</code></pre>
 <div id="faq6_8">
+<div id="dot_path">
+<div id="dot_year">
+<div id="dot_top">
 <h3 id="faq-6.8-what-is-the-purpose-of-the-.top-.year-and-.path-files">FAQ 6.8: What is the purpose of the .top, .year and .path files?</h3>
+</div>
+</div>
+</div>
 </div>
 <p>The <a href=".top">.top</a> file resides at the top directory. This file contains the complete list
 of IOCCC years.</p>
@@ -4772,11 +4829,11 @@ that we will list some files that are mandatory files, also with comments.</p>
     ]</code></pre>
 <p>Now we will describe each field of each file in the manifest:</p>
 <ul>
-<li><code>file_path</code> (string)
+<li><p><code>file_path</code> (string)</p>
 <ul>
 <li>This <em>JSON</em> <strong>string</strong> is the name of the file in question.</li>
 </ul></li>
-<li><code>inventory_order</code> (number)
+<li><p><code>inventory_order</code> (number)</p>
 <ul>
 <li>This <em>JSON</em> <strong>number</strong> decides which file list in the <code>index.html</code> file this
 file is listed and its order in that list. The details are beyond the scope
@@ -4784,14 +4841,86 @@ of this document and it is only necessary to understand this if you are
 adding a file to the manifest. However as the <a href="judges.html">Judges</a> are the
 ones who will be doing this this need not concern you.</li>
 </ul></li>
-<li><code>OK_to_edit</code> (boolean)
+<li><p><code>OK_to_edit</code> (boolean)</p>
 <ul>
-<li>This <em>JSON</em> <strong>boolean</strong> indicates whether this file may be edited or not. An
-example file that can be edited is the winning source code; an example that
-would be <code>false</code> is the original source code file (see below for details on
-this).</li>
-</ul></li>
-<li><code>display_as</code> (string)
+<li>This <em>JSON</em> <strong>boolean</strong> indicates whether this file should be modified,
+edited, replaced, or even removed directly.</li>
+</ul>
+<p>If <code>true</code> then a modification (i.e., edit) of the file, replacement of the file,
+or even removal os the file would be welcome via a pull request.</p>
+<p>See the
+FAQ on “<a href="#pull_request">GitHub pull request</a>”
+for more information about pull requests.</p>
+<p>If <code>false</code>, then the file almost certainlty should <strong>NOT</strong> be modified
+(i.e., edited), replaced or removed. Submitting a pull request that impacts
+such a <code>false</code> <code>OK_to_edit</code> file is likely to cause the pull request
+to be modifed or rejected.</p>
+<p><strong>IMPORTANT NOTE</strong>: In most all cases, <code>OK_to_edit</code> should be set to <code>true</code>.
+There are only a few cases when <code>OK_to_edit</code> needs to be <code>false</code> that are documented below:</p>
+<ul>
+<li><strong>Reason for <code>OK_to_edit == false</code> # 0</strong>:</li>
+</ul>
+<p>The file is original source code file.</p>
+<p>Modifications of the <strong>original source code</strong> is only permitted it can
+be shown at the file is not the true <strong>original source code</strong>.</p>
+<p>See the
+FAQ on “<a href="#original_source_file">original source code</a>”
+for more information including how to open an <a href="https://github.com/ioccc-src/winner/issues">IOCCC issue</a>
+if you believe the <strong>original source code</strong> is not a true original.</p>
+<ul>
+<li><strong>Reason for <code>OK_to_edit == false</code> # 1</strong>:</li>
+</ul>
+<p>The HTML file is generated by a <a href="bin/index.html">set of tools and scripts</a>(including a related <code>Makefile</code> rule).</p>
+<p>Modifing HTML files that contain comments such as “<em>DO NOT MODIFY THIS FILE …</em>”
+or “<em>Do not modify this web page …</em>” will not have the desired effect
+because any modications will be overridden when the <a href="bin/index.html">set of tools and scripts</a>
+(includeing a related <code>Makefile</code> rule).</p>
+<p>In order to properly change a generated HTML file, files such as a markdown file
+(often <code>README.md</code>) and/or sometimes JSON files (such as <code>.entry.json</code> or
+the <code>author/author_handle.json</code> JSON files)</p>
+<p>See the
+FAQ on “<a href="#fix_web_site">fix web site</a>”
+for information on submitting fixes to the IOCCC website.</p>
+<p>See the
+FAQ on “<a href="#fix_author">update IOCCC author information</a>”
+for information how to modify <code>author/author_handle.json</code> JSON files.</p>
+<ul>
+<li><strong>Reason for <code>OK_to_edit == false</code> # 2</strong>:</li>
+</ul>
+<p>The file is a compressed tarball for an entry or set of entries for a given IOCCC year.</p>
+<p>Compressed tarball files are provided as a conveience for those who wish th download
+an IOCCC entry or all IOCCC entries for a given IOCCC year. These files are generate
+by <a href="bin/index.html">set of tools and scripts</a>(including a related <code>Makefile</code> rules).</p>
+<p>Instead of trying to modify a compressed tarball, individual files that make
+up the compressed tarball should be modified instead. When you pull request to modify
+such individual files, the <a href="judges.html">IOCCC judges</a> will run the appropriate
+<a href="bin/index.html">set of tools and scripts</a> to update the compressed tarballs as needed.</p>
+<ul>
+<li><strong>Reason for <code>OK_to_edit == false</code> # 3</strong>:</li>
+</ul>
+<p>The file is a <code>.path</code> file.</p>
+<p>As the <code>.path</code> file is related to the path of the entry under an IOCCC year,
+this file should be consider as <strong>read-only</strong>.</p>
+<p>If you believe a <code>.path</code> file is in error, then please open up an
+<a href="https://github.com/ioccc-src/winner/issues">IOCCC issue</a>.</p>
+<p>See the
+FAQ on “<a href="#dot_path">.path files</a>”
+for more information on <code>.path</code> files.</p>
+<p>See also the
+FAQ on “<a href="#fix_an_entry">fixing an entry</a>”
+for information on opening up an IOCCC issue.</p>
+<ul>
+<li><strong>Reason for <code>OK_to_edit == false</code> # 4</strong>:</li>
+</ul>
+<p>There is some rare case or reason we forgot to document.</p>
+<p>The reasons previously listed for why the <code>OK_to_edit</code> set to <code>false</code> may be incomplete,
+or there is some special rare case. More likely, however, if some other file has
+<code>OK_to_edit</code> set to <code>false</code>, is a mistake.</p>
+<p>If you believe if <code>OK_to_edit</code> has the wrong value, please open a GitHub pull request.</p>
+<p>See the
+FAQ on “<a href="#pull_request">GitHub pull request</a>”
+for more information about pull requests.</p></li>
+<li><p><code>display_as</code> (string)</p>
 <ul>
 <li>This <em>JSON</em> <strong>string</strong> describes what kind of file it is and in particular
 how to <strong>display</strong> it. An entry source code file would be (all strings are
@@ -4800,14 +4929,14 @@ would be <code>makefile</code>, for three examples of others. As updating the ma
 is mostly a task for the <a href="judges.html">Judges</a> you need not concern yourself
 with all the different names.</li>
 </ul></li>
-<li><code>display_via_github</code> (boolean)
+<li><p><code>display_via_github</code> (boolean)</p>
 <ul>
 <li>This <em>JSON</em> <strong>boolean</strong> indicates whether the file should be viewed at
 (that is linked to) GitHub or not. A good reason it might be viewed at
 GitHub is for syntax highlighting or if it should not be downloaded but
 would likely be downloaded by the browser otherwise.</li>
 </ul></li>
-<li><code>entry_text</code> (string)
+<li><p><code>entry_text</code> (string)</p>
 <ul>
 <li>This <em>JSON</em> <strong>string</strong> is a short string that gives a summary of what the
 file is, for purposes of the file lists in the <code>index.html</code> inventory.</li>
@@ -4834,7 +4963,10 @@ the <code>file_path</code> is <strong>ALWAYS</strong> <code>"Makefile"</code>.</
 will be named either <code>winner.orig.c</code> or <code>prog.orig.c</code>, depending on the
 year. This file may <strong>NOT</strong> be modified. The <code>entry_text</code> for this file is
 always <code>"original source code"</code>.</li>
-</ul></li>
+</ul>
+<p>See the
+FAQ on “<a href="#original_source_code">original source code</a>”
+for more information.</p></li>
 <li><p>the <a href="#tarball">entry tarball</a></p>
 <ul>
 <li>This is the tarball of just the top level Makefile (and those included by
