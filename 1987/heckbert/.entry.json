@@ -44,7 +44,7 @@
 	{
 	    "file_path" : "FoldSpindleMutilate.pdf",
 	    "inventory_order" : 125,
-	    "OK_to_edit" : false,
+	    "OK_to_edit" : true,
 	    "display_as" : "pdf",
 	    "display_via_github" : false,
 	    "entry_text" : "cultural history of the punch card"

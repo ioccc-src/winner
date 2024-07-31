@@ -68,7 +68,7 @@
 	{
 	    "file_path" : "correct.java",
 	    "inventory_order" : 150,
-	    "OK_to_edit" : false,
+	    "OK_to_edit" : true,
 	    "display_as" : "java",
 	    "display_via_github" : true,
 	    "entry_text" : "example Java source with correct brace (supposedly :-) )"

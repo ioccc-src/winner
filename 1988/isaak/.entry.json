@@ -44,7 +44,7 @@
 	{
 	    "file_path" : "isaak.output.txt",
 	    "inventory_order" : 180,
-	    "OK_to_edit" : false,
+	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : false,
 	    "entry_text" : "program output"

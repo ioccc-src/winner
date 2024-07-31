@@ -84,7 +84,7 @@
 	{
 	    "file_path" : "ants.txt",
 	    "inventory_order" : 150,
-	    "OK_to_edit" : false,
+	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : false,
 	    "entry_text" : "lyrics of the Ants Go Marching song"
