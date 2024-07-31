@@ -4,7 +4,7 @@
     make all
 ```
 
-NOTE: this entry requires the `X11/Xlib.h` header file and the X11 library to
+**NOTE**: this entry requires the `X11/Xlib.h` header file and the X11 library to
 compile.  For more information see the
 FAQ on "[X11](../../faq.html#X11)".
 
@@ -91,20 +91,22 @@ for an example.
 
 This program plots the positions of the four [Galilean
 moons](https://en.wikipedia.org/wiki/Galilean_moons) of
-[Jupiter](https://en.wikipedia.org/wiki/Jupiter), as seen from
-[Earth](https://en.wikipedia.org/wiki/Earth). It doesn't correct for your
+[Jupiter](https://science.nasa.gov/jupiter/), as seen from
+[Earth](https://science.nasa.gov/earth/). It doesn't correct for your
 location on Earth, but I assure you that the
 [parallax](https://en.wikipedia.org/wiki/Parallax#Astronomy) is minimal!
 
 The moons are labelled with Roman numerals from `I` to `IV`, `I` being the
 closest to the planet and `IV` being the furthest. They are:
 
-```
-    I     Io
-    II    Europa
-    III   Ganymede
-    IV    Callisto
-```
+- `I`
+    * [Io](https://science.nasa.gov/jupiter/moons/io)
+- `II`
+    * [Europa](https://science.nasa.gov/jupiter/moons/europa/)
+- `III`
+    * [Ganymede](https://science.nasa.gov/jupiter/moons/ganymede/)
+- `IV`
+    * [Callisto](https://science.nasa.gov/jupiter/moons/callisto)
 
 Amazingly, all it takes is a pair of binoculars to see the Galilean moons,
 so the results can be experimentally checked. (Note that at present, the
@@ -135,40 +137,31 @@ Galileo discovered the moons in January 1610.
 <https://web.archive.org/web/20001204212000/http://www-isds.jpl.nasa.gov/cwo/cwo_54ga/html/cd/galileo.htm>
 states the following:
 
-```
-    By early 1610, Galileo had further improved his telescope by
-    double its power, so it now enlarged objects a thousand
-    times. He began looking at the stars and couldn't believe how
-    many more he could now see! The number seemed infinite. He was
-    beginning to realize the fixed stars weren't a flat distant
-    wall on a globe, but a three-dimensional expanse bigger than
-    anyone had ever thought!
-
-    Then, on January 7, about an hour after sunset, Jupiter rose
-    in the east, and Galileo happened to turn his powerful scope
-    on its bright disk. It wasn't the first time he had looked at
-    Jupiter, but before it was with one of his lesser-powered
-    telescopes. This time, though, he noticed three small but
-    bright stars near the planet, two to one side and one to the
-    other. He wondered at how bright the small stars were and how
-    they were arranged in what seemed like a straight line. The
-    next night he decided to look at Jupiter again, and to his
-    surprise, the stars had moved. But not in such a way as he
-    would expect. If Jupiter was moving as it normally should, the
-    stars would be east of Jupiter. But all three were to the
-    west! The next night was cloudy, but on January 10, Galileo
-    was able to observe the planet again. One of the stars was
-    gone, and the other two were now on the east side. As the
-    stars moved around Jupiter on each succeeding night, and were
-    finally joined by a fourth star, it dawned on Galileo that
-    what he had found were moons orbiting Jupiter!  Almost at once
-    he realized that this was proof that not all objects orbited
-    the Earth. Here were four bodies that were orbiting
-    Jupiter. One argument against the sun-centered theory was, if
-    the Earth orbited the sun, wouldn't the moon get left behind?
-    Here he could see for himself that somehow, a planet could
-    orbit the sun, and not leave a moon behind!
-```
+> By early 1610, Galileo had further improved his telescope by double its power,
+so it now enlarged objects a thousand times. He began looking at the stars and
+couldn't believe how many more he could now see! The number seemed infinite. He
+was beginning to realize the fixed stars weren't a flat distant wall on a globe,
+but a three-dimensional expanse bigger than anyone had ever thought!
+>
+> Then, on January 7, about an hour after sunset, Jupiter rose in the east,
+and Galileo happened to turn his powerful scope on its bright disk. It wasn't
+the first time he had looked at Jupiter, but before it was with one of his
+lesser-powered telescopes. This time, though, he noticed three small but bright
+stars near the planet, two to one side and one to the other. He wondered at how
+bright the small stars were and how they were arranged in what seemed like a
+straight line. The next night he decided to look at Jupiter again, and to his
+surprise, the stars had moved. But not in such a way as he would expect. If
+Jupiter was moving as it normally should, the stars would be east of Jupiter.
+But all three were to the west! The next night was cloudy, but on January 10,
+Galileo was able to observe the planet again. One of the stars was gone, and the
+other two were now on the east side. As the stars moved around Jupiter on each
+succeeding night, and were finally joined by a fourth star, it dawned on Galileo
+that what he had found were moons orbiting Jupiter!  Almost at once he realized
+that this was proof that not all objects orbited the Earth. Here were four
+bodies that were orbiting Jupiter. One argument against the sun-centered theory
+was, if the Earth orbited the sun, wouldn't the moon get left behind?  Here he
+could see for himself that somehow, a planet could orbit the sun, and not leave
+a moon behind!
 
 Thus we can plot Galileo's discoveries using the following three plots:
 
@@ -210,7 +203,9 @@ This program assumes:
 
 1. The ASCII character set is used.
 
-2. That an enormous comet hasn't changed the course of Jupiter (or Earth!).
+2. That an enormous comet hasn't changed the course of
+[Jupiter](https://science.nasa.gov/jupiter/) (or
+[Earth](https://science.nasa.gov/earth/)!).
 
 3. That the date has not been specified as the gap between the
 [Julian](https://en.wikipedia.org/wiki/Julian_calendar) and
@@ -234,7 +229,7 @@ run from the surface of [Mars](https://science.nasa.gov/mars/).
 
 In addition to the normal obfuscations, I feel that the code contains some less
 common tricks. Taken through the standard rounds listed in the
-[guidelines](../../2000/guidelines.txt), the code attempts to pass these as follows:
+[guidelines](../guidelines.txt), the code attempts to pass these as follows:
 
 1. Look at the original source
 

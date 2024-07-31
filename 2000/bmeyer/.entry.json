@@ -36,7 +36,7 @@
 	{
 	    "file_path" : "lavabus.pgm",
 	    "inventory_order" : 100,
-	    "OK_to_edit" : true,
+	    "OK_to_edit" : false,
 	    "display_as" : "image",
 	    "display_via_github" : false,
 	    "entry_text" : "Kilauea volcano bus trapped in lava"
@@ -44,7 +44,7 @@
 	{
 	    "file_path" : "michael.pgm",
 	    "inventory_order" : 100,
-	    "OK_to_edit" : true,
+	    "OK_to_edit" : false,
 	    "display_as" : "image",
 	    "display_via_github" : false,
 	    "entry_text" : "image of author’s godchild and nephew"
@@ -60,7 +60,7 @@
 	{
 	    "file_path" : "lenna.glic",
 	    "inventory_order" : 150,
-	    "OK_to_edit" : true,
+	    "OK_to_edit" : false,
 	    "display_as" : "binary",
 	    "display_via_github" : false,
 	    "entry_text" : "P10 scan of 1972 Playboy centerfold"

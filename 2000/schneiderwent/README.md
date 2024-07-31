@@ -53,9 +53,7 @@ keeping the program portable between different encodings
 
 This entry displays the current time to the console, for example:
 
-```
-    it's just after ten 'til 6 in the evening
-```
+> it's just after ten 'til 6 in the evening
 
 FWIW, none of the compilers with which this entry was tested issued
 any warnings or errors in compiling the source for this entry.  No
@@ -79,10 +77,10 @@ Obfuscation in this entry consists of:
 [EBCDIC](https://en.wikipedia.org/wiki/EBCDIC) character values - this is not
 an attempt at encryption, but rather at cross platform compatibility.
 * [ASCII](https://en.wikipedia.org/wiki/ASCII) character values are calculated
-from the EBCDIC in a particularly ugly abuse of the `?:` operator.
-* Detection of whether to print the ASCII or EBCDIC values is done by taking the
-remainder of dividing the character `'J'` by `2` - the ASCII value of the
-character is even, the EBCDIC value is odd.
+from the [EBCDIC](https://en.wikipedia.org/wiki/EBCDIC) in a particularly ugly
+abuse of the `?:` operator.  Detection of whether to print the ASCII or EBCDIC
+values is done by taking the remainder of dividing the character `'J'` by `2` -
+the ASCII value of the character is even, the EBCDIC value is odd.
 * The messages to be `printf(3)`ed are determined via multiple table lookups and
 bit-masked values.
 * For minutes, the bit position turned on is multiplied by two to determine the

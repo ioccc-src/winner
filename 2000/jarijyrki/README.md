@@ -4,7 +4,7 @@
     make
 ```
 
-NOTE: this entry requires the `X11/Xlib.h` header file and the X11 library to
+**NOTE**: this entry requires the `X11/Xlib.h` header file and the X11 library to
 compile.  For more information see the
 FAQ on "[X11](../../faq.html#X11)".
 
@@ -143,14 +143,14 @@ Finish the formula with `!` to create the histogram.
 #### 2.2. Starting and Loading Spreadsheets
 
 To start the spreadsheet program with an existing
-spreadsheet, for instance [finance.sheet](%%REPO_URL%%/2000/jarijyrki/finance.sheet), use the following
+spreadsheet, for instance [finance.sheet](finance.sheet), use the following
 command line:
 
 ``` <!---sh-->
     ./jarijyrki < finance.sheet
 ```
 
-The file [finance.sheet](%%REPO_URL%%/2000/jarijyrki/finance.sheet) has been provided as an example.  This
+The file [finance.sheet](finance.sheet) has been provided as an example.  This
 file contains a set of financial numbers and two graphical entities - a pie
 chart and a histogram - based on them. We recommend starting the use of the
 program from this file, as a way to study and learn the formula language
@@ -186,7 +186,7 @@ Below the Formula Area is the Column Letters Area: `A`, `B`, and so on.
 Correspondingly, on the left side of the window is the Row Numbers Area: `1`, `2`,
 and so on.  The rest of the window is dedicated to the actual spreadsheet cells.
 
-The example spreadsheet, [finance.sheet](%%REPO_URL%%/2000/jarijyrki/finance.sheet), provided with this
+The example spreadsheet, [finance.sheet](finance.sheet), provided with this
 program contains two sets of numbers in the visible area of the spreadsheet. The
 top set of numbers forms the product-by-product turnover breakdown of an
 imaginary company. Below it is the yearly development of the company profits. On

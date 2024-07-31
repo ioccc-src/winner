@@ -20,7 +20,7 @@ its output is very specific, the internal FFT has a wide variety of uses.
 Can you modify this code to produce primes such as `23523*2^70000-1`,
 `48594^65536+1` or `6917!-1`?
 
-NOTE: as bigger primes are found as time goes by this program no longer prints
+**NOTE**: as bigger primes are found as time goes by this program no longer prints
 the biggest prime once noted by the author below.
 
 
@@ -32,7 +32,7 @@ Fourier Transform to compute this number in a reasonable amount
 of time (the usual method would take ages !).
 
 The program uses >= 64 bit `long long` type. It should run on any
-system with a gcc compiler.
+system with a `gcc` compiler.
 
 
 <!--

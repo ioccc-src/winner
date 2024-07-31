@@ -28,16 +28,16 @@ You might also like to try:
 
 ## Judges' remarks:
 
-One could argue that this program was a "diseased dumpster of tripe"
+One could argue that this program was a "`diseased dumpster of tripe`"
 but I suspect that would only result in the judges being heckled as a
-"scum-encrusted congress of obscurity" (but only if it was in the early
+"`scum-encrusted congress of obscurity`" (but only if it was in the early
 evening of Dec 22, 2000).
 
 Can you find out how it stores the insult strings?  Can you then take
 an insult and figure out when it will be uttered?
 
 
-## Author's remarks:
+## Authors' remarks:
 
 This program was broadcast from deep within the Zarbonic Cluster
 and received at 9:03pm on March 21st, 2000 by Moxen N. Briddlebane.

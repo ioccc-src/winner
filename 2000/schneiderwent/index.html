@@ -432,7 +432,9 @@ keeping the program portable between different encodings
 (Chinese, Japanese, Russian - anyone?) may be an entertaining task.</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <p>This entry displays the current time to the console, for example:</p>
-<pre><code>    it&#39;s just after ten &#39;til 6 in the evening</code></pre>
+<blockquote>
+<p>it’s just after ten ’til 6 in the evening</p>
+</blockquote>
 <p>FWIW, none of the compilers with which this entry was tested issued
 any warnings or errors in compiling the source for this entry. No
 doubt lint will complain about the goto statements.</p>
@@ -451,10 +453,10 @@ deficiency.</p>
 <a href="https://en.wikipedia.org/wiki/EBCDIC">EBCDIC</a> character values - this is not
 an attempt at encryption, but rather at cross platform compatibility.</li>
 <li><a href="https://en.wikipedia.org/wiki/ASCII">ASCII</a> character values are calculated
-from the EBCDIC in a particularly ugly abuse of the <code>?:</code> operator.</li>
-<li>Detection of whether to print the ASCII or EBCDIC values is done by taking the
-remainder of dividing the character <code>'J'</code> by <code>2</code> - the ASCII value of the
-character is even, the EBCDIC value is odd.</li>
+from the <a href="https://en.wikipedia.org/wiki/EBCDIC">EBCDIC</a> in a particularly ugly
+abuse of the <code>?:</code> operator. Detection of whether to print the ASCII or EBCDIC
+values is done by taking the remainder of dividing the character <code>'J'</code> by <code>2</code> -
+the ASCII value of the character is even, the EBCDIC value is odd.</li>
 <li>The messages to be <code>printf(3)</code>ed are determined via multiple table lookups and
 bit-masked values.</li>
 <li>For minutes, the bit position turned on is multiplied by two to determine the

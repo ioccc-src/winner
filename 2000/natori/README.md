@@ -5,7 +5,7 @@
 ```
 
 An alt version exists for those in the southern hemisphere (or those who want to
-see what it would be in the southern hemisphere). See [alternate
+see what it would be in the southern hemisphere). See [Alternate
 version](#alternate-code) below.
 
 
@@ -29,7 +29,7 @@ times in a day).
 Also try modifying the code so that it will show another Moon phase based on
 input or else just by the code itself. Bonus points if you can make it show all.
 
-NOTE: if it's a Full Moon the script won't look as nice.
+**NOTE**: if it's a Full Moon the script won't look as nice.
 
 
 ## Alternate code:
@@ -40,7 +40,7 @@ The author noted that those in the southern hemisphere might want to change
 
 ### Alternate build:
 
-To run the alternate code that supports the southern hemisphere:
+To build the alternate code that works for the southern hemisphere:
 
 ``` <!---sh-->
     make alt
