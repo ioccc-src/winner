@@ -1422,7 +1422,7 @@ submission manually then you would be violating [Rule
 <div id="faq0_13">
 <div id="txzchk">
 <div id="tarball">
-### FAQ 0.13 - How can I validate my submission tarball?</a>
+### FAQ 0.13 - How can I validate my submission tarball?
 </div>
 </div>
 </div>
@@ -3446,9 +3446,7 @@ though of course for both you may specify a rule or rules to run.
 
 <div id="faq3_20">
 <div id="entry_downloads">
-<div id="tarball">
 ### 3.20 - How do I download individual winning entries or all winning entries of a given year?
-</div>
 </div>
 </div>
 
