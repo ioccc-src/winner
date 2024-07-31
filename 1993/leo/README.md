@@ -37,7 +37,7 @@ International Internet community.
 ## Author's remarks:
 
 This program plays
-[Mastermind](https://en.wikipedia.org/wiki/Mastermind_&#x28;board_game&#x29;), if you call
+[Mastermind](https://en.wikipedia.org/wiki/Mastermind_&lpar;board_game&rpar;), if you call
 it by a name ending by `d`, otherwise it _solves_ Mastermind. Call it without
 parameters to use 6 digits (colors), or indicate the number of possible digits
 (you cannot change the number of positions so easily).

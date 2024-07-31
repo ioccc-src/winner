@@ -33,7 +33,7 @@ For more detailed information see [2012/blakely in bugs.html](../../bugs.html#20
 Several IOCCC themes ([RPN
 calculator](https://en.wikipedia.org/wiki/Reverse_Polish_notation), animated
 [GIF](https://en.wikipedia.org/wiki/GIF) generator, [ray
-tracing](https://en.wikipedia.org/wiki/Ray_tracing_&#x28;graphics&#x29;) graphics) in one package!
+tracing](https://en.wikipedia.org/wiki/Ray_tracing_&lpar;graphics&rpar;) graphics) in one package!
 Very impressive!
 
 The checkerboard pattern in the output can be broken. Could you figure out how?
@@ -47,7 +47,7 @@ Larger GIF files confuse some image viewers.
 
 This program renders a generic
 [RPN](https://en.wikipedia.org/wiki/Reverse_Polish_notation) expression in
-[ray-traced](https://en.wikipedia.org/wiki/Ray_tracing_&#x28;graphics&#x29;) animated
+[ray-traced](https://en.wikipedia.org/wiki/Ray_tracing_&lpar;graphics&rpar;) animated
 [GIF](https://en.wikipedia.org/wiki/GIF) form.  The expression in spatial
 variables `x` and `y` is specified on the command-line with the required
 resolution, and an animated GIF showing a fly-around of the resulting surface is

@@ -186,10 +186,10 @@ since there was no CS curriculum when we started). We had an assignment to
 create a pair of programs for the computer networks course. The programs were
 supposed to send data reliably from one program to the other over an unreliable
 channel. This channel was simulated with a pair of
-[pipes](https://en.wikipedia.org/wiki/Pipeline_&#x28;software&#x29;).
+[pipes](https://en.wikipedia.org/wiki/Pipeline_&lpar;software&rpar;).
 
 We decided for fun to create an
-[obfuscated](https://en.wikipedia.org/wiki/Obfuscation_&#x28;software&#x29;) set of
+[obfuscated](https://en.wikipedia.org/wiki/Obfuscation_&lpar;software&rpar;) set of
 programs, only for the
 [PDP](https://en.wikipedia.org/wiki/Programmed_Data_Processor), to do this, but
 circumventing the channel (i.e. cheating, hence the needed obfuscation). Our
@@ -205,12 +205,12 @@ there](https://groups.google.com/g/net.lang.c/c/lx-TAuEyeRI/m/HdOOnNx6LC0J) and 
 it.
 
 Since we had just recently created these [obfuscated
-programs](https://en.wikipedia.org/wiki/Obfuscation_&#x28;software&#x29;) we decided we could
+programs](https://en.wikipedia.org/wiki/Obfuscation_&lpar;software&rpar;) we decided we could
 use the same technique for an obfuscated C program. We upped the ante a bit by
 making it "portable".
 
 To add to the
-[obfuscation](https://en.wikipedia.org/wiki/Obfuscation_&#x28;software&#x29;), we used
+[obfuscation](https://en.wikipedia.org/wiki/Obfuscation_&lpar;software&rpar;), we used
 different formats for the integers in the array: some in decimal, some in octal,
 some in hexadecimal, and when the value would fit, some as an ASCII character.
 
@@ -240,13 +240,13 @@ both a [PDP-11](https://en.wikipedia.org/wiki/PDP-11) and a
 
 On the [VAX](https://en.wikipedia.org/wiki/VAX), the routine `main()` is called
 with the `calls` instruction. This instruction uses the first (2-byte)
-[word](https://en.wikipedia.org/wiki/Word_&#x28;computer_architecture&#x29;) of the called
+[word](https://en.wikipedia.org/wiki/Word_&lpar;computer_architecture&rpar;) of the called
 routine as a mask of
 [registers](https://en.wikipedia.org/wiki/Processor_register) that are to be
 saved on the [stack](https://en.wikipedia.org/wiki/Call_stack).
 In other words, on the VAX the first word can be anything. On the
 [PDP](https://en.wikipedia.org/wiki/Programmed_Data_Processor), the first word
-is a [branch](https://en.wikipedia.org/wiki/Branch_&#x28;computer_science&#x29;)
+is a [branch](https://en.wikipedia.org/wiki/Branch_&lpar;computer_science&rpar;)
 [instruction](https://en.wikipedia.org/wiki/Instruction_set_architecture#Instructions)
 that branches over the VAX code. The PDP and VAX codes are thus completely
 separate.
@@ -354,7 +354,7 @@ program that we came up with is as follows:
 
 The first word (after the label `vax`) is the
 [PDP](https://en.wikipedia.org/wiki/Programmed_Data_Processor) [branch
-instruction](https://en.wikipedia.org/wiki/Branch_&#x28;computer_science&#x29;).
+instruction](https://en.wikipedia.org/wiki/Branch_&lpar;computer_science&rpar;).
 [PDP](https://en.wikipedia.org/wiki/Programmed_Data_Processor) branch
 instructions are octal `400` + the distance divided by `2`.  The string that both
 the [PDP](https://en.wikipedia.org/wiki/Programmed_Data_Processor) and
@@ -364,10 +364,10 @@ programs use is after the `str` label, and the
 `pdp` label.
 
 On the [VAX](https://en.wikipedia.org/wiki/VAX), the program
-[pushes](https://en.wikipedia.org/wiki/Stack_&#x28;abstract_data_type&#x29;) 9 (the length
+[pushes](https://en.wikipedia.org/wiki/Stack_&lpar;abstract_data_type&rpar;) 9 (the length
 of the string), the address of the string and 1, the [file
 descriptor](https://en.wikipedia.org/wiki/File_descriptor) on the
-[stack](https://en.wikipedia.org/wiki/Stack_&#x28;abstract_data_type&#x29;), and calls
+[stack](https://en.wikipedia.org/wiki/Stack_&lpar;abstract_data_type&rpar;), and calls
 `write(2)`. Since we didn't know the exact calling sequence for [system
 calls](https://en.wikipedia.org/wiki/System_call), we just copied the source for
 the `write(2)` system call stub into our program. After `write(2)` finishes, the
@@ -453,7 +453,7 @@ The only problem we had was that the program had chosen an
 Since everybody knows what a [PDP-11](https://en.wikipedia.org/wiki/PDP-11)
 branch instruction looks like (everyone knows that the traditional magic word
 for an executable, `0407`, is a [PDP-11](https://en.wikipedia.org/wiki/PDP-11)
-[branch](https://en.wikipedia.org/wiki/Branch_&#x28;computer_science&#x29;), we changed
+[branch](https://en.wikipedia.org/wiki/Branch_&lpar;computer_science&rpar;), we changed
 that to [decimal](https://en.wikipedia.org/wiki/Decimal). After checking the
 size of the resulting program we saw that it was one byte too long. The limit
 was 512 bytes, and our program was 513 bytes.  So we changed the word `and` in

@@ -6,7 +6,7 @@
 
 There are two alternate versions, one that has an increased buffer size and one
 that uses `fgets()`; neither are completely functional.  See below section [Bugs
-and &#x28;mis&#x29;features](#bugs-and-misfeatures) for details and the [Alternate
+and &lpar;mis&rpar;features](#bugs-and-misfeatures) for details and the [Alternate
 code](#alternate-code) section for how to use.
 
 

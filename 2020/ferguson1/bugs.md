@@ -5,7 +5,7 @@
 <div id="toc">
 * [Built-in test unit for some features!](#builtin-test-unit)
 * [The snake doesn't seem to be moving](#stillsnake)
-* [getch&#x28;&#x29; also accepts input from some input hardware other than keyboards](#getch)
+* [getch&lpar;&rpar; also accepts input from some input hardware other than keyboards](#getch)
 * [SIZE=0 is the same as SIZE=1 and other oddities](#size)
 * ['I was a few places behind my tail and I ran into it!'](#bitetail)
 * [With negative growth the snake drops from the middle of the body](#middleofsnake)

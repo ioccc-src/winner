@@ -50,7 +50,7 @@ This is FAQ version **28.0.3 2024-07-27**.
 - <a class="normal" href="#faq3_6">3.6  - An IOCCC entry messed up my terminal application, how do I fix this?</a>
 - <a class="normal" href="#faq3_7">3.7  - How do I run an IOCCC entry that requires X11?</a>
 - <a class="normal" href="#faq3_8">3.8  - How do I compile an IOCCC entry that requires SDL1 or SDL2?</a>
-- <a class="normal" href="#faq3_9">3.9  - How do I compile an IOCCC entry that requires &#x28;n&#x29;curses?</a>
+- <a class="normal" href="#faq3_9">3.9  - How do I compile an IOCCC entry that requires &lpar;n&rpar;curses?</a>
 - <a class="normal" href="#faq3_10">3.10 - How do I compile and use an IOCCC entry that requires sound?</a>
 - <a class="normal" href="#faq3_11">3.11 - Why do Makefiles use -Weverything with clang?</a>
 - <a class="normal" href="#faq3_12">3.12 - How do I find out how to send interrupt/EOF etc. for entries that require it?</a>
@@ -60,20 +60,20 @@ This is FAQ version **28.0.3 2024-07-27**.
 - <a class="normal" href="#faq3_16">3.16 - How do I compile and install libjpeg-turbo for entries that require it?</a>
 - <a class="normal" href="#faq3_17">3.17 - How do I compile and install ImageMagick for entries that require it?</a>
 - <a class="normal" href="#faq3_18">3.18 - How do I compile and install OpenGL for entries that require it?</a>
-- <a class="normal" href="#faq3_19">3.19 - What kind of make&#x28;1&#x29; compatibility does the IOCCC support and will it support other kinds?</a>
+- <a class="normal" href="#faq3_19">3.19 - What kind of make&lpar;1&rpar; compatibility does the IOCCC support and will it support other kinds?</a>
 - <a class="normal" href="#faq3_20">3.20 - How do I download individual winning entries or all winning entries of a given year?</a>
 - <a class="normal" href="#faq3_21">3.21 - What are `try.sh` and `try.alt.sh` scripts and why should I use them?</a>
 
 
 ## Section  4 - [Changes made to IOCCC entries](#faq4)
 - <a class="normal" href="#faq4_0">4.0  - Why are some winning author remarks incongruent with the winning IOCCC code?</a>
-- <a class="normal" href="#faq4_1">4.1  - Why were some calls to the libc function gets&#x28;3&#x29; changed to use fgets&#x28;3&#x29;?</a>
+- <a class="normal" href="#faq4_1">4.1  - Why were some calls to the libc function gets&lpar;3&rpar; changed to use fgets&lpar;3&rpar;?</a>
 - <a class="normal" href="#faq4_2">4.2  - What was changed in an IOCCC entry source code?</a>
 - [4.3  - Why do author remarks sometimes not match the source and/or why are there
 other inconsistencies with the original entry?](#faq4_3)
 - <a class="normal" href="#faq4_4">4.4  - What is the meaning of the file ending in .orig.c in IOCCC entries?</a>
 - <a class="normal" href="#faq4_5">4.5  - Why were alternate versions added to some entries when the original entry worked fine and well?</a>
-- <a class="normal" href="#faq4_6">4.6  - Why was arg count and/or type changed in main&#x28;&#x29; in some older entries?</a>
+- <a class="normal" href="#faq4_6">4.6  - Why was arg count and/or type changed in main&lpar;&rpar; in some older entries?</a>
 - <a class="normal" href="#faq4_7">4.7  - Why were some filenames changed?</a>
 - <a class="normal" href="#faq4_8">4.8  - Why were files added or removed from some entries?</a>
 
@@ -92,7 +92,7 @@ other inconsistencies with the original entry?](#faq4_3)
 
 ## Section  6 - [Miscellaneous IOCCC](#faq6)
 - <a class="normal" href="#faq6_0">6.0  - How did an entry that breaks the size rule 2 win the IOCCC?</a>
-- <a class="normal" href="#faq6_1">6.1  - Is there a list of known bugs and &#x28;mis&#x29;features of IOCCC entries?</a>
+- <a class="normal" href="#faq6_1">6.1  - Is there a list of known bugs and &lpar;mis&rpar;features of IOCCC entries?</a>
 - <a class="normal" href="#faq6_2">6.2  - May I mirror the IOCCC website?</a>
 - <a class="normal" href="#faq6_3">6.3  - May I use parts of the IOCCC in an article, book, newsletter, or instructional material?</a>
 - <a class="normal" href="#faq6_4">6.4  - Why do you sometimes use the first person plural?</a>
@@ -105,7 +105,7 @@ other inconsistencies with the original entry?](#faq4_3)
 - <a class="normal" href="#faq6_11">6.11 - Am I allowed to use IOCCC content?</a>
 - <a class="normal" href="#faq6_12">6.12 - What is Mastodon and why does IOCCC use it?</a>
 - <a class="normal" href="#faq6_13">6.13 - How may I find my author handle?</a>
-- <a class="normal" href="#faq6_14">6.14 - How do I set certain tabstops for viewing source code in vi&#x28;m&#x29;?</a>
+- <a class="normal" href="#faq6_14">6.14 - How do I set certain tabstops for viewing source code in vi&lpar;m&rpar;?</a>
 - <a class="normal" href="#faq6_15">6.15 - How do the menus on the website work and what can I do if they don't work?</a>
 - <a class="normal" href="#faq6_16">6.16 - How do I find more information about a winning author of an entry?</a>
 - <a class="normal" href="#faq6_17">6.17 - What is a `.entry.json` file and how is it used?</a>
@@ -1723,7 +1723,7 @@ were posted on 17 April 1984.
 
 There were 4 entries that won in 1984:
 
-1. [&#x28;dis&#x29;honorable mention](http://groups.google.com/groups?q=Obfuscated&hl=en&lr=&ie=UTF-8&as_drrb=b&as_mind=1&as_minm=1&as_miny=1983&as_maxd=18&as_maxm=4&as_maxy=1984&selm=842%40nsc.UUCP&rnum=8&filter=0)
+1. [&lpar;dis&rpar;honorable mention](http://groups.google.com/groups?q=Obfuscated&hl=en&lr=&ie=UTF-8&as_drrb=b&as_mind=1&as_minm=1&as_miny=1983&as_maxd=18&as_maxm=4&as_maxy=1984&selm=842%40nsc.UUCP&rnum=8&filter=0)
 2.  [3rd place](http://groups.google.com/groups?q=Obfuscated&hl=en&lr=&ie=UTF-8&as_drrb=b&as_mind=1&as_minm=1&as_miny=1983&as_maxd=18&as_maxm=4&as_maxy=1984&selm=843%40nsc.UUCP&rnum=7&filter=0)
 3. [2nd place](http://groups.google.com/groups?q=Obfuscated&hl=en&lr=&ie=UTF-8&as_drrb=b&as_mind=1&as_minm=1&as_miny=1983&as_maxd=18&as_maxm=4&as_maxy=1984&selm=844%40nsc.UUCP&rnum=6&filter=0)
 4. [1st place](http://groups.google.com/groups?q=Obfuscated&hl=en&lr=&ie=UTF-8&as_drrb=b&as_mind=1&as_minm=1&as_miny=1983&as_maxd=18&as_maxm=4&as_maxy=1984&selm=845%40nsc.UUCP&rnum=5&filter=0)
@@ -2744,7 +2744,7 @@ for more information about pull requests.
 
 <div id="faq3_9">
 <div id="curses">
-### FAQ 3.9: How do I compile an IOCCC entry that requires &#x28;n&#x29;curses?
+### FAQ 3.9: How do I compile an IOCCC entry that requires &lpar;n&rpar;curses?
 </div>
 </div>
 
@@ -3403,7 +3403,7 @@ We recommend trying a method suitable for your environment first, if possible.
 
 <div id="faq3_19">
 <div id="make_compatibility">
-### 3.19 - What kind of make&#x28;1&#x29; compatibility does the IOCCC support and will it support other kinds?
+### 3.19 - What kind of make&lpar;1&rpar; compatibility does the IOCCC support and will it support other kinds?
 </div>
 </div>
 
@@ -3598,7 +3598,7 @@ the original code when reading the author's (and sometimes authors') remarks.
 
 <div id="faq4_1">
 <div id="gets">
-### FAQ 4.1: Why were some calls to the libc function gets&#x28;3&#x29; changed to use fgets&#x28;3&#x29;?
+### FAQ 4.1: Why were some calls to the libc function gets&lpar;3&rpar; changed to use fgets&lpar;3&rpar;?
 </div>
 </div>
 
@@ -3801,7 +3801,7 @@ judgement call.
 
 <div id="faq4_6">
 <div id="arg_count">
-### FAQ 4.6: Why was arg count and/or type changed in main&#x28;&#x29; in some older entries?
+### FAQ 4.6: Why was arg count and/or type changed in main&lpar;&rpar; in some older entries?
 </div>
 </div>
 
@@ -4411,7 +4411,7 @@ get around rule 2 size limits is discouraged).
 
 
 <div id="faq6_1">
-### FAQ 6.1: Is there a list of known bugs and &#x28;mis&#x29;features of IOCCC entries?
+### FAQ 6.1: Is there a list of known bugs and &lpar;mis&rpar;features of IOCCC entries?
 </div>
 
 Yes! Please see [bugs.html](bugs.html) for a list of known bugs and/or issues of a
@@ -4919,7 +4919,7 @@ NOTE: The _JSON null_ is **NOT** enclosed in quotes!
 ```
 
 This _JSON member_ holds the
-[Mastodon social network](https://en.wikipedia.org/wiki/Mastodon_&#x28;social_network&#x29;)
+[Mastodon social network](https://en.wikipedia.org/wiki/Mastodon_&lpar;social_network&rpar;)
 handle of the author.
 
 There **MUST** be one and only one `mastodon` _JSON member_ and the _JSON value_ **MUST**

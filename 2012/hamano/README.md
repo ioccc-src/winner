@@ -65,7 +65,7 @@ confused.
 
 The results can be viewed with Acrobat Reader,
 [evince](http://en.wikipedia.org/wiki/Evince) and Apple's
-[Preview](https://en.wikipedia.org/wiki/Preview_&#x28;macOS&#x29;).
+[Preview](https://en.wikipedia.org/wiki/Preview_&lpar;macOS&rpar;).
 
 The updated version can also be viewed using Ghostscript.
 

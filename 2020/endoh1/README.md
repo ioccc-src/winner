@@ -54,7 +54,7 @@ Use `prog.alt` as you would `prog` above.
 ## Judges' remarks:
 
 When playing
-[Minesweeper](https://en.wikipedia.org/wiki/Minesweeper_&#x28;video_game&#x29;), a
+[Minesweeper](https://en.wikipedia.org/wiki/Minesweeper_&lpar;video_game&rpar;), a
 misclick might ruin a game, so why not leave the routine to the computer?  This
 program automatically uncovers mines according to several rules, and leaves
 guessing (and applying the most straightforward of the rules -- just for fun,

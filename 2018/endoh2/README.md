@@ -38,7 +38,7 @@ sketch [comté](https://en.wikipedia.org/wiki/Comté_cheese) called ["Dead
 Parrot"](https://en.wikipedia.org/wiki/Dead_Parrot_sketch) from the British
 sitcom ["Monty Python's Flying Circus"](https://en.wikipedia.org/wiki/Monty_Python%27s_Flying_Circus)
 The "_Python_" in the award name refers to Monty Python, **not** the
-[programming language Python](https://en.wikipedia.org/wiki/Python_&#x28;programming_language&#x29;
+[programming language Python](https://en.wikipedia.org/wiki/Python_&lpar;programming_language&rpar;
 (the name of the programming language Python is derived from Monty Python).
 
 The shape of [prog.c](%%REPO_URL%%/2018/endoh2/prog.c) is "Undead Parrot" based on "dead parrot". The

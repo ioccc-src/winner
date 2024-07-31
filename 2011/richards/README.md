@@ -31,7 +31,7 @@ For more detailed information see [2011/richards in bugs.html](../../bugs.html#2
 ## Judges' remarks:
 
 Oh no, yet another
-[dc](https://en.wikipedia.org/wiki/Dc_&#x28;computer_program&#x29;)-style calculator? (see
+[dc](https://en.wikipedia.org/wiki/Dc_&lpar;computer_program&rpar;)-style calculator? (see
 [2000/dlowe](../../2000/dlowe/index.html) using an embedded Perl interpreter and deemed `Worst
 Abuse of the Rules`).  Well, this one does it (expression calculation, that is,
 not the rule abuse) in a different way.  The author claims that his calculator
@@ -42,7 +42,7 @@ without attempting to unravel the source?
 ## Author's remarks:
 
 This is an implementation of the classic UNIX
-[dc](https://en.wikipedia.org/wiki/Dc_&#x28;computer_program&#x29;) command, the
+[dc](https://en.wikipedia.org/wiki/Dc_&lpar;computer_program&rpar;) command, the
 [reverse Polish](https://en.wikipedia.org/wiki/Reverse_Polish_notation)
 calculator. Actually it's a pretty bad implementation, since it only implements
 32-bit integers (well, `sizeof(int)`-sized integers). It only implements the

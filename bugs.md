@@ -2208,7 +2208,7 @@ make a pull request.
 
 If `DISPLAY` is not set the program will very likely crash, do something strange
 (or if you're very unlucky your computer might [halt and catch
-fire](https://en.wikipedia.org/wiki/Halt_and_Catch_Fire_&#x28;computing&#x29;)! :-) ).
+fire](https://en.wikipedia.org/wiki/Halt_and_Catch_Fire_&lpar;computing&rpar;)! :-) ).
 
 
 <hr style="width:10%;text-align:left;margin-left:0">
@@ -3338,7 +3338,7 @@ Do you have a fix? We welcome it!
 
 The author stated that the program will crash if no argument is passed to the
 program though we note that your computer might also [halt and catch
-fire](https://en.wikipedia.org/wiki/Halt_and_Catch_Fire_&#x28;computing&#x29;) :-)
+fire](https://en.wikipedia.org/wiki/Halt_and_Catch_Fire_&lpar;computing&rpar;) :-)
 
 
 <hr style="width:10%;text-align:left;margin-left:0">
@@ -3464,7 +3464,7 @@ The author stated that the program will crash if no argument is passed to the
 program or if invalid arguments (e.g. file does not exist) or images of
 mismatching sizes or unsupported pixel formats though we note that your computer
 might also [halt and catch
-fire](https://en.wikipedia.org/wiki/Halt_and_Catch_Fire_&#x28;computing&#x29;) :-)
+fire](https://en.wikipedia.org/wiki/Halt_and_Catch_Fire_&lpar;computing&rpar;) :-)
 
 
 <hr style="width:10%;text-align:left;margin-left:0">

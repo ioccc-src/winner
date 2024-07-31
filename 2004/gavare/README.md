@@ -114,7 +114,7 @@ although the compiler gives it special meaning) and no preprocessor
 directives.
 
 This program is a small
-[ray-tracer](https://en.wikipedia.org/wiki/Ray_tracing_&#x28;graphics&#x29;). The first
+[ray-tracer](https://en.wikipedia.org/wiki/Ray_tracing_&lpar;graphics&rpar;). The first
 line of the source code may be modified if you want the resulting image to be of
 some other resolution than the predefined. The `A` value is an anti-alias
 factor. Setting it to `1` disables the anti-aliasing feature which makes the

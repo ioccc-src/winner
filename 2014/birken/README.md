@@ -153,13 +153,13 @@ protocol appears below, but feel free to explore before reading further.
 The inspiration for this program comes from [Star Trek VI: The Undiscovered
 Country](https://memory-alpha.fandom.com/wiki/Star_Trek_VI:_The_Undiscovered_Country),
 specifically the final confrontation between the
-[Enterprise](https://memory-alpha.fandom.com/wiki/USS_Enterprise_&#x28;NCC-1701&#x29;) and
+[Enterprise](https://memory-alpha.fandom.com/wiki/USS_Enterprise_&lpar;NCC-1701&rpar;) and
 the enhanced prototype [Klingon Bird of
 Prey](https://memory-alpha.fandom.com/wiki/Klingon_Bird-of-Prey). The definitive
 feature of the prototype was its ability to fire while cloaked. But, perhaps
 even more impressive was its ability to keep an open communication channel with
 the Enterprise throughout the battle, enabling the antagonist
-[Chang](https://memory-alpha.fandom.com/wiki/Chang_&#x28;General&#x29;) to taunt [Captain
+[Chang](https://memory-alpha.fandom.com/wiki/Chang_&lpar;General&rpar;) to taunt [Captain
 Kirk](https://memory-alpha.fandom.com/wiki/James_T._Kirk) with
 [Shakespearian](https://en.wikipedia.org/wiki/William_Shakespeare) quotes while
 he slowly pelted his ship with torpedoes.  Normally, cloaked vessels must
@@ -180,7 +180,7 @@ for [Khan](https://memory-alpha.fandom.com/wiki/Khan_Noonien_Singh) (in the
 final engagement in [Star Trek II: The Wrath of
 Khan](https://memory-alpha.fandom.com/wiki/Star_Trek_II:_The_Wrath_of_Khan), the
 damaged Enterprise managed to disable the USS
-[Reliant](https://memory-alpha.fandom.com/wiki/USS_Reliant_&#x28;NCC-1864&#x29; ship)'s shield
+[Reliant](https://memory-alpha.fandom.com/wiki/USS_Reliant_&lpar;NCC-1864&rpar; ship)'s shield
 generator by accessing its prefix code: 16309).
 
 

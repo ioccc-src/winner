@@ -8,7 +8,7 @@
 that case see the
 FAQ on "[SDL1 and SDL2](../../faq.html#SDL)"
 and the
-FAQ on "[&#40;n&#41;curses](../../faq.html#curses)"
+FAQ on "[&lpar;n&rpar;curses](../../faq.html#curses)"
 for more information.
 
 We recommend that you use the alternate code so you can see what this entry

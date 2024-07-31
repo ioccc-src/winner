@@ -400,7 +400,7 @@ in [prog.c](%%REPO_URL%%/2018/burton2/prog.c), and the program
 [manpage.sh](%%REPO_URL%%/2018/burton2/manpage.sh) was added to the corpus.
 
 [manpage.sh](%%REPO_URL%%/2018/burton2/manpage.sh) is a useful program that turns ASCII versions of man
-pages (e.g., [tac&#x28;1&#x29;](%%REPO_URL%%/2018/burton2/tac.1) man page) into real man pages.  It works for C and C-like
+pages (e.g., [tac&lpar;1&rpar;](%%REPO_URL%%/2018/burton2/tac.1) man page) into real man pages.  It works for C and C-like
 languages, command lines, and was designed to handle man page sections 1-8.  It
 works well on most inputs, but tends to need some raw nroff for more fancy
 constructions, such as combined arguments (e.g. the `-r` and `-s` arguments to tac

@@ -14,7 +14,7 @@ for the input keys.
     *   [Playing the game](#playing)
     *   [Walls](#walls)
     *   [Cannibalism](#cannibalism)
-    *   [Stretching &#x28;shedding&#x29;](#shedding)
+    *   [Stretching &lpar;shedding&rpar;](#shedding)
     *   [Winning](#winning)
     *   [Quitting](#quitting)
 
@@ -23,10 +23,10 @@ for the input keys.
 
     *   [**Photosensitive epilepsy/Stimulation overload trigger warnings**](#warning)
     *   [Drawing / Practice mode](#drawing)
-    *   [Computer playing / Automatic mode &#x28;Photosensitive epilepsy/Stimulation overload trigger&#x29;](#auto)
+    *   [Computer playing / Automatic mode &lpar;Photosensitive epilepsy/Stimulation overload trigger&rpar;](#auto)
             *   [Variations](#auto-variations)
-    *   [Grow-Shrink &#x28;Positive/Negative Winning&#x29; mode](#grow-shrink)
-    *   [Hypnotic / Sleepy mode &#x28;Photosensitive epilepsy/Stimulation overload trigger&#x29;](#hypnotic)
+    *   [Grow-Shrink &lpar;Positive/Negative Winning&rpar; mode](#grow-shrink)
+    *   [Hypnotic / Sleepy mode &lpar;Photosensitive epilepsy/Stimulation overload trigger&rpar;](#hypnotic)
     *   [Stimulation / Calming mode](#stim)
     *   [Other ideas](#other-ideas)
 
@@ -44,7 +44,7 @@ for the input keys.
     * [GROW / SHEDS         -   Growth / Shedding sizes](#growth)
 
 
-7.  [Conclusion &#x28;and inspirational words for everyone&#x29;](#conclusions)
+7.  [Conclusion &lpar;and inspirational words for everyone&rpar;](#conclusions)
 </div>
 
 
@@ -728,7 +728,7 @@ are called Grow / Shrink).
 
 
 <div id="hypnotic">
-## <a href="#toc">Hypnotic / Sleepy mode &#x28;Photosensitive epilepsy/Stimulation overload trigger&#x29;</a>
+## <a href="#toc">Hypnotic / Sleepy mode &lpar;Photosensitive epilepsy/Stimulation overload trigger&rpar;</a>
 </div>
 
 **Photosensitive epilepsy/stimulation overload trigger warning:**
@@ -892,7 +892,7 @@ it will take the number of movements before it is 'its full size'.
 
 
 <div id="conclusions">
-# 7. <a href="#toc">Conclusion &#x28;and inspirational words for everyone&#x29;</a>
+# 7. <a href="#toc">Conclusion &lpar;and inspirational words for everyone&rpar;</a>
 </div>
 
 I believe that this file has given more than enough information for anyone to

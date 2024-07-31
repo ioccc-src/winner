@@ -34,8 +34,8 @@ and:
 ## Judges' remarks:
 
 A
-[pi](https://en.wikipedia.org/wiki/Pi)/[e](https://en.wikipedia.org/wiki/E_&#x28;mathematical_constant&#x29;)
-printing quasi-[quine](https://en.wikipedia.org/wiki/Quine_&#x28;computing&#x29;) in [ASCII
+[pi](https://en.wikipedia.org/wiki/Pi)/[e](https://en.wikipedia.org/wiki/E_&lpar;mathematical_constant&rpar;)
+printing quasi-[quine](https://en.wikipedia.org/wiki/Quine_&lpar;computing&rpar;) in [ASCII
 art](https://en.wikipedia.org/wiki/ASCII_art) with a compressed font in it; what
 else to wish for in this program? [Virtual
 machine](https://en.wikipedia.org/wiki/Virtual_machine) emulation?
@@ -47,7 +47,7 @@ Yeah, "Again".  Sorry.  But I don't feel guilty or uncomfortable.
 
 This entry is based on 'over-used themes' such as self reproducing
 program and [pi](https://en.wikipedia.org/wiki/Pi) or
-[e](https://en.wikipedia.org/wiki/E_&#x28;mathematical_constant&#x29;) computation.  I
+[e](https://en.wikipedia.org/wiki/E_&lpar;mathematical_constant&rpar;) computation.  I
 know you're tired of them.
 
 But have you ever seen them **all-in-one**?
@@ -65,18 +65,18 @@ This program generates a new program in the shape of the Greek letter
 
 One more thing...  When you give a command line argument `e` to the
 first program, the generated one will compute [Napier's
-constant](https://en.wikipedia.org/wiki/E_&#x28;mathematical_constant&#x29;)
+constant](https://en.wikipedia.org/wiki/E_&lpar;mathematical_constant&rpar;)
 rather than pi.
 
 
 ### Obfuscation
 
 This program itself is in the shape of a
-[spigot](https://en.wikipedia.org/wiki/Tap_&#x28;valve&#x29;).  This is derived as an
+[spigot](https://en.wikipedia.org/wiki/Tap_&lpar;valve&rpar;).  This is derived as an
 analogy with [spigot algorithm](https://en.wikipedia.org/wiki/Spigot_algorithm)
 which infinitely computes the value of a mathematical constant such as
 [pi](https://en.wikipedia.org/wiki/Pi) or
-[e](https://en.wikipedia.org/wiki/E_&#x28;mathematical_constant&#x29;).
+[e](https://en.wikipedia.org/wiki/E_&lpar;mathematical_constant&rpar;).
 
 The two sets of programs, `314*.c` and `271*.c`, are almost the same
 except their shape and constant computational part.  I tailored the
@@ -85,7 +85,7 @@ tweaking the computational order and adding meaningless code fragments.
 
 On the other hand, to make it fit inside one screen (80 x 25), my program is
 shortened properly, more than it looks.  (As you may know,
-[quines](https://en.wikipedia.org/wiki/Quine_&#x28;computing&#x29;) need to make its
+[quines](https://en.wikipedia.org/wiki/Quine_&lpar;computing&rpar;) need to make its
 program size doubled.) For example, this program involves 3x5 bitmap font data
 of ten characters (`0` -- `9`), as just 20 bytes: `G1%xJ{;Q7wunmuGuu%uu`.  We
 can decode character `n` as `275*s[n+10] - 8*s[n] - 8`.  I solved the system of

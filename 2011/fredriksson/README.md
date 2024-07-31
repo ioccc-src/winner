@@ -117,7 +117,7 @@ expressions by putting `]` as the first character, and putting `-` last.
 
 ### Other uses
 
-* You can use this in place of [cat](https://en.wikipedia.org/wiki/Cat_&#x28;Unix&#x29;).
+* You can use this in place of [cat](https://en.wikipedia.org/wiki/Cat_&lpar;Unix&rpar;).
 Just say
 
 

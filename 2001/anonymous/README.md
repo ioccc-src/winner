@@ -121,7 +121,7 @@ The build script should give an example command to compile the program.
 ### Features
 
 [Basic Block](https://en.wikipedia.org/wiki/Basic_block)
-[Cache](https://en.wikipedia.org/wiki/Cache_&#x28;computing&#x29;): Rather than
+[Cache](https://en.wikipedia.org/wiki/Cache_&lpar;computing&rpar;): Rather than
 translating each instruction individually the dynamic binary translator
 generates a translation for an entire basic block of subject code.  Having
 translated a block once, the target code generated will be stored for the
@@ -136,7 +136,7 @@ The program runs [dynamically
 linked](https://en.wikipedia.org/wiki/Dynamic_linker) [ELF
 binaries](https://en.wikipedia.org/wiki/Executable_and_Linkable_Format), and
 when the subject program attempts to make a call to a standard
-[library](https://en.wikipedia.org/wiki/Library_&#x28;computing&#x29;), the translator
+[library](https://en.wikipedia.org/wiki/Library_&lpar;computing&rpar;), the translator
 attempts to make an appropriate call to the native system libraries on the
 target machine.  This involves mangling between different calling conventions,
 etc.
@@ -207,9 +207,9 @@ on to the next line of code.
 Due to space limitations only a handful of instructions are supported; these
 instructions which are supported are supported in somewhat non-conventional
 ways: chunks of the architecture (e.g. flags) are just ignored, the ELF
-[loader](https://en.wikipedia.org/wiki/Loader_&#x28;computing&#x29;) does not really load
+[loader](https://en.wikipedia.org/wiki/Loader_&lpar;computing&rpar;) does not really load
 the [ELF binary](https://en.wikipedia.org/wiki/Executable_and_Linkable_Format),
-the target [library linking](https://en.wikipedia.org/wiki/Linker_&#x28;computing&#x29;)
+the target [library linking](https://en.wikipedia.org/wiki/Linker_&lpar;computing&rpar;)
 can only pass up to 3 parameters to the target library function, etc.
 
 In short, please consider this a full disclaimer for any bug that may

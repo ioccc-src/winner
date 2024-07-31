@@ -529,7 +529,7 @@ origin of each file is detailed below (character, game, company, year).
 
 * [belmont.txt](belmont.txt) - [Simon
 Belmont](https://en.wikipedia.org/wiki/Simon_Belmont),
-[Castlevania](https://en.wikipedia.org/wiki/Castlevania_&#x28;1986_video_game&#x29;),
+[Castlevania](https://en.wikipedia.org/wiki/Castlevania_&lpar;1986_video_game&rpar;),
 [Konami](https://en.wikipedia.org/wiki/Konami), 1986.
 
 * [bloober.txt](bloober.txt) - Bloober, [Super Mario
@@ -573,7 +573,7 @@ Plant](https://www.mariowiki.com/Piranha_Plant), Super Mario Brothers, Nintendo,
 
 * [samus.txt](samus.txt) - [Samus
 Aran](https://metroid.fandom.com/wiki/Samus_Aran),
-[Metroid](https://metroid.fandom.com/wiki/Metroid_&#x28;game&#x29;), Nintendo/[Intelligent
+[Metroid](https://metroid.fandom.com/wiki/Metroid_&lpar;game&rpar;), Nintendo/[Intelligent
 Systems](https://en.wikipedia.org/wiki/Intelligent_Systems), 1986.
 
 * [toad.txt](toad.txt) - [Toad](https://www.mariowiki.com/Toad), Super Mario

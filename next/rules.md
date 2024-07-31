@@ -753,7 +753,7 @@ guidelines](../markdown.html) for additional markdown guidance.
 </div>
 
 The how to build instructions must be in Makefile format. See [the FAQ about
-make&#x28;1&#x29; compatibility the IOCCC
+make&lpar;1&rpar; compatibility the IOCCC
 supports](../faq.html#make_compatibility) for more details.
 
 <p class="leftbar">

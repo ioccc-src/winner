@@ -72,7 +72,7 @@ Use `rince.alt` or `rince.alt2` as you would `rince` above.
 The author has provided several CABBAGE files for your amusement:
 
 - [rince.data1](%%REPO_URL%%/1993/rince/rince.data1) plays
-[Breakout](https://en.wikipedia.org/wiki/Breakout_&#x28;video_game&#x29;).  Keys are `,`
+[Breakout](https://en.wikipedia.org/wiki/Breakout_&lpar;video_game&rpar;).  Keys are `,`
 for left, `/` for right, and `.` for 'fire the ball'.
 
 - [rince.data2](%%REPO_URL%%/1993/rince/rince.data2) plays the old [James Bonfield](../../authors.html#James_Bonfield)

@@ -5,7 +5,7 @@
 * [Winning Entries](years.html)
 * [Winning Authors](authors.html)
 * [Location of winning authors](location.html)
-* [Bugs and &#x28;mis&#x29;features](bugs.html)
+* [Bugs and &lpar;mis&rpar;features](bugs.html)
 
 ## Status
 

@@ -39,7 +39,7 @@ A: Electronic Design Automation - Mechanical Abstract Machine Emulator
 What is TOFU?  It's not a veggie friendly food, nor it is
 [Verilog](https://en.wikipedia.org/wiki/Verilog) or
 [VHDL](https://en.wikipedia.org/wiki/VHDL)  It is not even
-[Pascal](https://en.wikipedia.org/wiki/Pascal_&#x28;programming_language&#x29;)!
+[Pascal](https://en.wikipedia.org/wiki/Pascal_&lpar;programming_language&rpar;)!
 
 NOTE: On some systems, `file(1)` claims one of the `.tofu` files is Pascal
 source. :-)
