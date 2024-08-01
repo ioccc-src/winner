@@ -3,12 +3,12 @@
 This is FAQ version **28.0.3 2024-07-27**.
 
 
-## Section  0 - [Submitting entries to a new IOCCC](#faq0)
+## Section  0 - [Submitting  to a new IOCCC](#faq0)
 - <a class="normal" href="#faq0_0">0.0  - How may I enter the IOCCC?</a>
 - <a class="normal" href="#faq0_1">0.1  - What types of entries have been frequently submitted to the IOCCC?</a>
-- <a class="normal" href="#faq0_2">0.2  - What should I put in my entry's Makefile?</a>
+- <a class="normal" href="#faq0_2">0.2  - What should I put in my submission's Makefile?</a>
 - <a class="normal" href="#faq0_3">0.3  - May I use a different source or compiled filename than prog.c or prog?</a>
-- <a class="normal" href="#faq0_4">0.4  - What platform should I assume for my entry?</a>
+- <a class="normal" href="#faq0_4">0.4  - What platform should I assume for my submission?</a>
 - <a class="normal" href="#faq0_5">0.5  - How may I comment or make a suggestion on IOCCC rules, guidelines and tools?</a>
 - <a class="normal" href="#faq0_6">0.6  - What is the best way to ask a question about the IOCCC rules, guideline and tools?</a>
 - <a class="normal" href="#faq0_7">0.7  - What are the IOCCC best practices for using markdown?</a>
@@ -31,9 +31,9 @@ This is FAQ version **28.0.3 2024-07-27**.
 
 
 ## Section  2 - [IOCCC Judging process](#faq2)
-- <a class="normal" href="#faq2_0">2.0  - How many entries do the judges receive for a given IOCCC?</a>
+- <a class="normal" href="#faq2_0">2.0  - How many submissions do the judges receive for a given IOCCC?</a>
 - <a class="normal" href="#faq2_1">2.1  - What should I put in the remarks.md file of my submission?</a>
-- <a class="normal" href="#faq2_2">2.2  - Why don't you publish entries that do not win?</a>
+- <a class="normal" href="#faq2_2">2.2  - Why don't you publish submissions that do not win?</a>
 - <a class="normal" href="#faq2_3">2.3  - How much time does it take to judge the contest?</a>
 - <a class="normal" href="#faq2_4">2.4  - How many judging rounds do you have?</a>
 - <a class="normal" href="#faq2_5">2.5  - Why do some IOCCC entries receive the Grand Prize or Best of Show award?</a>
@@ -385,7 +385,7 @@ of the same theme.
 <div id="faq0_2">
 <div id="makefile">
 <div id="submission_makefile">
-### FAQ 0.2: What should I put in my entry's Makefile?
+### FAQ 0.2: What should I put in my submission's Makefile?
 </div>
 </div>
 </div>
@@ -453,7 +453,11 @@ For example:
 
 <div id="faq0_4">
 <div id="SUS">
-### FAQ 0.4: What platform should I assume for my entry?
+<div id="platform">
+<div id="portability">
+### FAQ 0.4: What platform should I assume for my submission?
+</div>
+</div>
 </div>
 </div>
 
@@ -465,7 +469,9 @@ or [later SUS](https://unix.org/online.html).
 
 <div id="faq0_5">
 <div id="feedback">
+<div id="comments">
 ### FAQ 0.5: How may I comment or make a suggestion on IOCCC rules, guidelines and tools?
+</div>
 </div>
 </div>
 
@@ -491,7 +497,9 @@ discussion](https://github.com/ioccc-src/mkiocccentry/discussions/new/choose).
 
 <div id="faq0_6">
 <div id="question">
+<div id="questions">
 ### FAQ 0.6: What is the best way to ask a question about the IOCCC rules, guideline and tools?
+</div>
 </div>
 </div>
 
@@ -548,7 +556,9 @@ FAQ on "[rules, guidelines, tools feedback](#feedback)".
 
 <div id="faq0_7">
 <div id="markdown">
+<div id="md">
 ### FAQ 0.7: - What are the IOCCC best practices for using markdown?
+</div>
 </div>
 </div>
 
@@ -1396,7 +1406,9 @@ submission manually then you would be violating [Rule
 <div id="faq0_13">
 <div id="txzchk">
 <div id="tarball">
+<div id="xz">
 ### FAQ 0.13 - How can I validate my submission tarball?
+</div>
 </div>
 </div>
 </div>
@@ -1626,7 +1638,9 @@ See also the [Guidelines](next/guidelines.html) and the [Rules](next/rules.html)
 
 <div id="faq0_16">
 <div id="mkiocccentry_compile">
+<div id="compile_mkiocccentry">
 ### FAQ 0.16 - How do I compile `mkiocccentry` and its related tools?
+</div>
 </div>
 </div>
 
@@ -1655,7 +1669,11 @@ for more up to date information on downloading, compiling, and related FAQ infor
 
 <div id="faq1_0">
 <div id="ioccc_start">
+<div id="stormy_night">
+<div id="beginning">
 ### FAQ 1.0: How did the IOCCC get started?
+</div>
+</div>
 </div>
 </div>
 
@@ -1734,7 +1752,9 @@ P.S. Part of the inspiration for making the IOCCC a contest goes to the
 
 
 <div id="faq1_1">
+<div id="missing_years">
 ### FAQ 1.1: Why are some years missing IOCCC entries?
+</div>
 </div>
 
 Some years, such as 1997, 1999, 2002-2003, 2007-2010, 2016-2017, 2021-2023, no IOCCC was held.
@@ -1747,7 +1767,11 @@ make is much more likely for the IOCCC to be held in a yearly basis later on.
 
 
 <div id="faq1_2">
+<div id="website">
+<div id="website_history">
 ### FAQ 1.2: What is the history of the IOCCC website?
+</div>
+</div>
 </div>
 
 #### In the beginning of www.ioccc.org
@@ -1938,7 +1962,9 @@ to the [official IOCCC website](https://www.ioccc.org).
 
 <div id="faq1_3">
 <div id="size_rule">
+<div id="size_restriction">
 ### FAQ 1.3: How has the IOCCC size limit rule changed over the years?
+</div>
 </div>
 </div>
 
@@ -2022,7 +2048,9 @@ By tradition, we do not say.
 <div id="faq2_1">
 <div id="remarks_md">
 <div id="remarks">
+<div id="readme">
 ### FAQ 2.1: What should I put in the remarks.md file of my submission?
+</div>
 </div>
 </div>
 </div>
@@ -2071,7 +2099,9 @@ this is not clear!
 
 
 <div id="faq2_2">
-### FAQ 2.2: Why don't you publish entries that do not win?
+<div id="losing_submissions">
+### FAQ 2.2: Why don't you publish submissions that do not win?
+</div>
 </div>
 
 Because the publication on the IOCCC site **_IS_** the award!
@@ -2080,7 +2110,9 @@ entries that do not win on their web page for everyone to see.
 
 
 <div id="faq2_3">
+<div id="judging_time">
 ### FAQ 2.3: How much time does it take to judge the contest?
+</div>
 </div>
 
 It takes a fair amount of time to setup, run, respond to messages, process entries,
@@ -2099,20 +2131,32 @@ POSIX-conforming.
 
 
 <div id="faq2_4">
+<div id="rounds">
+<div id="judging_rounds">
 ### FAQ 2.4: How many judging rounds do you have?
+</div>
+</div>
 </div>
 
 Are you trying to trick us? :-)
 
 By tradition, we do not say how many judging rounds we have in a given IOCCC.
 
-We often report when the IOCCC judges start the 1st round, and
-when usually report when the IOCCC judges start near final judging rounds, and
-sometimes we also report when we enter what we believe is the final judging round, so you may guess that we have at least 3 rounds.  :-)  The actual number of rounds is certainly more than 3.
+We often report when the IOCCC judges start the 1st round, and when usually
+report when the IOCCC judges start near final judging rounds, and sometimes we
+also report when we enter what we believe is the final judging round, so you may
+guess that we have at least 3 rounds.  :-)  The actual number of rounds is
+certainly more than 3.
 
 
 <div id="faq2_5">
+<div id="best">
+<div id="best_of_show">
+<div id="grand_prize">
 ### FAQ 2.5: Why do some IOCCC entries receive the Grand Prize or Best of Show award?
+</div>
+</div>
+</div>
 </div>
 
 In some years, the IOCCC judges discover a truly amazing IOCCC entry that
@@ -2154,7 +2198,13 @@ more other entries that came in close behind.
 
 
 <div id="faq2_6">
+<div id="announcing_winners">
+<div id="announce">
+<div id="winners">
 ### FAQ 2.6: How are IOCCC entries announced?
+</div>
+</div>
+</div>
 </div>
 
 Once the [IOCCC](index.html) closes, the judges will:
@@ -2184,7 +2234,9 @@ winning entries page](years.html).
 
 <div id="faq3_0">
 <div id="make_rules">
+<div id="makefile_rules">
 ### FAQ 3.0: What Makefile rules are available to build or clean up IOCCC entries?
+</div>
 </div>
 </div>
 
@@ -2246,7 +2298,11 @@ were to do something like `make CC=gcc=mp-12` it would register as `gcc`.
 
 
 <div id="faq3_1">
+<div id="compile">
+<div id="compile_errors">
 ### FAQ 3.1: Why doesn't an IOCCC entry compile?
+</div>
+</div>
 </div>
 
 Some entries that won the IOCCC, particularly entries from long ago, no longer compile on more
@@ -2285,7 +2341,11 @@ compiles does not mean it will run on your specific system.
 
 
 <div id="faq3_2">
+<div id="64bit">
+<div id="64-bit">
 ### FAQ 3.2: Why does an IOCCC entry fail on my 64-bit system?
+</div>
+</div>
 </div>
 
 Unfortunately some older entries are non-portable and require 32-bit support or
@@ -2319,7 +2379,11 @@ for more information about pull requests.
 
 
 <div id="faq3_3">
+<div id="macos">
+<div id="macos_errors">
 ### FAQ 3.3: Why do some IOCCC entries fail to compile under macOS?
+</div>
+</div>
 </div>
 
 If the entry requires gcc and you did not explicitly install gcc in macOS you
@@ -2339,7 +2403,11 @@ for details.
 
 
 <div id="faq3_4">
+<div id="gcc">
+<div id="clang">
 ### FAQ 3.4: Why does clang or gcc fail to compile an IOCCC entry?
+</div>
+</div>
 </div>
 
 Although we have fixed numerous entries to work with clang (sometimes in an alt
@@ -2367,7 +2435,9 @@ for more information about pull requests.
 
 
 <div id="faq3_5">
+<div id="cb">
 ### FAQ 3.5: What is this cb tool that is mentioned in the IOCCC?
+</div>
 </div>
 
 This was a C beautifier for Unix, both AT&T and Berkeley, but it seems to no
@@ -2377,7 +2447,15 @@ judging the IOCCC. A Unix man page for `cb`
 
 
 <div id="faq3_6">
+<div id="terminal">
+<div id="sanity">
+<div id="reset">
+<div id="stty">
 ### FAQ 3.6: An IOCCC entry messed up my terminal application, how do I fix this?
+</div>
+</div>
+</div>
+</div>
 </div>
 
 The simplest way to do this is to type `reset`. If echo was disabled you can get
@@ -2797,7 +2875,9 @@ We recommend trying a method suitable for your environment first, if possible.
 
 <div id="faq3_10">
 <div id="sox">
+<div id="sound">
 ### FAQ 3.10: How do I compile and use an IOCCC entry that requires sound?
+</div>
 </div>
 </div>
 
@@ -2966,7 +3046,13 @@ better than other entries.
 
 
 <div id="faq3_12">
+<div id="eof">
+<div id="intr">
+<div id="interrupt">
 ### FAQ 3.12: How do I find out how to send interrupt/EOF etc. for entries that require it?
+</div>
+</div>
+</div>
 </div>
 
 For some entries one needs to send interrupt or EOF or some other signal/other
@@ -3569,7 +3655,9 @@ process or appreciate the entry more, then please do so.
 
 
 <div id="faq4_0">
+<div id="author_remarks">
 ### FAQ 4.0: Why are some winning entry remarks incongruent with the winning IOCCC code?
+</div>
 </div>
 
 It is very likely in this case that the code was fixed to work for modern
@@ -3588,7 +3676,9 @@ for more information.
 
 <div id="faq4_1">
 <div id="gets">
+<div id="fgets">
 ### FAQ 4.1: Why were some calls to the libc function gets&lpar;3&rpar; changed to use fgets&lpar;3&rpar;?
+</div>
 </div>
 </div>
 
@@ -3769,7 +3859,9 @@ FAQ on "[entry source code changes](#what_changed)"
 
 
 <div id="faq4_4">
+<div id="orig_c">
 ### FAQ 4.4: What is the meaning of the file ending in .orig.c in IOCCC entries?
+</div>
 </div>
 
 Due to the fact that the original code has sometimes had to change these files
@@ -3777,7 +3869,11 @@ are the original winning entry or as close to as possible to the original that
 we can find.
 
 <div id="faq4_5">
+<div id="alt">
+<div id="alt_code">
 ### FAQ 4.5: Why were alternate versions added to some entries when the original entry worked fine and well?
+</div>
+</div>
 </div>
 
 This was a judgement call and the reasons vary. In many cases it was simply to
@@ -3799,7 +3895,9 @@ for more information.
 
 <div id="faq4_6">
 <div id="arg_count">
+<div id="main_args">
 ### FAQ 4.6: Why was arg count and/or type changed in main&lpar;&rpar; in some older entries?
+</div>
 </div>
 </div>
 
@@ -3820,7 +3918,9 @@ cases, however, this had to be done even without `clang` objections.
 
 
 <div id="faq4_7">
+<div id="renaming_files">
 ### FAQ 4.7: Why were some filenames changed?
+</div>
 </div>
 
 The reasons this was done varies. One of the earliest changes was making the old
@@ -3847,7 +3947,11 @@ There were certainly other reasons as well.
 
 
 <div id="faq4_8">
+<div id="files_added">
+<div id="files_removed">
 ### FAQ 4.8: Why were files added or removed from some entries?
+</div>
+</div>
 </div>
 
 Like with files being renamed, there are multiple reasons files were added or
@@ -3898,8 +4002,7 @@ to be modified.  Reasons include things such as:
 * etc.
 
 We seek to preserve the "**original source file**", for historical purposes,
-by preserving the original source code (usually as 'prog.orig.c`).
-for more infornation.
+by preserving the original source code (usually as `prog.orig.c`).
 
 **IMPORTANT NOTE**: The "**original source file**", because it is a historic
 record, should **NOT** be modified.
@@ -3915,7 +4018,7 @@ problem to the [IOCCC judges](judges.html), including that you believe
 is the correct "**original source file**".
 
 **FYI**: To determine the difference between the "**original source file**" and
-the the source code as it is now now, try:
+the source code as it is now now, try:
 
 ``` <!---sh-->
     make diff_orig_prog
@@ -3923,7 +4026,7 @@ the the source code as it is now now, try:
 
 See the
 FAQ on "[what changed](#what_changed)"
-for more inforaiton and make rules relating to "**original source file**" differences.
+for more information and make rules relating to "**original source file**" differences.
 
 
 <div id="faq5">
@@ -3933,7 +4036,9 @@ for more inforaiton and make rules relating to "**original source file**" differ
 
 <div id="faq5_0">
 <div id="how_to_help">
+<div id="helping">
 ### FAQ 5.0: How may I help the IOCCC?
+</div>
 </div>
 </div>
 
@@ -3958,7 +4063,9 @@ section may offer you important fixing clues.
 
 <div id="faq5_1">
 <div id="report_bug">
+<div id="reporting_bugs">
 ### FAQ 5.1: How do I report a bug in an IOCCC entry?
+</div>
 </div>
 </div>
 
@@ -3986,7 +4093,9 @@ for more information about pull requests.
 
 <div id="faq5_2">
 <div id="fix_an_entry">
+<div id="fixing_entries">
 ### FAQ 5.2: How may I submit a fix to an IOCCC entry?
+</div>
 </div>
 </div>
 
@@ -4035,7 +4144,9 @@ have the final say in the matter.
 
 <div id="faq5_3">
 <div id="report_web_problem">
+<div id="website_problems">
 ### FAQ 5.3: How may I report an IOCCC website problem?
+</div>
 </div>
 </div>
 
@@ -4063,7 +4174,7 @@ to [open a new IOCCC issue](https://github.com/ioccc-src/winner/issues/new).
 
 
 <div id="faq5_4">
-<div id="fix_web_site">
+<div id="fix_website">
 ### FAQ 5.4: How may I submit a fix to the IOCCC website?
 </div>
 </div>
@@ -4324,7 +4435,9 @@ FAQ on "[report website problem](#report_web_problem)".
 
 <div id="faq5_7">
 <div id="support">
+<div id="supporting_ioccc">
 ### FAQ 5.7: How may I support the IOCCC?
+</div>
 </div>
 </div>
 
@@ -4346,7 +4459,13 @@ efforts, we suggest making an **Anonymous** gift via the
 
 <div id="faq5_8">
 <div id="deobfuscated">
+<div id="deobfuscation">
+<div id="unobfuscated">
+<div id="unobfuscation">
 ### FAQ 5.8: I deobfuscated some entry code, may I contribute the source?
+</div>
+</div>
+</div>
 </div>
 </div>
 
@@ -4441,7 +4560,11 @@ that be prove helpful.
 
 
 <div id="faq6_0">
+<div id="size_2_broken">
+<div id="rule_breaking_entry">
 ### FAQ 6.0: How did an entry that breaks the size rule 2 win the IOCCC?
+</div>
+</div>
 </div>
 
 As entries have been fixed it is entirely possible that some of the entries no
@@ -4459,7 +4582,13 @@ get around rule 2 size limits is discouraged).
 
 
 <div id="faq6_1">
+<div id="bugs">
+<div id="misfeatures">
+<div id="mis-features">
 ### FAQ 6.1: Is there a list of known bugs and &lpar;mis&rpar;features of IOCCC entries?
+</div>
+</div>
+</div>
 </div>
 
 Yes! Please see [bugs.html](bugs.html) for a list of known bugs and/or issues of a
@@ -4471,18 +4600,32 @@ something like that.
 
 
 <div id="faq6_2">
+<div id="mirrors">
+<div id="website_mirrors">
+<div id="website_mirroring">
 ### FAQ 6.2: May I mirror the IOCCC website?
 </div>
+</div>
+</div>
+</div>
 
-We are not accepting mirror requests at this time, sorry.  However you are free to fork the [IOCCC winner repo](https://github.com/ioccc-src/winner).  We do ask that your fork keep up to date with the latest changes when possible.
+We are not accepting mirror requests at this time, sorry.  However you are free
+to fork the [IOCCC winner repo](https://github.com/ioccc-src/winner).  We do ask
+that your fork keep up to date with the latest changes when possible.
 
 
 <div id="faq6_3">
+<div id="permission">
+<div id="copyright">
 ### FAQ 6.3: May I use parts of the IOCCC in an article, book, newsletter, or instructional material?
+</div>
+</div>
 </div>
 
 While IOCCC judges look favorably on most requests to use IOCCC material,
-we request that you ask the [IOCCC judges](judges.html) first.
+we request that you ask the [IOCCC judges](judges.html) first. Of course, if
+you're the winner of the entry you can make use of it as you want (make a shirt,
+put it on your website etc.).
 
 Please send your request using the instructions on the [contacting
 the IOCCC Judges](contact.html) page.
@@ -4497,7 +4640,13 @@ For additional information on the [Copyright and CC BY-SA 4.0 License](license.h
 
 
 <div id="faq6_4">
+<div id="first_person">
+<div id="person">
+<div id="pronoun">
 ### FAQ 6.4: Why do you sometimes use the first person plural?
+</div>
+</div>
+</div>
 </div>
 
 As a precedent for [first person
@@ -4619,7 +4768,9 @@ Anonymous `author_handle`'s match this regexp:
 
 <div id="faq6_6">
 <div id="author_json">
+<div id="author_handle_json">
 ### FAQ 6.6: What is an `author_handle.json` file and how are they used?
+</div>
 </div>
 </div>
 
@@ -5255,7 +5406,9 @@ names such as _entry_ when they should use _submission_.  Sorry (tm Canada)! :-)
 
 <div id="faq6_10">
 <div id="pull_request">
+<div id="commit">
 ### FAQ 6.10: How does someone make a change to a file and submit that change as a GitHub pull request?
+</div>
 </div>
 </div>
 
@@ -5507,7 +5660,9 @@ This will merge your pull request to your fork.
 
 <div id="faq6_11">
 <div id="license">
+<div id="licence">
 ### FAQ 6.11: Am I allowed to use IOCCC content?
+</div>
 </div>
 </div>
 
@@ -5542,7 +5697,9 @@ to help ensure that everyone may enjoy the IOCCC.
 
 <div id="faq6_12">
 <div id="try_mastodon">
+<div id="mastodon">
 ### FAQ 6.12: What is Mastodon and why does IOCCC use it?
+</div>
 </div>
 </div>
 
