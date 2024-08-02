@@ -1677,9 +1677,11 @@ for more up to date information on downloading, compiling, and related FAQ infor
 </div>
 </div>
 
-One day (1984 March 23 to be exact), Larry Bassel and I (Landon Curt
-Noll) were working for National Semiconductor's Genix porting group, and we
-were both in our offices trying to fix some very broken code.
+**It was a dark and stormy night...**
+
+OK, let's go back to 1984, not 1830: one day (1984 March 23 to be exact), Larry Bassel
+and I (Landon Curt Noll) were working for National Semiconductor's Genix porting
+group, and we were both in our offices trying to fix some very broken code.
 
 Larry had been trying to fix a bug in the classic Bourne shell (C code `#define`d
 to death to sort of look like Algol) and I had been working on the `finger(1)`
