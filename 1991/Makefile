@@ -288,7 +288,7 @@ genpath:
 new_entry:
 	@(echo 'ENTRIES= '; \
 	  (echo ${ENTRIES} ${NEW_ENTRY}) | ${TR} ' ' '\012' | ${SORT} -d -u) | \
-	  ${FMT} -p | ${SED} -e '2,$$s/^/\t/' -e 's/$$/ \\/' -e '$$s/ \\//'
+	  ${FMT} | ${SED} -e '2,$$s/^/\t/' -e 's/$$/ \\/' -e '$$s/ \\//'
 
 
 ##################
