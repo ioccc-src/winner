@@ -772,7 +772,7 @@ update:
 new_year:
 	@(echo 'YEARS= '; \
 	  (echo ${YEARS} ${NEW_YEAR}) | ${TR} ' ' '\012' | ${SORT} -n -u) | \
-	  ${FMT} -p | ${SED} -e '2,$$s/^/\t/' -e 's/$$/ \\/' -e '$$s/ \\//'
+	  ${FMT} | ${SED} -e '2,$$s/^/\t/' -e 's/$$/ \\/' -e '$$s/ \\//'
 
 # form the top level .top only
 #
