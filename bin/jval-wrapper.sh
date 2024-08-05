@@ -103,7 +103,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.0 2024-08-05"
+export VERSION="1.0.1 2024-08-05"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -147,6 +147,7 @@ if ! "$JSONPATH_SH" -S -A -T -p >/dev/null 2>&1; then
     exit 5
 fi <<< "$FIZZBIN_JSON"
 export JSONPATH_ARG
+export PATTERN='$*'
 #
 unset OPTION
 declare -ag OPTION
@@ -155,7 +156,7 @@ declare -ag OPTION
 #
 export USAGE="usage: $0 [-h] [-v level] [-V] [-n] [-N]
 	[-w] [-b] [-i]
-	[-j JSONPath.sh] file.json pattern
+	[-j JSONPath.sh] file.json [pattern]
 
 	-h		print help message and exit
 	-v level	set verbosity level (def level: 0)
@@ -171,7 +172,7 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-n] [-N]
 	-j JSONPath.sh	path to the JSONPath.sh tool (not the wrapper) (def: $JSONPATH_SH)
 
 	file.json	JSON file to read, - ==> read stdin
-	pattern		The JSONPath query
+	pattern		JSONPath query (def: $PATTERN}
 
 Exit codes:
      0         all OK
@@ -243,16 +244,17 @@ shift $(( OPTIND - 1 ));
 if [[ $V_FLAG -ge 1 ]]; then
     echo "$0: debug[5]: argument count: $#" 1>&2
 fi
-if [[ $# -ne 2 ]]; then
-    echo "$0: ERROR: expected 2 args, found: $#" 1>&2
+case "$#" in
+1) JSON_FILE="$1"
+   ;;
+2) JSON_FILE="$1"
+    PATTERN="$2"
+    ;;
+*) echo "$0: ERROR: expected i or 2 args, found: $#" 1>&2
     echo "$USAGE" 1>&2
     exit 3
-fi
-export JSON_FILE="$1"
-if [[ $JSON_FILE = - ]]; then
-    JSON_FILE=""
-fi
-export PATTERN="$2"
+    ;;
+esac
 #
 if [[ -n $JSON_FILE ]]; then
     if [[ ! -e $JSON_FILE ]]; then
