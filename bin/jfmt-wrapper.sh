@@ -92,7 +92,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.0 2024-07-28"
+export VERSION="1.0.1 2024-08-05"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -140,24 +140,9 @@ if ! "$JSONPATH_SH" -S -A -T -p >/dev/null 2>&1; then
 fi <<< "$FIZZBIN_JSON"
 
 
-# verify jparse tool
-#
-if [[ -z "$JPARSE_TOOL" ]]; then
-    echo "$0: ERROR: cannot find an executable jparse tool" 1>&2
-    exit 5
-fi
-if [[ ! -f "$JPARSE_TOOL" ]]; then
-    echo "$0: ERROR: jparse is not a file: $JPARSE_TOOL" 1>&2
-    exit 5
-fi
-if [[ ! -x "$JPARSE_TOOL" ]]; then
-    echo "$0: ERROR: jparse is not an executable file: $JPARSE_TOOL" 1>&2
-    exit 5
-fi
-
 # set usage message
 #
-export USAGE="usage: $0 [-h] [-v level] [-V] [-n] [-N] [-u repo_top_url] [-j JSONPath.sh] [-J jparse] file.json
+export USAGE="usage: $0 [-h] [-v level] [-V] [-n] [-N] [-j JSONPath.sh] file.json
 
 	-h		print help message and exit
 	-v level	set verbosity level (def level: 0)
@@ -166,10 +151,7 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-n] [-N] [-u repo_top_url] [-j JSO
 	-n		do not modify file.json (def: modify file.json is not canonical)
 	-N		do not process file, just parse arguments and ignore the file (def: process the file)
 
-	-u repo_top_url	Top level URL of target git repo (def: $REPO_TOP_URL)
-
 	-j JSONPath.sh	path to the JSONPath.sh tool (not the wrapper) (def: $JSONPATH_SH)
-	-J jparse	path to the jparse tool (def: $JPARSE_TOOL)
 
 	file.json	The JSON file to write, in canonical form, to stdout (def: read stdin)
 
@@ -193,7 +175,7 @@ export DO_NOT_PROCESS=
 
 # parse command line
 #
-while getopts :hv:VnNj:J: flag; do
+while getopts :hv:VnNj: flag; do
   case "$flag" in
     h) echo "$USAGE" 1>&2
 	exit 2
@@ -208,8 +190,6 @@ while getopts :hv:VnNj:J: flag; do
     N) DO_NOT_PROCESS="-N"
 	;;
     j) JSONPATH_SH="$OPTARG"
-	;;
-    J) JPARSE_TOOL="$OPTARG"
 	;;
     \?) echo "$0: ERROR: invalid option: -$OPTARG" 1>&2
 	echo 1>&2

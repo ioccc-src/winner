@@ -84,7 +84,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.5.7 2024-07-28"
+export VERSION="1.5.8 2024-08-05"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -336,7 +336,7 @@ function output_status_json
 # usage
 #
 export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-n] [-N]
-			[-t tagline] [-T md2html.sh] [-u repo_top_url]
+			[-t tagline] [-T md2html.sh]
 			[p | pending | o | open | j | judging | c | closed]
 
 	-h		print help message and exit
@@ -357,8 +357,6 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-n] [-N]
 			NOTE: 'tagline' may be enclosed within, but may NOT contain an internal single-quote, or double-quote.
 	-T md2html.sh	run 'markdown to html tool' to convert markdown into HTML (def: $MD2HTML_SH)
 
-	-u repo_top_url	Top level URL of target git repo (def: $REPO_TOP_URL)
-			NOTE: The '-u repo_top_url' is passed as leading options on tool command lines.
 	-w site_url	Base URL of the website (def: $SITE_URL)
 			NOTE: The '-w site_url' is passed as leading options on tool command lines.
 
@@ -370,7 +368,7 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-n] [-N]
 
 NOTE: The '-v level' is passed as initial command line options to the 'markdown to html tool' (md2html.sh).
       The 'tagline' is passed as '-t tagline' to the 'markdown to html tool' (md2html.sh), after the '-v level'.
-      Any '-T md2html.sh', '-p tool', '-P pandoc_opts', '-u repo_top_url', '-U top_url'
+      Any '-T md2html.sh', '-p tool', '-P pandoc_opts', '-U top_url'
       are passed to the 'markdown to html tool' (md2html.sh), and will be before any command line arguments.
 
 Exit codes:
@@ -387,7 +385,7 @@ $NAME version: $VERSION"
 
 # parse command line
 #
-while getopts :hv:Vd:D:nNt:T:u:w: flag; do
+while getopts :hv:Vd:D:nNt:T:w: flag; do
   case "$flag" in
     h) echo "$USAGE" 1>&2
 	exit 2
@@ -439,10 +437,6 @@ while getopts :hv:Vd:D:nNt:T:u:w: flag; do
     T) MD2HTML_SH="$OPTARG"
 	TOOL_OPTION+=("-T")
 	TOOL_OPTION+=("$MD2HTML_SH")
-	;;
-    u) REPO_TOP_URL="$OPTARG"
-	TOOL_OPTION+=("-u")
-	TOOL_OPTION+=("$REPO_TOP_URL")
 	;;
     w) SITE_URL="$OPTARG"
 	TOOL_OPTION+=("-w")

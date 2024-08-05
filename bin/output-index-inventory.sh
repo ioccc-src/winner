@@ -101,7 +101,7 @@ shopt -s globstar	# enable '**' to match all files and zero or more directories 
 
 # set variables referenced in the usage message
 #
-export VERSION="1.4.2 2024-07-28"
+export VERSION="1.4.3 2024-08-05"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -128,7 +128,7 @@ export URL="#"
 # set usage message
 #
 export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
-			[-p tool] [-u repo_top_url] [-U url] [-w site_url] [-e string ..] [-E exitcode]
+			[-p tool] [-U url] [-w site_url] [-e string ..] [-E exitcode]
 			YYYY/dir
 
 	-h		print help message and exit
@@ -144,7 +144,6 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
 
 	-p tool		run 'pandoc wrapper tool' (not pandoc path) during HTML phase number 21 (def: use $PANDOC_WRAPPER)
 
-	-u repo_top_url	Top level URL of target git repo (def: $REPO_TOP_URL)
 	-U url		URL of HTML file being formed (def: $URL)
 	-w site_url	Base URL of the website (def: $SITE_URL)
 
@@ -172,7 +171,7 @@ export DO_NOT_PROCESS=
 
 # parse command line
 #
-while getopts :hv:Vd:D:nNp:u:U:w:e:E: flag; do
+while getopts :hv:Vd:D:nNp:U:w:e:E: flag; do
   case "$flag" in
     h) echo "$USAGE" 1>&2
 	exit 2
@@ -200,10 +199,6 @@ while getopts :hv:Vd:D:nNp:u:U:w:e:E: flag; do
     N) DO_NOT_PROCESS="-N"
 	;;
     p) PANDOC_WRAPPER="$OPTARG"
-	;;
-    u) REPO_TOP_URL="$OPTARG"
-	# GitHub puts individual files under the "blob/master" sub-directory.
-	export REPO_URL="$REPO_TOP_URL/blob/master"
 	;;
     U) URL="$OPTARG"
 	;;

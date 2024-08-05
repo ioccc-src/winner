@@ -92,7 +92,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.3.1 2024-07-28"
+export VERSION="1.3.2 2024-08-05"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -118,7 +118,7 @@ export URL="#"
 # set usage message
 #
 export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
-			[-u repo_top_url] [-U url] [-w site_url] [-e string ..] [-E exitcode]
+			[-U url] [-w site_url] [-e string ..] [-E exitcode]
 			[ignored]
 
 	-h		print help message and exit
@@ -132,7 +132,6 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
 	-n		go thru the actions, but do not update any files (def: do the action)
 	-N		do not process file, just parse arguments and ignore the file (def: process the file)
 
-	-u repo_top_url	Top level URL of target git repo (def: $REPO_TOP_URL)
 	-U url		URL of HTML file being formed (def: $URL)
 	-w site_url	Base URL of the website (def: $SITE_URL)
 
@@ -159,7 +158,7 @@ export DO_NOT_PROCESS=
 
 # parse command line
 #
-while getopts :hv:Vd:D:nNu:U:w:e:E: flag; do
+while getopts :hv:Vd:D:nNU:w:e:E: flag; do
   case "$flag" in
     h) echo "$USAGE" 1>&2
 	exit 2
@@ -185,10 +184,6 @@ while getopts :hv:Vd:D:nNu:U:w:e:E: flag; do
     n) NOOP="-n"
 	;;
     N) DO_NOT_PROCESS="-N"
-	;;
-    u) REPO_TOP_URL="$OPTARG"
-	# GitHub puts individual files under the "blob/master" sub-directory.
-	export REPO_URL="$REPO_TOP_URL/blob/master"
 	;;
     U) URL="$OPTARG"
 	;;

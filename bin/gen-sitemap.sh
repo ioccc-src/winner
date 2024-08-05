@@ -84,7 +84,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.3.12 2024-07-28"
+export VERSION="1.3.13 2024-08-05"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -197,7 +197,7 @@ function output_modtime
 # set usage message
 #
 export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-n] [-N]
-			[-u repo_top_url] [-w site_url] [-W]
+			[-w site_url] [-W]
 
 	-h		print help message and exit
 	-v level	set verbosity level (def level: 0)
@@ -207,8 +207,6 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-n] [-N]
 
 	-n		go thru the actions, but do not update any files (def: do the action)
 	-N		do not process file, just parse arguments and ignore the file (def: process the file)
-
-	-u repo_top_url	Top level URL of target git repo (def: $REPO_TOP_URL)
 
 	-w site_url	Base URL of the website (def: $SITE_URL)
 			NOTE: The '-w site_url' is passed as leading options on tool command lines.
@@ -238,7 +236,7 @@ export EXIT_CODE="0"
 
 # parse command line
 #
-while getopts :hv:Vd:nNu:w:W flag; do
+while getopts :hv:Vd:nNw:W flag; do
   case "$flag" in
     h) echo "$USAGE" 1>&2
 	exit 2
@@ -253,10 +251,6 @@ while getopts :hv:Vd:nNu:w:W flag; do
     n) NOOP="-n"
 	;;
     N) DO_NOT_PROCESS="-N"
-	;;
-    u) REPO_TOP_URL="$OPTARG"
-	# GitHub puts individual files under the "blob/master" sub-directory.
-	export REPO_URL="$REPO_TOP_URL/blob/master"
 	;;
     w) SITE_URL="$OPTARG"
 	;;

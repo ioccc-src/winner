@@ -83,7 +83,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.3.9 2024-07-28"
+export VERSION="1.3.10 2024-08-05"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -113,7 +113,7 @@ fi
 # set usage message
 #
 export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
-			[-p tool] [-u repo_top_url] [-w site_url] [-W]
+			[-p tool] [-w site_url] [-W]
 			YYYY/dir
 
 	-h		print help message and exit
@@ -128,7 +128,6 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
 
 	-p tool		This option is ignored
 
-	-u repo_top_url	This option is ignored
 	-w site_url	This option is ignored
 
 	-W		Warn if a file in the manifest is missing: (def: error if a file is missing)
@@ -157,7 +156,7 @@ export EXIT_CODE="0"
 
 # parse command line
 #
-while getopts :hv:Vd:D:nNp:u:U:w:W flag; do
+while getopts :hv:Vd:D:nNp:U:w:W flag; do
   case "$flag" in
     h) echo "$USAGE" 1>&2
 	exit 2
@@ -175,7 +174,6 @@ while getopts :hv:Vd:D:nNp:u:U:w:W flag; do
     N) DO_NOT_PROCESS="-N"
 	;;
     p)  ;;
-    u)  ;;
     U)  ;;
     w)  ;;
     W) CAP_W_FLAG_FOUND="true"

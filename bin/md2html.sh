@@ -141,7 +141,7 @@ shopt -s lastpipe	# run last command of a pipeline not executed in the backgroun
 
 # set variables referenced in the usage message
 #
-export VERSION="1.5.4 2024-07-28"
+export VERSION="1.5.5 2024-08-05"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -177,7 +177,7 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
 	[-c md2html.cfg] [-H phase=name ..] [-t tagline]
 	[-b tool] [-p tool] [-a tool]
 	[-s token=value ..] [-S] [-o tool ..]
-	[-u repo_top_url] [-U url] [-w site_url] [-m mdtag] [-e string ..] [-E exitcode]
+	[-U url] [-w site_url] [-m mdtag] [-e string ..] [-E exitcode]
 	[match.md] input.md output.html
 
 	-h		print help message and exit
@@ -226,8 +226,6 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
 	-o .		disable use of 'output tool' (def: do not use an 'output tool')
 			NOTE: -o may only be used in command_options and md2html.cfg cfg_options (getopt phases 0 and 2)
 
-	-u repo_top_url	Top level URL of target git repo (def: $REPO_TOP_URL)
-			NOTE: The '-u repo_top_url' is passed as leading options on -b tool, -a tool, and -o tool command lines.
 	-U url		URL of HTML being formed (def: $URL)
 			NOTE: The '-U url' is passed as leading options on -b tool, -a tool, and -o tool command lines.
 	-w site_url	Base URL of the website (def: $SITE_URL)
@@ -414,7 +412,7 @@ function parse_command_line
 
     # parse command line
     #
-    while getopts :hv:VnNd:D:c:H:t:m:b:p:a:s:So:u:U:w:e:E: flag; do
+    while getopts :hv:VnNd:D:c:H:t:m:b:p:a:s:So:U:w:e:E: flag; do
       case "$flag" in
 	h) print_usage 1>&2
 	    exit 2
@@ -639,16 +637,6 @@ function parse_command_line
 	    fi
 	    #
 	    OUTPUT_TOOL+=("$OPTARG")
-	    ;;
-	u) REPO_TOP_URL="$OPTARG"
-	    B_OPTION+=("-u")
-	    B_OPTION+=("$REPO_TOP_URL")
-	    P_OPTION+=("-u")
-	    P_OPTION+=("$REPO_TOP_URL")
-	    A_OPTION+=("-u")
-	    A_OPTION+=("$REPO_TOP_URL")
-	    O_OPTION+=("-u")
-	    O_OPTION+=("$REPO_TOP_URL")
 	    ;;
 	U) URL="$OPTARG"
 	    B_OPTION+=("-U")

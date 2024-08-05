@@ -16,7 +16,7 @@
 #
 # Each tool run with command line of the form:
 #
-#	tool [any -D, -t tagline, -T md2html.sh, -p tool, -u repo_top_url, -w site_url] [more_options] YYYY
+#	tool [any -D, -t tagline, -T md2html.sh, -p tool, -w site_url] [more_options] YYYY
 #
 # For example:
 #
@@ -26,7 +26,7 @@
 #
 #	bin/gen-year-index.sh -w https://www.ioccc.org YYYY -v 1
 #
-# Only the "-D -t, -T, -p, -u, -w" option set are passed to the tool command line.
+# Only the "-D -t, -T, -p, -w" option set are passed to the tool command line.
 # For all other special tool options, pass them as additional tool options (i.e., command line arguments
 # that follow the 1st command line argument) OR consider simply running the tool directly.
 #
@@ -111,7 +111,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.0.4 2024-07-28"
+export VERSION="1.0.5 2024-08-05"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -148,7 +148,7 @@ declare -ag TOOL_OPTION
 # usage
 #
 export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
-			[-t tagline] [-T md2html.sh] [-p tool] [-u repo_top_url] [-w site_url]
+			[-t tagline] [-T md2html.sh] [-p tool] [-w site_url]
 			tool [more_options]
 
 	-h		print help message and exit
@@ -171,16 +171,13 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
 
 	-p tool		run 'pandoc wrapper tool' (not pandoc path) during HTML phase number 21 (def: use $PANDOC_WRAPPER)
 
-	-u repo_top_url	Top level URL of target git repo (def: $REPO_TOP_URL)
-			NOTE: The '-u repo_top_url' is passed as leading options on tool command lines.
-
 	-w site_url	Base URL of the website (def: $SITE_URL)
 			NOTE: The '-w site_url' is passed as leading options on tool command lines.
 
 	tool		the tool to run over all entries
 	[more_options]	additional tool command line options to use before the YYYY/dir argument
 
-NOTE: Any '-t tagline', '-T md2html.sh', '-p tool', '-u repo_top_url', '-w site_url'
+NOTE: Any '-t tagline', '-T md2html.sh', '-p tool', '-w site_url'
       are passed to the 'tool' at the beginning of the command line, and
       before any optional 'more_options' and before the final YYYY/dir argument.
 
@@ -199,7 +196,7 @@ $NAME version: $VERSION"
 
 # parse command line
 #
-while getopts :hv:Vd:D:nNt:T:p:u:w: flag; do
+while getopts :hv:Vd:D:nNt:T:p:w: flag; do
   case "$flag" in
     h) echo "$USAGE" 1>&2
 	exit 2
@@ -255,10 +252,6 @@ while getopts :hv:Vd:D:nNt:T:p:u:w: flag; do
     p) PANDOC_WRAPPER="$OPTARG"
 	TOOL_OPTION+=("-p")
 	TOOL_OPTION+=("$PANDOC_WRAPPER")
-	;;
-    u) REPO_TOP_URL="$OPTARG"
-	TOOL_OPTION+=("-u")
-	TOOL_OPTION+=("$REPO_TOP_URL")
 	;;
     w) SITE_URL="$OPTARG"
 	TOOL_OPTION+=("-w")

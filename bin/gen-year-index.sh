@@ -85,7 +85,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.1.1 2024-07-28"
+export VERSION="1.1.2 2024-08-05"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -117,7 +117,7 @@ declare -ag TOOL_OPTION
 # set usage message
 #
 export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-n] [-N]
-			[-t tagline] [-T md2html.sh] [-u repo_top_url] [-w site_url]
+			[-t tagline] [-T md2html.sh] [-w site_url]
 			YYYY [more_options]
 
 	-h		print help message and exit
@@ -134,8 +134,6 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-n] [-N]
 	-t tagline	string to write about the tool that formed the markdown content (def: $TAGLINE)
 	-T md2html.sh	run 'markdown to html tool' to convert markdown into HTML (def: $MD2HTML_SH)
 
-	-u repo_top_url	Top level URL of target git repo (def: $REPO_TOP_URL)
-			NOTE: The '-u repo_top_url' is passed as leading options on tool command lines.
 	-w site_url	Base URL of the website (def: $SITE_URL)
 			NOTE: The '-w site_url' is passed as leading options on tool command lines.
 
@@ -162,7 +160,7 @@ export DO_NOT_PROCESS=
 
 # parse command line
 #
-while getopts :hv:Vd:D:nNt:T:u:w: flag; do
+while getopts :hv:Vd:D:nNt:T:w: flag; do
   case "$flag" in
     h) echo "$USAGE" 1>&2
 	exit 2
@@ -213,10 +211,6 @@ while getopts :hv:Vd:D:nNt:T:u:w: flag; do
     T) MD2HTML_SH="$OPTARG"
 	TOOL_OPTION+=("-T")
 	TOOL_OPTION+=("$MD2HTML_SH")
-	;;
-    u) REPO_TOP_URL="$OPTARG"
-	TOOL_OPTION+=("-u")
-	TOOL_OPTION+=("$REPO_TOP_URL")
 	;;
     w) SITE_URL="$OPTARG"
 	TOOL_OPTION+=("-w")

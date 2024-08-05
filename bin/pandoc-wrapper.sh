@@ -99,7 +99,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.7.1 2024-07-28"
+export VERSION="1.7.2 2024-08-05"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -143,7 +143,7 @@ export REPO_URL="$REPO_TOP_URL/blob/master"
 # set usage message
 #
 export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-n] [-N]
-			[-p pandoc_tool] [-u repo_top_url] [-e string ..] [-E exitcode]
+			[-p pandoc_tool] [-e string ..] [-E exitcode]
 			file.md output.html
 
 	-h		print help message and exit
@@ -156,8 +156,6 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-n] [-N]
 	-N		do not process file, just parse arguments and ignore the file (def: process the file)
 
 	-p pandoc_tool	path to the pandoc tool (not the wrapper) (def: $PANDOC_TOOL)
-
-	-u repo_top_url	Top level URL of target git repo (def: $REPO_TOP_URL)
 
 	-e string	output string, followed by newline, to stderr (def: do not)
 	-E exitcode	force exit with exitcode (def: exit based on success or failure of the action)
@@ -187,7 +185,7 @@ export DO_NOT_PROCESS=
 
 # parse command line
 #
-while getopts :hv:Vd:nNp:u:e:E: flag; do
+while getopts :hv:Vd:nNp:e:E: flag; do
   case "$flag" in
     h) echo "$USAGE" 1>&2
 	exit 2
@@ -204,10 +202,6 @@ while getopts :hv:Vd:nNp:u:e:E: flag; do
     N) DO_NOT_PROCESS="-N"
 	;;
     p) PANDOC_TOOL="$OPTARG"
-	;;
-    u) REPO_TOP_URL="$OPTARG"
-	# GitHub puts individual files under the "blob/master" sub-directory.
-	export REPO_URL="$REPO_TOP_URL/blob/master"
 	;;
     e) echo "$OPTARG" 1>&2
 	;;

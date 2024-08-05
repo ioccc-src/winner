@@ -84,7 +84,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.2.5 2024-07-28"
+export VERSION="1.2.6 2024-08-05"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -121,7 +121,7 @@ declare -ag TOOL_OPTION
 # usage
 #
 export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
-			[-t tagline] [-T md2html.sh] [-p tool] [-u repo_top_url] [-w site_url]
+			[-t tagline] [-T md2html.sh] [-p tool] [-w site_url]
 
 	-h		print help message and exit
 	-v level	set verbosity level (def level: 0)
@@ -142,13 +142,10 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
 
 	-p tool		run 'pandoc wrapper tool' (not pandoc path) during HTML phase number 21 (def: use $PANDOC_WRAPPER)
 
-	-u repo_top_url	Top level URL of target git repo (def: $REPO_TOP_URL)
-			NOTE: The '-u repo_top_url' is passed as leading options on tool command lines.
-
 	-w site_url	Base URL of the website (def: $SITE_URL)
 			NOTE: The '-w site_url' is passed as leading options on tool command lines.
 
-NOTE: Any '-D docroot/', '-t tagline', '-T md2html.sh', '-p tool', '-u repo_top_url', '-w site_url'
+NOTE: Any '-D docroot/', '-t tagline', '-T md2html.sh', '-p tool', '-w site_url'
       are passed to the 'tool' at the beginning of the command line, and
       before any optional 'more_options' and before the final YYYY/dir argument.
 
@@ -168,7 +165,7 @@ $NAME version: $VERSION"
 
 # parse command line
 #
-while getopts :hv:Vd:D:nNt:T:p:u:w: flag; do
+while getopts :hv:Vd:D:nNt:T:p:w: flag; do
   case "$flag" in
     h) echo "$USAGE" 1>&2
 	exit 2
@@ -222,10 +219,6 @@ while getopts :hv:Vd:D:nNt:T:p:u:w: flag; do
     p) PANDOC_WRAPPER="$OPTARG"
 	TOOL_OPTION+=("-p")
 	TOOL_OPTION+=("$PANDOC_WRAPPER")
-	;;
-    u) REPO_TOP_URL="$OPTARG"
-	# GitHub puts individual files under the "blob/master" sub-directory.
-	export REPO_URL="$REPO_TOP_URL/blob/master"
 	;;
     w) SITE_URL="$OPTARG"
 	;;
@@ -343,8 +336,6 @@ fi
 #
 TOOL_OPTION+=("-t")
 TOOL_OPTION+=("$TAGLINE")
-TOOL_OPTION+=("-u")
-TOOL_OPTION+=("$REPO_TOP_URL")
 TOOL_OPTION+=("-w")
 TOOL_OPTION+=("$SITE_URL")
 

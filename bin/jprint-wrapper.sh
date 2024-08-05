@@ -89,7 +89,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.0 2024-07-28"
+export VERSION="1.0.1 2024-08-05"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -138,7 +138,7 @@ fi <<< "$FIZZBIN_JSON"
 
 # set usage message
 #
-export USAGE="usage: $0 [-h] [-v level] [-V] [-n] [-N] [-u repo_top_url] [-j JSONPath.sh] [file.json]
+export USAGE="usage: $0 [-h] [-v level] [-V] [-n] [-N] [-j JSONPath.sh] [file.json]
 
 	-h		print help message and exit
 	-v level	set verbosity level (def level: 0)
@@ -146,8 +146,6 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-n] [-N] [-u repo_top_url] [-j JSO
 
 	-n		do nothing (same as -N) (def: do the action)
 	-N		do not process file, just parse arguments and ignore the file (def: process the file)
-
-	-u repo_top_url	Top level URL of target git repo (def: $REPO_TOP_URL)
 
 	-j JSONPath.sh	path to the JSONPath.sh tool (not the wrapper) (def: $JSONPATH_SH)
 
