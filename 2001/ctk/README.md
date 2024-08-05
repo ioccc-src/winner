@@ -4,8 +4,8 @@
     make
 ```
 
-There is an alternate version with vi(m) key movements. See [alternate
-code](#alternate code) below.
+There is an alternate version with vi(m) key movements. See [Alternate
+code](#alternate-code) below.
 
 
 ## To use:

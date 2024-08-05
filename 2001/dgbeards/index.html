@@ -409,7 +409,7 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <!-- BEFORE: 1st line of markdown file: 2001/dgbeards/README.md -->
 <h2 id="to-build">To build:</h2>
 <pre><code>    make</code></pre>
-<p>There is an alternate version based on the author’s remarks. See <a href="#alternate-code">alternate
+<p>There is an alternate version based on the author’s remarks. See <a href="#alternate-code">Alternate
 code</a> below for more details.</p>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
 <p>The current status of this entry is:</p>
@@ -560,11 +560,13 @@ this is not so.</p>
 <h4 id="q-what-about-the-compiler-warnings">Q: What about the compiler warnings?</h4>
 <p>A: When compiled with <code>gcc -Wall</code>, the compiler generated the following
 warnings:</p>
-<pre><code>    suggest parentheses around + or - in operand of &amp;
-    array subscript has type &#39;char&#39;
-    return type defaults to &#39;int&#39;
-    control reaches end of non-void function
-    value computed is not used</code></pre>
+<blockquote>
+<p>suggest parentheses around <code>+</code> or <code>-</code> in operand of <code>&amp;</code><br>
+array subscript has type ‘<code>char</code>’<br>
+return type defaults to ‘<code>int</code>’<br>
+control reaches end of non-void function<br>
+value computed is not used</p>
+</blockquote>
 <p>The <code>value computed is not used</code> warning happens because I use the <code>&amp;&amp;</code>
 operator and take advantage of short circuit evaluation instead of using
 an <code>if()</code> statement.</p>
@@ -578,7 +580,7 @@ eliminate them and that can’t be done given the size limit.</p>
 appropriate sportsmanship for a program of this genre and can think of
 no worse job than trying to find an elusive bug in an intentionally
 obfuscated program.</p>
-<p>[Judge’s note: This was followed by a description of the bug, and
+<p>[<strong>Judges’ note</strong>: This was followed by a description of the bug, and
 the comment:]</p>
 <p>Note, if this program wins, the author thinks it would be good to leave
 this information out of the remarks and encourage others to try and

@@ -28,13 +28,6 @@ comments for details and a workaround.
 
 There's also no way to escape meta characters.
 
-This is supposed to happen.  As is written in the
-[The Jargon File](http://catb.org/jargon/html/F/feature.html):
-
-```
-    That's not a bug, that's a feature.
-```
-
 
 ## Try:
 

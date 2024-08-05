@@ -101,7 +101,7 @@ versions of the program, all valid C!
 ## Author's remarks:
 
 [Punch cards](https://en.wikipedia.org/wiki/Punched_card), or Hollerith cards,
-were becoming obsolete just as C was becoming more popular\*; this is rather
+were becoming obsolete just as C was becoming more popular[^1]; this is rather
 unfortunate, because C has an advantage over many other languages when it comes
 to punch cards - C programs can be written to be "drop proof".
 
@@ -117,7 +117,7 @@ Consider the following C program:
 This program will compile and run no matter what order the
 lines are in.  If you punch it on cards (one line of code per
 card, naturally) and drop them, you don't need to put them in
-any particular order\*\*; it will always produce `ABC` as output.
+any particular order[^2]; it will always produce `ABC` as output.
 
 You can also use global variables:
 
@@ -224,11 +224,9 @@ comment), there are technically `28!` different programs, or
 `304,888,344,611,713,860,501,504,000,000` different versions,
 all legal C.
 
-```
-    * except in Florida voting machines
+[^1]: except in Florida voting machines
 
-    ** all cards must be face down, nine-edge first, of course.
-```
+[^2]: all cards must be face down, nine-edge first, of course.
 
 
 <!--

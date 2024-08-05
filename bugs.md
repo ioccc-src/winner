@@ -2248,25 +2248,16 @@ elves of Imladris :-(
 </div>
 
 ### STATUS: INABIAF - please **DO NOT** fix
-### STATUS: doesn't work with some platforms - please help us fix it
 ### Source code: [2001/bellard/bellard.c](%%REPO_URL%%/2001/bellard/bellard.c)
 ### Information: [2001/bellard/index.html](2001/bellard/index.html)
 
-The two statuses might seem contradictory but that is a complicated question.
-The author stated that it only works with i386 linux so on the one hand the fact
-it doesn't work in modern systems is considered a feature and not a bug. But on
-the other hand it would be nice if there was an alternate version which worked
-for modern systems. This does seem quite unlikely but some fixes, described
-next, were made.
+The author stated that it only works with i386 linux so the fact it doesn't work
+in modern systems is considered a feature and not a bug.
 
 [Cody Boone Ferguson](authors.html#Cody_Boone_Ferguson) fixed an initial
 segfault (trying to open the file) and he also fixed the [supplementary program
 bellard.otccex.c](%%REPO_URL%%/2001/bellard/bellard.otccex.c) but this still crashes in
 systems not i386 linux which is what the author stated.
-
-On the other hand if you do have a fix for 64-bit systems you're welcome to
-provide it as an alternate version. If by chance you have a fix so that it works
-for both 32-bit and 64-bit systems that is also okay.
 
 The author said that they compiled it with [gcc version
 2.95.2](https://ftp.gnu.org/gnu/gcc/gcc-2.95.2/gcc-everything-2.95.2.tar.gz). We
@@ -2286,15 +2277,11 @@ modification by Yusuke noted in the [thanks](thanks-for-help.html)
 file) but it appears this *also* requires i386 linux; indeed looking at the code
 it hard codes paths that are i386 specific to linux.
 
-Another point of interest is that the author provided de-obfuscated versions
+Another point of interest is that the author provided unobfuscated versions
 which might be of value to look at.
 
-If you have a fix for 64-bit systems this is welcome as an alternate version, as
-stated above. You might like to look at the otccelf version but note that it (at
-least in 64-bit linux and macOS) has compilation errors.
 
-
-### Aside: why were there changes made if INABIAF ?
+#### Aside: why were there changes made if INABIAF ?
 
 This is a good question. The reason is we believe it better to fix some obvious
 problems: there were some bugs that would very possibly prevent it from working
@@ -2306,6 +2293,7 @@ the compiler won't work there.
 Also the supplementary program, which did not work at all, was fixed (by Cody)
 and it can be run by itself for fun in modern systems, which was not possible
 before the fixes there.
+
 
 <div id="2001_cheong">
 ## 2001/cheong
@@ -2395,9 +2383,14 @@ provide enough args.
 </div>
 
 
-### STATUS: missing files - please provide them
+### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2001/rosten/rosten.c](%%REPO_URL%%/2001/rosten/rosten.c)
 ### Information: [2001/rosten/index.html](2001/rosten/index.html)
+
+See list of bugs [here](2001/rosten/index.html#bugs).
+
+
+### STATUS: missing files - please provide them
 
 The author stated that there is a cat man page for this program in case one
 wanted to install it as a tool but this is missing.
@@ -2416,6 +2409,8 @@ The glob pattern must match the whole string. See the author's comments for
 details and a workaround.
 
 There's also no way to escape meta characters.
+
+See also the author's list of bugs [here](2001/schweikh/index.html#bugs).
 
 
 <div id="2001_westley">

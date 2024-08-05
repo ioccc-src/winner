@@ -411,7 +411,7 @@ Location: <a href="../../location.html#GB">GB</a> - <em>United Kingdom of Great 
 <pre><code>    make</code></pre>
 <p>The programs that this program is supposed to act on,
 <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/anonymous/anonymous.ten.c">anonymous.ten.c</a> and <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/anonymous/anonymous.bed.c">anonymous.bed.c</a>,
-compiled with <code>make</code>, MUST be compiled as 32-bit ELF binaries. In the case that
+compiled with <code>make</code>, <strong>MUST</strong> be compiled as <strong>32-bit ELF binaries</strong>. In the case that
 this fails these programs will be compiled as 64-bit binaries as alternate code,
 <code>anonymous.ten.alt</code> and <code>anonymous.bed.alt</code>, ELF or otherwise. However trying to
 use the entry on these files will fail. See <a href="#alternate-code">Alternate code</a>
@@ -429,7 +429,7 @@ whatever your system will compile them as).</p>
 <pre><code>    ./try.sh
 
     ./anonymous anonymous.bed # if able to compile as a 32-bit (-m32) ELF binary</code></pre>
-<p>NOTE: if the 32-bit version cannot be compiled the script will at least compile
+<p><strong>NOTE</strong>: if the 32-bit version cannot be compiled the script will at least compile
 <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/anonymous/anonymous.ten.c">anonymous.ten</a> as a 64-bit program (or whatever your system is
 set to) and run it directly.</p>
 <p>What happens if the x86 program has already been modified by this program? The
@@ -537,7 +537,7 @@ local variables which shadow global variables: so one modifies the
 global state, and the other doesn’t.</p>
 <p>There is also quite a nice trick where I wave a magic wand, and a chunk of code
 which should only be run when the program is run for the first time (setting the
-<a href="https://en.wikipedia.org/wiki/Program_counter">PC / IP</a> to point at <code>main()</code>
+<a href="https://en.wikipedia.org/wiki/Program_counter">PC/IP</a> to point at <code>main()</code>
 etc.) gets turned into a <del>frog</del>string. The C compiler sees a string by
 itself in the code, thinks “yup, that’s a valid C expression”, and quietly moves
 on to the next line of code.</p>
@@ -564,7 +564,7 @@ new set of switches, and the call to <code>execv(3)</code> asks for the newly co
 program to be executed. I would point out that almost every other entry to this
 competition also require a C compiler (well, the published winning entries at any rate,
 and I recognize that a few don’t). There is little real difference between this
-program and one like last year’s entry <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2000/dhyang/dhyang.c">dhyang</a>; both are
+program and one like last year’s entry <a href="../../2000/dhyang/index.html">dhyang</a>; both are
 just C programs that generate C code as their output.</p>
 <p>Enjoy and thanks!</p>
 <!--

@@ -461,7 +461,7 @@ blank lines) there are <code>28!</code> or <code>304,888,344,611,713,860,501,504
 versions of the program, all valid C!</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <p><a href="https://en.wikipedia.org/wiki/Punched_card">Punch cards</a>, or Hollerith cards,
-were becoming obsolete just as C was becoming more popular*; this is rather
+were becoming obsolete just as C was becoming more popular<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>; this is rather
 unfortunate, because C has an advantage over many other languages when it comes
 to punch cards - C programs can be written to be “drop proof”.</p>
 <p>Consider the following C program:</p>
@@ -472,7 +472,7 @@ to punch cards - C programs can be written to be “drop proof”.</p>
 <p>This program will compile and run no matter what order the
 lines are in. If you punch it on cards (one line of code per
 card, naturally) and drop them, you don’t need to put them in
-any particular order**; it will always produce <code>ABC</code> as output.</p>
+any particular order<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>; it will always produce <code>ABC</code> as output.</p>
 <p>You can also use global variables:</p>
 <pre><code>    char *greet = &quot;Hello, world!&quot;;
     char *greet; main(){puts(greet);}</code></pre>
@@ -553,9 +553,6 @@ actually shorter than the trigraph version of <code>a??(b??)</code>.</p>
 comment), there are technically <code>28!</code> different programs, or
 <code>304,888,344,611,713,860,501,504,000,000</code> different versions,
 all legal C.</p>
-<pre><code>    * except in Florida voting machines
-
-    ** all cards must be face down, nine-edge first, of course.</code></pre>
 <!--
 
     Copyright © 1984-2024 by Landon Curt Noll. All Rights Reserved.
@@ -570,6 +567,14 @@ all legal C.</p>
 
 -->
 <!-- AFTER: last line of markdown file: 2001/westley/README.md -->
+<hr style="width:10%;text-align:left;margin-left:0">
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<h5>Footnotes</h5>
+<ol>
+<li id="fn1"><p>except in Florida voting machines<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>all cards must be face down, nine-edge first, of course.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
 
 <!-- END: this line ends content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 <!-- START: this line starts content for HTML phase 22 by: bin/output-index-inventory.sh via bin/md2html.sh -->

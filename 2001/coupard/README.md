@@ -11,6 +11,12 @@
     ./coupard
 ```
 
+**NOTE**: the author notes that you might want to convert the sound formats. For
+this you can use `SoX`. If you do not have this installed then see the
+FAQ on "[using entries that require sound](../../faq.html#sox)"
+for help.
+
+
 
 ## Try:
 

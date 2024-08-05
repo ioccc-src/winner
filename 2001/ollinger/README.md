@@ -64,36 +64,34 @@ Q: Are there types of entries that are submitted so frequently that the
 A: Yes, there are types of entries that show up over and over again.
    The guidelines say:
 
-```
-    We tend to dislike programs that:
-    are similar to previous winning entries
-
-    We like variety. However too often we see (please look at the winning
-    examples given to be aware of the level of the competition):
-
-    (snip)
-
-    generating small primes (below is the list of all prime related entries)
-
-            1985/august
-            1988/applin
-            1994/weisberg
-            1995/makarios
-            1996/dalbec
-            2000/bellard
-
-    As you can see, just a list of primes (let alone small primes)
-    does not cut it anymore.
-
-    (snip)
-
-    entries that use some complex state machine/table to print something
-
-              1988/isaak
-              1988/phillipps
-
-    Unbeaten for 12 years and counting...
-```
+> We tend to dislike programs that:<br>
+> &nbsp;&nbsp;&nbsp;&nbsp;are similar to previous winning entries<br>
+>
+> We like variety. However too often we see (please look at the winning examples
+given to be aware of the level of the competition):
+>
+>    (snip)<br>
+>
+> generating small primes (below is the list of all prime related entries)<br>
+>
+> 1985/august<br>
+> 1988/applin<br>
+> 1994/weisberg<br>
+> 1995/makarios<br>
+> 1996/dalbec<br>
+> 2000/bellard<br>
+>
+>    As you can see, just a list of primes (let alone small primes) does not cut
+it anymore.
+>
+>    (snip)<br>
+>
+> entries that use some complex state machine/table to print something
+>
+> 1988/isaak<br>
+> 1988/phillipps
+>
+> Unbeaten for 12 years and counting...
 
 I think this is enough motivation for trying to submit a program which uses
 some complex state machine/table to generate small primes and print them.
@@ -114,7 +112,9 @@ guarantee a constant time.
 
 The main loop simply iterates this transition function on each cell.
 
-"The rest is silence" (Hamlet, V.2)
+> "The rest is silence"<br>
+>
+> (Hamlet, V.2)
 
 Enjoy!
 
