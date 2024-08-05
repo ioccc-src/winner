@@ -164,8 +164,8 @@ expected, and one more I is appended to the row.) Let's call it
 
 Some explanations:
 - The tape alphabet is always O and I.
-- The states can be anything starting with "st". "start" and
-"stop" are the start and stop states, respectively.
+- The states can be anything starting with "`st`". "`start`" and
+"`stop`" are the start and stop states, respectively.
 - To define a state, use two lines: one for each letter on the
 tape. You may omit one of the lines if the Turing machine will
 never enter the state reading that letter. (In the example, the
@@ -220,13 +220,13 @@ Tape:
             *
 ```
 
-and the return code will be 1. As you can see, the Turing machine
+and the return code will be `1`. As you can see, the Turing machine
 moved over the `O`s, but when it arrived at the `I` (still in state
 start), the error occurred.
 
 Note that other kinds of errors can cause compilation to fail.
 If this happens, the build script will write the error message of
-gcc into a file called `error` and then exit.
+`gcc` into a file called `error` and then exit.
 
 
 ### What the build script does
@@ -238,7 +238,7 @@ beginning of the program; this is where the animation takes place
 (except in the first and last few steps).
 
 However, there's a technical problem to overcome: Some compilers
-(including gcc) insert a lot of white space during the
+(including `gcc`) insert a lot of white space during the
 preprocessing. This is bad for two reasons. First, the animated
 picture won't look right. And second, after some time, the file
 will grow too big for your hard disk. (The amount of white space
@@ -246,12 +246,12 @@ grows exponentially.) So after each preprocessing, the first thing
 the build script does is remove all the unnecessary white space
 using `sed`.
 
-(gcc would even insert `#line` directives if I didn't suppress
+(`gcc` would even insert `#line` directives if I didn't suppress
 them with the `-P` option.)
 
 ### Some more details
 
-- The arguments passed to the build script are passed on to gcc
+- The arguments passed to the build script are passed on to `gcc`
 with a `-D` before. I had a slight technical problem doing this
 (especially with the spaces that can appear within the tape
 argument). That made the build script a bit longer.
@@ -266,8 +266,8 @@ lines of code.)
 `herrmann1-2.c` are generated.
 
 - Also, a file `error` is generated. This file is removed after
-the compilation, except if gcc produced an error; then it contains
-the error message. (I can't let gcc output all its messages
+the compilation, except if `gcc` produced an error; then it contains
+the error message. (I can't let `gcc` output all its messages
 directly, because the warnings would clobber the animation. I
 could have made the compile script output the error file in case
 of an error, but I didn't want to make it yet longer.)
@@ -318,9 +318,10 @@ to use many variables more than once.
 
 - I couldn't refrain from doing a little bit of nasty stuff like
 
-                #define a 0&0
-                #if !a
-
+``` <!---c-->
+    #define a 0&0
+    #if !a
+```
     Of course, it is a bit more subtle, and even useful.
 
 - The layout of the source code..., well, let's call it the
@@ -330,9 +331,9 @@ indenting and modern art. There are even some comments...
 
 ### Compatibility
 
-- It works with many versions of gcc. I tested it with versions
+- It works with many versions of `gcc`. I tested it with versions
 2.7.2.1, 2.8.1, 2.95.2, and ecgs-2.91.66. However, an old version
-of gcc produced "internal compiler errors" (obviously not my
+of `gcc` produced "internal compiler errors" (obviously not my
 fault).
 
 - The only warnings I get tell me that I'm undefining `__FILE__` and
@@ -356,21 +357,25 @@ script, so that one does not have to choose "preprocess" from
 the menu over and over again. I leave this as an exercise to the
 experienced Mac programmer.)
 
-- In the build script, I passed the `-P` option to gcc to suppress
+- In the build script, I passed the `-P` option to `gcc` to suppress
 the insertion of `#line` directives. If your compiler doesn't
 support this option (and does insert `#line` directives), you
 should change the call to `sed` to remove them, too: Add
 
-            -e "/^#line/ d"
+``` <!---sed-->
+    -e "/^#line/ d"
+```
 
-    to the sed parameters. Or, if your `#line` directives look like
+    to the `sed` parameters. Or, if your `#line` directives look like
 
-            # 15 "filename"
-
+``` <!---c-->
+    # 15 "filename"
+```
     add
 
-            -e "/^# [0-9]/ d"
-
+``` <!---sed-->
+    -e "/^# [0-9]/ d"
+```
     instead.
 
 - First, I had `-ansi -pedantic` turned on, but on some systems,

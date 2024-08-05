@@ -511,8 +511,8 @@ expected, and one more I is appended to the row.) Let’s call it
     #define st2_O   I, left, stop</code></pre>
 <p>Some explanations:
 - The tape alphabet is always O and I.
-- The states can be anything starting with “st”. “start” and
-“stop” are the start and stop states, respectively.
+- The states can be anything starting with “<code>st</code>”. “<code>start</code>” and
+“<code>stop</code>” are the start and stop states, respectively.
 - To define a state, use two lines: one for each letter on the
 tape. You may omit one of the lines if the Turing machine will
 never enter the state reading that letter. (In the example, the
@@ -541,12 +541,12 @@ line</p>
 <pre><code>            *
     ..OOOOOOOOIIIIOO..
             *</code></pre>
-<p>and the return code will be 1. As you can see, the Turing machine
+<p>and the return code will be <code>1</code>. As you can see, the Turing machine
 moved over the <code>O</code>s, but when it arrived at the <code>I</code> (still in state
 start), the error occurred.</p>
 <p>Note that other kinds of errors can cause compilation to fail.
 If this happens, the build script will write the error message of
-gcc into a file called <code>error</code> and then exit.</p>
+<code>gcc</code> into a file called <code>error</code> and then exit.</p>
 <h3 id="what-the-build-script-does">What the build script does</h3>
 <p>In principle, the build script simply runs the preprocessor over
 and over again, until nothing changes anymore; then, the program
@@ -554,18 +554,18 @@ is compiled. After each preprocessing step, the script outputs the
 beginning of the program; this is where the animation takes place
 (except in the first and last few steps).</p>
 <p>However, there’s a technical problem to overcome: Some compilers
-(including gcc) insert a lot of white space during the
+(including <code>gcc</code>) insert a lot of white space during the
 preprocessing. This is bad for two reasons. First, the animated
 picture won’t look right. And second, after some time, the file
 will grow too big for your hard disk. (The amount of white space
 grows exponentially.) So after each preprocessing, the first thing
 the build script does is remove all the unnecessary white space
 using <code>sed</code>.</p>
-<p>(gcc would even insert <code>#line</code> directives if I didn’t suppress
+<p>(<code>gcc</code> would even insert <code>#line</code> directives if I didn’t suppress
 them with the <code>-P</code> option.)</p>
 <h3 id="some-more-details">Some more details</h3>
 <ul>
-<li><p>The arguments passed to the build script are passed on to gcc
+<li><p>The arguments passed to the build script are passed on to <code>gcc</code>
 with a <code>-D</code> before. I had a slight technical problem doing this
 (especially with the spaces that can appear within the tape
 argument). That made the build script a bit longer.</p></li>
@@ -577,8 +577,8 @@ lines of code.)</p></li>
 <li><p>During the preprocessing, intermediate files <code>herrmann1-1.c</code> and
 <code>herrmann1-2.c</code> are generated.</p></li>
 <li><p>Also, a file <code>error</code> is generated. This file is removed after
-the compilation, except if gcc produced an error; then it contains
-the error message. (I can’t let gcc output all its messages
+the compilation, except if <code>gcc</code> produced an error; then it contains
+the error message. (I can’t let <code>gcc</code> output all its messages
 directly, because the warnings would clobber the animation. I
 could have made the compile script output the error file in case
 of an error, but I didn’t want to make it yet longer.)</p></li>
@@ -620,19 +620,21 @@ produced, etc. If you want a real challenge, try to understand
 what the line <code>w j k(P ## x)</code> does.</p></li>
 <li><p>Due to the fact that our alphabet has only 53 ;-) letters, I had
 to use many variables more than once.</p></li>
-<li><p>I couldn’t refrain from doing a little bit of nasty stuff like</p>
-<pre><code>      #define a 0&amp;0
-      #if !a</code></pre>
-<p>Of course, it is a bit more subtle, and even useful.</p></li>
-<li><p>The layout of the source code…, well, let’s call it the
+<li><p>I couldn’t refrain from doing a little bit of nasty stuff like</p></li>
+</ul>
+<pre><code>    #define a 0&amp;0
+    #if !a</code></pre>
+<p>Of course, it is a bit more subtle, and even useful.</p>
+<ul>
+<li>The layout of the source code…, well, let’s call it the
 “modern art of programming” - a mixture of program-like
-indenting and modern art. There are even some comments…</p></li>
+indenting and modern art. There are even some comments…</li>
 </ul>
 <h3 id="compatibility">Compatibility</h3>
 <ul>
-<li><p>It works with many versions of gcc. I tested it with versions
+<li><p>It works with many versions of <code>gcc</code>. I tested it with versions
 2.7.2.1, 2.8.1, 2.95.2, and ecgs-2.91.66. However, an old version
-of gcc produced “internal compiler errors” (obviously not my
+of <code>gcc</code> produced “internal compiler errors” (obviously not my
 fault).</p></li>
 <li><p>The only warnings I get tell me that I’m undefining <code>__FILE__</code> and
 that preprocessing directives are not recognized within macro
@@ -652,16 +654,18 @@ to write a kind of script which does the equivalent to the build
 script, so that one does not have to choose “preprocess” from
 the menu over and over again. I leave this as an exercise to the
 experienced Mac programmer.)</p></li>
-<li><p>In the build script, I passed the <code>-P</code> option to gcc to suppress
+<li><p>In the build script, I passed the <code>-P</code> option to <code>gcc</code> to suppress
 the insertion of <code>#line</code> directives. If your compiler doesn’t
 support this option (and does insert <code>#line</code> directives), you
-should change the call to <code>sed</code> to remove them, too: Add</p>
-<pre><code>  -e &quot;/^#line/ d&quot;</code></pre>
-<p>to the sed parameters. Or, if your <code>#line</code> directives look like</p>
-<pre><code>  # 15 &quot;filename&quot;</code></pre>
+should change the call to <code>sed</code> to remove them, too: Add</p></li>
+</ul>
+<pre><code>    -e &quot;/^#line/ d&quot;</code></pre>
+<p>to the <code>sed</code> parameters. Or, if your <code>#line</code> directives look like</p>
+<pre><code>    # 15 &quot;filename&quot;</code></pre>
 <p>add</p>
-<pre><code>  -e &quot;/^# [0-9]/ d&quot;</code></pre>
-<p>instead.</p></li>
+<pre><code>    -e &quot;/^# [0-9]/ d&quot;</code></pre>
+<p>instead.</p>
+<ul>
 <li><p>First, I had <code>-ansi -pedantic</code> turned on, but on some systems,
 the <code>stdio.h</code> is not compatible to that, so I turned it back off.</p></li>
 <li><p>The build script probably needs a bash to run in. So perhaps you

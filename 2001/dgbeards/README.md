@@ -4,7 +4,7 @@
     make
 ```
 
-There is an alternate version based on the author's remarks. See [alternate
+There is an alternate version based on the author's remarks. See [Alternate
 code](#alternate-code) below for more details.
 
 
@@ -221,13 +221,11 @@ this is not so.
 A: When compiled with `gcc -Wall`, the compiler generated the following
 warnings:
 
-```
-    suggest parentheses around + or - in operand of &
-    array subscript has type 'char'
-    return type defaults to 'int'
-    control reaches end of non-void function
-    value computed is not used
-```
+> suggest parentheses around `+` or `-` in operand of `&`<br>
+> array subscript has type '`char`'<br>
+> return type defaults to '`int`'<br>
+> control reaches end of non-void function<br>
+> value computed is not used
 
 The `value computed is not used` warning happens because I use the `&&`
 operator and take advantage of short circuit evaluation instead of using
@@ -248,7 +246,7 @@ appropriate sportsmanship for a program of this genre and can think of
 no worse job than trying to find an elusive bug in an intentionally
 obfuscated program.
 
-[Judge's note:  This was followed by a description of the bug, and
+[**Judges' note**: This was followed by a description of the bug, and
 the comment:]
 
 Note, if this program wins, the author thinks it would be good to leave

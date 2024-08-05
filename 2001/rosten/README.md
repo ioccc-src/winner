@@ -4,7 +4,7 @@
     make
 ```
 
-NOTE: this entry requires the `X11/Xlib.h` header file and the X11 library to
+**NOTE**: this entry requires the `X11/Xlib.h` header file and the X11 library to
 compile.  For more information see the
 FAQ on "[X11](../../faq.html#X11)".
 
@@ -13,7 +13,8 @@ FAQ on "[X11](../../faq.html#X11)".
 
 The current status of this entry is:
 
-> **STATUS: missing files - please provide them**
+> **STATUS: INABIAF - please DO NOT fix**<br>
+> **STATUS: missing files - please provide them**<br>
 
 For more detailed information see [2001/rosten in bugs.html](../../bugs.html#2001_rosten).
 
@@ -24,10 +25,10 @@ For more detailed information see [2001/rosten in bugs.html](../../bugs.html#200
     ./rosten [number]
 ```
 
-WARNING: this will mess with your mouse and can make it hard to quit the
+**WARNING**: this will mess with your mouse and can make it hard to quit the
 program.  Use at your own risk.
 
-NOTE: number is floating point.
+**NOTE**: number is floating point.
 
 
 ## Try:
@@ -108,7 +109,9 @@ like this:
     greasymouse.c:58: This program is rubbish. I'm not going to link it.
 ```
 
-The code is best viewed with [tab stops](https://en.wikipedia.org/wiki/Tab_stop) every 8 spaces.
+The code is best viewed with [tab stops](https://en.wikipedia.org/wiki/Tab_stop)
+every 8 spaces. If you use `vi(m)` see the
+FAQ on "[tab stops](../../faq.html#tabstops)".
 
 
 ### BUGS

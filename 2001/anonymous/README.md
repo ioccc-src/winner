@@ -6,7 +6,7 @@
 
 The programs that this program is supposed to act on,
 [anonymous.ten.c](%%REPO_URL%%/2001/anonymous/anonymous.ten.c) and [anonymous.bed.c](%%REPO_URL%%/2001/anonymous/anonymous.bed.c),
-compiled with `make`, MUST be compiled as 32-bit ELF binaries. In the case that
+compiled with `make`, **MUST** be compiled as **32-bit ELF binaries**. In the case that
 this fails these programs will be compiled as 64-bit binaries as alternate code,
 `anonymous.ten.alt` and `anonymous.bed.alt`, ELF or otherwise. However trying to
 use the entry on these files will fail. See [Alternate code](#alternate-code)
@@ -38,7 +38,7 @@ For more detailed information see [2001/anonymous in bugs.html](../../bugs.html#
     ./anonymous anonymous.bed # if able to compile as a 32-bit (-m32) ELF binary
 ```
 
-NOTE: if the 32-bit version cannot be compiled the script will at least compile
+**NOTE**: if the 32-bit version cannot be compiled the script will at least compile
 [anonymous.ten](%%REPO_URL%%/2001/anonymous/anonymous.ten.c) as a 64-bit program (or whatever your system is
 set to) and run it directly.
 
@@ -196,7 +196,7 @@ global state, and the other doesn't.
 
 There is also quite a nice trick where I wave a magic wand, and a chunk of code
 which should only be run when the program is run for the first time (setting the
-[PC / IP](https://en.wikipedia.org/wiki/Program_counter) to point at `main()`
+[PC/IP](https://en.wikipedia.org/wiki/Program_counter) to point at `main()`
 etc.) gets turned into a <del>frog</del>string.  The C compiler sees a string by
 itself in the code, thinks "yup, that's a valid C expression", and quietly moves
 on to the next line of code.
@@ -231,7 +231,7 @@ new set of switches, and the call to `execv(3)` asks for the newly compiled
 program to be executed.  I would point out that almost every other entry to this
 competition also require a C compiler (well, the published winning entries at any rate,
 and I recognize that a few don't).  There is little real difference between this
-program and one like last year's entry [dhyang](%%REPO_URL%%/2000/dhyang/dhyang.c); both are
+program and one like last year's entry [dhyang](../../2000/dhyang/index.html); both are
 just C programs that generate C code as their output.
 
 Enjoy and thanks!

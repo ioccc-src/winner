@@ -5,7 +5,7 @@
 ```
 
 There is another version which lets you use the arrow keys rather than the more
-awkward `,` and `.` keys. See [alternate code](#alternate-code) below.
+awkward `,` and `.` keys. See [Alternate code](#alternate-code) below.
 
 
 ### Bugs and (Mis)features:
@@ -25,7 +25,7 @@ For more detailed information see [2001/kev in bugs.html](../../bugs.html#2001_k
     ./kev hostname # in another terminal
 ```
 
-NOTE: each player's paddle is at the bottom and the opponent at the top.
+**NOTE**: each player's paddle is at the bottom and the opponent at the top.
 
 
 ## Try:

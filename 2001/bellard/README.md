@@ -10,7 +10,6 @@
 The current status of this entry is:
 
 > **STATUS: INABIAF - please DO NOT fix**<br>
-> **STATUS: doesn't work with some platforms - please help us fix it**
 
 For more detailed information see [2001/bellard in bugs.html](../../bugs.html#2001_bellard).
 
