@@ -17,7 +17,7 @@ There is an alternate version that is unobfuscated, provided by the author in
 Then use your web browser to visit `http://localhost:8008/`. When you're
 finished make sure to kill `hibachi`.
 
-NOTE: you must be in the `build` directory when running `hibachi-start.sh` for
+**NOTE**: you must be in the `build` directory when running `hibachi-start.sh` for
 this to work right.
 
 

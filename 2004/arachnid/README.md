@@ -4,9 +4,9 @@
     make
 ```
 
-There is an alt version for rogue players, vi(m) users and Dvorak typist (i.e.
-those who need `hljk` for moving left, right, down and up). See [alternate
-code](#alternate-code) below.
+There is an alternate version for rogue players, vi(m) users and Dvorak typist
+(i.e.  those who need `hljk` for moving left, right, down and up). See
+[Alternate code](#alternate-code) below.
 
 
 ## To use:
