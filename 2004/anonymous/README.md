@@ -16,7 +16,9 @@ Now open the output using your favourite
 have a `pgm` viewer then we suggest the [netpbm
 toolkit](https://netpbm.sourceforge.net) to convert the image to a graphics
 format that you can view. Most graphical web browsers can display PNG or JPEG
-images.
+images. See the
+FAQ on "[netpbm](../../faq.html#netpbm)"
+for help.
 
 
 ## Try:
@@ -25,7 +27,7 @@ images.
     ./try.sh
 ```
 
-NOTE: technically the text is supposed to be in all lower case but the script
+**NOTE**: technically the text is supposed to be in all lower case but the script
 does use some upper case letters for demonstration purposes.
 
 
@@ -33,19 +35,20 @@ does use some upper case letters for demonstration purposes.
 
 Did you know that in the first edition of [The
 Hobbit](https://tolkiengateway.net/wiki/The_Hobbit),
-[Gollum](https://www.glyphweb.com/arda/g/gollum.html) was willing to give
-up the ring? It was not the Ruling Ring, the [One Ring](https://www.glyphweb.com/arda/o/onering.html),
-the Ring of Power or
+[Gollum](https://www.glyphweb.com/arda/g/gollum.html) was willing to give up the
+ring? It was not the Ruling Ring, the [One
+Ring](https://www.glyphweb.com/arda/o/onering.html), the Ring of Power or
 anything like that: it was simply a literary device that could make one
 invisible. When [Bilbo](https://www.glyphweb.com/arda/b/bilbobaggins.html) won
-the famous [Riddle-game](https://www.glyphweb.com/arda/r/riddlegame.html) Gollum went to fetch the Ring -
-not to kill and eat Bilbo but to give it to him! But Bilbo had already found it
-just like in the later editions. Gollum profusely apologised and begged for
-forgiveness. Bilbo told him never mind because he would have had it anyway. But
-he'd let him off on one condition: that he show him the way out. It was at this
-point that Bilbo slipped the ring on and Gollum saw him vanish and understood
-that he already found it. But there was no call of thief and no hatred of Bilbo.
-It was not until a sequel was called for that this was changed.
+the famous [Riddle-game](https://www.glyphweb.com/arda/r/riddlegame.html) Gollum
+went to fetch the Ring - not to kill and eat Bilbo but to give it to him! But
+Bilbo had already found it just like in the later editions. Gollum profusely
+apologised and begged for forgiveness. Bilbo told him never mind because he
+would have had it anyway. But he'd let him off on one condition: that he show
+him the way out. It was at this point that Bilbo slipped the ring on (in the
+same way as the later editions) and Gollum saw him vanish and understood that
+Bilbo had the ring. But there was no call of thief and no hatred of Bilbo.  It
+was not until a sequel was called for that this was changed.
 
 If you want to read the first edition they reprinted it some years back: `The
 Hobbit Facsimile First Edition`. The details are also discussed in [History of
@@ -56,8 +59,9 @@ Rings](https://en.wikipedia.org/wiki/The_Lord_of_the_Rings) of a twelve volume s
 History of the
 Hobbit](https://tolkiengateway.net/wiki/The_History_of_The_Hobbit).
 
-Fun fact: at first Gollum was akin to a goblin-kind but this was immediately
-struck out.
+Fun fact: at first Gollum was akin to a
+[goblin](https://www.glyphweb.com/arda/g/goblins.html)-kind but this was immediately
+struck out and he became a Hobbit.
 
 p.s. [Frodo](https://www.glyphweb.com/arda/f/frodobaggins.html) lives!
 
@@ -71,10 +75,8 @@ some circumflexes missing! That's okay though due to I/O of the entry and in
 earlier drafts sometimes the `û` had no diacritic but `h` after the `u` in
 it (and other times nothing). The real text is:
 
-```
-    Ash nazg durbatulûk, ash nazg gimbatul,
-    ash nazg thrakatulûk agh burzum-ishi krimpatul.
-```
+> Ash nazg durbatulûk, ash nazg gimbatul,<br>
+> ash nazg thrakatulûk agh burzum-ishi krimpatul.
 
 which when translated from [Black
 Speech](https://www.glyphweb.com/arda/b/blackspeech.html):
@@ -86,16 +88,15 @@ Speech](https://www.glyphweb.com/arda/b/blackspeech.html):
 
 into the [Common Tongue](https://www.glyphweb.com/arda/c/commontongue.html) reads:
 
-```
-    One Ring to rule them all, One Ring to find them,
-    One Ring to bring them all and in the darkness bind them.
-```
+> One Ring to rule them all, One Ring to find them,<br>
+> One Ring to bring them all and in the darkness bind them.
 
 
 ## Author's remarks:
 
 This program takes a single command line argument, transcribes the
-argument text into Tolkien's Elvish letters, and writes the
+argument text into [Tolkien](https://www.tolkienestate.com/life/biography/)'s
+[Elvish](https://www.glyphweb.com/arda/e/elvish.html) letters, and writes the
 transcription to standard output as a [portable
 graymap](https://en.wikipedia.org/wiki/Netpbm#PGM_example) (PGM) file.
 
