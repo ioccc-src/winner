@@ -409,34 +409,76 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <!-- BEFORE: 1st line of markdown file: 2004/burley/README.md -->
 <h2 id="to-build">To build:</h2>
 <pre><code>    make</code></pre>
-<p>NOTE: We FORCE the use of -O0 even if someone overrides it because this entry
+<p><strong>NOTE</strong>: We FORCE the use of <code>-O0</code> even if someone overrides it because this entry
 will not work with it enabled.</p>
 <h2 id="to-use">To use:</h2>
 <pre><code>    ./burley</code></pre>
-<p>NOTE: you need to input a number first. See judges’ remarks below for
+<p><strong>NOTE</strong>: you need to input a number first. See judges’ remarks below for
 information on how to play.</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>This is a <a href="https://en.wikipedia.org/wiki/Draw_poker">draw poker</a> program. You
-start with $100. Input alternates between your bet and which cards to keep.
-Example:</p>
-<pre><code>    5           &lt;== you enter a bet of $5 (defaults to $1)
-    J Q J 9 5   &lt;== your hand is Jack of Clubs, Queen of Hearts,
-    C H D S C       Jack of Diamonds, 9 of Spades, 5 of Clubs
-    123         &lt;== you enter which cards you want to keep
-                    (enter 0 to 5 digits between 1 and 5)
-    J Q J J Q   &lt;== your new hand is Jack of Clubs, Queen of Hearts,
-    C H D S C       Jack of Diamonds, Jack of Spaces, Queen of clubs
-    $145 (45)   &lt;== Your new balance is now $145.  You had a Full House
-                    so your payoff is 9 times your bet == 45</code></pre>
+start with $100. Input alternates between your bet and which cards to keep.</p>
+<h3 id="example">Example:</h3>
+<p>Here is an example.</p>
+<p>First, enter your bet (say <code>5</code>) (for $5, defaults to $1). You might then see
+something like:</p>
+<blockquote>
+<p>J Q J 9 5<br>
+C H D S C</p>
+</blockquote>
+<p>That indicates your hand is Jack of Clubs, Queen of Hearts, Jack of Diamonds, 9
+of Spades and 5 of Clubs.</p>
+<p>Now enter what cards you want to keep (enter 0 to 5 digits between 1 and 5).
+Let’s say you want to keep 1, 2 and 3 so you enter <code>123</code>. You should see
+something like the following after you hit enter:</p>
+<blockquote>
+<p>J Q J J Q<br>
+C H D S C</p>
+</blockquote>
+<p>which tells you that your new hand is Jack of Clubs, Queen of Hearts, Jack of
+Diamonds, Jack of Spaces and Queen of clubs. You might now see something like:</p>
+<blockquote>
+<p>$145 (45)</p>
+</blockquote>
+<p>which tells you that your new balance is now $145. You had a Full House so your
+payoff is 9 times your bet == 45.</p>
+<h4 id="payout">Payout:</h4>
 <p>The payout is according to “Vegas rules”:</p>
-<pre><code>    Straight Flush     50 times your bet
-    Four of a Kind     25 times your bet
-    Full House          9 times your bet
-    Flush               6 times your bet
-    Straight            4 times your bet
-    3 of a Kind         3 times your bet
-    2 Pair              2 times your bet
-    Jacks or Better     1 times your bet</code></pre>
+<ul>
+<li><strong>Straight Flush</strong>
+<ul>
+<li>50 times your bet</li>
+</ul></li>
+<li><strong>Four of a Kind</strong>
+<ul>
+<li>25 times your bet</li>
+</ul></li>
+<li><strong>Full House</strong>
+<ul>
+<li>9 times your bet</li>
+</ul></li>
+<li><strong>Flush</strong>
+<ul>
+<li>6 times your bet</li>
+</ul></li>
+<li><strong>Straight</strong>
+<ul>
+<li>4 times your bet</li>
+</ul></li>
+<li><strong>3 of a Kind</strong>
+<ul>
+<li>3 times your bet)</li>
+</ul></li>
+<li><strong>2 Pair</strong>
+<ul>
+<li>2 times your bet</li>
+</ul></li>
+<li><strong>Jacks or Better</strong>
+<ul>
+<li>1 times your bet</li>
+</ul></li>
+</ul>
+<h3 id="other-things">Other things:</h3>
 <p>The program allows you to go into debt. However I’m sure you would never
 control-C to kill the program just because you got behind, right? On the other
 hand the program never willingly exits, so you have to leave even when you are
@@ -445,9 +487,10 @@ ahead. :-)</p>
 the program so this “strategy” no longer works?</p>
 <p>Notice the clever use of <code>setjmp(3)</code> and <code>longjmp(3)</code> calls. Can you keep track
 of what state is being saved and restored?</p>
-<p>NOTE: the author talks about how it is a single statement. This might not be
+<p><strong>NOTE</strong>: the author talks about how it is a single statement. This might not be
 strictly true in 2023 for the fixes for it to work so you can look at the
-original file <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/burley/burley.orig.c">burley.orig.c</a> to see what is meant.</p>
+original file <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/burley/burley.orig.c">burley.orig.c</a> to see
+what is meant.</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <p>This program plays draw poker. What is unusual about it is that it
 is written as a single statement – count the semicolons! (OK, there

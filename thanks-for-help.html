@@ -3005,10 +3005,6 @@ expression with <code>void</code> or if it is for some other reason).</p>
 <p><code>longjmp(3)</code> was being called with one arg which was an element
 of an <code>int[4][1000]</code> which had to be changed to a <code>jmp_buf p[4]</code> (this due to
 the prototype being included).</p>
-<p><code>main()</code> also called itself but this was a problem so it now calls another
-function <code>poke()</code> which calls itself instead (this is sometimes necessary
-nowadays and other entries had to have this same kind of change,
-<a href="2001/anonymous/index.html">2001/anonymous</a> being a good example).</p>
 <p>Finally the optimiser cannot be enabled so the compiler flags were changed for
 this, forcing <code>-O0</code>.</p>
 <div id="2004_gavare">
