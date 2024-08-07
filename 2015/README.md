@@ -13,9 +13,6 @@ Some ANSI C compilers are not quite as good as they should be.  If
 yours is lacking, you may need to compile using gcc instead of your
 local compiler.
 
-The IOCCC has a website and now has a number of international mirrors.
-The primary website can be found at [www.ioccc.org](https://www.ioccc.org).
-
 
 ## Remarks on some of the winning entries
 
