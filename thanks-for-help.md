@@ -3710,11 +3710,6 @@ expression with `void` or if it is for some other reason).
 of an `int[4][1000]` which had to be changed to a `jmp_buf p[4]` (this due to
 the prototype being included).
 
-`main()` also called itself but this was a problem so it now calls another
-function `poke()` which calls itself instead (this is sometimes necessary
-nowadays and other entries had to have this same kind of change,
-[2001/anonymous](2001/anonymous/index.html) being a good example).
-
 Finally the optimiser cannot be enabled so the compiler flags were changed for
 this, forcing `-O0`.
 
