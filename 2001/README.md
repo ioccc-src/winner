@@ -13,10 +13,20 @@ Some ANSI C compilers are not quite as good as they should be.  If
 yours is lacking, you may need to compile using gcc instead of your
 local compiler.
 
+
 ### Historical note:
 
-The IOCCC has a website and now has a number of international mirrors.  The
-primary site can be found at [www.ioccc.org](https://www.ioccc.org).
+The IOCCC has a website and now has a number of international mirrors.
+The primary website can be found at [www.ioccc.org](https://www.ioccc.org).
+
+
+### Historical update:
+
+The IOCCC website once had a number of
+[international mirrors](https://web.archive.org/web/20201030210517/https://www.ioccc.org/mirror.html).
+As of 2020 Dec 29, [GitHub](https://www.github.com) serves as the distributed server farm for the
+[IOCCC winner repo](https://github.com/ioccc-src/winner) that GitHub renders as
+[Official IOCCC web site - www.ioccc.org](https://www.ioccc.org).
 
 
 ## Remarks on some of the entries
