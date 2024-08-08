@@ -16,6 +16,12 @@ This year we included most of the information included by the submitters
 in the `README.md` files (that were used to build the `index.html` web pages).
 
 
+### Historical note:
+
+The IOCCC has a website and now has a number of international mirrors.
+The primary website can be found at [www.ioccc.org](https://www.ioccc.org).
+
+
 ## Remarks on some of the entries
 
 There were some outstanding entries that did not win.  Unfortunately

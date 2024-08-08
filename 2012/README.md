@@ -13,6 +13,13 @@ yours is lacking, you may need to compile using gcc instead of your
 local compiler.
 
 
+### Historical note:
+
+The IOCCC has a website and now has a number of international mirrors.
+The primary website can be found at [www.ioccc.org](https://www.ioccc.org).
+
+
+
 ## Remarks on some of the entries
 
 We believe you will be impressed with this year's winning entries.  We had
