@@ -3,13 +3,7 @@
 # jfmt-wrapper.sh - - canonically format a JSON file
 #
 # We form a wrapper for the jfmt(1), a tool that will format a JSON
-# file into a canonical style.  NOTE: As of 2024 July 28 the jfmt(1)
-# tool has not been written, so jfmt-wrapper.sh uses the JSONPath.sh(1)
-# tool from the recently forked and modified JSONPath.sh tool:
-#
-#   https://github.com/lcn2/JSONPath.sh
-#
-# If the JSON file is already on canonical form, the file is not modified.
+# file into a canonical style.
 #
 # Copyright (c) 2024 by Landon Curt Noll.  All Rights Reserved.
 #
@@ -92,7 +86,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.0.1 2024-08-05"
+export VERSION="1.1 2024-08-08"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -112,37 +106,19 @@ export REPO_TOP_URL="https://github.com/ioccc-src/temp-test-ioccc"
 # GitHub puts individual files under the "blob/master" sub-directory.
 export REPO_URL="$REPO_TOP_URL/blob/master"
 #
-JPARSE_TOOL=$(type -P jparse)
-export JPARSE_TOOL
-
-# Until we have a true jfmt tool, we will use the modified JSONPath.sh
-#
-# XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
-# XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
-# XXX - until we have the jprint command, we must FAKE PARSE IOCCC JSON files       - XXX
-# XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
-# XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
-#
-export JSONPATH_REPO="https://github.com/lcn2/JSONPath.sh"
-JSONPATH_SH=$(type -P JSONPath.sh)
-export JSONPATH_SH
-if [[ -z $JSONPATH_SH ]]; then
-    echo "$0: FATAL: JSONPath.sh tool is not installed or not in \$PATH" 1>&2
-    echo "$0: notice: obtain JSONPath.sh from: $JSONPATH_REPO" 1>&2
+export MKIOCCCENTRY_REPO="https://github.com/ioccc-src/mkiocccentry"
+JFMT_TOOL=$(type -P jparse)
+export JFMT_TOOL
+if [[ -z "$JFMT_TOOL" ]]; then
+    echo "$0: FATAL: jfmt tool is not installed or not in \$PATH" 1>&2
+    echo "$0: Notice: if needed: $GIT_TOOL clone $MKIOCCCENTRY_REPO; cd mkiocccentry" 1>&2
+    echo "$0: Notice: then if needed: make clobber all install" 1>&2
     exit 5
 fi
-# verify JSONPath.sh supports -S -A -T
-export FIZZBIN_JSON='"fizzbin"'
-if ! "$JSONPATH_SH" -S -A -T -p >/dev/null 2>&1; then
-    echo "$0: FATAL: JSONPath.sh tool does not support -S -A -T: $FIZZBIN_JSON" 1>&2
-    echo "$0: notice: we recommend you obntain and install JSONPath.sh from: $JSONPATH_REPO" 1>&2
-    exit 5
-fi <<< "$FIZZBIN_JSON"
-
 
 # set usage message
 #
-export USAGE="usage: $0 [-h] [-v level] [-V] [-n] [-N] [-j JSONPath.sh] file.json
+export USAGE="usage: $0 [-h] [-v level] [-V] [-n] [-N] [-j jfmt] file.json
 
 	-h		print help message and exit
 	-v level	set verbosity level (def level: 0)
@@ -151,7 +127,7 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-n] [-N] [-j JSONPath.sh] file.jso
 	-n		do not modify file.json (def: modify file.json is not canonical)
 	-N		do not process file, just parse arguments and ignore the file (def: process the file)
 
-	-j JSONPath.sh	path to the JSONPath.sh tool (not the wrapper) (def: $JSONPATH_SH)
+	-j jfmt		path to the jfmt tool (not the wrapper) (def: $JFMT_TOOL)
 
 	file.json	The JSON file to write, in canonical form, to stdout (def: read stdin)
 
@@ -189,7 +165,7 @@ while getopts :hv:VnNj: flag; do
 	;;
     N) DO_NOT_PROCESS="-N"
 	;;
-    j) JSONPATH_SH="$OPTARG"
+    j) JFMT_TOOL="$OPTARG"
 	;;
     \?) echo "$0: ERROR: invalid option: -$OPTARG" 1>&2
 	echo 1>&2
@@ -299,9 +275,8 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: TOPDIR=$TOPDIR" 1>&2
     echo "$0: debug[3]: REPO_TOP_URL=$REPO_TOP_URL" 1>&2
     echo "$0: debug[3]: REPO_URL=$REPO_URL" 1>&2
-    echo "$0: debug[3]: JSONPATH_REPO=$JSONPATH_REPO" 1>&2
-    echo "$0: debug[3]: JSONPATH_SH=$JSONPATH_SH" 1>&2
-    echo "$0: debug[3]: FIZZBIN_JSON=$FIZZBIN_JSON" 1>&2
+    echo "$0: debug[3]: MKIOCCCENTRY_REPO=$MKIOCCCENTRY_REPO" 1>&2
+    echo "$0: debug[3]: JFMT_TOOL=$JFMT_TOOL" 1>&2
     echo "$0: debug[3]: NOOP=$NOOP" 1>&2
     echo "$0: debug[3]: DO_NOT_PROCESS=$DO_NOT_PROCESS" 1>&2
     echo "$0: debug[3]: JSON_FILE=$JSON_FILE" 1>&2
@@ -313,9 +288,9 @@ fi
 # verify the JSON of JSON_FILE
 #
 if [[ $V_FLAG -ge 7 ]]; then
-    echo "$0: debug[7]: about to run: $JPARSE_TOOL -q -- $JSON_FILE" 1>&2
+    echo "$0: debug[7]: about to run: $JFMT_TOOL -q -- $JSON_FILE" 1>&2
 fi
-if "$JPARSE_TOOL" -q -- "$JSON_FILE"; then
+if "$JFMT_TOOL" -q -- "$JSON_FILE"; then
     if [[ $V_FLAG -ge 5 ]]; then
 	echo "$0: debug[5]: valid JSON for: $JSON_FILE" 1>&2
     fi
@@ -361,12 +336,12 @@ fi
 # canonically format the JSON file
 #
 if [[ $V_FLAG -ge 3 ]]; then
-    echo "$0: debug[3]: about to: $JSONPATH_SH -S -A -T -j -f $JSON_FILE > $TMP_JSON_FILE" 1>&2
+    echo "$0: debug[3]: about to: $JFMT_TOOL -F simple -- $JSON_FILE > $TMP_JSON_FILE" 1>&2
 fi
-"$JSONPATH_SH" -S -A -T -j -f "$JSON_FILE" > "$TMP_JSON_FILE"
+"$JFMT_TOOL" -F simple -- "$JSON_FILE" > "$TMP_JSON_FILE"
 status="$?"
 if [[ $status -ne 0 ]]; then
-    echo "$0: ERROR: $JSONPATH_SH -S -A -T -j -f $JSON_FILE > $TMP_JSON_FILE failed," \
+    echo "$0: ERROR: $JFMT_TOOL -F simple -- $JSON_FILE > $TMP_JSON_FILE failed," \
 	 "error code: $status" 1>&2
     exit 1
 fi
