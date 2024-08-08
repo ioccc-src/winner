@@ -133,7 +133,7 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-n] [-N] [-j jfmt] file.json
 
 Exit codes:
      0         all OK
-     1	       JSONPath.sh exited non-zero
+     1	       jval exited non-zero
      2         -h and help string printed or -V and version string printed
      3         command line error
      4         bash version is too old
