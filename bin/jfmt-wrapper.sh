@@ -92,25 +92,10 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.0.1 2024-08-05"
+export VERSION="1.0.2 2024-08-08"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
-GIT_TOOL=$(type -P git)
-export GIT_TOOL
-if [[ -z "$GIT_TOOL" ]]; then
-    echo "$0: FATAL: git tool is not installed or not in \$PATH" 1>&2
-    exit 5
-fi
-"$GIT_TOOL" rev-parse --is-inside-work-tree >/dev/null 2>&1
-status="$?"
-if [[ $status -eq 0 ]]; then
-    TOPDIR=$("$GIT_TOOL" rev-parse --show-toplevel)
-fi
-export TOPDIR
-export REPO_TOP_URL="https://github.com/ioccc-src/temp-test-ioccc"
-# GitHub puts individual files under the "blob/master" sub-directory.
-export REPO_URL="$REPO_TOP_URL/blob/master"
 #
 JPARSE_TOOL=$(type -P jparse)
 export JPARSE_TOOL
@@ -243,49 +228,6 @@ if [[ ! -r $JSON_FILE ]]; then
     exit 6
 fi
 
-# verify that we have a topdir directory
-#
-REPO_NAME=$(basename "$REPO_TOP_URL")
-export REPO_NAME
-if [[ -z $TOPDIR ]]; then
-    echo "$0: ERROR: cannot find top of git repo directory" 1>&2
-    echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_TOP_URL; cd $REPO_NAME" 1>&2
-    exit 6
-fi
-if [[ ! -e $TOPDIR ]]; then
-    echo "$0: ERROR: TOPDIR does not exist: $TOPDIR" 1>&2
-    echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_TOP_URL; cd $REPO_NAME" 1>&2
-    exit 6
-fi
-if [[ ! -d $TOPDIR ]]; then
-    echo "$0: ERROR: TOPDIR is not a directory: $TOPDIR" 1>&2
-    echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_TOP_URL; cd $REPO_NAME" 1>&2
-    exit 6
-fi
-
-# cd to topdir
-#
-if [[ ! -e $TOPDIR ]]; then
-    echo "$0: ERROR: cannot cd to non-existent path: $TOPDIR" 1>&2
-    exit 6
-fi
-if [[ ! -d $TOPDIR ]]; then
-    echo "$0: ERROR: cannot cd to a non-directory: $TOPDIR" 1>&2
-    exit 6
-fi
-export CD_FAILED
-if [[ $V_FLAG -ge 5 ]]; then
-    echo "$0: debug[5]: about to: cd $TOPDIR" 1>&2
-fi
-cd "$TOPDIR" || CD_FAILED="true"
-if [[ -n $CD_FAILED ]]; then
-    echo "$0: ERROR: cd $TOPDIR failed" 1>&2
-    exit 6
-fi
-if [[ $V_FLAG -ge 3 ]]; then
-    echo "$0: debug[3]: now in directory: $(/bin/pwd)" 1>&2
-fi
-
 
 # print running info if verbose
 #
@@ -295,18 +237,12 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: VERSION=$VERSION" 1>&2
     echo "$0: debug[3]: NAME=$NAME" 1>&2
     echo "$0: debug[3]: V_FLAG=$V_FLAG" 1>&2
-    echo "$0: debug[3]: GIT_TOOL=$GIT_TOOL" 1>&2
-    echo "$0: debug[3]: TOPDIR=$TOPDIR" 1>&2
-    echo "$0: debug[3]: REPO_TOP_URL=$REPO_TOP_URL" 1>&2
-    echo "$0: debug[3]: REPO_URL=$REPO_URL" 1>&2
     echo "$0: debug[3]: JSONPATH_REPO=$JSONPATH_REPO" 1>&2
     echo "$0: debug[3]: JSONPATH_SH=$JSONPATH_SH" 1>&2
     echo "$0: debug[3]: FIZZBIN_JSON=$FIZZBIN_JSON" 1>&2
     echo "$0: debug[3]: NOOP=$NOOP" 1>&2
     echo "$0: debug[3]: DO_NOT_PROCESS=$DO_NOT_PROCESS" 1>&2
     echo "$0: debug[3]: JSON_FILE=$JSON_FILE" 1>&2
-    echo "$0: debug[3]: REPO_NAME=$REPO_NAME" 1>&2
-    echo "$0: debug[3]: CD_FAILED=$CD_FAILED" 1>&2
 fi
 
 
