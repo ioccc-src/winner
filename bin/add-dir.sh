@@ -88,7 +88,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.1.1 2024-07-28"
+export VERSION="1.2 2024-08-09"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -493,6 +493,24 @@ if [[ -z $NOOP ]]; then
             echo "$0: ERROR: not a non-empty Makefile: $MAKE_FILE" 1>&2
             exit 17
         fi
+    fi
+
+    # update genpath
+    #
+    # form top level .top and .allyear, YYYY level .year and winner .path files
+    #
+    if [[ $V_FLAG -ge 1 ]]; then
+	echo "$0: debug[1]: about to: make genpath" 1>&2
+    fi
+    make genpath >/dev/null
+    status="$?"
+    if [[ $status -ne 0 ]]; then
+	echo "$0: ERROR: make genpath filed," \
+	     "error code: $status" 1>&2
+	exit 18
+    fi
+    if [[ $V_FLAG -ge 1 ]]; then
+	echo "$0: debug[1]: make genpath complete" 1>&2
     fi
 
 # case: with -n

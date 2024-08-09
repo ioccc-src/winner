@@ -102,7 +102,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.0.2 2024-08-05"
+export VERSION="1.0.3 2024-08-09"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -163,7 +163,7 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir]
 	-c chkeckentry	path to the chkentry tool (def: $CHKENTRY_TOOL)
 	-s jstrencode	path to the jstrencode tool (def: $JSTRENCODE_TOOL)
 
-	-i input_data	read data from file (def: from stdin)
+	-i input_data	read data from file and disable asking if correct (def: from stdin)
 
 	-n		go thru the actions, but do not update any files (def: do the action)
 	-N		do not process anything, just parse arguments (def: process something)
@@ -183,9 +183,13 @@ Exit codes:
 
 $NAME version: $VERSION"
 
+
 # prompt_string
 #
-# Prompt the user for a string and output as an encoded JSON string
+# Prompt the user for a string and output as an encoded JSON string.
+#
+# If "-i input_data: is used, the printing of the prompt is disabled,
+# and the query of correctness is also disabled.
 #
 # usage:
 #       prompt_string item_name
@@ -219,7 +223,9 @@ function prompt_string
 
 	# prompt for value
 	#
-	echo -n "Enter $ITEM_NAME: "
+	if [[ -z $INPUT_DATA_FILE ]]; then
+	    echo -n "Enter $ITEM_NAME: "
+	fi
 	read -r INPUT
 	if [[ -z "$INPUT" ]]; then
 	    echo "$0: Warning: in prompt_string: $ITEM_NAME cannot be empty, try again" 1>&2
@@ -239,23 +245,149 @@ function prompt_string
 
 	# verify JSON encoded value
 	#
-	echo
-	echo "Verify encoded $ITEM_NAME: $ENCODED" 1>&2
-	echo
-	echo -n 'Is that correct? [y,N]: '
-	read -r Y_OR_N
-	if [[ $Y_OR_N == y || $Y_OR_N == Y || $Y_OR_N == yes || $Y_OR_N == YES || $Y_OR_N == Yes ]]; then
+	if [[ -z $INPUT_DATA_FILE ]]; then
+	    echo
+	    echo "Verify encoded $ITEM_NAME: $ENCODED" 1>&2
+	    echo
+	    echo -n 'Is that correct? [y,N]: '
+	    read -r Y_OR_N
+	    if [[ $Y_OR_N == y || $Y_OR_N == Y || $Y_OR_N == yes || $Y_OR_N == YES || $Y_OR_N == Yes ]]; then
+		break
+	    fi
+	    echo
+	else
 	    break
 	fi
-	echo
     done
-    echo
+    if [[ -z $INPUT_DATA_FILE ]]; then
+	echo
+    fi
 
     # set VALUE to the JSON encoded string
     #
     VALUE="$ENCODED"
     return 0
 }
+
+
+# manifest_entry
+#
+# Write a manifest entry to stdout.
+#
+# usage:
+#       manifest_entry file_path inventory_order OK_to_edit display_as display_via_github entry_text count
+#
+#   file_path	        path to the file relative to the entry directory
+#   inventory_order     inventory order as displayed in the entry index.html file
+#   OK_to_edit		boolean for if file should be modified, edited, replaced, or even removed
+#   display_as	        kind of file it is and in particular how to display it
+#   display_via_github	boolean indicates whether the file should be viewed via GitHub or not
+#   entry_text		summary of what the file purpose is
+#   count		order in the manifest array (1 ==> first)
+#
+# returns:
+#       0 ==> no errors detected, but output may be empty
+#     > 0 ==> function error number
+#
+function manifest_entry
+{
+    local FILE_PATH;		# path to the file relative to the entry directory
+    local INVENTORY_ORDER;	# inventory order as displayed in the entry index.html file
+    local OK_TO_EDIT;		# boolean for if file should be modified, edited, replaced, or even removed
+    local DISPLAY_AS;		# kind of file it is and in particular how to display it
+    local DISPLAY_VIA_GITHUB;	# boolean indicates whether the file should be viewed via GitHub or not
+    local ENTRY_TEXT;		# summary of what the file purpose is
+    local COUNT;		# order in the manifest array (1 ==> first)
+
+    # parse args
+    #
+    if [[ $# -ne 7 ]]; then
+        echo "$0: ERROR: in manifest_entry: expected 7 args, found $#" 1>&2
+        return 1
+    fi
+    FILE_PATH="$1"
+    if [[ -z $FILE_PATH ]]; then
+        echo "$0: ERROR: in manifest_entry: file_path arg 1 is empty" 1>&2
+	return 2
+    fi
+    INVENTORY_ORDER="$2"
+    if [[ -z $INVENTORY_ORDER ]]; then
+        echo "$0: ERROR: in manifest_entry: inventory_order arg 2 is empty" 1>&2
+	return 3
+    fi
+    OK_TO_EDIT="$3"
+    if [[ -z $OK_TO_EDIT ]]; then
+        echo "$0: ERROR: in manifest_entry: OK_to_edit arg 3 is empty" 1>&2
+	return 4
+    fi
+    DISPLAY_AS="$4"
+    if [[ -z $DISPLAY_AS ]]; then
+        echo "$0: ERROR: in manifest_entry: display_as arg 4 is empty" 1>&2
+	return 5
+    fi
+    DISPLAY_VIA_GITHUB="$5"
+    if [[ -z $DISPLAY_VIA_GITHUB ]]; then
+        echo "$0: ERROR: in manifest_entry: display_via_github arg 5 is empty" 1>&2
+	return 6
+    fi
+    ENTRY_TEXT="$6"
+    if [[ -z $ENTRY_TEXT ]]; then
+        echo "$0: ERROR: in manifest_entry: entry_text arg 6 is empty" 1>&2
+	return 7
+    fi
+    COUNT="$7"
+    if [[ -z $COUNT ]]; then
+        echo "$0: ERROR: in manifest_entry: count arg 7 is empty" 1>&2
+	return 7
+    fi
+
+    # case: not first manifest entry
+    #
+    # When this is not the 1st entry, we just separate from the previous
+    # manifest entry with a comma.
+    #
+    if [[ $COUNT -gt 1 ]]; then
+	echo ","
+    fi
+
+    # start of manifest entry
+    #
+    printf "\t{\n"
+
+    # output file_path
+    #
+    printf "\t    \"file_path\" : \"%s\",\n" "$FILE_PATH"
+
+    # output inventory_order
+    #
+    printf "\t    \"inventory_order\" : %s,\n" "$INVENTORY_ORDER"
+
+    # output OK_to_edit
+    #
+    printf "\t    \"OK_to_edit\" : %s,\n" "$OK_TO_EDIT"
+
+    # output display_as
+    #
+    printf "\t    \"display_as\" : \"%s\",\n" "$DISPLAY_AS"
+
+    # output display_via_github
+    #
+    printf "\t    \"display_via_github\" : %s,\n" "$DISPLAY_VIA_GITHUB"
+
+    # output entry_text
+    #
+    printf "\t    \"entry_text\" : \"%s\"\n" "$ENTRY_TEXT"
+
+    # end of manifest entry
+    #
+    # We do not issue a return, allowing either the next manifest entry or
+    # the end of the manifest array to close the array.
+    #
+    printf "\t}"
+    return 0
+}
+
+
 
 # parse command line
 #
@@ -427,6 +559,20 @@ if [[ ! -x $JVAL_WRAPPER ]]; then
     echo "$0: ERROR: cannot find an executable bin/jval-wrapper.sh tool: $JVAL_WRAPPER" 1>&2
     exit 5
 fi
+#
+export MD2HTML="$BIN_DIR/md2html.sh"
+if [[ ! -e $MD2HTML ]]; then
+    echo "$0: ERROR: bin/md2html.sh file does not exist: $MD2HTML" 1>&2
+    exit 5
+fi
+if [[ ! -f $MD2HTML ]]; then
+    echo "$0: ERROR: bin/md2html.sh is not a file: $MD2HTML" 1>&2
+    exit 5
+fi
+if [[ ! -x $MD2HTML ]]; then
+    echo "$0: ERROR: cannot find an executable bin/md2html.sh tool: $MD2HTML" 1>&2
+    exit 5
+fi
 
 
 # verify that ENTRY_PATH is a entry directory
@@ -473,9 +619,27 @@ if [[ ! -w $YYYY_DIR ]]; then
     echo "$0: ERROR: YYYY/dir from arg: $ENTRY_PATH is not a writable directory: $YYYY_DIR" 1>&2
     exit 6
 fi
+
+
+# determine files that are found in and/or will be created in an entry
+#
 export INFO_JSON="$YYYY_DIR/.info.json"
 export AUTH_JSON="$YYYY_DIR/.auth.json"
+export TAR_BZ2="$YYYY_DIR/$ENTRY_ID.tar.bz2"
 export ENTRY_JSON="$YYYY_DIR/.entry.json"
+export DOT_GITIGNORE="$YYYY_DIR/.gitignore"
+export DOT_PATH="$YYYY_DIR/.path"
+export README_MD="$YYYY_DIR/README.md"
+export INDEX_HTML="$YYYY_DIR/index.html"
+
+
+# determine template files
+#
+export TEMPLATE_DIR="template"
+export TEMPLATE_ENTRY_DIR="$TEMPLATE_DIR/entry"
+export TEMPLATE_GITIGNORE="$TEMPLATE_ENTRY_DIR/gitignore"
+export TEMPLATE_README_MD_HEAD="$TEMPLATE_ENTRY_DIR/README.md.head"
+export TEMPLATE_README_MD_TAIL="$TEMPLATE_ENTRY_DIR/README.md.tail"
 
 
 # print running info if verbose
@@ -505,6 +669,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: BIN_PATH=$BIN_PATH" 1>&2
     echo "$0: debug[3]: BIN_DIR=$BIN_DIR" 1>&2
     echo "$0: debug[3]: JVAL_WRAPPER=$JVAL_WRAPPER" 1>&2
+    echo "$0: debug[3]: MD2HTML=$MD2HTML" 1>&2
     echo "$0: debug[3]: YEAR_DIR=$YEAR_DIR" 1>&2
     echo "$0: debug[3]: ENTRY_DIR=$ENTRY_DIR" 1>&2
     echo "$0: debug[3]: ENTRY_ID=$ENTRY_ID" 1>&2
@@ -512,15 +677,40 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: YYYY_DIR=$YYYY_DIR" 1>&2
     echo "$0: debug[3]: INFO_JSON=$INFO_JSON" 1>&2
     echo "$0: debug[3]: AUTH_JSON=$AUTH_JSON" 1>&2
+    echo "$0: debug[3]: TAR_BZ2=$TAR_BZ2" 1>&2
     echo "$0: debug[3]: ENTRY_JSON=$ENTRY_JSON" 1>&2
+    echo "$0: debug[3]: DOT_GITIGNORE=$DOT_GITIGNORE" 1>&2
+    echo "$0: debug[3]: DOT_PATH=$DOT_PATH" 1>&2
+    echo "$0: debug[3]: README_MD=$README_MD" 1>&2
+    echo "$0: debug[3]: INDEX_HTML=$INDEX_HTML" 1>&2
+    echo "$0: debug[3]: TEMPLATE_DIR=$TEMPLATE_DIR" 1>&2
+    echo "$0: debug[3]: TEMPLATE_ENTRY_DIR=$TEMPLATE_ENTRY_DIR" 1>&2
+    echo "$0: debug[3]: TEMPLATE_GITIGNORE=$TEMPLATE_GITIGNORE" 1>&2
+    echo "$0: debug[3]: TEMPLATE_README_MD_HEAD=$TEMPLATE_README_MD_HEAD" 1>&2
+    echo "$0: debug[3]: TEMPLATE_README_MD_TAIL=$TEMPLATE_README_MD_TAIL" 1>&2
 fi
 
 
-# verify that YEAR is already in .top
+# firewall - verify template files
 #
-if ! grep -E -q "^$YEAR_DIR$" "$TOP_FILE"; then
-    echo "$0: ERROR: YEAR_DIR: $YEAR_DIR not found in: $TOP_FILE" 1>&2
-    echo "$0: notice: consider running: bin/new-year.sh $YEAR_DIR -v 1" 1>&2
+if [[ ! -d $TEMPLATE_DIR ]]; then
+    echo "$0: ERROR: missing template directory: $TEMPLATE_DIR" 1>&2
+    exit 6
+fi
+if [[ ! -d $TEMPLATE_ENTRY_DIR ]]; then
+    echo "$0: ERROR: missing template/entry directory: $TEMPLATE_ENTRY_DIR" 1>&2
+    exit 6
+fi
+if [[ ! -f $TEMPLATE_GITIGNORE ]]; then
+    echo "$0: ERROR: missing template gitignore file: $TEMPLATE_GITIGNORE" 1>&2
+    exit 6
+fi
+if [[ ! -f $TEMPLATE_README_MD_HEAD ]]; then
+    echo "$0: ERROR: missing template README.md.head file: $TEMPLATE_README_MD_HEAD" 1>&2
+    exit 6
+fi
+if [[ ! -f $TEMPLATE_README_MD_TAIL ]]; then
+    echo "$0: ERROR: missing template README.md.tail file: $TEMPLATE_README_MD_TAIL" 1>&2
     exit 6
 fi
 
@@ -566,6 +756,15 @@ if [[ ! -x $JSTRENCODE_TOOL ]]; then
     echo "$0: Notice: if needed: $GIT_TOOL clone $MKIOCCCENTRY_REPO; cd mkiocccentry" 1>&2
     echo "$0: Notice: then if needed: make clobber all install" 1>&2
     exit 5
+fi
+
+
+# verify that YEAR is already in .top
+#
+if ! grep -E -q "^$YEAR_DIR$" "$TOP_FILE"; then
+    echo "$0: ERROR: YEAR_DIR: $YEAR_DIR not found in: $TOP_FILE" 1>&2
+    echo "$0: notice: consider running: bin/new-year.sh $YEAR_DIR -v 1" 1>&2
+    exit 6
 fi
 
 
@@ -728,7 +927,8 @@ if [[ -z $NOOP ]]; then
 
     # process each author_handle
     #
-    export PATTERN="\$authors..author_handle"
+    export PATTERN
+    PATTERN="\$authors..author_handle"
     if [[ $V_FLAG -ge 3 ]]; then
 	echo  "$0: debug[3]: about to run: $JVAL_WRAPPER -b -- $AUTH_JSON $PATTERN > $TMP_AUTHOR_HANDLE" 1>&2
     fi
@@ -737,15 +937,20 @@ if [[ -z $NOOP ]]; then
     if [[ $status -ne 0 ]]; then
 	echo "$0: ERROR: $JVAL_WRAPPER -b -- $AUTH_JSON $PATTERN > $TMP_AUTHOR_HANDLE failed," \
 		 "error code: $status" 1>&2
-	exit 1
+	exit 14
     fi
     if [[ ! -s $TMP_AUTHOR_HANDLE ]]; then
 	echo "$0: ERROR: temporary author_handle set file is empty or missing: $TMP_AUTHOR_HANDLE" 1>&2
-	exit 1
+	exit 15
     fi
     AUTHOR_COUNT=$(wc -l < "$TMP_AUTHOR_HANDLE")
     export AUTHOR_COUNT
     ((i=0))
+    # The if statement only calls printf once, so this style issue is not valid here.
+    #
+    # SC2129 (style): Consider using { cmd1; cmd2; } >> file instead of individual redirects.
+    # https://www.shellcheck.net/wiki/SC2129
+    # shellcheck disable=SC2129
     while read -r AUTHOR_HANDLE; do
 	((++i))
 	if [[ $i -lt $AUTHOR_COUNT ]]; then
@@ -756,10 +961,282 @@ if [[ -z $NOOP ]]; then
     done >> "$TMP_ENTRY_JSON" < "$TMP_AUTHOR_HANDLE"
     echo "    ],"  >> "$TMP_ENTRY_JSON"
 
-    # process the manifest
+    # begin the manifest array
     #
+    echo "    \"manifest\" : [" >> "$TMP_ENTRY_JSON"
+    ((count=0))
 
-    : # XXX - add code here - XXX #
+    # manifest for entry source code
+    #
+    # This is the 1st manifest element of the array.  Moreover, we will
+    # leave out the trailing comma.
+    #
+    ((++count))
+    PATTERN="\$manifest..c_src"
+    if [[ $V_FLAG -ge 3 ]]; then
+	echo  "$0: debug[3]: about to run: $JVAL_WRAPPER -b -- $INFO_JSON $PATTERN" 1>&2
+    fi
+    export FILE_PATH
+    FILE_PATH=$("$JVAL_WRAPPER" -b -- "$INFO_JSON" "$PATTERN")
+    status="$?"
+    if [[ $status -ne 0 ]]; then
+	echo "$0: ERROR: $JVAL_WRAPPER -b -- $INFO_JSON $PATTERN failed," \
+		 "error code: $status" 1>&2
+	exit 16
+    fi
+    if [[ -z $FILE_PATH ]]; then
+	echo "$0: ERROR: cannot determine c_src in manifest from: $INFO_JSON" 1>&2
+	exit 7
+    fi
+    manifest_entry "$FILE_PATH" 20 true c true "entry source code" "$count" >> "$TMP_ENTRY_JSON"
+    export PROG_C="$FILE_PATH"
+
+    # manifest for entry Makefile
+    #
+    ((++count))
+    PATTERN="\$manifest..Makefile"
+    if [[ $V_FLAG -ge 3 ]]; then
+	echo  "$0: debug[3]: about to run: $JVAL_WRAPPER -b -- $INFO_JSON $PATTERN" 1>&2
+    fi
+    export FILE_PATH
+    FILE_PATH=$("$JVAL_WRAPPER" -b -- "$INFO_JSON" "$PATTERN")
+    status="$?"
+    if [[ $status -ne 0 ]]; then
+	echo "$0: ERROR: $JVAL_WRAPPER -b -- $INFO_JSON $PATTERN failed," \
+		 "error code: $status" 1>&2
+	exit 17
+    fi
+    if [[ -z $FILE_PATH ]]; then
+	echo "$0: ERROR: cannot determine Makefile in manifest from: $INFO_JSON" 1>&2
+	exit 18
+    fi
+    manifest_entry "$FILE_PATH" 30 true makefile true "entry Makefile" "$count" >> "$TMP_ENTRY_JSON"
+
+    # manifest for alt source file if found
+    #
+    export ALT_C
+    ALT_C=$(basename "$PROG_C" .c)".alt.c"
+    if [[ -f $ALT_C ]]; then
+
+	# manifest for entry alt source code
+	#
+	((++count))
+	manifest_entry "$ALT_C" 40 true c true "alternate source code" "$count" >> "$TMP_ENTRY_JSON"
+    fi
+
+    # form original source code if needed
+    #
+    export ORIG_C
+    ORIG_C=$(basename "$PROG_C" .c)".orig.c"
+    if [[ ! -f $ALT_C ]]; then
+	if [[ $V_FLAG -ge 3 ]]; then
+	    echo  "$0: debug[3]: about to run: cp -f -p -v $YYYY_DIR/$PROG_C $YYYY_DIR/$ORIG_C" 1>&2
+	    cp -f -p -v "$YYYY_DIR/$PROG_C" "$YYYY_DIR/$ORIG_C"
+	    status="$?"
+	    if [[ $status -ne 0 ]]; then
+		echo "$0: ERROR: cp -f -p -v $YYYY_DIR/$PROG_C $YYYY_DIR/$ORIG_C failed," \
+			 "error code: $status" 1>&2
+		exit 19
+	    fi
+	else
+	    cp -f -p "$YYYY_DIR/$PROG_C" "$YYYY_DIR/$ORIG_C"
+	    status="$?"
+	    if [[ $status -ne 0 ]]; then
+		echo "$0: ERROR: cp -f -p $YYYY_DIR/$PROG_C $YYYY_DIR/$ORIG_C failed," \
+			 "error code: $status" 1>&2
+		exit 20
+	    fi
+	fi
+    fi
+
+    # manifest for original source code
+    #
+    ((++count))
+    manifest_entry "$ORIG_C" 50 false c true "original source code" "$count" >> "$TMP_ENTRY_JSON"
+
+    # manifest for extra_file(s)
+    #
+    export PATTERN
+    PATTERN="\$manifest..extra_file"
+    if [[ $V_FLAG -ge 3 ]]; then
+	echo  "$0: debug[3]: about to run: $JVAL_WRAPPER -b -- $INFO_JSON $PATTERN" 1>&2
+    fi
+    export EXTRA_FILE_SET
+    EXTRA_FILE_SET=$("$JVAL_WRAPPER" -b -- "$INFO_JSON" "$PATTERN" | sort -u)
+    status_codes=("${PIPESTATUS[@]}")
+    if [[ ${status_codes[*]} =~ [1-9] ]]; then
+	echo "$0: ERROR: $JVAL_WRAPPER -b -- $INFO_JSON $PATTERN failed," \
+		 "error code: ${status_codes[*]}" 1>&2
+	exit 21
+    fi
+    for EXTRA_FILE in $EXTRA_FILE_SET; do
+
+	# prompt for inventory_order
+	#
+	VALUE=
+	prompt_string "inventory_order for $EXTRA_FILE"
+	status="$?"
+	if [[ $status -ne 0 || -z $VALUE ]]; then
+	    echo "$0: ERROR: prompt_string inventory_order for $EXTRA_FILE failed," \
+		     "error code: $status" 1>&2
+	    exit 1
+	fi
+	export INVENTORY_ORDER="$VALUE"
+
+	# prompt for display_as
+	#
+	VALUE=
+	prompt_string "display_as for $EXTRA_FILE"
+	status="$?"
+	if [[ $status -ne 0 || -z $VALUE ]]; then
+	    echo "$0: ERROR: prompt_string inventory_order for $EXTRA_FILE failed," \
+		     "error code: $status" 1>&2
+	    exit 1
+	fi
+	export DISPLAY_AS="$VALUE"
+
+	# prompt for entry_text
+	#
+	VALUE=
+	prompt_string "entry_text for $EXTRA_FILE"
+	status="$?"
+	if [[ $status -ne 0 || -z $VALUE ]]; then
+	    echo "$0: ERROR: prompt_string inventory_order for $EXTRA_FILE failed," \
+		     "error code: $status" 1>&2
+	    exit 1
+	fi
+	export ENTRY_TEXT="$VALUE"
+
+	# manifest for original source code
+	#
+	((++count))
+	manifest_entry "$EXTRA_FILE" "$INVENTORY_ORDER" true "$DISPLAY_AS" true "$ENTRY_TEXT" \
+	    "$count" >> "$TMP_ENTRY_JSON"
+    done
+
+    # manifest for compressed tarball
+    #
+    ((++count))
+    manifest_entry "$ENTRY_ID.tar.bz2" 1415926535 false tbz2 false "download entry tarball" \
+	"$count" >> "$TMP_ENTRY_JSON"
+
+    # manifest for .entry.json
+    #
+    ((++count))
+    manifest_entry .entry.json 4000000000 true json true "entry summary and manifest in JSON" \
+	"$count" >> "$TMP_ENTRY_JSON"
+
+    # form .gitignore if needed
+    #
+    if [[ ! -f $DOT_GITIGNORE ]]; then
+	if [[ $V_FLAG -ge 3 ]]; then
+	    echo  "$0: debug[3]: about to run: cp -f -p -v $TEMPLATE_GITIGNORE $DOT_GITIGNORE" 1>&2
+	    cp -f -p -v "$YYYY_DIR/$PROG_C" "$DOT_GITIGNORE"
+	    status="$?"
+	    if [[ $status -ne 0 ]]; then
+		echo "$0: ERROR: cp -f -p -v $TEMPLATE_GITIGNORE $DOT_GITIGNORE failed," \
+			 "error code: $status" 1>&2
+		exit 22
+	    fi
+	else
+	    cp -f -p "$TEMPLATE_GITIGNORE" "$DOT_GITIGNORE"
+	    status="$?"
+	    if [[ $status -ne 0 ]]; then
+		echo "$0: ERROR: cp -f -p $TEMPLATE_GITIGNORE $DOT_GITIGNORE failed," \
+			 "error code: $status" 1>&2
+		exit 23
+	    fi
+	fi
+    fi
+
+    # manifest for .gitignore
+    #
+    ((++count))
+    manifest_entry .gitignore 4000000000 true gitignore true "list of files that should not be committed under git" \
+	"$count" >> "$TMP_ENTRY_JSON"
+
+    # form .path if needed
+    #
+    if [[ ! -f $DOT_PATH ]]; then
+	echo "$YYYY_DIR" > "$DOT_PATH"
+    fi
+
+    # manifest for .path
+    #
+    ((++count))
+    manifest_entry .path 4000000000 false path false "directory path from top level directory" \
+	"$count" >> "$TMP_ENTRY_JSON"
+
+    # form README.md if needed
+    #
+    if [[ ! -f $README_MD ]]; then
+
+	if [[ $V_FLAG -ge 3 ]]; then
+	    echo  "$0: debug[3]: forming README.md: $README_MD"
+	fi
+	cat "$TEMPLATE_README_MD_HEAD" > "$README_MD"
+	if [[ -f $YYYY_DIR/remarks.md ]]; then
+	    cat "$YYYY_DIR/remarks.md" >> "$README_MD"
+	else
+	    echo "XXX - mo remarks.md file was found" >> "$README_MD"
+	fi
+	sed -e "s/XXX-YEAR-XXX/$YEAR_DIR/" "$TEMPLATE_README_MD_TAIL" >> "$README_MD"
+    fi
+
+    # manifest for README.md
+    #
+    ((++count))
+    manifest_entry README.md 4000000000 true markdown true "markdown source for this web page" \
+	"$count" >> "$TMP_ENTRY_JSON"
+
+    # manifest for index.html
+    #
+    ((++count))
+    manifest_entry index.html 4294967295 false html false "this web page" \
+	"$count" >> "$TMP_ENTRY_JSON"
+
+    # end the manifest array and end of temporary .entry.json file
+    #
+    # We complete the last manifest_entry that was written.
+    #
+    printf "\n    ]\n}\n" >> "$TMP_ENTRY_JSON"
+
+    # update .entry.json if needed
+    #
+    if cmp -s "$TMP_ENTRY_JSON" "$ENTRY_JSON"; then
+
+	# case: .entry.json did not change
+	#
+	if [[ $V_FLAG -ge 5 ]]; then
+            echo "$0: debug[5]: .entry.json file did not change: $ENTRY_JSON" 1>&2
+        fi
+
+    else
+
+        # case: .entry.json file changed, update the file
+        #
+        if [[ $V_FLAG -ge 5 ]]; then
+            echo "$0: debug[5]: about to: mv -f -- $TMP_ENTRY_JSON $ENTRY_JSON" 1>&2
+        fi
+        if [[ $V_FLAG -ge 3 ]]; then
+            mv -f -v -- "$TMP_ENTRY_JSON" "$ENTRY_JSON"
+            status="$?"
+        else
+            mv -f -- "$TMP_ENTRY_JSON" "$ENTRY_JSON"
+            status="$?"
+        fi
+        if [[ $status -ne 0 ]]; then
+            echo "$0: ERROR: mv -f -- $TMP_ENTRY_JSON $ENTRY_JSON filed," \
+	         "error code: $status" 1>&2
+            exit 24
+        elif [[ $V_FLAG -ge 1 ]]; then
+            echo "$0: debug[1]: updated .entry.json: $ENTRY_JSON" 1>&2
+        fi
+        if [[ ! -s $ENTRY_JSON ]]; then
+            echo "$0: ERROR: not a non-empty .entry.json: $ENTRY_JSON" 1>&2
+            exit 25
+        fi
+    fi
 
 # case: with -n
 #
@@ -768,7 +1245,24 @@ elif [[ $V_FLAG -ge 3 ]]; then
 fi
 
 
-cat "$TMP_ENTRY_JSON" # XXX
+# form index.html if needed
+#
+if [[ ! -f $INDEX_HTML ]]; then
+
+    if [[ $V_FLAG -ge 3 ]]; then
+	echo  "$0: debug[3]: about to run: $MD2HTML -v $V_FLAG -- $README_MD $INDEX_HTML" 1>&2
+    fi
+    "$MD2HTML" -v "$V_FLAG" -- "$README_MD" "$INDEX_HTML"
+    status="$?"
+    if [[ $status -ne 0 ]]; then
+	echo "$0: ERROR: $MD2HTML -v $V_FLAG -- $README_MD $INDEX_HTML filed," \
+	     "error code: $status" 1>&2
+	exit 26
+    fi
+fi
+
+
+# XXX - form tarball - XXX
 
 
 # All Done!!! All Done!!! -- Jessica Noll, Age 2

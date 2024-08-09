@@ -1,0 +1,40 @@
+## To build:
+
+``` <!---sh-->
+    make all
+```
+
+
+## To use:
+
+``` <!---sh-->
+    ./prog
+```
+
+
+## Alternate code:
+
+XXX
+
+
+### Alternate build:
+
+``` <!---sh-->
+    make alt
+```
+
+
+### Alternate use:
+
+``` <!---sh-->
+    ./prog.alt
+```
+
+
+## Judges' remarks:
+
+XXX
+
+
+## Author's remarks:
+
