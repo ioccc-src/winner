@@ -728,7 +728,7 @@ if [[ -z $NOOP ]]; then
 
     # process each author_handle
     #
-    export PATTERN='$authors..author_handle'
+    export PATTERN="\$authors..author_handle"
     if [[ $V_FLAG -ge 3 ]]; then
 	echo  "$0: debug[3]: about to run: $JVAL_WRAPPER -b -- $AUTH_JSON $PATTERN > $TMP_AUTHOR_HANDLE" 1>&2
     fi
