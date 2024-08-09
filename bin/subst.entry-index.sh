@@ -103,7 +103,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.3.5 2024-08-05"
+export VERSION="1.4 2024-08-09"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -391,9 +391,9 @@ if [[ ! -d $YEAR_DIR ]]; then
     exit 3
 fi
 export ENTRY_ID="${YEAR_DIR}_${ENTRY_DIR}"
-export DOT_YEAR="$YEAR_DIR/.year"
-if [[ ! -s $DOT_YEAR ]]; then
-    echo "$0: ERROR: not a non-empty file: $DOT_YEAR" 1>&2
+export DOT_ALLYEAR=".allyear"
+if [[ ! -s $DOT_ALLYEAR ]]; then
+    echo "$0: ERROR: not a non-empty file: $DOT_ALLYEAR" 1>&2
     exit 6
 fi
 # Now that we have moved to topdir, form and verify YYYY_DIR is a writable directory
@@ -486,7 +486,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: YEAR_DIR=$YEAR_DIR" 1>&2
     echo "$0: debug[3]: ENTRY_DIR=$ENTRY_DIR" 1>&2
     echo "$0: debug[3]: ENTRY_ID=$ENTRY_ID" 1>&2
-    echo "$0: debug[3]: DOT_YEAR=$DOT_YEAR" 1>&2
+    echo "$0: debug[3]: DOT_ALLYEAR=$DOT_ALLYEAR" 1>&2
     echo "$0: debug[3]: YYYY_DIR=$YYYY_DIR" 1>&2
     echo "$0: debug[3]: DOT_PATH=$DOT_PATH" 1>&2
     echo "$0: debug[3]: DOT_PATH_CONTENT=$DOT_PATH_CONTENT" 1>&2
@@ -526,7 +526,7 @@ echo "HEADER_2=$YYYY_DIR - $AWARD"
 
 # output navbar left hand side links
 #
-awk -v entry_path="$YYYY_DIR" -f "$ENTRY_NAVBAR_AWK" "$DOT_YEAR"
+awk -v entry_path="$YYYY_DIR" -f "$ENTRY_NAVBAR_AWK" "$DOT_ALLYEAR"
 status="$?"
 if [[ $status -ne 0 ]]; then
     echo "$0: ERROR: subst.entry-navbar.awk failed, error: $status" 1>&2

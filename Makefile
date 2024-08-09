@@ -331,7 +331,7 @@ help:
 	@echo '# Rules for building a local copy of the IOCCC website:'
 	@echo
 	@echo 'make tab_check		;: check for ASCII tabs in markdown files'
-	@echo 'make genpath		;: form top level .top, YYYY level .year and winner .path files'
+	@echo 'make genpath		;: form top level .top and .allyear, YYYY level .year and winner .path files'
 	@echo 'make genfilelist	;: generate YYYY level .filelist'
 	@echo 'make verify_entry_files	;: check to be sure all files in all entries exist'
 	@echo 'make gen_authors	;: generate the top level authors.html page'
@@ -403,7 +403,7 @@ tab_check:
 	    fi
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
-# form the top level .top, YYYY level .year and winner level .path files
+# form the top level .top and .allyear, YYYY level .year and winner level .path files
 #
 # IMPORTANT: This file assumes that make clobber was previously done.
 #
@@ -418,6 +418,16 @@ genpath:
 		echo "Warning: $$i/Makefile not found, skipping $$i for $@ processing" 1>&2 ; \
 	    fi; \
         done
+	@${RM} -f ".allyear.tmp"
+	@for i in ${YEARS}; do \
+	    cat "$$i/.year"; \
+	done | ${SORT} -f -d -u > ".allyear.tmp"
+	@if ${CMP} -s ".allyear.tmp" .allyear; then \
+	    ${RM} -f ".allyear.tmp"; \
+	else \
+	    ${MV} -f ".allyear.tmp" .allyear; \
+	    ${CHMOD} 0444 .allyear; \
+	fi
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 # generate YYYY level .filelist

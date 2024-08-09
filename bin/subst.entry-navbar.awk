@@ -13,6 +13,10 @@
 #
 #	awk -v entry_path=YYYY/dir -f bin/subst.entry-navbar.awk YYYY/.year
 #
+# usage:
+#
+#	awk -v entry_path=YYYY/dir -f bin/subst.entry-navbar.awk .allyear
+#
 # where:
 #
 #	YYYY	IOCCC year or mock
@@ -22,7 +26,7 @@ BEGIN {
 
     # setup
     #
-    VERSION="1.2 2024-03-02"
+    VERSION="1.3 2024-08-02"
     process_next_line = 0;	# 1 ==> we found our entry_path, now process the next line
     found_entry_path = 0;	# 1 ==> we found our entry_path
     prev_line = "";		# the previous YYYY/dir line
@@ -33,6 +37,15 @@ BEGIN {
     if (length(entry_path) == 0) {
 	exit 210;	# use 210 to match length(entry_path) == 0 error in the END section
     }
+
+    # determine entry_path_year and entry_path_dir
+    #
+    len = split(entry_path, file, "/");
+    if (len != 2) {
+	exit 211;	# use 211 to match len != 2 error in the END section
+    }
+    entry_path_year = file[1];
+    entry_path_dir = file[2];
 }
 
 # process YYYY/dir lines
@@ -47,7 +60,7 @@ $0 ~ /[^\/]+\/[^\/]+/ {
 	print "-e";
 	print "'invalid split of:", $0, "expected 2 part, found:", len "'";
 	print "-E";
-	print "211";
+	print "212";
 	exit
     }
     year = file[1];
@@ -60,10 +73,15 @@ $0 ~ /[^\/]+\/[^\/]+/ {
 	# process the line after we found our entry_path
 	#
 	# report the previous entry for this year
+	if (year == entry_path_year) {
+	    print "-s";
+	    print "RIGHT_LINK=../" dir "/index.html";
+	} else {
+	    print "-s";
+	    print "RIGHT_LINK=../../" year "/" dir "/index.html";
+	}
 	print "-s";
-	print "RIGHT_LINK=../" dir "/index.html";
-	print "-s";
-	print "RIGHT_TEXT=" dir;
+	print "RIGHT_TEXT=" year "/" dir;
 	process_next_line = 0;
 
     # if we found our entry_path
@@ -89,24 +107,22 @@ $0 ~ /[^\/]+\/[^\/]+/ {
 		print "-e";
 		print "'invalid split of:", prev_line "expected 2 part, found:", prev_len "'";
 		print "-E";
-		print "212";
+		print "213";
 		exit
 	    }
 	    prev_year = file[1];
 	    prev_dir = file[2];
-	    if (year != prev_year) {
-		# ERROR: previous YYYY/dir YYYY does not match current line
-		print "-e";
-		print "'previous line:", prev_line "year:", prev_year, "!= current line year:", year "'";
-		print "-E";
-		print "213";
-	    }
 
 	    # report the next entry for this year
+	    if (prev_year == entry_path_year) {
+		print "-s";
+		print "LEFT_LINK=../" prev_dir "/index.html";
+	    } else {
+		print "-s";
+		print "LEFT_LINK=../../" prev_year "/" prev_dir "/index.html";
+	    }
 	    print "-s";
-	    print "LEFT_LINK=../" prev_dir "/index.html";
-	    print "-s";
-	    print "LEFT_TEXT=" prev_dir;
+	    print "LEFT_TEXT=" prev_year "/" prev_dir;
 	}
 
 	# process our found entry_path
@@ -139,7 +155,7 @@ $0 !~ /[^\/]+\/[^\/]+/ {
 
 END {
 
-    # error if github is not set via -v github=REPO_URL
+    # error if entry_path is not set via -v entry_path=YYYY/dir
     #
     if (length(entry_path) == 0) {
 	print "-e";
@@ -147,6 +163,18 @@ END {
 	print "-E";
 	print "210";		# use 210 to match length(entry_path) == 0 error in the BEGIN section
 	exit 210;		# use 210 to match length(entry_path) == 0 error in the BEGIN section
+    }
+
+    # error if entry_path_year and entry_path_dir
+    #
+    len = split(entry_path, file, "/");
+    if (len != 2) {
+	# ERROR: invalid split of a YYYY/dir line
+	print "-e";
+	print "'invalid split of entry_path:", entry_path, "expected 2 part, found:", len "'";
+	print "-E";
+	print "211";
+	exit 211;
     }
 
     # case: we did not find our entry_path

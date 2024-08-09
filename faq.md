@@ -100,7 +100,7 @@ other inconsistencies with the original entry?</a>
 - <a class="normal" href="#faq6_5">6.5  - What is an `author handle`?</a>
 - <a class="normal" href="#faq6_6">6.6  - What is an `author_handle.json` file and how are they used?</a>
 - <a class="normal" href="#faq6_7">6.7  - What is an `entry_id`?</a>
-- <a class="normal" href="#faq6_8">6.8 -  What is the purpose of the .top, .year and .path files?</a>
+- <a class="normal" href="#faq6_8">6.8 -  What is the purpose of the .top, .allyear, .year and .path files?</a>
 - <a class="normal" href="#faq6_9">6.9 -  What is the current meaning of the IOCCC terms Author, Entry, and Submission?</a>
 - <a class="normal" href="#faq6_10">6.10 - How does someone make a change to a file and submit that change as a GitHub pull request?</a>
 - <a class="normal" href="#faq6_11">6.11 - Am I allowed to use IOCCC content?</a>
@@ -5320,24 +5320,28 @@ The `entry_id` for that winning entry is:
 <div id="faq6_8">
 <div id="dot_path">
 <div id="dot_year">
+<div id="dot_allyear">
 <div id="dot_top">
-### FAQ 6.8: What is the purpose of the .top, .year and .path files?
+### FAQ 6.8: What is the purpose of the .top, .allyear, .year and .path files?
+</div>
 </div>
 </div>
 </div>
 </div>
 
-The [.top](.top) file resides at the top directory.  This file contains the complete list
+The [.top](%%REPO_URL%%/.top) file resides at the top directory.  This file contains the complete list
 of IOCCC years.
 
 Under each IOCCC year. one will find a `.year` file.  These files contain directory paths from the top directory,
 of the IOCCC entry directories for a given year.  For example, see the [1984/.year](%%REPO_URL%%/1984/.year) file.
 
+The [.allyear](%%REPO_URL%%/.allyear) file contains the contents of all `.year` files for all IOCCC years.
+
 Under each IOCCC entry directory, you will find a `.path` file.
 These files contain the directory path from the top directory.
 For example see [1984/anonymous/.path](%%REPO_URL%%/1984/anonymous/.path).
 
-The .top, .year and .path files are generated from the top level Makefile, by:
+The .top, .allyear, .year and .path files are generated from the top level Makefile, by:
 
 ``` <!---sh-->
     make genpath

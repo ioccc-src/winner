@@ -488,7 +488,7 @@ other inconsistencies with the original entry?</a></li>
 <li><a class="normal" href="#faq6_5">6.5 - What is an <code>author handle</code>?</a></li>
 <li><a class="normal" href="#faq6_6">6.6 - What is an <code>author_handle.json</code> file and how are they used?</a></li>
 <li><a class="normal" href="#faq6_7">6.7 - What is an <code>entry_id</code>?</a></li>
-<li><a class="normal" href="#faq6_8">6.8 - What is the purpose of the .top, .year and .path files?</a></li>
+<li><a class="normal" href="#faq6_8">6.8 - What is the purpose of the .top, .allyear, .year and .path files?</a></li>
 <li><a class="normal" href="#faq6_9">6.9 - What is the current meaning of the IOCCC terms Author, Entry, and Submission?</a></li>
 <li><a class="normal" href="#faq6_10">6.10 - How does someone make a change to a file and submit that change as a GitHub pull request?</a></li>
 <li><a class="normal" href="#faq6_11">6.11 - Am I allowed to use IOCCC content?</a></li>
@@ -4340,20 +4340,23 @@ of 2020 is found under the following directory:</p>
 <div id="faq6_8">
 <div id="dot_path">
 <div id="dot_year">
+<div id="dot_allyear">
 <div id="dot_top">
-<h3 id="faq-6.8-what-is-the-purpose-of-the-.top-.year-and-.path-files">FAQ 6.8: What is the purpose of the .top, .year and .path files?</h3>
+<h3 id="faq-6.8-what-is-the-purpose-of-the-.top-.allyear-.year-and-.path-files">FAQ 6.8: What is the purpose of the .top, .allyear, .year and .path files?</h3>
 </div>
 </div>
 </div>
 </div>
-<p>The <a href=".top">.top</a> file resides at the top directory. This file contains the complete list
+</div>
+<p>The <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/.top">.top</a> file resides at the top directory. This file contains the complete list
 of IOCCC years.</p>
 <p>Under each IOCCC year. one will find a <code>.year</code> file. These files contain directory paths from the top directory,
 of the IOCCC entry directories for a given year. For example, see the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1984/.year">1984/.year</a> file.</p>
+<p>The <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/.allyear">.allyear</a> file contains the contents of all <code>.year</code> files for all IOCCC years.</p>
 <p>Under each IOCCC entry directory, you will find a <code>.path</code> file.
 These files contain the directory path from the top directory.
 For example see <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1984/anonymous/.path">1984/anonymous/.path</a>.</p>
-<p>The .top, .year and .path files are generated from the top level Makefile, by:</p>
+<p>The .top, .allyear, .year and .path files are generated from the top level Makefile, by:</p>
 <pre><code>    make genpath</code></pre>
 <div id="faq6_9">
 <div id="terms">
