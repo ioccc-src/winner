@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 #
-# add-dir.sh - add a new entry directory under an IOCCC year
+# new-dir.sh - add a new entry directory under an IOCCC year
 #
 # We update YYYY/.year to reference a new entry directory under
-# a given IOCCC year.
+# a given IOCCC year.  We also update the to level `.allyear` too.
 #
 # Copyright (c) 2024 by Landon Curt Noll.  All Rights Reserved.
 #
@@ -88,7 +88,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.2 2024-08-09"
+export VERSION="1.3 2024-08-11"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0

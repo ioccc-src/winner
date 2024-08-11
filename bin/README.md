@@ -75,23 +75,6 @@ be directly invoked as well, should you wish to see their output or if you have
 some odd need to do so.
 
 
-<div id="add-dir">
-### [add-dir.sh](%%REPO_URL%%/bin/add-dir.sh)
-</div>
-
-This tool is used by the [Judges](../judges.html) as part of the final
-steps to announce a new winning IOCCC entry.
-
-Usage:
-
-``` <!---sh-->
-    mkdir -p YYYY/dir
-    bin/add-dir.sh YYYY/dir
-```
-
-Here, `YYYY/dir` must be the path to the winning IOCCC entry.
-
-
 <div id="all-run">
 ### [all-run.sh](%%REPO_URL%%/bin/all-run.sh)
 </div>
@@ -234,12 +217,7 @@ This tool is used by the [Judges](../judges.html) as part of the final
 steps to announce a new set of winning IOCCC entries.
 
 Given a submission (that has won the IOCCC and thus will become an entry), with a `.auth.json`
-and `.info.json` and **NO** `.entry.json` file (since it just won), we convert the
-`.auth.json` and `.info.json` into a new `.entry.json` file.
-
-This tool will, given a submission that has won the IOCCC (and thus will become a published entry), with
-a `.auth.json` and `.info.json` and NO `.entry.json` file (since it's new), we
-convert the `.auth.json` and `.info.json` into a new `.entry.json` file.
+and `.info.json`, we convert the `.auth.json` and `.info.json` into a new `.entry.json` file.
 
 **NOTE**: the `.auth.json` and `.info.json` files are formed by the
 `mkiocccentry(1)` tool from the [mkiocccentry GitHub
@@ -260,8 +238,49 @@ Usage:
     bin/cvt-submission.sh -v 1 YYYY/dir
 ```
 
-Here, `YYYY/dir` is the path of the submission under the `YYYY`
-year directory. For instance
+Here, `YYYY/dir` is the path of the submission under the `YYYY` year directory.
+
+This tool will form a compressed tarball of any files under `YYYY/dir`
+that could be modified or removed by this tool (unless `-N` is used in which
+case this tool does nothing).  The compressed tarball, formed by default
+under the `/var/tmp` directory, may contain such as:
+
+- YYYY/dir/.info.json
+- YYYY/dir/.auth.json
+- YYYY/dir/remarks.md
+- YYYY/dir/README.md
+- YYYY/dir/index.md
+- YYYY/dir/YYYY_dir.tar.bz2
+- author/author_handle.json (could be more than one file)
+
+Only those files that exist will be put into the compressed tarball.
+The compressed tarball formed (by default under the `/var/tmp` directory)
+is of the following form:
+
+> YYYY_dir.YYYYMMDD.hhmmss.tar.bz2
+
+The purpose of this compressed tarball is to allow the files in the
+submission directory (that could be modified or removed by this tool)
+to be restored as follows:
+
+```sh
+tar -jxvf /var/tmp/YYYY_dir.YYYYMMDD.hhmmss.tar.bz2 YYYY/dir
+```
+
+One may also restore modified `author/author_handle.json` files using:
+
+```sh
+tar -jxvf /var/tmp/YYYY_dir.YYYYMMDD.hhmmss.tar.bz2 author
+```
+
+**NOTE**: This interactive tool (unless `-i input_data` is used) does
+**NOT** perform all of the steps needed to make a directory a new winning
+IOCCC entry.  For example, files such as `README.md` and/or `index.html`
+might contain "**XXX**" patterns indicating where the [Judges](../judges.html)
+need to add content.  Moreover, the `Makefile` and `.gitignore` files
+need to be examined for suitability, etc.
+
+**HINT**: Executing this tool on your submission will **NOT** make you an IOCCC winner.  :-)
 
 
 <div id="entry2csv">
@@ -663,6 +682,32 @@ For an example, see the [author details in
 
 This tool is used in the [bin/md2html.cfg](%%REPO_URL%%/bin/md2html.cfg) file as part of
 the [md2html tool](index.html#md2html).
+
+
+<div id="new-dir">
+### [new-dir.sh](%%REPO_URL%%/bin/new-dir.sh)
+</div>
+
+This tool is used by the [Judges](../judges.html) as one of the
+steps needed to announce a new winning IOCCC entry.
+
+Usage:
+
+``` <!---sh-->
+    mkdir -p YYYY/dir
+    bin/new-dir.sh YYYY/dir
+```
+
+Here, `YYYY/dir` must be the path to the winning IOCCC entry.
+
+**NOTE**: This tool does **NOT** perform all of the steps needed
+to make a directory a new winning IOCCC entry.  It only starts the
+framework for doing so, creating a situation where the
+[cvt-submission](#cvt-submission) tool be be run.
+
+This tool can modify the top level `.allyear` file, and `YYYY/Makefile` files.
+
+**HINT**: Executing this tool on your submission will **NOT** make you an IOCCC winner.  :-)
 
 
 <div id="new_year">
