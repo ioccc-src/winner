@@ -301,7 +301,8 @@ indent.c:
 #	   simple want to examine, run / test winning IOCCC entries.
 
 .PHONY: help genpath genfilelist verify_entry_files gen_authors gen_location gen_years \
-	find_missing_links test entry_index gen_top_html thanks gen_other_html quick_entry_index \
+	find_missing_links test entry_index gen_top_html thanks gen_other_html \
+	quick_other_html quick_entry_index \
 	gen_year_index quick_www www untar_entry_tarball untar_year_tarball \
 	form_entry_tarball form_year_tarball tar gen_status gen_sitemap \
 	sitemap timestamp update csv2entry entry2csv
@@ -339,6 +340,7 @@ help:
 	@echo 'make gen_years		;: generate the top level years.html page'
 	@echo 'make entry_index	;: force the build of ALL winner index.html files'
 	@echo 'make gen_other_html	;: build entry HTML files from markdown other than README.md'
+	@echo 'make quick_other_html	;: build entry non-index.html files that might be out of date'
 	@echo 'make gen_year_index	;: generate year level index.html files using from README.md files'
 	@echo 'make gen_top_html	;: generate a number of the top level HTML files from markdown'
 	@echo 'make gen_next		;: generate the HTML files in next/'
@@ -511,6 +513,17 @@ gen_other_html: ${GEN_OTHER_HTML}
 	${GEN_OTHER_HTML} -v 1
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
+# build entry HTML files from non-README.md markdown files that might be out of date
+#
+# This rule uses the -Q option of ${GEN_OTHER_HTML}, so that some
+# non-README.md markdown files that seem to be up to date (but might
+# not be up to date) won't be built.
+#
+quick_other_html: ${GEN_OTHER_HTML}
+	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	${GEN_OTHER_HTML} -v 1 -Q
+	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+
 # generate year level index.html files using the
 # ${GEN_YEAR_INDEX} tool (bin/gen-year-index.sh).
 #
@@ -661,7 +674,7 @@ quick_www:
 	${MAKE} gen_year_index
 	${MAKE} gen_top_html
 	${MAKE} quick_entry_index
-	${MAKE} gen_other_html
+	${MAKE} quick_other_html
 	${MAKE} find_missing_links
 	@echo '=-=-=-=-=-= IOCCC complete make $@ =-=-=-=-=-='
 

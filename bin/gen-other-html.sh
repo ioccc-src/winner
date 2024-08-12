@@ -84,7 +84,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.2.6 2024-08-05"
+export VERSION="1.3 2024-08-11"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -111,6 +111,7 @@ export SITE_URL="https://ioccc-src.github.io/temp-test-ioccc"
 #
 export NOOP=
 export DO_NOT_PROCESS=
+export QUICK_MODE=
 export EXIT_CODE="0"
 
 # clear options we will add to tools
@@ -121,7 +122,7 @@ declare -ag TOOL_OPTION
 # usage
 #
 export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
-			[-t tagline] [-T md2html.sh] [-p tool] [-w site_url]
+			[-t tagline] [-T md2html.sh] [-Q] [-p tool] [-w site_url]
 
 	-h		print help message and exit
 	-v level	set verbosity level (def level: 0)
@@ -139,6 +140,7 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
 			NOTE: The '-t tagline' is passed as leading options on tool command lines.
 	-T md2html.sh	run 'markdown to html tool' to convert markdown into HTML (def: $MD2HTML_SH)
 			NOTE: The '-T md2html.sh' is passed as leading options on tool command lines.
+	-Q	        quick mode, do not run $MD2HTML_SH unless markdown is out of date (def: do)
 
 	-p tool		run 'pandoc wrapper tool' (not pandoc path) during HTML phase number 21 (def: use $PANDOC_WRAPPER)
 
@@ -165,7 +167,7 @@ $NAME version: $VERSION"
 
 # parse command line
 #
-while getopts :hv:Vd:D:nNt:T:p:w: flag; do
+while getopts :hv:Vd:D:nNt:T:Qp:w: flag; do
   case "$flag" in
     h) echo "$USAGE" 1>&2
 	exit 2
@@ -215,6 +217,8 @@ while getopts :hv:Vd:D:nNt:T:p:w: flag; do
     T) MD2HTML_SH="$OPTARG"
 	TOOL_OPTION+=("-T")
 	TOOL_OPTION+=("$MD2HTML_SH")
+	;;
+    Q) QUICK_MODE="-Q"
 	;;
     p) PANDOC_WRAPPER="$OPTARG"
 	TOOL_OPTION+=("-p")
@@ -358,6 +362,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: SITE_URL=$SITE_URL" 1>&2
     echo "$0: debug[3]: NOOP=$NOOP" 1>&2
     echo "$0: debug[3]: DO_NOT_PROCESS=$DO_NOT_PROCESS" 1>&2
+    echo "$0: debug[3]: QUICK_MODE=$QUICK_MODE" 1>&2
     echo "$0: debug[3]: EXIT_CODE=$EXIT_CODE" 1>&2
     for index in "${!TOOL_OPTION[@]}"; do
 	echo "$0: debug[3]: TOOL_OPTION[$index]=${TOOL_OPTION[$index]}" 1>&2
@@ -578,6 +583,24 @@ for YYYY in $(< "$TOP_FILE"); do
 	    export HTML_FILE=${MD_FILE//\.md/.html}
 	    HTML_BASENAME=$(basename "$HTML_FILE")
 	    export HTML_BASENAME
+
+	    # determine if we need to run the tool
+	    #
+	    # Check if the non-empty foo.html is newer than foo.md.
+	    #
+	    if [[ -n $QUICK_MODE ]]; then
+		if [[ $V_FLAG -ge 5 ]]; then
+		    echo "$0: debug[5]: listing of important files, if they exist, starts below" 1>&2
+		    ls -lRt -- "$HTML_FILE" "$MD_FILE" 2>/dev/null
+		    echo "$0: debug[5]: listing of important files, if they exist, ends above" 1>&2
+		fi
+		if [[ -s $HTML_FILE && $HTML_FILE -nt $MD_FILE ]]; then
+		    if [[ $V_FLAG -ge 3 ]]; then
+			echo "$0: debug[3]: does not need to be updated: $HTML_FILE" 1>&2
+		    fi
+		    continue
+		fi
+	    fi
 
 	    # determine the description arg
 	    #
