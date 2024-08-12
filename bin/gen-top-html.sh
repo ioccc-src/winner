@@ -93,7 +93,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.4.8 2024-08-05"
+export VERSION="1.4.9 2024-08-11"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -122,6 +122,7 @@ unset TOP_MD_SET
 declare -ag TOP_MD_SET
 TOP_MD_SET+=("CODE_OF_CONDUCT")
 TOP_MD_SET+=("README")
+TOP_MD_SET+=("author/README")
 TOP_MD_SET+=("archive/historic/README")
 TOP_MD_SET+=("bin/README")
 TOP_MD_SET+=("bugs")
@@ -511,6 +512,10 @@ if (( ${#TOP_MD_SELECT_SET[@]} )); then
 	if [[ $name == next/README ]]; then
 	    HTML_FILE="next/index.html"
 	fi
+	# author/README is a special case
+	if [[ $name == author/README ]]; then
+	    HTML_FILE="author/index.html"
+	fi
 	# archive/historic/README is a special case
 	if [[ $name == archive/historic/README ]]; then
 	    HTML_FILE="archive/historic/index.html"
@@ -585,6 +590,10 @@ else
 	# next/README is a special case
 	if [[ $name == next/README ]]; then
 	    HTML_FILE="next/index.html"
+	fi
+	# author/README is a special case
+	if [[ $name == author/README ]]; then
+	    HTML_FILE="author/index.html"
 	fi
 	# archive/historic/README is a special case
 	if [[ $name == archive/historic/README ]]; then
