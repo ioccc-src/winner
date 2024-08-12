@@ -556,16 +556,19 @@ is of the following form:</p>
 <blockquote>
 <p>YYYY_dir.YYYYMMDD.hhmmss.tar.bz2</p>
 </blockquote>
+<p>Here “<em>YYYYMMDD.hhmmss</em>” is a date and timestamp from when the tool was executed.</p>
 <p>The purpose of this compressed tarball is to allow the files in the
 submission directory (that could be modified or removed by this tool)
 to be restored as follows:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tar</span> <span class="at">-jxvf</span> /var/tmp/YYYY_dir.YYYYMMDD.hhmmss.tar.bz2 YYYY/dir</span></code></pre></div>
+<pre><code>    tar -jxvf /var/tmp/YYYY_dir.YYYYMMDD.hhmmss.tar.bz2 YYYY/dir</code></pre>
 <p>One may also restore modified <code>author/author_handle.json</code> files using:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tar</span> <span class="at">-jxvf</span> /var/tmp/YYYY_dir.YYYYMMDD.hhmmss.tar.bz2 author</span></code></pre></div>
+<pre><code>    tar -jxvf /var/tmp/YYYY_dir.YYYYMMDD.hhmmss.tar.bz2 author</code></pre>
+<p>This tool will form <code>YYYY/dir/README.md</code> if needed, from <code>YYYY/dir/remarks.md</code>,
+<code>template/entry/README.md.head</code>, and <code>template/entry/README.md.tail</code>.</p>
 <p><strong>NOTE</strong>: This interactive tool (unless <code>-i input_data</code> is used) does
 <strong>NOT</strong> perform all of the steps needed to make a directory a new winning
-IOCCC entry. For example, files such as <code>README.md</code> and/or <code>index.html</code>
-might contain “<strong>XXX</strong>” patterns indicating where the <a href="../judges.html">Judges</a>
+IOCCC entry. For example, files such as <code>YYYY/dir/README.md</code> and/or <code>YYYY/dir/index.html</code>
+might contain “<em>triple X</em>” patterns indicating where the <a href="../judges.html">Judges</a>
 need to add content. Moreover, the <code>Makefile</code> and <code>.gitignore</code> files
 need to be examined for suitability, etc.</p>
 <p><strong>HINT</strong>: Executing this tool on your submission will <strong>NOT</strong> make you an IOCCC winner. :-)</p>
@@ -805,15 +808,24 @@ to make a directory a new winning IOCCC entry. It only starts the
 framework for doing so, creating a situation where the
 <a href="#cvt-submission">cvt-submission</a> tool be be run.</p>
 <p>This tool can modify the top level <code>.allyear</code> file, and <code>YYYY/Makefile</code> files.</p>
+<p><strong>NOTE</strong>: This tool assumes that <a href="#new_year">new-year.sh</a> was executed to create
+the prerequisite <code>YYYY</code> directory and related files.</p>
 <p><strong>HINT</strong>: Executing this tool on your submission will <strong>NOT</strong> make you an IOCCC winner. :-)</p>
 <div id="new_year">
 <h3 id="new-year.sh"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/new-year.sh">new-year.sh</a></h3>
 </div>
 <p>This tool is used by the <a href="../judges.html">Judges</a> as part of the final
 steps to announce a new set of winning IOCCC entries.</p>
+<p>This tool may modify the top level <code>.top</code> and <code>Makefile</code> files.
+It will form <code>YYYY/Makefile</code> and/or <code>YYYY/.year</code> if needed.
+It will form <code>YYYY/README.md</code> if needed, from <code>template/README.md.year</code>.</p>
+<p><strong>NOTE</strong>: This tool <strong>NOT</strong> perform all of the steps needed to make a new IOCCC year directory.
+For example, files such as <code>YYYY/README.md</code> and/or <code>YYYY/index.html</code>
+might contain “<em>triple X</em>” patterns indicating where the <a href="../judges.html">Judges</a>
+need to add content.</p>
 <p>Usage:</p>
 <pre><code>    bin/new-year.sh -v 1 YYYY</code></pre>
-<p>Here, <code>YYYY</code> must be a new 4-digit IOCCC year.</p>
+<p>Here, <code>YYYY</code> must be a new 4-digit (happy :-)) new IOCCC year.</p>
 <div id="output-index-inventory">
 <h3 id="output-index-inventory.sh"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/output-index-inventory.sh">output-index-inventory.sh</a></h3>
 </div>

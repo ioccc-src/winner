@@ -88,7 +88,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.3 2024-08-11"
+export VERSION="1.3.1 2024-08-11"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -385,8 +385,8 @@ if [[ -z $NOOP ]]; then
 
     # append entry directory path to .year
     #
-    if [[ $V_FLAG -ge 3 ]]; then
-	echo "$0: debug[3]: appending YYYY_DIR: $YYYY_DIR to: $DOT_YEAR" 1>&2
+    if [[ $V_FLAG -ge 1 ]]; then
+	echo "$0: debug[1]: making sure that YYYY_DIR: $YYYY_DIR is in: $DOT_YEAR" 1>&2
     fi
     echo "$YYYY_DIR" >> "$DOT_YEAR"
 
@@ -406,8 +406,8 @@ if [[ -z $NOOP ]]; then
     # firewall - verify YYYY_DIR in .year
     #
     if grep -E -q "^$YYYY_DIR$" "$DOT_YEAR"; then
-	if [[ $V_FLAG -ge 1 ]]; then
-	    echo "$0: debug[1]: YYYY_DIR: $YYYY_DIR is in: $DOT_YEAR" 1>&2
+	if [[ $V_FLAG -ge 5 ]]; then
+	    echo "$0: debug[5]: YYYY_DIR: $YYYY_DIR is in: $DOT_YEAR" 1>&2
 	fi
     else
 	echo "$0: ERROR: failed to add YYYY_DIR: $YYYY_DIR to: $DOT_YEAR" 1>&2
@@ -472,8 +472,8 @@ if [[ -z $NOOP ]]; then
 
         # case: Makefile file changed, update the file
         #
-        if [[ $V_FLAG -ge 5 ]]; then
-            echo "$0: debug[5]: about to: mv -f -- $TMP_MAKEFILE $MAKE_FILE" 1>&2
+        if [[ $V_FLAG -ge 1 ]]; then
+            echo "$0: debug[1]: about to: mv -f -- $TMP_MAKEFILE $MAKE_FILE" 1>&2
         fi
         if [[ $V_FLAG -ge 3 ]]; then
             mv -f -v -- "$TMP_MAKEFILE" "$MAKE_FILE"
@@ -511,6 +511,9 @@ if [[ -z $NOOP ]]; then
     fi
     if [[ $V_FLAG -ge 1 ]]; then
 	echo "$0: debug[1]: make genpath complete" 1>&2
+    fi
+    if [[ $V_FLAG -ge 1 ]]; then
+	echo "$0: debug[1]: ready for: bin/cvt-submission.sh -v $V_FLAG $YYYY_DIR" 1>&2
     fi
 
 # case: with -n

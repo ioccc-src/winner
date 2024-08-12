@@ -259,24 +259,28 @@ is of the following form:
 
 > YYYY_dir.YYYYMMDD.hhmmss.tar.bz2
 
+Here "_YYYYMMDD.hhmmss_" is a date and timestamp from when the tool was executed.
+
 The purpose of this compressed tarball is to allow the files in the
 submission directory (that could be modified or removed by this tool)
 to be restored as follows:
 
-```sh
-tar -jxvf /var/tmp/YYYY_dir.YYYYMMDD.hhmmss.tar.bz2 YYYY/dir
+``` <!---sh-->
+    tar -jxvf /var/tmp/YYYY_dir.YYYYMMDD.hhmmss.tar.bz2 YYYY/dir
 ```
 
 One may also restore modified `author/author_handle.json` files using:
 
-```sh
-tar -jxvf /var/tmp/YYYY_dir.YYYYMMDD.hhmmss.tar.bz2 author
+``` <!---sh-->
+    tar -jxvf /var/tmp/YYYY_dir.YYYYMMDD.hhmmss.tar.bz2 author
 ```
+This tool will form `YYYY/dir/README.md` if needed, from `YYYY/dir/remarks.md`,
+`template/entry/README.md.head`, and `template/entry/README.md.tail`.
 
 **NOTE**: This interactive tool (unless `-i input_data` is used) does
 **NOT** perform all of the steps needed to make a directory a new winning
-IOCCC entry.  For example, files such as `README.md` and/or `index.html`
-might contain "**XXX**" patterns indicating where the [Judges](../judges.html)
+IOCCC entry.  For example, files such as `YYYY/dir/README.md` and/or `YYYY/dir/index.html`
+might contain "_triple X_" patterns indicating where the [Judges](../judges.html)
 need to add content.  Moreover, the `Makefile` and `.gitignore` files
 need to be examined for suitability, etc.
 
@@ -707,6 +711,9 @@ framework for doing so, creating a situation where the
 
 This tool can modify the top level `.allyear` file, and `YYYY/Makefile` files.
 
+**NOTE**: This tool assumes that [new-year.sh](#new_year) was executed to create
+the prerequisite `YYYY` directory and related files.
+
 **HINT**: Executing this tool on your submission will **NOT** make you an IOCCC winner.  :-)
 
 
@@ -717,13 +724,22 @@ This tool can modify the top level `.allyear` file, and `YYYY/Makefile` files.
 This tool is used by the [Judges](../judges.html) as part of the final
 steps to announce a new set of winning IOCCC entries.
 
+This tool may modify the top level `.top` and `Makefile` files.
+It will form `YYYY/Makefile` and/or `YYYY/.year` if needed.
+It will form `YYYY/README.md` if needed, from `template/README.md.year`.
+
+**NOTE**: This tool **NOT** perform all of the steps needed to make a new IOCCC year directory.
+For example, files such as `YYYY/README.md` and/or `YYYY/index.html`
+might contain "_triple X_" patterns indicating where the [Judges](../judges.html)
+need to add content.
+
 Usage:
 
 ``` <!---sh-->
     bin/new-year.sh -v 1 YYYY
 ```
 
-Here, `YYYY` must be a new 4-digit IOCCC year.
+Here, `YYYY` must be a new 4-digit (happy :-)) new IOCCC year.
 
 
 <div id="output-index-inventory">
