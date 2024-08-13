@@ -85,7 +85,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.10.7 2024-08-05"
+export VERSION="1.11 2024-08-13"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -112,6 +112,7 @@ export SITE_URL="https://ioccc-src.github.io/temp-test-ioccc"
 #
 export NOOP=
 export DO_NOT_PROCESS=
+export QUICK_MODE=
 export EXIT_CODE="0"
 
 # Letter "is for" text
@@ -153,7 +154,7 @@ declare -ag TOOL_OPTION
 # usage
 #
 export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
-			[-t tagline] [-T md2html.sh] [-p tool]
+			[-t tagline] [-T md2html.sh] [-p tool] [-Q]
 
 	-h		print help message and exit
 	-v level	set verbosity level (def level: 0)
@@ -175,6 +176,8 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
 
 	-p tool		run 'pandoc wrapper tool' (not pandoc path) during HTML phase number 21 (def: use $PANDOC_WRAPPER)
 			NOTE: The '-p tool' is passed as leading options on tool command lines.
+
+	-Q	        quick mode, do not run $MD2HTML_SH unless markdown is out of date (def: do)
 
 	-w site_url	Base URL of the website (def: $SITE_URL)
 			NOTE: The '-w site_url' is passed as leading options on tool command lines.
@@ -200,12 +203,6 @@ $NAME version: $VERSION"
 # output_entry_ids
 #
 # Write the entry ids from an author/author_handle.json file to standard output (stdout)
-#
-# XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
-# XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
-# XXX - until we have the jnamval command, we must FAKE PARSE the author/author_handle.json file - XXX
-# XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
-# XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
 #
 # usage:
 #	output_entry_ids author/author_handle.json
@@ -241,19 +238,13 @@ function output_entry_ids
 
     # extract entry ids from the author/author_handle.json file
     #
-    grep -F entry_id "$AUTHOR_HANDLE_JSON_PATH" | awk 'NF == 5 { print $4; }' | tr -d '"'
+    "$JVAL_WRAPPER" -w -b "$AUTHOR_HANDLE_JSON_PATH" '$..entry_id'
     return 0
 }
 
 # output_author_handle
 #
 # Write the author handles from an author/author_handle.json file to standard output (stdout)
-#
-# XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
-# XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
-# XXX - until we have the jnamval command, we must FAKE PARSE the author/author_handle.json file - XXX
-# XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
-# XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
 #
 # usage:
 #	output_author_handle author/author_handle.json
@@ -288,19 +279,13 @@ function output_author_handle
 
     # extract entry ids from the author/author_handle.json file
     #
-    grep -F author_handle "$AUTHOR_HANDLE_JSON_PATH" | sed -e 's/.*"author_handle" : "//' -e 's/",.*//'
+    "$JVAL_WRAPPER" -w -b "$AUTHOR_HANDLE_JSON_PATH" '$..author_handle'
     return 0
 }
 
 # output_full_name
 #
 # Write the Full Name from an author/author_handle.json file to standard output (stdout)
-#
-# XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
-# XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
-# XXX - until we have the jnamval command, we must FAKE PARSE the author/author_handle.json file - XXX
-# XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
-# XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
 #
 # usage:
 #	output_full_name author/author_handle.json
@@ -335,19 +320,13 @@ function output_full_name
 
     # extract Full Name from the author/author_handle.json file
     #
-    grep -F full_name "$AUTHOR_HANDLE_JSON_PATH" | sed -e 's/.*"full_name" : "//' -e 's/",.*//'
+    "$JVAL_WRAPPER" -w -b "$AUTHOR_HANDLE_JSON_PATH" '$..full_name'
     return 0
 }
 
 # output_location_code
 #
 # Write the Location Code from an author/author_handle.json file to standard output (stdout)
-#
-# XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
-# XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
-# XXX - until we have the jnamval command, we must FAKE PARSE the author/author_handle.json file - XXX
-# XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
-# XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
 #
 # usage:
 #	output_location_code author/author_handle.json
@@ -382,19 +361,13 @@ function output_location_code
 
     # extract Location Code from the author/author_handle.json file
     #
-    grep -F location_code "$AUTHOR_HANDLE_JSON_PATH" | sed -e 's/.*"location_code" : "*//' -e 's/"*,.*//'
+    "$JVAL_WRAPPER" -w -b "$AUTHOR_HANDLE_JSON_PATH" '$..location_code'
     return 0
 }
 
 # output_award
 #
 # Write the award name to standard output (stdout)
-#
-# XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
-# XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
-# XXX - until we have the jnamval command, we must FAKE PARSE the .entry.json file  - XXX
-# XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
-# XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
 #
 # usage:
 #       output_award YYYY/dir/.entry.json
@@ -406,7 +379,6 @@ function output_location_code
 function output_award
 {
     local ENTRY_JSON_PATH;	# the .entry.json path
-    local AWARD_STRING;		# winning entry award string
 
     # parse args
     #
@@ -430,12 +402,7 @@ function output_award
 
     # obtain the award string
     #
-    AWARD_STRING=$(grep -F '"award" : "'  "$ENTRY_JSON_PATH" | sed -e 's/^.*"award" : "//' -e 's/",//')
-    if [[ -z $AWARD_STRING ]]; then
-	echo "$0: ERROR: in output_award: no award found in .entry.json file: $ENTRY_JSON_PATH" 1>&2
-	return 5
-    fi
-    echo "$AWARD_STRING"
+    "$JVAL_WRAPPER" -w -b "$ENTRY_JSON_PATH" '$..award'
     return 0
 }
 
@@ -444,12 +411,6 @@ function output_award
 # Write the url from an author/author_handle.json file to standard output (stdout)
 #
 # NOTE: If the url for the author is null, nothing is written to standard output.
-#
-# XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
-# XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
-# XXX - until we have the jnamval command, we must FAKE PARSE the author/author_handle.json file - XXX
-# XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
-# XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
 #
 # usage:
 #	output_url author/author_handle.json
@@ -486,7 +447,7 @@ function output_url
     #
     # NOTE: We output nothing if the JSON member value is null.
     #
-    grep -F '"url"' "$AUTHOR_HANDLE_JSON_PATH" | grep -v -E ':\s*null' | sed -e 's/.*"url" : "//' -e 's/",.*//'
+    "$JVAL_WRAPPER" -w -b "$AUTHOR_HANDLE_JSON_PATH" '$..url' | grep -F -v null
     return 0
 }
 
@@ -495,12 +456,6 @@ function output_url
 # Write the alternate url from an author/author_handle.json file to standard output (stdout)
 #
 # NOTE: If the alternate url for the author is null, nothing is written to standard output.
-#
-# XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
-# XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
-# XXX - until we have the jnamval command, we must FAKE PARSE the author/author_handle.json file - XXX
-# XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
-# XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
 #
 # usage:
 #	output_alt_url author/author_handle.json
@@ -537,7 +492,7 @@ function output_alt_url
     #
     # NOTE: We output nothing if the JSON member value is null.
     #
-    grep -F '"alt_url"' "$AUTHOR_HANDLE_JSON_PATH" | grep -v -E ':\s*null' | sed -e 's/.*"alt_url" : "//' -e 's/",.*//'
+    "$JVAL_WRAPPER" -w -b "$AUTHOR_HANDLE_JSON_PATH" '$..alt_url' | grep -F -v null
     return 0
 }
 
@@ -546,12 +501,6 @@ function output_alt_url
 # Write the mastodon handle from an author/author_handle.json file to standard output (stdout)
 #
 # NOTE: If the mastodon handle for the author is null, nothing is written to standard output.
-#
-# XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
-# XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
-# XXX - until we have the jnamval command, we must FAKE PARSE the author/author_handle.json file - XXX
-# XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
-# XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
 #
 # usage:
 #	output_mastodon author/author_handle.json
@@ -588,7 +537,7 @@ function output_mastodon
     #
     # NOTE: We output nothing if the JSON member value is null.
     #
-    grep -F '"mastodon"' "$AUTHOR_HANDLE_JSON_PATH" | grep -v -E ':\s*null' | sed -e 's/.*"mastodon" : "//' -e 's/",.*//'
+    "$JVAL_WRAPPER" -w -b "$AUTHOR_HANDLE_JSON_PATH" '$..mastodon' | grep -F -v null
     return 0
 }
 
@@ -597,12 +546,6 @@ function output_mastodon
 # Write the mastodon handle from an author/author_handle.json file to standard output (stdout)
 #
 # NOTE: If the mastodon URL for the author is null, nothing is written to standard output.
-#
-# XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
-# XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
-# XXX - until we have the jnamval command, we must FAKE PARSE the author/author_handle.json file - XXX
-# XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
-# XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
 #
 # usage:
 #	output_mastodon_url author/author_handle.json
@@ -639,7 +582,7 @@ function output_mastodon_url
     #
     # NOTE: We output nothing if the JSON member value is null.
     #
-    grep -F '"mastodon_url"' "$AUTHOR_HANDLE_JSON_PATH" | grep -v -E ':\s*null' | sed -e 's/.*"mastodon_url" : "//' -e 's/",.*//'
+    "$JVAL_WRAPPER" -w -b "$AUTHOR_HANDLE_JSON_PATH" '$..mastodon_url' | grep -F -v null
     return 0
 }
 
@@ -648,12 +591,6 @@ function output_mastodon_url
 # Write the GitHub handle from an author/author_handle.json file to standard output (stdout)
 #
 # NOTE: If the GitHub handle for the author is null, nothing is written to standard output.
-#
-# XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
-# XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
-# XXX - until we have the jnamval command, we must FAKE PARSE the author/author_handle.json file - XXX
-# XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
-# XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
 #
 # usage:
 #	output_github author/author_handle.json
@@ -690,7 +627,7 @@ function output_github
     #
     # NOTE: We output nothing if the JSON member value is null.
     #
-    grep -F '"github"' "$AUTHOR_HANDLE_JSON_PATH" | grep -v -E ':\s*null' | sed -e 's/.*"github" : "//' -e 's/",.*//'
+    "$JVAL_WRAPPER" -w -b "$AUTHOR_HANDLE_JSON_PATH" '$..github' | grep -F -v null
     return 0
 }
 
@@ -699,12 +636,6 @@ function output_github
 # Write the affiliation from an author/author_handle.json file to standard output (stdout)
 #
 # NOTE: If the affiliation for the author is null, nothing is written to standard output.
-#
-# XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
-# XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
-# XXX - until we have the jnamval command, we must FAKE PARSE the author/author_handle.json file - XXX
-# XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
-# XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
 #
 # usage:
 #	output_affiliation author/author_handle.json
@@ -741,13 +672,13 @@ function output_affiliation
     #
     # NOTE: We output nothing if the JSON member value is null.
     #
-    grep -F '"affiliation"' "$AUTHOR_HANDLE_JSON_PATH" | grep -v -E ':\s*null' | sed -e 's/.*"affiliation" : "//' -e 's/",.*//'
+    "$JVAL_WRAPPER" -w -b "$AUTHOR_HANDLE_JSON_PATH" '$..affiliation' | grep -F -v null
     return 0
 }
 
 # parse command line
 #
-while getopts :hv:Vd:D:nNt:T:p:w: flag; do
+while getopts :hv:Vd:D:nNt:T:p:Qw: flag; do
   case "$flag" in
     h) echo "$USAGE" 1>&2
 	exit 2
@@ -803,6 +734,8 @@ while getopts :hv:Vd:D:nNt:T:p:w: flag; do
     p) PANDOC_WRAPPER="$OPTARG"
 	TOOL_OPTION+=("-p")
 	TOOL_OPTION+=("$PANDOC_WRAPPER")
+	;;
+    Q) QUICK_MODE="-Q"
 	;;
     w) SITE_URL="$OPTARG"
 	TOOL_OPTION+=("-w")
@@ -941,6 +874,14 @@ if [[ ! -d $BIN_PATH ]]; then
 fi
 export BIN_DIR="bin"
 
+# find the jval-wrapper.sh tool
+#
+JVAL_WRAPPER="$BIN_PATH/jval-wrapper.sh"
+if [[ ! -x $JVAL_WRAPPER ]]; then
+    echo "$0: ERROR: cannot find the bin/jval-wrapper.sh executable" 1>&2
+    exit 5
+fi
+
 # find the location tool
 #
 LOCATION_TOOL=$(type -P location)
@@ -980,6 +921,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: NOOP=$NOOP" 1>&2
     echo "$0: debug[3]: DO_NOT_PROCESS=$DO_NOT_PROCESS" 1>&2
     echo "$0: debug[3]: EXIT_CODE=$EXIT_CODE" 1>&2
+    echo "$0: debug[3]: QUICK_MODE=$QUICK_MODE" 1>&2
     for index in "${!IS_FOR[@]}"; do
 	echo "$0: debug[3]: IS_FOR[$index]=${IS_FOR[$index]}" 1>&2
     done
@@ -992,6 +934,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: AUTHOR_DIR=$AUTHOR_DIR" 1>&2
     echo "$0: debug[3]: BIN_PATH=$BIN_PATH" 1>&2
     echo "$0: debug[3]: BIN_DIR=$BIN_DIR" 1>&2
+    echo "$0: debug[3]: JVAL_WRAPPER=$JVAL_WRAPPER" 1>&2
     echo "$0: debug[3]: LOCATION_TOOL=$LOCATION_TOOL" 1>&2
     echo "$0: debug[3]: AUTHORS_HTML=$AUTHORS_HTML" 1>&2
 fi
@@ -1003,6 +946,17 @@ if [[ -n $DO_NOT_PROCESS ]]; then
 	echo "$0: debug[3]: arguments parsed, -N given, exiting 0" 1>&2
     fi
     exit 0
+fi
+
+# case: -Q
+#
+# Do nothing if authors.html is newer than all author/author_handle.json files.
+#
+if [[ -n $QUICK_MODE ]]; then
+    NEWER=$(find "$AUTHOR_DIR" -mindepth 1 -maxdepth 1 -type f -name '*.json' -newer "$AUTHORS_HTML" 2>/dev/null)
+    if [[ -z $NEWER ]]; then
+	exit 0
+    fi
 fi
 
 # create a temporary entry markdown file
@@ -1055,18 +1009,13 @@ for letter in "${!IS_FOR[@]}"; do
     echo "$letter ."
 done > "$TMP_SORT_WORD"
 
-# XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
-# XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
-# XXX - until we have the jnamval command, we must FAKE PARSE the author/author_handle.json file - XXX
-# XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
-# XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
-
 # add author sort_word filename to the temporary sort word list file
 #
+if [[ $V_FLAG -ge 1 ]]; then
+    echo "$0: debug[1]: Forming temporary sort word list file: $TMP_SORT_WORD"
+fi
 find "$AUTHOR_DIR" -mindepth 1 -maxdepth 1 -type f -name '*.json' 2>/dev/null | while read -r json_file; do
-    SORT_WORD=$(grep -F '"sort_word" : "' "$json_file" 2>/dev/null | sed -e 's/",//' -e 's/^.*"//')
-    export SORT_WORD
-    echo "$SORT_WORD $json_file"
+    echo "$(bin/jval-wrapper.sh -w -b "$json_file" '$..sort_word') $json_file"
 done >> "$TMP_SORT_WORD"
 
 # sort the temporary sort word list file
@@ -1079,12 +1028,6 @@ if [[ $status -ne 0 ]]; then
 fi
 
 # generate the temporary entry markdown file
-#
-# XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
-# XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
-# XXX - until we have the jnamval command, we must FAKE PARSE the author/author_handle.json file - XXX
-# XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
-# XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
 #
 {
     # output top of content
@@ -1144,6 +1087,11 @@ EOF
 	    echo "</div>"
 	    echo '<hr style="width:10%;text-align:left;margin-left:0">'
 	    echo
+	    if [[ $V_FLAG -ge 1 ]]; then
+		echo 1>&2
+		echo "$0: debug[1]: Processing author_handles that begin with $l for: $AUTHORS_HTML" 1>&2
+		echo 1>&2
+	    fi
 
 	# case: we have a "sort_word file" line
 	#
@@ -1203,6 +1151,9 @@ EOF
 	    if [[ -z $AUTHOR_HANDLE ]]; then
 		echo "$0: ERROR: author handle is empty in: $filename" 1>&2
 		exit 22
+	    fi
+	    if [[ $V_FLAG -ge 1 ]]; then
+		echo "$0: debug[1]: Processing author_handle $AUTHOR_HANDLE for: $AUTHORS_HTML" 1>&2
 	    fi
 
 	    # NOTE: AUTHOR_AFFILIATION will be empty if there is no affiliation

@@ -1,4 +1,4 @@
-#!/usr/bin/env make
+#build authors.html if out of date with author JSON files'!/usr/bin/env make
 #
 # IOCCC Makefile
 
@@ -300,9 +300,9 @@ indent.c:
 # Finally: The rules in this section are NOT needed if you
 #	   simple want to examine, run / test winning IOCCC entries.
 
-.PHONY: help genpath genfilelist verify_entry_files gen_authors gen_location gen_years \
-	find_missing_links test entry_index gen_top_html thanks gen_other_html \
-	quick_other_html quick_entry_index \
+.PHONY: help genpath genfilelist verify_entry_files gen_authors quick_authors \
+	gen_location gen_years find_missing_links test entry_index gen_top_html \
+	thanks gen_other_html quick_other_html quick_entry_index \
 	gen_year_index quick_www www untar_entry_tarball untar_year_tarball \
 	form_entry_tarball form_year_tarball tar gen_status gen_sitemap \
 	sitemap timestamp update csv2entry entry2csv
@@ -336,6 +336,7 @@ help:
 	@echo 'make genfilelist	;: generate YYYY level .filelist'
 	@echo 'make verify_entry_files	;: check to be sure all files in all entries exist'
 	@echo 'make gen_authors	;: generate the top level authors.html page'
+	@echo 'make quick_authors	;: build authors.html if out of date with author JSON files'
 	@echo 'make gen_location	;: generate the top level location.html page'
 	@echo 'make gen_years		;: generate the top level years.html page'
 	@echo 'make entry_index	;: force the build of ALL winner index.html files'
@@ -473,6 +474,13 @@ sort_gitignore: ${ALL_RUN} ${SORT_GITIGNORE}
 gen_authors: ${GEN_AUTHORS} authors.html
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
 	${GEN_AUTHORS} -v 1
+	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+
+# build authors.html if it is out of date from any author/author_handle.json file
+#
+quick_authors: ${GEN_AUTHORS} authors.html
+	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	${GEN_AUTHORS} -v 1 -Q
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 # generate the top level location.html page using the
@@ -668,7 +676,7 @@ quick_www:
 	@echo '=-=-=-=-= IOCCC complete make genpath =-=-=-=-='
 	${MAKE} genfilelist
 	${MAKE} verify_entry_files
-	${MAKE} gen_authors
+	${MAKE} quick_authors
 	${MAKE} gen_location
 	${MAKE} gen_years
 	${MAKE} gen_year_index
