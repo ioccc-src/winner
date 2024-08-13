@@ -257,7 +257,7 @@ Only those files that exist will be put into the compressed tarball.
 The compressed tarball formed (by default under the `/var/tmp` directory)
 is of the following form:
 
-> YYYY_dir.YYYYMMDD.hhmmss.tar.bz2
+> YYYY_dir.mods.YYYYMMDD.hhmmss.tar.bz2
 
 Here "_YYYYMMDD.hhmmss_" is a date and timestamp from when the tool was executed.
 
@@ -266,13 +266,13 @@ submission directory (that could be modified or removed by this tool)
 to be restored as follows:
 
 ``` <!---sh-->
-    tar -jxvf /var/tmp/YYYY_dir.YYYYMMDD.hhmmss.tar.bz2 YYYY/dir
+    tar -jxvf /var/tmp/YYYY_dir.mods.YYYYMMDD.hhmmss.tar.bz2 YYYY/dir
 ```
 
 One may also restore modified `author/author_handle.json` files using:
 
 ``` <!---sh-->
-    tar -jxvf /var/tmp/YYYY_dir.YYYYMMDD.hhmmss.tar.bz2 author
+    tar -jxvf /var/tmp/YYYY_dir.mods.YYYYMMDD.hhmmss.tar.bz2 author
 ```
 This tool will form `YYYY/dir/README.md` if needed, from `YYYY/dir/remarks.md`,
 `template/entry/README.md.head`, and `template/entry/README.md.tail`.

@@ -102,7 +102,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.0.3 2024-08-09"
+export VERSION="1.0.4 2024-08-11"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -136,6 +136,13 @@ if [[ -z "$JSTRENCODE_TOOL" ]]; then
     exit 5
 fi
 #
+GTAR_TOOL=$(type -P gtar)
+export GTAR_TOOL
+if [[ -z "$GIT_TOOL" ]]; then
+    echo "$0: FATAL: gtar (gnu tar) tool is not installed or not in \$PATH" 1>&2
+    exit 5
+fi
+#
 export TOPDIR
 export REPO_TOP_URL="https://github.com/ioccc-src/temp-test-ioccc"
 # GitHub puts individual files under the "blob/master" sub-directory.
@@ -145,15 +152,20 @@ export INPUT_DATA_FILE
 #
 export NO_COMMENT="mandatory comment: because comments were removed from the original JSON spec"
 export ENTRY_JSON_FORMAT_VERSION="1.1 2024-02-11"
+export AUTHOR_JSON_FORMAT_VERSION="1.1 2024-02-11"
 #
 export NOOP=
 export DO_NOT_PROCESS=
+#
+unset TAR_FILE_SET
+declare -ag TAR_FILE_SET
+export TARBALL_DIR="/var/tmp"
 
 # usage
 #
 export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir]
 	[-c chkeckentry] [-j jstrencode] [-s jstrencode]
-	[-i input_data] [-n] [-N] YYYY/dir
+	[-T tarball_dir] [-i input_data] [-n] [-N] YYYY/dir
 
 	-h		print help message and exit
 	-v level	set verbosity level (def level: 0)
@@ -162,6 +174,8 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir]
 	-d topdir	set topdir (def: $TOPDIR)
 	-c chkeckentry	path to the chkentry tool (def: $CHKENTRY_TOOL)
 	-s jstrencode	path to the jstrencode tool (def: $JSTRENCODE_TOOL)
+
+	-T tarball_dir	where to form the compressed tarball of modified files (def: $TARBALL_DIR)
 
 	-i input_data	read data from file and disable asking if correct (def: from stdin)
 
@@ -391,7 +405,7 @@ function manifest_entry
 
 # parse command line
 #
-while getopts :hv:Vd:c:s:i:nN flag; do
+while getopts :hv:Vd:c:s:i:T:nN flag; do
   case "$flag" in
     h) echo "$USAGE" 1>&2
 	exit 2
@@ -408,6 +422,8 @@ while getopts :hv:Vd:c:s:i:nN flag; do
     s) JSTRENCODE_TOOL="$OPTARG"
 	;;
     i) INPUT_DATA_FILE="$OPTARG"
+	;;
+    T) TARBALL_DIR="$OPTARG"
 	;;
     n) NOOP="-n"
 	;;
@@ -625,6 +641,7 @@ fi
 #
 export INFO_JSON="$YYYY_DIR/.info.json"
 export AUTH_JSON="$YYYY_DIR/.auth.json"
+export REMARKS_MD="$YYYY_DIR/remarks.md"
 export TAR_BZ2="$YYYY_DIR/$ENTRY_ID.tar.bz2"
 export ENTRY_JSON="$YYYY_DIR/.entry.json"
 export DOT_GITIGNORE="$YYYY_DIR/.gitignore"
@@ -642,6 +659,36 @@ export TEMPLATE_README_MD_HEAD="$TEMPLATE_ENTRY_DIR/README.md.head"
 export TEMPLATE_README_MD_TAIL="$TEMPLATE_ENTRY_DIR/README.md.tail"
 
 
+# initialize the list of files that we might tar
+#
+for FILE in "$INFO_JSON" "$AUTH_JSON" "$REMARKS_MD" "$README_MD" "$INDEX_HTML" "$TAR_BZ2"; do
+    if [[ -f $FILE ]]; then
+	TAR_FILE_SET+=("$FILE")
+    fi
+done
+#
+# add each author/author_handle.json file referenced by .auth.json file that exists
+#
+export PATTERN
+PATTERN="\$authors..author_handle"
+if [[ $V_FLAG -ge 3 ]]; then
+    echo  "$0: debug[3]: about to run: $JVAL_WRAPPER -b -- $AUTH_JSON $PATTERN > $TMP_AUTHOR_HANDLE" 1>&2
+fi
+for AUTHOR_HANDLE in $("$JVAL_WRAPPER" -b -- "$AUTH_JSON" "$PATTERN"); do
+    AUTHOR_HANDLE_JSON="author/$AUTHOR_HANDLE.json"
+    if [[ -f $AUTHOR_HANDLE_JSON ]]; then
+	TAR_FILE_SET+=("$AUTHOR_HANDLE_JSON")
+    fi
+done
+
+
+# determine TARBALL filename
+#
+NOW=$(/bin/date '+%Y%m%d.%H%M%S')
+export NOW
+export TARBALL="$TARBALL_DIR/$ENTRY_ID.mods.$NOW.tar.bz2"
+
+
 # print running info if verbose
 #
 # If -v 3 or higher, print exported variables in order that they were exported.
@@ -654,12 +701,14 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: TOPDIR=$TOPDIR" 1>&2
     echo "$0: debug[3]: CHKENTRY_TOOL=$CHKENTRY_TOOL" 1>&2
     echo "$0: debug[3]: JSTRENCODE_TOOL=$JSTRENCODE_TOOL" 1>&2
+    echo "$0: debug[3]: GTAR_TOOL=$GTAR_TOOL" 1>&2
     echo "$0: debug[3]: REPO_TOP_URL=$REPO_TOP_URL" 1>&2
     echo "$0: debug[3]: REPO_URL=$REPO_URL" 1>&2
     echo "$0: debug[3]: MKIOCCCENTRY_REPO=$MKIOCCCENTRY_REPO" 1>&2
     echo "$0: debug[3]: INPUT_DATA_FILE=$INPUT_DATA_FILE" 1>&2
     echo "$0: debug[3]: NO_COMMENT=$NO_COMMENT" 1>&2
     echo "$0: debug[3]: ENTRY_JSON_FORMAT_VERSION=$ENTRY_JSON_FORMAT_VERSION" 1>&2
+    echo "$0: debug[3]: AUTHOR_JSON_FORMAT_VERSION=$AUTHOR_JSON_FORMAT_VERSION" 1>&2
     echo "$0: debug[3]: NOOP=$NOOP" 1>&2
     echo "$0: debug[3]: DO_NOT_PROCESS=$DO_NOT_PROCESS" 1>&2
     echo "$0: debug[3]: ENTRY_PATH=$ENTRY_PATH" 1>&2
@@ -677,6 +726,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: YYYY_DIR=$YYYY_DIR" 1>&2
     echo "$0: debug[3]: INFO_JSON=$INFO_JSON" 1>&2
     echo "$0: debug[3]: AUTH_JSON=$AUTH_JSON" 1>&2
+    echo "$0: debug[3]: REMARKS_MD=$REMARKS_MD" 1>&2
     echo "$0: debug[3]: TAR_BZ2=$TAR_BZ2" 1>&2
     echo "$0: debug[3]: ENTRY_JSON=$ENTRY_JSON" 1>&2
     echo "$0: debug[3]: DOT_GITIGNORE=$DOT_GITIGNORE" 1>&2
@@ -688,6 +738,12 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: TEMPLATE_GITIGNORE=$TEMPLATE_GITIGNORE" 1>&2
     echo "$0: debug[3]: TEMPLATE_README_MD_HEAD=$TEMPLATE_README_MD_HEAD" 1>&2
     echo "$0: debug[3]: TEMPLATE_README_MD_TAIL=$TEMPLATE_README_MD_TAIL" 1>&2
+    for index in "${!TAR_FILE_SET[@]}"; do
+        echo "$0: debug[3]: TAR_FILE_SET[$index]=${TAR_FILE_SET[$index]}" 1>&2
+    done
+    echo "$0: debug[3]: TARBALL_DIR=$TARBALL_DIR" 1>&2
+    echo "$0: debug[3]: NOW=$NOW" 1>&2
+    echo "$0: debug[3]: TARBALL=$TARBALL" 1>&2
 fi
 
 
@@ -836,6 +892,41 @@ if [[ -n $DO_NOT_PROCESS ]]; then
 fi
 
 
+# save files that might be created or removed into the tarball
+#
+if [[ -z $NOOP ]]; then
+    if [[ $V_FLAG -ge 3 ]]; then
+	echo "$0: debug[3]: about to execute:" \
+	    "TZ=UTC LC_ALL=C $GTAR_TOOL --sort=name" \
+	    "--totals -jcvf $TARBALL ${TAR_FILE_SET[*]}" 1>&2
+	TZ=UTC LC_ALL=C "$GTAR_TOOL" --sort=name \
+		     --totals -jcvf "$TARBALL" "${TAR_FILE_SET[@]}"
+	status="$?"
+	if [[ $status -ne 0 ]]; then
+	    echo "$0: ERROR:" \
+		"TZ=UTC LC_ALL=C $GTAR_TOOL --sort=name" \
+		"--totals -jcvf $TARBALL ${TAR_FILE_SET[*]} failed, error: $status" 1>&2
+	    exit 10
+	fi
+
+    # case: form the tarball silently
+    #
+    else
+	TZ=UTC LC_ALL=C "$GTAR_TOOL" --sort=name \
+		     --totals -jcf "$TARBALL" "${TAR_FILE_SET[@]}"
+	status="$?"
+	if [[ $status -ne 0 ]]; then
+	    echo "$0: ERROR:" \
+		"TZ=UTC LC_ALL=C $GTAR_TOOL --sort=name" \
+		"--totals -jcf $TARBALL ${TAR_FILE_SET[*]} failed, error: $status" 1>&2
+	    exit 11
+	fi
+    fi
+elif [[ $V_FLAG -ge 3 ]]; then
+    echo "$0: debug[3]: because of -n, tarball not formed: $TARBALL" 1>&2
+fi
+
+
 # create a temporary .entry.json file
 #
 export TMP_ENTRY_JSON=".tmp.$NAME.ENTRY_JSON.$$.tmp"
@@ -847,12 +938,12 @@ if [[ -z $NOOP ]]; then
     rm -f "$TMP_ENTRY_JSON"
     if [[ -e $TMP_ENTRY_JSON ]]; then
 	echo "$0: ERROR: cannot remove temporary .entry.json file: $TMP_ENTRY_JSON" 1>&2
-	exit 10
+	exit 12
     fi
     :> "$TMP_ENTRY_JSON"
     if [[ ! -e $TMP_ENTRY_JSON ]]; then
 	echo "$0: ERROR: cannot create temporary .entry.json file: $TMP_ENTRY_JSON" 1>&2
-	exit 11
+	exit 13
     fi
 elif [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: because of -n, temporary .entry.json file is not used: $TMP_ENTRY_JSON" 1>&2
@@ -870,12 +961,12 @@ if [[ -z $NOOP ]]; then
     rm -f "$TMP_AUTHOR_HANDLE"
     if [[ -e $TMP_AUTHOR_HANDLE ]]; then
 	echo "$0: ERROR: cannot remove temporary author_handle set file: $TMP_AUTHOR_HANDLE" 1>&2
-	exit 12
+	exit 14
     fi
     :> "$TMP_AUTHOR_HANDLE"
     if [[ ! -e $TMP_AUTHOR_HANDLE ]]; then
 	echo "$0: ERROR: cannot create temporary author_handle set file: $TMP_AUTHOR_HANDLE" 1>&2
-	exit 13
+	exit 15
     fi
 elif [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: because of -n, temporary author_handle set is not used: $TMP_AUTHOR_HANDLE" 1>&2
@@ -937,11 +1028,11 @@ if [[ -z $NOOP ]]; then
     if [[ $status -ne 0 ]]; then
 	echo "$0: ERROR: $JVAL_WRAPPER -b -- $AUTH_JSON $PATTERN > $TMP_AUTHOR_HANDLE failed," \
 		 "error code: $status" 1>&2
-	exit 14
+	exit 16
     fi
     if [[ ! -s $TMP_AUTHOR_HANDLE ]]; then
 	echo "$0: ERROR: temporary author_handle set file is empty or missing: $TMP_AUTHOR_HANDLE" 1>&2
-	exit 15
+	exit 17
     fi
     AUTHOR_COUNT=$(wc -l < "$TMP_AUTHOR_HANDLE")
     export AUTHOR_COUNT
@@ -952,6 +1043,183 @@ if [[ -z $NOOP ]]; then
     # https://www.shellcheck.net/wiki/SC2129
     # shellcheck disable=SC2129
     while read -r AUTHOR_HANDLE; do
+
+	# parse an element value of the authors JSON array
+	#
+	if [[ $V_FLAG -ge 5 ]]; then
+	    echo  "$0: debug[5]: about to run: $JVAL_WRAPPER -u $AUTH_JSON \$.authors[$i]" 1>&2
+	fi
+	AUTHOR_DATA=$("$JVAL_WRAPPER" -u "$AUTH_JSON" "\$.authors[$i]" | sed -e 's/^\["//' -e 's/^\([^"]*\)"]/\1/')
+	export AUTHOR_DATA
+	export AUTHOR_NAME=
+	export AUTHOR_LOCATION_CODE=
+	export AUTHOR_EMAIL=
+	export AUTHOR_URL=
+	export AUTHOR_ALT_URL=
+	export AUTHOR_MASTODON=
+	export AUTHOR_GITHUB=
+	export AUTHOR_AFFILIATION=
+	export AUTHOR_PAST_WINNING_AUTHOR=
+	export AUTHOR_DEFAULT_HANDLE=
+	export AUTHOR_AUTHOR_HANDLE=
+	export AUTHOR_AUTHOR_NUMBER=
+	while read -r NAME VALUE; do
+
+	    # parse name value
+	    #
+	    case "$NAME" in
+	    name)
+		AUTHOR_NAME="$VALUE"
+		;;
+	    location_code)
+		AUTHOR_LOCATION_CODE="$VALUE"
+		;;
+	    email)
+		AUTHOR_EMAIL="$VALUE"
+		;;
+	    url)
+		AUTHOR_URL="$VALUE"
+		;;
+	    alt_url)
+		AUTHOR_ALT_URL="$VALUE"
+		;;
+	    mastodon)
+		AUTHOR_MASTODON="$VALUE"
+		;;
+	    github)
+		AUTHOR_GITHUB="$VALUE"
+		;;
+	    affiliation)
+		AUTHOR_AFFILIATION="$VALUE"
+		;;
+	    past_winning_author)
+		AUTHOR_PAST_WINNING_AUTHOR="$VALUE"
+		;;
+	    default_handle)
+		AUTHOR_DEFAULT_HANDLE="$VALUE"
+		;;
+	    author_handle)
+		if [[ \"$AUTHOR_HANDLE\" != "$VALUE" ]]; then
+		    echo "$0: ERROR: AUTHOR_HANDLE: \"$AUTHOR_HANDLE\" != author_handle value: $VALUE" 1>&2
+		    exit 18
+		fi
+		AUTHOR_AUTHOR_HANDLE="$VALUE"
+		;;
+	    author_number)
+		if [[ $i != "$VALUE" ]]; then
+		    echo "$0: ERROR: AUTHOR_HANDLE: $AUTHOR_HANDLE i: $i != author_number: $VALUE" 1>&2
+		    exit 19
+		fi
+		AUTHOR_AUTHOR_NUMBER="$VALUE"
+		;;
+	    *)
+		echo "$0: ERROR: AUTHOR_HANDLE: $AUTHOR_HANDLE unknown name: $NAME" 1>&2
+		exit 20
+		;;
+	    esac
+	done <<< "$AUTHOR_DATA"
+
+	# form author/author_handle.json
+	#
+	AUTHOR_HANDLE_JSON="author/$AUTHOR_HANDLE.json"
+
+	# determine sort_word from the Author's last name
+	#
+	SORT_WORD=$(echo "$AUTHOR_NAME" | sed -e 's/^.* //' | tr '[:upper:]' '[:lower:]' | tr -d -c 'a-z0-9')
+	export SORT_WORD
+	case "$SORT_WORD" in
+	[a-z]*) ;;
+	*) SORT_WORD="z$SORT_WORD" ;;
+	esac
+	if [[ -z $SORT_WORD ]]; then
+	    echo "$0: ERROR: AUTHOR_HANDLE: $AUTHOR_HANDLE unable to determine the sort_word for: $AUTHOR_NAME" 1>&2
+	    exit 21
+	fi
+
+	# determine the mastodon_url for non-null mastodon
+	#
+	case "$AUTHOR_MASTODON" in
+	\"@*@*\")
+	    # We have a 2 phase swap and substitution.  As such it is simpler to use sed.
+	    #
+	    # SC2001 (style): See if you can use ${variable//search/replace} instead.
+	    # https://www.shellcheck.net/wiki/SC2001
+	    # shellcheck disable=SC2001
+	    AUTHOR_MASTODON_URL=$(echo "$AUTHOR_MASTODON" | sed -e 's;^"@\([^@]*\)@\(.*\)"$;https://\2/\1;') ;;
+	*) AUTHOR_MASTODON_URL="null" ;;
+	esac
+	export AUTHOR_MASTODON_URL
+
+	# case: author_handle is a new author
+	#
+	# We will form a new author/author_handle. file
+	#
+	if [[ ! -f $AUTHOR_HANDLE_JSON ]]; then
+
+	    # form the new author/author_handle.json file
+	    #
+	    {
+		printf "{\n"
+		printf "    \"no_comment\" : \"%s\",\n" "$NO_COMMENT"
+		printf "    \"author_JSON_format_version\" : \"%s\",\n" "$AUTHOR_JSON_FORMAT_VERSION"
+		printf "    \"author_handle\" : %s,\n" "$AUTHOR_AUTHOR_HANDLE"
+		printf "    \"full_name\" : %s,\n" "$AUTHOR_NAME"
+		printf "    \"sort_word\" : \"%s\",\n" "$SORT_WORD"
+		printf "    \"location_code\" : %s,\n" "$AUTHOR_LOCATION_CODE"
+		if [[ $AUTHOR_EMAIL == null ]]; then
+		    printf "    \"email\" : %s,\n" "null"
+		else
+		    printf "    \"email\" : %s,\n" "$AUTHOR_EMAIL"
+		fi
+		if [[ $AUTHOR_URL == null ]]; then
+		    printf "    \"url\" : %s,\n" "null"
+		else
+		    printf "    \"url\" : %s,\n" "$AUTHOR_URL"
+		fi
+		if [[ $AUTHOR_ALT_URL == null ]]; then
+		    printf "    \"alt_url\" : %s,\n" "null"
+		else
+		    printf "    \"alt_url\" : %s,\n" "$AUTHOR_ALT_URL"
+		fi
+		printf "    \"deprecated_twitter_handle\" : %s,\n" "null"
+		if [[ $AUTHOR_MASTODON == null ]]; then
+		    printf "    \"mastodon\" : %s,\n" "null"
+		else
+		    printf "    \"mastodon\" : %s,\n" "$AUTHOR_MASTODON"
+		fi
+		if [[ $AUTHOR_MASTODON_URL == null ]]; then
+		    printf "    \"mastodon_url\" : %s,\n" "null"
+		else
+		    printf "    \"mastodon_url\" : \"%s\",\n" "$AUTHOR_MASTODON_URL"
+		fi
+		if [[ $AUTHOR_GITHUB == null ]]; then
+		    printf "    \"github\" : %s,\n" "null"
+		else
+		    printf "    \"github\" : %s,\n" "$AUTHOR_GITHUB"
+		fi
+		if [[ $AUTHOR_AFFILIATION == null ]]; then
+		    printf "    \"affiliation\" : %s,\n" "null"
+		else
+		    printf "    \"affiliation\" : %s,\n" "$AUTHOR_AFFILIATION"
+		fi
+		printf "    \"winning_entry_set\" : [\n"
+		printf "\t{ \"entry_id\" : \"%s\" }\n" "$ENTRY_ID"
+		printf "    ]\n"
+		printf "}\n"
+	    } > "$AUTHOR_HANDLE_JSON"
+
+	    # XXX - create a temp author_handle.json file and move into place if different or new - XXX $
+
+	# case: author_handle already is known author
+	#
+	else
+	    :	# XXX - collect existing entry_id's from known author, add new ENTRY_ID - XXX
+	fi
+
+	# XXX - move above $AUTHOR_HANDLE_JSON formation code into place and using the array of entry_id's - XXX #
+
+	# output the author_handle information for .entry.json
+	#
 	((++i))
 	if [[ $i -lt $AUTHOR_COUNT ]]; then
 	    printf "\t { \"author_handle\" : \"%s\" },\n" "$AUTHOR_HANDLE"
@@ -982,7 +1250,7 @@ if [[ -z $NOOP ]]; then
     if [[ $status -ne 0 ]]; then
 	echo "$0: ERROR: $JVAL_WRAPPER -b -- $INFO_JSON $PATTERN failed," \
 		 "error code: $status" 1>&2
-	exit 16
+	exit 22
     fi
     if [[ -z $FILE_PATH ]]; then
 	echo "$0: ERROR: cannot determine c_src in manifest from: $INFO_JSON" 1>&2
@@ -1004,11 +1272,11 @@ if [[ -z $NOOP ]]; then
     if [[ $status -ne 0 ]]; then
 	echo "$0: ERROR: $JVAL_WRAPPER -b -- $INFO_JSON $PATTERN failed," \
 		 "error code: $status" 1>&2
-	exit 17
+	exit 23
     fi
     if [[ -z $FILE_PATH ]]; then
 	echo "$0: ERROR: cannot determine Makefile in manifest from: $INFO_JSON" 1>&2
-	exit 18
+	exit 24
     fi
     manifest_entry "$FILE_PATH" 30 true makefile true "entry Makefile" "$count" >> "$TMP_ENTRY_JSON"
 
@@ -1036,7 +1304,7 @@ if [[ -z $NOOP ]]; then
 	    if [[ $status -ne 0 ]]; then
 		echo "$0: ERROR: cp -f -p -v $YYYY_DIR/$PROG_C $YYYY_DIR/$ORIG_C failed," \
 			 "error code: $status" 1>&2
-		exit 19
+		exit 25
 	    fi
 	else
 	    cp -f -p "$YYYY_DIR/$PROG_C" "$YYYY_DIR/$ORIG_C"
@@ -1044,7 +1312,7 @@ if [[ -z $NOOP ]]; then
 	    if [[ $status -ne 0 ]]; then
 		echo "$0: ERROR: cp -f -p $YYYY_DIR/$PROG_C $YYYY_DIR/$ORIG_C failed," \
 			 "error code: $status" 1>&2
-		exit 20
+		exit 26
 	    fi
 	fi
     fi
@@ -1067,9 +1335,11 @@ if [[ -z $NOOP ]]; then
     if [[ ${status_codes[*]} =~ [1-9] ]]; then
 	echo "$0: ERROR: $JVAL_WRAPPER -b -- $INFO_JSON $PATTERN failed," \
 		 "error code: ${status_codes[*]}" 1>&2
-	exit 21
+	exit 27
     fi
     for EXTRA_FILE in $EXTRA_FILE_SET; do
+
+	# XXX - add constructed HTML to manifest for extra markdown files - XXX #
 
 	# prompt for inventory_order
 	#
@@ -1136,7 +1406,7 @@ if [[ -z $NOOP ]]; then
 	    if [[ $status -ne 0 ]]; then
 		echo "$0: ERROR: cp -f -p -v $TEMPLATE_GITIGNORE $DOT_GITIGNORE failed," \
 			 "error code: $status" 1>&2
-		exit 22
+		exit 28
 	    fi
 	else
 	    cp -f -p "$TEMPLATE_GITIGNORE" "$DOT_GITIGNORE"
@@ -1144,7 +1414,7 @@ if [[ -z $NOOP ]]; then
 	    if [[ $status -ne 0 ]]; then
 		echo "$0: ERROR: cp -f -p $TEMPLATE_GITIGNORE $DOT_GITIGNORE failed," \
 			 "error code: $status" 1>&2
-		exit 23
+		exit 29
 	    fi
 	fi
     fi
@@ -1228,13 +1498,13 @@ if [[ -z $NOOP ]]; then
         if [[ $status -ne 0 ]]; then
             echo "$0: ERROR: mv -f -- $TMP_ENTRY_JSON $ENTRY_JSON filed," \
 	         "error code: $status" 1>&2
-            exit 24
+            exit 30
         elif [[ $V_FLAG -ge 1 ]]; then
             echo "$0: debug[1]: updated .entry.json: $ENTRY_JSON" 1>&2
         fi
         if [[ ! -s $ENTRY_JSON ]]; then
             echo "$0: ERROR: not a non-empty .entry.json: $ENTRY_JSON" 1>&2
-            exit 25
+            exit 31
         fi
     fi
 
@@ -1247,22 +1517,29 @@ fi
 
 # form index.html if needed
 #
-if [[ ! -f $INDEX_HTML ]]; then
+if [[ -z $NOOP ]]; then
+    if [[ ! -f $INDEX_HTML ]]; then
 
-    if [[ $V_FLAG -ge 3 ]]; then
-	echo  "$0: debug[3]: about to run: $MD2HTML -v $V_FLAG -- $README_MD $INDEX_HTML" 1>&2
+	if [[ $V_FLAG -ge 3 ]]; then
+	    echo  "$0: debug[3]: about to run: $MD2HTML -v $V_FLAG -- $README_MD $INDEX_HTML" 1>&2
+	fi
+	"$MD2HTML" -v "$V_FLAG" -- "$README_MD" "$INDEX_HTML"
+	status="$?"
+	if [[ $status -ne 0 ]]; then
+	    echo "$0: ERROR: $MD2HTML -v $V_FLAG -- $README_MD $INDEX_HTML filed," \
+		 "error code: $status" 1>&2
+	    exit 32
+	fi
     fi
-    "$MD2HTML" -v "$V_FLAG" -- "$README_MD" "$INDEX_HTML"
-    status="$?"
-    if [[ $status -ne 0 ]]; then
-	echo "$0: ERROR: $MD2HTML -v $V_FLAG -- $README_MD $INDEX_HTML filed," \
-	     "error code: $status" 1>&2
-	exit 26
-    fi
+
+# case: with -n
+#
+elif [[ $V_FLAG -ge 3 ]]; then
+    echo "$0: debug[3]: -n disabled forming index.html: $INDEX_HTML" 1>&2
 fi
 
 
-# XXX - form tarball - XXX
+# XXX - mode code here - XXX
 
 
 # All Done!!! All Done!!! -- Jessica Noll, Age 2

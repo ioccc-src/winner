@@ -554,15 +554,15 @@ under the <code>/var/tmp</code> directory, may contain such as:</p>
 The compressed tarball formed (by default under the <code>/var/tmp</code> directory)
 is of the following form:</p>
 <blockquote>
-<p>YYYY_dir.YYYYMMDD.hhmmss.tar.bz2</p>
+<p>YYYY_dir.mods.YYYYMMDD.hhmmss.tar.bz2</p>
 </blockquote>
 <p>Here “<em>YYYYMMDD.hhmmss</em>” is a date and timestamp from when the tool was executed.</p>
 <p>The purpose of this compressed tarball is to allow the files in the
 submission directory (that could be modified or removed by this tool)
 to be restored as follows:</p>
-<pre><code>    tar -jxvf /var/tmp/YYYY_dir.YYYYMMDD.hhmmss.tar.bz2 YYYY/dir</code></pre>
+<pre><code>    tar -jxvf /var/tmp/YYYY_dir.mods.YYYYMMDD.hhmmss.tar.bz2 YYYY/dir</code></pre>
 <p>One may also restore modified <code>author/author_handle.json</code> files using:</p>
-<pre><code>    tar -jxvf /var/tmp/YYYY_dir.YYYYMMDD.hhmmss.tar.bz2 author</code></pre>
+<pre><code>    tar -jxvf /var/tmp/YYYY_dir.mods.YYYYMMDD.hhmmss.tar.bz2 author</code></pre>
 <p>This tool will form <code>YYYY/dir/README.md</code> if needed, from <code>YYYY/dir/remarks.md</code>,
 <code>template/entry/README.md.head</code>, and <code>template/entry/README.md.tail</code>.</p>
 <p><strong>NOTE</strong>: This interactive tool (unless <code>-i input_data</code> is used) does

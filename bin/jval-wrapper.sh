@@ -103,7 +103,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.0.2 2024-08-08"
+export VERSION="1.0.3 2024-08-11"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -140,7 +140,7 @@ declare -ag OPTION
 # set usage message
 #
 export USAGE="usage: $0 [-h] [-v level] [-V] [-n] [-N]
-	[-w] [-b] [-i]
+	[-w] [-b] [-i] [-u]
 	[-j JSONPath.sh] file.json [pattern]
 
 	-h		print help message and exit
@@ -153,6 +153,7 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-n] [-N]
 	-w		match whole words only for filter script expression (def: match substrings)
 	-b		only print values (def: print both JSON member and JSON value)
 	-i		match insensitive (def: match case)
+	-u		strip unnecessary leading path element (def: print the entire element path)
 
 	-j JSONPath.sh	path to the JSONPath.sh tool (not the wrapper) (def: $JSONPATH_SH)
 
@@ -178,7 +179,7 @@ export DO_NOT_PROCESS=
 
 # parse command line
 #
-while getopts :hv:VnNwbij: flag; do
+while getopts :hv:VnNwbiuj: flag; do
   case "$flag" in
     h) echo "$USAGE" 1>&2
 	exit 2
@@ -199,6 +200,8 @@ while getopts :hv:VnNwbij: flag; do
     b) OPTION+=("-b")
 	;;
     i) OPTION+=("-i")
+	;;
+    u) OPTION+=("-u")
 	;;
     \?) echo "$0: ERROR: invalid option: -$OPTARG" 1>&2
 	echo 1>&2
