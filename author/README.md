@@ -18,13 +18,13 @@ for more information.
 ## NOTE to authors
 
 If you wish to update / modify information about yourself, see the
-FAQ on "[fixing author information](../faq,html#fix_author)"
+FAQ on "[fixing author information](../faq.html#fix_author)"
 for information about how to update
 and/or correct IOCCC author information.
 
 See the
-FAQ on "[finding author handles](../faq,html#find_author_handle)"
-for how to find an _author_handle_.
+FAQ on "[finding author handles](../faq.html#find_author_handle)"
+for how to find an `author_handle`.
 
 
 <!--
