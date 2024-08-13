@@ -86,7 +86,7 @@ Notice the clever use of `setjmp(3)` and `longjmp(3)` calls.  Can you keep track
 of what state is being saved and restored?
 
 **NOTE**: the author talks about how it is a single statement. This might not be
-strictly true in 2023 for the fixes for it to work so you can look at the
+strictly true in 2023 with the fixes for it to work so you can look at the
 original file [burley.orig.c](%%REPO_URL%%/2004/burley/burley.orig.c) to see
 what is meant.
 
