@@ -409,28 +409,29 @@ Location: <a href="../../location.html#UK">UK</a> - <em>United Kingdom of Great 
 <!-- BEFORE: 1st line of markdown file: 2004/gavin/README.md -->
 <h2 id="to-build">To build:</h2>
 <pre><code>    make</code></pre>
-<p>There is an alternate version for those who wish to use QEMU rather than having
-to reboot and rely on having a floppy drive (if you even remember what those are
-:-) ) etc. See <a href="#alternate-code">alternate code</a> below.</p>
+<p>There is an alternate version for those who wish to use
+<a href="https://www.qemu.org">QEMU</a> rather than having
+to reboot and rely on having a <a href="https://en.wikipedia.org/wiki/Floppy_disk">floppy
+drive</a> (<a href="https://en.wikipedia.org/wiki/History_of_the_floppy_disk">if you even
+remember</a> what those are
+:-) ) etc. See <a href="#alternate-code">Alternate code</a> below.</p>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
 <p>The current status of this entry is:</p>
 <blockquote>
-<p><strong>STATUS: compiled executable crashes - please help us fix</strong><br>
-<strong>STATUS: doesn’t work with some platforms - please help us fix it</strong><br>
-<strong>STATUS: INABIAF - please DO NOT fix</strong></p>
+<p><strong>STATUS: INABIAF - please DO NOT fix</strong></p>
 </blockquote>
 <p>For more detailed information see <a href="../../bugs.html#2004_gavin">2004/gavin in bugs.html</a>.</p>
 <h2 id="to-use">To use:</h2>
 <pre><code>    ./gavin</code></pre>
 <h2 id="try">Try:</h2>
-<p>To enjoy the results (on a Linux/x86 machine) with a floppy drive (remember
-those? We do!):</p>
+<p>To enjoy the results (on a Linux/x86 machine) with a floppy drive
+(<a href="https://en.wikipedia.org/wiki/Old_age">remember</a> those? We do!):</p>
 <pre><code>    su</code></pre>
 <p>Make a floppy with an ext2 filesystem (<code>mke2fs /dev/fd0</code> replacing <code>fd0</code> with
 whatever the floppy device is!), mount it under <code>/mnt/floppy</code> and then:</p>
 <pre><code>    cp kernel fs.tar lilo.conf boot.b /mnt/floppy</code></pre>
-<p>NOTE: If the version of your lilo is not 21.4, use the appropriate boot.b file.</p>
-<p>NOTE: If your floppy drive is not <code>/dev/fd0</code>, edit lilo.conf appropriately.</p>
+<p><strong>NOTE</strong>: If the version of your lilo is not 21.4, use the appropriate <code>boot.b</code> file.</p>
+<p><strong>NOTE</strong>: If your floppy drive is not <code>/dev/fd0</code>, edit <code>lilo.conf</code> appropriately.</p>
 <pre><code>    lilo -C /mnt/floppy/lilo.conf</code></pre>
 <p>Boot from the floppy on an x86 machine with a PS/2 keyboard and mouse.
 Move the window away from the corner.</p>
@@ -448,7 +449,7 @@ you can use it with <code>QEMU</code>.</p>
 <pre><code>    make alt</code></pre>
 <h3 id="alternate-use">Alternate use:</h3>
 <p>The use is mostly the same as <code>gavin</code> except that one initially executes <code>gavin.alt</code>
-(which <code>make alt</code> will do) and one will have to use <code>QEMU</code> instead. The files
+and one will have to use <code>QEMU</code> instead. The files
 generated are the same names. See <a href="#to-use">to use</a> and <a href="#try">try</a> above as
 well as the judges’ remarks below plus <a href="gavin.html">gavin.html</a>.</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
@@ -463,9 +464,9 @@ future contests.</p>
 <a href="gavin.html">gavin.html</a>.</p>
 <p>You can put additional text files in <code>fs.tar</code> for browsing with vi.</p>
 <p>If you do not want to bother rebooting your computer at all, see
-<a href="http://bellard.org" class="uri">http://bellard.org</a> for QEMU (<a href="../../authors.html#Fabrice_Bellard">Fabrice Bellard</a>
-is an IOCCC 2001 winning entry), but your experience will be limited; use the
-<a href="#alternate-code">alternate code</a> instead. You’ll have to move the mouse to
+<a href="https://www.qemu.org" class="uri">https://www.qemu.org</a> for QEMU (by <a href="../../authors.html#Fabrice_Bellard">Fabrice
+Bellard</a>, an IOCCC winning author) and use
+the <a href="#alternate-code">Alternate code</a> instead. You’ll have to move the mouse to
 trigger the initial screen update.</p>
 <p>The judges were able to write a few more programs to run in this OS.
 What are the limitations for such programs?</p>
@@ -493,7 +494,7 @@ then building a tarball containing the resulting programs
 (the filesystem format supported by the OS is the tarball format).</p>
 <p>For further usage information see <a href="gavin.html">gavin.html</a>.</p>
 <p>The filenames <code>vi</code> and <code>sh</code> are significant, and should not be changed.</p>
-<h3 id="known-features">Known ‘features’</h3>
+<h3 id="known-features">Known ‘features’:</h3>
 <p>Known issues are really too plentiful to list.</p>
 <p>If the mouse pointer goes off the left hand side of the screen
 it will reappear on the right, and vice-versa.
@@ -519,13 +520,12 @@ Linux-esque kernel header for the bootloader, protected mode descriptor tables,
 keyboard maps, etc. (I should also mention that it contains mini functions to
 perform an x86 <code>in</code> and <code>out</code> instruction - to allow the keyboard &amp; mouse to be
 driven from C code).</p>
-<p>Porting to another architecture should be relatively easy* -
+<p>Porting to another architecture should be relatively easy<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> -
 the string simply needs be replaced with one containing
 data &amp; code suitable for the new target platform.
 Accesses to data in the string are made relative to the define <code>V</code>,
 so these may need updating as appropriate (<code>0x90200</code> is the address
 at which a Linux bootloader loads an x86 kernel image).</p>
-<pre><code>    \* ;-)</code></pre>
 <!--
 
     Copyright © 1984-2024 by Landon Curt Noll. All Rights Reserved.
@@ -540,6 +540,13 @@ at which a Linux bootloader loads an x86 kernel image).</p>
 
 -->
 <!-- AFTER: last line of markdown file: 2004/gavin/README.md -->
+<hr style="width:10%;text-align:left;margin-left:0">
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<h5>Footnotes</h5>
+<ol>
+<li id="fn1"><p>* ;-)<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
 
 <!-- END: this line ends content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 <!-- START: this line starts content for HTML phase 22 by: bin/output-index-inventory.sh via bin/md2html.sh -->

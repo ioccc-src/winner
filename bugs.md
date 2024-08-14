@@ -102,9 +102,7 @@ Again, THANK YOU!
 
 Entries below have one or more of the following _**STATUS**_ values. Please see
 the text below for more information. If an entry has more than one status it
-means that either they all apply or they compliment each other. For instance
-[2004/gavin](%%REPO_URL%%/2004/gavin/gavin.c) crashes but it also doesn't even compile with
-some platforms/architectures.
+means that either they all apply or they complement each other.
 
 
 ## General notes about the statuses and making fixes
@@ -2542,13 +2540,16 @@ There was no IOCCC in 2003.
 ## 2004/gavin
 </div>
 
-### STATUS: compiled executable crashes - please help us fix
-### STATUS: doesn't work with some platforms - please help us fix it
+### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2004/gavin/gavin.c](%%REPO_URL%%/2004/gavin/gavin.c)
 ### Information: [2004/gavin//index.html](2004/gavin//index.html)
 
-Segmentation fault will occur in some systems. For instance on macOS with the
-arm64 chip:
+This program is x86 linux specific; it is extremely likely that a segmentation
+fault will occur in other systems but even if it does not it is highly unlikely
+it will work. Below we will give some examples as well as a change that was made
+to let it compile with clang.
+
+In macOS with the arm64 chip this will segfault:
 
 ``` <!---sh-->
     ./gavin > kernel
@@ -2564,12 +2565,11 @@ When trying to link `gavin.o` to produce `sh`, the linker generates:
     ld: symbol(s) not found for architecture arm64
 ```
 
-We believe that this simply won't work with non x86 specific systems but perhaps
-you have a fix? We welcome your help!
 
-### Recent 2004/gavin mods:
+#### Recent 2004/gavin mods:
 
-Although not related some recent changes were made to 2004/gavin to let it
+Although not related some recent changes were made to
+[2004/gavin](2004/gavin/index.html) to let it
 compile under clang. The following patch was applied:
 
 ``` <!---patch-->
@@ -2642,14 +2642,28 @@ The original Makefile from 2004 had the following to say about this entry:
     gavin_files: boot.b lilo.conf prim gavin_install.txt
 ```
 
-The current ([Makefile](%%REPO_URL%%/2004/gavin/Makefile) was modified to try and
+The current [Makefile](%%REPO_URL%%/2004/gavin/Makefile) was modified to try and
 fit into the current IOCCC build environment.
 
 
-### STATUS: INABIAF - please **DO NOT** fix
+Please also see [known features in the
+index.html](2004/gavin/index.html#known-features) for things that are not bugs
+but documented (mis)features.
 
-See [known features in the index.html](2004/gavin/index.html#known-features) for
-things that are not bugs but documented (mis)features.
+<div id="2004_hibachi">
+## 2004/hibachi
+</div>
+
+### STATUS: INABIAF - please **DO NOT** fix
+### Source code: [2004/hibachi/hibachi.c](%%REPO_URL%%/2004/hibachi/hibachi.c)
+### Information: [2004/hibachi//index.html](2004/hibachi//index.html)
+
+The author stated that:
+
+> The links (text) web browser does not support RFC 2616 section 7.2.1 paragraph 3
+sentence 2, and so fails to display responses from `hibachi`.
+
+
 
 
 <div id="2004_jdalbec">

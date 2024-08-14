@@ -409,7 +409,7 @@ Location: <a href="../../location.html#SE">SE</a> - <em>Kingdom of Sweden</em> (
 <!-- BEFORE: 1st line of markdown file: 2004/gavare/README.md -->
 <h2 id="to-build">To build:</h2>
 <pre><code>    make</code></pre>
-<p>There are three alternate versions; see <a href="#alternate-code">alternate code</a> below
+<p>There are three alternate versions; see <a href="#alternate-code">Alternate code</a> below
 for more details.</p>
 <h2 id="to-use">To use:</h2>
 <pre><code>    ./gavare &gt; ioccc_ray.ppm</code></pre>
@@ -417,6 +417,9 @@ for more details.</p>
 if you have ImageMagick installed, you can convert it to a jpeg:</p>
 <pre><code>    convert ioccc_ray.ppm ioccc_ray.jpg</code></pre>
 <p>and then view <code>ioccc_ray.jpg</code> in a graphics viewer, editor or web browser.</p>
+<p><strong>NOTE</strong>: if you do not have ImageMagick installed, see the
+FAQ on “<a href="../../faq.html#imagemagick">ImageMagick</a>”
+for help.</p>
 <h2 id="try">Try:</h2>
 <p>If you have <code>xv(1)</code> you can do:</p>
 <pre><code>    ./gavare | xv -</code></pre>
@@ -427,9 +430,11 @@ image as well as the anti-alias setting, when compiling.</p>
 <p>The author also provided <a href="https://gavare.se/ioccc/ioccc_gavare.c.html">on their web page for the
 entry</a> an unobfuscated version that
 was used during development, which we have included in the file
-<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/gavare/gavare.r3.c">gavare.r3.c</a>.</p>
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/gavare/gavare.r3.c">gavare.r3.c</a> (named such because that is
+what they called it).</p>
 <p>Finally, the file <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/gavare/gavare.alt2.c">gavare.alt2.c</a> sets binary mode
-on <code>stdout</code> which theoretically should work in Windows.</p>
+on <code>stdout</code> which theoretically should work in Windows (if anything works in
+Windows :-) ).</p>
 <h3 id="alternate-build">Alternate build:</h3>
 <p>To build the configurable and unobfuscated versions:</p>
 <pre><code>    make alt</code></pre>
@@ -440,7 +445,7 @@ on <code>stdout</code> which theoretically should work in Windows.</p>
 <p>You may of course combine the above two commands and give any combination you
 wish.</p>
 <p>This is not possible with the author’s version but it is with the alt versions
-(Windows - see below - and otherwise).</p>
+(Windows - see below).</p>
 <p>As the Windows version will not compile on most viewers’ systems we do not build
 it with <code>make alt</code>; instead try:</p>
 <pre><code>    make alt2</code></pre>
@@ -450,7 +455,8 @@ it with <code>make alt</code>; instead try:</p>
 <p>For users of systems that distinguish between text and binary mode
 (you know who you are), add a library call that specifies binary mode
 for <code>stdout</code> as the first statement of <code>main()</code>,
-or use <code>freopen("ioccc_ray.ppm", "wb", stdout);</code> and do not use redirection.</p>
+or use <code>freopen("ioccc_ray.ppm", "wb", stdout);</code> and do not use redirection (or
+see <a href="#alternate-code">Alternate code</a> above).</p>
 <p>A freely distributable command-line version of Microsoft Visual C
 exhibits an optimizer bug when compiling this entry. Disable <code>/Og</code> for
 best results.</p>

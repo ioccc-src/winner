@@ -403,28 +403,24 @@ should do no damage to your existing setup, BUT I ACCEPT NO LIABILITY FOR ANY
 DAMAGE DONE BY THIS PROGRAM. Run it at your own risk. The OS has been tested
 on half a dozen machines or so, and worked on all but one. The failure came in
 the form of the machine rebooting itself midway through loading the OS, with no
-nasty side-effects.</p></li>
-</ol>
-<pre><code>    Hardware requirements - i386 or better processor, but the GUI is
-    surprisingly power-hungry, so I would recommend a fast P3 or P4 processor
-    (has been tested on P3/P4/Athlon machines).  Minimum RAM is something like
-    32MB.  PS/2 mouse &amp; keyboard required - no USB I&#39;m afraid, and the keyboard
-    map is for a UK keyboard.  Uses VESA VBE 3.0, so should work on any modern
-    graphics card (has been tested on NVIDIA, Matrox, and SiS cards).</code></pre>
-<ol start="3" type="1">
-<li>Now you need to setup a bootloader to load the OS. If you have a system
+nasty side-effects.</p>
+<p>Hardware requirements - i386 or better processor, but the GUI is
+surprisingly power-hungry, so I would recommend a fast P3 or P4 processor
+(has been tested on P3/P4/Athlon machines). Minimum RAM is something like
+32MB. PS/2 mouse &amp; keyboard required - no USB I’m afraid, and the keyboard
+map is for a UK keyboard. Uses VESA VBE 3.0, so should work on any modern
+graphics card (has been tested on NVIDIA, Matrox, and SiS cards).</p></li>
+<li><p>Now you need to setup a bootloader to load the OS. If you have a system
 using a lilo bootloader you can simply add the OS to your boot menu. Just add
 appropriate <code>image=</code> and <code>initrd=</code> lines to your <code>/etc/lilo.conf</code>, pointing at
 <code>kernel</code> and <code>fs.tar</code> respectively (as built by make earlier), then run <code>lilo</code>.
 If you do not wish modify your lilo setup, one easy option is to get yourself a
 GRUB boot disk image, and follow the instructions for GRUB below - Debian users
-can simply run<code>apt-get install grub-disk</code> to get themselves a GRUB boot disk.</li>
-</ol>
-<pre><code>    If you run GRUB, then at the boot menu simply hit `c` to get a console, then
-    type `kernel=(hd0,0)/&lt;PATH&gt;/kernel` (substituting appropriate hard
-    drive/partition numbers &amp; path, or using `(fd0)` to load a kernel on the
-    floppy), then `initrd=(hd0,0)/&lt;PATH&gt;/fs.tar`, and finally `boot`.</code></pre>
-<ol start="4" type="1">
+can simply run<code>apt-get install grub-disk</code> to get themselves a GRUB boot disk.</p>
+<p>If you run GRUB, then at the boot menu simply hit <code>c</code> to get a console, then
+type <code>kernel=(hd0,0)/&lt;PATH&gt;/kernel</code> (substituting appropriate hard
+drive/partition numbers &amp; path, or using <code>(fd0)</code> to load a kernel on the
+floppy), then <code>initrd=(hd0,0)/&lt;PATH&gt;/fs.tar</code>, and finally <code>boot</code>.</p></li>
 <li><p>Assuming the OS has booted, what can you do now? Well, start by trying <code>sh</code>,
 to open another shell. Then, try <code>vi gavin.c</code> to open up the OS source in a
 text file viewer (up/down or PgUp/PgDn to scroll). Note that the provided
