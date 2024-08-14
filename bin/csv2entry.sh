@@ -142,7 +142,7 @@ shopt -s lastpipe	# explicitly run the last command of the pipe line in the curr
 
 # set variables referenced in the usage message
 #
-export VERSION="1.1.1 2024-07-22"
+export VERSION="1.2 2024-08-13"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -479,6 +479,25 @@ if [[ ! -s $TOP_FILE ]]; then
 fi
 
 
+# verify that we have a bin subdirectory
+#
+export BIN_PATH="$TOPDIR/bin"
+if [[ ! -d $BIN_PATH ]]; then
+    echo "$0: ERROR: bin is not a directory under topdir: $BIN_PATH" 1>&2
+    exit 6
+fi
+export BIN_DIR="bin"
+
+
+# find the jval-wrapper.sh tool
+#
+JVAL_WRAPPER="$BIN_PATH/jval-wrapper.sh"
+if [[ ! -x $JVAL_WRAPPER ]]; then
+    echo "$0: ERROR: cannot find the bin/jval-wrapper.sh executable" 1>&2
+    exit 5
+fi
+
+
 # verify jparse tool
 #
 if [[ -z "$JPARSE_TOOL" ]]; then
@@ -517,6 +536,9 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: YEAR_PRIZE_CSV_DIR=$YEAR_PRIZE_CSV_DIR" 1>&2
     echo "$0: debug[3]: CD_FAILED=$CD_FAILED" 1>&2
     echo "$0: debug[3]: TOP_FILE=$TOP_FILE" 1>&2
+    echo "$0: debug[3]: BIN_PATH=$BIN_DIR" 1>&2
+    echo "$0: debug[3]: BIN_DIR=$BIN_DIR" 1>&2
+    echo "$0: debug[3]: JVAL_WRAPPER=$JVAL_WRAPPER" 1>&2
     echo "$0: debug[3]: DOT_ENTRY_JSON_BASENAME=$DOT_ENTRY_JSON_BASENAME" 1>&2
     echo "$0: debug[3]: ENTRY_JSON_FORMAT_VERSION=$ENTRY_JSON_FORMAT_VERSION" 1>&2
     echo "$0: debug[3]: NO_COMMENT=$NO_COMMENT" 1>&2
@@ -787,15 +809,6 @@ fi
 #      author handles w/o author/author_handle.json file and
 #      author/author_handle.json file that do not reference the entry id
 #
-# XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
-# XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
-# XXX - until we have the jnamval command, we must FAKE PARSE the .entry.json file  - XXX
-# XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
-# XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
-#
-export PATTERN_BEFORE_ENTRY_ID='^[[:space:]]*{[[:space:]]*"entry_id"[[:space:]]*:[[:space:]]*"'
-export PATTERN_AFTER_ENTRY_ID='"[[:space:]]*},?[[:space:]]*$'
-#
 if [[ $V_FLAG -ge 1 ]]; then
     echo "$0: debug[1]: about to: scan for unknown author handles" 1>&2
 fi
@@ -873,18 +886,11 @@ sed -e 's/,/ /g' "$AUTHOR_WINS_CSV" | while read -r AUTHOR_HANDLE ENTRY_ID_SET; 
 
 		# verify that the author/author_handle.json file refers to the entry id
 		#
-		# XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
-		# XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
-		# XXX - until we have the jnamval command, we must FAKE PARSE the .entry.json file  - XXX
-		# XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
-		# XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
-		#
 		else
 
 		    # check if the author/author_handle.json file refers to the entry id
 		    #
-		    FOUND=$(grep -E "${PATTERN_BEFORE_ENTRY_ID}${ENTRY_ID}${PATTERN_AFTER_ENTRY_ID}" \
-				    "$AUTHOR_HANDLE_JSON" 2>/dev/null)
+		    FOUND=$("$JVAL_WRAPPER" -w -b "$AUTHOR_HANDLE_JSON" '$..entry_id')
 		    if [[ -z $FOUND ]]; then
 			echo "$0: ERROR: line: $line of author_wins.csv: $AUTHOR_WINS_CSV" \
 			     "entry id: $ENTRY_ID not in winning_entry_set of: $AUTHOR_HANDLE_JSON" 1>&2

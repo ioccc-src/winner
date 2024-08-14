@@ -103,7 +103,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.4 2024-08-09"
+export VERSION="1.5 2024-08-13"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -181,7 +181,6 @@ $NAME version: $VERSION"
 function output_award
 {
     local ENTRY_JSON_PATH;	# the .entry.json path
-    local AWARD_STRING;		# winning entry award string
 
     # parse args
     #
@@ -205,12 +204,7 @@ function output_award
 
     # obtain the award string
     #
-    AWARD_STRING=$(grep -F '"award" : "'  "$ENTRY_JSON_PATH" | sed -e 's/^.*"award" : "//' -e 's/",//')
-    if [[ -z $AWARD_STRING ]]; then
-        echo "$0: ERROR: in output_award: no award found in .entry.json file: $ENTRY_JSON_PATH" 1>&2
-        return 5
-    fi
-    echo "$AWARD_STRING"
+    "$JVAL_WRAPPER" -w -b "$ENTRY_JSON_PATH" '$..award'
     return 0
 }
 
@@ -362,6 +356,14 @@ if [[ ! -d $BIN_PATH ]]; then
 fi
 export BIN_DIR="bin"
 
+# find the jval-wrapper.sh tool
+#
+JVAL_WRAPPER="$BIN_PATH/jval-wrapper.sh"
+if [[ ! -x $JVAL_WRAPPER ]]; then
+    echo "$0: ERROR: cannot find the bin/jval-wrapper.sh executable" 1>&2
+    exit 5
+fi
+
 # verify that ENTRY_PATH is a entry directory
 #
 if [[ ! -d $ENTRY_PATH ]]; then
@@ -483,6 +485,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: INC_DIR=$INC_DIR" 1>&2
     echo "$0: debug[3]: BIN_PATH=$BIN_PATH" 1>&2
     echo "$0: debug[3]: BIN_DIR=$BIN_DIR" 1>&2
+    echo "$0: debug[3]: JVAL_WRAPPER=$JVAL_WRAPPER" 1>&2
     echo "$0: debug[3]: YEAR_DIR=$YEAR_DIR" 1>&2
     echo "$0: debug[3]: ENTRY_DIR=$ENTRY_DIR" 1>&2
     echo "$0: debug[3]: ENTRY_ID=$ENTRY_ID" 1>&2

@@ -118,7 +118,7 @@ shopt -s lastpipe	# explicitly run the last command of the pipe line in the curr
 
 # set variables referenced in the usage message
 #
-export VERSION="1.1.1 2024-07-22"
+export VERSION="1.2 2024-08-13"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -151,12 +151,6 @@ export AUTHOR_DIR="author"
 #
 # Write the award name to standard output (stdout)
 #
-# XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
-# XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
-# XXX - until we have the jnamval command, we must FAKE PARSE the .entry.json file  - XXX
-# XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
-# XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
-#
 # usage:
 #       output_award YYYY/dir/.entry.json
 #
@@ -167,7 +161,6 @@ export AUTHOR_DIR="author"
 function output_award
 {
     local ENTRY_JSON_PATH;	# the .entry.json path
-    local AWARD_STRING;		# winning entry award string
 
     # parse args
     #
@@ -191,12 +184,7 @@ function output_award
 
     # obtain the award string
     #
-    AWARD_STRING=$(grep -F '"award" : "'  "$ENTRY_JSON_PATH" | sed -e 's/^.*"award" : "//' -e 's/",//')
-    if [[ -z $AWARD_STRING ]]; then
-	echo "$0: ERROR: in output_award: no award found in .entry.json file: $ENTRY_JSON_PATH" 1>&2
-	return 5
-    fi
-    echo "$AWARD_STRING"
+    "$JVAL_WRAPPER" -w -b "$ENTRY_JSON_PATH" '$..award'
     return 0
 }
 
@@ -204,12 +192,6 @@ function output_award
 # output_author_handles
 #
 # Write the author handle(s) for the YYYY/dir entry to standard output (stdout)
-#
-# XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
-# XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
-# XXX - until we have the jnamval command, we must FAKE PARSE the .entry.json file  - XXX
-# XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
-# XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
 #
 # usage:
 #	output_author_handles YYYY/dir/.entry.json
@@ -221,7 +203,6 @@ function output_award
 function output_author_handles
 {
     local ENTRY_JSON_PATH;	# the .entry.json path
-    local author_handle;	# a found author handle
 
     # parse args
     #
@@ -245,12 +226,7 @@ function output_author_handles
 
     # extract author handles from .entry.json
     #
-    grep -F author_handle "$ENTRY_JSON_PATH" |
-      awk 'NF == 5 { print $4; }' |
-      tr -d '"' |
-      while read -r author_handle; do
-	echo "$author_handle"
-    done
+    "$JVAL_WRAPPER" -w -b "$ENTRY_JSON_PATH" '$..author_handle'
     return 0
 }
 
@@ -457,6 +433,15 @@ fi
 export BIN_DIR="bin"
 
 
+# find the jval-wrapper.sh tool
+#
+JVAL_WRAPPER="$BIN_PATH/jval-wrapper.sh"
+if [[ ! -x $JVAL_WRAPPER ]]; then
+    echo "$0: ERROR: cannot find the bin/jval-wrapper.sh executable" 1>&2
+    exit 5
+fi
+
+
 # verify we have our awk script
 #
 export MANIFEST_ENTRY_CSV_ENTRY_AWK="$BIN_DIR/manifest.csv.entry.awk"
@@ -515,6 +500,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: TOP_FILE=$TOP_FILE" 1>&2
     echo "$0: debug[3]: BIN_PATH=$BIN_DIR" 1>&2
     echo "$0: debug[3]: BIN_DIR=$BIN_DIR" 1>&2
+    echo "$0: debug[3]: JVAL_WRAPPER=$JVAL_WRAPPER" 1>&2
     echo "$0: debug[3]: MANIFEST_ENTRY_CSV_ENTRY_AWK=$MANIFEST_ENTRY_CSV_ENTRY_AWK" 1>&2
 fi
 
@@ -1088,15 +1074,6 @@ fi
 #      author handles w/o author/author_handle.json file and
 #      author/author_handle.json file that do not reference the entry id
 #
-# XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
-# XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
-# XXX - until we have the jnamval command, we must FAKE PARSE the .entry.json file  - XXX
-# XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
-# XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
-#
-export PATTERN_BEFORE_ENTRY_ID='^[[:space:]]*{[[:space:]]*"entry_id"[[:space:]]*:[[:space:]]*"'
-export PATTERN_AFTER_ENTRY_ID='"[[:space:]]*},?[[:space:]]*$'
-#
 if [[ $V_FLAG -ge 1 ]]; then
     echo "$0: debug[1]: about to: scan for unknown author handles" 1>&2
 fi
@@ -1174,18 +1151,11 @@ sed -e 's/,/ /g' "$AUTHOR_WINS_CSV" | while read -r AUTHOR_HANDLE ENTRY_ID_SET; 
 
 		# verify that the author/author_handle.json file refers to the entry id
 		#
-		# XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
-		# XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
-		# XXX - until we have the jnamval command, we must FAKE PARSE the .entry.json file  - XXX
-		# XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
-		# XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
-		#
 		else
 
 		    # check if the author/author_handle.json file refers to the entry id
 		    #
-		    FOUND=$(grep -E "${PATTERN_BEFORE_ENTRY_ID}${ENTRY_ID}${PATTERN_AFTER_ENTRY_ID}" \
-				    "$AUTHOR_HANDLE_JSON" 2>/dev/null)
+		    FOUND=$("$JVAL_WRAPPER" -w -b "$AUTHOR_HANDLE_JSON" '$..entry_id')
 		    if [[ -z $FOUND ]]; then
 			echo "$0: ERROR: line: $line of author_wins.csv: $AUTHOR_WINS_CSV" \
 			     "entry id: $ENTRY_ID not in winning_entry_set of: $AUTHOR_HANDLE_JSON" 1>&2
