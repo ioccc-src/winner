@@ -15,14 +15,12 @@ on half a dozen machines or so, and worked on all but one.  The failure came in
 the form of the machine rebooting itself midway through loading the OS, with no
 nasty side-effects.
 
-```
     Hardware requirements - i386 or better processor, but the GUI is
     surprisingly power-hungry, so I would recommend a fast P3 or P4 processor
     (has been tested on P3/P4/Athlon machines).  Minimum RAM is something like
     32MB.  PS/2 mouse & keyboard required - no USB I'm afraid, and the keyboard
     map is for a UK keyboard.  Uses VESA VBE 3.0, so should work on any modern
     graphics card (has been tested on NVIDIA, Matrox, and SiS cards).
-```
 
 3. Now you need to setup a bootloader to load the OS.  If you have a system
 using a lilo bootloader you can simply add the OS to your boot menu.  Just add
@@ -32,12 +30,10 @@ If you do not wish modify your lilo setup, one easy option is to get yourself a
 GRUB boot disk image, and follow the instructions for GRUB below - Debian users
 can simply run`apt-get install grub-disk` to get themselves a GRUB boot disk.
 
-```
     If you run GRUB, then at the boot menu simply hit `c` to get a console, then
     type `kernel=(hd0,0)/<PATH>/kernel` (substituting appropriate hard
     drive/partition numbers & path, or using `(fd0)` to load a kernel on the
     floppy), then `initrd=(hd0,0)/<PATH>/fs.tar`, and finally `boot`.
-```
 
 4. Assuming the OS has booted, what can you do now?  Well, start by trying `sh`,
 to open another shell.  Then, try `vi gavin.c` to open up the OS source in a

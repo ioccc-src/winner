@@ -7,6 +7,16 @@
 There is an alternate version that is unobfuscated, provided by the author in
 2024\. See [Alternate code](#alternate-code) below.
 
+### Bugs and (Mis)features:
+
+The current status of this entry is:
+
+> **STATUS: INABIAF - please DO NOT fix**
+
+For more detailed information see [2004/hibachi in bugs.html](../../bugs.html#2004_hibachi).
+
+
+
 
 ## To use:
 
@@ -56,7 +66,7 @@ of Mr Howe.
 This entry also has the dubious honour of being the only one to have been
 submitted with its own `configure` script.
 
-NOTE: the author states there is a tarball `hibachi.tgz` but this was extracted
+**NOTE**: the author states there is a tarball `hibachi.tgz` but this was extracted
 so the file does not exist here.
 
 
@@ -66,7 +76,7 @@ so the file does not exist here.
 
 `Hibachi` is a simple, small, and (probably) very secure web server.
 
-There is a `hibachi.tgz` file (NOTE: this file was removed by the judges after
+There is a `hibachi.tgz` file (**NOTE**: this file was removed by the judges after
 extraction) that unpacks several support files and a subdirectory tree
 containing the documentation and examples. It can be viewed by:
 
@@ -189,9 +199,9 @@ style](https://wiki.c2.com/?OneTrueBraceStyle).
 
 *  Commented obfuscation change log information available.
 
-### Known Issues
+### Known Issue
 
-*  The [links][1] text browser does not support RFC 2616 section 7.2.1
+*  The [links][1] (text) web browser does not support RFC 2616 section 7.2.1
   paragraph 3 sentence 2, and so fails to display responses from
   `hibachi`.
 
@@ -207,17 +217,10 @@ style](https://wiki.c2.com/?OneTrueBraceStyle).
 * Winner of The Far Too Much Free Time Award
 
 
-### NOTICE to those who wish for a greater challenge:
+### Changelog
 
-**If you want a greater challenge, don't read any further**:
-just try to understand the program via the source.
-
-If you get stuck, come back and read below for additional hints and information.
-
-
-### Obfuscation change log
-
-For additional hints about how the source was obfuscated, read [src/localhost/CHANGELOG.TXT](src/localhost/CHANGELOG.TXT).
+For a list of significant changes made during development, see
+[src/localhost/CHANGELOG.TXT](src/localhost/CHANGELOG.TXT).
 
 
 <!--

@@ -55,7 +55,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "html",
 	    "display_via_github" : false,
-	    "entry_text" : "home page of alt HIBACHI web server"
+	    "entry_text" : "home page of alt hibachi alt web server"
 	},
 	{
 	    "file_path" : "src/configure",
@@ -71,7 +71,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "html",
 	    "display_via_github" : false,
-	    "entry_text" : "home page of alt HIBACHI web server"
+	    "entry_text" : "home page of alt hibachi web server"
 	},
 	{
 	    "file_path" : "src-alt/IOCCC-2004/mkentry.c",
@@ -103,7 +103,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "html",
 	    "display_via_github" : false,
-	    "entry_text" : "perl test page of alt HIBACHI server"
+	    "entry_text" : "perl test page of alt hibachi server"
 	},
 	{
 	    "file_path" : "src-alt/localhost/test/php/index.php",
@@ -135,7 +135,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : false,
-	    "entry_text" : "obfuscated changelog for code"
+	    "entry_text" : "obfuscated changelog for hibachi"
 	},
 	{
 	    "file_path" : "src/localhost/reference/rfc2616.html",
@@ -151,7 +151,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "html",
 	    "display_via_github" : false,
-	    "entry_text" : "perl test page of HIBACHI server"
+	    "entry_text" : "perl test page of hibachi server"
 	},
 	{
 	    "file_path" : "src/localhost/test/php/index.php",
@@ -239,7 +239,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : false,
-	    "entry_text" : "obfuscation change log for alt server"
+	    "entry_text" : "changelog for hibachi alt code"
 	},
 	{
 	    "file_path" : "src/configure.in",
@@ -263,7 +263,7 @@
 	    "OK_to_edit" : true,
 	    "display_as" : "text",
 	    "display_via_github" : false,
-	    "entry_text" : "obfuscation change log"
+	    "entry_text" : "changelog for hibachi"
 	},
 	{
 	    "file_path" : "2004_hibachi.tar.bz2",

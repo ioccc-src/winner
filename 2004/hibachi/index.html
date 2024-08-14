@@ -411,6 +411,12 @@ Location: <a href="../../location.html#CA">CA</a> - <em>Canada</em></li>
 <pre><code>    make</code></pre>
 <p>There is an alternate version that is unobfuscated, provided by the author in
 2024. See <a href="#alternate-code">Alternate code</a> below.</p>
+<h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
+<p>The current status of this entry is:</p>
+<blockquote>
+<p><strong>STATUS: INABIAF - please DO NOT fix</strong></p>
+</blockquote>
+<p>For more detailed information see <a href="../../bugs.html#2004_hibachi">2004/hibachi in bugs.html</a>.</p>
 <h2 id="to-use">To use:</h2>
 <pre><code>    cd build; ./hibachi-start.sh &amp;</code></pre>
 <p>Then use your web browser to visit <code>http://localhost:8008/</code>. When you’re
@@ -434,12 +440,12 @@ we are considering starting an IOCCC standards body just to reign in the likes
 of Mr Howe.</p>
 <p>This entry also has the dubious honour of being the only one to have been
 submitted with its own <code>configure</code> script.</p>
-<p>NOTE: the author states there is a tarball <code>hibachi.tgz</code> but this was extracted
+<p><strong>NOTE</strong>: the author states there is a tarball <code>hibachi.tgz</code> but this was extracted
 so the file does not exist here.</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <h3 id="readme.txt-feb-2004">README.TXT (Feb 2004)</h3>
 <p><code>Hibachi</code> is a simple, small, and (probably) very secure web server.</p>
-<p>There is a <code>hibachi.tgz</code> file (NOTE: this file was removed by the judges after
+<p>There is a <code>hibachi.tgz</code> file (<strong>NOTE</strong>: this file was removed by the judges after
 extraction) that unpacks several support files and a subdirectory tree
 containing the documentation and examples. It can be viewed by:</p>
 <pre><code>    tar -zxf hibachi.tgz
@@ -506,9 +512,9 @@ style</a>.</p></li>
 <li><p><code>Hibachi</code> can serve <a href="https://www.ioccc.org">www.ioccc.org</a>.</p></li>
 <li><p>Commented obfuscation change log information available.</p></li>
 </ul>
-<h3 id="known-issues">Known Issues</h3>
+<h3 id="known-issue">Known Issue</h3>
 <ul>
-<li>The <a href="https://en.wikipedia.org/wiki/Links_(web_browser)">links</a> text browser does not support RFC 2616 section 7.2.1
+<li>The <a href="https://en.wikipedia.org/wiki/Links_(web_browser)">links</a> (text) web browser does not support RFC 2616 section 7.2.1
 paragraph 3 sentence 2, and so fails to display responses from
 <code>hibachi</code>.</li>
 </ul>
@@ -521,12 +527,9 @@ paragraph 3 sentence 2, and so fails to display responses from
 <li>Best Interpretation of RFC 2616</li>
 <li>Winner of The Far Too Much Free Time Award</li>
 </ul>
-<h3 id="notice-to-those-who-wish-for-a-greater-challenge">NOTICE to those who wish for a greater challenge:</h3>
-<p><strong>If you want a greater challenge, don’t read any further</strong>:
-just try to understand the program via the source.</p>
-<p>If you get stuck, come back and read below for additional hints and information.</p>
-<h3 id="obfuscation-change-log">Obfuscation change log</h3>
-<p>For additional hints about how the source was obfuscated, read <a href="src/localhost/CHANGELOG.TXT">src/localhost/CHANGELOG.TXT</a>.</p>
+<h3 id="changelog">Changelog</h3>
+<p>For a list of significant changes made during development, see
+<a href="src/localhost/CHANGELOG.TXT">src/localhost/CHANGELOG.TXT</a>.</p>
 <!--
 
     Copyright © 1984-2024 by Landon Curt Noll. All Rights Reserved.
@@ -557,19 +560,19 @@ just try to understand the program via the source.</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/hibachi/Makefile">Makefile</a> - entry Makefile</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/hibachi/hibachi.orig.c">hibachi.orig.c</a> - original source code</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/hibachi/src-alt/configure">src-alt/configure</a> - GNU Autoconf script for alt server</li>
-<li><a href="src-alt/localhost/index.html">src-alt/localhost/index.html</a> - home page of alt HIBACHI web server</li>
+<li><a href="src-alt/localhost/index.html">src-alt/localhost/index.html</a> - home page of alt hibachi alt web server</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/hibachi/src/configure">src/configure</a> - GNU Autoconf script</li>
-<li><a href="src/localhost/index.html">src/localhost/index.html</a> - home page of alt HIBACHI web server</li>
+<li><a href="src/localhost/index.html">src/localhost/index.html</a> - home page of alt hibachi web server</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/hibachi/src-alt/IOCCC-2004/mkentry.c">src-alt/IOCCC-2004/mkentry.c</a> - IOCCC tool of 2004 to package entries</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/hibachi/src-alt/ioccc.c">src-alt/ioccc.c</a> - IOCCC size tool</li>
 <li><a href="src-alt/localhost/reference/rfc2616.html">src-alt/localhost/reference/rfc2616.html</a> - RFC 2616 - Hypertext Transfer Protocol - alt server</li>
-<li><a href="src-alt/localhost/test/perl/index.html">src-alt/localhost/test/perl/index.html</a> - perl test page of alt HIBACHI server</li>
+<li><a href="src-alt/localhost/test/perl/index.html">src-alt/localhost/test/perl/index.html</a> - perl test page of alt hibachi server</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/hibachi/src-alt/localhost/test/php/index.php">src-alt/localhost/test/php/index.php</a> - PHP making an ISO 8601:2000 calendar for alt server</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/hibachi/src-alt/localhost/test/ruby/index.rb">src-alt/localhost/test/ruby/index.rb</a> - ruby home page for alt server</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/hibachi/src-alt/localhost/test/shell/test0.sh">src-alt/localhost/test/shell/test0.sh</a> - POSIX shell CGI home page for alt server</li>
-<li><a href="src/localhost/CHANGES-OBFUSCATED.TXT">src/localhost/CHANGES-OBFUSCATED.TXT</a> - obfuscated changelog for code</li>
+<li><a href="src/localhost/CHANGES-OBFUSCATED.TXT">src/localhost/CHANGES-OBFUSCATED.TXT</a> - obfuscated changelog for hibachi</li>
 <li><a href="src/localhost/reference/rfc2616.html">src/localhost/reference/rfc2616.html</a> - RFC 2616 - Hypertext Transfer Protocol</li>
-<li><a href="src/localhost/test/perl/index.html">src/localhost/test/perl/index.html</a> - perl test page of HIBACHI server</li>
+<li><a href="src/localhost/test/perl/index.html">src/localhost/test/perl/index.html</a> - perl test page of hibachi server</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/hibachi/src/localhost/test/php/index.php">src/localhost/test/php/index.php</a> - PHP making an ISO 8601:2000 calendar</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/hibachi/src/localhost/test/ruby/index.rb">src/localhost/test/ruby/index.rb</a> - ruby home page</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/hibachi/src/localhost/test/shell/test0.sh">src/localhost/test/shell/test0.sh</a> - POSIX shell CGI home page</li>
@@ -580,10 +583,10 @@ just try to understand the program via the source.</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/hibachi/src/localhost/test/perl/yahoo-ticker.pl">src/localhost/test/perl/yahoo-ticker.pl</a> - stock price fetch example in Perl</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/hibachi/src-alt/configure.in">src-alt/configure.in</a> - GNU Autoconf script for alt server</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/hibachi/src-alt/hibachi-start.sh.in">src-alt/hibachi-start.sh.in</a> - hibachi-start.sh declarations for alt server</li>
-<li><a href="src-alt/localhost/CHANGELOG.TXT">src-alt/localhost/CHANGELOG.TXT</a> - obfuscation change log for alt server</li>
+<li><a href="src-alt/localhost/CHANGELOG.TXT">src-alt/localhost/CHANGELOG.TXT</a> - changelog for hibachi alt code</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/hibachi/src/configure.in">src/configure.in</a> - GNU Autoconf script</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/hibachi/src/hibachi-start.sh.in">src/hibachi-start.sh.in</a> - hibachi-start.sh declarations</li>
-<li><a href="src/localhost/CHANGELOG.TXT">src/localhost/CHANGELOG.TXT</a> - obfuscation change log</li>
+<li><a href="src/localhost/CHANGELOG.TXT">src/localhost/CHANGELOG.TXT</a> - changelog for hibachi</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>

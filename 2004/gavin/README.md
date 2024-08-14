@@ -5,17 +5,18 @@
 ```
 
 
-There is an alternate version for those who wish to use QEMU rather than having
-to reboot and rely on having a floppy drive (if you even remember what those are
-:-) ) etc. See [alternate code](#alternate-code) below.
+There is an alternate version for those who wish to use
+[QEMU](https://www.qemu.org) rather than having
+to reboot and rely on having a [floppy
+drive](https://en.wikipedia.org/wiki/Floppy_disk) ([if you even
+remember](https://en.wikipedia.org/wiki/History_of_the_floppy_disk) what those are
+:-) ) etc. See [Alternate code](#alternate-code) below.
 
 
 ### Bugs and (Mis)features:
 
 The current status of this entry is:
 
-> **STATUS: compiled executable crashes - please help us fix**<br>
-> **STATUS: doesn't work with some platforms - please help us fix it**<br>
 > **STATUS: INABIAF - please DO NOT fix**
 
 For more detailed information see [2004/gavin in bugs.html](../../bugs.html#2004_gavin).
@@ -30,8 +31,8 @@ For more detailed information see [2004/gavin in bugs.html](../../bugs.html#2004
 
 ## Try:
 
-To enjoy the results (on a Linux/x86 machine) with a floppy drive (remember
-those? We do!):
+To enjoy the results (on a Linux/x86 machine) with a floppy drive
+([remember](https://en.wikipedia.org/wiki/Old_age) those? We do!):
 
 
 ``` <!---sh-->
@@ -45,9 +46,9 @@ whatever the floppy device is!),  mount it under `/mnt/floppy` and then:
     cp kernel fs.tar lilo.conf boot.b /mnt/floppy
 ```
 
-NOTE: If the version of your lilo is not 21.4, use the appropriate boot.b file.
+**NOTE**: If the version of your lilo is not 21.4, use the appropriate `boot.b` file.
 
-NOTE: If your floppy drive is not `/dev/fd0`, edit lilo.conf appropriately.
+**NOTE**: If your floppy drive is not `/dev/fd0`, edit `lilo.conf` appropriately.
 
 ``` <!---sh-->
     lilo -C /mnt/floppy/lilo.conf
@@ -92,7 +93,7 @@ you can use it with `QEMU`.
 ### Alternate use:
 
 The use is mostly the same as `gavin` except that one initially executes `gavin.alt`
-(which `make alt` will do) and one will have to use `QEMU` instead. The files
+and one will have to use `QEMU` instead. The files
 generated are the same names. See [to use](#to-use) and [try](#try) above as
 well as the judges' remarks below plus [gavin.html](gavin.html).
 
@@ -113,9 +114,9 @@ If you do not want to mess with a floppy and you use GRUB, see
 You can put additional text files in `fs.tar` for browsing with vi.
 
 If you do not want to bother rebooting your computer at all, see
-<http://bellard.org> for QEMU ([Fabrice Bellard](../../authors.html#Fabrice_Bellard)
-is an IOCCC 2001 winning entry), but your experience will be limited; use the
-[alternate code](#alternate-code) instead. You'll have to move the mouse to
+<https://www.qemu.org> for QEMU (by [Fabrice
+Bellard](../../authors.html#Fabrice_Bellard), an IOCCC winning author) and use
+the [Alternate code](#alternate-code) instead. You'll have to move the mouse to
 trigger the initial screen update.
 
 The judges were able to write a few more programs to run in this OS.
@@ -154,7 +155,7 @@ For further usage information see [gavin.html](gavin.html).
 
 The filenames `vi` and `sh` are significant, and should not be changed.
 
-### Known 'features'
+### Known 'features':
 
 Known issues are really too plentiful to list.
 
@@ -188,16 +189,14 @@ keyboard maps, etc.  (I should also mention that it contains mini functions to
 perform an x86 `in` and `out` instruction - to allow the keyboard & mouse to be
 driven from C code).
 
-Porting to another architecture should be relatively easy\* -
+Porting to another architecture should be relatively easy[^1] -
 the string simply needs be replaced with one containing
 data & code suitable for the new target platform.
 Accesses to data in the string are made relative to the define `V`,
 so these may need updating as appropriate (`0x90200` is the address
 at which a Linux bootloader loads an x86 kernel image).
 
-```
-    \* ;-)
-```
+[^1]: \* ;-)
 
 
 <!--
