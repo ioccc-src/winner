@@ -11,6 +11,9 @@
     ./schnitzi <foo | vi -n
 ```
 
+where `foo` is a valid input file (see the [author's input details](#the-input)
+for more details).
+
 
 ## Try:
 
@@ -19,8 +22,8 @@
 ```
 
 
-NOTE: if you're one of those who don't know how to exit `vi` :-) don't worry as
-it will exit for you.
+**NOTE**: if you're one of those who don't know how to exit `vi` :-) don't worry
+as it will exit for you.
 
 
 ## Judges' remarks:

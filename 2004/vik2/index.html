@@ -444,21 +444,39 @@ calculations and one status register <code>SR</code>. Each bit in the registers 
 represented by one symbol that are either defined or undefined.</p>
 <p>The ALU has six instructions:</p>
 <ul>
-<li><p><code>CLR_X</code> - Clear <a href="https://en.wikipedia.org/wiki/Processor_register">register</a> <code>X</code>.</p></li>
-<li><p><code>CLR_Y</code> - Clear <a href="https://en.wikipedia.org/wiki/Processor_register">register</a> <code>Y</code>.</p></li>
-<li><p><code>ADD</code> - Calculates <code>X</code> + <code>Y</code> and stores the result in <code>X</code>. If the result
+<li><code>CLR_X</code>
+<ul>
+<li>Clear <a href="https://en.wikipedia.org/wiki/Processor_register">register</a> <code>X</code>.</li>
+</ul></li>
+<li><code>CLR_Y</code>
+<ul>
+<li>Clear <a href="https://en.wikipedia.org/wiki/Processor_register">register</a> <code>Y</code>.</li>
+</ul></li>
+<li><code>ADD</code>
+<ul>
+<li>Calculates <code>X</code> + <code>Y</code> and stores the result in <code>X</code>. If the result
 is larger than 11 bits, the <a href="https://en.wikipedia.org/wiki/Carry_flag">CARRY
 bit</a> in <code>SR</code> is set otherwise
-the <code>CARRY</code> bit is cleared.</p></li>
-<li><p><code>SUB</code> - Calculates <code>X</code> - <code>Y</code> and stores the result in <code>X</code>. If <code>Y</code> was larger
-than <code>X</code>, the <a href="https://en.wikipedia.org/wiki/Carry_flag">CARRY bit</a>
-in <code>SR</code> is set otherwise the <code>CARRY</code> bit is cleared.</p></li>
-<li><p><code>TST</code> - If <code>X</code> == <code>Y</code> the <code>EQ</code> bit in <code>SR</code> is set, otherwise the <code>EQ</code> bit is
-cleared. If <code>X</code> &lt; <code>Y</code> the <code>LT</code> bit in <code>SR</code> is set, otherwise the <code>LT</code>
-bit is cleared.</p></li>
-<li><p><code>INC2</code> - Calculates <code>X</code> + 2 and stores the result in <code>X</code>. The <a href="https://en.wikipedia.org/wiki/Carry_flag">CARRY
-bit</a> is handled as in the
-<code>ADD</code> instruction.</p></li>
+the <code>CARRY</code> bit is cleared.</li>
+</ul></li>
+<li><code>SUB</code>
+<ul>
+<li>Calculates <code>X</code> - <code>Y</code> and stores the result in <code>X</code>. If <code>Y</code> was larger than
+<code>X</code>, the <a href="https://en.wikipedia.org/wiki/Carry_flag">CARRY bit</a> in <code>SR</code> is
+set otherwise the <code>CARRY</code> bit is cleared.</li>
+</ul></li>
+<li><code>TST</code>
+<ul>
+<li>If <code>X</code> == <code>Y</code> the <code>EQ</code> bit in <code>SR</code> is set, otherwise the <code>EQ</code> bit is
+cleared. If <code>X</code> &lt; <code>Y</code> the <code>LT</code> bit in <code>SR</code> is set, otherwise the <code>LT</code> bit is
+cleared.</li>
+</ul></li>
+<li><code>INC2</code>
+<ul>
+<li>Calculates <code>X</code> + 2 and stores the result in <code>X</code>. The <a href="https://en.wikipedia.org/wiki/Carry_flag">CARRY
+bit</a> is handled as in the <code>ADD</code>
+instruction.</li>
+</ul></li>
 </ul>
 <p>Internally the <a href="https://en.wikipedia.org/wiki/Arithmetic_logic_unit">ALU</a>
 implements a one bit adder with a carry in and carry out. This adder is the core
@@ -487,10 +505,10 @@ calculation is made and the result is moved back to the memory.</p>
 seen a winning entry calculating <a href="https://en.wikipedia.org/wiki/Prime_number">prime
 numbers</a> in the
 <a href="https://en.wikipedia.org/wiki/C_preprocessor">pre-processor</a>.
-There is a big difference though. The <a href="../../1988/applin/index.html">1988/applin</a> entry uses pre-
-processor arithmetic (in a very nice way though). This program only
-defines and undefines symbols in a well defined ;) way and doesn’t do
-any pre-processor arithmetics.</p>
+There is a big difference though. The
+<a href="../../1988/applin/index.html">1988/applin</a> entry uses pre-processor arithmetic
+(in a very nice way though). This program only defines and undefines symbols in
+a well defined ;) way and doesn’t do any pre-processor arithmetics.</p>
 <p>The reason why I chose to do a <a href="https://en.wikipedia.org/wiki/Prime_number">prime
 number</a> application is that the
 algorithm can be written to do a lot of calculations without a lot of nesting

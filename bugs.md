@@ -2676,26 +2676,21 @@ sentence 2, and so fails to display responses from `hibachi`.
 
 The author stated that:
 
-```
-    Arguments matching `/[^2]22$/` cause the program to segfault
-    after rapidly exhausting the available stack space.  I could
-    probably fix this by adding some special cases to the code,
-    but [Blaine the Mono] it's quite a bit more exciting this way,
-    don't you think?[/Blaine]  Since the trailing `22` will be
-    its own atom anyway, you can just insert a space in front of
-    it if you run into this feature (e.g. `1 22` instead of `122`).
-
-    Arguments matching `/(?:.){10,}/` will produce visually incorrect
-    results (e.g., generation 1 starting from 1111111111 will
-    print as `: 1`), but there's nothing interesting about these
-    arguments that can't be modeled using shorter runs of the same
-    symbol.
-
-    Arguments matching `/(?:.){257,}/` may produce mathematically
-    incorrect results (e.g., generation 1 starting from a string
-    of 257 `1`s will be calculated as `11`); the remark from the
-    previous paragraph applies here also.
-```
+> Arguments matching `/[^2]22$/` cause the program to segfault after rapidly
+exhausting the available stack space.  I could probably fix this by adding some
+special cases to the code, but [Blaine the Mono] it's quite a bit more exciting
+this way, don't you think?[/Blaine]  Since the trailing `22` will be its own
+atom anyway, you can just insert a space in front of it if you run into this
+feature (e.g. `1 22` instead of `122`).
+>
+>    Arguments matching `/(?:.){10,}/` will produce visually incorrect results
+(e.g., generation 1 starting from 1111111111 will print as `: 1`), but there's
+nothing interesting about these arguments that can't be modeled using shorter
+runs of the same symbol.
+>
+>    Arguments matching `/(?:.){257,}/` may produce mathematically incorrect
+results (e.g., generation 1 starting from a string of 257 `1`s will be
+calculated as `11`); the remark from the previous paragraph applies here also.
 
 
 <div id="2004_sds">
