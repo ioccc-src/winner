@@ -28,8 +28,8 @@ is modified to have the desired checksum!  This does, we suppose,
 solve the problem that inserting a checksum would change the file's
 checksum; if you have to change it, you might as well change it!
 
-This program was submitted under the name `Rinia`, so the Author's
-Comments refer to it as such.
+This program was submitted under the name `Rinia`, so the [Author's
+remarks](#authors-remarks) refer to it as such.
 
 
 ## Author's remarks:

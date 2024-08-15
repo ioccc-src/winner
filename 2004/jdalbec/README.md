@@ -5,7 +5,7 @@
 ```
 
 There is an alternate version that allows one to control the number of numbers
-to print on a line. See [alternate code](#alternate-code) below.
+to print on a line. See [Alternate code](#alternate-code) below.
 
 
 ### Bugs and (Mis)features:
@@ -208,7 +208,7 @@ tailor-made for this competition!
 
 Although there are no comments, the program still manages to
 be self-documenting in an obscure fashion (periodic table of
-the (non-primordial) elements, "OBFUSCATED C").
+the (non-primordial) elements, "`OBFUSCATED C`").
 
 
 ### Obfuscation
@@ -221,8 +221,8 @@ The program is obfuscated:
 - By the use of global constants.
 - By the use of global functions that replace the standard ones (I particularly
 like substituting `At` ([Astatine](https://en.wikipedia.org/wiki/Astatine),
-highly unstable) for `abort()`.) By overloading symbols (For example, `B` is a
-type, a structure, a structure member, a macro parameter, and a variable.).
+highly unstable) for `abort()`). By overloading symbols (for example, `B` is a
+type, a structure, a structure member, a macro parameter, and a variable).
 - By standard tricks like writing `'\0'` as `1["3"]` or `2["22"]`.
 - By using ternary operators to avoid `else`.
 - By using the `Sb()` function to create sub-buffers from either end.

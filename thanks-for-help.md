@@ -3836,7 +3836,7 @@ for more details.
 
 Cody also added the [try.sh](%%REPO_URL%%/2004/kopczynski/try.sh) script and various data
 files: [kopczynski-a](%%REPO_URL%%/2004/kopczynski/kopczynski-a) to demonstrate what happens when art more
-like a letter is fed to the program and the `kopczynski*-rev` files which are
+like a letter is fed to the program, and the `kopczynski*-rev` files which are
 the data files reversed with `rev(1)`. One had to be modified additionally to
 get it to work, that being `kopczynski-10-rev`.
 

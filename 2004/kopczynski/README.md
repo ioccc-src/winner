@@ -4,7 +4,7 @@
     make
 ```
 
-NOTE: We FORCE the use of -O0 even if someone overrides it because this entry
+**NOTE**: We **FORCE** the use of `-O0` even if someone overrides it because this entry
 will not work with it enabled.
 
 
@@ -57,7 +57,7 @@ we have seen in years!
 Compile and run without arguments.  As input, give it an ASCII graphics
 figure 8, 9, 10, or 11 made of pound signs and spaces, of any size,
 shape, or orientation (that's right, an upside down 9 is still 9 :-) ).
-There is one restriction: the only line not containing "#" characters
+There is one restriction: the only line not containing `#` characters
 must be the last.
 
 The program will print what it thinks you've entered. If you enter
@@ -67,7 +67,7 @@ a pattern when it does not resemble 8, 9, 10 or 11?
 
 Here is a related puzzle: how to continue the sequence:
 
-    1, 0, 0, 0, 0, 0, 1, 0, 2, 1, ...
+>  `1, 0, 0, 0, 0, 0, 1, 0, 2, 1, ...`
 
 With certain arguments, you can alter the exit value / output.  Can you figure
 out how and why?
@@ -85,7 +85,7 @@ This program returns the number as its exit status. (In most shells,
 you can see the exit status of the last command with `echo $?` (or
 just `$?`).)
 
-**NOTE: The judges altered the primary version to output a number.**
+**NOTE**: The judges altered the primary version to output a number.
 
 On the input, give numbers formed as a sequences of empty spaces and `#`
 signs (you can also use dots instead of spaces), ending with an empty
@@ -131,10 +131,10 @@ minus the number of "edges"
 
 ```
            ## # #. .#
-              # .# #.   ('.' must be empty)
+              # .# #.
 ```
 
-plus the number of "faces"
+(`.` must be empty) plus the number of "faces"
 
 ```
            ##
@@ -163,7 +163,7 @@ a "magic trick".
 
 4. I make a 16-character array; when indexed by 4-bit value which
 represents the 2x2 squares, it will return a number to add/subtract
-`{-1,0,+1}`
+`{-1,0,+1}`.
 
 5. We convert lines of input to bitmaps (`N-bit` integers). Additionally, it is
 heavily obfuscated by using negative numbers (two's complement).  For example,

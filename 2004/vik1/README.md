@@ -4,7 +4,7 @@
     make
 ```
 
-NOTE: this entry requires the `X11/Xlib.h` header file and the X11 library to
+**NOTE**: this entry requires the `X11/Xlib.h` header file and the X11 library to
 compile.  For more information see the
 FAQ on "[X11](../../faq.html#X11)".
 
@@ -86,26 +86,38 @@ Compile the source code and link X libraries if necessary.
 The program takes three options which have to be typed in a specific
 order as described below.
 
+#### Usage:
+
 ``` <!---sh-->
-    Usage: ./vik1 ['a']['d'][#]
-
-    a   - Advanced racing in a winter landscape
-    d   - Racing in at night in the dark
-    #   - Race track selection 1-3 are valid numbers
+    ./vik1 ['a']['d'][#]
 ```
 
-Here are a few examples:
+- `a`
+    * Advanced racing in a winter landscape.
+- `d`
+    * Racing in at night in the dark.
+- `#`
+    * Race track selection 1-3 are valid numbers.
 
-```
-    Command line:             Description:
+#### Examples:
 
-    ./vik1                    Run track 1 at daytime in the summer
-    ./vik1 a                  Run track 1 at daytime in the winter
-    ./vik1 d                  Run track 1 at night in the summer
-    ./vik1 3                  Run track 3 at daytime in the summer
-    ./vik1 d3                 Run track 3 at night in the summer
-    ./vik1 ad2                Run track 2 at night in the winter
-```
+- `./vik1`
+    * Run track 1 at daytime in the summer.
+
+- `./vik1 a`
+    * Run track 1 at daytime in the winter.
+
+- `./vik1 d`
+    * Run track 1 at night in the summer.
+
+- `./vik1 3`
+    * Run track 3 at daytime in the summer.
+
+- `./vik1 d3`
+    * Run track 3 at night in the summer.
+
+- `./vik1 ad2`
+    * Run track 2 at night in the winter.
 
 Note that the order in which the argument characters are entered is
 important. It is for example not possible to type `./vik1 da`. (Well it is
@@ -142,7 +154,7 @@ makes the program more obscure.
 ### Compiler warnings
 
 There are no compiler warnings when compiling with `-ansi` but there are
-many warnings from lclint. Mainly because the program is very
+many warnings from lclint, mainly because the program is very
 optimized for code size.
 
 

@@ -409,7 +409,7 @@ Location: <a href="../../location.html#PL">PL</a> - <em>Republic of Poland</em> 
 <!-- BEFORE: 1st line of markdown file: 2004/kopczynski/README.md -->
 <h2 id="to-build">To build:</h2>
 <pre><code>    make</code></pre>
-<p>NOTE: We FORCE the use of -O0 even if someone overrides it because this entry
+<p><strong>NOTE</strong>: We <strong>FORCE</strong> the use of <code>-O0</code> even if someone overrides it because this entry
 will not work with it enabled.</p>
 <h2 id="to-use">To use:</h2>
 <pre><code>    ./kopczynski &lt; input_file</code></pre>
@@ -434,14 +434,16 @@ we have seen in years!</p>
 <p>Compile and run without arguments. As input, give it an ASCII graphics
 figure 8, 9, 10, or 11 made of pound signs and spaces, of any size,
 shape, or orientation (that’s right, an upside down 9 is still 9 :-) ).
-There is one restriction: the only line not containing “#” characters
+There is one restriction: the only line not containing <code>#</code> characters
 must be the last.</p>
 <p>The program will print what it thinks you’ve entered. If you enter
 anything that does not resemble 8, 9, 10, or 11, the result is
 seemingly arbitrary. Actually it is not pseudo-random; can you find
 a pattern when it does not resemble 8, 9, 10 or 11?</p>
 <p>Here is a related puzzle: how to continue the sequence:</p>
-<p>1, 0, 0, 0, 0, 0, 1, 0, 2, 1, …</p>
+<blockquote>
+<p><code>1, 0, 0, 0, 0, 0, 1, 0, 2, 1, ...</code></p>
+</blockquote>
 <p>With certain arguments, you can alter the exit value / output. Can you figure
 out how and why?</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
@@ -453,7 +455,7 @@ digits should be separated, and numbers should be “complete”.)</p>
 <p>This program returns the number as its exit status. (In most shells,
 you can see the exit status of the last command with <code>echo $?</code> (or
 just <code>$?</code>).)</p>
-<p><strong>NOTE: The judges altered the primary version to output a number.</strong></p>
+<p><strong>NOTE</strong>: The judges altered the primary version to output a number.</p>
 <p>On the input, give numbers formed as a sequences of empty spaces and <code>#</code>
 signs (you can also use dots instead of spaces), ending with an empty
 line. (No number has an empty line in it.) The program should return
@@ -488,8 +490,8 @@ characteristics</a> is the number of “vertexes”</p></li>
 <pre><code>            #</code></pre>
 <p>minus the number of “edges”</p>
 <pre><code>           ## # #. .#
-              # .# #.   (&#39;.&#39; must be empty)</code></pre>
-<p>plus the number of “faces”</p>
+              # .# #.</code></pre>
+<p>(<code>.</code> must be empty) plus the number of “faces”</p>
 <pre><code>           ##
            ##</code></pre>
 <ol start="3" type="1">
@@ -508,7 +510,7 @@ a “magic trick”.</p>
 <ol start="4" type="1">
 <li><p>I make a 16-character array; when indexed by 4-bit value which
 represents the 2x2 squares, it will return a number to add/subtract
-<code>{-1,0,+1}</code></p></li>
+<code>{-1,0,+1}</code>.</p></li>
 <li><p>We convert lines of input to bitmaps (<code>N-bit</code> integers). Additionally, it is
 heavily obfuscated by using negative numbers (two’s complement). For example,
 it turns out that <code>6</code> in <code>z=6</code> is the only 1-digit number which works here (and
