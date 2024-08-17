@@ -50,14 +50,6 @@
 	    "entry_text" : "how to make your own Bedlam cube"
 	},
 	{
-	    "file_path" : "solving-bedlam-cube.mp4",
-	    "inventory_order" : 100,
-	    "OK_to_edit" : true,
-	    "display_as" : "html",
-	    "display_via_github" : false,
-	    "entry_text" : "video showing the solution of to the Bedlam cube"
-	},
-	{
 	    "file_path" : "try.sh",
 	    "inventory_order" : 100,
 	    "OK_to_edit" : true,

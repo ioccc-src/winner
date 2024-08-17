@@ -4377,8 +4377,6 @@ Cody also added the [try.sh](%%REPO_URL%%/2006/sykes1/try.sh) script.
 
 Cody also provided the [bedlam-cubes.pdf](2006/sykes1/bedlam-cubes.pdf) file,
 obtained from the Internet Wayback Machine, as the file was no longer available.
-The video was also no longer available but Cody found an alternative and added
-it to the repo as well.
 
 
 <div id="2006_sykes2">

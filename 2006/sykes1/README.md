@@ -124,9 +124,6 @@ puzzles in wikipedia](http://en.wikipedia.org/wiki/Bedlam_cube).
 Some instructions on how to make your own cube are in the included file
 [bedlam-cubes.pdf](bedlam-cubes.pdf).
 
-Finally, you can watch it being solved with the video file here,
-[solving-bedlam-cube.mp4](%%REPO_URL%%/2006/sykes1/solving-bedlam-cube.mp4).
-
 Actually the cube is very hard to do by hand by just trying to fit it
 together.  I have not known anyone to solve it in this way - you would
 need to be very lucky indeed to stumble across a solution.
