@@ -102,7 +102,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.0.4 2024-08-11"
+export VERSION="1.0.5 2024-08-17"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -1330,7 +1330,7 @@ if [[ -z $NOOP ]]; then
 	echo  "$0: debug[3]: about to run: $JVAL_WRAPPER -b -- $INFO_JSON $PATTERN" 1>&2
     fi
     export EXTRA_FILE_SET
-    EXTRA_FILE_SET=$("$JVAL_WRAPPER" -b -- "$INFO_JSON" "$PATTERN" | sort -u)
+    EXTRA_FILE_SET=$("$JVAL_WRAPPER" -b -- "$INFO_JSON" "$PATTERN" | LC_ALL=C sort -u)
     status_codes=("${PIPESTATUS[@]}")
     if [[ ${status_codes[*]} =~ [1-9] ]]; then
 	echo "$0: ERROR: $JVAL_WRAPPER -b -- $INFO_JSON $PATTERN failed," \

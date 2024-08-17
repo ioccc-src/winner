@@ -142,7 +142,7 @@ shopt -s lastpipe	# explicitly run the last command of the pipe line in the curr
 
 # set variables referenced in the usage message
 #
-export VERSION="1.2 2024-08-13"
+export VERSION="1.2.1 2024-08-17"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -745,12 +745,12 @@ fi
 if [[ -z $NOOP ]]; then
 
     if [[ $V_FLAG -ge 5 ]]; then
-	echo "$0: debug[5]: about to: sort -t, -k1d,1 -k2d,2 $TMP_AUTHOR_WINS_CSV -o $TMP_AUTHOR_WINS_CSV" 1>&2
+	echo "$0: debug[5]: about to: LC_ALL=C sort -t, -k1d,1 -k2d,2 $TMP_AUTHOR_WINS_CSV -o $TMP_AUTHOR_WINS_CSV" 1>&2
     fi
-    sort -t, -k1d,1 -k2d,2 "$TMP_AUTHOR_WINS_CSV" -o "$TMP_AUTHOR_WINS_CSV"
+    LC_ALL=C sort -t, -k1d,1 -k2d,2 "$TMP_AUTHOR_WINS_CSV" -o "$TMP_AUTHOR_WINS_CSV"
     status="$?"
     if [[ $status -ne 0 ]]; then
-	echo "$0: ERROR: sort -t, -k1d,1 -k2d,2 $TMP_AUTHOR_WINS_CSV -o $TMP_AUTHOR_WINS_CSV failed," \
+	echo "$0: ERROR: LC_ALL=C sort -t, -k1d,1 -k2d,2 $TMP_AUTHOR_WINS_CSV -o $TMP_AUTHOR_WINS_CSV failed," \
 	     "error code: $status" 1>&2
 	exit 8
     elif [[ $V_FLAG -ge 3 ]]; then
@@ -921,15 +921,15 @@ done
 if [[ $V_FLAG -ge 5 ]]; then
     echo "$0: debug[5]: about to: sort $TMP_AUTHOR_HANDLE_INVENTORY -o $TMP_AUTHOR_HANDLE_INVENTORY" 1>&2
 fi
-sort "$TMP_AUTHOR_HANDLE_INVENTORY" -o "$TMP_AUTHOR_HANDLE_INVENTORY"
+LC_ALL=C sort "$TMP_AUTHOR_HANDLE_INVENTORY" -o "$TMP_AUTHOR_HANDLE_INVENTORY"
 status="$?"
 if [[ $status -ne 0 ]]; then
-    echo "$0: ERROR: sort $TMP_AUTHOR_HANDLE_INVENTORY -o $TMP_AUTHOR_HANDLE_INVENTORY failed," \
+    echo "$0: ERROR: LC_ALL=C sort $TMP_AUTHOR_HANDLE_INVENTORY -o $TMP_AUTHOR_HANDLE_INVENTORY failed," \
 	 "error code: $status" 1>&2
     exit 9
 fi
 AUTHOR_DIFF=$(find "$AUTHOR_DIR" -mindepth 1 -maxdepth 1 -type f -name '*.json' 2>&1 |
-	      sort |
+	      LC_ALL=C sort |
 	      diff -u - "$TMP_AUTHOR_HANDLE_INVENTORY")
 export AUTHOR_DIFF
 if [[ -n $AUTHOR_DIFF ]]; then
@@ -971,12 +971,12 @@ fi
 if [[ -z $NOOP ]]; then
 
     if [[ $V_FLAG -ge 5 ]]; then
-	echo "$0: debug[5]: about to: sort -t, -k1,1 -k2d,2 -k4n,4 -k3,3 -k5d,8 $TMP_MANIFEST_CSV -o $TMP_MANIFEST_CSV" 1>&2
+	echo "$0: debug[5]: about to: LC_ALL=C sort -t, -k1,1 -k2d,2 -k4n,4 -k3,3 -k5d,8 $TMP_MANIFEST_CSV -o $TMP_MANIFEST_CSV" 1>&2
     fi
-    sort -t, -k1,1 -k2d,2 -k4n,4 -k3,3 -k5d,8 "$TMP_MANIFEST_CSV" -o "$TMP_MANIFEST_CSV"
+    LC_ALL=C sort -t, -k1,1 -k2d,2 -k4n,4 -k3,3 -k5d,8 "$TMP_MANIFEST_CSV" -o "$TMP_MANIFEST_CSV"
     status="$?"
     if [[ $status -ne 0 ]]; then
-	echo "$0: ERROR: sort -t, -k1,1 -k2d,2 -k4n,4 -k3,3 -k5d,8 $TMP_MANIFEST_CSV -o $TMP_MANIFEST_CSV failed," \
+	echo "$0: ERROR: LC_ALL=C sort -t, -k1,1 -k2d,2 -k4n,4 -k3,3 -k5d,8 $TMP_MANIFEST_CSV -o $TMP_MANIFEST_CSV failed," \
 	     "error code: $status" 1>&2
 	exit 8
     elif [[ $V_FLAG -ge 3 ]]; then
@@ -1058,12 +1058,12 @@ fi
 if [[ -z $NOOP ]]; then
 
     if [[ $V_FLAG -ge 5 ]]; then
-	echo "$0: debug[5]: about to: sort -t, -k1d,1 -k2d,2 $TMP_YEAR_PRIZE_CSV -o $TMP_YEAR_PRIZE_CSV" 1>&2
+	echo "$0: debug[5]: about to: LC_ALL=C sort -t, -k1d,1 -k2d,2 $TMP_YEAR_PRIZE_CSV -o $TMP_YEAR_PRIZE_CSV" 1>&2
     fi
-    sort -t, -k1d,1 -k2d,2 "$TMP_YEAR_PRIZE_CSV" -o "$TMP_YEAR_PRIZE_CSV"
+    LC_ALL=C sort -t, -k1d,1 -k2d,2 "$TMP_YEAR_PRIZE_CSV" -o "$TMP_YEAR_PRIZE_CSV"
     status="$?"
     if [[ $status -ne 0 ]]; then
-	echo "$0: ERROR: sort -t, -k1d,1 -k2d,2 $TMP_YEAR_PRIZE_CSV -o $TMP_YEAR_PRIZE_CSV," \
+	echo "$0: ERROR: LC_ALL=C sort -t, -k1d,1 -k2d,2 $TMP_YEAR_PRIZE_CSV -o $TMP_YEAR_PRIZE_CSV," \
 	     "error code: $status" 1>&2
 	exit 8
     elif [[ $V_FLAG -ge 3 ]]; then
@@ -1295,12 +1295,12 @@ if [[ ! -s $TMP_YYYY_DIR_INV ]]; then
 fi
 #
 if [[ $V_FLAG -ge 5 ]]; then
-    echo "$0: debug[5]: about to: sort -t/ -d $TMP_YYYY_DIR_INV -o $TMP_YYYY_DIR_INV" 1>&2
+    echo "$0: debug[5]: about to: LC_ALL=C sort -t/ -d $TMP_YYYY_DIR_INV -o $TMP_YYYY_DIR_INV" 1>&2
 fi
-sort -t/ -d "$TMP_YYYY_DIR_INV" -o "$TMP_YYYY_DIR_INV"
+LC_ALL=C sort -t/ -d "$TMP_YYYY_DIR_INV" -o "$TMP_YYYY_DIR_INV"
 status="$?"
 if [[ $status -ne 0 ]]; then
-    echo "$0: ERROR: sort -t/ -d $TMP_YYYY_DIR_INV -o $TMP_YYYY_DIR_INV failed," \
+    echo "$0: ERROR: LC_ALL=C sort -t/ -d $TMP_YYYY_DIR_INV -o $TMP_YYYY_DIR_INV failed," \
 	 "error code: $status" 1>&2
     exit 8
 elif [[ $V_FLAG -ge 3 ]]; then
@@ -1311,12 +1311,12 @@ fi
 # form a 2nd YYYY_DIR inventory from author_wins.csv
 #
 if [[ $V_FLAG -ge 5 ]]; then
-    echo "$0: debug[5]: about to: sed .. $AUTHOR_WINS_CSV | sort -t/ -d | uniq > $TMP_2ND_YYYY_DIR_INV" 1>&2
+    echo "$0: debug[5]: about to: sed .. $AUTHOR_WINS_CSV | LC_ALL=C sort -t/ -d | uniq > $TMP_2ND_YYYY_DIR_INV" 1>&2
 fi
-sed -e '/^#/d' -e 's/^[^,]*,//' -e 's/,/\n/g' -e 's/_/\//g' "$AUTHOR_WINS_CSV" | sort -t/ -d | uniq > "$TMP_2ND_YYYY_DIR_INV"
+sed -e '/^#/d' -e 's/^[^,]*,//' -e 's/,/\n/g' -e 's/_/\//g' "$AUTHOR_WINS_CSV" | LC_ALL=C sort -t/ -d | uniq > "$TMP_2ND_YYYY_DIR_INV"
 status_codes=("${PIPESTATUS[@]}")
 if [[ ${status_codes[*]} =~ [1-9] ]]; then
-   echo "$0: ERROR: sed .. $AUTHOR_WINS_CSV | sort -t/ -d > $TMP_2ND_YYYY_DIR_INV failed," \
+   echo "$0: ERROR: sed .. $AUTHOR_WINS_CSV | LC_ALL=C sort -t/ -d > $TMP_2ND_YYYY_DIR_INV failed," \
         "error codes: ${status_codes[*]}" 1>&2
    exit 27
 fi
@@ -1342,12 +1342,12 @@ fi
 # form a 2nd YYYY_DIR inventory from manifest.csv
 #
 if [[ $V_FLAG -ge 5 ]]; then
-    echo "$0: debug[5]: about to: sed .. $MANIFEST_CSV | sort -t/ -d | uniq > $TMP_2ND_YYYY_DIR_INV" 1>&2
+    echo "$0: debug[5]: about to: sed .. $MANIFEST_CSV | LC_ALL=C sort -t/ -d | uniq > $TMP_2ND_YYYY_DIR_INV" 1>&2
 fi
-sed -e '/^#/d' -e 's/,/\//' -e 's/,.*//' "$MANIFEST_CSV" | sort -t/ -d | uniq > "$TMP_2ND_YYYY_DIR_INV"
+sed -e '/^#/d' -e 's/,/\//' -e 's/,.*//' "$MANIFEST_CSV" | LC_ALL=C sort -t/ -d | uniq > "$TMP_2ND_YYYY_DIR_INV"
 status_codes=("${PIPESTATUS[@]}")
 if [[ ${status_codes[*]} =~ [1-9] ]]; then
-   echo "$0: ERROR: sed .. $MANIFEST_CSV | sort -t/ -d | uniq > $TMP_2ND_YYYY_DIR_INV failed," \
+   echo "$0: ERROR: sed .. $MANIFEST_CSV | LC_ALL=C sort -t/ -d | uniq > $TMP_2ND_YYYY_DIR_INV failed," \
         "error codes: ${status_codes[*]}" 1>&2
    exit 29
 fi
@@ -1373,12 +1373,12 @@ fi
 # form a 2nd YYYY_DIR inventory from year_prize.csv
 #
 if [[ $V_FLAG -ge 5 ]]; then
-    echo "$0: debug[5]: about to: sed .. $YEAR_PRIZE_CSV | sort -t/ -d > $TMP_2ND_YYYY_DIR_INV" 1>&2
+    echo "$0: debug[5]: about to: sed .. $YEAR_PRIZE_CSV | LC_ALL=C sort -t/ -d > $TMP_2ND_YYYY_DIR_INV" 1>&2
 fi
-sed -e '/^#/d' -e 's/,.*//' -e 's/_/\//' "$YEAR_PRIZE_CSV" | sort -t/ -d > "$TMP_2ND_YYYY_DIR_INV"
+sed -e '/^#/d' -e 's/,.*//' -e 's/_/\//' "$YEAR_PRIZE_CSV" | LC_ALL=C sort -t/ -d > "$TMP_2ND_YYYY_DIR_INV"
 status_codes=("${PIPESTATUS[@]}")
 if [[ ${status_codes[*]} =~ [1-9] ]]; then
-   echo "$0: ERROR: sed .. $YEAR_PRIZE_CSV | sort -t/ -d > $TMP_2ND_YYYY_DIR_INV failed," \
+   echo "$0: ERROR: sed .. $YEAR_PRIZE_CSV | LC_ALL=C sort -t/ -d > $TMP_2ND_YYYY_DIR_INV failed," \
         "error codes: ${status_codes[*]}" 1>&2
    exit 31
 fi
