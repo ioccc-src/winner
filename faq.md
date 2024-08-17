@@ -4338,7 +4338,18 @@ See also the
 FAQ on "[GitHub pull request](#pull_request)"
 for more information about pull requests.
 
-#### PLEASE HELP us identify proper locations for IOCCC authors
+
+### Important note about **XX - Anonymous location**:
+
+Unless you are the author who originally selected the **XX - Anonymous
+location**, please do not attempt to change an **XX - Anonymous
+location** without the permission of the original author, as sometimes they
+want to have the location known but not their name and/or other details.
+
+
+<div id="zz_help">
+### PLEASE HELP us identify proper locations for IOCCC authors
+</div>
 
 If you know the location of an author listed under:
 
@@ -4372,12 +4383,9 @@ request** to change that line to:
     "location_code" : "AU",
 ```
 
-### Important note about **XX - Anonymous location**:
-
-Unless you are the author who originally selected the **XX - Anonymous
-location**, please do not attempt to change an **XX - Anonymous
-location** without the permission of the original author, as sometimes they
-want to have the location known but not their name and/or other details.
+See the
+FAQ on "[fixing author information](#fix_author)"
+for information about how to change author location codes.
 
 
 <div id="faq5_6">
