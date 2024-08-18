@@ -86,7 +86,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.4 2024-08-17"
+export VERSION="1.4.1 2024-08-18"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -615,14 +615,6 @@ for YYYY in $(< "$TOP_FILE"); do
 		    if [[ $V_FLAG -ge 3 ]]; then
 			echo "$0: debug[3]: does not need to be updated: $HTML_FILE" 1>&2
 		    fi
-
-		    # case -Q: (quick mode)
-		    #
-		    # If we are here, then the early quick mode test indicated that the prerequisite files are newer.
-		    # We will force the authors.html file to be touched so that a later run with -Q will quickly exit.
-		    # We do this because by default, the md2html.sh tool does not modify the target HTML unless it was modified.
-		    #
-		    touch "$HTML_FILE"
 		    continue
 		fi
 	    fi
