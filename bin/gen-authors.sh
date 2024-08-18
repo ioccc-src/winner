@@ -28,6 +28,7 @@
 #
 # Share and enjoy! :-)
 
+
 # firewall - run only with a bash that is version 5.1.8 or later
 #
 # The "/usr/bin/env bash" command must result in using a bash that
@@ -71,6 +72,7 @@ if [[ -z ${BASH_VERSINFO[0]} ||
     exit 4
 fi
 
+
 # setup bash file matching
 #
 # We must declare arrays with -ag or -Ag, and we need loops to "export" modified variables.
@@ -83,9 +85,10 @@ shopt -u nocaseglob	# disable strict case matching
 shopt -u extglob	# enable extended globbing patterns
 shopt -s globstar	# enable ** to match all files and zero or more directories and subdirectories
 
+
 # set variables referenced in the usage message
 #
-export VERSION="1.11 2024-08-13"
+export VERSION="1.12 2024-08-18"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -114,6 +117,7 @@ export NOOP=
 export DO_NOT_PROCESS=
 export QUICK_MODE=
 export EXIT_CODE="0"
+
 
 # Letter "is for" text
 #
@@ -146,15 +150,17 @@ IS_FOR[x]="<i>x</i> is for <code>xor</code>"
 IS_FOR[y]="<i>y</i> is for <code>y0</code>"
 IS_FOR[z]="<i>z</i> is for <code>zlib</code>"
 
+
 # clear options we will add to tools
 #
 unset TOOL_OPTION
 declare -ag TOOL_OPTION
 
+
 # usage
 #
 export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
-			[-t tagline] [-T md2html.sh] [-p tool] [-Q]
+			[-t tagline] [-Q]
 
 	-h		print help message and exit
 	-v level	set verbosity level (def level: 0)
@@ -172,10 +178,6 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
 
 	-t tagline	string to write about the tool that formed the markdown content (def: $TAGLINE)
 			NOTE: 'tagline' may be enclosed within, but may NOT contain an internal single-quote, or double-quote.
-	-T md2html.sh	run 'markdown to html tool' to convert markdown into HTML (def: $MD2HTML_SH)
-
-	-p tool		run 'pandoc wrapper tool' (not pandoc path) during HTML phase number 21 (def: use $PANDOC_WRAPPER)
-			NOTE: The '-p tool' is passed as leading options on tool command lines.
 
 	-Q	        quick mode, do not run $MD2HTML_SH unless markdown is out of date (def: do)
 
@@ -184,7 +186,7 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
 
 NOTE: The '-v level' is passed as initial command line options to the 'markdown to html tool' (md2html.sh).
       The 'tagline' is passed as '-t tagline' to the 'markdown to html tool' (md2html.sh), after the '-v level'.
-      Any '-T md2html.sh', '-p tool', '-P pandoc_opts', '-U top_url'
+      Any '-P pandoc_opts', '-U top_url'
       are passed to the 'markdown to html tool' (md2html.sh), and will be before any command line arguments.
 
 Exit codes:
@@ -199,6 +201,7 @@ Exit codes:
  >= 10         internal error
 
 $NAME version: $VERSION"
+
 
 # output_entry_ids
 #
@@ -242,6 +245,7 @@ function output_entry_ids
     return 0
 }
 
+
 # output_author_handle
 #
 # Write the author handles from an author/author_handle.json file to standard output (stdout)
@@ -282,6 +286,7 @@ function output_author_handle
     "$JVAL_WRAPPER" -w -b "$AUTHOR_HANDLE_JSON_PATH" '$..author_handle'
     return 0
 }
+
 
 # output_full_name
 #
@@ -324,6 +329,7 @@ function output_full_name
     return 0
 }
 
+
 # output_location_code
 #
 # Write the Location Code from an author/author_handle.json file to standard output (stdout)
@@ -365,6 +371,7 @@ function output_location_code
     return 0
 }
 
+
 # output_award
 #
 # Write the award name to standard output (stdout)
@@ -405,6 +412,7 @@ function output_award
     "$JVAL_WRAPPER" -w -b "$ENTRY_JSON_PATH" '$..award'
     return 0
 }
+
 
 # output_url
 #
@@ -451,6 +459,7 @@ function output_url
     return 0
 }
 
+
 # output_alt_url
 #
 # Write the alternate url from an author/author_handle.json file to standard output (stdout)
@@ -495,6 +504,7 @@ function output_alt_url
     "$JVAL_WRAPPER" -w -b "$AUTHOR_HANDLE_JSON_PATH" '$..alt_url' | grep -F -v null
     return 0
 }
+
 
 # output_mastodon
 #
@@ -541,6 +551,7 @@ function output_mastodon
     return 0
 }
 
+
 # output_mastodon_url
 #
 # Write the mastodon handle from an author/author_handle.json file to standard output (stdout)
@@ -585,6 +596,7 @@ function output_mastodon_url
     "$JVAL_WRAPPER" -w -b "$AUTHOR_HANDLE_JSON_PATH" '$..mastodon_url' | grep -F -v null
     return 0
 }
+
 
 # output_github
 #
@@ -631,6 +643,7 @@ function output_github
     return 0
 }
 
+
 # output_affiliation
 #
 # Write the affiliation from an author/author_handle.json file to standard output (stdout)
@@ -676,9 +689,10 @@ function output_affiliation
     return 0
 }
 
+
 # parse command line
 #
-while getopts :hv:Vd:D:nNt:T:p:Qw: flag; do
+while getopts :hv:Vd:D:nNt:Qw: flag; do
   case "$flag" in
     h) echo "$USAGE" 1>&2
 	exit 2
@@ -727,14 +741,6 @@ while getopts :hv:Vd:D:nNt:T:p:Qw: flag; do
 	TAGLINE="$OPTARG"
 	# -t tagline always added after arg parsing
 	;;
-    T) MD2HTML_SH="$OPTARG"
-	TOOL_OPTION+=("-T")
-	TOOL_OPTION+=("$MD2HTML_SH")
-	;;
-    p) PANDOC_WRAPPER="$OPTARG"
-	TOOL_OPTION+=("-p")
-	TOOL_OPTION+=("$PANDOC_WRAPPER")
-	;;
     Q) QUICK_MODE="-Q"
 	;;
     w) SITE_URL="$OPTARG"
@@ -758,7 +764,7 @@ while getopts :hv:Vd:D:nNt:T:p:Qw: flag; do
 	;;
   esac
 done
-
+#
 # remove the options
 #
 shift $(( OPTIND - 1 ));
@@ -774,6 +780,7 @@ if [[ $# -ne 0 ]]; then
     exit 3
 fi
 
+
 # always add the '-v level' option, unless level is empty, to the set of options passed to the md2html.sh tool
 #
 if [[ -n $V_FLAG ]]; then
@@ -788,15 +795,18 @@ if [[ -n $TAGLINE ]]; then
     TOOL_OPTION+=("$TAGLINE")
 fi
 
+
 # always add the '-U URL' for the top level authors.html file
 #
 TOOL_OPTION+=("-U")
 TOOL_OPTION+=("$SITE_URL/authors.html")
 
+
 # always add the '-D docroot/' for the top level authors.html file
 #
 TOOL_OPTION+=("-D")
 TOOL_OPTION+=("$DOCROOT_SLASH")
+
 
 # verify that we have a topdir directory
 #
@@ -817,6 +827,7 @@ if [[ ! -d $TOPDIR ]]; then
     echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_TOP_URL; cd $REPO_NAME" 1>&2
     exit 6
 fi
+
 
 # cd to topdir
 #
@@ -841,6 +852,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: now in directory: $(/bin/pwd)" 1>&2
 fi
 
+
 # verify that the md2html tool is executable
 #
 if [[ ! -e $MD2HTML_SH ]]; then
@@ -856,6 +868,7 @@ if [[ ! -x $MD2HTML_SH ]]; then
     exit 5
 fi
 
+
 # verify that we have an author subdirectory
 #
 export AUTHOR_PATH="$TOPDIR/author"
@@ -864,6 +877,7 @@ if [[ ! -d $AUTHOR_PATH ]]; then
     exit 6
 fi
 export AUTHOR_DIR="author"
+
 
 # verify that we have a bin subdirectory
 #
@@ -874,32 +888,39 @@ if [[ ! -d $BIN_PATH ]]; then
 fi
 export BIN_DIR="bin"
 
-# find the jval-wrapper.sh tool
+
+# verify that the bin/jval-wrapper.sh tool is executable
 #
-JVAL_WRAPPER="$BIN_PATH/jval-wrapper.sh"
-if [[ ! -x $JVAL_WRAPPER ]]; then
-    echo "$0: ERROR: cannot find the bin/jval-wrapper.sh executable" 1>&2
+JVAL_WRAPPER="$BIN_DIR/jval-wrapper.sh"
+if [[ ! -e $JVAL_WRAPPER ]]; then
+    echo  "$0: ERROR: bin/jval-wrapper.sh does not exist: $JVAL_WRAPPER" 1>&2
     exit 5
 fi
+if [[ ! -f $JVAL_WRAPPER ]]; then
+    echo  "$0: ERROR: bin/jval-wrapper.sh is not a regular file: $JVAL_WRAPPER" 1>&2
+    exit 5
+fi
+if [[ ! -x $JVAL_WRAPPER ]]; then
+    echo  "$0: ERROR: bin/jval-wrapper.sh is not an executable file: $JVAL_WRAPPER" 1>&2
+    exit 5
+fi
+
 
 # find the location tool
 #
 LOCATION_TOOL=$(type -P location)
 export LOCATION_TOOL
-if [[ -z $LOCATION_TOOL ]]; then
-    # guess we have a location tool in bin
-    #
-    LOCATION_TOOL="$BIN_DIR/location"
-fi
 if [[ ! -x $LOCATION_TOOL ]]; then
-    echo "$0: ERROR: cannot find the location executable" 1>&2
+    echo "$0: ERROR: cannot find the location executable along \$PATH" 1>&2
     echo "$0: notice: location tool comes from this repo: https://github.com/ioccc-src/mkiocccentry" 1>&2
     exit 5
 fi
 
+
 # note authors.html file
 #
 export AUTHORS_HTML="authors.html"
+
 
 # print running info if verbose
 #
@@ -939,6 +960,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: AUTHORS_HTML=$AUTHORS_HTML" 1>&2
 fi
 
+
 # -N stops early before any processing is performed
 #
 if [[ -n $DO_NOT_PROCESS ]]; then
@@ -948,7 +970,8 @@ if [[ -n $DO_NOT_PROCESS ]]; then
     exit 0
 fi
 
-# case: -Q
+
+# case: -Q (quick mode)
 #
 # Do nothing if authors.html is newer than all author/author_handle.json files.
 #
@@ -958,6 +981,7 @@ if [[ -n $QUICK_MODE ]]; then
 	exit 0
     fi
 fi
+
 
 # create a temporary entry markdown file
 #
@@ -981,6 +1005,7 @@ elif [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: because of -n, temporary entry markdown file is not used: $TMP_AUTHORS_MD" 1>&2
 fi
 
+
 # create a temporary sort word list file
 #
 export TMP_SORT_WORD=".tmp.$NAME.SORT_WORD.$$.tmp"
@@ -1003,11 +1028,13 @@ elif [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: because of -n, temporary sort word list file is not used: $TMP_SORT_WORD" 1>&2
 fi
 
+
 # load initial letter . lines into the temporary sort word list file
 #
 for letter in "${!IS_FOR[@]}"; do
     echo "$letter ."
 done > "$TMP_SORT_WORD"
+
 
 # add author sort_word filename to the temporary sort word list file
 #
@@ -1018,6 +1045,7 @@ find "$AUTHOR_DIR" -mindepth 1 -maxdepth 1 -type f -name '*.json' 2>/dev/null | 
     echo "$(bin/jval-wrapper.sh -w -b "$json_file" '$..sort_word') $json_file"
 done >> "$TMP_SORT_WORD"
 
+
 # sort the temporary sort word list file
 #
 LC_ALL=C sort -f -d "$TMP_SORT_WORD" -o "$TMP_SORT_WORD"
@@ -1026,6 +1054,7 @@ if [[ $status -ne 0 ]]; then
     echo "$0: ERROR: LC_ALL=C sort -f -d $TMP_SORT_WORD -o $TMP_SORT_WORD failed, error: $status" 1>&2
     exit 14
 fi
+
 
 # generate the temporary entry markdown file
 #
@@ -1299,9 +1328,13 @@ else
     fi
 fi
 
-# use the md2html.sh tool to form a location HTML file, unless -n
+
+# use the md2html.sh tool to update authors.html, unless -n
 #
 if [[ -z $NOOP ]]; then
+
+    # possibly update authors.html
+    #
     if [[ $V_FLAG -ge 1 ]]; then
 	echo "$0: debug[1]: about to run: $MD2HTML_SH ${TOOL_OPTION[*]} -- authors.md $TMP_AUTHORS_MD $AUTHORS_HTML" 1>&2
     fi
@@ -1316,11 +1349,22 @@ if [[ -z $NOOP ]]; then
 	echo "$0: debug[3]: now up to date: $AUTHORS_HTML" 1>&2
     fi
 
+    # case -Q: (quick mode)
+    #
+    # If we are here, then the early quick mode test indicated that the prerequisite files are newer.
+    # We will force the authors.html file to be touched so that a later run with -Q will quickly exit.
+    # We do this because by default, the md2html.sh tool does not modify the target HTML unless it was modified.
+    #
+    if [[ -n $QUICK_MODE ]]; then
+	touch "$AUTHORS_HTML"
+    fi
+
 # report disabled by -n
 #
 elif [[ $V_FLAG -ge 5 ]]; then
     echo "$0: debug[5]: because of -n, did not run: $MD2HTML_SH ${TOOL_OPTION[*]} -- authors.md $TMP_AUTHORS_MD $AUTHORS_HTML" 1>&2
 fi
+
 
 # file cleanup
 #
@@ -1329,6 +1373,7 @@ if [[ -z $NOOP ]]; then
 elif [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: because of -n, disabled: rm -f -- $TMP_AUTHORS_MD" 1>&2
 fi
+
 
 # All Done!!! All Done!!! -- Jessica Noll, Age 2
 #

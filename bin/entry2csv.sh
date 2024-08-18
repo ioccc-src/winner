@@ -304,8 +304,7 @@ while getopts :hv:Vd:D:nNj: flag; do
 	;;
   esac
 done
-
-
+#
 # remove the options
 #
 shift $(( OPTIND - 1 ));
@@ -433,11 +432,19 @@ fi
 export BIN_DIR="bin"
 
 
-# find the jval-wrapper.sh tool
+# verify that the bin/jval-wrapper.sh tool is executable
 #
-JVAL_WRAPPER="$BIN_PATH/jval-wrapper.sh"
+JVAL_WRAPPER="$BIN_DIR/jval-wrapper.sh"
+if [[ ! -e $JVAL_WRAPPER ]]; then
+    echo  "$0: ERROR: bin/jval-wrapper.sh does not exist: $JVAL_WRAPPER" 1>&2
+    exit 5
+fi
+if [[ ! -f $JVAL_WRAPPER ]]; then
+    echo  "$0: ERROR: bin/jval-wrapper.sh is not a regular file: $JVAL_WRAPPER" 1>&2
+    exit 5
+fi
 if [[ ! -x $JVAL_WRAPPER ]]; then
-    echo "$0: ERROR: cannot find the bin/jval-wrapper.sh executable" 1>&2
+    echo  "$0: ERROR: bin/jval-wrapper.sh is not an executable file: $JVAL_WRAPPER" 1>&2
     exit 5
 fi
 

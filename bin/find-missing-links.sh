@@ -45,6 +45,7 @@
 #
 # Share and enjoy! :-)
 
+
 # firewall - run only with a bash that is version 5.1.8 or later
 #
 # The "/usr/bin/env bash" command must result in using a bash that
@@ -233,7 +234,7 @@ while getopts :hv:Vd:nN flag; do
 	;;
   esac
 done
-
+#
 # remove the options
 #
 shift $(( OPTIND - 1 ));
@@ -256,6 +257,7 @@ esac
 if [[ $V_FLAG -ge 1 ]]; then
     echo "$0: debug[1]: start scan for missing links" 1>&2
 fi
+
 
 # print running info if verbose
 #
@@ -505,17 +507,20 @@ find . -name '*.md' ! -name markdown.md ! -path './tmp/*' -print |
 	 done
      done > "$TMP_MISSING_LINK"
 
+
 # count the missing links
 #
 MISSING_LINK_COUNT=$(wc -l < "$TMP_MISSING_LINK" | tr -d ' ')
 export MISSING_LINK_COUNT
 ((MISSING_LINK_COUNT=MISSING_LINK_COUNT/4))
 
+
 # report on any missing links
 #
 if [[ -s $TMP_MISSING_LINK ]]; then
     sed -e "s;^$TOPDIR/;;" "$TMP_MISSING_LINK" 1>&2
 fi
+
 
 # All Done!!! All Done!!! -- Jessica Noll, Age 2
 #

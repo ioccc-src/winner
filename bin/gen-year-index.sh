@@ -28,6 +28,7 @@
 #
 # Share and enjoy! :-)
 
+
 # firewall - run only with a bash that is version 5.1.8 or later
 #
 # The "/usr/bin/env bash" command must result in using a bash that
@@ -71,6 +72,7 @@ if [[ -z ${BASH_VERSINFO[0]} ||
     exit 4
 fi
 
+
 # setup bash file matching
 #
 # We must declare arrays with -ag or -Ag, and we need loops to "export" modified variables.
@@ -83,9 +85,10 @@ shopt -u nocaseglob	# disable strict case matching
 shopt -u extglob	# enable extended globbing patterns
 shopt -s globstar	# enable ** to match all files and zero or more directories and subdirectories
 
+
 # set variables referenced in the usage message
 #
-export VERSION="1.1.2 2024-08-05"
+export VERSION="1.2 2024-08-17"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -103,21 +106,22 @@ fi
 export TOPDIR
 export DOCROOT_SLASH="../../"
 export TAGLINE="bin/$NAME"
-export MD2HTML_SH="bin/md2html.sh"
 export REPO_TOP_URL="https://github.com/ioccc-src/temp-test-ioccc"
 # GitHub puts individual files under the "blob/master" sub-directory.
 export REPO_URL="$REPO_TOP_URL/blob/master"
 export SITE_URL="https://ioccc-src.github.io/temp-test-ioccc"
+
 
 # clear options we will add to tools
 #
 unset TOOL_OPTION
 declare -ag TOOL_OPTION
 
+
 # set usage message
 #
 export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-n] [-N]
-			[-t tagline] [-T md2html.sh] [-w site_url]
+			[-Q] [-t tagline] [-w site_url]
 			YYYY [more_options]
 
 	-h		print help message and exit
@@ -131,8 +135,9 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-n] [-N]
 	-n		go thru the actions, but do not update any files (def: do the action)
 	-N		do not process file, just parse arguments and ignore the file (def: process the file)
 
+	-Q	        quick mode, do not run $MD2HTML_SH unless markdown is out of date (def: do)
+
 	-t tagline	string to write about the tool that formed the markdown content (def: $TAGLINE)
-	-T md2html.sh	run 'markdown to html tool' to convert markdown into HTML (def: $MD2HTML_SH)
 
 	-w site_url	Base URL of the website (def: $SITE_URL)
 			NOTE: The '-w site_url' is passed as leading options on tool command lines.
@@ -153,14 +158,17 @@ Exit codes:
 
 $NAME version: $VERSION"
 
+
 # setup
 #
 export NOOP=
 export DO_NOT_PROCESS=
+export QUICK_MODE=
+
 
 # parse command line
 #
-while getopts :hv:Vd:D:nNt:T:w: flag; do
+while getopts :hv:Vd:D:nNQt:w: flag; do
   case "$flag" in
     h) echo "$USAGE" 1>&2
 	exit 2
@@ -189,6 +197,8 @@ while getopts :hv:Vd:D:nNt:T:w: flag; do
 	;;
     N) DO_NOT_PROCESS="-N"
 	;;
+    Q) QUICK_MODE="-Q"
+	;;
     t) # parse -t tagline
 	case "$OPTARG" in
 	*"'"*)
@@ -207,10 +217,6 @@ while getopts :hv:Vd:D:nNt:T:w: flag; do
 	esac
 	TAGLINE="$OPTARG"
 	# -t tagline is always added further down
-	;;
-    T) MD2HTML_SH="$OPTARG"
-	TOOL_OPTION+=("-T")
-	TOOL_OPTION+=("$MD2HTML_SH")
 	;;
     w) SITE_URL="$OPTARG"
 	TOOL_OPTION+=("-w")
@@ -233,7 +239,7 @@ while getopts :hv:Vd:D:nNt:T:w: flag; do
 	;;
   esac
 done
-
+#
 # parse the command line arguments
 #
 if [[ $V_FLAG -ge 3 ]]; then
@@ -267,6 +273,7 @@ if [[ -z $YYYY ]]; then
     exit 3
 fi
 
+
 # verify that we have a topdir directory
 #
 REPO_NAME=$(basename "$REPO_TOP_URL")
@@ -286,6 +293,7 @@ if [[ ! -d $TOPDIR ]]; then
     echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_TOP_URL; cd $REPO_NAME" 1>&2
     exit 6
 fi
+
 
 # cd to topdir
 #
@@ -310,6 +318,34 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: now in directory: $(/bin/pwd)" 1>&2
 fi
 
+
+# verify that we have a bin subdirectory
+#
+export BIN_PATH="$TOPDIR/bin"
+if [[ ! -d $BIN_PATH ]]; then
+    echo "$0: ERROR: bin is not a directory under topdir: $BIN_PATH" 1>&2
+    exit 6
+fi
+export BIN_DIR="bin"
+
+
+# verify that the bin/md2html.sh tool is executable
+#
+export MD2HTML_SH="$BIN_DIR/md2html.sh"
+if [[ ! -e $MD2HTML_SH ]]; then
+    echo  "$0: ERROR: bin/md2html.sh does not exist: $MD2HTML_SH" 1>&2
+    exit 5
+fi
+if [[ ! -f $MD2HTML_SH ]]; then
+    echo  "$0: ERROR: bin/md2html.sh is not a regular file: $MD2HTML_SH" 1>&2
+    exit 5
+fi
+if [[ ! -x $MD2HTML_SH ]]; then
+    echo  "$0: ERROR: bin/md2html.sh is not an executable file: $MD2HTML_SH" 1>&2
+    exit 5
+fi
+
+
 # verify that YYYY is an IOCCC year directory
 #
 if [[ ! -e $YYYY ]]; then
@@ -324,6 +360,7 @@ if [[ ! -r $YYYY ]]; then
     echo "$0: ERROR: arg is not a readable directory: $YYYY" 1>&2
     exit 6
 fi
+
 
 # verify that YYYY has a non-empty readable .year file
 #
@@ -345,6 +382,7 @@ if [[ ! -s $DOT_YEAR ]]; then
     exit 6
 fi
 
+
 # verify that YYYY/README.md is a non-empty readable file
 #
 export README_FILE="$YYYY/README.md"
@@ -365,25 +403,12 @@ if [[ ! -s $README_FILE ]]; then
     exit 6
 fi
 
-# verify that the md2html.sh is an executable file
-#
-if [[ ! -e $MD2HTML_SH ]]; then
-    echo  "$0: ERROR: md2html.sh does not exist: $MD2HTML_SH" 1>&2
-    exit 5
-fi
-if [[ ! -f $MD2HTML_SH ]]; then
-    echo  "$0: ERROR: md2html.sh is not a regular file: $MD2HTML_SH" 1>&2
-    exit 5
-fi
-if [[ ! -x $MD2HTML_SH ]]; then
-    echo  "$0: ERROR: md2html.sh is not an executable file: $MD2HTML_SH" 1>&2
-    exit 5
-fi
 
 # always add -t tagline
 #
 TOOL_OPTION+=("-t")
 TOOL_OPTION+=("$TAGLINE")
+
 
 # parameter debugging
 #
@@ -395,7 +420,6 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: TOPDIR=$TOPDIR" 1>&2
     echo "$0: debug[3]: DOCROOT_SLASH=$DOCROOT_SLASH" 1>&2
     echo "$0: debug[3]: TAGLINE=$TAGLINE" 1>&2
-    echo "$0: debug[3]: MD2HTML_SH=$MD2HTML_SH" 1>&2
     echo "$0: debug[3]: REPO_TOP_URL=$REPO_TOP_URL" 1>&2
     echo "$0: debug[3]: REPO_URL=$REPO_URL" 1>&2
     echo "$0: debug[3]: SITE_URL=$SITE_URL" 1>&2
@@ -404,12 +428,17 @@ if [[ $V_FLAG -ge 3 ]]; then
     done
     echo "$0: debug[3]: NOOP=$NOOP" 1>&2
     echo "$0: debug[3]: DO_NOT_PROCESS=$DO_NOT_PROCESS" 1>&2
+    echo "$0: debug[3]: QUICK_MODE=$QUICK_MODE" 1>&2
     echo "$0: debug[3]: YYYY=$YYYY" 1>&2
     echo "$0: debug[3]: REPO_NAME=$REPO_NAME" 1>&2
     echo "$0: debug[3]: CD_FAILED=$CD_FAILED" 1>&2
+    echo "$0: debug[3]: BIN_PATH=$BIN_PATH" 1>&2
+    echo "$0: debug[3]: BIN_DIR=$BIN_DIR" 1>&2
+    echo "$0: debug[3]: MD2HTML_SH=$MD2HTML_SH" 1>&2
     echo "$0: debug[3]: DOT_YEAR=$DOT_YEAR" 1>&2
     echo "$0: debug[3]: README_FILE=$README_FILE" 1>&2
 fi
+
 
 # If -N, time to exit
 #
@@ -420,10 +449,24 @@ if [[ -n $DO_NOT_PROCESS ]]; then
     exit 0
 fi
 
+
+# case: -Q (quick mode)
+#
+# Do nothing if authors.html is newer than all author/author_handle.json files.
+#
+if [[ -n $QUICK_MODE ]]; then
+    if [[ $YYYY/index.html -nt $YYYY/README.md ]]; then
+	exit 0
+    fi
+fi
+
+
 # form the YYYY index.html unless -n
 #
 if [[ -z $NOOP ]]; then
 
+    # possibly update YYYY index.html
+    #
     if [[ $V_FLAG -ge 1 ]]; then
 	echo "$0: debug[1]: about to run: $MD2HTML_SH -U $SITE_URL/$YYYY/index.html ${TOOL_OPTION[*]}" \
 	     "-m $YYYY/README.md -- $YYYY/README.md $YYYY/index.html" 1>&2
@@ -437,12 +480,23 @@ if [[ -z $NOOP ]]; then
 	exit 1
     fi
 
+    # case -Q: (quick mode)
+    #
+    # If we are here, then the early quick mode test indicated that the prerequisite files are newer.
+    # We will force the authors.html file to be touched so that a later run with -Q will quickly exit.
+    # We do this because by default, the md2html.sh tool does not modify the target HTML unless it was modified.
+    #
+    if [[ -n $QUICK_MODE ]]; then
+	touch "$YYYY/index.html"
+    fi
+
 # report disabled by -n
 #
 elif [[ $V_FLAG -ge 5 ]]; then
     echo "$0: debug[5]: because of -n, did not run: $MD2HTML_SH ${TOOL_OPTION[*]} -m $YYYY/README.md --" \
 	 "$YYYY/README.md $YYYY/index.html" 1>&2
 fi
+
 
 # All Done!!! All Done!!! -- Jessica Noll, Age 2
 #

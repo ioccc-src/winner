@@ -28,6 +28,7 @@
 #
 # Share and enjoy! :-)
 
+
 # firewall - run only with a bash that is version 5.1.8 or later
 #
 # The "/usr/bin/env bash" command must result in using a bash that
@@ -233,6 +234,7 @@ Exit codes:
 
 $NAME version: $VERSION"
 
+
 # parse command line
 #
 while getopts :hv:Vd:nN flag; do
@@ -268,7 +270,7 @@ while getopts :hv:Vd:nN flag; do
 	;;
   esac
 done
-
+#
 # remove the options
 #
 shift $(( OPTIND - 1 ));
@@ -399,6 +401,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: TOP_FILE=$TOP_FILE" 1>&2
     echo "$0: debug[3]: MAKE_FILE=$MAKE_FILE" 1>&2
 fi
+
 
 # -N stops early before any processing is performed
 #

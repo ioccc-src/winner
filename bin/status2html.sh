@@ -44,6 +44,7 @@
 #
 # Share and enjoy! :-)
 
+
 # firewall - run only with a bash that is version 5.1.8 or later
 #
 # The "/usr/bin/env bash" command must result in using a bash that
@@ -87,6 +88,7 @@ if [[ -z ${BASH_VERSINFO[0]} ||
     exit 4
 fi
 
+
 # setup bash file matching
 #
 # We must declare arrays with -ag or -Ag, and we need loops to "export" modified variables.
@@ -98,6 +100,7 @@ shopt -u dotglob	# disable matching files starting with .
 shopt -u nocaseglob	# disable strict case matching
 shopt -u extglob	# enable extended globbing patterns
 shopt -s globstar	# enable ** to match all files and zero or more directories and subdirectories
+
 
 # set variables referenced in the usage message
 #
@@ -118,17 +121,17 @@ if [[ $status -eq 0 ]]; then
 fi
 export TOPDIR
 export DOCROOT_SLASH="./"
-export PANDOC_WRAPPER="bin/pandoc-wrapper.sh"
 export REPO_TOP_URL="https://github.com/ioccc-src/temp-test-ioccc"
 # GitHub puts individual files under the "blob/master" sub-directory.
 export REPO_URL="$REPO_TOP_URL/blob/master"
 export SITE_URL="https://ioccc-src.github.io/temp-test-ioccc"
 export URL="#"
 
+
 # set usage message
 #
 export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
-			[-p tool] [-U url] [-w site_url] [-e string ..] [-E exitcode]
+			[-U url] [-w site_url] [-e string ..] [-E exitcode]
 
 	-h		print help message and exit
 	-v level	set verbosity level (def level: 0)
@@ -140,8 +143,6 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
 
 	-n		go thru the actions, but do not update any files (def: do the action)
 	-N		do not process file, just parse arguments and ignore the file (def: process the file)
-
-	-p tool		run 'pandoc wrapper tool' (not pandoc path) during HTML phase number 21 (def: use $PANDOC_WRAPPER)
 
 	-U url		URL of HTML file being formed (def: $URL)
 	-w site_url	Base URL of the website (def: $SITE_URL)
@@ -163,14 +164,16 @@ Exit codes:
 
 $NAME version: $VERSION"
 
+
 # setup
 #
 export NOOP=
 export DO_NOT_PROCESS=
 
+
 # parse command line
 #
-while getopts :hv:Vd:D:nNp:U:w:e:E: flag; do
+while getopts :hv:Vd:D:nNU:w:e:E: flag; do
   case "$flag" in
     h) echo "$USAGE" 1>&2
 	exit 2
@@ -197,8 +200,6 @@ while getopts :hv:Vd:D:nNp:U:w:e:E: flag; do
 	;;
     N) DO_NOT_PROCESS="-N"
 	;;
-    p) PANDOC_WRAPPER="$OPTARG"
-	;;
     U) URL="$OPTARG"
 	;;
     w) SITE_URL="$OPTARG"
@@ -224,7 +225,7 @@ while getopts :hv:Vd:D:nNp:U:w:e:E: flag; do
 	;;
   esac
 done
-
+#
 # parse the command line arguments
 #
 if [[ $V_FLAG -ge 1 ]]; then
@@ -243,6 +244,7 @@ fi
 if [[ $V_FLAG -ge 5 ]]; then
     echo "$0: debug[5]: arg: $1" 1>&2
 fi
+
 
 # verify that we have a topdir directory
 #
@@ -263,6 +265,7 @@ if [[ ! -d $TOPDIR ]]; then
     echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_TOP_URL; cd $REPO_NAME" 1>&2
     exit 6
 fi
+
 
 # cd to topdir
 #
@@ -287,8 +290,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: now in directory: $(/bin/pwd)" 1>&2
 fi
 
-# verify that we have a bin subdirectory
-#
+
 export BIN_PATH="$TOPDIR/bin"
 if [[ ! -d $BIN_PATH ]]; then
     echo "$0: ERROR: bin is not a directory under topdir: $BIN_PATH" 1>&2
@@ -296,20 +298,23 @@ if [[ ! -d $BIN_PATH ]]; then
 fi
 export BIN_DIR="bin"
 
-# verify pandoc wrapper tool
+
+# verify that the bin/pandoc-wrapper.sh tool is executable
 #
+export PANDOC_WRAPPER="$BIN_DIR/pandoc-wrapper.sh"
 if [[ ! -e $PANDOC_WRAPPER ]]; then
-    echo "$0: ERROR: pandoc wrapper tool does not exist: $PANDOC_WRAPPER" 1>&2
+    echo  "$0: ERROR: bin/md2html.sh does not exist: $PANDOC_WRAPPER" 1>&2
     exit 5
 fi
 if [[ ! -f $PANDOC_WRAPPER ]]; then
-    echo "$0: ERROR: pandoc wrapper tool is not a file: $PANDOC_WRAPPER" 1>&2
+    echo  "$0: ERROR: bin/md2html.sh is not a regular file: $PANDOC_WRAPPER" 1>&2
     exit 5
 fi
 if [[ ! -x $PANDOC_WRAPPER ]]; then
-    echo "$0: ERROR: pandoc wrapper tool is not an executable file: $PANDOC_WRAPPER" 1>&2
+    echo  "$0: ERROR: bin/md2html.sh is not an executable file: $PANDOC_WRAPPER" 1>&2
     exit 5
 fi
+
 
 # verify status.json file
 #
@@ -330,6 +335,7 @@ if [[ ! -s $STATUS_JSON ]]; then
     echo  "$0: ERROR: status.json is not an non-empty readable file: $STATUS_JSON" 1>&2
     exit 1
 fi
+
 
 # parameter debugging
 #
@@ -354,6 +360,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: STATUS_JSON=$STATUS_JSON" 1>&2
 fi
 
+
 # If -N, time to exit
 #
 if [[ -n $DO_NOT_PROCESS ]]; then
@@ -362,6 +369,7 @@ if [[ -n $DO_NOT_PROCESS ]]; then
     fi
     exit 0
 fi
+
 
 # create a temporary markdown for pandoc to process
 #
@@ -385,6 +393,7 @@ elif [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: because of -n, temporary markdown file is not used: $TMP_FILE" 1>&2
 fi
 
+
 # obtain the contest_status from status.json
 #
 CONTEST_STATUS=$(grep '"contest_status"\s*:\s*"[^"][^"]*"' "$STATUS_JSON" | sed -e 's/",\s*$//' -e 's/^.*"//')
@@ -394,6 +403,7 @@ if [[ $status -ne 0 || -z $CONTEST_STATUS ]]; then
     echo "$0: ERROR: cannot determine contest_status from status.json: $STATUS_JSON" 1>&2
     exit 8
 fi
+
 
 # validate and normalize the contest_status cfrom status.json
 #
@@ -412,6 +422,7 @@ c|closed) CONTEST_STATUS="closed"
     exit 8
     ;;
 esac
+
 
 # write temporary markdown file for status.json
 #
@@ -483,6 +494,7 @@ else
     fi
 fi
 
+
 # convert temporary markdown file into HTML
 #
 if [[ -z $NOOP ]]; then
@@ -502,6 +514,7 @@ if [[ -z $NOOP ]]; then
 elif [[ $V_FLAG -ge 1 ]]; then
     echo  "$0: debug[1]: -n disabled execution of: $PANDOC_WRAPPER $TMP_FILE -" 1>&2
 fi
+
 
 # All Done!!! All Done!!! -- Jessica Noll, Age 2
 #

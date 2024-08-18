@@ -44,6 +44,7 @@
 #
 # Share and enjoy! :-)
 
+
 # firewall - run only with a bash that is version 5.1.8 or later
 #
 # The "/usr/bin/env bash" command must result in using a bash that
@@ -87,6 +88,7 @@ if [[ -z ${BASH_VERSINFO[0]} ||
     exit 4
 fi
 
+
 # setup bash file matching
 #
 # We must declare arrays with -ag or -Ag, and we need loops to "export" modified variables.
@@ -99,9 +101,10 @@ shopt -u nocaseglob	# disable strict case matching
 shopt -u extglob	# enable extended globbing patterns
 shopt -s globstar	# enable ** to match all files and zero or more directories and subdirectories
 
+
 # set variables referenced in the usage message
 #
-export VERSION="1.7.3 2024-08-05"
+export VERSION="1.8 2024-08-17"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -118,17 +121,17 @@ if [[ $status -eq 0 ]]; then
 fi
 export TOPDIR
 export DOCROOT_SLASH="../../"
-export PANDOC_WRAPPER="bin/pandoc-wrapper.sh"
 export REPO_TOP_URL="https://github.com/ioccc-src/temp-test-ioccc"
 # GitHub puts individual files under the "blob/master" sub-directory.
 export REPO_URL="$REPO_TOP_URL/blob/master"
 export SITE_URL="https://ioccc-src.github.io/temp-test-ioccc"
 export URL="#"
 
+
 # set usage message
 #
 export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
-			[-p tool] [-U url] [-w site_url] [-e string ..] [-E exitcode]
+			[-U url] [-w site_url] [-e string ..] [-E exitcode]
 			YYYY/dir
 
 	-h		print help message and exit
@@ -141,8 +144,6 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
 
 	-n		go thru the actions, but do not update any files (def: do the action)
 	-N		do not process file, just parse arguments and ignore the file (def: process the file)
-
-	-p tool		run 'pandoc wrapper tool' (not pandoc path) during HTML phase number 21 (def: use $PANDOC_WRAPPER)
 
 	-U url		URL of HTML file being formed (def: $URL)
 	-w site_url	Base URL of the website (def: $SITE_URL)
@@ -166,20 +167,16 @@ Exit codes:
 
 $NAME version: $VERSION"
 
+
 # setup
 #
 export NOOP=
 export DO_NOT_PROCESS=
 
+
 # output_author_handles
 #
 # Write the author handle(s) for the YYYY/dir entry to standard output (stdout)
-#
-# XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
-# XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
-# XXX - until we have the jnamval command, we must FAKE PARSE the .entry.json file  - XXX
-# XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
-# XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
 #
 # usage:
 #	output_author_handles YYYY/dir/.entry.json
@@ -191,7 +188,6 @@ export DO_NOT_PROCESS=
 function output_author_handles
 {
     local ENTRY_JSON_PATH;	# the .entry.json path
-    local author_handle;	# a found author handle
 
     # parse args
     #
@@ -215,24 +211,20 @@ function output_author_handles
 
     # extract author handles from .entry.json
     #
-    grep -F author_handle "$ENTRY_JSON_PATH" |
-      awk 'NF == 5 { print $4; }' |
-      tr -d '"' |
-      while read -r author_handle; do
-	echo "$author_handle"
-    done
+    "$JVAL_WRAPPER" -w -b "$ENTRY_JSON_PATH" '$..author_handle'
+    status="$?"
+    if [[ $status -ne 0 ]]; then
+	echo  "$0: ERROR: $JVAL_WRAPPER -w -b $ENTRY_JSON_PATH \$..author_handle failed," \
+	      "error: $status" 1>&2
+	return 5
+    fi
     return 0
 }
+
 
 # output_entry_ids
 #
 # Write the entry ids from an author/author_handle.json file to standard output (stdout)
-#
-# XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
-# XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
-# XXX - until we have the jnamval command, we must FAKE PARSE the author/author_handle.json file - XXX
-# XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
-# XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
 #
 # usage:
 #	output_entry_ids author/author_handle.json
@@ -244,7 +236,6 @@ function output_author_handles
 function output_entry_ids
 {
     local AUTHOR_HANDLE_JSON_PATH;	# the .entry.json path
-    local entry_id;			# a found entry id
 
     # parse args
     #
@@ -268,24 +259,19 @@ function output_entry_ids
 
     # extract entry ids from the author/author_handle.json file
     #
-    grep -F entry_id "$AUTHOR_HANDLE_JSON_PATH" |
-      awk 'NF == 5 { print $4; }' |
-      tr -d '"' |
-      while read -r entry_id; do
-	echo "$entry_id"
-    done
+    "$JVAL_WRAPPER" -w -b "$AUTHOR_HANDLE_JSON_PATH" '$..entry_id'
+    status="$?"
+    if [[ $status -ne 0 ]]; then
+	echo  "$0: ERROR: $JVAL_WRAPPER -w -b $AUTHOR_HANDLE_JSON_PATH \$..entry_id failed," \
+	      "error: $status" 1>&2
+	return 5
+    fi
     return 0
 }
 
 # output_full_name
 #
 # Write the Full Name from an author/author_handle.json file to standard output (stdout)
-#
-# XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
-# XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
-# XXX - until we have the jnamval command, we must FAKE PARSE the author/author_handle.json file - XXX
-# XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
-# XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
 #
 # usage:
 #	output_full_name author/author_handle.json
@@ -320,19 +306,20 @@ function output_full_name
 
     # extract Full Name from the author/author_handle.json file
     #
-    grep -F full_name "$AUTHOR_HANDLE_JSON_PATH" | sed -e 's/.*"full_name" : "//' -e 's/",.*//'
+    "$JVAL_WRAPPER" -w -b "$AUTHOR_HANDLE_JSON_PATH" '$..full_name'
+    status="$?"
+    if [[ $status -ne 0 ]]; then
+	echo  "$0: ERROR: $JVAL_WRAPPER -w -b $AUTHOR_HANDLE_JSON_PATH \$..full_name failed," \
+	      "error: $status" 1>&2
+	return 5
+    fi
     return 0
 }
+
 
 # output_location_code
 #
 # Write the Location Code from an author/author_handle.json file to standard output (stdout)
-#
-# XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
-# XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
-# XXX - until we have the jnamval command, we must FAKE PARSE the author/author_handle.json file - XXX
-# XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
-# XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
 #
 # usage:
 #	output_location_code author/author_handle.json
@@ -367,13 +354,20 @@ function output_location_code
 
     # extract Location Code from the author/author_handle.json file
     #
-    grep -F location_code "$AUTHOR_HANDLE_JSON_PATH" | sed -e 's/.*"location_code" : "*//' -e 's/"*,.*//'
+    "$JVAL_WRAPPER" -w -b "$AUTHOR_HANDLE_JSON_PATH" '$..location_code'
+    status="$?"
+    if [[ $status -ne 0 ]]; then
+	echo  "$0: ERROR: $JVAL_WRAPPER -w -b $ENTRY_JSON_PATH \$..location_code failed," \
+	      "error: $status" 1>&2
+	return 5
+    fi
     return 0
 }
 
+
 # parse command line
 #
-while getopts :hv:Vd:D:nNp:U:w:e:E: flag; do
+while getopts :hv:Vd:D:nNU:w:e:E: flag; do
   case "$flag" in
     h) echo "$USAGE" 1>&2
 	exit 2
@@ -400,8 +394,6 @@ while getopts :hv:Vd:D:nNp:U:w:e:E: flag; do
 	;;
     N) DO_NOT_PROCESS="-N"
 	;;
-    p) PANDOC_WRAPPER="$OPTARG"
-	;;
     U) URL="$OPTARG"
 	;;
     w) SITE_URL="$OPTARG"
@@ -427,7 +419,7 @@ while getopts :hv:Vd:D:nNp:U:w:e:E: flag; do
 	;;
   esac
 done
-
+#
 # parse the command line arguments
 #
 if [[ $V_FLAG -ge 1 ]]; then
@@ -445,6 +437,7 @@ if [[ $# -ne 1 ]]; then
 fi
 #
 export ENTRY_PATH="$1"
+
 
 # verify that we have a topdir directory
 #
@@ -465,6 +458,7 @@ if [[ ! -d $TOPDIR ]]; then
     echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_TOP_URL; cd $REPO_NAME" 1>&2
     exit 6
 fi
+
 
 # cd to topdir
 #
@@ -489,6 +483,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: now in directory: $(/bin/pwd)" 1>&2
 fi
 
+
 # verify that we have an author subdirectory
 #
 export AUTHOR_PATH="$TOPDIR/author"
@@ -497,6 +492,7 @@ if [[ ! -d $AUTHOR_PATH ]]; then
     exit 6
 fi
 export AUTHOR_DIR="author"
+
 
 # verify that we have an inc subdirectory
 #
@@ -507,6 +503,7 @@ if [[ ! -d $INC_PATH ]]; then
 fi
 export INC_DIR="inc"
 
+
 # verify that we have a bin subdirectory
 #
 export BIN_PATH="$TOPDIR/bin"
@@ -515,6 +512,41 @@ if [[ ! -d $BIN_PATH ]]; then
     exit 6
 fi
 export BIN_DIR="bin"
+
+
+# verify that the bin/pandoc-wrapper.sh tool is executable
+#
+export PANDOC_WRAPPER="$BIN_DIR/pandoc-wrapper.sh"
+if [[ ! -e $PANDOC_WRAPPER ]]; then
+    echo  "$0: ERROR: bin/md2html.sh does not exist: $PANDOC_WRAPPER" 1>&2
+    exit 5
+fi
+if [[ ! -f $PANDOC_WRAPPER ]]; then
+    echo  "$0: ERROR: bin/md2html.sh is not a regular file: $PANDOC_WRAPPER" 1>&2
+    exit 5
+fi
+if [[ ! -x $PANDOC_WRAPPER ]]; then
+    echo  "$0: ERROR: bin/md2html.sh is not an executable file: $PANDOC_WRAPPER" 1>&2
+    exit 5
+fi
+
+
+# verify that the bin/jval-wrapper.sh tool is executable
+#
+JVAL_WRAPPER="$BIN_DIR/jval-wrapper.sh"
+if [[ ! -e $JVAL_WRAPPER ]]; then
+    echo  "$0: ERROR: bin/jval-wrapper.sh does not exist: $JVAL_WRAPPER" 1>&2
+    exit 5
+fi
+if [[ ! -f $JVAL_WRAPPER ]]; then
+    echo  "$0: ERROR: bin/jval-wrapper.sh is not a regular file: $JVAL_WRAPPER" 1>&2
+    exit 5
+fi
+if [[ ! -x $JVAL_WRAPPER ]]; then
+    echo  "$0: ERROR: bin/jval-wrapper.sh is not an executable file: $JVAL_WRAPPER" 1>&2
+    exit 5
+fi
+
 
 # verify that ENTRY_PATH is a entry directory
 #
@@ -589,20 +621,6 @@ if [[ ! -r $ENTRY_JSON ]]; then
     exit 7
 fi
 
-# verify pandoc wrapper tool
-#
-if [[ ! -e $PANDOC_WRAPPER ]]; then
-    echo "$0: ERROR: pandoc wrapper tool does not exist: $PANDOC_WRAPPER" 1>&2
-    exit 5
-fi
-if [[ ! -f $PANDOC_WRAPPER ]]; then
-    echo "$0: ERROR: pandoc wrapper tool is not a file: $PANDOC_WRAPPER" 1>&2
-    exit 5
-fi
-if [[ ! -x $PANDOC_WRAPPER ]]; then
-    echo "$0: ERROR: pandoc wrapper tool is not an executable file: $PANDOC_WRAPPER" 1>&2
-    exit 5
-fi
 
 # find the location tool
 #
@@ -619,6 +637,7 @@ if [[ ! -x $LOCATION_TOOL ]]; then
     exit 5
 fi
 
+
 # parameter debugging
 #
 if [[ $V_FLAG -ge 3 ]]; then
@@ -628,7 +647,6 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: GIT_TOOL=$GIT_TOOL" 1>&2
     echo "$0: debug[3]: TOPDIR=$TOPDIR" 1>&2
     echo "$0: debug[3]: DOCROOT_SLASH=$DOCROOT_SLASH" 1>&2
-    echo "$0: debug[3]: PANDOC_WRAPPER=$PANDOC_WRAPPER" 1>&2
     echo "$0: debug[3]: REPO_TOP_URL=$REPO_TOP_URL" 1>&2
     echo "$0: debug[3]: REPO_URL=$REPO_URL" 1>&2
     echo "$0: debug[3]: SITE_URL=$SITE_URL" 1>&2
@@ -644,6 +662,8 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: INC_DIR=$INC_DIR" 1>&2
     echo "$0: debug[3]: BIN_PATH=$BIN_PATH" 1>&2
     echo "$0: debug[3]: BIN_DIR=$BIN_DIR" 1>&2
+    echo "$0: debug[3]: PANDOC_WRAPPER=$PANDOC_WRAPPER" 1>&2
+    echo "$0: debug[3]: JVAL_WRAPPER=$JVAL_WRAPPER" 1>&2
     echo "$0: debug[3]: YEAR_DIR=$YEAR_DIR" 1>&2
     echo "$0: debug[3]: ENTRY_DIR=$ENTRY_DIR" 1>&2
     echo "$0: debug[3]: ENTRY_ID=$ENTRY_ID" 1>&2
@@ -654,6 +674,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: ENTRY_JSON=$ENTRY_JSON" 1>&2
     echo "$0: debug[3]: LOCATION_TOOL=$LOCATION_TOOL" 1>&2
 fi
+
 
 # Set AUTHOR_HANDLE_SET with author handles from .entry.json
 #
@@ -669,6 +690,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$AUTHOR_HANDLE_SET" 1>&2
     echo "$0: debug[3]: author handles found in $ENTRY_JSON end above" 1>&2
 fi
+
 
 # verify each author handle has a readable author/author_handle.json file
 #
@@ -736,6 +758,7 @@ for author_handle in $AUTHOR_HANDLE_SET; do
     fi
 done
 
+
 # If -N, time to exit
 #
 if [[ -n $DO_NOT_PROCESS ]]; then
@@ -744,6 +767,7 @@ if [[ -n $DO_NOT_PROCESS ]]; then
     fi
     exit 0
 fi
+
 
 # create a temporary markdown for pandoc to process
 #
@@ -767,6 +791,7 @@ elif [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: because of -n, temporary markdown file is not used: $TMP_FILE" 1>&2
 fi
 
+
 # write author header to temporary markdown file
 #
 {
@@ -787,6 +812,7 @@ else
 	echo "$0: debug[3]: -n disabled write of author header into: $TMP_FILE" 1>&2
     fi
 fi
+
 
 # write each author's information to temporary markdown file
 #
@@ -872,6 +898,7 @@ for author_handle in $AUTHOR_HANDLE_SET; do
     NOT_FIRST_AUTHOR="true"
 done
 
+
 # convert temporary markdown file into HTML
 #
 if [[ -z $NOOP ]]; then
@@ -891,6 +918,7 @@ if [[ -z $NOOP ]]; then
 elif [[ $V_FLAG -ge 1 ]]; then
     echo  "$0: debug[1]: -n disabled execution of: $PANDOC_WRAPPER $TMP_FILE -" 1>&2
 fi
+
 
 # All Done!!! All Done!!! -- Jessica Noll, Age 2
 #

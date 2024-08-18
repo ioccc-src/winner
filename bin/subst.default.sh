@@ -35,6 +35,7 @@
 #
 # Share and enjoy! :-)
 
+
 # firewall - run only with a bash that is version 5.1.8 or later
 #
 # The "/usr/bin/env bash" command must result in using a bash that
@@ -78,6 +79,7 @@ if [[ -z ${BASH_VERSINFO[0]} ||
     exit 4
 fi
 
+
 # setup bash file matching
 #
 # We must declare arrays with -ag or -Ag, and we need loops to "export" modified variables.
@@ -89,6 +91,7 @@ shopt -u dotglob	# disable matching files starting with .
 shopt -u nocaseglob	# disable strict case matching
 shopt -u extglob	# enable extended globbing patterns
 shopt -s globstar	# enable ** to match all files and zero or more directories and subdirectories
+
 
 # set variables referenced in the usage message
 #
@@ -114,6 +117,7 @@ export REPO_TOP_URL="https://github.com/ioccc-src/temp-test-ioccc"
 export REPO_URL="$REPO_TOP_URL/blob/master"
 export SITE_URL="https://ioccc-src.github.io/temp-test-ioccc"
 export URL="#"
+
 
 # set usage message
 #
@@ -151,10 +155,12 @@ Exit codes:
 
 $NAME version: $VERSION"
 
+
 # setup
 #
 export NOOP=
 export DO_NOT_PROCESS=
+
 
 # parse command line
 #
@@ -210,7 +216,7 @@ while getopts :hv:Vd:D:nNU:w:e:E: flag; do
 	;;
   esac
 done
-
+#
 # parse the command line arguments
 #
 if [[ $V_FLAG -ge 1 ]]; then
@@ -223,10 +229,12 @@ if [[ $V_FLAG -ge 5 ]]; then
     echo "$0: debug[5]: file argument count: $#" 1>&2
 fi
 
+
 # form Nu Html Checker doc url string
 #
 VALIDATOR_ENCODED_URL=$(echo "$URL" | sed -e 's;/;%2F;g' -e 's;:;%3A;')
 export VALIDATOR_ENCODED_URL
+
 
 # parameter debugging
 #
@@ -246,6 +254,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: VALIDATOR_ENCODED_URL=$VALIDATOR_ENCODED_URL" 1>&2
 fi
 
+
 # If -N, time to exit
 #
 if [[ -n $DO_NOT_PROCESS ]]; then
@@ -255,26 +264,31 @@ if [[ -n $DO_NOT_PROCESS ]]; then
     exit 0
 fi
 
+
 # output HEADER_1 substitution
 #
 echo "-s"
 echo "HEADER_1=The International Obfuscated C Code Contest"
+
 
 # output REPO_URL substitution
 #
 echo "-s"
 echo "REPO_URL=$REPO_URL"
 
+
 # output SITE_URL substitution
 #
 echo "-s"
 echo "SITE_URL=$SITE_URL"
+
 
 # output DOCROOT_SLASH substitution
 #
 echo "-s"
 echo "DOCROOT_SLASH=$DOCROOT_SLASH"
 export VALIDATOR_ENCODED_URL
+
 
 # output the Validator encoded URL
 #

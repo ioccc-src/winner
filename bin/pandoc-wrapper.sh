@@ -42,6 +42,7 @@
 #
 # Share and enjoy! :-)
 
+
 # firewall - run only with a bash that is version 5.1.8 or later
 #
 # The "/usr/bin/env bash" command must result in using a bash that
@@ -85,6 +86,7 @@ if [[ -z ${BASH_VERSINFO[0]} ||
     exit 4
 fi
 
+
 # setup bash file matching
 #
 # We must declare arrays with -ag or -Ag, and we need loops to "export" modified variables.
@@ -96,6 +98,7 @@ shopt -u dotglob	# disable matching files starting with .
 shopt -u nocaseglob	# disable strict case matching
 shopt -u extglob	# enable extended globbing patterns
 shopt -s globstar	# enable ** to match all files and zero or more directories and subdirectories
+
 
 # set variables referenced in the usage message
 #
@@ -140,6 +143,7 @@ export REPO_TOP_URL="https://github.com/ioccc-src/temp-test-ioccc"
 # GitHub puts individual files under the "blob/master" sub-directory.
 export REPO_URL="$REPO_TOP_URL/blob/master"
 
+
 # set usage message
 #
 export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-n] [-N]
@@ -178,14 +182,16 @@ Exit codes:
 
 $NAME version: $VERSION"
 
+
 # setup
 #
 export NOOP=
 export DO_NOT_PROCESS=
 
+
 # parse command line
 #
-while getopts :hv:Vd:nNp:e:E: flag; do
+while getopts :hv:Vd:nNe:E: flag; do
   case "$flag" in
     h) echo "$USAGE" 1>&2
 	exit 2
@@ -200,8 +206,6 @@ while getopts :hv:Vd:nNp:e:E: flag; do
     n) NOOP="-n"
 	;;
     N) DO_NOT_PROCESS="-N"
-	;;
-    p) PANDOC_TOOL="$OPTARG"
 	;;
     e) echo "$OPTARG" 1>&2
 	;;
@@ -224,7 +228,7 @@ while getopts :hv:Vd:nNp:e:E: flag; do
 	;;
   esac
 done
-
+#
 # parse the command line arguments
 #
 if [[ $V_FLAG -ge 1 ]]; then
@@ -243,6 +247,7 @@ fi
 #
 export MARKDOWN_INPUT="$1"
 export HTML_OUTPUT="$2"
+
 
 # firewall - validate args
 #
@@ -265,6 +270,7 @@ fi
 PANDOC_TOOL_VERSION=$("$PANDOC_TOOL" --version | head -1 | awk '{print $2;}')
 export PANDOC_TOOL_VERSION
 
+
 # set the minimum pandoc version
 #
 # We have found that very old versions of pandoc, such as version 2.14.0.3,
@@ -278,6 +284,7 @@ export PANDOC_TOOL_VERSION
 # We tested pandoc version 3.1.12.2 and therefore set this as the minimum allowed.
 #
 export PANDOC_MIN_VERSION="3.1.12.2"
+
 
 # verify that we have a topdir directory
 #
@@ -298,6 +305,7 @@ if [[ ! -d $TOPDIR ]]; then
     echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_TOP_URL; cd $REPO_NAME" 1>&2
     exit 6
 fi
+
 
 # cd to topdir
 #
@@ -322,6 +330,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: now in directory: $(/bin/pwd)" 1>&2
 fi
 
+
 # verify that we have an author subdirectory
 #
 export AUTHOR_PATH="$TOPDIR/author"
@@ -330,6 +339,7 @@ if [[ ! -d $AUTHOR_PATH ]]; then
     exit 6
 fi
 export AUTHOR_DIR="author"
+
 
 # verify that we have an inc subdirectory
 #
@@ -340,14 +350,6 @@ if [[ ! -d $INC_PATH ]]; then
 fi
 export INC_DIR="inc"
 
-# verify that we have a bin subdirectory
-#
-export BIN_PATH="$TOPDIR/bin"
-if [[ ! -d $BIN_PATH ]]; then
-    echo "$0: ERROR: bin is not a directory under topdir: $BIN_PATH" 1>&2
-    exit 6
-fi
-export BIN_DIR="bin"
 
 # parameter debugging
 #
@@ -377,9 +379,8 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: AUTHOR_DIR=$AUTHOR_DIR" 1>&2
     echo "$0: debug[3]: INC_PATH=$INC_PATH" 1>&2
     echo "$0: debug[3]: INC_DIR=$INC_DIR" 1>&2
-    echo "$0: debug[3]: BIN_PATH=$BIN_PATH" 1>&2
-    echo "$0: debug[3]: BIN_DIR=$BIN_DIR" 1>&2
 fi
+
 
 # If -N, time to exit
 #
@@ -389,6 +390,7 @@ if [[ -n $DO_NOT_PROCESS ]]; then
     fi
     exit 0
 fi
+
 
 # verify that the pandoc version is >= the minimum version
 #
@@ -401,6 +403,7 @@ if [[ $FIRST_VERSION != "$PANDOC_MIN_VERSION" ]]; then
     echo "$0: Warning: install a more up to date pandoc and/or use -p pandoc_tool to refer an up to date pandoc" 1>&2
     exit 5
 fi
+
 
 # execute pandoc
 #
@@ -427,6 +430,7 @@ if [[ $status -ne 0 ]]; then
     fi
     exit 1
 fi
+
 
 # All Done!!! All Done!!! -- Jessica Noll, Age 2
 #

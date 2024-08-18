@@ -26,6 +26,7 @@
 #
 # Share and enjoy! :-)
 
+
 # firewall - run only with a bash that is version 5.1.8 or later
 #
 # The "/usr/bin/env bash" command must result in using a bash that
@@ -82,9 +83,10 @@ shopt -u nocaseglob	# disable strict case matching
 shopt -u extglob	# enable extended globbing patterns
 shopt -s globstar	# enable ** to match all files and zero or more directories and subdirectories
 
+
 # set variables referenced in the usage message
 #
-export VERSION="1.5.8 2024-08-05"
+export VERSION="1.6 2024-08-17"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -102,7 +104,6 @@ fi
 export TOPDIR
 export DOCROOT_SLASH="./"
 export TAGLINE="bin/$NAME"
-export MD2HTML_SH="bin/md2html.sh"
 export REPO_TOP_URL="https://github.com/ioccc-src/temp-test-ioccc"
 # GitHub puts individual files under the "blob/master" sub-directory.
 export REPO_URL="$REPO_TOP_URL/blob/master"
@@ -124,18 +125,20 @@ if [[ -z "$LS_TOOL" ]]; then
     echo "$0: FATAL: ls tool is not installed or not in \$PATH" 1>&2
     exit 5
 fi
-
+#
 export IOCCC_STATUS_VERSION="1.0 2024-03-09"
 #
 export NOOP=
 export DO_NOT_PROCESS=
 export EXIT_CODE="0"
 
+
 # clear options we will add to tools
 #
 unset TOOL_OPTION
 declare -ag TOOL_OPTION
 export MODTIME_METHOD=""
+
 
 # output_modtime - file modification time in W3C Datetime format:
 #
@@ -211,6 +214,7 @@ function output_modtime
     esac
     return 0
 }
+
 
 # output_status_json
 #
@@ -290,13 +294,11 @@ function output_status_json
 
     # determine the "contest_status" that was in status.json
     #
-    OLD_CONTEST_STATUS=$(grep '"contest_status"[[:space:]]*:[[:space:]]*"' "$STATUS_PATH" |
-			 sed -e 's/^.*:[[:space:]]*"//' -e 's/",*//')
+    OLD_CONTEST_STATUS=$("$JVAL_WRAPPER" -w -b "$STATUS_PATH" '$..contest_status')
 
     # determine the "status_update" that was in status.json
     #
-    OLD_STATUS_UPDATE=$(grep '"status_update"[[:space:]]*:[[:space:]]*"' "$STATUS_PATH" |
-			sed -e 's/^.*:[[:space:]]*"//' -e 's/",*//')
+    OLD_STATUS_UPDATE=$("$JVAL_WRAPPER" -w -b "$STATUS_PATH" '$..status_update')
 
     # update the status.json file modification date if the "contest_status" changed
     #
@@ -333,11 +335,11 @@ function output_status_json
     return 0
 }
 
+
 # usage
 #
 export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-n] [-N]
-			[-t tagline] [-T md2html.sh]
-			[p | pending | o | open | j | judging | c | closed]
+			[-t tagline] [p | pending | o | open | j | judging | c | closed]
 
 	-h		print help message and exit
 	-v level	set verbosity level (def level: 0)
@@ -355,7 +357,6 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-n] [-N]
 
 	-t tagline	string to write about the tool that formed the markdown content (def: $TAGLINE)
 			NOTE: 'tagline' may be enclosed within, but may NOT contain an internal single-quote, or double-quote.
-	-T md2html.sh	run 'markdown to html tool' to convert markdown into HTML (def: $MD2HTML_SH)
 
 	-w site_url	Base URL of the website (def: $SITE_URL)
 			NOTE: The '-w site_url' is passed as leading options on tool command lines.
@@ -368,7 +369,7 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-n] [-N]
 
 NOTE: The '-v level' is passed as initial command line options to the 'markdown to html tool' (md2html.sh).
       The 'tagline' is passed as '-t tagline' to the 'markdown to html tool' (md2html.sh), after the '-v level'.
-      Any '-T md2html.sh', '-p tool', '-P pandoc_opts', '-U top_url'
+      Any '-P pandoc_opts', '-U top_url'
       are passed to the 'markdown to html tool' (md2html.sh), and will be before any command line arguments.
 
 Exit codes:
@@ -383,9 +384,10 @@ Exit codes:
 
 $NAME version: $VERSION"
 
+
 # parse command line
 #
-while getopts :hv:Vd:D:nNt:T:w: flag; do
+while getopts :hv:Vd:D:nNt:w: flag; do
   case "$flag" in
     h) echo "$USAGE" 1>&2
 	exit 2
@@ -434,10 +436,6 @@ while getopts :hv:Vd:D:nNt:T:w: flag; do
 	TAGLINE="$OPTARG"
 	# -t tagline always added after arg parsing
 	;;
-    T) MD2HTML_SH="$OPTARG"
-	TOOL_OPTION+=("-T")
-	TOOL_OPTION+=("$MD2HTML_SH")
-	;;
     w) SITE_URL="$OPTARG"
 	TOOL_OPTION+=("-w")
 	TOOL_OPTION+=("$SITE_URL")
@@ -459,7 +457,7 @@ while getopts :hv:Vd:D:nNt:T:w: flag; do
 	;;
   esac
 done
-
+#
 # remove the options
 #
 shift $(( OPTIND - 1 ));
@@ -493,12 +491,14 @@ if [[ $# -eq 1 ]]; then
     esac
 fi
 
+
 # always add the '-v level' option, unless level is empty, to the set of options passed to the md2html.sh tool
 #
 if [[ -n $V_FLAG ]]; then
     TOOL_OPTION+=("-v")
     TOOL_OPTION+=("$V_FLAG")
 fi
+
 
 # always add the '-t tagline' option, unless tagline is empty, to the set of options passed to the md2html.sh tool
 #
@@ -507,15 +507,18 @@ if [[ -n $TAGLINE ]]; then
     TOOL_OPTION+=("$TAGLINE")
 fi
 
+
 # always add the '-U URL' for the top level status.html file
 #
 TOOL_OPTION+=("-U")
 TOOL_OPTION+=("$SITE_URL/status.html")
 
+
 # always add the '-D docroot/' for the top level status.html file
 #
 TOOL_OPTION+=("-D")
 TOOL_OPTION+=("$DOCROOT_SLASH")
+
 
 # verify that we have a topdir directory
 #
@@ -536,6 +539,7 @@ if [[ ! -d $TOPDIR ]]; then
     echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_TOP_URL; cd $REPO_NAME" 1>&2
     exit 6
 fi
+
 
 # cd to topdir
 #
@@ -560,20 +564,50 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: now in directory: $(/bin/pwd)" 1>&2
 fi
 
-# verify that the md2html tool is executable
+
+# verify that we have a bin subdirectory
 #
+export BIN_PATH="$TOPDIR/bin"
+if [[ ! -d $BIN_PATH ]]; then
+    echo "$0: ERROR: bin is not a directory under topdir: $BIN_PATH" 1>&2
+    exit 6
+fi
+export BIN_DIR="bin"
+
+
+# verify that the bin/md2html.sh tool is executable
+#
+export MD2HTML_SH="$BIN_DIR/md2html.sh"
 if [[ ! -e $MD2HTML_SH ]]; then
-    echo  "$0: ERROR: md2html.sh does not exist: $MD2HTML_SH" 1>&2
+    echo  "$0: ERROR: bin/md2html.sh does not exist: $MD2HTML_SH" 1>&2
     exit 5
 fi
 if [[ ! -f $MD2HTML_SH ]]; then
-    echo  "$0: ERROR: md2html.sh is not a regular file: $MD2HTML_SH" 1>&2
+    echo  "$0: ERROR: bin/md2html.sh is not a regular file: $MD2HTML_SH" 1>&2
     exit 5
 fi
 if [[ ! -x $MD2HTML_SH ]]; then
-    echo  "$0: ERROR: md2html.sh is not an executable file: $MD2HTML_SH" 1>&2
+    echo  "$0: ERROR: bin/md2html.sh is not an executable file: $MD2HTML_SH" 1>&2
     exit 5
 fi
+
+
+# verify that the bin/jval-wrapper.sh tool is executable
+#
+JVAL_WRAPPER="$BIN_DIR/jval-wrapper.sh"
+if [[ ! -e $JVAL_WRAPPER ]]; then
+    echo  "$0: ERROR: bin/jval-wrapper.sh does not exist: $JVAL_WRAPPER" 1>&2
+    exit 5
+fi
+if [[ ! -f $JVAL_WRAPPER ]]; then
+    echo  "$0: ERROR: bin/jval-wrapper.sh is not a regular file: $JVAL_WRAPPER" 1>&2
+    exit 5
+fi
+if [[ ! -x $JVAL_WRAPPER ]]; then
+    echo  "$0: ERROR: bin/jval-wrapper.sh is not an executable file: $JVAL_WRAPPER" 1>&2
+    exit 5
+fi
+
 
 # verify readable non-empty news.md file
 #
@@ -595,6 +629,7 @@ if [[ ! -s $NEWS_MD ]]; then
     exit 1
 fi
 
+
 # verify readable non-empty status.json file
 #
 export STATUS_JSON="status.json"
@@ -614,6 +649,7 @@ if [[ ! -s $STATUS_JSON ]]; then
     echo  "$0: ERROR: status.json is not an non-empty readable file: $STATUS_JSON" 1>&2
     exit 1
 fi
+
 
 # verify readable non-empty status.md file
 #
@@ -635,9 +671,11 @@ if [[ ! -s $STATUS_MD ]]; then
     exit 1
 fi
 
+
 # note status.html file
 #
 export STATUS_HTML="status.html"
+
 
 # verify we have a non-empty readable .top file
 #
@@ -659,6 +697,7 @@ if [[ ! -s $TOP_FILE ]]; then
     exit 6
 fi
 
+
 # verify that we have an inc subdirectory
 #
 export INC_PATH="$TOPDIR/inc"
@@ -668,6 +707,7 @@ if [[ ! -d $INC_PATH ]]; then
 fi
 export INC_DIR="inc"
 
+
 # verify that we have an next subdirectory
 #
 export NEXT_PATH="$TOPDIR/next"
@@ -676,6 +716,7 @@ if [[ ! -d $NEXT_PATH ]]; then
     exit 6
 fi
 export NEXT_DIR="next"
+
 
 # determine how we can determine the file modification time in W3C Datetime format:
 #
@@ -734,6 +775,7 @@ else
     fi
 fi
 
+
 # print running info if verbose
 #
 # If -v 3 or higher, print exported variables in order that they were exported.
@@ -746,13 +788,10 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: TOPDIR=$TOPDIR" 1>&2
     echo "$0: debug[3]: DOCROOT_SLASH=$DOCROOT_SLASH" 1>&2
     echo "$0: debug[3]: TAGLINE=$TAGLINE" 1>&2
-    echo "$0: debug[3]: MD2HTML_SH=$MD2HTML_SH" 1>&2
     echo "$0: debug[3]: REPO_TOP_URL=$REPO_TOP_URL" 1>&2
     echo "$0: debug[3]: REPO_URL=$REPO_URL" 1>&2
     echo "$0: debug[3]: SITE_URL=$SITE_URL" 1>&2
     echo "$0: debug[3]: JPARSE_TOOL=$JPARSE_TOOL" 1>&2
-    echo "$0: debug[3]: STAT_TOOL=$STAT_TOOL" 1>&2
-    echo "$0: debug[3]: LS_TOOL=$LS_TOOL" 1>&2
     echo "$0: debug[3]: IOCCC_STATUS_VERSION=$IOCCC_STATUS_VERSION" 1>&2
     echo "$0: debug[3]: NOOP=$NOOP" 1>&2
     echo "$0: debug[3]: DO_NOT_PROCESS=$DO_NOT_PROCESS" 1>&2
@@ -761,9 +800,16 @@ if [[ $V_FLAG -ge 3 ]]; then
 	echo "$0: debug[3]: TOOL_OPTION[$index]=${TOOL_OPTION[$index]}" 1>&2
     done
     echo "$0: debug[3]: MODTIME_METHOD=$MODTIME_METHOD" 1>&2
+    echo "$0: debug[3]: STAT_TOOL=$STAT_TOOL" 1>&2
+    echo "$0: debug[3]: LS_TOOL=$LS_TOOL" 1>&2
+    echo "$0: debug[3]: IOCCC_STATUS_VERSION=$IOCCC_STATUS_VERSION" 1>&2
     echo "$0: debug[3]: CONTEST_STATUS=$CONTEST_STATUS" 1>&2
     echo "$0: debug[3]: REPO_NAME=$REPO_NAME" 1>&2
     echo "$0: debug[3]: CD_FAILED=$CD_FAILED" 1>&2
+    echo "$0: debug[3]: BIN_DIR=$BIN_DIR" 1>&2
+    echo "$0: debug[3]: BIN_PATH=$BIN_PATH" 1>&2
+    echo "$0: debug[3]: MD2HTML_SH=$MD2HTML_SH" 1>&2
+    echo "$0: debug[3]: JVAL_WRAPPER=$JVAL_WRAPPER" 1>&2
     echo "$0: debug[3]: NEWS_MD=$NEWS_MD" 1>&2
     echo "$0: debug[3]: STATUS_JSON=$STATUS_JSON" 1>&2
     echo "$0: debug[3]: STATUS_MD=$STATUS_MD" 1>&2
@@ -774,6 +820,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: NEXT_PATH=$NEXT_PATH" 1>&2
     echo "$0: debug[3]: NEXT_DIR=$NEXT_DIR" 1>&2
 fi
+
 
 # validate JSON in status.json
 #
@@ -786,18 +833,11 @@ fi
 
 # obtain contest_status if CONTEST_STATUS was not set in the arg
 #
-# XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
-# XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
-# XXX - until we have the jnamval command, we must FAKE PARSE the author/author_handle.json file - XXX
-# XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
-# XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
-#
 if [[ -z $CONTEST_STATUS ]]; then
 
     # obtain the contest_status from status.json
     #
-    CONTEST_STATUS=$(grep '"contest_status"[[:space:]]*:[[:space:]]*"' "$STATUS_JSON" |
-		     sed -e 's/^.*:[[:space:]]*"//' -e 's/",*//')
+    CONTEST_STATUS=$("$JVAL_WRAPPER" -w -b "$STATUS_JSON" '$..contest_status')
     if [[ -z $CONTEST_STATUS ]]; then
 	echo "$0: ERROR: cannot determine contest_status from status.json: $STATUS_JSON" 1>&2
 	exit 1
@@ -806,13 +846,13 @@ if [[ -z $CONTEST_STATUS ]]; then
     # validate and normalize the contest_status from status.json
     #
     case "$CONTEST_STATUS" in
-    p|pending) CONTEST_STATUS="pending"
+    pending) CONTEST_STATUS="pending"
 	;;
-    o|open) CONTEST_STATUS="open"
+    open) CONTEST_STATUS="open"
 	;;
-    j|judging) CONTEST_STATUS="judging"
+    judging) CONTEST_STATUS="judging"
 	;;
-    c|closed) CONTEST_STATUS="closed"
+    closed) CONTEST_STATUS="closed"
 	;;
     *) echo "$0: ERROR: unexpected status from $status.json: $CONTEST_STATUS" 1>&2
 	echo 1>&2
@@ -821,6 +861,7 @@ if [[ -z $CONTEST_STATUS ]]; then
 	;;
     esac
 fi
+
 
 # determine the rules.md markdown file
 #
@@ -843,6 +884,7 @@ if [[ ! -s $RULES_MD ]]; then
 fi
 export RULES_HTML="$NEXT_DIR/rules.html"
 
+
 # determine the rules.md markdown file
 #
 export GUIDELINES_MD="$NEXT_DIR/guidelines.md"
@@ -864,6 +906,7 @@ if [[ ! -s $GUIDELINES_MD ]]; then
 fi
 export GUIDELINES_HTML="$NEXT_DIR/guidelines.html"
 
+
 # determine the rules hdr file
 #
 export RULES_HDR="$INC_PATH/rules.$CONTEST_STATUS.hdr"
@@ -883,6 +926,7 @@ if [[ ! -s $RULES_HDR ]]; then
     echo  "$0: ERROR: rules hdr file is not an non-empty readable file: $RULES_HDR" 1>&2
     exit 1
 fi
+
 
 # determine the guidelines hdr file
 #
@@ -904,6 +948,7 @@ if [[ ! -s $GUIDELINES_HDR ]]; then
     exit 1
 fi
 
+
 # -N stops early before any processing is performed
 #
 if [[ -n $DO_NOT_PROCESS ]]; then
@@ -912,6 +957,7 @@ if [[ -n $DO_NOT_PROCESS ]]; then
     fi
     exit 0
 fi
+
 
 # create a temporary status.json file
 #
@@ -935,6 +981,7 @@ elif [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: because of -n, temporary status.json file is not used: $TMP_STATUS_JSON" 1>&2
 fi
 
+
 # create a temporary rules.md file
 #
 export TMP_RULES_MD=".tmp.$NAME.RULES_MD.$$.tmp"
@@ -957,6 +1004,7 @@ elif [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: because of -n, temporary rules.md file is not used: $TMP_RULES_MD" 1>&2
 fi
 
+
 # create a temporary guidelines.md file
 #
 export TMP_GUIDELINES_MD=".tmp.$NAME.GUIDELINES_MD.$$.tmp"
@@ -978,6 +1026,7 @@ if [[ -z $NOOP ]]; then
 elif [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: because of -n, temporary guidelines.md file is not used: $TMP_GUIDELINES_MD" 1>&2
 fi
+
 
 # generate the temporary status.json file
 #
@@ -1069,6 +1118,7 @@ elif [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: because of -n, temporary status.json file is NOT written into: $TMP_STATUS_JSON" 1>&2
 fi
 
+
 # use the md2html.sh tool to form the status.html file, unless -n
 #
 if [[ -z $NOOP ]]; then
@@ -1094,6 +1144,7 @@ elif [[ $V_FLAG -ge 5 ]]; then
     echo "$0: debug[5]: because of -n, did not run: $MD2HTML_SH ${TOOL_OPTION[*]} --" \
          "status.md $STATUS_HTML" 1>&2
 fi
+
 
 # update rules.md
 #
@@ -1179,6 +1230,7 @@ elif [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: because of -n, rules.md was not updated: $RULES_MD" 1>&2
 fi
 
+
 # update guidelines.md
 #
 if [[ -z $NOOP ]]; then
@@ -1263,6 +1315,7 @@ elif [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: because of -n, guidelines.md was not updated: $GUIDELINES_MD" 1>&2
 fi
 
+
 # file cleanup
 #
 if [[ -z $NOOP ]]; then
@@ -1270,6 +1323,7 @@ if [[ -z $NOOP ]]; then
 elif [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: because of -n, disabled: rm -f -- $TMP_STATUS_JSON" 1>&2
 fi
+
 
 # All Done!!! All Done!!! -- Jessica Noll, Age 2
 #

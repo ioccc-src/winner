@@ -41,6 +41,7 @@
 #
 # Share and enjoy! :-)
 
+
 # firewall - run only with a bash that is version 5.1.8 or later
 #
 # The "/usr/bin/env bash" command must result in using a bash that
@@ -97,6 +98,7 @@ shopt -u nocaseglob	# disable strict case matching
 shopt -u extglob	# enable extended globbing patterns
 shopt -s globstar	# enable ** to match all files and zero or more directories and subdirectories
 
+
 # set variables referenced in the usage message
 #
 export VERSION="1.1.8 2024-07-28"
@@ -119,7 +121,7 @@ export REPO_TOP_URL="https://github.com/ioccc-src/temp-test-ioccc"
 # GitHub puts individual files under the "blob/master" sub-directory.
 export REPO_URL="$REPO_TOP_URL/blob/master"
 export TOP_URL="https://ioccc-src.github.io/temp-test-ioccc"
-export SGI_TOOL="bin/sgi.sh"
+
 
 # set usage message
 #
@@ -150,10 +152,12 @@ Exit codes:
 
 $NAME version: $VERSION"
 
+
 # setup
 #
 export NOOP=
 export DO_NOT_PROCESS=
+
 
 # parse command line
 #
@@ -190,7 +194,7 @@ while getopts :hv:Vd:nN flag; do
 	;;
   esac
 done
-
+#
 # parse the command line arguments
 #
 if [[ $V_FLAG -ge 3 ]]; then
@@ -208,6 +212,7 @@ if [[ $# -ne 1 ]]; then
 fi
 #
 export ENTRY_PATH="$1"
+
 
 # verify that we have a topdir directory
 #
@@ -228,6 +233,7 @@ if [[ ! -d $TOPDIR ]]; then
     echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_TOP_URL; cd $REPO_NAME" 1>&2
     exit 6
 fi
+
 
 # cd to topdir
 #
@@ -252,6 +258,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: now in directory: $(/bin/pwd)" 1>&2
 fi
 
+
 # verify that we have a bin subdirectory
 #
 export BIN_PATH="$TOPDIR/bin"
@@ -261,20 +268,23 @@ if [[ ! -d $BIN_PATH ]]; then
 fi
 export BIN_DIR="bin"
 
-# verify we have an executable sgi.sh tool
+
+# verify that the bin/sgi.sh tool is executable
 #
-if [[ ! -e $SGI_TOOL ]]; then
-    echo "$0: ERROR: sgi.sh tool does not exist: $SGI_TOOL" 1>&2
+export SGI_TOOL="$BIN_DIR/sgi.sh"
+if [[ ! -e $SGI_TOOL.sh ]]; then
+    echo  "$0: ERROR: bin/sgi.sh does not exist: $SGI_TOOL.sh" 1>&2
     exit 5
 fi
-if [[ ! -f $SGI_TOOL ]]; then
-    echo "$0: ERROR: sgi.sh tool is not a file: $SGI_TOOL" 1>&2
+if [[ ! -f $SGI_TOOL.sh ]]; then
+    echo  "$0: ERROR: bin/sgi.sh is not a regular file: $SGI_TOOL.sh" 1>&2
     exit 5
 fi
-if [[ ! -x $SGI_TOOL ]]; then
-    echo "$0: ERROR: sgi.sh tool is not an executable file: $SGI_TOOL" 1>&2
+if [[ ! -x $SGI_TOOL.sh ]]; then
+    echo  "$0: ERROR: bin/sgi.sh is not an executable file: $SGI_TOOL.sh" 1>&2
     exit 5
 fi
+
 
 # verify that ENTRY_PATH is a entry directory
 #
@@ -349,6 +359,7 @@ if [[ ! -r $ENTRY_JSON ]]; then
     exit 7
 fi
 
+
 # verify .gitignore
 #
 export GITIGNORE="$YEAR_DIR/$ENTRY_DIR/.gitignore"
@@ -365,6 +376,7 @@ if [[ ! -w $GITIGNORE ]]; then
     exit 7
 fi
 
+
 # parameter debugging
 #
 if [[ $V_FLAG -ge 3 ]]; then
@@ -376,7 +388,6 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: REPO_TOP_URL=$REPO_TOP_URL" 1>&2
     echo "$0: debug[3]: REPO_URL=$REPO_URL" 1>&2
     echo "$0: debug[3]: TOP_URL=$TOP_URL" 1>&2
-    echo "$0: debug[3]: SGI_TOOL=$SGI_TOOL" 1>&2
     echo "$0: debug[3]: NOOP=$NOOP" 1>&2
     echo "$0: debug[3]: DO_NOT_PROCESS=$DO_NOT_PROCESS" 1>&2
     echo "$0: debug[3]: ENTRY_PATH=$ENTRY_PATH" 1>&2
@@ -384,6 +395,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: CD_FAILED=$CD_FAILED" 1>&2
     echo "$0: debug[3]: BIN_PATH=$BIN_PATH" 1>&2
     echo "$0: debug[3]: BIN_DIR=$BIN_DIR" 1>&2
+    echo "$0: debug[3]: SGI_TOOL=$SGI_TOOL" 1>&2
     echo "$0: debug[3]: YEAR_DIR=$YEAR_DIR" 1>&2
     echo "$0: debug[3]: ENTRY_DIR=$ENTRY_DIR" 1>&2
     echo "$0: debug[3]: ENTRY_ID=$ENTRY_ID" 1>&2
@@ -395,6 +407,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: GITIGNORE=$GITIGNORE" 1>&2
 fi
 
+
 # If -N, time to exit
 #
 if [[ -n $DO_NOT_PROCESS ]]; then
@@ -403,6 +416,7 @@ if [[ -n $DO_NOT_PROCESS ]]; then
     fi
     exit 0
 fi
+
 
 # create a temporary markdown for pandoc to process
 #
@@ -425,6 +439,7 @@ if [[ -z $NOOP ]]; then
 elif [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: because of -n, temporary markdown file is not used: $TMP_FILE" 1>&2
 fi
+
 
 # convert temporary markdown file into HTML
 #
@@ -457,6 +472,7 @@ elif [[ $V_FLAG -ge 1 ]]; then
     echo  "$0: debug[1]: -n disabled execution of: $SGI_TOOL < $GITIGNORE > $TMP_FILE" 1>&2
     echo  "$0: debug[1]: -n disabled execution of:  mv -f $TMP_FILE $GITIGNORE" 1>&2
 fi
+
 
 # All Done!!! All Done!!! -- Jessica Noll, Age 2
 #

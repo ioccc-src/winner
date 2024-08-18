@@ -46,6 +46,9 @@
 #
 # Share and enjoy! :-)
 
+
+# sort .gitignore content on stdin to stdout
+#
 sed -e '/^#/s/.*/0 &/' -e '/^*/s/.*/1 &/' -e '/^[^01*!]/s/.*/2 &/' -e '/^!/s/.*/3 &/' |
     LC_ALL=C sort -u -k 1n -k 2d |
     sed 's/[0123] //'

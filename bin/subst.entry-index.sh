@@ -46,6 +46,7 @@
 #
 # Share and enjoy! :-)
 
+
 # firewall - run only with a bash that is version 5.1.8 or later
 #
 # The "/usr/bin/env bash" command must result in using a bash that
@@ -89,6 +90,7 @@ if [[ -z ${BASH_VERSINFO[0]} ||
     exit 4
 fi
 
+
 # setup bash file matching
 #
 # We must declare arrays with -ag or -Ag, and we need loops to "export" modified variables.
@@ -100,6 +102,7 @@ shopt -u dotglob	# disable matching files starting with .
 shopt -u nocaseglob	# disable strict case matching
 shopt -u extglob	# enable extended globbing patterns
 shopt -s globstar	# enable ** to match all files and zero or more directories and subdirectories
+
 
 # set variables referenced in the usage message
 #
@@ -124,6 +127,7 @@ export REPO_TOP_URL="https://github.com/ioccc-src/temp-test-ioccc"
 # GitHub puts individual files under the "blob/master" sub-directory.
 export REPO_URL="$REPO_TOP_URL/blob/master"
 export SITE_URL="https://ioccc-src.github.io/temp-test-ioccc"
+
 
 # set usage message
 #
@@ -163,13 +167,8 @@ Exit codes:
 
 $NAME version: $VERSION"
 
+
 # Write the award name to standard output (stdout)
-#
-# XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
-# XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
-# XXX - until we have the jnamval command, we must FAKE PARSE the .entry.json file  - XXX
-# XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
-# XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
 #
 # usage:
 #       output_award YYYY/dir/.entry.json
@@ -208,10 +207,12 @@ function output_award
     return 0
 }
 
+
 # setup
 #
 export NOOP=
 export DO_NOT_PROCESS=
+
 
 # parse command line
 #
@@ -268,6 +269,7 @@ while getopts :hv:Vd:D:nNU:w:e:E: flag; do
   esac
 done
 
+
 # parse the command line arguments
 #
 if [[ $V_FLAG -ge 1 ]]; then
@@ -285,6 +287,7 @@ if [[ $# -ne 1 ]]; then
 fi
 #
 export ENTRY_PATH="$1"
+
 
 # verify that we have a topdir directory
 #
@@ -305,6 +308,7 @@ if [[ ! -d $TOPDIR ]]; then
     echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_TOP_URL; cd $REPO_NAME" 1>&2
     exit 6
 fi
+
 
 # cd to topdir
 #
@@ -329,6 +333,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: now in directory: $(/bin/pwd)" 1>&2
 fi
 
+
 # verify that we have an author subdirectory
 #
 export AUTHOR_PATH="$TOPDIR/author"
@@ -337,6 +342,7 @@ if [[ ! -d $AUTHOR_PATH ]]; then
     exit 6
 fi
 export AUTHOR_DIR="author"
+
 
 # verify that we have an inc subdirectory
 #
@@ -347,6 +353,7 @@ if [[ ! -d $INC_PATH ]]; then
 fi
 export INC_DIR="inc"
 
+
 # verify that we have a bin subdirectory
 #
 export BIN_PATH="$TOPDIR/bin"
@@ -356,13 +363,40 @@ if [[ ! -d $BIN_PATH ]]; then
 fi
 export BIN_DIR="bin"
 
-# find the jval-wrapper.sh tool
+
+# verify that the bin/jval-wrapper.sh tool is executable
 #
-JVAL_WRAPPER="$BIN_PATH/jval-wrapper.sh"
-if [[ ! -x $JVAL_WRAPPER ]]; then
-    echo "$0: ERROR: cannot find the bin/jval-wrapper.sh executable" 1>&2
+JVAL_WRAPPER="$BIN_DIR/jval-wrapper.sh"
+if [[ ! -e $JVAL_WRAPPER ]]; then
+    echo  "$0: ERROR: bin/jval-wrapper.sh does not exist: $JVAL_WRAPPER" 1>&2
     exit 5
 fi
+if [[ ! -f $JVAL_WRAPPER ]]; then
+    echo  "$0: ERROR: bin/jval-wrapper.sh is not a regular file: $JVAL_WRAPPER" 1>&2
+    exit 5
+fi
+if [[ ! -x $JVAL_WRAPPER ]]; then
+    echo  "$0: ERROR: bin/jval-wrapper.sh is not an executable file: $JVAL_WRAPPER" 1>&2
+    exit 5
+fi
+
+
+# verify we have our awk script
+#
+export ENTRY_NAVBAR_AWK="$BIN_DIR/subst.entry-navbar.awk"
+if [[ ! -e $ENTRY_NAVBAR_AWK ]]; then
+    echo "$0: ERROR: bin/subst.entry-navbar.awk does not exist: $ENTRY_NAVBAR_AWK" 1>&2
+    exit 5
+fi
+if [[ ! -f $ENTRY_NAVBAR_AWK ]]; then
+    echo "$0: ERROR: bin/subst.entry-navbar.awk is not a file: $ENTRY_NAVBAR_AWK" 1>&2
+    exit 5
+fi
+if [[ ! -r $ENTRY_NAVBAR_AWK ]]; then
+    echo "$0: ERROR: bin/subst.entry-navbar.awk is not a readable file: $ENTRY_NAVBAR_AWK" 1>&2
+    exit 5
+fi
+
 
 # verify that ENTRY_PATH is a entry directory
 #
@@ -437,21 +471,6 @@ if [[ ! -r $ENTRY_JSON ]]; then
     exit 7
 fi
 
-# verify we have our awk script
-#
-export ENTRY_NAVBAR_AWK="$BIN_DIR/subst.entry-navbar.awk"
-if [[ ! -e $ENTRY_NAVBAR_AWK ]]; then
-    echo "$0: ERROR: bin/subst.entry-navbar.awk does not exist: $ENTRY_NAVBAR_AWK" 1>&2
-    exit 5
-fi
-if [[ ! -f $ENTRY_NAVBAR_AWK ]]; then
-    echo "$0: ERROR: bin/subst.entry-navbar.awk is not a file: $ENTRY_NAVBAR_AWK" 1>&2
-    exit 5
-fi
-if [[ ! -r $ENTRY_NAVBAR_AWK ]]; then
-    echo "$0: ERROR: bin/subst.entry-navbar.awk is not a readable file: $ENTRY_NAVBAR_AWK" 1>&2
-    exit 5
-fi
 
 # determine award
 #
@@ -461,6 +480,7 @@ if [[ -z $AWARD ]]; then
     echo "$0: ERROR: cannot determine award for $YEAR_DIR from: $ENTRY_JSON" 1>&2
     exit 1
 fi
+
 
 # parameter debugging
 #
@@ -486,6 +506,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: BIN_PATH=$BIN_PATH" 1>&2
     echo "$0: debug[3]: BIN_DIR=$BIN_DIR" 1>&2
     echo "$0: debug[3]: JVAL_WRAPPER=$JVAL_WRAPPER" 1>&2
+    echo "$0: debug[3]: ENTRY_JSON=$ENTRY_JSON" 1>&2
     echo "$0: debug[3]: YEAR_DIR=$YEAR_DIR" 1>&2
     echo "$0: debug[3]: ENTRY_DIR=$ENTRY_DIR" 1>&2
     echo "$0: debug[3]: ENTRY_ID=$ENTRY_ID" 1>&2
@@ -493,10 +514,10 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: YYYY_DIR=$YYYY_DIR" 1>&2
     echo "$0: debug[3]: DOT_PATH=$DOT_PATH" 1>&2
     echo "$0: debug[3]: DOT_PATH_CONTENT=$DOT_PATH_CONTENT" 1>&2
-    echo "$0: debug[3]: ENTRY_JSON=$ENTRY_JSON" 1>&2
     echo "$0: debug[3]: ENTRY_NAVBAR_AWK=$ENTRY_NAVBAR_AWK" 1>&2
     echo "$0: debug[3]: AWARD=$AWARD" 1>&2
 fi
+
 
 # If -N, time to exit
 #
@@ -507,25 +528,30 @@ if [[ -n $DO_NOT_PROCESS ]]; then
     exit 0
 fi
 
+
 # output TITLE substitution
 #
 echo "-s"
 echo "TITLE=$YYYY_DIR - $AWARD"
+
 
 # output DESCRIPTION substitution
 #
 echo "-s"
 echo "DESCRIPTION=$YEAR_DIR IOCCC entry $ENTRY_DIR - $AWARD"
 
+
 # output KEYWORDS substitution
 #
 echo "-s"
 echo "KEYWORDS=IOCCC, $YEAR_DIR, IOCCC $YEAR_DIR, IOCCC entry, $ENTRY_DIR, $AWARD"
 
+
 # output HEADER_2 substitution
 #
 echo "-s"
 echo "HEADER_2=$YYYY_DIR - $AWARD"
+
 
 # output navbar left hand side links
 #
@@ -535,6 +561,7 @@ if [[ $status -ne 0 ]]; then
     echo "$0: ERROR: subst.entry-navbar.awk failed, error: $status" 1>&2
     exit 1
 fi
+
 
 # output navbar right hand side links
 #
@@ -557,6 +584,7 @@ echo "-s"
 echo "INVENTORY_LINK=#inventory"
 echo "-s"
 echo "INVENTORY_TEXT=Inventory"
+
 
 # All Done!!! All Done!!! -- Jessica Noll, Age 2
 #

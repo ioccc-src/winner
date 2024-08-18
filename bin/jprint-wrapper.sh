@@ -32,6 +32,7 @@
 #
 # Share and enjoy! :-)
 
+
 # firewall - run only with a bash that is version 5.1.8 or later
 #
 # The "/usr/bin/env bash" command must result in using a bash that
@@ -75,6 +76,7 @@ if [[ -z ${BASH_VERSINFO[0]} ||
     exit 4
 fi
 
+
 # setup bash file matching
 #
 # We must declare arrays with -ag or -Ag, and we need loops to "export" modified variables.
@@ -87,12 +89,14 @@ shopt -u nocaseglob	# disable strict case matching
 shopt -u extglob	# enable extended globbing patterns
 shopt -s globstar	# enable ** to match all files and zero or more directories and subdirectories
 
+
 # set variables referenced in the usage message
 #
 export VERSION="1.0.2 2024-08-08"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
+
 
 # Until we have a true jprint tool, we will use the modified JSONPath.sh
 #
@@ -121,6 +125,7 @@ if ! "$JSONPATH_SH" -S -A -T -p >/dev/null 2>&1; then
     exit 5
 fi <<< "$FIZZBIN_JSON"
 
+
 # set usage message
 #
 export USAGE="usage: $0 [-h] [-v level] [-V] [-n] [-N] [-j JSONPath.sh] [file.json]
@@ -148,10 +153,12 @@ Exit codes:
 
 $NAME version: $VERSION"
 
+
 # setup
 #
 export NOOP=
 export DO_NOT_PROCESS=
+
 
 # parse command line
 #
@@ -188,7 +195,7 @@ while getopts :hv:VnNj: flag; do
 	;;
   esac
 done
-
+#
 # parse the command line arguments
 #
 if [[ $V_FLAG -ge 1 ]]; then

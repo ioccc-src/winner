@@ -28,6 +28,7 @@
 #
 # Share and enjoy! :-)
 
+
 # firewall - run only with a bash that is version 5.1.8 or later
 #
 # The "/usr/bin/env bash" command must result in using a bash that
@@ -71,6 +72,7 @@ if [[ -z ${BASH_VERSINFO[0]} ||
     exit 4
 fi
 
+
 # setup bash file matching
 #
 # We must declare arrays with -ag or -Ag, and we need loops to "export" modified variables.
@@ -83,9 +85,10 @@ shopt -u nocaseglob	# disable strict case matching
 shopt -u extglob	# enable extended globbing patterns
 shopt -s globstar	# enable ** to match all files and zero or more directories and subdirectories
 
+
 # set variables referenced in the usage message
 #
-export VERSION="1.3.7 2024-08-05"
+export VERSION="1.4 2024-08-17"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -115,8 +118,6 @@ if [[ ! -x $FMT_TOOL ]]; then
 fi
 export DOCROOT_SLASH="./"
 export TAGLINE="bin/$NAME"
-export MD2HTML_SH="bin/md2html.sh"
-export PANDOC_WRAPPER="bin/pandoc-wrapper.sh"
 export REPO_TOP_URL="https://github.com/ioccc-src/temp-test-ioccc"
 # GitHub puts individual files under the "blob/master" sub-directory.
 export REPO_URL="$REPO_TOP_URL/blob/master"
@@ -126,15 +127,17 @@ export NOOP=
 export DO_NOT_PROCESS=
 export EXIT_CODE="0"
 
+
 # clear options we will add to tools
 #
 unset TOOL_OPTION
 declare -ag TOOL_OPTION
 
+
 # usage
 #
 export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
-			[-t tagline] [-T md2html.sh] [-p tool]
+			[-t tagline] [-w site_url]
 
 	-h		print help message and exit
 	-v level	set verbosity level (def level: 0)
@@ -152,17 +155,13 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
 
 	-t tagline	string to write about the tool that formed the markdown content (def: $TAGLINE)
 			NOTE: 'tagline' may be enclosed within, but may NOT contain an internal single-quote, or double-quote.
-	-T md2html.sh	run 'markdown to html tool' to convert markdown into HTML (def: $MD2HTML_SH)
-
-	-p tool		run 'pandoc wrapper tool' (not pandoc path) during HTML phase number 21 (def: use $PANDOC_WRAPPER)
-			NOTE: The '-p tool' is passed as leading options on tool command lines.
 
 	-w site_url	Base URL of the website (def: $SITE_URL)
 			NOTE: The '-w site_url' is passed as leading options on tool command lines.
 
 NOTE: The '-v level' is passed as initial command line options to the 'markdown to html tool' (md2html.sh).
       The 'tagline' is passed as '-t tagline' to the 'markdown to html tool' (md2html.sh), after the '-v level'.
-      Any '-T md2html.sh', '-p tool', '-P pandoc_opts', '-U top_url'
+      Any '-P pandoc_opts', '-U top_url'
       are passed to the 'markdown to html tool' (md2html.sh), and will be before any command line arguments.
 
 Exit codes:
@@ -178,15 +177,10 @@ Exit codes:
 
 $NAME version: $VERSION"
 
+
 # output_award
 #
 # Write the award name to standard output (stdout)
-#
-# XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
-# XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
-# XXX - until we have the jnamval command, we must FAKE PARSE the .entry.json file  - XXX
-# XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
-# XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
 #
 # usage:
 #       output_award YYYY/dir/.entry.json
@@ -222,7 +216,7 @@ function output_award
 
     # obtain the award string
     #
-    AWARD_STRING=$(grep -F '"award" : "'  "$ENTRY_JSON_PATH" | sed -e 's/^.*"award" : "//' -e 's/",//')
+    AWARD_STRING=$("$JVAL_WRAPPER" -w -b "$ENTRY_JSON_PATH" '$..award')
     if [[ -z $AWARD_STRING ]]; then
 	echo "$0: ERROR: in output_award: no award found in .entry.json file: $ENTRY_JSON_PATH" 1>&2
 	return 5
@@ -230,6 +224,7 @@ function output_award
     echo "$AWARD_STRING"
     return 0
 }
+
 
 # output_ordinal
 #
@@ -292,9 +287,10 @@ function output_ordinal
     return 0
 }
 
+
 # parse command line
 #
-while getopts :hv:Vd:D:nNt:T:p:w: flag; do
+while getopts :hv:Vd:D:nNt:w: flag; do
   case "$flag" in
     h) echo "$USAGE" 1>&2
 	exit 2
@@ -343,14 +339,6 @@ while getopts :hv:Vd:D:nNt:T:p:w: flag; do
 	TAGLINE="$OPTARG"
 	# -t tagline always added after arg parsing
 	;;
-    T) MD2HTML_SH="$OPTARG"
-	TOOL_OPTION+=("-T")
-	TOOL_OPTION+=("$MD2HTML_SH")
-	;;
-    p) PANDOC_WRAPPER="$OPTARG"
-	TOOL_OPTION+=("-p")
-	TOOL_OPTION+=("$PANDOC_WRAPPER")
-	;;
     w) SITE_URL="$OPTARG"
 	TOOL_OPTION+=("-w")
 	TOOL_OPTION+=("$SITE_URL")
@@ -372,7 +360,7 @@ while getopts :hv:Vd:D:nNt:T:p:w: flag; do
 	;;
   esac
 done
-
+#
 # remove the options
 #
 shift $(( OPTIND - 1 ));
@@ -388,12 +376,14 @@ if [[ $# -ne 0 ]]; then
     exit 3
 fi
 
+
 # always add the '-v level' option, unless level is empty, to the set of options passed to the md2html.sh tool
 #
 if [[ -n $V_FLAG ]]; then
     TOOL_OPTION+=("-v")
     TOOL_OPTION+=("$V_FLAG")
 fi
+
 
 # always add the '-t tagline' option, unless tagline is empty, to the set of options passed to the md2html.sh tool
 #
@@ -402,15 +392,18 @@ if [[ -n $TAGLINE ]]; then
     TOOL_OPTION+=("$TAGLINE")
 fi
 
+
 # always add the '-U URL' for the top level location.html file
 #
 TOOL_OPTION+=("-U")
 TOOL_OPTION+=("$SITE_URL/years.html")
 
+
 # always add the '-D docroot/' for the top level location.html file
 #
 TOOL_OPTION+=("-D")
 TOOL_OPTION+=("$DOCROOT_SLASH")
+
 
 # verify that we have a topdir directory
 #
@@ -431,6 +424,7 @@ if [[ ! -d $TOPDIR ]]; then
     echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_TOP_URL; cd $REPO_NAME" 1>&2
     exit 6
 fi
+
 
 # cd to topdir
 #
@@ -455,6 +449,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: now in directory: $(/bin/pwd)" 1>&2
 fi
 
+
 # verify that we have a bin subdirectory
 #
 export BIN_PATH="$TOPDIR/bin"
@@ -463,6 +458,58 @@ if [[ ! -d $BIN_PATH ]]; then
     exit 6
 fi
 export BIN_DIR="bin"
+
+
+# verify that the bin/md2html.sh tool is executable
+#
+export MD2HTML_SH="$BIN_DIR/md2html.sh"
+if [[ ! -e $MD2HTML_SH ]]; then
+    echo  "$0: ERROR: bin/md2html.sh does not exist: $MD2HTML_SH" 1>&2
+    exit 5
+fi
+if [[ ! -f $MD2HTML_SH ]]; then
+    echo  "$0: ERROR: bin/md2html.sh is not a regular file: $MD2HTML_SH" 1>&2
+    exit 5
+fi
+if [[ ! -x $MD2HTML_SH ]]; then
+    echo  "$0: ERROR: bin/md2html.sh is not an executable file: $MD2HTML_SH" 1>&2
+    exit 5
+fi
+
+
+# verify that the bin/pandoc-wrapper.sh tool is executable
+#
+export PANDOC_WRAPPER="$BIN_DIR/pandoc-wrapper.sh"
+if [[ ! -e $PANDOC_WRAPPER ]]; then
+    echo  "$0: ERROR: bin/md2html.sh does not exist: $PANDOC_WRAPPER" 1>&2
+    exit 5
+fi
+if [[ ! -f $PANDOC_WRAPPER ]]; then
+    echo  "$0: ERROR: bin/md2html.sh is not a regular file: $PANDOC_WRAPPER" 1>&2
+    exit 5
+fi
+if [[ ! -x $PANDOC_WRAPPER ]]; then
+    echo  "$0: ERROR: bin/md2html.sh is not an executable file: $PANDOC_WRAPPER" 1>&2
+    exit 5
+fi
+
+
+# verify that the bin/jval-wrapper.sh tool is executable
+#
+JVAL_WRAPPER="$BIN_DIR/jval-wrapper.sh"
+if [[ ! -e $JVAL_WRAPPER ]]; then
+    echo  "$0: ERROR: bin/jval-wrapper.sh does not exist: $JVAL_WRAPPER" 1>&2
+    exit 5
+fi
+if [[ ! -f $JVAL_WRAPPER ]]; then
+    echo  "$0: ERROR: bin/jval-wrapper.sh is not a regular file: $JVAL_WRAPPER" 1>&2
+    exit 5
+fi
+if [[ ! -x $JVAL_WRAPPER ]]; then
+    echo  "$0: ERROR: bin/jval-wrapper.sh is not an executable file: $JVAL_WRAPPER" 1>&2
+    exit 5
+fi
+
 
 # verify we have a non-empty readable .top file
 #
@@ -484,6 +531,7 @@ if [[ ! -s $TOP_FILE ]]; then
     exit 6
 fi
 
+
 # verify that the md2html tool is executable
 #
 if [[ ! -e $MD2HTML_SH ]]; then
@@ -499,9 +547,11 @@ if [[ ! -x $MD2HTML_SH ]]; then
     exit 5
 fi
 
+
 # note years.html file
 #
 export YEARS_HTML="years.html"
+
 
 # print running info if verbose
 #
@@ -517,8 +567,6 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: FMT_TOOL=$FMT_TOOL" 1>&2
     echo "$0: debug[3]: DOCROOT_SLASH=$DOCROOT_SLASH" 1>&2
     echo "$0: debug[3]: TAGLINE=$TAGLINE" 1>&2
-    echo "$0: debug[3]: MD2HTML_SH=$MD2HTML_SH" 1>&2
-    echo "$0: debug[3]: PANDOC_WRAPPER=$PANDOC_WRAPPER" 1>&2
     echo "$0: debug[3]: REPO_TOP_URL=$REPO_TOP_URL" 1>&2
     echo "$0: debug[3]: REPO_URL=$REPO_URL" 1>&2
     echo "$0: debug[3]: SITE_URL=$SITE_URL" 1>&2
@@ -532,9 +580,13 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: CD_FAILED=$CD_FAILED" 1>&2
     echo "$0: debug[3]: BIN_PATH=$BIN_PATH" 1>&2
     echo "$0: debug[3]: BIN_DIR=$BIN_DIR" 1>&2
+    echo "$0: debug[3]: MD2HTML_SH=$MD2HTML_SH" 1>&2
+    echo "$0: debug[3]: PANDOC_WRAPPER=$PANDOC_WRAPPER" 1>&2
+    echo "$0: debug[3]: JVAL_WRAPPER=$JVAL_WRAPPER" 1>&2
     echo "$0: debug[3]: TOP_FILE=$TOP_FILE" 1>&2
     echo "$0: debug[3]: YEARS_HTML=$YEARS_HTML" 1>&2
 fi
+
 
 # -N stops early before any processing is performed
 #
@@ -544,6 +596,7 @@ if [[ -n $DO_NOT_PROCESS ]]; then
     fi
     exit 0
 fi
+
 
 # create a temporary years markdown file
 #
@@ -566,6 +619,7 @@ if [[ -z $NOOP ]]; then
 elif [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: because of -n, temporary years markdown file is not used: $TMP_YEARS_MD" 1>&2
 fi
+
 
 # write All IOCCC years markdown data
 #
@@ -851,6 +905,7 @@ for YYYY in $("$TAC_TOOL" "$TOP_FILE"); do
     ((--YEAR_COUNT))
 done
 
+
 # write year_level links to all the year level tarballs
 #
 {
@@ -873,6 +928,7 @@ else
 	echo "$0: debug[3]: because of -n, links to year level tarball markdown data is NOT written into: $TMP_YEARS_MD" 1>&2
     fi
 fi
+
 
 # use the md2html.sh tool to form a location HTML file, unless -n
 #
@@ -897,6 +953,7 @@ elif [[ $V_FLAG -ge 5 ]]; then
     echo "$0: debug[5]: because of -n, did not run: $MD2HTML_SH ${TOOL_OPTION[*]} -- years.md $TMP_YEARS_MD $YEARS_HTML" 1>&2
 fi
 
+
 # file cleanup
 #
 if [[ -z $NOOP ]]; then
@@ -904,6 +961,7 @@ if [[ -z $NOOP ]]; then
 elif [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: because of -n, disabled: rm -f -- $TMP_YEARS_MD" 1>&2
 fi
+
 
 # All Done!!! All Done!!! -- Jessica Noll, Age 2
 #

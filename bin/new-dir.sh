@@ -29,6 +29,7 @@
 #
 # Share and enjoy! :-)
 
+
 # firewall - run only with a bash that is version 5.1.8 or later
 #
 # The "/usr/bin/env bash" command must result in using a bash that
@@ -139,6 +140,7 @@ Exit codes:
 
 $NAME version: $VERSION"
 
+
 # parse command line
 #
 while getopts :hv:Vd:nN flag; do
@@ -174,7 +176,7 @@ while getopts :hv:Vd:nN flag; do
 	;;
   esac
 done
-
+#
 # remove the options
 #
 shift $(( OPTIND - 1 ));
@@ -192,6 +194,7 @@ if [[ $# -ne 1 ]]; then
     exit 3
 fi
 export ENTRY_PATH="$1"
+
 
 # verify that we have a topdir directory
 #
@@ -212,6 +215,7 @@ if [[ ! -d $TOPDIR ]]; then
     echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_TOP_URL; cd $REPO_NAME" 1>&2
     exit 6
 fi
+
 
 # cd to topdir
 #
@@ -236,6 +240,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: now in directory: $(/bin/pwd)" 1>&2
 fi
 
+
 # verify we have a non-empty readable .top file
 #
 export TOP_FILE=".top"
@@ -256,14 +261,6 @@ if [[ ! -s $TOP_FILE ]]; then
     exit 6
 fi
 
-# verify that we have a bin subdirectory
-#
-export BIN_PATH="$TOPDIR/bin"
-if [[ ! -d $BIN_PATH ]]; then
-    echo "$0: ERROR: bin is not a directory under topdir: $BIN_PATH" 1>&2
-    exit 6
-fi
-export BIN_DIR="bin"
 
 # verify that ENTRY_PATH is a entry directory
 #
@@ -350,8 +347,6 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: REPO_NAME=$REPO_NAME" 1>&2
     echo "$0: debug[3]: CD_FAILED=$CD_FAILED" 1>&2
     echo "$0: debug[3]: TOP_FILE=$TOP_FILE" 1>&2
-    echo "$0: debug[3]: BIN_PATH=$BIN_PATH" 1>&2
-    echo "$0: debug[3]: BIN_DIR=$BIN_DIR" 1>&2
     echo "$0: debug[3]: YEAR_DIR=$YEAR_DIR" 1>&2
     echo "$0: debug[3]: ENTRY_DIR=$ENTRY_DIR" 1>&2
     echo "$0: debug[3]: ENTRY_ID=$ENTRY_ID" 1>&2
@@ -359,6 +354,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: YYYY_DIR=$YYYY_DIR" 1>&2
     echo "$0: debug[3]: MAKE_FILE=$MAKE_FILE" 1>&2
 fi
+
 
 # -N stops early before any processing is performed
 #

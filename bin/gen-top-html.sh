@@ -36,6 +36,7 @@
 #
 # Share and enjoy! :-)
 
+
 # firewall - run only with a bash that is version 5.1.8 or later
 #
 # The "/usr/bin/env bash" command must result in using a bash that
@@ -79,6 +80,7 @@ if [[ -z ${BASH_VERSINFO[0]} ||
     exit 4
 fi
 
+
 # setup bash file matching
 #
 # We must declare arrays with -ag or -Ag, and we need loops to "export" modified variables.
@@ -90,6 +92,7 @@ shopt -u dotglob	# disable matching files starting with .
 shopt -u nocaseglob	# disable strict case matching
 shopt -u extglob	# enable extended globbing patterns
 shopt -s globstar	# enable ** to match all files and zero or more directories and subdirectories
+
 
 # set variables referenced in the usage message
 #
@@ -111,8 +114,6 @@ fi
 export TOPDIR
 export DOCROOT_SLASH="./"
 export TAGLINE="bin/$NAME"
-export MD2HTML_SH="bin/md2html.sh"
-export PANDOC_WRAPPER="bin/pandoc-wrapper.sh"
 export REPO_TOP_URL="https://github.com/ioccc-src/temp-test-ioccc"
 # GitHub puts individual files under the "blob/master" sub-directory.
 export REPO_URL="$REPO_TOP_URL/blob/master"
@@ -147,15 +148,17 @@ export NOOP=
 export DO_NOT_PROCESS=
 export EXIT_CODE="0"
 
+
 # clear options we will add to tools
 #
 unset TOOL_OPTION
 declare -ag TOOL_OPTION
 
+
 # usage
 #
 export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
-			[-t tagline] [-T md2html.sh] [-p tool] [file...]
+			[-t tagline] [file...]
 
 	-h		print help message and exit
 	-v level	set verbosity level (def level: 0)
@@ -173,17 +176,13 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
 
 	-t tagline	string to write about the tool that formed the markdown content (def: $TAGLINE)
 			NOTE: 'tagline' may be enclosed within, but may NOT contain an internal single-quote, or double-quote.
-	-T md2html.sh	run 'markdown to html tool' to convert markdown into HTML (def: $MD2HTML_SH)
-
-	-p tool		run 'pandoc wrapper tool' (not pandoc path) during HTML phase number 21 (def: use $PANDOC_WRAPPER)
-			NOTE: The '-p tool' is passed as leading options on tool command lines.
 
 	-w site_url	Base URL of the website (def: $SITE_URL)
 			NOTE: The '-w site_url' is passed as leading options on tool command lines.
 
 NOTE: The '-v level' is passed as initial command line options to the 'markdown to html tool' (md2html.sh).
       The 'tagline' is passed as '-t tagline' to the 'markdown to html tool' (md2html.sh), after the '-v level'.
-      Any '-T md2html.sh', '-p tool', '-P pandoc_opts', '-U top_url'
+      Any '-P pandoc_opts', '-U top_url'
       are passed to the 'markdown to html tool' (md2html.sh), and will be before any command line arguments.
 
 Exit codes:
@@ -199,9 +198,10 @@ Exit codes:
 
 $NAME version: $VERSION"
 
+
 # parse command line
 #
-while getopts :hv:Vd:D:nNt:T:p:w: flag; do
+while getopts :hv:Vd:D:nNt:w: flag; do
   case "$flag" in
     h) echo "$USAGE" 1>&2
 	exit 2
@@ -250,14 +250,6 @@ while getopts :hv:Vd:D:nNt:T:p:w: flag; do
 	TAGLINE="$OPTARG"
 	# -t tagline always added after arg parsing
 	;;
-    T) MD2HTML_SH="$OPTARG"
-	TOOL_OPTION+=("-T")
-	TOOL_OPTION+=("$MD2HTML_SH")
-	;;
-    p) PANDOC_WRAPPER="$OPTARG"
-	TOOL_OPTION+=("-p")
-	TOOL_OPTION+=("$PANDOC_WRAPPER")
-	;;
     w) SITE_URL="$OPTARG"
 	TOOL_OPTION+=("-w")
 	TOOL_OPTION+=("$SITE_URL")
@@ -279,7 +271,7 @@ while getopts :hv:Vd:D:nNt:T:p:w: flag; do
 	;;
   esac
 done
-
+#
 # remove the options
 #
 shift $(( OPTIND - 1 ));
@@ -289,8 +281,9 @@ shift $(( OPTIND - 1 ));
 if [[ $V_FLAG -ge 5 ]]; then
     echo "$0: debug[5]: file argument count: $#" 1>&2
 fi
-
+#
 # allow specifying specific files to generate
+#
 FILE_COUNT="$#"
 while [[ $# -ne 0 ]]; do
     for (( index=0; index < ${#TOP_MD_SET[@]}; index++ )); do
@@ -304,11 +297,12 @@ if [[ "$FILE_COUNT" != 0 && ${#TOP_MD_SELECT_SET[@]} = 0 ]]; then
     echo "$0: ERROR: no select files specified are in allowed set" 1>&2
     exit 3
 fi
-
+#
 if [[ $# -ne 0 ]]; then
     echo "$0: ERROR: expected 0 args, found: $#" 1>&2
     exit 3
 fi
+
 
 # always add the '-v level' option, unless level is empty, to the set of options passed to the md2html.sh tool
 #
@@ -317,6 +311,7 @@ if [[ -n $V_FLAG ]]; then
     TOOL_OPTION+=("$V_FLAG")
 fi
 
+
 # always add the '-t tagline' option, unless tagline is empty, to the set of options passed to the md2html.sh tool
 #
 if [[ -n $TAGLINE ]]; then
@@ -324,10 +319,12 @@ if [[ -n $TAGLINE ]]; then
     TOOL_OPTION+=("$TAGLINE")
 fi
 
+
 # always add the '-D docroot/' for the top level files
 #
 TOOL_OPTION+=("-D")
 TOOL_OPTION+=("$DOCROOT_SLASH")
+
 
 # verify that we have a topdir directory
 #
@@ -348,6 +345,7 @@ if [[ ! -d $TOPDIR ]]; then
     echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_TOP_URL; cd $REPO_NAME" 1>&2
     exit 6
 fi
+
 
 # cd to topdir
 #
@@ -372,6 +370,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: now in directory: $(/bin/pwd)" 1>&2
 fi
 
+
 # verify that we have an author subdirectory
 #
 export AUTHOR_PATH="$TOPDIR/author"
@@ -380,6 +379,7 @@ if [[ ! -d $AUTHOR_PATH ]]; then
     exit 6
 fi
 export AUTHOR_DIR="author"
+
 
 # verify that we have a bin subdirectory
 #
@@ -390,34 +390,50 @@ if [[ ! -d $BIN_PATH ]]; then
 fi
 export BIN_DIR="bin"
 
-# verify that the md2html tool is executable
+
+# verify that the bin/md2html.sh tool is executable
 #
+export MD2HTML_SH="$BIN_DIR/md2html.sh"
 if [[ ! -e $MD2HTML_SH ]]; then
-    echo  "$0: ERROR: md2html.sh does not exist: $MD2HTML_SH" 1>&2
+    echo  "$0: ERROR: bin/md2html.sh does not exist: $MD2HTML_SH" 1>&2
     exit 5
 fi
 if [[ ! -f $MD2HTML_SH ]]; then
-    echo  "$0: ERROR: md2html.sh is not a regular file: $MD2HTML_SH" 1>&2
+    echo  "$0: ERROR: bin/md2html.sh is not a regular file: $MD2HTML_SH" 1>&2
     exit 5
 fi
 if [[ ! -x $MD2HTML_SH ]]; then
-    echo  "$0: ERROR: md2html.sh is not an executable file: $MD2HTML_SH" 1>&2
+    echo  "$0: ERROR: bin/md2html.sh is not an executable file: $MD2HTML_SH" 1>&2
     exit 5
 fi
+
+
+# verify that the bin/pandoc-wrapper.sh tool is executable
+#
+export PANDOC_WRAPPER="$BIN_DIR/pandoc-wrapper.sh"
+if [[ ! -e $PANDOC_WRAPPER ]]; then
+    echo  "$0: ERROR: bin/md2html.sh does not exist: $PANDOC_WRAPPER" 1>&2
+    exit 5
+fi
+if [[ ! -f $PANDOC_WRAPPER ]]; then
+    echo  "$0: ERROR: bin/md2html.sh is not a regular file: $PANDOC_WRAPPER" 1>&2
+    exit 5
+fi
+if [[ ! -x $PANDOC_WRAPPER ]]; then
+    echo  "$0: ERROR: bin/md2html.sh is not an executable file: $PANDOC_WRAPPER" 1>&2
+    exit 5
+fi
+
 
 # find the location tool
 #
 LOCATION_TOOL=$(type -P location)
-if [[ -z $LOCATION_TOOL ]]; then
-    # guess we have a location tool in bin
-    #
-    LOCATION_TOOL="$BIN_DIR/location"
-fi
 if [[ ! -x $LOCATION_TOOL ]]; then
     echo "$0: ERROR: cannot find the location executable" 1>&2
     echo "$0: notice: location tool comes from this repo: https://github.com/ioccc-src/mkiocccentry" 1>&2
     exit 5
 fi
+
 
 # print running info if verbose
 #
@@ -431,7 +447,6 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: TOPDIR=$TOPDIR" 1>&2
     echo "$0: debug[3]: DOCROOT_SLASH=$DOCROOT_SLASH" 1>&2
     echo "$0: debug[3]: TAGLINE=$TAGLINE" 1>&2
-    echo "$0: debug[3]: MD2HTML_SH=$MD2HTML_SH" 1>&2
     echo "$0: debug[3]: PANDOC_WRAPPER=$PANDOC_WRAPPER" 1>&2
     echo "$0: debug[3]: REPO_TOP_URL=$REPO_TOP_URL" 1>&2
     echo "$0: debug[3]: REPO_URL=$REPO_URL" 1>&2
@@ -456,7 +471,9 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: AUTHOR_DIR=$AUTHOR_DIR" 1>&2
     echo "$0: debug[3]: BIN_PATH=$BIN_PATH" 1>&2
     echo "$0: debug[3]: BIN_DIR=$BIN_DIR" 1>&2
+    echo "$0: debug[3]: MD2HTML_SH=$MD2HTML_SH" 1>&2
 fi
+
 
 # -N stops early before any processing is performed
 #
@@ -466,6 +483,7 @@ if [[ -n $DO_NOT_PROCESS ]]; then
     fi
     exit 0
 fi
+
 
 # process the entire markdown set
 #
@@ -628,6 +646,7 @@ else
 	fi
     done
 fi
+
 
 # All Done!!! All Done!!! -- Jessica Noll, Age 2
 #

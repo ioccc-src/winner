@@ -28,6 +28,7 @@
 #
 # Share and enjoy! :-)
 
+
 # firewall - run only with a bash that is version 5.1.8 or later
 #
 # The "/usr/bin/env bash" command must result in using a bash that
@@ -71,6 +72,7 @@ if [[ -z ${BASH_VERSINFO[0]} ||
     exit 4
 fi
 
+
 # setup bash file matching
 #
 # We must declare arrays with -ag or -Ag, and we need loops to "export" modified variables.
@@ -82,6 +84,7 @@ shopt -u dotglob	# disable matching files starting with .
 shopt -u nocaseglob	# disable strict case matching
 shopt -u extglob	# enable extended globbing patterns
 shopt -s globstar	# enable ** to match all files and zero or more directories and subdirectories
+
 
 # set variables referenced in the usage message
 #
@@ -105,10 +108,10 @@ export REPO_TOP_URL="https://github.com/ioccc-src/temp-test-ioccc"
 # GitHub puts individual files under the "blob/master" sub-directory.
 export REPO_URL="$REPO_TOP_URL/blob/master"
 
+
 # set usage message
 #
-export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
-			[-p tool] [-w site_url]
+export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N] [-w site_url]
 			YYYY/dir
 
 	-h		print help message and exit
@@ -120,8 +123,6 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
 
 	-n		go thru the actions, but do not update any files (def: do the action)
 	-N		do not process file, just parse arguments and ignore the file (def: process the file)
-
-	-p tool		This option is ignored
 
 	-w site_url	This option is ignored
 
@@ -140,15 +141,17 @@ Exit codes:
 
 $NAME version: $VERSION"
 
+
 # setup
 #
 export NOOP=
 export DO_NOT_PROCESS=
 export EXIT_CODE="0"
 
+
 # parse command line
 #
-while getopts :hv:Vd:D:nNp:U:w: flag; do
+while getopts :hv:Vd:D:nNU:w: flag; do
   case "$flag" in
     h) echo "$USAGE" 1>&2
 	exit 2
@@ -165,7 +168,6 @@ while getopts :hv:Vd:D:nNp:U:w: flag; do
 	;;
     N) DO_NOT_PROCESS="-N"
 	;;
-    p)  ;;
     U)  ;;
     w)  ;;
     \?) echo "$0: ERROR: invalid option: -$OPTARG" 1>&2
@@ -185,7 +187,7 @@ while getopts :hv:Vd:D:nNp:U:w: flag; do
 	;;
   esac
 done
-
+#
 # parse the command line arguments
 #
 if [[ $V_FLAG -ge 3 ]]; then
@@ -203,6 +205,7 @@ if [[ $# -ne 1 ]]; then
 fi
 #
 export ENTRY_PATH="$1"
+
 
 # verify that we have a topdir directory
 #
@@ -223,6 +226,7 @@ if [[ ! -d $TOPDIR ]]; then
     echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_TOP_URL; cd $REPO_NAME" 1>&2
     exit 6
 fi
+
 
 # cd to topdir
 #
@@ -247,6 +251,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: now in directory: $(/bin/pwd)" 1>&2
 fi
 
+
 # verify that we have a bin subdirectory
 #
 export BIN_PATH="$TOPDIR/bin"
@@ -255,6 +260,28 @@ if [[ ! -d $BIN_PATH ]]; then
     exit 6
 fi
 export BIN_DIR="bin"
+
+
+# verify we have our awk tool
+#
+export FILELIST_ENTRY_JSON_AWK="$BIN_DIR/filelist.entry.json.awk"
+if [[ ! -e $FILELIST_ENTRY_JSON_AWK ]]; then
+    echo "$0: ERROR: filelist.entry.json.awk  does not exist: $FILELIST_ENTRY_JSON_AWK" 1>&2
+    exit 5
+fi
+if [[ ! -f $FILELIST_ENTRY_JSON_AWK ]]; then
+    echo "$0: ERROR: filelist.entry.json.awk  is not a file: $FILELIST_ENTRY_JSON_AWK" 1>&2
+    exit 5
+fi
+if [[ ! -r $FILELIST_ENTRY_JSON_AWK ]]; then
+    echo "$0: ERROR: filelist.entry.json.awk  is not a readable file: $FILELIST_ENTRY_JSON_AWK" 1>&2
+    exit 5
+fi
+if [[ ! -s $FILELIST_ENTRY_JSON_AWK ]]; then
+    echo "$0: ERROR: filelist.entry.json.awk  is not a not a non-empty readable file: $FILELIST_ENTRY_JSON_AWK" 1>&2
+    exit 5
+fi
+
 
 # verify that ENTRY_PATH is a entry directory
 #
@@ -329,25 +356,6 @@ if [[ ! -r $ENTRY_JSON ]]; then
     exit 7
 fi
 
-# verify we have our awk tool
-#
-export FILELIST_ENTRY_JSON_AWK="$BIN_DIR/filelist.entry.json.awk"
-if [[ ! -e $FILELIST_ENTRY_JSON_AWK ]]; then
-    echo "$0: ERROR: filelist.entry.json.awk  does not exist: $FILELIST_ENTRY_JSON_AWK" 1>&2
-    exit 5
-fi
-if [[ ! -f $FILELIST_ENTRY_JSON_AWK ]]; then
-    echo "$0: ERROR: filelist.entry.json.awk  is not a file: $FILELIST_ENTRY_JSON_AWK" 1>&2
-    exit 5
-fi
-if [[ ! -r $FILELIST_ENTRY_JSON_AWK ]]; then
-    echo "$0: ERROR: filelist.entry.json.awk  is not a readable file: $FILELIST_ENTRY_JSON_AWK" 1>&2
-    exit 5
-fi
-if [[ ! -s $FILELIST_ENTRY_JSON_AWK ]]; then
-    echo "$0: ERROR: filelist.entry.json.awk  is not a not a non-empty readable file: $FILELIST_ENTRY_JSON_AWK" 1>&2
-    exit 5
-fi
 
 # parameter debugging
 #
@@ -367,6 +375,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: CD_FAILED=$CD_FAILED" 1>&2
     echo "$0: debug[3]: BIN_PATH=$BIN_PATH" 1>&2
     echo "$0: debug[3]: BIN_DIR=$BIN_DIR" 1>&2
+    echo "$0: debug[3]: FILELIST_ENTRY_JSON_AWK=$FILELIST_ENTRY_JSON_AWK" 1>&2
     echo "$0: debug[3]: YEAR_DIR=$YEAR_DIR" 1>&2
     echo "$0: debug[3]: ENTRY_DIR=$ENTRY_DIR" 1>&2
     echo "$0: debug[3]: ENTRY_ID=$ENTRY_ID" 1>&2
@@ -375,8 +384,8 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: DOT_PATH=$DOT_PATH" 1>&2
     echo "$0: debug[3]: DOT_PATH_CONTENT=$DOT_PATH_CONTENT" 1>&2
     echo "$0: debug[3]: ENTRY_JSON=$ENTRY_JSON" 1>&2
-    echo "$0: debug[3]: FILELIST_ENTRY_JSON_AWK=$FILELIST_ENTRY_JSON_AWK" 1>&2
 fi
+
 
 # If -N, time to exit
 #
@@ -386,6 +395,7 @@ if [[ -n $DO_NOT_PROCESS ]]; then
     fi
     exit 0
 fi
+
 
 # create a temporary file manifest list
 #
@@ -409,6 +419,7 @@ elif [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: because of -n, temporary file manifest list is not used: $TMP_MANIFEST_LIST" 1>&2
 fi
 
+
 # create a temporary find files list
 #
 export TMP_FILE_LIST=".tmp.$NAME.FILE_LIST.$$.tmp"
@@ -431,6 +442,7 @@ elif [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: because of -n, temporary file manifest list is not used: $TMP_FILE_LIST" 1>&2
 fi
 
+
 # generate sorted list of entry files from the entry's manifest
 #
 # We also add ioccc.css and var.mk from the top level.
@@ -447,6 +459,7 @@ if [[ $status -ne 0 ]]; then
     echo "$0: ERROR: LC_ALL=C sort -d $TMP_MANIFEST_LIST -o $TMP_MANIFEST_LIST failed, error: $status" 1>&2
     exit 1
 fi
+
 
 # generate sorted list of found entry files
 #
@@ -469,6 +482,7 @@ if [[ $status -ne 0 ]]; then
     echo "$0: ERROR: LC_ALL=C sort -d $TMP_FILE_LIST -o $TMP_FILE_LIST failed, error: $status" 1>&2
     exit 1
 fi
+
 
 # note if the manifest does NOT match the file list
 #
@@ -494,6 +508,7 @@ else
     echo "$0: Warning: found files not in manifest ends above: $ENTRY_PATH" 1>&2
     EXIT_CODE=1 # exit 1
 fi
+
 
 # All Done!!! All Done!!! -- Jessica Noll, Age 2
 #

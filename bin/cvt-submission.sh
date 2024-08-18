@@ -43,6 +43,7 @@
 #
 # Share and enjoy! :-)
 
+
 # firewall - run only with a bash that is version 5.1.8 or later
 #
 # The "/usr/bin/env bash" command must result in using a bash that
@@ -160,6 +161,7 @@ export DO_NOT_PROCESS=
 unset TAR_FILE_SET
 declare -ag TAR_FILE_SET
 export TARBALL_DIR="/var/tmp"
+
 
 # usage
 #
@@ -402,7 +404,6 @@ function manifest_entry
 }
 
 
-
 # parse command line
 #
 while getopts :hv:Vd:c:s:i:T:nN flag; do
@@ -446,7 +447,7 @@ while getopts :hv:Vd:c:s:i:T:nN flag; do
 	;;
   esac
 done
-
+#
 # remove the options
 #
 shift $(( OPTIND - 1 ));
@@ -464,6 +465,7 @@ if [[ $# -ne 1 ]]; then
     exit 3
 fi
 export ENTRY_PATH="$1"
+
 
 # if -i input_data, replace stdin with the input data file
 #
@@ -561,32 +563,38 @@ if [[ ! -d $BIN_PATH ]]; then
     exit 6
 fi
 export BIN_DIR="bin"
+
+
+# verify that the bin/md2html.sh tool is executable
 #
-export JVAL_WRAPPER="$BIN_DIR/jval-wrapper.sh"
+export MD2HTML_SH="$BIN_DIR/md2html.sh"
+if [[ ! -e $MD2HTML_SH ]]; then
+    echo  "$0: ERROR: bin/md2html.sh does not exist: $MD2HTML_SH" 1>&2
+    exit 5
+fi
+if [[ ! -f $MD2HTML_SH ]]; then
+    echo  "$0: ERROR: bin/md2html.sh is not a regular file: $MD2HTML_SH" 1>&2
+    exit 5
+fi
+if [[ ! -x $MD2HTML_SH ]]; then
+    echo  "$0: ERROR: bin/md2html.sh is not an executable file: $MD2HTML_SH" 1>&2
+    exit 5
+fi
+
+
+# verify that the bin/jval-wrapper.sh tool is executable
+#
+JVAL_WRAPPER="$BIN_DIR/jval-wrapper.sh"
 if [[ ! -e $JVAL_WRAPPER ]]; then
-    echo "$0: ERROR: bin/jval-wrapper.sh file does not exist: $JVAL_WRAPPER" 1>&2
+    echo  "$0: ERROR: bin/jval-wrapper.sh does not exist: $JVAL_WRAPPER" 1>&2
     exit 5
 fi
 if [[ ! -f $JVAL_WRAPPER ]]; then
-    echo "$0: ERROR: bin/jval-wrapper.sh is not a file: $JVAL_WRAPPER" 1>&2
+    echo  "$0: ERROR: bin/jval-wrapper.sh is not a regular file: $JVAL_WRAPPER" 1>&2
     exit 5
 fi
 if [[ ! -x $JVAL_WRAPPER ]]; then
-    echo "$0: ERROR: cannot find an executable bin/jval-wrapper.sh tool: $JVAL_WRAPPER" 1>&2
-    exit 5
-fi
-#
-export MD2HTML="$BIN_DIR/md2html.sh"
-if [[ ! -e $MD2HTML ]]; then
-    echo "$0: ERROR: bin/md2html.sh file does not exist: $MD2HTML" 1>&2
-    exit 5
-fi
-if [[ ! -f $MD2HTML ]]; then
-    echo "$0: ERROR: bin/md2html.sh is not a file: $MD2HTML" 1>&2
-    exit 5
-fi
-if [[ ! -x $MD2HTML ]]; then
-    echo "$0: ERROR: cannot find an executable bin/md2html.sh tool: $MD2HTML" 1>&2
+    echo  "$0: ERROR: bin/jval-wrapper.sh is not an executable file: $JVAL_WRAPPER" 1>&2
     exit 5
 fi
 
@@ -684,7 +692,7 @@ done
 
 # determine TARBALL filename
 #
-NOW=$(/bin/date '+%Y%m%d.%H%M%S')
+NOW=$(date '+%Y%m%d.%H%M%S')
 export NOW
 export TARBALL="$TARBALL_DIR/$ENTRY_ID.mods.$NOW.tar.bz2"
 
@@ -718,7 +726,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: BIN_PATH=$BIN_PATH" 1>&2
     echo "$0: debug[3]: BIN_DIR=$BIN_DIR" 1>&2
     echo "$0: debug[3]: JVAL_WRAPPER=$JVAL_WRAPPER" 1>&2
-    echo "$0: debug[3]: MD2HTML=$MD2HTML" 1>&2
+    echo "$0: debug[3]: MD2HTML_SH=$MD2HTML_SH" 1>&2
     echo "$0: debug[3]: YEAR_DIR=$YEAR_DIR" 1>&2
     echo "$0: debug[3]: ENTRY_DIR=$ENTRY_DIR" 1>&2
     echo "$0: debug[3]: ENTRY_ID=$ENTRY_ID" 1>&2
@@ -1521,12 +1529,12 @@ if [[ -z $NOOP ]]; then
     if [[ ! -f $INDEX_HTML ]]; then
 
 	if [[ $V_FLAG -ge 3 ]]; then
-	    echo  "$0: debug[3]: about to run: $MD2HTML -v $V_FLAG -- $README_MD $INDEX_HTML" 1>&2
+	    echo  "$0: debug[3]: about to run: $MD2HTML_SH -v $V_FLAG -- $README_MD $INDEX_HTML" 1>&2
 	fi
-	"$MD2HTML" -v "$V_FLAG" -- "$README_MD" "$INDEX_HTML"
+	"$MD2HTML_SH" -v "$V_FLAG" -- "$README_MD" "$INDEX_HTML"
 	status="$?"
 	if [[ $status -ne 0 ]]; then
-	    echo "$0: ERROR: $MD2HTML -v $V_FLAG -- $README_MD $INDEX_HTML filed," \
+	    echo "$0: ERROR: $MD2HTML_SH -v $V_FLAG -- $README_MD $INDEX_HTML filed," \
 		 "error code: $status" 1>&2
 	    exit 32
 	fi

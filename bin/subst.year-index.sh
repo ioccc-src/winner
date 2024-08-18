@@ -46,6 +46,7 @@
 #
 # Share and enjoy! :-)
 
+
 # firewall - run only with a bash that is version 5.1.8 or later
 #
 # The "/usr/bin/env bash" command must result in using a bash that
@@ -89,6 +90,7 @@ if [[ -z ${BASH_VERSINFO[0]} ||
     exit 4
 fi
 
+
 # setup bash file matching
 #
 # We must declare arrays with -ag or -Ag, and we need loops to "export" modified variables.
@@ -100,6 +102,7 @@ shopt -u dotglob	# disable matching files starting with .
 shopt -u nocaseglob	# disable strict case matching
 shopt -u extglob	# enable extended globbing patterns
 shopt -s globstar	# enable ** to match all files and zero or more directories and subdirectories
+
 
 # set variables referenced in the usage message
 #
@@ -124,6 +127,7 @@ export REPO_TOP_URL="https://github.com/ioccc-src/temp-test-ioccc"
 # GitHub puts individual files under the "blob/master" sub-directory.
 export REPO_URL="$REPO_TOP_URL/blob/master"
 export SITE_URL="https://ioccc-src.github.io/temp-test-ioccc"
+
 
 # set usage message
 #
@@ -162,6 +166,7 @@ Exit codes:
  >= 10         internal error
 
 $NAME version: $VERSION"
+
 
 # output_ordinal
 #
@@ -224,10 +229,12 @@ function output_ordinal
     return 0
 }
 
+
 # setup
 #
 export NOOP=
 export DO_NOT_PROCESS=
+
 
 # parse command line
 #
@@ -283,7 +290,7 @@ while getopts :hv:Vd:D:nNU:w:e:E: flag; do
 	;;
   esac
 done
-
+#
 # parse the command line arguments
 #
 if [[ $V_FLAG -ge 1 ]]; then
@@ -301,6 +308,7 @@ if [[ $# -ne 1 ]]; then
 fi
 #
 export YEAR_ARG="$1"
+
 
 # verify that we have a topdir directory
 #
@@ -322,6 +330,7 @@ if [[ ! -d $TOPDIR ]]; then
     exit 6
 fi
 
+
 # verify that we have an author subdirectory
 #
 export AUTHOR_PATH="$TOPDIR/author"
@@ -330,6 +339,7 @@ if [[ ! -d $AUTHOR_PATH ]]; then
     exit 6
 fi
 export AUTHOR_DIR="author"
+
 
 # verify that we have an inc subdirectory
 #
@@ -340,14 +350,6 @@ if [[ ! -d $INC_PATH ]]; then
 fi
 export INC_DIR="inc"
 
-# verify that we have a bin subdirectory
-#
-export BIN_PATH="$TOPDIR/bin"
-if [[ ! -d $BIN_PATH ]]; then
-    echo "$0: ERROR: bin is not a directory under topdir: $BIN_PATH" 1>&2
-    exit 6
-fi
-export BIN_DIR="bin"
 
 # cd to topdir
 #
@@ -372,6 +374,34 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: now in directory: $(/bin/pwd)" 1>&2
 fi
 
+
+# verify that we have a bin subdirectory
+#
+export BIN_PATH="$TOPDIR/bin"
+if [[ ! -d $BIN_PATH ]]; then
+    echo "$0: ERROR: bin is not a directory under topdir: $BIN_PATH" 1>&2
+    exit 6
+fi
+export BIN_DIR="bin"
+
+
+# verify we have our awk script
+#
+export YEAR_NAVBAR_AWK="$BIN_DIR/subst.year-navbar.awk"
+if [[ ! -e $YEAR_NAVBAR_AWK ]]; then
+    echo "$0: ERROR: bin/subst.year-navbar.awk does not exist: $YEAR_NAVBAR_AWK" 1>&2
+    exit 5
+fi
+if [[ ! -f $YEAR_NAVBAR_AWK ]]; then
+    echo "$0: ERROR: bin/subst.year-navbar.awk is not a file: $YEAR_NAVBAR_AWK" 1>&2
+    exit 5
+fi
+if [[ ! -r $YEAR_NAVBAR_AWK ]]; then
+    echo "$0: ERROR: bin/subst.year-navbar.awk is not a readable file: $YEAR_NAVBAR_AWK" 1>&2
+    exit 5
+fi
+
+
 # verify that YEAR_ARG is a entry directory
 #
 if [[ ! -d $YEAR_ARG ]]; then
@@ -387,6 +417,7 @@ if [[ -z $YEAR_DIR ]]; then
     echo "$0: ERROR: arg not in YYYY/dir form: $YEAR_ARG" 1>&2
     exit 3
 fi
+
 
 # verify we have a non-empty readable .top file
 #
@@ -408,21 +439,6 @@ if [[ ! -s $TOP_FILE ]]; then
     exit 6
 fi
 
-# verify we have our awk script
-#
-export YEAR_NAVBAR_AWK="$BIN_DIR/subst.year-navbar.awk"
-if [[ ! -e $YEAR_NAVBAR_AWK ]]; then
-    echo "$0: ERROR: bin/subst.year-navbar.awk does not exist: $YEAR_NAVBAR_AWK" 1>&2
-    exit 5
-fi
-if [[ ! -f $YEAR_NAVBAR_AWK ]]; then
-    echo "$0: ERROR: bin/subst.year-navbar.awk is not a file: $YEAR_NAVBAR_AWK" 1>&2
-    exit 5
-fi
-if [[ ! -r $YEAR_NAVBAR_AWK ]]; then
-    echo "$0: ERROR: bin/subst.year-navbar.awk is not a readable file: $YEAR_NAVBAR_AWK" 1>&2
-    exit 5
-fi
 
 # determine The N-th IOCCC string
 #
@@ -444,6 +460,7 @@ if [[ -z $ORDINAL ]]; then
     echo 211
     exit 211
 fi
+
 
 # parameter debugging
 #
@@ -475,6 +492,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: ORDINAL=$ORDINAL" 1>&2
 fi
 
+
 # If -N, time to exit
 #
 if [[ -n $DO_NOT_PROCESS ]]; then
@@ -484,25 +502,30 @@ if [[ -n $DO_NOT_PROCESS ]]; then
     exit 0
 fi
 
+
 # output TITLE substitution
 #
 echo "-s"
 echo "TITLE=$YEAR_DIR - The $ORDINAL IOCCC"
+
 
 # output DESCRIPTION substitution
 #
 echo "-s"
 echo "DESCRIPTION=IOCCC Year $YEAR_DIR"
 
+
 # output KEYWORDS substitution
 #
 echo "-s"
 echo "KEYWORDS=IOCCC, $YEAR_DIR, IOCCC $YEAR_DIR, IOCCC entry, The $ORDINAL IOCCC"
 
+
 # output HEADER_2 substitution
 #
 echo "-s"
 echo "HEADER_2=$YEAR_DIR - The $ORDINAL IOCCC"
+
 
 # output navbar left hand side links
 #
@@ -513,12 +536,14 @@ if [[ $status -ne 0 ]]; then
     exit 1
 fi
 
+
 # output navbar right hand side links
 #
 echo "-s"
 echo "INVENTORY_LINK=#inventory"
 echo "-s"
 echo "INVENTORY_TEXT=Inventory"
+
 
 # All Done!!! All Done!!! -- Jessica Noll, Age 2
 #

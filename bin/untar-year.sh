@@ -26,6 +26,7 @@
 #
 # Share and enjoy! :-)
 
+
 # firewall - run only with a bash that is version 5.1.8 or later
 #
 # The "/usr/bin/env bash" command must result in using a bash that
@@ -81,6 +82,7 @@ shopt -u nocaseglob	# disable strict case matching
 shopt -u extglob	# enable extended globbing patterns
 shopt -s globstar	# enable ** to match all files and zero or more directories and subdirectories
 
+
 # set variables referenced in the usage message
 #
 export VERSION="1.0.4 2024-08-05"
@@ -110,10 +112,11 @@ if [[ -z "$GIT_TOOL" ]]; then
     exit 8
 fi
 
+
 # set usage message
 #
 export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
-			[-p tool] [-w site_url] [-W]
+			[-w site_url] [-W]
 			YYYY
 
 	-h		print help message and exit
@@ -125,8 +128,6 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
 
 	-n		go thru the actions, but do not update any files (def: do the action)
 	-N		do not process file, just parse arguments and ignore the file (def: process the file)
-
-	-p tool		This option is ignored
 
 	-w site_url	This option is ignored
 
@@ -148,14 +149,16 @@ Exit codes:
 
 $NAME version: $VERSION"
 
+
 # setup
 #
 export NOOP=
 export DO_NOT_PROCESS=
 
+
 # parse command line
 #
-while getopts :hv:Vd:D:nNp:U:w:W flag; do
+while getopts :hv:Vd:D:nNU:w:W flag; do
   case "$flag" in
     h) echo "$USAGE" 1>&2
 	exit 2
@@ -172,7 +175,6 @@ while getopts :hv:Vd:D:nNp:U:w:W flag; do
 	;;
     N) DO_NOT_PROCESS="-N"
 	;;
-    p)  ;;
     U)  ;;
     w)  ;;
     W) CAP_W_FLAG_FOUND="true"
@@ -194,7 +196,7 @@ while getopts :hv:Vd:D:nNp:U:w:W flag; do
 	;;
   esac
 done
-
+#
 # parse the command line arguments
 #
 if [[ $V_FLAG -ge 3 ]]; then
@@ -212,6 +214,7 @@ if [[ $# -ne 1 ]]; then
 fi
 #
 export YYYY="$1"
+
 
 # verify that we have a topdir directory
 #
@@ -232,6 +235,7 @@ if [[ ! -d $TOPDIR ]]; then
     echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_TOP_URL; cd $REPO_NAME" 1>&2
     exit 6
 fi
+
 
 # cd to topdir
 #
@@ -256,6 +260,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: now in directory: $(/bin/pwd)" 1>&2
 fi
 
+
 # verify that YYYY is an IOCCC year directory
 #
 if [[ ! -e $YYYY ]]; then
@@ -270,6 +275,7 @@ if [[ ! -r $YYYY ]]; then
     echo "$0: ERROR: arg is not a readable directory: $YYYY" 1>&2
     exit 6
 fi
+
 
 # verify that YYYY has a non-empty readable .year file
 #
@@ -290,6 +296,7 @@ if [[ ! -s $DOT_YEAR ]]; then
     echo  "$0: ERROR: YYYY/.year is not a non-empty readable file: $DOT_YEAR" 1>&2
     exit 6
 fi
+
 
 # determine the name of our tarball
 #
@@ -317,6 +324,7 @@ if [[ ! -s $TARBALL ]]; then
     exit 1
 fi
 
+
 # parameter debugging
 #
 if [[ $V_FLAG -ge 3 ]]; then
@@ -338,6 +346,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: TARBALL=$TARBALL" 1>&2
 fi
 
+
 # If -N, time to exit
 #
 if [[ -n $DO_NOT_PROCESS ]]; then
@@ -346,6 +355,7 @@ if [[ -n $DO_NOT_PROCESS ]]; then
     fi
     exit 0
 fi
+
 
 # untar entry compressed tarball
 #
@@ -382,6 +392,7 @@ elif [[ $V_FLAG -ge 5 ]]; then
     echo "$0: debug[5]: because of -n, did not execute:" \
 		"$GTAR_TOOL --totals -jxvf $TARBALL" 1>&2
 fi
+
 
 # All Done!!! All Done!!! -- Jessica Noll, Age 2
 #

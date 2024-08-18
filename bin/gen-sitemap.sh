@@ -26,6 +26,7 @@
 #
 # Share and enjoy! :-)
 
+
 # firewall - run only with a bash that is version 5.1.8 or later
 #
 # The "/usr/bin/env bash" command must result in using a bash that
@@ -81,6 +82,7 @@ shopt -u dotglob	# disable matching files starting with .
 shopt -u nocaseglob	# disable strict case matching
 shopt -u extglob	# enable extended globbing patterns
 shopt -s globstar	# enable ** to match all files and zero or more directories and subdirectories
+
 
 # set variables referenced in the usage message
 #
@@ -194,6 +196,7 @@ function output_modtime
     return 0
 }
 
+
 # set usage message
 #
 export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-n] [-N]
@@ -228,11 +231,13 @@ Exit codes:
 
 $NAME version: $VERSION"
 
+
 # setup
 #
 export NOOP=
 export DO_NOT_PROCESS=
 export EXIT_CODE="0"
+
 
 # parse command line
 #
@@ -273,7 +278,7 @@ while getopts :hv:Vd:nNw:W flag; do
 	;;
   esac
 done
-
+#
 # parse the command line arguments
 #
 if [[ $V_FLAG -ge 3 ]]; then
@@ -289,7 +294,7 @@ if [[ $# -ne 0 ]]; then
     echo "$0: ERROR: expected 0 args, found: $#" 1>&2
     exit 3
 fi
-#
+
 
 # verify that we have a topdir directory
 #
@@ -310,6 +315,7 @@ if [[ ! -d $TOPDIR ]]; then
     echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_TOP_URL; cd $REPO_NAME" 1>&2
     exit 6
 fi
+
 
 # cd to topdir
 #
@@ -334,6 +340,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: now in directory: $(/bin/pwd)" 1>&2
 fi
 
+
 # verify that we have an archive/historic subdirectory
 #
 export ARCHIVE_HISTORIC_PATH="$TOPDIR/archive/historic"
@@ -342,6 +349,7 @@ if [[ ! -d $ARCHIVE_HISTORIC_PATH ]]; then
     exit 6
 fi
 export ARCHIVE_HISTORIC_DIR="archive/historic"
+
 
 # verify that we have an author subdirectory
 #
@@ -352,6 +360,7 @@ if [[ ! -d $AUTHOR_PATH ]]; then
 fi
 export AUTHOR_DIR="author"
 
+
 # verify that we have a bin subdirectory
 #
 export BIN_PATH="$TOPDIR/bin"
@@ -361,18 +370,6 @@ if [[ ! -d $BIN_PATH ]]; then
 fi
 export BIN_DIR="bin"
 
-# verify that we have an inc subdirectory
-#
-export INC_PATH="$TOPDIR/inc"
-if [[ ! -d $INC_PATH ]]; then
-    echo "$0: ERROR: inc is not a directory under topdir: $INC_PATH" 1>&2
-    exit 6
-fi
-export INC_DIR="inc"
-
-# determine the name of sitemap
-#
-export SITEMAP="sitemap.xml"
 
 # verify we have our awk tool
 #
@@ -394,6 +391,22 @@ if [[ ! -s $FILELIST_ENTRY_JSON_AWK ]]; then
     exit 5
 fi
 
+
+# verify that we have an inc subdirectory
+#
+export INC_PATH="$TOPDIR/inc"
+if [[ ! -d $INC_PATH ]]; then
+    echo "$0: ERROR: inc is not a directory under topdir: $INC_PATH" 1>&2
+    exit 6
+fi
+export INC_DIR="inc"
+
+
+# determine the name of sitemap
+#
+export SITEMAP="sitemap.xml"
+
+
 # verify we have a non-empty readable .top file
 #
 export TOP_FILE=".top"
@@ -413,6 +426,7 @@ if [[ ! -s $TOP_FILE ]]; then
     echo  "$0: ERROR: .top is not a non-empty readable file: $TOP_FILE" 1>&2
     exit 6
 fi
+
 
 # determine how we can determine the file modification time in W3C Datetime format:
 #
@@ -471,6 +485,7 @@ else
     fi
 fi
 
+
 # parameter debugging
 #
 if [[ $V_FLAG -ge 3 ]]; then
@@ -498,11 +513,12 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: BIN_PATH=$BIN_PATH" 1>&2
     echo "$0: debug[3]: BIN_DIR=$BIN_DIR" 1>&2
     echo "$0: debug[3]: INC_PATH=$INC_PATH" 1>&2
+    echo "$0: debug[3]: FILELIST_ENTRY_JSON_AWK=$FILELIST_ENTRY_JSON_AWK" 1>&2
     echo "$0: debug[3]: INC_DIR=$INC_DIR" 1>&2
     echo "$0: debug[3]: SITEMAP=$SITEMAP" 1>&2
-    echo "$0: debug[3]: FILELIST_ENTRY_JSON_AWK=$FILELIST_ENTRY_JSON_AWK" 1>&2
     echo "$0: debug[3]: TOP_FILE=$TOP_FILE" 1>&2
 fi
+
 
 # If -N, time to exit
 #
@@ -512,6 +528,7 @@ if [[ -n $DO_NOT_PROCESS ]]; then
     fi
     exit 0
 fi
+
 
 # create a temporary file manifest list
 #
@@ -530,6 +547,7 @@ if [[ ! -e $TMP_MANIFEST_LIST ]]; then
     echo "$0: ERROR: cannot create temporary file manifest list: $TMP_MANIFEST_LIST" 1>&2
     exit 11
 fi
+
 
 # create a temporary exit code
 #
@@ -552,6 +570,7 @@ if [[ ! -e $TMP_EXIT_CODE ]]; then
     exit 15
 fi
 
+
 # create a temporary sitemap
 #
 export TMP_SITEMAP=".tmp.$NAME.SITEMAP.$$.tmp"
@@ -569,6 +588,7 @@ if [[ ! -e $TMP_SITEMAP ]]; then
     echo "$0: ERROR: cannot create temporary tarball: $TMP_SITEMAP" 1>&2
     exit 17
 fi
+
 
 # add top level files to the file manifest list
 #
@@ -611,9 +631,11 @@ winners.html
 years.html
 EOF0
 
+
 # add files from selected sub-directories
 #
 find "$ARCHIVE_HISTORIC_DIR" "$AUTHOR_DIR" "$BIN_DIR" "$INC_DIR" -type f -print >> "$TMP_MANIFEST_LIST"
+
 
 # generate sorted list of entry files from the full IOCCC manifest
 #
@@ -796,6 +818,7 @@ if [[ $EXIT_CODE -ne 0 ]]; then
     exit "$EXIT_CODE"
 fi
 
+
 # sort the manifest list
 #
 LC_ALL=C sort -d "$TMP_MANIFEST_LIST" -o "$TMP_MANIFEST_LIST"
@@ -804,6 +827,7 @@ if [[ $status -ne 0 ]]; then
     echo "$0: ERROR: LC_ALL=C sort -d $TMP_MANIFEST_LIST -o $TMP_MANIFEST_LIST failed, error: $status" 1>&2
     exit 1
 fi
+
 
 # verify that the manifest list contains only readable files
 #
@@ -843,6 +867,7 @@ if [[ $EXIT_CODE -ne 0 ]]; then
     echo "$0: Warning: about to exit $EXIT_CODE" 1>&2
     exit "$EXIT_CODE"
 fi
+
 
 # form the sitemap
 #
@@ -897,6 +922,7 @@ if [[ -z $EXIT_CODE ]]; then
     exit 19
 fi
 
+
 # move the sitemap in place only if different
 #
 if [[ -z $NOOP ]]; then
@@ -937,6 +963,7 @@ if [[ -z $NOOP ]]; then
 elif [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: because of -n, temporary file manifest list was not formed: $TMP_MANIFEST_LIST" 1>&2
 fi
+
 
 # All Done!!! All Done!!! -- Jessica Noll, Age 2
 #

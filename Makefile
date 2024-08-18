@@ -303,7 +303,7 @@ indent.c:
 .PHONY: help genpath genfilelist verify_entry_files gen_authors quick_authors \
 	gen_location quick_location gen_years find_missing_links test entry_index gen_top_html \
 	thanks gen_other_html quick_other_html quick_entry_index \
-	gen_year_index quick_www www untar_entry_tarball untar_year_tarball \
+	gen_year_index quick_year_index quick_www www untar_entry_tarball untar_year_tarball \
 	form_entry_tarball form_year_tarball tar gen_status gen_sitemap \
 	sitemap timestamp update csv2entry entry2csv
 
@@ -344,6 +344,7 @@ help:
 	@echo 'make gen_other_html	;: build entry HTML files from markdown other than README.md'
 	@echo 'make quick_other_html	;: build entry non-index.html files that might be out of date'
 	@echo 'make gen_year_index	;: generate year level index.html files using from README.md files'
+	@echo 'make quick_year_index	;: generate year level index.html when year level README.md is newer'
 	@echo 'make gen_top_html	;: generate a number of the top level HTML files from markdown'
 	@echo 'make gen_next		;: generate the HTML files in next/'
 	@echo 'make quick_entry_index	;: build winner index.html files that might be out of date'
@@ -551,6 +552,16 @@ gen_year_index: ${ALL_YEARS} ${GEN_YEAR_INDEX}
 	${ALL_YEARS} -v 1 ${GEN_YEAR_INDEX} -v 1
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
+# generate year level index.html files when year level README.md is newer
+#
+# generate year level index.html files using the
+# ${GEN_YEAR_INDEX} tool (bin/gen-year-index.sh).
+#
+quick_year_index: ${ALL_YEARS} ${GEN_YEAR_INDEX}
+	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	${ALL_YEARS} -v 1 -Q ${GEN_YEAR_INDEX} -v 1
+	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+
 # build winner index.html files that might be out of date
 #
 # This rule uses the ${QUICK_README2INDEX} tool
@@ -690,7 +701,7 @@ quick_www:
 	${MAKE} quick_authors
 	${MAKE} quick_location
 	${MAKE} gen_years
-	${MAKE} gen_year_index
+	${MAKE} quick_year_index
 	${MAKE} gen_top_html
 	${MAKE} quick_entry_index
 	${MAKE} quick_other_html

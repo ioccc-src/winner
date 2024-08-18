@@ -17,7 +17,7 @@
 #
 # Each tool run with command line of the form:
 #
-#	tool [any -D, -t tagline, -T md2html.sh, -p tool, -w site_url] [more_options] YYYY/dir
+#	tool [any -D, -t tagline, -w site_url] [more_options] YYYY/dir
 #
 # For example:
 #
@@ -54,6 +54,7 @@
 # chongo (Landon Curt Noll, http://www.isthe.com/chongo/index.html) /\oo/\
 #
 # Share and enjoy! :-)
+
 
 # firewall - run only with a bash that is version 5.1.8 or later
 #
@@ -111,9 +112,10 @@ shopt -u nocaseglob	# disable strict case matching
 shopt -u extglob	# enable extended globbing patterns
 shopt -s globstar	# enable ** to match all files and zero or more directories and subdirectories
 
+
 # set variables referenced in the usage message
 #
-export VERSION="1.3.6 2024-08-05"
+export VERSION="1.4 2024-08-17"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -131,8 +133,6 @@ fi
 export TOPDIR
 export DOCROOT_SLASH="../../"
 export TAGLINE="unspecified"
-export MD2HTML_SH="bin/md2html.sh"
-export PANDOC_WRAPPER="bin/pandoc-wrapper.sh"
 export REPO_TOP_URL="https://github.com/ioccc-src/temp-test-ioccc"
 # GitHub puts individual files under the "blob/master" sub-directory.
 export REPO_URL="$REPO_TOP_URL/blob/master"
@@ -142,15 +142,17 @@ export NOOP=
 export DO_NOT_PROCESS=
 export EXIT_CODE="0"
 
+
 # clear options we will add to tools
 #
 unset TOOL_OPTION
 declare -ag TOOL_OPTION
 
+
 # usage
 #
 export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
-			[-t tagline] [-T md2html.sh] [-p tool] [-w site_url]
+			[-t tagline] [-w site_url]
 			tool [more_options]
 
 	-h		print help message and exit
@@ -167,10 +169,6 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
 
 	-t tagline	string to write about the tool that formed the markdown content (def: $TAGLINE)
 			NOTE: The '-t tagline' is passed as leading options on tool command lines.
-	-T md2html.sh	run 'markdown to html tool' to convert markdown into HTML (def: $MD2HTML_SH)
-			NOTE: The '-T md2html.sh' is passed as leading options on tool command lines.
-
-	-p tool		run 'pandoc wrapper tool' (not pandoc path) during HTML phase number 21 (def: use $PANDOC_WRAPPER)
 
 	-w site_url	Base URL of the website (def: $SITE_URL)
 			NOTE: The '-w site_url' is passed as leading options on tool command lines.
@@ -178,7 +176,7 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
 	tool		the tool to run over all entries
 	[more_options]	additional tool command line options to use before the YYYY/dir argument
 
-NOTE: Any '-D docroot/', '-t tagline', '-T md2html.sh', '-p tool', '-w site_url'
+NOTE: Any '-D docroot/', '-t tagline', '-w site_url'
       are passed to the 'tool' at the beginning of the command line, and
       before any optional 'more_options' and before the final YYYY/dir argument.
 
@@ -195,9 +193,10 @@ Exit codes:
 
 $NAME version: $VERSION"
 
+
 # parse command line
 #
-while getopts :hv:Vd:D:nNt:T:p:w: flag; do
+while getopts :hv:Vd:D:nNt:w: flag; do
   case "$flag" in
     h) echo "$USAGE" 1>&2
 	exit 2
@@ -246,14 +245,6 @@ while getopts :hv:Vd:D:nNt:T:p:w: flag; do
 	TOOL_OPTION+=("-t")
 	TOOL_OPTION+=("$TAGLINE")
 	;;
-    T) MD2HTML_SH="$OPTARG"
-	TOOL_OPTION+=("-T")
-	TOOL_OPTION+=("$MD2HTML_SH")
-	;;
-    p) PANDOC_WRAPPER="$OPTARG"
-	TOOL_OPTION+=("-p")
-	TOOL_OPTION+=("$PANDOC_WRAPPER")
-	;;
     w) SITE_URL="$OPTARG"
 	TOOL_OPTION+=("-w")
 	TOOL_OPTION+=("$SITE_URL")
@@ -275,7 +266,7 @@ while getopts :hv:Vd:D:nNt:T:p:w: flag; do
 	;;
   esac
 done
-
+#
 # remove the options
 #
 shift $(( OPTIND - 1 ));
@@ -303,6 +294,7 @@ case "$#" in
    ;;
 esac
 
+
 # verify that we have a topdir directory
 #
 REPO_NAME=$(basename "$REPO_TOP_URL")
@@ -322,6 +314,7 @@ if [[ ! -d $TOPDIR ]]; then
     echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_TOP_URL; cd $REPO_NAME" 1>&2
     exit 6
 fi
+
 
 # cd to topdir
 #
@@ -345,6 +338,51 @@ fi
 if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: now in directory: $(/bin/pwd)" 1>&2
 fi
+
+
+# verify that we have a bin subdirectory
+#
+export BIN_PATH="$TOPDIR/bin"
+if [[ ! -d $BIN_PATH ]]; then
+    echo "$0: ERROR: bin is not a directory under topdir: $BIN_PATH" 1>&2
+    exit 6
+fi
+export BIN_DIR="bin"
+
+
+# verify that the bin/md2html.sh tool is executable
+#
+export MD2HTML_SH="$BIN_DIR/md2html.sh"
+if [[ ! -e $MD2HTML_SH ]]; then
+    echo  "$0: ERROR: bin/md2html.sh does not exist: $MD2HTML_SH" 1>&2
+    exit 5
+fi
+if [[ ! -f $MD2HTML_SH ]]; then
+    echo  "$0: ERROR: bin/md2html.sh is not a regular file: $MD2HTML_SH" 1>&2
+    exit 5
+fi
+if [[ ! -x $MD2HTML_SH ]]; then
+    echo  "$0: ERROR: bin/md2html.sh is not an executable file: $MD2HTML_SH" 1>&2
+    exit 5
+fi
+
+
+# verify that the bin/pandoc-wrapper.sh tool is executable
+#
+export PANDOC_WRAPPER="$BIN_DIR/pandoc-wrapper.sh"
+if [[ ! -e $PANDOC_WRAPPER ]]; then
+    echo  "$0: ERROR: bin/md2html.sh does not exist: $PANDOC_WRAPPER" 1>&2
+    exit 5
+fi
+if [[ ! -f $PANDOC_WRAPPER ]]; then
+    echo  "$0: ERROR: bin/md2html.sh is not a regular file: $PANDOC_WRAPPER" 1>&2
+    exit 5
+fi
+if [[ ! -x $PANDOC_WRAPPER ]]; then
+    echo  "$0: ERROR: bin/md2html.sh is not an executable file: $PANDOC_WRAPPER" 1>&2
+    exit 5
+fi
+
 
 # verify we have a non-empty readable .top file
 #
@@ -408,8 +446,6 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: TOPDIR=$TOPDIR" 1>&2
     echo "$0: debug[3]: DOCROOT_SLASH=$DOCROOT_SLASH" 1>&2
     echo "$0: debug[3]: TAGLINE=$TAGLINE" 1>&2
-    echo "$0: debug[3]: MD2HTML_SH=$MD2HTML_SH" 1>&2
-    echo "$0: debug[3]: PANDOC_WRAPPER=$PANDOC_WRAPPER" 1>&2
     echo "$0: debug[3]: REPO_TOP_URL=$REPO_TOP_URL" 1>&2
     echo "$0: debug[3]: REPO_URL=$REPO_URL" 1>&2
     echo "$0: debug[3]: SITE_URL=$SITE_URL" 1>&2
@@ -422,8 +458,13 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: TOOL=$TOOL" 1>&2
     echo "$0: debug[3]: REPO_NAME=$REPO_NAME" 1>&2
     echo "$0: debug[3]: CD_FAILED=$CD_FAILED" 1>&2
+    echo "$0: debug[3]: BIN_PATH=$BIN_PATH" 1>&2
+    echo "$0: debug[3]: BIN_DIR=$BIN_DIR" 1>&2
+    echo "$0: debug[3]: MD2HTML_SH=$MD2HTML_SH" 1>&2
+    echo "$0: debug[3]: PANDOC_WRAPPER=$PANDOC_WRAPPER" 1>&2
     echo "$0: debug[3]: TOP_FILE=$TOP_FILE" 1>&2
 fi
+
 
 # -N stops early before any processing is performed
 #
@@ -433,6 +474,7 @@ if [[ -n $DO_NOT_PROCESS ]]; then
     fi
     exit 0
 fi
+
 
 # process each year
 #
@@ -619,6 +661,7 @@ for YYYY in $(< "$TOP_FILE"); do
 	fi
     done
 done
+
 
 # All Done!!! All Done!!! -- Jessica Noll, Age 2
 #

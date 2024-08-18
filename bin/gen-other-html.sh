@@ -26,6 +26,7 @@
 #
 # Share and enjoy! :-)
 
+
 # firewall - run only with a bash that is version 5.1.8 or later
 #
 # The "/usr/bin/env bash" command must result in using a bash that
@@ -82,9 +83,10 @@ shopt -u nocaseglob	# disable strict case matching
 shopt -u extglob	# enable extended globbing patterns
 shopt -s globstar	# enable ** to match all files and zero or more directories and subdirectories
 
+
 # set variables referenced in the usage message
 #
-export VERSION="1.3 2024-08-11"
+export VERSION="1.4 2024-08-17"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -114,15 +116,17 @@ export DO_NOT_PROCESS=
 export QUICK_MODE=
 export EXIT_CODE="0"
 
+
 # clear options we will add to tools
 #
 unset TOOL_OPTION
 declare -ag TOOL_OPTION
 
+
 # usage
 #
 export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
-			[-t tagline] [-T md2html.sh] [-p tool] [-Q] [-w site_url]
+			[-t tagline] [-Q] [-w site_url]
 
 	-h		print help message and exit
 	-v level	set verbosity level (def level: 0)
@@ -138,17 +142,13 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
 
 	-t tagline	string to write about the tool that formed the markdown content (def: $TAGLINE)
 			NOTE: The '-t tagline' is passed as leading options on tool command lines.
-	-T md2html.sh	run 'markdown to html tool' to convert markdown into HTML (def: $MD2HTML_SH)
-			NOTE: The '-T md2html.sh' is passed as leading options on tool command lines.
 
 	-Q	        quick mode, do not run $MD2HTML_SH unless markdown is out of date (def: do)
-
-	-p tool		run 'pandoc wrapper tool' (not pandoc path) during HTML phase number 21 (def: use $PANDOC_WRAPPER)
 
 	-w site_url	Base URL of the website (def: $SITE_URL)
 			NOTE: The '-w site_url' is passed as leading options on tool command lines.
 
-NOTE: Any '-D docroot/', '-t tagline', '-T md2html.sh', '-p tool', '-w site_url'
+NOTE: Any '-D docroot/', '-t tagline', '-w site_url'
       are passed to the 'tool' at the beginning of the command line, and
       before any optional 'more_options' and before the final YYYY/dir argument.
 
@@ -168,7 +168,7 @@ $NAME version: $VERSION"
 
 # parse command line
 #
-while getopts :hv:Vd:D:nNt:T:p:Qw: flag; do
+while getopts :hv:Vd:D:nNt:Qw: flag; do
   case "$flag" in
     h) echo "$USAGE" 1>&2
 	exit 2
@@ -215,14 +215,6 @@ while getopts :hv:Vd:D:nNt:T:p:Qw: flag; do
 	esac
 	TAGLINE="$OPTARG"
 	;;
-    T) MD2HTML_SH="$OPTARG"
-	TOOL_OPTION+=("-T")
-	TOOL_OPTION+=("$MD2HTML_SH")
-	;;
-    p) PANDOC_WRAPPER="$OPTARG"
-	TOOL_OPTION+=("-p")
-	TOOL_OPTION+=("$PANDOC_WRAPPER")
-	;;
     Q) QUICK_MODE="-Q"
 	;;
     w) SITE_URL="$OPTARG"
@@ -244,7 +236,7 @@ while getopts :hv:Vd:D:nNt:T:p:Qw: flag; do
 	;;
   esac
 done
-
+#
 # remove the options
 #
 shift $(( OPTIND - 1 ));
@@ -258,6 +250,7 @@ if [[ $# -ne 0 ]]; then
     echo "$USAGE" 1>&2
     exit 3
 fi
+
 
 # verify that we have a topdir directory
 #
@@ -278,6 +271,7 @@ if [[ ! -d $TOPDIR ]]; then
     echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_TOP_URL; cd $REPO_NAME" 1>&2
     exit 6
 fi
+
 
 # cd to topdir
 #
@@ -302,6 +296,34 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: now in directory: $(/bin/pwd)" 1>&2
 fi
 
+
+# verify that we have a bin subdirectory
+#
+export BIN_PATH="$TOPDIR/bin"
+if [[ ! -d $BIN_PATH ]]; then
+    echo "$0: ERROR: bin is not a directory under topdir: $BIN_PATH" 1>&2
+    exit 6
+fi
+export BIN_DIR="bin"
+
+
+# verify that the bin/md2html.sh tool is executable
+#
+export MD2HTML_SH="$BIN_DIR/md2html.sh"
+if [[ ! -e $MD2HTML_SH ]]; then
+    echo  "$0: ERROR: bin/md2html.sh does not exist: $MD2HTML_SH" 1>&2
+    exit 5
+fi
+if [[ ! -f $MD2HTML_SH ]]; then
+    echo  "$0: ERROR: bin/md2html.sh is not a regular file: $MD2HTML_SH" 1>&2
+    exit 5
+fi
+if [[ ! -x $MD2HTML_SH ]]; then
+    echo  "$0: ERROR: bin/md2html.sh is not an executable file: $MD2HTML_SH" 1>&2
+    exit 5
+fi
+
+
 # verify we have a non-empty readable .top file
 #
 export TOP_FILE=".top"
@@ -322,20 +344,6 @@ if [[ ! -s $TOP_FILE ]]; then
     exit 6
 fi
 
-# verify that the md2html.sh is an executable file
-#
-if [[ ! -e $MD2HTML_SH ]]; then
-    echo  "$0: ERROR: md2html.sh does not exist: $MD2HTML_SH" 1>&2
-    exit 5
-fi
-if [[ ! -f $MD2HTML_SH ]]; then
-    echo  "$0: ERROR: md2html.sh is not a regular file: $MD2HTML_SH" 1>&2
-    exit 5
-fi
-if [[ ! -x $MD2HTML_SH ]]; then
-    echo  "$0: ERROR: md2html.sh is not an executable file: $MD2HTML_SH" 1>&2
-    exit 5
-fi
 
 # always set the tagline
 #
@@ -343,6 +351,7 @@ TOOL_OPTION+=("-t")
 TOOL_OPTION+=("$TAGLINE")
 TOOL_OPTION+=("-w")
 TOOL_OPTION+=("$SITE_URL")
+
 
 # print running info if verbose
 #
@@ -356,7 +365,6 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: TOPDIR=$TOPDIR" 1>&2
     echo "$0: debug[3]: DOCROOT_SLASH=$DOCROOT_SLASH" 1>&2
     echo "$0: debug[3]: TAGLINE=$TAGLINE" 1>&2
-    echo "$0: debug[3]: MD2HTML_SH=$MD2HTML_SH" 1>&2
     echo "$0: debug[3]: PANDOC_WRAPPER=$PANDOC_WRAPPER" 1>&2
     echo "$0: debug[3]: REPO_TOP_URL=$REPO_TOP_URL" 1>&2
     echo "$0: debug[3]: REPO_URL=$REPO_URL" 1>&2
@@ -370,8 +378,12 @@ if [[ $V_FLAG -ge 3 ]]; then
     done
     echo "$0: debug[3]: REPO_NAME=$REPO_NAME" 1>&2
     echo "$0: debug[3]: CD_FAILED=$CD_FAILED" 1>&2
+    echo "$0: debug[3]: BIN_PATH=$BIN_PATH" 1>&2
+    echo "$0: debug[3]: BIN_DIR=$BIN_DIR" 1>&2
+    echo "$0: debug[3]: MD2HTML_SH=$MD2HTML_SH" 1>&2
     echo "$0: debug[3]: TOP_FILE=$TOP_FILE" 1>&2
 fi
+
 
 # -N stops early before any processing is performed
 #
@@ -381,6 +393,7 @@ if [[ -n $DO_NOT_PROCESS ]]; then
     fi
     exit 0
 fi
+
 
 # create a temporary exit code
 #
@@ -406,6 +419,7 @@ if [[ -z $NOOP ]]; then
 elif [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: because of -n, temporary exit code is not used: $TMP_EXIT_CODE" 1>&2
 fi
+
 
 # process each year
 #
@@ -585,6 +599,8 @@ for YYYY in $(< "$TOP_FILE"); do
 	    HTML_BASENAME=$(basename "$HTML_FILE")
 	    export HTML_BASENAME
 
+	    # case: -Q (quick mode)
+	    #
 	    # determine if we need to run the tool
 	    #
 	    # Check if the non-empty foo.html is newer than foo.md.
@@ -599,6 +615,14 @@ for YYYY in $(< "$TOP_FILE"); do
 		    if [[ $V_FLAG -ge 3 ]]; then
 			echo "$0: debug[3]: does not need to be updated: $HTML_FILE" 1>&2
 		    fi
+
+		    # case -Q: (quick mode)
+		    #
+		    # If we are here, then the early quick mode test indicated that the prerequisite files are newer.
+		    # We will force the authors.html file to be touched so that a later run with -Q will quickly exit.
+		    # We do this because by default, the md2html.sh tool does not modify the target HTML unless it was modified.
+		    #
+		    touch "$HTML_FILE"
 		    continue
 		fi
 	    fi
@@ -651,6 +675,8 @@ for YYYY in $(< "$TOP_FILE"); do
 	    #
 	    if [[ -z $NOOP ]]; then
 
+		# possibly update the HTML file
+		#
 		if [[ $V_FLAG -ge 3 ]]; then
 		    echo "$0: debug[3]: about to run: $MD2HTML_SH ${TOOL_OPTION[*]}" \
 			 "-U $SITE_URL/$HTML_FILE" \
@@ -678,6 +704,16 @@ for YYYY in $(< "$TOP_FILE"); do
 		    continue
 		fi
 
+		# case -Q: (quick mode)
+		#
+		# If we are here, then the early quick mode test indicated that the prerequisite files are newer.
+		# We will force the authors.html file to be touched so that a later run with -Q will quickly exit.
+		# We do this because by default, the md2html.sh tool does not modify the target HTML unless it was modified.
+		#
+		if [[ -n $QUICK_MODE ]]; then
+		    touch "$HTML_FILE"
+		fi
+
 	    # report disabled by -n
 	    #
 	    elif [[ $V_FLAG -ge 5 ]]; then
@@ -696,6 +732,7 @@ if [[ -z $NOOP ]]; then
 	exit 13
     fi
 fi
+
 
 # All Done!!! All Done!!! -- Jessica Noll, Age 2
 #

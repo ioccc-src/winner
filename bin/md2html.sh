@@ -78,6 +78,7 @@
 #
 # Share and enjoy! :-)
 
+
 # firewall - run only with a bash that is version 5.1.8 or later
 #
 # The "/usr/bin/env bash" command must result in using a bash that
@@ -121,6 +122,7 @@ if [[ -z ${BASH_VERSINFO[0]} ||
     exit 4
 fi
 
+
 # setup bash file matching
 #
 # We must declare arrays with -ag or -Ag, and we need loops to "export" modified variables.
@@ -133,15 +135,17 @@ shopt -u nocaseglob	# disable strict case matching
 shopt -u extglob	# enable extended globbing patterns
 shopt -s globstar	# enable ** to match all files and zero or more directories and subdirectories
 
+
 # other required bash options
 #
 # Requires bash with a version 4.2 or later
 #
 shopt -s lastpipe	# run last command of a pipeline not executed in the background in the current shell environment
 
+
 # set variables referenced in the usage message
 #
-export VERSION="1.5.5 2024-08-05"
+export VERSION="1.6 2024-08-17"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -164,18 +168,18 @@ if [[ -z "$PERL_TOOL" ]]; then
 fi
 export TOPDIR
 export DOCROOT_SLASH="./"
-export PANDOC_WRAPPER="bin/pandoc-wrapper.sh"
 export REPO_TOP_URL="https://github.com/ioccc-src/temp-test-ioccc"
 # GitHub puts individual files under the "blob/master" sub-directory.
 export REPO_URL="$REPO_TOP_URL/blob/master"
 export SITE_URL="https://ioccc-src.github.io/temp-test-ioccc"
 export URL="#"
 
+
 # set usage message
 #
 export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
 	[-c md2html.cfg] [-H phase=name ..] [-t tagline]
-	[-b tool] [-p tool] [-a tool]
+	[-b tool] [-a tool]
 	[-s token=value ..] [-S] [-o tool ..]
 	[-U url] [-w site_url] [-m mdtag] [-e string ..] [-E exitcode]
 	[match.md] input.md output.html
@@ -207,10 +211,6 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
 
 	-b tool		run 'before tool' during HTML phase number 20 (def: do not output before pandoc wrapper tool)
 	-b .		skip HTML phase number 20 (def: do nothing during HTML phase number 20)
-
-	-p tool		run 'pandoc wrapper tool' (not pandoc path) during HTML phase number 21 (def: use $PANDOC_WRAPPER)
-	-p .		skip HTML phase number 21 (def: do nothing during HTML phase number 21)
-			NOTE: The '-p tool' will be passed as leading options on the -b tool and -a tool command lines.
 
 	-a tool		run 'after tool' during HTML phase number 20 (def: do not output after pandoc wrapper tool)
 	-a .		skip HTML phase number 22 (def: do nothing during HTML phase number 22)
@@ -256,9 +256,11 @@ Exit codes:
 
 $NAME version: $VERSION"
 
+
 ##################################
 # command line parsing functions #
 ##################################
+
 
 # global_variable_setup - setup global variables
 #
@@ -338,7 +340,7 @@ function global_variable_setup
     unset PHASE_NAME
     declare -ag PHASE_NAME
     PHASE_NAME=(top head body topbar header navbar before-content
-    		after-content footer bottom)
+		after-content footer bottom)
     unset HTML_PHASE_NAME
     declare -Ag HTML_PHASE_NAME
     for n in "${PHASE_NAME[@]}"; do
@@ -350,6 +352,7 @@ function global_variable_setup
     export GETOPT_PHASE=0
     return 0
 }
+
 
 # print_usage - print the usage message, exit code and version information
 #
@@ -365,6 +368,7 @@ function print_usage
     echo "$USAGE"
     return 0
 }
+
 
 # parse_command_line - parse command line arguments
 #
@@ -412,7 +416,7 @@ function parse_command_line
 
     # parse command line
     #
-    while getopts :hv:VnNd:D:c:H:t:m:b:p:a:s:So:U:w:e:E: flag; do
+    while getopts :hv:VnNd:D:c:H:t:m:b:a:s:So:U:w:e:E: flag; do
       case "$flag" in
 	h) print_usage 1>&2
 	    exit 2
@@ -546,7 +550,7 @@ function parse_command_line
 	    ;;
 	m) MDTAG="$OPTARG"
 	    ;;
-	b) # parse: -p tool
+	b) # parse: -b tool
 	    if [[ $OPTARG == . ]]; then
 		# unset before tool
 		BEFORE_TOOL=
@@ -554,19 +558,6 @@ function parse_command_line
 		# change before tool
 		BEFORE_TOOL="$OPTARG"
 	    fi
-	    ;;
-	p) # parse -p tool
-	    if [[ $OPTARG == . ]]; then
-		# unset pandoc wrapper tool
-		PANDOC_WRAPPER=
-	    else
-		# change pandoc wrapper tool
-		PANDOC_WRAPPER="$OPTARG"
-	    fi
-	    B_OPTION+=("-p")
-	    B_OPTION+=("$PANDOC_WRAPPER")
-	    A_OPTION+=("-p")
-	    A_OPTION+=("$PANDOC_WRAPPER")
 	    ;;
 	a) # parse: -a tool
 	    if [[ $OPTARG == . ]]; then
@@ -678,6 +669,7 @@ function parse_command_line
     return 0
 }
 
+
 # debug_parameters - if verbose enough, print parameters
 #
 # usage:
@@ -716,7 +708,6 @@ function debug_parameters
     echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: PERL_TOOL=$PERL_TOOL" 1>&2
     echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: TOPDIR=$TOPDIR" 1>&2
     echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: DOCROOT_SLASH=$DOCROOT_SLASH" 1>&2
-    echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: PANDOC_WRAPPER=$PANDOC_WRAPPER" 1>&2
     echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: REPO_TOP_URL=$REPO_TOP_URL" 1>&2
     echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: REPO_URL=$REPO_URL" 1>&2
     echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: SITE_URL=$SITE_URL" 1>&2
@@ -766,9 +757,11 @@ function debug_parameters
     return 0
 }
 
+
 #################################
 # md2html.cfg related functions #
 #################################
+
 
 # match_md2html - first file_glob match for md2html.cfg file
 #
@@ -897,9 +890,11 @@ function match_md2html
     return 1
 }
 
+
 ################################
 # HTML phase related functions #
 ################################
+
 
 # append_html_phase - append a sed modified HTML phase file to a growing temporary HTML file
 #
@@ -1033,23 +1028,29 @@ function append_html_phase
     return 0
 }
 
+
 ###################################
 # required initial variable setup #
 ###################################
 
+
 global_variable_setup
+
 
 ##################
 # getopt phase 0 #
 ##################
 
+
 # set getopt phase to 0
 #
 GETOPT_PHASE=0
 
+
 # process command line options
 #
 parse_command_line "$@"
+
 
 # parse the command line arguments
 #
@@ -1088,6 +1089,7 @@ if [[ $MATCH_MD == - ]]; then
     exit 3
 fi
 
+
 # determine working directory
 #
 # We will use the dirname of match.md as our working directory.  This is path from
@@ -1098,6 +1100,7 @@ fi
 #
 WORKING_DIR=$(dirname "$MATCH_MD")
 export WORKING_DIR
+
 
 # verify that we have a topdir directory
 #
@@ -1118,6 +1121,7 @@ if [[ ! -d $TOPDIR ]]; then
     echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_TOP_URL; cd $REPO_NAME" 1>&2
     exit 6
 fi
+
 
 # cd to topdir
 #
@@ -1142,14 +1146,6 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: now in directory: $(/bin/pwd)" 1>&2
 fi
 
-# verify that we have an inc subdirectory
-#
-export INC_PATH="$TOPDIR/inc"
-if [[ ! -d $INC_PATH ]]; then
-    echo "$0: ERROR: inc is not a directory under topdir: $INC_PATH" 1>&2
-    exit 6
-fi
-export INC_DIR="inc"
 
 # verify that we have a bin subdirectory
 #
@@ -1159,6 +1155,33 @@ if [[ ! -d $BIN_PATH ]]; then
     exit 6
 fi
 export BIN_DIR="bin"
+
+
+# verify that the bin/pandoc-wrapper.sh tool is executable
+#
+export PANDOC_WRAPPER="$BIN_DIR/pandoc-wrapper.sh"
+if [[ ! -e $PANDOC_WRAPPER ]]; then
+    echo  "$0: ERROR: bin/md2html.sh does not exist: $PANDOC_WRAPPER" 1>&2
+    exit 5
+fi
+if [[ ! -f $PANDOC_WRAPPER ]]; then
+    echo  "$0: ERROR: bin/md2html.sh is not a regular file: $PANDOC_WRAPPER" 1>&2
+    exit 5
+fi
+if [[ ! -x $PANDOC_WRAPPER ]]; then
+    echo  "$0: ERROR: bin/md2html.sh is not an executable file: $PANDOC_WRAPPER" 1>&2
+    exit 5
+fi
+
+
+# verify that we have an inc subdirectory
+#
+export INC_PATH="$TOPDIR/inc"
+if [[ ! -d $INC_PATH ]]; then
+    echo "$0: ERROR: inc is not a directory under topdir: $INC_PATH" 1>&2
+    exit 6
+fi
+export INC_DIR="inc"
 
 
 # verify that we have a readable .top file
@@ -1176,6 +1199,7 @@ if [[ ! -r $TOP ]]; then
     echo "$0: ERROR: topdir/.top is not a readable file: $TOP" 1>&2
     exit 6
 fi
+
 
 # verify we have a readable md2html.cfg file
 #
@@ -1195,6 +1219,7 @@ if [[ ! -r $MD2HTML_CFG ]]; then
     exit 5
 fi
 
+
 # new parameter debugging
 #
 debug_parameters 5 "after parse in getopt phase: $GETOPT_PHASE"
@@ -1203,9 +1228,11 @@ if [[ $V_FLAG -ge 5 ]]; then
     echo "$0: debug[5]: end getopt phase ${GETOPT_PHASE} debug level: $V_FLAG" 1>&2
 fi
 
+
 ##################
 # getopt phase 1 #
 ##################
+
 
 # set getopt phase to 1
 #
@@ -1215,6 +1242,7 @@ if [[ $V_FLAG -ge 5 ]]; then
     echo "$0: debug[5]: begin getopt phase ${GETOPT_PHASE} debug level: $V_FLAG" 1>&2
 fi
 
+
 # run output tools and parse output as more options
 #
 # report output tools and output tool options
@@ -1223,6 +1251,7 @@ if [[ $V_FLAG -ge 5 ]]; then
 	VALUE="${OUTPUT_TOOL[$n]}"
     done
 fi
+
 
 # verify output tools are executable
 #
@@ -1242,6 +1271,7 @@ for n in "${!OUTPUT_TOOL[@]}"; do
     fi
 done
 
+
 # pre-clear our output tool options array
 #
 # NOTE: The OUTPUT_TOOL_OPTIONS array contains the options that an "output tool" produces.
@@ -1249,6 +1279,7 @@ done
 #
 unset OUTPUT_TOOL_OPTIONS
 declare -ag OUTPUT_TOOL_OPTIONS
+
 
 # execute each output tool and parse the output tool's options and arguments
 #
@@ -1272,6 +1303,7 @@ for n in "${!OUTPUT_TOOL[@]}"; do
     done
 done
 
+
 # process command line arguments from all output tools
 #
 if [[ ${#OUTPUT_TOOL_OPTIONS[@]} -gt 0 ]]; then
@@ -1286,6 +1318,7 @@ fi
 #
 debug_parameters 5 "after parse in getopt phase: $GETOPT_PHASE"
 
+
 # clear output tools and output tool options
 #
 unset OUTPUT_TOOL
@@ -1297,9 +1330,11 @@ if [[ $V_FLAG -ge 5 ]]; then
     echo "$0: debug[5]: end getopt phase ${GETOPT_PHASE} debug level: $V_FLAG" 1>&2
 fi
 
+
 ##################
 # getopt phase 2 #
 ##################
+
 
 # set getopt phase to 2
 #
@@ -1309,10 +1344,12 @@ if [[ $V_FLAG -ge 5 ]]; then
     echo "$0: debug[5]: begin getopt phase ${GETOPT_PHASE} debug level: $V_FLAG" 1>&2
 fi
 
+
 # setup an empty MATCH_OPTIONS array for match_md2html to append options
 #
 unset MATCH_OPTIONS
 declare -ag MATCH_OPTIONS
+
 
 # find the first match md2html.cfg for the 'match.md' argument
 #
@@ -1322,6 +1359,7 @@ status="$?"
 #
 if [[ $status -ne 0 ]]; then
     echo "$0: Warning: $MATCH_MD does not match any lines in: $MD2HTML_CFG, match_md2html return code: $status" 1>&2
+
 
 # case: MATCH_MD matched and command line options were appended to MATCH_OPTIONS
 #
@@ -1341,6 +1379,7 @@ elif [[ ${#MATCH_OPTIONS[@]} -gt 0 ]]; then
     #
     parse_command_line "${MATCH_OPTIONS[@]}"
 
+
 # case: MATCH_MD matched and no command line options found
 #
 elif [[ $V_FLAG -ge 5 ]]; then
@@ -1353,9 +1392,11 @@ if [[ $V_FLAG -ge 5 ]]; then
     echo "$0: debug[5]: end getopt phase ${GETOPT_PHASE} debug level: $V_FLAG" 1>&2
 fi
 
+
 ##################
 # getopt phase 3 #
 ##################
+
 
 # set getopt phase to 3
 #
@@ -1365,6 +1406,7 @@ if [[ $V_FLAG -ge 5 ]]; then
     echo "$0: debug[5]: begin getopt phase ${GETOPT_PHASE} debug level: $V_FLAG" 1>&2
 fi
 
+
 # run output tools and parse output as more options
 #
 # report output tools and output tool options
@@ -1373,6 +1415,7 @@ if [[ $V_FLAG -ge 5 ]]; then
 	VALUE="${OUTPUT_TOOL[$n]}"
     done
 fi
+
 
 # verify output tools are executable
 #
@@ -1392,6 +1435,7 @@ for n in "${!OUTPUT_TOOL[@]}"; do
     fi
 done
 
+
 # pre-clear our output tool options array
 #
 # NOTE: The OUTPUT_TOOL_OPTIONS array contains the options that an "output tool" produces.
@@ -1399,6 +1443,7 @@ done
 #
 unset OUTPUT_TOOL_OPTIONS
 declare -ag OUTPUT_TOOL_OPTIONS
+
 
 # execute each output tool and parse the output tool's options and arguments
 #
@@ -1422,6 +1467,7 @@ for n in "${!OUTPUT_TOOL[@]}"; do
     done
 done
 
+
 # process command line arguments from all output tools
 #
 if [[ ${#OUTPUT_TOOL_OPTIONS[@]} -gt 0 ]]; then
@@ -1436,6 +1482,7 @@ fi
 #
 debug_parameters 5 "after parse in getopt phase: $GETOPT_PHASE"
 
+
 # clear output tools and output tool options
 #
 unset OUTPUT_TOOL
@@ -1447,9 +1494,11 @@ if [[ $V_FLAG -ge 5 ]]; then
     echo "$0: debug[5]: end getopt phase ${GETOPT_PHASE} debug level: $V_FLAG" 1>&2
 fi
 
+
 ############################################
 # debugging after getopt phase is complete #
 ############################################
+
 
 # set getopt phase to 4
 #
@@ -1464,7 +1513,6 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: after parse in getopt phase: $GETOPT_PHASE: V_FLAG=$V_FLAG" 1>&2
     echo "$0: debug[3]: after parse in getopt phase: $GETOPT_PHASE: GIT_TOOL=$GIT_TOOL" 1>&2
     echo "$0: debug[3]: after parse in getopt phase: $GETOPT_PHASE: DOCROOT_SLASH=$DOCROOT_SLASH" 1>&2
-    echo "$0: debug[3]: after parse in getopt phase: $GETOPT_PHASE: PANDOC_WRAPPER=$PANDOC_WRAPPER" 1>&2
     echo "$0: debug[3]: after parse in getopt phase: $GETOPT_PHASE: REPO_TOP_URL=$REPO_TOP_URL" 1>&2
     echo "$0: debug[3]: after parse in getopt phase: $GETOPT_PHASE: REPO_URL=$REPO_URL" 1>&2
     echo "$0: debug[3]: after parse in getopt phase: $GETOPT_PHASE: SITE_URL=$SITE_URL" 1>&2
@@ -1473,11 +1521,15 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: after parse in getopt phase: $GETOPT_PHASE: REPO_NAME=$REPO_NAME" 1>&2
     echo "$0: debug[3]: after parse in getopt phase: $GETOPT_PHASE: INC_PATH=$INC_PATH" 1>&2
     echo "$0: debug[3]: after parse in getopt phase: $GETOPT_PHASE: INC_DIR=$INC_DIR" 1>&2
+    echo "$0: debug[3]: after parse in getopt phase: $GETOPT_PHASE: BIN_PATH=$BIN_PATH" 1>&2
+    echo "$0: debug[3]: after parse in getopt phase: $GETOPT_PHASE: BIN_DIR=$BIN_DIR" 1>&2
+    echo "$0: debug[3]: after parse in getopt phase: $GETOPT_PHASE: PANDOC_WRAPPER=$PANDOC_WRAPPER" 1>&2
     echo "$0: debug[3]: after parse in getopt phase: $GETOPT_PHASE: TOP=$TOP" 1>&2
 fi
 if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: finished all getopt parsing" 1>&2
 fi
+
 
 # validate HTML phase names
 #
@@ -1506,6 +1558,7 @@ for n in "${PHASE_NAME[@]}"; do
     fi
 done
 
+
 # validate before tool
 #
 if [[ -n $BEFORE_TOOL ]]; then
@@ -1528,27 +1581,6 @@ if [[ -n $BEFORE_TOOL ]]; then
     fi
 fi
 
-# validate pandoc wrapper tool
-#
-if [[ -n $PANDOC_WRAPPER ]]; then
-    if [[ $V_FLAG -ge 5 ]]; then
-	if [[ -n $PANDOC_WRAPPER ]]; then
-	    echo "$0: debug[5]: -p pandoc wrapper tool: $PANDOC_WRAPPER" 1>&2
-	fi
-    fi
-    if [[ ! -e "$PANDOC_WRAPPER" ]]; then
-	echo "$0: ERROR: -p pandoc wrapper tool not found: $PANDOC_WRAPPER" 1>&2
-	exit 5
-    fi
-    if [[ ! -f "$PANDOC_WRAPPER" ]]; then
-	echo "$0: ERROR: -p pandoc wrapper tool not a file: $PANDOC_WRAPPER" 1>&2
-	exit 5
-    fi
-    if [[ ! -x "$PANDOC_WRAPPER" ]]; then
-	echo "$0: ERROR: -p pandoc wrapper tool not an executable file: $PANDOC_WRAPPER" 1>&2
-	exit 5
-    fi
-fi
 
 # validate after tool
 #
@@ -1572,6 +1604,7 @@ if [[ -n $AFTER_TOOL ]]; then
     fi
 fi
 
+
 # report TOKEN sed patterns
 #
 if [[ $V_FLAG -ge 7 ]]; then
@@ -1589,9 +1622,11 @@ if [[ -n $DO_NOT_PROCESS ]]; then
     exit 0
 fi
 
+
 ##########################
 # HTML pre-0 phase setup #
 ##########################
+
 
 # create a temporary sed script
 #
@@ -1634,6 +1669,7 @@ elif [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: the temporary sed script that would have been written ends above: $TMP_SED_SCRIPT" 1>&2
 fi
 
+
 # create a temporary HTML phase file
 #
 # NOTE: This file, when we are finished building it, will be come the final index.html file.
@@ -1661,6 +1697,7 @@ elif [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: because of -n, temporary HTML file is not formed: $TMP_PHASE" 1>&2
 fi
 
+
 # create a temporary index HTML file
 #
 # NOTE: This file, when we are finished building it, will be come the final index.html file.
@@ -1687,6 +1724,7 @@ if [[ -z $NOOP ]]; then
 elif [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: because of -n, temporary index HTML file is not formed: $TMP_INDEX_HTML" 1>&2
 fi
+
 
 # input.md is -, we will need to capture standard input into a new temporary file
 #
@@ -1732,6 +1770,7 @@ if [[ -z $NOOP ]]; then
 elif [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: because of -n, temporary stdin file is not formed: $TMP_INPUT_MD" 1>&2
 fi
+
 
 # strip commented language after markdown code block
 #
@@ -1784,6 +1823,7 @@ fi
 # HTML phase 0: inc/top.__name__.html #
 #######################################
 
+
 # NOTE: See bin/md2html.cfg for details on HTML phase numbers, HTML phase names, and HTML phase files
 #
 export CUR_PHASE_NUM=0
@@ -1799,9 +1839,11 @@ if [[ $status -ne 0 ]]; then
     exit "$status"
 fi
 
+
 ########################################
 # HTML phase 1: inc/head.__name__.html #
 ########################################
+
 
 # NOTE: See bin/md2html.cfg for details on HTML phase numbers, HTML phase names, and HTML phase files
 #
@@ -1817,6 +1859,7 @@ if [[ $status -ne 0 ]]; then
 	 "error code: $status" 1>&2
     exit "$status"
 fi
+
 
 # Special output to indicate which tool was used
 #
@@ -1849,9 +1892,11 @@ fi
     } >> "$TMP_INDEX_HTML"
 fi
 
+
 ########################################
 # HTML phase 2: inc/body.__name__.html #
 ########################################
+
 
 # NOTE: See bin/md2html.cfg for details on HTML phase numbers, HTML phase names, and HTML phase files
 #
@@ -1868,9 +1913,11 @@ if [[ $status -ne 0 ]]; then
     exit "$status"
 fi
 
+
 ########################################
 # HTML phase 3: inc/topbar.__name__.html #
 ########################################
+
 
 # NOTE: See bin/md2html.cfg for details on HTML phase numbers, HTML phase names, and HTML phase files
 #
@@ -1887,9 +1934,11 @@ if [[ $status -ne 0 ]]; then
     exit "$status"
 fi
 
+
 ##########################################
 # HTML phase 4: inc/header.__name__.html #
 ##########################################
+
 
 # NOTE: See bin/md2html.cfg for details on HTML phase numbers, HTML phase names, and HTML phase files
 #
@@ -1906,9 +1955,11 @@ if [[ $status -ne 0 ]]; then
     exit "$status"
 fi
 
+
 ##########################################
 # HTML phase 5: inc/navbar.__name__.html #
 ##########################################
+
 
 # NOTE: See bin/md2html.cfg for details on HTML phase numbers, HTML phase names, and HTML phase files
 #
@@ -1925,9 +1976,11 @@ if [[ $status -ne 0 ]]; then
     exit "$status"
 fi
 
+
 ###################################################
 # HTML phase 6: inc/before-content.__name__.html #
 ###################################################
+
 
 # NOTE: See bin/md2html.cfg for details on HTML phase numbers, HTML phase names, and HTML phase files
 #
@@ -1944,9 +1997,11 @@ if [[ $status -ne 0 ]]; then
     exit "$status"
 fi
 
+
 ##############################
 # HTML phase 20: before tool #
 ##############################
+
 
 # NOTE: See bin/md2html.cfg for details on HTML phase numbers, HTML phase names, and HTML phase files
 #
@@ -2004,9 +2059,11 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: successfully completed HTML phase $CUR_PHASE_NUM ($CUR_PHASE_NAME)" 1>&2
 fi
 
+
 ######################################
 # HTML phase 21: pandoc wrapper tool #
 ######################################
+
 
 # NOTE: See bin/md2html.cfg for details on HTML phase numbers, HTML phase names, and HTML phase files
 #
@@ -2019,99 +2076,97 @@ if [[ $V_FLAG -ge 5 ]]; then
     done
 fi
 #
-if [[ -n $PANDOC_WRAPPER ]]; then
-    if [[ -z $NOOP ]]; then
+if [[ -z $NOOP ]]; then
 
-	# write START of section comment
-	#
-	{
-	    echo "<!-- START: this line starts content for HTML phase $CUR_PHASE_NUM" \
-		 "by: $PANDOC_WRAPPER via bin/$NAME -->"
-	    echo
-	} >> "$TMP_INDEX_HTML"
+    # write START of section comment
+    #
+    {
+	echo "<!-- START: this line starts content for HTML phase $CUR_PHASE_NUM" \
+	     "by: $PANDOC_WRAPPER via bin/$NAME -->"
+	echo
+    } >> "$TMP_INDEX_HTML"
 
-	# append pandoc wrapper tool output
-	#
-	if [[ $V_FLAG -ge 5 ]]; then
-	    echo "$0: debug[5]: about to execute:" \
-		 "$PANDOC_WRAPPER ${P_OPTION[*]} -- $TMP_STRIPPED_MD - >> $TMP_INDEX_HTML" 1>&2
-	fi
-	"$PANDOC_WRAPPER" "${P_OPTION[@]}" -- "$TMP_STRIPPED_MD" - >> "$TMP_INDEX_HTML"
-	status="$?"
-	if [[ $status -ne 0 ]]; then
-	    echo "$0: ERROR: pandoc wrapper tool:" \
-		 "$PANDOC_WRAPPER ${P_OPTION[*]} -- $TMP_STRIPPED_MD - failed," \
-	         "error code: $status" 1>&2
-	    exit 100
-	fi
-
-	# fix any pandoc footnote bogons
-	#
-	# The pandoc(1) tool will generate the following BOGUS HTML 5 code
-	# when any markdown footnotes are used:
-	#
-	#	<!-- AFTER: last line of markdown file: PATH/FILE/NAME -->
-	#	<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
-	#	<hr />
-	#
-	# The section element lacks any HTML h1..h6 heading element inside it,
-	# and "<hr />" has no effect in standard HTML 5 and interacts badly with
-	# unquoted attribute values.
-	#
-	# We replace such HTML 5 with HTML 5 code as follows:
-	#
-	#	<!-- AFTER: last line of markdown file: PATH/FILE/NAME -->
-	#	<hr style="width:10%;text-align:left;margin-left:0">
-	#	<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
-	#	<h5>Footnotes</h5>
-	#
-	# It is easier to compose a perl script inline than to use an external file
-	# because we then have to test for that perl script to be a non-empty readable file,
-	# and perhaps allow some arg to specify an alternate location for the perl script/
-	# So instead we just build the perl script inline.
-	#
-	PERL_LINE='s|(<!-- AFTER: last line of markdown file: \S+ -->)\n'
-	PERL_LINE="$PERL_LINE"'(<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">)\n'
-	PERL_LINE="$PERL_LINE"'<hr />|'
-	PERL_LINE="$PERL_LINE\$1"'\n'
-	PERL_LINE="$PERL_LINE"'<hr style="width:10%;text-align:left;margin-left:0">\n'
-	PERL_LINE="$PERL_LINE\$2"'\n'
-	PERL_LINE="$PERL_LINE"'<h5>Footnotes</h5>|gms'
-	if [[ $V_FLAG -ge 5 ]]; then
-	    echo "$0: debug[5]: about to execute:" \
-		 "$PERL_TOOL -0 -p -i -e $PERL_LINE -- $TMP_INDEX_HTML" 1>&2
-	fi
-
-	"$PERL_TOOL" -0 -p -i -e "$PERL_LINE" -- "$TMP_INDEX_HTML"
-	if [[ $status -ne 0 ]]; then
-	    echo "$0: ERROR: pandoc wrapper tool:" \
-		 "$PERL_TOOL -0 -p -i -e $PERL_LINE -- $TMP_INDEX_HTML - failed," \
-	         "error code: $status" 1>&2
-	    exit 101
-	fi
-
-	# write START of section comment
-	#
-	{
-	    echo
-	    echo "<!-- END: this line ends content for HTML phase $CUR_PHASE_NUM" \
-		 "by: $PANDOC_WRAPPER via bin/$NAME -->"
-	} >> "$TMP_INDEX_HTML"
-
-    elif [[ $V_FLAG -ge 5 ]]; then
-	echo "$0: debug[5]: because of -n, disabled use of pandoc wrapper tool: $PANDOC_WRAPPER" 1>&2
+    # append pandoc wrapper tool output
+    #
+    if [[ $V_FLAG -ge 5 ]]; then
+	echo "$0: debug[5]: about to execute:" \
+	     "$PANDOC_WRAPPER ${P_OPTION[*]} -- $TMP_STRIPPED_MD - >> $TMP_INDEX_HTML" 1>&2
     fi
+    "$PANDOC_WRAPPER" "${P_OPTION[@]}" -- "$TMP_STRIPPED_MD" - >> "$TMP_INDEX_HTML"
+    status="$?"
+    if [[ $status -ne 0 ]]; then
+	echo "$0: ERROR: pandoc wrapper tool:" \
+	     "$PANDOC_WRAPPER ${P_OPTION[*]} -- $TMP_STRIPPED_MD - failed," \
+	     "error code: $status" 1>&2
+	exit 100
+    fi
+
+    # fix any pandoc footnote bogons
+    #
+    # The pandoc(1) tool will generate the following BOGUS HTML 5 code
+    # when any markdown footnotes are used:
+    #
+    #	<!-- AFTER: last line of markdown file: PATH/FILE/NAME -->
+    #	<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+    #	<hr />
+    #
+    # The section element lacks any HTML h1..h6 heading element inside it,
+    # and "<hr />" has no effect in standard HTML 5 and interacts badly with
+    # unquoted attribute values.
+    #
+    # We replace such HTML 5 with HTML 5 code as follows:
+    #
+    #	<!-- AFTER: last line of markdown file: PATH/FILE/NAME -->
+    #	<hr style="width:10%;text-align:left;margin-left:0">
+    #	<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+    #	<h5>Footnotes</h5>
+    #
+    # It is easier to compose a perl script inline than to use an external file
+    # because we then have to test for that perl script to be a non-empty readable file,
+    # and perhaps allow some arg to specify an alternate location for the perl script/
+    # So instead we just build the perl script inline.
+    #
+    PERL_LINE='s|(<!-- AFTER: last line of markdown file: \S+ -->)\n'
+    PERL_LINE="$PERL_LINE"'(<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">)\n'
+    PERL_LINE="$PERL_LINE"'<hr />|'
+    PERL_LINE="$PERL_LINE\$1"'\n'
+    PERL_LINE="$PERL_LINE"'<hr style="width:10%;text-align:left;margin-left:0">\n'
+    PERL_LINE="$PERL_LINE\$2"'\n'
+    PERL_LINE="$PERL_LINE"'<h5>Footnotes</h5>|gms'
+    if [[ $V_FLAG -ge 5 ]]; then
+	echo "$0: debug[5]: about to execute:" \
+	     "$PERL_TOOL -0 -p -i -e $PERL_LINE -- $TMP_INDEX_HTML" 1>&2
+    fi
+
+    "$PERL_TOOL" -0 -p -i -e "$PERL_LINE" -- "$TMP_INDEX_HTML"
+    if [[ $status -ne 0 ]]; then
+	echo "$0: ERROR: pandoc wrapper tool:" \
+	     "$PERL_TOOL -0 -p -i -e $PERL_LINE -- $TMP_INDEX_HTML - failed," \
+	     "error code: $status" 1>&2
+	exit 101
+    fi
+
+    # write START of section comment
+    #
+    {
+	echo
+	echo "<!-- END: this line ends content for HTML phase $CUR_PHASE_NUM" \
+	     "by: $PANDOC_WRAPPER via bin/$NAME -->"
+    } >> "$TMP_INDEX_HTML"
+
 elif [[ $V_FLAG -ge 5 ]]; then
-    echo "$0: debug[5]: because of -p ., use of pandoc wrapper tool was disabled" 1>&2
+    echo "$0: debug[5]: because of -n, disabled use of pandoc wrapper tool: $PANDOC_WRAPPER" 1>&2
 fi
 #
 if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: successfully completed HTML phase $CUR_PHASE_NUM ($CUR_PHASE_NAME)" 1>&2
 fi
 
+
 #############################
 # HTML phase 22: after tool #
 #############################
+
 
 # NOTE: See bin/md2html.cfg for details on HTML phase numbers, HTML phase names, and HTML phase files
 #
@@ -2169,9 +2224,11 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: successfully completed HTML phase $CUR_PHASE_NUM" 1>&2
 fi
 
+
 ##################################################
 # HTML phase 30: inc/after-content.__name__.html #
 ##################################################
+
 
 # NOTE: See bin/md2html.cfg for details on HTML phase numbers, HTML phase names, and HTML phase files
 #
@@ -2188,9 +2245,11 @@ if [[ $status -ne 0 ]]; then
     exit "$status"
 fi
 
+
 ###########################################
 # HTML phase 31: inc/footer.__name__.html #
 ###########################################
+
 
 # NOTE: See bin/md2html.cfg for details on HTML phase numbers, HTML phase names, and HTML phase files
 #
@@ -2207,9 +2266,11 @@ if [[ $status -ne 0 ]]; then
     exit "$status"
 fi
 
+
 ###########################################
 # HTML phase 32: inc/bottom.__name__.html #
 ###########################################
+
 
 # NOTE: See bin/md2html.cfg for details on HTML phase numbers, HTML phase names, and HTML phase files
 #
@@ -2226,9 +2287,11 @@ if [[ $status -ne 0 ]]; then
     exit "$status"
 fi
 
+
 ################################
 # finalize the index.html file #
 ################################
+
 
 # sanity check - temporary index HTML file must be a readable file
 #
@@ -2251,6 +2314,7 @@ if [[ -z $NOOP ]]; then
 elif [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: because of -n, disabled readable file check of: $TMP_PHASE_FILE 2>/dev/null" 1>&2
 fi
+
 
 # move temporary index HTML in place
 #
@@ -2312,6 +2376,7 @@ elif [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: because of -n, disabled: mv -f -- $TMP_INDEX_HTML $OUTPUT_HTML" 1>&2
 fi
 
+
 # file cleanup
 #
 if [[ -z $NOOP ]]; then
@@ -2320,6 +2385,7 @@ elif [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: because of -n, disabled: rm -f --" \
 	 "$TMP_SED_SCRIPT $TMP_PHASE $TMP_INDEX_HTML $TMP_INPUT_MD $TMP_STRIPPED_MD" 1>&2
 fi
+
 
 # All Done!!! All Done!!! -- Jessica Noll, Age 2
 #

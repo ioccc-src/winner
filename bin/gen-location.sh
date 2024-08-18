@@ -26,6 +26,7 @@
 #
 # Share and enjoy! :-)
 
+
 # firewall - run only with a bash that is version 5.1.8 or later
 #
 # The "/usr/bin/env bash" command must result in using a bash that
@@ -84,7 +85,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.5 2024-08-17"
+export VERSION="1.6 2024-08-18"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -110,17 +111,19 @@ export SITE_URL="https://ioccc-src.github.io/temp-test-ioccc"
 #
 export NOOP=
 export DO_NOT_PROCESS=
-QUICK_MODE=
+export QUICK_MODE=
+
 
 # clear options we will add to tools
 #
 unset TOOL_OPTION
 declare -ag TOOL_OPTION
 
+
 # usage
 #
 export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
-			[-t tagline] [-p tool] [-Q] [-w site_url]
+			[-t tagline] [-Q] [-w site_url]
 
 	-h		print help message and exit
 	-v level	set verbosity level (def level: 0)
@@ -139,9 +142,6 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
 	-t tagline	string to write about the tool that formed the markdown content (def: $TAGLINE)
 			NOTE: 'tagline' may be enclosed within, but may NOT contain an internal single-quote, or double-quote.
 
-	-p tool		run 'pandoc wrapper tool' (not pandoc path) during HTML phase number 21 (def: use $PANDOC_WRAPPER)
-			NOTE: The '-p tool' is passed as leading options on tool command lines.
-
 	-Q	        quick mode, do not run $MD2HTML_SH unless markdown is out of date (def: do)
 
 	-w site_url	Base URL of the website (def: $SITE_URL)
@@ -149,7 +149,7 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
 
 NOTE: The '-v level' is passed as initial command line options to the 'markdown to html tool' (md2html.sh).
       The 'tagline' is passed as '-t tagline' to the 'markdown to html tool' (md2html.sh), after the '-v level'.
-      Any '-T md2html.sh', '-p tool', '-P pandoc_opts', '-U top_url'
+      Any '-P pandoc_opts', '-U top_url'
       are passed to the 'markdown to html tool' (md2html.sh), and will be before any command line arguments.
 
 Exit codes:
@@ -165,9 +165,10 @@ Exit codes:
 
 $NAME version: $VERSION"
 
+
 # parse command line
 #
-while getopts :hv:Vd:D:nNt:p:Qw: flag; do
+while getopts :hv:Vd:D:nNt:Qw: flag; do
   case "$flag" in
     h) echo "$USAGE" 1>&2
 	exit 2
@@ -216,10 +217,6 @@ while getopts :hv:Vd:D:nNt:p:Qw: flag; do
 	TAGLINE="$OPTARG"
 	# -t tagline always added after arg parsing
 	;;
-    p) PANDOC_WRAPPER="$OPTARG"
-	TOOL_OPTION+=("-p")
-	TOOL_OPTION+=("$PANDOC_WRAPPER")
-	;;
     Q) QUICK_MODE="-Q"
 	;;
     w) SITE_URL="$OPTARG"
@@ -243,7 +240,7 @@ while getopts :hv:Vd:D:nNt:p:Qw: flag; do
 	;;
   esac
 done
-
+#
 # remove the options
 #
 shift $(( OPTIND - 1 ));
@@ -259,12 +256,14 @@ if [[ $# -ne 0 ]]; then
     exit 3
 fi
 
+
 # always add the '-v level' option, unless level is empty, to the set of options passed to the md2html.sh tool
 #
 if [[ -n $V_FLAG ]]; then
     TOOL_OPTION+=("-v")
     TOOL_OPTION+=("$V_FLAG")
 fi
+
 
 # always add the '-t tagline' option, unless tagline is empty, to the set of options passed to the md2html.sh tool
 #
@@ -273,15 +272,18 @@ if [[ -n $TAGLINE ]]; then
     TOOL_OPTION+=("$TAGLINE")
 fi
 
+
 # always add the '-U URL' for the top level location.html file
 #
 TOOL_OPTION+=("-U")
 TOOL_OPTION+=("$SITE_URL/location.html")
 
+
 # always add the '-D docroot/' for the top level location.html file
 #
 TOOL_OPTION+=("-D")
 TOOL_OPTION+=("$DOCROOT_SLASH")
+
 
 # verify that we have a topdir directory
 #
@@ -302,6 +304,7 @@ if [[ ! -d $TOPDIR ]]; then
     echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_TOP_URL; cd $REPO_NAME" 1>&2
     exit 6
 fi
+
 
 # cd to topdir
 #
@@ -326,6 +329,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: now in directory: $(/bin/pwd)" 1>&2
 fi
 
+
 # verify that we have an author subdirectory
 #
 export AUTHOR_PATH="$TOPDIR/author"
@@ -334,6 +338,7 @@ if [[ ! -d $AUTHOR_PATH ]]; then
     exit 6
 fi
 export AUTHOR_DIR="author"
+
 
 # verify that we have a bin subdirectory
 #
@@ -344,7 +349,8 @@ if [[ ! -d $BIN_PATH ]]; then
 fi
 export BIN_DIR="bin"
 
-# verify that the md2html tool is executable
+
+# verify that the bin/md2html.sh tool is executable
 #
 export MD2HTML_SH="$BIN_DIR/md2html.sh"
 if [[ ! -e $MD2HTML_SH ]]; then
@@ -360,41 +366,39 @@ if [[ ! -x $MD2HTML_SH ]]; then
     exit 5
 fi
 
-# verify jval-wrapper tool is executable
+
+# verify that the bin/jval-wrapper.sh tool is executable
 #
-export JVAL_WRAPPER="$BIN_DIR/jval-wrapper.sh"
+JVAL_WRAPPER="$BIN_DIR/jval-wrapper.sh"
 if [[ ! -e $JVAL_WRAPPER ]]; then
-    echo "$0: ERROR: bin/jval-wrapper.sh file does not exist: $JVAL_WRAPPER" 1>&2
+    echo  "$0: ERROR: bin/jval-wrapper.sh does not exist: $JVAL_WRAPPER" 1>&2
     exit 5
 fi
 if [[ ! -f $JVAL_WRAPPER ]]; then
-    echo "$0: ERROR: bin/jval-wrapper.sh is not a file: $JVAL_WRAPPER" 1>&2
+    echo  "$0: ERROR: bin/jval-wrapper.sh is not a regular file: $JVAL_WRAPPER" 1>&2
     exit 5
 fi
 if [[ ! -x $JVAL_WRAPPER ]]; then
-    echo "$0: ERROR: cannot find an executable bin/jval-wrapper.sh tool: $JVAL_WRAPPER" 1>&2
+    echo  "$0: ERROR: bin/jval-wrapper.sh is not an executable file: $JVAL_WRAPPER" 1>&2
     exit 5
 fi
-#
+
 
 # find the location tool
 #
 LOCATION_TOOL=$(type -P location)
 export LOCATION_TOOL
-if [[ -z $LOCATION_TOOL ]]; then
-    # guess we have a location tool in bin
-    #
-    LOCATION_TOOL="$BIN_DIR/location"
-fi
 if [[ ! -x $LOCATION_TOOL ]]; then
-    echo "$0: ERROR: cannot find the location executable" 1>&2
+    echo "$0: ERROR: cannot find the location executable along \$PATH" 1>&2
     echo "$0: notice: location tool comes from this repo: https://github.com/ioccc-src/mkiocccentry" 1>&2
     exit 5
 fi
 
+
 # note location.html file
 #
 export LOCATION_HTML="location.html"
+
 
 # print running info if verbose
 #
@@ -440,7 +444,8 @@ if [[ -n $DO_NOT_PROCESS ]]; then
     exit 0
 fi
 
-# case: -Q
+
+# case: -Q (quick mode)
 #
 # Do nothing if authors.html is newer than all author/author_handle.json files.
 #
@@ -450,6 +455,7 @@ if [[ -n $QUICK_MODE ]]; then
 	exit 0
     fi
 fi
+
 
 # create a temporary location markdown file
 #
@@ -473,6 +479,7 @@ elif [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: because of -n, temporary location markdown file is not used: $TMP_LOC_MD" 1>&2
 fi
 
+
 # create a temporary location sort_word handle name set
 #
 export TMP_LOC_WORD_HANDLE_NAME_SET=".tmp.$NAME.LOC_AUTHOR_HANDLE.$$.tmp"
@@ -494,6 +501,7 @@ if [[ -z $NOOP ]]; then
 elif [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: because of -n, temporary location sort_word handle name set is not used: $TMP_LOC_WORD_HANDLE_NAME_SET" 1>&2
 fi
+
 
 # create a temporary location count set
 #
@@ -722,6 +730,9 @@ done < "$TMP_LOC_WORD_HANDLE_NAME_SET" > "$TMP_LOC_MD"
 # use the md2html.sh tool to form a location HTML file, unless -n
 #
 if [[ -z $NOOP ]]; then
+
+    # possibly update location.html
+    #
     if [[ $V_FLAG -ge 1 ]]; then
 	echo "$0: debug[1]: about to run: $MD2HTML_SH ${TOOL_OPTION[*]} -- location.md $TMP_LOC_MD $LOCATION_HTML" 1>&2
     fi
@@ -733,6 +744,16 @@ if [[ -z $NOOP ]]; then
 	exit 1
     elif [[ $V_FLAG -ge 3 ]]; then
 	echo "$0: debug[3]: now up to date: $LOCATION_HTML" 1>&2
+    fi
+
+    # case -Q: (quick mode)
+    #
+    # If we are here, then the early quick mode test indicated that the prerequisite files are newer.
+    # We will force the authors.html file to be touched so that a later run with -Q will quickly exit.
+    # We do this because by default, the md2html.sh tool does not modify the target HTML unless it was modified.
+    #
+    if [[ -n $QUICK_MODE ]]; then
+	touch "$LOCATION_HTML"
     fi
 
 # report disabled by -n

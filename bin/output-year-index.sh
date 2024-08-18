@@ -53,6 +53,7 @@
 #
 # Share and enjoy! :-)
 
+
 # firewall - run only with a bash that is version 5.1.8 or later
 #
 # The "/usr/bin/env bash" command must result in using a bash that
@@ -96,6 +97,7 @@ if [[ -z ${BASH_VERSINFO[0]} ||
     exit 4
 fi
 
+
 # setup bash file matching
 #
 # We must declare arrays with -ag or -Ag, and we need loops to "export" modified variables.
@@ -107,6 +109,7 @@ shopt -u dotglob	# disable matching files starting with .
 shopt -u nocaseglob	# disable strict case matching
 shopt -u extglob	# enable extended globbing patterns
 shopt -s globstar	# enable ** to match all files and zero or more directories and subdirectories
+
 
 # set variables referenced in the usage message
 #
@@ -131,12 +134,12 @@ export REPO_TOP_URL="https://github.com/ioccc-src/temp-test-ioccc"
 # GitHub puts individual files under the "blob/master" sub-directory.
 export REPO_URL="$REPO_TOP_URL/blob/master"
 export SITE_URL="https://ioccc-src.github.io/temp-test-ioccc"
-export PANDOC_WRAPPER="bin/pandoc-wrapper.sh"
+
 
 # set usage message
 #
 export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-n] [-N]
-			[-p tool] [-U URL] [-w site_url] [-e string ..] [-E exitcode]
+			[-U URL] [-w site_url] [-e string ..] [-E exitcode]
 			YYYY [more_options]
 
 	-h		print help message and exit
@@ -149,8 +152,6 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-n] [-N]
 
 	-n		go thru the actions, but do not update any files (def: do the action)
 	-N		do not process file, just parse arguments and ignore the file (def: process the file)
-
-	-p tool		run 'pandoc wrapper tool' (not pandoc path) during HTML phase number 21 (def: use $PANDOC_WRAPPER)
 
 	-U url		URL of HTML file being formed (def: $URL)
 	-w site_url	Base URL of the website (def: $SITE_URL)
@@ -174,15 +175,10 @@ Exit codes:
 
 $NAME version: $VERSION"
 
+
 # output_award
 #
 # Write the award name to standard output (stdout)
-#
-# XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
-# XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
-# XXX - until we have the jnamval command, we must FAKE PARSE the .entry.json file  - XXX
-# XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
-# XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
 #
 # usage:
 #       output_award YYYY/dir/.entry.json
@@ -194,7 +190,6 @@ $NAME version: $VERSION"
 function output_award
 {
     local ENTRY_JSON_PATH;	# the .entry.json path
-    local AWARD_STRING;		# winning entry award string
 
     # parse args
     #
@@ -218,14 +213,10 @@ function output_award
 
     # obtain the award string
     #
-    AWARD_STRING=$(grep -F '"award" : "'  "$ENTRY_JSON_PATH" | sed -e 's/^.*"award" : "//' -e 's/",//')
-    if [[ -z $AWARD_STRING ]]; then
-	echo "$0: ERROR: in output_award: no award found in .entry.json file: $ENTRY_JSON_PATH" 1>&2
-	return 5
-    fi
-    echo "$AWARD_STRING"
+    "$JVAL_WRAPPER" -w -b "$ENTRY_JSON_PATH" '$..award'
     return 0
 }
+
 
 # output_ordinal
 #
@@ -288,14 +279,16 @@ function output_ordinal
     return 0
 }
 
+
 # setup
 #
 export NOOP=
 export DO_NOT_PROCESS=
 
+
 # parse command line
 #
-while getopts :hv:Vd:D:nNp:U:w:e:E: flag; do
+while getopts :hv:Vd:D:nNU:w:e:E: flag; do
   case "$flag" in
     h) echo "$USAGE" 1>&2
 	exit 2
@@ -322,8 +315,6 @@ while getopts :hv:Vd:D:nNp:U:w:e:E: flag; do
 	;;
     N) DO_NOT_PROCESS="-N"
 	;;
-    p) PANDOC_WRAPPER="$OPTARG"
-	;;
     U) URL="$OPTARG"
 	;;
     w) SITE_URL="$OPTARG"
@@ -349,7 +340,7 @@ while getopts :hv:Vd:D:nNp:U:w:e:E: flag; do
 	;;
   esac
 done
-
+#
 # parse the command line arguments
 #
 if [[ $V_FLAG -ge 1 ]]; then
@@ -372,6 +363,7 @@ if [[ -z $YYYY ]]; then
     exit 3
 fi
 
+
 # verify that we have a topdir directory
 #
 REPO_NAME=$(basename "$REPO_TOP_URL")
@@ -391,6 +383,7 @@ if [[ ! -d $TOPDIR ]]; then
     echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_TOP_URL; cd $REPO_NAME" 1>&2
     exit 6
 fi
+
 
 # cd to topdir
 #
@@ -415,20 +408,50 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: now in directory: $(/bin/pwd)" 1>&2
 fi
 
-# verify we have the pandoc wrapper
+
+# verify that we have a bin subdirectory
 #
+export BIN_PATH="$TOPDIR/bin"
+if [[ ! -d $BIN_PATH ]]; then
+    echo "$0: ERROR: bin is not a directory under topdir: $BIN_PATH" 1>&2
+    exit 6
+fi
+export BIN_DIR="bin"
+
+
+# verify that the bin/pandoc-wrapper.sh tool is executable
+#
+export PANDOC_WRAPPER="$BIN_DIR/pandoc-wrapper.sh"
 if [[ ! -e $PANDOC_WRAPPER ]]; then
-    echo "$0: ERROR: pandoc wrapper tool does not exist: $PANDOC_WRAPPER" 1>&2
+    echo  "$0: ERROR: bin/md2html.sh does not exist: $PANDOC_WRAPPER" 1>&2
     exit 5
 fi
 if [[ ! -f $PANDOC_WRAPPER ]]; then
-    echo "$0: ERROR: pandoc wrapper tool is not a file: $PANDOC_WRAPPER" 1>&2
+    echo  "$0: ERROR: bin/md2html.sh is not a regular file: $PANDOC_WRAPPER" 1>&2
     exit 5
 fi
 if [[ ! -x $PANDOC_WRAPPER ]]; then
-    echo "$0: ERROR: pandoc wrapper tool is not an executable file: $PANDOC_WRAPPER" 1>&2
+    echo  "$0: ERROR: bin/md2html.sh is not an executable file: $PANDOC_WRAPPER" 1>&2
     exit 5
 fi
+
+
+# verify that the bin/jval-wrapper.sh tool is executable
+#
+JVAL_WRAPPER="$BIN_DIR/jval-wrapper.sh"
+if [[ ! -e $JVAL_WRAPPER ]]; then
+    echo  "$0: ERROR: bin/jval-wrapper.sh does not exist: $JVAL_WRAPPER" 1>&2
+    exit 5
+fi
+if [[ ! -f $JVAL_WRAPPER ]]; then
+    echo  "$0: ERROR: bin/jval-wrapper.sh is not a regular file: $JVAL_WRAPPER" 1>&2
+    exit 5
+fi
+if [[ ! -x $JVAL_WRAPPER ]]; then
+    echo  "$0: ERROR: bin/jval-wrapper.sh is not an executable file: $JVAL_WRAPPER" 1>&2
+    exit 5
+fi
+
 
 # verify that YYYY is an entry directory
 #
@@ -440,6 +463,7 @@ if [[ ! -r $YYYY ]]; then
     echo "$0: ERROR: arg is not a readable directory: $YYYY" 1>&2
     exit 6
 fi
+
 
 # verify we have a non-empty readable .top file
 #
@@ -461,6 +485,7 @@ if [[ ! -s $TOP_FILE ]]; then
     exit 6
 fi
 
+
 # verify that YYYY has a non-empty readable .year file
 #
 export YEAR_FILE="$YYYY/.year"
@@ -481,6 +506,7 @@ if [[ ! -s $YEAR_FILE ]]; then
     exit 6
 fi
 
+
 # determine The N-th IOCCC string
 #
 LINE_NUM=$(sed -n "/$YYYY/=" "$TOP_FILE" | head -1)
@@ -495,6 +521,7 @@ if [[ -z $ORDINAL ]]; then
     echo  "$0: ERROR: cannot determine ordinal for: $LINE_NUM" 1>&2
     exit 11
 fi
+
 
 # parameter debugging
 #
@@ -519,6 +546,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: ORDINAL=$ORDINAL" 1>&2
 fi
 
+
 # If -N, time to exit
 #
 if [[ -n $DO_NOT_PROCESS ]]; then
@@ -527,6 +555,7 @@ if [[ -n $DO_NOT_PROCESS ]]; then
     fi
     exit 0
 fi
+
 
 # create a temporary markdown for pandoc to process
 #
@@ -550,6 +579,7 @@ elif [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: because of -n, temporary markdown file is not used: $TMP_FILE" 1>&2
 fi
 
+
 # output leading markdown for this IOCCC year
 #
 {
@@ -567,6 +597,7 @@ else
 	echo "$0: debug[3]: because of -n, IOCCC year $YYYY starting markdown not written to stdout" 1>&2
     fi
 fi
+
 
 # process each entry under YYYY
 #
@@ -658,6 +689,7 @@ else
     fi
 fi
 
+
 # write trailing markdown for this IOCCC year
 #
 {
@@ -673,6 +705,7 @@ else
 	echo "$0: debug[3]: because of -n, IOCCC year $YYYY ending markdown data is NOT to stdout" 1>&2
     fi
 fi
+
 
 # convert temporary markdown file into HTML
 #
@@ -693,6 +726,7 @@ if [[ -z $NOOP ]]; then
 elif [[ $V_FLAG -ge 1 ]]; then
     echo  "$0: debug[1]: -n disabled execution of: $PANDOC_WRAPPER $TMP_FILE -" 1>&2
 fi
+
 
 # All Done!!! All Done!!! -- Jessica Noll, Age 2
 #
