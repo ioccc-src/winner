@@ -301,7 +301,7 @@ indent.c:
 #	   simple want to examine, run / test winning IOCCC entries.
 
 .PHONY: help genpath genfilelist verify_entry_files gen_authors quick_authors \
-	gen_location gen_years find_missing_links test entry_index gen_top_html \
+	gen_location quick_location gen_years find_missing_links test entry_index gen_top_html \
 	thanks gen_other_html quick_other_html quick_entry_index \
 	gen_year_index quick_www www untar_entry_tarball untar_year_tarball \
 	form_entry_tarball form_year_tarball tar gen_status gen_sitemap \
@@ -338,6 +338,7 @@ help:
 	@echo 'make gen_authors	;: generate the top level authors.html page'
 	@echo 'make quick_authors	;: build authors.html if out of date with author JSON files'
 	@echo 'make gen_location	;: generate the top level location.html page'
+	@echo 'make quick_location	;: build location.html if out of date with author JSON files'
 	@echo 'make gen_years		;: generate the top level years.html page'
 	@echo 'make entry_index	;: force the build of ALL winner index.html files'
 	@echo 'make gen_other_html	;: build entry HTML files from markdown other than README.md'
@@ -489,6 +490,16 @@ quick_authors: ${GEN_AUTHORS} authors.html
 gen_location: ${GEN_LOCATION} location.html
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
 	${GEN_LOCATION} -v 1
+	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+
+# build location.html if it is out of date from any author/author_handle.json file
+#
+# generate the top level location.html page using the
+# ${GEN_LOCATION} tool (bin/gen-location.sh).
+#
+quick_location: ${GEN_LOCATION} location.html
+	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	${GEN_LOCATION} -v 1 -Q
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 # generate the top level years.html page using the ${GEN_YEARS}
@@ -677,7 +688,7 @@ quick_www:
 	${MAKE} genfilelist
 	${MAKE} verify_entry_files
 	${MAKE} quick_authors
-	${MAKE} gen_location
+	${MAKE} quick_location
 	${MAKE} gen_years
 	${MAKE} gen_year_index
 	${MAKE} gen_top_html

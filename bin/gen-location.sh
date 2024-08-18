@@ -84,7 +84,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.4.5 2024-08-05"
+export VERSION="1.5 2024-08-17"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -102,7 +102,6 @@ fi
 export TOPDIR
 export DOCROOT_SLASH="./"
 export TAGLINE="bin/$NAME"
-export MD2HTML_SH="bin/md2html.sh"
 export PANDOC_WRAPPER="bin/pandoc-wrapper.sh"
 export REPO_TOP_URL="https://github.com/ioccc-src/temp-test-ioccc"
 # GitHub puts individual files under the "blob/master" sub-directory.
@@ -111,7 +110,7 @@ export SITE_URL="https://ioccc-src.github.io/temp-test-ioccc"
 #
 export NOOP=
 export DO_NOT_PROCESS=
-export EXIT_CODE="0"
+QUICK_MODE=
 
 # clear options we will add to tools
 #
@@ -121,7 +120,7 @@ declare -ag TOOL_OPTION
 # usage
 #
 export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
-			[-t tagline] [-T md2html.sh] [-p tool]
+			[-t tagline] [-p tool] [-Q] [-w site_url]
 
 	-h		print help message and exit
 	-v level	set verbosity level (def level: 0)
@@ -139,10 +138,11 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
 
 	-t tagline	string to write about the tool that formed the markdown content (def: $TAGLINE)
 			NOTE: 'tagline' may be enclosed within, but may NOT contain an internal single-quote, or double-quote.
-	-T md2html.sh	run 'markdown to html tool' to convert markdown into HTML (def: $MD2HTML_SH)
 
 	-p tool		run 'pandoc wrapper tool' (not pandoc path) during HTML phase number 21 (def: use $PANDOC_WRAPPER)
 			NOTE: The '-p tool' is passed as leading options on tool command lines.
+
+	-Q	        quick mode, do not run $MD2HTML_SH unless markdown is out of date (def: do)
 
 	-w site_url	Base URL of the website (def: $SITE_URL)
 			NOTE: The '-w site_url' is passed as leading options on tool command lines.
@@ -167,7 +167,7 @@ $NAME version: $VERSION"
 
 # parse command line
 #
-while getopts :hv:Vd:D:nNt:T:p:w: flag; do
+while getopts :hv:Vd:D:nNt:p:Qw: flag; do
   case "$flag" in
     h) echo "$USAGE" 1>&2
 	exit 2
@@ -216,13 +216,11 @@ while getopts :hv:Vd:D:nNt:T:p:w: flag; do
 	TAGLINE="$OPTARG"
 	# -t tagline always added after arg parsing
 	;;
-    T) MD2HTML_SH="$OPTARG"
-	TOOL_OPTION+=("-T")
-	TOOL_OPTION+=("$MD2HTML_SH")
-	;;
     p) PANDOC_WRAPPER="$OPTARG"
 	TOOL_OPTION+=("-p")
 	TOOL_OPTION+=("$PANDOC_WRAPPER")
+	;;
+    Q) QUICK_MODE="-Q"
 	;;
     w) SITE_URL="$OPTARG"
 	TOOL_OPTION+=("-w")
@@ -348,18 +346,36 @@ export BIN_DIR="bin"
 
 # verify that the md2html tool is executable
 #
+export MD2HTML_SH="$BIN_DIR/md2html.sh"
 if [[ ! -e $MD2HTML_SH ]]; then
-    echo  "$0: ERROR: md2html.sh does not exist: $MD2HTML_SH" 1>&2
+    echo  "$0: ERROR: bin/md2html.sh does not exist: $MD2HTML_SH" 1>&2
     exit 5
 fi
 if [[ ! -f $MD2HTML_SH ]]; then
-    echo  "$0: ERROR: md2html.sh is not a regular file: $MD2HTML_SH" 1>&2
+    echo  "$0: ERROR: bin/md2html.sh is not a regular file: $MD2HTML_SH" 1>&2
     exit 5
 fi
 if [[ ! -x $MD2HTML_SH ]]; then
-    echo  "$0: ERROR: md2html.sh is not an executable file: $MD2HTML_SH" 1>&2
+    echo  "$0: ERROR: bin/md2html.sh is not an executable file: $MD2HTML_SH" 1>&2
     exit 5
 fi
+
+# verify jval-wrapper tool is executable
+#
+export JVAL_WRAPPER="$BIN_DIR/jval-wrapper.sh"
+if [[ ! -e $JVAL_WRAPPER ]]; then
+    echo "$0: ERROR: bin/jval-wrapper.sh file does not exist: $JVAL_WRAPPER" 1>&2
+    exit 5
+fi
+if [[ ! -f $JVAL_WRAPPER ]]; then
+    echo "$0: ERROR: bin/jval-wrapper.sh is not a file: $JVAL_WRAPPER" 1>&2
+    exit 5
+fi
+if [[ ! -x $JVAL_WRAPPER ]]; then
+    echo "$0: ERROR: cannot find an executable bin/jval-wrapper.sh tool: $JVAL_WRAPPER" 1>&2
+    exit 5
+fi
+#
 
 # find the location tool
 #
@@ -399,7 +415,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: SITE_URL=$SITE_URL" 1>&2
     echo "$0: debug[3]: NOOP=$NOOP" 1>&2
     echo "$0: debug[3]: DO_NOT_PROCESS=$DO_NOT_PROCESS" 1>&2
-    echo "$0: debug[3]: EXIT_CODE=$EXIT_CODE" 1>&2
+    echo "$0: debug[3]: QUICK_MODE=$QUICK_MODE" 1>&2
     for index in "${!TOOL_OPTION[@]}"; do
 	echo "$0: debug[3]: TOOL_OPTION[$index]=${TOOL_OPTION[$index]}" 1>&2
     done
@@ -409,6 +425,8 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: AUTHOR_DIR=$AUTHOR_DIR" 1>&2
     echo "$0: debug[3]: BIN_PATH=$BIN_PATH" 1>&2
     echo "$0: debug[3]: BIN_DIR=$BIN_DIR" 1>&2
+    echo "$0: debug[3]: MD2HTML_SH=$MD2HTML_SH" 1>&2
+    echo "$0: debug[3]: JVAL_WRAPPER=$JVAL_WRAPPER" 1>&2
     echo "$0: debug[3]: LOCATION_TOOL=$LOCATION_TOOL" 1>&2
     echo "$0: debug[3]: LOCATION_HTML=$LOCATION_HTML" 1>&2
 fi
@@ -420,6 +438,17 @@ if [[ -n $DO_NOT_PROCESS ]]; then
 	echo "$0: debug[3]: arguments parsed, -N given, exiting 0" 1>&2
     fi
     exit 0
+fi
+
+# case: -Q
+#
+# Do nothing if authors.html is newer than all author/author_handle.json files.
+#
+if [[ -n $QUICK_MODE ]]; then
+    NEWER=$(find "$AUTHOR_DIR" -mindepth 1 -maxdepth 1 -type f -name '*.json' -newer "$LOCATION_HTML" 2>/dev/null)
+    if [[ -z $NEWER ]]; then
+	exit 0
+    fi
 fi
 
 # create a temporary location markdown file
@@ -444,23 +473,178 @@ elif [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: because of -n, temporary location markdown file is not used: $TMP_LOC_MD" 1>&2
 fi
 
-# generate the temporary location markdown file
+# create a temporary location sort_word handle name set
 #
-# XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
-# XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
-# XXX - until we have the jnamval command, we must FAKE PARSE the author/author_handle.json file - XXX
-# XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
-# XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
+export TMP_LOC_WORD_HANDLE_NAME_SET=".tmp.$NAME.LOC_AUTHOR_HANDLE.$$.tmp"
+if [[ $V_FLAG -ge 3 ]]; then
+    echo  "$0: debug[3]: temporary location sort_word handle name set: $TMP_LOC_WORD_HANDLE_NAME_SET" 1>&2
+fi
+if [[ -z $NOOP ]]; then
+    trap 'rm -f $TMP_LOC_MD $TMP_LOC_WORD_HANDLE_NAME_SET; exit' 0 1 2 3 15
+    rm -f "$TMP_LOC_WORD_HANDLE_NAME_SET"
+    if [[ -e $TMP_LOC_WORD_HANDLE_NAME_SET ]]; then
+	echo "$0: ERROR: cannot remove temporary location sort_word handle name set: $TMP_LOC_WORD_HANDLE_NAME_SET" 1>&2
+	exit 12
+    fi
+    :> "$TMP_LOC_WORD_HANDLE_NAME_SET"
+    if [[ ! -e $TMP_LOC_WORD_HANDLE_NAME_SET ]]; then
+	echo "$0: ERROR: cannot create temporary location sort_word handle name set: $TMP_LOC_WORD_HANDLE_NAME_SET" 1>&2
+	exit 13
+    fi
+elif [[ $V_FLAG -ge 3 ]]; then
+    echo "$0: debug[3]: because of -n, temporary location sort_word handle name set is not used: $TMP_LOC_WORD_HANDLE_NAME_SET" 1>&2
+fi
+
+# create a temporary location count set
 #
-{
-    # process unique location_codes found in author_handle JSON files in dictionary order
+export TMP_LOC_COUNT=".tmp.$NAME.LOC_COUNT.$$.tmp"
+if [[ $V_FLAG -ge 3 ]]; then
+    echo  "$0: debug[3]: temporary location count set: $TMP_LOC_COUNT" 1>&2
+fi
+if [[ -z $NOOP ]]; then
+    trap 'rm -f $TMP_LOC_MD $TMP_LOC_WORD_HANDLE_NAME_SET $TMP_LOC_COUNT; exit' 0 1 2 3 15
+    rm -f "$TMP_LOC_COUNT"
+    if [[ -e $TMP_LOC_COUNT ]]; then
+	echo "$0: ERROR: cannot remove temporary location count set: $TMP_LOC_COUNT" 1>&2
+	exit 14
+    fi
+    :> "$TMP_LOC_COUNT"
+    if [[ ! -e $TMP_LOC_COUNT ]]; then
+	echo "$0: ERROR: cannot create temporary location count set: $TMP_LOC_COUNT" 1>&2
+	exit 15
+    fi
+elif [[ $V_FLAG -ge 3 ]]; then
+    echo "$0: debug[3]: because of -n, temporary location count set is not used: $TMP_LOC_COUNT" 1>&2
+fi
+
+
+# generate location sort_word author_handle author name set
+#
+if [[ $V_FLAG -ge 1 ]]; then
+    echo  "$0: debug[1]: about to obtain location codes from author_handle JSON files" 1>&2
+fi
+export AUTHOR_COUNT=0
+export AUTHOR_COUNT_CYCLE=20
+find "$AUTHOR_DIR" -mindepth 1 -maxdepth 1 -type f -name '*.json' -print |
+    while read -r AUTHOR_HANDLE_JSON; do
+
+	# collect location_code
+	#
+	LOCATION_CODE=$("$JVAL_WRAPPER" -b -w "$AUTHOR_HANDLE_JSON" '$..location_code')
+	if [[ -z $LOCATION_CODE ]]; then
+	    echo "$0: ERROR: cannot obtain location_code from: $AUTHOR_HANDLE_JSON" 1>&2
+	    exit 1
+	fi
+
+	# obtain author_handle from author_handle file
+	#
+	AUTHOR_HANDLE=$(basename "$AUTHOR_HANDLE_JSON" .json)
+	if [[ -z $AUTHOR_HANDLE ]]; then
+	    echo "$0: ERROR: cannot obtain author_handle from this filename: $AUTHOR_HANDLE" 1>&2
+	    exit 16
+	fi
+
+	# obtain the author full name
+	#
+	FULL_NAME=$("$JVAL_WRAPPER" -b -w "$AUTHOR_HANDLE_JSON" '$..full_name')
+	if [[ -z $FULL_NAME ]]; then
+	    echo "$0: ERROR: cannot full name from: $AUTHOR_HANDLE" 1>&2
+	    exit 1
+	fi
+
+	# obtain the sort word from the author full name
+	#
+	SORT_WORD=$(echo "$FULL_NAME" | sed -e 's/^.* //' | tr '[:upper:]' '[:lower:]' | tr -d -c 'a-z0-9')
+	if [[ -z $SORT_WORD ]]; then
+	    echo "$0: ERROR: cannot sort word from author full name: $FULL_NAME" 1>&2
+	    exit 17
+	fi
+
+	# print location sort_word author_handle author name
+	#
+	echo "$LOCATION_CODE" "$SORT_WORD" "$AUTHOR_HANDLE" "$FULL_NAME"
+
+	# report process every so often if debugging
+	#
+	((++AUTHOR_COUNT))
+	if [[ $V_FLAG -ge 1 && $((AUTHOR_COUNT % AUTHOR_COUNT_CYCLE)) -eq 0 ]]; then
+	    echo "$0: debug[1]: cycle $AUTHOR_COUNT finished processing: $AUTHOR_HANDLE_JSON" 1>&2
+	fi
+
+done | LC_ALL=C sort -d -u > "$TMP_LOC_WORD_HANDLE_NAME_SET"
+status_codes=("${PIPESTATUS[@]}")
+if [[ ${status_codes[*]} =~ [1-9] ]]; then
+    echo "$0: ERROR: done find | while .. done | LC_ALL=C sort -d -u failed," \
+	     "error code: ${status_codes[*]}" 1>&2
+    exit 18
+fi
+#
+if [[ ! -s $TMP_LOC_WORD_HANDLE_NAME_SET ]]; then
+    echo "$0: ERROR: location sort_word author_handle author name set is empty: $TMP_LOC_WORD_HANDLE_NAME_SET" 1>&2
+    exit 19
+fi
+AUTHOR_COUNT=$(wc -l < "$TMP_LOC_WORD_HANDLE_NAME_SET")
+if [[ $V_FLAG -ge 1 ]]; then
+    echo "$0: debug[1]: cycle $AUTHOR_COUNT" \
+	 "formed location sort_word author_handle author name set: $TMP_LOC_WORD_HANDLE_NAME_SET" 1>&2
+fi
+
+
+# generate location count set
+#
+if [[ $V_FLAG -ge 1 ]]; then
+    echo  "$0: debug[1]: about to obtain author counts for each location" 1>&2
+fi
+awk '{print $1;}' "$TMP_LOC_WORD_HANDLE_NAME_SET" | LC_ALL=C uniq -c > "$TMP_LOC_COUNT"
+status_codes=("${PIPESTATUS[@]}")
+if [[ ${status_codes[*]} =~ [1-9] ]]; then
+    echo "$0: ERROR: done awk .. | LC_ALL=C uniq -c > $TMP_LOC_COUNT failed," \
+	     "error code: ${status_codes[*]}" 1>&2
+    exit 20
+fi
+#
+if [[ ! -s $TMP_LOC_COUNT ]]; then
+    echo "$0: ERROR: location count set is empty: $TMP_LOC_COUNT" 1>&2
+    exit 21
+fi
+
+
+# form the temporary location.md file
+#
+if [[ $V_FLAG -ge 1 ]]; then
+    echo  "$0: debug[1]: forming temporary location.md file: $TMP_LOC_MD" 1>&2
+fi
+export PREV_LOCATION_CODE="."
+export LINE=0
+while read -r LOCATION_CODE SORT_WORD AUTHOR_HANDLE FULL_NAME; do
+
+    # firewall - paranoia
     #
-    export PREV_LOCATION_CODE="."
-    find "$AUTHOR_DIR" -mindepth 1 -maxdepth 1 -type f -name '*.json' -print0 |
-	  xargs -0 grep '"location_code".*:' |
-	  sed -e 's/^.*: "//' -e 's/",*$//' |
-	  LC_ALL=C sort -u |
-	  while read -r LOCATION_CODE; do
+    ((++LINE))
+    if [[ -z $LOCATION_CODE || -z $SORT_WORD || -z $AUTHOR_HANDLE || -z $FULL_NAME ]]; then
+	echo "$0: ERROR: empty field found for line: $LINE of: $TMP_LOC_WORD_HANDLE_NAME_SET" 1>&2
+	echo "$0: Warning: LOCATION_CODE=$LOCATION_CODE" 1>&2
+	echo "$0: Warning: SORT_WORD=$SORT_WORD" 1>&2
+	echo "$0: Warning: AUTHOR_HANDLE=$AUTHOR_HANDLE" 1>&2
+	echo "$0: Warning: FULL_NAME=$FULL_NAME" 1>&2
+	exit 22
+    fi
+
+    # case: the location has changed
+    #
+    if [[ $LOCATION_CODE != "$PREV_LOCATION_CODE" ]]; then
+
+	# case: not the first location
+	#
+	# Separate this location from the previous location
+	#
+	if [[ $LINE -gt 1 ]]; then
+	    echo
+	    echo '<hr style="width:10%;text-align:left;margin-left:0">'
+	    echo
+	    echo '<p></p>'
+	    echo
+	fi
 
 	# use the location tool to obtain the location_name
 	#
@@ -468,8 +652,9 @@ fi
 	status="$?"
 	export LOCATION_NAME
 	if [[ $status -ne 0 ]]; then
-	    echo "$0: ERROR: cannot determine location name for location ISO 3166 code: $LOCATION_CODE" 1>&2
-	    exit 12
+	    echo "$0: ERROR: cannot determine location name for" \
+		 "location ISO 3166 code: $LOCATION_CODE" 1>&2
+	    exit 1
 	fi
 
 	# use the location tool to obtain the location common name
@@ -480,26 +665,11 @@ fi
 	if [[ $status -ne 0 ]]; then
 	    echo "$0: ERROR: cannot determine location common name" \
 		 "for location ISO 3166 code: $LOCATION_CODE" 1>&2
-	    exit 13
+	    exit 1
 	fi
 
-	# found the number of authors at this location
+	# markdown entry for this location
 	#
-	AUTHOR_COUNT=$(find "$AUTHOR_DIR" -mindepth 1 -maxdepth 1 -type f -name '*.json' -print0 |
-		       xargs -0 grep -l '"location_code".*:.*"'"$LOCATION_CODE"'"' |
-		       wc -l |
-		       sed -e 's/[[:space:]]*//')
-	export AUTHOR_COUNT
-	if [[ -z $AUTHOR_COUNT || $AUTHOR_COUNT -le 0 ]]; then
-	    echo "$0: ERROR: author count was zero for location: $LOCATION_CODE" 1>&2
-	    exit 14
-	fi
-
-	# output markdown entry for this location
-	#
-	if [[ $PREV_LOCATION_CODE != '.' ]]; then
-	    echo '<hr style="width:10%;text-align:left;margin-left:0">'
-	fi
 	if [[ $LOCATION_NAME == "$LOCATION_COMMON_NAME" ]]; then
 	    echo "* <div id=$LOCATION_CODE>**$LOCATION_CODE** - _${LOCATION_NAME}_</div>"
 	else
@@ -511,7 +681,18 @@ fi
 	if [[ $LOCATION_CODE == 'ZZ' ]]; then
 	    echo
 	    echo '<p>**PLEASE HELP** us identify proper locations for these authors!</p>'
-	    echo '<p>See [FAQ 5.5](faq.html#fix_author) for how you can help!</p>'
+	    echo '<p>See the'
+	    echo 'FAQ on "[Help with ZZ](faq.html#zz_help)"'
+	    echo 'for how you can help!</p>'
+	fi
+
+	# determine author count for this location
+	#
+	AUTHOR_COUNT=$(grep -F " $LOCATION_CODE" "$TMP_LOC_COUNT" | awk '{print $1;}')
+	if [[ -z $AUTHOR_COUNT || $AUTHOR_COUNT -le 0 ]]; then
+	    echo "$0: ERROR: cannot determine author count" \
+		 "for location ISO 3166 code: $LOCATION_CODE" 1>&2
+	    exit 23
 	fi
 
 	# output author count for this location
@@ -519,52 +700,24 @@ fi
 	echo
 	echo "  Author count: **$AUTHOR_COUNT**"
 	echo
+    fi
 
-	# process each author_handle JSON files with this location in sort_word order
-	#
-	# For SC2034, we only need to sort on the sort_word.  We do not care about its value.
-	#
-	# SC2034 (warning): SORT_WORD appears unused. Verify use (or export if used externally).
-	# https://www.shellcheck.net/wiki/SC2034
-	# shellcheck disable=SC2034
-	find "$AUTHOR_DIR" -mindepth 1 -maxdepth 1 -type f -name '*.json' -print0 |
-	     xargs -0 grep -l '"location_code".*:.*"'"$LOCATION_CODE"'"' |
-	     while read -r AUTHOR_JSON; do
-		echo -n "$AUTHOR_JSON "
-		grep '"sort_word".*:' "$AUTHOR_JSON" | sed -e 's/^.*: "//' -e 's/",*$//'
-	done |
-	LC_ALL=C sort -k 2d |
-	while read -r AUTHOR_HANDLE_PATH SORT_WORD; do
+    # output the author from the location
+    #
+    echo "  * <a class=\"normal\" href=\"authors.html#$AUTHOR_HANDLE\">$FULL_NAME</a>"
+    PREV_LOCATION_CODE="$LOCATION_CODE"
 
-	    # The author_handle foo_bin is found in author/foo_bar.json
-	    #
-	    AUTHOR_HANDLE=$(basename "$AUTHOR_HANDLE_PATH" .json)
-	    export AUTHOR_HANDLE
+done < "$TMP_LOC_WORD_HANDLE_NAME_SET" > "$TMP_LOC_MD"
 
-	    # fetch full_name
-	    #
-	    FULL_NAME=$(grep '"full_name".*:' "$AUTHOR_HANDLE_PATH" | sed -e 's/^.*: "//' -e 's/",*$//')
-	    export FULL_NAME
 
-	    # output the author from the location
-	    #
-	    echo "  * <a class=\"normal\" href=\"authors.html#$AUTHOR_HANDLE\">$FULL_NAME</a>"
-	done
-	echo '<p></p>'
-	echo
-	PREV_LOCATION_CODE="$LOCATION_CODE"
-    done
+# complete temporary location markdown file
+#
+{
+    echo
     echo '<hr style="width:10%;text-align:left;margin-left:0">'
     echo '<h4>Jump to: <a href="#">top</a></h4>'
+} >> "$TMP_LOC_MD"
 
-} | if [[ -z $NOOP ]]; then
-    cat >> "$TMP_LOC_MD"
-else
-    cat > /dev/null
-    if [[ $V_FLAG -ge 3 ]]; then
-        echo "$0: debug[3]: because of -n, temporary location markdown file is NOT written into: $TMP_LOC_MD" 1>&2
-    fi
-fi
 
 # use the md2html.sh tool to form a location HTML file, unless -n
 #
@@ -575,10 +728,9 @@ if [[ -z $NOOP ]]; then
     "$MD2HTML_SH" "${TOOL_OPTION[@]}" -- location.md "$TMP_LOC_MD" "$LOCATION_HTML"
     status="$?"
     if [[ $status -ne 0 ]]; then
-	echo "$0: Warning: md2html.sh: $MD2HTML_SH ${TOOL_OPTION[*]} -- location.md $TMP_LOC_MD $LOCATION_HTML" \
+	echo "$0: ERROR: md2html.sh: $MD2HTML_SH ${TOOL_OPTION[*]} -- location.md $TMP_LOC_MD $LOCATION_HTML" \
 	     "failed, error: $status" 1>&2
-	EXIT_CODE="1"  # exit 1
-	echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+	exit 1
     elif [[ $V_FLAG -ge 3 ]]; then
 	echo "$0: debug[3]: now up to date: $LOCATION_HTML" 1>&2
     fi
@@ -589,17 +741,7 @@ elif [[ $V_FLAG -ge 5 ]]; then
     echo "$0: debug[5]: because of -n, did not run: $MD2HTML_SH ${TOOL_OPTION[*]} -- location.md $TMP_LOC_MD $LOCATION_HTML" 1>&2
 fi
 
-# file cleanup
-#
-if [[ -z $NOOP ]]; then
-    rm -f -- "$TMP_LOC_MD"
-elif [[ $V_FLAG -ge 3 ]]; then
-    echo "$0: debug[3]: because of -n, disabled: rm -f -- $TMP_LOC_MD" 1>&2
-fi
 
 # All Done!!! All Done!!! -- Jessica Noll, Age 2
 #
-if [[ $EXIT_CODE -ne 0 ]]; then
-    echo "$0: Warning: about to exit $EXIT_CODE" 1>&2
-fi
-exit "$EXIT_CODE"
+exit 0
