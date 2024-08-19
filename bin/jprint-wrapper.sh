@@ -121,7 +121,7 @@ fi
 export FIZZBIN_JSON='"fizzbin"'
 if ! "$JSONPATH_SH" -S -A -T -p >/dev/null 2>&1; then
     echo "$0: FATAL: JSONPath.sh tool does not support -S -A -T: $FIZZBIN_JSON" 1>&2
-    echo "$0: notice: we recommend you obntain and install JSONPath.sh from: $JSONPATH_REPO" 1>&2
+    echo "$0: notice: we recommend you obtain and install JSONPath.sh from: $JSONPATH_REPO" 1>&2
     exit 5
 fi <<< "$FIZZBIN_JSON"
 
