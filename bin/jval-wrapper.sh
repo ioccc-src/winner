@@ -106,7 +106,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.0.3 2024-08-11"
+export VERSION="1.0.4 2024-08-20"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -128,10 +128,10 @@ if [[ -z $JSONPATH_SH ]]; then
     echo "$0: notice: obtain JSONPath.sh from: $JSONPATH_REPO" 1>&2
     exit 5
 fi
-# verify JSONPath.sh supports -S -A -T
+# verify JSONPath.sh supports -S -A
 export FIZZBIN_JSON='"fizzbin"'
-if ! "$JSONPATH_SH" -S -A -T -p >/dev/null 2>&1; then
-    echo "$0: FATAL: JSONPath.sh tool does not support -S -A -T: $FIZZBIN_JSON" 1>&2
+if ! "$JSONPATH_SH" -S -A -p >/dev/null 2>&1; then
+    echo "$0: FATAL: JSONPath.sh tool does not support -S -A: $FIZZBIN_JSON" 1>&2
     echo "$0: notice: we recommend you obtain and install JSONPath.sh from: $JSONPATH_REPO" 1>&2
     exit 5
 fi <<< "$FIZZBIN_JSON"

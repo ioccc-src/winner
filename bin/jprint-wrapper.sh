@@ -92,7 +92,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.0.2 2024-08-08"
+export VERSION="1.1 2024-08-20"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -117,9 +117,9 @@ if [[ -z $JSONPATH_SH ]]; then
     echo "$0: notice: obtain JSONPath.sh from: $JSONPATH_REPO" 1>&2
     exit 5
 fi
-# verify JSONPath.sh supports -S -A -T
+# verify JSONPath.sh supports -S -A
 export FIZZBIN_JSON='"fizzbin"'
-if ! "$JSONPATH_SH" -S -A -T -p >/dev/null 2>&1; then
+if ! "$JSONPATH_SH" -S -A -p >/dev/null 2>&1; then
     echo "$0: FATAL: JSONPath.sh tool does not support -S -A -T: $FIZZBIN_JSON" 1>&2
     echo "$0: notice: we recommend you obtain and install JSONPath.sh from: $JSONPATH_REPO" 1>&2
     exit 5
@@ -276,13 +276,13 @@ fi
 if [[ -z $JSON_FILE ]]; then
 
     if [[ $V_FLAG -ge 1 ]]; then
-	echo "$0: debug[1]: about to: $JSONPATH_SH -S -A -T -j" 1>&2
+	echo "$0: debug[1]: about to: $JSONPATH_SH -S -A -j" 1>&2
     fi
-    "$JSONPATH_SH" -S -A -T -j
+    "$JSONPATH_SH" -S -A -j
     status="$?"
 
     if [[ $status -ne 0 ]]; then
-	echo "$0: ERROR: $JSONPATH_SH -S -A -T -j failed," \
+	echo "$0: ERROR: $JSONPATH_SH -S -A -j failed," \
 	     "error code: $status" 1>&2
 	exit 1
     fi
@@ -292,12 +292,12 @@ if [[ -z $JSON_FILE ]]; then
 else
 
     if [[ $V_FLAG -ge 1 ]]; then
-	echo "$0: debug[1]: about to: $JSONPATH_SH -S -A -T -j -f $JSON_FILE" 1>&2
+	echo "$0: debug[1]: about to: $JSONPATH_SH -S -A -j -f $JSON_FILE" 1>&2
     fi
-    "$JSONPATH_SH" -S -A -T -j -f "$JSON_FILE"
+    "$JSONPATH_SH" -S -A -j -f "$JSON_FILE"
     status="$?"
     if [[ $status -ne 0 ]]; then
-	echo "$0: ERROR: $JSONPATH_SH -S -A -T -j -f $JSON_FILE failed," \
+	echo "$0: ERROR: $JSONPATH_SH -S -A -j -f $JSON_FILE failed," \
 	     "error code: $status" 1>&2
 	exit 1
     fi
