@@ -14,8 +14,14 @@
     "github" : null,
     "affiliation" : null,
     "winning_entry_set" : [
-	{ "entry_id" : "2000_bellard" },
-	{ "entry_id" : "2001_bellard" },
-	{ "entry_id" : "2018_bellard" }
+        {
+            "entry_id" : "2000_bellard"
+        },
+        {
+            "entry_id" : "2001_bellard"
+        },
+        {
+            "entry_id" : "2018_bellard"
+        }
     ]
 }

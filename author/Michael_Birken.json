@@ -14,8 +14,14 @@
     "github" : null,
     "affiliation" : null,
     "winning_entry_set" : [
-	{ "entry_id" : "2006_birken" },
-	{ "entry_id" : "2013_birken" },
-	{ "entry_id" : "2014_birken" }
+        {
+            "entry_id" : "2006_birken"
+        },
+        {
+            "entry_id" : "2013_birken"
+        },
+        {
+            "entry_id" : "2014_birken"
+        }
     ]
 }

@@ -14,9 +14,17 @@
     "github" : null,
     "affiliation" : null,
     "winning_entry_set" : [
-	{ "entry_id" : "2004_sds" },
-	{ "entry_id" : "2005_sykes" },
-	{ "entry_id" : "2006_sykes1" },
-	{ "entry_id" : "2006_sykes2" }
+        {
+            "entry_id" : "2004_sds"
+        },
+        {
+            "entry_id" : "2005_sykes"
+        },
+        {
+            "entry_id" : "2006_sykes1"
+        },
+        {
+            "entry_id" : "2006_sykes2"
+        }
     ]
 }

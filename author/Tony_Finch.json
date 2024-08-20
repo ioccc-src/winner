@@ -14,6 +14,8 @@
     "github" : "@fanf2",
     "affiliation" : null,
     "winning_entry_set" : [
-	{ "entry_id" : "1998_fanf" }
+        {
+            "entry_id" : "1998_fanf"
+        }
     ]
 }

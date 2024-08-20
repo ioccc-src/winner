@@ -14,9 +14,17 @@
     "github" : "@dspinellis",
     "affiliation" : null,
     "winning_entry_set" : [
-	{ "entry_id" : "1988_spinellis" },
-	{ "entry_id" : "1990_dds" },
-	{ "entry_id" : "1991_dds" },
-	{ "entry_id" : "1995_spinellis" }
+        {
+            "entry_id" : "1988_spinellis"
+        },
+        {
+            "entry_id" : "1990_dds"
+        },
+        {
+            "entry_id" : "1991_dds"
+        },
+        {
+            "entry_id" : "1995_spinellis"
+        }
     ]
 }

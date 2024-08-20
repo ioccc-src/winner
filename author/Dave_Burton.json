@@ -14,10 +14,20 @@
     "github" : null,
     "affiliation" : null,
     "winning_entry_set" : [
-	{ "entry_id" : "2015_burton" },
-	{ "entry_id" : "2018_burton1" },
-	{ "entry_id" : "2018_burton2" },
-	{ "entry_id" : "2019_burton" },
-	{ "entry_id" : "2020_burton" }
+        {
+            "entry_id" : "2015_burton"
+        },
+        {
+            "entry_id" : "2018_burton1"
+        },
+        {
+            "entry_id" : "2018_burton2"
+        },
+        {
+            "entry_id" : "2019_burton"
+        },
+        {
+            "entry_id" : "2020_burton"
+        }
     ]
 }

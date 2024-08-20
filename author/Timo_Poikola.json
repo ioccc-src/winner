@@ -14,7 +14,11 @@
     "github" : null,
     "affiliation" : null,
     "winning_entry_set" : [
-	{ "entry_id" : "2018_poikola" },
-	{ "entry_id" : "2019_poikola" }
+        {
+            "entry_id" : "2018_poikola"
+        },
+        {
+            "entry_id" : "2019_poikola"
+        }
     ]
 }

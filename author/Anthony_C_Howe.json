@@ -14,11 +14,23 @@
     "github" : null,
     "affiliation" : null,
     "winning_entry_set" : [
-	{ "entry_id" : "1991_ant" },
-	{ "entry_id" : "1992_ant" },
-	{ "entry_id" : "1993_ant" },
-	{ "entry_id" : "2004_hibachi" },
-	{ "entry_id" : "2005_mynx" },
-	{ "entry_id" : "2015_howe" }
+        {
+            "entry_id" : "1991_ant"
+        },
+        {
+            "entry_id" : "1992_ant"
+        },
+        {
+            "entry_id" : "1993_ant"
+        },
+        {
+            "entry_id" : "2004_hibachi"
+        },
+        {
+            "entry_id" : "2005_mynx"
+        },
+        {
+            "entry_id" : "2015_howe"
+        }
     ]
 }

@@ -14,11 +14,23 @@
     "github" : "@dlowe",
     "affiliation" : null,
     "winning_entry_set" : [
-	{ "entry_id" : "1998_dlowe" },
-	{ "entry_id" : "1998_dloweneil" },
-	{ "entry_id" : "2000_dlowe" },
-	{ "entry_id" : "2011_dlowe" },
-	{ "entry_id" : "2012_dlowe" },
-	{ "entry_id" : "2013_dlowe" }
+        {
+            "entry_id" : "1998_dlowe"
+        },
+        {
+            "entry_id" : "1998_dloweneil"
+        },
+        {
+            "entry_id" : "2000_dlowe"
+        },
+        {
+            "entry_id" : "2011_dlowe"
+        },
+        {
+            "entry_id" : "2012_dlowe"
+        },
+        {
+            "entry_id" : "2013_dlowe"
+        }
     ]
 }

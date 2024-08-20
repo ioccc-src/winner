@@ -14,23 +14,59 @@
     "github" : "@mame",
     "affiliation" : null,
     "winning_entry_set" : [
-	{ "entry_id" : "2012_endoh1" },
-	{ "entry_id" : "2012_endoh2" },
-	{ "entry_id" : "2013_endoh1" },
-	{ "entry_id" : "2013_endoh2" },
-	{ "entry_id" : "2013_endoh3" },
-	{ "entry_id" : "2013_endoh4" },
-	{ "entry_id" : "2014_endoh1" },
-	{ "entry_id" : "2014_endoh2" },
-	{ "entry_id" : "2015_endoh1" },
-	{ "entry_id" : "2015_endoh2" },
-	{ "entry_id" : "2015_endoh3" },
-	{ "entry_id" : "2015_endoh4" },
-	{ "entry_id" : "2018_endoh1" },
-	{ "entry_id" : "2018_endoh2" },
-	{ "entry_id" : "2019_endoh" },
-	{ "entry_id" : "2020_endoh1" },
-	{ "entry_id" : "2020_endoh2" },
-	{ "entry_id" : "2020_endoh3" }
+        {
+            "entry_id" : "2012_endoh1"
+        },
+        {
+            "entry_id" : "2012_endoh2"
+        },
+        {
+            "entry_id" : "2013_endoh1"
+        },
+        {
+            "entry_id" : "2013_endoh2"
+        },
+        {
+            "entry_id" : "2013_endoh3"
+        },
+        {
+            "entry_id" : "2013_endoh4"
+        },
+        {
+            "entry_id" : "2014_endoh1"
+        },
+        {
+            "entry_id" : "2014_endoh2"
+        },
+        {
+            "entry_id" : "2015_endoh1"
+        },
+        {
+            "entry_id" : "2015_endoh2"
+        },
+        {
+            "entry_id" : "2015_endoh3"
+        },
+        {
+            "entry_id" : "2015_endoh4"
+        },
+        {
+            "entry_id" : "2018_endoh1"
+        },
+        {
+            "entry_id" : "2018_endoh2"
+        },
+        {
+            "entry_id" : "2019_endoh"
+        },
+        {
+            "entry_id" : "2020_endoh1"
+        },
+        {
+            "entry_id" : "2020_endoh2"
+        },
+        {
+            "entry_id" : "2020_endoh3"
+        }
     ]
 }

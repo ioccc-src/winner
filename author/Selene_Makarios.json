@@ -14,7 +14,11 @@
     "github" : null,
     "affiliation" : null,
     "winning_entry_set" : [
-	{ "entry_id" : "1995_heathbar" },
-	{ "entry_id" : "1995_makarios" }
+        {
+            "entry_id" : "1995_heathbar"
+        },
+        {
+            "entry_id" : "1995_makarios"
+        }
     ]
 }

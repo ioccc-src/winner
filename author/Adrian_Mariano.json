@@ -14,7 +14,11 @@
     "github" : null,
     "affiliation" : null,
     "winning_entry_set" : [
-	{ "entry_id" : "1990_theorem" },
-	{ "entry_id" : "1992_adrian" }
+        {
+            "entry_id" : "1990_theorem"
+        },
+        {
+            "entry_id" : "1992_adrian"
+        }
     ]
 }

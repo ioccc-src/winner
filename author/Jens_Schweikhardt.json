@@ -14,13 +14,29 @@
     "github" : null,
     "affiliation" : null,
     "winning_entry_set" : [
-	{ "entry_id" : "1996_schweikh1" },
-	{ "entry_id" : "1996_schweikh2" },
-	{ "entry_id" : "1996_schweikh3" },
-	{ "entry_id" : "1998_schweikh1" },
-	{ "entry_id" : "1998_schweikh2" },
-	{ "entry_id" : "1998_schweikh3" },
-	{ "entry_id" : "2001_schweikh" },
-	{ "entry_id" : "2015_schweikhardt" }
+        {
+            "entry_id" : "1996_schweikh1"
+        },
+        {
+            "entry_id" : "1996_schweikh2"
+        },
+        {
+            "entry_id" : "1996_schweikh3"
+        },
+        {
+            "entry_id" : "1998_schweikh1"
+        },
+        {
+            "entry_id" : "1998_schweikh2"
+        },
+        {
+            "entry_id" : "1998_schweikh3"
+        },
+        {
+            "entry_id" : "2001_schweikh"
+        },
+        {
+            "entry_id" : "2015_schweikhardt"
+        }
     ]
 }

@@ -14,8 +14,14 @@
     "github" : null,
     "affiliation" : null,
     "winning_entry_set" : [
-	{ "entry_id" : "2013_cable1" },
-	{ "entry_id" : "2013_cable2" },
-	{ "entry_id" : "2013_cable3" }
+        {
+            "entry_id" : "2013_cable1"
+        },
+        {
+            "entry_id" : "2013_cable2"
+        },
+        {
+            "entry_id" : "2013_cable3"
+        }
     ]
 }

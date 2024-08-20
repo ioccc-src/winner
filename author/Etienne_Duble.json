@@ -14,7 +14,11 @@
     "github" : null,
     "affiliation" : null,
     "winning_entry_set" : [
-	{ "entry_id" : "2015_duble" },
-	{ "entry_id" : "2019_duble" }
+        {
+            "entry_id" : "2015_duble"
+        },
+        {
+            "entry_id" : "2019_duble"
+        }
     ]
 }

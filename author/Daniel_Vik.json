@@ -14,11 +14,23 @@
     "github" : null,
     "affiliation" : null,
     "winning_entry_set" : [
-	{ "entry_id" : "2004_vik1" },
-	{ "entry_id" : "2004_vik2" },
-	{ "entry_id" : "2005_vik" },
-	{ "entry_id" : "2011_vik" },
-	{ "entry_id" : "2012_vik" },
-	{ "entry_id" : "2014_vik" }
+        {
+            "entry_id" : "2004_vik1"
+        },
+        {
+            "entry_id" : "2004_vik2"
+        },
+        {
+            "entry_id" : "2005_vik"
+        },
+        {
+            "entry_id" : "2011_vik"
+        },
+        {
+            "entry_id" : "2012_vik"
+        },
+        {
+            "entry_id" : "2014_vik"
+        }
     ]
 }

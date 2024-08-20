@@ -14,9 +14,17 @@
     "github" : null,
     "affiliation" : null,
     "winning_entry_set" : [
-	{ "entry_id" : "1988_robison" },
-	{ "entry_id" : "1989_robison" },
-	{ "entry_id" : "2000_robison" },
-	{ "entry_id" : "2013_robison" }
+        {
+            "entry_id" : "1988_robison"
+        },
+        {
+            "entry_id" : "1989_robison"
+        },
+        {
+            "entry_id" : "2000_robison"
+        },
+        {
+            "entry_id" : "2013_robison"
+        }
     ]
 }

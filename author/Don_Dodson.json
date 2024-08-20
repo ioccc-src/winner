@@ -14,9 +14,17 @@
     "github" : null,
     "affiliation" : null,
     "winning_entry_set" : [
-	{ "entry_id" : "1994_dodsond1" },
-	{ "entry_id" : "1994_dodsond2" },
-	{ "entry_id" : "1995_dodsond1" },
-	{ "entry_id" : "1995_dodsond2" }
+        {
+            "entry_id" : "1994_dodsond1"
+        },
+        {
+            "entry_id" : "1994_dodsond2"
+        },
+        {
+            "entry_id" : "1995_dodsond1"
+        },
+        {
+            "entry_id" : "1995_dodsond2"
+        }
     ]
 }

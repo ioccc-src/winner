@@ -14,10 +14,20 @@
     "github" : null,
     "affiliation" : null,
     "winning_entry_set" : [
-	{ "entry_id" : "2005_toledo" },
-	{ "entry_id" : "2006_toledo1" },
-	{ "entry_id" : "2006_toledo2" },
-	{ "entry_id" : "2006_toledo3" },
-	{ "entry_id" : "2011_toledo" }
+        {
+            "entry_id" : "2005_toledo"
+        },
+        {
+            "entry_id" : "2006_toledo1"
+        },
+        {
+            "entry_id" : "2006_toledo2"
+        },
+        {
+            "entry_id" : "2006_toledo3"
+        },
+        {
+            "entry_id" : "2011_toledo"
+        }
     ]
 }

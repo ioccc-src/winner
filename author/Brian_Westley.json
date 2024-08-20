@@ -14,14 +14,32 @@
     "github" : null,
     "affiliation" : null,
     "winning_entry_set" : [
-	{ "entry_id" : "1987_westley" },
-	{ "entry_id" : "1988_westley" },
-	{ "entry_id" : "1989_westley" },
-	{ "entry_id" : "1990_westley" },
-	{ "entry_id" : "1991_westley" },
-	{ "entry_id" : "1992_westley" },
-	{ "entry_id" : "1994_westley" },
-	{ "entry_id" : "1996_westley" },
-	{ "entry_id" : "2001_westley" }
+        {
+            "entry_id" : "1987_westley"
+        },
+        {
+            "entry_id" : "1988_westley"
+        },
+        {
+            "entry_id" : "1989_westley"
+        },
+        {
+            "entry_id" : "1990_westley"
+        },
+        {
+            "entry_id" : "1991_westley"
+        },
+        {
+            "entry_id" : "1992_westley"
+        },
+        {
+            "entry_id" : "1994_westley"
+        },
+        {
+            "entry_id" : "1996_westley"
+        },
+        {
+            "entry_id" : "2001_westley"
+        }
     ]
 }

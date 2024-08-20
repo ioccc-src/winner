@@ -14,12 +14,26 @@
     "github" : null,
     "affiliation" : null,
     "winning_entry_set" : [
-	{ "entry_id" : "1990_cmills" },
-	{ "entry_id" : "1993_cmills" },
-	{ "entry_id" : "2013_mills" },
-	{ "entry_id" : "2015_mills1" },
-	{ "entry_id" : "2015_mills2" },
-	{ "entry_id" : "2018_mills" },
-	{ "entry_id" : "2019_mills" }
+        {
+            "entry_id" : "1990_cmills"
+        },
+        {
+            "entry_id" : "1993_cmills"
+        },
+        {
+            "entry_id" : "2013_mills"
+        },
+        {
+            "entry_id" : "2015_mills1"
+        },
+        {
+            "entry_id" : "2015_mills2"
+        },
+        {
+            "entry_id" : "2018_mills"
+        },
+        {
+            "entry_id" : "2019_mills"
+        }
     ]
 }

@@ -6,208 +6,210 @@
     "dir" : "ferguson",
     "entry_id" : "2018_ferguson",
     "author_set" : [
-	{ "author_handle" : "Cody_Boone_Ferguson" }
+        {
+            "author_handle" : "Cody_Boone_Ferguson"
+        }
     ],
     "manifest" : [
-	{
-	    "file_path" : "prog.c",
-	    "inventory_order" : 20,
-	    "OK_to_edit" : true,
-	    "display_as" : "c",
-	    "display_via_github" : true,
-	    "entry_text" : "entry source code"
-	},
-	{
-	    "file_path" : "Makefile",
-	    "inventory_order" : 30,
-	    "OK_to_edit" : true,
-	    "display_as" : "makefile",
-	    "display_via_github" : true,
-	    "entry_text" : "entry Makefile"
-	},
-	{
-	    "file_path" : "prog.alt.c",
-	    "inventory_order" : 40,
-	    "OK_to_edit" : true,
-	    "display_as" : "c",
-	    "display_via_github" : true,
-	    "entry_text" : "alternate source code"
-	},
-	{
-	    "file_path" : "prog.orig.c",
-	    "inventory_order" : 50,
-	    "OK_to_edit" : false,
-	    "display_as" : "c",
-	    "display_via_github" : true,
-	    "entry_text" : "original source code"
-	},
-	{
-	    "file_path" : "FILES.html",
-	    "inventory_order" : 100,
-	    "OK_to_edit" : false,
-	    "display_as" : "html",
-	    "display_via_github" : false,
-	    "entry_text" : "list of files in this entry"
-	},
-	{
-	    "file_path" : "FILES.md",
-	    "inventory_order" : 100,
-	    "OK_to_edit" : true,
-	    "display_as" : "text",
-	    "display_via_github" : true,
-	    "entry_text" : "markdown source for FILES.html"
-	},
-	{
-	    "file_path" : "id.alt.sh",
-	    "inventory_order" : 100,
-	    "OK_to_edit" : true,
-	    "display_as" : "shellscript",
-	    "display_via_github" : true,
-	    "entry_text" : "script to run alternate code to disprove intelligent design"
-	},
-	{
-	    "file_path" : "id.sh",
-	    "inventory_order" : 100,
-	    "OK_to_edit" : true,
-	    "display_as" : "shellscript",
-	    "display_via_github" : true,
-	    "entry_text" : "script to run code to disprove intelligent design"
-	},
-	{
-	    "file_path" : "monkey-words.alt.sh",
-	    "inventory_order" : 100,
-	    "OK_to_edit" : true,
-	    "display_as" : "shellscript",
-	    "display_via_github" : true,
-	    "entry_text" : "script to run alternate code in monkey mode"
-	},
-	{
-	    "file_path" : "monkey-words.sh",
-	    "inventory_order" : 100,
-	    "OK_to_edit" : true,
-	    "display_as" : "shellscript",
-	    "display_via_github" : true,
-	    "entry_text" : "script to run entry in monkey mode"
-	},
-	{
-	    "file_path" : "rpm.html",
-	    "inventory_order" : 100,
-	    "OK_to_edit" : false,
-	    "display_as" : "html",
-	    "display_via_github" : false,
-	    "entry_text" : "about forming the rpm"
-	},
-	{
-	    "file_path" : "test.sh",
-	    "inventory_order" : 100,
-	    "OK_to_edit" : true,
-	    "display_as" : "shellscript",
-	    "display_via_github" : true,
-	    "entry_text" : "run the test suite"
-	},
-	{
-	    "file_path" : "try.alt.sh",
-	    "inventory_order" : 100,
-	    "OK_to_edit" : true,
-	    "display_as" : "shellscript",
-	    "display_via_github" : true,
-	    "entry_text" : "script to try alternate code"
-	},
-	{
-	    "file_path" : "try.sh",
-	    "inventory_order" : 100,
-	    "OK_to_edit" : true,
-	    "display_as" : "shellscript",
-	    "display_via_github" : true,
-	    "entry_text" : "script to try entry"
-	},
-	{
-	    "file_path" : "weasel.1",
-	    "inventory_order" : 150,
-	    "OK_to_edit" : true,
-	    "display_as" : "man",
-	    "display_via_github" : true,
-	    "entry_text" : "weasel program man page"
-	},
-	{
-	    "file_path" : "weasel.spec",
-	    "inventory_order" : 150,
-	    "OK_to_edit" : true,
-	    "display_as" : "spec",
-	    "display_via_github" : true,
-	    "entry_text" : "RPM spec file"
-	},
-	{
-	    "file_path" : "2018_ferguson.tar.bz2",
-	    "inventory_order" : 1415926535,
-	    "OK_to_edit" : false,
-	    "display_as" : "tbz2",
-	    "display_via_github" : false,
-	    "entry_text" : "download entry tarball"
-	},
-	{
-	    "file_path" : ".entry.json",
-	    "inventory_order" : 4000000000,
-	    "OK_to_edit" : true,
-	    "display_as" : "json",
-	    "display_via_github" : true,
-	    "entry_text" : "entry summary and manifest in JSON"
-	},
-	{
-	    "file_path" : ".gitignore",
-	    "inventory_order" : 4000000000,
-	    "OK_to_edit" : true,
-	    "display_as" : "gitignore",
-	    "display_via_github" : true,
-	    "entry_text" : "list of files that should not be committed under git"
-	},
-	{
-	    "file_path" : ".path",
-	    "inventory_order" : 4000000000,
-	    "OK_to_edit" : false,
-	    "display_as" : "path",
-	    "display_via_github" : true,
-	    "entry_text" : "directory path from top level directory"
-	},
-	{
-	    "file_path" : "README.md",
-	    "inventory_order" : 4000000000,
-	    "OK_to_edit" : true,
-	    "display_as" : "markdown",
-	    "display_via_github" : true,
-	    "entry_text" : "markdown source for this web page"
-	},
-	{
-	    "file_path" : "hint.css",
-	    "inventory_order" : 4000000000,
-	    "OK_to_edit" : true,
-	    "display_as" : "css",
-	    "display_via_github" : true,
-	    "entry_text" : "CSS for index in rpm"
-	},
-	{
-	    "file_path" : "rpm.md",
-	    "inventory_order" : 4000000000,
-	    "OK_to_edit" : true,
-	    "display_as" : "markdown",
-	    "display_via_github" : true,
-	    "entry_text" : "markdown source for rpm.html"
-	},
-	{
-	    "file_path" : "test-strings.txt",
-	    "inventory_order" : 4000000000,
-	    "OK_to_edit" : true,
-	    "display_as" : "text",
-	    "display_via_github" : false,
-	    "entry_text" : "test.sh input file"
-	},
-	{
-	    "file_path" : "index.html",
-	    "inventory_order" : 4294967295,
-	    "OK_to_edit" : false,
-	    "display_as" : "html",
-	    "display_via_github" : false,
-	    "entry_text" : "this web page"
-	}
+        {
+            "file_path" : "prog.c",
+            "inventory_order" : 20,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "entry source code"
+        },
+        {
+            "file_path" : "Makefile",
+            "inventory_order" : 30,
+            "OK_to_edit" : true,
+            "display_as" : "makefile",
+            "display_via_github" : true,
+            "entry_text" : "entry Makefile"
+        },
+        {
+            "file_path" : "prog.alt.c",
+            "inventory_order" : 40,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "alternate source code"
+        },
+        {
+            "file_path" : "prog.orig.c",
+            "inventory_order" : 50,
+            "OK_to_edit" : false,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "original source code"
+        },
+        {
+            "file_path" : "FILES.html",
+            "inventory_order" : 100,
+            "OK_to_edit" : false,
+            "display_as" : "html",
+            "display_via_github" : false,
+            "entry_text" : "list of files in this entry"
+        },
+        {
+            "file_path" : "FILES.md",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : true,
+            "entry_text" : "markdown source for FILES.html"
+        },
+        {
+            "file_path" : "id.alt.sh",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "shellscript",
+            "display_via_github" : true,
+            "entry_text" : "script to run alternate code to disprove intelligent design"
+        },
+        {
+            "file_path" : "id.sh",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "shellscript",
+            "display_via_github" : true,
+            "entry_text" : "script to run code to disprove intelligent design"
+        },
+        {
+            "file_path" : "monkey-words.alt.sh",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "shellscript",
+            "display_via_github" : true,
+            "entry_text" : "script to run alternate code in monkey mode"
+        },
+        {
+            "file_path" : "monkey-words.sh",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "shellscript",
+            "display_via_github" : true,
+            "entry_text" : "script to run entry in monkey mode"
+        },
+        {
+            "file_path" : "rpm.html",
+            "inventory_order" : 100,
+            "OK_to_edit" : false,
+            "display_as" : "html",
+            "display_via_github" : false,
+            "entry_text" : "about forming the rpm"
+        },
+        {
+            "file_path" : "test.sh",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "shellscript",
+            "display_via_github" : true,
+            "entry_text" : "run the test suite"
+        },
+        {
+            "file_path" : "try.alt.sh",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "shellscript",
+            "display_via_github" : true,
+            "entry_text" : "script to try alternate code"
+        },
+        {
+            "file_path" : "try.sh",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "shellscript",
+            "display_via_github" : true,
+            "entry_text" : "script to try entry"
+        },
+        {
+            "file_path" : "weasel.1",
+            "inventory_order" : 150,
+            "OK_to_edit" : true,
+            "display_as" : "man",
+            "display_via_github" : true,
+            "entry_text" : "weasel program man page"
+        },
+        {
+            "file_path" : "weasel.spec",
+            "inventory_order" : 150,
+            "OK_to_edit" : true,
+            "display_as" : "spec",
+            "display_via_github" : true,
+            "entry_text" : "RPM spec file"
+        },
+        {
+            "file_path" : "2018_ferguson.tar.bz2",
+            "inventory_order" : 1415926535,
+            "OK_to_edit" : false,
+            "display_as" : "tbz2",
+            "display_via_github" : false,
+            "entry_text" : "download entry tarball"
+        },
+        {
+            "file_path" : ".entry.json",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "json",
+            "display_via_github" : true,
+            "entry_text" : "entry summary and manifest in JSON"
+        },
+        {
+            "file_path" : ".gitignore",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "gitignore",
+            "display_via_github" : true,
+            "entry_text" : "list of files that should not be committed under git"
+        },
+        {
+            "file_path" : ".path",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : false,
+            "display_as" : "path",
+            "display_via_github" : true,
+            "entry_text" : "directory path from top level directory"
+        },
+        {
+            "file_path" : "README.md",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "markdown",
+            "display_via_github" : true,
+            "entry_text" : "markdown source for this web page"
+        },
+        {
+            "file_path" : "hint.css",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "css",
+            "display_via_github" : true,
+            "entry_text" : "CSS for index in rpm"
+        },
+        {
+            "file_path" : "rpm.md",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "markdown",
+            "display_via_github" : true,
+            "entry_text" : "markdown source for rpm.html"
+        },
+        {
+            "file_path" : "test-strings.txt",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : false,
+            "entry_text" : "test.sh input file"
+        },
+        {
+            "file_path" : "index.html",
+            "inventory_order" : 4294967295,
+            "OK_to_edit" : false,
+            "display_as" : "html",
+            "display_via_github" : false,
+            "entry_text" : "this web page"
+        }
     ]
 }

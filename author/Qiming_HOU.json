@@ -14,10 +14,20 @@
     "github" : null,
     "affiliation" : null,
     "winning_entry_set" : [
-	{ "entry_id" : "2011_hou" },
-	{ "entry_id" : "2012_hou" },
-	{ "entry_id" : "2013_hou" },
-	{ "entry_id" : "2015_hou" },
-	{ "entry_id" : "2018_hou" }
+        {
+            "entry_id" : "2011_hou"
+        },
+        {
+            "entry_id" : "2012_hou"
+        },
+        {
+            "entry_id" : "2013_hou"
+        },
+        {
+            "entry_id" : "2015_hou"
+        },
+        {
+            "entry_id" : "2018_hou"
+        }
     ]
 }

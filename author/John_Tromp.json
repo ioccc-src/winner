@@ -14,7 +14,11 @@
     "github" : "@tromp",
     "affiliation" : null,
     "winning_entry_set" : [
-	{ "entry_id" : "1989_tromp" },
-	{ "entry_id" : "2012_tromp" }
+        {
+            "entry_id" : "1989_tromp"
+        },
+        {
+            "entry_id" : "2012_tromp"
+        }
     ]
 }

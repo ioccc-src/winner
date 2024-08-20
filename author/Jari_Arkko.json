@@ -14,8 +14,14 @@
     "github" : null,
     "affiliation" : null,
     "winning_entry_set" : [
-	{ "entry_id" : "1989_jar.1" },
-	{ "entry_id" : "1989_jar.2" },
-	{ "entry_id" : "2000_jarijyrki" }
+        {
+            "entry_id" : "1989_jar.1"
+        },
+        {
+            "entry_id" : "1989_jar.2"
+        },
+        {
+            "entry_id" : "2000_jarijyrki"
+        }
     ]
 }

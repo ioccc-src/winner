@@ -14,15 +14,35 @@
     "github" : null,
     "affiliation" : null,
     "winning_entry_set" : [
-	{ "entry_id" : "2000_dhyang" },
-	{ "entry_id" : "2004_omoikane" },
-	{ "entry_id" : "2011_akari" },
-	{ "entry_id" : "2012_omoikane" },
-	{ "entry_id" : "2013_misaka" },
-	{ "entry_id" : "2014_sinon" },
-	{ "entry_id" : "2015_yang" },
-	{ "entry_id" : "2018_yang" },
-	{ "entry_id" : "2019_yang" },
-	{ "entry_id" : "2020_yang" }
+        {
+            "entry_id" : "2000_dhyang"
+        },
+        {
+            "entry_id" : "2004_omoikane"
+        },
+        {
+            "entry_id" : "2011_akari"
+        },
+        {
+            "entry_id" : "2012_omoikane"
+        },
+        {
+            "entry_id" : "2013_misaka"
+        },
+        {
+            "entry_id" : "2014_sinon"
+        },
+        {
+            "entry_id" : "2015_yang"
+        },
+        {
+            "entry_id" : "2018_yang"
+        },
+        {
+            "entry_id" : "2019_yang"
+        },
+        {
+            "entry_id" : "2020_yang"
+        }
     ]
 }

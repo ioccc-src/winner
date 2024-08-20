@@ -14,7 +14,11 @@
     "github" : null,
     "affiliation" : null,
     "winning_entry_set" : [
-	{ "entry_id" : "2006_borsanyi" },
-	{ "entry_id" : "2011_borsanyi" }
+        {
+            "entry_id" : "2006_borsanyi"
+        },
+        {
+            "entry_id" : "2011_borsanyi"
+        }
     ]
 }

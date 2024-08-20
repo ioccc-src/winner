@@ -14,9 +14,17 @@
     "github" : "@ilyakurdyukov",
     "affiliation" : null,
     "winning_entry_set" : [
-	{ "entry_id" : "2020_kurdyukov1" },
-	{ "entry_id" : "2020_kurdyukov2" },
-	{ "entry_id" : "2020_kurdyukov3" },
-	{ "entry_id" : "2020_kurdyukov4" }
+        {
+            "entry_id" : "2020_kurdyukov1"
+        },
+        {
+            "entry_id" : "2020_kurdyukov2"
+        },
+        {
+            "entry_id" : "2020_kurdyukov3"
+        },
+        {
+            "entry_id" : "2020_kurdyukov4"
+        }
     ]
 }

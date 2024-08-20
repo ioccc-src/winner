@@ -14,6 +14,8 @@
     "github" : "@yalue",
     "affiliation" : null,
     "winning_entry_set" : [
-	{ "entry_id" : "2020_otterness" }
+        {
+            "entry_id" : "2020_otterness"
+        }
     ]
 }

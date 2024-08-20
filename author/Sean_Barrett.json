@@ -14,8 +14,14 @@
     "github" : null,
     "affiliation" : null,
     "winning_entry_set" : [
-	{ "entry_id" : "1991_buzzard" },
-	{ "entry_id" : "1992_buzzard.1" },
-	{ "entry_id" : "1992_buzzard.2" }
+        {
+            "entry_id" : "1991_buzzard"
+        },
+        {
+            "entry_id" : "1992_buzzard.1"
+        },
+        {
+            "entry_id" : "1992_buzzard.2"
+        }
     ]
 }

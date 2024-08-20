@@ -14,6 +14,8 @@
     "github" : "@sjoerdmullender",
     "affiliation" : null,
     "winning_entry_set" : [
-	{ "entry_id" : "1984_mullender" }
+        {
+            "entry_id" : "1984_mullender"
+        }
     ]
 }

@@ -6,184 +6,186 @@
     "dir" : "burton",
     "entry_id" : "2015_burton",
     "author_set" : [
-	{ "author_handle" : "Dave_Burton" }
+        {
+            "author_handle" : "Dave_Burton"
+        }
     ],
     "manifest" : [
-	{
-	    "file_path" : "prog.c",
-	    "inventory_order" : 20,
-	    "OK_to_edit" : true,
-	    "display_as" : "c",
-	    "display_via_github" : true,
-	    "entry_text" : "entry source code"
-	},
-	{
-	    "file_path" : "Makefile",
-	    "inventory_order" : 30,
-	    "OK_to_edit" : true,
-	    "display_as" : "makefile",
-	    "display_via_github" : true,
-	    "entry_text" : "entry Makefile"
-	},
-	{
-	    "file_path" : "prog.alt.c",
-	    "inventory_order" : 40,
-	    "OK_to_edit" : true,
-	    "display_as" : "c",
-	    "display_via_github" : true,
-	    "entry_text" : "alternate source code"
-	},
-	{
-	    "file_path" : "prog.orig.c",
-	    "inventory_order" : 50,
-	    "OK_to_edit" : false,
-	    "display_as" : "c",
-	    "display_via_github" : true,
-	    "entry_text" : "original source code"
-	},
-	{
-	    "file_path" : "try.sh",
-	    "inventory_order" : 100,
-	    "OK_to_edit" : true,
-	    "display_as" : "shellscript",
-	    "display_via_github" : true,
-	    "entry_text" : "script to try entry"
-	},
-	{
-	    "file_path" : "try.this.txt",
-	    "inventory_order" : 100,
-	    "OK_to_edit" : true,
-	    "display_as" : "text",
-	    "display_via_github" : false,
-	    "entry_text" : "input file used by try.sh"
-	},
-	{
-	    "file_path" : "calc.1",
-	    "inventory_order" : 150,
-	    "OK_to_edit" : true,
-	    "display_as" : "man",
-	    "display_via_github" : true,
-	    "entry_text" : "man page for integer expression calculator"
-	},
-	{
-	    "file_path" : "road.to.obscurity.html",
-	    "inventory_order" : 150,
-	    "OK_to_edit" : false,
-	    "display_as" : "html",
-	    "display_via_github" : false,
-	    "entry_text" : "obfuscated calculator development notes"
-	},
-	{
-	    "file_path" : "rule2.c",
-	    "inventory_order" : 150,
-	    "OK_to_edit" : true,
-	    "display_as" : "c",
-	    "display_via_github" : true,
-	    "entry_text" : "iocccsize.c reformatted to exactly 4096 octets"
-	},
-	{
-	    "file_path" : "test.in",
-	    "inventory_order" : 150,
-	    "OK_to_edit" : true,
-	    "display_as" : "text",
-	    "display_via_github" : true,
-	    "entry_text" : "test suite input data"
-	},
-	{
-	    "file_path" : "test.out",
-	    "inventory_order" : 150,
-	    "OK_to_edit" : true,
-	    "display_as" : "text",
-	    "display_via_github" : true,
-	    "entry_text" : "test suite comparison data"
-	},
-	{
-	    "file_path" : "test32.out",
-	    "inventory_order" : 150,
-	    "OK_to_edit" : true,
-	    "display_as" : "text",
-	    "display_via_github" : true,
-	    "entry_text" : "test suite comparison data for 32-bit systems"
-	},
-	{
-	    "file_path" : "obfuscation.html",
-	    "inventory_order" : 200,
-	    "OK_to_edit" : false,
-	    "display_as" : "html",
-	    "display_via_github" : false,
-	    "entry_text" : "obfuscation information web page"
-	},
-	{
-	    "file_path" : "src.doc.txt",
-	    "inventory_order" : 200,
-	    "OK_to_edit" : true,
-	    "display_as" : "text",
-	    "display_via_github" : false,
-	    "entry_text" : "hints about the source code"
-	},
-	{
-	    "file_path" : "2015_burton.tar.bz2",
-	    "inventory_order" : 1415926535,
-	    "OK_to_edit" : false,
-	    "display_as" : "tbz2",
-	    "display_via_github" : false,
-	    "entry_text" : "download entry tarball"
-	},
-	{
-	    "file_path" : ".entry.json",
-	    "inventory_order" : 4000000000,
-	    "OK_to_edit" : true,
-	    "display_as" : "json",
-	    "display_via_github" : true,
-	    "entry_text" : "entry summary and manifest in JSON"
-	},
-	{
-	    "file_path" : ".gitignore",
-	    "inventory_order" : 4000000000,
-	    "OK_to_edit" : true,
-	    "display_as" : "gitignore",
-	    "display_via_github" : true,
-	    "entry_text" : "list of files that should not be committed under git"
-	},
-	{
-	    "file_path" : ".path",
-	    "inventory_order" : 4000000000,
-	    "OK_to_edit" : false,
-	    "display_as" : "path",
-	    "display_via_github" : true,
-	    "entry_text" : "directory path from top level directory"
-	},
-	{
-	    "file_path" : "README.md",
-	    "inventory_order" : 4000000000,
-	    "OK_to_edit" : true,
-	    "display_as" : "markdown",
-	    "display_via_github" : true,
-	    "entry_text" : "markdown source for this web page"
-	},
-	{
-	    "file_path" : "obfuscation.md",
-	    "inventory_order" : 4000000000,
-	    "OK_to_edit" : true,
-	    "display_as" : "markdown",
-	    "display_via_github" : true,
-	    "entry_text" : "markdown source for obfuscation.html"
-	},
-	{
-	    "file_path" : "road.to.obscurity.md",
-	    "inventory_order" : 4000000000,
-	    "OK_to_edit" : true,
-	    "display_as" : "markdown",
-	    "display_via_github" : true,
-	    "entry_text" : "markdown source for road.to.obscurity.html"
-	},
-	{
-	    "file_path" : "index.html",
-	    "inventory_order" : 4294967295,
-	    "OK_to_edit" : false,
-	    "display_as" : "html",
-	    "display_via_github" : false,
-	    "entry_text" : "this web page"
-	}
+        {
+            "file_path" : "prog.c",
+            "inventory_order" : 20,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "entry source code"
+        },
+        {
+            "file_path" : "Makefile",
+            "inventory_order" : 30,
+            "OK_to_edit" : true,
+            "display_as" : "makefile",
+            "display_via_github" : true,
+            "entry_text" : "entry Makefile"
+        },
+        {
+            "file_path" : "prog.alt.c",
+            "inventory_order" : 40,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "alternate source code"
+        },
+        {
+            "file_path" : "prog.orig.c",
+            "inventory_order" : 50,
+            "OK_to_edit" : false,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "original source code"
+        },
+        {
+            "file_path" : "try.sh",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "shellscript",
+            "display_via_github" : true,
+            "entry_text" : "script to try entry"
+        },
+        {
+            "file_path" : "try.this.txt",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : false,
+            "entry_text" : "input file used by try.sh"
+        },
+        {
+            "file_path" : "calc.1",
+            "inventory_order" : 150,
+            "OK_to_edit" : true,
+            "display_as" : "man",
+            "display_via_github" : true,
+            "entry_text" : "man page for integer expression calculator"
+        },
+        {
+            "file_path" : "road.to.obscurity.html",
+            "inventory_order" : 150,
+            "OK_to_edit" : false,
+            "display_as" : "html",
+            "display_via_github" : false,
+            "entry_text" : "obfuscated calculator development notes"
+        },
+        {
+            "file_path" : "rule2.c",
+            "inventory_order" : 150,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "iocccsize.c reformatted to exactly 4096 octets"
+        },
+        {
+            "file_path" : "test.in",
+            "inventory_order" : 150,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : true,
+            "entry_text" : "test suite input data"
+        },
+        {
+            "file_path" : "test.out",
+            "inventory_order" : 150,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : true,
+            "entry_text" : "test suite comparison data"
+        },
+        {
+            "file_path" : "test32.out",
+            "inventory_order" : 150,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : true,
+            "entry_text" : "test suite comparison data for 32-bit systems"
+        },
+        {
+            "file_path" : "obfuscation.html",
+            "inventory_order" : 200,
+            "OK_to_edit" : false,
+            "display_as" : "html",
+            "display_via_github" : false,
+            "entry_text" : "obfuscation information web page"
+        },
+        {
+            "file_path" : "src.doc.txt",
+            "inventory_order" : 200,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : false,
+            "entry_text" : "hints about the source code"
+        },
+        {
+            "file_path" : "2015_burton.tar.bz2",
+            "inventory_order" : 1415926535,
+            "OK_to_edit" : false,
+            "display_as" : "tbz2",
+            "display_via_github" : false,
+            "entry_text" : "download entry tarball"
+        },
+        {
+            "file_path" : ".entry.json",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "json",
+            "display_via_github" : true,
+            "entry_text" : "entry summary and manifest in JSON"
+        },
+        {
+            "file_path" : ".gitignore",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "gitignore",
+            "display_via_github" : true,
+            "entry_text" : "list of files that should not be committed under git"
+        },
+        {
+            "file_path" : ".path",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : false,
+            "display_as" : "path",
+            "display_via_github" : true,
+            "entry_text" : "directory path from top level directory"
+        },
+        {
+            "file_path" : "README.md",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "markdown",
+            "display_via_github" : true,
+            "entry_text" : "markdown source for this web page"
+        },
+        {
+            "file_path" : "obfuscation.md",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "markdown",
+            "display_via_github" : true,
+            "entry_text" : "markdown source for obfuscation.html"
+        },
+        {
+            "file_path" : "road.to.obscurity.md",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "markdown",
+            "display_via_github" : true,
+            "entry_text" : "markdown source for road.to.obscurity.html"
+        },
+        {
+            "file_path" : "index.html",
+            "inventory_order" : 4294967295,
+            "OK_to_edit" : false,
+            "display_as" : "html",
+            "display_via_github" : false,
+            "entry_text" : "this web page"
+        }
     ]
 }

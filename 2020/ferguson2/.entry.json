@@ -6,224 +6,226 @@
     "dir" : "ferguson2",
     "entry_id" : "2020_ferguson2",
     "author_set" : [
-	{ "author_handle" : "Cody_Boone_Ferguson" }
+        {
+            "author_handle" : "Cody_Boone_Ferguson"
+        }
     ],
     "manifest" : [
-	{
-	    "file_path" : "prog.c",
-	    "inventory_order" : 20,
-	    "OK_to_edit" : true,
-	    "display_as" : "c",
-	    "display_via_github" : true,
-	    "entry_text" : "entry source code"
-	},
-	{
-	    "file_path" : "Makefile",
-	    "inventory_order" : 30,
-	    "OK_to_edit" : true,
-	    "display_as" : "makefile",
-	    "display_via_github" : true,
-	    "entry_text" : "entry Makefile"
-	},
-	{
-	    "file_path" : "prog.alt.c",
-	    "inventory_order" : 40,
-	    "OK_to_edit" : true,
-	    "display_as" : "c",
-	    "display_via_github" : true,
-	    "entry_text" : "alternate source code"
-	},
-	{
-	    "file_path" : "prog.orig.c",
-	    "inventory_order" : 50,
-	    "OK_to_edit" : false,
-	    "display_as" : "c",
-	    "display_via_github" : true,
-	    "entry_text" : "original source code"
-	},
-	{
-	    "file_path" : "enigma.html",
-	    "inventory_order" : 100,
-	    "OK_to_edit" : true,
-	    "display_as" : "text",
-	    "display_via_github" : true,
-	    "entry_text" : "secret message in a html file to decrypt"
-	},
-	{
-	    "file_path" : "input.txt",
-	    "inventory_order" : 100,
-	    "OK_to_edit" : true,
-	    "display_as" : "text",
-	    "display_via_github" : false,
-	    "entry_text" : "sample input"
-	},
-	{
-	    "file_path" : "obfuscation.html",
-	    "inventory_order" : 100,
-	    "OK_to_edit" : true,
-	    "display_as" : "html",
-	    "display_via_github" : false,
-	    "entry_text" : "about the obfuscation of this entry"
-	},
-	{
-	    "file_path" : "obfuscation.txt",
-	    "inventory_order" : 100,
-	    "OK_to_edit" : true,
-	    "display_as" : "text",
-	    "display_via_github" : false,
-	    "entry_text" : "about the obfuscation of this entry - encrypted with entry"
-	},
-	{
-	    "file_path" : "recode.c",
-	    "inventory_order" : 100,
-	    "OK_to_edit" : true,
-	    "display_as" : "c",
-	    "display_via_github" : true,
-	    "entry_text" : "Enigma machine configurator source code"
-	},
-	{
-	    "file_path" : "recode.html",
-	    "inventory_order" : 100,
-	    "OK_to_edit" : true,
-	    "display_as" : "html",
-	    "display_via_github" : false,
-	    "entry_text" : "Enigma configurator documentation"
-	},
-	{
-	    "file_path" : "testing-procedure.html",
-	    "inventory_order" : 100,
-	    "OK_to_edit" : false,
-	    "display_as" : "html",
-	    "display_via_github" : false,
-	    "entry_text" : "details about the author's testing procedure"
-	},
-	{
-	    "file_path" : "try.alt.sh",
-	    "inventory_order" : 100,
-	    "OK_to_edit" : true,
-	    "display_as" : "shellscript",
-	    "display_via_github" : true,
-	    "entry_text" : "script to try alternate code"
-	},
-	{
-	    "file_path" : "try.sh",
-	    "inventory_order" : 100,
-	    "OK_to_edit" : true,
-	    "display_as" : "shellscript",
-	    "display_via_github" : true,
-	    "entry_text" : "script to try entry"
-	},
-	{
-	    "file_path" : "try.this.txt",
-	    "inventory_order" : 100,
-	    "OK_to_edit" : true,
-	    "display_as" : "text",
-	    "display_via_github" : false,
-	    "entry_text" : "sample input"
-	},
-	{
-	    "file_path" : "enigma.1",
-	    "inventory_order" : 150,
-	    "OK_to_edit" : true,
-	    "display_as" : "man",
-	    "display_via_github" : true,
-	    "entry_text" : "Enigma machine simulator man page"
-	},
-	{
-	    "file_path" : "key.txt",
-	    "inventory_order" : 150,
-	    "OK_to_edit" : true,
-	    "display_as" : "text",
-	    "display_via_github" : false,
-	    "entry_text" : "key to decipher/encipher the word 'IOCCC'"
-	},
-	{
-	    "file_path" : "obfuscation.key",
-	    "inventory_order" : 150,
-	    "OK_to_edit" : true,
-	    "display_as" : "text",
-	    "display_via_github" : true,
-	    "entry_text" : "key to decipher or encipher obfuscation.txt"
-	},
-	{
-	    "file_path" : "recode.1",
-	    "inventory_order" : 150,
-	    "OK_to_edit" : true,
-	    "display_as" : "man",
-	    "display_via_github" : true,
-	    "entry_text" : "configurator tool recode.c man page"
-	},
-	{
-	    "file_path" : "2020_ferguson2.tar.bz2",
-	    "inventory_order" : 1415926535,
-	    "OK_to_edit" : false,
-	    "display_as" : "tbz2",
-	    "display_via_github" : false,
-	    "entry_text" : "download entry tarball"
-	},
-	{
-	    "file_path" : ".entry.json",
-	    "inventory_order" : 4000000000,
-	    "OK_to_edit" : true,
-	    "display_as" : "json",
-	    "display_via_github" : true,
-	    "entry_text" : "entry summary and manifest in JSON"
-	},
-	{
-	    "file_path" : ".gitignore",
-	    "inventory_order" : 4000000000,
-	    "OK_to_edit" : true,
-	    "display_as" : "gitignore",
-	    "display_via_github" : true,
-	    "entry_text" : "list of files that should not be committed under git"
-	},
-	{
-	    "file_path" : ".path",
-	    "inventory_order" : 4000000000,
-	    "OK_to_edit" : false,
-	    "display_as" : "path",
-	    "display_via_github" : true,
-	    "entry_text" : "directory path from top level directory"
-	},
-	{
-	    "file_path" : "README.md",
-	    "inventory_order" : 4000000000,
-	    "OK_to_edit" : true,
-	    "display_as" : "markdown",
-	    "display_via_github" : true,
-	    "entry_text" : "markdown source for this web page"
-	},
-	{
-	    "file_path" : "obfuscation.md",
-	    "inventory_order" : 4000000000,
-	    "OK_to_edit" : true,
-	    "display_as" : "markdown",
-	    "display_via_github" : true,
-	    "entry_text" : "markdown source for obfuscation.html"
-	},
-	{
-	    "file_path" : "recode.md",
-	    "inventory_order" : 4000000000,
-	    "OK_to_edit" : true,
-	    "display_as" : "markdown",
-	    "display_via_github" : true,
-	    "entry_text" : "markdown source for recode.html"
-	},
-	{
-	    "file_path" : "testing-procedure.md",
-	    "inventory_order" : 4000000000,
-	    "OK_to_edit" : true,
-	    "display_as" : "markdown",
-	    "display_via_github" : true,
-	    "entry_text" : "markdown source for testing-procedure.html"
-	},
-	{
-	    "file_path" : "index.html",
-	    "inventory_order" : 4294967295,
-	    "OK_to_edit" : false,
-	    "display_as" : "html",
-	    "display_via_github" : false,
-	    "entry_text" : "this web page"
-	}
+        {
+            "file_path" : "prog.c",
+            "inventory_order" : 20,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "entry source code"
+        },
+        {
+            "file_path" : "Makefile",
+            "inventory_order" : 30,
+            "OK_to_edit" : true,
+            "display_as" : "makefile",
+            "display_via_github" : true,
+            "entry_text" : "entry Makefile"
+        },
+        {
+            "file_path" : "prog.alt.c",
+            "inventory_order" : 40,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "alternate source code"
+        },
+        {
+            "file_path" : "prog.orig.c",
+            "inventory_order" : 50,
+            "OK_to_edit" : false,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "original source code"
+        },
+        {
+            "file_path" : "enigma.html",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : true,
+            "entry_text" : "secret message in a html file to decrypt"
+        },
+        {
+            "file_path" : "input.txt",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : false,
+            "entry_text" : "sample input"
+        },
+        {
+            "file_path" : "obfuscation.html",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "html",
+            "display_via_github" : false,
+            "entry_text" : "about the obfuscation of this entry"
+        },
+        {
+            "file_path" : "obfuscation.txt",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : false,
+            "entry_text" : "about the obfuscation of this entry - encrypted with entry"
+        },
+        {
+            "file_path" : "recode.c",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "Enigma machine configurator source code"
+        },
+        {
+            "file_path" : "recode.html",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "html",
+            "display_via_github" : false,
+            "entry_text" : "Enigma configurator documentation"
+        },
+        {
+            "file_path" : "testing-procedure.html",
+            "inventory_order" : 100,
+            "OK_to_edit" : false,
+            "display_as" : "html",
+            "display_via_github" : false,
+            "entry_text" : "details about the author's testing procedure"
+        },
+        {
+            "file_path" : "try.alt.sh",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "shellscript",
+            "display_via_github" : true,
+            "entry_text" : "script to try alternate code"
+        },
+        {
+            "file_path" : "try.sh",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "shellscript",
+            "display_via_github" : true,
+            "entry_text" : "script to try entry"
+        },
+        {
+            "file_path" : "try.this.txt",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : false,
+            "entry_text" : "sample input"
+        },
+        {
+            "file_path" : "enigma.1",
+            "inventory_order" : 150,
+            "OK_to_edit" : true,
+            "display_as" : "man",
+            "display_via_github" : true,
+            "entry_text" : "Enigma machine simulator man page"
+        },
+        {
+            "file_path" : "key.txt",
+            "inventory_order" : 150,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : false,
+            "entry_text" : "key to decipher/encipher the word 'IOCCC'"
+        },
+        {
+            "file_path" : "obfuscation.key",
+            "inventory_order" : 150,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : true,
+            "entry_text" : "key to decipher or encipher obfuscation.txt"
+        },
+        {
+            "file_path" : "recode.1",
+            "inventory_order" : 150,
+            "OK_to_edit" : true,
+            "display_as" : "man",
+            "display_via_github" : true,
+            "entry_text" : "configurator tool recode.c man page"
+        },
+        {
+            "file_path" : "2020_ferguson2.tar.bz2",
+            "inventory_order" : 1415926535,
+            "OK_to_edit" : false,
+            "display_as" : "tbz2",
+            "display_via_github" : false,
+            "entry_text" : "download entry tarball"
+        },
+        {
+            "file_path" : ".entry.json",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "json",
+            "display_via_github" : true,
+            "entry_text" : "entry summary and manifest in JSON"
+        },
+        {
+            "file_path" : ".gitignore",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "gitignore",
+            "display_via_github" : true,
+            "entry_text" : "list of files that should not be committed under git"
+        },
+        {
+            "file_path" : ".path",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : false,
+            "display_as" : "path",
+            "display_via_github" : true,
+            "entry_text" : "directory path from top level directory"
+        },
+        {
+            "file_path" : "README.md",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "markdown",
+            "display_via_github" : true,
+            "entry_text" : "markdown source for this web page"
+        },
+        {
+            "file_path" : "obfuscation.md",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "markdown",
+            "display_via_github" : true,
+            "entry_text" : "markdown source for obfuscation.html"
+        },
+        {
+            "file_path" : "recode.md",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "markdown",
+            "display_via_github" : true,
+            "entry_text" : "markdown source for recode.html"
+        },
+        {
+            "file_path" : "testing-procedure.md",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "markdown",
+            "display_via_github" : true,
+            "entry_text" : "markdown source for testing-procedure.html"
+        },
+        {
+            "file_path" : "index.html",
+            "inventory_order" : 4294967295,
+            "OK_to_edit" : false,
+            "display_as" : "html",
+            "display_via_github" : false,
+            "entry_text" : "this web page"
+        }
     ]
 }

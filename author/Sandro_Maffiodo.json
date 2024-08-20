@@ -14,7 +14,11 @@
     "github" : null,
     "affiliation" : null,
     "winning_entry_set" : [
-	{ "entry_id" : "2014_maffiodo1" },
-	{ "entry_id" : "2014_maffiodo2" }
+        {
+            "entry_id" : "2014_maffiodo1"
+        },
+        {
+            "entry_id" : "2014_maffiodo2"
+        }
     ]
 }

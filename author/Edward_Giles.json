@@ -14,8 +14,14 @@
     "github" : "@id523a",
     "affiliation" : null,
     "winning_entry_set" : [
-	{ "entry_id" : "2018_giles" },
-	{ "entry_id" : "2019_giles" },
-	{ "entry_id" : "2020_giles" }
+        {
+            "entry_id" : "2018_giles"
+        },
+        {
+            "entry_id" : "2019_giles"
+        },
+        {
+            "entry_id" : "2020_giles"
+        }
     ]
 }

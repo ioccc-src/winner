@@ -14,7 +14,11 @@
     "github" : null,
     "affiliation" : null,
     "winning_entry_set" : [
-	{ "entry_id" : "2000_primenum" },
-	{ "entry_id" : "2001_cheong" }
+        {
+            "entry_id" : "2000_primenum"
+        },
+        {
+            "entry_id" : "2001_cheong"
+        }
     ]
 }
