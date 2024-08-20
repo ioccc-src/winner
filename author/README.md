@@ -1,4 +1,4 @@
-# author handle directory
+# author/ handle directory
 
 The `author/` directory contains a JSON file for each author of at
 least one winning IOCCC entry.  For each author, there is a JSON
@@ -15,7 +15,7 @@ FAQ on "[author_handle.json](../faq.html#author_json)"
 for more information.
 
 
-## NOTE to authors
+## NOTE to winning authors:
 
 If you wish to update / modify information about yourself, see the
 FAQ on "[fixing author information](../faq.html#fix_author)"
