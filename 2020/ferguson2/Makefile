@@ -39,7 +39,7 @@ include ../../var.mk
 # Common C compiler warnings to silence
 #
 CSILENCE= -Wno-empty-body -Wno-comment -Wno-implicit-function-declaration \
-          -Wno-misleading-indentation -Wno-unused-value
+          -Wno-misleading-indentation -Wno-unused-value -Wno-documentation
 
 # Attempt to silence unknown warnings
 #
