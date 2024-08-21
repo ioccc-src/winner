@@ -135,8 +135,8 @@ all: data ${TARGET}
 	sandwich supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
-	@echo "WARNING: This must be compiled as a 32-bit binary and run" \
-	      "under i386 Linux in 32-bit mode, or this entry will not work!"
+	@echo "WARNING: This must be compiled as a 32-bit binary and run"
+	@echo "under i386 Linux in 32-bit mode, or this entry will not work!"
 	@echo
 	${CC} ${CFLAGS} -m32 $< -o $@ ${LDFLAGS}
 
