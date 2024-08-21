@@ -40,7 +40,7 @@ include ../../var.mk
 #
 CSILENCE= -Wno-for-loop-analysis -Wno-missing-field-initializers \
 	  -Wno-strict-prototypes -Wno-misleading-indentation \
-	  -Wno-old-style-declaration -Wno-unused-value
+	  -Wno-old-style-declaration -Wno-unused-value -Wno-unsafe-buffer-usage
 
 # Attempt to silence unknown warnings
 #
