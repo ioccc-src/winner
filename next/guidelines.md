@@ -48,7 +48,7 @@ writing by [contacting the judges](../contact.html).
 </div>
 
 <p class="leftbar">
-These [IOCCC guidelines](guidelines.html) are version **28.11 2024-07-27**.
+These [IOCCC guidelines](guidelines.html) are version **28.12 2024-08-21**.
 </p>
 
 **IMPORTANT**: Be **SURE** to read the [IOCCC rules](rules.html).
@@ -847,9 +847,8 @@ a one-liner in our vague opinion.
 We tend to **DISLIKE** programs that:
 
 * are very hardware specific
-* <p class="leftbar">are very OS version specific
-(`index(3)`/`strchr(3)` differences are OK, but sockets/streams specific code is
-likely not to be)</p>
+* are very OS version specific (`index(3)`/`strchr(3)` differences are OK, but
+sockets/streams specific code is likely not to be)
 * dump core or have compiler warnings (it is OK only if
 you warn us in your `remarks.md` file)
 * <p class="leftbar">won't compile or run in a [Single UNIX
@@ -1207,24 +1206,8 @@ unless you are [Cody Boone Ferguson](../authors.html#Cody_Boone_Ferguson), might
 run the risk of violating [Rule 7](rules.html#rule7).</p>
 
 <p class="leftbar">
-Neither the [chkentry tool
-source](https://github.com/ioccc-src/mkiocccentry/blob/master/chkentry.c) nor
-the [mkiocccentry tool
-source](https://github.com/ioccc-src/mkiocccentry/blob/master/mkiocccentry.c)
-nor the [fnamchk tool
-source](https://github.com/ioccc-src/mkiocccentry/blob/master/test_ioccc/fnamchk.c)
-nor various others in the [mkiocccentry
-repo](https://github.com/ioccc-src/mkiocccentry) are original works, unless you
-are [Landon Curt Noll](http://www.isthe.com/chongo/index.html), in which case
-they are original!  :-) Submitting source that uses the content of these tools,
-unless you are [Landon Curt Noll](http://www.isthe.com/chongo/index.html), might
-run the risk of violating [Rule 7](rules.html#rule7).
-</p>
-
-
-<p class="leftbar">
-Neither the [JSON parser and
-library](https://github.com/ioccc-src/mkiocccentry/blob/master/jparse/README.md)
+Neither the [chkentry tool source](https://github.com/ioccc-src/mkiocccentry/blob/master/chkentry.c)
+nor the [JSON parser and library](https://github.com/ioccc-src/mkiocccentry/blob/master/jparse/README.md)
 nor [jstrencode](https://github.com/ioccc-src/mkiocccentry/blob/master/jparse/jstrencode.c)
 nor [jstrdecode](https://github.com/ioccc-src/mkiocccentry/blob/master/jparse/jstrdecode.c)
 nor any of the other [jparse
@@ -1235,6 +1218,14 @@ Noll](http://www.isthe.com/chongo/index.html), in which case they are original!
 are [Cody Boone Ferguson](../authors.html#Cody_Boone_Ferguson) or [Landon Curt
 Noll](http://www.isthe.com/chongo/index.html), might run the risk of violating
 [Rule 7](rules.html#rule7).</p>
+
+<p class="leftbar">
+Unless you are [Landon Curt Noll](http://www.isthe.com/chongo/index.html), the
+remaining tools in the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry)
+are **NOT** original works. Submitting source that uses the content of those tools,
+unless you are [Landon Curt Noll](http://www.isthe.com/chongo/index.html), might
+run the risk of violating [Rule 7](rules.html#rule7).
+</p>
 
 <p class="leftbar">
 [Rule 7](rules.html#rule7) does not prohibit you from writing your own

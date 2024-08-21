@@ -666,6 +666,11 @@ rules: ${GEN_TOP_HTML} next/rules.md
 	${GEN_TOP_HTML} -v 1 next/rules
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
+guidelines: ${GEN_TOP_HTML} next/guidelines.md
+	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	${GEN_TOP_HTML} -v 1 next/guidelines
+	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+
 security: ${GEN_TOP_HTML} SECURITY.md
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
 	${GEN_TOP_HTML} -v 1 SECURITY
