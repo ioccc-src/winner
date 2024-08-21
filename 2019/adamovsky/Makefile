@@ -38,7 +38,7 @@ include ../../var.mk
 
 # Common C compiler warnings to silence
 #
-CSILENCE= -Wno-trigraphs -Wno-comment -Wno-misleading-indentation
+CSILENCE= -Wno-trigraphs -Wno-comment -Wno-misleading-indentation -Wno-documentation
 
 # Attempt to silence unknown warnings
 #
