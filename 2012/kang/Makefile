@@ -40,7 +40,8 @@ include ../../var.mk
 #
 CSILENCE= -Wno-bitwise-op-parentheses -Wno-error \
 	  -Wno-implicit-function-declaration -Wno-implicit-int -Wno-int-conversion \
-	  -Wno-pointer-to-int-cast -Wno-deprecated-non-prototype
+	  -Wno-pointer-to-int-cast -Wno-deprecated-non-prototype -Wno-misleading-indentation \
+	  -Wno-unsafe-buffer-usage
 
 # Attempt to silence unknown warnings
 #
