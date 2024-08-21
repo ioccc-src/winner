@@ -424,7 +424,7 @@ writing by <a href="../contact.html">contacting the judges</a>.</p>
 <h2 id="ioccc-guidelines-version">IOCCC Guidelines version</h2>
 </div>
 <p class="leftbar">
-These <a href="guidelines.html">IOCCC guidelines</a> are version <strong>28.11 2024-07-27</strong>.
+These <a href="guidelines.html">IOCCC guidelines</a> are version <strong>28.12 2024-08-21</strong>.
 </p>
 <p><strong>IMPORTANT</strong>: Be <strong>SURE</strong> to read the <a href="rules.html">IOCCC rules</a>.</p>
 <div id="change_marks">
@@ -1041,11 +1041,8 @@ a one-liner in our vague opinion.</p>
 <p>We tend to <strong>DISLIKE</strong> programs that:</p>
 <ul>
 <li>are very hardware specific</li>
-<li><p class="leftbar">
-are very OS version specific
-(<code>index(3)</code>/<code>strchr(3)</code> differences are OK, but sockets/streams specific code is
-likely not to be)
-</p></li>
+<li>are very OS version specific (<code>index(3)</code>/<code>strchr(3)</code> differences are OK, but
+sockets/streams specific code is likely not to be)</li>
 <li>dump core or have compiler warnings (it is OK only if
 you warn us in your <code>remarks.md</code> file)</li>
 <li><p class="leftbar">
@@ -1350,22 +1347,8 @@ unless you are <a href="../authors.html#Cody_Boone_Ferguson">Cody Boone Ferguson
 run the risk of violating <a href="rules.html#rule7">Rule 7</a>.
 </p>
 <p class="leftbar">
-Neither the <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/chkentry.c">chkentry tool
-source</a> nor
-the <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/mkiocccentry.c">mkiocccentry tool
-source</a>
-nor the <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/test_ioccc/fnamchk.c">fnamchk tool
-source</a>
-nor various others in the <a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry
-repo</a> are original works, unless you
-are <a href="http://www.isthe.com/chongo/index.html">Landon Curt Noll</a>, in which case
-they are original! :-) Submitting source that uses the content of these tools,
-unless you are <a href="http://www.isthe.com/chongo/index.html">Landon Curt Noll</a>, might
-run the risk of violating <a href="rules.html#rule7">Rule 7</a>.
-</p>
-<p class="leftbar">
-Neither the <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/jparse/README.md">JSON parser and
-library</a>
+Neither the <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/chkentry.c">chkentry tool source</a>
+nor the <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/jparse/README.md">JSON parser and library</a>
 nor <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/jparse/jstrencode.c">jstrencode</a>
 nor <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/jparse/jstrdecode.c">jstrdecode</a>
 nor any of the other <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/jparse">jparse
@@ -1376,6 +1359,13 @@ Noll</a>, in which case they are original!
 are <a href="../authors.html#Cody_Boone_Ferguson">Cody Boone Ferguson</a> or <a href="http://www.isthe.com/chongo/index.html">Landon Curt
 Noll</a>, might run the risk of violating
 <a href="rules.html#rule7">Rule 7</a>.
+</p>
+<p class="leftbar">
+Unless you are <a href="http://www.isthe.com/chongo/index.html">Landon Curt Noll</a>, the
+remaining tools in the <a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry repo</a>
+are <strong>NOT</strong> original works. Submitting source that uses the content of those tools,
+unless you are <a href="http://www.isthe.com/chongo/index.html">Landon Curt Noll</a>, might
+run the risk of violating <a href="rules.html#rule7">Rule 7</a>.
 </p>
 <p class="leftbar">
 <a href="rules.html#rule7">Rule 7</a> does not prohibit you from writing your own
