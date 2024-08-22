@@ -48,7 +48,7 @@ writing by [contacting the judges](../contact.html).
 </div>
 
 <p class="leftbar">
-These [IOCCC guidelines](guidelines.html) are version **28.12 2024-08-21**.
+These [IOCCC guidelines](guidelines.html) are version **28.13 2024-08-22**.
 </p>
 
 **IMPORTANT**: Be **SURE** to read the [IOCCC rules](rules.html).
@@ -353,7 +353,7 @@ If `mkiocccentry` encounters an **error** the program will exit and the xz
 compressed tarball **will not be formed**. For instance, if `chkentry(1)` (see
 below) fails to validate the `.auth.json` or `.info.json`
 [JSON](https://www.json.org/json-en.html) files that `mkiocccentry(1)` creates,
-it is an error and possibly a bug that you should [report as a bug at the
+it is an error and **possibly** a bug that you should [report as a bug at the
 mkiocccentry issues
 page](https://github.com/ioccc-src/mkiocccentry/issues/new?assignees=&labels=bug&projects=&template=bug_report.yml&title=%5BBug%5D+%3Ctitle%3E).
 **PLEASE run the `bug_report.sh` script to help us out here!**  See the
@@ -431,7 +431,7 @@ submission. These files **MUST** pass the checks of `chkentry(1)`.
 </p>
 
 <p class="leftbar">
-If `chkentry` does not pass and you used `mkiocccentry(1)` it is very possibly a
+If `chkentry` does not pass and you used `mkiocccentry(1)` it is **possibly** a
 bug and you should [report it as a bug at the mkiocccentry issues
 page](https://github.com/ioccc-src/mkiocccentry/issues/new?assignees=&labels=bug&projects=&template=bug_report.yml&title=%5BBug%5D+%3Ctitle%3E).
 See the FAQ on "[report mkiocccentry bugs](../faq.html#mkiocccentry_bugs)".
@@ -467,11 +467,20 @@ for much more information on these files.
 `txzchk(1)` performs a wide number of sanity checks on the xz
 compressed tarball; if any issues are found ('`feathers are stuck in the
 tarball`' :-) ) **AND if and _ONLY IF_ you used
-`mkiocccentry(1)`**, then it is very possibly a bug in one of the tools and you
-should [report it as a bug at the mkiocccentry issues
+`mkiocccentry(1)`**, then it is **possibly** a bug in one of the tools and you
+might want to [report it as a bug at the mkiocccentry issues
 page](https://github.com/ioccc-src/mkiocccentry/issues/new?assignees=&labels=bug&projects=&template=bug_report.yml&title=%5BBug%5D+%3Ctitle%3E). **PLEASE run the
 `bug_report.sh` script to help us out here!** See the
 FAQ on "[report mkiocccentry bugs](../faq.html#mkiocccentry_bugs)".
+</p>
+
+<p class="leftbar">
+Of course, it is also possible that `mkiocccentry(1)` or one or more of the
+tools it calls (or another tool calls) to fail and it is **NOT** a bug. An
+example problem is if there is not enough memory available or if some other
+library or syscall fails. Nonetheless it might be worth reporting as a bug. It
+is a judgement call; if it's a bug it'll be addressed and if it's not that's OK
+too.
 </p>
 
 <p class="leftbar">
@@ -981,7 +990,7 @@ Did we remember to indicate that programs that blatantly use
 some complex state machine to do something simple are boring?
 We think we did.  :-)
 
-> All generalizations are false, including this one. -- Mark Twain
+> All generalizations are false, including this one. -- **Mark Twain**
 
 Given two versions of the same program, one that is a compact blob
 of code, and the other that is formatted more like a typical C
@@ -1230,12 +1239,28 @@ run the risk of violating [Rule 7](rules.html#rule7).
 <p class="leftbar">
 [Rule 7](rules.html#rule7) does not prohibit you from writing your own
 obfuscated versions of these tools, unless of course you are [Landon Curt
-Noll](http://www.isthe.com/chongo/index.html), in which case you _probably_ won't
-win since [judges](../judges.html) are disqualified! :-)
-However, _**if you do** write your own version, **you might wish** to make it do something more
-interesting_ than simply implementing the [IOCCC](../index.html) tools' algorithms. On the other
-hand, writing an obfuscated version of a library runs the risk of violating
-[Rule 1](rules.html#rule1) as it is likely not a complete program.</p>
+Noll](http://www.isthe.com/chongo/index.html), in which case you _probably_
+won't win since [judges](../judges.html) are disqualified! :-) However, **_if_**
+you do write your own version, you **_might_** wish to make it do something
+**_more_ interesting** than simply implementing the [IOCCC](../index.html)
+tools' algorithms, although if you do this you might want to keep in mind that
+writing an obfuscated version of a library runs the risk of violating [Rule
+1](rules.html#rule1) as it is likely not a complete program.
+</p>
+
+<p class="leftbar">
+On the other hand, we do not recommend you try and submit a JSON parser due to
+the fact it will likely exceed [the source code size limit](rules.html#rule2)
+and because you likely can't beat [flex](https://github.com/westes/flex) or
+[bison](https://www.gnu.org/software/bison/) in obfuscation. This isn't to
+say that [the so-called JSON spec](https://www.json.org/json-en.html) is not
+obfuscated, but unless you have some really clever way to compact and
+obfuscate a JSON parser more than [flex](https://github.com/westes/flex) and
+[bison](https://www.gnu.org/software/bison/) you will likely not win, either
+because of the [source code size limit](rules.html#rule2) or because it is not
+as obfuscated as the lexer/parser part of
+[jparse](https://github.com/ioccc-src/mkiocccentry/blob/master/jparse).
+</p>
 
 While programs that only run in a specific word size are OK, if you have
 to pick, choose a 64-bit word size.
