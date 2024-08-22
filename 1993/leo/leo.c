@@ -6,9 +6,9 @@
 #define A(x) (e^d)&i?e:(e+=i+i/15-d,d<<=4,i<<=4,x)
 #define B b+=!((e^d)&i)&&(d|=i),i<<=4,
 #define C i=15,B B B B d=d<<4|d>>12,
-#define D =(d=g,b=0,C b<<=4, C C C b)
+#define D=(d=g,b=0,C b<<=4, C C C b)
 #define E if(**y)goto
-#define F =a[rand()%c]
+#define F=a[rand()%c]
 #define G unsigned short
 #define H e^=a[z],a[z]^=e,e^=a[z],
 
