@@ -134,10 +134,7 @@ OTHER_C= misaka2.c misaka3.c misaka4.c misaka5.c \
 all: data ${TARGET}
 	@${TRUE}
 
-.PHONY: all alt data everything diff_orig_prog diff_prog_orig \
-	diff_alt_prog diff_prog_alt diff_orig_alt diff_alt_orig \
-	clean clobber install love haste waste maker easter_egg \
-	sandwich supernova deep_magic magic charon pluto
+.PHONY: all alt data everything clean clobber
 
 ${PROG}: ${PROG}.c
 	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
@@ -226,58 +223,12 @@ everything: all alt
 	@${TRUE}
 
 
-#####################
-# make a difference #
-#####################
-#
-# diff orig source and source
-#
-diff_orig_prog: ${PROG}.orig.c ${PROG}.c
-	@-${DIFF} -u ${PROG}.orig.c ${PROG}.c
-
-# diff source and orig source
-#
-diff_prog_orig: ${PROG}.c ${PROG}.orig.c
-	@-${DIFF} -u ${PROG}.c ${PROG}.orig.c
-
-# diff alt source and source
-#
-diff_alt_prog: ${PROG}.c
-	@-if [[ -e ${PROG}.alt.c ]]; then \
-	    ${DIFF} -u ${PROG}.alt.c ${PROG}.c; \
-	fi
-
-# diff source and alt source
-#
-diff_prog_alt: ${PROG}.c
-	@-if [[ -e ${PROG}.alt.c ]]; then \
-	    ${DIFF} -u ${PROG}.c ${PROG}.alt.c; \
-	fi
-
-# diff orig and alt
-#
-diff_orig_alt: ${PROG}.orig.c
-	@-if [[ -e ${PROG}.alt.c ]]; then \
-	    ${DIFF} -u ${PROG}.orig.c ${PROG}.alt.c; \
-	fi
-
-# diff alt and orig
-diff_alt_orig:
-	@-if [[ -e ${PROG}.alt.c ]]; then \
-	    ${DIFF} -u ${PROG}.alt.c ${PROG}.orig.c; \
-	fi
-
-
 ###############
 # utility rules
 ###############
 #
 clean:
 	${RM} -f ${OBJ} ${ALT_OBJ}
-	@-if [ -f indent.c ]; then \
-	    echo ${RM} -f indent.c; \
-	    ${RM} -f indent.c; \
-	fi
 
 clobber: clean
 	${RM} -f ${TARGET} ${ALT_TARGET}
@@ -285,33 +236,6 @@ clobber: clean
 	${RM} -f misaka2.c misaka3.c misaka4.c misaka5.c
 	${RM} -f misaka6.c misaka7.c misaka8.c misaka9.c
 	${RM} -f same_as_long_cat.txt long_cat.txt
-	@-if [ -e sandwich ]; then \
-	    ${RM} -f sandwich; \
-	    echo 'ate sandwich'; \
-	fi
-
-install:
-	@echo "Dr. Spock says that is not logical!"
-	@${TRUE}
-
-# you may be able to misunderstand the source by reading indent.c
-#
-indent.c: ${PROG}.c
-	@if which "${GINDENT}" >/dev/null 2>&1; then \
-	    echo ${RM} -f $@; \
-	    ${RM} -f $@; \
-	    echo "${GINDENT} < $< > $@"; \
-	    ${GINDENT} < $< > $@; \
-	elif which "${INDENT}" >/dev/null 2>&1; then \
-	    echo ${RM} -f $@; \
-	    ${RM} -f $@; \
-	    echo "${INDENT} < $< > $@"; \
-	    ${INDENT} < $< > $@; \
-	else \
-	    echo "no indent tool found, ident $< yourself, sorry"; \
-	    echo "exit 17"; \
-	    exit 17; \
-	fi
 
 
 ######################################

@@ -3385,6 +3385,12 @@ where it’s quite easy to see the differences).</p>
 very easily. To do that <code>cd 1991/dds</code> and then do:</p>
 <pre><code>    make diff_alt_prog</code></pre>
 <p>and you’ll see a single line changed and very simply.</p>
+<p><strong>NOTE</strong>: The above mentioned <code>make</code> rules are located in the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1337.mk">1337.mk</a>
+include Makefile via the optional include directive line:</p>
+<pre><code>    -include 1337.mk ../1337.mk ../../1337.mk</code></pre>
+<p>The <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1337.mk">1337.mk</a> file must exist in the current
+directory, or under the directory above, or under the directory 2 levels
+above in order for these rules to work.</p>
 <h4 id="tip-if-you-have-colordiff-installed-its-a-lot-easier-to-see-the-differences">Tip: if you have <code>colordiff</code> installed it’s a lot easier to see the differences</h4>
 <p>To use these rules but provide a different <code>diff</code>, for instance <code>colordiff</code>,
 just do:</p>
@@ -3395,6 +3401,7 @@ the files as described above.</p>
 <p>See the
 FAQ on “<a href="#original_source_code">original source code</a>”
 for more information.</p>
+<p>Jump to: <a href="#">top</a></p>
 <div id="faq4_3">
 <h3 id="faq-4.3---why-do-author-remarks-sometimes-not-match-the-source-andor-why-are-there-other-inconsistencies-with-the-original-entry">FAQ 4.3 - Why do author remarks sometimes not match the source and/or why are there other inconsistencies with the original entry?</h3>
 </div>

@@ -260,30 +260,6 @@ clobber:
         done
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
-install:
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
-	@-for i in ${YEARS}; do \
-	    if [[ -f $$i/Makefile ]]; then \
-		echo "cd $$i; make $@"; \
-		(cd $$i; make $@); \
-	    else \
-		echo "Warning: $$i/Makefile not found, skipping $$i for $@ processing" 1>&2 ; \
-	    fi; \
-        done
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
-
-indent.c:
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
-	@-for i in ${YEARS}; do \
-	    if [[ -f $$i/Makefile ]]; then \
-		echo "cd $$i; make $@"; \
-		(cd $$i; make $@); \
-	    else \
-		echo "Warning: $$i/Makefile not found, skipping $$i for $@ processing" 1>&2 ; \
-	    fi; \
-        done
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
-
 
 #################################
 # IOCCC website maintenance rulz
@@ -848,6 +824,63 @@ genpath_top:
 	    ${CHMOD} 0444 .top; \
 	    echo "updated .top"; \
 	fi
+	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+
+
+########################
+# extended utility rules
+########################
+
+.PHONY: indent_clean indent_clobber
+
+# you may be able to misunderstand the source by reading indent.c
+#
+indent.c:
+	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@-for i in ${YEARS}; do \
+	    if [[ -f $$i/Makefile ]]; then \
+		echo "cd $$i; make $@"; \
+		(cd $$i; make $@); \
+	    else \
+		echo "Warning: $$i/Makefile not found, skipping $$i for $@ processing" 1>&2 ; \
+	    fi; \
+        done
+	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+
+indent_clean: clean
+	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@-for i in ${YEARS}; do \
+	    if [[ -f $$i/Makefile ]]; then \
+		echo "cd $$i; make $@"; \
+		(cd $$i; make $@); \
+	    else \
+		echo "Warning: $$i/Makefile not found, skipping $$i for $@ processing" 1>&2 ; \
+	    fi; \
+        done
+	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+
+indent_clobber: indent_clean clobber
+	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@-for i in ${YEARS}; do \
+	    if [[ -f $$i/Makefile ]]; then \
+		echo "cd $$i; make $@"; \
+		(cd $$i; make $@); \
+	    else \
+		echo "Warning: $$i/Makefile not found, skipping $$i for $@ processing" 1>&2 ; \
+	    fi; \
+        done
+	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+
+install:
+	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@-for i in ${YEARS}; do \
+	    if [[ -f $$i/Makefile ]]; then \
+		echo "cd $$i; make $@"; \
+		(cd $$i; make $@); \
+	    else \
+		echo "Warning: $$i/Makefile not found, skipping $$i for $@ processing" 1>&2 ; \
+	    fi; \
+        done
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 

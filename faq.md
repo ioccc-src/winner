@@ -472,7 +472,7 @@ For example:
             cp -f prog $@
 
     clean:
-	    rm -f prog.o
+            rm -f prog.o
 
     clobber: clean
             rm -f desired_name
@@ -3940,6 +3940,17 @@ very easily. To do that `cd 1991/dds` and then do:
 
 and you'll see a single line changed and very simply.
 
+**NOTE**: The above mentioned `make` rules are located in the [1337.mk](%%REPO_URL%%/1337.mk)
+include Makefile via the optional include directive line:
+
+``` <!---Makefile-->
+    -include 1337.mk ../1337.mk ../../1337.mk
+```
+
+The [1337.mk](%%REPO_URL%%/1337.mk) file must exist in the current
+directory, or under the directory above, or under the directory 2 levels
+above in order for these rules to work.
+
 
 #### Tip: if you have `colordiff` installed it's a lot easier to see the differences
 
@@ -3957,6 +3968,8 @@ the files as described above.
 See the
 FAQ on "[original source code](#original_source_code)"
 for more information.
+
+Jump to: [top](#)
 
 
 <div id="faq4_3">

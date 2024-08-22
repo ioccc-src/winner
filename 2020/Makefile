@@ -230,30 +230,6 @@ clobber:
 	done
 	@echo '=-=-= ${YEAR} complete make $@ =-=-='
 
-install:
-	@echo '=-=-= ${YEAR} begin make $@ =-=-='
-	@echo
-	@for i in ${ENTRIES}; do \
-	    echo "=-= start ${YEAR}/$$i =-="; \
-	    echo "(cd $$i && ${MAKE} $@)"; \
-	    (cd $$i && ${MAKE} $@); \
-	    echo "=-= end ${YEAR}/$$i =-="; \
-	    echo; \
-	done
-	@echo '=-=-= ${YEAR} complete make $@ =-=-='
-
-indent.c:
-	@echo '=-=-= ${YEAR} begin make $@ =-=-='
-	@echo
-	@for i in ${ENTRIES}; do \
-	    echo "=-= start ${YEAR}/$$i =-="; \
-	    echo "(cd $$i && ${MAKE} $@)"; \
-	    (cd $$i && ${MAKE} $@); \
-	    echo "=-= end ${YEAR}/$$i =-="; \
-	    echo; \
-	done
-	@echo '=-=-= ${YEAR} complete make $@ =-=-='
-
 genpath:
 	@echo '=-=-= IOCCC begin make $@ =-=-='
 	@${RM} -f .tmp.genpath
@@ -291,6 +267,63 @@ new_entry:
 	@(echo 'ENTRIES= '; \
 	  (echo ${ENTRIES} ${NEW_ENTRY}) | ${TR} ' ' '\012' | ${SORT} -d -u) | \
 	  ${FMT} | ${SED} -e '2,$$s/^/\t/' -e 's/$$/ \\/' -e '$$s/ \\//'
+
+
+########################
+# extended utility rules
+########################
+
+.PHONY: indent_clean indent_clobber
+
+# you may be able to misunderstand the source by reading indent.c
+#
+indent.c:
+	@echo '=-=-= ${YEAR} begin make $@ =-=-='
+	@echo
+	@for i in ${ENTRIES}; do \
+	    echo "=-= start ${YEAR}/$$i =-="; \
+	    echo "(cd $$i && ${MAKE} $@)"; \
+	    (cd $$i && ${MAKE} $@); \
+	    echo "=-= end ${YEAR}/$$i =-="; \
+	    echo; \
+	done
+	@echo '=-=-= ${YEAR} complete make $@ =-=-='
+
+indent_clean: clean
+	@echo '=-=-= ${YEAR} begin make $@ =-=-='
+	@echo
+	@for i in ${ENTRIES}; do \
+	    echo "=-= start ${YEAR}/$$i =-="; \
+	    echo "(cd $$i && ${MAKE} $@)"; \
+	    (cd $$i && ${MAKE} $@); \
+	    echo "=-= end ${YEAR}/$$i =-="; \
+	    echo; \
+	done
+	@echo '=-=-= ${YEAR} complete make $@ =-=-='
+
+indent_clobber: indent_clean clobber
+	@echo '=-=-= ${YEAR} begin make $@ =-=-='
+	@echo
+	@for i in ${ENTRIES}; do \
+	    echo "=-= start ${YEAR}/$$i =-="; \
+	    echo "(cd $$i && ${MAKE} $@)"; \
+	    (cd $$i && ${MAKE} $@); \
+	    echo "=-= end ${YEAR}/$$i =-="; \
+	    echo; \
+	done
+	@echo '=-=-= ${YEAR} complete make $@ =-=-='
+
+install:
+	@echo '=-=-= ${YEAR} begin make $@ =-=-='
+	@echo
+	@for i in ${ENTRIES}; do \
+	    echo "=-= start ${YEAR}/$$i =-="; \
+	    echo "(cd $$i && ${MAKE} $@)"; \
+	    (cd $$i && ${MAKE} $@); \
+	    echo "=-= end ${YEAR}/$$i =-="; \
+	    echo; \
+	done
+	@echo '=-=-= ${YEAR} complete make $@ =-=-='
 
 
 ##################
