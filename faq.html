@@ -737,7 +737,7 @@ may copy <code>prog.c</code> to a different filename as part of the compiling/bu
     clean:
             rm -f desired_name.o
 
-    clobber: clobber
+    clobber: clean
             rm -f desired_name.c desired_name
 
     ... Makefile continues below ...</code></pre>
@@ -754,8 +754,9 @@ For example:</p>
             cp -f prog $@
 
     clean:
+            rm -f prog.o
 
-    clobber: clobber
+    clobber: clean
             rm -f desired_name
 
     ... Makefile continues below ...</code></pre>

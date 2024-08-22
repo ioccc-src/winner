@@ -450,7 +450,7 @@ may copy `prog.c` to a different filename as part of the compiling/building proc
     clean:
             rm -f desired_name.o
 
-    clobber: clobber
+    clobber: clean
             rm -f desired_name.c desired_name
 
     ... Makefile continues below ...
@@ -472,8 +472,9 @@ For example:
             cp -f prog $@
 
     clean:
+	    rm -f prog.o
 
-    clobber: clobber
+    clobber: clean
             rm -f desired_name
 
     ... Makefile continues below ...
