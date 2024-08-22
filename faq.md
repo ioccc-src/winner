@@ -111,12 +111,16 @@ other inconsistencies with the original entry?</a>
 - <a class="normal" href="#faq6_16">6.16 - How do I find more information about a winning author of an entry?</a>
 - <a class="normal" href="#faq6_17">6.17 - What is a `.entry.json` file and how is it used?</a>
 
+Jump to: [top](#)
+
 
 # The IOCCC FAQ
 
 <div id="faq0">
 ## Section 0: Submitting entries to a new IOCCC
 </div>
+
+Jump to: [top](#)
 
 
 <div id="faq0_0">
@@ -128,6 +132,8 @@ other inconsistencies with the original entry?</a>
 </div>
 
 To submit your code to the IOCCC, you **MUST** follow these steps:
+
+Jump to: [top](#)
 
 
 #### 0. Verify that the IOCCC is open for submissions
@@ -245,6 +251,7 @@ on how upload your entry to the **IOCCC submit server**.  Once
 with the proper instructions.  Watch the [IOCCC news](news.html)
 for an announcement of the availability of the **IOCCC submit server**.
 
+Jump to: [top](#)
 
 
 <div id="faq0_1">
@@ -380,6 +387,7 @@ FAQ on "[remarks.md](#remarks_md)",
 submitted theme** and **how compares with previous IOCCC winners**
 of the same theme.
 
+Jump to: [top](#)
 
 
 <div id="faq0_2">
@@ -414,6 +422,8 @@ For the `make(1)` _connoisseur_: As of 2023, IOCCC judges use [GNU
 make compatible](https://www.gnu.org/software/make/) `make(1)`
 command that is compatible with GNU Make version 3.81.
 
+Jump to: [top](#)
+
 
 <div id="faq0_3">
 <div id="prog">
@@ -425,17 +435,25 @@ While your entry's source filename, as submitted, must be `prog.c`, your entry's
 may copy `prog.c` to a different filename as part of the compiling/building process.  For example:
 
 ``` <!---make-->
+    ... Makefile continues above ...
+
     all: desired_name
 
     desired_name: desired_name.c
+            rm -f $@
             cc desired_name.c -o $@
 
     desired_name.c: prog.c
             rm -f $@
             cp -f prog.c $@
 
-    clobber:
+    clean:
+            rm -f desired_name.o
+
+    clobber: clobber
             rm -f desired_name.c desired_name
+
+    ... Makefile continues below ...
 ```
 
 We recommend that the `make clobber` rule remove files that your entry
@@ -445,10 +463,23 @@ You may also copy the compiled `prog` into a different file as part of compiling
 For example:
 
 ``` <!---make-->
+    ... Makefile continues above ...
+
+    all: desired_name
+
     different_name: prog
             rm -f $@
             cp -f prog $@
+
+    clean:
+
+    clobber: clobber
+            rm -f desired_name
+
+    ... Makefile continues below ...
 ```
+
+Jump to: [top](#)
 
 
 <div id="faq0_4">
@@ -465,6 +496,8 @@ Your entry must compile with **clang** or **gcc** and run under at least one fla
 system that conforms to the [SUS](https://en.wikipedia.org/wiki/Single_UNIX_Specification),
 otherwise known as the [The Single UNIX Specification Version 4](https://unix.org/version4/)
 or [later SUS](https://unix.org/online.html).
+
+Jump to: [top](#)
 
 
 <div id="faq0_5">
@@ -493,6 +526,8 @@ If there is an on-going discussion that seems relevant to what you
 have to say, consider adding comments to that particular discussion.
 Otherwise consider opening a [new mkiocccentry
 discussion](https://github.com/ioccc-src/mkiocccentry/discussions/new/choose).
+
+Jump to: [top](#)
 
 
 <div id="faq0_6">
@@ -553,6 +588,8 @@ others are wondering about as well!
 See also the
 FAQ on "[rules, guidelines, tools feedback](#feedback)".
 
+Jump to: [top](#)
+
 
 <div id="faq0_7">
 <div id="markdown">
@@ -576,6 +613,8 @@ as it lists things you **should not use** in markdown files.
 See the [markdown syntax](https://www.markdownguide.org/basic-syntax) guide.
 See also [CommonMark Spec](https://spec.commonmark.org/current/).
 
+Jump to: [top](#)
+
 
 <div id="faq0_8">
 <div id="mkiocccentry_bugs">
@@ -592,6 +631,8 @@ page](https://github.com/ioccc-src/mkiocccentry/issues).
 Please see the
 FAQ on "[reporting bugs and other issues in the mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry/blob/master/FAQ.md#bugs)"
 in the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry).
+
+Jump to: [top](#)
 
 
 <div id="faq0_9">
@@ -864,6 +905,8 @@ validate the `.auth.json` file.
 
 If you wish to **verify** that your `.auth.json` file is valid **JSON** then see the
 FAQ on "[validating JSON documents](#validating_json)".
+
+Jump to: [top](#)
 
 
 <div id="faq0_10">
@@ -1309,6 +1352,8 @@ validate the `.info.json` file.
 If you wish to **verify** that your `.info.json` file is valid **JSON** then see the
 FAQ on "[validating JSON documents](#validating_json)".
 
+Jump to: [top](#)
+
 
 <div id="faq0_11">
 <div id="validating_json">
@@ -1350,6 +1395,8 @@ verbosity with the `-v` option. For instance:
 
 If the tool is not installed then you will obviously have to specify the path of
 the tool.
+
+Jump to: [top](#)
 
 
 <div id="faq0_12">
@@ -1403,6 +1450,9 @@ it will report this as an **error**. Thus, if you were to package your
 submission manually then you would be violating [Rule
 17](next/rules.html#rule17).
 
+Jump to: [top](#)
+
+
 <div id="faq0_13">
 <div id="txzchk">
 <div id="tarball">
@@ -1442,6 +1492,9 @@ of this document to discuss the many tests that `txzchk(1)` runs; if you must
 know we refer you to the [source
 code](https://github.com/ioccc-src/mkiocccentry/blob/master/txzchk.c).
 
+Jump to: [top](#)
+
+
 <div id="faq0_14">
 <div id="fnamchk">
 <div id="tarball_filename">
@@ -1469,6 +1522,8 @@ Assuming everything is OK, it would show:
 See also the
 FAQ on "[validating your submission tarball](#txzchk)"
 for more information.
+
+Jump to: [top](#)
 
 
 <div id="faq0_15">
@@ -1635,6 +1690,8 @@ or more of these tools manually.
 See also the [Guidelines](next/guidelines.html) and the [Rules](next/rules.html)
 (and in particular [Rule 17](next/rules.html#rule17)).
 
+Jump to: [top](#)
+
 
 <div id="faq0_16">
 <div id="mkiocccentry_compile">
@@ -1661,10 +1718,14 @@ See the
 [mkiocccentry repo FAQ](https://github.com/ioccc-src/mkiocccentry/blob/master/FAQ.md)
 for more up to date information on downloading, compiling, and related FAQ information.
 
+Jump to: [top](#)
+
 
 <div id="faq1">
 ## Section 1: History of the IOCCC
 </div>
+
+Jump to: [top](#)
 
 
 <div id="faq1_0">
@@ -1752,6 +1813,8 @@ and the tradition continues as the longest running contest on the Internet.
 P.S. Part of the inspiration for making the IOCCC a contest goes to the
 [Bulwer-Lytton fiction contest](http://www.bulwer-lytton.com/).
 
+Jump to: [top](#)
+
 
 <div id="faq1_1">
 <div id="missing_years">
@@ -1766,6 +1829,8 @@ do not permit us to hold a new IOCCC.
 
 The pause during the 2021-2023 period was due to the IOCCC judges developing tools to
 make is much more likely for the IOCCC to be held in a yearly basis later on.
+
+Jump to: [top](#)
 
 
 <div id="faq1_2">
@@ -1961,6 +2026,8 @@ On 202y mm dd, the temporary repo was merged back into the [IOCCC winner
 repo](https://github.com/ioccc-src/winner) resulting in many, many substantial improvements
 to the [official IOCCC website](https://www.ioccc.org).
 
+Jump to: [top](#)
+
 
 <div id="faq1_3">
 <div id="size_rule">
@@ -2032,10 +2099,14 @@ NOTE: The size rule was actually rule 1.
 * Rule 2a: 4993
 * Rule 2b: 2503
 
+Jump to: [top](#)
+
 
 <div id="faq2">
 ## Section 2: IOCCC Judging process
 </div>
+
+Jump to: [top](#)
 
 
 <div id="faq2_0">
@@ -2045,6 +2116,8 @@ NOTE: The size rule was actually rule 1.
 </div>
 
 By tradition, we do not say.
+
+Jump to: [top](#)
 
 
 <div id="faq2_1">
@@ -2099,6 +2172,8 @@ rounds; we look at the author name only if an entry wins. See the guidelines if
 this is not clear!
 - leaving the remark section empty.
 
+Jump to: [top](#)
+
 
 <div id="faq2_2">
 <div id="losing_submissions">
@@ -2109,6 +2184,8 @@ this is not clear!
 Because the publication on the IOCCC site **_IS_** the award!
 Anyone is free to put their IOCCC hopefuls, lookalikes and/or
 entries that do not win on their web page for everyone to see.
+
+Jump to: [top](#)
 
 
 <div id="faq2_3">
@@ -2131,6 +2208,8 @@ incompatibilities, but no more than that - so be sure that your entry does work
 on at least a couple different platforms, at least one of them being UNIX or
 POSIX-conforming.
 
+Jump to: [top](#)
+
 
 <div id="faq2_4">
 <div id="rounds">
@@ -2149,6 +2228,8 @@ report when the IOCCC judges start near final judging rounds, and sometimes we
 also report when we enter what we believe is the final judging round, so you may
 guess that we have at least 3 rounds.  :-)  The actual number of rounds is
 certainly more than 3.
+
+Jump to: [top](#)
 
 
 <div id="faq2_5">
@@ -2198,6 +2279,8 @@ from the judges, they used the following awards:
 These could be considered the 'best entry' for those years with 1 or
 more other entries that came in close behind.
 
+Jump to: [top](#)
+
 
 <div id="faq2_6">
 <div id="announcing_winners">
@@ -2228,10 +2311,14 @@ winning entries page](years.html).
 
 * Update the [IOCCC news](news.html) page.
 
+Jump to: [top](#)
+
 
 <div id="faq3">
 ## Section 3: Compiling and running IOCCC entries
 </div>
+
+Jump to: [top](#)
 
 
 <div id="faq3_0">
@@ -2298,6 +2385,8 @@ compilers might do different things, have different defects or other issues.
 Note that the `Makefile`s check the `CC` variable by substrings so that if you
 were to do something like `make CC=gcc=mp-12` it would register as `gcc`.
 
+Jump to: [top](#)
+
 
 <div id="faq3_1">
 <div id="compile">
@@ -2341,6 +2430,8 @@ It might also be worth noting that almost all entries, have been
 fixed so that they can compile in modern systems though just because an entry
 compiles does not mean it will run on your specific system.
 
+Jump to: [top](#)
+
 
 <div id="faq3_2">
 <div id="64bit">
@@ -2379,6 +2470,8 @@ for details.  See also the
 FAQ on "[GitHub pull request](#pull_request)"
 for more information about pull requests.
 
+Jump to: [top](#)
+
 
 <div id="faq3_3">
 <div id="macos">
@@ -2402,6 +2495,8 @@ encourage you to submit a pull request with your ported code.
 Please see the
 FAQ on "[fixing an entry](#fix_an_entry)"
 for details.
+
+Jump to: [top](#)
 
 
 <div id="faq3_4">
@@ -2435,6 +2530,8 @@ See also the
 FAQ on "[GitHub pull request](#pull_request)"
 for more information about pull requests.
 
+Jump to: [top](#)
+
 
 <div id="faq3_5">
 <div id="cb">
@@ -2446,6 +2543,8 @@ This was a C beautifier for Unix, both AT&T and Berkeley, but it seems to no
 longer be available, code wise, except for Plan 9, but Plan 9 was never used for
 judging the IOCCC. A Unix man page for `cb`
 [still exists](https://www.ibm.com/docs/en/aix/7.3?topic=c-cb-command).
+
+Jump to: [top](#)
 
 
 <div id="faq3_6">
@@ -2464,6 +2563,8 @@ The simplest way to do this is to type `reset`. If echo was disabled you can get
 usually away with `stty echo`. Sometimes you can also get away with `stty sane`.
 `reset` does the most but note that it will clear the screen (obviously `clear`
 will too but it won't reset the terminal).
+
+Jump to: [top](#)
 
 
 <div id="faq3_7">
@@ -2682,6 +2783,8 @@ See the
 FAQ on "[X.org deprecated](#Xorg_deprecated)"
 for more information.
 
+Jump to: [top](#)
+
 
 <div id="faq3_8">
 <div id="SDL">
@@ -2807,6 +2910,8 @@ See the
 FAQ on "[GitHub pull request](#pull_request)"
 for more information about pull requests.
 
+Jump to: [top](#)
+
 
 <div id="faq3_9">
 <div id="curses">
@@ -2874,6 +2979,8 @@ for downloading, installing and using ncurses.
 
 We recommend trying a method suitable for your environment first, if possible.
 
+Jump to: [top](#)
+
 
 <div id="faq3_10">
 <div id="sox">
@@ -2937,6 +3044,8 @@ Not applicable, see above.
 
 Usually the index.html file will explain how to use it under Linux so we do not
 include this here, at least for now.
+
+Jump to: [top](#)
 
 
 <div id="faq3_11">
@@ -3046,6 +3155,8 @@ As you can see, using `clang` has some additional problems to work out but if
 you can get your entry to work well in `clang` it might very well be considered
 better than other entries.
 
+Jump to: [top](#)
+
 
 <div id="faq3_12">
 <div id="eof">
@@ -3085,6 +3196,8 @@ to find what the `intr` is set to:
 ... assuming of course that it's a ctrl combination :-) If for some strange
 reason it's not you might have to do something else including just piping it to
 just `grep intr` or whatever.
+
+Jump to: [top](#)
 
 
 <div id="faq3_13">
@@ -3129,6 +3242,8 @@ request](https://github.com/ioccc-src/winner/pulls).
 Please see the
 FAQ on "[fixing an entry](#fix_an_entry)"
 for how to submit a fix to an IOCCC entry.
+
+Jump to: [top](#)
 
 
 <div id="faq3_14">
@@ -3650,10 +3765,14 @@ and there are some other benefits as well which you would miss if you did not
 use them. Nevertheless, if you prefer to do it manually, whether to help you
 process or appreciate the entry more, then please do so.
 
+Jump to: [top](#)
+
 
 <div id="faq4">
 ## Section 4: Changes made to IOCCC entries
 </div>
+
+Jump to: [top](#)
 
 
 <div id="faq4_0">
@@ -3674,6 +3793,8 @@ the original code when reading the author's (and sometimes authors') remarks.
 See the
 FAQ on "[original source code](#original_source_code)"
 for more information.
+
+Jump to: [top](#)
 
 
 <div id="faq4_1">
@@ -3729,6 +3850,7 @@ We're not sure how this is compatibility but either way it can cause a
 problem and it is this that has complicated most of the fixes though again some
 can look almost identical.
 
+Jump to: [top](#)
 
 
 <div id="faq4_2">
@@ -3859,6 +3981,8 @@ VAX-11/PDP-11, however).
 See also the
 FAQ on "[entry source code changes](#what_changed)"
 
+Jump to: [top](#)
+
 
 <div id="faq4_4">
 <div id="orig_c">
@@ -3869,6 +3993,9 @@ FAQ on "[entry source code changes](#what_changed)"
 Due to the fact that the original code has sometimes had to change these files
 are the original winning entry or as close to as possible to the original that
 we can find.
+
+Jump to: [top](#)
+
 
 <div id="faq4_5">
 <div id="alt">
@@ -3894,6 +4021,8 @@ See the
 FAQ on "[original source code](#original_source_code)"
 for more information.
 
+Jump to: [top](#)
+
 
 <div id="faq4_6">
 <div id="arg_count">
@@ -3917,6 +4046,8 @@ The above also meant that some entries that were recursive calls to `main()`
 could no longer be so: `main()` instead had to call another function that has
 the body of the old `main()` and that function would call itself again. In some
 cases, however, this had to be done even without `clang` objections.
+
+Jump to: [top](#)
 
 
 <div id="faq4_7">
@@ -3946,6 +4077,8 @@ Another example is for more consistency, sometimes to do with alternate code and
 other times something else.
 
 There were certainly other reasons as well.
+
+Jump to: [top](#)
 
 
 <div id="faq4_8">
@@ -3980,6 +4113,8 @@ In a few cases files were removed and there are multiple reasons for this too.
 
 The end result is to help improve the presentation of the entries in some way or
 ways.
+
+Jump to: [top](#)
 
 
 <div id="faq4_9">
@@ -4030,10 +4165,14 @@ See the
 FAQ on "[what changed](#what_changed)"
 for more information and make rules relating to "**original source file**" differences.
 
+Jump to: [top](#)
+
 
 <div id="faq5">
 ## Section 5: Updating or correcting IOCCC website content
 </div>
+
+Jump to: [top](#)
 
 
 <div id="faq5_0">
@@ -4061,6 +4200,8 @@ In cases where the bug is known, the entry's [known bugs](bugs.html) file
 section may offer you important fixing clues.
 
 ### We welcome your help on fixing the IOCCC website
+
+Jump to: [top](#)
 
 
 <div id="faq5_1">
@@ -4091,6 +4232,8 @@ for information on how to submit a fix to an
 IOCCC entry.  See also the
 FAQ on "[GitHub pull request](#pull_request)"
 for more information about pull requests.
+
+Jump to: [top](#)
 
 
 <div id="faq5_2">
@@ -4143,6 +4286,8 @@ for more information about pull requests.
 Note that we're much more inclined to accept an author's fixes but the judges
 have the final say in the matter.
 
+Jump to: [top](#)
+
 
 <div id="faq5_3">
 <div id="report_web_problem">
@@ -4173,6 +4318,8 @@ issues](https://github.com/ioccc-src/winner/issues) to see if the problem has
 already been reported.  If it has been reported, feel free to add a comment to
 the issue. Otherwise, if you do not see the same issue reported, then feel free
 to [open a new IOCCC issue](https://github.com/ioccc-src/winner/issues/new).
+
+Jump to: [top](#)
 
 
 <div id="faq5_4">
@@ -4442,6 +4589,8 @@ replace that text with:
 If you just wish to report the bad link issue, see
 FAQ on "[report website problem](#report_web_problem)".
 
+Jump to: [top](#)
+
 
 <div id="faq5_7">
 <div id="support">
@@ -4465,6 +4614,8 @@ better for everyone. :-)
 If you wish to express your support and/or appreciation for our
 efforts, we suggest making an **Anonymous** gift via the
 [IOCCC Amazon wishlist](https://www.amazon.com/hz/wishlist/ls/3HSNTEL8RQ1M0?ref_=wl_share).
+
+Jump to: [top](#)
 
 
 <div id="faq5_8">
@@ -4563,10 +4714,14 @@ that be prove helpful.
 
 **THANK YOU** in advance for your willingness to assist!
 
+Jump to: [top](#)
+
 
 <div id="faq6">
 ## Section 6: Miscellaneous IOCCC
 </div>
+
+Jump to: [top](#)
 
 
 <div id="faq6_0">
@@ -4590,6 +4745,8 @@ In some cases the entry may have abused rule 2 and declared an
 "abuse of the rules" (although now blatant abuse of the rules to
 get around rule 2 size limits is discouraged).
 
+Jump to: [top](#)
+
 
 <div id="faq6_1">
 <div id="bugs">
@@ -4608,6 +4765,8 @@ Note that just because an entry is not in the bugs file does not mean there is
 not an issue and note that some issues are simply missing files, dead URL(s) or
 something like that.
 
+Jump to: [top](#)
+
 
 <div id="faq6_2">
 <div id="mirrors">
@@ -4622,6 +4781,8 @@ something like that.
 We are not accepting mirror requests at this time, sorry.  However you are free
 to fork the [IOCCC winner repo](https://github.com/ioccc-src/winner).  We do ask
 that your fork keep up to date with the latest changes when possible.
+
+Jump to: [top](#)
 
 
 <div id="faq6_3">
@@ -4647,6 +4808,8 @@ See the [Copyright](#copyright) at the bottom of IOCCC web pages for more detail
 See
 FAQ on "[using IOCCC content](#license)".
 For additional information on the [Copyright and CC BY-SA 4.0 License](license.html).
+
+Jump to: [top](#)
 
 
 <div id="faq6_4">
@@ -4692,6 +4855,8 @@ exaggeration](https://books.google.com/books?id=ms3tce7BgJsC&lpg=PA134&vq=%22the
 p.s. Here is an image of F. D. C. Willard:
 
 [F D C Willard](png/F.D.C.Willard.png)
+
+Jump to: [top](#)
 
 
 <div id="faq6_5">
@@ -4774,6 +4939,8 @@ Anonymous `author_handle`'s match this regexp:
 ``` <!---re-->
     Anonymous_[0-9][0-9][0-9][0-9][.0-9]*$
 ```
+
+Jump to: [top](#)
 
 
 <div id="faq6_6">
@@ -5299,6 +5466,8 @@ FAQ on "[fixing author information](#fix_author)"
 for information about how to update
 and/or correct IOCCC author information.
 
+Jump to: [top](#)
+
 
 <div id="faq6_7">
 <!-- we cannot use id="entry_id" because of a header in FAQ 6.6 -->
@@ -5323,6 +5492,8 @@ The `entry_id` for that winning entry is:
 ```
     2020_ferguson2
 ```
+
+Jump to: [top](#)
 
 
 <div id="faq6_8">
@@ -5354,6 +5525,8 @@ The .top, .allyear, .year and .path files are generated from the top level Makef
 ``` <!---sh-->
     make genpath
 ```
+
+Jump to: [top](#)
 
 
 <div id="faq6_9">
@@ -5417,6 +5590,9 @@ refer to what is now a _submission_.  In a number of historical cases,
 such as old rules and old guidelines, terms such as _entry_ may still be
 found.  Moreover, out of habit, the IOCCC judges sometimes use old
 names such as _entry_ when they should use _submission_.  Sorry (tm Canada)! :-)
+
+Jump to: [top](#)
+
 
 <div id="faq6_10">
 <div id="pull_request">
@@ -5671,6 +5847,8 @@ example, you would type:
 
 This will merge your pull request to your fork.
 
+Jump to: [top](#)
+
 
 <div id="faq6_11">
 <div id="license">
@@ -5707,6 +5885,8 @@ IOCCC content.  We use this to help ensure that we can all
 enjoy hat those working on the IOCCC have proper Attribution
 including, of course, the IOCCC winners themselves!  It is designed
 to help ensure that everyone may enjoy the IOCCC.
+
+Jump to: [top](#)
 
 
 <div id="faq6_12">
@@ -5748,6 +5928,8 @@ follow posts something so you will have to check the IOCCC feed manually.
 **HINT to mastodon users**: You may wish to refresh the [@IOCCC
 mastodon feed](https://fosstodon.org/@ioccc) page and/or mastodon
 app from time to time to view IOCCC mastodon updates.
+
+Jump to: [top](#)
 
 
 <div id="faq6_13">
@@ -5794,6 +5976,9 @@ See
 FAQ on "[Author, Entry, Submission](#terms)"
 for more information on terms such as _author_, _entry_, and _submission_.
 
+Jump to: [top](#)
+
+
 <div id="faq6_14">
 <div id="tabstops">
 ### FAQ 6.14: How do I set certain tabstops for viewing source code in vi(m)?
@@ -5811,6 +5996,8 @@ can hit ESC to do this) and then type the command:
 ```
 
 where `4` is the value you wish to set the tabstop to.
+
+Jump to: [top](#)
 
 
 <div id="faq6_15">
@@ -5933,6 +6120,8 @@ least [report it as an
 issue](https://github.com/ioccc-src/temp-test-ioccc/issues/new/choose) (choose
 the category _Website issue_).
 
+Jump to: [top](#)
+
 
 <div id="faq6_16">
 <div id="author-information">
@@ -5957,6 +6146,9 @@ JSON files.
 Of course if you know the author's name you can go directly to
 [authors.html](authors.html) and click on their surname's/last name's/second
 name's initial and then scroll down (if necessary) to the author in question.
+
+Jump to: [top](#)
+
 
 <div id="faq6_17">
 <div id="entry_json">
@@ -6443,9 +6635,6 @@ Usually this is called `try.sh` for the entry and `try.alt.sh` for the alternate
 source code (if there is an alternate version). Some, however, have another file
 name. The `entry_text` for the `try` scripts will be `script to try entry` or
 something along those lines.
-
-
-
 
 
 <hr style="width:10%;text-align:left;margin-left:0">
