@@ -424,7 +424,7 @@ writing by <a href="../contact.html">contacting the judges</a>.</p>
 <h2 id="ioccc-guidelines-version">IOCCC Guidelines version</h2>
 </div>
 <p class="leftbar">
-These <a href="guidelines.html">IOCCC guidelines</a> are version <strong>28.12 2024-08-21</strong>.
+These <a href="guidelines.html">IOCCC guidelines</a> are version <strong>28.13 2024-08-22</strong>.
 </p>
 <p><strong>IMPORTANT</strong>: Be <strong>SURE</strong> to read the <a href="rules.html">IOCCC rules</a>.</p>
 <div id="change_marks">
@@ -671,7 +671,7 @@ If <code>mkiocccentry</code> encounters an <strong>error</strong> the program wi
 compressed tarball <strong>will not be formed</strong>. For instance, if <code>chkentry(1)</code> (see
 below) fails to validate the <code>.auth.json</code> or <code>.info.json</code>
 <a href="https://www.json.org/json-en.html">JSON</a> files that <code>mkiocccentry(1)</code> creates,
-it is an error and possibly a bug that you should <a href="https://github.com/ioccc-src/mkiocccentry/issues/new?assignees=&amp;labels=bug&amp;projects=&amp;template=bug_report.yml&amp;title=%5BBug%5D+%3Ctitle%3E">report as a bug at the
+it is an error and <strong>possibly</strong> a bug that you should <a href="https://github.com/ioccc-src/mkiocccentry/issues/new?assignees=&amp;labels=bug&amp;projects=&amp;template=bug_report.yml&amp;title=%5BBug%5D+%3Ctitle%3E">report as a bug at the
 mkiocccentry issues
 page</a>.
 <strong>PLEASE run the <code>bug_report.sh</code> script to help us out here!</strong> See the
@@ -730,7 +730,7 @@ As we already discussed how to invoke this we will not include it here again.
 submission. These files <strong>MUST</strong> pass the checks of <code>chkentry(1)</code>.
 </p>
 <p class="leftbar">
-If <code>chkentry</code> does not pass and you used <code>mkiocccentry(1)</code> it is very possibly a
+If <code>chkentry</code> does not pass and you used <code>mkiocccentry(1)</code> it is <strong>possibly</strong> a
 bug and you should <a href="https://github.com/ioccc-src/mkiocccentry/issues/new?assignees=&amp;labels=bug&amp;projects=&amp;template=bug_report.yml&amp;title=%5BBug%5D+%3Ctitle%3E">report it as a bug at the mkiocccentry issues
 page</a>.
 See the FAQ on “<a href="../faq.html#mkiocccentry_bugs">report mkiocccentry bugs</a>”.
@@ -758,11 +758,19 @@ for much more information on these files.
 <p class="leftbar">
 <code>txzchk(1)</code> performs a wide number of sanity checks on the xz
 compressed tarball; if any issues are found (‘<code>feathers are stuck in the tarball</code>’ :-) ) <strong>AND if and <em>ONLY IF</em> you used
-<code>mkiocccentry(1)</code></strong>, then it is very possibly a bug in one of the tools and you
-should <a href="https://github.com/ioccc-src/mkiocccentry/issues/new?assignees=&amp;labels=bug&amp;projects=&amp;template=bug_report.yml&amp;title=%5BBug%5D+%3Ctitle%3E">report it as a bug at the mkiocccentry issues
+<code>mkiocccentry(1)</code></strong>, then it is <strong>possibly</strong> a bug in one of the tools and you
+might want to <a href="https://github.com/ioccc-src/mkiocccentry/issues/new?assignees=&amp;labels=bug&amp;projects=&amp;template=bug_report.yml&amp;title=%5BBug%5D+%3Ctitle%3E">report it as a bug at the mkiocccentry issues
 page</a>. <strong>PLEASE run the
 <code>bug_report.sh</code> script to help us out here!</strong> See the
 FAQ on “<a href="../faq.html#mkiocccentry_bugs">report mkiocccentry bugs</a>”.
+</p>
+<p class="leftbar">
+Of course, it is also possible that <code>mkiocccentry(1)</code> or one or more of the
+tools it calls (or another tool calls) to fail and it is <strong>NOT</strong> a bug. An
+example problem is if there is not enough memory available or if some other
+library or syscall fails. Nonetheless it might be worth reporting as a bug. It
+is a judgement call; if it’s a bug it’ll be addressed and if it’s not that’s OK
+too.
 </p>
 <p class="leftbar">
 As part of its sanity checks, <code>txzchk(1)</code> will run <code>fnamchk(1)</code> on the
@@ -1165,7 +1173,7 @@ replacement of <code>init</code> would not be an interesting submission.</p>
 some complex state machine to do something simple are boring?
 We think we did. :-)</p>
 <blockquote>
-<p>All generalizations are false, including this one. – Mark Twain</p>
+<p>All generalizations are false, including this one. – <strong>Mark Twain</strong></p>
 </blockquote>
 <p>Given two versions of the same program, one that is a compact blob
 of code, and the other that is formatted more like a typical C
@@ -1370,12 +1378,26 @@ run the risk of violating <a href="rules.html#rule7">Rule 7</a>.
 <p class="leftbar">
 <a href="rules.html#rule7">Rule 7</a> does not prohibit you from writing your own
 obfuscated versions of these tools, unless of course you are <a href="http://www.isthe.com/chongo/index.html">Landon Curt
-Noll</a>, in which case you <em>probably</em> won’t
-win since <a href="../judges.html">judges</a> are disqualified! :-)
-However, <em><strong>if you do</strong> write your own version, <strong>you might wish</strong> to make it do something more
-interesting</em> than simply implementing the <a href="../index.html">IOCCC</a> tools’ algorithms. On the other
-hand, writing an obfuscated version of a library runs the risk of violating
-<a href="rules.html#rule1">Rule 1</a> as it is likely not a complete program.
+Noll</a>, in which case you <em>probably</em>
+won’t win since <a href="../judges.html">judges</a> are disqualified! :-) However, <strong><em>if</em></strong>
+you do write your own version, you <strong><em>might</em></strong> wish to make it do something
+<strong><em>more</em> interesting</strong> than simply implementing the <a href="../index.html">IOCCC</a>
+tools’ algorithms, although if you do this you might want to keep in mind that
+writing an obfuscated version of a library runs the risk of violating <a href="rules.html#rule1">Rule
+1</a> as it is likely not a complete program.
+</p>
+<p class="leftbar">
+On the other hand, we do not recommend you try and submit a JSON parser due to
+the fact it will likely exceed <a href="rules.html#rule2">the source code size limit</a>
+and because you likely can’t beat <a href="https://github.com/westes/flex">flex</a> or
+<a href="https://www.gnu.org/software/bison/">bison</a> in obfuscation. This isn’t to
+say that <a href="https://www.json.org/json-en.html">the so-called JSON spec</a> is not
+obfuscated, but unless you have some really clever way to compact and
+obfuscate a JSON parser more than <a href="https://github.com/westes/flex">flex</a> and
+<a href="https://www.gnu.org/software/bison/">bison</a> you will likely not win, either
+because of the <a href="rules.html#rule2">source code size limit</a> or because it is not
+as obfuscated as the lexer/parser part of
+<a href="https://github.com/ioccc-src/mkiocccentry/blob/master/jparse">jparse</a>.
 </p>
 <p>While programs that only run in a specific word size are OK, if you have
 to pick, choose a 64-bit word size.</p>
