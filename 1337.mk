@@ -3,7 +3,7 @@
 # extended utility rules
 ########################
 
-.PHONY: indent_clean indent_clobber
+.PHONY: indent_clean indent_clobber install
 
 # you may be able to misunderstand the source by reading indent.c
 #
