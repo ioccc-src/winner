@@ -48,7 +48,7 @@ writing by [contacting the judges](../contact.html).
 </div>
 
 <p class="leftbar">
-These [IOCCC guidelines](guidelines.html) are version **28.13 2024-08-22**.
+These [IOCCC guidelines](guidelines.html) are version **28.14 2024-08-24**.
 </p>
 
 **IMPORTANT**: Be **SURE** to read the [IOCCC rules](rules.html).
@@ -652,11 +652,27 @@ not meeting your claims).
 </p>
 
 <p class="leftbar">
+On the other hand, some warnings cannot be disabled and are enabled by compilers
+without any warning option specified. These are sometimes inevitable in
+obfuscated code and even in some non-obfuscated code.
+</p>
+
+<p class="leftbar">
+Additionally, some compilers like to warn about certain use of `char *`s which
+is not only likely dubious itself it obviously can't (always) be avoided so you should
+not worry about this either; this is the warning `-Wno-unsafe-buffer-usage`. See
+also the
+FAQ on "[forced warnings](../faq.html#forced_warnings)"
+and the
+FAQ on "[`-Weverything`](../faq.html#weverything)".
+</p>
+
+<p class="leftbar">
 If your submission issues lots of warnings but is otherwise
 marvelously obfuscated in multiple levels, don't worry about it.  Nevertheless,
 be sure that the warnings do not constitute a potential "**show stopper**"
 compiler problem.  Be sure that compilers such as both `gcc` and `clang` won't
-produce a compile **error** and refuse to compile your code: unless for some
+produce a compiler **error** and refuse to compile your code: unless for some
 reason that is what you intend to happen in which case document that too in your
 `remarks.md` file.  :-)
 </p>

@@ -424,7 +424,7 @@ writing by <a href="../contact.html">contacting the judges</a>.</p>
 <h2 id="ioccc-guidelines-version">IOCCC Guidelines version</h2>
 </div>
 <p class="leftbar">
-These <a href="guidelines.html">IOCCC guidelines</a> are version <strong>28.13 2024-08-22</strong>.
+These <a href="guidelines.html">IOCCC guidelines</a> are version <strong>28.14 2024-08-24</strong>.
 </p>
 <p><strong>IMPORTANT</strong>: Be <strong>SURE</strong> to read the <a href="rules.html">IOCCC rules</a>.</p>
 <div id="change_marks">
@@ -905,11 +905,25 @@ compiler produces a different result: so your submission won’t be penalized fo
 not meeting your claims).
 </p>
 <p class="leftbar">
+On the other hand, some warnings cannot be disabled and are enabled by compilers
+without any warning option specified. These are sometimes inevitable in
+obfuscated code and even in some non-obfuscated code.
+</p>
+<p class="leftbar">
+Additionally, some compilers like to warn about certain use of <code>char *</code>s which
+is not only likely dubious itself it obviously can’t (always) be avoided so you should
+not worry about this either; this is the warning <code>-Wno-unsafe-buffer-usage</code>. See
+also the
+FAQ on “<a href="../faq.html#forced_warnings">forced warnings</a>”
+and the
+FAQ on “<a href="../faq.html#weverything"><code>-Weverything</code></a>”.
+</p>
+<p class="leftbar">
 If your submission issues lots of warnings but is otherwise
 marvelously obfuscated in multiple levels, don’t worry about it. Nevertheless,
 be sure that the warnings do not constitute a potential “<strong>show stopper</strong>”
 compiler problem. Be sure that compilers such as both <code>gcc</code> and <code>clang</code> won’t
-produce a compile <strong>error</strong> and refuse to compile your code: unless for some
+produce a compiler <strong>error</strong> and refuse to compile your code: unless for some
 reason that is what you intend to happen in which case document that too in your
 <code>remarks.md</code> file. :-)
 </p>
