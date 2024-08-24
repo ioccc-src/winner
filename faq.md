@@ -3764,7 +3764,7 @@ is enabled whenever you act on `char *`s, saying it is unsafe buffer usage, even
 when it's not (this might be enabled by `-Weverything` but it might not be; for
 more details on why we use `-Weverything` in Clang see the FAQ on
 "[`-Weverything`](#weverything)"), and it is not detrimental to your submission
-if you disable this.
+if you disable this). This warning happens to be `-Wno-unsafe-buffer-usage`.
 
 So in short, no you should not worry about these as they are sometimes
 inevitable in obfuscated code and even non-obfuscated code.
