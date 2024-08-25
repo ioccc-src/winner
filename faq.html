@@ -389,7 +389,7 @@
 
 <!-- BEFORE: 1st line of markdown file: faq.md -->
 <h1 id="faq-table-of-contents">FAQ Table of Contents</h1>
-<p>This is FAQ version <strong>28.0.3 2024-07-27</strong>.</p>
+<p>This is FAQ version <strong>28.0.4 2024-08-24</strong>.</p>
 <h2 id="section-0---submitting-to-a-new-ioccc">Section 0 - <a href="#faq0">Submitting to a new IOCCC</a></h2>
 <ul>
 <li><a class="normal" href="#faq0_0">0.0 - How may I enter the IOCCC?</a></li>
@@ -451,6 +451,7 @@
 <li><a class="normal" href="#faq3_19">3.19 - What kind of make(1) compatibility does the IOCCC support and will it support other kinds?</a></li>
 <li><a class="normal" href="#faq3_20">3.20 - How do I download individual winning entries or all winning entries of a given year?</a></li>
 <li><a class="normal" href="#faq3_21">3.21 - What are <code>try.sh</code> and <code>try.alt.sh</code> scripts and why should I use them?</a></li>
+<li><a class="normal" href="#faq3_22">3.22 - Are there any compiler warnings that I should not worry about?</a></li>
 </ul>
 <h2 id="section-4---changes-made-to-ioccc-entries">Section 4 - <a href="#faq4">Changes made to IOCCC entries</a></h2>
 <ul>
@@ -2829,14 +2830,6 @@ warnings, and sometimes warnings about things that do not matter, some of which
 are frankly frivolous and often downright dubious.</p>
 <p>To enable this feature:</p>
 <pre><code>    make clobber all CC=clang</code></pre>
-<p>or:</p>
-<pre><code>    make clobber all &#39;CWARN+= -Weverything&#39;</code></pre>
-<p>though it should be noted that if one tries <code>-Weverything</code> with compilers that
-are not <code>clang</code> they <em>might</em> see something like:</p>
-<pre><code>    echo &#39;int main(void) {}&#39; &gt; foo.c ; cc -Weverything foo.c -o foo
-    cc: error: unrecognized command-line option &#39;-Weverything&#39;</code></pre>
-<p>which means that it can’t even be compiled. Thus the proper way to do it is the
-first way, <code>make clobber all CC=clang</code>.</p>
 <p>IOCCC authors who have access to <code>clang</code> might wish to try their
 hand at compiling with <code>-Weverything</code> while using a minimum of <code>-Wno-foo</code>
 statements. Sometimes there is a technical or pedantic issue that
@@ -2863,7 +2856,7 @@ warnings, and we find a warning situation, this may diminish the value of your
 entry as it is not as documented. Thus it might be wise to point this out and
 if you can test it in multiple platforms (or versions of <code>clang</code>, see
 below note) this would be advisable.</p>
-<p>NOTE: different versions of <code>clang</code> have other differences as well. For instance
+<p><strong>NOTE</strong>: different versions of <code>clang</code> have other differences as well. For instance
 a defect of <code>clang</code> that required numerous entries to be fixed for clang is that it
 requires that <code>main()</code>’s arguments to be of a specific type. However some
 versions of <code>clang</code> are more strict in the number of args allowed. These reasons
@@ -3178,9 +3171,9 @@ provided by the author and any other file in the winning entry, found under the
 entry’s subdirectory.</p>
 <p>If you downloaded <code>1984/mullender/1984_mullender.tar.bz2</code>, for instance, you might
 then do:</p>
-<div class="sourceCode" id="cb67"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a>        <span class="bu">cd</span> 1984/mullender</span>
-<span id="cb67-2"><a href="#cb67-2" aria-hidden="true" tabindex="-1"></a>        <span class="fu">make</span> everything</span>
-<span id="cb67-3"><a href="#cb67-3" aria-hidden="true" tabindex="-1"></a>        <span class="ex">./mullender.alt</span></span></code></pre></div>
+<div class="sourceCode" id="cb65"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a>        <span class="bu">cd</span> 1984/mullender</span>
+<span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a>        <span class="fu">make</span> everything</span>
+<span id="cb65-3"><a href="#cb65-3" aria-hidden="true" tabindex="-1"></a>        <span class="ex">./mullender.alt</span></span></code></pre></div>
 <p>to compile all versions and then run the alternate version (if you have
 a PDP-11 or VAX-11 you would be able to run the original version). For more help
 on compiling entries, see also the
@@ -3221,8 +3214,8 @@ if you switched to each entry’s directory and ran <code>make everything</code>
 <p>If you download the 1984 tarball, i.e. <code>1984/1984.tar.bz2</code>, then you might
 extract it and then switch to the directory and compile everything of each
 entry:</p>
-<div class="sourceCode" id="cb68"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a>        <span class="bu">cd</span> 1984</span>
-<span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a>        <span class="fu">make</span> everything</span></code></pre></div>
+<div class="sourceCode" id="cb66"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a>        <span class="bu">cd</span> 1984</span>
+<span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a>        <span class="fu">make</span> everything</span></code></pre></div>
 <p>For more help on compiling entries, see also the
 FAQ on “<a href="#make_rules">IOCCC Makefile rules</a>”.</p>
 <p>Of course in this case you can also switch to individual entries and look at the
@@ -3251,6 +3244,23 @@ manually, sometimes the scripts will do additional things that you might miss
 and there are some other benefits as well which you would miss if you did not
 use them. Nevertheless, if you prefer to do it manually, whether to help you
 process or appreciate the entry more, then please do so.</p>
+<p>Jump to: <a href="#">top</a></p>
+<div id="faq3_22">
+<div id="forced_warnings">
+<h3 id="are-there-any-compiler-warnings-that-i-should-not-worry-about">3.22 - Are there any compiler warnings that I should not worry about?</h3>
+</div>
+</div>
+<p>There are unfortunately some warnings that cannot be disabled; they are always
+enabled whatever warning options you have enabled. Also, there is a warning that
+is enabled whenever you act on <code>char *</code>s, saying it is unsafe buffer usage, even
+when it’s not (this might be enabled by <code>-Weverything</code> but it might not be; for
+more details on why we use <code>-Weverything</code> in Clang see the FAQ on
+“<a href="#weverything"><code>-Weverything</code></a>”), and it is not detrimental to your submission
+if you disable this). This warning happens to be <code>-Wno-unsafe-buffer-usage</code>.</p>
+<p>So in short, no you should not worry about these as they are sometimes
+inevitable in obfuscated code and even non-obfuscated code.</p>
+<p>If you <em>can</em> work past this it might be good but this is not something that
+should be worried about too much as this is on the compiler developers, not you.</p>
 <p>Jump to: <a href="#">top</a></p>
 <div id="faq4">
 <h2 id="section-4-changes-made-to-ioccc-entries">Section 4: Changes made to IOCCC entries</h2>

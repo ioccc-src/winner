@@ -1,6 +1,6 @@
 # FAQ Table of Contents
 
-This is FAQ version **28.0.3 2024-07-27**.
+This is FAQ version **28.0.4 2024-08-24**.
 
 
 ## Section  0 - [Submitting  to a new IOCCC](#faq0)
@@ -63,6 +63,7 @@ This is FAQ version **28.0.3 2024-07-27**.
 - <a class="normal" href="#faq3_19">3.19 - What kind of make&lpar;1&rpar; compatibility does the IOCCC support and will it support other kinds?</a>
 - <a class="normal" href="#faq3_20">3.20 - How do I download individual winning entries or all winning entries of a given year?</a>
 - <a class="normal" href="#faq3_21">3.21 - What are `try.sh` and `try.alt.sh` scripts and why should I use them?</a>
+- <a class="normal" href="#faq3_22">3.22 - Are there any compiler warnings that I should not worry about?</a>
 
 
 ## Section  4 - [Changes made to IOCCC entries](#faq4)
@@ -3074,23 +3075,6 @@ To enable this feature:
     make clobber all CC=clang
 ```
 
-or:
-
-``` <!---sh-->
-    make clobber all 'CWARN+= -Weverything'
-```
-
-though it should be noted that if one tries `-Weverything` with compilers that
-are not `clang` they _might_ see something like:
-
-``` <!---sh-->
-    echo 'int main(void) {}' > foo.c ; cc -Weverything foo.c -o foo
-    cc: error: unrecognized command-line option '-Weverything'
-```
-
-which means that it can't even be compiled. Thus the proper way to do it is the
-first way, `make clobber all CC=clang`.
-
 IOCCC authors who have access to `clang` might wish to try their
 hand at compiling with `-Weverything` while using a minimum of `-Wno-foo`
 statements.  Sometimes there is a technical or pedantic issue that
@@ -3121,7 +3105,7 @@ entry as it is not as documented. Thus it might be wise to point this out and
 if you can test it in multiple platforms (or versions of `clang`, see
 below note) this would be advisable.
 
-NOTE: different versions of `clang` have other differences as well. For instance
+**NOTE**: different versions of `clang` have other differences as well. For instance
 a defect of `clang` that required numerous entries to be fixed for clang is that it
 requires that `main()`'s arguments to be of a specific type. However some
 versions of `clang` are more strict in the number of args allowed. These reasons
@@ -3765,6 +3749,29 @@ manually, sometimes the scripts will do additional things that you might miss
 and there are some other benefits as well which you would miss if you did not
 use them. Nevertheless, if you prefer to do it manually, whether to help you
 process or appreciate the entry more, then please do so.
+
+Jump to: [top](#)
+
+<div id="faq3_22">
+<div id="forced_warnings">
+### 3.22 - Are there any compiler warnings that I should not worry about?
+</div>
+</div>
+
+There are unfortunately some warnings that cannot be disabled; they are always
+enabled whatever warning options you have enabled. Also, there is a warning that
+is enabled whenever you act on `char *`s, saying it is unsafe buffer usage, even
+when it's not (this might be enabled by `-Weverything` but it might not be; for
+more details on why we use `-Weverything` in Clang see the FAQ on
+"[`-Weverything`](#weverything)"), and it is not detrimental to your submission
+if you disable this). This warning happens to be `-Wno-unsafe-buffer-usage`.
+
+So in short, no you should not worry about these as they are sometimes
+inevitable in obfuscated code and even non-obfuscated code.
+
+If you *can* work past this it might be good but this is not something that
+should be worried about too much as this is on the compiler developers, not you.
+
 
 Jump to: [top](#)
 

@@ -4,7 +4,7 @@
     make
 ```
 
-There is an alternate version based on the author's remarks. See [alternate
+There is an alternate version based on the author's remarks. See [Alternate
 code](#alternate-code).
 
 
@@ -28,8 +28,8 @@ where `seed` is a number.
 
 ## Alternate code:
 
-This code is formatted differently and is not the approach used by the author
-which is slower, inelegant and not as obscure, as the author put it.
+This code is formatted differently and is not the approach used by the author;
+it is slower, inelegant and not as obscure, as the author put it.
 
 
 ### Alternate build:
@@ -60,8 +60,8 @@ more while it puzzles out some puzzles: all in a puzzling way!
 to the `switch` statement.  And if you think you can puzzle
 it out better, try solving [insane1.sudoku](%%REPO_URL%%/2005/aidan/insane1.sudoku) all by yourself!
 
-NOTE: the tarball named by the author was removed after the files were extracted
-into the directory instead. These files were added to the list.
+**NOTE**: the tarball named by the author was removed after the files were
+extracted into the directory instead. These files were added to the list.
 
 
 ## Author's remarks:

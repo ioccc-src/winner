@@ -41,6 +41,7 @@ manifest.numbers
 .su[a-z]
 .*.sv[a-z]
 .*.sw[a-z]
+.sw[a-zA-Z0-9]
 .tmp.*
 year_prize.csv
 year_prize.numbers

@@ -409,8 +409,8 @@ Location: <a href="../../location.html#ZZ">ZZ</a> - <em>Unknown location</em></l
 <!-- BEFORE: 1st line of markdown file: 2005/anon/README.md -->
 <h2 id="to-build">To build:</h2>
 <pre><code>    make</code></pre>
-<p>NOTE: there is an alternate version for vi(m) like movements. See <a href="#alternate-code">alternate
-version</a> below. If your terminal has problems with the
+<p><strong>NOTE</strong>: there is an alternate version for vi(m) like movements. See <a href="#alternate-code">Alternate
+code</a> below. If your terminal has problems with the
 <code>stty(1)</code> commands try:</p>
 <pre><code>    make anon-no_stty</code></pre>
 <p>This will compile <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2005/anon/anon.c">anon.c</a> as <code>anon</code> to not use
@@ -438,7 +438,7 @@ hook you) and spending too much time playing. :-)</p>
 <p>If you specify more than three args the program might also crash or do
 something strange. This might also happen if you specify excessively large board
 dimensions. Try <code>100 100 100</code> for instance and see what happens!</p>
-<h2 id="alternate-version">Alternate version:</h2>
+<h2 id="alternate-code">Alternate code:</h2>
 <p>The alternate version uses <code>vi(m)</code> like movement keys.</p>
 <h3 id="alternate-build">Alternate build:</h3>
 <pre><code>    make alt</code></pre>
@@ -446,12 +446,32 @@ dimensions. Try <code>100 100 100</code> for instance and see what happens!</p>
 <pre><code>    make alt-no_stty</code></pre>
 <h3 id="alternate-use">Alternate use:</h3>
 <p>Use <code>anon.alt</code> as you would <code>anon</code> with the change in movements:</p>
-<pre><code>    k | Move empty spot up
-    h | Move empty spot left
-    j | Move empty spot down
-    l | Move empty spot right
-    J | Move empty spot forwards
-    K | Move empty spot backwards</code></pre>
+<ul>
+<li><code>k</code>
+<ul>
+<li>Move empty spot up</li>
+</ul></li>
+<li><code>h</code>
+<ul>
+<li>Move empty spot left</li>
+</ul></li>
+<li><code>j</code>
+<ul>
+<li>Move empty spot down</li>
+</ul></li>
+<li><code>l</code>
+<ul>
+<li>Move empty spot right</li>
+</ul></li>
+<li><code>J</code>
+<ul>
+<li>Move empty spot forwards</li>
+</ul></li>
+<li><code>K</code>
+<ul>
+<li>Move empty spot backwards</li>
+</ul></li>
+</ul>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>Taking the 4x4 board with 15 tiles to a whole new level, this entry takes this
 puzzle to a whole new dimension! While you puzzle out this puzzle, we invite
@@ -473,9 +493,9 @@ For example, to play the original version of the Fifteen Puzzle:</p>
 <pre><code>    ./anon 4 4</code></pre>
 <p>To play with a 3D board, do something like this:</p>
 <pre><code>    ./anon 3 3 3</code></pre>
-<p><strong>WARNING: do NOT run the program with more than 3 command-line arguments.
+<p><strong>WARNING</strong>: do NOT run the program with more than 3 command-line arguments.
 This will trigger a bug that will cause it to crash or do something strange.
-:-)</strong></p>
+:-)</p>
 <p>Also, resist the temptation to create very large puzzles. The program does not
 attempt to resize your terminal for you, and will produce confusing output. It
 may also crash on you if you insist on running it with excessively large board
@@ -483,24 +503,63 @@ dimensions. :-) (10x10x10 is considered a safe upper limit.)</p>
 <p>The empty space on the board is represented by a space filled with <code>#</code>
 characters instead of digits. To slide the tiles around, use the following
 keys:</p>
-<pre><code>    i | Slide the tile above the current empty space downwards.
-    j | Slide the tile to the left of the current empty space to the right.
-    k | Slide the tile below the current empty space upwards.
-    l | Slide the tile to the right of the current empty space to the left.
-    o | Slide the tile behind the current empty space forwards.
-    n | Slide the tile in front of the current empty space backwards.</code></pre>
-<p>To quit the game:</p>
-<pre><code>    q | Quit the game.</code></pre>
+<ul>
+<li><code>i</code>
+<ul>
+<li>Slide the tile above the current empty space downwards.</li>
+</ul></li>
+<li><code>j</code>
+<ul>
+<li>Slide the tile to the left of the current empty space to the right.</li>
+</ul></li>
+<li><code>k</code>
+<ul>
+<li>Slide the tile below the current empty space upwards.</li>
+</ul></li>
+<li><code>l</code>
+<ul>
+<li>Slide the tile to the right of the current empty space to the left.</li>
+</ul></li>
+<li><code>o</code>
+<ul>
+<li>Slide the tile behind the current empty space forwards.</li>
+</ul></li>
+<li><code>n</code>
+<ul>
+<li>Slide the tile in front of the current empty space backwards.</li>
+</ul></li>
+</ul>
+<p>To quit the game, hit <code>q</code>.</p>
 <p>Note that, for example, sliding the tile above the current empty spot
 downwards will fill up the empty spot, and create a new empty spot above where
 the current empty spot was. Hence, you could think of the movement keys in
 terms of how they effectively “move” the empty spot:</p>
-<pre><code>    i | Move empty spot up
-    j | Move empty spot left
-    k | Move empty spot down
-    l | Move empty spot right
-    n | Move empty spot forwards
-    o | Move empty spot backwards</code></pre>
+<ul>
+<li><code>i</code>
+<ul>
+<li>Move empty spot up</li>
+</ul></li>
+<li><code>j</code>
+<ul>
+<li>Move empty spot left</li>
+</ul></li>
+<li><code>k</code>
+<ul>
+<li>Move empty spot down</li>
+</ul></li>
+<li><code>l</code>
+<ul>
+<li>Move empty spot right</li>
+</ul></li>
+<li><code>n</code>
+<ul>
+<li>Move empty spot forwards</li>
+</ul></li>
+<li><code>o</code>
+<ul>
+<li>Move empty spot backwards</li>
+</ul></li>
+</ul>
 <p><strong>NOTE:</strong> as a measure of alleviating counter-productivity due to addiction to
 this game, particularly for those hardcore gamers who insist on solving a
 10x10x10 puzzle during work hours, and also to give an upper bound to user
@@ -612,22 +671,18 @@ call is greater or less than in the parent call.)</p>
 is on the stack between successive locations of <code>argc</code>, etc., the program
 (ab)uses the fact that <code>argc</code> must necessarily be allocated on an aligned
 address, and therefore, the range of memory between two <code>argc</code>s is aligned, and
-therefore safe to use as an array of <code>long</code>s.[*] The program also compares the
+therefore safe to use as an array of <code>long</code>s.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> The program also compares the
 pointers as <code>long*</code> pointers, so that it will not have to deal with mapping
 bytes to larger types. The initial memory allocation is done by recursively
 calling <code>main()</code> until there is enough space on the stack (the exact number of
 recursive calls is, of course, architecture-dependent).</p>
-<p>[*] <code>long</code> was chosen instead of <code>int</code>, in order to skirt around pointer-size
-issues on architectures like ia64. It really can be made anything large enough
-to hold both <code>int</code>s and pointers. <code>:-)</code></p>
 <p>After the stack is deemed to have grown deep enough to be a sufficiently <code>long</code>
 array (pun intended), the program begins its real code. It uses <code>argc</code> to keep
 track of what it’s supposed to be doing (since <code>main()</code> is the only function),
 and <code>argv</code> to point to the base of this array (which is computed differently
 based on how the architecture allocates the stack). Since this fills up the
-only two variables in the program, everything else is stored in the <code>MASS</code> [**]
+only two variables in the program, everything else is stored in the <code>MASS</code> <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>
 array.</p>
-<p>[**] for “Memory Allocated by Stack Smashing” :-)</p>
 <p>Note that from this point on, all bets are off as to what the contents of the
 runtime stack are below the current recursive call to <code>main()</code>. We are
 overwriting frame pointers, return addresses, etc., with data. Hence, the
@@ -717,26 +772,85 @@ key press. What could be more fun than to define such a case in terms of a
 are the mappings of various locations of the <code>MASS</code> to their usage in the
 program, and what the various state numbers are meant to do:</p>
 <h4 id="mass-usage-map">MASS usage map</h4>
-<pre><code>    0  | Function return value
-    1  | Function argument 1
-    2  | Function argument 2
-    3  | Function argument 3
-    4  | Scratch register 1
-    5  | Scratch register 2
-    6  | Scratch register 3
-    7  | Scratch register 4
-    8  | Value of original argv :-)
-    9  | Value of original argc :-)
-    11 | Zero register (always set to 0)
-    12 | Width of board
-    13 | Length of board
-    14 | Height of board
-    15 | Current position of hole
-    16 | Random seed for rand_r(3)
-    18 | Scratch register used by state 18 :-)
-    31 | field width for printing tiles
-    32 | Start of board data</code></pre>
-<p>(<strong>CAVEAT:</strong> not all of these mappings ended up in the final version of the
+<ul>
+<li><code>0</code>
+<ul>
+<li>Function return value</li>
+</ul></li>
+<li><code>1</code>
+<ul>
+<li>Function argument 1</li>
+</ul></li>
+<li><code>2</code>
+<ul>
+<li>Function argument 2</li>
+</ul></li>
+<li><code>3</code>
+<ul>
+<li>Function argument 3</li>
+</ul></li>
+<li><code>4</code>
+<ul>
+<li>Scratch register 1</li>
+</ul></li>
+<li><code>5</code>
+<ul>
+<li>Scratch register 2</li>
+</ul></li>
+<li><code>6</code>
+<ul>
+<li>Scratch register 3</li>
+</ul></li>
+<li><code>7</code>
+<ul>
+<li>Scratch register 4</li>
+</ul></li>
+<li><code>8</code>
+<ul>
+<li>Value of original argv :-)</li>
+</ul></li>
+<li><code>9</code>
+<ul>
+<li>Value of original argc :-)</li>
+</ul></li>
+<li><code>11</code>
+<ul>
+<li>Zero register (always set to 0)</li>
+</ul></li>
+<li><code>12</code>
+<ul>
+<li>Width of board</li>
+</ul></li>
+<li><code>13</code>
+<ul>
+<li>Length of board</li>
+</ul></li>
+<li><code>14</code>
+<ul>
+<li>Height of board</li>
+</ul></li>
+<li><code>15</code>
+<ul>
+<li>Current position of hole</li>
+</ul></li>
+<li><code>16</code>
+<ul>
+<li>Random seed for rand_r(3)</li>
+</ul></li>
+<li><code>18</code>
+<ul>
+<li>Scratch register used by state 18 :-)</li>
+</ul></li>
+<li><code>31</code>
+<ul>
+<li>Field width for printing tiles</li>
+</ul></li>
+<li><code>32</code>
+<ul>
+<li>Start of board data</li>
+</ul></li>
+</ul>
+<p>(<strong>CAVEAT</strong>: not all of these mappings ended up in the final version of the
 program, mainly due to size limitations which entailed the trimming off of a
 lot of neat features in the game. It is left as an exercise for the reader to
 figure out which of these are actually used.)</p>
@@ -745,22 +859,72 @@ the <code>MASS</code>, because otherwise they may overwrite their original value
 memory allocation code saves them. Index 8 is deemed “safe enough”. (It seems
 to be on all tested architectures.)</p>
 <h4 id="state-number-assignments">State number assignments</h4>
-<pre><code>    1  | showhelp
-    2  | showhelp
-    3  | is 2D: start init
-    4  | is 3D: start init
-    5  | find allocation type
-    6  | MASS init, bottom-up
-    7  | MASS init, top-down
-    8  | main program
-    9  | generate() outer loop
-    13 | render()
-    14 | render() loop
-    15 | exit(0)
-    16 | pick a tile that hasn&#39;t occurred yet
-    17 | inner loop of 16.
-    18 | main loop
-    19 | checkwin() loop</code></pre>
+<ul>
+<li><code>1</code>
+<ul>
+<li><code>showhelp</code></li>
+</ul></li>
+<li><code>2</code>
+<ul>
+<li><code>showhelp</code></li>
+</ul></li>
+<li><code>3</code>
+<ul>
+<li>is 2D: start init</li>
+</ul></li>
+<li><code>4</code>
+<ul>
+<li>is 3D: start init</li>
+</ul></li>
+<li><code>5</code>
+<ul>
+<li>find allocation type</li>
+</ul></li>
+<li><code>6</code>
+<ul>
+<li>MASS init, bottom-up</li>
+</ul></li>
+<li><code>7</code>
+<ul>
+<li>MASS init, top-down</li>
+</ul></li>
+<li><code>8</code>
+<ul>
+<li>main program</li>
+</ul></li>
+<li><code>9</code>
+<ul>
+<li><code>generate()</code> outer loop</li>
+</ul></li>
+<li><code>13</code>
+<ul>
+<li><code>render()</code></li>
+</ul></li>
+<li><code>14</code>
+<ul>
+<li><code>render()</code> loop</li>
+</ul></li>
+<li><code>15</code>
+<ul>
+<li><code>exit(0)</code></li>
+</ul></li>
+<li><code>16</code>
+<ul>
+<li>pick a tile that hasn’t occurred yet</li>
+</ul></li>
+<li><code>17</code>
+<ul>
+<li>inner loop of <code>16</code>.</li>
+</ul></li>
+<li><code>18</code>
+<ul>
+<li>main loop</li>
+</ul></li>
+<li><code>19</code>
+<ul>
+<li><code>checkwin()</code> loop</li>
+</ul></li>
+</ul>
 <p>Note that some of the manually-implemented states (those not implemented by
 <code>do()</code>) respond to multiple state numbers. Also note that states 1-4
 conveniently correspond to what the program should do when 1-4 arguments are
@@ -784,6 +948,16 @@ smiley. :-)</p>
 
 -->
 <!-- AFTER: last line of markdown file: 2005/anon/README.md -->
+<hr style="width:10%;text-align:left;margin-left:0">
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<h5>Footnotes</h5>
+<ol>
+<li id="fn1"><p><code>long</code> was chosen instead of <code>int</code>, in order to skirt around pointer-size
+issues on architectures like ia64. It really can be made anything large enough
+to hold both <code>int</code>s and pointers. <code>:-)</code><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>for “Memory Allocated by Stack Smashing” :-)<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
 
 <!-- END: this line ends content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 <!-- START: this line starts content for HTML phase 22 by: bin/output-index-inventory.sh via bin/md2html.sh -->

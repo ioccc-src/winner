@@ -4,8 +4,8 @@
     make
 ```
 
-NOTE: there is an alternate version for vi(m) like movements. See [alternate
-version](#alternate-code) below. If your terminal has problems with the
+**NOTE**: there is an alternate version for vi(m) like movements. See [Alternate
+code](#alternate-code) below. If your terminal has problems with the
 `stty(1)` commands try:
 
 ``` <!---sh-->
@@ -62,7 +62,7 @@ something strange. This might also happen if you specify excessively large board
 dimensions. Try `100 100 100` for instance and see what happens!
 
 
-## Alternate version:
+## Alternate code:
 
 The alternate version uses `vi(m)` like movement keys.
 
@@ -84,14 +84,19 @@ To compile the version without `stty(1)`:
 
 Use `anon.alt` as you would `anon` with the change in movements:
 
-```
-    k | Move empty spot up
-    h | Move empty spot left
-    j | Move empty spot down
-    l | Move empty spot right
-    J | Move empty spot forwards
-    K | Move empty spot backwards
-```
+
+* `k`
+    - Move empty spot up
+* `h`
+    - Move empty spot left
+* `j`
+    - Move empty spot down
+* `l`
+    - Move empty spot right
+* `J`
+    - Move empty spot forwards
+* `K`
+    - Move empty spot backwards
 
 
 ## Judges' remarks:
@@ -130,9 +135,9 @@ To play with a 3D board, do something like this:
     ./anon 3 3 3
 ```
 
-**WARNING: do NOT run the program with more than 3 command-line arguments.
+**WARNING**: do NOT run the program with more than 3 command-line arguments.
 This will trigger a bug that will cause it to crash or do something strange.
-:-)**
+:-)
 
 Also, resist the temptation to create very large puzzles. The program does not
 attempt to resize your terminal for you, and will produce confusing output. It
@@ -143,34 +148,38 @@ The empty space on the board is represented by a space filled with `#`
 characters instead of digits. To slide the tiles around, use the following
 keys:
 
-```
-    i | Slide the tile above the current empty space downwards.
-    j | Slide the tile to the left of the current empty space to the right.
-    k | Slide the tile below the current empty space upwards.
-    l | Slide the tile to the right of the current empty space to the left.
-    o | Slide the tile behind the current empty space forwards.
-    n | Slide the tile in front of the current empty space backwards.
-```
+* `i`
+    - Slide the tile above the current empty space downwards.
+* `j`
+    - Slide the tile to the left of the current empty space to the right.
+* `k`
+    - Slide the tile below the current empty space upwards.
+* `l`
+    - Slide the tile to the right of the current empty space to the left.
+* `o`
+    - Slide the tile behind the current empty space forwards.
+* `n`
+    - Slide the tile in front of the current empty space backwards.
 
-To quit the game:
-
-```
-    q | Quit the game.
-```
+To quit the game, hit `q`.
 
 Note that, for example, sliding the tile above the current empty spot
 downwards will fill up the empty spot, and create a new empty spot above where
 the current empty spot was. Hence, you could think of the movement keys in
 terms of how they effectively "move" the empty spot:
 
-```
-    i | Move empty spot up
-    j | Move empty spot left
-    k | Move empty spot down
-    l | Move empty spot right
-    n | Move empty spot forwards
-    o | Move empty spot backwards
-```
+* `i`
+    - Move empty spot up
+* `j`
+    - Move empty spot left
+* `k`
+    - Move empty spot down
+* `l`
+    - Move empty spot right
+* `n`
+    - Move empty spot forwards
+* `o`
+    - Move empty spot backwards
 
 **NOTE:** as a measure of alleviating counter-productivity due to addiction to
 this game, particularly for those hardcore gamers who insist on solving a
@@ -315,13 +324,13 @@ To avoid having to handle issues of `int` sizes, memory alignment, what exactly
 is on the stack between successive locations of `argc`, etc., the program
 (ab)uses the fact that `argc` must necessarily be allocated on an aligned
 address, and therefore, the range of memory between two `argc`s is aligned, and
-therefore safe to use as an array of `long`s.[\*] The program also compares the
+therefore safe to use as an array of `long`s.[^1] The program also compares the
 pointers as `long*` pointers, so that it will not have to deal with mapping
 bytes to larger types. The initial memory allocation is done by recursively
 calling `main()` until there is enough space on the stack (the exact number of
 recursive calls is, of course, architecture-dependent).
 
-[\*] `long` was chosen instead of `int`, in order to skirt around pointer-size
+[^1]: `long` was chosen instead of `int`, in order to skirt around pointer-size
 issues on architectures like ia64. It really can be made anything large enough
 to hold both `int`s and pointers. `:-)`
 
@@ -330,10 +339,10 @@ array (pun intended), the program begins its real code. It uses `argc` to keep
 track of what it's supposed to be doing (since `main()` is the only function),
 and `argv` to point to the base of this array (which is computed differently
 based on how the architecture allocates the stack). Since this fills up the
-only two variables in the program, everything else is stored in the `MASS` [\*\*]
+only two variables in the program, everything else is stored in the `MASS` [^2]
 array.
 
-[\*\*] for "Memory Allocated by Stack Smashing" :-)
+[^2]: for "Memory Allocated by Stack Smashing" :-)
 
 Note that from this point on, all bets are off as to what the contents of the
 runtime stack are below the current recursive call to `main()`. We are
@@ -450,29 +459,46 @@ program, and what the various state numbers are meant to do:
 
 #### MASS usage map
 
-```
-    0  | Function return value
-    1  | Function argument 1
-    2  | Function argument 2
-    3  | Function argument 3
-    4  | Scratch register 1
-    5  | Scratch register 2
-    6  | Scratch register 3
-    7  | Scratch register 4
-    8  | Value of original argv :-)
-    9  | Value of original argc :-)
-    11 | Zero register (always set to 0)
-    12 | Width of board
-    13 | Length of board
-    14 | Height of board
-    15 | Current position of hole
-    16 | Random seed for rand_r(3)
-    18 | Scratch register used by state 18 :-)
-    31 | field width for printing tiles
-    32 | Start of board data
-```
+* `0`
+    - Function return value
+* `1`
+    - Function argument 1
+* `2`
+    - Function argument 2
+* `3`
+    - Function argument 3
+* `4`
+    - Scratch register 1
+* `5`
+    - Scratch register 2
+* `6`
+    - Scratch register 3
+* `7`
+    - Scratch register 4
+* `8`
+    - Value of original argv :-)
+* `9`
+    - Value of original argc :-)
+* `11`
+    * Zero register (always set to 0)
+* `12`
+    - Width of board
+* `13`
+     - Length of board
+* `14`
+    - Height of board
+* `15`
+    - Current position of hole
+* `16`
+    - Random seed for rand_r(3)
+* `18`
+    - Scratch register used by state 18 :-)
+* `31`
+    - Field width for printing tiles
+* `32`
+    - Start of board data
 
-(**CAVEAT:** not all of these mappings ended up in the final version of the
+(**CAVEAT**: not all of these mappings ended up in the final version of the
 program, mainly due to size limitations which entailed the trimming off of a
 lot of neat features in the game. It is left as an exercise for the reader to
 figure out which of these are actually used.)
@@ -484,24 +510,38 @@ to be on all tested architectures.)
 
 #### State number assignments
 
-```
-    1  | showhelp
-    2  | showhelp
-    3  | is 2D: start init
-    4  | is 3D: start init
-    5  | find allocation type
-    6  | MASS init, bottom-up
-    7  | MASS init, top-down
-    8  | main program
-    9  | generate() outer loop
-    13 | render()
-    14 | render() loop
-    15 | exit(0)
-    16 | pick a tile that hasn't occurred yet
-    17 | inner loop of 16.
-    18 | main loop
-    19 | checkwin() loop
-```
+* `1`
+    - `showhelp`
+* `2`
+    - `showhelp`
+* `3`
+    - is 2D: start init
+* `4`
+    - is 3D: start init
+* `5`
+    - find allocation type
+* `6`
+    - MASS init, bottom-up
+* `7`
+    - MASS init, top-down
+* `8`
+    - main program
+* `9`
+    - `generate()` outer loop
+* `13`
+    - `render()`
+* `14`
+    - `render()` loop
+* `15`
+    - `exit(0)`
+* `16`
+    - pick a tile that hasn't occurred yet
+* `17`
+    - inner loop of `16`.
+* `18`
+    - main loop
+* `19`
+    - `checkwin()` loop
 
 Note that some of the manually-implemented states (those not implemented by
 `do()`) respond to multiple state numbers. Also note that states 1-4
