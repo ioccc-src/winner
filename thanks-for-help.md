@@ -5984,7 +5984,7 @@ alternate code provided by the author, Yusuke.
 ### Winning entry source code: [prog.c](%%REPO_URL%%/2020/ferguson1//prog.c)
 </div>
 
-Just for awareness, here: [Cody](#cody) made some corrections to the vital [Double
+Just for awareness: [Cody](#cody) made some corrections to the vital [Double
 layered chocolate fudge cake recipe](2020/ferguson1/chocolate-cake.html) :-)
 Other fixes were made but as it's his entry it's not worth noting.
 
@@ -6230,44 +6230,44 @@ helped improve the presentation of their fellow IOCCC entries.
 
 We call out the extensive contributions of [Cody Boone
 Ferguson](authors.html#Cody_Boone_Ferguson) who is responsible for most of the
-improvements and fixes including many **EXTREMELY HARD bug fixes** (for certain
-definitions of **_HARD_** :-) ) like
+improvements and fixes including **fixing _many entries_ that no longer worked**
+(and other important bug fixes), often **EXTREMELY HARD** (for certain
+definitions of '_HARD_' :-) ), like
 [1988/phillipps](thanks-for-help.html#1988_phillipps),
 [1992/vern](thanks-for-help.html#1992_vern),
 [2001/anonymous](thanks-for-help.html#2001_anonymous),
 [2004/burley](thanks-for-help.html#2004_burley) and
-[2005/giljade](thanks-for-help.html#2005_giljade), making all entries such as
+[2005/giljade](thanks-for-help.html#2005_giljade); making all entries, such as
 [1985/sicherman](thanks-for-help.html#1985_sicherman) and
-[1986/wall](thanks-for-help.html#1986_wall) not need `-traditional-cpp` (all
-**EXTREMELY HARD**), fixing entries to work with `clang`, some **EXTREMELY
-HARD** like [1991/dds](thanks-for-help.html#1991_dds), or as much as possible
-([1989/westley](thanks-for-help.html#1989_westley), a true masterpiece that is
-**INCREDIBLY HARD, *MUCH MORE SO* than any other fix!**), porting entries to
-macOS (some **EXTREMELY HARD** like
-[1998/schweikh1](thanks-for-help.html#1998_schweikh1), fixing code like
-[2001/herrmann2](thanks-for-help.html#2001_herrmann2) to work in both
-32-bit/64-bit which *can be* **EXTREMELY HARD**, providing alternate code where
-useful/necessary, improving **ALL _Makefiles_** and writing scripts to greatly
-simplify running many of the entries.
+[1986/wall](thanks-for-help.html#1986_wall), that
+required `-traditional-cpp`, to no longer require it; fixing
+entries like [1991/dds](thanks-for-help.html#1991_dds) (or, as in the case of
+[1989/westley](thanks-for-help.html#1989_westley), a true masterpiece in
+obfuscation, as much as possible) to work with `clang`; porting entries such as
+[1998/schweikh1](thanks-for-help.html#1998_schweikh1) to macOS; fixing code like
+[2001/herrmann2](thanks-for-help.html#2001_herrmann2) to work in both 32-bit and
+64-bit; providing [alternate code](faq.html#alt_code) where useful/necessary;
+improving all `Makefiles`; and writing scripts to greatly simplify running many
+of the entries.
 
-He also wrote [sgit](https://github.com/xexyl/sgit) to easily run
-`sed(1)` on files in the repo which we used to help build the website.
+Cody also wrote the feature-rich [sgit](https://github.com/xexyl/sgit) to easily
+run `sed(1)` on files in the repo which we used to help build the website.
 
 Cody Boone Ferguson also used one of his own tools to detect many dead links.
 While the tool was not perfect it went a long way to uncover a good number of
-bad, broken or otherwise invalid links. It was a very laborious task to copy
-and paste problematic links into the [Internet Wayback
+bad, broken or otherwise invalid links. It was a very laborious task to copy and
+paste problematic links into the [Internet Wayback
 Machine](https://web.archive.org) in an effort to try and find otherwise lost
 content. A good number of links that now refer to something in the [Internet
 Wayback Machine](https://web.archive.org) replace bad, broken, or otherwise
 invalid links are thanks to Cody's efforts! Another tool he wrote detected
-inconsistent award titles in the README files and CSV file (that he generated
-from the SQL file).
+inconsistent award titles in the `README.md` files (used to generate the
+`index.html` files) and the CSV file that he generated from our SQL file.
 
 Additionally Cody greatly improved the manifest of the winning entries and
-checked that the generated html files, index.html and otherwise, look well and
-presentable and suggested some CSS rules for image responsiveness on smaller
-screens and other improvements.
+checked that the generated html files, `index.html` and otherwise, look well and
+are presentable, and he also suggested some CSS rules for image responsiveness on smaller
+screens, as well as some other improvements.
 
 **THANK YOU VERY MUCH** for your extensive efforts in helping improve the IOCCC
 presentation of past IOCCC entries and fixing almost all past entries for modern
@@ -6279,8 +6279,9 @@ systems!
 </div>
 
 [Yusuke Endoh](authors.html#Yusuke_Endoh) supplied a
-number of important bug fixes to a number of past IOCCC entries. Some of those
-fixes were **EXTREMELY TECHNICALLY CHALLENGING** such as
+number of important bug fixes to a number of past IOCCC entries, including
+**fixing _numerous entries_ that no longer worked**. Some of those
+fixes were **EXTREMELY TECHNICALLY CHALLENGING**, such as
 [1989/robison](thanks-for-help.html#1989_robison),
 [1990/cmills](thanks-for-help.html#1990_cmills),
 [1992/lush](thanks-for-help.html#1992_lush) and
