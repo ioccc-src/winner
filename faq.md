@@ -73,7 +73,7 @@ This is FAQ version **28.0.4 2024-08-24**.
 - <a class="normal" href="#faq4_3">4.3  - Why do author remarks sometimes not match the source and/or why are there
 other inconsistencies with the original entry?</a>
 - <a class="normal" href="#faq4_4">4.4  - What is the meaning of the file ending in .orig.c in IOCCC entries?</a>
-- <a class="normal" href="#faq4_5">4.5  - Why were alternate versions added to some entries when the original entry worked fine and well?</a>
+- <a class="normal" href="#faq4_5">4.5  - What are alternate versions and why were alternate versions added to some entries when the original entry worked fine and well?</a>
 - <a class="normal" href="#faq4_6">4.6  - Why was arg count and/or type changed in main&lpar;&rpar; in some older entries?</a>
 - <a class="normal" href="#faq4_7">4.7  - Why were some filenames changed?</a>
 - <a class="normal" href="#faq4_8">4.8  - Why were files added or removed from some entries?</a>
@@ -4021,24 +4021,37 @@ Jump to: [top](#)
 <div id="faq4_5">
 <div id="alt">
 <div id="alt_code">
-### FAQ 4.5: Why were alternate versions added to some entries when the original entry worked fine and well?
+### FAQ 4.5: What are alternate versions and why were alternate versions added to some entries when the original entry worked fine and well?
 </div>
 </div>
 </div>
 
-This was a judgement call and the reasons vary. In many cases it was simply to
-make the entry more presentable to more people but without modifying the entry
-itself, which would be tampering with the entry, and in some cases it would be
-changing it so much that it would no longer be what was submitted.
+The alternate versions are exactly what they sound like, versions of their
+respective entries that were not the winning source code but have additional
+features added (often by the author) or fixes, updates at the request of the
+judges (upon winning the contest), unobfuscated versions and a variety of other
+things for instance letting it work on more than one platform (where it would
+not be possible to do in the original submission).
+
+In some cases the alternate code added come directly from the author (some of
+which already were in the website) but there were other cases where alternate
+code was added that might or might not be necessary; this was a judgement call
+and the reasons vary.
+
+In many cases it was simply to make the entry more presentable to more people
+but without modifying the entry itself, which would be tampering with the entry
+(a problem that we tried to avoid as much as possible although we certainly did
+not manage to do this perfectly), and in some cases it would be changing it so
+much that it would no longer be what was submitted.
 
 In one case an alternate version was created to help locate and fix a bug that
 prevented the entry from working properly and it seemed like it should be added
-as well, for fun.
+as well, for fun (it is a game).
 
-In some cases it might be better to not have them but as noted this is a
+In some cases it might be better to not have them but as noted this was a
 judgement call.
 
-See the
+See also the
 FAQ on "[original source code](#original_source_code)"
 for more information.
 
