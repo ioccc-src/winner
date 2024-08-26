@@ -164,9 +164,7 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
 	tool		the tool to run over all entries
 	[more_options]	additional tool command line options to use before the YYYY/dir argument
 
-NOTE: Any '-t tagline', '-w site_url'
-      are passed to the 'tool' at the beginning of the command line, and
-      before any optional 'more_options' and before the final YYYY/dir argument.
+NOTE: Any '-D docroot/', '-t tagline', '-v level', '-w site_url' are passed to 'md2html.sh' tool.
 
 Exit codes:
      0         all OK

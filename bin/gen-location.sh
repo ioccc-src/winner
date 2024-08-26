@@ -147,10 +147,7 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
 	-w site_url	Base URL of the website (def: $SITE_URL)
 			NOTE: The '-w site_url' is passed as leading options on tool command lines.
 
-NOTE: The '-v level' is passed as initial command line options to the 'markdown to html tool' (md2html.sh).
-      The 'tagline' is passed as '-t tagline' to the 'markdown to html tool' (md2html.sh), after the '-v level'.
-      Any '-P pandoc_opts', '-U top_url'
-      are passed to the 'markdown to html tool' (md2html.sh), and will be before any command line arguments.
+NOTE: Any '-D docroot/', '-t tagline', '-v level', '-w site_url' are passed to 'md2html.sh' tool.
 
 Exit codes:
      0         all OK

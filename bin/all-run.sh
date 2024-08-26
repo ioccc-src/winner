@@ -27,7 +27,7 @@
 #
 #	bin/quick-readme2html.sh -t readme2html -w https://www.ioccc.org YYYY/dir -v 1
 #
-# Only the "-D -t, -T, -p, -w" option set are passed to the tool command line.
+# Only the "-D -t, -w" option set are passed to the tool command line.
 # For all other special tool options, pass them as additional tool options (i.e., command line arguments
 # that follow the 1st command line argument) OR consider simply running the tool directly.
 #

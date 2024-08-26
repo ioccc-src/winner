@@ -148,9 +148,7 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
 	-w site_url	Base URL of the website (def: $SITE_URL)
 			NOTE: The '-w site_url' is passed as leading options on tool command lines.
 
-NOTE: Any '-D docroot/', '-t tagline', '-w site_url'
-      are passed to the 'tool' at the beginning of the command line, and
-      before any optional 'more_options' and before the final YYYY/dir argument.
+NOTE: Any '-D docroot/', '-t tagline', '-w site_url' are passed to 'md2html.sh' tool.
 
 Exit codes:
      0         all OK

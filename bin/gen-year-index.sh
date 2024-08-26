@@ -145,6 +145,8 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-n] [-N]
 	YYYY		path from topdir to year directory: must contain the files: README.md, .path and .entry.json
 	[more_options]	additional tool command line options to use before the YYYY argument
 
+NOTE: Any '-D docroot/', '-t tagline', '-w site_url' are passed to 'md2html.sh' tool.
+
 Exit codes:
      0         all OK
      1	       some internal tool exited non-zero

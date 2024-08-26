@@ -26,7 +26,7 @@
 #
 #	bin/gen-year-index.sh -w https://www.ioccc.org YYYY -v 1
 #
-# Only the "-D -t, -T, -p, -w" option set are passed to the tool command line.
+# Only the "-D -Q, -t, -w" option set are passed to the tool command line.
 # For all other special tool options, pass them as additional tool options (i.e., command line arguments
 # that follow the 1st command line argument) OR consider simply running the tool directly.
 #
@@ -179,7 +179,7 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
 	tool		the tool to run over all entries
 	[more_options]	additional tool command line options to use before the YYYY/dir argument
 
-NOTE: Any '-Q', '-t tagline', '-w site_url'
+NOTE: Any '-D', '-Q', '-t tagline', '-w site_url'
       are passed to the 'tool' at the beginning of the command line, and
       before any optional 'more_options' and before the final YYYY/dir argument.
 

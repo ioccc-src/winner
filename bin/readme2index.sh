@@ -151,10 +151,7 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
 
 	YYYY/dir	path from topdir to entry directory: must contain the files: README.md, .path and .entry.json
 
-NOTE: The '-v level' is passed as initial command line options to the 'markdown to html tool' (md2html.sh).
-      The 'tagline' is passed as '-t tagline' to the 'markdown to html tool' (md2html.sh), after the '-v level'.
-      Any '-P pandoc_opts', '-U top_url'
-      are passed to the 'markdown to html tool' (md2html.sh), and will be before any command line arguments.
+NOTE: Any '-d topdir', '-D docroot/', '-t tagline', '-v level', '-w site_url' are passed to 'md2html.sh' tool.
 
 Exit codes:
      0         all OK
