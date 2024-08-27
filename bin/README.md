@@ -674,6 +674,27 @@ The [md2html.cfg](index.html#md2html_cfg) configuration file is
 used by [md2html.sh](%%REPO_URL%%/bin/md2html.sh) to drive the generation process.
 
 
+<div id="othermd2html">
+### [othermd2html.sh](%%REPO_URL%%/bin/othermd2html.sh)
+</div>
+
+Convert a non-README.md file in an entry to HTML.
+
+Usage:
+
+``` <!---sh-->
+    bin/othermd2html.sh YYYY/dir/pathto.md
+```
+
+For example:
+
+``` <!---sh-->
+    bin/othermd2html.sh -v 1 2020/ferguson1/chocolate-cake.md
+```
+
+The [othermd2html.sh](#othermd2html) tool is used by [gen-other-html.sh](#gen-other-html).
+
+
 <div id="output-index-author">
 ### [output-index-author.sh](%%REPO_URL%%/bin/output-index-author.sh)
 </div>

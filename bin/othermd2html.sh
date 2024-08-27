@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 #
-# gen-other-html.sh - generate entry HTML files from markdown other than README.md to index.html HTML files
+# othermd2html.sh - convert a non-README.md file an entry to HTML
+#
+# We will convert a markdown under an entry directory, that
+# is NOT README.md into a HTML file.
 #
 # Copyright (c) 2024 by Landon Curt Noll.  All Rights Reserved.
 #
@@ -86,7 +89,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.5 2024-08-27"
+export VERSION="1.0 2024-08-27"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -111,7 +114,6 @@ export SITE_URL="https://ioccc-src.github.io/temp-test-ioccc"
 #
 export NOOP=
 export DO_NOT_PROCESS=
-export QUICK_MODE=
 export EXIT_CODE="0"
 
 
@@ -124,27 +126,30 @@ declare -ag TOOL_OPTION
 # usage
 #
 export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
-			[-t tagline] [-Q] [-w site_url]
+			[-t tagline] [-w site_url] [-e string ..] [-E exitcode]
+			YYYY/dir/pathto.md
 
 	-h		print help message and exit
 	-v level	set verbosity level (def level: 0)
 	-V		print version string and exit
 
 	-d topdir	set topdir (def: $TOPDIR)
+			NOTE: The '-d topdir' is passed as leading options on tool command lines.
 	-D docroot/	set the document root path followed by slash (def: $DOCROOT_SLASH)
 			NOTE: The '-D docroot/' is passed as leading options on tool command lines.
 			NOTE: 'docroot' must end in a slash
 
 	-n		go thru the actions, but do not update any files (def: do the action)
+			NOTE: -n is passed to tool
 	-N		do not process anything, just parse arguments (def: process something)
 
 	-t tagline	string to write about the tool that formed the markdown content (def: $TAGLINE)
-			NOTE: The '-t tagline' is passed as leading options on tool command lines.
-
-	-Q	        quick mode, do not run $OTHERMD2HTML unless markdown is out of date (def: do)
+			NOTE: 'tagline' may be enclosed within, but may NOT contain an internal single-quote, or double-quote.
 
 	-w site_url	Base URL of the website (def: $SITE_URL)
 			NOTE: The '-w site_url' is passed as leading options on tool command lines.
+
+	YYYY/dir/pathto.md	path from topdir to the non-README.md markdown
 
 NOTE: Any '-D docroot/', '-t tagline', '-v level', '-w site_url' are passed to 'md2html.sh' tool.
 
@@ -164,7 +169,7 @@ $NAME version: $VERSION"
 
 # parse command line
 #
-while getopts :hv:Vd:D:nNt:Qw: flag; do
+while getopts :hv:Vd:D:nNt:w: flag; do
   case "$flag" in
     h) echo "$USAGE" 1>&2
 	exit 2
@@ -175,6 +180,8 @@ while getopts :hv:Vd:D:nNt:Qw: flag; do
 	exit 2
 	;;
     d) TOPDIR="$OPTARG"
+	TOOL_OPTION+=("-d")
+	TOOL_OPTION+=("$TOPDIR")
 	;;
     D) # parse -D docroot/
 	case "$OPTARG" in
@@ -210,10 +217,12 @@ while getopts :hv:Vd:D:nNt:Qw: flag; do
 	*) ;;
 	esac
 	TAGLINE="$OPTARG"
-	;;
-    Q) QUICK_MODE="-Q"
+	TOOL_OPTION+=("-t")
+	TOOL_OPTION+=("$TAGLINE")
 	;;
     w) SITE_URL="$OPTARG"
+	TOOL_OPTION+=("-w")
+	TOOL_OPTION+=("$SITE_URL")
 	;;
     \?) echo "$0: ERROR: invalid option: -$OPTARG" 1>&2
 	echo 1>&2
@@ -237,14 +246,33 @@ done
 #
 shift $(( OPTIND - 1 ));
 #
+# verify arg count and parse args
+#
 if [[ $V_FLAG -ge 5 ]]; then
     echo "$0: debug[5]: file argument count: $#" 1>&2
 fi
 #
-if [[ $# -ne 0 ]]; then
-    echo "$0: ERROR: expected 0 args, found: $#" 1>&2
-    echo "$USAGE" 1>&2
+if [[ $# -ne 1 ]]; then
+    echo "$0: ERROR: expected 1 arg, found: $#" 1>&2
     exit 3
+fi
+#
+export ENTRY_PATH="$1"
+
+
+# always add the '-v level' option, unless level is empty, to the set of options passed to the md2html.sh tool
+#
+if [[ -n $V_FLAG ]]; then
+    TOOL_OPTION+=("-v")
+    TOOL_OPTION+=("$V_FLAG")
+fi
+
+
+# always add the '-t tagline' option, unless tagline is empty, to the set of options passed to the md2html.sh tool
+#
+if [[ -n $TAGLINE ]]; then
+    TOOL_OPTION+=("-t")
+    TOOL_OPTION+=("$TAGLINE")
 fi
 
 
@@ -303,52 +331,171 @@ fi
 export BIN_DIR="bin"
 
 
-# verify that the bin/othermd2html.sh tool is executable
+# verify that the bin/md2html.sh tool is executable
 #
-export OTHERMD2HTML="$BIN_DIR/othermd2html.sh"
-if [[ ! -e $OTHERMD2HTML ]]; then
-    echo  "$0: ERROR: bin/othermd2html.sh does not exist: $OTHERMD2HTML" 1>&2
+export MD2HTML_SH="$BIN_DIR/md2html.sh"
+if [[ ! -e $MD2HTML_SH ]]; then
+    echo  "$0: ERROR: bin/md2html.sh does not exist: $MD2HTML_SH" 1>&2
     exit 5
 fi
-if [[ ! -f $OTHERMD2HTML ]]; then
-    echo  "$0: ERROR: bin/othermd2html.sh is not a regular file: $OTHERMD2HTML" 1>&2
+if [[ ! -f $MD2HTML_SH ]]; then
+    echo  "$0: ERROR: bin/md2html.sh is not a regular file: $MD2HTML_SH" 1>&2
     exit 5
 fi
-if [[ ! -x $OTHERMD2HTML ]]; then
-    echo  "$0: ERROR: bin/othermd2html.sh is not an executable file: $OTHERMD2HTML" 1>&2
+if [[ ! -x $MD2HTML_SH ]]; then
+    echo  "$0: ERROR: bin/md2html.sh is not an executable file: $MD2HTML_SH" 1>&2
     exit 5
 fi
 
 
-# verify we have a non-empty readable .top file
+# verify that ENTRY_PATH is a entry directory
 #
-export TOP_FILE=".top"
-if [[ ! -e $TOP_FILE ]]; then
-    echo  "$0: ERROR: .top does not exist: $TOP_FILE" 1>&2
+export YEAR_DIR=${ENTRY_PATH%%/*}
+if [[ -z $YEAR_DIR ]]; then
+    echo "$0: ERROR: arg not in YYYY/dir form: $ENTRY_PATH" 1>&2
+    exit 3
+fi
+export DIR_FILE_PATH=${ENTRY_PATH#*/}
+export ARG_1=${DIR_FILE_PATH%%/*}
+if [[ -z $ARG_1 ]]; then
+    echo "$0: ERROR: arg: $ENTRY_PATH not in $YEAR_DIR/dir form: $ENTRY_PATH" 1>&2
+    exit 3
+fi
+if [[ $ARG_1 = */* ]]; then
+    echo "$0: ERROR: dir from arg: $ENTRY_PATH contains a /: $ARG_1" 1>&2
+    exit 3
+fi
+if [[ ! -d $YEAR_DIR ]]; then
+    echo "$0: ERROR: YYYY from arg: $ENTRY_PATH is not a directory: $YEAR_DIR" 1>&2
+    exit 3
+fi
+export ENTRY_ID="${YEAR_DIR}_${ARG_1}"
+export DOT_YEAR="$YEAR_DIR/.year"
+if [[ ! -s $DOT_YEAR ]]; then
+    echo "$0: ERROR: not a non-empty file: $DOT_YEAR" 1>&2
     exit 6
 fi
-if [[ ! -f $TOP_FILE ]]; then
-    echo  "$0: ERROR: .top is not a regular file: $TOP_FILE" 1>&2
-    exit 6
+# Now that we have moved to topdir, form and verify YYYY_DIR is a writable directory
+export YYYY_DIR="$YEAR_DIR/$ARG_1"
+if [[ ! -e $YYYY_DIR ]]; then
+    echo "$0: ERROR: YYYY/dir from arg: $ENTRY_PATH does not exist: $YYYY_DIR" 1>&2
+    exit 7
 fi
-if [[ ! -r $TOP_FILE ]]; then
-    echo  "$0: ERROR: .top is not an readable file: $TOP_FILE" 1>&2
-    exit 6
+if [[ ! -d $YYYY_DIR ]]; then
+    echo "$0: ERROR: YYYY/dir from arg: $ENTRY_PATH is not a directory: $YYYY_DIR" 1>&2
+    exit 7
 fi
-if [[ ! -s $TOP_FILE ]]; then
-    echo  "$0: ERROR: .top is not a non-empty readable file: $TOP_FILE" 1>&2
-    exit 6
+if [[ ! -w $YYYY_DIR ]]; then
+    echo "$0: ERROR: YYYY/dir from arg: $ENTRY_PATH is not a writable directory: $YYYY_DIR" 1>&2
+    exit 7
 fi
 
 
-# always set the tagline
+# verify that the markdown file is readable
 #
-TOOL_OPTION+=("-t")
-TOOL_OPTION+=("$TAGLINE")
-TOOL_OPTION+=("-v")
-TOOL_OPTION+=("$V_FLAG")
-TOOL_OPTION+=("-w")
-TOOL_OPTION+=("$SITE_URL")
+export MD_FILE="$ENTRY_PATH"
+if [[ ! -e $MD_FILE ]]; then
+    echo "$0: ERROR: markdown file does not exist: $MD_FILE" 1>&2
+    exit 7
+fi
+if [[ ! -f $MD_FILE ]]; then
+    echo "$0: ERROR: markdown file is not a file: $MD_FILE" 1>&2
+    exit 7
+fi
+if [[ ! -r $MD_FILE ]]; then
+    echo "$0: ERROR: markdown file is not a readable file: $MD_FILE" 1>&2
+    exit 7
+fi
+if [[ ! -s $MD_FILE ]]; then
+    echo "$0: ERROR: markdown file is not a non-empty readable file: $MD_FILE" 1>&2
+    exit 7
+fi
+if [[ $MD_FILE =~ (.*)\.md$ ]]; then
+    export HTML_FILE="${BASH_REMATCH[1]}.html"
+else
+    echo "$0: ERROR: markdown file does not end in .md: $MD_FILE" 1>&2
+    exit 7
+fi
+
+
+# basename of MD_FILE
+#
+MD_BASENAME=$(basename "$MD_FILE")
+export MD_BASENAME
+
+
+# determine the HTML file
+#
+HTML_BASENAME=$(basename "$HTML_FILE")
+export HTML_BASENAME
+
+
+# verify that the directory for the HTML file is writable
+#
+HTML_DIR=$(dirname "$HTML_FILE")
+if [[ ! -d $HTML_DIR ]]; then
+    echo "$0: ERROR: HTML_DIR is not a directory: $HTML_DIR" 1>&2
+    exit 7
+fi
+if [[ ! -w $HTML_DIR ]]; then
+    echo "$0: ERROR: HTML_DIR is not a writable directory: $HTML_DIR" 1>&2
+    exit 7
+fi
+
+
+# always add the '-U URL' for the entry's index.html file
+#
+TOOL_OPTION+=("-U")
+TOOL_OPTION+=("$SITE_URL/$HTML_FILE")
+
+
+# determine the description arg
+#
+export DESCRIPTION="DESCRIPTION=$MD_BASENAME for $YYYY_DIR"
+
+
+# determine the keywords arg
+#
+KEYWORDS="KEYWORDS=IOCCC, $YYYY_DIR, $MD_BASENAME"
+export KEYWORDS
+
+
+# determine the HEADER_2 arg
+#
+export HEADER_2="HEADER_2=$HTML_BASENAME for $YYYY_DIR"
+
+
+# determine the number of levels in path of MD_FILE from topdir
+#
+export NO_SLASH=${MD_FILE///}
+LEVEL_CNT=$((${#MD_FILE} - ${#NO_SLASH}))
+export LEVEL_CNT
+if [[ $LEVEL_CNT -lt 2 ]]; then
+    echo "$0: ERROR: expected at least 2 level from topdir: $TOPDIR to MD_FILE: $MD_FILE, found $LEVEL_CNT" 1>&2
+    exit 10
+fi
+((SUB_LEVEL_CNT=LEVEL_CNT-2))
+export SUB_LEVEL_CNT
+
+
+# determine -D option string and path to entry index.html file
+#
+export D_OPTION="../../"
+export INDEX_PATH="index.html"
+for ((n=0; n<SUB_LEVEL_CNT; ++n)); do
+    D_OPTION="../$D_OPTION"
+    INDEX_PATH="../$INDEX_PATH"
+done
+
+
+# determine the UP_LINK
+#
+export UP_LINK="UP_LINK=$INDEX_PATH"
+
+
+# determine UP_TEXT
+#
+export UP_TEXT="UP_TEXT=jump to $YYYY_DIR/index.html"
 
 
 # print running info if verbose
@@ -363,22 +510,41 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: TOPDIR=$TOPDIR" 1>&2
     echo "$0: debug[3]: DOCROOT_SLASH=$DOCROOT_SLASH" 1>&2
     echo "$0: debug[3]: TAGLINE=$TAGLINE" 1>&2
+    echo "$0: debug[3]: MD2HTML_SH=$MD2HTML_SH" 1>&2
     echo "$0: debug[3]: REPO_TOP_URL=$REPO_TOP_URL" 1>&2
     echo "$0: debug[3]: REPO_URL=$REPO_URL" 1>&2
     echo "$0: debug[3]: SITE_URL=$SITE_URL" 1>&2
     echo "$0: debug[3]: NOOP=$NOOP" 1>&2
     echo "$0: debug[3]: DO_NOT_PROCESS=$DO_NOT_PROCESS" 1>&2
-    echo "$0: debug[3]: QUICK_MODE=$QUICK_MODE" 1>&2
     echo "$0: debug[3]: EXIT_CODE=$EXIT_CODE" 1>&2
     for index in "${!TOOL_OPTION[@]}"; do
 	echo "$0: debug[3]: TOOL_OPTION[$index]=${TOOL_OPTION[$index]}" 1>&2
     done
+    echo "$0: debug[3]: ENTRY_PATH=$ENTRY_PATH" 1>&2
     echo "$0: debug[3]: REPO_NAME=$REPO_NAME" 1>&2
     echo "$0: debug[3]: CD_FAILED=$CD_FAILED" 1>&2
     echo "$0: debug[3]: BIN_PATH=$BIN_PATH" 1>&2
     echo "$0: debug[3]: BIN_DIR=$BIN_DIR" 1>&2
-    echo "$0: debug[3]: OTHERMD2HTML=$OTHERMD2HTML" 1>&2
-    echo "$0: debug[3]: TOP_FILE=$TOP_FILE" 1>&2
+    echo "$0: debug[3]: YEAR_DIR=$YEAR_DIR" 1>&2
+    echo "$0: debug[3]: DIR_FILE_PATH=$DIR_FILE_PATH" 1>&2
+    echo "$0: debug[3]: ARG_1=$ARG_1" 1>&2
+    echo "$0: debug[3]: ENTRY_ID=$ENTRY_ID" 1>&2
+    echo "$0: debug[3]: DOT_YEAR=$DOT_YEAR" 1>&2
+    echo "$0: debug[3]: YYYY_DIR=$YYYY_DIR" 1>&2
+    echo "$0: debug[3]: MD_FILE=$MD_FILE" 1>&2
+    echo "$0: debug[3]: HTML_FILE=$HTML_FILE" 1>&2
+    echo "$0: debug[3]: MD_BASENAME=$MD_BASENAME" 1>&2
+    echo "$0: debug[3]: HTML_BASENAME=$HTML_BASENAME" 1>&2
+    echo "$0: debug[3]: DESCRIPTION=$DESCRIPTION" 1>&2
+    echo "$0: debug[3]: KEYWORDS=$KEYWORDS" 1>&2
+    echo "$0: debug[3]: HEADER_2=$HEADER_2" 1>&2
+    echo "$0: debug[3]: NO_SLASH=$NO_SLASH" 1>&2
+    echo "$0: debug[3]: LEVEL_CNT=$LEVEL_CNT" 1>&2
+    echo "$0: debug[3]: SUB_LEVEL_CNT=$SUB_LEVEL_CNT" 1>&2
+    echo "$0: debug[3]: D_OPTION=$D_OPTION" 1>&2
+    echo "$0: debug[3]: INDEX_PATH=$INDEX_PATH" 1>&2
+    echo "$0: debug[3]: UP_LINK=$UP_LINK" 1>&2
+    echo "$0: debug[3]: UP_TEXT=$UP_TEXT" 1>&2
 fi
 
 
@@ -392,280 +558,46 @@ if [[ -n $DO_NOT_PROCESS ]]; then
 fi
 
 
-# create a temporary exit code
+# run the MD2HTML_SH tool unless -n
 #
-# It is a pain to set the EXIT_CODE deep inside a loop, so we write the EXIT_CODE into a file
-# and read the file (setting EXIT_CODE again) after the loop.  A hack, but good enough for o ur needs.
-#
-export TMP_EXIT_CODE=".tmp.$NAME.EXIT_CODE.$$.tmp"
-if [[ $V_FLAG -ge 3 ]]; then
-    echo  "$0: debug[3]: temporary exit code: $TMP_EXIT_CODE" 1>&2
-fi
 if [[ -z $NOOP ]]; then
-    trap 'rm -f $TMP_EXIT_CODE; exit' 0 1 2 3 15
-    rm -f "$TMP_EXIT_CODE"
-    if [[ -e $TMP_EXIT_CODE ]]; then
-	echo "$0: ERROR: cannot remove temporary exit code: $TMP_EXIT_CODE" 1>&2
-	exit 10
-    fi
-    echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
-    if [[ ! -e $TMP_EXIT_CODE ]]; then
-	echo "$0: ERROR: cannot create temporary exit code: $TMP_EXIT_CODE" 1>&2
-	exit 11
-    fi
-elif [[ $V_FLAG -ge 3 ]]; then
-    echo "$0: debug[3]: because of -n, temporary exit code is not used: $TMP_EXIT_CODE" 1>&2
-fi
 
+    # possibly update the HTML file
+    #
+    if [[ $V_FLAG -ge 3 ]]; then
+	echo "$0: debug[3]: about to run: $MD2HTML_SH ${TOOL_OPTION[*]}" \
+	     "-s $DESCRIPTION -s $KEYWORDS -s $HEADER_2" \
+	     "-s REPO_URL=$REPO_URL -s SITE_URL=$SITE_URL" \
+	     "-s $UP_LINK -s $UP_TEXT -D $D_OPTION -m $MD_FILE -v $V_FLAG --" \
+	     "$MD_FILE $HTML_FILE" 1>&2
+    fi
+    "$MD2HTML_SH" "${TOOL_OPTION[@]}" \
+	-s "$DESCRIPTION" -s "$KEYWORDS" -s "$HEADER_2" \
+	-s "REPO_URL=$REPO_URL" -s "SITE_URL=$SITE_URL" \
+	-s "$UP_LINK" -s "$UP_TEXT" -D "$D_OPTION" -m "$MD_FILE" -v "$V_FLAG" -- \
+	"$MD_FILE" "$HTML_FILE"
+    status="$?"
+    if [[ $status -ne 0 ]]; then
+	echo "$0: ERROR: tool: $MD2HTML_SH ${TOOL_OPTION[*]}" \
+	     "-s $DESCRIPTION -s $KEYWORDS -s $HEADER_2" \
+	     "-s REPO_URL=$REPO_URL -s SITE_URL=$SITE_URL" \
+	     "-s $UP_LINK -s $UP_TEXT -D $D_OPTION -m $MD_FILE -v $V_FLAG --" \
+	     "$MD_FILE $HTML_FILE failed, error: $status" 1>&2
+	exit 1
+    fi
 
-# process each year
+# report disabled by -n
 #
-export YYYY
-for YYYY in $(< "$TOP_FILE"); do
-
-    # debug YYYY
-    #
-    if [[ $V_FLAG -ge 1 ]]; then
-	echo "$0: debug[1]: starting to process year: $YYYY" 1>&2
-    fi
-
-    # verify that YYYY is a readable directory
-    #
-    if [[ ! -e $YYYY ]]; then
-	echo  "$0: ERROR: YYYY does not exist: $YYYY" 1>&2
-	EXIT_CODE="6"  # exit 6
-	echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
-	echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	continue
-    fi
-    if [[ ! -d $YYYY ]]; then
-	echo  "$0: ERROR: YYYY is not a directory: $YYYY" 1>&2
-	EXIT_CODE="6"  # exit 6
-	echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
-	echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	continue
-    fi
-    if [[ ! -r $YYYY ]]; then
-	echo  "$0: ERROR: YYYY is not an readable directory: $YYYY" 1>&2
-	EXIT_CODE="6"  # exit 6
-	echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
-	echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	continue
-    fi
-
-    # verify that YYYY has a non-empty readable .year file
-    #
-    export YEAR_FILE="$YYYY/.year"
-    if [[ ! -e $YEAR_FILE ]]; then
-	echo  "$0: ERROR: YYYY/.year does not exist: $YEAR_FILE" 1>&2
-	EXIT_CODE="6"  # exit 6
-	echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
-	echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	continue
-    fi
-    if [[ ! -f $YEAR_FILE ]]; then
-	echo  "$0: ERROR: YYYY/.year is not a regular file: $YEAR_FILE" 1>&2
-	EXIT_CODE="6"  # exit 6
-	echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
-	echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	continue
-    fi
-    if [[ ! -r $YEAR_FILE ]]; then
-	echo  "$0: ERROR: YYYY/.year is not an readable file: $YEAR_FILE" 1>&2
-	EXIT_CODE="6"  # exit 6
-	echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
-	echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	continue
-    fi
-    if [[ ! -s $YEAR_FILE ]]; then
-	echo  "$0: ERROR: YYYY/.year is not a non-empty readable file: $YEAR_FILE" 1>&2
-	EXIT_CODE="6"  # exit 6
-	echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
-	echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	continue
-    fi
-
-    # process each entry directory under YYYY
-    #
-    export YYYY_DIR
-    for YYYY_DIR in $(< "$YEAR_FILE"); do
-
-	# debug YYYY
-	#
-	if [[ $V_FLAG -ge 1 ]]; then
-	    echo "$0: debug[1]: starting to process year/dir: $YYYY_DIR" 1>&2
-	fi
-
-	# parse YYYY_DIR
-	#
-	if [[ ! -d $YYYY_DIR ]]; then
-	    echo "$0: ERROR: YYYY_DIR is not a directory: $YYYY_DIR" 1>&2
-	    EXIT_CODE="6"  # exit 6
-	    echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
-	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	    continue
-	fi
-	if [[ ! -w $YYYY_DIR ]]; then
-	    echo "$0: ERROR: YYYY_DIR is not a writable directory: $YYYY_DIR" 1>&2
-	    EXIT_CODE="6"  # exit 6
-	    echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
-	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	    continue
-	fi
-	export YEAR_DIR=${YYYY_DIR%%/*}
-	if [[ -z $YEAR_DIR ]]; then
-	    echo "$0: ERROR: YYYY_DIR not in YYYY/dir form: $YYYY_DIR" 1>&2
-	    EXIT_CODE="6"  # exit 6
-	    echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
-	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	    continue
-	fi
-	export ENTRY_DIR=${YYYY_DIR#*/}
-	if [[ -z $ENTRY_DIR ]]; then
-	    echo "$0: ERROR: YYYY_DIR not in $YEAR_DIR/dir form: $YYYY_DIR" 1>&2
-	    EXIT_CODE="6"  # exit 6
-	    echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
-	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	    continue
-	fi
-	if [[ $ENTRY_DIR = */* ]]; then
-	    echo "$0: ERROR: YYYY_DIR: $YYYY_DIR dir contains a /: $ENTRY_DIR" 1>&2
-	    EXIT_CODE="6"  # exit 6
-	    echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
-	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	    continue
-	fi
-
-	# verify that YYYY_DIR is a writable directory
-	#
-	if [[ ! -e $YYYY_DIR ]]; then
-	    echo  "$0: ERROR: YYYY_DIR does not exist: $YYYY_DIR" 1>&2
-	    EXIT_CODE="7"  # exit 7
-	    echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
-	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	    continue
-	fi
-	if [[ ! -d $YYYY_DIR ]]; then
-	    echo  "$0: ERROR: YYYY_DIR is not a directory: $YYYY_DIR" 1>&2
-	    EXIT_CODE="7"  # exit 7
-	    echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
-	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	    continue
-	fi
-	if [[ ! -w $YYYY_DIR ]]; then
-	    echo  "$0: ERROR: YYYY_DIR is not an writable directory: $YYYY_DIR" 1>&2
-	    EXIT_CODE="7"  # exit 7
-	    echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
-	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	    continue
-	fi
-
-	# verify YYYY/dir/.path
-	#
-	export DOT_PATH="$YYYY_DIR/.path"
-	if [[ ! -s $DOT_PATH ]]; then
-	    echo "$0: ERROR: not a non-empty file: $DOT_PATH" 1>&2
-	    EXIT_CODE="7"  # exit 7
-	    echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
-	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	    continue
-	fi
-	DOT_PATH_CONTENT=$(< "$DOT_PATH")
-	if [[ $YYYY_DIR != "$DOT_PATH_CONTENT" ]]; then
-	    echo "$0: ERROR: arg: $YYYY_DIR does not match $DOT_PATH contents: $DOT_PATH_CONTENT" 1>&2
-	    EXIT_CODE="7"  # exit 7
-	    echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
-	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	    continue
-	fi
-
-	# process all markdown files that are NOT README.md (nor remarks.md) for this entry
-	#
-	find "$YYYY_DIR" -type f -name '*.md' ! -name README.md ! -name remarks.md | while read -r MD_FILE; do
-
-	    # determine HTML filename
-	    #
-	    if [[ $MD_FILE =~ (.*)\.md$ ]]; then
-		export HTML_FILE="${BASH_REMATCH[1]}.html"
-	    else
-		echo "$0: ERROR: markdown file does not end in .md: $MD_FILE" 1>&2
-		EXIT_CODE="7"  # exit 7
-		echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
-		echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-		continue
-	    fi
-
-	    # case: -Q (quick mode)
-	    #
-	    # determine if we need to run the tool
-	    #
-	    # Check if the non-empty foo.html is newer than foo.md.
-	    #
-	    if [[ -n $QUICK_MODE ]]; then
-		if [[ $V_FLAG -ge 5 ]]; then
-		    echo "$0: debug[5]: listing of important files, if they exist, starts below" 1>&2
-		    ls -lRt -- "$HTML_FILE" "$MD_FILE" 2>/dev/null
-		    echo "$0: debug[5]: listing of important files, if they exist, ends above" 1>&2
-		fi
-		if [[ -s $HTML_FILE && $HTML_FILE -nt $MD_FILE ]]; then
-		    if [[ $V_FLAG -ge 3 ]]; then
-			echo "$0: debug[3]: does not need to be updated: $HTML_FILE" 1>&2
-		    fi
-		    continue
-		fi
-	    fi
-
-	    # run the OTHERMD2HTML tool unless -n
-	    #
-	    if [[ -z $NOOP ]]; then
-
-		# possibly update the HTML file
-		#
-		if [[ $V_FLAG -ge 3 ]]; then
-		    echo "$0: debug[3]: about to run: $OTHERMD2HTML ${TOOL_OPTION[*]} -- $MD_FILE" 1>&2
-		fi
-		"$OTHERMD2HTML" "${TOOL_OPTION[@]}" -- "$MD_FILE"
-		status="$?"
-		if [[ $status -ne 0 ]]; then
-		    echo "$0: ERROR: tool: $OTHERMD2HTML ${TOOL_OPTION[*]} -- $MD_FILE" \
-			 "failed, error: $status" 1>&2
-		    EXIT_CODE="1"  # exit 1
-		    echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
-		    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-		    continue
-		fi
-
-		# case -Q: (quick mode)
-		#
-		# If we are here, then the early quick mode test indicated that the prerequisite files are newer.
-		# We will force the authors.html file to be touched so that a later run with -Q will quickly exit.
-		# We do this because by default, the md2html.sh tool does not modify the target HTML unless it was modified.
-		#
-		if [[ -n $QUICK_MODE ]]; then
-		    touch "$HTML_FILE"
-		fi
-
-	    # report disabled by -n
-	    #
-	    elif [[ $V_FLAG -ge 5 ]]; then
-		echo "$0: debug[5]: because of -n, did not run: $OTHERMD2HTML ${TOOL_OPTION[*]} --" \
-		     "$MD_FILE $HTML_FILE" 1>&2
-	    fi
-	done
-    done
-done
-EXIT_CODE=$(< "$TMP_EXIT_CODE")
-if [[ -z $EXIT_CODE ]]; then
-    echo "$0: ERROR: temporary exit file has no contents: $TMP_EXIT_CODE" 1>&2
-    exit 13
+elif [[ $V_FLAG -ge 5 ]]; then
+    echo "$0: debug[5]: because of -n, did not run: $MD2HTML_SH ${TOOL_OPTION[*]}" \
+	 "-s $DESCRIPTION -s $KEYWORDS -s $HEADER_2" \
+	 "-s $UP_LINK -s $UP_TEXT -D $D_OPTION -m $MD_FILE -v $V_FLAG --" \
+	 "$MD_FILE $HTML_FILE" 1>&2
 fi
-
 
 # All Done!!! All Done!!! -- Jessica Noll, Age 2
 #
 if [[ $EXIT_CODE -ne 0 ]]; then
     echo "$0: Warning: about to exit non-zero: $EXIT_CODE" 1>&2
-elif [[ $V_FLAG -ge 1 ]]; then
-    echo "$0: debug[1]: about to exit $EXIT_CODE" 1>&2
 fi
 exit "$EXIT_CODE"
