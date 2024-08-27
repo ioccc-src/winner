@@ -117,8 +117,8 @@ small {
 }
 
 /*
- * Prevent `sub` and `sup` elements from affecting the line height in
- * all browsers.
+ * Prevent sub and sup elements from affecting the line height in
+ * all browsers (initially).
  */
 
 sub,
@@ -129,11 +129,23 @@ sup {
     vertical-align: baseline;
 }
 
+/*
+ * Fix the problem where subscript text covers part of the characters in the
+ * line below it.
+ */
 sub {
+    line-height: 190%;
+    font-size: 5%;
     bottom: -0.25em;
 }
 
+/*
+ * Fix the problem where superscript text covers part of the characters in the
+ * line above it.
+ */
 sup {
+    line-height: 190%;
+    font-size: 5%;
     top: -0.5em;
 }
 
