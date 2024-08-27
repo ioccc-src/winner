@@ -141,7 +141,7 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
 	-t tagline	string to write about the tool that formed the markdown content (def: $TAGLINE)
 			NOTE: The '-t tagline' is passed as leading options on tool command lines.
 
-	-Q	        quick mode, do not run $OTHERMD2HTML unless markdown is out of date (def: do)
+	-Q	        quick mode, do not build HTML unless markdown is out of date (def: do)
 
 	-w site_url	Base URL of the website (def: $SITE_URL)
 			NOTE: The '-w site_url' is passed as leading options on tool command lines.
@@ -305,17 +305,17 @@ export BIN_DIR="bin"
 
 # verify that the bin/othermd2html.sh tool is executable
 #
-export OTHERMD2HTML="$BIN_DIR/othermd2html.sh"
-if [[ ! -e $OTHERMD2HTML ]]; then
-    echo  "$0: ERROR: bin/othermd2html.sh does not exist: $OTHERMD2HTML" 1>&2
+export OTHERMD2HTML_SH="$BIN_DIR/othermd2html.sh"
+if [[ ! -e $OTHERMD2HTML_SH ]]; then
+    echo  "$0: ERROR: bin/othermd2html.sh does not exist: $OTHERMD2HTML_SH" 1>&2
     exit 5
 fi
-if [[ ! -f $OTHERMD2HTML ]]; then
-    echo  "$0: ERROR: bin/othermd2html.sh is not a regular file: $OTHERMD2HTML" 1>&2
+if [[ ! -f $OTHERMD2HTML_SH ]]; then
+    echo  "$0: ERROR: bin/othermd2html.sh is not a regular file: $OTHERMD2HTML_SH" 1>&2
     exit 5
 fi
-if [[ ! -x $OTHERMD2HTML ]]; then
-    echo  "$0: ERROR: bin/othermd2html.sh is not an executable file: $OTHERMD2HTML" 1>&2
+if [[ ! -x $OTHERMD2HTML_SH ]]; then
+    echo  "$0: ERROR: bin/othermd2html.sh is not an executable file: $OTHERMD2HTML_SH" 1>&2
     exit 5
 fi
 
@@ -377,7 +377,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: CD_FAILED=$CD_FAILED" 1>&2
     echo "$0: debug[3]: BIN_PATH=$BIN_PATH" 1>&2
     echo "$0: debug[3]: BIN_DIR=$BIN_DIR" 1>&2
-    echo "$0: debug[3]: OTHERMD2HTML=$OTHERMD2HTML" 1>&2
+    echo "$0: debug[3]: OTHERMD2HTML_SH=$OTHERMD2HTML_SH" 1>&2
     echo "$0: debug[3]: TOP_FILE=$TOP_FILE" 1>&2
 fi
 
@@ -615,19 +615,19 @@ for YYYY in $(< "$TOP_FILE"); do
 		fi
 	    fi
 
-	    # run the OTHERMD2HTML tool unless -n
+	    # run the OTHERMD2HTML_SH tool unless -n
 	    #
 	    if [[ -z $NOOP ]]; then
 
 		# possibly update the HTML file
 		#
 		if [[ $V_FLAG -ge 3 ]]; then
-		    echo "$0: debug[3]: about to run: $OTHERMD2HTML ${TOOL_OPTION[*]} -- $MD_FILE" 1>&2
+		    echo "$0: debug[3]: about to run: $OTHERMD2HTML_SH ${TOOL_OPTION[*]} -- $MD_FILE" 1>&2
 		fi
-		"$OTHERMD2HTML" "${TOOL_OPTION[@]}" -- "$MD_FILE"
+		"$OTHERMD2HTML_SH" "${TOOL_OPTION[@]}" -- "$MD_FILE"
 		status="$?"
 		if [[ $status -ne 0 ]]; then
-		    echo "$0: ERROR: tool: $OTHERMD2HTML ${TOOL_OPTION[*]} -- $MD_FILE" \
+		    echo "$0: ERROR: tool: $OTHERMD2HTML_SH ${TOOL_OPTION[*]} -- $MD_FILE" \
 			 "failed, error: $status" 1>&2
 		    EXIT_CODE="1"  # exit 1
 		    echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
@@ -648,7 +648,7 @@ for YYYY in $(< "$TOP_FILE"); do
 	    # report disabled by -n
 	    #
 	    elif [[ $V_FLAG -ge 5 ]]; then
-		echo "$0: debug[5]: because of -n, did not run: $OTHERMD2HTML ${TOOL_OPTION[*]} --" \
+		echo "$0: debug[5]: because of -n, did not run: $OTHERMD2HTML_SH ${TOOL_OPTION[*]} --" \
 		     "$MD_FILE $HTML_FILE" 1>&2
 	    fi
 	done
