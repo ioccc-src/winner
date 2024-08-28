@@ -4,16 +4,16 @@
     make
 ```
 
+You will need an [SVG](https://www.w3.org/TR/SVG11/expanded-toc.html) viewer or
+a converter like [ImageMagick](https://imagemagick.org/index.php)'s `convert`.
+See the FAQ on "[ImageMagick](../../faq.html#imagemagick)" for more details and
+this list of [SVG Viewer
+Implementations](https://www.w3.org/Graphics/SVG/WG/wiki/Implementations),
+should you need more help.
+
 
 ## To use:
 
-You will need an [SVG](https://www.w3.org/TR/SVG11/expanded-toc.html) viewer or
-a converter like [ImageMagick](https://imagemagick.org/index.php)'s `convert`.
-See the
-FAQ on "[ImageMagick](../../faq.html#imagemagick)".
-
-Look here to find some [SVG Viewer
-Implementations](https://www.w3.org/Graphics/SVG/WG/wiki/Implementations).
 
 ``` <!---sh-->
     ./boutines < input > output.svg
@@ -93,7 +93,7 @@ graph) and a newline will just go fine:
 ```
 
 Strictly speaking, you have to provide a **set** of points. If there are
-duplicates in the list, there is no guarantee on the one to be shown (in
+duplicates in the list, there is no guarantee on the one to be shown (and in
 addition their labels will overlap) in the resulting colored [Voronoi
 diagram](https://en.wikipedia.org/wiki/Voronoi_diagram).
 
@@ -129,8 +129,8 @@ for most devices (including many inkjet printers). If you ever miss precision
 on a particular dataset or peripheral, you may want to dive in and let `U` be
 the next power of `__LINE__`.
 
-NOTE: bad inputs will be sanctioned by the production of the 42nd [Mersenne
-prime](https://en.wikipedia.org/wiki/Mersenne_prime) (i.e. 2^25964951 -1);
+**NOTE**: bad inputs will be sanctioned by the production of the 42nd [Mersenne
+prime](https://en.wikipedia.org/wiki/Mersenne_prime) (i.e. `2^25964951 -1`);
 memory will be kept.
 
 
@@ -177,7 +177,8 @@ viewport and potentially every
 ### See Also
 
 - [Voronoi at Wikipedia](http://en.wikipedia.org/wiki/Voronoi_diagram),
-- [An Excerpt from The Algorithm Design Manual](http://www2.toki.or.id/book/AlgDesignManual/BOOK/BOOK4/NODE187.HTM),
+- [An Excerpt from The Algorithm Design
+Manual](https://web.archive.org/web/20061231032748/http://www2.toki.or.id/book/AlgDesignManual/BOOK/BOOK4/NODE187.HTM).
 - [Voronoi and Art](http://www.snibbe.com/scott/bf)
 
 
