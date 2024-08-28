@@ -2287,33 +2287,34 @@ does not exist.</p>
 <h3 id="source-code-2005mikeashmikeash.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2005/mikeash/mikeash.c">2005/mikeash/mikeash.c</a></h3>
 <h3 id="information-2005mikeashindex.html">Information: <a href="2005/mikeash/index.html">2005/mikeash/index.html</a></h3>
 <p>The author states:</p>
-<ul>
-<li><p>The only built-in functions are <code>defvar</code>, <code>format</code>, <code>substitute</code>,
-<code>char-upcase</code>, <code>+</code>, <code>-</code>, <code>*</code>, and <code>/</code>.</p></li>
-<li><p>Only one variable is available. This variable is called <code>q</code>, although any
-symbol name starting with the letter <code>q</code> will be mapped to this variable.</p></li>
-<li><p>Only the first letter of a function name is significant. For example,
+<blockquote>
+<p>The only built-in functions are <code>defvar</code>, <code>format</code>, <code>substitute</code>,
+<code>char-upcase</code>, <code>+</code>, <code>-</code>, <code>*</code>, and <code>/</code>.<br></p>
+<p>Only one variable is available. This variable is called <code>q</code>, although any
+symbol name starting with the letter <code>q</code> will be mapped to this variable.<br></p>
+<p>Only the first letter of a function name is significant. For example,
 <code>format</code>, <code>f</code>, <code>farm</code>, and various other words starting with <code>f</code> will all map to
-the <code>format</code> function.</p></li>
-<li><p>The <code>defvar</code> function completely ignores its first parameter. It will always
+the <code>format</code> function.<br></p>
+<p>The <code>defvar</code> function completely ignores its first parameter. It will always
 store the result of evaluating its second parameter in <code>q</code>. Unlike in <a href="https://en.wikipedia.org/wiki/Common_Lisp">Common
 Lisp</a>, multiple invocations of
-<code>defvar</code> on the same variable will overwrite old values.</p></li>
-<li><p>Character constants are limited to <code>#\Newline</code> and single-character
-constants such as <code>#\x</code>.</p></li>
-<li><p>The <code>char-upcase</code> function will give strange results if passed something
-other than a lowercase character.</p></li>
-<li><p>The <code>format</code> function takes exactly three parameters. The first parameter is
+<code>defvar</code> on the same variable will overwrite old values.<br></p>
+<p>Character constants are limited to <code>#\Newline</code> and single-character constants
+such as <code>#\x</code>.<br></p>
+<p>The <code>char-upcase</code> function will give strange results if passed something other
+than a lowercase character.<br></p>
+<p>The <code>format</code> function takes exactly three parameters. The first parameter is
 ignored; output always goes to <code>stdout</code>. The second parameter must have exactly
-one <code>~s</code> format specifier in it, and no other format specifiers are permitted.</p></li>
-<li><p>The arithmetic functions take exactly two parameters.</p></li>
-<li><p>All tokens must be separated from a following <code>)</code> by whitespace.</p></li>
-<li><p>A lot of other things. Notably, the language which this program interprets is
+one <code>~s</code> format specifier in it, and no other format specifiers are
+permitted.<br></p>
+<p>The arithmetic functions take exactly two parameters.<br></p>
+<p>All tokens must be separated from a following <code>)</code> by whitespace.<br></p>
+<p>A lot of other things. Notably, the language which this program interprets is
 nowhere near
-<a href="https://en.wikipedia.org/wiki/Turing_completeness">Turing-complete</a>.</p></li>
-</ul>
-<p>Basically, the [LISP][] interpreter is good for some basic math operations, and
+<a href="https://en.wikipedia.org/wiki/Turing_completeness">Turing-complete</a>.<br></p>
+<p>Basically, the LISP interpreter is good for some basic math operations, and
 for running itself.</p>
+</blockquote>
 <div id="2005_mynx">
 <h2 id="mynx">2005/mynx</h2>
 </div>
