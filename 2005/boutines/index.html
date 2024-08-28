@@ -409,13 +409,13 @@ Location: <a href="../../location.html#FR">FR</a> - <em>French Republic</em> (<e
 <!-- BEFORE: 1st line of markdown file: 2005/boutines/README.md -->
 <h2 id="to-build">To build:</h2>
 <pre><code>    make</code></pre>
-<h2 id="to-use">To use:</h2>
 <p>You will need an <a href="https://www.w3.org/TR/SVG11/expanded-toc.html">SVG</a> viewer or
 a converter like <a href="https://imagemagick.org/index.php">ImageMagick</a>’s <code>convert</code>.
-See the
-FAQ on “<a href="../../faq.html#imagemagick">ImageMagick</a>”.</p>
-<p>Look here to find some <a href="https://www.w3.org/Graphics/SVG/WG/wiki/Implementations">SVG Viewer
-Implementations</a>.</p>
+See the FAQ on “<a href="../../faq.html#imagemagick">ImageMagick</a>” for more details and
+this list of <a href="https://www.w3.org/Graphics/SVG/WG/wiki/Implementations">SVG Viewer
+Implementations</a>,
+should you need more help.</p>
+<h2 id="to-use">To use:</h2>
 <pre><code>    ./boutines &lt; input &gt; output.svg</code></pre>
 <h2 id="try">Try:</h2>
 <pre><code>    ./try.sh</code></pre>
@@ -456,7 +456,7 @@ graph) and a newline will just go fine:</p>
     1  1
     .5 .5</code></pre>
 <p>Strictly speaking, you have to provide a <strong>set</strong> of points. If there are
-duplicates in the list, there is no guarantee on the one to be shown (in
+duplicates in the list, there is no guarantee on the one to be shown (and in
 addition their labels will overlap) in the resulting colored <a href="https://en.wikipedia.org/wiki/Voronoi_diagram">Voronoi
 diagram</a>.</p>
 <h3 id="caution">Caution</h3>
@@ -484,8 +484,8 @@ disaster, but the code should remain portable, and the output accurate enough
 for most devices (including many inkjet printers). If you ever miss precision
 on a particular dataset or peripheral, you may want to dive in and let <code>U</code> be
 the next power of <code>__LINE__</code>.</p>
-<p>NOTE: bad inputs will be sanctioned by the production of the 42nd <a href="https://en.wikipedia.org/wiki/Mersenne_prime">Mersenne
-prime</a> (i.e. 2^25964951 -1);
+<p><strong>NOTE</strong>: bad inputs will be sanctioned by the production of the 42nd <a href="https://en.wikipedia.org/wiki/Mersenne_prime">Mersenne
+prime</a> (i.e. <code>2^25964951 -1</code>);
 memory will be kept.</p>
 <h3 id="why-i-think-this-code-is-obfuscated">Why I think this code is Obfuscated ?</h3>
 <p>I’m quite divided on the subject because I wrote:</p>
@@ -516,7 +516,8 @@ viewport and potentially every
 <h3 id="see-also">See Also</h3>
 <ul>
 <li><a href="http://en.wikipedia.org/wiki/Voronoi_diagram">Voronoi at Wikipedia</a>,</li>
-<li><a href="http://www2.toki.or.id/book/AlgDesignManual/BOOK/BOOK4/NODE187.HTM">An Excerpt from The Algorithm Design Manual</a>,</li>
+<li><a href="https://web.archive.org/web/20061231032748/http://www2.toki.or.id/book/AlgDesignManual/BOOK/BOOK4/NODE187.HTM">An Excerpt from The Algorithm Design
+Manual</a>.</li>
 <li><a href="http://www.snibbe.com/scott/bf">Voronoi and Art</a></li>
 </ul>
 <h3 id="example-output">Example Output</h3>
