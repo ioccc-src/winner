@@ -392,12 +392,12 @@
 <p>The <a href="index.html">inc</a> directory holds content that is used by the
 tools in the <a href="../bin/index.html">bin</a> directory.</p>
 <h2 id="why-the-name-inc">Why the name inc?</h2>
-<p>We use inc because “include” would be misleading for both C and because
-the contents of HTML files under <a href="index.html">inc</a> are not really included
-by the web server or the browser. Content of HTML files is
-processed by tools the <a href="../bin/index.html">bin</a> directory.
-Processing can include substitution of strings of the form <em>%%CURDS%%</em> with some command
-line supplied value by the tool in question.</p>
+<p>We use <code>inc/</code> because “<code>include</code>” would be misleading for both C and because the
+contents of HTML files under <a href="index.html">inc</a> are not really included by the
+web server or the browser. Content of HTML files is processed by tools the
+<a href="../bin/index.html">bin</a> directory. Processing can include substitution of
+strings of the form <code>%%CURDS%%</code> where <code>CURDS</code> is a valid token (for instance
+<code>REPO_URL</code>) with some command line supplied value by the tool in question.</p>
 <!--
 
     Copyright © 1984-2024 by Landon Curt Noll. All Rights Reserved.
