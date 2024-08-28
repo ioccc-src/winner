@@ -2742,7 +2742,10 @@ dimensions. Try `100 100 100` for instance and see what happens!
 This entry will very likely segfault or do something strange if the source code
 does not exist.
 
-This entry requires that `sed` and `make` are in the path.
+This entry will, according to the author, likely segfault if `sizeof(int) !=
+sizeof(FILE *)`.
+
+This entry requires that `sed` and `make` are in your `$PATH`.
 
 
 <div id="2005_mikeash">
