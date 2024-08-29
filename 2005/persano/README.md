@@ -5,7 +5,7 @@
 ```
 
 There is an alternate version of this entry which should work for Windows by
-setting binary mode on `stdout`. See [alternate code](#alternate-code) below.
+setting binary mode on `stdout`. See [Alternate code](#alternate-code) below.
 
 
 ## To use:
