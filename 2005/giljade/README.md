@@ -4,7 +4,7 @@
     make
 ```
 
-NOTE: We FORCE the use of -O0 even if someone overrides it because this entry
+**NOTE**: We **FORCE** the use of `-O0` even if someone overrides it because this entry
 will not work with it enabled.
 
 
@@ -38,7 +38,7 @@ For more detailed information see [2005/giljade in bugs.html](../../bugs.html#20
     ./giljade out
 ```
 
-NOTE: [try.sh](%%REPO_URL%%/2005/giljade/try.sh) will ask you if you wish to do this.
+**NOTE**: [try.sh](%%REPO_URL%%/2005/giljade/try.sh) will ask you if you wish to do this.
 
 
 ## Judges' remarks:
@@ -128,7 +128,7 @@ the algorithm that is used to generate possible moves is extremely efficient.
 * The single expression I'm most proud of, and would have submitted to the
 category of 'best obfuscated short expression' if there was one is:
 
-        s=s^(b=s&s-1^s)
+    `s=s^(b=s&s-1^s)`
 
     Can you figure out what it does (very efficiently) and how it fits in the
     scheme of things?

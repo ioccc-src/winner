@@ -409,7 +409,7 @@ Location: <a href="../../location.html#IL">IL</a> - <em>State of Israel</em> (<e
 <!-- BEFORE: 1st line of markdown file: 2005/giljade/README.md -->
 <h2 id="to-build">To build:</h2>
 <pre><code>    make</code></pre>
-<p>NOTE: We FORCE the use of -O0 even if someone overrides it because this entry
+<p><strong>NOTE</strong>: We <strong>FORCE</strong> the use of <code>-O0</code> even if someone overrides it because this entry
 will not work with it enabled.</p>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
 <p>The current status of this entry is:</p>
@@ -424,7 +424,7 @@ will not work with it enabled.</p>
 <h3 id="self-test-feature-to-try">Self-test feature to try:</h3>
 <pre><code>    ./giljade &gt; out
     ./giljade out</code></pre>
-<p>NOTE: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2005/giljade/try.sh">try.sh</a> will ask you if you wish to do this.</p>
+<p><strong>NOTE</strong>: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2005/giljade/try.sh">try.sh</a> will ask you if you wish to do this.</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>This entry takes editorial in how it deals with its output. After using <code>vi(1)</code>
 (or <code>vim(1)</code>) to look at the source, use <code>vi(1)</code> (or <code>vim(1)</code>) to look at its
@@ -491,7 +491,7 @@ one is used. No inefficient conditional tests and jumps are needed in that
 part of the program.</p></li>
 <li><p>The single expression I’m most proud of, and would have submitted to the
 category of ‘best obfuscated short expression’ if there was one is:</p>
-<p>s=s<sup>(b=s&amp;s-1</sup>s)</p>
+<p><code>s=s^(b=s&amp;s-1^s)</code></p>
 <p>Can you figure out what it does (very efficiently) and how it fits in the
 scheme of things?</p></li>
 <li><p>IMHO the program is easier to understand before running cpp on it. It is also
