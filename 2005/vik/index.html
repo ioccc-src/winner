@@ -409,7 +409,7 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <!-- BEFORE: 1st line of markdown file: 2005/vik/README.md -->
 <h2 id="to-build">To build:</h2>
 <pre><code>    make</code></pre>
-<p>NOTE: this entry requires the <code>X11/Xlib.h</code> header file and the X11 library to
+<p><strong>NOTE</strong>: this entry requires the <code>X11/Xlib.h</code> header file and the X11 library to
 compile. For more information see the
 FAQ on “<a href="../../faq.html#X11">X11</a>”.</p>
 <h2 id="to-use">To use:</h2>
@@ -448,9 +448,8 @@ backward).</li>
 libraries</a> if necessary. The program takes
 three options which have to be typed in a specific order as described below.</p>
 <pre><code>    ./vik [-w &lt;width&gt;] [mapfile]</code></pre>
-<p>where:</p>
-<pre><code>    width   - Specifies the width of the window
-    mapfile - Filename containing a map</code></pre>
+<p>where <code>width</code> specifies the width of the window and <code>mapfile</code> is the filename
+containing a map.</p>
 <h4 id="examples">Examples</h4>
 <p>Start the engine using a built in labyrinth and texture bitmaps:</p>
 <pre><code>    ./vik</code></pre>
@@ -485,7 +484,7 @@ current directory).</p>
 <p>The program is obfuscated in several ways:</p>
 <ul>
 <li>Bad use of variables.</li>
-<li>Use of the <code>?</code> operator.</li>
+<li>Use of the <code>?:</code> operator.</li>
 <li>Recursive calls to <code>main()</code>.</li>
 <li>Bad use of <code>for</code> loops and the comma operator.</li>
 <li>To make the final obfuscated touch I ran indent which really made the program
