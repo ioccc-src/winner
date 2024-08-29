@@ -6,1274 +6,1272 @@
     "dir" : "endoh4",
     "entry_id" : "2013_endoh4",
     "author_set" : [
-        {
-            "author_handle" : "Yusuke_Endoh"
-        }
+	{ "author_handle" : "Yusuke_Endoh" }
     ],
     "manifest" : [
-        {
-            "file_path" : "endoh4.c",
-            "inventory_order" : 20,
-            "OK_to_edit" : true,
-            "display_as" : "c",
-            "display_via_github" : true,
-            "entry_text" : "entry source code"
-        },
-        {
-            "file_path" : "Makefile",
-            "inventory_order" : 30,
-            "OK_to_edit" : true,
-            "display_as" : "makefile",
-            "display_via_github" : true,
-            "entry_text" : "entry Makefile"
-        },
-        {
-            "file_path" : "endoh4.orig.c",
-            "inventory_order" : 50,
-            "OK_to_edit" : false,
-            "display_as" : "c",
-            "display_via_github" : true,
-            "entry_text" : "original source code"
-        },
-        {
-            "file_path" : "cube.txt",
-            "inventory_order" : 100,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "endoh4.sh",
-            "inventory_order" : 100,
-            "OK_to_edit" : true,
-            "display_as" : "shellscript",
-            "display_via_github" : true,
-            "entry_text" : "script to run entry without cursor"
-        },
-        {
-            "file_path" : "solids/antiprism/a04-square-antiprism.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/antiprism/a05-pentagonal-antiprism.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/antiprism/a06-hexagonal-antiprism.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/antiprism/a07-heptagonal-antiprism.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/antiprism/a08-octagonal-antiprism.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/antiprism/a09-enneagonal-antiprism.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/antiprism/a10-decagonal-antiprism.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/archimedian-solid/a01-cuboctahedron.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/archimedian-solid/a02-great-rhombicosidodecahedron.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/archimedian-solid/a03-great-rhombicuboctahedron.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/archimedian-solid/a04-icosidodecahedron.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/archimedian-solid/a05-small-rhombicosidodecahedron.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/archimedian-solid/a06-small-rhombicuboctahedron.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/archimedian-solid/a07-snub-cube.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/archimedian-solid/a08-snub-dodecahedron.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/archimedian-solid/a09-truncated-cube.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/archimedian-solid/a10-truncated-dodecahedron.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/archimedian-solid/a11-truncated-icosahedron.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/archimedian-solid/a12-truncated-octahedron.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/archimedian-solid/a13-truncated-tetrahedron.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/bipyramid/b06-hexagonal-bipyramid.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/bipyramid/b07-heptagonal-bipyramid.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/bipyramid/b08-octagonal-bipyramid.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/bipyramid/b09-enneagonal-bipyramid.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/bipyramid/b10-decagonal-bipyramid.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/catalan-solid/c01-rhombic-dodecahedron.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/catalan-solid/c02-disdyakis-triacontahedron.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/catalan-solid/c03-disdyakis-dodecahedron.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/catalan-solid/c04-rhombic-triacontahedron.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/catalan-solid/c05-deltoidal-hexecontahedron.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/catalan-solid/c06-deltoidal-icositetrahedron.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/catalan-solid/c07-pentagonal-icositetrahedron.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/catalan-solid/c08-pentagonal-hexecontahedron.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/catalan-solid/c09-small-triakis-octahedron.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/catalan-solid/c10-triakis-icosahedron.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/catalan-solid/c11-pentakis-dodecahedron.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/catalan-solid/c12-tetrakis-hexahedron.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/catalan-solid/c13-triakis-tetrahedron.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j01-square-pyramid.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j02-pentagonal-pyramid.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j03-triangular-cupola.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j04-square-cupola.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j05-pentagonal-cupola.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j06-pentagonal-rotunda.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j07-elongated-triangular-pyramid.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j08-elongated-square-pyramid.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j09-elongated-pentagonal-pyramid.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j10-gyroelongated-square-pyramid.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j11-gyroelongated-pentagonal-pyramid.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j12-triangular-dipyramid.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j13-pentagonal-dipyramid.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j14-elongated-triangular-dipyramid.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j15-elongated-square-dipyramid.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j16-elongated-pentagonal-dipyramid.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j17-gyroelongated-square-dipyramid.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j18-elongated-triangular-cupola.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j19-elongated-square-cupola.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j20-elongated-pentagonal-cupola.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j21-elongated-pentagonal-rotunda.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j22-gyroelongated-triangular-cupola.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j23-gyroelongated-square-cupola.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j24-gyroelongated-pentagonal-cupola.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j25-gyroelongated-pentagonal-rotunda.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j26-gyrobifastigium.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j27-triangular-orthobicupola.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j28-square-orthobicupola.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j29-square-gyrobicupola.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j30-pentagonal-orthobicupola.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j31-pentagonal-gyrobicupola.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j32-pentagonal-orthocupolarotunda.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j33-pentagonal-gyrocupolarotunda.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j34-pentagonal-orthobirotunda.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j35-elongated-triangular-orthobicupola.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j36-elongated-triangular-gyrobicupola.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j37-elongated-square-gyrobicupola.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j38-elongated-pentagonal-orthobicupola.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j39-elongated-pentagonal-gyrobicupola.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j40-elongated-pentagonal-orthocupolarotunda.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j41-elongated-pentagonal-gyrocupolarotunda.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j42-elongated-pentagonal-orthobirotunda.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j43-elongated-pentagonal-gyrobirotunda.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j44-gyroelongated-triangular-bicupola.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j45-gyroelongated-square-bicupola.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j46-gyroelongated-pentagonal-bicupola.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j47-gyroelongated-pentagonal-cupolarotunda.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j48-gyroelongated-pentagonal-birotunda.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j49-augmented-triangular-prism.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j50-biaugmented-triangular-prism.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j51-triaugmented-triangular-prism.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j52-augmented-pentagonal-prism.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j53-biaugmented-pentagonal-prism.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j54-augmented-hexagonal-prism.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j55-parabiaugmented-hexagonal-prism.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j56-metabiaugmented-hexagonal-prism.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j57-triaugmented-hexagonal-prism.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j58-augmented-dodecahedron.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j59-parabiaugmented-dodecahedron.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j60-metabiaugmented-dodecahedron.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j61-triaugmented-dodecahedron.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j62-metabidiminished-icosahedron.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j63-tridiminished-icosahedron.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j64-augmented-tridiminished-icosahedron.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j65-augmented-truncated-tetrahedron.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j66-augmented-truncated-cube.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j67-biaugmented-truncated-cube.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j68-augmented-truncated-dodecahedron.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j69-parabiaugmented-truncated-dodecahedron.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j70-metabiaugmented-truncated-dodecahedron.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j71-triaugmented-truncated-dodecahedron.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j72-gyrate-rhombicosidodecahedron.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j73-parabigyrate-rhombicosidodecahedron.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j74-metabigyrate-rhombicosidodecahedron.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j75-trigyrate-rhombicosidodecahedron.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j76-diminished-rhombicosidodecahedron.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j77-paragyrate-diminished-rhombicosidodecahedron.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j78-metagyrate-diminished-rhombicosidodecahedron.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j79-bigyrate-diminished-rhombicosidodecahedron.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j80-parabidiminished-rhombicosidodecahedron.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j81-metabidiminished-rhombicosidodecahedron.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j82-gyrate-bidiminished-rhombicosidodecahedron.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j83-tridiminished-rhombicosidodecahedron.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j84-snub-disphenoid.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j85-snub-square-antiprism.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j86-sphenocorona.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j87-augmented-sphenocorona.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j88-sphenomegacorona.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j89-hebesphenomegacorona.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j90-disphenocingulum.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j91-bilunabirotunda.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/johnson-solid/j92-triangular-hebesphenorotunda.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/platonic-solid/p01-tetrahedron.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/platonic-solid/p02-cube.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/platonic-solid/p03-octahedron.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/platonic-solid/p04-dodecahedron.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/platonic-solid/p05-icosahedron.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/prism/p03-triangular-prism.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/prism/p05-pentagonal-prism.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/prism/p06-hexagonal-prism.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/prism/p07-heptagonal-prism.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/prism/p08-octagonal-prism.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/prism/p09-enneagonal-prism.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/prism/p10-decagonal-prism.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/trapezohedron/t04-tetragonal-trapezohedron.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/trapezohedron/t05-pentagonal-trapezohedron.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/trapezohedron/t06-hexagonal-trapezohedron.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/trapezohedron/t08-octagonal-trapezohedron.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "solids/trapezohedron/t10-decagonal-trapezohedron.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "3D object coordinates"
-        },
-        {
-            "file_path" : "2013_endoh4.tar.bz2",
-            "inventory_order" : 1415926535,
-            "OK_to_edit" : false,
-            "display_as" : "tbz2",
-            "display_via_github" : false,
-            "entry_text" : "download entry tarball"
-        },
-        {
-            "file_path" : ".entry.json",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : true,
-            "display_as" : "json",
-            "display_via_github" : true,
-            "entry_text" : "entry summary and manifest in JSON"
-        },
-        {
-            "file_path" : ".gitignore",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : true,
-            "display_as" : "gitignore",
-            "display_via_github" : true,
-            "entry_text" : "list of files that should not be committed under git"
-        },
-        {
-            "file_path" : ".path",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : false,
-            "display_as" : "path",
-            "display_via_github" : true,
-            "entry_text" : "directory path from top level directory"
-        },
-        {
-            "file_path" : "README.md",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : true,
-            "display_as" : "markdown",
-            "display_via_github" : true,
-            "entry_text" : "markdown source for this web page"
-        },
-        {
-            "file_path" : "index.html",
-            "inventory_order" : 4294967295,
-            "OK_to_edit" : false,
-            "display_as" : "html",
-            "display_via_github" : false,
-            "entry_text" : "this web page"
-        }
+	{
+	    "file_path" : "endoh4.c",
+	    "inventory_order" : 20,
+	    "OK_to_edit" : true,
+	    "display_as" : "c",
+	    "display_via_github" : true,
+	    "entry_text" : "entry source code"
+	},
+	{
+	    "file_path" : "Makefile",
+	    "inventory_order" : 30,
+	    "OK_to_edit" : true,
+	    "display_as" : "makefile",
+	    "display_via_github" : true,
+	    "entry_text" : "entry Makefile"
+	},
+	{
+	    "file_path" : "endoh4.orig.c",
+	    "inventory_order" : 50,
+	    "OK_to_edit" : false,
+	    "display_as" : "c",
+	    "display_via_github" : true,
+	    "entry_text" : "original source code"
+	},
+	{
+	    "file_path" : "cube.txt",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "endoh4.sh",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "shellscript",
+	    "display_via_github" : true,
+	    "entry_text" : "script to run entry without cursor"
+	},
+	{
+	    "file_path" : "solids/antiprism/a04-square-antiprism.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/antiprism/a05-pentagonal-antiprism.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/antiprism/a06-hexagonal-antiprism.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/antiprism/a07-heptagonal-antiprism.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/antiprism/a08-octagonal-antiprism.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/antiprism/a09-enneagonal-antiprism.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/antiprism/a10-decagonal-antiprism.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/archimedian-solid/a01-cuboctahedron.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/archimedian-solid/a02-great-rhombicosidodecahedron.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/archimedian-solid/a03-great-rhombicuboctahedron.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/archimedian-solid/a04-icosidodecahedron.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/archimedian-solid/a05-small-rhombicosidodecahedron.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/archimedian-solid/a06-small-rhombicuboctahedron.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/archimedian-solid/a07-snub-cube.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/archimedian-solid/a08-snub-dodecahedron.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/archimedian-solid/a09-truncated-cube.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/archimedian-solid/a10-truncated-dodecahedron.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/archimedian-solid/a11-truncated-icosahedron.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/archimedian-solid/a12-truncated-octahedron.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/archimedian-solid/a13-truncated-tetrahedron.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/bipyramid/b06-hexagonal-bipyramid.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/bipyramid/b07-heptagonal-bipyramid.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/bipyramid/b08-octagonal-bipyramid.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/bipyramid/b09-enneagonal-bipyramid.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/bipyramid/b10-decagonal-bipyramid.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/catalan-solid/c01-rhombic-dodecahedron.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/catalan-solid/c02-disdyakis-triacontahedron.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/catalan-solid/c03-disdyakis-dodecahedron.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/catalan-solid/c04-rhombic-triacontahedron.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/catalan-solid/c05-deltoidal-hexecontahedron.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/catalan-solid/c06-deltoidal-icositetrahedron.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/catalan-solid/c07-pentagonal-icositetrahedron.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/catalan-solid/c08-pentagonal-hexecontahedron.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/catalan-solid/c09-small-triakis-octahedron.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/catalan-solid/c10-triakis-icosahedron.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/catalan-solid/c11-pentakis-dodecahedron.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/catalan-solid/c12-tetrakis-hexahedron.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/catalan-solid/c13-triakis-tetrahedron.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j01-square-pyramid.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j02-pentagonal-pyramid.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j03-triangular-cupola.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j04-square-cupola.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j05-pentagonal-cupola.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j06-pentagonal-rotunda.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j07-elongated-triangular-pyramid.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j08-elongated-square-pyramid.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j09-elongated-pentagonal-pyramid.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j10-gyroelongated-square-pyramid.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j11-gyroelongated-pentagonal-pyramid.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j12-triangular-dipyramid.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j13-pentagonal-dipyramid.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j14-elongated-triangular-dipyramid.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j15-elongated-square-dipyramid.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j16-elongated-pentagonal-dipyramid.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j17-gyroelongated-square-dipyramid.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j18-elongated-triangular-cupola.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j19-elongated-square-cupola.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j20-elongated-pentagonal-cupola.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j21-elongated-pentagonal-rotunda.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j22-gyroelongated-triangular-cupola.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j23-gyroelongated-square-cupola.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j24-gyroelongated-pentagonal-cupola.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j25-gyroelongated-pentagonal-rotunda.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j26-gyrobifastigium.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j27-triangular-orthobicupola.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j28-square-orthobicupola.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j29-square-gyrobicupola.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j30-pentagonal-orthobicupola.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j31-pentagonal-gyrobicupola.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j32-pentagonal-orthocupolarotunda.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j33-pentagonal-gyrocupolarotunda.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j34-pentagonal-orthobirotunda.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j35-elongated-triangular-orthobicupola.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j36-elongated-triangular-gyrobicupola.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j37-elongated-square-gyrobicupola.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j38-elongated-pentagonal-orthobicupola.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j39-elongated-pentagonal-gyrobicupola.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j40-elongated-pentagonal-orthocupolarotunda.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j41-elongated-pentagonal-gyrocupolarotunda.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j42-elongated-pentagonal-orthobirotunda.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j43-elongated-pentagonal-gyrobirotunda.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j44-gyroelongated-triangular-bicupola.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j45-gyroelongated-square-bicupola.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j46-gyroelongated-pentagonal-bicupola.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j47-gyroelongated-pentagonal-cupolarotunda.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j48-gyroelongated-pentagonal-birotunda.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j49-augmented-triangular-prism.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j50-biaugmented-triangular-prism.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j51-triaugmented-triangular-prism.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j52-augmented-pentagonal-prism.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j53-biaugmented-pentagonal-prism.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j54-augmented-hexagonal-prism.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j55-parabiaugmented-hexagonal-prism.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j56-metabiaugmented-hexagonal-prism.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j57-triaugmented-hexagonal-prism.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j58-augmented-dodecahedron.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j59-parabiaugmented-dodecahedron.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j60-metabiaugmented-dodecahedron.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j61-triaugmented-dodecahedron.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j62-metabidiminished-icosahedron.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j63-tridiminished-icosahedron.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j64-augmented-tridiminished-icosahedron.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j65-augmented-truncated-tetrahedron.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j66-augmented-truncated-cube.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j67-biaugmented-truncated-cube.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j68-augmented-truncated-dodecahedron.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j69-parabiaugmented-truncated-dodecahedron.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j70-metabiaugmented-truncated-dodecahedron.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j71-triaugmented-truncated-dodecahedron.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j72-gyrate-rhombicosidodecahedron.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j73-parabigyrate-rhombicosidodecahedron.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j74-metabigyrate-rhombicosidodecahedron.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j75-trigyrate-rhombicosidodecahedron.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j76-diminished-rhombicosidodecahedron.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j77-paragyrate-diminished-rhombicosidodecahedron.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j78-metagyrate-diminished-rhombicosidodecahedron.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j79-bigyrate-diminished-rhombicosidodecahedron.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j80-parabidiminished-rhombicosidodecahedron.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j81-metabidiminished-rhombicosidodecahedron.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j82-gyrate-bidiminished-rhombicosidodecahedron.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j83-tridiminished-rhombicosidodecahedron.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j84-snub-disphenoid.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j85-snub-square-antiprism.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j86-sphenocorona.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j87-augmented-sphenocorona.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j88-sphenomegacorona.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j89-hebesphenomegacorona.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j90-disphenocingulum.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j91-bilunabirotunda.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/johnson-solid/j92-triangular-hebesphenorotunda.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/platonic-solid/p01-tetrahedron.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/platonic-solid/p02-cube.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/platonic-solid/p03-octahedron.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/platonic-solid/p04-dodecahedron.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/platonic-solid/p05-icosahedron.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/prism/p03-triangular-prism.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/prism/p05-pentagonal-prism.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/prism/p06-hexagonal-prism.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/prism/p07-heptagonal-prism.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/prism/p08-octagonal-prism.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/prism/p09-enneagonal-prism.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/prism/p10-decagonal-prism.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/trapezohedron/t04-tetragonal-trapezohedron.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/trapezohedron/t05-pentagonal-trapezohedron.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/trapezohedron/t06-hexagonal-trapezohedron.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/trapezohedron/t08-octagonal-trapezohedron.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "solids/trapezohedron/t10-decagonal-trapezohedron.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "3D object coordinates"
+	},
+	{
+	    "file_path" : "2013_endoh4.tar.bz2",
+	    "inventory_order" : 1415926535,
+	    "OK_to_edit" : false,
+	    "display_as" : "tbz2",
+	    "display_via_github" : false,
+	    "entry_text" : "download entry tarball"
+	},
+	{
+	    "file_path" : ".entry.json",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "json",
+	    "display_via_github" : true,
+	    "entry_text" : "entry summary and manifest in JSON"
+	},
+	{
+	    "file_path" : ".gitignore",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "gitignore",
+	    "display_via_github" : true,
+	    "entry_text" : "list of files that should not be committed under git"
+	},
+	{
+	    "file_path" : ".path",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : false,
+	    "display_as" : "path",
+	    "display_via_github" : true,
+	    "entry_text" : "directory path from top level directory"
+	},
+	{
+	    "file_path" : "README.md",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "markdown",
+	    "display_via_github" : true,
+	    "entry_text" : "markdown source for this web page"
+	},
+	{
+	    "file_path" : "index.html",
+	    "inventory_order" : 4294967295,
+	    "OK_to_edit" : false,
+	    "display_as" : "html",
+	    "display_via_github" : false,
+	    "entry_text" : "this web page"
+	}
     ]
 }

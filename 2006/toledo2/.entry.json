@@ -6,130 +6,128 @@
     "dir" : "toledo2",
     "entry_id" : "2006_toledo2",
     "author_set" : [
-        {
-            "author_handle" : "Oscar_Toledo"
-        }
+	{ "author_handle" : "Oscar_Toledo" }
     ],
     "manifest" : [
-        {
-            "file_path" : "toledo2.c",
-            "inventory_order" : 20,
-            "OK_to_edit" : true,
-            "display_as" : "c",
-            "display_via_github" : true,
-            "entry_text" : "entry source code"
-        },
-        {
-            "file_path" : "Makefile",
-            "inventory_order" : 30,
-            "OK_to_edit" : true,
-            "display_as" : "makefile",
-            "display_via_github" : true,
-            "entry_text" : "entry Makefile"
-        },
-        {
-            "file_path" : "toledo2.alt.c",
-            "inventory_order" : 40,
-            "OK_to_edit" : true,
-            "display_as" : "c",
-            "display_via_github" : true,
-            "entry_text" : "alternate source code"
-        },
-        {
-            "file_path" : "toledo2.orig.c",
-            "inventory_order" : 50,
-            "OK_to_edit" : true,
-            "display_as" : "c",
-            "display_via_github" : true,
-            "entry_text" : "original source code"
-        },
-        {
-            "file_path" : "KAYPROII.ZIP",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "zip",
-            "display_via_github" : false,
-            "entry_text" : "zip file of CPM related files"
-        },
-        {
-            "file_path" : "2006_toledo2.tar.bz2",
-            "inventory_order" : 1415926535,
-            "OK_to_edit" : false,
-            "display_as" : "tbz2",
-            "display_via_github" : false,
-            "entry_text" : "download entry tarball"
-        },
-        {
-            "file_path" : ".entry.json",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : true,
-            "display_as" : "json",
-            "display_via_github" : true,
-            "entry_text" : "entry summary and manifest in JSON"
-        },
-        {
-            "file_path" : ".gitignore",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : true,
-            "display_as" : "gitignore",
-            "display_via_github" : true,
-            "entry_text" : "list of files that should not be committed under git"
-        },
-        {
-            "file_path" : ".path",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : false,
-            "display_as" : "path",
-            "display_via_github" : true,
-            "entry_text" : "directory path from top level directory"
-        },
-        {
-            "file_path" : "A",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : true,
-            "display_as" : "binary",
-            "display_via_github" : false,
-            "entry_text" : "binary support file"
-        },
-        {
-            "file_path" : "B",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : true,
-            "display_as" : "binary",
-            "display_via_github" : false,
-            "entry_text" : "binary support file"
-        },
-        {
-            "file_path" : "C.BASIC",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : true,
-            "display_as" : "binary",
-            "display_via_github" : false,
-            "entry_text" : "compiled BASIC file"
-        },
-        {
-            "file_path" : "C.BIOS",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : true,
-            "display_as" : "binary",
-            "display_via_github" : false,
-            "entry_text" : "required Basic Input/Output System"
-        },
-        {
-            "file_path" : "README.md",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : true,
-            "display_as" : "markdown",
-            "display_via_github" : true,
-            "entry_text" : "markdown source for this web page"
-        },
-        {
-            "file_path" : "index.html",
-            "inventory_order" : 4294967295,
-            "OK_to_edit" : false,
-            "display_as" : "html",
-            "display_via_github" : false,
-            "entry_text" : "this web page"
-        }
+	{
+	    "file_path" : "toledo2.c",
+	    "inventory_order" : 20,
+	    "OK_to_edit" : true,
+	    "display_as" : "c",
+	    "display_via_github" : true,
+	    "entry_text" : "entry source code"
+	},
+	{
+	    "file_path" : "Makefile",
+	    "inventory_order" : 30,
+	    "OK_to_edit" : true,
+	    "display_as" : "makefile",
+	    "display_via_github" : true,
+	    "entry_text" : "entry Makefile"
+	},
+	{
+	    "file_path" : "toledo2.alt.c",
+	    "inventory_order" : 40,
+	    "OK_to_edit" : true,
+	    "display_as" : "c",
+	    "display_via_github" : true,
+	    "entry_text" : "alternate source code"
+	},
+	{
+	    "file_path" : "toledo2.orig.c",
+	    "inventory_order" : 50,
+	    "OK_to_edit" : true,
+	    "display_as" : "c",
+	    "display_via_github" : true,
+	    "entry_text" : "original source code"
+	},
+	{
+	    "file_path" : "KAYPROII.ZIP",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "zip",
+	    "display_via_github" : false,
+	    "entry_text" : "zip file of CPM related files"
+	},
+	{
+	    "file_path" : "2006_toledo2.tar.bz2",
+	    "inventory_order" : 1415926535,
+	    "OK_to_edit" : false,
+	    "display_as" : "tbz2",
+	    "display_via_github" : false,
+	    "entry_text" : "download entry tarball"
+	},
+	{
+	    "file_path" : ".entry.json",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "json",
+	    "display_via_github" : true,
+	    "entry_text" : "entry summary and manifest in JSON"
+	},
+	{
+	    "file_path" : ".gitignore",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "gitignore",
+	    "display_via_github" : true,
+	    "entry_text" : "list of files that should not be committed under git"
+	},
+	{
+	    "file_path" : ".path",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : false,
+	    "display_as" : "path",
+	    "display_via_github" : true,
+	    "entry_text" : "directory path from top level directory"
+	},
+	{
+	    "file_path" : "A",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "binary",
+	    "display_via_github" : false,
+	    "entry_text" : "binary support file"
+	},
+	{
+	    "file_path" : "B",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "binary",
+	    "display_via_github" : false,
+	    "entry_text" : "binary support file"
+	},
+	{
+	    "file_path" : "C.BASIC",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "binary",
+	    "display_via_github" : false,
+	    "entry_text" : "compiled BASIC file"
+	},
+	{
+	    "file_path" : "C.BIOS",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "binary",
+	    "display_via_github" : false,
+	    "entry_text" : "required Basic Input/Output System"
+	},
+	{
+	    "file_path" : "README.md",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "markdown",
+	    "display_via_github" : true,
+	    "entry_text" : "markdown source for this web page"
+	},
+	{
+	    "file_path" : "index.html",
+	    "inventory_order" : 4294967295,
+	    "OK_to_edit" : false,
+	    "display_as" : "html",
+	    "display_via_github" : false,
+	    "entry_text" : "this web page"
+	}
     ]
 }

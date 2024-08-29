@@ -6,410 +6,408 @@
     "dir" : "stewart",
     "entry_id" : "2006_stewart",
     "author_set" : [
-        {
-            "author_handle" : "Thomas_Stewart"
-        }
+	{ "author_handle" : "Thomas_Stewart" }
     ],
     "manifest" : [
-        {
-            "file_path" : "stewart.c",
-            "inventory_order" : 20,
-            "OK_to_edit" : true,
-            "display_as" : "c",
-            "display_via_github" : true,
-            "entry_text" : "entry source code"
-        },
-        {
-            "file_path" : "Makefile",
-            "inventory_order" : 30,
-            "OK_to_edit" : true,
-            "display_as" : "makefile",
-            "display_via_github" : true,
-            "entry_text" : "entry Makefile"
-        },
-        {
-            "file_path" : "stewart.orig.c",
-            "inventory_order" : 50,
-            "OK_to_edit" : true,
-            "display_as" : "c",
-            "display_via_github" : true,
-            "entry_text" : "original source code"
-        },
-        {
-            "file_path" : "build",
-            "inventory_order" : 100,
-            "OK_to_edit" : true,
-            "display_as" : "shellscript",
-            "display_via_github" : true,
-            "entry_text" : "how to compile"
-        },
-        {
-            "file_path" : "try.sh",
-            "inventory_order" : 100,
-            "OK_to_edit" : true,
-            "display_as" : "shellscript",
-            "display_via_github" : true,
-            "entry_text" : "script to try entry"
-        },
-        {
-            "file_path" : "altar",
-            "inventory_order" : 150,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : true,
-            "entry_text" : "sample input"
-        },
-        {
-            "file_path" : "box",
-            "inventory_order" : 150,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : true,
-            "entry_text" : "sample input"
-        },
-        {
-            "file_path" : "box2",
-            "inventory_order" : 150,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : true,
-            "entry_text" : "sample input"
-        },
-        {
-            "file_path" : "box3",
-            "inventory_order" : 150,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : true,
-            "entry_text" : "sample input"
-        },
-        {
-            "file_path" : "carpet",
-            "inventory_order" : 150,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : true,
-            "entry_text" : "sample input"
-        },
-        {
-            "file_path" : "circles",
-            "inventory_order" : 150,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : true,
-            "entry_text" : "sample input"
-        },
-        {
-            "file_path" : "cross",
-            "inventory_order" : 150,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : true,
-            "entry_text" : "sample input"
-        },
-        {
-            "file_path" : "cross2",
-            "inventory_order" : 150,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : true,
-            "entry_text" : "sample input"
-        },
-        {
-            "file_path" : "cross3",
-            "inventory_order" : 150,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : true,
-            "entry_text" : "sample input"
-        },
-        {
-            "file_path" : "crystal",
-            "inventory_order" : 150,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : true,
-            "entry_text" : "sample input"
-        },
-        {
-            "file_path" : "curve",
-            "inventory_order" : 150,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : true,
-            "entry_text" : "sample input"
-        },
-        {
-            "file_path" : "diamonds",
-            "inventory_order" : 150,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : true,
-            "entry_text" : "sample input"
-        },
-        {
-            "file_path" : "diamonds2",
-            "inventory_order" : 150,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : true,
-            "entry_text" : "sample input"
-        },
-        {
-            "file_path" : "dragon",
-            "inventory_order" : 150,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : true,
-            "entry_text" : "sample input"
-        },
-        {
-            "file_path" : "dragon2",
-            "inventory_order" : 150,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : true,
-            "entry_text" : "sample input"
-        },
-        {
-            "file_path" : "dragon3",
-            "inventory_order" : 150,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : true,
-            "entry_text" : "sample input"
-        },
-        {
-            "file_path" : "fern",
-            "inventory_order" : 150,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : true,
-            "entry_text" : "sample input"
-        },
-        {
-            "file_path" : "gasket",
-            "inventory_order" : 150,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : true,
-            "entry_text" : "sample input"
-        },
-        {
-            "file_path" : "gasket_mod",
-            "inventory_order" : 150,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : true,
-            "entry_text" : "sample input"
-        },
-        {
-            "file_path" : "gasket_mod2",
-            "inventory_order" : 150,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : true,
-            "entry_text" : "sample input"
-        },
-        {
-            "file_path" : "ioccc",
-            "inventory_order" : 150,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : true,
-            "entry_text" : "sample input"
-        },
-        {
-            "file_path" : "maze",
-            "inventory_order" : 150,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : true,
-            "entry_text" : "sample input"
-        },
-        {
-            "file_path" : "octagon",
-            "inventory_order" : 150,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : true,
-            "entry_text" : "sample input"
-        },
-        {
-            "file_path" : "pentagon",
-            "inventory_order" : 150,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : true,
-            "entry_text" : "sample input"
-        },
-        {
-            "file_path" : "pentagons",
-            "inventory_order" : 150,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : true,
-            "entry_text" : "sample input"
-        },
-        {
-            "file_path" : "rings",
-            "inventory_order" : 150,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : true,
-            "entry_text" : "sample input"
-        },
-        {
-            "file_path" : "rings2",
-            "inventory_order" : 150,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : true,
-            "entry_text" : "sample input"
-        },
-        {
-            "file_path" : "spirals",
-            "inventory_order" : 150,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : true,
-            "entry_text" : "sample input"
-        },
-        {
-            "file_path" : "spirals2",
-            "inventory_order" : 150,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : true,
-            "entry_text" : "sample input"
-        },
-        {
-            "file_path" : "spirals3",
-            "inventory_order" : 150,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : true,
-            "entry_text" : "sample input"
-        },
-        {
-            "file_path" : "spirals4",
-            "inventory_order" : 150,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : true,
-            "entry_text" : "sample input"
-        },
-        {
-            "file_path" : "squares",
-            "inventory_order" : 150,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : true,
-            "entry_text" : "sample input"
-        },
-        {
-            "file_path" : "stars",
-            "inventory_order" : 150,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : true,
-            "entry_text" : "sample input"
-        },
-        {
-            "file_path" : "stars2",
-            "inventory_order" : 150,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : true,
-            "entry_text" : "sample input"
-        },
-        {
-            "file_path" : "tree",
-            "inventory_order" : 150,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : true,
-            "entry_text" : "sample input"
-        },
-        {
-            "file_path" : "tree2",
-            "inventory_order" : 150,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : true,
-            "entry_text" : "sample input"
-        },
-        {
-            "file_path" : "tree3",
-            "inventory_order" : 150,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : true,
-            "entry_text" : "sample input"
-        },
-        {
-            "file_path" : "tree4",
-            "inventory_order" : 150,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : true,
-            "entry_text" : "sample input"
-        },
-        {
-            "file_path" : "triangle",
-            "inventory_order" : 150,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : true,
-            "entry_text" : "sample input"
-        },
-        {
-            "file_path" : "2006_stewart.tar.bz2",
-            "inventory_order" : 1415926535,
-            "OK_to_edit" : false,
-            "display_as" : "tbz2",
-            "display_via_github" : false,
-            "entry_text" : "download entry tarball"
-        },
-        {
-            "file_path" : ".entry.json",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : true,
-            "display_as" : "json",
-            "display_via_github" : true,
-            "entry_text" : "entry summary and manifest in JSON"
-        },
-        {
-            "file_path" : ".gitignore",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : true,
-            "display_as" : "gitignore",
-            "display_via_github" : true,
-            "entry_text" : "list of files that should not be committed under git"
-        },
-        {
-            "file_path" : ".path",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : false,
-            "display_as" : "path",
-            "display_via_github" : true,
-            "entry_text" : "directory path from top level directory"
-        },
-        {
-            "file_path" : "README.md",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : true,
-            "display_as" : "markdown",
-            "display_via_github" : true,
-            "entry_text" : "markdown source for this web page"
-        },
-        {
-            "file_path" : "index.html",
-            "inventory_order" : 4294967295,
-            "OK_to_edit" : false,
-            "display_as" : "html",
-            "display_via_github" : false,
-            "entry_text" : "this web page"
-        }
+	{
+	    "file_path" : "stewart.c",
+	    "inventory_order" : 20,
+	    "OK_to_edit" : true,
+	    "display_as" : "c",
+	    "display_via_github" : true,
+	    "entry_text" : "entry source code"
+	},
+	{
+	    "file_path" : "Makefile",
+	    "inventory_order" : 30,
+	    "OK_to_edit" : true,
+	    "display_as" : "makefile",
+	    "display_via_github" : true,
+	    "entry_text" : "entry Makefile"
+	},
+	{
+	    "file_path" : "stewart.orig.c",
+	    "inventory_order" : 50,
+	    "OK_to_edit" : true,
+	    "display_as" : "c",
+	    "display_via_github" : true,
+	    "entry_text" : "original source code"
+	},
+	{
+	    "file_path" : "build",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "shellscript",
+	    "display_via_github" : true,
+	    "entry_text" : "how to compile"
+	},
+	{
+	    "file_path" : "try.sh",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "shellscript",
+	    "display_via_github" : true,
+	    "entry_text" : "script to try entry"
+	},
+	{
+	    "file_path" : "altar",
+	    "inventory_order" : 150,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "sample input"
+	},
+	{
+	    "file_path" : "box",
+	    "inventory_order" : 150,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "sample input"
+	},
+	{
+	    "file_path" : "box2",
+	    "inventory_order" : 150,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "sample input"
+	},
+	{
+	    "file_path" : "box3",
+	    "inventory_order" : 150,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "sample input"
+	},
+	{
+	    "file_path" : "carpet",
+	    "inventory_order" : 150,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "sample input"
+	},
+	{
+	    "file_path" : "circles",
+	    "inventory_order" : 150,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "sample input"
+	},
+	{
+	    "file_path" : "cross",
+	    "inventory_order" : 150,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "sample input"
+	},
+	{
+	    "file_path" : "cross2",
+	    "inventory_order" : 150,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "sample input"
+	},
+	{
+	    "file_path" : "cross3",
+	    "inventory_order" : 150,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "sample input"
+	},
+	{
+	    "file_path" : "crystal",
+	    "inventory_order" : 150,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "sample input"
+	},
+	{
+	    "file_path" : "curve",
+	    "inventory_order" : 150,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "sample input"
+	},
+	{
+	    "file_path" : "diamonds",
+	    "inventory_order" : 150,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "sample input"
+	},
+	{
+	    "file_path" : "diamonds2",
+	    "inventory_order" : 150,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "sample input"
+	},
+	{
+	    "file_path" : "dragon",
+	    "inventory_order" : 150,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "sample input"
+	},
+	{
+	    "file_path" : "dragon2",
+	    "inventory_order" : 150,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "sample input"
+	},
+	{
+	    "file_path" : "dragon3",
+	    "inventory_order" : 150,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "sample input"
+	},
+	{
+	    "file_path" : "fern",
+	    "inventory_order" : 150,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "sample input"
+	},
+	{
+	    "file_path" : "gasket",
+	    "inventory_order" : 150,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "sample input"
+	},
+	{
+	    "file_path" : "gasket_mod",
+	    "inventory_order" : 150,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "sample input"
+	},
+	{
+	    "file_path" : "gasket_mod2",
+	    "inventory_order" : 150,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "sample input"
+	},
+	{
+	    "file_path" : "ioccc",
+	    "inventory_order" : 150,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "sample input"
+	},
+	{
+	    "file_path" : "maze",
+	    "inventory_order" : 150,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "sample input"
+	},
+	{
+	    "file_path" : "octagon",
+	    "inventory_order" : 150,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "sample input"
+	},
+	{
+	    "file_path" : "pentagon",
+	    "inventory_order" : 150,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "sample input"
+	},
+	{
+	    "file_path" : "pentagons",
+	    "inventory_order" : 150,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "sample input"
+	},
+	{
+	    "file_path" : "rings",
+	    "inventory_order" : 150,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "sample input"
+	},
+	{
+	    "file_path" : "rings2",
+	    "inventory_order" : 150,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "sample input"
+	},
+	{
+	    "file_path" : "spirals",
+	    "inventory_order" : 150,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "sample input"
+	},
+	{
+	    "file_path" : "spirals2",
+	    "inventory_order" : 150,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "sample input"
+	},
+	{
+	    "file_path" : "spirals3",
+	    "inventory_order" : 150,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "sample input"
+	},
+	{
+	    "file_path" : "spirals4",
+	    "inventory_order" : 150,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "sample input"
+	},
+	{
+	    "file_path" : "squares",
+	    "inventory_order" : 150,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "sample input"
+	},
+	{
+	    "file_path" : "stars",
+	    "inventory_order" : 150,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "sample input"
+	},
+	{
+	    "file_path" : "stars2",
+	    "inventory_order" : 150,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "sample input"
+	},
+	{
+	    "file_path" : "tree",
+	    "inventory_order" : 150,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "sample input"
+	},
+	{
+	    "file_path" : "tree2",
+	    "inventory_order" : 150,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "sample input"
+	},
+	{
+	    "file_path" : "tree3",
+	    "inventory_order" : 150,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "sample input"
+	},
+	{
+	    "file_path" : "tree4",
+	    "inventory_order" : 150,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "sample input"
+	},
+	{
+	    "file_path" : "triangle",
+	    "inventory_order" : 150,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "sample input"
+	},
+	{
+	    "file_path" : "2006_stewart.tar.bz2",
+	    "inventory_order" : 1415926535,
+	    "OK_to_edit" : false,
+	    "display_as" : "tbz2",
+	    "display_via_github" : false,
+	    "entry_text" : "download entry tarball"
+	},
+	{
+	    "file_path" : ".entry.json",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "json",
+	    "display_via_github" : true,
+	    "entry_text" : "entry summary and manifest in JSON"
+	},
+	{
+	    "file_path" : ".gitignore",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "gitignore",
+	    "display_via_github" : true,
+	    "entry_text" : "list of files that should not be committed under git"
+	},
+	{
+	    "file_path" : ".path",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : false,
+	    "display_as" : "path",
+	    "display_via_github" : true,
+	    "entry_text" : "directory path from top level directory"
+	},
+	{
+	    "file_path" : "README.md",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "markdown",
+	    "display_via_github" : true,
+	    "entry_text" : "markdown source for this web page"
+	},
+	{
+	    "file_path" : "index.html",
+	    "inventory_order" : 4294967295,
+	    "OK_to_edit" : false,
+	    "display_as" : "html",
+	    "display_via_github" : false,
+	    "entry_text" : "this web page"
+	}
     ]
 }

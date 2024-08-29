@@ -6,210 +6,208 @@
     "dir" : "kopczynski",
     "entry_id" : "2004_kopczynski",
     "author_set" : [
-        {
-            "author_handle" : "Eryk_Kopczynski"
-        }
+	{ "author_handle" : "Eryk_Kopczynski" }
     ],
     "manifest" : [
-        {
-            "file_path" : "kopczynski.c",
-            "inventory_order" : 20,
-            "OK_to_edit" : true,
-            "display_as" : "c",
-            "display_via_github" : true,
-            "entry_text" : "entry source code"
-        },
-        {
-            "file_path" : "Makefile",
-            "inventory_order" : 30,
-            "OK_to_edit" : true,
-            "display_as" : "makefile",
-            "display_via_github" : true,
-            "entry_text" : "entry Makefile"
-        },
-        {
-            "file_path" : "kopczynski.alt.c",
-            "inventory_order" : 40,
-            "OK_to_edit" : true,
-            "display_as" : "c",
-            "display_via_github" : true,
-            "entry_text" : "alternate source code"
-        },
-        {
-            "file_path" : "kopczynski.orig.c",
-            "inventory_order" : 50,
-            "OK_to_edit" : false,
-            "display_as" : "c",
-            "display_via_github" : true,
-            "entry_text" : "original source code"
-        },
-        {
-            "file_path" : "kopczynski-10",
-            "inventory_order" : 100,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : true,
-            "entry_text" : "ASCII file with number 10 drawn to recognize"
-        },
-        {
-            "file_path" : "kopczynski-10-rev",
-            "inventory_order" : 100,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : true,
-            "entry_text" : "ASCII file with number 10 drawn reversed to recognize"
-        },
-        {
-            "file_path" : "kopczynski-11",
-            "inventory_order" : 100,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : true,
-            "entry_text" : "ASCII file with number 11 drawn to recognize"
-        },
-        {
-            "file_path" : "kopczynski-11-rev",
-            "inventory_order" : 100,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : true,
-            "entry_text" : "ASCII file with number 11 drawn reversed to recognize"
-        },
-        {
-            "file_path" : "kopczynski-8a",
-            "inventory_order" : 100,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : true,
-            "entry_text" : "ASCII file with number 8 drawn to recognize"
-        },
-        {
-            "file_path" : "kopczynski-8a-rev",
-            "inventory_order" : 100,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : true,
-            "entry_text" : "ASCII file with number 8 drawn reversed to recognize"
-        },
-        {
-            "file_path" : "kopczynski-8b",
-            "inventory_order" : 100,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : true,
-            "entry_text" : "ASCII file with number 8 drawn to recognize"
-        },
-        {
-            "file_path" : "kopczynski-8b-rev",
-            "inventory_order" : 100,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : true,
-            "entry_text" : "ASCII file with number 8 drawn reversed to recognize"
-        },
-        {
-            "file_path" : "kopczynski-8c",
-            "inventory_order" : 100,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : true,
-            "entry_text" : "ASCII file with number 8 drawn to to recognize"
-        },
-        {
-            "file_path" : "kopczynski-8c-rev",
-            "inventory_order" : 100,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : true,
-            "entry_text" : "ASCII file with number 8 drawn reversed to recognize"
-        },
-        {
-            "file_path" : "kopczynski-9",
-            "inventory_order" : 100,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : true,
-            "entry_text" : "ASCII file with number 9 drawn to recognize"
-        },
-        {
-            "file_path" : "kopczynski-9-rev",
-            "inventory_order" : 100,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : true,
-            "entry_text" : "ASCII file with number 9 drawn reversed to recognize"
-        },
-        {
-            "file_path" : "kopczynski-a",
-            "inventory_order" : 100,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : true,
-            "entry_text" : "ASCII file with letter A drawn to recognize"
-        },
-        {
-            "file_path" : "kopczynski-a-rev",
-            "inventory_order" : 100,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : true,
-            "entry_text" : "ASCII file with letter A reversed to to recognize"
-        },
-        {
-            "file_path" : "try.sh",
-            "inventory_order" : 100,
-            "OK_to_edit" : true,
-            "display_as" : "shellscript",
-            "display_via_github" : true,
-            "entry_text" : "script to try entry"
-        },
-        {
-            "file_path" : "2004_kopczynski.tar.bz2",
-            "inventory_order" : 1415926535,
-            "OK_to_edit" : false,
-            "display_as" : "tbz2",
-            "display_via_github" : false,
-            "entry_text" : "download entry tarball"
-        },
-        {
-            "file_path" : ".entry.json",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : true,
-            "display_as" : "json",
-            "display_via_github" : true,
-            "entry_text" : "entry summary and manifest in JSON"
-        },
-        {
-            "file_path" : ".gitignore",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : true,
-            "display_as" : "gitignore",
-            "display_via_github" : true,
-            "entry_text" : "list of files that should not be committed under git"
-        },
-        {
-            "file_path" : ".path",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : false,
-            "display_as" : "path",
-            "display_via_github" : true,
-            "entry_text" : "directory path from top level directory"
-        },
-        {
-            "file_path" : "README.md",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : true,
-            "display_as" : "markdown",
-            "display_via_github" : true,
-            "entry_text" : "markdown source for this web page"
-        },
-        {
-            "file_path" : "index.html",
-            "inventory_order" : 4294967295,
-            "OK_to_edit" : false,
-            "display_as" : "html",
-            "display_via_github" : false,
-            "entry_text" : "this web page"
-        }
+	{
+	    "file_path" : "kopczynski.c",
+	    "inventory_order" : 20,
+	    "OK_to_edit" : true,
+	    "display_as" : "c",
+	    "display_via_github" : true,
+	    "entry_text" : "entry source code"
+	},
+	{
+	    "file_path" : "Makefile",
+	    "inventory_order" : 30,
+	    "OK_to_edit" : true,
+	    "display_as" : "makefile",
+	    "display_via_github" : true,
+	    "entry_text" : "entry Makefile"
+	},
+	{
+	    "file_path" : "kopczynski.alt.c",
+	    "inventory_order" : 40,
+	    "OK_to_edit" : true,
+	    "display_as" : "c",
+	    "display_via_github" : true,
+	    "entry_text" : "alternate source code"
+	},
+	{
+	    "file_path" : "kopczynski.orig.c",
+	    "inventory_order" : 50,
+	    "OK_to_edit" : false,
+	    "display_as" : "c",
+	    "display_via_github" : true,
+	    "entry_text" : "original source code"
+	},
+	{
+	    "file_path" : "kopczynski-10",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "ASCII file with number 10 drawn to recognize"
+	},
+	{
+	    "file_path" : "kopczynski-10-rev",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "ASCII file with number 10 drawn reversed to recognize"
+	},
+	{
+	    "file_path" : "kopczynski-11",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "ASCII file with number 11 drawn to recognize"
+	},
+	{
+	    "file_path" : "kopczynski-11-rev",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "ASCII file with number 11 drawn reversed to recognize"
+	},
+	{
+	    "file_path" : "kopczynski-8a",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "ASCII file with number 8 drawn to recognize"
+	},
+	{
+	    "file_path" : "kopczynski-8a-rev",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "ASCII file with number 8 drawn reversed to recognize"
+	},
+	{
+	    "file_path" : "kopczynski-8b",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "ASCII file with number 8 drawn to recognize"
+	},
+	{
+	    "file_path" : "kopczynski-8b-rev",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "ASCII file with number 8 drawn reversed to recognize"
+	},
+	{
+	    "file_path" : "kopczynski-8c",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "ASCII file with number 8 drawn to to recognize"
+	},
+	{
+	    "file_path" : "kopczynski-8c-rev",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "ASCII file with number 8 drawn reversed to recognize"
+	},
+	{
+	    "file_path" : "kopczynski-9",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "ASCII file with number 9 drawn to recognize"
+	},
+	{
+	    "file_path" : "kopczynski-9-rev",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "ASCII file with number 9 drawn reversed to recognize"
+	},
+	{
+	    "file_path" : "kopczynski-a",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "ASCII file with letter A drawn to recognize"
+	},
+	{
+	    "file_path" : "kopczynski-a-rev",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "ASCII file with letter A reversed to to recognize"
+	},
+	{
+	    "file_path" : "try.sh",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "shellscript",
+	    "display_via_github" : true,
+	    "entry_text" : "script to try entry"
+	},
+	{
+	    "file_path" : "2004_kopczynski.tar.bz2",
+	    "inventory_order" : 1415926535,
+	    "OK_to_edit" : false,
+	    "display_as" : "tbz2",
+	    "display_via_github" : false,
+	    "entry_text" : "download entry tarball"
+	},
+	{
+	    "file_path" : ".entry.json",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "json",
+	    "display_via_github" : true,
+	    "entry_text" : "entry summary and manifest in JSON"
+	},
+	{
+	    "file_path" : ".gitignore",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "gitignore",
+	    "display_via_github" : true,
+	    "entry_text" : "list of files that should not be committed under git"
+	},
+	{
+	    "file_path" : ".path",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : false,
+	    "display_as" : "path",
+	    "display_via_github" : true,
+	    "entry_text" : "directory path from top level directory"
+	},
+	{
+	    "file_path" : "README.md",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "markdown",
+	    "display_via_github" : true,
+	    "entry_text" : "markdown source for this web page"
+	},
+	{
+	    "file_path" : "index.html",
+	    "inventory_order" : 4294967295,
+	    "OK_to_edit" : false,
+	    "display_as" : "html",
+	    "display_via_github" : false,
+	    "entry_text" : "this web page"
+	}
     ]
 }

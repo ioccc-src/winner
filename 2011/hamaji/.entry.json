@@ -6,197 +6,193 @@
     "dir" : "hamaji",
     "entry_id" : "2011_hamaji",
     "author_set" : [
-        {
-            "author_handle" : "Bsoup"
-        },
-        {
-            "author_handle" : "Shinichiro_Hamaji"
-        }
+	{ "author_handle" : "Bsoup" },
+	{ "author_handle" : "Shinichiro_Hamaji" }
     ],
     "manifest" : [
-        {
-            "file_path" : "hamaji.c",
-            "inventory_order" : 20,
-            "OK_to_edit" : true,
-            "display_as" : "c",
-            "display_via_github" : true,
-            "entry_text" : "entry source code"
-        },
-        {
-            "file_path" : "Makefile",
-            "inventory_order" : 30,
-            "OK_to_edit" : true,
-            "display_as" : "makefile",
-            "display_via_github" : true,
-            "entry_text" : "entry Makefile"
-        },
-        {
-            "file_path" : "hamaji.orig.c",
-            "inventory_order" : 50,
-            "OK_to_edit" : false,
-            "display_as" : "c",
-            "display_via_github" : true,
-            "entry_text" : "original source code"
-        },
-        {
-            "file_path" : "c2nono.pl",
-            "inventory_order" : 100,
-            "OK_to_edit" : true,
-            "display_as" : "perl",
-            "display_via_github" : true,
-            "entry_text" : "perl script to reproduce dragon.nono"
-        },
-        {
-            "file_path" : "codegolf.nono",
-            "inventory_order" : 100,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : true,
-            "entry_text" : "nonogram input data"
-        },
-        {
-            "file_path" : "conway-game-of-life.nono",
-            "inventory_order" : 100,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : true,
-            "entry_text" : "nonogram input data"
-        },
-        {
-            "file_path" : "dragon.nono",
-            "inventory_order" : 100,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : true,
-            "entry_text" : "nonogram input data"
-        },
-        {
-            "file_path" : "face.nono",
-            "inventory_order" : 100,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : true,
-            "entry_text" : "nonogram input data"
-        },
-        {
-            "file_path" : "multi-solutions.nono",
-            "inventory_order" : 100,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : true,
-            "entry_text" : "nonogram input data"
-        },
-        {
-            "file_path" : "no-solution.nono",
-            "inventory_order" : 100,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : true,
-            "entry_text" : "nonogram input data"
-        },
-        {
-            "file_path" : "penguin.nono",
-            "inventory_order" : 100,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : true,
-            "entry_text" : "nonogram input data"
-        },
-        {
-            "file_path" : "plus.nono",
-            "inventory_order" : 100,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : true,
-            "entry_text" : "nonogram input data"
-        },
-        {
-            "file_path" : "random.nono",
-            "inventory_order" : 100,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : true,
-            "entry_text" : "nonogram input data"
-        },
-        {
-            "file_path" : "samurai.nono",
-            "inventory_order" : 100,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : true,
-            "entry_text" : "nonogram input data"
-        },
-        {
-            "file_path" : "smiley.nono",
-            "inventory_order" : 100,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : true,
-            "entry_text" : "nonogram input data"
-        },
-        {
-            "file_path" : "soccer.nono",
-            "inventory_order" : 100,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : true,
-            "entry_text" : "nonogram input data"
-        },
-        {
-            "file_path" : "try.sh",
-            "inventory_order" : 100,
-            "OK_to_edit" : true,
-            "display_as" : "shellscript",
-            "display_via_github" : true,
-            "entry_text" : "script to try entry"
-        },
-        {
-            "file_path" : "2011_hamaji.tar.bz2",
-            "inventory_order" : 1415926535,
-            "OK_to_edit" : false,
-            "display_as" : "tbz2",
-            "display_via_github" : false,
-            "entry_text" : "download entry tarball"
-        },
-        {
-            "file_path" : ".entry.json",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : true,
-            "display_as" : "json",
-            "display_via_github" : true,
-            "entry_text" : "entry summary and manifest in JSON"
-        },
-        {
-            "file_path" : ".gitignore",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : true,
-            "display_as" : "gitignore",
-            "display_via_github" : true,
-            "entry_text" : "list of files that should not be committed under git"
-        },
-        {
-            "file_path" : ".path",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : false,
-            "display_as" : "path",
-            "display_via_github" : true,
-            "entry_text" : "directory path from top level directory"
-        },
-        {
-            "file_path" : "README.md",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : true,
-            "display_as" : "markdown",
-            "display_via_github" : true,
-            "entry_text" : "markdown source for this web page"
-        },
-        {
-            "file_path" : "index.html",
-            "inventory_order" : 4294967295,
-            "OK_to_edit" : false,
-            "display_as" : "html",
-            "display_via_github" : false,
-            "entry_text" : "this web page"
-        }
+	{
+	    "file_path" : "hamaji.c",
+	    "inventory_order" : 20,
+	    "OK_to_edit" : true,
+	    "display_as" : "c",
+	    "display_via_github" : true,
+	    "entry_text" : "entry source code"
+	},
+	{
+	    "file_path" : "Makefile",
+	    "inventory_order" : 30,
+	    "OK_to_edit" : true,
+	    "display_as" : "makefile",
+	    "display_via_github" : true,
+	    "entry_text" : "entry Makefile"
+	},
+	{
+	    "file_path" : "hamaji.orig.c",
+	    "inventory_order" : 50,
+	    "OK_to_edit" : false,
+	    "display_as" : "c",
+	    "display_via_github" : true,
+	    "entry_text" : "original source code"
+	},
+	{
+	    "file_path" : "c2nono.pl",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "perl",
+	    "display_via_github" : true,
+	    "entry_text" : "perl script to reproduce dragon.nono"
+	},
+	{
+	    "file_path" : "codegolf.nono",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "nonogram input data"
+	},
+	{
+	    "file_path" : "conway-game-of-life.nono",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "nonogram input data"
+	},
+	{
+	    "file_path" : "dragon.nono",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "nonogram input data"
+	},
+	{
+	    "file_path" : "face.nono",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "nonogram input data"
+	},
+	{
+	    "file_path" : "multi-solutions.nono",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "nonogram input data"
+	},
+	{
+	    "file_path" : "no-solution.nono",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "nonogram input data"
+	},
+	{
+	    "file_path" : "penguin.nono",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "nonogram input data"
+	},
+	{
+	    "file_path" : "plus.nono",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "nonogram input data"
+	},
+	{
+	    "file_path" : "random.nono",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "nonogram input data"
+	},
+	{
+	    "file_path" : "samurai.nono",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "nonogram input data"
+	},
+	{
+	    "file_path" : "smiley.nono",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "nonogram input data"
+	},
+	{
+	    "file_path" : "soccer.nono",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "nonogram input data"
+	},
+	{
+	    "file_path" : "try.sh",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "shellscript",
+	    "display_via_github" : true,
+	    "entry_text" : "script to try entry"
+	},
+	{
+	    "file_path" : "2011_hamaji.tar.bz2",
+	    "inventory_order" : 1415926535,
+	    "OK_to_edit" : false,
+	    "display_as" : "tbz2",
+	    "display_via_github" : false,
+	    "entry_text" : "download entry tarball"
+	},
+	{
+	    "file_path" : ".entry.json",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "json",
+	    "display_via_github" : true,
+	    "entry_text" : "entry summary and manifest in JSON"
+	},
+	{
+	    "file_path" : ".gitignore",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "gitignore",
+	    "display_via_github" : true,
+	    "entry_text" : "list of files that should not be committed under git"
+	},
+	{
+	    "file_path" : ".path",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : false,
+	    "display_as" : "path",
+	    "display_via_github" : true,
+	    "entry_text" : "directory path from top level directory"
+	},
+	{
+	    "file_path" : "README.md",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "markdown",
+	    "display_via_github" : true,
+	    "entry_text" : "markdown source for this web page"
+	},
+	{
+	    "file_path" : "index.html",
+	    "inventory_order" : 4294967295,
+	    "OK_to_edit" : false,
+	    "display_as" : "html",
+	    "display_via_github" : false,
+	    "entry_text" : "this web page"
+	}
     ]
 }

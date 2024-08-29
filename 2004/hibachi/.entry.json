@@ -6,714 +6,712 @@
     "dir" : "hibachi",
     "entry_id" : "2004_hibachi",
     "author_set" : [
-        {
-            "author_handle" : "Anthony_C_Howe"
-        }
+	{ "author_handle" : "Anthony_C_Howe" }
     ],
     "manifest" : [
-        {
-            "file_path" : "hibachi.alt.c",
-            "inventory_order" : 20,
-            "OK_to_edit" : true,
-            "display_as" : "c",
-            "display_via_github" : true,
-            "entry_text" : "author provided unobfuscated code"
-        },
-        {
-            "file_path" : "hibachi.c",
-            "inventory_order" : 20,
-            "OK_to_edit" : true,
-            "display_as" : "c",
-            "display_via_github" : true,
-            "entry_text" : "entry source code"
-        },
-        {
-            "file_path" : "Makefile",
-            "inventory_order" : 30,
-            "OK_to_edit" : true,
-            "display_as" : "makefile",
-            "display_via_github" : true,
-            "entry_text" : "entry Makefile"
-        },
-        {
-            "file_path" : "hibachi.orig.c",
-            "inventory_order" : 50,
-            "OK_to_edit" : false,
-            "display_as" : "c",
-            "display_via_github" : true,
-            "entry_text" : "original source code"
-        },
-        {
-            "file_path" : "src-alt/configure",
-            "inventory_order" : 100,
-            "OK_to_edit" : true,
-            "display_as" : "shellscript",
-            "display_via_github" : true,
-            "entry_text" : "GNU Autoconf script for alt server"
-        },
-        {
-            "file_path" : "src-alt/localhost/index.html",
-            "inventory_order" : 100,
-            "OK_to_edit" : true,
-            "display_as" : "html",
-            "display_via_github" : false,
-            "entry_text" : "home page of alt hibachi alt web server"
-        },
-        {
-            "file_path" : "src/configure",
-            "inventory_order" : 100,
-            "OK_to_edit" : true,
-            "display_as" : "shellscript",
-            "display_via_github" : true,
-            "entry_text" : "GNU Autoconf script"
-        },
-        {
-            "file_path" : "src/localhost/index.html",
-            "inventory_order" : 100,
-            "OK_to_edit" : true,
-            "display_as" : "html",
-            "display_via_github" : false,
-            "entry_text" : "home page of alt hibachi web server"
-        },
-        {
-            "file_path" : "src-alt/IOCCC-2004/mkentry.c",
-            "inventory_order" : 120,
-            "OK_to_edit" : true,
-            "display_as" : "c",
-            "display_via_github" : true,
-            "entry_text" : "IOCCC tool of 2004 to package entries"
-        },
-        {
-            "file_path" : "src-alt/ioccc.c",
-            "inventory_order" : 120,
-            "OK_to_edit" : true,
-            "display_as" : "c",
-            "display_via_github" : true,
-            "entry_text" : "IOCCC size tool"
-        },
-        {
-            "file_path" : "src-alt/localhost/reference/rfc2616.html",
-            "inventory_order" : 125,
-            "OK_to_edit" : true,
-            "display_as" : "html",
-            "display_via_github" : false,
-            "entry_text" : "RFC 2616 - Hypertext Transfer Protocol - alt server"
-        },
-        {
-            "file_path" : "src-alt/localhost/test/perl/index.html",
-            "inventory_order" : 125,
-            "OK_to_edit" : true,
-            "display_as" : "html",
-            "display_via_github" : false,
-            "entry_text" : "perl test page of alt hibachi server"
-        },
-        {
-            "file_path" : "src-alt/localhost/test/php/index.php",
-            "inventory_order" : 125,
-            "OK_to_edit" : true,
-            "display_as" : "php",
-            "display_via_github" : true,
-            "entry_text" : "PHP making an ISO 8601:2000 calendar for alt server"
-        },
-        {
-            "file_path" : "src-alt/localhost/test/ruby/index.rb",
-            "inventory_order" : 125,
-            "OK_to_edit" : true,
-            "display_as" : "ruby",
-            "display_via_github" : true,
-            "entry_text" : "ruby home page for alt server"
-        },
-        {
-            "file_path" : "src-alt/localhost/test/shell/test0.sh",
-            "inventory_order" : 125,
-            "OK_to_edit" : true,
-            "display_as" : "shellscript",
-            "display_via_github" : true,
-            "entry_text" : "POSIX shell CGI home page for alt server"
-        },
-        {
-            "file_path" : "src/localhost/CHANGES-OBFUSCATED.TXT",
-            "inventory_order" : 125,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "obfuscated changelog for hibachi"
-        },
-        {
-            "file_path" : "src/localhost/reference/rfc2616.html",
-            "inventory_order" : 125,
-            "OK_to_edit" : true,
-            "display_as" : "html",
-            "display_via_github" : false,
-            "entry_text" : "RFC 2616 - Hypertext Transfer Protocol"
-        },
-        {
-            "file_path" : "src/localhost/test/perl/index.html",
-            "inventory_order" : 125,
-            "OK_to_edit" : true,
-            "display_as" : "html",
-            "display_via_github" : false,
-            "entry_text" : "perl test page of hibachi server"
-        },
-        {
-            "file_path" : "src/localhost/test/php/index.php",
-            "inventory_order" : 125,
-            "OK_to_edit" : true,
-            "display_as" : "php",
-            "display_via_github" : true,
-            "entry_text" : "PHP making an ISO 8601:2000 calendar"
-        },
-        {
-            "file_path" : "src/localhost/test/ruby/index.rb",
-            "inventory_order" : 125,
-            "OK_to_edit" : true,
-            "display_as" : "ruby",
-            "display_via_github" : true,
-            "entry_text" : "ruby home page"
-        },
-        {
-            "file_path" : "src/localhost/test/shell/test0.sh",
-            "inventory_order" : 125,
-            "OK_to_edit" : true,
-            "display_as" : "shellscript",
-            "display_via_github" : true,
-            "entry_text" : "POSIX shell CGI home page"
-        },
-        {
-            "file_path" : "src-alt/transform.sed",
-            "inventory_order" : 130,
-            "OK_to_edit" : true,
-            "display_as" : "sed",
-            "display_via_github" : true,
-            "entry_text" : "sed(1) script for building unobfuscated code"
-        },
-        {
-            "file_path" : "src-alt/hibachi-start.sh",
-            "inventory_order" : 150,
-            "OK_to_edit" : true,
-            "display_as" : "shellscript",
-            "display_via_github" : true,
-            "entry_text" : "start the alt web server"
-        },
-        {
-            "file_path" : "src-alt/localhost/test/perl/yahoo-ticker.pl",
-            "inventory_order" : 150,
-            "OK_to_edit" : true,
-            "display_as" : "perl",
-            "display_via_github" : true,
-            "entry_text" : "stock price fetch example in Perl for alt server"
-        },
-        {
-            "file_path" : "src/hibachi-start.sh",
-            "inventory_order" : 150,
-            "OK_to_edit" : true,
-            "display_as" : "shellscript",
-            "display_via_github" : true,
-            "entry_text" : "start the web server"
-        },
-        {
-            "file_path" : "src/localhost/test/perl/yahoo-ticker.pl",
-            "inventory_order" : 150,
-            "OK_to_edit" : true,
-            "display_as" : "perl",
-            "display_via_github" : true,
-            "entry_text" : "stock price fetch example in Perl"
-        },
-        {
-            "file_path" : "src-alt/configure.in",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "shellscript",
-            "display_via_github" : true,
-            "entry_text" : "GNU Autoconf script for alt server"
-        },
-        {
-            "file_path" : "src-alt/hibachi-start.sh.in",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "shellscript",
-            "display_via_github" : true,
-            "entry_text" : "hibachi-start.sh declarations for alt server"
-        },
-        {
-            "file_path" : "src-alt/localhost/CHANGELOG.TXT",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "changelog for hibachi alt code"
-        },
-        {
-            "file_path" : "src/configure.in",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "shellscript",
-            "display_via_github" : true,
-            "entry_text" : "GNU Autoconf script"
-        },
-        {
-            "file_path" : "src/hibachi-start.sh.in",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "shellscript",
-            "display_via_github" : true,
-            "entry_text" : "hibachi-start.sh declarations"
-        },
-        {
-            "file_path" : "src/localhost/CHANGELOG.TXT",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "changelog for hibachi"
-        },
-        {
-            "file_path" : "2004_hibachi.tar.bz2",
-            "inventory_order" : 1415926535,
-            "OK_to_edit" : false,
-            "display_as" : "tbz2",
-            "display_via_github" : false,
-            "entry_text" : "download entry tarball"
-        },
-        {
-            "file_path" : ".entry.json",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : true,
-            "display_as" : "json",
-            "display_via_github" : true,
-            "entry_text" : "entry summary and manifest in JSON"
-        },
-        {
-            "file_path" : ".gitignore",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : true,
-            "display_as" : "gitignore",
-            "display_via_github" : true,
-            "entry_text" : "list of files that should not be committed under git"
-        },
-        {
-            "file_path" : ".path",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : false,
-            "display_as" : "path",
-            "display_via_github" : true,
-            "entry_text" : "directory path from top level directory"
-        },
-        {
-            "file_path" : "README.md",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : true,
-            "display_as" : "markdown",
-            "display_via_github" : true,
-            "entry_text" : "markdown source for this web page"
-        },
-        {
-            "file_path" : "src-alt/localhost/Img/cygwin-icon.gif",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : true,
-            "display_as" : "image",
-            "display_via_github" : false,
-            "entry_text" : "image for home page for alt server"
-        },
-        {
-            "file_path" : "src-alt/localhost/Img/freebsd.gif",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : true,
-            "display_as" : "image",
-            "display_via_github" : false,
-            "entry_text" : "image for home page for alt server"
-        },
-        {
-            "file_path" : "src-alt/localhost/Img/hibachi-256-oc-nc-300x150.gif",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : true,
-            "display_as" : "image",
-            "display_via_github" : false,
-            "entry_text" : "image for home page for alt server"
-        },
-        {
-            "file_path" : "src-alt/localhost/Img/hot-coal-edge-110-indent.png",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : true,
-            "display_as" : "image",
-            "display_via_github" : false,
-            "entry_text" : "image for home page for alt server"
-        },
-        {
-            "file_path" : "src-alt/localhost/Img/logosml.256.png",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : true,
-            "display_as" : "image",
-            "display_via_github" : false,
-            "entry_text" : "image for home page for alt server"
-        },
-        {
-            "file_path" : "src-alt/localhost/Img/php-small-trans-light.gif",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : true,
-            "display_as" : "image",
-            "display_via_github" : false,
-            "entry_text" : "image for home page for alt server"
-        },
-        {
-            "file_path" : "src-alt/localhost/Img/powered-by-hibachi-150x75.png",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : true,
-            "display_as" : "image",
-            "display_via_github" : false,
-            "entry_text" : "image for home page for alt server"
-        },
-        {
-            "file_path" : "src-alt/localhost/Img/rectangle_power_perl.gif",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : true,
-            "display_as" : "image",
-            "display_via_github" : false,
-            "entry_text" : "image for home page for alt server"
-        },
-        {
-            "file_path" : "src-alt/localhost/Img/sun_logo.gif",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : true,
-            "display_as" : "image",
-            "display_via_github" : false,
-            "entry_text" : "image for home page for alt server"
-        },
-        {
-            "file_path" : "src-alt/localhost/Img/win.gif",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : true,
-            "display_as" : "image",
-            "display_via_github" : false,
-            "entry_text" : "image for home page for alt server"
-        },
-        {
-            "file_path" : "src-alt/localhost/style.css",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : true,
-            "display_as" : "css",
-            "display_via_github" : true,
-            "entry_text" : "CSS for home page for alt server"
-        },
-        {
-            "file_path" : "src-alt/localhost/test/perl/yahoo-ticker.pl.in",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : true,
-            "display_as" : "perl",
-            "display_via_github" : true,
-            "entry_text" : "stock price fetch declarations for alt server"
-        },
-        {
-            "file_path" : "src-alt/localhost/test/php/Date.php",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : true,
-            "display_as" : "php",
-            "display_via_github" : true,
-            "entry_text" : "PHP example page support file for alt server"
-        },
-        {
-            "file_path" : "src-alt/localhost/test/php/index_php.in",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : true,
-            "display_as" : "php",
-            "display_via_github" : true,
-            "entry_text" : "PHP example page support file for alt server"
-        },
-        {
-            "file_path" : "src-alt/localhost/test/php/info.php",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : true,
-            "display_as" : "php",
-            "display_via_github" : true,
-            "entry_text" : "PHP example support file for alt server"
-        },
-        {
-            "file_path" : "src-alt/localhost/test/php/info.php.in",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : true,
-            "display_as" : "php",
-            "display_via_github" : true,
-            "entry_text" : "PHP example page support file for alt server"
-        },
-        {
-            "file_path" : "src-alt/localhost/test/php/sendform.html",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : true,
-            "display_as" : "html",
-            "display_via_github" : false,
-            "entry_text" : "php example page support file for alt server"
-        },
-        {
-            "file_path" : "src-alt/localhost/test/php/sendform.php",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : true,
-            "display_as" : "php",
-            "display_via_github" : true,
-            "entry_text" : "PHP example page support file for alt server"
-        },
-        {
-            "file_path" : "src-alt/localhost/test/php/sendform.php.in",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : true,
-            "display_as" : "php",
-            "display_via_github" : true,
-            "entry_text" : "PHP example page support file for alt server"
-        },
-        {
-            "file_path" : "src-alt/localhost/test/ruby/LUHN.rb",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : true,
-            "display_as" : "ruby",
-            "display_via_github" : true,
-            "entry_text" : "ruby example page support file for alt server"
-        },
-        {
-            "file_path" : "src-alt/localhost/test/ruby/index_rb.in",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : true,
-            "display_as" : "ruby",
-            "display_via_github" : true,
-            "entry_text" : "ruby example page support file for alt server"
-        },
-        {
-            "file_path" : "src-alt/localhost/test/shell/dump.sh",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : true,
-            "display_as" : "shellscript",
-            "display_via_github" : true,
-            "entry_text" : "POSIX shell script support file for alt server"
-        },
-        {
-            "file_path" : "src-alt/localhost/test/shell/test1.sh",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : true,
-            "display_as" : "shellscript",
-            "display_via_github" : true,
-            "entry_text" : "POSIX shell script support file for alt server"
-        },
-        {
-            "file_path" : "src-alt/localhost/test/shell/test2.sh",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : true,
-            "display_as" : "shellscript",
-            "display_via_github" : true,
-            "entry_text" : "POSIX shell script support file for alt server"
-        },
-        {
-            "file_path" : "src-alt/makefile.in",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : true,
-            "display_as" : "man",
-            "display_via_github" : true,
-            "entry_text" : "makefile template for alt server"
-        },
-        {
-            "file_path" : "src/localhost/Img/cygwin-icon.gif",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : true,
-            "display_as" : "image",
-            "display_via_github" : false,
-            "entry_text" : "image for home page"
-        },
-        {
-            "file_path" : "src/localhost/Img/freebsd.gif",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : true,
-            "display_as" : "image",
-            "display_via_github" : false,
-            "entry_text" : "image for home page"
-        },
-        {
-            "file_path" : "src/localhost/Img/hibachi-256-oc-nc-300x150.gif",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : true,
-            "display_as" : "image",
-            "display_via_github" : false,
-            "entry_text" : "image for home page"
-        },
-        {
-            "file_path" : "src/localhost/Img/hot-coal-edge-110-indent.png",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : true,
-            "display_as" : "image",
-            "display_via_github" : false,
-            "entry_text" : "image for home page"
-        },
-        {
-            "file_path" : "src/localhost/Img/logosml.256.png",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : true,
-            "display_as" : "image",
-            "display_via_github" : false,
-            "entry_text" : "image for home page"
-        },
-        {
-            "file_path" : "src/localhost/Img/php-small-trans-light.gif",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : true,
-            "display_as" : "image",
-            "display_via_github" : false,
-            "entry_text" : "image for home page"
-        },
-        {
-            "file_path" : "src/localhost/Img/powered-by-hibachi-150x75.png",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : true,
-            "display_as" : "image",
-            "display_via_github" : false,
-            "entry_text" : "image for home page"
-        },
-        {
-            "file_path" : "src/localhost/Img/rectangle_power_perl.gif",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : true,
-            "display_as" : "image",
-            "display_via_github" : false,
-            "entry_text" : "image for home page"
-        },
-        {
-            "file_path" : "src/localhost/Img/sun_logo.gif",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : true,
-            "display_as" : "image",
-            "display_via_github" : false,
-            "entry_text" : "image for home page"
-        },
-        {
-            "file_path" : "src/localhost/Img/win.gif",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : true,
-            "display_as" : "image",
-            "display_via_github" : false,
-            "entry_text" : "image for home page"
-        },
-        {
-            "file_path" : "src/localhost/style.css",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : true,
-            "display_as" : "css",
-            "display_via_github" : true,
-            "entry_text" : "CSS for home page"
-        },
-        {
-            "file_path" : "src/localhost/test/perl/yahoo-ticker.pl.in",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : true,
-            "display_as" : "perl",
-            "display_via_github" : true,
-            "entry_text" : "stock price fetch declarations"
-        },
-        {
-            "file_path" : "src/localhost/test/php/Date.php",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : true,
-            "display_as" : "php",
-            "display_via_github" : true,
-            "entry_text" : "PHP example page support file"
-        },
-        {
-            "file_path" : "src/localhost/test/php/index_php.in",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : true,
-            "display_as" : "php",
-            "display_via_github" : true,
-            "entry_text" : "PHP example page support file"
-        },
-        {
-            "file_path" : "src/localhost/test/php/info.php",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : true,
-            "display_as" : "php",
-            "display_via_github" : true,
-            "entry_text" : "PHP example support file"
-        },
-        {
-            "file_path" : "src/localhost/test/php/info.php.in",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : true,
-            "display_as" : "php",
-            "display_via_github" : true,
-            "entry_text" : "PHP example page support file"
-        },
-        {
-            "file_path" : "src/localhost/test/php/sendform.html",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : true,
-            "display_as" : "html",
-            "display_via_github" : false,
-            "entry_text" : "php example page support file"
-        },
-        {
-            "file_path" : "src/localhost/test/php/sendform.php",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : true,
-            "display_as" : "php",
-            "display_via_github" : true,
-            "entry_text" : "PHP example page support file"
-        },
-        {
-            "file_path" : "src/localhost/test/php/sendform.php.in",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : true,
-            "display_as" : "php",
-            "display_via_github" : true,
-            "entry_text" : "PHP example page support file"
-        },
-        {
-            "file_path" : "src/localhost/test/ruby/LUHN.rb",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : true,
-            "display_as" : "ruby",
-            "display_via_github" : true,
-            "entry_text" : "ruby example page support file"
-        },
-        {
-            "file_path" : "src/localhost/test/ruby/index_rb.in",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : true,
-            "display_as" : "ruby",
-            "display_via_github" : true,
-            "entry_text" : "ruby example page support file"
-        },
-        {
-            "file_path" : "src/localhost/test/shell/dump.sh",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : true,
-            "display_as" : "shellscript",
-            "display_via_github" : true,
-            "entry_text" : "POSIX shell script support file"
-        },
-        {
-            "file_path" : "src/localhost/test/shell/test1.sh",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : true,
-            "display_as" : "shellscript",
-            "display_via_github" : true,
-            "entry_text" : "POSIX shell script support file"
-        },
-        {
-            "file_path" : "src/localhost/test/shell/test2.sh",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : true,
-            "display_as" : "shellscript",
-            "display_via_github" : true,
-            "entry_text" : "POSIX shell script support file"
-        },
-        {
-            "file_path" : "src/makefile.in",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : true,
-            "display_as" : "man",
-            "display_via_github" : true,
-            "entry_text" : "makefile template"
-        },
-        {
-            "file_path" : "index.html",
-            "inventory_order" : 4294967295,
-            "OK_to_edit" : false,
-            "display_as" : "html",
-            "display_via_github" : false,
-            "entry_text" : "this web page"
-        }
+	{
+	    "file_path" : "hibachi.alt.c",
+	    "inventory_order" : 20,
+	    "OK_to_edit" : true,
+	    "display_as" : "c",
+	    "display_via_github" : true,
+	    "entry_text" : "author provided unobfuscated code"
+	},
+	{
+	    "file_path" : "hibachi.c",
+	    "inventory_order" : 20,
+	    "OK_to_edit" : true,
+	    "display_as" : "c",
+	    "display_via_github" : true,
+	    "entry_text" : "entry source code"
+	},
+	{
+	    "file_path" : "Makefile",
+	    "inventory_order" : 30,
+	    "OK_to_edit" : true,
+	    "display_as" : "makefile",
+	    "display_via_github" : true,
+	    "entry_text" : "entry Makefile"
+	},
+	{
+	    "file_path" : "hibachi.orig.c",
+	    "inventory_order" : 50,
+	    "OK_to_edit" : false,
+	    "display_as" : "c",
+	    "display_via_github" : true,
+	    "entry_text" : "original source code"
+	},
+	{
+	    "file_path" : "src-alt/configure",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "shellscript",
+	    "display_via_github" : true,
+	    "entry_text" : "GNU Autoconf script for alt server"
+	},
+	{
+	    "file_path" : "src-alt/localhost/index.html",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "html",
+	    "display_via_github" : false,
+	    "entry_text" : "home page of alt hibachi alt web server"
+	},
+	{
+	    "file_path" : "src/configure",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "shellscript",
+	    "display_via_github" : true,
+	    "entry_text" : "GNU Autoconf script"
+	},
+	{
+	    "file_path" : "src/localhost/index.html",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "html",
+	    "display_via_github" : false,
+	    "entry_text" : "home page of alt hibachi web server"
+	},
+	{
+	    "file_path" : "src-alt/IOCCC-2004/mkentry.c",
+	    "inventory_order" : 120,
+	    "OK_to_edit" : true,
+	    "display_as" : "c",
+	    "display_via_github" : true,
+	    "entry_text" : "IOCCC tool of 2004 to package entries"
+	},
+	{
+	    "file_path" : "src-alt/ioccc.c",
+	    "inventory_order" : 120,
+	    "OK_to_edit" : true,
+	    "display_as" : "c",
+	    "display_via_github" : true,
+	    "entry_text" : "IOCCC size tool"
+	},
+	{
+	    "file_path" : "src-alt/localhost/reference/rfc2616.html",
+	    "inventory_order" : 125,
+	    "OK_to_edit" : true,
+	    "display_as" : "html",
+	    "display_via_github" : false,
+	    "entry_text" : "RFC 2616 - Hypertext Transfer Protocol - alt server"
+	},
+	{
+	    "file_path" : "src-alt/localhost/test/perl/index.html",
+	    "inventory_order" : 125,
+	    "OK_to_edit" : true,
+	    "display_as" : "html",
+	    "display_via_github" : false,
+	    "entry_text" : "perl test page of alt hibachi server"
+	},
+	{
+	    "file_path" : "src-alt/localhost/test/php/index.php",
+	    "inventory_order" : 125,
+	    "OK_to_edit" : true,
+	    "display_as" : "php",
+	    "display_via_github" : true,
+	    "entry_text" : "PHP making an ISO 8601:2000 calendar for alt server"
+	},
+	{
+	    "file_path" : "src-alt/localhost/test/ruby/index.rb",
+	    "inventory_order" : 125,
+	    "OK_to_edit" : true,
+	    "display_as" : "ruby",
+	    "display_via_github" : true,
+	    "entry_text" : "ruby home page for alt server"
+	},
+	{
+	    "file_path" : "src-alt/localhost/test/shell/test0.sh",
+	    "inventory_order" : 125,
+	    "OK_to_edit" : true,
+	    "display_as" : "shellscript",
+	    "display_via_github" : true,
+	    "entry_text" : "POSIX shell CGI home page for alt server"
+	},
+	{
+	    "file_path" : "src/localhost/CHANGES-OBFUSCATED.TXT",
+	    "inventory_order" : 125,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "obfuscated changelog for hibachi"
+	},
+	{
+	    "file_path" : "src/localhost/reference/rfc2616.html",
+	    "inventory_order" : 125,
+	    "OK_to_edit" : true,
+	    "display_as" : "html",
+	    "display_via_github" : false,
+	    "entry_text" : "RFC 2616 - Hypertext Transfer Protocol"
+	},
+	{
+	    "file_path" : "src/localhost/test/perl/index.html",
+	    "inventory_order" : 125,
+	    "OK_to_edit" : true,
+	    "display_as" : "html",
+	    "display_via_github" : false,
+	    "entry_text" : "perl test page of hibachi server"
+	},
+	{
+	    "file_path" : "src/localhost/test/php/index.php",
+	    "inventory_order" : 125,
+	    "OK_to_edit" : true,
+	    "display_as" : "php",
+	    "display_via_github" : true,
+	    "entry_text" : "PHP making an ISO 8601:2000 calendar"
+	},
+	{
+	    "file_path" : "src/localhost/test/ruby/index.rb",
+	    "inventory_order" : 125,
+	    "OK_to_edit" : true,
+	    "display_as" : "ruby",
+	    "display_via_github" : true,
+	    "entry_text" : "ruby home page"
+	},
+	{
+	    "file_path" : "src/localhost/test/shell/test0.sh",
+	    "inventory_order" : 125,
+	    "OK_to_edit" : true,
+	    "display_as" : "shellscript",
+	    "display_via_github" : true,
+	    "entry_text" : "POSIX shell CGI home page"
+	},
+	{
+	    "file_path" : "src-alt/transform.sed",
+	    "inventory_order" : 130,
+	    "OK_to_edit" : true,
+	    "display_as" : "sed",
+	    "display_via_github" : true,
+	    "entry_text" : "sed(1) script for building unobfuscated code"
+	},
+	{
+	    "file_path" : "src-alt/hibachi-start.sh",
+	    "inventory_order" : 150,
+	    "OK_to_edit" : true,
+	    "display_as" : "shellscript",
+	    "display_via_github" : true,
+	    "entry_text" : "start the alt web server"
+	},
+	{
+	    "file_path" : "src-alt/localhost/test/perl/yahoo-ticker.pl",
+	    "inventory_order" : 150,
+	    "OK_to_edit" : true,
+	    "display_as" : "perl",
+	    "display_via_github" : true,
+	    "entry_text" : "stock price fetch example in Perl for alt server"
+	},
+	{
+	    "file_path" : "src/hibachi-start.sh",
+	    "inventory_order" : 150,
+	    "OK_to_edit" : true,
+	    "display_as" : "shellscript",
+	    "display_via_github" : true,
+	    "entry_text" : "start the web server"
+	},
+	{
+	    "file_path" : "src/localhost/test/perl/yahoo-ticker.pl",
+	    "inventory_order" : 150,
+	    "OK_to_edit" : true,
+	    "display_as" : "perl",
+	    "display_via_github" : true,
+	    "entry_text" : "stock price fetch example in Perl"
+	},
+	{
+	    "file_path" : "src-alt/configure.in",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "shellscript",
+	    "display_via_github" : true,
+	    "entry_text" : "GNU Autoconf script for alt server"
+	},
+	{
+	    "file_path" : "src-alt/hibachi-start.sh.in",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "shellscript",
+	    "display_via_github" : true,
+	    "entry_text" : "hibachi-start.sh declarations for alt server"
+	},
+	{
+	    "file_path" : "src-alt/localhost/CHANGELOG.TXT",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "changelog for hibachi alt code"
+	},
+	{
+	    "file_path" : "src/configure.in",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "shellscript",
+	    "display_via_github" : true,
+	    "entry_text" : "GNU Autoconf script"
+	},
+	{
+	    "file_path" : "src/hibachi-start.sh.in",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "shellscript",
+	    "display_via_github" : true,
+	    "entry_text" : "hibachi-start.sh declarations"
+	},
+	{
+	    "file_path" : "src/localhost/CHANGELOG.TXT",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "changelog for hibachi"
+	},
+	{
+	    "file_path" : "2004_hibachi.tar.bz2",
+	    "inventory_order" : 1415926535,
+	    "OK_to_edit" : false,
+	    "display_as" : "tbz2",
+	    "display_via_github" : false,
+	    "entry_text" : "download entry tarball"
+	},
+	{
+	    "file_path" : ".entry.json",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "json",
+	    "display_via_github" : true,
+	    "entry_text" : "entry summary and manifest in JSON"
+	},
+	{
+	    "file_path" : ".gitignore",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "gitignore",
+	    "display_via_github" : true,
+	    "entry_text" : "list of files that should not be committed under git"
+	},
+	{
+	    "file_path" : ".path",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : false,
+	    "display_as" : "path",
+	    "display_via_github" : true,
+	    "entry_text" : "directory path from top level directory"
+	},
+	{
+	    "file_path" : "README.md",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "markdown",
+	    "display_via_github" : true,
+	    "entry_text" : "markdown source for this web page"
+	},
+	{
+	    "file_path" : "src-alt/localhost/Img/cygwin-icon.gif",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "image",
+	    "display_via_github" : false,
+	    "entry_text" : "image for home page for alt server"
+	},
+	{
+	    "file_path" : "src-alt/localhost/Img/freebsd.gif",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "image",
+	    "display_via_github" : false,
+	    "entry_text" : "image for home page for alt server"
+	},
+	{
+	    "file_path" : "src-alt/localhost/Img/hibachi-256-oc-nc-300x150.gif",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "image",
+	    "display_via_github" : false,
+	    "entry_text" : "image for home page for alt server"
+	},
+	{
+	    "file_path" : "src-alt/localhost/Img/hot-coal-edge-110-indent.png",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "image",
+	    "display_via_github" : false,
+	    "entry_text" : "image for home page for alt server"
+	},
+	{
+	    "file_path" : "src-alt/localhost/Img/logosml.256.png",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "image",
+	    "display_via_github" : false,
+	    "entry_text" : "image for home page for alt server"
+	},
+	{
+	    "file_path" : "src-alt/localhost/Img/php-small-trans-light.gif",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "image",
+	    "display_via_github" : false,
+	    "entry_text" : "image for home page for alt server"
+	},
+	{
+	    "file_path" : "src-alt/localhost/Img/powered-by-hibachi-150x75.png",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "image",
+	    "display_via_github" : false,
+	    "entry_text" : "image for home page for alt server"
+	},
+	{
+	    "file_path" : "src-alt/localhost/Img/rectangle_power_perl.gif",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "image",
+	    "display_via_github" : false,
+	    "entry_text" : "image for home page for alt server"
+	},
+	{
+	    "file_path" : "src-alt/localhost/Img/sun_logo.gif",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "image",
+	    "display_via_github" : false,
+	    "entry_text" : "image for home page for alt server"
+	},
+	{
+	    "file_path" : "src-alt/localhost/Img/win.gif",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "image",
+	    "display_via_github" : false,
+	    "entry_text" : "image for home page for alt server"
+	},
+	{
+	    "file_path" : "src-alt/localhost/style.css",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "css",
+	    "display_via_github" : true,
+	    "entry_text" : "CSS for home page for alt server"
+	},
+	{
+	    "file_path" : "src-alt/localhost/test/perl/yahoo-ticker.pl.in",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "perl",
+	    "display_via_github" : true,
+	    "entry_text" : "stock price fetch declarations for alt server"
+	},
+	{
+	    "file_path" : "src-alt/localhost/test/php/Date.php",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "php",
+	    "display_via_github" : true,
+	    "entry_text" : "PHP example page support file for alt server"
+	},
+	{
+	    "file_path" : "src-alt/localhost/test/php/index_php.in",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "php",
+	    "display_via_github" : true,
+	    "entry_text" : "PHP example page support file for alt server"
+	},
+	{
+	    "file_path" : "src-alt/localhost/test/php/info.php",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "php",
+	    "display_via_github" : true,
+	    "entry_text" : "PHP example support file for alt server"
+	},
+	{
+	    "file_path" : "src-alt/localhost/test/php/info.php.in",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "php",
+	    "display_via_github" : true,
+	    "entry_text" : "PHP example page support file for alt server"
+	},
+	{
+	    "file_path" : "src-alt/localhost/test/php/sendform.html",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "html",
+	    "display_via_github" : false,
+	    "entry_text" : "php example page support file for alt server"
+	},
+	{
+	    "file_path" : "src-alt/localhost/test/php/sendform.php",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "php",
+	    "display_via_github" : true,
+	    "entry_text" : "PHP example page support file for alt server"
+	},
+	{
+	    "file_path" : "src-alt/localhost/test/php/sendform.php.in",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "php",
+	    "display_via_github" : true,
+	    "entry_text" : "PHP example page support file for alt server"
+	},
+	{
+	    "file_path" : "src-alt/localhost/test/ruby/LUHN.rb",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "ruby",
+	    "display_via_github" : true,
+	    "entry_text" : "ruby example page support file for alt server"
+	},
+	{
+	    "file_path" : "src-alt/localhost/test/ruby/index_rb.in",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "ruby",
+	    "display_via_github" : true,
+	    "entry_text" : "ruby example page support file for alt server"
+	},
+	{
+	    "file_path" : "src-alt/localhost/test/shell/dump.sh",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "shellscript",
+	    "display_via_github" : true,
+	    "entry_text" : "POSIX shell script support file for alt server"
+	},
+	{
+	    "file_path" : "src-alt/localhost/test/shell/test1.sh",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "shellscript",
+	    "display_via_github" : true,
+	    "entry_text" : "POSIX shell script support file for alt server"
+	},
+	{
+	    "file_path" : "src-alt/localhost/test/shell/test2.sh",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "shellscript",
+	    "display_via_github" : true,
+	    "entry_text" : "POSIX shell script support file for alt server"
+	},
+	{
+	    "file_path" : "src-alt/makefile.in",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "man",
+	    "display_via_github" : true,
+	    "entry_text" : "makefile template for alt server"
+	},
+	{
+	    "file_path" : "src/localhost/Img/cygwin-icon.gif",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "image",
+	    "display_via_github" : false,
+	    "entry_text" : "image for home page"
+	},
+	{
+	    "file_path" : "src/localhost/Img/freebsd.gif",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "image",
+	    "display_via_github" : false,
+	    "entry_text" : "image for home page"
+	},
+	{
+	    "file_path" : "src/localhost/Img/hibachi-256-oc-nc-300x150.gif",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "image",
+	    "display_via_github" : false,
+	    "entry_text" : "image for home page"
+	},
+	{
+	    "file_path" : "src/localhost/Img/hot-coal-edge-110-indent.png",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "image",
+	    "display_via_github" : false,
+	    "entry_text" : "image for home page"
+	},
+	{
+	    "file_path" : "src/localhost/Img/logosml.256.png",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "image",
+	    "display_via_github" : false,
+	    "entry_text" : "image for home page"
+	},
+	{
+	    "file_path" : "src/localhost/Img/php-small-trans-light.gif",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "image",
+	    "display_via_github" : false,
+	    "entry_text" : "image for home page"
+	},
+	{
+	    "file_path" : "src/localhost/Img/powered-by-hibachi-150x75.png",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "image",
+	    "display_via_github" : false,
+	    "entry_text" : "image for home page"
+	},
+	{
+	    "file_path" : "src/localhost/Img/rectangle_power_perl.gif",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "image",
+	    "display_via_github" : false,
+	    "entry_text" : "image for home page"
+	},
+	{
+	    "file_path" : "src/localhost/Img/sun_logo.gif",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "image",
+	    "display_via_github" : false,
+	    "entry_text" : "image for home page"
+	},
+	{
+	    "file_path" : "src/localhost/Img/win.gif",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "image",
+	    "display_via_github" : false,
+	    "entry_text" : "image for home page"
+	},
+	{
+	    "file_path" : "src/localhost/style.css",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "css",
+	    "display_via_github" : true,
+	    "entry_text" : "CSS for home page"
+	},
+	{
+	    "file_path" : "src/localhost/test/perl/yahoo-ticker.pl.in",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "perl",
+	    "display_via_github" : true,
+	    "entry_text" : "stock price fetch declarations"
+	},
+	{
+	    "file_path" : "src/localhost/test/php/Date.php",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "php",
+	    "display_via_github" : true,
+	    "entry_text" : "PHP example page support file"
+	},
+	{
+	    "file_path" : "src/localhost/test/php/index_php.in",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "php",
+	    "display_via_github" : true,
+	    "entry_text" : "PHP example page support file"
+	},
+	{
+	    "file_path" : "src/localhost/test/php/info.php",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "php",
+	    "display_via_github" : true,
+	    "entry_text" : "PHP example support file"
+	},
+	{
+	    "file_path" : "src/localhost/test/php/info.php.in",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "php",
+	    "display_via_github" : true,
+	    "entry_text" : "PHP example page support file"
+	},
+	{
+	    "file_path" : "src/localhost/test/php/sendform.html",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "html",
+	    "display_via_github" : false,
+	    "entry_text" : "php example page support file"
+	},
+	{
+	    "file_path" : "src/localhost/test/php/sendform.php",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "php",
+	    "display_via_github" : true,
+	    "entry_text" : "PHP example page support file"
+	},
+	{
+	    "file_path" : "src/localhost/test/php/sendform.php.in",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "php",
+	    "display_via_github" : true,
+	    "entry_text" : "PHP example page support file"
+	},
+	{
+	    "file_path" : "src/localhost/test/ruby/LUHN.rb",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "ruby",
+	    "display_via_github" : true,
+	    "entry_text" : "ruby example page support file"
+	},
+	{
+	    "file_path" : "src/localhost/test/ruby/index_rb.in",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "ruby",
+	    "display_via_github" : true,
+	    "entry_text" : "ruby example page support file"
+	},
+	{
+	    "file_path" : "src/localhost/test/shell/dump.sh",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "shellscript",
+	    "display_via_github" : true,
+	    "entry_text" : "POSIX shell script support file"
+	},
+	{
+	    "file_path" : "src/localhost/test/shell/test1.sh",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "shellscript",
+	    "display_via_github" : true,
+	    "entry_text" : "POSIX shell script support file"
+	},
+	{
+	    "file_path" : "src/localhost/test/shell/test2.sh",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "shellscript",
+	    "display_via_github" : true,
+	    "entry_text" : "POSIX shell script support file"
+	},
+	{
+	    "file_path" : "src/makefile.in",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "man",
+	    "display_via_github" : true,
+	    "entry_text" : "makefile template"
+	},
+	{
+	    "file_path" : "index.html",
+	    "inventory_order" : 4294967295,
+	    "OK_to_edit" : false,
+	    "display_as" : "html",
+	    "display_via_github" : false,
+	    "entry_text" : "this web page"
+	}
     ]
 }
