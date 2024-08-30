@@ -6,496 +6,498 @@
     "dir" : "burton2",
     "entry_id" : "2018_burton2",
     "author_set" : [
-	{ "author_handle" : "Dave_Burton" }
+        {
+            "author_handle" : "Dave_Burton"
+        }
     ],
     "manifest" : [
-	{
-	    "file_path" : "prog.c",
-	    "inventory_order" : 20,
-	    "OK_to_edit" : true,
-	    "display_as" : "c",
-	    "display_via_github" : true,
-	    "entry_text" : "entry source code"
-	},
-	{
-	    "file_path" : "Makefile",
-	    "inventory_order" : 30,
-	    "OK_to_edit" : true,
-	    "display_as" : "makefile",
-	    "display_via_github" : true,
-	    "entry_text" : "entry Makefile"
-	},
-	{
-	    "file_path" : "prog.orig.c",
-	    "inventory_order" : 50,
-	    "OK_to_edit" : false,
-	    "display_as" : "c",
-	    "display_via_github" : true,
-	    "entry_text" : "original source code"
-	},
-	{
-	    "file_path" : "discrepancies.html",
-	    "inventory_order" : 100,
-	    "OK_to_edit" : false,
-	    "display_as" : "html",
-	    "display_via_github" : false,
-	    "entry_text" : "field-by-field difference between iocccsize and entry's ioc"
-	},
-	{
-	    "file_path" : "freqcount.sh",
-	    "inventory_order" : 100,
-	    "OK_to_edit" : true,
-	    "display_as" : "shellscript",
-	    "display_via_github" : true,
-	    "entry_text" : "frequency count utility"
-	},
-	{
-	    "file_path" : "tac.1",
-	    "inventory_order" : 100,
-	    "OK_to_edit" : true,
-	    "display_as" : "man",
-	    "display_via_github" : true,
-	    "entry_text" : "tac.c man page"
-	},
-	{
-	    "file_path" : "tokcount.sh",
-	    "inventory_order" : 100,
-	    "OK_to_edit" : true,
-	    "display_as" : "shellscript",
-	    "display_via_github" : true,
-	    "entry_text" : "count the tokens produced by ./prog -t"
-	},
-	{
-	    "file_path" : "try.sh",
-	    "inventory_order" : 100,
-	    "OK_to_edit" : true,
-	    "display_as" : "shellscript",
-	    "display_via_github" : true,
-	    "entry_text" : "script to try entry"
-	},
-	{
-	    "file_path" : "fixed_iocccsize.c",
-	    "inventory_order" : 120,
-	    "OK_to_edit" : true,
-	    "display_as" : "c",
-	    "display_via_github" : true,
-	    "entry_text" : "iocccsize.c with author patch applied"
-	},
-	{
-	    "file_path" : "ioc_without_quote",
-	    "inventory_order" : 150,
-	    "OK_to_edit" : true,
-	    "display_as" : "c",
-	    "display_via_github" : true,
-	    "entry_text" : "test suite data"
-	},
-	{
-	    "file_path" : "ioccc.kw.freq",
-	    "inventory_order" : 150,
-	    "OK_to_edit" : true,
-	    "display_as" : "text",
-	    "display_via_github" : false,
-	    "entry_text" : "C keywords sorted by 201x frequency"
-	},
-	{
-	    "file_path" : "iocccbug01.c",
-	    "inventory_order" : 150,
-	    "OK_to_edit" : true,
-	    "display_as" : "c",
-	    "display_via_github" : true,
-	    "entry_text" : "test cases demonstrating problems with iocccsize"
-	},
-	{
-	    "file_path" : "iocccbug02.c",
-	    "inventory_order" : 150,
-	    "OK_to_edit" : true,
-	    "display_as" : "c",
-	    "display_via_github" : true,
-	    "entry_text" : "test cases demonstrating problems with iocccsize"
-	},
-	{
-	    "file_path" : "iocccbug03.c",
-	    "inventory_order" : 150,
-	    "OK_to_edit" : true,
-	    "display_as" : "c",
-	    "display_via_github" : true,
-	    "entry_text" : "test cases demonstrating problems with iocccsize"
-	},
-	{
-	    "file_path" : "iocccbug04.c",
-	    "inventory_order" : 150,
-	    "OK_to_edit" : true,
-	    "display_as" : "c",
-	    "display_via_github" : true,
-	    "entry_text" : "test cases demonstrating problems with iocccsize"
-	},
-	{
-	    "file_path" : "iocccbug05.c",
-	    "inventory_order" : 150,
-	    "OK_to_edit" : true,
-	    "display_as" : "c",
-	    "display_via_github" : true,
-	    "entry_text" : "test cases demonstrating problems with iocccsize"
-	},
-	{
-	    "file_path" : "iocccbug06.c",
-	    "inventory_order" : 150,
-	    "OK_to_edit" : true,
-	    "display_as" : "c",
-	    "display_via_github" : true,
-	    "entry_text" : "test cases demonstrating problems with iocccsize"
-	},
-	{
-	    "file_path" : "manpage.sh",
-	    "inventory_order" : 150,
-	    "OK_to_edit" : true,
-	    "display_as" : "shellscript",
-	    "display_via_github" : true,
-	    "entry_text" : "turns ASCII versions of man into real man pages"
-	},
-	{
-	    "file_path" : "mkkeywords.sh",
-	    "inventory_order" : 150,
-	    "OK_to_edit" : true,
-	    "display_as" : "shellscript",
-	    "display_via_github" : true,
-	    "entry_text" : "reads a file from variations - produces string for prog.c"
-	},
-	{
-	    "file_path" : "results.k",
-	    "inventory_order" : 150,
-	    "OK_to_edit" : true,
-	    "display_as" : "text",
-	    "display_via_github" : false,
-	    "entry_text" : "results with -k option"
-	},
-	{
-	    "file_path" : "tac.c",
-	    "inventory_order" : 150,
-	    "OK_to_edit" : true,
-	    "display_as" : "c",
-	    "display_via_github" : true,
-	    "entry_text" : "tokenize and count C-like languages"
-	},
-	{
-	    "file_path" : "test01.c",
-	    "inventory_order" : 150,
-	    "OK_to_edit" : true,
-	    "display_as" : "c",
-	    "display_via_github" : true,
-	    "entry_text" : "test case source code"
-	},
-	{
-	    "file_path" : "test02.c",
-	    "inventory_order" : 150,
-	    "OK_to_edit" : true,
-	    "display_as" : "c",
-	    "display_via_github" : true,
-	    "entry_text" : "test case source code"
-	},
-	{
-	    "file_path" : "test03.c",
-	    "inventory_order" : 150,
-	    "OK_to_edit" : true,
-	    "display_as" : "c",
-	    "display_via_github" : true,
-	    "entry_text" : "test case source code"
-	},
-	{
-	    "file_path" : "test04.c",
-	    "inventory_order" : 150,
-	    "OK_to_edit" : true,
-	    "display_as" : "c",
-	    "display_via_github" : true,
-	    "entry_text" : "test case source code"
-	},
-	{
-	    "file_path" : "test05.c",
-	    "inventory_order" : 150,
-	    "OK_to_edit" : true,
-	    "display_as" : "c",
-	    "display_via_github" : true,
-	    "entry_text" : "test case source code"
-	},
-	{
-	    "file_path" : "test06.c",
-	    "inventory_order" : 150,
-	    "OK_to_edit" : true,
-	    "display_as" : "c",
-	    "display_via_github" : true,
-	    "entry_text" : "test case source code"
-	},
-	{
-	    "file_path" : "test07.c",
-	    "inventory_order" : 150,
-	    "OK_to_edit" : true,
-	    "display_as" : "c",
-	    "display_via_github" : true,
-	    "entry_text" : "test case source code"
-	},
-	{
-	    "file_path" : "test08.c",
-	    "inventory_order" : 150,
-	    "OK_to_edit" : true,
-	    "display_as" : "c",
-	    "display_via_github" : true,
-	    "entry_text" : "test case source code"
-	},
-	{
-	    "file_path" : "test09.c",
-	    "inventory_order" : 150,
-	    "OK_to_edit" : true,
-	    "display_as" : "c",
-	    "display_via_github" : true,
-	    "entry_text" : "test case source code"
-	},
-	{
-	    "file_path" : "test10.c",
-	    "inventory_order" : 150,
-	    "OK_to_edit" : true,
-	    "display_as" : "c",
-	    "display_via_github" : true,
-	    "entry_text" : "test case source code"
-	},
-	{
-	    "file_path" : "test11.c",
-	    "inventory_order" : 150,
-	    "OK_to_edit" : true,
-	    "display_as" : "c",
-	    "display_via_github" : true,
-	    "entry_text" : "test case source code"
-	},
-	{
-	    "file_path" : "test12.c",
-	    "inventory_order" : 150,
-	    "OK_to_edit" : true,
-	    "display_as" : "c",
-	    "display_via_github" : true,
-	    "entry_text" : "test case source code"
-	},
-	{
-	    "file_path" : "test13.c",
-	    "inventory_order" : 150,
-	    "OK_to_edit" : true,
-	    "display_as" : "c",
-	    "display_via_github" : true,
-	    "entry_text" : "test case source code"
-	},
-	{
-	    "file_path" : "test14.c",
-	    "inventory_order" : 150,
-	    "OK_to_edit" : true,
-	    "display_as" : "c",
-	    "display_via_github" : true,
-	    "entry_text" : "test case source code"
-	},
-	{
-	    "file_path" : "tokenfix.sh",
-	    "inventory_order" : 150,
-	    "OK_to_edit" : true,
-	    "display_as" : "shellscript",
-	    "display_via_github" : true,
-	    "entry_text" : "short post-filter"
-	},
-	{
-	    "file_path" : "unob.sh",
-	    "inventory_order" : 150,
-	    "OK_to_edit" : true,
-	    "display_as" : "shellscript",
-	    "display_via_github" : true,
-	    "entry_text" : "refined version of de-obfuscator"
-	},
-	{
-	    "file_path" : "ansi",
-	    "inventory_order" : 200,
-	    "OK_to_edit" : true,
-	    "display_as" : "text",
-	    "display_via_github" : true,
-	    "entry_text" : "reserved words for ANSI C standard"
-	},
-	{
-	    "file_path" : "author-README.txt",
-	    "inventory_order" : 200,
-	    "OK_to_edit" : true,
-	    "display_as" : "text",
-	    "display_via_github" : false,
-	    "entry_text" : "author supplied README"
-	},
-	{
-	    "file_path" : "c++11",
-	    "inventory_order" : 200,
-	    "OK_to_edit" : true,
-	    "display_as" : "text",
-	    "display_via_github" : true,
-	    "entry_text" : "reserved words for C++11 standard"
-	},
-	{
-	    "file_path" : "c++14",
-	    "inventory_order" : 200,
-	    "OK_to_edit" : true,
-	    "display_as" : "text",
-	    "display_via_github" : true,
-	    "entry_text" : "reserved words for C++14 standard"
-	},
-	{
-	    "file_path" : "c++98",
-	    "inventory_order" : 200,
-	    "OK_to_edit" : true,
-	    "display_as" : "text",
-	    "display_via_github" : true,
-	    "entry_text" : "reserved words for C++98 standard"
-	},
-	{
-	    "file_path" : "c11",
-	    "inventory_order" : 200,
-	    "OK_to_edit" : true,
-	    "display_as" : "text",
-	    "display_via_github" : true,
-	    "entry_text" : "reserved words for C11 standard"
-	},
-	{
-	    "file_path" : "c99",
-	    "inventory_order" : 200,
-	    "OK_to_edit" : true,
-	    "display_as" : "text",
-	    "display_via_github" : true,
-	    "entry_text" : "reserved words for C99 standard"
-	},
-	{
-	    "file_path" : "java8",
-	    "inventory_order" : 200,
-	    "OK_to_edit" : true,
-	    "display_as" : "text",
-	    "display_via_github" : true,
-	    "entry_text" : "reserved words for Java v8"
-	},
-	{
-	    "file_path" : "kandr",
-	    "inventory_order" : 200,
-	    "OK_to_edit" : true,
-	    "display_as" : "text",
-	    "display_via_github" : true,
-	    "entry_text" : "reserved words for K&R C"
-	},
-	{
-	    "file_path" : "kandr2",
-	    "inventory_order" : 200,
-	    "OK_to_edit" : true,
-	    "display_as" : "text",
-	    "display_via_github" : true,
-	    "entry_text" : "reserved words for K&R2 C"
-	},
-	{
-	    "file_path" : "patch",
-	    "inventory_order" : 200,
-	    "OK_to_edit" : true,
-	    "display_as" : "patch",
-	    "display_via_github" : true,
-	    "entry_text" : "author supplied patch to fix iocccsize.c source"
-	},
-	{
-	    "file_path" : "results",
-	    "inventory_order" : 200,
-	    "OK_to_edit" : true,
-	    "display_as" : "text",
-	    "display_via_github" : true,
-	    "entry_text" : "results without -k"
-	},
-	{
-	    "file_path" : "runtest.sh",
-	    "inventory_order" : 200,
-	    "OK_to_edit" : true,
-	    "display_as" : "shellscript",
-	    "display_via_github" : true,
-	    "entry_text" : "test suite"
-	},
-	{
-	    "file_path" : "spotcheck.sh",
-	    "inventory_order" : 200,
-	    "OK_to_edit" : true,
-	    "display_as" : "shellscript",
-	    "display_via_github" : true,
-	    "entry_text" : "script to test a lot of files vs iocccsize"
-	},
-	{
-	    "file_path" : "v7unix",
-	    "inventory_order" : 200,
-	    "OK_to_edit" : true,
-	    "display_as" : "text",
-	    "display_via_github" : false,
-	    "entry_text" : "reserved words for a v7 UNIX C standard"
-	},
-	{
-	    "file_path" : "spotdiff.sh",
-	    "inventory_order" : 250,
-	    "OK_to_edit" : true,
-	    "display_as" : "shellscript",
-	    "display_via_github" : true,
-	    "entry_text" : "summarize the results of spotcheck"
-	},
-	{
-	    "file_path" : "src.doc.txt",
-	    "inventory_order" : 300,
-	    "OK_to_edit" : true,
-	    "display_as" : "text",
-	    "display_via_github" : false,
-	    "entry_text" : "deobfuscation hints about the source code"
-	},
-	{
-	    "file_path" : "2018_burton2.tar.bz2",
-	    "inventory_order" : 1415926535,
-	    "OK_to_edit" : false,
-	    "display_as" : "tbz2",
-	    "display_via_github" : false,
-	    "entry_text" : "download entry tarball"
-	},
-	{
-	    "file_path" : ".entry.json",
-	    "inventory_order" : 4000000000,
-	    "OK_to_edit" : true,
-	    "display_as" : "json",
-	    "display_via_github" : true,
-	    "entry_text" : "entry summary and manifest in JSON"
-	},
-	{
-	    "file_path" : ".gitignore",
-	    "inventory_order" : 4000000000,
-	    "OK_to_edit" : true,
-	    "display_as" : "gitignore",
-	    "display_via_github" : true,
-	    "entry_text" : "list of files that should not be committed under git"
-	},
-	{
-	    "file_path" : ".path",
-	    "inventory_order" : 4000000000,
-	    "OK_to_edit" : false,
-	    "display_as" : "path",
-	    "display_via_github" : true,
-	    "entry_text" : "directory path from top level directory"
-	},
-	{
-	    "file_path" : "README.md",
-	    "inventory_order" : 4000000000,
-	    "OK_to_edit" : true,
-	    "display_as" : "markdown",
-	    "display_via_github" : true,
-	    "entry_text" : "markdown source for this web page"
-	},
-	{
-	    "file_path" : "discrepancies.md",
-	    "inventory_order" : 4000000000,
-	    "OK_to_edit" : true,
-	    "display_as" : "markdown",
-	    "display_via_github" : true,
-	    "entry_text" : "markdown source for discrepancies.html"
-	},
-	{
-	    "file_path" : "index.html",
-	    "inventory_order" : 4294967295,
-	    "OK_to_edit" : false,
-	    "display_as" : "html",
-	    "display_via_github" : false,
-	    "entry_text" : "this web page"
-	}
+        {
+            "file_path" : "prog.c",
+            "inventory_order" : 20,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "entry source code"
+        },
+        {
+            "file_path" : "Makefile",
+            "inventory_order" : 30,
+            "OK_to_edit" : true,
+            "display_as" : "makefile",
+            "display_via_github" : true,
+            "entry_text" : "entry Makefile"
+        },
+        {
+            "file_path" : "prog.orig.c",
+            "inventory_order" : 50,
+            "OK_to_edit" : false,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "original source code"
+        },
+        {
+            "file_path" : "discrepancies.html",
+            "inventory_order" : 100,
+            "OK_to_edit" : false,
+            "display_as" : "html",
+            "display_via_github" : false,
+            "entry_text" : "field-by-field difference between iocccsize and entry's ioc"
+        },
+        {
+            "file_path" : "freqcount.sh",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "shellscript",
+            "display_via_github" : true,
+            "entry_text" : "frequency count utility"
+        },
+        {
+            "file_path" : "tac.1",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "man",
+            "display_via_github" : true,
+            "entry_text" : "tac.c man page"
+        },
+        {
+            "file_path" : "tokcount.sh",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "shellscript",
+            "display_via_github" : true,
+            "entry_text" : "count the tokens produced by ./prog -t"
+        },
+        {
+            "file_path" : "try.sh",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "shellscript",
+            "display_via_github" : true,
+            "entry_text" : "script to try entry"
+        },
+        {
+            "file_path" : "fixed_iocccsize.c",
+            "inventory_order" : 120,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "iocccsize.c with author patch applied"
+        },
+        {
+            "file_path" : "ioc_without_quote",
+            "inventory_order" : 150,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "test suite data"
+        },
+        {
+            "file_path" : "ioccc.kw.freq",
+            "inventory_order" : 150,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : false,
+            "entry_text" : "C keywords sorted by 201x frequency"
+        },
+        {
+            "file_path" : "iocccbug01.c",
+            "inventory_order" : 150,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "test cases demonstrating problems with iocccsize"
+        },
+        {
+            "file_path" : "iocccbug02.c",
+            "inventory_order" : 150,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "test cases demonstrating problems with iocccsize"
+        },
+        {
+            "file_path" : "iocccbug03.c",
+            "inventory_order" : 150,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "test cases demonstrating problems with iocccsize"
+        },
+        {
+            "file_path" : "iocccbug04.c",
+            "inventory_order" : 150,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "test cases demonstrating problems with iocccsize"
+        },
+        {
+            "file_path" : "iocccbug05.c",
+            "inventory_order" : 150,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "test cases demonstrating problems with iocccsize"
+        },
+        {
+            "file_path" : "iocccbug06.c",
+            "inventory_order" : 150,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "test cases demonstrating problems with iocccsize"
+        },
+        {
+            "file_path" : "manpage.sh",
+            "inventory_order" : 150,
+            "OK_to_edit" : true,
+            "display_as" : "shellscript",
+            "display_via_github" : true,
+            "entry_text" : "turns ASCII versions of man into real man pages"
+        },
+        {
+            "file_path" : "mkkeywords.sh",
+            "inventory_order" : 150,
+            "OK_to_edit" : true,
+            "display_as" : "shellscript",
+            "display_via_github" : true,
+            "entry_text" : "reads a file from variations - produces string for prog.c"
+        },
+        {
+            "file_path" : "results.k",
+            "inventory_order" : 150,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : false,
+            "entry_text" : "results with -k option"
+        },
+        {
+            "file_path" : "tac.c",
+            "inventory_order" : 150,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "tokenize and count C-like languages"
+        },
+        {
+            "file_path" : "test01.c",
+            "inventory_order" : 150,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "test case source code"
+        },
+        {
+            "file_path" : "test02.c",
+            "inventory_order" : 150,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "test case source code"
+        },
+        {
+            "file_path" : "test03.c",
+            "inventory_order" : 150,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "test case source code"
+        },
+        {
+            "file_path" : "test04.c",
+            "inventory_order" : 150,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "test case source code"
+        },
+        {
+            "file_path" : "test05.c",
+            "inventory_order" : 150,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "test case source code"
+        },
+        {
+            "file_path" : "test06.c",
+            "inventory_order" : 150,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "test case source code"
+        },
+        {
+            "file_path" : "test07.c",
+            "inventory_order" : 150,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "test case source code"
+        },
+        {
+            "file_path" : "test08.c",
+            "inventory_order" : 150,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "test case source code"
+        },
+        {
+            "file_path" : "test09.c",
+            "inventory_order" : 150,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "test case source code"
+        },
+        {
+            "file_path" : "test10.c",
+            "inventory_order" : 150,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "test case source code"
+        },
+        {
+            "file_path" : "test11.c",
+            "inventory_order" : 150,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "test case source code"
+        },
+        {
+            "file_path" : "test12.c",
+            "inventory_order" : 150,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "test case source code"
+        },
+        {
+            "file_path" : "test13.c",
+            "inventory_order" : 150,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "test case source code"
+        },
+        {
+            "file_path" : "test14.c",
+            "inventory_order" : 150,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "test case source code"
+        },
+        {
+            "file_path" : "tokenfix.sh",
+            "inventory_order" : 150,
+            "OK_to_edit" : true,
+            "display_as" : "shellscript",
+            "display_via_github" : true,
+            "entry_text" : "short post-filter"
+        },
+        {
+            "file_path" : "unob.sh",
+            "inventory_order" : 150,
+            "OK_to_edit" : true,
+            "display_as" : "shellscript",
+            "display_via_github" : true,
+            "entry_text" : "refined version of de-obfuscator"
+        },
+        {
+            "file_path" : "ansi",
+            "inventory_order" : 200,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : true,
+            "entry_text" : "reserved words for ANSI C standard"
+        },
+        {
+            "file_path" : "author-README.txt",
+            "inventory_order" : 200,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : false,
+            "entry_text" : "author supplied README"
+        },
+        {
+            "file_path" : "c++11",
+            "inventory_order" : 200,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : true,
+            "entry_text" : "reserved words for C++11 standard"
+        },
+        {
+            "file_path" : "c++14",
+            "inventory_order" : 200,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : true,
+            "entry_text" : "reserved words for C++14 standard"
+        },
+        {
+            "file_path" : "c++98",
+            "inventory_order" : 200,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : true,
+            "entry_text" : "reserved words for C++98 standard"
+        },
+        {
+            "file_path" : "c11",
+            "inventory_order" : 200,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : true,
+            "entry_text" : "reserved words for C11 standard"
+        },
+        {
+            "file_path" : "c99",
+            "inventory_order" : 200,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : true,
+            "entry_text" : "reserved words for C99 standard"
+        },
+        {
+            "file_path" : "java8",
+            "inventory_order" : 200,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : true,
+            "entry_text" : "reserved words for Java v8"
+        },
+        {
+            "file_path" : "kandr",
+            "inventory_order" : 200,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : true,
+            "entry_text" : "reserved words for K&R C"
+        },
+        {
+            "file_path" : "kandr2",
+            "inventory_order" : 200,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : true,
+            "entry_text" : "reserved words for K&R2 C"
+        },
+        {
+            "file_path" : "patch",
+            "inventory_order" : 200,
+            "OK_to_edit" : true,
+            "display_as" : "patch",
+            "display_via_github" : true,
+            "entry_text" : "author supplied patch to fix iocccsize.c source"
+        },
+        {
+            "file_path" : "results",
+            "inventory_order" : 200,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : true,
+            "entry_text" : "results without -k"
+        },
+        {
+            "file_path" : "runtest.sh",
+            "inventory_order" : 200,
+            "OK_to_edit" : true,
+            "display_as" : "shellscript",
+            "display_via_github" : true,
+            "entry_text" : "test suite"
+        },
+        {
+            "file_path" : "spotcheck.sh",
+            "inventory_order" : 200,
+            "OK_to_edit" : true,
+            "display_as" : "shellscript",
+            "display_via_github" : true,
+            "entry_text" : "script to test a lot of files vs iocccsize"
+        },
+        {
+            "file_path" : "v7unix",
+            "inventory_order" : 200,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : false,
+            "entry_text" : "reserved words for a v7 UNIX C standard"
+        },
+        {
+            "file_path" : "spotdiff.sh",
+            "inventory_order" : 250,
+            "OK_to_edit" : true,
+            "display_as" : "shellscript",
+            "display_via_github" : true,
+            "entry_text" : "summarize the results of spotcheck"
+        },
+        {
+            "file_path" : "src.doc.txt",
+            "inventory_order" : 300,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : false,
+            "entry_text" : "deobfuscation hints about the source code"
+        },
+        {
+            "file_path" : "2018_burton2.tar.bz2",
+            "inventory_order" : 1415926535,
+            "OK_to_edit" : false,
+            "display_as" : "tbz2",
+            "display_via_github" : false,
+            "entry_text" : "download entry tarball"
+        },
+        {
+            "file_path" : ".entry.json",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "json",
+            "display_via_github" : true,
+            "entry_text" : "entry summary and manifest in JSON"
+        },
+        {
+            "file_path" : ".gitignore",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "gitignore",
+            "display_via_github" : true,
+            "entry_text" : "list of files that should not be committed under git"
+        },
+        {
+            "file_path" : ".path",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : false,
+            "display_as" : "path",
+            "display_via_github" : true,
+            "entry_text" : "directory path from top level directory"
+        },
+        {
+            "file_path" : "README.md",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "markdown",
+            "display_via_github" : true,
+            "entry_text" : "markdown source for this web page"
+        },
+        {
+            "file_path" : "discrepancies.md",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "markdown",
+            "display_via_github" : true,
+            "entry_text" : "markdown source for discrepancies.html"
+        },
+        {
+            "file_path" : "index.html",
+            "inventory_order" : 4294967295,
+            "OK_to_edit" : false,
+            "display_as" : "html",
+            "display_via_github" : false,
+            "entry_text" : "this web page"
+        }
     ]
 }

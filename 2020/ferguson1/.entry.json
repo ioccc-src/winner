@@ -6,320 +6,322 @@
     "dir" : "ferguson1",
     "entry_id" : "2020_ferguson1",
     "author_set" : [
-	{ "author_handle" : "Cody_Boone_Ferguson" }
+        {
+            "author_handle" : "Cody_Boone_Ferguson"
+        }
     ],
     "manifest" : [
-	{
-	    "file_path" : "prog.c",
-	    "inventory_order" : 20,
-	    "OK_to_edit" : true,
-	    "display_as" : "c",
-	    "display_via_github" : true,
-	    "entry_text" : "entry source code"
-	},
-	{
-	    "file_path" : "Makefile",
-	    "inventory_order" : 30,
-	    "OK_to_edit" : true,
-	    "display_as" : "makefile",
-	    "display_via_github" : true,
-	    "entry_text" : "entry Makefile"
-	},
-	{
-	    "file_path" : "prog.alt.c",
-	    "inventory_order" : 40,
-	    "OK_to_edit" : true,
-	    "display_as" : "c",
-	    "display_via_github" : true,
-	    "entry_text" : "alternate source code"
-	},
-	{
-	    "file_path" : "prog.orig.c",
-	    "inventory_order" : 50,
-	    "OK_to_edit" : false,
-	    "display_as" : "c",
-	    "display_via_github" : true,
-	    "entry_text" : "original source code"
-	},
-	{
-	    "file_path" : "snake-colours.sh",
-	    "inventory_order" : 60,
-	    "OK_to_edit" : true,
-	    "display_as" : "shellscript",
-	    "display_via_github" : true,
-	    "entry_text" : "script to configure colours of game"
-	},
-	{
-	    "file_path" : "play.sh",
-	    "inventory_order" : 61,
-	    "OK_to_edit" : true,
-	    "display_as" : "shellscript",
-	    "display_via_github" : true,
-	    "entry_text" : "like snake-colours.sh with pre-configured gameplay modes"
-	},
-	{
-	    "file_path" : "COMPILING.html",
-	    "inventory_order" : 100,
-	    "OK_to_edit" : false,
-	    "display_as" : "html",
-	    "display_via_github" : false,
-	    "entry_text" : "about compiling"
-	},
-	{
-	    "file_path" : "HACKING.html",
-	    "inventory_order" : 100,
-	    "OK_to_edit" : false,
-	    "display_as" : "html",
-	    "display_via_github" : false,
-	    "entry_text" : "how one might add to or modify code"
-	},
-	{
-	    "file_path" : "bugs.html",
-	    "inventory_order" : 100,
-	    "OK_to_edit" : false,
-	    "display_as" : "html",
-	    "display_via_github" : false,
-	    "entry_text" : "things that look like bugs but are not"
-	},
-	{
-	    "file_path" : "cannibalism.log.html",
-	    "inventory_order" : 100,
-	    "OK_to_edit" : false,
-	    "display_as" : "html",
-	    "display_via_github" : false,
-	    "entry_text" : "shows extreme cannibalism mode output"
-	},
-	{
-	    "file_path" : "chocolate-cake.html",
-	    "inventory_order" : 100,
-	    "OK_to_edit" : false,
-	    "display_as" : "html",
-	    "display_via_github" : false,
-	    "entry_text" : "Double-layered Chocolate Fudge Cake Recipe"
-	},
-	{
-	    "file_path" : "crazy.log.html",
-	    "inventory_order" : 100,
-	    "OK_to_edit" : false,
-	    "display_as" : "html",
-	    "display_via_github" : false,
-	    "entry_text" : "explains various odd screen dumps"
-	},
-	{
-	    "file_path" : "gameplay.html",
-	    "inventory_order" : 100,
-	    "OK_to_edit" : false,
-	    "display_as" : "html",
-	    "display_via_github" : false,
-	    "entry_text" : "many different gameplay modes described"
-	},
-	{
-	    "file_path" : "obfuscation.html",
-	    "inventory_order" : 100,
-	    "OK_to_edit" : false,
-	    "display_as" : "html",
-	    "display_via_github" : false,
-	    "entry_text" : "detailed information about the obfuscation of the code"
-	},
-	{
-	    "file_path" : "terminals.html",
-	    "inventory_order" : 100,
-	    "OK_to_edit" : false,
-	    "display_as" : "html",
-	    "display_via_github" : false,
-	    "entry_text" : "terminal capabilities and dimensions and colours"
-	},
-	{
-	    "file_path" : "troubleshooting.html",
-	    "inventory_order" : 100,
-	    "OK_to_edit" : false,
-	    "display_as" : "html",
-	    "display_via_github" : false,
-	    "entry_text" : "troubleshooting Snake"
-	},
-	{
-	    "file_path" : "prog.2.c",
-	    "inventory_order" : 150,
-	    "OK_to_edit" : true,
-	    "display_as" : "c",
-	    "display_via_github" : true,
-	    "entry_text" : "source code with more digraphs"
-	},
-	{
-	    "file_path" : "prog.3-j.c",
-	    "inventory_order" : 150,
-	    "OK_to_edit" : true,
-	    "display_as" : "c",
-	    "display_via_github" : true,
-	    "entry_text" : "source code with artistic layout and shorter j macro"
-	},
-	{
-	    "file_path" : "prog.3.c",
-	    "inventory_order" : 150,
-	    "OK_to_edit" : true,
-	    "display_as" : "c",
-	    "display_via_github" : true,
-	    "entry_text" : "source code with a more artistic layout"
-	},
-	{
-	    "file_path" : "snake.1",
-	    "inventory_order" : 150,
-	    "OK_to_edit" : true,
-	    "display_as" : "man",
-	    "display_via_github" : true,
-	    "entry_text" : "Snake game man page"
-	},
-	{
-	    "file_path" : "termcaps.c",
-	    "inventory_order" : 150,
-	    "OK_to_edit" : true,
-	    "display_as" : "c",
-	    "display_via_github" : true,
-	    "entry_text" : "terminal capability test source code"
-	},
-	{
-	    "file_path" : "2020_ferguson1.tar.bz2",
-	    "inventory_order" : 1415926535,
-	    "OK_to_edit" : false,
-	    "display_as" : "tbz2",
-	    "display_via_github" : false,
-	    "entry_text" : "download entry tarball"
-	},
-	{
-	    "file_path" : ".entry.json",
-	    "inventory_order" : 4000000000,
-	    "OK_to_edit" : true,
-	    "display_as" : "json",
-	    "display_via_github" : true,
-	    "entry_text" : "entry summary and manifest in JSON"
-	},
-	{
-	    "file_path" : ".gitignore",
-	    "inventory_order" : 4000000000,
-	    "OK_to_edit" : true,
-	    "display_as" : "gitignore",
-	    "display_via_github" : true,
-	    "entry_text" : "list of files that should not be committed under git"
-	},
-	{
-	    "file_path" : ".path",
-	    "inventory_order" : 4000000000,
-	    "OK_to_edit" : false,
-	    "display_as" : "path",
-	    "display_via_github" : true,
-	    "entry_text" : "directory path from top level directory"
-	},
-	{
-	    "file_path" : "COMPILING.md",
-	    "inventory_order" : 4000000000,
-	    "OK_to_edit" : true,
-	    "display_as" : "markdown",
-	    "display_via_github" : true,
-	    "entry_text" : "markdown source for COMPILING.html"
-	},
-	{
-	    "file_path" : "HACKING.md",
-	    "inventory_order" : 4000000000,
-	    "OK_to_edit" : true,
-	    "display_as" : "markdown",
-	    "display_via_github" : true,
-	    "entry_text" : "markdown source for HACKING.html"
-	},
-	{
-	    "file_path" : "README.md",
-	    "inventory_order" : 4000000000,
-	    "OK_to_edit" : true,
-	    "display_as" : "markdown",
-	    "display_via_github" : true,
-	    "entry_text" : "markdown source for this web page"
-	},
-	{
-	    "file_path" : "bugs.md",
-	    "inventory_order" : 4000000000,
-	    "OK_to_edit" : true,
-	    "display_as" : "markdown",
-	    "display_via_github" : true,
-	    "entry_text" : "markdown source for bugs.html"
-	},
-	{
-	    "file_path" : "cake.jpg",
-	    "inventory_order" : 4000000000,
-	    "OK_to_edit" : true,
-	    "display_as" : "image",
-	    "display_via_github" : false,
-	    "entry_text" : "image of Double-layered Chocolate Fudge Cake"
-	},
-	{
-	    "file_path" : "cannibalism.log.md",
-	    "inventory_order" : 4000000000,
-	    "OK_to_edit" : true,
-	    "display_as" : "markdown",
-	    "display_via_github" : true,
-	    "entry_text" : "markdown source for cannibalism.log.html"
-	},
-	{
-	    "file_path" : "chocolate-cake.md",
-	    "inventory_order" : 4000000000,
-	    "OK_to_edit" : true,
-	    "display_as" : "markdown",
-	    "display_via_github" : true,
-	    "entry_text" : "markdown source for chocolate-cake.html"
-	},
-	{
-	    "file_path" : "crazy.log.md",
-	    "inventory_order" : 4000000000,
-	    "OK_to_edit" : true,
-	    "display_as" : "markdown",
-	    "display_via_github" : true,
-	    "entry_text" : "markdown source for crazy.log.html"
-	},
-	{
-	    "file_path" : "gameplay.md",
-	    "inventory_order" : 4000000000,
-	    "OK_to_edit" : true,
-	    "display_as" : "markdown",
-	    "display_via_github" : true,
-	    "entry_text" : "markdown source for gameplay.html"
-	},
-	{
-	    "file_path" : "ioccc-cake.jpg",
-	    "inventory_order" : 4000000000,
-	    "OK_to_edit" : true,
-	    "display_as" : "image",
-	    "display_via_github" : false,
-	    "entry_text" : "image of Double-layered Chocolate Fudge Cake with 'IOCCC'"
-	},
-	{
-	    "file_path" : "obfuscation.md",
-	    "inventory_order" : 4000000000,
-	    "OK_to_edit" : true,
-	    "display_as" : "markdown",
-	    "display_via_github" : true,
-	    "entry_text" : "markdown source for obfuscation.html"
-	},
-	{
-	    "file_path" : "terminals.md",
-	    "inventory_order" : 4000000000,
-	    "OK_to_edit" : true,
-	    "display_as" : "markdown",
-	    "display_via_github" : true,
-	    "entry_text" : "markdown source for terminals.html"
-	},
-	{
-	    "file_path" : "troubleshooting.md",
-	    "inventory_order" : 4000000000,
-	    "OK_to_edit" : true,
-	    "display_as" : "markdown",
-	    "display_via_github" : true,
-	    "entry_text" : "markdown source for troubleshooting.html"
-	},
-	{
-	    "file_path" : "index.html",
-	    "inventory_order" : 4294967295,
-	    "OK_to_edit" : false,
-	    "display_as" : "html",
-	    "display_via_github" : false,
-	    "entry_text" : "this web page"
-	}
+        {
+            "file_path" : "prog.c",
+            "inventory_order" : 20,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "entry source code"
+        },
+        {
+            "file_path" : "Makefile",
+            "inventory_order" : 30,
+            "OK_to_edit" : true,
+            "display_as" : "makefile",
+            "display_via_github" : true,
+            "entry_text" : "entry Makefile"
+        },
+        {
+            "file_path" : "prog.alt.c",
+            "inventory_order" : 40,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "alternate source code"
+        },
+        {
+            "file_path" : "prog.orig.c",
+            "inventory_order" : 50,
+            "OK_to_edit" : false,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "original source code"
+        },
+        {
+            "file_path" : "snake-colours.sh",
+            "inventory_order" : 60,
+            "OK_to_edit" : true,
+            "display_as" : "shellscript",
+            "display_via_github" : true,
+            "entry_text" : "script to configure colours of game"
+        },
+        {
+            "file_path" : "play.sh",
+            "inventory_order" : 61,
+            "OK_to_edit" : true,
+            "display_as" : "shellscript",
+            "display_via_github" : true,
+            "entry_text" : "like snake-colours.sh with pre-configured gameplay modes"
+        },
+        {
+            "file_path" : "COMPILING.html",
+            "inventory_order" : 100,
+            "OK_to_edit" : false,
+            "display_as" : "html",
+            "display_via_github" : false,
+            "entry_text" : "about compiling"
+        },
+        {
+            "file_path" : "HACKING.html",
+            "inventory_order" : 100,
+            "OK_to_edit" : false,
+            "display_as" : "html",
+            "display_via_github" : false,
+            "entry_text" : "how one might add to or modify code"
+        },
+        {
+            "file_path" : "bugs.html",
+            "inventory_order" : 100,
+            "OK_to_edit" : false,
+            "display_as" : "html",
+            "display_via_github" : false,
+            "entry_text" : "things that look like bugs but are not"
+        },
+        {
+            "file_path" : "cannibalism.log.html",
+            "inventory_order" : 100,
+            "OK_to_edit" : false,
+            "display_as" : "html",
+            "display_via_github" : false,
+            "entry_text" : "shows extreme cannibalism mode output"
+        },
+        {
+            "file_path" : "chocolate-cake.html",
+            "inventory_order" : 100,
+            "OK_to_edit" : false,
+            "display_as" : "html",
+            "display_via_github" : false,
+            "entry_text" : "Double-layered Chocolate Fudge Cake Recipe"
+        },
+        {
+            "file_path" : "crazy.log.html",
+            "inventory_order" : 100,
+            "OK_to_edit" : false,
+            "display_as" : "html",
+            "display_via_github" : false,
+            "entry_text" : "explains various odd screen dumps"
+        },
+        {
+            "file_path" : "gameplay.html",
+            "inventory_order" : 100,
+            "OK_to_edit" : false,
+            "display_as" : "html",
+            "display_via_github" : false,
+            "entry_text" : "many different gameplay modes described"
+        },
+        {
+            "file_path" : "obfuscation.html",
+            "inventory_order" : 100,
+            "OK_to_edit" : false,
+            "display_as" : "html",
+            "display_via_github" : false,
+            "entry_text" : "detailed information about the obfuscation of the code"
+        },
+        {
+            "file_path" : "terminals.html",
+            "inventory_order" : 100,
+            "OK_to_edit" : false,
+            "display_as" : "html",
+            "display_via_github" : false,
+            "entry_text" : "terminal capabilities and dimensions and colours"
+        },
+        {
+            "file_path" : "troubleshooting.html",
+            "inventory_order" : 100,
+            "OK_to_edit" : false,
+            "display_as" : "html",
+            "display_via_github" : false,
+            "entry_text" : "troubleshooting Snake"
+        },
+        {
+            "file_path" : "prog.2.c",
+            "inventory_order" : 150,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "source code with more digraphs"
+        },
+        {
+            "file_path" : "prog.3-j.c",
+            "inventory_order" : 150,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "source code with artistic layout and shorter j macro"
+        },
+        {
+            "file_path" : "prog.3.c",
+            "inventory_order" : 150,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "source code with a more artistic layout"
+        },
+        {
+            "file_path" : "snake.1",
+            "inventory_order" : 150,
+            "OK_to_edit" : true,
+            "display_as" : "man",
+            "display_via_github" : true,
+            "entry_text" : "Snake game man page"
+        },
+        {
+            "file_path" : "termcaps.c",
+            "inventory_order" : 150,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "terminal capability test source code"
+        },
+        {
+            "file_path" : "2020_ferguson1.tar.bz2",
+            "inventory_order" : 1415926535,
+            "OK_to_edit" : false,
+            "display_as" : "tbz2",
+            "display_via_github" : false,
+            "entry_text" : "download entry tarball"
+        },
+        {
+            "file_path" : ".entry.json",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "json",
+            "display_via_github" : true,
+            "entry_text" : "entry summary and manifest in JSON"
+        },
+        {
+            "file_path" : ".gitignore",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "gitignore",
+            "display_via_github" : true,
+            "entry_text" : "list of files that should not be committed under git"
+        },
+        {
+            "file_path" : ".path",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : false,
+            "display_as" : "path",
+            "display_via_github" : true,
+            "entry_text" : "directory path from top level directory"
+        },
+        {
+            "file_path" : "COMPILING.md",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "markdown",
+            "display_via_github" : true,
+            "entry_text" : "markdown source for COMPILING.html"
+        },
+        {
+            "file_path" : "HACKING.md",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "markdown",
+            "display_via_github" : true,
+            "entry_text" : "markdown source for HACKING.html"
+        },
+        {
+            "file_path" : "README.md",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "markdown",
+            "display_via_github" : true,
+            "entry_text" : "markdown source for this web page"
+        },
+        {
+            "file_path" : "bugs.md",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "markdown",
+            "display_via_github" : true,
+            "entry_text" : "markdown source for bugs.html"
+        },
+        {
+            "file_path" : "cake.jpg",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "image",
+            "display_via_github" : false,
+            "entry_text" : "image of Double-layered Chocolate Fudge Cake"
+        },
+        {
+            "file_path" : "cannibalism.log.md",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "markdown",
+            "display_via_github" : true,
+            "entry_text" : "markdown source for cannibalism.log.html"
+        },
+        {
+            "file_path" : "chocolate-cake.md",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "markdown",
+            "display_via_github" : true,
+            "entry_text" : "markdown source for chocolate-cake.html"
+        },
+        {
+            "file_path" : "crazy.log.md",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "markdown",
+            "display_via_github" : true,
+            "entry_text" : "markdown source for crazy.log.html"
+        },
+        {
+            "file_path" : "gameplay.md",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "markdown",
+            "display_via_github" : true,
+            "entry_text" : "markdown source for gameplay.html"
+        },
+        {
+            "file_path" : "ioccc-cake.jpg",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "image",
+            "display_via_github" : false,
+            "entry_text" : "image of Double-layered Chocolate Fudge Cake with 'IOCCC'"
+        },
+        {
+            "file_path" : "obfuscation.md",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "markdown",
+            "display_via_github" : true,
+            "entry_text" : "markdown source for obfuscation.html"
+        },
+        {
+            "file_path" : "terminals.md",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "markdown",
+            "display_via_github" : true,
+            "entry_text" : "markdown source for terminals.html"
+        },
+        {
+            "file_path" : "troubleshooting.md",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "markdown",
+            "display_via_github" : true,
+            "entry_text" : "markdown source for troubleshooting.html"
+        },
+        {
+            "file_path" : "index.html",
+            "inventory_order" : 4294967295,
+            "OK_to_edit" : false,
+            "display_as" : "html",
+            "display_via_github" : false,
+            "entry_text" : "this web page"
+        }
     ]
 }

@@ -6,208 +6,210 @@
     "dir" : "muth",
     "entry_id" : "2015_muth",
     "author_set" : [
-	{ "author_handle" : "Dominik_Muth" }
+        {
+            "author_handle" : "Dominik_Muth"
+        }
     ],
     "manifest" : [
-	{
-	    "file_path" : "prog.c",
-	    "inventory_order" : 20,
-	    "OK_to_edit" : true,
-	    "display_as" : "c",
-	    "display_via_github" : true,
-	    "entry_text" : "entry source code"
-	},
-	{
-	    "file_path" : "Makefile",
-	    "inventory_order" : 30,
-	    "OK_to_edit" : true,
-	    "display_as" : "makefile",
-	    "display_via_github" : true,
-	    "entry_text" : "entry Makefile"
-	},
-	{
-	    "file_path" : "prog.orig.c",
-	    "inventory_order" : 50,
-	    "OK_to_edit" : false,
-	    "display_as" : "c",
-	    "display_via_github" : true,
-	    "entry_text" : "original source code"
-	},
-	{
-	    "file_path" : "try.sh",
-	    "inventory_order" : 100,
-	    "OK_to_edit" : true,
-	    "display_as" : "shellscript",
-	    "display_via_github" : true,
-	    "entry_text" : "script to try entry"
-	},
-	{
-	    "file_path" : "machine_beaver_4_2.h",
-	    "inventory_order" : 200,
-	    "OK_to_edit" : true,
-	    "display_as" : "c",
-	    "display_via_github" : true,
-	    "entry_text" : "busy beaver Turing machine macros"
-	},
-	{
-	    "file_path" : "machine_champ_2_4.h",
-	    "inventory_order" : 200,
-	    "OK_to_edit" : true,
-	    "display_as" : "c",
-	    "display_via_github" : true,
-	    "entry_text" : "current champion Turing machine macros"
-	},
-	{
-	    "file_path" : "machine_chaos_5_2.h",
-	    "inventory_order" : 200,
-	    "OK_to_edit" : true,
-	    "display_as" : "c",
-	    "display_via_github" : true,
-	    "entry_text" : "chaos Turing machine cpp macros"
-	},
-	{
-	    "file_path" : "machine_cmplx_5_2.h",
-	    "inventory_order" : 200,
-	    "OK_to_edit" : true,
-	    "display_as" : "c",
-	    "display_via_github" : true,
-	    "entry_text" : "complex Turing machine cpp macros"
-	},
-	{
-	    "file_path" : "machine_count_5_2.h",
-	    "inventory_order" : 200,
-	    "OK_to_edit" : true,
-	    "display_as" : "c",
-	    "display_via_github" : true,
-	    "entry_text" : "counting Turing machine cpp macros"
-	},
-	{
-	    "file_path" : "machine_gcd.h",
-	    "inventory_order" : 200,
-	    "OK_to_edit" : true,
-	    "display_as" : "c",
-	    "display_via_github" : true,
-	    "entry_text" : "greatest common divisor Turing machine cpp macros"
-	},
-	{
-	    "file_path" : "machine_great_3_2.h",
-	    "inventory_order" : 200,
-	    "OK_to_edit" : true,
-	    "display_as" : "c",
-	    "display_via_github" : true,
-	    "entry_text" : "greater Turing machine cpp macros"
-	},
-	{
-	    "file_path" : "machine_ioccc.h",
-	    "inventory_order" : 200,
-	    "OK_to_edit" : true,
-	    "display_as" : "c",
-	    "display_via_github" : true,
-	    "entry_text" : "IOCCC Turing machine cpp macros"
-	},
-	{
-	    "file_path" : "machine_nop.h",
-	    "inventory_order" : 200,
-	    "OK_to_edit" : true,
-	    "display_as" : "c",
-	    "display_via_github" : true,
-	    "entry_text" : "minimal Turing machine cpp macros"
-	},
-	{
-	    "file_path" : "machine_ru_2_4.h",
-	    "inventory_order" : 200,
-	    "OK_to_edit" : true,
-	    "display_as" : "c",
-	    "display_via_github" : true,
-	    "entry_text" : "runner up Turing machine cpp macros"
-	},
-	{
-	    "file_path" : "machine_times2.h",
-	    "inventory_order" : 200,
-	    "OK_to_edit" : true,
-	    "display_as" : "c",
-	    "display_via_github" : true,
-	    "entry_text" : "multiply by 2 Turing machine cpp macros"
-	},
-	{
-	    "file_path" : "tape_15_50.h",
-	    "inventory_order" : 200,
-	    "OK_to_edit" : true,
-	    "display_as" : "c",
-	    "display_via_github" : true,
-	    "entry_text" : "tape cpp macros"
-	},
-	{
-	    "file_path" : "tape_77_55.h",
-	    "inventory_order" : 200,
-	    "OK_to_edit" : true,
-	    "display_as" : "c",
-	    "display_via_github" : true,
-	    "entry_text" : "tape cpp macros"
-	},
-	{
-	    "file_path" : "tape_empty.h",
-	    "inventory_order" : 200,
-	    "OK_to_edit" : true,
-	    "display_as" : "c",
-	    "display_via_github" : true,
-	    "entry_text" : "empty tape cpp macros"
-	},
-	{
-	    "file_path" : "tape_five.h",
-	    "inventory_order" : 200,
-	    "OK_to_edit" : true,
-	    "display_as" : "c",
-	    "display_via_github" : true,
-	    "entry_text" : "tape cpp macros"
-	},
-	{
-	    "file_path" : "2015_muth.tar.bz2",
-	    "inventory_order" : 1415926535,
-	    "OK_to_edit" : false,
-	    "display_as" : "tbz2",
-	    "display_via_github" : false,
-	    "entry_text" : "download entry tarball"
-	},
-	{
-	    "file_path" : ".entry.json",
-	    "inventory_order" : 4000000000,
-	    "OK_to_edit" : true,
-	    "display_as" : "json",
-	    "display_via_github" : true,
-	    "entry_text" : "entry summary and manifest in JSON"
-	},
-	{
-	    "file_path" : ".gitignore",
-	    "inventory_order" : 4000000000,
-	    "OK_to_edit" : true,
-	    "display_as" : "gitignore",
-	    "display_via_github" : true,
-	    "entry_text" : "list of files that should not be committed under git"
-	},
-	{
-	    "file_path" : ".path",
-	    "inventory_order" : 4000000000,
-	    "OK_to_edit" : false,
-	    "display_as" : "path",
-	    "display_via_github" : true,
-	    "entry_text" : "directory path from top level directory"
-	},
-	{
-	    "file_path" : "README.md",
-	    "inventory_order" : 4000000000,
-	    "OK_to_edit" : true,
-	    "display_as" : "markdown",
-	    "display_via_github" : true,
-	    "entry_text" : "markdown source for this web page"
-	},
-	{
-	    "file_path" : "index.html",
-	    "inventory_order" : 4294967295,
-	    "OK_to_edit" : false,
-	    "display_as" : "html",
-	    "display_via_github" : false,
-	    "entry_text" : "this web page"
-	}
+        {
+            "file_path" : "prog.c",
+            "inventory_order" : 20,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "entry source code"
+        },
+        {
+            "file_path" : "Makefile",
+            "inventory_order" : 30,
+            "OK_to_edit" : true,
+            "display_as" : "makefile",
+            "display_via_github" : true,
+            "entry_text" : "entry Makefile"
+        },
+        {
+            "file_path" : "prog.orig.c",
+            "inventory_order" : 50,
+            "OK_to_edit" : false,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "original source code"
+        },
+        {
+            "file_path" : "try.sh",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "shellscript",
+            "display_via_github" : true,
+            "entry_text" : "script to try entry"
+        },
+        {
+            "file_path" : "machine_beaver_4_2.h",
+            "inventory_order" : 200,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "busy beaver Turing machine macros"
+        },
+        {
+            "file_path" : "machine_champ_2_4.h",
+            "inventory_order" : 200,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "current champion Turing machine macros"
+        },
+        {
+            "file_path" : "machine_chaos_5_2.h",
+            "inventory_order" : 200,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "chaos Turing machine cpp macros"
+        },
+        {
+            "file_path" : "machine_cmplx_5_2.h",
+            "inventory_order" : 200,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "complex Turing machine cpp macros"
+        },
+        {
+            "file_path" : "machine_count_5_2.h",
+            "inventory_order" : 200,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "counting Turing machine cpp macros"
+        },
+        {
+            "file_path" : "machine_gcd.h",
+            "inventory_order" : 200,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "greatest common divisor Turing machine cpp macros"
+        },
+        {
+            "file_path" : "machine_great_3_2.h",
+            "inventory_order" : 200,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "greater Turing machine cpp macros"
+        },
+        {
+            "file_path" : "machine_ioccc.h",
+            "inventory_order" : 200,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "IOCCC Turing machine cpp macros"
+        },
+        {
+            "file_path" : "machine_nop.h",
+            "inventory_order" : 200,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "minimal Turing machine cpp macros"
+        },
+        {
+            "file_path" : "machine_ru_2_4.h",
+            "inventory_order" : 200,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "runner up Turing machine cpp macros"
+        },
+        {
+            "file_path" : "machine_times2.h",
+            "inventory_order" : 200,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "multiply by 2 Turing machine cpp macros"
+        },
+        {
+            "file_path" : "tape_15_50.h",
+            "inventory_order" : 200,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "tape cpp macros"
+        },
+        {
+            "file_path" : "tape_77_55.h",
+            "inventory_order" : 200,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "tape cpp macros"
+        },
+        {
+            "file_path" : "tape_empty.h",
+            "inventory_order" : 200,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "empty tape cpp macros"
+        },
+        {
+            "file_path" : "tape_five.h",
+            "inventory_order" : 200,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "tape cpp macros"
+        },
+        {
+            "file_path" : "2015_muth.tar.bz2",
+            "inventory_order" : 1415926535,
+            "OK_to_edit" : false,
+            "display_as" : "tbz2",
+            "display_via_github" : false,
+            "entry_text" : "download entry tarball"
+        },
+        {
+            "file_path" : ".entry.json",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "json",
+            "display_via_github" : true,
+            "entry_text" : "entry summary and manifest in JSON"
+        },
+        {
+            "file_path" : ".gitignore",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "gitignore",
+            "display_via_github" : true,
+            "entry_text" : "list of files that should not be committed under git"
+        },
+        {
+            "file_path" : ".path",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : false,
+            "display_as" : "path",
+            "display_via_github" : true,
+            "entry_text" : "directory path from top level directory"
+        },
+        {
+            "file_path" : "README.md",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "markdown",
+            "display_via_github" : true,
+            "entry_text" : "markdown source for this web page"
+        },
+        {
+            "file_path" : "index.html",
+            "inventory_order" : 4294967295,
+            "OK_to_edit" : false,
+            "display_as" : "html",
+            "display_via_github" : false,
+            "entry_text" : "this web page"
+        }
     ]
 }

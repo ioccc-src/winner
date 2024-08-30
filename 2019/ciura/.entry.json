@@ -6,224 +6,226 @@
     "dir" : "ciura",
     "entry_id" : "2019_ciura",
     "author_set" : [
-	{ "author_handle" : "Marcin_Ciura" }
+        {
+            "author_handle" : "Marcin_Ciura"
+        }
     ],
     "manifest" : [
-	{
-	    "file_path" : "prog.c",
-	    "inventory_order" : 20,
-	    "OK_to_edit" : true,
-	    "display_as" : "c",
-	    "display_via_github" : true,
-	    "entry_text" : "entry source code"
-	},
-	{
-	    "file_path" : "Makefile",
-	    "inventory_order" : 30,
-	    "OK_to_edit" : true,
-	    "display_as" : "makefile",
-	    "display_via_github" : true,
-	    "entry_text" : "entry Makefile"
-	},
-	{
-	    "file_path" : "prog.alt.c",
-	    "inventory_order" : 40,
-	    "OK_to_edit" : true,
-	    "display_as" : "c",
-	    "display_via_github" : true,
-	    "entry_text" : "alternate source code"
-	},
-	{
-	    "file_path" : "prog.orig.c",
-	    "inventory_order" : 50,
-	    "OK_to_edit" : false,
-	    "display_as" : "c",
-	    "display_via_github" : true,
-	    "entry_text" : "original source code"
-	},
-	{
-	    "file_path" : "de.alt.sh",
-	    "inventory_order" : 100,
-	    "OK_to_edit" : true,
-	    "display_as" : "shellscript",
-	    "display_via_github" : true,
-	    "entry_text" : "run alternate code with Germain words"
-	},
-	{
-	    "file_path" : "en.alt.sh",
-	    "inventory_order" : 100,
-	    "OK_to_edit" : true,
-	    "display_as" : "shellscript",
-	    "display_via_github" : true,
-	    "entry_text" : "run alternate code with English words"
-	},
-	{
-	    "file_path" : "getwords.sh",
-	    "inventory_order" : 100,
-	    "OK_to_edit" : true,
-	    "display_as" : "shellscript",
-	    "display_via_github" : true,
-	    "entry_text" : "fetch words from aspell dictionary file"
-	},
-	{
-	    "file_path" : "it.alt.sh",
-	    "inventory_order" : 100,
-	    "OK_to_edit" : true,
-	    "display_as" : "shellscript",
-	    "display_via_github" : true,
-	    "entry_text" : "run alternate code with Italian words"
-	},
-	{
-	    "file_path" : "pl.alt.sh",
-	    "inventory_order" : 100,
-	    "OK_to_edit" : true,
-	    "display_as" : "shellscript",
-	    "display_via_github" : true,
-	    "entry_text" : "run alternate code with Polish words"
-	},
-	{
-	    "file_path" : "ru.alt.sh",
-	    "inventory_order" : 100,
-	    "OK_to_edit" : true,
-	    "display_as" : "shellscript",
-	    "display_via_github" : true,
-	    "entry_text" : "run alternate code with Russian words"
-	},
-	{
-	    "file_path" : "try.alt.sh",
-	    "inventory_order" : 100,
-	    "OK_to_edit" : true,
-	    "display_as" : "shellscript",
-	    "display_via_github" : true,
-	    "entry_text" : "script to try alternate code"
-	},
-	{
-	    "file_path" : "try.sh",
-	    "inventory_order" : 100,
-	    "OK_to_edit" : true,
-	    "display_as" : "shellscript",
-	    "display_via_github" : true,
-	    "entry_text" : "script to try entry"
-	},
-	{
-	    "file_path" : "wrapprog.py",
-	    "inventory_order" : 100,
-	    "OK_to_edit" : true,
-	    "display_as" : "python",
-	    "display_via_github" : true,
-	    "entry_text" : "merge pangrams before passing them to prog"
-	},
-	{
-	    "file_path" : "de.sh",
-	    "inventory_order" : 150,
-	    "OK_to_edit" : true,
-	    "display_as" : "shellscript",
-	    "display_via_github" : true,
-	    "entry_text" : "run with German words"
-	},
-	{
-	    "file_path" : "en.sh",
-	    "inventory_order" : 150,
-	    "OK_to_edit" : true,
-	    "display_as" : "shellscript",
-	    "display_via_github" : true,
-	    "entry_text" : "run with English words"
-	},
-	{
-	    "file_path" : "fr.alt.sh",
-	    "inventory_order" : 150,
-	    "OK_to_edit" : true,
-	    "display_as" : "shellscript",
-	    "display_via_github" : true,
-	    "entry_text" : "script to try alternate code in French"
-	},
-	{
-	    "file_path" : "fr.sh",
-	    "inventory_order" : 150,
-	    "OK_to_edit" : true,
-	    "display_as" : "shellscript",
-	    "display_via_github" : true,
-	    "entry_text" : "run with French words"
-	},
-	{
-	    "file_path" : "it.sh",
-	    "inventory_order" : 150,
-	    "OK_to_edit" : true,
-	    "display_as" : "shellscript",
-	    "display_via_github" : true,
-	    "entry_text" : "run with Italian words"
-	},
-	{
-	    "file_path" : "pl.sh",
-	    "inventory_order" : 150,
-	    "OK_to_edit" : true,
-	    "display_as" : "shellscript",
-	    "display_via_github" : true,
-	    "entry_text" : "run with Polish words"
-	},
-	{
-	    "file_path" : "ru.sh",
-	    "inventory_order" : 150,
-	    "OK_to_edit" : true,
-	    "display_as" : "shellscript",
-	    "display_via_github" : true,
-	    "entry_text" : "run with Russian words"
-	},
-	{
-	    "file_path" : "fasc5c.pdf",
-	    "inventory_order" : 200,
-	    "OK_to_edit" : true,
-	    "display_as" : "pdf",
-	    "display_via_github" : false,
-	    "entry_text" : "The Art of Computer Programming vol 4 draft"
-	},
-	{
-	    "file_path" : "2019_ciura.tar.bz2",
-	    "inventory_order" : 1415926535,
-	    "OK_to_edit" : false,
-	    "display_as" : "tbz2",
-	    "display_via_github" : false,
-	    "entry_text" : "download entry tarball"
-	},
-	{
-	    "file_path" : ".entry.json",
-	    "inventory_order" : 4000000000,
-	    "OK_to_edit" : true,
-	    "display_as" : "json",
-	    "display_via_github" : true,
-	    "entry_text" : "entry summary and manifest in JSON"
-	},
-	{
-	    "file_path" : ".gitignore",
-	    "inventory_order" : 4000000000,
-	    "OK_to_edit" : true,
-	    "display_as" : "gitignore",
-	    "display_via_github" : true,
-	    "entry_text" : "list of files that should not be committed under git"
-	},
-	{
-	    "file_path" : ".path",
-	    "inventory_order" : 4000000000,
-	    "OK_to_edit" : false,
-	    "display_as" : "path",
-	    "display_via_github" : true,
-	    "entry_text" : "directory path from top level directory"
-	},
-	{
-	    "file_path" : "README.md",
-	    "inventory_order" : 4000000000,
-	    "OK_to_edit" : true,
-	    "display_as" : "markdown",
-	    "display_via_github" : true,
-	    "entry_text" : "markdown source for this web page"
-	},
-	{
-	    "file_path" : "index.html",
-	    "inventory_order" : 4294967295,
-	    "OK_to_edit" : false,
-	    "display_as" : "html",
-	    "display_via_github" : false,
-	    "entry_text" : "this web page"
-	}
+        {
+            "file_path" : "prog.c",
+            "inventory_order" : 20,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "entry source code"
+        },
+        {
+            "file_path" : "Makefile",
+            "inventory_order" : 30,
+            "OK_to_edit" : true,
+            "display_as" : "makefile",
+            "display_via_github" : true,
+            "entry_text" : "entry Makefile"
+        },
+        {
+            "file_path" : "prog.alt.c",
+            "inventory_order" : 40,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "alternate source code"
+        },
+        {
+            "file_path" : "prog.orig.c",
+            "inventory_order" : 50,
+            "OK_to_edit" : false,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "original source code"
+        },
+        {
+            "file_path" : "de.alt.sh",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "shellscript",
+            "display_via_github" : true,
+            "entry_text" : "run alternate code with Germain words"
+        },
+        {
+            "file_path" : "en.alt.sh",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "shellscript",
+            "display_via_github" : true,
+            "entry_text" : "run alternate code with English words"
+        },
+        {
+            "file_path" : "getwords.sh",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "shellscript",
+            "display_via_github" : true,
+            "entry_text" : "fetch words from aspell dictionary file"
+        },
+        {
+            "file_path" : "it.alt.sh",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "shellscript",
+            "display_via_github" : true,
+            "entry_text" : "run alternate code with Italian words"
+        },
+        {
+            "file_path" : "pl.alt.sh",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "shellscript",
+            "display_via_github" : true,
+            "entry_text" : "run alternate code with Polish words"
+        },
+        {
+            "file_path" : "ru.alt.sh",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "shellscript",
+            "display_via_github" : true,
+            "entry_text" : "run alternate code with Russian words"
+        },
+        {
+            "file_path" : "try.alt.sh",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "shellscript",
+            "display_via_github" : true,
+            "entry_text" : "script to try alternate code"
+        },
+        {
+            "file_path" : "try.sh",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "shellscript",
+            "display_via_github" : true,
+            "entry_text" : "script to try entry"
+        },
+        {
+            "file_path" : "wrapprog.py",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "python",
+            "display_via_github" : true,
+            "entry_text" : "merge pangrams before passing them to prog"
+        },
+        {
+            "file_path" : "de.sh",
+            "inventory_order" : 150,
+            "OK_to_edit" : true,
+            "display_as" : "shellscript",
+            "display_via_github" : true,
+            "entry_text" : "run with German words"
+        },
+        {
+            "file_path" : "en.sh",
+            "inventory_order" : 150,
+            "OK_to_edit" : true,
+            "display_as" : "shellscript",
+            "display_via_github" : true,
+            "entry_text" : "run with English words"
+        },
+        {
+            "file_path" : "fr.alt.sh",
+            "inventory_order" : 150,
+            "OK_to_edit" : true,
+            "display_as" : "shellscript",
+            "display_via_github" : true,
+            "entry_text" : "script to try alternate code in French"
+        },
+        {
+            "file_path" : "fr.sh",
+            "inventory_order" : 150,
+            "OK_to_edit" : true,
+            "display_as" : "shellscript",
+            "display_via_github" : true,
+            "entry_text" : "run with French words"
+        },
+        {
+            "file_path" : "it.sh",
+            "inventory_order" : 150,
+            "OK_to_edit" : true,
+            "display_as" : "shellscript",
+            "display_via_github" : true,
+            "entry_text" : "run with Italian words"
+        },
+        {
+            "file_path" : "pl.sh",
+            "inventory_order" : 150,
+            "OK_to_edit" : true,
+            "display_as" : "shellscript",
+            "display_via_github" : true,
+            "entry_text" : "run with Polish words"
+        },
+        {
+            "file_path" : "ru.sh",
+            "inventory_order" : 150,
+            "OK_to_edit" : true,
+            "display_as" : "shellscript",
+            "display_via_github" : true,
+            "entry_text" : "run with Russian words"
+        },
+        {
+            "file_path" : "fasc5c.pdf",
+            "inventory_order" : 200,
+            "OK_to_edit" : true,
+            "display_as" : "pdf",
+            "display_via_github" : false,
+            "entry_text" : "The Art of Computer Programming vol 4 draft"
+        },
+        {
+            "file_path" : "2019_ciura.tar.bz2",
+            "inventory_order" : 1415926535,
+            "OK_to_edit" : false,
+            "display_as" : "tbz2",
+            "display_via_github" : false,
+            "entry_text" : "download entry tarball"
+        },
+        {
+            "file_path" : ".entry.json",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "json",
+            "display_via_github" : true,
+            "entry_text" : "entry summary and manifest in JSON"
+        },
+        {
+            "file_path" : ".gitignore",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "gitignore",
+            "display_via_github" : true,
+            "entry_text" : "list of files that should not be committed under git"
+        },
+        {
+            "file_path" : ".path",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : false,
+            "display_as" : "path",
+            "display_via_github" : true,
+            "entry_text" : "directory path from top level directory"
+        },
+        {
+            "file_path" : "README.md",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "markdown",
+            "display_via_github" : true,
+            "entry_text" : "markdown source for this web page"
+        },
+        {
+            "file_path" : "index.html",
+            "inventory_order" : 4294967295,
+            "OK_to_edit" : false,
+            "display_as" : "html",
+            "display_via_github" : false,
+            "entry_text" : "this web page"
+        }
     ]
 }

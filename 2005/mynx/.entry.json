@@ -6,176 +6,178 @@
     "dir" : "mynx",
     "entry_id" : "2005_mynx",
     "author_set" : [
-	{ "author_handle" : "Anthony_C_Howe" }
+        {
+            "author_handle" : "Anthony_C_Howe"
+        }
     ],
     "manifest" : [
-	{
-	    "file_path" : "mynx.c",
-	    "inventory_order" : 20,
-	    "OK_to_edit" : true,
-	    "display_as" : "c",
-	    "display_via_github" : true,
-	    "entry_text" : "entry source code"
-	},
-	{
-	    "file_path" : "Makefile",
-	    "inventory_order" : 30,
-	    "OK_to_edit" : true,
-	    "display_as" : "makefile",
-	    "display_via_github" : true,
-	    "entry_text" : "entry Makefile"
-	},
-	{
-	    "file_path" : "mynx.alt.c",
-	    "inventory_order" : 40,
-	    "OK_to_edit" : true,
-	    "display_as" : "c",
-	    "display_via_github" : true,
-	    "entry_text" : "author provided unobfuscated code"
-	},
-	{
-	    "file_path" : "mynx.alt2.c",
-	    "inventory_order" : 40,
-	    "OK_to_edit" : true,
-	    "display_as" : "c",
-	    "display_via_github" : true,
-	    "entry_text" : "alternate source code"
-	},
-	{
-	    "file_path" : "mynx.orig.c",
-	    "inventory_order" : 50,
-	    "OK_to_edit" : false,
-	    "display_as" : "c",
-	    "display_via_github" : true,
-	    "entry_text" : "original source code"
-	},
-	{
-	    "file_path" : "manual.html",
-	    "inventory_order" : 100,
-	    "OK_to_edit" : true,
-	    "display_as" : "html",
-	    "display_via_github" : false,
-	    "entry_text" : "manual for the Mynx web browser"
-	},
-	{
-	    "file_path" : "entities.txt",
-	    "inventory_order" : 120,
-	    "OK_to_edit" : true,
-	    "display_as" : "text",
-	    "display_via_github" : false,
-	    "entry_text" : "ISO 8859-1 entitles"
-	},
-	{
-	    "file_path" : "source-alt/transform.sed",
-	    "inventory_order" : 130,
-	    "OK_to_edit" : true,
-	    "display_as" : "sed",
-	    "display_via_github" : true,
-	    "entry_text" : "sed(1) script for building unobfuscated code"
-	},
-	{
-	    "file_path" : "source-alt/configure",
-	    "inventory_order" : 150,
-	    "OK_to_edit" : true,
-	    "display_as" : "shellscript",
-	    "display_via_github" : true,
-	    "entry_text" : "pre-built configure script for unobfuscated code"
-	},
-	{
-	    "file_path" : "source-alt/configure.in",
-	    "inventory_order" : 150,
-	    "OK_to_edit" : true,
-	    "display_as" : "shellscript",
-	    "display_via_github" : true,
-	    "entry_text" : "GNU Autoconf script for unobfuscated code"
-	},
-	{
-	    "file_path" : "source-alt/makefile.in",
-	    "inventory_order" : 150,
-	    "OK_to_edit" : true,
-	    "display_as" : "shellscript",
-	    "display_via_github" : true,
-	    "entry_text" : "GNU Automake script for unobfuscated code"
-	},
-	{
-	    "file_path" : "source/configure",
-	    "inventory_order" : 150,
-	    "OK_to_edit" : true,
-	    "display_as" : "shellscript",
-	    "display_via_github" : true,
-	    "entry_text" : "pre-built configure script"
-	},
-	{
-	    "file_path" : "source/configure.in",
-	    "inventory_order" : 150,
-	    "OK_to_edit" : true,
-	    "display_as" : "shellscript",
-	    "display_via_github" : true,
-	    "entry_text" : "GNU Autoconf script"
-	},
-	{
-	    "file_path" : "source/makefile.in",
-	    "inventory_order" : 150,
-	    "OK_to_edit" : true,
-	    "display_as" : "shellscript",
-	    "display_via_github" : true,
-	    "entry_text" : "GNU Automake script"
-	},
-	{
-	    "file_path" : "2005_mynx.tar.bz2",
-	    "inventory_order" : 1415926535,
-	    "OK_to_edit" : false,
-	    "display_as" : "tbz2",
-	    "display_via_github" : false,
-	    "entry_text" : "download entry tarball"
-	},
-	{
-	    "file_path" : ".entry.json",
-	    "inventory_order" : 4000000000,
-	    "OK_to_edit" : true,
-	    "display_as" : "json",
-	    "display_via_github" : true,
-	    "entry_text" : "entry summary and manifest in JSON"
-	},
-	{
-	    "file_path" : ".gitignore",
-	    "inventory_order" : 4000000000,
-	    "OK_to_edit" : true,
-	    "display_as" : "gitignore",
-	    "display_via_github" : true,
-	    "entry_text" : "list of files that should not be committed under git"
-	},
-	{
-	    "file_path" : ".path",
-	    "inventory_order" : 4000000000,
-	    "OK_to_edit" : false,
-	    "display_as" : "path",
-	    "display_via_github" : true,
-	    "entry_text" : "directory path from top level directory"
-	},
-	{
-	    "file_path" : "README.md",
-	    "inventory_order" : 4000000000,
-	    "OK_to_edit" : true,
-	    "display_as" : "markdown",
-	    "display_via_github" : true,
-	    "entry_text" : "markdown source for this web page"
-	},
-	{
-	    "file_path" : "source/mynx.c",
-	    "inventory_order" : 4000000000,
-	    "OK_to_edit" : true,
-	    "display_as" : "c",
-	    "display_via_github" : true,
-	    "entry_text" : "copy of the entry source code"
-	},
-	{
-	    "file_path" : "index.html",
-	    "inventory_order" : 4294967295,
-	    "OK_to_edit" : false,
-	    "display_as" : "html",
-	    "display_via_github" : false,
-	    "entry_text" : "this web page"
-	}
+        {
+            "file_path" : "mynx.c",
+            "inventory_order" : 20,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "entry source code"
+        },
+        {
+            "file_path" : "Makefile",
+            "inventory_order" : 30,
+            "OK_to_edit" : true,
+            "display_as" : "makefile",
+            "display_via_github" : true,
+            "entry_text" : "entry Makefile"
+        },
+        {
+            "file_path" : "mynx.alt.c",
+            "inventory_order" : 40,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "author provided unobfuscated code"
+        },
+        {
+            "file_path" : "mynx.alt2.c",
+            "inventory_order" : 40,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "alternate source code"
+        },
+        {
+            "file_path" : "mynx.orig.c",
+            "inventory_order" : 50,
+            "OK_to_edit" : false,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "original source code"
+        },
+        {
+            "file_path" : "manual.html",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "html",
+            "display_via_github" : false,
+            "entry_text" : "manual for the Mynx web browser"
+        },
+        {
+            "file_path" : "entities.txt",
+            "inventory_order" : 120,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : false,
+            "entry_text" : "ISO 8859-1 entitles"
+        },
+        {
+            "file_path" : "source-alt/transform.sed",
+            "inventory_order" : 130,
+            "OK_to_edit" : true,
+            "display_as" : "sed",
+            "display_via_github" : true,
+            "entry_text" : "sed(1) script for building unobfuscated code"
+        },
+        {
+            "file_path" : "source-alt/configure",
+            "inventory_order" : 150,
+            "OK_to_edit" : true,
+            "display_as" : "shellscript",
+            "display_via_github" : true,
+            "entry_text" : "pre-built configure script for unobfuscated code"
+        },
+        {
+            "file_path" : "source-alt/configure.in",
+            "inventory_order" : 150,
+            "OK_to_edit" : true,
+            "display_as" : "shellscript",
+            "display_via_github" : true,
+            "entry_text" : "GNU Autoconf script for unobfuscated code"
+        },
+        {
+            "file_path" : "source-alt/makefile.in",
+            "inventory_order" : 150,
+            "OK_to_edit" : true,
+            "display_as" : "shellscript",
+            "display_via_github" : true,
+            "entry_text" : "GNU Automake script for unobfuscated code"
+        },
+        {
+            "file_path" : "source/configure",
+            "inventory_order" : 150,
+            "OK_to_edit" : true,
+            "display_as" : "shellscript",
+            "display_via_github" : true,
+            "entry_text" : "pre-built configure script"
+        },
+        {
+            "file_path" : "source/configure.in",
+            "inventory_order" : 150,
+            "OK_to_edit" : true,
+            "display_as" : "shellscript",
+            "display_via_github" : true,
+            "entry_text" : "GNU Autoconf script"
+        },
+        {
+            "file_path" : "source/makefile.in",
+            "inventory_order" : 150,
+            "OK_to_edit" : true,
+            "display_as" : "shellscript",
+            "display_via_github" : true,
+            "entry_text" : "GNU Automake script"
+        },
+        {
+            "file_path" : "2005_mynx.tar.bz2",
+            "inventory_order" : 1415926535,
+            "OK_to_edit" : false,
+            "display_as" : "tbz2",
+            "display_via_github" : false,
+            "entry_text" : "download entry tarball"
+        },
+        {
+            "file_path" : ".entry.json",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "json",
+            "display_via_github" : true,
+            "entry_text" : "entry summary and manifest in JSON"
+        },
+        {
+            "file_path" : ".gitignore",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "gitignore",
+            "display_via_github" : true,
+            "entry_text" : "list of files that should not be committed under git"
+        },
+        {
+            "file_path" : ".path",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : false,
+            "display_as" : "path",
+            "display_via_github" : true,
+            "entry_text" : "directory path from top level directory"
+        },
+        {
+            "file_path" : "README.md",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "markdown",
+            "display_via_github" : true,
+            "entry_text" : "markdown source for this web page"
+        },
+        {
+            "file_path" : "source/mynx.c",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "copy of the entry source code"
+        },
+        {
+            "file_path" : "index.html",
+            "inventory_order" : 4294967295,
+            "OK_to_edit" : false,
+            "display_as" : "html",
+            "display_via_github" : false,
+            "entry_text" : "this web page"
+        }
     ]
 }
