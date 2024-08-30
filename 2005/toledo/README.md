@@ -5,6 +5,10 @@
 ```
 
 
+There are two alternate versions provided by the author. See [Alternate
+code](#alternate-code) below.
+
+
 ## To use:
 
 ``` <!---sh-->
@@ -23,7 +27,8 @@
 ## Alternate code:
 
 Two alternate versions of this entry, [toledo2.c](%%REPO_URL%%/2005/toledo/toledo2.c) and
-[toledo3.c](%%REPO_URL%%/2005/toledo/toledo3.c) are provided.
+[toledo3.c](%%REPO_URL%%/2005/toledo/toledo3.c) were provided by the author.
+Unfortunately, in 2024, it is not currently known what the differences are.
 
 
 ### Alternate build:
@@ -50,7 +55,7 @@ by the rules of C and Chess within a single function!
 ### Historical note:
 
 When this entry was submitted the code was a recursive call to `main()` - that
-was it. In 2023 due to problems with `clang` `main()` calls another function,
+was it. In 2023 due to problems with `clang`, `main()` calls another function,
 `pain()`, which calls itself. But it might be said that the Chess is still a
 single function.
 
