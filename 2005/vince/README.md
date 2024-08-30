@@ -7,9 +7,12 @@ installed.
     make
 ```
 
-NOTE: this entry requires the `X11/Xlib.h` header file and the X11 library to
+**NOTE**: this entry requires the `X11/Xlib.h` header file and the X11 library to
 compile.  For more information see the
 FAQ on "[X11](../../faq.html#X11)".
+
+There is an alternate version of this entry. See [Alternate
+code](#alternate-code) below.
 
 
 ## To use:
@@ -27,8 +30,8 @@ what happens!
 
 ## Alternate code:
 
-The [vince.alt.c](%%REPO_URL%%/2005/vince/vince.alt.c) code of the submission will run on SGI IRIX and
-also has the recursive `CPP` macro (which sneaked in accidentally) removed.
+The [vince.alt.c](%%REPO_URL%%/2005/vince/vince.alt.c) code will run on SGI IRIX
+and also has the recursive `CPP` macro (which sneaked in accidentally) removed.
 
 
 ### Alternate build:
@@ -57,7 +60,7 @@ This beauteous entry makes use of visual `{}`s and whitespace to instruct the
 visuals.  Even hitting the space bar while the program runs produces a "spacey"
 effect! :-)
 
-NOTE: when hitting space bar make sure that the program window is in focus!
+**NOTE**: when hitting space bar make sure that the program window is in focus!
 
 Challenge: Try modifying the texture to something of your own design.
 
