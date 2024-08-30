@@ -6,234 +6,232 @@
     "dir" : "endoh1",
     "entry_id" : "2014_endoh1",
     "author_set" : [
-        {
-            "author_handle" : "Yusuke_Endoh"
-        }
+	{ "author_handle" : "Yusuke_Endoh" }
     ],
     "manifest" : [
-        {
-            "file_path" : "prog.c",
-            "inventory_order" : 20,
-            "OK_to_edit" : true,
-            "display_as" : "c",
-            "display_via_github" : true,
-            "entry_text" : "entry source code"
-        },
-        {
-            "file_path" : "Makefile",
-            "inventory_order" : 30,
-            "OK_to_edit" : true,
-            "display_as" : "makefile",
-            "display_via_github" : true,
-            "entry_text" : "entry Makefile"
-        },
-        {
-            "file_path" : "prog.orig.c",
-            "inventory_order" : 50,
-            "OK_to_edit" : false,
-            "display_as" : "c",
-            "display_via_github" : true,
-            "entry_text" : "original source code"
-        },
-        {
-            "file_path" : "Rakefile",
-            "inventory_order" : 100,
-            "OK_to_edit" : true,
-            "display_as" : "ruby",
-            "display_via_github" : true,
-            "entry_text" : "Ruby Makefile"
-        },
-        {
-            "file_path" : "quine-qr.html",
-            "inventory_order" : 100,
-            "OK_to_edit" : false,
-            "display_as" : "html",
-            "display_via_github" : false,
-            "entry_text" : "information about Q(uine)R code generator"
-        },
-        {
-            "file_path" : "rake.sh",
-            "inventory_order" : 100,
-            "OK_to_edit" : true,
-            "display_as" : "shellscript",
-            "display_via_github" : true,
-            "entry_text" : "make rake script"
-        },
-        {
-            "file_path" : "try.sh",
-            "inventory_order" : 100,
-            "OK_to_edit" : true,
-            "display_as" : "shellscript",
-            "display_via_github" : true,
-            "entry_text" : "script to try entry"
-        },
-        {
-            "file_path" : "alpha.rb",
-            "inventory_order" : 150,
-            "OK_to_edit" : true,
-            "display_as" : "ruby",
-            "display_via_github" : true,
-            "entry_text" : "support program for Rakefile"
-        },
-        {
-            "file_path" : "assemble.rb",
-            "inventory_order" : 150,
-            "OK_to_edit" : true,
-            "display_as" : "ruby",
-            "display_via_github" : true,
-            "entry_text" : "support program for Rakefile"
-        },
-        {
-            "file_path" : "ast-def.rb",
-            "inventory_order" : 150,
-            "OK_to_edit" : true,
-            "display_as" : "ruby",
-            "display_via_github" : true,
-            "entry_text" : "support program for Rakefile"
-        },
-        {
-            "file_path" : "gen-prog.rb",
-            "inventory_order" : 150,
-            "OK_to_edit" : true,
-            "display_as" : "ruby",
-            "display_via_github" : true,
-            "entry_text" : "support program for Rakefile"
-        },
-        {
-            "file_path" : "gen-table.rb",
-            "inventory_order" : 150,
-            "OK_to_edit" : true,
-            "display_as" : "ruby",
-            "display_via_github" : true,
-            "entry_text" : "support program for Rakefile"
-        },
-        {
-            "file_path" : "link.rb",
-            "inventory_order" : 150,
-            "OK_to_edit" : true,
-            "display_as" : "ruby",
-            "display_via_github" : true,
-            "entry_text" : "support program for Rakefile"
-        },
-        {
-            "file_path" : "machine.rb",
-            "inventory_order" : 150,
-            "OK_to_edit" : true,
-            "display_as" : "ruby",
-            "display_via_github" : true,
-            "entry_text" : "support program for Rakefile"
-        },
-        {
-            "file_path" : "parse.rb",
-            "inventory_order" : 150,
-            "OK_to_edit" : true,
-            "display_as" : "ruby",
-            "display_via_github" : true,
-            "entry_text" : "support program for Rakefile"
-        },
-        {
-            "file_path" : "prog-tmpl.c",
-            "inventory_order" : 150,
-            "OK_to_edit" : true,
-            "display_as" : "c",
-            "display_via_github" : true,
-            "entry_text" : "source code template used by gen-prog"
-        },
-        {
-            "file_path" : "register.rb",
-            "inventory_order" : 150,
-            "OK_to_edit" : true,
-            "display_as" : "ruby",
-            "display_via_github" : true,
-            "entry_text" : "support program for Rakefile"
-        },
-        {
-            "file_path" : "serialize.rb",
-            "inventory_order" : 150,
-            "OK_to_edit" : true,
-            "display_as" : "ruby",
-            "display_via_github" : true,
-            "entry_text" : "support program for Rakefile"
-        },
-        {
-            "file_path" : "src.rb",
-            "inventory_order" : 150,
-            "OK_to_edit" : true,
-            "display_as" : "ruby",
-            "display_via_github" : true,
-            "entry_text" : "support program for Rakefile"
-        },
-        {
-            "file_path" : "tool.rb",
-            "inventory_order" : 150,
-            "OK_to_edit" : true,
-            "display_as" : "ruby",
-            "display_via_github" : true,
-            "entry_text" : "support program for Rakefile"
-        },
-        {
-            "file_path" : "vm.c",
-            "inventory_order" : 150,
-            "OK_to_edit" : true,
-            "display_as" : "c",
-            "display_via_github" : true,
-            "entry_text" : "source code of the VM"
-        },
-        {
-            "file_path" : "2014_endoh1.tar.bz2",
-            "inventory_order" : 1415926535,
-            "OK_to_edit" : false,
-            "display_as" : "tbz2",
-            "display_via_github" : false,
-            "entry_text" : "download entry tarball"
-        },
-        {
-            "file_path" : ".entry.json",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : true,
-            "display_as" : "json",
-            "display_via_github" : true,
-            "entry_text" : "entry summary and manifest in JSON"
-        },
-        {
-            "file_path" : ".gitignore",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : true,
-            "display_as" : "gitignore",
-            "display_via_github" : true,
-            "entry_text" : "list of files that should not be committed under git"
-        },
-        {
-            "file_path" : ".path",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : false,
-            "display_as" : "path",
-            "display_via_github" : true,
-            "entry_text" : "directory path from top level directory"
-        },
-        {
-            "file_path" : "README.md",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : true,
-            "display_as" : "markdown",
-            "display_via_github" : true,
-            "entry_text" : "markdown source for this web page"
-        },
-        {
-            "file_path" : "quine-qr.md",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : true,
-            "display_as" : "markdown",
-            "display_via_github" : true,
-            "entry_text" : "markdown source for deobfuscation.html"
-        },
-        {
-            "file_path" : "index.html",
-            "inventory_order" : 4294967295,
-            "OK_to_edit" : false,
-            "display_as" : "html",
-            "display_via_github" : false,
-            "entry_text" : "this web page"
-        }
+	{
+	    "file_path" : "prog.c",
+	    "inventory_order" : 20,
+	    "OK_to_edit" : true,
+	    "display_as" : "c",
+	    "display_via_github" : true,
+	    "entry_text" : "entry source code"
+	},
+	{
+	    "file_path" : "Makefile",
+	    "inventory_order" : 30,
+	    "OK_to_edit" : true,
+	    "display_as" : "makefile",
+	    "display_via_github" : true,
+	    "entry_text" : "entry Makefile"
+	},
+	{
+	    "file_path" : "prog.orig.c",
+	    "inventory_order" : 50,
+	    "OK_to_edit" : false,
+	    "display_as" : "c",
+	    "display_via_github" : true,
+	    "entry_text" : "original source code"
+	},
+	{
+	    "file_path" : "Rakefile",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "ruby",
+	    "display_via_github" : true,
+	    "entry_text" : "Ruby Makefile"
+	},
+	{
+	    "file_path" : "quine-qr.html",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : false,
+	    "display_as" : "html",
+	    "display_via_github" : false,
+	    "entry_text" : "information about Q(uine)R code generator"
+	},
+	{
+	    "file_path" : "rake.sh",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "shellscript",
+	    "display_via_github" : true,
+	    "entry_text" : "make rake script"
+	},
+	{
+	    "file_path" : "try.sh",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "shellscript",
+	    "display_via_github" : true,
+	    "entry_text" : "script to try entry"
+	},
+	{
+	    "file_path" : "alpha.rb",
+	    "inventory_order" : 150,
+	    "OK_to_edit" : true,
+	    "display_as" : "ruby",
+	    "display_via_github" : true,
+	    "entry_text" : "support program for Rakefile"
+	},
+	{
+	    "file_path" : "assemble.rb",
+	    "inventory_order" : 150,
+	    "OK_to_edit" : true,
+	    "display_as" : "ruby",
+	    "display_via_github" : true,
+	    "entry_text" : "support program for Rakefile"
+	},
+	{
+	    "file_path" : "ast-def.rb",
+	    "inventory_order" : 150,
+	    "OK_to_edit" : true,
+	    "display_as" : "ruby",
+	    "display_via_github" : true,
+	    "entry_text" : "support program for Rakefile"
+	},
+	{
+	    "file_path" : "gen-prog.rb",
+	    "inventory_order" : 150,
+	    "OK_to_edit" : true,
+	    "display_as" : "ruby",
+	    "display_via_github" : true,
+	    "entry_text" : "support program for Rakefile"
+	},
+	{
+	    "file_path" : "gen-table.rb",
+	    "inventory_order" : 150,
+	    "OK_to_edit" : true,
+	    "display_as" : "ruby",
+	    "display_via_github" : true,
+	    "entry_text" : "support program for Rakefile"
+	},
+	{
+	    "file_path" : "link.rb",
+	    "inventory_order" : 150,
+	    "OK_to_edit" : true,
+	    "display_as" : "ruby",
+	    "display_via_github" : true,
+	    "entry_text" : "support program for Rakefile"
+	},
+	{
+	    "file_path" : "machine.rb",
+	    "inventory_order" : 150,
+	    "OK_to_edit" : true,
+	    "display_as" : "ruby",
+	    "display_via_github" : true,
+	    "entry_text" : "support program for Rakefile"
+	},
+	{
+	    "file_path" : "parse.rb",
+	    "inventory_order" : 150,
+	    "OK_to_edit" : true,
+	    "display_as" : "ruby",
+	    "display_via_github" : true,
+	    "entry_text" : "support program for Rakefile"
+	},
+	{
+	    "file_path" : "prog-tmpl.c",
+	    "inventory_order" : 150,
+	    "OK_to_edit" : true,
+	    "display_as" : "c",
+	    "display_via_github" : true,
+	    "entry_text" : "source code template used by gen-prog"
+	},
+	{
+	    "file_path" : "register.rb",
+	    "inventory_order" : 150,
+	    "OK_to_edit" : true,
+	    "display_as" : "ruby",
+	    "display_via_github" : true,
+	    "entry_text" : "support program for Rakefile"
+	},
+	{
+	    "file_path" : "serialize.rb",
+	    "inventory_order" : 150,
+	    "OK_to_edit" : true,
+	    "display_as" : "ruby",
+	    "display_via_github" : true,
+	    "entry_text" : "support program for Rakefile"
+	},
+	{
+	    "file_path" : "src.rb",
+	    "inventory_order" : 150,
+	    "OK_to_edit" : true,
+	    "display_as" : "ruby",
+	    "display_via_github" : true,
+	    "entry_text" : "support program for Rakefile"
+	},
+	{
+	    "file_path" : "tool.rb",
+	    "inventory_order" : 150,
+	    "OK_to_edit" : true,
+	    "display_as" : "ruby",
+	    "display_via_github" : true,
+	    "entry_text" : "support program for Rakefile"
+	},
+	{
+	    "file_path" : "vm.c",
+	    "inventory_order" : 150,
+	    "OK_to_edit" : true,
+	    "display_as" : "c",
+	    "display_via_github" : true,
+	    "entry_text" : "source code of the VM"
+	},
+	{
+	    "file_path" : "2014_endoh1.tar.bz2",
+	    "inventory_order" : 1415926535,
+	    "OK_to_edit" : false,
+	    "display_as" : "tbz2",
+	    "display_via_github" : false,
+	    "entry_text" : "download entry tarball"
+	},
+	{
+	    "file_path" : ".entry.json",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "json",
+	    "display_via_github" : true,
+	    "entry_text" : "entry summary and manifest in JSON"
+	},
+	{
+	    "file_path" : ".gitignore",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "gitignore",
+	    "display_via_github" : true,
+	    "entry_text" : "list of files that should not be committed under git"
+	},
+	{
+	    "file_path" : ".path",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : false,
+	    "display_as" : "path",
+	    "display_via_github" : true,
+	    "entry_text" : "directory path from top level directory"
+	},
+	{
+	    "file_path" : "README.md",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "markdown",
+	    "display_via_github" : true,
+	    "entry_text" : "markdown source for this web page"
+	},
+	{
+	    "file_path" : "quine-qr.md",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "markdown",
+	    "display_via_github" : true,
+	    "entry_text" : "markdown source for deobfuscation.html"
+	},
+	{
+	    "file_path" : "index.html",
+	    "inventory_order" : 4294967295,
+	    "OK_to_edit" : false,
+	    "display_as" : "html",
+	    "display_via_github" : false,
+	    "entry_text" : "this web page"
+	}
     ]
 }

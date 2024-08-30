@@ -6,122 +6,120 @@
     "dir" : "vik",
     "entry_id" : "2011_vik",
     "author_set" : [
-        {
-            "author_handle" : "Daniel_Vik"
-        }
+	{ "author_handle" : "Daniel_Vik" }
     ],
     "manifest" : [
-        {
-            "file_path" : "vik.c",
-            "inventory_order" : 20,
-            "OK_to_edit" : true,
-            "display_as" : "c",
-            "display_via_github" : true,
-            "entry_text" : "entry source code"
-        },
-        {
-            "file_path" : "Makefile",
-            "inventory_order" : 30,
-            "OK_to_edit" : true,
-            "display_as" : "makefile",
-            "display_via_github" : true,
-            "entry_text" : "entry Makefile"
-        },
-        {
-            "file_path" : "vik.alt.c",
-            "inventory_order" : 40,
-            "OK_to_edit" : true,
-            "display_as" : "c",
-            "display_via_github" : true,
-            "entry_text" : "alternate source code"
-        },
-        {
-            "file_path" : "vik.orig.c",
-            "inventory_order" : 50,
-            "OK_to_edit" : true,
-            "display_as" : "c",
-            "display_via_github" : true,
-            "entry_text" : "original source code"
-        },
-        {
-            "file_path" : "mad_world.mod",
-            "inventory_order" : 100,
-            "OK_to_edit" : true,
-            "display_as" : "mod",
-            "display_via_github" : false,
-            "entry_text" : "4-channel Protracker module sound data"
-        },
-        {
-            "file_path" : "randowan.mod",
-            "inventory_order" : 100,
-            "OK_to_edit" : true,
-            "display_as" : "mod",
-            "display_via_github" : false,
-            "entry_text" : "4-channel Protracker module sound data"
-        },
-        {
-            "file_path" : "raw2wav",
-            "inventory_order" : 100,
-            "OK_to_edit" : true,
-            "display_as" : "perl",
-            "display_via_github" : true,
-            "entry_text" : "convert raw format to WAV format"
-        },
-        {
-            "file_path" : "try.sh",
-            "inventory_order" : 100,
-            "OK_to_edit" : true,
-            "display_as" : "shellscript",
-            "display_via_github" : true,
-            "entry_text" : "script to try entry"
-        },
-        {
-            "file_path" : "2011_vik.tar.bz2",
-            "inventory_order" : 1415926535,
-            "OK_to_edit" : false,
-            "display_as" : "tbz2",
-            "display_via_github" : false,
-            "entry_text" : "download entry tarball"
-        },
-        {
-            "file_path" : ".entry.json",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : true,
-            "display_as" : "json",
-            "display_via_github" : true,
-            "entry_text" : "entry summary and manifest in JSON"
-        },
-        {
-            "file_path" : ".gitignore",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : true,
-            "display_as" : "gitignore",
-            "display_via_github" : true,
-            "entry_text" : "list of files that should not be committed under git"
-        },
-        {
-            "file_path" : ".path",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : false,
-            "display_as" : "path",
-            "display_via_github" : true,
-            "entry_text" : "directory path from top level directory"
-        },
-        {
-            "file_path" : "README.md",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : true,
-            "display_as" : "markdown",
-            "display_via_github" : true,
-            "entry_text" : "markdown source for this web page"
-        },
-        {
-            "file_path" : "index.html",
-            "inventory_order" : 4294967295,
-            "OK_to_edit" : false,
-            "display_as" : "html",
-            "display_via_github" : false,
-            "entry_text" : "this web page"
-        }
+	{
+	    "file_path" : "vik.c",
+	    "inventory_order" : 20,
+	    "OK_to_edit" : true,
+	    "display_as" : "c",
+	    "display_via_github" : true,
+	    "entry_text" : "entry source code"
+	},
+	{
+	    "file_path" : "Makefile",
+	    "inventory_order" : 30,
+	    "OK_to_edit" : true,
+	    "display_as" : "makefile",
+	    "display_via_github" : true,
+	    "entry_text" : "entry Makefile"
+	},
+	{
+	    "file_path" : "vik.alt.c",
+	    "inventory_order" : 40,
+	    "OK_to_edit" : true,
+	    "display_as" : "c",
+	    "display_via_github" : true,
+	    "entry_text" : "alternate source code"
+	},
+	{
+	    "file_path" : "vik.orig.c",
+	    "inventory_order" : 50,
+	    "OK_to_edit" : true,
+	    "display_as" : "c",
+	    "display_via_github" : true,
+	    "entry_text" : "original source code"
+	},
+	{
+	    "file_path" : "mad_world.mod",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "mod",
+	    "display_via_github" : false,
+	    "entry_text" : "4-channel Protracker module sound data"
+	},
+	{
+	    "file_path" : "randowan.mod",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "mod",
+	    "display_via_github" : false,
+	    "entry_text" : "4-channel Protracker module sound data"
+	},
+	{
+	    "file_path" : "raw2wav",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "perl",
+	    "display_via_github" : true,
+	    "entry_text" : "convert raw format to WAV format"
+	},
+	{
+	    "file_path" : "try.sh",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "shellscript",
+	    "display_via_github" : true,
+	    "entry_text" : "script to try entry"
+	},
+	{
+	    "file_path" : "2011_vik.tar.bz2",
+	    "inventory_order" : 1415926535,
+	    "OK_to_edit" : false,
+	    "display_as" : "tbz2",
+	    "display_via_github" : false,
+	    "entry_text" : "download entry tarball"
+	},
+	{
+	    "file_path" : ".entry.json",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "json",
+	    "display_via_github" : true,
+	    "entry_text" : "entry summary and manifest in JSON"
+	},
+	{
+	    "file_path" : ".gitignore",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "gitignore",
+	    "display_via_github" : true,
+	    "entry_text" : "list of files that should not be committed under git"
+	},
+	{
+	    "file_path" : ".path",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : false,
+	    "display_as" : "path",
+	    "display_via_github" : true,
+	    "entry_text" : "directory path from top level directory"
+	},
+	{
+	    "file_path" : "README.md",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "markdown",
+	    "display_via_github" : true,
+	    "entry_text" : "markdown source for this web page"
+	},
+	{
+	    "file_path" : "index.html",
+	    "inventory_order" : 4294967295,
+	    "OK_to_edit" : false,
+	    "display_as" : "html",
+	    "display_via_github" : false,
+	    "entry_text" : "this web page"
+	}
     ]
 }

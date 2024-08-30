@@ -6,474 +6,472 @@
     "dir" : "dlowe",
     "entry_id" : "2011_dlowe",
     "author_set" : [
-        {
-            "author_handle" : "J_David_Lowe"
-        }
+	{ "author_handle" : "J_David_Lowe" }
     ],
     "manifest" : [
-        {
-            "file_path" : "dlowe.c",
-            "inventory_order" : 20,
-            "OK_to_edit" : true,
-            "display_as" : "c",
-            "display_via_github" : true,
-            "entry_text" : "entry source code"
-        },
-        {
-            "file_path" : "Makefile",
-            "inventory_order" : 30,
-            "OK_to_edit" : true,
-            "display_as" : "makefile",
-            "display_via_github" : true,
-            "entry_text" : "entry Makefile"
-        },
-        {
-            "file_path" : "dlowe.orig.c",
-            "inventory_order" : 50,
-            "OK_to_edit" : false,
-            "display_as" : "c",
-            "display_via_github" : true,
-            "entry_text" : "original source code"
-        },
-        {
-            "file_path" : "earlystop.pl",
-            "inventory_order" : 100,
-            "OK_to_edit" : true,
-            "display_as" : "perl",
-            "display_via_github" : true,
-            "entry_text" : "wrapper script to stop training early"
-        },
-        {
-            "file_path" : "try.sh",
-            "inventory_order" : 100,
-            "OK_to_edit" : true,
-            "display_as" : "shellscript",
-            "display_via_github" : true,
-            "entry_text" : "script to try entry"
-        },
-        {
-            "file_path" : "dlowe-aux-data/png-0/5756029-DMZ-overview-B.gif",
-            "inventory_order" : 150,
-            "OK_to_edit" : true,
-            "display_as" : "image",
-            "display_via_github" : false,
-            "entry_text" : "Non-png gif images"
-        },
-        {
-            "file_path" : "dlowe-aux-data/png-0/M2.gif",
-            "inventory_order" : 150,
-            "OK_to_edit" : true,
-            "display_as" : "image",
-            "display_via_github" : false,
-            "entry_text" : "Non-png gif images"
-        },
-        {
-            "file_path" : "dlowe-aux-data/png-0/Obfuscate.gif",
-            "inventory_order" : 150,
-            "OK_to_edit" : true,
-            "display_as" : "image",
-            "display_via_github" : false,
-            "entry_text" : "Non-png gif images"
-        },
-        {
-            "file_path" : "dlowe-aux-data/png-0/figure_49.gif",
-            "inventory_order" : 150,
-            "OK_to_edit" : true,
-            "display_as" : "image",
-            "display_via_github" : false,
-            "entry_text" : "Non-png gif images"
-        },
-        {
-            "file_path" : "dlowe-aux-data/png-0/klockhuset.gif",
-            "inventory_order" : 150,
-            "OK_to_edit" : true,
-            "display_as" : "image",
-            "display_via_github" : false,
-            "entry_text" : "Non-png gif images"
-        },
-        {
-            "file_path" : "dlowe-aux-data/png-0/obfuscate_1.gif",
-            "inventory_order" : 150,
-            "OK_to_edit" : true,
-            "display_as" : "image",
-            "display_via_github" : false,
-            "entry_text" : "Non-png gif images"
-        },
-        {
-            "file_path" : "dlowe-aux-data/png-0/podcastimage_150215.gif",
-            "inventory_order" : 150,
-            "OK_to_edit" : true,
-            "display_as" : "image",
-            "display_via_github" : false,
-            "entry_text" : "Non-png gif images"
-        },
-        {
-            "file_path" : "dlowe-aux-data/png-0/prjman1.gif",
-            "inventory_order" : 150,
-            "OK_to_edit" : true,
-            "display_as" : "image",
-            "display_via_github" : false,
-            "entry_text" : "Non-png gif images"
-        },
-        {
-            "file_path" : "dlowe-aux-data/png-0/proguard_obfuscate.gif",
-            "inventory_order" : 150,
-            "OK_to_edit" : true,
-            "display_as" : "image",
-            "display_via_github" : false,
-            "entry_text" : "Non-png gif images"
-        },
-        {
-            "file_path" : "dlowe-aux-data/png-0/scripts_encryptor__screnc_-31918.gif",
-            "inventory_order" : 150,
-            "OK_to_edit" : true,
-            "display_as" : "image",
-            "display_via_github" : false,
-            "entry_text" : "Non-png gif images"
-        },
-        {
-            "file_path" : "dlowe-aux-data/png-0/visual_panel.gif",
-            "inventory_order" : 150,
-            "OK_to_edit" : true,
-            "display_as" : "image",
-            "display_via_github" : false,
-            "entry_text" : "Non-png gif images"
-        },
-        {
-            "file_path" : "dlowe-aux-data/english-0/040604.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "training text for neural networks"
-        },
-        {
-            "file_path" : "dlowe-aux-data/english-0/2001-2002.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "training text for neural networks"
-        },
-        {
-            "file_path" : "dlowe-aux-data/english-0/CFP_TSI_Graphes_appel.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "training text for neural networks"
-        },
-        {
-            "file_path" : "dlowe-aux-data/english-0/CIR_APE_08_doc.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "training text for neural networks"
-        },
-        {
-            "file_path" : "dlowe-aux-data/english-0/admin_fr.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "training text for neural networks"
-        },
-        {
-            "file_path" : "dlowe-aux-data/english-0/agenda.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "training text for neural networks"
-        },
-        {
-            "file_path" : "dlowe-aux-data/english-0/paris.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "training text for neural networks"
-        },
-        {
-            "file_path" : "dlowe-aux-data/english-0/paris2.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "training text for neural networks"
-        },
-        {
-            "file_path" : "dlowe-aux-data/english-0/structures3D-Paris.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "training text for neural networks"
-        },
-        {
-            "file_path" : "dlowe-aux-data/english-1/02-chronology.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "training text for neural networks"
-        },
-        {
-            "file_path" : "dlowe-aux-data/english-1/36C215.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "training text for neural networks"
-        },
-        {
-            "file_path" : "dlowe-aux-data/english-1/Wireless_Days_2011_CFP.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "training text for neural networks"
-        },
-        {
-            "file_path" : "dlowe-aux-data/english-1/cpb.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "training text for neural networks"
-        },
-        {
-            "file_path" : "dlowe-aux-data/english-1/get-there.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "training text for neural networks"
-        },
-        {
-            "file_path" : "dlowe-aux-data/english-1/pa_fv010.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "training text for neural networks"
-        },
-        {
-            "file_path" : "dlowe-aux-data/english-1/the_poor_people_of_paris.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "training text for neural networks"
-        },
-        {
-            "file_path" : "dlowe-aux-data/english-1/utmost.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "training text for neural networks"
-        },
-        {
-            "file_path" : "dlowe-aux-data/english-1/walljpar.txt",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : false,
-            "entry_text" : "training text for neural networks"
-        },
-        {
-            "file_path" : "dlowe-aux-data/xor-0/00",
-            "inventory_order" : 210,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : true,
-            "entry_text" : "training digits for neural networks"
-        },
-        {
-            "file_path" : "dlowe-aux-data/xor-0/11",
-            "inventory_order" : 210,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : true,
-            "entry_text" : "training digits for neural networks"
-        },
-        {
-            "file_path" : "dlowe-aux-data/xor-1/01",
-            "inventory_order" : 210,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : true,
-            "entry_text" : "training digits for neural networks"
-        },
-        {
-            "file_path" : "dlowe-aux-data/xor-1/10",
-            "inventory_order" : 210,
-            "OK_to_edit" : true,
-            "display_as" : "text",
-            "display_via_github" : true,
-            "entry_text" : "training digits for neural networks"
-        },
-        {
-            "file_path" : "dlowe-aux-data/png-1/JavaScript-obfuscation-code.png",
-            "inventory_order" : 220,
-            "OK_to_edit" : true,
-            "display_as" : "image",
-            "display_via_github" : false,
-            "entry_text" : "training image for neural networks"
-        },
-        {
-            "file_path" : "dlowe-aux-data/png-1/control_flow_obfuscation_before.png",
-            "inventory_order" : 220,
-            "OK_to_edit" : true,
-            "display_as" : "image",
-            "display_via_github" : false,
-            "entry_text" : "training image for neural networks"
-        },
-        {
-            "file_path" : "dlowe-aux-data/png-1/deceive-inveigle-obfuscate-t-shirts.png",
-            "inventory_order" : 220,
-            "OK_to_edit" : true,
-            "display_as" : "image",
-            "display_via_github" : false,
-            "entry_text" : "training image for neural networks"
-        },
-        {
-            "file_path" : "dlowe-aux-data/png-1/help_obfuscation1.png",
-            "inventory_order" : 220,
-            "OK_to_edit" : true,
-            "display_as" : "image",
-            "display_via_github" : false,
-            "entry_text" : "training image for neural networks"
-        },
-        {
-            "file_path" : "dlowe-aux-data/png-1/image_thumb.png",
-            "inventory_order" : 220,
-            "OK_to_edit" : true,
-            "display_as" : "image",
-            "display_via_github" : false,
-            "entry_text" : "training image for neural networks"
-        },
-        {
-            "file_path" : "dlowe-aux-data/png-1/jquery_after_deobfuscation.png",
-            "inventory_order" : 220,
-            "OK_to_edit" : true,
-            "display_as" : "image",
-            "display_via_github" : false,
-            "entry_text" : "training image for neural networks"
-        },
-        {
-            "file_path" : "dlowe-aux-data/png-1/obfuscate4e.png",
-            "inventory_order" : 220,
-            "OK_to_edit" : true,
-            "display_as" : "image",
-            "display_via_github" : false,
-            "entry_text" : "training image for neural networks"
-        },
-        {
-            "file_path" : "dlowe-aux-data/png-1/obfuscation-decoder.png",
-            "inventory_order" : 220,
-            "OK_to_edit" : true,
-            "display_as" : "image",
-            "display_via_github" : false,
-            "entry_text" : "training image for neural networks"
-        },
-        {
-            "file_path" : "dlowe-aux-data/png-1/obfuscation_methods.png",
-            "inventory_order" : 220,
-            "OK_to_edit" : true,
-            "display_as" : "image",
-            "display_via_github" : false,
-            "entry_text" : "training image for neural networks"
-        },
-        {
-            "file_path" : "2011_dlowe.tar.bz2",
-            "inventory_order" : 1415926535,
-            "OK_to_edit" : false,
-            "display_as" : "tbz2",
-            "display_via_github" : false,
-            "entry_text" : "download entry tarball"
-        },
-        {
-            "file_path" : ".entry.json",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : true,
-            "display_as" : "json",
-            "display_via_github" : true,
-            "entry_text" : "entry summary and manifest in JSON"
-        },
-        {
-            "file_path" : ".gitignore",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : true,
-            "display_as" : "gitignore",
-            "display_via_github" : true,
-            "entry_text" : "list of files that should not be committed under git"
-        },
-        {
-            "file_path" : ".path",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : false,
-            "display_as" : "path",
-            "display_via_github" : true,
-            "entry_text" : "directory path from top level directory"
-        },
-        {
-            "file_path" : "README.md",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : true,
-            "display_as" : "markdown",
-            "display_via_github" : true,
-            "entry_text" : "markdown source for this web page"
-        },
-        {
-            "file_path" : "dlowe-aux-data.tar.bz2",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : true,
-            "display_as" : "bz2",
-            "display_via_github" : false,
-            "entry_text" : "tarball of IOCCC win lose trained network"
-        },
-        {
-            "file_path" : "dlowe-aux-data/english-trained.net",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : true,
-            "display_as" : "binary",
-            "display_via_github" : false,
-            "entry_text" : "trained neural network for English text"
-        },
-        {
-            "file_path" : "dlowe-aux-data/ioccc-winlose-trained.net",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : true,
-            "display_as" : "binary",
-            "display_via_github" : false,
-            "entry_text" : "trained neural network for C code from 20th IOCCC"
-        },
-        {
-            "file_path" : "dlowe-aux-data/png-trained.net",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : true,
-            "display_as" : "binary",
-            "display_via_github" : false,
-            "entry_text" : "trained neural network for png-0 and png-1 images"
-        },
-        {
-            "file_path" : "dlowe-aux-data/xor-trained.net",
-            "inventory_order" : 4000000000,
-            "OK_to_edit" : true,
-            "display_as" : "binary",
-            "display_via_github" : false,
-            "entry_text" : "trained neural network for xor-0 and xor-1 data"
-        },
-        {
-            "file_path" : "index.html",
-            "inventory_order" : 4294967295,
-            "OK_to_edit" : false,
-            "display_as" : "html",
-            "display_via_github" : false,
-            "entry_text" : "this web page"
-        }
+	{
+	    "file_path" : "dlowe.c",
+	    "inventory_order" : 20,
+	    "OK_to_edit" : true,
+	    "display_as" : "c",
+	    "display_via_github" : true,
+	    "entry_text" : "entry source code"
+	},
+	{
+	    "file_path" : "Makefile",
+	    "inventory_order" : 30,
+	    "OK_to_edit" : true,
+	    "display_as" : "makefile",
+	    "display_via_github" : true,
+	    "entry_text" : "entry Makefile"
+	},
+	{
+	    "file_path" : "dlowe.orig.c",
+	    "inventory_order" : 50,
+	    "OK_to_edit" : false,
+	    "display_as" : "c",
+	    "display_via_github" : true,
+	    "entry_text" : "original source code"
+	},
+	{
+	    "file_path" : "earlystop.pl",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "perl",
+	    "display_via_github" : true,
+	    "entry_text" : "wrapper script to stop training early"
+	},
+	{
+	    "file_path" : "try.sh",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "shellscript",
+	    "display_via_github" : true,
+	    "entry_text" : "script to try entry"
+	},
+	{
+	    "file_path" : "dlowe-aux-data/png-0/5756029-DMZ-overview-B.gif",
+	    "inventory_order" : 150,
+	    "OK_to_edit" : true,
+	    "display_as" : "image",
+	    "display_via_github" : false,
+	    "entry_text" : "Non-png gif images"
+	},
+	{
+	    "file_path" : "dlowe-aux-data/png-0/M2.gif",
+	    "inventory_order" : 150,
+	    "OK_to_edit" : true,
+	    "display_as" : "image",
+	    "display_via_github" : false,
+	    "entry_text" : "Non-png gif images"
+	},
+	{
+	    "file_path" : "dlowe-aux-data/png-0/Obfuscate.gif",
+	    "inventory_order" : 150,
+	    "OK_to_edit" : true,
+	    "display_as" : "image",
+	    "display_via_github" : false,
+	    "entry_text" : "Non-png gif images"
+	},
+	{
+	    "file_path" : "dlowe-aux-data/png-0/figure_49.gif",
+	    "inventory_order" : 150,
+	    "OK_to_edit" : true,
+	    "display_as" : "image",
+	    "display_via_github" : false,
+	    "entry_text" : "Non-png gif images"
+	},
+	{
+	    "file_path" : "dlowe-aux-data/png-0/klockhuset.gif",
+	    "inventory_order" : 150,
+	    "OK_to_edit" : true,
+	    "display_as" : "image",
+	    "display_via_github" : false,
+	    "entry_text" : "Non-png gif images"
+	},
+	{
+	    "file_path" : "dlowe-aux-data/png-0/obfuscate_1.gif",
+	    "inventory_order" : 150,
+	    "OK_to_edit" : true,
+	    "display_as" : "image",
+	    "display_via_github" : false,
+	    "entry_text" : "Non-png gif images"
+	},
+	{
+	    "file_path" : "dlowe-aux-data/png-0/podcastimage_150215.gif",
+	    "inventory_order" : 150,
+	    "OK_to_edit" : true,
+	    "display_as" : "image",
+	    "display_via_github" : false,
+	    "entry_text" : "Non-png gif images"
+	},
+	{
+	    "file_path" : "dlowe-aux-data/png-0/prjman1.gif",
+	    "inventory_order" : 150,
+	    "OK_to_edit" : true,
+	    "display_as" : "image",
+	    "display_via_github" : false,
+	    "entry_text" : "Non-png gif images"
+	},
+	{
+	    "file_path" : "dlowe-aux-data/png-0/proguard_obfuscate.gif",
+	    "inventory_order" : 150,
+	    "OK_to_edit" : true,
+	    "display_as" : "image",
+	    "display_via_github" : false,
+	    "entry_text" : "Non-png gif images"
+	},
+	{
+	    "file_path" : "dlowe-aux-data/png-0/scripts_encryptor__screnc_-31918.gif",
+	    "inventory_order" : 150,
+	    "OK_to_edit" : true,
+	    "display_as" : "image",
+	    "display_via_github" : false,
+	    "entry_text" : "Non-png gif images"
+	},
+	{
+	    "file_path" : "dlowe-aux-data/png-0/visual_panel.gif",
+	    "inventory_order" : 150,
+	    "OK_to_edit" : true,
+	    "display_as" : "image",
+	    "display_via_github" : false,
+	    "entry_text" : "Non-png gif images"
+	},
+	{
+	    "file_path" : "dlowe-aux-data/english-0/040604.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "training text for neural networks"
+	},
+	{
+	    "file_path" : "dlowe-aux-data/english-0/2001-2002.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "training text for neural networks"
+	},
+	{
+	    "file_path" : "dlowe-aux-data/english-0/CFP_TSI_Graphes_appel.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "training text for neural networks"
+	},
+	{
+	    "file_path" : "dlowe-aux-data/english-0/CIR_APE_08_doc.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "training text for neural networks"
+	},
+	{
+	    "file_path" : "dlowe-aux-data/english-0/admin_fr.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "training text for neural networks"
+	},
+	{
+	    "file_path" : "dlowe-aux-data/english-0/agenda.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "training text for neural networks"
+	},
+	{
+	    "file_path" : "dlowe-aux-data/english-0/paris.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "training text for neural networks"
+	},
+	{
+	    "file_path" : "dlowe-aux-data/english-0/paris2.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "training text for neural networks"
+	},
+	{
+	    "file_path" : "dlowe-aux-data/english-0/structures3D-Paris.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "training text for neural networks"
+	},
+	{
+	    "file_path" : "dlowe-aux-data/english-1/02-chronology.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "training text for neural networks"
+	},
+	{
+	    "file_path" : "dlowe-aux-data/english-1/36C215.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "training text for neural networks"
+	},
+	{
+	    "file_path" : "dlowe-aux-data/english-1/Wireless_Days_2011_CFP.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "training text for neural networks"
+	},
+	{
+	    "file_path" : "dlowe-aux-data/english-1/cpb.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "training text for neural networks"
+	},
+	{
+	    "file_path" : "dlowe-aux-data/english-1/get-there.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "training text for neural networks"
+	},
+	{
+	    "file_path" : "dlowe-aux-data/english-1/pa_fv010.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "training text for neural networks"
+	},
+	{
+	    "file_path" : "dlowe-aux-data/english-1/the_poor_people_of_paris.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "training text for neural networks"
+	},
+	{
+	    "file_path" : "dlowe-aux-data/english-1/utmost.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "training text for neural networks"
+	},
+	{
+	    "file_path" : "dlowe-aux-data/english-1/walljpar.txt",
+	    "inventory_order" : 200,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : false,
+	    "entry_text" : "training text for neural networks"
+	},
+	{
+	    "file_path" : "dlowe-aux-data/xor-0/00",
+	    "inventory_order" : 210,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "training digits for neural networks"
+	},
+	{
+	    "file_path" : "dlowe-aux-data/xor-0/11",
+	    "inventory_order" : 210,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "training digits for neural networks"
+	},
+	{
+	    "file_path" : "dlowe-aux-data/xor-1/01",
+	    "inventory_order" : 210,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "training digits for neural networks"
+	},
+	{
+	    "file_path" : "dlowe-aux-data/xor-1/10",
+	    "inventory_order" : 210,
+	    "OK_to_edit" : true,
+	    "display_as" : "text",
+	    "display_via_github" : true,
+	    "entry_text" : "training digits for neural networks"
+	},
+	{
+	    "file_path" : "dlowe-aux-data/png-1/JavaScript-obfuscation-code.png",
+	    "inventory_order" : 220,
+	    "OK_to_edit" : true,
+	    "display_as" : "image",
+	    "display_via_github" : false,
+	    "entry_text" : "training image for neural networks"
+	},
+	{
+	    "file_path" : "dlowe-aux-data/png-1/control_flow_obfuscation_before.png",
+	    "inventory_order" : 220,
+	    "OK_to_edit" : true,
+	    "display_as" : "image",
+	    "display_via_github" : false,
+	    "entry_text" : "training image for neural networks"
+	},
+	{
+	    "file_path" : "dlowe-aux-data/png-1/deceive-inveigle-obfuscate-t-shirts.png",
+	    "inventory_order" : 220,
+	    "OK_to_edit" : true,
+	    "display_as" : "image",
+	    "display_via_github" : false,
+	    "entry_text" : "training image for neural networks"
+	},
+	{
+	    "file_path" : "dlowe-aux-data/png-1/help_obfuscation1.png",
+	    "inventory_order" : 220,
+	    "OK_to_edit" : true,
+	    "display_as" : "image",
+	    "display_via_github" : false,
+	    "entry_text" : "training image for neural networks"
+	},
+	{
+	    "file_path" : "dlowe-aux-data/png-1/image_thumb.png",
+	    "inventory_order" : 220,
+	    "OK_to_edit" : true,
+	    "display_as" : "image",
+	    "display_via_github" : false,
+	    "entry_text" : "training image for neural networks"
+	},
+	{
+	    "file_path" : "dlowe-aux-data/png-1/jquery_after_deobfuscation.png",
+	    "inventory_order" : 220,
+	    "OK_to_edit" : true,
+	    "display_as" : "image",
+	    "display_via_github" : false,
+	    "entry_text" : "training image for neural networks"
+	},
+	{
+	    "file_path" : "dlowe-aux-data/png-1/obfuscate4e.png",
+	    "inventory_order" : 220,
+	    "OK_to_edit" : true,
+	    "display_as" : "image",
+	    "display_via_github" : false,
+	    "entry_text" : "training image for neural networks"
+	},
+	{
+	    "file_path" : "dlowe-aux-data/png-1/obfuscation-decoder.png",
+	    "inventory_order" : 220,
+	    "OK_to_edit" : true,
+	    "display_as" : "image",
+	    "display_via_github" : false,
+	    "entry_text" : "training image for neural networks"
+	},
+	{
+	    "file_path" : "dlowe-aux-data/png-1/obfuscation_methods.png",
+	    "inventory_order" : 220,
+	    "OK_to_edit" : true,
+	    "display_as" : "image",
+	    "display_via_github" : false,
+	    "entry_text" : "training image for neural networks"
+	},
+	{
+	    "file_path" : "2011_dlowe.tar.bz2",
+	    "inventory_order" : 1415926535,
+	    "OK_to_edit" : false,
+	    "display_as" : "tbz2",
+	    "display_via_github" : false,
+	    "entry_text" : "download entry tarball"
+	},
+	{
+	    "file_path" : ".entry.json",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "json",
+	    "display_via_github" : true,
+	    "entry_text" : "entry summary and manifest in JSON"
+	},
+	{
+	    "file_path" : ".gitignore",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "gitignore",
+	    "display_via_github" : true,
+	    "entry_text" : "list of files that should not be committed under git"
+	},
+	{
+	    "file_path" : ".path",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : false,
+	    "display_as" : "path",
+	    "display_via_github" : true,
+	    "entry_text" : "directory path from top level directory"
+	},
+	{
+	    "file_path" : "README.md",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "markdown",
+	    "display_via_github" : true,
+	    "entry_text" : "markdown source for this web page"
+	},
+	{
+	    "file_path" : "dlowe-aux-data.tar.bz2",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "bz2",
+	    "display_via_github" : false,
+	    "entry_text" : "tarball of IOCCC win lose trained network"
+	},
+	{
+	    "file_path" : "dlowe-aux-data/english-trained.net",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "binary",
+	    "display_via_github" : false,
+	    "entry_text" : "trained neural network for English text"
+	},
+	{
+	    "file_path" : "dlowe-aux-data/ioccc-winlose-trained.net",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "binary",
+	    "display_via_github" : false,
+	    "entry_text" : "trained neural network for C code from 20th IOCCC"
+	},
+	{
+	    "file_path" : "dlowe-aux-data/png-trained.net",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "binary",
+	    "display_via_github" : false,
+	    "entry_text" : "trained neural network for png-0 and png-1 images"
+	},
+	{
+	    "file_path" : "dlowe-aux-data/xor-trained.net",
+	    "inventory_order" : 4000000000,
+	    "OK_to_edit" : true,
+	    "display_as" : "binary",
+	    "display_via_github" : false,
+	    "entry_text" : "trained neural network for xor-0 and xor-1 data"
+	},
+	{
+	    "file_path" : "index.html",
+	    "inventory_order" : 4294967295,
+	    "OK_to_edit" : false,
+	    "display_as" : "html",
+	    "display_via_github" : false,
+	    "entry_text" : "this web page"
+	}
     ]
 }
