@@ -131,22 +131,29 @@ The default is 4.
 
 The control keys are as follows:
 
-```
-    ^A HOME
-    ^L CLR
-    ^R RVS
-    ^E OFF
-    ^Y INST
-    ^X STOP (break)
-    ^F cursor forward
-    ^B cursor back
-    ^N cursor down
-```
+- `^A`
+    * HOME
+- `^L`
+    * CLR
+- `^R`
+    * RVS
+- `^E`
+    * OFF
+- `^Y`
+    * INST
+- `^X`
+    * STOP (break)
+- `^F`
+    * cursor forward
+- `^B`
+    * cursor back
+- `^N`
+    * cursor down
 
 Supplied also is a short demo program written in
 [BASIC](https://en.wikipedia.org/wiki/BASIC). Try typing
 
-```
+``` <!---basic-->
     LOAD "DEMO"
     RUN
 ```
@@ -164,7 +171,7 @@ The filenames must be upper case in order to be loaded by the emulator.
 
 You can save programs too - try
 
-```
+``` <!---basic-->
     10 PRINT "HELLO!"
     SAVE "HELLO"
     NEW
