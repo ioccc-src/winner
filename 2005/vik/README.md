@@ -4,7 +4,7 @@
     make
 ```
 
-NOTE: this entry requires the `X11/Xlib.h` header file and the X11 library to
+**NOTE**: this entry requires the `X11/Xlib.h` header file and the X11 library to
 compile.  For more information see the
 FAQ on "[X11](../../faq.html#X11)".
 
@@ -68,12 +68,8 @@ three options which have to be typed in a specific order as described below.
     ./vik [-w <width>] [mapfile]
 ```
 
-where:
-
-```
-    width   - Specifies the width of the window
-    mapfile - Filename containing a map
-```
+where `width` specifies the width of the window and `mapfile` is the filename
+containing a map.
 
 #### Examples
 
@@ -134,7 +130,7 @@ current directory).
 The program is obfuscated in several ways:
 
 * Bad use of variables.
-* Use of the `?` operator.
+* Use of the `?:` operator.
 * Recursive calls to `main()`.
 * Bad use of `for` loops and the comma operator.
 * To make the final obfuscated touch I ran indent which really made the program
