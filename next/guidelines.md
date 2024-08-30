@@ -48,7 +48,7 @@ writing by [contacting the judges](../contact.html).
 </div>
 
 <p class="leftbar">
-These [IOCCC guidelines](guidelines.html) are version **28.14 2024-08-24**.
+These [IOCCC guidelines](guidelines.html) are version **28.14 2024-08-30**.
 </p>
 
 **IMPORTANT**: Be **SURE** to read the [IOCCC rules](rules.html).
@@ -1236,7 +1236,9 @@ nor the [JSON parser and library](https://github.com/ioccc-src/mkiocccentry/blob
 nor [jstrencode](https://github.com/ioccc-src/mkiocccentry/blob/master/jparse/jstrencode.c)
 nor [jstrdecode](https://github.com/ioccc-src/mkiocccentry/blob/master/jparse/jstrdecode.c)
 nor any of the other [jparse
-tools](https://github.com/ioccc-src/mkiocccentry/blob/master/jparse) are original works, unless you are [Cody
+tools](https://github.com/ioccc-src/mkiocccentry/blob/master/jparse)
+are original works (see the [jparse repo](https://github.com/xexyl/jparse/) for
+the original), unless you are [Cody
 Boone Ferguson](../authors.html#Cody_Boone_Ferguson) or [Landon Curt
 Noll](http://www.isthe.com/chongo/index.html), in which case they are original!
 :-) Submitting source that uses the code of these tools or library, unless you
