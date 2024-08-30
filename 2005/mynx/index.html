@@ -411,9 +411,9 @@ Location: <a href="../../location.html#CA">CA</a> - <em>Canada</em></li>
 <pre><code>    make</code></pre>
 <p>The author provided us with an unobfuscated version. There is also a version
 that scans (<strong>ONLY</strong> scans) the string <code>https</code> as a starting point in case
-anyone wishes to add support or come up with a pipeline to make it work, as many
-websites no longer work with <code>http</code>. See <a href="#alternate-code">alternate code</a>
-below.</p>
+anyone wishes to add support or come up with a pipeline to make it work with
+https, as many websites no longer work with <code>http</code>. See <a href="#alternate-code">Alternate
+code</a> below.</p>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
 <p>The current status of this entry is:</p>
 <blockquote>
@@ -435,13 +435,13 @@ you wish to not try and decipher the original entry.</p>
 <p>The other version, <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2005/mynx/mynx.alt2.c">mynx.alt2.c</a> is a
 starting point for anyone who wishes to come up with a version (or pipeline)
 that works with <code>https</code>.</p>
-<p>Obviously this will not work with <code>https</code> without so easily as it only scans for <code>http</code> in the URL
-(if not specified it tries to open it as a local file). But even though it scans
-for <code>https</code> one would need to do more work as it would have to set up a secure
-connection before http commands could be sent. Fortunately or unfortunately
-many more websites use https so this entry will not work as well as it used to.
-If one were to try and connect to <a href="https://ioccc.org" class="uri">https://ioccc.org</a> with this entry they’ll
-just get a 301 error.</p>
+<p>Obviously this will not work with <code>https</code> so easily as it only scans for <code>http</code>
+in the URL (if not specified it tries to open it as a local file). But even
+though it scans for <code>https</code> one would need to do more work as it would have to
+set up a secure connection before http commands could be sent. Fortunately or
+unfortunately many more websites use https so this entry will not work as well
+as it used to. If one were to now (2024) try and connect to <a href="https://ioccc.org" class="uri">https://ioccc.org</a>
+with this entry they’ll just get a 301 error.</p>
 <p>This alternate code is a starting point that scans for <code>https</code> too (note you
 have to specify the port in this case) but that is all it does. It will not work
 with https websites as it stands as it does not set up a secure connection. But
