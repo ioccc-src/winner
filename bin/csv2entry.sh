@@ -142,7 +142,7 @@ shopt -s lastpipe	# explicitly run the last command of the pipe line in the curr
 
 # set variables referenced in the usage message
 #
-export VERSION="1.2.2 2024-08-17"
+export VERSION="1.2.3 2024-08-30"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -1605,7 +1605,11 @@ sed -e '/^#/d' -e 's/,/ /g' "$MANIFEST_CSV" |
 
 	    # write start of author JSON member
 	    #
-	    printf "\t{ \"author_handle\" : \"%s\" }" "$AUTHOR_HANDLE" >> "$TMP_ENTRY_JSON"
+	    {
+		printf "        {\n"
+		printf "            \"author_handle\" : \"%s\"\n" "$AUTHOR_HANDLE"
+		printf "        }"
+	    }  >> "$TMP_ENTRY_JSON"
 	done
 	#
 	# For SC2129, we need to append two lines after the look, however shellcheck
@@ -1623,14 +1627,14 @@ sed -e '/^#/d' -e 's/,/ /g' "$MANIFEST_CSV" |
 	# append the first manifest entry to the temporary .entry.file
 	#
 	{
-	    printf "\t{\n"
-	    printf "\t    \"file_path\" : \"%s\",\n" "$FILE_PATH"
-	    printf "\t    \"inventory_order\" : %s,\n" "$INVENTORY_ORDER"
-	    printf "\t    \"OK_to_edit\" : %s,\n" "$OK_TO_EDIT"
-	    printf "\t    \"display_as\" : \"%s\",\n" "$DISPLAY_AS"
-	    printf "\t    \"display_via_github\" : %s,\n" "$DISPLAY_VIA_GITHUB"
-	    printf "\t    \"entry_text\" : \"%s\"\n" "$ENTRY_TEXT"
-	    printf  "\t}"
+	    printf "        {\n"
+	    printf "            \"file_path\" : \"%s\",\n" "$FILE_PATH"
+	    printf "            \"inventory_order\" : %s,\n" "$INVENTORY_ORDER"
+	    printf "            \"OK_to_edit\" : %s,\n" "$OK_TO_EDIT"
+	    printf "            \"display_as\" : \"%s\",\n" "$DISPLAY_AS"
+	    printf "            \"display_via_github\" : %s,\n" "$DISPLAY_VIA_GITHUB"
+	    printf "            \"entry_text\" : \"%s\"\n" "$ENTRY_TEXT"
+	    printf  "        }"
 	} >> "$TMP_ENTRY_JSON"
 
     # case: manifest.csv line continues with the same entry
@@ -1642,14 +1646,14 @@ sed -e '/^#/d' -e 's/,/ /g' "$MANIFEST_CSV" |
 	#
 	{
 	    printf ",\n"
-	    printf "\t{\n"
-	    printf "\t    \"file_path\" : \"%s\",\n" "$FILE_PATH"
-	    printf "\t    \"inventory_order\" : %s,\n" "$INVENTORY_ORDER"
-	    printf "\t    \"OK_to_edit\" : %s,\n" "$OK_TO_EDIT"
-	    printf "\t    \"display_as\" : \"%s\",\n" "$DISPLAY_AS"
-	    printf "\t    \"display_via_github\" : %s,\n" "$DISPLAY_VIA_GITHUB"
-	    printf "\t    \"entry_text\" : \"%s\"\n" "$ENTRY_TEXT"
-	    printf  "\t}"
+	    printf "        {\n"
+	    printf "            \"file_path\" : \"%s\",\n" "$FILE_PATH"
+	    printf "            \"inventory_order\" : %s,\n" "$INVENTORY_ORDER"
+	    printf "            \"OK_to_edit\" : %s,\n" "$OK_TO_EDIT"
+	    printf "            \"display_as\" : \"%s\",\n" "$DISPLAY_AS"
+	    printf "            \"display_via_github\" : %s,\n" "$DISPLAY_VIA_GITHUB"
+	    printf "            \"entry_text\" : \"%s\"\n" "$ENTRY_TEXT"
+	    printf  "        }"
 	} >> "$TMP_ENTRY_JSON"
     fi
 done
