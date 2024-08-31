@@ -10,15 +10,6 @@
 # files for new authors, and update `author/author_handle.json`
 # for authors who won previously.
 #
-# There are functions that this tool will NOT do:
-#
-#   * This tool will not remove `.auth.json`
-#   * This tool will not remove `.info.json`
-#   * This tool will not remove `remarks.md`
-#   * This tool will not verify that Makefile has the required rules
-#   * This will will not form `README.md` author notes from `remarks.md`
-#   * This will will not add this entry to the year level Makefile
-#
 # Copyright (c) 2024 by Landon Curt Noll.  All Rights Reserved.
 #
 # Permission to use, copy, modify, and distribute this software and
@@ -103,7 +94,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.0.5 2024-08-17"
+export VERSION="1.1 2024-08-31"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -148,6 +139,12 @@ export TOPDIR
 export REPO_TOP_URL="https://github.com/ioccc-src/temp-test-ioccc"
 # GitHub puts individual files under the "blob/master" sub-directory.
 export REPO_URL="$REPO_TOP_URL/blob/master"
+JPARSE_TOOL=$(type -P jparse)
+export JPARSE_TOOL
+if [[ -z "$JPARSE_TOOL" ]]; then
+    echo "$0: FATAL: jparse tool is not installed or not in \$PATH" 1>&2
+    exit 5
+fi
 export MKIOCCCENTRY_REPO="https://github.com/ioccc-src/mkiocccentry"
 export INPUT_DATA_FILE
 #
@@ -161,6 +158,8 @@ export DO_NOT_PROCESS=
 unset TAR_FILE_SET
 declare -ag TAR_FILE_SET
 export TARBALL_DIR="/var/tmp"
+#
+export X_3="X""X""X"
 
 
 # usage
@@ -211,7 +210,7 @@ $NAME version: $VERSION"
 #       prompt_string item_name
 #
 # returns:
-#       0 ==> no errors detected, but output may be empty
+#       0 ==> no errors detected
 #     > 0 ==> function error number
 #
 function prompt_string
@@ -286,12 +285,103 @@ function prompt_string
 }
 
 
-# manifest_entry
+# prompt_integer
 #
-# Write a manifest entry to stdout.
+# Prompt the user for an integer and output as an encoded JSON string.
+#
+# If "-i input_data: is used, the printing of the prompt is disabled,
+# and the query of correctness is also disabled.
 #
 # usage:
-#       manifest_entry file_path inventory_order OK_to_edit display_as display_via_github entry_text count
+#       prompt_integer item_name
+#
+# returns:
+#       0 ==> no errors detected
+#     > 0 ==> function error number
+#
+function prompt_integer
+{
+    local INPUT;		# user input
+    local ENCODED;		# INPUT encoded as JSON string
+    local Y_OR_N;		# y or n
+    local ITEM_NAME;		# name of the item being prompted for
+
+    # parse args
+    #
+    if [[ $# -ne 1 ]]; then
+        echo "$0: ERROR: in prompt_integer: expected 1 arg, found $#" 1>&2
+        return 1
+    fi
+    ITEM_NAME="$1"
+    if [[ -z $ITEM_NAME ]]; then
+        echo "$0: ERROR: in prompt_integer: 1st arg is empty" 1>&2
+	return 2
+    fi
+
+    # obtain for the award
+    #
+    while :; do
+
+	# prompt for value
+	#
+	if [[ -z $INPUT_DATA_FILE ]]; then
+	    echo -n "Enter $ITEM_NAME: "
+	fi
+	read -r INPUT
+	if [[ -z "$INPUT" ]]; then
+	    echo "$0: Warning: in prompt_integer: $ITEM_NAME cannot be empty, try again" 1>&2
+	    echo 1>&2
+	    continue
+	fi
+	if [[ $INPUT =~ ^[[:digit:]]+$ && $INPUT -ge 0 && $INPUT -le 4294967295 ]]; then
+	    # JSON encode value
+	    #
+	    ENCODED=$("$JSTRENCODE_TOOL" -q -n -- "$INPUT")
+	    status="$?"
+	    if [[ $status -ne 0 || -z $ENCODED ]]; then
+		echo "$0: ERROR: in prompt_integer: $JSTRENCODE_TOOL -q -n -- $INPUT failed," \
+		     "error code: $status" 1>&2
+		exit 1
+	    fi
+	else
+	    echo "$0: Warning: in prompt_integer: $ITEM_NAME must be an integer >= 0 and <= 4294967295, try again" 1>&2
+	    echo 1>&2
+	    continue
+	fi
+
+	# verify JSON encoded value
+	#
+	if [[ -z $INPUT_DATA_FILE ]]; then
+	    echo
+	    echo "Verify encoded $ITEM_NAME: $ENCODED" 1>&2
+	    echo
+	    echo -n 'Is that correct? [y,N]: '
+	    read -r Y_OR_N
+	    if [[ $Y_OR_N == y || $Y_OR_N == Y || $Y_OR_N == yes || $Y_OR_N == YES || $Y_OR_N == Yes ]]; then
+		break
+	    fi
+	    echo
+	else
+	    break
+	fi
+    done
+    if [[ -z $INPUT_DATA_FILE ]]; then
+	echo
+    fi
+
+    # set VALUE to the JSON encoded string
+    #
+    VALUE="$ENCODED"
+    return 0
+}
+
+
+# manifest_csv
+#
+# Write a manifest entry in CSV form to stdout.
+#
+# usage:
+#       manifest_csv file_path inventory_order OK_to_edit display_as display_via_github entry_text
 #
 #   file_path	        path to the file relative to the entry directory
 #   inventory_order     inventory order as displayed in the entry index.html file
@@ -299,7 +389,80 @@ function prompt_string
 #   display_as	        kind of file it is and in particular how to display it
 #   display_via_github	boolean indicates whether the file should be viewed via GitHub or not
 #   entry_text		summary of what the file purpose is
-#   count		order in the manifest array (1 ==> first)
+#
+# returns:
+#       0 ==> no errors detected, but output may be empty
+#     > 0 ==> function error number
+#
+function manifest_csv
+{
+    local FILE_PATH;		# path to the file relative to the entry directory
+    local INVENTORY_ORDER;	# inventory order as displayed in the entry index.html file
+    local OK_TO_EDIT;		# boolean for if file should be modified, edited, replaced, or even removed
+    local DISPLAY_AS;		# kind of file it is and in particular how to display it
+    local DISPLAY_VIA_GITHUB;	# boolean indicates whether the file should be viewed via GitHub or not
+    local ENTRY_TEXT;		# summary of what the file purpose is
+
+    # parse args
+    #
+    if [[ $# -ne 6 ]]; then
+        echo "$0: ERROR: in manifest_entry: expected 6 args, found $#" 1>&2
+        return 1
+    fi
+    FILE_PATH="${1//,/%%COMMA%%}"
+    if [[ -z $FILE_PATH ]]; then
+        echo "$0: ERROR: in manifest_entry: file_path arg 1 is empty" 1>&2
+	return 2
+    fi
+    INVENTORY_ORDER="${2//,/%%COMMA%%}"
+    if [[ -z $INVENTORY_ORDER ]]; then
+        echo "$0: ERROR: in manifest_entry: inventory_order arg 2 is empty" 1>&2
+	return 3
+    fi
+    OK_TO_EDIT="${3//,/%%COMMA%%}"
+    if [[ -z $OK_TO_EDIT ]]; then
+        echo "$0: ERROR: in manifest_entry: OK_to_edit arg 3 is empty" 1>&2
+	return 4
+    fi
+    DISPLAY_AS="${4//,/%%COMMA%%}"
+    if [[ -z $DISPLAY_AS ]]; then
+        echo "$0: ERROR: in manifest_entry: display_as arg 4 is empty" 1>&2
+	return 5
+    fi
+    DISPLAY_VIA_GITHUB="${5//,/%%COMMA%%}"
+    if [[ -z $DISPLAY_VIA_GITHUB ]]; then
+        echo "$0: ERROR: in manifest_entry: display_via_github arg 5 is empty" 1>&2
+	return 6
+    fi
+    ENTRY_TEXT="${6//,/%%COMMA%%}"
+    if [[ -z $ENTRY_TEXT ]]; then
+        echo "$0: ERROR: in manifest_entry: entry_text arg 6 is empty" 1>&2
+	return 7
+    fi
+
+    # write CSV line
+    #
+    printf "%s,%s,%s,%s,%s,%s\n" "$FILE_PATH" "$INVENTORY_ORDER" "$OK_TO_EDIT" \
+	    "$DISPLAY_AS" "$DISPLAY_VIA_GITHUB" "$ENTRY_TEXT"
+
+    return 0
+}
+
+
+# manifest_entry
+#
+# Write a manifest entry in JSON form to stdout.
+#
+# usage:
+#       manifest_entry file_path inventory_order OK_to_edit display_as display_via_github entry_text comma
+#
+#   file_path	        path to the file relative to the entry directory
+#   inventory_order     inventory order as displayed in the entry index.html file
+#   OK_to_edit		boolean for if file should be modified, edited, replaced, or even removed
+#   display_as	        kind of file it is and in particular how to display it
+#   display_via_github	boolean indicates whether the file should be viewed via GitHub or not
+#   entry_text		summary of what the file purpose is
+#   comma		"comma" ==> print comma after array element
 #
 # returns:
 #       0 ==> no errors detected, but output may be empty
@@ -313,7 +476,7 @@ function manifest_entry
     local DISPLAY_AS;		# kind of file it is and in particular how to display it
     local DISPLAY_VIA_GITHUB;	# boolean indicates whether the file should be viewed via GitHub or not
     local ENTRY_TEXT;		# summary of what the file purpose is
-    local COUNT;		# order in the manifest array (1 ==> first)
+    local COMMA;		# true ==> print comma after array element
 
     # parse args
     #
@@ -321,85 +484,241 @@ function manifest_entry
         echo "$0: ERROR: in manifest_entry: expected 7 args, found $#" 1>&2
         return 1
     fi
-    FILE_PATH="$1"
+    FILE_PATH="${1///%%COMMA%%/,}"
     if [[ -z $FILE_PATH ]]; then
         echo "$0: ERROR: in manifest_entry: file_path arg 1 is empty" 1>&2
 	return 2
     fi
-    INVENTORY_ORDER="$2"
+    INVENTORY_ORDER="${2///%%COMMA%%/,}"
     if [[ -z $INVENTORY_ORDER ]]; then
         echo "$0: ERROR: in manifest_entry: inventory_order arg 2 is empty" 1>&2
 	return 3
     fi
-    OK_TO_EDIT="$3"
+    OK_TO_EDIT="${3///%%COMMA%%/,}"
     if [[ -z $OK_TO_EDIT ]]; then
         echo "$0: ERROR: in manifest_entry: OK_to_edit arg 3 is empty" 1>&2
 	return 4
     fi
-    DISPLAY_AS="$4"
+    DISPLAY_AS="${4///%%COMMA%%/,}"
     if [[ -z $DISPLAY_AS ]]; then
         echo "$0: ERROR: in manifest_entry: display_as arg 4 is empty" 1>&2
 	return 5
     fi
-    DISPLAY_VIA_GITHUB="$5"
+    DISPLAY_VIA_GITHUB="${5///%%COMMA%%/,}"
     if [[ -z $DISPLAY_VIA_GITHUB ]]; then
         echo "$0: ERROR: in manifest_entry: display_via_github arg 5 is empty" 1>&2
 	return 6
     fi
-    ENTRY_TEXT="$6"
+    ENTRY_TEXT="${6///%%COMMA%%/,}"
     if [[ -z $ENTRY_TEXT ]]; then
         echo "$0: ERROR: in manifest_entry: entry_text arg 6 is empty" 1>&2
 	return 7
     fi
-    COUNT="$7"
-    if [[ -z $COUNT ]]; then
-        echo "$0: ERROR: in manifest_entry: count arg 7 is empty" 1>&2
-	return 7
-    fi
-
-    # case: not first manifest entry
-    #
-    # When this is not the 1st entry, we just separate from the previous
-    # manifest entry with a comma.
-    #
-    if [[ $COUNT -gt 1 ]]; then
-	echo ","
-    fi
+    COMMA="$7"
 
     # start of manifest entry
     #
-    printf "\t{\n"
+    printf "        {\n"
 
     # output file_path
     #
-    printf "\t    \"file_path\" : \"%s\",\n" "$FILE_PATH"
+    printf "            \"file_path\" : \"%s\",\n" "$FILE_PATH"
 
     # output inventory_order
     #
-    printf "\t    \"inventory_order\" : %s,\n" "$INVENTORY_ORDER"
+    printf "            \"inventory_order\" : %s,\n" "$INVENTORY_ORDER"
 
     # output OK_to_edit
     #
-    printf "\t    \"OK_to_edit\" : %s,\n" "$OK_TO_EDIT"
+    printf "            \"OK_to_edit\" : %s,\n" "$OK_TO_EDIT"
 
     # output display_as
     #
-    printf "\t    \"display_as\" : \"%s\",\n" "$DISPLAY_AS"
+    printf "            \"display_as\" : \"%s\",\n" "$DISPLAY_AS"
 
     # output display_via_github
     #
-    printf "\t    \"display_via_github\" : %s,\n" "$DISPLAY_VIA_GITHUB"
+    printf "            \"display_via_github\" : %s,\n" "$DISPLAY_VIA_GITHUB"
 
     # output entry_text
     #
-    printf "\t    \"entry_text\" : \"%s\"\n" "$ENTRY_TEXT"
+    printf "            \"entry_text\" : \"%s\"\n" "$ENTRY_TEXT"
 
     # end of manifest entry
     #
     # We do not issue a return, allowing either the next manifest entry or
     # the end of the manifest array to close the array.
     #
-    printf "\t}"
+    if [[ $COMMA == "comma" ]]; then
+	printf "        },\n"
+    else
+	printf "        }\n"
+    fi
+    return 0
+}
+
+
+# write_author_handle_file - update author_handle JSON file
+#
+# usage:
+#
+#   write_author_handle_file AUTHOR_INFO ENTRY_ID_SET TMP_FILENAME JSON_FILENAME
+#
+#   AUTHOR_INFO	    Associative array of author_handle JSON member names and values
+#   ENTRY_ID_SET    Array of entry_id values
+#   TMP_FILENAME    temporary JSON file to write into
+#   JSON_FILENAME   author_handle JSON file to create or modify if needed
+#
+# return:
+#
+#   0	==> all OK
+#   =! 0 ==> error
+#
+function write_author_handle_file
+{
+    local -n AUTH_INFO;		# name of array of author_handle JSON member names and values
+    local -n ENTRY_SET;		# name of array of entry_id values
+    local TMP_FILENAME;		# temporary JSON file to write into
+    local JSON_FILENAME;	# author_handle JSON file to create or modify if needed
+    local entry_set_length;	# length of the array of entry_id values
+    local final_comma;		# 2nd to final index of the array of entry_id values
+    local i;
+
+    # parse args
+    #
+    if [[ $# -ne 4 ]]; then
+        echo "$0: ERROR: in write_author_handle_file: expected 4 args, found $#" 1>&2
+        return 1
+    fi
+    AUTH_INFO="$1"
+    ENTRY_SET="$2"
+    TMP_FILENAME="$3"
+    JSON_FILENAME="$4"
+
+    # write data to the temporary file
+    #
+    {
+	# write start of temporary author_handle JSON file
+	#
+	printf "{\n"
+	printf "    \"no_comment\" : \"%s\",\n" "${AUTH_INFO[no_comment]}"
+	printf "    \"author_JSON_format_version\" : \"%s\",\n" "${AUTH_INFO[author_JSON_format_version]}"
+	printf "    \"author_handle\" : %s,\n" "${AUTH_INFO[author_handle]}"
+	printf "    \"full_name\" : %s,\n" "${AUTH_INFO[name]}"
+	printf "    \"sort_word\" : %s,\n" "${AUTH_INFO[sort_word]}"
+	printf "    \"location_code\" : %s,\n" "${AUTH_INFO[location_code]}"
+	if [[ ${AUTH_INFO[email]} == null || -z ${AUTH_INFO[email]} ]]; then
+	    printf "    \"email\" : %s,\n" "null"
+	else
+	    printf "    \"email\" : %s,\n" "${AUTH_INFO[email]}"
+	fi
+	if [[ ${AUTH_INFO[url]} == null || -z ${AUTH_INFO[url]} ]]; then
+	    printf "    \"url\" : %s,\n" "null"
+	else
+	    printf "    \"url\" : %s,\n" "${AUTH_INFO[url]}"
+	fi
+	if [[ ${AUTH_INFO[alt_url]} == null || -z ${AUTH_INFO[alt_url]} ]]; then
+	    printf "    \"alt_url\" : %s,\n" "null"
+	else
+	    printf "    \"alt_url\" : %s,\n" "${AUTH_INFO[alt_url]}"
+	fi
+	if [[ ${AUTH_INFO[deprecated_twitter_handle]} == null || -z ${AUTH_INFO[deprecated_twitter_handle]} ]]; then
+	    printf "    \"deprecated_twitter_handle\" : %s,\n" "null"
+	else
+	    printf "    \"deprecated_twitter_handle\" : %s,\n" "${AUTH_INFO[deprecated_twitter_handle]}"
+	fi
+	if [[ ${AUTH_INFO[mastodon]} == null || -z ${AUTH_INFO[mastodon]} ]]; then
+	    printf "    \"mastodon\" : %s,\n" "null"
+	else
+	    printf "    \"mastodon\" : %s,\n" "${AUTH_INFO[mastodon]}"
+	fi
+	if [[ ${AUTH_INFO[mastodon_url]} == null || -z ${AUTH_INFO[mastodon_url]} ]]; then
+	    printf "    \"mastodon_url\" : %s,\n" "null"
+	else
+	    printf "    \"mastodon_url\" : \"%s\",\n" "${AUTH_INFO[mastodon_url]}"
+	fi
+	if [[ ${AUTH_INFO[github]} == null || -z ${AUTH_INFO[github]} ]]; then
+	    printf "    \"github\" : %s,\n" "null"
+	else
+	    printf "    \"github\" : %s,\n" "${AUTH_INFO[github]}"
+	fi
+	if [[ ${AUTH_INFO[affiliation]} == null || -z ${AUTH_INFO[affiliation]} ]]; then
+	    printf "    \"affiliation\" : %s,\n" "null"
+	else
+	    printf "    \"affiliation\" : %s,\n" "${AUTH_INFO[affiliation]}"
+	fi
+
+	# write the winning_entry_set array to the temporary author_handle JSON file
+	#
+	printf "    \"winning_entry_set\" : [\n"
+	entry_set_length=${#ENTRY_SET[@]}
+	case "$entry_set_length" in
+	0)  echo "$0: ERROR: Array of entry_id values is empty";
+	    return 1
+	    ;;
+	1)  printf "        {\n"
+	    printf "            \"entry_id\" : \"%s\"\n" "${ENTRY_SET[0]}"
+	    printf "        }\n"
+	    ;;
+	*)  ((final_comma=entry_set_length-2))
+	    ((final=entry_set_length-1))
+	    for j in $(seq 0 "$final_comma"); do
+		printf "        {\n"
+		printf "            \"entry_id\" : \"%s\"\n" "${ENTRY_SET[$j]}"
+		printf "        },\n"
+	    done
+	    printf "        {\n"
+	    printf "            \"entry_id\" : \"%s\"\n" "${ENTRY_SET[$final]}"
+	    printf "        }\n"
+	    ;;
+	esac
+	printf "    ]\n"
+
+	# write the end of the temporary author_handle JSON file
+	#
+	printf "}\n"
+
+    } > "$TMP_FILENAME"
+
+    # update author_handle JSON file if needed
+    #
+    if cmp -s "$TMP_FILENAME" "$JSON_FILENAME"; then
+
+	# case: .entry.json did not change
+	#
+	if [[ $V_FLAG -ge 5 ]]; then
+            echo "$0: debug[5]: author_handle JSON file file did not change: $JSON_FILENAME" 1>&2
+        fi
+
+    else
+
+        # case: .entry.json file changed, update the file
+        #
+        if [[ $V_FLAG -ge 5 ]]; then
+            echo "$0: debug[5]: about to: mv -f -- $TMP_FILENAME $JSON_FILENAME" 1>&2
+        fi
+        if [[ $V_FLAG -ge 3 ]]; then
+            mv -f -v -- "$TMP_FILENAME" "$JSON_FILENAME" 1>&2
+            status="$?"
+        else
+            mv -f -- "$TMP_FILENAME" "$JSON_FILENAME" 1>&2
+            status="$?"
+        fi
+        if [[ $status -ne 0 ]]; then
+            echo "$0: ERROR: in write_author_handle_file: mv -f -- $TMP_FILENAME $JSON_FILENAME filed," \
+	         "error code: $status" 1>&2
+            return 2
+        elif [[ $V_FLAG -ge 1 ]]; then
+            echo "$0: debug[1]: updated author_handle JSON file: $JSON_FILENAME" 1>&2
+        fi
+        if [[ ! -s $JSON_FILENAME ]]; then
+            echo "$0: ERROR: in write_author_handle_file: not a non-empty author_handle JSON file: $JSON_FILENAME" 1>&2
+            return 3
+        fi
+    fi
+
+    # all OK
+    #
     return 0
 }
 
@@ -582,6 +901,23 @@ if [[ ! -x $MD2HTML_SH ]]; then
 fi
 
 
+# verify that the bin/othermd2html.sh tool is executable
+#
+export OTHERMD2HTML_SH="$BIN_DIR/othermd2html.sh"
+if [[ ! -e $OTHERMD2HTML_SH ]]; then
+    echo  "$0: ERROR: bin/othermd2html.sh does not exist: $OTHERMD2HTML_SH" 1>&2
+    exit 5
+fi
+if [[ ! -f $OTHERMD2HTML_SH ]]; then
+    echo  "$0: ERROR: bin/othermd2html.sh is not a regular file: $OTHERMD2HTML_SH" 1>&2
+    exit 5
+fi
+if [[ ! -x $OTHERMD2HTML_SH ]]; then
+    echo  "$0: ERROR: bin/othermd2html.sh is not an executable file: $OTHERMD2HTML_SH" 1>&2
+    exit 5
+fi
+
+
 # verify that the bin/jval-wrapper.sh tool is executable
 #
 JVAL_WRAPPER="$BIN_DIR/jval-wrapper.sh"
@@ -680,7 +1016,7 @@ done
 export PATTERN
 PATTERN="\$authors..author_handle"
 if [[ $V_FLAG -ge 3 ]]; then
-    echo  "$0: debug[3]: about to run: $JVAL_WRAPPER -b -- $AUTH_JSON $PATTERN > $TMP_AUTHOR_HANDLE" 1>&2
+    echo  "$0: debug[3]: about to run: $JVAL_WRAPPER -b -- $AUTH_JSON $PATTERN" 1>&2
 fi
 for AUTHOR_HANDLE in $("$JVAL_WRAPPER" -b -- "$AUTH_JSON" "$PATTERN"); do
     AUTHOR_HANDLE_JSON="author/$AUTHOR_HANDLE.json"
@@ -712,6 +1048,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: GTAR_TOOL=$GTAR_TOOL" 1>&2
     echo "$0: debug[3]: REPO_TOP_URL=$REPO_TOP_URL" 1>&2
     echo "$0: debug[3]: REPO_URL=$REPO_URL" 1>&2
+    echo "$0: debug[3]: JPARSE_TOOL=$JPARSE_TOOL" 1>&2
     echo "$0: debug[3]: MKIOCCCENTRY_REPO=$MKIOCCCENTRY_REPO" 1>&2
     echo "$0: debug[3]: INPUT_DATA_FILE=$INPUT_DATA_FILE" 1>&2
     echo "$0: debug[3]: NO_COMMENT=$NO_COMMENT" 1>&2
@@ -725,8 +1062,9 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: TOP_FILE=$TOP_FILE" 1>&2
     echo "$0: debug[3]: BIN_PATH=$BIN_PATH" 1>&2
     echo "$0: debug[3]: BIN_DIR=$BIN_DIR" 1>&2
-    echo "$0: debug[3]: JVAL_WRAPPER=$JVAL_WRAPPER" 1>&2
     echo "$0: debug[3]: MD2HTML_SH=$MD2HTML_SH" 1>&2
+    echo "$0: debug[3]: OTHERMD2HTML_SH=$OTHERMD2HTML_SH" 1>&2
+    echo "$0: debug[3]: JVAL_WRAPPER=$JVAL_WRAPPER" 1>&2
     echo "$0: debug[3]: YEAR_DIR=$YEAR_DIR" 1>&2
     echo "$0: debug[3]: ENTRY_DIR=$ENTRY_DIR" 1>&2
     echo "$0: debug[3]: ENTRY_ID=$ENTRY_ID" 1>&2
@@ -921,12 +1259,12 @@ if [[ -z $NOOP ]]; then
     #
     else
 	TZ=UTC LC_ALL=C "$GTAR_TOOL" --sort=name \
-		     --totals -jcf "$TARBALL" "${TAR_FILE_SET[@]}"
+		     -jcf "$TARBALL" "${TAR_FILE_SET[@]}"
 	status="$?"
 	if [[ $status -ne 0 ]]; then
 	    echo "$0: ERROR:" \
 		"TZ=UTC LC_ALL=C $GTAR_TOOL --sort=name" \
-		"--totals -jcf $TARBALL ${TAR_FILE_SET[*]} failed, error: $status" 1>&2
+		"-jcf $TARBALL ${TAR_FILE_SET[*]} failed, error: $status" 1>&2
 	    exit 11
 	fi
     fi
@@ -958,26 +1296,49 @@ elif [[ $V_FLAG -ge 3 ]]; then
 fi
 
 
-# create a temporary author_handle set file
+# create a temporary author_handle file
 #
-export TMP_AUTHOR_HANDLE=".tmp.$NAME.AUTHOR_HANDLE.$$.tmp"
+export TMP_AUTHOR_HANDLE_JSON=".tmp.$NAME.AUTHOR_HANDLE_JSON.$$.tmp"
 if [[ $V_FLAG -ge 3 ]]; then
-    echo  "$0: debug[3]: temporary author_handle set file: $TMP_AUTHOR_HANDLE" 1>&2
+    echo  "$0: debug[3]: temporary author_handle file: $TMP_AUTHOR_HANDLE_JSON" 1>&2
 fi
 if [[ -z $NOOP ]]; then
-    trap 'rm -f $TMP_ENTRY_JSON $TMP_AUTHOR_HANDLE; exit' 0 1 2 3 15
-    rm -f "$TMP_AUTHOR_HANDLE"
-    if [[ -e $TMP_AUTHOR_HANDLE ]]; then
-	echo "$0: ERROR: cannot remove temporary author_handle set file: $TMP_AUTHOR_HANDLE" 1>&2
+    trap 'rm -f $TMP_ENTRY_JSON $TMP_AUTHOR_HANDLE_JSON; exit' 0 1 2 3 15
+    rm -f "$TMP_AUTHOR_HANDLE_JSON"
+    if [[ -e $TMP_AUTHOR_HANDLE_JSON ]]; then
+	echo "$0: ERROR: cannot remove temporary author_handle file: $TMP_AUTHOR_HANDLE_JSON" 1>&2
 	exit 14
     fi
-    :> "$TMP_AUTHOR_HANDLE"
-    if [[ ! -e $TMP_AUTHOR_HANDLE ]]; then
-	echo "$0: ERROR: cannot create temporary author_handle set file: $TMP_AUTHOR_HANDLE" 1>&2
+    :> "$TMP_AUTHOR_HANDLE_JSON"
+    if [[ ! -e $TMP_AUTHOR_HANDLE_JSON ]]; then
+	echo "$0: ERROR: cannot create temporary author_handle file: $TMP_AUTHOR_HANDLE_JSON" 1>&2
 	exit 15
     fi
 elif [[ $V_FLAG -ge 3 ]]; then
-    echo "$0: debug[3]: because of -n, temporary author_handle set is not used: $TMP_AUTHOR_HANDLE" 1>&2
+    echo "$0: debug[3]: because of -n, temporary author_handle file is not used: $TMP_AUTHOR_HANDLE_JSON" 1>&2
+fi
+
+
+# create a temporary author_handle file
+#
+export TMP_MANIFEST_CSV=".tmp.$NAME.MANIFEST_CSV.$$.tmp"
+if [[ $V_FLAG -ge 3 ]]; then
+    echo  "$0: debug[3]: temporary manifest csv file: $TMP_MANIFEST_CSV" 1>&2
+fi
+if [[ -z $NOOP ]]; then
+    trap 'rm -f $TMP_ENTRY_JSON $TMP_AUTHOR_HANDLE_JSON $TMP_MANIFEST_CSV; exit' 0 1 2 3 15
+    rm -f "$TMP_MANIFEST_CSV"
+    if [[ -e $TMP_MANIFEST_CSV ]]; then
+	echo "$0: ERROR: cannot remove temporary manifest csv file: $TMP_MANIFEST_CSV" 1>&2
+	exit 16
+    fi
+    :> "$TMP_MANIFEST_CSV"
+    if [[ ! -e $TMP_MANIFEST_CSV ]]; then
+	echo "$0: ERROR: cannot create temporary manifest csv file: $TMP_MANIFEST_CSV" 1>&2
+	exit 17
+    fi
+elif [[ $V_FLAG -ge 3 ]]; then
+    echo "$0: debug[3]: because of -n, temporary manifest csv file is not used: $TMP_MANIFEST_CSV" 1>&2
 fi
 
 
@@ -992,7 +1353,7 @@ if [[ -z $NOOP ]]; then
 	echo '{'
 	echo '    "no_comment" : "'"$NO_COMMENT"'",'
 	echo '    "entry_JSON_format_version" : "'"$ENTRY_JSON_FORMAT_VERSION"'",'
-    } >> "$TMP_ENTRY_JSON"
+    } > "$TMP_ENTRY_JSON"
 
     # write the award to the temporary .entry.json file
     #
@@ -1005,6 +1366,8 @@ if [[ -z $NOOP ]]; then
 	exit 1
     fi
     {
+	# write award
+	#
 	echo "    \"award\" : \"${VALUE}\","
 
 	# write IOCCC year to the temporary .entry.json file
@@ -1026,50 +1389,39 @@ if [[ -z $NOOP ]]; then
 
     # process each author_handle
     #
-    export PATTERN
-    PATTERN="\$authors..author_handle"
-    if [[ $V_FLAG -ge 3 ]]; then
-	echo  "$0: debug[3]: about to run: $JVAL_WRAPPER -b -- $AUTH_JSON $PATTERN > $TMP_AUTHOR_HANDLE" 1>&2
-    fi
-    "$JVAL_WRAPPER" -b -- "$AUTH_JSON" "$PATTERN" > "$TMP_AUTHOR_HANDLE"
-    status="$?"
-    if [[ $status -ne 0 ]]; then
-	echo "$0: ERROR: $JVAL_WRAPPER -b -- $AUTH_JSON $PATTERN > $TMP_AUTHOR_HANDLE failed," \
-		 "error code: $status" 1>&2
-	exit 16
-    fi
-    if [[ ! -s $TMP_AUTHOR_HANDLE ]]; then
-	echo "$0: ERROR: temporary author_handle set file is empty or missing: $TMP_AUTHOR_HANDLE" 1>&2
-	exit 17
-    fi
-    AUTHOR_COUNT=$(wc -l < "$TMP_AUTHOR_HANDLE")
-    export AUTHOR_COUNT
-    ((i=0))
-    # The if statement only calls printf once, so this style issue is not valid here.
+    export i=0
+    # In the for loop below, we prefer to use individual redirects
     #
-    # SC2129 (style): Consider using { cmd1; cmd2; } >> file instead of individual redirects.
+    # SC2129 (style): Consider using { cmd1; cmd2; } >> file instead of individual redirects
     # https://www.shellcheck.net/wiki/SC2129
     # shellcheck disable=SC2129
-    while read -r AUTHOR_HANDLE; do
+    for AUTHOR_HANDLE in $("$JVAL_WRAPPER" -w -b -- "$AUTH_JSON" "\$authors..author_handle"); do
 
-	# parse an element value of the authors JSON array
+	# case: not the first author_handle
+	#
+	if [[ $i -ge 1 ]]; then
+	    printf ",\n"
+	fi
+
+	# initialize the AUTHOR_INFO
+	#
+	unset AUTHOR_INFO
+	declare -Ag AUTHOR_INFO
+	AUTHOR_INFO[no_comment]="$NO_COMMENT"
+	AUTHOR_INFO[author_JSON_format_version]="$AUTHOR_JSON_FORMAT_VERSION"
+	AUTHOR_INFO[deprecated_twitter_handle]="null"
+	AUTHOR_INFO[author_handle]="$AUTHOR_HANDLE"
+
+	# parse an element value of the this particular author in the authors JSON array
 	#
 	if [[ $V_FLAG -ge 5 ]]; then
 	    echo  "$0: debug[5]: about to run: $JVAL_WRAPPER -u $AUTH_JSON \$.authors[$i]" 1>&2
 	fi
-	AUTHOR_DATA=$("$JVAL_WRAPPER" -u "$AUTH_JSON" "\$.authors[$i]" | sed -e 's/^\["//' -e 's/^\([^"]*\)"]/\1/')
+	AUTHOR_DATA=$("$JVAL_WRAPPER" -u -- "$AUTH_JSON" "\$.authors[$i]" |
+		      sed -e 's/^\["//' -e 's/^\([^"]*\)"]/\1/')
 	export AUTHOR_DATA
-	export AUTHOR_NAME=
-	export AUTHOR_LOCATION_CODE=
-	export AUTHOR_EMAIL=
-	export AUTHOR_URL=
-	export AUTHOR_ALT_URL=
-	export AUTHOR_MASTODON=
-	export AUTHOR_GITHUB=
-	export AUTHOR_AFFILIATION=
 	export AUTHOR_PAST_WINNING_AUTHOR=
 	export AUTHOR_DEFAULT_HANDLE=
-	export AUTHOR_AUTHOR_HANDLE=
 	export AUTHOR_AUTHOR_NUMBER=
 	while read -r NAME VALUE; do
 
@@ -1077,28 +1429,28 @@ if [[ -z $NOOP ]]; then
 	    #
 	    case "$NAME" in
 	    name)
-		AUTHOR_NAME="$VALUE"
+		AUTHOR_INFO[name]="$VALUE"
 		;;
 	    location_code)
-		AUTHOR_LOCATION_CODE="$VALUE"
+		AUTHOR_INFO[location_code]="$VALUE"
 		;;
 	    email)
-		AUTHOR_EMAIL="$VALUE"
+		AUTHOR_INFO[email]="$VALUE"
 		;;
 	    url)
-		AUTHOR_URL="$VALUE"
+		AUTHOR_INFO[url]="$VALUE"
 		;;
 	    alt_url)
-		AUTHOR_ALT_URL="$VALUE"
+		AUTHOR_INFO[alt_url]="$VALUE"
 		;;
 	    mastodon)
-		AUTHOR_MASTODON="$VALUE"
+		AUTHOR_INFO[mastodon]="$VALUE"
 		;;
 	    github)
-		AUTHOR_GITHUB="$VALUE"
+		AUTHOR_INFO[github]="$VALUE"
 		;;
 	    affiliation)
-		AUTHOR_AFFILIATION="$VALUE"
+		AUTHOR_INFO[affiliation]="$VALUE"
 		;;
 	    past_winning_author)
 		AUTHOR_PAST_WINNING_AUTHOR="$VALUE"
@@ -1111,7 +1463,7 @@ if [[ -z $NOOP ]]; then
 		    echo "$0: ERROR: AUTHOR_HANDLE: \"$AUTHOR_HANDLE\" != author_handle value: $VALUE" 1>&2
 		    exit 18
 		fi
-		AUTHOR_AUTHOR_HANDLE="$VALUE"
+		AUTHOR_INFO[author_handle]="$VALUE"
 		;;
 	    author_number)
 		if [[ $i != "$VALUE" ]]; then
@@ -1127,122 +1479,240 @@ if [[ -z $NOOP ]]; then
 	    esac
 	done <<< "$AUTHOR_DATA"
 
-	# form author/author_handle.json
+	# verify we have all of the required information for this particular author
 	#
-	AUTHOR_HANDLE_JSON="author/$AUTHOR_HANDLE.json"
+	for NAME in name location_code email url alt_url mastodon github affiliation author_handle; do
+	    if [[ -z ${AUTHOR_INFO[${NAME}]} ]]; then
+		 echo "$0: ERROR: AUTHOR_HANDLE[$i]: $AUTHOR_HANDLE missing $NAME value from: $AUTH_JSON" 1>&2
+		 exit 21
+	    fi
+	done
+	if [[ -z $AUTHOR_PAST_WINNING_AUTHOR ]]; then
+	     echo "$0: ERROR: AUTHOR_HANDLE[$i]: $AUTHOR_HANDLE missing past_winning_author value from: $AUTH_JSON" 1>&2
+	     exit 22
+	fi
+	if [[ -z $AUTHOR_DEFAULT_HANDLE ]]; then
+	     echo "$0: ERROR: AUTHOR_HANDLE[$i]: $AUTHOR_HANDLE missing default_handle value from: $AUTH_JSON" 1>&2
+	     exit 23
+	fi
+	if [[ -z $AUTHOR_AUTHOR_NUMBER ]]; then
+	     echo "$0: ERROR: AUTHOR_HANDLE[$i]: $AUTHOR_HANDLE missing author_number value from: $AUTH_JSON" 1>&2
+	     exit 24
+	fi
 
 	# determine sort_word from the Author's last name
 	#
-	SORT_WORD=$(echo "$AUTHOR_NAME" | sed -e 's/^.* //' | tr '[:upper:]' '[:lower:]' | tr -d -c 'a-z0-9')
+	SORT_WORD=$(echo "${AUTHOR_INFO[name]}" | sed -e 's/^.* //' | tr '[:upper:]' '[:lower:]' | tr -d -c 'a-z0-9')
 	export SORT_WORD
+	if [[ -z $SORT_WORD ]]; then
+	    echo "$0: ERROR: AUTHOR_HANDLE: $AUTHOR_HANDLE unable to determine the sort_word for: ${AUTHOR_INFO[name]}" 1>&2
+	    exit 25
+	fi
 	case "$SORT_WORD" in
 	[a-z]*) ;;
-	*) SORT_WORD="z$SORT_WORD" ;;
+	*) SORT_WORD="z$SORT_WORD" ;;	# prepend if the last name does not begin with a letter
 	esac
-	if [[ -z $SORT_WORD ]]; then
-	    echo "$0: ERROR: AUTHOR_HANDLE: $AUTHOR_HANDLE unable to determine the sort_word for: $AUTHOR_NAME" 1>&2
-	    exit 21
-	fi
+	AUTHOR_INFO[sort_word]=\""$SORT_WORD"\"
 
 	# determine the mastodon_url for non-null mastodon
 	#
-	case "$AUTHOR_MASTODON" in
+	case "${AUTHOR_INFO[mastodon]}" in
 	\"@*@*\")
 	    # We have a 2 phase swap and substitution.  As such it is simpler to use sed.
 	    #
 	    # SC2001 (style): See if you can use ${variable//search/replace} instead.
 	    # https://www.shellcheck.net/wiki/SC2001
 	    # shellcheck disable=SC2001
-	    AUTHOR_MASTODON_URL=$(echo "$AUTHOR_MASTODON" | sed -e 's;^"@\([^@]*\)@\(.*\)"$;https://\2/\1;') ;;
-	*) AUTHOR_MASTODON_URL="null" ;;
+	    AUTHOR_INFO[mastodon_url]=$(echo "${AUTHOR_INFO[mastodon]}" |
+			sed -e 's;^"@\([^@]*\)@\(.*\)"$;https://\2/\1;') ;;
+	*) AUTHOR_INFO[mastodon_url]="null" ;;
 	esac
-	export AUTHOR_MASTODON_URL
 
-	# case: author_handle is a new author
+	# form author/author_handle.json
 	#
-	# We will form a new author/author_handle. file
-	#
-	if [[ ! -f $AUTHOR_HANDLE_JSON ]]; then
+	AUTHOR_HANDLE_JSON="author/$AUTHOR_HANDLE.json"
 
-	    # form the new author/author_handle.json file
+	# clear the entry_id set
+	#
+	unset ENTRY_ID_SET
+	declare -ag ENTRY_ID_SET
+
+	# case: author/author_handle.json exists
+	#
+	if [[ -e $AUTHOR_HANDLE_JSON ]]; then
+
+	    # firewall
 	    #
-	    {
-		printf "{\n"
-		printf "    \"no_comment\" : \"%s\",\n" "$NO_COMMENT"
-		printf "    \"author_JSON_format_version\" : \"%s\",\n" "$AUTHOR_JSON_FORMAT_VERSION"
-		printf "    \"author_handle\" : %s,\n" "$AUTHOR_AUTHOR_HANDLE"
-		printf "    \"full_name\" : %s,\n" "$AUTHOR_NAME"
-		printf "    \"sort_word\" : \"%s\",\n" "$SORT_WORD"
-		printf "    \"location_code\" : %s,\n" "$AUTHOR_LOCATION_CODE"
-		if [[ $AUTHOR_EMAIL == null ]]; then
-		    printf "    \"email\" : %s,\n" "null"
-		else
-		    printf "    \"email\" : %s,\n" "$AUTHOR_EMAIL"
-		fi
-		if [[ $AUTHOR_URL == null ]]; then
-		    printf "    \"url\" : %s,\n" "null"
-		else
-		    printf "    \"url\" : %s,\n" "$AUTHOR_URL"
-		fi
-		if [[ $AUTHOR_ALT_URL == null ]]; then
-		    printf "    \"alt_url\" : %s,\n" "null"
-		else
-		    printf "    \"alt_url\" : %s,\n" "$AUTHOR_ALT_URL"
-		fi
-		printf "    \"deprecated_twitter_handle\" : %s,\n" "null"
-		if [[ $AUTHOR_MASTODON == null ]]; then
-		    printf "    \"mastodon\" : %s,\n" "null"
-		else
-		    printf "    \"mastodon\" : %s,\n" "$AUTHOR_MASTODON"
-		fi
-		if [[ $AUTHOR_MASTODON_URL == null ]]; then
-		    printf "    \"mastodon_url\" : %s,\n" "null"
-		else
-		    printf "    \"mastodon_url\" : \"%s\",\n" "$AUTHOR_MASTODON_URL"
-		fi
-		if [[ $AUTHOR_GITHUB == null ]]; then
-		    printf "    \"github\" : %s,\n" "null"
-		else
-		    printf "    \"github\" : %s,\n" "$AUTHOR_GITHUB"
-		fi
-		if [[ $AUTHOR_AFFILIATION == null ]]; then
-		    printf "    \"affiliation\" : %s,\n" "null"
-		else
-		    printf "    \"affiliation\" : %s,\n" "$AUTHOR_AFFILIATION"
-		fi
-		printf "    \"winning_entry_set\" : [\n"
-		printf "\t{ \"entry_id\" : \"%s\" }\n" "$ENTRY_ID"
-		printf "    ]\n"
-		printf "}\n"
-	    } > "$AUTHOR_HANDLE_JSON"
+	    if [[ ! -f $AUTHOR_HANDLE_JSON ]]; then
+		echo "$0: ERROR: author_handle JSON is not a file: $AUTHOR_HANDLE_JSON" 1>&2
+		exit 26
+	    fi
+	    if [[ ! -r $AUTHOR_HANDLE_JSON ]]; then
+		echo "$0: ERROR: author_handle JSON is not a readable file: $AUTHOR_HANDLE_JSON" 1>&2
+		exit 27
+	    fi
+	    if [[ ! -s $AUTHOR_HANDLE_JSON ]]; then
+		echo "$0: ERROR: author_handle JSON is not a non-empty readable file: $AUTHOR_HANDLE_JSON" 1>&2
+		exit 28
+	    fi
 
-	    # XXX - create a temp author_handle.json file and move into place if different or new - XXX $
+	    # parse author/author_handle.json file other than the winning_entry_set
+	    #
+	    AUTHOR_DATA=$("$JVAL_WRAPPER" -u "$AUTHOR_HANDLE_JSON" |
+			  grep -v winning_entry_set |
+			  sed -e 's/^\["//' -e 's/^\([^"]*\)"]/\1/')
+	    while read -r NAME VALUE; do
 
-	# case: author_handle already is known author
+		# parse name value got non
+		#
+		case "$NAME" in
+		no_comment)
+		    if [[ $VALUE != \"$NO_COMMENT\" ]]; then
+			echo "$0: ERROR: author_handle file: $AUTHOR_HANDLE_JSON" \
+			     "invalid no_comment: $VALUE != \"$NO_COMMENT\"" 1>&2
+			exit 29
+		    fi
+		    ;;
+		author_JSON_format_version)
+		    if [[ $VALUE != \"$AUTHOR_JSON_FORMAT_VERSION\" ]]; then
+			echo "$0: ERROR: author_handle file: $AUTHOR_HANDLE_JSON" \
+			     "invalid author_JSON_format_version: $VALUE != \"$AUTHOR_JSON_FORMAT_VERSION\"" 1>&2
+			exit 30
+		    fi
+		    ;;
+		author_handle)
+		    if [[ $VALUE != "${AUTHOR_INFO[author_handle]}" ]]; then
+			echo "$0: ERROR: author_handle file: $AUTHOR_HANDLE_JSON" \
+			     "invalid author_handle: $VALUE != ${AUTHOR_INFO[author_handle]}" 1>&2
+			exit 31
+		    fi
+		    ;;
+		full_name)
+		    if [[ $VALUE != "${AUTHOR_INFO[name]}" ]]; then
+			echo "$0: notice: author_handle file: $AUTHOR_HANDLE_JSON" \
+			     "change of full_name from: $VALUE to: ${AUTHOR_INFO[name]}" 1>&2
+			echo 1>&2
+		    fi
+		    ;;
+		sort_word)
+		    if [[ $VALUE != \""${AUTHOR_INFO[sort_word]}"\" ]]; then
+			echo "$0: notice: author_handle file: $AUTHOR_HANDLE_JSON" \
+			     "change of sort_word from: $VALUE to: ${AUTHOR_INFO[sort_word]}" 1>&2
+			echo 1>&2
+		    fi
+		    ;;
+		location_code)
+		    if [[ $VALUE != "${AUTHOR_INFO[location_code]}" ]]; then
+			echo "$0: notice: author_handle file: $AUTHOR_HANDLE_JSON" \
+			     "change of location_code from: $VALUE to: ${AUTHOR_INFO[location_code]}" 1>&2
+			echo 1>&2
+		    fi
+		    ;;
+		email)
+		    if [[ $VALUE != "${AUTHOR_INFO[email]}" ]]; then
+			echo "$0: notice: author_handle file: $AUTHOR_HANDLE_JSON" \
+			     "change of email from: $VALUE to: ${AUTHOR_INFO[email]}" 1>&2
+			echo 1>&2
+		    fi
+		    ;;
+		url)
+		    if [[ $VALUE != "${AUTHOR_INFO[url]}" ]]; then
+			echo "$0: notice: author_handle file: $AUTHOR_HANDLE_JSON" \
+			     "change of url from: $VALUE to: ${AUTHOR_INFO[url]}" 1>&2
+			echo 1>&2
+		    fi
+		    ;;
+		alt_url)
+		    if [[ $VALUE != "${AUTHOR_INFO[alt_url]}" ]]; then
+			echo "$0: notice: author_handle file: $AUTHOR_HANDLE_JSON" \
+			     "change of alt_url from: $VALUE to: ${AUTHOR_INFO[alt_url]}" 1>&2
+			echo 1>&2
+		    fi
+		    ;;
+		deprecated_twitter_handle)
+		    AUTHOR_INFO[deprecated_twitter_handle]="$VALUE"
+		    ;;
+		mastodon)
+		    if [[ $VALUE != "${AUTHOR_INFO[mastodon]}" ]]; then
+			echo "$0: notice: author_handle file: $AUTHOR_HANDLE_JSON" \
+			     "change of mastodon from: $VALUE to: ${AUTHOR_INFO[mastodon]}" 1>&2
+			echo 1>&2
+		    fi
+		    ;;
+		mastodon_url)
+		    if [[ $VALUE != "${AUTHOR_INFO[mastodon_url]}" ]]; then
+			echo "$0: notice: author_handle file: $AUTHOR_HANDLE_JSON" \
+			     "change of mastodon_url from: $VALUE to: ${AUTHOR_INFO[mastodon_url]}" 1>&2
+			echo 1>&2
+		    fi
+		    ;;
+		github)
+		    if [[ $VALUE != "${AUTHOR_INFO[github]}" ]]; then
+			echo "$0: notice: author_handle file: $AUTHOR_HANDLE_JSON" \
+			     "change of github from: $VALUE to: ${AUTHOR_INFO[github]}" 1>&2
+			echo 1>&2
+		    fi
+		    ;;
+		affiliation)
+		    if [[ $VALUE != "${AUTHOR_INFO[affiliation]}" ]]; then
+			echo "$0: notice: author_handle file: $AUTHOR_HANDLE_JSON" \
+			     "change of affiliation from: $VALUE to: ${AUTHOR_INFO[affiliation]}" 1>&2
+			echo 1>&2
+		    fi
+		    ;;
+		*)
+		    echo "$0: ERROR: author_handle file: $AUTHOR_HANDLE_JSON" \
+		         "unknown $NAME : $VALUE" 1>&2
+		    exit 32
+		    ;;
+		esac
+	    done <<< "$AUTHOR_DATA"
+
+	    # collect the entry_ids from the winning_entry_set and add the new entry_id
+	    #
+	    ENTRY_IDS=$( { "$JVAL_WRAPPER" -w -b -- "$AUTHOR_HANDLE_JSON" "\$..entry_id" |
+				sed -e 's/^\["//' -e 's/^\([^"]*\)"]/\1/'
+			    echo "$ENTRY_ID"
+			 } | LC_ALL=C sort -d -u )
+	    while read -r ENTRY_ID_SET_VALUE; do
+		ENTRY_ID_SET+=("$ENTRY_ID_SET_VALUE")
+	    done <<< "$ENTRY_IDS"
+
+	# case: a new author/author_handle.json needs to be formed
 	#
 	else
-	    :	# XXX - collect existing entry_id's from known author, add new ENTRY_ID - XXX
+	    ENTRY_ID_SET+=("$ENTRY_ID")
 	fi
 
-	# XXX - move above $AUTHOR_HANDLE_JSON formation code into place and using the array of entry_id's - XXX #
+	# create or modify the author/author_handle.json as needed
+	#
+	write_author_handle_file AUTHOR_INFO ENTRY_ID_SET "$TMP_AUTHOR_HANDLE_JSON" "$AUTHOR_HANDLE_JSON"
+	status="$?"
+	if [[ $status -ne 0 ]]; then
+	    echo "$0: ERROR: write_author_handle_file AUTHOR_INFO ENTRY_ID_SET" \
+		 "$TMP_AUTHOR_HANDLE_JSON $AUTHOR_HANDLE_JSON failed," \
+		 "error code: $status" 1>&2
+	    exit 33
+	fi
 
 	# output the author_handle information for .entry.json
 	#
+	printf "        {\n"
+	printf "            \"author_handle\" : \"%s\"\n" "$AUTHOR_HANDLE"
+	printf "        }"
+
+	# count this author
+	#
 	((++i))
-	if [[ $i -lt $AUTHOR_COUNT ]]; then
-	    printf "\t { \"author_handle\" : \"%s\" },\n" "$AUTHOR_HANDLE"
-	else
-	    printf "\t { \"author_handle\" : \"%s\" }\n" "$AUTHOR_HANDLE"
-	fi
-    done >> "$TMP_ENTRY_JSON" < "$TMP_AUTHOR_HANDLE"
-    echo "    ],"  >> "$TMP_ENTRY_JSON"
+    done >> "$TMP_ENTRY_JSON"
+    printf "\n    ],\n" >> "$TMP_ENTRY_JSON"
 
     # begin the manifest array
     #
     echo "    \"manifest\" : [" >> "$TMP_ENTRY_JSON"
     ((count=0))
 
-    # manifest for entry source code
+    # write manifest csv line for entry source code
     #
     # This is the 1st manifest element of the array.  Moreover, we will
     # leave out the trailing comma.
@@ -1258,16 +1728,24 @@ if [[ -z $NOOP ]]; then
     if [[ $status -ne 0 ]]; then
 	echo "$0: ERROR: $JVAL_WRAPPER -b -- $INFO_JSON $PATTERN failed," \
 		 "error code: $status" 1>&2
-	exit 22
+	exit 34
     fi
     if [[ -z $FILE_PATH ]]; then
 	echo "$0: ERROR: cannot determine c_src in manifest from: $INFO_JSON" 1>&2
 	exit 7
     fi
-    manifest_entry "$FILE_PATH" 20 true c true "entry source code" "$count" >> "$TMP_ENTRY_JSON"
+    if [[ ! -e $YYYY_DIR/$FILE_PATH ]]; then
+	echo "$0: ERROR: manifest file for c_src does not exist: $YYYY_DIR/$FILE_PATH" 1>&2
+	exit 35
+    fi
+    if [[ ! -f $YYYY_DIR/$FILE_PATH ]]; then
+	echo "$0: ERROR: manifest file for c_src is not a file: $YYYY_DIR/$FILE_PATH" 1>&2
+	exit 36
+    fi
+    manifest_csv "$FILE_PATH" 20 true c true "entry source code" >> "$TMP_MANIFEST_CSV"
     export PROG_C="$FILE_PATH"
 
-    # manifest for entry Makefile
+    # write manifest csv line for entry Makefile
     #
     ((++count))
     PATTERN="\$manifest..Makefile"
@@ -1280,31 +1758,39 @@ if [[ -z $NOOP ]]; then
     if [[ $status -ne 0 ]]; then
 	echo "$0: ERROR: $JVAL_WRAPPER -b -- $INFO_JSON $PATTERN failed," \
 		 "error code: $status" 1>&2
-	exit 23
+	exit 37
     fi
     if [[ -z $FILE_PATH ]]; then
 	echo "$0: ERROR: cannot determine Makefile in manifest from: $INFO_JSON" 1>&2
-	exit 24
+	exit 38
     fi
-    manifest_entry "$FILE_PATH" 30 true makefile true "entry Makefile" "$count" >> "$TMP_ENTRY_JSON"
+    if [[ ! -e $YYYY_DIR/$FILE_PATH ]]; then
+	echo "$0: ERROR: manifest file for Makefile does not exist: $YYYY_DIR/$FILE_PATH" 1>&2
+	exit 39
+    fi
+    if [[ ! -f $YYYY_DIR/$FILE_PATH ]]; then
+	echo "$0: ERROR: manifest file for Makefile is not a file: $YYYY_DIR/$FILE_PATH" 1>&2
+	exit 40
+    fi
+    manifest_csv "$FILE_PATH" 30 true makefile true "entry Makefile" >> "$TMP_MANIFEST_CSV"
 
-    # manifest for alt source file if found
+    # write manifest csv line for alt source file if found
     #
     export ALT_C
     ALT_C=$(basename "$PROG_C" .c)".alt.c"
-    if [[ -f $ALT_C ]]; then
+    if [[ -f $YYYY_DIR/$ALT_C ]]; then
 
 	# manifest for entry alt source code
 	#
 	((++count))
-	manifest_entry "$ALT_C" 40 true c true "alternate source code" "$count" >> "$TMP_ENTRY_JSON"
+	manifest_csv "$ALT_C" 40 true c true "alternate source code" >> "$TMP_MANIFEST_CSV"
     fi
 
     # form original source code if needed
     #
     export ORIG_C
     ORIG_C=$(basename "$PROG_C" .c)".orig.c"
-    if [[ ! -f $ALT_C ]]; then
+    if [[ ! -f $YYYY_DIR/$ORIG_C ]]; then
 	if [[ $V_FLAG -ge 3 ]]; then
 	    echo  "$0: debug[3]: about to run: cp -f -p -v $YYYY_DIR/$PROG_C $YYYY_DIR/$ORIG_C" 1>&2
 	    cp -f -p -v "$YYYY_DIR/$PROG_C" "$YYYY_DIR/$ORIG_C"
@@ -1312,7 +1798,7 @@ if [[ -z $NOOP ]]; then
 	    if [[ $status -ne 0 ]]; then
 		echo "$0: ERROR: cp -f -p -v $YYYY_DIR/$PROG_C $YYYY_DIR/$ORIG_C failed," \
 			 "error code: $status" 1>&2
-		exit 25
+		exit 41
 	    fi
 	else
 	    cp -f -p "$YYYY_DIR/$PROG_C" "$YYYY_DIR/$ORIG_C"
@@ -1320,17 +1806,17 @@ if [[ -z $NOOP ]]; then
 	    if [[ $status -ne 0 ]]; then
 		echo "$0: ERROR: cp -f -p $YYYY_DIR/$PROG_C $YYYY_DIR/$ORIG_C failed," \
 			 "error code: $status" 1>&2
-		exit 26
+		exit 42
 	    fi
 	fi
     fi
 
-    # manifest for original source code
+    # write manifest csv line for original source code
     #
     ((++count))
-    manifest_entry "$ORIG_C" 50 false c true "original source code" "$count" >> "$TMP_ENTRY_JSON"
+    manifest_csv "$ORIG_C" 50 false c true "original source code" >> "$TMP_MANIFEST_CSV"
 
-    # manifest for extra_file(s)
+    # collect manifest for extra_file(s)
     #
     export PATTERN
     PATTERN="\$manifest..extra_file"
@@ -1338,21 +1824,131 @@ if [[ -z $NOOP ]]; then
 	echo  "$0: debug[3]: about to run: $JVAL_WRAPPER -b -- $INFO_JSON $PATTERN" 1>&2
     fi
     export EXTRA_FILE_SET
-    EXTRA_FILE_SET=$("$JVAL_WRAPPER" -b -- "$INFO_JSON" "$PATTERN" | LC_ALL=C sort -u)
+    EXTRA_FILE_SET=$("$JVAL_WRAPPER" -b -- "$INFO_JSON" "$PATTERN" | LC_ALL=C sort -d -u)
     status_codes=("${PIPESTATUS[@]}")
     if [[ ${status_codes[*]} =~ [1-9] ]]; then
 	echo "$0: ERROR: $JVAL_WRAPPER -b -- $INFO_JSON $PATTERN failed," \
 		 "error code: ${status_codes[*]}" 1>&2
-	exit 27
+	exit 43
     fi
+
+    # perform some validation checks on the extra_file set
+    #
     for EXTRA_FILE in $EXTRA_FILE_SET; do
 
-	# XXX - add constructed HTML to manifest for extra markdown files - XXX #
+	# test if extra_file is an invalid filename
+	#
+	case "$EXTRA_FILE" in
+	prog.c|Makefile|prog.orig.c|index.html|README.md|remarks.md|\.*)
+	    echo "$0: ERROR: invalid extra_file filename: $EXTRA_FILE" 1>&2
+	    exit 44
+	    ;;
+	*) ;;
+	esac
+
+	# test if extra_file is not a file
+	#
+	if [[ ! -e $YYYY_DIR/$EXTRA_FILE ]]; then
+	    echo "$0: ERROR: manifest file for extra_file does not exist: $YYYY_DIR/$EXTRA_FILE" 1>&2
+	    exit 45
+	fi
+	if [[ ! -f $YYYY_DIR/$EXTRA_FILE ]]; then
+	    echo "$0: ERROR: manifest file for extra_file is not a file: $YYYY_DIR/$EXTRA_FILE" 1>&2
+	    exit 46
+	fi
+    done
+
+    # process HTML files that do not yet exist but are associated with markdown extra_files
+    #
+    for EXTRA_FILE in $EXTRA_FILE_SET; do
+
+	# case: extra_file is a markdown file
+	#
+	if [[ $EXTRA_FILE =~ (.*)\.md$ ]]; then
+
+	    # warn if there is a HTML file associated with the markdown file
+	    #
+	    export HTML_FILE="${BASH_REMATCH[1]}.html"
+	    if [[ -e $YYYY_DIR/$HTML_FILE ]]; then
+		echo 1>&2
+		echo "$0: Warning: markdown file: $EXTRA_FILE and HTML file: $HTML_FILE both exist" 1>&2
+		echo "$0: Warning: verify HTML file is an HTML version of markdown," \
+		     "or exclude $YYYY_DIR/$EXTRA_FILE from bin/md2html.cfg processing" 1>&2
+		echo 1>&2
+	    fi
+	    HTML_FILE_BASENAME=$(basename "$HTML_FILE")
+	    export HTML_FILE_BASENAME
+
+	    # write manifest csv line for the markdown file
+	    #
+	    ((++count))
+	    manifest_csv "$EXTRA_FILE" 4000000000 true markdown true \
+		"markdown source for $HTML_FILE_BASENAME" >> "$TMP_MANIFEST_CSV"
+
+	    # prompt for entry_text of HTML file
+	    #
+	    VALUE=
+	    prompt_string "entry_text for $HTML_FILE"
+	    status="$?"
+	    if [[ $status -ne 0 || -z $VALUE ]]; then
+		echo "$0: ERROR: prompt_string entry_text for $HTML_FILE failed," \
+			 "error code: $status" 1>&2
+		exit 1
+	    fi
+	    export ENTRY_TEXT="$VALUE"
+
+	    # write manifest csv line for the HTML file associated with the markdown file
+	    #
+	    ((++count))
+	    manifest_csv "$HTML_FILE" 100 false markdown true "$ENTRY_TEXT" >> "$TMP_MANIFEST_CSV"
+
+	# case: extra_file is an HTML file
+	#
+	elif [[ $EXTRA_FILE =~ (.*)\.html$ ]]; then
+
+	    # case: there is a markdown file associated with this HTML file
+	    #
+	    export MD_FILE="${BASH_REMATCH[1]}.md"
+	    if [[ -e $YYYY_DIR/$HTML_FILE ]]; then
+
+		# NOTE: We have or will process the HTML file in this loop, nothing to do here
+		#
+		continue
+	    fi
+
+	    # prompt for entry_text of HTML file
+	    #
+	    VALUE=
+	    prompt_string "entry_text for $EXTRA_FILE"
+	    status="$?"
+	    if [[ $status -ne 0 || -z $VALUE ]]; then
+		echo "$0: ERROR: prompt_string inventory_order for $EXTRA_FILE failed," \
+			 "error code: $status" 1>&2
+		exit 1
+	    fi
+	    export ENTRY_TEXT="$VALUE"
+
+	    # write manifest csv line for the HTML file associated with the markdown file
+	    #
+	    ((++count))
+	    manifest_csv "$EXTRA_FILE" 100 false html true "$ENTRY_TEXT" >> "$TMP_MANIFEST_CSV"
+	fi
+    done
+
+    # process extra_files that are neither markdown nor HTML
+    #
+    for EXTRA_FILE in $EXTRA_FILE_SET; do
+
+	# ignore HTML files because we processed them above
+	#
+	if [[ $EXTRA_FILE =~ \.html$ || $EXTRA_FILE =~ \.md$ ]]; then
+	    continue
+	fi
 
 	# prompt for inventory_order
 	#
 	VALUE=
-	prompt_string "inventory_order for $EXTRA_FILE"
+	prompt_integer "inventory_order for $EXTRA_FILE"
 	status="$?"
 	if [[ $status -ne 0 || -z $VALUE ]]; then
 	    echo "$0: ERROR: prompt_string inventory_order for $EXTRA_FILE failed," \
@@ -1385,24 +1981,21 @@ if [[ -z $NOOP ]]; then
 	fi
 	export ENTRY_TEXT="$VALUE"
 
-	# manifest for original source code
+	# write manifest csv line for original source code
 	#
 	((++count))
-	manifest_entry "$EXTRA_FILE" "$INVENTORY_ORDER" true "$DISPLAY_AS" true "$ENTRY_TEXT" \
-	    "$count" >> "$TMP_ENTRY_JSON"
+	manifest_csv "$EXTRA_FILE" "$INVENTORY_ORDER" true "$DISPLAY_AS" true "$ENTRY_TEXT" >> "$TMP_MANIFEST_CSV"
     done
 
-    # manifest for compressed tarball
+    # write manifest csv line for compressed tarball
     #
     ((++count))
-    manifest_entry "$ENTRY_ID.tar.bz2" 1415926535 false tbz2 false "download entry tarball" \
-	"$count" >> "$TMP_ENTRY_JSON"
+    manifest_csv "$ENTRY_ID.tar.bz2" 1415926535 false tbz2 false "download entry tarball" >> "$TMP_MANIFEST_CSV"
 
-    # manifest for .entry.json
+    # write manifest csv line for .entry.json
     #
     ((++count))
-    manifest_entry .entry.json 4000000000 true json true "entry summary and manifest in JSON" \
-	"$count" >> "$TMP_ENTRY_JSON"
+    manifest_csv .entry.json 4000000000 true json true "entry summary and manifest in JSON" >> "$TMP_MANIFEST_CSV"
 
     # form .gitignore if needed
     #
@@ -1414,7 +2007,7 @@ if [[ -z $NOOP ]]; then
 	    if [[ $status -ne 0 ]]; then
 		echo "$0: ERROR: cp -f -p -v $TEMPLATE_GITIGNORE $DOT_GITIGNORE failed," \
 			 "error code: $status" 1>&2
-		exit 28
+		exit 47
 	    fi
 	else
 	    cp -f -p "$TEMPLATE_GITIGNORE" "$DOT_GITIGNORE"
@@ -1422,16 +2015,16 @@ if [[ -z $NOOP ]]; then
 	    if [[ $status -ne 0 ]]; then
 		echo "$0: ERROR: cp -f -p $TEMPLATE_GITIGNORE $DOT_GITIGNORE failed," \
 			 "error code: $status" 1>&2
-		exit 29
+		exit 48
 	    fi
 	fi
     fi
 
-    # manifest for .gitignore
+    # write manifest csv line for .gitignore
     #
     ((++count))
-    manifest_entry .gitignore 4000000000 true gitignore true "list of files that should not be committed under git" \
-	"$count" >> "$TMP_ENTRY_JSON"
+    manifest_csv .gitignore 4000000000 true gitignore true "list of files that should not be committed under git" \
+	>> "$TMP_MANIFEST_CSV"
 
     # form .path if needed
     #
@@ -1439,11 +2032,11 @@ if [[ -z $NOOP ]]; then
 	echo "$YYYY_DIR" > "$DOT_PATH"
     fi
 
-    # manifest for .path
+    # write manifest csv line for .path
     #
     ((++count))
-    manifest_entry .path 4000000000 false path false "directory path from top level directory" \
-	"$count" >> "$TMP_ENTRY_JSON"
+    manifest_csv .path 4000000000 false path false "directory path from top level directory" \
+	>> "$TMP_MANIFEST_CSV"
 
     # form README.md if needed
     #
@@ -1456,28 +2049,79 @@ if [[ -z $NOOP ]]; then
 	if [[ -f $YYYY_DIR/remarks.md ]]; then
 	    cat "$YYYY_DIR/remarks.md" >> "$README_MD"
 	else
-	    echo "XXX - mo remarks.md file was found" >> "$README_MD"
+	    echo "$X_3 - mo remarks.md file was found" >> "$README_MD"
 	fi
-	sed -e "s/XXX-YEAR-XXX/$YEAR_DIR/" "$TEMPLATE_README_MD_TAIL" >> "$README_MD"
+	sed -e "s/$X_3-YEAR-$X_3/$YEAR_DIR/" "$TEMPLATE_README_MD_TAIL" >> "$README_MD"
     fi
 
-    # manifest for README.md
+    # write manifest csv line for README.md
     #
     ((++count))
-    manifest_entry README.md 4000000000 true markdown true "markdown source for this web page" \
-	"$count" >> "$TMP_ENTRY_JSON"
+    manifest_csv README.md 4000000000 true markdown true "markdown source for this web page" \
+	>> "$TMP_MANIFEST_CSV"
 
-    # manifest for index.html
+    # write manifest csv line for index.html
     #
     ((++count))
-    manifest_entry index.html 4294967295 false html false "this web page" \
-	"$count" >> "$TMP_ENTRY_JSON"
+    manifest_csv index.html 4294967295 false html false "this web page" >> "$TMP_MANIFEST_CSV"
+
+    # sort the manifest csv file
+    #
+    if [[ $V_FLAG -ge 5 ]]; then
+        echo "$0: debug[5]: about to: LC_ALL=C sort -t, -k2n -k1,1 -k3,6 $TMP_MANIFEST_CSV -o $TMP_MANIFEST_CSV" 1>&2
+    fi
+    LC_ALL=C sort -t, -k2n -k1,1 -k3,6 "$TMP_MANIFEST_CSV" -o "$TMP_MANIFEST_CSV"
+    status="$?"
+    if [[ $status -ne 0 ]]; then
+        echo "$0: ERROR: LC_ALL=C sort -t, -k2n -k1,1 -k3,6 $TMP_MANIFEST_CSV -o $TMP_MANIFEST_CSV failed," \
+             "error code: $status" 1>&2
+        exit 49
+    elif [[ $V_FLAG -ge 3 ]]; then
+        echo "$0: debug[3]: sorted temporary manifest csv file: $TMP_MANIFEST_CSV" 1>&2
+    fi
+
+    # convert manifest csv lines in the manifest csv file into manifest JSON entries
+    #
+    MANIFEST_CSV_LINES=$(wc -l < "$TMP_MANIFEST_CSV")
+    export MANIFEST_CSV_LINES
+    export line=0
+    sed -e 's/,/ /g' "$TMP_MANIFEST_CSV" |
+      while read -r FILE_PATH INVENTORY_ORDER OK_TO_EDIT DISPLAY_AS DISPLAY_VIA_GITHUB ENTRY_TEXT; do
+
+	# determine if manifest needs a comma
+	#
+	((++line))
+	export COMMA="comma"
+	if [[ $line -ge $MANIFEST_CSV_LINES ]]; then
+	    COMMA=""
+	fi
+
+	# write inventory item into temporary .entry.json file
+	#
+	manifest_entry "$FILE_PATH" "$INVENTORY_ORDER" "$OK_TO_EDIT" "$DISPLAY_AS" "$DISPLAY_VIA_GITHUB" \
+		       "$ENTRY_TEXT" "$COMMA" >> "$TMP_ENTRY_JSON"
+      done
 
     # end the manifest array and end of temporary .entry.json file
     #
     # We complete the last manifest_entry that was written.
     #
-    printf "\n    ]\n}\n" >> "$TMP_ENTRY_JSON"
+    printf "    ]\n}\n" >> "$TMP_ENTRY_JSON"
+
+    # validate the JSON in the temporary .entry.json file
+    #
+    if [[ $V_FLAG -ge 3 ]]; then
+	echo "$0: debug[3]: about to: $JPARSE_TOOL -q -- $TMP_ENTRY_JSON" 1>&2
+    fi
+    "$JPARSE_TOOL" -q -- "$TMP_ENTRY_JSON" 1>&2
+    status="$?"
+    if [[ $status -ne 0 ]]; then
+	echo "$0: ERROR: $JPARSE_TOOL -q -- $TMP_ENTRY_JSON filed," \
+	     "error code: $status" 1>&2
+	exit 50
+    elif [[ $V_FLAG -ge 3 ]]; then
+	echo "$0: debug[3]: valid JSON: $TMP_ENTRY_JSON" 1>&2
+    fi
 
     # update .entry.json if needed
     #
@@ -1497,22 +2141,22 @@ if [[ -z $NOOP ]]; then
             echo "$0: debug[5]: about to: mv -f -- $TMP_ENTRY_JSON $ENTRY_JSON" 1>&2
         fi
         if [[ $V_FLAG -ge 3 ]]; then
-            mv -f -v -- "$TMP_ENTRY_JSON" "$ENTRY_JSON"
+            mv -f -v -- "$TMP_ENTRY_JSON" "$ENTRY_JSON" 1>&2
             status="$?"
         else
-            mv -f -- "$TMP_ENTRY_JSON" "$ENTRY_JSON"
+            mv -f -- "$TMP_ENTRY_JSON" "$ENTRY_JSON" 1>&2
             status="$?"
         fi
         if [[ $status -ne 0 ]]; then
             echo "$0: ERROR: mv -f -- $TMP_ENTRY_JSON $ENTRY_JSON filed," \
 	         "error code: $status" 1>&2
-            exit 30
+            exit 51
         elif [[ $V_FLAG -ge 1 ]]; then
             echo "$0: debug[1]: updated .entry.json: $ENTRY_JSON" 1>&2
         fi
         if [[ ! -s $ENTRY_JSON ]]; then
             echo "$0: ERROR: not a non-empty .entry.json: $ENTRY_JSON" 1>&2
-            exit 31
+            exit 52
         fi
     fi
 
@@ -1523,20 +2167,59 @@ elif [[ $V_FLAG -ge 3 ]]; then
 fi
 
 
+
+# build HTML files based on extra_file markdown files
+#
+for EXTRA_FILE in $EXTRA_FILE_SET; do
+
+    # case: extra_file is a markdown file
+    #
+    if [[ $EXTRA_FILE =~ (.*)\.md$ ]]; then
+
+	# form HTML file if it does not exist
+	#
+	export HTML_FILE="${BASH_REMATCH[1]}.html"
+	if [[ ! -e $HTML_FILE ]]; then
+
+	    if [[ -z $NOOP ]]; then
+
+		if [[ $V_FLAG -ge 1 ]]; then
+		    echo  "$0: debug[1]: about to run: $OTHERMD2HTML_SH -v $V_FLAG -- $YYYY_DIR/$EXTRA_FILE" 1>&2
+		fi
+		"$OTHERMD2HTML_SH" -v "$V_FLAG" -- "$YYYY_DIR/$EXTRA_FILE"
+		status="$?"
+		if [[ $status -ne 0 ]]; then
+		    echo "$0: ERROR: $OTHERMD2HTML_SH -v $V_FLAG -- $YYYY_DIR/$EXTRA_FILE filed," \
+			 "error code: $status" 1>&2
+		    exit 53
+		fi
+	    elif [[ $V_FLAG -ge 3 ]]; then
+		echo "$0: debug[3]: -n disabled forming HTML: $YYYY_DIR/$HTML_FILE" 1>&2
+	    fi
+
+	# HTML file already exists
+	#
+	elif [[ $V_FLAG -ge 1 ]]; then
+	    echo  "$0: notice: markdown: $YYYY_DIR/$EXTRA_FILE HTML file exists: $YYYY_DIR/$HTML_FILE" 1>&2
+	fi
+    fi
+done
+
+
 # form index.html if needed
 #
 if [[ -z $NOOP ]]; then
     if [[ ! -f $INDEX_HTML ]]; then
 
-	if [[ $V_FLAG -ge 3 ]]; then
-	    echo  "$0: debug[3]: about to run: $MD2HTML_SH -v $V_FLAG -- $README_MD $INDEX_HTML" 1>&2
+	if [[ $V_FLAG -ge 1 ]]; then
+	    echo  "$0: debug[1]: about to run: $MD2HTML_SH -v $V_FLAG -- $README_MD $INDEX_HTML" 1>&2
 	fi
 	"$MD2HTML_SH" -v "$V_FLAG" -- "$README_MD" "$INDEX_HTML"
 	status="$?"
 	if [[ $status -ne 0 ]]; then
 	    echo "$0: ERROR: $MD2HTML_SH -v $V_FLAG -- $README_MD $INDEX_HTML filed," \
 		 "error code: $status" 1>&2
-	    exit 32
+	    exit 54
 	fi
     fi
 
@@ -1547,7 +2230,18 @@ elif [[ $V_FLAG -ge 3 ]]; then
 fi
 
 
-# XXX - mode code here - XXX
+# remove submission files that are no longer needed for a winning IOCCC entry
+#
+if [[ $V_FLAG -ge 1 ]]; then
+    echo "$0: debug[1]: about to run: rm -f -v -- $INFO_JSON $AUTH_JSON $REMARKS_MD" 1>&2
+fi
+rm -f -v -- "$INFO_JSON" "$AUTH_JSON" "$REMARKS_MD"
+status="$?"
+if [[ $status -ne 0 ]]; then
+    echo "$0: ERROR: rm -f -v -- $INFO_JSON $AUTH_JSON $REMARKS_MD filed," \
+	 "error code: $status" 1>&2
+    exit 55
+fi
 
 
 # All Done!!! All Done!!! -- Jessica Noll, Age 2

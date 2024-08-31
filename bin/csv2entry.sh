@@ -1311,7 +1311,7 @@ if [[ $status -ne 0 ]]; then
 	 "error code: $status" 1>&2
     exit 8
 elif [[ $V_FLAG -ge 3 ]]; then
-    echo "$0: debug[3]: sorted temporary author_wins.csv file: $TMP_AUTHOR_WINS_CSV" 1>&2
+    echo "$0: debug[3]: sorted temporary YYYY_DIR inventory file: $TMP_YYYY_DIR_INV" 1>&2
 fi
 
 
