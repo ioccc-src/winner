@@ -449,6 +449,23 @@ if [[ ! -x $JVAL_WRAPPER ]]; then
 fi
 
 
+# verify that the bin/jfmt-wrapper.sh tool is executable
+#
+JFMT_WRAPPER="$BIN_DIR/jfmt-wrapper.sh"
+if [[ ! -e $JFMT_WRAPPER ]]; then
+    echo  "$0: ERROR: bin/jfmt-wrapper.sh does not exist: $JFMT_WRAPPER" 1>&2
+    exit 5
+fi
+if [[ ! -f $JFMT_WRAPPER ]]; then
+    echo  "$0: ERROR: bin/jfmt-wrapper.sh is not a regular file: $JFMT_WRAPPER" 1>&2
+    exit 5
+fi
+if [[ ! -x $JFMT_WRAPPER ]]; then
+    echo  "$0: ERROR: bin/jfmt-wrapper.sh is not an executable file: $JFMT_WRAPPER" 1>&2
+    exit 5
+fi
+
+
 # verify we have our awk script
 #
 export MANIFEST_ENTRY_CSV_ENTRY_AWK="$BIN_DIR/manifest.csv.entry.awk"

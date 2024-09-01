@@ -311,7 +311,7 @@ help:
 	@echo 'make tab_check		;: check for ASCII tabs in markdown files'
 	@echo 'make genpath		;: form top level .top and .allyear, YYYY level .year and winner .path files'
 	@echo 'make genfilelist	;: generate YYYY level .filelist'
-	@echo 'make all_jfmt	;: be sure all JSON files are canonical
+	@echo 'make all_jfmt	;: be sure all JSON files are canonical'
 	@echo 'make verify_entry_files	;: check to be sure all files in all entries exist'
 	@echo 'make gen_authors	;: generate the top level authors.html page'
 	@echo 'make quick_authors	;: build authors.html if out of date with author JSON files'
