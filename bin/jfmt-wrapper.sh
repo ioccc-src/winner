@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# jfmt-wrapper.sh - - canonically format a JSON file
+# jfmt-wrapper.sh - canonically format a JSON file
 #
 # We form a wrapper for the jfmt(1), a tool that will format a JSON
 # file into a canonical style.  NOTE: As of 2024 July 28 the jfmt(1)
@@ -142,7 +142,9 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-n] [-N] [-j JSONPath.sh] file.jso
 
 	-j JSONPath.sh	path to the JSONPath.sh tool (not the wrapper) (def: $JSONPATH_SH)
 
-	file.json	The JSON file to write, in canonical form, to stdout (def: read stdin)
+	file.json	update file.json in canonical form
+
+NOTE: file.json is not touched if it is already in canonical form
 
 Exit codes:
      0         all OK
