@@ -1659,9 +1659,6 @@ sed -e '/^#/d' -e 's/,/ /g' "$MANIFEST_CSV" |
 done
 
 
-# XXX - update `author/author_handle.json` files as needed based on canonicalized author_wins.csv data - XXX #
-
-
 # All Done!!! All Done!!! -- Jessica Noll, Age 2
 #
 EXIT_CODE=$(< "$TMP_EXIT_CODE")
