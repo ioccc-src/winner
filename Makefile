@@ -53,6 +53,7 @@ GEN_AUTHORS= bin/gen-authors.sh
 GEN_LOCATION= bin/gen-location.sh
 GEN_YEARS= bin/gen-years.sh
 GEN_YEAR_INDEX= bin/gen-year-index.sh
+ALL_JFMT= bin/all-jfmt.sh
 CHK_ENTRY= bin/chk-entry.sh
 GEN_TOP_HTML= bin/gen-top-html.sh
 GEN_OTHER_HTML= bin/gen-other-html.sh
@@ -276,7 +277,7 @@ clobber:
 # Finally: The rules in this section are NOT needed if you
 #	   simple want to examine, run / test winning IOCCC entries.
 
-.PHONY: help genpath genfilelist verify_entry_files gen_authors quick_authors \
+.PHONY: help genpath genfilelist all_jfmt verify_entry_files gen_authors quick_authors \
 	gen_location quick_location gen_years find_missing_links test entry_index gen_top_html \
 	thanks gen_other_html quick_other_html quick_entry_index \
 	gen_year_index quick_year_index quick_www www untar_entry_tarball untar_year_tarball \
@@ -310,6 +311,7 @@ help:
 	@echo 'make tab_check		;: check for ASCII tabs in markdown files'
 	@echo 'make genpath		;: form top level .top and .allyear, YYYY level .year and winner .path files'
 	@echo 'make genfilelist	;: generate YYYY level .filelist'
+	@echo 'make all_jfmt	;: be sure all JSON files are canonical
 	@echo 'make verify_entry_files	;: check to be sure all files in all entries exist'
 	@echo 'make gen_authors	;: generate the top level authors.html page'
 	@echo 'make quick_authors	;: build authors.html if out of date with author JSON files'
@@ -430,6 +432,13 @@ genfilelist:
 		echo "updated $$i/.filelist"; \
 	    fi; \
 	done
+	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+
+# be sure that all JSON files are canonical
+#
+all_jfmt: ${ALL_RUN} ${CHK_ENTRY}
+	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	${ALL_JFMT} -v 1
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 # check to be sure all files in all entries exist
@@ -705,6 +714,7 @@ www:
 	@${MAKE} genpath >/dev/null
 	@echo '=-=-=-=-= IOCCC complete make genpath =-=-=-=-='
 	${MAKE} genfilelist
+	${MAKE} all_jfmt
 	${MAKE} verify_entry_files
 	${MAKE} gen_authors
 	${MAKE} gen_location
