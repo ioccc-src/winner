@@ -27,8 +27,6 @@ For more detailed information see [2006/birken in bugs.html](../../bugs.html#200
     ./try.sh
 ```
 
-etc.
-
 
 ## Judges' remarks:
 
@@ -41,7 +39,7 @@ What is TOFU?  It's not a veggie friendly food, nor it is
 [VHDL](https://en.wikipedia.org/wiki/VHDL)  It is not even
 [Pascal](https://en.wikipedia.org/wiki/Pascal_&lpar;programming_language&rpar;)!
 
-NOTE: On some systems, `file(1)` claims one of the `.tofu` files is Pascal
+**NOTE**: On some systems, `file(1)` claims one of the `.tofu` files is Pascal
 source. :-)
 
 It may not be the most readable hardware description language, but it is

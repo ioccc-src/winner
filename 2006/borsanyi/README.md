@@ -38,7 +38,7 @@ answer that you do not wish to make another.
 
 This entry uses a very user-friendly representation of the font
 it uses (with a few exceptions).   Check out the source and see
-yourself!  :-)
+for yourself!  :-)
 
 The resulting GIF file is likely to puzzle optical character
 recognition tools.  The amount of imagination necessary to

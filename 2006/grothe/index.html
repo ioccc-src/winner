@@ -409,7 +409,7 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <!-- BEFORE: 1st line of markdown file: 2006/grothe/README.md -->
 <h2 id="to-build">To build:</h2>
 <pre><code>    make</code></pre>
-<p>NOTE: this entry requires the <code>X11/Xlib.h</code> header file and the X11 library to
+<p><strong>NOTE</strong>: this entry requires the <code>X11/Xlib.h</code> header file and the X11 library to
 compile. For more information see the
 FAQ on “<a href="../../faq.html#X11">X11</a>”.</p>
 <h2 id="to-use">To use:</h2>
@@ -430,9 +430,20 @@ the frequencies for an old fashion touch tone phone, so old songs can be played
 by hitting <code>0-9</code>,<code>#</code>, and <code>*</code>.</p>
 <p>To be able to run the program you need to determine the following
 parameters:</p>
-<pre><code>    carrier_freq     - base frequency used to host music
-    pixelclock       - refresh rate of the monitor
-    horizontal_total - total scan along the horizontal axis</code></pre>
+<ul>
+<li><code>carrier_freq</code>
+<ul>
+<li>base frequency used to host music</li>
+</ul></li>
+<li><code>pixelclock</code>
+<ul>
+<li>refresh rate of the monitor</li>
+</ul></li>
+<li><code>horizontal_total</code>
+<ul>
+<li>total scan along the horizontal axis</li>
+</ul></li>
+</ul>
 <p>If you have <code>xvidtune</code> installed you can get the <code>pixelclock</code> and
 <code>horizontal_total</code> with the following command</p>
 <pre><code>    xvidtune -show | head -n 1 | awk &#39;{ print &quot;pixelclock &quot; $2 * 1000000 &quot; horizontal_total = &quot; $6 }&#39;</code></pre>
@@ -454,29 +465,33 @@ and <a href="https://en.wikipedia.org/wiki/ZX81">Timex Sinclair ZX-81</a>s.</p>
 <p>Others can be found by doing a search for “touch tone phone songs”.</p>
 <h3 id="obfuscations">Obfuscations</h3>
 <ul>
-<li><p>Some numbers expressed in Octal, some in hex and some in decimal:
-“A foolish consistency is the hobgoblin of little minds” - Ralph Waldo
-Emerson.</p></li>
-<li><p>Funky scoping, looking at the nanosleep section and <code>XsetWindowAttributes</code>
-declares local variables.</p></li>
-<li><p>Algorithm is very weird, uses <code>y</code> dimension to draw carrier frequency
+<li>Some numbers expressed in Octal, some in hex and some in decimal:</li>
+</ul>
+<blockquote>
+<p>“A foolish consistency is the hobgoblin of little minds.” - Ralph Waldo
+Emerson.</p>
+</blockquote>
+<ul>
+<li>Funky scoping, looking at the nanosleep section and <code>XsetWindowAttributes</code>
+declares local variables.</li>
+<li>Algorithm is very weird, uses <code>y</code> dimension to draw carrier frequency
 and <code>x</code> dimension to draw audio frequency, based on <a href="http://www.erikyyy.de">Erik
 Thiele</a>’s
-<a href="http://www.erikyyy.de/tempest/">Tempest for Eliza</a>.</p></li>
-<li><p>lack of <code>#define</code>s confuses many people :-)</p></li>
-<li><p>figuring out your <code>pixelclock</code> and <code>horizontal_total</code> and which <code>carrier_freq</code>
-to use can be an exercise in obfuscation for the user.</p></li>
-<li><p>use of commas in various places, confuses most C code beautifiers
-sometimes making the beautified code harder to read</p></li>
-<li><p>use of <code>static</code> to ensure initialization is EVIL and done in several
-places</p></li>
-<li><p>uses <code>static</code> declarations &amp; <code>void</code> function returns we don’t care about
-making the code harder to read.</p></li>
-<li><p>does sound using only <a href="https://en.wikipedia.org/wiki/Xlib">X11 libs</a>, no other
-libs required.</p></li>
-<li><p>demonstrates tempest emissions in a fun/easy way.</p></li>
-<li><p>follows good programming practices of actually setting exit codes and giving
-usage when run with incorrect parameters.</p></li>
+<a href="http://www.erikyyy.de/tempest/">Tempest for Eliza</a>.</li>
+<li>lack of <code>#define</code>s confuses many people :-)</li>
+<li>figuring out your <code>pixelclock</code> and <code>horizontal_total</code> and which <code>carrier_freq</code>
+to use can be an exercise in obfuscation for the user.</li>
+<li>use of commas in various places, confuses most C code beautifiers
+sometimes making the beautified code harder to read</li>
+<li>use of <code>static</code> to ensure initialization is EVIL and done in several
+places</li>
+<li>uses <code>static</code> declarations &amp; <code>void</code> function returns we don’t care about
+making the code harder to read.</li>
+<li>does sound using only <a href="https://en.wikipedia.org/wiki/Xlib">X11 libs</a>, no other
+libs required.</li>
+<li>demonstrates tempest emissions in a fun/easy way.</li>
+<li>follows good programming practices of actually setting exit codes and giving
+usage when run with incorrect parameters.</li>
 </ul>
 <h3 id="references">References</h3>
 <p><a href="http://www.erikyyy.de/tempest/">Tempest for Eliza - Basis for Algorithms</a>.</p>

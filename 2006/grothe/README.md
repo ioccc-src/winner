@@ -4,7 +4,7 @@
     make
 ```
 
-NOTE: this entry requires the `X11/Xlib.h` header file and the X11 library to
+**NOTE**: this entry requires the `X11/Xlib.h` header file and the X11 library to
 compile.  For more information see the
 FAQ on "[X11](../../faq.html#X11)".
 
@@ -45,11 +45,14 @@ by hitting `0-9`,`#`, and `*`.
 To be able to run the program you need to determine the following
 parameters:
 
-```
-    carrier_freq     - base frequency used to host music
-    pixelclock       - refresh rate of the monitor
-    horizontal_total - total scan along the horizontal axis
-```
+* `carrier_freq`
+    - base frequency used to host music
+
+* `pixelclock`
+    - refresh rate of the monitor
+
+* `horizontal_total`
+    - total scan along the horizontal axis
 
 If you have `xvidtune` installed you can get the `pixelclock` and
 `horizontal_total` with the following command
@@ -99,7 +102,8 @@ Others can be found by doing a search for "touch tone phone songs".
 ### Obfuscations
 
 - Some numbers expressed in Octal, some in hex and some in decimal:
-"A foolish consistency is the hobgoblin of little minds" - Ralph Waldo
+
+> "A foolish consistency is the hobgoblin of little minds." - Ralph Waldo
 Emerson.
 
 - Funky scoping, looking at the nanosleep section and `XsetWindowAttributes`

@@ -27,10 +27,10 @@ For your first input try:
 where `a` is the row (`a`-`i`), `0` is the column (`0`-`8`) and `1` is the
 number (`1`-`9`).
 
-NOTE: if you do not input three different 'words' it will block. You can input
+**NOTE**: if you do not input three different 'words' it will block. You can input
 more text to fulfil the program's requirements.
 
-NOTE: if your move is invalid it will prompt you again but not show the board.
+**NOTE**: if your move is invalid it will prompt you again but not show the board.
 
 
 ## Judges' remarks:
@@ -43,7 +43,7 @@ code](%%REPO_URL%%/2006/meyer/meyer.c)!  :-)
 
 ## Author's remarks:
 
-I wanted submit a fully object-oriented entry to show that
+I wanted to submit a fully object-oriented entry to show that
 object-orientated code:
 
 1. is ridiculously bloated.
@@ -62,8 +62,8 @@ _manually_ translated it from a generic object-oriented programming
 language to C, it didn't just end up unreadable, but awfully
 messed up, i.e. obfuscated.
 
-As it is already (pre)translated to C, you could also call it an object-
-disoriented program.
+As it is already (pre)translated to C, you could also call it an
+object-disoriented program.
 
 Comparing this program to a potential object-oriented implementation,
 it is obvious, that object-oriented code isn't '`WYWIWID`' ('what
