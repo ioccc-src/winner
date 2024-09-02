@@ -6738,7 +6738,8 @@ it is under no obligation to be wholly understandable.  One might
 say that to truly understand the IOCCC is problematic. And if
 someone did manage to fully understand the IOCCC, then perhaps
 this **modified** quote from the [The Hitchhiker's Guide to the
-Galaxy](https://en.wikipedia.org/wiki/The_Hitchhiker's_Guide_to_the_Galaxy):
+Galaxy](https://en.wikipedia.org/wiki/The_Hitchhiker's_Guide_to_the_Galaxy)
+may apply:
 
 > "There is a theory which states that if ever anyone discovers
 exactly what the IOCCC is for and why it is here, it will
