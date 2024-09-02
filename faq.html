@@ -416,6 +416,7 @@
 <li><a class="normal" href="#faq1_1">1.1 - Why are some years missing IOCCC entries?</a></li>
 <li><a class="normal" href="#faq1_2">1.2 - What is the history of the IOCCC website?</a></li>
 <li><a class="normal" href="#faq1_3">1.3 - How has the IOCCC size limit rule changed over the years?</a></li>
+<li><a class="normal" href="#faq1_4">1.4 - What is the <strong>Great Fork Merge</strong>?</a></li>
 </ul>
 <h2 id="section-2---ioccc-judging-process">Section 2 - <a href="#faq2">IOCCC Judging process</a></h2>
 <ul>
@@ -499,6 +500,7 @@ other inconsistencies with the original entry?</a></li>
 <li><a class="normal" href="#faq6_15">6.15 - How do the menus on the website work and what can I do if they don’t work?</a></li>
 <li><a class="normal" href="#faq6_16">6.16 - How do I find more information about a winning author of an entry?</a></li>
 <li><a class="normal" href="#faq6_17">6.17 - What is a <code>.entry.json</code> file and how is it used?</a></li>
+<li><a class="normal" href="#faq6_18">6.18 - I do not understand the IOCCC, can you explain it to me?</a></li>
 </ul>
 <p>Jump to: <a href="#">top</a></p>
 <h1 id="the-ioccc-faq">The IOCCC FAQ</h1>
@@ -1599,13 +1601,15 @@ FAQ on “<a href="#validating_json">validating JSON documents</a>”.</p>
 <p>If you want or need to verify that a JSON document (as a string or file) is
 valid, you can use the
 <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/jparse/README.md">jparse</a>
-tool. This tool, <code>jparse(1)</code>, is, for the time being, in the <a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry
-repo</a>, but <!--XXX - update the above
-URL to point to the jparse repo when it is populated --> will later be in a
-separate repo. In any case you need to download the repo or <code>git clone</code> it and
-then compile it (cd to the directory and then run <code>make all</code>). If you wish to
-make it easier you can then do <code>make install</code> either as root or via <code>sudo</code> so
-you can run the tool from any path.</p>
+tool. The IOCCC version of the <code>jparse(1)</code> tool may be installed from the
+<a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry repo</a>.</p>
+<p>The <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/FAQ.md#download">FAQ.md file in the mkiocccentry
+repo</a>
+contains information about how to find and compile the mkiocccentry
+toolkit, which includes the IOCCC version of the <code>jparse(1)</code> tool, located
+under the <code>mkiocccentry</code> directory as <code>jparse/jparse</code>. Additionally you
+may use the <code>make install</code> command to install the mkiocccentry toolkit,
+including <code>jparse</code> into the default location of <code>/usr/local/bin/jparse</code>.</p>
 <p>The syntax of <code>jparse(1)</code> is very simple:</p>
 <pre class="&lt;!--sh--&gt;"><code>    jparse foo.json</code></pre>
 <p>If the tool shows <code>valid JSON</code> then the document is valid JSON; otherwise it’ll
@@ -2104,10 +2108,12 @@ from <code>winners.html</code>, via the <a href="https://github.com/ioccc-src/te
 <li>Making use of a new and improved <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/ioccc.css">IOCCC CSS</a> for website consistency</li>
 <li>Etc.</li>
 </ul>
+<div id="great_fork_merge_date">
 <h4 id="y-mm-dd-the-great-fork-merge">202y mm dd The Great Fork Merge <!-- XXX - Fill in the date when Great Fork Merge happens --></h4>
-<p>As of 2024 Mar 5 <a href="https://github.com/ioccc-src/temp-test-ioccc">temp-test-ioccc
+</div>
+<p>As of 2024 Sep 1 <a href="https://github.com/ioccc-src/temp-test-ioccc">temp-test-ioccc
 repo</a>
-there were <a href="https://github.com/ioccc-src/winner/compare/master...ioccc-src:temp-test-ioccc:master">4513 commits ahead</a>
+there were <a href="https://github.com/ioccc-src/winner/compare/master...ioccc-src:temp-test-ioccc:master">5858 commits ahead</a>
 of the <a href="https://github.com/ioccc-src/winner">IOCCC winner repo</a>.</p>
 <p>On 202y mm dd, the temporary repo was merged back into the <a href="https://github.com/ioccc-src/winner">IOCCC winner
 repo</a> resulting in many, many substantial improvements
@@ -2178,6 +2184,19 @@ to the <a href="https://www.ioccc.org">official IOCCC website</a>.</p>
 <li>Rule 2a: 4993</li>
 <li>Rule 2b: 2503</li>
 </ul>
+<p>Jump to: <a href="#">top</a></p>
+<div id="faq1_4">
+<div id="great_fork_merge">
+<h3 id="faq-1.4-what-is-the-great-fork-merge">FAQ 1.4: What is the <strong>Great Fork Merge</strong>?</h3>
+</div>
+</div>
+<p>The <strong>Great Fork Merge</strong> was when thousands of changes that had been applied to the
+<a href="https://github.com/ioccc-src/temp-test-ioccc">temp-test-ioccc repo</a> was applied
+to the <a href="https://github.com/ioccc-src/winner">Official IOCCC winner repo</a> causing the
+<a href="index.html">Official IOCCC website</a> to be updated into its present form.</p>
+<p>See the
+FAQ on “<a href="#great_fork_merge_date">Great Fork Merge Date</a>”
+for more information.</p>
 <p>Jump to: <a href="#">top</a></p>
 <div id="faq2">
 <h2 id="section-2-ioccc-judging-process">Section 2: IOCCC Judging process</h2>
@@ -5319,6 +5338,51 @@ Usually this is called <code>try.sh</code> for the entry and <code>try.alt.sh</c
 source code (if there is an alternate version). Some, however, have another file
 name. The <code>entry_text</code> for the <code>try</code> scripts will be <code>script to try entry</code> or
 something along those lines.</p>
+<p>Jump to: <a href="#">top</a></p>
+<div id="faq6_18">
+<div id="explain_IOCCC">
+<h3 id="faq-6.18-i-do-not-understand-the-ioccc-can-you-explain-it-to-me">FAQ 6.18: I do not understand the IOCCC, can you explain it to me?</h3>
+</div>
+</div>
+<p>The IOCCC stands for the International Obfuscated C Code Contest.
+The IOCCC is a C programming contest.</p>
+<p>The goals of the IOCCC are:</p>
+<ul>
+<li>To write the most Obscure/Obfuscated C program within the rules.</li>
+<li>To show the importance of programming style, in an ironic way.</li>
+<li>To stress C compilers with unusual code.</li>
+<li>To illustrate some of the subtleties of the C language.</li>
+<li>To provide a safe forum for poor C code. :-)</li>
+<li>To have fun with C!</li>
+</ul>
+<p>See the
+FAQ on “<a href="#ioccc_start">start of the IOCCC</a>”
+and the
+FAQ on “<a href="#website_history">history of the IOCCC</a>”
+for more information the background of the IOCCC.</p>
+<p>See the
+FAQ on “<a href="#submit">entering the IOCCC</a>”
+for information on how to enter and submit to the IOCCC.</p>
+<p>If you are still confused, consider the nature of
+the <a href="next/rules.html">IOCCC rules</a> and of the <a href="next/guidelines.html">IOCCC
+guidelines</a>. You will see a dose of the technical,
+mixed with “nerd humor” (or humour if you prefer 🤓).</p>
+<p>If after all that you are still confused, sorry (tm Canada 😉).
+Consider this: While the IOCCC often attempts to be presentable,
+it is under no obligation to be wholly understandable. One might
+say that to truly understand the IOCCC is problematic. And if
+someone did manage to fully understand the IOCCC, then perhaps
+this <strong>modified</strong> quote from the <a href="https://en.wikipedia.org/wiki/The_Hitchhiker&#39;s_Guide_to_the_Galaxy">The Hitchhiker’s Guide to the
+Galaxy</a>:</p>
+<blockquote>
+<p>“There is a theory which states that if ever anyone discovers
+exactly what the IOCCC is for and why it is here, it will
+instantly disappear and be replaced by something even more bizarre
+and inexplicable.</p>
+<p>There is another theory which states that this has
+<a href="#great_fork_merge">already happened</a>.” 😜</p>
+</blockquote>
+<p>Share and enjoy! ☺️</p>
 <hr style="width:10%;text-align:left;margin-left:0">
 <p>Jump to: <a href="#">top</a></p>
 <!--

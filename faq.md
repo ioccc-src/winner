@@ -28,6 +28,7 @@ This is FAQ version **28.0.4 2024-08-24**.
 - <a class="normal" href="#faq1_1">1.1  - Why are some years missing IOCCC entries?</a>
 - <a class="normal" href="#faq1_2">1.2  - What is the history of the IOCCC website?</a>
 - <a class="normal" href="#faq1_3">1.3  - How has the IOCCC size limit rule changed over the years?</a>
+- <a class="normal" href="#faq1_4">1.4  - What is the **Great Fork Merge**?</a>
 
 
 ## Section  2 - [IOCCC Judging process](#faq2)
@@ -111,6 +112,7 @@ other inconsistencies with the original entry?</a>
 - <a class="normal" href="#faq6_15">6.15 - How do the menus on the website work and what can I do if they don't work?</a>
 - <a class="normal" href="#faq6_16">6.16 - How do I find more information about a winning author of an entry?</a>
 - <a class="normal" href="#faq6_17">6.17 - What is a `.entry.json` file and how is it used?</a>
+- <a class="normal" href="#faq6_18">6.18 - I do not understand the IOCCC, can you explain it to me?</a>
 
 Jump to: [top](#)
 
@@ -1368,13 +1370,16 @@ Jump to: [top](#)
 If you want or need to verify that a JSON document (as a string or file) is
 valid, you can use the
 [jparse](https://github.com/ioccc-src/mkiocccentry/blob/master/jparse/README.md)
-tool. This tool, `jparse(1)`, is, for the time being, in the [mkiocccentry
-repo](https://github.com/ioccc-src/mkiocccentry), but <!--XXX - update the above
-URL to point to the jparse repo when it is populated --> will later be in a
-separate repo. In any case you need to download the repo or `git clone` it and
-then compile it (cd to the directory and then run `make all`). If you wish to
-make it easier you can then do `make install` either as root or via `sudo` so
-you can run the tool from any path.
+tool. The IOCCC version of the `jparse(1)` tool may be installed from the
+[mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry).
+
+The [FAQ.md file in the mkiocccentry
+repo](https://github.com/ioccc-src/mkiocccentry/blob/master/FAQ.md#download)
+contains information about how to find and compile the mkiocccentry
+toolkit, which includes the IOCCC version of the `jparse(1)` tool, located
+under the `mkiocccentry` directory as `jparse/jparse`.  Additionally you
+may use the `make install` command to install the mkiocccentry toolkit,
+including `jparse` into the default location of `/usr/local/bin/jparse`.
 
 The syntax of `jparse(1)` is very simple:
 
@@ -2017,11 +2022,14 @@ from `winners.html`, via the [gen-authors.sh](%%REPO_URL%%/bin/gen-authors.sh) t
 * Making use of a new and improved [IOCCC CSS](%%REPO_URL%%/ioccc.css) for website consistency
 * Etc.
 
-#### 202y mm dd The Great Fork Merge <!-- XXX - Fill in the date when Great Fork Merge happens -->
 
-As of 2024 Mar 5 [temp-test-ioccc
+<div id="great_fork_merge_date">
+#### 202y mm dd The Great Fork Merge <!-- XXX - Fill in the date when Great Fork Merge happens -->
+</div>
+
+As of 2024 Sep 1 [temp-test-ioccc
 repo](https://github.com/ioccc-src/temp-test-ioccc)
-there were [4513 commits ahead](https://github.com/ioccc-src/winner/compare/master...ioccc-src:temp-test-ioccc:master)
+there were [5858 commits ahead](https://github.com/ioccc-src/winner/compare/master...ioccc-src:temp-test-ioccc:master)
 of the [IOCCC winner repo](https://github.com/ioccc-src/winner).
 
 On 202y mm dd, the temporary repo was merged back into the [IOCCC winner
@@ -2100,6 +2108,24 @@ NOTE: The size rule was actually rule 1.
 
 * Rule 2a: 4993
 * Rule 2b: 2503
+
+Jump to: [top](#)
+
+
+<div id="faq1_4">
+<div id="great_fork_merge">
+### FAQ 1.4: What is the **Great Fork Merge**?
+</div>
+</div>
+
+The **Great Fork Merge** was when thousands of changes that had been applied to the
+[temp-test-ioccc repo](https://github.com/ioccc-src/temp-test-ioccc) was applied
+to the [Official IOCCC winner repo](https://github.com/ioccc-src/winner) causing the
+[Official IOCCC website](index.html) to be updated into its present form.
+
+See the
+FAQ on "[Great Fork Merge Date](#great_fork_merge_date)"
+for more information.
 
 Jump to: [top](#)
 
@@ -6669,6 +6695,60 @@ Usually this is called `try.sh` for the entry and `try.alt.sh` for the alternate
 source code (if there is an alternate version). Some, however, have another file
 name. The `entry_text` for the `try` scripts will be `script to try entry` or
 something along those lines.
+
+Jump to: [top](#)
+
+
+<div id="faq6_18">
+<div id="explain_IOCCC">
+### FAQ 6.18: I do not understand the IOCCC, can you explain it to me?
+</div>
+</div>
+
+The IOCCC stands for the International Obfuscated C Code Contest.
+The IOCCC is a C programming contest.
+
+The goals of the IOCCC are:
+
+* To write the most Obscure/Obfuscated C program within the rules.
+* To show the importance of programming style, in an ironic way.
+* To stress C compilers with unusual code.
+* To illustrate some of the subtleties of the C language.
+* To provide a safe forum for poor C code. :-)
+* To have fun with C!
+
+See the
+FAQ on "[start of the IOCCC](#ioccc_start)"
+and the
+FAQ on "[history of the IOCCC](#website_history)"
+for more information the background of the IOCCC.
+
+See the
+FAQ on "[entering the IOCCC](#submit)"
+for information on how to enter and submit to the IOCCC.
+
+If you are still confused, consider the nature of
+the [IOCCC rules](next/rules.html) and of the [IOCCC
+guidelines](next/guidelines.html).  You will see a dose of the technical,
+mixed with "nerd humor" (or humour if you prefer 🤓).
+
+If after all that you are still confused, sorry (tm Canada 😉).
+Consider this: While the IOCCC often attempts to be presentable,
+it is under no obligation to be wholly understandable.  One might
+say that to truly understand the IOCCC is problematic. And if
+someone did manage to fully understand the IOCCC, then perhaps
+this **modified** quote from the [The Hitchhiker's Guide to the
+Galaxy](https://en.wikipedia.org/wiki/The_Hitchhiker's_Guide_to_the_Galaxy):
+
+> "There is a theory which states that if ever anyone discovers
+exactly what the IOCCC is for and why it is here, it will
+instantly disappear and be replaced by something even more bizarre
+and inexplicable.
+>
+> There is another theory which states that this has
+[already happened](#great_fork_merge)." 😜
+
+Share and enjoy! ☺️
 
 
 <hr style="width:10%;text-align:left;margin-left:0">
