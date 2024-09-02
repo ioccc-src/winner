@@ -59,6 +59,7 @@ The goals of the IOCCC:
 *  To stress C compilers with unusual code.
 *  To illustrate some of the subtleties of the C language.
 *  To provide a safe forum for poor C code. :-)
+*  To have fun with C!
 
 
 # Entering the Contest
