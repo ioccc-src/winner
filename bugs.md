@@ -54,11 +54,11 @@ it takes away some instructional value or even usability. _In this case we're
 judgement but invariably some might have been the wrong decision. Thank you for
 understanding!
 
-I ( [Cody Boone Ferguson](authors.html#Cody_Boone_Ferguson) )
-accept the blame in some cases; when working on getting entries to compile
-sometimes I got carried away with it and there might be that I fixed some things
-that should not have been fixed. I am correcting these mistakes as I come across
-them but if I miss any please let the judges or me know.
+When working on getting entries to compile, sometimes some things were changed
+that should not have been. Also the definition of `INABIAF` was changed a number
+of times. At one point some things were changed to a bug (a usability problem
+for example) to be fixed but when looking at the index.html file it was noticed
+it was documented so the fixes were undone at that point.
 
 
 ### ON **ALL** FIXES / IMPROVEMENTS / CHANGES
