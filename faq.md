@@ -1377,9 +1377,17 @@ The [FAQ.md file in the mkiocccentry
 repo](https://github.com/ioccc-src/mkiocccentry/blob/master/FAQ.md#download)
 contains information about how to find and compile the mkiocccentry
 toolkit, which includes the IOCCC version of the `jparse(1)` tool, located
-under the `mkiocccentry` directory as `jparse/jparse`.  Additionally you
-may use the `make install` command to install the mkiocccentry toolkit,
-including `jparse` into the default location of `/usr/local/bin/jparse`.
+under the `mkiocccentry` directory as `jparse/jparse`.
+
+Additionally you may install the `jparse(1)` tool from the [jparse
+repo](https://github.com/xexyl/jparse):
+
+``` <!--sh-->
+    git clone https://github.com/xexyl/jparse.git
+    cd jparse
+    make clobber all test
+    sudo make install
+```
 
 The syntax of `jparse(1)` is very simple:
 
@@ -1418,11 +1426,10 @@ If you want to validate the `.auth.json` or `.info.json` files you
 should use `chkentry(1)` from the [mkiocccentry
 repo](https://github.com/ioccc-src/mkiocccentry).
 
-`chkentry` uses the [jparse](https://github.com/ioccc-src/mkiocccentry/blob/master/jparse/README.md)
-API; you can use the `jparse` tool itself to validate JSON documents, discussed
-above in the
-FAQ on "[validating JSON documents](#validating_json)"
-but the `chkentry` tool has **additional** checks on these two IOCCC specific files.
+The `chkentry(1)` tool uses the
+[jparse API](https://github.com/ioccc-src/mkiocccentry/blob/master/jparse/man/man3/jparse.3)
+API to perform **additional** checks on these two IOCCC specific JSON files.
+
 See the
 FAQ on "[.auth.json](#auth_json)"
 and
@@ -1449,7 +1456,7 @@ If you pass a single argument, it is expected to be a directory that has both
 ```
 
 If there is a [JSON](https://www.json.org/json-en.html) issue detected by
-`jparse(3)`, then there is a [JSON](https://www.json.org/json-en.html) error and
+`jparse(3)` API, then there is a [JSON](https://www.json.org/json-en.html) error and
 `chkentry(1)` will report it as an **error**. If the parsing is OK (i.e. valid
 JSON) but there is an issue in one or both of the
 [JSON](https://www.json.org/json-en.html) files in **the context of the IOCCC**,
@@ -5109,6 +5116,9 @@ if you wish to validate every JSON file in `author/` then you could do so like:
 If you see any output then it will say which file or files are invalid JSON
 (this should not actually happen, however).
 
+See the
+FAQ on "[jparse](#jparse)",
+for now to location and/or install the `jparse(1)` command.
 
 
 <div id="walk_through_author_json">

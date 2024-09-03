@@ -1607,9 +1607,13 @@ tool. The IOCCC version of the <code>jparse(1)</code> tool may be installed from
 repo</a>
 contains information about how to find and compile the mkiocccentry
 toolkit, which includes the IOCCC version of the <code>jparse(1)</code> tool, located
-under the <code>mkiocccentry</code> directory as <code>jparse/jparse</code>. Additionally you
-may use the <code>make install</code> command to install the mkiocccentry toolkit,
-including <code>jparse</code> into the default location of <code>/usr/local/bin/jparse</code>.</p>
+under the <code>mkiocccentry</code> directory as <code>jparse/jparse</code>.</p>
+<p>Additionally you may install the <code>jparse(1)</code> tool from the <a href="https://github.com/xexyl/jparse">jparse
+repo</a>:</p>
+<pre class="&lt;!--sh--&gt;"><code>    git clone https://github.com/xexyl/jparse.git
+    cd jparse
+    make clobber all test
+    sudo make install</code></pre>
 <p>The syntax of <code>jparse(1)</code> is very simple:</p>
 <pre class="&lt;!--sh--&gt;"><code>    jparse foo.json</code></pre>
 <p>If the tool shows <code>valid JSON</code> then the document is valid JSON; otherwise it’ll
@@ -1632,12 +1636,10 @@ the tool.</p>
 <p>If you want to validate the <code>.auth.json</code> or <code>.info.json</code> files you
 should use <code>chkentry(1)</code> from the <a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry
 repo</a>.</p>
-<p><code>chkentry</code> uses the <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/jparse/README.md">jparse</a>
-API; you can use the <code>jparse</code> tool itself to validate JSON documents, discussed
-above in the
-FAQ on “<a href="#validating_json">validating JSON documents</a>”
-but the <code>chkentry</code> tool has <strong>additional</strong> checks on these two IOCCC specific files.
-See the
+<p>The <code>chkentry(1)</code> tool uses the
+<a href="https://github.com/ioccc-src/mkiocccentry/blob/master/jparse/man/man3/jparse.3">jparse API</a>
+API to perform <strong>additional</strong> checks on these two IOCCC specific JSON files.</p>
+<p>See the
 FAQ on “<a href="#auth_json">.auth.json</a>”
 and
 FAQ on “<a href="#info_json">.info.json</a>”
@@ -1658,7 +1660,7 @@ If you pass a single argument, it is expected to be a directory that has both
     # run checks on .info.json and .auth.json:
     chkentry .info.json .auth.json</code></pre>
 <p>If there is a <a href="https://www.json.org/json-en.html">JSON</a> issue detected by
-<code>jparse(3)</code>, then there is a <a href="https://www.json.org/json-en.html">JSON</a> error and
+<code>jparse(3)</code> API, then there is a <a href="https://www.json.org/json-en.html">JSON</a> error and
 <code>chkentry(1)</code> will report it as an <strong>error</strong>. If the parsing is OK (i.e. valid
 JSON) but there is an issue in one or both of the
 <a href="https://www.json.org/json-en.html">JSON</a> files in <strong>the context of the IOCCC</strong>,
@@ -3190,9 +3192,9 @@ provided by the author and any other file in the winning entry, found under the
 entry’s subdirectory.</p>
 <p>If you downloaded <code>1984/mullender/1984_mullender.tar.bz2</code>, for instance, you might
 then do:</p>
-<div class="sourceCode" id="cb65"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a>        <span class="bu">cd</span> 1984/mullender</span>
-<span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a>        <span class="fu">make</span> everything</span>
-<span id="cb65-3"><a href="#cb65-3" aria-hidden="true" tabindex="-1"></a>        <span class="ex">./mullender.alt</span></span></code></pre></div>
+<div class="sourceCode" id="cb66"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a>        <span class="bu">cd</span> 1984/mullender</span>
+<span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a>        <span class="fu">make</span> everything</span>
+<span id="cb66-3"><a href="#cb66-3" aria-hidden="true" tabindex="-1"></a>        <span class="ex">./mullender.alt</span></span></code></pre></div>
 <p>to compile all versions and then run the alternate version (if you have
 a PDP-11 or VAX-11 you would be able to run the original version). For more help
 on compiling entries, see also the
@@ -3233,8 +3235,8 @@ if you switched to each entry’s directory and ran <code>make everything</code>
 <p>If you download the 1984 tarball, i.e. <code>1984/1984.tar.bz2</code>, then you might
 extract it and then switch to the directory and compile everything of each
 entry:</p>
-<div class="sourceCode" id="cb66"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a>        <span class="bu">cd</span> 1984</span>
-<span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a>        <span class="fu">make</span> everything</span></code></pre></div>
+<div class="sourceCode" id="cb67"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a>        <span class="bu">cd</span> 1984</span>
+<span id="cb67-2"><a href="#cb67-2" aria-hidden="true" tabindex="-1"></a>        <span class="fu">make</span> everything</span></code></pre></div>
 <p>For more help on compiling entries, see also the
 FAQ on “<a href="#make_rules">IOCCC Makefile rules</a>”.</p>
 <p>Of course in this case you can also switch to individual entries and look at the
@@ -4245,6 +4247,9 @@ if you wish to validate every JSON file in <code>author/</code> then you could d
 <pre class="&lt;!--sh--&gt;"><code>        for auth in *.json; do jparse -q &quot;$auth&quot; || echo &quot;$auth is invalid JSON&quot; ; done</code></pre>
 <p>If you see any output then it will say which file or files are invalid JSON
 (this should not actually happen, however).</p>
+<p>See the
+FAQ on “<a href="#jparse">jparse</a>”,
+for now to location and/or install the <code>jparse(1)</code> command.</p>
 <div id="walk_through_author_json">
 <h5 id="walk-through-of-an-author_handle.json-file">Walk through of an <code>author_handle.json</code> file</h5>
 </div>
