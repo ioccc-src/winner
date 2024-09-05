@@ -1,7 +1,7 @@
 #
 # sort with: ../../bin/sgi.sh
-1.txt
 *.dSYM
+1.txt
 2.txt
 dlowe
 dlowe.orig

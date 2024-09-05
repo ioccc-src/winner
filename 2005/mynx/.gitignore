@@ -9,7 +9,7 @@ mynx.alt
 mynx.alt2
 mynx.orig
 prog.orig
-source/config.*
-source/makefile
 source-alt/config.*
 source-alt/makefile
+source/config.*
+source/makefile

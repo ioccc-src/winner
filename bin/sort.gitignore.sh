@@ -101,7 +101,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.1.8 2024-07-28"
+export VERSION="1.2 2024-09-05"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -272,15 +272,15 @@ export BIN_DIR="bin"
 # verify that the bin/sgi.sh tool is executable
 #
 export SGI_TOOL="$BIN_DIR/sgi.sh"
-if [[ ! -e $SGI_TOOL.sh ]]; then
+if [[ ! -e $SGI_TOOL ]]; then
     echo  "$0: ERROR: bin/sgi.sh does not exist: $SGI_TOOL.sh" 1>&2
     exit 5
 fi
-if [[ ! -f $SGI_TOOL.sh ]]; then
+if [[ ! -f $SGI_TOOL ]]; then
     echo  "$0: ERROR: bin/sgi.sh is not a regular file: $SGI_TOOL.sh" 1>&2
     exit 5
 fi
-if [[ ! -x $SGI_TOOL.sh ]]; then
+if [[ ! -x $SGI_TOOL ]]; then
     echo  "$0: ERROR: bin/sgi.sh is not an executable file: $SGI_TOOL.sh" 1>&2
     exit 5
 fi

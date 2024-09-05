@@ -1,11 +1,16 @@
 #!/usr/bin/env bash
 #
-# sgi.sh - sort .gitignore content from stdin to stdout
+# sgi.sh - sort .gitignore canonically from stdin to stdout
 #
-# We sort with lines starting with # first.
-# We sort with lines starting with * second.
-# We sort with lines that do not start with [#!*] third.
-# We sort with lines starting with ! fourth.
+# We canonicalize .gitignore lines as follows:
+#
+# We print lines # in the order they appear, 1st.
+# We dictionary sort with lines starting with * 2nd.
+# We dictionary sort with lines starting with ! 3rd.
+# We dictionary sort with lines starting with / 4th.
+# We dictionary sort all other lines 5th.
+#
+# For each step past the 1st step, we remove duplicate lines.
 #
 # Example usage in vim with a keyboard macro <escape>f:
 #
@@ -47,8 +52,58 @@
 # Share and enjoy! :-)
 
 
-# sort .gitignore content on stdin to stdout
+# load stdin into a temporary gitignore file
 #
-sed -e '/^#/s/.*/0 &/' -e '/^*/s/.*/1 &/' -e '/^[^01*!]/s/.*/2 &/' -e '/^!/s/.*/3 &/' |
-    LC_ALL=C sort -u -k 1n -k 2d |
-    sed 's/[0123] //'
+export VERSION="1.2 2024-09-05"
+NAME=$(basename "$0")
+export NAME
+export TMP_GITIGNORE=".tmp.$NAME.GITIGNORE.$$.tmp"
+trap 'rm -f $TMP_GITIGNORE; exit' 0 1 2 3 15
+rm -f "$TMP_GITIGNORE"
+if [[ -e $TMP_GITIGNORE ]]; then
+    echo "$0: ERROR: cannot remove temporary gitignore file: $TMP_GITIGNORE" 1>&2
+    exit 10
+fi
+cat > "$TMP_GITIGNORE"
+if [[ ! -e $TMP_GITIGNORE ]]; then
+    echo "$0: ERROR: cannot create temporary gitignore file: $TMP_GITIGNORE" 1>&2
+    exit 11
+fi
+
+
+# step 0: print .gitignore comment lines in order
+#
+grep '^#' "$TMP_GITIGNORE"
+
+
+# print unique lines from the following 5 steps to stdout
+#
+# These 5 types of .gitignore lines are printed in
+# step order as part of our .gitignore canonization.
+#
+{
+    # step 1: print * lines, sorted by dictionary
+    #
+    grep '^\*' "$TMP_GITIGNORE" | LC_ALL=C sort -d
+
+    # step 2: print ! lines, sorted by dictionary
+    #
+    grep '^!' "$TMP_GITIGNORE" | LC_ALL=C sort -d
+
+    # step 3: print . lines, sorted by dictionary
+    #
+    grep '^\.' "$TMP_GITIGNORE" | LC_ALL=C sort -d
+
+    # step 4: print / lines, sorted by dictionary
+    #
+    grep '^/' "$TMP_GITIGNORE" | LC_ALL=C sort -d
+
+    # step 5: print all other lines, sorted by dictionary
+    #
+    grep '^[^#*!./]' "$TMP_GITIGNORE" | LC_ALL=C sort -d
+} | uniq
+
+
+# All Done!!! All Done!!! -- Jessica Noll, Age 2
+#
+exit 0
