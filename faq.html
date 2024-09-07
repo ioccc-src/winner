@@ -1636,9 +1636,13 @@ the tool.</p>
 <p>If you want to validate the <code>.auth.json</code> or <code>.info.json</code> files you
 should use <code>chkentry(1)</code> from the <a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry
 repo</a>.</p>
-<p>The <code>chkentry(1)</code> tool uses the
-<a href="https://github.com/ioccc-src/mkiocccentry/blob/master/jparse/man/man3/jparse.3">jparse API</a>
-API to perform <strong>additional</strong> checks on these two IOCCC specific JSON files.</p>
+<p>The <code>chkentry(1)</code> tool uses the IOCCC version of the <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/jparse/man/man3/jparse.3">jparse
+API</a>
+to perform <strong>additional</strong> checks on these two IOCCC specific JSON files. It is
+<em>possible</em> that this version will at times differ from the <a href="https://github.com/xexyl/jparse/blob/master/man/man3/jparse.3">official jparse
+API</a> at the
+<a href="https://github.com/xexyl/jparse">official jparse repo</a> and this is one of the
+reasons the tools’ <code>-V</code> (version option) show the JSON parser version as well.</p>
 <p>See the
 FAQ on “<a href="#auth_json">.auth.json</a>”
 and
