@@ -313,6 +313,7 @@ help:
 	@echo 'make genfilelist	;: generate YYYY level .filelist'
 	@echo 'make all_jfmt		;: be sure all JSON files are canonical'
 	@echo 'make verify_entry_files	;: check to be sure all files in all entries exist'
+	@echo 'make sort_gitignore	;: sort .gitignore files according to rules in bin/sgi.sh'
 	@echo 'make gen_authors	;: generate the top level authors.html page'
 	@echo 'make quick_authors	;: build authors.html if out of date with author JSON files'
 	@echo 'make gen_location	;: generate the top level location.html page'
@@ -349,8 +350,6 @@ help:
 	@echo 'make www		;: build html pages for website'
 	@echo
 	@echo '# Rules that are useful only for those IOCCC judges who maintain the official IOCCC website:'
-	@echo
-	@echo 'make sort_gitignore	;: sort .gitignore files according to rules in bin/sgi.sh'
 	@echo
 	@echo 'make untar_entry_tarball;: untar all entry tarballs'
 	@echo 'make untar_year_tarball	;: untar all year level tarballs'
@@ -687,6 +686,7 @@ quick_www:
 	@${MAKE} genpath >/dev/null
 	@echo '=-=-=-=-= IOCCC complete make genpath =-=-=-=-='
 	${MAKE} genfilelist
+	${MAKE} sort_gitignore
 	${MAKE} verify_entry_files
 	${MAKE} quick_authors
 	${MAKE} quick_location
@@ -714,6 +714,7 @@ www:
 	@${MAKE} genpath >/dev/null
 	@echo '=-=-=-=-= IOCCC complete make genpath =-=-=-=-='
 	${MAKE} genfilelist
+	${MAKE} sort_gitignore
 	${MAKE} all_jfmt
 	${MAKE} verify_entry_files
 	${MAKE} gen_authors
