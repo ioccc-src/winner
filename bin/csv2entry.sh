@@ -142,7 +142,7 @@ shopt -s lastpipe	# explicitly run the last command of the pipe line in the curr
 
 # set variables referenced in the usage message
 #
-export VERSION="1.2.3 2024-08-30"
+export VERSION="1.3 2024-09-23"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -169,8 +169,6 @@ export NOOP=
 export DO_NOT_PROCESS=
 export EXIT_CODE="0"
 #
-JPARSE_TOOL=$(type -P jparse)
-export JPARSE_TOOL
 export AUTHOR_WINS_CSV="author_wins.csv"
 export MANIFEST_CSV="manifest.csv"
 export YEAR_PRIZE_CSV="year_prize.csv"
@@ -289,7 +287,7 @@ function canonicalize_csv
 
 # usage
 #
-export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-n] [-N] [-j jparse]
+export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-n] [-N]
 			[author_wins.csv [manifest.csv [year_prize.csv]]]
 
 	-h		print help message and exit
@@ -300,8 +298,6 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-n] [-N] [-j jparse]
 
 	-n		go thru the actions, but do not update any files (def: do the action)
 	-N		do not process anything, just parse arguments (def: process something)
-
-	-j jparse	path to the jparse tool (def: $JPARSE_TOOL)
 
 	author_wins.csv	where to form author_wins.csv (def: $AUTHOR_WINS_CSV)
 	manifest.csv	where to form manifest.csv (def: $MANIFEST_CSV)
@@ -325,7 +321,7 @@ $NAME version: $VERSION"
 
 # parse command line
 #
-while getopts :hv:Vd:D:nNj: flag; do
+while getopts :hv:Vd:D:nN flag; do
   case "$flag" in
     h) echo "$USAGE" 1>&2
 	exit 2
@@ -340,8 +336,6 @@ while getopts :hv:Vd:D:nNj: flag; do
     n) NOOP="-n"
 	;;
     N) DO_NOT_PROCESS="-N"
-	;;
-    j) JPARSE_TOOL="$OPTARG"
 	;;
     \?) echo "$0: ERROR: invalid option: -$OPTARG" 1>&2
 	echo 1>&2
@@ -490,7 +484,7 @@ export BIN_DIR="bin"
 
 # verify that the bin/jval-wrapper.sh tool is executable
 #
-JVAL_WRAPPER="$BIN_DIR/jval-wrapper.sh"
+export JVAL_WRAPPER="$BIN_DIR/jval-wrapper.sh"
 if [[ ! -e $JVAL_WRAPPER ]]; then
     echo  "$0: ERROR: bin/jval-wrapper.sh does not exist: $JVAL_WRAPPER" 1>&2
     exit 5
@@ -505,18 +499,36 @@ if [[ ! -x $JVAL_WRAPPER ]]; then
 fi
 
 
-# verify jparse tool
+# verify that the bin/jval-wrapper.sh tool is executable
 #
-if [[ -z "$JPARSE_TOOL" ]]; then
-    echo "$0: ERROR: cannot find an executable jparse tool" 1>&2
+export UNICODE_CHK="$BIN_DIR/unicode-chk.sh"
+if [[ ! -e $UNICODE_CHK ]]; then
+    echo  "$0: ERROR: bin/unicode-chk.sh does not exist: $UNICODE_CHK" 1>&2
     exit 5
 fi
-if [[ ! -f "$JPARSE_TOOL" ]]; then
-    echo "$0: ERROR: jparse is not a file: $JPARSE_TOOL" 1>&2
+if [[ ! -f $UNICODE_CHK ]]; then
+    echo  "$0: ERROR: bin/unicode-chk.sh is not a regular file: $UNICODE_CHK" 1>&2
     exit 5
 fi
-if [[ ! -x "$JPARSE_TOOL" ]]; then
-    echo "$0: ERROR: jparse is not an executable file: $JPARSE_TOOL" 1>&2
+if [[ ! -x $UNICODE_CHK ]]; then
+    echo  "$0: ERROR: bin/unicode-chk.sh is not an executable file: $UNICODE_CHK" 1>&2
+    exit 5
+fi
+
+
+# verify that the bin/combine_author_handle.sh tool is executable
+#
+export COMBINE_AUTHOR="$BIN_DIR/combine_author_handle.sh"
+if [[ ! -e $COMBINE_AUTHOR ]]; then
+    echo  "$0: ERROR: bin/unicode-chk.sh does not exist: $COMBINE_AUTHOR" 1>&2
+    exit 5
+fi
+if [[ ! -f $COMBINE_AUTHOR ]]; then
+    echo  "$0: ERROR: bin/unicode-chk.sh is not a regular file: $COMBINE_AUTHOR" 1>&2
+    exit 5
+fi
+if [[ ! -x $COMBINE_AUTHOR ]]; then
+    echo  "$0: ERROR: bin/unicode-chk.sh is not an executable file: $COMBINE_AUTHOR" 1>&2
     exit 5
 fi
 
@@ -534,7 +546,6 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: NOOP=$NOOP" 1>&2
     echo "$0: debug[3]: DO_NOT_PROCESS=$DO_NOT_PROCESS" 1>&2
     echo "$0: debug[3]: EXIT_CODE=$EXIT_CODE" 1>&2
-    echo "$0: debug[3]: JPARSE_TOOL=$JPARSE_TOOL" 1>&2
     echo "$0: debug[3]: AUTHOR_WINS_CSV=$AUTHOR_WINS_CSV" 1>&2
     echo "$0: debug[3]: MANIFEST_CSV=$MANIFEST_CSV" 1>&2
     echo "$0: debug[3]: YEAR_PRIZE_CSV=$YEAR_PRIZE_CSV" 1>&2
@@ -546,6 +557,8 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: BIN_PATH=$BIN_DIR" 1>&2
     echo "$0: debug[3]: BIN_DIR=$BIN_DIR" 1>&2
     echo "$0: debug[3]: JVAL_WRAPPER=$JVAL_WRAPPER" 1>&2
+    echo "$0: debug[3]: UNICODE_CHK=$UNICODE_CHK" 1>&2
+    echo "$0: debug[3]: COMBINE_AUTHOR=$COMBINE_AUTHOR" 1>&2
     echo "$0: debug[3]: DOT_ENTRY_JSON_BASENAME=$DOT_ENTRY_JSON_BASENAME" 1>&2
     echo "$0: debug[3]: ENTRY_JSON_FORMAT_VERSION=$ENTRY_JSON_FORMAT_VERSION" 1>&2
     echo "$0: debug[3]: NO_COMMENT=$NO_COMMENT" 1>&2
@@ -705,23 +718,43 @@ if [[ ! -e $TMP_EXIT_CODE ]]; then
 fi
 
 
-# create a temporary author_handle inventory file
+# create a temporary sorted list of author_handles from author/author_handle.json files
 #
-export TMP_AUTHOR_HANDLE_INVENTORY=".tmp.$NAME.AUTHOR_HANDLE_INVENTORY.$$.tmp"
+export TMP_AUTHOR_HANDLE_FROM_FILES=".tmp.$NAME.AUTHOR_HANDLE_FROM_FILES.$$.tmp"
 if [[ $V_FLAG -ge 3 ]]; then
-    echo  "$0: debug[3]: temporary author_handle inventory file: $TMP_AUTHOR_HANDLE_INVENTORY" 1>&2
+    echo  "$0: debug[3]: temporary sorted list of author_handles: $TMP_AUTHOR_HANDLE_FROM_FILES" 1>&2
 fi
 trap 'rm -f $TMP_AUTHOR_WINS_CSV $TMP_MANIFEST_CSV $TMP_YEAR_PRIZE_CSV $TMP_YYYY_DIR_INV $TMP_YYYY_DIR_INV \
-	    $TMP_2ND_YYYY_DIR_INV $TMP_ENTRY_JSON $TMP_EXIT_CODE $TMP_AUTHOR_HANDLE_INVENTORY; exit' 0 1 2 3 15
-rm -f "$TMP_AUTHOR_HANDLE_INVENTORY"
-if [[ -e $TMP_AUTHOR_HANDLE_INVENTORY ]]; then
-    echo "$0: ERROR: cannot remove temporary author_handle inventory file: $TMP_AUTHOR_HANDLE_INVENTORY" 1>&2
+	    $TMP_2ND_YYYY_DIR_INV $TMP_ENTRY_JSON $TMP_EXIT_CODE $TMP_AUTHOR_HANDLE_FROM_FILES; exit' 0 1 2 3 15
+rm -f "$TMP_AUTHOR_HANDLE_FROM_FILES"
+if [[ -e $TMP_AUTHOR_HANDLE_FROM_FILES ]]; then
+    echo "$0: ERROR: cannot remove temporary sorted list of author_handles: $TMP_AUTHOR_HANDLE_FROM_FILES" 1>&2
     exit 24
 fi
-: > "$TMP_AUTHOR_HANDLE_INVENTORY"
-if [[ ! -e $TMP_AUTHOR_HANDLE_INVENTORY ]]; then
-    echo "$0: ERROR: cannot create temporary author_handle inventory file: $TMP_AUTHOR_HANDLE_INVENTORY" 1>&2
+: > "$TMP_AUTHOR_HANDLE_FROM_FILES"
+if [[ ! -e $TMP_AUTHOR_HANDLE_FROM_FILES ]]; then
+    echo "$0: ERROR: cannot create temporary sorted list of author_handles: $TMP_AUTHOR_HANDLE_FROM_FILES" 1>&2
     exit 25
+fi
+
+
+# create a temporary of author_handles from CSV file
+#
+export TMP_AUTHOR_HANDLE_FROM_CSV=".tmp.$NAME.AUTHOR_HANDLE_FROM_CSV.$$.tmp"
+if [[ $V_FLAG -ge 3 ]]; then
+    echo  "$0: debug[3]: temporary sorted list of author_handles: $TMP_AUTHOR_HANDLE_FROM_CSV" 1>&2
+fi
+trap 'rm -f $TMP_AUTHOR_WINS_CSV $TMP_MANIFEST_CSV $TMP_YEAR_PRIZE_CSV $TMP_YYYY_DIR_INV $TMP_YYYY_DIR_INV \
+	    $TMP_2ND_YYYY_DIR_INV $TMP_ENTRY_JSON $TMP_EXIT_CODE $TMP_AUTHOR_HANDLE_FROM_CSV; exit' 0 1 2 3 15
+rm -f "$TMP_AUTHOR_HANDLE_FROM_CSV"
+if [[ -e $TMP_AUTHOR_HANDLE_FROM_CSV ]]; then
+    echo "$0: ERROR: cannot remove temporary sorted list of author_handles: $TMP_AUTHOR_HANDLE_FROM_CSV" 1>&2
+    exit 26
+fi
+: > "$TMP_AUTHOR_HANDLE_FROM_CSV"
+if [[ ! -e $TMP_AUTHOR_HANDLE_FROM_CSV ]]; then
+    echo "$0: ERROR: cannot create temporary sorted list of author_handles: $TMP_AUTHOR_HANDLE_FROM_CSV" 1>&2
+    exit 26
 fi
 
 
@@ -812,142 +845,70 @@ elif [[ $V_FLAG -ge 3 ]]; then
 fi
 
 
-# scan author_wins.csv file for unknown author handles and
-#      author handles w/o author/author_handle.json file and
-#      author/author_handle.json file that do not reference the entry id
+# form sorted list of author handles from author/author_handle.json files
 #
 if [[ $V_FLAG -ge 1 ]]; then
-    echo "$0: debug[1]: about to: scan for unknown author handles" 1>&2
+    echo "$0: debug[1]: forming list of author handles from author/author_handle.json files" 1>&2
 fi
-export line=0
-sed -e 's/,/ /g' "$AUTHOR_WINS_CSV" | while read -r AUTHOR_HANDLE ENTRY_ID_SET; do
+PATTERN='$..entry_id'
+"$COMBINE_AUTHOR" | "$JVAL_WRAPPER" -b -q - "$PATTERN" | LC_ALL=C sort -t _ -d -u > "$TMP_AUTHOR_HANDLE_FROM_FILES"
+status_codes=("${PIPESTATUS[@]}")
+if [[ ${status_codes[*]} =~ [1-9] ]]; then
+    echo "$0: ERROR: $COMBINE_AUTHOR | $JVAL_WRAPPER -b -q '$PATTERN' | sort ... failed", \
+	 "error codes: ${status_codes[*]}" 1>&2
+    EXIT_CODE="9"  # exit 9
+    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+    echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
+    # NOTE: We do NOT want to stop processing via continue - proceeding instead
+fi
+if [[ ! -s $TMP_AUTHOR_HANDLE_FROM_FILES ]]; then
+    echo "$0: ERROR: unable to form sorted list of author handles from author/author_handle.json files" 1>&2
+    EXIT_CODE="9"  # exit 9
+    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+    echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
+    # NOTE: We do NOT want to stop processing via continue - proceeding instead
+fi
 
-    # skip comment lines
-    #
-    ((++line))
-    if [[ $AUTHOR_HANDLE =~ '#' ]]; then
-	continue;
-    fi
 
-    # look for unknown author handles
-    #
-    export AUTHOR_HANDLE_JSON="$AUTHOR_DIR/$AUTHOR_HANDLE.json"
-    if [[ ! -f $AUTHOR_DIR/$AUTHOR_HANDLE.json ]]; then
-	echo "$0: ERROR: entry_id $ENTRY_ID refers to an unknown author_handle: $AUTHOR_HANDLE" 1>&2
-	echo "$0: Warning: no such author_handle file: $AUTHOR_HANDLE_JSON" 1>&2
-	echo "$0: Warning: line: $line for: $AUTHOR_WINS_CSV flagging unknown author_handle as an error: continuing" 1>&2
-	EXIT_CODE="9"  # exit 9
-	echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
-	# NOTE: We do NOT want to stop processing via continue - proceeding instead
-
-    # look for lines with no entry ids
-    #
-    elif [[ -z $ENTRY_ID_SET ]]; then
-	echo "$0: ERROR: line: $line of author_wins.csv: $AUTHOR_WINS_CSV as no entry ids on the line" 1>&2
-	EXIT_CODE="8"  # exit 8
-	echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
-	# NOTE: We do NOT want to stop processing via continue - proceeding instead
-
-    # look for unknown entry_id's
-    #
-    else
-
-	# verify the JSON of author/author_handle.json
-	#
-	if [[ $V_FLAG -ge 7 ]]; then
-	    echo "$0: debug[7]: about to run: $JPARSE_TOOL -q -- $AUTHOR_HANDLE_JSON" 1>&2
-	fi
-	echo "$AUTHOR_HANDLE_JSON" >> "$TMP_AUTHOR_HANDLE_INVENTORY"
-	if "$JPARSE_TOOL" -q -- "$AUTHOR_HANDLE_JSON"; then
-
-	    # case: author/author_handle.json file is valid JSON
-	    #
-	    if [[ $V_FLAG -ge 9 ]]; then
-		echo "$0: debug[9]: valid JSON for: $AUTHOR_HANDLE_JSON" 1>&2
-	    fi
-
-	    # check each entry id on the line
-	    #
-	    echo "$ENTRY_ID_SET" | sed -e 's/ /\n/g' | while read -r ENTRY_ID; do
-
-		# convert ENTRY_ID into YYYY_DIR
-		#
-		export YEAR_DIR=${ENTRY_ID%%_*}
-		export ENTRY_DIR=${ENTRY_ID#*_}
-		export YYYY_DIR="${YEAR_DIR}/${ENTRY_DIR}"
-
-		# verify that the entry exists
-		#
-		if [[ ! -d $YYYY_DIR ]]; then
-
-		    # case: entry does not exist
-		    #
-		    echo "$0: ERROR: line: $line of author_wins.csv: $AUTHOR_WINS_CSV" \
-			 "refers to unknown entry id: $ENTRY_ID" 1>&2
-		    EXIT_CODE="7"  # exit 7
-		    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-		    echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
-		    # NOTE: We do NOT want to stop processing via continue - proceeding instead
-
-		# verify that the author/author_handle.json file refers to the entry id
-		#
-		else
-
-		    # check if the author/author_handle.json file refers to the entry id
-		    #
-		    FOUND=$("$JVAL_WRAPPER" -w -b "$AUTHOR_HANDLE_JSON" '$..entry_id')
-		    if [[ -z $FOUND ]]; then
-			echo "$0: ERROR: line: $line of author_wins.csv: $AUTHOR_WINS_CSV" \
-			     "entry id: $ENTRY_ID not in winning_entry_set of: $AUTHOR_HANDLE_JSON" 1>&2
-			EXIT_CODE="9"  # exit 9
-			echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-			echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
-			# NOTE: We do NOT want to stop processing via continue - proceeding instead
-		    fi
-		fi
-	    done
-
-	# case: author/author_handle.json is not valid JSON
-	#
-	else
-	    echo "$0: ERROR: line: $line of author_wins.csv: $AUTHOR_WINS_CSV" \
-		 "is not valid JSON for: $AUTHOR_HANDLE_JSON" 1>&2
-	    EXIT_CODE="1"  # exit 1
-	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	    echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
-	    # NOTE: We do NOT want to stop processing via continue - proceeding instead
-	fi
-    fi
-done
+# form sorted list of author handles from the author_wins.csv file
+#
+if [[ $V_FLAG -ge 1 ]]; then
+    echo "$0: debug[1]: forming list of author handles from the author_wins.csv file" 1>&2
+fi
+sed -e '/^#/d' -e 's/^[^,]*,//' -e 's/,/\n/g' "$AUTHOR_WINS_CSV" | LC_ALL=C sort -t _ -d -u > "$TMP_AUTHOR_HANDLE_FROM_CSV"
+status_codes=("${PIPESTATUS[@]}")
+if [[ ${status_codes[*]} =~ [1-9] ]]; then
+    echo "$0: ERROR: sed -e ... | sort ... failed", \
+	 "error codes: ${status_codes[*]}" 1>&2
+    EXIT_CODE="9"  # exit 9
+    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+    echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
+    # NOTE: We do NOT want to stop processing via continue - proceeding instead
+fi
+if [[ ! -s $TMP_AUTHOR_HANDLE_FROM_CSV ]]; then
+    echo "$0: ERROR: unable to form sorted list of author handles from the author_wins.csv file" 1>&2
+    EXIT_CODE="9"  # exit 9
+    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+    echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
+    # NOTE: We do NOT want to stop processing via continue - proceeding instead
+fi
 
 
 # verify that the author directory contains only author_handle.json files referenced by author_wins.csv
 #
-if [[ $V_FLAG -ge 5 ]]; then
-    echo "$0: debug[5]: about to: sort $TMP_AUTHOR_HANDLE_INVENTORY -o $TMP_AUTHOR_HANDLE_INVENTORY" 1>&2
-fi
-LC_ALL=C sort "$TMP_AUTHOR_HANDLE_INVENTORY" -o "$TMP_AUTHOR_HANDLE_INVENTORY"
-status="$?"
-if [[ $status -ne 0 ]]; then
-    echo "$0: ERROR: LC_ALL=C sort $TMP_AUTHOR_HANDLE_INVENTORY -o $TMP_AUTHOR_HANDLE_INVENTORY failed," \
-	 "error code: $status" 1>&2
-    exit 9
-fi
-AUTHOR_DIFF=$(find "$AUTHOR_DIR" -mindepth 1 -maxdepth 1 -type f -name '*.json' 2>&1 |
-	      LC_ALL=C sort |
-	      diff -u - "$TMP_AUTHOR_HANDLE_INVENTORY")
+AUTHOR_DIFF=$(diff "$TMP_AUTHOR_HANDLE_FROM_FILES" "$TMP_AUTHOR_HANDLE_FROM_CSV" 2>/dev/null)
 export AUTHOR_DIFF
 if [[ -n $AUTHOR_DIFF ]]; then
     echo "$0: ERROR: author handles in author_wins.csv: $AUTHOR_WINS_CSV differs from author directory: $AUTHOR_DIR" 1>&2
     echo "$0: Warning: author directory differences start below" 1>&2
     echo "$AUTHOR_DIFF" 1>&2
     echo "$0: Warning: author directory differences end above" 1>&2
-    EXIT_CODE="9"  # exit 1
+    EXIT_CODE="9"  # exit 9
     echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
     echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
     # NOTE: We do NOT want to stop processing via continue - proceeding instead
+elif [[ $V_FLAG -ge 1 ]]; then
+    echo "$0: debug[1]: all author handles are accounted for" 1>&2
 fi
 
 
@@ -1478,17 +1439,15 @@ sed -e '/^#/d' -e 's/,/ /g' "$MANIFEST_CSV" |
 		printf "}\n"
 	    } >> "$TMP_ENTRY_JSON"
 
-	    # verify JSON of temporary .entry.json file
+	    # check the JSON file
 	    #
-	    if [[ $V_FLAG -ge 7 ]]; then
-		echo "$0: debug[7]: about to run: $JPARSE_TOOL -q -- $TMP_ENTRY_JSON" 1>&2
+	    if [[ $V_FLAG -ge 5 ]]; then
+		echo "$0: debug[5]: about to check: $PREV_ENTRY_JSON" 1>&2
 	    fi
-	    if "$JPARSE_TOOL" -q -- "$TMP_ENTRY_JSON"; then
-		if [[ $V_FLAG -ge 9 ]]; then
-		    echo "$0: debug[9]: valid JSON for $PREV_ENTRY_DIR: $TMP_ENTRY_JSON" 1>&2
-		fi
-	    else
-		echo "$0: ERROR: .entry.json is not valid JSON for $PREV_ENTRY_DIR: $TMP_ENTRY_JSON" 1>&2
+	    "$UNICODE_CHK" "$TMP_ENTRY_JSON"
+	    status="$?"
+	    if [[ $status -ne 0 ]]; then
+		echo "$0: ERROR: JSON file failed check: $TMP_ENTRY_JSON" 1>&2
 		exit 1
 	    fi
 

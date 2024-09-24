@@ -104,7 +104,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.8 2024-08-17"
+export VERSION="1.9 2024-09-23"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -188,6 +188,7 @@ export DO_NOT_PROCESS=
 function output_author_handles
 {
     local ENTRY_JSON_PATH;	# the .entry.json path
+    local PATTERN;		# XPath for JSON pattern
 
     # parse args
     #
@@ -211,10 +212,11 @@ function output_author_handles
 
     # extract author handles from .entry.json
     #
-    "$JVAL_WRAPPER" -w -b "$ENTRY_JSON_PATH" '$..author_handle'
+    PATTERN='$..author_handle'
+    "$JVAL_WRAPPER" -b -q "$ENTRY_JSON_PATH" "$PATTERN"
     status="$?"
     if [[ $status -ne 0 ]]; then
-	echo  "$0: ERROR: $JVAL_WRAPPER -w -b $ENTRY_JSON_PATH \$..author_handle failed," \
+	echo  "$0: ERROR: in output_author_handles: $JVAL_WRAPPER -b -q $ENTRY_JSON_PATH '$PATTERN' failed," \
 	      "error: $status" 1>&2
 	return 5
     fi
@@ -236,6 +238,7 @@ function output_author_handles
 function output_entry_ids
 {
     local AUTHOR_HANDLE_JSON_PATH;	# the .entry.json path
+    local PATTERN;		# XPath for JSON pattern
 
     # parse args
     #
@@ -259,10 +262,11 @@ function output_entry_ids
 
     # extract entry ids from the author/author_handle.json file
     #
-    "$JVAL_WRAPPER" -w -b "$AUTHOR_HANDLE_JSON_PATH" '$..entry_id'
+    PATTERN='$..entry_id'
+    "$JVAL_WRAPPER" -b -q "$AUTHOR_HANDLE_JSON_PATH" "$PATTERN"
     status="$?"
     if [[ $status -ne 0 ]]; then
-	echo  "$0: ERROR: $JVAL_WRAPPER -w -b $AUTHOR_HANDLE_JSON_PATH \$..entry_id failed," \
+	echo  "$0: ERROR: in output_entry_ids: $JVAL_WRAPPER -b -q $AUTHOR_HANDLE_JSON_PATH '$PATTERN' failed," \
 	      "error: $status" 1>&2
 	return 5
     fi
@@ -283,6 +287,7 @@ function output_entry_ids
 function output_full_name
 {
     local AUTHOR_HANDLE_JSON_PATH;	# the .entry.json path
+    local PATTERN;		# XPath for JSON pattern
 
     # parse args
     #
@@ -306,11 +311,12 @@ function output_full_name
 
     # extract Full Name from the author/author_handle.json file
     #
-    "$JVAL_WRAPPER" -w -b "$AUTHOR_HANDLE_JSON_PATH" '$..full_name'
-    status="$?"
-    if [[ $status -ne 0 ]]; then
-	echo  "$0: ERROR: $JVAL_WRAPPER -w -b $AUTHOR_HANDLE_JSON_PATH \$..full_name failed," \
-	      "error: $status" 1>&2
+    PATTERN='$..full_name'
+    "$JVAL_WRAPPER" -b -q "$AUTHOR_HANDLE_JSON_PATH" "$PATTERN" | sed -f "$UNICODE_FIX_SED"
+    status_codes=("${PIPESTATUS[@]}")
+    if [[ ${status_codes[*]} =~ [1-9] ]]; then
+	echo  "$0: ERROR: in output_full_name: $JVAL_WRAPPER -b -q $AUTHOR_HANDLE_JSON_PATH '$PATTERN' failed," \
+	      "error codes: ${status_codes[*]}" 1>&2
 	return 5
     fi
     return 0
@@ -331,6 +337,7 @@ function output_full_name
 function output_location_code
 {
     local AUTHOR_HANDLE_JSON_PATH;	# the .entry.json path
+    local PATTERN;		# XPath for JSON pattern
 
     # parse args
     #
@@ -354,10 +361,11 @@ function output_location_code
 
     # extract Location Code from the author/author_handle.json file
     #
-    "$JVAL_WRAPPER" -w -b "$AUTHOR_HANDLE_JSON_PATH" '$..location_code'
+    PATTERN='$..location_code'
+    "$JVAL_WRAPPER" -b -q "$AUTHOR_HANDLE_JSON_PATH" "$PATTERN"
     status="$?"
     if [[ $status -ne 0 ]]; then
-	echo  "$0: ERROR: $JVAL_WRAPPER -w -b $ENTRY_JSON_PATH \$..location_code failed," \
+	echo  "$0: ERROR: in output_location_code: $JVAL_WRAPPER -b -q $ENTRY_JSON_PATH '$PATTERN' failed," \
 	      "error: $status" 1>&2
 	return 5
     fi
@@ -638,6 +646,23 @@ if [[ ! -x $LOCATION_TOOL ]]; then
 fi
 
 
+# verify that the bin/unicode-fix.sed tool is executable
+#
+export UNICODE_FIX_SED="$BIN_DIR/unicode-fix.sed"
+if [[ ! -e $UNICODE_FIX_SED ]]; then
+    echo  "$0: ERROR: bin/unicode-fix.sed does not exist: $UNICODE_FIX_SED" 1>&2
+    exit 5
+fi
+if [[ ! -f $UNICODE_FIX_SED ]]; then
+    echo  "$0: ERROR: bin/unicode-fix.sed is not a regular file: $UNICODE_FIX_SED" 1>&2
+    exit 5
+fi
+if [[ ! -r $UNICODE_FIX_SED ]]; then
+    echo  "$0: ERROR: bin/unicode-fix.sed is not an readable file: $UNICODE_FIX_SED" 1>&2
+    exit 5
+fi
+
+
 # parameter debugging
 #
 if [[ $V_FLAG -ge 3 ]]; then
@@ -673,6 +698,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: DOT_PATH_CONTENT=$DOT_PATH_CONTENT" 1>&2
     echo "$0: debug[3]: ENTRY_JSON=$ENTRY_JSON" 1>&2
     echo "$0: debug[3]: LOCATION_TOOL=$LOCATION_TOOL" 1>&2
+    echo "$0: debug[3]: UNICODE_FIX_SED=$UNICODE_FIX_SED" 1>&2
 fi
 
 

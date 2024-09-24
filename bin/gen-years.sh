@@ -88,7 +88,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.4 2024-08-17"
+export VERSION="1.5 2024-09-23"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -213,8 +213,10 @@ function output_award
 
     # obtain the award string
     #
-    AWARD_STRING=$("$JVAL_WRAPPER" -w -b "$ENTRY_JSON_PATH" '$..award')
-    if [[ -z $AWARD_STRING ]]; then
+    PATTERN='$..award'
+    AWARD_STRING=$("$JVAL_WRAPPER" -b -q "$ENTRY_JSON_PATH" "$PATTERN")
+    status="$?"
+    if [[ $status -ne 0 || -z $AWARD_STRING ]]; then
 	echo "$0: ERROR: in output_award: no award found in .entry.json file: $ENTRY_JSON_PATH" 1>&2
 	return 5
     fi
@@ -550,6 +552,23 @@ fi
 export YEARS_HTML="years.html"
 
 
+# verify that the bin/unicode-fix.sed tool is executable
+#
+export UNICODE_FIX_SED="$BIN_DIR/unicode-fix.sed"
+if [[ ! -e $UNICODE_FIX_SED ]]; then
+    echo  "$0: ERROR: bin/unicode-fix.sed does not exist: $UNICODE_FIX_SED" 1>&2
+    exit 5
+fi
+if [[ ! -f $UNICODE_FIX_SED ]]; then
+    echo  "$0: ERROR: bin/unicode-fix.sed is not a regular file: $UNICODE_FIX_SED" 1>&2
+    exit 5
+fi
+if [[ ! -r $UNICODE_FIX_SED ]]; then
+    echo  "$0: ERROR: bin/unicode-fix.sed is not an readable file: $UNICODE_FIX_SED" 1>&2
+    exit 5
+fi
+
+
 # print running info if verbose
 #
 # If -v 3 or higher, print exported variables in order that they were exported.
@@ -582,6 +601,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: JVAL_WRAPPER=$JVAL_WRAPPER" 1>&2
     echo "$0: debug[3]: TOP_FILE=$TOP_FILE" 1>&2
     echo "$0: debug[3]: YEARS_HTML=$YEARS_HTML" 1>&2
+    echo "$0: debug[3]: UNICODE_FIX_SED=$UNICODE_FIX_SED" 1>&2
 fi
 
 
@@ -848,8 +868,9 @@ for YYYY in $("$TAC_TOOL" "$TOP_FILE"); do
 
 	# determine the award for this entry
 	#
-	AWARD=$(output_award "$ENTRY_JSON")
-	if [[ -z $AWARD ]]; then
+	AWARD=$(output_award "$ENTRY_JSON" | sed -f "$UNICODE_FIX_SED")
+	status_codes=("${PIPESTATUS[@]}")
+	if [[ ${status_codes[*]} =~ [1-9] || -z $AWARD ]]; then
 	    echo "$0: ERROR: cannot find award in .entry.json: $ENTRY_JSON" 1>&2
 	    EXIT_CODE="7"  # exit 7
 	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2

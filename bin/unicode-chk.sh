@@ -1,6 +1,42 @@
 #!/usr/bin/env bash
 #
-# all-jfmt.sh - canonically format all entry and author JSON files
+# unicode-chk.sh - verify all \\u[[:xdigit:]]{4} in entry and author JSON files
+#
+# Pass entry and author JSON files thru the following sed script and
+# flag any \\u[[:xdigit:]]{4} that we might find as problems.
+#
+#   bin/unicode-fix.sed
+#
+# XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
+# XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
+# XXX - until we have fixed jstrdecode, we must sed out \u[0-0A-fa-f]{4} from JSON  - XXX
+# XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
+# XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
+#
+# Until this bug is the jparse repo is fixed, we need to avoid
+# using \\u[[:xdigit:]]{4} within JSON encoded strings.
+#
+#   https://github.com/xexyl/jparse/issues/13
+#
+# The above mentioned bug results in certain tools that are based on the
+# jparse repo:
+#
+#   https://github.com/xexyl/jparse
+#
+# including code from the mkiocccentry repo's jparse sub-directory:
+#
+#   https://github.com/ioccc-src/mkiocccentry/tree/master/jparse
+#
+# We need to avoid using \\u[[:xdigit:]]{4} within JSON encoded strings.
+# Sorry (tm Canada :-)).
+#
+# The following sed script converts known problematic \\u[[:xdigit:]]{4}
+# combinations into their RAW character form:
+#
+#   bin/unicode-fix.sed
+#
+# Use of that sed script serves as a work-a-round to avoid to avoid any
+# problematic \\u[[:xdigit:]]{4} combinations in JSON encoded strings.
 #
 # Copyright (c) 2024 by Landon Curt Noll.  All Rights Reserved.
 #
@@ -86,7 +122,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.1 2024-09-24"
+export VERSION="1.0 2024-09-23"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -114,15 +150,9 @@ export DO_NOT_PROCESS=
 export EXIT_CODE="0"
 
 
-# clear options we will add to tools
-#
-unset TOOL_OPTION
-declare -ag TOOL_OPTION
-
-
 # usage
 #
-export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
+export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N] [file.json ..]
 
 	-h		print help message and exit
 	-v level	set verbosity level (def level: 0)
@@ -136,15 +166,18 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
 	-n		go thru the actions, but do not update any files (def: do the action)
 	-N		do not process anything, just parse arguments (def: process something)
 
+	[file.json ...]	check file.json files (def: check all entry and author JSON files)
+
 Exit codes:
      0         all OK
-     1	       some internal tool exited non-zero
+     1	       found unexpected \\uHexHexHexHex strings in JSON files
      2         -h and help string printed or -V and version string printed
      3         command line error
      4         bash version is too old
      5	       some internal tool is not found or not an executable file
      6	       problems found with or in the topdir or topdir/YYYY directory
      7	       problems found with or in the entry topdir/YYYY/dir directory
+     8	       file.json not a readable file
  >= 10         internal error
 
 $NAME version: $VERSION"
@@ -174,8 +207,6 @@ while getopts :hv:Vd:D:j:nN flag; do
 	   ;;
 	esac
 	DOCROOT_SLASH="$OPTARG"
-	TOOL_OPTION+=("-D")
-	TOOL_OPTION+=("$DOCROOT_SLASH")
 	;;
     n) NOOP="-n"
 	;;
@@ -205,14 +236,6 @@ shift $(( OPTIND - 1 ));
 #
 if [[ $V_FLAG -ge 5 ]]; then
     echo "$0: debug[5]: file argument count: $#" 1>&2
-fi
-#
-# verify arg count and parse args
-#
-if [[ $# -ne 0 ]]; then
-    echo "$0: ERROR: expected 0 args, found: $#" 1>&2
-    echo "$USAGE" 1>&2
-    exit 3
 fi
 
 
@@ -281,19 +304,19 @@ fi
 export BIN_DIR="bin"
 
 
-# verify that the bin/jfmt-wrapper.sh tool is executable
+# verify that the bin/unicode-fix.sed tool is executable
 #
-JFMT_WRAPPER="$BIN_DIR/jfmt-wrapper.sh"
-if [[ ! -e $JFMT_WRAPPER ]]; then
-    echo  "$0: ERROR: bin/jfmt-wrapper.sh does not exist: $JFMT_WRAPPER" 1>&2
+export UNICODE_FIX_SED="$BIN_DIR/unicode-fix.sed"
+if [[ ! -e $UNICODE_FIX_SED ]]; then
+    echo  "$0: ERROR: bin/unicode-fix.sed does not exist: $UNICODE_FIX_SED" 1>&2
     exit 5
 fi
-if [[ ! -f $JFMT_WRAPPER ]]; then
-    echo  "$0: ERROR: bin/jfmt-wrapper.sh is not a regular file: $JFMT_WRAPPER" 1>&2
+if [[ ! -f $UNICODE_FIX_SED ]]; then
+    echo  "$0: ERROR: bin/unicode-fix.sed is not a regular file: $UNICODE_FIX_SED" 1>&2
     exit 5
 fi
-if [[ ! -x $JFMT_WRAPPER ]]; then
-    echo  "$0: ERROR: bin/jfmt-wrapper.sh is not an executable file: $JFMT_WRAPPER" 1>&2
+if [[ ! -r $UNICODE_FIX_SED ]]; then
+    echo  "$0: ERROR: bin/unicode-fix.sed is not an readable file: $UNICODE_FIX_SED" 1>&2
     exit 5
 fi
 
@@ -337,16 +360,13 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: NOOP=$NOOP" 1>&2
     echo "$0: debug[3]: DO_NOT_PROCESS=$DO_NOT_PROCESS" 1>&2
     echo "$0: debug[3]: EXIT_CODE=$EXIT_CODE" 1>&2
-    for index in "${!TOOL_OPTION[@]}"; do
-	echo "$0: debug[3]: TOOL_OPTION[$index]=${TOOL_OPTION[$index]}" 1>&2
-    done
     echo "$0: debug[3]: REPO_NAME=$REPO_NAME" 1>&2
     echo "$0: debug[3]: CD_FAILED=$CD_FAILED" 1>&2
     echo "$0: debug[3]: AUTHOR_PATH=$AUTHOR_PATH" 1>&2
     echo "$0: debug[3]: AUTHOR_DIR=$AUTHOR_DIR" 1>&2
     echo "$0: debug[3]: BIN_PATH=$BIN_PATH" 1>&2
     echo "$0: debug[3]: BIN_DIR=$BIN_DIR" 1>&2
-    echo "$0: debug[3]: JFMT_WRAPPER=$JFMT_WRAPPER" 1>&2
+    echo "$0: debug[3]: UNICODE_FIX_SED=$UNICODE_FIX_SED" 1>&2
     echo "$0: debug[3]: TOP_FILE=$TOP_FILE" 1>&2
 fi
 
@@ -361,245 +381,303 @@ if [[ -n $DO_NOT_PROCESS ]]; then
 fi
 
 
-# create a temporary author_handle inventory file
+# create a JSON problem file
 #
-export TMP_AUTHOR_HANDLE_INVENTORY=".tmp.$NAME.AUTHOR_HANDLE_INVENTORY.$$.tmp"
+export TMP_JSON_PROBLEM=".tmp.$NAME.JSON_PROBLEM.$$.tmp"
 if [[ $V_FLAG -ge 3 ]]; then
-    echo  "$0: debug[3]: temporary author_handle inventory file: $TMP_AUTHOR_HANDLE_INVENTORY" 1>&2
+    echo  "$0: debug[3]: JSON problem inventory file: $TMP_JSON_PROBLEM" 1>&2
 fi
 trap 'rm -f $TMP_AUTHOR_HANDLE_INVENTORY; exit' 0 1 2 3 15
-rm -f "$TMP_AUTHOR_HANDLE_INVENTORY"
-if [[ -e $TMP_AUTHOR_HANDLE_INVENTORY ]]; then
-    echo "$0: ERROR: cannot remove temporary author_handle inventory file: $TMP_AUTHOR_HANDLE_INVENTORY" 1>&2
-    exit 20
+rm -f "$TMP_JSON_PROBLEM"
+if [[ -e $TMP_JSON_PROBLEM ]]; then
+    echo "$0: ERROR: cannot remove JSON problem inventory file: $TMP_JSON_PROBLEM" 1>&2
+    exit 10
 fi
-: > "$TMP_AUTHOR_HANDLE_INVENTORY"
-if [[ ! -e $TMP_AUTHOR_HANDLE_INVENTORY ]]; then
-    echo "$0: ERROR: cannot create temporary author_handle inventory file: $TMP_AUTHOR_HANDLE_INVENTORY" 1>&2
-    exit 21
+: > "$TMP_JSON_PROBLEM"
+if [[ ! -e $TMP_JSON_PROBLEM ]]; then
+    echo "$0: ERROR: cannot create JSON problem inventory file: $TMP_JSON_PROBLEM" 1>&2
+    exit 11
 fi
 
 
-# process each year
+# case: check only file given as args
 #
-export YYYY
-for YYYY in $(< "$TOP_FILE"); do
+if [[ $# -gt 0 ]]; then
 
-    # debug YYYY
+    # check specific JSON files
+    #
+    for JSON_FILE in "$@"; do
+
+	# just be a readable file
+	#
+	if [[ ! -e $JSON_FILE ]]; then
+	    echo  "$0: ERROR: does not exist: $JSON_FILE" 1>&2
+	    exit 8
+	fi
+	if [[ ! -f $JSON_FILE ]]; then
+	    echo  "$0: ERROR: is not a regular file: $JSON_FILE" 1>&2
+	    exit 8
+	fi
+	if [[ ! -r $JSON_FILE ]]; then
+	    echo  "$0: ERROR: is not an readable file: $JSON_FILE" 1>&2
+	    exit 8
+	fi
+
+	# scan the author/author_handle.json file for unexpected \\u[[:xdigit:]]{4} strings
+	#
+	if [[ $V_FLAG -ge 1 ]]; then
+	    echo "$0: debug[1]: about to run: sed -f $UNICODE_FIX_SED -- $JSON_FILE 2>&1 | grep -E ..." 1>&2
+	fi
+	FOUND_UHEX=$(sed -f "$UNICODE_FIX_SED" -- "$JSON_FILE" 2>&1 | grep -E '\\u[[:xdigit:]]{4}')
+	if [[ -n $FOUND_UHEX ]]; then
+	    echo "$JSON_FILE"
+	fi
+
+    done >> "$TMP_JSON_PROBLEM"
+
+
+# case: check all .entry.json files and author JSON files
+#
+else
+
+    # check all .entry.json files
     #
     if [[ $V_FLAG -ge 1 ]]; then
-	echo "$0: debug[1]: for $JFMT_WRAPPER: starting to process year: $YYYY" 1>&2
+	echo "$0: debug[1]: starting to check .entry.json files under: $TOPDIR" 1>&2
     fi
-
-    # verify that YYYY is a readable directory
-    #
-    if [[ ! -e $YYYY ]]; then
-	echo  "$0: ERROR: YYYY does not exist: $YYYY" 1>&2
-	EXIT_CODE="6"  # exit 6
-	echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	continue
-    fi
-    if [[ ! -d $YYYY ]]; then
-	echo  "$0: ERROR: YYYY is not a directory: $YYYY" 1>&2
-	EXIT_CODE="6"  # exit 6
-	echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	continue
-    fi
-    if [[ ! -r $YYYY ]]; then
-	echo  "$0: ERROR: YYYY is not an readable directory: $YYYY" 1>&2
-	EXIT_CODE="6"  # exit 6
-	echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	continue
-    fi
-
-    # verify that YYYY has a non-empty readable .year file
-    #
-    export YEAR_FILE="$YYYY/.year"
-    if [[ ! -e $YEAR_FILE ]]; then
-	echo  "$0: ERROR: YYYY/.year does not exist: $YEAR_FILE" 1>&2
-	EXIT_CODE="6"  # exit 6
-	echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	continue
-    fi
-    if [[ ! -f $YEAR_FILE ]]; then
-	echo  "$0: ERROR: YYYY/.year is not a regular file: $YEAR_FILE" 1>&2
-	EXIT_CODE="6"  # exit 6
-	echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	continue
-    fi
-    if [[ ! -r $YEAR_FILE ]]; then
-	echo  "$0: ERROR: YYYY/.year is not an readable file: $YEAR_FILE" 1>&2
-	EXIT_CODE="6"  # exit 6
-	echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	continue
-    fi
-    if [[ ! -s $YEAR_FILE ]]; then
-	echo  "$0: ERROR: YYYY/.year is not a non-empty readable file: $YEAR_FILE" 1>&2
-	EXIT_CODE="6"  # exit 6
-	echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	continue
-    fi
-
-    # process each entry directory under YYYY
-    #
-    export YYYY_DIR
-    for YYYY_DIR in $(< "$YEAR_FILE"); do
+    export YYYY
+    for YYYY in $(< "$TOP_FILE"); do
 
 	# debug YYYY
 	#
 	if [[ $V_FLAG -ge 3 ]]; then
-	    echo "$0: debug[3]: for $JFMT_WRAPPER: starting to process year/dir: $YYYY_DIR" 1>&2
+	    echo "$0: debug[3]: starting to check year: $YYYY" 1>&2
 	fi
 
-	# parse YYYY_DIR
+	# verify that YYYY is a readable directory
 	#
-	if [[ ! -d $YYYY_DIR ]]; then
-	    echo "$0: ERROR: YYYY_DIR is not a directory: $YYYY_DIR" 1>&2
+	if [[ ! -e $YYYY ]]; then
+	    echo  "$0: ERROR: YYYY does not exist: $YYYY" 1>&2
 	    EXIT_CODE="6"  # exit 6
 	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
 	    continue
 	fi
-	if [[ ! -w $YYYY_DIR ]]; then
-	    echo "$0: ERROR: YYYY_DIR is not a writable directory: $YYYY_DIR" 1>&2
+	if [[ ! -d $YYYY ]]; then
+	    echo  "$0: ERROR: YYYY is not a directory: $YYYY" 1>&2
 	    EXIT_CODE="6"  # exit 6
 	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
 	    continue
 	fi
-	export YEAR_DIR=${YYYY_DIR%%/*}
-	if [[ -z $YEAR_DIR ]]; then
-	    echo "$0: ERROR: YYYY_DIR not in YYYY/dir form: $YYYY_DIR" 1>&2
-	    EXIT_CODE="6"  # exit 6
-	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	    continue
-	fi
-	export ENTRY_DIR=${YYYY_DIR#*/}
-	if [[ -z $ENTRY_DIR ]]; then
-	    echo "$0: ERROR: YYYY_DIR not in $YEAR_DIR/dir form: $YYYY_DIR" 1>&2
-	    EXIT_CODE="6"  # exit 6
-	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	    continue
-	fi
-	if [[ $ENTRY_DIR = */* ]]; then
-	    echo "$0: ERROR: YYYY_DIR: $YYYY_DIR dir contains a /: $ENTRY_DIR" 1>&2
+	if [[ ! -r $YYYY ]]; then
+	    echo  "$0: ERROR: YYYY is not an readable directory: $YYYY" 1>&2
 	    EXIT_CODE="6"  # exit 6
 	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
 	    continue
 	fi
 
-	# verify that YYYY_DIR is a writable directory
+	# verify that YYYY has a non-empty readable .year file
 	#
-	if [[ ! -e $YYYY_DIR ]]; then
-	    echo  "$0: ERROR: YYYY_DIR does not exist: $YYYY_DIR" 1>&2
-	    EXIT_CODE="7"  # exit 7
+	export YEAR_FILE="$YYYY/.year"
+	if [[ ! -e $YEAR_FILE ]]; then
+	    echo  "$0: ERROR: YYYY/.year does not exist: $YEAR_FILE" 1>&2
+	    EXIT_CODE="6"  # exit 6
 	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
 	    continue
 	fi
-	if [[ ! -d $YYYY_DIR ]]; then
-	    echo  "$0: ERROR: YYYY_DIR is not a directory: $YYYY_DIR" 1>&2
-	    EXIT_CODE="7"  # exit 7
+	if [[ ! -f $YEAR_FILE ]]; then
+	    echo  "$0: ERROR: YYYY/.year is not a regular file: $YEAR_FILE" 1>&2
+	    EXIT_CODE="6"  # exit 6
 	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
 	    continue
 	fi
-	if [[ ! -w $YYYY_DIR ]]; then
-	    echo  "$0: ERROR: YYYY_DIR is not an writable directory: $YYYY_DIR" 1>&2
-	    EXIT_CODE="7"  # exit 7
+	if [[ ! -r $YEAR_FILE ]]; then
+	    echo  "$0: ERROR: YYYY/.year is not an readable file: $YEAR_FILE" 1>&2
+	    EXIT_CODE="6"  # exit 6
+	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+	    continue
+	fi
+	if [[ ! -s $YEAR_FILE ]]; then
+	    echo  "$0: ERROR: YYYY/.year is not a non-empty readable file: $YEAR_FILE" 1>&2
+	    EXIT_CODE="6"  # exit 6
 	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
 	    continue
 	fi
 
-	# verify YYYY/dir/.path
+	# process each entry directory under YYYY
 	#
-	export DOT_PATH="$YYYY_DIR/.path"
-	if [[ ! -s $DOT_PATH ]]; then
-	    echo "$0: ERROR: not a non-empty file: $DOT_PATH" 1>&2
-	    EXIT_CODE="7"  # exit 7
-	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	    continue
-	fi
-	DOT_PATH_CONTENT=$(< "$DOT_PATH")
-	if [[ $YYYY_DIR != "$DOT_PATH_CONTENT" ]]; then
-	    echo "$0: ERROR: arg: $YYYY_DIR does not match $DOT_PATH contents: $DOT_PATH_CONTENT" 1>&2
-	    EXIT_CODE="7"  # exit 7
-	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	    continue
-	fi
+	export YYYY_DIR
+	for YYYY_DIR in $(< "$YEAR_FILE"); do
 
-	# verify the YYYY/dir/.entry.json
-	#
-	export ENTRY_JSON="$YYYY_DIR/.entry.json"
-	if [[ ! -e $ENTRY_JSON ]]; then
-	    echo "$0: ERROR: .entry.json does not exist: $ENTRY_JSON" 1>&2
-	    EXIT_CODE="7"  # exit 7
-	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	    continue
-	fi
-	if [[ ! -f $ENTRY_JSON ]]; then
-	    echo "$0: ERROR: .entry.json is not a file: $ENTRY_JSON" 1>&2
-	    EXIT_CODE="7"  # exit 7
-	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	    continue
-	fi
-	if [[ ! -r $ENTRY_JSON ]]; then
-	    echo "$0: ERROR: .entry.json is not a readable file: $ENTRY_JSON" 1>&2
-	    EXIT_CODE="7"  # exit 7
-	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	    continue
-	fi
-
-	# canonically format YYYY/dir/.entry.json unless -n
-	#
-	if [[ -z $NOOP ]]; then
-	    if [[ $V_FLAG -ge 1 ]]; then
-		echo "$0: debug[1]: about to run: $JFMT_WRAPPER ${TOOL_OPTION[*]} -- $YYYY_DIR/.entry.json" 1>&2
+	    # debug YYYY
+	    #
+	    if [[ $V_FLAG -ge 5 ]]; then
+		echo "$0: debug[5]: starting to check year/dir: $YYYY_DIR" 1>&2
 	    fi
-	    "$JFMT_WRAPPER" "${TOOL_OPTION[@]}" -- "$YYYY_DIR/.entry.json"
-	    status="$?"
-	    if [[ $status -ne 0 ]]; then
-		echo "$0: ERROR: tool: $JFMT_WRAPPER ${TOOL_OPTION[*]} -- $YYYY_DIR/.entry.json failed, error: $status" 1>&2
-		EXIT_CODE="1"  # exit 1
+
+	    # parse YYYY_DIR
+	    #
+	    if [[ ! -d $YYYY_DIR ]]; then
+		echo "$0: ERROR: YYYY_DIR is not a directory: $YYYY_DIR" 1>&2
+		EXIT_CODE="6"  # exit 6
+		echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+		continue
+	    fi
+	    if [[ ! -w $YYYY_DIR ]]; then
+		echo "$0: ERROR: YYYY_DIR is not a writable directory: $YYYY_DIR" 1>&2
+		EXIT_CODE="6"  # exit 6
+		echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+		continue
+	    fi
+	    export YEAR_DIR=${YYYY_DIR%%/*}
+	    if [[ -z $YEAR_DIR ]]; then
+		echo "$0: ERROR: YYYY_DIR not in YYYY/dir form: $YYYY_DIR" 1>&2
+		EXIT_CODE="6"  # exit 6
+		echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+		continue
+	    fi
+	    export ENTRY_DIR=${YYYY_DIR#*/}
+	    if [[ -z $ENTRY_DIR ]]; then
+		echo "$0: ERROR: YYYY_DIR not in $YEAR_DIR/dir form: $YYYY_DIR" 1>&2
+		EXIT_CODE="6"  # exit 6
+		echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+		continue
+	    fi
+	    if [[ $ENTRY_DIR = */* ]]; then
+		echo "$0: ERROR: YYYY_DIR: $YYYY_DIR dir contains a /: $ENTRY_DIR" 1>&2
+		EXIT_CODE="6"  # exit 6
 		echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
 		continue
 	    fi
 
-	# report disabled by -n
-	#
-	elif [[ $V_FLAG -ge 5 ]]; then
-	    echo "$0: debug[5]: because of -n, did not run: $JFMT_WRAPPER ${TOOL_OPTION[*]} -- $YYYY_DIR/.entry.json" 1>&2
-	fi
-    done
-done
+	    # verify that YYYY_DIR is a writable directory
+	    #
+	    if [[ ! -e $YYYY_DIR ]]; then
+		echo  "$0: ERROR: YYYY_DIR does not exist: $YYYY_DIR" 1>&2
+		EXIT_CODE="7"  # exit 7
+		echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+		continue
+	    fi
+	    if [[ ! -d $YYYY_DIR ]]; then
+		echo  "$0: ERROR: YYYY_DIR is not a directory: $YYYY_DIR" 1>&2
+		EXIT_CODE="7"  # exit 7
+		echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+		continue
+	    fi
+	    if [[ ! -w $YYYY_DIR ]]; then
+		echo  "$0: ERROR: YYYY_DIR is not an writable directory: $YYYY_DIR" 1>&2
+		EXIT_CODE="7"  # exit 7
+		echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+		continue
+	    fi
+
+	    # verify YYYY/dir/.path
+	    #
+	    export DOT_PATH="$YYYY_DIR/.path"
+	    if [[ ! -s $DOT_PATH ]]; then
+		echo "$0: ERROR: not a non-empty file: $DOT_PATH" 1>&2
+		EXIT_CODE="7"  # exit 7
+		echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+		continue
+	    fi
+	    DOT_PATH_CONTENT=$(< "$DOT_PATH")
+	    if [[ $YYYY_DIR != "$DOT_PATH_CONTENT" ]]; then
+		echo "$0: ERROR: arg: $YYYY_DIR does not match $DOT_PATH contents: $DOT_PATH_CONTENT" 1>&2
+		EXIT_CODE="7"  # exit 7
+		echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+		continue
+	    fi
+
+	    # verify the YYYY/dir/.entry.json
+	    #
+	    export ENTRY_JSON="$YYYY_DIR/.entry.json"
+	    if [[ ! -e $ENTRY_JSON ]]; then
+		echo "$0: ERROR: .entry.json does not exist: $ENTRY_JSON" 1>&2
+		EXIT_CODE="7"  # exit 7
+		echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+		continue
+	    fi
+	    if [[ ! -f $ENTRY_JSON ]]; then
+		echo "$0: ERROR: .entry.json is not a file: $ENTRY_JSON" 1>&2
+		EXIT_CODE="7"  # exit 7
+		echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+		continue
+	    fi
+	    if [[ ! -r $ENTRY_JSON ]]; then
+		echo "$0: ERROR: .entry.json is not a readable file: $ENTRY_JSON" 1>&2
+		EXIT_CODE="7"  # exit 7
+		echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+		continue
+	    fi
+
+	    # scan the .entry.json file for unexpected \\u[[:xdigit:]]{4} strings
+	    #
+	    if [[ -z $NOOP ]]; then
+		if [[ $V_FLAG -ge 5 ]]; then
+		    echo "$0: debug[5]: about to run: sed -f $UNICODE_FIX_SED -- $YYYY_DIR/.entry.json 2>&1 | grep -E ..." 1>&2
+		fi
+		FOUND_UHEX=$(sed -f "$UNICODE_FIX_SED" -- "$YYYY_DIR/.entry.json" 2>&1 | grep -E '\\u[[:xdigit:]]{4}' 2>&1)
+		export FOUND_UHEX
+		if [[ -n $FOUND_UHEX ]]; then
+		    echo "$YYYY_DIR/.entry.json"
+		fi
+	    fi
+	done
+    done >> "$TMP_JSON_PROBLEM"
 
 
-# process author/author_handle.json files
-#
-if [[ $V_FLAG -ge 1 ]]; then
-    echo "$0: debug[1]: for $JFMT_WRAPPER: starting to process author_handle.json files under: $AUTHOR_DIR" 1>&2
-fi
-find "$AUTHOR_DIR" -mindepth 1 -maxdepth 1 -type f -name '*.json' 2>/dev/null |
-  LC_ALL=C sort -d -u > "$TMP_AUTHOR_HANDLE_INVENTORY"
-while read -r AUTHOR_HANDLE_JSON; do
-
-    # canonically format author/author_handle.json unless -n
+    # create a temporary author_handle inventory file
     #
-    if [[ -z $NOOP ]]; then
-	if [[ $V_FLAG -ge 1 ]]; then
-	    echo "$0: debug[1]: about to run: $JFMT_WRAPPER ${TOOL_OPTION[*]} -- $AUTHOR_HANDLE_JSON" 1>&2
-	fi
-	"$JFMT_WRAPPER" "${TOOL_OPTION[@]}" -- "$AUTHOR_HANDLE_JSON"
-	status="$?"
-	if [[ $status -ne 0 ]]; then
-	    echo "$0: ERROR: tool: $JFMT_WRAPPER ${TOOL_OPTION[*]} -- $AUTHOR_HANDLE_JSON failed, error: $status" 1>&2
-	    EXIT_CODE="1"  # exit 1
-	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	    continue
-	fi
-
-    # report disabled by -n
-    #
-    elif [[ $V_FLAG -ge 5 ]]; then
-	echo "$0: debug[5]: because of -n, did not run: $JFMT_WRAPPER ${TOOL_OPTION[*]} -- $AUTHOR_HANDLE_JSON" 1>&2
+    export TMP_AUTHOR_HANDLE_INVENTORY=".tmp.$NAME.AUTHOR_HANDLE_INVENTORY.$$.tmp"
+    if [[ $V_FLAG -ge 3 ]]; then
+	echo  "$0: debug[3]: temporary author_handle inventory file: $TMP_AUTHOR_HANDLE_INVENTORY" 1>&2
     fi
-done < "$TMP_AUTHOR_HANDLE_INVENTORY"
+    trap 'rm -f $TMP_AUTHOR_HANDLE_INVENTORY $TMP_AUTHOR_HANDLE_INVENTORY; exit' 0 1 2 3 15
+    rm -f "$TMP_AUTHOR_HANDLE_INVENTORY"
+    if [[ -e $TMP_AUTHOR_HANDLE_INVENTORY ]]; then
+	echo "$0: ERROR: cannot remove temporary author_handle inventory file: $TMP_AUTHOR_HANDLE_INVENTORY" 1>&2
+	exit 12
+    fi
+    : > "$TMP_AUTHOR_HANDLE_INVENTORY"
+    if [[ ! -e $TMP_AUTHOR_HANDLE_INVENTORY ]]; then
+	echo "$0: ERROR: cannot create temporary author_handle inventory file: $TMP_AUTHOR_HANDLE_INVENTORY" 1>&2
+	exit 13
+    fi
+
+    # check author/author_handle.json files
+    #
+    if [[ $V_FLAG -ge 1 ]]; then
+	echo "$0: debug[1]: starting to check author_handle.json files under: $AUTHOR_DIR" 1>&2
+    fi
+    find "$AUTHOR_DIR" -mindepth 1 -maxdepth 1 -type f -name '*.json' 2>/dev/null |
+      LC_ALL=C sort -d -u > "$TMP_AUTHOR_HANDLE_INVENTORY"
+    while read -r AUTHOR_HANDLE_JSON; do
+
+	# scan the author/author_handle.json file for unexpected \\u[[:xdigit:]]{4} strings
+	#
+	if [[ $V_FLAG -ge 5 ]]; then
+	    echo "$0: debug[5]: about to run: sed -f $UNICODE_FIX_SED -- $AUTHOR_HANDLE_JSON 2>&1 | grep -E ..." 1>&2
+	fi
+	FOUND_UHEX=$(sed -f "$UNICODE_FIX_SED" -- "$AUTHOR_HANDLE_JSON" 2>&1 | grep -E '\\u[[:xdigit:]]{4}')
+	if [[ -n $FOUND_UHEX ]]; then
+	    echo "$AUTHOR_HANDLE_JSON"
+	fi
+
+    done < "$TMP_AUTHOR_HANDLE_INVENTORY" >> "$TMP_JSON_PROBLEM"
+fi
+
+
+# report any problems
+#
+if [[ -s $TMP_JSON_PROBLEM ]]; then
+    echo "$0: ERROR: found unexpected \\uHexHexHexHex strings in JSON files" 1>&2
+    echo "$0: debug[5]: list of JSON files with unexpected \\uHexHexHexHex strings, starts below" 1>&2
+    cat "$TMP_JSON_PROBLEM" 1>&2
+    echo "$0: debug[5]: list of JSON files with unexpected \\uHexHexHexHex strings, ends above" 1>&2
+    if [[ $EXIT_CODE -eq 0 ]]; then
+	EXIT_CODE="1"  # exit 1
+	echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+    fi
+fi
 
 
 # All Done!!! All Done!!! -- Jessica Noll, Age 2

@@ -85,7 +85,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.6 2024-08-18"
+export VERSION="1.7 2024-09-23"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -397,6 +397,23 @@ fi
 export LOCATION_HTML="location.html"
 
 
+# verify that the bin/unicode-fix.sed tool is executable
+#
+export UNICODE_FIX_SED="$BIN_DIR/unicode-fix.sed"
+if [[ ! -e $UNICODE_FIX_SED ]]; then
+    echo  "$0: ERROR: bin/unicode-fix.sed does not exist: $UNICODE_FIX_SED" 1>&2
+    exit 5
+fi
+if [[ ! -f $UNICODE_FIX_SED ]]; then
+    echo  "$0: ERROR: bin/unicode-fix.sed is not a regular file: $UNICODE_FIX_SED" 1>&2
+    exit 5
+fi
+if [[ ! -r $UNICODE_FIX_SED ]]; then
+    echo  "$0: ERROR: bin/unicode-fix.sed is not an readable file: $UNICODE_FIX_SED" 1>&2
+    exit 5
+fi
+
+
 # print running info if verbose
 #
 # If -v 3 or higher, print exported variables in order that they were exported.
@@ -430,6 +447,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: JVAL_WRAPPER=$JVAL_WRAPPER" 1>&2
     echo "$0: debug[3]: LOCATION_TOOL=$LOCATION_TOOL" 1>&2
     echo "$0: debug[3]: LOCATION_HTML=$LOCATION_HTML" 1>&2
+    echo "$0: debug[3]: UNICODE_FIX_SED=$UNICODE_FIX_SED" 1>&2
 fi
 
 # -N stops early before any processing is performed
@@ -529,14 +547,18 @@ if [[ $V_FLAG -ge 1 ]]; then
     echo  "$0: debug[1]: about to obtain location codes from author_handle JSON files" 1>&2
 fi
 export AUTHOR_COUNT=0
-export AUTHOR_COUNT_CYCLE=20
+export AUTHOR_COUNT_CYCLE=10
+export AUTHOR_COUNT_COUNT
+AUTHOR_COUNT_COUNT=$(find "$AUTHOR_DIR" -mindepth 1 -maxdepth 1 -type f -name '*.json' -print | wc -l)
 find "$AUTHOR_DIR" -mindepth 1 -maxdepth 1 -type f -name '*.json' -print |
     while read -r AUTHOR_HANDLE_JSON; do
 
 	# collect location_code
 	#
-	LOCATION_CODE=$("$JVAL_WRAPPER" -b -w "$AUTHOR_HANDLE_JSON" '$..location_code')
-	if [[ -z $LOCATION_CODE ]]; then
+	PATTERN='$..location_code'
+	LOCATION_CODE=$("$JVAL_WRAPPER" -b -q "$AUTHOR_HANDLE_JSON" "$PATTERN")
+	status="$?"
+	if [[ $status -ne 0 || -z $LOCATION_CODE ]]; then
 	    echo "$0: ERROR: cannot obtain location_code from: $AUTHOR_HANDLE_JSON" 1>&2
 	    exit 1
 	fi
@@ -551,8 +573,10 @@ find "$AUTHOR_DIR" -mindepth 1 -maxdepth 1 -type f -name '*.json' -print |
 
 	# obtain the author full name
 	#
-	FULL_NAME=$("$JVAL_WRAPPER" -b -w "$AUTHOR_HANDLE_JSON" '$..full_name')
-	if [[ -z $FULL_NAME ]]; then
+	PATTERN='$..full_name'
+	FULL_NAME=$("$JVAL_WRAPPER" -b -q "$AUTHOR_HANDLE_JSON" "$PATTERN" | sed -f "$UNICODE_FIX_SED")
+	status_codes=("${PIPESTATUS[@]}")
+	if [[ ${status_codes[*]} =~ [1-9] || -z $FULL_NAME ]]; then
 	    echo "$0: ERROR: cannot full name from: $AUTHOR_HANDLE" 1>&2
 	    exit 1
 	fi
@@ -573,7 +597,8 @@ find "$AUTHOR_DIR" -mindepth 1 -maxdepth 1 -type f -name '*.json' -print |
 	#
 	((++AUTHOR_COUNT))
 	if [[ $V_FLAG -ge 1 && $((AUTHOR_COUNT % AUTHOR_COUNT_CYCLE)) -eq 0 ]]; then
-	    echo "$0: debug[1]: cycle $AUTHOR_COUNT finished processing: $AUTHOR_HANDLE_JSON" 1>&2
+	    echo "$0: debug[1]: cycle $AUTHOR_COUNT out of $AUTHOR_COUNT_COUNT" \
+		 "finished processing: $AUTHOR_HANDLE_JSON" 1>&2
 	fi
 
 done | LC_ALL=C sort -d -u > "$TMP_LOC_WORD_HANDLE_NAME_SET"

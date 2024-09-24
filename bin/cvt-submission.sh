@@ -94,7 +94,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.1 2024-08-31"
+export VERSION="1.2 2024-09-23"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -155,8 +155,6 @@ export AUTHOR_JSON_FORMAT_VERSION="1.1 2024-02-11"
 export NOOP=
 export DO_NOT_PROCESS=
 #
-unset TAR_FILE_SET
-declare -ag TAR_FILE_SET
 export TARBALL_DIR="/var/tmp"
 #
 export X_3="X""X""X"
@@ -1003,29 +1001,6 @@ export TEMPLATE_README_MD_HEAD="$TEMPLATE_ENTRY_DIR/README.md.head"
 export TEMPLATE_README_MD_TAIL="$TEMPLATE_ENTRY_DIR/README.md.tail"
 
 
-# initialize the list of files that we might tar
-#
-for FILE in "$INFO_JSON" "$AUTH_JSON" "$REMARKS_MD" "$README_MD" "$INDEX_HTML" "$TAR_BZ2"; do
-    if [[ -f $FILE ]]; then
-	TAR_FILE_SET+=("$FILE")
-    fi
-done
-#
-# add each author/author_handle.json file referenced by .auth.json file that exists
-#
-export PATTERN
-PATTERN="\$authors..author_handle"
-if [[ $V_FLAG -ge 3 ]]; then
-    echo  "$0: debug[3]: about to run: $JVAL_WRAPPER -b -- $AUTH_JSON $PATTERN" 1>&2
-fi
-for AUTHOR_HANDLE in $("$JVAL_WRAPPER" -b -- "$AUTH_JSON" "$PATTERN"); do
-    AUTHOR_HANDLE_JSON="author/$AUTHOR_HANDLE.json"
-    if [[ -f $AUTHOR_HANDLE_JSON ]]; then
-	TAR_FILE_SET+=("$AUTHOR_HANDLE_JSON")
-    fi
-done
-
-
 # determine TARBALL filename
 #
 NOW=$(date '+%Y%m%d.%H%M%S')
@@ -1084,9 +1059,6 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: TEMPLATE_GITIGNORE=$TEMPLATE_GITIGNORE" 1>&2
     echo "$0: debug[3]: TEMPLATE_README_MD_HEAD=$TEMPLATE_README_MD_HEAD" 1>&2
     echo "$0: debug[3]: TEMPLATE_README_MD_TAIL=$TEMPLATE_README_MD_TAIL" 1>&2
-    for index in "${!TAR_FILE_SET[@]}"; do
-        echo "$0: debug[3]: TAR_FILE_SET[$index]=${TAR_FILE_SET[$index]}" 1>&2
-    done
     echo "$0: debug[3]: TARBALL_DIR=$TARBALL_DIR" 1>&2
     echo "$0: debug[3]: NOW=$NOW" 1>&2
     echo "$0: debug[3]: TARBALL=$TARBALL" 1>&2
@@ -1206,6 +1178,56 @@ if [[ ! -s $AUTH_JSON ]]; then
 fi
 
 
+# initialize the list of files that we might tar
+#
+unset TAR_FILE_SET
+declare -ag TAR_FILE_SET
+#
+for FILE in "$INFO_JSON" "$AUTH_JSON" "$REMARKS_MD" "$README_MD" "$INDEX_HTML" "$TAR_BZ2"; do
+    if [[ -f $FILE ]]; then
+	TAR_FILE_SET+=("$FILE")
+    fi
+done
+#
+# add each author/author_handle.json file referenced by .auth.json file that exists
+#
+unset AUTHOR_HANDLE_SET
+declare -ag AUTHOR_HANDLE_SET
+#
+export PATTERN
+PATTERN='$..author_handle'
+if [[ $V_FLAG -ge 5 ]]; then
+    echo  "$0: debug[5]: about to run: $JVAL_WRAPPER -b -q -- $AUTH_JSON '$PATTERN'" 1>&2
+fi
+export FOUND_AUTHOR_HANDLES
+FOUND_AUTHOR_HANDLES=$("$JVAL_WRAPPER" -b -q -- "$AUTH_JSON" "$PATTERN")
+status="$?"
+if [[ $status -ne 0 ]]; then
+    echo "$0: ERROR: $JVAL_WRAPPER -b -q -- $AUTH_JSON '$PATTERN' failed," \
+	  "error code: $status" 1>&2
+    exit 10
+fi
+if [[ -z $FOUND_AUTHOR_HANDLES ]]; then
+    echo "$0: ERROR: found no author_handle's in: $AUTH_JSON" 1>&2
+    exit 11
+fi
+for AUTHOR_HANDLE in $FOUND_AUTHOR_HANDLES; do
+    # add referenced by .auth.json if it exists
+    AUTHOR_HANDLE_JSON="author/$AUTHOR_HANDLE.json"
+    if [[ -f $AUTHOR_HANDLE_JSON ]]; then
+	TAR_FILE_SET+=("$AUTHOR_HANDLE_JSON")
+    fi
+    # remember the author_handle for later even if it doesn't exist
+    AUTHOR_HANDLE_SET+=("$AUTHOR_HANDLE")
+done
+#
+if [[ $V_FLAG -ge 3 ]]; then
+    for index in "${!TAR_FILE_SET[@]}"; do
+        echo "$0: debug[3]: TAR_FILE_SET[$index]=${TAR_FILE_SET[$index]}" 1>&2
+    done
+fi
+
+
 # perform the semantic check on .info.json and .auth.json
 #
 if [[ $V_FLAG -ge 1 ]]; then
@@ -1213,7 +1235,7 @@ if [[ $V_FLAG -ge 1 ]]; then
     "$CHKENTRY_TOOL" -v 1 -- "$INFO_JSON" "$AUTH_JSON"
     status="$?"
     if [[ $status -ne 0 ]]; then
-	echo "$0: $CHKENTRY_TOOL -v 1 -- $INFO_JSON $AUTH_JSON failed," \
+	echo "$0: ERROR: $CHKENTRY_TOOL -v 1 -- $INFO_JSON $AUTH_JSON failed," \
 	      "error code: $status" 1>&2
 	exit 7
     fi
@@ -1252,7 +1274,7 @@ if [[ -z $NOOP ]]; then
 	    echo "$0: ERROR:" \
 		"TZ=UTC LC_ALL=C $GTAR_TOOL --sort=name" \
 		"--totals -jcvf $TARBALL ${TAR_FILE_SET[*]} failed, error: $status" 1>&2
-	    exit 10
+	    exit 12
 	fi
 
     # case: form the tarball silently
@@ -1265,7 +1287,7 @@ if [[ -z $NOOP ]]; then
 	    echo "$0: ERROR:" \
 		"TZ=UTC LC_ALL=C $GTAR_TOOL --sort=name" \
 		"-jcf $TARBALL ${TAR_FILE_SET[*]} failed, error: $status" 1>&2
-	    exit 11
+	    exit 13
 	fi
     fi
 elif [[ $V_FLAG -ge 3 ]]; then
@@ -1284,12 +1306,12 @@ if [[ -z $NOOP ]]; then
     rm -f "$TMP_ENTRY_JSON"
     if [[ -e $TMP_ENTRY_JSON ]]; then
 	echo "$0: ERROR: cannot remove temporary .entry.json file: $TMP_ENTRY_JSON" 1>&2
-	exit 12
+	exit 14
     fi
     :> "$TMP_ENTRY_JSON"
     if [[ ! -e $TMP_ENTRY_JSON ]]; then
 	echo "$0: ERROR: cannot create temporary .entry.json file: $TMP_ENTRY_JSON" 1>&2
-	exit 13
+	exit 15
     fi
 elif [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: because of -n, temporary .entry.json file is not used: $TMP_ENTRY_JSON" 1>&2
@@ -1307,12 +1329,12 @@ if [[ -z $NOOP ]]; then
     rm -f "$TMP_AUTHOR_HANDLE_JSON"
     if [[ -e $TMP_AUTHOR_HANDLE_JSON ]]; then
 	echo "$0: ERROR: cannot remove temporary author_handle file: $TMP_AUTHOR_HANDLE_JSON" 1>&2
-	exit 14
+	exit 16
     fi
     :> "$TMP_AUTHOR_HANDLE_JSON"
     if [[ ! -e $TMP_AUTHOR_HANDLE_JSON ]]; then
 	echo "$0: ERROR: cannot create temporary author_handle file: $TMP_AUTHOR_HANDLE_JSON" 1>&2
-	exit 15
+	exit 17
     fi
 elif [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: because of -n, temporary author_handle file is not used: $TMP_AUTHOR_HANDLE_JSON" 1>&2
@@ -1330,12 +1352,12 @@ if [[ -z $NOOP ]]; then
     rm -f "$TMP_MANIFEST_CSV"
     if [[ -e $TMP_MANIFEST_CSV ]]; then
 	echo "$0: ERROR: cannot remove temporary manifest csv file: $TMP_MANIFEST_CSV" 1>&2
-	exit 16
+	exit 18
     fi
     :> "$TMP_MANIFEST_CSV"
     if [[ ! -e $TMP_MANIFEST_CSV ]]; then
 	echo "$0: ERROR: cannot create temporary manifest csv file: $TMP_MANIFEST_CSV" 1>&2
-	exit 17
+	exit 19
     fi
 elif [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: because of -n, temporary manifest csv file is not used: $TMP_MANIFEST_CSV" 1>&2
@@ -1395,7 +1417,7 @@ if [[ -z $NOOP ]]; then
     # SC2129 (style): Consider using { cmd1; cmd2; } >> file instead of individual redirects
     # https://www.shellcheck.net/wiki/SC2129
     # shellcheck disable=SC2129
-    for AUTHOR_HANDLE in $("$JVAL_WRAPPER" -w -b -- "$AUTH_JSON" "\$authors..author_handle"); do
+    for AUTHOR_HANDLE in "${AUTHOR_HANDLE_SET[@]}"; do
 
 	# case: not the first author_handle
 	#
@@ -1414,12 +1436,22 @@ if [[ -z $NOOP ]]; then
 
 	# parse an element value of the this particular author in the authors JSON array
 	#
+	PATTERN='$.authors['"$i"']'
 	if [[ $V_FLAG -ge 5 ]]; then
-	    echo  "$0: debug[5]: about to run: $JVAL_WRAPPER -u $AUTH_JSON \$.authors[$i]" 1>&2
+	    echo  "$0: debug[5]: about to run: $JVAL_WRAPPER -b -q -- $AUTH_JSON '$PATTERN'" 1>&2
 	fi
-	AUTHOR_DATA=$("$JVAL_WRAPPER" -u -- "$AUTH_JSON" "\$.authors[$i]" |
-		      sed -e 's/^\["//' -e 's/^\([^"]*\)"]/\1/')
 	export AUTHOR_DATA
+	AUTHOR_DATA=$("$JVAL_WRAPPER" -b -q -- "$AUTH_JSON" "$PATTERN")
+	status="$?"
+	if [[ $status -ne 0 ]]; then
+	    echo "$0: ERROR: $JVAL_WRAPPER -b -q -- $AUTH_JSON '$PATTERN' failed," \
+		  "error code: $status" 1>&2
+	    exit 20
+	fi
+	if [[ -z $AUTHOR_DATA ]]; then
+	    echo "$0: ERROR: found nothing for author[$i] in: $AUTH_JSON" 1>&2
+	    exit 21
+	fi
 	export AUTHOR_PAST_WINNING_AUTHOR=
 	export AUTHOR_DEFAULT_HANDLE=
 	export AUTHOR_AUTHOR_NUMBER=
@@ -1461,20 +1493,20 @@ if [[ -z $NOOP ]]; then
 	    author_handle)
 		if [[ \"$AUTHOR_HANDLE\" != "$VALUE" ]]; then
 		    echo "$0: ERROR: AUTHOR_HANDLE: \"$AUTHOR_HANDLE\" != author_handle value: $VALUE" 1>&2
-		    exit 18
+		    exit 22
 		fi
 		AUTHOR_INFO[author_handle]="$VALUE"
 		;;
 	    author_number)
 		if [[ $i != "$VALUE" ]]; then
 		    echo "$0: ERROR: AUTHOR_HANDLE: $AUTHOR_HANDLE i: $i != author_number: $VALUE" 1>&2
-		    exit 19
+		    exit 23
 		fi
 		AUTHOR_AUTHOR_NUMBER="$VALUE"
 		;;
 	    *)
 		echo "$0: ERROR: AUTHOR_HANDLE: $AUTHOR_HANDLE unknown name: $NAME" 1>&2
-		exit 20
+		exit 24
 		;;
 	    esac
 	done <<< "$AUTHOR_DATA"
@@ -1484,20 +1516,20 @@ if [[ -z $NOOP ]]; then
 	for NAME in name location_code email url alt_url mastodon github affiliation author_handle; do
 	    if [[ -z ${AUTHOR_INFO[${NAME}]} ]]; then
 		 echo "$0: ERROR: AUTHOR_HANDLE[$i]: $AUTHOR_HANDLE missing $NAME value from: $AUTH_JSON" 1>&2
-		 exit 21
+		 exit 25
 	    fi
 	done
 	if [[ -z $AUTHOR_PAST_WINNING_AUTHOR ]]; then
 	     echo "$0: ERROR: AUTHOR_HANDLE[$i]: $AUTHOR_HANDLE missing past_winning_author value from: $AUTH_JSON" 1>&2
-	     exit 22
+	     exit 26
 	fi
 	if [[ -z $AUTHOR_DEFAULT_HANDLE ]]; then
 	     echo "$0: ERROR: AUTHOR_HANDLE[$i]: $AUTHOR_HANDLE missing default_handle value from: $AUTH_JSON" 1>&2
-	     exit 23
+	     exit 27
 	fi
 	if [[ -z $AUTHOR_AUTHOR_NUMBER ]]; then
 	     echo "$0: ERROR: AUTHOR_HANDLE[$i]: $AUTHOR_HANDLE missing author_number value from: $AUTH_JSON" 1>&2
-	     exit 24
+	     exit 28
 	fi
 
 	# determine sort_word from the Author's last name
@@ -1506,7 +1538,7 @@ if [[ -z $NOOP ]]; then
 	export SORT_WORD
 	if [[ -z $SORT_WORD ]]; then
 	    echo "$0: ERROR: AUTHOR_HANDLE: $AUTHOR_HANDLE unable to determine the sort_word for: ${AUTHOR_INFO[name]}" 1>&2
-	    exit 25
+	    exit 29
 	fi
 	case "$SORT_WORD" in
 	[a-z]*) ;;
@@ -1545,22 +1577,35 @@ if [[ -z $NOOP ]]; then
 	    #
 	    if [[ ! -f $AUTHOR_HANDLE_JSON ]]; then
 		echo "$0: ERROR: author_handle JSON is not a file: $AUTHOR_HANDLE_JSON" 1>&2
-		exit 26
+		exit 30
 	    fi
 	    if [[ ! -r $AUTHOR_HANDLE_JSON ]]; then
 		echo "$0: ERROR: author_handle JSON is not a readable file: $AUTHOR_HANDLE_JSON" 1>&2
-		exit 27
+		exit 31
 	    fi
 	    if [[ ! -s $AUTHOR_HANDLE_JSON ]]; then
 		echo "$0: ERROR: author_handle JSON is not a non-empty readable file: $AUTHOR_HANDLE_JSON" 1>&2
-		exit 28
+		exit 32
 	    fi
 
 	    # parse author/author_handle.json file other than the winning_entry_set
 	    #
-	    AUTHOR_DATA=$("$JVAL_WRAPPER" -u "$AUTHOR_HANDLE_JSON" |
-			  grep -v winning_entry_set |
-			  sed -e 's/^\["//' -e 's/^\([^"]*\)"]/\1/')
+	    if [[ $V_FLAG -ge 5 ]]; then
+		echo  "$0: debug[5]: about to run: $JVAL_WRAPPER -q -- $AUTHOR_HANDLE_JSON | sed -E -e ..." 1>&2
+	    fi
+	    export AUTHOR_DATA
+	    AUTHOR_DATA=$("$JVAL_WRAPPER" -q -- "$AUTHOR_HANDLE_JSON" |
+			  sed -E -e '/^entry_id\t/d')
+	    status_codes=("${PIPESTATUS[@]}")
+	    if [[ ${status_codes[*]} =~ [1-9] ]]; then
+		echo "$0: ERROR: $JVAL_WRAPPER -q -- $AUTHOR_HANDLE_JSON | sed -E -e ... failed," \
+		     "error codes: ${status_codes[*]}" 1>&2
+		exit 33
+	    fi
+	    if [[ -z $AUTHOR_DATA ]]; then
+		echo "$0: ERROR: found entry_id's in: $AUTH_JSON" 1>&2
+		exit 34
+	    fi
 	    while read -r NAME VALUE; do
 
 		# parse name value got non
@@ -1570,21 +1615,21 @@ if [[ -z $NOOP ]]; then
 		    if [[ $VALUE != \"$NO_COMMENT\" ]]; then
 			echo "$0: ERROR: author_handle file: $AUTHOR_HANDLE_JSON" \
 			     "invalid no_comment: $VALUE != \"$NO_COMMENT\"" 1>&2
-			exit 29
+			exit 35
 		    fi
 		    ;;
 		author_JSON_format_version)
 		    if [[ $VALUE != \"$AUTHOR_JSON_FORMAT_VERSION\" ]]; then
 			echo "$0: ERROR: author_handle file: $AUTHOR_HANDLE_JSON" \
 			     "invalid author_JSON_format_version: $VALUE != \"$AUTHOR_JSON_FORMAT_VERSION\"" 1>&2
-			exit 30
+			exit 36
 		    fi
 		    ;;
 		author_handle)
 		    if [[ $VALUE != "${AUTHOR_INFO[author_handle]}" ]]; then
 			echo "$0: ERROR: author_handle file: $AUTHOR_HANDLE_JSON" \
 			     "invalid author_handle: $VALUE != ${AUTHOR_INFO[author_handle]}" 1>&2
-			exit 31
+			exit 37
 		    fi
 		    ;;
 		full_name)
@@ -1663,17 +1708,31 @@ if [[ -z $NOOP ]]; then
 		*)
 		    echo "$0: ERROR: author_handle file: $AUTHOR_HANDLE_JSON" \
 		         "unknown $NAME : $VALUE" 1>&2
-		    exit 32
+		    exit 38
 		    ;;
 		esac
 	    done <<< "$AUTHOR_DATA"
 
 	    # collect the entry_ids from the winning_entry_set and add the new entry_id
 	    #
-	    ENTRY_IDS=$( { "$JVAL_WRAPPER" -w -b -- "$AUTHOR_HANDLE_JSON" "\$..entry_id" |
-				sed -e 's/^\["//' -e 's/^\([^"]*\)"]/\1/'
+	    PATTERN='$..entry_id'
+	    if [[ $V_FLAG -ge 5 ]]; then
+		echo  "$0: debug[5]: about to run: $JVAL_WRAPPER -b -q -- $AUTHOR_HANDLE_JSON '$PATTERN'" 1>&2
+	    fi
+	    export ENTRY_IDS
+	    ENTRY_IDS=$( { "$JVAL_WRAPPER" -b -q -- "$AUTHOR_HANDLE_JSON" "$PATTERN";
+			    status="$?"
+			    if [[ $status -ne 0 ]]; then
+				echo "$0: ERROR: $JVAL_WRAPPER -b -q -- $AUTHOR_HANDLE_JSON '$PATTERN' failed," \
+				      "error code: $status" 1>&2
+				exit 39
+			    fi
 			    echo "$ENTRY_ID"
 			 } | LC_ALL=C sort -d -u )
+	    if [[ -z $AUTHOR_DATA ]]; then
+		echo "$0: ERROR: found no entry_id's in: $AUTHOR_HANDLE_JSON" 1>&2
+		exit 40
+	    fi
 	    while read -r ENTRY_ID_SET_VALUE; do
 		ENTRY_ID_SET+=("$ENTRY_ID_SET_VALUE")
 	    done <<< "$ENTRY_IDS"
@@ -1692,7 +1751,7 @@ if [[ -z $NOOP ]]; then
 	    echo "$0: ERROR: write_author_handle_file AUTHOR_INFO ENTRY_ID_SET" \
 		 "$TMP_AUTHOR_HANDLE_JSON $AUTHOR_HANDLE_JSON failed," \
 		 "error code: $status" 1>&2
-	    exit 33
+	    exit 41
 	fi
 
 	# output the author_handle information for .entry.json
@@ -1718,17 +1777,17 @@ if [[ -z $NOOP ]]; then
     # leave out the trailing comma.
     #
     ((++count))
-    PATTERN="\$manifest..c_src"
-    if [[ $V_FLAG -ge 3 ]]; then
-	echo  "$0: debug[3]: about to run: $JVAL_WRAPPER -b -- $INFO_JSON $PATTERN" 1>&2
+    PATTERN='$..c_src'
+    if [[ $V_FLAG -ge 5 ]]; then
+	echo  "$0: debug[5]: about to run: $JVAL_WRAPPER -b -q -- $INFO_JSON '$PATTERN'" 1>&2
     fi
     export FILE_PATH
-    FILE_PATH=$("$JVAL_WRAPPER" -b -- "$INFO_JSON" "$PATTERN")
+    FILE_PATH=$("$JVAL_WRAPPER" -b -q -- "$INFO_JSON" "$PATTERN")
     status="$?"
     if [[ $status -ne 0 ]]; then
-	echo "$0: ERROR: $JVAL_WRAPPER -b -- $INFO_JSON $PATTERN failed," \
+	echo "$0: ERROR: $JVAL_WRAPPER -b -q -- $INFO_JSON '$PATTERN' failed," \
 		 "error code: $status" 1>&2
-	exit 34
+	exit 42
     fi
     if [[ -z $FILE_PATH ]]; then
 	echo "$0: ERROR: cannot determine c_src in manifest from: $INFO_JSON" 1>&2
@@ -1736,11 +1795,11 @@ if [[ -z $NOOP ]]; then
     fi
     if [[ ! -e $YYYY_DIR/$FILE_PATH ]]; then
 	echo "$0: ERROR: manifest file for c_src does not exist: $YYYY_DIR/$FILE_PATH" 1>&2
-	exit 35
+	exit 43
     fi
     if [[ ! -f $YYYY_DIR/$FILE_PATH ]]; then
 	echo "$0: ERROR: manifest file for c_src is not a file: $YYYY_DIR/$FILE_PATH" 1>&2
-	exit 36
+	exit 44
     fi
     manifest_csv "$FILE_PATH" 20 true c true "entry source code" >> "$TMP_MANIFEST_CSV"
     export PROG_C="$FILE_PATH"
@@ -1748,29 +1807,29 @@ if [[ -z $NOOP ]]; then
     # write manifest csv line for entry Makefile
     #
     ((++count))
-    PATTERN="\$manifest..Makefile"
-    if [[ $V_FLAG -ge 3 ]]; then
-	echo  "$0: debug[3]: about to run: $JVAL_WRAPPER -b -- $INFO_JSON $PATTERN" 1>&2
+    PATTERN='$..Makefile'
+    if [[ $V_FLAG -ge 5 ]]; then
+	echo  "$0: debug[5]: about to run: $JVAL_WRAPPER -b -q -- $INFO_JSON '$PATTERN'" 1>&2
     fi
     export FILE_PATH
-    FILE_PATH=$("$JVAL_WRAPPER" -b -- "$INFO_JSON" "$PATTERN")
+    FILE_PATH=$("$JVAL_WRAPPER" -b -q -- "$INFO_JSON" "$PATTERN")
     status="$?"
     if [[ $status -ne 0 ]]; then
-	echo "$0: ERROR: $JVAL_WRAPPER -b -- $INFO_JSON $PATTERN failed," \
+	echo "$0: ERROR: $JVAL_WRAPPER -b -q -- $INFO_JSON '$PATTERN' failed," \
 		 "error code: $status" 1>&2
-	exit 37
+	exit 45
     fi
     if [[ -z $FILE_PATH ]]; then
 	echo "$0: ERROR: cannot determine Makefile in manifest from: $INFO_JSON" 1>&2
-	exit 38
+	exit 46
     fi
     if [[ ! -e $YYYY_DIR/$FILE_PATH ]]; then
 	echo "$0: ERROR: manifest file for Makefile does not exist: $YYYY_DIR/$FILE_PATH" 1>&2
-	exit 39
+	exit 47
     fi
     if [[ ! -f $YYYY_DIR/$FILE_PATH ]]; then
 	echo "$0: ERROR: manifest file for Makefile is not a file: $YYYY_DIR/$FILE_PATH" 1>&2
-	exit 40
+	exit 48
     fi
     manifest_csv "$FILE_PATH" 30 true makefile true "entry Makefile" >> "$TMP_MANIFEST_CSV"
 
@@ -1798,7 +1857,7 @@ if [[ -z $NOOP ]]; then
 	    if [[ $status -ne 0 ]]; then
 		echo "$0: ERROR: cp -f -p -v $YYYY_DIR/$PROG_C $YYYY_DIR/$ORIG_C failed," \
 			 "error code: $status" 1>&2
-		exit 41
+		exit 49
 	    fi
 	else
 	    cp -f -p "$YYYY_DIR/$PROG_C" "$YYYY_DIR/$ORIG_C"
@@ -1806,7 +1865,7 @@ if [[ -z $NOOP ]]; then
 	    if [[ $status -ne 0 ]]; then
 		echo "$0: ERROR: cp -f -p $YYYY_DIR/$PROG_C $YYYY_DIR/$ORIG_C failed," \
 			 "error code: $status" 1>&2
-		exit 42
+		exit 50
 	    fi
 	fi
     fi
@@ -1819,17 +1878,17 @@ if [[ -z $NOOP ]]; then
     # collect manifest for extra_file(s)
     #
     export PATTERN
-    PATTERN="\$manifest..extra_file"
-    if [[ $V_FLAG -ge 3 ]]; then
-	echo  "$0: debug[3]: about to run: $JVAL_WRAPPER -b -- $INFO_JSON $PATTERN" 1>&2
+    PATTERN='$..extra_file'
+    if [[ $V_FLAG -ge 5 ]]; then
+	echo  "$0: debug[5]: about to run: $JVAL_WRAPPER -b -q -- $INFO_JSON '$PATTERN' | ,,, sort ..." 1>&2
     fi
     export EXTRA_FILE_SET
-    EXTRA_FILE_SET=$("$JVAL_WRAPPER" -b -- "$INFO_JSON" "$PATTERN" | LC_ALL=C sort -d -u)
+    EXTRA_FILE_SET=$("$JVAL_WRAPPER" -b -q -- "$INFO_JSON" "$PATTERN" | LC_ALL=C sort -d -u)
     status_codes=("${PIPESTATUS[@]}")
     if [[ ${status_codes[*]} =~ [1-9] ]]; then
-	echo "$0: ERROR: $JVAL_WRAPPER -b -- $INFO_JSON $PATTERN failed," \
+	echo "$0: ERROR: $JVAL_WRAPPER -b -q -- $INFO_JSON '$PATTERN' | ... sort ... failed," \
 		 "error code: ${status_codes[*]}" 1>&2
-	exit 43
+	exit 51
     fi
 
     # perform some validation checks on the extra_file set
@@ -1841,7 +1900,7 @@ if [[ -z $NOOP ]]; then
 	case "$EXTRA_FILE" in
 	prog.c|Makefile|prog.orig.c|index.html|README.md|remarks.md|\.*)
 	    echo "$0: ERROR: invalid extra_file filename: $EXTRA_FILE" 1>&2
-	    exit 44
+	    exit 52
 	    ;;
 	*) ;;
 	esac
@@ -1850,11 +1909,11 @@ if [[ -z $NOOP ]]; then
 	#
 	if [[ ! -e $YYYY_DIR/$EXTRA_FILE ]]; then
 	    echo "$0: ERROR: manifest file for extra_file does not exist: $YYYY_DIR/$EXTRA_FILE" 1>&2
-	    exit 45
+	    exit 53
 	fi
 	if [[ ! -f $YYYY_DIR/$EXTRA_FILE ]]; then
 	    echo "$0: ERROR: manifest file for extra_file is not a file: $YYYY_DIR/$EXTRA_FILE" 1>&2
-	    exit 46
+	    exit 54
 	fi
     done
 
@@ -2007,7 +2066,7 @@ if [[ -z $NOOP ]]; then
 	    if [[ $status -ne 0 ]]; then
 		echo "$0: ERROR: cp -f -p -v $TEMPLATE_GITIGNORE $DOT_GITIGNORE failed," \
 			 "error code: $status" 1>&2
-		exit 47
+		exit 55
 	    fi
 	else
 	    cp -f -p "$TEMPLATE_GITIGNORE" "$DOT_GITIGNORE"
@@ -2015,7 +2074,7 @@ if [[ -z $NOOP ]]; then
 	    if [[ $status -ne 0 ]]; then
 		echo "$0: ERROR: cp -f -p $TEMPLATE_GITIGNORE $DOT_GITIGNORE failed," \
 			 "error code: $status" 1>&2
-		exit 48
+		exit 56
 	    fi
 	fi
     fi
@@ -2075,7 +2134,7 @@ if [[ -z $NOOP ]]; then
     if [[ $status -ne 0 ]]; then
         echo "$0: ERROR: LC_ALL=C sort -t, -k2n -k1,1 -k3,6 $TMP_MANIFEST_CSV -o $TMP_MANIFEST_CSV failed," \
              "error code: $status" 1>&2
-        exit 49
+        exit 57
     elif [[ $V_FLAG -ge 3 ]]; then
         echo "$0: debug[3]: sorted temporary manifest csv file: $TMP_MANIFEST_CSV" 1>&2
     fi
@@ -2118,7 +2177,7 @@ if [[ -z $NOOP ]]; then
     if [[ $status -ne 0 ]]; then
 	echo "$0: ERROR: $JPARSE_TOOL -q -- $TMP_ENTRY_JSON filed," \
 	     "error code: $status" 1>&2
-	exit 50
+	exit 58
     elif [[ $V_FLAG -ge 3 ]]; then
 	echo "$0: debug[3]: valid JSON: $TMP_ENTRY_JSON" 1>&2
     fi
@@ -2150,13 +2209,13 @@ if [[ -z $NOOP ]]; then
         if [[ $status -ne 0 ]]; then
             echo "$0: ERROR: mv -f -- $TMP_ENTRY_JSON $ENTRY_JSON filed," \
 	         "error code: $status" 1>&2
-            exit 51
+            exit 59
         elif [[ $V_FLAG -ge 1 ]]; then
             echo "$0: debug[1]: updated .entry.json: $ENTRY_JSON" 1>&2
         fi
         if [[ ! -s $ENTRY_JSON ]]; then
             echo "$0: ERROR: not a non-empty .entry.json: $ENTRY_JSON" 1>&2
-            exit 52
+            exit 60
         fi
     fi
 
@@ -2191,7 +2250,7 @@ for EXTRA_FILE in $EXTRA_FILE_SET; do
 		if [[ $status -ne 0 ]]; then
 		    echo "$0: ERROR: $OTHERMD2HTML_SH -v $V_FLAG -- $YYYY_DIR/$EXTRA_FILE filed," \
 			 "error code: $status" 1>&2
-		    exit 53
+		    exit 61
 		fi
 	    elif [[ $V_FLAG -ge 3 ]]; then
 		echo "$0: debug[3]: -n disabled forming HTML: $YYYY_DIR/$HTML_FILE" 1>&2
@@ -2219,7 +2278,7 @@ if [[ -z $NOOP ]]; then
 	if [[ $status -ne 0 ]]; then
 	    echo "$0: ERROR: $MD2HTML_SH -v $V_FLAG -- $README_MD $INDEX_HTML filed," \
 		 "error code: $status" 1>&2
-	    exit 54
+	    exit 62
 	fi
     fi
 
@@ -2240,7 +2299,7 @@ status="$?"
 if [[ $status -ne 0 ]]; then
     echo "$0: ERROR: rm -f -v -- $INFO_JSON $AUTH_JSON $REMARKS_MD filed," \
 	 "error code: $status" 1>&2
-    exit 55
+    exit 63
 fi
 
 

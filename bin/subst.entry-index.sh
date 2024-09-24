@@ -106,7 +106,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.5 2024-08-13"
+export VERSION="1.6 2024-09-23"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -180,6 +180,7 @@ $NAME version: $VERSION"
 function output_award
 {
     local ENTRY_JSON_PATH;	# the .entry.json path
+    local PATTERN;		# XPath for JSON pattern
 
     # parse args
     #
@@ -203,7 +204,18 @@ function output_award
 
     # obtain the award string
     #
-    "$JVAL_WRAPPER" -w -b "$ENTRY_JSON_PATH" '$..award'
+    PATTERN='$..award'
+    if [[ $V_FLAG -ge 5 ]]; then
+	echo  "$0: debug[5]: about to run: $JVAL_WRAPPER -b -q -- $ENTRY_JSON_PATH '$PATTERN' | sed ..." 1>&2
+    fi
+    "$JVAL_WRAPPER" -b -q "$ENTRY_JSON_PATH" "$PATTERN" | sed -f "$UNICODE_FIX_SED"
+    status="$?"
+    status_codes=("${PIPESTATUS[@]}")
+    if [[ ${status_codes[*]} =~ [1-9] ]]; then
+	echo "$0: ERROR: in output_award: $JVAL_WRAPPER -b -q -- $ENTRY_JSON_PATH '$PATTERN | sed ... failed," \
+	     "error codes: ${status_codes[*]}" 1>&2
+	return 5
+    fi
     return 0
 }
 
@@ -381,6 +393,23 @@ if [[ ! -x $JVAL_WRAPPER ]]; then
 fi
 
 
+# verify that the bin/unicode-fix.sed tool is executable
+#
+export UNICODE_FIX_SED="$BIN_DIR/unicode-fix.sed"
+if [[ ! -e $UNICODE_FIX_SED ]]; then
+    echo  "$0: ERROR: bin/unicode-fix.sed does not exist: $UNICODE_FIX_SED" 1>&2
+    exit 5
+fi
+if [[ ! -f $UNICODE_FIX_SED ]]; then
+    echo  "$0: ERROR: bin/unicode-fix.sed is not a regular file: $UNICODE_FIX_SED" 1>&2
+    exit 5
+fi
+if [[ ! -r $UNICODE_FIX_SED ]]; then
+    echo  "$0: ERROR: bin/unicode-fix.sed is not an readable file: $UNICODE_FIX_SED" 1>&2
+    exit 5
+fi
+
+
 # verify we have our awk script
 #
 export ENTRY_NAVBAR_AWK="$BIN_DIR/subst.entry-navbar.awk"
@@ -506,6 +535,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: BIN_PATH=$BIN_PATH" 1>&2
     echo "$0: debug[3]: BIN_DIR=$BIN_DIR" 1>&2
     echo "$0: debug[3]: JVAL_WRAPPER=$JVAL_WRAPPER" 1>&2
+    echo "$0: debug[3]: UNICODE_FIX_SED=$UNICODE_FIX_SED" 1>&2
     echo "$0: debug[3]: ENTRY_JSON=$ENTRY_JSON" 1>&2
     echo "$0: debug[3]: YEAR_DIR=$YEAR_DIR" 1>&2
     echo "$0: debug[3]: ENTRY_DIR=$ENTRY_DIR" 1>&2

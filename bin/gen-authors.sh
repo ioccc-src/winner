@@ -88,7 +88,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.12 2024-08-18"
+export VERSION="1.13 2024-09-23"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -200,175 +200,6 @@ Exit codes:
 $NAME version: $VERSION"
 
 
-# output_entry_ids
-#
-# Write the entry ids from an author/author_handle.json file to standard output (stdout)
-#
-# usage:
-#	output_entry_ids author/author_handle.json
-#
-# returns:
-#	0 ==> no errors detected, but output may be empty
-#     > 0 ==> function error number
-#
-function output_entry_ids
-{
-    local AUTHOR_HANDLE_JSON_PATH;	# the .entry.json path
-    local entry_id;			# a found entry id
-
-    # parse args
-    #
-    if [[ $# -ne 1 ]]; then
-	echo "$0: ERROR: in output_entry_ids: expected 1 arg, found $#" 1>&2
-	return 1
-    fi
-    AUTHOR_HANDLE_JSON_PATH="$1"
-    if [[ ! -e $AUTHOR_HANDLE_JSON_PATH ]]; then
-	echo "$0: ERROR: in output_entry_ids: author_handle.json does not exist: $AUTHOR_HANDLE_JSON_PATH" 1>&2
-	return 2
-    fi
-    if [[ ! -f $AUTHOR_HANDLE_JSON_PATH ]]; then
-	echo "$0: ERROR: in output_entry_ids: author_handle.json is not a file: $AUTHOR_HANDLE_JSON_PATH" 1>&2
-	return 3
-    fi
-    if [[ ! -r $AUTHOR_HANDLE_JSON_PATH ]]; then
-	echo "$0: ERROR: in output_entry_ids: author_handle.json is not a readable file: $AUTHOR_HANDLE_JSON_PATH" 1>&2
-	return 4
-    fi
-
-    # extract entry ids from the author/author_handle.json file
-    #
-    "$JVAL_WRAPPER" -w -b "$AUTHOR_HANDLE_JSON_PATH" '$..entry_id'
-    return 0
-}
-
-
-# output_author_handle
-#
-# Write the author handles from an author/author_handle.json file to standard output (stdout)
-#
-# usage:
-#	output_author_handle author/author_handle.json
-#
-# returns:
-#	0 ==> no errors detected, but output may be empty
-#     > 0 ==> function error number
-#
-function output_author_handle
-{
-    local AUTHOR_HANDLE_JSON_PATH;	# the .entry.json path
-
-    # parse args
-    #
-    if [[ $# -ne 1 ]]; then
-	echo "$0: ERROR: in output_author_handle: expected 1 arg, found $#" 1>&2
-	return 1
-    fi
-    AUTHOR_HANDLE_JSON_PATH="$1"
-    if [[ ! -e $AUTHOR_HANDLE_JSON_PATH ]]; then
-	echo "$0: ERROR: in output_author_handle: author_handle.json does not exist: $AUTHOR_HANDLE_JSON_PATH" 1>&2
-	return 2
-    fi
-    if [[ ! -f $AUTHOR_HANDLE_JSON_PATH ]]; then
-	echo "$0: ERROR: in output_author_handle: author_handle.json is not a file: $AUTHOR_HANDLE_JSON_PATH" 1>&2
-	return 3
-    fi
-    if [[ ! -r $AUTHOR_HANDLE_JSON_PATH ]]; then
-	echo "$0: ERROR: in output_author_handle: author_handle.json is not a readable file: $AUTHOR_HANDLE_JSON_PATH" 1>&2
-	return 4
-    fi
-
-    # extract entry ids from the author/author_handle.json file
-    #
-    "$JVAL_WRAPPER" -w -b "$AUTHOR_HANDLE_JSON_PATH" '$..author_handle'
-    return 0
-}
-
-
-# output_full_name
-#
-# Write the Full Name from an author/author_handle.json file to standard output (stdout)
-#
-# usage:
-#	output_full_name author/author_handle.json
-#
-# returns:
-#	0 ==> no errors detected, but output may be empty
-#     > 0 ==> function error number
-#
-function output_full_name
-{
-    local AUTHOR_HANDLE_JSON_PATH;	# the .entry.json path
-
-    # parse args
-    #
-    if [[ $# -ne 1 ]]; then
-	echo "$0: ERROR: in output_full_name: expected 1 arg, found $#" 1>&2
-	return 1
-    fi
-    AUTHOR_HANDLE_JSON_PATH="$1"
-    if [[ ! -e $AUTHOR_HANDLE_JSON_PATH ]]; then
-	echo "$0: ERROR: in output_full_name: author_handle.json does not exist: $AUTHOR_HANDLE_JSON_PATH" 1>&2
-	return 2
-    fi
-    if [[ ! -f $AUTHOR_HANDLE_JSON_PATH ]]; then
-	echo "$0: ERROR: in output_full_name: author_handle.json is not a file: $AUTHOR_HANDLE_JSON_PATH" 1>&2
-	return 3
-    fi
-    if [[ ! -r $AUTHOR_HANDLE_JSON_PATH ]]; then
-	echo "$0: ERROR: in output_full_name: author_handle.json is not a readable file: $AUTHOR_HANDLE_JSON_PATH" 1>&2
-	return 4
-    fi
-
-    # extract Full Name from the author/author_handle.json file
-    #
-    "$JVAL_WRAPPER" -w -b "$AUTHOR_HANDLE_JSON_PATH" '$..full_name'
-    return 0
-}
-
-
-# output_location_code
-#
-# Write the Location Code from an author/author_handle.json file to standard output (stdout)
-#
-# usage:
-#	output_location_code author/author_handle.json
-#
-# returns:
-#	0 ==> no errors detected, but output may be empty
-#     > 0 ==> function error number
-#
-function output_location_code
-{
-    local AUTHOR_HANDLE_JSON_PATH;	# the .entry.json path
-
-    # parse args
-    #
-    if [[ $# -ne 1 ]]; then
-	echo "$0: ERROR: in output_location_code: expected 1 arg, found $#" 1>&2
-	return 1
-    fi
-    AUTHOR_HANDLE_JSON_PATH="$1"
-    if [[ ! -e $AUTHOR_HANDLE_JSON_PATH ]]; then
-	echo "$0: ERROR: in output_location_code: author_handle.json does not exist: $AUTHOR_HANDLE_JSON_PATH" 1>&2
-	return 2
-    fi
-    if [[ ! -f $AUTHOR_HANDLE_JSON_PATH ]]; then
-	echo "$0: ERROR: in output_location_code: author_handle.json is not a file: $AUTHOR_HANDLE_JSON_PATH" 1>&2
-	return 3
-    fi
-    if [[ ! -r $AUTHOR_HANDLE_JSON_PATH ]]; then
-	echo "$0: ERROR: in output_location_code: author_handle.json is not a readable file: $AUTHOR_HANDLE_JSON_PATH" 1>&2
-	return 4
-    fi
-
-    # extract Location Code from the author/author_handle.json file
-    #
-    "$JVAL_WRAPPER" -w -b "$AUTHOR_HANDLE_JSON_PATH" '$..location_code'
-    return 0
-}
-
-
 # output_award
 #
 # Write the award name to standard output (stdout)
@@ -383,6 +214,7 @@ function output_location_code
 function output_award
 {
     local ENTRY_JSON_PATH;	# the .entry.json path
+    local PATTERN;		# XPath for JSON pattern
 
     # parse args
     #
@@ -406,283 +238,17 @@ function output_award
 
     # obtain the award string
     #
-    "$JVAL_WRAPPER" -w -b "$ENTRY_JSON_PATH" '$..award'
-    return 0
-}
-
-
-# output_url
-#
-# Write the url from an author/author_handle.json file to standard output (stdout)
-#
-# NOTE: If the url for the author is null, nothing is written to standard output.
-#
-# usage:
-#	output_url author/author_handle.json
-#
-# returns:
-#	0 ==> no errors detected, but output may be empty
-#     > 0 ==> function error number
-#
-function output_url
-{
-    local AUTHOR_HANDLE_JSON_PATH;	# the .entry.json path
-
-    # parse args
-    #
-    if [[ $# -ne 1 ]]; then
-	echo "$0: ERROR: in output_url: expected 1 arg, found $#" 1>&2
-	return 1
+    PATTERN='$..award'
+    if [[ $V_FLAG -ge 5 ]]; then
+	echo  "$0: debug[5]: about to run: $JVAL_WRAPPER -b -q -- $ENTRY_JSON_PATH '$PATTERN'" 1>&2
     fi
-    AUTHOR_HANDLE_JSON_PATH="$1"
-    if [[ ! -e $AUTHOR_HANDLE_JSON_PATH ]]; then
-	echo "$0: ERROR: in output_url: author_handle.json does not exist: $AUTHOR_HANDLE_JSON_PATH" 1>&2
-	return 2
+    "$JVAL_WRAPPER" -b -q "$ENTRY_JSON_PATH" "$PATTERN"
+    status="$?"
+    if [[ $status -ne 0 ]]; then
+	echo "$0: ERROR: in output_award: $JVAL_WRAPPER -b -q -- $ENTRY_JSON_PATH '$PATTERN' failed," \
+	     "error code: $status" 1>&2
+	return 5
     fi
-    if [[ ! -f $AUTHOR_HANDLE_JSON_PATH ]]; then
-	echo "$0: ERROR: in output_url: author_handle.json is not a file: $AUTHOR_HANDLE_JSON_PATH" 1>&2
-	return 3
-    fi
-    if [[ ! -r $AUTHOR_HANDLE_JSON_PATH ]]; then
-	echo "$0: ERROR: in output_url: author_handle.json is not a readable file: $AUTHOR_HANDLE_JSON_PATH" 1>&2
-	return 4
-    fi
-
-    # extract url from the author/author_handle.json file
-    #
-    # NOTE: We output nothing if the JSON member value is null.
-    #
-    "$JVAL_WRAPPER" -w -b "$AUTHOR_HANDLE_JSON_PATH" '$..url' | grep -F -v null
-    return 0
-}
-
-
-# output_alt_url
-#
-# Write the alternate url from an author/author_handle.json file to standard output (stdout)
-#
-# NOTE: If the alternate url for the author is null, nothing is written to standard output.
-#
-# usage:
-#	output_alt_url author/author_handle.json
-#
-# returns:
-#	0 ==> no errors detected, but output may be empty
-#     > 0 ==> function error number
-#
-function output_alt_url
-{
-    local AUTHOR_HANDLE_JSON_PATH;	# the .entry.json path
-
-    # parse args
-    #
-    if [[ $# -ne 1 ]]; then
-	echo "$0: ERROR: in output_alt_url: expected 1 arg, found $#" 1>&2
-	return 1
-    fi
-    AUTHOR_HANDLE_JSON_PATH="$1"
-    if [[ ! -e $AUTHOR_HANDLE_JSON_PATH ]]; then
-	echo "$0: ERROR: in output_alt_url: author_handle.json does not exist: $AUTHOR_HANDLE_JSON_PATH" 1>&2
-	return 2
-    fi
-    if [[ ! -f $AUTHOR_HANDLE_JSON_PATH ]]; then
-	echo "$0: ERROR: in output_alt_url: author_handle.json is not a file: $AUTHOR_HANDLE_JSON_PATH" 1>&2
-	return 3
-    fi
-    if [[ ! -r $AUTHOR_HANDLE_JSON_PATH ]]; then
-	echo "$0: ERROR: in output_alt_url: author_handle.json is not a readable file: $AUTHOR_HANDLE_JSON_PATH" 1>&2
-	return 4
-    fi
-
-    # extract alternate url from the author/author_handle.json file
-    #
-    # NOTE: We output nothing if the JSON member value is null.
-    #
-    "$JVAL_WRAPPER" -w -b "$AUTHOR_HANDLE_JSON_PATH" '$..alt_url' | grep -F -v null
-    return 0
-}
-
-
-# output_mastodon
-#
-# Write the mastodon handle from an author/author_handle.json file to standard output (stdout)
-#
-# NOTE: If the mastodon handle for the author is null, nothing is written to standard output.
-#
-# usage:
-#	output_mastodon author/author_handle.json
-#
-# returns:
-#	0 ==> no errors detected, but output may be empty
-#     > 0 ==> function error number
-#
-function output_mastodon
-{
-    local AUTHOR_HANDLE_JSON_PATH;	# the .entry.json path
-
-    # parse args
-    #
-    if [[ $# -ne 1 ]]; then
-	echo "$0: ERROR: in output_mastodon: expected 1 arg, found $#" 1>&2
-	return 1
-    fi
-    AUTHOR_HANDLE_JSON_PATH="$1"
-    if [[ ! -e $AUTHOR_HANDLE_JSON_PATH ]]; then
-	echo "$0: ERROR: in output_mastodon: author_handle.json does not exist: $AUTHOR_HANDLE_JSON_PATH" 1>&2
-	return 2
-    fi
-    if [[ ! -f $AUTHOR_HANDLE_JSON_PATH ]]; then
-	echo "$0: ERROR: in output_mastodon: author_handle.json is not a file: $AUTHOR_HANDLE_JSON_PATH" 1>&2
-	return 3
-    fi
-    if [[ ! -r $AUTHOR_HANDLE_JSON_PATH ]]; then
-	echo "$0: ERROR: in output_mastodon: author_handle.json is not a readable file: $AUTHOR_HANDLE_JSON_PATH" 1>&2
-	return 4
-    fi
-
-    # extract mastodon handle from the author/author_handle.json file
-    #
-    # NOTE: We output nothing if the JSON member value is null.
-    #
-    "$JVAL_WRAPPER" -w -b "$AUTHOR_HANDLE_JSON_PATH" '$..mastodon' | grep -F -v null
-    return 0
-}
-
-
-# output_mastodon_url
-#
-# Write the mastodon handle from an author/author_handle.json file to standard output (stdout)
-#
-# NOTE: If the mastodon URL for the author is null, nothing is written to standard output.
-#
-# usage:
-#	output_mastodon_url author/author_handle.json
-#
-# returns:
-#	0 ==> no errors detected, but output may be empty
-#     > 0 ==> function error number
-#
-function output_mastodon_url
-{
-    local AUTHOR_HANDLE_JSON_PATH;	# the .entry.json path
-
-    # parse args
-    #
-    if [[ $# -ne 1 ]]; then
-	echo "$0: ERROR: in output_mastodon_url: expected 1 arg, found $#" 1>&2
-	return 1
-    fi
-    AUTHOR_HANDLE_JSON_PATH="$1"
-    if [[ ! -e $AUTHOR_HANDLE_JSON_PATH ]]; then
-	echo "$0: ERROR: in output_mastodon_url: author_handle.json does not exist: $AUTHOR_HANDLE_JSON_PATH" 1>&2
-	return 2
-    fi
-    if [[ ! -f $AUTHOR_HANDLE_JSON_PATH ]]; then
-	echo "$0: ERROR: in output_mastodon_url: author_handle.json is not a file: $AUTHOR_HANDLE_JSON_PATH" 1>&2
-	return 3
-    fi
-    if [[ ! -r $AUTHOR_HANDLE_JSON_PATH ]]; then
-	echo "$0: ERROR: in output_mastodon_url: author_handle.json is not a readable file: $AUTHOR_HANDLE_JSON_PATH" 1>&2
-	return 4
-    fi
-
-    # extract mastodon URL from the author/author_handle.json file
-    #
-    # NOTE: We output nothing if the JSON member value is null.
-    #
-    "$JVAL_WRAPPER" -w -b "$AUTHOR_HANDLE_JSON_PATH" '$..mastodon_url' | grep -F -v null
-    return 0
-}
-
-
-# output_github
-#
-# Write the GitHub handle from an author/author_handle.json file to standard output (stdout)
-#
-# NOTE: If the GitHub handle for the author is null, nothing is written to standard output.
-#
-# usage:
-#	output_github author/author_handle.json
-#
-# returns:
-#	0 ==> no errors detected, but output may be empty
-#     > 0 ==> function error number
-#
-function output_github
-{
-    local AUTHOR_HANDLE_JSON_PATH;	# the .entry.json path
-
-    # parse args
-    #
-    if [[ $# -ne 1 ]]; then
-	echo "$0: ERROR: in output_github: expected 1 arg, found $#" 1>&2
-	return 1
-    fi
-    AUTHOR_HANDLE_JSON_PATH="$1"
-    if [[ ! -e $AUTHOR_HANDLE_JSON_PATH ]]; then
-	echo "$0: ERROR: in output_github: author_handle.json does not exist: $AUTHOR_HANDLE_JSON_PATH" 1>&2
-	return 2
-    fi
-    if [[ ! -f $AUTHOR_HANDLE_JSON_PATH ]]; then
-	echo "$0: ERROR: in output_github: author_handle.json is not a file: $AUTHOR_HANDLE_JSON_PATH" 1>&2
-	return 3
-    fi
-    if [[ ! -r $AUTHOR_HANDLE_JSON_PATH ]]; then
-	echo "$0: ERROR: in output_github: author_handle.json is not a readable file: $AUTHOR_HANDLE_JSON_PATH" 1>&2
-	return 4
-    fi
-
-    # extract GitHub handle from the author/author_handle.json file
-    #
-    # NOTE: We output nothing if the JSON member value is null.
-    #
-    "$JVAL_WRAPPER" -w -b "$AUTHOR_HANDLE_JSON_PATH" '$..github' | grep -F -v null
-    return 0
-}
-
-
-# output_affiliation
-#
-# Write the affiliation from an author/author_handle.json file to standard output (stdout)
-#
-# NOTE: If the affiliation for the author is null, nothing is written to standard output.
-#
-# usage:
-#	output_affiliation author/author_handle.json
-#
-# returns:
-#	0 ==> no errors detected, but output may be empty
-#     > 0 ==> function error number
-#
-function output_affiliation
-{
-    local AUTHOR_HANDLE_JSON_PATH;	# the .entry.json path
-
-    # parse args
-    #
-    if [[ $# -ne 1 ]]; then
-	echo "$0: ERROR: in output_affiliation: expected 1 arg, found $#" 1>&2
-	return 1
-    fi
-    AUTHOR_HANDLE_JSON_PATH="$1"
-    if [[ ! -e $AUTHOR_HANDLE_JSON_PATH ]]; then
-	echo "$0: ERROR: in output_affiliation: author_handle.json does not exist: $AUTHOR_HANDLE_JSON_PATH" 1>&2
-	return 2
-    fi
-    if [[ ! -f $AUTHOR_HANDLE_JSON_PATH ]]; then
-	echo "$0: ERROR: in output_affiliation: author_handle.json is not a file: $AUTHOR_HANDLE_JSON_PATH" 1>&2
-	return 3
-    fi
-    if [[ ! -r $AUTHOR_HANDLE_JSON_PATH ]]; then
-	echo "$0: ERROR: in output_affiliation: author_handle.json is not a readable file: $AUTHOR_HANDLE_JSON_PATH" 1>&2
-	return 4
-    fi
-
-    # extract affiliation from the author/author_handle.json file
-    #
-    # NOTE: We output nothing if the JSON member value is null.
-    #
-    "$JVAL_WRAPPER" -w -b "$AUTHOR_HANDLE_JSON_PATH" '$..affiliation' | grep -F -v null
     return 0
 }
 
@@ -919,6 +485,40 @@ fi
 export AUTHORS_HTML="authors.html"
 
 
+# verify that the bin/combine_author_handle.sh tool is executable
+#
+export COMBINE_AUTHOR="$BIN_DIR/combine_author_handle.sh"
+if [[ ! -e $COMBINE_AUTHOR ]]; then
+    echo  "$0: ERROR: bin/unicode-chk.sh does not exist: $COMBINE_AUTHOR" 1>&2
+    exit 5
+fi
+if [[ ! -f $COMBINE_AUTHOR ]]; then
+    echo  "$0: ERROR: bin/unicode-chk.sh is not a regular file: $COMBINE_AUTHOR" 1>&2
+    exit 5
+fi
+if [[ ! -x $COMBINE_AUTHOR ]]; then
+    echo  "$0: ERROR: bin/unicode-chk.sh is not an executable file: $COMBINE_AUTHOR" 1>&2
+    exit 5
+fi
+
+
+# verify that the bin/unicode-fix.sed tool is executable
+#
+export UNICODE_FIX_SED="$BIN_DIR/unicode-fix.sed"
+if [[ ! -e $UNICODE_FIX_SED ]]; then
+    echo  "$0: ERROR: bin/unicode-fix.sed does not exist: $UNICODE_FIX_SED" 1>&2
+    exit 5
+fi
+if [[ ! -f $UNICODE_FIX_SED ]]; then
+    echo  "$0: ERROR: bin/unicode-fix.sed is not a regular file: $UNICODE_FIX_SED" 1>&2
+    exit 5
+fi
+if [[ ! -r $UNICODE_FIX_SED ]]; then
+    echo  "$0: ERROR: bin/unicode-fix.sed is not an readable file: $UNICODE_FIX_SED" 1>&2
+    exit 5
+fi
+
+
 # print running info if verbose
 #
 # If -v 3 or higher, print exported variables in order that they were exported.
@@ -938,8 +538,8 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: SITE_URL=$SITE_URL" 1>&2
     echo "$0: debug[3]: NOOP=$NOOP" 1>&2
     echo "$0: debug[3]: DO_NOT_PROCESS=$DO_NOT_PROCESS" 1>&2
-    echo "$0: debug[3]: EXIT_CODE=$EXIT_CODE" 1>&2
     echo "$0: debug[3]: QUICK_MODE=$QUICK_MODE" 1>&2
+    echo "$0: debug[3]: EXIT_CODE=$EXIT_CODE" 1>&2
     for index in "${!IS_FOR[@]}"; do
 	echo "$0: debug[3]: IS_FOR[$index]=${IS_FOR[$index]}" 1>&2
     done
@@ -955,6 +555,8 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: JVAL_WRAPPER=$JVAL_WRAPPER" 1>&2
     echo "$0: debug[3]: LOCATION_TOOL=$LOCATION_TOOL" 1>&2
     echo "$0: debug[3]: AUTHORS_HTML=$AUTHORS_HTML" 1>&2
+    echo "$0: debug[3]: COMBINE_AUTHOR=$COMBINE_AUTHOR" 1>&2
+    echo "$0: debug[3]: UNICODE_FIX_SED=$UNICODE_FIX_SED" 1>&2
 fi
 
 
@@ -1026,31 +628,32 @@ elif [[ $V_FLAG -ge 3 ]]; then
 fi
 
 
-# load initial letter . lines into the temporary sort word list file
-#
-for letter in "${!IS_FOR[@]}"; do
-    echo "$letter ."
-done > "$TMP_SORT_WORD"
 
 
 # add author sort_word filename to the temporary sort word list file
 #
-if [[ $V_FLAG -ge 1 ]]; then
-    echo "$0: debug[1]: Forming temporary sort word list file: $TMP_SORT_WORD"
+if [[ $V_FLAG -ge 3 ]]; then
+    echo "$0: debug[3]: Forming temporary sort word list file: $TMP_SORT_WORD"
 fi
-find "$AUTHOR_DIR" -mindepth 1 -maxdepth 1 -type f -name '*.json' 2>/dev/null | while read -r json_file; do
-    echo "$(bin/jval-wrapper.sh -w -b "$json_file" '$..sort_word') $json_file"
-done >> "$TMP_SORT_WORD"
+export PATTERN='$..sort_word'
+{
+    # load initial letter . lines
+    #
+    for letter in "${!IS_FOR[@]}"; do
+	echo "$letter ."
+    done
 
-
-# sort the temporary sort word list file
-#
-LC_ALL=C sort -f -d "$TMP_SORT_WORD" -o "$TMP_SORT_WORD"
-status="$?"
-if [[ $status -ne 0 ]]; then
-    echo "$0: ERROR: LC_ALL=C sort -f -d $TMP_SORT_WORD -o $TMP_SORT_WORD failed, error: $status" 1>&2
-    exit 14
-fi
+    # add sort_word filenames lines
+    #
+    "$COMBINE_AUTHOR" | "$JVAL_WRAPPER" -b -q -- - "$PATTERN"
+    status_codes=("${PIPESTATUS[@]}")
+    if [[ ${status_codes[*]} =~ [1-9] ]]; then
+	echo "$0: ERROR: $COMBINE_AUTHOR | $JVAL_WRAPPER -b -q -- - '$PATTERN' |" \
+	     "LC_ALL=C sort -f -d > $TMP_SORT_WORD failed," \
+	     "error codes: ${status_codes[*]}" 1>&2
+	exit 14
+    fi
+} | LC_ALL=C sort -f -d > "$TMP_SORT_WORD"
 
 
 # generate the temporary entry markdown file
@@ -1114,9 +717,7 @@ EOF
 	    echo '<hr style="width:10%;text-align:left;margin-left:0">'
 	    echo
 	    if [[ $V_FLAG -ge 1 ]]; then
-		echo 1>&2
 		echo "$0: debug[1]: Processing author_handles that begin with $l for: $AUTHORS_HTML" 1>&2
-		echo 1>&2
 	    fi
 
 	# case: we have a "sort_word file" line
@@ -1130,91 +731,145 @@ EOF
 		exit 15
 	    fi
 
-	    FULL_NAME=$(output_full_name "$filename")
-	    export FULL_NAME
-	    if [[ -z $FULL_NAME ]]; then
-		echo "$0: ERROR: full name is empty in: $filename" 1>&2
+	    # parse an element value of the this particular author in the authors JSON array
+	    #
+	    if [[ $V_FLAG -ge 5 ]]; then
+		echo  "$0: debug[5]: about to run: $JVAL_WRAPPER -q -- - | sed ... | LC_ALL=C sort -d)" 1>&2
+	    fi
+	    export AUTHOR_DATA
+	    AUTHOR_DATA=$("$JVAL_WRAPPER" -q -- "$filename" |
+			  sed -f "$UNICODE_FIX_SED" |
+			  LC_ALL=C sort -d)
+	    status_codes=("${PIPESTATUS[@]}")
+	    if [[ ${status_codes[*]} =~ [1-9] ]]; then
+		echo "$0: ERROR: $JVAL_WRAPPER -q -- $filename | sed ... | LC_ALL=C sort -d failed," \
+		     "error codes: ${status_codes[*]}" 1>&2
 		exit 16
 	    fi
-
-	    LOCATION_CODE=$(output_location_code "$filename")
-	    export LOCATION_CODE
-	    if [[ -z $LOCATION_CODE ]]; then
-		echo "$0: ERROR: location code is empty in: $filename" 1>&2
+	    if [[ -z $AUTHOR_DATA ]]; then
+		echo "$0: ERROR: found nothing for author in: $filename" 1>&2
 		exit 17
 	    fi
+	    export FULL_NAME=
+	    export LOCATION_CODE=
+	    export AUTHOR_URL=
+	    export AUTHOR_ALT_URL=
+	    export AUTHOR_MASTODON_HANDLE=
+	    export AUTHOR_MASTODON_URL=
+	    export AUTHOR_GITHUB=
+	    export AUTHOR_AFFILIATION=
+	    export AUTHOR_HANDLE=
+	    unset ENTRY_ID_SET
+	    declare -ag ENTRY_ID_SET
+	    while read -r NAME VALUE; do
 
+		# parse name value
+		#
+		case "$NAME" in
+		full_name)
+		    FULL_NAME="$VALUE"
+		    ;;
+		location_code)
+		    LOCATION_CODE="$VALUE"
+		    ;;
+		url)
+		    AUTHOR_URL="$VALUE"
+		    ;;
+		alt_url)
+		    AUTHOR_ALT_URL="$VALUE"
+		    ;;
+		mastodon)
+		    AUTHOR_MASTODON_HANDLE="$VALUE"
+		    ;;
+		mastodon_url)
+		    AUTHOR_MASTODON_URL="$VALUE"
+		    ;;
+		github)
+		    AUTHOR_GITHUB="$VALUE"
+		    ;;
+		affiliation)
+		    AUTHOR_AFFILIATION="$VALUE"
+		    ;;
+		author_handle)
+		    AUTHOR_HANDLE="$VALUE"
+		    ;;
+		entry_id)
+		    ENTRY_ID_SET+=("$VALUE")
+		    ;;
+		*)  # ignore all other fields
+		    ;;
+		esac
+	    done <<< "$AUTHOR_DATA"
+
+	    # validate fields values
+	    #
+	    if [[ -z $FULL_NAME ]]; then
+		echo "$0: ERROR: cannot find name in: $filename" 1>&2
+		exit 18
+	    fi
+	    if [[ -z $LOCATION_CODE ]]; then
+		echo "$0: ERROR: cannot find location_code in: $filename" 1>&2
+		exit 19
+	    fi
+	    if [[ -z $AUTHOR_URL ]]; then
+		echo "$0: ERROR: cannot find url in: $filename" 1>&2
+		exit 20
+	    fi
+	    if [[ -z $AUTHOR_ALT_URL ]]; then
+		echo "$0: ERROR: cannot find alt_url in: $filename" 1>&2
+		exit 21
+	    fi
+	    if [[ -z $AUTHOR_MASTODON_HANDLE ]]; then
+		echo "$0: ERROR: cannot find mastodon in: $filename" 1>&2
+		exit 22
+	    fi
+	    if [[ -z $AUTHOR_MASTODON_URL ]]; then
+		echo "$0: ERROR: cannot find mastodon_url in: $filename" 1>&2
+		exit 23
+	    fi
+	    if [[ -z $AUTHOR_GITHUB ]]; then
+		echo "$0: ERROR: cannot find github in: $filename" 1>&2
+		exit 24
+	    fi
+	    if [[ -z $AUTHOR_AFFILIATION ]]; then
+		echo "$0: ERROR: cannot find affiliation in: $filename" 1>&2
+		exit 25
+	    fi
+	    if [[ -z $AUTHOR_HANDLE ]]; then
+		echo "$0: ERROR: cannot find author_handle in: $filename" 1>&2
+		exit 26
+	    fi
+
+	    # use the location tool to obtain the location_name
+	    #
 	    LOCATION_NAME=$("$LOCATION_TOOL" "$LOCATION_CODE" 2>/dev/null)
 	    status="$?"
 	    export LOCATION_NAME
 	    if [[ $status -ne 0 ]]; then
-		echo "$0: ERROR: cannot determine location name" \
-		     "for location ISO 3166 code: $LOCATION_CODE" 1>&2
-		exit 18
-	    fi
-	    if [[ -z $LOCATION_NAME ]]; then
-		echo "$0: ERROR: location name" \
-		     "for location ISO 3166 code: $LOCATION_CODE is empty: $LOCATION_NAME" 1>&2
-		exit 19
+		echo "$0: ERROR: cannot determine location name for" \
+		     "location ISO 3166 code: $LOCATION_CODE" 1>&2
+		exit 1
 	    fi
 
+	    # use the location tool to obtain the location common name
+	    #
 	    LOCATION_COMMON_NAME=$("$LOCATION_TOOL" -c "$LOCATION_CODE" 2>/dev/null)
 	    status="$?"
 	    export LOCATION_COMMON_NAME
 	    if [[ $status -ne 0 ]]; then
 		echo "$0: ERROR: cannot determine location common name" \
 		     "for location ISO 3166 code: $LOCATION_CODE" 1>&2
-		exit 20
-	    fi
-	    if [[ -z $LOCATION_COMMON_NAME ]]; then
-		echo "$0: ERROR: location common name" \
-		     "for location ISO 3166 code: $LOCATION_CODE is empty: $LOCATION_COMMON_NAME" 1>&2
-		exit 21
+		exit 1
 	    fi
 
-	    AUTHOR_HANDLE=$(output_author_handle "$filename")
-	    export AUTHOR_HANDLE
-	    if [[ -z $AUTHOR_HANDLE ]]; then
-		echo "$0: ERROR: author handle is empty in: $filename" 1>&2
-		exit 22
-	    fi
-	    if [[ $V_FLAG -ge 1 ]]; then
-		echo "$0: debug[1]: Processing author_handle $AUTHOR_HANDLE for: $AUTHORS_HTML" 1>&2
-	    fi
-
-	    # NOTE: AUTHOR_AFFILIATION will be empty if there is no affiliation
-	    AUTHOR_AFFILIATION=$(output_affiliation "$filename")
-	    export AUTHOR_AFFILIATION
-
-	    # NOTE: AUTHOR_URL will be empty if there is no url
-	    AUTHOR_URL=$(output_url "$filename")
-	    export AUTHOR_URL
-
-	    # NOTE: AUTHOR_ALT_URL will be empty if there is no alternate url
-	    AUTHOR_ALT_URL=$(output_alt_url "$filename")
-	    export AUTHOR_ALT_URL
-
-	    # NOTE: AUTHOR_MASTODON_HANDLE will be empty if there is no mastodon handle
-	    AUTHOR_MASTODON_HANDLE=$(output_mastodon "$filename")
-	    export AUTHOR_MASTODON_HANDLE
-
-	    # NOTE: AUTHOR_MASTODON_URL will be empty if there is no mastodon URL
-	    AUTHOR_MASTODON_URL=$(output_mastodon_url "$filename")
-	    export AUTHOR_MASTODON_URL
-	    if [[ -n $AUTHOR_MASTODON_HANDLE && -z $AUTHOR_MASTODON_URL ]]; then
-		echo "$0: ERROR: mastodon url is null but mastodon handle is not null in: $filename" 1>&2
-		exit 23
-	    fi
-	    if [[ -z $AUTHOR_MASTODON_HANDLE && -n $AUTHOR_MASTODON_URL ]]; then
-		echo "$0: ERROR: mastodon handle is null but mastodon url is not null in: $filename" 1>&2
-		exit 24
-	    fi
-
-	    # NOTE: AUTHOR_GITHUB will be empty if there is no GitHub handle
-	    AUTHOR_GITHUB=$(output_github "$filename")
-	    export AUTHOR_GITHUB
+	    # form github username
+	    #
 	    AUTHOR_GITHUB_USERNAME=${AUTHOR_GITHUB#@}
-	    export AUTHOR_GITHUB_USERNAME
+            export AUTHOR_GITHUB_USERNAME
+	    if [[ -z $AUTHOR_GITHUB_USERNAME ]]; then
+		echo "$0: ERROR: cannot determine github username from: $AUTHOR_GITHUB" 1>&2
+		exit 27
+	    fi
 
 	    # output author information
 	    #
@@ -1228,23 +883,24 @@ EOF
 		echo "Location: <a class=\"normal\" href=\"location.html#$LOCATION_CODE\">$LOCATION_CODE</a> -" \
 		     "_${LOCATION_COMMON_NAME}_"
 	    fi
-	    if [[ -n $AUTHOR_AFFILIATION ]]; then
+	    if [[ -n $AUTHOR_AFFILIATION && $AUTHOR_AFFILIATION != null ]]; then
 		echo "<br>"
 	        echo "Affiliation: $AUTHOR_AFFILIATION"
 	    fi
-	    if [[ -n $AUTHOR_URL ]]; then
+	    if [[ -n $AUTHOR_URL && $AUTHOR_URL != null ]]; then
 		echo "<br>"
 	        echo "URL: <a class=\"normal\" href=\"$AUTHOR_URL\">$AUTHOR_URL</a>"
 	    fi
-	    if [[ -n $AUTHOR_ALT_URL ]]; then
+	    if [[ -n $AUTHOR_ALT_URL && $AUTHOR_ALT_URL != null ]]; then
 		echo "<br>"
 	        echo "Alternate URL: <a class=\"normal\" href=\"$AUTHOR_ALT_URL\">$AUTHOR_ALT_URL</a>"
 	    fi
-	    if [[ -n $AUTHOR_MASTODON_HANDLE && -n $AUTHOR_MASTODON_URL ]]; then
+	    if [[ -n $AUTHOR_MASTODON_HANDLE && $AUTHOR_MASTODON_HANDLE != null &&
+		  -n $AUTHOR_MASTODON_URL && $AUTHOR_MASTODON_URL != null ]]; then
 		echo "<br>"
 		echo "Mastodon: <a class=\"normal\" href=\"$AUTHOR_MASTODON_URL\">$AUTHOR_MASTODON_HANDLE</a>"
 	    fi
-	    if [[ -n $AUTHOR_GITHUB ]]; then
+	    if [[ -n $AUTHOR_GITHUB && $AUTHOR_GITHUB != null ]]; then
 		echo "<br>"
 	        echo "GitHub: <a class=\"normal\" href=\"https://github.com/$AUTHOR_GITHUB_USERNAME\">$AUTHOR_GITHUB</a>"
 	    fi
@@ -1254,23 +910,23 @@ EOF
 
 	    # output YYYY/dir set made by this author
 	    #
-	    output_entry_ids "$filename" | while read -r ENTRY_ID; do
+	    for ENTRY_ID in "${ENTRY_ID_SET[@]}"; do
 
 		# verify the entry id
 		#
 		if [[ $ENTRY_ID =~ ^[^_][^_]*_[^_][^_]*$ ]]; then
 		    if [[ $V_FLAG -ge 7 ]]; then
-			echo "$0: debug[7]: entry_id: $entry_id" 1>&2
+			echo "$0: debug[7]: entry_id: $ENTRY_ID" 1>&2
 		    fi
 		else
-		    echo "$0: ERROR: entry_id is not in YYYY_dir formmat: $entry_id" 1>&2
-		    exit 25
+		    echo "$0: ERROR: entry_id is not in YYYY_dir formmat: $ENTRY_ID" 1>&2
+		    exit 28
 		fi
 		YYYY_DIR=$(echo "$ENTRY_ID" | tr _ /)
 		export YYYY_DIR
 		if [[ ! -d $YYYY_DIR ]]; then
 		    echo "$0: ERROR: YYYY/dir is not a directory" 1>&2
-		    exit 26
+		    exit 29
 		fi
 
 		# verify that the .entry.json file is a non-empty readable file
@@ -1279,19 +935,19 @@ EOF
 		export ENTRY_JSON
 		if [[ ! -e $ENTRY_JSON ]]; then
 		    echo "$0: ERROR: .entry.json does not exist: $ENTRY_JSON" 1>&2
-		    exit 27
+		    exit 30
 		fi
 		if [[ ! -f $ENTRY_JSON ]]; then
 		    echo "$0: ERROR: .entry.json is not a file: $ENTRY_JSON" 1>&2
-		    exit 28
+		    exit 31
 		fi
 		if [[ ! -r $ENTRY_JSON ]]; then
 		    echo "$0: ERROR: .entry.json is not a readable file: $ENTRY_JSON" 1>&2
-		    exit 29
+		    exit 32
 		fi
 		if [[ ! -s $ENTRY_JSON ]]; then
 		    echo "$0: ERROR: .entry.json is not a non-empty readable file: $ENTRY_JSON" 1>&2
-		    exit 30
+		    exit 33
 		fi
 		if [[ $V_FLAG -ge 7 ]]; then
 		    echo "$0: debug[7]: .entry.json: $ENTRY_JSON" 1>&2
@@ -1299,11 +955,11 @@ EOF
 
 		# collect the award for this entry id
 		#
-		AWARD=$(output_award "$ENTRY_JSON")
+		AWARD=$(output_award "$ENTRY_JSON" | sed -f "$UNICODE_FIX_SED")
 		export AWARD
 		if [[ -z $AWARD ]]; then
 		    echo "$0: ERROR: award not found in .entry.json: $ENTRY_JSON" 1>&2
-		    exit 31
+		    exit 34
 		fi
 
 		# output the YYYY/dir entry for this author

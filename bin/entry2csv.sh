@@ -118,7 +118,7 @@ shopt -s lastpipe	# explicitly run the last command of the pipe line in the curr
 
 # set variables referenced in the usage message
 #
-export VERSION="1.2.1 2024-08-17"
+export VERSION="1.3 2024-09-23"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -139,8 +139,6 @@ export NOOP=
 export DO_NOT_PROCESS=
 export EXIT_CODE="0"
 #
-JPARSE_TOOL=$(type -P jparse)
-export JPARSE_TOOL
 export AUTHOR_WINS_CSV="author_wins.csv"
 export MANIFEST_CSV="manifest.csv"
 export YEAR_PRIZE_CSV="year_prize.csv"
@@ -161,6 +159,7 @@ export AUTHOR_DIR="author"
 function output_award
 {
     local ENTRY_JSON_PATH;	# the .entry.json path
+    local PATTERN;		# XPath for JSON pattern
 
     # parse args
     #
@@ -184,7 +183,17 @@ function output_award
 
     # obtain the award string
     #
-    "$JVAL_WRAPPER" -w -b "$ENTRY_JSON_PATH" '$..award'
+    PATTERN='$..award'
+    if [[ $V_FLAG -ge 5 ]]; then
+	echo  "$0: debug[5]: about to run: $JVAL_WRAPPER -b -q -- $ENTRY_JSON_PATH '$PATTERN'" 1>&2
+    fi
+    "$JVAL_WRAPPER" -b -q "$ENTRY_JSON_PATH" "$PATTERN" | sed -f "$UNICODE_FIX_SED"
+    status_codes=("${PIPESTATUS[@]}")
+    if [[ ${status_codes[*]} =~ [1-9] ]]; then
+	echo "$0: ERROR: in output_award: $JVAL_WRAPPER -b -q -- $ENTRY_JSON_PATH '$PATTERN' failed," \
+	     "error codes: ${status_codes[*]}" 1>&2
+	return 5
+    fi
     return 0
 }
 
@@ -203,6 +212,7 @@ function output_award
 function output_author_handles
 {
     local ENTRY_JSON_PATH;	# the .entry.json path
+    local PATTERN;		# XPath for JSON pattern
 
     # parse args
     #
@@ -226,14 +236,24 @@ function output_author_handles
 
     # extract author handles from .entry.json
     #
-    "$JVAL_WRAPPER" -w -b "$ENTRY_JSON_PATH" '$..author_handle'
+    PATTERN='$..author_handle'
+    if [[ $V_FLAG -ge 5 ]]; then
+	echo  "$0: debug[5]: about to run: $JVAL_WRAPPER -b -q -- $ENTRY_JSON_PATH '$PATTERN'" 1>&2
+    fi
+    "$JVAL_WRAPPER" -b -q "$ENTRY_JSON_PATH" "$PATTERN"
+    status="$?"
+    if [[ $status -ne 0 ]]; then
+	echo "$0: ERROR: in output_award: $JVAL_WRAPPER -b -q -- $ENTRY_JSON_PATH '$PATTERN' failed," \
+	     "error code: $status" 1>&2
+	return 5
+    fi
     return 0
 }
 
 
 # usage
 #
-export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-n] [-N] [-j jparse]
+export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-n] [-N]
 			[author_wins.csv [manifest.csv [year_prize.csv]]]
 
 	-h		print help message and exit
@@ -244,8 +264,6 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-n] [-N] [-j jparse]
 
 	-n		go thru the actions, but do not update any files (def: do the action)
 	-N		do not process anything, just parse arguments (def: process something)
-
-	-j jparse	path to the jparse tool (def: $JPARSE_TOOL)
 
 	author_wins.csv	where to form author_wins.csv (def: $AUTHOR_WINS_CSV)
 	manifest.csv	where to form manifest.csv (def: $MANIFEST_CSV)
@@ -269,7 +287,7 @@ $NAME version: $VERSION"
 
 # parse command line
 #
-while getopts :hv:Vd:D:nNj: flag; do
+while getopts :hv:Vd:D:nN flag; do
   case "$flag" in
     h) echo "$USAGE" 1>&2
 	exit 2
@@ -284,8 +302,6 @@ while getopts :hv:Vd:D:nNj: flag; do
     n) NOOP="-n"
 	;;
     N) DO_NOT_PROCESS="-N"
-	;;
-    j) JPARSE_TOOL="$OPTARG"
 	;;
     \?) echo "$0: ERROR: invalid option: -$OPTARG" 1>&2
 	echo 1>&2
@@ -471,30 +487,31 @@ fi
 export MANIFEST_ENTRY_CSV_ENTRY_AWK="$BIN_DIR/manifest.csv.entry.awk"
 if [[ ! -e $MANIFEST_ENTRY_CSV_ENTRY_AWK ]]; then
     echo "$0: ERROR: bin/manifest.csv.entry.awk does not exist: $MANIFEST_ENTRY_CSV_ENTRY_AWK" 1>&2
-    exit 6
+    exit 5
 fi
 if [[ ! -f $MANIFEST_ENTRY_CSV_ENTRY_AWK ]]; then
     echo "$0: ERROR: bin/manifest.csv.entry.awk is not a regular file: $MANIFEST_ENTRY_CSV_ENTRY_AWK" 1>&2
-    exit 6
+    exit 5
 fi
 if [[ ! -r $MANIFEST_ENTRY_CSV_ENTRY_AWK ]]; then
     echo "$0: ERROR: bin/manifest.csv.entry.awk is not a readable file: $MANIFEST_ENTRY_CSV_ENTRY_AWK" 1>&2
-    exit 6
+    exit 5
 fi
 
 
-# verify jparse tool
+# verify that the bin/unicode-fix.sed tool is executable
 #
-if [[ -z "$JPARSE_TOOL" ]]; then
-    echo "$0: ERROR: cannot find an executable jparse tool" 1>&2
+export UNICODE_FIX_SED="$BIN_DIR/unicode-fix.sed"
+if [[ ! -e $UNICODE_FIX_SED ]]; then
+    echo  "$0: ERROR: bin/unicode-fix.sed does not exist: $UNICODE_FIX_SED" 1>&2
     exit 5
 fi
-if [[ ! -f "$JPARSE_TOOL" ]]; then
-    echo "$0: ERROR: jparse is not a file: $JPARSE_TOOL" 1>&2
+if [[ ! -f $UNICODE_FIX_SED ]]; then
+    echo  "$0: ERROR: bin/unicode-fix.sed is not a regular file: $UNICODE_FIX_SED" 1>&2
     exit 5
 fi
-if [[ ! -x "$JPARSE_TOOL" ]]; then
-    echo "$0: ERROR: jparse is not an executable file: $JPARSE_TOOL" 1>&2
+if [[ ! -r $UNICODE_FIX_SED ]]; then
+    echo  "$0: ERROR: bin/unicode-fix.sed is not an readable file: $UNICODE_FIX_SED" 1>&2
     exit 5
 fi
 
@@ -512,7 +529,6 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: NOOP=$NOOP" 1>&2
     echo "$0: debug[3]: DO_NOT_PROCESS=$DO_NOT_PROCESS" 1>&2
     echo "$0: debug[3]: EXIT_CODE=$EXIT_CODE" 1>&2
-    echo "$0: debug[3]: JPARSE_TOOL=$JPARSE_TOOL" 1>&2
     echo "$0: debug[3]: AUTHOR_WINS_CSV=$AUTHOR_WINS_CSV" 1>&2
     echo "$0: debug[3]: MANIFEST_CSV=$MANIFEST_CSV" 1>&2
     echo "$0: debug[3]: YEAR_PRIZE_CSV=$YEAR_PRIZE_CSV" 1>&2
@@ -524,6 +540,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: TOP_FILE=$TOP_FILE" 1>&2
     echo "$0: debug[3]: BIN_PATH=$BIN_DIR" 1>&2
     echo "$0: debug[3]: BIN_DIR=$BIN_DIR" 1>&2
+    echo "$0: debug[3]: UNICODE_FIX_SED=$UNICODE_FIX_SED" 1>&2
     echo "$0: debug[3]: JVAL_WRAPPER=$JVAL_WRAPPER" 1>&2
     echo "$0: debug[3]: MANIFEST_ENTRY_CSV_ENTRY_AWK=$MANIFEST_ENTRY_CSV_ENTRY_AWK" 1>&2
 fi
@@ -859,21 +876,6 @@ for YYYY in $(< "$TOP_FILE"); do
 	    echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
 	    continue
 	fi
-	#
-	if [[ $V_FLAG -ge 7 ]]; then
-	    echo "$0: debug[7]: about to run: $JPARSE_TOOL -q -- $ENTRY_JSON" 1>&2
-	fi
-	if "$JPARSE_TOOL" -q -- "$ENTRY_JSON"; then
-	    if [[ $V_FLAG -ge 9 ]]; then
-		echo "$0: debug[9]: valid JSON: $ENTRY_JSON" 1>&2
-	    fi
-	else
-	    echo "$0: ERROR: .entry.json is not valid JSON: $ENTRY_JSON" 1>&2
-	    EXIT_CODE="1"  # exit 1
-	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	    echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
-	    continue
-	fi
 
 	# process the year_prize.csv update
 	#
@@ -1136,71 +1138,49 @@ sed -e 's/,/ /g' "$AUTHOR_WINS_CSV" | while read -r AUTHOR_HANDLE ENTRY_ID_SET; 
     #
     else
 
-	# verify the JSON of author/author_handle.json
+	# check each entry id on the line
 	#
-	if [[ $V_FLAG -ge 7 ]]; then
-	    echo "$0: debug[7]: about to run: $JPARSE_TOOL -q -- $AUTHOR_HANDLE_JSON" 1>&2
-	fi
 	echo "$AUTHOR_HANDLE_JSON" >> "$TMP_AUTHOR_HANDLE_INVENTORY"
-	if "$JPARSE_TOOL" -q -- "$AUTHOR_HANDLE_JSON"; then
+	echo "$ENTRY_ID_SET" | sed -e 's/ /\n/g' | while read -r ENTRY_ID; do
 
-	    # case: author/author_handle.json file is valid JSON
+	    # convert ENTRY_ID into YYYY_DIR
 	    #
-	    if [[ $V_FLAG -ge 9 ]]; then
-		echo "$0: debug[9]: valid JSON for: $AUTHOR_HANDLE_JSON" 1>&2
-	    fi
+	    export YEAR_DIR=${ENTRY_ID%%_*}
+	    export ENTRY_DIR=${ENTRY_ID#*_}
+	    export YYYY_DIR="${YEAR_DIR}/${ENTRY_DIR}"
 
-	    # check each entry id on the line
+	    # verify that the entry exists
 	    #
-	    echo "$ENTRY_ID_SET" | sed -e 's/ /\n/g' | while read -r ENTRY_ID; do
+	    if [[ ! -d $YYYY_DIR ]]; then
 
-		# convert ENTRY_ID into YYYY_DIR
+		# case: entry does not exist
 		#
-		export YEAR_DIR=${ENTRY_ID%%_*}
-		export ENTRY_DIR=${ENTRY_ID#*_}
-		export YYYY_DIR="${YEAR_DIR}/${ENTRY_DIR}"
+		echo "$0: ERROR: line: $line of author_wins.csv: $AUTHOR_WINS_CSV" \
+		     "refers to unknown entry id: $ENTRY_ID" 1>&2
+		EXIT_CODE="7"  # exit 7
+		echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+		echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
+		# NOTE: We do NOT want to stop processing via continue - proceeding instead
 
-		# verify that the entry exists
+	    # verify that the author/author_handle.json file refers to the entry id
+	    #
+	    else
+
+		# check if the author/author_handle.json file refers to the entry id
 		#
-		if [[ ! -d $YYYY_DIR ]]; then
-
-		    # case: entry does not exist
-		    #
+		PATTERN='$..entry_id'
+		FOUND=$("$JVAL_WRAPPER" -b -q "$AUTHOR_HANDLE_JSON" "$PATTERN")
+		status="$?"
+		if [[ $status -ne 0 || -z $FOUND ]]; then
 		    echo "$0: ERROR: line: $line of author_wins.csv: $AUTHOR_WINS_CSV" \
-			 "refers to unknown entry id: $ENTRY_ID" 1>&2
-		    EXIT_CODE="7"  # exit 7
+			 "entry id: $ENTRY_ID not in winning_entry_set of: $AUTHOR_HANDLE_JSON" 1>&2
+		    EXIT_CODE="9"  # exit 9
 		    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
 		    echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
 		    # NOTE: We do NOT want to stop processing via continue - proceeding instead
-
-		# verify that the author/author_handle.json file refers to the entry id
-		#
-		else
-
-		    # check if the author/author_handle.json file refers to the entry id
-		    #
-		    FOUND=$("$JVAL_WRAPPER" -w -b "$AUTHOR_HANDLE_JSON" '$..entry_id')
-		    if [[ -z $FOUND ]]; then
-			echo "$0: ERROR: line: $line of author_wins.csv: $AUTHOR_WINS_CSV" \
-			     "entry id: $ENTRY_ID not in winning_entry_set of: $AUTHOR_HANDLE_JSON" 1>&2
-			EXIT_CODE="9"  # exit 9
-			echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-			echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
-			# NOTE: We do NOT want to stop processing via continue - proceeding instead
-		    fi
 		fi
-	    done
-
-	# case: author/author_handle.json is not valid JSON
-	#
-	else
-	    echo "$0: ERROR: line: $line of author_wins.csv: $AUTHOR_WINS_CSV" \
-		 "is not valid JSON for: $AUTHOR_HANDLE_JSON" 1>&2
-	    EXIT_CODE="1"  # exit 1
-	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	    echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
-	    # NOTE: We do NOT want to stop processing via continue - proceeding instead
-	fi
+	    fi
+	done
     fi
 done
 

@@ -23,7 +23,7 @@ BEGIN {
 
     # setup
     #
-    VERSION="1.1.2 2024-07-28"
+    VERSION="1.2 2024-09-17"
     found_manifest_array = 0;	# 1 ==> we found the manifest ARRAY
     within_manifest_array = 0;	# 1 ==> found start of "manifest" : [ JSON array
     begin_manifest_element = 0;	# 1 ==> we have found the start of the manifest array element
@@ -121,7 +121,7 @@ within_manifest_array == 1 && begin_manifest_element == 1 && NF >= 3 && $1 ~ /^"
     #
     $1 = ""; # remove 1st field
     $2 = ""; # remove 2nd field
-    gsub(/^[[:space:]]+/, "", $0); # any leading whitespace
+    gsub(/^[[:space:]]+/, "", $0); # remove any leading whitespace
     file_path = $0;
 
     # Remove any trailing ,
@@ -155,7 +155,7 @@ within_manifest_array == 1 && begin_manifest_element == 1 && NF >= 3 && $1 ~ /^"
     #
     $1 = ""; # remove 1st field
     $2 = ""; # remove 2nd field
-    gsub(/^[[:space:]]+/, "", $0); # any leading whitespace
+    gsub(/^[[:space:]]+/, "", $0); # remove any leading whitespace
     inventory_order = $0;
 
     # Remove any trailing ,
@@ -189,7 +189,7 @@ within_manifest_array == 1 && begin_manifest_element == 1 && NF >= 3 && $1 ~ /^"
     #
     $1 = ""; # remove 1st field
     $2 = ""; # remove 2nd field
-    gsub(/^[[:space:]]+/, "", $0); # any leading whitespace
+    gsub(/^[[:space:]]+/, "", $0); # remove any leading whitespace
     OK_to_edit = $0;
 
     # Remove any trailing ,
@@ -223,7 +223,7 @@ within_manifest_array == 1 && begin_manifest_element == 1 && NF >= 3 && $1 ~ /^"
     #
     $1 = ""; # remove 1st field
     $2 = ""; # remove 2nd field
-    gsub(/^[[:space:]]+/, "", $0); # any leading whitespace
+    gsub(/^[[:space:]]+/, "", $0); # remove any leading whitespace
     display_as = $0;
 
     # Remove any trailing ,
@@ -257,7 +257,7 @@ within_manifest_array == 1 && begin_manifest_element == 1 && NF >= 3 && $1 ~ /^"
     #
     $1 = ""; # remove 1st field
     $2 = ""; # remove 2nd field
-    gsub(/^[[:space:]]+/, "", $0); # any leading whitespace
+    gsub(/^[[:space:]]+/, "", $0); # remove any leading whitespace
     display_via_github = $0;
 
     # Remove any trailing ,
@@ -291,7 +291,7 @@ within_manifest_array == 1 && begin_manifest_element == 1 && NF >= 3 && $1 ~ /^"
     #
     $1 = ""; # remove 1st field
     $2 = ""; # remove 2nd field
-    gsub(/^[[:space:]]+/, "", $0); # any leading whitespace
+    gsub(/^[[:space:]]+/, "", $0); # remove any leading whitespace
     entry_text = $0;
 
     # Remove any trailing ,
@@ -300,12 +300,50 @@ within_manifest_array == 1 && begin_manifest_element == 1 && NF >= 3 && $1 ~ /^"
 	entry_text = substr(entry_text, 1, length(entry_text)-1);
     }
 
+    # so we can single quote the entry_text as a single string, we protect any single quotes within it
+    #
+    jstrdecode_arg = entry_text;
+    gsub(/'/, "'\"'\"'", jstrdecode_arg);
+
+    # form the jstrdecode command
+    #
+    if (jstrdecode_arg ~ /^".*"$/) {
+	jstrdecode_cmd = "jstrdecode -Q -- " "'" substr(jstrdecode_arg, 2, length(jstrdecode_arg)-2)  "'";
+    } else {
+	jstrdecode_cmd = "jstrdecode -Q -- " "'" jstrdecode_arg "'";
+    }
+    jstrdecode_cmd = jstrdecode_cmd " 2>/dev/null; echo $?";
+
+    # JSON decode entry_text
+    #
+    numLines = 0;
+    result = "";
+    exit_code = 0;
+    # process each pipe line
+    while ((jstrdecode_cmd | getline pipe_output) > 0) {
+	if (numLines++ == 0) {
+	    # case: 1st line is from jstrdecode
+	    result = pipe_output;
+	} else {
+	    # case: 2nd/line line is the jstrdecode exit code
+	    exit_code = pipe_output;
+	}
+    }
+    close(jstrdecode_cmd);
+
+    # validate exit code from jstrdecode
+    #
+    if (length(exit_code) == 0 || exit_code != 0) {
+	print "ERROR: unable to jstrdecode entry_text:", entry_text > "/dev/stderr";
+	exit 213;	# END section will output ERROR message about cannot JSON decode entry_text
+    }
+
     # remove any enclosing double quotes
     #
-    if (entry_text ~ /^".*"$/) {
-	unquote_entry_text = substr(entry_text, 2, length(entry_text)-2);
+    if (result ~ /^".*"$/) {
+	unquote_entry_text = substr(result, 2, length(result)-2);
     } else {
-	unquote_entry_text = entry_text;
+	unquote_entry_text = result;
     }
 }
 
@@ -317,42 +355,42 @@ within_manifest_array == 1 && begin_manifest_element == 1 && NF == 1 && $1 ~ /^}
     #
     if (length(file_path) == 0) {
 	print "ERROR: manifest array JSON member did not have a file_path JSON member in:", ARGV[1] > "/dev/stderr";
-	exit 213;
+	exit 214;
     }
 
     # verify we have seen a inventory_order JSON member
     #
     if (length(inventory_order) == 0) {
 	print "ERROR: manifest array JSON member did not have a inventory_order JSON member in:", ARGV[1] > "/dev/stderr";
-	exit 214;
+	exit 215;
     }
 
     # verify we have seen a OK_to_edit JSON member
     #
     if (length(OK_to_edit) == 0) {
 	print "ERROR: manifest array JSON member did not have a OK_to_edit JSON member in:", ARGV[1] > "/dev/stderr";
-	exit 215;
+	exit 216;
     }
 
     # verify we have seen a display_as JSON member
     #
     if (length(display_as) == 0) {
 	print "ERROR: manifest array JSON member did not have a display_as JSON member in:", ARGV[1] > "/dev/stderr";
-	exit 216;
+	exit 217;
     }
 
     # verify we have seen a display_via_github JSON member
     #
     if (length(display_via_github) == 0) {
 	print "ERROR: manifest array JSON member did not have a display_via_github JSON member in:", ARGV[1] > "/dev/stderr";
-	exit 217;
+	exit 218;
     }
 
     # verify we have seen a entry_text JSON member
     #
     if (length(entry_text) == 0) {
 	print "ERROR: manifest array JSON member did not have a entry_text JSON member in:", ARGV[1] > "/dev/stderr";
-	exit 218;
+	exit 219;
     }
 
     # print manifest information
@@ -395,39 +433,39 @@ END {
     #
     if (length(github) == 0) {
 	print "ERROR: github variable not set, call with -v github=REPO_URL" > "/dev/stderr";
-	exit 219;	# use 200 to match exit code from BEGIN
+	exit 220;	# use 200 to match exit code from BEGIN
     }
 
     # case: we quit because we could not determine dir from ARGV[1]
     #
     if (length(dir) == 0) {
 	print "ERROR: cannot determine dir from:", ARGV[1] > "/dev/stderr";
-	exit 220;	# END section will output ERROR message about cannot find dir
+	exit 221;	# END section will output ERROR message about cannot find dir
     }
 
     if (length(YYYY) == 0) {
 	print "ERROR: cannot determine YYYY from:", ARGV[1] > "/dev/stderr";
-	exit 221;	# END section will output ERROR message about cannot find YYYY
+	exit 222;	# END section will output ERROR message about cannot find YYYY
     }
 
     # case: no manifest array was found
     #
     if (!found_manifest_array) {
 	print "ERROR: we did not find a manifest JSON array in:", ARGV[1] > "/dev/stderr";
-	exit 222;
+	exit 223;
     }
 
     # case: manifest array was found, but manifest array element did not finish
     #
     if (begin_manifest_element) {
 	print "ERROR: manifest JSON array element did not end in:", ARGV[1] > "/dev/stderr";
-	exit 223;
+	exit 224;
     }
 
     # case: manifest array did not end
     #
     if (within_manifest_array) {
 	print "ERROR: manifest JSON array did not end in:", ARGV[1] > "/dev/stderr";
-	exit 224;
+	exit 225;
     }
 }

@@ -86,7 +86,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.6 2024-08-17"
+export VERSION="1.7 2024-09-23"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -108,12 +108,6 @@ export REPO_TOP_URL="https://github.com/ioccc-src/temp-test-ioccc"
 # GitHub puts individual files under the "blob/master" sub-directory.
 export REPO_URL="$REPO_TOP_URL/blob/master"
 export SITE_URL="https://ioccc-src.github.io/temp-test-ioccc"
-JPARSE_TOOL=$(type -P jparse)
-export JPARSE_TOOL
-if [[ -z "$JPARSE_TOOL" ]]; then
-    echo "$0: FATAL: jparse tool is not installed or not in \$PATH" 1>&2
-    exit 5
-fi
 #
 STAT_TOOL=$(type -P stat)
 if [[ -z "$STAT_TOOL" ]]; then
@@ -294,11 +288,23 @@ function output_status_json
 
     # determine the "contest_status" that was in status.json
     #
-    OLD_CONTEST_STATUS=$("$JVAL_WRAPPER" -w -b "$STATUS_PATH" '$..contest_status')
+    PATTERN='$..contest_status'
+    OLD_CONTEST_STATUS=$("$JVAL_WRAPPER" -b -q "$STATUS_PATH" "$PATTERN")
+    status="$?"
+    if [[ $status -ne 0 || -z $OLD_CONTEST_STATUS ]]; then
+	echo "$0: ERROR: cannot determine old contest_status from status.json: $STATUS_JSON" 1>&2
+	return 11
+    fi
 
     # determine the "status_update" that was in status.json
     #
-    OLD_STATUS_UPDATE=$("$JVAL_WRAPPER" -w -b "$STATUS_PATH" '$..status_update')
+    PATTERN='$..status_update'
+    OLD_STATUS_UPDATE=$("$JVAL_WRAPPER" -b -q "$STATUS_PATH" "$PATTERN")
+    status="$?"
+    if [[ $status -ne 0 || -z $OLD_STATUS_UPDATE ]]; then
+	echo "$0: ERROR: cannot determine old status_update from status.json: $STATUS_JSON" 1>&2
+	return 12
+    fi
 
     # update the status.json file modification date if the "contest_status" changed
     #
@@ -306,11 +312,11 @@ function output_status_json
     status="$?"
     if [[ $status -ne 0 ]]; then
 	echo "$0: ERROR: in output_status_json: modification date of $STATUS_PATH failed, error: $status" 1>&2
-	return 11
+	return 13
     fi
     if [[ -z $NEW_STATUS_UPDATE ]]; then
 	echo "$0: ERROR: in output_status_json: modification date of $STATUS_PATH is empty" 1>&2
-	return 12
+	return 14
     fi
 
     # only update the "status_update" If the "contest_status" changed
@@ -788,7 +794,6 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: REPO_TOP_URL=$REPO_TOP_URL" 1>&2
     echo "$0: debug[3]: REPO_URL=$REPO_URL" 1>&2
     echo "$0: debug[3]: SITE_URL=$SITE_URL" 1>&2
-    echo "$0: debug[3]: JPARSE_TOOL=$JPARSE_TOOL" 1>&2
     echo "$0: debug[3]: IOCCC_STATUS_VERSION=$IOCCC_STATUS_VERSION" 1>&2
     echo "$0: debug[3]: NOOP=$NOOP" 1>&2
     echo "$0: debug[3]: DO_NOT_PROCESS=$DO_NOT_PROCESS" 1>&2
@@ -819,23 +824,16 @@ if [[ $V_FLAG -ge 3 ]]; then
 fi
 
 
-# validate JSON in status.json
-#
-"$JPARSE_TOOL" -q "$STATUS_JSON"
-status="$?"
-if [[ $status -ne 0 ]]; then
-    echo  "$0: ERROR: status.json is not valid JSON, jparse error code: $status" 1>&2
-    exit 1
-fi
-
 # obtain contest_status if CONTEST_STATUS was not set in the arg
 #
 if [[ -z $CONTEST_STATUS ]]; then
 
     # obtain the contest_status from status.json
     #
-    CONTEST_STATUS=$("$JVAL_WRAPPER" -w -b "$STATUS_JSON" '$..contest_status')
-    if [[ -z $CONTEST_STATUS ]]; then
+    PATTERN='$..contest_status'
+    CONTEST_STATUS=$("$JVAL_WRAPPER" -b -q "$STATUS_JSON" "$PATTERN")
+    status="$?"
+    if [[ $status -ne 0 || -z $CONTEST_STATUS ]]; then
 	echo "$0: ERROR: cannot determine contest_status from status.json: $STATUS_JSON" 1>&2
 	exit 1
     fi

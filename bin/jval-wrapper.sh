@@ -106,47 +106,55 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.0.4 2024-08-20"
+export VERSION="1.1 2024-09-23"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
-
-
-# Until we have a true jval tool, we will use the modified JSONPath.sh
-#
-# XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
-# XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
-# XXX - until we have the jval command, we must FAKE PARSE IOCCC JSON files       - XXX
-# XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
-# XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
-#
-export JSONPATH_REPO="https://github.com/lcn2/JSONPath.sh"
-JSONPATH_SH=$(type -P JSONPath.sh)
-export JSONPATH_SH
-if [[ -z $JSONPATH_SH ]]; then
-    echo "$0: FATAL: JSONPath.sh tool is not installed or not in \$PATH" 1>&2
-    echo "$0: notice: obtain JSONPath.sh from: $JSONPATH_REPO" 1>&2
+GIT_TOOL=$(type -P git)
+export GIT_TOOL
+if [[ -z "$GIT_TOOL" ]]; then
+    echo "$0: FATAL: git tool is not installed or not in \$PATH" 1>&2
     exit 5
 fi
-# verify JSONPath.sh supports -S -A
-export FIZZBIN_JSON='"fizzbin"'
-if ! "$JSONPATH_SH" -S -A -p >/dev/null 2>&1; then
-    echo "$0: FATAL: JSONPath.sh tool does not support -S -A: $FIZZBIN_JSON" 1>&2
-    echo "$0: notice: we recommend you obtain and install JSONPath.sh from: $JSONPATH_REPO" 1>&2
-    exit 5
-fi <<< "$FIZZBIN_JSON"
-export JSONPATH_ARG
-export PATTERN='$*'
+"$GIT_TOOL" rev-parse --is-inside-work-tree >/dev/null 2>&1
+status="$?"
+if [[ $status -eq 0 ]]; then
+    TOPDIR=$("$GIT_TOOL" rev-parse --show-toplevel)
+fi
+export TOPDIR
+export REPO_TOP_URL="https://github.com/ioccc-src/temp-test-ioccc"
+# GitHub puts individual files under the "blob/master" sub-directory.
+export REPO_URL="$REPO_TOP_URL/blob/master"
+
+
+# Until we have a true jval tool, we will use wither jsp or the modified JSONPath.sh
 #
-unset OPTION
-declare -ag OPTION
+# XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
+# XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
+# XXX - until we have the jval command, we use external tools to get data from JSON - XXX
+# XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
+# XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
+#
+export JSP_REPO="https://github.com/kjozsa/jsp"
+export JSONPATH_REPO="https://github.com/lcn2/JSONPath.sh"
+export FIZZBIN_JSON='"fizzbin"'
+export JSP_TOOL=""
+JSP_TOOL=$(type -P jsp)
+export JSONPATH_SH=""
+JSONPATH_SH=$(type -P JSONPath.sh)
+# set the defaiult XPath for JSON
+export XPATHJSON_USE="jsp"
+export JSONPATH_ARG
+export PATTERN=""
+#
+export PRINT_ONLY_VALUES=""
+export REMOVE_QUOTES=""
+export QUICK_CHECK=""
 
 
 # set usage message
 #
-export USAGE="usage: $0 [-h] [-v level] [-V] [-n] [-N]
-	[-w] [-b] [-i] [-u]
-	[-j JSONPath.sh] file.json [pattern]
+export USAGE="usage: $0 [-h] [-v level] [-V] [-n] [-N] [-b] [-q] [-t tool] [-Q] file.json [pattern]
 
 	-h		print help message and exit
 	-v level	set verbosity level (def level: 0)
@@ -155,12 +163,11 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-n] [-N]
 	-n		do nothing (same as -N) (def: do the action)
 	-N		do not process file, just parse arguments and ignore the file (def: process the file)
 
-	-w		match whole words only for filter script expression (def: match substrings)
-	-b		only print values (def: print both JSON member and JSON value)
-	-i		match insensitive (def: match case)
-	-u		strip unnecessary leading path element (def: print the entire element path)
+	-b		print only values (def: print both JSON member and JSON value)
+	-q		remove enclosing double quotes (def: keep any enclosing double quotes)
 
-	-j JSONPath.sh	path to the JSONPath.sh tool (not the wrapper) (def: $JSONPATH_SH)
+	-t tool		tool to use: jsp or JSONPath.sh (def: try jsp, otherwise try JSONPath.sh)
+	-Q		quick check tool using trivial input (def: do not)
 
 	file.json	JSON file to read, - ==> read stdin
 	pattern		JSONPath query (def: $PATTERN}
@@ -186,7 +193,7 @@ export DO_NOT_PROCESS=
 
 # parse command line
 #
-while getopts :hv:VnNwbiuj: flag; do
+while getopts :hv:VnNbqt:Q flag; do
   case "$flag" in
     h) echo "$USAGE" 1>&2
 	exit 2
@@ -200,16 +207,23 @@ while getopts :hv:VnNwbiuj: flag; do
 	;;
     N) DO_NOT_PROCESS="-N"
 	;;
-    j) JSONPATH_SH="$OPTARG"
+    b) PRINT_ONLY_VALUES="-b"
 	;;
-    w) OPTION+=("-w")
-	;;
-    b) OPTION+=("-b")
-	;;
-    i) OPTION+=("-i")
-	;;
-    u) OPTION+=("-u")
-	;;
+    q) REMOVE_QUOTES="true"
+       ;;
+    t) # validate -t tool
+       case "$OPTARG" in
+       jsp) XPATHJSON_USE="jsp" ;;
+       JSONPath.sh) XPATHJSON_USE="JSONPath.sh" ;;
+       *) echo "$0: ERROR: unknown -t option: $OPTARG" 1>&2
+	  echo 1>&2
+          echo "$USAGE" 1>&2
+          exit 3
+	  ;;
+       esac
+       ;;
+    Q) QUICK_CHECK="true"
+       ;;
     \?) echo "$0: ERROR: invalid option: -$OPTARG" 1>&2
 	echo 1>&2
 	echo "$USAGE" 1>&2
@@ -251,6 +265,9 @@ case "$#" in
     ;;
 esac
 #
+if [[ $JSON_FILE == "-" ]]; then
+    JSON_FILE=""
+fi
 if [[ -n $JSON_FILE ]]; then
     if [[ ! -e $JSON_FILE ]]; then
 	echo  "$0: ERROR: JSON_FILE does not exist: $JSON_FILE" 1>&2
@@ -267,6 +284,155 @@ if [[ -n $JSON_FILE ]]; then
 fi
 
 
+# verify that we have a topdir directory
+#
+REPO_NAME=$(basename "$REPO_TOP_URL")
+export REPO_NAME
+if [[ -z $TOPDIR ]]; then
+    echo "$0: ERROR: cannot find top of git repo directory" 1>&2
+    echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_TOP_URL; cd $REPO_NAME" 1>&2
+    exit 6
+fi
+if [[ ! -e $TOPDIR ]]; then
+    echo "$0: ERROR: TOPDIR does not exist: $TOPDIR" 1>&2
+    echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_TOP_URL; cd $REPO_NAME" 1>&2
+    exit 6
+fi
+if [[ ! -d $TOPDIR ]]; then
+    echo "$0: ERROR: TOPDIR is not a directory: $TOPDIR" 1>&2
+    echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_TOP_URL; cd $REPO_NAME" 1>&2
+    exit 6
+fi
+
+
+# cd to topdir
+#
+if [[ ! -e $TOPDIR ]]; then
+    echo "$0: ERROR: cannot cd to non-existent path: $TOPDIR" 1>&2
+    exit 6
+fi
+if [[ ! -d $TOPDIR ]]; then
+    echo "$0: ERROR: cannot cd to a non-directory: $TOPDIR" 1>&2
+    exit 6
+fi
+export CD_FAILED
+if [[ $V_FLAG -ge 5 ]]; then
+    echo "$0: debug[5]: about to: cd $TOPDIR" 1>&2
+fi
+cd "$TOPDIR" || CD_FAILED="true"
+if [[ -n $CD_FAILED ]]; then
+    echo "$0: ERROR: cd $TOPDIR failed" 1>&2
+    exit 6
+fi
+if [[ $V_FLAG -ge 3 ]]; then
+    echo "$0: debug[3]: now in directory: $(/bin/pwd)" 1>&2
+fi
+
+
+# verify that we have a bin subdirectory
+#
+export BIN_PATH="$TOPDIR/bin"
+if [[ ! -d $BIN_PATH ]]; then
+    echo "$0: ERROR: bin is not a directory under topdir: $BIN_PATH" 1>&2
+    exit 6
+fi
+export BIN_DIR="bin"
+
+
+# verify that the bin/unicode-fix.sed tool is executable
+#
+export UNICODE_FIX_SED="$BIN_DIR/unicode-fix.sed"
+if [[ ! -e $UNICODE_FIX_SED ]]; then
+    echo  "$0: ERROR: bin/unicode-fix.sed does not exist: $UNICODE_FIX_SED" 1>&2
+    exit 5
+fi
+if [[ ! -f $UNICODE_FIX_SED ]]; then
+    echo  "$0: ERROR: bin/unicode-fix.sed is not a regular file: $UNICODE_FIX_SED" 1>&2
+    exit 5
+fi
+if [[ ! -r $UNICODE_FIX_SED ]]; then
+    echo  "$0: ERROR: bin/unicode-fix.sed is not an readable file: $UNICODE_FIX_SED" 1>&2
+    exit 5
+fi
+
+
+# validate the XPath for JSON tool
+#
+case "$XPATHJSON_USE" in
+
+    # case: we will use JSONPath.sh
+    #
+    JSONPath.sh)
+
+	# try JSONPath.sh
+	#
+	if [[ -z $JSONPATH_SH || ! -x $JSONPATH_SH ]]; then
+	    echo "$0: ERROR: JSONPath.sh tool is not installed, is not executable, or not in \$PATH" 1>&2
+	    echo "$0: notice: obtain jsp from: $JSP_REPO" 1>&2
+	    echo "$0: notice: or obtain jsp via \"pipx install jsp\" and placing ~/.local/bin in \$PATH" 1>&2
+	    echo "$0: notice: obtain JSONPath.sh from: $JSONPATH_REPO" 1>&2
+	    echo "$0: notice: if possible install jsp instead of JSONPath.sh as jsp is faster" 1>&2
+	    exit 5
+	fi
+
+	# case: -Q - perform quick check
+	#
+	if [[ -n $QUICK_CHECK ]]; then
+	    # verify JSONPath.sh supports -S -A -p
+	    if ! "$JSONPATH_SH" -S -A -p >/dev/null 2>&1; then
+		echo "$0: ERROR: JSONPath.sh tool does not support -S -A: $FIZZBIN_JSON" 1>&2
+		echo "$0: notice: we recommend you obtain and install jsp from: $JSP_REPO" 1>&2
+		echo "$0: notice: or obtain jsp via \"pipx install jsp\" and placing ~/.local/bin in \$PATH" 1>&2
+		echo "$0: notice: otherwise install JSONPath.sh from: $JSONPATH_REPO" 1>&2
+		echo "$0: notice: if possible install jsp instead of JSONPath.sh as jsp is faster" 1>&2
+		exit 5
+	    fi <<< "$FIZZBIN_JSON"
+	fi
+	;;
+
+    # case: we will use jsp
+    #
+    jsp)
+
+	# try jsp
+	#
+	if [[ -z $JSP_TOOL || ! -x $JSP_TOOL ]]; then
+	    echo "$0: ERROR: jsp.sh tool is not installed, is not executable, or not in \$PATH" 1>&2
+	    echo "$0: notice: obtain jsp from: $JSP_REPO" 1>&2
+	    echo "$0: notice: or obtain jsp via \"pipx install jsp\" and placing ~/.local/bin in \$PATH" 1>&2
+	    echo "$0: notice: obtain JSONPath.sh from: $JSONPATH_REPO" 1>&2
+	    echo "$0: notice: if possible install jsp instead of JSONPath.sh as jsp is faster" 1>&2
+	    exit 5
+	fi
+
+	# case: -Q - perform quick check
+	#
+	if [[ -n $QUICK_CHECK ]]; then
+	    # verify jsp
+	    if ! "$JSP_TOOL" --indent 4 --format --no-color >/dev/null 2>&1; then
+		echo "$0: ERROR: jsp tool does not support --indent 4 --format --no-color: $FIZZBIN_JSON" 1>&2
+		echo "$0: notice: you might need to update and reinstall jsp from: $JSP_REPO" 1>&2
+		echo "$0: notice: or obtain jsp via \"pipx install jsp\" and placing ~/.local/bin in \$PATH" 1>&2
+		echo "$0: notice: or you might try to obtain and install JSONPath.sh from: $JSONPATH_REPO" 1>&2
+		echo "$0: notice: if possible install jsp instead of JSONPath.sh as jsp is faster" 1>&2
+		exit 5
+	    fi <<< "$FIZZBIN_JSON"
+	fi
+	;;
+
+    # case: we do not have an XPath for JSON tool
+    #
+    *)
+	echo "$0: ERROR: cannot find an XPath JSON tool to use" 1>&2
+	echo "$0: notice: we recommend you obtain and install jsp from: $JSP_REPO" 1>&2
+	echo "$0: notice: or obtain jsp via \"pipx install jsp\" and placing ~/.local/bin in \$PATH" 1>&2
+	echo "$0: notice: otherwise install JSONPath.sh from: $JSONPATH_REPO" 1>&2
+	echo "$0: notice: if possible install jsp instead of JSONPath.sh as jsp is faster" 1>&2
+	exit 5
+	;;
+esac
+
+
 # print running info if verbose
 #
 # If -v 3 or higher, print exported variables in order that they were exported.
@@ -275,17 +441,28 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: VERSION=$VERSION" 1>&2
     echo "$0: debug[3]: NAME=$NAME" 1>&2
     echo "$0: debug[3]: V_FLAG=$V_FLAG" 1>&2
+    echo "$0: debug[3]: GIT_TOOL=$GIT_TOOL" 1>&2
+    echo "$0: debug[3]: TOPDIR=$TOPDIR" 1>&2
+    echo "$0: debug[3]: REPO_TOP_URL=$REPO_TOP_URL" 1>&2
+    echo "$0: debug[3]: REPO_URL=$REPO_URL" 1>&2
+    echo "$0: debug[3]: JSP_REPO=$JSP_REPO" 1>&2
     echo "$0: debug[3]: JSONPATH_REPO=$JSONPATH_REPO" 1>&2
-    echo "$0: debug[3]: JSONPATH_SH=$JSONPATH_SH" 1>&2
     echo "$0: debug[3]: FIZZBIN_JSON=$FIZZBIN_JSON" 1>&2
-    echo "$0: debug[3]: JSONPATH_ARG=$JSONPATH_ARG" 1>&2
-    for index in "${!OPTION[@]}"; do
-        echo "$0: debug[$V_FLAG]: $V_FLAG: OPTION[$index]=${OPTION[$index]}" 1>&2
-    done
+    echo "$0: debug[3]: JSP_TOOL=$JSP_TOOL" 1>&2
+    echo "$0: debug[3]: JSONPATH_SH=$JSONPATH_SH" 1>&2
+    echo "$0: debug[3]: XPATHJSON_USE=$XPATHJSON_USE" 1>&2
+    echo "$0: debug[3]: PATTERN=$PATTERN" 1>&2
+    echo "$0: debug[3]: PRINT_ONLY_VALUES=$PRINT_ONLY_VALUES" 1>&2
+    echo "$0: debug[3]: REMOVE_QUOTES=$REMOVE_QUOTES" 1>&2
+    echo "$0: debug[3]: QUICK_CHECK=$QUICK_CHECK" 1>&2
     echo "$0: debug[3]: NOOP=$NOOP" 1>&2
     echo "$0: debug[3]: DO_NOT_PROCESS=$DO_NOT_PROCESS" 1>&2
     echo "$0: debug[3]: JSON_FILE=$JSON_FILE" 1>&2
-    echo "$0: debug[3]: PATTERN=$PATTERN" 1>&2
+    echo "$0: debug[3]: REPO_NAME=$REPO_NAME" 1>&2
+    echo "$0: debug[3]: CD_FAILED=$CD_FAILED" 1>&2
+    echo "$0: debug[3]: BIN_PATH=$BIN_PATH" 1>&2
+    echo "$0: debug[3]: BIN_DIR=$BIN_DIR" 1>&2
+    echo "$0: debug[3]: UNICODE_FIX_SED=$UNICODE_FIX_SED" 1>&2
 fi
 
 
@@ -309,36 +486,245 @@ if [[ -n $NOOP ]]; then
 fi
 
 
-# case: processing JSON from standard input
+# canonically process JSON from standard input via jsp
 #
-if [[ -z $JSON_FILE ]]; then
+case "$XPATHJSON_USE" in
 
-    if [[ $V_FLAG -ge 1 ]]; then
-	echo "$0: debug[1]: about to: $JSONPATH_SH ${OPTION[*]} -- $PATTERN" 1>&2
-    fi
-    "$JSONPATH_SH" "${OPTION[@]}" -- "$PATTERN"
-    status="$?"
-    if [[ $status -ne 0 ]]; then
-	echo "$0: ERROR: $JSONPATH_SH ${OPTION[*]} -- $PATTERN failed," \
-	     "error code: $status" 1>&2
-	exit 1
-    fi
-
-# case: processing JSON from a file
+# case: use jsp
 #
-else
+jsp)
 
-    if [[ $V_FLAG -ge 1 ]]; then
-	echo "$0: debug[1]: about to: $JSONPATH_SH ${OPTION[*]} -f $JSON_FILE -- $PATTERN" 1>&2
+    # if not set, set the default jsp pattern
+    #
+    PATTERN="${PATTERN:=$}"
+
+    # case: jsp processing from standard input
+    #
+    if [[ -z $JSON_FILE ]]; then
+
+	if [[ $V_FLAG -ge 3 ]]; then
+	    echo "$0: debug[3]: about to: $JSP_TOOL --no-color --format --indent 0 -- '$PATTERN'" 1>&2
+	fi
+	"$JSP_TOOL" --no-color --format --indent 0 -- "$PATTERN"
+	status="$?"
+	if [[ $status -ne 0 ]]; then
+	    echo "$0: ERROR: $JSP_TOOL --no-color --format --indent 0 -- '$PATTERN' failed", \
+		 "error code: $status" 1>&2
+	    exit 1
+	fi
+
+    # case: jsp processing from a file
+    #
+    else
+
+	if [[ $V_FLAG -ge 3 ]]; then
+	    echo "$0: debug[3]: about to: $JSP_TOOL --no-color --format --indent 0 -- '$PATTERN' < $JSON_FILE" 1>&2
+	fi
+	"$JSP_TOOL" --no-color --format --indent 0 -- "$PATTERN" < "$JSON_FILE"
+	status="$?"
+	if [[ $status -ne 0 ]]; then
+	    echo "$0: ERROR: $JSP_TOOL --no-color --format --indent 0 -- '$PATTERN' < $JSON_FILE failed", \
+		 "error code: $status" 1>&2
+	    exit 1
+	fi
+
+    # case: print only values from jsp output
+    #
+    fi | if [[ -n $PRINT_ONLY_VALUES ]]; then
+
+	# case: -q -b (print only values and remove double quotes) via jsp
+	#
+	if [[ -n $REMOVE_QUOTES ]]; then
+
+	    sed -E -e '/^\s*[]{}[],?\s*$/d' \
+		   -e 's/^\s*("[^"]*[^\\]*"):\s+/\1\t/' \
+		   -e 's/^"[^\t]*"\t//' \
+		   -e 's/,?$//' \
+		   -e 's/^"//' \
+		   -e 's/",?$//' \
+		   -e '/^\[$/d'
+	    status="$?"
+	    if [[ $status -ne 0 ]]; then
+		echo "$0: ERROR: pipe from -t jsp options: -q -b: sed -E -e ... failed", \
+		     "error code: $status" 1>&2
+		exit 1
+	    fi
+
+	# case: -b (print only values) via jsp
+	#
+	else
+
+	    sed -E -e '/^\s*[]{}[],?\s*$/d' \
+		   -e 's/^\s*("[^"]*[^\\]*"):\s+/\1\t/' \
+		   -e 's/^"[^\t]*"\t//' \
+		   -e 's/,?$//' \
+		   -e '/^\[$/d'
+	    status="$?"
+	    if [[ $status -ne 0 ]]; then
+		echo "$0: ERROR: pipe from -t jsp options: -b: sed -E -e ... failed", \
+		     "error code: $status" 1>&2
+		exit 1
+	    fi
+	fi
+
+    # case: print both JSON member and JSON value from jsp output
+    #
+    else
+
+	# case: -q without -b (print both JSON member and JSON value and remove double quotes) via jsp
+	#
+	if [[ -n $REMOVE_QUOTES ]]; then
+
+	    sed -E -e '/^\s*[]{}[],?\s*$/d' \
+		   -e 's/^\s*("[^"]*[^\\]*"):\s+/\1\t/' \
+		   -e 's/,?$//' \
+		   -e 's/^"//' \
+		   -e 's/"\t"?/\t/' \
+		   -e 's/"$//' \
+		   -e '/\t\[$/d'
+	    status="$?"
+	    if [[ $status -ne 0 ]]; then
+		echo "$0: ERROR: pipe from -t jsp options: -q: sed -E -e ... failed", \
+		     "error code: $status" 1>&2
+		exit 1
+	    fi
+
+	# case: without -b (print only values) via jsp
+	#
+	else
+
+	    sed -E -e '/^\s*[]{}[],?\s*$/d' \
+		   -e 's/^\s*("[^"]*[^\\]*"):\s+/\1\t/' \
+		   -e 's/,?$//' \
+		   -e '/\t\[$/d'
+	    status="$?"
+	    if [[ $status -ne 0 ]]; then
+		echo "$0: ERROR: pipe from -t jsp: sed -E -e ... failed", \
+		     "error code: $status" 1>&2
+		exit 1
+	    fi
+
+	fi
     fi
-    "$JSONPATH_SH" "${OPTION[@]}" -f "$JSON_FILE" -- "$PATTERN"
-    status="$?"
-    if [[ $status -ne 0 ]]; then
-	echo "$0: ERROR: $JSONPATH_SH ${OPTION[*]} -f $JSON_FILE -- $PATTERN failed," \
-	     "error code: $status" 1>&2
-	exit 1
+    ;;
+
+
+# case: use JSONPath.sh
+#
+JSONPath.sh)
+
+    # if not set, set the default JSONPath.sh pattern
+    #
+    PATTERN="${PATTERN:=$.*}"
+
+    # case: JSONPath.sh processing from standard input
+    #
+    if [[ -z $JSON_FILE ]]; then
+
+	if [[ $V_FLAG -ge 1 ]]; then
+	    echo "$0: debug[1]: about to: $JSONPATH_SH -w -u -- '$PATTERN'" 1>&2
+	fi
+	"$JSONPATH_SH" -w -u -- "$PATTERN"
+	status="$?"
+	if [[ $status -ne 0 ]]; then
+	    echo "$0: ERROR: $JSONPATH_SH -w -u -- '$PATTERN' failed", \
+		 "error code: $status" 1>&2
+	    exit 1
+	fi
+
+    # case: JSONPath.sh processing from a file
+    #
+    else
+
+	if [[ $V_FLAG -ge 1 ]]; then
+	    echo "$0: debug[1]: about to: $JSONPATH_SH -w -u -f $JSON_FILE -- '$PATTERN'" 1>&2
+	fi
+	"$JSONPATH_SH" -w -u -f "$JSON_FILE" -- "$PATTERN"
+	status="$?"
+	if [[ $status -ne 0 ]]; then
+	    echo "$0: ERROR: $JSONPATH_SH -w -u -f $JSON_FILE -- '$PATTERN' failed", \
+		 "error code: $status" 1>&2
+	    exit 1
+	fi
+
+    # case: print only values from JSONPath.sh output
+    #
+    fi | if [[ -n $PRINT_ONLY_VALUES ]]; then
+
+	# case: -q -b (print only values and remove double quotes and []'s) via JSONPath.sh
+	#
+	if [[ -n $REMOVE_QUOTES ]]; then
+
+	     sed -E -e 's/^\S*\s*//' \
+		    -e 's/^"//' \
+		    -e 's/"$//'
+	    status="$?"
+	    if [[ $status -ne 0 ]]; then
+		echo "$0: ERROR: pipe from -t jJSONPath.sh options: -q -b: sed -E -e ... failed", \
+		     "error code: $status" 1>&2
+		exit 1
+	    fi
+
+	# case: -b (print only values) via JSONPath.sh
+	#
+	else
+
+	    sed -E -e 's/^\S*\s*//'
+	    status="$?"
+	    if [[ $status -ne 0 ]]; then
+		echo "$0: ERROR: pipe from -t jJSONPath.sh options: -b: sed -E -e ... failed", \
+		     "error code: $status" 1>&2
+		exit 1
+	    fi
+	fi
+
+    # case: print both JSON member and JSON value from JSONPath.sh output
+    #
+    else
+
+	# case: -q without -b (print both JSON member and JSON value and remove double quotes and []'s) via JSONPath.sh
+	#
+	if [[ -n $REMOVE_QUOTES ]]; then
+
+	    sed -E -e 's/^\s+//' \
+		   -e 's/\s+$//' \
+		   -e 's/^\["?//' \
+		   -e 's/^(\S*),"/\1,/' \
+		   -e 's/\]\t/\t/' \
+		   -e 's/"\t"?/\t/' \
+		   -e 's/"$//'
+	    status="$?"
+	    if [[ $status -ne 0 ]]; then
+		echo "$0: ERROR: pipe from -t JSONPath.sh options: -q: sed -E -e ... failed", \
+		     "error code: $status" 1>&2
+		exit 1
+	    fi
+
+	# case: without -b (print only values) via JSONPath.sh
+	#
+	else
+
+	    sed -E -e 's/^\s+//' \
+		   -e 's/\s+$//'
+	    status="$?"
+	    if [[ $status -ne 0 ]]; then
+		echo "$0: ERROR: pipe from -t JSONPath.sh: sed -E -e ... failed", \
+		     "error code: $status" 1>&2
+		exit 1
+	    fi
+	fi
     fi
-fi
+    ;;
+
+
+# case: we do not know which XPath JSON tool to use
+#
+*)
+
+    echo "$0: ERROR: XPATHJSON_USE is neither jsp nor JSONPath.sh: $XPATHJSON_USE" 1>&2
+    exit 10
+    ;;
+esac
 
 
 # All Done!!! All Done!!! -- Jessica Noll, Age 2

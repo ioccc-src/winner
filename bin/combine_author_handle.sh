@@ -1,6 +1,38 @@
 #!/usr/bin/env bash
 #
-# all-jfmt.sh - canonically format all entry and author JSON files
+# combine_author_handle.sh - output all author/author_handle.JSON files as single JSON file
+#
+# We form a single JSON file out of all author/author_handle.JSON files.
+# We cannot simply cat the author/author_handle.JSON files because
+# each author/author_handle.JSON file opens and closes the JSON.
+# So this tool removes the intermediate JSON document opening "{"
+# and closing "}".
+#
+# Because jsp open remembers the last copy of a given JSON member name.
+# As such, we change the JSON member name "winning_entry_set" into
+# a unique "winning_entry_set.FILENO" where FILENO is the file number.
+# This the JSON member value will be preserved across all files.
+#
+# We also convert where FILENO is the file number and FILENAME is the filename:
+#
+#   "sort_word" : "data",
+#
+# into:
+#
+#   "sort_word.FILENO" : [
+#	{
+#	    "sort_word" : "data FILENAME"
+#	}
+#   ],
+#
+# This will allow jsp to print sort_word values.
+#
+# We also make sure that the last item from a given file ends in a comma (",)",
+# due to the bogosity of the so-called JSON spec.
+#
+# NOTE: We assume that all JSON files have been formatted with the
+# bin/jprint-wrapper.sh tool.  In particular the first line is just "{:,
+# and the last line is just "}" and each JSON element is on its own line.
 #
 # Copyright (c) 2024 by Landon Curt Noll.  All Rights Reserved.
 #
@@ -86,7 +118,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.1 2024-09-24"
+export VERSION="1.0 2024-09-23"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -114,12 +146,6 @@ export DO_NOT_PROCESS=
 export EXIT_CODE="0"
 
 
-# clear options we will add to tools
-#
-unset TOOL_OPTION
-declare -ag TOOL_OPTION
-
-
 # usage
 #
 export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
@@ -138,13 +164,14 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
 
 Exit codes:
      0         all OK
-     1	       some internal tool exited non-zero
+     1	       found unexpected \\uHexHexHexHex strings in JSON files
      2         -h and help string printed or -V and version string printed
      3         command line error
      4         bash version is too old
      5	       some internal tool is not found or not an executable file
      6	       problems found with or in the topdir or topdir/YYYY directory
      7	       problems found with or in the entry topdir/YYYY/dir directory
+     8	       file.json not a readable file
  >= 10         internal error
 
 $NAME version: $VERSION"
@@ -174,8 +201,6 @@ while getopts :hv:Vd:D:j:nN flag; do
 	   ;;
 	esac
 	DOCROOT_SLASH="$OPTARG"
-	TOOL_OPTION+=("-D")
-	TOOL_OPTION+=("$DOCROOT_SLASH")
 	;;
     n) NOOP="-n"
 	;;
@@ -206,11 +231,9 @@ shift $(( OPTIND - 1 ));
 if [[ $V_FLAG -ge 5 ]]; then
     echo "$0: debug[5]: file argument count: $#" 1>&2
 fi
-#
-# verify arg count and parse args
-#
 if [[ $# -ne 0 ]]; then
     echo "$0: ERROR: expected 0 args, found: $#" 1>&2
+    echo 1>&2
     echo "$USAGE" 1>&2
     exit 3
 fi
@@ -271,33 +294,6 @@ fi
 export AUTHOR_DIR="author"
 
 
-# verify that we have a bin subdirectory
-#
-export BIN_PATH="$TOPDIR/bin"
-if [[ ! -d $BIN_PATH ]]; then
-    echo "$0: ERROR: bin is not a directory under topdir: $BIN_PATH" 1>&2
-    exit 6
-fi
-export BIN_DIR="bin"
-
-
-# verify that the bin/jfmt-wrapper.sh tool is executable
-#
-JFMT_WRAPPER="$BIN_DIR/jfmt-wrapper.sh"
-if [[ ! -e $JFMT_WRAPPER ]]; then
-    echo  "$0: ERROR: bin/jfmt-wrapper.sh does not exist: $JFMT_WRAPPER" 1>&2
-    exit 5
-fi
-if [[ ! -f $JFMT_WRAPPER ]]; then
-    echo  "$0: ERROR: bin/jfmt-wrapper.sh is not a regular file: $JFMT_WRAPPER" 1>&2
-    exit 5
-fi
-if [[ ! -x $JFMT_WRAPPER ]]; then
-    echo  "$0: ERROR: bin/jfmt-wrapper.sh is not an executable file: $JFMT_WRAPPER" 1>&2
-    exit 5
-fi
-
-
 # verify we have a non-empty readable .top file
 #
 export TOP_FILE=".top"
@@ -337,17 +333,24 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: NOOP=$NOOP" 1>&2
     echo "$0: debug[3]: DO_NOT_PROCESS=$DO_NOT_PROCESS" 1>&2
     echo "$0: debug[3]: EXIT_CODE=$EXIT_CODE" 1>&2
-    for index in "${!TOOL_OPTION[@]}"; do
-	echo "$0: debug[3]: TOOL_OPTION[$index]=${TOOL_OPTION[$index]}" 1>&2
-    done
     echo "$0: debug[3]: REPO_NAME=$REPO_NAME" 1>&2
     echo "$0: debug[3]: CD_FAILED=$CD_FAILED" 1>&2
     echo "$0: debug[3]: AUTHOR_PATH=$AUTHOR_PATH" 1>&2
     echo "$0: debug[3]: AUTHOR_DIR=$AUTHOR_DIR" 1>&2
-    echo "$0: debug[3]: BIN_PATH=$BIN_PATH" 1>&2
-    echo "$0: debug[3]: BIN_DIR=$BIN_DIR" 1>&2
-    echo "$0: debug[3]: JFMT_WRAPPER=$JFMT_WRAPPER" 1>&2
-    echo "$0: debug[3]: TOP_FILE=$TOP_FILE" 1>&2
+fi
+
+
+# determine the number of author_handle.json files
+#
+AUTHOR_COUNT=$(find "$AUTHOR_DIR" -type f -name '*.json' -print | wc -l)
+export AUTHOR_COUNT
+if [[ -z $AUTHOR_COUNT || $AUTHOR_COUNT -le 0 ]]; then
+    echo "$0: ERROR: found no author_handle.json files under: $AUTHOR_DIR" 1>&2
+    exit 10
+fi
+if [[ $AUTHOR_COUNT -le 1 ]]; then
+    echo "$0: ERROR: expected more than 1 author_handle.json files under: $AUTHOR_DIR" 1>&2
+    exit 11
 fi
 
 
@@ -361,245 +364,77 @@ if [[ -n $DO_NOT_PROCESS ]]; then
 fi
 
 
-# create a temporary author_handle inventory file
+# create a list of all author/author_handle files
 #
-export TMP_AUTHOR_HANDLE_INVENTORY=".tmp.$NAME.AUTHOR_HANDLE_INVENTORY.$$.tmp"
+export TMP_AUTHOR_HANDLE_LIST=".tmp.$NAME.AUTHOR_HANDLE_LIST.$$.tmp"
 if [[ $V_FLAG -ge 3 ]]; then
-    echo  "$0: debug[3]: temporary author_handle inventory file: $TMP_AUTHOR_HANDLE_INVENTORY" 1>&2
+    echo  "$0: debug[3]: list pf author_handle JSON files: $TMP_AUTHOR_HANDLE_LIST" 1>&2
 fi
-trap 'rm -f $TMP_AUTHOR_HANDLE_INVENTORY; exit' 0 1 2 3 15
-rm -f "$TMP_AUTHOR_HANDLE_INVENTORY"
-if [[ -e $TMP_AUTHOR_HANDLE_INVENTORY ]]; then
-    echo "$0: ERROR: cannot remove temporary author_handle inventory file: $TMP_AUTHOR_HANDLE_INVENTORY" 1>&2
-    exit 20
+trap 'rm -f $TMP_AUTHOR_HANDLE_LIST; exit' 0 1 2 3 15
+rm -f "$TMP_AUTHOR_HANDLE_LIST"
+if [[ -e $TMP_AUTHOR_HANDLE_LIST ]]; then
+    echo "$0: ERROR: cannot remove list pf author_handle JSON files: $TMP_AUTHOR_HANDLE_LIST" 1>&2
+    exit 12
 fi
-: > "$TMP_AUTHOR_HANDLE_INVENTORY"
-if [[ ! -e $TMP_AUTHOR_HANDLE_INVENTORY ]]; then
-    echo "$0: ERROR: cannot create temporary author_handle inventory file: $TMP_AUTHOR_HANDLE_INVENTORY" 1>&2
-    exit 21
+find "$AUTHOR_DIR" -type f -name '*.json' -print | LC_ALL=C sort -t / -d > "$TMP_AUTHOR_HANDLE_LIST"
+if [[ ! -e $TMP_AUTHOR_HANDLE_LIST ]]; then
+    echo "$0: ERROR: cannot create list pf author_handle JSON files: $TMP_AUTHOR_HANDLE_LIST" 1>&2
+    exit 13
 fi
 
 
-# process each year
+# combine all author_handle.json files
 #
-export YYYY
-for YYYY in $(< "$TOP_FILE"); do
+export SED_PART1='s;^(\s*)("sort_word" : )"(.*)",$;\1"sort_word.'
+export SED_PART2='" : [\n\1    {\n\1        \2"\3 '
+export SED_PART3='"\n\1    }\n\1],;'
+export count=0
+echo "{"
+for AUTHOR_HANDLE_JSON in $(< "$TMP_AUTHOR_HANDLE_LIST"); do
 
-    # debug YYYY
+    # count file
     #
-    if [[ $V_FLAG -ge 1 ]]; then
-	echo "$0: debug[1]: for $JFMT_WRAPPER: starting to process year: $YYYY" 1>&2
-    fi
+    ((++count))
 
-    # verify that YYYY is a readable directory
+    # case: not the last file
     #
-    if [[ ! -e $YYYY ]]; then
-	echo  "$0: ERROR: YYYY does not exist: $YYYY" 1>&2
-	EXIT_CODE="6"  # exit 6
-	echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	continue
-    fi
-    if [[ ! -d $YYYY ]]; then
-	echo  "$0: ERROR: YYYY is not a directory: $YYYY" 1>&2
-	EXIT_CODE="6"  # exit 6
-	echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	continue
-    fi
-    if [[ ! -r $YYYY ]]; then
-	echo  "$0: ERROR: YYYY is not an readable directory: $YYYY" 1>&2
-	EXIT_CODE="6"  # exit 6
-	echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	continue
-    fi
-
-    # verify that YYYY has a non-empty readable .year file
+    # Remove 1st and last lines, and add , (comma) to the end of the last line.
     #
-    export YEAR_FILE="$YYYY/.year"
-    if [[ ! -e $YEAR_FILE ]]; then
-	echo  "$0: ERROR: YYYY/.year does not exist: $YEAR_FILE" 1>&2
-	EXIT_CODE="6"  # exit 6
-	echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	continue
-    fi
-    if [[ ! -f $YEAR_FILE ]]; then
-	echo  "$0: ERROR: YYYY/.year is not a regular file: $YEAR_FILE" 1>&2
-	EXIT_CODE="6"  # exit 6
-	echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	continue
-    fi
-    if [[ ! -r $YEAR_FILE ]]; then
-	echo  "$0: ERROR: YYYY/.year is not an readable file: $YEAR_FILE" 1>&2
-	EXIT_CODE="6"  # exit 6
-	echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	continue
-    fi
-    if [[ ! -s $YEAR_FILE ]]; then
-	echo  "$0: ERROR: YYYY/.year is not a non-empty readable file: $YEAR_FILE" 1>&2
-	EXIT_CODE="6"  # exit 6
-	echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	continue
-    fi
-
-    # process each entry directory under YYYY
+    # We also replace "winning_entry_set" with "winning_entry_set.FILENO" where
+    # FILENO is the file number.
     #
-    export YYYY_DIR
-    for YYYY_DIR in $(< "$YEAR_FILE"); do
+    # We also convert where FILENO is the file number and FILENAME is the filename:
+    #
+    #   "sort_word" : "data",
+    #
+    # into:
+    #
+    #   "sort_word.FILENO" : [
+    #	    {
+    #	        "sort_word" : "data FILENAME"
+    #	    }
+    #   ],
+    #
+    if [[ $count -lt $AUTHOR_COUNT ]]; then
 
-	# debug YYYY
-	#
-	if [[ $V_FLAG -ge 3 ]]; then
-	    echo "$0: debug[3]: for $JFMT_WRAPPER: starting to process year/dir: $YYYY_DIR" 1>&2
-	fi
+	tail -n +2 "$AUTHOR_HANDLE_JSON" |
+	  head -n -1 |
+	  sed -E -e 's/"winning_entry_set"/"winning_entry_set.'"$count"'"/' \
+		 -e "$SED_PART1$count$SED_PART2$AUTHOR_HANDLE_JSON$SED_PART3" \
+	         -e '$s/$/,/'
 
-	# parse YYYY_DIR
-	#
-	if [[ ! -d $YYYY_DIR ]]; then
-	    echo "$0: ERROR: YYYY_DIR is not a directory: $YYYY_DIR" 1>&2
-	    EXIT_CODE="6"  # exit 6
-	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	    continue
-	fi
-	if [[ ! -w $YYYY_DIR ]]; then
-	    echo "$0: ERROR: YYYY_DIR is not a writable directory: $YYYY_DIR" 1>&2
-	    EXIT_CODE="6"  # exit 6
-	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	    continue
-	fi
-	export YEAR_DIR=${YYYY_DIR%%/*}
-	if [[ -z $YEAR_DIR ]]; then
-	    echo "$0: ERROR: YYYY_DIR not in YYYY/dir form: $YYYY_DIR" 1>&2
-	    EXIT_CODE="6"  # exit 6
-	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	    continue
-	fi
-	export ENTRY_DIR=${YYYY_DIR#*/}
-	if [[ -z $ENTRY_DIR ]]; then
-	    echo "$0: ERROR: YYYY_DIR not in $YEAR_DIR/dir form: $YYYY_DIR" 1>&2
-	    EXIT_CODE="6"  # exit 6
-	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	    continue
-	fi
-	if [[ $ENTRY_DIR = */* ]]; then
-	    echo "$0: ERROR: YYYY_DIR: $YYYY_DIR dir contains a /: $ENTRY_DIR" 1>&2
-	    EXIT_CODE="6"  # exit 6
-	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	    continue
-	fi
+    # case: last file
+    #
+    else
 
-	# verify that YYYY_DIR is a writable directory
-	#
-	if [[ ! -e $YYYY_DIR ]]; then
-	    echo  "$0: ERROR: YYYY_DIR does not exist: $YYYY_DIR" 1>&2
-	    EXIT_CODE="7"  # exit 7
-	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	    continue
-	fi
-	if [[ ! -d $YYYY_DIR ]]; then
-	    echo  "$0: ERROR: YYYY_DIR is not a directory: $YYYY_DIR" 1>&2
-	    EXIT_CODE="7"  # exit 7
-	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	    continue
-	fi
-	if [[ ! -w $YYYY_DIR ]]; then
-	    echo  "$0: ERROR: YYYY_DIR is not an writable directory: $YYYY_DIR" 1>&2
-	    EXIT_CODE="7"  # exit 7
-	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	    continue
-	fi
+	tail -n +2 "$AUTHOR_HANDLE_JSON" |
+	  head -n -1 |
+	  sed -E -e 's/"winning_entry_set"/"winning_entry_set.'"$count"'"/' \
+		 -e "$SED_PART1$count$SED_PART2$AUTHOR_HANDLE_JSON$SED_PART3"
+	echo '}'
 
-	# verify YYYY/dir/.path
-	#
-	export DOT_PATH="$YYYY_DIR/.path"
-	if [[ ! -s $DOT_PATH ]]; then
-	    echo "$0: ERROR: not a non-empty file: $DOT_PATH" 1>&2
-	    EXIT_CODE="7"  # exit 7
-	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	    continue
-	fi
-	DOT_PATH_CONTENT=$(< "$DOT_PATH")
-	if [[ $YYYY_DIR != "$DOT_PATH_CONTENT" ]]; then
-	    echo "$0: ERROR: arg: $YYYY_DIR does not match $DOT_PATH contents: $DOT_PATH_CONTENT" 1>&2
-	    EXIT_CODE="7"  # exit 7
-	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	    continue
-	fi
-
-	# verify the YYYY/dir/.entry.json
-	#
-	export ENTRY_JSON="$YYYY_DIR/.entry.json"
-	if [[ ! -e $ENTRY_JSON ]]; then
-	    echo "$0: ERROR: .entry.json does not exist: $ENTRY_JSON" 1>&2
-	    EXIT_CODE="7"  # exit 7
-	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	    continue
-	fi
-	if [[ ! -f $ENTRY_JSON ]]; then
-	    echo "$0: ERROR: .entry.json is not a file: $ENTRY_JSON" 1>&2
-	    EXIT_CODE="7"  # exit 7
-	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	    continue
-	fi
-	if [[ ! -r $ENTRY_JSON ]]; then
-	    echo "$0: ERROR: .entry.json is not a readable file: $ENTRY_JSON" 1>&2
-	    EXIT_CODE="7"  # exit 7
-	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	    continue
-	fi
-
-	# canonically format YYYY/dir/.entry.json unless -n
-	#
-	if [[ -z $NOOP ]]; then
-	    if [[ $V_FLAG -ge 1 ]]; then
-		echo "$0: debug[1]: about to run: $JFMT_WRAPPER ${TOOL_OPTION[*]} -- $YYYY_DIR/.entry.json" 1>&2
-	    fi
-	    "$JFMT_WRAPPER" "${TOOL_OPTION[@]}" -- "$YYYY_DIR/.entry.json"
-	    status="$?"
-	    if [[ $status -ne 0 ]]; then
-		echo "$0: ERROR: tool: $JFMT_WRAPPER ${TOOL_OPTION[*]} -- $YYYY_DIR/.entry.json failed, error: $status" 1>&2
-		EXIT_CODE="1"  # exit 1
-		echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-		continue
-	    fi
-
-	# report disabled by -n
-	#
-	elif [[ $V_FLAG -ge 5 ]]; then
-	    echo "$0: debug[5]: because of -n, did not run: $JFMT_WRAPPER ${TOOL_OPTION[*]} -- $YYYY_DIR/.entry.json" 1>&2
-	fi
-    done
+    fi
 done
-
-
-# process author/author_handle.json files
-#
-if [[ $V_FLAG -ge 1 ]]; then
-    echo "$0: debug[1]: for $JFMT_WRAPPER: starting to process author_handle.json files under: $AUTHOR_DIR" 1>&2
-fi
-find "$AUTHOR_DIR" -mindepth 1 -maxdepth 1 -type f -name '*.json' 2>/dev/null |
-  LC_ALL=C sort -d -u > "$TMP_AUTHOR_HANDLE_INVENTORY"
-while read -r AUTHOR_HANDLE_JSON; do
-
-    # canonically format author/author_handle.json unless -n
-    #
-    if [[ -z $NOOP ]]; then
-	if [[ $V_FLAG -ge 1 ]]; then
-	    echo "$0: debug[1]: about to run: $JFMT_WRAPPER ${TOOL_OPTION[*]} -- $AUTHOR_HANDLE_JSON" 1>&2
-	fi
-	"$JFMT_WRAPPER" "${TOOL_OPTION[@]}" -- "$AUTHOR_HANDLE_JSON"
-	status="$?"
-	if [[ $status -ne 0 ]]; then
-	    echo "$0: ERROR: tool: $JFMT_WRAPPER ${TOOL_OPTION[*]} -- $AUTHOR_HANDLE_JSON failed, error: $status" 1>&2
-	    EXIT_CODE="1"  # exit 1
-	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	    continue
-	fi
-
-    # report disabled by -n
-    #
-    elif [[ $V_FLAG -ge 5 ]]; then
-	echo "$0: debug[5]: because of -n, did not run: $JFMT_WRAPPER ${TOOL_OPTION[*]} -- $AUTHOR_HANDLE_JSON" 1>&2
-    fi
-done < "$TMP_AUTHOR_HANDLE_INVENTORY"
 
 
 # All Done!!! All Done!!! -- Jessica Noll, Age 2

@@ -311,7 +311,6 @@ help:
 	@echo 'make tab_check		;: check for ASCII tabs in markdown files'
 	@echo 'make genpath		;: form top level .top and .allyear, YYYY level .year and winner .path files'
 	@echo 'make genfilelist	;: generate YYYY level .filelist'
-	@echo 'make all_jfmt		;: be sure all JSON files are canonical'
 	@echo 'make verify_entry_files	;: check to be sure all files in all entries exist'
 	@echo 'make sort_gitignore	;: sort .gitignore files according to rules in bin/sgi.sh'
 	@echo 'make gen_authors	;: generate the top level authors.html page'
@@ -353,6 +352,8 @@ help:
 	@echo
 	@echo 'make untar_entry_tarball;: untar all entry tarballs'
 	@echo 'make untar_year_tarball	;: untar all year level tarballs'
+	@echo
+	@echo 'make all_jfmt		;: convert all entry and author JSON files into canonical form'
 	@echo
 	@echo 'make form_entry_tarball	;: form all entry compressed tarballs'
 	@echo 'make form_year_tarball	;: form all IOCCC year level compressed tarballs'
@@ -715,7 +716,6 @@ www:
 	@echo '=-=-=-=-= IOCCC complete make genpath =-=-=-=-='
 	${MAKE} genfilelist
 	${MAKE} sort_gitignore
-	${MAKE} all_jfmt
 	${MAKE} verify_entry_files
 	${MAKE} gen_authors
 	${MAKE} gen_location
@@ -769,6 +769,7 @@ tar:
 	${MAKE} clobber
 	${MAKE} genpath
 	${MAKE} genfilelist
+	${MAKE} all_jfmt
 	${MAKE} verify_entry_files
 	${MAKE} sort_gitignore
 	${MAKE} form_entry_tarball

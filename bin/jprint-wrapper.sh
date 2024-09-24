@@ -2,9 +2,27 @@
 #
 # jprint-wrapper.sh - canonically format JSON to stdout
 #
-# We form a wrapper for the jprint(1), a tool that will format JSON in a canonical style to stdout.
-# NOTE: jprint(1) is a planned tool based on jfmt(1). As of 2024 July 28 the jfmt(1) tool has not been written,
-# so jprint-wrapper.sh uses the JSONPath.sh(1) tool from the recently forked and modified JSONPath.sh tool:
+# Print JSON in canonical format to standard output.
+#
+# We form a wrapper for the jprint(1), a tool that will format a JSON
+# file into a canonical style.
+#
+# NOTE: As of 2024 Sep 09 the jprint(1) tool has not been written,
+#       so jprint-wrapper.sh uses with the jsp tool from:
+#
+#   https://github.com/kjozsa/jsp
+#
+#   FYI: For macOS, use homebrew to install pipx:
+#
+#		brew install pipx
+#
+#	 Next, use pipx to install jsp:
+#
+#		pipx --global install jsp
+#
+#	 and then be sure that ~/.local/bin is in your $PATH.
+#
+# or the JSONPath.sh(1) tool from:
 #
 #   https://github.com/lcn2/JSONPath.sh
 #
@@ -92,43 +110,50 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.1 2024-08-20"
+export VERSION="1.3 2024-09-23"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
-
-
-# Until we have a true jprint tool, we will use the modified JSONPath.sh
-#
-# BTW: A jprint tool might be a special case of a jfmt tool, with a command line
-#      optimized for just displaying JSON in a nicely formatted canonical way.
-#
-# XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
-# XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
-# XXX - until we have the jprint command, we must FAKE PARSE IOCCC JSON files       - XXX
-# XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
-# XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
-#
-export JSONPATH_REPO="https://github.com/lcn2/JSONPath.sh"
-JSONPATH_SH=$(type -P JSONPath.sh)
-export JSONPATH_SH
-if [[ -z $JSONPATH_SH ]]; then
-    echo "$0: FATAL: JSONPath.sh tool is not installed or not in \$PATH" 1>&2
-    echo "$0: notice: obtain JSONPath.sh from: $JSONPATH_REPO" 1>&2
+GIT_TOOL=$(type -P git)
+export GIT_TOOL
+if [[ -z "$GIT_TOOL" ]]; then
+    echo "$0: FATAL: git tool is not installed or not in \$PATH" 1>&2
     exit 5
 fi
-# verify JSONPath.sh supports -S -A
+"$GIT_TOOL" rev-parse --is-inside-work-tree >/dev/null 2>&1
+status="$?"
+if [[ $status -eq 0 ]]; then
+    TOPDIR=$("$GIT_TOOL" rev-parse --show-toplevel)
+fi
+export TOPDIR
+export REPO_TOP_URL="https://github.com/ioccc-src/temp-test-ioccc"
+# GitHub puts individual files under the "blob/master" sub-directory.
+export REPO_URL="$REPO_TOP_URL/blob/master"
+
+
+# Until we have a true jfmt tool, we will use wither jsp or the modified JSONPath.sh
+#
+# XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
+# XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
+# XXX - until we have the jprint command, we must use external tools to parse JSON  - XXX
+# XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
+# XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
+#
+export JSP_REPO="https://github.com/kjozsa/jsp"
+export JSONPATH_REPO="https://github.com/lcn2/JSONPath.sh"
 export FIZZBIN_JSON='"fizzbin"'
-if ! "$JSONPATH_SH" -S -A -p >/dev/null 2>&1; then
-    echo "$0: FATAL: JSONPath.sh tool does not support -S -A -T: $FIZZBIN_JSON" 1>&2
-    echo "$0: notice: we recommend you obtain and install JSONPath.sh from: $JSONPATH_REPO" 1>&2
-    exit 5
-fi <<< "$FIZZBIN_JSON"
+export JSP_TOOL=""
+JSP_TOOL=$(type -P jsp)
+export JSONPATH_SH=""
+JSONPATH_SH=$(type -P JSONPath.sh)
+# set the defaiult XPath for JSON
+export XPATHJSON_USE="jsp"
+export QUICK_CHECK=""
 
 
 # set usage message
 #
-export USAGE="usage: $0 [-h] [-v level] [-V] [-n] [-N] [-j JSONPath.sh] [file.json]
+export USAGE="usage: $0 [-h] [-v level] [-V] [-n] [-N] [-t tool] [-Q] [file.json]
 
 	-h		print help message and exit
 	-v level	set verbosity level (def level: 0)
@@ -137,17 +162,18 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-n] [-N] [-j JSONPath.sh] [file.js
 	-n		do nothing (same as -N) (def: do the action)
 	-N		do not process file, just parse arguments and ignore the file (def: process the file)
 
-	-j JSONPath.sh	path to the JSONPath.sh tool (not the wrapper) (def: $JSONPATH_SH)
+	-t tool		tool to use: jsp or JSONPath.sh (def: try jsp, otherwise try JSONPath.sh)
+	-Q		quick check tool using trivial input (def: do not)
 
 	file.json	The JSON file to write, in canonical form, to stdout (def: read stdin)
 
 Exit codes:
      0         all OK
-     1	       JSONPath.sh exited non-zero
+     1	       some internal tool exited non-zero
      2         -h and help string printed or -V and version string printed
      3         command line error
      4         bash version is too old
-     5	       internal tool not found
+     5	       some internal tool not found
      6	       file.json does not exist or is not readable
  >= 10         internal error
 
@@ -162,7 +188,7 @@ export DO_NOT_PROCESS=
 
 # parse command line
 #
-while getopts :hv:VnNj: flag; do
+while getopts :hv:VnNt:Q flag; do
   case "$flag" in
     h) echo "$USAGE" 1>&2
 	exit 2
@@ -176,8 +202,19 @@ while getopts :hv:VnNj: flag; do
 	;;
     N) DO_NOT_PROCESS="-N"
 	;;
-    j) JSONPATH_SH="$OPTARG"
-	;;
+    t) # validate -t tool
+       case "$OPTARG" in
+       jsp) XPATHJSON_USE="jsp" ;;
+       JSONPath.sh) XPATHJSON_USE="JSONPath.sh" ;;
+       *) echo "$0: ERROR: unknown -t option: $OPTARG" 1>&2
+	  echo 1>&2
+          echo "$USAGE" 1>&2
+          exit 3
+	  ;;
+       esac
+       ;;
+    Q) QUICK_CHECK="true"
+       ;;
     \?) echo "$0: ERROR: invalid option: -$OPTARG" 1>&2
 	echo 1>&2
 	echo "$USAGE" 1>&2
@@ -234,6 +271,155 @@ if [[ -n $JSON_FILE ]]; then
 fi
 
 
+# verify that we have a topdir directory
+#
+REPO_NAME=$(basename "$REPO_TOP_URL")
+export REPO_NAME
+if [[ -z $TOPDIR ]]; then
+    echo "$0: ERROR: cannot find top of git repo directory" 1>&2
+    echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_TOP_URL; cd $REPO_NAME" 1>&2
+    exit 6
+fi
+if [[ ! -e $TOPDIR ]]; then
+    echo "$0: ERROR: TOPDIR does not exist: $TOPDIR" 1>&2
+    echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_TOP_URL; cd $REPO_NAME" 1>&2
+    exit 6
+fi
+if [[ ! -d $TOPDIR ]]; then
+    echo "$0: ERROR: TOPDIR is not a directory: $TOPDIR" 1>&2
+    echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_TOP_URL; cd $REPO_NAME" 1>&2
+    exit 6
+fi
+
+
+# cd to topdir
+#
+if [[ ! -e $TOPDIR ]]; then
+    echo "$0: ERROR: cannot cd to non-existent path: $TOPDIR" 1>&2
+    exit 6
+fi
+if [[ ! -d $TOPDIR ]]; then
+    echo "$0: ERROR: cannot cd to a non-directory: $TOPDIR" 1>&2
+    exit 6
+fi
+export CD_FAILED
+if [[ $V_FLAG -ge 5 ]]; then
+    echo "$0: debug[5]: about to: cd $TOPDIR" 1>&2
+fi
+cd "$TOPDIR" || CD_FAILED="true"
+if [[ -n $CD_FAILED ]]; then
+    echo "$0: ERROR: cd $TOPDIR failed" 1>&2
+    exit 6
+fi
+if [[ $V_FLAG -ge 3 ]]; then
+    echo "$0: debug[3]: now in directory: $(/bin/pwd)" 1>&2
+fi
+
+
+# verify that we have a bin subdirectory
+#
+export BIN_PATH="$TOPDIR/bin"
+if [[ ! -d $BIN_PATH ]]; then
+    echo "$0: ERROR: bin is not a directory under topdir: $BIN_PATH" 1>&2
+    exit 6
+fi
+export BIN_DIR="bin"
+
+
+# verify that the bin/unicode-fix.sed tool is executable
+#
+export UNICODE_FIX_SED="$BIN_DIR/unicode-fix.sed"
+if [[ ! -e $UNICODE_FIX_SED ]]; then
+    echo  "$0: ERROR: bin/unicode-fix.sed does not exist: $UNICODE_FIX_SED" 1>&2
+    exit 5
+fi
+if [[ ! -f $UNICODE_FIX_SED ]]; then
+    echo  "$0: ERROR: bin/unicode-fix.sed is not a regular file: $UNICODE_FIX_SED" 1>&2
+    exit 5
+fi
+if [[ ! -r $UNICODE_FIX_SED ]]; then
+    echo  "$0: ERROR: bin/unicode-fix.sed is not an readable file: $UNICODE_FIX_SED" 1>&2
+    exit 5
+fi
+
+
+# validate the XPath for JSON tool
+#
+case "$XPATHJSON_USE" in
+
+    # case: we will use JSONPath.sh
+    #
+    JSONPath.sh)
+
+	# try JSONPath.sh
+	#
+	if [[ -z $JSONPATH_SH || ! -x $JSONPATH_SH ]]; then
+	    echo "$0: ERROR: JSONPath.sh tool is not installed, is not executable, or not in \$PATH" 1>&2
+	    echo "$0: notice: obtain jsp from: $JSP_REPO" 1>&2
+	    echo "$0: notice: or obtain jsp via \"pipx install jsp\" and placing ~/.local/bin in \$PATH" 1>&2
+	    echo "$0: notice: obtain JSONPath.sh from: $JSONPATH_REPO" 1>&2
+	    echo "$0: notice: if possible install jsp instead of JSONPath.sh as jsp is faster" 1>&2
+	    exit 5
+	fi
+
+	# case: -Q - perform quick check
+	#
+	if [[ -n $QUICK_CHECK ]]; then
+	    # verify JSONPath.sh supports -S -A -p
+	    if ! "$JSONPATH_SH" -S -A -p >/dev/null 2>&1; then
+		echo "$0: ERROR: JSONPath.sh tool does not support -S -A: $FIZZBIN_JSON" 1>&2
+		echo "$0: notice: we recommend you obtain and install jsp from: $JSP_REPO" 1>&2
+		echo "$0: notice: or obtain jsp via \"pipx install jsp\" and placing ~/.local/bin in \$PATH" 1>&2
+		echo "$0: notice: otherwise install JSONPath.sh from: $JSONPATH_REPO" 1>&2
+		echo "$0: notice: if possible install jsp instead of JSONPath.sh as jsp is faster" 1>&2
+		exit 5
+	    fi <<< "$FIZZBIN_JSON"
+	fi
+	;;
+
+    # case: we will use jsp
+    #
+    jsp)
+
+	# try jsp
+	#
+	if [[ -z $JSP_TOOL || ! -x $JSP_TOOL ]]; then
+	    echo "$0: ERROR: jsp.sh tool is not installed, is not executable, or not in \$PATH" 1>&2
+	    echo "$0: notice: obtain jsp from: $JSP_REPO" 1>&2
+	    echo "$0: notice: or obtain jsp via \"pipx install jsp\" and placing ~/.local/bin in \$PATH" 1>&2
+	    echo "$0: notice: obtain JSONPath.sh from: $JSONPATH_REPO" 1>&2
+	    echo "$0: notice: if possible install jsp instead of JSONPath.sh as jsp is faster" 1>&2
+	    exit 5
+	fi
+
+	# case: -Q - perform quick check
+	#
+	if [[ -n $QUICK_CHECK ]]; then
+	    # verify jsp
+	    if ! "$JSP_TOOL" --indent 4 --format --no-color >/dev/null 2>&1; then
+		echo "$0: ERROR: jsp tool does not support --indent 4 --format --no-color: $FIZZBIN_JSON" 1>&2
+		echo "$0: notice: you might need to update and reinstall jsp from: $JSP_REPO" 1>&2
+		echo "$0: notice: or obtain jsp via \"pipx install jsp\" and placing ~/.local/bin in \$PATH" 1>&2
+		echo "$0: notice: or you might try to obtain and install JSONPath.sh from: $JSONPATH_REPO" 1>&2
+		echo "$0: notice: if possible install jsp instead of JSONPath.sh as jsp is faster" 1>&2
+		exit 5
+	    fi <<< "$FIZZBIN_JSON"
+	fi
+	;;
+
+    # case: we do not have an XPath for JSON tool
+    #
+    *)
+	echo "$0: ERROR: cannot find an XPath JSON tool to use" 1>&2
+	echo "$0: notice: we recommend you obtain and install jsp from: $JSP_REPO" 1>&2
+	echo "$0: notice: or obtain jsp via \"pipx install jsp\" and placing ~/.local/bin in \$PATH" 1>&2
+	echo "$0: notice: otherwise install JSONPath.sh from: $JSONPATH_REPO" 1>&2
+	echo "$0: notice: if possible install jsp instead of JSONPath.sh as jsp is faster" 1>&2
+	exit 5
+	;;
+esac
+
+
 # print running info if verbose
 #
 # If -v 3 or higher, print exported variables in order that they were exported.
@@ -242,12 +428,25 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: VERSION=$VERSION" 1>&2
     echo "$0: debug[3]: NAME=$NAME" 1>&2
     echo "$0: debug[3]: V_FLAG=$V_FLAG" 1>&2
+    echo "$0: debug[3]: GIT_TOOL=$GIT_TOOL" 1>&2
+    echo "$0: debug[3]: TOPDIR=$TOPDIR" 1>&2
+    echo "$0: debug[3]: REPO_TOP_URL=$REPO_TOP_URL" 1>&2
+    echo "$0: debug[3]: REPO_URL=$REPO_URL" 1>&2
+    echo "$0: debug[3]: JSP_REPO=$JSP_REPO" 1>&2
     echo "$0: debug[3]: JSONPATH_REPO=$JSONPATH_REPO" 1>&2
-    echo "$0: debug[3]: JSONPATH_SH=$JSONPATH_SH" 1>&2
     echo "$0: debug[3]: FIZZBIN_JSON=$FIZZBIN_JSON" 1>&2
+    echo "$0: debug[3]: JSP_TOOL=$JSP_TOOL" 1>&2
+    echo "$0: debug[3]: JSONPATH_SH=$JSONPATH_SH" 1>&2
+    echo "$0: debug[3]: XPATHJSON_USE=$XPATHJSON_USE" 1>&2
+    echo "$0: debug[3]: QUICK_CHECK=$QUICK_CHECK" 1>&2
     echo "$0: debug[3]: NOOP=$NOOP" 1>&2
     echo "$0: debug[3]: DO_NOT_PROCESS=$DO_NOT_PROCESS" 1>&2
     echo "$0: debug[3]: JSON_FILE=$JSON_FILE" 1>&2
+    echo "$0: debug[3]: REPO_NAME=$REPO_NAME" 1>&2
+    echo "$0: debug[3]: CD_FAILED=$CD_FAILED" 1>&2
+    echo "$0: debug[3]: BIN_PATH=$BIN_PATH" 1>&2
+    echo "$0: debug[3]: BIN_DIR=$BIN_DIR" 1>&2
+    echo "$0: debug[3]: UNICODE_FIX_SED=$UNICODE_FIX_SED" 1>&2
 fi
 
 
@@ -271,38 +470,88 @@ if [[ -n $NOOP ]]; then
 fi
 
 
-# case: processing JSON from standard input
+# print the JSON file in canonical format
 #
-if [[ -z $JSON_FILE ]]; then
+case "$XPATHJSON_USE" in
 
-    if [[ $V_FLAG -ge 1 ]]; then
-	echo "$0: debug[1]: about to: $JSONPATH_SH -S -A -j" 1>&2
-    fi
-    "$JSONPATH_SH" -S -A -j
-    status="$?"
+    # case: use jsp
+    #
+    jsp)
 
-    if [[ $status -ne 0 ]]; then
-	echo "$0: ERROR: $JSONPATH_SH -S -A -j failed," \
-	     "error code: $status" 1>&2
-	exit 1
-    fi
+	# case: processing JSON from stdin via jsp
+	#
+	if [[ -z $JSON_FILE ]]; then
+	    if [[ $V_FLAG -ge 3 ]]; then
+		echo "$0: debug[3]: about to: $JSP_TOOL --indent 4 --format --no-color | sed ..." 1>&2
+	    fi
+	    "$JSP_TOOL" --indent 4 --format --no-color |
+		sed -f "$UNICODE_FIX_SED" -e 's/\(\S\): /\1 : /'
+	    status_codes=("${PIPESTATUS[@]}")
+	    if [[ ${status_codes[*]} =~ [1-9] ]]; then
+		echo "$0: ERROR: $JSP_TOOL --indent 4 --format --no-color | sed ...  failed", \
+		     "error codes: ${status_codes[*]}" 1>&2
+		exit 1
+	    fi
 
-# case: processing JSON from a file
-#
-else
+	# processing JSON from a file via jsp
+	#
+	else
+	    if [[ $V_FLAG -ge 3 ]]; then
+		echo "$0: debug[3]: about to: $JSP_TOOL --indent 4 --format --no-color < $JSON_FILE | sed ..." 1>&2
+	    fi
+	    "$JSP_TOOL" --indent 4 --format --no-color < "$JSON_FILE" |
+		sed -f "$UNICODE_FIX_SED" -e 's/\(\S\): /\1 : /'
+	    status_codes=("${PIPESTATUS[@]}")
+	    if [[ ${status_codes[*]} =~ [1-9] ]]; then
+		echo "$0: ERROR: $JSP_TOOL --indent 4 --format --no-color < $JSON_FILE | sed ...  failed", \
+		     "error codes: ${status_codes[*]}" 1>&2
+		exit 1
+	    fi
+	fi
+	;;
 
-    if [[ $V_FLAG -ge 1 ]]; then
-	echo "$0: debug[1]: about to: $JSONPATH_SH -S -A -j -f $JSON_FILE" 1>&2
-    fi
-    "$JSONPATH_SH" -S -A -j -f "$JSON_FILE"
-    status="$?"
-    if [[ $status -ne 0 ]]; then
-	echo "$0: ERROR: $JSONPATH_SH -S -A -j -f $JSON_FILE failed," \
-	     "error code: $status" 1>&2
-	exit 1
-    fi
+    # case: use JSONPath.sh
+    #
+    JSONPath.sh)
 
-fi
+	# case: processing JSON from stdin via JSONPath.sh
+	#
+	if [[ -z $JSON_FILE ]]; then
+	    if [[ $V_FLAG -ge 3 ]]; then
+		echo "$0: debug[3]: about to: $JSONPATH_SH -S -A -j" 1>&2
+	    fi
+	    "$JSONPATH_SH" -S -A -j
+	    status="$?"
+	    if [[ $status -ne 0 ]]; then
+		echo "$0: ERROR: $JSONPATH_SH -S -A -j failed," \
+		     "error code: $status" 1>&2
+		exit 1
+	    fi
+
+	# processing JSON from a file via JSONPath.sh
+	#
+	else
+	    if [[ $V_FLAG -ge 3 ]]; then
+		echo "$0: debug[3]: about to: $JSONPATH_SH -S -A -j -f $JSON_FILE" 1>&2
+	    fi
+	    "$JSONPATH_SH" -S -A -j -f "$JSON_FILE"
+	    status="$?"
+	    if [[ $status -ne 0 ]]; then
+		echo "$0: ERROR: $JSONPATH_SH -S -A -j -f $JSON_FILE failed," \
+		     "error code: $status" 1>&2
+		exit 1
+	    fi
+	fi
+	;;
+
+    # case: we do not know which XPath JSON tool to use
+    #
+    *)
+
+	echo "$0: ERROR: XPATHJSON_USE is neither jsp nor JSONPath.sh: $XPATHJSON_USE" 1>&2
+	exit 12
+	;;
+esac
 
 
 # All Done!!! All Done!!! -- Jessica Noll, Age 2
