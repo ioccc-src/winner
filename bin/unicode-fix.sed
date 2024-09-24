@@ -1,11 +1,12 @@
 #!/usr/bin/env sed
 #
-# bin/unicode-fix.sed - work-a-round to pre-translate certain JSON /u codes
+# bin/unicode-fix.sed - workaround to pre-translate certain JSON /u codes
 #
-# Until the jsrdecode(1) is fixed so that it properly converts 1 or 2 consecutive
+# Until the jstrdecode(1) is fixed so that it properly converts 1 or 2 consecutive
 # JSON string \uHexHexHexHex values into the proper binary symbol, we pre-translate
-# JSON string \uHexHexHexHex values used in this web site as a work-a-round to
-# avoid the jsrdecode(1) bug.
+# JSON string \uHexHexHexHex values used in this web site as a workaround to
+# avoid the jstrdecode(1) bug. We must do this as it's a more complicated bug
+# and we wish to move along with the IOCCC.
 #
 # XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
 # XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
@@ -35,10 +36,10 @@
 #
 #   bin/unicode-fix.sed
 #
-# Use of that sed script serves as a work-a-round to avoid to avoid any
+# Use of that sed script serves as a workaround to avoid to avoid any
 # problematic \\u[[:xdigit:]]{4} combinations in JSON encoded strings.
 #
-# For information on the jsrdecode(1) bug, see:
+# For information on the jstrdecode(1) bug, see:
 #
 #	https://github.com/xexyl/jparse/issues/13
 #
