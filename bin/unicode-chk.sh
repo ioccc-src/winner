@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# unicode-chk.sh - verify all \\u[[:xdigit:]]{4} in entry and author JSON files
+# unicode-chk.sh - verify all \\u[[:xdigit:]]{4} and JSON syntax in entry and author JSON files
 #
 # Pass entry and author JSON files thru the following sed script and
 # flag any \\u[[:xdigit:]]{4} that we might find as problems.
@@ -122,7 +122,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.0 2024-09-23"
+export VERSION="1.1 2024-09-24"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -143,6 +143,12 @@ export TAGLINE="unspecified"
 export REPO_TOP_URL="https://github.com/ioccc-src/temp-test-ioccc"
 # GitHub puts individual files under the "blob/master" sub-directory.
 export REPO_URL="$REPO_TOP_URL/blob/master"
+JPARSE_TOOL=$(type -P jparse)
+export JPARSE_TOOL
+if [[ -z "$JPARSE_TOOL" ]]; then
+    echo "$0: FATAL: jparse tool is not installed or not in \$PATH" 1>&2
+    exit 5
+fi
 export SITE_URL="https://ioccc-src.github.io/temp-test-ioccc"
 #
 export NOOP=
@@ -356,6 +362,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: TAGLINE=$TAGLINE" 1>&2
     echo "$0: debug[3]: REPO_TOP_URL=$REPO_TOP_URL" 1>&2
     echo "$0: debug[3]: REPO_URL=$REPO_URL" 1>&2
+    echo "$0: debug[3]: JPARSE_TOOL=$JPARSE_TOOL" 1>&2
     echo "$0: debug[3]: SITE_URL=$SITE_URL" 1>&2
     echo "$0: debug[3]: NOOP=$NOOP" 1>&2
     echo "$0: debug[3]: DO_NOT_PROCESS=$DO_NOT_PROCESS" 1>&2
@@ -421,6 +428,19 @@ if [[ $# -gt 0 ]]; then
 	if [[ ! -r $JSON_FILE ]]; then
 	    echo  "$0: ERROR: is not an readable file: $JSON_FILE" 1>&2
 	    exit 8
+	fi
+
+	# verify the JSON of the file
+	#
+	if [[ $V_FLAG -ge 1 ]]; then
+	    echo "$0: debug[1]: about to run: $JPARSE_TOOL -q -- $JSON_FILE" 1>&2
+	fi
+	"$JPARSE_TOOL" -q -- "$JSON_FILE"
+	status="$?"
+	if [[ $status -ne 0 ]]; then
+	    echo "$0: Warning: invalid JSON: $JSON_FILE" 1>&2
+	    echo "$JSON_FILE"
+	    continue
 	fi
 
 	# scan the author/author_handle.json file for unexpected \\u[[:xdigit:]]{4} strings
@@ -609,6 +629,19 @@ else
 		continue
 	    fi
 
+	    # verify the JSON of the .entry.json file
+	    #
+	    if [[ $V_FLAG -ge 3 ]]; then
+		echo "$0: debug[3]: about to run: $JPARSE_TOOL -q -- $YYYY_DIR/.entry.json" 1>&2
+	    fi
+	    "$JPARSE_TOOL" -q -- "$YYYY_DIR/.entry.json"
+	    status="$?"
+	    if [[ $status -ne 0 ]]; then
+		echo "$0: Warning: invalid JSON: $YYYY_DIR/.entry.json" 1>&2
+		echo "$YYYY_DIR/.entry.json"
+		continue
+	    fi
+
 	    # scan the .entry.json file for unexpected \\u[[:xdigit:]]{4} strings
 	    #
 	    if [[ -z $NOOP ]]; then
@@ -646,11 +679,24 @@ else
     # check author/author_handle.json files
     #
     if [[ $V_FLAG -ge 1 ]]; then
-	echo "$0: debug[1]: starting to check author_handle.json files under: $AUTHOR_DIR" 1>&2
+	echo "$0: debug[1]: starting to check author_handle.json files under: $TOPDIR/$AUTHOR_DIR" 1>&2
     fi
     find "$AUTHOR_DIR" -mindepth 1 -maxdepth 1 -type f -name '*.json' 2>/dev/null |
       LC_ALL=C sort -d -u > "$TMP_AUTHOR_HANDLE_INVENTORY"
     while read -r AUTHOR_HANDLE_JSON; do
+
+	# verify the JSON of the .entry.json file
+	#
+	if [[ $V_FLAG -ge 3 ]]; then
+	    echo "$0: debug[3]: about to run: $JPARSE_TOOL -q -- $AUTHOR_HANDLE_JSON" 1>&2
+	fi
+	"$JPARSE_TOOL" -q -- "$AUTHOR_HANDLE_JSON"
+	status="$?"
+	if [[ $status -ne 0 ]]; then
+	    echo "$0: Warning: invalid JSON: $AUTHOR_HANDLE_JSON" 1>&2
+	    echo "$AUTHOR_HANDLE_JSON"
+	    continue
+	fi
 
 	# scan the author/author_handle.json file for unexpected \\u[[:xdigit:]]{4} strings
 	#
@@ -669,10 +715,9 @@ fi
 # report any problems
 #
 if [[ -s $TMP_JSON_PROBLEM ]]; then
-    echo "$0: ERROR: found unexpected \\uHexHexHexHex strings in JSON files" 1>&2
-    echo "$0: debug[5]: list of JSON files with unexpected \\uHexHexHexHex strings, starts below" 1>&2
+    echo "$0: debug[5]: list of JSON file problems, starts below" 1>&2
     cat "$TMP_JSON_PROBLEM" 1>&2
-    echo "$0: debug[5]: list of JSON files with unexpected \\uHexHexHexHex strings, ends above" 1>&2
+    echo "$0: debug[5]: list of JSON file problems, ends above" 1>&2
     if [[ $EXIT_CODE -eq 0 ]]; then
 	EXIT_CODE="1"  # exit 1
 	echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2

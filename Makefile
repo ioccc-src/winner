@@ -69,7 +69,7 @@ SORT_GITIGNORE= bin/sort.gitignore.sh
 FIND_MISSING_LINKS= bin/find-missing-links.sh
 CSV2ENTRY= bin/csv2entry.sh
 ENTRY2CSV= bin/entry2csv.sh
-
+UNICODE_CHK= bin/unicode-chk.sh
 
 
 #############
@@ -277,7 +277,7 @@ clobber:
 # Finally: The rules in this section are NOT needed if you
 #	   simple want to examine, run / test winning IOCCC entries.
 
-.PHONY: help genpath genfilelist all_jfmt verify_entry_files gen_authors quick_authors \
+.PHONY: help genpath genfilelist all_jfmt verify_entry_files unicode_chk gen_authors quick_authors \
 	gen_location quick_location gen_years find_missing_links test entry_index gen_top_html \
 	thanks gen_other_html quick_other_html quick_entry_index \
 	gen_year_index quick_year_index quick_www www untar_entry_tarball untar_year_tarball \
@@ -313,6 +313,7 @@ help:
 	@echo 'make genfilelist	;: generate YYYY level .filelist'
 	@echo 'make verify_entry_files	;: check to be sure all files in all entries exist'
 	@echo 'make sort_gitignore	;: sort .gitignore files according to rules in bin/sgi.sh'
+	@echo 'make unicode_chk	;: verify all .entry.json and author_handle.json files'
 	@echo 'make gen_authors	;: generate the top level authors.html page'
 	@echo 'make quick_authors	;: build authors.html if out of date with author JSON files'
 	@echo 'make gen_location	;: generate the top level location.html page'
@@ -446,6 +447,11 @@ all_jfmt: ${ALL_RUN} ${CHK_ENTRY}
 verify_entry_files: ${ALL_RUN} ${CHK_ENTRY}
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
 	${ALL_RUN} -v 1 ${CHK_ENTRY}
+	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+
+unicode_chk: ${UNICODE_CHK}
+	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	${UNICODE_CHK} -v 1
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 # sort .gitignore files according to rules in bin/sgi.sh
@@ -688,6 +694,7 @@ quick_www:
 	@echo '=-=-=-=-= IOCCC complete make genpath =-=-=-=-='
 	${MAKE} genfilelist
 	${MAKE} sort_gitignore
+	${MAKE} unicode_chk
 	${MAKE} verify_entry_files
 	${MAKE} quick_authors
 	${MAKE} quick_location
@@ -716,6 +723,7 @@ www:
 	@echo '=-=-=-=-= IOCCC complete make genpath =-=-=-=-='
 	${MAKE} genfilelist
 	${MAKE} sort_gitignore
+	${MAKE} unicode_chk
 	${MAKE} verify_entry_files
 	${MAKE} gen_authors
 	${MAKE} gen_location
