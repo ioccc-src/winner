@@ -17,7 +17,7 @@
 1986,pawka,pawka.1986,prints 'obfuscated?' big using xyyyx idents
 1986,stein,stein.1986,prints HHMMSS in UTC time
 1986,wall,wall.1986,dvorak keyboard emulator
-1987,biggar,biggar.1987,program: "P;" defined on command line
+1987,biggar,biggar.1987,program defined on the command line
 1987,heckbert,heckbert.1987,obfuscated fold program
 1987,hines,hines.1987,counts goto's with all ids goto anagrams with all goto flow
 1987,korn,korn.1987,one-liner that prints a message on a Un*x system
@@ -31,10 +31,10 @@
 1988,phillipps,phillipps.1988,days of christmas heavily main() calling with tables
 1988,reddy,reddy.1988,prints name of 'char *(*(foo[16])();' compressed
 1988,robison,robison.1988,print e in any base using only -- >= and while()
-1988,spinellis,spinellis.1988,#include "/dev/tty"
+1988,spinellis,spinellis.1988,include /dev/tty
 1988,westley,westley.1988,prints '3.141' with circle made of '_-_-_-_'
 1989,fubar,fubar.1989,self-reconstructing recompiling factorial program
-1989,jar.1,jar.1.1989,char*_="Hello world.\n";
+1989,jar.1,jar.1.1989,Hello world as a C string
 1989,jar.2,jar.2.1989,lisp interpreter that is compressed
 1989,ovdluhe,ovdluhe.1989,monkey-typer following template with APE identifiers
 1989,paul,paul.1989,print fibonacci base 2 by simulating turing machine
@@ -71,7 +71,7 @@
 1992,gson,gson.1992,anagram generator
 1992,imc,imc.1992,Mandelbrot/Julia drawer
 1992,kivinen,kivinen.1992,X11 space invaders and dropout and knockout games
-1992,lush,lush.1992,prints "Hello World" using error messages
+1992,lush,lush.1992,prints Hello World using error messages
 1992,marangon,marangon.1992,game to balance a grid of digits to all 5's
 1992,nathan,nathan.1992,obfuscation by (trivial) encryption (source not exported)
 1992,vern,vern.1992,plays chess
@@ -99,7 +99,7 @@
 1994,weisberg,weisberg.1994,prints prime numbers
 1994,westley,westley.1994,Adventure/Dungeon like game played via the C pre-processor
 1995,cdua,cdua.1995,Generate a maze on the scren and then solve it
-1995,dodsond1,dodsond1.1995,Text to "Pig Latin" translator
+1995,dodsond1,dodsond1.1995,Text to Pig Latin translator
 1995,dodsond2,dodsond2.1995,Interactive 3D Maze
 1995,esde,esde.1995,Searches for words in a file which have the same Soundex code
 1995,garry,garry.1995,Environment-expansion and binary output via escaped env vars
