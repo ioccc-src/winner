@@ -52,7 +52,7 @@
 1990,scjones,scjones.1990,trigraph-abusing self-reproducing program
 1990,stig,stig.1990,nested-comment tester (all on command line)
 1990,tbr,tbr.1990,simple compressed shell with silly layout
-1990,theorem,theorem.1990,numerically solves the equation y'=f(x,y)
+1990,theorem,theorem.1990,numerically solves the equation y'=f(x y)
 1990,westley,westley.1990,poetic exchange between lovers that prints luvs me or not
 1991,ant,ant.1991,compressed vi-like editor
 1991,brnstnd,brnstnd.1991,sorta stack language
