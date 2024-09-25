@@ -42,7 +42,7 @@ CSILENCE= -Wno-format-extra-args -Wno-keyword-macro -Wno-parentheses \
 	  -Wno-unused-parameter -Wno-deprecated-non-prototype \
 	  -Wno-strict-prototypes -Wno-unused-value
 
-# Attempt to silence unknown warnings
+# Attempt to silence unknown warning option
 #
 CUNKNOWN= -Wno-unknown-warning-option
 

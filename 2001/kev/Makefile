@@ -44,7 +44,7 @@ CSILENCE= -Wno-empty-body -Wno-error -Wno-implicit-function-declaration \
           -Wno-sequence-point -Wno-parentheses -Wno-pointer-bool-conversion \
 	  -Wno-unsequenced
 
-# Attempt to silence unknown warnings
+# Attempt to silence unknown warning option
 #
 CUNKNOWN= -Wno-unknown-warning-option
 

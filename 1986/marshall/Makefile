@@ -46,7 +46,7 @@ CSILENCE= -Wno-error -Wno-implicit-function-declaration -Wno-implicit-int \
 	  -Wno-address -Wno-builtin-declaration-mismatch -Wno-sequence-point \
 	  -Wno-int-to-pointer-cast
 
-# Attempt to silence unknown warnings
+# Attempt to silence unknown warning option
 #
 CUNKNOWN= -Wno-unknown-warning-option
 

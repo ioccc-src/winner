@@ -43,7 +43,7 @@ CSILENCE= -Wno-implicit-function-declaration -Wno-implicit-int -Wno-keyword-macr
 	  -Wno-deprecated-non-prototype -Wno-builtin-declaration-mismatch \
 	  -Wno-implicit-fallthrough -Wno-missing-parameter-type
 
-# Attempt to silence unknown warnings
+# Attempt to silence unknown warning option
 #
 CUNKNOWN= -Wno-unknown-warning-option
 

@@ -40,7 +40,7 @@ include ../../var.mk
 #
 CSILENCE= -Wno-poison-system-directories -Wno-undef -Wno-strict-prototypes
 
-# Attempt to silence unknown warnings
+# Attempt to silence unknown warning option
 #
 CUNKNOWN= -Wno-unknown-warning-option
 

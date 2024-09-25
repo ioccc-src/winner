@@ -41,7 +41,7 @@ include ../../var.mk
 CSILENCE= -Wno-int-to-pointer-cast -Wno-int-to-void-pointer-cast \
 	  -Wno-trigraphs -Wno-unused-value -Wno-gnu-line-marker
 
-# Attempt to silence unknown warnings
+# Attempt to silence unknown warning option
 #
 CUNKNOWN= -Wno-unknown-warning-option
 

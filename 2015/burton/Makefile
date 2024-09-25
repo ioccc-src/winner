@@ -43,7 +43,7 @@ CSILENCE= -Wno-char-subscripts -Wno-empty-body -Wno-long-long -Wno-parentheses \
 	  -Wno-misleading-indentation -Wno-sequence-point -Wno-sign-compare \
           -Wno-unused-value -Wno-strict-prototypes
 
-# Attempt to silence unknown warnings
+# Attempt to silence unknown warning option
 #
 CUNKNOWN= -Wno-unknown-warning-option
 

@@ -42,7 +42,7 @@ CSILENCE= -Wno-char-subscripts -Wno-error -Wno-implicit-function-declaration \
 	  -Wno-int-to-pointer-cast -Wno-empty-body -Wno-deprecated-non-prototype\
 	  -Wno-implicit-int -Wno-missing-parameter-type -Wno-return-type
 
-# Attempt to silence unknown warnings
+# Attempt to silence unknown warning option
 #
 CUNKNOWN= -Wno-unknown-warning-option
 

@@ -43,7 +43,7 @@ CSILENCE= -Wno-extra-semi -Wno-fortify-source -Wno-return-type \
 	  -Wno-pedantic -Wno-unused-variable -Wno-implicit-int \
 	  -Wno-stringop-overflow
 
-# Attempt to silence unknown warnings
+# Attempt to silence unknown warning option
 #
 CUNKNOWN= -Wno-unknown-warning-option
 

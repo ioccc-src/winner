@@ -41,7 +41,7 @@ include ../../var.mk
 CSILENCE= -Wno-deprecated-declarations -Wno-strict-prototypes -Wno-address \
 	  -Wno-maybe-uninitialized
 
-# Attempt to silence unknown warnings
+# Attempt to silence unknown warning option
 #
 CUNKNOWN= -Wno-unknown-warning-option
 

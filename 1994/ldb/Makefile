@@ -42,7 +42,7 @@ CSILENCE= -Wno-trigraphs -Wno-incompatible-pointer-types -Wno-int-conversion \
 	  -Wno-strict-prototypes -Wno-implicit-int -Wno-int-to-pointer-cast \
 	  -Wno-return-type
 
-# Attempt to silence unknown warnings
+# Attempt to silence unknown warning option
 #
 CUNKNOWN= -Wno-unknown-warning-option
 

@@ -40,7 +40,7 @@ include ../../var.mk
 #
 CSILENCE= -Wno-misleading-indentation -Wno-sign-compare
 
-# Attempt to silence unknown warnings
+# Attempt to silence unknown warning option
 #
 CUNKNOWN= -Wno-unknown-warning-option
 

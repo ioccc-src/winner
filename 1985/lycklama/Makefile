@@ -41,7 +41,7 @@ include ../../var.mk
 CSILENCE= -Wno-implicit-int -Wno-unused-value -Wno-parentheses -Wno-error \
 	  -Wno-implicit-function-declaration -Wno-return-type
 
-# Attempt to silence unknown warnings
+# Attempt to silence unknown warning option
 #
 CUNKNOWN= -Wno-unknown-warning-option
 

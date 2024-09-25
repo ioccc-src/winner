@@ -42,7 +42,7 @@ CSILENCE= -Wno-error -Wno-implicit-function-declaration \
 	  -Wno-invalid-source-encoding -Wno-invalid-utf8 -Wno-strict-prototypes \
 	  -Wno-empty-body -Wno-maybe-uninitialized
 
-# Attempt to silence unknown warnings
+# Attempt to silence unknown warning option
 #
 CUNKNOWN= -Wno-unknown-warning-option
 

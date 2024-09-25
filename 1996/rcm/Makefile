@@ -42,7 +42,7 @@ CSILENCE= -Wno-empty-body -Wno-shift-op-parentheses -Wno-strict-prototypes \
 	  -Wno-misleading-indentation -Wno-parentheses -Wno-return-type \
           -Wno-unused-value -Wno-implicit-int
 
-# Attempt to silence unknown warnings
+# Attempt to silence unknown warning option
 #
 CUNKNOWN= -Wno-unknown-warning-option
 

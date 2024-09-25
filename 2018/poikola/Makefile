@@ -42,7 +42,7 @@ CSILENCE= -Wno-comment -Wno-dollar-in-identifier-extension -Wno-string-plus-int 
 	  -Wno-unused-parameter -Wno-deprecated-non-prototype \
 	  -Wno-misleading-indentation
 
-# Attempt to silence unknown warnings
+# Attempt to silence unknown warning option
 #
 CUNKNOWN= -Wno-unknown-warning-option
 

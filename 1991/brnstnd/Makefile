@@ -43,7 +43,7 @@ CSILENCE= -Wno-c99-extensions -Wno-error -Wno-implicit-function-declaration \
 	  -Wno-unused-value -Wno-implicit-int -Wno-builtin-declaration-mismatch \
 	  -Wno-pedantic
 
-# Attempt to silence unknown warnings
+# Attempt to silence unknown warning option
 #
 CUNKNOWN= -Wno-unknown-warning-option
 

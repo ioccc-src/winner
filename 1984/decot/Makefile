@@ -45,7 +45,7 @@ CSILENCE= -Wno-array-bounds -Wno-error -Wno-implicit-function-declaration \
 	  -Wno-pointer-to-int-cast -Wno-return-type -Wno-unused-label -Wno-implicit-int \
 	  -Wno-cast-function-type -Wno-format-extra-args
 
-# Attempt to silence unknown warnings
+# Attempt to silence unknown warning option
 #
 CUNKNOWN= -Wno-unknown-warning-option
 

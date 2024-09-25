@@ -43,7 +43,7 @@ CSILENCE= -Wno-incompatible-library-redeclaration -Wno-main \
 	  -Wno-strict-prototypes -Wno-implicit-int -Wno-unused-parameter \
 	  -Wno-misleading-indentation
 
-# Attempt to silence unknown warnings
+# Attempt to silence unknown warning option
 #
 CUNKNOWN= -Wno-unknown-warning-option
 

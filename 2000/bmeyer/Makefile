@@ -42,7 +42,7 @@ CSILENCE= -Wno-format -Wno-parentheses -Wno-string-plus-int \
 	  -Wno-strict-prototypes -Wno-int-in-bool-context \
 	  -Wno-misleading-indentation
 
-# Attempt to silence unknown warnings
+# Attempt to silence unknown warning option
 #
 CUNKNOWN= -Wno-unknown-warning-option
 

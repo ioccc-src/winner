@@ -41,7 +41,7 @@ include ../../var.mk
 CSILENCE= -Wno-bitwise-conditional-parentheses -Wno-format-extra-args \
 	  -Wno-int-in-bool-context -Wno-parentheses
 
-# Attempt to silence unknown warnings
+# Attempt to silence unknown warning option
 #
 CUNKNOWN= -Wno-unknown-warning-option
 

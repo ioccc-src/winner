@@ -43,7 +43,7 @@ CSILENCE= -Wno-error -Wno-implicit-function-declaration -Wno-unused-parameter \
 	  -Wno-parentheses-equality -Wno-return-type \
 	  -Wno-builtin-declaration-mismatch -Wno-clobbered -Wno-parentheses
 
-# Attempt to silence unknown warnings
+# Attempt to silence unknown warning option
 #
 CUNKNOWN= -Wno-unknown-warning-option
 

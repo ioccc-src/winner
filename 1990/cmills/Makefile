@@ -44,7 +44,7 @@ CSILENCE= -Wno-deprecated-declarations -Wno-parentheses -Wno-error \
 	  -Wno-builtin-declaration-mismatch -Wno-misleading-indentation \
           -Wno-missing-parameter-type -Wno-multistatement-macros
 
-# Attempt to silence unknown warnings
+# Attempt to silence unknown warning option
 #
 CUNKNOWN= -Wno-unknown-warning-option
 

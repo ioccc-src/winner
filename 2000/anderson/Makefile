@@ -43,7 +43,7 @@ CSILENCE= -Wno-char-subscripts -Wno-deprecated-declarations -Wno-implicit-int \
 	  -Wno-deprecated-non-prototype -Wno-strict-prototypes \
 	  -Wno-parentheses -Wno-sequence-point -Wno-unused-value
 
-# Attempt to silence unknown warnings
+# Attempt to silence unknown warning option
 #
 CUNKNOWN= -Wno-unknown-warning-option
 

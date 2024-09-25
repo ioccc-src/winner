@@ -41,7 +41,7 @@ include ../../var.mk
 CSILENCE= -Wno-pointer-sign -Wno-unused-parameter \
 	  -Wno-format-truncation -Wno-sign-compare -Wno-stringop-overflow
 
-# Attempt to silence unknown warnings
+# Attempt to silence unknown warning option
 #
 CUNKNOWN= -Wno-unknown-warning-option
 

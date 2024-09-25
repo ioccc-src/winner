@@ -45,7 +45,7 @@ CSILENCE= -Wno-builtin-requires-header -Wno-char-subscripts \
 	  -Wno-return-type -Wno-strict-prototypes -Wno-builtin-declaration-mismatch \
 	  -Wno-misleading-indentation -Wno-unused-value
 
-# Attempt to silence unknown warnings
+# Attempt to silence unknown warning option
 #
 CUNKNOWN= -Wno-unknown-warning-option
 

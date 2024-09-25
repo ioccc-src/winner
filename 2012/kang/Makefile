@@ -43,7 +43,7 @@ CSILENCE= -Wno-bitwise-op-parentheses -Wno-error \
 	  -Wno-pointer-to-int-cast -Wno-deprecated-non-prototype -Wno-misleading-indentation \
 	  -Wno-unsafe-buffer-usage
 
-# Attempt to silence unknown warnings
+# Attempt to silence unknown warning option
 #
 CUNKNOWN= -Wno-unknown-warning-option
 

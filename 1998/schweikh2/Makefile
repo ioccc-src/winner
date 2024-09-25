@@ -41,7 +41,7 @@ include ../../var.mk
 CSILENCE= -Wno-trigraphs -Wno-sign-compare -Wno-string-plus-int -Wno-switch-bool \
 	  -Wno-implicit-int -Wno-cast-function-type
 
-# Attempt to silence unknown warnings
+# Attempt to silence unknown warning option
 #
 CUNKNOWN= -Wno-unknown-warning-option
 

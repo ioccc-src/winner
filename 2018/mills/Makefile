@@ -41,7 +41,7 @@ include ../../var.mk
 CSILENCE= -Wno-gnu-empty-initializer -Wno-missing-field-initializers \
 	  -Wno-misleading-indentation -Wno-pedantic -Wno-strict-prototypes
 
-# Attempt to silence unknown warnings
+# Attempt to silence unknown warning option
 #
 CUNKNOWN= -Wno-unknown-warning-option
 

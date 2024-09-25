@@ -41,7 +41,7 @@ include ../../var.mk
 CSILENCE= -Wno-dollar-in-identifier-extension -Wno-null-character \
 	  -Wno-misleading-indentation -Wno-pedantic -Wno-null-pointer-subtraction
 
-# Attempt to silence unknown warnings
+# Attempt to silence unknown warning option
 #
 CUNKNOWN= -Wno-unknown-warning-option
 

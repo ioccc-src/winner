@@ -41,7 +41,7 @@ include ../../var.mk
 CSILENCE= -Wno-trigraphs -Wno-deprecated-non-prototype -Wno-unused-parameter \
 	  -Wno-misleading-indentation -Wno-missing-parameter-type
 
-# Attempt to silence unknown warnings
+# Attempt to silence unknown warning option
 #
 CUNKNOWN= -Wno-unknown-warning-option
 

@@ -41,7 +41,7 @@ include ../../var.mk
 CSILENCE= -Wno-absolute-value -Wno-keyword-macro -Wno-newline-eof \
 	  -Wno-unused-value
 
-# Attempt to silence unknown warnings
+# Attempt to silence unknown warning option
 #
 CUNKNOWN= -Wno-unknown-warning-option
 

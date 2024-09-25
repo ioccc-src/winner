@@ -41,7 +41,7 @@ include ../../var.mk
 CSILENCE= -Wno-pointer-sign -Wno-unsequenced -Wno-int-in-bool-context \
 	  -Wno-parentheses -Wno-sequence-point
 
-# Attempt to silence unknown warnings
+# Attempt to silence unknown warning option
 #
 CUNKNOWN= -Wno-unknown-warning-option
 

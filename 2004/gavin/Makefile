@@ -43,7 +43,7 @@ CSILENCE= -Wno-bitwise-conditional-parentheses -Wno-bitwise-op-parentheses \
 	  -Wno-int-to-pointer-cast -Wno-parentheses -Wno-pointer-to-int-cast \
 	  -Wno-return-type -Wno-unused-parameter -Wno-unused-variable
 
-# Attempt to silence unknown warnings
+# Attempt to silence unknown warning option
 #
 CUNKNOWN= -Wno-unknown-warning-option
 
