@@ -673,42 +673,6 @@ markdown files) and HTML fragments from the [inc directory](../inc/index.html).
 The [md2html.cfg](index.html#md2html_cfg) configuration file is
 used by [md2html.sh](%%REPO_URL%%/bin/md2html.sh) to drive the generation process.
 
-
-<div id="othermd2html">
-### [othermd2html.sh](%%REPO_URL%%/bin/othermd2html.sh)
-</div>
-
-Convert a non-README.md file in an entry to HTML.
-
-Usage:
-
-``` <!---sh-->
-    bin/othermd2html.sh YYYY/dir/pathto.md
-```
-
-For example:
-
-``` <!---sh-->
-    bin/othermd2html.sh -v 1 2020/ferguson1/chocolate-cake.md
-```
-
-The [othermd2html.sh](#othermd2html) tool is used by [gen-other-html.sh](#gen-other-html).
-
-
-<div id="output-index-author">
-### [output-index-author.sh](%%REPO_URL%%/bin/output-index-author.sh)
-</div>
-
-Output author's or authors' related HTML details for an entry's index.html
-page.
-
-For an example, see the [author details in
-1984/anonymous](../1984/anonymous/index.html#author).
-
-This tool is used in the [bin/md2html.cfg](%%REPO_URL%%/bin/md2html.cfg) file as part of
-the [md2html tool](index.html#md2html).
-
-
 <div id="new-dir">
 ### [new-dir.sh](%%REPO_URL%%/bin/new-dir.sh)
 </div>
@@ -761,6 +725,41 @@ Usage:
 ```
 
 Here, `YYYY` must be a new 4-digit (happy :-)) new IOCCC year.
+
+
+<div id="othermd2html">
+### [othermd2html.sh](%%REPO_URL%%/bin/othermd2html.sh)
+</div>
+
+Convert a non-README.md file in an entry to HTML.
+
+Usage:
+
+``` <!---sh-->
+    bin/othermd2html.sh YYYY/dir/pathto.md
+```
+
+For example:
+
+``` <!---sh-->
+    bin/othermd2html.sh -v 1 2020/ferguson1/chocolate-cake.md
+```
+
+The [othermd2html.sh](#othermd2html) tool is used by [gen-other-html.sh](#gen-other-html).
+
+
+<div id="output-index-author">
+### [output-index-author.sh](%%REPO_URL%%/bin/output-index-author.sh)
+</div>
+
+Output author's or authors' related HTML details for an entry's index.html
+page.
+
+For an example, see the [author details in
+1984/anonymous](../1984/anonymous/index.html#author).
+
+This tool is used in the [bin/md2html.cfg](%%REPO_URL%%/bin/md2html.cfg) file as part of
+the [md2html tool](index.html#md2html).
 
 
 <div id="output-index-inventory">
@@ -861,16 +860,6 @@ We recommend that this tool be invoked via the top level `Makefile`:
 ```
 
 
-<div id="status2html">
-### [status2html.sh](%%REPO_URL%%/bin/status2html.sh)
-</div>
-
-Convert [status.json](../status.json) into HTML.
-
-This tool is a  'before tool' (`-b tool`) that is intended
-to be used by [gen-status.sh](index.html#gen-status).
-
-
 <div id="sgi">
 ### [sgi.sh](%%REPO_URL%%/bin/sgi.sh)
 </div>
@@ -908,6 +897,16 @@ We recommend that this tool be invoked via the top level `Makefile`:
 ``` <!---sh-->
     make sort_gitignore
 ```
+
+
+<div id="status2html">
+### [status2html.sh](%%REPO_URL%%/bin/status2html.sh)
+</div>
+
+Convert [status.json](../status.json) into HTML.
+
+This tool is a  'before tool' (`-b tool`) that is intended
+to be used by [gen-status.sh](index.html#gen-status).
 
 
 <div id="subst-default">

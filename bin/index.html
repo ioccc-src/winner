@@ -785,24 +785,6 @@ markdown files (permanent markdown files or temporarily generated
 markdown files) and HTML fragments from the <a href="../inc/index.html">inc directory</a>.</p>
 <p>The <a href="index.html#md2html_cfg">md2html.cfg</a> configuration file is
 used by <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/md2html.sh">md2html.sh</a> to drive the generation process.</p>
-<div id="othermd2html">
-<h3 id="othermd2html.sh"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/othermd2html.sh">othermd2html.sh</a></h3>
-</div>
-<p>Convert a non-README.md file in an entry to HTML.</p>
-<p>Usage:</p>
-<pre><code>    bin/othermd2html.sh YYYY/dir/pathto.md</code></pre>
-<p>For example:</p>
-<pre><code>    bin/othermd2html.sh -v 1 2020/ferguson1/chocolate-cake.md</code></pre>
-<p>The <a href="#othermd2html">othermd2html.sh</a> tool is used by <a href="#gen-other-html">gen-other-html.sh</a>.</p>
-<div id="output-index-author">
-<h3 id="output-index-author.sh"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/output-index-author.sh">output-index-author.sh</a></h3>
-</div>
-<p>Output author’s or authors’ related HTML details for an entry’s index.html
-page.</p>
-<p>For an example, see the <a href="../1984/anonymous/index.html#author">author details in
-1984/anonymous</a>.</p>
-<p>This tool is used in the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/md2html.cfg">bin/md2html.cfg</a> file as part of
-the <a href="index.html#md2html">md2html tool</a>.</p>
 <div id="new-dir">
 <h3 id="new-dir.sh"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/new-dir.sh">new-dir.sh</a></h3>
 </div>
@@ -835,6 +817,24 @@ need to add content.</p>
 <p>Usage:</p>
 <pre><code>    bin/new-year.sh -v 1 YYYY</code></pre>
 <p>Here, <code>YYYY</code> must be a new 4-digit (happy :-)) new IOCCC year.</p>
+<div id="othermd2html">
+<h3 id="othermd2html.sh"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/othermd2html.sh">othermd2html.sh</a></h3>
+</div>
+<p>Convert a non-README.md file in an entry to HTML.</p>
+<p>Usage:</p>
+<pre><code>    bin/othermd2html.sh YYYY/dir/pathto.md</code></pre>
+<p>For example:</p>
+<pre><code>    bin/othermd2html.sh -v 1 2020/ferguson1/chocolate-cake.md</code></pre>
+<p>The <a href="#othermd2html">othermd2html.sh</a> tool is used by <a href="#gen-other-html">gen-other-html.sh</a>.</p>
+<div id="output-index-author">
+<h3 id="output-index-author.sh"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/output-index-author.sh">output-index-author.sh</a></h3>
+</div>
+<p>Output author’s or authors’ related HTML details for an entry’s index.html
+page.</p>
+<p>For an example, see the <a href="../1984/anonymous/index.html#author">author details in
+1984/anonymous</a>.</p>
+<p>This tool is used in the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/md2html.cfg">bin/md2html.cfg</a> file as part of
+the <a href="index.html#md2html">md2html tool</a>.</p>
 <div id="output-index-inventory">
 <h3 id="output-index-inventory.sh"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/output-index-inventory.sh">output-index-inventory.sh</a></h3>
 </div>
@@ -893,12 +893,6 @@ and <code>index.html</code> are correct. If in doubt, use
 <pre><code>    bin/all-run.sh -v 3 bin/readme2index.sh -v 1</code></pre>
 <p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
 <pre><code>    make entry_index</code></pre>
-<div id="status2html">
-<h3 id="status2html.sh"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/status2html.sh">status2html.sh</a></h3>
-</div>
-<p>Convert <a href="../status.json">status.json</a> into HTML.</p>
-<p>This tool is a ‘before tool’ (<code>-b tool</code>) that is intended
-to be used by <a href="index.html#gen-status">gen-status.sh</a>.</p>
 <div id="sgi">
 <h3 id="sgi.sh"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/sgi.sh">sgi.sh</a></h3>
 </div>
@@ -918,6 +912,12 @@ We sort with lines starting with <code>!</code> fourth.</p>
 <pre><code>    bin/all-run.sh bin/sort.gitignore.sh -v 1</code></pre>
 <p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
 <pre><code>    make sort_gitignore</code></pre>
+<div id="status2html">
+<h3 id="status2html.sh"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/status2html.sh">status2html.sh</a></h3>
+</div>
+<p>Convert <a href="../status.json">status.json</a> into HTML.</p>
+<p>This tool is a ‘before tool’ (<code>-b tool</code>) that is intended
+to be used by <a href="index.html#gen-status">gen-status.sh</a>.</p>
 <div id="subst-default">
 <h3 id="subst.default.sh"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/subst.default.sh">subst.default.sh</a></h3>
 </div>
