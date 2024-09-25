@@ -3,7 +3,7 @@
 If you are trying to:
 
 * **Fix a winning IOCCC entry** - See our
-FAQ on "[fix entry](faq.html#fix_an_entry)"
+FAQ on "[fixing entries](faq.html#fix_an_entry)"
 * **Update winning author information** - See our
 FAQ on "[fixing author information](faq.html#fix_author)"
 * **Correct a website problem** - See our
@@ -11,10 +11,11 @@ FAQ on "[fixing the website](faq.html#fix_web_site)"
 or our
 FAQ on "[fix URL](faq.html#fix_link)"
 
-Instead of sending us email, **Please** consider using the [GitHub
+Instead of sending us email, **PLEASE** consider using the [GitHub
 pull request](https://github.com/ioccc-src/winner/pulls) process
 against the [master branch](https://github.com/ioccc-src/winner/branches)
-of the [ioccc-src/winner repo](https://github.com/ioccc-src/winner).
+of the [ioccc-src/winner repo](https://github.com/ioccc-src/winner). See the
+FAQ on "[submitting a pull request](faq.html#pull_request)".
 
 If you are trying to:
 
