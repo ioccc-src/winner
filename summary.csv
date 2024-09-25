@@ -13,7 +13,7 @@
 1986,bright,bright.1986,hex dump with cpp compressed that uses lots of << for constants
 1986,hague,hague.1986,morse code filter written with 'DIT DAH _DIT DIT_DAH'
 1986,holloway,holloway.1986,prints hello world! via a recursive main
-1986,marshall,marshall.1986,train engine-shaped program prints "choo choo"
+1986,marshall,marshall.1986,train engine-shaped program prints choo choo
 1986,pawka,pawka.1986,prints 'obfuscated?' big using xyyyx idents
 1986,stein,stein.1986,prints HHMMSS in UTC time
 1986,wall,wall.1986,dvorak keyboard emulator
