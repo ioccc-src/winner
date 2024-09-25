@@ -43,7 +43,7 @@ CSILENCE= -Wno-invalid-pp-token -Wno-trigraphs -Wno-deprecated-non-prototype \
 	  -Wno-implicit-fallthrough -Wno-misleading-indentation \
           -Wno-missing-parameter-type -Wno-return-type -Wno-unused-value
 
-# Attempt to silence unknown warnings
+# Attempt to silence unknown warning option
 #
 CUNKNOWN= -Wno-unknown-warning-option
 

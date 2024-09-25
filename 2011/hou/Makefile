@@ -41,7 +41,7 @@ include ../../var.mk
 CSILENCE= -Wno-bool-operation -Wno-keyword-macro -Wno-literal-conversion \
 	  -Wno-misleading-indentation
 
-# Attempt to silence unknown warnings
+# Attempt to silence unknown warning option
 #
 CUNKNOWN= -Wno-unknown-warning-option
 

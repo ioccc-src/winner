@@ -41,7 +41,7 @@ include ../../var.mk
 CSILENCE= -Wno-error -Wno-implicit-function-declaration -Wno-parentheses \
 	  -Wno-incompatible-pointer-types -Wno-implicit-fallthrough
 
-# Attempt to silence unknown warnings
+# Attempt to silence unknown warning option
 #
 CUNKNOWN= -Wno-unknown-warning-option
 

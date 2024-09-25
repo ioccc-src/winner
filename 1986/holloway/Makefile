@@ -43,7 +43,7 @@ CSILENCE= -Wno-format-security -Wno-implicit-int -Wno-int-to-pointer-cast \
 	  -Wno-incompatible-pointer-types -Wno-implicit-fallthrough \
 	  -Wno-missing-parameter-type -Wno-return-type
 
-# Attempt to silence unknown warnings
+# Attempt to silence unknown warning option
 #
 CUNKNOWN= -Wno-unknown-warning-option
 

@@ -41,7 +41,7 @@ include ../../var.mk
 CSILENCE= -Wno-c99-extensions -Wno-char-subscripts -Wno-dangling-else \
 	  -Wno-incompatible-pointer-types -Wno-unused-value -Wno-parentheses
 
-# Attempt to silence unknown warnings
+# Attempt to silence unknown warning option
 #
 CUNKNOWN= -Wno-unknown-warning-option
 

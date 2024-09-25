@@ -45,7 +45,7 @@ CSILENCE= -Wno-implicit-int -Wno-incompatible-pointer-types \
 	  -Wno-deprecated-non-prototype -Wno-address -Wno-bool-compare \
 	  -Wno-sequence-point
 
-# Attempt to silence unknown warnings
+# Attempt to silence unknown warning option
 #
 CUNKNOWN= -Wno-unknown-warning-option
 

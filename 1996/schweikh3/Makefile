@@ -40,7 +40,7 @@ include ../../var.mk
 #
 CSILENCE= -Wno-language-extension-token -Wno-switch-bool
 
-# Attempt to silence unknown warnings
+# Attempt to silence unknown warning option
 #
 CUNKNOWN= -Wno-unknown-warning-option
 

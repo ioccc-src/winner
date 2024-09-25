@@ -40,7 +40,7 @@ include ../../var.mk
 #
 CSILENCE= -Wno-strict-prototypes -Wno-comment
 
-# Attempt to silence unknown warnings
+# Attempt to silence unknown warning option
 #
 CUNKNOWN= -Wno-unknown-warning-option
 

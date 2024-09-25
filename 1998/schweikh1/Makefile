@@ -41,7 +41,7 @@ include ../../var.mk
 CSILENCE= -Wno-string-plus-int -Wno-switch-bool -Wno-array-bounds \
 	  -Wno-stringop-overread
 
-# Attempt to silence unknown warnings
+# Attempt to silence unknown warning option
 #
 CUNKNOWN= -Wno-unknown-warning-option
 

@@ -44,7 +44,7 @@ CSILENCE= -Wno-comment -Wno-deprecated-non-prototype -Wno-main -Wno-pedantic \
 	  -Wno-multichar -Wno-uninitialized -Wno-unused-but-set-parameter \
 	  -Wno-parentheses -Wno-int-conversion -Wno-missing-parameter-type
 
-# Attempt to silence unknown warnings
+# Attempt to silence unknown warning option
 #
 CUNKNOWN= -Wno-unknown-warning-option
 

@@ -45,7 +45,7 @@ CSILENCE= -Wno-empty-body -Wno-error -Wno-implicit-function-declaration \
 	  -Wno-maybe-uninitialized -Wno-misleading-indentation \
 	  -Wno-switch-unreachable
 
-# Attempt to silence unknown warnings
+# Attempt to silence unknown warning option
 #
 CUNKNOWN= -Wno-unknown-warning-option
 

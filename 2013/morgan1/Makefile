@@ -42,7 +42,7 @@ CSILENCE= -Wno-absolute-value -Wno-logical-op-parentheses \
 	  -Wno-shift-op-parentheses -Wno-strict-prototypes \
 	  -Wno-parentheses -Wno-unused-value
 
-# Attempt to silence unknown warnings
+# Attempt to silence unknown warning option
 #
 CUNKNOWN= -Wno-unknown-warning-option
 

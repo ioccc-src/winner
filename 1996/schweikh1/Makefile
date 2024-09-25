@@ -40,7 +40,7 @@ include ../../var.mk
 #
 CSILENCE=
 
-# Attempt to silence unknown warnings
+# Attempt to silence unknown warning option
 #
 # Example: CUNKNOWN= -Wno-unknown-warning-option
 #

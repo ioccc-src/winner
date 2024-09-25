@@ -41,7 +41,7 @@ include ../../var.mk
 CSILENCE= -Wno-int-conversion -Wno-pointer-to-int-cast \
 	  -Wno-parentheses -Wno-stringop-overflow -Wno-unused-value
 
-# Attempt to silence unknown warnings
+# Attempt to silence unknown warning option
 #
 CUNKNOWN= -Wno-unknown-warning-option
 

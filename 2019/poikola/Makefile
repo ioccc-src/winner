@@ -43,7 +43,7 @@ CSILENCE= -Wno-dollar-in-identifier-extension -Wno-empty-body \
 	  -Wno-unsequenced -Wno-misleading-indentation -Wno-pedantic \
 	  -Wno-sequence-point
 
-# Attempt to silence unknown warnings
+# Attempt to silence unknown warning option
 #
 CUNKNOWN= -Wno-unknown-warning-option
 

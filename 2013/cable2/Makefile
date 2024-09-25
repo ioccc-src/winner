@@ -44,7 +44,7 @@ CSILENCE= -Wno-bitwise-op-parentheses -Wno-dollar-in-identifier-extension \
 	  -Wno-shift-op-parentheses -Wno-unsequenced -Wno-misleading-indentation \
 	  -Wno-sequence-point -Wno-unused-value
 
-# Attempt to silence unknown warnings
+# Attempt to silence unknown warning option
 #
 CUNKNOWN= -Wno-unknown-warning-option
 

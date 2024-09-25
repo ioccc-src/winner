@@ -43,7 +43,7 @@ CSILENCE= -Wno-pointer-bool-conversion -Wno-unused-parameter -Wno-main \
 	  -Wno-builtin-declaration-mismatch -Wno-int-conversion \
 	  -Wno-gnu-line-marker
 
-# Attempt to silence unknown warnings
+# Attempt to silence unknown warning option
 #
 CUNKNOWN= -Wno-unknown-warning-option
 

@@ -44,7 +44,7 @@ CSILENCE= -Wno-parentheses -Wno-pointer-sign -Wno-incompatible-pointer-types \
           -Wno-misleading-indentation -Wno-unused-value \
 	  -Wno-strict-prototypes -Wno-stringop-overflow
 
-# Attempt to silence unknown warnings
+# Attempt to silence unknown warning option
 #
 CUNKNOWN= -Wno-unknown-warning-option
 

@@ -42,7 +42,7 @@ CSILENCE= -Wno-unused-parameter -Wno-deprecated-non-prototype -Wno-format-extra-
           -Wno-int-to-pointer-cast -Wno-strict-prototypes -Wno-implicit-int \
 	  -Wno-return-type -Wno-uninitialized -Wno-unused-value
 
-# Attempt to silence unknown warnings
+# Attempt to silence unknown warning option
 #
 CUNKNOWN= -Wno-unknown-warning-option
 

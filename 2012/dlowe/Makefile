@@ -40,7 +40,7 @@ include ../../var.mk
 #
 CSILENCE= -Wno-dangling-else -Wno-strict-prototypes -Wno-cpp -Wno-sequence-point
 
-# Attempt to silence unknown warnings
+# Attempt to silence unknown warning option
 #
 CUNKNOWN= -Wno-unknown-warning-option
 

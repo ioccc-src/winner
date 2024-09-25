@@ -42,7 +42,7 @@ CSILENCE= -Wno-empty-body -Wno-error -Wno-implicit-function-declaration \
 	  -Wno-return-type -Wno-unsequenced -Wno-strict-prototypes \
 	  -Wno-implicit-int -Wno-misleading-indentation -Wno-sequence-point
 
-# Attempt to silence unknown warnings
+# Attempt to silence unknown warning option
 #
 CUNKNOWN= -Wno-unknown-warning-option
 

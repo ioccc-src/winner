@@ -44,7 +44,7 @@ CSILENCE= -Wno-absolute-value -Wno-char-subscripts -Wno-dangling-else \
 	  -Wno-builtin-declaration-mismatch -Wno-misleading-indentation \
           -Wno-sign-compare -Wno-unused-value
 
-# Attempt to silence unknown warnings
+# Attempt to silence unknown warning option
 #
 CUNKNOWN= -Wno-unknown-warning-option
 

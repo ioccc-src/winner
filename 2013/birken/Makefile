@@ -41,7 +41,7 @@ include ../../var.mk
 CSILENCE= -Wno-newline-eof -Wno-strict-prototypes -Wno-maybe-uninitialized \
 	  -Wno-misleading-indentation
 
-# Attempt to silence unknown warnings
+# Attempt to silence unknown warning option
 #
 CUNKNOWN= -Wno-unknown-warning-option
 

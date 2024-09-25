@@ -41,7 +41,7 @@ include ../../var.mk
 CSILENCE= -Wno-empty-body -Wno-pointer-sign -Wno-deprecated-non-prototype \
 	  -Wno-implicit-int -Wno-misleading-indentation
 
-# Attempt to silence unknown warnings
+# Attempt to silence unknown warning option
 #
 CUNKNOWN= -Wno-unknown-warning-option
 

@@ -41,7 +41,7 @@ include ../../var.mk
 CSILENCE= -Wno-strict-prototypes -Wno-implicit-function-declaration \
 	  -Wno-builtin-declaration-mismatch
 
-# Attempt to silence unknown warnings
+# Attempt to silence unknown warning option
 #
 CUNKNOWN= -Wno-unknown-warning-option
 

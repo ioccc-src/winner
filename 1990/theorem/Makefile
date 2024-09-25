@@ -45,7 +45,7 @@ CSILENCE= -Wno-deprecated-declarations -Wno-empty-body -Wno-error -Wno-unused-va
 	  -Wno-deprecated-non-prototype -Wno-int-conversion -Wno-strict-prototypes \
 	  -Wno-implicit-int
 
-# Attempt to silence unknown warnings
+# Attempt to silence unknown warning option
 #
 CUNKNOWN= -Wno-unknown-warning-option
 

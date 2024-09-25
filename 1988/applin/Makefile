@@ -41,7 +41,7 @@ include ../../var.mk
 CSILENCE= -Wno-expansion-to-defined -Wno-implicit-int -Wno-strict-prototypes \
 	  -Wno-gnu-line-marker -Wno-return-type
 
-# Attempt to silence unknown warnings
+# Attempt to silence unknown warning option
 #
 CUNKNOWN= -Wno-unknown-warning-option
 

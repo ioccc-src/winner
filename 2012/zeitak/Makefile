@@ -47,7 +47,7 @@ CSILENCE= -Wno-constant-conversion -Wno-format-security \
 	  -Wno-disabled-macro-expansion -Wno-incompatible-function-pointer-types-strict \
 	  -Wno-unsafe-buffer-usage
 
-# Attempt to silence unknown warnings
+# Attempt to silence unknown warning option
 #
 CUNKNOWN= -Wno-unknown-warning-option
 

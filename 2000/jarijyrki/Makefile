@@ -44,7 +44,7 @@ CSILENCE= -Wno-char-subscripts -Wno-empty-body -Wno-error \
           -Wno-misleading-indentation -Wno-unused-value \
 	  -Wno-deprecated-non-prototype
 
-# Attempt to silence unknown warnings
+# Attempt to silence unknown warning option
 #
 CUNKNOWN= -Wno-unknown-warning-option
 

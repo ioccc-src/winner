@@ -44,7 +44,7 @@ CSILENCE= -Wno-bitwise-conditional-parentheses -Wno-bitwise-op-parentheses \
 	  -Wno-shift-op-parentheses -Wno-deprecated-non-prototype \
 	  -Wno-unused-value
 
-# Attempt to silence unknown warnings
+# Attempt to silence unknown warning option
 #
 CUNKNOWN= -Wno-unknown-warning-option
 

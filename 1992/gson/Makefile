@@ -46,7 +46,7 @@ CSILENCE= -Wno-bitwise-op-parentheses -Wno-char-subscripts \
 	  -Wno-int-in-bool-context -Wno-misleading-indentation \
           -Wno-missing-parameter-type
 
-# Attempt to silence unknown warnings
+# Attempt to silence unknown warning option
 #
 CUNKNOWN= -Wno-unknown-warning-option
 

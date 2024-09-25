@@ -43,7 +43,7 @@ CSILENCE= -Wno-unused-value -Wno-implicit-fallthrough -Wno-parentheses \
 	  -Wno-misleading-indentation -Wno-comment -Wno-implicit-function-declaration \
           -Wno-misleading-indentation -Wno-unused-value
 
-# Attempt to silence unknown warnings
+# Attempt to silence unknown warning option
 #
 CUNKNOWN= -Wno-unknown-warning-option
 

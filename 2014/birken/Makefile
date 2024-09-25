@@ -43,7 +43,7 @@ CSILENCE= -Wno-comment -Wno-dangling-else -Wno-error \
 	  -Wno-parentheses -Wno-trigraphs -Wno-newline-eof \
 	  -Wno-builtin-declaration-mismatch -Wno-sequence-point -Wno-documentation
 
-# Attempt to silence unknown warnings
+# Attempt to silence unknown warning option
 #
 CUNKNOWN= -Wno-unknown-warning-option
 

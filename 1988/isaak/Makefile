@@ -45,7 +45,7 @@ CSILENCE= -Wno-comma -Wno-implicit-function-declaration -Wno-format-insufficient
 	  -Wno-unused-macros -Wno-int-conversion -Wno-macro-redefined -Wno-parentheses \
 	  -Wno-builtin-declaration-mismatch -Wno-format -Wno-missing-parameter-type
 
-# Attempt to silence unknown warnings
+# Attempt to silence unknown warning option
 #
 CUNKNOWN= -Wno-unknown-warning-option
 

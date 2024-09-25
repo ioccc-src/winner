@@ -43,7 +43,7 @@ CSILENCE= -Wno-deprecated-declarations -Wno-error \
 	  -Wno-stringop-truncation -Wno-unused-value -Wno-format-extra-args \
 	  -Wno-strict-prototypes
 
-# Attempt to silence unknown warnings
+# Attempt to silence unknown warning option
 #
 CUNKNOWN= -Wno-unknown-warning-option
 

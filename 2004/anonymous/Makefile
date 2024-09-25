@@ -41,7 +41,7 @@ include ../../var.mk
 CSILENCE= -Wno-c99-extensions -Wno-conditional-type-mismatch -Wno-implicit-int \
 	  -Wno-logical-op-parentheses -Wno-parentheses
 
-# Attempt to silence unknown warnings
+# Attempt to silence unknown warning option
 #
 CUNKNOWN= -Wno-unknown-warning-option
 

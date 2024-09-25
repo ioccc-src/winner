@@ -43,7 +43,7 @@ CSILENCE= -Wno-bitwise-op-parentheses -Wno-error \
 	  -Wno-unsequenced -Wno-return-type -Wno-builtin-declaration-mismatch \
 	  -Wno-misleading-indentation
 
-# Attempt to silence unknown warnings
+# Attempt to silence unknown warning option
 #
 CUNKNOWN= -Wno-unknown-warning-option
 

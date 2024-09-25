@@ -44,7 +44,7 @@ CSILENCE= -Wno-char-subscripts -Wno-error -Wno-implicit-function-declaration \
 	  -Wno-builtin-declaration-mismatch -Wno-implicit-fallthrough \
           -Wno-int-in-bool-context -Wno-overflow -Wno-parentheses -Wno-return-type
 
-# Attempt to silence unknown warnings
+# Attempt to silence unknown warning option
 #
 CUNKNOWN= -Wno-unknown-warning-option
 

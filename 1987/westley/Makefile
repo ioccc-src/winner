@@ -42,7 +42,7 @@ CSILENCE= -Wno-for-loop-analysis -Wno-unused-value \
 	  -Wno-deprecated-non-prototype -Wno-strict-prototypes -Wno-implicit-int \
 	  -Wno-int-in-bool-context -Wno-maybe-uninitialized -Wno-return-type
 
-# Attempt to silence unknown warnings
+# Attempt to silence unknown warning option
 #
 CUNKNOWN= -Wno-unknown-warning-option
 

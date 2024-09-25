@@ -45,7 +45,7 @@ CSILENCE= -Wno-char-subscripts -Wno-error -Wno-implicit-function-declaration \
           -Wno-multistatement-macros -Wno-sequence-point -Wno-unused-value \
 	  -Wno-implicit-int
 
-# Attempt to silence unknown warnings
+# Attempt to silence unknown warning option
 #
 CUNKNOWN= -Wno-unknown-warning-option
 

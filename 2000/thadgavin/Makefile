@@ -43,7 +43,7 @@ CSILENCE= -Wno-empty-body -Wno-implicit-int -Wno-unsequenced \
 	  -Wno-misleading-indentation -Wno-sequence-point \
 	  -Wno-incompatible-pointer-types
 
-# Attempt to silence unknown warnings
+# Attempt to silence unknown warning option
 #
 CUNKNOWN= -Wno-unknown-warning-option
 
