@@ -6274,8 +6274,8 @@ As of _Fri 26 Jul 2024 17:29:15 UTC_, it contains:
         "year" : 1984,
         "dir" : "laman",
         "entry_id" : "1984_laman",
-	"title" : "1984.laman",
-	"abstract" : "prints spiralling numbers laid out in columns",
+        "title" : "1984.laman",
+        "abstract" : "prints spiralling numbers laid out in columns",
         "author_set" : [
             { "author_handle" : "Mike_Laman" }
         ],
