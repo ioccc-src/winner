@@ -1,10 +1,12 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "entry_JSON_format_version" : "1.1 2024-02-11",
+    "entry_JSON_format_version" : "1.2 2024-09-25",
     "award" : "Most underscored argument",
     "year" : 2014,
     "dir" : "deak",
     "entry_id" : "2014_deak",
+    "title" : "2014.deak",
+    "abstract" : "CPP and C99 abuse",
     "author_set" : [
         {
             "author_handle" : "Ferenc_Deak"

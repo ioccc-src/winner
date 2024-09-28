@@ -1,10 +1,12 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "entry_JSON_format_version" : "1.1 2024-02-11",
+    "entry_JSON_format_version" : "1.2 2024-09-25",
     "award" : "Most humorous output",
     "year" : 1989,
     "dir" : "ovdluhe",
     "entry_id" : "1989_ovdluhe",
+    "title" : "1989.ovdluhe",
+    "abstract" : "monkey-typer following template with APE identifiers",
     "author_set" : [
         {
             "author_handle" : "Oskar_von_der_Luehe"

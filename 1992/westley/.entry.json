@@ -1,10 +1,12 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "entry_JSON_format_version" : "1.1 2024-02-11",
+    "entry_JSON_format_version" : "1.2 2024-09-25",
     "award" : "Best small program",
     "year" : 1992,
     "dir" : "westley",
     "entry_id" : "1992_westley",
+    "title" : "1992.westley",
+    "abstract" : "print ASCII world map and mark a location by lat/long",
     "author_set" : [
         {
             "author_handle" : "Brian_Westley"

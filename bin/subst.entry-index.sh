@@ -106,7 +106,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.6 2024-09-23"
+export VERSION="1.7 2024-09-27"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -213,6 +213,58 @@ function output_award
     status_codes=("${PIPESTATUS[@]}")
     if [[ ${status_codes[*]} =~ [1-9] ]]; then
 	echo "$0: ERROR: in output_award: $JVAL_WRAPPER -b -q -- $ENTRY_JSON_PATH '$PATTERN | sed ... failed," \
+	     "error codes: ${status_codes[*]}" 1>&2
+	return 5
+    fi
+    return 0
+}
+
+
+# Write the abstract name to standard output (stdout)
+#
+# usage:
+#       output_abstract YYYY/dir/.entry.json
+#
+# returns:
+#       0 ==> no errors detected, but output may be empty
+#     > 0 ==> function error number
+#
+function output_abstract
+{
+    local ENTRY_JSON_PATH;	# the .entry.json path
+    local PATTERN;		# XPath for JSON pattern
+
+    # parse args
+    #
+    if [[ $# -ne 1 ]]; then
+        echo "$0: ERROR: in output_abstract: expected 1 arg, found $#" 1>&2
+        return 1
+    fi
+    ENTRY_JSON_PATH="$1"
+    if [[ ! -e $ENTRY_JSON_PATH ]]; then
+        echo "$0: ERROR: in output_abstract: .entry.json does not exist: $ENTRY_JSON_PATH" 1>&2
+        return 2
+    fi
+    if [[ ! -f $ENTRY_JSON_PATH ]]; then
+        echo "$0: ERROR: in output_abstract: .entry.json is not a file: $ENTRY_JSON_PATH" 1>&2
+        return 3
+    fi
+    if [[ ! -r $ENTRY_JSON_PATH ]]; then
+        echo "$0: ERROR: in output_abstract: .entry.json is not a readable file: $ENTRY_JSON_PATH" 1>&2
+        return 4
+    fi
+
+    # obtain the abstract string
+    #
+    PATTERN='$..abstract'
+    if [[ $V_FLAG -ge 5 ]]; then
+	echo  "$0: debug[5]: about to run: $JVAL_WRAPPER -b -q -- $ENTRY_JSON_PATH '$PATTERN' | sed ..." 1>&2
+    fi
+    "$JVAL_WRAPPER" -b -q "$ENTRY_JSON_PATH" "$PATTERN" | sed -f "$UNICODE_FIX_SED"
+    status="$?"
+    status_codes=("${PIPESTATUS[@]}")
+    if [[ ${status_codes[*]} =~ [1-9] ]]; then
+	echo "$0: ERROR: in output_abstract: $JVAL_WRAPPER -b -q -- $ENTRY_JSON_PATH '$PATTERN | sed ... failed," \
 	     "error codes: ${status_codes[*]}" 1>&2
 	return 5
     fi
@@ -511,6 +563,16 @@ if [[ -z $AWARD ]]; then
 fi
 
 
+# determine abstract
+#
+ABSTRACT=$(output_abstract "$ENTRY_JSON")
+export ABSTRACT
+if [[ -z $ABSTRACT ]]; then
+    echo "$0: ERROR: cannot determine abstract for $YEAR_DIR from: $ENTRY_JSON" 1>&2
+    exit 1
+fi
+
+
 # parameter debugging
 #
 if [[ $V_FLAG -ge 3 ]]; then
@@ -546,6 +608,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: DOT_PATH_CONTENT=$DOT_PATH_CONTENT" 1>&2
     echo "$0: debug[3]: ENTRY_NAVBAR_AWK=$ENTRY_NAVBAR_AWK" 1>&2
     echo "$0: debug[3]: AWARD=$AWARD" 1>&2
+    echo "$0: debug[3]: ABSTRACT=$ABSTRACT" 1>&2
 fi
 
 
@@ -581,6 +644,12 @@ echo "KEYWORDS=IOCCC, $YEAR_DIR, IOCCC $YEAR_DIR, IOCCC entry, $ENTRY_DIR, $AWAR
 #
 echo "-s"
 echo "HEADER_2=$YYYY_DIR - $AWARD"
+
+
+# output HEADER_3 substitution
+#
+echo "-s"
+echo "HEADER_3=$ABSTRACT"
 
 
 # output navbar left hand side links

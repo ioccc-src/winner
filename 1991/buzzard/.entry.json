@@ -1,10 +1,12 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "entry_JSON_format_version" : "1.1 2024-02-11",
+    "entry_JSON_format_version" : "1.2 2024-09-25",
     "award" : "Best output",
     "year" : 1991,
     "dir" : "buzzard",
     "entry_id" : "1991_buzzard",
+    "title" : "1991.buzzard",
+    "abstract" : "walk thru a maze from a first person point of view",
     "author_set" : [
         {
             "author_handle" : "Sean_Barrett"

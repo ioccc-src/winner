@@ -1,10 +1,12 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "entry_JSON_format_version" : "1.1 2024-02-11",
+    "entry_JSON_format_version" : "1.2 2024-09-25",
     "award" : "Best layout",
     "year" : 1996,
     "dir" : "gandalf",
     "entry_id" : "1996_gandalf",
+    "title" : "1996.gandalf",
+    "abstract" : "Displays the ASCII and 8 bit character tables",
     "author_set" : [
         {
             "author_handle" : "Dean_Swift"

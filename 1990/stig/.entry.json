@@ -1,10 +1,12 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "entry_JSON_format_version" : "1.1 2024-02-11",
+    "entry_JSON_format_version" : "1.2 2024-09-25",
     "award" : "Strangest abuse of the rules",
     "year" : 1990,
     "dir" : "stig",
     "entry_id" : "1990_stig",
+    "title" : "1990.stig",
+    "abstract" : "nested-comment tester (all on command line)",
     "author_set" : [
         {
             "author_handle" : "Stig_Hemmer"

@@ -1,10 +1,12 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "entry_JSON_format_version" : "1.1 2024-02-11",
+    "entry_JSON_format_version" : "1.2 2024-09-25",
     "award" : "Most illegible code",
     "year" : 1986,
     "dir" : "pawka",
     "entry_id" : "1986_pawka",
+    "title" : "1986.pawka",
+    "abstract" : "prints 'obfuscated?' big using xyyyx idents",
     "author_set" : [
         {
             "author_handle" : "Michael_H_Pawka"

@@ -1,10 +1,12 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "entry_JSON_format_version" : "1.1 2024-02-11",
+    "entry_JSON_format_version" : "1.2 2024-09-25",
     "award" : "Best complex task done in a complex way",
     "year" : 1986,
     "dir" : "august",
     "entry_id" : "1986_august",
+    "title" : "1986.august",
+    "abstract" : "struct-heavy e-computation with memory allocation with sbrk",
     "author_set" : [
         {
             "author_handle" : "Lennart_Augustsson"

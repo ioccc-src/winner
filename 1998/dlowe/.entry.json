@@ -1,10 +1,12 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "entry_JSON_format_version" : "1.1 2024-02-11",
+    "entry_JSON_format_version" : "1.2 2024-09-25",
     "award" : "Best utility",
     "year" : 1998,
     "dir" : "dlowe",
     "entry_id" : "1998_dlowe",
+    "title" : "1998.dlowe",
+    "abstract" : "Pootifies stdin (useful to view Microsoft html files)",
     "author_set" : [
         {
             "author_handle" : "J_David_Lowe"

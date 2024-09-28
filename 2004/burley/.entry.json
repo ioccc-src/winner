@@ -1,10 +1,12 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "entry_JSON_format_version" : "1.1 2024-02-11",
+    "entry_JSON_format_version" : "1.2 2024-09-25",
     "award" : "Best calculated risk",
     "year" : 2004,
     "dir" : "burley",
     "entry_id" : "2004_burley",
+    "title" : "2004.burley",
+    "abstract" : "A Poker game",
     "author_set" : [
         {
             "author_handle" : "Brent_Burley"

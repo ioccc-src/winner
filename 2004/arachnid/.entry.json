@@ -1,10 +1,12 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "entry_JSON_format_version" : "1.1 2024-02-11",
+    "entry_JSON_format_version" : "1.2 2024-09-25",
     "award" : "Best use of vision",
     "year" : 2004,
     "dir" : "arachnid",
     "entry_id" : "2004_arachnid",
+    "title" : "2004.arachnid",
+    "abstract" : "Curses maze navigator with only line-of-sight visibility",
     "author_set" : [
         {
             "author_handle" : "Nick_Johnson"

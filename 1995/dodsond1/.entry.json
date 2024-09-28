@@ -1,10 +1,12 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "entry_JSON_format_version" : "1.1 2024-02-11",
+    "entry_JSON_format_version" : "1.2 2024-09-25",
     "award" : "Most humorous",
     "year" : 1995,
     "dir" : "dodsond1",
     "entry_id" : "1995_dodsond1",
+    "title" : "1995.dodsond1",
+    "abstract" : "Text to Pig Latin translator",
     "author_set" : [
         {
             "author_handle" : "Don_Dodson"

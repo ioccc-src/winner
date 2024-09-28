@@ -1,10 +1,12 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "entry_JSON_format_version" : "1.1 2024-02-11",
+    "entry_JSON_format_version" : "1.2 2024-09-25",
     "award" : "Best layout",
     "year" : 1988,
     "dir" : "westley",
     "entry_id" : "1988_westley",
+    "title" : "1988.westley",
+    "abstract" : "prints '3.141' with circle made of '_-_-_-_'",
     "author_set" : [
         {
             "author_handle" : "Brian_Westley"

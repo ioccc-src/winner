@@ -1,10 +1,12 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "entry_JSON_format_version" : "1.1 2024-02-11",
+    "entry_JSON_format_version" : "1.2 2024-09-25",
     "award" : "CPP abuse",
     "year" : 1998,
     "dir" : "schweikh1",
     "entry_id" : "1998_schweikh1",
+    "title" : "1998.schweikh1",
+    "abstract" : "Tests to see if your compiler and headers are standard",
     "author_set" : [
         {
             "author_handle" : "Jens_Schweikhardt"

@@ -1,10 +1,12 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "entry_JSON_format_version" : "1.1 2024-02-11",
+    "entry_JSON_format_version" : "1.2 2024-09-25",
     "award" : "Largest small system emulator",
     "year" : 2013,
     "dir" : "cable3",
     "entry_id" : "2013_cable3",
+    "title" : "2013.cable3",
+    "abstract" : "IBM PC emulator",
     "author_set" : [
         {
             "author_handle" : "Adrian_Cable"

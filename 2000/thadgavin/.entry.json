@@ -1,10 +1,12 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "entry_JSON_format_version" : "1.1 2024-02-11",
+    "entry_JSON_format_version" : "1.2 2024-09-25",
     "award" : "Most portable output",
     "year" : 2000,
     "dir" : "thadgavin",
     "entry_id" : "2000_thadgavin",
+    "title" : "2000.thadgavin",
+    "abstract" : "Prints a dazzeling moving image under multiple interfaces",
     "author_set" : [
         {
             "author_handle" : "Gavin_Buttimore"

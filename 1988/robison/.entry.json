@@ -1,10 +1,12 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "entry_JSON_format_version" : "1.1 2024-02-11",
+    "entry_JSON_format_version" : "1.2 2024-09-25",
     "award" : "Best abuse of C constructs",
     "year" : 1988,
     "dir" : "robison",
     "entry_id" : "1988_robison",
+    "title" : "1988.robison",
+    "abstract" : "print e in any base using only -- >= and while()",
     "author_set" : [
         {
             "author_handle" : "Arch_D_Robison"

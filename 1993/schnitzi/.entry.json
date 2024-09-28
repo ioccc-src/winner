@@ -1,10 +1,12 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "entry_JSON_format_version" : "1.1 2024-02-11",
+    "entry_JSON_format_version" : "1.2 2024-09-25",
     "award" : "Obfuscated Intelligence Award",
     "year" : 1993,
     "dir" : "schnitzi",
     "entry_id" : "1993_schnitzi",
+    "title" : "1993.schnitzi",
+    "abstract" : "answers questions about English text in a file",
     "author_set" : [
         {
             "author_handle" : "Mark_Schnitzius"

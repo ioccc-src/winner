@@ -1,10 +1,12 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "entry_JSON_format_version" : "1.1 2024-02-11",
+    "entry_JSON_format_version" : "1.2 2024-09-25",
     "award" : "Most likely to top the charts",
     "year" : 2018,
     "dir" : "hou",
     "entry_id" : "2018_hou",
+    "title" : "2018.hou",
+    "abstract" : "Converter of JSON to SVG pie chart",
     "author_set" : [
         {
             "author_handle" : "Qiming_HOU"

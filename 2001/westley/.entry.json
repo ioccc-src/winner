@@ -1,10 +1,12 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "entry_JSON_format_version" : "1.1 2024-02-11",
+    "entry_JSON_format_version" : "1.2 2024-09-25",
     "award" : "Best position-independent code",
     "year" : 2001,
     "dir" : "westley",
     "entry_id" : "2001_westley",
+    "title" : "2001.westley",
+    "abstract" : "Sorts/scrambles that outputs as text/punch-cards",
     "author_set" : [
         {
             "author_handle" : "Brian_Westley"

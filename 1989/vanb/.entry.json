@@ -1,10 +1,12 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "entry_JSON_format_version" : "1.1 2024-02-11",
+    "entry_JSON_format_version" : "1.2 2024-09-25",
     "award" : "Best one liner",
     "year" : 1989,
     "dir" : "vanb",
     "entry_id" : "1989_vanb",
+    "title" : "1989.vanb",
+    "abstract" : "one-liner prints all subsets of arguments",
     "author_set" : [
         {
             "author_handle" : "David_Van_Brackle"

@@ -6,6 +6,7 @@
 #
 # author_wins.csv - author_handle followed by all their entry_ids
 # manifest.csv - information about files under a entry
+# summary.csv - year. dir, title and abstract for each entry
 # year_prize.csv - entry_id followed by the entry's award
 #
 # This tool updates .entry.json files for all entries.
@@ -142,7 +143,7 @@ shopt -s lastpipe	# explicitly run the last command of the pipe line in the curr
 
 # set variables referenced in the usage message
 #
-export VERSION="1.3 2024-09-23"
+export VERSION="1.4 2024-09-27"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -171,9 +172,10 @@ export EXIT_CODE="0"
 #
 export AUTHOR_WINS_CSV="author_wins.csv"
 export MANIFEST_CSV="manifest.csv"
+export SUMMARY_CSV="summary.csv"
 export YEAR_PRIZE_CSV="year_prize.csv"
 export DOT_ENTRY_JSON_BASENAME=".entry.json"
-export ENTRY_JSON_FORMAT_VERSION="1.1 2024-02-11"
+export ENTRY_JSON_FORMAT_VERSION="1.2 2024-09-25"
 export NO_COMMENT="mandatory comment: because comments were removed from the original JSON spec"
 export AUTHOR_DIR="author"
 
@@ -288,7 +290,7 @@ function canonicalize_csv
 # usage
 #
 export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-n] [-N]
-			[author_wins.csv [manifest.csv [year_prize.csv]]]
+			[author_wins.csv [manifest.csv [summary.csv [year_prize.csv]]]]
 
 	-h		print help message and exit
 	-v level	set verbosity level (def level: 0)
@@ -300,7 +302,8 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-n] [-N]
 	-N		do not process anything, just parse arguments (def: process something)
 
 	author_wins.csv	where to form author_wins.csv (def: $AUTHOR_WINS_CSV)
-	manifest.csv	where to form manifest.csv (def: $MANIFEST_CSV)
+	manifest.csv	where to form manifest.csv (def: $MANIFEST_CSV)k
+	summary.csv	where to form summary.csv (def: $SUMMARY_CSV)
 	year_prize.csv	where to form year_prize.csv (def: $YEAR_PRIZE_CSV)
 
 Exit codes:
@@ -359,14 +362,15 @@ done
 #
 shift $(( OPTIND - 1 ));
 #
-if [[ $V_FLAG -ge 5 ]]; then
+if [[ $V_FLAG -ge 6 ]]; then
     echo "$0: debug[5]: file argument count: $#" 1>&2
 fi
 case "$#" in
 0) ;;
 1) AUTHOR_WINS_CSV="$1" ;;
 2) AUTHOR_WINS_CSV="$1" ; MANIFEST_CSV="$2" ;;
-3) AUTHOR_WINS_CSV="$1" ; MANIFEST_CSV="$2" ; YEAR_PRIZE_CSV="$3" ;;
+3) AUTHOR_WINS_CSV="$1" ; MANIFEST_CSV="$2" ; SUMMARY_CSV="$3" ;;
+4) AUTHOR_WINS_CSV="$1" ; MANIFEST_CSV="$2" ; SUMMARY_CSV="$3" ; YEAR_PRIZE_CSV="$4" ;;
 *) echo "$0: expected 0, 1, 2 or 3 args, found #$" 1>&2
    echo 1>*2
    echo  "$USAGE" 1>&2
@@ -396,6 +400,17 @@ MANIFEST_CSV_DIR=$(dirname "$MANIFEST_CSV")
 export MANIFEST_CSV_DIR
 if [[ ! -w $MANIFEST_CSV_DIR ]]; then
     echo "$0: ERROR: AUTHOR_WINS_CSV file: $MANIFEST_CSV in a non-writable directory: $MANIFEST_CSV_DIR" 1>&2
+    exit 8
+fi
+#
+if [[ -z $SUMMARY_CSV ]]; then
+    echo "$0: ERROR: SUMMARY_CSV is empty" 1>&2
+    exit 8
+fi
+SUMMARY_CSV_DIR=$(dirname "$SUMMARY_CSV")
+export SUMMARY_CSV_DIR
+if [[ ! -w $SUMMARY_CSV_DIR ]]; then
+    echo "$0: ERROR: SUMMARY_CSV file: $SUMMARY_CSV in a non-writable directory: $SUMMARY_CSV_DIR" 1>&2
     exit 8
 fi
 #
@@ -499,7 +514,7 @@ if [[ ! -x $JVAL_WRAPPER ]]; then
 fi
 
 
-# verify that the bin/jval-wrapper.sh tool is executable
+# verify that the bin/unicode-chk.sh tool is executable
 #
 export UNICODE_CHK="$BIN_DIR/unicode-chk.sh"
 if [[ ! -e $UNICODE_CHK ]]; then
@@ -548,9 +563,11 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: EXIT_CODE=$EXIT_CODE" 1>&2
     echo "$0: debug[3]: AUTHOR_WINS_CSV=$AUTHOR_WINS_CSV" 1>&2
     echo "$0: debug[3]: MANIFEST_CSV=$MANIFEST_CSV" 1>&2
+    echo "$0: debug[3]: SUMMARY_CSV=$SUMMARY_CSV" 1>&2
     echo "$0: debug[3]: YEAR_PRIZE_CSV=$YEAR_PRIZE_CSV" 1>&2
     echo "$0: debug[3]: AUTHOR_WINS_CSV_DIR=$AUTHOR_WINS_CSV_DIR" 1>&2
     echo "$0: debug[3]: MANIFEST_CSV_DIR=$MANIFEST_CSV_DIR" 1>&2
+    echo "$0: debug[3]: SUMMARY_CSV_DIR=$SUMMARY_CSV_DIR" 1>&2
     echo "$0: debug[3]: YEAR_PRIZE_CSV_DIR=$YEAR_PRIZE_CSV_DIR" 1>&2
     echo "$0: debug[3]: CD_FAILED=$CD_FAILED" 1>&2
     echo "$0: debug[3]: TOP_FILE=$TOP_FILE" 1>&2
@@ -616,23 +633,43 @@ if [[ ! -e $TMP_MANIFEST_CSV ]]; then
 fi
 
 
+# create a temporary summary.csv file
+#
+export TMP_SUMMARY_CSV=".tmp.$NAME.SUMMARY_CSV.$$.tmp"
+if [[ $V_FLAG -ge 3 ]]; then
+    echo  "$0: debug[3]: temporary CSV summary.csv file: $TMP_SUMMARY_CSV" 1>&2
+fi
+trap 'rm -f $TMP_SUMMARY_CSV; exit' 0 1 2 3 15
+rm -f "$TMP_SUMMARY_CSV"
+if [[ -e $TMP_SUMMARY_CSV ]]; then
+    echo "$0: ERROR: cannot remove temporary CSV summary.csv file: $TMP_SUMMARY_CSV" 1>&2
+    exit 14
+fi
+echo '# year,dir,title,abstract' > \
+  "$TMP_SUMMARY_CSV"
+if [[ ! -e $TMP_SUMMARY_CSV ]]; then
+    echo "$0: ERROR: cannot create temporary CSV summary.csv file: $TMP_SUMMARY_CSV" 1>&2
+    exit 15
+fi
+
+
 # create a temporary year_prize.csv file
 #
 export TMP_YEAR_PRIZE_CSV=".tmp.$NAME.YEAR_PRIZE_CSV.$$.tmp"
 if [[ $V_FLAG -ge 3 ]]; then
     echo  "$0: debug[3]: temporary CSV year_prize.csv file: $TMP_YEAR_PRIZE_CSV" 1>&2
 fi
-trap 'rm -f $TMP_AUTHOR_WINS_CSV $TMP_MANIFEST_CSV $TMP_YEAR_PRIZE_CSV; exit' 0 1 2 3 15
+trap 'rm -f $TMP_AUTHOR_WINS_CSV $TMP_MANIFEST_CSV $TMP_YEAR_PRIZE_CSV $TMP_SUMMARY_CSV $TMP_AUTHOR_WINS_CSV; exit' 0 1 2 3 15
 rm -f "$TMP_YEAR_PRIZE_CSV"
 if [[ -e $TMP_YEAR_PRIZE_CSV ]]; then
     echo "$0: ERROR: cannot remove temporary CSV year_prize.csv file: $TMP_YEAR_PRIZE_CSV" 1>&2
-    exit 14
+    exit 16
 fi
 echo '# year_handle,award name' > \
   "$TMP_YEAR_PRIZE_CSV"
 if [[ ! -e $TMP_YEAR_PRIZE_CSV ]]; then
     echo "$0: ERROR: cannot create temporary CSV year_prize.csv file: $TMP_YEAR_PRIZE_CSV" 1>&2
-    exit 15
+    exit 17
 fi
 
 
@@ -642,16 +679,17 @@ export TMP_YYYY_DIR_INV=".tmp.$NAME.YYYY_DIR_inventory.$$.tmp"
 if [[ $V_FLAG -ge 3 ]]; then
     echo  "$0: debug[3]: temporary CSV temporary YYYY_DIR inventory file: $TMP_YYYY_DIR_INV" 1>&2
 fi
-trap 'rm -f $TMP_AUTHOR_WINS_CSV $TMP_MANIFEST_CSV $TMP_YEAR_PRIZE_CSV $TMP_YYYY_DIR_INV; exit' 0 1 2 3 15
+trap 'rm -f $TMP_AUTHOR_WINS_CSV $TMP_MANIFEST_CSV $TMP_YEAR_PRIZE_CSV $TMP_SUMMARY_CSV $TMP_AUTHOR_WINS_CSV \
+	    $TMP_YYYY_DIR_INV; exit' 0 1 2 3 15
 rm -f "$TMP_YYYY_DIR_INV"
 if [[ -e $TMP_YYYY_DIR_INV ]]; then
     echo "$0: ERROR: cannot remove temporary CSV temporary YYYY_DIR inventory file: $TMP_YYYY_DIR_INV" 1>&2
-    exit 16
+    exit 18
 fi
 : > "$TMP_YYYY_DIR_INV"
 if [[ ! -e $TMP_YYYY_DIR_INV ]]; then
     echo "$0: ERROR: cannot create temporary CSV temporary YYYY_DIR inventory file: $TMP_YYYY_DIR_INV" 1>&2
-    exit 17
+    exit 19
 fi
 
 
@@ -661,17 +699,17 @@ export TMP_2ND_YYYY_DIR_INV=".tmp.$NAME.YYYY_DIR_inventory.$$.tmp"
 if [[ $V_FLAG -ge 3 ]]; then
     echo  "$0: debug[3]: temporary CSV temporary 2nd YYYY_DIR inventory file: $TMP_2ND_YYYY_DIR_INV" 1>&2
 fi
-trap 'rm -f $TMP_AUTHOR_WINS_CSV $TMP_MANIFEST_CSV $TMP_YEAR_PRIZE_CSV $TMP_YYYY_DIR_INV \
+trap 'rm -f $TMP_AUTHOR_WINS_CSV $TMP_MANIFEST_CSV $TMP_YEAR_PRIZE_CSV $TMP_SUMMARY_CSV $TMP_AUTHOR_WINS_CSV \
 	    $TMP_YYYY_DIR_INV $TMP_2ND_YYYY_DIR_INV; exit' 0 1 2 3 15
 rm -f "$TMP_2ND_YYYY_DIR_INV"
 if [[ -e $TMP_2ND_YYYY_DIR_INV ]]; then
     echo "$0: ERROR: cannot remove temporary CSV temporary 2nd YYYY_DIR inventory file: $TMP_2ND_YYYY_DIR_INV" 1>&2
-    exit 18
+    exit 20
 fi
 : > "$TMP_2ND_YYYY_DIR_INV"
 if [[ ! -e $TMP_2ND_YYYY_DIR_INV ]]; then
     echo "$0: ERROR: cannot create temporary CSV temporary 2nd YYYY_DIR inventory file: $TMP_2ND_YYYY_DIR_INV" 1>&2
-    exit 19
+    exit 21
 fi
 
 
@@ -681,17 +719,17 @@ export TMP_ENTRY_JSON=".tmp.$NAME.entry.json.$$.tmp"
 if [[ $V_FLAG -ge 3 ]]; then
     echo  "$0: debug[3]: temporary CSV temporary .entry.json file: $TMP_ENTRY_JSON" 1>&2
 fi
-trap 'rm -f $TMP_AUTHOR_WINS_CSV $TMP_MANIFEST_CSV $TMP_YEAR_PRIZE_CSV $TMP_YYYY_DIR_INV \
+trap 'rm -f $TMP_AUTHOR_WINS_CSV $TMP_MANIFEST_CSV $TMP_YEAR_PRIZE_CSV $TMP_SUMMARY_CSV $TMP_AUTHOR_WINS_CSV \
 	    $TMP_YYYY_DIR_INV $TMP_2ND_YYYY_DIR_INV $TMP_ENTRY_JSON; exit' 0 1 2 3 15
 rm -f "$TMP_ENTRY_JSON"
 if [[ -e $TMP_ENTRY_JSON ]]; then
     echo "$0: ERROR: cannot remove temporary CSV temporary .entry.json file: $TMP_ENTRY_JSON" 1>&2
-    exit 20
+    exit 22
 fi
 : > "$TMP_ENTRY_JSON"
 if [[ ! -e $TMP_ENTRY_JSON ]]; then
     echo "$0: ERROR: cannot create temporary CSV temporary .entry.json file: $TMP_ENTRY_JSON" 1>&2
-    exit 21
+    exit 23
 fi
 
 
@@ -704,17 +742,17 @@ export TMP_EXIT_CODE=".tmp.$NAME.EXIT_CODE.$$.tmp"
 if [[ $V_FLAG -ge 3 ]]; then
     echo  "$0: debug[3]: temporary exit code: $TMP_EXIT_CODE" 1>&2
 fi
-trap 'rm -f $TMP_AUTHOR_WINS_CSV $TMP_MANIFEST_CSV $TMP_YEAR_PRIZE_CSV $TMP_YYYY_DIR_INV $TMP_YYYY_DIR_INV \
-	    $TMP_2ND_YYYY_DIR_INV $TMP_ENTRY_JSON $TMP_EXIT_CODE; exit' 0 1 2 3 15
+trap 'rm -f $TMP_AUTHOR_WINS_CSV $TMP_MANIFEST_CSV $TMP_YEAR_PRIZE_CSV $TMP_SUMMARY_CSV $TMP_AUTHOR_WINS_CSV \
+	    $TMP_YYYY_DIR_INV $TMP_2ND_YYYY_DIR_INV $TMP_ENTRY_JSON $TMP_EXIT_CODE; exit' 0 1 2 3 15
 rm -f "$TMP_EXIT_CODE"
 if [[ -e $TMP_EXIT_CODE ]]; then
     echo "$0: ERROR: cannot remove temporary exit code: $TMP_EXIT_CODE" 1>&2
-    exit 22
+    exit 24
 fi
 echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
 if [[ ! -e $TMP_EXIT_CODE ]]; then
     echo "$0: ERROR: cannot create temporary exit code: $TMP_EXIT_CODE" 1>&2
-    exit 23
+    exit 25
 fi
 
 
@@ -724,17 +762,18 @@ export TMP_AUTHOR_HANDLE_FROM_FILES=".tmp.$NAME.AUTHOR_HANDLE_FROM_FILES.$$.tmp"
 if [[ $V_FLAG -ge 3 ]]; then
     echo  "$0: debug[3]: temporary sorted list of author_handles: $TMP_AUTHOR_HANDLE_FROM_FILES" 1>&2
 fi
-trap 'rm -f $TMP_AUTHOR_WINS_CSV $TMP_MANIFEST_CSV $TMP_YEAR_PRIZE_CSV $TMP_YYYY_DIR_INV $TMP_YYYY_DIR_INV \
-	    $TMP_2ND_YYYY_DIR_INV $TMP_ENTRY_JSON $TMP_EXIT_CODE $TMP_AUTHOR_HANDLE_FROM_FILES; exit' 0 1 2 3 15
+trap 'rm -f $TMP_AUTHOR_WINS_CSV $TMP_MANIFEST_CSV $TMP_YEAR_PRIZE_CSV $TMP_SUMMARY_CSV $TMP_AUTHOR_WINS_CSV \
+	    $TMP_YYYY_DIR_INV $TMP_2ND_YYYY_DIR_INV $TMP_ENTRY_JSON $TMP_EXIT_CODE \
+	    $TMP_AUTHOR_HANDLE_FROM_FILES; exit' 0 1 2 3 15
 rm -f "$TMP_AUTHOR_HANDLE_FROM_FILES"
 if [[ -e $TMP_AUTHOR_HANDLE_FROM_FILES ]]; then
     echo "$0: ERROR: cannot remove temporary sorted list of author_handles: $TMP_AUTHOR_HANDLE_FROM_FILES" 1>&2
-    exit 24
+    exit 26
 fi
 : > "$TMP_AUTHOR_HANDLE_FROM_FILES"
 if [[ ! -e $TMP_AUTHOR_HANDLE_FROM_FILES ]]; then
     echo "$0: ERROR: cannot create temporary sorted list of author_handles: $TMP_AUTHOR_HANDLE_FROM_FILES" 1>&2
-    exit 25
+    exit 27
 fi
 
 
@@ -744,17 +783,18 @@ export TMP_AUTHOR_HANDLE_FROM_CSV=".tmp.$NAME.AUTHOR_HANDLE_FROM_CSV.$$.tmp"
 if [[ $V_FLAG -ge 3 ]]; then
     echo  "$0: debug[3]: temporary sorted list of author_handles: $TMP_AUTHOR_HANDLE_FROM_CSV" 1>&2
 fi
-trap 'rm -f $TMP_AUTHOR_WINS_CSV $TMP_MANIFEST_CSV $TMP_YEAR_PRIZE_CSV $TMP_YYYY_DIR_INV $TMP_YYYY_DIR_INV \
-	    $TMP_2ND_YYYY_DIR_INV $TMP_ENTRY_JSON $TMP_EXIT_CODE $TMP_AUTHOR_HANDLE_FROM_CSV; exit' 0 1 2 3 15
+trap 'rm -f $TMP_AUTHOR_WINS_CSV $TMP_MANIFEST_CSV $TMP_YEAR_PRIZE_CSV $TMP_SUMMARY_CSV $TMP_AUTHOR_WINS_CSV \
+	    $TMP_YYYY_DIR_INV $TMP_2ND_YYYY_DIR_INV $TMP_ENTRY_JSON $TMP_EXIT_CODE \
+	    $TMP_AUTHOR_HANDLE_FROM_FILES $TMP_AUTHOR_HANDLE_FROM_CSV; exit' 0 1 2 3 15
 rm -f "$TMP_AUTHOR_HANDLE_FROM_CSV"
 if [[ -e $TMP_AUTHOR_HANDLE_FROM_CSV ]]; then
     echo "$0: ERROR: cannot remove temporary sorted list of author_handles: $TMP_AUTHOR_HANDLE_FROM_CSV" 1>&2
-    exit 26
+    exit 28
 fi
 : > "$TMP_AUTHOR_HANDLE_FROM_CSV"
 if [[ ! -e $TMP_AUTHOR_HANDLE_FROM_CSV ]]; then
     echo "$0: ERROR: cannot create temporary sorted list of author_handles: $TMP_AUTHOR_HANDLE_FROM_CSV" 1>&2
-    exit 26
+    exit 29
 fi
 
 
@@ -996,6 +1036,93 @@ if [[ -z $NOOP ]]; then
 
 elif [[ $V_FLAG -ge 3 ]]; then
    echo "$0: debug[3]: because of -n, will not update $MANIFEST_CSV"
+fi
+
+
+# canonicalize summary.csv into temporary summary.csv file
+#
+if [[ -z $NOOP ]]; then
+
+    if [[ $V_FLAG -ge 1 ]]; then
+	echo "$0: debug[1]: about to: canonicalize $SUMMARY_CSV" 1>&2
+    fi
+    canonicalize_csv "$SUMMARY_CSV" "$TMP_SUMMARY_CSV"
+    status="$?"
+    if [[ $status -ne 0 ]]; then
+	echo "$0: ERROR: canonicalize_csv $SUMMARY_CSV $TMP_SUMMARY_CSV failed," \
+	     "error code: $status" 1>&2
+	exit 8
+    elif [[ $V_FLAG -ge 3 ]]; then
+	echo "$0: debug[3]: sorted temporary summary.csv file: $TMP_SUMMARY_CSV" 1>&2
+    fi
+
+elif [[ $V_FLAG -ge 3 ]]; then
+   echo "$0: debug[3]: because of -n, will not canonicalize: $SUMMARY_CSV"
+fi
+
+
+# sort the temporary summary.csv file
+#
+if [[ -z $NOOP ]]; then
+
+    if [[ $V_FLAG -ge 5 ]]; then
+	echo "$0: debug[5]: about to: LC_ALL=C sort -t, -k1,1 -k2d,4 $TMP_SUMMARY_CSV -o $TMP_SUMMARY_CSV" 1>&2
+    fi
+    LC_ALL=C sort -t, -k1,1 -k2d,4 "$TMP_SUMMARY_CSV" -o "$TMP_SUMMARY_CSV"
+    status="$?"
+    if [[ $status -ne 0 ]]; then
+	echo "$0: ERROR: LC_ALL=C sort -t, -k1d,1 -k2d,2 $TMP_SUMMARY_CSV -o $TMP_SUMMARY_CSV," \
+	     "error code: $status" 1>&2
+	exit 8
+    elif [[ $V_FLAG -ge 3 ]]; then
+	echo "$0: debug[3]: sorted temporary summary.csv file: $TMP_SUMMARY_CSV" 1>&2
+    fi
+
+elif [[ $V_FLAG -ge 3 ]]; then
+   echo "$0: debug[3]: because of -n, will not sort: $TMP_SUMMARY_CSV"
+fi
+
+
+# replace summary.csv file with the temporary file if summary.csv is missing or different
+#
+if [[ -z $NOOP ]]; then
+    if cmp -s "$TMP_SUMMARY_CSV" "$SUMMARY_CSV"; then
+
+	# case: summary.csv did not change
+	#
+	if [[ $V_FLAG -ge 5 ]]; then
+            echo "$0: debug[5]: summary.csv file did not change: $SUMMARY_CSV" 1>&2
+        fi
+
+    else
+
+        # case: summary.csv file changed, update the file
+        #
+        if [[ $V_FLAG -ge 5 ]]; then
+            echo "$0: debug[5]: about to: mv -f -- $TMP_SUMMARY_CSV $SUMMARY_CSV" 1>&2
+        fi
+        if [[ $V_FLAG -ge 3 ]]; then
+            mv -f -v -- "$TMP_SUMMARY_CSV" "$SUMMARY_CSV"
+            status="$?"
+        else
+            mv -f -- "$TMP_SUMMARY_CSV" "$SUMMARY_CSV"
+            status="$?"
+        fi
+        if [[ $status -ne 0 ]]; then
+            echo "$0: ERROR: mv -f -- $TMP_SUMMARY_CSV $SUMMARY_CSV filed," \
+	         "error code: $status" 1>&2
+            exit 8
+        elif [[ $V_FLAG -ge 1 ]]; then
+            echo "$0: debug[1]: replaced summary.csv file: $SUMMARY_CSV" 1>&2
+        fi
+        if [[ ! -s $SUMMARY_CSV ]]; then
+            echo "$0: ERROR: not a non-empty summary.csv file: $SUMMARY_CSV" 1>&2
+            exit 8
+        fi
+    fi
+
+elif [[ $V_FLAG -ge 3 ]]; then
+   echo "$0: debug[3]: because of -n, will not update $SUMMARY_CSV"
 fi
 
 
@@ -1259,7 +1386,7 @@ done
 #
 if [[ ! -s $TMP_YYYY_DIR_INV ]]; then
     echo "$0: ERROR: arg: YYYY_DIR inventory file is not a non-empty file: $TMP_YYYY_DIR_INV" 1>&2
-    exit 26
+    exit 30
 fi
 #
 if [[ $V_FLAG -ge 5 ]]; then
@@ -1288,7 +1415,7 @@ status_codes=("${PIPESTATUS[@]}")
 if [[ ${status_codes[*]} =~ [1-9] ]]; then
    echo "$0: ERROR: sed .. $AUTHOR_WINS_CSV | LC_ALL=C sort -t/ -d > $TMP_2ND_YYYY_DIR_INV failed," \
         "error codes: ${status_codes[*]}" 1>&2
-   exit 27
+   exit 31
 fi
 
 
@@ -1302,7 +1429,7 @@ if ! cmp -s "$TMP_YEAR_PRIZE_CSV" "$YEAR_PRIZE_CSV"; then
     echo "$0: Warning: difference between YYYY/dir tree and author_wins.csv entries starts below: $AUTHOR_WINS_CSV" 1>&2
     diff -u "$TMP_YEAR_PRIZE_CSV" "$YEAR_PRIZE_CSV" 1>&2
     echo "$0: Warning: difference between YYYY/dir tree and author_wins.csv entries ends above" 1>&2
-    exit 28
+    exit 32
 
 elif [[ $V_FLAG -ge 5 ]]; then
     echo "$0: debug[5]: author_wins.csv entry inventory is correct" 1>&2
@@ -1319,7 +1446,7 @@ status_codes=("${PIPESTATUS[@]}")
 if [[ ${status_codes[*]} =~ [1-9] ]]; then
    echo "$0: ERROR: sed .. $MANIFEST_CSV | LC_ALL=C sort -t/ -d | uniq > $TMP_2ND_YYYY_DIR_INV failed," \
         "error codes: ${status_codes[*]}" 1>&2
-   exit 29
+   exit 33
 fi
 
 
@@ -1333,7 +1460,7 @@ if ! cmp -s "$TMP_YEAR_PRIZE_CSV" "$YEAR_PRIZE_CSV"; then
     echo "$0: Warning: difference between YYYY/dir tree and manifest.csv entries starts below: $MANIFEST_CSV" 1>&2
     diff -u "$TMP_YEAR_PRIZE_CSV" "$YEAR_PRIZE_CSV" 1>&2
     echo "$0: Warning: difference between YYYY/dir tree and manifest.csv entries ends above" 1>&2
-    exit 30
+    exit 34
 
 elif [[ $V_FLAG -ge 5 ]]; then
     echo "$0: debug[5]: manifest.csv.csv entry inventory is correct" 1>&2
@@ -1350,7 +1477,7 @@ status_codes=("${PIPESTATUS[@]}")
 if [[ ${status_codes[*]} =~ [1-9] ]]; then
    echo "$0: ERROR: sed .. $YEAR_PRIZE_CSV | LC_ALL=C sort -t/ -d > $TMP_2ND_YYYY_DIR_INV failed," \
         "error codes: ${status_codes[*]}" 1>&2
-   exit 31
+   exit 35
 fi
 
 
@@ -1364,7 +1491,7 @@ if ! cmp -s "$TMP_YEAR_PRIZE_CSV" "$YEAR_PRIZE_CSV"; then
     echo "$0: Warning: difference between YYYY/dir tree and year_prize.csv entries starts below: $YEAR_PRIZE_CSV" 1>&2
     diff -u "$TMP_YEAR_PRIZE_CSV" "$YEAR_PRIZE_CSV" 1>&2
     echo "$0: Warning: difference between YYYY/dir tree and year_prize.csv entries ends above" 1>&2
-    exit 32
+    exit 36
 
 elif [[ $V_FLAG -ge 5 ]]; then
     echo "$0: debug[5]: year_prize.csv entry inventory is correct" 1>&2
@@ -1519,6 +1646,47 @@ sed -e '/^#/d' -e 's/,/ /g' "$MANIFEST_CSV" |
 	    exit 1
 	fi
 
+	# obtain the entry's line form summary.csv
+	#
+	SUMMARY_LINE_FOUND=$(grep -c "^${YEAR},${DIR}," "$SUMMARY_CSV")
+	if [[ $SUMMARY_LINE_FOUND -le 0 ]]; then
+	    echo "$0: ERROR: unable to find ^${YEAR},${DIR}, in $SUMMARY_CSV" 1>&2
+	    exit 1
+	elif [[ $SUMMARY_LINE_FOUND -ge 2 ]]; then
+	    echo "$0: ERROR: found more then 1 line of the form ^${YEAR},${DIR}, in $SUMMARY_CSV" 1>&2
+	    exit 1
+	fi
+	SUMMARY_LINE=$(grep "^${YEAR},${DIR}," "$SUMMARY_CSV" | tr , ' ')
+
+	# obtain title and abstract from the entry's line in summary.csv
+	#
+	export YEAR_FOUND DIR_FOUND TITLE ABSTRACT
+	read -r YEAR_FOUND DIR_FOUND TITLE ABSTRACT <<< "$SUMMARY_LINE"
+	if [[ $YEAR != "$YEAR_FOUND" ]]; then
+	    echo "$0: ERROR: year $YEAR != found year: $YEAR_FOUND for ^${YEAR},${DIR}, in $SUMMARY_CSV" 1>&2
+	    exit 1
+	fi
+	if [[ $DIR != "$DIR_FOUND" ]]; then
+	    echo "$0: ERROR: year $DIR != found year: $DIR_FOUND for ^${YEAR},${DIR}, in $SUMMARY_CSV" 1>&2
+	    exit 1
+	fi
+	if [[ -z $TITLE ]]; then
+	    TITLE="${DIR}.${YEAR}"
+	    echo "$0: Warning empty title for ^${YEAR},${DIR}, in $SUMMARY_CSV, will use $TITLE" 1>&2
+	fi
+	if [[ -z $ABSTRACT ]]; then
+	    ABSTRACT="default abstract for ${YEAR}/${DIR}"
+	    echo "$0: Warning empty abstract for ^${YEAR},${DIR}, in $SUMMARY_CSV, will use $TITLE" 1>&2
+	fi
+	if [[ ${#ABSTRACT} -ge 65 ]]; then
+	    echo "$0: ERROR: abstract length ${#ABSTRACT} >= 65 for $YEAR_FOUND/$DIR_FOUND" 1>&2
+	    exit 1
+	fi
+	if [[ $ABSTRACT =~ [\;$,] ]]; then
+	    echo "$0: ERROR: abstract contains ; or & or , for $YEAR_FOUND/$DIR_FOUND" 1>&2
+	    exit 1
+	fi
+
 	# append top level lines to the temporary .entry.file
 	#
 	{
@@ -1541,6 +1709,8 @@ sed -e '/^#/d' -e 's/,/ /g' "$MANIFEST_CSV" |
 	    printf "    \"year\" : %s,\n" "$YEAR"
 	    printf "    \"dir\" : \"%s\",\n" "$DIR"
 	    printf "    \"entry_id\" : \"%s\",\n" "$ENTRY_ID"
+	    printf "    \"title\" : \"%s\",\n" "$TITLE"
+	    printf "    \"abstract\" : \"%s\",\n" "$ABSTRACT"
 	} >> "$TMP_ENTRY_JSON"
 
 	# write the start of the author_set JSON array to the temporary .entry.file

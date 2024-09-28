@@ -1,10 +1,12 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "entry_JSON_format_version" : "1.1 2024-02-11",
+    "entry_JSON_format_version" : "1.2 2024-09-25",
     "award" : "Best way to lose a life",
     "year" : 2012,
     "dir" : "dlowe",
     "entry_id" : "2012_dlowe",
+    "title" : "2012.dlowe",
+    "abstract" : "Conway's game of death",
     "author_set" : [
         {
             "author_handle" : "J_David_Lowe"

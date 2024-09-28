@@ -1,10 +1,12 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "entry_JSON_format_version" : "1.1 2024-02-11",
+    "entry_JSON_format_version" : "1.2 2024-09-25",
     "award" : "Best layout",
     "year" : 1989,
     "dir" : "roemer",
     "entry_id" : "1989_roemer",
+    "title" : "1989.roemer",
+    "abstract" : "prints e with pi shaped layout with _31415 identifiers",
     "author_set" : [
         {
             "author_handle" : "Roemer_B_Lievaart"

@@ -1,10 +1,12 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "entry_JSON_format_version" : "1.1 2024-02-11",
+    "entry_JSON_format_version" : "1.2 2024-09-25",
     "award" : "Best X11 entry",
     "year" : 1996,
     "dir" : "jonth",
     "entry_id" : "1996_jonth",
+    "title" : "1996.jonth",
+    "abstract" : "X based dual player tic-tac-toe game",
     "author_set" : [
         {
             "author_handle" : "Jon_Thingvold"

@@ -1,10 +1,12 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "entry_JSON_format_version" : "1.1 2024-02-11",
+    "entry_JSON_format_version" : "1.2 2024-09-25",
     "award" : "Best output",
     "year" : 1995,
     "dir" : "cdua",
     "entry_id" : "1995_cdua",
+    "title" : "1995.cdua",
+    "abstract" : "Generate a maze on the scren and then solve it",
     "author_set" : [
         {
             "author_handle" : "Carlos_Duarte"

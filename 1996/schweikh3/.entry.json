@@ -1,10 +1,12 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "entry_JSON_format_version" : "1.1 2024-02-11",
+    "entry_JSON_format_version" : "1.2 2024-09-25",
     "award" : "Best utility",
     "year" : 1996,
     "dir" : "schweikh3",
     "entry_id" : "1996_schweikh3",
+    "title" : "1996.schweikh3",
+    "abstract" : "Determins the memory allocation honesty of the OS",
     "author_set" : [
         {
             "author_handle" : "Jens_Schweikhardt"

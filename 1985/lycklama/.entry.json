@@ -1,10 +1,12 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "entry_JSON_format_version" : "1.1 2024-02-11",
+    "entry_JSON_format_version" : "1.2 2024-09-25",
     "award" : "Strangest appearing program",
     "year" : 1985,
     "dir" : "lycklama",
     "entry_id" : "1985_lycklama",
+    "title" : "1985.lycklama",
+    "abstract" : "heavily cpped with o_oo identifiers that scrolls text right",
     "author_set" : [
         {
             "author_handle" : "Ed_Lycklama"

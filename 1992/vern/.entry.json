@@ -1,10 +1,12 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "entry_JSON_format_version" : "1.1 2024-02-11",
+    "entry_JSON_format_version" : "1.2 2024-09-25",
     "award" : "Best of Show",
     "year" : 1992,
     "dir" : "vern",
     "entry_id" : "1992_vern",
+    "title" : "1992.vern",
+    "abstract" : "plays chess",
     "author_set" : [
         {
             "author_handle" : "Vern_Paxson"

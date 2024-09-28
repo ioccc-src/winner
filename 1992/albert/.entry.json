@@ -1,10 +1,12 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "entry_JSON_format_version" : "1.1 2024-02-11",
+    "entry_JSON_format_version" : "1.2 2024-09-25",
     "award" : "Most useful program",
     "year" : 1992,
     "dir" : "albert",
     "entry_id" : "1992_albert",
+    "title" : "1992.albert",
+    "abstract" : "factors multi-precision numbers with factors < MAX_LONG",
     "author_set" : [
         {
             "author_handle" : "Albert_van_der_Horst"

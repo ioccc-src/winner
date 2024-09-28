@@ -1,10 +1,12 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "entry_JSON_format_version" : "1.1 2024-02-11",
+    "entry_JSON_format_version" : "1.2 2024-09-25",
     "award" : "Most calendrical",
     "year" : 2019,
     "dir" : "poikola",
     "entry_id" : "2019_poikola",
+    "title" : "2019.poikola",
+    "abstract" : "SHA and Prime and Fibonacci",
     "author_set" : [
         {
             "author_handle" : "Timo_Poikola"

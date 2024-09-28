@@ -1,10 +1,12 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "entry_JSON_format_version" : "1.1 2024-02-11",
+    "entry_JSON_format_version" : "1.2 2024-09-25",
     "award" : "Most playfully versatile",
     "year" : 2013,
     "dir" : "morgan2",
     "entry_id" : "2013_morgan2",
+    "title" : "2013.morgan2",
+    "abstract" : "X11 and ASCII domino matching game",
     "author_set" : [
         {
             "author_handle" : "Yves-Marie_Morgan"

@@ -1,10 +1,12 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "entry_JSON_format_version" : "1.1 2024-02-11",
+    "entry_JSON_format_version" : "1.2 2024-09-25",
     "award" : "Most partisan one liner",
     "year" : 2013,
     "dir" : "cable1",
     "entry_id" : "2013_cable1",
+    "title" : "2013.cable1",
+    "abstract" : "1-liner party of a US President",
     "author_set" : [
         {
             "author_handle" : "Adrian_Cable"

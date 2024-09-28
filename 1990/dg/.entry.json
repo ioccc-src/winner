@@ -1,10 +1,12 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "entry_JSON_format_version" : "1.1 2024-02-11",
+    "entry_JSON_format_version" : "1.2 2024-09-25",
     "award" : "Best abuse of the C preprocessor",
     "year" : 1990,
     "dir" : "dg",
     "entry_id" : "1990_dg",
+    "title" : "1990.dg",
+    "abstract" : "rot13 done with strange cpp macros",
     "author_set" : [
         {
             "author_handle" : "David_Goodenough"

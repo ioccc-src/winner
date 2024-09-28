@@ -1,10 +1,12 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "entry_JSON_format_version" : "1.1 2024-02-11",
+    "entry_JSON_format_version" : "1.2 2024-09-25",
     "award" : "Strangest abuse of the rules",
     "year" : 1989,
     "dir" : "jar.1",
     "entry_id" : "1989_jar.1",
+    "title" : "1989.jar.1",
+    "abstract" : "Hello world as a C string",
     "author_set" : [
         {
             "author_handle" : "Jari_Arkko"

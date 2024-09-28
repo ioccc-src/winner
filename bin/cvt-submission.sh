@@ -94,7 +94,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.2 2024-09-23"
+export VERSION="1.3 2024-09-27"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -149,7 +149,7 @@ export MKIOCCCENTRY_REPO="https://github.com/ioccc-src/mkiocccentry"
 export INPUT_DATA_FILE
 #
 export NO_COMMENT="mandatory comment: because comments were removed from the original JSON spec"
-export ENTRY_JSON_FORMAT_VERSION="1.1 2024-02-11"
+export ENTRY_JSON_FORMAT_VERSION="1.2 2024-09-25"
 export AUTHOR_JSON_FORMAT_VERSION="1.1 2024-02-11"
 #
 export NOOP=
@@ -601,49 +601,49 @@ function write_author_handle_file
 	printf "{\n"
 	printf "    \"no_comment\" : \"%s\",\n" "${AUTH_INFO[no_comment]}"
 	printf "    \"author_JSON_format_version\" : \"%s\",\n" "${AUTH_INFO[author_JSON_format_version]}"
-	printf "    \"author_handle\" : %s,\n" "${AUTH_INFO[author_handle]}"
-	printf "    \"full_name\" : %s,\n" "${AUTH_INFO[name]}"
-	printf "    \"sort_word\" : %s,\n" "${AUTH_INFO[sort_word]}"
-	printf "    \"location_code\" : %s,\n" "${AUTH_INFO[location_code]}"
+	printf "    \"author_handle\" : \"%s\",\n" "${AUTH_INFO[author_handle]}"
+	printf "    \"full_name\" : \"%s\",\n" "${AUTH_INFO[name]}"
+	printf "    \"sort_word\" : \"%s\",\n" "${AUTH_INFO[sort_word]}"
+	printf "    \"location_code\" : \"%s\",\n" "${AUTH_INFO[location_code]}"
 	if [[ ${AUTH_INFO[email]} == null || -z ${AUTH_INFO[email]} ]]; then
-	    printf "    \"email\" : %s,\n" "null"
+	    printf "    \"email\" : null,\n"
 	else
-	    printf "    \"email\" : %s,\n" "${AUTH_INFO[email]}"
+	    printf "    \"email\" : \"%s\",\n" "${AUTH_INFO[email]}"
 	fi
 	if [[ ${AUTH_INFO[url]} == null || -z ${AUTH_INFO[url]} ]]; then
-	    printf "    \"url\" : %s,\n" "null"
+	    printf "    \"url\" : null,\n"
 	else
-	    printf "    \"url\" : %s,\n" "${AUTH_INFO[url]}"
+	    printf "    \"url\" : \"%s\",\n" "${AUTH_INFO[url]}"
 	fi
 	if [[ ${AUTH_INFO[alt_url]} == null || -z ${AUTH_INFO[alt_url]} ]]; then
-	    printf "    \"alt_url\" : %s,\n" "null"
+	    printf "    \"alt_url\" : null,\n"
 	else
-	    printf "    \"alt_url\" : %s,\n" "${AUTH_INFO[alt_url]}"
+	    printf "    \"alt_url\" : \"%s\",\n" "${AUTH_INFO[alt_url]}"
 	fi
 	if [[ ${AUTH_INFO[deprecated_twitter_handle]} == null || -z ${AUTH_INFO[deprecated_twitter_handle]} ]]; then
-	    printf "    \"deprecated_twitter_handle\" : %s,\n" "null"
+	    printf "    \"deprecated_twitter_handle\" : null,\n"
 	else
-	    printf "    \"deprecated_twitter_handle\" : %s,\n" "${AUTH_INFO[deprecated_twitter_handle]}"
+	    printf "    \"deprecated_twitter_handle\" : \"%s\",\n" "${AUTH_INFO[deprecated_twitter_handle]}"
 	fi
 	if [[ ${AUTH_INFO[mastodon]} == null || -z ${AUTH_INFO[mastodon]} ]]; then
-	    printf "    \"mastodon\" : %s,\n" "null"
+	    printf "    \"mastodon\" : null,\n"
 	else
-	    printf "    \"mastodon\" : %s,\n" "${AUTH_INFO[mastodon]}"
+	    printf "    \"mastodon\" : \"%s\",\n" "${AUTH_INFO[mastodon]}"
 	fi
 	if [[ ${AUTH_INFO[mastodon_url]} == null || -z ${AUTH_INFO[mastodon_url]} ]]; then
-	    printf "    \"mastodon_url\" : %s,\n" "null"
+	    printf "    \"mastodon_url\" : null,\n"
 	else
 	    printf "    \"mastodon_url\" : \"%s\",\n" "${AUTH_INFO[mastodon_url]}"
 	fi
 	if [[ ${AUTH_INFO[github]} == null || -z ${AUTH_INFO[github]} ]]; then
-	    printf "    \"github\" : %s,\n" "null"
+	    printf "    \"github\" : null,\n"
 	else
-	    printf "    \"github\" : %s,\n" "${AUTH_INFO[github]}"
+	    printf "    \"github\" : \"%s\",\n" "${AUTH_INFO[github]}"
 	fi
 	if [[ ${AUTH_INFO[affiliation]} == null || -z ${AUTH_INFO[affiliation]} ]]; then
-	    printf "    \"affiliation\" : %s,\n" "null"
+	    printf "    \"affiliation\" : null,\n"
 	else
-	    printf "    \"affiliation\" : %s,\n" "${AUTH_INFO[affiliation]}"
+	    printf "    \"affiliation\" : \"%s\",\n" "${AUTH_INFO[affiliation]}"
 	fi
 
 	# write the winning_entry_set array to the temporary author_handle JSON file
@@ -1318,7 +1318,7 @@ elif [[ $V_FLAG -ge 3 ]]; then
 fi
 
 
-# create a temporary author_handle file
+# create a temporary author_handle JSON file
 #
 export TMP_AUTHOR_HANDLE_JSON=".tmp.$NAME.AUTHOR_HANDLE_JSON.$$.tmp"
 if [[ $V_FLAG -ge 3 ]]; then
@@ -1341,7 +1341,7 @@ elif [[ $V_FLAG -ge 3 ]]; then
 fi
 
 
-# create a temporary author_handle file
+# create a temporary manifest.csv file
 #
 export TMP_MANIFEST_CSV=".tmp.$NAME.MANIFEST_CSV.$$.tmp"
 if [[ $V_FLAG -ge 3 ]]; then
@@ -1361,6 +1361,28 @@ if [[ -z $NOOP ]]; then
     fi
 elif [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: because of -n, temporary manifest csv file is not used: $TMP_MANIFEST_CSV" 1>&2
+fi
+
+
+# obtain title from .info.json
+#
+export PATTERN='$..title'
+TITLE=$("$JVAL_WRAPPER" -b -q "$INFO_JSON" "$PATTERN")
+export TITLE
+if [[ -z $TITLE ]]; then
+    TITLE="${ENTRY_DIR}.${YEAR_DIR}"
+    echo "$0: Warning empty title for in $INFO_JSON, use $TITLE" 1>&2
+fi
+
+
+# obtain title from .info.json
+#
+export ABSTRACT='$..abstract'
+ABSTRACT=$("$JVAL_WRAPPER" -b -q "$INFO_JSON" "$PATTERN")
+export ABSTRACT
+if [[ -z $ABSTRACT ]]; then
+    ABSTRACT="default abstract for ${YEAR_DIR}/${ENTRY_DIR}"
+    echo "$0: Warning empty abstreact for in $INFO_JSON, will use $ABSTRACT" 1>&2
 fi
 
 
@@ -1404,6 +1426,14 @@ if [[ -z $NOOP ]]; then
 	#
 	echo "    \"entry_id\" : \"${ENTRY_ID}\","
 
+	# write title to the temporary .entry.json file
+	#
+	echo "    \"title\" : \"${TITLE}\","
+
+	# write abstract to the temporary .entry.json file
+	#
+	echo "    \"abstract\" : \"${ABSTRACT}\","
+
 	# start the author_set JSON array
 	#
 	echo "    \"author_set\" : ["
@@ -1441,10 +1471,10 @@ if [[ -z $NOOP ]]; then
 	    echo  "$0: debug[5]: about to run: $JVAL_WRAPPER -b -q -- $AUTH_JSON '$PATTERN'" 1>&2
 	fi
 	export AUTHOR_DATA
-	AUTHOR_DATA=$("$JVAL_WRAPPER" -b -q -- "$AUTH_JSON" "$PATTERN")
+	AUTHOR_DATA=$("$JVAL_WRAPPER" -q -- "$AUTH_JSON" "$PATTERN")
 	status="$?"
 	if [[ $status -ne 0 ]]; then
-	    echo "$0: ERROR: $JVAL_WRAPPER -b -q -- $AUTH_JSON '$PATTERN' failed," \
+	    echo "$0: ERROR: $JVAL_WRAPPER -q -- $AUTH_JSON '$PATTERN' failed," \
 		  "error code: $status" 1>&2
 	    exit 20
 	fi
@@ -1491,8 +1521,8 @@ if [[ -z $NOOP ]]; then
 		AUTHOR_DEFAULT_HANDLE="$VALUE"
 		;;
 	    author_handle)
-		if [[ \"$AUTHOR_HANDLE\" != "$VALUE" ]]; then
-		    echo "$0: ERROR: AUTHOR_HANDLE: \"$AUTHOR_HANDLE\" != author_handle value: $VALUE" 1>&2
+		if [[ $AUTHOR_HANDLE != "$VALUE" ]]; then
+		    echo "$0: ERROR: AUTHOR_HANDLE: $AUTHOR_HANDLE != author_handle value: $VALUE" 1>&2
 		    exit 22
 		fi
 		AUTHOR_INFO[author_handle]="$VALUE"
@@ -1544,7 +1574,7 @@ if [[ -z $NOOP ]]; then
 	[a-z]*) ;;
 	*) SORT_WORD="z$SORT_WORD" ;;	# prepend if the last name does not begin with a letter
 	esac
-	AUTHOR_INFO[sort_word]=\""$SORT_WORD"\"
+	AUTHOR_INFO[sort_word]="$SORT_WORD"
 
 	# determine the mastodon_url for non-null mastodon
 	#
@@ -1612,14 +1642,14 @@ if [[ -z $NOOP ]]; then
 		#
 		case "$NAME" in
 		no_comment)
-		    if [[ $VALUE != \"$NO_COMMENT\" ]]; then
+		    if [[ $VALUE != "$NO_COMMENT" ]]; then
 			echo "$0: ERROR: author_handle file: $AUTHOR_HANDLE_JSON" \
 			     "invalid no_comment: $VALUE != \"$NO_COMMENT\"" 1>&2
 			exit 35
 		    fi
 		    ;;
 		author_JSON_format_version)
-		    if [[ $VALUE != \"$AUTHOR_JSON_FORMAT_VERSION\" ]]; then
+		    if [[ $VALUE != "$AUTHOR_JSON_FORMAT_VERSION" ]]; then
 			echo "$0: ERROR: author_handle file: $AUTHOR_HANDLE_JSON" \
 			     "invalid author_JSON_format_version: $VALUE != \"$AUTHOR_JSON_FORMAT_VERSION\"" 1>&2
 			exit 36
@@ -1640,7 +1670,7 @@ if [[ -z $NOOP ]]; then
 		    fi
 		    ;;
 		sort_word)
-		    if [[ $VALUE != \""${AUTHOR_INFO[sort_word]}"\" ]]; then
+		    if [[ $VALUE != "${AUTHOR_INFO[sort_word]}" ]]; then
 			echo "$0: notice: author_handle file: $AUTHOR_HANDLE_JSON" \
 			     "change of sort_word from: $VALUE to: ${AUTHOR_INFO[sort_word]}" 1>&2
 			echo 1>&2

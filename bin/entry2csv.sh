@@ -118,7 +118,7 @@ shopt -s lastpipe	# explicitly run the last command of the pipe line in the curr
 
 # set variables referenced in the usage message
 #
-export VERSION="1.3 2024-09-23"
+export VERSION="1.4 2024-09-27"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -141,6 +141,7 @@ export EXIT_CODE="0"
 #
 export AUTHOR_WINS_CSV="author_wins.csv"
 export MANIFEST_CSV="manifest.csv"
+export SUMMARY_CSV="summary.csv"
 export YEAR_PRIZE_CSV="year_prize.csv"
 export AUTHOR_DIR="author"
 
@@ -246,6 +247,129 @@ function output_author_handles
 	echo "$0: ERROR: in output_award: $JVAL_WRAPPER -b -q -- $ENTRY_JSON_PATH '$PATTERN' failed," \
 	     "error code: $status" 1>&2
 	return 5
+    fi
+    return 0
+}
+
+
+# output_title
+#
+# Write the title name to standard output (stdout)
+#
+# usage:
+#       output_title YYYY/dir/.entry.json
+#
+# returns:
+#       0 ==> no errors detected, but output may be empty
+#     > 0 ==> function error number
+#
+function output_title
+{
+    local ENTRY_JSON_PATH;	# the .entry.json path
+    local PATTERN;		# XPath for JSON pattern
+
+    # parse args
+    #
+    if [[ $# -ne 1 ]]; then
+        echo "$0: ERROR: in output_title: expected 1 arg, found $#" 1>&2
+        return 1
+    fi
+    ENTRY_JSON_PATH="$1"
+    if [[ ! -e $ENTRY_JSON_PATH ]]; then
+        echo "$0: ERROR: in output_title: .entry.json does not exist: $ENTRY_JSON_PATH" 1>&2
+        return 2
+    fi
+    if [[ ! -f $ENTRY_JSON_PATH ]]; then
+        echo "$0: ERROR: in output_title: .entry.json is not a file: $ENTRY_JSON_PATH" 1>&2
+        return 3
+    fi
+    if [[ ! -r $ENTRY_JSON_PATH ]]; then
+        echo "$0: ERROR: in output_title: .entry.json is not a readable file: $ENTRY_JSON_PATH" 1>&2
+        return 4
+    fi
+
+    # obtain the title string
+    #
+    PATTERN='$..title'
+    if [[ $V_FLAG -ge 5 ]]; then
+	echo  "$0: debug[5]: about to run: $JVAL_WRAPPER -b -q -- $ENTRY_JSON_PATH '$PATTERN'" 1>&2
+    fi
+    "$JVAL_WRAPPER" -b -q "$ENTRY_JSON_PATH" "$PATTERN"
+    status="$?"
+    if [[ $status -ne 0 ]]; then
+	echo "$0: ERROR: in output_title: $JVAL_WRAPPER -b -q -- $ENTRY_JSON_PATH '$PATTERN' failed," \
+	     "error code: $status" 1>&2
+	return 5
+    fi
+    return 0
+}
+
+
+# output_abstract
+#
+# Write the abstract name to standard output (stdout)
+#
+# usage:
+#       output_abstract YYYY/dir/.entry.json
+#
+# returns:
+#       0 ==> no errors detected, but output may be empty
+#     > 0 ==> function error number
+#
+function output_abstract
+{
+    local ENTRY_JSON_PATH;	# the .entry.json path
+    local PATTERN;		# XPath for JSON pattern
+    local ABSTRACT;		# extracted abstract from .entry.json
+
+    # parse args
+    #
+    if [[ $# -ne 1 ]]; then
+        echo "$0: ERROR: in output_abstract: expected 1 arg, found $#" 1>&2
+        return 1
+    fi
+    ENTRY_JSON_PATH="$1"
+    if [[ ! -e $ENTRY_JSON_PATH ]]; then
+        echo "$0: ERROR: in output_abstract: .entry.json does not exist: $ENTRY_JSON_PATH" 1>&2
+        return 2
+    fi
+    if [[ ! -f $ENTRY_JSON_PATH ]]; then
+        echo "$0: ERROR: in output_abstract: .entry.json is not a file: $ENTRY_JSON_PATH" 1>&2
+        return 3
+    fi
+    if [[ ! -r $ENTRY_JSON_PATH ]]; then
+        echo "$0: ERROR: in output_abstract: .entry.json is not a readable file: $ENTRY_JSON_PATH" 1>&2
+        return 4
+    fi
+
+    # obtain the abstract string
+    #
+    PATTERN='$..abstract'
+    if [[ $V_FLAG -ge 5 ]]; then
+	echo  "$0: debug[5]: about to run: $JVAL_WRAPPER -b -q -- $ENTRY_JSON_PATH '$PATTERN'" 1>&2
+    fi
+    export ABSTRACT
+    ABSTRACT=$("$JVAL_WRAPPER" -b -q "$ENTRY_JSON_PATH" "$PATTERN")
+    status="$?"
+    if [[ $status -ne 0 || -z $ABSTRACT ]]; then
+	echo "$0: ERROR: in output_abstract: $JVAL_WRAPPER -b -q -- $ENTRY_JSON_PATH '$PATTERN' failed," \
+	     "error code: $status" 1>&2
+	return 5
+    fi
+    if [[ ${#ABSTRACT} -ge 65 ]]; then
+	echo "$0: ERROR: in output_abstract: abstract length ${#ABSTRACT} >= 65 in $ENTRY_JSON_PATH" 1>&2
+	return 6
+    fi
+    if [[ $ABSTRACT =~ [\;$,] ]]; then
+	echo "$0: ERROR: in output_abstract: abstract contains ; or & or , in $ENTRY_JSON_PATH" 1>&2
+	return 7
+    fi
+    sed -f "$UNICODE_FIX_SED" -e 's/[;&,]//g' <<< "$ABSTRACT"
+    status="$?"
+    if [[ $status -ne 0 ]]; then
+	echo "$0: ERROR: sed -f $UNICODE_FIX_SED -e ... failed," \
+	     "error code: $status" 1>&2
+	return 8
     fi
     return 0
 }
@@ -531,6 +655,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: EXIT_CODE=$EXIT_CODE" 1>&2
     echo "$0: debug[3]: AUTHOR_WINS_CSV=$AUTHOR_WINS_CSV" 1>&2
     echo "$0: debug[3]: MANIFEST_CSV=$MANIFEST_CSV" 1>&2
+    echo "$0: debug[3]: SUMMARY_CSV=$SUMMARY_CSV" 1>&2
     echo "$0: debug[3]: YEAR_PRIZE_CSV=$YEAR_PRIZE_CSV" 1>&2
     echo "$0: debug[3]: AUTHOR_WINS_CSV_DIR=$AUTHOR_WINS_CSV_DIR" 1>&2
     echo "$0: debug[3]: MANIFEST_WINS_CSV_DIR=$MANIFEST_WINS_CSV_DIR" 1>&2
@@ -572,7 +697,7 @@ echo '# author_handle,entry_id,entry_id,entry_id,…,,,,,,,,,,,,,,,' > \
   "$TMP_AUTHOR_WINS_CSV"
 if [[ ! -e $TMP_AUTHOR_WINS_CSV ]]; then
     echo "$0: ERROR: cannot create temporary CSV author.csv file: $TMP_AUTHOR_WINS_CSV" 1>&2
-    exit 13
+    exit 11
 fi
 
 
@@ -596,23 +721,43 @@ if [[ ! -e $TMP_MANIFEST_CSV ]]; then
 fi
 
 
+# create a temporary summary.csv file
+#
+export TMP_SUMMARY_CSV=".tmp.$NAME.SUMMARY_CSV.$$.tmp"
+if [[ $V_FLAG -ge 3 ]]; then
+    echo  "$0: debug[3]: temporary CSV summary.csv file: $TMP_SUMMARY_CSV" 1>&2
+fi
+trap 'rm -f $TMP_AUTHOR_WINS_CSV $TMP_MANIFEST_CSV $TMP_SUMMARY_CSV; exit' 0 1 2 3 15
+rm -f "$TMP_SUMMARY_CSV"
+if [[ -e $TMP_SUMMARY_CSV ]]; then
+    echo "$0: ERROR: cannot remove temporary CSV summary.csv file: $TMP_SUMMARY_CSV" 1>&2
+    exit 14
+fi
+echo '# year,dir,title,abstract' > \
+  "$TMP_SUMMARY_CSV"
+if [[ ! -e $TMP_SUMMARY_CSV ]]; then
+    echo "$0: ERROR: cannot create temporary CSV summary.csv file: $TMP_SUMMARY_CSV" 1>&2
+    exit 15
+fi
+
+
 # create a temporary year_prize.csv file
 #
 export TMP_YEAR_PRIZE_CSV=".tmp.$NAME.YEAR_PRIZE_CSV.$$.tmp"
 if [[ $V_FLAG -ge 3 ]]; then
     echo  "$0: debug[3]: temporary CSV year_prize.csv file: $TMP_YEAR_PRIZE_CSV" 1>&2
 fi
-trap 'rm -f $TMP_AUTHOR_WINS_CSV $TMP_MANIFEST_CSV $TMP_YEAR_PRIZE_CSV; exit' 0 1 2 3 15
+trap 'rm -f $TMP_AUTHOR_WINS_CSV $TMP_MANIFEST_CSV $TMP_SUMMARY_CSV $TMP_YEAR_PRIZE_CSV; exit' 0 1 2 3 15
 rm -f "$TMP_YEAR_PRIZE_CSV"
 if [[ -e $TMP_YEAR_PRIZE_CSV ]]; then
     echo "$0: ERROR: cannot remove temporary CSV year_prize.csv file: $TMP_YEAR_PRIZE_CSV" 1>&2
-    exit 14
+    exit 16
 fi
 echo '# year_handle,award name' > \
   "$TMP_YEAR_PRIZE_CSV"
 if [[ ! -e $TMP_YEAR_PRIZE_CSV ]]; then
     echo "$0: ERROR: cannot create temporary CSV year_prize.csv file: $TMP_YEAR_PRIZE_CSV" 1>&2
-    exit 15
+    exit 16
 fi
 
 
@@ -622,16 +767,17 @@ export TMP_AUTHOR_WIN=".tmp.$NAME.AUTHOR_WIN.$$.tmp"
 if [[ $V_FLAG -ge 3 ]]; then
     echo  "$0: debug[3]: temporary CSV author_win file: $TMP_AUTHOR_WIN" 1>&2
 fi
-trap 'rm -f $TMP_AUTHOR_WINS_CSV $TMP_MANIFEST_CSV $TMP_YEAR_PRIZE_CSV $TMP_AUTHOR_WIN; exit' 0 1 2 3 15
+trap 'rm -f $TMP_AUTHOR_WINS_CSV $TMP_MANIFEST_CSV $TMP_SUMMARY_CSV $TMP_YEAR_PRIZE_CSV \
+	    $TMP_AUTHOR_WIN; exit' 0 1 2 3 15
 rm -f "$TMP_AUTHOR_WIN"
 if [[ -e $TMP_AUTHOR_WIN ]]; then
     echo "$0: ERROR: cannot remove temporary CSV author_win file: $TMP_AUTHOR_WIN" 1>&2
-    exit 16
+    exit 18
 fi
 :> "$TMP_AUTHOR_WIN"
 if [[ ! -e $TMP_AUTHOR_WIN ]]; then
     echo "$0: ERROR: cannot create temporary CSV author_win file: $TMP_AUTHOR_WIN" 1>&2
-    exit 17
+    exit 19
 fi
 
 
@@ -644,16 +790,17 @@ export TMP_EXIT_CODE=".tmp.$NAME.EXIT_CODE.$$.tmp"
 if [[ $V_FLAG -ge 3 ]]; then
     echo  "$0: debug[3]: temporary exit code: $TMP_EXIT_CODE" 1>&2
 fi
-trap 'rm -f $TMP_AUTHOR_WINS_CSV $TMP_MANIFEST_CSV $TMP_YEAR_PRIZE_CSV $TMP_AUTHOR_WIN $TMP_EXIT_CODE; exit' 0 1 2 3 15
+trap 'rm -f $TMP_AUTHOR_WINS_CSV $TMP_MANIFEST_CSV $TMP_SUMMARY_CSV $TMP_YEAR_PRIZE_CSV \
+	    $TMP_AUTHOR_WIN $TMP_EXIT_CODE; exit' 0 1 2 3 15
 rm -f "$TMP_EXIT_CODE"
 if [[ -e $TMP_EXIT_CODE ]]; then
     echo "$0: ERROR: cannot remove temporary exit code: $TMP_EXIT_CODE" 1>&2
-    exit 18
+    exit 20
 fi
 echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
 if [[ ! -e $TMP_EXIT_CODE ]]; then
     echo "$0: ERROR: cannot create temporary exit code: $TMP_EXIT_CODE" 1>&2
-    exit 19
+    exit 21
 fi
 
 
@@ -663,17 +810,17 @@ export TMP_AUTHOR_HANDLE_INVENTORY=".tmp.$NAME.AUTHOR_HANDLE_INVENTORY.$$.tmp"
 if [[ $V_FLAG -ge 3 ]]; then
     echo  "$0: debug[3]: temporary author_handle inventory file: $TMP_AUTHOR_HANDLE_INVENTORY" 1>&2
 fi
-trap 'rm -f $TMP_AUTHOR_WINS_CSV $TMP_MANIFEST_CSV $TMP_YEAR_PRIZE_CSV $TMP_AUTHOR_WIN $TMP_EXIT_CODE \
-	    $TMP_AUTHOR_HANDLE_INVENTORY; exit' 0 1 2 3 15
+trap 'rm -f $TMP_AUTHOR_WINS_CSV $TMP_MANIFEST_CSV $TMP_SUMMARY_CSV $TMP_YEAR_PRIZE_CSV \
+	    $TMP_AUTHOR_WIN $TMP_EXIT_CODE $TMP_AUTHOR_HANDLE_INVENTORY; exit' 0 1 2 3 15
 rm -f "$TMP_AUTHOR_HANDLE_INVENTORY"
 if [[ -e $TMP_AUTHOR_HANDLE_INVENTORY ]]; then
     echo "$0: ERROR: cannot remove temporary author_handle inventory file: $TMP_AUTHOR_HANDLE_INVENTORY" 1>&2
-    exit 20
+    exit 22
 fi
 : > "$TMP_AUTHOR_HANDLE_INVENTORY"
 if [[ ! -e $TMP_AUTHOR_HANDLE_INVENTORY ]]; then
     echo "$0: ERROR: cannot create temporary author_handle inventory file: $TMP_AUTHOR_HANDLE_INVENTORY" 1>&2
-    exit 21
+    exit 23
 fi
 
 
@@ -945,6 +1092,38 @@ for YYYY in $(< "$TOP_FILE"); do
 	    fi
 	elif [[ $V_FLAG -ge 9 ]]; then
 	    echo "$0: debug[9]: because of -n, did not append to the temporary manifest file" 1>&2
+	fi
+
+	# obtain the title from .entry.json
+	#
+	TITLE=$(output_title "$ENTRY_JSON")
+	export TITLE
+	if [[ -z $TITLE ]]; then
+	    echo "$0: ERROR: title name empty or not found in: $ENTRY_JSON" 1>&2
+	    EXIT_CODE="1"  # exit 1
+	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+	    echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
+	    continue
+	fi
+
+	# obtain the abstract from .entry.json
+	#
+	ABSTRACT=$(output_abstract "$ENTRY_JSON")
+	export ABSTRACT
+	if [[ -z $ABSTRACT ]]; then
+	    echo "$0: ERROR: abstract name empty or not found in: $ENTRY_JSON" 1>&2
+	    EXIT_CODE="1"  # exit 1
+	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+	    echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
+	    continue
+	fi
+
+	# append title and abstract information into the summary.txt file
+	#
+	if [[ -z $NOOP ]]; then
+	    echo "$YEAR_DIR,$ENTRY_DIR,$TITLE,$ABSTRACT" >> "$TMP_SUMMARY_CSV"
+	elif [[ $V_FLAG -ge 7 ]]; then
+	    echo "$0: debug[7]: because of -n, did append to summary.csv: $TMP_SUMMARY_CSV for: $ENTRY_JSON" 1>&2
 	fi
     done
 done
@@ -1278,6 +1457,74 @@ if [[ -z $NOOP ]]; then
 
 elif [[ $V_FLAG -ge 3 ]]; then
    echo "$0: debug[3]: because of -n, will not update $MANIFEST_CSV"
+fi
+
+
+# sort the temporary summary.csv file
+#
+if [[ -z $NOOP ]]; then
+
+    if [[ $V_FLAG -ge 1 ]]; then
+	echo "$0: debug[1]: processing summary.csv file: $SUMMARY_CSV" 1>&2
+    fi
+    if [[ $V_FLAG -ge 5 ]]; then
+	echo "$0: debug[5]: about to: LC_ALL=C sort -t, -k1,1 -k2d,4 $TMP_SUMMARY_CSV -o $TMP_SUMMARY_CSV" 1>&2
+    fi
+    LC_ALL=C sort -t, -k1,1 -k2d,4 "$TMP_SUMMARY_CSV" -o "$TMP_SUMMARY_CSV"
+    status="$?"
+    if [[ $status -ne 0 ]]; then
+	echo "$0: ERROR: LC_ALL=C sort -t, -k1,1 -k2d,4 $TMP_SUMMARY_CSV -o $TMP_SUMMARY_CSV failed," \
+	     "error code: $status" 1>&2
+	exit 8
+    elif [[ $V_FLAG -ge 3 ]]; then
+	echo "$0: debug[3]: sorted temporary summary.csv file: $TMP_SUMMARY_CSV" 1>&2
+    fi
+
+elif [[ $V_FLAG -ge 3 ]]; then
+   echo "$0: debug[3]: because of -n, will not sort: $TMP_SUMMARY_CSV"
+fi
+
+
+# replace summary.csv file with the temporary file if summary.csv is missing or different
+#
+if [[ -z $NOOP ]]; then
+    if cmp -s "$TMP_SUMMARY_CSV" "$SUMMARY_CSV"; then
+
+	# case: summary.csv did not change
+	#
+	if [[ $V_FLAG -ge 5 ]]; then
+            echo "$0: debug[5]: summary.csv file did not change: $SUMMARY_CSV" 1>&2
+        fi
+
+    else
+
+        # case: summary.csv file changed, update the file
+        #
+        if [[ $V_FLAG -ge 5 ]]; then
+            echo "$0: debug[5]: about to: mv -f -- $TMP_SUMMARY_CSV $SUMMARY_CSV" 1>&2
+        fi
+        if [[ $V_FLAG -ge 3 ]]; then
+            mv -f -v -- "$TMP_SUMMARY_CSV" "$SUMMARY_CSV"
+            status="$?"
+        else
+            mv -f -- "$TMP_SUMMARY_CSV" "$SUMMARY_CSV"
+            status="$?"
+        fi
+        if [[ $status -ne 0 ]]; then
+            echo "$0: ERROR: mv -f -- $TMP_SUMMARY_CSV $SUMMARY_CSV filed," \
+	         "error code: $status" 1>&2
+            exit 8
+        elif [[ $V_FLAG -ge 1 ]]; then
+            echo "$0: debug[1]: replaced summary.csv file: $SUMMARY_CSV" 1>&2
+        fi
+        if [[ ! -s $SUMMARY_CSV ]]; then
+            echo "$0: ERROR: not a non-empty summary.csv file: $SUMMARY_CSV" 1>&2
+            exit 8
+        fi
+    fi
+
+elif [[ $V_FLAG -ge 3 ]]; then
+   echo "$0: debug[3]: because of -n, will not update $SUMMARY_CSV"
 fi
 
 

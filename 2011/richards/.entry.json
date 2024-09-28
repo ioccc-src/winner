@@ -1,10 +1,12 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "entry_JSON_format_version" : "1.1 2024-02-11",
+    "entry_JSON_format_version" : "1.2 2024-09-25",
     "award" : "Most surprisingly portable",
     "year" : 2011,
     "dir" : "richards",
     "entry_id" : "2011_richards",
+    "title" : "2011.richards",
+    "abstract" : "JIT dc",
     "author_set" : [
         {
             "author_handle" : "Gregor_Richards"

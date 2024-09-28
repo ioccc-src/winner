@@ -1,10 +1,12 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "entry_JSON_format_version" : "1.1 2024-02-11",
+    "entry_JSON_format_version" : "1.2 2024-09-25",
     "award" : "For the Birds! Award",
     "year" : 2015,
     "dir" : "mills1",
     "entry_id" : "2015_mills1",
+    "title" : "2015.mills1",
+    "abstract" : "flappy bird",
     "author_set" : [
         {
             "author_handle" : "Christopher_Mills"

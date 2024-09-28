@@ -1,10 +1,12 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "entry_JSON_format_version" : "1.1 2024-02-11",
+    "entry_JSON_format_version" : "1.2 2024-09-25",
     "award" : "Best abuse of the C preprocessor",
     "year" : 2001,
     "dir" : "herrmann1",
     "entry_id" : "2001_herrmann1",
+    "title" : "2001.herrmann1",
+    "abstract" : "A Turing machine using preprocessor",
     "author_set" : [
         {
             "author_handle" : "Immanuel_Herrmann"

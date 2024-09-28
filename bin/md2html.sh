@@ -145,7 +145,7 @@ shopt -s lastpipe	# run last command of a pipeline not executed in the backgroun
 
 # set variables referenced in the usage message
 #
-export VERSION="1.6 2024-08-17"
+export VERSION="1.7 2024-09-27"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -217,7 +217,7 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
 
 	-s token=value	substitute %%token%% with value except in HTML phase numbers 20-29 (def: do not substitute any tokens)
 			NOTE: The 'token' string may not contain a ; (semicolon), a = (equal), or a % (percent).
-			NOTE: The 'value' string may not contain a ; (semicolon).
+			NOTE: The 'value' string may not contain a ; (semicolon), nor & (ampersand).
 			NOTE: A later '-s token=value' will override an earlier '-s token=value' for the same 'token'.
 			NOTE: Multiple '-s token=value' are cumulative for the unique set of 'token's.
 	-S		Failure to replace a %%token%% is not an error (def: exit non-zero for non-substituted tokens)
@@ -482,13 +482,13 @@ function parse_command_line
 	    #
 	    case "$NAME" in
 	    *=*)
-		echo "$0: ERROR: in -H phase=name, the phase may not contain a = character: $NAME" 1>&2
+		echo "$0: ERROR: in -H phase=name, the phase may not contain an = (equal) character: $NAME" 1>&2
 		echo 1>&2
 		print_usage 1>&2
 		exit 3
 		;;
 	    */*)
-		echo "$0: ERROR: in -H phase=name, the phase may not contain a / character: $NAME" 1>&2
+		echo "$0: ERROR: in -H phase=name, the phase may not contain a / (slash) character: $NAME" 1>&2
 		echo 1>&2
 		print_usage 1>&2
 		exit 3
@@ -510,7 +510,7 @@ function parse_command_line
 	    #
 	    case "$VALUE" in
 	    *=*)
-		echo "$0: ERROR: in -H phase=name, the name may not contain a = character: $VALUE" 1>&2
+		echo "$0: ERROR: in -H phase=name, the name may not contain a = (equal) character: $VALUE" 1>&2
 		echo 1>&2
 		print_usage 1>&2
 		exit 3
@@ -589,7 +589,7 @@ function parse_command_line
 		exit 3
 		;;
 	    *=*)
-		echo "$0: ERROR: in -s token=value, the token may not contain a = (equal) character: $NAME" 1>&2
+		echo "$0: ERROR: in -s token=value, the token may not contain an = (equal) character: $NAME" 1>&2
 		echo 1>&2
 		print_usage 1>&2
 		exit 3
@@ -606,6 +606,12 @@ function parse_command_line
 	    case "$VALUE" in
 	    *\;*)
 		echo "$0: ERROR: in -s token=value, the value may not contain a ; (semicolon) character: $NAME" 1>&2
+		echo 1>&2
+		print_usage 1>&2
+		exit 3
+		;;
+	    *\&*)
+		echo "$0: ERROR: in -s token=value, the value may not contain an & (ampersand) character: $NAME" 1>&2
 		echo 1>&2
 		print_usage 1>&2
 		exit 3

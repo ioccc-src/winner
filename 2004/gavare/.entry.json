@@ -1,10 +1,12 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "entry_JSON_format_version" : "1.1 2024-02-11",
+    "entry_JSON_format_version" : "1.2 2024-09-25",
     "award" : "Best use of light and spheres",
     "year" : 2004,
     "dir" : "gavare",
     "entry_id" : "2004_gavare",
+    "title" : "2004.gavare",
+    "abstract" : "A ray tracer",
     "author_set" : [
         {
             "author_handle" : "Anders_Gavare"

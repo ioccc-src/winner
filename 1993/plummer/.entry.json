@@ -1,10 +1,12 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "entry_JSON_format_version" : "1.1 2024-02-11",
+    "entry_JSON_format_version" : "1.2 2024-09-25",
     "award" : "Best one liner",
     "year" : 1993,
     "dir" : "plummer",
     "entry_id" : "1993_plummer",
+    "title" : "1993.plummer",
+    "abstract" : "prints numbers up to a given value",
     "author_set" : [
         {
             "author_handle" : "Mark_Plummer"

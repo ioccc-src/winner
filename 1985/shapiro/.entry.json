@@ -1,10 +1,12 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "entry_JSON_format_version" : "1.1 2024-02-11",
+    "entry_JSON_format_version" : "1.2 2024-09-25",
     "award" : "Grand Prize - Most well rounded in confusion",
     "year" : 1985,
     "dir" : "shapiro",
     "entry_id" : "1985_shapiro",
+    "title" : "1985.shapiro",
+    "abstract" : "two defines one 7-liner that results in a maze",
     "author_set" : [
         {
             "author_handle" : "Carl_Shapiro"

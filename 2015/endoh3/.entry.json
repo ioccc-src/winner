@@ -1,10 +1,12 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "entry_JSON_format_version" : "1.1 2024-02-11",
+    "entry_JSON_format_version" : "1.2 2024-09-25",
     "award" : "Back to the Future Award",
     "year" : 2015,
     "dir" : "endoh3",
     "entry_id" : "2015_endoh3",
+    "title" : "2015.endoh3",
+    "abstract" : "1984/mullender emulator",
     "author_set" : [
         {
             "author_handle" : "Yusuke_Endoh"

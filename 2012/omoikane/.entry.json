@@ -1,10 +1,12 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "entry_JSON_format_version" : "1.1 2024-02-11",
+    "entry_JSON_format_version" : "1.2 2024-09-25",
     "award" : "Most surreptitious",
     "year" : 2012,
     "dir" : "omoikane",
     "entry_id" : "2012_omoikane",
+    "title" : "2012.omoikane",
+    "abstract" : "Encodes text as a C program",
     "author_set" : [
         {
             "author_handle" : "Don_Yang"

@@ -1,10 +1,12 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "entry_JSON_format_version" : "1.1 2024-02-11",
+    "entry_JSON_format_version" : "1.2 2024-09-25",
     "award" : "Worst abuse of the C preprocessor",
     "year" : 1986,
     "dir" : "hague",
     "entry_id" : "1986_hague",
+    "title" : "1986.hague",
+    "abstract" : "morse code filter written with 'DIT DAH _DIT DIT_DAH'",
     "author_set" : [
         {
             "author_handle" : "Jim_Hague"

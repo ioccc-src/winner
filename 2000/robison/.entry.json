@@ -1,10 +1,12 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "entry_JSON_format_version" : "1.1 2024-02-11",
+    "entry_JSON_format_version" : "1.2 2024-09-25",
     "award" : "Best game",
     "year" : 2000,
     "dir" : "robison",
     "entry_id" : "2000_robison",
+    "title" : "2000.robison",
+    "abstract" : "Highly Compressed Program for Playing Hygienic Checkers",
     "author_set" : [
         {
             "author_handle" : "Arch_D_Robison"

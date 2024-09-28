@@ -1,10 +1,12 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "entry_JSON_format_version" : "1.1 2024-02-11",
+    "entry_JSON_format_version" : "1.2 2024-09-25",
     "award" : "Best use of port 1701",
     "year" : 2014,
     "dir" : "birken",
     "entry_id" : "2014_birken",
+    "title" : "2014.birken",
+    "abstract" : "Klingon web server",
     "author_set" : [
         {
             "author_handle" : "Alexander_Prishchepov"

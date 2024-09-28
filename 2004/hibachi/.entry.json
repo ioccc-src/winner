@@ -1,10 +1,12 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "entry_JSON_format_version" : "1.1 2024-02-11",
+    "entry_JSON_format_version" : "1.2 2024-09-25",
     "award" : "Best abuse of the guidelines",
     "year" : 2004,
     "dir" : "hibachi",
     "entry_id" : "2004_hibachi",
+    "title" : "2004.hibachi",
+    "abstract" : "A CGI capable HTTP server",
     "author_set" : [
         {
             "author_handle" : "Anthony_C_Howe"

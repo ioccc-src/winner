@@ -1,10 +1,12 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "entry_JSON_format_version" : "1.1 2024-02-11",
+    "entry_JSON_format_version" : "1.2 2024-09-25",
     "award" : "Bill Gates Award",
     "year" : 1993,
     "dir" : "cmills",
     "entry_id" : "1993_cmills",
+    "title" : "1993.cmills",
+    "abstract" : "X11 program that shatters and bounces windows",
     "author_set" : [
         {
             "author_handle" : "Christopher_Mills"

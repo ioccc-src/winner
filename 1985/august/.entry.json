@@ -1,10 +1,12 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "entry_JSON_format_version" : "1.1 2024-02-11",
+    "entry_JSON_format_version" : "1.2 2024-09-25",
     "award" : "Most obscure program",
     "year" : 1985,
     "dir" : "august",
     "entry_id" : "1985_august",
+    "title" : "1985.august",
+    "abstract" : "cpp obfuscated and compressed recursive primes in binary",
     "author_set" : [
         {
             "author_handle" : "Lennart_Augustsson"

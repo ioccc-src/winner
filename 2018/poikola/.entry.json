@@ -1,10 +1,12 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "entry_JSON_format_version" : "1.1 2024-02-11",
+    "entry_JSON_format_version" : "1.2 2024-09-25",
     "award" : "Most stellar",
     "year" : 2018,
     "dir" : "poikola",
     "entry_id" : "2018_poikola",
+    "title" : "2018.poikola",
+    "abstract" : "Ursa Major ASCII animation",
     "author_set" : [
         {
             "author_handle" : "Timo_Poikola"

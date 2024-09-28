@@ -1,10 +1,12 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "entry_JSON_format_version" : "1.1 2024-02-11",
+    "entry_JSON_format_version" : "1.2 2024-09-25",
     "award" : "Most useful",
     "year" : 2015,
     "dir" : "burton",
     "entry_id" : "2015_burton",
+    "title" : "2015.burton",
+    "abstract" : "hex/decimal calculator",
     "author_set" : [
         {
             "author_handle" : "Dave_Burton"

@@ -1,10 +1,12 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "entry_JSON_format_version" : "1.1 2024-02-11",
+    "entry_JSON_format_version" : "1.2 2024-09-25",
     "award" : "Best game",
     "year" : 2006,
     "dir" : "meyer",
     "entry_id" : "2006_meyer",
+    "title" : "2006.meyer",
+    "abstract" : "A two player sudoku like game",
     "author_set" : [
         {
             "author_handle" : "Raphael_Meyer"

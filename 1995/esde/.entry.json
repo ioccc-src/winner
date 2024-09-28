@@ -1,10 +1,12 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "entry_JSON_format_version" : "1.1 2024-02-11",
+    "entry_JSON_format_version" : "1.2 2024-09-25",
     "award" : "Interesting algorithm",
     "year" : 1995,
     "dir" : "esde",
     "entry_id" : "1995_esde",
+    "title" : "1995.esde",
+    "abstract" : "Searches for words in a file which have the same Soundex code",
     "author_set" : [
         {
             "author_handle" : "Sebastian_Deorowicz"

@@ -1,10 +1,12 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "entry_JSON_format_version" : "1.1 2024-02-11",
+    "entry_JSON_format_version" : "1.2 2024-09-25",
     "award" : "Most likely to be awarded",
     "year" : 2018,
     "dir" : "ciura",
     "entry_id" : "2018_ciura",
+    "title" : "2018.ciura",
+    "abstract" : "Strunk and White checker",
     "author_set" : [
         {
             "author_handle" : "Marcin_Ciura"

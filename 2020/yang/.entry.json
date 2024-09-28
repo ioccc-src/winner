@@ -5,6 +5,8 @@
     "year" : 2020,
     "dir" : "yang",
     "entry_id" : "2020_yang",
+    "title" : "yang.2020",
+    "abstract" : "PIN-protected program generator",
     "author_set" : [
         {
             "author_handle" : "Don_Yang"

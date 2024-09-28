@@ -1,10 +1,12 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "entry_JSON_format_version" : "1.1 2024-02-11",
+    "entry_JSON_format_version" : "1.2 2024-09-25",
     "award" : "Best self-modifying program",
     "year" : 1989,
     "dir" : "fubar",
     "entry_id" : "1989_fubar",
+    "title" : "1989.fubar",
+    "abstract" : "self-reconstructing recompiling factorial program",
     "author_set" : [
         {
             "author_handle" : "Jay_Vosburgh"

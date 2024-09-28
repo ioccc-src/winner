@@ -1,10 +1,12 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "entry_JSON_format_version" : "1.1 2024-02-11",
+    "entry_JSON_format_version" : "1.2 2024-09-25",
     "award" : "Best encapsulation",
     "year" : 1998,
     "dir" : "bas1",
     "entry_id" : "1998_bas1",
+    "title" : "1998.bas1",
+    "abstract" : "Outputs a gziped 3D beam maze in Postscript",
     "author_set" : [
         {
             "author_handle" : "Bas_de_Bakker"

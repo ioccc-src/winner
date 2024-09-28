@@ -1,10 +1,12 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "entry_JSON_format_version" : "1.1 2024-02-11",
+    "entry_JSON_format_version" : "1.2 2024-09-25",
     "award" : "Best choice of optimization",
     "year" : 2014,
     "dir" : "sinon",
     "entry_id" : "2014_sinon",
+    "title" : "2014.sinon",
+    "abstract" : "optimizer-controlled shooter game",
     "author_set" : [
         {
             "author_handle" : "Don_Yang"

@@ -1,10 +1,12 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "entry_JSON_format_version" : "1.1 2024-02-11",
+    "entry_JSON_format_version" : "1.2 2024-09-25",
     "award" : "Best solved puzzle",
     "year" : 2011,
     "dir" : "hamaji",
     "entry_id" : "2011_hamaji",
+    "title" : "2011.hamaji",
+    "abstract" : "Paint by number puzzle",
     "author_set" : [
         {
             "author_handle" : "Bsoup"

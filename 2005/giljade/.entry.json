@@ -1,10 +1,12 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "entry_JSON_format_version" : "1.1 2024-02-11",
+    "entry_JSON_format_version" : "1.2 2024-09-25",
     "award" : "Best 2D puzzle",
     "year" : 2005,
     "dir" : "giljade",
     "entry_id" : "2005_giljade",
+    "title" : "2005.giljade",
+    "abstract" : "2D sliding tile puzzle solver",
     "author_set" : [
         {
             "author_handle" : "Gil_Dogon"

@@ -1,10 +1,12 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "entry_JSON_format_version" : "1.1 2024-02-11",
+    "entry_JSON_format_version" : "1.2 2024-09-25",
     "award" : "Most crafty",
     "year" : 2015,
     "dir" : "dogon",
     "entry_id" : "2015_dogon",
+    "title" : "2015.dogon",
+    "abstract" : "X11 Minecraft demo",
     "author_set" : [
         {
             "author_handle" : "Gil_Dogon"

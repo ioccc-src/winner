@@ -1,10 +1,12 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "entry_JSON_format_version" : "1.1 2024-02-11",
+    "entry_JSON_format_version" : "1.2 2024-09-25",
     "award" : "Most functional output",
     "year" : 2004,
     "dir" : "hoyle",
     "entry_id" : "2004_hoyle",
+    "title" : "2004.hoyle",
+    "abstract" : "Curses based polynomial graphing with auto-scale",
     "author_set" : [
         {
             "author_handle" : "Jonathan_Hoyle"

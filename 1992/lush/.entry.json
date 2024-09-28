@@ -1,10 +1,12 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "entry_JSON_format_version" : "1.1 2024-02-11",
+    "entry_JSON_format_version" : "1.2 2024-09-25",
     "award" : "Worst abuse of the C preprocessor",
     "year" : 1992,
     "dir" : "lush",
     "entry_id" : "1992_lush",
+    "title" : "1992.lush",
+    "abstract" : "prints Hello World using error messages",
     "author_set" : [
         {
             "author_handle" : "Ed_Luke"

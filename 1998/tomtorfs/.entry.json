@@ -1,10 +1,12 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "entry_JSON_format_version" : "1.1 2024-02-11",
+    "entry_JSON_format_version" : "1.2 2024-09-25",
     "award" : "Best self-documenting",
     "year" : 1998,
     "dir" : "tomtorfs",
     "entry_id" : "1998_tomtorfs",
+    "title" : "1998.tomtorfs",
+    "abstract" : "CRC generator",
     "author_set" : [
         {
             "author_handle" : "Tom_Torfs"

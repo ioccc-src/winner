@@ -1,10 +1,12 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "entry_JSON_format_version" : "1.1 2024-02-11",
+    "entry_JSON_format_version" : "1.2 2024-09-25",
     "award" : "Most pointed reaction",
     "year" : 2015,
     "dir" : "yang",
     "entry_id" : "2015_yang",
+    "title" : "2015.yang",
+    "abstract" : "text encoder with sea star pattern that varies with C flavor",
     "author_set" : [
         {
             "author_handle" : "Don_Yang"

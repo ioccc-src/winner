@@ -1,10 +1,12 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "entry_JSON_format_version" : "1.1 2024-02-11",
+    "entry_JSON_format_version" : "1.2 2024-09-25",
     "award" : "Silver Award - Most elementary use of C",
     "year" : 2012,
     "dir" : "hamano",
     "entry_id" : "2012_hamano",
+    "title" : "2012.hamano",
+    "abstract" : "PDF with little dancing men",
     "author_set" : [
         {
             "author_handle" : "Tsukasa_Hamano"

@@ -1,10 +1,12 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "entry_JSON_format_version" : "1.1 2024-02-11",
+    "entry_JSON_format_version" : "1.2 2024-09-25",
     "award" : "Most unusual data structure",
     "year" : 1990,
     "dir" : "pjr",
     "entry_id" : "1990_pjr",
+    "title" : "1990.pjr",
+    "abstract" : "the quick brown fox using CPP defines and structs of functions",
     "author_set" : [
         {
             "author_handle" : "Peter_J_Ruczynski"

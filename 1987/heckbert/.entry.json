@@ -1,10 +1,12 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "entry_JSON_format_version" : "1.1 2024-02-11",
+    "entry_JSON_format_version" : "1.2 2024-09-25",
     "award" : "Best obfuscator of programs",
     "year" : 1987,
     "dir" : "heckbert",
     "entry_id" : "1987_heckbert",
+    "title" : "1987.heckbert",
+    "abstract" : "obfuscated fold program",
     "author_set" : [
         {
             "author_handle" : "Paul_Heckbert"

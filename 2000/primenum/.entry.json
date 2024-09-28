@@ -1,10 +1,12 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "entry_JSON_format_version" : "1.1 2024-02-11",
+    "entry_JSON_format_version" : "1.2 2024-09-25",
     "award" : "Best abuse of CPP",
     "year" : 2000,
     "dir" : "primenum",
     "entry_id" : "2000_primenum",
+    "title" : "2000.primenum",
+    "abstract" : "Source with English words that looks like a prime tester",
     "author_set" : [
         {
             "author_handle" : "Raymond_Cheong"

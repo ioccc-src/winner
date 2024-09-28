@@ -1,10 +1,12 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "entry_JSON_format_version" : "1.1 2024-02-11",
+    "entry_JSON_format_version" : "1.2 2024-09-25",
     "award" : "Best small program",
     "year" : 1988,
     "dir" : "litmaath",
     "entry_id" : "1988_litmaath",
+    "title" : "1988.litmaath",
+    "abstract" : "sorts each arg using only argc argv and 'while(<cond>)'",
     "author_set" : [
         {
             "author_handle" : "Maarten_Litmaath"
