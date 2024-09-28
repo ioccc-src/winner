@@ -1300,6 +1300,7 @@ rejected for violating <a href="next/rules.html#rule17">Rule 17</a>!</p></li>
 <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h">soup/limit_ioccc.h</a>
 in the <a href="https://github.com/ioccc-src/mkiocccentry/">mkiocccentry repo</a>)</li>
 </ul>
+<p>The <code>abstract</code> may not contain a <code>;</code> (semicolon), nor <code>&amp;</code> (ampersand), nor <code>,</code> (comma).</p>
 <p><strong>NOTE:</strong> if your abstract is 0 in length or &gt; the maximum abstract length you
 stand a great risk of having your submission rejected for violating <a href="next/rules.html#rule17">Rule
 17</a>!</p></li>
@@ -4976,11 +4977,13 @@ it is shorter than some of the others.</p>
 <p>As of <em>Fri 26 Jul 2024 17:29:15 UTC</em>, it contains:</p>
 <pre><code>    {
         &quot;no_comment&quot; : &quot;mandatory comment: because comments were removed from the original JSON spec&quot;,
-        &quot;entry_JSON_format_version&quot; : &quot;1.1 2024-02-11&quot;,
+        &quot;entry_JSON_format_version&quot; : &quot;1.2 2024-09-25&quot;,
         &quot;award&quot; : &quot;Third Place&quot;,
         &quot;year&quot; : 1984,
         &quot;dir&quot; : &quot;laman&quot;,
         &quot;entry_id&quot; : &quot;1984_laman&quot;,
+        &quot;title&quot; : &quot;1984.laman&quot;,
+        &quot;abstract&quot; : &quot;prints spiralling numbers laid out in columns&quot;,
         &quot;author_set&quot; : [
             { &quot;author_handle&quot; : &quot;Mike_Laman&quot; }
         ],
@@ -5081,7 +5084,7 @@ be present in all IOCCC related JSON files.</p>
 <p>There <strong>MUST</strong> be one and only one <code>no_comment</code> <em>JSON member</em> and the <em>JSON value</em> <strong>MUST</strong>
 be the exact <em>JSON string</em> as shown above.</p>
 <h5 id="entry_json_format_version"><code>entry_JSON_format_version</code></h5>
-<pre><code>        &quot;entry_JSON_format_version&quot; : &quot;1.1 2024-02-11&quot;,</code></pre>
+<pre><code>        &quot;entry_JSON_format_version&quot; : &quot;1.2 2024-09-25&quot;,</code></pre>
 <p>This <em>JSON member</em> holds the format version of the <code>.entry.json</code> JSON file.</p>
 <p>There <strong>MUST</strong> be one and only one <code>entry_JSON_format_version</code>
 <em>JSON member</em> and the <em>JSON value</em> <strong>MUST</strong> be a <em>JSON string</em>.</p>
@@ -5114,6 +5117,22 @@ for more information about author handles.</p>
 FAQ on “<a href="#author_json">author_handle.json</a>”
 for information about the contents of these JSON file and
 how they are used.</p>
+<h5 id="title"><code>title</code></h5>
+<p>The <code>title</code> for an entry’s <code>.entry.json</code> file defaults to
+“<code>YYYY/dirname</code>”. The <code>title</code> is not used at this time.</p>
+<p>For IOCCC winning entries after 2020, the <code>title</code> is obtained from the
+<code>.info.json</code> file with the entry was a submission.</p>
+<p>See the
+FAQ on “<a href="#info_json">.info.json</a>”
+for more information on <code>.info.json</code> files.</p>
+<h5 id="abstract"><code>abstract</code></h5>
+<p>The <code>abstract</code> is a summary of the entry. The <code>abstract</code> is used as a
+head line in an entry’s <code>index.html</code> file.</p>
+<p>For IOCCC winning entries after 2020, the <code>abstract</code> is obtained from the
+<code>.info.json</code> file with the entry was a submission.</p>
+<p>See the
+FAQ on “<a href="#info_json">.info.json</a>”
+for more information on <code>.info.json</code> files.</p>
 <h5 id="author_set"><code>author_set</code></h5>
 <pre><code>    &quot;author_set&quot; : [
         { &quot;author_handle&quot; : &quot;Mike_Laman&quot; }

@@ -1058,6 +1058,8 @@ In order of the file's contents we describe each required field, below:
     [soup/limit_ioccc.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h)
     in the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry/))
 
+    The `abstract` may not contain a `;` (semicolon), nor `&` (ampersand), nor `,` (comma).
+
     **NOTE:** if your abstract is 0 in length or > the maximum abstract length you
     stand a great risk of having your submission rejected for violating [Rule
     17](next/rules.html#rule17)!
@@ -6267,11 +6269,13 @@ As of _Fri 26 Jul 2024 17:29:15 UTC_, it contains:
 ``` <!---json-->
     {
         "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-        "entry_JSON_format_version" : "1.1 2024-02-11",
+        "entry_JSON_format_version" : "1.2 2024-09-25",
         "award" : "Third Place",
         "year" : 1984,
         "dir" : "laman",
         "entry_id" : "1984_laman",
+	"title" : "1984.laman",
+	"abstract" : "prints spiralling numbers laid out in columns",
         "author_set" : [
             { "author_handle" : "Mike_Laman" }
         ],
@@ -6384,7 +6388,7 @@ be the exact _JSON string_ as shown above.
 ##### `entry_JSON_format_version`
 
 ``` <!---json-->
-        "entry_JSON_format_version" : "1.1 2024-02-11",
+        "entry_JSON_format_version" : "1.2 2024-09-25",
 ```
 
 This _JSON member_ holds the format version of the `.entry.json` JSON file.
@@ -6444,6 +6448,32 @@ See
 FAQ on "[author_handle.json](#author_json)"
 for information about the contents of these JSON file and
 how they are used.
+
+
+##### `title`
+
+The `title` for an entry's `.entry.json` file defaults to
+"`YYYY/dirname`".  The `title` is not used at this time.
+
+For IOCCC winning entries after 2020, the `title` is obtained from the
+`.info.json` file with the entry was a submission.
+
+See the
+FAQ on "[.info.json](#info_json)"
+for more information on `.info.json` files.
+
+
+##### `abstract`
+
+The `abstract` is a summary of the entry.  The `abstract` is used as a
+head line in an entry's `index.html` file.
+
+For IOCCC winning entries after 2020, the `abstract` is obtained from the
+`.info.json` file with the entry was a submission.
+
+See the
+FAQ on "[.info.json](#info_json)"
+for more information on `.info.json` files.
 
 
 ##### `author_set`
