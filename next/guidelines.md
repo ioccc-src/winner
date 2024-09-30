@@ -48,7 +48,7 @@ writing by [contacting the judges](../contact.html).
 </div>
 
 <p class="leftbar">
-These [IOCCC guidelines](guidelines.html) are version **28.14 2024-08-30**.
+These [IOCCC guidelines](guidelines.html) are version **28.15 2024-09-29**.
 </p>
 
 **IMPORTANT**: Be **SURE** to read the [IOCCC rules](rules.html).
@@ -1261,13 +1261,13 @@ Noll](http://www.isthe.com/chongo/index.html), in which case you _probably_
 won't win since [judges](../judges.html) are disqualified! :-) However, **_if_**
 you do write your own version, you **_might_** wish to make it do something
 **_more_ interesting** than simply implementing the [IOCCC](../index.html)
-tools' algorithms, although if you do this you might want to keep in mind that
-writing an obfuscated version of a library runs the risk of violating [Rule
-1](rules.html#rule1) as it is likely not a complete program.
+tools' algorithms; on the other hand, if you do this, you might want to keep in
+mind that writing an obfuscated version of a library runs the risk of violating
+[Rule 1](rules.html#rule1) as it is likely not a complete program.
 </p>
 
 <p class="leftbar">
-On the other hand, we do not recommend you try and submit a JSON parser due to
+Even so, we do not recommend you try and submit a JSON parser due to
 the fact it will likely exceed [the source code size limit](rules.html#rule2)
 and because you likely can't beat [flex](https://github.com/westes/flex) or
 [bison](https://www.gnu.org/software/bison/) in obfuscation. This isn't to
