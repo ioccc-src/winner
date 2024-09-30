@@ -40,7 +40,6 @@ body:
         - OS:
         - Device:
         - Compiler:
-    render: markdown
   validations:
     required: true
 
