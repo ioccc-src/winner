@@ -181,7 +181,7 @@ while getopts :hv:Vd:D:nNt:Qw: flag; do
 	*/) ;;
 	*) echo "$0: ERROR: in -D docroot/, the docroot must end in /" 1>&2
 	   echo 1>&2
-	   print_usage 1>&2
+	   echo "$USAGE" 1>&2
 	   exit 3
 	   ;;
 	esac
@@ -198,13 +198,13 @@ while getopts :hv:Vd:D:nNt:Qw: flag; do
 	*"'"*)
 	    echo "$0: ERROR: in -t tagline, the tagline may not contain a single-quote character: $OPTARG" 1>&2
 	    echo 1>&2
-	    print_usage 1>&2
+	    echo "$USAGE" 1>&2
 	    exit 3
 	    ;;
 	*'"'*)
 	    echo "$0: ERROR: in -t tagline, the tagline may not contain a double-quote character: $OPTARG" 1>&2
 	    echo 1>&2
-	    print_usage 1>&2
+	    echo "$USAGE" 1>&2
 	    exit 3
 	    ;;
 	*) ;;
@@ -217,7 +217,7 @@ while getopts :hv:Vd:D:nNt:Qw: flag; do
 	;;
     \?) echo "$0: ERROR: invalid option: -$OPTARG" 1>&2
 	echo 1>&2
-	print_usage 1>&2
+	echo "$USAGE" 1>&2
 	exit 3
 	;;
     :) echo "$0: ERROR: option -$OPTARG requires an argument" 1>&2

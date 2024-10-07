@@ -208,7 +208,7 @@ while getopts :hv:Vd:D:j:nN flag; do
 	*/) ;;
 	*) echo "$0: ERROR: in -D docroot/, the docroot must end in /" 1>&2
 	   echo 1>&2
-	   print_usage 1>&2
+	   echo "$USAGE" 1>&2
 	   exit 3
 	   ;;
 	esac
@@ -220,7 +220,7 @@ while getopts :hv:Vd:D:j:nN flag; do
 	;;
     \?) echo "$0: ERROR: invalid option: -$OPTARG" 1>&2
 	echo 1>&2
-	print_usage 1>&2
+	echo "$USAGE" 1>&2
 	exit 3
 	;;
     :) echo "$0: ERROR: option -$OPTARG requires an argument" 1>&2

@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+
 #
 # md2html.sh - convert markdown into an IOCCC HTML file via config file
 #
@@ -354,22 +355,6 @@ function global_variable_setup
 }
 
 
-# print_usage - print the usage message, exit code and version information
-#
-# Call this to print the usage message, by default to stdout.
-# However one might usually want to do:
-#
-#	print_usage 1>&2
-#
-function print_usage
-{
-    # print usage message
-    #
-    echo "$USAGE"
-    return 0
-}
-
-
 # parse_command_line - parse command line arguments
 #
 # You MUST call this function at least once AND after calling global_variable_setup.
@@ -418,7 +403,7 @@ function parse_command_line
     #
     while getopts :hv:VnNd:D:c:H:t:m:b:a:s:So:U:w:e:E: flag; do
       case "$flag" in
-	h) print_usage 1>&2
+	h) echo "$USAGE" 1>&2
 	    exit 2
 	    ;;
 	v) V_FLAG="$OPTARG"
@@ -434,7 +419,7 @@ function parse_command_line
 	    if [[ $GETOPT_PHASE -ne 0 ]]; then
 		echo "$0: ERROR: -d may only be used during getopt phase 0, current getopt phase: $GETOPT_PHASE" 1>&2
 		echo 1>&2
-		print_usage 1>&2
+		echo "$USAGE" 1>&2
 		exit 3
 	    fi
 	    #
@@ -445,7 +430,7 @@ function parse_command_line
 	    */) ;;
 	    *) echo "$0: ERROR: in -D docroot/, the docroot must end in /" 1>&2
 	       echo 1>&2
-	       print_usage 1>&2
+	       echo "$USAGE" 1>&2
 	       exit 3
 	       ;;
 	    esac
@@ -461,7 +446,7 @@ function parse_command_line
 	    if [[ $GETOPT_PHASE -ne 0 ]]; then
 		echo "$0: ERROR: -c may only be used during getopt phase 0, current getopt phase: $GETOPT_PHASE" 1>&2
 		echo 1>&2
-		print_usage 1>&2
+		echo "$USAGE" 1>&2
 		exit 3
 	    fi
 	    #
@@ -475,7 +460,7 @@ function parse_command_line
 		;;
 	    *) echo "$0: ERROR: -H phase=name not in -H phase=name form" 1>&2
 		echo 1>&2
-		print_usage 1>&2
+		echo "$USAGE" 1>&2
 		exit 3
 		;;
 	    esac
@@ -484,25 +469,25 @@ function parse_command_line
 	    *=*)
 		echo "$0: ERROR: in -H phase=name, the phase may not contain an = (equal) character: $NAME" 1>&2
 		echo 1>&2
-		print_usage 1>&2
+		echo "$USAGE" 1>&2
 		exit 3
 		;;
 	    */*)
 		echo "$0: ERROR: in -H phase=name, the phase may not contain a / (slash) character: $NAME" 1>&2
 		echo 1>&2
-		print_usage 1>&2
+		echo "$USAGE" 1>&2
 		exit 3
 		;;
 	    *"'"*)
 		echo "$0: ERROR: in -H phase=name, the phase may not contain a single-quote character: $NAME" 1>&2
 		echo 1>&2
-		print_usage 1>&2
+		echo "$USAGE" 1>&2
 		exit 3
 		;;
 	    *'"'*)
 		echo "$0: ERROR: in -H phase=name, the phase may not contain a double-quote character: $NAME" 1>&2
 		echo 1>&2
-		print_usage 1>&2
+		echo "$USAGE" 1>&2
 		exit 3
 		;;
 	    *) ;;
@@ -512,19 +497,19 @@ function parse_command_line
 	    *=*)
 		echo "$0: ERROR: in -H phase=name, the name may not contain a = (equal) character: $VALUE" 1>&2
 		echo 1>&2
-		print_usage 1>&2
+		echo "$USAGE" 1>&2
 		exit 3
 		;;
 	    *"'"*)
 		echo "$0: ERROR: in -H phase=name, the name may not contain a single-quote character: $VALUE" 1>&2
 		echo 1>&2
-		print_usage 1>&2
+		echo "$USAGE" 1>&2
 		exit 3
 		;;
 	    *'"'*)
 		echo "$0: ERROR: in -H phase=name, the name may not contain a double-quote character: $VALUE" 1>&2
 		echo 1>&2
-		print_usage 1>&2
+		echo "$USAGE" 1>&2
 		exit 3
 		;;
 	    *) ;;
@@ -540,7 +525,7 @@ function parse_command_line
 		done 1>&2
 		echo "$0: notice: list of valid end above" 1>&2
 		echo 1>&2
-		print_usage 1>&2
+		echo "$USAGE" 1>&2
 		exit 3
 	    fi
 	    # change phase name
@@ -576,7 +561,7 @@ function parse_command_line
 		;;
 	    *) echo "$0: ERROR: -s token=value not in -s token=value form" 1>&2
 		echo 1>&2
-		print_usage 1>&2
+		echo "$USAGE" 1>&2
 		exit 3
 		;;
 	    esac
@@ -585,19 +570,19 @@ function parse_command_line
 	    *\;*)
 		echo "$0: ERROR: in -s token=value, the token may not contain a ; (semicolon) character: $NAME" 1>&2
 		echo 1>&2
-		print_usage 1>&2
+		echo "$USAGE" 1>&2
 		exit 3
 		;;
 	    *=*)
 		echo "$0: ERROR: in -s token=value, the token may not contain an = (equal) character: $NAME" 1>&2
 		echo 1>&2
-		print_usage 1>&2
+		echo "$USAGE" 1>&2
 		exit 3
 		;;
 	    *%*)
 		echo "$0: ERROR: in -s token=value, the token may not contain a % (percent) character: $NAME" 1>&2
 		echo 1>&2
-		print_usage 1>&2
+		echo "$USAGE" 1>&2
 		exit 3
 		;;
 	    *) ;;
@@ -607,13 +592,13 @@ function parse_command_line
 	    *\;*)
 		echo "$0: ERROR: in -s token=value, the value may not contain a ; (semicolon) character: $NAME" 1>&2
 		echo 1>&2
-		print_usage 1>&2
+		echo "$USAGE" 1>&2
 		exit 3
 		;;
 	    *\&*)
 		echo "$0: ERROR: in -s token=value, the value may not contain an & (ampersand) character: $NAME" 1>&2
 		echo 1>&2
-		print_usage 1>&2
+		echo "$USAGE" 1>&2
 		exit 3
 		;;
 	    *) ;;
@@ -629,7 +614,7 @@ function parse_command_line
 	    if [[ $GETOPT_PHASE -ne 0 && $GETOPT_PHASE -ne 2 ]]; then
 		echo "$0: ERROR: -o may only be used during getopt phase 0 and 2, current getopt phase: $GETOPT_PHASE" 1>&2
 		echo 1>&2
-		print_usage 1>&2
+		echo "$USAGE" 1>&2
 		exit 3
 	    fi
 	    #
@@ -657,17 +642,17 @@ function parse_command_line
 	    ;;
 	\?) echo "$0: ERROR: invalid option: -$OPTARG" 1>&2
 	    echo 1>&2
-	    print_usage 1>&2
+	    echo "$USAGE" 1>&2
 	    exit 3
 	    ;;
 	:) echo "$0: ERROR: option -$OPTARG requires an argument" 1>&2
 	    echo 1>&2
-	    print_usage 1>&2
+	    echo "$USAGE" 1>&2
 	    exit 3
 	    ;;
 	*) echo "$0: ERROR: unexpected value from getopts: $flag" 1>&2
 	    echo 1>&2
-	    print_usage 1>&2
+	    echo "$USAGE" 1>&2
 	    exit 3
 	    ;;
       esac

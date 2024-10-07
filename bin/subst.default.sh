@@ -201,7 +201,7 @@ while getopts :hv:Vd:D:nNU:w:e:E: flag; do
 	;;
     \?) echo "$0: ERROR: invalid option: -$OPTARG" 1>&2
 	echo 1>&2
-	print_usage 1>&2
+	echo "$USAGE" 1>&2
 	exit 3
 	;;
     :) echo "$0: ERROR: option -$OPTARG requires an argument" 1>&2
