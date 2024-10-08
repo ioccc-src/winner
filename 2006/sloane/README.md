@@ -5,7 +5,7 @@
 ```
 
 We recommend the alt version so that you can see what this looked like back in 2006.
-If you wish to see the original faster version see [original
+If you wish to see the original faster version see [Original
 code](#original-code) below.
 
 
@@ -29,7 +29,7 @@ it. To do so try:
     ./sloane.alt
 ```
 
-If you wish to make it like the original, as if the below [Original
+If you wish to make it like the original, as if the below [original
 code](#original-code) was being used, you can do:
 
 ``` <!---sh-->
@@ -57,13 +57,13 @@ Should you wish to see the original you may do so with the original code,
     ./sloane
 ```
 
-WARNING: if you are easily overstimulated with fast movement or have
+**WARNING**: if you are easily overstimulated with fast movement or have
 photosensitivity please be careful running this version and instead see the
 above!
 
-NOTE: again as above, to see what is going on, we recommend that you instead use
+**NOTE**: again as above, to see what is going on, we recommend that you instead use
 the alternate code which we described in the [To build](#to-build) and
-[try](#try) sections above.
+[Try](#try) sections above.
 
 
 ## Judges' Comments:

@@ -430,8 +430,8 @@ pentagons rings rings2 spirals spirals2<br>
 spirals3 spirals4 squares stars stars2<br>
 tree tree2 tree3 tree4 triangle</p>
 </blockquote>
-<p>NOTE: you cannot specify a different width from height; it’s one number.</p>
-<p>NOTE: <code>convert(1)</code> belongs to <a href="https://imagemagick.org/index.php">ImageMagick</a>.</p>
+<p><strong>NOTE</strong>: you cannot specify a different width from height; it’s one number.</p>
+<p><strong>NOTE</strong>: <code>convert(1)</code> belongs to <a href="https://imagemagick.org/index.php">ImageMagick</a>.</p>
 <h2 id="try">Try:</h2>
 <pre><code>    ./try.sh</code></pre>
 <p>After running the program on a few files it will ask you if you wish to run it
@@ -452,9 +452,20 @@ a reasonably experienced user who can parse formats in their mind. :-)</p>
 <p>The program should be run with the following</p>
 <pre><code>    ./stewart &lt;m&gt; &lt;n&gt; &lt;ifs&gt;</code></pre>
 <p>where:</p>
-<pre><code>    m   = The size of the picture (picture will be m X m in size).
-    n   = The number of iterations to run (More will make for a clearer picture).
-    ifs = The file to use as input.</code></pre>
+<ul>
+<li><code>m</code>
+<ul>
+<li>The size of the picture (picture will be m X m in size).</li>
+</ul></li>
+<li><code>n</code>
+<ul>
+<li>The number of iterations to run (More will make for a clearer picture).</li>
+</ul></li>
+<li><code>ifs</code>
+<ul>
+<li>The file to use as input.</li>
+</ul></li>
+</ul>
 <p>The program will spit out an <a href="https://en.wikipedia.org/wiki/X_BitMap">XBM image</a>
 on standard out. Minimal checking is done on the arguments mainly that there
 are 3. Wrong arguments will cause the program to bomb out.</p>
@@ -500,6 +511,7 @@ another kind of fractal, those from the IFS:
 <p>Included in my submission will be a tarball of some IFS files,
 including one that attempts (not very well) to mimic the IOCCC logo
 (I figure it can’t hurt to attempt to suck up, right?).</p>
+<p>(<strong>NOTE from Judges</strong>: we extracted the files.)</p>
 <p>I would try to explain how to create an IFS file but I am not smart
 enough to condense it down to something that is coherent.</p>
 <p>Basically the break down is:</p>

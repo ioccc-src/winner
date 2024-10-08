@@ -419,13 +419,13 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <p>For more detailed information see <a href="../../bugs.html#2011_dlowe">2011/dlowe in bugs.html</a>.</p>
 <h2 id="to-use">To use:</h2>
 <pre><code>    ./dlowe -&lt;n_iterations&gt; corpus1/ [...] corpus0/ &lt; start.net &gt; trained.net</code></pre>
-<p>NOTE: In the above command, the directory args MUST end in a <code>/</code>.</p>
+<p><strong>NOTE</strong>: In the above command, the directory args MUST end in a <code>/</code>.</p>
 <p>Then to use <code>trained.net</code>:</p>
 <pre><code>    ./dlowe file [file ...] &lt; trained.net</code></pre>
 <h2 id="try">Try:</h2>
 <p>Try these pre-trained networks:</p>
 <pre><code>    ./try.sh</code></pre>
-<p>NOTE: The <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/dlowe/dlowe-aux-data">dlowe-aux-data</a> directory, which <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/dlowe/try.sh">try.sh</a> refers to, was
+<p><strong>NOTE</strong>: The <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/dlowe/dlowe-aux-data">dlowe-aux-data</a> directory, which <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/dlowe/try.sh">try.sh</a> refers to, was
 created by:</p>
 <pre><code>    tar -jxf dlowe-aux-data.tar.bz2</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
@@ -451,7 +451,7 @@ plus 1/2 of the C code winning entries from prior IOCCC contests</p></li>
 <li><p><code>ioccc_lost_test/</code>
 1/2 of C code from entries that that did not win</p></li>
 </ul>
-<p>NOTE: The above directories were not shipped and everything from the entries
+<p><strong>NOTE</strong>: The above directories were not shipped and everything from the entries
 that did not win were flushed to <code>/dev/null</code>.</p>
 <p>The <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/dlowe/earlystop.pl">earlystop.pl</a> tool wrote:</p>
 <pre><code>    training 1 to 1001...
@@ -462,10 +462,10 @@ that did not win were flushed to <code>/dev/null</code>.</p>
 <p>The <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/dlowe/dlowe.c">dlowe.c</a> was explicitly excluded from this trailing set, so this
 test is interesting:</p>
 <pre><code>    ./dlowe dlowe.c &lt; dlowe-aux-data/ioccc-winlose-trained.net</code></pre>
-<p>NOTE: this is done in <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/dlowe/try.sh">try.sh</a>.</p>
+<p><strong>NOTE</strong>: this is done in <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/dlowe/try.sh">try.sh</a>.</p>
 <p>The match of <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/dlowe/dlowe.c">dlowe.c</a> to the lose/win trailed network was:</p>
 <pre><code>    dlowe.c 0.125108</code></pre>
-<p>NOTE: The non-artificially intelligent decisions of the IOCCC judges include random
+<p><strong>NOTE</strong>: The non-artificially intelligent decisions of the IOCCC judges include random
 quirks and their non-linear judgment calls not found in the ioccc trained network.
 Just because C code is or isn’t scored highly by this network does not
 mean it will win or lose a future IOCCC. On the other hand … it just might!</p>

@@ -502,8 +502,17 @@ two files on A: drive, <code>HALT.COM</code> to stop the emulator (so it closes 
 by the provided C.BIOS.</p>
 <p>To get a complete <a href="https://en.wikipedia.org/wiki/CP/M">CP/M</a> system, you will need the following files
 from the <code>SOURCE</code> directory:</p>
-<pre><code>    ASM.COM  DDT.COM   DUMP.COM   ED.COM   LOAD.COM
-    PIP.COM  STAT.COM  SUBMIT.COM XSUB.COM</code></pre>
+<ul>
+<li><code>ASM.COM</code></li>
+<li><code>DDT.COM</code></li>
+<li><code>DUMP.COM</code></li>
+<li><code>ED.COM</code></li>
+<li><code>LOAD.COM</code></li>
+<li><code>PIP.COM</code></li>
+<li><code>STAT.COM</code></li>
+<li><code>SUBMIT.COM</code></li>
+<li><code>XSUB.COM</code></li>
+</ul>
 <p>To import them, you must run the emulator with an argument, by
 example:</p>
 <pre><code>    ./toledo2 DDT.COM</code></pre>
@@ -530,15 +539,26 @@ bit 2) and <code>C</code> (Carry, bit 0).</p>
 <h3 id="porting-it">Porting it</h3>
 <p>It is easy if your platform has <code>getch()</code>/<code>kbhit()</code> and
 ANSI terminal:</p>
-<pre><code>    read    --&gt;  Z=kbhit()?getch():0
-    write   --&gt;  putchar(7[o])
-    system  --&gt;  nothing</code></pre>
+<ul>
+<li><code>read</code>
+<ul>
+<li><code>Z=kbhit()?getch():0</code></li>
+</ul></li>
+<li><code>write</code>
+<ul>
+<li><code>putchar(7[o])</code></li>
+</ul></li>
+<li><code>system</code>
+<ul>
+<li>nothing</li>
+</ul></li>
+</ul>
 <p>Notice that you’ll have to do <code>#include &lt;conio.h&gt;</code> as well.</p>
 <p>Also add the following to trap Ctrl-C:</p>
-<pre><code>#include &lt;signal.h&gt;
-signal(SIGINT, SIG_IGN);</code></pre>
-<p>NOTE: this is what the <a href="#alternate-code">alternate code</a> is for!</p>
-<p>NOTE from the judges: in Unix like systems <code>getch()</code> is part of curses but this
+<pre><code>    #include &lt;signal.h&gt;
+    signal(SIGINT, SIG_IGN);</code></pre>
+<p><strong>NOTE</strong>: this is what the <a href="#alternate-code">alternate code</a> is for!</p>
+<p><strong>NOTE from the Judges</strong>: in Unix like systems <code>getch()</code> is part of curses but this
 is not what is needed.</p>
 <p>On PC/DOS you need to add <code>ANSI.SYS</code> to <code>CONFIG.SYS</code>.</p>
 <p>In Unix the min 0 on <code>stty</code> is required but circa 2001
@@ -555,25 +575,98 @@ counter</a> is the <code>c</code> pointer and
 main loop reads every <a href="https://en.wikipedia.org/wiki/Opcode">opcode</a> and
 separates them in one of three common forms. A lot of ternary operators selects
 the instruction.</p>
-<pre><code>    o[0] = B register   o[1] = C register
-    o[2] = D register   o[3] = E register
-    o[4] = H register   o[5] = L register
-    o[6] = Flags        o[7] = A or accumulator</code></pre>
+<ul>
+<li><code>o[0]</code>
+<ul>
+<li>B register</li>
+</ul></li>
+<li><code>o[1]</code>
+<ul>
+<li>C register</li>
+</ul></li>
+<li><code>o[2]</code>
+<ul>
+<li>D register</li>
+</ul></li>
+<li><code>o[3]</code>
+<ul>
+<li>E register</li>
+</ul></li>
+<li><code>o[4]</code>
+<ul>
+<li>H register</li>
+</ul></li>
+<li><code>o[5]</code>
+<ul>
+<li>L register</li>
+</ul></li>
+<li><code>o[6]</code>
+<ul>
+<li>Flags</li>
+</ul></li>
+<li><code>o[7]</code>
+<ul>
+<li>A or accumulator</li>
+</ul></li>
+</ul>
 <p>The following instructions do peripheral operation:</p>
-<pre><code>    76           Quits emulator
-    DB 00        Reads key pressed status
-    DB 01        Reads key
-    DB 02        Reads byte from file (Carry=EOF)
-    D3 xx        Writes byte from acc. to console
-    ED ED 02     Reads sector
-    ED ED 03     Writes sector</code></pre>
+<ul>
+<li><code>76</code>
+<ul>
+<li>Quits emulator</li>
+</ul></li>
+<li><code>DB 00</code>
+<ul>
+<li>Reads key pressed status</li>
+</ul></li>
+<li><code>DB 01</code>
+<ul>
+<li>Reads key</li>
+</ul></li>
+<li><code>DB 02</code>
+<ul>
+<li>Reads byte from file (Carry=EOF)</li>
+</ul></li>
+<li><code>D3 xx</code>
+<ul>
+<li>Writes byte from acc. to console</li>
+</ul></li>
+<li><code>ED ED 02</code>
+<ul>
+<li>Reads sector</li>
+</ul></li>
+<li><code>ED ED 03</code>
+<ul>
+<li>Writes sector</li>
+</ul></li>
+</ul>
 <p>Memory addresses:</p>
-<pre><code>    FBFA = Low source/target direction
-    FBFB - High source/target direction
-    FBFC - Sector
-    FBFD - Low cylinder
-    FBFE - High cylinder
-    FBFF - Drive.</code></pre>
+<ul>
+<li><code>FBFA</code>
+<ul>
+<li>Low source/target direction</li>
+</ul></li>
+<li><code>FBFB</code>
+<ul>
+<li>High source/target direction</li>
+</ul></li>
+<li><code>FBFC</code>
+<ul>
+<li>Sector</li>
+</ul></li>
+<li><code>FBFD</code>
+<ul>
+<li>Low cylinder</li>
+</ul></li>
+<li><code>FBFE</code>
+<ul>
+<li>High cylinder</li>
+</ul></li>
+<li><code>FBFF</code>
+<ul>
+<li>Drive.</li>
+</ul></li>
+</ul>
 <p>The BIOS is tailor made for this emulator, and helps to simplify it.</p>
 <h3 id="other-notes">Other notes</h3>
 <ul>

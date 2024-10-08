@@ -147,20 +147,24 @@ as you like (as understood by the C function `isspace()`).
 
 Supported operations and functions are:
 
-```
-    Operation | Description
+- `+`, `-`, `*`, `/`
+    - Arithmetic operations, priority of  * , /  over  +,-  is respected.
+- `<,>`
+    - Compares the real parts of two complex numbers (the imaginary part
+      is ignored). Any number of conditions is allowed, the iteration will
+      just stop as soon as one of them fails.
+- `Abs2`
+    - Calculates the squared norm, i.e.: `Abs2(a+b*i)` is `(a*a+b*b)+0*i`.
+- `Re`
+    - Extract the real part, i.e.: `Re(a+b*i)` is `a+0*i`.
+- `Im`
+    - Extract the imaginary part, i.e.: `Im(a+b*i)` is` b+0*i`.
+- `Exp`
+    - Calculates the complex exponential, i.e. `Exp(a+b*i)` is `e^a*(cos(b)+sin(b)*i)`.
 
-     +,-,*,/  | Arithmetic operations, priority of  * , /  over  +,-  is respected.
-     <,>      | Compares the real parts of two complex numbers (the imaginary part
-              | is ignored). Any number of conditions is allowed, the iteration will
-              | just stop as soon as one of them fails.
-     Abs2     | Calculates the squared norm, i.e.: Abs2(a+b*i) is (a*a+b*b)+0*i.
-     Re       | Extract the real part, i.e.: Re(a+b*i) is a+0*i.
-     Im       | Extract the imaginary part, i.e.: Im(a+b*i) is b+0*i.
-     Exp      | Calculates the complex exponential, i.e. Exp(a+b*i) is e^a*(cos(b)+sin(b)*i).
-     Ln       | Calculates the principal value of the natural logarithm
-              | i.e.  Ln(a+b*i) is ln(a*a+b*b)/2 + atan(b/a)*i.
-```
+-  `Ln`
+    - Calculates the principal value of the natural logarithm i.e. `Ln(a+b*i)`
+    is `ln(a*a+b*b)/2 + atan(b/a)*i`.
 
 Here are a few examples of fractals you can draw:
 

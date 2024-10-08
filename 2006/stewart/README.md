@@ -32,9 +32,9 @@ where `file` is one of:
 > spirals3 spirals4 squares stars stars2<br>
 > tree tree2 tree3 tree4 triangle
 
-NOTE: you cannot specify a different width from height; it's one number.
+**NOTE**: you cannot specify a different width from height; it's one number.
 
-NOTE: `convert(1)` belongs to [ImageMagick](https://imagemagick.org/index.php).
+**NOTE**: `convert(1)` belongs to [ImageMagick](https://imagemagick.org/index.php).
 
 
 ## Try:
@@ -74,11 +74,13 @@ The program should be run with the following
 
 where:
 
-```
-    m   = The size of the picture (picture will be m X m in size).
-    n   = The number of iterations to run (More will make for a clearer picture).
-    ifs = The file to use as input.
-```
+- `m`
+    - The size of the picture (picture will be m X m in size).
+- `n`
+    - The number of iterations to run (More will make for a clearer picture).
+
+- `ifs`
+    - The file to use as input.
 
 The program will spit out an [XBM image](https://en.wikipedia.org/wiki/X_BitMap)
 on standard out.  Minimal checking is done on the arguments mainly that there
@@ -153,6 +155,8 @@ etc...
 Included in my submission will be a tarball of some IFS files,
 including one that attempts (not very well) to mimic the IOCCC logo
 (I figure it can't hurt to attempt to suck up, right?).
+
+(**NOTE from Judges**: we extracted the files.)
 
 I would try to explain how to create an IFS file but I am not smart
 enough to condense it down to something that is coherent.

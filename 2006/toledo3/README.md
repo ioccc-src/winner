@@ -4,13 +4,13 @@
     make
 ```
 
-NOTE: this entry requires the `X11/Xlib.h` header file and the X11 library to
+**NOTE**: this entry requires the `X11/Xlib.h` header file and the X11 library to
 compile.  For more information see the
 FAQ on "[X11](../../faq.html#X11)".
 
 The author provided two alternate versions, one which adds a status bar and
 another that makes it text only. The author also provided a version that they
-tested with Windows.  See [alternate code](#alternate-code) below.
+tested with Windows.  See [Alternate code](#alternate-code) below.
 
 
 ## To use:
@@ -140,10 +140,12 @@ play stronger?
 
 ### UPGRADES
 
-Using [toledo3-sbar.c](%%REPO_URL%%/2006/toledo3/toledo3-sbar.c) (which is too large for this IOCCC size
-rules) creates a status display about gameplay on the window title bar.
+Using [toledo3-sbar.c](%%REPO_URL%%/2006/toledo3/toledo3-sbar.c) (which is too
+large for this IOCCC's size rules) creates a status display about gameplay on
+the window title bar.
 
-Using [toledo3-txt.c](%%REPO_URL%%/2006/toledo3/toledo3-txt.c) turns this into being purely text based.
+Using [toledo3-txt.c](%%REPO_URL%%/2006/toledo3/toledo3-txt.c) turns this into
+being purely text based.
 
 
 <!--
