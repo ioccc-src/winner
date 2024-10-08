@@ -46,7 +46,7 @@ string actually forms part of the lookup table.
 
 Intel CC warns about the lack of a declaration for the argument to `main()`.
 (`gcc` does not notice this though, even with `-Wall`.)  But anyway it can
-easily be declared as int at the expense of 4 more characters.
+easily be declared as `int` at the expense of 4 more characters.
 
 I'm not sure of the effects on a hard disk of rewriting the same file
 multiple times per second for a long time.  Run at your own risk!

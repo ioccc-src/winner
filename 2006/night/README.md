@@ -4,7 +4,7 @@
     make
 ```
 
-There is an alternate version that supports arrow keys. See the [alternate
+There is an alternate version that supports arrow keys. See the [Alternate
 code](#alternate-code) section below.
 
 

@@ -491,18 +491,39 @@ expression must be an assignment (<code>[variable] = [expr]</code>) or a compari
 <code>&lt;</code> or <code>&gt;</code> (<code>[expr1] &lt; [expr2]</code> or <code>[expr1] &gt; [expr2]</code>), and you can add spaces
 as you like (as understood by the C function <code>isspace()</code>).</p>
 <p>Supported operations and functions are:</p>
-<pre><code>    Operation | Description
-
-     +,-,*,/  | Arithmetic operations, priority of  * , /  over  +,-  is respected.
-     &lt;,&gt;      | Compares the real parts of two complex numbers (the imaginary part
-              | is ignored). Any number of conditions is allowed, the iteration will
-              | just stop as soon as one of them fails.
-     Abs2     | Calculates the squared norm, i.e.: Abs2(a+b*i) is (a*a+b*b)+0*i.
-     Re       | Extract the real part, i.e.: Re(a+b*i) is a+0*i.
-     Im       | Extract the imaginary part, i.e.: Im(a+b*i) is b+0*i.
-     Exp      | Calculates the complex exponential, i.e. Exp(a+b*i) is e^a*(cos(b)+sin(b)*i).
-     Ln       | Calculates the principal value of the natural logarithm
-              | i.e.  Ln(a+b*i) is ln(a*a+b*b)/2 + atan(b/a)*i.</code></pre>
+<ul>
+<li><code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>
+<ul>
+<li>Arithmetic operations, priority of * , / over +,- is respected.</li>
+</ul></li>
+<li><code>&lt;,&gt;</code>
+<ul>
+<li>Compares the real parts of two complex numbers (the imaginary part
+is ignored). Any number of conditions is allowed, the iteration will
+just stop as soon as one of them fails.</li>
+</ul></li>
+<li><code>Abs2</code>
+<ul>
+<li>Calculates the squared norm, i.e.: <code>Abs2(a+b*i)</code> is <code>(a*a+b*b)+0*i</code>.</li>
+</ul></li>
+<li><code>Re</code>
+<ul>
+<li>Extract the real part, i.e.: <code>Re(a+b*i)</code> is <code>a+0*i</code>.</li>
+</ul></li>
+<li><code>Im</code>
+<ul>
+<li>Extract the imaginary part, i.e.: <code>Im(a+b*i)</code> is<code>b+0*i</code>.</li>
+</ul></li>
+<li><code>Exp</code>
+<ul>
+<li>Calculates the complex exponential, i.e. <code>Exp(a+b*i)</code> is <code>e^a*(cos(b)+sin(b)*i)</code>.</li>
+</ul></li>
+<li><code>Ln</code>
+<ul>
+<li>Calculates the principal value of the natural logarithm i.e. <code>Ln(a+b*i)</code>
+is <code>ln(a*a+b*b)/2 + atan(b/a)*i</code>.</li>
+</ul></li>
+</ul>
 <p>Here are a few examples of fractals you can draw:</p>
 <ul>
 <li>Mandelbrot:</li>

@@ -21,7 +21,7 @@ For more detailed information see [2011/dlowe in bugs.html](../../bugs.html#2011
     ./dlowe -<n_iterations> corpus1/ [...] corpus0/ < start.net > trained.net
 ```
 
-NOTE: In the above command, the directory args MUST end in a `/`.
+**NOTE**: In the above command, the directory args MUST end in a `/`.
 
 Then to use `trained.net`:
 
@@ -38,7 +38,7 @@ Try these pre-trained networks:
     ./try.sh
 ```
 
-NOTE: The [dlowe-aux-data](%%REPO_URL%%/2011/dlowe/dlowe-aux-data) directory, which [try.sh](%%REPO_URL%%/2011/dlowe/try.sh) refers to, was
+**NOTE**: The [dlowe-aux-data](%%REPO_URL%%/2011/dlowe/dlowe-aux-data) directory, which [try.sh](%%REPO_URL%%/2011/dlowe/try.sh) refers to, was
 created by:
 
 
@@ -82,7 +82,7 @@ where:
 - `ioccc_lost_test/`
     1/2 of C code from entries that that did not win
 
-NOTE: The above directories were not shipped and everything from the entries
+**NOTE**: The above directories were not shipped and everything from the entries
 that did not win were flushed to `/dev/null`.
 
 The [earlystop.pl](%%REPO_URL%%/2011/dlowe/earlystop.pl) tool wrote:
@@ -103,7 +103,7 @@ test is interesting:
     ./dlowe dlowe.c < dlowe-aux-data/ioccc-winlose-trained.net
 ```
 
-NOTE: this is done in [try.sh](%%REPO_URL%%/2011/dlowe/try.sh).
+**NOTE**: this is done in [try.sh](%%REPO_URL%%/2011/dlowe/try.sh).
 
 
 The match of [dlowe.c](%%REPO_URL%%/2011/dlowe/dlowe.c) to the lose/win trailed network was:
@@ -112,7 +112,7 @@ The match of [dlowe.c](%%REPO_URL%%/2011/dlowe/dlowe.c) to the lose/win trailed 
     dlowe.c 0.125108
 ```
 
-NOTE: The non-artificially intelligent decisions of the IOCCC judges include random
+**NOTE**: The non-artificially intelligent decisions of the IOCCC judges include random
 quirks and their non-linear judgment calls not found in the ioccc trained network.
 Just because C code is or isn't scored highly by this network does not
 mean it will win or lose a future IOCCC.  On the other hand ... it just might!

@@ -147,10 +147,15 @@ by the provided C.BIOS.
 To get a complete [CP/M](https://en.wikipedia.org/wiki/CP/M) system, you will need the following files
 from the `SOURCE` directory:
 
-```
-    ASM.COM  DDT.COM   DUMP.COM   ED.COM   LOAD.COM
-    PIP.COM  STAT.COM  SUBMIT.COM XSUB.COM
-```
+- `ASM.COM`
+- `DDT.COM`
+- `DUMP.COM`
+- `ED.COM`
+- `LOAD.COM`
+- `PIP.COM`
+- `STAT.COM`
+- `SUBMIT.COM`
+- `XSUB.COM`
 
 To import them, you must run the emulator with an argument, by
 example:
@@ -195,23 +200,26 @@ bit 2) and `C` (Carry, bit 0).
 It is easy if your platform has `getch()`/`kbhit()` and
 ANSI terminal:
 
-```
-    read    -->  Z=kbhit()?getch():0
-    write   -->  putchar(7[o])
-    system  -->  nothing
-```
+- `read`
+    -  `Z=kbhit()?getch():0`
+- `write`
+    - `putchar(7[o])`
+- `system`
+    - nothing
 
 
 Notice that you'll have to do `#include <conio.h>` as well.
 
 Also add the following to trap Ctrl-C:
 
-        #include <signal.h>
-        signal(SIGINT, SIG_IGN);
+``` <!---c-->
+    #include <signal.h>
+    signal(SIGINT, SIG_IGN);
+```
 
-NOTE: this is what the [alternate code](#alternate-code) is for!
+**NOTE**: this is what the [alternate code](#alternate-code) is for!
 
-NOTE from the judges: in Unix like systems `getch()` is part of curses but this
+**NOTE from the Judges**: in Unix like systems `getch()` is part of curses but this
 is not what is needed.
 
 On PC/DOS you need to add `ANSI.SYS` to `CONFIG.SYS`.
@@ -238,35 +246,54 @@ main loop reads every [opcode](https://en.wikipedia.org/wiki/Opcode) and
 separates them in one of three common forms. A lot of ternary operators selects
 the instruction.
 
-```
-    o[0] = B register   o[1] = C register
-    o[2] = D register   o[3] = E register
-    o[4] = H register   o[5] = L register
-    o[6] = Flags        o[7] = A or accumulator
-```
+- `o[0]`
+    - B register
+- `o[1]`
+    - C register
+- `o[2]`
+    - D register
+- `o[3]`
+    - E register
+- `o[4]`
+    - H register
+- `o[5]`
+    - L register
+- `o[6]`
+    - Flags
+- `o[7]`
+    - A or accumulator
 
 The following instructions do peripheral operation:
 
-```
-    76           Quits emulator
-    DB 00        Reads key pressed status
-    DB 01        Reads key
-    DB 02        Reads byte from file (Carry=EOF)
-    D3 xx        Writes byte from acc. to console
-    ED ED 02     Reads sector
-    ED ED 03     Writes sector
-```
+- `76`
+    - Quits emulator
+- `DB 00`
+    - Reads key pressed status
+- `DB 01`
+    - Reads key
+- `DB 02`
+    - Reads byte from file (Carry=EOF)
+- `D3 xx`
+    - Writes byte from acc. to console
+- `ED ED 02`
+    - Reads sector
+- `ED ED 03`
+    - Writes sector
 
 Memory addresses:
 
-```
-    FBFA = Low source/target direction
-    FBFB - High source/target direction
-    FBFC - Sector
-    FBFD - Low cylinder
-    FBFE - High cylinder
-    FBFF - Drive.
-```
+- `FBFA`
+    - Low source/target direction
+- `FBFB`
+    - High source/target direction
+- `FBFC`
+    - Sector
+- `FBFD`
+    - Low cylinder
+- `FBFE`
+    - High cylinder
+- `FBFF`
+    - Drive.
 
 The BIOS is tailor made for this emulator, and helps to simplify it.
 

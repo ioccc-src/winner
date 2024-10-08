@@ -2948,18 +2948,15 @@ opened. The number of args is however checked.
 
 The author stated:
 
-```
-    If you pick a number higher than 19186, the program will return a
-    solution but it will be a rotation of one of the first 19186.  This is
-    because the cross shaped piece fits 48 ways in the 4x4 cube, but only
-    2 of those ways are unique - you can rotate one of those to make any
-    of the other 46.  The algorithm used always places the cross piece
-    first, so the first two placings of that piece result in the 19186
-    unique solutions.
-
-    If you pick a number higher than 460464 (24x19186) the program will
-    return without outputting a solution.  If you can wait that long.
-```
+> If you pick a number higher than 19186, the program will return a solution but
+it will be a rotation of one of the first 19186.  This is because the cross
+shaped piece fits 48 ways in the 4x4 cube, but only 2 of those ways are unique -
+you can rotate one of those to make any of the other 46.  The algorithm used
+always places the cross piece first, so the first two placings of that piece
+result in the 19186 unique solutions.
+>
+>    If you pick a number higher than 460464 (24x19186) the program will return
+without outputting a solution.  If you can wait that long.
 
 
 <div id="2006_toledo2">
@@ -2974,10 +2971,12 @@ The author stated:
 [Cody Boone Ferguson](authors.html#Cody_Boone_Ferguson) fixed this program to
 not crash in macOS (it appeared to work fine in fedora linux on an `x86_64`
 architecture but he does not know if it crashed in macOS Ventura due to the fact
-it is an `arm64` CPU - the Apple silicon chip). This fix, BTW, is a mix of a fix
-by [Yusuke Endoh](authors.html#Yusuke_Endoh) and Cody's. Nevertheless there are
-two features that are not bugs. Later the author made some slight changes to
-make it not crash in x86_64 macOS.
+it is an `arm64` CPU - the Apple silicon chip, but given that the author later
+made some slight changes to make it not crash in `x86_64` macOS that might be
+the case). This fix, BTW, is a mix of a fix by [Yusuke
+Endoh](authors.html#Yusuke_Endoh) and Cody's.
+
+Nevertheless there are two features that are not bugs.
 
 By design this program is supposed to crash on termination. This actually no
 longer seems to happen but we don't need this to be added even if it might
@@ -3038,23 +3037,23 @@ There was no IOCCC in 2010.
 ### Source code: [2011/borsanyi/borsanyi.c](%%REPO_URL%%/2011/borsanyi/borsanyi.c)
 ### Information: [2011/borsanyi/index.html](2011/borsanyi/index.html)
 
-For a great amount of data points the program will crash, depending on your
+- For a great amount of data points the program will crash, depending on your
 available stack space.
 
-Giving too few (distinct) points can also cause a crash or division by zero.
+- Giving too few (distinct) points can also cause a crash or division by zero.
 
-The program expects plain numbers separated by whitespace.
+- The program expects plain numbers separated by whitespace.
 
-This program assumes ASCII.
+- This program assumes ASCII.
 
-If you give the program any arg it might flood the screen.
+- If you give the program any arg it might flood the screen.
 
-It requires both syscalls `fork(2)` and `wait(2)`.
+- It requires both syscalls `fork(2)` and `wait(2)`.
 
-Giving any arg to the program is likely to flood your screen.
+- Giving any arg to the program is likely to flood your screen.
 
-Rounding errors might cause an omission in the highest bin. There might be empty
-bins at the edges.
+- Rounding errors might cause an omission in the highest bin. There might be
+empty bins at the edges.
 
 
 <div id="2011_dlowe">
