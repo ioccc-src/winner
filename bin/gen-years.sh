@@ -105,11 +105,32 @@ if [[ $status -eq 0 ]]; then
 fi
 export TOPDIR
 #
+VERGE=$(type -P verge)
+export VERGE
+if [[ -z $VERGE ]]; then
+    echo "$0: FATAL: verge is not installed or not in \$PATH" 1>&2
+    echo "$0: notice: to install verge:" 1>&2
+    echo "$0: notice: run: git clone https://github.com/ioccc-src/mkiocccentry.git" 1>&2
+    echo "$0: notice: then: cd mkiocccentry && make clobber all" 1>&2
+    echo "$0: notice: then: cd jparse && sudo make install clobber" 1>&2
+    exit 5
+fi
+#
 JSTRDECODE=$(type -P jstrdecode)
 export JSTRDECODE
 if [[ -z $JSTRDECODE ]]; then
     echo "$0: FATAL: jstrdecode is not installed or not in \$PATH" 1>&2
     echo "$0: notice: to install jstrdecode:" 1>&2
+    echo "$0: notice: run: git clone https://github.com/ioccc-src/mkiocccentry.git" 1>&2
+    echo "$0: notice: then: cd mkiocccentry && make clobber all" 1>&2
+    echo "$0: notice: then: cd jparse && sudo make install clobber" 1>&2
+    exit 5
+fi
+export MIN_JSTRDECODE_VERSION="1.2.0"
+JSTRDECODE_VERSION=$("$JSTRDECODE" -V | head -1 | awk '{print $3;}')
+if ! "$VERGE" "$JSTRDECODE_VERSION" "$MIN_JSTRDECODE_VERSION"; then
+    echo "$0: FATAL: jstrdecode version: $JSTRDECODE_VERSION < minimum version: $MIN_JSTRDECODE_VERSION" 1>&2
+    echo "$0: notice: consider updating jstrdecode from mkiocccentry repo" 1>&2
     echo "$0: notice: run: git clone https://github.com/ioccc-src/mkiocccentry.git" 1>&2
     echo "$0: notice: then: cd mkiocccentry && make clobber all" 1>&2
     echo "$0: notice: then: cd jparse && sudo make install clobber" 1>&2
@@ -574,7 +595,10 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: V_FLAG=$V_FLAG" 1>&2
     echo "$0: debug[3]: GIT_TOOL=$GIT_TOOL" 1>&2
     echo "$0: debug[3]: TOPDIR=$TOPDIR" 1>&2
+    echo "$0: debug[3]: VERGE=$VERGE" 1>&2
     echo "$0: debug[3]: JSTRDECODE=$JSTRDECODE" 1>&2
+    echo "$0: debug[3]: MIN_JSTRDECODE_VERSION=$MIN_JSTRDECODE_VERSION" 1>&2
+    echo "$0: debug[3]: JSTRDECODE_VERSION=$JSTRDECODE_VERSION" 1>&2
     echo "$0: debug[3]: TAC_TOOL=$TAC_TOOL" 1>&2
     echo "$0: debug[3]: FMT_TOOL=$FMT_TOOL" 1>&2
     echo "$0: debug[3]: DOCROOT_SLASH=$DOCROOT_SLASH" 1>&2
