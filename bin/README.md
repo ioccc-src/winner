@@ -652,7 +652,7 @@ XPath for JSON mechanism.  For information in XPath for JSON see:
 
 NOTE: As of 2024 Oct 08 the `jval(1)` tool has not been written,
 so [jval-wrapper.sh](%%REPO_URL%%/bin/jval-wrapper.sh) uses the
-`jsp(1)` tool from [//github.com/kjozsa/jsp](//github.com/kjozsa/jsp)
+`jsp(1)` tool from [https://github.com/kjozsa/jsp](https://github.com/kjozsa/jsp)
 or if not found, the `JSONPath.sh(1)` tool from the recently forked and modified
 [JSONPath.sh tool](https://github.com/lcn2/JSONPath.sh).
 
