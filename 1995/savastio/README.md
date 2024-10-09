@@ -21,7 +21,7 @@ For more detailed information see [1995/savastio in bugs.html](../../bugs.html#1
     # enter a POSITIVE number such as 100
 ```
 
-NOTE: if you specify a negative number it will get stuck, showing no output. But
+**NOTE**: if you specify a negative number it will get stuck, showing no output. But
 what happens if you give a non-number?
 
 

@@ -86,7 +86,7 @@ and with Apple clang version 15.0.0 (clang-1500.0.40.1) in 2023, we get:
 
 Which one is correct? :)
 
-NOTE: `make all` will compile [fun.c](%%REPO_URL%%/2013/dlowe/fun.c) but to provide a different compiler
+**NOTE**: `make all` will compile [fun.c](%%REPO_URL%%/2013/dlowe/fun.c) but to provide a different compiler
 you can do something like:
 
 ``` <!---sh-->
@@ -111,7 +111,7 @@ A tiny implementation of command-line
     sparkline of file sizes: ▁▁▁▃▃▂▁▂▁▁▉
 ```
 
-NOTE: this has been provided in [slflen.sh](%%REPO_URL%%/2013/dlowe/slflen.sh) so you can try:
+**NOTE**: this has been provided in [slflen.sh](%%REPO_URL%%/2013/dlowe/slflen.sh) so you can try:
 
 ``` <!---sh-->
     ./slflen.sh

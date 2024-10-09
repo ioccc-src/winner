@@ -32,7 +32,7 @@ For the slow minded, try:
 Once you get past the obfuscation, you have an opportunity to learn
 about regular expressions and state machines.
 
-NOTE: Some compilers have had trouble optimizing this entry.
+**NOTE**: Some compilers have had trouble optimizing this entry.
 
 
 ## Author's remarks:

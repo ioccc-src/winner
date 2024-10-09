@@ -558,7 +558,7 @@ cases it might be better to provide alternate code anyway. Use a judgement call
 here as best you can manage.</p>
 <h2 id="status-main-function-args-not-allowed">STATUS: main() function args not allowed</h2>
 <p><strong>Please help us fix the main() function</strong>!</p>
-<p>NOTE: it appears that most if not all of these have been fixed except perhaps
+<p><strong>NOTE</strong>: it appears that most if not all of these have been fixed except perhaps
 for <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1989/westley/westley.c">1989/westley</a> but this has probably been fixed as
 much as possible given the nature of how it generates code: the entry itself
 compiles but two versions of code it generates does not work with clang.</p>
@@ -604,7 +604,7 @@ without breaking it.</p>
 <p><strong>Please help us fix this bug</strong>!</p>
 <p>While such entries can compile, the resulting executable sometimes or always
 crashes.</p>
-<p>NOTE: this does NOT apply to entries under the INABIAF status (though they’re
+<p><strong>NOTE</strong>: this does NOT apply to entries under the INABIAF status (though they’re
 not mutually exclusive in some cases).</p>
 <p>REMINDER: if you’re debugging a crash it will be very helpful to have <code>-O0 -g</code>
 or if you can <code>-ggdb3</code> when compiling as that will help with debugging symbols.</p>
@@ -674,7 +674,7 @@ that suggests that <em>that</em> issue can be changed): they are system specific
 design or are other things that are not actually bugs or bugs even if they
 appear to be. Or they might be documented bugs or things that simply are part of
 the entry. Nonetheless they are noteworthy.</p>
-<p>NOTE: the definition of this status changed over time. At one point it was when
+<p><strong>NOTE</strong>: the definition of this status changed over time. At one point it was when
 something was noted by the author, the judges, a consequence of earlier
 requirements for winning entries or the purpose was to do something that might
 appear to be buggy. An example of system specific entries:</p>
@@ -694,7 +694,7 @@ request unless it’s a bug or (mis)feature we would like you to fix! If you can
 figure it out you’re invited to look at the git diffs, where there are some
 (some were fixed earlier on but rolled back as both Cody and Landon individually
 felt that the fix was tampering with the entry).</p>
-<p>NOTE: in the case of <code>gets()</code> we’ve fixed some to avoid the warning of the
+<p><strong>NOTE</strong>: in the case of <code>gets()</code> we’ve fixed some to avoid the warning of the
 compiler, linker or even during runtime, depending on the system. In <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1990/tbr/tbr.c">some cases
 like 1990/tbr</a> the fix actually prevents confusing output (though that
 was not the only fix made in that entry).</p>
@@ -1379,7 +1379,7 @@ for more information on the change to <code>fgets(3)</code>.</p>
 <h3 id="status-uses-gets---change-to-fgets-if-possible-1">STATUS: uses gets() - change to fgets() if possible</h3>
 <h3 id="source-code-1994schnitzischnitzi.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994/schnitzi/schnitzi.c">1994/schnitzi/schnitzi.c</a></h3>
 <h3 id="information-1994schnitziindex.html">Information: <a href="1994/schnitzi/index.html">1994/schnitzi/index.html</a></h3>
-<p>NOTE: the generated code of all versions, when fed its own source, will differ
+<p><strong>NOTE</strong>: the generated code of all versions, when fed its own source, will differ
 even when it works. See the author’s remarks in the index.html for details.
 Increasing the buffer size and having it, when fed its own source code,
 generate code that will compile with the same buffer size is difficult: it just
@@ -2567,7 +2567,7 @@ With <code>address</code> in linux:</p>
 <p>so it would appear that</p>
 <pre><code>    x[(u)c]</code></pre>
 <p>(at least in my tired head?) is NULL. But why does it work then?</p>
-<p>NOTE: <code>u</code> is <code>int</code>.</p>
+<p><strong>NOTE</strong>: <code>u</code> is <code>int</code>.</p>
 <p>Under macOS (with the arm64 chip) we get:</p>
 <pre><code>    UndefinedBehaviorSanitizer:DEADLYSIGNAL
     ==10834==ERROR: UndefinedBehaviorSanitizer: SEGV on unknown address 0xffffffffffffffff (pc 0x00019f446748 bp 0x00016f353100 sp 0x00016f352b90 T139066)

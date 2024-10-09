@@ -40,7 +40,7 @@ bugs.html](../../bugs.html#1989_fubar) file). This is, however, a feature, not a
 The blank line at the beginning of the source is mandatory.
 Do you know why?
 
-NOTE: the file `ouroboros.c` is created by the program itself so this is why it
+**NOTE**: the file `ouroboros.c` is created by the program itself so this is why it
 is not in the repository.
 
 

@@ -2071,7 +2071,7 @@ In later years, Rule 2 was split into two parts.  These two parts of Rule 2 are:
 #### IOCCC 1984-1985
 </div>
 
-NOTE: The size rule was actually rule 1.
+**NOTE**: The size rule was actually rule 1.
 
 * Rule 2a: 512
 * Rule 2b: n/a
@@ -2080,7 +2080,7 @@ NOTE: The size rule was actually rule 1.
 #### IOCCC 1986-1987
 </div>
 
-NOTE: The size rule was actually rule 1.
+**NOTE**: The size rule was actually rule 1.
 
 * Rule 2a: 1024
 * Rule 2b: n/a
@@ -2089,7 +2089,7 @@ NOTE: The size rule was actually rule 1.
 #### IOCCC 1988-1991
 </div>
 
-NOTE: The size rule was actually rule 1.
+**NOTE**: The size rule was actually rule 1.
 
 * Rule 2a: 1536
 * Rule 2b: n/a
@@ -3557,7 +3557,7 @@ and link with the two libraries, _GL_ and _GLU_:
     cc ... -lGL -lGLU -L _location-where-X11-libs-are-installed_ -lX11
 ```
 
-NOTE: The OpenGL development effort is being manageed by [vulkan.org](https://vulkan.org).
+**NOTE**: The OpenGL development effort is being manageed by [vulkan.org](https://vulkan.org).
 We suggest you check out their resource for further information on OpenGL.
 
 
@@ -4335,7 +4335,7 @@ correcting an IOCCC entry is **VERY MUCH WELCOME**!  Please use the same
 the [master branch](https://github.com/ioccc-src/winner/branches) of the
 [ioccc-src/winner repo](https://github.com/ioccc-src/winner).
 
-NOTE: some of the issues in the [bugs.html](bugs.html) file includes just missing
+**NOTE**: some of the issues in the [bugs.html](bugs.html) file includes just missing
 files and we welcome these too!
 
 **Please also help us fix typos and / or otherwise improve the write-up** of how
@@ -5004,7 +5004,7 @@ or:
 The latter form is in case there are more than one anonymous author in a given
 year.
 
-NOTE: even if the directory name is not `anonymous` the above rules apply as in
+**NOTE**: even if the directory name is not `anonymous` the above rules apply as in
 in the case of [2005/anon](%%REPO_URL%%/2005/anon/anon.c).
 
 Anonymous `author_handle`'s match this regexp:
@@ -5278,7 +5278,7 @@ For example:
     "email" : null,
 ```
 
-NOTE: The _JSON null_ is **NOT** enclosed in quotes!
+**NOTE**: The _JSON null_ is **NOT** enclosed in quotes!
 
 
 ##### url
@@ -5300,7 +5300,7 @@ member_.  For example:
     "url" : null,
 ```
 
-NOTE: The _JSON null_ is **NOT** enclosed in quotes!
+**NOTE**: The _JSON null_ is **NOT** enclosed in quotes!
 
 
 ##### alt_url
@@ -5330,7 +5330,7 @@ member_.  For example:
     "alt_url" : null,
 ```
 
-NOTE: The _JSON null_ is **NOT** enclosed in quotes!
+**NOTE**: The _JSON null_ is **NOT** enclosed in quotes!
 
 
 ##### deprecated_twitter_handle
@@ -5361,7 +5361,7 @@ Of course in the future we will not be asking for twitter handles so this means
 that unless the winner is a previous winner (before we moved to mastodon) this
 will always be `null` anyway.
 
-NOTE: The _JSON null_ is **NOT** enclosed in quotes!
+**NOTE**: The _JSON null_ is **NOT** enclosed in quotes!
 
 
 ##### mastodon
@@ -5402,7 +5402,7 @@ For example:
     "mastodon" : null,
 ```
 
-NOTE: The _JSON null_ is **NOT** enclosed in quotes!
+**NOTE**: The _JSON null_ is **NOT** enclosed in quotes!
 
 
 ##### mastodon_url
@@ -5439,7 +5439,7 @@ For example:
     "mastodon_url" : null,
 ```
 
-NOTE: The _JSON null_ is **NOT** enclosed in quotes!
+**NOTE**: The _JSON null_ is **NOT** enclosed in quotes!
 
 See
 FAQ on "[Mastodon](#try_mastodon)"
@@ -5475,7 +5475,7 @@ For example:
     "github" : null,
 ```
 
-NOTE: The _JSON null_ is **NOT** enclosed in quotes!
+**NOTE**: The _JSON null_ is **NOT** enclosed in quotes!
 
 
 ##### affiliation
@@ -5505,7 +5505,7 @@ For example:
     "affiliation" : null,
 ```
 
-NOTE: The _JSON null_ is **NOT** enclosed in quotes!
+**NOTE**: The _JSON null_ is **NOT** enclosed in quotes!
 
 
 ##### winning_entry_set

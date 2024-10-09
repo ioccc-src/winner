@@ -29,7 +29,7 @@ monkey Eric. See [Alternate code](#alternate-code) below.
     ./monkey-words.sh
 ```
 
-NOTE: the [try.sh](%%REPO_URL%%/2018/ferguson/try.sh) script will run the other two scripts but if the
+**NOTE**: the [try.sh](%%REPO_URL%%/2018/ferguson/try.sh) script will run the other two scripts but if the
 first one, [id.sh](%%REPO_URL%%/2018/ferguson/id.sh) is terminated early in the try script, the second one,
 [monkey-words.sh](%%REPO_URL%%/2018/ferguson/monkey-words.sh) will not be run.
 
@@ -71,7 +71,7 @@ Use `weasel.alt` as you would `weasel` above.
     ./monkey-words.alt.sh
 ```
 
-NOTE: the [try.alt.sh](%%REPO_URL%%/2018/ferguson/try.alt.sh) script will run the other two scripts but if the
+**NOTE**: the [try.alt.sh](%%REPO_URL%%/2018/ferguson/try.alt.sh) script will run the other two scripts but if the
 first one, [id.alt.sh](%%REPO_URL%%/2018/ferguson/id.alt.sh) is terminated early in the try script, the second one,
 [monkey-words.alt.sh](%%REPO_URL%%/2018/ferguson/monkey-words.alt.sh) will not be run.
 

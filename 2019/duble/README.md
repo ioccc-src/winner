@@ -82,7 +82,7 @@ will have to be killed from another shell session or by closing the terminal tab
 in the beginning this will also happen. This is discussed in
 [2019/duble in bugs.html](../../bugs.html#2019_duble).
 
-NOTE: this entry might leave sockets lying about in the current working
+**NOTE**: this entry might leave sockets lying about in the current working
 directory which you'll have to delete manually. This is also discussed in
 [2019/duble in bugs.html](../../bugs.html#2019_duble).
 

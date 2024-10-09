@@ -58,7 +58,7 @@ where you get _messages as compiler errors_**. Depending on the compiler line yo
 will get different error messages and one compiler line will make you win the
 game!
 
-NOTE: your terminal should be set to 80 columns, 8 character tabs, and
+**NOTE**: your terminal should be set to 80 columns, 8 character tabs, and
 wraparound. The alternate code does not have this limitation and it is for this
 reason that we recommend you try it first.
 

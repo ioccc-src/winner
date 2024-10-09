@@ -39,7 +39,7 @@ The source code is a solution to a Paint by Numbers puzzle when you
 paint by C.  Try your hand at solving a few of the other `.nono`
 files and then compare your solution with this program!
 
-NOTE: NONOGRAM (r) is a registered Trademark and is used with permission. See
+**NOTE**: NONOGRAM (r) is a registered Trademark and is used with permission. See
 <https://nonogram.com> for more information.
 
 

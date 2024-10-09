@@ -416,7 +416,7 @@ available. See the <a href="#alternate-code">Alternate code</a> section below.</
 <pre><code>    ./cable3 bios-image-file floppy-image-file [harddisk-image-file]</code></pre>
 <h2 id="try">Try:</h2>
 <pre><code>    ./cable3.sh</code></pre>
-<p>NOTE: to quit the program type <code>QUITEMU</code>. You might have to be at the top level
+<p><strong>NOTE</strong>: to quit the program type <code>QUITEMU</code>. You might have to be at the top level
 directory of the drive, <code>A:</code> or <code>C:</code>.</p>
 <p>To send an <code>Alt+XXX</code> key combination, press (<code>^A</code> / <code>Ctrl+A</code>) then the key, so
 for example to type <code>Alt+F</code>, press (<code>^A</code> / <code>Ctrl+A</code>) then <code>F</code>.</p>
@@ -441,7 +441,7 @@ transistors used to implement the original 8086 CPU.</p>
 <p>If you are using macOS, the included <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/cable3/sc-ioccc.terminal">sc-ioccc.terminal</a>
 configuration file will correctly display console applications that use ANSI
 graphics.</p>
-<p>NOTE: the author remarked that in some systems one might need to <code>#include &lt;unistd.h&gt;</code>. This has been done in the entry but not the alternate version. This
+<p><strong>NOTE</strong>: the author remarked that in some systems one might need to <code>#include &lt;unistd.h&gt;</code>. This has been done in the entry but not the alternate version. This
 should not affect the usability of the program but will trigger a warning which
 we have disabled in the Makefile.</p>
 <p>Update: This entry now has its own website:
@@ -533,7 +533,7 @@ non-UNIX platforms. For example, for Windows/MS Visual Studio, instead of the
 Makefile definition of KB, use something slightly different - add the following
 entry to the Preprocessor Definitions list in the Project Properties page:</p>
 <pre><code>    KB=(kb=H(8),kbhit())&amp;&amp;(r[1190]=getch(),H(7))</code></pre>
-<p>NOTE: this is done in the <a href="#alternate-code">Alternate code</a>.</p>
+<p><strong>NOTE</strong>: this is done in the <a href="#alternate-code">Alternate code</a>.</p>
 <h3 id="posix-portability-note">POSIX portability note</h3>
 <p>The code as supplied uses implicit function declarations for POSIX file I/O and
 in doing so assumes that file offsets are the same bit width as your
@@ -542,7 +542,7 @@ offsets) this is not the case, and to run successfully on these systems, you
 will need to explicitly declare these functions by adding the appropriate
 include to the top of the source:</p>
 <pre><code>    #include &lt;unistd.h&gt;</code></pre>
-<p>NOTE: this has been done in <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/cable3/cable3.c">cable3.c</a>.</p>
+<p><strong>NOTE</strong>: this has been done in <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/cable3/cable3.c">cable3.c</a>.</p>
 <h3 id="usage">Usage</h3>
 <pre><code>    ./cable3 bios-image-file floppy-image-file [harddisk-image-file]</code></pre>
 <p>PLEASE NOTE that under Unices the keyboard must be in raw mode for the emulator

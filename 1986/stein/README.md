@@ -21,7 +21,7 @@
 
 ## Judges' remarks:
 
-NOTE: to avoid problems with news and mail, the single line was split
+**NOTE**: to avoid problems with news and mail, the single line was split
 into 3 lines.  Join all lines into a single line to recreate
 the original file.
 

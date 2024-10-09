@@ -99,7 +99,7 @@ the author provides a Fibonacci sequence generator!  Try:
     ./fibonacci 2 1
 ```
 
-NOTE: if the two args passed to `fibonacci` and `theorem_bkp` add to 0 it will
+**NOTE**: if the two args passed to `fibonacci` and `theorem_bkp` add to 0 it will
 print 0 over and over again in an infinite loop. In this case it should not be
 fixed (another condition where this occurred was fixed in 2023 as it affected
 usability of the program).

@@ -30,7 +30,7 @@ vim:
 - space     - pause (space)
 - q         - quit (:q)
 
-NOTE: after the game ends a file called `HI` will be in the directory with the
+**NOTE**: after the game ends a file called `HI` will be in the directory with the
 high scores (up to 20 runs saved) so one can see who has the highest score. The
 file might look like:
 
@@ -62,7 +62,7 @@ the judges' additional remarks in the author's remarks, for more details.
 
 Use `tromp.alt` as you would `tromp` above.
 
-NOTE: testing more than one user updating the high score file, one of the
+**NOTE**: testing more than one user updating the high score file, one of the
 benefits of the alt version, has not been done.
 
 The original unmodified alternate code, which will no longer work right if it
@@ -159,7 +159,7 @@ the `kill -9` command.
     "%4d from level %1d by %s\n",w,l,getlogin());pclose(d);}
 ```
 
-NOTE: the alternate version was fixed for modern systems in 2023.
+**NOTE**: the alternate version was fixed for modern systems in 2023.
 
 
 <!--

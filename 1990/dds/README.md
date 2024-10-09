@@ -21,7 +21,7 @@ Give the following lines as input:
     RUN
 ```
 
-NOTE: this entry is probably one of the only times CAPS LOCK might be worth
+**NOTE**: this entry is probably one of the only times CAPS LOCK might be worth
 having (though still not useful enough to enable :-) ) as all input has to be
 UPPER CASE.
 

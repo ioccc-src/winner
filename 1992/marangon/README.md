@@ -18,11 +18,11 @@ The object is to refill the table with `5`s, by incrementing or decrementing
 numbers as needed.  It is the side effects that get you into trouble.  If you
 are not careful, you may find things "at `6`s and `7`s".  :-)
 
-NOTE: Some compilers have had trouble optimizing this entry.
+**NOTE**: Some compilers have had trouble optimizing this entry.
 
-NOTE: Some systems need to compile with `-ltermcap` as well as `-lcurses`.
+**NOTE**: Some systems need to compile with `-ltermcap` as well as `-lcurses`.
 
-NOTE: The original winning source
+**NOTE**: The original winning source
 [marangon.orig.c](%%REPO_URL%%/1992/marangon/marangon.orig.c) assumed that
 `exit(3)` returns a value which cause problems for some systems where `exit(3)`
 returns a `void`.  The file [marangon.c](%%REPO_URL%%/1992/marangon/marangon.c)

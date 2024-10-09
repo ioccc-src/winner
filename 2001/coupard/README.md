@@ -85,7 +85,7 @@ file and saves it into `test.wav`.
 
 The output format of the program is 8KHz, unsigned 8-bit samples.
 
-NOTE: the program's return code is meaningless.
+**NOTE**: the program's return code is meaningless.
 
 
 ### Audio quality

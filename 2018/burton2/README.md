@@ -417,7 +417,7 @@ Try:
     ./manpage.sh -h | ./manpage.sh -P | lpr
 ```
 
-NOTE: in 2023 the `tac.man` was updated to proper man format and renamed
+**NOTE**: in 2023 the `tac.man` was updated to proper man format and renamed
 [tac.1](%%REPO_URL%%/2018/burton2/tac.1).
 
 <!--

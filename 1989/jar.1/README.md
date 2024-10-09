@@ -1,6 +1,6 @@
 ## To build:
 
-NOTE: this will run the program itself.
+**NOTE**: this will run the program itself.
 
 ``` <!---sh-->
     make clobber all
@@ -24,7 +24,7 @@ This alternate code, which prints something slightly different, is provided as w
 
 ### Alternate build:
 
-NOTE: this will run the program itself.
+**NOTE**: this will run the program itself.
 
 ``` <!---sh-->
     make clobber alt

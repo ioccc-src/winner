@@ -18,7 +18,7 @@ traditional fashion of C.
 For an explanation of why and how this works see the author's remarks. The gist
 of the entry itself, however, is the file name _itself_ **is** _part of the code_.
 
-NOTE: We delete the temporary file as part of `make all` whether
+**NOTE**: We delete the temporary file as part of `make all` whether
 or not the compilation succeeds.  This is a Makefile **feature**
 that might **bug** anyone running the make command.  :-)
 

@@ -4,7 +4,7 @@
     make all
 ```
 
-NOTE: this version is a fixed version for modern C compilers. See the [Alternate
+**NOTE**: this version is a fixed version for modern C compilers. See the [Alternate
 code](#alternate-code) section below for how to use the original and why one
 might wish to do so.
 

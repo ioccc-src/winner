@@ -72,7 +72,7 @@ If you wish to change the width and height, defaulting at 640 x 480, say to
 A classic for a particular generation. Like all good programs, being data
 driven means you can do fun things in small spaces.
 
-NOTE: the author states to use `tabsize=4` to see the magic of the formatting of
+**NOTE**: the author states to use `tabsize=4` to see the magic of the formatting of
 the code. In `vim` you can do:
 
 ```

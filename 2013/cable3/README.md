@@ -21,7 +21,7 @@ available. See the [Alternate code](#alternate-code) section below.
     ./cable3.sh
 ```
 
-NOTE: to quit the program type `QUITEMU`. You might have to be at the top level
+**NOTE**: to quit the program type `QUITEMU`. You might have to be at the top level
 directory of the drive, `A:` or `C:`.
 
 To send an `Alt+XXX` key combination, press (`^A` / `Ctrl+A`) then the key, so
@@ -67,7 +67,7 @@ If you are using macOS, the included [sc-ioccc.terminal](%%REPO_URL%%/2013/cable
 configuration file will correctly display console applications that use ANSI
 graphics.
 
-NOTE: the author remarked that in some systems one might need to `#include
+**NOTE**: the author remarked that in some systems one might need to `#include
 <unistd.h>`. This has been done in the entry but not the alternate version. This
 should not affect the usability of the program but will trigger a warning which
 we have disabled in the Makefile.
@@ -177,7 +177,7 @@ entry to the Preprocessor Definitions list in the Project Properties page:
     KB=(kb=H(8),kbhit())&&(r[1190]=getch(),H(7))
 ```
 
-NOTE: this is done in the [Alternate code](#alternate-code).
+**NOTE**: this is done in the [Alternate code](#alternate-code).
 
 
 ### POSIX portability note
@@ -193,7 +193,7 @@ include to the top of the source:
     #include <unistd.h>
 ```
 
-NOTE: this has been done in [cable3.c](%%REPO_URL%%/2013/cable3/cable3.c).
+**NOTE**: this has been done in [cable3.c](%%REPO_URL%%/2013/cable3/cable3.c).
 
 ### Usage
 

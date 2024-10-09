@@ -39,7 +39,7 @@ This entry has a very twisted flow of control via recursion, iteration
 and multi-processing.  Try to understand what is being done with the
 system calls.
 
-NOTE: This program assumes the ASCII character set is being used.
+**NOTE**: This program assumes the ASCII character set is being used.
 
 
 ## Author's remarks:

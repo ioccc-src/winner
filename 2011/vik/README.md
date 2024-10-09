@@ -92,7 +92,7 @@ Does it take your system a long time to compile?  You may want to do:
 and examine the resulting assembly file `vik.s`.  On some platforms
 the assembly file is about 128MB in size!
 
-NOTE: The [randowan.mod](%%REPO_URL%%/2011/vik/randowan.mod) and [mad_world.mod](%%REPO_URL%%/2011/vik/mad_world.mod) files were
+**NOTE**: The [randowan.mod](%%REPO_URL%%/2011/vik/randowan.mod) and [mad_world.mod](%%REPO_URL%%/2011/vik/mad_world.mod) files were
 created by [Henrik Bertilsson](http://www.translucentboy.com) and are included
 with his permission.
 
@@ -212,7 +212,7 @@ the main declaration in order for the program to run correctly:
     _setmode(_fileno(stdout), 0x8000);
 ```
 
-NOTE: this is what the [alternate version](#alternate-code) is for.
+**NOTE**: this is what the [alternate version](#alternate-code) is for.
 
 
 ### Limitations

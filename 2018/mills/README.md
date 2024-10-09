@@ -68,7 +68,7 @@ line, hit enter and see what happens again. When you're tired of it hit ctrl-c.
 
 But there is much more to this entry! See below.
 
-NOTE: To quit, press Control-E.
+**NOTE**: To quit, press Control-E.
 
 
 ## Judges' remarks:
@@ -83,7 +83,7 @@ run v0. Just type:
     ./v0
 ```
 
-NOTE: To quit v0, press Control-E.
+**NOTE**: To quit v0, press Control-E.
 
 You will be greeted with a familiar prompt of "login". The username and
 password are "dmr" and "dmr". To make things more familiar you'll need to
@@ -108,7 +108,7 @@ At the `>boot` prompt, type return.
 
 At the ":" prompt, type `rk(0,0)rkunix`.
 
-NOTE: To quit prog, press Control-E.
+**NOTE**: To quit prog, press Control-E.
 
 This should now be very familiar and it is possible to compile and run one of
 the very first IOCCC entries [1984/mullender](../../1984/mullender/index.html), as
@@ -123,7 +123,7 @@ But wait, there is even more!  Try:
 At the `@` prompt, type `rkunix`. You might want to type `stty -lcase` as
 otherwise the output will be in all caps.
 
-NOTE: To quit v6, press Control-E.
+**NOTE**: To quit v6, press Control-E.
 
 
 ## Author's remarks:

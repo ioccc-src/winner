@@ -254,7 +254,7 @@ here as best you can manage.
 
 **Please help us fix the main() function**!
 
-NOTE: it appears that most if not all of these have been fixed except perhaps
+**NOTE**: it appears that most if not all of these have been fixed except perhaps
 for [1989/westley](%%REPO_URL%%/1989/westley/westley.c) but this has probably been fixed as
 much as possible given the nature of how it generates code: the entry itself
 compiles but two versions of code it generates does not work with clang.
@@ -315,7 +315,7 @@ without breaking it.
 While such entries can compile, the resulting executable sometimes or always
 crashes.
 
-NOTE: this does NOT apply to entries under the INABIAF status (though they're
+**NOTE**: this does NOT apply to entries under the INABIAF status (though they're
 not mutually exclusive in some cases).
 
 REMINDER: if you're debugging a crash it will be very helpful to have `-O0 -g`
@@ -410,7 +410,7 @@ design or are other things that are not actually bugs or bugs even if they
 appear to be. Or they might be documented bugs or things that simply are part of
 the entry. Nonetheless they are noteworthy.
 
-NOTE: the definition of this status changed over time. At one point it was when
+**NOTE**: the definition of this status changed over time. At one point it was when
 something was noted by the author, the judges, a consequence of earlier
 requirements for winning entries or the purpose was to do something that might
 appear to be buggy. An example of system specific entries:
@@ -435,7 +435,7 @@ figure it out you're invited to look at the git diffs, where there are some
 (some were fixed earlier on but rolled back as both Cody and Landon individually
 felt that the fix was tampering with the entry).
 
-NOTE: in the case of `gets()` we've fixed some to avoid the warning of the
+**NOTE**: in the case of `gets()` we've fixed some to avoid the warning of the
 compiler, linker or even during runtime, depending on the system. In [some cases
 like 1990/tbr](%%REPO_URL%%/1990/tbr/tbr.c) the fix actually prevents confusing output (though that
 was not the only fix made in that entry).
@@ -1419,7 +1419,7 @@ for more information on the change to `fgets(3)`.
 ### Source code: [1994/schnitzi/schnitzi.c](%%REPO_URL%%/1994/schnitzi/schnitzi.c)
 ### Information: [1994/schnitzi/index.html](1994/schnitzi/index.html)
 
-NOTE: the generated code of all versions, when fed its own source, will differ
+**NOTE**: the generated code of all versions, when fed its own source, will differ
 even when it works. See the author's remarks in the index.html for details.
 Increasing the buffer size and having it, when fed its own source code,
 generate code that will compile with the same buffer size is difficult: it just
@@ -3173,7 +3173,7 @@ so it would appear that
 
 (at least in my tired head?) is NULL. But why does it work then?
 
-NOTE: `u` is `int`.
+**NOTE**: `u` is `int`.
 
 Under macOS (with the arm64 chip) we get:
 

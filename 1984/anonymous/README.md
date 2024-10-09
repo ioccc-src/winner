@@ -29,7 +29,7 @@ as the alternate code. See below for the tattoo side-by-side with the code.
 
 ### Alternate use:
 
-NOTE: this version might not work on some systems like macOS.
+**NOTE**: this version might not work on some systems like macOS.
 
 ``` <!---sh-->
     ./anonymous.alt

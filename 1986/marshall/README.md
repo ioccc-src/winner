@@ -4,7 +4,7 @@
     make all
 ```
 
-NOTE: we **FORCE** disable the optimiser due to a funny problem with different
+**NOTE**: we **FORCE** disable the optimiser due to a funny problem with different
 compilers and systems. See below and [compilers.html](compilers.html) for details.
 
 There is an [alternate version](#alternate-code). The reason is a funny problem:

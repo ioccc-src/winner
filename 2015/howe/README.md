@@ -83,7 +83,7 @@ Or should we teach our youth to understand the intricacies of this code?
 Ying Tong Iddle I Po!  We suggest you read the source for yourself, which
 might be easier than the academic papers it was inspired by.
 
-NOTE: Unlike the original entry source, [prog.alt.c](%%REPO_URL%%/2015/howe/prog.alt.c),
+**NOTE**: Unlike the original entry source, [prog.alt.c](%%REPO_URL%%/2015/howe/prog.alt.c),
 [prog.c](%%REPO_URL%%/2015/howe/prog.c) uses a
 64 bit FNV hash and fixes a function call warning.
 

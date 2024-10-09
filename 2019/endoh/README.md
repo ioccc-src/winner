@@ -4,7 +4,7 @@
     make
 ```
 
-NOTE: the use of the C compiler optimiser was disabled and `-g` was enabled for
+**NOTE**: the use of the C compiler optimiser was disabled and `-g` was enabled for
 this entry because it is SUPPOSED to crash and it needs debugging symbols.
 
 

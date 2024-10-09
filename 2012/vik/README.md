@@ -157,7 +157,7 @@ correctly:
     _setmode(_fileno(stdout), 0x8000);
 ```
 
-NOTE: this is what the [Alternate code](#alternate-code) does.
+**NOTE**: this is what the [Alternate code](#alternate-code) does.
 
 
 ### Limitations

@@ -28,7 +28,7 @@ Note that some compilers will be unable to compile the expression `X=g()...` in
 
 if this is a problem, which is what this alternate code is.
 
-NOTE: it prints something else and it is what the author suggested one try as
+**NOTE**: it prints something else and it is what the author suggested one try as
 well.
 
 

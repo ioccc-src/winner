@@ -435,14 +435,14 @@ able to compile it.</p>
 <p>The program relies heavily on ASCII. Don’t even think of running it on
 an EBCDIC machine.</p>
 <h3 id="historical-notes-about-the-original-entry">Historical notes about the original entry</h3>
-<p>NOTE: If you named the file anything other than <code>isaak.c</code>, you had to
+<p><strong>NOTE</strong>: If you named the file anything other than <code>isaak.c</code>, you had to
 change the <code>#include</code> on line 6. This limitation has been fixed in
 <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1988/isaak/isaak.c">isaak.c</a> and
 <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1988/isaak/isaak.alt.c">isaak.alt.c</a> by using the <code>__FILE__</code> macro.</p>
-<p>NOTE: The use of null comments to separate macros to construct different tokens
+<p><strong>NOTE</strong>: The use of null comments to separate macros to construct different tokens
 from a single macro (e.g., <code>"O/**/O"</code> creates either <code>++</code> or <code>--</code> by defining
 <code>O</code> to be <code>+</code> or <code>-</code>) may cause some strict ANSI C preprocessors to object.</p>
-<p>NOTE: Most System V machines were not be able to execute this program correctly
+<p><strong>NOTE</strong>: Most System V machines were not be able to execute this program correctly
 due to the fact that BSD style systems have an <code>sprintf(3)</code> that returns a <code>char *</code>. Due to the above problems, we placed the output of this program in the
 file <a href="isaak.output.txt">isaak.output.txt</a>. Since this was fixed, this file is
 not strictly necessary, but we keep it for historical purposes (decoded as it

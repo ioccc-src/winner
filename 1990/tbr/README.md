@@ -43,9 +43,9 @@ below, in the [alternate version](#alternate-code) section.
     $ enter some shell commands
 ```
 
-NOTE: globs do not work with this entry. Why?
+**NOTE**: globs do not work with this entry. Why?
 
-NOTE: `exit` does not work and neither does `logout`. To exit try sending ctrl-d
+**NOTE**: `exit` does not work and neither does `logout`. To exit try sending ctrl-d
 or ctrl-c (or kill it from another terminal :-) ). But why does it not work with
 just `exit` or `logout`? Hint: see the authors' remarks.
 

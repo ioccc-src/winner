@@ -9,7 +9,7 @@ section below to run the original (the bug also exists here).
     make alt
 ```
 
-NOTE: this entry requires the `X11/Xlib.h` header file and the X11 library to
+**NOTE**: this entry requires the `X11/Xlib.h` header file and the X11 library to
 compile.  For more information see the
 FAQ on "[X11](../../faq.html#X11)".
 
@@ -42,7 +42,7 @@ where:
 `speed` is update speed from 1 to 9 (default is 9).
 
 
-NOTE: in most cases `DISPLAY` should already be set.
+**NOTE**: in most cases `DISPLAY` should already be set.
 
 
 ## Original code:
