@@ -4,7 +4,7 @@
     make
 ```
 
-NOTE: we disable the optimiser because this program has problems with it
+**NOTE**: we disable the optimiser because this program has problems with it
 enabled.
 
 

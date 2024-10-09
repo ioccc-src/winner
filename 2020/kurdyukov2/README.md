@@ -143,7 +143,7 @@ For instance after running the command suggested by the judges:
     convert -delay 10 -dither none -loop 0 $(find . -maxdepth 1 -type f -name '*jpg' | sort -V) $(find . -maxdepth 1 -type f -name '*jpg' | sort -rV) +map out.gif
 ```
 
-NOTE: the above is done in the [try.sh](%%REPO_URL%%/2020/kurdyukov2/try.sh) script.
+**NOTE**: the above is done in the [try.sh](%%REPO_URL%%/2020/kurdyukov2/try.sh) script.
 
 Also provided `makegif.sh` to aid with GIF creation.
 

@@ -27,7 +27,7 @@ For more detailed information see [2011/fredriksson in bugs.html](../../bugs.htm
     ./try.sh
 ```
 
-NOTE: you need to be allowed to change your stack size or else the last command
+**NOTE**: you need to be allowed to change your stack size or else the last command
 in the script would likely cause the program to dump core, which is why the
 script checks the exit code of `ulimit` first.
 

@@ -25,14 +25,14 @@ graphics viewer of choice.  After that try:
     ./try.sh
 ```
 
-NOTE: the script uses the tools `pngtopam(1)` (or `pngtopnm(1)` for older
+**NOTE**: the script uses the tools `pngtopam(1)` (or `pngtopnm(1)` for older
 versions) and `pnmscale` come from the netpbm project and `cjpeg(1)` comes from
 `libjpeg-turbo`. If you don't have these tools already see the
 FAQ on "[netpbm](../../faq.html#netpbm)"
 and the
 FAQ on "[libjpeg-turbo](../../faq.html#libjpeg)".
 
-NOTE: [Lenna.png](Lenna.png) is from
+**NOTE**: [Lenna.png](Lenna.png) is from
 <https://upload.wikimedia.org/wikipedia/en/7/7d/Lenna_%28test_image%29.png>.
 
 

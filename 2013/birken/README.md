@@ -15,7 +15,7 @@ version see the [original code](#original-code) section below.
     ./birken.alt < 17_columns_wide_paint_by_numbers_file
 ```
 
-NOTE: if your terminal is messed up after running this (perhaps from exiting
+**NOTE**: if your terminal is messed up after running this (perhaps from exiting
 before it finishes) try using `reset` to restore the terminal. This will clear
 the screen.
 

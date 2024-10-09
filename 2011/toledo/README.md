@@ -4,7 +4,7 @@
     make
 ```
 
-NOTE: this entry requires the `X11/Xlib.h` header file and the X11 library to
+**NOTE**: this entry requires the `X11/Xlib.h` header file and the X11 library to
 compile.  For more information see the
 FAQ on "[X11](../../faq.html#X11)".
 
@@ -82,7 +82,7 @@ you remove both the X11 include files and replace them with
 ```
 
 you ought to be able to compile and run this program on Windows.
-NOTE: this is what [toledo.alt2.c](%%REPO_URL%%/2011/toledo/toledo.alt2.c) is for.
+**NOTE**: this is what [toledo.alt2.c](%%REPO_URL%%/2011/toledo/toledo.alt2.c) is for.
 
 
 ## Author's remarks:

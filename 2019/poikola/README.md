@@ -7,7 +7,7 @@
 There is an alternate version of this program which changes the way the output
 is displayed. See [Alternate code](#alternate-code) below.
 
-NOTE: we disable the optimiser because the author stated that for GCC optimiser
+**NOTE**: we disable the optimiser because the author stated that for GCC optimiser
 level 0 gave correct output. With clang `[0123s]` works which suggests that [123s]
 might or might not work with GCC. Likewise, we do similar for the standard,
 forcing `-std=gnu11`.

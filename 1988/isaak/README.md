@@ -57,16 +57,16 @@ an EBCDIC machine.
 
 ### Historical notes about the original entry
 
-NOTE: If you named the file anything other than `isaak.c`, you had to
+**NOTE**: If you named the file anything other than `isaak.c`, you had to
 change the `#include` on line 6. This limitation has been fixed in
 [isaak.c](%%REPO_URL%%/1988/isaak/isaak.c) and
 [isaak.alt.c](%%REPO_URL%%/1988/isaak/isaak.alt.c) by using the `__FILE__` macro.
 
-NOTE: The use of null comments to separate macros to construct different tokens
+**NOTE**: The use of null comments to separate macros to construct different tokens
 from a single macro (e.g., `"O/**/O"` creates either `++` or `--` by defining
 `O` to be `+` or `-`) may cause some strict ANSI C preprocessors to object.
 
-NOTE: Most System V machines were not be able to execute this program correctly
+**NOTE**: Most System V machines were not be able to execute this program correctly
 due to the fact that BSD style systems have an `sprintf(3)` that returns a `char
 *`.  Due to the above problems, we placed the output of this program in the
 file [isaak.output.txt](isaak.output.txt). Since this was fixed, this file is

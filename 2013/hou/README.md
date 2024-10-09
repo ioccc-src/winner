@@ -63,7 +63,7 @@ program.
 This program will loop infinitely while progressively refining a
 [raytraced](https://en.wikipedia.org/wiki/Ray_tracing_&lpar;graphics&rpar;) image.
 
-NOTE: the author refers to `a.c`, placed in a gzipped file `a.c.gz`. We do not
+**NOTE**: the author refers to `a.c`, placed in a gzipped file `a.c.gz`. We do not
 include it but it can be generated like:
 
 ``` <!---sh-->

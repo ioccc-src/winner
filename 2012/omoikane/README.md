@@ -23,7 +23,7 @@ theoretically work with Windows which distinguishes binary and text. See
     ./output > regenerated.bin
 ```
 
-NOTE: if your OS does not have `/dev/urandom` then you should specify a seed
+**NOTE**: if your OS does not have `/dev/urandom` then you should specify a seed
 file or use the [alternate version](#alternate-code) which reads in the compiled
 binary itself.
 

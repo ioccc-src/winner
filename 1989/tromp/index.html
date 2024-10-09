@@ -426,7 +426,7 @@ vim:</p>
 <li>space - pause (space)</li>
 <li>q - quit (:q)</li>
 </ul>
-<p>NOTE: after the game ends a file called <code>HI</code> will be in the directory with the
+<p><strong>NOTE</strong>: after the game ends a file called <code>HI</code> will be in the directory with the
 high scores (up to 20 runs saved) so one can see who has the highest score. The
 file might look like:</p>
 <pre><code>    330 by luser
@@ -442,7 +442,7 @@ the judges’ additional remarks in the author’s remarks, for more details.</p
 <pre><code>    make alt</code></pre>
 <h3 id="alternate-use">Alternate use:</h3>
 <p>Use <code>tromp.alt</code> as you would <code>tromp</code> above.</p>
-<p>NOTE: testing more than one user updating the high score file, one of the
+<p><strong>NOTE</strong>: testing more than one user updating the high score file, one of the
 benefits of the alt version, has not been done.</p>
 <p>The original unmodified alternate code, which will no longer work right if it
 even compiles, is provided later in the author’s remarks.</p>
@@ -519,7 +519,7 @@ the <code>kill -9</code> command.</p>
     0);while(getchar()-a[4]);puts(&quot;\033[H\033[J\033[7m&quot;);sigsetmask(s);}}d=popen(
     &quot;stty -cbreak echo stop \023;sort -mnr -o HI - HI;cat HI&quot;,&quot;w&quot;);fprintf(d,
     &quot;%4d from level %1d by %s\n&quot;,w,l,getlogin());pclose(d);}</code></pre>
-<p>NOTE: the alternate version was fixed for modern systems in 2023.</p>
+<p><strong>NOTE</strong>: the alternate version was fixed for modern systems in 2023.</p>
 <!--
 
     Copyright © 1984-2024 by Landon Curt Noll. All Rights Reserved.

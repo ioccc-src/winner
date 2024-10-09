@@ -20,7 +20,7 @@ For more detailed information see [2005/mikeash in bugs.html](../../bugs.html#20
     ./mikeash
 ```
 
-NOTE: the author stated that they tested this under i386 machines but this works
+**NOTE**: the author stated that they tested this under i386 machines but this works
 under 64-bit (x86_64, arm64) machines too.
 
 

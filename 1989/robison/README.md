@@ -34,7 +34,7 @@ For more detailed information see [1989/robison in bugs.html](../../bugs.html#19
     echo 100 / 100 | ./robison # <-- what happens here ?
 ```
 
-NOTE: This program will very likely crash or break into tiny bits :-) if you
+**NOTE**: This program will very likely crash or break into tiny bits :-) if you
 feed it numbers with non-binary digits. This, as you might notice if you try one
 of the above commands, can happen with other input as well. If you wish to
 understand why this happens check the source code.

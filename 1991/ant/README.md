@@ -15,7 +15,7 @@ code](#alternate-code) below.
     ./ant some_file
 ```
 
-NOTE: the file must already exist and not specifying any arg will make the
+**NOTE**: the file must already exist and not specifying any arg will make the
 program exit without doing anything.
 
 
@@ -74,7 +74,7 @@ problem if you ARE a vi(m) user! :-) ... especially if you don't read the
 information below. This means if you're reading this in vi(m) you'll have to
 exit this like in normal vi(m) and then try the same with `./ant` only to fail. :-)
 
-NOTE: to enter form feed you should be able to hit `ctrl-L`. This will allow you
+**NOTE**: to enter form feed you should be able to hit `ctrl-L`. This will allow you
 to exit insert mode rather than ESC like in normal vi(m). See the author's
 commands section for other commands.
 

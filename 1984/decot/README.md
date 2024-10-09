@@ -4,7 +4,7 @@
     make all
 ```
 
-NOTE: there is an [alternate version](#alternate-code) which will only work if
+**NOTE**: there is an [alternate version](#alternate-code) which will only work if
 you have an old enough compiler or a compiler that supports `-traditional-cpp`.
 The original code was fixed in 2023 to not require this.
 

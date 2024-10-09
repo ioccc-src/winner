@@ -451,7 +451,7 @@ initialization for?</p>
 <pre><code>    cc -S vik.c</code></pre>
 <p>and examine the resulting assembly file <code>vik.s</code>. On some platforms
 the assembly file is about 128MB in size!</p>
-<p>NOTE: The <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/vik/randowan.mod">randowan.mod</a> and <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/vik/mad_world.mod">mad_world.mod</a> files were
+<p><strong>NOTE</strong>: The <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/vik/randowan.mod">randowan.mod</a> and <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/vik/mad_world.mod">mad_world.mod</a> files were
 created by <a href="http://www.translucentboy.com">Henrik Bertilsson</a> and are included
 with his permission.</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
@@ -527,7 +527,7 @@ that the program relies on writing binary data to <code>stdout</code>.</p>
 the program with this platform, the following line can be added after
 the main declaration in order for the program to run correctly:</p>
 <pre><code>    _setmode(_fileno(stdout), 0x8000);</code></pre>
-<p>NOTE: this is what the <a href="#alternate-code">alternate version</a> is for.</p>
+<p><strong>NOTE</strong>: this is what the <a href="#alternate-code">alternate version</a> is for.</p>
 <h3 id="limitations">Limitations</h3>
 <p>The program only runs when a valid MOD file is passed as argument. If
 no argument is passed, the program crashes.</p>

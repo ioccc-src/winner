@@ -29,7 +29,7 @@ installed and don't know how to do so.
     ./prog sand.alt.txt
 ```
 
-NOTE: these invocations will take quite some time to finish.
+**NOTE**: these invocations will take quite some time to finish.
 
 
 ## Judges' remarks:

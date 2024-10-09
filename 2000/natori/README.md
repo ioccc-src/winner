@@ -73,7 +73,7 @@ Like with [try.sh](%%REPO_URL%%/2000/natori/try.sh), try using this multiple tim
 the day on different days (if different phases of the Moon you'll see more of a
 difference, of course).
 
-NOTE: if it's a Full Moon the script won't look as nice.
+**NOTE**: if it's a Full Moon the script won't look as nice.
 
 
 ## Judges' remarks:

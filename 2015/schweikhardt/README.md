@@ -22,7 +22,7 @@ For more detailed information see [2015/schweikhardt in bugs.html](../../bugs.ht
 
 where `n` is a base 16 number of any size.
 
-NOTE: although it's supposed to be a base 16 number nothing will stop you from
+**NOTE**: although it's supposed to be a base 16 number nothing will stop you from
 doing something else. The author explains this in more details.
 
 
@@ -83,7 +83,7 @@ You may explore this famous conjecture using this entry:
     ./prog 302ab3d052fb87c06228d249581be0e4
 ```
 
-NOTE: [try.sh](%%REPO_URL%%/2015/schweikhardt/try.sh) runs these for you, filtered through `less(1)`.
+**NOTE**: [try.sh](%%REPO_URL%%/2015/schweikhardt/try.sh) runs these for you, filtered through `less(1)`.
 
 When you first look at the source, the code looks fairly straightforward.
 But look again.  Like the Collatz conjecture, simplicity is deceptive!

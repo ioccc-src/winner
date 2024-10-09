@@ -79,7 +79,7 @@ The author suggests the following questions when using
 We suggest you try using the body (minus the header and signature line)
 of a Usenet article.  You might want to try something from _alt.flame_.  :-)
 
-NOTE: If you have certain  `'` in the question this entry might fail.
+**NOTE**: If you have certain  `'` in the question this entry might fail.
 
 
 ## Author's remarks:

@@ -4,7 +4,7 @@
     make all
 ```
 
-NOTE: there are two alternate versions of this program, both allowing one to
+**NOTE**: there are two alternate versions of this program, both allowing one to
 slow down the game and the second one with movements more familiar to vi users.
 See the [Alternate code](#alternate-code) section below.
 

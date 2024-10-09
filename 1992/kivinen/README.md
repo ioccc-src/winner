@@ -6,7 +6,7 @@ If your machine support the X Window System, Version 11:
     make alt
 ```
 
-NOTE: this entry requires the `X11/Xlib.h` header file and the X11 library to
+**NOTE**: this entry requires the `X11/Xlib.h` header file and the X11 library to
 compile.  See the
 FAQ on "[X11](../../faq.html#X11)"
 if you need help.
@@ -77,10 +77,10 @@ Use `kivinen` as you would `kivinen.alt`.
 The type of entertainment depends on number of arguments
 you have with the program.  :-)
 
-NOTE: Some systems do not need (or have) `-lsocket -lresolv -lnsl`.
+**NOTE**: Some systems do not need (or have) `-lsocket -lresolv -lnsl`.
 Such systems should compile using `-lX11`.
 
-NOTE: The original winning source [kivinen.orig.c](%%REPO_URL%%/1992/kivinen/kivinen.orig.c) assumed that
+**NOTE**: The original winning source [kivinen.orig.c](%%REPO_URL%%/1992/kivinen/kivinen.orig.c) assumed that
 `exit(3)` returned a value which cause problems for some systems where `exit(3)` returns
 `void`.  The file [kivinen.c](%%REPO_URL%%/1992/kivinen/kivinen.c) avoids this problem.
 

@@ -63,7 +63,7 @@ even if the receiver lacks `uncompress` and `btoa`:
     cmp ../README.md README.md
 ```
 
-NOTE: a limitation is that the script should be in the parent directory of the
+**NOTE**: a limitation is that the script should be in the parent directory of the
 directory it is run from.
 
 

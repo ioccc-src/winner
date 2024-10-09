@@ -46,7 +46,7 @@ In this case install it and try it again or
 play the files `jenny.wav` and `ioccc28.wav` in a program that can play WAV
 files.
 
-NOTE: the phone number of `jenny.wav` comes from
+**NOTE**: the phone number of `jenny.wav` comes from
 <https://en.wikipedia.org/wiki/867-5309/Jenny>.
 
 

@@ -21,7 +21,7 @@ For more detailed information see [2001/herrmann1 in bugs.html](../../bugs.html#
     ./herrmann1.sh 'prg=file'
 ```
 
-NOTE: this entry seems to rely on older versions of gcc for the compilation
+**NOTE**: this entry seems to rely on older versions of gcc for the compilation
 stage and as such if you wish to see that part like it was designed you will
 need an older compiler perhaps gcc 2.95.
 

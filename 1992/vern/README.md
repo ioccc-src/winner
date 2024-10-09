@@ -47,9 +47,9 @@ For a real quick game try:
     66 46
 ```
 
-NOTE: Move values must be restricted to the range 00 to 77.
+**NOTE**: Move values must be restricted to the range 00 to 77.
 
-NOTE: Because some mailers have problems with the original winning source,
+**NOTE**: Because some mailers have problems with the original winning source,
 a slightly modified version with shorter lines has been provided.
 
 

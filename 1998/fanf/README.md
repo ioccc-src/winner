@@ -4,7 +4,7 @@
     make all
 ```
 
-NOTE: this may take a while.  Some systems may have problems building
+**NOTE**: this may take a while.  Some systems may have problems building
 this entry because of the system resources it requires.
 
 

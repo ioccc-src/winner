@@ -25,7 +25,7 @@ text files that are not code.
     ./try.sh
 ```
 
-NOTE: the program prints an error and exits on the first nesting error so it
+**NOTE**: the program prints an error and exits on the first nesting error so it
 will not detect multiple issues.
 
 
@@ -58,7 +58,7 @@ At one point we spent
 minutes](https://web.archive.org/web/20130925190722/https://twitter.com/ioccc/status/252162898800033792)
 just to understand _18 key **characters**_ of this code.
 
-NOTE: if you use vim to view the code, make sure to do:
+**NOTE**: if you use vim to view the code, make sure to do:
 
 ```
     :set tabstop=4

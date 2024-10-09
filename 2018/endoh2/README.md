@@ -18,7 +18,7 @@
     ./try.sh
 ```
 
-NOTE: to interrupt the loops send intr (typically ctrl-C).
+**NOTE**: to interrupt the loops send intr (typically ctrl-C).
 
 
 ## Judges' remarks:

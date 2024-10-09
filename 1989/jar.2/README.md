@@ -14,7 +14,7 @@
     ./jar.2 < some_lisp_file
 ```
 
-NOTE: this entry will likely segfault on invalid input.
+**NOTE**: this entry will likely segfault on invalid input.
 
 
 ## Try:

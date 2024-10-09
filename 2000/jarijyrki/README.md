@@ -46,7 +46,7 @@ Now try running:
 
 And observe that it matches what you had in the previous run!
 
-NOTE: changing the dimension parameters (see the authors' remarks) renders
+**NOTE**: changing the dimension parameters (see the authors' remarks) renders
 existing spreadsheet files unusable.
 
 

@@ -30,7 +30,7 @@ Also try:
     ./try.sh
 ```
 
-NOTE: Use - for standard input.  For example:
+**NOTE**: Use - for standard input.  For example:
 
 ``` <!---sh-->
     ./vertical_cat - -

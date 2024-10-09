@@ -458,7 +458,7 @@ the program relies on writing binary data to <code>stdout</code>.</p>
 program with this platform, the following line can be added to <code>main()</code> before
 any code in order for the program to run correctly:</p>
 <pre><code>    _setmode(_fileno(stdout), 0x8000);</code></pre>
-<p>NOTE: see the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2014/vik/prog.alt.c">alternate code</a> for this.</p>
+<p><strong>NOTE</strong>: see the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2014/vik/prog.alt.c">alternate code</a> for this.</p>
 <h3 id="known-issues">Known Issues</h3>
 <p>The program uses a quite simple algorithm for detecting tone on and off events
 in the Morse signal. Hence the program does not work well with noisy input

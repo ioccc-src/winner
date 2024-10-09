@@ -36,7 +36,7 @@ One vendor's lint got hung in an infinite loop over this entry!
 FYI:  We will let Mark get away with this truly sick entry this time, but
 for the future on we have placed a limit on the size of a compile line.
 
-NOTE: originally we made a comment in [Larry Wall](../../authors.html#Larry_Wall)'s
+**NOTE**: originally we made a comment in [Larry Wall](../../authors.html#Larry_Wall)'s
 [1987/wall](../wall/index.html) entry regarding Mark's contribution but it seems to have
 been lost in time. If anyone knows about its whereabouts we'd appreciate letting
 us know. Thanks!

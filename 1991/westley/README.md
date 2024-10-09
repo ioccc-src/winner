@@ -19,7 +19,7 @@ For more detailed information see [1991/westley in bugs.html](../../bugs.html#19
 
 ## To use:
 
-NOTE: we have provided a script to perform the below procedure which we include
+**NOTE**: we have provided a script to perform the below procedure which we include
 for the interested. See the [try](#try) section if you just want to play.
 
 Make and then run as follows:

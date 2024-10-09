@@ -61,7 +61,7 @@ that the program works even when the server and the client have
 different architectures).  It buffers communication to the X
 server for efficiency.
 
-NOTE: The original source in davidguy.c used only an IP address
+**NOTE**: The original source in davidguy.c used only an IP address
 argument (assumed :0.0) and assumed the color of black
 and white.
 

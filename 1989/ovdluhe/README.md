@@ -60,7 +60,7 @@ value that's not a number.
     P=5 ./try.alt.sh
 ```
 
-NOTE: if you specify too high a value for `P` the program might fail. If you
+**NOTE**: if you specify too high a value for `P` the program might fail. If you
 specify a value < 0 it will fail to compile.
 
 

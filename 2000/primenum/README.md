@@ -20,7 +20,7 @@ For more detailed information see [2000/primenum in bugs.html](../../bugs.html#2
     echo n | ./primenum n
 ```
 
-NOTE: `n` is an integer.
+**NOTE**: `n` is an integer.
 
 
 ## Try:

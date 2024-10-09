@@ -4,7 +4,7 @@
     make alt
 ```
 
-NOTE: the original code will not work on any system other than
+**NOTE**: the original code will not work on any system other than
 [VAX-11](https://en.wikipedia.org/wiki/VAX-11) and
 [PDP-11](https://en.wikipedia.org/wiki/PDP-11) and this is why we encourage you
 to use the alt version instead. See [original code](#original-code) below for
@@ -151,7 +151,7 @@ Repo](https://github.com/dspinellis/unix-history-repo/tree/Research-Release).
     ./gentab gentab > g.c
 ```
 
-NOTE: it is highly unlikely that you will be able to run the output of `gentab`
+**NOTE**: it is highly unlikely that you will be able to run the output of `gentab`
 but it should at least compile.
 
 

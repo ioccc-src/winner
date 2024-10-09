@@ -23,7 +23,7 @@ the source code.  The judges were unmoved by this blatant attempt to influence
 the contest and rejected this idea...  so we gave it the "Best of Show"
 instead!!
 
-NOTE: One should remove the final trailing newline to obtain the
+**NOTE**: One should remove the final trailing newline to obtain the
 original source file.  This step is not needed to compile
 this entry.
 
