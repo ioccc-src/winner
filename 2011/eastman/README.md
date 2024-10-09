@@ -11,7 +11,7 @@
     ./eastman
 ```
 
-NOTE: to restore your cursor in your shell, try `reset`.
+**NOTE**: to restore your cursor in your shell, try `reset`.
 
 
 ## Try:
@@ -23,7 +23,7 @@ again. Try doing this a number of times with different sizes each time.
     ./eastman
 ```
 
-NOTE: to restore your cursor in your shell, try `reset`.
+**NOTE**: to restore your cursor in your shell, try `reset`.
 
 
 ## Judges' remarks:
