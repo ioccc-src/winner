@@ -1,4 +1,4 @@
-#build authors.html if out of date with author JSON files'!/usr/bin/env make
+#!/usr/bin/env make
 #
 # IOCCC Makefile
 
