@@ -618,7 +618,7 @@ This tool only checks markdown based links.</p>
 <pre><code>    bin/find-missing-links.sh -v 1</code></pre>
 <p>If no missing links are found, this tool exits 0 with no output
 (debug messages not withstanding), otherwise this tool will exit non-zero.</p>
-<p>NOTE: If the markdown link is malformed, this tool
+<p><strong>NOTE</strong>: If the markdown link is malformed, this tool
 might generate an error about a file that does exist.
 If this tool claims that a file is missing that does exist,
 look for a malformed markdown line and/or use of markdown
@@ -735,7 +735,7 @@ do that, that is not a problem.</p>
 <p>The <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/jfmt-wrapper.sh">jfmt-wrapper.sh</a> tool is a wrapper
 tool for <code>jfmt(1)</code>, a tool that will format a JSON
 # file into a canonical style.</p>
-<p>NOTE: As of 2024 Oct 08 the <code>jfmt(1)</code> tool has not been written,
+<p><strong>NOTE</strong>: As of 2024 Oct 08 the <code>jfmt(1)</code> tool has not been written,
 so <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/jfmt-wrapper.sh">jfmt-wrapper.sh</a> uses the
 <code>JSONPath.sh(1)</code> tool from the recently forked and modified
 <a href="https://github.com/lcn2/JSONPath.sh">JSONPath.sh tool</a>.</p>
@@ -747,7 +747,7 @@ so <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/jfmt-wr
 <p>The <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/jprint-wrapper.sh">jprint-wrapper.sh</a> tool is a wrapper
 tool for <code>jprint(1)</code>, a tool that will format JSON in a canonical style
 to stdout.</p>
-<p>NOTE: <code>jprint(1)</code> is a planned tool based on <code>jfmt(1)</code>.
+<p><strong>NOTE</strong>: <code>jprint(1)</code> is a planned tool based on <code>jfmt(1)</code>.
 As of 2024 Oct 08 that tool has not been written, so
 <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/jprint-wrapper.sh">jprint-wrapper.sh</a> uses
 the <code>JSONPath.sh(1)</code> tool from the recently forked and modified
@@ -767,9 +767,9 @@ XPath for JSON mechanism. For information in XPath for JSON see:</p>
 <li><a href="https://jsonpath.com">https://jsonpath.com</a></li>
 <li><a href="https://github.com/lcn2/JSONPath.sh?tab=readme-ov-file#jsonpath-patterns-and-extensions">https://github.com/lcn2/JSONPath.sh?tab=readme-ov-file#jsonpath-patterns-and-extensions</a></li>
 </ul>
-<p>NOTE: As of 2024 Oct 08 the <code>jval(1)</code> tool has not been written,
+<p><strong>NOTE</strong>: As of 2024 Oct 08 the <code>jval(1)</code> tool has not been written,
 so <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/jval-wrapper.sh">jval-wrapper.sh</a> uses the
-<code>jsp(1)</code> tool from <a href="//github.com/kjozsa/jsp">//github.com/kjozsa/jsp</a>
+<code>jsp(1)</code> tool from <a href="https://github.com/kjozsa/jsp">https://github.com/kjozsa/jsp</a>
 or if not found, the <code>JSONPath.sh(1)</code> tool from the recently forked and modified
 <a href="https://github.com/lcn2/JSONPath.sh">JSONPath.sh tool</a>.</p>
 <p>Usage:</p>
