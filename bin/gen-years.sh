@@ -88,7 +88,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.5 2024-09-23"
+export VERSION="1.6 2024-10-08"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -104,6 +104,18 @@ if [[ $status -eq 0 ]]; then
     TOPDIR=$("$GIT_TOOL" rev-parse --show-toplevel)
 fi
 export TOPDIR
+#
+JSTRDECODE=$(type -P jstrdecode)
+export JSTRDECODE
+if [[ -z $JSTRDECODE ]]; then
+    echo "$0: FATAL: jstrdecode is not installed or not in \$PATH" 1>&2
+    echo "$0: notice: to install jstrdecode:" 1>&2
+    echo "$0: notice: run: git clone https://github.com/ioccc-src/mkiocccentry.git" 1>&2
+    echo "$0: notice: then: cd mkiocccentry && make clobber all" 1>&2
+    echo "$0: notice: then: cd jparse && sudo make install clobber" 1>&2
+    exit 5
+fi
+#
 TAC_TOOL=$(type -P tac)
 export TAC_TOOL
 if [[ ! -x $TAC_TOOL ]]; then
@@ -214,9 +226,9 @@ function output_award
     # obtain the award string
     #
     PATTERN='$..award'
-    AWARD_STRING=$("$JVAL_WRAPPER" -b -q "$ENTRY_JSON_PATH" "$PATTERN")
-    status="$?"
-    if [[ $status -ne 0 || -z $AWARD_STRING ]]; then
+    AWARD_STRING=$("$JVAL_WRAPPER" -b -q -T "$ENTRY_JSON_PATH" "$PATTERN" | "$JSTRDECODE" -)
+    status_codes=("${PIPESTATUS[@]}")
+    if [[ ${status_codes[*]} =~ [1-9] || -z $AWARD_STRING ]]; then
 	echo "$0: ERROR: in output_award: no award found in .entry.json file: $ENTRY_JSON_PATH" 1>&2
 	return 5
     fi
@@ -552,23 +564,6 @@ fi
 export YEARS_HTML="years.html"
 
 
-# verify that the bin/unicode-fix.sed tool is executable
-#
-export UNICODE_FIX_SED="$BIN_DIR/unicode-fix.sed"
-if [[ ! -e $UNICODE_FIX_SED ]]; then
-    echo  "$0: ERROR: bin/unicode-fix.sed does not exist: $UNICODE_FIX_SED" 1>&2
-    exit 5
-fi
-if [[ ! -f $UNICODE_FIX_SED ]]; then
-    echo  "$0: ERROR: bin/unicode-fix.sed is not a regular file: $UNICODE_FIX_SED" 1>&2
-    exit 5
-fi
-if [[ ! -r $UNICODE_FIX_SED ]]; then
-    echo  "$0: ERROR: bin/unicode-fix.sed is not an readable file: $UNICODE_FIX_SED" 1>&2
-    exit 5
-fi
-
-
 # print running info if verbose
 #
 # If -v 3 or higher, print exported variables in order that they were exported.
@@ -579,6 +574,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: V_FLAG=$V_FLAG" 1>&2
     echo "$0: debug[3]: GIT_TOOL=$GIT_TOOL" 1>&2
     echo "$0: debug[3]: TOPDIR=$TOPDIR" 1>&2
+    echo "$0: debug[3]: JSTRDECODE=$JSTRDECODE" 1>&2
     echo "$0: debug[3]: TAC_TOOL=$TAC_TOOL" 1>&2
     echo "$0: debug[3]: FMT_TOOL=$FMT_TOOL" 1>&2
     echo "$0: debug[3]: DOCROOT_SLASH=$DOCROOT_SLASH" 1>&2
@@ -601,7 +597,6 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: JVAL_WRAPPER=$JVAL_WRAPPER" 1>&2
     echo "$0: debug[3]: TOP_FILE=$TOP_FILE" 1>&2
     echo "$0: debug[3]: YEARS_HTML=$YEARS_HTML" 1>&2
-    echo "$0: debug[3]: UNICODE_FIX_SED=$UNICODE_FIX_SED" 1>&2
 fi
 
 
@@ -868,9 +863,9 @@ for YYYY in $("$TAC_TOOL" "$TOP_FILE"); do
 
 	# determine the award for this entry
 	#
-	AWARD=$(output_award "$ENTRY_JSON" | sed -f "$UNICODE_FIX_SED")
-	status_codes=("${PIPESTATUS[@]}")
-	if [[ ${status_codes[*]} =~ [1-9] || -z $AWARD ]]; then
+	AWARD=$(output_award "$ENTRY_JSON")
+	status="$?"
+	if [[ $status -ne 0 || -z $AWARD ]]; then
 	    echo "$0: ERROR: cannot find award in .entry.json: $ENTRY_JSON" 1>&2
 	    EXIT_CODE="7"  # exit 7
 	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2

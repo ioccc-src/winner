@@ -599,7 +599,7 @@ The [jfmt-wrapper.sh](%%REPO_URL%%/bin/jfmt-wrapper.sh) tool is a wrapper
 tool for `jfmt(1)`, a tool that will format a JSON
 # file into a canonical style.
 
-NOTE: As of 2024 July 28 the `jfmt(1)` tool has not been written,
+NOTE: As of 2024 Oct 08 the `jfmt(1)` tool has not been written,
 so [jfmt-wrapper.sh](%%REPO_URL%%/bin/jfmt-wrapper.sh) uses the
 `JSONPath.sh(1)` tool from the recently forked and modified
 [JSONPath.sh tool](https://github.com/lcn2/JSONPath.sh).
@@ -620,7 +620,7 @@ tool for `jprint(1)`, a tool that will format JSON in a canonical style
 to stdout.
 
 NOTE: `jprint(1)` is a planned tool based on `jfmt(1)`.
-As of 2024 July 28 that tool has not been written, so
+As of 2024 Oct 08 that tool has not been written, so
 [jprint-wrapper.sh](%%REPO_URL%%/bin/jprint-wrapper.sh) uses
 the `JSONPath.sh(1)` tool from the recently forked and modified
 [JSONPath.sh tool](https://github.com/lcn2/JSONPath.sh).
@@ -635,6 +635,55 @@ Or use in a pipe:
 
 ``` <!---sh-->
     cat .info.json | bin/jprint-wrapper.sh
+```
+
+
+<div id="jval-wrapper">
+### [jval-wrapper.sh](%%REPO_URL%%/bin/jval-wrapper.sh)
+</div>
+
+The [jval-wrapper.sh](%%REPO_URL%%/bin/jval-wrapper.sh) tool is a wrapper
+tool for `jval(1)`, a tool that will output a JSON value using the
+XPath for JSON mechanism.  For information in XPath for JSON see:
+
+- [https://goessner.net/articles/JsonPath/](https://goessner.net/articles/JsonPath/)
+- [https://jsonpath.com](https://jsonpath.com)
+- [https://github.com/lcn2/JSONPath.sh?tab=readme-ov-file#jsonpath-patterns-and-extensions](https://github.com/lcn2/JSONPath.sh?tab=readme-ov-file#jsonpath-patterns-and-extensions)
+
+NOTE: As of 2024 Oct 08 the `jval(1)` tool has not been written,
+so [jval-wrapper.sh](%%REPO_URL%%/bin/jval-wrapper.sh) uses the
+`jsp(1)` tool from [//github.com/kjozsa/jsp](//github.com/kjozsa/jsp)
+or if not found, the `JSONPath.sh(1)` tool from the recently forked and modified
+[JSONPath.sh tool](https://github.com/lcn2/JSONPath.sh).
+
+Usage:
+
+``` <!---sh-->
+    bin/jval-wrapper.sh [-b] [-q] [-T] file.json [pattern]
+
+    -b        print only values (def: print both JSON member and JSON value)
+    -q        remove enclosing double quotes (def: keep any enclosing double quotes)
+    -T        trim all newlines (def: do not)
+
+    file.json JSON file to process, - ==> read stdin
+    pattern   Xpath for JSON query pattern
+```
+
+For example:
+
+
+``` <!---sh-->
+    bin/jval-wrapper.sh 1984/mullender/.entry.json '$.award'
+    bin/jval-wrapper.sh 1984/mullender/.entry.json '$..author_handle'
+
+    bin/jval-wrapper.sh 1984/mullender/.entry.json '$.manifest[2]'
+    bin/jval-wrapper.sh -q 1984/mullender/.entry.json '$.manifest[2]'
+
+    bin/jval-wrapper.sh -b 1984/mullender/.entry.json '$.manifest[2].entry_text'
+    bin/jval-wrapper.sh -b -q 1984/mullender/.entry.json '$.manifest[2].inventory_order'
+
+    bin/jval-wrapper.sh author/Anton_Algmyr.json '$.full_name'
+    bin/jval-wrapper.sh -q -T author/Anton_Algmyr.json '$.full_name' | jstrdecode -
 ```
 
 

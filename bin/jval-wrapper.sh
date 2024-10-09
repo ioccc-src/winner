@@ -1,25 +1,13 @@
 #!/usr/bin/env bash
 #
-# jval-wrapper.sh - print JSON values to stdout
+# jval-wrapper.sh - print JSON values to stdout using the XPath for JSON model
 #
 # We form a wrapper for the `jval(1)`, a tool that allow the printing of JSON values.
 #
-# We propose that the grammar used by JSONPath.sh(1):
+# See the following on XPath for JSON model:
 #
-#   https://github.com/lcn2/JSONPath.sh
-#
-# becomes the model for how `jval(1)` prints JSON values.  Consider, for, example:
-#
-#   JSONPath.sh -w -f 1984/mullender/.entry.json '$author_set..author_handle'
-#
-# and in particular:
-#
-#   JSONPath.sh -w -b -f 1984/mullender/.entry.json '$author_set..author_handle'
-#
-# as a model of printing the `author_handle` values from the JSON `author_set` array.
-#
-# See the following URL for more information.
-#
+#   https://goessner.net/articles/JsonPath/
+#   https://jsonpath.com
 #   https://github.com/lcn2/JSONPath.sh?tab=readme-ov-file#jsonpath-patterns-and-extensions
 #
 # Copyright (c) 2024 by Landon Curt Noll.  All Rights Reserved.
@@ -106,7 +94,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.1 2024-09-23"
+export VERSION="1.2 2024-10-08"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -122,6 +110,7 @@ if [[ $status -eq 0 ]]; then
     TOPDIR=$("$GIT_TOOL" rev-parse --show-toplevel)
 fi
 export TOPDIR
+#
 export REPO_TOP_URL="https://github.com/ioccc-src/temp-test-ioccc"
 # GitHub puts individual files under the "blob/master" sub-directory.
 export REPO_URL="$REPO_TOP_URL/blob/master"
@@ -150,11 +139,12 @@ export PATTERN=""
 export PRINT_ONLY_VALUES=""
 export REMOVE_QUOTES=""
 export QUICK_CHECK=""
+export TRIM_NEWLINE=""
 
 
 # set usage message
 #
-export USAGE="usage: $0 [-h] [-v level] [-V] [-n] [-N] [-b] [-q] [-t tool] [-Q] file.json [pattern]
+export USAGE="usage: $0 [-h] [-v level] [-V] [-n] [-N] [-b] [-q] [-T] [-t tool] [-Q] file.json [pattern]
 
 	-h		print help message and exit
 	-v level	set verbosity level (def level: 0)
@@ -165,12 +155,13 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-n] [-N] [-b] [-q] [-t tool] [-Q] 
 
 	-b		print only values (def: print both JSON member and JSON value)
 	-q		remove enclosing double quotes (def: keep any enclosing double quotes)
+	-T		trim all newlines (def: do not)
 
 	-t tool		tool to use: jsp or JSONPath.sh (def: try jsp, otherwise try JSONPath.sh)
 	-Q		quick check tool using trivial input (def: do not)
 
 	file.json	JSON file to read, - ==> read stdin
-	pattern		JSONPath query (def: $PATTERN}
+	pattern		Xpath for JSON query pattern (def: $PATTERN}
 
 Exit codes:
      0         all OK
@@ -193,7 +184,7 @@ export DO_NOT_PROCESS=
 
 # parse command line
 #
-while getopts :hv:VnNbqt:Q flag; do
+while getopts :hv:VnNbqTt:Q flag; do
   case "$flag" in
     h) echo "$USAGE" 1>&2
 	exit 2
@@ -210,6 +201,8 @@ while getopts :hv:VnNbqt:Q flag; do
     b) PRINT_ONLY_VALUES="-b"
 	;;
     q) REMOVE_QUOTES="true"
+       ;;
+    T) TRIM_NEWLINE="true"
        ;;
     t) # validate -t tool
        case "$OPTARG" in
@@ -339,23 +332,6 @@ fi
 export BIN_DIR="bin"
 
 
-# verify that the bin/unicode-fix.sed tool is executable
-#
-export UNICODE_FIX_SED="$BIN_DIR/unicode-fix.sed"
-if [[ ! -e $UNICODE_FIX_SED ]]; then
-    echo  "$0: ERROR: bin/unicode-fix.sed does not exist: $UNICODE_FIX_SED" 1>&2
-    exit 5
-fi
-if [[ ! -f $UNICODE_FIX_SED ]]; then
-    echo  "$0: ERROR: bin/unicode-fix.sed is not a regular file: $UNICODE_FIX_SED" 1>&2
-    exit 5
-fi
-if [[ ! -r $UNICODE_FIX_SED ]]; then
-    echo  "$0: ERROR: bin/unicode-fix.sed is not an readable file: $UNICODE_FIX_SED" 1>&2
-    exit 5
-fi
-
-
 # validate the XPath for JSON tool
 #
 case "$XPATHJSON_USE" in
@@ -455,6 +431,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: PRINT_ONLY_VALUES=$PRINT_ONLY_VALUES" 1>&2
     echo "$0: debug[3]: REMOVE_QUOTES=$REMOVE_QUOTES" 1>&2
     echo "$0: debug[3]: QUICK_CHECK=$QUICK_CHECK" 1>&2
+    echo "$0: debug[3]: TRIM_NEWLINE=$TRIM_NEWLINE" 1>&2
     echo "$0: debug[3]: NOOP=$NOOP" 1>&2
     echo "$0: debug[3]: DO_NOT_PROCESS=$DO_NOT_PROCESS" 1>&2
     echo "$0: debug[3]: JSON_FILE=$JSON_FILE" 1>&2
@@ -462,7 +439,6 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: CD_FAILED=$CD_FAILED" 1>&2
     echo "$0: debug[3]: BIN_PATH=$BIN_PATH" 1>&2
     echo "$0: debug[3]: BIN_DIR=$BIN_DIR" 1>&2
-    echo "$0: debug[3]: UNICODE_FIX_SED=$UNICODE_FIX_SED" 1>&2
 fi
 
 
@@ -502,30 +478,72 @@ jsp)
     #
     if [[ -z $JSON_FILE ]]; then
 
-	if [[ $V_FLAG -ge 3 ]]; then
-	    echo "$0: debug[3]: about to: $JSP_TOOL --no-color --format --indent 0 -- '$PATTERN'" 1>&2
-	fi
-	"$JSP_TOOL" --no-color --format --indent 0 -- "$PATTERN"
-	status="$?"
-	if [[ $status -ne 0 ]]; then
-	    echo "$0: ERROR: $JSP_TOOL --no-color --format --indent 0 -- '$PATTERN' failed", \
-		 "error code: $status" 1>&2
-	    exit 1
+	if [[ -z $TRIM_NEWLINE ]]; then
+
+	    # case: jsp w/o -T from standard input
+	    #
+	    if [[ $V_FLAG -ge 3 ]]; then
+		echo "$0: debug[3]: about to: $JSP_TOOL --no-color --format --indent 0 -- '$PATTERN'" 1>&2
+	    fi
+	    "$JSP_TOOL" --no-color --format --indent 0 -- "$PATTERN"
+	    status="$?"
+	    if [[ $status -ne 0 ]]; then
+		echo "$0: ERROR: $JSP_TOOL --no-color --format --indent 0 -- '$PATTERN' failed", \
+		     "error code: $status" 1>&2
+		exit 1
+	    fi
+
+	else
+
+	    # case: jsp -T from standard input
+	    #
+	    if [[ $V_FLAG -ge 3 ]]; then
+		NL='\\n'
+		echo "$0: debug[3]: about to: $JSP_TOOL --no-color --format --indent 0 -- '$PATTERN' | tr -d $NL" 1>&2
+	    fi
+	    "$JSP_TOOL" --no-color --format --indent 0 -- "$PATTERN" | tr -d '\n'
+	    status_codes=("${PIPESTATUS[@]}")
+	    if [[ ${status_codes[*]} =~ [1-9] ]]; then
+		echo "$0: ERROR: $JSP_TOOL --no-color --format --indent 0 -- '$PATTERN' failed", \
+		     "error codes: ${status_codes[*]}" 1>&2
+		exit 1
+	    fi
 	fi
 
     # case: jsp processing from a file
     #
     else
 
-	if [[ $V_FLAG -ge 3 ]]; then
-	    echo "$0: debug[3]: about to: $JSP_TOOL --no-color --format --indent 0 -- '$PATTERN' < $JSON_FILE" 1>&2
-	fi
-	"$JSP_TOOL" --no-color --format --indent 0 -- "$PATTERN" < "$JSON_FILE"
-	status="$?"
-	if [[ $status -ne 0 ]]; then
-	    echo "$0: ERROR: $JSP_TOOL --no-color --format --indent 0 -- '$PATTERN' < $JSON_FILE failed", \
-		 "error code: $status" 1>&2
-	    exit 1
+	if [[ -z $TRIM_NEWLINE ]]; then
+
+	    # case: jsp w/o -T from file
+	    #
+	    if [[ $V_FLAG -ge 3 ]]; then
+		echo "$0: debug[3]: about to: $JSP_TOOL --no-color --format --indent 0 -- '$PATTERN' < $JSON_FILE" 1>&2
+	    fi
+	    "$JSP_TOOL" --no-color --format --indent 0 -- "$PATTERN" < "$JSON_FILE"
+	    status="$?"
+	    if [[ $status -ne 0 ]]; then
+		echo "$0: ERROR: $JSP_TOOL --no-color --format --indent 0 -- '$PATTERN' < $JSON_FILE failed", \
+		     "error code: $status" 1>&2
+		exit 1
+	    fi
+
+	else
+
+	    # case: jsp -T from file
+	    #
+	    if [[ $V_FLAG -ge 3 ]]; then
+		NL='\\n'
+		echo "$0: debug[3]: about to: $JSP_TOOL --no-color --format --indent 0 -- '$PATTERN' < $JSON_FILE | tr -d $NL" 1>&2
+	    fi
+	    "$JSP_TOOL" --no-color --format --indent 0 -- "$PATTERN" < "$JSON_FILE" | tr -d '\n'
+	    status_codes=("${PIPESTATUS[@]}")
+	    if [[ ${status_codes[*]} =~ [1-9] ]]; then
+		echo "$0: ERROR: $JSP_TOOL --no-color --format --indent 0 -- '$PATTERN' < $JSON_FILE failed", \
+		     "error codes: ${status_codes[*]}" 1>&2
+		exit 1
+	    fi
 	fi
 
     # case: print only values from jsp output
@@ -621,31 +639,75 @@ JSONPath.sh)
     #
     if [[ -z $JSON_FILE ]]; then
 
-	if [[ $V_FLAG -ge 1 ]]; then
-	    echo "$0: debug[1]: about to: $JSONPATH_SH -w -u -- '$PATTERN'" 1>&2
-	fi
-	"$JSONPATH_SH" -w -u -- "$PATTERN"
-	status="$?"
-	if [[ $status -ne 0 ]]; then
-	    echo "$0: ERROR: $JSONPATH_SH -w -u -- '$PATTERN' failed", \
-		 "error code: $status" 1>&2
-	    exit 1
+	if [[ -z $TRIM_NEWLINE ]]; then
+
+	    # case: JSONPath.sh w/o -T from standard input
+	    #
+	    if [[ $V_FLAG -ge 1 ]]; then
+		echo "$0: debug[1]: about to: $JSONPATH_SH -w -u -- '$PATTERN'" 1>&2
+	    fi
+	    "$JSONPATH_SH" -w -u -- "$PATTERN"
+	    status="$?"
+	    if [[ $status -ne 0 ]]; then
+		echo "$0: ERROR: $JSONPATH_SH -w -u -- '$PATTERN' failed", \
+		     "error code: $status" 1>&2
+		exit 1
+	    fi
+
+	else
+
+	    # case: JSONPath.sh -T from standard input
+	    #
+	    if [[ $V_FLAG -ge 1 ]]; then
+		NL='\\n'
+		echo "$0: debug[1]: about to: $JSONPATH_SH -w -u -- '$PATTERN' | tr -d $NL" 1>&2
+	    fi
+	    "$JSP_TOOL" --no-color --format --indent 0 -- "$PATTERN" | tr -d '\n'
+	    status_codes=("${PIPESTATUS[@]}")
+	    if [[ $status -ne 0 ]]; then
+		echo "$0: ERROR: $JSONPATH_SH -w -u -- '$PATTERN' failed", \
+		     "error codes: ${status_codes[*]}" 1>&2
+		exit 1
+	    fi
 	fi
 
     # case: JSONPath.sh processing from a file
     #
     else
 
-	if [[ $V_FLAG -ge 1 ]]; then
-	    echo "$0: debug[1]: about to: $JSONPATH_SH -w -u -f $JSON_FILE -- '$PATTERN'" 1>&2
+	if [[ -z $TRIM_NEWLINE ]]; then
+
+	    # case: JSONPath.sh w/o -T from file
+	    #
+	    if [[ $V_FLAG -ge 1 ]]; then
+		echo "$0: debug[1]: about to: $JSONPATH_SH -w -u -f $JSON_FILE -- '$PATTERN'" 1>&2
+	    fi
+	    "$JSONPATH_SH" -w -u -f "$JSON_FILE" -- "$PATTERN"
+	    status="$?"
+	    if [[ $status -ne 0 ]]; then
+		echo "$0: ERROR: $JSONPATH_SH -w -u -f $JSON_FILE -- '$PATTERN' failed", \
+		     "error code: $status" 1>&2
+		exit 1
+	    fi
+
+	else
+
+	    # case: JSONPath.sh -T from file
+	    #
+	    if [[ $V_FLAG -ge 1 ]]; then
+		NL='\\n'
+		echo "$0: debug[1]: about to: $JSONPATH_SH -w -u -f $JSON_FILE -- '$PATTERN' | tr -d $NL" 1>&2
+	    fi
+	    "$JSONPATH_SH" -w -u -f "$JSON_FILE" -- "$PATTERN" | tr -d '\n'
+	    status="$?"
+	    if [[ $status -ne 0 ]]; then
+		echo "$0: ERROR: $JSONPATH_SH -w -u -f $JSON_FILE -- '$PATTERN' failed", \
+		     "error code: $status" 1>&2
+		exit 1
+	    fi
+
 	fi
-	"$JSONPATH_SH" -w -u -f "$JSON_FILE" -- "$PATTERN"
-	status="$?"
-	if [[ $status -ne 0 ]]; then
-	    echo "$0: ERROR: $JSONPATH_SH -w -u -f $JSON_FILE -- '$PATTERN' failed", \
-		 "error code: $status" 1>&2
-	    exit 1
-	fi
+
 
     # case: print only values from JSONPath.sh output
     #

@@ -735,7 +735,7 @@ do that, that is not a problem.</p>
 <p>The <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/jfmt-wrapper.sh">jfmt-wrapper.sh</a> tool is a wrapper
 tool for <code>jfmt(1)</code>, a tool that will format a JSON
 # file into a canonical style.</p>
-<p>NOTE: As of 2024 July 28 the <code>jfmt(1)</code> tool has not been written,
+<p>NOTE: As of 2024 Oct 08 the <code>jfmt(1)</code> tool has not been written,
 so <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/jfmt-wrapper.sh">jfmt-wrapper.sh</a> uses the
 <code>JSONPath.sh(1)</code> tool from the recently forked and modified
 <a href="https://github.com/lcn2/JSONPath.sh">JSONPath.sh tool</a>.</p>
@@ -748,7 +748,7 @@ so <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/jfmt-wr
 tool for <code>jprint(1)</code>, a tool that will format JSON in a canonical style
 to stdout.</p>
 <p>NOTE: <code>jprint(1)</code> is a planned tool based on <code>jfmt(1)</code>.
-As of 2024 July 28 that tool has not been written, so
+As of 2024 Oct 08 that tool has not been written, so
 <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/jprint-wrapper.sh">jprint-wrapper.sh</a> uses
 the <code>JSONPath.sh(1)</code> tool from the recently forked and modified
 <a href="https://github.com/lcn2/JSONPath.sh">JSONPath.sh tool</a>.</p>
@@ -756,6 +756,43 @@ the <code>JSONPath.sh(1)</code> tool from the recently forked and modified
 <pre><code>    bin/jprint-wrapper.sh .entry.json</code></pre>
 <p>Or use in a pipe:</p>
 <pre><code>    cat .info.json | bin/jprint-wrapper.sh</code></pre>
+<div id="jval-wrapper">
+<h3 id="jval-wrapper.sh"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/jval-wrapper.sh">jval-wrapper.sh</a></h3>
+</div>
+<p>The <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/jval-wrapper.sh">jval-wrapper.sh</a> tool is a wrapper
+tool for <code>jval(1)</code>, a tool that will output a JSON value using the
+XPath for JSON mechanism. For information in XPath for JSON see:</p>
+<ul>
+<li><a href="https://goessner.net/articles/JsonPath/">https://goessner.net/articles/JsonPath/</a></li>
+<li><a href="https://jsonpath.com">https://jsonpath.com</a></li>
+<li><a href="https://github.com/lcn2/JSONPath.sh?tab=readme-ov-file#jsonpath-patterns-and-extensions">https://github.com/lcn2/JSONPath.sh?tab=readme-ov-file#jsonpath-patterns-and-extensions</a></li>
+</ul>
+<p>NOTE: As of 2024 Oct 08 the <code>jval(1)</code> tool has not been written,
+so <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/jval-wrapper.sh">jval-wrapper.sh</a> uses the
+<code>jsp(1)</code> tool from <a href="//github.com/kjozsa/jsp">//github.com/kjozsa/jsp</a>
+or if not found, the <code>JSONPath.sh(1)</code> tool from the recently forked and modified
+<a href="https://github.com/lcn2/JSONPath.sh">JSONPath.sh tool</a>.</p>
+<p>Usage:</p>
+<pre><code>    bin/jval-wrapper.sh [-b] [-q] [-T] file.json [pattern]
+
+    -b        print only values (def: print both JSON member and JSON value)
+    -q        remove enclosing double quotes (def: keep any enclosing double quotes)
+    -T        trim all newlines (def: do not)
+
+    file.json JSON file to process, - ==&gt; read stdin
+    pattern   Xpath for JSON query pattern</code></pre>
+<p>For example:</p>
+<pre><code>    bin/jval-wrapper.sh 1984/mullender/.entry.json &#39;$.award&#39;
+    bin/jval-wrapper.sh 1984/mullender/.entry.json &#39;$..author_handle&#39;
+
+    bin/jval-wrapper.sh 1984/mullender/.entry.json &#39;$.manifest[2]&#39;
+    bin/jval-wrapper.sh -q 1984/mullender/.entry.json &#39;$.manifest[2]&#39;
+
+    bin/jval-wrapper.sh -b 1984/mullender/.entry.json &#39;$.manifest[2].entry_text&#39;
+    bin/jval-wrapper.sh -b -q 1984/mullender/.entry.json &#39;$.manifest[2].inventory_order&#39;
+
+    bin/jval-wrapper.sh author/Anton_Algmyr.json &#39;$.full_name&#39;
+    bin/jval-wrapper.sh -q -T author/Anton_Algmyr.json &#39;$.full_name&#39; | jstrdecode -</code></pre>
 <div id="md2html_cfg">
 <h3 id="md2html.cfg"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/md2html.cfg">md2html.cfg</a></h3>
 </div>

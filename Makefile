@@ -69,7 +69,6 @@ SORT_GITIGNORE= bin/sort.gitignore.sh
 FIND_MISSING_LINKS= bin/find-missing-links.sh
 CSV2ENTRY= bin/csv2entry.sh
 ENTRY2CSV= bin/entry2csv.sh
-UNICODE_CHK= bin/unicode-chk.sh
 
 
 #############
@@ -277,7 +276,7 @@ clobber:
 # Finally: The rules in this section are NOT needed if you
 #	   simple want to examine, run / test winning IOCCC entries.
 
-.PHONY: help genpath genfilelist all_jfmt verify_entry_files unicode_chk gen_authors quick_authors \
+.PHONY: help genpath genfilelist all_jfmt verify_entry_files gen_authors quick_authors \
 	gen_location quick_location gen_years find_missing_links test entry_index gen_top_html \
 	thanks gen_other_html quick_other_html quick_entry_index \
 	gen_year_index quick_year_index quick_www www untar_entry_tarball untar_year_tarball \
@@ -313,7 +312,6 @@ help:
 	@echo 'make genfilelist	;: generate YYYY level .filelist'
 	@echo 'make verify_entry_files	;: check to be sure all files in all entries exist'
 	@echo 'make sort_gitignore	;: sort .gitignore files according to rules in bin/sgi.sh'
-	@echo 'make unicode_chk	;: verify all .entry.json and author_handle.json files'
 	@echo 'make gen_authors	;: generate the top level authors.html page'
 	@echo 'make quick_authors	;: build authors.html if out of date with author JSON files'
 	@echo 'make gen_location	;: generate the top level location.html page'
@@ -449,11 +447,6 @@ verify_entry_files: ${ALL_RUN} ${CHK_ENTRY}
 	${ALL_RUN} -v 1 ${CHK_ENTRY}
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
-unicode_chk: ${UNICODE_CHK}
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
-	${UNICODE_CHK} -v 1
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
-
 # sort .gitignore files according to rules in bin/sgi.sh
 #
 sort_gitignore: ${ALL_RUN} ${SORT_GITIGNORE}
@@ -464,14 +457,14 @@ sort_gitignore: ${ALL_RUN} ${SORT_GITIGNORE}
 # generate the top level authors.html page using the
 # ${GEN_AUTHORS} tool (bin/gen-authors.sh).
 #
-gen_authors: ${GEN_AUTHORS} authors.html
+gen_authors: ${GEN_AUTHORS}
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
 	${GEN_AUTHORS} -v 1
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 # build authors.html if it is out of date from any author/author_handle.json file
 #
-quick_authors: ${GEN_AUTHORS} authors.html
+quick_authors: ${GEN_AUTHORS}
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
 	${GEN_AUTHORS} -v 1 -Q
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
@@ -479,7 +472,7 @@ quick_authors: ${GEN_AUTHORS} authors.html
 # generate the top level location.html page using the
 # ${GEN_LOCATION} tool (bin/gen-location.sh).
 #
-gen_location: ${GEN_LOCATION} location.html
+gen_location: ${GEN_LOCATION}
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
 	${GEN_LOCATION} -v 1
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
@@ -489,7 +482,7 @@ gen_location: ${GEN_LOCATION} location.html
 # generate the top level location.html page using the
 # ${GEN_LOCATION} tool (bin/gen-location.sh).
 #
-quick_location: ${GEN_LOCATION} location.html
+quick_location: ${GEN_LOCATION}
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
 	${GEN_LOCATION} -v 1 -Q
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
@@ -497,7 +490,7 @@ quick_location: ${GEN_LOCATION} location.html
 # generate the top level years.html page using the ${GEN_YEARS}
 # tool (bin/gen-years.sh).
 #
-gen_years: ${GEN_YEARS} years.html
+gen_years: ${GEN_YEARS}
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
 	${GEN_YEARS} -v 1
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
@@ -694,7 +687,6 @@ quick_www:
 	@echo '=-=-=-=-= IOCCC complete make genpath =-=-=-=-='
 	${MAKE} genfilelist
 	${MAKE} sort_gitignore
-	${MAKE} unicode_chk
 	${MAKE} verify_entry_files
 	${MAKE} quick_authors
 	${MAKE} quick_location
@@ -723,7 +715,6 @@ www:
 	@echo '=-=-=-=-= IOCCC complete make genpath =-=-=-=-='
 	${MAKE} genfilelist
 	${MAKE} sort_gitignore
-	${MAKE} unicode_chk
 	${MAKE} verify_entry_files
 	${MAKE} gen_authors
 	${MAKE} gen_location

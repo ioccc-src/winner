@@ -143,7 +143,7 @@ shopt -s lastpipe	# explicitly run the last command of the pipe line in the curr
 
 # set variables referenced in the usage message
 #
-export VERSION="1.4 2024-09-27"
+export VERSION="1.5 2024-10-08"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -514,36 +514,19 @@ if [[ ! -x $JVAL_WRAPPER ]]; then
 fi
 
 
-# verify that the bin/unicode-chk.sh tool is executable
-#
-export UNICODE_CHK="$BIN_DIR/unicode-chk.sh"
-if [[ ! -e $UNICODE_CHK ]]; then
-    echo  "$0: ERROR: bin/unicode-chk.sh does not exist: $UNICODE_CHK" 1>&2
-    exit 5
-fi
-if [[ ! -f $UNICODE_CHK ]]; then
-    echo  "$0: ERROR: bin/unicode-chk.sh is not a regular file: $UNICODE_CHK" 1>&2
-    exit 5
-fi
-if [[ ! -x $UNICODE_CHK ]]; then
-    echo  "$0: ERROR: bin/unicode-chk.sh is not an executable file: $UNICODE_CHK" 1>&2
-    exit 5
-fi
-
-
 # verify that the bin/combine_author_handle.sh tool is executable
 #
 export COMBINE_AUTHOR="$BIN_DIR/combine_author_handle.sh"
 if [[ ! -e $COMBINE_AUTHOR ]]; then
-    echo  "$0: ERROR: bin/unicode-chk.sh does not exist: $COMBINE_AUTHOR" 1>&2
+    echo  "$0: ERROR: combine_author_handle.sh does not exist: $COMBINE_AUTHOR" 1>&2
     exit 5
 fi
 if [[ ! -f $COMBINE_AUTHOR ]]; then
-    echo  "$0: ERROR: bin/unicode-chk.sh is not a regular file: $COMBINE_AUTHOR" 1>&2
+    echo  "$0: ERROR: combine_author_handle.sh is not a regular file: $COMBINE_AUTHOR" 1>&2
     exit 5
 fi
 if [[ ! -x $COMBINE_AUTHOR ]]; then
-    echo  "$0: ERROR: bin/unicode-chk.sh is not an executable file: $COMBINE_AUTHOR" 1>&2
+    echo  "$0: ERROR: combine_author_handle.sh is not an executable file: $COMBINE_AUTHOR" 1>&2
     exit 5
 fi
 
@@ -574,7 +557,6 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: BIN_PATH=$BIN_DIR" 1>&2
     echo "$0: debug[3]: BIN_DIR=$BIN_DIR" 1>&2
     echo "$0: debug[3]: JVAL_WRAPPER=$JVAL_WRAPPER" 1>&2
-    echo "$0: debug[3]: UNICODE_CHK=$UNICODE_CHK" 1>&2
     echo "$0: debug[3]: COMBINE_AUTHOR=$COMBINE_AUTHOR" 1>&2
     echo "$0: debug[3]: DOT_ENTRY_JSON_BASENAME=$DOT_ENTRY_JSON_BASENAME" 1>&2
     echo "$0: debug[3]: ENTRY_JSON_FORMAT_VERSION=$ENTRY_JSON_FORMAT_VERSION" 1>&2
@@ -1565,18 +1547,6 @@ sed -e '/^#/d' -e 's/,/ /g' "$MANIFEST_CSV" |
 		printf "\n    ]\n"
 		printf "}\n"
 	    } >> "$TMP_ENTRY_JSON"
-
-	    # check the JSON file
-	    #
-	    if [[ $V_FLAG -ge 5 ]]; then
-		echo "$0: debug[5]: about to check: $PREV_ENTRY_JSON" 1>&2
-	    fi
-	    "$UNICODE_CHK" "$TMP_ENTRY_JSON"
-	    status="$?"
-	    if [[ $status -ne 0 ]]; then
-		echo "$0: ERROR: JSON file failed check: $TMP_ENTRY_JSON" 1>&2
-		exit 1
-	    fi
 
 	    # update entry .entry.json if different
 	    #

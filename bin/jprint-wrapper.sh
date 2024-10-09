@@ -110,7 +110,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.3 2024-09-23"
+export VERSION="1.4 2024-10-08"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -126,6 +126,7 @@ if [[ $status -eq 0 ]]; then
     TOPDIR=$("$GIT_TOOL" rev-parse --show-toplevel)
 fi
 export TOPDIR
+#
 export REPO_TOP_URL="https://github.com/ioccc-src/temp-test-ioccc"
 # GitHub puts individual files under the "blob/master" sub-directory.
 export REPO_URL="$REPO_TOP_URL/blob/master"
@@ -326,23 +327,6 @@ fi
 export BIN_DIR="bin"
 
 
-# verify that the bin/unicode-fix.sed tool is executable
-#
-export UNICODE_FIX_SED="$BIN_DIR/unicode-fix.sed"
-if [[ ! -e $UNICODE_FIX_SED ]]; then
-    echo  "$0: ERROR: bin/unicode-fix.sed does not exist: $UNICODE_FIX_SED" 1>&2
-    exit 5
-fi
-if [[ ! -f $UNICODE_FIX_SED ]]; then
-    echo  "$0: ERROR: bin/unicode-fix.sed is not a regular file: $UNICODE_FIX_SED" 1>&2
-    exit 5
-fi
-if [[ ! -r $UNICODE_FIX_SED ]]; then
-    echo  "$0: ERROR: bin/unicode-fix.sed is not an readable file: $UNICODE_FIX_SED" 1>&2
-    exit 5
-fi
-
-
 # validate the XPath for JSON tool
 #
 case "$XPATHJSON_USE" in
@@ -446,7 +430,6 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: CD_FAILED=$CD_FAILED" 1>&2
     echo "$0: debug[3]: BIN_PATH=$BIN_PATH" 1>&2
     echo "$0: debug[3]: BIN_DIR=$BIN_DIR" 1>&2
-    echo "$0: debug[3]: UNICODE_FIX_SED=$UNICODE_FIX_SED" 1>&2
 fi
 
 
@@ -485,7 +468,7 @@ case "$XPATHJSON_USE" in
 		echo "$0: debug[3]: about to: $JSP_TOOL --indent 4 --format --no-color | sed ..." 1>&2
 	    fi
 	    "$JSP_TOOL" --indent 4 --format --no-color |
-		sed -f "$UNICODE_FIX_SED" -e 's/\(\S\): /\1 : /'
+		sed -e 's/\(\S\): /\1 : /'
 	    status_codes=("${PIPESTATUS[@]}")
 	    if [[ ${status_codes[*]} =~ [1-9] ]]; then
 		echo "$0: ERROR: $JSP_TOOL --indent 4 --format --no-color | sed ...  failed", \
@@ -500,7 +483,7 @@ case "$XPATHJSON_USE" in
 		echo "$0: debug[3]: about to: $JSP_TOOL --indent 4 --format --no-color < $JSON_FILE | sed ..." 1>&2
 	    fi
 	    "$JSP_TOOL" --indent 4 --format --no-color < "$JSON_FILE" |
-		sed -f "$UNICODE_FIX_SED" -e 's/\(\S\): /\1 : /'
+		sed -e 's/\(\S\): /\1 : /'
 	    status_codes=("${PIPESTATUS[@]}")
 	    if [[ ${status_codes[*]} =~ [1-9] ]]; then
 		echo "$0: ERROR: $JSP_TOOL --indent 4 --format --no-color < $JSON_FILE | sed ...  failed", \

@@ -104,7 +104,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.9 2024-09-23"
+export VERSION="1.10 2024-10-08"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -120,6 +120,18 @@ if [[ $status -eq 0 ]]; then
     TOPDIR=$("$GIT_TOOL" rev-parse --show-toplevel)
 fi
 export TOPDIR
+#
+JSTRDECODE=$(type -P jstrdecode)
+export JSTRDECODE
+if [[ -z $JSTRDECODE ]]; then
+    echo "$0: FATAL: jstrdecode is not installed or not in \$PATH" 1>&2
+    echo "$0: notice: to install jstrdecode:" 1>&2
+    echo "$0: notice: run: git clone https://github.com/ioccc-src/mkiocccentry.git" 1>&2
+    echo "$0: notice: then: cd mkiocccentry && make clobber all" 1>&2
+    echo "$0: notice: then: cd jparse && sudo make install clobber" 1>&2
+    exit 5
+fi
+#
 export DOCROOT_SLASH="../../"
 export REPO_TOP_URL="https://github.com/ioccc-src/temp-test-ioccc"
 # GitHub puts individual files under the "blob/master" sub-directory.
@@ -312,7 +324,7 @@ function output_full_name
     # extract Full Name from the author/author_handle.json file
     #
     PATTERN='$..full_name'
-    "$JVAL_WRAPPER" -b -q "$AUTHOR_HANDLE_JSON_PATH" "$PATTERN" | sed -f "$UNICODE_FIX_SED"
+    "$JVAL_WRAPPER" -b -q -T "$AUTHOR_HANDLE_JSON_PATH" "$PATTERN" | "$JSTRDECODE" -
     status_codes=("${PIPESTATUS[@]}")
     if [[ ${status_codes[*]} =~ [1-9] ]]; then
 	echo  "$0: ERROR: in output_full_name: $JVAL_WRAPPER -b -q $AUTHOR_HANDLE_JSON_PATH '$PATTERN' failed," \
@@ -646,23 +658,6 @@ if [[ ! -x $LOCATION_TOOL ]]; then
 fi
 
 
-# verify that the bin/unicode-fix.sed tool is executable
-#
-export UNICODE_FIX_SED="$BIN_DIR/unicode-fix.sed"
-if [[ ! -e $UNICODE_FIX_SED ]]; then
-    echo  "$0: ERROR: bin/unicode-fix.sed does not exist: $UNICODE_FIX_SED" 1>&2
-    exit 5
-fi
-if [[ ! -f $UNICODE_FIX_SED ]]; then
-    echo  "$0: ERROR: bin/unicode-fix.sed is not a regular file: $UNICODE_FIX_SED" 1>&2
-    exit 5
-fi
-if [[ ! -r $UNICODE_FIX_SED ]]; then
-    echo  "$0: ERROR: bin/unicode-fix.sed is not an readable file: $UNICODE_FIX_SED" 1>&2
-    exit 5
-fi
-
-
 # parameter debugging
 #
 if [[ $V_FLAG -ge 3 ]]; then
@@ -671,6 +666,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: V_FLAG=$V_FLAG" 1>&2
     echo "$0: debug[3]: GIT_TOOL=$GIT_TOOL" 1>&2
     echo "$0: debug[3]: TOPDIR=$TOPDIR" 1>&2
+    echo "$0: debug[3]: JSTRDECODE=$JSTRDECODE" 1>&2
     echo "$0: debug[3]: DOCROOT_SLASH=$DOCROOT_SLASH" 1>&2
     echo "$0: debug[3]: REPO_TOP_URL=$REPO_TOP_URL" 1>&2
     echo "$0: debug[3]: REPO_URL=$REPO_URL" 1>&2
@@ -698,7 +694,6 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: DOT_PATH_CONTENT=$DOT_PATH_CONTENT" 1>&2
     echo "$0: debug[3]: ENTRY_JSON=$ENTRY_JSON" 1>&2
     echo "$0: debug[3]: LOCATION_TOOL=$LOCATION_TOOL" 1>&2
-    echo "$0: debug[3]: UNICODE_FIX_SED=$UNICODE_FIX_SED" 1>&2
 fi
 
 
