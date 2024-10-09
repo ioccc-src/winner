@@ -360,7 +360,7 @@ Usage:
 If no missing links are found, this tool exits 0 with no output
 (debug messages not withstanding), otherwise this tool will exit non-zero.
 
-NOTE: If the markdown link is malformed, this tool
+**NOTE**: If the markdown link is malformed, this tool
 might generate an error about a file that does exist.
 If this tool claims that a file is missing that does exist,
 look for a malformed markdown line and/or use of markdown
@@ -599,7 +599,7 @@ The [jfmt-wrapper.sh](%%REPO_URL%%/bin/jfmt-wrapper.sh) tool is a wrapper
 tool for `jfmt(1)`, a tool that will format a JSON
 # file into a canonical style.
 
-NOTE: As of 2024 Oct 08 the `jfmt(1)` tool has not been written,
+**NOTE**: As of 2024 Oct 08 the `jfmt(1)` tool has not been written,
 so [jfmt-wrapper.sh](%%REPO_URL%%/bin/jfmt-wrapper.sh) uses the
 `JSONPath.sh(1)` tool from the recently forked and modified
 [JSONPath.sh tool](https://github.com/lcn2/JSONPath.sh).
@@ -619,7 +619,7 @@ The [jprint-wrapper.sh](%%REPO_URL%%/bin/jprint-wrapper.sh) tool is a wrapper
 tool for `jprint(1)`, a tool that will format JSON in a canonical style
 to stdout.
 
-NOTE: `jprint(1)` is a planned tool based on `jfmt(1)`.
+**NOTE**: `jprint(1)` is a planned tool based on `jfmt(1)`.
 As of 2024 Oct 08 that tool has not been written, so
 [jprint-wrapper.sh](%%REPO_URL%%/bin/jprint-wrapper.sh) uses
 the `JSONPath.sh(1)` tool from the recently forked and modified
@@ -650,7 +650,7 @@ XPath for JSON mechanism.  For information in XPath for JSON see:
 - [https://jsonpath.com](https://jsonpath.com)
 - [https://github.com/lcn2/JSONPath.sh?tab=readme-ov-file#jsonpath-patterns-and-extensions](https://github.com/lcn2/JSONPath.sh?tab=readme-ov-file#jsonpath-patterns-and-extensions)
 
-NOTE: As of 2024 Oct 08 the `jval(1)` tool has not been written,
+**NOTE**: As of 2024 Oct 08 the `jval(1)` tool has not been written,
 so [jval-wrapper.sh](%%REPO_URL%%/bin/jval-wrapper.sh) uses the
 `jsp(1)` tool from [https://github.com/kjozsa/jsp](https://github.com/kjozsa/jsp)
 or if not found, the `JSONPath.sh(1)` tool from the recently forked and modified
