@@ -38,14 +38,6 @@
             "entry_text" : "original source code"
         },
         {
-            "file_path" : "boing-ball.mp4",
-            "inventory_order" : 100,
-            "OK_to_edit" : true,
-            "display_as" : "html",
-            "display_via_github" : false,
-            "entry_text" : "video of original Amiga bouncing ball demo"
-        },
-        {
             "file_path" : "2011_eastman.tar.bz2",
             "inventory_order" : 1415926535,
             "OK_to_edit" : false,

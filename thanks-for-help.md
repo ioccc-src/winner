@@ -202,7 +202,7 @@ Cody fixed [1984/anonymous](1984/anonymous/index.html) for macOS as well). As
 this is a one-liner the include of `unistd.h` was done in the Makefile.
 Ironically this fix was discovered through Linux!
 
-NOTE: originally this entry did not print a newline prior to returning to the
+**NOTE**: originally this entry did not print a newline prior to returning to the
 shell, after the output (despite having `\n` in the string - can you figure out
 why?) but to make it more friendly to users Cody made it print a `\n` prior to
 returning to the shell. The original code does not have this change.
@@ -1328,7 +1328,7 @@ bugs.html](bugs.html#1990_jaw).
 Cody also added the [try.sh](%%REPO_URL%%/1990/jaw/try.sh) to run the commands that we suggested at
 the time of releasing the winning entries of 1990.
 
-NOTE: as `btoa` is not common we used a ruby script from [Yusuke](#yusuke) but with a minor
+**NOTE**: as `btoa` is not common we used a ruby script from [Yusuke](#yusuke) but with a minor
 fix applied by Cody that made the program just show `oops` twice (twice is not
 a typo here) from invalid input but which now works.
 
@@ -2018,7 +2018,7 @@ See the
 FAQ on "[gets and fgets](faq.html#gets)"
 for why this was done.
 
-NOTE: this entry cannot work with `clang` due to different compiler messages (it
+**NOTE**: this entry cannot work with `clang` due to different compiler messages (it
 will compile fine but it won't work). See [1992/lush in
 bugs.html](bugs.html#1992_lush) for details.
 
@@ -2291,7 +2291,7 @@ Cody also added the alternate code, provided by the author, which is:
 
 but fixed to work with `clang` as well.
 
-NOTE: the `N1` and `N2` are provided as notes in the index.html file describing
+**NOTE**: the `N1` and `N2` are provided as notes in the index.html file describing
 this code. Other code is also described there.
 
 Cody also added the [try.sh](%%REPO_URL%%/1993/vanb/try.sh) script.
@@ -2731,7 +2731,7 @@ BTW: it is perilous to try the patience of
 pointer `w`, which points to `XCreateWindow()`, did not specify the parameters of
 the function in the pointer assignment.
 
-NOTE: if there is no X server running this program will still crash.
+**NOTE**: if there is no X server running this program will still crash.
 
 
 <div id="1996_rcm">
@@ -3391,7 +3391,7 @@ follow it: change `3` in the call to `mmap()` to be `PROT_READ|PROT_WRITE`: just
 `PROT_READ|PROT_WRITE` does not equal `3` (though it seems to be equal in both
 macOS and Linux).
 
-NOTE: there might be educational value to see the progress of this fix; if you
+**NOTE**: there might be educational value to see the progress of this fix; if you
 wish to see, try the following commands from the `2001/anonymous` directory:
 
 ``` <!---sh-->
@@ -4501,16 +4501,6 @@ The file could have been named to that but it is not POSIX safe so the `[]`s
 were removed.  At the same time, for the same reason (though the link worked),
 the file `2011/dlowe/dlowe-aux-data/png-1/image_thumb[40].png` was renamed to
 `image_thumb.png`.
-
-
-<div id="2011_eastman">
-## Winning entry: [2011/eastman](2011/eastman/index.html)
-### Winning entry source code: [eastman.c](%%REPO_URL%%/2011/eastman//eastman.c)
-</div>
-
-[Cody](#cody) added the video file
-[boing-ball.mp4](2011/eastman/boing-ball.mp4) which is the demo the
-author referred to.
 
 
 <div id="2011_fredriksson">

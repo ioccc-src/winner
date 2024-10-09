@@ -537,7 +537,7 @@ problems with missing prototypes for some functions (this was also seen when
 Cody fixed <a href="1984/anonymous/index.html">1984/anonymous</a> for macOS as well). As
 this is a one-liner the include of <code>unistd.h</code> was done in the Makefile.
 Ironically this fix was discovered through Linux!</p>
-<p>NOTE: originally this entry did not print a newline prior to returning to the
+<p><strong>NOTE</strong>: originally this entry did not print a newline prior to returning to the
 shell, after the output (despite having <code>\n</code> in the string - can you figure out
 why?) but to make it more friendly to users Cody made it print a <code>\n</code> prior to
 returning to the shell. The original code does not have this change.</p>
@@ -1322,7 +1322,7 @@ is 0 it shows what looks like an error. However, see <a href="bugs.html#1990_jaw
 bugs.html</a>.</p>
 <p>Cody also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1990/jaw/try.sh">try.sh</a> to run the commands that we suggested at
 the time of releasing the winning entries of 1990.</p>
-<p>NOTE: as <code>btoa</code> is not common we used a ruby script from <a href="#yusuke">Yusuke</a> but with a minor
+<p><strong>NOTE</strong>: as <code>btoa</code> is not common we used a ruby script from <a href="#yusuke">Yusuke</a> but with a minor
 fix applied by Cody that made the program just show <code>oops</code> twice (twice is not
 a typo here) from invalid input but which now works.</p>
 <div id="1990_pjr">
@@ -1799,7 +1799,7 @@ demonstrate it as using make was problematic.</p>
 <p>See the
 FAQ on “<a href="faq.html#gets">gets and fgets</a>”
 for why this was done.</p>
-<p>NOTE: this entry cannot work with <code>clang</code> due to different compiler messages (it
+<p><strong>NOTE</strong>: this entry cannot work with <code>clang</code> due to different compiler messages (it
 will compile fine but it won’t work). See <a href="bugs.html#1992_lush">1992/lush in
 bugs.html</a> for details.</p>
 <div id="1992_marangon">
@@ -1994,7 +1994,7 @@ work).</p>
     augmented with comments showing where each state begins. N1 and N2 are
     notes.</code></pre>
 <p>but fixed to work with <code>clang</code> as well.</p>
-<p>NOTE: the <code>N1</code> and <code>N2</code> are provided as notes in the index.html file describing
+<p><strong>NOTE</strong>: the <code>N1</code> and <code>N2</code> are provided as notes in the index.html file describing
 this code. Other code is also described there.</p>
 <p>Cody also added the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1993/vanb/try.sh">try.sh</a> script.</p>
 <div id="1994">
@@ -2316,7 +2316,7 @@ either different output or the same output that we briefly pointed out.</p>
 <p><a href="#cody">Cody</a> fixed this to not segfault under macOS. The problem was that the function
 pointer <code>w</code>, which points to <code>XCreateWindow()</code>, did not specify the parameters of
 the function in the pointer assignment.</p>
-<p>NOTE: if there is no X server running this program will still crash.</p>
+<p><strong>NOTE</strong>: if there is no X server running this program will still crash.</p>
 <div id="1996_rcm">
 <h2 id="winning-entry-1996rcm">Winning entry: <a href="1996/rcm/index.html">1996/rcm</a></h2>
 <h3 id="winning-entry-source-code-rcm.c">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1996/rcm/rcm.c">rcm.c</a></h3>
@@ -2785,7 +2785,7 @@ matter</em>!</p>
 follow it: change <code>3</code> in the call to <code>mmap()</code> to be <code>PROT_READ|PROT_WRITE</code>: just in case
 <code>PROT_READ|PROT_WRITE</code> does not equal <code>3</code> (though it seems to be equal in both
 macOS and Linux).</p>
-<p>NOTE: there might be educational value to see the progress of this fix; if you
+<p><strong>NOTE</strong>: there might be educational value to see the progress of this fix; if you
 wish to see, try the following commands from the <code>2001/anonymous</code> directory:</p>
 <pre><code>    git diff d2a42f42e8f477f29e9d5ed09ce2bb349eaf7397..93aa8d79f208dcccc3c5a2370a727b5cf64e9c53 anonymous.c
     git diff 93aa8d79f208dcccc3c5a2370a727b5cf64e9c53..c48629017117379a52b1a512ef8f2593ca9569c8 anonymous.c
@@ -3566,13 +3566,6 @@ The file could have been named to that but it is not POSIX safe so the <code>[]<
 were removed. At the same time, for the same reason (though the link worked),
 the file <code>2011/dlowe/dlowe-aux-data/png-1/image_thumb[40].png</code> was renamed to
 <code>image_thumb.png</code>.</p>
-<div id="2011_eastman">
-<h2 id="winning-entry-2011eastman">Winning entry: <a href="2011/eastman/index.html">2011/eastman</a></h2>
-<h3 id="winning-entry-source-code-eastman.c">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/eastman//eastman.c">eastman.c</a></h3>
-</div>
-<p><a href="#cody">Cody</a> added the video file
-<a href="2011/eastman/boing-ball.mp4">boing-ball.mp4</a> which is the demo the
-author referred to.</p>
 <div id="2011_fredriksson">
 <h2 id="winning-entry-2011fredriksson">Winning entry: <a href="2011/fredriksson/index.html">2011/fredriksson</a></h2>
 <h3 id="winning-entry-source-code-fredriksson.c">Winning entry source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/fredriksson//fredriksson.c">fredriksson.c</a></h3>
