@@ -433,6 +433,22 @@ that you use the <code>-h</code> option on it first.</p>
 <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/md2html.cfg">bin/md2html.cfg</a> file but some of these tools can
 be directly invoked as well, should you wish to see their output or if you have
 some odd need to do so.</p>
+<div id="all-jfmt">
+<h3 id="all-jfmt.sh"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/all-jfmt.sh">all-jfmt.sh</a></h3>
+</div>
+<p>canonically format all entry and author JSON files</p>
+<p>Usage:</p>
+<pre><code>    bin/all-jfmt.sh -v 3</code></pre>
+<p>Alternate usage:</p>
+<pre><code>    make all_jfmt</code></pre>
+<div id="all-years">
+<h3 id="all-years.sh"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/all-years.sh">all-years.sh</a></h3>
+</div>
+<p>Run a command on all IOCCC years.</p>
+<p>Usage:</p>
+<pre><code>    bin/all-years.sh -v 1 bin/gen-year-index.sh -v 1</code></pre>
+<p>Alternate usage:</p>
+<pre><code>    bin/all-years.sh -v 1 bin/chk-entry.sh</code></pre>
 <div id="all-run">
 <h3 id="all-run.sh"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/all-run.sh">all-run.sh</a></h3>
 </div>
@@ -442,7 +458,7 @@ some odd need to do so.</p>
 <p>Alternate usage:</p>
 <pre><code>    bin/all-run.sh -v 3 bin/readme2index.sh -v 1</code></pre>
 <div id="all-years">
-<h3 id="all-years.sh"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/all-years.sh">all-years.sh</a></h3>
+<h3 id="all-years.sh-1"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/all-years.sh">all-years.sh</a></h3>
 </div>
 <p>Run a command on all IOCCC years.</p>
 <p>Usage:</p>
@@ -793,6 +809,8 @@ or if not found, the <code>JSONPath.sh(1)</code> tool from the recently forked a
 
     bin/jval-wrapper.sh author/Anton_Algmyr.json &#39;$.full_name&#39;
     bin/jval-wrapper.sh -q -T author/Anton_Algmyr.json &#39;$.full_name&#39; | jstrdecode -</code></pre>
+<p><strong>NOTE</strong>: With <code>jstrdecode(1)</code> version 1.2.3 or better, one can use <code>jstrdecode -N</code>
+and not have to use <code>-T</code> with <code>bin/jval-wrapper.sh</code>.</p>
 <div id="md2html_cfg">
 <h3 id="md2html.cfg"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/md2html.cfg">md2html.cfg</a></h3>
 </div>

@@ -51,7 +51,7 @@
             "OK_to_edit" : false,
             "display_as" : "image",
             "display_via_github" : false,
-            "entry_text" : "image of author’s godchild and nephew"
+            "entry_text" : "image of author\u2019s godchild and nephew"
         },
         {
             "file_path" : "try.sh",

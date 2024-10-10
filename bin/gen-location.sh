@@ -85,7 +85,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.8 2024-10-08"
+export VERSION="1.8.1 2024-10-10"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -123,7 +123,7 @@ if [[ -z $JSTRDECODE ]]; then
     echo "$0: notice: then: cd jparse && sudo make install clobber" 1>&2
     exit 5
 fi
-export MIN_JSTRDECODE_VERSION="1.2.0"
+export MIN_JSTRDECODE_VERSION="1.2.3"
 JSTRDECODE_VERSION=$("$JSTRDECODE" -V | head -1 | awk '{print $3;}')
 if ! "$VERGE" "$JSTRDECODE_VERSION" "$MIN_JSTRDECODE_VERSION"; then
     echo "$0: FATAL: jstrdecode version: $JSTRDECODE_VERSION < minimum version: $MIN_JSTRDECODE_VERSION" 1>&2
@@ -593,7 +593,7 @@ find "$AUTHOR_DIR" -mindepth 1 -maxdepth 1 -type f -name '*.json' -print |
 	# obtain the author full name
 	#
 	PATTERN='$..full_name'
-	FULL_NAME=$("$JVAL_WRAPPER" -b -q -T "$AUTHOR_HANDLE_JSON" "$PATTERN" | "$JSTRDECODE" -)
+	FULL_NAME=$("$JVAL_WRAPPER" -b -q "$AUTHOR_HANDLE_JSON" "$PATTERN" | "$JSTRDECODE" -N -)
 	status_codes=("${PIPESTATUS[@]}")
 	if [[ ${status_codes[*]} =~ [1-9] || -z $FULL_NAME ]]; then
 	    echo "$0: ERROR: cannot full name from: $AUTHOR_HANDLE" 1>&2

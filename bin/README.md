@@ -75,6 +75,44 @@ be directly invoked as well, should you wish to see their output or if you have
 some odd need to do so.
 
 
+<div id="all-jfmt">
+### [all-jfmt.sh](%%REPO_URL%%/bin/all-jfmt.sh)
+</div>
+
+Canonically format all entry and author JSON files
+
+Usage:
+
+``` <!---sh-->
+    bin/all-jfmt.sh -v 3
+```
+
+Alternate usage:
+
+``` <!---sh-->
+    make all_jfmt
+```
+
+
+<div id="all-years">
+### [all-years.sh](%%REPO_URL%%/bin/all-years.sh)
+</div>
+
+Run a command on all IOCCC years.
+
+Usage:
+
+``` <!---sh-->
+    bin/all-years.sh -v 1 bin/gen-year-index.sh -v 1
+```
+
+Alternate usage:
+
+``` <!---sh-->
+    bin/all-years.sh -v 1 bin/chk-entry.sh
+```
+
+
 <div id="all-run">
 ### [all-run.sh](%%REPO_URL%%/bin/all-run.sh)
 </div>
@@ -136,6 +174,53 @@ the top level `Makefile`:
 **NOTE**: see the
 FAQ on "[.entry.json files](../faq.html#entry_json)"
 for more details on `.entry.json` files.
+
+
+<div id="combine-author-handle">
+### [combine_author_handle.sh](%%REPO_URL%%/bin/combine_author_handle.sh)
+</div>
+
+Combine all author/author_handle.JSON files as single JSON file.
+
+The purpose of this tool is to make looking for information across all
+authors faster by temporarily forming them into a single JSON file.
+
+Because `jsp(1)` open remembers the last copy of a given JSON member name.
+As such, we change the JSON member name "winning_entry_set" into
+a unique "winning_entry_set.FILENO" where FILENO is the file number.
+This the JSON member value will be preserved across all files.
+
+We also convert where FILENO is the file number and FILENAME is the filename:
+
+``` <!---json-->
+   "sort_word" : "data",
+```
+
+into:
+
+``` <!---json-->
+   "sort_word.FILENO" : [
+       {
+           "sort_word" : "data FILENAME"
+       }
+   ],
+```
+
+This will allow `jsp(1)` to print sort_word values.
+
+We also make sure that the last item from a given file ends in a comma (",)",
+due to the bogosity of the so-called JSON spec.
+
+Usage:
+
+``` <!---sh-->
+    bin/combine_author_handle.sh > combined_author_handle.json
+```
+
+**NOTE**: This tool assume that all JSON files have been formatted with the
+`bin/jprint-wrapper.sh` tool.  In particular the first line is just "{:,
+and the last line is just "}" and each JSON element is on its own line.
+
 
 <div id="csv2entry">
 ### [csv2entry.sh](%%REPO_URL%%/bin/csv2entry.sh)
@@ -686,8 +771,33 @@ For example:
     bin/jval-wrapper.sh -q -T author/Anton_Algmyr.json '$.full_name' | jstrdecode -
 ```
 
+**NOTE**: With `jstrdecode(1)` version 1.2.3 or better, one can use `jstrdecode -N`
+and not have to use `-T` with `bin/jval-wrapper.sh`.
 
-<div id="md2html_cfg">
+
+<div id="manifest-csv-entry">
+### [manifest.csv.entry.awk](%%REPO_URL%%/bin/manifest.csv.entry.awk)
+</div>
+
+Output manifest csv from a entry's manifest as found in its `.entry.json` file.
+
+``` <!---sh-->
+    awk -f bin/manifest.csv.entry.awk YYYY/dir/.entry.json
+```
+
+
+<div id="manifest-csv-json">
+### [bin/manifest.entry.json.awk](%%REPO_URL%%/bin/manifest.entry.json.awk)
+</div>
+
+Output manifest table from a entry's `.entry.json` file.
+
+``` <!---sh-->
+    awk -v github=REPO_URL -f bin/manifest.entry.json.awk YYYY/dir/.entry.json
+```
+
+
+<div id="md2html-cfg">
 ### [md2html.cfg](%%REPO_URL%%/bin/md2html.cfg)
 </div>
 
@@ -721,6 +831,7 @@ markdown files) and HTML fragments from the [inc directory](../inc/index.html).
 
 The [md2html.cfg](index.html#md2html_cfg) configuration file is
 used by [md2html.sh](%%REPO_URL%%/bin/md2html.sh) to drive the generation process.
+
 
 <div id="new-dir">
 ### [new-dir.sh](%%REPO_URL%%/bin/new-dir.sh)
