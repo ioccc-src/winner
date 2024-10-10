@@ -436,7 +436,7 @@ some odd need to do so.</p>
 <div id="all-jfmt">
 <h3 id="all-jfmt.sh"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/all-jfmt.sh">all-jfmt.sh</a></h3>
 </div>
-<p>canonically format all entry and author JSON files</p>
+<p>Canonically format all entry and author JSON files</p>
 <p>Usage:</p>
 <pre><code>    bin/all-jfmt.sh -v 3</code></pre>
 <p>Alternate usage:</p>
@@ -478,6 +478,32 @@ the top level <code>Makefile</code>:</p>
 <p><strong>NOTE</strong>: see the
 FAQ on “<a href="../faq.html#entry_json">.entry.json files</a>”
 for more details on <code>.entry.json</code> files.</p>
+<div id="combine-author-handle">
+<h3 id="combine_author_handle.sh"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/combine_author_handle.sh">combine_author_handle.sh</a></h3>
+</div>
+<p>Combine all author/author_handle.JSON files as single JSON file.</p>
+<p>The purpose of this tool is to make looking for information across all
+authors faster by temporarily forming them into a single JSON file.</p>
+<p>Because <code>jsp(1)</code> open remembers the last copy of a given JSON member name.
+As such, we change the JSON member name “winning_entry_set” into
+a unique “winning_entry_set.FILENO” where FILENO is the file number.
+This the JSON member value will be preserved across all files.</p>
+<p>We also convert where FILENO is the file number and FILENAME is the filename:</p>
+<pre><code>   &quot;sort_word&quot; : &quot;data&quot;,</code></pre>
+<p>into:</p>
+<pre><code>   &quot;sort_word.FILENO&quot; : [
+       {
+           &quot;sort_word&quot; : &quot;data FILENAME&quot;
+       }
+   ],</code></pre>
+<p>This will allow <code>jsp(1)</code> to print sort_word values.</p>
+<p>We also make sure that the last item from a given file ends in a comma (“,)”,
+due to the bogosity of the so-called JSON spec.</p>
+<p>Usage:</p>
+<pre><code>    bin/combine_author_handle.sh &gt; combined_author_handle.json</code></pre>
+<p><strong>NOTE</strong>: This tool assume that all JSON files have been formatted with the
+<code>bin/jprint-wrapper.sh</code> tool. In particular the first line is just “{:,
+and the last line is just”}” and each JSON element is on its own line.</p>
 <div id="csv2entry">
 <h3 id="csv2entry.sh"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/csv2entry.sh">csv2entry.sh</a></h3>
 </div>
@@ -811,7 +837,17 @@ or if not found, the <code>JSONPath.sh(1)</code> tool from the recently forked a
     bin/jval-wrapper.sh -q -T author/Anton_Algmyr.json &#39;$.full_name&#39; | jstrdecode -</code></pre>
 <p><strong>NOTE</strong>: With <code>jstrdecode(1)</code> version 1.2.3 or better, one can use <code>jstrdecode -N</code>
 and not have to use <code>-T</code> with <code>bin/jval-wrapper.sh</code>.</p>
-<div id="md2html_cfg">
+<div id="manifest-csv-entry">
+<h3 id="manifest.csv.entry.awk"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/manifest.csv.entry.awk">manifest.csv.entry.awk</a></h3>
+</div>
+<p>Output manifest csv from a entry’s manifest as found in its <code>.entry.json</code> file.</p>
+<pre><code>    awk -f bin/manifest.csv.entry.awk YYYY/dir/.entry.json</code></pre>
+<div id="manifest-csv-json">
+<h3 id="binmanifest.entry.json.awk"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/manifest.entry.json.awk">bin/manifest.entry.json.awk</a></h3>
+</div>
+<p>Output manifest table from a entry’s <code>.entry.json</code> file.</p>
+<pre><code>    awk -v github=REPO_URL -f bin/manifest.entry.json.awk YYYY/dir/.entry.json</code></pre>
+<div id="md2html-cfg">
 <h3 id="md2html.cfg"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/md2html.cfg">md2html.cfg</a></h3>
 </div>
 <p>This is a configuration file for the <a href="index.html#md2html">md2html</a> tool.
