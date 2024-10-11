@@ -7,24 +7,24 @@
 # We form a wrapper for the jprint(1), a tool that will format a JSON
 # file into a canonical style.
 #
-# NOTE: As of 2024 Sep 09 the jprint(1) tool has not been written,
+# NOTE: As of 2024 Sep 10 the jprint(1) tool has not been written,
 #       so jfmt-wrapper.sh uses with the jsp tool from:
 #
-#   https://github.com/kjozsa/jsp
+#	    https://github.com/kjozsa/jsp
 #
-#   FYI: For macOS, use homebrew to install pipx:
+#   FYI: For macOS, use Homebrew to install pipx:
 #
-#		brew install pipx
+#	brew install pipx
 #
-#	 Next, use pipx to install jsp:
+#   Next, use pipx to install jsp:
 #
-#		pipx --global install jsp
+#	pipx --global install jsp
 #
-#	 and then be sure that ~/.local/bin is in your $PATH.
+#   ... and then be sure that ~/.local/bin is in your $PATH.
 #
-# or the JSONPath.sh(1) tool from:
+#   Alternately, you can use the JSONPath.sh(1) tool from:
 #
-#   https://github.com/lcn2/JSONPath.sh
+#	https://github.com/lcn2/JSONPath.sh
 #
 # Copyright (c) 2024 by Landon Curt Noll.  All Rights Reserved.
 #
@@ -146,7 +146,7 @@ export JSP_TOOL=""
 JSP_TOOL=$(type -P jsp)
 export JSONPATH_SH=""
 JSONPATH_SH=$(type -P JSONPath.sh)
-# set the defaiult XPath for JSON
+# set the default XPath for JSON
 export XPATHJSON_USE="jsp"
 export QUICK_CHECK=""
 
