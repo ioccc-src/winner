@@ -82,6 +82,7 @@ you remove both the X11 include files and replace them with
 ```
 
 you ought to be able to compile and run this program on Windows.
+
 **NOTE**: this is what [toledo.alt2.c](%%REPO_URL%%/2011/toledo/toledo.alt2.c) is for.
 
 

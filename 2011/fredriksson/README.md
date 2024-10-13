@@ -149,10 +149,10 @@ Just say
 ### Limitations and remarks
 
 * Using warning options (such as `-Wall`) when building gives a lot of warning,
-  such as `suggest parentheses around '&&' within '||'`, `value computed is
-  not used`, `implicit declaration of function 'putchar'`, `implicit
-  declaration of function 'getchar'`, `control reaches end of non-void
-  function` and `format not a string literal and no format arguments`.
+  such as "`suggest parentheses around '&&' within '||'`", "`value computed is
+  not used`", "`implicit declaration of function 'putchar'`", "`implicit
+  declaration of function 'getchar'`", "`control reaches end of non-void
+  function`" and "`format not a string literal and no format arguments`".
   Please ignore them all, since they just try to tell you that the source
   is obfuscated.
 
@@ -184,17 +184,16 @@ Just say
   for each char, and that a C compiler is on `$PATH`; the latter is hard coded
   to be 'gcc', but any compiler would work, provided that it supports
   C99, or long lines as an extension. This code has been tested on:
+    - GNU/Linux FC4, i386, gcc
+    - GNU/Linux FC7, x86_64, gcc 4.1.2, tcc 0.9.24 and icc 10.0 (Btw, tcc has
+    its roots in IOCCC...)
+    - GNU/Linux FC9, x86_64, gcc 4.?.?
+    - GNU/Linux CentOS 5, gcc 4.1.2
+    - GNU/Linux Ubuntu 11.04, gcc 4.5.2
+    - SunOS 5.8, UltraSPARC IIIi, gcc 4.1.2
+    - SunOS 5.9, UltraSPARC IIIi, gcc 4.1.1 and Sun ONE Studio 8 CC
+    - AIX 5.3, IBM eServer p5-550, gcc 3.3.3 and AIX CC Version 6
 
-- GNU/Linux FC4, i386, gcc
-- GNU/Linux FC7, x86_64, gcc 4.1.2, tcc 0.9.24 and icc 10.0
-- GNU/Linux FC9, x86_64, gcc 4.?.?
-- GNU/Linux CentOS 5, gcc 4.1.2
-- GNU/Linux Ubuntu 11.04, gcc 4.5.2
-- SunOS 5.8, UltraSPARC IIIi, gcc 4.1.2
-- SunOS 5.9, UltraSPARC IIIi, gcc 4.1.1 and Sun ONE Studio 8 CC
-- AIX 5.3, IBM eServer p5-550, gcc 3.3.3 and AIX CC Version 6
-
-  (Btw, tcc has its roots in IOCCC...)
 
 
 ### NOTICE to those who wish for a greater challenge:
@@ -254,7 +253,7 @@ If you get stuck, come back and read below for additional hints and information.
 * It also shows the power of boolean logic and bitwise arithmetic.
 
 * This is the first (?) entry in the history of IOCCC, that cannot be
-  totally de-obfuscated by the author. This is due to the clever choice of
+  totally deobfuscated by the author. This is due to the clever choice of
   the actual algorithm, that is obfuscated by nature, and it is an open
   research problem whether a simpler algorithm exists, with the same time
   complexity.

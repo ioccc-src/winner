@@ -69,7 +69,7 @@ You will probably get warnings while compiling the code. In particular:
 * I don't include any headers I don't strictly need to, so you'll get warnings
   about (at least) `memcpy()`, `isdigit()`, `atoi()`, `calloc()`, `malloc()`
   and `alloca()` if you didn't use `-DAH`.
-        - NOTE from judges: we added these includes in 2023.
+        - **NOTE from judges**: we added these includes in 2023.
 
 * GCC likes to complain about `while (a = b)` (assignments as a condition).
 
@@ -88,7 +88,7 @@ Platforms which work but not at all optimization levels or needing special
 flags:
 
  * owcc 1.9 + x86 + Windows: Needs `-DNM -DAH -fno-stack-check`
- * gcc 4.4.5 + sh4: -O0 works, higher optimization levels don't work for unknown reasons.
+ * gcc 4.4.5 + sh4: `-O0` works, higher optimization levels don't work for unknown reasons.
 
 
 <!--

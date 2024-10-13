@@ -32,7 +32,7 @@ This program solves [Nonograms](http://en.wikipedia.org/wiki/Nonogram) which is
 also known as "Paint by Numbers".
 
 This entry roars as the Year of the Dragon: A year considered
-some to be good luck.  Well it was certainly true that the
+by some to be good luck.  Well it was certainly true that the
 IOCCC was lucky to get such a fine submission!
 
 The source code is a solution to a Paint by Numbers puzzle when you

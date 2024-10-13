@@ -452,7 +452,7 @@ compile flag <code>-DAH</code>.</p></li>
 about (at least) <code>memcpy()</code>, <code>isdigit()</code>, <code>atoi()</code>, <code>calloc()</code>, <code>malloc()</code>
 and <code>alloca()</code> if you didn’t use <code>-DAH</code>.</p>
 <ul>
-<li>NOTE from judges: we added these includes in 2023.</li>
+<li><strong>NOTE from judges</strong>: we added these includes in 2023.</li>
 </ul></li>
 <li><p>GCC likes to complain about <code>while (a = b)</code> (assignments as a condition).</p></li>
 <li><p>I don’t return from <code>main()</code>, even though it’s declared to return <code>int</code>.</p></li>
@@ -470,7 +470,7 @@ flags:</p>
 flags:</p>
 <ul>
 <li>owcc 1.9 + x86 + Windows: Needs <code>-DNM -DAH -fno-stack-check</code></li>
-<li>gcc 4.4.5 + sh4: -O0 works, higher optimization levels don’t work for unknown reasons.</li>
+<li>gcc 4.4.5 + sh4: <code>-O0</code> works, higher optimization levels don’t work for unknown reasons.</li>
 </ul>
 <!--
 
