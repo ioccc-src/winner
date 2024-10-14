@@ -201,7 +201,7 @@ include to the top of the source:
     ./cable3 bios-image-file floppy-image-file [harddisk-image-file]
 ```
 
-PLEASE NOTE that under Unices the keyboard must be in raw mode for the emulator
+**PLEASE NOTE** that under Unices the keyboard must be in raw mode for the emulator
 to work properly. Therefore the emulator is best run from a shell script that
 looks something like:
 

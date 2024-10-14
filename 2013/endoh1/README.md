@@ -104,7 +104,7 @@ and to satisfy IOCCC's size rule.
 
 These led to the good obfuscation.
 
-See the [How this entry works section](#how_this_entry_works) in detail, if you need.
+See the [How this entry works section](#how-this-entry-works) in detail, if you need.
 
 
 ### Limitation
@@ -118,7 +118,7 @@ Also, it requires a space between identifiers.  In short, use `(S K)` instead of
 Huge memory may be required to compile the program (about 300 MB on my machine).
 
 In addition, there are some limitations (and workarounds) mentioned in
-the [How this entry works section](#how_this_entry_works).
+the [How this entry works section](#how-this-entry-works).
 
 But I think it would only matter when you run the attached programs.
 
