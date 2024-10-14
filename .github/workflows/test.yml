@@ -20,4 +20,4 @@ jobs:
     - name: remove mkiocccentry
     - run: rm -fr mkiocccentry
     - name: make test
-      run: make test
+    - run: make test
