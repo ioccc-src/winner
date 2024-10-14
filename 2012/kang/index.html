@@ -410,8 +410,6 @@ Location: <a href="../../location.html#KR">KR</a> - <em>Republic of Korea</em> (
 <!-- BEFORE: 1st line of markdown file: 2012/kang/README.md -->
 <h2 id="to-build">To build:</h2>
 <pre><code>    make</code></pre>
-<p>There is alternate code which fixes some German at the expense of other German.
-See <a href="#alternate-code">Alternate code</a> below for the (fun) rationale here.</p>
 <h2 id="to-use">To use:</h2>
 <pre><code>    echo &quot;full spelling of an English cardinal numeral less than a quadrillion&quot; | ./kang</code></pre>
 <h2 id="try">Try:</h2>
@@ -422,32 +420,6 @@ See <a href="#alternate-code">Alternate code</a> below for the (fun) rationale h
     ./de.sh # German 0 through 13 with both umlauts and without (additional &#39;e&#39;)</code></pre>
 <p>How does it have no <code>u</code> or <code>o</code> in a string in the source code and yet it gets
 <code>uno</code> right?</p>
-<h2 id="alternate-code">Alternate code:</h2>
-<p>This alternate code fixes the program that would throw off those who know German
-where the sound of ‘V’ is ‘F’ and so the program had the letter be ‘F’. A
-problem, however, with changing it is that it breaks other words including in
-German. Thus there is the alternate version instead which fixes a problem for
-Germans that causes problems for Germans so if you’re German you’ll just have to
-deal with it :-) It also breaks other words too and this happens only for one
-letter change. With this one should hopefully be able to really appreciate the
-subtlety of this entry even more.</p>
-<h3 id="alternate-build">Alternate build:</h3>
-<pre><code>    make alt</code></pre>
-<h3 id="alternate-use">Alternate use:</h3>
-<pre><code>    echo &quot;full spelling of an English cardinal numeral less than a quadrillion&quot; | ./kang.alt
-
-    echo vier | ./kang.alt
-
-    echo uno | ./kang.alt</code></pre>
-<h3 id="alternate-try">Alternate try:</h3>
-<pre><code>    ./try.alt.sh # try various languages
-
-    ./en.alt.sh # English 0 through 13
-
-    ./de.alt.sh # German 0 through 13 with both umlauts and without (additional &#39;e&#39;)</code></pre>
-<p>What does it get right? What does it get wrong? How does it compare to the
-original entry without the change of <code>f</code> to <code>v</code>?</p>
-<p>Finally why does it get wrong what it gets wrong?</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>The judges were able to appreciate the Indo-European language family
 relation by making this entry successfully recognize <em>some</em> French,
@@ -460,6 +432,9 @@ colloquial year numbers of the last millennium.</p>
 <p>correctly reports 500 but:</p>
 <pre><code>    echo hundr|./kang</code></pre>
 <p>does not report 100, instead printing 0?</p>
+<p>Also, can you get the program to use the proper <code>V</code> in German instead of <code>F</code>,
+for <code>vier</code> (four)? In other words, can you get it to use <code>vier</code> instead of
+<code>fier</code>? What happens if you do do this?</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <h3 id="synopsis">Synopsis</h3>
 <p>This short program reads a spelt number (e.g. <code>forty-two</code>) and writes a
@@ -591,13 +566,9 @@ proof-reading remarks.</p>
 <ul>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/kang/kang.c">kang.c</a> - entry source code</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/kang/Makefile">Makefile</a> - entry Makefile</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/kang/kang.alt.c">kang.alt.c</a> - alternate source code</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/kang/kang.orig.c">kang.orig.c</a> - original source code</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/kang/de.alt.sh">de.alt.sh</a> - German words script for 1 through 13 for alternate code</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/kang/de.sh">de.sh</a> - German words script for 1 through 13</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/kang/en.alt.sh">en.alt.sh</a> - English words script for 1 through 13 for alternate code</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/kang/en.sh">en.sh</a> - English words script for 1 through 13</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/kang/try.alt.sh">try.alt.sh</a> - script to try alternate code</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/kang/try.sh">try.sh</a> - script to try entry</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>

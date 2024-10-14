@@ -4749,34 +4749,13 @@ title and stylesheet) and other formatting changes.
 ### Winning entry source code: [kang.c](%%REPO_URL%%/2012/kang//kang.c)
 </div>
 
-[Cody](#cody) added alternate code that fixes a problem where in German 'v'
-sounds like 'f' which the program has as 'f': with the original version it would
-translate 'fier' to '4' when the word is 'vier'. This was during a time that a
-lot of entries that no longer worked were fixed and it was done without much
-thought but having this alternate version allows one to appreciate the entry
-even more so it was kept in.
+[Cody](#cody) added the scripts
+[en.sh](%%REPO_URL%%/2012/kang/en.sh), [de.sh](%%REPO_URL%%/2012/kang/de.sh) and
+[try.sh](%%REPO_URL%%/2012/kang/try.sh).
 
-This change will actually break other translations. It also was a feature, not a
-bug, even if it might seem like a bug. But having both versions allows one to
-appreciate the entry even more, given how simple the difference is: as has been
-seen in many entries over the years, a single character can drastically change
-what happens, sometimes in surprising and delightful ways!
-
-Cody also added six scripts, starting with
-[en.sh](%%REPO_URL%%/2012/kang/en.sh), [de.sh](%%REPO_URL%%/2012/kang/de.sh),
-[en.alt.sh](%%REPO_URL%%/2012/kang/en.alt.sh) and
-[de.alt.sh](%%REPO_URL%%/2012/kang/de.alt.sh) which count from 0 through 13 in
-English and German using the original entry and the alt version respectively.
-
-In the German scripts it uses the umlaut and also does it without the umlaut
-(add an 'e'). Notice how the program picks up on this! All scripts can use
-either version but the `.alt.sh` versions default to the `alt` version whereas
-the other defaults to the submitted entry. See the index.html for details.
-
-The fifth and sixth scripts, [try.sh](%%REPO_URL%%/2012/kang/try.sh) and
-[try.alt.sh](%%REPO_URL%%/2012/kang/try.alt.sh), run a sequence of commands to
-show different languages and numbers with the submitted and alternate version
-respectively. Notice how a single letter changes so much!
+In the German script it uses the umlaut for five (`fünf`) and also does it
+without the umlaut (add an 'e' i.e. `fuenf`). Notice how the program picks up on
+this!
 
 
 <div id="2012_konno">
