@@ -431,19 +431,18 @@ chip</a> (a sound processor?).</p>
 command line is an abuse of <a href="https://en.wikipedia.org/wiki/C_shell">C Shell</a>.
 Please use <a href="https://en.wikipedia.org/wiki/Bourne_shell">Bourne-family shells</a> to
 run this entry.</p>
-<p>… but in 2023 we changed the backticks to be the bash <code>$(..)</code> construct. This
-is not done in the author’s remarks, however.</p>
+<p>… but in 2023 we changed the backticks to be the bash <code>$(..)</code> construct.</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <h3 id="example-use">Example use</h3>
 <p>You need the source code and example input (either one of the example files, or
 manual input as below) ready and a program capable of showing <a href="https://en.wikipedia.org/wiki/Netpbm">.pbm bitmap
 format</a> images.</p>
-<pre><code>    ./deckmyn &quot;`cat deckmyn.c`&quot; &quot;`cat example_greensleeves`&quot; &gt; greensleeves.pbm</code></pre>
+<pre><code>    ./deckmyn &quot;$(cat deckmyn.c)&quot; &quot;$(cat example_greensleeves)&quot; &gt; greensleeves.pbm</code></pre>
 <p>If you have macOS you can open the image like:</p>
 <pre><code>    open greensleeves.pbm</code></pre>
 <p>… otherwise, you’ll have to open it in your viewer of choice how you would
 normally open an image.</p>
-<pre><code>    ./deckmyn &quot;`cat deckmyn.c`&quot; &quot;KF m44c4 c4 g4 g4 :  a4 a4 g2 :; &quot; &gt; short_bass.pbm</code></pre>
+<pre><code>    ./deckmyn &quot;$(cat deckmyn.c)&quot; &quot;KF m44c4 c4 g4 g4 :  a4 a4 g2 :; &quot; &gt; short_bass.pbm</code></pre>
 <p>If you have macOS you can open the image like:</p>
 <pre><code>    open short_bass.pbm</code></pre>
 <p>… otherwise, you’ll have to open it in your viewer of choice how you would
@@ -461,7 +460,7 @@ etc.</p>
 string that contains the complete music font. Note that it should <em>not</em> be given
 as a file name! The default music font is encoded in the (whitespace of the)
 source code <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/deckmyn/deckmyn.c">deckmyn.c</a> itself. Therefore, the first argument should
-be <code>"``</code> <code>cat deckmyn.c</code> <code>``"</code>.</p>
+be <code>"$(cat deckmyn.c)"</code>.</p>
 <p>The second command line argument is the music itself. This is, again, a string,
 not a file name. All music signs are entered as tokens of exactly 3 characters.
 The code is very sensitive to bad spacing! So for instance, if you use a file to

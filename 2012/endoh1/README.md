@@ -16,7 +16,7 @@ section below for more details.
     ./endoh1 < file
 ```
 
-WARNING: if you're sensitive to/don't like flashing colours/text or just want to
+**WARNING**: if you're sensitive to/don't like flashing colours/text or just want to
 see what this looks like not going so fast then you might wish to try the
 [Alternate code](#alternate-code) instead.
 
