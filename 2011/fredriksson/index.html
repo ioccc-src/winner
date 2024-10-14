@@ -510,7 +510,7 @@ threshold, and search for “<code>ioccc</code>”, with option <code>-vk5</code
 <h3 id="limitations-and-remarks">Limitations and remarks</h3>
 <ul>
 <li><p>Using warning options (such as <code>-Wall</code>) when building gives a lot of warning,
-such as <code>suggest parentheses around '&amp;&amp;' within '||'</code>, <code>value computed is   not used</code>, <code>implicit declaration of function 'putchar'</code>, <code>implicit   declaration of function 'getchar'</code>, <code>control reaches end of non-void   function</code> and <code>format not a string literal and no format arguments</code>.
+such as “<code>suggest parentheses around '&amp;&amp;' within '||'</code>”, “<code>value computed is   not used</code>”, “<code>implicit declaration of function 'putchar'</code>”, “<code>implicit   declaration of function 'getchar'</code>”, “<code>control reaches end of non-void   function</code>” and “<code>format not a string literal and no format arguments</code>”.
 Please ignore them all, since they just try to tell you that the source
 is obfuscated.</p></li>
 <li><p>Only standard input is handled. And <em>only</em> if <code>stdin</code> comes from a file,
@@ -534,16 +534,18 @@ handle this just fine even in C89 mode, though.</p></li>
 <li><p>The code should be reasonably portable, it assumes standard ASCII codes
 for each char, and that a C compiler is on <code>$PATH</code>; the latter is hard coded
 to be ‘gcc’, but any compiler would work, provided that it supports
-C99, or long lines as an extension. This code has been tested on:</p></li>
-<li><p>GNU/Linux FC4, i386, gcc</p></li>
-<li><p>GNU/Linux FC7, x86_64, gcc 4.1.2, tcc 0.9.24 and icc 10.0</p></li>
-<li><p>GNU/Linux FC9, x86_64, gcc 4.?.?</p></li>
-<li><p>GNU/Linux CentOS 5, gcc 4.1.2</p></li>
-<li><p>GNU/Linux Ubuntu 11.04, gcc 4.5.2</p></li>
-<li><p>SunOS 5.8, UltraSPARC IIIi, gcc 4.1.2</p></li>
-<li><p>SunOS 5.9, UltraSPARC IIIi, gcc 4.1.1 and Sun ONE Studio 8 CC</p></li>
-<li><p>AIX 5.3, IBM eServer p5-550, gcc 3.3.3 and AIX CC Version 6</p>
-<p>(Btw, tcc has its roots in IOCCC…)</p></li>
+C99, or long lines as an extension. This code has been tested on:</p>
+<ul>
+<li>GNU/Linux FC4, i386, gcc</li>
+<li>GNU/Linux FC7, x86_64, gcc 4.1.2, tcc 0.9.24 and icc 10.0 (Btw, tcc has
+its roots in IOCCC…)</li>
+<li>GNU/Linux FC9, x86_64, gcc 4.?.?</li>
+<li>GNU/Linux CentOS 5, gcc 4.1.2</li>
+<li>GNU/Linux Ubuntu 11.04, gcc 4.5.2</li>
+<li>SunOS 5.8, UltraSPARC IIIi, gcc 4.1.2</li>
+<li>SunOS 5.9, UltraSPARC IIIi, gcc 4.1.1 and Sun ONE Studio 8 CC</li>
+<li>AIX 5.3, IBM eServer p5-550, gcc 3.3.3 and AIX CC Version 6</li>
+</ul></li>
 </ul>
 <h3 id="notice-to-those-who-wish-for-a-greater-challenge">NOTICE to those who wish for a greater challenge:</h3>
 <p><strong>If you want a greater challenge, don’t read any further</strong>:
@@ -596,7 +598,7 @@ variable definitions)</li>
 </ul></li>
 <li><p>It also shows the power of boolean logic and bitwise arithmetic.</p></li>
 <li><p>This is the first (?) entry in the history of IOCCC, that cannot be
-totally de-obfuscated by the author. This is due to the clever choice of
+totally deobfuscated by the author. This is due to the clever choice of
 the actual algorithm, that is obfuscated by nature, and it is an open
 research problem whether a simpler algorithm exists, with the same time
 complexity.</p></li>
