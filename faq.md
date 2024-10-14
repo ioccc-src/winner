@@ -29,6 +29,7 @@ This is FAQ version **28.0.4 2024-08-24**.
 - <a class="normal" href="#faq1_2">1.2  - What is the history of the IOCCC website?</a>
 - <a class="normal" href="#faq1_3">1.3  - How has the IOCCC size limit rule changed over the years?</a>
 - <a class="normal" href="#faq1_4">1.4  - What is the **Great Fork Merge**?</a>
+- <a class="normal" href="#faq1_5">1.5  - What is an IOCCC BOF?</a>
 
 
 ## Section  2 - [IOCCC Judging process](#faq2)
@@ -65,6 +66,7 @@ This is FAQ version **28.0.4 2024-08-24**.
 - <a class="normal" href="#faq3_20">3.20 - How do I download individual winning entries or all winning entries of a given year?</a>
 - <a class="normal" href="#faq3_21">3.21 - What are `try.sh` and `try.alt.sh` scripts and why should I use them?</a>
 - <a class="normal" href="#faq3_22">3.22 - Are there any compiler warnings that I should not worry about?</a>
+- <a class="normal" href="#faq3_23">3.23 - How do I compile an IOCCC entry that requires zlib?</a>
 
 
 ## Section  4 - [Changes made to IOCCC entries](#faq4)
@@ -118,6 +120,7 @@ Jump to: [top](#)
 
 
 # The IOCCC FAQ
+
 
 <div id="faq0">
 ## Section 0: Submitting entries to a new IOCCC
@@ -2143,6 +2146,21 @@ for more information.
 Jump to: [top](#)
 
 
+<div id="faq1_5">
+<div id="ioccc_bof">
+### FAQ 1.5: What is an IOCCC BOF?</a>
+</div>
+</div>
+
+The term **IOCCC BOF** stood for **International Obfuscated C Code
+Contest Birds Of a Feather**.  It was a special session held at the
+general [USENIX conference](https://www.usenix.org/conferences), usually
+immediately after the BSD BOF, where the winners of a new IOCCC were
+announced in the early years of the IOCCC.
+
+Jump to: [top](#)
+
+
 <div id="faq2">
 ## Section 2: IOCCC Judging process
 </div>
@@ -3377,7 +3395,6 @@ for downloading, installing and using netpbm.
 We recommend trying a method suitable for your environment first, if possible.
 
 
-
 <div id="faq3_16">
 <div id="libjpeg">
 ### 3.16 - How do I compile and install libjpeg-turbo for entries that require it?
@@ -3764,6 +3781,7 @@ browser to `1984/index.html`, scroll down to `Winning Entries of 1984 - The 1st
 IOCCC` and click on the link `1984/mullender` which will take you to the
 `index.html` file. Of course the caveats listed above still will apply.
 
+
 <div id="faq3_21">
 <div id="try">
 ### 3.21 - What are `try.sh` and `try.alt.sh` scripts and why should I use them?
@@ -3791,6 +3809,7 @@ process or appreciate the entry more, then please do so.
 
 Jump to: [top](#)
 
+
 <div id="faq3_22">
 <div id="forced_warnings">
 ### 3.22 - Are there any compiler warnings that I should not worry about?
@@ -3811,6 +3830,75 @@ inevitable in obfuscated code and even non-obfuscated code.
 If you *can* work past this it might be good but this is not something that
 should be worried about too much as this is on the compiler developers, not you.
 
+
+Jump to: [top](#)
+
+
+<div id="faq3_23">
+<div id="zlib">
+### FAQ 3.23: How do I compile an IOCCC entry that requires zlib?
+</div>
+</div>
+
+This depends on your operating system but below are instructions for Linux and
+macOS with alternative methods for macOS and different package managers with Linux.
+
+
+#### Red Hat based Linux
+
+Execute the following as root or via sudo:
+
+``` <!---sh-->
+    dnf install zlib
+```
+
+
+#### macOS
+
+With macOS it should already be installed. If it is not you might have to do:
+
+``` <!---sh-->
+    xcode-select --install
+```
+
+and agree to the terms and conditions and proceed with the install.
+
+
+##### macOS via Homebrew
+
+Not applicable, see above.
+
+
+##### macOS via MacPorts
+
+Not applicable, see above.
+
+
+#### Debian based Linux
+
+Execute the following as root or via sudo:
+
+``` <!---sh-->
+    apt install zlib1g zlib1g-dev
+```
+
+and then try `make all` again.
+
+
+#### Other Linux distributions
+
+Use your package manager to install the appropriate packages. Try the search
+feature of the package manager to determine which packages you need to install.
+Note that you might have to install both the library and the developmental
+packages: one for compiling and one for linking / running.
+
+
+#### Package website
+
+Go to the [ncurses website](https://invisible-island.net/ncurses/) and follow their instructions
+for downloading, installing and using ncurses.
+
+We recommend trying a method suitable for your environment first, if possible.
 
 Jump to: [top](#)
 

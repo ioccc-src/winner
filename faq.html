@@ -417,6 +417,7 @@
 <li><a class="normal" href="#faq1_2">1.2 - What is the history of the IOCCC website?</a></li>
 <li><a class="normal" href="#faq1_3">1.3 - How has the IOCCC size limit rule changed over the years?</a></li>
 <li><a class="normal" href="#faq1_4">1.4 - What is the <strong>Great Fork Merge</strong>?</a></li>
+<li><a class="normal" href="#faq1_5">1.5 - What is an IOCCC BOF?</a></li>
 </ul>
 <h2 id="section-2---ioccc-judging-process">Section 2 - <a href="#faq2">IOCCC Judging process</a></h2>
 <ul>
@@ -453,6 +454,7 @@
 <li><a class="normal" href="#faq3_20">3.20 - How do I download individual winning entries or all winning entries of a given year?</a></li>
 <li><a class="normal" href="#faq3_21">3.21 - What are <code>try.sh</code> and <code>try.alt.sh</code> scripts and why should I use them?</a></li>
 <li><a class="normal" href="#faq3_22">3.22 - Are there any compiler warnings that I should not worry about?</a></li>
+<li><a class="normal" href="#faq3_23">3.23 - How do I compile an IOCCC entry that requires zlib?</a></li>
 </ul>
 <h2 id="section-4---changes-made-to-ioccc-entries">Section 4 - <a href="#faq4">Changes made to IOCCC entries</a></h2>
 <ul>
@@ -2205,6 +2207,17 @@ to the <a href="https://github.com/ioccc-src/winner">Official IOCCC winner repo<
 FAQ on “<a href="#great_fork_merge_date">Great Fork Merge Date</a>”
 for more information.</p>
 <p>Jump to: <a href="#">top</a></p>
+<div id="faq1_5">
+<div id="ioccc_bof">
+<h3 id="faq-1.5-what-is-an-ioccc-bof">FAQ 1.5: What is an IOCCC BOF?</a></h3>
+</div>
+</div>
+<p>The term <strong>IOCCC BOF</strong> stood for <strong>International Obfuscated C Code
+Contest Birds Of a Feather</strong>. It was a special session held at the
+general <a href="https://www.usenix.org/conferences">USENIX conference</a>, usually
+immediately after the BSD BOF, where the winners of a new IOCCC were
+announced in the early years of the IOCCC.</p>
+<p>Jump to: <a href="#">top</a></p>
 <div id="faq2">
 <h2 id="section-2-ioccc-judging-process">Section 2: IOCCC Judging process</h2>
 </div>
@@ -3287,6 +3300,38 @@ if you disable this). This warning happens to be <code>-Wno-unsafe-buffer-usage<
 inevitable in obfuscated code and even non-obfuscated code.</p>
 <p>If you <em>can</em> work past this it might be good but this is not something that
 should be worried about too much as this is on the compiler developers, not you.</p>
+<p>Jump to: <a href="#">top</a></p>
+<div id="faq3_23">
+<div id="zlib">
+<h3 id="faq-3.23-how-do-i-compile-an-ioccc-entry-that-requires-zlib">FAQ 3.23: How do I compile an IOCCC entry that requires zlib?</h3>
+</div>
+</div>
+<p>This depends on your operating system but below are instructions for Linux and
+macOS with alternative methods for macOS and different package managers with Linux.</p>
+<h4 id="red-hat-based-linux-8">Red Hat based Linux</h4>
+<p>Execute the following as root or via sudo:</p>
+<pre><code>    dnf install zlib</code></pre>
+<h4 id="macos-8">macOS</h4>
+<p>With macOS it should already be installed. If it is not you might have to do:</p>
+<pre><code>    xcode-select --install</code></pre>
+<p>and agree to the terms and conditions and proceed with the install.</p>
+<h5 id="macos-via-homebrew-6">macOS via Homebrew</h5>
+<p>Not applicable, see above.</p>
+<h5 id="macos-via-macports-6">macOS via MacPorts</h5>
+<p>Not applicable, see above.</p>
+<h4 id="debian-based-linux-8">Debian based Linux</h4>
+<p>Execute the following as root or via sudo:</p>
+<pre><code>    apt install zlib1g zlib1g-dev</code></pre>
+<p>and then try <code>make all</code> again.</p>
+<h4 id="other-linux-distributions-8">Other Linux distributions</h4>
+<p>Use your package manager to install the appropriate packages. Try the search
+feature of the package manager to determine which packages you need to install.
+Note that you might have to install both the library and the developmental
+packages: one for compiling and one for linking / running.</p>
+<h4 id="package-website-8">Package website</h4>
+<p>Go to the <a href="https://invisible-island.net/ncurses/">ncurses website</a> and follow their instructions
+for downloading, installing and using ncurses.</p>
+<p>We recommend trying a method suitable for your environment first, if possible.</p>
 <p>Jump to: <a href="#">top</a></p>
 <div id="faq4">
 <h2 id="section-4-changes-made-to-ioccc-entries">Section 4: Changes made to IOCCC entries</h2>
