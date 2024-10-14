@@ -45,8 +45,7 @@ command line is an abuse of [C Shell](https://en.wikipedia.org/wiki/C_shell).
 Please use [Bourne-family shells](https://en.wikipedia.org/wiki/Bourne_shell) to
 run this entry.
 
-... but in 2023 we changed the backticks to be the bash `$(..)` construct. This
-is not done in the author's remarks, however.
+... but in 2023 we changed the backticks to be the bash `$(..)` construct.
 
 
 ## Author's remarks:
@@ -58,7 +57,7 @@ manual input as below) ready and a program capable of showing [.pbm bitmap
 format](https://en.wikipedia.org/wiki/Netpbm) images.
 
 ``` <!---sh-->
-    ./deckmyn "`cat deckmyn.c`" "`cat example_greensleeves`" > greensleeves.pbm
+    ./deckmyn "$(cat deckmyn.c)" "$(cat example_greensleeves)" > greensleeves.pbm
 ```
 
 If you have macOS you can open the image like:
@@ -72,7 +71,7 @@ normally open an image.
 
 
 ``` <!---sh-->
-    ./deckmyn "`cat deckmyn.c`" "KF m44c4 c4 g4 g4 :  a4 a4 g2 :; " > short_bass.pbm
+    ./deckmyn "$(cat deckmyn.c)" "KF m44c4 c4 g4 g4 :  a4 a4 g2 :; " > short_bass.pbm
 ```
 
 If you have macOS you can open the image like:
@@ -101,7 +100,7 @@ The program expects *two command line arguments*. The first is a (very long)
 string that contains the complete music font. Note that it should *not* be given
 as a file name! The default music font is encoded in the (whitespace of the)
 source code [deckmyn.c](%%REPO_URL%%/2012/deckmyn/deckmyn.c) itself. Therefore, the first argument should
-be `"`` ` ``cat deckmyn.c`` ` ``"`.
+be `"$(cat deckmyn.c)"`.
 
 The second command line argument is the music itself. This is, again, a string,
 not a file name. All music signs are entered as tokens of exactly 3 characters.
