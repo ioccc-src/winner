@@ -4,7 +4,8 @@
     make
 ```
 
-This entry requires [Zlib](https://www.zlib.net).
+This entry requires [Zlib](https://www.zlib.net). See the
+FAQ on "[zlib](../../faq.html#zlib)".
 
 There is an alternate version which might work for Windows. See [Alternate
 code](#alternate-code) section below.
