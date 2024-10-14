@@ -54,14 +54,6 @@
             "entry_text" : "English words script for 1 through 13"
         },
         {
-            "file_path" : "try.alt.sh",
-            "inventory_order" : 100,
-            "OK_to_edit" : true,
-            "display_as" : "shellscript",
-            "display_via_github" : true,
-            "entry_text" : "script to try alternate code"
-        },
-        {
             "file_path" : "try.sh",
             "inventory_order" : 100,
             "OK_to_edit" : true,
