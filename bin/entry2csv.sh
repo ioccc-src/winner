@@ -118,7 +118,7 @@ shopt -s lastpipe	# explicitly run the last command of the pipe line in the curr
 
 # set variables referenced in the usage message
 #
-export VERSION="1.5.1 2024-10-10"
+export VERSION="1.6 2024-10-14"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -218,12 +218,12 @@ function output_award
     #
     PATTERN='$..award'
     if [[ $V_FLAG -ge 5 ]]; then
-	echo  "$0: debug[5]: about to run: $JVAL_WRAPPER -b -q -- $ENTRY_JSON_PATH '$PATTERN' | $JSTRDECODE -N -" 1>&2
+	echo  "$0: debug[5]: about to run: $JVAL_WRAPPER -b -q -- $ENTRY_JSON_PATH '$PATTERN'" 1>&2
     fi
-    "$JVAL_WRAPPER" -b -q "$ENTRY_JSON_PATH" "$PATTERN" | "$JSTRDECODE" -N -
+    "$JVAL_WRAPPER" -b -q "$ENTRY_JSON_PATH" "$PATTERN"
     status_codes=("${PIPESTATUS[@]}")
     if [[ ${status_codes[*]} =~ [1-9] ]]; then
-	echo "$0: ERROR: in output_award: $JVAL_WRAPPER -b -q -- $ENTRY_JSON_PATH '$PATTERN' | $JSTRDECODE -N - failed," \
+	echo "$0: ERROR: in output_award: $JVAL_WRAPPER -b -q -- $ENTRY_JSON_PATH '$PATTERN' failed," \
 	     "error codes: ${status_codes[*]}" 1>&2
 	return 5
     fi
