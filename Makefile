@@ -67,6 +67,7 @@ GEN_STATUS= bin/gen-status.sh
 GEN_SITEMAP= bin/gen-sitemap.sh
 SORT_GITIGNORE= bin/sort.gitignore.sh
 FIND_MISSING_LINKS= bin/find-missing-links.sh
+FIND_INVALID_JSON= bin/find-invalid-json.sh
 CSV2ENTRY= bin/csv2entry.sh
 ENTRY2CSV= bin/entry2csv.sh
 
@@ -278,7 +279,7 @@ clobber:
 
 .PHONY: help genpath genfilelist all_jfmt verify_entry_files gen_authors quick_authors \
 	gen_location quick_location gen_years find_missing_links test entry_index gen_top_html \
-	thanks gen_other_html quick_other_html quick_entry_index \
+	thanks gen_other_html quick_other_html quick_entry_index find_invalid_json \
 	gen_year_index quick_year_index quick_www www untar_entry_tarball untar_year_tarball \
 	form_entry_tarball form_year_tarball tar gen_status gen_sitemap \
 	sitemap timestamp update csv2entry entry2csv
@@ -326,6 +327,7 @@ help:
 	@echo 'make gen_next		;: generate the HTML files in next/'
 	@echo 'make quick_entry_index	;: build winner index.html files that might be out of date'
 	@echo 'make find_missing_links	;: find markdown links to missing local files'
+	@echo 'make find_invalid_json	;; find invalid JSON files'
 	@echo
 	@echo 'make test		;: summary of mostly harmless tests'
 	@echo
@@ -565,6 +567,14 @@ find_missing_links:
 	${FIND_MISSING_LINKS} -v 1
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
+# find invalid JSON files
+#
+find_invalid_json:
+	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	${FIND_INVALID_JSON} -v 1
+	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+
+
 # convert author_wins.csv, manifest.csv and year_prize.csv CSV files to
 # .entry.json files.
 #
@@ -598,6 +608,7 @@ test:
 	${MAKE} genfilelist
 	${MAKE} verify_entry_files
 	${MAKE} find_missing_links
+	${MAKE} find_invalid_json
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 
