@@ -30,14 +30,6 @@
             "entry_text" : "entry Makefile"
         },
         {
-            "file_path" : "kang.alt.c",
-            "inventory_order" : 40,
-            "OK_to_edit" : true,
-            "display_as" : "c",
-            "display_via_github" : true,
-            "entry_text" : "alternate source code"
-        },
-        {
             "file_path" : "kang.orig.c",
             "inventory_order" : 50,
             "OK_to_edit" : false,
@@ -46,28 +38,12 @@
             "entry_text" : "original source code"
         },
         {
-            "file_path" : "de.alt.sh",
-            "inventory_order" : 100,
-            "OK_to_edit" : true,
-            "display_as" : "shellscript",
-            "display_via_github" : true,
-            "entry_text" : "German words script for 1 through 13 for alternate code"
-        },
-        {
             "file_path" : "de.sh",
             "inventory_order" : 100,
             "OK_to_edit" : true,
             "display_as" : "shellscript",
             "display_via_github" : true,
             "entry_text" : "German words script for 1 through 13"
-        },
-        {
-            "file_path" : "en.alt.sh",
-            "inventory_order" : 100,
-            "OK_to_edit" : true,
-            "display_as" : "shellscript",
-            "display_via_github" : true,
-            "entry_text" : "English words script for 1 through 13 for alternate code"
         },
         {
             "file_path" : "en.sh",

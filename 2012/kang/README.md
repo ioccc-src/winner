@@ -4,9 +4,6 @@
     make
 ```
 
-There is alternate code which fixes some German at the expense of other German.
-See [Alternate code](#alternate-code) below for the (fun) rationale here.
-
 
 ## To use:
 
@@ -27,52 +24,6 @@ See [Alternate code](#alternate-code) below for the (fun) rationale here.
 
 How does it have no `u` or `o` in a string in the source code and yet it gets
 `uno` right?
-
-
-## Alternate code:
-
-This alternate code fixes the program that would throw off those who know German
-where the sound of 'V' is 'F' and so the program had the letter be 'F'. A
-problem, however, with changing it is that it breaks other words including in
-German. Thus there is the alternate version instead which fixes a problem for
-Germans that causes problems for Germans so if you're German you'll just have to
-deal with it :-) It also breaks other words too and this happens only for one
-letter change. With this one should hopefully be able to really appreciate the
-subtlety of this entry even more.
-
-
-### Alternate build:
-
-``` <!---sh-->
-    make alt
-```
-
-
-### Alternate use:
-
-``` <!---sh-->
-    echo "full spelling of an English cardinal numeral less than a quadrillion" | ./kang.alt
-
-    echo vier | ./kang.alt
-
-    echo uno | ./kang.alt
-```
-
-
-### Alternate try:
-
-``` <!---sh-->
-    ./try.alt.sh # try various languages
-
-    ./en.alt.sh # English 0 through 13
-
-    ./de.alt.sh # German 0 through 13 with both umlauts and without (additional 'e')
-```
-
-What does it get right? What does it get wrong? How does it compare to the
-original entry without the change of `f` to `v`?
-
-Finally why does it get wrong what it gets wrong?
 
 
 ## Judges' remarks:
@@ -99,6 +50,10 @@ correctly reports 500 but:
 ```
 
 does not report 100, instead printing 0?
+
+Also, can you get the program to use the proper `V` in German instead of `F`,
+for `vier` (four)? In other words, can you get it to use `vier` instead of
+`fier`? What happens if you do do this?
 
 
 ## Author's remarks:
