@@ -14,7 +14,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: clone mkiocccentry
-      run: git clone https://github.com/ioccc-src/mkiocccentry
+    - run: git clone https://github.com/ioccc-src/mkiocccentry
     - name: install jparse
     - run: cd mkiocccentry && make all && cd jparse && sudo make all install
     - name: remove mkiocccentry
