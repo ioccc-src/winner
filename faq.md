@@ -3895,8 +3895,8 @@ packages: one for compiling and one for linking / running.
 
 #### Package website
 
-Go to the [ncurses website](https://invisible-island.net/ncurses/) and follow their instructions
-for downloading, installing and using ncurses.
+Go to the [zlib website](https://www.zlib.net) and follow their instructions
+for downloading, installing and using zlib.
 
 We recommend trying a method suitable for your environment first, if possible.
 
