@@ -60,7 +60,7 @@ And if you have lots of spare time, you can recurse one level deeper:
 
 We (the judges) recommend that you spend some time studying this
 entry as it surely will make the 'best of the IOCCC' list.  It was
-very well received by those who attended the IOCCC BOF.
+very well received by those who attended the [IOCCC BOF](../../faq.html#ioccc_bof).
 
 
 ## Author's remarks:

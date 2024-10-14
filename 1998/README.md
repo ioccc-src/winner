@@ -65,7 +65,8 @@ entry](banks/index.html).
 - The judges were amused that for the first time we received an entry
   that caused gcc to give the assembler bad input in some cases.
 - The `poot` entries ([dlowe](dlowe/index.html),
-[dloweneil](dloweneil/index.html) got a good laugh from the USENIX IOCCC BOF (Birds Of a Feather) crowd.
+[dloweneil](dloweneil/index.html) got a good laugh from the [USENIX IOCCC BOF
+&lparen;Birds Of a Feather&rparen;](../faq.html#ioccc_bof) crowd.
 - Those with Functional Programming knowledge as well as those
   impressed with CPP code expansion like [the entry that translates
   lambda expressions into combinator expressions](fanf/index.html).
