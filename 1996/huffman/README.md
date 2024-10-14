@@ -47,7 +47,7 @@ If you get stuck, come back and run the following command:
     ./huffman < huffman.c 2>/dev/null
 ```
 
-This entry was very well received at the IOCCC BOF.
+This entry was very well received at the [IOCCC BOF](../../faq.html#ioccc_bof).
 
 
 ## Author's remarks:

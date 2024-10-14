@@ -61,7 +61,8 @@ appropriately. Try:
 `perl(1)` installed to show how the output is the same as
 [schweikh2.c](%%REPO_URL%%/1996/schweikh2/schweikh2.c) itself.
 
-This entry was another crowd pleaser at the IOCCC BOF.
+This entry was another crowd pleaser at the [IOCCC
+BOF](../../faq.html#ioccc_bof).
 
 
 ## Author's remarks:
