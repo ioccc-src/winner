@@ -3528,22 +3528,17 @@ The author also stated:
 ### Source code: [2013/endoh1/endoh1.c](%%REPO_URL%%/2013/endoh1/endoh1.c)
 ### Information: [2013/endoh1/index.html](2013/endoh1/index.html)
 
-From the author:
-
---
-
-This program supports only "Combinator-calculus style notation" of Lazy K.
+> This program supports only "Combinator-calculus style notation" of Lazy K.
 "Unlambda style" and "Iota and Jot" style are not supported.
+>
 
-Also, it requires a space between identifiers.  In short, use `(S K)` instead of
-`(SK)`, "\`sk", **i*i*i*ii*i*i*ii`, or `11111100011100`.
-
-Huge memory may be required to compile the program (about 300 MB on my machine).
-
-In addition, there are some limitations (and workarounds) mentioned in the
+> Also, it requires a space between identifiers.  In short, use `(S K)` instead of
+> `(SK)`, "\`sk", `**i*i*i*ii*i*i*ii`, or `11111100011100`.
+>
+> Huge memory may be required to compile the program (about 300 MB on my machine).
+>
+>In addition, there are some limitations (and workarounds) mentioned in the
 [obfuscation section](2013/endoh1/index.html#obfuscation).
-
---
 
 
 <div id="2013_endoh3">
@@ -3556,16 +3551,12 @@ In addition, there are some limitations (and workarounds) mentioned in the
 
 From the author:
 
---
-
-You can *NOT* write a note length immediately followed by a note `E`,
-such as `C2E2`.
-
-Can you figure out why?
-
-A workaround is inserting a whitespace: `C2 E2`.
-
---
+> You can *NOT* write a note length immediately followed by a note `E`, such as
+`C2E2`.
+>
+> Can you figure out why?
+>
+> A workaround is inserting a whitespace: `C2 E2`.
 
 
 <div id="2013_endoh4">
@@ -3577,7 +3568,6 @@ A workaround is inserting a whitespace: `C2 E2`.
 ### Information: [2013/endoh4/index.html](2013/endoh4/index.html)
 
 Invalid input files will very likely crash the program.
-
 
 
 <div id="2013_hou">
@@ -3623,31 +3613,23 @@ it out as a known limitation it is not a bug but a feature.
 ### Source code: [2014/maffiodo1/prog.c](%%REPO_URL%%/2014/maffiodo1/prog.c)
 ### Information: [2014/maffiodo1/index.html](2014/maffiodo1/index.html)
 
-The author noted that in macOS the colours might be wrong. They gave a solution.
-However Cody didn't see any problem with it and he beat the series many times.
-Of course the game here is small and he's practically blind and it's been a
-while since he last played so it might be wrong. Nevertheless the author does
-give a way to reconfigure the colours.
+The author noted that in macOS the colours might be wrong and gives a solution,
+though it is unclear if this is still true or if there was any problem at all.
 
 The author noted that the character cannot go through walls and the impression
-is that this is how it was believed but Cody ironically pointed out that there
-are known glitches where in some places you actually could go through walls.
-This might even have applied to the arcade version, Mario Bros, though that can
-no longer be confirmed by Cody. The point here is that in this game you cannot
-go through walls but it's not a bug.
+is that this is how it was believed but someone did ironically point out that
+there are known glitches where in some places you actually could go through
+walls.  This might even have applied to the arcade version, Mario Bros, though
+that can no longer be confirmed by said person. The point here is that in this
+game you cannot go through walls but it's not a bug.
 
 On the other hand, the author also stated:
 
---
-
-When the `Super character` becomes bigger (`ZOOM` flag), the character can
+> When the `Super character` becomes bigger (`ZOOM` flag), the character can
 collide with blocks and get stuck inside them. This is a KNOWN BUG. When your
 player become bigger, stay away from blocks!
 
-
---
-
-but since it's documented it's considered a feature, not a bug to fix.
+..  but since it's documented it's considered a feature, not a bug to fix.
 
 
 <div id="2014_maffiodo2">

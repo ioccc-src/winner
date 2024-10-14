@@ -67,6 +67,8 @@ This is FAQ version **28.0.4 2024-08-24**.
 - <a class="normal" href="#faq3_21">3.21 - What are `try.sh` and `try.alt.sh` scripts and why should I use them?</a>
 - <a class="normal" href="#faq3_22">3.22 - Are there any compiler warnings that I should not worry about?</a>
 - <a class="normal" href="#faq3_23">3.23 - How do I compile an IOCCC entry that requires zlib?</a>
+- <a class="normal" href="#faq3_24">3.24 - How do I install Ruby for entries that require it?</a>
+- <a class="normal" href="#faq3_25">3.25 - How do I install rake for entries that require it?</a>
 
 
 ## Section  4 - [Changes made to IOCCC entries](#faq4)
@@ -3902,13 +3904,53 @@ We recommend trying a method suitable for your environment first, if possible.
 
 Jump to: [top](#)
 
+<div id="faq3_24">
+<div id="ruby">
+### FAQ 3.24: How do I install Ruby for entries that require it?
+</div>
+</div>
+
+Please see the [official Ruby installation
+guide](https://www.ruby-lang.org/en/documentation/installation/).
+
+Jump to: [top](#)
+
+<div id="faq3_25">
+<div id="rake">
+### FAQ 3.25: How do I install rake for entries that require it?
+</div>
+</div>
+
+First, if `gem` is not installed, see the [gem GitHub repo
+](https://github.com/rubygems/rubygems).
+
+Assuming you have `git(1)` installed, you can do:
+
+``` <!---sh-->
+    git clone https://github.com/rubygems/rubygems
+    cd rubygems && exe/gem install rake
+```
+
+Otherwise, you can download the zip file, extract it, cd to the directory and
+then run:
+
+``` <!---sh-->
+    exe/gem install rake
+```
+
+Once this is done, try as root or via `sudo`:
+
+``` <!---sh-->
+    gem install rake
+```
+
+Jump to: [top](#)
 
 <div id="faq4">
 ## Section 4: Changes made to IOCCC entries
 </div>
 
 Jump to: [top](#)
-
 
 <div id="faq4_0">
 <div id="author_remarks">
@@ -3996,7 +4038,7 @@ Jump to: [top](#)
 
 We have set up make rules to easily do see what was changed in the winning IOCCC
 entry source.  Using the `Makefile` in the entry directory, use
-one of the following _make(1)_ rules:
+one of the following `make(1)` rules:
 
 The following `make` rules exist to make a difference:
 

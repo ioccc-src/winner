@@ -529,7 +529,7 @@ origin of each file is detailed below (character, game, company, year).
 
 * [belmont.txt](belmont.txt) - [Simon
 Belmont](https://en.wikipedia.org/wiki/Simon_Belmont),
-[Castlevania](https://en.wikipedia.org/wiki/Castlevania_&lpar;1986_video_game&rpar;),
+[Castlevania](https://en.wikipedia.org/wiki/Castlevania_(1986_video_game)),
 [Konami](https://en.wikipedia.org/wiki/Konami), 1986.
 
 * [bloober.txt](bloober.txt) - Bloober, [Super Mario
@@ -547,8 +547,7 @@ Brothers 3](https://www.mariowiki.com/Super_Mario_Bros._3), Nintendo, 1988.
 Bobble](https://en.wikipedia.org/wiki/Bubble_Bobble), Taito, 1986.
 
 * [cheepcheep.txt](cheepcheep.txt) - [Cheep
-Cheep](https://www.mariowiki.com/Cheep_Cheep), Super Mario Brothers, Nintendo,
-1985.
+Cheep](https://www.mariowiki.com/Cheep_Cheep), Super Mario Brothers, Nintendo, 1985.
 
 * [gurin.txt](gurin.txt) - Gurin, [Binary
 Land](https://en.wikipedia.org/wiki/Binary_Land), Hudson, 1983.
@@ -568,16 +567,18 @@ Pac-Man](https://pacman.fandom.com/wiki/Ms._Pac-Man) and Ghost, Ms. Pac-Man,
 [Midway](https://en.wikipedia.org/wiki/Midway_Games), 1982.
 
 * [paranaplant.txt](paranaplant.txt) - [Piranha
-Plant](https://www.mariowiki.com/Piranha_Plant), Super Mario Brothers, Nintendo,
-1985.
+Plant](https://www.mariowiki.com/Piranha_Plant), Super Mario Brothers, Nintendo, 1985.
 
 * [samus.txt](samus.txt) - [Samus
 Aran](https://metroid.fandom.com/wiki/Samus_Aran),
-[Metroid](https://metroid.fandom.com/wiki/Metroid_&lpar;game&rpar;), Nintendo/[Intelligent
+[Metroid](https://metroid.fandom.com/wiki/Metroid_&lpar;game&rpar;),
+Nintendo/[Intelligent
 Systems](https://en.wikipedia.org/wiki/Intelligent_Systems), 1986.
 
 * [toad.txt](toad.txt) - [Toad](https://www.mariowiki.com/Toad), Super Mario
 Brothers 2, Nintendo, 1987.
+
+<hr>
 
 The origin of the remaining files are described below:
 
@@ -585,8 +586,9 @@ The origin of the remaining files are described below:
 [smiley](https://en.wikipedia.org/wiki/Smiley); original trademark of smiley
 [Smiley Company](https://en.wikipedia.org/wiki/The_Smiley_Company).
 
-* [snoo.txt](snoo.txt) - 8-bit version of [Snoo](https://www.reddit.com/r/Snoo/),
-[Reddit](https://www.reddit.com)'s alien mascot.
+* [snoo.txt](snoo.txt) - 8-bit version of
+[Snoo](https://www.reddit.com/r/Snoo/), [Reddit](https://www.reddit.com)'s alien
+mascot.
 
 
 <!--
