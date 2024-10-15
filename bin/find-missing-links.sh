@@ -133,14 +133,15 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir]
 	-d topdir	set topdir (def: $TOPDIR)
 
 Exit codes:
-     0         all OK
-     1	       missing links found
-     2         -h and help string printed or -V and version string printed
-     3         command line error
-     4         bash version is too old
-     6	       problems found with or in the topdir or topdir/YYYY directory
-     7	       problems found with or in the entry topdir/YYYY/dir directory
- >= 10         internal error
+     0		all OK
+     1		missing links found
+     2		-h and help string printed or -V and version string printed
+     3		command line error
+     4		bash version is too old
+     5		git not installed or not in \$PATH
+     6		problems found with or in the topdir or topdir/YYYY directory
+     7		problems found with or in the entry topdir/YYYY/dir directory
+ >= 10		internal error
 
 $NAME version: $VERSION"
 
