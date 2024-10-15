@@ -76,7 +76,7 @@ From the Makefile:
                     # NOTE: The string MUST be enclosed inside double quotes.
 ```
 
-WARNING: if you have good eye-hand coordination and too much time on your hands
+**WARNING**: if you have good eye-hand coordination and too much time on your hands
 you might fall asleep while playing as you probably will never die in this mode.
 We only stopped when a reminder came through and we tried to mark it complete at
 the same time as playing and we almost managed to survive that. At that point we

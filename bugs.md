@@ -3704,6 +3704,17 @@ they will properly get:
 <hr style="width:10%;text-align:left;margin-left:0">
 
 
+<div id="2015_duble">
+## 2015/duble
+</div>
+
+### STATUS: INABIAF - please **DO NOT** fix
+### Source code: [2015/duble/prog.c](%%REPO_URL%%/2015/duble/prog.c)
+### Information: [2015/duble/index.html](2015/duble/index.html)
+
+This program is known to, in some cases, segfault, and as the judges and the
+author noted this, it should not be fixed.
+
 
 <div id="2015_hou">
 ## 2015/hou
@@ -3715,27 +3726,24 @@ they will properly get:
 
 The author stated:
 
---
-
-Hard requirements:
-
-* The platform must implement the `double` type as IEEE754-compliant 64-bit
+> Hard requirements:
+>
+> * The platform must implement the `double` type as IEEE754-compliant 64-bit
 floating point numbers.  The 80-bit intermediate format used by x87 is
 considered as an violation of this. The code should print an error message on
 such platforms.
-
-* The program must start with the CPU / FPU in round-to-nearest mode.
-
-Soft requirements:
-
-* The compiler must respect `volatile`. The code is formatted to warn about
+>
+> * The program must start with the CPU / FPU in round-to-nearest mode.
+>
+> Soft requirements:
+>
+> * The compiler must respect `volatile`. The code is formatted to warn about
 that, though.
-
-* The printed result is only correct on little-endian machines. The program
+>
+> * The printed result is only correct on little-endian machines. The program
 takes care to warn about this issue after printing an incorrect big-endian
 result. Error messages become garbled, though.
 
---
 
 <div id="2015_howe">
 ## 2015/howe
@@ -3792,15 +3800,11 @@ uncertain if it should be.
 
 The author also stated:
 
---
-
-While the program works best when bytes/characters are octets and the
-number of bits in a type is `sizeof(typ) << 3`, it will work correctly
-on 24-bit or 36-bit systems with 9 bits/byte, or systems where
-`sizeof(typ)` is 1 even for `int` and so on. On such systems, it will only
-use `8 * sizeof(typ)` bits per place. It does not work when `CHAR_BIT <= 7`.
-
---
+> While the program works best when bytes/characters are octets and the number
+of bits in a type is `sizeof(typ) << 3`, it will work correctly on 24-bit or
+36-bit systems with 9 bits/byte, or systems where `sizeof(typ)` is 1 even for
+`int` and so on. On such systems, it will only use `8 * sizeof(typ)` bits per
+place. It does not work when `CHAR_BIT <= 7`.
 
 
 <hr style="width:10%;text-align:left;margin-left:0">

@@ -2961,14 +2961,22 @@ rely on the entry as the below shows. One should be able to do:</p>
 <h1 id="section-31">2015</h1>
 </div>
 <hr style="width:10%;text-align:left;margin-left:0">
+<div id="2015_duble">
+<h2 id="duble">2015/duble</h2>
+</div>
+<h3 id="status-inabiaf---please-do-not-fix-77">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
+<h3 id="source-code-2015dubleprog.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/duble/prog.c">2015/duble/prog.c</a></h3>
+<h3 id="information-2015dubleindex.html">Information: <a href="2015/duble/index.html">2015/duble/index.html</a></h3>
+<p>This program is known to, in some cases, segfault, and as the judges and the
+author noted this, it should not be fixed.</p>
 <div id="2015_hou">
 <h2 id="hou-1">2015/hou</h2>
 </div>
-<h3 id="status-inabiaf---please-do-not-fix-77">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
+<h3 id="status-inabiaf---please-do-not-fix-78">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <h3 id="source-code-2015houprog.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/hou/prog.c">2015/hou/prog.c</a></h3>
 <h3 id="information-2015houindex.html">Information: <a href="2015/hou/index.html">2015/hou/index.html</a></h3>
 <p>The author stated:</p>
-<p>–</p>
+<blockquote>
 <p>Hard requirements:</p>
 <ul>
 <li><p>The platform must implement the <code>double</code> type as IEEE754-compliant 64-bit
@@ -2985,7 +2993,7 @@ that, though.</p></li>
 takes care to warn about this issue after printing an incorrect big-endian
 result. Error messages become garbled, though.</p></li>
 </ul>
-<p>–</p>
+</blockquote>
 <div id="2015_howe">
 <h2 id="howe">2015/howe</h2>
 </div>
@@ -3008,7 +3016,7 @@ because it is the same thing as the other, just updated to use <code>prog.alt</c
 <div id="2015_mills2">
 <h2 id="mills2">2015/mills2</h2>
 </div>
-<h3 id="status-inabiaf---please-do-not-fix-78">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
+<h3 id="status-inabiaf---please-do-not-fix-79">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <h3 id="source-code-2015mills2prog.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/mills2/prog.c">2015/mills2/prog.c</a></h3>
 <h3 id="information-2015mills2index.html">Information: <a href="2015/mills2/index.html">2015/mills2/index.html</a></h3>
 <p>The program doesn’t look at the header of files so if it’s passed something hat
@@ -3017,19 +3025,19 @@ is not compressed data it’s likely to crash.</p>
 <div id="2015_schweikhardt">
 <h2 id="schweikhardt">2015/schweikhardt</h2>
 </div>
-<h3 id="status-inabiaf---please-do-not-fix-79">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
+<h3 id="status-inabiaf---please-do-not-fix-80">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <h3 id="source-code-2015schweikhardtprog.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/schweikhardt/prog.c">2015/schweikhardt/prog.c</a></h3>
 <h3 id="information-2015schweikhardtindex.html">Information: <a href="2015/schweikhardt/index.html">2015/schweikhardt/index.html</a></h3>
 <p>The program assumes that <code>EOF</code> is <code>-1</code>. This can be fixed but at this time it is
 uncertain if it should be.</p>
 <p>The author also stated:</p>
-<p>–</p>
-<p>While the program works best when bytes/characters are octets and the
-number of bits in a type is <code>sizeof(typ) &lt;&lt; 3</code>, it will work correctly
-on 24-bit or 36-bit systems with 9 bits/byte, or systems where
-<code>sizeof(typ)</code> is 1 even for <code>int</code> and so on. On such systems, it will only
-use <code>8 * sizeof(typ)</code> bits per place. It does not work when <code>CHAR_BIT &lt;= 7</code>.</p>
-<p>–</p>
+<blockquote>
+<p>While the program works best when bytes/characters are octets and the number
+of bits in a type is <code>sizeof(typ) &lt;&lt; 3</code>, it will work correctly on 24-bit or
+36-bit systems with 9 bits/byte, or systems where <code>sizeof(typ)</code> is 1 even for
+<code>int</code> and so on. On such systems, it will only use <code>8 * sizeof(typ)</code> bits per
+place. It does not work when <code>CHAR_BIT &lt;= 7</code>.</p>
+</blockquote>
 <hr style="width:10%;text-align:left;margin-left:0">
 <div id="2016">
 <h1 id="section-32">2016</h1>
@@ -3050,7 +3058,7 @@ use <code>8 * sizeof(typ)</code> bits per place. It does not work when <code>CHA
 <div id="2018_algmyr">
 <h2 id="algmyr">2018/algmyr</h2>
 </div>
-<h3 id="status-inabiaf---please-do-not-fix-80">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
+<h3 id="status-inabiaf---please-do-not-fix-81">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <h3 id="source-code-2018algmyrprog.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/algmyr/prog.c">2018/algmyr/prog.c</a></h3>
 <h3 id="information-2018algmyrindex.html">Information: <a href="2018/algmyr/index.html">2018/algmyr/index.html</a></h3>
 <p>The author wrote:</p>
@@ -3069,7 +3077,7 @@ loop printing whitespace.</li>
 <div id="2018_hou">
 <h2 id="hou-2">2018/hou</h2>
 </div>
-<h3 id="status-inabiaf---please-do-not-fix-81">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
+<h3 id="status-inabiaf---please-do-not-fix-82">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <h3 id="source-code-2018houprog.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/hou/prog.c">2018/hou/prog.c</a></h3>
 <h3 id="information-2018houindex.html">Information: <a href="2018/hou/index.html">2018/hou/index.html</a></h3>
 <p>When you run it on a JSON file you will see something like:</p>
@@ -3094,7 +3102,7 @@ likely see:</p>
 <p>where <code>[]</code> is the cursor. When this happens if you hit enter (this is necessary
 or else it’ll happen again) and then exit again (ctrl-e) and run <code>prog</code> again
 it’ll be okay.</p>
-<h3 id="status-inabiaf---please-do-not-fix-82">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
+<h3 id="status-inabiaf---please-do-not-fix-83">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <p>The author stated that if you make a typo it can happen that the boot loader can
 crash and halt. If this is the case type ctrl-e to quit the emulator and try
 again.</p>
@@ -3109,7 +3117,7 @@ in the case of compiled code it won’t be executable).</p>
 <div id="2018_vokes">
 <h2 id="vokes">2018/vokes</h2>
 </div>
-<h3 id="status-inabiaf---please-do-not-fix-83">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
+<h3 id="status-inabiaf---please-do-not-fix-84">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <h3 id="source-code-2018vokesprog.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/vokes/prog.c">2018/vokes/prog.c</a></h3>
 <h3 id="information-2018vokesindex.html">Information: <a href="2018/vokes/index.html">2018/vokes/index.html</a></h3>
 <p>The author wrote the following:</p>
@@ -3159,7 +3167,7 @@ this program has nothing to do with a hand.</p></li>
 <div id="2019_adamovsky">
 <h2 id="adamovsky">2019/adamovsky</h2>
 </div>
-<h3 id="status-inabiaf---please-do-not-fix-84">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
+<h3 id="status-inabiaf---please-do-not-fix-85">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <h3 id="source-code-2019adamovskyprog.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/adamovsky/prog.c">2019/adamovsky/prog.c</a></h3>
 <h3 id="information-2019adamovskyindex.html">Information: <a href="2019/adamovsky/index.html">2019/adamovsky/index.html</a></h3>
 <p>Certain input can crash this program. The file
@@ -3167,7 +3175,7 @@ this program has nothing to do with a hand.</p></li>
 <div id="2019_burton">
 <h2 id="burton">2019/burton</h2>
 </div>
-<h3 id="status-inabiaf---please-do-not-fix-85">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
+<h3 id="status-inabiaf---please-do-not-fix-86">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <h3 id="source-code-2019burtonprog.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/burton/prog.c">2019/burton/prog.c</a></h3>
 <h3 id="information-2019burtonindex.html">Information: <a href="2019/burton/index.html">2019/burton/index.html</a></h3>
 <p>The author pointed out that some implementations of <code>wc(1)</code> show different
@@ -3175,7 +3183,7 @@ values but his implementation matches that of macOS and FreeBSD.</p>
 <div id="2019_ciura">
 <h2 id="ciura">2019/ciura</h2>
 </div>
-<h3 id="status-inabiaf---please-do-not-fix-86">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
+<h3 id="status-inabiaf---please-do-not-fix-87">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <h3 id="source-code-2019ciuraprog.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/ciura/prog.c">2019/ciura/prog.c</a></h3>
 <h3 id="information-2019ciuraindex.html">Information: <a href="2019/ciura/index.html">2019/ciura/index.html</a></h3>
 <p><a href="authors.html#Cody_Boone_Ferguson">Cody Boone Ferguson</a> fixed the scripts so
@@ -3207,9 +3215,9 @@ in the de.sh/de.alt.sh scripts:</p>
 FAQ on “<a href="faq.html#gets">gets and fgets</a>”
 for more information on the change to <code>fgets(3)</code>.</p>
 <div id="2019_duble">
-<h2 id="duble">2019/duble</h2>
+<h2 id="duble-1">2019/duble</h2>
 </div>
-<h3 id="status-inabiaf---please-do-not-fix-87">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
+<h3 id="status-inabiaf---please-do-not-fix-88">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <h3 id="source-code-2019dubleprog.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/duble/prog.c">2019/duble/prog.c</a></h3>
 <h3 id="information-2019dubleindex.html">Information: <a href="2019/duble/index.html">2019/duble/index.html</a></h3>
 <p>There are two things to be aware of with this entry.</p>
@@ -3238,7 +3246,7 @@ in the directory:</p>
 <div id="2019_endoh">
 <h2 id="endoh">2019/endoh</h2>
 </div>
-<h3 id="status-inabiaf---please-do-not-fix-88">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
+<h3 id="status-inabiaf---please-do-not-fix-89">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <h3 id="source-code-2019endohprog.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/endoh/prog.c">2019/endoh/prog.c</a></h3>
 <h3 id="information-2019endohindex.html">Information: <a href="2019/endoh/index.html">2019/endoh/index.html</a></h3>
 <p>As a backtrace quine this entry is <strong>SUPPOSED to segfault</strong> so this should not be
@@ -3246,7 +3254,7 @@ touched either.</p>
 <div id="2019_karns">
 <h2 id="karns">2019/karns</h2>
 </div>
-<h3 id="status-inabiaf---please-do-not-fix-89">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
+<h3 id="status-inabiaf---please-do-not-fix-90">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <h3 id="source-code-2019karnsprog.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/karns/prog.c">2019/karns/prog.c</a></h3>
 <h3 id="information-2019karnsindex.html">Information: <a href="2019/karns/index.html">2019/karns/index.html</a></h3>
 <p>The author stated the following:</p>
@@ -3276,7 +3284,7 @@ touched either.</p>
 <div id="2019_lynn">
 <h2 id="lynn">2019/lynn</h2>
 </div>
-<h3 id="status-inabiaf---please-do-not-fix-90">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
+<h3 id="status-inabiaf---please-do-not-fix-91">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <h3 id="source-code-2019lynnprog.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/lynn/prog.c">2019/lynn/prog.c</a></h3>
 <h3 id="information-2019lynnindex.html">Information: <a href="2019/lynn/index.html">2019/lynn/index.html</a></h3>
 <p>The author wrote that there are a number of differences from what one might
@@ -3286,7 +3294,7 @@ remarks in the sections <a href="2019/lynn/index.html#syntax">Syntax</a> and
 <div id="2019_mills">
 <h2 id="mills-2">2019/mills</h2>
 </div>
-<h3 id="status-inabiaf---please-do-not-fix-91">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
+<h3 id="status-inabiaf---please-do-not-fix-92">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <h3 id="source-code-2019millsprog.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/mills/prog.c">2019/mills/prog.c</a></h3>
 <h3 id="information-2019millsindex.html">Information: <a href="2019/mills/index.html">2019/mills/index.html</a></h3>
 <p>The author wrote that if you decide to change networks or use a different input
@@ -3306,7 +3314,7 @@ a crash.</p>
 <div id="2019_poikola">
 <h2 id="poikola">2019/poikola</h2>
 </div>
-<h3 id="status-inabiaf---please-do-not-fix-92">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
+<h3 id="status-inabiaf---please-do-not-fix-93">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <h3 id="source-code-2019poikolaprog.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/poikola/prog.c">2019/poikola/prog.c</a></h3>
 <h3 id="information-2019poikolaindex.html">Information: <a href="2019/poikola/index.html">2019/poikola/index.html</a></h3>
 <p>This program will not validate input so it might fail or get stuck if invoked
@@ -3315,7 +3323,7 @@ erroneously.</p>
 <div id="2019_yang">
 <h2 id="yang">2019/yang</h2>
 </div>
-<h3 id="status-inabiaf---please-do-not-fix-93">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
+<h3 id="status-inabiaf---please-do-not-fix-94">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <h3 id="source-code-2019yangprog.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/yang/prog.c">2019/yang/prog.c</a></h3>
 <h3 id="information-2019yangindex.html">Information: <a href="2019/yang/index.html">2019/yang/index.html</a></h3>
 <p>The author noted that if the program runs out of memory it is likely to crash.</p>
@@ -3330,7 +3338,7 @@ ignored except line feeds (preserved) and tabs (expanded to 8 spaces).’</p>
 <div id="2020_burton">
 <h2 id="burton-1">2020/burton</h2>
 </div>
-<h3 id="status-inabiaf---please-do-not-fix-94">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
+<h3 id="status-inabiaf---please-do-not-fix-95">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <h3 id="source-code-2020burtonprog.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/burton/prog.c">2020/burton/prog.c</a></h3>
 <h3 id="information-2020burtonindex.html">Information: <a href="2020/burton/index.html">2020/burton/index.html</a></h3>
 <p>This entry is known to crash if no arg is specified. Although easy to fix it is
@@ -3341,7 +3349,7 @@ either. But can you figure out why this happens?</p>
 <div id="2020_carlini">
 <h2 id="carlini">2020/carlini</h2>
 </div>
-<h3 id="status-inabiaf---please-do-not-fix-95">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
+<h3 id="status-inabiaf---please-do-not-fix-96">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <h3 id="source-code-2020carliniprog.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/carlini/prog.c">2020/carlini/prog.c</a></h3>
 <h3 id="information-2020carliniindex.html">Information: <a href="2020/carlini/index.html">2020/carlini/index.html</a></h3>
 <p>The author stated that bad things happen if the entered move is outside of the
@@ -3355,7 +3363,7 @@ move.</p>
 <div id="2020_ferguson1">
 <h2 id="ferguson1">2020/ferguson1</h2>
 </div>
-<h3 id="status-inabiaf---please-do-not-fix-96">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
+<h3 id="status-inabiaf---please-do-not-fix-97">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <h3 id="source-code-2020ferguson1prog.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/ferguson1/prog.c">2020/ferguson1/prog.c</a></h3>
 <h3 id="information-2020ferguson1index.html">Information: <a href="2020/ferguson1/index.html">2020/ferguson1/index.html</a></h3>
 <p>There are some things that might appear to be bugs but are actually features or
@@ -3365,7 +3373,7 @@ things that are misinterpreted as bugs. See the
 <div id="2020_giles">
 <h2 id="giles">2020/giles</h2>
 </div>
-<h3 id="status-inabiaf---please-do-not-fix-97">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
+<h3 id="status-inabiaf---please-do-not-fix-98">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <h3 id="source-code-2020gilesprog.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/giles/prog.c">2020/giles/prog.c</a></h3>
 <h3 id="information-2020gilesindex.html">Information: <a href="2020/giles/index.html">2020/giles/index.html</a></h3>
 <p>The author noted that the program only supports WAV files that have
@@ -3374,7 +3382,7 @@ audio channels.</p>
 <div id="2020_otterness">
 <h2 id="otterness">2020/otterness</h2>
 </div>
-<h3 id="status-inabiaf---please-do-not-fix-98">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
+<h3 id="status-inabiaf---please-do-not-fix-99">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <h3 id="source-code-2020otternessprog.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/otterness/prog.c">2020/otterness/prog.c</a></h3>
 <h3 id="information-2020otternessindex.html">Information: <a href="2020/otterness/index.html">2020/otterness/index.html</a></h3>
 <p>The author listed the following limitations:</p>

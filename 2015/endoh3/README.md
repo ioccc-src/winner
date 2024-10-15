@@ -14,7 +14,7 @@
 
 ## Try:
 
-To see the original [mullender](%%REPO_URL%%/2015/endoh3/mullender.c) in action:
+To see the original [mullender](../../1984/mullender/index.html) in action:
 
 ``` <!---sh-->
     ./try.sh

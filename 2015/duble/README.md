@@ -8,6 +8,15 @@ There is an alternate version of this entry, discussed in the author's remarks.
 See [Alternate code](#alternate-code) below.
 
 
+### Bugs and (Mis)features:
+
+The current status of this entry is:
+
+> **STATUS: INABIAF - please DO NOT fix**
+
+For more detailed information see [2015/duble in bugs.html](../../bugs.html#2015_duble).
+
+
 ## To use:
 
 ``` <!---sh-->

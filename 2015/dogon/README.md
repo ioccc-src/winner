@@ -70,11 +70,8 @@ Press the ESC key.
 The author suggested that one change `q` to `0x82000820000000` instead of
 `0x820008202625a0` to see a bug that they avoided, writing:
 
-```
-    To see this bug in action change the assignment above
-    to q=0x82000820000000`, and look towards the negative
-    direction of the main tunnel.
-```
+> To see this bug in action change the assignment above to `q=0x82000820000000`,
+and look towards the negative direction of the main tunnel.
 
 This alt version does this for you.
 
@@ -107,7 +104,7 @@ Can you find your way around either and understand where you are?
 How many function keys does your keyboard have?  Can you generate very high
 number function keys such as F30 or F31?  :-)
 
-*Textures? We don't need no stinking textures.*
+_Textures? We don't need no stinking textures._
 
 
 ## Author's remarks:
@@ -184,7 +181,7 @@ the following:
 
 ### Precision issues:
 
-The entry, on purpose, (see the section about SIMD below) does not use enough
+The entry, on purpose (see the section about SIMD below), does not use enough
 bits of precision, so sometimes the ray will miss the intersection of two voxel
 faces and push on through. That's why you may notice some noise along close up
 voxel edges. Fixing this issue would have taken the entry over the size limit

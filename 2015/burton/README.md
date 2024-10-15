@@ -4,6 +4,10 @@
     make
 ```
 
+There is an alternate version which the author discusses in their
+[prog.c vs prog.alt.c](#prog.c-vs-prog.alt.c) section. See [Alternate
+code](#alternate-code) below.
+
 
 ## To use:
 
@@ -89,7 +93,7 @@ written on an `iDevice`), but sanity prevailed.
 
 Printed in 8 pt Courier, it makes aesthetically pleasing 8.5 x 11 wall art.
 
-[1]: ../../2011/hou/hint.html "Hou Qiming"
+[1]: ../../2011/hou/index.html "Hou Qiming"
 
 ### prog.c vs prog.alt.c
 
