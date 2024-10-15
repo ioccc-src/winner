@@ -34,8 +34,8 @@ The parameters to the program are:
 6. Sprites image height.
 7. Filename of the sprites image (raw RGBA image).
 8. Filename of the music (WAVE 8000 Hz 8bit Mono).
-9. Sky color. This number depends on the system where you run the program. See
-note on macOS.
+9. Sky color. This number depends on the system where you run the program. [See
+note on macOS](#running-under-macos).
 
 
 ## Try:
@@ -50,7 +50,7 @@ If you end up telnetting to the server (feature of [mario.sh](%%REPO_URL%%/2014/
 try:
 
 
-```
+``` <!---sh-->
     ls # show files including games
     wumpus.bas # play Hunt the Wumpus
     advent.gam # you know what this is! :-)
@@ -135,9 +135,6 @@ dies or loses its powers.
 
 ###  Running under macOS
 
-[NOTE: this seems to no longer be the case as of 2023 and most likely much
-earlier. However one can change the look of the game doing this anyway:]
-
 The color of the sky is wrong on macOS. You need to flip some bytes from the
 last parameter of the program:
 
@@ -171,8 +168,8 @@ because `while(c=getchar())` is not evil.
 6. Sprites image height.
 7. Filename of the sprites image (raw RGBA image).
 8. Filename of the music (WAVE 8000 Hz 8bit Mono).
-9. Sky color. This number depends on the system where you run the program. See
-note on macOS.
+9. Sky color. This number depends on the system where you run the program. [See
+note on macOS](#running-under-macos).
 
 ## Sprites
 
@@ -190,29 +187,45 @@ grid, sprite 8 is the first sprite of the second row of the grid etc.).
 
 Some positions of the grid have a predefined purpose:
 
-```
-    Position          | Description
-    :-----------------|:--------------
-    0                 | Player standing right
-    1                 | Player walking right frame 0
-    2                 | Player walking right frame 1
-    3                 | Player jumping right
-    4                 | Player standing left
-    5                 | Player walking left frame 0
-    6                 | Player walking left frame 1
-    7                 | Player jumping left
-    8 *(second row)*  | Super player standing right
-    9                 | Super player walking right frame 0
-    10                | Super player walking right frame 1
-    11                | Super player jumping right
-    12                | Super player standing left
-    13                | Super player walking left frame 0
-    14                | Super player walking left frame 1
-    15                | Super player jumping left
-    24                | Player dead
-    32                | Player won
-    40                | Super player won
-```
+
+- 0
+    * Player standing right
+- 1
+    * Player walking right frame 0
+- 2
+    * Player walking right frame 1
+- 3
+    * Player jumping right
+- 4
+    * Player standing left
+- 5
+    * Player walking left frame 0
+- 6
+    * Player walking left frame 1
+- 7
+    * Player jumping left
+- 8 _(second row)_
+    * Super player standing right
+- 9
+    * Super player walking right frame 0
+- 10
+    * Super player walking right frame 1
+- 11
+    * Super player jumping right
+- 12
+    * Super player standing left
+- 13
+    * Super player walking left frame 0
+- 14
+    * Super player walking left frame 1
+- 15
+    * Super player jumping left
+- 24
+    * Player dead
+- 32
+    * Player won
+- 40
+    * Super player won
 
 All the others sprites can be used as you want, depending on the game you want
 to create.
@@ -243,53 +256,43 @@ Each row has six columns:
 `CLASSFLAGS` must be a combination (bitwise OR) of some of these constants:
 
 * `ENEMY` (`1`)
-
-            An enemy. CLASSPARAM0 can be 0 if the enemies don't move, 1 if the
-            initial move direction is right, -1 if that direction is left. All
-            enemies that walk will change their direction after 20 steps. The
-            sprite of an enemy must have 2 other adjacent sprites: SPRITE-1,
-            used when the enemy dies, and SPRITE+1, used when it moves.
+    - An enemy. `CLASSPARAM0` can be 0 if the enemies don't move, 1 if the
+    initial move direction is right, -1 if that direction is left. All enemies
+    that walk will change their direction after 20 steps. The sprite of an enemy
+    must have 2 other adjacent sprites: `SPRITE-1`, used when the enemy dies, and
+    `SPRITE+1`, used when it moves.
 
 * `BLOCK` (`2`)
-
-            A wall. Player can walk over the object but can not pass through it.
+    - A wall. Player can walk over the object but can not pass through it.
 
 * `OBJECT BLOCK` (`4`)
-
-            When the player hits the object from below, a new object is created.
-            CLASSFLAGS of the new object is defined in CLASSPARAM0. The sprite
-            used for the new object is defined in CLASSPARAM1. The sprite of the
-            new object must have an adjacent sprite: SPRITE+1, used when the
-            block is hit.
+    - When the player hits the object from below, a new object is created.
+    `CLASSFLAGS` of the new object is defined in `CLASSPARAM0`. The sprite used
+    for the new object is defined in `CLASSPARAM1`. The sprite of the new object
+    must have an adjacent sprite: `SPRITE+1`, used when the block is hit.
 
 * `POWERUP` (`8`)
-
-            This is a power-up like the classic Mario mushroom. When the
-            character hits the power-up object, the character becomes the Super
-            character. If CLASSFLAGS has the bit ZOOM, the character height will
-            be doubled.  The Super character can hit the enemies without dying,
-            but when this happens, the Super character goes back to being
-            normal.
+    - This is a power-up like the classic Mario mushroom. When the character
+    hits the power-up object, the character becomes the Super character. If
+    `CLASSFLAGS` has the bit `ZOOM`, the character height will be doubled.  The
+    Super character can hit the enemies without dying, but when this happens,
+    the Super character goes back to being normal.
 
 * `END` (`16`)
-
-            When the player hits this object the level ends; the player wins.
+    - When the player hits this object the level ends; the player wins.
 
 * `ZOOM` (`32`)
-
-            This flag can be used with POWERUP to indicate a power-up that
-            will double the size of the player (like the Mario mushroom).
+    - This flag can be used with `POWERUP` to indicate a power-up that will
+    double the size of the player (like the Mario mushroom).
 
 * `DESTROY` (`64`)
-
-            When the player hits the object (e.g. the classic Mario coin) the
-            object disappears but the engine does not count the points, so,
-            from the player point of view, this object is useless.
+    - When the player hits the object (e.g. the classic Mario coin) the object
+    disappears but the engine does not count the points, so, from the player
+    point of view, this object is useless.
 
 * `DESTROYUP` (`128`)
-
-            This object is like a BLOCK but when the player hits the object
-            from below, the object disappears.
+    - This object is like a `BLOCK` but when the player hits the object from
+    below, the object disappears.
 
 If `CLASSFLAGS` is `0` the object only has an aesthetic function.
 

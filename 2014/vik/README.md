@@ -108,7 +108,7 @@ any code in order for the program to run correctly:
     _setmode(_fileno(stdout), 0x8000);
 ```
 
-**NOTE**: see the [alternate code](%%REPO_URL%%/2014/vik/prog.alt.c) for this.
+**NOTE**: see the [Alternate code](#alternate-code) for this.
 
 
 ### Known Issues

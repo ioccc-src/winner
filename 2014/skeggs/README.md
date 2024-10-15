@@ -11,7 +11,7 @@
     ./prog
 ```
 
-HINT: Try pressing the left and right arrow keys as needed.
+**HINT**: Try pressing the left and right arrow keys as needed.
 Also try pressing space/enter to select options.
 Pressing Q or Escape may end the fun before you are ready. :-)
 
@@ -66,22 +66,22 @@ The current size is a third to a half of the original size before compression.
 
 Due to this, it does LOTS of things that subtly annoy compilers!
 
-* (10) data argument not used by format string
+* `(10)` data argument not used by format string
 
   This occurs because some of the `fprintf(3)` invocations don't use all their
   parameters. The program should still work fine!
 
-* (1) using the result of an assignment as a condition without parentheses
+* `(1)` using the result of an assignment as a condition without parentheses
 
   Somewhere, I needed to set a variable and then branch on the result. The
   shortest way was to combine them. Some self-proclaimed "EXPERTS" think this
   is a bad programming practice, but what do they know? :P
 
-* (1) implicit declaration of function 'time' is invalid in C99
+* `(1)` implicit declaration of function 'time' is invalid in C99
 
   An `#include` statement is expensive, and I'm broke.
 
-* (1) control may reach end of non-void function
+* `(1)` control may reach end of non-void function
 
   Turns out that sometimes, a `return` statement is too much. This will never
   actually occur, but some C compilers think they know more about my program

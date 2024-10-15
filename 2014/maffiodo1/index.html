@@ -431,8 +431,8 @@ if you don’t know how to do this for your system.</p>
 <li>Sprites image height.</li>
 <li>Filename of the sprites image (raw RGBA image).</li>
 <li>Filename of the music (WAVE 8000 Hz 8bit Mono).</li>
-<li>Sky color. This number depends on the system where you run the program. See
-note on macOS.</li>
+<li>Sky color. This number depends on the system where you run the program. <a href="#running-under-macos">See
+note on macOS</a>.</li>
 </ol>
 <h2 id="try">Try:</h2>
 <pre><code>    ./giana.sh
@@ -489,8 +489,6 @@ these type of obstacles but cannot walk through them.</p></li>
 dies or loses its powers.</p></li>
 </ul>
 <h3 id="running-under-macos">Running under macOS</h3>
-<p>[NOTE: this seems to no longer be the case as of 2023 and most likely much
-earlier. However one can change the look of the game doing this anyway:]</p>
 <p>The color of the sky is wrong on macOS. You need to flip some bytes from the
 last parameter of the program:</p>
 <ul>
@@ -518,8 +516,8 @@ because <code>while(c=getchar())</code> is not evil.</li>
 <li>Sprites image height.</li>
 <li>Filename of the sprites image (raw RGBA image).</li>
 <li>Filename of the music (WAVE 8000 Hz 8bit Mono).</li>
-<li>Sky color. This number depends on the system where you run the program. See
-note on macOS.</li>
+<li>Sky color. This number depends on the system where you run the program. <a href="#running-under-macos">See
+note on macOS</a>.</li>
 </ol>
 <h2 id="sprites">Sprites</h2>
 <p>The program read a single image that contains all the game sprites. The image
@@ -530,27 +528,84 @@ program calculates the size in this way:</p>
 line, from left to right (for example sprite 0 is the top left sprite in the
 grid, sprite 8 is the first sprite of the second row of the grid etc.).</p>
 <p>Some positions of the grid have a predefined purpose:</p>
-<pre><code>    Position          | Description
-    :-----------------|:--------------
-    0                 | Player standing right
-    1                 | Player walking right frame 0
-    2                 | Player walking right frame 1
-    3                 | Player jumping right
-    4                 | Player standing left
-    5                 | Player walking left frame 0
-    6                 | Player walking left frame 1
-    7                 | Player jumping left
-    8 *(second row)*  | Super player standing right
-    9                 | Super player walking right frame 0
-    10                | Super player walking right frame 1
-    11                | Super player jumping right
-    12                | Super player standing left
-    13                | Super player walking left frame 0
-    14                | Super player walking left frame 1
-    15                | Super player jumping left
-    24                | Player dead
-    32                | Player won
-    40                | Super player won</code></pre>
+<ul>
+<li>0
+<ul>
+<li>Player standing right</li>
+</ul></li>
+<li>1
+<ul>
+<li>Player walking right frame 0</li>
+</ul></li>
+<li>2
+<ul>
+<li>Player walking right frame 1</li>
+</ul></li>
+<li>3
+<ul>
+<li>Player jumping right</li>
+</ul></li>
+<li>4
+<ul>
+<li>Player standing left</li>
+</ul></li>
+<li>5
+<ul>
+<li>Player walking left frame 0</li>
+</ul></li>
+<li>6
+<ul>
+<li>Player walking left frame 1</li>
+</ul></li>
+<li>7
+<ul>
+<li>Player jumping left</li>
+</ul></li>
+<li>8 <em>(second row)</em>
+<ul>
+<li>Super player standing right</li>
+</ul></li>
+<li>9
+<ul>
+<li>Super player walking right frame 0</li>
+</ul></li>
+<li>10
+<ul>
+<li>Super player walking right frame 1</li>
+</ul></li>
+<li>11
+<ul>
+<li>Super player jumping right</li>
+</ul></li>
+<li>12
+<ul>
+<li>Super player standing left</li>
+</ul></li>
+<li>13
+<ul>
+<li>Super player walking left frame 0</li>
+</ul></li>
+<li>14
+<ul>
+<li>Super player walking left frame 1</li>
+</ul></li>
+<li>15
+<ul>
+<li>Super player jumping left</li>
+</ul></li>
+<li>24
+<ul>
+<li>Player dead</li>
+</ul></li>
+<li>32
+<ul>
+<li>Player won</li>
+</ul></li>
+<li>40
+<ul>
+<li>Super player won</li>
+</ul></li>
+</ul>
 <p>All the others sprites can be used as you want, depending on the game you want
 to create.</p>
 <h2 id="levels">Levels</h2>
@@ -571,39 +626,53 @@ here:</p>
 </ol>
 <p><code>CLASSFLAGS</code> must be a combination (bitwise OR) of some of these constants:</p>
 <ul>
-<li><p><code>ENEMY</code> (<code>1</code>)</p>
-<pre><code>  An enemy. CLASSPARAM0 can be 0 if the enemies don&#39;t move, 1 if the
-  initial move direction is right, -1 if that direction is left. All
-  enemies that walk will change their direction after 20 steps. The
-  sprite of an enemy must have 2 other adjacent sprites: SPRITE-1,
-  used when the enemy dies, and SPRITE+1, used when it moves.</code></pre></li>
-<li><p><code>BLOCK</code> (<code>2</code>)</p>
-<pre><code>  A wall. Player can walk over the object but can not pass through it.</code></pre></li>
-<li><p><code>OBJECT BLOCK</code> (<code>4</code>)</p>
-<pre><code>  When the player hits the object from below, a new object is created.
-  CLASSFLAGS of the new object is defined in CLASSPARAM0. The sprite
-  used for the new object is defined in CLASSPARAM1. The sprite of the
-  new object must have an adjacent sprite: SPRITE+1, used when the
-  block is hit.</code></pre></li>
-<li><p><code>POWERUP</code> (<code>8</code>)</p>
-<pre><code>  This is a power-up like the classic Mario mushroom. When the
-  character hits the power-up object, the character becomes the Super
-  character. If CLASSFLAGS has the bit ZOOM, the character height will
-  be doubled.  The Super character can hit the enemies without dying,
-  but when this happens, the Super character goes back to being
-  normal.</code></pre></li>
-<li><p><code>END</code> (<code>16</code>)</p>
-<pre><code>  When the player hits this object the level ends; the player wins.</code></pre></li>
-<li><p><code>ZOOM</code> (<code>32</code>)</p>
-<pre><code>  This flag can be used with POWERUP to indicate a power-up that
-  will double the size of the player (like the Mario mushroom).</code></pre></li>
-<li><p><code>DESTROY</code> (<code>64</code>)</p>
-<pre><code>  When the player hits the object (e.g. the classic Mario coin) the
-  object disappears but the engine does not count the points, so,
-  from the player point of view, this object is useless.</code></pre></li>
-<li><p><code>DESTROYUP</code> (<code>128</code>)</p>
-<pre><code>  This object is like a BLOCK but when the player hits the object
-  from below, the object disappears.</code></pre></li>
+<li><code>ENEMY</code> (<code>1</code>)
+<ul>
+<li>An enemy. <code>CLASSPARAM0</code> can be 0 if the enemies don’t move, 1 if the
+initial move direction is right, -1 if that direction is left. All enemies
+that walk will change their direction after 20 steps. The sprite of an enemy
+must have 2 other adjacent sprites: <code>SPRITE-1</code>, used when the enemy dies, and
+<code>SPRITE+1</code>, used when it moves.</li>
+</ul></li>
+<li><code>BLOCK</code> (<code>2</code>)
+<ul>
+<li>A wall. Player can walk over the object but can not pass through it.</li>
+</ul></li>
+<li><code>OBJECT BLOCK</code> (<code>4</code>)
+<ul>
+<li>When the player hits the object from below, a new object is created.
+<code>CLASSFLAGS</code> of the new object is defined in <code>CLASSPARAM0</code>. The sprite used
+for the new object is defined in <code>CLASSPARAM1</code>. The sprite of the new object
+must have an adjacent sprite: <code>SPRITE+1</code>, used when the block is hit.</li>
+</ul></li>
+<li><code>POWERUP</code> (<code>8</code>)
+<ul>
+<li>This is a power-up like the classic Mario mushroom. When the character
+hits the power-up object, the character becomes the Super character. If
+<code>CLASSFLAGS</code> has the bit <code>ZOOM</code>, the character height will be doubled. The
+Super character can hit the enemies without dying, but when this happens,
+the Super character goes back to being normal.</li>
+</ul></li>
+<li><code>END</code> (<code>16</code>)
+<ul>
+<li>When the player hits this object the level ends; the player wins.</li>
+</ul></li>
+<li><code>ZOOM</code> (<code>32</code>)
+<ul>
+<li>This flag can be used with <code>POWERUP</code> to indicate a power-up that will
+double the size of the player (like the Mario mushroom).</li>
+</ul></li>
+<li><code>DESTROY</code> (<code>64</code>)
+<ul>
+<li>When the player hits the object (e.g. the classic Mario coin) the object
+disappears but the engine does not count the points, so, from the player
+point of view, this object is useless.</li>
+</ul></li>
+<li><code>DESTROYUP</code> (<code>128</code>)
+<ul>
+<li>This object is like a <code>BLOCK</code> but when the player hits the object from
+below, the object disappears.</li>
+</ul></li>
 </ul>
 <p>If <code>CLASSFLAGS</code> is <code>0</code> the object only has an aesthetic function.</p>
 <p>The last row of the level descriptor must have all its columns set equal to
