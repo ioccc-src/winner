@@ -872,11 +872,14 @@ seem to both be compared to <code>y</code> but never <code>x</code> (that variab
 and not even in this part of the code).</p></li>
 <li><p>The function <code>B()</code> ends with a <code>goto</code>. Why? It’s also another place where
 there’s at least one negative offset.</p></li>
-<li><p>A note on the many <code>#define</code>s in my entry. You say you dislike them:</p>
-<pre><code>          Doing masses of #defines to obscure the source has become &#39;old&#39;.  We
-          tend to &#39;see thru&#39; masses of #defines due to our pre-processor tests
-          that we apply.  Simply abusing #defines or -Dfoo=bar won&#39;t go as far
-          as a program that is more well rounded in confusion.</code></pre>
+<li><p>A note on the many <code>#define</code>s in my entry. You say you dislike them:</p></li>
+</ul>
+<blockquote>
+<p>Doing masses of #defines to obscure the source has become ‘old’. We tend to
+‘see thru’ masses of #defines due to our pre-processor tests that we apply.
+Simply abusing #defines or -Dfoo=bar won’t go as far as a program that is more
+well rounded in confusion.</p>
+</blockquote>
 <p>As I have noted though many of these save quite a lot of bytes too. It’s
 true that they might aid (but barely) in obfuscation but I think that my
 entry is more rounded in confusion; certainly the other techniques I have
@@ -888,7 +891,8 @@ also removed some that saved bytes and in fact I think it makes it more
 obscure if in no other way but making it more difficult to look at (for
 example I might have been able to save bytes by defining for the array
 offsets but I find that it looks much better - which is to say much worse -
-the way I have it now).</p></li>
+the way I have it now).</p>
+<ul>
 <li><p>Going back to the curious <code>static char s[]=Z(; +&lt;&gt;^v);</code>: there’s something
 magical about the number 7 isn’t there? I do not refer to primes although
 certainly one could say that primes have a magic to them. No. I’m instead
@@ -1117,7 +1121,7 @@ the score line is made an empty string it doesn’t matter because it’ll appea
 all spaces anyway. Thus I could save another three bytes by changing it to:</p>
 <pre><code>    !o  &amp;&amp; q *U,*V,&#39; &#39;);</code></pre>
 <p>Technically it would be a <code>" "</code> (see <a href="HACKING.html">HACKING.html</a>
-else for N (not referring to the variable though it might very
+for N (not referring to the variable though it might very
 well matter here too) movements (i.e. due to sizes) you will at times (e.g.
 after eating a bug) see the snake body char at 0,0. I’m not bothered about that
 though because the score line is meant to display something, it squeezes a few

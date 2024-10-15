@@ -10,8 +10,9 @@ code](#alternate-code) below.
 
 ## To use:
 
+**IMPORTANT for macOS**: run under Terminal.app.
+
 ``` <!---sh-->
-    # IMPORTANT for macOS: run under Terminal.app
 
     ./prog
 ```
@@ -19,8 +20,9 @@ code](#alternate-code) below.
 
 ## Try:
 
+**IMPORTANT for macOS**: run under Terminal.app.
+
 ``` <!---sh-->
-    # IMPORTANT for macOS: run under Terminal.app
 
     # Try resizing the terminal window before the first click.
 

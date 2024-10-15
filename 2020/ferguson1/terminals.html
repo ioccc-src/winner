@@ -530,12 +530,12 @@ messed up. There are numerous things you might try but probably the easiest is
 to run the game again without modifying the dimensions (and then just quit) or
 even just the <code>reset</code> command.</p>
 <p>The Linux man page says:</p>
-<pre><code>    You might have to run the `reset` tool like:
-
-                   &lt;LF&gt;reset&lt;LF&gt;
-
-               (the line-feed character is normally control-J) to get the terminal
-               to work, as carriage-return may no longer work in the abnormal state.</code></pre>
+<blockquote>
+<p>You might have to run the <code>reset</code> tool like:</p>
+<p><LF>reset<LF></p>
+<p>(the line-feed character is normally control-J) to get the terminal to work,
+as carriage-return may no longer work in the abnormal state.</p>
+</blockquote>
 <p>If you don’t have the reset utility you can try:</p>
 <pre><code>    echo -e \\033c</code></pre>
 <p>Otherwise try <code>clear; stty sane</code> (that will turn on echo also) or if all else
@@ -603,17 +603,20 @@ support in the source code itself.</p>
 <h2 id="colour-limitations"><a href="#toc">Colour limitations</a></h2>
 </div>
 <p>According to X/Open Curses, Issue 7 (pg. 57):</p>
-<pre><code>    With init_pair() and pair_content(), the value of pair must be in a range
-    from 0 to and including COLOR_PAIRS-1. (There may be an
-    implementation-specific upper limit on the valid value of pair, but any such
-    limit is at least 63.) Valid values for f and b are the range from 0 to and
-    including COLORS-1.</code></pre>
+<blockquote>
+<p>With <code>init_pair()</code> and <code>pair_content()</code>, the value of pair must be in a range from
+0 to and including <code>COLOR_PAIRS-1</code>. (There may be an implementation-specific upper
+limit on the valid value of pair, but any such limit is at least 63.) Valid
+values for f and b are the range from 0 to and including <code>COLORS-1</code>.</p>
+</blockquote>
 <p>The manpage for <code>init_pair()</code> says this:</p>
-<pre><code>    These limits apply to color values and color pairs.  Values outside these limits are not legal, and may result in a runtime error:
-
-    [...]
-
-        COLOR_PAIRS corresponds to the terminal database&#39;s max_pairs capability, (see terminfo(5)).</code></pre>
+<blockquote>
+<p>These limits apply to color values and color pairs. Values outside these
+limits are not legal, and may result in a runtime error:</p>
+<p>[…]</p>
+<p><code>COLOR_PAIRS</code> corresponds to the terminal database’s <code>max_pairs</code> capability,
+(see <code>terminfo(5)</code>).</p>
+</blockquote>
 <p>Based on the two as well as the fact that monochrome terminals (I’ve tried under
 both Linux and macOS) seem to work fine I believe I am fine here too. And to
 confirm this I wrote the following code with the output below:</p>

@@ -563,18 +563,20 @@ With my entry we can complete the loop!</p>
 </div>
 <p>The author <a href="../../authors.html#Nathan_Sidwell">Nathan Sidwell</a> of the <a href="../../1992/nathan/index.html">1992 Worst
 Abuse of the Rules</a> had this to say about his program:</p>
-<pre><code>    This program is a hello world text encrypter/decrypter. It uses an
-    [enigma](https://www.cryptomuseum.com/crypto/enigma/index.htm) (I think) style
-    encryption algorithm, where the encryption key character is modified by a value,
-    determined from the previous character.  Non-printable characters (those with
-    ASCII values `&lt; &#39; &#39;` or `&gt; 0x7e`) are passed unaltered, thus any kind of file
-    may be successfully processed, but if the original is printable, the processed
-    file will be too. The input is read from stdin, and the output presented to
-    stdout. The key, a text string, is presented as a command argument. This is
-    optional, and if omitted, the file is self-{de,en}crypted. To specify
-    decryption, a `-` should be given before the key. (Actually encryption and
-    decryption proper inverse operations, so you can use decrypt to scramble and
-    encrypt to descramble, if you&#39;re perverse.)</code></pre>
+<blockquote>
+<p>This program is a hello world text encrypter/decrypter. It uses an
+<a href="https://www.cryptomuseum.com/crypto/enigma/index.htm">enigma</a> (I think) style
+encryption algorithm, where the encryption key character is modified by a value,
+determined from the previous character. Non-printable characters (those with
+ASCII values <code>&lt; ' '</code> or <code>&gt; 0x7e</code>) are passed unaltered, thus any kind of file
+may be successfully processed, but if the original is printable, the processed
+file will be too. The input is read from stdin, and the output presented to
+stdout. The key, a text string, is presented as a command argument. This is
+optional, and if omitted, the file is self-{de,en}crypted. To specify
+decryption, a <code>-</code> should be given before the key. (Actually encryption and
+decryption proper inverse operations, so you can use decrypt to scramble and
+encrypt to descramble, if you’re perverse.)</p>
+</blockquote>
 <p>But the Enigma algorithm is more complex than that and my entry can encipher
 (and by extension decipher) text in the manner of the Enigma machines of the
 <a href="https://en.wikipedia.org/wiki/German_Army_(1935%E2%80%931945)">Heer</a> (army) and <a href="https://en.wikipedia.org/wiki/Luftwaffe">Luftwaffe</a> (air
@@ -810,10 +812,10 @@ has some of the ways I think this entry is obfuscated. To decipher try:</p>
 <pre><code>    ./recode -Robfuscation.key -fobfuscation.txt | ./prog - 2&gt;/dev/null &gt; obfuscation.md</code></pre>
 <p>To encipher:</p>
 <pre><code>    ./recode -Robfuscation.key -fobfuscation.md | ./prog - 2&gt;/dev/null &gt; obfuscation.txt</code></pre>
-<p>The file <a href="obfuscation.key">obfuscation.key</a> is the key to decipher/encipher
+<p>The file <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/ferguson2/obfuscation.key">obfuscation.key</a> is the key to decipher/encipher
 <a href="obfuscation.txt">obfuscation.txt</a>.</p>
 <p>For the lazy <a href="obfuscation.html">obfuscation.html</a> has the deciphered version.</p>
-<p>As for the <a href="obfuscation.key">obfuscation.key</a> file if you observe the contents you’ll find the
+<p>As for the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/ferguson2/obfuscation.key">obfuscation.key</a> file if you observe the contents you’ll find the
 word <code>OBFUSCATION</code>:</p>
 <pre><code>    2OB5FU1SC2ATIONCDEFGHJKLMPQRYZ
      OB FU SC ATION</code></pre>
