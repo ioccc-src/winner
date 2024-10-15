@@ -3084,7 +3084,7 @@ loop printing whitespace.</li>
 <pre><code>    $ ./prog &lt; ioccc.json &gt; ioccc.html
     Assertion failed: (rulez), function C, file prog.c, line 124.
     Abort trap: 6</code></pre>
-<p>(from say running <code>./try.sh) but this is expected and the file</code>ioccc.html` will
+<p>(from say running <code>./try.sh</code>) but this is expected and the file <code>ioccc.html</code> will
 be generated properly.</p>
 <p>Some JSON files might cause the program to continue to run and seemingly
 infinitely increase the size of the output file. This can happen if you try
@@ -3108,12 +3108,12 @@ crash and halt. If this is the case type ctrl-e to quit the emulator and try
 again.</p>
 <p>The author also stated that it is possible to corrupt the virtual disk. If you
 do this you should type <code>make clobber all</code> and try again.</p>
-<p>Cody caused a funny problem where it showed <code>ERROR</code> after each command. The
-solution was to hit ctrl-e and start again. He does not know if this is what was
+<p>A funny problem where it showed <code>ERROR</code> after each command was noticed. The
+solution was to hit ctrl-e and start again. It is not known if this is what was
 referred to by the author but there was likely no typo involved.</p>
-<p>Cody notes that if you are using the saved mode you must type <code>sync</code> prior to
-exiting the program or else the next time you run it the file will not exist (or
-in the case of compiled code it won’t be executable).</p>
+<p>Another issue noticed is that if you are using the saved mode you must type
+<code>sync</code> prior to exiting the program or else the next time you run it the file
+will not exist (or in the case of compiled code it won’t be executable).</p>
 <div id="2018_vokes">
 <h2 id="vokes">2018/vokes</h2>
 </div>

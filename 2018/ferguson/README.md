@@ -208,16 +208,14 @@ It is an implementation of Richard Dawkins' [Weasel program][] (Wikipedia).
 According to Wikipedia in chapter three of his book [The Blind Watchmaker][]
 Dawkins wrote:
 
-```
-    I don't know who it was first pointed out that, given enough time, a monkey
-    bashing away at random on a typewriter could produce all the works of
-    Shakespeare. The operative phrase is, of course, *given enough time.* Let us
-    limit the task facing our monkey somewhat. Suppose that he has to produce, not
-    the complete works of Shakespeare but just the short sentence 'Methinks it is
-    like a weasel', and we shall make it relatively easy by giving him a typewriter
-    with a restricted keyboard, one with just the 26 (capital) letters, and a space
-    bar.  How long will he take to write this one little sentence?
-```
+> I don't know who it was first pointed out that, given enough time, a monkey
+bashing away at random on a typewriter could produce all the works of
+Shakespeare. The operative phrase is, of course, *given enough time.* Let us
+limit the task facing our monkey somewhat. Suppose that he has to produce, not
+the complete works of Shakespeare but just the short sentence 'Methinks it is
+like a weasel', and we shall make it relatively easy by giving him a typewriter
+with a restricted keyboard, one with just the 26 (capital) letters, and a space
+bar.  How long will he take to write this one little sentence?
 
 He refers to the [Infinite Monkey Theorem][] (Wikipedia). As he points out the
 operative phrase is *given enough time*; but even if it's extremely unlikely
@@ -250,18 +248,16 @@ Here you can find a general explanation of a *[genetic algorithm][]* as well as 
 brief history. Although the link provides more information (including images to
 try and show the way they work) for those interested I will cite the summary:
 
-```
-    Genetic Algorithms (GAs) are adaptive heuristic search algorithm based on the
-    evolutionary ideas of natural selection and genetics. As such they represent an
-    intelligent exploitation of a random search used to solve optimization problems.
-    Although randomised, GAs are by no means random, instead they exploit historical
-    information to direct the search into the region of better performance within
-    the search space. The basic techniques of the GAs are designed to simulate
-    processes in natural systems necessary for evolution, specially those follow the
-    principles first laid down by Charles Darwin of "survival of the fittest.".
-    Since in nature, competition among individuals for scanty resources results in
-    the fittest individuals dominating over the weaker ones.
-```
+> Genetic Algorithms (GAs) are adaptive heuristic search algorithm based on the
+evolutionary ideas of natural selection and genetics. As such they represent an
+intelligent exploitation of a random search used to solve optimization problems.
+Although randomised, GAs are by no means random, instead they exploit historical
+information to direct the search into the region of better performance within
+the search space. The basic techniques of the GAs are designed to simulate
+processes in natural systems necessary for evolution, specially those follow the
+principles first laid down by Charles Darwin of "survival of the fittest.".
+Since in nature, competition among individuals for scanty resources results in
+the fittest individuals dominating over the weaker ones.
 
 **OBFUSCATION NOTE: Some of the below might help you follow the code more
 easily.**
@@ -292,9 +288,8 @@ Note that the generation is checked *before the scoring takes place* by a prefix
 increment equality check; when the generation is `SIZE_MAX - 1` the fitness
 test loop will not be entered; instead the outer loop will end after printing:
 
-```
-    Too many attempts, blaming the monkey Eric even if he isn't typing or doesn't exist. Bye.
-```
+> Too many attempts, blaming the monkey Eric even if he isn't typing or doesn't
+exist. Bye.
 
 Why '*Eric*'? Because the judges stated in the [2018 guidelines][] that when
 there is a user input error the program should insult the pet fish Eric even if
@@ -304,22 +299,21 @@ final but this is relevant) they give is:
 
 The judges might not have a pet fish named Eric, so might want to state:
 
-```
-    This entry factors integers between 1 and 2305567963945518424753102147331756070.
-    Attempting to factor anything else will cause the program to insult your
-    pet fish Eric, or in the case that you lack such a pet, will insult the
-    pet that you do not have.
-```
+> This entry factors integers between 1 and
+2305567963945518424753102147331756070\.  Attempting to factor anything else will
+cause the program to insult your pet fish Eric, or in the case that you lack
+such a pet, will insult the pet that you do not have.
 
 After the final message they ask:
 
-BTW: **What is so special about 2305567963945518424753102147331756070**?  You tell us!
+> BTW: **What is so special about 2305567963945518424753102147331756070**?  You
+tell us!
 
 The answer is this: **it is the primorial prime of 97:** the product of all
 prime numbers less than or equal to N; **and the primorial prime of `N == 97` is
-`2305567963945518424753102147331756070`. There is no reference to this number
-in my entry but it's nonetheless possible to **change the default target to it
-without modifying the source code**; there are two hints in this very
+`2305567963945518424753102147331756070`.** But there is no reference to this number
+in my entry but it's nonetheless possible to change the default target to it
+**without modifying the source code**; there are two hints in this very
 paragraph; the first sentence in fact: the answer to the judges' question and
 the definition. Can you get the program to search the primorial prime of 97
 without passing in specially?
@@ -327,6 +321,7 @@ without passing in specially?
 I was quite proud that when the next contest came the judges removed that
 question. Later 2018 and all of 2019 was difficult for me so it was like I won a
 second time for the same entry.
+
 
 ### On <del>user</del> monkey errors
 
@@ -349,7 +344,7 @@ assumption that **the user could in fact be a monkey called Eric** *although it
 isn't insolent enough to say the user is a monkey for certain!*
 
 [genetic algorithm]: https://web.archive.org/web/20180308131613/http://www.doc.ic.ac.uk/~nd/surprise_96/journal/vol1/hmw/article1.html
-[2018 guidelines]: ../../2018/guidelines.txt
+[2018 guidelines]: ../guidelines.txt
 
 
 <div id="hints">
@@ -372,11 +367,15 @@ precise the following characters are acceptable; it equates to this in C (note
 it includes a literal space `' '` but it doesn't include other
 `isspace()` characters) and this is why some of the characters are escaped:
 
-            const char keyboard[]=" !\"#$<%:>&'()*+,-./0123456789;=?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`{|}~";
+``` <!---c-->
+    const char keyboard[]=" !\"#$<%:>&'()*+,-./0123456789;=?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`{|}~";
+```
 
 The simpler keyboard looks like:
 
-            const char keyboard[]=" !\"&'(),.0123456789;?ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+``` <!---c-->
+    const char keyboard[]=" !\"&'(),.0123456789;?ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+```
 
 The program makes sure that the target string only has characters the keyboard
 can actually produce but there is a certain type of input error that might
@@ -394,7 +393,7 @@ string; some I will document here (the summary being in the man page). You can
 join options but there is a caveat with spaces and `-r` option as well as
 the target string (see below).
 
-**Enable quiet output:**
+#### Enable quiet output:
 
 ```
     -q
@@ -404,7 +403,7 @@ This means don't print the generation and offspring output; only print (some) of
 the options set (this is always done but wouldn't usually be seen due to verbose
 output) and the final answer.
 
-**Change the mutation rate to `<rate>`:**
+#### Change the mutation rate to `<rate>`:
 
 ```
     -r<num>
@@ -502,9 +501,9 @@ The target string will be: `-TEST`. This means though that here:
     ./weasel -q -- -test -r5
 ```
 
-The string to be searched would actually be `-r5` and the mutation rate
-will remain the default because after the `-` option is seen it will no
-longer parse additional options: only target strings if anything left on the
+The string to be searched would actually be `-r5` and the mutation rate will
+remain the default because after the `-` option (that is `--`) is seen it will
+no longer parse additional options: only target strings if anything left on the
 command line. Because of the joining of arguments this means that the first two
 examples of the last set of three above are equivalent i.e. the following two
 are equivalent:
@@ -558,6 +557,7 @@ it no longer cares about the `-` for option parsing. In other words options
 are only parsed if the first character is `-` and if the parser hasn't seen
 the `-` - *in an earlier element of `argv`. This is not a bug!*
 
+
 <div id="obfuscation">
 ### Obfuscation
 </div>
@@ -608,11 +608,9 @@ So in this case I joined the options in the following order:
 
     Quiet output.
 
-
 2.  `-r101`
 
     Mutation rate 101 (out of range).
-
 
 3.  `-r5`
 
@@ -621,7 +619,6 @@ rate (only after parsing do I print the final mutation rate whatever it ends up
 being); so while it appears there is a bug, showing mutation rate out of range
 three times, this is expected (given the next one, `-r101`). This means here
 the typewriter was taken from Eric the monkey.
-
 
 4.  `-r101`
 
@@ -634,7 +631,6 @@ out of range message). The typewriter returns to Eric.
 
     Set mutation rate to 1. Take that typewriter away!
 
-
 6.  `-r`
 
     Set mutation rate to 0; when there are no valid characters passed to
@@ -645,15 +641,14 @@ mutation rate; if there are any systems where the widths differ this *shouldn't
 matter* because of truncation but I do in any case specifically check for `R <
 0 || R > 100`. Either way the invalid range returns the typewriter to Eric.
 
-
 7.  `test`
 
     Finally I requested it find the string `test` (will search for `TEST`).
 
-Given that it was a short string it did find the answer relatively quickly, even
-in monkey mode.
+    Given that it was a short string it did find the answer relatively quickly,
+    even in monkey mode.
 
-Another example:
+    Another example:
 
 ``` <!---sh-->
     $ ./weasel -q -r101 test -r5
@@ -664,12 +659,12 @@ Another example:
     Generation  109 Offspring 13: TEST
 ```
 
-In this case I also enabled quiet mode but I didn't join the options; the
-`-r101` reports that it's out of range and sets monkey mode. I then specify
-the target string and then set a valid mutation rate. This disabled monkey mode
-which means that it'll use the genetic algorithm.
+    In this case I also enabled quiet mode but I didn't join the options; the
+    `-r101` reports that it's out of range and sets monkey mode. I then specify
+    the target string and then set a valid mutation rate. This disabled monkey
+    mode which means that it'll use the genetic algorithm.
 
-One more example of monkey mode:
+    One more example of monkey mode:
 
 ``` <!---sh-->
     $ ./weasel -q -mr101 test -r5
@@ -681,18 +676,19 @@ One more example of monkey mode:
     Generation 465298       Offspring 10: TEST
 ```
 
-Here I also requested quiet output and then *explicitly requested that Eric the
-monkey types.* After this I set the mutation rate to be 101 which would have
-set monkey mode (*in this case only temporarily as I later set it to a valid
-number*) but since I have also requested monkey mode that won't matter. Then I
-set the string to `test` and then set a valid mutation rate of 5. Now note
-that it is actually set to 5 but also note that monkey mode remains active: it
-also took a lot longer to come to a conclusion for even four characters. This
-example does demonstrate one other thing in a subtle way though.
+    Here I also requested quiet output and then *explicitly requested that Eric
+    the monkey types.* After this I set the mutation rate to be 101 which would
+    have set monkey mode (*in this case only temporarily as I later set it to a
+    valid number*) but since I have also requested monkey mode that won't
+    matter. Then I set the string to `test` and then set a valid mutation rate
+    of 5. Now note that it is actually set to 5 but also note that monkey mode
+    remains active: it also took a lot longer to come to a conclusion for even
+    four characters. This example does demonstrate one other thing in a subtle
+    way though.
 
-When the program prints out each iteration (I'll give an example next) it goes a
-lot slower; this makes sense because it's an expensive operation. Here are the
-times for the same but without quiet output enabled:
+    When the program prints out each iteration (I'll give an example next) it
+    goes a lot slower; this makes sense because printing is an expensive
+    operation. Here are the times for the same but without quiet output enabled:
 
 ```
     real    0m17.065s
@@ -700,7 +696,7 @@ times for the same but without quiet output enabled:
     sys     0m2.402s
 ```
 
-Whereas with quiet output:
+    .. whereas with quiet output:
 
 ```
     real    0m0.127s
@@ -708,12 +704,12 @@ Whereas with quiet output:
     sys     0m0.001s
 ```
 
-Of course it isn't only down to the printing but the point is it slows it down
-significantly. Adding an option to print every X lines would go over the limit
-(`iocccsize -i` reports 2052!).
+    Of course it isn't only down to the printing but the point is it slows it
+    down significantly. Adding an option to print every X lines would go over
+    the limit (`iocccsize -i` reports 2052!).
 
-Finally I'll show a default example in normal output (I omit many lines showing
-instead **[...]**). Note that the real/user/sys times are from the `time`
+8. Finally I'll show a default example in normal output (I omit many lines showing
+instead `[...]`). Note that the real/user/sys times are from the `time`
 bash shell built-in utility: that isn't output from my entry.
 
 ```
@@ -740,13 +736,14 @@ bash shell built-in utility: that isn't output from my entry.
     sys     0m0.001s
 ```
 
+
 Keep in mind the way I display the generations and the fact that generation 0
 has no parents; it is generation 1 that starts working towards the goal. You'll
-see also **(mutation)** at the end of the line at this point (if you enable
-monkey mode you'll find that it shows something else). The lines that only have
-back-quote ("\`") are separators: you won't see this between generation 0 and 1 but you will
-between future generations - as well as the final answer (if the answer is in
-generation 0 you won't see the ``).
+see also `(mutation)` at the end of the line at this point (if you enable monkey
+mode you'll find that it shows something else). The lines that only have
+back-quote (`` "\`" ``) are separators: you won't see this between generation 0
+and 1 but you will between future generations - as well as the final answer (if
+the answer is in generation 0 you won't see the `` ` ``).
 
 <div id="test">
 One final thing to consider is that **the program doesn't directly read from a
@@ -934,23 +931,22 @@ Skip to [How to build](#build).
 
 On the subject of beauty: the judges stated in the guidelines the following:
 
-```
-    We want to get away from source that is simply **a compact blob of
-    octets.**   Really try to be more creative than **blob coding.** *HINT!*
-```
+> We want to get away from source that is simply **a compact blob of octets.**
+Really try to be more creative than **blob coding.** *HINT!*
 
 And if you'll notice that although it *might look like a compact blob of octets*
-at first glance if you look throughout the file you'll see two statements to
-set your thinking straight:
+(although not really: a blob is by definition roundish) at first glance if you
+look throughout the file you'll see two statements to set your thinking
+straight:
 
-**NO BLOB CODING**
-
-**THIS IS NOT A COMPACT BLOB OF OCTETS**
+> **NO BLOB CODING**
+>
+> **THIS IS NOT A COMPACT BLOB OF OCTETS**
 
 So you see even if your eyes are trying to deceive you they're quite wrong. Yes
-some of it might look like a blob but this is clearly false; *as all good
-programmers know if something is potentially confusing or misleading it should
-be made clear in the comments! :)*
+some of it might look like a blob (for certain definitions of 'blob' :) ) but
+this is clearly false; *as all good programmers know if something is potentially
+confusing or misleading it should be made clear in the comments! :)*
 
 <div id="build">
 ## **5. How to build**
@@ -1157,7 +1153,8 @@ Skip to [Final thoughts](#thoughts).
 
 I have included a RPM spec file for those with a Red Hat based Linux
 distribution; see [rpm.html](rpm.html) for details (including why I implemented
-this) if for some (strange or maybe even mad) reason you're interested.
+this) if for some (strange or maybe even mad) reason you're interested, which
+basically means nobody but me.
 
 [rpm.html]: rpm.html
 
@@ -1180,50 +1177,48 @@ two things I think are rather amusing (in order of least to most):
 Dennis Ritchie's Anti-Foreword:
 </div>
 
-```
-    Anti-Foreword
-
-    By Dennis Ritchie
-    From: dmr@plan9.research.att.com
-    Date: Tue, 15 Mar 1994 00:38:07 EST
-    Subject: anti-foreword
-
-    To the contributers to this book:
-
-    I have succumbed to the temptation you offered in your preface: I do write you
-    off as envious malcontents and romantic keepers of memories.  The systems you
-    remember so fondly (TOPS-20, ITS, Multics, Lisp Machine, Cedar/Mesa, the Dorado)
-    are not just out to pasture, they are fertilizing it from below.
-
-    Your judgments are not keen, they are intoxicated by metaphor. In the Preface
-    you suffer first from heat, lice, and malnourishment, then become prisoners in
-    a Gulag. In Chapter 1 you are in turn infected by a virus, racked by drug
-    addiction, and addled by puffiness of the genome.
-
-    Yet your prison without coherent design continues to imprison you. How can
-    this be, if it has no strong places? The rational prisoner exploits the weak
-    places, creates order from chaos: instead, collectives like the FSF vindicate
-    their jailers by building cells almost compatible with the existing ones, albeit
-    with more features. The journalist with three undergraduate degrees from MIT,
-    the researcher at Microsoft, and the senior scientist at Apple might volunteer a
-    few words about the regulations of the prisons to which they have been
-    transferred.
-
-    Your sense of the possible is in no sense pure: sometimes you want the same
-    thing you have, but wish you had done it yourselves; other times you want
-    something different, but can't seem to get people to use it; sometimes one
-    wonders why you just don't shut up and tell people to buy a PC with Windows or a
-    Mac. No Gulag or lice, just a future whose intellectual tone and interaction
-    style is set by Sonic the Hedgehog. You claim to seek progress, but you succeed
-    mainly in whining.
-
-    Here is my metaphor: your book is a pudding stuffed with apposite
-    observations, many well-conceived. Like excrement, it contains enough undigested
-    nuggets of nutrition to sustain life for some. But it is not a tasty pie: it
-    reeks too much of contempt and of envy.
-
-    Bon appetit!
-```
+> Anti-Foreword
+>
+>    By Dennis Ritchie
+>    From: dmr@plan9.research.att.com
+>    Date: Tue, 15 Mar 1994 00:38:07 EST
+>   Subject: anti-foreword
+>
+>    To the contributers to this book:
+>
+>    I have succumbed to the temptation you offered in your preface: I do write you
+>    off as envious malcontents and romantic keepers of memories.  The systems you
+>    remember so fondly (TOPS-20, ITS, Multics, Lisp Machine, Cedar/Mesa, the Dorado)
+>    are not just out to pasture, they are fertilizing it from below.
+>
+>    Your judgments are not keen, they are intoxicated by metaphor. In the Preface
+>    you suffer first from heat, lice, and malnourishment, then become prisoners in
+>    a Gulag. In Chapter 1 you are in turn infected by a virus, racked by drug
+>    addiction, and addled by puffiness of the genome.
+>
+>    Yet your prison without coherent design continues to imprison you. How can
+>    this be, if it has no strong places? The rational prisoner exploits the weak
+>    places, creates order from chaos: instead, collectives like the FSF vindicate
+>    their jailers by building cells almost compatible with the existing ones, albeit
+>    with more features. The journalist with three undergraduate degrees from MIT,
+>    the researcher at Microsoft, and the senior scientist at Apple might volunteer a
+>    few words about the regulations of the prisons to which they have been
+>    transferred.
+>
+>    Your sense of the possible is in no sense pure: sometimes you want the same
+>    thing you have, but wish you had done it yourselves; other times you want
+>    something different, but can't seem to get people to use it; sometimes one
+>    wonders why you just don't shut up and tell people to buy a PC with Windows or a
+>    Mac. No Gulag or lice, just a future whose intellectual tone and interaction
+>    style is set by Sonic the Hedgehog. You claim to seek progress, but you succeed
+>    mainly in whining.
+>
+>    Here is my metaphor: your book is a pudding stuffed with apposite
+>    observations, many well-conceived. Like excrement, it contains enough undigested
+>    nuggets of nutrition to sustain life for some. But it is not a tasty pie: it
+>    reeks too much of contempt and of envy.
+>
+>    Bon appetit!
 
 Yes he misspelt *'contributors'*! But then again we're talking about obfuscation
 and since it doesn't break his message it's not broken - it's just obfuscated
@@ -1234,56 +1229,51 @@ contest is about? :)
 Ken Thompson's ending:
 </div>
 
-```
-    Creators Admit C, Unix Were Hoax
-
-    FOR IMMEDIATE RELEASE
-
-    In an announcement that has stunned the computer industry, Ken Thompson,
-    Dennis Ritchie, and Brian Kernighan admitted that the Unix operating system and
-    C programming language created by them is an elaborate April Fools prank kept
-    alive for more than 20 years. Speaking at the recent UnixWorld Software
-    Development Forum, Thompson revealed the following:
-
-    "In 1969, AT&T had just terminated their work with the GE/AT&T Multics
-    project.  Brian and I had just started working with an early release of Pascal
-    from Professor Nichlaus Wirth's ETH labs in Switzerland, and we were impressed
-    with its elegant simplicity and power. Dennis had just finished reading Bored of
-    the Rings, a hilarious National Lampoon parody of the great Tolkien Lord of the
-    Rings trilogy. As a lark, we decided to do parodies of the Multics environment
-    and Pascal. Dennis and I were responsible for the operating environment. We
-    looked at Multics and designed the new system to be as complex and cryptic as
-    possible to maximize casual users' frustration levels, calling it Unix as a
-    parody of Multics, as well as other more risque allusions.
-
-    "Then Dennis and Brian worked on a truly warped version of Pascal, called "A."
-    When we found others were actually trying to programs with A, we quickly added
-    additional cryptic features and evolved into B, BCPL, and finally C. We stopped
-    when we got a clean compile on the following syntax:
-```
-
-``` <!---c-->
-    for(;P("\n"),R=;P("|"))for(e=C;e=P("_"+(*u++/
-    8)%2))P("|"+(*u/4)%2);
-```
-
-```
-    "To think that modern programmers would try to use a language that allowed
-    such a statement was beyond our comprehension! We actually thought of selling
-    this to the Soviets to set their computer science progress back 20 or more
-    years. Imagine our surprise when AT&T and other U.S. corporations actually began
-    trying to use Unix and C!  It has taken them 20 years to develop enough
-    expertise to generate even marginally useful applications using this 1960s
-    technological parody, but we are impressed with the tenacity (if not common
-    sense) of the general Unix and C programmer.
-
-    "In any event, Brian, Dennis, and I have been working exclusively in Lisp on
-    the Apple Macintosh for the past few years and feel really guilty about the
-    chaos, confusion, and truly bad programming that has resulted from our silly
-    prank so long ago."
-```
-
-Major Unix and C vendors and customers, including AT&T, Microsoft,
+>    Creators Admit C, Unix Were Hoax
+>
+>    FOR IMMEDIATE RELEASE
+>
+>    In an announcement that has stunned the computer industry, Ken Thompson,
+Dennis Ritchie, and Brian Kernighan admitted that the Unix operating system and
+C programming language created by them is an elaborate April Fools prank kept
+alive for more than 20 years. Speaking at the recent UnixWorld Software
+Development Forum, Thompson revealed the following:
+>
+>    "In 1969, AT&T had just terminated their work with the GE/AT&T Multics
+project.  Brian and I had just started working with an early release of Pascal
+from Professor Nichlaus Wirth's ETH labs in Switzerland, and we were impressed
+with its elegant simplicity and power. Dennis had just finished reading Bored of
+the Rings, a hilarious National Lampoon parody of the great Tolkien Lord of the
+Rings trilogy. As a lark, we decided to do parodies of the Multics environment
+and Pascal. Dennis and I were responsible for the operating environment. We
+looked at Multics and designed the new system to be as complex and cryptic as
+possible to maximize casual users' frustration levels, calling it Unix as a
+parody of Multics, as well as other more risque allusions.
+>
+>    "Then Dennis and Brian worked on a truly warped version of Pascal, called
+"A." When we found others were actually trying to programs with A, we quickly
+added additional cryptic features and evolved into B, BCPL, and finally C. We
+stopped when we got a clean compile on the following syntax:
+>
+>   `for(;P("\n"),R=;P("|"))for(e=C;e=P("_"+(*u++/`<br>
+>   `8)%2))P("|"+(*u/4)%2);`
+>
+>
+>    "To think that modern programmers would try to use a language that allowed
+such a statement was beyond our comprehension! We actually thought of selling
+this to the Soviets to set their computer science progress back 20 or more
+years. Imagine our surprise when AT&T and other U.S. corporations actually began
+trying to use Unix and C!  It has taken them 20 years to develop enough
+expertise to generate even marginally useful applications using this 1960s
+technological parody, but we are impressed with the tenacity (if not common
+sense) of the general Unix and C programmer.
+>
+>    "In any event, Brian, Dennis, and I have been working exclusively in Lisp
+on the Apple Macintosh for the past few years and feel really guilty about the
+chaos, confusion, and truly bad programming that has resulted from our silly
+prank so long ago."
+>
+> Major Unix and C vendors and customers, including AT&T, Microsoft,
 Hewlett-Packard, GTE, NCR, and DEC have refused comment at this time.  Borland
 International, a leading vendor of Pascal and C tools, including the popular
 Turbo Pascal, Turbo C, and Turbo C++, stated they had suspected this for a
@@ -1295,13 +1285,15 @@ cryptic statement, Professor Wirth of the ETH Institute and father of the
 Pascal, Modula 2, and Oberon structured languages, merely stated that P. T.
 Barnum was correct.
 
+<hr>
+
 So is it a hoax about a non-hoax, a non-hoax about a hoax, a non-hoax about a
 non-hoax or is it a hoax about a hoax ? :) And if it's any of those what does it
 mean about Unix and C?** And if a hoax is involved *what is the hoax?* The pedant
 and Tolkienist that I am has to state that **Tolkien didn't consider The Lord of
 the Rings a trilogy** *(and he made that very clear)* but that doesn't take away
 from the humour by any stretch (*if anyone wants me to elaborate or debate the
-matter do send me an email - I love Tolkien's legendarium and having another
+matter do send me an email - I love Tolkien's Legendarium and having another
 person to talk about it with is more than welcome!*). Ken suggested that there
 is a lack of common sense but since he was part of its creation I don't think
 it's a bad thing; **on the contrary it makes all of us C programmers even more

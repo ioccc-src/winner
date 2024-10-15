@@ -33,7 +33,7 @@ This is an EX-tremely obfuscated program!
 
 A high-context work that combines parrots that new hackers like and parrots that
 old hackers like. One is an internet meme called [Party
-Parrot](https://cultofthepartyparrot.com) (WARNING: has flashing lights). The other is a
+Parrot](https://cultofthepartyparrot.com) (**WARNING**: has flashing lights). The other is a
 sketch [comté](https://en.wikipedia.org/wiki/Comté_cheese) called ["Dead
 Parrot"](https://en.wikipedia.org/wiki/Dead_Parrot_sketch) from the British
 sitcom ["Monty Python's Flying Circus"](https://en.wikipedia.org/wiki/Monty_Python%27s_Flying_Circus)
@@ -44,8 +44,8 @@ The "_Python_" in the award name refers to Monty Python, **not** the
 The shape of [prog.c](%%REPO_URL%%/2018/endoh2/prog.c) is "Undead Parrot" based on "dead parrot". The
 message that appears in the bottom line of the output source code is the subject
 of the dialogue that appears in "Dead Parrot" and explains in various
-expressions that the parrot died. Also, the second **__<-_Source_of_Parrots__**
-line from the bottom of <http://cultofthepartyparrot.com/> (WARNING: has
+expressions that the parrot died. Also, the second `__<-_Source_of_Parrots__`
+line from the bottom of <http://cultofthepartyparrot.com/> (**WARNING**: has
 flashing lights) has a hidden URL (hidden by the parrot's body).
 
 Although it is a boring Quine story, it is quite difficult to have 10 parrot

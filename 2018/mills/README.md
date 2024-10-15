@@ -231,7 +231,7 @@ Let's try some:
 ```
 
 The program you've just run was the [winning entry of the first IOCCC contest from
-1984] [1]  (or was it 1894?), a personal favorite of mine.  It is rather
+1984][1]  (or was it 1894?), a personal favorite of mine.  It is rather
 tightly bound to running on either a PDP-11 or a VAX-11.  Now you have one.
 
 Hitting Control-C will return you to the BSD UNIX prompt.  Hitting Control-D
@@ -245,7 +245,7 @@ well enough with whatever sort of ANSI terminal emulation you are using.
 
 Note that I have not mounted the `/usr` disk here, so some commands from
 `/usr/bin` will be missing, along with all of the `man` pages.  They are
-[available online] [2] if you need them.  Adding a second RK05 disk was
+[available online][2] if you need them.  Adding a second RK05 disk was
 possible, but I didn't get around to it...  As the Judges can no doubt attest,
 "Mid 2017" creeps up on you quicker than you expect. :)
 
@@ -320,7 +320,7 @@ Assuming you're more careful than that, we can try a few commands:
 Why is Version 6 interesting?  Well, it was the oldest version that I could
 find a boot image of that had a C compiler...  This C compiler is recognizably
 C, but not quite the same syntax as we have today.  It's much closer to the
-[B language] [3] from which it is derived.  In particular, this C compiler
+[B language][3] from which it is derived.  In particular, this C compiler
 would not be able to compile `mullender.c` (as simple as it is), because the
 following syntax features don't exist yet:
 
@@ -351,10 +351,10 @@ back to the BSD emulation, you should either delete `rk05.fs` or do a
 
 We now set the Wayback Machine to the very start of it all, 1969.
 
-[The story] [4] here is interesting and well worth a read.  Bell Labs was
+[The story][4] here is interesting and well worth a read.  Bell Labs was
 pulling out of the Multics project and Ken Thompson and his colleagues had
 become accustomed to the relatively nice programming environment.  They also
-enjoyed the early computer game [*Space Travel*] [5] and wanted another system
+enjoyed the early computer game [*Space Travel*][5] and wanted another system
 to run it on.  They found a PDP-7 which was already obsolete at the time to
 port *Space Travel* to.  The primitive programming environment influenced
 Thompson to recreate parts of the Multics experience in the much more
@@ -385,14 +385,11 @@ respectively.  Let's try the Dennis Richie's `dmr` account:
 Even though this is not Ken's doing, I feel this gives me licence to
 include this quote from the BSD `fortune` program:
 
-```
-    Ken Thompson has an automobile which he helped design. Unlike
-    most automobiles, it has neither speedometer, nor gas gauge,
-    nor any of the numerous idiot lights which plague the modern
-    driver. Rather, if the driver makes any mistake, a giant "?"
-    lights up in the center of the dashboard. "The experienced
-    driver", he says, "will usually know what's wrong."
-```
+> Ken Thompson has an automobile which he helped design. Unlike most
+automobiles, it has neither speedometer, nor gas gauge, nor any of the numerous
+idiot lights which plague the modern driver. Rather, if the driver makes any
+mistake, a giant "?" lights up in the center of the dashboard. "The experienced
+driver", he says, "will usually know what's wrong."
 
 What's the deal here?  Well, that's a slightly long story.  The short version
 is we have gone so far back in the history of UNIX that *we don't have
@@ -461,16 +458,14 @@ Now `ls` will work, and we can try some other things while we are here:
 ```
 
 The last command is invoking the compiler for an extremely early version of
-the [B programming language] [3], the predecessor to C.  Thompson missed the
+the [B programming language][3], the predecessor to C.  Thompson missed the
 convenience of writing code in a high-level language -- Multics was written
 in a version of PL/1 -- and wanted the same convenience in UNIX.  He preferred
-BCPL (a typeless language) to PL/1.  As Dennis Ritchie [wrote] [6]:
+BCPL (a typeless language) to PL/1.  As Dennis Ritchie [wrote][6]:
 
-```
-    B can be thought of as C without types; more accurately,
-    it is BCPL squeezed into 8K bytes of memory and filtered
-    through Thompson's brain.
-```
+> B can be thought of as C without types; more accurately, it is BCPL
+squeezed into 8K bytes of memory and filtered through Thompson's brain.
+
 
 A look at the B reference manual will show the strong correlation with C, and
 shows the source of a lot of C's mysteriousness -- some of which is preserved
@@ -531,14 +526,14 @@ version of C, it felt cheap, as it would be
 
 It was during this time that I discovered that in 2016, members of the Unix
 Heritage Society got access to [printouts of assembly-language source for the
-original version of UNIX] [7].  With what was a [huge amount of work] [8],
+original version of UNIX][7].  With what was a [huge amount of work][8],
 they scanned in the printouts, fixed up the OCR translations, built assembler
 and file system tools from scratch and made an accurate emulation of
 Thompson's PDP-7 that allowed them to get the system up and running.  Although
 source for the entire kernel and about half of the user-space commands were
 present (including the runtime and libraries for the B compiler), the
 remainder needed to be written from scratch, including the shell.  The final
-results of the project are [available on GitHub] [9].
+results of the project are [available on GitHub][9].
 
 None of this was remotely easy (as I was to discover myself).  The PDP-7 is
 long gone, and the documentation for it is less complete than one would like.
@@ -563,7 +558,7 @@ division and shifting.
 * Perforated Tape Reader Type 444.
 * RB09 Fixed Disk Controller.
 
-The [PDP-7] [10] is an odd duck by modern computer standards:
+The [PDP-7][10] is an odd duck by modern computer standards:
 
 * 18 bit words, with no byte addressing.
 * Both one's and two's complement math (there is `ADD` for one's complement and
@@ -588,7 +583,7 @@ memory locations to support.  Being clever also helps.
 * I/O is done with dedicated I/O instructions (which are also microcoded).
 * The RB09 disk controller gets a special mention here because of its
 particularly annoying encoding of track and sector offsets in
-[packed BCD] [11].  A non-trivial amount of code space in the simulator
+[packed BCD][11].  A non-trivial amount of code space in the simulator
 is needed to convert into and out of BCD, along with an equivalent amount
 of code in the UNIX kernel itself.
 
@@ -639,7 +634,7 @@ You still have two other UNICES to play with.
 
 What about the other two UNIX variants?  These are both covered by licences
 that allow me to use them.  Back in 2002, Caldera International released
-Research Unix versions 1-7 and 32V under a [permissive BSD-like license] [12].
+Research Unix versions 1-7 and 32V under a [permissive BSD-like license][12].
 BSD UNIX is based off of v7 UNIX, and of course has its own permissive
 BSD licence.  And in 2017, Nokia also released versions 8-10 under the
 condition that it will not assert copyright rights for non-commercial use.
@@ -719,7 +714,7 @@ came about from the realization that I needed a response to the late-discovered
 licence issue, I'm quite pleased with the result -- it enables an interesting
 window on the dawn of the UNIX era.  I feel that someone should complete the
 circle here by emulating a VAX 780 on the PDP-11 and run 4.2BSD on it, so that
-we can get the [original runtime environment used for the first IOCCC] [13].
+we can get the [original runtime environment used for the first IOCCC][13].
 
 
 ### Compile-time Options:
@@ -757,7 +752,7 @@ you will need to escape `$` as `$$` to protect it from `make`.
 
 ### What is the ASCII art supposed to be?
 
-The ASCII art represents a torn piece of [paper tape] [14].
+The ASCII art represents a torn piece of [paper tape][14].
 
 
 ### Acknowledgements
@@ -765,19 +760,19 @@ The ASCII art represents a torn piece of [paper tape] [14].
 None of this could have been possible without the hard work of
 
 * Warren Toomey and the other members of the
-[The Unix Heritage Society] [15]
-* Robert M. Supnik and the other contributors to [SimH] [16], the simulator
+[The Unix Heritage Society][15]
+* Robert M. Supnik and the other contributors to [SimH][16], the simulator
 for historic computer architectures.  The number of times I needed to
 "Use the Source, Luke" on SimH to unravel some dark corner of these
 machines was uncountable.
-* [Bitsavers] [17], which acquired, scanned and preserved all the manuals
+* [Bitsavers][17], which acquired, scanned and preserved all the manuals
 I spent many hours squinting at.
 * Ken Thompson, Dennis Ritchie, Brian Kernigan, M\. D\. McIlroy, J\. F\.
 Osssanna, Rudd Canaday and the other members of the Bell Labs
 Computing Science Research Center who were responsible for the invention
 of UNIX, the C programming language, and the innumerable other innovations
 that we now take for granted as part of the modern software landscape.
-In particular, the [home page of the late Dennis Ritchie] [18] contained
+In particular, the [home page of the late Dennis Ritchie][18] contained
 a trove of useful information on the evolution of UNIX and C and is
 recommended for perusal by others who share my peculiar retro computing
 passion.
