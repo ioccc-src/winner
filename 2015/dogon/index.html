@@ -442,9 +442,10 @@ again.</p>
 <h2 id="alternate-code">Alternate code:</h2>
 <p>The author suggested that one change <code>q</code> to <code>0x82000820000000</code> instead of
 <code>0x820008202625a0</code> to see a bug that they avoided, writing:</p>
-<pre><code>    To see this bug in action change the assignment above
-    to q=0x82000820000000`, and look towards the negative
-    direction of the main tunnel.</code></pre>
+<blockquote>
+<p>To see this bug in action change the assignment above to <code>q=0x82000820000000</code>,
+and look towards the negative direction of the main tunnel.</p>
+</blockquote>
 <p>This alt version does this for you.</p>
 <h3 id="alternate-build">Alternate build:</h3>
 <pre><code>    make alt</code></pre>
@@ -519,7 +520,7 @@ the following:</li>
 </ul>
 <pre><code>    *(a&amp;1?&amp;C:&amp;B)-=(.05 -a/2%2*.1)*!(a-1&amp;4092^3920)</code></pre>
 <h3 id="precision-issues">Precision issues:</h3>
-<p>The entry, on purpose, (see the section about SIMD below) does not use enough
+<p>The entry, on purpose (see the section about SIMD below), does not use enough
 bits of precision, so sometimes the ray will miss the intersection of two voxel
 faces and push on through. That’s why you may notice some noise along close up
 voxel edges. Fixing this issue would have taken the entry over the size limit
