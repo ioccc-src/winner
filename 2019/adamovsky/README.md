@@ -160,7 +160,7 @@ and the call with current continuation `c`.
 is, how the state of the program is stored and how the Unlambda functions are
 implemented.
 
-More on this in the **Obfuscation** section.
+More on this in the [Obfuscation](#obfuscation) section.
 
 
 ### Build notes:

@@ -55,7 +55,7 @@ compresses differently? The judges know. :)
     diff -s guidelines.txt guidelines2.txt
 ```
 
-Of course you can  also use [2015/mills2prog.c](%%REPO_URL%%/2015/mills2/prog.c) instead of
+Of course you can  also use [2015/mills2](../../2015/mills2/index.html) instead of
 `zcat` to verify the output file. The achieved compression ratio roughly matches
 that of the classic Unix `compress(1)` tool. And the source code is very
 compressed, too: It has exactly the same size as the  paragraph you are reading

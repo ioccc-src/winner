@@ -4012,10 +4012,9 @@ values but his implementation matches that of macOS and FreeBSD.
 ### Source code: [2019/ciura/prog.c](%%REPO_URL%%/2019/ciura/prog.c)
 ### Information: [2019/ciura/index.html](2019/ciura/index.html)
 
-[Cody Boone Ferguson](authors.html#Cody_Boone_Ferguson) fixed the scripts so
-that they can work but it might end up that the scripts don't show any output
-anyway as they use the full alphabet. To test that it works one can have a
-script like:
+The scripts were fixed so that they can work but it might end up that the
+scripts don't show any output anyway as they use the full alphabet. To test that
+it works one can have a script like:
 
 ``` <!---sh-->
     LC_ALL=C  aäbcdefghijklmnoöpqrsßtuüvwxyz | LC_ALL=C grep .. | LC_ALL=de_DE.UTF-8 ./prog aäbcdefghijklmnoöpqrsßtuüvwxyz
@@ -4029,10 +4028,10 @@ If you run this you should see:
 
 which shows it works. However as the de.sh script refers to all letters it can't
 find a perfect pangram. BTW, as far as the question of whether the umlaut
-letters or the Eszett are considered letters in the German alphabet, Cody noted
-in the de.sh/de.alt.sh scripts:
+letters or the Eszett are considered letters in the German alphabet, it is
+noted in the de.sh/de.alt.sh scripts:
 
-```
+``` <!---sh-->
     # Are the umlauts ä, ö, ü and Eszett (ß) letters in the German alphabet? There
     # is more than one opinion on the subject but a lot of words do have an umlaut
     # (or Umlaut in German). In some (probably all) systems this script outputs
@@ -4127,31 +4126,20 @@ touched either.
 
 The author stated the following:
 
-```
-    - The program must be ran in a terminal that supports ANSI
-      escape codes for moving the cursor and changing colors.
-
-    - Segfaults happen sometimes.
-
-    - I don't know what memory management there is, if any.
-
-    - The program will not compile by an ANSI C compiler: it uses
-      for loops, and it uses C++ style comments. It should compile
-      cleanly using a C99 standard.
-
-    - Breadth first search is slow (and very slow on certain maps),
-      but my A star version of this program is too big.
-
-    - Lots of extra whitespace may be needed if you want to feed in
-      an arbitrary file.
-
-    - It fails to compile on GCC sometimes (according to a friend
-      of mine, I've not encountered this myself).
-
-    - The program could be obfuscated much further.
-
-    - The program contains some unused code and data.
-```
+- The program must be ran in a terminal that supports ANSI escape codes for
+moving the cursor and changing colors.
+- Segfaults happen sometimes.
+- I don't know what memory management there is, if any.
+- The program will not compile by an ANSI C compiler: it uses for loops, and it
+uses C++ style comments. It should compile cleanly using a C99 standard.
+- Breadth first search is slow (and very slow on certain maps), but my A star
+version of this program is too big.
+- Lots of extra whitespace may be needed if you want to feed in an arbitrary
+file.
+- It fails to compile on GCC sometimes (according to a friend of mine, I've not
+encountered this myself).
+- The program could be obfuscated much further.
+- The program contains some unused code and data.
 
 
 <div id="2019_lynn">
@@ -4183,17 +4171,14 @@ a crash.
 
 The author also wrote:
 
-```
-    IMPORTANT NOTE: Since OMLET uses the system stack for network storage,
-    larger networks may cause OMLET to crash (typically with a message like
-    Segmentation fault) unless the system stack size is first increased.
-    The exact command for doing so depends on your shell and your system's
-    hard limits.  On sh/ksh/bash shells, you can view the hard limit
-    with ulimit -Hs and set it with ulimit -s 65532 (replacing 65532
-    with the actual hard limit).  On csh/tcsh shells, you can view
-    the hard limit with limit -h stacksize and set it with
-    limit stacksize 65532 (replacing 65532 with the actual hard limit).
-```
+> IMPORTANT NOTE: Since OMLET uses the system stack for network storage, larger
+networks may cause OMLET to crash (typically with a message like Segmentation
+fault) unless the system stack size is first increased.  The exact command for
+doing so depends on your shell and your system's hard limits.  On sh/ksh/bash
+shells, you can view the hard limit with ulimit -Hs and set it with ulimit -s
+65532 (replacing 65532 with the actual hard limit).  On csh/tcsh shells, you can
+view the hard limit with limit -h stacksize and set it with limit stacksize
+65532 (replacing 65532 with the actual hard limit).
 
 <div id="2019_poikola">
 ## 2019/poikola

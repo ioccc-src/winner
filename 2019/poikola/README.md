@@ -129,22 +129,16 @@ file `poikola.pdf`. This requires the
 
 An old wise man mumbled to me:
 
-```
-    Implement a program, which can calculate SHA-3 checksum for a file --
-```
+> Implement a program, which can calculate SHA-3 checksum for a file --
 
 I thought it was easy, but the wizard didn't stop yet:
 
-```
-    and primes and Fibonacci numbers.
-```
+> and primes and Fibonacci numbers.
 
 Still easy. But the [Gandalf the
 Grey](https://www.glyphweb.com/arda/g/gandalf.html) impersonator was not ready:
 
-```
-    But use only `main()`, and do not use `math.h` nor predefined stuff at all.
-```
+> But use only `main()`, and do not use `math.h` nor predefined stuff at all.
 
 But wait, there are more rules: This work should reflect the extraordinary mind
 of Matti Nyk&auml;nen, the all-time best [ski

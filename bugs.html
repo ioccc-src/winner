@@ -3186,17 +3186,16 @@ values but his implementation matches that of macOS and FreeBSD.</p>
 <h3 id="status-inabiaf---please-do-not-fix-87">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <h3 id="source-code-2019ciuraprog.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/ciura/prog.c">2019/ciura/prog.c</a></h3>
 <h3 id="information-2019ciuraindex.html">Information: <a href="2019/ciura/index.html">2019/ciura/index.html</a></h3>
-<p><a href="authors.html#Cody_Boone_Ferguson">Cody Boone Ferguson</a> fixed the scripts so
-that they can work but it might end up that the scripts don’t show any output
-anyway as they use the full alphabet. To test that it works one can have a
-script like:</p>
+<p>The scripts were fixed so that they can work but it might end up that the
+scripts don’t show any output anyway as they use the full alphabet. To test that
+it works one can have a script like:</p>
 <pre><code>    LC_ALL=C  aäbcdefghijklmnoöpqrsßtuüvwxyz | LC_ALL=C grep .. | LC_ALL=de_DE.UTF-8 ./prog aäbcdefghijklmnoöpqrsßtuüvwxyz</code></pre>
 <p>If you run this you should see:</p>
 <pre><code>    aäbcdefghijklmnoöpqrsßtuüvwxyz</code></pre>
 <p>which shows it works. However as the de.sh script refers to all letters it can’t
 find a perfect pangram. BTW, as far as the question of whether the umlaut
-letters or the Eszett are considered letters in the German alphabet, Cody noted
-in the de.sh/de.alt.sh scripts:</p>
+letters or the Eszett are considered letters in the German alphabet, it is
+noted in the de.sh/de.alt.sh scripts:</p>
 <pre><code>    # Are the umlauts ä, ö, ü and Eszett (ß) letters in the German alphabet? There
     # is more than one opinion on the subject but a lot of words do have an umlaut
     # (or Umlaut in German). In some (probably all) systems this script outputs
@@ -3258,29 +3257,22 @@ touched either.</p>
 <h3 id="source-code-2019karnsprog.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/karns/prog.c">2019/karns/prog.c</a></h3>
 <h3 id="information-2019karnsindex.html">Information: <a href="2019/karns/index.html">2019/karns/index.html</a></h3>
 <p>The author stated the following:</p>
-<pre><code>    - The program must be ran in a terminal that supports ANSI
-      escape codes for moving the cursor and changing colors.
-
-    - Segfaults happen sometimes.
-
-    - I don&#39;t know what memory management there is, if any.
-
-    - The program will not compile by an ANSI C compiler: it uses
-      for loops, and it uses C++ style comments. It should compile
-      cleanly using a C99 standard.
-
-    - Breadth first search is slow (and very slow on certain maps),
-      but my A star version of this program is too big.
-
-    - Lots of extra whitespace may be needed if you want to feed in
-      an arbitrary file.
-
-    - It fails to compile on GCC sometimes (according to a friend
-      of mine, I&#39;ve not encountered this myself).
-
-    - The program could be obfuscated much further.
-
-    - The program contains some unused code and data.</code></pre>
+<ul>
+<li>The program must be ran in a terminal that supports ANSI escape codes for
+moving the cursor and changing colors.</li>
+<li>Segfaults happen sometimes.</li>
+<li>I don’t know what memory management there is, if any.</li>
+<li>The program will not compile by an ANSI C compiler: it uses for loops, and it
+uses C++ style comments. It should compile cleanly using a C99 standard.</li>
+<li>Breadth first search is slow (and very slow on certain maps), but my A star
+version of this program is too big.</li>
+<li>Lots of extra whitespace may be needed if you want to feed in an arbitrary
+file.</li>
+<li>It fails to compile on GCC sometimes (according to a friend of mine, I’ve not
+encountered this myself).</li>
+<li>The program could be obfuscated much further.</li>
+<li>The program contains some unused code and data.</li>
+</ul>
 <div id="2019_lynn">
 <h2 id="lynn">2019/lynn</h2>
 </div>
@@ -3302,15 +3294,16 @@ file you should delete all the checkpoint files because the format depends on
 both the network and the input – using the wrong checkpoint is likely to cause
 a crash.</p>
 <p>The author also wrote:</p>
-<pre><code>    IMPORTANT NOTE: Since OMLET uses the system stack for network storage,
-    larger networks may cause OMLET to crash (typically with a message like
-    Segmentation fault) unless the system stack size is first increased.
-    The exact command for doing so depends on your shell and your system&#39;s
-    hard limits.  On sh/ksh/bash shells, you can view the hard limit
-    with ulimit -Hs and set it with ulimit -s 65532 (replacing 65532
-    with the actual hard limit).  On csh/tcsh shells, you can view
-    the hard limit with limit -h stacksize and set it with
-    limit stacksize 65532 (replacing 65532 with the actual hard limit).</code></pre>
+<blockquote>
+<p>IMPORTANT NOTE: Since OMLET uses the system stack for network storage, larger
+networks may cause OMLET to crash (typically with a message like Segmentation
+fault) unless the system stack size is first increased. The exact command for
+doing so depends on your shell and your system’s hard limits. On sh/ksh/bash
+shells, you can view the hard limit with ulimit -Hs and set it with ulimit -s
+65532 (replacing 65532 with the actual hard limit). On csh/tcsh shells, you can
+view the hard limit with limit -h stacksize and set it with limit stacksize
+65532 (replacing 65532 with the actual hard limit).</p>
+</blockquote>
 <div id="2019_poikola">
 <h2 id="poikola">2019/poikola</h2>
 </div>

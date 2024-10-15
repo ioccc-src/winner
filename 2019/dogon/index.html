@@ -430,7 +430,7 @@ the program and the script.</p>
 <a href="../../2011/blakely/index.html">2011/blakely</a>, …</p>
 <p>…This entry likely concludes the IOCCC category “Cellular automata simulators”;
 it would be very hard to beat it on its field.</p>
-<p>FYI: The <code>.mc</code> extension stands for <code>Golly macrocell</code> format.</p>
+<p><strong>FYI</strong>: The <code>.mc</code> extension stands for <code>Golly macrocell</code> format.</p>
 <p>We truly have not much more to add, except two things:</p>
 <ul>
 <li><p>If a large sparse pattern is given, at the start of the program
@@ -438,10 +438,10 @@ you are much more likely to see a blank board rather than the loaded configurati
 and to see it, you may need to zoom out a few times.</p></li>
 <li><p>If you’re using a virtual machine with less than 4 Gb of available
 model RAM, you’d want to reduce the value of the Z define in the Makefile
-to <code>0x10000000</code>, otherwise the entry will promptly crash. To do this you can do:</p>
-<p>make clobber MEMORY=0x10000000 all</p>
-<p>Notice that that value must be a power of two!</p></li>
+to <code>0x10000000</code>, otherwise the entry will promptly crash. To do this you can do:</p></li>
 </ul>
+<pre><code>    make clobber MEMORY=0x10000000 all</code></pre>
+<p>Notice that that value must be a power of two!</p>
 <p>In the interest of saving lives, this entry was not fuzzed.</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <h3 id="what-is-it">What is it?</h3>
