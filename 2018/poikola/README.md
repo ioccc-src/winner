@@ -26,10 +26,8 @@ least 125x38, try:
 
 It is said by some students of Astronomy:
 
-```
-    Oh, Be A Fine Gal, Kiss Me!
-    Oh, Be A Fine Gentleman, Kiss Me!
-```
+> Oh, Be A Fine Gal, Kiss Me!<br>
+> Oh, Be A Fine Gentleman, Kiss Me!
 
 Many [Mnemonic variations](http://www.star.ucl.ac.uk/%7Epac/obafgkmrns.html) exist.
 You might wish, on a star, to better understand the colors being displayed.
@@ -173,21 +171,16 @@ Because the rot13 is too easy to decode with the plain eyes, I decided to use
 the [Caesar cipher](https://en.wikipedia.org/wiki/Caesar_cipher) with the key
 18:
 
-```
-    Lzw xajkl tsffwj ak wfugvwv mkafy AWWW 754 xdgslk gf dafw 47. Al ak hjaflwv
-    gfdq gf dalldw-wfvasf esuzafwk.
-```
+> Lzw xajkl tsffwj ak wfugvwv mkafy AWWW 754 xdgslk gf dafw 47. Al ak hjaflwv
+gfdq gf dalldw-wfvasf esuzafwk.
 
 If you want to or must know and don't know how to decipher this, you might look
 at the [Caesar cipher decoder](https://www.dcode.fr/caesar-cipher). Find the
 text that says:
 
-```
-    Manual decryption and parameters
-    Shift/Key (number)
-```
+> Manual decryption and parameters Shift/Key (number)
 
-and enter 18 and then click the button that says: `DECRYPT (BRUTEFORCE)`.
+.. and enter 18 and then click the button that says: `DECRYPT (BRUTEFORCE)`.
 
 <!--
 

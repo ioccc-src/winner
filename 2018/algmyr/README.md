@@ -81,7 +81,11 @@ from hearing. But even without training you can easily read along with the
 printed characters and have the sound make sense with the look of the
 characters.
 
-See image [spectrogram.png](spectrogram.png) for an example spectrogram.
+See image [spectrogram.png](spectrogram.png) for an example spectrogram:
+
+<img src="spectrogram.png"
+ alt="example spectrogram"
+ width=748 height=400>
 
 
 ### Limitations

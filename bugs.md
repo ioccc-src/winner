@@ -3871,7 +3871,7 @@ When you run it on a JSON file you will see something like:
     Abort trap: 6
 ```
 
-(from say running `./try.sh) but this is expected and the file `ioccc.html` will
+(from say running `./try.sh`) but this is expected and the file `ioccc.html` will
 be generated properly.
 
 Some JSON files might cause the program to continue to run and seemingly
@@ -3909,13 +3909,13 @@ again.
 The author also stated that it is possible to corrupt the virtual disk. If you
 do this you should type `make clobber all` and try again.
 
-Cody caused a funny problem where it showed `ERROR` after each command. The
-solution was to hit ctrl-e and start again. He does not know if this is what was
+A funny problem where it showed `ERROR` after each command was noticed. The
+solution was to hit ctrl-e and start again. It is not known if this is what was
 referred to by the author but there was likely no typo involved.
 
-Cody notes that if you are using the saved mode you must type `sync` prior to
-exiting the program or else the next time you run it the file will not exist (or
-in the case of compiled code it won't be executable).
+Another issue noticed is that if you are using the saved mode you must type
+`sync` prior to exiting the program or else the next time you run it the file
+will not exist (or in the case of compiled code it won't be executable).
 
 
 <div id="2018_vokes">

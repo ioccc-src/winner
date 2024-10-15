@@ -5,7 +5,7 @@
 ```
 
 There is an alternate version that lacks a useful bug fix. See [Alternate
-code](#alternate-code) and the author's remarks, [remarks section](#remarks),
+code](#alternate-code) and the author's remarks' [remarks section](#remarks),
 below for more details.
 
 
