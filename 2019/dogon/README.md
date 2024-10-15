@@ -43,7 +43,7 @@ the program and the script.
 ...This entry likely concludes the IOCCC category "Cellular automata simulators";
 it would be very hard to beat it on its field.
 
-FYI: The `.mc` extension stands for `Golly macrocell` format.
+**FYI**: The `.mc` extension stands for `Golly macrocell` format.
 
 We truly have not much more to add, except two things:
 
@@ -55,7 +55,9 @@ We truly have not much more to add, except two things:
   model RAM, you'd want to reduce the value of the Z define in the Makefile
   to `0x10000000`, otherwise the entry will promptly crash. To do this you can do:
 
-        make clobber MEMORY=0x10000000 all
+``` <!---sh-->
+    make clobber MEMORY=0x10000000 all
+```
 
   Notice that that value must be a power of two!
 
