@@ -412,7 +412,7 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <pre><code>    make</code></pre>
 <h2 id="to-use">To use:</h2>
 <pre><code>    ./prog</code></pre>
-<p>HINT: Try pressing the left and right arrow keys as needed.
+<p><strong>HINT</strong>: Try pressing the left and right arrow keys as needed.
 Also try pressing space/enter to select options.
 Pressing Q or Escape may end the fun before you are ready. :-)</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
@@ -449,24 +449,16 @@ size requirements. It’s currently at 2052 according to
 <p>The current size is a third to a half of the original size before compression.</p>
 <p>Due to this, it does LOTS of things that subtly annoy compilers!</p>
 <ul>
-<li><ol start="10" type="1">
-<li>data argument not used by format string</li>
-</ol>
+<li><p><code>(10)</code> data argument not used by format string</p>
 <p>This occurs because some of the <code>fprintf(3)</code> invocations don’t use all their
 parameters. The program should still work fine!</p></li>
-<li><ol type="1">
-<li>using the result of an assignment as a condition without parentheses</li>
-</ol>
+<li><p><code>(1)</code> using the result of an assignment as a condition without parentheses</p>
 <p>Somewhere, I needed to set a variable and then branch on the result. The
 shortest way was to combine them. Some self-proclaimed “EXPERTS” think this
 is a bad programming practice, but what do they know? :P</p></li>
-<li><ol type="1">
-<li>implicit declaration of function ‘time’ is invalid in C99</li>
-</ol>
+<li><p><code>(1)</code> implicit declaration of function ‘time’ is invalid in C99</p>
 <p>An <code>#include</code> statement is expensive, and I’m broke.</p></li>
-<li><ol type="1">
-<li>control may reach end of non-void function</li>
-</ol>
+<li><p><code>(1)</code> control may reach end of non-void function</p>
 <p>Turns out that sometimes, a <code>return</code> statement is too much. This will never
 actually occur, but some C compilers think they know more about my program
 than I do! :P</p></li>

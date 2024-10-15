@@ -389,7 +389,7 @@
 
 <!-- BEFORE: 1st line of markdown file: faq.md -->
 <h1 id="faq-table-of-contents">FAQ Table of Contents</h1>
-<p>This is FAQ version <strong>28.0.4 2024-08-24</strong>.</p>
+<p>This is FAQ version <strong>28.0.5 2024-10-14</strong>.</p>
 <h2 id="section-0---submitting-to-a-new-ioccc">Section 0 - <a href="#faq0">Submitting to a new IOCCC</a></h2>
 <ul>
 <li><a class="normal" href="#faq0_0">0.0 - How may I enter the IOCCC?</a></li>
@@ -455,6 +455,8 @@
 <li><a class="normal" href="#faq3_21">3.21 - What are <code>try.sh</code> and <code>try.alt.sh</code> scripts and why should I use them?</a></li>
 <li><a class="normal" href="#faq3_22">3.22 - Are there any compiler warnings that I should not worry about?</a></li>
 <li><a class="normal" href="#faq3_23">3.23 - How do I compile an IOCCC entry that requires zlib?</a></li>
+<li><a class="normal" href="#faq3_24">3.24 - How do I install Ruby for entries that require it?</a></li>
+<li><a class="normal" href="#faq3_25">3.25 - How do I install rake for entries that require it?</a></li>
 </ul>
 <h2 id="section-4---changes-made-to-ioccc-entries">Section 4 - <a href="#faq4">Changes made to IOCCC entries</a></h2>
 <ul>
@@ -3333,6 +3335,29 @@ packages: one for compiling and one for linking / running.</p>
 for downloading, installing and using zlib.</p>
 <p>We recommend trying a method suitable for your environment first, if possible.</p>
 <p>Jump to: <a href="#">top</a></p>
+<div id="faq3_24">
+<div id="ruby">
+<h3 id="faq-3.24-how-do-i-install-ruby-for-entries-that-require-it">FAQ 3.24: How do I install Ruby for entries that require it?</h3>
+</div>
+</div>
+<p>Please see the <a href="https://www.ruby-lang.org/en/documentation/installation/">official Ruby installation
+guide</a>.</p>
+<p>Jump to: <a href="#">top</a></p>
+<div id="faq3_25">
+<div id="rake">
+<h3 id="faq-3.25-how-do-i-install-rake-for-entries-that-require-it">FAQ 3.25: How do I install rake for entries that require it?</h3>
+</div>
+</div>
+<p>First, if <code>gem</code> is not installed, see the <a href="https://github.com/rubygems/rubygems">gem GitHub repo</a>.</p>
+<p>Assuming you have <code>git(1)</code> installed, you can do:</p>
+<pre><code>    git clone https://github.com/rubygems/rubygems
+    cd rubygems &amp;&amp; exe/gem install rake</code></pre>
+<p>Otherwise, you can download the zip file, extract it, cd to the directory and
+then run:</p>
+<pre><code>    exe/gem install rake</code></pre>
+<p>Once this is done, try as root or via <code>sudo</code>:</p>
+<pre><code>    gem install rake</code></pre>
+<p>Jump to: <a href="#">top</a></p>
 <div id="faq4">
 <h2 id="section-4-changes-made-to-ioccc-entries">Section 4: Changes made to IOCCC entries</h2>
 </div>
@@ -3398,7 +3423,7 @@ can look almost identical.</p>
 </div>
 <p>We have set up make rules to easily do see what was changed in the winning IOCCC
 entry source. Using the <code>Makefile</code> in the entry directory, use
-one of the following <em>make(1)</em> rules:</p>
+one of the following <code>make(1)</code> rules:</p>
 <p>The following <code>make</code> rules exist to make a difference:</p>
 <ul>
 <li><code>make diff_orig_prog</code>:

@@ -1,6 +1,6 @@
 # FAQ Table of Contents
 
-This is FAQ version **28.0.4 2024-08-24**.
+This is FAQ version **28.0.5 2024-10-14**.
 
 
 ## Section  0 - [Submitting  to a new IOCCC](#faq0)

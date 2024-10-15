@@ -6,7 +6,7 @@
 
 There is alternate code that lets you redefine the port to bind to, in case
 there is a firewall issue, and also lets you redefine the timing constant,
-`STARDATE`. See [Alternate code](#alternate code) below.
+`STARDATE`. See [Alternate code](#alternate-code) below.
 
 
 ## To use:
