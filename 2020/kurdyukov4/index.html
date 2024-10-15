@@ -416,29 +416,33 @@ Location: <a href="../../location.html#RU">RU</a> - <em>Russian Federation</em> 
 <p>When running this, ask yourself why it gets progressively slower when the
 context length decreases:</p>
 <pre><code>    ./try.sh</code></pre>
-<pre><code>    Performance depends on the number of same hashes found.
-    Too many identical strings if the context length is small.
-    -- Author</code></pre>
+<blockquote>
+<p>Performance depends on the number of same hashes found. Too many identical
+strings if the context length is small.</p>
+<p>– Author</p>
+</blockquote>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>We were able to <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/kurdyukov4/rand.c">write our own program</a> performing the same trick using
 the (still non-standard, for some reason) library function <code>memmem()</code>, but that
 way it works too fast regardless of the context length, and it’s much less fun.</p>
 <p>The author wrote in reply:</p>
 <hr style="width:10%;text-align:left;margin-left:0">
+<blockquote>
 <p>Wow, amazing! Very fast, but there is a drawback to randomness.
 If some string only appears after half the input, the first instance
 of this string will have a 50% chance of occurrence.
 Example:</p>
-<pre><code>    echo &quot;00000000000000000000 01 02 02 02 02 02 02&quot; &gt; test.txt
-    ./prog test.txt 1000 2 123
-    # more twos in output
-    ./rand test.txt 1000 2 123
-    # more ones in output</code></pre>
-<pre><code>    But this will happen very rarely on real data.
-    -- Author</code></pre>
+<p><code>echo "00000000000000000000 01 02 02 02 02 02 02" &gt; test.txt</code></p>
+<p><code>./prog test.txt 1000 2 123</code></p>
+<p><code># more twos in output</code></p>
+<p><code>./rand test.txt 1000 2 123</code></p>
+<p><code># more ones in output</code></p>
+<p>But this will happen very rarely on real data.
+– Author</p>
+</blockquote>
 <hr style="width:10%;text-align:left;margin-left:0">
 <p>Try using the same random seed and varying the context size.</p>
-<p>BTW: what on Middle-earth is <code>lámatyávë</code>? It’s Quenya, one of the languages of
+<p><strong>BTW</strong>: what on Middle-earth is <code>lámatyávë</code>? It’s Quenya, one of the languages of
 the Elves in Tolkien’s Legendarium. It means sound taste (plural is <code>lámatyáver</code>)
 and it refers to phonaesthesia - in other words, it refers to the pleasure of
 sound and form of words. It’s discussed in <a href="https://en.wikipedia.org/wiki/Morgoth%27s_Ring">Morgoth’s

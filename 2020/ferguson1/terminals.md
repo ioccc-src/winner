@@ -191,14 +191,12 @@ even just the `reset` command.
 
 The Linux man page says:
 
-```
-    You might have to run the `reset` tool like:
-
-                   <LF>reset<LF>
-
-               (the line-feed character is normally control-J) to get the terminal
-               to work, as carriage-return may no longer work in the abnormal state.
-```
+> You might have to run the `reset` tool like:
+>
+>   <LF>reset<LF>
+>
+>   (the line-feed character is normally control-J) to get the terminal to work,
+as carriage-return may no longer work in the abnormal state.
 
 If you don't have the reset utility you can try:
 
@@ -305,23 +303,20 @@ support in the source code itself.
 
 According to X/Open Curses, Issue 7 (pg. 57):
 
-```
-    With init_pair() and pair_content(), the value of pair must be in a range
-    from 0 to and including COLOR_PAIRS-1. (There may be an
-    implementation-specific upper limit on the valid value of pair, but any such
-    limit is at least 63.) Valid values for f and b are the range from 0 to and
-    including COLORS-1.
-```
+> With `init_pair()` and `pair_content()`, the value of pair must be in a range from
+0 to and including `COLOR_PAIRS-1`. (There may be an implementation-specific upper
+limit on the valid value of pair, but any such limit is at least 63.) Valid
+values for f and b are the range from 0 to and including `COLORS-1`.
 
 The manpage for `init_pair()` says this:
 
-```
-    These limits apply to color values and color pairs.  Values outside these limits are not legal, and may result in a runtime error:
-
-    [...]
-
-        COLOR_PAIRS corresponds to the terminal database's max_pairs capability, (see terminfo(5)).
-```
+> These limits apply to color values and color pairs.  Values outside these
+limits are not legal, and may result in a runtime error:
+>
+>    [...]
+>
+> `COLOR_PAIRS` corresponds to the terminal database's `max_pairs` capability,
+(see `terminfo(5)`).
 
 Based on the two as well as the fact that monochrome terminals (I've tried under
 both Linux and macOS) seem to work fine I believe I am fine here too. And to

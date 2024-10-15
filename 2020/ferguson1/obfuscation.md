@@ -630,10 +630,10 @@ there's at least one negative offset.
 
 - A note on the many `#define`s in my entry. You say you dislike them:
 
-                    Doing masses of #defines to obscure the source has become 'old'.  We
-                    tend to 'see thru' masses of #defines due to our pre-processor tests
-                    that we apply.  Simply abusing #defines or -Dfoo=bar won't go as far
-                    as a program that is more well rounded in confusion.
+> Doing masses of #defines to obscure the source has become 'old'.  We tend to
+'see thru' masses of #defines due to our pre-processor tests that we apply.
+Simply abusing #defines or -Dfoo=bar won't go as far as a program that is more
+well rounded in confusion.
 
     As I have noted though many of these save quite a lot of bytes too. It's
     true that they might aid (but barely) in obfuscation but I think that my
@@ -955,7 +955,7 @@ all spaces anyway. Thus I could save another three bytes by changing it to:
 ```
 
 Technically it would be a `" "` (see [HACKING.html][]
-else for N (not referring to the variable though it might very
+for N (not referring to the variable though it might very
 well matter here too) movements (i.e.  due to sizes) you will at times (e.g.
 after eating a bug) see the snake body char at 0,0. I'm not bothered about that
 though because the score line is meant to display something, it squeezes a few
