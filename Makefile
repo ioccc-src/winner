@@ -457,7 +457,7 @@ sort_gitignore: ${ALL_RUN} ${SORT_GITIGNORE}
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 # generate the top level authors.html page using the
-# ${GEN_AUTHORS} tool (bin/gen-authors.sh).
+# ${GEN_AUTHORS} tool bin/gen-authors.sh.
 #
 gen_authors: ${GEN_AUTHORS}
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
@@ -472,7 +472,7 @@ quick_authors: ${GEN_AUTHORS}
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 # generate the top level location.html page using the
-# ${GEN_LOCATION} tool (bin/gen-location.sh).
+# ${GEN_LOCATION} tool bin/gen-location.sh.
 #
 gen_location: ${GEN_LOCATION}
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
@@ -482,7 +482,7 @@ gen_location: ${GEN_LOCATION}
 # build location.html if it is out of date from any author/author_handle.json file
 #
 # generate the top level location.html page using the
-# ${GEN_LOCATION} tool (bin/gen-location.sh).
+# ${GEN_LOCATION} tool bin/gen-location.sh.
 #
 quick_location: ${GEN_LOCATION}
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
@@ -490,7 +490,7 @@ quick_location: ${GEN_LOCATION}
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 # generate the top level years.html page using the ${GEN_YEARS}
-# tool (bin/gen-years.sh).
+# tool bin/gen-years.sh.
 #
 gen_years: ${GEN_YEARS}
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
@@ -498,7 +498,7 @@ gen_years: ${GEN_YEARS}
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 # force the build of ALL winner index.html files using
-# the ${README2INDEX} tool (bin/readme2index.sh)
+# the ${README2INDEX} tool bin/readme2index.sh
 #
 entry_index readme2index: ${ALL_RUN} ${README2INDEX}
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
@@ -512,7 +512,7 @@ gen_top_html: ${GEN_TOP_HTML}
 	${GEN_TOP_HTML} -v 1
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
-# build entry HTML files from markdown other than README.md to index.html
+# build entry HTML files, other than README.md to index.html, from markdown
 #
 gen_other_html: ${GEN_OTHER_HTML}
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
@@ -531,7 +531,7 @@ quick_other_html: ${GEN_OTHER_HTML}
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 # generate year level index.html files using the
-# ${GEN_YEAR_INDEX} tool (bin/gen-year-index.sh).
+# ${GEN_YEAR_INDEX} tool bin/gen-year-index.sh.
 #
 gen_year_index: ${ALL_YEARS} ${GEN_YEAR_INDEX}
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
@@ -541,7 +541,7 @@ gen_year_index: ${ALL_YEARS} ${GEN_YEAR_INDEX}
 # generate year level index.html files when year level README.md is newer
 #
 # generate year level index.html files using the
-# ${GEN_YEAR_INDEX} tool (bin/gen-year-index.sh).
+# ${GEN_YEAR_INDEX} tool bin/gen-year-index.sh.
 #
 quick_year_index: ${ALL_YEARS} ${GEN_YEAR_INDEX}
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
@@ -551,7 +551,7 @@ quick_year_index: ${ALL_YEARS} ${GEN_YEAR_INDEX}
 # build winner index.html files that might be out of date
 #
 # This rule uses the ${QUICK_README2INDEX} tool
-# (bin/quick-readme2index.sh), so some winner
+# bin/quick-readme2index.sh, so some winner
 # index.html files that seem to be up to date
 # (but might not be up to date) won't be built.
 #
@@ -625,16 +625,20 @@ test:
 thanks: ${GEN_TOP_HTML} thanks-for-help.md
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
 	@echo "Thanks for all the help ..."
-	${GEN_TOP_HTML} -v 1 thanks-for-help
+	@${GEN_TOP_HTML} thanks-for-help
 	@echo "... and thanks for all the fish :-)"
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 # Bugs Bunny rule
 bugs: ${GEN_TOP_HTML} bugs.md
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
-	@echo "Shhh. Be vewy vewy quiet, I'm hunting wabbits .. and bugs."
-	${GEN_TOP_HTML} bugs
+	@echo "Shhh. Be vewy vewy quiet."
+	@echo "I'm hunting wabbits .. and bugs."
+	@${GEN_TOP_HTML} bugs
+	@echo
 	@echo "Eh, what's up, doc?"
+	@echo
+	@echo "I'm hunting wabbits."
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 faq: ${GEN_TOP_HTML} faq.md
