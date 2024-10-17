@@ -9,10 +9,14 @@ MIGHT** be used in the next IOCCC.  In some cases they might
 even be a copy of the rules from the previous IOCCC.
 
 See our
-FAQ on "[rules, guidelines, tools feedback](#feedback)".
+FAQ on "[rules, guidelines, tools feedback](#feedback)"
 as well as our
 FAQ on "[about asking questions](../faq.html#question)"
-about these rules.
+about these rules. You might also find the
+FAQ in general useful, especially the
+[FAQ section "How to enter: the bare minimum you need to know"](../faq.html#enter).
+
+
 
 
 # The IOCCC is closed
@@ -48,7 +52,7 @@ writing by [contacting the judges](../contact.html).
 </div>
 
 <p class="leftbar">
-These [IOCCC rules](rules.html) are version **28.7 2024-07-11**.
+These [IOCCC rules](rules.html) are version **28.8 2024-10-17**.
 </p>
 
 **IMPORTANT**: Be sure to read the [IOCCC guidelines](guidelines.html).
