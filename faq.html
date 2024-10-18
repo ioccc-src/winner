@@ -893,127 +893,6 @@ for more up to date information on downloading, compiling, and related FAQ infor
 Jump to: <a href="#">top</a>
 </li>
 <li>
-<div id="answers_file">
-<h3 id="q-is-there-a-way-to-not-have-to-re-enter-the-same-information-when-making-a-change-to-my-submission">Q: Is there a way to not have to re-enter the same information, when making a change to my submission?</h3>
-</div>
-<p>Yes! The <code>mkiocccentry(1)</code> tool has some options to help write <em>OR</em> read from an
-answers file so you do not have to input the author(s) or the submission
-details (like the abstract, summary etc.), just to change a file.</p>
-<p>To write to <code>answers.txt</code> try:</p>
-<pre><code>    mkiocccentry -a answers.txt ...</code></pre>
-<p>Alternatively, if you wish to overwrite a file, you can use the <code>-A</code>
-flag with the same option argument. Be <strong>very careful</strong> that you do not accidentally
-overwrite your <code>prog.c</code> or some other important file!</p>
-<p>To make use of the answers file, use the <code>-i answers</code> option like:</p>
-<pre><code>    mkiocccentry -i answers.txt ...</code></pre>
-</li>
-<li>
-<div id="frequent-themes">
-<h3 id="q-what-types-of-entries-have-been-frequently-submitted-to-the-ioccc">Q: What types of entries have been frequently submitted to the IOCCC?</h3>
-</div>
-<p>There are types of entries that are frequently submitted to the IOCCC.
-While we <strong>do not wish to prevent</strong> people from sending
-a submission to the IOCCC on a frequently submitted theme,
-we do wish to provide a <strong>fair warning</strong> to those who do.</p>
-<h4 id="fair-warnings-on-frequently-submitted-themes">Fair warnings on frequently submitted themes:</h4>
-<p><strong>IMPORTANT HINT</strong>: It is <strong>not fatal</strong> to send in those types of
-entries, it is just <strong>HARDER to win</strong> with such a submission. A
-submission on a frequently submitted theme will have to do something
-in a <strong>really unique AND interesting way</strong> to even make it into the
-final judging rounds. It will have to compete with previous IOCCC
-winners based on the same theme.</p>
-<p><strong>IMPORTANT HINT</strong>: If you really wish send in a submission on a
-frequently submitted theme, be sure that it is obfuscated in several
-new and novel ways.</p>
-<p><strong>IMPORTANT HINT</strong>: Be sure to <strong>clearly explain</strong> near the beginning
-of your <code>remarks.md</code> file, see the
-FAQ on “<a href="#remarks_md">remarks.md</a>”,
-<strong>why you are submitting an entry based on a frequently
-submitted theme</strong> and <strong>how compares with previous IOCCC winners</strong>
-of the same theme.</p>
-<h4 id="examples-of-frequently-submitted-themes">Examples of frequently submitted themes</h4>
-<h5 id="maze-generator">Maze generator</h5>
-<ul>
-<li><a href="1985/shapiro/index.html">1985/shapiro</a></li>
-<li><a href="1991/buzzard/index.html">1991/buzzard</a></li>
-<li><a href="1995/cdua/index.html">1995/cdua</a></li>
-<li><a href="1995/dodsond2/index.html">1995/dodsond2</a></li>
-<li><a href="1998/bas1/index.html">1998/bas1</a></li>
-</ul>
-<h5 id="tic-tac-toenoughts-and-crossesxs-and-os-game">Tic-Tac-Toe/Noughts and Crosses/Xs and Os game</h5>
-<ul>
-<li><a href="1991/westley/index.html">1991/westley</a></li>
-<li><a href="1996/jonth/index.html">1996/jonth</a></li>
-<li><a href="2020/carlini/index.html">2020/carlini</a></li>
-</ul>
-<h5 id="solitaireothello-game">Solitaire/Othello game</h5>
-<ul>
-<li><a href="1987/lievaart/index.html">1987/lievaart</a></li>
-<li><a href="1994/dodsond1/index.html">1994/dodsond1</a></li>
-</ul>
-<h5 id="generating-small-primes-below-is-the-list-of-all-prime-related-winning-entries">Generating small primes (below is the list of all prime related winning entries)</h5>
-<ul>
-<li><a href="1985/august/index.html">1985/august</a></li>
-<li><a href="1988/applin/index.html">1988/applin</a></li>
-<li><a href="1994/weisberg/index.html">1994/weisberg</a></li>
-<li><a href="1995/makarios/index.html">1995/makarios</a></li>
-<li><a href="1996/dalbec/index.html">1996/dalbec</a></li>
-<li><a href="2000/bellard/index.html">2000/bellard</a></li>
-</ul>
-<h5 id="self-reproducing-program">Self-reproducing program</h5>
-<ul>
-<li><a href="1990/scjones/index.html">1990/scjones</a></li>
-<li><a href="1994/smr/index.html">1994/smr</a> - <em>do not claim your program is the smallest without seeing this entry</em>!</li>
-<li><a href="2000/dhyang/index.html">2000/dhyang</a> - <em>this entry set a high bar for entries of this theme</em></li>
-</ul>
-<h5 id="entries-that-just-print-hello-world">Entries that just print “Hello, world!”</h5>
-<ul>
-<li><a href="1984/anonymous/index.html">1984/anonymous</a></li>
-<li><a href="1985/applin/index.html">1985/applin</a></li>
-<li><a href="1986/applin/index.html">1986/applin</a></li>
-<li><a href="1986/holloway/index.html">1986/holloway</a></li>
-<li><a href="1989/jar.1/index.html">1989/jar.1</a></li>
-<li><a href="1992/lush/index.html">1992/lush</a></li>
-<li><a href="2000/tomx/index.html">2000/tomx</a></li>
-</ul>
-<h5 id="entries-that-use-some-complex-state-machinetable-to-print-something">Entries that use some complex state machine/table to print something</h5>
-<ul>
-<li><a href="1988/isaak/index.html">1988/isaak</a></li>
-<li><a href="1988/phillipps/index.html">1988/phillipps</a></li>
-<li><a href="2018/ciura/index.html">2018/ciura</a></li>
-<li><a href="2018/giles/index.html">2018/giles</a></li>
-</ul>
-<h5 id="rot13">ROT13</h5>
-<ul>
-<li><a href="1985/sicherman/index.html">1985/sicherman</a></li>
-<li><a href="1989/westley/index.html">1989/westley</a></li>
-<li><a href="1990/dg/index.html">1990/dg</a></li>
-<li><a href="1991/fine/index.html">1991/fine</a></li>
-</ul>
-<h5 id="pi-or-e-computation"><strong>pi</strong> or <strong>e</strong> computation</h5>
-<ul>
-<li><a href="1986/august/index.html">1986/august</a></li>
-<li><a href="1988/robison/index.html">1988/robison</a></li>
-<li><a href="1988/westley/index.html">1988/westley</a></li>
-<li><a href="1989/roemer/index.html">1989/roemer</a></li>
-</ul>
-<h4 id="the-above-list-of-frequently-submitted-themes-is-not-exhaustive">The above list of frequently submitted themes is not exhaustive</h4>
-<h4 id="some-final-thoughts-on-frequently-used-themes">Some final thoughts on frequently used themes</h4>
-<p>While it is possible to win a new IOCCC with one of these
-<strong>frequently submitted</strong> types of entries, level of the competition from
-previous IOCCC entries make it more challenging to be successful.</p>
-<p>It is also important to note that the <a href="next/guidelines.html">guidelines</a> often
-state something along the lines of:</p>
-<pre><code>    We tend to dislike programs that: are similar to previous winning entries.</code></pre>
-<p><strong>FAIR WARNING</strong>: Be sure to <strong>clearly explain</strong> near the beginning
-of your <code>remarks.md</code> file, see the
-FAQ on “<a href="#remarks_md">remarks.md</a>”,
-<strong>why you are submitting an entry based on a frequently
-submitted theme</strong> and <strong>how compares with previous IOCCC winners</strong>
-of the same theme.</p>
-<p>Jump to: <a href="#">top</a></p>
-</li>
-<li>
 <div id="makefile">
 <div id="submission_makefile">
 <h3 id="q-what-should-i-put-in-my-submission-makefile">Q: What should I put in my submission Makefile?</h3>
@@ -1038,52 +917,6 @@ your <code>Makefile</code> should copy <code>prog.c</code> into the desired file
 <p>For the <code>make(1)</code> <em>connoisseur</em>: As of 2023, IOCCC judges use <a href="https://www.gnu.org/software/make/">GNU
 make compatible</a> <code>make(1)</code>
 command that is compatible with GNU Make version 3.81.</p>
-<p>Jump to: <a href="#">top</a></p>
-</li>
-<li>
-<div id="prog_c">
-<h3 id="q-may-i-use-a-different-source-or-compiled-filename-than-prog.c-or-prog">Q: May I use a different source or compiled filename than prog.c or prog?</h3>
-</div>
-<p>While your entry’s source filename, as submitted, must be <code>prog.c</code>, your entry’s <code>Makefile</code>
-may copy <code>prog.c</code> to a different filename as part of the compiling/building process. For example:</p>
-<pre><code>    # Makefile continues above ...
-
-    all: desired_name
-
-    desired_name: desired_name.c
-            rm -f $@
-            cc desired_name.c -o $@
-
-    desired_name.c: prog.c
-            rm -f $@
-            cp -f prog.c $@
-
-    clean:
-            rm -f desired_name.o
-
-    clobber: clean
-            rm -f desired_name.c desired_name
-
-    # Makefile continues below ...</code></pre>
-<p>We recommend that the <code>make clobber</code> rule remove files that your entry
-creates as part of the compiling/building process.</p>
-<p>You may also copy the compiled <code>prog</code> into a different file as part of compiling process.
-For example:</p>
-<pre><code>    # Makefile continues above ...
-
-    all: desired_name
-
-    different_name: prog
-            rm -f $@
-            cp -f prog $@
-
-    clean:
-            rm -f prog.o
-
-    clobber: clean
-            rm -f desired_name
-
-    # Makefile continues below ...</code></pre>
 <p>Jump to: <a href="#">top</a></p>
 </li>
 <li>
@@ -1171,37 +1004,6 @@ information, they will ask (either in public or suggest a private conversation).
 others are wondering about as well!</p>
 <p>See also the
 FAQ on “<a href="#feedback">rules, guidelines, tools feedback</a>”.</p>
-<p>Jump to: <a href="#">top</a></p>
-<div id="markdown">
-<div id="md">
-<h3 id="what-are-the-ioccc-best-practices-for-using-markdown">- What are the IOCCC best practices for using markdown?</h3>
-</div>
-</div>
-<p>The IOCCC makes extensive use of <a href="https://daringfireball.net/projects/markdown/">markdown</a>.
-For example, we <a href="#submit">submitting to the IOCCC</a>, we have people
-to submit remarks about entry in markdown format. Every
-<a href="years.html">winning IOCCC entry</a> uses a <code>README.md</code> markdown file
-as the basis for forming the <code>index.html</code> web page for that entry.
-All generated HTML pages on the <a href="https://www.ioccc.org/index.html">Official IOCCC website</a>
-start with some markdown content.</p>
-<p><strong>IMPORTANT</strong>: Please read the <a href="markdown.html">IOCCC markdown best practices</a> guide
-as it lists things you <strong>should not use</strong> in markdown files.</p>
-<p>See the <a href="https://www.markdownguide.org/basic-syntax">markdown syntax</a> guide.
-See also <a href="https://spec.commonmark.org/current/">CommonMark Spec</a>.</p>
-<p>Jump to: <a href="#">top</a></p>
-</li>
-<li>
-<div id="mkiocccentry_bugs">
-<h3 id="q-how-do-i-report-bugs-in-an-mkiocccentry-tool">Q: How do I report bugs in an <code>mkiocccentry</code> tool?</h3>
-</div>
-<p>As the <a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry toolkit</a> is
-crucial in the contest, both for submitters and the judges, if you find a bug
-(or you think you find a bug) we would be grateful if you were to report it at
-the <a href="https://github.com/ioccc-src/mkiocccentry/issues">mkiocccentry issues
-page</a>.</p>
-<p>Please see the
-FAQ on “<a href="https://github.com/ioccc-src/mkiocccentry/blob/master/FAQ.md#bugs">reporting bugs and other issues in the mkiocccentry repo</a>”
-in the <a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry repo</a>.</p>
 <p>Jump to: <a href="#">top</a></p>
 </li>
 <li>
@@ -1998,10 +1800,108 @@ submission manually then you would be violating <a href="next/rules.html#rule17"
 <div id="submitting_help">
 <h2 id="section-1-entering-the-ioccc-more-help-and-details">Section 1: Entering the IOCCC: more help and details</h2>
 </div>
+Jump to: <a href="#">top</a>
+<li>
+<div id="answers_file">
+<h3 id="q-is-there-a-way-to-not-have-to-re-enter-the-same-information-when-making-a-change-to-my-submission">Q: Is there a way to not have to re-enter the same information, when making a change to my submission?</h3>
+</div>
+<p>Yes! The <code>mkiocccentry(1)</code> tool has some options to help write <em>OR</em> read from an
+answers file so you do not have to input the author(s) or the submission
+details (like the abstract, summary etc.), just to change a file.</p>
+<p>To write to <code>answers.txt</code> try:</p>
+<pre><code>    mkiocccentry -a answers.txt ...</code></pre>
+<p>Alternatively, if you wish to overwrite a file, you can use the <code>-A</code>
+flag with the same option argument. Be <strong>very careful</strong> that you do not accidentally
+overwrite your <code>prog.c</code> or some other important file!</p>
+<p>To make use of the answers file, use the <code>-i answers</code> option like:</p>
+<pre><code>    mkiocccentry -i answers.txt ...</code></pre>
+<p>Jump to: <a href="#">top</a></p>
+</li>
+<li>
+<div id="prog_c">
+<h3 id="q-may-i-use-a-different-source-or-compiled-filename-than-prog.c-or-prog">Q: May I use a different source or compiled filename than prog.c or prog?</h3>
+</div>
+<p>While your entry’s source filename, as submitted, must be <code>prog.c</code>, your entry’s <code>Makefile</code>
+may copy <code>prog.c</code> to a different filename as part of the compiling/building process. For example:</p>
+<pre><code>    # Makefile continues above ...
+
+    all: desired_name
+
+    desired_name: desired_name.c
+            rm -f $@
+            cc desired_name.c -o $@
+
+    desired_name.c: prog.c
+            rm -f $@
+            cp -f prog.c $@
+
+    clean:
+            rm -f desired_name.o
+
+    clobber: clean
+            rm -f desired_name.c desired_name
+
+    # Makefile continues below ...</code></pre>
+<p>We recommend that the <code>make clobber</code> rule remove files that your entry
+creates as part of the compiling/building process.</p>
+<p>You may also copy the compiled <code>prog</code> into a different file as part of compiling process.
+For example:</p>
+<pre><code>    # Makefile continues above ...
+
+    all: desired_name
+
+    different_name: prog
+            rm -f $@
+            cp -f prog $@
+
+    clean:
+            rm -f prog.o
+
+    clobber: clean
+            rm -f desired_name
+
+    # Makefile continues below ...</code></pre>
+<p>Jump to: <a href="#">top</a></p>
+</li>
+<li>
+<div id="markdown">
+<div id="md">
+<h3 id="q-what-are-the-ioccc-best-practices-for-using-markdown">Q: What are the IOCCC best practices for using markdown?</h3>
+</div>
+</div>
+<p>The IOCCC makes extensive use of <a href="https://daringfireball.net/projects/markdown/">markdown</a>.
+For example, we <a href="#submit">submitting to the IOCCC</a>, we have people
+to submit remarks about entry in markdown format. Every
+<a href="years.html">winning IOCCC entry</a> uses a <code>README.md</code> markdown file
+as the basis for forming the <code>index.html</code> web page for that entry.
+All generated HTML pages on the <a href="https://www.ioccc.org/index.html">Official IOCCC website</a>
+start with some markdown content.</p>
+<p><strong>IMPORTANT</strong>: Please read the <a href="markdown.html">IOCCC markdown best practices</a> guide
+as it lists things you <strong>should not use</strong> in markdown files.</p>
+<p>See the <a href="https://www.markdownguide.org/basic-syntax">markdown syntax</a> guide.
+See also <a href="https://spec.commonmark.org/current/">CommonMark Spec</a>.</p>
+<p>Jump to: <a href="#">top</a></p>
+</li>
+<li>
+<div id="mkiocccentry_bugs">
+<h3 id="q-how-do-i-report-bugs-in-an-mkiocccentry-tool">Q: How do I report bugs in an <code>mkiocccentry</code> tool?</h3>
+</div>
+<p>As the <a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry toolkit</a> is
+crucial in the contest, both for submitters and the judges, if you find a bug
+(or you think you find a bug) we would be grateful if you were to report it at
+the <a href="https://github.com/ioccc-src/mkiocccentry/issues">mkiocccentry issues
+page</a>.</p>
+<p>Please see the
+FAQ on “<a href="https://github.com/ioccc-src/mkiocccentry/blob/master/FAQ.md#bugs">reporting bugs and other issues in the mkiocccentry repo</a>”
+in the <a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry repo</a>.</p>
+<p>Jump to: <a href="#">top</a></p>
+</li>
+</li>
+</ul>
 <ul>
 <li>
 <div id="judging">
-<h2 id="section-1-ioccc-judging-process">Section 1: IOCCC Judging process</h2>
+<h2 id="section-2-ioccc-judging-process">Section 2: IOCCC Judging process</h2>
 </div>
 <p>Jump to: <a href="#">top</a></p>
 </li>
@@ -2012,6 +1912,112 @@ submission manually then you would be violating <a href="next/rules.html#rule17"
 </div>
 </div>
 <p>By tradition, we do not say.</p>
+<p>Jump to: <a href="#">top</a></p>
+</li>
+<li>
+<div id="frequent-themes">
+<h3 id="q-what-types-of-entries-have-been-frequently-submitted-to-the-ioccc">Q: What types of entries have been frequently submitted to the IOCCC?</h3>
+</div>
+<p>There are types of entries that are frequently submitted to the IOCCC.
+While we <strong>do not wish to prevent</strong> people from sending
+a submission to the IOCCC on a frequently submitted theme,
+we do wish to provide a <strong>fair warning</strong> to those who do.</p>
+<h4 id="fair-warnings-on-frequently-submitted-themes">Fair warnings on frequently submitted themes:</h4>
+<p><strong>IMPORTANT HINT</strong>: It is <strong>not fatal</strong> to send in those types of
+entries, it is just <strong>HARDER to win</strong> with such a submission. A
+submission on a frequently submitted theme will have to do something
+in a <strong>really unique AND interesting way</strong> to even make it into the
+final judging rounds. It will have to compete with previous IOCCC
+winners based on the same theme.</p>
+<p><strong>IMPORTANT HINT</strong>: If you really wish send in a submission on a
+frequently submitted theme, be sure that it is obfuscated in several
+new and novel ways.</p>
+<p><strong>IMPORTANT HINT</strong>: Be sure to <strong>clearly explain</strong> near the beginning
+of your <code>remarks.md</code> file, see the
+FAQ on “<a href="#remarks_md">remarks.md</a>”,
+<strong>why you are submitting an entry based on a frequently
+submitted theme</strong> and <strong>how compares with previous IOCCC winners</strong>
+of the same theme.</p>
+<h4 id="examples-of-frequently-submitted-themes">Examples of frequently submitted themes</h4>
+<h5 id="maze-generator">Maze generator</h5>
+<ul>
+<li><a href="1985/shapiro/index.html">1985/shapiro</a></li>
+<li><a href="1991/buzzard/index.html">1991/buzzard</a></li>
+<li><a href="1995/cdua/index.html">1995/cdua</a></li>
+<li><a href="1995/dodsond2/index.html">1995/dodsond2</a></li>
+<li><a href="1998/bas1/index.html">1998/bas1</a></li>
+</ul>
+<h5 id="tic-tac-toenoughts-and-crossesxs-and-os-game">Tic-Tac-Toe/Noughts and Crosses/Xs and Os game</h5>
+<ul>
+<li><a href="1991/westley/index.html">1991/westley</a></li>
+<li><a href="1996/jonth/index.html">1996/jonth</a></li>
+<li><a href="2020/carlini/index.html">2020/carlini</a></li>
+</ul>
+<h5 id="solitaireothello-game">Solitaire/Othello game</h5>
+<ul>
+<li><a href="1987/lievaart/index.html">1987/lievaart</a></li>
+<li><a href="1994/dodsond1/index.html">1994/dodsond1</a></li>
+</ul>
+<h5 id="generating-small-primes-below-is-the-list-of-all-prime-related-winning-entries">Generating small primes (below is the list of all prime related winning entries)</h5>
+<ul>
+<li><a href="1985/august/index.html">1985/august</a></li>
+<li><a href="1988/applin/index.html">1988/applin</a></li>
+<li><a href="1994/weisberg/index.html">1994/weisberg</a></li>
+<li><a href="1995/makarios/index.html">1995/makarios</a></li>
+<li><a href="1996/dalbec/index.html">1996/dalbec</a></li>
+<li><a href="2000/bellard/index.html">2000/bellard</a></li>
+</ul>
+<h5 id="self-reproducing-program">Self-reproducing program</h5>
+<ul>
+<li><a href="1990/scjones/index.html">1990/scjones</a></li>
+<li><a href="1994/smr/index.html">1994/smr</a> - <em>do not claim your program is the smallest without seeing this entry</em>!</li>
+<li><a href="2000/dhyang/index.html">2000/dhyang</a> - <em>this entry set a high bar for entries of this theme</em></li>
+</ul>
+<h5 id="entries-that-just-print-hello-world">Entries that just print “Hello, world!”</h5>
+<ul>
+<li><a href="1984/anonymous/index.html">1984/anonymous</a></li>
+<li><a href="1985/applin/index.html">1985/applin</a></li>
+<li><a href="1986/applin/index.html">1986/applin</a></li>
+<li><a href="1986/holloway/index.html">1986/holloway</a></li>
+<li><a href="1989/jar.1/index.html">1989/jar.1</a></li>
+<li><a href="1992/lush/index.html">1992/lush</a></li>
+<li><a href="2000/tomx/index.html">2000/tomx</a></li>
+</ul>
+<h5 id="entries-that-use-some-complex-state-machinetable-to-print-something">Entries that use some complex state machine/table to print something</h5>
+<ul>
+<li><a href="1988/isaak/index.html">1988/isaak</a></li>
+<li><a href="1988/phillipps/index.html">1988/phillipps</a></li>
+<li><a href="2018/ciura/index.html">2018/ciura</a></li>
+<li><a href="2018/giles/index.html">2018/giles</a></li>
+</ul>
+<h5 id="rot13">ROT13</h5>
+<ul>
+<li><a href="1985/sicherman/index.html">1985/sicherman</a></li>
+<li><a href="1989/westley/index.html">1989/westley</a></li>
+<li><a href="1990/dg/index.html">1990/dg</a></li>
+<li><a href="1991/fine/index.html">1991/fine</a></li>
+</ul>
+<h5 id="pi-or-e-computation"><strong>pi</strong> or <strong>e</strong> computation</h5>
+<ul>
+<li><a href="1986/august/index.html">1986/august</a></li>
+<li><a href="1988/robison/index.html">1988/robison</a></li>
+<li><a href="1988/westley/index.html">1988/westley</a></li>
+<li><a href="1989/roemer/index.html">1989/roemer</a></li>
+</ul>
+<h4 id="the-above-list-of-frequently-submitted-themes-is-not-exhaustive">The above list of frequently submitted themes is not exhaustive</h4>
+<h4 id="some-final-thoughts-on-frequently-used-themes">Some final thoughts on frequently used themes</h4>
+<p>While it is possible to win a new IOCCC with one of these
+<strong>frequently submitted</strong> types of entries, level of the competition from
+previous IOCCC entries make it more challenging to be successful.</p>
+<p>It is also important to note that the <a href="next/guidelines.html">guidelines</a> often
+state something along the lines of:</p>
+<pre><code>    We tend to dislike programs that: are similar to previous winning entries.</code></pre>
+<p><strong>FAIR WARNING</strong>: Be sure to <strong>clearly explain</strong> near the beginning
+of your <code>remarks.md</code> file, see the
+FAQ on “<a href="#remarks_md">remarks.md</a>”,
+<strong>why you are submitting an entry based on a frequently
+submitted theme</strong> and <strong>how compares with previous IOCCC winners</strong>
+of the same theme.</p>
 <p>Jump to: <a href="#">top</a></p>
 </li>
 <li>
@@ -2178,7 +2184,7 @@ winning entries page</a>. This is done by updating this repo.</p></li>
 <ul>
 <li>
 <div id="mkiocccentry_details">
-<h2 id="section-2-the-mkiocccentry-toolkit-finer-details">Section 2: The mkiocccentry toolkit: finer details</h2>
+<h2 id="section-3-the-mkiocccentry-toolkit-finer-details">Section 3: The mkiocccentry toolkit: finer details</h2>
 </div>
 Jump to: <a href="#">top</a>
 </li>
@@ -2319,8 +2325,8 @@ for more information.</p>
 </ul>
 <ul>
 <li>
-<div id="ioccc_entries">
-<h2 id="section-2-compiling-and-running-ioccc-entries">Section 2: Compiling and running IOCCC entries</h2>
+<div id="compiling">
+<h2 id="section-4-compiling-ioccc-entries">Section 4: Compiling IOCCC entries</h2>
 </div>
 <p>Jump to: <a href="#">top</a></p>
 </li>
@@ -3300,8 +3306,32 @@ Jump to: <a href="#">top</a>
 </ul>
 <ul>
 <li>
+<div id="dependencies">
+<h2 id="section-5-dependencies-for-some-ioccc-entries">Section 5: Dependencies for some IOCCC entries</h2>
+</div>
+Jump to: <a href="#">top</a>
+</li>
+</ul>
+<ul>
+<li>
+<div id="compile_problems">
+<h2 id="section-6-problems-compiling-ioccc-entries">Section 6: Problems compiling IOCCC entries</h2>
+</div>
+<p>Jump to: <a href="#">top</a></p>
+</li>
+</ul>
+<ul>
+<li>
+<div id="running_entries">
+<h2 id="section-7-running-ioccc-entries">Section 7: Running IOCCC entries</h2>
+</div>
+<p>Jump to: <a href="#">top</a></p>
+</li>
+</ul>
+<ul>
+<li>
 <div id="changes">
-<h2 id="section-3-changes-made-to-ioccc-entries">Section 3: Changes made to IOCCC entries</h2>
+<h2 id="section-8-changes-made-to-ioccc-entries">Section 8: Changes made to IOCCC entries</h2>
 </div>
 <p>Jump to: <a href="#">top</a></p>
 </li>
@@ -3617,7 +3647,7 @@ for more information and make rules relating to “<strong>original source file<
 <ul>
 <li>
 <div id="help">
-<h2 id="section-4-helping-the-ioccc">Section 4: Helping the IOCCC</h2>
+<h2 id="section-9-helping-the-ioccc">Section 9: Helping the IOCCC</h2>
 </div>
 <p>Jump to: <a href="#">top</a></p>
 </li>
@@ -4022,7 +4052,7 @@ that be prove helpful.</p>
 <ul>
 <li>
 <div id="misc">
-<h2 id="section-5-miscellaneous-ioccc">Section 5: Miscellaneous IOCCC</h2>
+<h2 id="section-10-miscellaneous-ioccc">Section 10: Miscellaneous IOCCC</h2>
 </div>
 <p>Jump to: <a href="#">top</a></p>
 </li>
@@ -5447,7 +5477,7 @@ and inexplicable.</p>
 <li>
 <div id="history">
 <div id="ioccc_history">
-<h2 id="section-6-history-of-the-ioccc">Section 6: History of the IOCCC</h2>
+<h2 id="section-11-history-of-the-ioccc">Section 11: History of the IOCCC</h2>
 </div>
 </div>
 <p>Jump to: <a href="#">top</a></p>

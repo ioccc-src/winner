@@ -408,168 +408,8 @@ for more up to date information on downloading, compiling, and related FAQ infor
 
 Jump to: [top](#)
 </li>
-<li>
-<div id="answers_file">
-### Q: Is there a way to not have to re-enter the same information, when making a change to my submission?
-</div>
-
-Yes! The `mkiocccentry(1)` tool has some options to help write _OR_ read from an
-answers file so you do not have to input the author(s) or the submission
-details (like the abstract, summary etc.), just to change a file.
-
-To write to `answers.txt` try:
-
-``` <!---sh-->
-    mkiocccentry -a answers.txt ...
-```
-
-Alternatively, if you wish to overwrite a file, you can use the `-A`
-flag with the same option argument. Be **very careful** that you do not accidentally
-overwrite your `prog.c` or some other important file!
-
-To make use of the answers file, use the `-i answers` option like:
-
-``` <!---sh-->
-    mkiocccentry -i answers.txt ...
-```
 
 
-</li>
-<li>
-<div id="frequent-themes">
-### Q: What types of entries have been frequently submitted to the IOCCC?
-</div>
-
-There are types of entries that are frequently submitted to the IOCCC.
-While we **do not wish to prevent** people from sending
-a submission to the IOCCC on a frequently submitted theme,
-we do wish to provide a **fair warning** to those who do.
-
-
-#### Fair warnings on frequently submitted themes:
-
-**IMPORTANT HINT**: It is **not fatal** to send in those types of
-entries, it is just **HARDER to win** with such a submission.  A
-submission on a frequently submitted theme will have to do something
-in a **really unique AND interesting way** to even make it into the
-final judging rounds.  It will have to compete with previous IOCCC
-winners based on the same theme.
-
-**IMPORTANT HINT**: If you really wish send in a submission on a
-frequently submitted theme, be sure that it is obfuscated in several
-new and novel ways.
-
-**IMPORTANT HINT**: Be sure to **clearly explain** near the beginning
-of your `remarks.md` file, see the
-FAQ on "[remarks.md](#remarks_md)",
-**why you are submitting an entry based on a frequently
-submitted theme** and **how compares with previous IOCCC winners**
-of the same theme.
-
-
-#### Examples of frequently submitted themes
-
-
-##### Maze generator
-
-- [1985/shapiro](1985/shapiro/index.html)
-- [1991/buzzard](1991/buzzard/index.html)
-- [1995/cdua](1995/cdua/index.html)
-- [1995/dodsond2](1995/dodsond2/index.html)
-- [1998/bas1](1998/bas1/index.html)
-
-
-##### Tic-Tac-Toe/Noughts and Crosses/Xs and Os game
-
-- [1991/westley](1991/westley/index.html)
-- [1996/jonth](1996/jonth/index.html)
-- [2020/carlini](2020/carlini/index.html)
-
-
-##### Solitaire/Othello game
-
-- [1987/lievaart](1987/lievaart/index.html)
-- [1994/dodsond1](1994/dodsond1/index.html)
-
-
-##### Generating small primes (below is the list of all prime related winning entries)
-
-- [1985/august](1985/august/index.html)
-- [1988/applin](1988/applin/index.html)
-- [1994/weisberg](1994/weisberg/index.html)
-- [1995/makarios](1995/makarios/index.html)
-- [1996/dalbec](1996/dalbec/index.html)
-- [2000/bellard](2000/bellard/index.html)
-
-
-##### Self-reproducing program
-
-- [1990/scjones](1990/scjones/index.html)
-- [1994/smr](1994/smr/index.html) - _do not claim your program is the smallest without seeing this entry_!
-- [2000/dhyang](2000/dhyang/index.html) - _this entry set a high bar for entries of this theme_
-
-
-##### Entries that just print "Hello, world!"
-
-- [1984/anonymous](1984/anonymous/index.html)
-- [1985/applin](1985/applin/index.html)
-- [1986/applin](1986/applin/index.html)
-- [1986/holloway](1986/holloway/index.html)
-- [1989/jar.1](1989/jar.1/index.html)
-- [1992/lush](1992/lush/index.html)
-- [2000/tomx](2000/tomx/index.html)
-
-
-##### Entries that use some complex state machine/table to print something
-
-- [1988/isaak](1988/isaak/index.html)
-- [1988/phillipps](1988/phillipps/index.html)
-- [2018/ciura](2018/ciura/index.html)
-- [2018/giles](2018/giles/index.html)
-
-
-##### ROT13
-
-- [1985/sicherman](1985/sicherman/index.html)
-- [1989/westley](1989/westley/index.html)
-- [1990/dg](1990/dg/index.html)
-- [1991/fine](1991/fine/index.html)
-
-
-##### **pi** or **e** computation
-
-- [1986/august](1986/august/index.html)
-- [1988/robison](1988/robison/index.html)
-- [1988/westley](1988/westley/index.html)
-- [1989/roemer](1989/roemer/index.html)
-
-
-####  The above list of frequently submitted themes is not exhaustive
-
-
-#### Some final thoughts on frequently used themes
-
-While it is possible to win a new IOCCC with one of these
-**frequently submitted** types of entries, level of the competition from
-previous IOCCC entries make it more challenging to be successful.
-
-It is also important to note that the [guidelines](next/guidelines.html) often
-state something along the lines of:
-
-```
-    We tend to dislike programs that: are similar to previous winning entries.
-```
-
-**FAIR WARNING**: Be sure to **clearly explain** near the beginning
-of your `remarks.md` file, see the
-FAQ on "[remarks.md](#remarks_md)",
-**why you are submitting an entry based on a frequently
-submitted theme** and **how compares with previous IOCCC winners**
-of the same theme.
-
-Jump to: [top](#)
-
-</li>
 <li>
 <div id="makefile">
 <div id="submission_makefile">
@@ -604,63 +444,7 @@ command that is compatible with GNU Make version 3.81.
 Jump to: [top](#)
 
 </li>
-<li>
-<div id="prog_c">
-### Q: May I use a different source or compiled filename than prog.c or prog?
-</div>
 
-While your entry's source filename, as submitted, must be `prog.c`, your entry's `Makefile`
-may copy `prog.c` to a different filename as part of the compiling/building process.  For example:
-
-``` <!---make-->
-    # Makefile continues above ...
-
-    all: desired_name
-
-    desired_name: desired_name.c
-            rm -f $@
-            cc desired_name.c -o $@
-
-    desired_name.c: prog.c
-            rm -f $@
-            cp -f prog.c $@
-
-    clean:
-            rm -f desired_name.o
-
-    clobber: clean
-            rm -f desired_name.c desired_name
-
-    # Makefile continues below ...
-```
-
-We recommend that the `make clobber` rule remove files that your entry
-creates as part of the compiling/building process.
-
-You may also copy the compiled `prog` into a different file as part of compiling process.
-For example:
-
-``` <!---make-->
-    # Makefile continues above ...
-
-    all: desired_name
-
-    different_name: prog
-            rm -f $@
-            cp -f prog $@
-
-    clean:
-            rm -f prog.o
-
-    clobber: clean
-            rm -f desired_name
-
-    # Makefile continues below ...
-```
-
-Jump to: [top](#)
-
-</li>
 <li>
 <div id="SUS">
 <div id="platform">
@@ -767,48 +551,10 @@ FAQ on "[rules, guidelines, tools feedback](#feedback)".
 
 Jump to: [top](#)
 
-
-<div id="markdown">
-<div id="md">
-### - What are the IOCCC best practices for using markdown?
-</div>
-</div>
-
-The IOCCC makes extensive use of [markdown](https://daringfireball.net/projects/markdown/).
-For example, we [submitting to the IOCCC](#submit), we have people
-to submit remarks about entry in markdown format.  Every
-[winning IOCCC entry](years.html) uses a `README.md` markdown file
-as the basis for forming the `index.html` web page for that entry.
-All generated HTML pages on the [Official IOCCC website](https://www.ioccc.org/index.html)
-start with some markdown content.
-
-**IMPORTANT**: Please read the [IOCCC markdown best practices](markdown.html) guide
-as it lists things you **should not use** in markdown files.
-
-See the [markdown syntax](https://www.markdownguide.org/basic-syntax) guide.
-See also [CommonMark Spec](https://spec.commonmark.org/current/).
-
-Jump to: [top](#)
-
 </li>
-<li>
-<div id="mkiocccentry_bugs">
-### Q: How do I report bugs in an `mkiocccentry` tool?
-</div>
 
-As the [mkiocccentry toolkit](https://github.com/ioccc-src/mkiocccentry) is
-crucial in the contest, both for submitters and the judges, if you find a bug
-(or you think you find a bug) we would be grateful if you were to report it at
-the [mkiocccentry issues
-page](https://github.com/ioccc-src/mkiocccentry/issues).
 
-Please see the
-FAQ on "[reporting bugs and other issues in the mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry/blob/master/FAQ.md#bugs)"
-in the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry).
 
-Jump to: [top](#)
-
-</li>
 <li>
 <div id="auth_json">
 ### Q: What is a `.auth.json` file?
@@ -1644,14 +1390,144 @@ Jump to: [top](#)
 <div id="submitting_help">
 ## Section 1: Entering the IOCCC: more help and details
 </div>
+Jump to: [top](#)
+<li>
+<div id="answers_file">
+### Q: Is there a way to not have to re-enter the same information, when making a change to my submission?
+</div>
 
+Yes! The `mkiocccentry(1)` tool has some options to help write _OR_ read from an
+answers file so you do not have to input the author(s) or the submission
+details (like the abstract, summary etc.), just to change a file.
 
+To write to `answers.txt` try:
 
+``` <!---sh-->
+    mkiocccentry -a answers.txt ...
+```
+
+Alternatively, if you wish to overwrite a file, you can use the `-A`
+flag with the same option argument. Be **very careful** that you do not accidentally
+overwrite your `prog.c` or some other important file!
+
+To make use of the answers file, use the `-i answers` option like:
+
+``` <!---sh-->
+    mkiocccentry -i answers.txt ...
+```
+
+Jump to: [top](#)
+
+</li>
+
+<li>
+<div id="prog_c">
+### Q: May I use a different source or compiled filename than prog.c or prog?
+</div>
+
+While your entry's source filename, as submitted, must be `prog.c`, your entry's `Makefile`
+may copy `prog.c` to a different filename as part of the compiling/building process.  For example:
+
+``` <!---make-->
+    # Makefile continues above ...
+
+    all: desired_name
+
+    desired_name: desired_name.c
+            rm -f $@
+            cc desired_name.c -o $@
+
+    desired_name.c: prog.c
+            rm -f $@
+            cp -f prog.c $@
+
+    clean:
+            rm -f desired_name.o
+
+    clobber: clean
+            rm -f desired_name.c desired_name
+
+    # Makefile continues below ...
+```
+
+We recommend that the `make clobber` rule remove files that your entry
+creates as part of the compiling/building process.
+
+You may also copy the compiled `prog` into a different file as part of compiling process.
+For example:
+
+``` <!---make-->
+    # Makefile continues above ...
+
+    all: desired_name
+
+    different_name: prog
+            rm -f $@
+            cp -f prog $@
+
+    clean:
+            rm -f prog.o
+
+    clobber: clean
+            rm -f desired_name
+
+    # Makefile continues below ...
+```
+
+Jump to: [top](#)
+
+</li>
+
+<li>
+<div id="markdown">
+<div id="md">
+### Q: What are the IOCCC best practices for using markdown?
+</div>
+</div>
+
+The IOCCC makes extensive use of [markdown](https://daringfireball.net/projects/markdown/).
+For example, we [submitting to the IOCCC](#submit), we have people
+to submit remarks about entry in markdown format.  Every
+[winning IOCCC entry](years.html) uses a `README.md` markdown file
+as the basis for forming the `index.html` web page for that entry.
+All generated HTML pages on the [Official IOCCC website](https://www.ioccc.org/index.html)
+start with some markdown content.
+
+**IMPORTANT**: Please read the [IOCCC markdown best practices](markdown.html) guide
+as it lists things you **should not use** in markdown files.
+
+See the [markdown syntax](https://www.markdownguide.org/basic-syntax) guide.
+See also [CommonMark Spec](https://spec.commonmark.org/current/).
+
+Jump to: [top](#)
+
+</li>
+
+<li>
+<div id="mkiocccentry_bugs">
+### Q: How do I report bugs in an `mkiocccentry` tool?
+</div>
+
+As the [mkiocccentry toolkit](https://github.com/ioccc-src/mkiocccentry) is
+crucial in the contest, both for submitters and the judges, if you find a bug
+(or you think you find a bug) we would be grateful if you were to report it at
+the [mkiocccentry issues
+page](https://github.com/ioccc-src/mkiocccentry/issues).
+
+Please see the
+FAQ on "[reporting bugs and other issues in the mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry/blob/master/FAQ.md#bugs)"
+in the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry).
+
+Jump to: [top](#)
+
+</li>
+</li>
+</ul>
 
 <ul>
 <li>
 <div id="judging">
-## Section 1: IOCCC Judging process
+## Section 2: IOCCC Judging process
 </div>
 
 Jump to: [top](#)
@@ -1665,6 +1541,142 @@ Jump to: [top](#)
 </div>
 
 By tradition, we do not say.
+
+Jump to: [top](#)
+
+</li>
+
+<li>
+<div id="frequent-themes">
+### Q: What types of entries have been frequently submitted to the IOCCC?
+</div>
+
+There are types of entries that are frequently submitted to the IOCCC.
+While we **do not wish to prevent** people from sending
+a submission to the IOCCC on a frequently submitted theme,
+we do wish to provide a **fair warning** to those who do.
+
+
+#### Fair warnings on frequently submitted themes:
+
+**IMPORTANT HINT**: It is **not fatal** to send in those types of
+entries, it is just **HARDER to win** with such a submission.  A
+submission on a frequently submitted theme will have to do something
+in a **really unique AND interesting way** to even make it into the
+final judging rounds.  It will have to compete with previous IOCCC
+winners based on the same theme.
+
+**IMPORTANT HINT**: If you really wish send in a submission on a
+frequently submitted theme, be sure that it is obfuscated in several
+new and novel ways.
+
+**IMPORTANT HINT**: Be sure to **clearly explain** near the beginning
+of your `remarks.md` file, see the
+FAQ on "[remarks.md](#remarks_md)",
+**why you are submitting an entry based on a frequently
+submitted theme** and **how compares with previous IOCCC winners**
+of the same theme.
+
+
+#### Examples of frequently submitted themes
+
+
+##### Maze generator
+
+- [1985/shapiro](1985/shapiro/index.html)
+- [1991/buzzard](1991/buzzard/index.html)
+- [1995/cdua](1995/cdua/index.html)
+- [1995/dodsond2](1995/dodsond2/index.html)
+- [1998/bas1](1998/bas1/index.html)
+
+
+##### Tic-Tac-Toe/Noughts and Crosses/Xs and Os game
+
+- [1991/westley](1991/westley/index.html)
+- [1996/jonth](1996/jonth/index.html)
+- [2020/carlini](2020/carlini/index.html)
+
+
+##### Solitaire/Othello game
+
+- [1987/lievaart](1987/lievaart/index.html)
+- [1994/dodsond1](1994/dodsond1/index.html)
+
+
+##### Generating small primes (below is the list of all prime related winning entries)
+
+- [1985/august](1985/august/index.html)
+- [1988/applin](1988/applin/index.html)
+- [1994/weisberg](1994/weisberg/index.html)
+- [1995/makarios](1995/makarios/index.html)
+- [1996/dalbec](1996/dalbec/index.html)
+- [2000/bellard](2000/bellard/index.html)
+
+
+##### Self-reproducing program
+
+- [1990/scjones](1990/scjones/index.html)
+- [1994/smr](1994/smr/index.html) - _do not claim your program is the smallest without seeing this entry_!
+- [2000/dhyang](2000/dhyang/index.html) - _this entry set a high bar for entries of this theme_
+
+
+##### Entries that just print "Hello, world!"
+
+- [1984/anonymous](1984/anonymous/index.html)
+- [1985/applin](1985/applin/index.html)
+- [1986/applin](1986/applin/index.html)
+- [1986/holloway](1986/holloway/index.html)
+- [1989/jar.1](1989/jar.1/index.html)
+- [1992/lush](1992/lush/index.html)
+- [2000/tomx](2000/tomx/index.html)
+
+
+##### Entries that use some complex state machine/table to print something
+
+- [1988/isaak](1988/isaak/index.html)
+- [1988/phillipps](1988/phillipps/index.html)
+- [2018/ciura](2018/ciura/index.html)
+- [2018/giles](2018/giles/index.html)
+
+
+##### ROT13
+
+- [1985/sicherman](1985/sicherman/index.html)
+- [1989/westley](1989/westley/index.html)
+- [1990/dg](1990/dg/index.html)
+- [1991/fine](1991/fine/index.html)
+
+
+##### **pi** or **e** computation
+
+- [1986/august](1986/august/index.html)
+- [1988/robison](1988/robison/index.html)
+- [1988/westley](1988/westley/index.html)
+- [1989/roemer](1989/roemer/index.html)
+
+
+####  The above list of frequently submitted themes is not exhaustive
+
+
+#### Some final thoughts on frequently used themes
+
+While it is possible to win a new IOCCC with one of these
+**frequently submitted** types of entries, level of the competition from
+previous IOCCC entries make it more challenging to be successful.
+
+It is also important to note that the [guidelines](next/guidelines.html) often
+state something along the lines of:
+
+```
+    We tend to dislike programs that: are similar to previous winning entries.
+```
+
+**FAIR WARNING**: Be sure to **clearly explain** near the beginning
+of your `remarks.md` file, see the
+FAQ on "[remarks.md](#remarks_md)",
+**why you are submitting an entry based on a frequently
+submitted theme** and **how compares with previous IOCCC winners**
+of the same theme.
 
 Jump to: [top](#)
 
@@ -1870,7 +1882,7 @@ Jump to: [top](#)
 <ul>
 <li>
 <div id="mkiocccentry_details">
-## Section 2: The mkiocccentry toolkit: finer details
+## Section 3: The mkiocccentry toolkit: finer details
 </div>
 
 Jump to: [top](#)
@@ -2038,8 +2050,8 @@ Jump to: [top](#)
 
 <ul>
 <li>
-<div id="ioccc_entries">
-## Section 2: Compiling and running IOCCC entries
+<div id="compiling">
+## Section 4: Compiling IOCCC entries
 </div>
 
 Jump to: [top](#)
@@ -3607,8 +3619,40 @@ Jump to: [top](#)
 
 <ul>
 <li>
+<div id="dependencies">
+## Section 5: Dependencies for some IOCCC entries
+</div>
+
+Jump to: [top](#)
+</li>
+</ul>
+
+<ul>
+<li>
+<div id="compile_problems">
+## Section 6: Problems compiling IOCCC entries
+</div>
+
+Jump to: [top](#)
+
+</li>
+</ul>
+
+<ul>
+<li>
+<div id="running_entries">
+## Section 7: Running IOCCC entries
+</div>
+
+Jump to: [top](#)
+
+</li>
+</ul>
+
+<ul>
+<li>
 <div id="changes">
-## Section 3: Changes made to IOCCC entries
+## Section 8: Changes made to IOCCC entries
 </div>
 
 Jump to: [top](#)
@@ -4023,7 +4067,7 @@ Jump to: [top](#)
 <ul>
 <li>
 <div id="help">
-## Section 4: Helping the IOCCC
+## Section 9: Helping the IOCCC
 </div>
 
 Jump to: [top](#)
@@ -4566,7 +4610,7 @@ Jump to: [top](#)
 <ul>
 <li>
 <div id="misc">
-## Section 5: Miscellaneous IOCCC
+## Section 10: Miscellaneous IOCCC
 </div>
 
 Jump to: [top](#)
@@ -6581,7 +6625,7 @@ Share and enjoy! ☺️
 <li>
 <div id="history">
 <div id="ioccc_history">
-## Section 6: History of the IOCCC
+## Section 11: History of the IOCCC
 </div>
 </div>
 
