@@ -409,6 +409,23 @@ for more up to date information on downloading, compiling, and related FAQ infor
 Jump to: [top](#)
 </li>
 
+<li>
+<div id="SUS">
+<div id="platform">
+<div id="portability">
+### Q: What platform should I assume for my submission?
+</div>
+</div>
+</div>
+
+Your entry must compile with **clang** or **gcc** and run under at least one flavor of a UNIX
+system that conforms to the [SUS](https://en.wikipedia.org/wiki/Single_UNIX_Specification),
+otherwise known as the [The Single UNIX Specification Version 4](https://unix.org/version4/)
+or [later SUS](https://unix.org/online.html).
+
+Jump to: [top](#)
+
+</li>
 
 <li>
 <div id="makefile">
@@ -446,22 +463,60 @@ Jump to: [top](#)
 </li>
 
 <li>
-<div id="SUS">
-<div id="platform">
-<div id="portability">
-### Q: What platform should I assume for my submission?
+<div id="remarks_md">
+<div id="remarks">
+<div id="readme">
+### Q: What should I put in the remarks.md file of my submission?
 </div>
 </div>
 </div>
 
-Your entry must compile with **clang** or **gcc** and run under at least one flavor of a UNIX
-system that conforms to the [SUS](https://en.wikipedia.org/wiki/Single_UNIX_Specification),
-otherwise known as the [The Single UNIX Specification Version 4](https://unix.org/version4/)
-or [later SUS](https://unix.org/online.html).
+First, **PLEASE** read the [IOCCC markdown guidelines](markdown.html).
+
+Next, while you may put in as much or as little as you wish into your entry's
+`remarks.md` file, we do have few important suggestions:
+
+We recommend that you explain how to use your entry.  Explain the
+command line (if any command line options and arguments are used)
+and any input or actions if applicable.
+
+We highly recommend that you explain why you think your entry is
+well obfuscated.
+
+For those entries that win the IOCCC, we often use much of text from the
+`remarks.md` file in the _Author's remarks_ section of the `index.html` file.
+For this reason, a well written `remarks.md` file is considered a plus.
+
+While not required, consider adding bit of humor to your `remarks.md`
+as most people who are not humor impaired, as well as the IOCCC judges
+appreciate the opportunity for a fun read as well as a chuckle or two.
+
+
+#### What helps:
+
+- explaining what your entry does
+- how to entice it to do what it is supposed to do
+- what obfuscations are used
+- what are the limitations of your entry in respect of portability and/or input data
+- how it works (if you are really condescending)
+
+
+#### What does not help:
+
+- admitting that your entry is not very obfuscated (you see, the contest is
+called the **IOCCC**, not the **INVOCCC** :-) ); but even if you do not admit
+it, not very obfuscated entries have a minuscule chance to win (although
+[2000/tomx](2000/tomx/index.html) is a notable counterexample).
+- mentioning your name or any identifying information in the remark section (or
+in the C code for that matter) - we like to be unbiased during the judging
+rounds; we look at the author name only if an entry wins. See the guidelines if
+this is not clear!
+- leaving the remark section empty.
 
 Jump to: [top](#)
 
 </li>
+
 <li>
 <div id="feedback">
 <div id="comments">
@@ -1681,60 +1736,7 @@ of the same theme.
 Jump to: [top](#)
 
 </li>
-<li>
-<div id="remarks_md">
-<div id="remarks">
-<div id="readme">
-### Q: What should I put in the remarks.md file of my submission?
-</div>
-</div>
-</div>
 
-First, **PLEASE** read the [IOCCC markdown guidelines](markdown.html).
-
-Next, while you may put in as much or as little as you wish into your entry's
-`remarks.md` file, we do have few important suggestions:
-
-We recommend that you explain how to use your entry.  Explain the
-command line (if any command line options and arguments are used)
-and any input or actions if applicable.
-
-We highly recommend that you explain why you think your entry is
-well obfuscated.
-
-For those entries that win the IOCCC, we often use much of text from the
-`remarks.md` file in the _Author's remarks_ section of the `index.html` file.
-For this reason, a well written `remarks.md` file is considered a plus.
-
-While not required, consider adding bit of humor to your `remarks.md`
-as most people who are not humor impaired, as well as the IOCCC judges
-appreciate the opportunity for a fun read as well as a chuckle or two.
-
-
-#### What helps:
-
-- explaining what your entry does
-- how to entice it to do what it is supposed to do
-- what obfuscations are used
-- what are the limitations of your entry in respect of portability and/or input data
-- how it works (if you are really condescending)
-
-
-#### What does not help:
-
-- admitting that your entry is not very obfuscated (you see, the contest is
-called the **IOCCC**, not the **INVOCCC** :-) ); but even if you do not admit
-it, not very obfuscated entries have a minuscule chance to win (although
-[2000/tomx](2000/tomx/index.html) is a notable counterexample).
-- mentioning your name or any identifying information in the remark section (or
-in the C code for that matter) - we like to be unbiased during the judging
-rounds; we look at the author name only if an entry wins. See the guidelines if
-this is not clear!
-- leaving the remark section empty.
-
-Jump to: [top](#)
-
-</li>
 <li>
 <div id="losing_submissions">
 <div id="lost">

@@ -893,6 +893,20 @@ for more up to date information on downloading, compiling, and related FAQ infor
 Jump to: <a href="#">top</a>
 </li>
 <li>
+<div id="SUS">
+<div id="platform">
+<div id="portability">
+<h3 id="q-what-platform-should-i-assume-for-my-submission">Q: What platform should I assume for my submission?</h3>
+</div>
+</div>
+</div>
+<p>Your entry must compile with <strong>clang</strong> or <strong>gcc</strong> and run under at least one flavor of a UNIX
+system that conforms to the <a href="https://en.wikipedia.org/wiki/Single_UNIX_Specification">SUS</a>,
+otherwise known as the <a href="https://unix.org/version4/">The Single UNIX Specification Version 4</a>
+or <a href="https://unix.org/online.html">later SUS</a>.</p>
+<p>Jump to: <a href="#">top</a></p>
+</li>
+<li>
 <div id="makefile">
 <div id="submission_makefile">
 <h3 id="q-what-should-i-put-in-my-submission-makefile">Q: What should I put in my submission Makefile?</h3>
@@ -920,17 +934,47 @@ command that is compatible with GNU Make version 3.81.</p>
 <p>Jump to: <a href="#">top</a></p>
 </li>
 <li>
-<div id="SUS">
-<div id="platform">
-<div id="portability">
-<h3 id="q-what-platform-should-i-assume-for-my-submission">Q: What platform should I assume for my submission?</h3>
+<div id="remarks_md">
+<div id="remarks">
+<div id="readme">
+<h3 id="q-what-should-i-put-in-the-remarks.md-file-of-my-submission">Q: What should I put in the remarks.md file of my submission?</h3>
 </div>
 </div>
 </div>
-<p>Your entry must compile with <strong>clang</strong> or <strong>gcc</strong> and run under at least one flavor of a UNIX
-system that conforms to the <a href="https://en.wikipedia.org/wiki/Single_UNIX_Specification">SUS</a>,
-otherwise known as the <a href="https://unix.org/version4/">The Single UNIX Specification Version 4</a>
-or <a href="https://unix.org/online.html">later SUS</a>.</p>
+<p>First, <strong>PLEASE</strong> read the <a href="markdown.html">IOCCC markdown guidelines</a>.</p>
+<p>Next, while you may put in as much or as little as you wish into your entry’s
+<code>remarks.md</code> file, we do have few important suggestions:</p>
+<p>We recommend that you explain how to use your entry. Explain the
+command line (if any command line options and arguments are used)
+and any input or actions if applicable.</p>
+<p>We highly recommend that you explain why you think your entry is
+well obfuscated.</p>
+<p>For those entries that win the IOCCC, we often use much of text from the
+<code>remarks.md</code> file in the <em>Author’s remarks</em> section of the <code>index.html</code> file.
+For this reason, a well written <code>remarks.md</code> file is considered a plus.</p>
+<p>While not required, consider adding bit of humor to your <code>remarks.md</code>
+as most people who are not humor impaired, as well as the IOCCC judges
+appreciate the opportunity for a fun read as well as a chuckle or two.</p>
+<h4 id="what-helps">What helps:</h4>
+<ul>
+<li>explaining what your entry does</li>
+<li>how to entice it to do what it is supposed to do</li>
+<li>what obfuscations are used</li>
+<li>what are the limitations of your entry in respect of portability and/or input data</li>
+<li>how it works (if you are really condescending)</li>
+</ul>
+<h4 id="what-does-not-help">What does not help:</h4>
+<ul>
+<li>admitting that your entry is not very obfuscated (you see, the contest is
+called the <strong>IOCCC</strong>, not the <strong>INVOCCC</strong> :-) ); but even if you do not admit
+it, not very obfuscated entries have a minuscule chance to win (although
+<a href="2000/tomx/index.html">2000/tomx</a> is a notable counterexample).</li>
+<li>mentioning your name or any identifying information in the remark section (or
+in the C code for that matter) - we like to be unbiased during the judging
+rounds; we look at the author name only if an entry wins. See the guidelines if
+this is not clear!</li>
+<li>leaving the remark section empty.</li>
+</ul>
 <p>Jump to: <a href="#">top</a></p>
 </li>
 <li>
@@ -2018,50 +2062,6 @@ FAQ on “<a href="#remarks_md">remarks.md</a>”,
 <strong>why you are submitting an entry based on a frequently
 submitted theme</strong> and <strong>how compares with previous IOCCC winners</strong>
 of the same theme.</p>
-<p>Jump to: <a href="#">top</a></p>
-</li>
-<li>
-<div id="remarks_md">
-<div id="remarks">
-<div id="readme">
-<h3 id="q-what-should-i-put-in-the-remarks.md-file-of-my-submission">Q: What should I put in the remarks.md file of my submission?</h3>
-</div>
-</div>
-</div>
-<p>First, <strong>PLEASE</strong> read the <a href="markdown.html">IOCCC markdown guidelines</a>.</p>
-<p>Next, while you may put in as much or as little as you wish into your entry’s
-<code>remarks.md</code> file, we do have few important suggestions:</p>
-<p>We recommend that you explain how to use your entry. Explain the
-command line (if any command line options and arguments are used)
-and any input or actions if applicable.</p>
-<p>We highly recommend that you explain why you think your entry is
-well obfuscated.</p>
-<p>For those entries that win the IOCCC, we often use much of text from the
-<code>remarks.md</code> file in the <em>Author’s remarks</em> section of the <code>index.html</code> file.
-For this reason, a well written <code>remarks.md</code> file is considered a plus.</p>
-<p>While not required, consider adding bit of humor to your <code>remarks.md</code>
-as most people who are not humor impaired, as well as the IOCCC judges
-appreciate the opportunity for a fun read as well as a chuckle or two.</p>
-<h4 id="what-helps">What helps:</h4>
-<ul>
-<li>explaining what your entry does</li>
-<li>how to entice it to do what it is supposed to do</li>
-<li>what obfuscations are used</li>
-<li>what are the limitations of your entry in respect of portability and/or input data</li>
-<li>how it works (if you are really condescending)</li>
-</ul>
-<h4 id="what-does-not-help">What does not help:</h4>
-<ul>
-<li>admitting that your entry is not very obfuscated (you see, the contest is
-called the <strong>IOCCC</strong>, not the <strong>INVOCCC</strong> :-) ); but even if you do not admit
-it, not very obfuscated entries have a minuscule chance to win (although
-<a href="2000/tomx/index.html">2000/tomx</a> is a notable counterexample).</li>
-<li>mentioning your name or any identifying information in the remark section (or
-in the C code for that matter) - we like to be unbiased during the judging
-rounds; we look at the author name only if an entry wins. See the guidelines if
-this is not clear!</li>
-<li>leaving the remark section empty.</li>
-</ul>
 <p>Jump to: <a href="#">top</a></p>
 </li>
 <li>
