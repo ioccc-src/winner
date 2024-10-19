@@ -1451,7 +1451,7 @@ help to understand how it works, in case one wishes to try and fix it.
 For the alternate versions the other functionality is unaffected.
 
 
-### The magic of [1994/schnitzi](%%REPO_URL%%/1994/schnitzi/schnitzi.c) and how it flips text
+### The magic of [1994/schnitzi](1994/schnitzi/index.html) and how it flips text
 
 The problem is getting the generated code to use `fgets()` (once it even
 compiles which was easy to do) and also have the updated buffer size be the
