@@ -69,15 +69,14 @@ might seem to be fine but is actually not! We will note some where this is known
 to happen (if it's not yet fixed). This has actually already happened to us.
 Sometimes it is okay: some entries are known to not work but they can still have
 improvements (rarer situation but it's happened). Some might have slightly
-different output but which is not a problem for instance a newline after output
-in [Cody Boone Ferguson](authors.html#Cody_Boone_Ferguson)'s changing it to
-[1994/ldb](%%REPO_URL%%/1994/ldb/ldb.c) use `fgets()` from `gets()`.
+different output but which is not a problem for instance a newline after output.
+This is not the most ideal but it is okay.
 
 Make **ABSOLUTE CERTAIN** that you read the index.html file _BEFORE_ your changes
 as it's important to see that the code is doing what it is supposed to. In the
 case that it's not obvious (some index.html files do not even have commands to
 try or even explain how to use it!) then you should either skip the entry OR ask
-someone who will know e.g. us.
+someone who will know for instance the Judges.
 
 Make **ABSOLUTE CERTAIN** that you read the next section, the list of statuses
 and the related information, BEFORE you submit a pull request!
@@ -124,14 +123,14 @@ Another type of warning that would be hard to keep track of is different data
 sizes on different platforms.  These tend to be required at the risk that
 sometimes the entry will not work for certain platforms, some of which might or
 might not be fixable; a good example where it was required to change and is okay
-is when [Cody Boone Ferguson](authors.html#Cody_Boone_Ferguson) fixed the
-segfault in macOS of [1989/paul](%%REPO_URL%%/1989/paul/paul.c): changing the `int *` to a
-`long *` was required and it works just as well with linux.
+is the fix of the segfault in macOS of
+[1989/paul](%%REPO_URL%%/1989/paul/paul.c): changing the `int *` to a `long *`
+was required and it works just as well with linux.
 
 But even if they are fixable (which will likely be hard to do) it's almost
 certain that such code would be just as non-portable (importable ? :-) ).
 
-In rare cases they are valid. For instance Cody noticed in linux the following
+In rare cases they are valid. For instance in linux the following
 warning in [1985/applin](%%REPO_URL%%/1985/applin/applin.c) with gcc:
 
 ```
@@ -140,7 +139,7 @@ warning in [1985/applin](%%REPO_URL%%/1985/applin/applin.c) with gcc:
           |                                                                              ^~~~~~
 ```
 
-and this reminded him of his fix to
+and this is is kind of like the fix to
 [1984/anonymous](%%REPO_URL%%/1984/anonymous/anonymous.c). In the case of `1984/anonymous` it
 was a bit more involved but with `1985/applin` one need only add to the Makefile
 `-include unistd.h`. So there are some cases where fixing warnings can fix a
@@ -164,7 +163,7 @@ include you can update the Makefile `CINCLUDE` variable. For instance if it
 needs `stdio.h` you could do `-include stdio.h`. Please leave a space after the
 `=` in the Makefile. You may also have extra long lines if this seems useful to
 make it a one-liner even if it kind of makes it longer than what the judges
-consider a one-liner. Thank you!
+consider a one-liner, at least within reason. Thank you!
 
 
 ### On layout of program source:
@@ -172,9 +171,9 @@ consider a one-liner. Thank you!
 If you make changes _PLEASE TRY AND KEEP THE SOURCE CODE LAYOUT AS CLOSE TO THE
 ORIGINAL AS POSSIBLE_. This might not always be possible and if you have an
 editor that does formatting it can cause problems. Sometimes formatters can even
-break code! [Cody Boone Ferguson](authors.html#Cody_Boone_Ferguson) has
-experienced this many times with vim so he tends to disable all format options
-when formatting code. In vim you should be able to do that with:
+break code! Some have experienced this many times with vim so he tends to
+disable all format options when formatting code. In vim you should be able to do
+that with:
 
 ```
     :set formatoptions=
@@ -261,7 +260,7 @@ compiles but two versions of code it generates does not work with clang.
 
 However some still might have problems of some kind or another and some might
 not yet be located as an additional defect of clang was noticed where `main()`
-is not allowed four args or one arg.
+is not allowed four args or one arg (see below).
 
 This is what the status means, however.
 
@@ -272,26 +271,26 @@ versions have an additional defect where they only allow 0, 2 or 3 args, the
 latter of which affected `1989/westley`, so these entries do not work with
 clang.
 
-[Cody Boone Ferguson](authors.html#Cody_Boone_Ferguson) looked at the source
-code of clang and reported that there is no way to override the requirement of
+Looking at the source
+code of clang, it appears that there is no way to override the requirement of
 arg types so these entries will fail to compile with clang. That's why in some
-entries he fixed he did it by adding a function called `pain()`. :-) He did not
-check for the number of args as that was discovered later but he suspects it's
-the same issue.
+entries the fix was done with a new function, often called `pain()` :-)
 
 **NOTE for macOS users**: please be aware that _gcc_ under macOS **is actually
 clang** despite the fact it might appear to be gcc: no symlink and both gcc and
 clang exist but the gcc is clang which you'll see if you run `gcc --version`.
 
-A tip and some fix methods from Cody: in the older days args to main() not given
-a type were implicit ints but when they're required to be `char **` this can
-cause a problem. In some cases Cody was able to use a `char *` inside `main()`
-(see [1989/tromp/tromp.c](%%REPO_URL%%/1989/tromp/tromp.c) and
-[1986/holloway/holloway.c](1986/holloway/index.html) for two examples though done slightly
-differently). In other cases he was able to dereference the pointers to be used
-like an int and other times a cast was necessary. He used other various
-techniques to get them to compile. In some cases this introduced a problem but
-typically if not always that problem exists with compilers that are less strict.
+A tip and some fix methods from [Cody Boone
+Ferguson](authors.html#[Cody_Boone_Ferguson): in the older days args to main()
+not given a type were implicit ints but when they're required to be `char **`
+this can cause a problem. In some cases it was possible to use a `char *` inside
+`main()` (see [1989/tromp/tromp.c](%%REPO_URL%%/1989/tromp/tromp.c) and
+[1986/holloway/holloway.c](1986/holloway/index.html) for two examples though
+done slightly differently). In other cases it was possible to dereference the
+pointers to be used like an int and other times a cast was necessary. There are
+various techniques to get these to compile. In some cases this introduced a
+problem but typically if not always that problem exists with compilers that are
+less strict.
 
 
 ## STATUS: main() has only one arg
@@ -327,11 +326,9 @@ or if you can `-ggdb3` when compiling as that will help with debugging symbols.
 **Please help us change use of gets() to fgets()**, if possible.
 
 Entries with this status use `gets()` which is unsafe because it has no limit on
-the length of the string. [Cody Boone
-Ferguson](authors.html#Cody_Boone_Ferguson) has fixed several of these and he's
-working on others in between fixing other things.
+the length of the string. Many were fixed but not all.
 
-There's a very good reason for this even though it is bordering on tampering
+There's a very good reason for this change even though it is bordering on tampering
 entries: in modern systems one will get possibly alarming and certainly annoying
 warnings during at least one of compiling, linking and execution. In macOS it's
 most annoying as it happens during execution (also compilation) with the warning
@@ -339,30 +336,30 @@ being interspersed with the output of the program, often causing confusing
 output with the entry. A good example that was fixed is
 [1990/tbr](%%REPO_URL%%/1990/tbr/tbr.c).
 
-Cody provided some important notes on this status with respect to fixing /
-changing entries:
+Some important notes on this status with respect to fixing / changing the
+entries:
 
 0. In some cases changing the entry to use `fgets()` will break the entry and in
-some cases cause it to crash. Where this is known we will document it.  Some of
-these Cody is also off and on working on.
+some cases cause it to crash. Where this is known we will document it.
 
 1. You **MUST** check the output before and after to make sure that it remains
 the same. Sometimes the output might not be immediately obviously wrong but is.
 We will document known examples as we come across them.
 
 2. `gets()` does NOT STORE the `'\n'` but `fgets()` DOES! This is one of the
-reasons some of the entries break when changed to `fgets()`. Cody has fixed some
-of these but there are others he hasn't had time to address or even discover
-yet.
+reasons some of the entries break when changed to `fgets()`. Some of those have
+been fixed but there are others that have not been.
 
 3. Just because you don't see the string `gets` in the code does not mean it's
 not used. It is after all the International _Obfuscated C Code_ Contest!  :-)
 Sometimes it will be in the Makefile and other times it will be obfuscated in
-other ways.  Compilers and linkers tend to warn about its use (and as noted in
-macOS it also happens at execution) and this is a good way to find entries that
-use it even if it's not visible in the code.
+other ways; a good example of that that was fixed is
+[1991/dds](1991/dds/index.html): in this case the string was encrypted.
+Compilers and linkers tend to warn about its use (and as noted in macOS it also
+happens at execution) and this is a good way to find entries that use it even if
+it's not visible in the code.
 
-_NOTE_: this status is _NOT necessarily mutually exclusive_ with the _INABIAF_
+**NOTE**: this status is _NOT necessarily mutually exclusive_ with the _INABIAF_
 (it's not a bug it's a feature) status. The reason for this is due to warnings
 during compiling, linking and/or runtime, sometimes causing confusing output (as
 noted above).
@@ -499,17 +496,18 @@ This program will very likely crash or do something funny without an arg.
 ### Source code: [1984/mullender/mullender.c](%%REPO_URL%%/1984/mullender/mullender.c)
 ### Information: [1984/mullender/index.html](1984/mullender/index.html)
 
-Although there is an alt version and supplementary program added by Cody that
+Although there is an alt version and supplementary program added, that
 will work in modern systems, if you do not have a
 [VAX-11](https://en.wikipedia.org/wiki/VAX-11) or
 [PDP-11](https://en.wikipedia.org/wiki/PDP-11) to run the original entry on it
 will not work. See the index.html for details on the alternate versions.
 
-Cody added and fixed the [gentab.c](%%REPO_URL%%/1984/mullender/gentab.c) which is from the
-author's (or one of them, Mullender) remarks found by Cody. Cody fixed this to
-compile and work (as best as he can determine: he has no VAX-11 or PDP-11 or
-emulator to test it) but running the code on the binary itself produces a
-`short[]` that can compile in modern systems though it'll not work.
+The file [gentab.c](%%REPO_URL%%/1984/mullender/gentab.c) which is from the
+author's (or one of them, Mullender) remarks, was fixed for modern systems, at
+least as best as can be determined: running the code on the binary itself does
+produce a `short[]` that can compile in modern systems but it will not work.
+Before the fix it would fail in some cases and it is possible that in some cases
+it might still fail.
 
 
 <hr style="width:10%;text-align:left;margin-left:0">
@@ -630,9 +628,11 @@ reverse of other code (also wrt names). See the source file and the index.html
 
 Fixing the (mis)feature is likely to be a very difficult challenge especially
 without breaking something else which is far more likely (see below in tips from
-Cody). You are welcome to try and fix it if you can!
+Cody, who fixed it so the original would compile with `clang` and at least one
+generated version would compile with `clang` too, not compromising the other
+versions with `gcc`). You are welcome to try and fix it if you can!
 
-### Tips from Cody:
+### Tips:
 
 The reason this is crashing is that the array `irk` is being accessed way out of
 bounds by the int `gnat`. For instance:
@@ -651,12 +651,11 @@ bounds by the int `gnat`. For instance:
 The real trouble is that the code is generated and in a complex way or rather
 ways.
 
-I will explain this a little bit (though it might be more than a bit according
-to many :-) ) but that is all I can do for now. The program, when used without
-any args, will print out what it reads. If one arg is specified it will do a
-ROT13 of it. If two args are specified it will print out the text backwards
-(_WITHOUT ROT13!_). If three args are specified it will do both **_reversal AND
-ROT13_**.
+Trying to explain this might be tricky but here is an attempt. The program, when
+used without any args, will print out what it reads. If one arg is specified it
+will do a ROT13 of it. If two args are specified it will print out the text
+backwards (_WITHOUT ROT13!_). If three args are specified it will do both
+**_reversal AND ROT13_**.
 
 So `ver0` is the same as the main program; `ver1` is the ROT13 of the code (but
 see below); `ver2` will reverse the code and `ver3` will both reverse and ROT13
@@ -714,20 +713,18 @@ and then another version that has the reversal _and_ ROT13 then you can see it's
 nigh impossible to fix if not impossible.
 
 The fix to get it to even compile with clang and then get the first two
-(counting the original, `ver0`) to work was the hardest fix I made due to how
-the comments in reverse and ROT13 of it all works together, especially allowing
-all versions to compile with gcc. The only reason that it doesn't work
-completely with clang is the arg types of main() (see if you can figure out how
-the change of `main()` in `westley.c` is not carried over to versions 2 and 3!);
-originally none of them compiled with clang.
+(counting the original, `ver0`) to work was quite hard due to how the comments
+in reverse and ROT13 of it all works together, especially allowing all versions
+to compile with gcc. The only reason that it doesn't work completely with clang
+is the arg types of main() (see if you can figure out how the change of `main()`
+in `westley.c` is not carried over to versions 2 and 3!); originally none of
+them compiled with clang.
 
 But it was possible to get the ROT13 code to compile with clang but the other
 versions, reversed as well as ROT13 and reversed code, proved much more
-problematic. I got it to compile (or maybe mostly compile) all versions with
-clang but I then carried it over to gcc in another system and it had syntax
-errors.
+problematic. It is now possible to compile (or maybe mostly compile) all versions with
+clang but on another system and it had syntax errors.
 
-That's about all I can say for how it works as other things have to be done too.
 Enjoy! :-)
 
 
@@ -819,11 +816,10 @@ This is not considered a bug, however.
 ### Source code: [1990/jaw/jaw.c](%%REPO_URL%%/1990/jaw/jaw.c)
 ### Information: [1990/jaw/index.html](1990/jaw/index.html)
 
-[Cody Boone Ferguson](authors.html#Cody_Boone_Ferguson)
-fixed some issues in this program and [Yusuke
-Endoh](authors.html#Yusuke_Endoh) provided the `btoa`
-script but it appears there is a bug in this entry. The judges wrote that to
-test the entry one can do:
+Some issues in this program were fixed and [Yusuke
+Endoh](authors.html#Yusuke_Endoh) then provided the `btoa` script but it appears
+there is a bug in this entry. The judges wrote that to test the entry one can
+do:
 
 ``` <!---sh-->
     echo "Quartz glyph jocks vend, fix, BMW." | compress | ./btoa | ./jaw
@@ -889,11 +885,11 @@ The authors provided a list of features in the
 ### Source code: [1990/theorem/theorem.c](%%REPO_URL%%/1990/theorem/theorem.c)
 ### Information: [1990/theorem/index.html](1990/theorem/index.html)
 
-[Cody Boone Ferguson](authors.html#Cody_Boone_Ferguson) fixed many bugs that
-prevented this from working properly (including segfaults) but one thing to note
-is that if you pass two zeroes to `theorem_bkp` or `fibonacci` the program
-will enter an infinite loop, printing 0 over and over again; another condition
-where this occurred was fixed but this one should not be fixed. Thank you.
+Many bugs that prevented this from working properly (including segfaults) were
+fixed but one thing to note is that if you pass two zeroes to `theorem_bkp` or
+`fibonacci` the program will enter an infinite loop, printing 0 over and over
+again; another condition where this occurred was fixed but this one should not
+be fixed.
 
 
 <div id="1990_westley">
@@ -904,7 +900,7 @@ where this occurred was fixed but this one should not be fixed. Thank you.
 ### Source code: [1990/westley/westley.c](%%REPO_URL%%/1990/westley/westley.c)
 ### Information: [1990/westley/index.html](1990/westley/index.html)
 
-Although Cody fixed this to not enter an infinite loop if the arg (converted to
+Although this was fixed to not enter an infinite loop if the arg (converted to
 a number) is < 0 the lack of an arg check at all was kept in to make it like the
 original. The reason for the < 0 check is it floods the screen (yes this is
 indeed inconsistent with some other entries but it is not worth the time spent,
@@ -969,9 +965,8 @@ when you're cheating it ends up winning! Can you figure that out as well?
 ### Information: [1992/adrian/index.html](1992/adrian/index.html)
 
 The author stated that if the file cannot be opened then it will print a system
-error but this is not the case unless it's showing a fault. However this was
-instead fixed by Cody as part of another problem that was detected so that the
-program just exits 1 if the file cannot be opened.
+error but this is not the case unless it's showing a fault. This was fixed as
+part of another problem that was detected.
 
 Also, if _some_ of the programs are not given an arg they will very likely crash
 or do something funny. For instance `adsleep` and `adbasename`. This is very
@@ -1022,7 +1017,7 @@ Leo Broukhis, before he was an IOCCC judge, sent the IOCCC judges an email:
 
 
 
-A quick debugging session from Cody suggests that the problem with this value
+A quick debugging session suggests that the problem with this value
 is that:
 
 ``` <!---c-->
@@ -1105,7 +1100,7 @@ debate.
 ### Information: [1992/kivinen/index.html](1992/kivinen/index.html)
 
 When you start the program everything starts to move over to the right side and
-then ends.  [Yusuke Endoh](authors.html#Yusuke_Endoh) pointed out that if you
+then ends. [Yusuke Endoh](authors.html#Yusuke_Endoh) pointed out that if you
 click the mouse it takes it back towards the centre.
 
 If you want to try and fix this, you are welcome to try.
@@ -1119,15 +1114,15 @@ If you want to try and fix this, you are welcome to try.
 ### Source code: [1992/lush/lush.c](%%REPO_URL%%/1992/lush/lush.c)
 ### Information: [1992/lush/index.html](1992/lush/index.html)
 
-We used a patch from [Yusuke Endoh](authors.html#Yusuke_Endoh) to get this to
-work but it only works with gcc. Cody removed the warnings of `gets()` and
-provided a script to run the entry properly.
+This was fixed but it only properly works with gcc; it was also changed to use
+`fgets()` instead of `gets()` and a script was provided to run the entry
+properly. Nonetheless it will only work with gcc.
 
 Unfortunately due to the way the entry works and the fact that other compilers
 like clang have different warnings and errors this simply does not work with
 them.
 
-Some tips from Cody:
+Some tips:
 
 This entry relies on specific compiler warnings. With gcc it will look something
 like:
@@ -1217,7 +1212,7 @@ it yourself through ctrl-c or killing it in some other fashion.
 ### Source code: [1992/westley/westley.c](%%REPO_URL%%/1992/westley/westley.c)
 ### Information: [1992/westley/index.html](1992/westley/index.html)
 
-Cody improved the usability of this program by making it so that as long as the
+The usability of this program was improved by making it so that as long as the
 terminal columns is >= 80 it will display properly, rather than having to wrap
 at 80 columns. However due to the nature of the program if the terminal is < 80
 in column width it will not display right.  To see the number of columns in your
@@ -1392,13 +1387,13 @@ there.
 ### Source code: [1994/ldb/ldb.c](%%REPO_URL%%/1994/ldb/ldb.c)
 ### Information: [1994/ldb/index.html](1994/ldb/index.html)
 
-[Cody Boone Ferguson](authors.html#Cody_Boone_Ferguson) fixed this to compile
-with modern systems but the entry also used `gets(3)` which in some systems would
-print out a warning along with the output of the program. Naturally it could
-also overflow long lines, of which there are many, though that is more
-considered a feature, not a bug, as it was documented by the author.
+This was fixed to compile with modern systems but the entry also used `gets(3)`
+which in some systems would print out a warning along with the output of the
+program. Naturally it could also overflow long lines, of which there are many,
+though that is more considered a feature, not a bug, as it was documented by the
+author.
 
-Cody changed it to `fgets(3)` to prevent the display problem but this introduces
+It was changed to use `fgets(3)` to prevent the display problem but this introduces
 another problem namely that newlines can be printed if the line length < 231.
 
 This seems like a worthy compromise to not have messed up output and although it
@@ -1423,7 +1418,7 @@ for more information on the change to `fgets(3)`.
 even when it works. See the author's remarks in the index.html for details.
 Increasing the buffer size and having it, when fed its own source code,
 generate code that will compile with the same buffer size is difficult: it just
-uses the original size. Cody explains this further down.
+uses the original size. This is explained later down.
 
 Getting it to use `fgets()` is even harder as when fed its own code it will
 generate code that cannot even compile let alone use `fgets(3)`.
@@ -1432,35 +1427,29 @@ In both cases, changing the buffer size and changing it to use `fgets(3)`, will
 cause compilation errors without other adjustments.
 
 See the below magic for details. Along with the author's remarks in the
-index.html file it might prove possible to get it to use `fgets(3)`. Cody,
-writing this on 02 November 2023, only just noticed the author's remarks and
-will later on look at this if nobody takes up the challenge. More important work
-like getting to a place that the next contest can run must be done first.
+index.html file it might prove possible to get it to use `fgets(3)`.
 
-Cody explains the magic of how this entry works, which will be necessary if this
-entry is to be fixed, below.
+Here is the magic of how this entry works, to help anyone who wishes to work on
+this.
 
-You might wish to run the command:
-
-``` <!---sh-->
-    make diff_orig_prog
-```
-
-to see what had to change for the buffer size, when looking at the below.
-Furthermore you will want to look at:
-
+You might wish to run the commands:
 
 ``` <!---sh-->
     diff schnitzi.alt.c schnitzi.alt2.c
+
+    diff schnitzi.alt2.c schnitzi.alt.c
 ```
 
-as the `fgets(3)` version can compile it just can't generate compilable code (let
-alone using `fgets(3)`) when fed itself (to reiterate, just changing the call to
-`fgets(3)` does not mean it can compile and there's a further problem in that
-`fgets(3)` retains the newline whereas `gets(3)` does not). Nevertheless looking
-at these commands will be of help to understand how it works.
+to see how the buffer size and how the `gets(3)` was changed to use `fgets()`,
+in the two alternate versions. Notice that the `fgets(3)` version can compile it
+just can't **generate** compilable code (let alone using `fgets(3)`) when fed
+itself (to reiterate, just changing the call to `fgets(3)` does not mean it can
+compile and there's a further problem in that `fgets(3)` retains the newline
+whereas `gets(3)` does not). Nevertheless looking at these commands will be of
+help to understand how it works, in case one wishes to try and fix it.
 
 For the alternate versions the other functionality is unaffected.
+
 
 ### The magic of [1994/schnitzi](%%REPO_URL%%/1994/schnitzi/schnitzi.c) and how it flips text
 
@@ -1524,9 +1513,9 @@ changing the buffer size, see below).
 Getting this entry to use `fgets(3)` is easy but the problem is you're supposed
 to be able to feed the source to the program and the output of that will be
 compilable. It however will create compiler errors. So it's not just changing
-the code to get it to use `fgets(3)`! I (Cody) already did this before I noticed
-the other part which is why I rolled that part back. I did increase the buffer
-size but that only works on the original source.
+the code to get it to use `fgets(3)`! This was done but
+the other part is why that part was rolled back. The buffer size was increased
+but that only works on the original source.
 
 To say just how sensitive this entry is: even a space, lack of space or a
 character, wrong character, lack of character or character in the wrong place
@@ -1553,7 +1542,7 @@ that's compiled) cannot be opened in the directory it is run from.
 
 ### Important reminder and a note about the `-1` value check for `getc()`:
 
-Cody fixed the code to not use `-1` for the return value of `getc()`; this is
+This code was fixed to not use `-1` for the return value of `getc()`; this is
 important because `EOF` is **NOT** guaranteed to be `-1` but rather any negative
 value. On systems where `EOF != -1` the program would enter an infinite loop
 until the program crashed, by chance reads a `-1` or was killed (it is for this
@@ -1619,8 +1608,7 @@ as documented, are considered features.
 ### Information: [1995/cdua/index.html](1995/cdua/index.html)
 
 This did not originally compile under macOS and after it did compile under
-macOS, it crashed. [Cody Boone Ferguson](authors.html#Cody_Boone_Ferguson)
-fixed these problems.
+macOS, it crashed. These problems were fixed.
 
 It should be noted however that there is a condition where the program will
 prompt you to press return again. This was thought to be a bug but looking at
@@ -1988,7 +1976,7 @@ Another feature that does work in linux is:
 
 Can you help fix these problems?
 
-Cody provided the C code that creates an unformatted perl script that will just
+Here is some C code that creates an unformatted perl script that will just
 print 'unimplemented' for operators but it seems to work in some other ways (see
 below for how to go further than unimplemented) which is the exact perl from the
 C program except that it has the `#!/usr/bin/env perl` and `use warnings;` as
@@ -2097,7 +2085,7 @@ That means then that in linux despite the subroutines seemingly not existing it
 works in the code, at least in some cases.
 
 As far as the unimplemented error goes: the author stated that it means there is
-invalid input. But as can be seen by the input I (Cody) gave the input is not
+invalid input. But as can be seen by the input given, the input is not
 actually incorrect. It is also curious to note that it ends up printing what's
 on the stack at that point:
 
@@ -2107,15 +2095,14 @@ on the stack at that point:
     5
 ```
 
-which might (?) suggest that the `+` operator is unimplemented. Unfortunately it
-has been many years since I have used perl and I was never a guru either.
+which might (?) suggest that the `+` operator is unimplemented.
 
 
 ### STATUS: INABIAF - please **DO NOT** fix
 
 The author states that in perl < 5.6.0 there is a bug with a core dump in what
 they said is in `Perl_sv_upgrade`. As this is documented it is not considered a
-bug to be fixed. For the curious this will crash in macOS. Cody notes that the
+bug to be fixed. For the curious this will crash in macOS. It was noted that the
 code that crashes is:
 
 ``` <!---c-->
@@ -2224,17 +2211,18 @@ fire](https://en.wikipedia.org/wiki/Halt_and_Catch_Fire_&lpar;computing&rpar;)! 
 ### Source code: [2001/anonymous/anonymous.c](%%REPO_URL%%/2001/anonymous/anonymous.c)
 ### Information: [2001/anonymous/index.html](2001/anonymous/index.html)
 
-[Cody Boone Ferguson](authors.html#Cody_Boone_Ferguson) fixed this so that it
-doesn't segfault and then also fixed the functionality of it (but see below).
+This was fixed so that it doesn't segfault and then also fixed the functionality
+of it (but see below).
 
-Cody also fixed the [anonymous.ten.c](%%REPO_URL%%/2001/anonymous/anonymous.ten.c) program
-(it also segfaulted) but notes that it **MUST** be compiled as a **32-bit ELF
+The [anonymous.ten.c](%%REPO_URL%%/2001/anonymous/anonymous.ten.c) program was
+also fixed (it also segfaulted) but note that it **MUST** be compiled as a **32-bit ELF
 binary** so it will NOT work in macOS (for example); if you cannot use `-m32` or
 even if you can but it cannot compile as an ELF binary (not elf binary :-) )
 (but see below) then the `anonymous` program itself will very likely crash if
-you run it on the compiled [anonymous.ten.c](%%REPO_URL%%/2001/anonymous/anonymous.ten.c) but
-if nothing else it will not modify the target executable (this part of the fix
-at least should be correct).
+you run it on the compiled
+[anonymous.ten.c](%%REPO_URL%%/2001/anonymous/anonymous.ten.c); if nothing else
+it will not modify the target executable (this part of the fix at least should
+be correct).
 
 Note also that if you don't specify a file or you specify a non-32-bit ELF file
 this program will very likely crash or do something strange like slaughter the
@@ -2252,28 +2240,27 @@ elves of Imladris :-(
 The author stated that it only works with i386 linux so the fact it doesn't work
 in modern systems is considered a feature and not a bug.
 
-[Cody Boone Ferguson](authors.html#Cody_Boone_Ferguson) fixed an initial
-segfault (trying to open the file) and he also fixed the [supplementary program
-bellard.otccex.c](%%REPO_URL%%/2001/bellard/bellard.otccex.c) but this still crashes in
-systems not i386 linux which is what the author stated.
+An initial segfault was fixed (trying to open the file) and the [supplementary
+program bellard.otccex.c](%%REPO_URL%%/2001/bellard/bellard.otccex.c) was also
+fixed but this still crashes in systems not i386 linux which is what the author
+stated.
 
 The author said that they compiled it with [gcc version
 2.95.2](https://ftp.gnu.org/gnu/gcc/gcc-2.95.2/gcc-everything-2.95.2.tar.gz). We
 don't know if a certain gcc version is necessary but it might be helpful to
 download and compile that version to test it - or it might not.
 
-I (Cody) have no i386 system to test this but perhaps this is why I can't get it
-to work.  Yusuke was able to get this to work with `-m32` but only in an
-emulator.
+Yusuke was able to get this to work with `-m32` but only in an emulator. As
+such, it might be that the changes made should be rolled back but at least now
+the supplementary program will work in modern systems.
 
 On the author's [web page for this program](https://bellard.org/otcc/) it is
 explicitly stated that it requires i386 linux.
 
-There I found what should be a more portable version which is included as
-[otccelf.c](%%REPO_URL%%/2001/bellard/otccelf.c) (after adding some `#include`s and the
-modification by Yusuke noted in the [thanks](thanks-for-help.html)
-file) but it appears this *also* requires i386 linux; indeed looking at the code
-it hard codes paths that are i386 specific to linux.
+There it was found what should be a more portable version which is included as
+[otccelf.c](%%REPO_URL%%/2001/bellard/otccelf.c) (after adding some `#include`s
+and the modification but it appears this *also* requires i386 linux; indeed
+looking at the code it hard codes paths that are i386 specific to linux.
 
 Another point of interest is that the author provided unobfuscated versions
 which might be of value to look at.
@@ -2283,14 +2270,14 @@ which might be of value to look at.
 
 This is a good question. The reason is we believe it better to fix some obvious
 problems: there were some bugs that would very possibly prevent it from working
-even if it was in i386 linux though Yusuke seemed to get it to work in an
-emulator so perhaps not. Still it's better to have the type of the file pointer
-correct and so that the file can at least be opened in modern systems even if
-the compiler won't work there.
+even if it was in i386 linux though it did seem to work in an emulator, so
+perhaps not. Still it's better to have the type of the file pointer correct and
+so that the file can at least be opened in modern systems even if the compiler
+won't work there.
 
-Also the supplementary program, which did not work at all, was fixed (by Cody)
-and it can be run by itself for fun in modern systems, which was not possible
-before the fixes there.
+Also the supplementary program, which did not work at all, was fixed and it can
+be run by itself for fun in modern systems, which was not possible before the
+fixes there.
 
 
 <div id="2001_cheong">
@@ -2421,9 +2408,7 @@ See also the author's list of bugs [here](2001/schweikh/index.html#bugs).
 ### Information: [2001/westley/index.html](2001/westley/index.html)
 
 This function uses `gets(3)` but it would be ideal if it used `fgets(3)`. This
-one is rather complicated and will be looked at later (some progress was made by
-Cody but it is less important than other work) but you are welcome to try
-and fix this if you wish.
+one is rather complicated but you are welcome to try and fix this if you wish.
 
 
 ### STATUS: main() has only one arg - try and make it have 2 or 3
@@ -2804,14 +2789,14 @@ for running itself.
 ### Source code: [2005/mynx/mynx.c](%%REPO_URL%%/2005/mynx/mynx.c)
 ### Information: [2005/mynx/index.html](2005/mynx/index.html)
 
-[Cody Boone Ferguson](authors.html#Cody_Boone_Ferguson) notes that, though
-probably obvious, this entry will not work with https. He added an alt version
-that scans for https in case someone wants to set up a pipeline or other
-workaround (perhaps with stunnel) or even add additional code to it to make it
-work with https but the problem otherwise is a secure connection has to first be
-set up in order to give http commands. This is not a bug but it's worth pointing
-out as it won't work on as many websites as it used to including the [IOCCC
-website](https://www.ioccc.org) itself.
+Probably this is obvious, but this entry will not work with https. An
+alt version exists that _SCANS_ for https in case someone wants to set up a pipeline or
+other workaround (perhaps with `stunnel`) or even add additional code to it to
+make it work with https but the problem otherwise is a secure connection has to
+first be set up in order to give http commands. This is not a bug but it's worth
+pointing out as it won't work on as many websites as it used to including the
+[IOCCC website](https://www.ioccc.org) itself. The author noted that someone did
+make a version that supports `https` but it is not known where this might be.
 
 
 <div id="2005_sykes">
@@ -2968,13 +2953,12 @@ without outputting a solution.  If you can wait that long.
 ### Source code: [2006/toledo2/toledo2.c](%%REPO_URL%%/2006/toledo2/toledo2.c)
 ### Information: [2006/toledo2/index.html](2006/toledo2/index.html)
 
-[Cody Boone Ferguson](authors.html#Cody_Boone_Ferguson) fixed this program to
+This was fixed to
 not crash in macOS (it appeared to work fine in fedora linux on an `x86_64`
-architecture but he does not know if it crashed in macOS Ventura due to the fact
+architecture but it is not known if it crashed in macOS Ventura due to the fact
 it is an `arm64` CPU - the Apple silicon chip, but given that the author later
 made some slight changes to make it not crash in `x86_64` macOS that might be
-the case). This fix, BTW, is a mix of a fix by [Yusuke
-Endoh](authors.html#Yusuke_Endoh) and Cody's.
+the case).
 
 Nevertheless there are two features that are not bugs.
 
@@ -3130,11 +3114,10 @@ like it _might_ (see Apple resources below) be but it could also be a wider
 problem with macOS. It appears that Apple does not allow certain combinations of
 memory protections with the arm64 processor.
 
-[Cody Boone Ferguson](authors.html#Cody_Boone_Ferguson) tried some of the
-workarounds but at this time he could not get it to work. He offers some earlier
-debugging sessions below as well as a resource from the author as well as some
-resources on Apple's website should anyone wish to take a crack at it. He might
-address it later but a starting point might be in
+Some of the workarounds have been tried but at this time it did not seem to
+work. Some earlier debugging sessions are below as well as a resource from the
+author as well as some resources on Apple's website should anyone wish to take a
+crack at it. A starting point might be in
 [richards.alt.c](%%REPO_URL%%/2011/richards/richards.alt.c).
 
 
@@ -3326,7 +3309,7 @@ Entitlement](https://developer.apple.com/documentation/bundleresources/entitleme
 
 Looking at
 <https://github.com/apple/darwin-xnu/blob/5394bb038891708cd4ba748da79b90a33b19f82e/bsd/kern/kern_mman.c>
-Cody noticed a curious thing in the `mprotect()` function: `#if
+A curious thing is in the `mprotect()` function: `#if
 CONFIG_DYNAMIC_CODE_SIGNING` and the protection variable has the
 `VM_PROT_TRUSTED` set it might allow overriding the problem but this is
 unconfirmed and it's not known when `CONFIG_DYNAMIC_CODE_SIGNING` would be
@@ -3667,7 +3650,7 @@ rely on the entry as the below shows. One should be able to do:
 ``` <!---sh-->
     echo 'No. I want chocolate!' | ./prog > chocolate.raw
 
-./prog e < chocolate.raw
+    ./prog e < chocolate.raw
 ```
 
 and get:
