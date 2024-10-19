@@ -418,7 +418,7 @@ system specific winning entries were discouraged. This is an all time personal
 favourite of Landon Curt Noll. Run the alternate code to understand why this
 might be (along with how strange the source code is :-) ).
 
-An example where a crash is not a bug: [2019/endoh](%%REPO_URL%%/2019/endoh/prog.c) is
+An example where a crash is not a bug: [2019/endoh](2019/endoh/index.html) is
 supposed to crash. There are others that are also supposed to crash or that are
 known to segfault but are considered features.
 
@@ -434,7 +434,7 @@ felt that the fix was tampering with the entry).
 
 **NOTE**: in the case of `gets()` we've fixed some to avoid the warning of the
 compiler, linker or even during runtime, depending on the system. In [some cases
-like 1990/tbr](%%REPO_URL%%/1990/tbr/tbr.c) the fix actually prevents confusing output (though that
+like 1990/tbr](1990/tbr/index.html) the fix actually prevents confusing output (though that
 was not the only fix made in that entry).
 
 
