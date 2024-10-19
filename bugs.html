@@ -443,14 +443,13 @@ might seem to be fine but is actually not! We will note some where this is known
 to happen (if it’s not yet fixed). This has actually already happened to us.
 Sometimes it is okay: some entries are known to not work but they can still have
 improvements (rarer situation but it’s happened). Some might have slightly
-different output but which is not a problem for instance a newline after output
-in <a href="authors.html#Cody_Boone_Ferguson">Cody Boone Ferguson</a>’s changing it to
-<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994/ldb/ldb.c">1994/ldb</a> use <code>fgets()</code> from <code>gets()</code>.</p>
+different output but which is not a problem for instance a newline after output.
+This is not the most ideal but it is okay.</p>
 <p>Make <strong>ABSOLUTE CERTAIN</strong> that you read the index.html file <em>BEFORE</em> your changes
 as it’s important to see that the code is doing what it is supposed to. In the
 case that it’s not obvious (some index.html files do not even have commands to
 try or even explain how to use it!) then you should either skip the entry OR ask
-someone who will know e.g. us.</p>
+someone who will know for instance the Judges.</p>
 <p>Make <strong>ABSOLUTE CERTAIN</strong> that you read the next section, the list of statuses
 and the related information, BEFORE you submit a pull request!</p>
 <p><strong>BE VERY AWARE</strong> that sometimes fixing an entry for one platform will break it
@@ -480,17 +479,17 @@ different warnings.</p>
 sizes on different platforms. These tend to be required at the risk that
 sometimes the entry will not work for certain platforms, some of which might or
 might not be fixable; a good example where it was required to change and is okay
-is when <a href="authors.html#Cody_Boone_Ferguson">Cody Boone Ferguson</a> fixed the
-segfault in macOS of <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1989/paul/paul.c">1989/paul</a>: changing the <code>int *</code> to a
-<code>long *</code> was required and it works just as well with linux.</p>
+is the fix of the segfault in macOS of
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1989/paul/paul.c">1989/paul</a>: changing the <code>int *</code> to a <code>long *</code>
+was required and it works just as well with linux.</p>
 <p>But even if they are fixable (which will likely be hard to do) it’s almost
 certain that such code would be just as non-portable (importable ? :-) ).</p>
-<p>In rare cases they are valid. For instance Cody noticed in linux the following
+<p>In rare cases they are valid. For instance in linux the following
 warning in <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1985/applin/applin.c">1985/applin</a> with gcc:</p>
 <pre><code>    applin.c:1:78: warning: incompatible implicit declaration of built-in function &#39;execlp&#39; [-Wbuiltin-declaration-mismatch]
         1 | main(v,c)char**c;{for(v[c++]=strdup(&quot;Hello, world!\n&quot;);(!!c)[*c]&amp;&amp;(v--||--c&amp;&amp;execlp(*c,*c,c[!!c]+!!c,!c));**c=!c)write(!!*c,*c,!!**c);}
           |                                                                              ^~~~~~</code></pre>
-<p>and this reminded him of his fix to
+<p>and this is is kind of like the fix to
 <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1984/anonymous/anonymous.c">1984/anonymous</a>. In the case of <code>1984/anonymous</code> it
 was a bit more involved but with <code>1985/applin</code> one need only add to the Makefile
 <code>-include unistd.h</code>. So there are some cases where fixing warnings can fix a
@@ -507,14 +506,14 @@ include you can update the Makefile <code>CINCLUDE</code> variable. For instance
 needs <code>stdio.h</code> you could do <code>-include stdio.h</code>. Please leave a space after the
 <code>=</code> in the Makefile. You may also have extra long lines if this seems useful to
 make it a one-liner even if it kind of makes it longer than what the judges
-consider a one-liner. Thank you!</p>
+consider a one-liner, at least within reason. Thank you!</p>
 <h3 id="on-layout-of-program-source">On layout of program source:</h3>
 <p>If you make changes <em>PLEASE TRY AND KEEP THE SOURCE CODE LAYOUT AS CLOSE TO THE
 ORIGINAL AS POSSIBLE</em>. This might not always be possible and if you have an
 editor that does formatting it can cause problems. Sometimes formatters can even
-break code! <a href="authors.html#Cody_Boone_Ferguson">Cody Boone Ferguson</a> has
-experienced this many times with vim so he tends to disable all format options
-when formatting code. In vim you should be able to do that with:</p>
+break code! Some have experienced this many times with vim so he tends to
+disable all format options when formatting code. In vim you should be able to do
+that with:</p>
 <pre><code>    :set formatoptions=</code></pre>
 <h2 id="status-known-bug">STATUS: known bug</h2>
 <p><strong>Please help us fix</strong>!</p>
@@ -564,7 +563,7 @@ much as possible given the nature of how it generates code: the entry itself
 compiles but two versions of code it generates does not work with clang.</p>
 <p>However some still might have problems of some kind or another and some might
 not yet be located as an additional defect of clang was noticed where <code>main()</code>
-is not allowed four args or one arg.</p>
+is not allowed four args or one arg (see below).</p>
 <p>This is what the status means, however.</p>
 <p>Entries with this status have a problem in that the args to main() are not of a
 specific type or there are too many due to this being allowed in earlier C. Some
@@ -572,24 +571,24 @@ compilers like clang have a defect where they do not allow this and some
 versions have an additional defect where they only allow 0, 2 or 3 args, the
 latter of which affected <code>1989/westley</code>, so these entries do not work with
 clang.</p>
-<p><a href="authors.html#Cody_Boone_Ferguson">Cody Boone Ferguson</a> looked at the source
-code of clang and reported that there is no way to override the requirement of
+<p>Looking at the source
+code of clang, it appears that there is no way to override the requirement of
 arg types so these entries will fail to compile with clang. That’s why in some
-entries he fixed he did it by adding a function called <code>pain()</code>. :-) He did not
-check for the number of args as that was discovered later but he suspects it’s
-the same issue.</p>
+entries the fix was done with a new function, often called <code>pain()</code> :-)</p>
 <p><strong>NOTE for macOS users</strong>: please be aware that <em>gcc</em> under macOS <strong>is actually
 clang</strong> despite the fact it might appear to be gcc: no symlink and both gcc and
 clang exist but the gcc is clang which you’ll see if you run <code>gcc --version</code>.</p>
-<p>A tip and some fix methods from Cody: in the older days args to main() not given
-a type were implicit ints but when they’re required to be <code>char **</code> this can
-cause a problem. In some cases Cody was able to use a <code>char *</code> inside <code>main()</code>
-(see <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1989/tromp/tromp.c">1989/tromp/tromp.c</a> and
-<a href="1986/holloway/index.html">1986/holloway/holloway.c</a> for two examples though done slightly
-differently). In other cases he was able to dereference the pointers to be used
-like an int and other times a cast was necessary. He used other various
-techniques to get them to compile. In some cases this introduced a problem but
-typically if not always that problem exists with compilers that are less strict.</p>
+<p>A tip and some fix methods from <a href="authors.html#Cody_Boone_Ferguson">Cody Boone
+Ferguson</a>: in the older days args to main()
+not given a type were implicit ints but when they’re required to be <code>char **</code>
+this can cause a problem. In some cases it was possible to use a <code>char *</code> inside
+<code>main()</code> (see <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1989/tromp/tromp.c">1989/tromp/tromp.c</a> and
+<a href="1986/holloway/index.html">1986/holloway/holloway.c</a> for two examples though
+done slightly differently). In other cases it was possible to dereference the
+pointers to be used like an int and other times a cast was necessary. There are
+various techniques to get these to compile. In some cases this introduced a
+problem but typically if not always that problem exists with compilers that are
+less strict.</p>
 <h2 id="status-main-has-only-one-arg">STATUS: main() has only one arg</h2>
 <p><strong>Please help modify so that main() as 2 or 3 args</strong>!</p>
 <p>Because some versions of clang complain about the number of args of <code>main()</code> and
@@ -611,37 +610,35 @@ or if you can <code>-ggdb3</code> when compiling as that will help with debuggin
 <h2 id="status-uses-gets">STATUS: uses gets()</h2>
 <p><strong>Please help us change use of gets() to fgets()</strong>, if possible.</p>
 <p>Entries with this status use <code>gets()</code> which is unsafe because it has no limit on
-the length of the string. <a href="authors.html#Cody_Boone_Ferguson">Cody Boone
-Ferguson</a> has fixed several of these and he’s
-working on others in between fixing other things.</p>
-<p>There’s a very good reason for this even though it is bordering on tampering
+the length of the string. Many were fixed but not all.</p>
+<p>There’s a very good reason for this change even though it is bordering on tampering
 entries: in modern systems one will get possibly alarming and certainly annoying
 warnings during at least one of compiling, linking and execution. In macOS it’s
 most annoying as it happens during execution (also compilation) with the warning
 being interspersed with the output of the program, often causing confusing
 output with the entry. A good example that was fixed is
 <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1990/tbr/tbr.c">1990/tbr</a>.</p>
-<p>Cody provided some important notes on this status with respect to fixing /
-changing entries:</p>
+<p>Some important notes on this status with respect to fixing / changing the
+entries:</p>
 <ol start="0" type="1">
 <li><p>In some cases changing the entry to use <code>fgets()</code> will break the entry and in
-some cases cause it to crash. Where this is known we will document it. Some of
-these Cody is also off and on working on.</p></li>
+some cases cause it to crash. Where this is known we will document it.</p></li>
 <li><p>You <strong>MUST</strong> check the output before and after to make sure that it remains
 the same. Sometimes the output might not be immediately obviously wrong but is.
 We will document known examples as we come across them.</p></li>
 <li><p><code>gets()</code> does NOT STORE the <code>'\n'</code> but <code>fgets()</code> DOES! This is one of the
-reasons some of the entries break when changed to <code>fgets()</code>. Cody has fixed some
-of these but there are others he hasn’t had time to address or even discover
-yet.</p></li>
+reasons some of the entries break when changed to <code>fgets()</code>. Some of those have
+been fixed but there are others that have not been.</p></li>
 <li><p>Just because you don’t see the string <code>gets</code> in the code does not mean it’s
 not used. It is after all the International <em>Obfuscated C Code</em> Contest! :-)
 Sometimes it will be in the Makefile and other times it will be obfuscated in
-other ways. Compilers and linkers tend to warn about its use (and as noted in
-macOS it also happens at execution) and this is a good way to find entries that
-use it even if it’s not visible in the code.</p></li>
+other ways; a good example of that that was fixed is
+<a href="1991/dds/index.html">1991/dds</a>: in this case the string was encrypted.
+Compilers and linkers tend to warn about its use (and as noted in macOS it also
+happens at execution) and this is a good way to find entries that use it even if
+it’s not visible in the code.</p></li>
 </ol>
-<p><em>NOTE</em>: this status is <em>NOT necessarily mutually exclusive</em> with the <em>INABIAF</em>
+<p><strong>NOTE</strong>: this status is <em>NOT necessarily mutually exclusive</em> with the <em>INABIAF</em>
 (it’s not a bug it’s a feature) status. The reason for this is due to warnings
 during compiling, linking and/or runtime, sometimes causing confusing output (as
 noted above).</p>
@@ -683,7 +680,7 @@ version that works in modern systems) is very system specific and was before
 system specific winning entries were discouraged. This is an all time personal
 favourite of Landon Curt Noll. Run the alternate code to understand why this
 might be (along with how strange the source code is :-) ).</p>
-<p>An example where a crash is not a bug: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/endoh/prog.c">2019/endoh</a> is
+<p>An example where a crash is not a bug: <a href="2019/endoh/index.html">2019/endoh</a> is
 supposed to crash. There are others that are also supposed to crash or that are
 known to segfault but are considered features.</p>
 <p>An important note is that if the index.html of the entry has a bug status that
@@ -695,7 +692,7 @@ figure it out you’re invited to look at the git diffs, where there are some
 (some were fixed earlier on but rolled back as both Cody and Landon individually
 felt that the fix was tampering with the entry).</p>
 <p><strong>NOTE</strong>: in the case of <code>gets()</code> we’ve fixed some to avoid the warning of the
-compiler, linker or even during runtime, depending on the system. In <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1990/tbr/tbr.c">some cases
+compiler, linker or even during runtime, depending on the system. In <a href="1990/tbr/index.html">some cases
 like 1990/tbr</a> the fix actually prevents confusing output (though that
 was not the only fix made in that entry).</p>
 <h3 id="exception-your-own-entries">Exception: your own entries</h3>
@@ -733,16 +730,17 @@ code. In particular you should see something like:</p>
 <h3 id="status-inabiaf---please-do-not-fix-3">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <h3 id="source-code-1984mullendermullender.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1984/mullender/mullender.c">1984/mullender/mullender.c</a></h3>
 <h3 id="information-1984mullenderindex.html">Information: <a href="1984/mullender/index.html">1984/mullender/index.html</a></h3>
-<p>Although there is an alt version and supplementary program added by Cody that
+<p>Although there is an alt version and supplementary program added, that
 will work in modern systems, if you do not have a
 <a href="https://en.wikipedia.org/wiki/VAX-11">VAX-11</a> or
 <a href="https://en.wikipedia.org/wiki/PDP-11">PDP-11</a> to run the original entry on it
 will not work. See the index.html for details on the alternate versions.</p>
-<p>Cody added and fixed the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1984/mullender/gentab.c">gentab.c</a> which is from the
-author’s (or one of them, Mullender) remarks found by Cody. Cody fixed this to
-compile and work (as best as he can determine: he has no VAX-11 or PDP-11 or
-emulator to test it) but running the code on the binary itself produces a
-<code>short[]</code> that can compile in modern systems though it’ll not work.</p>
+<p>The file <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1984/mullender/gentab.c">gentab.c</a> which is from the
+author’s (or one of them, Mullender) remarks, was fixed for modern systems, at
+least as best as can be determined: running the code on the binary itself does
+produce a <code>short[]</code> that can compile in modern systems but it will not work.
+Before the fix it would fail in some cases and it is possible that in some cases
+it might still fail.</p>
 <hr style="width:10%;text-align:left;margin-left:0">
 <div id="1985">
 <h1 id="section-1">1985</h1>
@@ -823,8 +821,10 @@ reverse of other code (also wrt names). See the source file and the index.html
 (in the author’s remarks) for more details.</p>
 <p>Fixing the (mis)feature is likely to be a very difficult challenge especially
 without breaking something else which is far more likely (see below in tips from
-Cody). You are welcome to try and fix it if you can!</p>
-<h3 id="tips-from-cody">Tips from Cody:</h3>
+Cody, who fixed it so the original would compile with <code>clang</code> and at least one
+generated version would compile with <code>clang</code> too, not compromising the other
+versions with <code>gcc</code>). You are welcome to try and fix it if you can!</p>
+<h3 id="tips">Tips:</h3>
 <p>The reason this is crashing is that the array <code>irk</code> is being accessed way out of
 bounds by the int <code>gnat</code>. For instance:</p>
 <pre><code>    Program terminated with signal SIGSEGV, Segmentation fault.
@@ -836,12 +836,11 @@ bounds by the int <code>gnat</code>. For instance:</p>
 <h3 id="magic-of-the-entry">Magic of the entry:</h3>
 <p>The real trouble is that the code is generated and in a complex way or rather
 ways.</p>
-<p>I will explain this a little bit (though it might be more than a bit according
-to many :-) ) but that is all I can do for now. The program, when used without
-any args, will print out what it reads. If one arg is specified it will do a
-ROT13 of it. If two args are specified it will print out the text backwards
-(<em>WITHOUT ROT13!</em>). If three args are specified it will do both <strong><em>reversal AND
-ROT13</em></strong>.</p>
+<p>Trying to explain this might be tricky but here is an attempt. The program, when
+used without any args, will print out what it reads. If one arg is specified it
+will do a ROT13 of it. If two args are specified it will print out the text
+backwards (<em>WITHOUT ROT13!</em>). If three args are specified it will do both
+<strong><em>reversal AND ROT13</em></strong>.</p>
 <p>So <code>ver0</code> is the same as the main program; <code>ver1</code> is the ROT13 of the code (but
 see below); <code>ver2</code> will reverse the code and <code>ver3</code> will both reverse and ROT13
 the code. But it’s trickier than that as one might expect.</p>
@@ -879,19 +878,17 @@ just the reversal version, of course but ver1 is the ROT13 version.</p>
 and then another version that has the reversal <em>and</em> ROT13 then you can see it’s
 nigh impossible to fix if not impossible.</p>
 <p>The fix to get it to even compile with clang and then get the first two
-(counting the original, <code>ver0</code>) to work was the hardest fix I made due to how
-the comments in reverse and ROT13 of it all works together, especially allowing
-all versions to compile with gcc. The only reason that it doesn’t work
-completely with clang is the arg types of main() (see if you can figure out how
-the change of <code>main()</code> in <code>westley.c</code> is not carried over to versions 2 and 3!);
-originally none of them compiled with clang.</p>
+(counting the original, <code>ver0</code>) to work was quite hard due to how the comments
+in reverse and ROT13 of it all works together, especially allowing all versions
+to compile with gcc. The only reason that it doesn’t work completely with clang
+is the arg types of main() (see if you can figure out how the change of <code>main()</code>
+in <code>westley.c</code> is not carried over to versions 2 and 3!); originally none of
+them compiled with clang.</p>
 <p>But it was possible to get the ROT13 code to compile with clang but the other
 versions, reversed as well as ROT13 and reversed code, proved much more
-problematic. I got it to compile (or maybe mostly compile) all versions with
-clang but I then carried it over to gcc in another system and it had syntax
-errors.</p>
-<p>That’s about all I can say for how it works as other things have to be done too.
-Enjoy! :-)</p>
+problematic. It is now possible to compile (or maybe mostly compile) all versions with
+clang but on another system and it had syntax errors.</p>
+<p>Enjoy! :-)</p>
 <hr style="width:10%;text-align:left;margin-left:0">
 <div id="1990">
 <h1 id="section-6">1990</h1>
@@ -968,11 +965,10 @@ more time and resources to run as well. For instance:</p>
 <h3 id="status-known-bug---please-help-us-fix-1">STATUS: known bug - please help us fix</h3>
 <h3 id="source-code-1990jawjaw.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1990/jaw/jaw.c">1990/jaw/jaw.c</a></h3>
 <h3 id="information-1990jawindex.html">Information: <a href="1990/jaw/index.html">1990/jaw/index.html</a></h3>
-<p><a href="authors.html#Cody_Boone_Ferguson">Cody Boone Ferguson</a>
-fixed some issues in this program and <a href="authors.html#Yusuke_Endoh">Yusuke
-Endoh</a> provided the <code>btoa</code>
-script but it appears there is a bug in this entry. The judges wrote that to
-test the entry one can do:</p>
+<p>Some issues in this program were fixed and <a href="authors.html#Yusuke_Endoh">Yusuke
+Endoh</a> then provided the <code>btoa</code> script but it appears
+there is a bug in this entry. The judges wrote that to test the entry one can
+do:</p>
 <pre><code>    echo &quot;Quartz glyph jocks vend, fix, BMW.&quot; | compress | ./btoa | ./jaw</code></pre>
 <p>which should apply the identity transformation to a minimal holoalphabetic
 sentence.</p>
@@ -1011,18 +1007,18 @@ defeat the purpose. This would ideally be fixed.</p>
 <h3 id="status-inabiaf---please-do-not-fix-10">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <h3 id="source-code-1990theoremtheorem.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1990/theorem/theorem.c">1990/theorem/theorem.c</a></h3>
 <h3 id="information-1990theoremindex.html">Information: <a href="1990/theorem/index.html">1990/theorem/index.html</a></h3>
-<p><a href="authors.html#Cody_Boone_Ferguson">Cody Boone Ferguson</a> fixed many bugs that
-prevented this from working properly (including segfaults) but one thing to note
-is that if you pass two zeroes to <code>theorem_bkp</code> or <code>fibonacci</code> the program
-will enter an infinite loop, printing 0 over and over again; another condition
-where this occurred was fixed but this one should not be fixed. Thank you.</p>
+<p>Many bugs that prevented this from working properly (including segfaults) were
+fixed but one thing to note is that if you pass two zeroes to <code>theorem_bkp</code> or
+<code>fibonacci</code> the program will enter an infinite loop, printing 0 over and over
+again; another condition where this occurred was fixed but this one should not
+be fixed.</p>
 <div id="1990_westley">
 <h2 id="westley-1">1990/westley</h2>
 </div>
 <h3 id="status-inabiaf---please-do-not-fix-11">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <h3 id="source-code-1990westleywestley.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1990/westley/westley.c">1990/westley/westley.c</a></h3>
 <h3 id="information-1990westleyindex.html">Information: <a href="1990/westley/index.html">1990/westley/index.html</a></h3>
-<p>Although Cody fixed this to not enter an infinite loop if the arg (converted to
+<p>Although this was fixed to not enter an infinite loop if the arg (converted to
 a number) is &lt; 0 the lack of an arg check at all was kept in to make it like the
 original. The reason for the &lt; 0 check is it floods the screen (yes this is
 indeed inconsistent with some other entries but it is not worth the time spent,
@@ -1067,9 +1063,8 @@ when you’re cheating it ends up winning! Can you figure that out as well?</p>
 <h3 id="source-code-1992adrianadrian.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/adrian/adrian.c">1992/adrian/adrian.c</a></h3>
 <h3 id="information-1992adrianindex.html">Information: <a href="1992/adrian/index.html">1992/adrian/index.html</a></h3>
 <p>The author stated that if the file cannot be opened then it will print a system
-error but this is not the case unless it’s showing a fault. However this was
-instead fixed by Cody as part of another problem that was detected so that the
-program just exits 1 if the file cannot be opened.</p>
+error but this is not the case unless it’s showing a fault. This was fixed as
+part of another problem that was detected.</p>
 <p>Also, if <em>some</em> of the programs are not given an arg they will very likely crash
 or do something funny. For instance <code>adsleep</code> and <code>adbasename</code>. This is very
 simple to fix but the author explicitly noted that this will segfault and it is
@@ -1103,7 +1098,7 @@ in <code>albert.orig.c</code> that has been fixed in <code>albert.c</code>,</p>
 Both albert and albert.orig loop without printing anything, although
 the first factor is 101 and is usually found in an instant.</p>
 </blockquote>
-<p>A quick debugging session from Cody suggests that the problem with this value
+<p>A quick debugging session suggests that the problem with this value
 is that:</p>
 <pre><code>    if ( ppp-&gt;qq!=48 ) return;</code></pre>
 <p>is never reached because the value is never 48 (it is in other cases but not for
@@ -1170,13 +1165,13 @@ click the mouse it takes it back towards the centre.</p>
 <h3 id="status-doesnt-work-with-some-compilers---please-provide-alternative-code-or-fix-for-more-compilers">STATUS: doesn’t work with some compilers - please provide alternative code or fix for more compilers</h3>
 <h3 id="source-code-1992lushlush.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/lush/lush.c">1992/lush/lush.c</a></h3>
 <h3 id="information-1992lushindex.html">Information: <a href="1992/lush/index.html">1992/lush/index.html</a></h3>
-<p>We used a patch from <a href="authors.html#Yusuke_Endoh">Yusuke Endoh</a> to get this to
-work but it only works with gcc. Cody removed the warnings of <code>gets()</code> and
-provided a script to run the entry properly.</p>
+<p>This was fixed but it only properly works with gcc; it was also changed to use
+<code>fgets()</code> instead of <code>gets()</code> and a script was provided to run the entry
+properly. Nonetheless it will only work with gcc.</p>
 <p>Unfortunately due to the way the entry works and the fact that other compilers
 like clang have different warnings and errors this simply does not work with
 them.</p>
-<p>Some tips from Cody:</p>
+<p>Some tips:</p>
 <p>This entry relies on specific compiler warnings. With gcc it will look something
 like:</p>
 <pre><code>    [...]
@@ -1244,7 +1239,7 @@ it yourself through ctrl-c or killing it in some other fashion.</p>
 <h3 id="status-inabiaf---please-do-not-fix-17">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <h3 id="source-code-1992westleywestley.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1992/westley/westley.c">1992/westley/westley.c</a></h3>
 <h3 id="information-1992westleyindex.html">Information: <a href="1992/westley/index.html">1992/westley/index.html</a></h3>
-<p>Cody improved the usability of this program by making it so that as long as the
+<p>The usability of this program was improved by making it so that as long as the
 terminal columns is &gt;= 80 it will display properly, rather than having to wrap
 at 80 columns. However due to the nature of the program if the terminal is &lt; 80
 in column width it will not display right. To see the number of columns in your
@@ -1359,12 +1354,12 @@ there.</p>
 <h3 id="status-inabiaf---please-do-not-fix-24">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <h3 id="source-code-1994ldbldb.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994/ldb/ldb.c">1994/ldb/ldb.c</a></h3>
 <h3 id="information-1994ldbindex.html">Information: <a href="1994/ldb/index.html">1994/ldb/index.html</a></h3>
-<p><a href="authors.html#Cody_Boone_Ferguson">Cody Boone Ferguson</a> fixed this to compile
-with modern systems but the entry also used <code>gets(3)</code> which in some systems would
-print out a warning along with the output of the program. Naturally it could
-also overflow long lines, of which there are many, though that is more
-considered a feature, not a bug, as it was documented by the author.</p>
-<p>Cody changed it to <code>fgets(3)</code> to prevent the display problem but this introduces
+<p>This was fixed to compile with modern systems but the entry also used <code>gets(3)</code>
+which in some systems would print out a warning along with the output of the
+program. Naturally it could also overflow long lines, of which there are many,
+though that is more considered a feature, not a bug, as it was documented by the
+author.</p>
+<p>It was changed to use <code>fgets(3)</code> to prevent the display problem but this introduces
 another problem namely that newlines can be printed if the line length &lt; 231.</p>
 <p>This seems like a worthy compromise to not have messed up output and although it
 would be ideal for it to never print a newline (unless that’s the line itself)
@@ -1383,30 +1378,28 @@ for more information on the change to <code>fgets(3)</code>.</p>
 even when it works. See the author’s remarks in the index.html for details.
 Increasing the buffer size and having it, when fed its own source code,
 generate code that will compile with the same buffer size is difficult: it just
-uses the original size. Cody explains this further down.</p>
+uses the original size. This is explained later down.</p>
 <p>Getting it to use <code>fgets()</code> is even harder as when fed its own code it will
 generate code that cannot even compile let alone use <code>fgets(3)</code>.</p>
 <p>In both cases, changing the buffer size and changing it to use <code>fgets(3)</code>, will
 cause compilation errors without other adjustments.</p>
 <p>See the below magic for details. Along with the author’s remarks in the
-index.html file it might prove possible to get it to use <code>fgets(3)</code>. Cody,
-writing this on 02 November 2023, only just noticed the author’s remarks and
-will later on look at this if nobody takes up the challenge. More important work
-like getting to a place that the next contest can run must be done first.</p>
-<p>Cody explains the magic of how this entry works, which will be necessary if this
-entry is to be fixed, below.</p>
-<p>You might wish to run the command:</p>
-<pre><code>    make diff_orig_prog</code></pre>
-<p>to see what had to change for the buffer size, when looking at the below.
-Furthermore you will want to look at:</p>
-<pre><code>    diff schnitzi.alt.c schnitzi.alt2.c</code></pre>
-<p>as the <code>fgets(3)</code> version can compile it just can’t generate compilable code (let
-alone using <code>fgets(3)</code>) when fed itself (to reiterate, just changing the call to
-<code>fgets(3)</code> does not mean it can compile and there’s a further problem in that
-<code>fgets(3)</code> retains the newline whereas <code>gets(3)</code> does not). Nevertheless looking
-at these commands will be of help to understand how it works.</p>
+index.html file it might prove possible to get it to use <code>fgets(3)</code>.</p>
+<p>Here is the magic of how this entry works, to help anyone who wishes to work on
+this.</p>
+<p>You might wish to run the commands:</p>
+<pre><code>    diff schnitzi.alt.c schnitzi.alt2.c
+
+    diff schnitzi.alt2.c schnitzi.alt.c</code></pre>
+<p>to see how the buffer size and how the <code>gets(3)</code> was changed to use <code>fgets()</code>,
+in the two alternate versions. Notice that the <code>fgets(3)</code> version can compile it
+just can’t <strong>generate</strong> compilable code (let alone using <code>fgets(3)</code>) when fed
+itself (to reiterate, just changing the call to <code>fgets(3)</code> does not mean it can
+compile and there’s a further problem in that <code>fgets(3)</code> retains the newline
+whereas <code>gets(3)</code> does not). Nevertheless looking at these commands will be of
+help to understand how it works, in case one wishes to try and fix it.</p>
 <p>For the alternate versions the other functionality is unaffected.</p>
-<h3 id="the-magic-of-1994schnitzi-and-how-it-flips-text">The magic of <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994/schnitzi/schnitzi.c">1994/schnitzi</a> and how it flips text</h3>
+<h3 id="the-magic-of-1994schnitzi-and-how-it-flips-text">The magic of <a href="1994/schnitzi/index.html">1994/schnitzi</a> and how it flips text</h3>
 <p>The problem is getting the generated code to use <code>fgets()</code> (once it even
 compiles which was easy to do) and also have the updated buffer size be the
 same (which was easy to do too at least in the original version). The generated
@@ -1450,9 +1443,9 @@ changing the buffer size, see below).</p>
 <p>Getting this entry to use <code>fgets(3)</code> is easy but the problem is you’re supposed
 to be able to feed the source to the program and the output of that will be
 compilable. It however will create compiler errors. So it’s not just changing
-the code to get it to use <code>fgets(3)</code>! I (Cody) already did this before I noticed
-the other part which is why I rolled that part back. I did increase the buffer
-size but that only works on the original source.</p>
+the code to get it to use <code>fgets(3)</code>! This was done but
+the other part is why that part was rolled back. The buffer size was increased
+but that only works on the original source.</p>
 <p>To say just how sensitive this entry is: even a space, lack of space or a
 character, wrong character, lack of character or character in the wrong place
 can cause a compilation error! Make sure that the output of:</p>
@@ -1468,7 +1461,7 @@ compiled!</p>
 <p>This program will likely crash if the source code file (by the name of the file
 that’s compiled) cannot be opened in the directory it is run from.</p>
 <h3 id="important-reminder-and-a-note-about-the--1-value-check-for-getc">Important reminder and a note about the <code>-1</code> value check for <code>getc()</code>:</h3>
-<p>Cody fixed the code to not use <code>-1</code> for the return value of <code>getc()</code>; this is
+<p>This code was fixed to not use <code>-1</code> for the return value of <code>getc()</code>; this is
 important because <code>EOF</code> is <strong>NOT</strong> guaranteed to be <code>-1</code> but rather any negative
 value. On systems where <code>EOF != -1</code> the program would enter an infinite loop
 until the program crashed, by chance reads a <code>-1</code> or was killed (it is for this
@@ -1515,8 +1508,7 @@ as documented, are considered features.</p>
 <h3 id="source-code-1995cduacdua.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1995/cdua/cdua.c">1995/cdua/cdua.c</a></h3>
 <h3 id="information-1995cduaindex.html">Information: <a href="1995/cdua/index.html">1995/cdua/index.html</a></h3>
 <p>This did not originally compile under macOS and after it did compile under
-macOS, it crashed. <a href="authors.html#Cody_Boone_Ferguson">Cody Boone Ferguson</a>
-fixed these problems.</p>
+macOS, it crashed. These problems were fixed.</p>
 <p>It should be noted however that there is a condition where the program will
 prompt you to press return again. This was thought to be a bug but looking at
 the code it can clearly be seen that if <code>g - a</code> is 0 then the message is
@@ -1754,7 +1746,7 @@ with things but we don’t know.</p>
 <pre><code>    $ echo poot | ./dlowe
     poot was here!</code></pre>
 <p>Can you help fix these problems?</p>
-<p>Cody provided the C code that creates an unformatted perl script that will just
+<p>Here is some C code that creates an unformatted perl script that will just
 print ‘unimplemented’ for operators but it seems to work in some other ways (see
 below for how to go further than unimplemented) which is the exact perl from the
 C program except that it has the <code>#!/usr/bin/env perl</code> and <code>use warnings;</code> as
@@ -1834,18 +1826,17 @@ For instance inputting <code>D</code> followed by <code>XX</code>:</p>
 <p>That means then that in linux despite the subroutines seemingly not existing it
 works in the code, at least in some cases.</p>
 <p>As far as the unimplemented error goes: the author stated that it means there is
-invalid input. But as can be seen by the input I (Cody) gave the input is not
+invalid input. But as can be seen by the input given, the input is not
 actually incorrect. It is also curious to note that it ends up printing what’s
 on the stack at that point:</p>
 <pre><code>    $ echo 5 5 + p | ./dlowe.pl
     unimplemented
     5</code></pre>
-<p>which might (?) suggest that the <code>+</code> operator is unimplemented. Unfortunately it
-has been many years since I have used perl and I was never a guru either.</p>
+<p>which might (?) suggest that the <code>+</code> operator is unimplemented.</p>
 <h3 id="status-inabiaf---please-do-not-fix-32">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <p>The author states that in perl &lt; 5.6.0 there is a bug with a core dump in what
 they said is in <code>Perl_sv_upgrade</code>. As this is documented it is not considered a
-bug to be fixed. For the curious this will crash in macOS. Cody notes that the
+bug to be fixed. For the curious this will crash in macOS. It was noted that the
 code that crashes is:</p>
 <pre><code>    perl_eval_sv
     (newSVpv(&quot;_:$_=               &lt;&gt; ; defined               or exit; @ARGV&quot;
@@ -1919,16 +1910,17 @@ fire</a>! :-) ).</p>
 <h3 id="status-inabiaf---please-do-not-fix-35">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <h3 id="source-code-2001anonymousanonymous.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/anonymous/anonymous.c">2001/anonymous/anonymous.c</a></h3>
 <h3 id="information-2001anonymousindex.html">Information: <a href="2001/anonymous/index.html">2001/anonymous/index.html</a></h3>
-<p><a href="authors.html#Cody_Boone_Ferguson">Cody Boone Ferguson</a> fixed this so that it
-doesn’t segfault and then also fixed the functionality of it (but see below).</p>
-<p>Cody also fixed the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/anonymous/anonymous.ten.c">anonymous.ten.c</a> program
-(it also segfaulted) but notes that it <strong>MUST</strong> be compiled as a <strong>32-bit ELF
+<p>This was fixed so that it doesn’t segfault and then also fixed the functionality
+of it (but see below).</p>
+<p>The <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/anonymous/anonymous.ten.c">anonymous.ten.c</a> program was
+also fixed (it also segfaulted) but note that it <strong>MUST</strong> be compiled as a <strong>32-bit ELF
 binary</strong> so it will NOT work in macOS (for example); if you cannot use <code>-m32</code> or
 even if you can but it cannot compile as an ELF binary (not elf binary :-) )
 (but see below) then the <code>anonymous</code> program itself will very likely crash if
-you run it on the compiled <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/anonymous/anonymous.ten.c">anonymous.ten.c</a> but
-if nothing else it will not modify the target executable (this part of the fix
-at least should be correct).</p>
+you run it on the compiled
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/anonymous/anonymous.ten.c">anonymous.ten.c</a>; if nothing else
+it will not modify the target executable (this part of the fix at least should
+be correct).</p>
 <p>Note also that if you don’t specify a file or you specify a non-32-bit ELF file
 this program will very likely crash or do something strange like slaughter the
 elves of Imladris :-(</p>
@@ -1940,36 +1932,35 @@ elves of Imladris :-(</p>
 <h3 id="information-2001bellardindex.html">Information: <a href="2001/bellard/index.html">2001/bellard/index.html</a></h3>
 <p>The author stated that it only works with i386 linux so the fact it doesn’t work
 in modern systems is considered a feature and not a bug.</p>
-<p><a href="authors.html#Cody_Boone_Ferguson">Cody Boone Ferguson</a> fixed an initial
-segfault (trying to open the file) and he also fixed the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/bellard/bellard.otccex.c">supplementary program
-bellard.otccex.c</a> but this still crashes in
-systems not i386 linux which is what the author stated.</p>
+<p>An initial segfault was fixed (trying to open the file) and the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/bellard/bellard.otccex.c">supplementary
+program bellard.otccex.c</a> was also
+fixed but this still crashes in systems not i386 linux which is what the author
+stated.</p>
 <p>The author said that they compiled it with <a href="https://ftp.gnu.org/gnu/gcc/gcc-2.95.2/gcc-everything-2.95.2.tar.gz">gcc version
 2.95.2</a>. We
 don’t know if a certain gcc version is necessary but it might be helpful to
 download and compile that version to test it - or it might not.</p>
-<p>I (Cody) have no i386 system to test this but perhaps this is why I can’t get it
-to work. Yusuke was able to get this to work with <code>-m32</code> but only in an
-emulator.</p>
+<p>Yusuke was able to get this to work with <code>-m32</code> but only in an emulator. As
+such, it might be that the changes made should be rolled back but at least now
+the supplementary program will work in modern systems.</p>
 <p>On the author’s <a href="https://bellard.org/otcc/">web page for this program</a> it is
 explicitly stated that it requires i386 linux.</p>
-<p>There I found what should be a more portable version which is included as
-<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/bellard/otccelf.c">otccelf.c</a> (after adding some <code>#include</code>s and the
-modification by Yusuke noted in the <a href="thanks-for-help.html">thanks</a>
-file) but it appears this <em>also</em> requires i386 linux; indeed looking at the code
-it hard codes paths that are i386 specific to linux.</p>
+<p>There it was found what should be a more portable version which is included as
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/bellard/otccelf.c">otccelf.c</a> (after adding some <code>#include</code>s
+and the modification but it appears this <em>also</em> requires i386 linux; indeed
+looking at the code it hard codes paths that are i386 specific to linux.</p>
 <p>Another point of interest is that the author provided unobfuscated versions
 which might be of value to look at.</p>
 <h4 id="aside-why-were-there-changes-made-if-inabiaf">Aside: why were there changes made if INABIAF ?</h4>
 <p>This is a good question. The reason is we believe it better to fix some obvious
 problems: there were some bugs that would very possibly prevent it from working
-even if it was in i386 linux though Yusuke seemed to get it to work in an
-emulator so perhaps not. Still it’s better to have the type of the file pointer
-correct and so that the file can at least be opened in modern systems even if
-the compiler won’t work there.</p>
-<p>Also the supplementary program, which did not work at all, was fixed (by Cody)
-and it can be run by itself for fun in modern systems, which was not possible
-before the fixes there.</p>
+even if it was in i386 linux though it did seem to work in an emulator, so
+perhaps not. Still it’s better to have the type of the file pointer correct and
+so that the file can at least be opened in modern systems even if the compiler
+won’t work there.</p>
+<p>Also the supplementary program, which did not work at all, was fixed and it can
+be run by itself for fun in modern systems, which was not possible before the
+fixes there.</p>
 <div id="2001_cheong">
 <h2 id="cheong">2001/cheong</h2>
 </div>
@@ -2051,9 +2042,7 @@ details and a workaround.</p>
 <h3 id="source-code-2001westleywestley.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/westley/westley.c">2001/westley/westley.c</a></h3>
 <h3 id="information-2001westleyindex.html">Information: <a href="2001/westley/index.html">2001/westley/index.html</a></h3>
 <p>This function uses <code>gets(3)</code> but it would be ideal if it used <code>fgets(3)</code>. This
-one is rather complicated and will be looked at later (some progress was made by
-Cody but it is less important than other work) but you are welcome to try
-and fix this if you wish.</p>
+one is rather complicated but you are welcome to try and fix this if you wish.</p>
 <h3 id="status-main-has-only-one-arg---try-and-make-it-have-2-or-3">STATUS: main() has only one arg - try and make it have 2 or 3</h3>
 <p>This program only has one arg to <code>main()</code>. However changing it to have 2 is not
 as simple as it might seem. Doing this breaks things. If memory serves changing
@@ -2321,14 +2310,14 @@ for running itself.</p>
 <h3 id="status-inabiaf---please-do-not-fix-50">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <h3 id="source-code-2005mynxmynx.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2005/mynx/mynx.c">2005/mynx/mynx.c</a></h3>
 <h3 id="information-2005mynxindex.html">Information: <a href="2005/mynx/index.html">2005/mynx/index.html</a></h3>
-<p><a href="authors.html#Cody_Boone_Ferguson">Cody Boone Ferguson</a> notes that, though
-probably obvious, this entry will not work with https. He added an alt version
-that scans for https in case someone wants to set up a pipeline or other
-workaround (perhaps with stunnel) or even add additional code to it to make it
-work with https but the problem otherwise is a secure connection has to first be
-set up in order to give http commands. This is not a bug but it’s worth pointing
-out as it won’t work on as many websites as it used to including the <a href="https://www.ioccc.org">IOCCC
-website</a> itself.</p>
+<p>Probably this is obvious, but this entry will not work with https. An
+alt version exists that <em>SCANS</em> for https in case someone wants to set up a pipeline or
+other workaround (perhaps with <code>stunnel</code>) or even add additional code to it to
+make it work with https but the problem otherwise is a secure connection has to
+first be set up in order to give http commands. This is not a bug but it’s worth
+pointing out as it won’t work on as many websites as it used to including the
+<a href="https://www.ioccc.org">IOCCC website</a> itself. The author noted that someone did
+make a version that supports <code>https</code> but it is not known where this might be.</p>
 <div id="2005_sykes">
 <h2 id="sykes">2005/sykes</h2>
 </div>
@@ -2434,13 +2423,12 @@ without outputting a solution. If you can wait that long.</p>
 <h3 id="status-inabiaf---please-do-not-fix-57">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <h3 id="source-code-2006toledo2toledo2.c">Source code: <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2006/toledo2/toledo2.c">2006/toledo2/toledo2.c</a></h3>
 <h3 id="information-2006toledo2index.html">Information: <a href="2006/toledo2/index.html">2006/toledo2/index.html</a></h3>
-<p><a href="authors.html#Cody_Boone_Ferguson">Cody Boone Ferguson</a> fixed this program to
+<p>This was fixed to
 not crash in macOS (it appeared to work fine in fedora linux on an <code>x86_64</code>
-architecture but he does not know if it crashed in macOS Ventura due to the fact
+architecture but it is not known if it crashed in macOS Ventura due to the fact
 it is an <code>arm64</code> CPU - the Apple silicon chip, but given that the author later
 made some slight changes to make it not crash in <code>x86_64</code> macOS that might be
-the case). This fix, BTW, is a mix of a fix by <a href="authors.html#Yusuke_Endoh">Yusuke
-Endoh</a> and Cody’s.</p>
+the case).</p>
 <p>Nevertheless there are two features that are not bugs.</p>
 <p>By design this program is supposed to crash on termination. This actually no
 longer seems to happen but we don’t need this to be added even if it might
@@ -2544,11 +2532,10 @@ a bus error).</p>
 like it <em>might</em> (see Apple resources below) be but it could also be a wider
 problem with macOS. It appears that Apple does not allow certain combinations of
 memory protections with the arm64 processor.</p>
-<p><a href="authors.html#Cody_Boone_Ferguson">Cody Boone Ferguson</a> tried some of the
-workarounds but at this time he could not get it to work. He offers some earlier
-debugging sessions below as well as a resource from the author as well as some
-resources on Apple’s website should anyone wish to take a crack at it. He might
-address it later but a starting point might be in
+<p>Some of the workarounds have been tried but at this time it did not seem to
+work. Some earlier debugging sessions are below as well as a resource from the
+author as well as some resources on Apple’s website should anyone wish to take a
+crack at it. A starting point might be in
 <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/richards/richards.alt.c">richards.alt.c</a>.</p>
 <h3 id="debugging">Debugging</h3>
 <p>At first glance it appeared to be that it might be the function pointers or the
@@ -2689,7 +2676,7 @@ Silicon</a></p>
 Entitlement</a></p>
 <p>Looking at
 <a href="https://github.com/apple/darwin-xnu/blob/5394bb038891708cd4ba748da79b90a33b19f82e/bsd/kern/kern_mman.c" class="uri">https://github.com/apple/darwin-xnu/blob/5394bb038891708cd4ba748da79b90a33b19f82e/bsd/kern/kern_mman.c</a>
-Cody noticed a curious thing in the <code>mprotect()</code> function: <code>#if CONFIG_DYNAMIC_CODE_SIGNING</code> and the protection variable has the
+A curious thing is in the <code>mprotect()</code> function: <code>#if CONFIG_DYNAMIC_CODE_SIGNING</code> and the protection variable has the
 <code>VM_PROT_TRUSTED</code> set it might allow overriding the problem but this is
 unconfirmed and it’s not known when <code>CONFIG_DYNAMIC_CODE_SIGNING</code> would be
 defined.</p>
@@ -2945,7 +2932,7 @@ is not. Again see his index.html for details. However it is also possible to not
 rely on the entry as the below shows. One should be able to do:</p>
 <pre><code>    echo &#39;No. I want chocolate!&#39; | ./prog &gt; chocolate.raw
 
-./prog e &lt; chocolate.raw</code></pre>
+    ./prog e &lt; chocolate.raw</code></pre>
 <p>and get:</p>
 <pre><code>    No. I want some chocolate!</code></pre>
 <p>but instead we get:</p>
