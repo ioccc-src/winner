@@ -281,7 +281,7 @@ clang** despite the fact it might appear to be gcc: no symlink and both gcc and
 clang exist but the gcc is clang which you'll see if you run `gcc --version`.
 
 A tip and some fix methods from [Cody Boone
-Ferguson](authors.html#[Cody_Boone_Ferguson): in the older days args to main()
+Ferguson](authors.html#Cody_Boone_Ferguson): in the older days args to main()
 not given a type were implicit ints but when they're required to be `char **`
 this can cause a problem. In some cases it was possible to use a `char *` inside
 `main()` (see [1989/tromp/tromp.c](%%REPO_URL%%/1989/tromp/tromp.c) and
