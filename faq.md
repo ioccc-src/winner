@@ -1,6 +1,6 @@
 # IOCCC FAQ Table of Contents
 
-This is FAQ version **28.0.8 2024-10-18**.
+This is FAQ version **28.0.9 2024-10-19**.
 
 <!--
     NOTE: when updating the table of contents, make sure to use unordered
@@ -35,6 +35,7 @@ This is FAQ version **28.0.8 2024-10-18**.
 ## 2. [IOCCC Judging process](#judging)
 <ol>
 <li><a class="normal" href="#questions">What is the best way to ask a question about the IOCCC rules, guideline and tools?</a></li>
+<li><a class="normal" href="#feedback">How can I comment or make a suggestion on IOCCC rules, guidelines and tools?</a></li>
 <li><a class="normal" href="#warnings">Are there any compiler warnings that I should not worry about?</a></li>
 <li><a class="normal" href="#frequent-themes">What types of entries have been frequently submitted to the IOCCC?</a></li>
 <li><a class="normal" href="#rule_2_broken">How did an entry that breaks the size rule 2 win the IOCCC?</a></li>
@@ -43,7 +44,6 @@ This is FAQ version **28.0.8 2024-10-18**.
 <li><a class="normal" href="#judging_rounds">How many judging rounds do you have?</a></li>
 <li><a class="normal" href="#grand_prize">Why do some IOCCC entries receive the Grand Prize or Best of Show award?</a></li>
 <li><a class="normal" href="#winners">How are winning IOCCC entries announced?</a></li>
-<li><a class="normal" href="#feedback">How can I comment or make a suggestion on IOCCC rules, guidelines and tools?</a></li>
 <li><a class="normal" href="#lost">Why don't you publish submissions that do not win?</a></li>
 </ol>
 </li>
@@ -517,96 +517,8 @@ Jump to: [top](#)
 
 </li>
 
-<li>
-<div id="feedback">
-<div id="comments">
-### Q: How can I comment or make a suggestion on IOCCC rules, guidelines and tools?
-</div>
-</div>
 
-The [IOCCC judges](judges.html) to welcome feedback on the [IOCCC
-rules](next/rules.html), [IOCCC guidelines](next/guidelines.html)
-and on the [IOCCC mkiocccentry tools](https://github.com/ioccc-src/mkiocccentry).
 
-To comment on the [IOCCC rules](next/rules.html) or the
-[IOCCC guidelines](next/guidelines.html) please view the
-[GitHub discussions for this repo](https://github.com/ioccc-src/winner/discussions).
-If there is an on-going discussion that seems relevant to what you
-have to say, consider adding comments to that particular discussion.
-Otherwise consider opening a [new IOCCC repo
-discussion](https://github.com/ioccc-src/winner/discussions/new/choose).
-
-To comment on [IOCCC mkiocccentry tools](https://github.com/ioccc-src/mkiocccentry),
-please view the [mkiocccentry repo discussions](https://github.com/ioccc-src/mkiocccentry/discussions).
-If there is an on-going discussion that seems relevant to what you
-have to say, consider adding comments to that particular discussion.
-Otherwise consider opening a [new mkiocccentry
-discussion](https://github.com/ioccc-src/mkiocccentry/discussions/new/choose).
-
-Jump to: [top](#)
-
-</li>
-<li>
-<div id="question">
-<div id="questions">
-### Q: What is the best way to ask a question about the IOCCC rules, guideline and tools?
-</div>
-</div>
-
-We realise that the [IOCCC rules](next/rules.html), [IOCCC guidelines](next/guidelines.html)
-and the [IOCCC mkiocccentry tools](https://github.com/ioccc-src/mkiocccentry)
-can be confusing or even seem overwhelming to some people.
-
-The [IOCCC judges](judges.html) do welcome questions about the IOCCC
-and will be **happy to help**.
-
-Chances are, if you have a question, there are a number of other people who
-have similar questions.  So we recommend first view the
-[GitHub discussions for this repo](https://github.com/ioccc-src/winner/discussions)
-so see if someone else asked already.  Feel free to join in on such a discussion,
-even if to just say:
-
-> I have this question too.
-
-Feel free to provide additional feedback in the existing discussion as needed.
-
-**BTW**: If your question is just about the
-[IOCCC mkiocccentry tools](https://github.com/ioccc-src/mkiocccentry), please
-view the [mkiocccentry repo discussions](https://github.com/ioccc-src/mkiocccentry/discussions)
-instead.
-
-If you do not find a suitable open discussion, please consider opening a
-[new IOCCC repo discussion](https://github.com/ioccc-src/winner/discussions/new/choose) with
-your question.  Doing this may be of help to others with a question similar to yours.
-
-**BTW**: If your question is just about the
-[IOCCC mkiocccentry
-tools](https://github.com/ioccc-src/mkiocccentry/discussions), and you do not
-see a suitable open discussion over there, then please consider opening a
-[new mkiocccentry discussion](https://github.com/ioccc-src/mkiocccentry/discussions/new/choose)
-over there.
-
-If you do not feel, for some reason, comfortable asking your question in public
-(although we hope you consider asking it in public for the benefit of others),
-then use the [How to contact the IOCCC](contact.html) information to ask
-a private question.
-
-**IMPORTANT**: When you ask your question (in public or as a private question)
-**PLEASE** try to **NOT** discuss detailed information about any pending submission.
-Try to ask for question in a more generic way as this will help others
-with a similar question and this will not **give away** what you might be doing
-with your submission.  If the [IOCCC judges](judges.html) truly need more
-information, they will ask (either in public or suggest a private conversation).
-
-Again, **please** don't hesitate to ask: Your question may be something that
-others are wondering about as well!
-
-See also the
-FAQ on "[rules, guidelines, tools feedback](#feedback)".
-
-Jump to: [top](#)
-
-</li>
 
 
 
@@ -1587,7 +1499,100 @@ Jump to: [top](#)
 
 Jump to: [top](#)
 
+
+<li>
+<div id="question">
+<div id="questions">
+### Q: What is the best way to ask a question about the IOCCC rules, guideline and tools?
+</div>
+</div>
+
+We realise that the [IOCCC rules](next/rules.html), [IOCCC guidelines](next/guidelines.html)
+and the [IOCCC mkiocccentry tools](https://github.com/ioccc-src/mkiocccentry)
+can be confusing or even seem overwhelming to some people.
+
+The [IOCCC judges](judges.html) do welcome questions about the IOCCC
+and will be **happy to help**.
+
+Chances are, if you have a question, there are a number of other people who
+have similar questions.  So we recommend first view the
+[GitHub discussions for this repo](https://github.com/ioccc-src/winner/discussions)
+so see if someone else asked already.  Feel free to join in on such a discussion,
+even if to just say:
+
+> I have this question too.
+
+Feel free to provide additional feedback in the existing discussion as needed.
+
+**BTW**: If your question is just about the
+[IOCCC mkiocccentry tools](https://github.com/ioccc-src/mkiocccentry), please
+view the [mkiocccentry repo discussions](https://github.com/ioccc-src/mkiocccentry/discussions)
+instead.
+
+If you do not find a suitable open discussion, please consider opening a
+[new IOCCC repo discussion](https://github.com/ioccc-src/winner/discussions/new/choose) with
+your question.  Doing this may be of help to others with a question similar to yours.
+
+**BTW**: If your question is just about the
+[IOCCC mkiocccentry
+tools](https://github.com/ioccc-src/mkiocccentry/discussions), and you do not
+see a suitable open discussion over there, then please consider opening a
+[new mkiocccentry discussion](https://github.com/ioccc-src/mkiocccentry/discussions/new/choose)
+over there.
+
+If you do not feel, for some reason, comfortable asking your question in public
+(although we hope you consider asking it in public for the benefit of others),
+then use the [How to contact the IOCCC](contact.html) information to ask
+a private question.
+
+**IMPORTANT**: When you ask your question (in public or as a private question)
+**PLEASE** try to **NOT** discuss detailed information about any pending submission.
+Try to ask for question in a more generic way as this will help others
+with a similar question and this will not **give away** what you might be doing
+with your submission.  If the [IOCCC judges](judges.html) truly need more
+information, they will ask (either in public or suggest a private conversation).
+
+Again, **please** don't hesitate to ask: Your question may be something that
+others are wondering about as well!
+
+See also the
+FAQ on "[rules, guidelines, tools feedback](#feedback)".
+
+Jump to: [top](#)
+
 </li>
+
+<li>
+<div id="feedback">
+<div id="comments">
+### Q: How can I comment or make a suggestion on IOCCC rules, guidelines and tools?
+</div>
+</div>
+
+The [IOCCC judges](judges.html) to welcome feedback on the [IOCCC
+rules](next/rules.html), [IOCCC guidelines](next/guidelines.html)
+and on the [IOCCC mkiocccentry tools](https://github.com/ioccc-src/mkiocccentry).
+
+To comment on the [IOCCC rules](next/rules.html) or the
+[IOCCC guidelines](next/guidelines.html) please view the
+[GitHub discussions for this repo](https://github.com/ioccc-src/winner/discussions).
+If there is an on-going discussion that seems relevant to what you
+have to say, consider adding comments to that particular discussion.
+Otherwise consider opening a [new IOCCC repo
+discussion](https://github.com/ioccc-src/winner/discussions/new/choose).
+
+To comment on [IOCCC mkiocccentry tools](https://github.com/ioccc-src/mkiocccentry),
+please view the [mkiocccentry repo discussions](https://github.com/ioccc-src/mkiocccentry/discussions).
+If there is an on-going discussion that seems relevant to what you
+have to say, consider adding comments to that particular discussion.
+Otherwise consider opening a [new mkiocccentry
+discussion](https://github.com/ioccc-src/mkiocccentry/discussions/new/choose).
+
+Jump to: [top](#)
+
+</li>
+
+
 <li>
 <div id="how_many">
 <div id="submissions">
