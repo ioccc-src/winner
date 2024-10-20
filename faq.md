@@ -4464,10 +4464,8 @@ Jump to: [top](#)
 
 If the entry requires gcc and you did not explicitly install gcc in macOS you
 will not be able to run or use these entries. This is because macOS gcc is
-actually clang, even `/usr/bin/gcc`.
-
-That being said many (if not most) of these entries have been fixed and some
-others will be looked at, when found.
+actually clang, even `/usr/bin/gcc`. That being said many (if not most) of these
+entries have been fixed.
 
 In some cases the [bugs.html](bugs.html) file may note a known macOS problem
 with an entry.  Should you manage to port the entry, and assuming your changes
