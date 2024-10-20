@@ -1398,7 +1398,7 @@ is a **hint**.  :-)
 
 <p class="leftbar">
 We **RECOMMEND** you put a reasonable amount effort into the content of the
-`remarks.md` file: it is a required for for a reason.  :-)
+`remarks.md` file: it is a required for a reason.  :-)
 </p>
 
 
