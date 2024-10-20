@@ -9,172 +9,124 @@ This is FAQ version **28.0.9 2024-10-19**.
 -->
 
 <ul>
-<li>
 ## 0. [Entering the IOCCC: the bare minimum you need to know](#enter_questions)
-<ol>
-<li><a class="normal" href="#submit">How can I enter the IOCCC?</a></li>
-<li><a class="normal" href="#mkiocccentry">What is the `mkiocccentry` tool and how do I use it?</a></li>
-<li><a class="normal" href="#compile_mkiocccentry">How do I compile `mkiocccentry` and its related tools?</a></li>
-<li><a class="normal" href="#platform">What platform should I assume for my submission?</a></li>
-<li><a class="normal" href="#makefile">What should I put in my submission Makefile?</a></li>
-<li><a class="normal" href="#remarks">What should I put in the remarks.md file of my submission?</a></li>
-</ol>
-</li>
+- <a class="normal" href="#submit">How can I enter the IOCCC?</a>
+- <a class="normal" href="#mkiocccentry">What is the `mkiocccentry` tool and how do I use it?</a>
+- <a class="normal" href="#compile_mkiocccentry">How do I compile `mkiocccentry` and its related tools?</a>
+- <a class="normal" href="#platform">What platform should I assume for my submission?</a>
+- <a class="normal" href="#makefile">What should I put in my submission Makefile?</a>
+- <a class="normal" href="#remarks">What should I put in the remarks.md file of my submission?</a>
 
-<li>
 ## 1. [Entering the IOCCC: more help and details](#submitting_help)
-<ol>
-<li><a class="normal" href="#answers_file">Is there a way to not have to re-enter the same information, when making a change to my submission?</a></li>
-<li><a class="normal" href="#prog_c">May I use a different source or compiled filename than prog.c or prog?</a></li>
-<li><a class="normal" href="#markdown">What are the IOCCC best practices for using markdown?</a></li>
-<li><a class="normal" href="#mkiocccentry_bugs">How do I report bugs in an `mkiocccentry` tool?</a></li>
-</ol>
-</li>
+- <a class="normal" href="#answers_file">Is there a way to not have to re-enter the same information, when making a change to my submission?</a>
+- <a class="normal" href="#prog_c">May I use a different source or compiled filename than prog.c or prog?</a>
+- <a class="normal" href="#markdown">What are the IOCCC best practices for using markdown?</a>
+- <a class="normal" href="#mkiocccentry_bugs">How do I report bugs in an `mkiocccentry` tool?</a>
 
-<li>
 ## 2. [IOCCC Judging process](#judging)
-<ol>
-<li><a class="normal" href="#questions">What is the best way to ask a question about the IOCCC rules, guideline and tools?</a></li>
-<li><a class="normal" href="#feedback">How can I comment or make a suggestion on IOCCC rules, guidelines and tools?</a></li>
-<li><a class="normal" href="#warnings">Are there any compiler warnings that I should not worry about?</a></li>
-<li><a class="normal" href="#frequent-themes">What types of entries have been frequently submitted to the IOCCC?</a></li>
-<li><a class="normal" href="#rule_2_broken">How did an entry that breaks the size rule 2 win the IOCCC?</a></li>
-<li><a class="normal" href="#submissions">How many submissions do the judges receive for a given IOCCC?</a></li>
-<li><a class="normal" href="#judging_time">How much time does it take to judge the contest?</a></li>
-<li><a class="normal" href="#judging_rounds">How many judging rounds do you have?</a></li>
-<li><a class="normal" href="#grand_prize">Why do some IOCCC entries receive the Grand Prize or Best of Show award?</a></li>
-<li><a class="normal" href="#winners">How are winning IOCCC entries announced?</a></li>
-<li><a class="normal" href="#lost">Why don't you publish submissions that do not win?</a></li>
-</ol>
-</li>
+- <a class="normal" href="#questions">What is the best way to ask a question about the IOCCC rules, guideline and tools?</a>
+- <a class="normal" href="#feedback">How can I comment or make a suggestion on IOCCC rules, guidelines and tools?</a>
+- <a class="normal" href="#warnings">Are there any compiler warnings that I should not worry about?</a>
+- <a class="normal" href="#frequent-themes">What types of entries have been frequently submitted to the IOCCC?</a>
+- <a class="normal" href="#rule_2_broken">How did an entry that breaks the size rule 2 win the IOCCC?</a>
+- <a class="normal" href="#submissions">How many submissions do the judges receive for a given IOCCC?</a>
+- <a class="normal" href="#judging_time">How much time does it take to judge the contest?</a>
+- <a class="normal" href="#judging_rounds">How many judging rounds do you have?</a>
+- <a class="normal" href="#grand_prize">Why do some IOCCC entries receive the Grand Prize or Best of Show award?</a>
+- <a class="normal" href="#winners">How are winning IOCCC entries announced?</a>
+- <a class="normal" href="#lost">Why don't you publish submissions that do not win?</a>
 
-<li>
 ## 3. [The mkiocccentry toolkit: finer details](#mkiocccentry_details)
-<ol>
-<li><a class="normal" href="#mkiocccentry_checks">What sort of checks does the mkiocccentry tool perform?</a></li>
-<li><a class="normal" href="#txzchk">How can I validate my submission tarball?</a></li>
-<li><a class="normal" href="#fnamchk">What is the `fnamchk` tool?</a></li>
-<li><a class="normal" href="#chkentry">How can I validate my `.auth.json` and/or `.info.json` files?</a></li>
-<li><a class="normal" href="#auth_json">What is a `.auth.json` file?</a></li>
-<li><a class="normal" href="#info_json">What is a `.info.json` file?</a></li>
-<li><a class="normal" href="#author_handle_faq">What is an `author handle`?</a></li>
-<li><a class="normal" href="#author_handle_json">What is an `author_handle.json` file and how are they used?</a></li>
-<li><a class="normal" href="#find_author_handle">How can I find my author handle?</a></li>
-<li><a class="normal" href="#entry_id_faq">What is an `entry_id`?</a></li>
-<li><a class="normal" href="#entry_json">What is a `.entry.json` file and how is it used?</a></li>
-<li><a class="normal" href="#jparse">How can I validate any JSON document?</a></li>
-</ol>
-</li>
+- <a class="normal" href="#mkiocccentry_checks">What sort of checks does the mkiocccentry tool perform?</a>
+- <a class="normal" href="#txzchk">How can I validate my submission tarball?</a>
+- <a class="normal" href="#fnamchk">What is the `fnamchk` tool?</a>
+- <a class="normal" href="#chkentry">How can I validate my `.auth.json` and/or `.info.json` files?</a>
+- <a class="normal" href="#auth_json">What is a `.auth.json` file?</a>
+- <a class="normal" href="#info_json">What is a `.info.json` file?</a>
+- <a class="normal" href="#author_handle_faq">What is an `author handle`?</a>
+- <a class="normal" href="#author_handle_json">What is an `author_handle.json` file and how are they used?</a>
+- <a class="normal" href="#find_author_handle">How can I find my author handle?</a>
+- <a class="normal" href="#entry_id_faq">What is an `entry_id`?</a>
+- <a class="normal" href="#entry_json">What is a `.entry.json` file and how is it used?</a>
+- <a class="normal" href="#jparse">How can I validate any JSON document?</a>
 
-<li>
 ## 4. [Compiling IOCCC entries](#compiling)
-<ol>
-<li><a class="normal" href="#makefile_rules">What Makefile rules are available to build or clean up IOCCC entries?</a></li>
-<li><a class="normal" href="#gmake">What kind of make&lpar;1&rpar; compatibility does the IOCCC support and will it support other kinds?</a></li>
-</ol>
-</li>
+- <a class="normal" href="#makefile_rules">What Makefile rules are available to build or clean up IOCCC entries?</a>
+- <a class="normal" href="#gmake">What kind of make&lpar;1&rpar; compatibility does the IOCCC support and will it support other kinds?</a>
 
-<li>
 ## 5. [Dependencies for some IOCCC entries](#dependencies)
-<ol>
-<li><a class="normal" href="#X11">How do I compile and run an IOCCC entry that requires X11?</a></li>
-<li><a class="normal" href="#SDL">How do I compile and install SDL1 or SDL2 for entries that require it?</a></li>
-<li><a class="normal" href="#curses">How do I compile and install &lpar;n&rpar;curses for entries that require it?</a></li>
-<li><a class="normal" href="#sound">How do I compile and run an IOCCC entry that requires sound?</a></li>
-<li><a class="normal" href="#tcpserver">How do I compile and install tcpserver for entries that require it?</a></li>
-<li><a class="normal" href="#netpbm">How do I compile and install netpbm for entries that require it?</a></li>
-<li><a class="normal" href="#libjpeg">How do I compile and install libjpeg-turbo for entries that require it?</a></li>
-<li><a class="normal" href="#imagemagick">How do I compile and install ImageMagick for entries that require it?</a></li>
-<li><a class="normal" href="#OpenGL">How do I compile and install OpenGL for entries that require it?</a></li>
-<li><a class="normal" href="#download">How do I download individual winning entries or all winning entries of a given year?</a></li>
-<li><a class="normal" href="#zlib">How do I compile and install zlib for IOCCC entries that require it?</a></li>
-<li><a class="normal" href="#ruby">How do I install Ruby for entries that require it?</a></li>
-<li><a class="normal" href="#rake">How do I install rake for entries that require it?</a></li>
-</ol>
-</li>
+- <a class="normal" href="#X11">How do I compile and run an IOCCC entry that requires X11?</a>
+- <a class="normal" href="#SDL">How do I compile and install SDL1 or SDL2 for entries that require it?</a>
+- <a class="normal" href="#curses">How do I compile and install &lpar;n&rpar;curses for entries that require it?</a>
+- <a class="normal" href="#sound">How do I compile and run an IOCCC entry that requires sound?</a>
+- <a class="normal" href="#tcpserver">How do I compile and install tcpserver for entries that require it?</a>
+- <a class="normal" href="#netpbm">How do I compile and install netpbm for entries that require it?</a>
+- <a class="normal" href="#libjpeg">How do I compile and install libjpeg-turbo for entries that require it?</a>
+- <a class="normal" href="#imagemagick">How do I compile and install ImageMagick for entries that require it?</a>
+- <a class="normal" href="#OpenGL">How do I compile and install OpenGL for entries that require it?</a>
+- <a class="normal" href="#download">How do I download individual winning entries or all winning entries of a given year?</a>
+- <a class="normal" href="#zlib">How do I compile and install zlib for IOCCC entries that require it?</a>
+- <a class="normal" href="#ruby">How do I install Ruby for entries that require it?</a>
+- <a class="normal" href="#rake">How do I install rake for entries that require it?</a>
 
-<li>
 ## 6. [Problems compiling IOCCC entries](#compile_problems)
-<ol>
-<li><a class="normal" href="#compile_errors">Why don't certain IOCCC entries compile?</a></li>
-<li><a class="normal" href="#clang">Why does clang or gcc fail to compile some IOCCC entries?</a></li>
-<li><a class="normal" href="#macos_compile">Why do some IOCCC entries fail to compile under macOS?</a></li>
-<li><a class="normal" href="#weverything">Why do Makefiles use -Weverything with clang?</a></li>
-</ol>
-</li>
+- <a class="normal" href="#compile_errors">Why don't certain IOCCC entries compile?</a>
+- <a class="normal" href="#clang">Why does clang or gcc fail to compile some IOCCC entries?</a>
+- <a class="normal" href="#macos_compile">Why do some IOCCC entries fail to compile under macOS?</a>
+- <a class="normal" href="#weverything">Why do Makefiles use -Weverything with clang?</a>
 
-<li>
 ## 7. [Running IOCCC entries](#running_entries)
-<ol>
-<li><a class="normal" href="#try">What are `try.sh` and `try.alt.sh` scripts and why should I use them?</a></li>
-<li><a class="normal" href="#sanity">An IOCCC entry messed up my terminal application, how do I fix this?</a></li>
-<li><a class="normal" href="#64bit">Why does an IOCCC entry fail to run on my 64-bit system?</a></li>
-<li><a class="normal" href="#eof">How do I find out how to send interrupt/EOF etc. for entries that require it?</a></li>
-<li><a class="normal" href="#unsupported">Why does an IOCCC entry fail to compile and/or fail to run?</a></li>
-</ol>
-</li>
+- <a class="normal" href="#try">What are `try.sh` and `try.alt.sh` scripts and why should I use them?</a>
+- <a class="normal" href="#sanity">An IOCCC entry messed up my terminal application, how do I fix this?</a>
+- <a class="normal" href="#64bit">Why does an IOCCC entry fail to run on my 64-bit system?</a>
+- <a class="normal" href="#eof">How do I find out how to send interrupt/EOF etc. for entries that require it?</a>
+- <a class="normal" href="#unsupported">Why does an IOCCC entry fail to compile and/or fail to run?</a>
 
-<li>
 ## 8. [Changes made to IOCCC entries](#changes)
-<ol>
-<li><a class="normal" href="#diff">How can I find out what was changed in an IOCCC entry source code?</a></li>
-<li><a class="normal" href="#fgets">Why were some calls to the libc function gets&lpar;3&rpar; changed to use fgets&lpar;3&rpar;?</a></li>
-<li><a class="normal" href="#consistency">Why do author remarks sometimes not match the source and/or why are there</li>
-other inconsistencies with the original entry?</a></li>
-<li><a class="normal" href="#orig_c">What is the meaning of the file ending in .orig.c in IOCCC entries?</a></li>
-<li><a class="normal" href="#alt_code">What are alternate versions and why were alternate versions added to some entries when the original entry worked fine and well?</a></li>
-<li><a class="normal" href="#main_args">Why was arg count and/or type changed in main&lpar;&rpar; in some older entries?</a></li>
-<li><a class="normal" href="#files">Why were files added to, removed from or changed in some entries?</a></li>
-<li><a class="normal" href="#prog_orig_c">What is the original source file?</a></li>
-</ol>
-</li>
+- <a class="normal" href="#diff">How can I find out what was changed in an IOCCC entry source code?</a>
+- <a class="normal" href="#fgets">Why were some calls to the libc function gets&lpar;3&rpar; changed to use fgets&lpar;3&rpar;?</a>
+- <a class="normal" href="#consistency">Why do author remarks sometimes not match the source and/or why are there
+other inconsistencies with the original entry?</a>
+- <a class="normal" href="#orig_c">What is the meaning of the file ending in .orig.c in IOCCC entries?</a>
+- <a class="normal" href="#alt_code">What are alternate versions and why were alternate versions added to some entries when the original entry worked fine and well?</a>
+- <a class="normal" href="#main_args">Why was arg count and/or type changed in main&lpar;&rpar; in some older entries?</a>
+- <a class="normal" href="#files">Why were files added to, removed from or changed in some entries?</a>
+- <a class="normal" href="#prog_orig_c">What is the original source file?</a>
 
-<li>
 ## 9. [Helping the IOCCC](#help)
-<ol>
-<li><a class="normal" href="#how_to_help">How can I help the IOCCC?</a></li>
-<li><a class="normal" href="#bugs">Is there a list of known bugs and &lpar;mis&rpar;features of IOCCC entries?</a></li>
-<li><a class="normal" href="#fix_an_entry">How can I submit a fix to an IOCCC entry?</a></li>
-<li><a class="normal" href="#pull_request">How do I make a pull request to the GitHub repo?</a></li>
-<li><a class="normal" href="#report_website_problem">How can I report an IOCCC website problem?</a></li>
-<li><a class="normal" href="#fix_website">How can I submit a fix to the IOCCC website?</a></li>
-<li><a class="normal" href="#fix_author">How can I correct or update an IOCCC author's information?</a></li>
-<li><a class="normal" href="#fix_link">What should I do if I find a broken or wrong web link?</a></li>
-<li><a class="normal" href="#supporting_ioccc">How can I support the IOCCC?</a></li>
-<li><a class="normal" href="#deobfuscated">I deobfuscated some entry code, may I contribute the source?</a></li>
-<li><a class="normal" href="#reporting_bugs">How do I report a bug in an IOCCC entry?</a></li>
-</ol>
-</li>
+- <a class="normal" href="#how_to_help">How can I help the IOCCC?</a>
+- <a class="normal" href="#bugs">Is there a list of known bugs and &lpar;mis&rpar;features of IOCCC entries?</a>
+- <a class="normal" href="#fix_an_entry">How can I submit a fix to an IOCCC entry?</a>
+- <a class="normal" href="#pull_request">How do I make a pull request to the GitHub repo?</a>
+- <a class="normal" href="#report_website_problem">How can I report an IOCCC website problem?</a>
+- <a class="normal" href="#fix_website">How can I submit a fix to the IOCCC website?</a>
+- <a class="normal" href="#fix_author">How can I correct or update an IOCCC author's information?</a>
+- <a class="normal" href="#fix_link">What should I do if I find a broken or wrong web link?</a>
+- <a class="normal" href="#supporting_ioccc">How can I support the IOCCC?</a>
+- <a class="normal" href="#deobfuscated">I deobfuscated some entry code, may I contribute the source?</a>
+- <a class="normal" href="#reporting_bugs">How do I report a bug in an IOCCC entry?</a>
 
-<li>
 ## 10. [Miscellaneous IOCCC](#misc)
-<ol>
-<li><a class="normal" href="#mirrors">May I mirror the IOCCC website?</a></li>
-<li><a class="normal" href="#copyright">May I use parts of the IOCCC in an article, book, newsletter, or instructional material?</a></li>
-<li><a class="normal" href="#first_person">Why do you sometimes use the first person plural?</a></li>
-<li><a class="normal" href="#dot_files"> What is the purpose of the `.top`, `.allyear`, `.year` and `.path` files?</a></li>
-<li><a class="normal" href="#terms"> What is the current meaning of the IOCCC terms Author, Entry, and Submission?</a></li>
-<li><a class="normal" href="#licence">Am I allowed to use IOCCC content?</a></li>
-<li><a class="normal" href="#try_mastodon">What is Mastodon and why does IOCCC use it?</a></li>
-<li><a class="normal" href="#tabstops">How do I set certain tabstops for viewing source code in vi&lpar;m&rpar;?</a></li>
-<li><a class="normal" href="#menus">How do the menus on the website work and what can I do if they don't work?</a></li>
-<li><a class="normal" href="#author-information">How do I find more information about a winning author of an entry?</a></li>
-<li><a class="normal" href="#cb">What is this cb tool that is mentioned in the IOCCC?</a></li>
-</ol>
-</li>
+- <a class="normal" href="#mirrors">May I mirror the IOCCC website?</a>
+- <a class="normal" href="#copyright">May I use parts of the IOCCC in an article, book, newsletter, or instructional material?</a>
+- <a class="normal" href="#first_person">Why do you sometimes use the first person plural?</a>
+- <a class="normal" href="#dot_files"> What is the purpose of the `.top`, `.allyear`, `.year` and `.path` files?</a>
+- <a class="normal" href="#terms"> What is the current meaning of the IOCCC terms Author, Entry, and Submission?</a>
+- <a class="normal" href="#licence">Am I allowed to use IOCCC content?</a>
+- <a class="normal" href="#try_mastodon">What is Mastodon and why does IOCCC use it?</a>
+- <a class="normal" href="#tabstops">How do I set certain tabstops for viewing source code in vi&lpar;m&rpar;?</a>
+- <a class="normal" href="#menus">How do the menus on the website work and what can I do if they don't work?</a>
+- <a class="normal" href="#author-information">How do I find more information about a winning author of an entry?</a>
+- <a class="normal" href="#cb">What is this cb tool that is mentioned in the IOCCC?</a>
 
-<li>
 ## 11. [History of the IOCCC](#ioccc_history)
-<ol>
-<li><a class="normal" href="#ioccc_start">How did the IOCCC get started?</a></li>
-<li><a class="normal" href="#missing_years">Why are some years missing IOCCC entries?</a></li>
-<li><a class="normal" href="#website_history">What is the history of the IOCCC website?</a></li>
-<li><a class="normal" href="#size_rule_history">How has the IOCCC size limit rule changed over the years?</a></li>
-<li><a class="normal" href="#great_fork_merge">What is the **Great Fork Merge**?</a></li>
-<li><a class="normal" href="#bof">What is an IOCCC BOF?</a></li>
-<li><a class="normal" href="#explain_IOCCC">I do not understand the IOCCC, can you explain it to me?</a></li>
-</ol>
-</li>
+- <a class="normal" href="#ioccc_start">How did the IOCCC get started?</a>
+- <a class="normal" href="#missing_years">Why are some years missing IOCCC entries?</a>
+- <a class="normal" href="#website_history">What is the history of the IOCCC website?</a>
+- <a class="normal" href="#size_rule_history">How has the IOCCC size limit rule changed over the years?</a>
+- <a class="normal" href="#great_fork_merge">What is the **Great Fork Merge**?</a>
+- <a class="normal" href="#bof">What is an IOCCC BOF?</a>
+- <a class="normal" href="#explain_IOCCC">I do not understand the IOCCC, can you explain it to me?</a>
 </ul>
 
 
@@ -184,15 +136,12 @@ Jump to: [top](#)
 # The IOCCC FAQ
 
 <ul>
-<li>
 <div id="enter_questions">
 ## Section 0: Entering the IOCCC: the bare minimum you need to know
 </div>
 
 Jump to: [top](#)
 
-<ol>
-<li>
 <div id="submit">
 <div id="register">
 ### Q: How can I enter the IOCCC?
@@ -321,8 +270,6 @@ for an announcement of the availability of the **IOCCC submit server**.
 
 Jump to: [top](#)
 
-</li>
-<li>
 <div id="mkiocccentry">
 ### Q: What is the `mkiocccentry` tool and how do I use it?
 </div>
@@ -381,9 +328,7 @@ submission _as well as author details_ (that will only be looked at if the
 submission wins), run some tests and run a number of other tools, as already
 mentioned and as described below.
 
-</li>
 
-<li>
 <div id="mkiocccentry_compile">
 <div id="compile_mkiocccentry">
 ### Q: How do I compile `mkiocccentry` and its related tools?
@@ -407,9 +352,7 @@ See also the
 for more up to date information on downloading, compiling, and related FAQ information.
 
 Jump to: [top](#)
-</li>
 
-<li>
 <div id="SUS">
 <div id="platform">
 <div id="portability">
@@ -425,9 +368,7 @@ or [later SUS](https://unix.org/online.html).
 
 Jump to: [top](#)
 
-</li>
 
-<li>
 <div id="makefile">
 <div id="submission_makefile">
 ### Q: What should I put in my submission Makefile?
@@ -460,9 +401,7 @@ command that is compatible with GNU Make version 3.81.
 
 Jump to: [top](#)
 
-</li>
 
-<li>
 <div id="remarks_md">
 <div id="remarks">
 <div id="readme">
@@ -515,14 +454,12 @@ this is not clear!
 
 Jump to: [top](#)
 
-</li>
 
 
 
 
 
 
-<li>
 <div id="auth_json">
 ### Q: What is a `.auth.json` file?
 </div>
@@ -794,8 +731,6 @@ FAQ on "[validating JSON documents](#validating_json)".
 
 Jump to: [top](#)
 
-</li>
-<li>
 <div id="info_json">
 ### Q: What is a `.info.json` file?
 </div>
@@ -1241,8 +1176,6 @@ FAQ on "[validating JSON documents](#validating_json)".
 
 Jump to: [top](#)
 
-</li>
-<li>
 <div id="validating_json">
 <div id="jparse">
 ### Q: How can I validate any JSON document?
@@ -1293,8 +1226,6 @@ the tool.
 
 Jump to: [top](#)
 
-</li>
-<li>
 <div id="validating_auth_info_json">
 <div id="chkentry">
 ### Q: How can I validate my `.auth.json` and/or `.info.json` files?
@@ -1349,16 +1280,13 @@ submission manually then you would be violating [Rule
 
 Jump to: [top](#)
 
-</li>
 </ul>
 
 <ul>
-<li>
 <div id="submitting_help">
 ## Section 1: Entering the IOCCC: more help and details
 </div>
 Jump to: [top](#)
-<li>
 <div id="answers_file">
 ### Q: Is there a way to not have to re-enter the same information, when making a change to my submission?
 </div>
@@ -1385,9 +1313,7 @@ To make use of the answers file, use the `-i answers` option like:
 
 Jump to: [top](#)
 
-</li>
 
-<li>
 <div id="prog_c">
 ### Q: May I use a different source or compiled filename than prog.c or prog?
 </div>
@@ -1443,9 +1369,7 @@ For example:
 
 Jump to: [top](#)
 
-</li>
 
-<li>
 <div id="markdown">
 <div id="md">
 ### Q: What are the IOCCC best practices for using markdown?
@@ -1468,9 +1392,7 @@ See also [CommonMark Spec](https://spec.commonmark.org/current/).
 
 Jump to: [top](#)
 
-</li>
 
-<li>
 <div id="mkiocccentry_bugs">
 ### Q: How do I report bugs in an `mkiocccentry` tool?
 </div>
@@ -1487,12 +1409,9 @@ in the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry).
 
 Jump to: [top](#)
 
-</li>
-</li>
 </ul>
 
 <ul>
-<li>
 <div id="judging">
 ## Section 2: IOCCC Judging process
 </div>
@@ -1500,7 +1419,6 @@ Jump to: [top](#)
 Jump to: [top](#)
 
 
-<li>
 <div id="question">
 <div id="questions">
 ### Q: What is the best way to ask a question about the IOCCC rules, guideline and tools?
@@ -1560,9 +1478,7 @@ FAQ on "[rules, guidelines, tools feedback](#feedback)".
 
 Jump to: [top](#)
 
-</li>
 
-<li>
 <div id="feedback">
 <div id="comments">
 ### Q: How can I comment or make a suggestion on IOCCC rules, guidelines and tools?
@@ -1590,10 +1506,8 @@ discussion](https://github.com/ioccc-src/mkiocccentry/discussions/new/choose).
 
 Jump to: [top](#)
 
-</li>
 
 
-<li>
 <div id="how_many">
 <div id="submissions">
 ### Q: How many submissions do the judges receive for a given IOCCC?
@@ -1604,9 +1518,7 @@ By tradition, we do not say.
 
 Jump to: [top](#)
 
-</li>
 
-<li>
 <div id="frequent-themes">
 ### Q: What types of entries have been frequently submitted to the IOCCC?
 </div>
@@ -1740,9 +1652,7 @@ of the same theme.
 
 Jump to: [top](#)
 
-</li>
 
-<li>
 <div id="losing_submissions">
 <div id="lost">
 ### Q: Why don't you publish submissions that do not win?
@@ -1755,8 +1665,6 @@ entries that do not win on their web page for everyone to see.
 
 Jump to: [top](#)
 
-</li>
-<li>
 <div id="judging_time">
 ### Q: How much time does it take to judge the contest?
 </div>
@@ -1779,8 +1687,6 @@ for more information.
 
 Jump to: [top](#)
 
-</li>
-<li>
 <div id="rounds">
 <div id="judging_rounds">
 ### Q: How many judging rounds do you have?
@@ -1799,8 +1705,6 @@ certainly more than 3.
 
 Jump to: [top](#)
 
-</li>
-<li>
 <div id="best">
 <div id="best_of_show">
 <div id="grand_prize">
@@ -1848,8 +1752,6 @@ more other entries that came in close behind.
 
 Jump to: [top](#)
 
-</li>
-<li>
 <div id="announcing_winners">
 <div id="announce">
 <div id="winners">
@@ -1883,18 +1785,14 @@ winning entries page](years.html). This is done by updating this repo.
 Jump to: [top](#)
 
 
-</li>
 </ul>
 
 <ul>
-<li>
 <div id="mkiocccentry_details">
 ## Section 3: The mkiocccentry toolkit: finer details
 </div>
 
 Jump to: [top](#)
-</li>
-<li>
 <div id="mkiocccentry_checks">
 ### Q: What sort of checks does the mkiocccentry tool perform?</a>
 </div>
@@ -1981,8 +1879,6 @@ See also the [Guidelines](next/guidelines.html) and the [Rules](next/rules.html)
 (and in particular [Rule 17](next/rules.html#rule17)).
 
 Jump to: [top](#)
-</li>
-<li>
 <div id="txzchk">
 <div id="tarball">
 <div id="xz">
@@ -2022,8 +1918,6 @@ code](https://github.com/ioccc-src/mkiocccentry/blob/master/txzchk.c).
 
 Jump to: [top](#)
 
-</li>
-<li>
 <div id="fnamchk">
 <div id="tarball_filename">
 ### Q: FAQ 0.14 - What is the `fnamchk` tool?
@@ -2052,19 +1946,15 @@ for more information.
 
 Jump to: [top](#)
 
-</li>
 </ul>
 
 <ul>
-<li>
 <div id="compiling">
 ## Section 4: Compiling IOCCC entries
 </div>
 
 Jump to: [top](#)
 
-</li>
-<li>
 <div id="make_rules">
 <div id="makefile_rules">
 ### Q: What Makefile rules are available to build or clean up IOCCC entries?
@@ -2129,8 +2019,6 @@ were to do something like `make CC=gcc=mp-12` it would register as `gcc`.
 
 Jump to: [top](#)
 
-</li>
-<li>
 <div id="compile">
 <div id="compile_errors">
 ### Q: Why don't certain IOCCC entries compile?
@@ -2173,8 +2061,6 @@ compiles does not mean it will run on your specific system.
 
 Jump to: [top](#)
 
-</li>
-<li>
 <div id="64bit">
 <div id="64-bit">
 ### Q: Why does an IOCCC entry fail to run on my 64-bit system?
@@ -2212,8 +2098,6 @@ for more information about pull requests.
 
 Jump to: [top](#)
 
-</li>
-<li>
 <div id="macos">
 <div id="macos_errors">
 <div id="macos_compile">
@@ -2239,8 +2123,6 @@ for details.
 
 Jump to: [top](#)
 
-</li>
-<li>
 <div id="gcc">
 <div id="clang">
 ### Q: Why does clang or gcc fail to compile some IOCCC entries?
@@ -2276,8 +2158,6 @@ for more information about pull requests.
 
 Jump to: [top](#)
 
-</li>
-<li>
 <div id="cb">
 ### Q: What is this cb tool that is mentioned in the IOCCC?
 </div>
@@ -2289,8 +2169,6 @@ judging the IOCCC. A Unix man page for `cb`
 
 Jump to: [top](#)
 
-</li>
-<li>
 <div id="terminal">
 <div id="sanity">
 <div id="reset">
@@ -2309,8 +2187,6 @@ help.
 
 Jump to: [top](#)
 
-</li>
-<li>
 <div id="X11macOS">
 <div id="X11">
 ### Q: How do I compile and run an IOCCC entry that requires X11?
@@ -2527,8 +2403,6 @@ for more information.
 
 Jump to: [top](#)
 
-</li>
-<li>
 <div id="SDL">
 ### Q: How do I compile and install SDL1 or SDL2 for entries that require it?
 </div>
@@ -2653,8 +2527,6 @@ for more information about pull requests.
 
 Jump to: [top](#)
 
-</li>
-<li>
 <div id="curses">
 ### Q: How do I compile and install &lpar;n&rpar;curses for entries that require it?
 </div>
@@ -2721,8 +2593,6 @@ We recommend trying a method suitable for your environment first, if possible.
 
 Jump to: [top](#)
 
-</li>
-<li>
 <div id="sox">
 <div id="sound">
 ### Q: How do I compile and run an IOCCC entry that requires sound?
@@ -2792,8 +2662,6 @@ include this here, at least for now.
 
 Jump to: [top](#)
 
-</li>
-<li>
 <div id="weverything">
 ### Q: Why do Makefiles use -Weverything with clang?
 </div>
@@ -2884,8 +2752,6 @@ better than other entries.
 
 Jump to: [top](#)
 
-</li>
-<li>
 <div id="eof">
 <div id="intr">
 <div id="interrupt">
@@ -2925,8 +2791,6 @@ just `grep intr` or whatever.
 
 Jump to: [top](#)
 
-</li>
-<li>
 <div id="no_support">
 <div id="unsupported">
 ### Q: Why does an IOCCC entry fail to compile and/or fail to run?
@@ -2975,8 +2839,6 @@ for how to submit a fix to an IOCCC entry.
 
 Jump to: [top](#)
 
-</li>
-<li>
 <div id="tcpserver">
 ### Q: FAQ 3.14 - How do I compile and install tcpserver for entries that require it?
 </div>
@@ -3512,8 +3374,6 @@ should be worried about too much as this is on the compiler developers, not you.
 
 Jump to: [top](#)
 
-</li>
-<li>
 <div id="zlib">
 ### Q: How do I compile and install zlib for IOCCC entries that require it?
 </div>
@@ -3580,8 +3440,6 @@ We recommend trying a method suitable for your environment first, if possible.
 
 Jump to: [top](#)
 
-</li>
-<li>
 <div id="ruby">
 ### Q: How do I install Ruby for entries that require it?
 </div>
@@ -3591,8 +3449,6 @@ guide](https://www.ruby-lang.org/en/documentation/installation/).
 
 Jump to: [top](#)
 
-</li>
-<li>
 <div id="rake">
 ### Q: How do I install rake for entries that require it?
 </div>
@@ -3621,43 +3477,35 @@ Once this is done, try as root or via `sudo`:
 ```
 
 Jump to: [top](#)
-</li>
 </ul>
 
 <ul>
-<li>
 <div id="dependencies">
 ## Section 5: Dependencies for some IOCCC entries
 </div>
 
 Jump to: [top](#)
-</li>
 </ul>
 
 <ul>
-<li>
 <div id="compile_problems">
 ## Section 6: Problems compiling IOCCC entries
 </div>
 
 Jump to: [top](#)
 
-</li>
 </ul>
 
 <ul>
-<li>
 <div id="running_entries">
 ## Section 7: Running IOCCC entries
 </div>
 
 Jump to: [top](#)
 
-</li>
 </ul>
 
 <ul>
-<li>
 <div id="changes">
 ## Section 8: Changes made to IOCCC entries
 </div>
@@ -3665,8 +3513,6 @@ Jump to: [top](#)
 Jump to: [top](#)
 
 
-</li>
-<li>
 <div id="gets">
 <div id="fgets">
 ### Q: Why were some calls to the libc function gets&lpar;3&rpar; changed to use fgets&lpar;3&rpar;?
@@ -3719,8 +3565,6 @@ can look almost identical.
 Jump to: [top](#)
 
 
-</li>
-<li>
 <div id="what_changed">
 <div id="diff">
 ### Q: How can I find out what was changed in an IOCCC entry source code?
@@ -3868,8 +3712,6 @@ for more information.
 Jump to: [top](#)
 
 
-</li>
-<li>
 <div id="orig_c">
 ### Q: What is the meaning of the file ending in .orig.c in IOCCC entries?
 </div>
@@ -3882,8 +3724,6 @@ author might have made a modification without saving the original).
 Jump to: [top](#)
 
 
-</li>
-<li>
 <div id="alt">
 <div id="alt_code">
 ### Q: What are alternate versions and why were alternate versions added to some entries when the original entry worked fine and well?
@@ -3922,8 +3762,6 @@ for more information.
 Jump to: [top](#)
 
 
-</li>
-<li>
 <div id="arg_count">
 <div id="main_args">
 ### Q: Why was arg count and/or type changed in main&lpar;&rpar; in some older entries?
@@ -3948,8 +3786,6 @@ cases, however, this had to be done even without `clang` objections.
 Jump to: [top](#)
 
 
-</li>
-<li>
 <div id="renaming_files">
 ### Q: Why were some filenames changed?
 </div>
@@ -3979,8 +3815,6 @@ There were certainly other reasons as well.
 Jump to: [top](#)
 
 
-</li>
-<li>
 <div id="files_added">
 <div id="files_removed">
 <div id="files_changes">
@@ -4068,11 +3902,9 @@ for more information and make rules relating to "**original source file**" diffe
 
 Jump to: [top](#)
 
-</li>
 </ul>
 
 <ul>
-<li>
 <div id="help">
 ## Section 9: Helping the IOCCC
 </div>
@@ -4080,8 +3912,6 @@ Jump to: [top](#)
 Jump to: [top](#)
 
 
-</li>
-<li>
 <div id="how_to_help">
 <div id="helping">
 ### Q: How can I help the IOCCC?
@@ -4108,8 +3938,6 @@ section may offer you important fixing clues.
 
 Jump to: [top](#)
 
-</li>
-<li>
 <div id="report_bug">
 <div id="reporting_bugs">
 ### Q: How do I report a bug in an IOCCC entry?
@@ -4139,8 +3967,6 @@ for more information about pull requests.
 
 Jump to: [top](#)
 
-</li>
-<li>
 <div id="fix_an_entry">
 <div id="fixing_entries">
 ### Q: How can I submit a fix to an IOCCC entry?
@@ -4191,8 +4017,6 @@ have the final say in the matter.
 
 Jump to: [top](#)
 
-</li>
-<li>
 <div id="report_website_problem">
 <div id="website_problems">
 ### Q: How can I report an IOCCC website problem?
@@ -4223,8 +4047,6 @@ to [open a new IOCCC website issue](https://github.com/ioccc-src/temp-test-ioccc
 
 Jump to: [top](#)
 
-</li>
-<li>
 <div id="fix_website">
 ### Q: How can I submit a fix to the IOCCC website?
 </div>
@@ -4488,8 +4310,6 @@ FAQ on "[report website problem](#report_web_problem)".
 
 Jump to: [top](#)
 
-</li>
-<li>
 <div id="support">
 <div id="supporting_ioccc">
 ### Q: How can I support the IOCCC?
@@ -4513,8 +4333,6 @@ efforts, we suggest making an **Anonymous** gift via the
 
 Jump to: [top](#)
 
-</li>
-<li>
 <div id="deobfuscated">
 <div id="deobfuscation">
 <div id="unobfuscated">
@@ -4611,19 +4429,15 @@ that be prove helpful.
 
 Jump to: [top](#)
 
-</li>
 </ul>
 
 <ul>
-<li>
 <div id="misc">
 ## Section 10: Miscellaneous IOCCC
 </div>
 
 Jump to: [top](#)
 
-</li>
-<li>
 <div id="rule_2_broken">
 <div id="rule_breaking_entry">
 ### Q: How did an entry that breaks the size rule 2 win the IOCCC?
@@ -4645,8 +4459,6 @@ get around rule 2 size limits is discouraged).
 
 Jump to: [top](#)
 
-</li>
-<li>
 <div id="bugs">
 <div id="misfeatures">
 <div id="mis-features">
@@ -4664,8 +4476,6 @@ something like that.
 
 Jump to: [top](#)
 
-</li>
-<li>
 <div id="mirrors">
 <div id="website_mirrors">
 <div id="website_mirroring">
@@ -4701,8 +4511,6 @@ date with the latest changes when possible. Thank you.
 
 Jump to: [top](#)
 
-</li>
-<li>
 <div id="permission">
 <div id="copyright">
 ### Q: May I use parts of the IOCCC in an article, book, newsletter, or instructional material?
@@ -4727,8 +4535,6 @@ For additional information on the [Copyright and CC BY-SA 4.0 License](license.h
 
 Jump to: [top](#)
 
-</li>
-<li>
 <div id="first_person">
 <div id="person">
 <div id="pronoun">
@@ -4775,8 +4581,6 @@ p.s. Here is an image of F. D. C. Willard:
 
 Jump to: [top](#)
 
-</li>
-<li>
 <!-- we cannot use id="author_handle" because of a header in FAQ 6.6 -->
 <div id="author_handle_faq">
 ### Q: What is an `author_handle`?
@@ -4858,8 +4662,6 @@ Anonymous `author_handle`'s match this regexp:
 
 Jump to: [top](#)
 
-</li>
-<li>
 <div id="author_json">
 <div id="author_handle_json">
 ### Q: What is an `author_handle.json` file and how are they used?
@@ -5386,8 +5188,6 @@ and/or correct IOCCC author information.
 
 Jump to: [top](#)
 
-</li>
-<li>
 <!-- we cannot use id="entry_id" because of a header in FAQ 6.6 -->
 <div id="entry_id_faq">
 ### Q: What is an `entry_id`?
@@ -5412,8 +5212,6 @@ The `entry_id` for that winning entry is:
 
 Jump to: [top](#)
 
-</li>
-<li>
 <div id="dot_path">
 <div id="dot_year">
 <div id="dot_allyear">
@@ -5446,8 +5244,6 @@ The .top, .allyear, .year and .path files are generated from the top level Makef
 
 Jump to: [top](#)
 
-</li>
-<li>
 <div id="terms">
 ### Q: What is the current meaning of the IOCCC terms Author, Entry, and Submission?
 </div>
@@ -5510,8 +5306,6 @@ names such as _entry_ when they should use _submission_.  Sorry (tm Canada)! :-)
 
 Jump to: [top](#)
 
-</li>
-<li>
 <div id="pull_request">
 <div id="commit">
 ### Q: How do I make a pull request to the GitHub repo?
@@ -5765,8 +5559,6 @@ This will merge your pull request to your fork.
 
 Jump to: [top](#)
 
-</li>
-<li>
 <div id="license">
 <div id="licence">
 ### Q: Am I allowed to use IOCCC content?
@@ -5803,8 +5595,6 @@ to help ensure that everyone may enjoy the IOCCC.
 
 Jump to: [top](#)
 
-</li>
-<li>
 <div id="try_mastodon">
 ### Q: What is Mastodon and why does IOCCC use it?
 </div>
@@ -5843,8 +5633,6 @@ app from time to time to view IOCCC mastodon updates.
 
 Jump to: [top](#)
 
-</li>
-<li>
 <div id="find_author_handle">
 ### Q: How can I find my author handle?
 </div>
@@ -5889,8 +5677,6 @@ for more information on terms such as _author_, _entry_, and _submission_.
 
 Jump to: [top](#)
 
-</li>
-<li>
 <div id="tabstops">
 ### Q: How do I set certain tabstops for viewing source code in vi(m)?
 </div>
@@ -5909,8 +5695,6 @@ where `4` is the value you wish to set the tabstop to.
 
 Jump to: [top](#)
 
-</li>
-<li>
 <div id="menus">
 ### Q: FAQ 6.15 - How do the menus on the website work and what can I do if they don't work?
 </div>
@@ -6031,8 +5815,6 @@ the category _Website issue_).
 
 Jump to: [top](#)
 
-</li>
-<li>
 <div id="author-information">
 ### Q: FAQ 6.16 - How do I find more information about a winning author of an entry?
 </div>
@@ -6057,8 +5839,6 @@ name's initial and then scroll down (if necessary) to the author in question.
 
 Jump to: [top](#)
 
-</li>
-<li>
 <div id="entry_json">
 ### Q: What is a `.entry.json` file and how is it used?
 </div>
@@ -6573,8 +6353,6 @@ something along those lines.
 
 Jump to: [top](#)
 
-</li>
-<li>
 <div id="explain_IOCCC">
 ### Q: I do not understand the IOCCC, can you explain it to me?
 </div>
@@ -6625,11 +6403,9 @@ and inexplicable.
 
 Share and enjoy! ☺️
 
-</li>
 </ul>
 
 <ul>
-<li>
 <div id="history">
 <div id="ioccc_history">
 ## Section 11: History of the IOCCC
@@ -6638,8 +6414,6 @@ Share and enjoy! ☺️
 
 Jump to: [top](#)
 
-</li>
-<li>
 <div id="ioccc_start">
 <div id="stormy_night">
 <div id="beginning">
@@ -6725,8 +6499,6 @@ P.S. Part of the inspiration for making the IOCCC a contest goes to the
 
 Jump to: [top](#)
 
-</li>
-<li>
 <div id="missing_years">
 ### Q: Why are some years missing IOCCC entries?
 </div>
@@ -6741,8 +6513,6 @@ make it much more likely for the IOCCC to be held on a yearly basis later on.
 
 Jump to: [top](#)
 
-</li>
-<li>
 <div id="website">
 <div id="website_history">
 ### Q: What is the history of the IOCCC website?
@@ -6939,8 +6709,6 @@ to the [official IOCCC website](https://www.ioccc.org).
 
 Jump to: [top](#)
 
-</li>
-<li>
 <div id="size_rule_history">
 <div id="size_restriction">
 ### Q: How has the IOCCC size limit rule changed over the years?
@@ -7011,8 +6779,6 @@ In later years, Rule 2 was split into two parts.  These two parts of Rule 2 are:
 
 Jump to: [top](#)
 
-</li>
-<li>
 <div id="great_fork_merge">
 ### Q: What is the **Great Fork Merge**?
 </div>
@@ -7028,8 +6794,6 @@ for more information.
 
 Jump to: [top](#)
 
-</li>
-<li>
 <div id="ioccc_bof">
 <div id="bof">
 ### Q: What is an IOCCC BOF?</a>
@@ -7043,7 +6807,6 @@ immediately after the BSD BOF, where the winners of a new IOCCC were
 announced in the early years of the IOCCC.
 
 Jump to: [top](#)
-</li>
 </ul>
 </ul>
 
