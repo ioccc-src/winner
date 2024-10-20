@@ -50,7 +50,7 @@ writing by [contacting the judges](../contact.html).
 </div>
 
 <p class="leftbar">
-These [IOCCC guidelines](guidelines.html) are version **28.16 2024-10-17**.
+These [IOCCC guidelines](guidelines.html) are version **28.17 2024-10-20**.
 </p>
 
 **IMPORTANT**: Be **SURE** to read the [IOCCC rules](rules.html).
@@ -1273,7 +1273,7 @@ Even so, we do not recommend you try and submit a JSON parser due to
 the fact it will likely exceed [the source code size limit](rules.html#rule2)
 and because you likely can't beat [flex](https://github.com/westes/flex) or
 [bison](https://www.gnu.org/software/bison/) in obfuscation. This isn't to
-say that [the so-called JSON spec](https://www.json.org/json-en.html) is not
+say that [the so-called JSON spec](https://github.com/xexyl/jparse/blob/master/json_README.md#so-called-json-spec) is not
 obfuscated, but unless you have some really clever way to compact and
 obfuscate a JSON parser more than [flex](https://github.com/westes/flex) and
 [bison](https://www.gnu.org/software/bison/) you will likely not win, either
