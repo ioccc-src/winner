@@ -2,12 +2,6 @@
 
 This is FAQ version **28.1 2024-10-20**.
 
-<!--
-    NOTE: when updating the table of contents, make sure to use unordered
-    NOTE: lists to make it easier to add entries in the middle of a section,
-    NOTE: without having to update all the entries after that entry.
--->
-
 
 ## 0. [Entering the IOCCC: the bare minimum you need to know](#enter_questions)
 - **Q 0.0**: <a class="normal" href="#submit">How can I enter the IOCCC?</a>
