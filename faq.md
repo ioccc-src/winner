@@ -6733,11 +6733,13 @@ from `winners.html`, via the [gen-authors.sh](%%REPO_URL%%/bin/gen-authors.sh) t
 #### 202y mm dd The Great Fork Merge <!-- XXX - Fill in the date when Great Fork Merge happens -->
 </div>
 
-As of 2024 Sep 1 [temp-test-ioccc
+<!-- XXX - Update the commit count just before Great Fork Merge happens -->
+As of 2024 Oct 20 [temp-test-ioccc
 repo](https://github.com/ioccc-src/temp-test-ioccc)
-there were [5858 commits ahead](https://github.com/ioccc-src/winner/compare/master...ioccc-src:temp-test-ioccc:master)
+there were [5975 commits ahead](https://github.com/ioccc-src/winner/compare/master...ioccc-src:temp-test-ioccc:master)
 of the [IOCCC winner repo](https://github.com/ioccc-src/winner).
 
+<!-- XXX - Fill in the date when Great Fork Merge happens -->
 On 202y mm dd, the temporary repo was merged back into the [IOCCC winner
 repo](https://github.com/ioccc-src/winner) resulting in many, many substantial improvements
 to the [official IOCCC website](https://www.ioccc.org).
