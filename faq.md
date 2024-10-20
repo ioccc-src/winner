@@ -118,7 +118,7 @@ This is FAQ version **28.1 2024-10-20**.
 
 ## 10. [Miscellaneous IOCCC](#misc)
 - <a class="normal" href="#mirrors">May I mirror the IOCCC website?</a>
-- <a class="normal" href="#copyright">May I use parts of the IOCCC in an article, book, newsletter, or instructional material?</a>
+- <a class="normal" href="#ioccc_copyright">May I use parts of the IOCCC in an article, book, newsletter, or instructional material?</a>
 - <a class="normal" href="#first_person">Why do you sometimes use the first person plural?</a>
 - <a class="normal" href="#dot_files"> What is the purpose of the `.top`, `.allyear`, `.year` and `.path` files?</a>
 - <a class="normal" href="#terms"> What is the current meaning of the IOCCC terms Author, Entry, and Submission?</a>
@@ -1038,7 +1038,7 @@ Jump to: [top](#)
 
 Jump to: [top](#)
 <div id="mkiocccentry_checks">
-### Q: What sort of checks does the mkiocccentry tool perform?</a>
+### Q: What sort of checks does the mkiocccentry tool perform?
 </div>
 
 `mkiocccentry(1)` will check and warn about the following conditions:
@@ -4460,11 +4460,9 @@ for more information about pull requests.
 Jump to: [top](#)
 
 
-<div id="macos">
 <div id="macos_errors">
 <div id="macos_compile">
 ### Q: Why do some IOCCC entries fail to compile under macOS?
-</div>
 </div>
 </div>
 
@@ -6017,7 +6015,7 @@ Jump to: [top](#)
 
 
 <div id="permission">
-<div id="copyright">
+<div id="ioccc_copyright">
 ### Q: May I use parts of the IOCCC in an article, book, newsletter, or instructional material?
 </div>
 </div>
@@ -6836,7 +6834,7 @@ Jump to: [top](#)
 
 <div id="ioccc_bof">
 <div id="bof">
-### Q: What is an IOCCC BOF?</a>
+### Q: What is an IOCCC BOF?
 </div>
 </div>
 
