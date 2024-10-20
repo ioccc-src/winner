@@ -4390,7 +4390,9 @@ but are different/missing today.
 Please see the other FAQs in this section as they might offer helpful
 hints, especially in cases were something else needs to be installed.
 
-Please see the [bugs.html](bugs.html) file for details about known problems with IOCCC entries.  In some cases you may be dealing with a problematic entry.  In a few fun cases, the IOCCC does not compile by design!
+Please see the [bugs.html](bugs.html) file for details about known problems with
+IOCCC entries.  In some cases you may be dealing with a problematic entry.  In a
+few fun cases, the IOCCC does not compile by design!
 
 If you have a fix that makes a minimal impact to the entry, then
 please consider submitting that change in the form of a pull request.
@@ -4534,38 +4536,7 @@ below note) this would be advisable.
 **NOTE**: different versions of `clang` have other differences as well. For instance
 a defect of `clang` that required numerous entries to be fixed for clang is that it
 requires that `main()`'s arguments to be of a specific type. However some
-versions of `clang` are more strict in the number of args allowed. These reasons
-are part of why numerous entries had to be modified so that `main()` calls
-another function instead of doing it all in `main()` (another reason was that
-some entries that recursively called `main()` caused a crash or otherwise broke
-the entry in modern systems). Some entries do not work in `clang` (or at least do
-not work completely) due to these defects, for instance
-[1989/westley](1989/westley/index.html); [Cody Boone
-Ferguson](authors.html#Cody_Boone_Ferguson) was able to
-get much of it to work and looking at that entry might be of value to your
-submissions, at least if you can figure the code out :-). To see the
-differences, try from `1989/westley`:
-
-``` <!---sh-->
-    make diff_orig_prog
-```
-
-If you have `colordiff` try:
-
-``` <!---sh-->
-    make DIFF=colordiff diff_orig_prog
-```
-
-Alternatively you can try:
-
-``` <!---sh-->
-    git diff d2a42f42e8f477f29e9d5ed09ce2bb349eaf7397..eb9e69fde657acc8c85a618a8a99af4c2f93b21d westley.c
-```
-
-As you can see, using `clang` has some additional problems to work out but if
-you can get your entry to work well in `clang` it might very well be considered
-better than other entries.
-
+versions of `clang` are more strict in the number of args allowed.
 Jump to: [top](#)
 
 <hr style="width:50%;text-align:left;margin-left:0">
