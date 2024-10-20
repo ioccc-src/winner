@@ -8,7 +8,7 @@ This is FAQ version **28.0.9 2024-10-19**.
     NOTE: without having to update all the entries after that entry.
 -->
 
-<ul>
+
 ## 0. [Entering the IOCCC: the bare minimum you need to know](#enter_questions)
 - <a class="normal" href="#submit">How can I enter the IOCCC?</a>
 - <a class="normal" href="#mkiocccentry">What is the `mkiocccentry` tool and how do I use it?</a>
@@ -127,7 +127,7 @@ other inconsistencies with the original entry?</a>
 - <a class="normal" href="#great_fork_merge">What is the **Great Fork Merge**?</a>
 - <a class="normal" href="#bof">What is an IOCCC BOF?</a>
 - <a class="normal" href="#explain_IOCCC">I do not understand the IOCCC, can you explain it to me?</a>
-</ul>
+
 
 
 Jump to: [top](#)
@@ -135,7 +135,7 @@ Jump to: [top](#)
 
 # The IOCCC FAQ
 
-<ul>
+
 <div id="enter_questions">
 ## Section 0: Entering the IOCCC: the bare minimum you need to know
 </div>
@@ -1280,9 +1280,9 @@ submission manually then you would be violating [Rule
 
 Jump to: [top](#)
 
-</ul>
 
-<ul>
+
+
 <div id="submitting_help">
 ## Section 1: Entering the IOCCC: more help and details
 </div>
@@ -1409,9 +1409,9 @@ in the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry).
 
 Jump to: [top](#)
 
-</ul>
 
-<ul>
+
+
 <div id="judging">
 ## Section 2: IOCCC Judging process
 </div>
@@ -1785,9 +1785,9 @@ winning entries page](years.html). This is done by updating this repo.
 Jump to: [top](#)
 
 
-</ul>
 
-<ul>
+
+
 <div id="mkiocccentry_details">
 ## Section 3: The mkiocccentry toolkit: finer details
 </div>
@@ -1946,9 +1946,9 @@ for more information.
 
 Jump to: [top](#)
 
-</ul>
 
-<ul>
+
+
 <div id="compiling">
 ## Section 4: Compiling IOCCC entries
 </div>
@@ -2276,7 +2276,8 @@ FAQ on "[general X11](#X11_general)".
 Install Xorg and related packages:
 
 ``` <!---sh-->
-    sudo dnf install --skip-broken --best --exclude xorgxrdp --exclude xorgxrdp-glamor '*xorg*' 'libx*' 'libX*' 'fontconfig*'
+    sudo dnf install --skip-broken --best --exclude xorgxrdp \
+    --exclude xorgxrdp-glamor '*xorg*' 'libx*' 'libX*' 'fontconfig*'
 ```
 
 See also:
@@ -2374,13 +2375,15 @@ See also:
 For systems that have the `dnf(1)` command:
 
 ``` <!---sh-->
-    sudo dnf install --skip-broken --best --exclude xorgxrdp --exclude xorgxrdp-glamor '*xorg*' 'libx*' 'libX*' 'fontconfig*'
+    sudo dnf install --skip-broken --best --exclude xorgxrdp \
+    --exclude xorgxrdp-glamor '*xorg*' 'libx*' 'libX*' 'fontconfig*'
 ```
 
 For systems that have the `yum(1)` command:
 
 ``` <!---sh-->
-    sudo yum install --skip-broken --best --exclude xorgxrdp --exclude xorgxrdp-glamor '*xorg*' 'libx*' 'libX*' 'fontconfig*'
+    sudo yum install --skip-broken --best --exclude xorgxrdp\
+    --exclude xorgxrdp-glamor '*xorg*' 'libx*' 'libX*' 'fontconfig*'
 ```
 
 **IMPORTANT NOTE**: The X.org server has been deprecated.
@@ -3477,35 +3480,34 @@ Once this is done, try as root or via `sudo`:
 ```
 
 Jump to: [top](#)
-</ul>
 
-<ul>
+
 <div id="dependencies">
 ## Section 5: Dependencies for some IOCCC entries
 </div>
 
 Jump to: [top](#)
-</ul>
 
-<ul>
+
+
 <div id="compile_problems">
 ## Section 6: Problems compiling IOCCC entries
 </div>
 
 Jump to: [top](#)
 
-</ul>
 
-<ul>
+
+
 <div id="running_entries">
 ## Section 7: Running IOCCC entries
 </div>
 
 Jump to: [top](#)
 
-</ul>
 
-<ul>
+
+
 <div id="changes">
 ## Section 8: Changes made to IOCCC entries
 </div>
@@ -3902,9 +3904,9 @@ for more information and make rules relating to "**original source file**" diffe
 
 Jump to: [top](#)
 
-</ul>
 
-<ul>
+
+
 <div id="help">
 ## Section 9: Helping the IOCCC
 </div>
@@ -4429,9 +4431,9 @@ that be prove helpful.
 
 Jump to: [top](#)
 
-</ul>
 
-<ul>
+
+
 <div id="misc">
 ## Section 10: Miscellaneous IOCCC
 </div>
@@ -6403,9 +6405,9 @@ and inexplicable.
 
 Share and enjoy! ☺️
 
-</ul>
 
-<ul>
+
+
 <div id="history">
 <div id="ioccc_history">
 ## Section 11: History of the IOCCC
@@ -6807,8 +6809,8 @@ immediately after the BSD BOF, where the winners of a new IOCCC were
 announced in the early years of the IOCCC.
 
 Jump to: [top](#)
-</ul>
-</ul>
+
+
 
 <hr style="width:10%;text-align:left;margin-left:0">
 
