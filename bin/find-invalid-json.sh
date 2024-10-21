@@ -207,7 +207,7 @@ find . -name '*.json' -print |
     # get name of each JSON file
     while read -r JSON_FILE; do
 	# try parsing JSON file
-	if ! "$JPARSE" "$JSON_FILE"; then
+	if ! "$JPARSE" "$JSON_FILE" 2>/dev/null; then
 	    echo "$JSON_FILE is invalid JSON"
 	fi
 # this writes the invalid JSON files to the temporary error file
@@ -217,7 +217,6 @@ done > "$TMP_INVALID_JSON"
 #
 INVALID_JSON_COUNT=$(wc -l < "$TMP_INVALID_JSON" | tr -d ' ')
 export INVALID_JSON_COUNT
-((INVALID_JSON_COUNT=INVALID_JSON_COUNT/4))
 
 
 # report on any invalid JSON files
