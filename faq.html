@@ -3570,7 +3570,9 @@ depended on operation system and library features that where common back then
 but are different/missing today.</p>
 <p>Please see the other FAQs in this section as they might offer helpful
 hints, especially in cases were something else needs to be installed.</p>
-<p>Please see the <a href="bugs.html">bugs.html</a> file for details about known problems with IOCCC entries. In some cases you may be dealing with a problematic entry. In a few fun cases, the IOCCC does not compile by design!</p>
+<p>Please see the <a href="bugs.html">bugs.html</a> file for details about known problems with
+IOCCC entries. In some cases you may be dealing with a problematic entry. In a
+few fun cases, the IOCCC does not compile by design!</p>
 <p>If you have a fix that makes a minimal impact to the entry, then
 please consider submitting that change in the form of a pull request.
 Please see
@@ -3626,9 +3628,8 @@ for more information about pull requests.</p>
 </div>
 <p>If the entry requires gcc and you did not explicitly install gcc in macOS you
 will not be able to run or use these entries. This is because macOS gcc is
-actually clang, even <code>/usr/bin/gcc</code>.</p>
-<p>That being said many (if not most) of these entries have been fixed and some
-others will be looked at, when found.</p>
+actually clang, even <code>/usr/bin/gcc</code>. That being said many (if not most) of these
+entries have been fixed.</p>
 <p>In some cases the <a href="bugs.html">bugs.html</a> file may note a known macOS problem
 with an entry. Should you manage to port the entry, and assuming your changes
 also attempt to preserve the original intent of the IOCCC entry, we would
@@ -3681,26 +3682,8 @@ below note) this would be advisable.</p>
 <p><strong>NOTE</strong>: different versions of <code>clang</code> have other differences as well. For instance
 a defect of <code>clang</code> that required numerous entries to be fixed for clang is that it
 requires that <code>main()</code>’s arguments to be of a specific type. However some
-versions of <code>clang</code> are more strict in the number of args allowed. These reasons
-are part of why numerous entries had to be modified so that <code>main()</code> calls
-another function instead of doing it all in <code>main()</code> (another reason was that
-some entries that recursively called <code>main()</code> caused a crash or otherwise broke
-the entry in modern systems). Some entries do not work in <code>clang</code> (or at least do
-not work completely) due to these defects, for instance
-<a href="1989/westley/index.html">1989/westley</a>; <a href="authors.html#Cody_Boone_Ferguson">Cody Boone
-Ferguson</a> was able to
-get much of it to work and looking at that entry might be of value to your
-submissions, at least if you can figure the code out :-). To see the
-differences, try from <code>1989/westley</code>:</p>
-<pre><code>    make diff_orig_prog</code></pre>
-<p>If you have <code>colordiff</code> try:</p>
-<pre><code>    make DIFF=colordiff diff_orig_prog</code></pre>
-<p>Alternatively you can try:</p>
-<pre><code>    git diff d2a42f42e8f477f29e9d5ed09ce2bb349eaf7397..eb9e69fde657acc8c85a618a8a99af4c2f93b21d westley.c</code></pre>
-<p>As you can see, using <code>clang</code> has some additional problems to work out but if
-you can get your entry to work well in <code>clang</code> it might very well be considered
-better than other entries.</p>
-<p>Jump to: <a href="#">top</a></p>
+versions of <code>clang</code> are more strict in the number of args allowed.
+Jump to: <a href="#">top</a></p>
 <hr style="width:50%;text-align:left;margin-left:0">
 <hr style="width:50%;text-align:left;margin-left:0">
 <div id="running_entries">
