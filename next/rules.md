@@ -9,12 +9,12 @@ MIGHT** be used in the next IOCCC.  In some cases they might
 even be a copy of the rules from the previous IOCCC.
 
 See our
-FAQ on "[rules, guidelines, tools feedback](#feedback)"
+FAQ on "[rules, guidelines, tools feedback](../faq.html#feedback)"
 as well as our
 FAQ on "[about asking questions](../faq.html#question)"
 about these rules. You might also find the
 FAQ in general useful, especially the
-[FAQ section "How to enter: the bare minimum you need to know"](../faq.html#enter).
+[FAQ section "How to enter: the bare minimum you need to know"](../faq.html#submit).
 
 
 
@@ -52,7 +52,7 @@ writing by [contacting the judges](../contact.html).
 </div>
 
 <p class="leftbar">
-These [IOCCC rules](rules.html) are version **28.8 2024-10-17**.
+These [IOCCC rules](rules.html) are version **28.9 2024-10-21**.
 </p>
 
 **IMPORTANT**: Be sure to read the [IOCCC guidelines](guidelines.html).
@@ -134,9 +134,15 @@ available on the [official IOCCC website](../index.html) on or slightly before
 the start of this IOCCC. The `mkiocccentry` toolkit may be obtained at any time
 at the [report mkiocccentry bugs](https://github.com/ioccc-src/mkiocccentry).
 
-**Please recheck on or after the start of this IOCCC to be sure you
+**IMPORTANT**: Please recheck on or after the start of this IOCCC to be sure you
 are using the correct versions of these items _before using the IOCCC
-submission URL_**.
+submission URL_.
+
+See the
+FAQ on "[obtaining and compiling the mkiocccentry
+tools](../faq.html#mkiocccentry)"
+and the
+FAQ on "[submitting to the IOCCC](../faq.html#submit)".
 
 
 <div id="rules">
@@ -394,7 +400,7 @@ it is needed in your submissions `remarks.md` file.
 </div>
 
 **Legal** abuse of the rules is somewhat encouraged.  **A submission that, in
-the opinion of the [judges](../judges.html), **violates the rules will be disqualified**.
+the opinion of the [judges](../judges.html), violates the rules will be disqualified**.
 Submissions that attempt to abuse the rules **MUST** try to justify why
 their rule abuse is legal, in the `remarks.md` file.
 
@@ -497,6 +503,12 @@ library will be used when compiling various tools.
 Of course you **can** invoke `jparse(1)` if you wish to validate your own JSON
 data file or some other JSON file.
 </p>
+
+**IMPORTANT**: Make **SURE** you have the most recent version of the
+`mkiocccentry` toolkit! Not doing so will put you at a great risk of violating
+this rule! See the
+FAQ on "[obtaining the mkiocccentry toolkit](../faq.html#mkiocccentry)"
+for more details.
 
 
 ### Rule 17 - The COMPLEX details

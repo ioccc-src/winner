@@ -137,7 +137,7 @@
             </div>
 
             <div class="outfit-font">
-              <a href="./faq.html#fix_web_site" class="sub-item-link">
+              <a href="./faq.html#fix_website" class="sub-item-link">
                 Fixing the website
               </a>
             </div>
@@ -288,7 +288,7 @@
               Fixing IOCCC entries
             </a>
 
-            <a class="mobile-submenu-item" href="./faq.html#fix_web_site">
+            <a class="mobile-submenu-item" href="./faq.html#fix_website">
               Fixing the website
             </a>
 
@@ -388,12 +388,12 @@
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <!-- BEFORE: 1st line of markdown file: faq.md -->
-<p>IOCCC FAQ Table of Contents</p>
-<p>This is FAQ version <strong>28.1 2024-10-20</strong>.</p>
+<h1 id="ioccc-faq-table-of-contents">IOCCC FAQ Table of Contents</h1>
+<p>This is FAQ version <strong>28.1.1 2024-10-21</strong>.</p>
 <h2 id="entering-the-ioccc-the-bare-minimum-you-need-to-know">0. <a href="#enter_questions">Entering the IOCCC: the bare minimum you need to know</a></h2>
 <ul>
 <li><strong>Q 0.0</strong>: <a class="normal" href="#submit">How can I enter the IOCCC?</a></li>
-<li><strong>Q 0.1</strong>: <a class="normal" href="#mkiocccentry">What is the <code>mkiocccentry</code> tool and how do I use it?</a></li>
+<li><strong>Q 0.1</strong>: <a class="normal" href="#mkiocccentry">What is the <code>mkiocccentry</code> tool, how do I obtain it and how do I use it?</a></li>
 <li><strong>Q 0.2</strong>: <a class="normal" href="#compile_mkiocccentry">How do I compile <code>mkiocccentry</code> and its related tools?</a></li>
 <li><strong>Q 0.3</strong>: <a class="normal" href="#platform">What platform should I assume for my submission?</a></li>
 <li><strong>Q 0.4</strong>: <a class="normal" href="#makefile">What should I put in my submission Makefile?</a></li>
@@ -451,25 +451,28 @@
 <li><strong>Q 5.6</strong>: <a class="normal" href="#libjpeg">How do I compile and install libjpeg-turbo for entries that require it?</a></li>
 <li><strong>Q 5.7</strong>: <a class="normal" href="#imagemagick">How do I compile and install ImageMagick for entries that require it?</a></li>
 <li><strong>Q 5.8</strong>: <a class="normal" href="#OpenGL">How do I compile and install OpenGL for entries that require it?</a></li>
-<li><strong>Q 5.9</strong>: <a class="normal" href="#download">How do I download individual winning entries or all winning entries of a given year?</a></li>
-<li><strong>Q 5.10</strong>: <a class="normal" href="#zlib">How do I compile and install zlib for IOCCC entries that require it?</a></li>
-<li><strong>Q 5.11</strong>: <a class="normal" href="#ruby">How do I install Ruby for entries that require it?</a></li>
-<li><strong>Q 5.12</strong>: <a class="normal" href="#rake">How do I install rake for entries that require it?</a></li>
+<li><strong>Q 5.9</strong>: <a class="normal" href="#zlib">How do I compile and install zlib for IOCCC entries that require it?</a></li>
+<li><strong>Q 5.10</strong>: <a class="normal" href="#ruby">How do I install Ruby for entries that require it?</a></li>
+<li><strong>Q 5.11</strong>: <a class="normal" href="#rake">How do I install rake for entries that require it?</a></li>
 </ul>
 <h2 id="problems-compiling-ioccc-entries">6. <a href="#compile_problems">Problems compiling IOCCC entries</a></h2>
 <ul>
-<li><strong>Q 6.0</strong>: <a class="normal" href="#compile_errors">Why don’t certain IOCCC entries compile?</a></li>
-<li><strong>Q 6.1</strong>: <a class="normal" href="#clang">Why does clang or gcc fail to compile some IOCCC entries?</a></li>
-<li><strong>Q 6.2</strong>: <a class="normal" href="#macos_compile">Why do some IOCCC entries fail to compile under macOS?</a></li>
-<li><strong>Q 6.3</strong>: <a class="normal" href="#weverything">Why do Makefiles use -Weverything with clang?</a></li>
+<li><strong>Q 6.0</strong>: <a class="normal" href="#compile_errors">Why don’t certain IOCCC entries compile and/or run?</a>
+<ul>
+<li><strong>Q 6.1.1</strong>: <a class="normal" href="#macos_compile">Why do some IOCCC entries fail to compile under macOS?</a></li>
+</ul></li>
+<li><strong>Q 6.2</strong>: <a class="normal" href="#weverything">Why do Makefiles use -Weverything with clang?</a></li>
 </ul>
 <h2 id="running-ioccc-entries">7. <a href="#running_entries">Running IOCCC entries</a></h2>
 <ul>
 <li><strong>Q 7.0</strong>: <a class="normal" href="#try">What are <code>try.sh</code> and <code>try.alt.sh</code> scripts and why should I use them?</a></li>
 <li><strong>Q 7.1</strong>: <a class="normal" href="#sanity">An IOCCC entry messed up my terminal application, how do I fix this?</a></li>
-<li><strong>Q 7.2</strong>: <a class="normal" href="#64bit">Why does an IOCCC entry fail to run on my 64-bit system?</a></li>
+<li><strong>Q 7.2</strong>: <a class="normal" href="#unsupported">Why does an IOCCC entry fail to run?</a>
+<ul>
+<li><strong>Q 7.2.1</strong>: <a class="normal" href="#64bit">Why does an IOCCC entry fail to run on my 64-bit system?</a></li>
+</ul></li>
 <li><strong>Q 7.3</strong>: <a class="normal" href="#eof">How do I find out how to send interrupt/EOF etc. for entries that require it?</a></li>
-<li><strong>Q 7.4</strong>: <a class="normal" href="#unsupported">Why does an IOCCC entry fail to compile and/or fail to run?</a></li>
+<li><strong>Q 7.4</strong>: <a class="normal" href="#download">How do I download individual winning entries or all winning entries of a given year?</a></li>
 </ul>
 <h2 id="changes-made-to-ioccc-entries">8. <a href="#changes">Changes made to IOCCC entries</a></h2>
 <ul>
@@ -556,18 +559,13 @@ for an announcement about the <strong>IOCCC registration procedure</strong>.</p>
 prepare your entries for submission, and how to upload the compressed tarballs
 to our submission portal.</p>
 <h4 id="obtain-the-latest-mkiocccentry-toolkit">3. Obtain the latest mkiocccentry toolkit</h4>
-<p>If you do not have an mkiocccentry tool directory:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="bu">cd</span> some_directory</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">git</span> clone git@github.com:ioccc-src/mkiocccentry.git</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">cd</span> mkiocccentry</span></code></pre></div>
-<p>If you already have an mkiocccentry tool directory:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>    <span class="bu">cd</span> mkiocccentry</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">git</span> fetch</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">git</span> rebase</span></code></pre></div>
-<h4 id="make-the-mkiocccentry-toolkit">4. Make the mkiocccentry toolkit</h4>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">make</span> clobber all</span></code></pre></div>
+<p>You <strong>MUST</strong> use the most recent version of the <code>mkiocccentry</code> toolkit. To help
+you, please see the
+FAQ on “<a href="#mkiocccentry">obtaining the mkiocccentry toolkit</a>”.</p>
+<h4 id="compile-the-mkiocccentry-toolkit">4. Compile the mkiocccentry toolkit</h4>
+<pre><code>    make clobber all</code></pre>
 <h4 id="run-the-mkiocccentry-tool-to-form-your-submission-tarball">5. Run the mkiocccentry tool to form your submission tarball</h4>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">mkiocccentry</span> work_dir prog.c Makefile remarks.md [file ...]</span></code></pre></div>
+<pre><code>    mkiocccentry work_dir prog.c Makefile remarks.md [file ...]</code></pre>
 <p>where:</p>
 <ul>
 <li><p><code>work_dir</code></p>
@@ -584,9 +582,14 @@ for more info.</p></li>
 <p>Optional extra data files to include with your entry</p></li>
 </ul>
 <p><strong>NOTE</strong>: Please see our <a href="markdown.html">IOCCC markdown guide</a> for <strong>important information</strong> on using markdown in the IOCCC.</p>
+<p>For more details on the <code>mkiocccentry(1)</code> tool see the
+FAQ on “<a href="#mkiocccentry">mkiocccentry</a>”
+and the <a href="next/guidelines.html#mkiocccentry">mkiocccentry section in the
+guidelines</a>.</p>
 <p><strong>NOTE</strong>: It is <em>NOT</em> necessary to install the tools to use them as you can run
-the tools from the top of the <code>mkiocccentry</code> repo directory just fine. However,
-installing it will make it easier for you as you can run it from your
+the tools from the top of the <code>mkiocccentry</code> repo directory just fine, though
+you’ll have to use the form of <code>./mkiocccentry</code> instead of just <code>mkiocccentry</code>.
+However, installing it will make it easier for you as you can run it from your
 submission’s directory.</p>
 <p>If the <code>mkiocccentry</code> tool indicates that there is a problem with your entry,
 especially if it identifies a <a href="next/rules.html#rule2">Rule 2</a> related problem,
@@ -604,20 +607,30 @@ with the proper instructions. Watch the <a href="news.html">IOCCC news</a>
 for an announcement of the availability of the <strong>IOCCC submit server</strong>.</p>
 <p>Jump to: <a href="#">top</a></p>
 <div id="mkiocccentry">
-<h3 id="q-0.1-what-is-the-mkiocccentry-tool-and-how-do-i-use-it">Q 0.1: What is the <code>mkiocccentry</code> tool and how do I use it?</h3>
+<h3 id="q-0.1-what-is-the-mkiocccentry-tool-how-do-i-obtain-it-and-how-do-i-use-it">Q 0.1: What is the <code>mkiocccentry</code> tool, how do I obtain it and how do I use it?</h3>
 </div>
 <p>This tool comes from the <a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry
 repo</a> and it is <strong>required</strong> that you
 use it to package your submission. Not doing so puts you at a great risk of
 violating the <a href="next/rules.html">Rules</a> and in particular <a href="next/rules.html#rule17">Rule
-17</a>. The <code>mkiocccentry</code> tool first gathers your source
+17</a>.</p>
+<p>Before you use it, make sure you have the most recent version. If you do not
+have an mkiocccentry tool directory:</p>
+<pre><code>    cd some_directory
+    git clone git@github.com:ioccc-src/mkiocccentry.git
+    cd mkiocccentry</code></pre>
+<p>If you already have an mkiocccentry tool directory:</p>
+<pre><code>    cd mkiocccentry
+    git fetch
+    git rebase</code></pre>
+<p>The <code>mkiocccentry</code> tool first gathers your source
 code, your Makefile, your remarks, other information about your submission,
 information about the author (or authors) and then runs a lot of tests before (if
 all is OK) forming your tarball. After this is done it will additionally run the
 <code>txzchk(1)</code> tool (which runs the <code>fnamchk(1)</code> tool) on the submission tarball.</p>
 <p>See the
 FAQ on “<a href="#submit">submitting to the IOCCC</a>”
-for details on how to register for the IOCCC.</p>
+for details on how to register for the IOCCC and how to obtain <code>mkiocccentry</code>.</p>
 <p>Once you have registered, you will need to package your entry with the
 <code>mkiocccentry</code> tool. The below details discuss this very important tool. As it
 is complicated we will explain how to use this tool.</p>
@@ -655,11 +668,16 @@ mentioned and as described below.</p>
 </div>
 </div>
 <p>After you
-<a href="https://github.com/ioccc-src/mkiocccentry/blob/master/FAQ.md#download">download the mkiocccentry repo</a>
-by running:</p>
+<a href="https://github.com/ioccc-src/mkiocccentry/blob/master/FAQ.md#download">download the mkiocccentry
+repo</a> by
+running:</p>
 <pre><code>git clone https://github.com/ioccc-src/mkiocccentry.git</code></pre>
-<p>or downloading the zip file, you should change to the <code>mkiocccentry</code> directory so you can compile the tools. See the
-FAQ on “<a href="https://github.com/ioccc-src/mkiocccentry/blob/master/FAQ.md#compiling">compiling mkiocccentry</a>”
+<p>or downloading the zip file, you should change to the <code>mkiocccentry</code> directory
+so you can compile the tools by running <code>make clobber all</code>. See the
+FAQ on “<a href="https://github.com/ioccc-src/mkiocccentry/blob/master/FAQ.md#download">obtaining
+mkiocccentry</a>
+and the
+FAQ on”<a href="https://github.com/ioccc-src/mkiocccentry/blob/master/FAQ.md#compiling">compiling mkiocccentry</a>”
 at the <code>mkiocccentry</code> repo.</p>
 <p>See also the
 <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/FAQ.md">mkiocccentry repo FAQ</a>
@@ -1331,7 +1349,7 @@ If you pass a single argument, it is expected to be a directory that has both
 
     # run checks on .info.json and .auth.json:
     chkentry .info.json .auth.json</code></pre>
-<p>If there is a <a href="https://www.json.org/json-en.html">JSON</a> issue detected by
+<p>If there is a <a href="https://www.json.org/json-en.html">JSON</a> issue detected by the
 <code>jparse(3)</code> API, then there is a <a href="https://www.json.org/json-en.html">JSON</a> error and
 <code>chkentry(1)</code> will report it as an <strong>error</strong>. If the parsing is OK (i.e. valid
 JSON) but there is an issue in one or both of the
@@ -2720,7 +2738,7 @@ because any modications will be overridden when the <a href="bin/index.html">set
 (often <code>README.md</code>) and/or sometimes JSON files (such as <code>.entry.json</code> or
 the <code>author/author_handle.json</code> JSON files)</p>
 <p>See the
-FAQ on “<a href="#fix_web_site">fix web site</a>”
+FAQ on “<a href="#fix_website">fix web site</a>”
 for information on submitting fixes to the IOCCC website.</p>
 <p>See the
 FAQ on “<a href="#fix_author">update IOCCC author information</a>”
@@ -3390,15 +3408,21 @@ We suggest you check out their resource for further information on OpenGL.</p>
 <h4 id="red-hat-based-linux-7">Red Hat based Linux</h4>
 <p>Execute the following as root or via sudo:</p>
 <pre><code>    sudo dnf install glew-devel SDL2-devel SDL2_image-devel glm-devel freetype-devel</code></pre>
-<p>See <a href="https://en.wikibooks.org/wiki/OpenGL_Programming/Installation/Linux">OpenGL Programming/Installation/Linux</a> for details.</p>
+<p>See <a href="https://web.archive.org/web/20240413102531/https://en.wikibooks.org/wiki/OpenGL_Programming/Installation/Linux">OpenGL
+Programming/Installation/Linux</a> for details.</p>
 <p>Older RHEL distributions might have to use “yum” instead of “dnf”
 in the above command.</p>
 <h4 id="macos-7">macOS</h4>
 <p>In the past, macOS has come with OpenGL pre-installed. However as of macOS 10.14,
 <a href="https://developer.apple.com/library/archive/documentation/GraphicsImaging/Conceptual/OpenGL-MacProgGuide/opengl_intro/opengl_intro.html">OpenGL has been deprecated on macOS</a> (in favor of Metal).</p>
 <p>As long as Apple continues to ship OpenGL pre-installed and it works, you
-should be able to go. However in Apple drops support for OpenGL later on,
+should be good to go. However if Apple drops support for OpenGL later on,
 you might look to install OpenGL via Homebrew or MacPorts.</p>
+<p>With Homebrew:</p>
+<pre><code>    brew install glfw3 glew</code></pre>
+<p>might help. On the other hand, with MacPorts:</p>
+<pre><code>    sudo port install glfw glfw-devel glew</code></pre>
+<p>might help.</p>
 <h4 id="debian-based-linux-7">Debian based Linux</h4>
 <p>Execute the following as root or via sudo:</p>
 <pre><code>    sudo apt-get install libglew-dev libsdl2-dev libsdl2-image-dev libglm-dev libfreetype6-dev</code></pre>
@@ -3414,97 +3438,8 @@ packages: one for compiling and one for linking / running.</p>
 for downloading, installing and using OpenGL.</p>
 <p>We recommend trying a method suitable for your environment first, if possible.</p>
 <p>Jump to: <a href="#">top</a></p>
-<div id="entry_downloads">
-<div id="download">
-<h3 id="q-5.9-how-do-i-download-individual-winning-entries-or-all-winning-entries-of-a-given-year">Q 5.9: How do I download individual winning entries or all winning entries of a given year?</h3>
-</div>
-</div>
-<p>Although one can clone the entire <a href="https://github.com/ioccc-src/winner">winner
-repo</a> to get the entire website and all
-entries, we also provide, as a convenience, a way to download individual entries
-as well as a way to download a year’s winning entries.</p>
-<p>Please note that some of the links in the html files will not work! This is
-because you are not downloading the full website. If you want to view the entry
-with links intact you should clone the repo or view it on the <a href="https://www.ioccc.org">official IOCCC
-website</a> instead.</p>
-<h4 id="individual-winning-entry-tarballs">Individual winning entry tarballs</h4>
-<p>The individual entry tarballs are named in the form of
-<code>YYYY/winner/YYYY_winner.tar.bz2</code> (e.g.
-<a href="1984/mullender/1984_mullender.tar.bz2">1984/mullender/1984_mullender.tar.bz2</a>)
-and they contain a single entry as well as some additional necessary files. Each
-entry tarball is linked to in its <code>index.html</code> (e.g.
-<a href="1984/mullender/index.html">1984/mullender/index.html</a>) manifest, listed in the
-<em>Secondary files</em> list.</p>
-<p>These tarballs will have the following files:</p>
-<ul>
-<li><code>ioccc.css</code> - stylesheet for the html files</li>
-<li><code>var.mk</code> - the top level Makefile included by all the other Makefiles that holds variables used by the Makefiles</li>
-<li><code>YYYY/winner/.path</code> - directory path from top level directory</li>
-<li><code>YYYY/winner/.entry.json</code> - entry summary and manifest in JSON</li>
-<li><code>YYYY/winner/.gitignore</code> - list of files that should not be committed under git</li>
-</ul>
-<p>plus the winning entry files like source code, the Makefile, supplementary data
-provided by the author and any other file in the winning entry, found under the
-entry’s subdirectory.</p>
-<p>If you downloaded <code>1984/mullender/1984_mullender.tar.bz2</code>, for instance, you might
-then do:</p>
-<div class="sourceCode" id="cb111"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb111-1"><a href="#cb111-1" aria-hidden="true" tabindex="-1"></a>        <span class="bu">cd</span> 1984/mullender</span>
-<span id="cb111-2"><a href="#cb111-2" aria-hidden="true" tabindex="-1"></a>        <span class="fu">make</span> everything</span>
-<span id="cb111-3"><a href="#cb111-3" aria-hidden="true" tabindex="-1"></a>        <span class="ex">./mullender.alt</span></span></code></pre></div>
-<p>to compile all versions and then run the alternate version (if you have
-a PDP-11 or VAX-11 you would be able to run the original version). For more help
-on compiling entries, see also the
-FAQ on “<a href="#make_rules">IOCCC Makefile rules</a>”.</p>
-<p>If you want to view the <code>index.html</code> file you can point your browser to the
-<code>index.html</code> file of the winning entry (e.g. <code>1984/mullender/index.html</code>) with the
-caveats noted above.</p>
-<h4 id="year-based-tarballs">Year based tarballs</h4>
-<p>The year based tarballs, which are under each year’s directory and are named in
-the form of <code>YYYY/YYYY.tar.bz2</code> (e.g. <a href="1984/1984.tar.bz2">1984/1984.tar.bz2</a>),
-include all the winning entries of a given year.
-Each year’s tarball can be found under that year in the <a href="years.html">years.html</a>
-page and in the year’s <code>index.html</code> as well (e.g.
-<a href="1984/index.html">1984/index.html</a>).</p>
-<p>These tarballs have, along with each entry’s directory and their respective
-files (as if you downloaded each entry tarball of the year individually as
-described above), the following files:</p>
-<ul>
-<li><code>.filelist</code> - list of files in the year that are not part of a winning entry of the year, including the <code>YYYY.tar.bz2</code> tarball</li>
-<li><code>index.html</code> - the <code>YYYY/index.html</code> file rendered from the <code>YYYY/README.md</code> file</li>
-<li><code>Makefile</code> - Makefile for the year to compile etc. all entries of the year</li>
-<li><code>README.md</code> - the source of the <code>YYYY/index.html</code> file</li>
-<li><code>rules.txt</code> - rules of the year’s contest</li>
-<li><code>.year</code> - text file that has a list of the winning entries’ directories of the year</li>
-</ul>
-<p>Additionally, some will have extra files like:</p>
-<ul>
-<li><code>.gitignore</code> - list of files that should not be committed under git</li>
-<li><code>guidelines.txt</code> - the guidelines of the year</li>
-<li><code>iocccsize.c</code> - <code>iocccsize</code> tool of the year</li>
-<li><code>iocccsize.mk</code> - Makefile to compile the <code>iocccsize</code> tool of the year</li>
-<li><code>iocccsize-test.sh</code> - test suite for the <code>iocccsize</code> tool</li>
-</ul>
-<p>.. and perhaps some others we have neglected to mention as well.</p>
-<p>If you extract a year’s tarball you can <code>cd YYYY</code> (e.g. <code>cd 1984</code>) and then run
-<code>make everything</code> to compile the entries and alternate code of every entry, as
-if you switched to each entry’s directory and ran <code>make everything</code> in each one.</p>
-<p>If you download the 1984 tarball, i.e. <code>1984/1984.tar.bz2</code>, then you might
-extract it and then switch to the directory and compile everything of each
-entry:</p>
-<div class="sourceCode" id="cb112"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb112-1"><a href="#cb112-1" aria-hidden="true" tabindex="-1"></a>        <span class="bu">cd</span> 1984</span>
-<span id="cb112-2"><a href="#cb112-2" aria-hidden="true" tabindex="-1"></a>        <span class="fu">make</span> everything</span></code></pre></div>
-<p>For more help on compiling entries, see also the
-FAQ on “<a href="#make_rules">IOCCC Makefile rules</a>”.</p>
-<p>Of course in this case you can also switch to individual entries and look at the
-<code>index.html</code> file (or any other file in the entry) and try out the entries that
-interest you, as if you downloaded that entry’s individual tarball.</p>
-<p>If you want to view the <code>index.html</code> files of that tarball, for instance the
-year’s <code>index.html</code> file and then <code>1984/mullender/index.html</code> you could point your
-browser to <code>1984/index.html</code>, scroll down to <code>Winning Entries of 1984 - The 1st IOCCC</code> and click on the link <code>1984/mullender</code> which will take you to the
-<code>index.html</code> file. Of course the caveats listed above still will apply.</p>
-<p>Jump to: <a href="#">top</a></p>
 <div id="zlib">
-<h3 id="q-5.10-how-do-i-compile-and-install-zlib-for-ioccc-entries-that-require-it">Q 5.10: How do I compile and install zlib for IOCCC entries that require it?</h3>
+<h3 id="q-5.9-how-do-i-compile-and-install-zlib-for-ioccc-entries-that-require-it">Q 5.9: How do I compile and install zlib for IOCCC entries that require it?</h3>
 </div>
 <p>This depends on your operating system but below are instructions for Linux and
 macOS with alternative methods for macOS and different package managers with Linux.</p>
@@ -3534,13 +3469,13 @@ for downloading, installing and using zlib.</p>
 <p>We recommend trying a method suitable for your environment first, if possible.</p>
 <p>Jump to: <a href="#">top</a></p>
 <div id="ruby">
-<h3 id="q-5.11-how-do-i-install-ruby-for-entries-that-require-it">Q 5.11: How do I install Ruby for entries that require it?</h3>
+<h3 id="q-5.10-how-do-i-install-ruby-for-entries-that-require-it">Q 5.10: How do I install Ruby for entries that require it?</h3>
 </div>
 <p>Please see the <a href="https://www.ruby-lang.org/en/documentation/installation/">official Ruby installation
 guide</a>.</p>
 <p>Jump to: <a href="#">top</a></p>
 <div id="rake">
-<h3 id="q-5.12-how-do-i-install-rake-for-entries-that-require-it">Q 5.12: How do I install rake for entries that require it?</h3>
+<h3 id="q-5.11-how-do-i-install-rake-for-entries-that-require-it">Q 5.11: How do I install rake for entries that require it?</h3>
 </div>
 <p>First, if <code>gem</code> is not installed, see the <a href="https://github.com/rubygems/rubygems">gem GitHub repo</a>.</p>
 <p>Assuming you have <code>git(1)</code> installed, you can do:</p>
@@ -3560,16 +3495,32 @@ then run:</p>
 <p>Jump to: <a href="#">top</a></p>
 <div id="compile">
 <div id="compile_errors">
+<div id="gcc">
+<div id="clang">
 <h3 id="q-6.0-why-dont-certain-ioccc-entries-compile">Q 6.0: Why don’t certain IOCCC entries compile?</h3>
 </div>
 </div>
-<p>Some entries that won the IOCCC, particularly entries from long ago, no longer compile on more
-modern systems because the C language has evolved (i.e. the modern C compilers
-are much more strict in what they accept as a valid program), or the entry
-depended on operation system and library features that where common back then
-but are different/missing today.</p>
+</div>
+</div>
+<p>Some entries that won the IOCCC, particularly entries from long ago, might not
+compile on more modern systems because the C language has evolved (i.e. the
+modern C compilers are much more strict in what they accept as a valid program),
+or the entry depended on operation system and library features that where common
+back then but are different/missing today.</p>
+<p>In some cases the American National Standards Institute’s ANSI C committee has
+damaged the C standard to the point where perfectly valid C programs no longer
+compile with modern compilers. As such some old IOCCC entries can no longer be
+compiled with modern compilers (though a great deal of these were fixed in
+2023).</p>
+<p>In other cases, it might be your compiler. For instance <code>clang</code> is very strict
+on some things that <code>gcc</code> is perfectly fine with. A great deal of these have
+been fixed but it is possible that some do not work.</p>
+<p>In particular, some entries do require a certain compiler, or they might not
+work with certain compilers or a certain architecture. Some entries generate C
+code and some of that generated code will not compile with certain compilers,
+usually <code>clang</code>.</p>
 <p>Please see the other FAQs in this section as they might offer helpful
-hints, especially in cases were something else needs to be installed.</p>
+hints, especially in cases where something else needs to be installed.</p>
 <p>Please see the <a href="bugs.html">bugs.html</a> file for details about known problems with
 IOCCC entries. In some cases you may be dealing with a problematic entry. In a
 few fun cases, the IOCCC does not compile by design!</p>
@@ -3589,41 +3540,10 @@ the directory as a <code>dirname.alt.c</code> or <code>prog.alt.c</code>).</p>
 <p>See the
 FAQ on “<a href="#original_source_code">original source code</a>”
 for more information.</p>
-<p>It might also be worth noting that almost all entries, have been
-fixed so that they can compile in modern systems though just because an entry
-compiles does not mean it will run on your specific system.</p>
-<p>Jump to: <a href="#">top</a></p>
-<div id="gcc">
-<div id="clang">
-<h3 id="q-6.1-why-does-clang-or-gcc-fail-to-compile-some-ioccc-entries">Q 6.1: Why does clang or gcc fail to compile some IOCCC entries?</h3>
-</div>
-</div>
-<p>Although we have fixed numerous entries to work with clang (sometimes in an alt
-version but usually in the program itself) there are some that simply cannot be
-fixed or if they are fixable they have not yet been fixed (and might or might
-not ever be fixed).</p>
-<p>This is because clang has some defects where the args of <code>main()</code> are required to
-be a specific type and some versions of clang allow only 1, 2 or 3 args, not 4,
-to <code>main()</code>. In the case of types of args many were changed to the right type and
-then what was <code>main()</code> became another function of the original <code>main()</code> type.</p>
-<p>At the same time some entries are not designed to work with clang. There might
-be alternate code added at some point but at this point it is highly unlikely.</p>
-<p><code>gcc</code> is far more forgiving. Nonetheless some entries no longer work or worked
-with <code>gcc</code>. Some of these have been fixed (or in some cases partly fixed, much
-like with <code>clang</code>) but there might be some that do not work with <code>gcc</code> or
-<code>clang</code> or for that matter some other compiler.</p>
-<p>See if the problem is mentioned in <a href="bugs.html">bugs.html</a>. If you have a change
-that fixes the problem (even if it just a change to the <code>Makefile</code>) that doesn’t
-negatively impact the entry too much, consider submitting that change in the
-form of a pull request. Please see the
-FAQ on “<a href="#fix_an_entry">fixing an entry</a>”.
-See also the
-FAQ on “<a href="#pull_request">GitHub pull request</a>”
-for more information about pull requests.</p>
 <p>Jump to: <a href="#">top</a></p>
 <div id="macos_errors">
 <div id="macos_compile">
-<h3 id="q-6.2-why-do-some-ioccc-entries-fail-to-compile-under-macos">Q 6.2: Why do some IOCCC entries fail to compile under macOS?</h3>
+<h4 id="q-6.1.1-why-do-some-ioccc-entries-fail-to-compile-under-macos">Q 6.1.1: Why do some IOCCC entries fail to compile under macOS?</h4>
 </div>
 </div>
 <p>If the entry requires gcc and you did not explicitly install gcc in macOS you
@@ -3639,7 +3559,7 @@ FAQ on “<a href="#fix_an_entry">fixing an entry</a>”
 for details.</p>
 <p>Jump to: <a href="#">top</a></p>
 <div id="weverything">
-<h3 id="q-6.3-why-do-makefiles-use--weverything-with-clang">Q 6.3: Why do Makefiles use -Weverything with clang?</h3>
+<h3 id="q-6.2-why-do-makefiles-use--weverything-with-clang">Q 6.2: Why do Makefiles use -Weverything with clang?</h3>
 </div>
 <p>While we know that use of <code>-Weverything</code> is generally not recommended
 by <code>clang</code> C compiler developers, we do use the <code>-Weverything</code>
@@ -3725,41 +3645,68 @@ help.</p>
 <p>Jump to: <a href="#">top</a></p>
 <div id="no_support">
 <div id="unsupported">
-<h3 id="q-7.2-why-does-an-ioccc-entry-fail-to-compile-andor-fail-to-run">Q 7.2: Why does an IOCCC entry fail to compile and/or fail to run?</h3>
+<h3 id="q-7.2-why-does-an-ioccc-entry-fail-to-run">Q 7.2: Why does an IOCCC entry fail to run?</h3>
 </div>
 </div>
 <p>What may have worked years ago may not work well or work at all today.
 Please note that the IOCCC judges do <strong>NOT</strong> support IOCCC entries.
 Nevertheless, there may be a number of reasons why an IOCCC entry
-may fail to compile or run well or fail to run on your system.</p>
-<p>In some cases the American National Standards Institute’s ANSI C committee has
-damaged the C standard to the point where perfectly valid C programs no longer
-compile with modern compilers. As such some old IOCCC entries can no longer be
-compiled with modern compilers (though a great deal of these were fixed in
-2023).</p>
+may fail to run well if it can run at all.</p>
 <p>In some cases programs that may have worked on an old computer system
 longer work on modern computers. Some IOCCC entries do not work well,
 or no longer work on modern computers or modern operating systems, though again
 a great deal of these were fixed for modern systems.</p>
-<p>Some IOCCC entries fail to compile under clang, or gcc.
-Some IOCCC entries require operating system services that
-may not be present on your system.</p>
+<p>There are some cases where certain compilers or even certain versions are
+necessary for the program to function in part or even completely.</p>
+<p>Some IOCCC entries might operating system services that may not be present on
+your system, as well.</p>
 <p>In some cases the IOCCC entry simply has bugs or (Mis)features.</p>
 <p>If you are having problems compiling or running an IOCCC entry,
 we recommend that you look in <a href="bugs.html">bugs.html</a> to see if
 there is a known bugs or (Mis)feature. In some cases what you
-may think is a bug is actually an feature that was intentionally
-written by the authors. In some cases the problem is well
+may think is a bug is actually a feature that was intentionally
+written by the author(s). In some cases the problem is well
 known and we are looking for someone to attempt to fix it.</p>
 <p>In some cases there is an alternate version of the IOCCC entry
 that you may wish to try.</p>
-<p>It also possible that you may have discovered a bug in a winning IOCCC
+<p>It’s also possible that you have discovered a bug in a winning IOCCC
 entry. If so, you are invited to try and fix the IOCCC entry and
 submit that fix by way of a <a href="https://github.com/ioccc-src/winner/pulls">GitHub pull
 request</a>.
 Please see the
 FAQ on “<a href="#fix_an_entry">fixing an entry</a>”
 for how to submit a fix to an IOCCC entry.</p>
+<p>Jump to: <a href="#">top</a></p>
+<div id="64bit">
+<div id="64-bit">
+<h3 id="q-7.2.1-why-does-an-ioccc-entry-fail-to-run-on-my-64-bit-system">Q 7.2.1: Why does an IOCCC entry fail to run on my 64-bit system?</h3>
+</div>
+</div>
+<p>Unfortunately some older entries are non-portable and require 32-bit support or
+32-bit binaries. A problem system here is macOS Catalina (10.15) as as of that
+version macOS no longer supports 32-bit binaries. If the entry acts on a certain
+type of binary, say ELF, then that will also be a problem depending on the
+entry. For example <a href="2001/anonymous/index.html">2001/anonymous</a> requires 32-bit
+ELF binaries.</p>
+<p>There are a few example entries that require 32-bit binaries. We have tried
+to note these in both the respective Makefiles and index.html files but it is
+possible that some were missed. These entries are very likely in the
+<a href="bugs.html">bugs.html</a> file and we welcome any help in making an alternate version
+for 64-bit systems. Many were fixed to work with modern systems but some are
+supposed to only work with 32-bit systems so any updated version of these
+entries should be an alternate version.</p>
+<p>Other entries like <a href="thanks-for-help.html#2001_herrmann2">2001/herrmann2</a>
+now work with 32-bit AND 64-bit systems.</p>
+<p>Please see the <a href="bugs.html">bugs.html</a> file for the problematic entry
+in question to see if the problem is known, and if a fix is wanted,
+consider trying to port the code to a 64-bit system and submitting
+a pull request with that change. Pull requests that fix such code
+while trying to minimize the impact of any changes and preserving
+the spirit of the original code are very welcome! Please see the
+FAQ on “<a href="#fix_an_entry">fixing an entry</a>”
+for details. See also the
+FAQ on “<a href="#pull_request">GitHub pull request</a>”
+for more information about pull requests.</p>
 <p>Jump to: <a href="#">top</a></p>
 <div id="eof">
 <div id="intr">
@@ -3789,42 +3736,99 @@ to find what the <code>intr</code> is set to:</p>
 reason it’s not you might have to do something else including just piping it to
 just <code>grep intr</code> or whatever.</p>
 <p>Jump to: <a href="#">top</a></p>
-<div id="64bit">
-<div id="64-bit">
-<h3 id="q-7.4-why-does-an-ioccc-entry-fail-to-run-on-my-64-bit-system">Q 7.4: Why does an IOCCC entry fail to run on my 64-bit system?</h3>
+<div id="entry_downloads">
+<div id="download">
+<h3 id="q-7.4-how-do-i-download-individual-winning-entries-or-all-winning-entries-of-a-given-year">Q 7.4: How do I download individual winning entries or all winning entries of a given year?</h3>
 </div>
 </div>
-<p>Unfortunately some older entries are non-portable and require 32-bit support or
-32-bit binaries. A problem system here is macOS Catalina (10.15) as as of that
-version macOS no longer supports 32-bit binaries. If the entry acts on a certain
-type of binary, say ELF, then that will also be a problem depending on the
-entry. For example <a href="2001/anonymous/index.html">2001/anonymous</a> requires 32-bit
-ELF binaries.</p>
-<p>There are a few example entries that require 32-bit binaries. We have tried
-to note these in both the respective Makefiles and index.html files but it is
-possible that some were missed. These entries are very likely in the
-<a href="bugs.html">bugs.html</a> file and we welcome any help in making an alternate version
-for 64-bit systems. Many were fixed to work with modern systems but some are
-supposed to only work with 32-bit systems so any updated version of these
-entries should be an alternate version.</p>
-<p>Other entries like <a href="thanks-for-help.html#2001_herrmann2">2001/herrmann2</a>
-now work with 32-bit AND 64-bit systems.</p>
-<p>Please see the <a href="bugs.html">bugs.html</a> file for the problematic entry
-in question to see if the problem is known, and if a fix is wanted,
-consider trying to port the code to a 64-bit system and submitting
-a pull request with that change. Pull requests that fix such code
-while trying to minimize the impact of any changes and preserving
-the spirit of the original code are very welcome! Please see the
-FAQ on “<a href="#fix_an_entry">fixing an entry</a>”
-for details. See also the
-FAQ on “<a href="#pull_request">GitHub pull request</a>”
-for more information about pull requests.</p>
+<p>Although one can clone the entire <a href="https://github.com/ioccc-src/winner">winner
+repo</a> to get the entire website and all
+entries, we also provide, as a convenience, a way to download individual entries
+as well as a way to download a year’s winning entries.</p>
+<p>Please note that some of the links in the html files will not work! This is
+because you are not downloading the full website. If you want to view the entry
+with links intact you should clone the repo or view it on the <a href="https://www.ioccc.org">official IOCCC
+website</a> instead.</p>
+<h4 id="individual-winning-entry-tarballs">Individual winning entry tarballs</h4>
+<p>The individual entry tarballs are named in the form of
+<code>YYYY/winner/YYYY_winner.tar.bz2</code> (e.g.
+<a href="1984/mullender/1984_mullender.tar.bz2">1984/mullender/1984_mullender.tar.bz2</a>)
+and they contain a single entry as well as some additional necessary files. Each
+entry tarball is linked to in its <code>index.html</code> (e.g.
+<a href="1984/mullender/index.html">1984/mullender/index.html</a>) manifest, listed in the
+<em>Secondary files</em> list.</p>
+<p>These tarballs will have the following files:</p>
+<ul>
+<li><code>ioccc.css</code> - stylesheet for the html files</li>
+<li><code>var.mk</code> - the top level Makefile included by all the other Makefiles that holds variables used by the Makefiles</li>
+<li><code>YYYY/winner/.path</code> - directory path from top level directory</li>
+<li><code>YYYY/winner/.entry.json</code> - entry summary and manifest in JSON</li>
+<li><code>YYYY/winner/.gitignore</code> - list of files that should not be committed under git</li>
+</ul>
+<p>plus the winning entry files like source code, the Makefile, supplementary data
+provided by the author and any other file in the winning entry, found under the
+entry’s subdirectory.</p>
+<p>If you downloaded <code>1984/mullender/1984_mullender.tar.bz2</code>, for instance, you might
+then do:</p>
+<div class="sourceCode" id="cb122"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb122-1"><a href="#cb122-1" aria-hidden="true" tabindex="-1"></a>        <span class="bu">cd</span> 1984/mullender</span>
+<span id="cb122-2"><a href="#cb122-2" aria-hidden="true" tabindex="-1"></a>        <span class="fu">make</span> everything</span>
+<span id="cb122-3"><a href="#cb122-3" aria-hidden="true" tabindex="-1"></a>        <span class="ex">./mullender.alt</span></span></code></pre></div>
+<p>to compile all versions and then run the alternate version (if you have
+a PDP-11 or VAX-11 you would be able to run the original version). For more help
+on compiling entries, see also the
+FAQ on “<a href="#make_rules">IOCCC Makefile rules</a>”.</p>
+<p>If you want to view the <code>index.html</code> file you can point your browser to the
+<code>index.html</code> file of the winning entry (e.g. <code>1984/mullender/index.html</code>) with the
+caveats noted above.</p>
+<h4 id="year-based-tarballs">Year based tarballs</h4>
+<p>The year based tarballs, which are under each year’s directory and are named in
+the form of <code>YYYY/YYYY.tar.bz2</code> (e.g. <a href="1984/1984.tar.bz2">1984/1984.tar.bz2</a>),
+include all the winning entries of a given year.
+Each year’s tarball can be found under that year in the <a href="years.html">years.html</a>
+page and in the year’s <code>index.html</code> as well (e.g.
+<a href="1984/index.html">1984/index.html</a>).</p>
+<p>These tarballs have, along with each entry’s directory and their respective
+files (as if you downloaded each entry tarball of the year individually as
+described above), the following files:</p>
+<ul>
+<li><code>.filelist</code> - list of files in the year that are not part of a winning entry of the year, including the <code>YYYY.tar.bz2</code> tarball</li>
+<li><code>index.html</code> - the <code>YYYY/index.html</code> file rendered from the <code>YYYY/README.md</code> file</li>
+<li><code>Makefile</code> - Makefile for the year to compile etc. all entries of the year</li>
+<li><code>README.md</code> - the source of the <code>YYYY/index.html</code> file</li>
+<li><code>rules.txt</code> - rules of the year’s contest</li>
+<li><code>.year</code> - text file that has a list of the winning entries’ directories of the year</li>
+</ul>
+<p>Additionally, some will have extra files like:</p>
+<ul>
+<li><code>.gitignore</code> - list of files that should not be committed under git</li>
+<li><code>guidelines.txt</code> - the guidelines of the year</li>
+<li><code>iocccsize.c</code> - <code>iocccsize</code> tool of the year</li>
+<li><code>iocccsize.mk</code> - Makefile to compile the <code>iocccsize</code> tool of the year</li>
+<li><code>iocccsize-test.sh</code> - test suite for the <code>iocccsize</code> tool</li>
+</ul>
+<p>.. and perhaps some others we have neglected to mention as well.</p>
+<p>If you extract a year’s tarball you can <code>cd YYYY</code> (e.g. <code>cd 1984</code>) and then run
+<code>make everything</code> to compile the entries and alternate code of every entry, as
+if you switched to each entry’s directory and ran <code>make everything</code> in each one.</p>
+<p>If you download the 1984 tarball, i.e. <code>1984/1984.tar.bz2</code>, then you might
+extract it and then switch to the directory and compile everything of each
+entry:</p>
+<div class="sourceCode" id="cb123"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb123-1"><a href="#cb123-1" aria-hidden="true" tabindex="-1"></a>        <span class="bu">cd</span> 1984</span>
+<span id="cb123-2"><a href="#cb123-2" aria-hidden="true" tabindex="-1"></a>        <span class="fu">make</span> everything</span></code></pre></div>
+<p>For more help on compiling entries, see also the
+FAQ on “<a href="#make_rules">IOCCC Makefile rules</a>”.</p>
+<p>Of course in this case you can also switch to individual entries and look at the
+<code>index.html</code> file (or any other file in the entry) and try out the entries that
+interest you, as if you downloaded that entry’s individual tarball.</p>
+<p>If you want to view the <code>index.html</code> files of that tarball, for instance the
+year’s <code>index.html</code> file and then <code>1984/mullender/index.html</code> you could point your
+browser to <code>1984/index.html</code>, scroll down to <code>Winning Entries of 1984 - The 1st IOCCC</code> and click on the link <code>1984/mullender</code> which will take you to the
+<code>index.html</code> file. Of course the caveats listed above still will apply.</p>
 <p>Jump to: <a href="#">top</a></p>
 <hr style="width:50%;text-align:left;margin-left:0">
 <hr style="width:50%;text-align:left;margin-left:0">
 <div id="changes">
-<p>/An IOCCC entry messed
-## Section 8: Changes made to IOCCC entries</p>
+<h2 id="section-8-changes-made-to-ioccc-entries">Section 8: Changes made to IOCCC entries</h2>
 </div>
 <p>Jump to: <a href="#">top</a></p>
 <div id="what_changed">
@@ -4169,31 +4173,32 @@ something like that.</p>
 file. In some cases what you might think of as a bug is instead a known
 feature. In some cases the bug is known, but no fix has ever been submitted.
 In other cases you may have found a new problem.</p>
-<p>If you do have a fix, and the <a href="bugs.html">known bugs</a> file <strong>does not recommend
+<p>If you do have a fix, and the <a href="bugs.html">known bugs</a> file <strong>does NOT recommend
 against fixing it</strong>, then please consider opening a <a href="https://github.com/ioccc-src/winner/pulls">GitHub pull
 request</a> against the master
 <a href="https://github.com/ioccc-src/winner/branches">branch</a> of the <a href="https://github.com/ioccc-src/winner">ioccc-src/winner
 repo</a>.</p>
 <p>BTW: A <strong>problem</strong> is not limited to the code itself. Fixing typos in files
-such as “<em>index.html</em>” files, fixing issues in a “<em>Makefile</em>”, or otherwise
-correcting an IOCCC entry is <strong>VERY MUCH WELCOME</strong>! Please use the same
-<a href="https://github.com/ioccc-src/winner/pulls">GitHub pull request</a> process against
-the <a href="https://github.com/ioccc-src/winner/branches">master branch</a> of the
-<a href="https://github.com/ioccc-src/winner">ioccc-src/winner repo</a>.</p>
+such as “<em>index.html</em>” files (via its respective <code>README.md</code> file), fixing
+issues in a “<em>Makefile</em>”, or otherwise correcting an IOCCC entry is <strong>VERY MUCH
+WELCOME</strong>! Please use the same <a href="https://github.com/ioccc-src/winner/pulls">GitHub pull
+request</a> process against the <a href="https://github.com/ioccc-src/winner/branches">master
+branch</a> of the <a href="https://github.com/ioccc-src/winner">ioccc-src/winner
+repo</a>.</p>
+<p><strong>NOTE</strong>: if you need help with GitHub pull requests, then please see the FAQ on
+“<a href="#pull_request">pull requests</a>”.</p>
 <p><strong>NOTE</strong>: some of the issues in the <a href="bugs.html">bugs.html</a> file includes just missing
 files and we welcome these too!</p>
 <p><strong>Please also help us fix typos and / or otherwise improve the write-up</strong> of how
 IOCCC winning entries are presented!</p>
 <p>In any event we will happily add you to the
 <a href="thanks-for-help.html">thanks</a> file for your help!</p>
-<p>And of course, an IOCCC author may update their own entries
+<p>Of course, an IOCCC author may update their own entries
 (metadata as well as source code and any extra files) by opening a
 <a href="https://github.com/ioccc-src/winner/pulls">GitHub pull request</a>
 against the <a href="https://github.com/ioccc-src/winner/branches">master branch</a>
 of the <a href="https://github.com/ioccc-src/winner">ioccc-src/winner repo</a>.</p>
-<p>Please see the
-FAQ on “<a href="#fix_an_entry">fixing an entry</a>”.
-See also the
+<p>See the
 FAQ on “<a href="#pull_request">GitHub pull request</a>”
 for more information about pull requests.</p>
 <p>Note that we’re much more inclined to accept an author’s fixes but the judges
@@ -4377,7 +4382,7 @@ for information on how to submit a fix to an IOCCC entry.</p>
 may or may not be specific to a particular IOCCC entry) that is <strong>not related
 to a particular IOCCC entry</strong>, the best way you can help is to submit a fix to
 the IOCCC website. See the
-FAQ on “<a href="#fix_web_site">fixing the website</a>”
+FAQ on “<a href="#fix_website">fixing the website</a>”
 for information on submitting fixes
 to the IOCCC website.</p>
 <p>If you do not have an IOCCC website fix, and just wish to report a general IOCCC
@@ -4431,22 +4436,13 @@ FAQ on “<a href="#fix_an_entry">fixing an entry</a>”.</p>
 <p>See also the
 FAQ on “<a href="#pull_request">GitHub pull request</a>”
 for more information about pull requests.</p>
-<p>In some cases, the HTML file is <strong>NOT</strong> based on markdown content, but instead
-came from JSON and other data files. So instead of the above reference to a
-markdown file, you will read:</p>
-<pre><code>    &lt;!-- The main section of this web page came from JSON and other data files --&gt;
-    &lt;!-- --&gt;
-    &lt;!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! --&gt;
-    &lt;!-- The main section of this web page was generated via the tool: bin/gen-years.sh --&gt;
-    &lt;!-- The main section of this web page was generated via the tool: bin/gen-years.sh --&gt;
-    &lt;!-- The main section of this web page was generated via the tool: bin/gen-years.sh --&gt;
-    &lt;!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! --&gt;</code></pre>
-<p>This means there is <strong>NOT even a markdown file to edit</strong>. Instead one must
-modify JSON files and/or change a <a href="bin/index.html">bin directory tool</a>.</p>
+<p>If you see in the html file:</p>
+<pre><code>    &lt;!-- The main section of this web page came from JSON and other data files --&gt;</code></pre>
+<p>it means that the source is <strong>NOT</strong> a markdown file; instead it might be
+necessary to modify a JSON file, another data file, or, in rarer cases, a tool
+in the <a href="bin/index.html">bin directory</a>.</p>
 <p>If this happens, consider opening up an <a href="https://github.com/ioccc-src/winner/issues">IOCCC issue</a>
-and ask for help. See
-FAQ on “<a href="#fix_an_entry">fixing an entry</a>”
-for information on opening up an IOCCC issue.</p>
+and ask for help.</p>
 <p>Jump to: <a href="#">top</a></p>
 <div id="fix_author">
 <h3 id="q-9.6-how-can-i-correct-or-update-an-ioccc-authors-information">Q 9.6: How can I correct or update an IOCCC author’s information?</h3>
@@ -4535,7 +4531,7 @@ for information about how to change author location codes.</p>
 <p>We would appreciate if you try to fix the broken (the link goes nowhere) or wrong
 (the link goes to something that clearly is not the original intent) web link.
 If wish to fix such links, you may open a GitHub pull request as described in
-FAQ on “<a href="#fix_web_site">fixing the website</a>”.
+FAQ on “<a href="#fix_website">fixing the website</a>”.
 In the case of dead links or invalid links it doesn’t matter
 if it’s a specific winner or not; the procedure is the same: open a pull request
 to fix the problem. See also the
