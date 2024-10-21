@@ -1,15 +1,14 @@
 # IOCCC FAQ Table of Contents
 
-This is FAQ version **28.1.1 2024-10-21**.
+This is FAQ version **28.1.2 2024-10-21**.
 
 
 ## 0. [Entering the IOCCC: the bare minimum you need to know](#enter_questions)
 - **Q 0.0**: <a class="normal" href="#submit">How can I enter the IOCCC?</a>
 - **Q 0.1**: <a class="normal" href="#mkiocccentry">What is the `mkiocccentry` tool, how do I obtain it and how do I use it?</a>
-- **Q 0.2**: <a class="normal" href="#compile_mkiocccentry">How do I compile `mkiocccentry` and its related tools?</a>
-- **Q 0.3**: <a class="normal" href="#platform">What platform should I assume for my submission?</a>
-- **Q 0.4**: <a class="normal" href="#makefile">What should I put in my submission Makefile?</a>
-- **Q 0.5**: <a class="normal" href="#remarks">What should I put in the remarks.md file of my submission?</a>
+- **Q 0.2**: <a class="normal" href="#platform">What platform should I assume for my submission?</a>
+- **Q 0.3**: <a class="normal" href="#makefile">What should I put in my submission Makefile?</a>
+- **Q 0.4**: <a class="normal" href="#remarks">What should I put in the remarks.md file of my submission?</a>
 
 
 ## 1. [Entering the IOCCC: more help and details](#submitting_help)
@@ -271,7 +270,11 @@ Jump to: [top](#)
 
 
 <div id="mkiocccentry">
+<div id="mkiocccentry_compile">
+<div id="compile_mkiocccentry">
 ### Q 0.1: What is the `mkiocccentry` tool, how do I obtain it and how do I use it?
+</div>
+</div>
 </div>
 
 This tool comes from the [mkiocccentry
@@ -297,12 +300,23 @@ If you already have an mkiocccentry tool directory:
     git rebase
 ```
 
+Once you've done this, change to the `mkiocccentry` directory and run
+`make clobber all` to compile the tools.
+See the
+FAQ on "[compiling mkiocccentry](https://github.com/ioccc-src/mkiocccentry/blob/master/FAQ.md#compiling)"
+at the `mkiocccentry` repo if you need more help.
 
 The `mkiocccentry` tool first gathers your source
-code, your Makefile, your remarks, other information about your submission,
-information about the author (or authors) and then runs a lot of tests before (if
+code, your Makefile, your remarks, any other data files you wish to provide (up
+to a maximum, including the mandatory files, defined in
+[limit_ioccc.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h)
+as `MAX_FILE_COUNT`) and other information about your submission,
+information about the author (or authors), and then runs a lot of tests before (if
 all is OK) forming your tarball. After this is done it will additionally run the
 `txzchk(1)` tool (which runs the `fnamchk(1)` tool) on the submission tarball.
+The tool `chkentry(1)` will also be run, before creating the tarball. See the
+FAQ on "[chkentry](#chkentry)"
+for more information.
 
 See the
 FAQ on "[submitting to the IOCCC](#submit)"
@@ -348,32 +362,6 @@ submission _as well as author details_ (that will only be looked at if the
 submission wins), run some tests and run a number of other tools, as already
 mentioned and as described below.
 
-Jump to: [top](#)
-
-
-<div id="mkiocccentry_compile">
-<div id="compile_mkiocccentry">
-### Q 0.2: How do I compile `mkiocccentry` and its related tools?
-</div>
-</div>
-
-After you
-[download the mkiocccentry
-repo](https://github.com/ioccc-src/mkiocccentry/blob/master/FAQ.md#download) by
-running:
-
-``` <!---sh-->
-git clone https://github.com/ioccc-src/mkiocccentry.git
-```
-
-or downloading the zip file, you should change to the `mkiocccentry` directory
-so you can compile the tools by running `make clobber all`. See the
-FAQ on "[obtaining
-mkiocccentry](https://github.com/ioccc-src/mkiocccentry/blob/master/FAQ.md#download)
-and the
-FAQ on "[compiling mkiocccentry](https://github.com/ioccc-src/mkiocccentry/blob/master/FAQ.md#compiling)"
-at the `mkiocccentry` repo.
-
 See also the
 [mkiocccentry repo FAQ](https://github.com/ioccc-src/mkiocccentry/blob/master/FAQ.md)
 for more up to date information on downloading, compiling, and related FAQ information.
@@ -384,7 +372,7 @@ Jump to: [top](#)
 <div id="SUS">
 <div id="platform">
 <div id="portability">
-### Q 0.3: What platform should I assume for my submission?
+### Q 0.2: What platform should I assume for my submission?
 </div>
 </div>
 </div>
@@ -399,7 +387,7 @@ Jump to: [top](#)
 
 <div id="makefile">
 <div id="submission_makefile">
-### Q 0.4: What should I put in my submission Makefile?
+### Q 0.3: What should I put in my submission Makefile?
 </div>
 </div>
 
