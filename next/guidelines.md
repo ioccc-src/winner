@@ -14,7 +14,7 @@ as well as our
 FAQ on "[asking questions](../faq.html#question)"
 about these guidelines. You might also find the
 FAQ in general useful, especially the
-[FAQ section "How to enter: the bare minimum you need to know"](../faq.html#enter).
+[FAQ section "How to enter: the bare minimum you need to know"](../faq.html#submit).
 
 
 # The IOCCC is closed
@@ -50,7 +50,7 @@ writing by [contacting the judges](../contact.html).
 </div>
 
 <p class="leftbar">
-These [IOCCC guidelines](guidelines.html) are version **28.17 2024-10-20**.
+These [IOCCC guidelines](guidelines.html) are version **28.18 2024-10-21**.
 </p>
 
 **IMPORTANT**: Be **SURE** to read the [IOCCC rules](rules.html).
@@ -342,6 +342,11 @@ you **MUST** use the `mkiocccentry(1)` tool to package your submission tarball.
 See the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry)
 for the `mkiocccentry(1)` tool and below for more details.
 </p>
+
+<p class="leftbar">
+**IMPORTANT NOTE**: make **CERTAIN** you have the most recent version of the
+`mkiocccentry` toolkit! See the
+FAQ on "[obtaining the mkiocccentry toolkit](../faq.html#mkiocccentry)".
 
 <p class="leftbar">
 `mkiocccentry` runs a number of checks, by the tool itself and by executing other

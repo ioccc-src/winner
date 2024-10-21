@@ -7,7 +7,7 @@ FAQ on "[fixing entries](faq.html#fix_an_entry)"
 * **Update winning author information** - See our
 FAQ on "[fixing author information](faq.html#fix_author)"
 * **Correct a website problem** - See our
-FAQ on "[fixing the website](faq.html#fix_web_site)"
+FAQ on "[fixing the website](faq.html#fix_website)"
 or our
 FAQ on "[fix URL](faq.html#fix_link)"
 

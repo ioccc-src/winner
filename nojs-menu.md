@@ -18,7 +18,7 @@
 * [FAQ](faq.html)
 * [How to enter the IOCCC](faq.html#submit)
 * [Fixing IOCCC entries](faq.html#fix_an_entry)
-* [Fixing the website](faq.html#fix_web_site)
+* [Fixing the website](faq.html#fix_website)
 * [Updating author info](faq.html#fix_author)
 
 ## About
