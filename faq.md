@@ -6,6 +6,10 @@ This is FAQ version **28.1.2 2024-10-21**.
 ## 0. [Entering the IOCCC: the bare minimum you need to know](#enter_questions)
 - **Q 0.0**: <a class="normal" href="#submit">How can I enter the IOCCC?</a>
 - **Q 0.1**: <a class="normal" href="#mkiocccentry">What is the `mkiocccentry` tool, how do I obtain it and how do I use it?</a>
+    - **Q 0.1.1**: <a class="normal" href="#about_mkiocccentry">What is `mkiocccentry(1)` in simple terms?</a>
+    - **Q 0.1.2**: <a class="normal" href="#obtaining_mkiocccentry">How do I obtain the latest mkiocccentry toolkit?</a>
+    - **Q 0.1.3**: <a class="normal" href="#compiling_mkiocccentry">How do I compile the mkiocccentry toolkit?</a>
+    - **Q 0.1.4**: <a class="normal" href="#using_mkiocccentry">How do I use mkiocccentry?</a>
 - **Q 0.2**: <a class="normal" href="#platform">What platform should I assume for my submission?</a>
 - **Q 0.3**: <a class="normal" href="#makefile">What should I put in my submission Makefile?</a>
 - **Q 0.4**: <a class="normal" href="#remarks">What should I put in the remarks.md file of my submission?</a>
@@ -191,19 +195,31 @@ prepare your entries for submission, and how to upload the compressed tarballs
 to our submission portal.
 
 
-#### 3. Obtain the latest mkiocccentry toolkit
+#### 3. Obtain and compile the latest mkiocccentry toolkit
 
 You **MUST** use the most recent version of the `mkiocccentry` toolkit. To help
 you, please see the
-FAQ on "[obtaining the mkiocccentry toolkit](#mkiocccentry)".
+FAQ on "[how to obtain the most recent mkiocccentry](#obtaining_mkiocccentry)"
+and the
+FAQ on "[compiling mkiocccentry toolkit](#compiling_mkiocccentry)",
+for more details.
 
-#### 4. Compile the mkiocccentry toolkit
+#### 4. Run the mkiocccentry tool to form your submission tarball
 
-``` <!---sh-->
-    make clobber all
-```
+For more details on `mkiocccentry`, what it is, how to obtain it and how to use
+it, see the
+FAQ on "[mkiocccentry](#mkiocccentry)"
+(especially the
+FAQ on "[what mkiocccentry is in simple terms](#about_mkiocccentry),
+the
+FAQ on "[obtaining the mkiocccentry toolkit](#obtaining_mkiocccentry)",
+the
+FAQ on "[compiling mkiocccentry](#compiling_mkiocccentry)
+and the
+FAQ on "[how to use mkiocccentry](#using_mkiocccentry)")
+and the [mkiocccentry section in the
+guidelines](next/guidelines.html#mkiocccentry).
 
-#### 5. Run the mkiocccentry tool to form your submission tarball
 
 ``` <!---sh-->
     mkiocccentry work_dir prog.c Makefile remarks.md [file ...]
@@ -235,21 +251,19 @@ where:
 
 **NOTE**: Please see our [IOCCC markdown guide](markdown.html) for **important information** on using markdown in the IOCCC.
 
-For more details on the `mkiocccentry(1)` tool see the
-FAQ on "[mkiocccentry](#mkiocccentry)"
-and the [mkiocccentry section in the
-guidelines](next/guidelines.html#mkiocccentry).
-
 **NOTE**: It is *NOT* necessary to install the tools to use them as you can run
 the tools from the top of the `mkiocccentry` repo directory just fine, though
 you'll have to use the form of `./mkiocccentry` instead of just `mkiocccentry`.
 However, installing it will make it easier for you as you can run it from your
-submission's directory.
+submission's directory. See the
+FAQ on "[installing
+mkiocccentry](https://github.com/ioccc-src/mkiocccentry/blob/master/FAQ.md#install)"
+at the mkiocccentry repo.
 
 If the `mkiocccentry` tool indicates that there is a problem with your entry,
-especially if it identifies a [Rule 2](next/rules.html#rule2) related problem,
-you are **strongly** encouraged to revise and correct your entry and
-then re-run the `mkiocccentry` tool.
+especially if it identifies a [Rule 2](next/rules.html#rule2), or any other
+rule, related problem, you are **strongly** encouraged to revise and correct
+your entry and then re-run the `mkiocccentry` tool.
 
 If you choose to risk violating rules, be sure and explain your reason
 for doing so in your `remarks.md` file.
@@ -257,7 +271,7 @@ for doing so in your `remarks.md` file.
 See also [Rule 17](next/rules.html#rule17)!
 
 
-#### 6. Upload your entry to the IOCCC submit server
+#### 5. Upload your entry to the IOCCC submit server
 
 The **IOCCC submit server** is still being written.
 <!--XXX--> As such, we do not yet have instructions
@@ -269,6 +283,7 @@ for an announcement of the availability of the **IOCCC submit server**.
 Jump to: [top](#)
 
 
+<div id="what_mkiocccentry">
 <div id="mkiocccentry">
 <div id="mkiocccentry_compile">
 <div id="compile_mkiocccentry">
@@ -276,12 +291,55 @@ Jump to: [top](#)
 </div>
 </div>
 </div>
+</div>
 
-This tool comes from the [mkiocccentry
+<div id="mkiocccentry_repo">
+#### mkiocccentry repo
+</div>
+
+This toolkit is from the [mkiocccentry
 repo](https://github.com/ioccc-src/mkiocccentry) and it is **required** that you
 use it to package your submission. Not doing so puts you at a great risk of
 violating the [Rules](next/rules.html) and in particular [Rule
 17](next/rules.html#rule17).
+
+Jump to: [top](#)
+
+<div id="about_mkiocccentry">
+#### Q 0.1.1: What is `mkiocccentry` in simple terms?
+</div>
+
+The `mkiocccentry` tool first gathers your source
+code, your Makefile, your remarks, any other data files you wish to provide (up
+to a maximum, including the mandatory files, defined in
+[limit_ioccc.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h)
+as `MAX_FILE_COUNT`) and other information about your submission,
+information about the author (or authors), and then runs a lot of tests before (if
+all is OK) forming your tarball. After this is done it will additionally run the
+`txzchk(1)` tool (which runs the `fnamchk(1)` tool) on the submission tarball.
+The tool `chkentry(1)` will also be run, before creating the tarball. See the
+FAQ on "[txzchk](#txzchk)",
+the
+FAQ on "[fnamchk](#fnamchk)"
+and the
+FAQ on "[chkentry](#chkentry)"
+for more information on these important tools, if you want more information.
+
+See the
+FAQ on "[submitting to the IOCCC](#submit)"
+for details on how to register for the IOCCC, the
+FAQ on "[obtaining the mkiocccentry toolkit](#obtaining_mkiocccentry)"
+for details on obtaining the latest release, the
+FAQ on "[compiling the mkiocccentry toolkit](#compiling_mkiocccentry)"
+for details on compiling and the
+FAQ on "[using mkiocccentry](#using_mkiocccentry)"
+for more details.
+
+Jump to: [top](#)
+
+<div id="obtaining_mkiocccentry">
+#### Q 0.1.2: How do I obtain the latest mkiocccentry toolkit?
+</div>
 
 Before you use it, make sure you have the most recent version. If you do not
 have an mkiocccentry tool directory:
@@ -300,31 +358,39 @@ If you already have an mkiocccentry tool directory:
     git rebase
 ```
 
-Once you've done this, change to the `mkiocccentry` directory and run
-`make clobber all` to compile the tools.
-See the
-FAQ on "[compiling mkiocccentry](https://github.com/ioccc-src/mkiocccentry/blob/master/FAQ.md#compiling)"
-at the `mkiocccentry` repo if you need more help.
+Jump to: [top](#)
 
-The `mkiocccentry` tool first gathers your source
-code, your Makefile, your remarks, any other data files you wish to provide (up
-to a maximum, including the mandatory files, defined in
-[limit_ioccc.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h)
-as `MAX_FILE_COUNT`) and other information about your submission,
-information about the author (or authors), and then runs a lot of tests before (if
-all is OK) forming your tarball. After this is done it will additionally run the
-`txzchk(1)` tool (which runs the `fnamchk(1)` tool) on the submission tarball.
-The tool `chkentry(1)` will also be run, before creating the tarball. See the
-FAQ on "[chkentry](#chkentry)"
-for more information.
+<div id="compiling_mkiocccentry">
+#### Q 0.1.3: How do I compile the mkiocccentry toolkit?
+</div>
 
-See the
-FAQ on "[submitting to the IOCCC](#submit)"
-for details on how to register for the IOCCC and how to obtain `mkiocccentry`.
+Once you've obtained the **LATEST** version (see the
+FAQ on "[obtaining the latest mkiocccentry toolkit](#obtaining_mkiocccentry)"
+for more details), change to the `mkiocccentry` directory and then run:
+
+``` <!---sh-->
+    make clobber all
+```
+
+to compile the tools.
+
+Jump to: [top](#)
+
+<div id="using_mkiocccentry">
+#### Q 0.1.4:  How do I use mkiocccentry?
+</div>
 
 Once you have registered, you will need to package your entry with the
-`mkiocccentry` tool. The below details discuss this very important tool. As it
-is complicated we will explain how to use this tool.
+`mkiocccentry` tool. If you have not already obtained the toolkit, see the
+FAQ on "[obtaining the mkiocccentry toolkit](#obtaining_mkiocccentry)"
+and the
+FAQ on "[compiling mkiocccentry](#compiling_mkiocccentry)"
+if you have not already done so.
+
+The below details discuss this very important tool. As it is complicated we will
+explain how to use this tool. If you want to know what it is in simpler terms,
+see the
+FAQ on "[what mkiocccentry is](#about_mkiocccentry)".
 
 As the [Guidelines](next/guidelines.html) state, the synopsis is:
 
@@ -343,7 +409,7 @@ wish to submit.
 The `work_dir` **MUST** already exist, as a directory, and it is an error if it
 is not a directory that can be written to. In **this** directory your **submission
 directory** will be created, with the name based on your IOCCC registration
-username, which is **in the form of a UUID** and submission number; see the
+username, which is **in the form of a UUID**, and submission number; see the
 [rules](next/rules.html) for more details on this, and in particular [Rule
 17](next/rules.html#rule17).
 
@@ -359,8 +425,9 @@ be the _subdirectory_ with your submission's files**.
 
 The `mkiocccentry(1)` tool will ask you for information about your
 submission _as well as author details_ (that will only be looked at if the
-submission wins), run some tests and run a number of other tools, as already
-mentioned and as described below.
+submission wins), run some tests and run a number of other tools, as briefly
+mentioned, and as described in the
+"[finer details](#mkiocccentry_details)" section.
 
 See also the
 [mkiocccentry repo FAQ](https://github.com/ioccc-src/mkiocccentry/blob/master/FAQ.md)
@@ -400,10 +467,14 @@ entry's `Makefile`.
 The `Makefile` is a file used by the `make(1)` command that contains
 rules and UNIX shell-style commands.
 
-The first and default rule should be the `all` rule and should build your entry's executable file.
+The first and default rule should be the `all` rule and should build your
+entry's executable file. There are other rules that should be present in your
+Makefile, and which mkiocccentry attempts to find; see below.
 
 If your entry depends on a particular source file name during compilation or execution,
-your `Makefile` should copy `prog.c` into the desired filename.  For example:
+your `Makefile` should copy `prog.c` into the desired filename. See the
+FAQ on "[source and compiled filenames](#prog_c)"
+for an example.
 
 If you are not familiar `Makefile`s, you might consider the following tutorials:
 
@@ -413,7 +484,30 @@ If you are not familiar `Makefile`s, you might consider the following tutorials:
 
 For the `make(1)` _connoisseur_: As of 2023, IOCCC judges use [GNU
 make compatible](https://www.gnu.org/software/make/) `make(1)`
-command that is compatible with GNU Make version 3.81.
+command that is compatible with GNU Make version 3.81. Your Makefile should be
+compatible with this; see the
+FAQ on "[Makefile compatibility](#gmake)"
+for more details and help.
+
+#### Expected `make` rules:
+
+The following rules should exist in your Makefile:
+
+- `all`
+    * This rule should be the first rule and it should compile your submission.
+
+- `clean`
+    * This rule should remove any intermediate build files, for example `.o`
+    files or other intermediate build files. It should **NOT** remove compiled
+    programs (see `clobber` below).
+
+- `clobber`
+    * This rule should restore the original state of the submission's directory.
+    It should depend on the `clean` rule and it should remove the compiled
+    program(s), clean up any files made by the program etc.
+
+- `try`
+    * run the program in a way you suggest
 
 Jump to: [top](#)
 
@@ -485,7 +579,7 @@ Jump to: [top](#)
 ### Q 1.0: How can I avoid reentering the information to mkiocccentry?
 </div>
 
-Yes! The `mkiocccentry(1)` tool has some options to help write _OR_ read from an
+`mkiocccentry(1)` has some options to help write _OR_ read from an
 answers file so you do not have to input the author(s) or the submission
 details (like the abstract, summary etc.), just to change a file.
 
@@ -512,7 +606,7 @@ Jump to: [top](#)
 ### Q 1.1: May I use a different source or compiled filename than prog.c or prog?
 </div>
 
-While your entry's source filename, as submitted, must be `prog.c`, your entry's `Makefile`
+While your submission's source filename, as submitted, must be `prog.c`, your entry's `Makefile`
 may copy `prog.c` to a different filename as part of the compiling/building process.  For example:
 
 ``` <!---make-->
@@ -571,8 +665,8 @@ Jump to: [top](#)
 </div>
 
 The IOCCC makes extensive use of [markdown](https://daringfireball.net/projects/markdown/).
-For example, we [submitting to the IOCCC](#submit), we have people
-to submit remarks about entry in markdown format.  Every
+For example, when [submitting to the IOCCC](#submit), we have people
+submit remarks about entry in markdown format.  Every
 [winning IOCCC entry](years.html) uses a `README.md` markdown file
 as the basis for forming the `index.html` web page for that entry.
 All generated HTML pages on the [Official IOCCC website](https://www.ioccc.org/index.html)
@@ -599,7 +693,8 @@ page](https://github.com/ioccc-src/mkiocccentry/issues).
 
 Please see the
 FAQ on "[reporting bugs and other issues in the mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry/blob/master/FAQ.md#bugs)"
-in the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry).
+in the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry)
+for more thorough details on bug reporting.
 
 Jump to: [top](#)
 
@@ -643,7 +738,7 @@ view the [mkiocccentry repo discussions](https://github.com/ioccc-src/mkiocccent
 instead.
 
 If you do not find a suitable open discussion, please consider opening a
-[new IOCCC repo discussion](https://github.com/ioccc-src/winner/discussions/new/choose) with
+[new IOCCC winner repo discussion](https://github.com/ioccc-src/winner/discussions/new/choose) with
 your question.  Doing this may be of help to others with a question similar to yours.
 
 **BTW**: If your question is just about the
@@ -4435,10 +4530,9 @@ Jump to: [top](#)
 ### Q 7.0: What are `try.sh` and `try.alt.sh` scripts and why should I use them?
 </div>
 
-A lot of the entries, old and otherwise, have complicated uses or, if not
-complicated uses, it has numerous uses (sometimes both), and having a script
-that automates these for viewers improves the usability of these entries so one
-can enjoy them better.
+A lot of the entries, old and otherwise, have complicated uses and/or have
+numerous uses, and having a script that automates these for viewers improves the
+usability of these entries so one can enjoy them better.
 
 The `try.sh` script is for the original entry and the `try.alt.sh` script is for
 alternate versions. These scripts are usually for the `Try:` and `Alternate
@@ -5150,6 +5244,11 @@ section may offer you important fixing clues.
 
 #### We welcome your help on fixing the IOCCC website
 
+This includes typos, dead/invalid links and many other things. Please see the
+FAQ on "[fixing the website](#fix_website)"
+for more details.
+
+
 Jump to: [top](#)
 
 
@@ -5529,7 +5628,7 @@ See also the
 FAQ on "[GitHub pull request](#pull_request)"
 for more information about pull requests.
 
-#### Some HTML files should NOT be directly modified
+#### Actual website problems
 
 Nearly all HTML files on the [IOCCC website](https://www.ioccc.org)
 are built from [markdown](https://daringfireball.net/projects/markdown/) files.
@@ -5582,6 +5681,14 @@ in the [bin directory](bin/index.html).
 
 If this happens, consider opening up an [IOCCC issue](https://github.com/ioccc-src/winner/issues)
 and ask for help.
+
+**IMPORTANT**: some entries have html files **NOT** generated by a markdown file
+and these should **NOT** be changed. In at least one case, other files that are
+generated by markdown should **ALSO NOT** be updated as they are very specific
+and they should only be updated by the author; an example is [Cody Boone
+Ferguson](authors.html#Cody_Boone_Ferguson)'s [Double-layered chocolate fudge
+cake recipe](2020/ferguson1/chocolate-cake.html).
+
 
 Jump to: [top](#)
 
@@ -6601,7 +6708,7 @@ repo](https://github.com/ioccc-src/winner).
 
 The [first accepted pull request](https://github.com/ioccc-src/winner/pull/2) to
 the [Official IOCCC winner repo](https://github.com/ioccc-src/winner) was made
-by [Yusuke Endoh](https://www.ioccc.org/winners.html#Yusuke_Endoh)  on [2021 Jan
+by [Yusuke Endoh](authors.html#Yusuke_Endoh)  on [2021 Jan
 5](https://github.com/ioccc-src/winner/commit/84c62c4cbf56ac1351ea91e5019f51103615fda2).
 
 
@@ -6641,7 +6748,7 @@ repo](https://github.com/ioccc-src/temp-test-ioccc) on
 [Wed Feb 22 05:44:55 2023 -0800 with commit
 11bb36ac8ce790f32a9a3e5d2131ee12820fb8ec](https://github.com/ioccc-src/temp-test-ioccc/commit/11bb36ac8ce790f32a9a3e5d2131ee12820fb8ec)
 by [Cody Boone
-Ferguson](https://www.ioccc.org/winners.html#Cody_Boone_Ferguson).
+Ferguson](authors.html#Cody_Boone_Ferguson).
 
 A [decision was made by the
 IOCCC](https://github.com/ioccc-src/temp-test-ioccc/discussions/1918) to
@@ -6657,7 +6764,7 @@ the ability to trace changes with commit messages is important.
 Changes to the IOCCC content included things such as:
 
 * Moving IOCCC entries into their own separate directories.
-* Establishing a detailed manifest for an IOCCC winning entries.
+* Establishing a detailed manifest for IOCCC winning entries.
 * Fixing lots and lots of typos.
 * Fixing Makefiles and code to allow for nearly all winning entries to be
 compiled with/in modern systems.

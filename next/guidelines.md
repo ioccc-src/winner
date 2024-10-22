@@ -346,13 +346,13 @@ for the `mkiocccentry(1)` tool and below for more details.
 <p class="leftbar">
 **IMPORTANT NOTE**: make **CERTAIN** you have the most recent version of the
 `mkiocccentry` toolkit! See the
-FAQ on "[obtaining the mkiocccentry toolkit](../faq.html#mkiocccentry)".
+FAQ on "[obtaining the mkiocccentry toolkit](../faq.html#obtaining_mkiocccentry)".
 
 <p class="leftbar">
-`mkiocccentry` runs a number of checks, by the tool itself and by executing other
-tools, _before_ packaging your xz compressed tarball. Once the tarball is
-packaged it will run `txzchk(1)`, which runs `fnamchk(1)` as part of its
-algorithm.
+`mkiocccentry` runs a number of checks, by the tool itself and by executing
+other tools, _before_ packaging your xz compressed tarball. Once the tarball is
+packaged it will run `txzchk(1)`, which will also run `fnamchk(1)`, as part of
+its algorithm.
 </p>
 
 <p class="leftbar">
@@ -364,7 +364,15 @@ it is an error and **possibly** a bug that you should [report as a bug at the
 mkiocccentry issues
 page](https://github.com/ioccc-src/mkiocccentry/issues/new?assignees=&labels=bug&projects=&template=bug_report.yml&title=%5BBug%5D+%3Ctitle%3E).
 **PLEASE run the `bug_report.sh` script to help us out here!**  See the
-FAQ on "[report mkiocccentry bugs](../faq.html#mkiocccentry_bugs)".
+FAQ on "[reporting mkiocccentry bugs](../faq.html#mkiocccentry_bugs)".
+</p>
+
+<p class="leftbar">
+If you want to know what `.auth.json` is, see the FAQ on
+"[.auth.json](../faq.html#auth_json)".  If you want to know what the
+`.info.json` file is, see the FAQ on "[.info.json](../faq.html#info_json)".  On
+the other hand, if you want to know a bit more details about `chkentry`, see the
+FAQ about "[chkentry](../faq.html#chkentry)".
 </p>
 
 <p class="leftbar">
