@@ -1,6 +1,6 @@
 # Double-layered Chocolate Fudge Cake
 
-## Last updated Tue 26 Mar 16:28:01 2024 UTC
+## Last updated Tue 22 Oct 2024 13:38:24 UTC
 
 Here's a delicious double-layered chocolate fudge cake that is
 something of my mum's speciality. It's complicated and I should warn that nobody
@@ -8,10 +8,8 @@ has seemed to get it down as well as she has but it's well worth the effort if
 you love chocolate and have the time and patience.
 
 My late stepmum who only liked white 'chocolate' loved this cake! The picture
-below is after it's been iced. The image [cake.jpg](cake.jpg) was a
-feeble attempt at drawing `IOCCC` into the cake before icing, a different time.
-The picture below was taken for my birthday (14 February) in 2022 as it's the
-best one I have:
+below was taken for my birthday (14 February) in 2022 as it's the best one I
+have:
 
 <img src="cake.jpg"
  alt="photograph of a delicious double-layered chocolate fudge cake"
