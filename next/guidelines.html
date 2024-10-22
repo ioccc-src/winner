@@ -665,12 +665,12 @@ for the <code>mkiocccentry(1)</code> tool and below for more details.
 <p class="leftbar">
 <p><strong>IMPORTANT NOTE</strong>: make <strong>CERTAIN</strong> you have the most recent version of the
 <code>mkiocccentry</code> toolkit! See the
-FAQ on “<a href="../faq.html#mkiocccentry">obtaining the mkiocccentry toolkit</a>”.</p>
+FAQ on “<a href="../faq.html#obtaining_mkiocccentry">obtaining the mkiocccentry toolkit</a>”.</p>
 <p class="leftbar">
-<code>mkiocccentry</code> runs a number of checks, by the tool itself and by executing other
-tools, <em>before</em> packaging your xz compressed tarball. Once the tarball is
-packaged it will run <code>txzchk(1)</code>, which runs <code>fnamchk(1)</code> as part of its
-algorithm.
+<code>mkiocccentry</code> runs a number of checks, by the tool itself and by executing
+other tools, <em>before</em> packaging your xz compressed tarball. Once the tarball is
+packaged it will run <code>txzchk(1)</code>, which will also run <code>fnamchk(1)</code>, as part of
+its algorithm.
 </p>
 <p class="leftbar">
 If <code>mkiocccentry</code> encounters an <strong>error</strong> the program will exit and the xz
@@ -681,7 +681,14 @@ it is an error and <strong>possibly</strong> a bug that you should <a href="http
 mkiocccentry issues
 page</a>.
 <strong>PLEASE run the <code>bug_report.sh</code> script to help us out here!</strong> See the
-FAQ on “<a href="../faq.html#mkiocccentry_bugs">report mkiocccentry bugs</a>”.
+FAQ on “<a href="../faq.html#mkiocccentry_bugs">reporting mkiocccentry bugs</a>”.
+</p>
+<p class="leftbar">
+If you want to know what <code>.auth.json</code> is, see the FAQ on
+“<a href="../faq.html#auth_json">.auth.json</a>”. If you want to know what the
+<code>.info.json</code> file is, see the FAQ on “<a href="../faq.html#info_json">.info.json</a>”. On
+the other hand, if you want to know a bit more details about <code>chkentry</code>, see the
+FAQ about “<a href="../faq.html#chkentry">chkentry</a>”.
 </p>
 <p class="leftbar">
 However, just because there are errors <strong>does not</strong> mean it is a bug in the
