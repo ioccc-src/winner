@@ -305,6 +305,7 @@ violating the [Rules](next/rules.html) and in particular [Rule
 
 Jump to: [top](#)
 
+
 <div id="about_mkiocccentry">
 #### Q 0.1.1: What is `mkiocccentry` in simple terms?
 </div>
@@ -337,6 +338,7 @@ for more details.
 
 Jump to: [top](#)
 
+
 <div id="obtaining_mkiocccentry">
 #### Q 0.1.2: How do I obtain the latest mkiocccentry toolkit?
 </div>
@@ -359,6 +361,7 @@ If you already have an mkiocccentry tool directory:
 ```
 
 Jump to: [top](#)
+
 
 <div id="compiling_mkiocccentry">
 #### Q 0.1.3: How do I compile the mkiocccentry toolkit?
@@ -515,7 +518,7 @@ Jump to: [top](#)
 <div id="remarks_md">
 <div id="remarks">
 <div id="readme">
-### Q 0.5: What should I put in the remarks.md file of my submission?
+### Q 0.4: What should I put in the remarks.md file of my submission?
 </div>
 </div>
 </div>
