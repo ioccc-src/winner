@@ -210,8 +210,8 @@ find . -name '*.json' -print |
 	if ! "$JPARSE" "$JSON_FILE" 2>/dev/null; then
 	    echo "$JSON_FILE is invalid JSON"
 	fi
-# this writes the invalid JSON files to the temporary error file
-done > "$TMP_INVALID_JSON"
+    # this writes the invalid JSON files to the temporary error file
+    done > "$TMP_INVALID_JSON"
 
 # count the invalid JSON files
 #
@@ -233,6 +233,6 @@ if [[ -s $TMP_INVALID_JSON ]]; then
     exit 1
 fi
 if [[ $V_FLAG -ge 1 ]]; then
-    echo "$0: debug[1]: $INVALID_JSON_COUNT invalid JSON file(s) found" 1>&2
+    echo "$0: debug[1]: $INVALID_JSON_COUNT invalid JSON files found" 1>&2
 fi
 exit 0
