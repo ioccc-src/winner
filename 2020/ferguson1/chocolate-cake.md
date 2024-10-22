@@ -91,7 +91,7 @@ RECIPE NOTES BECAUSE THEY'RE _EXTREMELY IMPORTANT!_**
     have.
 
 *   Use **ONLY _PURE_ VANILLA EXTRACT!** **DO _NOT USE IMITATION VANILLA!_** Not
-    following this rule will lead to a worse outcome.
+    following this rule will lead to a worse outcome, including with the icing.
 
 
 ## Cake Ingredients
