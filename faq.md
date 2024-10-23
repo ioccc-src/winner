@@ -939,9 +939,7 @@ previous IOCCC entries make it more challenging to be successful.
 It is also important to note that the [guidelines](next/guidelines.html) often
 state something along the lines of:
 
-```
-    We tend to dislike programs that: are similar to previous winning entries.
-```
+> We tend to dislike programs that: are similar to previous winning entries.
 
 **FAIR WARNING**: Be sure to **clearly explain** near the beginning
 of your `remarks.md` file, see the
@@ -2062,10 +2060,7 @@ An `author_handle` is string that refers to a given author and is unique to the
 IOCCC.  Each author has exactly one `author_handle`.
 
 For each `author_handle`, there will be a JSON file of the form:
-
-```
-    author/author_handle.json
-```
+`author/author_handle.json`.
 
 See the
 FAQ on "[fixing author information](#fix_author)"
@@ -2107,18 +2102,8 @@ An `author` who has won a previous IOCCC is encouraged to reuse their
 `author_handle` so that new winning entries can be associated with the same
 author.
 
-For an anonymous `author`, their handle is one of these forms:
-
-```
-    Anonymous_year
-```
-
-or:
-
-```
-    Anonymous_year.digits
-```
-
+For an anonymous `author`, their handle is one of the form of `Anonymous_year`
+or `Anonymous_year.digits`.
 
 The latter form is in case there are more than one anonymous author in a given
 year.
@@ -2164,11 +2149,7 @@ contact an authors of an IOCCC entry, they will consult the contents
 of the author's JSON file for ways to contact them.
 
 Each author of an IOCCC winning entry has their own `author_handle.json` file
-of the form:
-
-```
-    author/author_handle.json
-```
+of the form `author/author_handle.json`.
 
 where _author_handle_ is an author handle.  See
 FAQ on "[author handle](#author_handle_faq)"
@@ -2181,13 +2162,10 @@ See <https://www.json.org/json-en.html> for information on the _So-called JSON
 spec_.
 
 A good way to understand the JSON file contents of a `author_handle.json` file
-is to look at an example, the `author_handle.json` file for Yusuke Endoh:
+is to look at an example, for instance the `author_handle.json` file for Yusuke
+Endoh, [author/Yusuke_Endoh.json](%%REPO_URL%%/author/Yusuke_Endoh.json).
 
-```
-    author/Yusuke_Endoh.json
-```
-
-As of _Thu Nov 30 23:51:12 UTC 2023_, the contents was as follows:
+As of _Thu Nov 30 23:51:12 UTC 2023_, it was:
 
 ``` <!---json-->
     {
@@ -2233,7 +2211,7 @@ FAQ on "[validating JSON documents](#validating_json)". Taking that FAQ in mind,
 if you wish to validate every JSON file in `author/` then you could do so like:
 
 ``` <!--sh-->
-        for auth in *.json; do jparse -q "$auth" || echo "$auth is invalid JSON" ; done
+    for auth in *.json; do jparse -q "$auth" || echo "$auth is invalid JSON" ; done
 ```
 
 If you see any output then it will say which file or files are invalid JSON
@@ -2254,7 +2232,7 @@ We now will walk thru the above JSON document looking at various JSON members:
 ##### no_comment
 
 ``` <!--- json-->
-    "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
+    "no_comment" : "mandatory comment: because comments were removed from the original JSON spec"
 ```
 
 Because the authors of the so-called JSON spec removed the ability to use comments in JSON
@@ -2268,7 +2246,7 @@ be the exact _JSON string_ as shown above.
 ##### author_JSON_format_version
 
 ``` <!---json-->
-    "author_JSON_format_version" : "1.0 2023-06-10",
+    "author_JSON_format_version" : "1.0 2023-06-10"
 ```
 
 This _JSON member_ holds the format version of the `author_handle.json` JSON file.
@@ -2289,7 +2267,7 @@ in conjunction with changes to [bin directory tools](bin/index.html).
 ##### author_handle
 
 ``` <!---json-->
-    "author_handle" : "Yusuke_Endoh",
+    "author_handle" : "Yusuke_Endoh"
 ```
 
 This _JSON member_ holds the author handle of the author.
@@ -2314,7 +2292,7 @@ a change of _author_handle_ _JSON value_ would also require the
 ##### full_name
 
 ``` <!---json-->
-    "full_name" : "Yusuke Endoh",
+    "full_name" : "Yusuke Endoh"
 ```
 
 This _JSON member_ holds the full name of the author.
@@ -2329,7 +2307,7 @@ full name is properly encoded as a _JSON string_.
 ##### sort_word
 
 ``` <!---json-->
-    "sort_word" : "endoh",
+    "sort_word" : "endoh"
 ```
 
 This _JSON member_ holds the string that will be used to sort the author.
@@ -2352,7 +2330,7 @@ or their username, then they may change this accordingly.
 ##### location_code
 
 ``` <!---json-->
-    "location_code" : "JP",
+    "location_code" : "JP"
 ```
 
 This _JSON member_ holds the string that is the
@@ -2379,7 +2357,7 @@ If the author wishes to not specify a location, they should select **XX**.
 ##### email
 
 ``` <!---json-->
-    "email" : "mame@ruby-lang.org",
+    "email" : "mame@ruby-lang.org"
 ```
 
 This _JSON member_ holds the email address of the author, or is the value null.
@@ -2392,7 +2370,7 @@ unknown, it should be the _JSON null_ as the _JSON value_ of this _JSON member_.
 For example:
 
 ``` <!---json-->
-    "email" : null,
+    "email" : null
 ```
 
 **NOTE**: The _JSON null_ is **NOT** enclosed in quotes!
@@ -2401,7 +2379,7 @@ For example:
 ##### url
 
 ``` <!---json-->
-    "url" : "https://mametter.hatenablog.com",
+    "url" : "https://mametter.hatenablog.com"
 ```
 
 This _JSON member_ holds the URL of the author's home page.
@@ -2414,7 +2392,7 @@ unknown, it should be the _JSON null_ as the _JSON value_ of this _JSON
 member_.  For example:
 
 ``` <!---json-->
-    "url" : null,
+    "url" : null
 ```
 
 **NOTE**: The _JSON null_ is **NOT** enclosed in quotes!
@@ -2423,7 +2401,7 @@ member_.  For example:
 ##### alt_url
 
 ``` <!---json-->
-    "alt_url" : null,
+    "alt_url" : null
 ```
 
 This _JSON member_ holds an alternate or 2nd URL a home page for the author.
@@ -2436,7 +2414,7 @@ or a 2nd URL such as a work or school or personal home page.  For example,
 Cody as of  _Thu Nov 30 23:51:12 UTC 2023_ used:
 
 ``` <!---json-->
-    "alt_url" : "https://ioccc.xexyl.net",
+    "alt_url" : "https://ioccc.xexyl.net"
 ```
 
 If the author wishes to not specify an alternate URL, or if the alternate URL is
@@ -2444,7 +2422,7 @@ unknown, it should be the _JSON null_ as the _JSON value_ of this _JSON
 member_.  For example:
 
 ``` <!---json-->
-    "alt_url" : null,
+    "alt_url" : null
 ```
 
 **NOTE**: The _JSON null_ is **NOT** enclosed in quotes!
@@ -2463,7 +2441,7 @@ not a _JSON null_ is kept for only historic reasons.  For example, Anthony C. Ho
 once used:
 
 ``` <!---json-->
-    "deprecated_twitter_handle" : "@SirWumpus",
+    "deprecated_twitter_handle" : "@SirWumpus"
 ```
 
 If the author wishes to not specify a twitter handle, or if the twitter handle is
@@ -2471,7 +2449,7 @@ unknown, it should be the _JSON null_ as the _JSON value_ of this _JSON member_.
 For example:
 
 ``` <!---json-->
-    "deprecated_twitter_handle" : null,
+    "deprecated_twitter_handle" : null
 ```
 
 Of course in the future we will not be asking for twitter handles so this means
@@ -2484,7 +2462,7 @@ will always be `null` anyway.
 ##### mastodon
 
 ``` <!---json-->
-    "mastodon" : "@mame@ruby.social",
+    "mastodon" : "@mame@ruby.social"
 ```
 
 This _JSON member_ holds the
@@ -2516,7 +2494,7 @@ unknown, it should be the _JSON null_ as the _JSON value_ of this _JSON member_.
 For example:
 
 ``` <!---json-->
-    "mastodon" : null,
+    "mastodon" : null
 ```
 
 **NOTE**: The _JSON null_ is **NOT** enclosed in quotes!
@@ -2525,7 +2503,7 @@ For example:
 ##### mastodon_url
 
 ``` <!---json-->
-    "mastodon_url" : "https://ruby.social/@mame",
+    "mastodon_url" : "https://ruby.social/@mame"
 ```
 
 This _JSON member_ holds the URL of the author's Mastodon page.
@@ -2536,24 +2514,15 @@ If the `mastodon` handle is a _JSON null_, them the `mastodon_url` **MUST** be a
 If the `mastodon` handle is a _JSON string_, then the `mastodon_url` **MUST** be a _JSON string_.
 
 The `mastodon_url` is just a translation of the above mentioned Mastodon handle.
-For example, if the Mastodon handle is:
-
-```
-    @user@server.domain
-```
-
-Then the `mastodon_url` would be:
-
-```
-    https://server.domain/@user
-```
+For example, if the Mastodon handle is `@user@server.domain`, then the
+`mastodon_url` would be `https://server.domain/@user`.
 
 If the author wishes to not specify an Mastodon URL, or if the Mastodon URL is
 unknown, it should be the _JSON null_ as the _JSON value_ of this _JSON member_.
 For example:
 
 ``` <!---json-->
-    "mastodon_url" : null,
+    "mastodon_url" : null
 ```
 
 **NOTE**: The _JSON null_ is **NOT** enclosed in quotes!
@@ -2566,7 +2535,7 @@ for more information on Mastodon.
 ##### github
 
 ``` <!---json-->
-    "github" : "@mame",
+    "github" : "@mame"
 ```
 
 This _JSON member_ holds the [GitHub](https://github.com) handle of the author.
@@ -2578,18 +2547,14 @@ start with an at sign (_@_) and **MUST** be a valid GitHub username.
 The IOCCC uses GitHub to hold the [official winner repo of the IOCCC](https://github.com/ioccc-src/winner),
 and hosts [official IOCCC website](https://www.ioccc.org) on GitHub pages.
 
-The IOCCC GitHub handle is:
-
-```
-    @ioccc-src
-```
+The IOCCC GitHub handle is [@ioccc-src](https://github.com/ioccc-src/).
 
 If the author wishes to not specify an GitHub handle, or if the GitHub handle is
 unknown, it should be the _JSON null_ as the _JSON value_ of this _JSON member_.
 For example:
 
 ``` <!---json-->
-    "github" : null,
+    "github" : null
 ```
 
 **NOTE**: The _JSON null_ is **NOT** enclosed in quotes!
@@ -2598,7 +2563,7 @@ For example:
 ##### affiliation
 
 ``` <!---json-->
-    "affiliation" : null,
+    "affiliation" : null
 ```
 
 This _JSON member_ holds the affiliation of the author.
@@ -2610,8 +2575,8 @@ An affiliation might be the name of a school, university, company, or organizati
 It is recommended that the affiliation _JSON string_ be the formal affiliation name.
 For example, the affiliation for the IOCCC would be:
 
-```
-    The International Obfuscared C Code Contest
+``` <!---json-->
+    "affiliation": "The International Obfuscated C Code Contest"
 ```
 
 If the author wishes to not specify an affiliation, or if the affiliation is
@@ -2619,7 +2584,7 @@ unknown, it should be the _JSON null_ as the _JSON value_ of this _JSON member_.
 For example:
 
 ``` <!---json-->
-    "affiliation" : null,
+    "affiliation" : null
 ```
 
 **NOTE**: The _JSON null_ is **NOT** enclosed in quotes!
@@ -2630,15 +2595,64 @@ For example:
 
 ``` <!---json-->
     "winning_entry_set" : [
-        { "entry_id" : "2012_endoh1" },
-        { "entry_id" : "2012_endoh2" },
-        { "entry_id" : "2013_endoh1" },
-    ...
-        { "entry_id" : "2020_endoh1" },
-        { "entry_id" : "2020_endoh2" },
-        { "entry_id" : "2020_endoh3" }
+        {
+            "entry_id" : "2012_endoh1"
+        },
+        {
+            "entry_id" : "2012_endoh2"
+        },
+        {
+            "entry_id" : "2013_endoh1"
+        },
+        {
+            "entry_id" : "2013_endoh2"
+        },
+        {
+            "entry_id" : "2013_endoh3"
+        },
+        {
+            "entry_id" : "2013_endoh4"
+        },
+        {
+            "entry_id" : "2014_endoh1"
+        },
+        {
+            "entry_id" : "2014_endoh2"
+        },
+        {
+            "entry_id" : "2015_endoh1"
+        },
+        {
+            "entry_id" : "2015_endoh2"
+        },
+        {
+            "entry_id" : "2015_endoh3"
+        },
+        {
+            "entry_id" : "2015_endoh4"
+        },
+        {
+            "entry_id" : "2018_endoh1"
+        },
+        {
+            "entry_id" : "2018_endoh2"
+        },
+        {
+            "entry_id" : "2019_endoh"
+        },
+        {
+            "entry_id" : "2020_endoh1"
+        },
+        {
+            "entry_id" : "2020_endoh2"
+        },
+        {
+            "entry_id" : "2020_endoh3"
+        }
     ]
 ```
+
+(... as of Wed 23 Oct 2024 17:20:26 UTC.)
 
 The `winning_entry_set` _JSON member_ holds _JSON array_ containing one or more `entry_id` _JSON member_s.
 
@@ -2717,17 +2731,10 @@ An `entry_id` is a string that identifies a winning entry of the IOCCC.
 An `entry_id` is a 4-digit year, followed by an underscore, followed by a directory name.
 
 For example, the `entry_id` associated with Cody Boone Ferguson's 2nd winning IOCCC entry
-of 2020 is found under the following directory:
+of 2020 is found under the directory
+[2020/ferguson2](2020/ferguson2/index.html).
 
-```
-    2020/ferguson2
-```
-
-The `entry_id` for that winning entry is:
-
-```
-    2020_ferguson2
-```
+The `entry_id` for that winning entry is `2020_ferguson2`.
 
 Jump to: [top](#)
 
@@ -2747,12 +2754,9 @@ This file is created by the [cvt-submission.sh](bin/index.html#cvt-submission)
 tool as part of the final steps to announce a new set of winning IOCCC entries.
 
 Each winning entry has its own `.entry.json` filename of the form:
+`YYYY/winner/.entry.json`
 
-```
-    YYYY/winner/.entry.json
-```
-
-where _winner_ is the entry directory name, usually the name of the author.
+.. where _winner_ is the entry directory name, usually the name of the author.
 
 **IMPORTANT NOTE**: this file should **NOT** be manually modified! It is created
 by the [csv2entry](bin/index.html#csv2entry) tool when updating the manifest.
@@ -2879,7 +2883,7 @@ members:
 ##### `no_comment`
 
 ``` <!--- json-->
-    "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
+    "no_comment" : "mandatory comment: because comments were removed from the original JSON spec"
 ```
 
 Because the authors of the so-called JSON spec removed the ability to use comments in JSON
@@ -2892,7 +2896,7 @@ be the exact _JSON string_ as shown above.
 ##### `entry_JSON_format_version`
 
 ``` <!---json-->
-        "entry_JSON_format_version" : "1.2 2024-09-25",
+        "entry_JSON_format_version" : "1.2 2024-09-25"
 ```
 
 This _JSON member_ holds the format version of the `.entry.json` JSON file.
@@ -2910,7 +2914,7 @@ in conjunction with changes to [bin directory tools](bin/index.html).
 ##### `award`
 
 ``` <!---json-->
-    "award" : "Third Place",
+    "award" : "Third Place"
 ```
 
 This JSON string is the award title of the entry which the [Judges](judges.html)
@@ -2919,7 +2923,7 @@ decide/decided when it becomes/became a winning entry.
 ##### `year`
 
 ``` <!---json-->
-    "year" : 1984,
+    "year" : 1984
 ```
 
 This JSON number is the year the contest ran, ended or was announced in.
@@ -2927,7 +2931,7 @@ This JSON number is the year the contest ran, ended or was announced in.
 ##### `dir`
 
 ``` <!---json-->
-    "dir" : "laman",
+    "dir" : "laman"
 ```
 
 This JSON string is the subdirectory of the entry, **under** the year directory,
@@ -2938,7 +2942,7 @@ one, one can determine the directory of the entry, here being
 ##### `entry_id`
 
 ``` <!---json-->
-    "entry_id" : "1984_laman",
+    "entry_id" : "1984_laman"
 ```
 
 This is the ID of the entry in question and corresponds to the `entry_id` in the
@@ -2986,7 +2990,7 @@ for more information on `.info.json` files.
 ``` <!---json-->
     "author_set" : [
         { "author_handle" : "Mike_Laman" }
-    ],
+    ]
 ```
 
 This JSON **array** has a list of `author_handle`s that indicate who won this
@@ -3326,7 +3330,7 @@ versions. Every Makefile has an `alt` rule but it will only do something if an
 alternate version exists. To build all the entries along with any alternate code
 you can do from the top level directory:
 
-```
+``` <!---sh-->
     make clobber everything
 ```
 
@@ -4175,11 +4179,8 @@ FAQ on "[X11](#X11)"
 for general information about X11.
 
 Once X11 is install and the X Window Server is running, one needs to compile
-and link with the two libraries, _GL_ and _GLU_:
-
-``` <!---sh-->
-    cc ... -lGL -lGLU -L _location-where-X11-libs-are-installed_ -lX11
-```
+and link with the two libraries, _GL_ and _GLU_, which the Makefile should do if
+you just run `make`.
 
 **NOTE**: The OpenGL development effort is being managed by [vulkan.org](https://vulkan.org).
 We suggest you check out their resource for further information on OpenGL.
@@ -5702,7 +5703,7 @@ GitHub pull request that modifies an author's `author_handle.json` file.
 For example, if a given `author_handle.json` file contained:
 
 ``` <!---json-->
-    "url" : "https://www.example.com/employee/username",
+    "url" : "https://www.example.com/employee/username"
 ```
 
 and you knew that the author has long ago left the `www.example.com` company,
@@ -5710,7 +5711,7 @@ and that they have a new faculty web page at `www.example.edu`, then you should
 submit a GitHub pull request to change the above line to:
 
 ``` <!---json-->
-    "url" : "https://www.example.edu/faculty/deartment/user.name",
+    "url" : "https://www.example.edu/faculty/deartment/user.name"
 ```
 
 Authors of IOCCC winning entries are kept in JSON files of the form:
@@ -5801,7 +5802,7 @@ for information about the contents of these JSON files and how they are used.
 For example, if a given `author_handle.json` file contained:
 
 ``` <!---json-->
-    "location_code" : "ZZ",
+    "location_code" : "ZZ"
 ```
 
 and you knew that the author was located in [Australia](location.html#AU)
@@ -5809,7 +5810,7 @@ and you knew that the author was located in [Australia](location.html#AU)
 request** to change that line to:
 
 ``` <!---json-->
-    "location_code" : "AU",
+    "location_code" : "AU"
 ```
 
 See the
