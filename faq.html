@@ -481,7 +481,8 @@
 </ul>
 <h2 id="changes-made-to-ioccc-entries">8. <a href="#changes">Changes made to IOCCC entries</a></h2>
 <ul>
-<li><strong>Q 8.0</strong>: <a class="normal" href="#diff">How can I find out what was changed in an IOCCC entry source code?</a></li>
+<li><strong>Q 8.0</strong>: <a class="normal" href="#diff">What was changed in some IOCCC entries?</a></li>
+<li><strong>Q 8.0.1</strong>: <a class="normal" href="#detailed-diff">How can I see the extended details of what was changed?</a></li>
 <li><strong>Q 8.1</strong>: <a class="normal" href="#fgets">Why were some calls to the libc function gets(3) changed to use fgets(3)?</a></li>
 <li><strong>Q 8.2</strong>: <a class="normal" href="#consistency">Why do some remarks seem inconsistent with the entry?</a></li>
 <li><strong>Q 8.3</strong>: <a class="normal" href="#orig_c">What is the meaning of the file ending in .orig.c in IOCCC entries?</a></li>
@@ -3957,8 +3958,18 @@ browser to <code>1984/index.html</code>, scroll down to <code>Winning Entries of
 <p>Jump to: <a href="#">top</a></p>
 <div id="what_changed">
 <div id="diff">
-<h3 id="q-8.0-how-can-i-find-out-what-was-changed-in-an-ioccc-entry-source-code">Q 8.0: How can I find out what was changed in an IOCCC entry source code?</h3>
+<h3 id="q-8.0-what-was-changed-in-some-ioccc-entries">Q 8.0: What was changed in some IOCCC entries?</h3>
 </div>
+</div>
+<p>When the website was being worked on in 2022-2024, the hint files were changed
+to README.md, which are now used to construct index.html files, most text was
+converted to markdown, typos were fixed, formatting fixes were made and most
+entries that no longer worked were fixed to work or partly work.</p>
+<p>If you wish to find out more, and see how to see the actual differences, check
+the
+FAQ on “<a href="#detailed-diff">how to find extended details of what was changed</a>”.</p>
+<div id="detailed-diff">
+<h3 id="q-8.0.1-how-can-i-see-the-extended-details-of-what-was-changed">Q 8.0.1: How can I see the extended details of what was changed?</h3>
 </div>
 <p>We have set up make rules to easily do see what was changed in the winning IOCCC
 entry source. Using the <code>Makefile</code> in the entry directory, use
@@ -4036,6 +4047,9 @@ include Makefile via the optional include directive line:</p>
 <p>The <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1337.mk">1337.mk</a> file must exist in the current
 directory, or under the directory above, or under the directory 2 levels
 above in order for these rules to work.</p>
+<p>If you’re an IOCCC masochist :-), or you really want even more details, very often the
+<a href="thanks-for-help.html">thanks file</a> has much more details on what had to be
+changed.</p>
 <h4 id="tip-if-you-have-colordiff-installed-its-a-lot-easier-to-see-the-differences">Tip: if you have <code>colordiff</code> installed it’s a lot easier to see the differences</h4>
 <p>To use these rules but provide a different <code>diff</code>, for instance <code>colordiff</code>,
 just do:</p>
@@ -4044,7 +4058,7 @@ just do:</p>
 <p>Obviously if you want to view the alternate code or the orig code you can just open
 the files as described above.</p>
 <p>See the
-FAQ on “<a href="#original_source_code">original source code</a>”
+FAQ on “<a href="#original_source_code">original source code files</a>”
 for more information.</p>
 <p>Jump to: <a href="#">top</a></p>
 <div id="gets">
@@ -4225,7 +4239,9 @@ the source code as it is now now, try:</p>
 <pre><code>    make diff_orig_prog</code></pre>
 <p>See the
 FAQ on “<a href="#what_changed">what changed</a>”
-for more information and make rules relating to “<strong>original source file</strong>” differences.</p>
+for more information on changes. If you want to see more details, including how
+to see the actual differences, see the
+FAQ on “<a href="#detailed-diff">what changed in more detail</a>”.</p>
 <p>Jump to: <a href="#">top</a></p>
 <div id="renaming_files">
 <h3 id="q-8.8-why-were-some-filenames-changed">Q 8.8: Why were some filenames changed?</h3>

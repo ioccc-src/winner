@@ -87,7 +87,8 @@ This is FAQ version **28.1.2 2024-10-21**.
 
 
 ## 8. [Changes made to IOCCC entries](#changes)
-- **Q 8.0**: <a class="normal" href="#diff">How can I find out what was changed in an IOCCC entry source code?</a>
+- **Q 8.0**: <a class="normal" href="#diff">What was changed in some IOCCC entries?</a>
+- **Q 8.0.1**: <a class="normal" href="#detailed-diff">How can I see the extended details of what was changed?</a>
 - **Q 8.1**: <a class="normal" href="#fgets">Why were some calls to the libc function gets&lpar;3&rpar; changed to use fgets&lpar;3&rpar;?</a>
 - **Q 8.2**: <a class="normal" href="#consistency">Why do some remarks seem inconsistent with the entry?</a>
 - **Q 8.3**: <a class="normal" href="#orig_c">What is the meaning of the file ending in .orig.c in IOCCC entries?</a>
@@ -4822,8 +4823,21 @@ Jump to: [top](#)
 
 <div id="what_changed">
 <div id="diff">
-### Q 8.0: How can I find out what was changed in an IOCCC entry source code?
+### Q 8.0: What was changed in some IOCCC entries?
 </div>
+</div>
+
+When the website was being worked on in 2022-2024, the hint files were changed
+to README.md, which are now used to construct index.html files, most text was
+converted to markdown, typos were fixed, formatting fixes were made and most
+entries that no longer worked were fixed to work or partly work.
+
+If you wish to find out more, and see how to see the actual differences, check
+the
+FAQ on "[how to find extended details of what was changed](#detailed-diff)".
+
+<div id="detailed-diff">
+### Q 8.0.1: How can I see the extended details of what was changed?
 </div>
 
 We have set up make rules to easily do see what was changed in the winning IOCCC
@@ -4851,6 +4865,7 @@ The following `make` rules exist to make a difference:
 * `make diff_prog_orig`:
     - This rule will show the diff of the entry to the original code (that is
     `entry.c` to `entry.orig.c`).
+
 
 For instance one of Landon's all time favourite entries is
 [1984/mullender](1984/mullender/index.html) so the file names would be:
@@ -4917,6 +4932,10 @@ The [1337.mk](%%REPO_URL%%/1337.mk) file must exist in the current
 directory, or under the directory above, or under the directory 2 levels
 above in order for these rules to work.
 
+If you're an IOCCC masochist :-), or you really want even more details, very often the
+[thanks file](thanks-for-help.html) has much more details on what had to be
+changed.
+
 
 #### Tip: if you have `colordiff` installed it's a lot easier to see the differences
 
@@ -4932,7 +4951,7 @@ Obviously if you want to view the alternate code or the orig code you can just o
 the files as described above.
 
 See the
-FAQ on "[original source code](#original_source_code)"
+FAQ on "[original source code files](#original_source_code)"
 for more information.
 
 Jump to: [top](#)
@@ -5176,7 +5195,9 @@ the source code as it is now now, try:
 
 See the
 FAQ on "[what changed](#what_changed)"
-for more information and make rules relating to "**original source file**" differences.
+for more information on changes. If you want to see more details, including how
+to see the actual differences, see the
+FAQ on "[what changed in more detail](#detailed-diff)".
 
 Jump to: [top](#)
 

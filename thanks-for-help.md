@@ -25,6 +25,7 @@ on an IOCCC entry by entry basis.
 - [Makefiles fixes and improvements](#makefiles_fixes_improvements)
 - [Consistency improvements](#consistency_improvements)
 - [Manifest improvements](#manifest_improvements)
+- [FAQ improvements](#faq_improvements)
 - [Thank you honor roll](#thank_you_honor_roll)
 - [Did we neglect to credit you?](#neglect)
 
@@ -6171,6 +6172,13 @@ manually.
 links to the files in the index.html files make sense and are consistent,
 although some might not make as much sense unless one looks into the entry.
 
+<div id="faq_improvements">
+## FAQ improvements
+</div>
+
+[Cody](#cody) greatly extended the FAQ to include much more information and he
+helped reorganise it as well, from the new `faq.md` file.
+
 
 <div id="thank_you_honor_roll">
 ## Thank you honor roll
@@ -6233,10 +6241,12 @@ invalid links are thanks to Cody's efforts! Another tool he wrote detected
 inconsistent award titles in the `README.md` files (used to generate the
 `index.html` files) and the CSV file that he generated from our SQL file.
 
-Additionally Cody greatly improved the manifest of the winning entries and
-checked that the generated html files, `index.html` and otherwise, look well and
-are presentable, and he also suggested some CSS rules for image responsiveness on smaller
-screens, as well as some other improvements.
+Cody also greatly improved the manifests and checked that the generated html
+files look well and are presentable, and he also suggested some CSS rules for
+image responsiveness on smaller screens, as well as some other improvements.
+
+Cody also wrote some of the [website scripts](bin/index.html) and improved and
+bug fixed others.
 
 **THANK YOU VERY MUCH** for your extensive efforts in helping improve the IOCCC
 presentation of past IOCCC entries and fixing almost all past entries for modern
