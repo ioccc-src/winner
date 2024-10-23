@@ -212,10 +212,6 @@ FAQ on "[mkiocccentry](#mkiocccentry)"
 (especially the
 FAQ on "[what mkiocccentry is in simple terms](#about_mkiocccentry),
 the
-FAQ on "[obtaining the mkiocccentry toolkit](#obtaining_mkiocccentry)",
-the
-FAQ on "[compiling mkiocccentry](#compiling_mkiocccentry)
-and the
 FAQ on "[how to use mkiocccentry](#using_mkiocccentry)")
 and the [mkiocccentry section in the
 guidelines](next/guidelines.html#mkiocccentry).
@@ -329,7 +325,7 @@ for more information on these important tools, if you want more information.
 See the
 FAQ on "[submitting to the IOCCC](#submit)"
 for details on how to register for the IOCCC, the
-FAQ on "[obtaining the mkiocccentry toolkit](#obtaining_mkiocccentry)"
+FAQ on "[obtaining the latest mkiocccentry toolkit](#obtaining_mkiocccentry)"
 for details on obtaining the latest release, the
 FAQ on "[compiling the mkiocccentry toolkit](#compiling_mkiocccentry)"
 for details on compiling and the
@@ -369,18 +365,18 @@ Jump to: [top](#)
 
 Once you've obtained the **LATEST** version (see the
 FAQ on "[obtaining the latest mkiocccentry toolkit](#obtaining_mkiocccentry)"
-for more details), change to the `mkiocccentry` directory and then run:
+to make sure of this), change to the `mkiocccentry` directory and then run:
 
 ``` <!---sh-->
     make clobber all
 ```
 
-to compile the tools.
+to compile all the tools.
 
 Jump to: [top](#)
 
 <div id="using_mkiocccentry">
-#### Q 0.1.4:  How do I use mkiocccentry?
+#### Q 0.1.4: How do I use mkiocccentry?
 </div>
 
 Once you have registered, you will need to package your entry with the
@@ -4735,7 +4731,7 @@ entry's subdirectory.
 If you downloaded `1984/mullender/1984_mullender.tar.bz2`, for instance, you might
 then do:
 
-```sh
+``` <!---sh-->
         cd 1984/mullender
         make everything
         ./mullender.alt
@@ -4790,9 +4786,9 @@ If you download the 1984 tarball, i.e. `1984/1984.tar.bz2`, then you might
 extract it and then switch to the directory and compile everything of each
 entry:
 
-```sh
-        cd 1984
-        make everything
+``` <!---sh-->
+    cd 1984
+    make everything
 ```
 
 For more help on compiling entries, see also the

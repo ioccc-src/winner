@@ -577,11 +577,7 @@ FAQ on “<a href="#mkiocccentry">mkiocccentry</a>”
 (especially the
 FAQ on “<a href="#about_mkiocccentry">what mkiocccentry is in simple terms</a>,
 the
-FAQ on”<a href="#obtaining_mkiocccentry">obtaining the mkiocccentry toolkit</a>“,
-the
-FAQ on”<a href="#compiling_mkiocccentry">compiling mkiocccentry</a>
-and the
-FAQ on “<a href="#using_mkiocccentry">how to use mkiocccentry</a>”)
+FAQ on”<a href="#using_mkiocccentry">how to use mkiocccentry</a>“)
 and the <a href="next/guidelines.html#mkiocccentry">mkiocccentry section in the
 guidelines</a>.</p>
 <pre><code>    mkiocccentry work_dir prog.c Makefile remarks.md [file ...]</code></pre>
@@ -663,7 +659,7 @@ for more information on these important tools, if you want more information.</p>
 <p>See the
 FAQ on “<a href="#submit">submitting to the IOCCC</a>”
 for details on how to register for the IOCCC, the
-FAQ on “<a href="#obtaining_mkiocccentry">obtaining the mkiocccentry toolkit</a>”
+FAQ on “<a href="#obtaining_mkiocccentry">obtaining the latest mkiocccentry toolkit</a>”
 for details on obtaining the latest release, the
 FAQ on “<a href="#compiling_mkiocccentry">compiling the mkiocccentry toolkit</a>”
 for details on compiling and the
@@ -688,9 +684,9 @@ have an mkiocccentry tool directory:</p>
 </div>
 <p>Once you’ve obtained the <strong>LATEST</strong> version (see the
 FAQ on “<a href="#obtaining_mkiocccentry">obtaining the latest mkiocccentry toolkit</a>”
-for more details), change to the <code>mkiocccentry</code> directory and then run:</p>
+to make sure of this), change to the <code>mkiocccentry</code> directory and then run:</p>
 <pre><code>    make clobber all</code></pre>
-<p>to compile the tools.</p>
+<p>to compile all the tools.</p>
 <p>Jump to: <a href="#">top</a></p>
 <div id="using_mkiocccentry">
 <h4 id="q-0.1.4-how-do-i-use-mkiocccentry">Q 0.1.4: How do I use mkiocccentry?</h4>
@@ -3855,9 +3851,9 @@ provided by the author and any other file in the winning entry, found under the
 entry’s subdirectory.</p>
 <p>If you downloaded <code>1984/mullender/1984_mullender.tar.bz2</code>, for instance, you might
 then do:</p>
-<div class="sourceCode" id="cb121"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb121-1"><a href="#cb121-1" aria-hidden="true" tabindex="-1"></a>        <span class="bu">cd</span> 1984/mullender</span>
-<span id="cb121-2"><a href="#cb121-2" aria-hidden="true" tabindex="-1"></a>        <span class="fu">make</span> everything</span>
-<span id="cb121-3"><a href="#cb121-3" aria-hidden="true" tabindex="-1"></a>        <span class="ex">./mullender.alt</span></span></code></pre></div>
+<pre><code>        cd 1984/mullender
+        make everything
+        ./mullender.alt</code></pre>
 <p>to compile all versions and then run the alternate version (if you have
 a PDP-11 or VAX-11 you would be able to run the original version). For more help
 on compiling entries, see also the
@@ -3898,8 +3894,8 @@ if you switched to each entry’s directory and ran <code>make everything</code>
 <p>If you download the 1984 tarball, i.e. <code>1984/1984.tar.bz2</code>, then you might
 extract it and then switch to the directory and compile everything of each
 entry:</p>
-<div class="sourceCode" id="cb122"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb122-1"><a href="#cb122-1" aria-hidden="true" tabindex="-1"></a>        <span class="bu">cd</span> 1984</span>
-<span id="cb122-2"><a href="#cb122-2" aria-hidden="true" tabindex="-1"></a>        <span class="fu">make</span> everything</span></code></pre></div>
+<pre><code>    cd 1984
+    make everything</code></pre>
 <p>For more help on compiling entries, see also the
 FAQ on “<a href="#make_rules">IOCCC Makefile rules</a>”.</p>
 <p>Of course in this case you can also switch to individual entries and look at the
