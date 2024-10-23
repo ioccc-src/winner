@@ -1125,7 +1125,9 @@ of the same theme.</p>
 previous IOCCC entries make it more challenging to be successful.</p>
 <p>It is also important to note that the <a href="next/guidelines.html">guidelines</a> often
 state something along the lines of:</p>
-<pre><code>    We tend to dislike programs that: are similar to previous winning entries.</code></pre>
+<blockquote>
+<p>We tend to dislike programs that: are similar to previous winning entries.</p>
+</blockquote>
 <p><strong>FAIR WARNING</strong>: Be sure to <strong>clearly explain</strong> near the beginning
 of your <code>remarks.md</code> file, see the
 FAQ on “<a href="#remarks_md">remarks.md</a>”,
@@ -2151,8 +2153,8 @@ FAQ on “<a href="#validating_json">validating JSON documents</a>”.</p>
 </div>
 <p>An <code>author_handle</code> is string that refers to a given author and is unique to the
 IOCCC. Each author has exactly one <code>author_handle</code>.</p>
-<p>For each <code>author_handle</code>, there will be a JSON file of the form:</p>
-<pre><code>    author/author_handle.json</code></pre>
+<p>For each <code>author_handle</code>, there will be a JSON file of the form:
+<code>author/author_handle.json</code>.</p>
 <p>See the
 FAQ on “<a href="#fix_author">fixing author information</a>”
 for information about how to update
@@ -2183,10 +2185,8 @@ desire.</p>
 <p>An <code>author</code> who has won a previous IOCCC is encouraged to reuse their
 <code>author_handle</code> so that new winning entries can be associated with the same
 author.</p>
-<p>For an anonymous <code>author</code>, their handle is one of these forms:</p>
-<pre><code>    Anonymous_year</code></pre>
-<p>or:</p>
-<pre><code>    Anonymous_year.digits</code></pre>
+<p>For an anonymous <code>author</code>, their handle is one of the form of <code>Anonymous_year</code>
+or <code>Anonymous_year.digits</code>.</p>
 <p>The latter form is in case there are more than one anonymous author in a given
 year.</p>
 <p><strong>NOTE</strong>: even if the directory name is not <code>anonymous</code> the above rules apply as in
@@ -2217,8 +2217,7 @@ IOCCC winning entry.</p>
 contact an authors of an IOCCC entry, they will consult the contents
 of the author’s JSON file for ways to contact them.</p>
 <p>Each author of an IOCCC winning entry has their own <code>author_handle.json</code> file
-of the form:</p>
-<pre><code>    author/author_handle.json</code></pre>
+of the form <code>author/author_handle.json</code>.</p>
 <p>where <em>author_handle</em> is an author handle. See
 FAQ on “<a href="#author_handle_faq">author handle</a>”
 for more information about an author handles.</p>
@@ -2227,9 +2226,9 @@ for more information about an author handles.</p>
 See <a href="https://www.json.org/json-en.html" class="uri">https://www.json.org/json-en.html</a> for information on the <em>So-called JSON
 spec</em>.</p>
 <p>A good way to understand the JSON file contents of a <code>author_handle.json</code> file
-is to look at an example, the <code>author_handle.json</code> file for Yusuke Endoh:</p>
-<pre><code>    author/Yusuke_Endoh.json</code></pre>
-<p>As of <em>Thu Nov 30 23:51:12 UTC 2023</em>, the contents was as follows:</p>
+is to look at an example, for instance the <code>author_handle.json</code> file for Yusuke
+Endoh, <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/author/Yusuke_Endoh.json">author/Yusuke_Endoh.json</a>.</p>
+<p>As of <em>Thu Nov 30 23:51:12 UTC 2023</em>, it was:</p>
 <pre><code>    {
         &quot;no_comment&quot; : &quot;mandatory comment: because comments were removed from the original JSON spec&quot;,
         &quot;author_JSON_format_version&quot; : &quot;1.0 2023-06-10&quot;,
@@ -2269,7 +2268,7 @@ is to look at an example, the <code>author_handle.json</code> file for Yusuke En
 <p><strong>NOTE</strong>: if you need to just check the validity of a JSON document then see the
 FAQ on “<a href="#validating_json">validating JSON documents</a>”. Taking that FAQ in mind,
 if you wish to validate every JSON file in <code>author/</code> then you could do so like:</p>
-<pre class="&lt;!--sh--&gt;"><code>        for auth in *.json; do jparse -q &quot;$auth&quot; || echo &quot;$auth is invalid JSON&quot; ; done</code></pre>
+<pre class="&lt;!--sh--&gt;"><code>    for auth in *.json; do jparse -q &quot;$auth&quot; || echo &quot;$auth is invalid JSON&quot; ; done</code></pre>
 <p>If you see any output then it will say which file or files are invalid JSON
 (this should not actually happen, however).</p>
 <p>See the
@@ -2280,14 +2279,14 @@ for now to location and/or install the <code>jparse(1)</code> command.</p>
 </div>
 <p>We now will walk thru the above JSON document looking at various JSON members:</p>
 <h5 id="no_comment">no_comment</h5>
-<pre><code>    &quot;no_comment&quot; : &quot;mandatory comment: because comments were removed from the original JSON spec&quot;,</code></pre>
+<pre><code>    &quot;no_comment&quot; : &quot;mandatory comment: because comments were removed from the original JSON spec&quot;</code></pre>
 <p>Because the authors of the so-called JSON spec removed the ability to use comments in JSON
 (for reason(s) that seem to be less than credible), the IOCCC mandates this <em>JSON member</em>
 be present in all IOCCC related JSON files.</p>
 <p>There <strong>MUST</strong> be one and only one <code>no_comment</code> <em>JSON member</em> and the <em>JSON value</em> <strong>MUST</strong>
 be the exact <em>JSON string</em> as shown above.</p>
 <h5 id="author_json_format_version">author_JSON_format_version</h5>
-<pre><code>    &quot;author_JSON_format_version&quot; : &quot;1.0 2023-06-10&quot;,</code></pre>
+<pre><code>    &quot;author_JSON_format_version&quot; : &quot;1.0 2023-06-10&quot;</code></pre>
 <p>This <em>JSON member</em> holds the format version of the <code>author_handle.json</code> JSON file.</p>
 <p>There <strong>MUST</strong> be one and only one <code>author_JSON_format_version</code>
 <em>JSON member</em> and the <em>JSON value</em> <strong>MUST</strong> be a <em>JSON string</em>.</p>
@@ -2299,7 +2298,7 @@ of the these files is modified: and then only those who maintain the
 <a href="https://www.ioccc.org">official IOCCC website</a> would be the one to do this
 in conjunction with changes to <a href="bin/index.html">bin directory tools</a>.</p>
 <h5 id="author_handle">author_handle</h5>
-<pre><code>    &quot;author_handle&quot; : &quot;Yusuke_Endoh&quot;,</code></pre>
+<pre><code>    &quot;author_handle&quot; : &quot;Yusuke_Endoh&quot;</code></pre>
 <p>This <em>JSON member</em> holds the author handle of the author.</p>
 <p>There <strong>MUST</strong> be one and only one <code>author_handle</code> <em>JSON member</em>
 and the <em>JSON value</em> <strong>MUST</strong> be a <em>JSON string</em> that is also a value author handle.</p>
@@ -2315,14 +2314,14 @@ without the trailing <code>.json</code>) of the <code>author_handle.json</code> 
 a change of <em>author_handle</em> <em>JSON value</em> would also require the
 <code>author_handle.json</code> file to also be renamed.</p>
 <h5 id="full_name">full_name</h5>
-<pre><code>    &quot;full_name&quot; : &quot;Yusuke Endoh&quot;,</code></pre>
+<pre><code>    &quot;full_name&quot; : &quot;Yusuke Endoh&quot;</code></pre>
 <p>This <em>JSON member</em> holds the full name of the author.</p>
 <p>There <strong>MUST</strong> be one and only one <code>full_name</code> <em>JSON member</em> and the <em>JSON value</em> <strong>MUST</strong>
 be a <em>JSON string</em>.</p>
 <p>The full name of an author may use non-ASCII characters so long as the
 full name is properly encoded as a <em>JSON string</em>.</p>
 <h5 id="sort_word">sort_word</h5>
-<pre><code>    &quot;sort_word&quot; : &quot;endoh&quot;,</code></pre>
+<pre><code>    &quot;sort_word&quot; : &quot;endoh&quot;</code></pre>
 <p>This <em>JSON member</em> holds the string that will be used to sort the author.</p>
 <p>There <strong>MUST</strong> be one and only one <code>sort_word</code> <em>JSON member</em> and the <em>JSON value</em> <strong>MUST</strong>
 be a <em>JSON string</em>. Moreover the string <strong>MUST</strong> be a lower case ASCII
@@ -2336,7 +2335,7 @@ wishes to be found in the <code>/authors.html</code> file under a different
 string, such as if they wish to be listed under their first name
 or their username, then they may change this accordingly.</p>
 <h5 id="location_code">location_code</h5>
-<pre><code>    &quot;location_code&quot; : &quot;JP&quot;,</code></pre>
+<pre><code>    &quot;location_code&quot; : &quot;JP&quot;</code></pre>
 <p>This <em>JSON member</em> holds the string that is the
 <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Decoding_table">ISO 3166-1 alpha-2 code</a>
 of the author’s location or country.</p>
@@ -2353,38 +2352,38 @@ ISO 3166-1 alpha-2 codes belong to locations that are not technically
 a country, such as “Antarctica” or a User-assigned code.</p>
 <p>If the author wishes to not specify a location, they should select <strong>XX</strong>.</p>
 <h5 id="email">email</h5>
-<pre><code>    &quot;email&quot; : &quot;mame@ruby-lang.org&quot;,</code></pre>
+<pre><code>    &quot;email&quot; : &quot;mame@ruby-lang.org&quot;</code></pre>
 <p>This <em>JSON member</em> holds the email address of the author, or is the value null.</p>
 <p>There <strong>MUST</strong> be one and only one <code>email</code> <em>JSON member</em> and the <em>JSON value</em> <strong>MUST</strong>
 be a <em>JSON string</em> or it <strong>MUST</strong> be a <em>JSON null</em>.</p>
 <p>If the author wishes to not specify an email address, or if the email address is
 unknown, it should be the <em>JSON null</em> as the <em>JSON value</em> of this <em>JSON member</em>.
 For example:</p>
-<pre><code>    &quot;email&quot; : null,</code></pre>
+<pre><code>    &quot;email&quot; : null</code></pre>
 <p><strong>NOTE</strong>: The <em>JSON null</em> is <strong>NOT</strong> enclosed in quotes!</p>
 <h5 id="url">url</h5>
-<pre><code>    &quot;url&quot; : &quot;https://mametter.hatenablog.com&quot;,</code></pre>
+<pre><code>    &quot;url&quot; : &quot;https://mametter.hatenablog.com&quot;</code></pre>
 <p>This <em>JSON member</em> holds the URL of the author’s home page.</p>
 <p>There <strong>MUST</strong> be one and only one <code>url</code> <em>JSON member</em> and the <em>JSON value</em> <strong>MUST</strong>
 be a <em>JSON string</em> or it <strong>MUST</strong> be a <em>JSON null</em>.</p>
 <p>If the author wishes to not specify a URL or if the URL is
 unknown, it should be the <em>JSON null</em> as the <em>JSON value</em> of this <em>JSON
 member</em>. For example:</p>
-<pre><code>    &quot;url&quot; : null,</code></pre>
+<pre><code>    &quot;url&quot; : null</code></pre>
 <p><strong>NOTE</strong>: The <em>JSON null</em> is <strong>NOT</strong> enclosed in quotes!</p>
 <h5 id="alt_url">alt_url</h5>
-<pre><code>    &quot;alt_url&quot; : null,</code></pre>
+<pre><code>    &quot;alt_url&quot; : null</code></pre>
 <p>This <em>JSON member</em> holds an alternate or 2nd URL a home page for the author.</p>
 <p>There <strong>MUST</strong> be one and only one <code>alt_url</code> <em>JSON member</em> and the <em>JSON value</em> <strong>MUST</strong>
 be a <em>JSON string</em> or it <strong>MUST</strong> be a <em>JSON null</em>.</p>
 <p>In some cases the author may wish to record a special URL for their IOCCC entry,
 or a 2nd URL such as a work or school or personal home page. For example,
 Cody as of <em>Thu Nov 30 23:51:12 UTC 2023</em> used:</p>
-<pre><code>    &quot;alt_url&quot; : &quot;https://ioccc.xexyl.net&quot;,</code></pre>
+<pre><code>    &quot;alt_url&quot; : &quot;https://ioccc.xexyl.net&quot;</code></pre>
 <p>If the author wishes to not specify an alternate URL, or if the alternate URL is
 unknown, it should be the <em>JSON null</em> as the <em>JSON value</em> of this <em>JSON
 member</em>. For example:</p>
-<pre><code>    &quot;alt_url&quot; : null,</code></pre>
+<pre><code>    &quot;alt_url&quot; : null</code></pre>
 <p><strong>NOTE</strong>: The <em>JSON null</em> is <strong>NOT</strong> enclosed in quotes!</p>
 <h5 id="deprecated_twitter_handle">deprecated_twitter_handle</h5>
 <p>This <em>JSON member</em> used to hold the twitter handle of the author.</p>
@@ -2394,17 +2393,17 @@ be a <em>JSON string</em> or it <strong>MUST</strong> be a <em>JSON null</em>.</
 and so the <code>deprecated_twitter_handle</code> is <strong>no longer used</strong>. A <em>JSON value</em> that is
 not a <em>JSON null</em> is kept for only historic reasons. For example, Anthony C. Howe
 once used:</p>
-<pre><code>    &quot;deprecated_twitter_handle&quot; : &quot;@SirWumpus&quot;,</code></pre>
+<pre><code>    &quot;deprecated_twitter_handle&quot; : &quot;@SirWumpus&quot;</code></pre>
 <p>If the author wishes to not specify a twitter handle, or if the twitter handle is
 unknown, it should be the <em>JSON null</em> as the <em>JSON value</em> of this <em>JSON member</em>.
 For example:</p>
-<pre><code>    &quot;deprecated_twitter_handle&quot; : null,</code></pre>
+<pre><code>    &quot;deprecated_twitter_handle&quot; : null</code></pre>
 <p>Of course in the future we will not be asking for twitter handles so this means
 that unless the winner is a previous winner (before we moved to mastodon) this
 will always be <code>null</code> anyway.</p>
 <p><strong>NOTE</strong>: The <em>JSON null</em> is <strong>NOT</strong> enclosed in quotes!</p>
 <h5 id="mastodon">mastodon</h5>
-<pre><code>    &quot;mastodon&quot; : &quot;@mame@ruby.social&quot;,</code></pre>
+<pre><code>    &quot;mastodon&quot; : &quot;@mame@ruby.social&quot;</code></pre>
 <p>This <em>JSON member</em> holds the
 <a href="https://en.wikipedia.org/wiki/Mastodon_(social_network)">Mastodon social network</a>
 handle of the author.</p>
@@ -2424,68 +2423,113 @@ are selected. We recommend you follow us on Mastodon.</p>
 <p>If the author wishes to not specify an Mastodon handle, or if the Mastodon handle is
 unknown, it should be the <em>JSON null</em> as the <em>JSON value</em> of this <em>JSON member</em>.
 For example:</p>
-<pre><code>    &quot;mastodon&quot; : null,</code></pre>
+<pre><code>    &quot;mastodon&quot; : null</code></pre>
 <p><strong>NOTE</strong>: The <em>JSON null</em> is <strong>NOT</strong> enclosed in quotes!</p>
 <h5 id="mastodon_url">mastodon_url</h5>
-<pre><code>    &quot;mastodon_url&quot; : &quot;https://ruby.social/@mame&quot;,</code></pre>
+<pre><code>    &quot;mastodon_url&quot; : &quot;https://ruby.social/@mame&quot;</code></pre>
 <p>This <em>JSON member</em> holds the URL of the author’s Mastodon page.</p>
 <p>There <strong>MUST</strong> be one and only one <code>mastodon_url</code> <em>JSON member</em> and the <em>JSON value</em> <strong>MUST</strong>
 be a <em>JSON string</em> or it <strong>MUST</strong> be a <em>JSON null</em>. The <em>JSON string</em> just be a valid URL.
 If the <code>mastodon</code> handle is a <em>JSON null</em>, them the <code>mastodon_url</code> <strong>MUST</strong> be a <em>JSON null</em>.
 If the <code>mastodon</code> handle is a <em>JSON string</em>, then the <code>mastodon_url</code> <strong>MUST</strong> be a <em>JSON string</em>.</p>
 <p>The <code>mastodon_url</code> is just a translation of the above mentioned Mastodon handle.
-For example, if the Mastodon handle is:</p>
-<pre><code>    @user@server.domain</code></pre>
-<p>Then the <code>mastodon_url</code> would be:</p>
-<pre><code>    https://server.domain/@user</code></pre>
+For example, if the Mastodon handle is <code>@user@server.domain</code>, then the
+<code>mastodon_url</code> would be <code>https://server.domain/@user</code>.</p>
 <p>If the author wishes to not specify an Mastodon URL, or if the Mastodon URL is
 unknown, it should be the <em>JSON null</em> as the <em>JSON value</em> of this <em>JSON member</em>.
 For example:</p>
-<pre><code>    &quot;mastodon_url&quot; : null,</code></pre>
+<pre><code>    &quot;mastodon_url&quot; : null</code></pre>
 <p><strong>NOTE</strong>: The <em>JSON null</em> is <strong>NOT</strong> enclosed in quotes!</p>
 <p>See
 FAQ on “<a href="#try_mastodon">Mastodon</a>”
 for more information on Mastodon.</p>
 <h5 id="github">github</h5>
-<pre><code>    &quot;github&quot; : &quot;@mame&quot;,</code></pre>
+<pre><code>    &quot;github&quot; : &quot;@mame&quot;</code></pre>
 <p>This <em>JSON member</em> holds the <a href="https://github.com">GitHub</a> handle of the author.</p>
 <p>There <strong>MUST</strong> be one and only one <code>github</code> <em>JSON member</em> and the <em>JSON value</em> <strong>MUST</strong>
 be a <em>JSON string</em> or it <strong>MUST</strong> be a <em>JSON null</em>. The <code>github</code> <em>JSON string</em> <strong>MUST</strong>
 start with an at sign (_<span class="citation" data-cites="_">@_</span>) and <strong>MUST</strong> be a valid GitHub username.</p>
 <p>The IOCCC uses GitHub to hold the <a href="https://github.com/ioccc-src/winner">official winner repo of the IOCCC</a>,
 and hosts <a href="https://www.ioccc.org">official IOCCC website</a> on GitHub pages.</p>
-<p>The IOCCC GitHub handle is:</p>
-<pre><code>    @ioccc-src</code></pre>
+<p>The IOCCC GitHub handle is <a href="https://github.com/ioccc-src/"><span class="citation" data-cites="ioccc-src">@ioccc-src</span></a>.</p>
 <p>If the author wishes to not specify an GitHub handle, or if the GitHub handle is
 unknown, it should be the <em>JSON null</em> as the <em>JSON value</em> of this <em>JSON member</em>.
 For example:</p>
-<pre><code>    &quot;github&quot; : null,</code></pre>
+<pre><code>    &quot;github&quot; : null</code></pre>
 <p><strong>NOTE</strong>: The <em>JSON null</em> is <strong>NOT</strong> enclosed in quotes!</p>
 <h5 id="affiliation">affiliation</h5>
-<pre><code>    &quot;affiliation&quot; : null,</code></pre>
+<pre><code>    &quot;affiliation&quot; : null</code></pre>
 <p>This <em>JSON member</em> holds the affiliation of the author.</p>
 <p>There <strong>MUST</strong> be one and only one <code>affiliation</code> <em>JSON member</em> and the <em>JSON value</em> <strong>MUST</strong>
 be a <em>JSON string</em> or it <strong>MUST</strong> be a <em>JSON null</em>.</p>
 <p>An affiliation might be the name of a school, university, company, or organization.
 It is recommended that the affiliation <em>JSON string</em> be the formal affiliation name.
 For example, the affiliation for the IOCCC would be:</p>
-<pre><code>    The International Obfuscared C Code Contest</code></pre>
+<pre><code>    &quot;affiliation&quot;: &quot;The International Obfuscated C Code Contest&quot;</code></pre>
 <p>If the author wishes to not specify an affiliation, or if the affiliation is
 unknown, it should be the <em>JSON null</em> as the <em>JSON value</em> of this <em>JSON member</em>.
 For example:</p>
-<pre><code>    &quot;affiliation&quot; : null,</code></pre>
+<pre><code>    &quot;affiliation&quot; : null</code></pre>
 <p><strong>NOTE</strong>: The <em>JSON null</em> is <strong>NOT</strong> enclosed in quotes!</p>
 <h5 id="winning_entry_set">winning_entry_set</h5>
 <h5 id="entry_id">entry_id</h5>
 <pre><code>    &quot;winning_entry_set&quot; : [
-        { &quot;entry_id&quot; : &quot;2012_endoh1&quot; },
-        { &quot;entry_id&quot; : &quot;2012_endoh2&quot; },
-        { &quot;entry_id&quot; : &quot;2013_endoh1&quot; },
-    ...
-        { &quot;entry_id&quot; : &quot;2020_endoh1&quot; },
-        { &quot;entry_id&quot; : &quot;2020_endoh2&quot; },
-        { &quot;entry_id&quot; : &quot;2020_endoh3&quot; }
+        {
+            &quot;entry_id&quot; : &quot;2012_endoh1&quot;
+        },
+        {
+            &quot;entry_id&quot; : &quot;2012_endoh2&quot;
+        },
+        {
+            &quot;entry_id&quot; : &quot;2013_endoh1&quot;
+        },
+        {
+            &quot;entry_id&quot; : &quot;2013_endoh2&quot;
+        },
+        {
+            &quot;entry_id&quot; : &quot;2013_endoh3&quot;
+        },
+        {
+            &quot;entry_id&quot; : &quot;2013_endoh4&quot;
+        },
+        {
+            &quot;entry_id&quot; : &quot;2014_endoh1&quot;
+        },
+        {
+            &quot;entry_id&quot; : &quot;2014_endoh2&quot;
+        },
+        {
+            &quot;entry_id&quot; : &quot;2015_endoh1&quot;
+        },
+        {
+            &quot;entry_id&quot; : &quot;2015_endoh2&quot;
+        },
+        {
+            &quot;entry_id&quot; : &quot;2015_endoh3&quot;
+        },
+        {
+            &quot;entry_id&quot; : &quot;2015_endoh4&quot;
+        },
+        {
+            &quot;entry_id&quot; : &quot;2018_endoh1&quot;
+        },
+        {
+            &quot;entry_id&quot; : &quot;2018_endoh2&quot;
+        },
+        {
+            &quot;entry_id&quot; : &quot;2019_endoh&quot;
+        },
+        {
+            &quot;entry_id&quot; : &quot;2020_endoh1&quot;
+        },
+        {
+            &quot;entry_id&quot; : &quot;2020_endoh2&quot;
+        },
+        {
+            &quot;entry_id&quot; : &quot;2020_endoh3&quot;
+        }
     ]</code></pre>
+<p>(… as of Wed 23 Oct 2024 17:20:26 UTC.)</p>
 <p>The <code>winning_entry_set</code> <em>JSON member</em> holds <em>JSON array</em> containing one or more <code>entry_id</code> _JSON member_s.</p>
 <p>There <strong>MUST</strong> be one and only one <code>winning_entry_set</code> and the <em>JSON value</em> <strong>MUST</strong>
 be a non-empty <em>JSON array</em>. Each value in that <em>JSON array</em> <strong>MUST</strong> must contain
@@ -2541,10 +2585,9 @@ for more information on terms such as <em>author</em>, <em>entry</em>, and <em>s
 <p>An <code>entry_id</code> is a string that identifies a winning entry of the IOCCC.</p>
 <p>An <code>entry_id</code> is a 4-digit year, followed by an underscore, followed by a directory name.</p>
 <p>For example, the <code>entry_id</code> associated with Cody Boone Ferguson’s 2nd winning IOCCC entry
-of 2020 is found under the following directory:</p>
-<pre><code>    2020/ferguson2</code></pre>
-<p>The <code>entry_id</code> for that winning entry is:</p>
-<pre><code>    2020_ferguson2</code></pre>
+of 2020 is found under the directory
+<a href="2020/ferguson2/index.html">2020/ferguson2</a>.</p>
+<p>The <code>entry_id</code> for that winning entry is <code>2020_ferguson2</code>.</p>
 <p>Jump to: <a href="#">top</a></p>
 <div id="entry_json">
 <h3 id="q-3.10-what-is-a-.entry.json-file-and-how-is-it-used">Q 3.10: What is a <code>.entry.json</code> file and how is it used?</h3>
@@ -2556,9 +2599,9 @@ about the entry. We describe the fields below in order to help you understand
 its contents.</p>
 <p>This file is created by the <a href="bin/index.html#cvt-submission">cvt-submission.sh</a>
 tool as part of the final steps to announce a new set of winning IOCCC entries.</p>
-<p>Each winning entry has its own <code>.entry.json</code> filename of the form:</p>
-<pre><code>    YYYY/winner/.entry.json</code></pre>
-<p>where <em>winner</em> is the entry directory name, usually the name of the author.</p>
+<p>Each winning entry has its own <code>.entry.json</code> filename of the form:
+<code>YYYY/winner/.entry.json</code></p>
+<p>.. where <em>winner</em> is the entry directory name, usually the name of the author.</p>
 <p><strong>IMPORTANT NOTE</strong>: this file should <strong>NOT</strong> be manually modified! It is created
 by the <a href="bin/index.html#csv2entry">csv2entry</a> tool when updating the manifest.</p>
 <h4 id="entry.json-json-file-contents"><code>.entry.json</code> JSON file contents</h4>
@@ -2672,14 +2715,14 @@ it is shorter than some of the others.</p>
 <p>We now will walk through the above JSON document looking at all the JSON
 members:</p>
 <h5 id="no_comment-1"><code>no_comment</code></h5>
-<pre><code>    &quot;no_comment&quot; : &quot;mandatory comment: because comments were removed from the original JSON spec&quot;,</code></pre>
+<pre><code>    &quot;no_comment&quot; : &quot;mandatory comment: because comments were removed from the original JSON spec&quot;</code></pre>
 <p>Because the authors of the so-called JSON spec removed the ability to use comments in JSON
 (for reason(s) that seem to be less than credible), the IOCCC mandates this <em>JSON member</em>
 be present in all IOCCC related JSON files.</p>
 <p>There <strong>MUST</strong> be one and only one <code>no_comment</code> <em>JSON member</em> and the <em>JSON value</em> <strong>MUST</strong>
 be the exact <em>JSON string</em> as shown above.</p>
 <h5 id="entry_json_format_version"><code>entry_JSON_format_version</code></h5>
-<pre><code>        &quot;entry_JSON_format_version&quot; : &quot;1.2 2024-09-25&quot;,</code></pre>
+<pre><code>        &quot;entry_JSON_format_version&quot; : &quot;1.2 2024-09-25&quot;</code></pre>
 <p>This <em>JSON member</em> holds the format version of the <code>.entry.json</code> JSON file.</p>
 <p>There <strong>MUST</strong> be one and only one <code>entry_JSON_format_version</code>
 <em>JSON member</em> and the <em>JSON value</em> <strong>MUST</strong> be a <em>JSON string</em>.</p>
@@ -2689,20 +2732,20 @@ of the these files is modified: and then only those who maintain the
 <a href="https://www.ioccc.org">official IOCCC website</a> would be the one to do this
 in conjunction with changes to <a href="bin/index.html">bin directory tools</a>.</p>
 <h5 id="award"><code>award</code></h5>
-<pre><code>    &quot;award&quot; : &quot;Third Place&quot;,</code></pre>
+<pre><code>    &quot;award&quot; : &quot;Third Place&quot;</code></pre>
 <p>This JSON string is the award title of the entry which the <a href="judges.html">Judges</a>
 decide/decided when it becomes/became a winning entry.</p>
 <h5 id="year"><code>year</code></h5>
-<pre><code>    &quot;year&quot; : 1984,</code></pre>
+<pre><code>    &quot;year&quot; : 1984</code></pre>
 <p>This JSON number is the year the contest ran, ended or was announced in.</p>
 <h5 id="dir"><code>dir</code></h5>
-<pre><code>    &quot;dir&quot; : &quot;laman&quot;,</code></pre>
+<pre><code>    &quot;dir&quot; : &quot;laman&quot;</code></pre>
 <p>This JSON string is the subdirectory of the entry, <strong>under</strong> the year directory,
 in this case <a href="1984/index.html">1984</a>. With the above member, <code>year</code>, and this
 one, one can determine the directory of the entry, here being
 <a href="1984/laman/index.html">1984/laman</a>.</p>
 <h5 id="entry_id-1"><code>entry_id</code></h5>
-<pre><code>    &quot;entry_id&quot; : &quot;1984_laman&quot;,</code></pre>
+<pre><code>    &quot;entry_id&quot; : &quot;1984_laman&quot;</code></pre>
 <p>This is the ID of the entry in question and corresponds to the <code>entry_id</code> in the
 <code>author/author_handle.json</code> file.</p>
 <p>See
@@ -2731,7 +2774,7 @@ for more information on <code>.info.json</code> files.</p>
 <h5 id="author_set"><code>author_set</code></h5>
 <pre><code>    &quot;author_set&quot; : [
         { &quot;author_handle&quot; : &quot;Mike_Laman&quot; }
-    ],</code></pre>
+    ]</code></pre>
 <p>This JSON <strong>array</strong> has a list of <code>author_handle</code>s that indicate who won this
 entry.</p>
 <p>That <em>JSON member</em> holds the author handle of the author.</p>
@@ -3483,8 +3526,8 @@ for downloading, installing and using ImageMagick.</p>
 FAQ on “<a href="#X11">X11</a>”
 for general information about X11.</p>
 <p>Once X11 is install and the X Window Server is running, one needs to compile
-and link with the two libraries, <em>GL</em> and <em>GLU</em>:</p>
-<pre><code>    cc ... -lGL -lGLU -L _location-where-X11-libs-are-installed_ -lX11</code></pre>
+and link with the two libraries, <em>GL</em> and <em>GLU</em>, which the Makefile should do if
+you just run <code>make</code>.</p>
 <p><strong>NOTE</strong>: The OpenGL development effort is being managed by <a href="https://vulkan.org">vulkan.org</a>.
 We suggest you check out their resource for further information on OpenGL.</p>
 <h4 id="red-hat-based-linux-7">Red Hat based Linux</h4>
@@ -4540,11 +4583,11 @@ cake recipe</a>.</p>
 <p>You may correct or update IOCCC author information by submitting a
 GitHub pull request that modifies an author’s <code>author_handle.json</code> file.</p>
 <p>For example, if a given <code>author_handle.json</code> file contained:</p>
-<pre><code>    &quot;url&quot; : &quot;https://www.example.com/employee/username&quot;,</code></pre>
+<pre><code>    &quot;url&quot; : &quot;https://www.example.com/employee/username&quot;</code></pre>
 <p>and you knew that the author has long ago left the <code>www.example.com</code> company,
 and that they have a new faculty web page at <code>www.example.edu</code>, then you should
 submit a GitHub pull request to change the above line to:</p>
-<pre><code>    &quot;url&quot; : &quot;https://www.example.edu/faculty/deartment/user.name&quot;,</code></pre>
+<pre><code>    &quot;url&quot; : &quot;https://www.example.edu/faculty/deartment/user.name&quot;</code></pre>
 <p>Authors of IOCCC winning entries are kept in JSON files of the form:</p>
 <pre><code>    author/author_handle.json</code></pre>
 <p>where <code>author_handle</code> is an author handle.</p>
@@ -4606,11 +4649,11 @@ about authors of IOCCC entries. See
 FAQ on “<a href="#author_json">author_handle.json</a>”
 for information about the contents of these JSON files and how they are used.</p>
 <p>For example, if a given <code>author_handle.json</code> file contained:</p>
-<pre><code>    &quot;location_code&quot; : &quot;ZZ&quot;,</code></pre>
+<pre><code>    &quot;location_code&quot; : &quot;ZZ&quot;</code></pre>
 <p>and you knew that the author was located in <a href="location.html#AU">Australia</a>
 (location code <strong>AU</strong>), we encourage you to submit a <strong>GitHub pull
 request</strong> to change that line to:</p>
-<pre><code>    &quot;location_code&quot; : &quot;AU&quot;,</code></pre>
+<pre><code>    &quot;location_code&quot; : &quot;AU&quot;</code></pre>
 <p>See the
 FAQ on “<a href="#fix_author">fixing author information</a>”
 for information about how to change author location codes.</p>
