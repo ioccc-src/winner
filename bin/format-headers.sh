@@ -5,31 +5,20 @@
 # We formats headers in README.md files so that before a line that starts with
 # '##' (as in '^##') that have specific names there are two blank lines (\n\n).
 #
-# Script written by Landon with minor improvements by Cody Boone Ferguson where
-# now it only acts on files under git control rather than any README.md file in
-# the [0-9]{4} directories.
+# This script was written sometime in 2023 or 2024 by:
 #
-# Copyright (c) 2023-2024 by Landon Curt Noll.  All Rights Reserved.
+#	@xexyl
+#	https://xexyl.net		Cody Boone Ferguson
+#	https://ioccc.xexyl.net
 #
-# Permission to use, copy, modify, and distribute this software and
-# its documentation for any purpose and without fee is hereby granted,
-# provided that the above copyright, this permission notice and text
-# this comment, and the disclaimer below appear in all of the following:
+# which uses Perl code by Landon Curt Noll, with the improvement that instead of
+# acting on all README.md files, it only acts on README.md files under git
+# control.
 #
-#       supporting documentation
-#       source copies
-#       source works derived from this source
-#       binaries derived from this source or from derived source
+# The Perl code makes sure that for certain headers in the README.md files,
+# there are the correct number of blank lines before/after.
 #
-# LANDON CURT NOLL DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE,
-# INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO
-# EVENT SHALL LANDON CURT NOLL BE LIABLE FOR ANY SPECIAL, INDIRECT OR
-# CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF
-# USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
-# OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
-# PERFORMANCE OF THIS SOFTWARE.
-#
-# chongo (Landon Curt Noll, http://www.isthe.com/chongo/index.html) /\oo/\
+#   "Because sometimes even the IOCCC Judges need some help." :-)
 #
 # Share and enjoy! :-)
 
