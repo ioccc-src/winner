@@ -540,7 +540,7 @@ use:
 ## Please do NOT end markdown links with "`))`"
 </div>
 
-Please do **NOT** end a markdown links with a double closed parenthesis "`))`".
+Please do **NOT** end a markdown link with a double closed parenthesis "`))`".
 
 Markdown links that end in "`))`" complicate parsing and sometimes lead
 to incorrect URLs or file paths.
