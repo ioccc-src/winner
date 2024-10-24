@@ -460,6 +460,32 @@ We recommend that this tool be invoked via the top level `Makefile`:
     make find_missing_links
 ```
 
+<div id="find-invalid-json">
+### [find-invalid-json.sh](%%REPO_URL%%/bin/find-invalid-json.sh)
+</div>
+
+This script uses the `jparse(1)` tool, which can be obtained from the
+[mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry)'s copy of the
+[jparse repo](https://github.com/xexyl/jparse/), and searches for any invalid
+JSON files in the tree.
+
+This is important because the IOCCC makes extensive use of JSON.
+
+Usage:
+
+``` <!---sh-->
+    bin/find-invalid-json.sh -v 1
+```
+
+If no invalid JSON files are found, this tool exits 0 with no output
+(debug messages not withstanding), otherwise this tool will exit non-zero.
+
+We recommend that this tool be invoked via the top level `Makefile`:
+
+``` <!---sh-->
+    make find_invalid_json
+```
+
 
 <div id="format-headers">
 ### [format-headers.sh](%%REPO_URL%%/bin/format-headers.sh)
