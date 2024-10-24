@@ -142,7 +142,7 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
 	-e string	output string, followed by newline, to stderr (def: do not)
 	-E exitcode	force exit with exitcode (def: exit based on success or failure of the action)
 
-	[ignored]	all arguments are igoored
+	[ignored]	all arguments are ignored
 
 Exit codes:
      0         all OK

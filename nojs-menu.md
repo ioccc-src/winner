@@ -29,3 +29,5 @@
 * [IOCCC Security Policy](SECURITY.html)
 * [Thanks for the help](thanks-for-help.html)
 * [IOCCC markdown](markdown.html)
+* [Website scripts](bin/index.html)
+* [Script include files](inc/index.html)
