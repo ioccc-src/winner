@@ -24,7 +24,8 @@ on an IOCCC entry by entry basis.
 - [General thanks](#general_thanks)
 - [Makefiles fixes and improvements](#makefiles_fixes_improvements)
 - [Consistency improvements](#consistency_improvements)
-- [Manifest improvements](#manifest_improvements)
+- [Try script system](#try)
+- [Website and manifest improvements](#website_improvements)
 - [FAQ improvements](#faq_improvements)
 - [Thank you honor roll](#thank_you_honor_roll)
 - [Did we neglect to credit you?](#neglect)
@@ -34,6 +35,7 @@ on an IOCCC entry by entry basis.
 # [1984 - The 1st IOCCC](1984/index.html)
 </div>
 
+Jump to: [top](#)
 
 <div id="1984_anonymous">
 ## Winning entry: [1984/anonymous](1984/anonymous/index.html)
@@ -64,6 +66,8 @@ source code and the tattoo together as an image):
 The tattoo was done in 2005 by [Thomas
 Scovell](https://web.archive.org/web/20070120220721/https://thomasscovell.com/tattoo.php).
 
+
+Jump to: [top](#)
 
 <div id="1984_decot">
 ## Winning entry: [1984/decot](1984/decot/index.html)
@@ -142,6 +146,7 @@ To see the diff between the original and the alternate code, try:
         cd 1984/decot ; make diff_orig_alt
 ```
 
+Jump to: [top](#)
 
 <div id="1984_laman">
 ## Winning entry: [1984/laman](1984/laman/index.html)
@@ -150,6 +155,7 @@ To see the diff between the original and the alternate code, try:
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/1984/laman/try.sh) script.
 
+Jump to: [top](#)
 
 <div id="1984_mullender">
 ## Winning entry: [1984/mullender](1984/mullender/index.html)
@@ -176,11 +182,13 @@ copy of it as to what it should have been at the time, in the fabulous [Unix
 History
 Repo](https://github.com/dspinellis/unix-history-repo/tree/Research-Release).
 
+Jump to: [top](#)
 
 <div id="1985">
 # [1985 - The 2nd IOCCC](1985/index.html)
 </div>
 
+Jump to: [top](#)
 
 <div id="1985_applin">
 ## Winning entry: [1984/applin](1985/applin/index.html)
@@ -208,6 +216,7 @@ shell, after the output (despite having `\n` in the string - can you figure out
 why?) but to make it more friendly to users Cody made it print a `\n` prior to
 returning to the shell. The original code does not have this change.
 
+Jump to: [top](#)
 
 <div id="1985_august">
 ## Winning entry: [1985/august](1985/august/index.html)
@@ -218,9 +227,7 @@ returning to the shell. The original code does not have this change.
 versions of `clang` object to the number of args of `main()`, saying that it must
 be 0, 2 or 3. The version this has been observed in does not actually object to
 1 arg but it is entirely possible that this changes so a second arg (that's not
-needed and is unused) has been added just in case.
-
-See the
+needed and is unused) has been added just in case. See the
 FAQ on "[main function args](faq.html#arg_count)"
 for more details.
 
@@ -234,6 +241,7 @@ Cody also added the [try.sh](%%REPO_URL%%/1985/august/try.sh) script (which runs
 whether `primes(6)` is installed or not, but it only does it once with the
 default value).
 
+Jump to: [top](#)
 
 <div id="1985_lycklama">
 ## Winning entry: [1985/lycklama](1985/lycklama/index.html)
@@ -250,6 +258,7 @@ that Cody added. See the [index.html](1985/lycklama/index.html) for details.
 
 Cody also provided the [try.alt.sh](%%REPO_URL%%/1985/lycklama/try.alt.sh) script.
 
+Jump to: [top](#)
 
 <div id="1985_shapiro">
 ## Winning entry: [1985/shapiro](1985/shapiro/index.html)
@@ -264,6 +273,7 @@ you to enter a number, in an infinite loop, exiting if any non-digits are in
 input (this includes negative numbers which in the code actually sets it back to
 39, the default).
 
+Jump to: [top](#)
 
 <div id="1985_sicherman">
 ## Winning entry: [1985/sicherman](1985/sicherman/index.html)
@@ -378,11 +388,13 @@ should they object to `main()` having only one arg.
 Cody also added the [try.sh](%%REPO_URL%%/1985/sicherman/try.sh) and
 [try.alt.sh](%%REPO_URL%%/1985/sicherman/try.alt.sh) scripts.
 
+Jump to: [top](#)
 
 <div id="1986">
 # [1986 - The 3rd IOCCC](1986/index.html)
 </div>
 
+Jump to: [top](#)
 
 <div id="1986_applin">
 ## Winning entry: [1986/applin](1986/applin/index.html)
@@ -392,6 +404,7 @@ Cody also added the [try.sh](%%REPO_URL%%/1985/sicherman/try.sh) and
 [Cody](#cody) made the C file executable so one does not have to do `sh
 ./applin.c` or `./applin`; they can do either `./applin.c` or `./applin`.
 
+Jump to: [top](#)
 
 <div id="1986_bright">
 ## Winning entry: [1986/bright](1986/bright/index.html)
@@ -400,6 +413,7 @@ Cody also added the [try.sh](%%REPO_URL%%/1985/sicherman/try.sh) and
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/1986/bright/try.sh) script.
 
+Jump to: [top](#)
 
 <div id="1986_hague">
 ## Winning entry: [1986/hague](1986/hague/index.html)
@@ -408,12 +422,11 @@ Cody also added the [try.sh](%%REPO_URL%%/1985/sicherman/try.sh) and
 
 [Cody](#cody) made this use `fgets()`.
 Cody also added the [try.sh](%%REPO_URL%%/1986/hague/try.sh) script which also feeds to the
-program the `input.txt` text file that Cody added.
-
-See the
+program the `input.txt` text file that Cody added.  See the
 FAQ on "[gets and fgets](faq.html#gets)"
 for why this was done.
 
+Jump to: [top](#)
 
 <div id="1986_holloway">
 ## Winning entry: [1986/holloway](1986/holloway/index.html)
@@ -428,6 +441,7 @@ caused a segfault. By adding a new variable, `char *t`, initialising it to `s`
 and then using `t` instead of `s` it compiles and runs successfully under
 `clang` and `gcc`.
 
+Jump to: [top](#)
 
 <div id="1986_marshall">
 ## Winning entry: [1986/marshall](1986/marshall/index.html)
@@ -495,6 +509,7 @@ which gave:
 which can be disabled. It results in the same behaviour but this way no warnings
 are produced.
 
+Jump to: [top](#)
 
 <div id="1986_pawka">
 ## Winning entry: [1986/pawka](1986/pawka/index.html)
@@ -505,6 +520,7 @@ are produced.
 `-Wno-strict-prototypes` was in the wrong location, suggesting that there is a
 `-D` needed to compile the entry but this is not actually so.
 
+Jump to: [top](#)
 
 <div id="1986_stein">
 ## Winning entry: [1986/stein](1986/stein/index.html)
@@ -520,6 +536,7 @@ code is now one line.
 Cody also added the [stein.sh](%%REPO_URL%%/1986/stein/stein.sh) script which runs the two
 commands that we suggest in order to get it to show clean output.
 
+Jump to: [top](#)
 
 <div id="1986_wall">
 ## Winning entry: [1986/wall](1986/wall/index.html)
@@ -632,11 +649,13 @@ Some of the changes required:
 
 There might have been other changes as well.
 
+Jump to: [top](#)
 
 <div id="1987">
 # [1987 - The 4th IOCCC](1987/index.html)
 </div>
 
+Jump to: [top](#)
 
 <div id="1987_biggar">
 ## Winning entry: [1987/biggar](1987/biggar/index.html)
@@ -645,6 +664,7 @@ There might have been other changes as well.
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/1987/biggar/try.sh) script.
 
+Jump to: [top](#)
 
 <div id="1987_heckbert">
 ## Winning entry: [1987/heckbert](1987/heckbert/index.html)
@@ -663,6 +683,7 @@ of `strings.h` and because it's identical in use to `strchr(3)` (and we noted
 that for System V we had to do this) Cody added to the Makefile
 `-Dindex=strchr`.
 
+Jump to: [top](#)
 
 <div id="1987_hines">
 ## Winning entry: [1987/hines](1987/hines/index.html)
@@ -674,6 +695,7 @@ that for System V we had to do this) Cody added to the Makefile
 for demonstration purposes. Notice that the program is case sensitive which
 running the program on the text file demonstrates.
 
+Jump to: [top](#)
 
 <div id="1987_lievaart">
 ## Winning entry: [1987/lievaart](1987/lievaart/index.html)
@@ -722,21 +744,20 @@ Cody also made this ever so slightly like the original code by adding back the
 well (the one with the board and the one without, the entry itself with the
 size constraints of the contest).
 
+Jump to: [top](#)
 
 <div id="1987_wall">
 ## Winning entry: [1987/wall](1987/wall/index.html)
 ### Winning entry source code: [wall.c](%%REPO_URL%%/1987/wall/wall.c)
 </div>
 
-[Cody](#cody) made this use `fgets(3)`.
-
-See the
+[Cody](#cody) made this use `fgets(3)`.  See the
 FAQ on "[gets and fgets](faq.html#gets)"
 for why this was done.
 
-
 Cody also added the [try.sh](%%REPO_URL%%/1987/wall/try.sh) script.
 
+Jump to: [top](#)
 
 <div id="1987_westley">
 ## Winning entry: [1987/westley](1987/westley/index.html)
@@ -758,9 +779,15 @@ Cody also added to the `Makefile` `-include stdio.h` in the nowadays very
 unlikely(?) but nevertheless suggested case that `putchar(3)` is not available.
 
 
+Jump to: [top](#)
+
+
 <div id="1988">
 # [1988 - The 5th IOCCC](1988/index.html)
 </div>
+
+
+Jump to: [top](#)
 
 
 <div id="1988_dale">
@@ -843,6 +870,9 @@ macro in place but it's no longer used.
 Cody also provided the [try.sh](%%REPO_URL%%/1988/dale/try.sh) script.
 
 
+Jump to: [top](#)
+
+
 <div id="1988_isaak">
 ## Winning entry: [1988/isaak](1988/isaak/index.html)
 ### Winning entry source code: [isaak.c](%%REPO_URL%%/1988/isaak/isaak.c)
@@ -859,6 +889,9 @@ Cody also uudecoded and removed the file `isaak.encode`, putting the output in
 found in the index.html file.
 
 
+Jump to: [top](#)
+
+
 <div id="1988_litmaath">
 ## Winning entry: [1988/litmaath](1988/litmaath/index.html)
 ### Winning entry source code: [litmaath.c](%%REPO_URL%%/1988/litmaath/litmaath.c)
@@ -867,6 +900,9 @@ found in the index.html file.
 [Cody](#cody) added the [alternate code](%%REPO_URL%%/1988/litmaath/litmaath.alt.c)
 which is code that we suggested at the time of publication, in the remarks, to
 help understand the entry, and for fun.
+
+
+Jump to: [top](#)
 
 
 <div id="1988_phillipps">
@@ -891,16 +927,20 @@ same code, just a `p` instead of an `m` in the name. Additionally, `main()` retu
 `!pain(...)` like `main()` used to do to itself (`pain()` does as well).
 
 
+Jump to: [top](#)
+
+
 <div id="1988_reddy">
 ## Winning entry: [1988/reddy](1988/reddy/index.html)
 ### Winning entry source code: [reddy.c](%%REPO_URL%%/1988/reddy/reddy.c)
 </div>
 
-[Cody](#cody) made this use `fgets(3)`.
-
-See the
+[Cody](#cody) made this use `fgets(3)`.  See the
 FAQ on "[gets and fgets](faq.html#gets)"
 for why this was done.
+
+
+Jump to: [top](#)
 
 
 <div id="1988_spinellis">
@@ -922,6 +962,9 @@ doing this) that with a slight modification this entry can be C++ instead. We do
 thank him for this ghastly point! :-)
 
 
+Jump to: [top](#)
+
+
 <div id="1988_westley">
 ## Winning entry: [1988/westley](1988/westley/index.html)
 ### Winning entry source code: [westley.c](%%REPO_URL%%/1988/westley/westley.c)
@@ -938,12 +981,15 @@ entry as seeing the code with the result at once is far more beautiful.
 Cody also changed the `int`s to be `float` as that's what they are printed as:
 not strictly necessary but nonetheless more correct, even if not warned against.
 
-
+Jump to: [top](#)
 
 
 <div id="1989">
 # [1989 - The 6th IOCCC](1989/index.html)
 </div>
+
+
+Jump to: [top](#)
 
 
 <div id="1989_fubar">
@@ -986,6 +1032,9 @@ Cody also 'modernised' the script to use `bash` and fixed for ShellCheck. The
 Cody also added the [try.sh](%%REPO_URL%%/1989/fubar/try.sh) script.
 
 
+Jump to: [top](#)
+
+
 <div id="1989_jar.1">
 ## Winning entry: [1989/jar.1](1989/jar.1/index.html)
 ### Winning entry source code: [jar.1.c](%%REPO_URL%%/1989/jar.1/jar.1.c)
@@ -1004,6 +1053,9 @@ Whilst he was at it, Cody made it so that one need not run the alt script or
 alternate code directly, to match that of the main entry. As we simulate the
 functionality anyway, and since one may still run the code or the script (for
 the original entry and the alternate code) anyway, it works out well.
+
+
+Jump to: [top](#)
 
 
 <div id="1989_jar.2">
@@ -1050,6 +1102,9 @@ result in:
 because the `alt` rule had what normally is in the `${PROG}.alt` rule.
 
 
+Jump to: [top](#)
+
+
 
 <div id="1989_ovdluhe">
 ## Winning entry: [1989/ovdluhe](1989/ovdluhe/index.html)
@@ -1074,6 +1129,9 @@ for details. The fix described above was fixed in this version too, after it was
 discovered and fixed.
 
 
+Jump to: [top](#)
+
+
 <div id="1989_paul">
 ## Winning entry: [1989/paul](1989/paul/index.html)
 ### Winning entry source code: [paul.c](%%REPO_URL%%/1989/paul/paul.c)
@@ -1086,6 +1144,9 @@ he was using lldb and saw that the type of a pointer was too `long` :-)
 Cody also provided the [alternate version](%%REPO_URL%%/1989/paul/paul.alt.c)
 which has the trace function that the author included but commented out. See the
 index.html for details.
+
+
+Jump to: [top](#)
 
 
 <div id="1989_robison">
@@ -1104,6 +1165,9 @@ made, try:
 (It adds the C token pasting operator `##` instead of `/**/`.)
 
 Cody added the [try.sh](%%REPO_URL%%/1989/robison/try.sh) script.
+
+
+Jump to: [top](#)
 
 
 <div id="1989_tromp">
@@ -1138,12 +1202,18 @@ IOCCC [Tetris](https://en.wikipedia.org/wiki/Tetris) working (this of course was
 not his only reason :-) )
 
 
+Jump to: [top](#)
+
+
 <div id="1989_vanb">
 ## Winning entry: [1989/vanb](1989/vanb/index.html)
 ### Winning entry source code: [vanb.c](%%REPO_URL%%/1989/vanb/vanb.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/1989/vanb/try.sh) script.
+
+
+Jump to: [top](#)
 
 
 <div id="1989_westley">
@@ -1223,9 +1293,15 @@ The `compile.sh` script allows one to specify the compiler with the `CC`
 environmental variable; see the index.html for details.
 
 
+Jump to: [top](#)
+
+
 <div id="1990">
 # [1990 - The 7th IOCCC](1990/index.html)
 </div>
+
+
+Jump to: [top](#)
 
 
 <div id="1990_baruch">
@@ -1246,20 +1322,20 @@ the variables, adding instead `-Wno-implicit-int`. The newline added by the
 judges was retained.
 
 
+Jump to: [top](#)
+
+
 <div id="1990_cmills">
 ## Winning entry: [1990/cmills](1990/cmills/index.html)
 ### Winning entry source code: [cmills.c](%%REPO_URL%%/1990/cmills/cmills.c)
 </div>
 
 [Yusuke](#yusuke) got this to work in modern systems (it previously resulted in a bus
-error).
-
-[Cody](#cody) made this use `fgets(3)`.
-
-See the
+error).  [Cody](#cody) made this use `fgets(3)`.  See the
 FAQ on "[gets and fgets](faq.html#gets)"
 for why this was done.
 
+Jump to: [top](#)
 
 
 <div id="1990_dds">
@@ -1279,12 +1355,11 @@ Cody fixed another compiler error by removing the erroneous prototype to
 `fopen(3)`.  Cody also changed a `char *` used for file I/O to be a proper `FILE
 *` and fixed a typo in [LANDER.BAS](%%REPO_URL%%/1990/dds/LANDER.BAS).
 
-Cody also made this use `fgets(3)`.
-
-See the
+Cody also made this use `fgets(3)`.  See the
 FAQ on "[gets and fgets](faq.html#gets)"
 for why this was done.
 
+Jump to: [top](#)
 
 
 <div id="1990_dg">
@@ -1313,6 +1388,9 @@ with if the C preprocessor botches single quotes in `cpp` expansion.
 Cody also added the [try.sh](%%REPO_URL%%/1990/dg/try.sh) script.
 
 
+Jump to: [top](#)
+
+
 <div id="1990_jaw">
 ## Winning entry: [1990/jaw](1990/jaw/index.html)
 ### Winning entry source code: [jaw.c](%%REPO_URL%%/1990/jaw/jaw.c)
@@ -1334,6 +1412,9 @@ fix applied by Cody that made the program just show `oops` twice (twice is not
 a typo here) from invalid input but which now works.
 
 
+Jump to: [top](#)
+
+
 <div id="1990_pjr">
 ## Winning entry: [1990/pjr](1990/pjr/index.html)
 ### Winning entry source code: [pjr.c](%%REPO_URL%%/1990/pjr/pjr.c)
@@ -1342,6 +1423,9 @@ a typo here) from invalid input but which now works.
 [Cody](#cody) added the [alternate code](%%REPO_URL%%/1990/pjr/pjr.alt.c) which was suggested by the judges
 in the case that your compiler cannot compile `X=g()...` but it actually does
 something else and is recommended by the author as well.
+
+
+Jump to: [top](#)
 
 
 <div id="1990_scjones">
@@ -1355,6 +1439,9 @@ first.
 
 Cody added the [try.sh](%%REPO_URL%%/1990/scjones/try.sh) script to show exactly what the
 entry does.
+
+
+Jump to: [top](#)
 
 
 <div id="1990_tbr">
@@ -1372,12 +1459,11 @@ author.
 Cody also changed the code (in both versions) to use `fgets(3)` instead of
 `gets(3)` so one would not get a warning about the use of `gets(3)` at linking
 time or execution, the latter of which was causing confusing output due to the
-warning being interspersed with the program's interactive output.
-
-See the
+warning being interspersed with the program's interactive output.  See the
 FAQ on "[gets and fgets](faq.html#gets)"
-for more details on why this change was
-done more generally.
+for more details on why this change was done more generally.
+
+Jump to: [top](#)
 
 
 <div id="1990_theorem">
@@ -1407,9 +1493,7 @@ BTW: why can't the fix:
 be changed to just test the value of `A` when `a` is argv and `A` is argc? You
 tell us!
 
-Cody also changed the code to use `fgets(3)`.
-
-See the
+Cody also changed the code to use `fgets(3)`.  See the
 FAQ on "[gets and fgets](faq.html#gets)"
 for why this was done.
 
@@ -1430,6 +1514,9 @@ used in order to get this to work initially (prior to this output was there but
 incomplete).
 
 
+Jump to: [top](#)
+
+
 <div id="1990_stig">
 ## Winning entry: [1990/stig](1990/stig/index.html)
 ### Winning entry source code: [stig.c](%%REPO_URL%%/1990/stig/stig.c)
@@ -1442,6 +1529,9 @@ He also changed the `Makefile` to use `bash` not `zsh` as not all systems have
 `zsh` and the `Makefile` actually sets `SHELL` to `bash`.
 
 
+Jump to: [top](#)
+
+
 <div id="1990_westley">
 ## Winning entry: [1990/westley](1990/westley/index.html)
 ### Winning entry source code: [westley.c](%%REPO_URL%%/1990/westley/westley.c)
@@ -1451,10 +1541,14 @@ He also changed the `Makefile` to use `bash` not `zsh` as not all systems have
 in places for a `short int` which was changed to just `1`.  Since it's
 instructional to see the differences he has provided an alternate version,
 [westley.alt.c](%%REPO_URL%%/1990/westley/westley.alt.c), which is the original
-code.
+code (see [Alternate code in
+1990/westley/index.html](1990/westley/index.html#alternate-code)).
 
 He also changed the `argc` to be an `int`, not a `char`, even though it might
-often be the same (this in particular was done for `clang`).
+often be the same (this in particular was done for `clang`). See the
+FAQ on "[main function args](faq.html#arg_count)"
+for more details.
+
 
 He also fixed the code to not enter an infinite loop if arg is a number not > 0.
 To be more like the original the number of args passed to the program has not
@@ -1464,9 +1558,15 @@ Cody also added the [try.sh](%%REPO_URL%%/1990/westley/try.sh) script.
 
 
 
+Jump to: [top](#)
+
+
 <div id="1991">
 # [1991 - The 8th IOCCC](1991/index.html)
 </div>
+
+
+Jump to: [top](#)
 
 
 <div id="1991_ant">
@@ -1496,6 +1596,12 @@ will be a bit easier to use for those familiar with vim in the following ways
 
 The other keys were left unchanged.
 
+See the
+FAQ on "[alternate code](faq.html#alt_code)
+for why this was done.
+
+Jump to: [top](#)
+
 
 <div id="1991_brnstnd">
 ## Winning entry: [1991/brnstnd](1991/brnstnd/index.html)
@@ -1518,6 +1624,9 @@ Cody also added the [try.sh](%%REPO_URL%%/1991/brnstnd/try.sh) script and
 Cody also fixed the make clobber rule which left a symbolic link in the
 directory even after the target file was deleted (from make clobber).
 
+
+Jump to: [top](#)
+
 <div id="1991_buzzard">
 ## Winning entry: [1991/buzzard](1991/buzzard/index.html)
 ### Winning entry source code: [buzzard.c](%%REPO_URL%%/1991/buzzard/buzzard.c)
@@ -1532,11 +1641,16 @@ Cody also made the file name in the code (which is the default maze file) not
 hard-coded but instead be `__FILE__`.
 
 Finally Cody added the [alternate
-version](%%REPO_URL%%/1991/buzzard/buzzard.alt.c) which will possibly feel more
+version](1991/buzzard/index.html#alternate-code) which will possibly feel more
 at home with those familiar with vi(m): `k` for forward, `h` for left and `l`
 for right. This version also has a more useful way to exit, just entering `q`
 followed by enter, rather than completing (and it's a maze) or killing the
-program. We still recommend you try the original version first, of course.
+program. We still recommend you try the original version first, of course. See the
+FAQ on "[alternate code](faq.html#alt_code)"
+for more details.
+
+
+Jump to: [top](#)
 
 
 <div id="1991_davidguy">
@@ -1548,6 +1662,9 @@ As some systems like macOS can be particular about not declaring functions
 [Cody](#cody) added to the `Makefile` some `-include` options. These appear to
 not be strictly necessary (currently) but it was done due to other syscalls
 being a problem not being declared first, to hopefully future-proof it.
+
+
+Jump to: [top](#)
 
 
 <div id="1991_dds">
@@ -1694,6 +1811,9 @@ was pondered and changed numerous times and ultimately that problem with this
 entry was fixed. It has not been done in all.
 
 
+Jump to: [top](#)
+
+
 <div id="1991_fine">
 ## Winning entry: [1991/fine](1991/fine/index.html)
 ### Winning entry source code: [fine.c](%%REPO_URL%%/1991/fine/fine.c)
@@ -1722,6 +1842,9 @@ Brian Westley and Cody also added several of his own (can you figure out exactly
 which ones? :-) )
 
 
+Jump to: [top](#)
+
+
 <div id="1991_rince">
 ## Winning entry: [1991/rince](1991/rince/index.html)
 ### Winning entry source code: [rince.c](%%REPO_URL%%/1991/rince/rince.c)
@@ -1744,6 +1867,9 @@ unfortunately the formatting of the key to the map was not easy to change in a
 way without ruining how it looks (beyond making it one column only).
 
 
+Jump to: [top](#)
+
+
 <div id="1991_westley">
 ## Winning entry: [1991/westley](1991/westley/index.html)
 ### Winning entry source code: [westley.c](%%REPO_URL%%/1991/westley/westley.c)
@@ -1762,16 +1888,22 @@ unless the `-e` option is used.  This is because the errors being shown kind of
 ruins the experience. Finally he made it pass
 [ShellCheck](https://www.shellcheck.net).
 
-Cody also added the [alt version](%%REPO_URL%%/1991/westley/westley.alt.c) which
+Cody also added the [alt version](1991/westley/index.html#alternate-code) which
 is based on the author's remarks, a version that supposedly (:-) ) always wins.
 
 Cody also fixed the make clobber rule where a file was left lying about when it
 should have been removed.
 
 
+Jump to: [top](#)
+
+
 <div id="1992">
 # [1992 - The 9th IOCCC](1992/index.html)
 </div>
+
+
+Jump to: [top](#)
 
 
 <div id="1992_adrian">
@@ -1857,6 +1989,9 @@ clear the screen after compilation so that one can see how the other files are
 generated.
 
 
+Jump to: [top](#)
+
+
 <div id="1992_albert">
 ## Winning entry: [1992/albert](1992/albert/index.html)
 ### Winning entry source code: [albert.c](%%REPO_URL%%/1992/albert/albert.c)
@@ -1874,6 +2009,9 @@ Cody also added the [try.sh](%%REPO_URL%%/1992/albert/try.sh) and
 the alternate code.
 
 Even so, check [1992/albert in bugs.html](bugs.html#1992_albert).
+
+
+Jump to: [top](#)
 
 
 <div id="1992_ant">
@@ -1908,6 +2046,9 @@ Makefile (along the lines of the author's provided test Makefile) was added,
 updated to use `ant.alt`.
 
 
+
+Jump to: [top](#)
+
 <div id="1992_buzzard.1">
 ## Winning entry: [1992/buzzard.1](1992/buzzard.1/index.html)
 ### Winning entry source code: [buzzard.1.c](%%REPO_URL%%/1992/buzzard.1/buzzard.1.c)
@@ -1920,6 +2061,9 @@ verified that it was consistent with the [bugs.html](bugs.html) file.
 
 He also added the [try.sh](%%REPO_URL%%/1992/buzzard.1/try.sh) script to try out some
 commands that we suggested and some additional ones that he provide for some fun.
+
+
+Jump to: [top](#)
 
 
 <div id="1992_buzzard.2">
@@ -1935,6 +2079,9 @@ Cody also added the [try.sh](%%REPO_URL%%/1992/buzzard.2/try.sh) and
 and its alternate code.
 
 
+Jump to: [top](#)
+
+
 <div id="1992_gson">
 ## Winning entry: [1992/gson](1992/gson/index.html)
 ### Winning entry source code: [gson.c](%%REPO_URL%%/1992/gson/gson.c)
@@ -1948,8 +2095,11 @@ Cody also added the [try.sh](%%REPO_URL%%/1992/gson/try.sh) script.
 Cody also added the [mkdict.sh](%%REPO_URL%%/1992/gson/mkdict.sh) script that the author
 included in their remarks. See the index.html for its purpose. It was NOT fixed
 for [ShellCheck](https://www.shellcheck.net)
-because the author deliberately obfuscated it so **PLEASE *DO NOT* FIX THIS OR
+because the author deliberately obfuscated it so **PLEASE _DO NOT_ FIX THIS OR
 MODERNISE IT**.
+
+Jump to: [top](#)
+
 
 
 <div id="1992_imc">
@@ -1966,6 +2116,9 @@ he made this more like the original by redefining `exit` to use the comma
 operator so that it could be used in binary expressions.
 
 
+Jump to: [top](#)
+
+
 <div id="1992_kivinen">
 ## Winning entry: [1992/kivinen](1992/kivinen/index.html)
 ### Winning entry source code: [kivinen.c](%%REPO_URL%%/1992/kivinen/kivinen.c)
@@ -1975,7 +2128,7 @@ It was observed that on modern systems this goes much too quick. [Yusuke](#yusuk
 a patch that calls `usleep(3)` but [Cody](#cody) thought the value was too slow so he
 made it a macro in the `Makefile` `Z` (which can be redefined with `make
 SLEEP=...`), defaulting at 15000. This was made an [alternate
-version](%%REPO_URL%%/1992/kivinen/kivinen.alt.c) and it is recommended one use
+version](1992/kivinen/index.html#alternate-code) and it is recommended one use
 the alternate version first. See the index.html file to see how to reconfigure it.
 
 Cody also made the fixed version (the code relied on `exit(3)` returning to use
@@ -1989,16 +2142,16 @@ Cody made `main()` have two args, not one, as some versions of `clang` have a
 defect with the number of args to `main()` though when it comes to 1 arg it is
 only in an error message if say 4 args are used. This is out of an abundance of
 caution as it's quite possible that `clang` or the ANSI C committee end up further
-changing this.
-
-See the
+changing this. See the
 FAQ on "[main function args](faq.html#arg_count)"
 for more details.
-
 
 Yusuke also noted that there is a bug in the program where right after starting
 it moves towards the right but if you click the mouse it goes back. See
 [1992/kivinen in bugs.html](bugs.html#1992_kivinen) for more details.
+
+
+Jump to: [top](#)
 
 
 <div id="1992_lush">
@@ -2013,9 +2166,7 @@ file](1992/lush/index.html#judges-remarks)) this will not work with `clang`.
 [Cody](#cody) also provided the [lush.sh](%%REPO_URL%%/1992/lush/lush.sh) script to
 demonstrate it as using make was problematic.
 
-Cody made it use `fgets()` instead of `gets()`.
-
-See the
+Cody made it use `fgets()` instead of `gets()`.  See the
 FAQ on "[gets and fgets](faq.html#gets)"
 for why this was done.
 
@@ -2024,12 +2175,18 @@ will compile fine but it won't work). See [1992/lush in
 bugs.html](bugs.html#1992_lush) for details.
 
 
+Jump to: [top](#)
+
+
 <div id="1992_marangon">
 ## Winning entry: [1992/marangon](1992/marangon/index.html)
 ### Winning entry source code: [marangon.c](%%REPO_URL%%/1992/marangon/marangon.c)
 </div>
 
 [Cody](#cody) made this more portable by changing the `void main()` to be `int main()`.
+
+
+Jump to: [top](#)
 
 
 <div id="1992_nathan">
@@ -2050,6 +2207,9 @@ Cody also added the [try.sh](%%REPO_URL%%/1992/nathan/try.sh) script that runs a
 few commands that we suggested as well as one he provided.
 
 
+Jump to: [top](#)
+
+
 <div id="1992_vern">
 ## Winning entry: [1992/vern](1992/vern/index.html)
 ### Winning entry source code: [vern.c](%%REPO_URL%%/1992/vern/vern.c)
@@ -2068,6 +2228,9 @@ both numbers (using `"%o %o"` does not solve the problem).
 
 This was deemed a problem to fix as the Judges' remarks hinted that this was how
 it used to be.
+
+
+Jump to: [top](#)
 
 
 <div id="1992_westley">
@@ -2117,9 +2280,15 @@ args (2). And not that we need the help or anything for this :-) but we
 encourage you to try the original without two args :-)
 
 
+Jump to: [top](#)
+
+
 <div id="1993">
 # [1993 - The 10th IOCCC](1993/index.html)
 </div>
+
+
+Jump to: [top](#)
 
 
 <div id="1993_ant">
@@ -2138,6 +2307,9 @@ another which Cody had to slightly modify to get it to work in modern systems.
 But since only one was needed the one that worked already was used.
 
 
+Jump to: [top](#)
+
+
 <div id="1993_cmills">
 ## Winning entry: [1993/cmills](1993/cmills/index.html)
 ### Winning entry source code: [cmills.c](%%REPO_URL%%/1993/cmills/cmills.c)
@@ -2146,8 +2318,11 @@ But since only one was needed the one that worked already was used.
 [Yusuke](#yusuke) suggested that with modern systems this goes too fast so he added a call
 to `usleep(3)` in a patch he made. [Cody](#cody) made it configurable at compilation by
 using a macro. This is in the [alternate
-version](%%REPO_URL%%/1993/cmills/cmills.alt.c) which is the recommended one to try
+version](1993/cmills/cmills.alt.c) which is the recommended one to try
 first.
+
+
+Jump to: [top](#)
 
 
 <div id="1993_dgibson">
@@ -2162,12 +2337,18 @@ Cody also added the [try.sh](%%REPO_URL%%/1993/dgibson/try.sh) script which runs
 mentioned script on all the data files.
 
 
+Jump to: [top](#)
+
+
 <div id="1993_ejb">
 ## Winning entry: [1993/ejb](1993/ejb/index.html)
 ### Winning entry source code: [ejb.c](%%REPO_URL%%/1993/ejb/ejb.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/1993/ejb/try.sh) script.
+
+
+Jump to: [top](#)
 
 
 <div id="1993_jonth">
@@ -2190,6 +2371,9 @@ and expect `G;` to equate to `int i, j;` (though it's now a long) and `K` to mea
 prepended to them.
 
 
+Jump to: [top](#)
+
+
 <div id="1993_leo">
 ## Winning entry: [1993/leo](1993/leo/index.html)
 ### Winning entry source code: [leo.c](%%REPO_URL%%/1993/leo/leo.c)
@@ -2199,19 +2383,25 @@ prepended to them.
 files for functions.
 
 
+Jump to: [top](#)
+
+
 <div id="1993_lmfjyh">
 ## Winning entry: [1993/lmfjyh](1993/lmfjyh/index.html)
 ### Winning entry source code: [lmfjyh.c](%%REPO_URL%%/1993/lmfjyh/lmfjyh.c)
 </div>
 
 [Cody](#cody) added an [alternate
-version](%%REPO_URL%%/1993/lmfjyh/lmfjyh.alt.c) which does what the program did
+version](1993/lmfjyh/index.html#alternate-code) which does what the program did
 with `gcc` < 2.3.3. See the index.html file for details and for why this was made
 the alternate version, not the actual entry.
 
 Cody also made the `Makefile` delete the very unsafe filename that is compiled (or
 would be compiled if `gcc` < 2.3.3) whether or not compilation succeeds (which is
 highly unlikely).
+
+
+Jump to: [top](#)
 
 
 <div id="1993_plummer">
@@ -2233,6 +2423,9 @@ entry and the alt version, both allowing one to change the args (and in the case
 of the alt one allowing one to change the amount to sleep).
 
 
+Jump to: [top](#)
+
+
 <div id="1993_rince">
 ## Winning entry: [1993/rince](1993/rince/index.html)
 ### Winning entry source code: [rince.c](%%REPO_URL%%/1993/rince/rince.c)
@@ -2251,16 +2444,20 @@ slow down but Cody did it in such a way that makes it easy to configure at
 compile time. See the index.html for details.
 
 
+Jump to: [top](#)
+
+
 <div id="1993_schnitzi">
 ## Winning entry: [1993/schnitzi](1993/schnitzi/index.html)
 ### Winning entry source code: [schnitzi.c](%%REPO_URL%%/1993/schnitzi/schnitzi.c)
 </div>
 
-[Cody](#cody) made this use `fgets(3)` not `gets(3)`.
-
-See the
+[Cody](#cody) made this use `fgets(3)` not `gets(3)`.  See the
 FAQ on "[gets and fgets](faq.html#gets)"
 for why this was done.
+
+
+Jump to: [top](#)
 
 
 
@@ -2284,11 +2481,8 @@ work).
 
 Cody also added the alternate code, provided by the author, which is:
 
-```
-    ... a version of the program before it got formatted into the VIII,
-    augmented with comments showing where each state begins. N1 and N2 are
-    notes.
-```
+> ... a version of the program before it got formatted into the VIII, augmented
+with comments showing where each state begins. N1 and N2 are notes.
 
 but fixed to work with `clang` as well.
 
@@ -2298,9 +2492,15 @@ this code. Other code is also described there.
 Cody also added the [try.sh](%%REPO_URL%%/1993/vanb/try.sh) script.
 
 
+Jump to: [top](#)
+
+
 <div id="1994">
 # [1994 - The 11th IOCCC](1994/index.html)
 </div>
+
+
+Jump to: [top](#)
 
 
 <div id="1994_dodsond2">
@@ -2337,6 +2537,9 @@ counter for how many you have found and how many you shot in addition to the two
 that already existed, how many you had and how many were stolen.
 
 
+Jump to: [top](#)
+
+
 <div id="1994_horton">
 ## Winning entry: [1994/horton](1994/horton/index.html)
 ### Winning entry source code: [1994/horton](%%REPO_URL%%/1994/horton/horton.c)
@@ -2358,6 +2561,9 @@ Finally he added the article (written by the entry's author) cited in
 [login_sept92-pp28-31.pdf](1994/horton/login_sept92-pp28-31.pdf).
 
 
+Jump to: [top](#)
+
+
 <div id="1994_imc">
 ## Winning entry: [1994/imc](1994/imc/index.html)
 ### Winning entry source code: [imc.c](%%REPO_URL%%/1994/imc/imc.c)
@@ -2369,6 +2575,9 @@ Cody also added inclusion of `unistd.h` for `getpid(2)`. While strictly speaking
 this was not necessary (in multiple systems) it can sometimes be a problem and
 as it was noticed it was changed (the only case this was done except in the
 entries that actually did not work because of missing or incorrect prototypes).
+
+
+Jump to: [top](#)
 
 
 <div id="1994_ldb">
@@ -2384,9 +2593,7 @@ Cody also fixed it for `clang` under Linux which objected to incompatible pointe
 type (because `time(2)` takes a `time_t *` which in some systems is a `long *`
 but what was being passed to it is an `int`).
 
-Cody also changed the entry to use `fgets(3)` instead of `gets(3)`.
-
-See the
+Cody also changed the entry to use `fgets(3)` instead of `gets(3)`.  See the
 FAQ on "[gets and fgets](faq.html#gets)"
 for why this was done.
 
@@ -2404,6 +2611,9 @@ characters or it might print (up to) the next 231 characters and so on.
 Cody also added the [try.sh](%%REPO_URL%%/1994/ldb/try.sh) script.
 
 
+Jump to: [top](#)
+
+
 <div id="1994_schnitzi">
 ## Winning entry: [1994/schnitzi](1994/schnitzi/index.html)
 ### Winning entry source code: [schnitzi.c](%%REPO_URL%%/1994/schnitzi/schnitzi.c)
@@ -2415,7 +2625,9 @@ generate code that compile and another [one with a bigger buffer
 size](%%REPO_URL%%/1994/schnitzi/schnitzi.alt2.c) which, when fed its own source code, will
 generate compilable code but not with the same buffer size but rather the
 original buffer size. Cody explains this at [1994/schnitzi in
-bugs.html](bugs.html#1994-schnitzi).
+bugs.html](bugs.html#1994-schnitzi). See also the
+FAQ on "[alternate code](faq.html#alt_code)"
+for more details.
 
 The purpose for these versions it both demonstrate how the magic works behind it
 and to help others, should they wish, get the code to work with `fgets(3)`, with
@@ -2427,6 +2639,9 @@ now there is more important work to do so that the next contest can run.
 
 Cody also added the [try.sh](%%REPO_URL%%/1994/schnitzi/try.sh) and
 [try.alt.sh](%%REPO_URL%%/1994/schnitzi/try.alt.sh) scripts.
+
+
+Jump to: [top](#)
 
 
 <div id="1994_shapiro">
@@ -2444,12 +2659,18 @@ For an interesting problem that occurred here and what was done to solve it,
 check [1994/shapiro in bugs.html](bugs.html#1994_shapiro).
 
 
+Jump to: [top](#)
+
+
 <div id="1994_smr">
 ## Winning entry: [1994/smr](1994/smr/index.html)
 ### Winning entry source code: [smr.c](%%REPO_URL%%/1994/smr/smr.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/1994/smr/try.sh) script.
+
+
+Jump to: [top](#)
 
 
 <div id="1994_tvr">
@@ -2472,11 +2693,12 @@ In this case the newline had
 to be terminated but it was a pretty straightforward fix. `gets()` was defined
 to use `fgets()` and the inclusion of `stdio.h` had to be added but to make it
 more like the original entry this was done in the Makefile. The alternate code was
-also changed to use `fgets(3)`.
-
-See the
+also changed to use `fgets(3)`.  See the
 FAQ on "[gets and fgets](faq.html#gets)"
 for why this was done.
+
+
+Jump to: [top](#)
 
 
 <div id="1994_weisberg">
@@ -2496,6 +2718,9 @@ primes. It only does the reversed output because the program actually prints
 primes.
 
 
+Jump to: [top](#)
+
+
 <div id="1994_westley">
 ## Winning entry: [1994/westley](1994/westley/index.html)
 ### Winning entry source code: [westley.c](%%REPO_URL%%/1994/westley/westley.c)
@@ -2509,12 +2734,19 @@ start to finish.
 Cody also added the [alternate version](%%REPO_URL%%/1994/westley/westley.alt.c)
 that will look fine on terminals not set to 80 columns and the
 [try.alt.sh](%%REPO_URL%%/1994/westley/try.alt.sh) script to automate the play
-along the lines of the [try.sh](%%REPO_URL%%/1994/westley/try.sh) script.
+along the lines of the [try.sh](%%REPO_URL%%/1994/westley/try.sh) script. We
+recommend you use this version first, whether you use the script or not.
+
+
+Jump to: [top](#)
 
 
 <div id="1995">
 # [1995 - The 12th IOCCC](1995/index.html)
 </div>
+
+
+Jump to: [top](#)
 
 
 <div id="1995_cdua">
@@ -2525,7 +2757,7 @@ along the lines of the [try.sh](%%REPO_URL%%/1994/westley/try.sh) script.
 [Cody](#cody) fixed this so that it would work with macOS. Once it could compile it
 additionally segfaulted under macOS which he also fixed.
 
-Cody also provided the [alternate code](%%REPO_URL%%/1995/cdua/cdua.alt.c) for fun :-) ) (in
+Cody also provided the [alternate code](1995/cdua/cdua.alt.c) for fun :-) ) (in
 particular to make it easier to see the program do what it does in systems that
 are too fast ... if there is such a thing anyway :-) ). See the index.html for
 details on this.
@@ -2535,11 +2767,12 @@ Out of an abundance of caution with `clang`, Cody also added a second arg to
 type of args. In particular some versions supposedly only allow 0, 2 or 3 args.
 It actually appears to allow 1 but if you specify 4 it says 0, 2 or 3 and it is
 an error but it's entirely possible that they will eventually make the defect
-function as the error message claims.
-
-See the
+function as the error message claims.  See the
 FAQ on "[main function args](faq.html#arg_count)"
 for more details.
+
+
+Jump to: [top](#)
 
 
 <div id="1995_dodsond1">
@@ -2551,12 +2784,18 @@ for more details.
 provided which is input we suggested one try with the entry.
 
 
+Jump to: [top](#)
+
+
 <div id="1995_esde">
 ## Winning entry: [1995/esde](1995/esde/index.html)
 ### Winning entry source code: [esde.c](%%REPO_URL%%/1995/esde/esde.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/1995/esde/try.sh) script.
+
+
+Jump to: [top](#)
 
 
 <div id="1995_garry">
@@ -2579,12 +2818,18 @@ alternate code in other entries.  In order to get the paging to work right for
 the `garry.data` file leading blank lines had to be added.
 
 
+Jump to: [top](#)
+
+
 <div id="1995_heathbar">
 ## Winning entry: [1995/heathbar](1995/heathbar/index.html)
 ### Winning entry source code: [1995/heathbar](%%REPO_URL%%/1995/heathbar/heathbar.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/1995/heathbar/try.sh) script.
+
+
+Jump to: [top](#)
 
 
 <div id="1995_leo">
@@ -2599,6 +2844,9 @@ information about the secret switch, provided by the author, putting it in
 [secret.html](1995/leo/secret.html).
 
 
+Jump to: [top](#)
+
+
 <div id="1995_makarios">
 ## Winning entry: [1995/makarios](1995/makarios/index.html)
 ### Winning entry source code: [makarios.c](%%REPO_URL%%/1995/makarios/makarios.c)
@@ -2610,6 +2858,9 @@ function (`pain()` as it's annoying that `clang` is this way :-) ) that `main()`
 calls which has the four args.
 
 
+Jump to: [top](#)
+
+
 <div id="1995_savastio">
 ## Winning entry: [1995/savastio](1995/savastio/index.html)
 ### Winning entry source code: [savastio.c](%%REPO_URL%%/1995/savastio/savastio.c)
@@ -2618,12 +2869,18 @@ calls which has the four args.
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/1995/savastio/try.sh) script.
 
 
+
+Jump to: [top](#)
+
 <div id="1995_schnitzi">
 ## Winning entry: [1995/schnitzi](1995/schnitzi/index.html)
 ### Winning entry source code: [schnitzi.c](%%REPO_URL%%/1995/schnitzi/schnitzi.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/1995/schnitzi/try.sh) script.
+
+
+Jump to: [top](#)
 
 
 <div id="1995_vanschnitz">
@@ -2634,15 +2891,21 @@ calls which has the four args.
 [Cody](#cody) added the authors' [deobfuscation source code](%%REPO_URL%%/1995/vanschnitz/vanschnitz.alt.c)
 as in 2023 we have decided that in most
 cases all the code should be available for the wider audience, without having to
-extract it. The exception is when the files are created by the entry or the
-entry decrypts the text or something like that.
+extract it (the exception, of course, is when the files are created by the entry or the
+entry decrypts the text or something like that).
 
 Cody also added the [try.sh](%%REPO_URL%%/1995/vanschnitz/try.sh) script.
+
+
+Jump to: [top](#)
 
 
 <div id="1996">
 # [1996 - The 13th IOCCC](1996/index.html)
 </div>
+
+
+Jump to: [top](#)
 
 
 <div id="1996_august">
@@ -2663,6 +2926,9 @@ problem existed in macOS.
 Cody also added the [try.sh](%%REPO_URL%%/1996/august/try.sh) script that runs all the
 commands that were given by the judges in the try section, with the fix above
 applied.
+
+
+Jump to: [top](#)
 
 
 <div id="1996_dalbec">
@@ -2686,6 +2952,9 @@ numbers on the same line.
 Cody also added the [try.sh](%%REPO_URL%%/1996/dalbec/try.sh) script.
 
 
+Jump to: [top](#)
+
+
 <div id="1996_eldby">
 ## Winning entry: [1996/eldby](1996/eldby/index.html)
 ### Winning entry source code: [eldby.c](%%REPO_URL%%/1996/eldby/eldby.c)
@@ -2696,6 +2965,9 @@ Cody also added the [try.sh](%%REPO_URL%%/1996/dalbec/try.sh) script.
 like back in 1996 with modern systems and importantly also for those who are sensitive to text
 flashing by rapidly. We recommend that you try the alternate version first due to
 these reasons.
+
+
+Jump to: [top](#)
 
 
 <div id="1996_gandalf">
@@ -2715,12 +2987,18 @@ BTW: it is perilous to try the patience of
 [Gandalf](https://www.glyphweb.com/arda/g/gandalf.html). Go ahead, try it! :-)
 
 
+Jump to: [top](#)
+
+
 <div id="1996_huffman">
 ## Winning entry: [1996/huffman](1996/huffman/index.html)
 ### Winning entry source code: [huffman.c](%%REPO_URL%%/1996/huffman/huffman.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/1996/huffman/try.sh) script.
+
+
+Jump to: [top](#)
 
 
 <div id="1996_jonth">
@@ -2734,6 +3012,9 @@ the function in the pointer assignment.
 
 **NOTE**: if there is no X server running this program will still crash.
 
+Jump to: [top](#)
+
+
 
 <div id="1996_rcm">
 ## Winning entry: [1996/rcm](1996/rcm/index.html)
@@ -2741,6 +3022,9 @@ the function in the pointer assignment.
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/1996/rcm/try.sh) script.
+
+
+Jump to: [top](#)
 
 
 <div id="1996_schweikh1">
@@ -2759,6 +3043,9 @@ on other systems (the other file is
 the `Makefile` for the (likely?) few who still use Solaris.
 
 
+Jump to: [top](#)
+
+
 <div id="1996_schweikh2">
 ## Winning entry: [1996/schweikh2](1996/schweikh2/index.html)
 ### Winning entry source code: [schweikh2.c](%%REPO_URL%%/1996/schweikh2/schweikh2.c)
@@ -2771,6 +3058,9 @@ author's idea, with a `sleep` and `echo` in between to help one distinguish the
 output better, with the warning that it is an infinite loop).
 
 
+Jump to: [top](#)
+
+
 <div id="1996_schweikh3">
 ## Winning entry: [1996/schweikh3](1996/schweikh3/index.html)
 ## Source code: [schweikh3.c](%%REPO_URL%%/1996/schweikh3/schweikh3.c)
@@ -2779,6 +3069,9 @@ output better, with the warning that it is an infinite loop).
 [Cody](#cody) updated the `Makefile` so that if it fails to compile it will try the
 method suggested for SunOS rather than having to update the `Makefile` manually or
 running a more complicated command: now one can just run `make`.
+
+
+Jump to: [top](#)
 
 
 <div id="1996_westley">
@@ -2802,12 +3095,20 @@ Cody also added the [try.sh](%%REPO_URL%%/1996/westley/try.sh) and
 clocks, both with the fixed version and the original (alt) version.
 
 Also, to fix any potential problem with displaying in GitHub the scripts
-provided by the author, Cody added '.sh' to the `clock[1-3].sh` scripts.
+provided by the author, Cody added '.sh' to the `clock[1-3].sh` scripts (this
+was done before the displaying / downloading of files was devised but it helps
+to show that they are scripts anyway).
+
+
+Jump to: [top](#)
 
 
 <div id="1998">
 # [1998 - The 14th IOCCC](1998/index.html)
 </div>
+
+
+Jump to: [top](#)
 
 
 <div id="1998_banks">
@@ -2828,6 +3129,9 @@ alternatives because not doing so would overly complicate both builds and since
 you can configure them all in both builds it shouldn't matter.
 
 
+Jump to: [top](#)
+
+
 <div id="1998_bas1">
 ## Winning entry: [1998/bas1](1998/bas1/index.html)
 ### Winning entry source code: [bas1.c](%%REPO_URL%%/1998/bas1/bas1.c)
@@ -2838,15 +3142,16 @@ versions of `clang` whine about the number of args on top of what type they are
 In particular some versions claim that they only allow 0, 2 or 3 args. It
 appears that they do allow 1 but for instance 4 is not allowed. However as it's
 quite possible they will 'fix' this defect it would be better to have this not
-be a problem at such a time.
-
-See the
+be a problem at such a time.  See the
 FAQ on "[main function args](faq.html#arg_count)"
 for more details.
 
 
 Cody also added the [bas1.sh](%%REPO_URL%%/1998/bas1/bas1.sh) script to simplify running the
 program.
+
+
+Jump to: [top](#)
 
 
 <div id="1998_bas2">
@@ -2856,6 +3161,9 @@ program.
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/1998/bas2/try.sh) script which runs some default actions
 as well as allowing one to pass in different file names or strings.
+
+
+Jump to: [top](#)
 
 
 <div id="1998_chaos">
@@ -2869,6 +3177,9 @@ exiting the program (in both versions).
 Cody also added the [try.sh](%%REPO_URL%%/1998/chaos/try.sh) script that runs the program on
 all the data files, giving instructions on how to rotate and zoom in and out,
 prior to each run.
+
+
+Jump to: [top](#)
 
 
 <div id="1998_df">
@@ -2889,6 +3200,9 @@ loop until one hits `q` (or `Q`) or sends intr/ctrl-c. He also proposed there's
 a way to cheat very easily. Can you figure out how?
 
 
+Jump to: [top](#)
+
+
 <div id="1998_dlowe">
 ## Winning entry: [1998/dlowe](1998/dlowe/index.html)
 ### Winning entry source code: [dlowe.c](%%REPO_URL%%/1998/dlowe/dlowe.c)
@@ -2905,6 +3219,9 @@ remarks](1998/dlowe/index.html#historical-remarks) for more details on the
 pootify scripts.
 
 
+Jump to: [top](#)
+
+
 <div id="1998_dloweneil">
 ## Winning entry: [1998/dloweneil](1998/dloweneil/index.html)
 ### Winning entry source code: [dloweneil.c](%%REPO_URL%%/1998/dloweneil/dloweneil.c)
@@ -2912,7 +3229,12 @@ pootify scripts.
 
 [Cody](#cody) added [alternate code](%%REPO_URL%%/1998/dloweneil/dloweneil.alt.c) which has vi(m) movement
 (in addition to the other keys except for dropping it's not `d` but `j` or
-space) keys as well as allowing one to quit the game.
+space) keys as well as allowing one to quit the game. See the
+FAQ on "[alternate code](faq.html#alt_code)"
+for more details.
+
+
+Jump to: [top](#)
 
 
 <div id="1998_dorssel">
@@ -2921,6 +3243,9 @@ space) keys as well as allowing one to quit the game.
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/1998/dorssel/try.sh) script.
+
+
+Jump to: [top](#)
 
 
 <div id="1998_fanf">
@@ -2938,9 +3263,7 @@ versions of `clang` complain about the number of args to `main()`. These version
 claim that only 0, 2 or 3 are allowed but it does allow 1 anyway. It is quite
 possible though that this will change so it is fixed in case this happens. As it
 is mostly just through the C pre-processor Cody added a new macro to make the
-code look like the original with just an extra arg.
-
-See the
+code look like the original with just an extra arg.  See the
 FAQ on "[main function args](faq.html#arg_count)"
 for more details.
 
@@ -2950,6 +3273,9 @@ In some versions of `clang` `-Wno-int-conversion` had to be added to the
 
 Cody also added the [try.sh](%%REPO_URL%%/1998/fanf/try.sh) script to show the output of some
 of the expressions that we selected.
+
+
+Jump to: [top](#)
 
 
 <div id="1998_schnitzi">
@@ -2978,6 +3304,9 @@ doing:
 
 Cody also added the [try.sh](%%REPO_URL%%/1998/schnitzi/try.sh) script to help users try the
 commands that we recommended as well as some added by him.
+
+
+Jump to: [top](#)
 
 
 <div id="1998_schweikh1">
@@ -3041,6 +3370,9 @@ compute the character count in the code according to the contest rules of 1998
 in the file [charcount.pl](%%REPO_URL%%/1998/schweikh1/charcount.pl).
 
 
+Jump to: [top](#)
+
+
 <div id="1998_schweikh2">
 ## Winning entry: [1998/schweikh2](1998/schweikh2/index.html)
 ### Winning entry source code: [schweikh2.c](%%REPO_URL%%/1998/schweikh2/schweikh2.c)
@@ -3067,22 +3399,25 @@ question.
 Cody also added the [try.sh](%%REPO_URL%%/1998/schweikh2/try.sh) script.
 
 
+Jump to: [top](#)
+
+
 <div id="1998_schweikh3">
 ## Winning entry: [1998/schweikh3](1998/schweikh3/index.html)
 ### Winning entry source code: [schweikh3.c](%%REPO_URL%%/1998/schweikh3/schweikh3.c)
 </div>
 
 [Cody](#cody) added the [alternate
-code](%%REPO_URL%%/1998/schweikh3/schweikh3.alt.c) which allows one
+code](1998/schweikh3/index.html#alternate-code) which allows one
 to reconfigure the size constant in the rare case that the author wrote about
-occurs.
+occurs. See the
+FAQ on "[alternate code](faq.html#alt_code)"
+for more details.
 
 Cody made `main()` have two args out of an abundance of caution as some versions
 of `clang` say that `main()` can only have 0, 2 or 3 args. These versions accept 1
 arg but it is entirely possible that they fix this so this should prevent it
-from breaking if that happens.
-
-See the
+from breaking if that happens.  See the
 FAQ on "[main function args](faq.html#arg_count)"
 for more details.
 
@@ -3096,19 +3431,19 @@ is the name of the program.
 
 The author stated that:
 
-```
-    In the remote event that the input has more than `8192` files with
-    the same size (on systems where `sizeof (char *) == 4`, or `4096` when
-    `sizeof (char *) == 8`), increase the manifest constant 32767 on line
-    31.
-```
+> In the remote event that the input has more than `8192` files with the same
+size (on systems where `sizeof (char *) == 4`, or `4096` when `sizeof (char *)
+== 8`), increase the manifest constant 32767 on line 31.
 
-so Cody changed the constant to a macro in the `Makefile` called `SZ` so one can
+... so Cody changed the constant to a macro in the `Makefile` called `SZ` so one can
 more easily do this (though it indeed seems highly unlikely). See the index.html
 for more details.
 
 There actually is a web page for the tool and this was added to the author
 information for the entry. It has not been added to any JSON file.
+
+
+Jump to: [top](#)
 
 
 <div id="1998_tomtorfs">
@@ -3129,9 +3464,15 @@ Cody also added the [try.sh](%%REPO_URL%%/1998/tomtorfs/try.sh) script to try ou
 commands that we recommended.
 
 
+Jump to: [top](#)
+
+
 <div id="2000">
 # [2000 - The 15th IOCCC](2000/index.html)
 </div>
+
+
+Jump to: [top](#)
 
 
 <div id="2000_anderson">
@@ -3141,11 +3482,12 @@ commands that we recommended.
 
 [Cody](#cody) changed this entry to use `fgets(3)` instead of `gets(3)`.
 This involved changing the `K` arg to `gets(3)` to `&K` in `fgets(3)`.
-Cody also added the [try.sh](%%REPO_URL%%/2000/anderson/try.sh) script.
-
-See the
+Cody also added the [try.sh](%%REPO_URL%%/2000/anderson/try.sh) script.  See the
 FAQ on "[gets and fgets](faq.html#gets)"
 for why this was done.
+
+
+Jump to: [top](#)
 
 
 <div id="2000_bmeyer">
@@ -3156,6 +3498,9 @@ for why this was done.
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2000/bmeyer/try.sh) script with some improvements to the
 commands we recommended like not assuming the number of columns one has in their
 terminal.
+
+
+Jump to: [top](#)
 
 
 <div id="2000_briddlebane">
@@ -3170,6 +3515,9 @@ Cody also added the [try.sh](%%REPO_URL%%/2000/briddlebane/try.sh) script for th
 feeling a bit too confident, cocky or even happy :-)
 
 
+Jump to: [top](#)
+
+
 <div id="2000_dhyang">
 ## Winning entry: [2000/dhyang](2000/dhyang/index.html)
 ### Winning entry source code: [dhyang.c](%%REPO_URL%%/2000/dhyang//dhyang.c)
@@ -3178,6 +3526,9 @@ feeling a bit too confident, cocky or even happy :-)
 [Cody](#cody) made this more portable by changing the `void main` to `int main`.
 
 He also added the [try.sh](%%REPO_URL%%/2000/dhyang/try.sh) script.
+
+
+Jump to: [top](#)
 
 
 <div id="2000_dlowe">
@@ -3191,6 +3542,9 @@ He also added the [try.sh](%%REPO_URL%%/2000/dhyang/try.sh) script.
 Cody also added the [try.sh](%%REPO_URL%%/2000/dlowe/try.sh) script.
 
 
+Jump to: [top](#)
+
+
 <div id="2000_jarijyrki">
 ## Winning entry: [2000/jarijyrki](2000/jarijyrki/index.html)
 ### Winning entry source code: [jarijyrki.c](%%REPO_URL%%/2000/jarijyrki//jarijyrki.c)
@@ -3198,6 +3552,9 @@ Cody also added the [try.sh](%%REPO_URL%%/2000/dlowe/try.sh) script.
 
 [Cody](#cody) made it easier to compile this in some cases by adding `X11/` to the
 includes of `Xlib.h` and `keysym.h`.
+
+
+Jump to: [top](#)
 
 
 <div id="2000_natori">
@@ -3209,7 +3566,7 @@ includes of `Xlib.h` and `keysym.h`.
 segfault when run or not compile at all (`gcc` and `clang` respectively). The
 compiler fix is due to `clang` being more strict about arg types to `main()`.
 
-Cody also provided [alternate code](%%REPO_URL%%/2000/natori/natori.alt.c) that
+Cody also provided [alternate code](2000/natori/index.html#alternate-code) that
 supports the southern hemisphere, based on the author's remarks.
 
 Cody also provided the [try.sh](%%REPO_URL%%/2000/natori/try.sh) and
@@ -3230,6 +3587,9 @@ variable which although works it is incongruent with the other Makefiles and is
 more confusing (though not really).
 
 
+Jump to: [top](#)
+
+
 <div id="2000_primenum">
 ## Winning entry: [2000/primenum](2000/primenum/index.html)
 ### Winning entry source code: [primenum.c](%%REPO_URL%%/2000/primenum//primenum.c)
@@ -3240,12 +3600,18 @@ more confusing (though not really).
 Cody also added the [try.sh](%%REPO_URL%%/2000/primenum/try.sh) script.
 
 
+Jump to: [top](#)
+
+
 <div id="2000_rince">
 ## Winning entry: [2000/rince](2000/rince/index.html)
 ### Winning entry source code: [rince.c](%%REPO_URL%%/2000/rince//rince.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2000/rince/try.sh) script.
+
+
+Jump to: [top](#)
 
 
 <div id="2000_robison">
@@ -3256,14 +3622,15 @@ Cody also added the [try.sh](%%REPO_URL%%/2000/primenum/try.sh) script.
 [Cody](#cody) fixed an infinite loop that occurred if invalid input was entered, flooding
 the screen with:
 
-```
-    Black position and direction: illegal
-```
+> Black position and direction: illegal
 
 This was fixed by having the `scanf(3)` read in a string and then use `atoi(3)`
 on it to assign to the `int`s, much like with [1987/lievaart](#1987_lievaart).
 The strings are `char[5]` and the `%` specifier is `%4s` which is enough for the
 game.
+
+
+Jump to: [top](#)
 
 
 <div id="2000_schneiderwent">
@@ -3272,6 +3639,9 @@ game.
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2000/schneiderwent/try.sh) script.
+
+
+Jump to: [top](#)
 
 
 <div id="2000_thadgavin">
@@ -3294,14 +3664,13 @@ to test the other version in.
 Due to a terrible design choice of the SDL1 developers something had to be
 changed. As was noted in the log at the time:
 
-```
-    The SDL version did not work for a number of reasons. First of all the
-    code requires that SDL is defined. Second the path[sic] wrong header file was
-    included. Third the SDL1 developers thought it would be a great idea
-    (but obviously it's a terrible idea) to redefine main() (!!) so that any
-    program that uses SDL1 has to have the same args as their definition.
-    This program had 'main()' so the error message was:
-
+>    The SDL version did not work for a number of reasons. First of all the
+>    code requires that SDL is defined. Second the path[sic] wrong header file was
+>    included. Third the SDL1 developers thought it would be a great idea
+>    (but obviously it's a terrible idea) to redefine main() (!!) so that any
+>    program that uses SDL1 has to have the same args as their definition.
+>    This program had 'main()' so the error message was:
+``` <!---c-->
         thadgavin.c:60:1: error: conflicting types for 'SDL_main'
         main()
         ^
@@ -3313,9 +3682,12 @@ changed. As was noted in the log at the time:
                    ^
         1 warning and 1 error generated.
         make: *** [thadgavin_sdl] Error 1
-
-    Thus main() was changed to 'int main(int argc, char **argv)'.
 ```
+>
+>    Thus `main()` was changed to `int main(int argc, char **argv)`.
+
+
+Jump to: [top](#)
 
 
 <div id="2000_tomx">
@@ -3323,8 +3695,8 @@ changed. As was noted in the log at the time:
 ### Winning entry source code: [tomx.c](%%REPO_URL%%/2000/tomx//tomx.c)
 </div>
 
-[Cody](#cody) added the [alternate code](%%REPO_URL%%/2000/tomx/tomx.alt.c) based on the
-author's remarks with a fix for modern systems and he also added the two
+[Cody](#cody) added the [alternate code](2000/tomx/index.html#alternate-code) based on the
+author's remarks with a fix for modern systems, and he also added the two
 scripts, [try.sh](%%REPO_URL%%/2000/tomx/try.sh) and [try.alt.sh](%%REPO_URL%%/2000/tomx/try.alt.sh) for
 the main code and the alternate code respectively.
 
@@ -3332,9 +3704,15 @@ And although the scripts do `chmod +x` on the source code (see the index.html fo
 details) the source code is now executable by default.
 
 
+Jump to: [top](#)
+
+
 <div id="2001">
 # [2001 - The 16th IOCCC](2001/index.html)
 </div>
+
+
+Jump to: [top](#)
 
 
 <div id="2001_anonymous">
@@ -3428,6 +3806,9 @@ attempt to use the program as it was designed but if compiling as 32-bit fails
 it will at least run the supplementary program as a 64-bit program directly.
 
 
+Jump to: [top](#)
+
+
 <div id="2001_bellard">
 ## Winning entry: [2001/bellard](2001/bellard/index.html)
 ### Winning entry source code: [bellard.c](%%REPO_URL%%/2001/bellard//bellard.c)
@@ -3463,6 +3844,9 @@ checked prior to running the function just like the author did for the factorial
 this entry by Yusuke.
 
 
+Jump to: [top](#)
+
+
 ## Portability notes:
 
 With a tip from Yusuke we rediscovered the author's [web page for this
@@ -3477,6 +3861,9 @@ compiler that does not support this would not work. Thus we use the modification
 by Yusuke.
 
 
+Jump to: [top](#)
+
+
 <div id="2001_cheong">
 ## Winning entry: [2001/cheong](2001/cheong/index.html)
 ### Winning entry source code: [cheong.c](%%REPO_URL%%/2001/cheong//cheong.c)
@@ -3489,6 +3876,9 @@ this. :-) This fix makes a point of the author's notes on portability no longer
 valid, BTW.
 
 Cody also added the [try.sh](%%REPO_URL%%/2001/cheong/try.sh) script.
+
+
+Jump to: [top](#)
 
 
 <div id="2001_coupard">
@@ -3518,7 +3908,11 @@ Cody also added the [try.sh](%%REPO_URL%%/2001/coupard/try.sh) script.
 or `/dev/sound/dsp` (which is most everyone nowadays, it seems, and especially
 those with macOS) (to do with sound; see his
 [2013/endoh3/index.html](2013/endoh3/index.html) entry where he also refers to
-sound devices in macOS).
+sound devices in macOS as well as our
+FAQ on "[sound](faq.html#sound)").
+
+
+Jump to: [top](#)
 
 
 
@@ -3535,8 +3929,14 @@ etc.) after exiting even if you don't press 'q', if you crash or if you kill the
 program prematurely. This was done by adding an explicit call to `e()` at the
 end of `main()`.
 
-Cody also added the [alternate code](%%REPO_URL%%/2001/ctk/ctk.alt.c) that adds
-vi(m) movement keys.
+Cody also added the [alternate
+code](2001/ctk/index.html#alternate-code) that adds
+vi(m) movement keys. See the
+FAQ on "[alternate code](faq.html#alt_code)"
+for more details.
+
+
+Jump to: [top](#)
 
 
 <div id="2001_dgbeards">
@@ -3546,13 +3946,16 @@ vi(m) movement keys.
 
 The author provided two changes: one to speed it up and one to make it not crash
 on losing. [Cody](#cody) provided an [alternate
-version](%%REPO_URL%%/2001/dgbeards/dgbeards.alt.c) which does the former but
+version](2001/dgbeards/index.html#alternate-code) which does the former but
 not the latter as he he felt that the idea of crashing on losing (see the
 index.html for details on why that might be) too good to get rid. The author
 explains how to make this change, however.
 
 Cody also points out that there is a way to get the computer to automatically lose
 very quickly. Do you know what it is?
+
+
+Jump to: [top](#)
 
 
 <div id="2001_herrmann1">
@@ -3572,14 +3975,15 @@ He also fixed the [script herrmann1.sh](%%REPO_URL%%/2001/herrmann1/herrmann1.sh
 shellcheck. In particular there were quite a few:
 
 
-```
-    SC2086 (info): Double quote to prevent globbing and word splitting.
-    SC2248 (style): Prefer double quoting even when variables don't contain special characters.
-```
+> SC2086 (info): Double quote to prevent globbing and word splitting.<br>
+> SC2248 (style): Prefer double quoting even when variables don't contain special characters.
 
-errors/warnings.
+... errors/warnings.
 
 Cody also added the [try.sh](%%REPO_URL%%/2001/herrmann1/try.sh) script.
+
+
+Jump to: [top](#)
 
 
 <div id="2001_herrmann2">
@@ -3600,6 +4004,9 @@ For some reason the original code was missing (presumingly because it had been
 added to `.gitignore` by accident) but Cody restored it from the archive.
 
 
+Jump to: [top](#)
+
+
 <div id="2001_kev">
 ## Winning entry: [2001/kev](2001/kev/index.html)
 ### Winning entry source code: [kev.c](%%REPO_URL%%/2001/kev//kev.c)
@@ -3612,8 +4019,10 @@ Cody also slowed down the ball just a tad (it was already a `-D` macro that was 
 in the code) as it went too fast for the speed at which the paddles move even
 when holding down the movement keys (but see below).
 
-Cody also provided an [alternate version](%%REPO_URL%%/2001/kev/kev.alt.c) which lets you use
-the arrow keys on your keyboard instead of the more awkward '`,`' and '`.`'.
+Cody also provided an [alternate version](2001/kev/index.html#alternate-code) which lets you use
+the arrow keys on your keyboard instead of the more awkward '`,`' and '`.`'. See the
+FAQ on "[alternate code](faq.html#alt_code)"
+for more details.
 
 Cody updated both versions to have `#ifndef..#endif` pairs for the macros so one
 can more easily configure different settings without having to specify all of
@@ -3621,6 +4030,9 @@ them (though this change became unnecessary with an improvement on how it was
 done). The speed, `SPEED`, will be set to `50` if it's not defined at the compiler
 line as `50` is what it used to be set to. This way it's more to the original but
 without having to sacrifice playability by running `make`.
+
+
+Jump to: [top](#)
 
 
 <div id="2001_ollinger">
@@ -3632,16 +4044,22 @@ without having to sacrifice playability by running `make`.
 
 
 
+Jump to: [top](#)
+
+
 <div id="2001_schweikh">
 ## Winning entry: [2001/schweikh](2001/schweikh/index.html)
 ### Winning entry source code: [schweikh.c](%%REPO_URL%%/2001/schweikh//schweikh.c)
 </div>
 
 [Cody](#cody) fixed this to not crash if not enough args as this was not documented by
-the author. The other problems are documented so were not fixed. See
+the author. The other problems are documented so were not fixed. See the
 index.html for details.
 
 Cody also added the [try.sh](%%REPO_URL%%/2001/schweikh/try.sh) script.
+
+
+Jump to: [top](#)
 
 
 <div id="2001_westley">
@@ -3657,9 +4075,15 @@ remarks, through `Makefile` rules that generate the files by default with `make
 all`.
 
 
+Jump to: [top](#)
+
+
 <div id="2004">
 # [2004 - The 17th IOCCC](2004/index.html)
 </div>
+
+
+Jump to: [top](#)
 
 
 <div id="2004_anonymous">
@@ -3670,16 +4094,25 @@ all`.
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2004/anonymous/try.sh) script.
 
 
+Jump to: [top](#)
+
+
 <div id="2004_arachnid">
 ## Winning entry: [2004/arachnid](2004/arachnid/index.html)
 ### Winning entry source code: [arachnid.c](%%REPO_URL%%/2004/arachnid//arachnid.c)
 </div>
 
 [Cody](#cody) added an [alternate
-version](%%REPO_URL%%/2004/arachnid/arachnid.alt.c) which
+version](2004/arachnid/index.html#alternate-code) which
 allows those like himself used to `h`, `j`, `k` and `l` movement keys to not get
 lost. Non rogue players, vi users and Dvorak typists are invited to get lost (or
-use the original version)! :-)
+use the original version)! :-) See the
+FAQ on "[alternate code](faq.html#alt_code)"
+for more details.
+
+
+
+Jump to: [top](#)
 
 
 <div id="2004_burley">
@@ -3709,10 +4142,13 @@ expression with `void` or if it is for some other reason).
 
 `longjmp(3)` was being called with one arg which was an element
 of an `int[4][1000]` which had to be changed to a `jmp_buf p[4]` (this due to
-the prototype being included).
+the addition of `#include <setjmp.h>`).
 
 Finally the optimiser cannot be enabled so the compiler flags were changed for
 this, forcing `-O0`.
+
+
+Jump to: [top](#)
 
 
 <div id="2004_gavare">
@@ -3732,13 +4168,18 @@ and anti-alias setting at compile time. This is based on the author's remarks.
 that was used during development, found on their [website about the
 entry](https://gavare.se/ioccc/ioccc_gavare.c.html).
 
+See the
+FAQ on "[alternate code](faq.html#alt_code)"
+for more details.
+
+
 
 <div id="2004_gavin">
 ## Winning entry: [2004/gavin](2004/gavin/index.html)
 ### Winning entry source code: [gavin.c](%%REPO_URL%%/2004/gavin//gavin.c)
 </div>
 
-[Cody](#cody) provided the [alternate code](%%REPO_URL%%/2004/gavin/gavin.alt.c) for
+[Cody](#cody) provided the [alternate code](2004/gavin/index.html#alternate-code) for
 those who want to use QEMU. The most important part of this is the macro `K` has
 to be defined as `1`, not `0`.
 
@@ -3748,6 +4189,9 @@ files provided, found under the [img/](%%REPO_URL%%/2004/gavin/img/) directory. 
 the `img/fs.tar` extracts into `fs/` so you will have to fix the tarball; this
 is done this way to prevent extraction from the entry directory overwriting the
 files and causing `make clobber` to wipe some of them out.
+
+
+Jump to: [top](#)
 
 
 <div id="2004_hibachi">
@@ -3771,12 +4215,18 @@ well, namely to get the program to work as `alt` rather than `-spoiler` (it is
 not even known if it would work otherwise).
 
 
+Jump to: [top](#)
+
+
 <div id="2004_hoyle">
 ## Winning entry: [2004/hoyle](2004/hoyle/index.html)
 ### Winning entry source code: [hoyle.c](%%REPO_URL%%/2004/hoyle//hoyle.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2004/hoyle/try.sh) script.
+
+
+Jump to: [top](#)
 
 
 <div id="2004_jdalbec">
@@ -3810,13 +4260,18 @@ and various other problems. However there does seem to be a problem at least
 with some `gcc` versions in macOS but this appears to be due to errors in
 `/Library/Developer/CommandLineTools/SDKs/MacOSX14.sdk/usr/include/sys/cdefs.h`.
 
-Cody also added [alternate code](%%REPO_URL%%/2004/jdalbec/jdalbec.alt.c) which allows
+Cody also added [alternate code](2004/jdalbec/index.html#alternate-code) which allows
 one to control how many numbers after the `:` to print before printing a
 newline, so that one can see the output a bit better (though for lines that have
-a lot of numbers this will be harder to see).
+a lot of numbers this will be harder to see). See the
+FAQ on "[alternate code](faq.html#alt_code)"
+for more details.
 
 Finally Cody added [try.sh](%%REPO_URL%%/2004/jdalbec/try.sh) and
 [try.alt.sh](%%REPO_URL%%/2004/jdalbec/try.alt.sh) to demonstrate both versions.
+
+
+Jump to: [top](#)
 
 
 <div id="2004_kopczynski">
@@ -3829,17 +4284,17 @@ discovered it will not work otherwise.
 
 Cody, out of an abundance of caution for `clang`, added a second arg to `main()`
 as some versions complain about the number of args and although they accept 1 it
-is entirely possible it will eventually be that they don't.
-
-See the
-FAQ on "[main function args](faq.html#arg_count)"
-for more details.
+is entirely possible it will eventually be that they don't. See the FAQ on
+"[main function args](faq.html#arg_count)" for more details.
 
 Cody also added the [try.sh](%%REPO_URL%%/2004/kopczynski/try.sh) script and various data
 files: [kopczynski-a](%%REPO_URL%%/2004/kopczynski/kopczynski-a) to demonstrate what happens when art more
 like a letter is fed to the program, and the `kopczynski*-rev` files which are
 the data files reversed with `rev(1)`. One had to be modified additionally to
 get it to work, that being `kopczynski-10-rev`.
+
+
+Jump to: [top](#)
 
 
 <div id="2004_newbern">
@@ -3854,6 +4309,9 @@ that the author referred to and was documented by [Yusuke](#yusuke) though Cody
 chose the word `IOCCC` instead of `AAA`).
 
 
+Jump to: [top](#)
+
+
 <div id="2004_omoikane">
 ## Winning entry: [2004/omoikane](2004/omoikane/index.html)
 ### Winning entry source code: [omoikane.c](%%REPO_URL%%/2004/omoikane//omoikane.c)
@@ -3862,14 +4320,15 @@ chose the word `IOCCC` instead of `AAA`).
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2004/omoikane/try.sh) script.
 
 
+Jump to: [top](#)
+
+
 <div id="2004_schnitzi">
 ## Winning entry: [2004/schnitzi](2004/schnitzi/index.html)
 ### Winning entry source code: [schnitzi.c](%%REPO_URL%%/2004/schnitzi//schnitzi.c)
 </div>
 
-[Cody](#cody) made this use `fgets(3)`.
-
-See the
+[Cody](#cody) made this use `fgets(3)`. See the
 FAQ on "[gets and fgets](faq.html#gets)"
 for why this was done.
 
@@ -3879,6 +4338,8 @@ fast in modern systems, especially the scrolling text of
 [schnitzi.inp1](%%REPO_URL%%/2004/schnitzi/schnitzi.inp1).
 
 Cody also added the [try.sh](%%REPO_URL%%/2004/schnitzi/try.sh) script.
+
+Jump to: [top](#)
 
 
 <div id="2004_sds">
@@ -3891,6 +4352,9 @@ Cody also added the [try.sh](%%REPO_URL%%/2004/schnitzi/try.sh) script.
 Also, after the `README.md` file had copyright changes, it broke the script so
 Cody made a copy of the older `README.md` file into `README_sds.txt` and added that
 to the repo for the script instead.
+
+Jump to: [top](#)
+
 
 
 <div id="2004_vik2">
@@ -3955,9 +4419,15 @@ Cody also made it so that the `FNAME` is (for the entry file itself and
 just to make it a bit easier to compile.
 
 
+Jump to: [top](#)
+
+
 <div id="2005">
 # [2005 - The 18th IOCCC](2005/index.html)
 </div>
+
+
+Jump to: [top](#)
 
 
 <div id="2005_aidan">
@@ -3969,10 +4439,12 @@ just to make it a bit easier to compile.
 to the proper compiled program (it's hardcoded). This had never been done and so
 the script did not even work (at least modernly?).
 
-He also added the [alternate code](%%REPO_URL%%/2005/aidan/aidan.alt.c) based on the
+He also added the [alternate code](2005/aidan/index.html#alternate-code) based on the
 author's remarks which is a different approach than the one used and which
-(according to the author) '`is slower (particularly in worst-case or nearly so
-scenarios), inelegant, and not a good starting place for sudoku generation.`'
+(according to the author):
+
+> ... is slower (particularly in worst-case or nearly so
+scenarios), inelegant, and not a good starting place for sudoku generation.
 
 Cody added the [try.sh](%%REPO_URL%%/2005/aidan/try.sh) and
 [try.alt.sh](%%REPO_URL%%/2005/aidan/try.alt.sh) scripts that correspond to the entry and
@@ -3980,6 +4452,9 @@ alternate code respectively.
 
 Cody added the `make test` and `make test-n0` rules for easier use of the test
 suite.
+
+
+Jump to: [top](#)
 
 
 <div id="2005_anon">
@@ -3995,8 +4470,13 @@ The author noted that one can define `NO_STTY` to not use `stty(1)` at all
 (either to prevent having to hit enter or to turn echo off/on) and this is
 explained in the index.html.
 
-Cody added the [alternate code](%%REPO_URL%%/2005/anon/anon.alt.c) with vi(m) like
-movements.
+Cody added the [alternate code](2005/anon/index.html#alternate-code) with vi(m) like
+movements. See the
+FAQ on "[alternate code](faq.html#alt_code)"
+for more details.
+
+
+Jump to: [top](#)
 
 
 <div id="2005_boutines">
@@ -4008,6 +4488,9 @@ movements.
 input from the author, adapting it to a command to try out.
 
 Cody also added the [try.sh](%%REPO_URL%%/2005/boutines/try.sh) script.
+
+
+Jump to: [top](#)
 
 
 <div id="2005_giljade">
@@ -4081,6 +4564,9 @@ program generates as the author states, 180.  If it does not find 180 it is an
 error; otherwise it is success. See [test.sh](%%REPO_URL%%/2005/giljade/test.sh).
 
 
+Jump to: [top](#)
+
+
 <div id="2005_jetro">
 ## Winning entry: [2005/jetro](2005/jetro/index.html)
 ### Winning entry source code: [jetro.c](%%REPO_URL%%/2005/jetro//jetro.c)
@@ -4091,12 +4577,18 @@ not do it implicitly (like macOS does).
 
 
 
+Jump to: [top](#)
+
+
 <div id="2005_klausler">
 ## Winning entry: [2005/klausler](2005/klausler/index.html)
 ### Winning entry source code: [klausler.c](%%REPO_URL%%/2005/klausler//klausler.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2005/klausler/try.sh) script.
+
+
+Jump to: [top](#)
 
 
 <div id="2005_mikeash">
@@ -4134,6 +4626,9 @@ also show correct output though.
 Cody also added the [try.sh](%%REPO_URL%%/2005/mikeash/try.sh) script.
 
 
+Jump to: [top](#)
+
+
 <div id="2005_mynx">
 ## Winning entry: [2005/mynx](2005/mynx/index.html)
 ### Winning entry source code: [mynx.c](%%REPO_URL%%/2005/mynx//mynx.c)
@@ -4154,17 +4649,23 @@ support `http`. But there might be some command line that will let it work that
 way or perhaps someone wants to add the necessary code, updating the file.
 
 
+Jump to: [top](#)
+
+
 <div id="2005_persano">
 ## Winning entry: [2005/persano](2005/persano/index.html)
 ### Winning entry source code: [persano.c](%%REPO_URL%%/2005/persano//persano.c)
 </div>
 
 [Cody](#cody) added the (untested) [alternate
-code](%%REPO_URL%%/2005/persano/persano.alt.c) which should work for Windows as
+code](2005/persano/index.html#alternate-code) which should work for Windows as
 it sets binary mode on `stdout`. This was based on the author's remarks but it
 is untested as Cody has no Windows system to test it on.
 
 Cody also added the [try.sh](%%REPO_URL%%/2005/persano/try.sh) script.
+
+
+Jump to: [top](#)
 
 
 <div id="2005_sykes">
@@ -4209,6 +4710,9 @@ The scripts note every time that one will have to send ctrl-c or whatever their
 interrupt is set to in order to exit the program.
 
 
+Jump to: [top](#)
+
+
 <div id="2005_timwi">
 ## Winning entry: [2005/timwi](2005/timwi/index.html)
 ### Winning entry source code: [timwi.c](%%REPO_URL%%/2005/timwi//timwi.c)
@@ -4217,6 +4721,9 @@ interrupt is set to in order to exit the program.
 [Cody](#cody) added [try.sh](%%REPO_URL%%/2005/timwi/try.sh). It only has one command as he doesn't
 want to knacker his brain any more than it might or might not already be :-) and
 he doesn't want to damage anyone else's brain either. :-)
+
+
+Jump to: [top](#)
 
 
 <div id="2005_toledo">
@@ -4230,6 +4737,9 @@ another function that takes 4 args and which is what used to be `main()`.
 
 The [alternate versions](2005/toledo/index.html#alternate-code) that the author
 provided were also fixed.
+
+
+Jump to: [top](#)
 
 
 <div id="2005_vince">
@@ -4248,9 +4758,15 @@ with the appropriate extension so this might be called a bug fix as well though
 if one runs it from another directory, specifying the directory, it'll not catch it.
 
 
+Jump to: [top](#)
+
+
 <div id="2006">
 # [2006 - The 19th IOCCC](2006/index.html)
 </div>
+
+
+Jump to: [top](#)
 
 
 <div id="2006_birken">
@@ -4265,6 +4781,9 @@ it from working.
 Cody also added the [try.sh](%%REPO_URL%%/2006/birken/try.sh) script.
 
 
+Jump to: [top](#)
+
+
 <div id="2006_borsanyi">
 ## Winning entry: [2006/borsanyi](2006/borsanyi/index.html)
 ### Winning entry source code: [borsanyi.c](%%REPO_URL%%/2006/borsanyi//borsanyi.c)
@@ -4276,6 +4795,9 @@ implicitly linked in.
 Cody also added the [try.sh](%%REPO_URL%%/2006/borsanyi/try.sh) script.
 
 
+Jump to: [top](#)
+
+
 <div id="2006_grothe">
 ## Winning entry: [2006/grothe](2006/grothe/index.html)
 ### Winning entry source code: [grothe.c](%%REPO_URL%%/2006/grothe//grothe.c)
@@ -4284,12 +4806,18 @@ Cody also added the [try.sh](%%REPO_URL%%/2006/borsanyi/try.sh) script.
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2006/grothe/try.sh) script.
 
 
+Jump to: [top](#)
+
+
 <div id="2006_hamre">
 ## Winning entry: [2006/hamre](2006/hamre/index.html)
 ### Winning entry source code: [hamre.c](%%REPO_URL%%/2006/hamre//hamre.c)
 </div>
 
-Cody also added the [try.sh](%%REPO_URL%%/2006/hamre/try.sh) script.
+Cody added the [try.sh](%%REPO_URL%%/2006/hamre/try.sh) script.
+
+
+Jump to: [top](#)
 
 
 <div id="2006_monge">
@@ -4297,22 +4825,22 @@ Cody also added the [try.sh](%%REPO_URL%%/2006/hamre/try.sh) script.
 ### Winning entry source code: [monge.c](%%REPO_URL%%/2006/monge//monge.c)
 </div>
 
-[Cody](#cody) added the [alternate code](%%REPO_URL%%/2006/monge/monge.alt.c) that lets
-one resize the image and redefine the number of iterations.
+[Cody](#cody) added the [alternate code](2006/monge/index.html#alternate-code) that lets
+one resize the image and redefine the number of iterations. See the
+FAQ on "[alternate code](faq.html#alt_code)"
+for more details.
 
 Cody also added the [try.sh](%%REPO_URL%%/2006/monge/try.sh) and
 [try.alt.sh](%%REPO_URL%%/2006/monge/try.alt.sh) scripts.
 
-Cody also fixed the `Makefile` to use `sdl-config` (which is what the author
-stated too though that was noticed later), not `sdl2-config` as two functions
-that are used were removed from [SDL2](https://www.libsdl.org),
-thus making it not link. Since SDL2 is still available and since changing the
-code to use SDL2 is much more complicated and also makes the entry less like
-the original it was simply made to link in SDL1.
+Cody also fixed the `Makefile` to use `sdl-config`, not `sdl2-config`, as two
+functions that are used were removed from [SDL2](https://www.libsdl.org), thus
+making it not link.
 
-Nevertheless this entry does require x86/x86_64 CPUS. This is a documented
-feature but one which we will accept fixes to. See [2006/monge in
-bugs.html](bugs.html#2006_monge).
+Nevertheless this entry does require x86/x86_64 CPUS (this is a documented
+feature).
+
+Jump to: [top](#)
 
 
 <div id="2006_night">
@@ -4321,8 +4849,11 @@ bugs.html](bugs.html#2006_monge).
 </div>
 
 As [Cody](#cody) is a lost :-) `vim` user he took the author's remarks to add support
-back for arrow keys in the [alternate version](%%REPO_URL%%/2006/night/night.alt.c).
+back for arrow keys in the [alternate
+version](2006/night/index.html#alternate-code). See the
+FAQ on "[alternate code](faq.html#alt_code)" for more details.
 
+Jump to: [top](#)
 
 <div id="2006_sloane">
 ## Winning entry: [2006/sloane](2006/sloane/index.html)
@@ -4343,13 +4874,6 @@ used but Cody discovered that later versions of `clang` have an additional defec
 where it does not allow only one arg so the second arg to `main()` was added
 back.
 
-This was an unfortunate problem for the alternate code as he has been using `Z`
-for alternate code `usleep()` (for sleep) but in this case unfortunately the
-original entry used `Z` in `main()` (though unused) so to make it more like the
-original Cody renamed the macro `Z` for `usleep()` to `S` instead which can
-stand for sleep and also it is kind of like a backwards `Z`. That way `Z` could
-be in `main()`.
-
 Cody also made sure that the `Makefile` links in `libm` as not all systems do this
 by default.
 
@@ -4365,19 +4889,25 @@ program in some systems he also added `-include ...` to the `Makefile` as well.
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2006/stewart/try.sh) script.
 
 
+Jump to: [top](#)
+
+
 <div id="2006_sykes1">
 ## Winning entry: [2006/sykes1](2006/sykes1/index.html)
 ### Winning entry source code: [sykes1.c](%%REPO_URL%%/2006/sykes1//sykes1.c)
 </div>
 
 [Cody](#cody) provided the [alternate
-code](%%REPO_URL%%/2006/sykes1/sykes1.alt.c) based on the
+code](2006/sykes1/index.html#alternate-code) based on the
 author's remarks.
 
 Cody also added the [try.sh](%%REPO_URL%%/2006/sykes1/try.sh) script.
 
 Cody also provided the [bedlam-cubes.pdf](2006/sykes1/bedlam-cubes.pdf) file,
 obtained from the Internet Wayback Machine, as the file was no longer available.
+
+Jump to: [top](#)
+
 
 
 <div id="2006_sykes2">
@@ -4387,15 +4917,14 @@ obtained from the Internet Wayback Machine, as the file was no longer available.
 
 [Cody](#cody), out of an abundance of caution for `clang`'s defects, made `main()` have
 2 args instead of 1 as some versions report that `main()` must have 0, 2 or 3
-args, even though at least one of those versions allows 1 arg only.
-
-See the
+args, even though at least one of those versions allows 1 arg only. See the
 FAQ on "[main function args](faq.html#arg_count)"
 for more details.
 
+Cody also added the [try.sh](%%REPO_URL%%/2006/sykes2/try.sh) script for easier
+use of the entry to show the clock update in real time.
 
-Cody also added the [try.sh](%%REPO_URL%%/2006/sykes2/try.sh) script for easier use of the
-entry to show the clock update in real time.
+Jump to: [top](#)
 
 
 <div id="2006_toledo1">
@@ -4404,6 +4933,9 @@ entry to show the clock update in real time.
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2006/toledo1/try.sh) script.
+
+Jump to: [top](#)
+
 
 
 <div id="2006_toledo2">
@@ -4417,7 +4949,7 @@ problem was wrong variable types - implicit `int`s instead of `FILE *`s. It now
 works with both macOS and Linux.
 
 Cody also added the (untested) [alternate
-code](%%REPO_URL%%/2006/toledo2/toledo2.alt.c) that is based on the author's remarks to
+code](2006/toledo2/index.html#alternate-code) that is based on the author's remarks to
 port this to systems that have the non-standard `kbhit()` and `getch()` (not the
 one from curses) which is typically (always?) in `conio.h`.
 
@@ -4426,6 +4958,9 @@ the program and modified the `fread(3)`/`fwrite(3)` section to use the variable
 `FILE *e` (that Cody changed) instead of `int y`, making it to work on x86_64
 (perhaps Cody's fix was for arm64 only?). Also, he added a note to clarify from
 where appears the `IMPORT.COM` and `HALT.COM` files.
+
+Jump to: [top](#)
+
 
 
 
@@ -4440,14 +4975,21 @@ lets it work in both Linux and macOS. The problem was that it relied on 32-bits
 so some `int`s were changed to `long`s. The display problem might or might not
 have been a problem in Linux with the old `int`s but this is no longer known.
 
-Cody also added the code that _should_ work for Windows,
-[toledo3.alt.c](%%REPO_URL%%/2006/toledo3/toledo3.alt.c), based on the author's remarks.
-We're not able to test this.
+Cody also added the code that should work for Windows (it was tested by the
+author), [toledo3.alt.c](%%REPO_URL%%/2006/toledo3/toledo3.alt.c), based on the
+author's remarks; see [Alternate code in
+2006/toledo3/index.html](2006/toledo3/index.html#alternate-code).
+
+
+Jump to: [top](#)
 
 
 <div id="2011">
 # [2011 - The 20th IOCCC](2011/index.html)
 </div>
+
+
+Jump to: [top](#)
 
 
 <div id="2011_akari">
@@ -4458,12 +5000,18 @@ We're not able to test this.
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2011/akari/try.sh) script.
 
 
+Jump to: [top](#)
+
+
 <div id="2011_blakely">
 ## Winning entry: [2011/blakely](2011/blakely/index.html)
 ### Winning entry source code: [blakely.c](%%REPO_URL%%/2011/blakely//blakely.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2011/blakely/try.sh) script.
+
+
+Jump to: [top](#)
 
 
 <div id="2011_borsanyi">
@@ -4473,14 +5021,15 @@ We're not able to test this.
 
 [Cody](#cody), out of an abundance of caution, added a second arg to `main()` as some
 versions of `clang` complain about not only the type of each arg to `main()` but
-the number of args as well.
-
-See the
+the number of args as well. See the
 FAQ on "[main function args](faq.html#arg_count)"
 for more details.
 
 
 Cody also added the [try.sh](%%REPO_URL%%/2011/borsanyi/try.sh) script.
+
+
+Jump to: [top](#)
 
 
 <div id="2011_dlowe">
@@ -4504,12 +5053,18 @@ the file `2011/dlowe/dlowe-aux-data/png-1/image_thumb[40].png` was renamed to
 `image_thumb.png`.
 
 
+Jump to: [top](#)
+
+
 <div id="2011_fredriksson">
 ## Winning entry: [2011/fredriksson](2011/fredriksson/index.html)
 ### Winning entry source code: [fredriksson.c](%%REPO_URL%%/2011/fredriksson//fredriksson.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2011/fredriksson/try.sh) script.
+
+
+Jump to: [top](#)
 
 
 <div id="2011_goren">
@@ -4525,7 +5080,13 @@ and now it does work with 64-bit systems as well as 32-bit systems.
 
 Cody also added the [try.sh](%%REPO_URL%%/2011/goren/try.sh) script.
 
-Cody added the following words of wisdom: `'"this" is not a pipe but "|" is'`.
+Cody added the following words of wisdom:
+
+> "this" is not a pipe but "|" is
+
+:-).
+
+Jump to: [top](#)
 
 
 <div id="2011_hamaji">
@@ -4543,6 +5104,9 @@ The latter two `.nono` files were taken from
 and the others were from the authors' remarks.
 
 
+Jump to: [top](#)
+
+
 <div id="2011_hou">
 ## Winning entry: [2011/hou](2011/hou/index.html)
 ### Winning entry source code: [hou.c](%%REPO_URL%%/2011/hou//hou.c)
@@ -4551,12 +5115,18 @@ and the others were from the authors' remarks.
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2011/hou/try.sh) script.
 
 
+Jump to: [top](#)
+
+
 <div id="2011_konno">
 ## Winning entry: [2011/konno](2011/konno/index.html)
 ### Winning entry source code: [konno.c](%%REPO_URL%%/2011/konno//konno.c)
 </div>
 
 Cody added the [try.sh](%%REPO_URL%%/2011/konno/try.sh) script.
+
+
+Jump to: [top](#)
 
 
 <div id="2011_richards">
@@ -4581,6 +5151,9 @@ helpful to test any fixes for Apple silicon chips (see [2011/richards in
 bugs.html](bugs.html#2011_richards) for more details).
 
 
+
+Jump to: [top](#)
+
 <div id="2011_toledo">
 ## Winning entry: [2011/toledo](2011/toledo/index.html)
 ### Winning entry source code: [toledo.c](%%REPO_URL%%/2011/toledo//toledo.c)
@@ -4595,6 +5168,9 @@ The `Makefile` was also modified by Cody to make it simpler to redefine the
 controls, width and height.
 
 
+Jump to: [top](#)
+
+
 <div id="2011_vik">
 ## Winning entry: [2011/vik](2011/vik/index.html)
 ### Winning entry source code: [vik.c](%%REPO_URL%%/2011/vik//vik.c)
@@ -4602,9 +5178,12 @@ controls, width and height.
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2011/vik/try.sh) script.
 
-Cody also added an [alternate version](%%REPO_URL%%/2011/vik/vik.alt.c) for Windows
+Cody also added an [alternate version](2011/vik/index.html#alternate-code) for Windows
 based on the author's comments (along with looking up the function for the right
 header files). To build try the `alt` rule of the `Makefile`.
+
+
+Jump to: [top](#)
 
 
 <div id="2011_zucker">
@@ -4614,7 +5193,8 @@ header files). To build try the `alt` rule of the `Makefile`.
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2011/zucker/try.sh) script.
 
-Cody also added [alternate code](%%REPO_URL%%/2011/zucker/zucker.alt.c) that should work on
+Cody also added [alternate
+code](2011/zucker/index.html#alternate-code) that should work on
 Windows, based on the author's remarks that if the system distinguishes binary
 and text then `stdout` needs to be set to binary mode.
 
@@ -4623,9 +5203,15 @@ Cody also added the PDF file
 eventually dies.
 
 
+Jump to: [top](#)
+
+
 <div id="2012">
 # [2012 - The 21st IOCCC](2012/index.html)
 </div>
+
+
+Jump to: [top](#)
 
 
 <div id="2012_blakely">
@@ -4639,12 +5225,18 @@ implicitly (Linux doesn't seem to but macOS does).
 Cody also added the [try.sh](%%REPO_URL%%/2012/blakely/try.sh) script.
 
 
+Jump to: [top](#)
+
+
 <div id="2012_deckmyn">
 ## Winning entry: [2012/deckmyn](2012/deckmyn/index.html)
 ### Winning entry source code: [deckmyn.c](%%REPO_URL%%/2012/deckmyn//deckmyn.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2012/deckmyn/try.sh) script.
+
+
+Jump to: [top](#)
 
 
 <div id="2012_endoh1">
@@ -4660,7 +5252,9 @@ let one control how fast the fluid moves (how long to sleep in between writes)
 and also the gravity factor, the pressure factor and the viscosity factor as
 well as an alarm that lets one run it in a loop without having to hit
 ctrl-c/intr in between (the alarm can be disabled, however). The `Makefile` allows
-one to easily do this with variable names rather than redefining `CDEFINE`.
+one to easily do this with variable names rather than redefining `CDEFINE`. See the
+FAQ on "[alternate code](faq.html#alt_code)"
+for more details.
 
 The two different alt versions is because there are two versions: the original
 and the colour version added by the author, [Yusuke](#yusuke), at the request of
@@ -4670,7 +5264,9 @@ Cody also added the [try.alt.sh](%%REPO_URL%%/2012/endoh1/try.alt.sh) script tha
 the alternate code in two ways, one with setting the gravity factor to `I` and another
 with the default, and which is run on the source file and each of the text files
 supplied by the author. This code has an alarm set at 10 seconds so that one
-need not hit ctrl-c/intr in between .. say to make it more fluid :-)
+need not hit ctrl-c/intr in between .. say to make it more fluid :-) See the
+FAQ on "[alternate code](faq.html#alt_code)"
+for more details.
 
 Cody also added the [try.alt.bw.sh](%%REPO_URL%%/2012/endoh1/try.alt.bw.sh) which is the
 same as the `try.alt.sh` except it does not use the coloured version.
@@ -4684,6 +5280,8 @@ The [endoh1.alt2.c](%%REPO_URL%%/2012/endoh1/endoh1.alt2.c) was provided by the 
 [Yusuke](#yusuke), at the time of the contest as a de-obfuscated version.
 
 
+Jump to: [top](#)
+
 <div id="2012_endoh2">
 ## Winning entry: [2012/endoh2](2012/endoh2/index.html)
 ### Winning entry source code: [endoh2.c](%%REPO_URL%%/2012/endoh2//endoh2.c)
@@ -4696,6 +5294,9 @@ Cody also fixed a typo in the ruby script
 [find-font-table.rb](%%REPO_URL%%/2012/endoh2/find-font-table.rb).
 
 
+Jump to: [top](#)
+
+
 <div id="2012_grothe">
 ## Winning entry: [2012/grothe](2012/grothe/index.html)
 ### Winning entry source code: [grothe.c](%%REPO_URL%%/2012/grothe//grothe.c)
@@ -4706,9 +5307,7 @@ Cody also fixed a typo in the ruby script
 Cody also changed `argv` to be not `const char **` but `char **`, mostly out of an
 abundance of caution in case `clang`, which already imposes restrictions on the
 types of args to `main()` including to do with `char **`, decides to further
-restrict them.
-
-See the
+restrict them. See the
 FAQ on "[main function args](faq.html#arg_count)"
 for more details.
 
@@ -4723,6 +5322,9 @@ recent domain. For historical purposes the old link was
 which the recipe file now links to.
 
 
+Jump to: [top](#)
+
+
 <div id="2012_hamano">
 ## Winning entry: [2012/hamano](2012/hamano/index.html)
 ### Winning entry source code: [hamano.c](%%REPO_URL%%/2012/hamano//hamano.c)
@@ -4731,6 +5333,9 @@ which the recipe file now links to.
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2012/hamano/try.sh) script and the helper
 Makefile rules `hint.pdf`, `hint`, `hello.pdf` and `hello` to simplify the
 procedure for both `hint.pdf` and `hello.pdf` as well as compiling them as C.
+
+
+Jump to: [top](#)
 
 
 <div id="2012_hou">
@@ -4743,6 +5348,9 @@ markdown file](%%REPO_URL%%/2012/hou/hint.md) as the changes made when convertin
 index.html made the generated html not look correct; it did not have a title, a
 stylesheet etc. due to the fact that there is no `#` header (which specified
 title and stylesheet) and other formatting changes.
+
+
+Jump to: [top](#)
 
 
 <div id="2012_kang">
@@ -4759,12 +5367,18 @@ without the umlaut (add an 'e' i.e. `fuenf`). Notice how the program picks up on
 this!
 
 
+Jump to: [top](#)
+
+
 <div id="2012_konno">
 ## Winning entry: [2012/konno](2012/konno/index.html)
 ### Winning entry source code: [konno.c](%%REPO_URL%%/2012/konno//konno.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2012/konno/try.sh) script.
+
+
+Jump to: [top](#)
 
 
 <div id="2012_omoikane">
@@ -4785,12 +5399,18 @@ Cody also added the [try.sh](%%REPO_URL%%/2012/omoikane/try.sh) and
 [try.alt.sh](%%REPO_URL%%/2012/omoikane/try.alt.sh) scripts.
 
 
+Jump to: [top](#)
+
+
 <div id="2012_tromp">
 ## Winning entry: [2012/tromp](2012/tromp/index.html)
 ### Winning entry source code: [tromp.c](%%REPO_URL%%/2012/tromp//tromp.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2012/tromp/try.sh) script.
+
+
+Jump to: [top](#)
 
 
 <div id="2012_vik">
@@ -4802,7 +5422,10 @@ Cody also added the [try.sh](%%REPO_URL%%/2012/omoikane/try.sh) and
 
 Based on the author's description it should be possible to get this entry to work
 for Windows. With his instructions Cody also added the [alternate
-version](%%REPO_URL%%/2012/vik/vik.alt.c) that does this.
+version](2012/vik/index.html#alternate-code) that does this.
+
+
+Jump to: [top](#)
 
 
 <div id="2012_zeitak">
@@ -4815,7 +5438,7 @@ version](%%REPO_URL%%/2012/vik/vik.alt.c) that does this.
 correctly be flagged as incorrect (including a text file and a Java file, with a
 joke, to show that it's not that it parses C but rather just matching pairs
 though that's probably obvious) and some correctly nested files were also added
-including [1984/anonymous](%%REPO_URL%%/1984/anonymous/index.html) (as the
+including [1984/anonymous](1984/anonymous/index.html) (as the
 author explicitly mentioned it), both the [original
 version](%%REPO_URL%%/2012/zeitak/anonymous.alt.c) (.alt.c) and the
 [modified version](%%REPO_URL%%/2012/zeitak/anonymous.c) that works with macOS
@@ -4830,6 +5453,9 @@ A minor point is that the author noted that one should
 look at the program source with tab space of 4 characters so Cody added the
 command to do this in vim for those who use it, in the judges' remarks, to make
 it easier for those who do not know how, and to make it more obvious to try it.
+
+
+Jump to: [top](#)
 
 
 <div id="2013">
@@ -4858,6 +5484,9 @@ Cody also added the [try.sh](%%REPO_URL%%/2013/birken/try.sh) script for the ent
 [try.alt.sh](%%REPO_URL%%/2013/birken/try.alt.sh) script for the alternate code.
 
 
+Jump to: [top](#)
+
+
 <div id="2013_cable1">
 ## Winning entry: [2013/cable1](2013/cable1/index.html)
 ### Winning entry source code: [cable1.c](%%REPO_URL%%/2013/cable1//cable1.c)
@@ -4866,12 +5495,18 @@ Cody also added the [try.sh](%%REPO_URL%%/2013/birken/try.sh) script for the ent
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2013/cable1/try.sh) script.
 
 
+Jump to: [top](#)
+
+
 <div id="2013_cable2">
 ## Winning entry: [2013/cable2](2013/cable2/index.html)
 ### Winning entry source code: [cable2.c](%%REPO_URL%%/2013/cable2//cable2.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2013/cable2/try.sh) script.
+
+
+Jump to: [top](#)
 
 
 <div id="2013_cable3">
@@ -4902,7 +5537,7 @@ wrapper scripts) to not assume that the program has been compiled by running
 ]]` over `[ .. ]`).
 
 As well, based on the author's remarks, Cody added the [alternate
-code](%%REPO_URL%%/2013/cable3/cable3.alt.c) which should be compilable for Windows/MS Visual
+code](2013/cable3/index.html#alternate-code) which should be compilable for Windows/MS Visual
 Studio. This is done by in the compile line undefining `KB` (`-UKB`) and then in
 the source code defining `KB` to what the author suggested,
 `(kb=H(8),kbhit())&&(r[1190]=getch(),H(7))`. It need hardly be mentioned that
@@ -4914,6 +5549,9 @@ referred to, found at the [GitHub repo for the
 entry](https://github.com/adriancable/8086tiny/tree/master), and the `ready-made
 40MB hard disk image containing a whole bunch of software` in `hd.img` that the
 author linked to at `https://bitly.com/1bU8URK`.
+
+
+Jump to: [top](#)
 
 
 <div id="2013_dlowe">
@@ -4944,12 +5582,18 @@ He also added the [diff.sh](%%REPO_URL%%/2013/dlowe/diff.sh) script which is bas
 commands to try that he suggested to see how different lengths look.
 
 
+Jump to: [top](#)
+
+
 <div id="2013_endoh1">
 ## Winning entry: [2013/endoh1](2013/endoh1/index.html)
 ### Winning entry source code: [endoh1.c](%%REPO_URL%%/2013/endoh1//endoh1.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2013/endoh1/try.sh) script.
+
+
+Jump to: [top](#)
 
 
 <div id="2013_endoh2">
@@ -4973,6 +5617,9 @@ also appear to be an issue with the script even if you know of `convert`).
 The entry can still be enjoyed if you do not have these tools, however.
 
 
+Jump to: [top](#)
+
+
 <div id="2013_endoh3">
 ## Winning entry: [2013/endoh3](2013/endoh3/index.html)
 ### Winning entry source code: [endoh3.c](%%REPO_URL%%/2013/endoh3//endoh3.c)
@@ -4981,11 +5628,12 @@ The entry can still be enjoyed if you do not have these tools, however.
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2013/endoh3/try.sh) script.
 
 Cody also (out of an abundance of caution for `clang(1)` which is strict with
-arg type and count to `main()`) added a second (unused) arg to `main()`.
-
-See the
+arg type and count to `main()`) added a second (unused) arg to `main()`. See the
 FAQ on "[main function args](faq.html#arg_count)"
 for more details.
+
+
+Jump to: [top](#)
 
 
 <div id="2013_endoh4">
@@ -5003,6 +5651,9 @@ pass more than one file to the script.
 Cody also made it easier to redefine the size at compilation time (see the
 author's remarks for more details on what this means). The `endoh4.sh` script
 allows one to redefine it as well.
+
+
+Jump to: [top](#)
 
 
 <div id="2013_hou">
@@ -5041,10 +5692,12 @@ rule in the `Makefile` was originally removed as part of the above but it was
 restored so that one can see what the author is talking about.
 
 Further, after the file `2013/hou/doc/example.markdown` was moved to
-[2013/hou/doc/example.md](%%REPO_URL%%/2013/hou/doc/example.md) to match the rest of the repo
-this broke `make` which Cody also fixed.
+[2013/hou/doc/example.md](%%REPO_URL%%/2013/hou/doc/example.md) by us, to match
+the rest of the repo, `make` was broken, which Cody fixed.
 
 Cody also added the [try.sh](%%REPO_URL%%/2013/hou/try.sh) script.
+
+Jump to: [top](#)
 
 
 <div id="2013_mills">
@@ -5060,12 +5713,18 @@ this was specific to macOS but it was not specific to a browser as Safari and
 Firefox both had the problem.
 
 
+Jump to: [top](#)
+
+
 <div id="2013_misaka">
 ## Winning entry: [2013/misaka](2013/misaka/index.html)
 ### Winning entry source code: [misaka.c](%%REPO_URL%%/2013/misaka//misaka.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2013/misaka/try.sh) script.
+
+
+Jump to: [top](#)
 
 
 <div id="2013_morgan1">
@@ -5079,12 +5738,18 @@ implicitly (Linux doesn't seem to but macOS does).
 Cody also added the [try.sh](%%REPO_URL%%/2013/morgan1/try.sh) script.
 
 
+Jump to: [top](#)
+
+
 <div id="2013_robison">
 ## Winning entry: [2013/robison](2013/robison/index.html)
 ### Winning entry source code: [robison.c](%%REPO_URL%%/2013/robison//robison.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2013/robison/try.sh) script.
+
+
+Jump to: [top](#)
 
 
 <div id="2014">
@@ -5095,18 +5760,23 @@ Cody also added the [try.sh](%%REPO_URL%%/2013/morgan1/try.sh) script.
 iocccsize.mk` files.
 
 
+Jump to: [top](#)
+
+
 <div id="2014_birken">
 ## Winning entry: [2014/birken](2014/birken/index.html)
 ### Winning entry source code: [prog.c](%%REPO_URL%%/2014/birken//prog.c)
 </div>
 
 [Cody](#cody) provided the [alternate
-code](%%REPO_URL%%/2014/birken/prog.alt.c) that lets one redefine the port to
+code](2014/birken/index.html#alternate-code) that lets one redefine the port to
 bind to in case there is a firewall issue or there is some other reason to not
 have the default port. Remember that ports < 1024 are privileged. It also lets
 you redefine the timing constant `STARDATE` (see the author's remarks for more
 details on this macro). The `Makefile` was made to use variables so it's easier to
 redefine the port and timing constant.
+
+Jump to: [top](#)
 
 
 <div id="2014_deak">
@@ -5122,7 +5792,9 @@ be what the program would look like if, as the author put it:
 > The usage of recognizable elements from the C programming language in the
 application source code is intentionally kept to a bare minimum.
 
-.. was not true.
+.. was not true. See the
+FAQ on "[alternate code](faq.html#alt_code)"
+for more details.
 
 This alternate version did not originally compile because a value was left off the
 `return` statement (this might have been fixed in the index.html file too) so
@@ -5130,6 +5802,9 @@ that was fixed and it also has `#include <stdio.h>` for `putchar(3)`. The
 `#ifndef..#define..#endif` was not part of the original alternate code, of course.
 
 Cody also added the [try.alt.sh](%%REPO_URL%%/2014/deak/try.alt.sh) script.
+
+
+Jump to: [top](#)
 
 
 <div id="2014_endoh1">
@@ -5147,14 +5822,14 @@ then it tells you to install a specific gem and then to try again. Finally if
 `rake` succeeds it will verify that `prog` is executable and if it is it will
 run it.
 
-After more work on the manifest was done Cody had to update the `clobber` rule
-to remove some text files so as to not cause problems with an invalid manifest.
-
 Cody also added the [try.sh](%%REPO_URL%%/2014/endoh1/try.sh) script.
 
 To silence the annoying misleading indentation warning and to prevent debug
 symbols from being built with `rake` Cody also updated the
 [Rakefile](%%REPO_URL%%/2014/endoh1/Rakefile) slightly.
+
+
+Jump to: [top](#)
 
 
 <div id="2014_endoh2">
@@ -5164,6 +5839,9 @@ symbols from being built with `rake` Cody also updated the
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2014/endoh2/try.sh) script.
 
+
+
+Jump to: [top](#)
 
 <div id="2014_maffiodo1">
 ## Winning entry: [2014/maffiodo1](2014/maffiodo1/index.html)
@@ -5180,6 +5858,9 @@ Great Giana Sisters](http://en.wikipedia.org/wiki/The_Great_Giana_Sisters), but
 which let one configure the width and height of the game.
 
 
+Jump to: [top](#)
+
+
 <div id="2014_maffiodo2">
 ## Winning entry: [2014/maffiodo2](2014/maffiodo2/index.html)
 ### Winning entry source code: [prog.c](%%REPO_URL%%/2014/maffiodo2//prog.c)
@@ -5187,8 +5868,11 @@ which let one configure the width and height of the game.
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2014/maffiodo2/try.sh) script.
 
-Cody also added the [alternate code](%%REPO_URL%%/2014/maffiodo2/prog.alt.c)
+Cody also added the [alternate code](2014/maffiodo2/index.html#alternate-code)
 provided by the author.
+
+
+Jump to: [top](#)
 
 
 <div id="2014_morgan">
@@ -5197,6 +5881,9 @@ provided by the author.
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2014/morgan/try.sh) script.
+
+
+Jump to: [top](#)
 
 
 <div id="2014_sinon">
@@ -5217,6 +5904,9 @@ Cody also added the [try.sh](%%REPO_URL%%/2014/sinon/try.sh) script that will fi
 is installed) run the demo mode and then after that it will run the above noted
 scripts in a loop until the user says they do not want to try again (or they
 kill it). This is done this way in case it jams (see index.html for details).
+
+
+Jump to: [top](#)
 
 
 <div id="2014_skeggs">
@@ -5240,6 +5930,9 @@ the index.html file for details) so Cody made sure that `make clobber` (via `mak
 clean`) removes those files and so that they are ignored by `.gitignore`.
 
 
+Jump to: [top](#)
+
+
 <div id="2014_vik">
 ## Winning entry: [2014/vik](2014/vik/index.html)
 ### Winning entry source code: [prog.c](%%REPO_URL%%/2014/vik//prog.c)
@@ -5255,6 +5948,9 @@ theoretically work for Microsoft Windows compilers (if anything works in Windows
 that would break it we do not know.
 
 
+Jump to: [top](#)
+
+
 <div id="2014_wiedijk">
 ## Winning entry: [2014/wiedijk](2014/wiedijk/index.html)
 ### Winning entry source code: [prog.c](%%REPO_URL%%/2014/wiedijk//prog.c)
@@ -5268,9 +5964,15 @@ executable and it pipes it through `less(1)` as it's longer than a page worth of
 output.
 
 
+Jump to: [top](#)
+
+
 <div id="2015">
 # [2015 - The 24th IOCCC](2015/index.html)
 </div>
+
+
+Jump to: [top](#)
 
 
 <div id="2015_burton">
@@ -5317,6 +6019,9 @@ called `calc` and is in documentation including the man page. Thus one only need
 add a `./` to the commands in the man page/index.html.
 
 
+Jump to: [top](#)
+
+
 <div id="2015_dogon">
 ## Winning entry: [2015/dogon](2015/dogon/index.html)
 ### Winning entry source code: [prog.c](%%REPO_URL%%/2015/dogon//prog.c)
@@ -5325,9 +6030,12 @@ add a `./` to the commands in the man page/index.html.
 [Cody](#cody) improved the `Makefile` so that one can easily change the dimensions
 at compilation time via `make(1)`.
 
-Cody also added [alternate code](%%REPO_URL%%/2015/dogon/prog.alt.c) that is
+Cody also added [alternate code](2015/dogon/index.html#alternate-code) that is
 based on the author's remarks, suggesting that one change the value of `q` to a
 different number, in order to see a bug that they avoided.
+
+
+Jump to: [top](#)
 
 
 <div id="2015_duble">
@@ -5338,12 +6046,18 @@ different number, in order to see a bug that they avoided.
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2015/duble/try.sh) script.
 
 
+Jump to: [top](#)
+
+
 <div id="2015_endoh2">
 ## Winning entry: [2015/endoh2](2015/endoh2/index.html)
 ### Winning entry source code: [prog.c](%%REPO_URL%%/2015/endoh2//prog.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2015/endoh2/try.sh) script.
+
+
+Jump to: [top](#)
 
 
 <div id="2015_endoh3">
@@ -5362,12 +6076,18 @@ simply typing `make back_to`, `make future` or `make mullender`) and then runs
 the famous [1984/mullender.c](%%REPO_URL%%/1984/mullender/mullender.c).
 
 
+Jump to: [top](#)
+
+
 <div id="2015_endoh4">
 ## Winning entry: [2015/endoh4](2015/endoh4/index.html)
 ### Winning entry source code: [prog.c](%%REPO_URL%%/2015/endoh4//prog.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2015/endoh4/try.sh) script.
+
+
+Jump to: [top](#)
 
 
 <div id="2015_hou">
@@ -5384,6 +6104,9 @@ which the `try.sh` script uses.
 Cody also added the RFC 1321 text file, [rfc1321.txt](2015/hou/rfc1321.txt) to
 the directory, to make it so one need not download it, and which the index.html
 file now links to.
+
+
+Jump to: [top](#)
 
 
 <div id="2015_howe">
@@ -5408,6 +6131,9 @@ The fact there are alternate versions necessitated the
 well.
 
 
+Jump to: [top](#)
+
+
 <div id="2015_mills1">
 ## Winning entry: [2015/mills1](2015/mills1/index.html)
 ### Winning entry source code: [prog.c](%%REPO_URL%%/2015/mills1//prog.c)
@@ -5415,6 +6141,9 @@ well.
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2015/mills1/try.sh) script which changes the
 parameters to what we had in the judges' remarks to make it easier.
+
+
+Jump to: [top](#)
 
 
 <div id="2015_mills2">
@@ -5425,12 +6154,18 @@ parameters to what we had in the judges' remarks to make it easier.
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2015/mills2/try.sh) script.
 
 
+Jump to: [top](#)
+
+
 <div id="2015_muth">
 ## Winning entry: [2015/muth](2015/muth/index.html)
 ### Winning entry source code: [prog.c](%%REPO_URL%%/2015/muth//prog.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2015/muth/try.sh) script.
+
+
+Jump to: [top](#)
 
 
 <div id="2015_schweikhardt">
@@ -5444,6 +6179,9 @@ the code any with C preprocessor directives (the preferred way) or changing
 `EOF` to `-1`.
 
 Cody also added the [try.sh](%%REPO_URL%%/2015/schweikhardt/try.sh) script.
+
+
+Jump to: [top](#)
 
 
 <div id="2015_yang">
@@ -5460,12 +6198,18 @@ He also added explicit linking of libm (`-lm`) for systems that do not do this
 He also added the [try.sh](%%REPO_URL%%/2015/yang/try.sh) script.
 
 
+Jump to: [top](#)
+
+
 <div id="2018">
 # [2018 - The 25th IOCCC](2018/index.html)
 </div>
 
 [Cody](#cody) added the missing `README.md` file from the winner archive back to
 the repo.
+
+
+Jump to: [top](#)
 
 
 <div id="2018_anderson">
@@ -5477,6 +6221,9 @@ the repo.
 [try.alt.sh](%%REPO_URL%%/2018/anderson/try.alt.sh) scripts.
 
 
+Jump to: [top](#)
+
+
 <div id="2018_algmyr">
 ## Winning entry: [2018/algmyr](2018/algmyr/index.html)
 ### Winning entry source code: [prog.c](%%REPO_URL%%/2018/algmyr//prog.c)
@@ -5484,6 +6231,9 @@ the repo.
 
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2018/algmyr/try.sh) script.
+
+
+Jump to: [top](#)
 
 
 <div id="2018_bellard">
@@ -5497,9 +6247,7 @@ Cody also, out of abundance of caution, added a second arg to `main()` because
 some versions of `clang` object to the number of args of `main()`, saying that it
 must be 0, 2 or 3. The version this has been observed in does not actually
 object to 1 arg but it is entirely possible that this changes so a second arg
-(that's not needed and is unused) has been added just in case.
-
-See the
+(that's not needed and is unused) has been added just in case.  See the
 FAQ on "[main function args](faq.html#arg_count)"
 for more details.
 
@@ -5507,10 +6255,13 @@ for more details.
 Cody also added explicit linking of libm (`-lm`) for systems that do not do this
 (Linux doesn't seem to but macOS does).
 
-Cody also added [alternate code](%%REPO_URL%%/2018/bellard/prog.alt.c) that should
+Cody also added [alternate code](2018/bellard/index.html#alternate-code) that should
 work for Windows, based on the author's remarks. The same thing with the number
 of args to `main()` that was done in the original entry was done with this
 version as well.
+
+
+Jump to: [top](#)
 
 
 <div id="2018_burton1">
@@ -5523,6 +6274,9 @@ script (it referred to `prog` not `./prog`).
 
 Cody also added the [try.sh](%%REPO_URL%%/2018/burton1/try.sh) script which also uses
 `scripthd.sh` to show how it differs from `prog` itself.
+
+
+Jump to: [top](#)
 
 
 <div id="2018_burton2">
@@ -5543,6 +6297,9 @@ included in the remarks of the author but not an included file.
 Finally Cody added the [try.sh](%%REPO_URL%%/2018/burton2/try.sh) script.
 
 
+Jump to: [top](#)
+
+
 <div id="2018_ciura">
 ## Winning entry: [2018/ciura](2018/ciura/index.html)
 ### Winning entry source code: [prog.c](%%REPO_URL%%/2018/ciura//prog.c)
@@ -5552,6 +6309,9 @@ Finally Cody added the [try.sh](%%REPO_URL%%/2018/burton2/try.sh) script.
 [try.alt.sh](%%REPO_URL%%/2018/ciura/try.alt.sh) scripts and the PDF file,
 [lexicon.pdf](2018/ciura/lexicon.pdf), that was a dead link, restored from the
 Internet Wayback Machine.
+
+
+Jump to: [top](#)
 
 
 <div id="2018_endoh1">
@@ -5566,6 +6326,9 @@ the user they should open it in a GIF viewer that can show animation in animated
 GIF files. It offers an example command for macOS like the judges did in their
 remarks. The input files offered includes the `prog.c` as the author,
 [Yusuke](#yusuke), suggested that it too has a secret.
+
+
+Jump to: [top](#)
 
 
 <div id="2018_endoh2">
@@ -5583,6 +6346,9 @@ exit the script). The `make python` and `make python3` rules in the `Makefile` n
 run the respective scripts.
 
 
+Jump to: [top](#)
+
+
 <div id="2018_hou">
 ## Winning entry: [2018/hou](2018/hou/index.html)
 ### Winning entry source code: [prog.c](%%REPO_URL%%/2018/hou//prog.c)
@@ -5592,6 +6358,9 @@ run the respective scripts.
 (Linux doesn't seem to but macOS does).
 
 Cody also added the [try.sh](%%REPO_URL%%/2018/hou/try.sh) script.
+
+
+Jump to: [top](#)
 
 
 <div id="2018_mills">
@@ -5607,6 +6376,9 @@ run) enter and then exit and then start the program again. Also if you do add a
 file you should run `sync` prior to exiting or else the file might not exist or
 it might be corrupt. See [2018/mills in bugs.html](bugs.html#2018_mills) for more
 details on the bug.
+
+
+Jump to: [top](#)
 
 
 <div id="2018_poikola">
@@ -5625,6 +6397,9 @@ We added some additional notes on what might happen (it varies depending on
 configuration).
 
 
+Jump to: [top](#)
+
+
 <div id="2018_vokes">
 ## Winning entry: [2018/vokes](2018/vokes/index.html)
 ### Winning entry source code: [prog.c](%%REPO_URL%%/2018/vokes//prog.c)
@@ -5632,6 +6407,8 @@ configuration).
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2018/vokes/try.sh) script.
 
+
+Jump to: [top](#)
 
 <div id="2018_yang">
 ## Winning entry: [2018/yang](2018/yang/index.html)
@@ -5644,9 +6421,15 @@ if the user wants to see some of the deobfuscation information and only show the
 
 
 
+Jump to: [top](#)
+
+
 <div id="2019">
 # [2019 - The 26th IOCCC](2019/index.html)
 </div>
+
+
+Jump to: [top](#)
 
 
 <div id="2019_adamovsky">
@@ -5657,6 +6440,9 @@ if the user wants to see some of the deobfuscation information and only show the
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2019/adamovsky/try.sh) script and the Unlambda
 file [crash.unl](%%REPO_URL%%/2019/adamovsky/crash.unl) which is in the judges' remarks as
 to what can crash it - but it's not a bug, it's a feature.
+
+
+Jump to: [top](#)
 
 
 <div id="2019_burton">
@@ -5673,11 +6459,14 @@ running `make test`.
 
 Cody also fixed the script [check.sh](%%REPO_URL%%/2019/burton/check.sh) in case
 `x` is specified and is not executable and also made it satisfy ShellCheck.
-ShellCheck was fixed to not be a
-[cow](https://en.wikipedia.org/wiki/Cattle) and/or (to use [Bart
-Simpson](https://simpsons.fandom.com/wiki/Bart_Simpson)'s advice :-) )
-'[not have a cow](https://en.wikipedia.org/wiki/Don%27t_have_a_cow)' about certain things (including one thing it was wrong about)
-in [cow.sh](%%REPO_URL%%/2019/burton/cow.sh) <del>moo</del>too.
+ShellCheck was fixed to not be a [cow](https://en.wikipedia.org/wiki/Cattle)
+and/or (to use [Bart Simpson](https://simpsons.fandom.com/wiki/Bart_Simpson)'s
+advice :-) ) '[not have a
+cow](https://en.wikipedia.org/wiki/Don%27t_have_a_cow)' about certain things
+(including one thing it was wrong about) in
+[cow.sh](%%REPO_URL%%/2019/burton/cow.sh) <del>moo</del>too.
+
+Jump to: [top](#)
 
 
 <div id="2019_ciura">
@@ -5706,6 +6495,9 @@ bugs.html](bugs.html#2019_ciura) for more details.
 
 
 
+Jump to: [top](#)
+
+
 <div id="2019_diels-grabsch1">
 ## Winning entry: [2019/diels-grabsch1](2019/diels-grabsch1/index.html)
 ### Winning entry source code: [prog.c](%%REPO_URL%%/2019/diels-grabsch1//prog.c)
@@ -5715,9 +6507,11 @@ bugs.html](bugs.html#2019_ciura) for more details.
 
 Cody also added the file [Shakespeare.txt](2019/diels-grabsch1/Shakespeare.txt)
 from [2019/mills](2019/mills/index.html) (after running `make`) so that one can
-not worry about having the entire IOCCC winning entry tree (or at least the 2019 tree each
-entry in a subdirectory). This was important as we now have tarballs for each
-entry by themselves.
+not worry about having the entire IOCCC winning entry tree (or at least the 2019
+tree). This was important as we now have tarballs for each entry by themselves.
+
+
+Jump to: [top](#)
 
 
 <div id="2019_diels-grabsch2">
@@ -5730,6 +6524,9 @@ script. This script will try and show the difference (i.e. the same output)
 between the program and the result of `sha512sum` or `shasum -a 512`, if these
 tools can be found, or otherwise just run the program itself, showing its own
 [sha512](https://en.wikipedia.org/wiki/SHA-2) value.
+
+
+Jump to: [top](#)
 
 
 <div id="2019_dogon">
@@ -5753,6 +6550,9 @@ was to only correct spelling and only some, not to change wording or anything
 else).
 
 
+Jump to: [top](#)
+
+
 <div id="2019_duble">
 ## Winning entry: [2019/duble](2019/duble/index.html)
 ### Winning entry source code: [prog.c](%%REPO_URL%%/2019/duble//prog.c)
@@ -5767,6 +6567,9 @@ an easy way to tell the user how to compile it, assuming that the environmental
 variables `LINES` and `COLUMNS` are set. But even if they're not set it explains
 how to easily compile the program to a specific size. Note that `LINES` and
 `COLUMNS` is not available to scripts so it can't make use of them that way.
+
+
+Jump to: [top](#)
 
 
 <div id="2019_endoh">
@@ -5786,12 +6589,18 @@ to easily reconstruct the source code through GDB by the fact it's a backtrace
 quine.
 
 
+Jump to: [top](#)
+
+
 <div id="2019_giles">
 ## Winning entry: [2019/giles](2019/giles/index.html)
 ### Winning entry source code: [prog.c](%%REPO_URL%%/2019/giles//prog.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2019/giles/try.sh) script.
+
+
+Jump to: [top](#)
 
 
 <div id="2019_karns">
@@ -5808,6 +6617,9 @@ He also added the script [try.sh](%%REPO_URL%%/2019/karns/try.sh) to showcase th
 bit more easily.
 
 
+Jump to: [top](#)
+
+
 <div id="2019_lynn">
 ## Winning entry: [2019/lynn](2019/lynn/index.html)
 ### Winning entry source code: [prog.c](%%REPO_URL%%/2019/lynn//prog.c)
@@ -5821,12 +6633,18 @@ Cody also added the [example-1.txt](2019/lynn/example-1.txt) and
 entry existing.
 
 
+Jump to: [top](#)
+
+
 <div id="2019_mills">
 ## Winning entry: [2019/mills](2019/mills/index.html)
 ### Winning entry source code: [prog.c](%%REPO_URL%%/2019/mills//prog.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2019/mills/try.sh) script.
+
+
+Jump to: [top](#)
 
 
 <div id="2019_poikola">
@@ -5838,8 +6656,10 @@ entry existing.
 file. The rule requires the tool
 [pdflatex](https://tug.org/applications/pdftex/index.html).
 
-Cody also added the [alternate code](%%REPO_URL%%/2019/poikola/prog.alt.c) which
-adds a newline after each number for parsing in additional ways.
+Cody also added the [alternate code](2019/poikola/index.html#alternate-code) which
+adds a newline after each number for parsing in additional ways. See the
+FAQ on "[alternate code](faq.html#alt_code)"
+for more details.
 
 Cody also added the [try.sh](%%REPO_URL%%/2019/poikola/try.sh) and
 [try.alt.sh](%%REPO_URL%%/2019/poikola/try.alt.sh) scripts.
@@ -5850,6 +6670,9 @@ suggesting that with some versions of `GCC` it might not be correct with levels 
 0 and since 0 works with `clang` that's okay. Similarly, the same for C standards
 tested: `gnu17` was not tested but `gnu11` was so the standard was set to
 `gnu11`.
+
+
+Jump to: [top](#)
 
 
 <div id="2019_yang">
@@ -5863,9 +6686,15 @@ slightly updating the [sample_input.txt](2019/yang/sample_input.txt) file
 shouldn't) and adding the [ioccc.txt](2019/yang/ioccc.txt) file.
 
 
+Jump to: [top](#)
+
+
 <div id="2020">
 # [2020 - The 27th IOCCC](2020/index.html)
 </div>
+
+
+Jump to: [top](#)
 
 
 <div id="2020_burton">
@@ -5884,6 +6713,9 @@ showing nothing at all.
 Cody also added the [try.sh](%%REPO_URL%%/2020/burton/try.sh) script.
 
 
+Jump to: [top](#)
+
+
 <div id="2020_carlini">
 ## Winning entry: [2020/carlini](2020/carlini/index.html)
 ### Winning entry source code: [prog.c](%%REPO_URL%%/2020/carlini//prog.c)
@@ -5893,6 +6725,9 @@ Cody also added the [try.sh](%%REPO_URL%%/2020/burton/try.sh) script.
 first glance might not appear to have a point, it actually does, namely showing
 how you can automate play and then reminding you to actually play for real, with
 a friend, whether that's real or imagined.
+
+
+Jump to: [top](#)
 
 
 <div id="2020_endoh2">
@@ -5907,6 +6742,9 @@ put in `spoiler/` were moved to
 [obfuscation/](2020/endoh2/obfuscation/index.html).
 
 He also added the [try.sh](%%REPO_URL%%/2020/endoh2/try.sh) script.
+
+
+Jump to: [top](#)
 
 
 <div id="2020_endoh3">
@@ -5924,7 +6762,7 @@ funny error when running it:
 
 If run from within vim a different error message occurred:
 
-```
+``` <!---sh-->
     /bin/bash: ./run_clock.sh: /usr/bin/end: bad interpreter: No such file or directory
 ```
 
@@ -5949,14 +6787,8 @@ which is analogous to the [run_clock.sh](%%REPO_URL%%/2020/endoh3/run_clock.sh) 
 alternate code provided by the author, Yusuke.
 
 
-<div id="2020_ferguson1">
-## Winning entry: [2020/ferguson1](2020/ferguson1/index.html)
-### Winning entry source code: [prog.c](%%REPO_URL%%/2020/ferguson1//prog.c)
-</div>
+Jump to: [top](#)
 
-Just for awareness: [Cody](#cody) made some corrections to the vital [Double
-layered chocolate fudge cake recipe](2020/ferguson1/chocolate-cake.html) :-)
-Other fixes were made but as it's his entry it's not worth noting.
 
 
 <div id="2020_giles">
@@ -5976,12 +6808,18 @@ and tells them they will have to play the WAV files manually. Otherwise it'll
 use the program to play the WAV files (and in one case `stdout`).
 
 
+Jump to: [top](#)
+
+
 <div id="2020_kurdyukov1">
 ## Winning entry: [2020/kurdyukov1](2020/kurdyukov1/index.html)
 ### Winning entry source code: [prog.c](%%REPO_URL%%/2020/kurdyukov1//prog.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2020/kurdyukov1/try.sh) script.
+
+
+Jump to: [top](#)
 
 
 <div id="2020_kurdyukov2">
@@ -6003,6 +6841,9 @@ specify which compiler to use with `CC=foo ./makegif.sh ...`), checking that
 entry if not installed or it fails).
 
 
+Jump to: [top](#)
+
+
 <div id="2020_kurdyukov3">
 ## Winning entry: [2020/kurdyukov3](2020/kurdyukov3/index.html)
 ### Winning entry source code: [prog.c](%%REPO_URL%%/2020/kurdyukov3//prog.c)
@@ -6011,8 +6852,9 @@ entry if not installed or it fails).
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2020/kurdyukov3/try.sh) script.
 
 He also added a link that has much more details about this phenomenon to the
-index.html. Naturally he's one of the ones who can read text even if it's even
-more jumbled but we know of others too.
+index.html.
+
+Jump to: [top](#)
 
 
 <div id="2020_kurdyukov4">
@@ -6037,6 +6879,9 @@ and literary executor and heir to [J.R.R.
 Tolkien](https://www.tolkienestate.com/life/biography/).
 
 
+Jump to: [top](#)
+
+
 <div id="2020_otterness">
 ## Winning entry: [2020/otterness](2020/otterness/index.html)
 ### Winning entry source code: [prog.c](%%REPO_URL%%/2020/otterness//prog.c)
@@ -6054,6 +6899,9 @@ unobfuscated version that Cody added as
 [prog.alt.c](%%REPO_URL%%/2020/otterness/prog.alt.c).
 
 
+
+Jump to: [top](#)
+
 <div id="2020_tsoj">
 ## Winning entry: [2020/tsoj](2020/tsoj/index.html)
 ### Winning entry source code: [prog.c](%%REPO_URL%%/2020/tsoj//prog.c)
@@ -6061,7 +6909,12 @@ unobfuscated version that Cody added as
 
 [Cody](#cody) added [alternate code](2020/tsoj/index.html#alternate-code) that will feel
 more at home for vi users. One might still end up cursing (see the index.html
-file) but probably a lot less :-)
+file) but probably a lot less :-) See the
+FAQ on "[alternate code](faq.html#alt_code)"
+for more details.
+
+
+Jump to: [top](#)
 
 
 <div id="2020_yang">
@@ -6072,8 +6925,11 @@ file) but probably a lot less :-)
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2020/yang/try.sh) script.
 
 Cody also added a make rule (`make cppp`) for the author's provided C++ code
-that can preprocess the generated output to make them more acceptable to typical
+that can pre-process the generated output to make them more acceptable to typical
 compilers. See the index.html for more details.
+
+
+Jump to: [top](#)
 
 
 
@@ -6081,6 +6937,7 @@ compilers. See the index.html for more details.
 # General thanks
 </div>
 
+Jump to: [top](#)
 
 <div id="makefiles_fixes_improvements">
 ## Makefiles fixes and improvements
@@ -6141,13 +6998,14 @@ this, along with many other fixes and changes to the Makefiles were made by
 Cody's [sgit tool](https://github.com/xexyl/sgit) but many other changes he did
 manually.
 
+Jump to: [top](#)
 
 <div id="consistency_improvements">
 ## Consistency improvements
 </div>
 
 [Cody](#cody), being the IOCCC's resident corrections officer :-) (and a fine one at
-that, we think :-) ), made many, many typ0 (... :-) ) fixes throughout the
+that, we think :-) ), made many, many typo fixes throughout the
 README.md files, scripts, other data files, Makefiles (see above) etc.
 
 He also updated the formatting of the README.md files, used to generate the
@@ -6163,21 +7021,53 @@ Some of these fixes were done with his [sgit
 tool](https://github.com/xexyl/sgit) as well but the vast majority were done
 manually.
 
+Jump to: [top](#)
 
-<div id="manifest_improvements">
-## Manifest improvements
+
+<div id="try">
+## Try script system
 </div>
 
-[Cody](#cody) greatly improved the manifest of the winning entries so that the
-links to the files in the index.html files make sense and are consistent,
-although some might not make as much sense unless one looks into the entry.
+[Cody](#cody) devised the `try` script system and added the many `try.sh`,
+`try.alt.sh` and various other forms, as well as a number of wrapper scripts to
+more easily run programs. It is not always useful but these scripts do a variety
+of things to really show off the entries, so this really helps with the
+presentation of the winning entries.
+
+
+Jump to: [top](#)
+
+
+<div id="website_improvements">
+## Website and manifest improvements
+</div>
+
+[Cody](#cody) helped in many ways to make the website much more presentable by:
+
+- converting old hints files to README.md files (fixing problems in the process)
+- converting other files to markdown
+- extending the stylesheet for a few improvements
+- fixing many different kinds of problems in many files
+- writing a few [website scripts](bin/index.html), improving a few others as
+well as identifying and/or fixing bugs in others
+- greatly improving the manifest of the winning entries so that the links to the
+files in the index.html files make more sense and are consistent (although it
+might be said that some of them will not make sense if you don't understand the
+entry or at least do not read the index.html file)
+
+
+Jump to: [top](#)
+
 
 <div id="faq_improvements">
 ## FAQ improvements
 </div>
 
 [Cody](#cody) greatly extended the FAQ to include much more information and he
-helped reorganise it as well, from the new `faq.md` file.
+helped reorganise it as well, from the new `faq.md` file that he started.
+
+
+Jump to: [top](#)
 
 
 <div id="thank_you_honor_roll">
@@ -6187,6 +7077,9 @@ helped reorganise it as well, from the new `faq.md` file.
 There are a number of people who have contributed to **many many
 changes**, fixes and **many important improvements** that we
 wish to **especially thank**.
+
+
+Jump to: [top](#)
 
 
 <div id="authors">
@@ -6199,6 +7092,9 @@ and/or improve the write-ups of fellow IOCCC entries for the year that they won.
 The list of those entries is too long to mention: nevertheless the [IOCCC
 judges](judges.html) **VERY MUCH APPRECIATE** those who
 helped improve the presentation of their fellow IOCCC entries.
+
+
+Jump to: [top](#)
 
 
 <div id="cody">
@@ -6253,6 +7149,9 @@ presentation of past IOCCC entries and fixing almost all past entries for modern
 systems!
 
 
+Jump to: [top](#)
+
+
 <div id="yusuke">
 ### Yusuke Endoh
 </div>
@@ -6268,6 +7167,9 @@ fixes were **EXTREMELY TECHNICALLY CHALLENGING**, such as
 your help!
 
 
+Jump to: [top](#)
+
+
 <div id="neglect">
 ## Did we neglect to credit you?
 </div>
@@ -6279,6 +7181,9 @@ to add you to this [thanks for the help](thanks-for-help.html) file.
 If you believe we incorporated one of your fixes to an IOCCC winning entry (that you
 are not the author of) for which we neglected to mention in this file, please
 [contact the IOCCC](contact.html) so that we may correct the record.
+
+
+Jump to: [top](#)
 
 
 <!--
