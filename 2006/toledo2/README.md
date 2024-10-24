@@ -48,8 +48,9 @@ To end the program hit ctrl-z.
 
 ## Alternate code:
 
-This version, as noted, should work for DOS/Windows. It uses non-standard
-functions in place of `read(2)` and `write(2)`.
+This version, as noted above, should work for DOS/Windows. It uses non-standard
+functions in place of `read(2)` and `write(2)`, and is based on the author's
+remarks.
 
 
 ### Alternate build:
