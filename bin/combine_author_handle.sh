@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 #
-# combine_author_handle.sh - output all author/author_handle.JSON files as single JSON file
+# combine_author_handle.sh - output all author/author_handle.json files as single JSON file
 #
-# We form a single JSON file out of all author/author_handle.JSON files.
-# We cannot simply cat the author/author_handle.JSON files because
-# each author/author_handle.JSON file opens and closes the JSON.
+# We form a single JSON file out of all author/author_handle.json files.
+# We cannot simply cat the author/author_handle.json files because
+# each author/author_handle.json file opens and closes the JSON.
 # So this tool removes the intermediate JSON document opening "{"
 # and closing "}".
 #
