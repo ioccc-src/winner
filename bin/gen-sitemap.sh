@@ -2,6 +2,12 @@
 #
 # gen-sitemap.sh - generate an xml sitemap
 #
+# This script was improved by Cody Boone Ferguson / @xexyl to use git ls-files
+# so that other files that might exist in the directories we search are not
+# added to the sitemap.
+#
+#   "Because sometimes even IOCCC Judges need some help." :-)
+#
 # Copyright (c) 2024 by Landon Curt Noll.  All Rights Reserved.
 #
 # Permission to use, copy, modify, and distribute this software and
@@ -634,7 +640,7 @@ EOF0
 
 # add files from selected sub-directories
 #
-find "$ARCHIVE_HISTORIC_DIR" "$AUTHOR_DIR" "$BIN_DIR" "$INC_DIR" -type f -print >> "$TMP_MANIFEST_LIST"
+"$GIT_TOOL" ls-files "$ARCHIVE_HISTORIC_DIR" "$AUTHOR_DIR" "$BIN_DIR" "$INC_DIR" >> "$TMP_MANIFEST_LIST"
 
 
 # generate sorted list of entry files from the full IOCCC manifest
