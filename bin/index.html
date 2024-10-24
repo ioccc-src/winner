@@ -669,6 +669,20 @@ that is <strong>NOT</strong> an IOCCC markdown best practice.</p>
 details.</p>
 <p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
 <pre><code>    make find_missing_links</code></pre>
+<div id="find-invalid-json">
+<h3 id="find-invalid-json.sh"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/find-invalid-json.sh">find-invalid-json.sh</a></h3>
+</div>
+<p>This script uses the <code>jparse(1)</code> tool, which can be obtained from the
+<a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry repo</a>’s copy of the
+<a href="https://github.com/xexyl/jparse/">jparse repo</a>, and searches for any invalid
+JSON files in the tree.</p>
+<p>This is important because the IOCCC makes extensive use of JSON.</p>
+<p>Usage:</p>
+<pre><code>    bin/find-invalid-json.sh -v 1</code></pre>
+<p>If no invalid JSON files are found, this tool exits 0 with no output
+(debug messages not withstanding), otherwise this tool will exit non-zero.</p>
+<p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
+<pre><code>    make find_invalid_json</code></pre>
 <div id="format-headers">
 <h3 id="format-headers.sh"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/format-headers.sh">format-headers.sh</a></h3>
 </div>
