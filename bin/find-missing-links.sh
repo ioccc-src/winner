@@ -447,7 +447,7 @@ fi
 #	# Markdown line: ..the markdown line containing the line..
 #	/missing/filename
 #
-"$GIT_TOOL" ls-files --exclude markdown.md --exclude ./tmp |
+find . -name '*.md' ! -name markdown.md ! -path './tmp/*' ! -path './NOTES/*' -print |
     LANG=C sort -d |
     xargs grep '\]([^)][^)]*)' /dev/null |
     sed -E \
