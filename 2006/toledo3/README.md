@@ -9,7 +9,7 @@ compile.  For more information see the
 FAQ on "[X11](../../faq.html#X11)".
 
 The author provided two alternate versions, one which adds a status bar and
-another that makes it text only. The author also provided a version that they
+another that makes it text only. The author also described a version that they
 tested with Windows.  See [Alternate code](#alternate-code) below.
 
 
@@ -29,16 +29,19 @@ tested with Windows.  See [Alternate code](#alternate-code) below.
 
 ## Alternate code:
 
-The author provided two additional versions, [toledo3-sbar.c](%%REPO_URL%%/2006/toledo3/toledo3-sbar.c)
-and [toledo3-txt.c](%%REPO_URL%%/2006/toledo3/toledo3-txt.c). Respectively these create a status bar and
-make the game text only.
+The author provided two additional versions,
+[toledo3-sbar.c](%%REPO_URL%%/2006/toledo3/toledo3-sbar.c) and
+[toledo3-txt.c](%%REPO_URL%%/2006/toledo3/toledo3-txt.c). Respectively these
+create a status bar and make the game text only. Based on the author's remarks,
+another version, [toledo3.alt.c](%%REPO_URL%%/2006/toledo3/toledo3.alt.c), was
+added that should work with Windows.
 
 
 ### Alternate build:
 
 With the exception of the Windows version, these are built by default. To build
-the Windows version, [toledo3.alt.c](%%REPO_URL%%/2006/toledo3/toledo3.alt.c), you will have to figure out
-how to compile Windows code.
+the Windows version, [toledo3.alt.c](%%REPO_URL%%/2006/toledo3/toledo3.alt.c),
+you will have to figure out how to compile Windows code.
 
 
 ### Alternate use:
