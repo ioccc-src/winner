@@ -2,9 +2,19 @@
 #
 # chk-entry.sh - check if the files in an entry match the entry's manifest
 #
-# Copyright (c) 2024 by Landon Curt Noll.  All Rights Reserved.
+# This script was written in 2024 by:
 #
-# ... with a slight improvement by Cody Boone Ferguson.
+#   chongo (Landon Curt Noll, http://www.isthe.com/chongo/index.html) /\oo/\
+#
+# with improvements by:
+#
+#	@xexyl
+#	https://xexyl.net		Cody Boone Ferguson
+#	https://ioccc.xexyl.net
+#
+# "Because sometimes even the IOCCC Judges need some help." :-)
+#
+# Copyright (c) 2024 by Landon Curt Noll.  All Rights Reserved.
 #
 # Permission to use, copy, modify, and distribute this software and
 # its documentation for any purpose and without fee is hereby granted,
@@ -23,8 +33,6 @@
 # USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
 # OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
 # PERFORMANCE OF THIS SOFTWARE.
-#
-# chongo (Landon Curt Noll, http://www.isthe.com/chongo/index.html) /\oo/\
 #
 # Share and enjoy! :-)
 

@@ -15,10 +15,11 @@
 # acting on all README.md files, it only acts on README.md files under git
 # control.
 #
+# "Because sometimes even the IOCCC Judges need some help." :-)
+#
 # The Perl code makes sure that for certain headers in the README.md files,
 # there are the correct number of blank lines before/after.
 #
-#   "Because sometimes even the IOCCC Judges need some help." :-)
 #
 # Share and enjoy! :-)
 
