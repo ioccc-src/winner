@@ -1,6 +1,6 @@
 # IOCCC FAQ Table of Contents
 
-This is FAQ version **28.1.2 2024-10-21**.
+This is FAQ version **28.1.3 2024-10-25**.
 
 
 ## 0. [Entering the IOCCC: the bare minimum you need to know](#enter_questions)
@@ -18,7 +18,7 @@ This is FAQ version **28.1.2 2024-10-21**.
 ## 1. [Entering the IOCCC: more help and details](#submitting_help)
 - **Q 1.0**: <a class="normal" href="#answers_file">How can I avoid reentering the information to mkiocccentry?</a>
 - **Q 1.1**: <a class="normal" href="#prog_c">May I use a different source or compiled filename than prog.c or prog?</a>
-- **Q 1.2**: <a class="normal" href="#markdown">What are the IOCCC best practices for using markdown?</a>
+- **Q 1.2**: <a class="normal" href="#markdown">What is markdown and how does the IOCCC use it?</a>
 - **Q 1.3**: <a class="normal" href="#mkiocccentry_bugs">How do I report bugs in an `mkiocccentry` tool?</a>
 
 
@@ -115,7 +115,7 @@ This is FAQ version **28.1.2 2024-10-21**.
 
 ## 10. [Miscellaneous IOCCC](#misc)
 - **Q 10.0**: <a class="normal" href="#mirrors">May I mirror the IOCCC website?</a>
-- **Q 10.1**: <a class="normal" href="#ioccc_copyright">Mat I use IOCCC content in an article, book, newsletter, or instructional material?</a>
+- **Q 10.1**: <a class="normal" href="#ioccc_copyright">May I use IOCCC content in an article, book, newsletter, or instructional material?</a>
 - **Q 10.2**: <a class="normal" href="#first_person">Why do you sometimes use the first person plural?</a>
 - **Q 10.3**: <a class="normal" href="#dot_files"> What is the purpose of the `.top`, `.allyear`, `.year` and `.path` files?</a>
 - **Q 10.4**: <a class="normal" href="#terms"> What is the current meaning of the IOCCC terms Author, Entry, and Submission?</a>
@@ -660,7 +660,7 @@ Jump to: [top](#)
 
 <div id="markdown">
 <div id="md">
-### Q 1.2: What are the IOCCC best practices for using markdown?
+### Q 1.2: What is markdown and how does the IOCCC use it?
 </div>
 </div>
 
@@ -672,8 +672,9 @@ as the basis for forming the `index.html` web page for that entry.
 All generated HTML pages on the [Official IOCCC website](https://www.ioccc.org/index.html)
 start with some markdown content.
 
-**IMPORTANT**: Please read the [IOCCC markdown best practices](markdown.html) guide
-as it lists things you **should not use** in markdown files.
+**IMPORTANT**: Please read the [IOCCC markdown guidelines](markdown.html)
+as it lists things you **should NOT use** in markdown files and things you
+**should do** as well.
 
 See the [markdown syntax](https://www.markdownguide.org/basic-syntax) guide.
 See also [CommonMark Spec](https://spec.commonmark.org/current/).
@@ -6095,7 +6096,7 @@ Jump to: [top](#)
 
 <div id="permission">
 <div id="ioccc_copyright">
-### Q 10.1: Mat I use IOCCC content in an article, book, newsletter, or instructional material?
+### Q 10.1: May I use IOCCC content in an article, book, newsletter, or instructional material?
 </div>
 </div>
 
@@ -6932,53 +6933,7 @@ Jump to: [top](#)
 ### Q 11.6: I do not understand the IOCCC, can you explain it to me?
 </div>
 
-The IOCCC stands for the International Obfuscated C Code Contest.
-The IOCCC is a C programming contest.
-
-The goals of the IOCCC are:
-
-* To write the most Obscure/Obfuscated C program within the rules.
-* To show the importance of programming style, in an ironic way.
-* To stress C compilers with unusual code.
-* To illustrate some of the subtleties of the C language.
-* To provide a safe forum for poor C code. :-)
-* To have fun with C!
-
-See the
-FAQ on "[start of the IOCCC](#ioccc_start)"
-and the
-FAQ on "[history of the IOCCC](#website_history)"
-for more information the background of the IOCCC.
-
-See the
-FAQ on "[entering the IOCCC](#submit)"
-for information on how to enter and submit to the IOCCC.
-
-If you are still confused, consider the nature of
-the [IOCCC rules](next/rules.html) and of the [IOCCC
-guidelines](next/guidelines.html).  You will see a dose of the technical,
-mixed with "nerd humor" (or humour if you prefer 🤓).
-
-If after all that you are still confused, sorry (tm Canada 😉).
-Consider this: While the IOCCC often attempts to be presentable,
-it is under no obligation to be wholly understandable.  One might
-say that to truly understand the IOCCC is problematic. And if
-someone did manage to fully understand the IOCCC, then perhaps
-this **modified** quote from the [The Hitchhiker's Guide to the
-Galaxy](https://en.wikipedia.org/wiki/The_Hitchhiker's_Guide_to_the_Galaxy)
-may apply:
-
-> "There is a theory which states that if ever anyone discovers
-exactly what the IOCCC is for and why it is here, it will
-instantly disappear and be replaced by something even more bizarre
-and inexplicable.
->
-> There is another theory which states that this has
-[already happened](#great_fork_merge)." 😜
-
-Share and enjoy! ☺️
-
-Jump to: [top](#)
+Please see the [About the IOCCC page](about.html) for more details.
 
 
 <!--

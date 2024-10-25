@@ -5,7 +5,7 @@
 
 ### If you want to contact the IOCCC judges, please visit:
 
-[Contacting the IOCCC](contact.html)
+[Contacting the Judges](contact.html)
 
 
 <!--

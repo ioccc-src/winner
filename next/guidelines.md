@@ -16,7 +16,6 @@ about these guidelines. You might also find the
 FAQ in general useful, especially the
 [FAQ section "How to enter: the bare minimum you need to know"](../faq.html#submit).
 
-
 # The IOCCC is closed
 
 The IOCCC is **NOT** accepting new submissions at this time.  See the
@@ -44,17 +43,19 @@ granted provided this this copyright and notice are included in its entirety
 and remains unaltered.  All other uses must receive prior permission in
 writing by [contacting the judges](../contact.html).
 
+Jump to: [top](#)
 
 <div id="guidelines_version">
 ## IOCCC Guidelines version
 </div>
 
 <p class="leftbar">
-These [IOCCC guidelines](guidelines.html) are version **28.18 2024-10-21**.
+These [IOCCC guidelines](guidelines.html) are version **28.19 2024-10-25**.
 </p>
 
 **IMPORTANT**: Be **SURE** to read the [IOCCC rules](rules.html).
 
+Jump to: [top](#)
 
 <div id="change_marks">
 ### Change marks
@@ -68,6 +69,7 @@ Most lines (we sometimes make mistakes) that were modified since the previous
 IOCCC start with a solid 4 pixel black left border (or, in the case of a code
 block or blockquote, just a vertical bar).
 
+Jump to: [top](#)
 
 <div id="about_guidelines">
 # ABOUT THIS FILE:
@@ -88,6 +90,7 @@ guidelines](guidelines.html).
 entries**. The [rules](rules.html) are typically published along with the [IOCCC
 guidelines](guidelines.html)..
 
+Jump to: [top](#)
 
 <div id="new">
 # WHAT'S NEW THIS IOCCC
@@ -167,6 +170,7 @@ The IOCCC submission URL, [when the IOCCC is open](../status.html#open), is
 [submit.ioccc.org](https://submit.ioccc.org/).
 </p>
 
+Jump to: [top](#)
 
 <div id="hints">
 <div id="suggestions">
@@ -329,6 +333,9 @@ value similar to the [2001-2012](../faq.html#size_rule2001-2012) and
 [2013-2020](../faq.html#size_rule2013-2020) IOCCC eras.
 </p>
 
+
+Jump to: [top](#)
+
 <div id="mkiocccentry">
 ## `mkiocccentry`
 </div>
@@ -395,6 +402,8 @@ In many places it will prompt you to verify what you input, allowing you to
 correct details as you go along.
 </p>
 
+Jump to: [top](#)
+
 <div id="mkiocccentry-synopsis">
 ## `mkiocccentry(1)` synopsis
 </div>
@@ -426,6 +435,8 @@ for how to use this tool in more detail.
 Below are the tools that `mkiocccentry(1)` will run.
 </p>
 
+Jump to: [top](#)
+
 <div id="iocccsize">
 ## `iocccsize`
 </div>
@@ -435,6 +446,7 @@ detects a number of issues that you may ignore, if you wish, as described above.
 As we already discussed how to invoke this we will not include it here again.
 </p>
 
+Jump to: [top](#)
 
 <div id="chkentry">
 ## `chkentry`
@@ -473,6 +485,9 @@ and the
 FAQ on "[.info.json](../faq.html#info_json)"
 for much more information on these files.
 </p>
+
+
+Jump to: [top](#)
 
 <div id="txzchk">
 ## `txzchk`
@@ -522,6 +537,8 @@ manually package your submission tarball, you could still be violating [Rule
 See also the
 FAQ on "[txzchk](../faq.html#txzchk)".
 </p>
+
+Jump to: [top](#)
 
 <div id="fnamchk">
 ## `fnamchk`
@@ -754,6 +771,8 @@ use the `COTHER` Makefile variable.  For example:
 **NOTE**: **We only recommend using "_magic_" flags if _BOTH_ `gcc`
 _and_ `clang`** support it.
 </p>
+
+Jump to: [top](#)
 
 <div id="likes">
 <div id="dislikes">
@@ -1399,8 +1418,9 @@ character tab stop.
 <p class="leftbar">
 **PLEASE** observe our [IOCCC markdown guidelines](../markdown.html)
 when forming your submission's `remarks.md` file.  And if your submission
-contains additional markdown files, please follow those same guidelines.  See
-also [Rule 19](rules.html#rule19).
+contains additional markdown files, please follow those same guidelines for
+those files. See also [Rule 19](rules.html#rule19) and our
+FAQ on "[markdown](../faq.html#markdown)".
 </p>
 
 <p class="leftbar">
@@ -1414,6 +1434,7 @@ We **RECOMMEND** you put a reasonable amount effort into the content of the
 `remarks.md` file: it is a required for a reason.  :-)
 </p>
 
+Jump to: [top](#)
 
 <div id="rules_abuse">
 <div id="abusing_rules">
@@ -1482,6 +1503,7 @@ product management an even from customers themselves on a all too regular basis.
 This is one of the reasons why the [IOCCC rules](rules.html) and
 [IOCCC guidelines](guidelines.html) are written in obfuscated form.
 
+Jump to: [top](#)
 
 <div id="judging">
 # JUDGING PROCESS:
@@ -1551,6 +1573,8 @@ account](https://fosstodon.org/@ioccc).
 are mentioned you will NOT get a push notification!**
 </p>
 
+Jump to: [top](#)
+
 <div id="rounds">
 ## JUDGING ROUNDS:
 </div>
@@ -1560,6 +1584,8 @@ the collection of entries are divided into two roughly equal piles;
 the pile that advances on to the next round, and the pile that does
 not.  We also re-examine the entries that were eliminated in the
 previous round.  Thus, a submission gets at least two readings.
+
+Jump to: [top](#)
 
 <div id="readings">
 ## JUDGING READINGS:
@@ -1679,6 +1705,7 @@ In years past, we renamed the winning submission from `prog.c` to a
 name related to the author(s)' names.  This is no longer done.
 Winning source is called `prog.c`. A compiled binary is called `prog`.
 
+Jump to: [top](#)
 
 <div id="announcements">
 # ANNOUNCEMENT OF WINNERS:
@@ -1696,6 +1723,7 @@ refresh the feed** every so often (if not more often) because unless you are
 mentioned or someone boosts your post you will not get a push notification.
 </p>
 
+Jump to: [top](#)
 
 <div id="winners">
 ## How the new IOCCC winners will be announced
@@ -1731,6 +1759,7 @@ The [IOCCC judges](../judges.html) will commit the winning source to the
 The [IOCCC news](../news.html) will also contain an announcement of the winners.
 </p>
 
+Jump to: [top](#)
 
 <div id="mastodon">
 ## An important update to how winners are announced
@@ -1747,6 +1776,7 @@ website](https://www.ioccc.org/index.html).
 In addition a note is posted to the [IOCCC Mastodon account](https://fosstodon.org/@ioccc).
 </p>
 
+Jump to: [top](#)
 
 <div id="entries">
 ## Back to announcement of winners
@@ -1765,6 +1795,7 @@ More than one winner has been turned into a tattoo!
 
 Last, but not least, [winners](../authors.html) receive international fame and flames!  :-)
 
+Jump to: [top](#)
 
 <div id="more-information">
 <div id="information">
@@ -1802,6 +1833,8 @@ notification so you should make sure to check the page.
 <p class="leftbar">
 Check out the [Official IOCCC website](https://www.ioccc.org/index.html) in general.
 </p>
+
+Jump to: [top](#)
 
 Leonid A. Broukhis<br>
 chongo (Landon Curt Noll) /\\cc/\\

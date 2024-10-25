@@ -48,6 +48,8 @@ and suggestion in the relevant places.
 See the above FAQ entries for more details.
 
 
+Jump to: [top](#)
+
 <div id="try_mastodon">
 # Try Mastodon
 </div>
@@ -61,6 +63,7 @@ See the
 FAQ on "[Mastodon](faq.html#try_mastodon)"
 for more information on Mastodon.
 
+Jump to: [top](#)
 
 # If you really need to send email the IOCCC judges
 

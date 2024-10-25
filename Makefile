@@ -337,6 +337,8 @@ help:
 	@echo '# Rules for building specific web pages, a subset of rules mentioned above:'
 	@echo
 	@echo 'make bugs		;: generate bugs.html'
+	@echo 'make about		;: generate about.html'
+	@echo 'make contact		;: generate contact.html'
 	@echo 'make faq		;: generate faq.html'
 	@echo 'make guidelines		;: generate next/guidelines.hmtl'
 	@echo 'make markdown		;: generate markdown.hmtl'
@@ -618,6 +620,34 @@ test:
 
 .PHONY: thanks bugs gen_next rules guidelines faq
 
+# generate about.html
+#
+# What is this all about? It is better that you do not decipher what this is all
+# about because if anyone ever does discover exactly what the IOCCC is for and
+# why it is here, it will instantly disappear and be replaced by something even
+# more bizarre and inexplicable!
+#
+about: ${GEN_TOP_HTML} about.md
+	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo "You wonder what this is all about?"
+	@${GEN_TOP_HTML} about
+	@echo
+	@echo "You better not, because if you find out,"
+	@echo "it will instantly be replaced by something"
+	@echo "even more bizarre and inexplicable!"
+	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+
+# generate contact.html
+#
+contact: ${GEN_TOP_HTML} contact.md
+	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo "You wish to make contact with the IOCCC Judges?"
+	@${GEN_TOP_HTML} contact
+	@echo
+	@echo "I hope you're used to confused aliens!"
+	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+
+
 # generate thanks-for-help.html
 #
 # So Long, and Thanks for All the Fish :-)
@@ -657,7 +687,10 @@ gen_next: ${GEN_TOP_HTML} next/README.md next/guidelines.md next/rules.md
 
 markdown: ${GEN_TOP_HTML} markdown.md
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
-	${GEN_TOP_HTML} -v 1 markdown
+	@echo "You want to markdown?"
+	@${GEN_TOP_HTML} markdown
+	@echo
+	@echo "Careful that we don't mark down your submission!"
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 rules: ${GEN_TOP_HTML} next/rules.md
@@ -672,7 +705,10 @@ guidelines: ${GEN_TOP_HTML} next/guidelines.md
 
 security: ${GEN_TOP_HTML} SECURITY.md
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
-	${GEN_TOP_HTML} -v 1 SECURITY
+	@echo "You wish to make IOCCC entries secure?"
+	@${GEN_TOP_HTML} SECURITY
+	@echo
+	@echo "We also didn't want Pluto demoted!"
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 
