@@ -282,7 +282,7 @@ clobber:
 	thanks gen_other_html quick_other_html quick_entry_index find_invalid_json \
 	gen_year_index quick_year_index quick_www www untar_entry_tarball untar_year_tarball \
 	form_entry_tarball form_year_tarball tar gen_status gen_sitemap \
-	sitemap timestamp update csv2entry entry2csv
+	sitemap timestamp update csv2entry entry2csv about contact
 
 # Suggest rules in this section
 #
@@ -632,9 +632,12 @@ about: ${GEN_TOP_HTML} about.md
 	@echo "You wonder what this is all about?"
 	@${GEN_TOP_HTML} about
 	@echo
-	@echo "You better not, because if you find out,"
-	@echo "it will instantly be replaced by something"
-	@echo "even more bizarre and inexplicable!"
+	@echo "You better not find out, because if you"
+	@echo "find out, it will instantly be replaced"
+	@echo "by something even more bizarre and"
+	@echo "inexplicable!"
+	@echo
+	@echo "Nobody wants that, do they?"
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 # generate contact.html

@@ -27,7 +27,7 @@ the [IOCCC Rules](next/rules.html) and of the [IOCCC
 Guidelines](next/guidelines.html).  You will see a dose of the technical,
 mixed with "nerd humor" (or humour if you prefer 🤓).
 
-If after all that you are still confused, sorry (tm Canada 😉).
+If after all that you are still confused, sorry (tm Canada 🇨😉).
 Consider this: While the IOCCC often attempts to be presentable,
 it is under no obligation to be wholly understandable.  One might
 say that to truly understand the IOCCC is problematic. And if
