@@ -46,17 +46,22 @@ granted provided this this copyright and notice are included in its entirety
 and remains unaltered.  All other uses must receive prior permission in
 writing by [contacting the judges](../contact.html).
 
+Jump to: [top](#)
 
 <div id="rules_version">
 ## IOCCC Rules version
 </div>
 
+Jump to: [top](#)
+
 <p class="leftbar">
-These [IOCCC rules](rules.html) are version **28.9 2024-10-21**.
+These [IOCCC rules](rules.html) are version **28.10 2024-10-25**.
 </p>
 
 **IMPORTANT**: Be sure to read the [IOCCC guidelines](guidelines.html).
 
+
+Jump to: [top](#)
 
 <div id="change_marks">
 ### Change marks
@@ -70,6 +75,7 @@ Most lines (we sometimes make mistakes) that were modified since the previous
 IOCCC start with a solid 4 pixel black left border (or, in the case of a code
 block or blockquote, just a vertical bar).
 
+Jump to: [top](#)
 
 <div id="obfuscate">
 # Obfuscate defined:
@@ -84,6 +90,7 @@ tr.v. -cated, -cating, -cates.
 &nbsp;&nbsp;&nbsp;&nbsp;[LLat. obfuscare, to darken : ob(intensive) + Lat. fuscare,<br>
 &nbsp;&nbsp;&nbsp;&nbsp;to darken &lt; fuscus, dark.] -obfuscation n. obfuscatory adj.
 
+Jump to: [top](#)
 
 <div id="goals">
 # Goals of the Contest
@@ -97,6 +104,7 @@ The goals of the IOCCC:
 *  To illustrate some of the subtleties of the C language.
 *  To provide a safe forum for poor C code. :-)
 
+Jump to: [top](#)
 
 <div id="dates">
 # Important IOCCC dates
@@ -144,6 +152,7 @@ tools](../faq.html#mkiocccentry)"
 and the
 FAQ on "[submitting to the IOCCC](../faq.html#submit)".
 
+Jump to: [top](#)
 
 <div id="rules">
 # IOCCC RULES
@@ -151,6 +160,7 @@ FAQ on "[submitting to the IOCCC](../faq.html#submit)".
 
 To help us with the volume of submissions, we ask that you follow these rules:
 
+Jump to: [top](#)
 
 <div id="rule0">
 ## Rule 0
@@ -158,6 +168,7 @@ To help us with the volume of submissions, we ask that you follow these rules:
 
 We need a [rule 0](#rule0).  :-)
 
+Jump to: [top](#)
 
 <div id="rule1">
 ## Rule 1
@@ -165,6 +176,7 @@ We need a [rule 0](#rule0).  :-)
 
 Your submission must be a complete program.
 
+Jump to: [top](#)
 
 <div id="rule2">
 ## Rule 2
@@ -172,6 +184,7 @@ Your submission must be a complete program.
 
 The size rule requires your submission to satisfy **BOTH** [Rule 2a](#rule2a) and [Rule 2b](#rule2b):
 
+Jump to: [top](#)
 
 <div id="rule2a">
 ## Rule 2a
@@ -212,6 +225,7 @@ as a command like argument to the `iocccsize(1)` tool. For example:
     ./iocccsize prog.c
 ```
 
+Jump to: [top](#)
 
 <div id="rule2b">
 ## Rule 2b
@@ -257,6 +271,8 @@ as a command like argument to the `iocccsize(1)` tool. For example:
     ./iocccsize prog.c
 ```
 
+Jump to: [top](#)
+
 <div id="rule3">
 ## Rule 3
 </div>
@@ -275,6 +291,7 @@ The submit URL should be active on or slightly before **2024-MMM-DD HH:MM:SS UTC
 
 **Please wait to submit** your entries until after that time.
 
+Jump to: [top](#)
 
 <div id="rule4">
 ## Rule 4
@@ -300,6 +317,7 @@ the files accordingly.
 See also [Rule 5](#rule5), [Rule 18](#rule18) and [Rule 21](#rule21).
 </p>
 
+Jump to: [top](#)
 
 <div id="rule5">
 ## Rule 5
@@ -313,6 +331,7 @@ files you submit.
 If you submission wishes to modify such content, it **MUST** first copy the
 file to a new filename and then modify that copy.
 
+Jump to: [top](#)
 
 <div id="rule6">
 ## Rule 6
@@ -328,6 +347,7 @@ I am not a rule, I am a `free(void *human);` ‼️
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`}`
 </p>
 
+Jump to: [top](#)
 
 <div id="rule7">
 ## Rule 7
@@ -349,6 +369,7 @@ permission you obtained**.
 
 Please note that the IOCCC size tool is **NOT** an original work.
 
+Jump to: [top](#)
 
 <div id="rule8">
 ## Rule 8
@@ -363,6 +384,7 @@ Entries must be received prior to the end of this IOCCC which is **2024-MMM-DD H
 A confirmation of submission will be sent to the submitting email address
 before the close of the contest.
 
+Jump to: [top](#)
 
 <div id="rule9">
 ## Rule 9
@@ -374,6 +396,7 @@ Each person may submit up to and including **10.000000** (ten) entries per conte
 
 **Each submission _must be submitted separately_**.
 
+Jump to: [top](#)
 
 <div id="rule10">
 ## Rule 10
@@ -382,6 +405,7 @@ Each person may submit up to and including **10.000000** (ten) entries per conte
 Entries requiring human interaction to be initially compiled **are not
 permitted**. However, see the [guidelines](guidelines.html).
 
+Jump to: [top](#)
 
 <div id="rule11">
 ## Rule 11
@@ -394,6 +418,7 @@ you expect on our test platforms. If your program needs special
 permissions you **MUST** document this fact, and explain why
 it is needed in your submissions `remarks.md` file.
 
+Jump to: [top](#)
 
 <div id="rule12">
 ## Rule 12
@@ -404,6 +429,7 @@ the opinion of the [judges](../judges.html), violates the rules will be disquali
 Submissions that attempt to abuse the rules **MUST** try to justify why
 their rule abuse is legal, in the `remarks.md` file.
 
+Jump to: [top](#)
 
 <div id="rule13">
 ## Rule 13
@@ -414,6 +440,7 @@ Any C source that fails to compile because of unescaped octets with
 the high bit set (octet value >= 128) **_might_** be rejected.
 </p>
 
+Jump to: [top](#)
 
 <div id="rule14">
 ## Rule 14
@@ -428,6 +455,7 @@ Please do **NOT** put trailing control-M's on remarks file lines.
 Please check to be sure, before submitting, that you have removed
 any control-M at the end of remark file lines.
 
+Jump to: [top](#)
 
 <div id="rule15">
 ## Rule 15
@@ -447,6 +475,8 @@ FAQ on "[how to register](../faq.html#register)"
 for details.
 </p>
 
+Jump to: [top](#)
+
 <div id="rule16">
 ## Rule 16
 </div>
@@ -456,6 +486,7 @@ original submission**. Submissions that are similar to previous entries are
 discouraged. As we judge anonymously, submissions that have already
 been published may be disqualified.
 
+Jump to: [top](#)
 
 <div id="rule17">
 ## Rule 17
@@ -510,6 +541,7 @@ this rule! See the
 FAQ on "[obtaining the mkiocccentry toolkit](../faq.html#mkiocccentry)"
 for more details.
 
+Jump to: [top](#)
 
 ### Rule 17 - The COMPLEX details
 
@@ -586,7 +618,8 @@ The `remarks.md` **MUST** be a **non**-empty file in markdown form.  See also
 [Rule 18](#rule18) and our
 FAQ on "[remarks.md](../faq.html#remarks_md)"
 and our
-FAQ on "[markdown practices](../faq.html#markdown)".
+FAQ on "[markdown](../faq.html#markdown)"
+and our [markdown guidelines](../markdown.html).
 </p>
 
 <p class="leftbar">
@@ -727,6 +760,7 @@ do this **AFTER** the [contest status](../status.html) has changed to
 [open](../status.html#open).
 </p>
 
+Jump to: [top](#)
 
 <div id="rule18">
 ## Rule 18
@@ -743,6 +777,7 @@ you **MUST HAVE PERMISSION** from the owner(s) to submit their content.
 
 You **MUST NOT** submit anything that cannot be submitted under that license.
 
+Jump to: [top](#)
 
 <div id="rule19">
 ## Rule 19
@@ -763,6 +798,7 @@ Please see our FAQ "[remarks.md](../faq.html#remarks_md)" and the [IOCCC markdow
 guidelines](../markdown.html) for additional markdown guidance.
 </p>
 
+Jump to: [top](#)
 
 <div id="rule20">
 ## Rule 20
@@ -800,6 +836,7 @@ Specification](https://en.wikipedia.org/wiki/Single_UNIX_Specification) are
 available in the `$PATH` search path.
 </p>
 
+Jump to: [top](#)
 
 <div id="rule21">
 ## Rule 21
@@ -811,6 +848,7 @@ _with the exception of_ the `/tmp` and the `/var/tmp` directories.  Your submiss
 or in `/var/tmp` provided that `.` is **NOT** the first octet in any
 directory name or filename you create.
 
+Jump to: [top](#)
 
 <div id="rule22">
 ## Rule 22
@@ -831,6 +869,7 @@ for disqualification of your submission.
 
 Yes, Virginia, **WE REALLY MEAN IT!**
 
+Jump to: [top](#)
 
 <div id="rule23">
 ## Rule 23
@@ -838,6 +877,7 @@ Yes, Virginia, **WE REALLY MEAN IT!**
 
 This prime rule number is reserved for future use.
 
+Jump to: [top](#)
 
 <div id="rule24">
 ## Rule 24
@@ -845,6 +885,7 @@ This prime rule number is reserved for future use.
 
 Even though 24 is not prime, you should still see [Rule 23](#rule23).
 
+Jump to: [top](#)
 
 <div id="rule25">
 ## Rule 25
@@ -854,6 +895,7 @@ Even though 24 is not prime, you should still see [Rule 23](#rule23).
 The [IOCCC rule set](rules.html) needs more than 5^2 rules: see [Rule 26](#rule26).
 </p>
 
+Jump to: [top](#)
 
 <div id="rule26">
 ## Rule 26
@@ -867,6 +909,7 @@ The [IOCCC rule set](rules.html) needs more than 5^2 rules: see [Rule 26](#rule2
 > "Mr. Jock, TV quiz PhD, bags few lynx."<br>
 > "abcdefg, hijklmnop, qrstu&v, wxy&z."
 
+Jump to: [top](#)
 
 <div id="rule27">
 ## Rule 27
@@ -876,6 +919,7 @@ The [IOCCC rule set](rules.html) needs more than 5^2 rules: see [Rule 26](#rule2
 Unless otherwise needed, [Rule 27](#rule27) is reserved for something cubic.  :-)
 </p>
 
+Jump to: [top](#)
 
 <div id="rule28">
 ## Rule 28
@@ -886,6 +930,7 @@ Unless otherwise needed, [Rule 27](#rule27) is reserved for something cubic.  :-
 as we do **NOT** plan to have **496** rules. :-)
 </p>
 
+Jump to: [top](#)
 
 <div id="more-information">
 <div id="information">
@@ -923,6 +968,7 @@ should refresh the page **even if you do follow us**_.
 Check out the [Official IOCCC winner website](https://www.ioccc.org/index.html) in general.
 </p>
 
+Jump to: [top](#)
 
 **Leonid A. Broukhis**<br>
 **chongo (Landon Curt Noll) `/\cc/\`**

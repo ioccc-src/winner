@@ -14,6 +14,8 @@ below and you wish to help with a year, you can use these links:
 - [2012 entries](#2012) |       [2013 entries](#2013)   |       [2014 entries](#2014)   |       [2015 entries](#2015)
 - [2018 entries](#2018) |       [2019 entries](#2019)   |       [2020 entries](#2020)
 
+Jump to: [top](#)
+
 ## PLEASE read the next sections if you wish to help
 
 There are a number of known problems with IOCCC entries: many of
@@ -44,6 +46,7 @@ format is consistent and clean.
 
 THANK YOU!
 
+Jump to: [top](#)
 
 ## To the winning authors:
 
@@ -60,6 +63,7 @@ of times. At one point some things were changed to a bug (a usability problem
 for example) to be fixed but when looking at the index.html file it was noticed
 it was documented so the fixes were undone at that point.
 
+Jump to: [top](#)
 
 ### ON **ALL** FIXES / IMPROVEMENTS / CHANGES
 
@@ -89,6 +93,7 @@ one that's more than fine (and it has been done numerous times).
 
 Again, THANK YOU!
 
+Jump to: [top](#)
 
 <hr>
 
@@ -103,9 +108,11 @@ Entries below have one or more of the following _**STATUS**_ values. Please see
 the text below for more information. If an entry has more than one status it
 means that either they all apply or they complement each other.
 
+Jump to: [top](#)
 
 ## General notes about the statuses and making fixes
 
+Jump to: [top](#)
 
 ### Compiler warnings are very rarely a problem
 
@@ -147,6 +154,7 @@ problem but in general they should be ignored even if they're annoying.
 
 Hopefully with the example entries listed above you get the idea.
 
+Jump to: [top](#)
 
 ### General request on original code:
 
@@ -155,16 +163,19 @@ make it as close to the original but allowing it to work. This might be less of
 a problem when providing alternate versions but it might still be nice to have
 it as close as possible to the original. See also below two points.
 
+Jump to: [top](#)
 
 ### Request for one-liners:
 
-For one-liners _PLEASE KEEP THE FILE ONE LINE IF AT ALL POSSIBLE_! If it needs an
+For one-liners _PLEASE KEEP THE FILE ONE LINE IF AT ALL POSSIBLE_! See the
+[guidelines](next/guidelines.html) for what constitutes a one-liner. If it needs an
 include you can update the Makefile `CINCLUDE` variable. For instance if it
 needs `stdio.h` you could do `-include stdio.h`. Please leave a space after the
 `=` in the Makefile. You may also have extra long lines if this seems useful to
 make it a one-liner even if it kind of makes it longer than what the judges
 consider a one-liner, at least within reason. Thank you!
 
+Jump to: [top](#)
 
 ### On layout of program source:
 
@@ -179,6 +190,7 @@ that with:
     :set formatoptions=
 ```
 
+Jump to: [top](#)
 
 ## STATUS: known bug
 
@@ -192,8 +204,11 @@ where it might sometimes border on tampering with the program. And after all,
 these are not meant to be maintainable or even good programming style! Use
 careful judgement when fixing bugs please!
 
+Jump to: [top](#)
 
 ## STATUS: possible bug
+
+Jump to: [top](#)
 
 ### System dependent bug possibly
 
@@ -204,8 +219,9 @@ system.  In these entries it's unknown if there is a bug and sometimes it's
 because we do not remember and sometimes we don't have the appropriate system or
 environment to test and fix any possible problems.
 
+Jump to: [top](#)
 
-## STATUS: might not be completely functional
+### STATUS: might not be completely functional
 
 **Can you confirm there is a bug?**
 
@@ -213,8 +229,11 @@ Although these entries _appear_ to work for one or more reasons we're unsure if
 they are completely functional. Can you confirm this? Please let us know so we
 can fix it!
 
+Jump to: [top](#)
 
 ## STATUS: probable bug
+
+Jump to: [top](#)
 
 ### Possible system dependent bug
 
@@ -224,6 +243,7 @@ Entries with this status almost certainly have a bug or some other problem. The
 issue or issues might depend on the system much like the above _STATUS: possible
 bug (possibly depending on system)_.
 
+Jump to: [top](#)
 
 ## STATUS: doesn't work with some platforms
 
@@ -232,6 +252,7 @@ bug (possibly depending on system)_.
 Entries with this status do not work under some OSes and/or architectures (and/or
 something else?). Please help us to fix it!
 
+Jump to: [top](#)
 
 ## STATUS: doesn't work with some compilers
 
@@ -248,6 +269,7 @@ cases it might be better to provide alternate code anyway. Use a judgement call
 here as best you can manage.
 
 
+Jump to: [top](#)
 
 ## STATUS: main() function args not allowed
 
@@ -280,9 +302,8 @@ entries the fix was done with a new function, often called `pain()` :-)
 clang** despite the fact it might appear to be gcc: no symlink and both gcc and
 clang exist but the gcc is clang which you'll see if you run `gcc --version`.
 
-A tip and some fix methods from [Cody Boone
-Ferguson](authors.html#Cody_Boone_Ferguson): in the older days args to main()
-not given a type were implicit ints but when they're required to be `char **`
+A tip and some fix methods: in the older days args to `main()`
+not given a type were implicit `int`s but when they're required to be `char **`
 this can cause a problem. In some cases it was possible to use a `char *` inside
 `main()` (see [1989/tromp/tromp.c](%%REPO_URL%%/1989/tromp/tromp.c) and
 [1986/holloway/holloway.c](1986/holloway/index.html) for two examples though
@@ -292,6 +313,7 @@ various techniques to get these to compile. In some cases this introduced a
 problem but typically if not always that problem exists with compilers that are
 less strict.
 
+Jump to: [top](#)
 
 ## STATUS: main() has only one arg
 
@@ -306,6 +328,7 @@ At this time (04 Feb 2024) there is one entry known (it is possible that not all
 were checked) that has this problem but it's not as simple as the others to fix
 without breaking it.
 
+Jump to: [top](#)
 
 ## STATUS: compiled executable crashes
 
@@ -320,6 +343,7 @@ not mutually exclusive in some cases).
 REMINDER: if you're debugging a crash it will be very helpful to have `-O0 -g`
 or if you can `-ggdb3` when compiling as that will help with debugging symbols.
 
+Jump to: [top](#)
 
 ## STATUS: uses gets()
 
@@ -367,6 +391,7 @@ noted above).
 Sometimes `getline(3)` will work but note that this function also stores the
 newline just like `fgets(3)`.
 
+Jump to: [top](#)
 
 ## STATUS: missing file(s)
 
@@ -377,6 +402,7 @@ cases these files can be found on the [IOCCC website](https://www.ioccc.org) but
 in other cases they are entirely absent. In this case you'll probably have to
 contact the author (unless you are the author! :-) ).
 
+Jump to: [top](#)
 
 ## STATUS: missing or dead link
 
@@ -388,6 +414,7 @@ useful but there happens to be numerous links that this is not helpful. In other
 cases the URL has changed. Some of these have been discovered by the Internet
 Wayback Machine with the orange status.
 
+Jump to: [top](#)
 
 ### Statuses of Internet Wayback Machine archive:
 
@@ -397,6 +424,7 @@ Wayback Machine with the orange status.
 
 The archive website will tell you if the link was never captured.
 
+Jump to: [top](#)
 
 ## STATUS: INABIAF - please **DO NOT** fix
 ### INABIAF: It's not a bug it's a feature :-)
@@ -427,22 +455,21 @@ says it can be fixed it can be. Otherwise it should not be.
 
 Nonetheless we challenge you to fix these entries for educational/instructional
 value and/or enjoyment but we kindly request that you **DO NOT** submit a pull
-request unless it's a bug or (mis)feature we would like you to fix! If you can't
-figure it out you're invited to look at the git diffs, where there are some
-(some were fixed earlier on but rolled back as both Cody and Landon individually
-felt that the fix was tampering with the entry).
+request unless it's a bug or (mis)feature we would like you to fix!
 
 **NOTE**: in the case of `gets()` we've fixed some to avoid the warning of the
 compiler, linker or even during runtime, depending on the system. In [some cases
 like 1990/tbr](1990/tbr/index.html) the fix actually prevents confusing output (though that
 was not the only fix made in that entry).
 
+Jump to: [top](#)
 
 ### Exception: your own entries
 
 Of course if you're the author you're welcome to fix your own entry, prefer your
 own fix or suggest that they're fixed!
 
+Jump to: [top](#)
 
 <hr>
 
@@ -456,10 +483,13 @@ own fix or suggest that they're fixed!
 </div>
 <hr style="width:10%;text-align:left;margin-left:0">
 
+Jump to: [top](#)
 
 <div id="1984_decot">
 ## 1984/decot
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1984/decot/decot.c](%%REPO_URL%%/1984/decot/decot.c)
@@ -476,10 +506,13 @@ code. In particular you should see something like:
 
 without a newline after the `\`. This is not a bug.
 
+Jump to: [top](#)
 
 <div id="1984_laman">
 ## 1984/laman
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1984/laman/laman.c](%%REPO_URL%%/1984/laman/laman.c)
@@ -487,10 +520,13 @@ without a newline after the `\`. This is not a bug.
 
 This program will very likely crash or do something funny without an arg.
 
+Jump to: [top](#)
 
 <div id="1984_mullender">
 ## 1984/mullender
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1984/mullender/mullender.c](%%REPO_URL%%/1984/mullender/mullender.c)
@@ -509,6 +545,7 @@ produce a `short[]` that can compile in modern systems but it will not work.
 Before the fix it would fail in some cases and it is possible that in some cases
 it might still fail.
 
+Jump to: [top](#)
 
 <hr style="width:10%;text-align:left;margin-left:0">
 <div id="1985">
@@ -518,6 +555,7 @@ it might still fail.
 
 There are no known bugs or (mis)features for entries in 1985.
 
+Jump to: [top](#)
 
 <hr style="width:10%;text-align:left;margin-left:0">
 <div id="1986">
@@ -525,10 +563,13 @@ There are no known bugs or (mis)features for entries in 1985.
 </div>
 <hr style="width:10%;text-align:left;margin-left:0">
 
+Jump to: [top](#)
 
 <div id="1986_august">
 ## 1986/august
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1986/august/august.c](%%REPO_URL%%/1986/august/august.c)
@@ -538,6 +579,7 @@ There are no known bugs or (mis)features for entries in 1985.
 This entry is known to segfault after printing its output. It was documented by
 the judges and shouldn't be fixed.
 
+Jump to: [top](#)
 
 <hr style="width:10%;text-align:left;margin-left:0">
 <div id="1987">
@@ -547,6 +589,7 @@ the judges and shouldn't be fixed.
 
 There are no known bugs or (mis)features for entries in 1987.
 
+Jump to: [top](#)
 
 <hr style="width:10%;text-align:left;margin-left:0">
 <div id="1988">
@@ -554,10 +597,13 @@ There are no known bugs or (mis)features for entries in 1987.
 </div>
 <hr style="width:10%;text-align:left;margin-left:0">
 
+Jump to: [top](#)
 
 <div id="1988_dale">
 ## 1988/dale
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1988/dale/dale.c](%%REPO_URL%%/1988/dale/dale.c)
@@ -567,6 +613,7 @@ In linux it might happen that despite no error message or message about doing
 so, the program drops a core file into the directory even though the entry works
 and does not crash.
 
+Jump to: [top](#)
 
 <hr style="width:10%;text-align:left;margin-left:0">
 <div id="1989">
@@ -574,10 +621,13 @@ and does not crash.
 </div>
 <hr style="width:10%;text-align:left;margin-left:0">
 
+Jump to: [top](#)
 
 <div id="1989_fubar">
 ## 1989/fubar
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1989/fubar/fubar.c](%%REPO_URL%%/1989/fubar/fubar.c)
@@ -588,10 +638,13 @@ details) with a number < 0 or larger than, say 20, it's very likely that the
 program will turn into an infinite loop trying to compile code and end up with
 with syntax errors. As this was documented it is not a bug to be fixed.
 
+Jump to: [top](#)
 
 <div id="1989_robison">
 ## 1989/robison
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1989/robison/robison.c](%%REPO_URL%%/1989/robison/robison.c)
@@ -603,10 +656,13 @@ numbers with non-binary digits.
 There are also other cases where this can happen for instance using unsupported
 operators like `/`. To see what operators are supported check the source code.
 
+Jump to: [top](#)
 
 <div id="1989_westley">
 ## 1989/westley
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: known bug - please help us fix
 ### Source code: [1989/westley/westley.c](%%REPO_URL%%/1989/westley/westley.c)
@@ -620,17 +676,27 @@ be compiled with clang. An example invocation is:
     ./ver2 < westley.c
 ```
 
+Jump to: [top](#)
+
 ### A useful note on changing/fixing this program
 
 It should be noted that in additional to rot13 names there is code that is the
-reverse of other code (also wrt names). See the source file and the index.html
-(in the author's remarks) for more details.
+reverse of other code (also with respect to names). See the source file and the
+index.html (in the author's remarks) for more details.
 
 Fixing the (mis)feature is likely to be a very difficult challenge especially
-without breaking something else which is far more likely (see below in tips from
-Cody, who fixed it so the original would compile with `clang` and at least one
-generated version would compile with `clang` too, not compromising the other
-versions with `gcc`). You are welcome to try and fix it if you can!
+without breaking something else which is far more likely (see below tips from).
+You are welcome to try and fix it if you can but unless you can get all to
+compile with `clang` **AND** `gcc`, which seems unlikely (see below), this
+should not be touched further. Nonetheless you are welcome to try and fix it if
+you can.
+
+Be aware, however, that even if you can get it to compile with both `gcc` and
+`clang`, different versions will have errors so that it's not actually a fix.
+For instance it was fixed to work for both `clang` and `gcc` but when testing
+the fix in fedora linux it failed to even compile!
+
+Jump to: [top](#)
 
 ### Tips:
 
@@ -645,6 +711,8 @@ bounds by the int `gnat`. For instance:
     (gdb) p gnat
     $1 = -518733305
 ```
+
+Jump to: [top](#)
 
 ### Magic of the entry:
 
@@ -727,6 +795,7 @@ clang but on another system and it had syntax errors.
 
 Enjoy! :-)
 
+Jump to: [top](#)
 
 <hr style="width:10%;text-align:left;margin-left:0">
 <div id="1990">
@@ -734,10 +803,13 @@ Enjoy! :-)
 </div>
 <hr style="width:10%;text-align:left;margin-left:0">
 
+Jump to: [top](#)
 
 <div id="1990_baruch">
 ## 1990/baruch
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1990/baruch/baruch.c](%%REPO_URL%%/1990/baruch/baruch.c)
@@ -805,12 +877,15 @@ more time and resources to run as well. For instance:
     ./baruch  37496.97s user 58.50s system 99% cpu 10:27:48.29 total
 ```
 
-This is not considered a bug, however.
+This is a feature, not a bug!
 
+Jump to: [top](#)
 
 <div id="1990_jaw">
 ## 1990/jaw
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: known bug - please help us fix
 ### Source code: [1990/jaw/jaw.c](%%REPO_URL%%/1990/jaw/jaw.c)
@@ -849,9 +924,7 @@ If one does, however:
 
 they will get just
 
-```
-    oops
-```
+> oops
 
 which seems to be an error message (one of the fixes was to make it not use
 `perror(3)` - this fixed something else though it's no longer known what except
@@ -864,10 +937,13 @@ wanting to accept reading from `stdin` (this in particular) even with the right
 options used, seemingly, it has to write to disk the tarball which seems to
 defeat the purpose. This would ideally be fixed.
 
+Jump to: [top](#)
 
 <div id="1990_tbr">
 ## 1990/tbr
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1990/tbr/tbr.c](%%REPO_URL%%/1990/tbr/tbr.c)
@@ -876,10 +952,13 @@ defeat the purpose. This would ideally be fixed.
 The authors provided a list of features in the
 [BUGS](1990/tbr/index.html#bugs) section in their remarks.
 
+Jump to: [top](#)
 
 <div id="1990_theorem">
 ## 1990/theorem
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1990/theorem/theorem.c](%%REPO_URL%%/1990/theorem/theorem.c)
@@ -891,10 +970,13 @@ fixed but one thing to note is that if you pass two zeroes to `theorem_bkp` or
 again; another condition where this occurred was fixed but this one should not
 be fixed.
 
+Jump to: [top](#)
 
 <div id="1990_westley">
 ## 1990/westley
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1990/westley/westley.c](%%REPO_URL%%/1990/westley/westley.c)
@@ -908,6 +990,7 @@ maybe, to change it back, especially as it is annoying to have the screen
 flooded).
 
 
+Jump to: [top](#)
 
 <hr style="width:10%;text-align:left;margin-left:0">
 <div id="1991">
@@ -915,10 +998,13 @@ flooded).
 </div>
 <hr style="width:10%;text-align:left;margin-left:0">
 
+Jump to: [top](#)
 
 <div id="1991_buzzard">
 ## 1991/buzzard
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1991/buzzard/buzzard.c](%%REPO_URL%%/1991/buzzard/buzzard.c)
@@ -930,10 +1016,13 @@ file does not exist in the directory, this program will very likely crash.
 
 This is a feature, not a bug.
 
+Jump to: [top](#)
 
 <div id="1991_westley">
 ## 1991/westley
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1991/westley/westley.c](%%REPO_URL%%/1991/westley/westley.c)
@@ -947,6 +1036,7 @@ Please don't try and fix it as it's not a bug and was actually documented as a
 possibility. Can you find out how? There's also a way to make it so that even
 when you're cheating it ends up winning! Can you figure that out as well?
 
+Jump to: [top](#)
 
 <hr style="width:10%;text-align:left;margin-left:0">
 <div id="1992">
@@ -954,11 +1044,13 @@ when you're cheating it ends up winning! Can you figure that out as well?
 </div>
 <hr style="width:10%;text-align:left;margin-left:0">
 
+Jump to: [top](#)
 
 <div id="1992_adrian">
 ## 1992/adrian
 </div>
 
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1992/adrian/adrian.c](%%REPO_URL%%/1992/adrian/adrian.c)
@@ -987,11 +1079,13 @@ changed either even if it appears to be wrong. Notice too a curious thing: if
 you did change it to `fprintf()`, even if you have the right number of args, you'd
 have to remove the outer `()` pair.
 
+Jump to: [top](#)
 
 <div id="1992_albert">
 ## 1992/albert
 </div>
 
+Jump to: [top](#)
 
 ### STATUS: known bug - please help us fix
 ### Source code: [1992/albert/albert.c](%%REPO_URL%%/1992/albert/albert.c)
@@ -1054,10 +1148,13 @@ condition.
 The alt version does fix the problem but it is not obfuscated and not like the
 entry itself. Can you fix the actual entry? You are welcome to try and do so.
 
+Jump to: [top](#)
 
 <div id="1992_gson">
 ## 1992/gson
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: uses gets() - change to fgets() if possible
 ### Source code: [1992/gson/gson.c](%%REPO_URL%%/1992/gson/gson.c)
@@ -1072,6 +1169,7 @@ which can be described simply as: first `m` is set to `*++p` in a for loop where
 is called as `m = gets(m)`) but trying to change it to use `fgets(3)` breaks the
 program.
 
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 
@@ -1090,10 +1188,13 @@ less.
 ... so whether or not the `gets(3)` should be changed to `fgets(3)` is up to
 debate.
 
+Jump to: [top](#)
 
 <div id="1992_kivinen">
 ## 1992/kivinen
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: known bug - please help us fix
 ### Source code: [1992/kivinen/kivinen.c](%%REPO_URL%%/1992/kivinen/kivinen.c)
@@ -1103,12 +1204,13 @@ When you start the program everything starts to move over to the right side and
 then ends. [Yusuke Endoh](authors.html#Yusuke_Endoh) pointed out that if you
 click the mouse it takes it back towards the centre.
 
-If you want to try and fix this, you are welcome to try.
-
+Jump to: [top](#)
 
 <div id="1992_lush">
 ## 1992/lush
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: doesn't work with some compilers - please provide alternative code or fix for more compilers
 ### Source code: [1992/lush/lush.c](%%REPO_URL%%/1992/lush/lush.c)
@@ -1122,7 +1224,7 @@ Unfortunately due to the way the entry works and the fact that other compilers
 like clang have different warnings and errors this simply does not work with
 them.
 
-Some tips:
+#### Some tips:
 
 This entry relies on specific compiler warnings. With gcc it will look something
 like:
@@ -1188,12 +1290,13 @@ The entry is supposed to show warnings and then print:
     Hello World.
 ```
 
-Can you help us?
-
+Jump to: [top](#)
 
 <div id="1992_vern">
 ## 1992/vern
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1992/vern/vern.c](%%REPO_URL%%/1992/vern/vern.c)
@@ -1203,10 +1306,13 @@ When your own checkmate is imminent it prints `"Har har"` but does not exit so
 it can '_rub your nose in defeat_', as the author puts it. You will have to exit
 it yourself through ctrl-c or killing it in some other fashion.
 
+Jump to: [top](#)
 
 <div id="1992_westley">
 ## 1992/westley
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1992/westley/westley.c](%%REPO_URL%%/1992/westley/westley.c)
@@ -1222,6 +1328,7 @@ terminal try:
     echo $COLUMNS
 ```
 
+Jump to: [top](#)
 
 <hr style="width:10%;text-align:left;margin-left:0">
 <div id="1993">
@@ -1229,10 +1336,13 @@ terminal try:
 </div>
 <hr style="width:10%;text-align:left;margin-left:0">
 
+Jump to: [top](#)
 
 <div id="1993_ant">
 ## 1993/ant
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1993/ant/ant.c](%%REPO_URL%%/1993/ant/ant.c)
@@ -1247,10 +1357,13 @@ The author stated that:
 > There is no check for unbalanced brackets.  Omitting a closing bracket will
 generate a "Pattern too long" error, which is not the real error.
 
+Jump to: [top](#)
 
 <div id="1993_cmills">
 ## 1993/cmills
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: known bug - please help us fix
 ### Source code: [1993/cmills/cmills.c](%%REPO_URL%%/1993/cmills/cmills.c)
@@ -1259,12 +1372,13 @@ generate a "Pattern too long" error, which is not the real error.
 In multiple platforms, both macOS and also linux (in particular a RHEL 9.3
 system), this entry just shows a blank screen.
 
-Can you fix it? We welcome your help.
-
+Jump to: [top](#)
 
 <div id="1993_lmfjyh">
 ## 1993/lmfjyh
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1993/lmfjyh/lmfjyh.c](%%REPO_URL%%/1993/lmfjyh/lmfjyh.c)
@@ -1276,10 +1390,13 @@ cannot be fixed for modern systems as the bug is long gone.
 An alternate version that will work for modern systems, however, does exist. See
 the index.html file for details.
 
+Jump to: [top](#)
 
 <div id="1993_rince">
 ## 1993/rince
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1993/rince/rince.c](%%REPO_URL%%/1993/rince/rince.c)
@@ -1291,10 +1408,13 @@ will cause problems. No other checks are performed either.
 There is no end of game checking function so you will have to quit the game
 through ctrl-c or such.
 
+Jump to: [top](#)
 
 <div id="1993_schnitzi">
 ## 1993/schnitzi
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1993/schnitzi/schnitzi.c](%%REPO_URL%%/1993/schnitzi/schnitzi.c)
@@ -1336,12 +1456,15 @@ Of course if you do something like:
     What is 'foo'?
 ```
 
-it will work fine.
+it will work fine. This is a feature, not a bug!
 
+Jump to: [top](#)
 
 <div id="1993_vanb">
 ## 1993/vanb
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1993/vanb/vanb.c](%%REPO_URL%%/1993/vanb/vanb.c)
@@ -1355,6 +1478,7 @@ spurious results.
 The unary `-` is an operator so decimal `-46` should be entered as `-d46` and
 not `d-46`.
 
+Jump to: [top](#)
 
 <hr style="width:10%;text-align:left;margin-left:0">
 <div id="1994">
@@ -1362,10 +1486,13 @@ not `d-46`.
 </div>
 <hr style="width:10%;text-align:left;margin-left:0">
 
+Jump to: [top](#)
 
 <div id="1994_dodsond2">
 ## 1994/dodsond2
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1994/dodsond2/dodsond2.c](%%REPO_URL%%/1994/dodsond2/dodsond2.c)
@@ -1378,10 +1505,13 @@ Also, when you shoot it will move you to that room so if you end up shooting
 into a pit room you will end up dying even though you didn't explicitly move
 there.
 
+Jump to: [top](#)
 
 <div id="1994_ldb">
 ## 1994/ldb
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1994/ldb/ldb.c](%%REPO_URL%%/1994/ldb/ldb.c)
@@ -1405,10 +1535,13 @@ See the
 FAQ on "[gets and fgets](faq.html#gets)"
 for more information on the change to `fgets(3)`.
 
+Jump to: [top](#)
 
 <div id="1994_schnitzi">
 ## 1994/schnitzi
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: uses gets() - change to fgets() if possible
 ### Source code: [1994/schnitzi/schnitzi.c](%%REPO_URL%%/1994/schnitzi/schnitzi.c)
@@ -1450,6 +1583,7 @@ help to understand how it works, in case one wishes to try and fix it.
 
 For the alternate versions the other functionality is unaffected.
 
+Jump to: [top](#)
 
 ### The magic of [1994/schnitzi](1994/schnitzi/index.html) and how it flips text
 
@@ -1508,6 +1642,8 @@ provide the correct input in comments or possibly by rearranging some of the
 code (this was actually required to make the generated code compile at all when
 changing the buffer size, see below).
 
+Jump to: [top](#)
+
 ### Important points:
 
 Getting this entry to use `fgets(3)` is easy but the problem is you're supposed
@@ -1528,10 +1664,13 @@ can cause a compilation error! Make sure that the output of:
 can be compiled and the output of that new program when fed itself can also be
 compiled!
 
+Jump to: [top](#)
 
 <div id="1994_shapiro">
 ## 1994/shapiro
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1994/shapiro/shapiro.c](%%REPO_URL%%/1994/shapiro/shapiro.c)
@@ -1539,6 +1678,8 @@ compiled!
 
 This program will likely crash if the source code file (by the name of the file
 that's compiled) cannot be opened in the directory it is run from.
+
+Jump to: [top](#)
 
 ### Important reminder and a note about the `-1` value check for `getc()`:
 
@@ -1559,6 +1700,7 @@ if it checked for `!= EOF`.
 
 Since it works there is no need to fix this except for a challenge to yourself.
 
+Jump to: [top](#)
 
 ### STATUS: missing file - please provide it
 
@@ -1566,14 +1708,13 @@ The index.html file refers to an alternate version of the code that is not
 obfuscated but it is missing from the entry directory and the archive. Do you
 have this file?
 
-We would be grateful if you could provide it to us.  If you can provide this
-file you might consider removing this status from this file as well but if not
-we'll take care of it.
-
+Jump to: [top](#)
 
 <div id="1994_tvr">
 ## 1994/tvr
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1994/tvr/tvr.c](%%REPO_URL%%/1994/tvr/tvr.c)
@@ -1591,6 +1732,7 @@ However, the author stated that this is a feature so this should not be fixed.
 See also the other [bugs](1994/tvr/index.html#bugs) the author mentioned that,
 as documented, are considered features.
 
+Jump to: [top](#)
 
 <hr style="width:10%;text-align:left;margin-left:0">
 <div id="1995">
@@ -1598,10 +1740,13 @@ as documented, are considered features.
 </div>
 <hr style="width:10%;text-align:left;margin-left:0">
 
+Jump to: [top](#)
 
 <div id="1995_cdua">
 ## 1995/cdua
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1995/cdua/cdua.c](%%REPO_URL%%/1995/cdua/cdua.c)
@@ -1616,10 +1761,13 @@ the code it can clearly be seen that if `g - a` is 0 then the message is
 supposed to be printed again and one is supposed to press a key as at that point
 it calls `getchar()` via the pointer `m`. So this is a feature not a bug.
 
+Jump to: [top](#)
 
 <div id="1995_leo">
 ## 1995/leo
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: known bug - please help us fix
 ### Source code: [1995/leo/leo.c](%%REPO_URL%%/1995/leo/leo.c)
@@ -1648,10 +1796,13 @@ first) as it appears to just block.
 It is not known if this is platform specific but this was observed in macOS and
 it would be good if it was fixed.
 
+Jump to: [top](#)
 
 <div id="1995_savastio">
 ## 1995/savastio
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1995/savastio/savastio.c](%%REPO_URL%%/1995/savastio/savastio.c)
@@ -1660,10 +1811,13 @@ it would be good if it was fixed.
 This program expects a POSITIVE number. If you specify a negative number it will
 not show any output, stuck in a loop.
 
+Jump to: [top](#)
 
 <div id="1995_vanschnitz">
 ## 1995/vanschnitz
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: missing file - please provide it
 ### Source code: [1995/vanschnitz/vanschnitz.c](%%REPO_URL%%/1995/vanschnitz/vanschnitz.c)
@@ -1672,8 +1826,7 @@ not show any output, stuck in a loop.
 The authors stated that they included a version that allows people with just K&R
 compilers to use the program but this file is missing. Can you provide it?
 
-We would appreciate anyone who has it or even just knows the name! Thank you.
-
+Jump to: [top](#)
 
 <hr style="width:10%;text-align:left;margin-left:0">
 <div id="1996">
@@ -1681,10 +1834,13 @@ We would appreciate anyone who has it or even just knows the name! Thank you.
 </div>
 <hr style="width:10%;text-align:left;margin-left:0">
 
+Jump to: [top](#)
 
 <div id="1996_gandalf">
 ## 1996/gandalf
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: missing or dead link or links - please provide it or them
 ### Source code: [1996/gandalf/gandalf.c](%%REPO_URL%%/1996/gandalf/gandalf.c)
@@ -1695,10 +1851,13 @@ it was instead requiring a login / password.
 
 Do you have an updated link? We welcome your help!
 
+Jump to: [top](#)
 
 <div id="1996_huffman">
 ## 1996/huffman
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: uses gets() - change to fgets() if possible
 ### Source code: [1996/huffman/huffman.c](%%REPO_URL%%/1996/huffman/huffman.c)
@@ -1738,10 +1897,13 @@ This diff almost does it but not quite:
 But since it does not for the time being it is advisable to just redirect
 `stderr` to `/dev/null` (`2>/dev/null`).
 
+Jump to: [top](#)
 
 <div id="1996_jonth">
 ## 1996/jonth
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1996/jonth/jonth.c](%%REPO_URL%%/1996/jonth/jonth.c)
@@ -1753,6 +1915,7 @@ This should NOT be fixed.
 **NOTE**: the two boards will be on top of each other so you will have to drag one
 off the other so that you can properly play.
 
+Jump to: [top](#)
 
 ### STATUS: missing or dead link or links - please provide it or them
 
@@ -1760,6 +1923,7 @@ As well: the link which was `http://www.uio.no/~jonth` is no longer valid and
 there's no archive on the Internet Wayback Machine. Do you know of a proper URL?
 We greatly appreciate your help here!
 
+Jump to: [top](#)
 
 <hr style="width:10%;text-align:left;margin-left:0">
 <div id="1997">
@@ -1769,6 +1933,7 @@ We greatly appreciate your help here!
 
 There was no IOCCC in 1997.
 
+Jump to: [top](#)
 
 <hr style="width:10%;text-align:left;margin-left:0">
 <div id="1998">
@@ -1776,9 +1941,13 @@ There was no IOCCC in 1997.
 </div>
 <hr style="width:10%;text-align:left;margin-left:0">
 
+Jump to: [top](#)
+
 <div id="1998_chaos">
 ## 1998/chaos
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1998/chaos/chaos.c](%%REPO_URL%%/1998/chaos/chaos.c)
@@ -1793,7 +1962,6 @@ one block is ever allocated, and the OS should recover it.
 from `main()`.  Feh, what does it know?  Otherwise, ignoring lint's over
 protectiveness ("Of course I'm not using all of the functions defined in
 `curses.h`!"), it's lint clean.
->
 >
 > If the compiler happens to generate the byte sequence "AlWuzEre" in the
 executable by chance, the program may be unable to locate the embedded string.
@@ -1811,11 +1979,14 @@ core is a popular result.)
 from the rear) looks really odd.  And it sometimes hangs.  So just don't fly
 through objects.  You'll be happier.
 
+Jump to: [top](#)
 
 
 <div id="1998_dlowe">
 ## 1998/dlowe
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: missing or dead link or links - please provide it or them
 ### Source code: [1998/dlowe/dlowe.c](%%REPO_URL%%/1998/dlowe/dlowe.c)
@@ -1828,10 +1999,13 @@ would like to set it up?  We'll gladly thank you in the [thanks
 file](thanks-for-help.html) file and link to the page as well!  You'll also have
 IOCCC fame for reviving a pootifier! :-)
 
+Jump to: [top](#)
 
 <div id="1998_dloweneil">
 ## 1998/dloweneil
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: missing or dead link or links - please provide it or them
 ### Source code: [1998/dloweneil/dloweneil.c](%%REPO_URL%%/1998/dloweneil/dloweneil.c)
@@ -1845,11 +2019,14 @@ file](thanks-for-help.html) file and link to the page as well!  You'll also have
 IOCCC fame for reviving a pootifier! :-)
 
 
+Jump to: [top](#)
 
 
 <div id="1998_schnitzi">
 ## 1998/schnitzi
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1998/schnitzi/schnitzi.c](%%REPO_URL%%/1998/schnitzi/schnitzi.c)
@@ -1871,6 +2048,7 @@ If you use the generated program and do not give enough numbers in input
 something funny will happen, very possibly with different results per run. This
 is in the index.html file as something to try and ponder.
 
+Jump to: [top](#)
 
 <hr style="width:10%;text-align:left;margin-left:0">
 <div id="1999">
@@ -1880,6 +2058,7 @@ is in the index.html file as something to try and ponder.
 
 There was no IOCCC in 1999.
 
+Jump to: [top](#)
 
 <hr style="width:10%;text-align:left;margin-left:0">
 <div id="2000">
@@ -1887,11 +2066,13 @@ There was no IOCCC in 1999.
 </div>
 <hr style="width:10%;text-align:left;margin-left:0">
 
+Jump to: [top](#)
 
 <div id="2000_dlowe">
 ## 2000/dlowe
 </div>
 
+Jump to: [top](#)
 
 ### STATUS: known bug - please help us fix
 ### Source code: [2000/dlowe/dlowe.c](%%REPO_URL%%/2000/dlowe/dlowe.c)
@@ -1942,7 +2123,7 @@ Okay so now it sees it, `grep`. But watch!
     $ cat foo
 ```
 
-.. so at this hour it does appear to be writing to stdout but yet somehow it doesn't? But watch:
+.. so it does appear to be writing to stdout but yet somehow it doesn't? But watch:
 
 ``` <!---sh-->
     $ echo "7 P 6 d P P 8 p" | ./dlowe 1>foo 1>&1
@@ -2097,6 +2278,7 @@ on the stack at that point:
 
 which might (?) suggest that the `+` operator is unimplemented.
 
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 
@@ -2153,11 +2335,14 @@ likely print different warnings when compiling. It was observed that with
 Homebrew it does not report any warnings but with MacPorts it results in a total
 of 92 warnings! Nonetheless neither works okay and both crash.
 
+Jump to: [top](#)
 
 
 <div id="2000_primenum">
 ## 2000/primenum
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2000/primenum/primenum.c](%%REPO_URL%%/2000/primenum/primenum.c)
@@ -2182,10 +2367,13 @@ try to fix the crashing of this code except to challenge yourself (if you think
 that it'll be worth your two second fix :-) ).  If you do fix it please do not
 make a pull request.
 
+Jump to: [top](#)
 
 <div id="2000_rince">
 ## 2000/rince
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2000/rince/rince.c](%%REPO_URL%%/2000/rince/rince.c)
@@ -2195,6 +2383,7 @@ If `DISPLAY` is not set the program will very likely crash, do something strange
 (or if you're very unlucky your computer might [halt and catch
 fire](https://en.wikipedia.org/wiki/Halt_and_Catch_Fire_&lpar;computing&rpar;)! :-) ).
 
+Jump to: [top](#)
 
 <hr style="width:10%;text-align:left;margin-left:0">
 <div id="2001">
@@ -2202,10 +2391,13 @@ fire](https://en.wikipedia.org/wiki/Halt_and_Catch_Fire_&lpar;computing&rpar;)! 
 </div>
 <hr style="width:10%;text-align:left;margin-left:0">
 
+Jump to: [top](#)
 
 <div id="2001_anonymous">
 ## 2001/anonymous
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2001/anonymous/anonymous.c](%%REPO_URL%%/2001/anonymous/anonymous.c)
@@ -2226,12 +2418,16 @@ be correct).
 
 Note also that if you don't specify a file or you specify a non-32-bit ELF file
 this program will very likely crash or do something strange like slaughter the
-elves of Imladris :-(
+[Elves](https://www.glyphweb.com/arda/e/elves.html) of
+[Imladris](https://www.glyphweb.com/arda/i/imladris.php) :-(
 
+Jump to: [top](#)
 
 <div id="2001_bellard">
 ## 2001/bellard
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2001/bellard/bellard.c](%%REPO_URL%%/2001/bellard/bellard.c)
@@ -2265,6 +2461,7 @@ looking at the code it hard codes paths that are i386 specific to linux.
 Another point of interest is that the author provided unobfuscated versions
 which might be of value to look at.
 
+Jump to: [top](#)
 
 #### Aside: why were there changes made if INABIAF ?
 
@@ -2279,10 +2476,13 @@ Also the supplementary program, which did not work at all, was fixed and it can
 be run by itself for fun in modern systems, which was not possible before the
 fixes there.
 
+Jump to: [top](#)
 
 <div id="2001_cheong">
 ## 2001/cheong
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2001/cheong/cheong.c](%%REPO_URL%%/2001/cheong/cheong.c)
@@ -2290,10 +2490,13 @@ fixes there.
 
 This program will crash without an arg.
 
+Jump to: [top](#)
 
 <div id="2001_dgbeards">
 ## 2001/dgbeards
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2001/dgbeards/dgbeards.c](%%REPO_URL%%/2001/dgbeards/dgbeards.c)
@@ -2301,10 +2504,13 @@ This program will crash without an arg.
 
 This program deliberately crashes if it loses (which is what it aims to do).
 
+Jump to: [top](#)
 
 <div id="2001_herrmann1">
 ## 2001/herrmann1
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: missing files - please provide them
 ### Source code: [2001/herrmann1/herrmann1.c](%%REPO_URL%%/2001/herrmann1/herrmann1.c)
@@ -2313,6 +2519,7 @@ This program deliberately crashes if it loses (which is what it aims to do).
 The author referred to the file `herrmann1.turing` but it does not exist not even
 in the archive. Do you have a copy? Please provide it!
 
+Jump to: [top](#)
 
 ### STATUS: known bug - please help us fix
 
@@ -2321,12 +2528,13 @@ animation but this does not seem to work with modern gcc versions. It appears
 that version 2.95 works but maybe others do as well. Do you have a fix? We would
 appreciate your help!
 
-If you want to try and fix this, you are welcome to try.
-
+Jump to: [top](#)
 
 <div id="2001_kev">
 ## 2001/kev
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2001/kev/kev.c](%%REPO_URL%%/2001/kev/kev.c)
@@ -2350,10 +2558,13 @@ points.
 Although it is independent of endianness both systems need the same character
 set. In other words both have to be ASCII or EBCDIC - not one of each.
 
+Jump to: [top](#)
 
 <div id="2001_ollinger">
 ## 2001/ollinger
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2001/ollinger/ollinger.c](%%REPO_URL%%/2001/ollinger/ollinger.c)
@@ -2362,10 +2573,13 @@ set. In other words both have to be ASCII or EBCDIC - not one of each.
 This program will very likely crash or do something unexpected if you do not
 provide enough args.
 
+Jump to: [top](#)
 
 <div id="2001_rosten">
 ## 2001/rosten
 </div>
+
+Jump to: [top](#)
 
 
 ### STATUS: INABIAF - please **DO NOT** fix
@@ -2374,17 +2588,20 @@ provide enough args.
 
 See list of bugs [here](2001/rosten/index.html#bugs).
 
+Jump to: [top](#)
 
 ### STATUS: missing files - please provide them
 
 The author stated that there is a cat man page for this program in case one
 wanted to install it as a tool but this is missing.
 
+Jump to: [top](#)
 
 <div id="2001_schweikh">
 ## 2001/schweikh
 </div>
 
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2001/schweikh/schweikh.c](%%REPO_URL%%/2001/schweikh/schweikh.c)
@@ -2397,11 +2614,13 @@ There's also no way to escape meta characters.
 
 See also the author's list of bugs [here](2001/schweikh/index.html#bugs).
 
+Jump to: [top](#)
 
 <div id="2001_westley">
 ## 2001/westley
 </div>
 
+Jump to: [top](#)
 
 ### STATUS: uses gets() - change to fgets() if possible
 ### Source code: [2001/westley/westley.c](%%REPO_URL%%/2001/westley/westley.c)
@@ -2410,6 +2629,7 @@ See also the author's list of bugs [here](2001/schweikh/index.html#bugs).
 This function uses `gets(3)` but it would be ideal if it used `fgets(3)`. This
 one is rather complicated but you are welcome to try and fix this if you wish.
 
+Jump to: [top](#)
 
 ### STATUS: main() has only one arg - try and make it have 2 or 3
 
@@ -2424,17 +2644,20 @@ first so that you can compare the output. Make sure to recreate the extra files
 as described by the author if you do fix this. This might be looked at later if
 nobody else takes up the challenge.
 
+Jump to: [top](#)
 
 ### STATUS: missing files - please provide them
 
 The author referred to a file `card.gif` but this file is missing. Do you have
 it? Please provide it!
 
+Jump to: [top](#)
 
 <div id="2001_williams">
 ## 2001/williams
 </div>
 
+Jump to: [top](#)
 
 ### STATUS: known bug - please help us fix
 ### Source code: [2001/williams/williams.c](%%REPO_URL%%/2001/williams/williams.c)
@@ -2495,6 +2718,7 @@ when the missiles come down. The fact you can shoot after it starts that
 sleeping in a loop does suggest that it's not stuck only showing those lines and
 sleeping.
 
+Jump to: [top](#)
 
 <hr style="width:10%;text-align:left;margin-left:0">
 <div id="2002">
@@ -2504,6 +2728,7 @@ sleeping.
 
 There was no IOCCC in 2002.
 
+Jump to: [top](#)
 
 <hr style="width:10%;text-align:left;margin-left:0">
 <div id="2003">
@@ -2513,6 +2738,7 @@ There was no IOCCC in 2002.
 
 There was no IOCCC in 2003.
 
+Jump to: [top](#)
 
 <hr style="width:10%;text-align:left;margin-left:0">
 <div id="2004">
@@ -2520,10 +2746,13 @@ There was no IOCCC in 2003.
 </div>
 <hr style="width:10%;text-align:left;margin-left:0">
 
+Jump to: [top](#)
 
 <div id="2004_gavin">
 ## 2004/gavin
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2004/gavin/gavin.c](%%REPO_URL%%/2004/gavin/gavin.c)
@@ -2550,6 +2779,7 @@ When trying to link `gavin.o` to produce `sh`, the linker generates:
     ld: symbol(s) not found for architecture arm64
 ```
 
+Jump to: [top](#)
 
 #### Recent 2004/gavin mods:
 
@@ -2635,9 +2865,13 @@ Please also see [known features in the
 index.html](2004/gavin/index.html#known-features) for things that are not bugs
 but documented (mis)features.
 
+Jump to: [top](#)
+
 <div id="2004_hibachi">
 ## 2004/hibachi
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2004/hibachi/hibachi.c](%%REPO_URL%%/2004/hibachi/hibachi.c)
@@ -2648,12 +2882,15 @@ The author stated that:
 > The links (text) web browser does not support RFC 2616 section 7.2.1 paragraph 3
 sentence 2, and so fails to display responses from `hibachi`.
 
+Jump to: [top](#)
 
 
 
 <div id="2004_jdalbec">
 ## 2004/jdalbec
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2004/jdalbec/jdalbec.c](%%REPO_URL%%/2004/jdalbec/jdalbec.c)
@@ -2677,10 +2914,13 @@ runs of the same symbol.
 results (e.g., generation 1 starting from a string of 257 `1`s will be
 calculated as `11`); the remark from the previous paragraph applies here also.
 
+Jump to: [top](#)
 
 <div id="2004_sds">
 ## 2004/sds
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2004/sds/sds.c](%%REPO_URL%%/2004/sds/sds.c)
@@ -2689,6 +2929,7 @@ calculated as `11`); the remark from the previous paragraph applies here also.
 The generated code will very likely segfault or do something not intended if not
 given the right args. See the index.html file for the correct syntax.
 
+Jump to: [top](#)
 
 <hr style="width:10%;text-align:left;margin-left:0">
 <div id="2005">
@@ -2696,10 +2937,13 @@ given the right args. See the index.html file for the correct syntax.
 </div>
 <hr style="width:10%;text-align:left;margin-left:0">
 
+Jump to: [top](#)
 
 <div id="2005_anon">
 ## 2005/anon
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2005/anon/anon.c](%%REPO_URL%%/2005/anon/anon.c)
@@ -2715,10 +2959,13 @@ If you specify more than three args the program might also crash or do something
 strange. This might also happen if you specify excessively large board
 dimensions. Try `100 100 100` for instance and see what happens!
 
+Jump to: [top](#)
 
 <div id="2005_giljade">
 ## 2005/giljade
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2005/giljade/giljade.c](%%REPO_URL%%/2005/giljade/giljade.c)
@@ -2732,10 +2979,14 @@ sizeof(FILE *)`.
 
 This entry requires that `sed` and `make` are in your `$PATH`.
 
+Jump to: [top](#)
 
 <div id="2005_mikeash">
 ## 2005/mikeash
 </div>
+
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2005/mikeash/mikeash.c](%%REPO_URL%%/2005/mikeash/mikeash.c)
@@ -2780,10 +3031,14 @@ nowhere near
 > Basically, the LISP interpreter is good for some basic math operations, and
 for running itself.
 
+Jump to: [top](#)
 
 <div id="2005_mynx">
 ## 2005/mynx
 </div>
+
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2005/mynx/mynx.c](%%REPO_URL%%/2005/mynx/mynx.c)
@@ -2798,10 +3053,14 @@ pointing out as it won't work on as many websites as it used to including the
 [IOCCC website](https://www.ioccc.org) itself. The author noted that someone did
 make a version that supports `https` but it is not known where this might be.
 
+Jump to: [top](#)
+
 
 <div id="2005_sykes">
 ## 2005/sykes
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2005/sykes/sykes.c](%%REPO_URL%%/2005/sykes/sykes.c)
@@ -2832,6 +3091,7 @@ The
 [emulation](https://en.wikipedia.org/wiki/Emulator) does not include the seldom
 used decimal mode, or any of the "undocumented" instructions.
 
+Jump to: [top](#)
 
 <hr style="width:10%;text-align:left;margin-left:0">
 <div id="2006">
@@ -2839,10 +3099,14 @@ used decimal mode, or any of the "undocumented" instructions.
 </div>
 <hr style="width:10%;text-align:left;margin-left:0">
 
+Jump to: [top](#)
 
 <div id="2006_birken">
 ## 2006/birken
 </div>
+
+
+Jump to: [top](#)
 
 ### STATUS: uses gets() - change to fgets() if possible
 ### Source code: [2006/birken/birken.c](%%REPO_URL%%/2006/birken/birken.c)
@@ -2858,10 +3122,14 @@ with at least `computer.tofu` input file:
     #define gets(c) fgets((c),PI,stdin)&&(((c)[strlen((c))-1]='\0'),c!=NULL)
 ```
 
+Jump to: [top](#)
 
 <div id="2006_borsanyi">
 ## 2006/borsanyi
 </div>
+
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2006/borsanyi/borsanyi.c](%%REPO_URL%%/2006/borsanyi/borsanyi.c)
@@ -2871,10 +3139,14 @@ The string specified must be <= 42 characters and may only consist of the
 characters in the regex `a-z_A-Z0-9@.-`. Breaking these constraints will end up
 with possibly corrupt GIF files.
 
+Jump to: [top](#)
 
 <div id="2006_hamre">
 ## 2006/hamre
 </div>
+
+Jump to: [top](#)
+
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2006/hamre/hamre.c](%%REPO_URL%%/2006/hamre/hamre.c)
@@ -2882,10 +3154,13 @@ with possibly corrupt GIF files.
 
 This program will likely crash or do something funny without an arg.
 
+Jump to: [top](#)
 
 <div id="2006_monge">
 ## 2006/monge
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: doesn't work with some platforms - please help us fix it
 ### Source code: [2006/monge/monge.c](%%REPO_URL%%/2006/monge/monge.c)
@@ -2903,6 +3178,7 @@ provide it as an additional alt version. Fixing this is very likely to be very
 challenging and in some systems it will not be possible to fix but you are
 welcome to try and fix it if you wish to!
 
+Jump to: [top](#)
 
 
 
@@ -2910,10 +3186,14 @@ welcome to try and fix it if you wish to!
 
 Incorrect formulas will ungracefully crash the program.
 
+Jump to: [top](#)
 
 <div id="2006_stewart">
 ## 2006/stewart
 </div>
+
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2006/stewart/stewart.c](%%REPO_URL%%/2006/stewart/stewart.c)
@@ -2922,10 +3202,14 @@ Incorrect formulas will ungracefully crash the program.
 This program will likely crash or do something funny if the file cannot be
 opened. The number of args is however checked.
 
+Jump to: [top](#)
 
 <div id="2006_sykes1">
 ## 2006/sykes1
 </div>
+
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2006/sykes1/sykes1.c](%%REPO_URL%%/2006/sykes1/sykes1.c)
@@ -2943,10 +3227,14 @@ result in the 19186 unique solutions.
 >    If you pick a number higher than 460464 (24x19186) the program will return
 without outputting a solution.  If you can wait that long.
 
+Jump to: [top](#)
 
 <div id="2006_toledo2">
 ## 2006/toledo2
 </div>
+
+
+Jump to: [top](#)
 
 
 ### STATUS: INABIAF - please **DO NOT** fix
@@ -2969,6 +3257,7 @@ be called a bug :-)
 You must type in caps (except in strings) and this program is indeed
 case-sensitive.
 
+Jump to: [top](#)
 
 <hr style="width:10%;text-align:left;margin-left:0">
 <div id="2007">
@@ -2979,6 +3268,8 @@ case-sensitive.
 There was no IOCCC in 2007.
 
 
+Jump to: [top](#)
+
 <hr style="width:10%;text-align:left;margin-left:0">
 <div id="2008">
 # 2008
@@ -2988,6 +3279,8 @@ There was no IOCCC in 2007.
 There was no IOCCC in 2008.
 
 
+Jump to: [top](#)
+
 <hr style="width:10%;text-align:left;margin-left:0">
 <div id="2009">
 # 2009
@@ -2996,6 +3289,7 @@ There was no IOCCC in 2008.
 
 There was no IOCCC in 2009.
 
+Jump to: [top](#)
 
 <hr style="width:10%;text-align:left;margin-left:0">
 <div id="2010">
@@ -3006,16 +3300,21 @@ There was no IOCCC in 2009.
 There was no IOCCC in 2010.
 
 
+Jump to: [top](#)
+
 <hr style="width:10%;text-align:left;margin-left:0">
 <div id="2011">
 # 2011
 </div>
 <hr style="width:10%;text-align:left;margin-left:0">
 
+Jump to: [top](#)
 
 <div id="2011_borsanyi">
 ## 2011/borsanyi
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2011/borsanyi/borsanyi.c](%%REPO_URL%%/2011/borsanyi/borsanyi.c)
@@ -3039,10 +3338,14 @@ available stack space.
 - Rounding errors might cause an omission in the highest bin. There might be
 empty bins at the edges.
 
+Jump to: [top](#)
 
 <div id="2011_dlowe">
 ## 2011/dlowe
 </div>
+
+
+Jump to: [top](#)
 
 ### STATUS: missing or dead link or links - please provide it or them
 ### Source code: [2011/dlowe/dlowe.c](%%REPO_URL%%/2011/dlowe/dlowe.c)
@@ -3056,6 +3359,7 @@ file](thanks-for-help.html) file and link to the page as well!  You'll also have
 IOCCC fame for reviving a pootifier! :-)
 
 
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 
@@ -3071,10 +3375,13 @@ tends to result in empty output.
 * Will crash and die horribly if it runs out of memory.
 
 
+Jump to: [top](#)
 
 <div id="2011_fredriksson">
 ## 2011/fredriksson
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2011/fredriksson/fredriksson.c](%%REPO_URL%%/2011/fredriksson/fredriksson.c)
@@ -3085,10 +3392,13 @@ list is rather long see [other
 features](2011/fredriksson/index.html#other-features) and [limitations and
 remarks](2011/fredriksson/index.html#limitations-and-remarks) instead.
 
+Jump to: [top](#)
 
 <div id="2011_konno">
 ## 2011/konno
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2011/konno/konno.c](%%REPO_URL%%/2011/konno/konno.c)
@@ -3097,6 +3407,7 @@ remarks](2011/fredriksson/index.html#limitations-and-remarks) instead.
 This program will very likely crash or do something funny without an arg.
 
 
+Jump to: [top](#)
 
 <div id="2011_richards">
 ## 2011/richards
@@ -3120,6 +3431,7 @@ author as well as some resources on Apple's website should anyone wish to take a
 crack at it. A starting point might be in
 [richards.alt.c](%%REPO_URL%%/2011/richards/richards.alt.c).
 
+Jump to: [top](#)
 
 ### Debugging
 
@@ -3154,7 +3466,7 @@ so it would appear that
     x[(u)c]
 ```
 
-(at least in my tired head?) is NULL. But why does it work then?
+is NULL. But why does it work then?
 
 **NOTE**: `u` is `int`.
 
@@ -3285,19 +3597,25 @@ A warning of interest when compiling is:
 This can be fixed easily enough however but it doesn't appear to matter in this
 case.
 
+Jump to: [top](#)
 
 ### Testing fixes
 
 It might be helpful to use the [try.alt.sh](%%REPO_URL%%/2011/richards/try.alt.sh) script to
 test that it does not crash and functions properly.
 
+Jump to: [top](#)
 
 ### Resources
+
+Jump to: [top](#)
 
 #### More from the author
 
 The author has more about the entry at
 <https://github.com/GregorR/ioccc2011>.
+
+Jump to: [top](#)
 
 #### Apple resources
 
@@ -3315,12 +3633,13 @@ CONFIG_DYNAMIC_CODE_SIGNING` and the protection variable has the
 unconfirmed and it's not known when `CONFIG_DYNAMIC_CODE_SIGNING` would be
 defined.
 
-Do you have a fix? We welcome it!
-
+Jump to: [top](#)
 
 <div id="2011_vik">
 ## 2011/vik
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2011/vik/vik.c](%%REPO_URL%%/2011/vik/vik.c)
@@ -3330,6 +3649,7 @@ The author stated that the program will crash if no argument is passed to the
 program though we note that your computer might also [halt and catch
 fire](https://en.wikipedia.org/wiki/Halt_and_Catch_Fire_&lpar;computing&rpar;) :-)
 
+Jump to: [top](#)
 
 <hr style="width:10%;text-align:left;margin-left:0">
 <div id="2012">
@@ -3337,10 +3657,13 @@ fire](https://en.wikipedia.org/wiki/Halt_and_Catch_Fire_&lpar;computing&rpar;) :
 </div>
 <hr style="width:10%;text-align:left;margin-left:0">
 
+Jump to: [top](#)
 
 <div id="2012_blakely">
 ## 2012/blakely
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2012/blakely/blakely.c](%%REPO_URL%%/2012/blakely/blakely.c)
@@ -3351,10 +3674,13 @@ The author stated:
 > If there is a division by zero, square-root of a negative number, or similar
 operation, then the results are undefined.
 
+Jump to: [top](#)
 
 <div id="2012_deckmyn">
 ## 2012/deckmyn
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2012/deckmyn/deckmyn.c](%%REPO_URL%%/2012/deckmyn/deckmyn.c)
@@ -3391,10 +3717,13 @@ musical element of a line is only 2 characters!
 
 The manual referred to is [here](2012/deckmyn/deckmyn.html).
 
+Jump to: [top](#)
 
 <div id="2012_dlowe">
 ## 2012/dlowe
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2012/dlowe/dlowe.c](%%REPO_URL%%/2012/dlowe/dlowe.c)
@@ -3408,10 +3737,13 @@ The author stated:
   `dead.d` and `sprites.d`).
 * Cannot build or run without X11 (or an X11 compatibility layer).
 
+Jump to: [top](#)
 
 <div id="2012_tromp">
 ## 2012/tromp
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2012/tromp/tromp.c](%%REPO_URL%%/2012/tromp/tromp.c)
@@ -3434,10 +3766,13 @@ interpreter to crash when looking into a null-pointer environment:
 >
 > will likely dump core.
 
+Jump to: [top](#)
 
 <div id="2012_vik">
 ## 2012/vik
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2012/vik/vik.c](%%REPO_URL%%/2012/vik/vik.c)
@@ -3449,6 +3784,7 @@ mismatching sizes or unsupported pixel formats though we note that your computer
 might also [halt and catch
 fire](https://en.wikipedia.org/wiki/Halt_and_Catch_Fire_&lpar;computing&rpar;) :-)
 
+Jump to: [top](#)
 
 <hr style="width:10%;text-align:left;margin-left:0">
 <div id="2013">
@@ -3456,9 +3792,13 @@ fire](https://en.wikipedia.org/wiki/Halt_and_Catch_Fire_&lpar;computing&rpar;) :
 </div>
 <hr style="width:10%;text-align:left;margin-left:0">
 
+Jump to: [top](#)
+
 <div id="2013_cable2">
 ## 2013/cable2
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2013/cable2/cable2.c](%%REPO_URL%%/2013/cable2/cable2.c)
@@ -3478,10 +3818,14 @@ antialiasing interferes with color detection in "color" mode.
 - Only runs on little endian machines (since the BMP format is little endian,
 and endianness conversion would make the source too large for IOCCC rule 2).
 
+Jump to: [top](#)
 
 <div id="2013_dlowe">
 ## 2013/dlowe
 </div>
+
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2013/dlowe/dlowe.c](%%REPO_URL%%/2013/dlowe/dlowe.c)
@@ -3502,10 +3846,13 @@ The author also stated:
 * Only works if your terminal is UTF-8 and your font supports the 8 glyphs
   used.
 
+Jump to: [top](#)
 
 <div id="2013_endoh1">
 ## 2013/endoh1
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2013/endoh1/endoh1.c](%%REPO_URL%%/2013/endoh1/endoh1.c)
@@ -3514,19 +3861,22 @@ The author also stated:
 > This program supports only "Combinator-calculus style notation" of Lazy K.
 "Unlambda style" and "Iota and Jot" style are not supported.
 >
-
+>
 > Also, it requires a space between identifiers.  In short, use `(S K)` instead of
 > `(SK)`, "\`sk", `**i*i*i*ii*i*i*ii`, or `11111100011100`.
 >
 > Huge memory may be required to compile the program (about 300 MB on my machine).
 >
->In addition, there are some limitations (and workarounds) mentioned in the
+> In addition, there are some limitations (and workarounds) mentioned in the
 [obfuscation section](2013/endoh1/index.html#obfuscation).
 
+Jump to: [top](#)
 
 <div id="2013_endoh3">
 ## 2013/endoh3
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2013/endoh3/endoh3.c](%%REPO_URL%%/2013/endoh3/endoh3.c)
@@ -3541,10 +3891,13 @@ From the author:
 >
 > A workaround is inserting a whitespace: `C2 E2`.
 
+Jump to: [top](#)
 
 <div id="2013_endoh4">
 ## 2013/endoh4
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2013/endoh4/endoh4.c](%%REPO_URL%%/2013/endoh4/endoh4.c)
@@ -3552,10 +3905,13 @@ From the author:
 
 Invalid input files will very likely crash the program.
 
+Jump to: [top](#)
 
 <div id="2013_hou">
 ## 2013/hou
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2013/hou/hou.c](%%REPO_URL%%/2013/hou/hou.c)
@@ -3564,10 +3920,13 @@ Invalid input files will very likely crash the program.
 This program will not terminate on its own; you must kill `hou` (but not Qiming
 Hou :-) ) yourself. This should not be fixed.
 
+Jump to: [top](#)
 
 <div id="2013_mills">
 ## 2013/mills
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2013/mills/mills.c](%%REPO_URL%%/2013/mills/mills.c)
@@ -3580,6 +3939,7 @@ document but the author does mention the well known (at least to those of us who
 have experience with socket programming :-) ) fix. However as the author pointed
 it out as a known limitation it is not a bug but a feature.
 
+Jump to: [top](#)
 
 <hr style="width:10%;text-align:left;margin-left:0">
 <div id="2014">
@@ -3587,10 +3947,13 @@ it out as a known limitation it is not a bug but a feature.
 </div>
 <hr style="width:10%;text-align:left;margin-left:0">
 
+Jump to: [top](#)
 
 <div id="2014_maffiodo1">
 ## 2014/maffiodo1
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2014/maffiodo1/prog.c](%%REPO_URL%%/2014/maffiodo1/prog.c)
@@ -3612,12 +3975,14 @@ On the other hand, the author also stated:
 collide with blocks and get stuck inside them. This is a KNOWN BUG. When your
 player become bigger, stay away from blocks!
 
-..  but since it's documented it's considered a feature, not a bug to fix.
-
+Jump to: [top](#)
 
 <div id="2014_maffiodo2">
 ## 2014/maffiodo2
 </div>
+
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2014/maffiodo2/prog.c](%%REPO_URL%%/2014/maffiodo2/prog.c)
@@ -3625,10 +3990,13 @@ player become bigger, stay away from blocks!
 
 This program will very likely crash if no arg is given.
 
+Jump to: [top](#)
 
 <div id="2014_vik">
 ## 2014/vik
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: known bug - please help us fix
 ### Source code: [2014/vik/prog.c](%%REPO_URL%%/2014/vik/prog.c)
@@ -3679,6 +4047,7 @@ they will properly get:
     IOCCC
 ```
 
+Jump to: [top](#)
 
 <hr style="width:10%;text-align:left;margin-left:0">
 <div id="2015">
@@ -3686,10 +4055,13 @@ they will properly get:
 </div>
 <hr style="width:10%;text-align:left;margin-left:0">
 
+Jump to: [top](#)
 
 <div id="2015_duble">
 ## 2015/duble
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2015/duble/prog.c](%%REPO_URL%%/2015/duble/prog.c)
@@ -3698,10 +4070,14 @@ they will properly get:
 This program is known to, in some cases, segfault, and as the judges and the
 author noted this, it should not be fixed.
 
+Jump to: [top](#)
 
 <div id="2015_hou">
 ## 2015/hou
 </div>
+
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2015/hou/prog.c](%%REPO_URL%%/2015/hou/prog.c)
@@ -3711,26 +4087,29 @@ The author stated:
 
 > Hard requirements:
 >
-> * The platform must implement the `double` type as IEEE754-compliant 64-bit
+> The platform must implement the `double` type as IEEE754-compliant 64-bit
 floating point numbers.  The 80-bit intermediate format used by x87 is
 considered as an violation of this. The code should print an error message on
 such platforms.
 >
-> * The program must start with the CPU / FPU in round-to-nearest mode.
+> The program must start with the CPU / FPU in round-to-nearest mode.
 >
 > Soft requirements:
 >
-> * The compiler must respect `volatile`. The code is formatted to warn about
+> The compiler must respect `volatile`. The code is formatted to warn about
 that, though.
 >
-> * The printed result is only correct on little-endian machines. The program
+> The printed result is only correct on little-endian machines. The program
 takes care to warn about this issue after printing an incorrect big-endian
 result. Error messages become garbled, though.
 
+Jump to: [top](#)
 
 <div id="2015_howe">
 ## 2015/howe
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: known bug - please help us fix
 
@@ -3755,10 +4134,14 @@ The same problem exists in the
 [prog.alt-test.sh](%%REPO_URL%%/2015/howe/prog.alt-test.sh), particularly
 because it is the same thing as the other, just updated to use `prog.alt`.
 
+Jump to: [top](#)
 
 <div id="2015_mills2">
 ## 2015/mills2
 </div>
+
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2015/mills2/prog.c](%%REPO_URL%%/2015/mills2/prog.c)
@@ -3770,9 +4153,13 @@ is not compressed data it's likely to crash.
 The program depends on little endian systems.
 
 
+Jump to: [top](#)
+
 <div id="2015_schweikhardt">
 ## 2015/schweikhardt
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2015/schweikhardt/prog.c](%%REPO_URL%%/2015/schweikhardt/prog.c)
@@ -3789,6 +4176,7 @@ of bits in a type is `sizeof(typ) << 3`, it will work correctly on 24-bit or
 `int` and so on. On such systems, it will only use `8 * sizeof(typ)` bits per
 place. It does not work when `CHAR_BIT <= 7`.
 
+Jump to: [top](#)
 
 <hr style="width:10%;text-align:left;margin-left:0">
 <div id="2016">
@@ -3796,8 +4184,10 @@ place. It does not work when `CHAR_BIT <= 7`.
 </div>
 <hr style="width:10%;text-align:left;margin-left:0">
 
+
 There was no IOCCC in 2016.
 
+Jump to: [top](#)
 
 <hr style="width:10%;text-align:left;margin-left:0">
 <div id="2017">
@@ -3807,6 +4197,7 @@ There was no IOCCC in 2016.
 
 There was no IOCCC in 2017.
 
+Jump to: [top](#)
 
 <hr style="width:10%;text-align:left;margin-left:0">
 <div id="2018">
@@ -3814,10 +4205,13 @@ There was no IOCCC in 2017.
 </div>
 <hr style="width:10%;text-align:left;margin-left:0">
 
+Jump to: [top](#)
 
 <div id="2018_algmyr">
 ## 2018/algmyr
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2018/algmyr/prog.c](%%REPO_URL%%/2018/algmyr/prog.c)
@@ -3836,11 +4230,15 @@ behavior. Some erroneous arguments cause segfaults (negative number of channels,
 channel id outside valid range). One argument in particular causes an infinite
 loop printing whitespace.
 
+Jump to: [top](#)
 
 
 <div id="2018_hou">
 ## 2018/hou
 </div>
+
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2018/hou/prog.c](%%REPO_URL%%/2018/hou/prog.c)
@@ -3861,10 +4259,13 @@ Some JSON files might cause the program to continue to run and seemingly
 infinitely increase the size of the output file. This can happen if you try
 fixing the syntax error in the generated `ioccc.json` file.
 
+Jump to: [top](#)
 
 <div id="2018_mills">
 ## 2018/mills
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: known bug - please help us fix
 ### Source code: [2018/mills/prog.c](%%REPO_URL%%/2018/mills/prog.c)
@@ -3882,6 +4283,7 @@ where `[]` is the cursor. When this happens if you hit enter (this is necessary
 or else it'll happen again) and then exit again (ctrl-e) and run `prog` again
 it'll be okay.
 
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 
@@ -3900,10 +4302,13 @@ Another issue noticed is that if you are using the saved mode you must type
 `sync` prior to exiting the program or else the next time you run it the file
 will not exist (or in the case of compiled code it won't be executable).
 
+Jump to: [top](#)
 
 <div id="2018_vokes">
 ## 2018/vokes
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2018/vokes/prog.c](%%REPO_URL%%/2018/vokes/prog.c)
@@ -3955,6 +4360,7 @@ The author wrote the following:
   the values `48` through `57`, rather than using `isdigit(3)`. As noted above,
   this program has nothing to do with a hand.
 
+Jump to: [top](#)
 
 <hr style="width:10%;text-align:left;margin-left:0">
 <div id="2019">
@@ -3962,10 +4368,13 @@ The author wrote the following:
 </div>
 <hr style="width:10%;text-align:left;margin-left:0">
 
+Jump to: [top](#)
 
 <div id="2019_adamovsky">
 ## 2019/adamovsky
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2019/adamovsky/prog.c](%%REPO_URL%%/2019/adamovsky/prog.c)
@@ -3974,10 +4383,13 @@ The author wrote the following:
 Certain input can crash this program. The file
 [crash.unl](%%REPO_URL%%/2019/adamovsky/crash.unl) is an example file.
 
+Jump to: [top](#)
 
 <div id="2019_burton">
 ## 2019/burton
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2019/burton/prog.c](%%REPO_URL%%/2019/burton/prog.c)
@@ -3986,10 +4398,13 @@ Certain input can crash this program. The file
 The author pointed out that some implementations of `wc(1)` show different
 values but his implementation matches that of macOS and FreeBSD.
 
+Jump to: [top](#)
 
 <div id="2019_ciura">
 ## 2019/ciura
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2019/ciura/prog.c](%%REPO_URL%%/2019/ciura/prog.c)
@@ -4024,9 +4439,13 @@ noted in the de.sh/de.alt.sh scripts:
     # reason that so many words have them.
 ```
 
+Jump to: [top](#)
+
 <div id="2019_dogon">
 ## 2019/dogon
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: uses gets() - change to fgets() if possible
 ### Source code: [2019/dogon/prog.c](%%REPO_URL%%/2019/dogon/prog.c)
@@ -4038,10 +4457,13 @@ See the
 FAQ on "[gets and fgets](faq.html#gets)"
 for more information on the change to `fgets(3)`.
 
+Jump to: [top](#)
 
 <div id="2019_duble">
 ## 2019/duble
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2019/duble/prog.c](%%REPO_URL%%/2019/duble/prog.c)
@@ -4067,12 +4489,13 @@ Ferguson](authors.html#Cody_Boone_Ferguson) showed us this:
     [...]
 ```
 
-This is NOT a bug and you'll have to (at least at this time?) delete the files
+This is NOT a bug and you'll have to delete the files
 manually. You shouldn't have to worry about these being added to git: it seems
 to ignore sockets (it did at least in macOS).
 
-He provides the following tips on this situation. A simpler way to find sockets
-in the directory:
+Jump to: [top](#)
+
+Tips on this situation. A simpler way to find sockets in the directory:
 
 ``` <!---sh-->
     file .*|grep socket|cut -f1 -d:
@@ -4086,10 +4509,13 @@ To delete them you can do:
 
 though one might want to check that the program is not currently running. :-)
 
+Jump to: [top](#)
 
 <div id="2019_endoh">
 ## 2019/endoh
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2019/endoh/prog.c](%%REPO_URL%%/2019/endoh/prog.c)
@@ -4098,10 +4524,13 @@ though one might want to check that the program is not currently running. :-)
 As a backtrace quine this entry is **SUPPOSED to segfault** so this should not be
 touched either.
 
+Jump to: [top](#)
 
 <div id="2019_karns">
 ## 2019/karns
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2019/karns/prog.c](%%REPO_URL%%/2019/karns/prog.c)
@@ -4124,10 +4553,16 @@ encountered this myself).
 - The program could be obfuscated much further.
 - The program contains some unused code and data.
 
+**NOTE**: the segfault problem might have been fixed when the optimiser was disabled
+(which was necessary as part of a bug fix).
+
+Jump to: [top](#)
 
 <div id="2019_lynn">
 ## 2019/lynn
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2019/lynn/prog.c](%%REPO_URL%%/2019/lynn/prog.c)
@@ -4138,10 +4573,13 @@ expect. Rather than duplicate the information we refer you to the author's
 remarks in the sections [Syntax](2019/lynn/index.html#syntax) and
 [Caveats](2019/lynn/index.html#caveats).
 
+Jump to: [top](#)
 
 <div id="2019_mills">
 ## 2019/mills
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2019/mills/prog.c](%%REPO_URL%%/2019/mills/prog.c)
@@ -4163,9 +4601,13 @@ shells, you can view the hard limit with ulimit -Hs and set it with ulimit -s
 view the hard limit with limit -h stacksize and set it with limit stacksize
 65532 (replacing 65532 with the actual hard limit).
 
+Jump to: [top](#)
+
 <div id="2019_poikola">
 ## 2019/poikola
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2019/poikola/prog.c](%%REPO_URL%%/2019/poikola/prog.c)
@@ -4176,9 +4618,13 @@ erroneously.
 
 Also, the maximum file size is 1GB.
 
+Jump to: [top](#)
+
 <div id="2019_yang">
 ## 2019/yang
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2019/yang/prog.c](%%REPO_URL%%/2019/yang/prog.c)
@@ -4190,6 +4636,7 @@ The author also stated that 'if input contains CR-LF end of line sequences,
 those `CR`s are silently dropped.  In fact, most control codes are silently
 ignored except line feeds (preserved) and tabs (expanded to 8 spaces).'
 
+Jump to: [top](#)
 
 
 
@@ -4199,10 +4646,14 @@ ignored except line feeds (preserved) and tabs (expanded to 8 spaces).'
 </div>
 <hr style="width:10%;text-align:left;margin-left:0">
 
+Jump to: [top](#)
 
 <div id="2020_burton">
 ## 2020/burton
 </div>
+
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2020/burton/prog.c](%%REPO_URL%%/2020/burton/prog.c)
@@ -4215,10 +4666,14 @@ but it shouldn't be made into a pull request).
 It will also show funny output with more than one arg. This should not be fixed
 either. But can you figure out why this happens?
 
+Jump to: [top](#)
 
 <div id="2020_carlini">
 ## 2020/carlini
 </div>
+
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2020/carlini/prog.c](%%REPO_URL%%/2020/carlini/prog.c)
@@ -4236,10 +4691,14 @@ move.
 
 If you have audible bells enabled the program will beep at every turn.
 
+Jump to: [top](#)
 
 <div id="2020_ferguson1">
 ## 2020/ferguson1
 </div>
+
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2020/ferguson1/prog.c](%%REPO_URL%%/2020/ferguson1/prog.c)
@@ -4250,10 +4709,13 @@ things that are misinterpreted as bugs. See the
 [bugs.html](2020/ferguson1/bugs.html) and
 [troubleshooting.html](2020/ferguson1/troubleshooting.html) files for details.
 
+Jump to: [top](#)
 
 <div id="2020_giles">
 ## 2020/giles
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2020/giles/prog.c](%%REPO_URL%%/2020/giles/prog.c)
@@ -4263,10 +4725,13 @@ The author noted that the program only supports WAV files that have
 exactly 16 bits per sample, but it allows any sample rate and any number of
 audio channels.
 
+Jump to: [top](#)
 
 <div id="2020_otterness">
 ## 2020/otterness
 </div>
+
+Jump to: [top](#)
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2020/otterness/prog.c](%%REPO_URL%%/2020/otterness/prog.c)
@@ -4291,6 +4756,7 @@ See also the [Program error
 codes](2020/otterness/index.html#program-error-codes) written by the author
 which lists some other conditions which should be considered features, not bugs.
 
+Jump to: [top](#)
 
 <hr style="width:10%;text-align:left;margin-left:0">
 <div id="2021">
@@ -4300,6 +4766,7 @@ which lists some other conditions which should be considered features, not bugs.
 
 There was no IOCCC in 2021.
 
+Jump to: [top](#)
 
 <hr style="width:10%;text-align:left;margin-left:0">
 <div id="2022">
@@ -4308,6 +4775,8 @@ There was no IOCCC in 2021.
 <hr style="width:10%;text-align:left;margin-left:0">
 
 There was no IOCCC in 2022.
+
+Jump to: [top](#)
 
 
 <hr style="width:10%;text-align:left;margin-left:0">
@@ -4318,6 +4787,8 @@ There was no IOCCC in 2022.
 
 There was no IOCCC in 2023.
 
+Jump to: [top](#)
+
 
 <hr style="width:10%;text-align:left;margin-left:0">
 <div id="2024">
@@ -4325,9 +4796,7 @@ There was no IOCCC in 2023.
 </div>
 <hr style="width:10%;text-align:left;margin-left:0">
 
-We hope to run the IOCCCMOCK this year, 2024, and hopefully the next IOCCC, but
-for now we wish everyone a happy new year!
-
+We plan to run IOCCC28 this year but the time has not been announced just yet.
 
 # Final words
 
@@ -4339,6 +4808,7 @@ request](https://github.com/ioccc-src/winner/pulls) or otherwise, we
 thank you as well for the help! We will happily add you to the
 [thanks](thanks-for-help.html) file as well.
 
+Jump to: [top](#)
 
 <hr style="width:10%;text-align:left;margin-left:0">
 

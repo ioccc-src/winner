@@ -1,5 +1,23 @@
-<div id="guidelines">
-# IOCCC markdown guidelines
+<div id="markdown_guidelines">
+# IOCCC 28th Markdown Guidelines
+</div>
+
+<div id="markdown_version">
+## IOCCC Markdown guidelines version
+</div>
+
+<p class="leftbar">
+These [IOCCC markdown guidelines](markdown.html) are version **28.0 2024-10-25**.
+</p>
+
+**IMPORTANT**: Be sure to read the [IOCCC rules](next/rules.html) and [IOCCC
+guidelines](next/guidelines.html).
+
+
+Jump to: [top](#)
+
+<div id="markdown">
+## IOCCC Markdown guidelines
 </div>
 
 The IOCCC makes extensive use of [markdown](https://daringfireball.net/projects/markdown/).
@@ -23,6 +41,7 @@ into the markdown file.
 In particular there are things we ask people to please **NOT** use in
 markdown files for the IOCCC:
 
+Jump to: [top](#)
 
 <div id="name">
 <div id="anchor-name">
@@ -73,6 +92,7 @@ id="string">...</div>` element, as in:
 While some browsers will still recognize the HTML construct `<a
 name="string">...</a>`, it is possible **they MIGHT NOT** in the future.
 
+Jump to: [top](#)
 
 <div id="links">
 ## If you can, it is PREFERABLE to use markdown links rather than `<a>...</a>`
@@ -94,6 +114,7 @@ Instead of:
     [markdown links](#links) are easier and preferred
 ```
 
+Jump to: [top](#)
 
 <div id="strike">
 <div id="del">
@@ -115,6 +136,7 @@ Use instead:
     <del>...</del>
 ```
 
+Jump to: [top](#)
 
 <div id="underline">
 <div id="ins">
@@ -134,6 +156,7 @@ Use instead:
     <ins>...</ins>
 ```
 
+Jump to: [top](#)
 
 <div id="tt">
 <div id="span">
@@ -162,6 +185,7 @@ We recommend using the inline markdown code block method instead:
     Using the `inline markdown code block` is easier and is **preferred**.
 ```
 
+Jump to: [top](#)
 
 <div id="unindented">
 <div id="indented">
@@ -204,6 +228,7 @@ Moreover:
 
 Please do **NOT** indent using ASCII tab characters in markdown files.
 
+Jump to: [top](#)
 
 <div id="tabs">
 <div id="spaces">
@@ -248,6 +273,8 @@ not C code or any other non-markdown content:
 your C code and other non-markdown files.  We simply ask that you do **NOT** use any
 ASCII tab characters in markdown files.
 
+Jump to: [top](#)
+
 <div id="vim-tabs">
 ### Tip for `vim` users
 </div>
@@ -282,6 +309,7 @@ To **VERIFY** that there are no tabs in a file you may do, in command mode:
 
 If you're in insert mode hit `ESC` first.
 
+Jump to: [top](#)
 
 <div id="languages">
 <div id="code">
@@ -316,6 +344,7 @@ and **THEN** an **opening** **`<!---`** (a "`<`", a "`!`" and then three "`-`"s)
 followed by a "`>`").
 
 
+Jump to: [top](#)
 
 <div id="slash">
 <div id="void">
@@ -380,6 +409,7 @@ Instead use just:
 
 etc.
 
+Jump to: [top](#)
 
 <div id="backslash">
 <div id="br">
@@ -429,6 +459,7 @@ as is:
 Doing it this way will prevent `pandoc(1)` from generating deprecated HTML
 elements such as `<br />`.
 
+Jump to: [top](#)
 
 <div id="images">
 <div id="img">
@@ -473,6 +504,7 @@ have `width` and `height` information so browsers have to slow down
 on rendering text around the image until it can internally determine
 the image size.
 
+Jump to: [top](#)
 
 <div id="hr">
 <div id="horizontal">
@@ -504,6 +536,7 @@ If a short line is needed, use:
 ```
 
 
+Jump to: [top](#)
 
 <div id="parentheses">
 ## Please do NOT put a LITERAL "`(`" or "`)`" in markdown link titles
@@ -535,6 +568,7 @@ use:
     [ls&lpar;1&rpar;](https://example.com/ls-man-page.1)
 ```
 
+Jump to: [top](#)
 
 <div id="closing-parentheses">
 ## Please do NOT end markdown links with "`))`"
@@ -570,6 +604,8 @@ use:
 ``` <!---markdown-->
     This thing, [some text](some/path), is better.
 ```
+
+Jump to: [top](#)
 
 <div id="code-text">
 <div id="code-and-text">
@@ -613,6 +649,7 @@ C compilers cannot be given a -Wno-main-arg-errors flag.
 
 **BTW**: Please note the blank line after the code block.
 
+Jump to: [top](#)
 
 <div id="italics">
 ## Please use `_` for italics in markdown

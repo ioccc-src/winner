@@ -2,32 +2,33 @@
 
 ## Entries
 
-* [Winning Entries](years.html)
-* [Winning Authors](authors.html)
-* [Location of winning authors](location.html)
+* [Winning entries](years.html)
+* [Winning authors](authors.html)
+* [Location of authors](location.html)
 * [Bugs and &lpar;mis&rpar;features](bugs.html)
+* [Fixing entries](faq.html#fix_an_entry)
+* [Updating author info](faq.html#fix_author)
+* [Thanks for the help](thanks-for-help.html)
 
 ## Status
 
-* [IOCCC News](news.html)
+* [News](news.html)
 * [Contest status](status.html)
-* [Rules and Guidelines](next/index.html)
-* [IOCCC markdown](markdown.html)
+* [Rules and guidelines](next/index.html)
+* [Markdown guidelines](markdown.html)
+* [Security policy](SECURITY.html)
 
 ## FAQ
 
-* [FAQ](faq.html)
-* [How to enter the IOCCC](faq.html#submit)
-* [Fixing IOCCC entries](faq.html#fix_an_entry)
-* [Fixing the website](faq.html#fix_website)
-* [Updating author info](faq.html#fix_author)
+* [Frequently Asked Questions](faq.html)
+* [How to enter](faq.html#submit)
+* [Compiling entries](faq.html#compiling)
+* [Running entries](faq.html#running_entries)
+* [How to help](faq.html#help)
 
 ## About
 
-* [IOCCC Home](index.html)
-* [The IOCCC Judges](contact.html)
-* [Contacting the IOCCC](contact.html)
-* [IOCCC Security Policy](SECURITY.html)
-* [Thanks for the help](thanks-for-help.html)
-* [Website scripts](bin/index.html)
-* [Script include files](inc/index.html)
+* [Home page](index.html)
+* [About the IOCCC](about.html)
+* [The Judges](judges.html)
+* [Contact us](contact.html)
