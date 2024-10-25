@@ -2,11 +2,17 @@
 #
 # gen-sitemap.sh - generate an xml sitemap
 #
-# This script was improved by Cody Boone Ferguson / @xexyl to use git ls-files
-# so that other files that might exist in the directories we search are not
-# added to the sitemap.
+# This script was written in 2024 by:
 #
-#   "Because sometimes even IOCCC Judges need some help." :-)
+#   chongo (Landon Curt Noll, http://www.isthe.com/chongo/index.html) /\oo/\
+#
+# with improvements by:
+#
+#	@xexyl
+#	https://xexyl.net		Cody Boone Ferguson
+#	https://ioccc.xexyl.net
+#
+# "Because sometimes even the IOCCC Judges need some help." :-)
 #
 # Copyright (c) 2024 by Landon Curt Noll.  All Rights Reserved.
 #

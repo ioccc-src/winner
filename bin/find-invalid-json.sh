@@ -2,17 +2,17 @@
 #
 # find-invalid-json.sh - find invalid JSON files
 #
-# The JSON parser jparse was co-developed in 2022 by:
+# This script was written in 2024 by Cody Boone Ferguson.
+#
+#   "Because sometimes even the IOCCC Judges need some help." :-)
+#
+# The JSON parser and its respective tools were co-developed in 2022 by:
 # 
 #	@xexyl
 #	https://xexyl.net		Cody Boone Ferguson
 #	https://ioccc.xexyl.net
 # and:
 #	chongo (Landon Curt Noll, http://www.isthe.com/chongo/index.html) /\oo/\
-#
-# This script was written in 2024 by Cody Boone Ferguson.
-#
-#   "Because sometimes even the IOCCC Judges need some help." :-)
 #
 # "Share and Enjoy!"
 #     --  Sirius Cybernetics Corporation Complaints Division, JSON spec department. :-)

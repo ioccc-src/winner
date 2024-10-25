@@ -18,9 +18,19 @@
 #
 #	make gen_status
 #
-# Copyright (c) 2024 by Landon Curt Noll.  All Rights Reserved.
+# This script was written in 2024 by:
 #
-# ... with minor improvements made in June 2024 by Cody Boone Ferguson.
+#   chongo (Landon Curt Noll, http://www.isthe.com/chongo/index.html) /\oo/\
+#
+# with improvements by:
+#
+#	@xexyl
+#	https://xexyl.net		Cody Boone Ferguson
+#	https://ioccc.xexyl.net
+#
+# "Because sometimes even the IOCCC Judges need some help." :-)
+#
+# Copyright (c) 2024 by Landon Curt Noll.  All Rights Reserved.
 #
 # Permission to use, copy, modify, and distribute this software and
 # its documentation for any purpose and without fee is hereby granted,

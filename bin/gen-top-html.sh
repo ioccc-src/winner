@@ -1,18 +1,28 @@
 #!/usr/bin/env bash
 #
-# gen-top-html.sh - generate all or select top level HTML files from markdown files
+# gen-top-html.sh - generate all or select top level HTML files from markdown
+# files
 #
 # We also generate the bin/index.html file from the bin/README.md file.
+#
 # We also generate the inc/index.html file from the inc/README.md file.
-# We also generate the archive/historic/index.html file from the archive/historic/README.md file.
+#
+# We also generate the archive/historic/index.html file from the
+# archive/historic/README.md file.
+#
+# This script was written in 2024 by:
+#
+#   chongo (Landon Curt Noll, http://www.isthe.com/chongo/index.html) /\oo/\
+#
+# with improvements by:
+#
+#	@xexyl
+#	https://xexyl.net		Cody Boone Ferguson
+#	https://ioccc.xexyl.net
+#
+# "Because sometimes even the IOCCC Judges need some help." :-)
 #
 # Copyright (c) 2024 by Landon Curt Noll.  All Rights Reserved.
-#
-# Cody Boone Ferguson made an improvement where one can specify the select top
-# html files to generate to save time. Works just like the script without args
-# but if any args are specified and the markdown file exists it will just
-# generate that or those html files. This is to save time for some Makefile
-# rules that only need update one file.
 #
 # Permission to use, copy, modify, and distribute this software and
 # its documentation for any purpose and without fee is hereby granted,
@@ -121,6 +131,7 @@ export SITE_URL="https://ioccc-src.github.io/temp-test-ioccc"
 #
 unset TOP_MD_SET
 declare -ag TOP_MD_SET
+TOP_MD_SET+=("about")
 TOP_MD_SET+=("CODE_OF_CONDUCT")
 TOP_MD_SET+=("README")
 TOP_MD_SET+=("author/README")
