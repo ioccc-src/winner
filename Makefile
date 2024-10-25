@@ -739,6 +739,7 @@ www:
 	${MAKE} entry_index
 	${MAKE} gen_other_html
 	${MAKE} find_missing_links
+	${MAKE} find_invalid_json
 	@echo '=-=-=-=-=-= IOCCC complete make $@ =-=-=-=-=-='
 
 

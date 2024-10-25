@@ -106,7 +106,7 @@ Usage:
     bin/all-years.sh -v 1 bin/gen-year-index.sh -v 1
 ```
 
-Alternate usage:
+If you wish to run instead, for example, [chk-entry.sh](#chk-entry), then do:
 
 ``` <!---sh-->
     bin/all-years.sh -v 1 bin/chk-entry.sh
@@ -125,7 +125,9 @@ Usage:
     bin/all-run.sh -v 3 bin/quick-readme2index.sh -v 1
 ```
 
-Alternate usage:
+If you wish to run instead, for example, [readme2index.sh](#readme2index), then
+do:
+
 
 ``` <!---sh-->
     bin/all-run.sh -v 3 bin/readme2index.sh -v 1
@@ -144,7 +146,8 @@ Usage:
     bin/all-years.sh -v 1 bin/gen-year-index.sh -v 1
 ```
 
-Alternate usage:
+If you wish to run instead, for example, [chk-entry.sh](#chk-entry), then
+do:
 
 ``` <!---sh-->
     bin/all-years.sh -v 1 bin/chk-entry.sh
@@ -180,7 +183,7 @@ for more details on `.entry.json` files.
 ### [combine_author_handle.sh](%%REPO_URL%%/bin/combine_author_handle.sh)
 </div>
 
-Combine all author/author_handle.JSON files as single JSON file.
+Combine all author/author_handle.json files as single JSON file.
 
 The purpose of this tool is to make looking for information across all
 authors faster by temporarily forming them into a single JSON file.
@@ -220,6 +223,10 @@ Usage:
 **NOTE**: This tool assume that all JSON files have been formatted with the
 `bin/jprint-wrapper.sh` tool.  In particular the first line is just "{:,
 and the last line is just "}" and each JSON element is on its own line.
+
+**NOTE**: see the
+FAQ on "[author_handle.json](../faq.html#author_handle_json)"
+for more details on `author_handle.json` files.
 
 
 <div id="csv2entry">
@@ -277,7 +284,7 @@ We also sort the CSV files in the same way that [entry2csv](#entry2csv) sorts
 its CSV output files.  We do this in case the CSV files were imported into a
 spreadsheet where their order was changed before exporting.  This means one is
 free to order the CSV file content as you wish as this tool will reset these CSV
-file.
+files.
 
 Next this tool processes the non-CSV comment lines in
 [manifest.csv](#manifest_csv).  The 1st and 2nd fields of
@@ -291,7 +298,11 @@ only modify those `.entry.json` files when their content changes.
 semantic checks**.  For example, this tool does **NOT** verify that the manifest in
 the `.entry.json` file matches the files in the `YYYY/dir directory`, or even
 that the `.entry.json` contains a manifest (or any of the other required JSON
-content).
+content). Another tool will be modified to do this, at a later date.
+
+**NOTE**: you can obtain `jparse(1)` from the which can be obtained from the
+[mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry)'s copy of the
+[jparse repo](https://github.com/xexyl/jparse/).
 
 
 <div id="cvt-submission">
@@ -330,13 +341,13 @@ that could be modified or removed by this tool (unless `-N` is used in which
 case this tool does nothing).  The compressed tarball, formed by default
 under the `/var/tmp` directory, may contain such as:
 
-- YYYY/dir/.info.json
-- YYYY/dir/.auth.json
-- YYYY/dir/remarks.md
-- YYYY/dir/README.md
-- YYYY/dir/index.md
-- YYYY/dir/YYYY_dir.tar.bz2
-- author/author_handle.json (could be more than one file)
+- `YYYY/dir/.info.json`
+- `YYYY/dir/.auth.json`
+- `YYYY/dir/remarks.md`
+- `YYYY/dir/README.md`
+- `YYYY/dir/index.md`
+- `YYYY/dir/YYYY_dir.tar.bz2`
+- `author/author_handle.json` (could be more than one file)
 
 Only those files that exist will be put into the compressed tarball.
 The compressed tarball formed (by default under the `/var/tmp` directory)
@@ -344,10 +355,10 @@ is of the following form:
 
 > YYYY_dir.mods.YYYYMMDD.hhmmss.tar.bz2
 
-Here "_YYYYMMDD.hhmmss_" is a date and timestamp from when the tool was executed.
+Here "`YYYYMMDD.hhmmss`" is a date and timestamp from when the tool was executed.
 
 The purpose of this compressed tarball is to allow the files in the
-submission directory (that could be modified or removed by this tool)
+entry directory (that could be modified or removed by this tool)
 to be restored as follows:
 
 ``` <!---sh-->
@@ -359,13 +370,14 @@ One may also restore modified `author/author_handle.json` files using:
 ``` <!---sh-->
     tar -jxvf /var/tmp/YYYY_dir.mods.YYYYMMDD.hhmmss.tar.bz2 author
 ```
+
 This tool will form `YYYY/dir/README.md` if needed, from `YYYY/dir/remarks.md`,
 `template/entry/README.md.head`, and `template/entry/README.md.tail`.
 
 **NOTE**: This interactive tool (unless `-i input_data` is used) does
-**NOT** perform all of the steps needed to make a directory a new winning
+**NOT** perform all of the steps needed to make a directory for a new winning
 IOCCC entry.  For example, files such as `YYYY/dir/README.md` and/or `YYYY/dir/index.html`
-might contain "_triple X_" patterns indicating where the [Judges](../judges.html)
+might contain "_triple X_" comments (`<!--XXXX-->`), indicating where the [Judges](../judges.html)
 need to add content.  Moreover, the `Makefile` and `.gitignore` files
 need to be examined for suitability, etc.
 
@@ -379,7 +391,7 @@ need to be examined for suitability, etc.
 This tool takes as input, all entry `.entry.json` files
 and updates 3 CSV files:
 
-- [author_wins.csv](#author_wins_csv) - each `author_handle` followed their `entry_id`s
+- [author_wins.csv](#author_wins_csv) - each `author_handle` followed by their `entry_id`s
 - [manifest.csv](#manifest_csv) - information about all files in all entries
 - [year_prize.csv](#year_prize_csv) - each `entry_id` followed by the entry's award title
 
@@ -427,14 +439,14 @@ In this case the command will list all the files of the
 
 Find all markdown links to local files that do not exist.
 
-This tool does **NOT** check that a remote URL exists.
-This tool only checks on links to local files.
+This tool does **NOT** check that a remote URL exists, it checks on
+links to local files.
 
-This tool does **NOT** check links in a given place in a file.
-This tool only checks that local files linked by markdown exist.
+This tool does **NOT** check links in a given place in a file, it
+checks that local files linked by markdown actually exist.
 
-This tool does **NOT** check HTML file links.
-This tool only checks markdown based links.
+This tool does **NOT** check HTML file links, it checks markdown
+based links.
 
 Usage:
 
@@ -443,7 +455,7 @@ Usage:
 ```
 
 If no missing links are found, this tool exits 0 with no output
-(debug messages not withstanding), otherwise this tool will exit non-zero.
+(debug messages notwithstanding), otherwise this tool will exit non-zero.
 
 **NOTE**: If the markdown link is malformed, this tool
 might generate an error about a file that does exist.
@@ -478,7 +490,7 @@ Usage:
 ```
 
 If no invalid JSON files are found, this tool exits 0 with no output
-(debug messages not withstanding), otherwise this tool will exit non-zero.
+(debug messages notwithstanding), otherwise this tool will exit non-zero.
 
 We recommend that this tool be invoked via the top level `Makefile`:
 
@@ -577,9 +589,6 @@ We recommend that this tool be invoked via the top level `Makefile`:
 ``` <!---sh-->
     make gen_sitemap
 ```
-
-**IMPORTANT NOTE**: if a file is open with vim or some editor that creates a swap
-file, this will cause a problem with the output.
 
 
 <div id="gen-status">
@@ -707,8 +716,7 @@ We recommend that this tool be invoked via the top level `Makefile`:
 </div>
 
 The [jfmt-wrapper.sh](%%REPO_URL%%/bin/jfmt-wrapper.sh) tool is a wrapper
-tool for `jfmt(1)`, a tool that will format a JSON
-# file into a canonical style.
+tool for `jfmt(1)`, a tool that will format a JSON file into a canonical style.
 
 **NOTE**: As of 2024 Oct 08 the `jfmt(1)` tool has not been written,
 so [jfmt-wrapper.sh](%%REPO_URL%%/bin/jfmt-wrapper.sh) uses the
@@ -805,7 +813,7 @@ and not have to use `-T` with `bin/jval-wrapper.sh`.
 ### [manifest.csv.entry.awk](%%REPO_URL%%/bin/manifest.csv.entry.awk)
 </div>
 
-Output manifest csv from a entry's manifest as found in its `.entry.json` file.
+Output `manifest.csv` from a entry's manifest as found in its `.entry.json` file.
 
 ``` <!---sh-->
     awk -f bin/manifest.csv.entry.awk YYYY/dir/.entry.json
@@ -816,7 +824,7 @@ Output manifest csv from a entry's manifest as found in its `.entry.json` file.
 ### [bin/manifest.entry.json.awk](%%REPO_URL%%/bin/manifest.entry.json.awk)
 </div>
 
-Output manifest table from a entry's `.entry.json` file.
+Output manifest table from an entry's `.entry.json` file.
 
 ``` <!---sh-->
     awk -v github=REPO_URL -f bin/manifest.entry.json.awk YYYY/dir/.entry.json
@@ -882,13 +890,13 @@ framework for doing so, creating a situation where the
 
 This tool can modify the top level `.allyear` file, and `YYYY/Makefile` files.
 
-**NOTE**: This tool assumes that [new-year.sh](#new_year) was executed to create
+**NOTE**: This tool assumes that [new-year.sh](#new-year) was executed to create
 the prerequisite `YYYY` directory and related files.
 
 **HINT**: Executing this tool on your submission will **NOT** make you an IOCCC winner.  :-)
 
 
-<div id="new_year">
+<div id="new-year">
 ### [new-year.sh](%%REPO_URL%%/bin/new-year.sh)
 </div>
 
@@ -899,10 +907,10 @@ This tool may modify the top level `.top` and `Makefile` files.
 It will form `YYYY/Makefile` and/or `YYYY/.year` if needed.
 It will form `YYYY/README.md` if needed, from `template/README.md.year`.
 
-**NOTE**: This tool **NOT** perform all of the steps needed to make a new IOCCC year directory.
+**NOTE**: This tool does **NOT** perform all of the steps needed to make a new IOCCC year directory.
 For example, files such as `YYYY/README.md` and/or `YYYY/index.html`
-might contain "_triple X_" patterns indicating where the [Judges](../judges.html)
-need to add content.
+might contain "_triple X_" comments (`<!-- XXX -->`) indicating where the
+[Judges](../judges.html) need to add content.
 
 Usage:
 
@@ -931,14 +939,15 @@ For example:
     bin/othermd2html.sh -v 1 2020/ferguson1/chocolate-cake.md
 ```
 
-The [othermd2html.sh](#othermd2html) tool is used by [gen-other-html.sh](#gen-other-html).
+The [othermd2html.sh](#othermd2html) tool is used by
+[gen-other-html.sh](#gen-other-html).
 
 
 <div id="output-index-author">
 ### [output-index-author.sh](%%REPO_URL%%/bin/output-index-author.sh)
 </div>
 
-Output author's or authors' related HTML details for an entry's index.html
+Output an author's or authors' related HTML details for an entry's index.html
 page.
 
 For an example, see the [author details in
@@ -966,7 +975,7 @@ the [md2html tool](index.html#md2html).
 
 Output the inventory for a given year's winning entries in HTML form. In other
 words in [1984](../1984/index.html) it would list, as links, the four winning
-entries, which you can see directly at [1984
+entries, which you can see directly at the [1984
 inventory](../1984/index.html#inventory).
 
 This tool is used in the [bin/md2html.cfg](%%REPO_URL%%/bin/md2html.cfg) file as part of
@@ -1017,7 +1026,7 @@ and `index.html` are correct.  If in doubt, use
 We recommend that this tool be invoked via the top level `Makefile`:
 
 ``` <!---sh-->
-    make quick_entry_index
+    make quick_readme2index
 ```
 
 

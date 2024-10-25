@@ -12,6 +12,7 @@
 * [IOCCC News](news.html)
 * [Contest status](status.html)
 * [Rules and Guidelines](next/index.html)
+* [IOCCC markdown](markdown.html)
 
 ## FAQ
 
@@ -28,6 +29,5 @@
 * [Contacting the IOCCC](contact.html)
 * [IOCCC Security Policy](SECURITY.html)
 * [Thanks for the help](thanks-for-help.html)
-* [IOCCC markdown](markdown.html)
 * [Website scripts](bin/index.html)
 * [Script include files](inc/index.html)
