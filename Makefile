@@ -659,24 +659,24 @@ thanks: ${GEN_TOP_HTML} thanks-for-help.md
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
 	@echo "Thanks for all the help ..."
 	@${GEN_TOP_HTML} thanks-for-help
-	@echo "... and thanks for all the fish :-)"
+	@echo "... and thanks for all the fish 🐟🐠🎏 :-)"
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 # Bugs Bunny rule
 bugs: ${GEN_TOP_HTML} bugs.md
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
 	@echo "Shhh. Be vewy vewy quiet."
-	@echo "I'm hunting wabbits .. and bugs."
+	@echo "I'm hunting wabbits 🐇 .. and bugs 🪳🪲🦟🐜🐛."
 	@${GEN_TOP_HTML} bugs
 	@echo
 	@echo "Eh, what's up, doc?"
 	@echo
-	@echo "I'm hunting wabbits."
+	@echo "I'm hunting wabbits 🐇 .. and bugs 🪳🪲🦟🐜🐛"
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 faq: ${GEN_TOP_HTML} faq.md
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
-	@echo "You have a question?"
+	@echo "You have a question ⁉️ ?"
 	${GEN_TOP_HTML} -v 1 faq
 	@echo "Perhaps the FAQ might help!"
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
@@ -711,7 +711,7 @@ security: ${GEN_TOP_HTML} SECURITY.md
 	@echo "You wish to make IOCCC entries secure?"
 	@${GEN_TOP_HTML} SECURITY
 	@echo
-	@echo "We also didn't want Pluto demoted!"
+	@echo "We also didn't want Pluto 🪐 demoted!"
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 

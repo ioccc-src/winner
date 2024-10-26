@@ -112,13 +112,13 @@ maker: haste
 	@${MAKE} love
 
 easter_egg: maker
-	@echo "You are expected to often misunderstand this $${RANDOM} magic, Eggy!"
+	@echo "You are expected to often misunderstand this $${RANDOM} magic, Eggy 🥚!"
 	@echo "chongo '<was here>' /\\oo/\\"
 	@echo "p.s.: Careful with That Axe, Eugene!"
 
 sandwich: easter_egg
 	@if [[ $$(id -u) -eq 0 ]]; then \
-	    echo 'Okay.'; \
+	    echo 'Okay 🥪.'; \
 	    echo "$${RANDOM}`date +%s`$${RANDOM}" > $@; \
 	else \
 	    echo 'What? Make it yourself.'; \
@@ -135,7 +135,7 @@ supernova: sandwich
 	else \
 	    echo "Planet deniers, like some members of the IAU, are so cute when they try to defend their logic"; \
 	fi
-	@echo "A $@ helps ${MAKE} the elements that help form planets"
+	@echo "A $@ 💥 helps ${MAKE} the elements that help form planets"
 
 more_magic: supernova
 	@-if [[ -r .code_analysis ]]; then \
@@ -160,13 +160,14 @@ magic: more_magic
 # The IOCCC resident astronomer states
 #
 charon: magic
-	@echo "$@ is a dwarf planet"
-	@echo "Dwarf planets are a type of planet"
-	@echo "Therefore IAU, $@ is a planet"
+	@echo "$@ is a dwarf planet 🪐"
+	@echo "Dwarf planets 🪐🪐 are a type of planet 🪐"
+	@echo "Therefore IAU, $@ is a planet 🪐"
 
 pluto: charon
-	@echo "See https://www.hou.usra.edu/meetings/lpsc2017/pdf/1448.pdf for a good definition of a planet"
-	@echo "$@ is a dwarf planet"
-	@echo "Dwarf planets are a type of planet"
-	@echo "Therefore, $@ is a planet"
-	@echo "The geophysical definition of planet gives us ~110 planets in our solar system"
+	@echo "See https://www.hou.usra.edu/meetings/lpsc2017/pdf/1448.pdf"
+	@echo "for a good definition of a planet"
+	@echo "$@ is a dwarf planet 🪐"
+	@echo "Dwarf planets 🪐🪐 are a type of planet 🪐"
+	@echo "Therefore, $@ is a planet 🪐"
+	@echo "The geophysical definition of planet gives us ~110 planets 🪐🪐 in our solar system"
