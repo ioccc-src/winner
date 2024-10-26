@@ -8,7 +8,6 @@
 * [Bugs and &lpar;mis&rpar;features](bugs.html)
 * [Fixing entries](faq.html#fix_an_entry)
 * [Updating author info](faq.html#fix_author)
-* [Thanks for the help](thanks-for-help.html)
 
 ## Status
 
@@ -31,4 +30,5 @@
 * [Home page](index.html)
 * [About the IOCCC](about.html)
 * [The Judges](judges.html)
+* [Thanks for the help](thanks-for-help.html)
 * [Contact us](contact.html)
