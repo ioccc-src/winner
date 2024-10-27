@@ -7103,9 +7103,9 @@ Jump to: [top](#)
 
 We call out the extensive contributions of [Cody Boone
 Ferguson](authors.html#Cody_Boone_Ferguson) who is responsible for most of the
-improvements and fixes, including **_many entries_ that no longer worked**,
-along with other important bug fixes, often **EXTREMELY HARD** (for certain
-definitions of '_HARD_' :-) ) such as
+improvements and fixes, including **_many entries_ that no longer worked**
+(and other important bug fixes), often **EXTREMELY HARD** (for certain
+definitions of '_HARD_' :-) ), such as
 [1988/phillipps](thanks-for-help.html#1988_phillipps),
 [1992/vern](thanks-for-help.html#1992_vern),
 [2001/anonymous](thanks-for-help.html#2001_anonymous),
@@ -7119,7 +7119,7 @@ entries like [1991/dds](thanks-for-help.html#1991_dds) to work with `clang` (or,
 obfuscation, to work as much as possible); porting entries such as
 [1998/schweikh1](thanks-for-help.html#1998_schweikh1) to macOS; fixing code like
 [2001/herrmann2](thanks-for-help.html#2001_herrmann2) to work in both 32-bit and
-64-bit environments; providing [alternate code](faq.html#alt_code) where useful or necessary;
+64-bit; providing [alternate code](faq.html#alt_code) where useful/necessary;
 improving all `Makefiles`; and writing scripts to greatly simplify running many
 of the entries.
 
