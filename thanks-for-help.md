@@ -7102,9 +7102,9 @@ Jump to: [top](#)
 </div>
 
 We call out the extensive contributions of [Cody Boone
-Ferguson](authors.html#Cody_Boone_Ferguson) who is responsible for most of the
-improvements and fixes, including **_many entries_ that no longer worked**
-(and other important bug fixes), often **EXTREMELY HARD** (for certain
+Ferguson](authors.html#Cody_Boone_Ferguson) who is responsible for many
+improvements and fixes, including entries that no longer worked,
+and other important fixes, often **EXTREMELY HARD** (for certain
 definitions of '_HARD_' :-) ), such as
 [1988/phillipps](thanks-for-help.html#1988_phillipps),
 [1992/vern](thanks-for-help.html#1992_vern),
@@ -7113,7 +7113,7 @@ definitions of '_HARD_' :-) ), such as
 [2005/giljade](thanks-for-help.html#2005_giljade); fixing entries such as
 [1985/sicherman](thanks-for-help.html#1985_sicherman) and
 [1986/wall](thanks-for-help.html#1986_wall) to
-no longer require `-traditional-cpp`; fixing
+not require `-traditional-cpp`; fixing
 entries like [1991/dds](thanks-for-help.html#1991_dds) to work with `clang` (or, as in the case of
 [1989/westley](thanks-for-help.html#1989_westley), a true masterpiece in
 obfuscation, to work as much as possible); porting entries such as
