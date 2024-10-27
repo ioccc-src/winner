@@ -7103,7 +7103,7 @@ Jump to: [top](#)
 
 We call out the extensive contributions of [Cody Boone
 Ferguson](authors.html#Cody_Boone_Ferguson) who is responsible for most of the
-improvements and fixes including **fixing _many entries_ that no longer worked**
+improvements and fixes including **_many entries_ that no longer worked**
 (and other important bug fixes), often **EXTREMELY HARD** (for certain
 definitions of '_HARD_' :-) ), like
 [1988/phillipps](thanks-for-help.html#1988_phillipps),
@@ -7139,7 +7139,7 @@ inconsistent award titles in the `README.md` files (used to generate the
 
 Cody also greatly improved the manifests and checked that the generated html
 files look well and are presentable, and he also suggested some CSS rules for
-image responsiveness on smaller screens, as well as some other improvements.
+image responsiveness on smaller screens, along with some other improvements.
 
 Cody also wrote some of the [website scripts](bin/index.html) and improved and
 bug fixed others.
