@@ -7103,7 +7103,7 @@ Jump to: [top](#)
 
 We call out the extensive contributions of [Cody Boone
 Ferguson](authors.html#Cody_Boone_Ferguson) who is responsible for many
-improvements and fixes, including entries that no longer worked,
+improvements and fixes, including entries that no longer worked
 and other important fixes, often **EXTREMELY HARD** (for certain
 definitions of '_HARD_' :-) ), such as
 [1988/phillipps](thanks-for-help.html#1988_phillipps),
