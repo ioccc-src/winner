@@ -7103,23 +7103,23 @@ Jump to: [top](#)
 
 We call out the extensive contributions of [Cody Boone
 Ferguson](authors.html#Cody_Boone_Ferguson) who is responsible for most of the
-improvements and fixes including **_many entries_ that no longer worked**
-(and other important bug fixes), often **EXTREMELY HARD** (for certain
-definitions of '_HARD_' :-) ), like
+improvements and fixes, including **_many entries_ that no longer worked**,
+along with other important bug fixes, often **EXTREMELY HARD** (for certain
+definitions of '_HARD_' :-) ) such as
 [1988/phillipps](thanks-for-help.html#1988_phillipps),
 [1992/vern](thanks-for-help.html#1992_vern),
 [2001/anonymous](thanks-for-help.html#2001_anonymous),
 [2004/burley](thanks-for-help.html#2004_burley) and
-[2005/giljade](thanks-for-help.html#2005_giljade); making all entries, such as
+[2005/giljade](thanks-for-help.html#2005_giljade); fixing entries such as
 [1985/sicherman](thanks-for-help.html#1985_sicherman) and
-[1986/wall](thanks-for-help.html#1986_wall), that
-required `-traditional-cpp`, to no longer require it; fixing
-entries like [1991/dds](thanks-for-help.html#1991_dds) (or, as in the case of
+[1986/wall](thanks-for-help.html#1986_wall) to
+no longer require `-traditional-cpp`; fixing
+entries like [1991/dds](thanks-for-help.html#1991_dds) to work with `clang` (or, as in the case of
 [1989/westley](thanks-for-help.html#1989_westley), a true masterpiece in
-obfuscation, as much as possible) to work with `clang`; porting entries such as
+obfuscation, to work as much as possible); porting entries such as
 [1998/schweikh1](thanks-for-help.html#1998_schweikh1) to macOS; fixing code like
 [2001/herrmann2](thanks-for-help.html#2001_herrmann2) to work in both 32-bit and
-64-bit; providing [alternate code](faq.html#alt_code) where useful/necessary;
+64-bit environments; providing [alternate code](faq.html#alt_code) where useful or necessary;
 improving all `Makefiles`; and writing scripts to greatly simplify running many
 of the entries.
 
@@ -7145,8 +7145,8 @@ Cody also wrote some of the [website scripts](bin/index.html) and improved and
 bug fixed others.
 
 **THANK YOU VERY MUCH** for your extensive efforts in helping improve the IOCCC
-presentation of past IOCCC entries and fixing almost all past entries for modern
-systems!
+presentation of past IOCCC entries and fixing almost all entries that no
+longer worked, for modern systems!
 
 
 Jump to: [top](#)
