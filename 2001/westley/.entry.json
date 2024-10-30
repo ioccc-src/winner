@@ -46,6 +46,14 @@
             "entry_text" : "original source code"
         },
         {
+            "file_path" : "card.gif",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "image",
+            "display_via_github" : false,
+            "entry_text" : "image of punch cards"
+        },
+        {
             "file_path" : "try.sh",
             "inventory_order" : 100,
             "OK_to_edit" : true,
