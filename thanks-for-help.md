@@ -971,7 +971,7 @@ Jump to: [top](#)
 </div>
 
 The [original version](%%REPO_URL%%/1988/westley/westley.alt.c), provided as alternate code,
-was fixed by Misha Dynin, based on the judges' remarks, so that this would work
+was fixed by [Misha Dynin](https://mishadynin.com/), based on the judges' remarks, so that this would work
 with modern C compilers. We encourage you to try the alternate version to see
 what happens with current compilers! See the index.html files for details.
 
