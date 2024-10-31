@@ -46,6 +46,14 @@
             "entry_text" : "author's hints"
         },
         {
+            "file_path" : "shapiro.alt.c",
+            "inventory_order" : 150,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "author provided unobfuscated and formatted source code"
+        },
+        {
             "file_path" : "1994_shapiro.tar.bz2",
             "inventory_order" : 1415926535,
             "OK_to_edit" : false,

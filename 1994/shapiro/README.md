@@ -4,13 +4,15 @@
     make all
 ```
 
+There is an alternate version that is unobfuscated, provided by the author. See
+[Alternate code](#alternate-code) below.
+
 
 ### Bugs and (Mis)features:
 
 The current status of this entry is:
 
 > **STATUS: INABIAF - please DO NOT fix**<br>
-> **STATUS: missing file - please provide it**
 
 For more detailed information see [1994/shapiro in bugs.html](../../bugs.html#1994_shapiro).
 
@@ -41,6 +43,24 @@ Notice what you see in the output of `ps`! Observe too what happens after you
 bring it back to the foreground.
 
 
+## Alternate code:
+
+This version, [shapiro.alt.c](%%REPO_URL%%/1994/shapiro/shapiro.alt.c), is an
+unobfuscated version provided by the author.
+
+
+## Alternate build:
+
+``` <!---sh-->
+    make alt
+```
+
+
+### Alternate use:
+
+Use `shapiro.alt` as you would `shapiro` above.
+
+
 ## Judges' remarks:
 
 This entry has many different levels of obfuscation, and yet the
@@ -50,9 +70,6 @@ From time to time, run `ps(1)` and look at the new processes.
 
 If you want more information on the internals of this program, see
 [shapiro.html](shapiro.html).
-
-The missing file `shapiro.alt.c` is an unobfuscated version of this program. See
-[1994/shapiro in bugs.html](../../bugs.html#1994_shapiro).
 
 
 ## Author's remarks:

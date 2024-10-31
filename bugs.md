@@ -1702,14 +1702,6 @@ Since it works there is no need to fix this except for a challenge to yourself.
 
 Jump to: [top](#)
 
-### STATUS: missing file - please provide it
-
-The index.html file refers to an alternate version of the code that is not
-obfuscated but it is missing from the entry directory and the archive. Do you
-have this file?
-
-Jump to: [top](#)
-
 <div id="1994_tvr">
 ## 1994/tvr
 </div>
