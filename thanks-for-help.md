@@ -2658,6 +2658,10 @@ where `EOF != -1` it could result in an infinite loop.
 For an interesting problem that occurred here and what was done to solve it,
 check [1994/shapiro in bugs.html](bugs.html#1994_shapiro).
 
+Cody also provided the missing
+[shapiro.alt.c](%%REPO_URL%%/1994/shapiro/shapiro.alt.c) file, found by Leo.
+Thanks Leo!
+
 
 Jump to: [top](#)
 

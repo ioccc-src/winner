@@ -446,11 +446,12 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <!-- BEFORE: 1st line of markdown file: 1994/shapiro/README.md -->
 <h2 id="to-build">To build:</h2>
 <pre><code>    make all</code></pre>
+<p>There is an alternate version that is unobfuscated, provided by the author. See
+<a href="#alternate-code">Alternate code</a> below.</p>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
 <p>The current status of this entry is:</p>
 <blockquote>
-<p><strong>STATUS: INABIAF - please DO NOT fix</strong><br>
-<strong>STATUS: missing file - please provide it</strong></p>
+<p><strong>STATUS: INABIAF - please DO NOT fix</strong><br></p>
 </blockquote>
 <p>For more detailed information see <a href="../../bugs.html#1994_shapiro">1994/shapiro in bugs.html</a>.</p>
 <h2 id="to-use">To use:</h2>
@@ -467,14 +468,19 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
     ./shapiro_t1</code></pre>
 <p>Notice what you see in the output of <code>ps</code>! Observe too what happens after you
 bring it back to the foreground.</p>
+<h2 id="alternate-code">Alternate code:</h2>
+<p>This version, <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994/shapiro/shapiro.alt.c">shapiro.alt.c</a>, is an
+unobfuscated version provided by the author.</p>
+<h2 id="alternate-build">Alternate build:</h2>
+<pre><code>    make alt</code></pre>
+<h3 id="alternate-use">Alternate use:</h3>
+<p>Use <code>shapiro.alt</code> as you would <code>shapiro</code> above.</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>This entry has many different levels of obfuscation, and yet the
 source file is self documenting. :-)</p>
 <p>From time to time, run <code>ps(1)</code> and look at the new processes.</p>
 <p>If you want more information on the internals of this program, see
 <a href="shapiro.html">shapiro.html</a>.</p>
-<p>The missing file <code>shapiro.alt.c</code> is an unobfuscated version of this program. See
-<a href="../../bugs.html#1994_shapiro">1994/shapiro in bugs.html</a>.</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <p>The basic theme (pun) of this program is:</p>
 <blockquote>
@@ -535,6 +541,7 @@ test it on.)</p>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994/shapiro/Makefile">Makefile</a> - entry Makefile</li>
 <li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994/shapiro/shapiro.orig.c">shapiro.orig.c</a> - original source code</li>
 <li><a href="shapiro.html">shapiro.html</a> - author’s hints</li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994/shapiro/shapiro.alt.c">shapiro.alt.c</a> - author provided unobfuscated and formatted source code</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
