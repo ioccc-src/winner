@@ -2646,13 +2646,6 @@ nobody else takes up the challenge.
 
 Jump to: [top](#)
 
-### STATUS: missing files - please provide them
-
-The author referred to a file `card.gif` but this file is missing. Do you have
-it? Please provide it!
-
-Jump to: [top](#)
-
 <div id="2001_williams">
 ## 2001/williams
 </div>
