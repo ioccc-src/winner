@@ -594,7 +594,7 @@ entry2csv:
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 
-# mostly harmless tests
+# Mostly Harmless tests
 #
 test:
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
@@ -618,7 +618,7 @@ test:
 # Rules for building specific web pages - a subset of rules mentioned above
 ###########################################################################
 
-.PHONY: thanks bugs gen_next rules guidelines faq
+.PHONY: thanks bugs gen_next rules guidelines faq about contact markdown security
 
 # generate about.html
 #
