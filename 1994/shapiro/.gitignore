@@ -6,6 +6,7 @@ indent.c
 indent.o
 prog.orig
 shapiro
+shapiro.alt
 shapiro.orig
 shapiro_t1
 shapiro_t2
