@@ -8,7 +8,7 @@
 # file into a canonical style.
 #
 # NOTE: As of 2024 Sep 10 the jprint(1) tool has not been written,
-#       so jfmt-wrapper.sh uses with the jsp tool from:
+#       so jfmt-wrapper.sh uses the jsp tool from:
 #
 #	    https://github.com/kjozsa/jsp
 #
