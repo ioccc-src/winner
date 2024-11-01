@@ -2582,12 +2582,6 @@ See list of bugs [here](2001/rosten/index.html#bugs).
 
 Jump to: [top](#)
 
-### STATUS: missing files - please provide them
-
-The author stated that there is a cat man page for this program in case one
-wanted to install it as a tool but this is missing.
-
-Jump to: [top](#)
 
 <div id="2001_schweikh">
 ## 2001/schweikh

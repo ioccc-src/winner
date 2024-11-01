@@ -38,6 +38,14 @@
             "entry_text" : "original source code"
         },
         {
+            "file_path" : "greasymouse.man",
+            "inventory_order" : 150,
+            "OK_to_edit" : true,
+            "display_as" : "man",
+            "display_via_github" : true,
+            "entry_text" : "cat man page"
+        },
+        {
             "file_path" : "2001_rosten.tar.bz2",
             "inventory_order" : 1415926535,
             "OK_to_edit" : false,
