@@ -2504,21 +2504,12 @@ Jump to: [top](#)
 
 Jump to: [top](#)
 
-### STATUS: missing files - please provide them
-### Source code: [2001/herrmann1/herrmann1.c](%%REPO_URL%%/2001/herrmann1/herrmann1.c)
-### Information: [2001/herrmann1/index.html](2001/herrmann1/index.html)
-
-The author referred to the file `herrmann1.turing` but it does not exist not even
-in the archive. Do you have a copy? Please provide it!
-
-Jump to: [top](#)
-
 ### STATUS: known bug - please help us fix
 
-There is also a bug in part. During compilation you're supposed to see some
-animation but this does not seem to work with modern gcc versions. It appears
-that version 2.95 works but maybe others do as well. Do you have a fix? We would
-appreciate your help!
+During compilation you're supposed to see some animation but this does not seem
+to work with modern gcc versions. It appears that version 2.95 works but maybe
+others do as well. If you have a fix for modern versions of gcc, your help is
+welcome.
 
 Jump to: [top](#)
 

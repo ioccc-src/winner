@@ -9,7 +9,6 @@
 
 The current status of this entry is:
 
-> **STATUS: missing files - please provide them**<br>
 > **STATUS: known bug - please help us fix**
 
 For more detailed information see [2001/herrmann1 in bugs.html](../../bugs.html#2001_herrmann1).
@@ -81,7 +80,7 @@ terminal!
 
 #### For the impatient
 
-The info files `herrmann1.turing` and [herrmann1.gcd](%%REPO_URL%%/2001/herrmann1/herrmann1.gcd) are sample
+The info files `herrmann1.times2` and [herrmann1.gcd](%%REPO_URL%%/2001/herrmann1/herrmann1.gcd) are sample
 programs for the Turing machine. For example, type
 
 ``` <!---sh-->
@@ -121,11 +120,11 @@ result.)
 
 
 In the previous example, the Turing machine started on the default
-tape of the program `times2.turing`. To provide your own tape, type
+tape of the program `herrmann1.times2`. To provide your own tape, type
 (for example)
 
 ``` <!---sh-->
-    ./herrmann1 prg=times2.turing tape="O O O I I I O O O"
+    ./herrmann1 prg=herrmann1.times2 tape="O O O I I I O O O"
 ```
 
 (The `O`s and `I`s are letters, not digits.) You might prefer to
