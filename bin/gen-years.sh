@@ -116,21 +116,21 @@ if [[ -z $VERGE ]]; then
     exit 5
 fi
 #
-JSTRDECODE=$(type -P jstrdecode)
-export JSTRDECODE
-if [[ -z $JSTRDECODE ]]; then
-    echo "$0: FATAL: jstrdecode is not installed or not in \$PATH" 1>&2
-    echo "$0: notice: to install jstrdecode:" 1>&2
+JSTRENCODE=$(type -P jstrencode)
+export JSTRENCODE
+if [[ -z $JSTRENCODE ]]; then
+    echo "$0: FATAL: jstrencode is not installed or not in \$PATH" 1>&2
+    echo "$0: notice: to install jstrencode:" 1>&2
     echo "$0: notice: run: git clone https://github.com/ioccc-src/mkiocccentry.git" 1>&2
     echo "$0: notice: then: cd mkiocccentry && make clobber all" 1>&2
     echo "$0: notice: then: cd jparse && sudo make install clobber" 1>&2
     exit 5
 fi
-export MIN_JSTRDECODE_VERSION="1.2.3"
-JSTRDECODE_VERSION=$("$JSTRDECODE" -V | head -1 | awk '{print $3;}')
-if ! "$VERGE" "$JSTRDECODE_VERSION" "$MIN_JSTRDECODE_VERSION"; then
-    echo "$0: FATAL: jstrdecode version: $JSTRDECODE_VERSION < minimum version: $MIN_JSTRDECODE_VERSION" 1>&2
-    echo "$0: notice: consider updating jstrdecode from mkiocccentry repo" 1>&2
+export MIN_JSTRENCODE_VERSION="2.0.0"
+JSTRENCODE_VERSION=$("$JSTRENCODE" -V | head -1 | awk '{print $3;}')
+if ! "$VERGE" "$JSTRENCODE_VERSION" "$MIN_JSTRENCODE_VERSION"; then
+    echo "$0: FATAL: jstrencode version: $JSTRENCODE_VERSION < minimum version: $MIN_JSTRENCODE_VERSION" 1>&2
+    echo "$0: notice: consider updating jstrencode from mkiocccentry repo" 1>&2
     echo "$0: notice: run: git clone https://github.com/ioccc-src/mkiocccentry.git" 1>&2
     echo "$0: notice: then: cd mkiocccentry && make clobber all" 1>&2
     echo "$0: notice: then: cd jparse && sudo make install clobber" 1>&2
@@ -247,7 +247,7 @@ function output_award
     # obtain the award string
     #
     PATTERN='$..award'
-    AWARD_STRING=$("$JVAL_WRAPPER" -b -q "$ENTRY_JSON_PATH" "$PATTERN" | "$JSTRDECODE" -N -)
+    AWARD_STRING=$("$JVAL_WRAPPER" -b -q "$ENTRY_JSON_PATH" "$PATTERN" | "$JSTRENCODE" -N -)
     status_codes=("${PIPESTATUS[@]}")
     if [[ ${status_codes[*]} =~ [1-9] || -z $AWARD_STRING ]]; then
 	echo "$0: ERROR: in output_award: no award found in .entry.json file: $ENTRY_JSON_PATH" 1>&2
@@ -596,9 +596,9 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: GIT_TOOL=$GIT_TOOL" 1>&2
     echo "$0: debug[3]: TOPDIR=$TOPDIR" 1>&2
     echo "$0: debug[3]: VERGE=$VERGE" 1>&2
-    echo "$0: debug[3]: JSTRDECODE=$JSTRDECODE" 1>&2
-    echo "$0: debug[3]: MIN_JSTRDECODE_VERSION=$MIN_JSTRDECODE_VERSION" 1>&2
-    echo "$0: debug[3]: JSTRDECODE_VERSION=$JSTRDECODE_VERSION" 1>&2
+    echo "$0: debug[3]: JSTRENCODE=$JSTRENCODE" 1>&2
+    echo "$0: debug[3]: MIN_JSTRENCODE_VERSION=$MIN_JSTRENCODE_VERSION" 1>&2
+    echo "$0: debug[3]: JSTRENCODE_VERSION=$JSTRENCODE_VERSION" 1>&2
     echo "$0: debug[3]: TAC_TOOL=$TAC_TOOL" 1>&2
     echo "$0: debug[3]: FMT_TOOL=$FMT_TOOL" 1>&2
     echo "$0: debug[3]: DOCROOT_SLASH=$DOCROOT_SLASH" 1>&2
