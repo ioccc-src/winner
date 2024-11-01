@@ -14,7 +14,6 @@ FAQ on "[X11](../../faq.html#X11)".
 The current status of this entry is:
 
 > **STATUS: INABIAF - please DO NOT fix**<br>
-> **STATUS: missing files - please provide them**<br>
 
 For more detailed information see [2001/rosten in bugs.html](../../bugs.html#2001_rosten).
 
@@ -72,7 +71,8 @@ obfuscated. Try doing something mouse driven (such as using a mouse
 driven editor on this program) whilst it is running. If you're not sure
 what it does, looking at the code should give a fair idea.
 
-It also has a [cat] man page if you want to install it as a 'utility'.
+The file [greasymouse.man](%%REPO_URL%%/2001/rosten/greasymouse.man) is a cat
+man page if you want to install it as a 'utility'.
 
 
 ### OPTIONS
