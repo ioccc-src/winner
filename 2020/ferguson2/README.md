@@ -119,14 +119,14 @@ There is a good deal of useful documentation that is provided with this entry:
     - Some useful information about [recode.c](%%REPO_URL%%/2020/ferguson2/recode.c)
 
 
-* [enigma.html][]
+* [enigma.txt][]
     - NOTE: see [recode.html][] (or [recode.html](recode.html) for details about how to decrypt this!
 
 * [testing-procedure][]
         - How the author tested the code and why it was necessary to do it in the way it was
 
 [recode.html]: recode.html
-[enigma.html]: enigma.html
+[enigma.txt]: enigma.txt
 [testing-procedure]: testing-procedure.html
 
 
