@@ -464,8 +464,8 @@ to try and find the right key.</p>
     fi
 
     # a simpler way to check that it works:
-    ./recode -Renigma.dat -fenigma.deciphered.html | ./prog - 2&gt;/dev/null &gt; enigma.html
-    ./recode -Renigma.dat -fenigma.html | ./prog - 2&gt;/dev/null | diff -s - enigma.deciphered.html
+    ./recode -Renigma.dat -fenigma.html | ./prog - 2&gt;/dev/null &gt; enigma.txt
+    ./recode -Renigma.dat -fenigma.txt | ./prog - 2&gt;/dev/null | diff -s - enigma.html
 
     ./recode -Robfuscation.key -fobfuscation.txt | ./prog - 2&gt;/dev/null &gt;  out
     diff out obfuscation.md || echo &quot;Obfuscation test 0.5 failed&quot;
@@ -499,7 +499,7 @@ document in the website. Still that should give you the idea.</p>
 <h3 id="historical-note">Historical note:</h3>
 <p>At the time of development the server was CentOS but as Red Hat decided to axe
 it it is now Rocky Linux. The above script was only tested in macOS but it
-should work fine in linux too. Also, the enigma.html part was added in June 2024
+should work fine in linux too. Also, the enigma.txt part was added in June 2024
 which expects output so below when I say if I got any output there was a problem
 this is no longer true.</p>
 <h2 id="back-to-the-testing">Back to the testing:</h2>
@@ -520,12 +520,12 @@ are the same under Fedora, CentOS and macOS but I have put the main testing
 platform as macOS because these days I mostly use my laptop (I tend to ssh into
 the other two boxes more and as for the CentOS it’s only console anyway. Since
 it’s just text I/O it an terminal emulator shouldn’t matter either.).</p>
-<h2 id="command-that-might-be-used-to-decipher-the-enigma.html-file">Command that might be used to decipher the <code>enigma.html</code> file:</h2>
+<h2 id="command-that-might-be-used-to-decipher-the-enigma.txt-file">Command that might be used to decipher the <code>enigma.txt</code> file:</h2>
 <p>The following command can be used to decipher the file except that you must
 provide the key file (or the key as a string) with the correct key (see
 <a href="recode.html">recode.html</a> for a list of keys to try) in order to get correct
 output:</p>
-<pre><code>        ./recode -Renigma.dat -fenigma.html | ./prog - 2&gt;/dev/null &gt; enigma.deciphered.html</code></pre>
+<pre><code>        ./recode -Renigma.dat -fenigma.txt | ./prog - 2&gt;/dev/null &gt; enigma.html</code></pre>
 <p>Enjoy!
 <!-- AFTER: last line of markdown file: 2020/ferguson2/testing-procedure.md --></p>
 

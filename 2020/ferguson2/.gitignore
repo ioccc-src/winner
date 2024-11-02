@@ -6,6 +6,7 @@ chocolate-cake.key
 config
 decrypted.html
 decrypted-source.html
+enigma.html
 encrypt.sh
 indent
 indent.c

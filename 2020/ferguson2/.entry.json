@@ -46,7 +46,7 @@
             "entry_text" : "original source code"
         },
         {
-            "file_path" : "enigma.html",
+            "file_path" : "enigma.txt",
             "inventory_order" : 100,
             "OK_to_edit" : true,
             "display_as" : "text",

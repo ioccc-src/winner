@@ -45,8 +45,8 @@ to try and find the right key.
     fi
 
     # a simpler way to check that it works:
-    ./recode -Renigma.dat -fenigma.deciphered.html | ./prog - 2>/dev/null > enigma.html
-    ./recode -Renigma.dat -fenigma.html | ./prog - 2>/dev/null | diff -s - enigma.deciphered.html
+    ./recode -Renigma.dat -fenigma.html | ./prog - 2>/dev/null > enigma.txt
+    ./recode -Renigma.dat -fenigma.txt | ./prog - 2>/dev/null | diff -s - enigma.html
 
     ./recode -Robfuscation.key -fobfuscation.txt | ./prog - 2>/dev/null >  out
     diff out obfuscation.md || echo "Obfuscation test 0.5 failed"
@@ -84,7 +84,7 @@ document in the website. Still that should give you the idea.
 
 At the time of development the server was CentOS but as Red Hat decided to axe
 it it is now Rocky Linux. The above script was only tested in macOS but it
-should work fine in linux too. Also, the enigma.html part was added in June 2024
+should work fine in linux too. Also, the enigma.txt part was added in June 2024
 which expects output so below when I say if I got any output there was a problem
 this is no longer true.
 
@@ -112,7 +112,7 @@ platform as macOS because these days I mostly use my laptop (I tend to ssh into
 the other two boxes more and as for the CentOS it's only console anyway. Since
 it's just text I/O it an terminal emulator shouldn't matter either.).
 
-## Command that might be used to decipher the `enigma.html` file:
+## Command that might be used to decipher the `enigma.txt` file:
 
 The following command can be used to decipher the file except that you must
 provide the key file (or the key as a string) with the correct key (see
@@ -120,7 +120,7 @@ provide the key file (or the key as a string) with the correct key (see
 output:
 
 ``` <!---sh-->
-        ./recode -Renigma.dat -fenigma.html | ./prog - 2>/dev/null > enigma.deciphered.html
+        ./recode -Renigma.dat -fenigma.txt | ./prog - 2>/dev/null > enigma.html
 ```
 
 Enjoy!
