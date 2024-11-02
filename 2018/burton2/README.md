@@ -391,7 +391,7 @@ Thus:
     cc -ansi -Wall -trigraphs -Wno-trigraphs -Wno-parentheses -Wno-empty-body -Wno-char-subscripts -Wno-pointer-sign -DU=O -DW=\"keywords\" -o prog prog.c
 ```
 
-### Coda:
+### Final remarks:
 
 [Cody Boone Ferguson](../../authors.html#Cody_Boone_Ferguson) was relentless in his pursuit of bugs.
 Thanks to his reports, the version of [unob.sh](%%REPO_URL%%/2018/burton2/unob.sh) is stronger,
