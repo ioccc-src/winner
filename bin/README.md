@@ -134,26 +134,6 @@ do:
 ```
 
 
-<div id="all-years">
-### [all-years.sh](%%REPO_URL%%/bin/all-years.sh)
-</div>
-
-Run a command on all IOCCC years.
-
-Usage:
-
-``` <!---sh-->
-    bin/all-years.sh -v 1 bin/gen-year-index.sh -v 1
-```
-
-If you wish to run instead, for example, [chk-entry.sh](#chk-entry), then
-do:
-
-``` <!---sh-->
-    bin/all-years.sh -v 1 bin/chk-entry.sh
-```
-
-
 <div id="chk-entry">
 ### [chk-entry.sh](%%REPO_URL%%/bin/chk-entry.sh)
 </div>
