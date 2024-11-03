@@ -6,7 +6,7 @@
     "dir" : "litmaath",
     "entry_id" : "1988_litmaath",
     "title" : "1988.litmaath",
-    "abstract" : "sorts each arg using only argc argv and 'while(<cond>)'",
+    "abstract" : "sorts each arg using only argc argv and 'while(cond)'",
     "author_set" : [
         {
             "author_handle" : "Maarten_Litmaath"

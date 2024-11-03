@@ -117,7 +117,7 @@ If you find yourself in an evolutionary dead end, try:
 0. Preface
 1. What it is
 2. How it works
-3. Hints (Keyboards, Options, Obfuscation, Example Invocations)
+3. Hints (Keyboards, Options, Easter egg, Example Invocations)
 4. Obfuscation (Techniques, Beauty)
 5. How to build (S and N Constants, Compilation, Portability, Installing)
 6. Final thoughts
@@ -558,13 +558,13 @@ are only parsed if the first character is `-` and if the parser hasn't seen
 the `-` - *in an earlier element of `argv`. This is not a bug!*
 
 
-<div id="obfuscation">
-### Obfuscation
+<div id="easter-egg">
+### Easter egg
 </div>
 
 Skip to [Example Invocations](#invocations).
 
-The Easter egg: Since Dawkins references the [Infinite Monkey Theorem][] it
+The Easter egg: since Dawkins references the [Infinite Monkey Theorem][] it
 simulates a monkey using a typewriter! This mode has the following changes:
 
 Selection is omitted; this means no sorting by fitness score (*each offspring

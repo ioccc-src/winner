@@ -513,7 +513,7 @@ while using more Cenozoic minded code migration, read <a href="rpm.html">rpm.htm
 <li>Preface</li>
 <li>What it is</li>
 <li>How it works</li>
-<li>Hints (Keyboards, Options, Obfuscation, Example Invocations)</li>
+<li>Hints (Keyboards, Options, Easter egg, Example Invocations)</li>
 <li>Obfuscation (Techniques, Beauty)</li>
 <li>How to build (S and N Constants, Compilation, Portability, Installing)</li>
 <li>Final thoughts</li>
@@ -825,9 +825,9 @@ itself) and then the target string would <em>literally</em> be set to <code>-r</
 it no longer cares about the <code>-</code> for option parsing. In other words options
 are only parsed if the first character is <code>-</code> and if the parser hasn’t seen
 the <code>-</code> - <em>in an earlier element of <code>argv</code>. This is not a bug!</em></p>
-<h3 id="obfuscation">Obfuscation</h3>
+<h3 id="easter-egg">Easter egg</h3>
 <p>Skip to <a href="#invocations">Example Invocations</a>.</p>
-<p>The Easter egg: Since Dawkins references the <a href="https://en.wikipedia.org/wiki/Infinite_monkey_theorem">Infinite Monkey Theorem</a> it
+<p>The Easter egg: since Dawkins references the <a href="https://en.wikipedia.org/wiki/Infinite_monkey_theorem">Infinite Monkey Theorem</a> it
 simulates a monkey using a typewriter! This mode has the following changes:</p>
 <p>Selection is omitted; this means no sorting by fitness score (<em>each offspring
 is initially set to be the first two in the list</em>) but do pseudo-randomly
@@ -1048,9 +1048,7 @@ invalid character (<code>'\n'</code> itself which means another line break) and 
 finally the closing <code>'</code>. Specifically <code>isspace()</code> characters aren’t
 distinctly seen like a letter, digit or symbol is: <code>isprint('\n') == 0 &amp;&amp; isspace('\n') == 1</code>. You can add these characters but the output will be
 rather confusing and hard to read.</p>
-<div id="obfuscation">
-<h2 id="obfuscation-1"><strong>4. Obfuscation</strong></h2>
-</div>
+<h2 id="obfuscation"><strong>4. Obfuscation</strong></h2>
 <h3 id="techniques">Techniques</h3>
 <p>Skip to <a href="#beauty">Beauty</a>.</p>
 <p>The following might be some of the techniques used in this entry:</p>

@@ -193,7 +193,7 @@ The Linux man page says:
 
 > You might have to run the `reset` tool like:
 >
->   <LF>reset<LF>
+>   `<LF>reset<LF>`
 >
 >   (the line-feed character is normally control-J) to get the terminal to work,
 as carriage-return may no longer work in the abnormal state.

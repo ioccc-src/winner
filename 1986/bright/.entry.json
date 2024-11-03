@@ -6,7 +6,7 @@
     "dir" : "bright",
     "entry_id" : "1986_bright",
     "title" : "1986.bright",
-    "abstract" : "hex dump with cpp compressed that uses lots of << for constants",
+    "abstract" : "hex dump with cpp compressed that uses lots of `<<` for constants",
     "author_set" : [
         {
             "author_handle" : "Walter_Bright"

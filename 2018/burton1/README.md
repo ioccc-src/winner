@@ -251,7 +251,7 @@ So which version is the shortest, portable hex dump?
 * 113 works on Ancient UNIX and the portable C compiler.
 * 119 works on all platforms, including the original Ritchie PDP-11 C compiler.
 
-### Coda:
+### Final remarks:
 
 Clearly, the smallest possible program violates modern best practice.
 It is not even possible to compile cleanly, but it will compile correctly.
