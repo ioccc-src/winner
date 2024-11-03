@@ -6,7 +6,7 @@
     "dir" : "albert",
     "entry_id" : "1992_albert",
     "title" : "1992.albert",
-    "abstract" : "factors multi-precision numbers with factors `< MAX_LONG`",
+    "abstract" : "factors multi-precision numbers with factors < MAX_LONG",
     "author_set" : [
         {
             "author_handle" : "Albert_van_der_Horst"
