@@ -20,6 +20,18 @@
 #
 #	make entry_index
 #
+# This script was written in 2024 by:
+#
+#   chongo (Landon Curt Noll, http://www.isthe.com/chongo/index.html) /\oo/\
+#
+# with improvements and fixes by:
+#
+#	@xexyl
+#	https://xexyl.net		Cody Boone Ferguson
+#	https://ioccc.xexyl.net
+#
+# "Because sometimes even the IOCCC Judges need some help." :-)
+#
 # Copyright (c) 2024 by Landon Curt Noll.  All Rights Reserved.
 #
 # Permission to use, copy, modify, and distribute this software and
@@ -104,7 +116,7 @@ shopt -s globstar	# enable '**' to match all files and zero or more directories 
 
 # set variables referenced in the usage message
 #
-export VERSION="1.4.3 2024-08-05"
+export VERSION="1.4.4 2024-11-04"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -320,6 +332,7 @@ if [[ ! -d $BIN_PATH ]]; then
     exit 6
 fi
 export BIN_DIR="bin"
+export HTML_SED="$BIN_DIR/html.sed"
 
 
 # verify that the bin/pandoc-wrapper.sh tool is executable
@@ -472,6 +485,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: BIN_DIR=$BIN_DIR" 1>&2
     echo "$0: debug[3]: PANDOC_WRAPPER=$PANDOC_WRAPPER" 1>&2
     echo "$0: debug[3]: MANIFEST_ENTRY_JSON_AWK=$MANIFEST_ENTRY_JSON_AWK" 1>&2
+    echo "$0: debug[3]: HTML_SED=$HTML_SED" 1>&2
     echo "$0: debug[3]: YEAR_DIR=$YEAR_DIR" 1>&2
     echo "$0: debug[3]: ENTRY_DIR=$ENTRY_DIR" 1>&2
     echo "$0: debug[3]: ENTRY_ID=$ENTRY_ID" 1>&2
@@ -538,6 +552,21 @@ elif [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: because of -n, temporary manifest file is not used: $TMP_MANIFEST" 1>&2
 fi
 
+# verify we have our sed script
+#
+if [[ ! -e $HTML_SED ]]; then
+    echo "$0: ERROR: bin/html.sed does not exist: $HTML_SED" 1>&2
+    exit 6
+fi
+if [[ ! -f $HTML_SED ]]; then
+    echo "$0: ERROR: bin/html.sed is not a regular file: $HTML_SED" 1>&2
+    exit 6
+fi
+if [[ ! -r $HTML_SED ]]; then
+    echo "$0: ERROR: bin/html.sed is not a readable file: $HTML_SED" 1>&2
+    exit 6
+fi
+
 
 # generate the temporary manifest file
 #
@@ -560,11 +589,11 @@ if [[ -z $NOOP ]]; then
 	echo
 	echo '## Primary files'
 	echo
-	grep -E '^[0-9][0-9]{0,8} ' "$TMP_MANIFEST" | LC_ALL=C sort -k 1n -k 3.2d | sed -e 's/^[0-9][0-9]* //'
+	grep -E '^[0-9][0-9]{0,8} ' "$TMP_MANIFEST" | LC_ALL=C sort -k 1n -k 3.2d | sed -f "$HTML_SED" -e 's/^[0-9][0-9]* //'
 	echo
 	echo '## Secondary files'
 	echo
-	grep -E '^[1-9][0-9]{9,} ' "$TMP_MANIFEST" | LC_ALL=C sort -k 1n -k 3.2d | sed -e 's/^[0-9][0-9]* //'
+	grep -E '^[1-9][0-9]{9,} ' "$TMP_MANIFEST" | LC_ALL=C sort -k 1n -k 3.2d | sed -f "$HTML_SED" -e 's/^[0-9][0-9]* //'
 	echo
 	echo '<hr style="width:10%;text-align:left;margin-left:0">'
 	echo '<h4>Jump to: <a href="#">top</a></h4>'
