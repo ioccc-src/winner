@@ -7109,7 +7109,7 @@ We call out the extensive contributions of [Cody Boone
 Ferguson](authors.html#Cody_Boone_Ferguson) who is responsible for many
 improvements and fixes, including entries that no longer worked
 and other important fixes, often **EXTREMELY HARD** (for certain
-definitions of '_HARD_' :-) ), such as
+definitions of '`HARD`' :-) ), such as
 [1988/phillipps](thanks-for-help.html#1988_phillipps),
 [1992/vern](thanks-for-help.html#1992_vern),
 [2001/anonymous](thanks-for-help.html#2001_anonymous),
