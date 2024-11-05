@@ -449,28 +449,30 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <p><strong>NOTE</strong>: we <strong>FORCE</strong> disable the optimiser due to a funny problem with different
 compilers and systems. See below and <a href="compilers.html">compilers.html</a> for details.</p>
 <p>There is an <a href="#alternate-code">alternate version</a>. The reason is a funny problem:
-in modern systems, depending on the platform, compiler and the optimiser, it
-would work with one compiler with the optimiser but it would not work with the
-other; and if the optimiser state is changed the previous problematic compiler
-might work but the other one would not. We describe this in more detail in
-<a href="compilers.html">compilers.html</a> and we encourage you to read it for entertainment
-if nothing else.</p>
+in modern systems, depending on the platform, compiler and whether or not the
+optimiser is enabled, it might work with one compiler but non the other. But
+then if you swap the optimiser state the compiler that worked would no longer
+work and the compiler that did not work would. We describe this in more detail
+in <a href="compilers.html">compilers.html</a> and we encourage you to read it for
+entertainment if nothing else.</p>
 <h2 id="to-use">To use:</h2>
 <pre><code>    ./marshall</code></pre>
 <h2 id="alternate-code">Alternate code:</h2>
 <p>Due to the different <a href="compilers.html">conflicting problems</a> with <code>gcc</code> and
-<code>clang</code>, we
-instead offer the problematic code as an alternate version whereas
-<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1986/marshall/marshall.c">marshall.c</a> has both the infinite loop and the complicated arg to
-<code>_exit()</code> commented out, changing the value passed into <code>_exit()</code> to <code>1</code>.</p>
+<code>clang</code>, we offer the problematic code as an alternate version whereas
+<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1986/marshall/marshall.c">marshall.c</a> has both the loop (that
+turned into an infinite loop) commented out and the complicated arg to <code>_exit(2)</code>
+commented out, changing the value passed into <code>_exit()</code> to <code>1</code>.</p>
 <h3 id="alternate-build">Alternate build:</h3>
-<p>To see if your compiler has the problems noted:</p>
+<p>To see if your compiler has the problems noted above and in
+<a href="compilers.html">compilers.html</a>, first build the alternate code:</p>
 <pre><code>    make alt</code></pre>
 <h3 id="alternate-use">Alternate use:</h3>
+<p>Once the alternate code is built, see if your compiler has the problem:</p>
 <pre><code>    ./marshall.alt</code></pre>
-<p>Does it work in your system? That is does it not segfault, does it print it only
-once and does it not enter an infinite loop? Or more generally does it print the
-text exactly once and then exit?</p>
+<p>Does it work in your system? That is does it print the text only once and does
+it not enter an infinite loop? In other words, does it print the text <em>exactly
+once</em> and then exit, without dumping core?</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>This program prints the name of the picture. The layout is somewhat
 pretty though it is not the usual sort of output one would expect

@@ -8,12 +8,12 @@
 compilers and systems. See below and [compilers.html](compilers.html) for details.
 
 There is an [alternate version](#alternate-code). The reason is a funny problem:
-in modern systems, depending on the platform, compiler and the optimiser, it
-would work with one compiler with the optimiser but it would not work with the
-other; and if the optimiser state is changed the previous problematic compiler
-might work but the other one would not. We describe this in more detail in
-[compilers.html](compilers.html) and we encourage you to read it for entertainment
-if nothing else.
+in modern systems, depending on the platform, compiler and whether or not the
+optimiser is enabled, it might work with one compiler but non the other. But
+then if you swap the optimiser state the compiler that worked would no longer
+work and the compiler that did not work would. We describe this in more detail
+in [compilers.html](compilers.html) and we encourage you to read it for
+entertainment if nothing else.
 
 
 ## To use:
@@ -26,15 +26,16 @@ if nothing else.
 ## Alternate code:
 
 Due to the different [conflicting problems](compilers.html) with `gcc` and
-`clang`, we
-instead offer the problematic code as an alternate version whereas
-[marshall.c](%%REPO_URL%%/1986/marshall/marshall.c) has both the infinite loop and the complicated arg to
-`_exit()` commented out, changing the value passed into `_exit()` to `1`.
+`clang`, we offer the problematic code as an alternate version whereas
+[marshall.c](%%REPO_URL%%/1986/marshall/marshall.c) has both the loop (that
+turned into an infinite loop) commented out and the complicated arg to `_exit(2)`
+commented out, changing the value passed into `_exit()` to `1`.
 
 
 ### Alternate build:
 
-To see if your compiler has the problems noted:
+To see if your compiler has the problems noted above and in
+[compilers.html](compilers.html), first build the alternate code:
 
 
 ``` <!---sh-->
@@ -44,13 +45,15 @@ To see if your compiler has the problems noted:
 
 ### Alternate use:
 
+Once the alternate code is built, see if your compiler has the problem:
+
 ``` <!---sh-->
     ./marshall.alt
 ```
 
-Does it work in your system? That is does it not segfault, does it print it only
-once and does it not enter an infinite loop? Or more generally does it print the
-text exactly once and then exit?
+Does it work in your system? That is does it print the text only once and does
+it not enter an infinite loop? In other words, does it print the text _exactly
+once_ and then exit, without dumping core?
 
 
 ## Judges' remarks:
