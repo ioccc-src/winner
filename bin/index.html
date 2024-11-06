@@ -436,9 +436,10 @@ content, for the <a href="https://www.ioccc.org">official IOCCC website</a>.</p>
 fragments from the <a href="../inc/index.html">inc directory</a> as well as various JSON
 files and other content from the <a href="https://github.com/ioccc-src/temp-test-ioccc">IOCCC GitHub
 repo</a>.</p>
-<h2 id="bin-tools"><a href="index.html">bin/</a> tools</h2>
-<p>All tools in this directory support a number of options that can be used to get
-help, diagnose problems, see progress etc. These options are as follows:</p>
+<h2 id="bin-tools-options"><a href="index.html">bin/</a> tools options</h2>
+<p>With the exception of the <code>awk(1)</code> and <code>sed(1)</code> scripts, all the tools in this
+directory support a number of options that can be used to get help, diagnose
+problems, see progress etc. These options are described below.</p>
 <h3 id="get-help-usage-string-of-a-tool">Get help / usage string of a tool</h3>
 <p>If you need to remember the syntax of the tool or get certain notes about
 different options, you can use the <code>-h</code> option.</p>
@@ -446,9 +447,9 @@ different options, you can use the <code>-h</code> option.</p>
 from the root directory (of the repo/website), you would do:</p>
 <pre><code>    bin/all-run.sh -h</code></pre>
 <h3 id="set-verbosity-level-of-a-tool">Set verbosity level of a tool</h3>
-<p>If you want verbosity, say for debugging purposes or to see what is
-going on more, you should use the <code>-v level</code> option. For instance if you wish to
-see what is going on with the
+<p>If you want verbosity, say for debugging purposes or to see what is going on
+more (than the default), you should use the <code>-v level</code> option. For instance if
+you wish to see what is going on with the
 <a href="index.html#quick-readme2index">quick-readme2index.sh</a> tool, you might do:</p>
 <pre><code>    bin/quick-readme2index.sh -v 3</code></pre>
 <p>to set the verbosity level to <code>3</code>. The default for verbosity is <code>0</code>, no
@@ -681,6 +682,21 @@ from the <code>TOPDIR</code>.</p>
 <pre><code>    awk -f bin/filelist.entry.json.awk 2020/ferguson1/.entry.json</code></pre>
 <p>In this case the command will list all the files of the
 <a href="../2020/ferguson1/index.html">2020/ferguson1</a> winning entry.</p>
+<div id="html-sed">
+<h3 id="html.sed"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/html.sed">html.sed</a></h3>
+</div>
+<p>Translates certain characters in their corresponding HTML entities. For example
+<code>&lt;</code> is converted to <code>&amp;lt;</code> and <code>&gt;</code> is converted to <code>&amp;gt;</code>. This is important to
+satisfy html lints.</p>
+<p>This script is used in <a href="#md2html">md2html.sh</a> via
+<a href="#output-index-inventory">output-index-inventory.sh</a> and
+<a href="#subst-entry-index">subst.entry-index.sh</a>.</p>
+<p>Usage:</p>
+<pre><code>    cmd | sed -f bin/html.sed
+
+    sed -f bin/html.sed file &gt; output
+
+    sed -i -f bin/html.sed file</code></pre>
 <div id="find-missing-links">
 <h3 id="find-missing-links.sh"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/find-missing-links.sh">find-missing-links.sh</a></h3>
 </div>

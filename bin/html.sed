@@ -14,6 +14,10 @@
 # to their respective html entity, for instance '&lt;', so that html lints do
 # not complain.
 #
+# For a list of the other html entities, should others be needed, see:
+#
+#       https://www.w3schools.com/html/html_entities.asp
+#
 # usage:
 #
 #	cmd | sed -f bin/html.sed
@@ -27,6 +31,6 @@
 # IMPORTANT NOTE: the '&amp;' substitution MUST come first! This is because the
 # other substitutions have '&'s in them and if the '&amp;' came after it would
 # corrupt the '&'s in the string.
-s/&/\&amp;/g
-s/</\&lt;/g
-s/>/\&gt;/g
+s/&/\\\&amp;/g
+s/</\\\&lt;/g
+s/>/\\\&gt;/g

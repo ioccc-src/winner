@@ -14,10 +14,12 @@ files and other content from the [IOCCC GitHub
 repo](https://github.com/ioccc-src/temp-test-ioccc).
 
 
-## [bin/](index.html) tools
+## [bin/](index.html) tools options
 
-All tools in this directory support a number of options that can be used to get
-help, diagnose problems, see progress etc. These options are as follows:
+With the exception of the `awk(1)` and `sed(1)` scripts, all the tools in this
+directory support a number of options that can be used to get help, diagnose
+problems, see progress etc. These options are described below.
+
 
 ### Get help / usage string of a tool
 
@@ -35,9 +37,9 @@ from the root directory (of the repo/website), you would do:
 
 ### Set verbosity level of a tool
 
-If you want verbosity, say for debugging purposes or to see what is
-going on more, you should use the `-v level` option. For instance if you wish to
-see what is going on with the
+If you want verbosity, say for debugging purposes or to see what is going on
+more (than the default), you should use the `-v level` option. For instance if
+you wish to see what is going on with the
 [quick-readme2index.sh](index.html#quick-readme2index) tool, you might do:
 
 
@@ -411,6 +413,28 @@ Usage:
 
 In this case the command will list all the files of the
 [2020/ferguson1](../2020/ferguson1/index.html) winning entry.
+
+<div id="html-sed">
+### [html.sed](%%REPO_URL%%/bin/html.sed)
+</div>
+
+Translates certain characters in their corresponding HTML entities. For example
+`<` is converted to `&lt;` and `>` is converted to `&gt;`. This is important to
+satisfy html lints.
+
+This script is used in [md2html.sh](#md2html) via
+[output-index-inventory.sh](#output-index-inventory) and
+[subst.entry-index.sh](#subst-entry-index).
+
+Usage:
+
+``` <!---sh-->
+    cmd | sed -f bin/html.sed
+
+    sed -f bin/html.sed file > output
+
+    sed -i -f bin/html.sed file
+```
 
 
 <div id="find-missing-links">
