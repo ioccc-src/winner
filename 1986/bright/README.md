@@ -29,7 +29,6 @@ program.  This gives you a small example of what it is like to
 maintain the Bourne shell! :-}
 
 
-
 ## Author's remarks:
 
 No remarks were provided by the author.

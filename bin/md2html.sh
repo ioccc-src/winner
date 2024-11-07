@@ -7,7 +7,7 @@
 #
 #   chongo (Landon Curt Noll, http://www.isthe.com/chongo/index.html) /\oo/\
 #
-# with important improvements by:
+# with useful improvements by:
 #
 #	@xexyl
 #	https://xexyl.net		Cody Boone Ferguson
@@ -158,7 +158,7 @@ shopt -s lastpipe	# run last command of a pipeline not executed in the backgroun
 
 # set variables referenced in the usage message
 #
-export VERSION="1.7 2024-09-27"
+export VERSION="1.8 2024-11-07"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -228,9 +228,12 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
 	-a tool		run 'after tool' during HTML phase number 20 (def: do not output after pandoc wrapper tool)
 	-a .		skip HTML phase number 22 (def: do nothing during HTML phase number 22)
 
-	-s token=value	substitute %%token%% with value except in HTML phase numbers 20-29 (def: do not substitute any tokens)
-			NOTE: A later '-s token=value' will override an earlier '-s token=value' for the same 'token'.
-			NOTE: Multiple '-s token=value' are cumulative for the unique set of 'token's.
+        -s token=value  substitute %%token%% with value except in HTML phase numbers 20-29 (def: do not substitute any tokens)
+                        NOTE: The 'token' string may not contain an = (equal), | (pipe) or a % (percent) symbol.
+                        NOTE: The 'value' string may not contain a | (pipe) symbol
+                        NOTE: A later '-s token=value' will override an earlier '-s token=value' for the same 'token'.
+                        NOTE: Multiple '-s token=value' are cumulative for the unique set of 'token's.
+
 	-S		Failure to replace a %%token%% is not an error (def: exit non-zero for non-substituted tokens)
 
 	-o tool		use 'output tool' to generate option lines (def: do not)
@@ -564,7 +567,7 @@ function parse_command_line
 	    fi
 	    ;;
 	s) # parse: -s token=value
-	    case "$OPTARG" in
+            case "$OPTARG" in
 	    *=*) # parse name=value
 		NAME=${OPTARG%%=*}
 		VALUE=${OPTARG#*=}
@@ -576,7 +579,38 @@ function parse_command_line
 		;;
 	    esac
 	    #
-
+	    case "$NAME" in
+	    *=*)
+		echo "$0: ERROR: in -s token=value, the token may not contain an = (equal) character: $NAME" 1>&2
+		echo 1>&2
+		echo "$USAGE" 1>&2
+		exit 3
+		;;
+	    *\|*)
+		echo "$0: ERROR: in -s token=value, the token may not contain a | (pipe) character: $NAME" 1>&2
+		echo 1>&2
+		echo "$USAGE" 1>&2
+		exit 3
+		;;
+	    *%*)
+		echo "$0: ERROR: in -s token=value, the token may not contain a % (percent) character: $NAME" 1>&2
+		echo 1>&2
+		echo "$USAGE" 1>&2
+		exit 3
+		;;
+	    *) ;;
+	    esac
+	    #
+	    case "$VALUE" in
+	    *\|*)
+		echo "$0: ERROR: in -s token=value, the value may not contain a | (pipe) character: $NAME" 1>&2
+		echo 1>&2
+		echo "$USAGE" 1>&2
+		exit 3
+		;;
+	    *) ;;
+	    esac
+	    #
 	    # set %%token%% value
 	    #
 	    TOKEN[$NAME]="$VALUE"

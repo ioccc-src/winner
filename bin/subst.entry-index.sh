@@ -6,7 +6,7 @@
 #
 #   chongo (Landon Curt Noll, http://www.isthe.com/chongo/index.html) /\oo/\
 #
-# with important improvements by:
+# with useful improvements by:
 #
 #	@xexyl
 #	https://xexyl.net		Cody Boone Ferguson
