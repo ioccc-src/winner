@@ -3,6 +3,18 @@
 #
 # md2html.sh - convert markdown into an IOCCC HTML file via config file
 #
+# This script was written in 2024 by:
+#
+#   chongo (Landon Curt Noll, http://www.isthe.com/chongo/index.html) /\oo/\
+#
+# with useful improvements by:
+#
+#	@xexyl
+#	https://xexyl.net		Cody Boone Ferguson
+#	https://ioccc.xexyl.net
+#
+# "Because sometimes even the IOCCC Judges need some help." :-)
+#
 # Convert a markdown file into a HTML file for the IOCCC website,
 # using the bin/md2html.cfg configuration file.  Conversion from
 # markdown to HTML is performed via the 'pandoc wrapper tool'.
@@ -146,7 +158,7 @@ shopt -s lastpipe	# run last command of a pipeline not executed in the backgroun
 
 # set variables referenced in the usage message
 #
-export VERSION="1.7 2024-09-27"
+export VERSION="1.8 2024-11-07"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -216,11 +228,12 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
 	-a tool		run 'after tool' during HTML phase number 20 (def: do not output after pandoc wrapper tool)
 	-a .		skip HTML phase number 22 (def: do nothing during HTML phase number 22)
 
-	-s token=value	substitute %%token%% with value except in HTML phase numbers 20-29 (def: do not substitute any tokens)
-			NOTE: The 'token' string may not contain a ; (semicolon), a = (equal), or a % (percent).
-			NOTE: The 'value' string may not contain a ; (semicolon), nor & (ampersand).
-			NOTE: A later '-s token=value' will override an earlier '-s token=value' for the same 'token'.
-			NOTE: Multiple '-s token=value' are cumulative for the unique set of 'token's.
+        -s token=value  substitute %%token%% with value except in HTML phase numbers 20-29 (def: do not substitute any tokens)
+                        NOTE: The 'token' string may not contain an = (equal), | (pipe) or a % (percent) symbol.
+                        NOTE: The 'value' string may not contain a | (pipe) symbol
+                        NOTE: A later '-s token=value' will override an earlier '-s token=value' for the same 'token'.
+                        NOTE: Multiple '-s token=value' are cumulative for the unique set of 'token's.
+
 	-S		Failure to replace a %%token%% is not an error (def: exit non-zero for non-substituted tokens)
 
 	-o tool		use 'output tool' to generate option lines (def: do not)
@@ -554,7 +567,7 @@ function parse_command_line
 	    fi
 	    ;;
 	s) # parse: -s token=value
-	    case "$OPTARG" in
+            case "$OPTARG" in
 	    *=*) # parse name=value
 		NAME=${OPTARG%%=*}
 		VALUE=${OPTARG#*=}
@@ -567,14 +580,14 @@ function parse_command_line
 	    esac
 	    #
 	    case "$NAME" in
-	    *\;*)
-		echo "$0: ERROR: in -s token=value, the token may not contain a ; (semicolon) character: $NAME" 1>&2
+	    *=*)
+		echo "$0: ERROR: in -s token=value, the token may not contain an = (equal) character: $NAME" 1>&2
 		echo 1>&2
 		echo "$USAGE" 1>&2
 		exit 3
 		;;
-	    *=*)
-		echo "$0: ERROR: in -s token=value, the token may not contain an = (equal) character: $NAME" 1>&2
+	    *\|*)
+		echo "$0: ERROR: in -s token=value, the token may not contain a | (pipe) character: $NAME" 1>&2
 		echo 1>&2
 		echo "$USAGE" 1>&2
 		exit 3
@@ -589,14 +602,8 @@ function parse_command_line
 	    esac
 	    #
 	    case "$VALUE" in
-	    *\;*)
-		echo "$0: ERROR: in -s token=value, the value may not contain a ; (semicolon) character: $NAME" 1>&2
-		echo 1>&2
-		echo "$USAGE" 1>&2
-		exit 3
-		;;
-	    *\&*)
-		echo "$0: ERROR: in -s token=value, the value may not contain an & (ampersand) character: $NAME" 1>&2
+	    *\|*)
+		echo "$0: ERROR: in -s token=value, the value may not contain a | (pipe) character: $NAME" 1>&2
 		echo 1>&2
 		echo "$USAGE" 1>&2
 		exit 3
@@ -916,7 +923,7 @@ function append_html_phase
     # parse args
     #
     if [[ $# -ne 6 ]]; then
-	echo "$0: ERROR: append_html_phase requires 2 args, found: $#" 1>&2
+	echo "$0: ERROR: append_html_phase requires 6 args, found: $#" 1>&2
 	# We have to return non-zero but we don't have the args to know STARTING_EXIT_CODE.
 	# We might as well use 7 since that is an HTML phase exit code
 	return 7
@@ -1600,7 +1607,7 @@ fi
 #
 if [[ $V_FLAG -ge 7 ]]; then
     for n in "${!TOKEN[@]}"; do
-	echo "$0: debug[7]: -s token replacement: sed -e s;%%$n%%;${TOKEN[$n]};g" 1>&2
+	echo "$0: debug[7]: -s token replacement: sed -e s|%%$n%%|${TOKEN[$n]}|g" 1>&2
     done
 fi
 
@@ -1644,7 +1651,7 @@ if [[ -z $NOOP ]]; then
     # load the sed script with sed commands from any "-s token=value"
     #
     for n in "${!TOKEN[@]}"; do
-	echo "s;%%$n%%;${TOKEN[$n]};g" >> "$TMP_SED_SCRIPT"
+	echo "s|%%$n%%|${TOKEN[$n]}|g" >> "$TMP_SED_SCRIPT"
     done
     if [[ $V_FLAG -ge 5 ]]; then
 	echo "$0: debug[5]: temporary sed script starts below: $TMP_SED_SCRIPT" 1>&2
@@ -1655,7 +1662,7 @@ elif [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: because of -n, temporary sed script is not formed: $TMP_SED_SCRIPT" 1>&2
     echo "$0: debug[3]: the temporary sed script that would have been written starts below: $TMP_SED_SCRIPT" 1>&2
     for n in "${!TOKEN[@]}"; do
-	echo "s;%%$n%%;${TOKEN[$n]};g" 1>&2
+	echo "s|%%$n%%|${TOKEN[$n]}|g" 1>&2
     done
     echo "$0: debug[3]: the temporary sed script that would have been written ends above: $TMP_SED_SCRIPT" 1>&2
 fi
@@ -1799,7 +1806,7 @@ if [[ -z $NOOP ]]; then
     sed -E -e 's/^```[[:space:]]<!---[^-][^-]*-->/```/' -f "$TMP_SED_SCRIPT" "$INPUT_MD" >> "$TMP_STRIPPED_MD"
     status="$?"
     if [[ $status -ne 0 ]]; then
-	echo "$0: ERROR: token substation and strip code block command language from $INPUT_MD into file:" \
+	echo "$0: ERROR: token substitution and strip code block command language from $INPUT_MD into file:" \
 	     "$TMP_INPUT_MD failed, error code: $status" 1>&2
 	exit 25
     fi

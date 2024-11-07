@@ -2,6 +2,18 @@
 #
 # subst.entry-index.sh - print substitutions for a entry's index.html
 #
+# This script was written in 2024 by:
+#
+#   chongo (Landon Curt Noll, http://www.isthe.com/chongo/index.html) /\oo/\
+#
+# with useful improvements by:
+#
+#	@xexyl
+#	https://xexyl.net		Cody Boone Ferguson
+#	https://ioccc.xexyl.net
+#
+# "Because sometimes even the IOCCC Judges need some help." :-)
+#
 # This tool is intended to be used as a "output tool" during getopt phases 1 and 3.
 # In particular, lines in the bin/md2html.cfg configuration file of the form:
 #
@@ -200,6 +212,9 @@ Exit codes:
 
 $NAME version: $VERSION"
 
+# We need this here as the functions refer to it. We will check that it exists
+# before using it, however.
+export HTML_SED="$BIN_DIR/html.sed"
 
 # Write the award name to standard output (stdout)
 #
@@ -239,12 +254,12 @@ function output_award
     #
     PATTERN='$..award'
     if [[ $V_FLAG -ge 5 ]]; then
-	echo  "$0: debug[5]: about to run: $JVAL_WRAPPER -b -q -- $ENTRY_JSON_PATH '$PATTERN' | $JSTRENCODE -N -" 1>&2
+	echo  "$0: debug[5]: about to run: $JVAL_WRAPPER -b -q -- $ENTRY_JSON_PATH '$PATTERN' | $JSTRENCODE -N - | sed -f $HTML_SED" 1>&2
     fi
-    "$JVAL_WRAPPER" -b -q "$ENTRY_JSON_PATH" "$PATTERN" | "$JSTRENCODE" -N -
+    "$JVAL_WRAPPER" -b -q "$ENTRY_JSON_PATH" "$PATTERN" | "$JSTRENCODE" -N - | sed -f "$HTML_SED"
     status_codes=("${PIPESTATUS[@]}")
     if [[ ${status_codes[*]} =~ [1-9] ]]; then
-	echo "$0: ERROR: in output_award: $JVAL_WRAPPER -b -q -- $ENTRY_JSON_PATH '$PATTERN' | $JSTRENCODE -N - failed," \
+	echo "$0: ERROR: in output_award: $JVAL_WRAPPER -b -q -- $ENTRY_JSON_PATH '$PATTERN' | $JSTRENCODE -N - | sed -f $HTML_SED failed," \
 	     "error codes: ${status_codes[*]}" 1>&2
 	return 5
     fi
@@ -290,12 +305,12 @@ function output_abstract
     #
     PATTERN='$..abstract'
     if [[ $V_FLAG -ge 5 ]]; then
-	echo  "$0: debug[5]: about to run: $JVAL_WRAPPER -b -q -- $ENTRY_JSON_PATH '$PATTERN' | $JSTRENCODE -N -" 1>&2
+	echo  "$0: debug[5]: about to run: $JVAL_WRAPPER -b -q -- $ENTRY_JSON_PATH '$PATTERN' | $JSTRENCODE -N - | sed -f $HTML_SED" 1>&2
     fi
-    "$JVAL_WRAPPER" -b -q "$ENTRY_JSON_PATH" "$PATTERN" | "$JSTRENCODE" -N -
+    "$JVAL_WRAPPER" -b -q "$ENTRY_JSON_PATH" "$PATTERN" | "$JSTRENCODE" -N - | sed -f "$HTML_SED"
     status_codes=("${PIPESTATUS[@]}")
     if [[ ${status_codes[*]} =~ [1-9] ]]; then
-	echo "$0: ERROR: in output_abstract: $JVAL_WRAPPER -b -q -- $ENTRY_JSON_PATH '$PATTERN | $JSTRENCODE -N - failed," \
+	echo "$0: ERROR: in output_abstract: $JVAL_WRAPPER -b -q -- $ENTRY_JSON_PATH '$PATTERN | $JSTRENCODE -N - | sed -f $HTML_SED failed," \
 	     "error codes: ${status_codes[*]}" 1>&2
 	return 5
     fi
@@ -492,6 +507,23 @@ if [[ ! -r $ENTRY_NAVBAR_AWK ]]; then
     exit 5
 fi
 
+# verify we have our sed script
+#
+if [[ ! -e $HTML_SED ]]; then
+    echo "$0: ERROR: bin/html.sed does not exist: $HTML_SED" 1>&2
+    exit 5
+fi
+if [[ ! -f $HTML_SED ]]; then
+    echo "$0: ERROR: bin/html.sed is not a file: $HTML_SED" 1>&2
+    exit 5
+fi
+if [[ ! -r $HTML_SED ]]; then
+    echo "$0: ERROR: bin/html.sed is not a readable file: $HTML_SED" 1>&2
+    exit 5
+fi
+
+
+
 
 # verify that ENTRY_PATH is a entry directory
 #
@@ -614,6 +646,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: INC_DIR=$INC_DIR" 1>&2
     echo "$0: debug[3]: BIN_PATH=$BIN_PATH" 1>&2
     echo "$0: debug[3]: BIN_DIR=$BIN_DIR" 1>&2
+    echo "$0: debug[3]: HTML_SED=$HTML_SED" 1>&2
     echo "$0: debug[3]: JVAL_WRAPPER=$JVAL_WRAPPER" 1>&2
     echo "$0: debug[3]: ENTRY_JSON=$ENTRY_JSON" 1>&2
     echo "$0: debug[3]: YEAR_DIR=$YEAR_DIR" 1>&2
