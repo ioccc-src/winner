@@ -16,7 +16,7 @@
 #
 # For a list of the other HTML entities, should others be needed, see:
 #
-#       https://www.w3schools.com/html/html_entities.asp
+#       https://www.webnots.com/using-symbols-and-special-characters-in-html/
 #
 # usage:
 #
