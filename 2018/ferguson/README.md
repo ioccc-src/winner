@@ -114,23 +114,32 @@ If you find yourself in an evolutionary dead end, try:
 
 ## Author's remarks:
 
-0. Preface
-1. What it is
-2. How it works
-3. Hints (Keyboards, Options, Easter egg, Example Invocations)
-4. Obfuscation (Techniques, Beauty)
-5. How to build (S and N Constants, Compilation, Portability, Installing)
-6. Final thoughts
-7. Winning comments, thanks, dedications, links, etc.
 
-## **0. Preface**
+<div id="toc">
+### Table of Contents
+</div>
 
-**OBFUSCATION NOTES: A great deal of this document and the man page is full of
-obfuscation information of different types; as such I would recommend that you try running the
-judges suggested invocations as well as running `make test` before you get into
-the document or the man page, unless you don't mind reading obfuscation information. I don't reveal
-much in the way of obfuscation however so if you just want documentation on the
-program, how to compile, etc. then there isn't need to heed this note.**
+- [Preface](#preface)
+- [What it is](#what)
+- [How it works](#how)
+- [Hints &lpar;Keyboards, Options, Easter egg, Example Invocations&rpar;](#hints)
+- [Obfuscation &lpar;Techniques, Beauty&rpar;](#obfuscation)
+- [How to build &lpar;S and N Constants, Compilation, Portability, Bugs, Installing&rpar;](#build)
+- [Final thoughts](#thoughts)
+- [Winning comments, thanks, dedications, links, etc.](#winning)
+- [Update on the Infinite Monkey Theorem, 2024](#monkey2024)
+
+<div id="preface">
+### Preface
+</div>
+
+**OBFUSCATION NOTES**: a great deal of this document and the man page is full of
+obfuscation information of different types; as such I would recommend that you
+try running the judges suggested invocations as well as running `make test`
+before you get into the document or the man page, unless you don't mind reading
+obfuscation information. I don't reveal much in the way of obfuscation however
+so if you just want documentation on the program, how to compile, etc. then
+there isn't need to heed this note.
 
 I was at a loss on how to present my remarks; on the one hand I wanted to give
 everything to the judges so they didn't miss anything. But on the other hand I
@@ -146,60 +155,66 @@ page (it explains all the options and describes the program briefly):
 If that isn't sufficient **I would recommend reading this section** *(and
 possibly the next)* where I attempt to give a brief explanation of the sections
 to make reading it easier and faster. In addition I want to point out a few
-things. *If you want more details read this document more thoroughly (or just
-the sections that seem relevant to what you're after).* The [FILES][] file is a
-quick list of files and respective summaries in this entry. Because several
+things. _If you want more details read this document more thoroughly (or just
+the sections that seem relevant to what you're after)._ Because several
 sections are quite long I have added a skip to link to skip to the next
 subsection or section at the beginning of each section (and subsection).
 
-**[What it is](#what):** This is a brief summary of the program; the man page is
+[What it is](#what): this is a brief summary of the program; the man page is
 more thorough than this.
 
-**[How it works](#how):** Explain some of the basic concepts and terms of the
+[How it works](#how): explains some of the basic concepts and terms of the
 program; if you're familiar with genetic algorithms there won't be any problem
 following this section but it might be of some value to read anyway. There is a
 randomised mode that doesn't use a genetic algorithm; it can be triggered a
 number of ways but the `-m` option enables it specially (I discuss this
-thoroughly in **[Hints](#hints)**).
+thoroughly in [Hints](#hints)).
 
-**[Hints](#hints):** Perhaps the longest part of this document because in it I
+[Hints](#hints): perhaps the longest part of this document because in it I
 document the [keyboards](#keyboards), [options](#options), subtleties, including
 features that might appear to be bugs but aren't - including an
 [input error](#error), an [Easter egg obfuscation](#obfuscation) and quite a few
 [example invocations](#invocations). If you've read the man page you probably
 don't need this unless there is something specific you're after.
 
-**[Obfuscation](#obfuscation):** Some of the techniques that might not be used.
+[Obfuscation](#obfuscation): some of the techniques that might not be used.
 
-**[How to build](#build):** Here I describe briefly
+[How to build](#build): here I describe briefly
 [the constants that can be redefined](#constants) `S`, `M` and `N`: the
 maximum size of the chromosome (target string; the maximum length is `S - 1`
 but it must be >= the default 38), the number of maximum attempts before giving
 up and the number of offspring, respectively. I
 also give [example compiler invocations](#compiling), [portability
 notes](#portability), an [more portability notes](#bugs) and a [note on
-rpm.html](rpm.html).
+rpm.html](rpm.html); I obviously **DO NOT** recommend installing it any more than
+the Judges would, but it was part of my entry for personal reasons and since the
+Judges remarked about it I have kept it in place.
 
-On the subject of `S` and `N`: As the judges' suggested runs imply you
+On the subject of `S` and `N`: as the judges' suggested runs imply you
 can change the target string at runtime; `make test` runs a script
 `test.sh` which reads from the file `test-strings.txt`, running the program
 for each string in the file, waiting approximately two seconds before
 continuing.  I explain how to pass options to the script in part of
-**[Hints](#test)**.
+[Hints](#test).
 
-**[Final thoughts](#thoughts):** You might enjoy what I included; they're
+[Final thoughts](#thoughts): you might enjoy what I included; they're
 humorous pieces by [Dennis Ritchie](#dmr) and [Ken Thompson](#ken) themselves
 from the infamous *UNIX-HATERS Handbook*.
 
-**[Winning thoughts](#winning):** What it means to me to win as well as some
+[Winning thoughts](#winning): what it means to me to win as well as some
 dedications and thanks. Here too I include a link to a website which will be
 dedicated to this entry beyond what will be published on the IOCCC website.
+
+In 2024 I saw a fun article claiming that a monkey could not in the lifetime of
+the universe type up even just Hamlet. This, with my brief foray into the Weasel
+program, was fun and amusing to read, as well as interesting. I give my comments
+at [my 2024 update](#monkey2024).
 
 [FILES]: FILES
 [rpm.html]: rpm.html
 
 <div id="what">
-## **1. What it is**
+### What it is
 </div>
 
 Skip to [How it works](#how).
@@ -239,7 +254,7 @@ comparison and output will always be capitalised).
 [The Blind Watchmaker]: https://en.wikipedia.org/wiki/The_Blind_Watchmaker
 
 <div id="how">
-## **2. How it works**
+### How it works
 </div>
 
 Skip to [Hints](#hints).
@@ -323,7 +338,7 @@ question. Later 2018 and all of 2019 was difficult for me so it was like I won a
 second time for the same entry.
 
 
-### On <del>user</del> monkey errors
+#### On <del>user</del> monkey errors
 
 If the generation reaches `SIZE_MAX - 1` I consider it a monkey (or if you
 insist: user) error; if the user insists on being so petulant enough as to try
@@ -348,7 +363,7 @@ isn't insolent enough to say the user is a monkey for certain!*
 
 
 <div id="hints">
-## **3. Hints**
+### Hints
 </div>
 
 Skip to [Obfuscation](#obfuscation).
@@ -357,7 +372,7 @@ I noted that there are a number of additional features and here I will document
 some of them.
 
 <div id="keyboards">
-### Keyboards
+#### Keyboards
 </div>
 
 Skip to [Options](#options).
@@ -383,7 +398,7 @@ can actually produce but there is a certain type of input error that might
 
 
 <div id="options">
-### Options
+#### Options
 </div>
 
 Skip to the [obfuscation section](#obfuscation).
@@ -393,7 +408,10 @@ string; some I will document here (the summary being in the man page). You can
 join options but there is a caveat with spaces and `-r` option as well as
 the target string (see below).
 
+<div id="quiet-mode">
 #### Enable quiet output:
+</div>
+
 
 ```
     -q
@@ -559,7 +577,7 @@ the `-` - *in an earlier element of `argv`. This is not a bug!*
 
 
 <div id="easter-egg">
-### Easter egg
+#### Easter egg
 </div>
 
 Skip to [Example Invocations](#invocations).
@@ -576,7 +594,7 @@ character in the keyboard. If you want to enable this specially you can use the
 `-m` option (*-m for monkey*).
 
 <div id="invocations">
-### Example Invocations
+#### Example Invocations
 </div>
 
 Skip to [Input Error Example](#error).
@@ -834,7 +852,7 @@ example shows (but the strings will still only be read from the
 `test-strings.txt` file).
 
 <div id="error">
-### Input Error Example
+#### Input Error Example
 </div>
 
 Skip to [Obfuscation](#obfuscation).
@@ -868,19 +886,19 @@ isspace('\n') == 1`. You can add these characters but the output will be
 rather confusing and hard to read.
 
 <div id="obfuscation">
-## **4. Obfuscation**
+### Obfuscation
 </div>
 
-### Techniques
+#### Techniques
 
 Skip to [Beauty](#beauty).
 
 The following might be some of the techniques used in this entry:
 
-1.  Helpful and descriptive names for all variables and constants (like `S`)
+0.  Helpful and descriptive names for all variables and constants (like `S`)
 as well as some C keywords.
 
-2.  The way `main()` is declared is:
+1.  The way `main()` is declared is:
 
 ``` <!---c-->
     /* Special C main() handler (encapsulation): */
@@ -895,33 +913,33 @@ encapsulation and executing code is it actually nothing? And if it's nothing why
 is it there? If it is something what is it doing? Could it be both? Or maybe it
 really isn't nothing or nothing? :)
 
-3. A special C parser called `H()`. It might help to observe that there
+2. A special C parser called `H()`. It might help to observe that there
 might be recursive calls and much of the program might use it. Or so it seems.
 Then again it might not help to not notice it.
 
-4.  Digraphs. In their simplest form it's probably not a big deal but consider:
+3.  Digraphs. In their simplest form it's probably not a big deal but consider:
 some source code formatters don't like them at all (neither, incidentally, does
 `splint`, which completely baulks). There also is a trick; if you try
 translating them then depending upon how you do it there can be functional
 changes in the program!
 
-5.  The fact the program can by default print the primorial prime of 97 (*but that
-default isn't the default - except when it IS the default!*) and yet that number
+4.  The fact the program can by default print the primorial prime of 97 (_but that
+default isn't the default - except when it IS the default!_) and yet that number
 isn't seen at all. See also technique #7.
 
-6.  Another usual suspect: the source is formatted in a beautiful design that
+5.  Another usual suspect: the source is formatted in a beautiful design that
 could be described artistic; on the other hand some might suggest it's just a
 blob of octets *but I disprove this when discussing beauty later on in the next
 section.*
 
-7. The string **METHINKS IT IS LIKE A WEASEL** is searched for by default
+6. The string **METHINKS IT IS LIKE A WEASEL** is searched for by default
 (except when it's not searched by default) but it's nowhere to be found in the
 source file in that form. Why? Because anyone familiar with the Weasel program
 won't recognise the string and put together what it is by looking at the source
 code.
 
-In case you wondered deciphering #5 won't decipher #7 (neither will
-deciphering #7 help you decipher #5).
+In case you wondered deciphering #4 won't decipher #6 (neither will
+deciphering #6 help you decipher #4).
 
 <div id="beauty">
 ### Beauty
@@ -949,11 +967,11 @@ this is clearly false; *as all good programmers know if something is potentially
 confusing or misleading it should be made clear in the comments! :)*
 
 <div id="build">
-## **5. How to build**
+### 5. How to build
 </div>
 
 <div id="constants">
-### S, M and N Constants
+#### S, M and N Constants
 </div>
 
 Skip to [Compilation](#compiling).
@@ -1062,7 +1080,7 @@ If you wanted to change the maximum number attempts to 100 you could do:
 ### Portability
 </div>
 
-Skip to [An aside on bugs](#bugs).
+Skip to [Bugs](#bugs).
 
 This entry requires at least C99 even if you translate digraphs. The program
 doesn't require third-party libraries and should work on any Unix based system.
@@ -1127,7 +1145,7 @@ Kernel Version: Darwin 17.5.0
 ```
 
 <div id="bugs">
-#### An aside
+#### Bugs
 </div>
 
 Skip to [Installing](#rpm).
@@ -1154,27 +1172,29 @@ Skip to [Final thoughts](#thoughts).
 I have included a RPM spec file for those with a Red Hat based Linux
 distribution; see [rpm.html](rpm.html) for details (including why I implemented
 this) if for some (strange or maybe even mad) reason you're interested, which
-basically means nobody but me.
+I fully realise and always realised means nobody but me. Indeed not only do I
+know nobody else would use it but I would recommend against it as well. It was a
+personal thing and since the Judges remarked about it I kept it in.
 
 [rpm.html]: rpm.html
 
 <div id="thoughts">
-## **6. Final thoughts**
+### Final thoughts
 </div>
 
 Skip to [Winning comments](#winning).
 
 The judges suggested that making them laugh helps entries chance of winning.
-Well *laughter helps everything* so in case you haven't seen - and *even if you
-have seen* - Dennis Ritchie's anti-foreword to the ghastly *UNIX-HATERS
-Handbook* or Ken Thompson's revelation that C and Unix are a hoax (at the end of
+Well _laughter helps everything_ so in case you haven't seen - and _even if you
+have seen_ - Dennis Ritchie's anti-foreword to the ghastly _UNIX-HATERS
+Handbook_ or Ken Thompson's revelation that C and Unix are a hoax (at the end of
 that book) I include it below; because I agree that looking at a lot of twisted
 code must be quite difficult (though maybe not as much as if you were to have to
 look at Microsoft Windows code or code for Windows in any case ? :)) and these
 two things I think are rather amusing (in order of least to most):
 
 <div id="dmr">
-Dennis Ritchie's Anti-Foreword:
+#### Dennis Ritchie's Anti-Foreword:
 </div>
 
 > Anti-Foreword
@@ -1226,7 +1246,7 @@ albeit not very much (and it still *'compiles'!*); and isn't that what this
 contest is about? :)
 
 <div id="ken">
-Ken Thompson's ending:
+#### Ken Thompson's ending:
 </div>
 
 >    Creators Admit C, Unix Were Hoax
@@ -1255,10 +1275,11 @@ parody of Multics, as well as other more risque allusions.
 added additional cryptic features and evolved into B, BCPL, and finally C. We
 stopped when we got a clean compile on the following syntax:
 >
->   `for(;P("\n"),R=;P("|"))for(e=C;e=P("_"+(*u++/`<br>
->   `8)%2))P("|"+(*u/4)%2);`
->
->
+``` <!---c-->
+    for(;P("\n"),R=;P("|"))for(e=C;e=P("_"+(*u++/
+    8)%2))P("|"+(*u/4)%2);
+```
+
 >    "To think that modern programmers would try to use a language that allowed
 such a statement was beyond our comprehension! We actually thought of selling
 this to the Soviets to set their computer science progress back 20 or more
@@ -1289,12 +1310,12 @@ Barnum was correct.
 
 So is it a hoax about a non-hoax, a non-hoax about a hoax, a non-hoax about a
 non-hoax or is it a hoax about a hoax ? :) And if it's any of those what does it
-mean about Unix and C?** And if a hoax is involved *what is the hoax?* The pedant
+mean about Unix and C? And if a hoax is involved _what is the hoax?_ The pedant
 and Tolkienist that I am has to state that **Tolkien didn't consider The Lord of
-the Rings a trilogy** *(and he made that very clear)* but that doesn't take away
-from the humour by any stretch (*if anyone wants me to elaborate or debate the
+the Rings a trilogy** _(and he made that very clear)_ but that doesn't take away
+from the humour by any stretch (_if anyone wants me to elaborate or debate the
 matter do send me an email - I love Tolkien's Legendarium and having another
-person to talk about it with is more than welcome!*). Ken suggested that there
+person to talk about it with is more than welcome!_). Ken suggested that there
 is a lack of common sense but since he was part of its creation I don't think
 it's a bad thing; **on the contrary it makes all of us C programmers even more
 talented! :)** I do wonder if he tested that bit of C code though:
@@ -1311,7 +1332,7 @@ for the contest but decided for the message by itself in the end). I would
 prefer believing that whether true or not.
 
 <div id="winning">
-## **7. Winning comments, thanks, dedications, links, etc.**
+### Winning comments, thanks, dedications, links, etc.
 </div>
 
 I feel incredibly honoured, privileged and I am extremely happy and proud to
@@ -1378,6 +1399,59 @@ winning entries as well.
 
 If you wish to contact me please do so. Please contact via mastodon. You can try
 email but I'm more likely to respond to mastodon messages.
+
+<div id="monkey2024">
+### Update on the Infinite Monkey Theorem, 2024
+</div>
+
+On 1 November 2024 I saw an article called [Typing monkey would be unable to
+produce 'Hamlet' within the lifetime of the universe, study
+finds](https://phys.org/news/2024-10-monkey-unable-hamlet-lifetime-universe.html).
+This interested me greatly given my foray into the Infinite Monkey Theorem, for
+this entry, and I'd like to briefly comment on it.
+
+What I found interesting is the beginning where it says that it would take far
+longer than the lifetime of our universe as they say it's still technically true
+that Eric the monkey could type out the complete works of Shakespeare given
+enough time, it is misleading.
+
+With what I did I believe that I have shown how very hard it is and what's more
+is that something ignored is that even if this was true the monkey would not
+live long enough. There is one possible exception.
+
+If Eric was taught to type and to read then it would be possible. But then that
+would not be the Infinite Monkey Theorem as it says specifically typing at
+random.
+
+Another thing that interested me in this article is a quote from the
+mathematicians:
+
+> 'The Infinite Monkey Theorem only considers the infinite limit, with either an
+infinite number of monkeys or an infinite time period of monkey labour,' said
+Associate Professor Woodcock.
+
+Yes, this is why it's called the '**Infinite** Monkey Theorem'. It's a fun study
+to consider, maybe, but it's likely just as silly as the original theorem and
+even the difference of the Weasel program and the original theory (I believe
+there are some minor differences as described below).
+
+A difference from the Weasel program, which is what my entry is, is that the
+monkey has an easier time by making the keyboard the 26 capital letters and the
+space bar. I am not sure how exactly this diverges from the Infinite Monkey
+Theorem, however. They did in this study include punctuation and the letters
+whereas I also diverged slightly from the Weasel program, namely by including
+more than just space and the 26 English capital letters, though the alternate
+version has a simpler keyboard.
+
+This was both interesting and amusing:
+
+> The results reveal that it is possible (around a 5% chance) for a single chimp
+to type the word 'bananas' in its own lifetime.
+
+My question would be: will Eric be given bananas for typing '_bananas_'? Well
+we'll probably never know. Still, a silly study for a silly theorem but all in
+good fun, I suppose.
+
 
 [https://ioccc.xexyl.net/2018/weasel]: https://ioccc.xexyl.net/2018/weasel
 [errata page]: https://ioccc.xexyl.net/2018/weasel/errata
