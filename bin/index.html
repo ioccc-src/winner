@@ -896,8 +896,8 @@ or if not found, the <code>JSONPath.sh(1)</code> tool from the recently forked a
     bin/jval-wrapper.sh -b -q 1984/mullender/.entry.json &#39;$.manifest[2].inventory_order&#39;
 
     bin/jval-wrapper.sh author/Anton_Algmyr.json &#39;$.full_name&#39;
-    bin/jval-wrapper.sh -q -T author/Anton_Algmyr.json &#39;$.full_name&#39; | jstrencode -</code></pre>
-<p><strong>NOTE</strong>: With <code>jstrencode(1)</code> version 1.2.3 or better, one can use <code>jstrencode -N</code>
+    bin/jval-wrapper.sh -q -T author/Anton_Algmyr.json &#39;$.full_name&#39; | jstrdecode -</code></pre>
+<p><strong>NOTE</strong>: With <code>jstrdecode(1)</code> version 1.2.3 or better, one can use <code>jstrdecode -N</code>
 and not have to use <code>-T</code> with <code>bin/jval-wrapper.sh</code>.</p>
 <div id="manifest-csv-entry">
 <h3 id="manifest.csv.entry.awk"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/bin/manifest.csv.entry.awk">manifest.csv.entry.awk</a></h3>

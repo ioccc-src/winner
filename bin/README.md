@@ -806,10 +806,10 @@ For example:
     bin/jval-wrapper.sh -b -q 1984/mullender/.entry.json '$.manifest[2].inventory_order'
 
     bin/jval-wrapper.sh author/Anton_Algmyr.json '$.full_name'
-    bin/jval-wrapper.sh -q -T author/Anton_Algmyr.json '$.full_name' | jstrencode -
+    bin/jval-wrapper.sh -q -T author/Anton_Algmyr.json '$.full_name' | jstrdecode -
 ```
 
-**NOTE**: With `jstrencode(1)` version 1.2.3 or better, one can use `jstrencode -N`
+**NOTE**: With `jstrdecode(1)` version 1.2.3 or better, one can use `jstrdecode -N`
 and not have to use `-T` with `bin/jval-wrapper.sh`.
 
 

@@ -302,17 +302,17 @@ within_manifest_array == 1 && begin_manifest_element == 1 && NF >= 3 && $1 ~ /^"
 
     # so we can single quote the entry_text as a single string, we protect any single quotes within it
     #
-    jstrencode_arg = entry_text;
-    gsub(/'/, "'\"'\"'", jstrencode_arg);
+    jstrdecode_arg = entry_text;
+    gsub(/'/, "'\"'\"'", jstrdecode_arg);
 
-    # form the jstrencode command
+    # form the jstrdecode command
     #
-    if (jstrencode_arg ~ /^".*"$/) {
-	jstrencode_cmd = "jstrencode -Q -- " "'" substr(jstrencode_arg, 2, length(jstrencode_arg)-2)  "'";
+    if (jstrdecode_arg ~ /^".*"$/) {
+	jstrdecode_cmd = "jstrdecode -Q -- " "'" substr(jstrdecode_arg, 2, length(jstrdecode_arg)-2)  "'";
     } else {
-	jstrencode_cmd = "jstrencode -Q -- " "'" jstrencode_arg "'";
+	jstrdecode_cmd = "jstrdecode -Q -- " "'" jstrdecode_arg "'";
     }
-    jstrencode_cmd = jstrencode_cmd " 2>/dev/null; echo $?";
+    jstrdecode_cmd = jstrdecode_cmd " 2>/dev/null; echo $?";
 
     # JSON decode entry_text
     #
@@ -320,21 +320,21 @@ within_manifest_array == 1 && begin_manifest_element == 1 && NF >= 3 && $1 ~ /^"
     result = "";
     exit_code = 0;
     # process each pipe line
-    while ((jstrencode_cmd | getline pipe_output) > 0) {
+    while ((jstrdecode_cmd | getline pipe_output) > 0) {
 	if (numLines++ == 0) {
-	    # case: 1st line is from jstrencode
+	    # case: 1st line is from jstrdecode
 	    result = pipe_output;
 	} else {
-	    # case: 2nd/line line is the jstrencode exit code
+	    # case: 2nd/line line is the jstrdecode exit code
 	    exit_code = pipe_output;
 	}
     }
-    close(jstrencode_cmd);
+    close(jstrdecode_cmd);
 
-    # validate exit code from jstrencode
+    # validate exit code from jstrdecode
     #
     if (length(exit_code) == 0 || exit_code != 0) {
-	print "ERROR: unable to jstrencode entry_text:", entry_text > "/dev/stderr";
+	print "ERROR: unable to jstrdecode entry_text:", entry_text > "/dev/stderr";
 	exit 213;	# END section will output ERROR message about cannot JSON decode entry_text
     }
 
