@@ -161,7 +161,7 @@ if [[ -z $JSTRDECODE ]]; then
     echo "$0: notice: then: cd jparse && sudo make install clobber" 1>&2
     exit 5
 fi
-export MIN_JSTRDECODE_VERSION="2.0.2"
+export MIN_JSTRDECODE_VERSION="2.1.0"
 JSTRDECODE_VERSION=$("$JSTRDECODE" -V | head -1 | awk '{print $3;}')
 if ! "$VERGE" "$JSTRDECODE_VERSION" "$MIN_JSTRDECODE_VERSION"; then
     echo "$0: FATAL: jstrdecode version: $JSTRDECODE_VERSION < minimum version: $MIN_JSTRDECODE_VERSION" 1>&2
