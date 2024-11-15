@@ -119,10 +119,10 @@ if [[ -z "$CHKENTRY_TOOL" ]]; then
     exit 5
 fi
 #
-JSTRENCODE_TOOL=$(type -P jstrencode)
-export JSTRENCODE_TOOL
-if [[ -z "$JSTRENCODE_TOOL" ]]; then
-    echo "$0: FATAL: jstrencode tool is not installed or not in \$PATH" 1>&2
+JSTRDECODE_TOOL=$(type -P jstrdecode)
+export JSTRDECODE_TOOL
+if [[ -z "$JSTRDECODE_TOOL" ]]; then
+    echo "$0: FATAL: jstrdecode tool is not installed or not in \$PATH" 1>&2
     echo "$0: Notice: if needed: $GIT_TOOL clone $MKIOCCCENTRY_REPO; cd mkiocccentry" 1>&2
     echo "$0: Notice: then if needed: make clobber all install" 1>&2
     exit 5
@@ -163,16 +163,16 @@ export X_3="X""X""X"
 # usage
 #
 export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir]
-	[-c chkeckentry] [-j jstrencode] [-s jstrencode]
-	[-T tarball_dir] [-i input_data] [-n] [-N] YYYY/dir
+	[-c chkentry] [-j jstrdecode] [-T tarball_dir]
+        [-i input_data] [-n] [-N] YYYY/dir
 
 	-h		print help message and exit
 	-v level	set verbosity level (def level: 0)
 	-V		print version string and exit
 
 	-d topdir	set topdir (def: $TOPDIR)
-	-c chkeckentry	path to the chkentry tool (def: $CHKENTRY_TOOL)
-	-s jstrencode	path to the jstrencode tool (def: $JSTRENCODE_TOOL)
+	-c chkentry	path to the chkentry tool (def: $CHKENTRY_TOOL)
+	-j jstrdecode	path to the jstrdecode tool (def: $JSTRDECODE_TOOL)
 
 	-T tarball_dir	where to form the compressed tarball of modified files (def: $TARBALL_DIR)
 
@@ -199,7 +199,7 @@ $NAME version: $VERSION"
 
 # prompt_string
 #
-# Prompt the user for a string and output as an encoded JSON string.
+# Prompt the user for a string and output as an decoded JSON string.
 #
 # If "-i input_data: is used, the printing of the prompt is disabled,
 # and the query of correctness is also disabled.
@@ -214,7 +214,7 @@ $NAME version: $VERSION"
 function prompt_string
 {
     local INPUT;		# user input
-    local ENCODED;		# INPUT encoded as JSON string
+    local DECODED;		# INPUT decoded as JSON string
     local Y_OR_N;		# y or n
     local ITEM_NAME;		# name of the item being prompted for
 
@@ -246,21 +246,21 @@ function prompt_string
 	    continue
 	fi
 
-	# JSON encode value
+	# JSON decode value
 	#
-	ENCODED=$("$JSTRENCODE_TOOL" -q -n -- "$INPUT")
+	DECODED=$("$JSTRDECODE_TOOL" -q -n -- "$INPUT")
 	status="$?"
-	if [[ $status -ne 0 || -z $ENCODED ]]; then
-	    echo "$0: ERROR: in prompt_string: $JSTRENCODE_TOOL -q -n -- $INPUT failed," \
+	if [[ $status -ne 0 || -z $DECODED ]]; then
+	    echo "$0: ERROR: in prompt_string: $JSTRDECODE_TOOL -q -n -- $INPUT failed," \
 		 "error code: $status" 1>&2
 	    exit 1
 	fi
 
-	# verify JSON encoded value
+	# verify JSON decoded value
 	#
 	if [[ -z $INPUT_DATA_FILE ]]; then
 	    echo
-	    echo "Verify encoded $ITEM_NAME: $ENCODED" 1>&2
+	    echo "Verify decoded $ITEM_NAME: $DECODED" 1>&2
 	    echo
 	    echo -n 'Is that correct? [y,N]: '
 	    read -r Y_OR_N
@@ -276,16 +276,16 @@ function prompt_string
 	echo
     fi
 
-    # set VALUE to the JSON encoded string
+    # set VALUE to the JSON decoded string
     #
-    VALUE="$ENCODED"
+    VALUE="$DECODED"
     return 0
 }
 
 
 # prompt_integer
 #
-# Prompt the user for an integer and output as an encoded JSON string.
+# Prompt the user for an integer and output as an decoded JSON string.
 #
 # If "-i input_data: is used, the printing of the prompt is disabled,
 # and the query of correctness is also disabled.
@@ -300,7 +300,7 @@ function prompt_string
 function prompt_integer
 {
     local INPUT;		# user input
-    local ENCODED;		# INPUT encoded as JSON string
+    local DECODED;		# INPUT decoded as JSON string
     local Y_OR_N;		# y or n
     local ITEM_NAME;		# name of the item being prompted for
 
@@ -332,12 +332,12 @@ function prompt_integer
 	    continue
 	fi
 	if [[ $INPUT =~ ^[[:digit:]]+$ && $INPUT -ge 0 && $INPUT -le 4294967295 ]]; then
-	    # JSON encode value
+	    # JSON decode value
 	    #
-	    ENCODED=$("$JSTRENCODE_TOOL" -q -n -- "$INPUT")
+	    DECODED=$("$JSTRDECODE_TOOL" -q -n -- "$INPUT")
 	    status="$?"
-	    if [[ $status -ne 0 || -z $ENCODED ]]; then
-		echo "$0: ERROR: in prompt_integer: $JSTRENCODE_TOOL -q -n -- $INPUT failed," \
+	    if [[ $status -ne 0 || -z $DECODED ]]; then
+		echo "$0: ERROR: in prompt_integer: $JSTRDECODE_TOOL -q -n -- $INPUT failed," \
 		     "error code: $status" 1>&2
 		exit 1
 	    fi
@@ -347,11 +347,11 @@ function prompt_integer
 	    continue
 	fi
 
-	# verify JSON encoded value
+	# verify JSON decoded value
 	#
 	if [[ -z $INPUT_DATA_FILE ]]; then
 	    echo
-	    echo "Verify encoded $ITEM_NAME: $ENCODED" 1>&2
+	    echo "Verify decoded $ITEM_NAME: $DECODED" 1>&2
 	    echo
 	    echo -n 'Is that correct? [y,N]: '
 	    read -r Y_OR_N
@@ -367,9 +367,9 @@ function prompt_integer
 	echo
     fi
 
-    # set VALUE to the JSON encoded string
+    # set VALUE to the JSON decoded string
     #
-    VALUE="$ENCODED"
+    VALUE="$DECODED"
     return 0
 }
 
@@ -737,7 +737,7 @@ while getopts :hv:Vd:c:s:i:T:nN flag; do
 	;;
     c) CHKENTRY_TOOL="$OPTARG"
 	;;
-    s) JSTRENCODE_TOOL="$OPTARG"
+    s) JSTRDECODE_TOOL="$OPTARG"
 	;;
     i) INPUT_DATA_FILE="$OPTARG"
 	;;
@@ -1019,7 +1019,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: GIT_TOOL=$GIT_TOOL" 1>&2
     echo "$0: debug[3]: TOPDIR=$TOPDIR" 1>&2
     echo "$0: debug[3]: CHKENTRY_TOOL=$CHKENTRY_TOOL" 1>&2
-    echo "$0: debug[3]: JSTRENCODE_TOOL=$JSTRENCODE_TOOL" 1>&2
+    echo "$0: debug[3]: JSTRDECODE_TOOL=$JSTRDECODE_TOOL" 1>&2
     echo "$0: debug[3]: GTAR_TOOL=$GTAR_TOOL" 1>&2
     echo "$0: debug[3]: REPO_TOP_URL=$REPO_TOP_URL" 1>&2
     echo "$0: debug[3]: REPO_URL=$REPO_URL" 1>&2
@@ -1111,22 +1111,22 @@ if [[ ! -x $CHKENTRY_TOOL ]]; then
 fi
 
 
-# firewall - verify jstrencode tool
+# firewall - verify jstrdecode tool
 #
-if [[ ! -e $JSTRENCODE_TOOL ]]; then
-    echo "$0: ERROR: jstrencode file does not exist: $JSTRENCODE_TOOL" 1>&2
+if [[ ! -e $JSTRDECODE_TOOL ]]; then
+    echo "$0: ERROR: jstrdecode file does not exist: $JSTRDECODE_TOOL" 1>&2
     echo "$0: Notice: if needed: $GIT_TOOL clone $MKIOCCCENTRY_REPO; cd mkiocccentry" 1>&2
     echo "$0: Notice: then if needed: make clobber all install" 1>&2
     exit 5
 fi
-if [[ ! -f $JSTRENCODE_TOOL ]]; then
-    echo "$0: ERROR: jstrencode is not a file: $JSTRENCODE_TOOL" 1>&2
+if [[ ! -f $JSTRDECODE_TOOL ]]; then
+    echo "$0: ERROR: jstrdecode is not a file: $JSTRDECODE_TOOL" 1>&2
     echo "$0: Notice: if needed: $GIT_TOOL clone $MKIOCCCENTRY_REPO; cd mkiocccentry" 1>&2
     echo "$0: Notice: then if needed: make clobber all install" 1>&2
     exit 5
 fi
-if [[ ! -x $JSTRENCODE_TOOL ]]; then
-    echo "$0: ERROR: cannot find an executable jstrencode tool: $JSTRENCODE_TOOL" 1>&2
+if [[ ! -x $JSTRDECODE_TOOL ]]; then
+    echo "$0: ERROR: cannot find an executable jstrdecode tool: $JSTRDECODE_TOOL" 1>&2
     echo "$0: Notice: if needed: $GIT_TOOL clone $MKIOCCCENTRY_REPO; cd mkiocccentry" 1>&2
     echo "$0: Notice: then if needed: make clobber all install" 1>&2
     exit 5

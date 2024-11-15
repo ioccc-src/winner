@@ -290,7 +290,7 @@ echo "DOCROOT_SLASH=$DOCROOT_SLASH"
 export VALIDATOR_ENCODED_URL
 
 
-# output the Validator encoded URL
+# output the Validator decoded URL
 #
 echo "-s"
 echo "VALIDATOR_ENCODED_URL=$VALIDATOR_ENCODED_URL"
