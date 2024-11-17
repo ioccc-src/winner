@@ -94,7 +94,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.3 2024-09-27"
+export VERSION="1.3.1 2024-11-16"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -119,12 +119,35 @@ if [[ -z "$CHKENTRY_TOOL" ]]; then
     exit 5
 fi
 #
-JSTRDECODE_TOOL=$(type -P jstrdecode)
-export JSTRDECODE_TOOL
-if [[ -z "$JSTRDECODE_TOOL" ]]; then
-    echo "$0: FATAL: jstrdecode tool is not installed or not in \$PATH" 1>&2
-    echo "$0: Notice: if needed: $GIT_TOOL clone $MKIOCCCENTRY_REPO; cd mkiocccentry" 1>&2
-    echo "$0: Notice: then if needed: make clobber all install" 1>&2
+VERGE=$(type -P verge)
+export VERGE
+if [[ -z $VERGE ]]; then
+    echo "$0: FATAL: verge is not installed or not in \$PATH" 1>&2
+    echo "$0: notice: to install verge:" 1>&2
+    echo "$0: notice: run: git clone https://github.com/ioccc-src/mkiocccentry.git" 1>&2
+    echo "$0: notice: then: cd mkiocccentry && make clobber all" 1>&2
+    echo "$0: notice: then: cd jparse && sudo make install clobber" 1>&2
+    exit 5
+fi
+#
+JSTRDECODE=$(type -P jstrdecode)
+export JSTRDECODE
+if [[ -z $JSTRDECODE ]]; then
+    echo "$0: FATAL: jstrdecode is not installed or not in \$PATH" 1>&2
+    echo "$0: notice: to install jstrdecode:" 1>&2
+    echo "$0: notice: run: git clone https://github.com/ioccc-src/mkiocccentry.git" 1>&2
+    echo "$0: notice: then: cd mkiocccentry && make clobber all" 1>&2
+    echo "$0: notice: then: cd jparse && sudo make install clobber" 1>&2
+    exit 5
+fi
+export MIN_JSTRDECODE_VERSION="2.1.2"
+JSTRDECODE_VERSION=$("$JSTRDECODE" -V | head -1 | awk '{print $3;}')
+if ! "$VERGE" "$JSTRDECODE_VERSION" "$MIN_JSTRDECODE_VERSION"; then
+    echo "$0: FATAL: jstrdecode version: $JSTRDECODE_VERSION < minimum version: $MIN_JSTRDECODE_VERSION" 1>&2
+    echo "$0: notice: consider updating jstrdecode from mkiocccentry repo" 1>&2
+    echo "$0: notice: run: git clone https://github.com/ioccc-src/mkiocccentry.git" 1>&2
+    echo "$0: notice: then: cd mkiocccentry && make clobber all" 1>&2
+    echo "$0: notice: then: cd jparse && sudo make install clobber" 1>&2
     exit 5
 fi
 #
@@ -163,7 +186,7 @@ export X_3="X""X""X"
 # usage
 #
 export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir]
-	[-c chkentry] [-j jstrdecode] [-T tarball_dir]
+	[-c chkentry] [-T tarball_dir]
         [-i input_data] [-n] [-N] YYYY/dir
 
 	-h		print help message and exit
@@ -172,7 +195,6 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir]
 
 	-d topdir	set topdir (def: $TOPDIR)
 	-c chkentry	path to the chkentry tool (def: $CHKENTRY_TOOL)
-	-j jstrdecode	path to the jstrdecode tool (def: $JSTRDECODE_TOOL)
 
 	-T tarball_dir	where to form the compressed tarball of modified files (def: $TARBALL_DIR)
 
@@ -248,10 +270,10 @@ function prompt_string
 
 	# JSON decode value
 	#
-	DECODED=$("$JSTRDECODE_TOOL" -q -n -- "$INPUT")
+	DECODED=$("$JSTRDECODE" -d -q -N -- "$INPUT")
 	status="$?"
 	if [[ $status -ne 0 || -z $DECODED ]]; then
-	    echo "$0: ERROR: in prompt_string: $JSTRDECODE_TOOL -q -n -- $INPUT failed," \
+	    echo "$0: ERROR: in prompt_string: $JSTRDECODE -d -q -N -- $INPUT failed," \
 		 "error code: $status" 1>&2
 	    exit 1
 	fi
@@ -334,10 +356,10 @@ function prompt_integer
 	if [[ $INPUT =~ ^[[:digit:]]+$ && $INPUT -ge 0 && $INPUT -le 4294967295 ]]; then
 	    # JSON decode value
 	    #
-	    DECODED=$("$JSTRDECODE_TOOL" -q -n -- "$INPUT")
+	    DECODED=$("$JSTRDECODE" -d -q -N -- "$INPUT")
 	    status="$?"
 	    if [[ $status -ne 0 || -z $DECODED ]]; then
-		echo "$0: ERROR: in prompt_integer: $JSTRDECODE_TOOL -q -n -- $INPUT failed," \
+		echo "$0: ERROR: in prompt_integer: $JSTRDECODE -d -q -N -- $INPUT failed," \
 		     "error code: $status" 1>&2
 		exit 1
 	    fi
@@ -723,7 +745,7 @@ function write_author_handle_file
 
 # parse command line
 #
-while getopts :hv:Vd:c:s:i:T:nN flag; do
+while getopts :hv:Vd:c:i:T:nN flag; do
   case "$flag" in
     h) echo "$USAGE" 1>&2
 	exit 2
@@ -736,8 +758,6 @@ while getopts :hv:Vd:c:s:i:T:nN flag; do
     d) TOPDIR="$OPTARG"
 	;;
     c) CHKENTRY_TOOL="$OPTARG"
-	;;
-    s) JSTRDECODE_TOOL="$OPTARG"
 	;;
     i) INPUT_DATA_FILE="$OPTARG"
 	;;
@@ -1019,7 +1039,10 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: GIT_TOOL=$GIT_TOOL" 1>&2
     echo "$0: debug[3]: TOPDIR=$TOPDIR" 1>&2
     echo "$0: debug[3]: CHKENTRY_TOOL=$CHKENTRY_TOOL" 1>&2
-    echo "$0: debug[3]: JSTRDECODE_TOOL=$JSTRDECODE_TOOL" 1>&2
+    echo "$0: debug[3]: VERGE=$VERGE" 1>&2
+    echo "$0: debug[3]: JSTRDECODE=$JSTRDECODE" 1>&2
+    echo "$0: debug[3]: MIN_JSTRDECODE_VERSION=$MIN_JSTRDECODE_VERSION" 1>&2
+    echo "$0: debug[3]: JSTRDECODE_VERSION=$JSTRDECODE_VERSION" 1>&2
     echo "$0: debug[3]: GTAR_TOOL=$GTAR_TOOL" 1>&2
     echo "$0: debug[3]: REPO_TOP_URL=$REPO_TOP_URL" 1>&2
     echo "$0: debug[3]: REPO_URL=$REPO_URL" 1>&2
@@ -1105,28 +1128,6 @@ if [[ ! -f $CHKENTRY_TOOL ]]; then
 fi
 if [[ ! -x $CHKENTRY_TOOL ]]; then
     echo "$0: ERROR: cannot find an executable chkentry tool: $CHKENTRY_TOOL" 1>&2
-    echo "$0: Notice: if needed: $GIT_TOOL clone $MKIOCCCENTRY_REPO; cd mkiocccentry" 1>&2
-    echo "$0: Notice: then if needed: make clobber all install" 1>&2
-    exit 5
-fi
-
-
-# firewall - verify jstrdecode tool
-#
-if [[ ! -e $JSTRDECODE_TOOL ]]; then
-    echo "$0: ERROR: jstrdecode file does not exist: $JSTRDECODE_TOOL" 1>&2
-    echo "$0: Notice: if needed: $GIT_TOOL clone $MKIOCCCENTRY_REPO; cd mkiocccentry" 1>&2
-    echo "$0: Notice: then if needed: make clobber all install" 1>&2
-    exit 5
-fi
-if [[ ! -f $JSTRDECODE_TOOL ]]; then
-    echo "$0: ERROR: jstrdecode is not a file: $JSTRDECODE_TOOL" 1>&2
-    echo "$0: Notice: if needed: $GIT_TOOL clone $MKIOCCCENTRY_REPO; cd mkiocccentry" 1>&2
-    echo "$0: Notice: then if needed: make clobber all install" 1>&2
-    exit 5
-fi
-if [[ ! -x $JSTRDECODE_TOOL ]]; then
-    echo "$0: ERROR: cannot find an executable jstrdecode tool: $JSTRDECODE_TOOL" 1>&2
     echo "$0: Notice: if needed: $GIT_TOOL clone $MKIOCCCENTRY_REPO; cd mkiocccentry" 1>&2
     echo "$0: Notice: then if needed: make clobber all install" 1>&2
     exit 5

@@ -104,7 +104,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.10.1 2024-10-10"
+export VERSION="1.10.2 2024-11-16"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -142,7 +142,7 @@ if [[ -z $JSTRDECODE ]]; then
     echo "$0: notice: then: cd jparse && sudo make install clobber" 1>&2
     exit 5
 fi
-export MIN_JSTRDECODE_VERSION="2.1.0"
+export MIN_JSTRDECODE_VERSION="2.1.2"
 JSTRDECODE_VERSION=$("$JSTRDECODE" -V | head -1 | awk '{print $3;}')
 if ! "$VERGE" "$JSTRDECODE_VERSION" "$MIN_JSTRDECODE_VERSION"; then
     echo "$0: FATAL: jstrdecode version: $JSTRDECODE_VERSION < minimum version: $MIN_JSTRDECODE_VERSION" 1>&2
@@ -345,10 +345,13 @@ function output_full_name
     # extract Full Name from the author/author_handle.json file
     #
     PATTERN='$..full_name'
-    "$JVAL_WRAPPER" -b -q "$AUTHOR_HANDLE_JSON_PATH" "$PATTERN" | "$JSTRDECODE" -N -
+    if [[ $V_FLAG -ge 5 ]]; then
+	echo  "$0: debug[5]: about to run: $JVAL_WRAPPER -b -q -- $AUTHOR_HANDLE_JSON_PATH '$PATTERN' | $JSTRDECODE -d -q -N -" 1>&2
+    fi
+    "$JVAL_WRAPPER" -b -q "$AUTHOR_HANDLE_JSON_PATH" "$PATTERN" | "$JSTRDECODE" -d -q -N -
     status_codes=("${PIPESTATUS[@]}")
     if [[ ${status_codes[*]} =~ [1-9] ]]; then
-	echo  "$0: ERROR: in output_full_name: $JVAL_WRAPPER -b -q $AUTHOR_HANDLE_JSON_PATH '$PATTERN' | $JSTRDECODE -N - failed," \
+	echo  "$0: ERROR: in output_full_name: $JVAL_WRAPPER -b -q $AUTHOR_HANDLE_JSON_PATH '$PATTERN' | $JSTRDECODE -d -q -N - failed," \
 	      "error codes: ${status_codes[*]}" 1>&2
 	return 5
     fi

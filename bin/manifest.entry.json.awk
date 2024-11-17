@@ -23,7 +23,7 @@ BEGIN {
 
     # setup
     #
-    VERSION="1.2 2024-09-17"
+    VERSION="1.2.1 2024-11-16"
     found_manifest_array = 0;	# 1 ==> we found the manifest ARRAY
     within_manifest_array = 0;	# 1 ==> found start of "manifest" : [ JSON array
     begin_manifest_element = 0;	# 1 ==> we have found the start of the manifest array element
@@ -308,9 +308,9 @@ within_manifest_array == 1 && begin_manifest_element == 1 && NF >= 3 && $1 ~ /^"
     # form the jstrdecode command
     #
     if (jstrdecode_arg ~ /^".*"$/) {
-	jstrdecode_cmd = "jstrdecode -Q -- " "'" substr(jstrdecode_arg, 2, length(jstrdecode_arg)-2)  "'";
+	jstrdecode_cmd = "jstrdecode -d -q -Q -- " "'" substr(jstrdecode_arg, 2, length(jstrdecode_arg)-2)  "'";
     } else {
-	jstrdecode_cmd = "jstrdecode -Q -- " "'" jstrdecode_arg "'";
+	jstrdecode_cmd = "jstrdecode -d -q -Q -- " "'" jstrdecode_arg "'";
     }
     jstrdecode_cmd = jstrdecode_cmd " 2>/dev/null; echo $?";
 

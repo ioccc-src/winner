@@ -98,7 +98,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.14.1 2024-10-10"
+export VERSION="1.14.2 2024-11-16"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -136,7 +136,7 @@ if [[ -z $JSTRDECODE ]]; then
     echo "$0: notice: then: cd jparse && sudo make install clobber" 1>&2
     exit 5
 fi
-export MIN_JSTRDECODE_VERSION="2.1.0"
+export MIN_JSTRDECODE_VERSION="2.1.2"
 JSTRDECODE_VERSION=$("$JSTRDECODE" -V | head -1 | awk '{print $3;}')
 if ! "$VERGE" "$JSTRDECODE_VERSION" "$MIN_JSTRDECODE_VERSION"; then
     echo "$0: FATAL: jstrdecode version: $JSTRDECODE_VERSION < minimum version: $MIN_JSTRDECODE_VERSION" 1>&2
@@ -283,12 +283,12 @@ function output_award
     #
     PATTERN='$..award'
     if [[ $V_FLAG -ge 5 ]]; then
-	echo  "$0: debug[5]: about to run: $JVAL_WRAPPER -b -q -- $ENTRY_JSON_PATH '$PATTERN' | $JSTRDECODE -N -" 1>&2
+	echo  "$0: debug[5]: about to run: $JVAL_WRAPPER -b -q -- $ENTRY_JSON_PATH '$PATTERN' | $JSTRDECODE -d -q -N -" 1>&2
     fi
-    "$JVAL_WRAPPER" -b -q "$ENTRY_JSON_PATH" "$PATTERN" | "$JSTRDECODE" -N -
+    "$JVAL_WRAPPER" -b -q "$ENTRY_JSON_PATH" "$PATTERN" | "$JSTRDECODE" -d -q -N -
     status_codes=("${PIPESTATUS[@]}")
     if [[ ${status_codes[*]} =~ [1-9] ]]; then
-	echo "$0: ERROR: in output_award: $JVAL_WRAPPER -b -q -- $ENTRY_JSON_PATH '$PATTERN' | $JSTRDECODE -N - failed," \
+	echo "$0: ERROR: in output_award: $JVAL_WRAPPER -b -q -- $ENTRY_JSON_PATH '$PATTERN' | $JSTRDECODE -d -q -N - failed," \
 	     "error codes: ${status_codes[*]}" 1>&2
 	return 5
     fi
@@ -795,7 +795,7 @@ EOF
 		#
 		case "$NAME" in
 		full_name)
-		    FULL_NAME=$("$JSTRDECODE" "$VALUE")
+		    FULL_NAME=$("$JSTRDECODE" -d -q -N -- "$VALUE")
 		    ;;
 		location_code)
 		    LOCATION_CODE="$VALUE"
@@ -816,7 +816,7 @@ EOF
 		    AUTHOR_GITHUB="$VALUE"
 		    ;;
 		affiliation)
-		    AUTHOR_AFFILIATION=$("$JSTRDECODE" "$VALUE")
+		    AUTHOR_AFFILIATION=$("$JSTRDECODE" -d -q -N -- "$VALUE")
 		    ;;
 		author_handle)
 		    AUTHOR_HANDLE="$VALUE"
