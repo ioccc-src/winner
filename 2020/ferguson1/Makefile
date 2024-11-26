@@ -39,9 +39,8 @@ include ../../var.mk
 # Common C compiler warnings to silence
 #
 CSILENCE= -Wno-unused-value -Wno-implicit-fallthrough -Wno-parentheses \
-	  -Wno-binding-in-condition -Wno-binding-in-condition \
-	  -Wno-misleading-indentation -Wno-comment -Wno-implicit-function-declaration \
-          -Wno-misleading-indentation -Wno-unused-value
+	  -Wno-binding-in-condition -Wno-comment -Wno-implicit-function-declaration \
+	  -Wno-misleading-indentation
 
 # Attempt to silence unknown warning option
 #
