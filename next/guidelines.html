@@ -460,15 +460,17 @@ and remains unaltered. All other uses must receive prior permission in
 writing by <a href="../contact.html">contacting the judges</a>.</p>
 <p>Jump to: <a href="#">top</a></p>
 <div id="guidelines_version">
-<h2 id="ioccc-guidelines-version">IOCCC Guidelines version</h2>
+<div id="version">
+<h1 id="ioccc-guidelines-version">IOCCC Guidelines version</h1>
+</div>
 </div>
 <p class="leftbar">
-These <a href="guidelines.html">IOCCC guidelines</a> are version <strong>28.19 2024-10-25</strong>.
+These <a href="guidelines.html">IOCCC guidelines</a> are version <strong>28.20 2024-11-26</strong>.
 </p>
 <p><strong>IMPORTANT</strong>: Be <strong>SURE</strong> to read the <a href="rules.html">IOCCC rules</a>.</p>
 <p>Jump to: <a href="#">top</a></p>
 <div id="change_marks">
-<h3 id="change-marks">Change marks</h3>
+<h2 id="change-marks">Change marks</h2>
 </div>
 <p class="leftbar">
 <strong>← Lines that start with this symbol indicate a change from the
@@ -517,7 +519,7 @@ The submit URL should be active on or slightly before <strong>2024-MMM-DD HH:MM:
 <strong>XXX - date/time is TBD - XXX</strong>
 </p>
 <p class="leftbar">
-The <a href="rules.html">IOCCC rules</a>, <a href="guidelines.html">IOCCC
+The <a href="rules.html">IOCCC rules</a> and these <a href="guidelines.html">IOCCC
 guidelines</a> will be available on the <a href="https://www.ioccc.org">Official IOCCC
 website</a> on or slightly before start of this IOCCC. Please check our
 FAQ on “<a href="../faq.html#submit">how to submit</a>”
@@ -773,6 +775,31 @@ for how to use this tool in more detail.
 <p class="leftbar">
 Below are the tools that <code>mkiocccentry(1)</code> will run.
 </p>
+<p class="leftbar">
+The <code>mkiocccentry(1)</code> tool will execute a number of tools, some of which will
+execute one or more additional tools; <code>chkentry(1)</code> will use the JSON parser
+library <code>jparse(3)</code>; see the <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/jparse/README.md">jparse
+README.md</a>
+in the <a href="https://github.com/ioccc-src/mkiocccentry/tree/master/jparse">mkiocccentry GitHub repo subdirectory
+jparse</a> as well as
+the <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/jparse/jparse_library_README.md">jparse library README.md
+file</a>
+in the <a href="https://github.com/ioccc-src/mkiocccentry/tree/master/jparse">mkiocccentry GitHub repo subdirectory
+jparse</a>, for more
+details.
+</p>
+<p class="leftbar">
+The original <code>jparse</code> code, co-developed by Landon and Cody Boone Ferguson in
+2022, comes from the <a href="https://github.com/xexyl/jparse">jparse repo</a> <strong>but the
+mkiocccentry tools use a <em>clone</em></strong> of this repo <strong>at a <em>specific</em> release</strong>.
+Thus the <code>mkiocccentry</code> will at times be behind the <code>jparse</code> repo!
+</p>
+<p class="leftbar">
+<p>You do <strong>NOT</strong> need to install <code>jparse</code>! The <code>mkiocccentry</code> tools link in the
+static library from the <code>mkiocccentry</code> clone! This also goes for the
+<a href="https://github.com/lcn2/dbg">dbg</a> and
+<a href="https://github.com/lcn2/dyn_array">dyn_array</a> libraries. In other words,
+<code>mkiocccentry</code> contains <strong>everything</strong> you need.</p>
 <p>Jump to: <a href="#">top</a></p>
 <h2 id="iocccsize"><code>iocccsize</code></h2>
 <p class="leftbar">
@@ -780,18 +807,23 @@ Below are the tools that <code>mkiocccentry(1)</code> will run.
 detects a number of issues that you may ignore, if you wish, as described above.
 As we already discussed how to invoke this we will not include it here again.
 </p>
+<p class="leftbar">
+This tool was originally part of a winning entry by Anthony C Howe, but with
+some modifications over time, as things have changed.
+</p>
 <p>Jump to: <a href="#">top</a></p>
 <h2 id="chkentry"><code>chkentry</code></h2>
 <p class="leftbar">
 <code>mkiocccentry(1)</code> will write two JSON files: <code>.auth.json</code> and
 <code>.info.json</code>. These files contain information about the author(s) and about the
-submission. These files <strong>MUST</strong> pass the checks of <code>chkentry(1)</code>.
+submission. These files <strong>MUST</strong> pass the checks of <code>chkentry(1)</code>!
 </p>
 <p class="leftbar">
-If <code>chkentry</code> does not pass and you used <code>mkiocccentry(1)</code> it is <strong>possibly</strong> a
+If <code>chkentry</code> does not pass and you used <code>mkiocccentry(1)</code> it is <strong>very likely</strong> a
 bug and you should <a href="https://github.com/ioccc-src/mkiocccentry/issues/new?assignees=&amp;labels=bug&amp;projects=&amp;template=bug_report.yml&amp;title=%5BBug%5D+%3Ctitle%3E">report it as a bug at the mkiocccentry issues
 page</a>.
-See the FAQ on “<a href="../faq.html#mkiocccentry_bugs">report mkiocccentry bugs</a>”.
+See the
+FAQ on “<a href="../faq.html#mkiocccentry_bugs">reporting mkiocccentry bugs</a>”.
 </p>
 <p class="leftbar">
 Assuming that <code>chkentry(1)</code> validates both <code>.auth.json</code> and
@@ -803,7 +835,8 @@ executed. In this case, there should be no problems as <code>mkiocccentry(1)</co
 Please see the
 FAQ on “<a href="../faq.html#chkentry">validating .auth.json and/or .info.json files</a>
 for more details on this tool and how you can use it to validate your
-<code>.auth.json</code> and <code>.info.json</code> files.
+<code>.auth.json</code> and <code>.info.json</code> files manually, without having to repackage your
+submission.
 </p>
 <p class="leftbar">
 You might also wish to see the
@@ -822,14 +855,6 @@ might want to <a href="https://github.com/ioccc-src/mkiocccentry/issues/new?assi
 page</a>. <strong>PLEASE run the
 <code>bug_report.sh</code> script to help us out here!</strong> See the
 FAQ on “<a href="../faq.html#mkiocccentry_bugs">report mkiocccentry bugs</a>”.
-</p>
-<p class="leftbar">
-Of course, it is also possible that <code>mkiocccentry(1)</code> or one or more of the
-tools it calls (or another tool calls) to fail and it is <strong>NOT</strong> a bug. An
-example problem is if there is not enough memory available or if some other
-library or syscall fails. Nonetheless it might be worth reporting as a bug. It
-is a judgement call; if it’s a bug it’ll be addressed and if it’s not that’s OK
-too.
 </p>
 <p class="leftbar">
 As part of its sanity checks, <code>txzchk(1)</code> will run <code>fnamchk(1)</code> on the
@@ -862,18 +887,23 @@ directory name of the tarball) then it is an <strong>error</strong> and you risk
 you wish to.
 </p>
 <p class="leftbar">
-To see more details on <code>fnamchk</code> and how to manually validate your submission
+For more information on <code>fnamchk</code> and how to manually validate your submission
 tarball filename, see the
 FAQ on “<a href="../faq.html#fnamchk">fnamchk</a>”.
 </p>
+<p class="leftbar">
+Note that the <code>txzchk(1)</code> tool uses <code>fnamchk(1)</code> tool as part of its algorithm.
+Thus <code>mkiocccentry(1)</code> does not directly invoke <code>fnamchk(1)</code>, although we will
+in the judging process.
+</p>
 <hr>
 <p class="leftbar">
-At the risk of stating the obvious: you run <strong>a very big risk</strong> of having
-your submission rejected if you package your own tarball and there are <strong>any
+At the risk of stating the obvious: you run <strong>a VERY BIG risk</strong> of having
+your submission rejected if you package your own tarball and there are <strong>ANY
 problems</strong>. For instance, if <code>chkentry(1)</code> found a problem in your <code>.info.json</code>
 file, the <code>mkiocccentry(1)</code> tool would not package it. But if you were to package
 it manually, you would be violating <a href="rules.html#rule17">Rule 17</a>. But even if
-everything checks out OK you should not expect that everything <strong>IS</strong> OK.
+everything checks out OK you should <strong>NOT</strong> assume that everything <strong>IS</strong> OK.
 </p>
 <p class="leftbar">
 It is extremely unlikely that <code>fnamchk(1)</code> reporting an invalid filename is a
@@ -889,15 +919,36 @@ FAQ on “<a href="../faq.html#mkiocccentry_bugs">report mkiocccentry bugs</a>�
 <p class="leftbar">
 As you can see, the use of <code>mkiocccentry(1)</code> is <strong>HIGHLY RECOMMENDED</strong>.
 </p>
+<div id="bugs">
+<h1 id="problemsbugs-in-tools">Problems/bugs in tools</h1>
+</div>
 <p class="leftbar">
-<p>We recommend that you use the <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/Makefile.example">example
+Although the tools have been tested quite a bit, and although it is quite
+unlikely that there are bugs in it, it is nonetheless possible for bugs to
+exist, as all programmers know. In this case, <strong>please</strong> ask for help or report what
+you think is a bug as a bug, via the <a href="https://github.com/ioccc-src/mkiocccentry/issues/new?assignees=&amp;labels=bug&amp;projects=&amp;template=bug_report.yml&amp;title=%5BBug%5D+%3Ctitle%3E">bug report issues page in the mkiocccentry
+repo</a>.
+</p>
+<p class="leftbar">
+Of course, it is also possible for <code>mkiocccentry(1)</code>, or one or more of the
+tools it executes (or another tool executes), to fail, and <strong>NOT</strong> because of a
+bug. An example problem is if there is not enough memory available or if some
+other library or syscall fails. Nonetheless it might be worth reporting as a
+bug; it is a judgement call; if it’s a bug it’ll be addressed and if it’s not
+that’s OK too!
+</p>
+<div id="make">
+<h1 id="makefiles">Makefiles</h1>
+</div>
+<p class="leftbar">
+<p>We <strong>recommend</strong> that you use the <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/Makefile.example">example
 Makefile</a>
 from the <a href="https://github.com/ioccc-src/mkiocccentry">IOCCC mkiocccentry repo</a>,
 renamed as <code>Makefile</code> of course, as the starting point for your submission’s
 required <code>Makefile</code>. Feel free to modify the <code>Makefile</code> to suit your obfuscated
 needs.</p>
 <p class="leftbar">
-The rest of these guidelines will assume that you are using some variant of the
+The rest of this section will assume that you are using some variant of the
 <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/Makefile.example">example Makefile</a>,
 renamed as <code>Makefile</code> of course.
 </p>
@@ -906,12 +957,12 @@ We suggest that you compile your submission with a commonly available
 <code>-std=gnu17</code> (ISO C 2017 with GNU extensions) C compiler.
 </p>
 <p class="leftbar">
-Unless you <strong>clearly state</strong> otherwise in your <code>remarks.md</code> file AND put into your
-submission’s <code>Makefile</code>, we will compile using <code>-std=gnu17 -O3 -g3</code>.
+Unless you <strong>clearly state</strong> otherwise in your <code>remarks.md</code> file <strong>AND</strong> put in your
+submission’s <code>Makefile</code>, we <strong>will</strong> compile using <code>-std=gnu17 -O3 -g3</code>.
 </p>
 <p class="leftbar">
 It is <strong>OK</strong> to require your submission to not be compiled
-using the default <code>-std=gnu17 -O3 -g3</code> settings. Simply explain why
+using the default <code>-std=gnu17 -O3 -g3</code> settings. Simply <strong>explain why</strong>
 your submission should not be compiled using <code>-std=gnu17 -O3 -g3</code> in
 your <code>remarks.md</code> file and adjust your <code>Makefile</code> accordingly.
 </p>
@@ -967,13 +1018,14 @@ not meeting your claims).
 <p class="leftbar">
 On the other hand, some warnings cannot be disabled and are enabled by compilers
 without any warning option specified. These are sometimes inevitable in
-obfuscated code and even in some non-obfuscated code.
+obfuscated code and even in some non-obfuscated code, and you should not worry
+about this, though it might be worth pointing out (see below for an example).
 </p>
 <p class="leftbar">
-Additionally, some compilers like to warn about certain use of <code>char *</code>s which
-is not only likely dubious itself it obviously can’t (always) be avoided so you should
-not worry about this either; this is the warning <code>-Wno-unsafe-buffer-usage</code>. See
-also the
+Additionally: some compilers like to warn about certain use of <code>char *</code>s which
+is not only dubious itself, but it obviously can’t (always) be avoided, so you
+should not worry about this either; this is the warning
+<code>-Wno-unsafe-buffer-usage</code>. See also the
 FAQ on “<a href="../faq.html#forced_warnings">forced warnings</a>”
 and the
 FAQ on “<a href="../faq.html#weverything"><code>-Weverything</code></a>”.
@@ -987,21 +1039,28 @@ produce a compiler <strong>error</strong> and refuse to compile your code: unles
 reason that is what you intend to happen in which case document that too in your
 <code>remarks.md</code> file. :-)
 </p>
+<p class="leftbar">
+<strong>PLEASE NOTE</strong>: in macOS, the compiler <code>gcc</code> found at <code>/usr/bin/gcc</code> is
+in truth the <code>clang</code> compiler, as <code>/usr/bin/gcc --version</code> will show!
+</p>
 <p>All other things being equal, a program that must turn off fewer
 warnings will be considered better, for certain values of better.</p>
 <p class="leftbar">
 To turn off a compiler warning, in your submission’s <code>Makefile</code>,
 try something such as:
 </p>
-<pre><code>    CSILENCE= -Wno-some-thing -Wno-another-thing -Wno-unknown-warning-option</code></pre>
+<pre><code>    CSILENCE= -Wno-some-thing -Wno-another-thing</code></pre>
+<p>For instance:</p>
+<pre><code>    CSILENCE= -Wno-parentheses -Wno-binding-in-condition -Wno-misleading-indentation</code></pre>
 <p class="leftbar">
-<p>If you do add “<code>-Wno-some-thing</code>” to your Makefile, consider changing:</p>
+<p>If you do add “<code>-Wno-foo</code>” to your Makefile, consider changing:</p>
 <pre><code>    CUNKNOWN=</code></pre>
 <p>to:</p>
 <pre><code>    CUNKNOWN= -Wno-unknown-warning-option</code></pre>
 <p class="leftbar">
 Some compilers have reported this as an error, however, and if you have
-such a compiler you might want to not add it and note it in your <code>remarks.md</code>.
+such a compiler you might want to not add it, or at least note in your
+<code>remarks.md</code> the OS, OS version and compiler that this shows up.
 </p>
 <p class="leftbar">
 If you need to define something on the compile line, use
@@ -1021,6 +1080,9 @@ use the <code>COTHER</code> Makefile variable. For example:
 <p class="leftbar">
 <strong>NOTE</strong>: <strong>We only recommend using “<em>magic</em>” flags if <em>BOTH</em> <code>gcc</code>
 <em>and</em> <code>clang</code></strong> support it.
+</p>
+<p class="leftbar">
+Again, please note that in macOS, <code>/usr/bin/gcc</code> is actually <code>clang</code>!
 </p>
 <p>Jump to: <a href="#">top</a></p>
 <div id="likes">
