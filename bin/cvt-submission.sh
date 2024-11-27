@@ -166,6 +166,10 @@ JPARSE_TOOL=$(type -P jparse)
 export JPARSE_TOOL
 if [[ -z "$JPARSE_TOOL" ]]; then
     echo "$0: FATAL: jparse tool is not installed or not in \$PATH" 1>&2
+    echo "$0: notice: to install jparse:" 1>&2
+    echo "$0: notice: run: git clone https://github.com/ioccc-src/mkiocccentry.git" 1>&2
+    echo "$0: notice: then: cd mkiocccentry && make clobber all" 1>&2
+    echo "$0: notice: then: cd jparse && sudo make install clobber" 1>&2
     exit 5
 fi
 export MKIOCCCENTRY_REPO="https://github.com/ioccc-src/mkiocccentry"
@@ -221,7 +225,7 @@ $NAME version: $VERSION"
 
 # prompt_string
 #
-# Prompt the user for a string and output as an decoded JSON string.
+# Prompt the user for a string and output as a decoded JSON string.
 #
 # If "-i input_data: is used, the printing of the prompt is disabled,
 # and the query of correctness is also disabled.
@@ -307,7 +311,7 @@ function prompt_string
 
 # prompt_integer
 #
-# Prompt the user for an integer and output as an decoded JSON string.
+# Prompt the user for an integer and output as a decoded JSON string.
 #
 # If "-i input_data: is used, the printing of the prompt is disabled,
 # and the query of correctness is also disabled.
@@ -816,7 +820,7 @@ if [[ -n $INPUT_DATA_FILE ]]; then
 	exit 3
     fi
     if [[ ! -r $INPUT_DATA_FILE ]]; then
-	echo  "$0: ERROR: input data filetop is not an readable file: $INPUT_DATA_FILE" 1>&2
+	echo  "$0: ERROR: input data filetop is not a readable file: $INPUT_DATA_FILE" 1>&2
 	exit 3
     fi
     if [[ ! -s $INPUT_DATA_FILE ]]; then
@@ -883,7 +887,7 @@ if [[ ! -f $TOP_FILE ]]; then
     exit 6
 fi
 if [[ ! -r $TOP_FILE ]]; then
-    echo  "$0: ERROR: .top is not an readable file: $TOP_FILE" 1>&2
+    echo  "$0: ERROR: .top is not a readable file: $TOP_FILE" 1>&2
     exit 6
 fi
 if [[ ! -s $TOP_FILE ]]; then
@@ -1154,7 +1158,7 @@ if [[ ! -f $INFO_JSON ]]; then
     exit 6
 fi
 if [[ ! -r $INFO_JSON ]]; then
-    echo  "$0: ERROR: .info.json is not an readable file: $INFO_JSON" 1>&2
+    echo  "$0: ERROR: .info.json is not a readable file: $INFO_JSON" 1>&2
     exit 6
 fi
 if [[ ! -s $INFO_JSON ]]; then
@@ -1170,7 +1174,7 @@ if [[ ! -f $AUTH_JSON ]]; then
     exit 6
 fi
 if [[ ! -r $AUTH_JSON ]]; then
-    echo  "$0: ERROR: .auth.json is not an readable file: $AUTH_JSON" 1>&2
+    echo  "$0: ERROR: .auth.json is not a readable file: $AUTH_JSON" 1>&2
     exit 6
 fi
 if [[ ! -s $AUTH_JSON ]]; then
@@ -1261,7 +1265,7 @@ if [[ -n $DO_NOT_PROCESS ]]; then
 fi
 
 
-# save files that might be created or removed into the tarball
+# save files that might be added to or removed from the tarball
 #
 if [[ -z $NOOP ]]; then
     if [[ $V_FLAG -ge 3 ]]; then
@@ -1875,6 +1879,7 @@ if [[ -z $NOOP ]]; then
 	((++count))
 	manifest_csv "$ALT_C" 40 true c true "alternate source code" >> "$TMP_MANIFEST_CSV"
     fi
+
 
     # form original source code if needed
     #
