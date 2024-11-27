@@ -13,6 +13,7 @@ This is FAQ version **28.1.3 2024-10-25**.
 - **Q 0.2**: <a class="normal" href="#platform">What platform should I assume for my submission?</a>
 - **Q 0.3**: <a class="normal" href="#makefile">What should I put in my submission Makefile?</a>
 - **Q 0.4**: <a class="normal" href="#remarks">What should I put in the remarks.md file of my submission?</a>
+- **Q 0.5**: <a class="normal" href="#try_scripts">What should I do with the `try.sh` and `try.alt.sh` scripts?</a>
 
 
 ## 1. [Entering the IOCCC: more help and details](#submitting_help)
@@ -511,7 +512,6 @@ The following rules should exist in your Makefile:
 
 Jump to: [top](#)
 
-
 <div id="remarks_md">
 <div id="remarks">
 <div id="readme">
@@ -561,6 +561,32 @@ in the C code for that matter) - we like to be unbiased during the judging
 rounds; we look at the author name only if an entry wins. See the guidelines if
 this is not clear!
 - leaving the remark section empty.
+
+Jump to: [top](#)
+
+
+<div id="try_scripts">
+### Q 0.5 What should I do with the `try.sh` and `try.alt.sh` scripts?
+</div>
+
+If your submission has more than one use, or if you have interesting ways to
+invoke your program, perhaps using other commonly installed tools (or tools
+included in your submission), it can be helpful to include a `try.sh` script.
+
+A [template try.sh](%%REPO_URL%%/template/entry/try.sh) can be used as a
+starting point, or you can look at some of the others in the website, to get
+some ideas.
+
+It is not detrimental to your chances of winning if you do not include one as
+not all submissions can make use of them. Nevertheless, it is helpful to include
+ways to use your program, and if you have creative ways this can be a bonus. It
+does not mean that a program that cannot be used with other programs is less
+interesting or less likely to win, but we do enjoy interesting and creative uses
+of submissions.
+
+If you have alternate code that you are including, then you can use the
+[try.alt.sh template](%%REPO_URL%%/template/entry/try.alt.sh) instead.
+
 
 Jump to: [top](#)
 

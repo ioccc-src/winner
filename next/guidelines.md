@@ -52,7 +52,7 @@ Jump to: [top](#)
 </div>
 
 <p class="leftbar">
-These [IOCCC guidelines](guidelines.html) are version **28.20 2024-11-26**.
+These [IOCCC guidelines](guidelines.html) are version **28.21 2024-11-27**.
 </p>
 
 **IMPORTANT**: Be **SURE** to read the [IOCCC rules](rules.html).
@@ -862,11 +862,22 @@ Jump to: [top](#)
 </div>
 
 <p class="leftbar">
-We **LIKE** entries that use an edited variant of the
+We **LIKE** submissions that use an edited variant of the
 [example Makefile](https://github.com/ioccc-src/mkiocccentry/blob/master/Makefile.example),
 renamed as `Makefile` of course.  This makes it easier for the [IOCCC Judges](../judges.html)
 to test your submission. And if your submissions wins, it makes it easier to integrate it into
 the [Official IOCCC winner website](https://www.ioccc.org/index.html).
+</p>
+
+<p class="leftbar">
+We **LIKE** submissions that use an edited version of the
+[try.sh](%%REPO_URL%%/template/entry/try.sh) template script (and if you have alternate code,
+the same applies with the [try.alt.sh](%%REPO_URL%%/template/entry/try.alt.sh)
+template script). Of course, it is
+quite possible that only one invocation is possible, so it is not necessarily
+detrimental to your submission if you do not include one, though we do like
+interesting and creative uses of submissions. See also the
+FAQ on "[submitting try.sh and try.alt.sh scripts](../faq.html#try_scripts)".
 </p>
 
 Doing masses of `#define`s to obscure the source has become 'old'.  We
