@@ -49,7 +49,9 @@ writing by [contacting the judges](../contact.html).
 Jump to: [top](#)
 
 <div id="rules_version">
+<div id="version">
 ## IOCCC Rules version
+</div>
 </div>
 
 Jump to: [top](#)
