@@ -868,8 +868,8 @@ the [Official IOCCC winner website](https://www.ioccc.org/index.html).
 
 <p class="leftbar">
 We **LIKE** submissions that use an edited version of the
-[try.sh](try.sh) example script (and if you have alternate code,
-the same applies with the [try.alt.sh](try.alt.sh)
+[../template/entry/try.sh](try.sh) example script (and if you have alternate code,
+the same applies with the [try.alt.sh](../template/entry/try.alt.sh)
 example script). Of course, it is quite possible that only one invocation is
 possible, so it is not necessarily detrimental to your submission if you do not
 include one, though we do like interesting and creative uses of submissions. See
