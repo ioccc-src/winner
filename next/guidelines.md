@@ -52,7 +52,7 @@ Jump to: [top](#)
 </div>
 
 <p class="leftbar">
-These [IOCCC guidelines](guidelines.html) are version **28.21 2024-11-27**.
+These [IOCCC guidelines](guidelines.html) are version **28.23 2024-12-01**.
 </p>
 
 **IMPORTANT**: Be **SURE** to read the [IOCCC rules](rules.html).
@@ -160,11 +160,9 @@ to account for the new [mkiocccentry repo](https://github.com/ioccc-src/mkioccce
 </p>
 
 <p class="leftbar">
-An [example
-Makefile](https://github.com/ioccc-src/mkiocccentry/blob/master/Makefile.example)
-is now available from the [mkiocccentry
-repo](https://github.com/ioccc-src/mkiocccentry) **and you are encouraged to use
-it**.
+You **are encouraged** to use [this
+Makefile.example](https://github.com/ioccc-src/temp-test-ioccc/blob/master/next/Makefile.example),
+rather than the one at the `mkiocccentry` repo.
 </p>
 
 <p class="leftbar">
@@ -649,15 +647,14 @@ that's OK too!
 
 <p class="leftbar">
 We **recommend** that you use the [example
-Makefile](https://github.com/ioccc-src/mkiocccentry/blob/master/Makefile.example)
-from the [IOCCC mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry),
+Makefile](https://github.com/ioccc-src/temp-test-ioccc/blob/master/next/Makefile.example),
 renamed as `Makefile` of course, as the starting point for your submission's
 required `Makefile`.  Feel free to modify the `Makefile` to suit your obfuscated
 needs.
 
 <p class="leftbar">
 The rest of this section will assume that you are using some variant of the
-[example Makefile](https://github.com/ioccc-src/mkiocccentry/blob/master/Makefile.example),
+[example Makefile](https://github.com/ioccc-src/temp-test-ioccc/blob/master/next/Makefile.example),
 renamed as `Makefile` of course.
 </p>
 
@@ -863,7 +860,7 @@ Jump to: [top](#)
 
 <p class="leftbar">
 We **LIKE** submissions that use an edited variant of the
-[example Makefile](https://github.com/ioccc-src/mkiocccentry/blob/master/Makefile.example),
+[example Makefile](https://github.com/ioccc-src/temp-test-ioccc/blob/master/next/Makefile.example),
 renamed as `Makefile` of course.  This makes it easier for the [IOCCC Judges](../judges.html)
 to test your submission. And if your submissions wins, it makes it easier to integrate it into
 the [Official IOCCC winner website](https://www.ioccc.org/index.html).
@@ -871,12 +868,17 @@ the [Official IOCCC winner website](https://www.ioccc.org/index.html).
 
 <p class="leftbar">
 We **LIKE** submissions that use an edited version of the
-[try.sh](%%REPO_URL%%/template/entry/try.sh) template script (and if you have alternate code,
-the same applies with the [try.alt.sh](%%REPO_URL%%/template/entry/try.alt.sh)
-template script). Of course, it is
-quite possible that only one invocation is possible, so it is not necessarily
-detrimental to your submission if you do not include one, though we do like
-interesting and creative uses of submissions. See also the
+[try.sh](try.sh) example script (and if you have alternate code,
+the same applies with the [try.alt.sh](try.alt.sh)
+example script). Of course, it is quite possible that only one invocation is
+possible, so it is not necessarily detrimental to your submission if you do not
+include one, though we do like interesting and creative uses of submissions. See
+also the
+</p>
+
+<p class="leftbar">
+You might wish to add `./try.sh`, and if you have alternate code,
+`./try.alt.sh`, to the `try` rule in the Makefile you submit. See also the
 FAQ on "[submitting try.sh and try.alt.sh scripts](../faq.html#try_scripts)".
 </p>
 
@@ -1159,7 +1161,7 @@ is NOT the smallest C source file that when compiled and run, dumps core:
 
 <p class="leftbar">
 Unless you specify `-fwritable-strings` (see `COTHER` in the [example
-Makefile](https://github.com/ioccc-src/mkiocccentry/blob/master/Makefile.example))
+Makefile](https://github.com/ioccc-src/temp-test-ioccc/blob/master/next/Makefile.example))
 do not assume this sort of code will work:
 </p>
 
@@ -1168,6 +1170,10 @@ do not assume this sort of code will work:
     ...
     T[14] = ';';    /* modifying a string requires: -fwritable-strings */
 ```
+
+<p class="leftbar">
+Even so, one should probably not assume that this is universally accepted.
+</p>
 
 <p class="leftbar">
 Initialized char arrays are OK to write over.  For instance, this is OK:
@@ -1420,7 +1426,7 @@ CPU, we might just try your submission on that emulator as well :-)
 If your submission **MUST** run only on a 64-bit or 32-bit architecture,
 then you **MUST** specify the `-arch` on your command line
 (see `ARCH` in the [example
-Makefile](https://github.com/ioccc-src/mkiocccentry/blob/master/Makefile.example)).  Do not assume a processor word size without specifying `-arch`.  For example:
+Makefile](https://github.com/ioccc-src/temp-test-ioccc/blob/master/next/Makefile.example)).  Do not assume a processor word size without specifying `-arch`.  For example:
 </p>
 
 ``` <!---make-->

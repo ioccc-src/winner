@@ -460,8 +460,7 @@ Jump to: [top](#)
 </div>
 
 We recommend starting with the [sample
-Makefile](https://github.com/ioccc-src/mkiocccentry/blob/master/Makefile.example)
-as found in the [mkiocccentry GitHub repo](https://github.com/ioccc-src/mkiocccentry),
+Makefile](next/Makefile.example)
 (renamed as `Makefile` of course) as a starting point for your
 entry's `Makefile`.
 
@@ -508,7 +507,15 @@ The following rules should exist in your Makefile:
     program(s), clean up any files made by the program etc.
 
 - `try`
-    * run the program in a way you suggest
+    * run the program in a way you suggest. If you use the `try.sh` script
+    system, which we do like, you can have this rule invoke the script
+    (`./try.sh`).
+
+Although the `mkiocccentry(1)` tool only checks for those rules, the most up to
+date
+[Makefile.example](next/Makefile.example),
+does have other rules like `everything` and `alt`, and we encourage you to use
+that one.
 
 Jump to: [top](#)
 
@@ -586,6 +593,10 @@ of submissions.
 
 If you have alternate code that you are including, then you can use the
 [try.alt.sh template](%%REPO_URL%%/template/entry/try.alt.sh) instead.
+
+We recommend that you include the use of these scripts in the `try` rule in the
+example Makefile that you modify for your submission. See the
+FAQ on "[submission Makefiles](#makefile).
 
 
 Jump to: [top](#)
@@ -3299,10 +3310,9 @@ Additionally you may install the `jparse(1)` tool from the [jparse
 repo](https://github.com/xexyl/jparse):
 
 ``` <!--sh-->
-    git clone https://github.com/xexyl/jparse.git
-    cd jparse
-    make clobber all test
-    sudo make install
+    git clone https://github.com/ioccc-src/mkiocccentry.git
+    cd mkiocccentry && make clobber all" 1>&2
+    cd jparse && sudo make install clobber" 1>&2
 ```
 
 The syntax of `jparse(1)` is very simple:
@@ -3324,6 +3334,10 @@ verbosity with the `-v` option. For instance:
 
 If the tool is not installed then you will obviously have to specify the path of
 the tool.
+
+**NOTE**: the `jparse` subdirectory is a clone of the official [jparse
+repo](https://github.com/xexyl/jparse/issues) but we recommend you compile and
+install via the `mkiocccentry` repo because it has the dependencies built in.
 
 Jump to: [top](#)
 
