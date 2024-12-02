@@ -788,9 +788,8 @@ or <a href="https://unix.org/online.html">later SUS</a>.</p>
 <h3 id="q-0.3-what-should-i-put-in-my-submission-makefile">Q 0.3: What should I put in my submission Makefile?</h3>
 </div>
 </div>
-<p>We recommend starting with the <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/Makefile.example">sample
+<p>We recommend starting with the <a href="next/Makefile.example">sample
 Makefile</a>
-as found in the <a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry GitHub repo</a>,
 (renamed as <code>Makefile</code> of course) as a starting point for your
 entry’s <code>Makefile</code>.</p>
 <p>The <code>Makefile</code> is a file used by the <code>make(1)</code> command that contains
@@ -835,9 +834,16 @@ program(s), clean up any files made by the program etc.</li>
 </ul></li>
 <li><code>try</code>
 <ul>
-<li>run the program in a way you suggest</li>
+<li>run the program in a way you suggest. If you use the <code>try.sh</code> script
+system, which we do like, you can have this rule invoke the script
+(<code>./try.sh</code>).</li>
 </ul></li>
 </ul>
+<p>Although the <code>mkiocccentry(1)</code> tool only checks for those rules, the most up to
+date
+<a href="next/Makefile.example">Makefile.example</a>,
+does have other rules like <code>everything</code> and <code>alt</code>, and we encourage you to use
+that one.</p>
 <p>Jump to: <a href="#">top</a></p>
 <div id="remarks_md">
 <div id="remarks">
@@ -898,6 +904,9 @@ interesting or less likely to win, but we do enjoy interesting and creative uses
 of submissions.</p>
 <p>If you have alternate code that you are including, then you can use the
 <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/template/entry/try.alt.sh">try.alt.sh template</a> instead.</p>
+<p>We recommend that you include the use of these scripts in the <code>try</code> rule in the
+example Makefile that you modify for your submission. See the
+FAQ on “<a href="#makefile">submission Makefiles</a>.</p>
 <p>Jump to: <a href="#">top</a></p>
 <hr style="width:50%;text-align:left;margin-left:0">
 <hr style="width:50%;text-align:left;margin-left:0">
@@ -3079,10 +3088,9 @@ toolkit, which includes the IOCCC version of the <code>jparse(1)</code> tool, lo
 under the <code>mkiocccentry</code> directory as <code>jparse/jparse</code>.</p>
 <p>Additionally you may install the <code>jparse(1)</code> tool from the <a href="https://github.com/xexyl/jparse">jparse
 repo</a>:</p>
-<pre class="&lt;!--sh--&gt;"><code>    git clone https://github.com/xexyl/jparse.git
-    cd jparse
-    make clobber all test
-    sudo make install</code></pre>
+<pre class="&lt;!--sh--&gt;"><code>    git clone https://github.com/ioccc-src/mkiocccentry.git
+    cd mkiocccentry &amp;&amp; make clobber all&quot; 1&gt;&amp;2
+    cd jparse &amp;&amp; sudo make install clobber&quot; 1&gt;&amp;2</code></pre>
 <p>The syntax of <code>jparse(1)</code> is very simple:</p>
 <pre class="&lt;!--sh--&gt;"><code>    jparse foo.json</code></pre>
 <p>If the tool exits 0 then the document is valid JSON; otherwise it’ll
@@ -3092,6 +3100,9 @@ verbosity with the <code>-v</code> option. For instance:</p>
 <pre class="&lt;!--sh--&gt;"><code>    jparse -v 3 foo.json</code></pre>
 <p>If the tool is not installed then you will obviously have to specify the path of
 the tool.</p>
+<p><strong>NOTE</strong>: the <code>jparse</code> subdirectory is a clone of the official <a href="https://github.com/xexyl/jparse/issues">jparse
+repo</a> but we recommend you compile and
+install via the <code>mkiocccentry</code> repo because it has the dependencies built in.</p>
 <p>Jump to: <a href="#">top</a></p>
 <hr style="width:50%;text-align:left;margin-left:0">
 <hr style="width:50%;text-align:left;margin-left:0">

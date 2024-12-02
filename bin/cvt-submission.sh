@@ -10,6 +10,18 @@
 # files for new authors, and update `author/author_handle.json`
 # for authors who won previously.
 #
+# This script was written in 2024 by:
+#
+#   chongo (Landon Curt Noll, http://www.isthe.com/chongo/index.html) /\oo/\
+#
+# with useful improvements by:
+#
+#	@xexyl
+#	https://xexyl.net		Cody Boone Ferguson
+#	https://ioccc.xexyl.net
+#
+# "Because sometimes even the IOCCC Judges need some help." :-)
+#
 # Copyright (c) 2024 by Landon Curt Noll.  All Rights Reserved.
 #
 # Permission to use, copy, modify, and distribute this software and
@@ -1011,6 +1023,7 @@ export REMARKS_MD="$YYYY_DIR/remarks.md"
 export TAR_BZ2="$YYYY_DIR/$ENTRY_ID.tar.bz2"
 export ENTRY_JSON="$YYYY_DIR/.entry.json"
 export DOT_GITIGNORE="$YYYY_DIR/.gitignore"
+export TRY_SH="$YYYY_DIR/try.sh"
 export DOT_PATH="$YYYY_DIR/.path"
 export README_MD="$YYYY_DIR/README.md"
 export INDEX_HTML="$YYYY_DIR/index.html"
@@ -1023,6 +1036,7 @@ export TEMPLATE_ENTRY_DIR="$TEMPLATE_DIR/entry"
 export TEMPLATE_GITIGNORE="$TEMPLATE_ENTRY_DIR/gitignore"
 export TEMPLATE_README_MD_HEAD="$TEMPLATE_ENTRY_DIR/README.md.head"
 export TEMPLATE_README_MD_TAIL="$TEMPLATE_ENTRY_DIR/README.md.tail"
+export TEMPLATE_TRY_SH="$TEMPLATE_DIR/try.sh"
 
 
 # determine TARBALL filename
@@ -1114,7 +1128,10 @@ if [[ ! -f $TEMPLATE_README_MD_TAIL ]]; then
     echo "$0: ERROR: missing template README.md.tail file: $TEMPLATE_README_MD_TAIL" 1>&2
     exit 6
 fi
-
+if [[ ! -f $TRY_SH ]]; then
+    echo "$0: ERROR: missing template try.sh file: $TRY_SH" 1>&2
+    exit 6
+fi
 
 # firewall - verify chkentry tool
 #
@@ -1911,6 +1928,7 @@ if [[ -z $NOOP ]]; then
     ((++count))
     manifest_csv "$ORIG_C" 50 false c true "original source code" >> "$TMP_MANIFEST_CSV"
 
+
     # collect manifest for extra_file(s)
     #
     export PATTERN
@@ -2120,6 +2138,37 @@ if [[ -z $NOOP ]]; then
     ((++count))
     manifest_csv .gitignore 4000000000 true gitignore true "list of files that should not be committed under git" \
 	>> "$TMP_MANIFEST_CSV"
+
+    # if try.sh does not exist, copy example over, otherwise just update
+    # manifest
+    #
+    if [[ ! -f $TRY_SH ]]; then
+	if [[ $V_FLAG -ge 3 ]]; then
+	    echo  "$0: debug[3]: about to run: cp -f -p -v $TEMPLATE_TRY_SH $TRY_SH" 1>&2
+	    cp -f -p -v "$YYYY_DIR/$PROG_C" "$TRY_SH"
+	    status="$?"
+	    if [[ $status -ne 0 ]]; then
+		echo "$0: ERROR: cp -f -p -v $TEMPLATE_TRY_SH $TRY_SH failed," \
+			 "error code: $status" 1>&2
+		exit 55
+	    fi
+	else
+	    cp -f -p "$TEMPLATE_TRY_SH" "$TRY_SH"
+	    status="$?"
+	    if [[ $status -ne 0 ]]; then
+		echo "$0: ERROR: cp -f -p $TEMPLATE_TRY_SH $TRY_SH failed," \
+			 "error code: $status" 1>&2
+		exit 56
+	    fi
+	fi
+    fi
+
+    # write manifest csv line for try.sh
+    #
+    ((++count))
+    manifest_csv try.sh 100 true shellscript true "script to try entry" \
+	>> "$TMP_MANIFEST_CSV"
+
 
     # form .path if needed
     #

@@ -7038,6 +7038,10 @@ more easily run programs. It is not always useful but these scripts do a variety
 of things to really show off the entries, so this really helps with the
 presentation of the winning entries.
 
+Cody also added the example scripts for future submitters,
+[try.sh](%%REPO_URL%%/template/entry/try.sh) and
+[try.alt.sh](%%REPO_URL%%/template/entry/try.alt.sh).
+
 
 Jump to: [top](#)
 
