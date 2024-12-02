@@ -580,7 +580,7 @@ If your submission has more than one use, or if you have interesting ways to
 invoke your program, perhaps using other commonly installed tools (or tools
 included in your submission), it can be helpful to include a `try.sh` script.
 
-A [template try.sh](%%REPO_URL%%/template/entry/try.sh) can be used as a
+A [template try.sh](%%REPO_URL%%/next/try.sh) can be used as a
 starting point, or you can look at some of the others in the website, to get
 some ideas.
 
@@ -592,7 +592,7 @@ interesting or less likely to win, but we do enjoy interesting and creative uses
 of submissions.
 
 If you have alternate code that you are including, then you can use the
-[try.alt.sh template](%%REPO_URL%%/template/entry/try.alt.sh) instead.
+[try.alt.sh template](%%REPO_URL%%/next/try.alt.sh) instead.
 
 We recommend that you include the use of these scripts in the `try` rule in the
 example Makefile that you modify for your submission. See the
