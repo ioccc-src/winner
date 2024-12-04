@@ -465,7 +465,7 @@ writing by <a href="../contact.html">contacting the judges</a>.</p>
 </div>
 </div>
 <p class="leftbar">
-These <a href="guidelines.html">IOCCC guidelines</a> are version <strong>28.24 2024-12-02</strong>.
+These <a href="guidelines.html">IOCCC guidelines</a> are version <strong>28.25 2024-12-04</strong>.
 </p>
 <p><strong>IMPORTANT</strong>: Be <strong>SURE</strong> to read the <a href="rules.html">IOCCC rules</a>.</p>
 <p>Jump to: <a href="#">top</a></p>
@@ -551,7 +551,7 @@ repo</a>.
 to account for the new <a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry repo</a> tools.
 </p>
 <p class="leftbar">
-You <strong>are encouraged</strong> to use <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/next/Makefile.example">this
+You <strong>are encouraged</strong> to use <a href="Makefile.example">this
 Makefile.example</a>,
 rather than the one at the <code>mkiocccentry</code> repo.
 </p>
@@ -939,14 +939,14 @@ that’s OK too!
 <h1 id="makefiles">Makefiles</h1>
 </div>
 <p class="leftbar">
-<p>We <strong>recommend</strong> that you use the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/next/Makefile.example">example
+<p>We <strong>recommend</strong> that you use the <a href="Makefile.example">example
 Makefile</a>,
 renamed as <code>Makefile</code> of course, as the starting point for your submission’s
 required <code>Makefile</code>. Feel free to modify the <code>Makefile</code> to suit your obfuscated
 needs.</p>
 <p class="leftbar">
 The rest of this section will assume that you are using some variant of the
-<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/next/Makefile.example">example Makefile</a>,
+<a href="Makefile.example">example Makefile</a>,
 renamed as <code>Makefile</code> of course.
 </p>
 <p class="leftbar">
@@ -1089,7 +1089,7 @@ Again, please note that in macOS, <code>/usr/bin/gcc</code> is actually <code>cl
 </div>
 <p class="leftbar">
 We <strong>LIKE</strong> submissions that use an edited variant of the
-<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/next/Makefile.example">example Makefile</a>,
+<a href="Makefile.example">example Makefile</a>,
 renamed as <code>Makefile</code> of course. This makes it easier for the <a href="../judges.html">IOCCC Judges</a>
 to test your submission. And if your submissions wins, it makes it easier to integrate it into
 the <a href="https://www.ioccc.org/index.html">Official IOCCC winner website</a>.
@@ -1102,11 +1102,12 @@ example script). Of course, it is quite possible that only one invocation is
 possible, so it is not necessarily detrimental to your submission if you do not
 include one, though we do like interesting and creative uses of submissions. See
 also the
+FAQ on “<a href="../faq.html#try_scripts">submitting try.sh and try.alt.sh scripts</a>”.
 </p>
 <p class="leftbar">
-You might wish to add <code>./try.sh</code>, and if you have alternate code,
-<code>./try.alt.sh</code>, to the <code>try</code> rule in the Makefile you submit. See also the
-FAQ on “<a href="../faq.html#try_scripts">submitting try.sh and try.alt.sh scripts</a>”.
+You might wish to add <code>./try.sh</code> to the <code>try</code> rule in the Makefile you submit.
+If you have alternate code, then you could add a <code>try.alt</code> rule or something
+like that.
 </p>
 <p>Doing masses of <code>#define</code>s to obscure the source has become ‘old’. We
 tend to ‘see thru’ masses of <code>#define</code>s due to our pre-processor tests
@@ -1340,7 +1341,7 @@ they do not work as documented.</p>
 is NOT the smallest C source file that when compiled and run, dumps core:</p>
 <pre><code>    main;</code></pre>
 <p class="leftbar">
-Unless you specify <code>-fwritable-strings</code> (see <code>COTHER</code> in the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/next/Makefile.example">example
+Unless you specify <code>-fwritable-strings</code> (see <code>COTHER</code> in the <a href="Makefile.example">example
 Makefile</a>)
 do not assume this sort of code will work:
 </p>
@@ -1563,8 +1564,9 @@ CPU, we might just try your submission on that emulator as well :-)
 <p class="leftbar">
 If your submission <strong>MUST</strong> run only on a 64-bit or 32-bit architecture,
 then you <strong>MUST</strong> specify the <code>-arch</code> on your command line
-(see <code>ARCH</code> in the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/next/Makefile.example">example
-Makefile</a>). Do not assume a processor word size without specifying <code>-arch</code>. For example:
+(see <code>ARCH</code> in the <a href="Makefile.example">example
+Makefile</a>). Do not assume a processor word size without
+specifying <code>-arch</code>. For example:
 </p>
 <pre><code>    ARCH= -m64</code></pre>
 <p class="leftbar">
