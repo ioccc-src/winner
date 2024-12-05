@@ -130,6 +130,16 @@ endif
 PROG= prog
 OBJ= ${PROG}.o
 TARGET= ${PROG}
+# If you have alternate code, try something like:
+# ALT_OBJ= ${PROG}.alt.o
+# ALT_TARGET= ${PROG}.alt
+#
+# or so.
+#
+# Please remove these lines either way.
+#
+ALT_OBJ=
+ALT_TARGET=
 
 # list any data files supplied with the submission
 #
@@ -150,10 +160,26 @@ all: data ${TARGET}
 ${PROG}: ${PROG}.c
 	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
+# alternative executable
+#
+alt: data ${ALT_TARGET}
+	@${TRUE}
+
+${PROG}.alt: ${PROG}.alt.c
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
+
+
+
 # data files
 #
 data: ${DATA}
 	@${TRUE}
+
+# both all and alt
+#
+everything: all alt
+	@${TRUE}
+
 
 # one suggested way to run the program
 #
