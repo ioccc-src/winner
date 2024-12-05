@@ -57,7 +57,7 @@ Jump to: [top](#)
 Jump to: [top](#)
 
 <p class="leftbar">
-These [IOCCC rules](rules.html) are version **28.12 2024-12-04**.
+These [IOCCC rules](rules.html) are version **28.12 2024-12-05**.
 </p>
 
 **IMPORTANT**: Be sure to read the [IOCCC guidelines](guidelines.html).
@@ -607,7 +607,7 @@ those requirements.
 <p class="leftbar">
 The `Makefile` **MUST** be a **non**-empty file in **[GNU
 Makefile](https://www.gnu.org/software/make/manual/make.html)** form. See the
-[Makefile.example](Makefile.example),
+[Makefile section in the guidelines](guidelines.html#makefile),
 the
 FAQ on "[submission Makefile](../faq.html#submission_makefiles)"
 and the
@@ -812,8 +812,9 @@ supports](../faq.html#make_compatibility) for more details.
 
 <p class="leftbar">
 You are **ENCOURAGED** to use
-[Makefile.example](Makefile.example),
-renamed as `Makefile` of course, for help in constructing your `Makefile`.
+Makefile example, renamed as `Makefile` of course, for help in constructing your
+`Makefile`. See the [Makefile section](guidelines.html#makefile) in the
+guidelines for more details.
 </p>
 
 The target of the Makefile must be called `prog`.  The original

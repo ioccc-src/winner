@@ -52,7 +52,7 @@ Jump to: [top](#)
 </div>
 
 <p class="leftbar">
-These [IOCCC guidelines](guidelines.html) are version **28.25 2024-12-04**.
+These [IOCCC guidelines](guidelines.html) are version **28.25 2024-12-05**.
 </p>
 
 **IMPORTANT**: Be **SURE** to read the [IOCCC rules](rules.html).
@@ -140,8 +140,10 @@ bytes.
 </p>
 
 <p class="leftbar">The new default way to compile submissions: `-std=gnu17 -O3 -g3
--Wall -Wextra -pedantic`. See below for more details about the example Makefile
-for more help.
+-Wall -Wextra -pedantic`.
+You **are encouraged** to use the example Makefile here, rather than the
+`mkiocccentry` repo. For details and help, see below in the [Makefile
+section](#makefile).
 </p>
 
 <p class="leftbar">
@@ -157,12 +159,6 @@ repo](https://github.com/ioccc-src/mkiocccentry).
 <p class="leftbar">
 [Rule 17](rules.html#rule17) has been **significantly modified**
 to account for the new [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry) tools.
-</p>
-
-<p class="leftbar">
-You **are encouraged** to use [this
-Makefile.example](Makefile.example),
-rather than the one at the `mkiocccentry` repo.
 </p>
 
 <p class="leftbar">
@@ -450,18 +446,27 @@ details.
 </p>
 
 <p class="leftbar">
-The original `jparse` code, co-developed by Landon and Cody Boone Ferguson in
+The original `jparse` code, co-developed by
+[Landon Curt Noll](http://www.isthe.com/chongo/index.html) and
+[Cody Boone Ferguson](../authors.html#Cody_Boone_Ferguson) in
 2022, comes from the [jparse repo](https://github.com/xexyl/jparse) **but the
 mkiocccentry tools use a _clone_** of this repo **at a _specific_ release**.
 Thus the `mkiocccentry` will at times be behind the `jparse` repo!
 </p>
 
 <p class="leftbar">
-You do **NOT** need to install `jparse`! The `mkiocccentry` tools link in the
-static library from the `mkiocccentry` clone! This also goes for the
+You do **NOT need to install** `jparse` from the [jparse
+repo](https://github.com/xexyl/jparse)! The `mkiocccentry` tools link in the
+static library from the `mkiocccentry` clone. This also goes for the
 [dbg](https://github.com/lcn2/dbg) and
-[dyn_array](https://github.com/lcn2/dyn_array) libraries. In other words,
-`mkiocccentry` contains **everything** you need.
+[dyn_array](https://github.com/lcn2/dyn_array) libraries that the tools use.
+</p>
+
+<p class="leftbar">
+In other words, `mkiocccentry` **contains everything** you need, and _even if you
+do install_ the libraries from their respective repos, it/they will **not be
+used** when compiling the `mkiocccentry` tools.
+</p>
 
 
 Jump to: [top](#)
@@ -472,12 +477,18 @@ Jump to: [top](#)
 
 <p class="leftbar">`mkiocccentry(1)` will use code from `iocccsize(1)` which
 detects a number of issues that you may ignore, if you wish, as described above.
-As we already discussed how to invoke this we will not include it here again.
+As we already discussed how to invoke `mkiocccentry`, we will not include it
+here again.
 </p>
 
 <p class="leftbar">
-This tool was originally part of a winning entry by Anthony C Howe, but with
-some modifications over time, as things have changed.
+In other words, you no longer need to run `iocccsize` manually.
+</p>
+
+<p class="leftbar">
+The `iocccsize` tool was originally part of a winning entry by [Anthony C
+Howe](../authors.html#Anthony_C_Howe), but with some modifications over time, as
+things have changed.
 </p>
 
 Jump to: [top](#)
@@ -500,10 +511,17 @@ FAQ on "[reporting mkiocccentry bugs](../faq.html#mkiocccentry_bugs)".
 </p>
 
 <p class="leftbar">
-Assuming that `chkentry(1)` validates both `.auth.json` and
+Assuming that `chkentry(1)` successfully validates both `.auth.json` and
 `.info.json` then the tarball will be formed and then `txzchk(1)` will be
-executed. In this case, there should be no problems as `mkiocccentry(1)` should
+executed. In this case, there should be no problems, as `mkiocccentry(1)` should
 **NOT** form a tarball if there are any issues.
+</p>
+
+<p class="leftbar">
+If `mkiocccentry(1)` is used and `chkentry(1)` fails to validate either of the
+files, then unless it is a system specific problem, it is likely a bug in
+`mkiocccentry(1)`, `chkentry(1)` or possibly `jparse`, though these are quite
+unlikely.
 </p>
 
 <p class="leftbar">
@@ -620,7 +638,7 @@ As you can see, the use of `mkiocccentry(1)` is **HIGHLY RECOMMENDED**.
 
 
 <div id="bugs">
-# Problems/bugs in tools
+# Problems and/or bugs in tools
 </div>
 
 <p class="leftbar">
@@ -642,20 +660,30 @@ that's OK too!
 
 
 <div id="make">
+<div id="makefile">
 # Makefiles
+</div>
 </div>
 
 <p class="leftbar">
-We **recommend** that you use the [example
-Makefile](Makefile.example),
-renamed as `Makefile` of course, as the starting point for your submission's
-required `Makefile`.  Feel free to modify the `Makefile` to suit your obfuscated
-needs.
+We **recommend** AND **encourage** you to use the example Makefile **here**,
+rather than the `mkiocccentry` repo's `Makefile.example`, renamed as `Makefile`
+of course, as the starting point for your submission's required `Makefile`:
+</p>
+
+- <p class="leftbar">[view example
+Makefile](%%REPO_URL%%/next/Makefile.example)</p>
+- <p class="leftbar"><a href="Makefile.example"
+download="Makefile">download example Makefile</a></p>
 
 <p class="leftbar">
-The rest of this section will assume that you are using some variant of the
-[example Makefile](Makefile.example),
-renamed as `Makefile` of course.
+Feel free to modify the `Makefile` to suit your obfuscated
+needs.
+</p>
+
+<p class="leftbar">
+The rest of this section and its subsections will assume that you are using some
+variant of the example `Makefile`, again renamed as `Makefile`.
 </p>
 
 <p class="leftbar">
@@ -663,22 +691,48 @@ We suggest that you compile your submission with a commonly available
 `-std=gnu17` (ISO C 2017 with GNU extensions) C compiler.
 </p>
 
+<div id="flags">
+## Default compiler flags
+</div>
+
 <p class="leftbar">
 Unless you **clearly state** otherwise in your `remarks.md` file **AND** put in your
-submission's `Makefile`, we **will** compile using `-std=gnu17 -O3 -g3`.
+submission's `Makefile`, we **will** compile using `-std=gnu17 -O3 -g3`!
 </p>
 
 <p class="leftbar">
-It is **OK** to require your submission to not be compiled
+It **is OK** if you need to require your submission to **not be** compiled
 using the default `-std=gnu17 -O3 -g3` settings.  Simply **explain why**
 your submission should not be compiled using `-std=gnu17 -O3 -g3` in
-your `remarks.md` file and adjust your `Makefile` accordingly.
+your `remarks.md` file **and** adjust your `Makefile` accordingly.
 </p>
+
+<p class="leftbar">
+An example reason is that the optimiser is known to break some programs, but
+there are certainly other possible valid reasons. Again, just update the
+`Makefile` and explain it in your `remarks.md`.
+</p>
+
+<div id="compilers">
+## Default compiler
+</div>
 
 <p class="leftbar">
 **IMPORTANT NOTE**: The use of `-std=gnu17` does **NOT** imply the use of the `gcc`
 compiler!  We often start by compiling using the **clang** C compiler instead.
 </p>
+
+<p class="leftbar">
+**PLEASE NOTE**: in macOS, the compiler `gcc` found at `/usr/bin/gcc` is
+in truth the `clang` compiler, as `/usr/bin/gcc --version` will show!
+</p>
+
+
+<div id="cstd">
+<div id="standard">
+## C standard
+</div>
+</div>
 
 <p class="leftbar">
 You may change the standard under which your submission is compiled
@@ -689,6 +743,24 @@ by modifying the `CSTD` Makefile variable.  For example, to use `c17` instead:
 ``` <!---make-->
     CSTD= -std=c17
 ```
+
+<div id="opt">
+## Default optimisation level
+</div>
+
+<p class="leftbar">
+You may change the level of optimization and compiler debug level
+that your submission is compiled with, by modifying the `OPT` Makefile variable.
+For example, to compile without optimization and with debug symbols:
+</p>
+
+``` <!---make-->
+    OPT= -O0 -g3
+```
+
+<div id="warnings">
+## Compiler warnings
+</div>
 
 <p class="leftbar">
 For compilers, such as `clang`, that have the `-Weverything` option,
@@ -701,14 +773,14 @@ other version might!
 </p>
 
 <p class="leftbar">
-You may change the level of optimization and compiler debug level
-that your submission is compiled with, by modifying the `OPT` Makefile variable.
-For example, to compile without optimization and debug symbols:
+On the other hand, if `${CC}` has "`clang`" in the name, the example `Makefile` will
+automatically enable `-Weverything`, so you might have to use `-Wno-foo`
+options, as detailed below.
 </p>
 
-``` <!---make-->
-    OPT= -O0 -g3
-```
+<div id="disabling-warnings">
+## Disabling warnings
+</div>
 
 <p class="leftbar">
 There is no real penalty for compiler warnings.  Sometimes
@@ -727,7 +799,7 @@ more strict ` -Wall -Wextra -pedantic` mode:
 ```
 
 <p class="leftbar">
-The two previous guidelines may be thought by some as being somewhat
+The two previous guidelines might be thought by some as being somewhat
 contradictory.  Isn't life, and isn't trying to satisfy "contradictory customer
 requirements" all too often like that?  :-)  Try to minimize warnings if you
 can.
@@ -750,13 +822,20 @@ about this, though it might be worth pointing out (see below for an example).
 </p>
 
 <p class="leftbar">
-Additionally: some compilers like to warn about certain use of `char *`s which
-is not only dubious itself, but it obviously can't (always) be avoided, so you
+Some compilers like to warn about certain use of `char *`s which
+might not only be dubious itself, but it obviously can't (always) be avoided, so you
 should not worry about this either; this is the warning
-`-Wno-unsafe-buffer-usage`. See also the
+`-Wunsafe-buffer-usage` and the way to disable it is `-Wno-unsafe-buffer-usage`. See also the
 FAQ on "[forced warnings](../faq.html#forced_warnings)"
 and the
-FAQ on "[`-Weverything`](../faq.html#weverything)".
+FAQ on "[-Weverything](../faq.html#weverything)".
+</p>
+
+
+<p class="leftbar">
+If you do have to disable warnings due to `-Weverything` automatically being
+included, you might wish to state this fact. :-)
+And even without `-Weverything` there can be warnings, as noted above.
 </p>
 
 <p class="leftbar">
@@ -767,11 +846,6 @@ compiler problem.  Be sure that compilers such as both `gcc` and `clang` won't
 produce a compiler **error** and refuse to compile your code: unless for some
 reason that is what you intend to happen in which case document that too in your
 `remarks.md` file.  :-)
-</p>
-
-<p class="leftbar">
-**PLEASE NOTE**: in macOS, the compiler `gcc` found at `/usr/bin/gcc` is
-in truth the `clang` compiler, as `/usr/bin/gcc --version` will show!
 </p>
 
 All other things being equal, a program that must turn off fewer
@@ -813,6 +887,10 @@ such a compiler you might want to not add it, or at least note in your
 `remarks.md` the OS, OS version and compiler that this shows up.
 </p>
 
+<div id="macros">
+## Defining macros in the Makefile
+</div>
+
 <p class="leftbar">
 If you need to define something on the compile line, use
 the `CDEFINE` Makefile variable.  For example:
@@ -822,15 +900,23 @@ the `CDEFINE` Makefile variable.  For example:
     CDEFINE= -Dfoo -Dbar=baz
 ```
 
+<div id="include">
+## Include files in the Makefile
+</div>
+
 <p class="leftbar">
-If you need to include a file on the command line, use
-the `CINCLUDE` Makefile variable.  For example:
+If you need to include a file (as in `#include`) on the command line, use the
+`CINCLUDE` Makefile variable.  For example:
 </p>
 
 ``` <!---make-->
     CINCLUDE= -include stdio.h
 ```
 
+
+<div id="magic">
+## Magic in the Makefile
+</div>
 
 <p class="leftbar">
 If you need to add other "**magic**" flags to your compile line,
@@ -860,7 +946,7 @@ Jump to: [top](#)
 
 <p class="leftbar">
 We **LIKE** submissions that use an edited variant of the
-[example Makefile](Makefile.example),
+example Makefile, as described in the [Makefile section](#makefile),
 renamed as `Makefile` of course.  This makes it easier for the [IOCCC Judges](../judges.html)
 to test your submission. And if your submissions wins, it makes it easier to integrate it into
 the [Official IOCCC winner website](https://www.ioccc.org/index.html).
@@ -868,9 +954,17 @@ the [Official IOCCC winner website](https://www.ioccc.org/index.html).
 
 <p class="leftbar">
 We **LIKE** submissions that use an edited version of the
-[try.sh](try.sh) example script (and if you have alternate code,
-the same applies with the [try.alt.sh](try.alt.sh)
-example script). Of course, it is quite possible that only one invocation is
+`try.sh` example script (and if you have alternate code,
+the same applies with the `try.alt.sh` script):
+</p>
+
+- <p class="leftbar">[view example try.sh](%%REPO_URL%%/next/try.sh)</p>
+- <p class="leftbar"><a href="try.sh">download example try.sh</a></p>
+- <p class="leftbar">[view example try.alt.sh](%%REPO_URL%%/next/try.alt.sh)</p>
+- <p class="leftbar"><a href="try.alt.sh">download example try.alt.sh</a></p>
+
+<p class="leftbar">
+Of course, it is quite possible that only one invocation is
 possible, so it is not necessarily detrimental to your submission if you do not
 include one, though we do like interesting and creative uses of submissions. See
 also the
@@ -1161,9 +1255,9 @@ is NOT the smallest C source file that when compiled and run, dumps core:
 ```
 
 <p class="leftbar">
-Unless you specify `-fwritable-strings` (see `COTHER` in the [example
-Makefile](Makefile.example))
-do not assume this sort of code will work:
+Unless you specify `-fwritable-strings` (see `COTHER` in the example
+Makefile, described in the [Makefile section](#makefile)), do not assume this
+sort of code will work:
 </p>
 
 ``` <!---c-->
@@ -1426,9 +1520,9 @@ CPU, we might just try your submission on that emulator as well :-)
 <p class="leftbar">
 If your submission **MUST** run only on a 64-bit or 32-bit architecture,
 then you **MUST** specify the `-arch` on your command line
-(see `ARCH` in the [example
-Makefile](Makefile.example)).  Do not assume a processor word size without
-specifying `-arch`.  For example:
+(see `ARCH` in the example
+Makefile, described in [Makefile section](#makefile)).  Do not assume a
+processor word size without specifying `-arch`.  For example:
 </p>
 
 ``` <!---make-->

@@ -578,11 +578,16 @@ Jump to: [top](#)
 
 If your submission has more than one use, or if you have interesting ways to
 invoke your program, perhaps using other commonly installed tools (or tools
-included in your submission), it can be helpful to include a `try.sh` script.
+included in your submission), it can be helpful to include a `try.sh` script:
 
-A [template try.sh](next/try.sh) can be used as a
-starting point, or you can look at some of the others in the website, to get
-some ideas.
+- [view example try.sh](%%REPO_URL%%/next/try.sh)
+- [download example try.sh](next/try.sh)
+- [view example try.alt.sh](%%REPO_URL%%/next/try.alt.sh)
+- [download example try.alt.sh](next/try.alt.sh)
+
+
+The template `try.sh` script can be used as a starting point, or you can look at
+some of the others in the website, to get some ideas.
 
 It is not detrimental to your chances of winning if you do not include one as
 not all submissions can make use of them. Nevertheless, it is helpful to include
@@ -844,10 +849,12 @@ Jump to: [top](#)
 There are unfortunately some warnings that cannot be disabled; they are always
 enabled whatever warning options you have enabled. Also, there is a warning that
 is enabled whenever you act on `char *`s, saying it is unsafe buffer usage, even
-when it's not (this might be enabled by `-Weverything` but it might not be; for
-more details on why we use `-Weverything` in Clang see the FAQ on
-"[`-Weverything`](#weverything)"), and it is not detrimental to your submission
-if you disable this. This warning happens to be `-Wno-unsafe-buffer-usage`.
+when it's not. This might be enabled by `-Weverything` but it might not be; for
+more details on why we use `-Weverything` in Clang see the
+FAQ on "[-Weverything](#weverything)".
+
+It is not detrimental to your submission if you disable this, which you can do
+by specifying `-Wno-unsafe-buffer-usage`.
 
 So in short, no you should not worry about these as they are sometimes
 inevitable in obfuscated code and even non-obfuscated code.
@@ -3280,7 +3287,7 @@ The `entry_text` will typically (not always but almost always) be `"alternate
 source code"`.
 
 Many entries have a script (or scripts) for the `Try` section in their index.html file.
-Usually this is called `try.sh` for the entry and `try.alt.sh` for the alternate
+Usually this is called `try.sh` for the winning entry and `try.alt.sh` for the alternate
 source code (if there is an alternate version). Some, however, have another file
 name. The `entry_text` for the `try` scripts will be `script to try entry` or
 something along those lines.
@@ -3306,8 +3313,8 @@ contains information about how to find and compile the mkiocccentry
 toolkit, which includes the IOCCC version of the `jparse(1)` tool, located
 under the `mkiocccentry` directory as `jparse/jparse`.
 
-Additionally you may install the `jparse(1)` tool from the [jparse
-repo](https://github.com/xexyl/jparse):
+Additionally you may install the `jparse(1)` tool from the [mkiocccentry
+repo](https://github.com/ioccc-src/mkiocccentry):
 
 ``` <!--sh-->
     git clone https://github.com/ioccc-src/mkiocccentry.git
@@ -3337,7 +3344,9 @@ the tool.
 
 **NOTE**: the `jparse` subdirectory is a clone of the official [jparse
 repo](https://github.com/xexyl/jparse/issues) but we recommend you compile and
-install via the `mkiocccentry` repo because it has the dependencies built in.
+install via the `mkiocccentry` repo because it has the dependencies built in,
+and because the `mkiocccentry` copy is that which is used by the current IOCCC,
+as the two can be different at times.
 
 Jump to: [top](#)
 

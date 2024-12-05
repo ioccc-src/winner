@@ -892,10 +892,15 @@ this is not clear!</li>
 </div>
 <p>If your submission has more than one use, or if you have interesting ways to
 invoke your program, perhaps using other commonly installed tools (or tools
-included in your submission), it can be helpful to include a <code>try.sh</code> script.</p>
-<p>A <a href="next/try.sh">template try.sh</a> can be used as a
-starting point, or you can look at some of the others in the website, to get
-some ideas.</p>
+included in your submission), it can be helpful to include a <code>try.sh</code> script:</p>
+<ul>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/next/try.sh">view example try.sh</a></li>
+<li><a href="next/try.sh">download example try.sh</a></li>
+<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/next/try.alt.sh">view example try.alt.sh</a></li>
+<li><a href="next/try.alt.sh">download example try.alt.sh</a></li>
+</ul>
+<p>The template <code>try.sh</code> script can be used as a starting point, or you can look at
+some of the others in the website, to get some ideas.</p>
 <p>It is not detrimental to your chances of winning if you do not include one as
 not all submissions can make use of them. Nevertheless, it is helpful to include
 ways to use your program, and if you have creative ways this can be a bonus. It
@@ -1086,10 +1091,11 @@ discussion</a>.</p>
 <p>There are unfortunately some warnings that cannot be disabled; they are always
 enabled whatever warning options you have enabled. Also, there is a warning that
 is enabled whenever you act on <code>char *</code>s, saying it is unsafe buffer usage, even
-when it’s not (this might be enabled by <code>-Weverything</code> but it might not be; for
-more details on why we use <code>-Weverything</code> in Clang see the FAQ on
-“<a href="#weverything"><code>-Weverything</code></a>”), and it is not detrimental to your submission
-if you disable this. This warning happens to be <code>-Wno-unsafe-buffer-usage</code>.</p>
+when it’s not. This might be enabled by <code>-Weverything</code> but it might not be; for
+more details on why we use <code>-Weverything</code> in Clang see the
+FAQ on “<a href="#weverything">-Weverything</a>”.</p>
+<p>It is not detrimental to your submission if you disable this, which you can do
+by specifying <code>-Wno-unsafe-buffer-usage</code>.</p>
 <p>So in short, no you should not worry about these as they are sometimes
 inevitable in obfuscated code and even non-obfuscated code.</p>
 <p>If you <em>can</em> work past this it might be good but this is not something that
@@ -3066,7 +3072,7 @@ extension <code>.md</code>.</p></li>
 <code>"winner.alt.c"</code> or <code>"prog.alt.c"</code>; this is also what the <code>file_path</code> will be.
 The <code>entry_text</code> will typically (not always but almost always) be <code>"alternate source code"</code>.</p>
 <p>Many entries have a script (or scripts) for the <code>Try</code> section in their index.html file.
-Usually this is called <code>try.sh</code> for the entry and <code>try.alt.sh</code> for the alternate
+Usually this is called <code>try.sh</code> for the winning entry and <code>try.alt.sh</code> for the alternate
 source code (if there is an alternate version). Some, however, have another file
 name. The <code>entry_text</code> for the <code>try</code> scripts will be <code>script to try entry</code> or
 something along those lines.</p>
@@ -3086,7 +3092,7 @@ repo</a>
 contains information about how to find and compile the mkiocccentry
 toolkit, which includes the IOCCC version of the <code>jparse(1)</code> tool, located
 under the <code>mkiocccentry</code> directory as <code>jparse/jparse</code>.</p>
-<p>Additionally you may install the <code>jparse(1)</code> tool from the <a href="https://github.com/xexyl/jparse">jparse
+<p>Additionally you may install the <code>jparse(1)</code> tool from the <a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry
 repo</a>:</p>
 <pre class="&lt;!--sh--&gt;"><code>    git clone https://github.com/ioccc-src/mkiocccentry.git
     cd mkiocccentry &amp;&amp; make clobber all&quot; 1&gt;&amp;2
@@ -3102,7 +3108,9 @@ verbosity with the <code>-v</code> option. For instance:</p>
 the tool.</p>
 <p><strong>NOTE</strong>: the <code>jparse</code> subdirectory is a clone of the official <a href="https://github.com/xexyl/jparse/issues">jparse
 repo</a> but we recommend you compile and
-install via the <code>mkiocccentry</code> repo because it has the dependencies built in.</p>
+install via the <code>mkiocccentry</code> repo because it has the dependencies built in,
+and because the <code>mkiocccentry</code> copy is that which is used by the current IOCCC,
+as the two can be different at times.</p>
 <p>Jump to: <a href="#">top</a></p>
 <hr style="width:50%;text-align:left;margin-left:0">
 <hr style="width:50%;text-align:left;margin-left:0">
