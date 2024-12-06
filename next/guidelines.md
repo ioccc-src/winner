@@ -14,7 +14,9 @@ as well as our
 FAQ on "[asking questions](../faq.html#question)"
 about these guidelines. You might also find the
 FAQ in general useful, especially the
-[FAQ section "How to enter: the bare minimum you need to know"](../faq.html#submit).
+FAQ section "[How to enter: the bare minimum you need to know"](../faq.html#submit)"
+and the
+FAQ section "[Entering the IOCCC: more help and details](../faq.html#submitting_help)".
 
 # The IOCCC is closed
 
@@ -52,7 +54,7 @@ Jump to: [top](#)
 </div>
 
 <p class="leftbar">
-These [IOCCC guidelines](guidelines.html) are version **28.25 2024-12-05**.
+These [IOCCC guidelines](guidelines.html) are version **28.26 2024-12-06**.
 </p>
 
 **IMPORTANT**: Be **SURE** to read the [IOCCC rules](rules.html).
@@ -60,7 +62,7 @@ These [IOCCC guidelines](guidelines.html) are version **28.25 2024-12-05**.
 Jump to: [top](#)
 
 <div id="change_marks">
-## Change marks
+# Change marks
 </div>
 
 <p class="leftbar">**&larr; Lines that start with this symbol indicate a change from the
@@ -329,11 +331,10 @@ value similar to the [2001-2012](../faq.html#size_rule2001-2012) and
 [2013-2020](../faq.html#size_rule2013-2020) IOCCC eras.
 </p>
 
-
 Jump to: [top](#)
 
 <div id="mkiocccentry">
-## `mkiocccentry`
+# `mkiocccentry`
 </div>
 
 <p class="leftbar">
@@ -364,25 +365,26 @@ compressed tarball **will not be formed**. For instance, if `chkentry(1)` (see
 below) fails to validate the `.auth.json` or `.info.json`
 [JSON](https://www.json.org/json-en.html) files that `mkiocccentry(1)` creates,
 it is an error and **possibly** a bug that you should [report as a bug at the
-mkiocccentry issues
+mkiocccentry bug report
 page](https://github.com/ioccc-src/mkiocccentry/issues/new?assignees=&labels=bug&projects=&template=bug_report.yml&title=%5BBug%5D+%3Ctitle%3E).
 **PLEASE run the `bug_report.sh` script to help us out here!**  See the
 FAQ on "[reporting mkiocccentry bugs](../faq.html#mkiocccentry_bugs)".
 </p>
 
 <p class="leftbar">
-If you want to know what `.auth.json` is, see the FAQ on
-"[.auth.json](../faq.html#auth_json)".  If you want to know what the
-`.info.json` file is, see the FAQ on "[.info.json](../faq.html#info_json)".  On
-the other hand, if you want to know a bit more details about `chkentry`, see the
+If you want to know what `.auth.json` is, see the
+FAQ on "[.auth.json](../faq.html#auth_json)".
+If you want to know what the `.info.json` file is, see the
+FAQ on "[.info.json](../faq.html#info_json)".
+On the other hand, if you want to know a bit more details about `chkentry`, see the
 FAQ about "[chkentry](../faq.html#chkentry)".
 </p>
 
 <p class="leftbar">
-However, just because there are errors **does not** mean it is a bug in the
-code. It might be an issue with your submission. Thus if you report an error as
-a bug it might not be something that will be fixed as there might not be
-anything wrong.
+However, even if `mkiocccentry` or one of the tools it invokes reports an error,
+**does not** necessarily mean it is a bug in the code. It might be an issue with
+your submission. Thus if you report an error as a bug it might not be something
+that will be fixed as there might not be anything wrong with the tools.
 </p>
 
 <p class="leftbar">
@@ -424,71 +426,30 @@ overwrites the file).
 <p class="leftbar">
 See the
 FAQ on "[mkiocccentry](../faq.html#mkiocccentry)"
-for how to use this tool in more detail.
+for how to use this tool, in more detail.
 </p>
 
-<p class="leftbar">
-Below are the tools that `mkiocccentry(1)` will run.
-</p>
+
+<div id="tools">
+# mkiocccentry tools
+</div>
 
 <p class="leftbar">
 The `mkiocccentry(1)` tool will execute a number of tools, some of which will
-execute one or more additional tools; `chkentry(1)` will use the JSON parser
-library `jparse(3)`; see the [jparse
-README.md](https://github.com/ioccc-src/mkiocccentry/blob/master/jparse/README.md)
-in the [mkiocccentry GitHub repo subdirectory
-jparse](https://github.com/ioccc-src/mkiocccentry/tree/master/jparse) as well as
-the [jparse library README.md
-file](https://github.com/ioccc-src/mkiocccentry/blob/master/jparse/jparse_library_README.md)
-in the [mkiocccentry GitHub repo subdirectory
-jparse](https://github.com/ioccc-src/mkiocccentry/tree/master/jparse), for more
-details.
+execute one or more additional tools.
 </p>
-
-<p class="leftbar">
-The original `jparse` code, co-developed by
-[Landon Curt Noll](http://www.isthe.com/chongo/index.html) and
-[Cody Boone Ferguson](../authors.html#Cody_Boone_Ferguson) in
-2022, comes from the [jparse repo](https://github.com/xexyl/jparse) **but the
-mkiocccentry tools use a _clone_** of this repo **at a _specific_ release**.
-Thus the `mkiocccentry` will at times be behind the `jparse` repo!
-</p>
-
-<p class="leftbar">
-You do **NOT need to install** `jparse` from the [jparse
-repo](https://github.com/xexyl/jparse)! The `mkiocccentry` tools link in the
-static library from the `mkiocccentry` clone. This also goes for the
-[dbg](https://github.com/lcn2/dbg) and
-[dyn_array](https://github.com/lcn2/dyn_array) libraries that the tools use.
-</p>
-
-<p class="leftbar">
-In other words, `mkiocccentry` **contains everything** you need, and _even if you
-do install_ the libraries from their respective repos, it/they will **not be
-used** when compiling the `mkiocccentry` tools.
-</p>
-
-
-Jump to: [top](#)
 
 <div id="iocccsize">
 ## `iocccsize`
 </div>
 
-<p class="leftbar">`mkiocccentry(1)` will use code from `iocccsize(1)` which
+<p class="leftbar">
+`mkiocccentry(1)` will use code from `iocccsize(1)` which
 detects a number of issues that you may ignore, if you wish, as described above.
-As we already discussed how to invoke `mkiocccentry`, we will not include it
-here again.
 </p>
 
 <p class="leftbar">
 In other words, you no longer need to run `iocccsize` manually.
-</p>
-
-<p class="leftbar">
-The `iocccsize` tool was originally part of a winning entry by [Anthony C
-Howe](../authors.html#Anthony_C_Howe), but with some modifications over time, as
-things have changed.
 </p>
 
 Jump to: [top](#)
@@ -512,8 +473,8 @@ FAQ on "[reporting mkiocccentry bugs](../faq.html#mkiocccentry_bugs)".
 
 <p class="leftbar">
 Assuming that `chkentry(1)` successfully validates both `.auth.json` and
-`.info.json` then the tarball will be formed and then `txzchk(1)` will be
-executed. In this case, there should be no problems, as `mkiocccentry(1)` should
+`.info.json`, then the tarball will be formed and then `txzchk(1)` will be
+executed on it. In this case, there should be no problems, as `mkiocccentry(1)` should
 **NOT** form a tarball if there are any issues.
 </p>
 
@@ -522,6 +483,47 @@ If `mkiocccentry(1)` is used and `chkentry(1)` fails to validate either of the
 files, then unless it is a system specific problem, it is likely a bug in
 `mkiocccentry(1)`, `chkentry(1)` or possibly `jparse`, though these are quite
 unlikely.
+</p>
+
+<p class="leftbar">
+`chkentry` uses the `jparse` library. See the
+[jparse
+README.md](https://github.com/ioccc-src/mkiocccentry/blob/master/jparse/README.md)
+in the [mkiocccentry GitHub repo subdirectory
+jparse](https://github.com/ioccc-src/mkiocccentry/tree/master/jparse) as well as
+the [jparse library README.md
+file](https://github.com/ioccc-src/mkiocccentry/blob/master/jparse/jparse_library_README.md)
+in the [mkiocccentry GitHub repo subdirectory
+jparse](https://github.com/ioccc-src/mkiocccentry/tree/master/jparse), for more
+details.
+</p>
+
+<p class="leftbar">
+The `jparse` parser, library and tools were co-developed by
+[Cody Boone Ferguson](../authors.html#Cody_Boone_Ferguson) and
+[Landon Curt Noll](http://www.isthe.com/chongo/index.html) in 2022 and comes
+from the [jparse repo](https://github.com/xexyl/jparse). However, the
+**mkiocccentry tools use a _clone_** of the [jparse
+repo](https://github.com/xexyl/jparse) **at a _specific_ release**.
+Thus the `mkiocccentry` will at times be behind the
+[jparse repo](https://github.com/xexyl/jparse)!
+</p>
+
+<p class="leftbar">
+You do **NOT need to install** `jparse` from the [jparse
+repo](https://github.com/xexyl/jparse)! The `mkiocccentry` tools link in the
+static library from `mkiocccentry`'s clone itself. This also goes for the
+[dbg](https://github.com/lcn2/dbg) and
+[dyn_array](https://github.com/lcn2/dyn_array) libraries that the `mkiocccentry`
+tools, the `dyn_array` library uses and the `jparse` library uses.
+</p>
+
+<p class="leftbar">
+In other words, `mkiocccentry` **contains everything** you need, and _even if you
+do install_ the libraries from their respective repos, it/they will **not be
+used** when compiling the `mkiocccentry` tools. This is important to
+make sure that you're using the correct versions, which is verified by
+`chkentry`.
 </p>
 
 <p class="leftbar">
@@ -540,7 +542,6 @@ FAQ on "[.info.json](../faq.html#info_json)"
 for much more information on these files.
 </p>
 
-
 Jump to: [top](#)
 
 <div id="txzchk">
@@ -552,7 +553,7 @@ Jump to: [top](#)
 compressed tarball; if any issues are found ('`feathers are stuck in the
 tarball`' :-) ) **AND if and _ONLY IF_ you used
 `mkiocccentry(1)`**, then it is **possibly** a bug in one of the tools and you
-might want to [report it as a bug at the mkiocccentry issues
+might want to [report it as a bug at the mkiocccentry bug report
 page](https://github.com/ioccc-src/mkiocccentry/issues/new?assignees=&labels=bug&projects=&template=bug_report.yml&title=%5BBug%5D+%3Ctitle%3E). **PLEASE run the
 `bug_report.sh` script to help us out here!** See the
 FAQ on "[report mkiocccentry bugs](../faq.html#mkiocccentry_bugs)".
@@ -567,7 +568,7 @@ and [fnamchk below](#fnamchk) for more details on this tool.
 
 <p class="leftbar">
 It is beyond the scope of this document to discuss the many tests that
-`txzchk(1)` do. In this case we refer you to the [source
+`txzchk(1)` performs; if you wish to know, we refer you to the [source
 code](https://github.com/ioccc-src/mkiocccentry/blob/master/txzchk.c) or the man
 page. You might find a fun option if you do either of these!
 </p>
@@ -590,10 +591,10 @@ Jump to: [top](#)
 </div>
 
 <p class="leftbar">
-A tool that [txzchk](#txzchk) runs is `fnamchk`. This is an important part of
-its algorithm. If the filename is incorrect (or the filename does not match the
+As an important part of its algorithm, [txzchk](#txzchk) directly executes `fnamchk`.
+If the filename is invalid (or the filename does not match the
 directory name of the tarball) then it is an **error** and you risk violating
-[Rule 17](rules.html#rule17). Nevertheless, you can run the tool manually should
+[Rule 17](rules.html#rule17). Nevertheless, you can run the tool manually, should
 you wish to.
 </p>
 
@@ -604,20 +605,9 @@ FAQ on "[fnamchk](../faq.html#fnamchk)".
 </p>
 
 <p class="leftbar">
-Note that the `txzchk(1)` tool uses `fnamchk(1)` tool as part of its algorithm.
-Thus `mkiocccentry(1)` does not directly invoke `fnamchk(1)`, although we will
+Because `txzchk(1)` tool uses `fnamchk(1)` tool as part of its algorithm,
+`mkiocccentry(1)` does not directly invoke `fnamchk(1)`, although we will
 in the judging process.
-</p>
-
-<hr>
-
-<p class="leftbar">
-At the risk of stating the obvious: you run **a VERY BIG risk** of having
-your submission rejected if you package your own tarball and there are **ANY
-problems**. For instance, if `chkentry(1)` found a problem in your `.info.json`
-file, the `mkiocccentry(1)` tool would not package it. But if you were to package
-it manually, you would be violating [Rule 17](rules.html#rule17). But even if
-everything checks out OK you should **NOT** assume that everything **IS** OK.
 </p>
 
 <p class="leftbar">
@@ -633,7 +623,13 @@ FAQ on "[report mkiocccentry bugs](../faq.html#mkiocccentry_bugs)".
 </p>
 
 <p class="leftbar">
-As you can see, the use of `mkiocccentry(1)` is **HIGHLY RECOMMENDED**.
+As you can see, the use of `mkiocccentry(1)` is **HIGHLY RECOMMENDED**, and at
+the risk of stating the obvious, you run **a VERY BIG risk** of having
+your submission rejected if you package your own tarball, and there are **ANY
+problems**. For instance, if `chkentry(1)` found a problem in your `.info.json`
+file, the `mkiocccentry(1)` tool would not package it. But if you were to package
+it manually, you would be violating [Rule 17](rules.html#rule17). But even if
+everything checks out OK you should **NOT** assume that everything **IS** OK.
 </p>
 
 
@@ -651,10 +647,10 @@ repo](https://github.com/ioccc-src/mkiocccentry/issues/new?assignees=&labels=bug
 
 <p class="leftbar">
 Of course, it is also possible for `mkiocccentry(1)`, or one or more of the
-tools it executes (or another tool executes), to fail, and **NOT** because of a
+tools it executes (or another tool executes), to fail, but **NOT** because of a
 bug. An example problem is if there is not enough memory available or if some
 other library or syscall fails. Nonetheless it might be worth reporting as a
-bug; it is a judgement call; if it's a bug it'll be addressed and if it's not
+bug; it is a judgement call: if it's a bug it'll be addressed and if it's not
 that's OK too!
 </p>
 
@@ -677,8 +673,14 @@ Makefile](%%REPO_URL%%/next/Makefile.example)</p>
 download="Makefile">download example Makefile</a></p>
 
 <p class="leftbar">
-Feel free to modify the `Makefile` to suit your obfuscated
+Feel free to modify the `Makefile` to suit your obfuscation
 needs.
+</p>
+
+<p class="leftbar">
+Please add a space between the `=` and the value of variables, in the
+`Makefile`, making sure that the `=` comes immediately after the name. See the
+example `Makefile` for examples.
 </p>
 
 <p class="leftbar">
@@ -691,26 +693,30 @@ We suggest that you compile your submission with a commonly available
 `-std=gnu17` (ISO C 2017 with GNU extensions) C compiler.
 </p>
 
+<div id="cflags">
 <div id="flags">
 ## Default compiler flags
 </div>
+</div>
 
 <p class="leftbar">
-Unless you **clearly state** otherwise in your `remarks.md` file **AND** put in your
-submission's `Makefile`, we **will** compile using `-std=gnu17 -O3 -g3`!
+Unless you **clearly state** otherwise in your `remarks.md` file, **AND** put in
+your submission's `Makefile`, we **will** compile using `-std=gnu17 -O3 -g3`!
 </p>
 
 <p class="leftbar">
-It **is OK** if you need to require your submission to **not be** compiled
+It **is OK** if you need to require your submission to **NOT be** compiled
 using the default `-std=gnu17 -O3 -g3` settings.  Simply **explain why**
-your submission should not be compiled using `-std=gnu17 -O3 -g3` in
-your `remarks.md` file **and** adjust your `Makefile` accordingly.
+your submission should NOT be compiled using `-std=gnu17 -O3 -g3` in
+your `remarks.md` file, **AND** adjust your `Makefile` accordingly.
 </p>
 
 <p class="leftbar">
-An example reason is that the optimiser is known to break some programs, but
-there are certainly other possible valid reasons. Again, just update the
-`Makefile` and explain it in your `remarks.md`.
+One reason that you might have to change the flags, is that the optimiser is
+known to break some programs, but there are certainly other possible valid
+reasons. Again, just update the `Makefile` and explain it in your `remarks.md`.
+See the [optimiser section](#optimiser) for details for changing optimiser
+flags.
 </p>
 
 <div id="compilers">
@@ -745,13 +751,21 @@ by modifying the `CSTD` Makefile variable.  For example, to use `c17` instead:
 ```
 
 <div id="opt">
+<div id="optimization">
+<div id="optimisation">
+<div id="optimizer">
+<div id="optimiser">
 ## Default optimisation level
+</div>
+</div>
+</div>
+</div>
 </div>
 
 <p class="leftbar">
 You may change the level of optimization and compiler debug level
 that your submission is compiled with, by modifying the `OPT` Makefile variable.
-For example, to compile without optimization and with debug symbols:
+For example, to compile without optimization, and to include debug symbols:
 </p>
 
 ``` <!---make-->
@@ -759,7 +773,29 @@ For example, to compile without optimization and with debug symbols:
 ```
 
 <div id="warnings">
+<div id="cwarn">
 ## Compiler warnings
+</div>
+</div>
+
+<p class="leftbar">
+The default warning flags are set via the `CWARN` variable, as shown in the
+example `Makefile`:
+</p>
+
+``` <!---sh-->
+    # Common C compiler warning flags
+    #
+    CWARN= -Wall -Wextra ${CSILENCE} ${CUNKNOWN}
+```
+
+<p class="leftbar">
+For details on `CSILENCE` and `CUNKNOWN`, see the [section on disabling
+warnings](#disabling-warnings).
+</p>
+
+<div id="weverything">
+### The `-Weverything` option
 </div>
 
 <p class="leftbar">
@@ -775,12 +811,15 @@ other version might!
 <p class="leftbar">
 On the other hand, if `${CC}` has "`clang`" in the name, the example `Makefile` will
 automatically enable `-Weverything`, so you might have to use `-Wno-foo`
-options, as detailed below.
+options anyway, as detailed below. See the
+FAQ on "[-Weverything](../faq.html#weverything)"
+for more details.
 </p>
 
-<div id="disabling-warnings">
-## Disabling warnings
-</div>
+<p class="leftbar">
+If "`clang`" is NOT in `${CC}`, the `CWARN` variable will not be further
+modified.
+</p>
 
 <p class="leftbar">
 There is no real penalty for compiler warnings.  Sometimes
@@ -818,19 +857,23 @@ not meeting your claims).
 On the other hand, some warnings cannot be disabled and are enabled by compilers
 without any warning option specified. These are sometimes inevitable in
 obfuscated code and even in some non-obfuscated code, and you should not worry
-about this, though it might be worth pointing out (see below for an example).
+about this, though it might be worth pointing out.
 </p>
 
 <p class="leftbar">
-Some compilers like to warn about certain use of `char *`s which
-might not only be dubious itself, but it obviously can't (always) be avoided, so you
-should not worry about this either; this is the warning
-`-Wunsafe-buffer-usage` and the way to disable it is `-Wno-unsafe-buffer-usage`. See also the
+For instance, some compilers like to warn about use of `char *`s, which seems to
+be dubious, as it obviously can't (always) be avoided, being a big part of C, so
+you should not worry about this either; this is the warning
+`-Wunsafe-buffer-usage` and the way to disable it is `-Wno-unsafe-buffer-usage`.
+See also the
 FAQ on "[forced warnings](../faq.html#forced_warnings)"
 and the
 FAQ on "[-Weverything](../faq.html#weverything)".
 </p>
 
+<div id="disabling-warnings">
+## Disabling warnings
+</div>
 
 <p class="leftbar">
 If you do have to disable warnings due to `-Weverything` automatically being
@@ -860,22 +903,25 @@ try something such as:
     CSILENCE= -Wno-some-thing -Wno-another-thing
 ```
 
+<p class="leftbar">
 For instance:
-
+</p>
 
 ``` <!---make-->
     CSILENCE= -Wno-parentheses -Wno-binding-in-condition -Wno-misleading-indentation
 ```
 
-
 <p class="leftbar">
 If you do add "`-Wno-foo`" to your Makefile, consider changing:
+</p>
 
 ``` <!---make-->
     CUNKNOWN=
 ```
 
+<p class="leftbar">
 to:
+</p>
 
 ``` <!---make-->
     CUNKNOWN= -Wno-unknown-warning-option
@@ -884,7 +930,8 @@ to:
 <p class="leftbar">
 Some compilers have reported this as an error, however, and if you have
 such a compiler you might want to not add it, or at least note in your
-`remarks.md` the OS, OS version and compiler that this shows up.
+`remarks.md` which OS, OS version, compiler and compiler version you had the
+problem.
 </p>
 
 <div id="macros">

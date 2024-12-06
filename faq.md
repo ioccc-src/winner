@@ -1,6 +1,6 @@
 # IOCCC FAQ Table of Contents
 
-This is FAQ version **28.1.6 2024-12-05**.
+This is FAQ version **28.1.7 2024-12-06**.
 
 
 ## 0. [Entering the IOCCC: the bare minimum you need to know](#enter_questions)
@@ -462,7 +462,10 @@ Jump to: [top](#)
 We recommend starting with the [sample
 Makefile](next/Makefile.example)
 (renamed as `Makefile` of course) as a starting point for your
-entry's `Makefile`.
+entry's `Makefile`:
+
+- [view example Makefile](%%REPO_URL%%/next/Makefile.example)
+- [Makefile.example](next/Makefile.example)
 
 The `Makefile` is a file used by the `make(1)` command that contains
 rules and UNIX shell-style commands.
@@ -513,9 +516,9 @@ The following rules should exist in your Makefile:
 
 Although the `mkiocccentry(1)` tool only checks for those rules, the most up to
 date
-[Makefile.example](next/Makefile.example),
+`Makefile.example`
 does have other rules like `everything` and `alt`, and we encourage you to use
-that one.
+the one linked to above.
 
 Jump to: [top](#)
 
