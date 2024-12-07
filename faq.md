@@ -271,12 +271,65 @@ See also [Rule 17](next/rules.html#rule17)!
 
 #### 5. Upload your entry to the IOCCC submit server
 
-The **IOCCC submit server** is still being written.
-<!--XXX--> As such, we do not yet have instructions
-on how upload your entry to the **IOCCC submit server**.  Once
-**IOCCC submit server** is ready, we will update this section
-with the proper instructions.  Watch the [IOCCC news](news.html)
-for an announcement of the availability of the **IOCCC submit server**.
+The following steps should be taken:
+
+First, open the web page in your browser. It should look something like this:
+
+<img src="png/submit-server-login.png"
+ alt="submit server login screen"
+ width=566 height=609>
+
+At this point, using the UUID login and the password you were provided with step
+0, log in. Assuming everything is fine, you should see something like:
+
+<img src="png/submit-server-passwd.png"
+ alt="submit server password change required"
+ width=566 height=854>
+
+At this point you should change your password. Once this is done, you will have
+to log in again:
+
+<img src="png/submit-server-passwd-changed.png"
+ alt="submit server password changed"
+ width=566 height=854>
+
+At this point, enter your UUID login and new password, and then click "Login".
+You will see submit slots. Each slot is for one submission so if you update a
+submission, make sure you choose the right one so you do not overwrite the wrong
+one. In this next screenshot you will see slot 0 is already
+selected:
+
+<img src="png/submit-server-slots.png"
+ alt="submit server upload screen"
+ width=566 height=905>
+
+Further down the page you should see something like:
+
+
+<img src="png/submit-server-file-select.png"
+ alt="submit server file select"
+ width=566 height=312>
+
+Click the link to upload your `mkiocccentry` compressed tarball. For instance:
+
+<img src="png/submit-server-file-selected.png"
+ alt="submit server file selected"
+ width=566 height=300>
+
+Click "Submit". Once it's uploaded, you should be presented with a new screen.
+If you chose slot 0 you might see something like:
+
+<img src="png/submit-server-submission-uploaded.png"
+ alt="submit server file uploaded"
+ width=566 height=574>
+
+After the submission deadline is reached, and after the judges have verified
+that your submission is valid (as in passes the tools checks), you should see
+something like this:
+
+<img src="png/submit-server-status-updated.png"
+ alt="submit server file uploaded"
+ width=696 height=179>
 
 Jump to: [top](#)
 
