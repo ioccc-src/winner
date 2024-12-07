@@ -1,28 +1,17 @@
 <!-- START: this line starts content from: inc/guidelines.closed.hdr -->
 
-# WARNING: These guidelines are OUT OF DATE
-
-These guidelines are a **VERY TENTATIVE proposal** for the next IOCCC
-and are **VERY LIKELY** to be updated before the next IOCCC.
-They are are provided as a **VERY TENTATIVE** hint at **what
-MIGHT** be used in the next IOCCC.  In some cases they might
-even be a copy of the guidelines from the previous IOCCC.
-
-See our
-FAQ on "[rules, guidelines, tools feedback](../faq.html#feedback)"
-as well as our
-FAQ on "[asking questions](../faq.html#question)"
-about these guidelines. You might also find the
-FAQ in general useful, especially the
-FAQ section "[How to enter: the bare minimum you need to know"](../faq.html#submit)"
-and the
-FAQ section "[Entering the IOCCC: more help and details](../faq.html#submitting_help)".
-
 # The IOCCC is closed
 
 The IOCCC is **NOT** accepting new submissions at this time.  See the
 [IOCCC winning entries page](../years.html) for the entries that have won the
 IOCCC in the past.
+
+These guidelines are a **TENTATIVE proposal** for the next IOCCC
+and are **likely be to be updated** before the next IOCCC.
+
+See our [FAQ about providing feedback](../faq.html#feedback) as well
+as our [FAQ about asking questions](../faq.html#question) about
+these guidelines.
 
 Watch both [the IOCCC status page](../status.html) and the
 [@IOCCC mastodon feed](https://fosstodon.org/@ioccc) for information about
@@ -54,7 +43,7 @@ Jump to: [top](#)
 </div>
 
 <p class="leftbar">
-These [IOCCC guidelines](guidelines.html) are version **28.26 2024-12-06**.
+These [IOCCC guidelines](guidelines.html) are version **28.27 2024-12-06**.
 </p>
 
 **IMPORTANT**: Be **SURE** to read the [IOCCC rules](rules.html).
@@ -982,6 +971,19 @@ _and_ `clang`** support it.
 <p class="leftbar">
 Again, please note that in macOS, `/usr/bin/gcc` is actually `clang`!
 </p>
+
+
+<div id="clobber">
+## The clobber rule
+</div>
+
+<p class="leftbar">
+When `make clobber` is invoked, we request that submission be restored
+to its original submission state.  For example, any temporary files
+created during the build process, or during execution should be
+removed by the `clobber` rule.
+</p>
+
 
 Jump to: [top](#)
 

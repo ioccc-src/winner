@@ -1,12 +1,13 @@
 <!-- START: this line starts content from: inc/rules.closed.hdr -->
 
-# WARNING: These rules are OUT OF DATE
+# The IOCCC is closed
 
-These rules are a **VERY TENTATIVE proposal** for the next IOCCC
-and are **VERY LIKELY** to be updated before the next IOCCC.
-They are are provided as a **VERY TENTATIVE** hint at **what
-MIGHT** be used in the next IOCCC.  In some cases they might
-even be a copy of the rules from the previous IOCCC.
+The IOCCC is **NOT** accepting new submissions at this time.  See the
+[IOCCC winning entries page](../years.html) for the entries that have won the
+IOCCC in the past.
+
+These rules are a **TENTATIVE proposal** for the next IOCCC
+and are **likely be to be updated** before the next IOCCC.
 
 See our
 FAQ on "[rules, guidelines, tools feedback](../faq.html#feedback)"
@@ -15,15 +16,6 @@ FAQ on "[about asking questions](../faq.html#question)"
 about these rules. You might also find the
 FAQ in general useful, especially the
 [FAQ section "How to enter: the bare minimum you need to know"](../faq.html#submit).
-
-
-
-
-# The IOCCC is closed
-
-The IOCCC is **NOT** accepting new submissions at this time.  See the
-[IOCCC winning entries page](../years.html) for the entries that have won the
-IOCCC in the past.
 
 Watch both [the IOCCC status page](../status.html) and the
 [@IOCCC mastodon feed](https://fosstodon.org/@ioccc) for information about
@@ -844,9 +836,9 @@ To invoke the C compiler, use `${CC}`. To invoke the C preprocessor use
 Do **NOT** assume that `.` (the current directory) is in the `$PATH`.
 
 <p class="leftbar">
-When `make clobber` is invoked, your submission **MUST** be restored
+When `make clobber` is invoked, we request that submission be restored
 to its original submission state.  For example, any temporary files
-created during the build process, or during execution **MUST** be
+created during the build process, or during execution should be
 removed by the `clobber` rule.
 </p>
 

@@ -425,25 +425,15 @@
 
 <!-- BEFORE: 1st line of markdown file: next/guidelines.md -->
 <!-- START: this line starts content from: inc/guidelines.closed.hdr -->
-<h1 id="warning-these-guidelines-are-out-of-date">WARNING: These guidelines are OUT OF DATE</h1>
-<p>These guidelines are a <strong>VERY TENTATIVE proposal</strong> for the next IOCCC
-and are <strong>VERY LIKELY</strong> to be updated before the next IOCCC.
-They are are provided as a <strong>VERY TENTATIVE</strong> hint at <strong>what
-MIGHT</strong> be used in the next IOCCC. In some cases they might
-even be a copy of the guidelines from the previous IOCCC.</p>
-<p>See our
-FAQ on “<a href="../faq.html#feedback">rules, guidelines, tools feedback</a>”
-as well as our
-FAQ on “<a href="../faq.html#question">asking questions</a>”
-about these guidelines. You might also find the
-FAQ in general useful, especially the
-FAQ section “<a href="../faq.html#submit">How to enter: the bare minimum you need to know”</a>”
-and the
-FAQ section “<a href="../faq.html#submitting_help">Entering the IOCCC: more help and details</a>”.</p>
 <h1 id="the-ioccc-is-closed">The IOCCC is closed</h1>
 <p>The IOCCC is <strong>NOT</strong> accepting new submissions at this time. See the
 <a href="../years.html">IOCCC winning entries page</a> for the entries that have won the
 IOCCC in the past.</p>
+<p>These guidelines are a <strong>TENTATIVE proposal</strong> for the next IOCCC
+and are <strong>likely be to be updated</strong> before the next IOCCC.</p>
+<p>See our <a href="../faq.html#feedback">FAQ about providing feedback</a> as well
+as our <a href="../faq.html#question">FAQ about asking questions</a> about
+these guidelines.</p>
 <p>Watch both <a href="../status.html">the IOCCC status page</a> and the
 <a href="https://fosstodon.org/@ioccc"><span class="citation" data-cites="IOCCC">@IOCCC</span> mastodon feed</a> for information about
 future IOCCC openings.</p>
@@ -467,7 +457,7 @@ writing by <a href="../contact.html">contacting the judges</a>.</p>
 </div>
 </div>
 <p class="leftbar">
-These <a href="guidelines.html">IOCCC guidelines</a> are version <strong>28.26 2024-12-06</strong>.
+These <a href="guidelines.html">IOCCC guidelines</a> are version <strong>28.27 2024-12-06</strong>.
 </p>
 <p><strong>IMPORTANT</strong>: Be <strong>SURE</strong> to read the <a href="rules.html">IOCCC rules</a>.</p>
 <p>Jump to: <a href="#">top</a></p>
@@ -1198,6 +1188,15 @@ use the <code>COTHER</code> Makefile variable. For example:
 </p>
 <p class="leftbar">
 Again, please note that in macOS, <code>/usr/bin/gcc</code> is actually <code>clang</code>!
+</p>
+<div id="clobber">
+<h2 id="the-clobber-rule">The clobber rule</h2>
+</div>
+<p class="leftbar">
+When <code>make clobber</code> is invoked, we request that submission be restored
+to its original submission state. For example, any temporary files
+created during the build process, or during execution should be
+removed by the <code>clobber</code> rule.
 </p>
 <p>Jump to: <a href="#">top</a></p>
 <div id="likes">
