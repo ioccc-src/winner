@@ -49,7 +49,7 @@ Jump to: [top](#)
 Jump to: [top](#)
 
 <p class="leftbar">
-These [IOCCC rules](rules.html) are version **28.13 2024-12-06**.
+These [IOCCC rules](rules.html) are version **28.14 2024-12-07**.
 </p>
 
 **IMPORTANT**: Be sure to read the [IOCCC guidelines](guidelines.html).
@@ -324,11 +324,11 @@ original submission including, but not limited to `prog.c`, the `Makefile`
 (that we create from your how to build instructions), as well as any data
 files you submit.
 
-If you submission wishes to modify such content, it **MUST** first copy the
+If you submission needs (or wishes :-) ) to modify such content, it **MUST** first copy the
 file to a new filename and then modify that copy.
 
 <p class="leftbar">
-You may use your entry to form a copy, or you make use your `Makefile` to form that copy.
+You may use your submission to form a copy, or you can make use of your `Makefile` to form that copy.
 </p>
 
 <p class="leftbar">
@@ -375,7 +375,15 @@ If you submit any content that is owned by others, you **MUST
 detail that ownership** (i.e., who owns what) **_AND_ document the
 permission you obtained**.
 
-Please note that the IOCCC size tool is **NOT** an original work.
+<p class="leftbar">
+Please note that the IOCCC size tool, the tools in the [mkiocccentry
+repo](https://github.com/ioccc-src/mkiocccentry) and the tools and library in
+the [jparse repo](https://github.com/xexyl/jparse/issues) (that the
+[mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry) clones) are
+**NOT** original works, unless of course you're the respective authors, in
+which case they are. Of course, neither are any of the previous
+winning entries, unless of course you're the winner! :-)
+</p>
 
 <p class="leftbar">
 See also [Rule 5](#rule5), [Rule 18](#rule18) and [Rule 21](#rule21).
@@ -516,7 +524,7 @@ to form your submission's xz compressed tarball.
 
 <p class="leftbar">
 The [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry)
-contains **IMPORTANT** tools such as:
+contains **IMPORTANT** tools and libraries such as:
 </p>
 
 * <p class="leftbar">`chkentry(1)`</p>
@@ -524,7 +532,7 @@ contains **IMPORTANT** tools such as:
 * <p class="leftbar">`mkiocccentry(1)`</p>
 * <p class="leftbar">`txzchk(1)`</p>
 * <p class="leftbar">`fnamchk(1)`</p>
-* <p class="leftbar">`jparse(1)` and `jparse(8)` (which `chkentry(1)` uses)</p>
+* <p class="leftbar">`jparse(1)` (and other tools) and `jparse(3)` (which `chkentry(1)` uses)</p>
 
 <p class="leftbar">
 The above mentioned tools will help you verify that your submission
@@ -538,13 +546,15 @@ line help.  For additional details, see the tools' man pages and the
 </p>
 
 <p class="leftbar">
-You do not explicitly need to invoke `jparse(1)` but the `jparse(8)`
-library will be used when compiling various tools.
+You do not explicitly need to invoke `jparse(1)` but the `jparse(3)`
+library will be used when compiling the tools.
 </p>
 
 <p class="leftbar">
-Of course you **can** invoke `jparse(1)` if you wish to validate your own JSON
-data file or some other JSON file.
+Of course you **can** invoke `jparse(1)` if you wish to validate a JSON file but
+the only JSON files you might want to validate for the IOCCC are validated
+by `chkentry(1)`, and that is what you should use to make sure you conform to
+this rule.
 </p>
 
 **IMPORTANT**: Make **SURE** you have the most recent version of the
@@ -733,23 +743,29 @@ This means you should **MAKE SURE** that you use `mkiocccentry(1)` to
 package your submission; `mkiocccentry(1)` will run the above mentioned tools
 (that do not act on the tarball) **before** creating the tarball and after the
 tarball is created it will then verify that the tarball is okay by running
-`txzchk(1)` on it.
+`txzchk(1)` on it. If any step fails it is an error and submitting the
+submission will result in violating this rule.
 </p>
 
 <p class="leftbar">
 **MAKE SURE** you use the correct release of the repository; you should do this
 **AFTER** the contest opens (pull any changes or if you prefer download the
-repository via the download option at GitHub).
+repository via the download option at GitHub). See the
+FAQ on "[obtaining mkiocccentry](../faq.html#obtaining_mkiocccentry)"
+for more help on ensuring you do have the most up to date release.
 </p>
 
 <p class="leftbar">
 We recommend that you run `make` and then install the tools (and man pages) via
 `make install` (as root or using `sudo(1)` to help you run these tools from your
 submission's directory. The `make install` will install in `/usr/local`.
+However, **you do not have** to install them, but in that case you'll have to run it
+from the toolkit's directory or use the correct options to specify the path to
+the necessary tools, and also specify the path to your files.
 </p>
 
 <p class="leftbar">
-These tools will link in the `jparse(8)` library; `chkentry(1)` uses the parser
+These tools will link in the `jparse(3)` library; `chkentry(1)` uses the parser
 to validate the [JSON](https://www.json.org/json-en.html) but the other tools
 use parts of the library as well.
 </p>

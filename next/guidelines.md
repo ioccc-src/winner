@@ -43,7 +43,7 @@ Jump to: [top](#)
 </div>
 
 <p class="leftbar">
-These [IOCCC guidelines](guidelines.html) are version **28.27 2024-12-06**.
+These [IOCCC guidelines](guidelines.html) are version **28.28 2024-12-07**.
 </p>
 
 **IMPORTANT**: Be **SURE** to read the [IOCCC rules](rules.html).
@@ -361,17 +361,8 @@ FAQ on "[reporting mkiocccentry bugs](../faq.html#mkiocccentry_bugs)".
 </p>
 
 <p class="leftbar">
-If you want to know what `.auth.json` is, see the
-FAQ on "[.auth.json](../faq.html#auth_json)".
-If you want to know what the `.info.json` file is, see the
-FAQ on "[.info.json](../faq.html#info_json)".
-On the other hand, if you want to know a bit more details about `chkentry`, see the
-FAQ about "[chkentry](../faq.html#chkentry)".
-</p>
-
-<p class="leftbar">
 However, even if `mkiocccentry` or one of the tools it invokes reports an error,
-**does not** necessarily mean it is a bug in the code. It might be an issue with
+it **does not** necessarily mean it is a bug in the code. It might be an issue with
 your submission. Thus if you report an error as a bug it might not be something
 that will be fixed as there might not be anything wrong with the tools.
 </p>
@@ -388,6 +379,8 @@ NOT recommend these options.
 In many places it will prompt you to verify what you input, allowing you to
 correct details as you go along.
 </p>
+
+
 
 Jump to: [top](#)
 
@@ -470,8 +463,17 @@ executed on it. In this case, there should be no problems, as `mkiocccentry(1)` 
 <p class="leftbar">
 If `mkiocccentry(1)` is used and `chkentry(1)` fails to validate either of the
 files, then unless it is a system specific problem, it is likely a bug in
-`mkiocccentry(1)`, `chkentry(1)` or possibly `jparse`, though these are quite
+`mkiocccentry(1)`, `chkentry(1)` or possibly `jparse`, though this is quite
 unlikely.
+</p>
+
+<p class="leftbar">
+If you want to know what `.auth.json` is, see the
+FAQ on "[.auth.json](../faq.html#auth_json)".
+If you want to know what the `.info.json` file is, see the
+FAQ on "[.info.json](../faq.html#info_json)".
+On the other hand, if you want to know a bit more details about `chkentry`, see the
+FAQ about "[chkentry](../faq.html#chkentry)".
 </p>
 
 <p class="leftbar">
@@ -490,7 +492,7 @@ details.
 <p class="leftbar">
 The `jparse` parser, library and tools were co-developed by
 [Cody Boone Ferguson](../authors.html#Cody_Boone_Ferguson) and
-[Landon Curt Noll](http://www.isthe.com/chongo/index.html) in 2022 and comes
+[Landon Curt Noll](http://www.isthe.com/chongo/index.html) in 2022 and come
 from the [jparse repo](https://github.com/xexyl/jparse). However, the
 **mkiocccentry tools use a _clone_** of the [jparse
 repo](https://github.com/xexyl/jparse) **at a _specific_ release**.
@@ -501,10 +503,18 @@ Thus the `mkiocccentry` will at times be behind the
 <p class="leftbar">
 You do **NOT need to install** `jparse` from the [jparse
 repo](https://github.com/xexyl/jparse)! The `mkiocccentry` tools link in the
-static library from `mkiocccentry`'s clone itself. This also goes for the
-[dbg](https://github.com/lcn2/dbg) and
-[dyn_array](https://github.com/lcn2/dyn_array) libraries that the `mkiocccentry`
-tools, the `dyn_array` library uses and the `jparse` library uses.
+static library from the `mkiocccentry`'s _clone_.
+</p>
+
+<p class="leftbar">
+The `mkiocccentry` toolkit _also_ has a clone of _both_ the [dbg
+library](https://github.com/lcn2/dbg) and the
+[dyn_array library](https://github.com/lcn2/dyn_array); the [dyn_array
+library](https://github.com/lcn2/dyn_array) uses the [dbg
+library](https://github.com/lcn2/dbg) and the [jparse
+library](https://github.com/xexyl/jparse) uses both libraries but unlike in the
+[jparse repo](https://github.com/xexyl/jparse), the libraries do not need to be
+installed separately, in order to use the tools in `mkiocccentry`.
 </p>
 
 <p class="leftbar">
@@ -512,13 +522,13 @@ In other words, `mkiocccentry` **contains everything** you need, and _even if yo
 do install_ the libraries from their respective repos, it/they will **not be
 used** when compiling the `mkiocccentry` tools. This is important to
 make sure that you're using the correct versions, which is verified by
-`chkentry`.
+`chkentry`. See [Rule 17](rules.html#rule17)!
 </p>
 
 <p class="leftbar">
 Please see the
 FAQ on "[validating .auth.json and/or .info.json files](../faq.html#chkentry)
-for more details on this tool and how you can use it to validate your
+for more details on `chkentry` and how you can use it to validate your
 `.auth.json` and `.info.json` files manually, without having to repackage your
 submission.
 </p>
@@ -978,7 +988,7 @@ Again, please note that in macOS, `/usr/bin/gcc` is actually `clang`!
 </div>
 
 <p class="leftbar">
-When `make clobber` is invoked, we request that submission be restored
+When `make clobber` is invoked, we request that submissions be restored
 to its original submission state.  For example, any temporary files
 created during the build process, or during execution should be
 removed by the `clobber` rule.
@@ -995,7 +1005,7 @@ Jump to: [top](#)
 
 <p class="leftbar">
 We **LIKE** submissions that use an edited variant of the
-example Makefile, as described in the [Makefile section](#makefile),
+example Makefile, as described and linked to in the [Makefile section](#makefile),
 renamed as `Makefile` of course.  This makes it easier for the [IOCCC Judges](../judges.html)
 to test your submission. And if your submissions wins, it makes it easier to integrate it into
 the [Official IOCCC winner website](https://www.ioccc.org/index.html).
