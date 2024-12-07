@@ -466,7 +466,7 @@ writing by <a href="../contact.html">contacting the judges</a>.</p>
 </div>
 <p>Jump to: <a href="#">top</a></p>
 <p class="leftbar">
-These <a href="rules.html">IOCCC rules</a> are version <strong>28.12 2024-12-05</strong>.
+These <a href="rules.html">IOCCC rules</a> are version <strong>28.13 2024-12-06</strong>.
 </p>
 <p><strong>IMPORTANT</strong>: Be sure to read the <a href="guidelines.html">IOCCC guidelines</a>.</p>
 <p>Jump to: <a href="#">top</a></p>
@@ -549,7 +549,9 @@ FAQ on “<a href="../faq.html#submit">submitting to the IOCCC</a>”.</p>
 <div id="rule0">
 <h2 id="rule-0">Rule 0</h2>
 </div>
-<p>We need a <a href="#rule0">rule 0</a>. :-)</p>
+<p class="leftbar">
+Just as C starts at 0, so the IOCCC starts at <a href="#rule0">rule 0</a>. :-)
+</p>
 <p>Jump to: <a href="#">top</a></p>
 <div id="rule1">
 <h2 id="rule-1">Rule 1</h2>
@@ -645,7 +647,7 @@ The submit URL should be active on or slightly before <strong>2024-MMM-DD HH:MM:
 <h2 id="rule-4">Rule 4</h2>
 </div>
 <p class="leftbar">
-If your submission is selected as a winner, it may be modified in order
+If your submission is selected as a winning entry, then your submission may be modified in order
 to fit into the structure of the <a href="https://www.ioccc.org/index.html">Official IOCCC winner website</a>.
 </p>
 <p class="leftbar">
@@ -670,6 +672,14 @@ original submission including, but not limited to <code>prog.c</code>, the <code
 files you submit.</p>
 <p>If you submission wishes to modify such content, it <strong>MUST</strong> first copy the
 file to a new filename and then modify that copy.</p>
+<p class="leftbar">
+You may use your entry to form a copy, or you make use your <code>Makefile</code> to form that copy.
+</p>
+<p class="leftbar">
+If you do make a copy and then modify that copy, please be sure that
+the <code>clobber</code> rule of your <code>Makefile</code> removes that copy in order to
+restore the contents if your submission to its original submission.
+</p>
 <p>Jump to: <a href="#">top</a></p>
 <div id="rule6">
 <h2 id="rule-6">Rule 6</h2>
@@ -687,9 +697,11 @@ I am not a rule, I am a <code>free(void *human);</code> ‼️
 <h2 id="rule-7">Rule 7</h2>
 </div>
 <p>The obfuscated C program must be an original work that you own.</p>
-<p>You (the author(s)) must own the contents of your submission OR
+<p class="leftbar">
+You (the author(s)) must own the contents of your submission OR
 you must have permission from the owner(s) to submit their content
-under the following license:</p>
+under the following license:
+</p>
 <p class="leftbar">
 <strong><a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0 DEED Attribution-ShareAlike 4.0 International</a></strong>
 </p>
@@ -697,6 +709,9 @@ under the following license:</p>
 detail that ownership</strong> (i.e., who owns what) <strong><em>AND</em> document the
 permission you obtained</strong>.</p>
 <p>Please note that the IOCCC size tool is <strong>NOT</strong> an original work.</p>
+<p class="leftbar">
+See also <a href="#rule5">Rule 5</a>, <a href="#rule18">Rule 18</a> and <a href="#rule21">Rule 21</a>.
+</p>
 <p>Jump to: <a href="#">top</a></p>
 <div id="rule8">
 <h2 id="rule-8">Rule 8</h2>
@@ -712,7 +727,7 @@ before the close of the contest.</p>
 <h2 id="rule-9">Rule 9</h2>
 </div>
 <p class="leftbar">
-Each person may submit up to and including <strong>10.000000</strong> (ten) entries per contest.
+Each person may submit up to and including <strong>10.000000</strong> (ten in base 10) entries per contest.
 </p>
 <p><strong>Each submission <em>must be submitted separately</em></strong>.</p>
 <p>Jump to: <a href="#">top</a></p>
@@ -1102,6 +1117,12 @@ C source file must be called <code>prog.c</code>.</p>
 <code>${CPP}</code>.</p>
 <p>Do <strong>NOT</strong> assume that <code>.</code> (the current directory) is in the <code>$PATH</code>.</p>
 <p class="leftbar">
+When <code>make clobber</code> is invoked, your submission <strong>MUST</strong> be restored
+to its original submission state. For example, any temporary files
+created during the build process, or during execution <strong>MUST</strong> be
+removed by the <code>clobber</code> rule.
+</p>
+<p class="leftbar">
 Your <code>Makefile</code> <strong>MUST</strong> use a syntax that is compatible with <code>bash(1)</code>
 and GNU <code>make(1)</code>. You are <strong>ENCOURAGED</strong> to use set <code>SHELL= bash</code> in
 your <code>Makefile</code>.
@@ -1122,6 +1143,9 @@ available in the <code>$PATH</code> search path.
 <strong>MAY</strong> create subdirectories below the current directory, or in <code>/tmp</code>,
 or in <code>/var/tmp</code> provided that <code>.</code> is <strong>NOT</strong> the first octet in any
 directory name or filename you create.</p>
+<p class="leftbar">
+See also <a href="#rule5">Rule 5</a>.
+</p>
 <p>Jump to: <a href="#">top</a></p>
 <div id="rule22">
 <h2 id="rule-22">Rule 22</h2>

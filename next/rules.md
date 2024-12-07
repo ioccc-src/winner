@@ -57,7 +57,7 @@ Jump to: [top](#)
 Jump to: [top](#)
 
 <p class="leftbar">
-These [IOCCC rules](rules.html) are version **28.12 2024-12-05**.
+These [IOCCC rules](rules.html) are version **28.13 2024-12-06**.
 </p>
 
 **IMPORTANT**: Be sure to read the [IOCCC guidelines](guidelines.html).
@@ -168,7 +168,9 @@ Jump to: [top](#)
 ## Rule 0
 </div>
 
-We need a [rule 0](#rule0).  :-)
+<p class="leftbar">
+Just as C starts at 0, so the IOCCC starts at [rule 0](#rule0).  :-)
+</p>
 
 Jump to: [top](#)
 
@@ -300,7 +302,7 @@ Jump to: [top](#)
 </div>
 
 <p class="leftbar">
-If your submission is selected as a winner, it may be modified in order
+If your submission is selected as a winning entry, then your submission may be modified in order
 to fit into the structure of the [Official IOCCC winner website](https://www.ioccc.org/index.html).
 </p>
 
@@ -333,6 +335,16 @@ files you submit.
 If you submission wishes to modify such content, it **MUST** first copy the
 file to a new filename and then modify that copy.
 
+<p class="leftbar">
+You may use your entry to form a copy, or you make use your `Makefile` to form that copy.
+</p>
+
+<p class="leftbar">
+If you do make a copy and then modify that copy, please be sure that
+the `clobber` rule of your `Makefile` removes that copy in order to
+restore the contents if your submission to its original submission.
+</p>
+
 Jump to: [top](#)
 
 <div id="rule6">
@@ -357,9 +369,11 @@ Jump to: [top](#)
 
 The obfuscated C program must be an original work that you own.
 
+<p class="leftbar">
 You (the author(s)) must own the contents of your submission OR
 you must have permission from the owner(s) to submit their content
 under the following license:
+</p>
 
 <p class="leftbar">
 **[CC BY-SA 4.0 DEED Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/)**
@@ -370,6 +384,10 @@ detail that ownership** (i.e., who owns what) **_AND_ document the
 permission you obtained**.
 
 Please note that the IOCCC size tool is **NOT** an original work.
+
+<p class="leftbar">
+See also [Rule 5](#rule5), [Rule 18](#rule18) and [Rule 21](#rule21).
+</p>
 
 Jump to: [top](#)
 
@@ -393,7 +411,7 @@ Jump to: [top](#)
 </div>
 
 <p class="leftbar">
-Each person may submit up to and including **10.000000** (ten) entries per contest.
+Each person may submit up to and including **10.000000** (ten in base 10) entries per contest.
 </p>
 
 **Each submission _must be submitted separately_**.
@@ -826,6 +844,13 @@ To invoke the C compiler, use `${CC}`. To invoke the C preprocessor use
 Do **NOT** assume that `.` (the current directory) is in the `$PATH`.
 
 <p class="leftbar">
+When `make clobber` is invoked, your submission **MUST** be restored
+to its original submission state.  For example, any temporary files
+created during the build process, or during execution **MUST** be
+removed by the `clobber` rule.
+</p>
+
+<p class="leftbar">
 Your `Makefile` **MUST** use a syntax that is compatible with `bash(1)`
 and GNU `make(1)`.  You are **ENCOURAGED** to use set `SHELL= bash` in
 your `Makefile`.
@@ -850,6 +875,10 @@ _with the exception of_ the `/tmp` and the `/var/tmp` directories.  Your submiss
 **MAY** create subdirectories below the current directory, or in `/tmp`,
 or in `/var/tmp` provided that `.` is **NOT** the first octet in any
 directory name or filename you create.
+
+<p class="leftbar">
+See also [Rule 5](#rule5).
+</p>
 
 Jump to: [top](#)
 
