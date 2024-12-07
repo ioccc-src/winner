@@ -462,7 +462,7 @@ writing by <a href="../contact.html">contacting the judges</a>.</p>
 </div>
 <p>Jump to: <a href="#">top</a></p>
 <p class="leftbar">
-These <a href="rules.html">IOCCC rules</a> are version <strong>28.13 2024-12-06</strong>.
+These <a href="rules.html">IOCCC rules</a> are version <strong>28.14 2024-12-07</strong>.
 </p>
 <p><strong>IMPORTANT</strong>: Be sure to read the <a href="guidelines.html">IOCCC guidelines</a>.</p>
 <p>Jump to: <a href="#">top</a></p>
@@ -666,10 +666,10 @@ See also <a href="#rule5">Rule 5</a>, <a href="#rule18">Rule 18</a> and <a href=
 original submission including, but not limited to <code>prog.c</code>, the <code>Makefile</code>
 (that we create from your how to build instructions), as well as any data
 files you submit.</p>
-<p>If you submission wishes to modify such content, it <strong>MUST</strong> first copy the
+<p>If you submission needs (or wishes :-) ) to modify such content, it <strong>MUST</strong> first copy the
 file to a new filename and then modify that copy.</p>
 <p class="leftbar">
-You may use your entry to form a copy, or you make use your <code>Makefile</code> to form that copy.
+You may use your submission to form a copy, or you can make use of your <code>Makefile</code> to form that copy.
 </p>
 <p class="leftbar">
 If you do make a copy and then modify that copy, please be sure that
@@ -704,7 +704,15 @@ under the following license:
 <p>If you submit any content that is owned by others, you <strong>MUST
 detail that ownership</strong> (i.e., who owns what) <strong><em>AND</em> document the
 permission you obtained</strong>.</p>
-<p>Please note that the IOCCC size tool is <strong>NOT</strong> an original work.</p>
+<p class="leftbar">
+Please note that the IOCCC size tool, the tools in the <a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry
+repo</a> and the tools and library in
+the <a href="https://github.com/xexyl/jparse/issues">jparse repo</a> (that the
+<a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry repo</a> clones) are
+<strong>NOT</strong> original works, unless of course you’re the respective authors, in
+which case they are. Of course, neither are any of the previous
+winning entries, unless of course you’re the winner! :-)
+</p>
 <p class="leftbar">
 See also <a href="#rule5">Rule 5</a>, <a href="#rule18">Rule 18</a> and <a href="#rule21">Rule 21</a>.
 </p>
@@ -805,7 +813,7 @@ to form your submission’s xz compressed tarball.
 </p>
 <p class="leftbar">
 The <a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry repo</a>
-contains <strong>IMPORTANT</strong> tools such as:
+contains <strong>IMPORTANT</strong> tools and libraries such as:
 </p>
 <ul>
 <li><p class="leftbar">
@@ -824,7 +832,7 @@ contains <strong>IMPORTANT</strong> tools such as:
 <code>fnamchk(1)</code>
 </p></li>
 <li><p class="leftbar">
-<code>jparse(1)</code> and <code>jparse(8)</code> (which <code>chkentry(1)</code> uses)
+<code>jparse(1)</code> (and other tools) and <code>jparse(3)</code> (which <code>chkentry(1)</code> uses)
 </p></li>
 </ul>
 <p class="leftbar">
@@ -837,12 +845,14 @@ line help. For additional details, see the tools’ man pages and the
 <a href="guidelines.html">guidelines</a>.
 </p>
 <p class="leftbar">
-You do not explicitly need to invoke <code>jparse(1)</code> but the <code>jparse(8)</code>
-library will be used when compiling various tools.
+You do not explicitly need to invoke <code>jparse(1)</code> but the <code>jparse(3)</code>
+library will be used when compiling the tools.
 </p>
 <p class="leftbar">
-Of course you <strong>can</strong> invoke <code>jparse(1)</code> if you wish to validate your own JSON
-data file or some other JSON file.
+Of course you <strong>can</strong> invoke <code>jparse(1)</code> if you wish to validate a JSON file but
+the only JSON files you might want to validate for the IOCCC are validated
+by <code>chkentry(1)</code>, and that is what you should use to make sure you conform to
+this rule.
 </p>
 <p><strong>IMPORTANT</strong>: Make <strong>SURE</strong> you have the most recent version of the
 <code>mkiocccentry</code> toolkit! Not doing so will put you at a great risk of violating
@@ -1033,20 +1043,26 @@ This means you should <strong>MAKE SURE</strong> that you use <code>mkiocccentry
 package your submission; <code>mkiocccentry(1)</code> will run the above mentioned tools
 (that do not act on the tarball) <strong>before</strong> creating the tarball and after the
 tarball is created it will then verify that the tarball is okay by running
-<code>txzchk(1)</code> on it.
+<code>txzchk(1)</code> on it. If any step fails it is an error and submitting the
+submission will result in violating this rule.
 </p>
 <p class="leftbar">
 <strong>MAKE SURE</strong> you use the correct release of the repository; you should do this
 <strong>AFTER</strong> the contest opens (pull any changes or if you prefer download the
-repository via the download option at GitHub).
+repository via the download option at GitHub). See the
+FAQ on “<a href="../faq.html#obtaining_mkiocccentry">obtaining mkiocccentry</a>”
+for more help on ensuring you do have the most up to date release.
 </p>
 <p class="leftbar">
 We recommend that you run <code>make</code> and then install the tools (and man pages) via
 <code>make install</code> (as root or using <code>sudo(1)</code> to help you run these tools from your
 submission’s directory. The <code>make install</code> will install in <code>/usr/local</code>.
+However, <strong>you do not have</strong> to install them, but in that case you’ll have to run it
+from the toolkit’s directory or use the correct options to specify the path to
+the necessary tools, and also specify the path to your files.
 </p>
 <p class="leftbar">
-These tools will link in the <code>jparse(8)</code> library; <code>chkentry(1)</code> uses the parser
+These tools will link in the <code>jparse(3)</code> library; <code>chkentry(1)</code> uses the parser
 to validate the <a href="https://www.json.org/json-en.html">JSON</a> but the other tools
 use parts of the library as well.
 </p>

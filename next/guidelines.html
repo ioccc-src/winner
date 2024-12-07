@@ -457,7 +457,7 @@ writing by <a href="../contact.html">contacting the judges</a>.</p>
 </div>
 </div>
 <p class="leftbar">
-These <a href="guidelines.html">IOCCC guidelines</a> are version <strong>28.27 2024-12-06</strong>.
+These <a href="guidelines.html">IOCCC guidelines</a> are version <strong>28.28 2024-12-07</strong>.
 </p>
 <p><strong>IMPORTANT</strong>: Be <strong>SURE</strong> to read the <a href="rules.html">IOCCC rules</a>.</p>
 <p>Jump to: <a href="#">top</a></p>
@@ -715,16 +715,8 @@ page</a>.
 FAQ on “<a href="../faq.html#mkiocccentry_bugs">reporting mkiocccentry bugs</a>”.
 </p>
 <p class="leftbar">
-If you want to know what <code>.auth.json</code> is, see the
-FAQ on “<a href="../faq.html#auth_json">.auth.json</a>”.
-If you want to know what the <code>.info.json</code> file is, see the
-FAQ on “<a href="../faq.html#info_json">.info.json</a>”.
-On the other hand, if you want to know a bit more details about <code>chkentry</code>, see the
-FAQ about “<a href="../faq.html#chkentry">chkentry</a>”.
-</p>
-<p class="leftbar">
 However, even if <code>mkiocccentry</code> or one of the tools it invokes reports an error,
-<strong>does not</strong> necessarily mean it is a bug in the code. It might be an issue with
+it <strong>does not</strong> necessarily mean it is a bug in the code. It might be an issue with
 your submission. Thus if you report an error as a bug it might not be something
 that will be fixed as there might not be anything wrong with the tools.
 </p>
@@ -798,8 +790,16 @@ executed on it. In this case, there should be no problems, as <code>mkiocccentry
 <p class="leftbar">
 If <code>mkiocccentry(1)</code> is used and <code>chkentry(1)</code> fails to validate either of the
 files, then unless it is a system specific problem, it is likely a bug in
-<code>mkiocccentry(1)</code>, <code>chkentry(1)</code> or possibly <code>jparse</code>, though these are quite
+<code>mkiocccentry(1)</code>, <code>chkentry(1)</code> or possibly <code>jparse</code>, though this is quite
 unlikely.
+</p>
+<p class="leftbar">
+If you want to know what <code>.auth.json</code> is, see the
+FAQ on “<a href="../faq.html#auth_json">.auth.json</a>”.
+If you want to know what the <code>.info.json</code> file is, see the
+FAQ on “<a href="../faq.html#info_json">.info.json</a>”.
+On the other hand, if you want to know a bit more details about <code>chkentry</code>, see the
+FAQ about “<a href="../faq.html#chkentry">chkentry</a>”.
 </p>
 <p class="leftbar">
 <code>chkentry</code> uses the <code>jparse</code> library. See the
@@ -816,7 +816,7 @@ details.
 <p class="leftbar">
 The <code>jparse</code> parser, library and tools were co-developed by
 <a href="../authors.html#Cody_Boone_Ferguson">Cody Boone Ferguson</a> and
-<a href="http://www.isthe.com/chongo/index.html">Landon Curt Noll</a> in 2022 and comes
+<a href="http://www.isthe.com/chongo/index.html">Landon Curt Noll</a> in 2022 and come
 from the <a href="https://github.com/xexyl/jparse">jparse repo</a>. However, the
 <strong>mkiocccentry tools use a <em>clone</em></strong> of the <a href="https://github.com/xexyl/jparse">jparse
 repo</a> <strong>at a <em>specific</em> release</strong>.
@@ -826,22 +826,29 @@ Thus the <code>mkiocccentry</code> will at times be behind the
 <p class="leftbar">
 You do <strong>NOT need to install</strong> <code>jparse</code> from the <a href="https://github.com/xexyl/jparse">jparse
 repo</a>! The <code>mkiocccentry</code> tools link in the
-static library from <code>mkiocccentry</code>’s clone itself. This also goes for the
-<a href="https://github.com/lcn2/dbg">dbg</a> and
-<a href="https://github.com/lcn2/dyn_array">dyn_array</a> libraries that the <code>mkiocccentry</code>
-tools, the <code>dyn_array</code> library uses and the <code>jparse</code> library uses.
+static library from the <code>mkiocccentry</code>’s <em>clone</em>.
+</p>
+<p class="leftbar">
+The <code>mkiocccentry</code> toolkit <em>also</em> has a clone of <em>both</em> the <a href="https://github.com/lcn2/dbg">dbg
+library</a> and the
+<a href="https://github.com/lcn2/dyn_array">dyn_array library</a>; the <a href="https://github.com/lcn2/dyn_array">dyn_array
+library</a> uses the <a href="https://github.com/lcn2/dbg">dbg
+library</a> and the <a href="https://github.com/xexyl/jparse">jparse
+library</a> uses both libraries but unlike in the
+<a href="https://github.com/xexyl/jparse">jparse repo</a>, the libraries do not need to be
+installed separately, in order to use the tools in <code>mkiocccentry</code>.
 </p>
 <p class="leftbar">
 In other words, <code>mkiocccentry</code> <strong>contains everything</strong> you need, and <em>even if you
 do install</em> the libraries from their respective repos, it/they will <strong>not be
 used</strong> when compiling the <code>mkiocccentry</code> tools. This is important to
 make sure that you’re using the correct versions, which is verified by
-<code>chkentry</code>.
+<code>chkentry</code>. See <a href="rules.html#rule17">Rule 17</a>!
 </p>
 <p class="leftbar">
 Please see the
 FAQ on “<a href="../faq.html#chkentry">validating .auth.json and/or .info.json files</a>
-for more details on this tool and how you can use it to validate your
+for more details on <code>chkentry</code> and how you can use it to validate your
 <code>.auth.json</code> and <code>.info.json</code> files manually, without having to repackage your
 submission.
 </p>
@@ -1193,7 +1200,7 @@ Again, please note that in macOS, <code>/usr/bin/gcc</code> is actually <code>cl
 <h2 id="the-clobber-rule">The clobber rule</h2>
 </div>
 <p class="leftbar">
-When <code>make clobber</code> is invoked, we request that submission be restored
+When <code>make clobber</code> is invoked, we request that submissions be restored
 to its original submission state. For example, any temporary files
 created during the build process, or during execution should be
 removed by the <code>clobber</code> rule.
@@ -1206,7 +1213,7 @@ removed by the <code>clobber</code> rule.
 </div>
 <p class="leftbar">
 We <strong>LIKE</strong> submissions that use an edited variant of the
-example Makefile, as described in the <a href="#makefile">Makefile section</a>,
+example Makefile, as described and linked to in the <a href="#makefile">Makefile section</a>,
 renamed as <code>Makefile</code> of course. This makes it easier for the <a href="../judges.html">IOCCC Judges</a>
 to test your submission. And if your submissions wins, it makes it easier to integrate it into
 the <a href="https://www.ioccc.org/index.html">Official IOCCC winner website</a>.

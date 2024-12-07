@@ -1,6 +1,6 @@
 # IOCCC FAQ Table of Contents
 
-This is FAQ version **28.1.7 2024-12-06**.
+This is FAQ version **28.1.8 2024-12-07**.
 
 
 ## 0. [Entering the IOCCC: the bare minimum you need to know](#enter_questions)
@@ -341,7 +341,7 @@ Jump to: [top](#)
 #### Q 0.1.2: How do I obtain the latest mkiocccentry toolkit?
 </div>
 
-Before you use it, make sure you have the most recent version. If you do not
+Before you use it, make **SURE** you have the most recent version. If you do not
 have an mkiocccentry tool directory:
 
 ``` <!---sh-->
