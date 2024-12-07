@@ -86,7 +86,7 @@ COTHER=
 
 # Optimization
 #
-OPT= -O3 -g3
+OPT= -O3
 
 # Default flags for ANSI C compilation
 #
@@ -181,11 +181,12 @@ everything: all alt
 	@${TRUE}
 
 
-# one suggested way to run the program
+# suggested way(s) to run the program
 #
 try: ${PROG} ${DATA}
 	@# remove these comments
 	@# notice how we do not assume that . is a component of the $PATH environment variable
+	@# you may use the try.sh script if you have one
 	@# change this next line as needed
 	./${PROG} some arguments
 
@@ -202,35 +203,10 @@ clean:
 	fi
 
 clobber: clean
-	${RM} -f ${TARGET}
+	${RM} -f ${TARGET} *.dSYM
 	@-if [[ -e sandwich ]]; then \
 	    ${RM} -f sandwich; \
 	    echo 'ate sandwich'; \
-	fi
-
-# Do not install prog, please!
-#
-install:
-	@echo "Dr. Spock says that is not logical!"
-	@${TRUE}
-
-# you may be able to misunderstand the source by reading indent.c
-#
-indent.c: ${PROG}.c
-	@if which "${GINDENT}" >/dev/null 2>&1; then \
-	    echo ${RM} -f $@; \
-	    ${RM} -f $@; \
-	    echo "${GINDENT} < $< > $@"; \
-	    ${GINDENT} < $< > $@; \
-	elif which "${INDENT}" >/dev/null 2>&1; then \
-	    echo ${RM} -f $@; \
-	    ${RM} -f $@; \
-	    echo "${INDENT} < $< > $@"; \
-	    ${INDENT} < $< > $@; \
-	else \
-	    echo "no indent tool found, ident $< yourself, sorry"; \
-	    echo "exit 17"; \
-	    exit 17; \
 	fi
 
 
