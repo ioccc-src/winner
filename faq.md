@@ -271,65 +271,112 @@ See also [Rule 17](next/rules.html#rule17)!
 
 #### 5. Upload your entry to the IOCCC submit server
 
-The following steps should be taken:
+The following steps should be taken, in order to upload your `mkiocccentry` xz
+compressed tarball, to change the file (if you need to upload a different file
+or you have updated the submission), and to check the status of it after the
+contest closes:
 
-First, open the web page in your browser. It should look something like this:
+First, open the web page in your browser. It should look like this:
+With the login id and password already input, It should look something like
+this:
 
 <img src="png/submit-server-login.png"
  alt="submit server login screen"
- width=566 height=609>
+ width=710 height=562>
 
-At this point, using the UUID login and the password you were provided with step
-0, log in. Assuming everything is fine, you should see something like:
+The login is the UUID you were provided when you registered for the IOCCC and
+the password is the initial password you were provided with. Click "Login".
+Assuming everything is fine, it should look something like:
 
-<img src="png/submit-server-passwd.png"
+<img src="png/submit-server-first-login.png"
  alt="submit server password change required"
- width=566 height=854>
+ width=710 height=808>
 
-At this point you should change your password. Once this is done, you will have
-to log in again:
+As you can see, you have to change your password. Put in your login (UUID
+username), your old (initial) password and a new password. For instance:
+
+<img src="png/submit-server-change-passwd.png"
+ alt="submit server changing password"
+ width=710 height=808>
+
+Click "Change Password".
+
+Once this is done, you will have to log in again. Using the UUID login and the
+new password:
 
 <img src="png/submit-server-passwd-changed.png"
  alt="submit server password changed"
- width=566 height=854>
+ width=710 height=344>
 
-At this point, enter your UUID login and new password, and then click "Login".
-You will see submit slots. Each slot is for one submission so if you update a
-submission, make sure you choose the right one so you do not overwrite the wrong
-one. In this next screenshot you will see slot 0 is already
-selected:
+
+.. click "Login".
+
+Once you've logged in, you will see submit slots. Each slot is for one
+submission so if you update a submission, make sure you choose the right one so
+you do not overwrite the wrong one!
+
+Here is what it looks like without any uploads and no slot selected:
 
 <img src="png/submit-server-slots.png"
- alt="submit server upload screen"
- width=566 height=905>
+ alt="submit server slots"
+ width=710 height=806>
 
-Further down the page you should see something like:
+Select a slot and then select a file by clicking the button "Choose File". After
+doing this, it should look something like:
 
+<img src="png/submit-server-slot-file.png"
+ alt="submit server slot and file selected"
+ width=717 height=865>
 
-<img src="png/submit-server-file-select.png"
- alt="submit server file select"
- width=566 height=312>
+If you need to change the file to upload, you can mouseover the file and click
+it. If you wait a moment it'll show the current filename. It will look something
+like this:
 
-Click the link to upload your `mkiocccentry` compressed tarball. For instance:
+<img src="png/submit-server-change-file.png"
+ alt="submit server change file"
+ width=717 height=865>
 
-<img src="png/submit-server-file-selected.png"
- alt="submit server file selected"
- width=566 height=300>
+Once you're certain you have selected the correct file, click "Submit", below
+the file selection step.
 
-Click "Submit". Once it's uploaded, you should be presented with a new screen.
-If you chose slot 0 you might see something like:
+When it's uploaded it should look something like this:
 
 <img src="png/submit-server-submission-uploaded.png"
- alt="submit server file uploaded"
- width=566 height=574>
+ alt="submit server submission uploaded"
+ width=717 height=525>
 
-After the submission deadline is reached, and after the judges have verified
-that your submission is valid (as in passes the tools checks), you should see
-something like this:
+Here you see the details, in particular:
+
+- the status of the submission
+- the filename, which will be in the correct format, assuming you used
+`mkiocccentry(1)` which is **HIGHLY** recommended so that you do not break [Rule
+17](next/rules.html#rule17)!
+- the file length, which `txzchk(1)` will also verify (the file itself and the
+tarball listing)
+- the upload date
+- the SHA256 hash of the file
+
+Now if you're done, log out.
+
+After the submission deadline is reached, you can log in to check the status of
+your submissions. Here is what it will look like when the judges have verified
+that your tarball / submission has been validated (NOT judged), by `txzchk(1)`
+and `chkentry(1)`.:
 
 <img src="png/submit-server-status-updated.png"
- alt="submit server file uploaded"
- width=696 height=179>
+ alt="submit server status updated"
+ width=717 height=217>
+
+For details on `txzchk`, see the
+FAQ on "[txzchk](#txzchk)".
+
+For details on `chkentry`, see the
+FAQ on "[chkentry](#chkentry)".
+
+If you need more information on what `chkentry` checks, see the
+FAQ on the [".info.json file](#info_json)"
+and the
+FAQ on the "[.auth.json file](#auth_json)".
 
 Jump to: [top](#)
 
