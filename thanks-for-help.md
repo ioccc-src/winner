@@ -7094,7 +7094,7 @@ Jump to: [top](#)
 ### Authors
 </div>
 
-A good number of the [winning entries of the
+A good number of the [winning authors of the
 IOCCC](authors.html) tested, identified and helped correct
 and/or improve the write-ups of fellow IOCCC entries for the year that they won.
 The list of those entries is too long to mention: nevertheless the [IOCCC
@@ -7132,7 +7132,9 @@ improving all `Makefiles`; and writing scripts to greatly simplify running many
 of the entries.
 
 Cody also wrote the feature-rich [sgit](https://github.com/xexyl/sgit) to easily
-run `sed(1)` on files in the repo which we used to help build the website.
+run `sed(1)` on files in the repo which we used to help build the website. He
+also co-developed the [JSON parser and tools](faq.html#jparse) with us, as the
+website makes extensive use of JSON.
 
 Cody Boone Ferguson also used one of his own tools to detect many dead links.
 While the tool was not perfect it went a long way to uncover a good number of
@@ -7146,8 +7148,9 @@ inconsistent award titles in the `README.md` files (used to generate the
 `index.html` files) and the CSV file that he generated from our SQL file.
 
 Cody also greatly improved the manifests and checked that the generated html
-files look well and are presentable, and he also suggested some CSS rules for
-image responsiveness on smaller screens, along with some other improvements.
+files look well and are presentable, suggested some CSS rules for
+image responsiveness on smaller screens along with some other improvements,
+greatly improved the FAQ.
 
 Cody also wrote some of the [website scripts](bin/index.html) and improved and
 bug fixed others.
