@@ -6,7 +6,7 @@
     "dir" : "applin",
     "entry_id" : "1988_applin",
     "title" : "1988.applin",
-    "abstract" : "massive #define that includes itself prints table of primes",
+    "abstract" : "massive #define that includes itself and prints a table of primes",
     "author_set" : [
         {
             "author_handle" : "Jack_Applin"

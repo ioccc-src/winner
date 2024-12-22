@@ -110,8 +110,8 @@ Can you figure out why the board looks different than the
 
 What happens if you make a move already made?
 
-Now go try and draw or better yet win (without cheating which is very easy :-) )!
-Why is win better than draw? Because everyone knows how to draw:
+Now go try and draw or better yet win! Why is win better than draw? Because
+everyone knows how to draw:
 
 > **Professor Falken**: Did you ever play **tic-tac-toe**?
 >
@@ -126,8 +126,8 @@ Why is win better than draw? Because everyone knows how to draw:
 > **Jennifer**: Because it's a boring game. It's always a tie.
 >
 > **Falken**: Exactly. There's no way to win. The game itself is pointless.  But
-back at the [International Obfuscated C Code Contest judges' room](../../judges.html) they believe
-that you can win **tic-tac-toe**, that there can be acceptable draws.
+> back at the [International Obfuscated C Code Contest judges' room](../../judges.html) they believe
+> that you can win **tic-tac-toe**, that there can be acceptable draws.
 
 Try not to cheat (even though it's very easy :-) ), the computer has not learned
 how to catch you doing it.

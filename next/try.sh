@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 #
 # try.sh - demonstrate IOCCC entry YYYY/foo
-# XXX - try.sh example version: 1.0.0-1 11-28-2024                          - XXX 
+# XXX - try.sh example version: 1.0.0-1 11-28-2024                          - XXX
 
-# XXX - NOTE: if your submission wins and become an entry, then             - XXX
+# XXX - NOTE: if your submission wins and becomes an entry, then            - XXX
 # XXX - YYYY/foo will be changed to the 4 digit year and directory          - XXX
 # XXX - name.                                                               - XXX
 # XXX - NOTE: please remove the XXX lines in this file, including this one  - XXX

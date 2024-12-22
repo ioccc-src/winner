@@ -6,7 +6,7 @@
     "dir" : "wall",
     "entry_id" : "1986_wall",
     "title" : "1986.wall",
-    "abstract" : "dvorak keyboard emulator",
+    "abstract" : "Dvorak keyboard emulator",
     "author_set" : [
         {
             "author_handle" : "Larry_Wall"
