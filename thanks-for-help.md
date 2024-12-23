@@ -6944,7 +6944,9 @@ Jump to: [top](#)
 Jump to: [top](#)
 
 <div id="makefiles_fixes_improvements">
+<div id="makefiles">
 ## Makefiles fixes and improvements
+</div>
 </div>
 
 [Cody](#cody) fixed the top level `Makefile` `all` rule which had a stray `fi;`
@@ -7111,30 +7113,31 @@ Jump to: [top](#)
 
 We call out the extensive contributions of [Cody Boone
 Ferguson](authors.html#Cody_Boone_Ferguson) who is responsible for many
-improvements and fixes, including entries that no longer worked
-and other important fixes, often **EXTREMELY HARD** (for certain
+improvements and fixes, including fixing many [entries that no longer
+worked](faq.html#unsupported),
+often **EXTREMELY HARD** (for certain
 definitions of '`HARD`' :-) ), such as
 [1988/phillipps](thanks-for-help.html#1988_phillipps),
 [1992/vern](thanks-for-help.html#1992_vern),
 [2001/anonymous](thanks-for-help.html#2001_anonymous),
 [2004/burley](thanks-for-help.html#2004_burley) and
-[2005/giljade](thanks-for-help.html#2005_giljade); fixing entries such as
+[2005/giljade](thanks-for-help.html#2005_giljade); fixing entries like
 [1985/sicherman](thanks-for-help.html#1985_sicherman) and
 [1986/wall](thanks-for-help.html#1986_wall) to
 not require `-traditional-cpp`; fixing
-entries like [1991/dds](thanks-for-help.html#1991_dds) to work with `clang` (or, as in the case of
+entries like [1991/dds](thanks-for-help.html#1991_dds) to work with
+[clang](faq.html#clang) (or, as in the case of
 [1989/westley](thanks-for-help.html#1989_westley), a true masterpiece in
-obfuscation, to work as much as possible); porting entries such as
-[1998/schweikh1](thanks-for-help.html#1998_schweikh1) to macOS; fixing code like
-[2001/herrmann2](thanks-for-help.html#2001_herrmann2) to work in both 32-bit and
-64-bit; providing [alternate code](faq.html#alt_code) where useful/necessary;
-improving all `Makefiles`; and writing scripts to greatly simplify running many
-of the entries.
+obfuscation, to work as much as possible); porting entries like
+[1998/schweikh1](thanks-for-help.html#1998_schweikh1) to
+[macOS](faq.html#macos_compile); fixing code like
+[2001/herrmann2](thanks-for-help.html#2001_herrmann2) to work in [both 32-bit and
+64-bit](faq.html#32bit); providing [alternate code](faq.html#alt_code) where useful/necessary;
+improving all [Makefiles](#makefiles);  writing [scripts](#try) to greatly simplify running many
+of the entries; and other important fixes.
 
 Cody also wrote the feature-rich [sgit](https://github.com/xexyl/sgit) to easily
-run `sed(1)` on files in the repo which we used to help build the website. He
-also co-developed the [JSON parser and tools](faq.html#jparse) with us, as the
-website makes extensive use of JSON.
+run `sed(1)` on files in the repo which we used earlier on to help build the website.
 
 Cody Boone Ferguson also used one of his own tools to detect many dead links.
 While the tool was not perfect it went a long way to uncover a good number of
@@ -7148,16 +7151,17 @@ inconsistent award titles in the `README.md` files (used to generate the
 `index.html` files) and the CSV file that he generated from our SQL file.
 
 Cody also greatly improved the manifests and checked that the generated html
-files look well and are presentable, suggested some CSS rules for
-image responsiveness on smaller screens along with some other improvements,
-greatly improved the FAQ.
+files look good and are presentable, suggested CSS rules for
+image responsiveness and other improvements, and greatly improved the FAQ.
 
-Cody also wrote some of the [website scripts](bin/index.html) and improved and
-bug fixed others.
+Cody also wrote some of the [website scripts](bin/index.html), improved and
+bug fixed others, co-developed the [JSON parser and tools](https://github.com/xexyl/jparse) with
+us, as we now make extensive use of JSON, and helped test and fix the submit
+server for IOCCC28 and beyond.
 
 **THANK YOU VERY MUCH** for your extensive efforts in helping improve the IOCCC
-presentation of past IOCCC entries and fixing almost all entries that no
-longer worked, for modern systems!
+presentation of past IOCCC entries, fixing almost all entries that no
+longer worked and getting the IOCCC where it is today!
 
 
 Jump to: [top](#)
@@ -7170,7 +7174,7 @@ Jump to: [top](#)
 [Yusuke Endoh](authors.html#Yusuke_Endoh) supplied a
 number of important bug fixes to a number of past IOCCC entries, including
 **fixing _numerous entries_ that no longer worked**. Some of those
-fixes were **EXTREMELY TECHNICALLY CHALLENGING**, such as
+fixes were **EXTREMELY TECHNICALLY CHALLENGING**, like
 [1989/robison](thanks-for-help.html#1989_robison),
 [1990/cmills](thanks-for-help.html#1990_cmills),
 [1992/lush](thanks-for-help.html#1992_lush) and

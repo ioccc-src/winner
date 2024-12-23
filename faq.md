@@ -26,7 +26,7 @@ This is FAQ version **28.1.8 2024-12-07**.
 ## 2. [IOCCC Judging process](#judging)
 - **Q 2.0**: <a class="normal" href="#questions">What is the best way to ask a question about the IOCCC rules, guideline and tools?</a>
 - **Q 2.1**: <a class="normal" href="#feedback">How can I comment or make a suggestion on IOCCC rules, guidelines and tools?</a>
-- **Q 2.2**: <a class="normal" href="#warnings">Are there any compiler warnings that I should not worry about?</a>
+- **Q 2.2**: <a class="normal" href="#warnings">Are there any compiler warnings that I should not worry about in my submissions?</a>
 - **Q 2.3**: <a class="normal" href="#frequent-themes">What types of entries have been frequently submitted to the IOCCC?</a>
 - **Q 2.4**: <a class="normal" href="#rule_2_broken">How did an entry that breaks the size rule 2 win the IOCCC?</a>
 - **Q 2.5**: <a class="normal" href="#submissions">How many submissions do the judges receive for a given IOCCC?</a>
@@ -74,15 +74,15 @@ This is FAQ version **28.1.8 2024-12-07**.
 
 ## 6. [Problems compiling IOCCC entries](#compile_problems)
 - **Q 6.0**: <a class="normal" href="#compile_errors">Why don't certain IOCCC entries compile and/or run?</a>
-    - **Q 6.1.1**: <a class="normal" href="#macos_compile">Why do some IOCCC entries fail to compile under macOS?</a>
+    - **Q 6.1.1**: <a class="normal" href="#macos">Why do some IOCCC entries fail to compile and/or run under macOS?</a>
 - **Q 6.2**: <a class="normal" href="#weverything">Why do Makefiles use -Weverything with clang?</a>
 
 
 ## 7. [Running IOCCC entries](#running_entries)
 - **Q 7.0**: <a class="normal" href="#try">What are `try.sh` and `try.alt.sh` scripts and why should I use them?</a>
 - **Q 7.1**: <a class="normal" href="#sanity">An IOCCC entry messed up my terminal application, how do I fix this?</a>
-- **Q 7.2**: <a class="normal" href="#unsupported">Why does an IOCCC entry fail to run?</a>
-    - **Q 7.2.1**: <a class="normal" href="#64bit">Why does an IOCCC entry fail to run on my 64-bit system?</a>
+- **Q 7.2**: <a class="normal" href="#unsupported">Why does an IOCCC entry fail to compile and/or run?</a>
+    - **Q 7.2.1**: <a class="normal" href="#64bit">Why does an IOCCC entry fail to compile and/or run on my 64-bit system?</a>
 - **Q 7.3**: <a class="normal" href="#eof">How do I find out how to send interrupt/EOF etc. for entries that require it?</a>
 - **Q 7.4**: <a class="normal" href="#download">How do I download individual winning entries or all winning entries of a given year?</a>
 
@@ -612,7 +612,9 @@ The following rules should exist in your Makefile:
 - `try`
     * run the program in a way you suggest. If you use the `try.sh` script
     system, which we do like, you can have this rule invoke the script
-    (`./try.sh`).
+    (`./try.sh`). See the
+    FAQ on the "[try.sh scripts system](#try_scripts)"
+    for more details.
 
 Although the `mkiocccentry(1)` tool only checks for those rules, the most up to
 date
@@ -690,17 +692,17 @@ included in your submission), it can be helpful to include a `try.sh` script:
 
 
 The template `try.sh` script can be used as a starting point, or you can look at
-some of the others in the website, to get some ideas.
+some of the others in past winning entries, to get some ideas.
 
 It is not detrimental to your chances of winning if you do not include one as
 not all submissions can make use of them. Nevertheless, it is helpful to include
-ways to use your program, and if you have creative ways this can be a bonus. It
-does not mean that a program that cannot be used with other programs is less
-interesting or less likely to win, but we do enjoy interesting and creative uses
-of submissions.
+ways to use your program and as submitted Makefiles should have a `try` rule, if
+you have creative ways this can be a bonus. It does not mean that a program that
+cannot be used with other programs is less interesting or less likely to win,
+but we do enjoy interesting and creative uses of submissions.
 
 If you have alternate code that you are including, then you can use the
-[try.alt.sh template](next/try.alt.sh) instead.
+`try.alt.sh` template as well.
 
 We recommend that you include the use of these scripts in the `try` rule in the
 example Makefile that you modify for your submission. See the
@@ -869,9 +871,9 @@ The [IOCCC judges](judges.html) do welcome questions about the IOCCC
 and will be **happy to help**.
 
 Chances are, if you have a question, there are a number of other people who
-have similar questions.  So we recommend first view the
+have similar questions.  So we recommend that you first view the
 [GitHub discussions for this repo](https://github.com/ioccc-src/winner/discussions)
-so see if someone else asked already.  Feel free to join in on such a discussion,
+to see if someone else asked it already.  Feel free to join in on such a discussion,
 even if to just say:
 
 > I have this question too.
@@ -945,7 +947,7 @@ Jump to: [top](#)
 
 <div id="forced_warnings">
 <div id="warnings">
-### Q 2.2: Are there any compiler warnings that I should not worry about?
+### Q 2.2: Are there any compiler warnings that I should not worry about in my submissions?
 </div>
 </div>
 
@@ -1185,39 +1187,39 @@ Jump to: [top](#)
 
 In some years, the IOCCC judges discover a truly amazing IOCCC entry that
 stands out among all of the other IOCCC entries received that year.
-For such an IOCCC entry, the IOCCC judges award a "Grand Prize"
-or "Best of Show award.
+For such an IOCCC entry, the IOCCC judges award a "`Grand Prize`"
+or "`Best of Show award`".
 
-In 1984-1987, the grand prize winning entries are:
+In 1984-1987, the "`Grand Prize`" winning entries are:
 
-- [1984/mullender](years.html#1984_mullender)
-- [1985/shapiro](years.html#1985_shapiro)
-- [1986/wall](years.html#1986_wall)
-- [1987/lievaart](years.html#1987_lievaart)
+- [1984/mullender](1984/mullender/index.html)
+- [1985/shapiro](1985/shapiro/index.html)
+- [1986/wall](1986/wall/index.html)
+- [1987/lievaart](1987/lievaart/index.html)
 
 Starting from 1988, the entry we liked the most in that year is called
-"Best of Show". Here are the "Best of Show" entries:
+"`Best of Show`". Here are the "`Best of Show`" entries:
 
-- [1988/applin](years.html#1988_applin)
-- [1989/jar.2](years.html#1989_jar.2)
-- [1990/theorem](years.html#1990_theorem)
-- [1991/brnstnd](years.html#1991_brnstnd)
-- [1992/vern](years.html#1992_vern)
-- [1996/august](years.html#1996_august)
-- [1998/banks](years.html#1998_banks)
-- [2000/jarijyrki](years.html#2000_jarijyrki)
-- [2020/carlini](years.html#2020_carlini)
+- [1988/applin](1988/applin/index.html)
+- [1989/jar.2](1989/jar.2/index.html)
+- [1990/theorem](1990/theorem/index.html)
+- [1991/brnstnd](1991/brnstnd/index.html)
+- [1992/vern](1992/vern/index.html)
+- [1996/august](1996/august/index.html)
+- [1998/banks](1998/banks/index.html)
+- [2000/jarijyrki](2000/jarijyrki/index.html)
+- [2020/carlini](2020/carlini/index.html)
 
 
 In 1993, 1994 and 1995 the judges were unable to select a clear overall
 winning entry. So to give a nod to the entry that had the highest approval ranking
 from the judges, they used the following awards:
 
-- [1993/rince](years.html#1993_rince) - Most Well Rounded
-- [1994/shapiro](years.html#1994_shapiro) - Most Well Rounded
-- [1995/leo](years.html#1995_leo) - Best Use of Obfuscation
+- [1993/rince](1993/rince/index.html) - `Most Well Rounded`
+- [1994/shapiro](1994/shapiro/index.html) - `Most Well Rounded`
+- [1995/leo](1995/leo/index.html) - `Best Use of Obfuscation`
 
-These could be considered the 'best entry' for those years with 1 or
+These could be considered the '`best entry`' for those years with 1 or
 more other entries that came in close behind.
 
 Jump to: [top](#)
@@ -3231,7 +3233,7 @@ Now we will describe each field of each file in the manifest:
     be shown at the file is not the true **original source code**.
 
     See the
-    FAQ on "[original source code](#original_source_file)"
+    FAQ on "[original source code](#orig_c)"
     for more information including how to open an [IOCCC issue](https://github.com/ioccc-src/winner/issues)
     if you believe the **original source code** is not a true original.
 
@@ -3503,13 +3505,13 @@ versions:
 
 The following Makefile rules should be in all Makefiles:
 
-- all: build the entry programs (main program and any supplementary program)
-- alt: build alternate code
-- clobber: clean up object files and all binary files (except for those that are
+- `all`: build the entry programs (main program and any supplementary program)
+- `alt`: build alternate code
+- `clobber`: clean up object files and all binary files (except for those that are
 not compiled)
-- clean: a simpler version of `clobber` that only removes object files. `make
+- `clean`: a simpler version of `clobber` that only removes object files. `make
 clobber` depends on `clean` so running `make clobber` will invoke `make clean`.
-- everything: equivalent to `make all alt`.
+- `everything`: equivalent to `make all alt`.
 
 Are there any other rules? You tell us!
 
@@ -4657,7 +4659,7 @@ than Linux (due to versions and possibly other things)!
 Given that your entry **MUST** work as documented, you may be safer to
 say that your entry keeps the number of warnings and `-Wno-foo` options while
 compiling with `clang -Weverything` at a minimum. You might want to say the
-version number and platform too as an extra safety net. Because if you claim zero
+version number and platform (OS and OS version) too as an extra safety net. Because if you claim zero
 warnings, and we find a warning situation, this may diminish the value of your
 entry as it is not as documented. Thus it might be wise to point this out and
 if you can test it in multiple platforms (or versions of `clang`, see
@@ -4726,7 +4728,7 @@ Jump to: [top](#)
 
 <div id="no_support">
 <div id="unsupported">
-### Q 7.2: Why does an IOCCC entry fail to run?
+### Q 7.2: Why does an IOCCC entry fail to compile and/or run?
 </div>
 </div>
 
@@ -4770,13 +4772,17 @@ Jump to: [top](#)
 
 <div id="64bit">
 <div id="64-bit">
-### Q 7.2.1: Why does an IOCCC entry fail to run on my 64-bit system?
+<div id="32bit">
+<div id="32-bit">
+### Q 7.2.1: Why does an IOCCC entry fail to compile and/or run run on my 64-bit system?
+</div>
+</div>
 </div>
 </div>
 
 Unfortunately some older entries are non-portable and require 32-bit support or
-32-bit binaries. A problem system here is macOS Catalina (10.15) as as of that
-version macOS no longer supports 32-bit binaries. If the entry acts on a certain
+32-bit binaries. A problem system here is that as of macOS Catalina (10.15)
+macOS no longer supports 32-bit binaries. If the entry acts on a certain
 type of binary, say ELF, then that will also be a problem depending on the
 entry. For example [2001/anonymous](2001/anonymous/index.html) requires 32-bit
 ELF binaries.
