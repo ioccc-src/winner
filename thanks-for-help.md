@@ -7137,7 +7137,7 @@ improving all [Makefiles](#makefiles);  writing [scripts](#try) to greatly simpl
 of the entries; and other important fixes.
 
 Cody also wrote the feature-rich [sgit](https://github.com/xexyl/sgit) to easily
-run `sed(1)` on files in the repo which we used earlier on to help build the website.
+run `sed(1)` on files in git repos which we sometimes use to help edit the website.
 
 Cody Boone Ferguson also used one of his own tools to detect many dead links.
 While the tool was not perfect it went a long way to uncover a good number of
@@ -7152,7 +7152,7 @@ inconsistent award titles in the `README.md` files (used to generate the
 
 Cody also greatly improved the manifests and checked that the generated html
 files look good and are presentable, suggested CSS rules for
-image responsiveness and other improvements, and greatly improved the FAQ.
+image responsiveness and other improvements, and he greatly improved the FAQ.
 
 Cody also wrote some of the [website scripts](bin/index.html), improved and
 bug fixed others, co-developed the [JSON parser and tools](https://github.com/xexyl/jparse) with
