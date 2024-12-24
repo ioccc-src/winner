@@ -163,13 +163,13 @@ Jump to: [top](#)
 To submit your code to the IOCCC, you **MUST** follow these steps:
 
 
-#### 0. Verify that the IOCCC is open for submissions
+#### 0. Verify that the IOCCC is pending or open for submissions
 
-Check the [current status of the IOCCC](status.html) see of the IOCCC is open.
+First, check the [current status of the IOCCC](status.html) see of the contest.
+You may **only register for the IOCCC when the IOCCC is either [pending](status.html#pending)
+or [open](status.html#open)**.
 
-You may **only register for the IOCCC when the IOCCC is OPEN**.
-
-You may **only submit your entries to the IOCCC when the IOCCC is OPEN**.
+You may **only submit your entries to the IOCCC when the IOCCC is [open](status.html#open)**.
 
 See also the [IOCCC news](news.html#news) for more information.
 
@@ -185,16 +185,20 @@ suggestions, useful hints, and IOCCC humor.  :-)
 
 #### 2. Register for the IOCCC
 
-The **IOCCC registration procedure** is still being designed.
-<!--XXX--> As such, we do not yet have instructions on how to
-use the **IOCCC registration procedure**.  Once **IOCCC
-registration procedure** is ready, we will update this section
-with the proper instructions.  Watch the [IOCCC news](news.html)
-for an announcement about the **IOCCC registration procedure**.
+**IMPORTANT**: You may **only register for the IOCCC when the IOCCC is either [pending](status.html#pending)
+or [open](status.html#open)**.  See [current status of the IOCCC](status.html) for details.
 
-Once you have been registered, you will receive an email message for how to
-prepare your entries for submission, and how to upload the compressed tarballs
-to our submission portal.
+If the contest is [pending](status.html#pending) or [open](status.html#open),
+then follow the directions on **[How to register for the IOCCC](next/register.html)**.
+
+For those who are [registered for the IOCCC](next/register.html),
+once the contest is [open](status.html#open) you will receive your own Email message
+containing your very own **Username and Initial Password until the contest is [open](#open)**.
+You will need these to be able to [upload your submission](faq.html#upload) to the
+[IOCCC submit server](https:/submit.ioccc.org).
+
+Please check the [current status of the IOCCC](status.html) and
+visit the [How to register for the IOCCC](next/register.html) for detailed instructions.
 
 
 #### 3. Obtain and compile the latest mkiocccentry toolkit
@@ -205,6 +209,7 @@ FAQ on "[how to obtain the most recent mkiocccentry](#obtaining_mkiocccentry)"
 and the
 FAQ on "[compiling mkiocccentry toolkit](#compiling_mkiocccentry)",
 for more details.
+
 
 #### 4. Run the mkiocccentry tool to form your submission tarball
 
@@ -269,7 +274,17 @@ for doing so in your `remarks.md` file.
 See also [Rule 17](next/rules.html#rule17)!
 
 
+<div id="upload">
 #### 5. Upload your entry to the IOCCC submit server
+</div>
+
+**IMPORTANT NOTE**: The IOCCC [submit server](https://submit.ioccc.org) is located at
+[https://submit.ioccc.org](https://submit.ioccc.org) and ready for submissions
+**ONLY WHEN THE CONTEST IS [open](status.html#open)**.  See [current status of the IOCCC](status.html)
+for details.
+
+**IMPORTANT NOTE**: The contest is [closed](status.html#closed), the
+[https://submit.ioccc.org](https://submit.ioccc.org) may be offline.
 
 The following steps should be taken, in order to upload your `mkiocccentry` xz
 compressed tarball, to change the file (if you need to upload a different file

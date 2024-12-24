@@ -86,7 +86,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.7 2024-09-23"
+export VERSION="1.8 2024-11-23"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -824,37 +824,76 @@ if [[ $V_FLAG -ge 3 ]]; then
 fi
 
 
-# obtain contest_status if CONTEST_STATUS was not set in the arg
+# obtain the current contest status
+#
+export CURRENT_CONTEST_STATUS=""
+PATTERN='$..contest_status'
+CURRENT_CONTEST_STATUS=$("$JVAL_WRAPPER" -b -q "$STATUS_JSON" "$PATTERN")
+status="$?"
+if [[ $status -ne 0 || -z $CURRENT_CONTEST_STATUS ]]; then
+    echo "$0: ERROR: cannot determine current contest status from status.json: $STATUS_JSON" 1>&2
+    exit 1
+fi
+if [[ $V_FLAG -ge 3 ]]; then
+    echo "$0: debug[3]: Contest status from $STATUS_JSON: $CURRENT_CONTEST_STATUS" 1>&2
+fi
+
+# validate and normalize the current contest status from status.json
+#
+case "$CURRENT_CONTEST_STATUS" in
+pending) CURRENT_CONTEST_STATUS="pending"
+    ;;
+open) CURRENT_CONTEST_STATUS="open"
+    ;;
+judging) CURRENT_CONTEST_STATUS="judging"
+    ;;
+closed) CURRENT_CONTEST_STATUS="closed"
+    ;;
+*) echo "$0: ERROR: unexpected status from $status.json: $CURRENT_CONTEST_STATUS" 1>&2
+    echo 1>&2
+    echo "$USAGE" 1>&2
+    exit 1
+    ;;
+esac
+if [[ $V_FLAG -ge 1 ]]; then
+    echo "$0: debug[1]: Current contest status: $CURRENT_CONTEST_STATUS" 1>&2
+fi
+
+
+# set the contest status if CONTEST_STATUS was not set in the arg
 #
 if [[ -z $CONTEST_STATUS ]]; then
+    CONTEST_STATUS="$CURRENT_CONTEST_STATUS"
+fi
 
-    # obtain the contest_status from status.json
-    #
-    PATTERN='$..contest_status'
-    CONTEST_STATUS=$("$JVAL_WRAPPER" -b -q "$STATUS_JSON" "$PATTERN")
-    status="$?"
-    if [[ $status -ne 0 || -z $CONTEST_STATUS ]]; then
-	echo "$0: ERROR: cannot determine contest_status from status.json: $STATUS_JSON" 1>&2
-	exit 1
+
+# validate and normalize the contest status
+#
+case "$CONTEST_STATUS" in
+pending) CONTEST_STATUS="pending"
+    ;;
+open) CONTEST_STATUS="open"
+    ;;
+judging) CONTEST_STATUS="judging"
+    ;;
+closed) CONTEST_STATUS="closed"
+    ;;
+*) echo "$0: ERROR: unknown new contest status: $CONTEST_STATUS" 1>&2
+    echo 1>&2
+    echo "$USAGE" 1>&2
+    exit 1
+    ;;
+esac
+
+
+# report on any potential contest status change
+#
+if [[ $V_FLAG -ge 1 ]]; then
+    if [[ $CURRENT_CONTEST_STATUS != "$CONTEST_STATUS" ]]; then
+	echo "$0: debug[1]: Contest status will change from: $CURRENT_CONTEST_STATUS to: $CONTEST_STATUS" 1>&2
+    else
+	echo "$0: debug[1]: Contest status will not change from: $CONTEST_STATUS" 1>&2
     fi
-
-    # validate and normalize the contest_status from status.json
-    #
-    case "$CONTEST_STATUS" in
-    pending) CONTEST_STATUS="pending"
-	;;
-    open) CONTEST_STATUS="open"
-	;;
-    judging) CONTEST_STATUS="judging"
-	;;
-    closed) CONTEST_STATUS="closed"
-	;;
-    *) echo "$0: ERROR: unexpected status from $status.json: $CONTEST_STATUS" 1>&2
-	echo 1>&2
-	echo "$USAGE" 1>&2
-	exit 1
-	;;
-    esac
 fi
 
 

@@ -681,11 +681,12 @@ faq: ${GEN_TOP_HTML} faq.md
 	@echo "Perhaps the FAQ might help!"
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
-gen_next: ${GEN_TOP_HTML} next/README.md next/guidelines.md next/rules.md
+gen_next: ${GEN_TOP_HTML} next/README.md next/guidelines.md next/rules.md next/register.md
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
 	${GEN_TOP_HTML} -v 1 next/README
 	${GEN_TOP_HTML} -v 1 next/guidelines
 	${GEN_TOP_HTML} -v 1 next/rules
+	${GEN_TOP_HTML} -v 1 next/register
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 markdown: ${GEN_TOP_HTML} markdown.md

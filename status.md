@@ -32,7 +32,7 @@ This document describes version "**1.0 2024-03-09**".
 ## contest_status
 </div>
 
-The current status of the [IOCCC](index.html).
+This is the current status of the contest.
 
 The following **JSON** member value string may be one of the following **JSON** quoted strings:
 
@@ -41,47 +41,85 @@ The following **JSON** member value string may be one of the following **JSON** 
 #### "**pending**"
 </div>
 
-The [IOCCC](index.html) is not yet [open](#open), however there is a tentative scheduled
-date and time by which the [IOCCC](index.html) will open for submissions.
+While the contest **[PENDING](#pending)** the contest is not yet [open](#open), however there is a tentative scheduled
+date and time by which the contest will [open](#open) for submissions.
 
-A preliminary [IOCCC](index.html) rules, guidelines, and tools have been posted.
-Comments and suggestions on these preliminary items are welcome.
-See the [IOCCC news](news.html) for details including the tentative
-scheduled opening date.
+A preliminary [IOCCC rules](next/rules.html), [IOCCC guidelines](next/guidelines.html),
+and [IOCCC mkiocccentry tools](https://github.com/ioccc-src/mkiocccentry) have
+been released.
+
+You may [register for the IOCCC](next/register.html) while the contest is [pending](#pending),
+however you will **NOT** receive your own Email message containing your very own
+**Username and Initial Password until the contest is [open](#open)**.  You will need these
+to be able to [upload your submission](faq.html#upload) to the [IOCCC submit server](https:/submit.ioccc.org).
+
+Once contest moves from [pending](#pending") to [open](#open), an announcement
+Email will be sent out to the mailing list of those have successfully registered for the IOCCC.
+In addition, an announcement will be made to the [IOCCC news](news.html) in case you miss
+that announcement Email.
+
+While you are waiting for the contest to [open](#open), we **highly recommend**
+that you review the [IOCCC rules](next/rules.html), [IOCCC guidelines](next/guidelines.html),
+and [IOCCC mkiocccentry tools](https://github.com/ioccc-src/mkiocccentry).
+
+Should you have any comments, suggestions, and concerns about the above, and **while you waiting**
+for the contest to [open](#open), please see the
+FAQ on "[comment or make a suggestion on IOCCC rules, guidelines and tools](faq.html#feedback)"
+as well as the
+FAQ on "[best way to ask a question about the IOCCC rules, guideline and tools](faq.html#questions)"
+for how.
+
+See also the
+FAQ on "[how to submit](faq.html#submit)"
+for more information on the submission process when the IOCCC [reopens](#open).
 
 
 <div id="open">
 #### "**open**"
 </div>
 
-The [IOCCC](index.html) is [open](#open) for submissions.
+While contest is **[OPEN](#open)**, those who have [registered for the IOCCC](next/register.html)
+may [upload their submissions](faq.html#upload) to the [IOCCC submit server](https://submit.ioccc.org).
 
 See the
 FAQ on "[how to submit](faq.html#submit)"
 for more information.
 
-See the [IOCCC news](news.html) page for details on rules, guidelines, tools and deadlines.
+See the [IOCCC news](news.html) page for details on any IOCCC related deadlines
+such as when the contest will [close](#close).
 
-Be sure to review the official [IOCCC](index.html) rules, guidelines, and tools
-for any changes that may have been made while the [IOCCC](index.html) was
-"**[pending](#pending)**".
+The [IOCCC rules](next/rules.html), [IOCCC guidelines](next/guidelines.html),
+and [IOCCC mkiocccentry tools](https://github.com/ioccc-src/mkiocccentry)
+are now official.  Should you have any questions about these, please see the
+FAQ on "[best way to ask a question about the IOCCC rules, guideline and tools](faq.html#questions)"
+for how to ask them.
+
+Be sure to review the official [IOCCC rules](next/rules.html), [IOCCC guidelines](next/guidelines.html),
+for any changes, as well as updating your [IOCCC mkiocccentry tools](https://github.com/ioccc-src/mkiocccentry)
+as changes to them may have been made while the contest was "**[pending](#pending)**".
+
+See also the
+FAQ on "[how to submit](faq.html#submit)"
+for more information on the submission process when the IOCCC [reopens](#open).
+
 
 <div id="judging">
 #### "**judging**"
 </div>
 
-The [IOCCC](index.html) is [closed](#closed) to new submissions.  The [IOCCC judges](judges.html)
-are in the process of judging the [submissions](faq.html#how_many) they received while
-the [IOCCC](index.html) was open.
+While contest is **[JUDGING][#jugding]**, you cannot [register](next/register.html)
+nor can you [upload submissions](faq.html#upload).  This is because the
+[IOCCC judges](judges.html) are in the process of judging the [submissions](faq.html#how_many)
+they received while the contest was [open](#open).
 
 Watch the [@IOCCC mastodon feed](https://fosstodon.org/@ioccc) for updates.
 
-Once the [IOCCC](index.html) [closes](#closed), the judges will:
+Once the contest [closes](#closed), the judges will:
 
 * Select the [winning entries](years.html) and announce them on the [@IOCCC
 mastodon feed](https://fosstodon.org/@ioccc).
 
-* Notify the [authors](authors.html) of entries that won the [IOCCC](index.html)
+* Notify the [authors](authors.html) of entries that won the contest
 via email using their registered email address.
 
 * Announce who the [authors](authors.html) are of this year's [winning IOCCC
@@ -100,7 +138,9 @@ winning entries page](years.html).
 
 #### "**closed**"
 
-The [IOCCC](index.html) is closed and is **NOT** accepting submissions.
+While contest is **[CLOSED][#closed]**, you cannot [register](next/register.html)
+nor can you [upload submissions](faq.html#upload).  You have to wait for the
+next contest to [open](#open).
 
 See the [IOCCC winning entries page](years.html) for the entries that have won
 the [IOCCC](index.html).
@@ -110,11 +150,7 @@ the [IOCCC](index.html).
 
 Watch both [this IOCCC status page](status.html) and the [@IOCCC
 mastodon feed](https://fosstodon.org/@ioccc) for information about future
-[IOCCC](index.html) [openings](#open).
-
-See the
-FAQ on "[how to submit](faq.html#submit)"
-for more information on the submission process when the IOCCC reopens.
+contest [openings](#open).
 
 
 <div id="news_update">
