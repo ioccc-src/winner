@@ -115,10 +115,7 @@ The submit URL should be active on or slightly before **2024-MMM-DD HH:MM:SS UTC
 The [IOCCC rules](rules.html) and these [IOCCC
 guidelines](guidelines.html) will be available on the [Official IOCCC
 website](https://www.ioccc.org) on or slightly before start of this IOCCC.  Please check our
-FAQ on "[how to submit](../faq.html#submit)"
-to see how to submit entries, on or after the start of this IOCCC, to be sure
-you are using the correct versions of these items before using the
-IOCCC submission URL.
+page on how to [upload your submission](submit.html) when the contest is [open](../status.html#open).
 </p>
 
 <p class="leftbar">

@@ -13,9 +13,8 @@ See our
 FAQ on "[rules, guidelines, tools feedback](../faq.html#feedback)"
 as well as our
 FAQ on "[about asking questions](../faq.html#question)"
-about these rules. You might also find the
-FAQ in general useful, especially the
-[FAQ section "How to enter: the bare minimum you need to know"](../faq.html#submit).
+about these rules. You might also find the FAQ in general useful, especially the
+FAQ on "[how to enter the IOCCC](../faq.html#enter)".
 
 Watch both [the IOCCC status page](../status.html) and the
 [@IOCCC mastodon feed](https://fosstodon.org/@ioccc) for information about
@@ -121,8 +120,11 @@ When the IOCCC is open, the submission URL is:
 times that link is likely to be unresponsive.
 
 Please review our
-FAQ on "[how to submit](../faq.html#submit)"
-for **important information** on how to submit to the IOCCC.
+FAQ on "[how to enter the IOCCC](../faq.html#enter)"
+as that FAQ has import details on
+[how to register](register.html)
+as well as
+[how to upload your submission](submit.html) for the IOCCC.
 
 <p class="leftbar">
 The submit URL should be active on or slightly before **2024-MMM-DD HH:MM:SS UTC**.<br>
@@ -141,10 +143,13 @@ are using the correct versions of these items _before using the IOCCC
 submission URL_.
 
 See the
-FAQ on "[obtaining and compiling the mkiocccentry
-tools](../faq.html#mkiocccentry)"
+FAQ on "[obtaining and compiling the mkiocccentry tools](../faq.html#mkiocccentry)"
 and the
-FAQ on "[submitting to the IOCCC](../faq.html#submit)".
+FAQ on "[how to enter the IOCCC](../faq.html#enter)"
+as that FAQ has import details on
+[how to register](register.html)
+as well as
+[how to upload your submission](submit.html) for the IOCCC.
 
 Jump to: [top](#)
 
@@ -273,8 +278,8 @@ Jump to: [top](#)
 ## Rule 3
 </div>
 
-Submissions should be performed using the instructions outlined in our
-FAQ on "[how to submit](../faq.html#submit)"
+Submissions should be performed using the instructions outlined in
+"[how to upload your submission](submit.html)".
 
 To submit to an open IOCCC, you must use the [IOCCC submit
 server](https://submit.ioccc.org/). Unless the IOCCC is open, that link will

@@ -51,7 +51,7 @@ been released.
 You may [register for the IOCCC](next/register.html) while the contest is [pending](#pending),
 however you will **NOT** receive your own Email message containing your very own
 **Username and Initial Password until the contest is [open](#open)**.  You will need these
-to be able to [upload your submission](faq.html#upload) to the [IOCCC submit server](https:/submit.ioccc.org).
+to be able to [upload your submission](next/submit.html) to the [IOCCC submit server](https:/submit.ioccc.org).
 
 Once contest moves from [pending](#pending") to [open](#open), an announcement
 Email will be sent out to the mailing list of those have successfully registered for the IOCCC.
@@ -70,7 +70,7 @@ FAQ on "[best way to ask a question about the IOCCC rules, guideline and tools](
 for how.
 
 See also the
-FAQ on "[how to submit](faq.html#submit)"
+FAQ on "[how to upload your submission](next/submit.html)"
 for more information on the submission process when the IOCCC [reopens](#open).
 
 
@@ -79,7 +79,7 @@ for more information on the submission process when the IOCCC [reopens](#open).
 </div>
 
 While contest is **[OPEN](#open)**, those who have [registered for the IOCCC](next/register.html)
-may [upload their submissions](faq.html#upload) to the [IOCCC submit server](https://submit.ioccc.org).
+may [upload their submissions](next/submit.html) to the [IOCCC submit server](https://submit.ioccc.org).
 
 See the
 FAQ on "[how to submit](faq.html#submit)"
@@ -108,7 +108,7 @@ for more information on the submission process when the IOCCC [reopens](#open).
 </div>
 
 While contest is **[JUDGING][#jugding]**, you cannot [register](next/register.html)
-nor can you [upload submissions](faq.html#upload).  This is because the
+nor can you [upload submissions](next/submit.html).  This is because the
 [IOCCC judges](judges.html) are in the process of judging the [submissions](faq.html#how_many)
 they received while the contest was [open](#open).
 
@@ -139,7 +139,7 @@ winning entries page](years.html).
 #### "**closed**"
 
 While contest is **[CLOSED][#closed]**, you cannot [register](next/register.html)
-nor can you [upload submissions](faq.html#upload).  You have to wait for the
+nor can you [upload submissions](next/submit.html).  You have to wait for the
 next contest to [open](#open).
 
 See the [IOCCC winning entries page](years.html) for the entries that have won

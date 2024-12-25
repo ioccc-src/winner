@@ -19,7 +19,7 @@ FAQ on "[history of the IOCCC website](faq.html#website_history)"
 for more information the background of the IOCCC.
 
 See the
-FAQ on "[entering the IOCCC](faq.html#submit)"
+FAQ on "[entering the IOCCC](faq.html#enter)"
 for information on how to enter and submit to the IOCCC.
 
 If you are still confused, consider the nature of

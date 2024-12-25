@@ -32,7 +32,7 @@ start with some markdown content.
 See the [markdown syntax](https://www.markdownguide.org/basic-syntax) guide.
 See also the [CommonMark Spec](https://spec.commonmark.org/current/).
 See the
-FAQ on "[how to submit](faq.html#submit)".
+FAQ on "[remarks.md submission file](faq.html#remarks_md)".
 
 Nevertheless, the IOCCC does have certain practices that we ask authors to follow.
 Some of these relate to use of markdown directly and others relate to injecting HTML

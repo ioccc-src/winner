@@ -4,7 +4,7 @@ This is FAQ version **28.1.8 2024-12-07**.
 
 
 ## 0. [Entering the IOCCC: the bare minimum you need to know](#enter_questions)
-- **Q 0.0**: <a class="normal" href="#submit">How can I enter the IOCCC?</a>
+- **Q 0.0**: <a class="normal" href="#enter">How can I enter the IOCCC?</a>
 - **Q 0.1**: <a class="normal" href="#mkiocccentry">What is the `mkiocccentry` tool, how do I obtain it and how do I use it?</a>
     - **Q 0.1.1**: <a class="normal" href="#about_mkiocccentry">What is `mkiocccentry(1)` in simple terms?</a>
     - **Q 0.1.2**: <a class="normal" href="#obtaining_mkiocccentry">How do I obtain the latest mkiocccentry toolkit?</a>
@@ -154,16 +154,16 @@ Jump to: [top](#)
 Jump to: [top](#)
 
 
-<div id="submit">
-<div id="register">
+<div id="enter">
 ### Q 0.0: How can I enter the IOCCC?
-</div>
 </div>
 
 To submit your code to the IOCCC, you **MUST** follow these steps:
 
 
+<div id="step_0">
 #### 0. Verify that the IOCCC is pending or open for submissions
+</div>
 
 First, check the [current status of the IOCCC](status.html) see of the contest.
 You may **only register for the IOCCC when the IOCCC is either [pending](status.html#pending)
@@ -174,7 +174,9 @@ You may **only submit your entries to the IOCCC when the IOCCC is [open](status.
 See also the [IOCCC news](news.html#news) for more information.
 
 
+<div id="step_1">
 #### 1. Read the latest IOCCC rules and review the IOCCC guidelines
+</div>
 
 Please pay close attention to the [official IOCCC rules](next/rules.html).
 
@@ -183,7 +185,11 @@ You are also **highly encouraged** to review the
 suggestions, useful hints, and IOCCC humor.  :-)
 
 
+<div id="step_2">
+<div id="register">
 #### 2. Register for the IOCCC
+</div>
+</div>
 
 **IMPORTANT**: You may **only register for the IOCCC when the IOCCC is either [pending](status.html#pending)
 or [open](status.html#open)**.  See [current status of the IOCCC](status.html) for details.
@@ -194,14 +200,16 @@ then follow the directions on **[How to register for the IOCCC](next/register.ht
 For those who are [registered for the IOCCC](next/register.html),
 once the contest is [open](status.html#open) you will receive your own Email message
 containing your very own **Username and Initial Password until the contest is [open](#open)**.
-You will need these to be able to [upload your submission](faq.html#upload) to the
+You will need these to be able to [upload your submission](next/submit.html) to the
 [IOCCC submit server](https:/submit.ioccc.org).
 
 Please check the [current status of the IOCCC](status.html) and
 visit the [How to register for the IOCCC](next/register.html) for detailed instructions.
 
 
+<div id="step_3">
 #### 3. Obtain and compile the latest mkiocccentry toolkit
+</div>
 
 You **MUST** use the most recent version of the `mkiocccentry` toolkit. To help
 you, please see the
@@ -211,7 +219,9 @@ FAQ on "[compiling mkiocccentry toolkit](#compiling_mkiocccentry)",
 for more details.
 
 
+<div id="step_4">
 #### 4. Run the mkiocccentry tool to form your submission tarball
+</div>
 
 For more details on `mkiocccentry`, what it is, how to obtain it and how to use
 it, see the
@@ -274,124 +284,21 @@ for doing so in your `remarks.md` file.
 See also [Rule 17](next/rules.html#rule17)!
 
 
-<div id="upload">
-#### 5. Upload your entry to the IOCCC submit server
+<div id="step_5">
+<div id="submit">
+#### 5. Upload your submission to the IOCCC submit server
+</div>
 </div>
 
-**IMPORTANT NOTE**: The IOCCC [submit server](https://submit.ioccc.org) is located at
-[https://submit.ioccc.org](https://submit.ioccc.org) and ready for submissions
-**ONLY WHEN THE CONTEST IS [open](status.html#open)**.  See [current status of the IOCCC](status.html)
-for details.
+**IMPORTANT NOTE**: The [IOCCC submit server](https://submit.ioccc.org)
+is only ready for submissions
+**ONLY WHEN THE CONTEST IS [open](status.html#open)**.
 
-**IMPORTANT NOTE**: The contest is [closed](status.html#closed), the
-[https://submit.ioccc.org](https://submit.ioccc.org) may be offline.
+See [current status of the IOCCC](status.html) for details on the contest status.
+**IMPORTANT NOTE**: When the contest is [closed](status.html#closed), the
+[IOCCC submit server](https://submit.ioccc.org)
+may be offline and unreachable as a web site.
 
-The following steps should be taken, in order to upload your `mkiocccentry` xz
-compressed tarball, to change the file (if you need to upload a different file
-or you have updated the submission), and to check the status of it after the
-contest closes:
-
-First, open the web page in your browser. It should look like this:
-With the login id and password already input, It should look something like
-this:
-
-<img src="png/submit-server-login.png"
- alt="submit server login screen"
- width=710 height=562>
-
-The login is the UUID you were provided when you registered for the IOCCC and
-the password is the initial password you were provided with. Click "Login".
-Assuming everything is fine, it should look something like:
-
-<img src="png/submit-server-first-login.png"
- alt="submit server password change required"
- width=710 height=808>
-
-As you can see, you have to change your password. Put in your login (UUID
-username), your old (initial) password and a new password. For instance:
-
-<img src="png/submit-server-change-passwd.png"
- alt="submit server changing password"
- width=710 height=808>
-
-Click "Change Password".
-
-Once this is done, you will have to log in again. Using the UUID login and the
-new password:
-
-<img src="png/submit-server-passwd-changed.png"
- alt="submit server password changed"
- width=710 height=344>
-
-
-.. click "Login".
-
-Once you've logged in, you will see submit slots. Each slot is for one
-submission so if you update a submission, make sure you choose the right one so
-you do not overwrite the wrong one!
-
-Here is what it looks like without any uploads and no slot selected:
-
-<img src="png/submit-server-slots.png"
- alt="submit server slots"
- width=710 height=806>
-
-Select a slot and then select a file by clicking the button "Choose File". After
-doing this, it should look something like:
-
-<img src="png/submit-server-slot-file.png"
- alt="submit server slot and file selected"
- width=717 height=865>
-
-If you need to change the file to upload, you can mouseover the file and click
-it. If you wait a moment it'll show the current filename. It will look something
-like this:
-
-<img src="png/submit-server-change-file.png"
- alt="submit server change file"
- width=717 height=865>
-
-Once you're certain you have selected the correct file, click "Submit", below
-the file selection step.
-
-When it's uploaded it should look something like this:
-
-<img src="png/submit-server-submission-uploaded.png"
- alt="submit server submission uploaded"
- width=717 height=525>
-
-Here you see the details, in particular:
-
-- the status of the submission
-- the filename, which will be in the correct format, assuming you used
-`mkiocccentry(1)` which is **HIGHLY** recommended so that you do not break [Rule
-17](next/rules.html#rule17)!
-- the file length, which `txzchk(1)` will also verify (the file itself and the
-tarball listing)
-- the upload date
-- the SHA256 hash of the file
-
-Now if you're done, log out.
-
-After the submission deadline is reached, you can log in to check the status of
-your submissions. Here is what it will look like when the judges have verified
-that your tarball / submission has been validated (NOT judged), by `txzchk(1)`
-and `chkentry(1)`.:
-
-<img src="png/submit-server-status-updated.png"
- alt="submit server status updated"
- width=717 height=217>
-
-For details on `txzchk`, see the
-FAQ on "[txzchk](#txzchk)".
-
-For details on `chkentry`, see the
-FAQ on "[chkentry](#chkentry)".
-
-If you need more information on what `chkentry` checks, see the
-FAQ on the [".info.json file](#info_json)"
-and the
-FAQ on the "[.auth.json file](#auth_json)".
 
 Jump to: [top](#)
 
@@ -440,7 +347,7 @@ FAQ on "[chkentry](#chkentry)"
 for more information on these important tools, if you want more information.
 
 See the
-FAQ on "[submitting to the IOCCC](#submit)"
+FAQ on "[how to upload you submission](#submit)"
 for details on how to register for the IOCCC, the
 FAQ on "[obtaining the latest mkiocccentry toolkit](#obtaining_mkiocccentry)"
 for details on obtaining the latest release, the
@@ -827,7 +734,7 @@ Jump to: [top](#)
 </div>
 
 The IOCCC makes extensive use of [markdown](https://daringfireball.net/projects/markdown/).
-For example, when [submitting to the IOCCC](#submit), we have people
+For example, when [submitting to the IOCCC](next/submit.html), we have people
 submit remarks about entry in markdown format.  Every
 [winning IOCCC entry](years.html) uses a `README.md` markdown file
 as the basis for forming the `index.html` web page for that entry.
@@ -2852,7 +2759,7 @@ that follows the _author_handle_: line.
 
 If you are not someone who has won a previous IOCCC, you will be able to select
 a potential _author_handle_ when you form your _submission_ tarball (see
-FAQ on "[how to submit](#submit)"
+FAQ on "[how to enter the IOCCC](#enter)"
 ).
 
 **Helpful Hint**: If an _author_ clicks on their _author_handle:_

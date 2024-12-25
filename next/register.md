@@ -1,12 +1,20 @@
+<div id="register">
 # How to register for the IOCCC
+</div>
 
-**IMPORTANT**: Did you read the **How the contest status impacts registration** below?
+First, be sure the contact [contest status](../status.html) allows you to register.
+The contest needs to be either [pending](../status.html#pending) or [open](../status.html#open).
+For details see the section titled [How the contest status impacts registration](#status_impact).
 
-You will need know the contest [../status.html] as that impacts your ability to
-register and what happens when you do register.
+XXX - **put images and other details about joining the mailing list here** - XXX
+
+**NEXT**: After registering for the IOCCC, you need to complete
+[Step 3: Obtain and compile the latest mkiocccentry toolkit](../faq.html#step_3).
 
 
+<div id="status_impact">
 # How the contest status impacts registration
+</div>
 
 
 ### When the IOCCC status is _closed_
@@ -19,16 +27,12 @@ for news about the next IOCCC as you may register when the contest is [pending](
 or [open](../status.html#open).
 
 
-<div id="register">
 ### When the IOCCC status is _pending_
-</div>
 
 While the contest is **[PEDING](../status.html#pending)**,
 you may **register for contest*, however you will **NOT**
 receive your own Email message containing your [IOCCC submit server](https:/submit.ioccc.org)
 **Username and Initial Password until the IOCCC is [open](../status.html#open)**.
-
-XXX - put more data here - XXX
 
 
 ### When the IOCCC status is _open_
@@ -37,10 +41,10 @@ While the contest is **[OPEN](../status.html#open)**,
 you may **register for the contest**.  Once you are registered **AND**
 the contest is [open](../status.html#open), you will receive your own Email message containing your very own
 **Username and Initial Password until the contest is [open](../status.html#open)**.  You will need these
-to be able to [upload your submission](../faq.html#upload) to the [IOCCC submit server](https:/submit.ioccc.org).
+to be able to [upload your submission](submit.html) to the [IOCCC submit server](https:/submit.ioccc.org).
 
 See also the
-FAQ on "[how to submit](../faq.html#submit)"
+FAQ on "[how to upload your submission](submit.html)"
 for more information on the submission process when the IOCCC [reopens](../status.html#open).
 
 

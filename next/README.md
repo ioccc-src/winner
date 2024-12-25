@@ -50,7 +50,7 @@ Mastodon](https://fosstodon.org/@ioccc) feed as _sometimes_ the
 You may [register for the IOCCC](register.html) while the contest is [pending](../status.html#pending),
 however you will **NOT** receive your own Email message containing your very own
 **Username and Initial Password until the contest is [open](../status.html#open)**.  You will need these
-to be able to [upload your submission](../faq.html#upload) to the [IOCCC submit server](https:/submit.ioccc.org).
+to be able to [upload your submission](submit.html) when the contest is [open](../status.html#open).
 
 Once contest moves from [pending](../status.html#pending") to [open](../status.html#open) an announcement
 Email will be sent out to the mailing list of those have successfully registered for the IOCCC.
@@ -68,9 +68,7 @@ as well as the
 FAQ on "[best way to ask a question about the IOCCC rules, guideline and tools](../faq.html#questions)"
 for how.
 
-See also the
-FAQ on "[how to submit](../faq.html#submit)"
-for more information on the submission process when the IOCCC [reopens](../status.html#open).
+See also about how [upload your submission](submit.html) when the contest is [open](../status.html#open).
 
 
 ### When the IOCCC status is _open_
