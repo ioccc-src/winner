@@ -1,5 +1,4 @@
 # How to register for the IOCCC
-</div>
 
 
 <div id="step_a">
