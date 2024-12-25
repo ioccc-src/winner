@@ -35,21 +35,14 @@ The email message will have the subject:
 Subscription consent for 'ioccc28-reg'
 ```
 
+**NOTE**: Be aware that your email service, application and/or Internet
+service provider may modify email subject lines.  For example, some string
+may have been prepended or appended to the subject line.  Be aware of
+this when you search for the Subscription consent" email.
+
 **NOTE**: The "Subscription consent" email is usually sent by the FreeLists
 List Manager within a minute after clicking the **((Next >>))** button.
 If you don't see the "Subscription consent" email, check your spam folder.
-
-**IMPORTANT NOTE FOR APPLE DEVICES**: recently Apple has decided to modify subject lines
-from emails that are 'unchecked' so the subject might look instead like:
-
-```
-***UNCHECKED*** Subscription consent for 'ioccc28-reg'
-```
-
-With phones it can take almost the entire preview so if you're using an Apple
-product (like an iPad, iPhone or Mac) make sure to check for this. It appears to
-happen on all devices as it is on their end (their MTA), not users. Yes this
-even happens when the recipient address is not an Apple address!
 
 **NOTE**: If are having trouble receiving the "Subscription consent"
 email, [Contact the IOCCC](../contact.html), and you have tried
