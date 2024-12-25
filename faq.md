@@ -290,6 +290,9 @@ See also [Rule 17](next/rules.html#rule17)!
 </div>
 </div>
 
+The screenshots about [how to upload your submission to the IOCCC](next/submit.html)
+may be helpful a helpful guide when using the [IOCCC submit server](https://submit.ioccc.org).
+
 **IMPORTANT NOTE**: The [IOCCC submit server](https://submit.ioccc.org)
 is only ready for submissions
 **ONLY WHEN THE CONTEST IS [open](status.html#open)**.
