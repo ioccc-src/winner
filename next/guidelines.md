@@ -1003,7 +1003,7 @@ Jump to: [top](#)
 <p class="leftbar">
 We **LIKE** submissions that use an edited variant of the
 example Makefile, as described and linked to in the [Makefile section](#makefile),
-renamed as `Makefile` of course.  This makes it easier for the [IOCCC Judges](../judges.html)
+renamed as `Makefile` of course.  This makes it easier for the [IOCCC judges](../judges.html)
 to test your submission. And if your submissions wins, it makes it easier to integrate it into
 the [Official IOCCC winner website](https://www.ioccc.org/index.html).
 </p>

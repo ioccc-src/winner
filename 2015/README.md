@@ -104,7 +104,7 @@ us a line.  We enjoy seeing who, where and how the contest is used.
 If you have problems with any of the entries, AND YOU HAVE A FIX, please
 send us the fix (patch file or the entire changed file).
 
-For the latest information on how to contact the IOCCC Judges please visit
+For the latest information on how to contact the [IOCCC judges](../judges.html) please visit
 
 * [contact.html](../contact.html)
 

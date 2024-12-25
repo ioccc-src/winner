@@ -211,12 +211,17 @@ visit the [How to register for the IOCCC](next/register.html) for detailed instr
 #### 3. Obtain and compile the latest mkiocccentry toolkit
 </div>
 
-You **MUST** use the most recent version of the `mkiocccentry` toolkit. To help
-you, please see the
-FAQ on "[how to obtain the most recent mkiocccentry](#obtaining_mkiocccentry)"
-and the
-FAQ on "[compiling mkiocccentry toolkit](#compiling_mkiocccentry)",
-for more details.
+Once the contest is [open](status.html#open), download the most recent
+version of the [mkiocccentry toolkit](https://github.com/ioccc-src/mkiocccentry).
+
+**IMPORTANT NOTE**: While the contest is [pending](status.html#pending),
+the [mkiocccentry toolkit](https://github.com/ioccc-src/mkiocccentry)
+could change.  Once the content is [open](status.html#open), be sure
+you **have the latest** version installed.
+
+To help you, please see the FAQ on "[how to obtain the most recent
+mkiocccentry](#obtaining_mkiocccentry)" and the FAQ on "[compiling
+mkiocccentry toolkit](#compiling_mkiocccentry)", for more details.
 
 
 <div id="step_4">
@@ -6189,7 +6194,7 @@ you're the winner of the entry you can make use of it as you want (make a shirt,
 put it on your website etc.).
 
 Please send your request using the instructions on the [contacting
-the IOCCC Judges](contact.html) page.
+the IOCCC judges](contact.html) page.
 
 Please note that the content of the IOCCC
 **Copyrighted and is under the CC BY-SA 4.0 License**.

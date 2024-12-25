@@ -739,7 +739,7 @@ These checks **MUST PASS**.
 <p class="leftbar">
 Where [Rule 17](#rule17) and the tools from the latest
 release of the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry)
-conflict, the [IOCCC Judges](../judges.html) will use their best judgment which
+conflict, the [IOCCC judges](../judges.html) will use their best judgment which
 is likely to favor [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry) code.
 </p>
 
