@@ -35,9 +35,21 @@ The email message will have the subject:
 Subscription consent for 'ioccc28-reg'
 ```
 
-**NOTE**: The "Subscription consent" email is usually send by the FreeLists
+**NOTE**: The "Subscription consent" email is usually sent by the FreeLists
 List Manager within a minute after clicking the **((Next >>))** button.
 If you don't see the "Subscription consent" email, check your spam folder.
+
+**IMPORTANT NOTE FOR APPLE DEVICES**: recently Apple has decided to modify subject lines
+from emails that are 'unchecked' so the subject might look instead like:
+
+```
+***UNCHECKED*** Subscription consent for 'ioccc28-reg'
+```
+
+With phones it can take almost the entire preview so if you're using an Apple
+product (like an iPad, iPhone or Mac) make sure to check for this. It appears to
+happen on all devices as it is on their end (their MTA), not users. Yes this
+even happens when the recipient address is not an Apple address!
 
 **NOTE**: If are having trouble receiving the "Subscription consent"
 email, [Contact the IOCCC](../contact.html), and you have tried
@@ -48,7 +60,8 @@ several times, ask the [IOCCC judges](../judges.html) for assistance.
 ## Step D: Open the Subscription consent email message
 </div>
 
-This email will contain a URL of the form: http://www.freelists.org/v/ioccc28-reg/SOME-RANDOM-STUFF
+This email will contain a URL of the form:
+`https://www.freelists.org/v/ioccc28-reg/SOME-RANDOM-STUFF`.
 
 Click on that link.
 
@@ -80,7 +93,7 @@ Once you have done this by clicking the 3 checkboxes, the **((Next >>))** button
 ## Step G: Read the Welcome email
 </div>
 
-You receive an automated Welcome message from the FreeLists List Manager
+You should receive an automated Welcome message from the FreeLists List Manager
 (_ecartis@freelists.org_) with the subject:
 
 ```
@@ -89,12 +102,12 @@ Welcome to 'ioccc28-reg'
 
 Read the "Welcome" email.
 
-**NOTE**: The "Welcome" email is usually send by the FreeLists
+**NOTE**: The "Welcome" email is usually sent by the FreeLists
 List Manager within a minute after clicking the **((Next >>))** button.
 If you don't see the "Subscription consent" email, check your spam folder.
 
 **NOTE**: If are having trouble receiving the "Welcome" email,
-[Contact the IOCCC](../contact.html), and you have tried
+[Contact the IOCCC](../contact.html), and if you have tried
 several times, ask the [IOCCC judges](../judges.html) for assistance.
 
 
@@ -104,15 +117,16 @@ several times, ask the [IOCCC judges](../judges.html) for assistance.
 
 Assuming that the contest is [open](../status.html#open), one of the [IOCCC judges](../judges.html)
 will send via email, your initial [IOCCC submit server](https:/submit.ioccc.org) **Username**
-and **Initial password**.  This could take up to a **few days**, so **please be patient**.
+and **Initial password**.  This could take up to a **few days**, so **please be
+patient** and **PLEASE make sure you sign up in time!**!
 
 **IMPORTANT NOTE**: Unless the contest is [open](../status.html#open), the
 [IOCCC judges](../judges.html) will **NOT** be sending out your
 initial [IOCCC submit server](https:/submit.ioccc.org) username and initial password.
 
-For example, if contest is [pending](../status.html#pending), you will
-have to wait until the [IOCCC judges](../judges.html) will **WAIT UNTIL
-THE CONTEST IS [OPEN](../status.html#open)** before sending such email.
+For example, if contest is [pending](../status.html#pending), you will have to
+**WAIT UNTIL THE CONTEST IS [OPEN](../status.html#open)** before sending such
+email.
 
 **NOTE**: If are having trouble receiving your **Username** and
 **Initial password**, and the **CONTEST IS [OPEN](../status.html#open)**,
