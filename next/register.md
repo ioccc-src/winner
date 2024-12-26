@@ -22,9 +22,19 @@ For details see the "[How the contest status impacts registration](#status_impac
 
 **NOTE**: For submissions with multiple authors, only one author needs to subscribe.
 
+<img src="../png/register.0_531x445-signup.png"
+ alt="signup for a mailing list"
+ width=531 height=445>
+
+ After clicking **((Next >>))**, you will be notified you will receive some email:
+
+<img src="../png/register.1_633x163-verify.png"
+ alt="verify your email notification"
+ width=633 height=163>
+
 
 <div id="step_c">
-## Step C: Look for the Subscription consent email from FreeLists
+## Step C: Open the Subscription consent email message
 </div>
 
 Look for an automated email message from the FreeLists List Manager (_ecartis@freelists.org_).
@@ -32,7 +42,7 @@ Look for an automated email message from the FreeLists List Manager (_ecartis@fr
 The email message will have the subject:
 
 ```
-Subscription consent for 'ioccc28-reg'
+    Subscription consent for 'ioccc28-reg'
 ```
 
 **NOTE**: Be aware that your email service, application and/or Internet
@@ -48,11 +58,6 @@ If you don't see the "Subscription consent" email, check your spam folder.
 email, [Contact the IOCCC](../contact.html), and you have tried
 several times, ask the [IOCCC judges](../judges.html) for assistance.
 
-
-<div id="step_d">
-## Step D: Open the Subscription consent email message
-</div>
-
 This email will contain a URL of the form:
 `https://www.freelists.org/v/ioccc28-reg/SOME-RANDOM-STUFF`.
 
@@ -61,16 +66,24 @@ Click on that link.
 **NOTE**: If you prefer to **NOT** click links in email, simply copy that
 URL from your "Subscription consent email" and paste it into your browser.
 
+<img src="../png/register.2_590x253-verify-email.png"
+ alt="Subscription consent email"
+ width=590 height=253>
 
-<div id="step_e">
-## Step E: Confirm your email click
+
+<div id="step_d">
+## Step D: Confirm your email click
 </div>
 
-In your browser, for the link referenced in [Step D](#step_d), click the **((Next >>))** button.
+In your browser, for the link referenced in [Step C](#step_c), click the **((Next >>))** button.
+
+<img src="../png/register.3_428x205-confirm.png"
+ alt="confirm your email"
+ width=428 height=205>
 
 
-<div id="step_f">
-## Step F: Content and Verify
+<div id="step_e">
+## Step E: Content and Verify
 </div>
 
 The FreeLists service that you verify that you:
@@ -81,19 +94,33 @@ The FreeLists service that you verify that you:
 
 Once you have done this by clicking the 3 checkboxes, the **((Next >>))** button.
 
+<img src="../png/register.4_657x446-subscribe.png"
+ alt="complete subscription"
+ width=657 height=446>
 
-<div id="step_g">
-## Step G: Read the Welcome email
+ After clicking **((Next >>))**, you will be notified you will receive some email:
+
+<img src="../png/register.5_487x154-done.png"
+ alt="registration is complete"
+ width=487 height=154>
+
+
+<div id="step_f">
+## Step F: Read the Welcome email
 </div>
 
 You should receive an automated Welcome message from the FreeLists List Manager
 (_ecartis@freelists.org_) with the subject:
 
 ```
-Welcome to 'ioccc28-reg'
+    Welcome to 'ioccc28-reg'
 ```
 
 Read the "Welcome" email.
+
+<img src="../png/register.6_413x657-welcome.png"
+ alt="Welcome email"
+ width=414 height=657>
 
 **NOTE**: The "Welcome" email is usually sent by the FreeLists
 List Manager within a minute after clicking the **((Next >>))** button.
@@ -103,52 +130,12 @@ If you don't see the "Subscription consent" email, check your spam folder.
 [Contact the IOCCC](../contact.html), and if you have tried
 several times, ask the [IOCCC judges](../judges.html) for assistance.
 
-
-<div id="step_h">
-## Step H: Receive your Username and Initial Password
-</div>
-
-Assuming that the contest is [open](../status.html#open), one of the [IOCCC judges](../judges.html)
-will send via email, your initial [IOCCC submit server](https:/submit.ioccc.org) **Username**
-and **Initial password**.  This could take up to a **few days**, so **please be
-patient** and **PLEASE make sure you sign up in time!**!
-
-**IMPORTANT NOTE**: Unless the contest is [open](../status.html#open), the
-[IOCCC judges](../judges.html) will **NOT** be sending out your
-initial [IOCCC submit server](https:/submit.ioccc.org) username and initial password.
-
-For example, if contest is [pending](../status.html#pending), you will have to
-**WAIT UNTIL THE CONTEST IS [OPEN](../status.html#open)** before sending such
-email.
-
-**NOTE**: If are having trouble receiving your **Username** and
-**Initial password**, and the **CONTEST IS [OPEN](../status.html#open)**,
-and you checked your spam folder, [Contact the IOCCC](../contact.html) for assistance.
-
-
 <div id="step_i">
-## Step I: Login to the submit server and change your password
-</div>
-
-Using the **Username** and **Initial password** from [step H](#step_h), login
-to the [IOCCC submit server](https:/submit.ioccc.org)  **WITHIN 72 HOURS**
-(of when one of the [IOCCC judges](../judges.html) sent that email) to change
-your password.
-
-See [How upload your submission to the IOCCC](submit.html) for details
-on how to change your **Initial password**.
-
-**IMPORTANT NOTE**: If you do not change your **Initial password** within
-72 hours of when one of the [IOCCC judges](../judges.html) sent that email,
-you will have to **re-register for the IOCCC**.
-
-
-<div id="step_8">
-## Step J: Proceed with step 3
+## Step I: Proceed with step 3
 </div>
 
 When the is [open](../status.html#open), proceed with
-[Step 3: Obtain and compile the latest mkiocccentry toolkit](../faq.html#step_3).
+[Step 3: Wait for your submit server username and initial password](../faq.html#step_3).
 
 
 <div id="status_impact">

@@ -197,18 +197,92 @@ or [open](status.html#open)**.  See [current status of the IOCCC](status.html) f
 If the contest is [pending](status.html#pending) or [open](status.html#open),
 then follow the directions on **[How to register for the IOCCC](next/register.html)**.
 
-For those who are [registered for the IOCCC](next/register.html),
-once the contest is [open](status.html#open) you will receive your own Email message
-containing your very own **Username and Initial Password until the contest is [open](#open)**.
-You will need these to be able to [upload your submission](next/submit.html) to the
-[IOCCC submit server](https:/submit.ioccc.org).
+
+<div id="step_3">
+#### 3. Wait for your submit server username and initial password
+</div>
+
+Once you have [registered for the IOCCC](next/register.html),
+and once the contest is **[OPEN](status.html#open)**, one of the
+[IOCCC judges](judges.html) will send via email within a few days,
+your [IOCCC submit server](https:/submit.ioccc.org) **Username** and
+**Initial password**.
+
+**PLEASE NOTE**: After registering, it could take up to a **few days**
+before an [IOCCC judge](judges.html) sends the that email, so **PLEASE
+be patient**.
+
+**IMPORTANT NOTE**: Unless the contest is [open](status.html#open),
+the you will **NOT** receive your **Username** and **Initial password**
+by email.  For example, if contest is [pending](status.html#pending),
+you will have to **WAIT UNTIL THE CONTEST IS [OPEN](status.html#open)**.
 
 Please check the [current status of the IOCCC](status.html) and
 visit the [How to register for the IOCCC](next/register.html) for detailed instructions.
 
+**NOTE**: If are having trouble receiving your **Username** and **Initial
+password**, and the **CONTEST IS [OPEN](status.html#open)**, and
+have you checked your spam folder, [Contact the IOCCC](contact.html)
+for assistance.
 
-<div id="step_3">
-#### 3. Obtain and compile the latest mkiocccentry toolkit
+
+<div id="step_4">
+#### 4. Login to the submit server and change your password
+</div>
+
+Using the **Username** and **Initial password** you receive via
+email in [step 3](#step_3), you need to login to the [IOCCC submit
+server](https:/submit.ioccc.org).
+
+**IMPORTANT NOTE**: You must change your password **WITHIN 72 HOURS**
+from when one of the [IOCCC judges](judges.html) sent that email.
+
+**NOTE**: The [IOCCC submit server](https://submit.ioccc.org)
+is only ready for submissions **ONLY WHEN THE CONTEST IS [open](status.html#open)**.
+
+See [current status of the IOCCC](status.html) for details on the contest status.
+**IMPORTANT NOTE**: When the contest is [closed](status.html#closed), the
+[IOCCC submit server](https://submit.ioccc.org)
+may be offline and unreachable as a web site.
+
+To login and change your password, open [https://submit.ioccc.org](https://submit.ioccc.org)
+in your browser.  It should look like this:
+
+<img src="png/submit-server-login.png"
+ alt="submit server login screen"
+ width=710 height=562>
+
+The login is the UUID you were provided when you registered for the IOCCC and
+the password is the initial password you were provided with. Click "Login".
+
+If this is the first time you have logged in with this UUID, you will
+be required to change your password.
+
+Assuming everything is fine, it should look something like:
+
+<img src="png/submit-server-first-login.png"
+ alt="submit server password change required"
+ width=710 height=808>
+
+As you can see, you have to change your password. Put in your login (UUID
+username), your old (initial) password and a new password. For instance:
+
+<img src="png/submit-server-change-passwd.png"
+ alt="submit server changing password"
+ width=710 height=808>
+
+Click "Change Password".
+
+Once this is done, you will be able to log in again with your UUID
+username and new password.
+
+**IMPORTANT NOTE**: If you do not change your **Initial password** within
+72 hours of when one of the [IOCCC judges](judges.html) sent that email,
+you will have to **re-register for the IOCCC**.
+
+
+<div id="step_5">
+#### 5. Obtain and compile the latest mkiocccentry toolkit
 </div>
 
 Once the contest is [open](status.html#open), download the most recent
@@ -224,8 +298,8 @@ mkiocccentry](#obtaining_mkiocccentry)" and the FAQ on "[compiling
 mkiocccentry toolkit](#compiling_mkiocccentry)", for more details.
 
 
-<div id="step_4">
-#### 4. Run the mkiocccentry tool to form your submission tarball
+<div id="step_6">
+#### 6. Run the mkiocccentry tool to form your submission tarball
 </div>
 
 For more details on `mkiocccentry`, what it is, how to obtain it and how to use
@@ -289,14 +363,21 @@ for doing so in your `remarks.md` file.
 See also [Rule 17](next/rules.html#rule17)!
 
 
-<div id="step_5">
+<div id="step_7">
 <div id="submit">
-#### 5. Upload your submission to the IOCCC submit server
+#### 7. Upload your submission to the IOCCC submit server
 </div>
 </div>
 
 The screenshots about [how to upload your submission to the IOCCC](next/submit.html)
 may be helpful a helpful guide when using the [IOCCC submit server](https://submit.ioccc.org).
+
+**NOTE**: You may modify a previous uploaded submission, if the contest is
+[open](status.html#open), by replacing the file in a slot.  Please use
+[mkiocccentry tool](#mkiocccentry) to rebuild the compressed tarball as
+this will update the timestamps and the filename generated: making it
+clear to the [IOCCC judges](judges.html) that you intend to replace
+the older upload.
 
 **IMPORTANT NOTE**: The [IOCCC submit server](https://submit.ioccc.org)
 is only ready for submissions

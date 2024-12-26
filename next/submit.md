@@ -9,42 +9,8 @@ See [current status of the IOCCC](../status.html) for details on the contest sta
 [IOCCC submit server](https://submit.ioccc.org)
 may be offline and unreachable as a web site.
 
-The following steps should be taken, in order to upload your `mkiocccentry` xz
-compressed tarball, to change the file (if you need to upload a different file
-or you have updated the submission), and to check the status of it after the
-contest closes:
-
-First, open the web page in your browser. It should look like this:
-With the login id and password already input, It should look something like
-this:
-
-<img src="../png/submit-server-login.png"
- alt="submit server login screen"
- width=710 height=562>
-
-The login is the UUID you were provided when you registered for the IOCCC and
-the password is the initial password you were provided with. Click "Login".
-
-If this is the first time you have logged in with this UUID, you will
-be required to change your password.
-
-Assuming everything is fine, it should look something like:
-
-<img src="../png/submit-server-first-login.png"
- alt="submit server password change required"
- width=710 height=808>
-
-As you can see, you have to change your password. Put in your login (UUID
-username), your old (initial) password and a new password. For instance:
-
-<img src="../png/submit-server-change-passwd.png"
- alt="submit server changing password"
- width=710 height=808>
-
-Click "Change Password".
-
-Once this is done, you will have to log in again. Using the UUID login and the
-new password:
+To login, open [https://submit.ioccc.org](https://submit.ioccc.org)
+in your browser.  It should look like this:
 
 <img src="../png/submit-server-passwd-changed.png"
  alt="submit server password changed"
