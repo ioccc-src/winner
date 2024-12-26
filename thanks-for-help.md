@@ -7118,26 +7118,19 @@ worked](faq.html#unsupported),
 often **EXTREMELY HARD** (for certain
 definitions of '`HARD`' :-) ), such as
 [1988/phillipps](thanks-for-help.html#1988_phillipps),
-[1992/vern](thanks-for-help.html#1992_vern),
-[2001/anonymous](thanks-for-help.html#2001_anonymous),
-[2004/burley](thanks-for-help.html#2004_burley) and
-[2005/giljade](thanks-for-help.html#2005_giljade); fixing entries like
-[1985/sicherman](thanks-for-help.html#1985_sicherman) and
-[1986/wall](thanks-for-help.html#1986_wall) to
+[2001/anonymous](thanks-for-help.html#2001_anonymous) and
+[2004/burley](thanks-for-help.html#2004_burley); fixing entries like
+[1985/sicherman](thanks-for-help.html#1985_sicherman) to
 not require `-traditional-cpp`; fixing
-entries like [1991/dds](thanks-for-help.html#1991_dds) to work with
-[clang](faq.html#clang) (or, as in the case of
+entries like [1991/dds](thanks-for-help.html#1991_dds) (or, as in the case of
 [1989/westley](thanks-for-help.html#1989_westley), a true masterpiece in
-obfuscation, to work as much as possible); porting entries like
+obfuscation, as much as possible) to work with [clang](faq.html#clang); porting entries like
 [1998/schweikh1](thanks-for-help.html#1998_schweikh1) to
-[macOS](faq.html#macos_compile); fixing code like
+[macOS](faq.html#macos_compile); porting entries like
 [2001/herrmann2](thanks-for-help.html#2001_herrmann2) to work in [both 32-bit and
 64-bit](faq.html#32bit); providing [alternate code](faq.html#alt_code) where useful/necessary;
-improving all [Makefiles](#makefiles);  writing [scripts](#try) to greatly simplify running many
+improving all [Makefiles](#makefiles); writing [scripts](#try) to greatly simplify running many
 of the entries; and other important fixes.
-
-Cody also wrote the feature-rich [sgit](https://github.com/xexyl/sgit) to easily
-run `sed(1)` on files in git repos which we sometimes use to help edit the website.
 
 Cody Boone Ferguson also used one of his own tools to detect many dead links.
 While the tool was not perfect it went a long way to uncover a good number of
@@ -7147,17 +7140,19 @@ Machine](https://web.archive.org) in an effort to try and find otherwise lost
 content. A good number of links that now refer to something in the [Internet
 Wayback Machine](https://web.archive.org) replace bad, broken, or otherwise
 invalid links are thanks to Cody's efforts! Another tool he wrote detected
-inconsistent award titles in the `README.md` files (used to generate the
+inconsistent award titles in the `README.md` files (that we use to generate
 `index.html` files) and the CSV file that he generated from our SQL file.
 
-Cody also greatly improved the manifests and checked that the generated html
+He also wrote the feature-rich [sgit](https://github.com/xexyl/sgit) to easily
+run `sed(1)` on specified files under git that we sometimes use to edit the
+website, greatly improved the manifests and checked that the generated html
 files look good and are presentable, suggested CSS rules for
-image responsiveness and other improvements, and he greatly improved the FAQ.
+image responsiveness (and other CSS improvements) and he greatly improved the FAQ.
 
 Cody also wrote some of the [website scripts](bin/index.html), improved and
 bug fixed others, co-developed the [JSON parser and tools](https://github.com/xexyl/jparse) with
 us, as we now make extensive use of JSON, and helped test and fix the submit
-server for IOCCC28 and beyond.
+server and mailing list for IOCCC28 and beyond.
 
 **THANK YOU VERY MUCH** for your extensive efforts in helping improve the IOCCC
 presentation of past IOCCC entries, fixing almost all entries that no
