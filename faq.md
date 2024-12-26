@@ -4603,7 +4603,7 @@ Jump to: [top](#)
 
 <div id="macos_errors">
 <div id="macos_compile">
-#### Q 6.1.1: Why do some IOCCC entries fail to compile under macOS?
+#### Q 6.1.1: Why do some IOCCC entries fail to compile and/or run under macOS?
 </div>
 </div>
 
