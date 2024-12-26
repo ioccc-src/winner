@@ -95,7 +95,7 @@ for any changes, as well as updating your [IOCCC mkiocccentry tools](https://git
 as changes to them may have been made while the contest was "**[pending](../status.html#pending)**.
 
 See also the
-FAQ on "[how to submit](../faq.html#submit)"
+FAQ on "[how to submit](submit.html)"
 for more information on the submission process when the IOCCC [reopens](../status.html#open).
 
 

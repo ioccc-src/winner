@@ -457,7 +457,7 @@ esac
 	echo
 	echo "See the [IOCCC news](news.html) page for possible updates to rules, guidelines, tools and deadlines."
 	echo
-	echo "See [How to enter the IOCCC](faq.html#submit) FAQ for additional information."
+	echo "See [How to enter the IOCCC](faq.html#enter) FAQ for additional information."
 	echo
 	echo "**IMPORTANT**: If you viewed the preliminary IOCCC rules, guidelines, and tools while the IOCCC status" \
 	     "was pending, be sure to review the official IOCCC rules, guidelines, and tools for any changes that may" \
@@ -473,7 +473,7 @@ esac
 	;;
     closed) echo "# The IOCCC is closed"
         echo
-		echo "The IOCCC is **NOT** accepting [new submissions](faq.html#submit) at this time.  See the" \
+		echo "The IOCCC is **NOT** accepting [new submissions](next/submit.html) at this time.  See the" \
 	     "[IOCCC winning entries page](years.html) for the entries that have won the IOCCC."
 	echo
 	echo "Watch both [this IOCCC status page](status.html) and the" \
