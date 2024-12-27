@@ -12,7 +12,7 @@ below for more details.
 ## To use:
 
 ``` <!---sh-->
-    ./prog < text
+    ./prog < file
 ```
 
 
