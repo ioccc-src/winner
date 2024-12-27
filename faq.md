@@ -240,45 +240,7 @@ from when one of the [IOCCC judges](judges.html) sent that email.
 **NOTE**: The [IOCCC submit server](https://submit.ioccc.org)
 is only ready for submissions **ONLY WHEN THE CONTEST IS [open](status.html#open)**.
 
-See [current status of the IOCCC](status.html) for details on the contest status.
-**IMPORTANT NOTE**: When the contest is [closed](status.html#closed), the
-[IOCCC submit server](https://submit.ioccc.org)
-may be offline and unreachable as a web site.
-
-To login and change your password, open [https://submit.ioccc.org](https://submit.ioccc.org)
-in your browser.  It should look like this:
-
-<img src="png/submit-server-login.png"
- alt="submit server login screen"
- width=710 height=562>
-
-The login is the UUID you were provided when you registered for the IOCCC and
-the password is the initial password you were provided with. Click "Login".
-
-If this is the first time you have logged in with this UUID, you will
-be required to change your password.
-
-Assuming everything is fine, it should look something like:
-
-<img src="png/submit-server-first-login.png"
- alt="submit server password change required"
- width=710 height=808>
-
-As you can see, you have to change your password. Put in your login (UUID
-username), your old (initial) password and a new password. For instance:
-
-<img src="png/submit-server-change-passwd.png"
- alt="submit server changing password"
- width=710 height=808>
-
-Click "Change Password".
-
-Once this is done, you will be able to log in again with your UUID
-username and new password.
-
-**IMPORTANT NOTE**: If you do not change your **Initial password** within
-72 hours of when one of the [IOCCC judges](judges.html) sent that email,
-you will have to **re-register for the IOCCC**.
+Please visit the [Change your submit server initial password](next/pw-change.html) page for detailed instructions.
 
 
 <div id="step_5">
