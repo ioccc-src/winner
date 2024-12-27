@@ -68,7 +68,7 @@ Now if you're done, log out.
 After the submission deadline is reached, you can log in to check the status of
 your submissions. Here is what it will look like when the judges have verified
 that your tarball / submission has been validated (NOT judged), by `txzchk(1)`
-and `chkentry(1)`.:
+and `chkentry(1)`:
 
 <img src="../png/submit-server-status-updated.png"
  alt="submit server status updated"

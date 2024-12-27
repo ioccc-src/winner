@@ -8,9 +8,9 @@ server](https:/submit.ioccc.org).
 from when one of the [IOCCC judges](../judges.html) sent that email.
 
 **NOTE**: The [IOCCC submit server](https://submit.ioccc.org)
-is only ready for submissions **ONLY WHEN THE CONTEST IS [open](../status.html#open)**.
-
+is ready for submissions **ONLY WHEN THE CONTEST IS [open](../status.html#open)**.
 See [current status of the IOCCC](../status.html) for details on the contest status.
+
 **IMPORTANT NOTE**: When the contest is [closed](../status.html#closed), the
 [IOCCC submit server](https://submit.ioccc.org)
 may be offline and unreachable as a web site.
