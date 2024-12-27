@@ -232,7 +232,7 @@ for assistance.
 
 Using the **Username** and **Initial password** you receive via
 email in [step 3](#step_3), you need to login to the [IOCCC submit
-server](https:/submit.ioccc.org).
+server](https://submit.ioccc.org).
 
 **IMPORTANT NOTE**: You must change your password **WITHIN 72 HOURS**
 from when one of the [IOCCC judges](judges.html) sent that email.
