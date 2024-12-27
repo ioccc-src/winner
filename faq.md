@@ -6951,7 +6951,7 @@ from `winners.html`, via the [gen-authors.sh](%%REPO_URL%%/bin/gen-authors.sh) t
 <!-- XXX - Update the commit count just before Great Fork Merge happens -->
 As of 2024 Dec 27 [temp-test-ioccc
 repo](https://github.com/ioccc-src/temp-test-ioccc)
-there were [6141+ commits ahead](https://github.com/ioccc-src/winner/compare/master...ioccc-src:temp-test-ioccc:master)
+there was [6141+ commits ahead](https://github.com/ioccc-src/winner/compare/master...ioccc-src:temp-test-ioccc:master)
 of the [IOCCC winner repo](https://github.com/ioccc-src/winner).
 
 <!-- XXX - Fill in the date when Great Fork Merge happens -->
