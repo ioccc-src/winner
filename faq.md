@@ -347,9 +347,10 @@ is only ready for submissions
 **ONLY WHEN THE CONTEST IS [open](status.html#open)**.
 
 See [current status of the IOCCC](status.html) for details on the contest status.
+
 **IMPORTANT NOTE**: When the contest is [closed](status.html#closed), the
 [IOCCC submit server](https://submit.ioccc.org)
-may be offline and unreachable as a web site.
+might be offline and unreachable as a website.
 
 **NOTE**: if you do need to update a submission, you might find the
 FAQ on "[how to not have to re-enter information more than once](#answers_file)"
@@ -392,7 +393,7 @@ code, your Makefile, your remarks, any other data files you wish to provide (up
 to a maximum, including the mandatory files, defined in
 [limit_ioccc.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h)
 as `MAX_FILE_COUNT`) and other information about your submission,
-information about the author (or authors), and then runs a lot of tests before (if
+information about the author (or authors), and then it runs a lot of tests before (if
 all is OK) forming your tarball. After this is done it will additionally run the
 `txzchk(1)` tool (which runs the `fnamchk(1)` tool) on the submission tarball.
 The tool `chkentry(1)` will also be run, before creating the tarball. See the
@@ -506,7 +507,7 @@ be the _subdirectory_ with your submission's files**.
 The `mkiocccentry(1)` tool will ask you for information about your
 submission _as well as author details_ (that will only be looked at if the
 submission wins), run some tests and run a number of other tools, as briefly
-mentioned, and as described in the
+mentioned earlier, and as described in the
 "[finer details](#mkiocccentry_details)" section.
 
 See also the
@@ -538,8 +539,7 @@ Jump to: [top](#)
 </div>
 </div>
 
-We recommend starting with the [sample
-Makefile](next/Makefile.example)
+We recommend starting with the sample
 (renamed as `Makefile` of course) as a starting point for your
 entry's `Makefile`:
 
@@ -649,8 +649,8 @@ it, not very obfuscated entries have a minuscule chance to win (although
 [2000/tomx](2000/tomx/index.html) is a notable counterexample).
 - mentioning your name or any identifying information in the remark section (or
 in the C code for that matter) - we like to be unbiased during the judging
-rounds; we look at the author name only if an entry wins. See the guidelines if
-this is not clear!
+rounds; we look at the author name only if an entry wins. See the
+[guidelines](next/guidelines.html) **AND** [rules](next/rules.html) if this is not clear!
 - leaving the remark section empty.
 
 Jump to: [top](#)
@@ -880,7 +880,7 @@ If you do not feel, for some reason, comfortable asking your question in public
 then use the [How to contact the IOCCC](contact.html) information to ask
 a private question.
 
-**IMPORTANT**: When you ask your question (in public or as a private question)
+**IMPORTANT NOTE**: When you ask your question (in public or as a private question)
 **PLEASE** try to **NOT** discuss detailed information about any pending submission.
 Try to ask for question in a more generic way as this will help others
 with a similar question and this will not **give away** what you might be doing

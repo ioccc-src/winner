@@ -150,8 +150,8 @@
             </div>
 
             <div class="outfit-font">
-              <a href="./faq.html#submit" class="sub-item-link">
-                How to enter
+              <a href="./faq.html#enter" class="sub-item-link">
+                Enter the IOCCC
               </a>
             </div>
 
@@ -318,8 +318,8 @@
               Frequently Asked Questions
             </a>
 
-            <a class="mobile-submenu-item" href="./faq.html#submit">
-              How to enter
+            <a class="mobile-submenu-item" href="./faq.html#enter">
+              Enter the IOCCC
             </a>
 
             <a class="mobile-submenu-item" href="./faq.html#compiling">
@@ -708,10 +708,10 @@ to replace the older upload.</p>
 <p><strong>IMPORTANT NOTE</strong>: The <a href="https://submit.ioccc.org">IOCCC submit server</a>
 is only ready for submissions
 <strong>ONLY WHEN THE CONTEST IS <a href="status.html#open">open</a></strong>.</p>
-<p>See <a href="status.html">current status of the IOCCC</a> for details on the contest status.
-<strong>IMPORTANT NOTE</strong>: When the contest is <a href="status.html#closed">closed</a>, the
+<p>See <a href="status.html">current status of the IOCCC</a> for details on the contest status.</p>
+<p><strong>IMPORTANT NOTE</strong>: When the contest is <a href="status.html#closed">closed</a>, the
 <a href="https://submit.ioccc.org">IOCCC submit server</a>
-may be offline and unreachable as a web site.</p>
+might be offline and unreachable as a website.</p>
 <p><strong>NOTE</strong>: if you do need to update a submission, you might find the
 FAQ on “<a href="#answers_file">how to not have to re-enter information more than once</a>”
 useful.</p>
@@ -742,7 +742,7 @@ code, your Makefile, your remarks, any other data files you wish to provide (up
 to a maximum, including the mandatory files, defined in
 <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h">limit_ioccc.h</a>
 as <code>MAX_FILE_COUNT</code>) and other information about your submission,
-information about the author (or authors), and then runs a lot of tests before (if
+information about the author (or authors), and then it runs a lot of tests before (if
 all is OK) forming your tarball. After this is done it will additionally run the
 <code>txzchk(1)</code> tool (which runs the <code>fnamchk(1)</code> tool) on the submission tarball.
 The tool <code>chkentry(1)</code> will also be run, before creating the tarball. See the
@@ -823,7 +823,7 @@ be the <em>subdirectory</em> with your submission’s files</strong>.</p>
 <p>The <code>mkiocccentry(1)</code> tool will ask you for information about your
 submission <em>as well as author details</em> (that will only be looked at if the
 submission wins), run some tests and run a number of other tools, as briefly
-mentioned, and as described in the
+mentioned earlier, and as described in the
 “<a href="#mkiocccentry_details">finer details</a>” section.</p>
 <p>See also the
 <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/FAQ.md">mkiocccentry repo FAQ</a>
@@ -846,8 +846,7 @@ or <a href="https://unix.org/online.html">later SUS</a>.</p>
 <h3 id="q-0.3-what-should-i-put-in-my-submission-makefile">Q 0.3: What should I put in my submission Makefile?</h3>
 </div>
 </div>
-<p>We recommend starting with the <a href="next/Makefile.example">sample
-Makefile</a>
+<p>We recommend starting with the sample
 (renamed as <code>Makefile</code> of course) as a starting point for your
 entry’s <code>Makefile</code>:</p>
 <ul>
@@ -946,8 +945,8 @@ it, not very obfuscated entries have a minuscule chance to win (although
 <a href="2000/tomx/index.html">2000/tomx</a> is a notable counterexample).</li>
 <li>mentioning your name or any identifying information in the remark section (or
 in the C code for that matter) - we like to be unbiased during the judging
-rounds; we look at the author name only if an entry wins. See the guidelines if
-this is not clear!</li>
+rounds; we look at the author name only if an entry wins. See the
+<a href="next/guidelines.html">guidelines</a> <strong>AND</strong> <a href="next/rules.html">rules</a> if this is not clear!</li>
 <li>leaving the remark section empty.</li>
 </ul>
 <p>Jump to: <a href="#">top</a></p>
@@ -1114,7 +1113,7 @@ over there.</p>
 (although we hope you consider asking it in public for the benefit of others),
 then use the <a href="contact.html">How to contact the IOCCC</a> information to ask
 a private question.</p>
-<p><strong>IMPORTANT</strong>: When you ask your question (in public or as a private question)
+<p><strong>IMPORTANT NOTE</strong>: When you ask your question (in public or as a private question)
 <strong>PLEASE</strong> try to <strong>NOT</strong> discuss detailed information about any pending submission.
 Try to ask for question in a more generic way as this will help others
 with a similar question and this will not <strong>give away</strong> what you might be doing
