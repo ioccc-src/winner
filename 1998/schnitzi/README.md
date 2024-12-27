@@ -60,7 +60,7 @@ have output which depends on anything?
 For hints on deciphering this, see below past the Author's remarks;
 they're a nice summary, but they leave the mystery intact.
 
-BTW: the author notes an incredible
+**BTW**: the author notes an incredible
 [lipogram](https://en.wikipedia.org/wiki/Lipogram) story called
 [Gadsby](https://www.gutenberg.org/cache/epub/47342/pg47342.txt) which has no
 letter `E` in the story. He did not note this but it has over `50000` (50

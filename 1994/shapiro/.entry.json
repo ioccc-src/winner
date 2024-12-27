@@ -6,7 +6,7 @@
     "dir" : "shapiro",
     "entry_id" : "1994_shapiro",
     "title" : "1994.shapiro",
-    "abstract" : "print time of day on an tty",
+    "abstract" : "print time of day on a tty",
     "author_set" : [
         {
             "author_handle" : "Andrew_Shapiro"

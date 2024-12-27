@@ -450,7 +450,7 @@ so that by setting the size to -1 it went to the max unsigned value):
 ```
 
 
-BTW: there are two arrays that have to be **MAXSIZE** (technically + 1).
+**BTW**: there are two arrays that have to be **MAXSIZE** (technically + 1).
 
 Is it possible that some value specified by the user could mess this up? I do
 not know but what I do know is that because it's unsigned it can't be negative;

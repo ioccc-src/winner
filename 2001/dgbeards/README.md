@@ -65,7 +65,7 @@ Of particular interest is the author's decision that the program should
 crash if it loses.  I've played chess with a lot of people like that, and
 I appreciate the realism.
 
-BTW: if your goal is to lose and you do does that mean you win? :-) What does
+**BTW**: if your goal is to lose and you do does that mean you win? :-) What does
 winning mean in a game you're supposed to lose at?
 
 

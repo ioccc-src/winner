@@ -1789,7 +1789,7 @@ actually submit to the IOCCC, he alone is excluded from the above, as we
 will likely believe it's just another attempt at confusion.  This _guideline_ is
 known as the "**Peter Honeyman is exempt**" _guideline_.
 
-BTW: None of the entries claiming to be from Peter Honeyman have ever
+**BTW**: None of the entries claiming to be from Peter Honeyman have ever
 won an award.  So it is theoretically possible that Peter Honeyman
 did submit to the IOCCC in the past.  In the past, Peter had denied
 submitting anything to the IOCCC.  Perhaps those entries were

@@ -1484,7 +1484,7 @@ again (since it did not work anyway a segfault prevention was added here). He
 also fixed some array addressing (some of which might not be strictly necessary
 but as he was testing the `fibonacci.c` bug he ended up changing it anyway).
 
-BTW: why can't the fix:
+**BTW**: why can't the fix:
 
 ``` <!---c-->
     if (a[1]==NULL||a[2]==NULL||a[3]==NULL||a[4]==NULL||a[5]==NULL) return 1;
@@ -2987,7 +2987,7 @@ Cody also added the rather useful [try.sh](%%REPO_URL%%/1996/gandalf/try.sh) scr
 really demonstrate the different ways of running the program ends up showing
 either different output or the same output that we briefly pointed out.
 
-BTW: it is perilous to try the patience of
+**BTW**: it is perilous to try the patience of
 [Gandalf](https://www.glyphweb.com/arda/g/gandalf.html). Go ahead, try it! :-)
 
 
