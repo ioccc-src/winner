@@ -155,7 +155,7 @@ or [open](../status.html#open).
 
 ### When the IOCCC status is _pending_
 
-While the contest is **[PEDING](../status.html#pending)**,
+While the contest is **[PENDING](../status.html#pending)**,
 you may **register for contest*, however you will **NOT**
 receive your own email message containing your [IOCCC submit server](https:/submit.ioccc.org)
 **Username and Initial Password until the IOCCC is [open](../status.html#open)**.
