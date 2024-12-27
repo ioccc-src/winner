@@ -210,11 +210,12 @@ your [IOCCC submit server](https://submit.ioccc.org) **Username** and
 
 **PLEASE NOTE**: After registering, it could take up to a **few days**
 before an [IOCCC judge](judges.html) sends the that email, so **PLEASE
-be patient**.
+be patient**. This means that you should **GIVE YOURSELF TIME** before the
+contest closes!
 
 **IMPORTANT NOTE**: Unless the contest is [open](status.html#open),
-the you will **NOT** receive your **Username** and **Initial password**
-by email.  For example, if contest is [pending](status.html#pending),
+then you will **NOT** receive your **Username** and **Initial password**
+by email.  For example, if the contest is [pending](status.html#pending),
 you will have to **WAIT UNTIL THE CONTEST IS [OPEN](status.html#open)**.
 
 Please check the [current status of the IOCCC](status.html) and
@@ -6095,7 +6096,7 @@ _spoiler_, this depending on context.
 We ask that the **deobfuscated** code be **identical in functionality**
 to the winning IOCCC entry code.
 
-**_PLEASE_ NOTE**: Be aware that IOCCC entry code may contain **extremely subtle and
+**_PLEASE_ NOTE**: Beware that IOCCC entry code may contain **extremely subtle and
 obscure side effects** (i.e., features).  Those wishing to contribute a
 **deobfuscated** version of code should **strive to mimic** the original (or
 existing) IOCCC entry code as much as possible. Some authors can be contacted
