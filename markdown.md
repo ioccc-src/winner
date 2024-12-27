@@ -7,7 +7,7 @@
 </div>
 
 <p class="leftbar">
-These [IOCCC markdown guidelines](markdown.html) are version **28.0 2024-10-25**.
+These [IOCCC markdown guidelines](markdown.html) are version **28.1 2024-12-27**.
 </p>
 
 **IMPORTANT**: Be sure to read the [IOCCC rules](next/rules.html) and [IOCCC
@@ -692,3 +692,7 @@ or:
 ``` <!---markdown-->
      _**this text is bold italic**_
 ```
+
+**BTW**: the astute reader might notice that some cases of `*` for italic might
+have slipped through. We do ask you, however, to please observe this rule, as
+best you can.

@@ -67,7 +67,7 @@ Click on that link. The email might look the below:
  width=590 height=253>
 
 **NOTE**: If you prefer to **NOT** click links in email, simply copy that
-URL from your "Subscription consent email" and paste it into your browser. The
+URL from your "Subscription consent email" and paste it into your browser.
 
 
 <div id="step_d">
@@ -159,7 +159,7 @@ or [open](../status.html#open).
 While the contest is **[PENDING](../status.html#pending)**,
 you may **register for contest**, however you will **NOT**
 receive an email message containing your [IOCCC submit server](https://submit.ioccc.org)
-**Username and Initial Password until the IOCCC is [open](../status.html#open)**.
+*Username and Initial Password* **until the IOCCC is [open](../status.html#open)**.
 
 
 ### When the IOCCC status is _open_

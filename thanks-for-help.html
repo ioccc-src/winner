@@ -150,8 +150,8 @@
             </div>
 
             <div class="outfit-font">
-              <a href="./faq.html#submit" class="sub-item-link">
-                How to enter
+              <a href="./faq.html#enter" class="sub-item-link">
+                Enter the IOCCC
               </a>
             </div>
 
@@ -318,8 +318,8 @@
               Frequently Asked Questions
             </a>
 
-            <a class="mobile-submenu-item" href="./faq.html#submit">
-              How to enter
+            <a class="mobile-submenu-item" href="./faq.html#enter">
+              Enter the IOCCC
             </a>
 
             <a class="mobile-submenu-item" href="./faq.html#compiling">
@@ -5074,8 +5074,8 @@ compile or not work in some way. These are noted above as well.</p>
 <p>Where useful he added some notes to the Makefiles during compilation to let one
 know of certain problems or features that matter for instance having to disable
 the optimiser or in one case enabling <code>-g</code>.</p>
-<p>Also, rather than check <code>$(CC)</code> for exact matches of <code>gcc</code> or <code>clang</code> it now is
-that if <code>$(CC)</code> contains <code>gcc</code> or contains <code>clang</code> then the specific actions
+<p>Also, rather than check <code>${CC}</code> for exact matches of <code>gcc</code> or <code>clang</code> it now is
+that if <code>${CC}</code> contains <code>gcc</code> or contains <code>clang</code> then the specific actions
 related to the specific compiler will be done (priority is <code>gcc</code> then <code>clang</code>). This
 is useful because it’s not guaranteed that the compiler names for <code>gcc</code> or
 <code>clang</code> will be exactly that; in macOS for instance it can happen that they are
@@ -5088,19 +5088,13 @@ optimiser to fix an entry, sometimes causing other problems that also had to be
 fixed, a good example being <a href="#1986_marshall">1986/marshall</a> (see the
 <a href="1986/marshall/compilers.html">compilers.html</a> for the amusing details and all that
 had to be done to fix it).</p>
-<p>There was a ‘problem’ where <code>${MAKE}</code> was <code>$(MAKE)</code>: this doesn’t break anything
-but it is inconsistent with the rest of the <code>${foo}</code> tools even if by tradition
-it is <code>$(MAKE)</code>.</p>
 <p>Cody also added missing variables like <code>BASH</code> and <code>PDFLATEX</code> to the
 <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/var.mk">var.mk</a> file and removed another that was deemed problematic or
 undesired. Other variable names had typos in them.</p>
 <p>In at least one case, like the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/Makefile">top level Makefile</a>, where raw
 commands that are in <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/var.mk">var.mk</a> were used, Cody updated them to use the
 variables.</p>
-<p>A comment was missing for the <code>diff_alt_orig</code> rule in all the Makefiles and
-this, along with many other fixes and changes to the Makefiles were made by
-Cody’s <a href="https://github.com/xexyl/sgit">sgit tool</a> but many other changes he did
-manually.</p>
+<p>Some comments were fixed or added where it was deemed useful.</p>
 <p>Jump to: <a href="#">top</a></p>
 <div id="consistency_improvements">
 <h2 id="consistency-improvements">Consistency improvements</h2>
@@ -5115,9 +5109,6 @@ some other files to markdown as well as format fixing them.</p>
 across the entries of all the years as well as other files. This is not possible
 for everything (the remarks of authors, for instance, cannot be and should not
 be made consistent but adding markdown where necessary in the remarks is).</p>
-<p>Some of these fixes were done with his <a href="https://github.com/xexyl/sgit">sgit
-tool</a> as well but the vast majority were done
-manually.</p>
 <p>Jump to: <a href="#">top</a></p>
 <div id="try">
 <h2 id="try-script-system">Try script system</h2>
@@ -5138,10 +5129,13 @@ presentation of the winning entries.</p>
 <ul>
 <li>converting old hints files to README.md files (fixing problems in the process)</li>
 <li>converting other files to markdown</li>
-<li>extending the stylesheet for a few improvements</li>
+<li>extending / improving the stylesheet</li>
 <li>fixing many different kinds of problems in many files</li>
-<li>writing a few <a href="bin/index.html">website scripts</a>, improving a few others as
-well as identifying and/or fixing bugs in others</li>
+<li>writing a few <a href="bin/index.html">website scripts</a>, improving a few others,
+identifying bugs in some and fixing bugs in others</li>
+<li>co-developing the JSON parser <a href="https://github.com/xexyl/jparse">jparse</a> and
+tools (that the <a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry repo</a> clones)
+with us, as we now make extensive use of JSON for the website</li>
 <li>greatly improving the manifest of the winning entries so that the links to the
 files in the index.html files make more sense and are consistent (although it
 might be said that some of them will not make sense if you don’t understand the
@@ -5206,13 +5200,13 @@ inconsistent award titles in the <code>README.md</code> files (that we use to ge
 run <code>sed(1)</code> on specified files under git that we sometimes use to edit the
 website, greatly improved the manifests and checked that the generated html
 files look good and are presentable, suggested CSS rules for
-image responsiveness (and other CSS improvements) and he greatly improved the FAQ.</p>
+image responsiveness (and made other CSS improvements) and he greatly improved the FAQ.</p>
 <p>Cody also wrote some of the <a href="bin/index.html">website scripts</a>, improved and
 bug fixed others, co-developed the <a href="https://github.com/xexyl/jparse">JSON parser and tools</a> with
 us, as we now make extensive use of JSON, and helped test and fix the submit
 server and mailing list for IOCCC28 and beyond.</p>
 <p><strong>THANK YOU VERY MUCH</strong> for your extensive efforts in helping improve the IOCCC
-presentation of past IOCCC entries, fixing almost all entries that no
+presentation of past IOCCC entries, fixing many entries that no
 longer worked and getting the IOCCC where it is today!</p>
 <p>Jump to: <a href="#">top</a></p>
 <div id="yusuke">

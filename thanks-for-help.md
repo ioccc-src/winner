@@ -6971,8 +6971,8 @@ Where useful he added some notes to the Makefiles during compilation to let one
 know of certain problems or features that matter for instance having to disable
 the optimiser or in one case enabling `-g`.
 
-Also, rather than check `$(CC)` for exact matches of `gcc` or `clang` it now is
-that if `$(CC)` contains `gcc` or contains `clang` then the specific actions
+Also, rather than check `${CC}` for exact matches of `gcc` or `clang` it now is
+that if `${CC}` contains `gcc` or contains `clang` then the specific actions
 related to the specific compiler will be done (priority is `gcc` then `clang`). This
 is useful because it's not guaranteed that the compiler names for `gcc` or
 `clang` will be exactly that; in macOS for instance it can happen that they are
@@ -6987,10 +6987,6 @@ fixed, a good example being [1986/marshall](#1986_marshall) (see the
 [compilers.html](1986/marshall/compilers.html) for the amusing details and all that
 had to be done to fix it).
 
-There was a 'problem' where `${MAKE}` was `$(MAKE)`: this doesn't break anything
-but it is inconsistent with the rest of the `${foo}` tools even if by tradition
-it is `$(MAKE)`.
-
 Cody also added missing variables like `BASH` and `PDFLATEX` to the
 [var.mk](%%REPO_URL%%/var.mk) file and removed another that was deemed problematic or
 undesired. Other variable names had typos in them.
@@ -6999,10 +6995,7 @@ In at least one case, like the [top level Makefile](%%REPO_URL%%/Makefile), wher
 commands that are in [var.mk](%%REPO_URL%%/var.mk) were used, Cody updated them to use the
 variables.
 
-A comment was missing for the `diff_alt_orig` rule in all the Makefiles and
-this, along with many other fixes and changes to the Makefiles were made by
-Cody's [sgit tool](https://github.com/xexyl/sgit) but many other changes he did
-manually.
+Some comments were fixed or added where it was deemed useful.
 
 Jump to: [top](#)
 
@@ -7022,10 +7015,6 @@ Where possible he made the presentation of the entries much more consistent
 across the entries of all the years as well as other files. This is not possible
 for everything (the remarks of authors, for instance, cannot be and should not
 be made consistent but adding markdown where necessary in the remarks is).
-
-Some of these fixes were done with his [sgit
-tool](https://github.com/xexyl/sgit) as well but the vast majority were done
-manually.
 
 Jump to: [top](#)
 
@@ -7056,10 +7045,13 @@ Jump to: [top](#)
 
 - converting old hints files to README.md files (fixing problems in the process)
 - converting other files to markdown
-- extending the stylesheet for a few improvements
+- extending / improving the stylesheet
 - fixing many different kinds of problems in many files
-- writing a few [website scripts](bin/index.html), improving a few others as
-well as identifying and/or fixing bugs in others
+- writing a few [website scripts](bin/index.html), improving a few others,
+identifying bugs in some and fixing bugs in others
+- co-developing the JSON parser [jparse](https://github.com/xexyl/jparse)  and
+tools (that the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry) clones)
+with us, as we now make extensive use of JSON for the website
 - greatly improving the manifest of the winning entries so that the links to the
 files in the index.html files make more sense and are consistent (although it
 might be said that some of them will not make sense if you don't understand the
@@ -7147,7 +7139,7 @@ He also wrote the feature-rich [sgit](https://github.com/xexyl/sgit) to easily
 run `sed(1)` on specified files under git that we sometimes use to edit the
 website, greatly improved the manifests and checked that the generated html
 files look good and are presentable, suggested CSS rules for
-image responsiveness (and other CSS improvements) and he greatly improved the FAQ.
+image responsiveness (and made other CSS improvements) and he greatly improved the FAQ.
 
 Cody also wrote some of the [website scripts](bin/index.html), improved and
 bug fixed others, co-developed the [JSON parser and tools](https://github.com/xexyl/jparse) with
@@ -7155,7 +7147,7 @@ us, as we now make extensive use of JSON, and helped test and fix the submit
 server and mailing list for IOCCC28 and beyond.
 
 **THANK YOU VERY MUCH** for your extensive efforts in helping improve the IOCCC
-presentation of past IOCCC entries, fixing almost all entries that no
+presentation of past IOCCC entries, fixing many entries that no
 longer worked and getting the IOCCC where it is today!
 
 

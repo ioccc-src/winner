@@ -43,7 +43,7 @@ Jump to: [top](#)
 </div>
 
 <p class="leftbar">
-These [IOCCC guidelines](guidelines.html) are version **28.28 2024-12-07**.
+These [IOCCC guidelines](guidelines.html) are version **28.29 2024-12-27**.
 </p>
 
 **IMPORTANT**: Be **SURE** to read the [IOCCC rules](rules.html).
@@ -112,6 +112,12 @@ The submit URL should be active on or slightly before **2024-MMM-DD HH:MM:SS UTC
 </p>
 
 <p class="leftbar">
+See the
+FAQ on "[how to register and submit to the IOCCC](../faq.html#enter)"
+for instructions on registering and participating in the IOCCC, as the process has changed from previous years!
+</p>
+
+<p class="leftbar">
 The [IOCCC rules](rules.html) and these [IOCCC
 guidelines](guidelines.html) will be available on the [Official IOCCC
 website](https://www.ioccc.org) on or slightly before start of this IOCCC.  Please check our
@@ -152,6 +158,12 @@ to account for the new [mkiocccentry repo](https://github.com/ioccc-src/mkioccce
 <p class="leftbar">
 The IOCCC submission URL, [when the IOCCC is open](../status.html#open), is
 [submit.ioccc.org](https://submit.ioccc.org/).
+</p>
+
+<p class="leftbar">
+Because the Judges send you your initial login and password, and because it will
+not be immediate, you should **MAKE SURE** you give yourself enough time before
+the contest closes. In other words, don't wait until the last few days!
 </p>
 
 Jump to: [top](#)
