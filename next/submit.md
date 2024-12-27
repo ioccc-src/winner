@@ -7,16 +7,20 @@ is only ready for submissions
 See [current status of the IOCCC](../status.html) for details on the contest status.
 **IMPORTANT NOTE**: When the contest is [closed](../status.html#closed), the
 [IOCCC submit server](https://submit.ioccc.org)
-may be offline and unreachable as a web site.
+might be offline and unreachable as a website.
 
 To login, open [https://submit.ioccc.org](https://submit.ioccc.org)
-in your browser.  It should look like this:
+in your browser. Fill in your login credentials and click "Login".
+It might look something like:
 
-<img src="../png/submit-server-passwd-changed.png"
- alt="submit server password changed"
+<img src="../png/submit-server-login.png"
+ alt="submit server login page"
  width=710 height=344>
 
-.. click "Login".
+
+If you've not logged in before, you'll have to change your password first. See
+the file [pw-change.html](pw-change.html) for more details. After that you will
+have to log back in.
 
 Once you've logged in, you will see submit slots. Each slot is for one
 submission so if you update a submission, make sure you choose the right one so

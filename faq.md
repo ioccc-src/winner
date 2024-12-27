@@ -333,14 +333,14 @@ See also [Rule 17](next/rules.html#rule17)!
 </div>
 
 The screenshots about [how to upload your submission to the IOCCC](next/submit.html)
-may be helpful a helpful guide when using the [IOCCC submit server](https://submit.ioccc.org).
+might be a helpful guide when using the [IOCCC submit server](https://submit.ioccc.org).
 
 **NOTE**: You may modify a previous uploaded submission, if the contest is
-[open](status.html#open), by replacing the file in a slot.  Please use
+[open](status.html#open), by replacing the file in a slot.  Please use the
 [mkiocccentry tool](#mkiocccentry) to rebuild the compressed tarball as
-this will update the timestamps and the filename generated: making it
-clear to the [IOCCC judges](judges.html) that you intend to replace
-the older upload.
+this will update the timestamps and the filename generated, as well as packaging
+any changes: making it clear to the [IOCCC judges](judges.html) that you intend
+to replace the older upload.
 
 **IMPORTANT NOTE**: The [IOCCC submit server](https://submit.ioccc.org)
 is only ready for submissions
@@ -350,6 +350,11 @@ See [current status of the IOCCC](status.html) for details on the contest status
 **IMPORTANT NOTE**: When the contest is [closed](status.html#closed), the
 [IOCCC submit server](https://submit.ioccc.org)
 may be offline and unreachable as a web site.
+
+**NOTE**: if you do need to update a submission, you might find the
+FAQ on "[how to not have to re-enter information more than once](#answers_file)"
+useful.
+
 
 
 Jump to: [top](#)

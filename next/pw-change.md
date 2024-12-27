@@ -1,8 +1,8 @@
 # Change your submit server initial password
 
 Using the **Username** and **Initial password** you receive via
-email in [step 3](#step_3), you need to login to the [IOCCC submit
-server](https:/submit.ioccc.org).
+email in [step 3](../faq.html#step_3), you need to login to the [IOCCC submit
+server](https://submit.ioccc.org).
 
 **IMPORTANT NOTE**: You must change your password **WITHIN 72 HOURS**
 from when one of the [IOCCC judges](../judges.html) sent that email.
@@ -22,7 +22,7 @@ in your browser.  It should look like this:
  alt="submit server login screen"
  width=710 height=562>
 
-The login is the UUID you were provided when you registered for the IOCCC and
+The username is the UUID you were provided when you registered for the IOCCC and
 the password is the initial password you were provided with. Click "Login".
 
 If this is the first time you have logged in with this UUID, you will
@@ -44,9 +44,14 @@ username), your old (initial) password and a new password. For instance:
 Click "Change Password".
 
 Once this is done, you will be able to log in again with your UUID
-username and new password.
+username and new password. This is what it will look like when you change your
+password:
 
-When the is [open](../status.html#open), proceed with
+<img src="../png/submit-server-passwd-changed.png"
+ alt="submit server password changed"
+ width=710 height=344>
+
+When the contest is [open](../status.html#open), proceed with
 [Step 5: Obtain and compile the latest mkiocccentry toolkit](../faq.html#step_5).
 
 
