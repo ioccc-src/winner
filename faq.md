@@ -205,16 +205,17 @@ then follow the directions on **[How to register for the IOCCC](next/register.ht
 Once you have [registered for the IOCCC](next/register.html),
 and once the contest is **[OPEN](status.html#open)**, one of the
 [IOCCC judges](judges.html) will send via email within a few days,
-your [IOCCC submit server](https:/submit.ioccc.org) **Username** and
+your [IOCCC submit server](https://submit.ioccc.org) **Username** and
 **Initial password**.
 
 **PLEASE NOTE**: After registering, it could take up to a **few days**
 before an [IOCCC judge](judges.html) sends the that email, so **PLEASE
-be patient**.
+be patient**. This means that you should **GIVE YOURSELF TIME** before the
+contest closes!
 
 **IMPORTANT NOTE**: Unless the contest is [open](status.html#open),
-the you will **NOT** receive your **Username** and **Initial password**
-by email.  For example, if contest is [pending](status.html#pending),
+then you will **NOT** receive your **Username** and **Initial password**
+by email.  For example, if the contest is [pending](status.html#pending),
 you will have to **WAIT UNTIL THE CONTEST IS [OPEN](status.html#open)**.
 
 Please check the [current status of the IOCCC](status.html) and
@@ -232,7 +233,7 @@ for assistance.
 
 Using the **Username** and **Initial password** you receive via
 email in [step 3](#step_3), you need to login to the [IOCCC submit
-server](https:/submit.ioccc.org).
+server](https://submit.ioccc.org).
 
 **IMPORTANT NOTE**: You must change your password **WITHIN 72 HOURS**
 from when one of the [IOCCC judges](judges.html) sent that email.
@@ -2535,7 +2536,7 @@ be a _JSON string_ or it **MUST** be a _JSON null_.
 
 In some cases the author may wish to record a special URL for their IOCCC entry,
 or a 2nd URL such as a work or school or personal home page.  For example,
-Cody as of  _Thu Nov 30 23:51:12 UTC 2023_ used:
+[Cody Boone Ferguson](authors.html#Cody_Boone_Ferguson) as of _Thu Nov 30 23:51:12 UTC 2023_ used:
 
 ``` <!---json-->
     "alt_url" : "https://ioccc.xexyl.net"
@@ -2590,7 +2591,7 @@ will always be `null` anyway.
 ```
 
 This _JSON member_ holds the
-[Mastodon social network](https://en.wikipedia.org/wiki/Mastodon_&lpar;social_network&rpar;)
+[Mastodon instance](https://en.wikipedia.org/wiki/Mastodon_&lpar;social_network&rpar;)
 handle of the author.
 
 There **MUST** be one and only one `mastodon` _JSON member_ and the _JSON value_ **MUST**
@@ -2608,12 +2609,12 @@ The IOCCC Mastodon handle is:
     @ioccc@fosstodon.org
 ```
 
-The IOCCC uses the Mastodon social network for announcements such
+The IOCCC uses Mastodon for announcements such
 as the opening and closing of a new IOCCC, changes to the IOCCC web
 site, updates during the judging process, and when new IOCCC entries
 are selected.  We recommend you follow us on Mastodon.
 
-If the author wishes to not specify an Mastodon handle, or if the Mastodon handle is
+If the author wishes to not specify a Mastodon handle, or if the Mastodon handle is
 unknown, it should be the _JSON null_ as the _JSON value_ of this _JSON member_.
 For example:
 
@@ -2641,7 +2642,7 @@ The `mastodon_url` is just a translation of the above mentioned Mastodon handle.
 For example, if the Mastodon handle is `@user@server.domain`, then the
 `mastodon_url` would be `https://server.domain/@user`.
 
-If the author wishes to not specify an Mastodon URL, or if the Mastodon URL is
+If the author wishes to not specify a Mastodon URL, or if the Mastodon URL is
 unknown, it should be the _JSON null_ as the _JSON value_ of this _JSON member_.
 For example:
 
@@ -3594,10 +3595,10 @@ deprecated](https://access.redhat.com/documentation/en-us/red_hat_enterprise_lin
 
 According to this [Linux for Devices tutorial on
 XOrg](https://www.linuxfordevices.com/tutorials/linux/install-xorg-on-linux) as
-of 2023 Mar 25:
+of 2023 Mar 25 (quote verbatim):
 
 
-> Recently, RHEL developers categorized [Xorg was put in the ‘deprecated’
+> Recently, RHEL developers categorized Xorg [Xorg was put in the ‘deprecated’
 software](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/9/html/9.0_release_notes/deprecated_functionality),
 as its development has mostly halted. Subsequent updates will completely replace
 it with Wayland, a more modern windowing system.. Although Wayland is not fully
@@ -4718,10 +4719,11 @@ a great deal of these were fixed for modern systems.
 There are some cases where certain compilers or even certain versions are
 necessary for the program to function in part or even completely.
 
-Some IOCCC entries might operating system services that may not be present on
+Some IOCCC entries might need operating system services that might not be present on
 your system, as well.
 
-In some cases the IOCCC entry simply has bugs or (Mis)features.
+In some cases the IOCCC entry simply has [bugs or
+&lpar;Mis&rpar;features](bugs.html).
 
 If you are having problems compiling or running an IOCCC entry,
 we recommend that you look in [bugs.html](bugs.html) to see if
@@ -5440,7 +5442,7 @@ request](https://github.com/ioccc-src/winner/pulls) against the master
 [branch](https://github.com/ioccc-src/winner/branches) of the [ioccc-src/winner
 repo](https://github.com/ioccc-src/winner).
 
-BTW: A **problem** is not limited to the code itself.  Fixing typos in files
+**BTW**: A **problem** is not limited to the code itself.  Fixing typos in files
 such as "_index.html_" files (via its respective `README.md` file), fixing
 issues in a "_Makefile_", or otherwise correcting an IOCCC entry is **VERY MUCH
 WELCOME**!  Please use the same [GitHub pull
@@ -5490,10 +5492,10 @@ have to be logged into your account.
 To help you out here is a navigation menu in this FAQ entry:
 
 - [Creating a GitHub account](#creating-a-github-account)
-- [Installing an ssh key to GitHub](#installing-an-ssh-key)
+- [Installing an ssh key to GitHub](#installing-an-ssh-key-to-github)
 - [Forking the IOCCC winner repo](#forking-the-ioccc-winner-repo)
 - [Cloning the IOCCC winner repo](#cloning-the-ioccc-winner-repo)
-- [Making changes, fixes etc.](#making-changes-fixes-etc)
+- [Making changes, fixes etc.](#making-changes-fixes-etc.)
 - [Committing your changes](#committing-your-changes)
 - [Opening a pull request](#opening-a-pull-request)
 - [What to do after a merge](#what-to-do-after-a-merge)
@@ -5709,7 +5711,7 @@ and then the text field that is labelled _Add a description_ would have:
 
 Once you've done this you should click on _Create pull request_.
 
-IMPORTANT NOTE: although the [Judges](https://www.ioccc.org/judges.html) will
+**IMPORTANT NOTE**: although the [Judges](https://www.ioccc.org/judges.html) will
 give more deference to the authors of edited entries the
 [Judges](https://www.ioccc.org/judges.html) also retain the final editorial say
 in the matter.
@@ -5897,7 +5899,9 @@ FAQ on "[GitHub pull request](#pull_request)"
 for more information.
 
 **IMPORTANT NOTE**: As these files are JSON you should verify that
-they are validly formed (e.g., you didn't make a typo).
+they are validly formed (e.g., you didn't make a typo). See the
+FAQ on "[how to validate JSON files](#jparse)"
+for more help.
 
 Before you form your GitHub pull request that modifies a
 `author_handle.json` file, please run the `make www` command.  This
@@ -6092,7 +6096,7 @@ _spoiler_, this depending on context.
 We ask that the **deobfuscated** code be **identical in functionality**
 to the winning IOCCC entry code.
 
-**_PLEASE_ NOTE**: Be aware that IOCCC entry code may contain **extremely subtle and
+**_PLEASE_ NOTE**: Beware that IOCCC entry code may contain **extremely subtle and
 obscure side effects** (i.e., features).  Those wishing to contribute a
 **deobfuscated** version of code should **strive to mimic** the original (or
 existing) IOCCC entry code as much as possible. Some authors can be contacted
@@ -6347,7 +6351,7 @@ entries that have won the IOCCC, sometimes in the same IOCCC contest year.
 refer to what is now an _author_.  In a number of historical cases,
 such as old rules and old guidelines, terms such as _winner_ may still be
 found.  Moreover, out of habit, the IOCCC judges sometimes use old
-names such as _winner_ when they should use _author_.  Sorry (tm Canada)! :-)
+names such as _winner_ when they should use _author_.  Sorry (tm Canada :-) )!
 
 - Entry
 
@@ -6366,7 +6370,7 @@ directory `YYYY/entry`.
 refer to what is now an _entry_.  In a number of historical cases,
 such as old rules and old guidelines, terms such as _winner_ may still be
 found.  Moreover, out of habit, the IOCCC judges sometimes use old
-names such as _winner_ when they should use _entry_.  Sorry (tm Canada)! :-)
+names such as _winner_ when they should use _entry_.  Sorry (tm Canada :-) )!
 
 - Submission
 
@@ -6692,15 +6696,15 @@ After a few minutes we wandered back into my office where I posted a
 net.lang.c](http://groups.google.com/groups?q=Obfuscated&hl=en&lr=&ie=UTF-8&as_drrb=b&as_mind=1&as_minm=1&as_miny=1983&as_maxd=18&as_maxm=4&as_maxy=1984&selm=789%40nsc.UUCP&rnum=3&filter=0")
 inviting people to try and out obfuscate the UN\*X source code we had just been working on.
 
-BTW: I (Landon Curt Noll) had to post this [typo
+**BTW**: I (Landon Curt Noll) had to post this [typo
 correction](http://groups.google.com/groups?q=Obfuscated&hl=en&lr=&ie=UTF-8&as_drrb=b&as_mind=1&as_minm=1&as_miny=1983&as_maxd=18&as_maxm=4&as_maxy=1984&selm=795%40nsc.UUCP&rnum=10&filter=0).
 Thus began the tradition of putting typos in the contest rules and guidelines
 ... to make them more obfuscated of course! :-)
 
-BTW: This posting was made back in the days when AT&amp;T was the evil giant.
+**BTW**: This posting was made back in the days when AT&amp;T was the evil giant.
 Now, Microsoft makes AT&amp;T look mild and kind in comparison. :-( (IMHO) ).
 
-BTW: See the story about the '[Bill Gates](1993/cmills/index.html)' award. :-)
+**BTW**: See the story about the '[Bill Gates](1993/cmills/index.html)' award. :-)
 
 OK, back to the story.
 
@@ -6719,7 +6723,7 @@ There were 4 entries that won in 1984:
 3. [2nd place](http://groups.google.com/groups?q=Obfuscated&hl=en&lr=&ie=UTF-8&as_drrb=b&as_mind=1&as_minm=1&as_miny=1983&as_maxd=18&as_maxm=4&as_maxy=1984&selm=844%40nsc.UUCP&rnum=6&filter=0)
 4. [1st place](http://groups.google.com/groups?q=Obfuscated&hl=en&lr=&ie=UTF-8&as_drrb=b&as_mind=1&as_minm=1&as_miny=1983&as_maxd=18&as_maxm=4&as_maxy=1984&selm=845%40nsc.UUCP&rnum=5&filter=0)
 
-BTW: The (dis)honorable mention wished to remain anonymous.
+**BTW**: The (dis)honorable mention wished to remain anonymous.
 While many have asked who it was, we have continued to follow the
 author's wish to remain anonymous.
 
@@ -6728,7 +6732,7 @@ They said: '_Yes, I want to keep my anonymity.  But you can tell them that I am 
 C language_'. It was not until 2001 that another [anonymous
 entry](2001/anonymous/index.html) received an award.
 
-BTW: The [1984/mullender](1984/mullender/index.html) remains one of my (Landon Curt Noll) all time favorites.
+**BTW**: The [1984/mullender](1984/mullender/index.html) remains one of my (Landon Curt Noll) all time favorites.
 
 The name used in the posting of the [1st winning IOCCC
 entry](http://groups.google.com/groups?q=Obfuscated&hl=en&lr=&ie=UTF-8&as_drrb=b&as_mind=1&as_minm=1&as_miny=1983&as_maxd=18&as_maxm=4&as_maxy=1984&selm=837%40nsc.UUCP&rnum=2&filter=0)
@@ -6886,7 +6890,8 @@ going back to [2020 Dec
 the repo was forked on **Sun Sep 18 17:30:00 2022 -0700**.  The
 first [push into the temp-test-ioccc
 repo](https://github.com/ioccc-src/temp-test-ioccc/commit/edbc3089e1b755d85a020af7975bbc7df3737a5f)
-occurred on Sun Sep 18 11:15:49 2022 -0700.
+occurred on Sun Sep 18 11:15:49 2022 -0700, by [Cody Boone
+Ferguson](authors.html#Cody_Boone_Ferguson).
 
 At this same time, the [temp-test-ioccc website](https://ioccc-src.github.io/temp-test-ioccc/) went live.
 
@@ -6945,9 +6950,9 @@ from `winners.html`, via the [gen-authors.sh](%%REPO_URL%%/bin/gen-authors.sh) t
 </div>
 
 <!-- XXX - Update the commit count just before Great Fork Merge happens -->
-As of 2024 Oct 20 [temp-test-ioccc
+As of 2024 Dec 27 [temp-test-ioccc
 repo](https://github.com/ioccc-src/temp-test-ioccc)
-there were [5975 commits ahead](https://github.com/ioccc-src/winner/compare/master...ioccc-src:temp-test-ioccc:master)
+there was [6141+ commits ahead](https://github.com/ioccc-src/winner/compare/master...ioccc-src:temp-test-ioccc:master)
 of the [IOCCC winner repo](https://github.com/ioccc-src/winner).
 
 <!-- XXX - Fill in the date when Great Fork Merge happens -->
