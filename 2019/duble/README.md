@@ -218,7 +218,7 @@ You may set it to the full size of your terminal window by typing:
     make clobber fullscreen
 ```
 
-IMPORTANT NOTES:
+**IMPORTANT NOTES**:
 
 *   **The program compiled with a given size will fail to reload a drawing file
     with a different size!**

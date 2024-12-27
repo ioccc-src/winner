@@ -26,7 +26,7 @@ For details see the "[How the contest status impacts registration](#status_impac
  alt="signup for a mailing list"
  width=531 height=445>
 
- After clicking **((Next >>))**, you will be notified you will receive some email:
+After clicking **((Next >>))**, you will be notified that you will receive an email:
 
 <img src="../png/register.1_633x163-verify.png"
  alt="verify your email notification"
@@ -41,34 +41,33 @@ Look for an automated email message from the FreeLists List Manager (_ecartis@fr
 
 The email message will have the subject:
 
-```
-    Subscription consent for 'ioccc28-reg'
-```
+> Subscription consent for 'ioccc28-reg'
 
-**NOTE**: Be aware that your email service, application and/or Internet
-service provider may modify email subject lines.  For example, some string
-may have been prepended or appended to the subject line.  Be aware of
+**NOTE**: Beware that your email service, application and/or Internet
+Service Provider (ISP) might modify email subject lines.  For example, some string
+might have been prepended or appended to the subject line.  Beware of
 this when you search for the Subscription consent" email.
 
 **NOTE**: The "Subscription consent" email is usually sent by the FreeLists
 List Manager within a minute after clicking the **((Next >>))** button.
 If you don't see the "Subscription consent" email, check your spam folder.
 
-**NOTE**: If are having trouble receiving the "Subscription consent"
-email, [Contact the IOCCC](../contact.html), and you have tried
-several times, ask the [IOCCC judges](../judges.html) for assistance.
+**NOTE**: If are having trouble receiving the "Subscription consent" email, and
+you have tried a few times, [Contact the IOCCC](../contact.html) to ask the
+[IOCCC judges](../judges.html) for assistance.
 
 This email will contain a URL of the form:
 `https://www.freelists.org/v/ioccc28-reg/SOME-RANDOM-STUFF`.
 
-Click on that link.
+Click on that link. The email might look the below:
 
-**NOTE**: If you prefer to **NOT** click links in email, simply copy that
-URL from your "Subscription consent email" and paste it into your browser.
 
 <img src="../png/register.2_590x253-verify-email.png"
  alt="Subscription consent email"
  width=590 height=253>
+
+**NOTE**: If you prefer to **NOT** click links in email, simply copy that
+URL from your "Subscription consent email" and paste it into your browser. The
 
 
 <div id="step_d">
@@ -83,22 +82,23 @@ In your browser, for the link referenced in [Step C](#step_c), click the **((Nex
 
 
 <div id="step_e">
-## Step E: Content and Verify
+## Step E: Verify you have read the mailing list polices and that you consent to receiving emails
 </div>
 
-The FreeLists service that you verify that you:
+The FreeLists service requires that you verify that you:
 
 - Have read, understand, and agree to their "_Terms of Service_"
 - Have read, understand, and agree to their "_Privacy Policy_"
 - Are the owner or authorized user of the email you registered
 
-Once you have done this by clicking the 3 checkboxes, the **((Next >>))** button.
+Once you have done this by clicking the 3 checkboxes, click the **((Next >>))**
+button:
 
 <img src="../png/register.4_657x446-subscribe.png"
  alt="complete subscription"
  width=657 height=446>
 
- After clicking **((Next >>))**, you will be notified you will receive some email:
+After clicking **((Next >>))**, you will be notified that you will receive an email:
 
 <img src="../png/register.5_487x154-done.png"
  alt="registration is complete"
@@ -124,17 +124,18 @@ Read the "Welcome" email.
 
 **NOTE**: The "Welcome" email is usually sent by the FreeLists
 List Manager within a minute after clicking the **((Next >>))** button.
-If you don't see the "Subscription consent" email, check your spam folder.
+If you don't see the "Welcome" email, check your spam folder.
 
-**NOTE**: If are having trouble receiving the "Welcome" email,
-[Contact the IOCCC](../contact.html), and if you have tried
-several times, ask the [IOCCC judges](../judges.html) for assistance.
+**NOTE**: If are having trouble receiving the "Welcome" email, and you have
+tried several times,
+[Contact the IOCCC](../contact.html) to ask the [IOCCC judges](../judges.html)
+for assistance.
 
 <div id="step_i">
 ## Step I: Proceed with step 3
 </div>
 
-When the is [open](../status.html#open), proceed with
+When the contest is [open](../status.html#open), proceed with
 [Step 3: Wait for your submit server username and initial password](../faq.html#step_3).
 
 
@@ -156,8 +157,8 @@ or [open](../status.html#open).
 ### When the IOCCC status is _pending_
 
 While the contest is **[PENDING](../status.html#pending)**,
-you may **register for contest*, however you will **NOT**
-receive your own email message containing your [IOCCC submit server](https:/submit.ioccc.org)
+you may **register for contest**, however you will **NOT**
+receive an email message containing your [IOCCC submit server](https://submit.ioccc.org)
 **Username and Initial Password until the IOCCC is [open](../status.html#open)**.
 
 
@@ -165,19 +166,20 @@ receive your own email message containing your [IOCCC submit server](https:/subm
 
 While the contest is **[OPEN](../status.html#open)**,
 you may **register for the contest**.  Once you are registered **AND**
-the contest is [open](../status.html#open), you will receive your own email message containing your very own
+the contest is [open](../status.html#open), you will receive an email message containing your very own
 **Username and Initial Password until the contest is [open](../status.html#open)**.  You will need these
-to be able to [upload your submission](submit.html) to the [IOCCC submit server](https:/submit.ioccc.org).
+to be able to [upload your submissions](submit.html) to the [IOCCC submit
+server](https://submit.ioccc.org).
 
 See also the
-FAQ on "[how to upload your submission](submit.html)"
+FAQ on "[how to upload your submission](../faq.html#submit)"
 for more information on the submission process when the IOCCC [reopens](../status.html#open).
 
 
 ### When the IOCCC status is _judging_
 
 While the contest is **[PENDING](../status.html#pending)**,
-you **CANNOT REGISTER** as the current because the
+you **CANNOT REGISTER** because the
 [IOCCC judges](../judges.html) are in the process of judging the [submissions](../faq.html#how_many)
 they received while the contest was [open](../status.html#open).
 

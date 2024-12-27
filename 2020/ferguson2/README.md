@@ -284,7 +284,7 @@ After that you can input the string and it'll go from there.
 #### Example run
 </div>
 
-BTW: There's a much more entertaining way to explore this entry. See
+**BTW**: There's a much more entertaining way to explore this entry. See
 [recode.html][] for more details. There's a secret message that one might like
 to decipher. These however show the general program as well as how to use the
 two winning entries of the [Morse
@@ -511,7 +511,7 @@ with the rotors).
 
 For more information see [recode.html][].
 
-BTW: If you need a reminder to go to the gym just do your Enigma ABCs and it
+**BTW**: If you need a reminder to go to the gym just do your Enigma ABCs and it
 should help you remember:
 
 ``` <!---sh-->

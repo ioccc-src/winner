@@ -40,7 +40,7 @@ start over once it times out or if one hits a key.
 Note that the microseconds is argc and it uses `atoi()` which does NOT check for
 overflow!
 
-BTW: is there such a thing as too fast a CPU ? :-) Actually yes for certain code
+**BTW**: is there such a thing as too fast a CPU ? :-) Actually yes for certain code
 which is probably not as uncommon as you think :-).
 
 
@@ -114,7 +114,7 @@ couldn't!  :-)
 
 What happens if you hit enter after it writes a line of output?
 
-BTW: to this day, 2023, this remains one of my (Landon Curt Noll's) all time
+**BTW**: to this day, 2023, this remains one of my (Landon Curt Noll's) all time
 favorite entries!
 
 

@@ -68,7 +68,7 @@ p.s. [Frodo](https://www.glyphweb.com/arda/f/frodobaggins.html) lives!
 
 ### An important aside :-)
 
-BTW: if you haven't read [The Lord of the
+**BTW**: if you haven't read [The Lord of the
 Rings](https://en.wikipedia.org/wiki/The_Lord_of_the_Rings) what are you waiting for? :-)
 You'll find out the source of the text above though you'll see that there are
 some circumflexes missing! That's okay though due to I/O of the entry and in

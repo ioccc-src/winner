@@ -6,7 +6,7 @@
     "dir" : "shapiro",
     "entry_id" : "1985_shapiro",
     "title" : "1985.shapiro",
-    "abstract" : "two defines one 7-liner that results in a maze",
+    "abstract" : "two #defines one 7-liner that results in a maze",
     "author_set" : [
         {
             "author_handle" : "Carl_Shapiro"

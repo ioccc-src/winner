@@ -67,7 +67,7 @@ input keys described above. See the author's remarks for the remaining commands.
 The author was kind enough to supply a list of references below,
 in case you are still confused after read the source!  :-)
 
-BTW: you've most likely heard the joke that if you want a pseudo-random string
+**BTW**: you've most likely heard the joke that if you want a pseudo-random string
 of characters you can put a user unfamiliar with vi(m) in a vi(m) session (in
 insert mode) and ask them to exit. Well in this case you're likely to have this
 problem if you ARE a vi(m) user! :-) ... especially if you don't read the

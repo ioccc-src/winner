@@ -757,7 +757,7 @@ so that by setting the size to -1 it went to the max unsigned value):</p>
 <pre><code>    $ MAXSIZE=-1 ./prog
     memory error
     X:0/157 Y:0/42 S:3/18446744073709551614 B:0</code></pre>
-<p>BTW: there are two arrays that have to be <strong>MAXSIZE</strong> (technically + 1).</p>
+<p><strong>BTW</strong>: there are two arrays that have to be <strong>MAXSIZE</strong> (technically + 1).</p>
 <p>Is it possible that some value specified by the user could mess this up? I do
 not know but what I do know is that because it’s unsigned it can’t be negative;
 if the max size is 0 then the array size will be 1 but it won’t matter because
