@@ -101,7 +101,7 @@ for more information on the submission process when the IOCCC [reopens](../statu
 
 ### When the IOCCC status is _judging_
 
-While the IOCCC status is **[JUDGING](../status.html#pending]**,
+While the IOCCC status is **[JUDGING](../status.html#judging)**,
 the [rules](rules.html) and [guidelines](guidelines.html) are
 for the when the was previously **[OPEN](../status.html#open)** for new submissions.
 
