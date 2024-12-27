@@ -2510,7 +2510,7 @@ member</em>. For example:</p>
 be a <em>JSON string</em> or it <strong>MUST</strong> be a <em>JSON null</em>.</p>
 <p>In some cases the author may wish to record a special URL for their IOCCC entry,
 or a 2nd URL such as a work or school or personal home page. For example,
-Cody as of <em>Thu Nov 30 23:51:12 UTC 2023</em> used:</p>
+<a href="authors.html#Cody_Boone_Ferguson">Cody Boone Ferguson</a> as of <em>Thu Nov 30 23:51:12 UTC 2023</em> used:</p>
 <pre><code>    &quot;alt_url&quot; : &quot;https://ioccc.xexyl.net&quot;</code></pre>
 <p>If the author wishes to not specify an alternate URL, or if the alternate URL is
 unknown, it should be the <em>JSON null</em> as the <em>JSON value</em> of this <em>JSON
@@ -2537,7 +2537,7 @@ will always be <code>null</code> anyway.</p>
 <h5 id="mastodon">mastodon</h5>
 <pre><code>    &quot;mastodon&quot; : &quot;@mame@ruby.social&quot;</code></pre>
 <p>This <em>JSON member</em> holds the
-<a href="https://en.wikipedia.org/wiki/Mastodon_(social_network)">Mastodon social network</a>
+<a href="https://en.wikipedia.org/wiki/Mastodon_(social_network)">Mastodon instance</a>
 handle of the author.</p>
 <p>There <strong>MUST</strong> be one and only one <code>mastodon</code> <em>JSON member</em> and the <em>JSON value</em> <strong>MUST</strong>
 be a <em>JSON string</em> or it <strong>MUST</strong> be a <em>JSON null</em>. The <em>JSON string</em> just be a valid
@@ -2548,11 +2548,11 @@ used by the author.</p>
 See the “Mastodon Address” section of that page in particular.</p>
 <p>The IOCCC Mastodon handle is:</p>
 <pre><code>    @ioccc@fosstodon.org</code></pre>
-<p>The IOCCC uses the Mastodon social network for announcements such
+<p>The IOCCC uses Mastodon for announcements such
 as the opening and closing of a new IOCCC, changes to the IOCCC web
 site, updates during the judging process, and when new IOCCC entries
 are selected. We recommend you follow us on Mastodon.</p>
-<p>If the author wishes to not specify an Mastodon handle, or if the Mastodon handle is
+<p>If the author wishes to not specify a Mastodon handle, or if the Mastodon handle is
 unknown, it should be the <em>JSON null</em> as the <em>JSON value</em> of this <em>JSON member</em>.
 For example:</p>
 <pre><code>    &quot;mastodon&quot; : null</code></pre>
@@ -2567,7 +2567,7 @@ If the <code>mastodon</code> handle is a <em>JSON string</em>, then the <code>ma
 <p>The <code>mastodon_url</code> is just a translation of the above mentioned Mastodon handle.
 For example, if the Mastodon handle is <code>@user@server.domain</code>, then the
 <code>mastodon_url</code> would be <code>https://server.domain/@user</code>.</p>
-<p>If the author wishes to not specify an Mastodon URL, or if the Mastodon URL is
+<p>If the author wishes to not specify a Mastodon URL, or if the Mastodon URL is
 unknown, it should be the <em>JSON null</em> as the <em>JSON value</em> of this <em>JSON member</em>.
 For example:</p>
 <pre><code>    &quot;mastodon_url&quot; : null</code></pre>
@@ -3284,9 +3284,9 @@ further down for different instructions. Otherwise: in particular you must:</p>
 deprecated</a>.</p>
 <p>According to this <a href="https://www.linuxfordevices.com/tutorials/linux/install-xorg-on-linux">Linux for Devices tutorial on
 XOrg</a> as
-of 2023 Mar 25:</p>
+of 2023 Mar 25 (quote verbatim):</p>
 <blockquote>
-<p>Recently, RHEL developers categorized <a href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/9/html/9.0_release_notes/deprecated_functionality">Xorg was put in the ‘deprecated’
+<p>Recently, RHEL developers categorized Xorg <a href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/9/html/9.0_release_notes/deprecated_functionality">Xorg was put in the ‘deprecated’
 software</a>,
 as its development has mostly halted. Subsequent updates will completely replace
 it with Wayland, a more modern windowing system.. Although Wayland is not fully
@@ -3918,9 +3918,10 @@ or no longer work on modern computers or modern operating systems, though again
 a great deal of these were fixed for modern systems.</p>
 <p>There are some cases where certain compilers or even certain versions are
 necessary for the program to function in part or even completely.</p>
-<p>Some IOCCC entries might operating system services that may not be present on
+<p>Some IOCCC entries might need operating system services that might not be present on
 your system, as well.</p>
-<p>In some cases the IOCCC entry simply has bugs or (Mis)features.</p>
+<p>In some cases the IOCCC entry simply has <a href="bugs.html">bugs or
+(Mis)features</a>.</p>
 <p>If you are having problems compiling or running an IOCCC entry,
 we recommend that you look in <a href="bugs.html">bugs.html</a> to see if
 there is a known bugs or (Mis)feature. In some cases what you
@@ -4460,7 +4461,7 @@ against fixing it</strong>, then please consider opening a <a href="https://gith
 request</a> against the master
 <a href="https://github.com/ioccc-src/winner/branches">branch</a> of the <a href="https://github.com/ioccc-src/winner">ioccc-src/winner
 repo</a>.</p>
-<p>BTW: A <strong>problem</strong> is not limited to the code itself. Fixing typos in files
+<p><strong>BTW</strong>: A <strong>problem</strong> is not limited to the code itself. Fixing typos in files
 such as “<em>index.html</em>” files (via its respective <code>README.md</code> file), fixing
 issues in a “<em>Makefile</em>”, or otherwise correcting an IOCCC entry is <strong>VERY MUCH
 WELCOME</strong>! Please use the same <a href="https://github.com/ioccc-src/winner/pulls">GitHub pull
@@ -4498,10 +4499,10 @@ have to be logged into your account.</p>
 <p>To help you out here is a navigation menu in this FAQ entry:</p>
 <ul>
 <li><a href="#creating-a-github-account">Creating a GitHub account</a></li>
-<li><a href="#installing-an-ssh-key">Installing an ssh key to GitHub</a></li>
+<li><a href="#installing-an-ssh-key-to-github">Installing an ssh key to GitHub</a></li>
 <li><a href="#forking-the-ioccc-winner-repo">Forking the IOCCC winner repo</a></li>
 <li><a href="#cloning-the-ioccc-winner-repo">Cloning the IOCCC winner repo</a></li>
-<li><a href="#making-changes-fixes-etc">Making changes, fixes etc.</a></li>
+<li><a href="#making-changes-fixes-etc.">Making changes, fixes etc.</a></li>
 <li><a href="#committing-your-changes">Committing your changes</a></li>
 <li><a href="#opening-a-pull-request">Opening a pull request</a></li>
 <li><a href="#what-to-do-after-a-merge">What to do after a merge</a></li>
@@ -4638,7 +4639,7 @@ title</em> could have:</p>
 script that discusses this and gives supposed examples.</p>
 </blockquote>
 <p>Once you’ve done this you should click on <em>Create pull request</em>.</p>
-<p>IMPORTANT NOTE: although the <a href="https://www.ioccc.org/judges.html">Judges</a> will
+<p><strong>IMPORTANT NOTE</strong>: although the <a href="https://www.ioccc.org/judges.html">Judges</a> will
 give more deference to the authors of edited entries the
 <a href="https://www.ioccc.org/judges.html">Judges</a> also retain the final editorial say
 in the matter.</p>
@@ -4763,7 +4764,9 @@ of the <a href="https://github.com/ioccc-src/winner">ioccc-src/winner repo</a>.<
 FAQ on “<a href="#pull_request">GitHub pull request</a>”
 for more information.</p>
 <p><strong>IMPORTANT NOTE</strong>: As these files are JSON you should verify that
-they are validly formed (e.g., you didn’t make a typo).</p>
+they are validly formed (e.g., you didn’t make a typo). See the
+FAQ on “<a href="#jparse">how to validate JSON files</a>”
+for more help.</p>
 <p>Before you form your GitHub pull request that modifies a
 <code>author_handle.json</code> file, please run the <code>make www</code> command. This
 unfortunately takes quite a while but it is the safest way to do
@@ -5100,7 +5103,7 @@ entries that have won the IOCCC, sometimes in the same IOCCC contest year.</p>
 refer to what is now an <em>author</em>. In a number of historical cases,
 such as old rules and old guidelines, terms such as <em>winner</em> may still be
 found. Moreover, out of habit, the IOCCC judges sometimes use old
-names such as <em>winner</em> when they should use <em>author</em>. Sorry (tm Canada)! :-)</p>
+names such as <em>winner</em> when they should use <em>author</em>. Sorry (tm Canada :-) )!</p>
 <ul>
 <li>Entry</li>
 </ul>
@@ -5116,7 +5119,7 @@ directory <code>YYYY/entry</code>.</p>
 refer to what is now an <em>entry</em>. In a number of historical cases,
 such as old rules and old guidelines, terms such as <em>winner</em> may still be
 found. Moreover, out of habit, the IOCCC judges sometimes use old
-names such as <em>winner</em> when they should use <em>entry</em>. Sorry (tm Canada)! :-)</p>
+names such as <em>winner</em> when they should use <em>entry</em>. Sorry (tm Canada :-) )!</p>
 <ul>
 <li>Submission</li>
 </ul>
@@ -5345,13 +5348,13 @@ this bad!</em></p>
 <a href="http://groups.google.com/groups?q=Obfuscated&amp;hl=en&amp;lr=&amp;ie=UTF-8&amp;as_drrb=b&amp;as_mind=1&amp;as_minm=1&amp;as_miny=1983&amp;as_maxd=18&amp;as_maxm=4&amp;as_maxy=1984&amp;selm=789%40nsc.UUCP&amp;rnum=3&amp;filter=0%22">flame to
 net.lang.c</a>
 inviting people to try and out obfuscate the UN*X source code we had just been working on.</p>
-<p>BTW: I (Landon Curt Noll) had to post this <a href="http://groups.google.com/groups?q=Obfuscated&amp;hl=en&amp;lr=&amp;ie=UTF-8&amp;as_drrb=b&amp;as_mind=1&amp;as_minm=1&amp;as_miny=1983&amp;as_maxd=18&amp;as_maxm=4&amp;as_maxy=1984&amp;selm=795%40nsc.UUCP&amp;rnum=10&amp;filter=0">typo
+<p><strong>BTW</strong>: I (Landon Curt Noll) had to post this <a href="http://groups.google.com/groups?q=Obfuscated&amp;hl=en&amp;lr=&amp;ie=UTF-8&amp;as_drrb=b&amp;as_mind=1&amp;as_minm=1&amp;as_miny=1983&amp;as_maxd=18&amp;as_maxm=4&amp;as_maxy=1984&amp;selm=795%40nsc.UUCP&amp;rnum=10&amp;filter=0">typo
 correction</a>.
 Thus began the tradition of putting typos in the contest rules and guidelines
 … to make them more obfuscated of course! :-)</p>
-<p>BTW: This posting was made back in the days when AT&amp;T was the evil giant.
+<p><strong>BTW</strong>: This posting was made back in the days when AT&amp;T was the evil giant.
 Now, Microsoft makes AT&amp;T look mild and kind in comparison. :-( (IMHO) ).</p>
-<p>BTW: See the story about the ‘<a href="1993/cmills/index.html">Bill Gates</a>’ award. :-)</p>
+<p><strong>BTW</strong>: See the story about the ‘<a href="1993/cmills/index.html">Bill Gates</a>’ award. :-)</p>
 <p>OK, back to the story.</p>
 <p>We (Larry and I) received a number of entries by email.
 When we began to receive messages from outside of the US, Larry and I
@@ -5366,14 +5369,14 @@ were posted on 17 April 1984.</p>
 <li><a href="http://groups.google.com/groups?q=Obfuscated&amp;hl=en&amp;lr=&amp;ie=UTF-8&amp;as_drrb=b&amp;as_mind=1&amp;as_minm=1&amp;as_miny=1983&amp;as_maxd=18&amp;as_maxm=4&amp;as_maxy=1984&amp;selm=844%40nsc.UUCP&amp;rnum=6&amp;filter=0">2nd place</a></li>
 <li><a href="http://groups.google.com/groups?q=Obfuscated&amp;hl=en&amp;lr=&amp;ie=UTF-8&amp;as_drrb=b&amp;as_mind=1&amp;as_minm=1&amp;as_miny=1983&amp;as_maxd=18&amp;as_maxm=4&amp;as_maxy=1984&amp;selm=845%40nsc.UUCP&amp;rnum=5&amp;filter=0">1st place</a></li>
 </ol>
-<p>BTW: The (dis)honorable mention wished to remain anonymous.
+<p><strong>BTW</strong>: The (dis)honorable mention wished to remain anonymous.
 While many have asked who it was, we have continued to follow the
 author’s wish to remain anonymous.</p>
 <p>A few years ago, we asked the author if they still wanted to remain anonymous.
 They said: ‘<em>Yes, I want to keep my anonymity. But you can tell them that I am well known for my connection to the
 C language</em>’. It was not until 2001 that another <a href="2001/anonymous/index.html">anonymous
 entry</a> received an award.</p>
-<p>BTW: The <a href="1984/mullender/index.html">1984/mullender</a> remains one of my (Landon Curt Noll) all time favorites.</p>
+<p><strong>BTW</strong>: The <a href="1984/mullender/index.html">1984/mullender</a> remains one of my (Landon Curt Noll) all time favorites.</p>
 <p>The name used in the posting of the <a href="http://groups.google.com/groups?q=Obfuscated&amp;hl=en&amp;lr=&amp;ie=UTF-8&amp;as_drrb=b&amp;as_mind=1&amp;as_minm=1&amp;as_miny=1983&amp;as_maxd=18&amp;as_maxm=4&amp;as_maxy=1984&amp;selm=837%40nsc.UUCP&amp;rnum=2&amp;filter=0">1st winning IOCCC
 entry</a>
 posting was <strong>I</strong>nternational <strong>O</strong>bfuscated <strong>C</strong> <strong>C</strong>ode <strong>C</strong>ontest or
@@ -5493,7 +5496,8 @@ going back to <a href="https://github.com/ioccc-src/temp-test-ioccc/commit/28efc
 the repo was forked on <strong>Sun Sep 18 17:30:00 2022 -0700</strong>. The
 first <a href="https://github.com/ioccc-src/temp-test-ioccc/commit/edbc3089e1b755d85a020af7975bbc7df3737a5f">push into the temp-test-ioccc
 repo</a>
-occurred on Sun Sep 18 11:15:49 2022 -0700.</p>
+occurred on Sun Sep 18 11:15:49 2022 -0700, by <a href="authors.html#Cody_Boone_Ferguson">Cody Boone
+Ferguson</a>.</p>
 <p>At this same time, the <a href="https://ioccc-src.github.io/temp-test-ioccc/">temp-test-ioccc website</a> went live.</p>
 <p>Edits were made by an <a href="https://www.ioccc.org/judges.html">IOCCC judge</a>
 to their local <a href="https://git-scm.com">git</a> repository and <a href="https://github.com/ioccc-src/temp-test-ioccc/commit/2f20ae8451ada03f4601ac727d10e1d8630861a8">were pushed into the temp-test-ioccc
@@ -5545,9 +5549,9 @@ from <code>winners.html</code>, via the <a href="https://github.com/ioccc-src/te
 <h4 id="y-mm-dd-the-great-fork-merge">202y mm dd The Great Fork Merge <!-- XXX - Fill in the date when Great Fork Merge happens --></h4>
 </div>
 <!-- XXX - Update the commit count just before Great Fork Merge happens -->
-<p>As of 2024 Oct 20 <a href="https://github.com/ioccc-src/temp-test-ioccc">temp-test-ioccc
+<p>As of 2024 Dec 27 <a href="https://github.com/ioccc-src/temp-test-ioccc">temp-test-ioccc
 repo</a>
-there were <a href="https://github.com/ioccc-src/winner/compare/master...ioccc-src:temp-test-ioccc:master">5975 commits ahead</a>
+there were <a href="https://github.com/ioccc-src/winner/compare/master...ioccc-src:temp-test-ioccc:master">6141+ commits ahead</a>
 of the <a href="https://github.com/ioccc-src/winner">IOCCC winner repo</a>.</p>
 <!-- XXX - Fill in the date when Great Fork Merge happens -->
 <p>On 202y mm dd, the temporary repo was merged back into the <a href="https://github.com/ioccc-src/winner">IOCCC winner
