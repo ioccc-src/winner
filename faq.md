@@ -205,7 +205,7 @@ then follow the directions on **[How to register for the IOCCC](next/register.ht
 Once you have [registered for the IOCCC](next/register.html),
 and once the contest is **[OPEN](status.html#open)**, one of the
 [IOCCC judges](judges.html) will send via email within a few days,
-your [IOCCC submit server](https:/submit.ioccc.org) **Username** and
+your [IOCCC submit server](https://submit.ioccc.org) **Username** and
 **Initial password**.
 
 **PLEASE NOTE**: After registering, it could take up to a **few days**
