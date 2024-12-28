@@ -164,7 +164,7 @@ clean:
 	${RM} -f ${OBJ} ${ALT_OBJ}
 
 clobber: clean
-	${RM} -f ${TARGET} ${ALT_TARGET} samefile.alt
+	${RM} -f ${TARGET} ${ALT_TARGET} samefile samefile.alt
 	${RM} -rf *.dSYM
 
 
