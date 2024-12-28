@@ -919,7 +919,7 @@ fi
 export RULES_HTML="$NEXT_DIR/rules.html"
 
 
-# determine the rules.md markdown file
+# determine the guidelines.md markdown file
 #
 export GUIDELINES_MD="$NEXT_DIR/guidelines.md"
 if [[ ! -e $GUIDELINES_MD ]]; then
