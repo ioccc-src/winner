@@ -9,9 +9,12 @@ IOCCC in the past.
 These guidelines are a **TENTATIVE proposal** for the next IOCCC
 and are **likely be to be updated** before the next IOCCC.
 
-See our [FAQ about providing feedback](../faq.html#feedback) as well
-as our [FAQ about asking questions](../faq.html#question) about
-these guidelines.
+See our
+FAQ on "[rules, guidelines, tools feedback](../faq.html#feedback)"
+as well as our
+FAQ on "[about asking questions](../faq.html#question)"
+about these guidelines. You might also find the FAQ in general useful, especially the
+FAQ on "[how to enter the IOCCC](../faq.html#enter)".
 
 Watch both [the IOCCC status page](../status.html) and the
 [@IOCCC mastodon feed](https://fosstodon.org/@ioccc) for information about
