@@ -416,10 +416,10 @@
   <a class="Left" href="../endoh4/index.html">&larr; 2013/endoh4</a>
   <a class="Left" href="../index.html">&uarr; 2013 &uarr;</a>
   <a class="Left" href="../mills/index.html">2013/mills &rarr;</a>
-  <a class="Right" href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/hou/hou.c">C code</a>
-  <a class="Right" href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/hou/Makefile">Makefile</a>
+  <a class="Right" href="https://github.com/ioccc-src/winner/blob/master/2013/hou/hou.c">C code</a>
+  <a class="Right" href="https://github.com/ioccc-src/winner/blob/master/2013/hou/Makefile">Makefile</a>
   <a class="Right" href="#inventory">Inventory</a>
-  <a class="Right" href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fioccc-src.github.io%2Ftemp-test-ioccc%2F2013%2Fhou%2Findex.html">&#x2713;</a>
+  <a class="Right" href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.ioccc.org%2F2013%2Fhou%2Findex.html">&#x2713;</a>
 </div>
 
 <!-- END: this line ends content from: inc/navbar.mid.html -->
@@ -444,7 +444,7 @@ Location: <a href="../../location.html#CN">CN</a> - <em>People’s Republic of C
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <!-- BEFORE: 1st line of markdown file: 2013/hou/README.md -->
-<p>https://github.com/ioccc-src/temp-test-ioccc/blob/master/## To build:</p>
+<p>https://github.com/ioccc-src/winner/blob/master/## To build:</p>
 <pre><code>    make all</code></pre>
 <h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
 <p>The current status of this entry is:</p>
@@ -535,7 +535,7 @@ don’t have to worry about conflicts.</li>
 </ul>
 <h3 id="abuse-of-the-rules">Abuse of the rules</h3>
 <ul>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/hou/hou.c">hou.c</a> uses compression to get around the size limit. The compression
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2013/hou/hou.c">hou.c</a> uses compression to get around the size limit. The compression
 fully complies with the rules and the guidelines (at least the portion that
 shows up in <code>grep</code> “size limit”). Please see the <a href="#self-imposed-restrictions">Self-imposed
 restrictions</a> section below for more details.</li>
@@ -545,7 +545,7 @@ restrictions</a> section below for more details.</li>
 <ul>
 <li>The building process does not involve any OS tool beyond <code>cc(1)</code> and
 <code>make(1)</code>. No <code>gzip(1)</code> compression! <code>a.c.gz</code> doesn’t fit in 2053 bytes, anyway.</li>
-<li>Neither <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/hou/hou.c">hou.c</a> nor <code>a.c</code> (the <em>real</em> decompressed source) uses
+<li>Neither <a href="https://github.com/ioccc-src/winner/blob/master/2013/hou/hou.c">hou.c</a> nor <code>a.c</code> (the <em>real</em> decompressed source) uses
 <code>#define</code> (or <code>cc -D</code>) at all.</li>
 <li>The source code is not required at runtime.</li>
 <li><code>a.c</code> does not drop optional features to reduce size. There are pure
@@ -554,8 +554,8 @@ optimization code that can be dropped without affecting the converged output
 properly <code>fopen()</code>ed with <code>"rb"</code> / <code>"wb"</code> for Windows compatibility. The PPM
 header has a comment line for non-standard-compliant viewers (specifically, my
 old HDRShop 1.0). And there is a nice text message saying “please wait…”.
-Despite the messy look, <code>a.c</code> and <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/hou/hou.c">hou.c</a> compile warning-free
-(<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/hou/hou.c">hou.c</a> even wastes 18 bytes on <code>#include&lt;stdio.h&gt;</code> just for <code>putchar(3)</code>).
+Despite the messy look, <code>a.c</code> and <a href="https://github.com/ioccc-src/winner/blob/master/2013/hou/hou.c">hou.c</a> compile warning-free
+(<a href="https://github.com/ioccc-src/winner/blob/master/2013/hou/hou.c">hou.c</a> even wastes 18 bytes on <code>#include&lt;stdio.h&gt;</code> just for <code>putchar(3)</code>).
 <code>a.c</code> compiles mostly clean in the C99/ANSI modes of clang and gcc (with:</li>
 </ul>
 <pre><code>    -Wall --pedantic</code></pre>
@@ -575,7 +575,7 @@ image? Hint: look up.</li>
 <li><code>a.c</code> leaves all shaders in plain text, but the plain text shader code can’t
 be taken for its face value; the arithmetic rules subtly diverge from our common
 sense.</li>
-<li><code>a.c</code> is less portable than <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/hou/hou.c">hou.c</a> itself. <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/hou/hou.c">hou.c</a> only depends
+<li><code>a.c</code> is less portable than <a href="https://github.com/ioccc-src/winner/blob/master/2013/hou/hou.c">hou.c</a> itself. <a href="https://github.com/ioccc-src/winner/blob/master/2013/hou/hou.c">hou.c</a> only depends
 on ASCII and should run just fine on 16-bit, small memory, or
 floating-point-incapable machines. <code>a.c</code>, while still reasonably portable, is
 quite memory consuming, requires IEEE754-compliant <code>double</code>, and assumes <code>int</code> to be
@@ -608,7 +608,7 @@ corresponds to the final image, which can then be produced as a simple per-pixel
 histogram of all generated paths. The robustness comes from a state mutation
 strategy that actively tries to explore the neighborhood of high energy peaks
 (e.g., paths that happen to hit the light source in
-<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/hou/otherroom.scene">otherroom.scene</a> file).
+<a href="https://github.com/ioccc-src/winner/blob/master/2013/hou/otherroom.scene">otherroom.scene</a> file).
 In addition, a rudimentary form of lens
 path stratification is added to balance the attention each pixel receives. The
 Metropolis-Hasting process completely avoids the tell-tale pixel sampling loop
@@ -628,12 +628,12 @@ session would run through its short period many times, but that doesn’t
 necessarily map to the same set of paths in <code>PSSMLT</code>. After all,
 Metropolis-Hasting used an even worse PRNG in their 1953 paper.</p>
 <p>The <code>PPM</code> compressor uses statically weighted fixed order contexts with an
-arithmetic encoder tweaked for <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/iocccsize.c">iocccsize.c</a>. The encoder emits octet-space pairs
+arithmetic encoder tweaked for <a href="https://github.com/ioccc-src/winner/blob/master/2013/iocccsize.c">iocccsize.c</a>. The encoder emits octet-space pairs
 where each octet encodes ~6.5 bits of information and each space encodes 2 bits
-(thanks to the generous definition of “space” in <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/iocccsize.c">iocccsize.c</a> code).
+(thanks to the generous definition of “space” in <a href="https://github.com/ioccc-src/winner/blob/master/2013/iocccsize.c">iocccsize.c</a> code).
 The compressor
 actively shuffles the variable names around until the compressed string happens
-to contain enough <code>{};</code>s to pass the final <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/iocccsize.c">iocccsize.c</a> test.
+to contain enough <code>{};</code>s to pass the final <a href="https://github.com/ioccc-src/winner/blob/master/2013/iocccsize.c">iocccsize.c</a> test.
 There are a few other tweaks:</p>
 <ul>
 <li><p>The <code>PPM</code> model uses mostly whitespace characters for weights.</p></li>
@@ -666,13 +666,13 @@ frequently found in other <code>PPM</code> implementations.</p></li>
 </div>
 <h2 id="primary-files">Primary files</h2>
 <ul>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/hou/hou.c">hou.c</a> - entry source code</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/hou/Makefile">Makefile</a> - entry Makefile</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/hou/hou.orig.c">hou.orig.c</a> - original source code</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2013/hou/hou.c">hou.c</a> - entry source code</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2013/hou/Makefile">Makefile</a> - entry Makefile</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2013/hou/hou.orig.c">hou.orig.c</a> - original source code</li>
 <li><a href="doc/example.html">doc/example.html</a> - scene format documentation</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/hou/old_default.scene">old_default.scene</a> - sample input</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/hou/otherroom.scene">otherroom.scene</a> - sample input</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/hou/try.sh">try.sh</a> - script to try entry</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2013/hou/old_default.scene">old_default.scene</a> - sample input</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2013/hou/otherroom.scene">otherroom.scene</a> - sample input</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2013/hou/try.sh">try.sh</a> - script to try entry</li>
 <li><a href="luna.jpg">luna.jpg</a> - sample image input file</li>
 <li><a href="old_default.jpg">old_default.jpg</a> - sample image input file</li>
 <li><a href="otherroom.jpg">otherroom.jpg</a> - sample image input file</li>
@@ -680,14 +680,14 @@ frequently found in other <code>PPM</code> implementations.</p></li>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
 <li><a href="2013_hou.tar.bz2">2013_hou.tar.bz2</a> - download entry tarball</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/hou/README.md">README.md</a> - markdown source for this web page</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2013/hou/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="doc/camera.png">doc/camera.png</a> - documentation support image</li>
 <li><a href="doc/cosine.png">doc/cosine.png</a> - documentation support image</li>
 <li><a href="doc/draft.png">doc/draft.png</a> - documentation support image</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/hou/doc/example.md">doc/example.md</a> - markdown source for doc/example.html</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/hou/.entry.json">.entry.json</a> - entry summary and manifest in JSON</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/hou/.gitignore">.gitignore</a> - list of files that should not be committed under git</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/hou/.path">.path</a> - directory path from top level directory</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2013/hou/doc/example.md">doc/example.md</a> - markdown source for doc/example.html</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2013/hou/.entry.json">.entry.json</a> - entry summary and manifest in JSON</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2013/hou/.gitignore">.gitignore</a> - list of files that should not be committed under git</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2013/hou/.path">.path</a> - directory path from top level directory</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 </ul>
 <hr style="width:10%;text-align:left;margin-left:0">
@@ -755,7 +755,7 @@ Jump to: <a href="#">top</a>
 
     <div id="coda"><h3>Coda</h3>
 	<p>
-	<a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fioccc-src.github.io%2Ftemp-test-ioccc%2F2013%2Fhou%2Findex.html" rel="nofollow">Nu HTML check this web page</a><br>
+	<a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.ioccc.org%2F2013%2Fhou%2Findex.html" rel="nofollow">Nu HTML check this web page</a><br>
 	<a href="#top">Jump to top</a> <a href="#content">Jump to Content</a> <a href="#inventory">Jump to Inventory</a><br>
 	</p>
     </div>

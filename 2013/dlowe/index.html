@@ -416,10 +416,10 @@
   <a class="Left" href="../cable3/index.html">&larr; 2013/cable3</a>
   <a class="Left" href="../index.html">&uarr; 2013 &uarr;</a>
   <a class="Left" href="../endoh1/index.html">2013/endoh1 &rarr;</a>
-  <a class="Right" href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/dlowe/dlowe.c">C code</a>
-  <a class="Right" href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/dlowe/Makefile">Makefile</a>
+  <a class="Right" href="https://github.com/ioccc-src/winner/blob/master/2013/dlowe/dlowe.c">C code</a>
+  <a class="Right" href="https://github.com/ioccc-src/winner/blob/master/2013/dlowe/Makefile">Makefile</a>
   <a class="Right" href="#inventory">Inventory</a>
-  <a class="Right" href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fioccc-src.github.io%2Ftemp-test-ioccc%2F2013%2Fdlowe%2Findex.html">&#x2713;</a>
+  <a class="Right" href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.ioccc.org%2F2013%2Fdlowe%2Findex.html">&#x2713;</a>
 </div>
 
 <!-- END: this line ends content from: inc/navbar.mid.html -->
@@ -469,7 +469,7 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 obfuscated way.</p>
 <p>Also, why doesn’t it crash but instead produces a correct output when called
 with one argument or when all arguments are equal?</p>
-<p>For extra fun, compile and run <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/dlowe/fun.c">fun.c</a>:</p>
+<p>For extra fun, compile and run <a href="https://github.com/ioccc-src/winner/blob/master/2013/dlowe/fun.c">fun.c</a>:</p>
 <pre><code>    #include &lt;stdio.h&gt;
     int main() {
         printf(&quot;%d %d %d\n&quot;, (int)(-1.0/0.0), (int)(0.0/0.0), (int)(1.0/0.0));
@@ -482,7 +482,7 @@ with one argument or when all arguments are equal?</p>
 <p>and with Apple clang version 15.0.0 (clang-1500.0.40.1) in 2023, we get:</p>
 <pre><code>    1840985120 -2033041452 35979112</code></pre>
 <p>Which one is correct? :)</p>
-<p><strong>NOTE</strong>: <code>make all</code> will compile <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/dlowe/fun.c">fun.c</a> but to provide a different compiler
+<p><strong>NOTE</strong>: <code>make all</code> will compile <a href="https://github.com/ioccc-src/winner/blob/master/2013/dlowe/fun.c">fun.c</a> but to provide a different compiler
 you can do something like:</p>
 <pre><code>    make CC=clang fun</code></pre>
 <h2 id="authors-remarks">Author’s remarks:</h2>
@@ -495,9 +495,9 @@ you can do something like:</p>
 
     $ echo &quot;sparkline of file lengths: $(wc -c * | awk &#39;{print $1}&#39; | xargs ./sparkl)&quot;
     sparkline of file sizes: ▁▁▁▃▃▂▁▂▁▁▉</code></pre>
-<p><strong>NOTE</strong>: this has been provided in <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/dlowe/slflen.sh">slflen.sh</a> so you can try:</p>
+<p><strong>NOTE</strong>: this has been provided in <a href="https://github.com/ioccc-src/winner/blob/master/2013/dlowe/slflen.sh">slflen.sh</a> so you can try:</p>
 <pre><code>    ./slflen.sh</code></pre>
-<p>instead (which <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/dlowe/try.sh">try.sh</a> also uses).</p>
+<p>instead (which <a href="https://github.com/ioccc-src/winner/blob/master/2013/dlowe/try.sh">try.sh</a> also uses).</p>
 <h3 id="description">Description</h3>
 <p>This is a handy little tool for visualizing numeric series from the
 command line, using sparklines. Pass it a numeric series as arguments, and
@@ -550,21 +550,21 @@ implementation is completely independent.)</p>
 </div>
 <h2 id="primary-files">Primary files</h2>
 <ul>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/dlowe/dlowe.c">dlowe.c</a> - entry source code</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/dlowe/Makefile">Makefile</a> - entry Makefile</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/dlowe/dlowe.orig.c">dlowe.orig.c</a> - original source code</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/dlowe/diff.sh">diff.sh</a> - difference tool</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/dlowe/fun.c">fun.c</a> - compile and run for extra fun</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/dlowe/slflen.sh">slflen.sh</a> - show sparkline length of all files in current directory</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/dlowe/try.sh">try.sh</a> - script to try entry</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2013/dlowe/dlowe.c">dlowe.c</a> - entry source code</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2013/dlowe/Makefile">Makefile</a> - entry Makefile</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2013/dlowe/dlowe.orig.c">dlowe.orig.c</a> - original source code</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2013/dlowe/diff.sh">diff.sh</a> - difference tool</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2013/dlowe/fun.c">fun.c</a> - compile and run for extra fun</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2013/dlowe/slflen.sh">slflen.sh</a> - show sparkline length of all files in current directory</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2013/dlowe/try.sh">try.sh</a> - script to try entry</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
 <li><a href="2013_dlowe.tar.bz2">2013_dlowe.tar.bz2</a> - download entry tarball</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/dlowe/README.md">README.md</a> - markdown source for this web page</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/dlowe/.entry.json">.entry.json</a> - entry summary and manifest in JSON</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/dlowe/.gitignore">.gitignore</a> - list of files that should not be committed under git</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/dlowe/.path">.path</a> - directory path from top level directory</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2013/dlowe/README.md">README.md</a> - markdown source for this web page</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2013/dlowe/.entry.json">.entry.json</a> - entry summary and manifest in JSON</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2013/dlowe/.gitignore">.gitignore</a> - list of files that should not be committed under git</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2013/dlowe/.path">.path</a> - directory path from top level directory</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 </ul>
 <hr style="width:10%;text-align:left;margin-left:0">
@@ -632,7 +632,7 @@ Jump to: <a href="#">top</a>
 
     <div id="coda"><h3>Coda</h3>
 	<p>
-	<a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fioccc-src.github.io%2Ftemp-test-ioccc%2F2013%2Fdlowe%2Findex.html" rel="nofollow">Nu HTML check this web page</a><br>
+	<a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.ioccc.org%2F2013%2Fdlowe%2Findex.html" rel="nofollow">Nu HTML check this web page</a><br>
 	<a href="#top">Jump to top</a> <a href="#content">Jump to Content</a> <a href="#inventory">Jump to Inventory</a><br>
 	</p>
     </div>

@@ -416,10 +416,10 @@
   <a class="Left" href="../burton/index.html">&larr; 2019/burton</a>
   <a class="Left" href="../index.html">&uarr; 2019 &uarr;</a>
   <a class="Left" href="../diels-grabsch1/index.html">2019/diels-grabsch1 &rarr;</a>
-  <a class="Right" href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/ciura/prog.c">C code</a>
-  <a class="Right" href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/ciura/Makefile">Makefile</a>
+  <a class="Right" href="https://github.com/ioccc-src/winner/blob/master/2019/ciura/prog.c">C code</a>
+  <a class="Right" href="https://github.com/ioccc-src/winner/blob/master/2019/ciura/Makefile">Makefile</a>
   <a class="Right" href="#inventory">Inventory</a>
-  <a class="Right" href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fioccc-src.github.io%2Ftemp-test-ioccc%2F2019%2Fciura%2Findex.html">&#x2713;</a>
+  <a class="Right" href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.ioccc.org%2F2019%2Fciura%2Findex.html">&#x2713;</a>
 </div>
 
 <!-- END: this line ends content from: inc/navbar.mid.html -->
@@ -520,19 +520,19 @@ unlimited. The characters in <code>LETTERS</code> must not repeat. The length of
 is too long, and 2 if the command-line arguments are missing.</p>
 <h3 id="helper-scripts">Helper scripts:</h3>
 <ul>
-<li><p><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/ciura/getwords.sh">getwords.sh</a></p>
+<li><p><a href="https://github.com/ioccc-src/winner/blob/master/2019/ciura/getwords.sh">getwords.sh</a></p>
 <p><code>./getwords.sh LANGUAGE_CODE</code></p>
 <p>outputs a sorted list of unique words in a given language, one per line. It
 requires <code>aspell</code> with a dictionary for <em>LANGUAGE_CODE</em>.</p></li>
-<li><p><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/ciura/wrapprog.py">wrapprog.py</a></p>
+<li><p><a href="https://github.com/ioccc-src/winner/blob/master/2019/ciura/wrapprog.py">wrapprog.py</a></p>
 <p><code>./wrapprog.py LETTERS [N]</code></p>
 <p>works similarly to <code>./prog LETTERS [N]</code> except that it merges pangrams
 before passing them to <code>prog</code> and expands them in <code>prog</code>’s output. This way,
 it finishes the job faster than <code>prog</code> when there are millions of perfect
 pangrams. It requires a UTF-8 locale.</p></li>
-<li><p><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/ciura/de.sh">de.sh</a>, <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/ciura/en.sh">en.sh</a>,
-<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/ciura/fr.sh">fr.sh</a>, <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/ciura/it.sh">it.sh</a>,
-<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/ciura/pl.sh">pl.sh</a>, and <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/ciura/ru.sh">ru.sh</a> output German,
+<li><p><a href="https://github.com/ioccc-src/winner/blob/master/2019/ciura/de.sh">de.sh</a>, <a href="https://github.com/ioccc-src/winner/blob/master/2019/ciura/en.sh">en.sh</a>,
+<a href="https://github.com/ioccc-src/winner/blob/master/2019/ciura/fr.sh">fr.sh</a>, <a href="https://github.com/ioccc-src/winner/blob/master/2019/ciura/it.sh">it.sh</a>,
+<a href="https://github.com/ioccc-src/winner/blob/master/2019/ciura/pl.sh">pl.sh</a>, and <a href="https://github.com/ioccc-src/winner/blob/master/2019/ciura/ru.sh">ru.sh</a> output German,
 English, French, Italian, Polish, and Russian perfect pangrams, respectively.
 They require a UTF-8 locale.</p></li>
 </ul>
@@ -552,7 +552,7 @@ finished in 62 minutes, reporting 1,640,569,315 perfect pangrams, and
 the example from section <a href="#wit">What is this?</a> finished in 1.35
 seconds. On the other hand, <code>prog</code> can only output series of words
 with non-repeating characters, unlike <code>klausler</code>.</p>
-<p>In contrast to <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/ciura/prog.alt.c">prog.alt.c</a>, <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/ciura/prog.c">prog.c</a> does not call
+<p>In contrast to <a href="https://github.com/ioccc-src/winner/blob/master/2019/ciura/prog.alt.c">prog.alt.c</a>, <a href="https://github.com/ioccc-src/winner/blob/master/2019/ciura/prog.c">prog.c</a> does not call
 <code>fflush(stdout)</code> after outputting each line, thus running faster.
 I am grateful to Witold Jarnicki for suggesting this change.
 The original <code>prog</code> finished the example above in 100 minutes
@@ -574,8 +574,8 @@ have no perfect pangrams.</p>
 by without <code>goto M</code> and <code>goto H</code>, I challenge the adherents of
 structured programming to refactor <code>goto T</code>, which jumps back into a
 nested <code>if</code> block.</p>
-<p>With the supplied <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/ciura/Makefile">Makefile</a>, both <code>gcc</code> and <code>clang</code> compile
-<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/ciura/prog.c">prog.c</a> without warnings in C11 and C99 mode. For a clean
+<p>With the supplied <a href="https://github.com/ioccc-src/winner/blob/master/2019/ciura/Makefile">Makefile</a>, both <code>gcc</code> and <code>clang</code> compile
+<a href="https://github.com/ioccc-src/winner/blob/master/2019/ciura/prog.c">prog.c</a> without warnings in C11 and C99 mode. For a clean
 compilation with <code>gcc -std=c90</code>, add <code>-Wno-format</code> to
 <code>CSILENCE</code> in <code>Makefile</code>.</p>
 <!--
@@ -603,35 +603,35 @@ compilation with <code>gcc -std=c90</code>, add <code>-Wno-format</code> to
 </div>
 <h2 id="primary-files">Primary files</h2>
 <ul>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/ciura/prog.c">prog.c</a> - entry source code</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/ciura/Makefile">Makefile</a> - entry Makefile</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/ciura/prog.alt.c">prog.alt.c</a> - alternate source code</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/ciura/prog.orig.c">prog.orig.c</a> - original source code</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/ciura/de.alt.sh">de.alt.sh</a> - run alternate code with Germain words</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/ciura/en.alt.sh">en.alt.sh</a> - run alternate code with English words</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/ciura/getwords.sh">getwords.sh</a> - fetch words from aspell dictionary file</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/ciura/it.alt.sh">it.alt.sh</a> - run alternate code with Italian words</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/ciura/pl.alt.sh">pl.alt.sh</a> - run alternate code with Polish words</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/ciura/ru.alt.sh">ru.alt.sh</a> - run alternate code with Russian words</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/ciura/try.alt.sh">try.alt.sh</a> - script to try alternate code</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/ciura/try.sh">try.sh</a> - script to try entry</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/ciura/wrapprog.py">wrapprog.py</a> - merge pangrams before passing them to prog</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/ciura/de.sh">de.sh</a> - run with German words</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/ciura/en.sh">en.sh</a> - run with English words</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/ciura/fr.alt.sh">fr.alt.sh</a> - script to try alternate code in French</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/ciura/fr.sh">fr.sh</a> - run with French words</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/ciura/it.sh">it.sh</a> - run with Italian words</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/ciura/pl.sh">pl.sh</a> - run with Polish words</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/ciura/ru.sh">ru.sh</a> - run with Russian words</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2019/ciura/prog.c">prog.c</a> - entry source code</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2019/ciura/Makefile">Makefile</a> - entry Makefile</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2019/ciura/prog.alt.c">prog.alt.c</a> - alternate source code</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2019/ciura/prog.orig.c">prog.orig.c</a> - original source code</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2019/ciura/de.alt.sh">de.alt.sh</a> - run alternate code with Germain words</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2019/ciura/en.alt.sh">en.alt.sh</a> - run alternate code with English words</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2019/ciura/getwords.sh">getwords.sh</a> - fetch words from aspell dictionary file</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2019/ciura/it.alt.sh">it.alt.sh</a> - run alternate code with Italian words</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2019/ciura/pl.alt.sh">pl.alt.sh</a> - run alternate code with Polish words</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2019/ciura/ru.alt.sh">ru.alt.sh</a> - run alternate code with Russian words</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2019/ciura/try.alt.sh">try.alt.sh</a> - script to try alternate code</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2019/ciura/try.sh">try.sh</a> - script to try entry</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2019/ciura/wrapprog.py">wrapprog.py</a> - merge pangrams before passing them to prog</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2019/ciura/de.sh">de.sh</a> - run with German words</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2019/ciura/en.sh">en.sh</a> - run with English words</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2019/ciura/fr.alt.sh">fr.alt.sh</a> - script to try alternate code in French</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2019/ciura/fr.sh">fr.sh</a> - run with French words</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2019/ciura/it.sh">it.sh</a> - run with Italian words</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2019/ciura/pl.sh">pl.sh</a> - run with Polish words</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2019/ciura/ru.sh">ru.sh</a> - run with Russian words</li>
 <li><a href="fasc5c.pdf">fasc5c.pdf</a> - The Art of Computer Programming vol 4 draft</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
 <li><a href="2019_ciura.tar.bz2">2019_ciura.tar.bz2</a> - download entry tarball</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/ciura/README.md">README.md</a> - markdown source for this web page</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/ciura/.entry.json">.entry.json</a> - entry summary and manifest in JSON</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/ciura/.gitignore">.gitignore</a> - list of files that should not be committed under git</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/ciura/.path">.path</a> - directory path from top level directory</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2019/ciura/README.md">README.md</a> - markdown source for this web page</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2019/ciura/.entry.json">.entry.json</a> - entry summary and manifest in JSON</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2019/ciura/.gitignore">.gitignore</a> - list of files that should not be committed under git</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2019/ciura/.path">.path</a> - directory path from top level directory</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 </ul>
 <hr style="width:10%;text-align:left;margin-left:0">
@@ -699,7 +699,7 @@ Jump to: <a href="#">top</a>
 
     <div id="coda"><h3>Coda</h3>
 	<p>
-	<a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fioccc-src.github.io%2Ftemp-test-ioccc%2F2019%2Fciura%2Findex.html" rel="nofollow">Nu HTML check this web page</a><br>
+	<a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.ioccc.org%2F2019%2Fciura%2Findex.html" rel="nofollow">Nu HTML check this web page</a><br>
 	<a href="#top">Jump to top</a> <a href="#content">Jump to Content</a> <a href="#inventory">Jump to Inventory</a><br>
 	</p>
     </div>

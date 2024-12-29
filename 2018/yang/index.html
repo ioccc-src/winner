@@ -416,10 +416,10 @@
   <a class="Left" href="../vokes/index.html">&larr; 2018/vokes</a>
   <a class="Left" href="../index.html">&uarr; 2018 &uarr;</a>
   <a class="Left" href="../../2019/adamovsky/index.html">2019/adamovsky &rarr;</a>
-  <a class="Right" href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/yang/prog.c">C code</a>
-  <a class="Right" href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/yang/Makefile">Makefile</a>
+  <a class="Right" href="https://github.com/ioccc-src/winner/blob/master/2018/yang/prog.c">C code</a>
+  <a class="Right" href="https://github.com/ioccc-src/winner/blob/master/2018/yang/Makefile">Makefile</a>
   <a class="Right" href="#inventory">Inventory</a>
-  <a class="Right" href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fioccc-src.github.io%2Ftemp-test-ioccc%2F2018%2Fyang%2Findex.html">&#x2713;</a>
+  <a class="Right" href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.ioccc.org%2F2018%2Fyang%2Findex.html">&#x2713;</a>
 </div>
 
 <!-- END: this line ends content from: inc/navbar.mid.html -->
@@ -496,10 +496,10 @@ leading whitespaces:</p>
     ./shift &lt; input.txt &gt; no_leading_space.txt</code></pre>
 <p>Where this might be useful, besides ruining the formatting of certain
 files, is that it completes the set of tools needed to solve the
-puzzle that is embedded in <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/yang/prog.c">prog.c</a>.</p>
+puzzle that is embedded in <a href="https://github.com/ioccc-src/winner/blob/master/2018/yang/prog.c">prog.c</a>.</p>
 <h3 id="puzzle-box">Puzzle box:</h3>
-<p>Notice how the edges of <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/yang/prog.c">prog.c</a> contain two notches. By rotating
-<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/yang/prog.c">prog.c</a> and removing leading space, the code would be shifted one space
+<p>Notice how the edges of <a href="https://github.com/ioccc-src/winner/blob/master/2018/yang/prog.c">prog.c</a> contain two notches. By rotating
+<a href="https://github.com/ioccc-src/winner/blob/master/2018/yang/prog.c">prog.c</a> and removing leading space, the code would be shifted one space
 toward one of those notches (and create a new notch on the other
 side). This shifted code behaves slightly different from the original
 program. For example, here are two more messages that can be
@@ -508,13 +508,13 @@ produced:</p>
     ./shift &lt; prog.c | ./left &gt; msg2.c &amp;&amp; gcc msg2.c -o msg2 &amp;&amp; ./msg2</code></pre>
 <p>In total, there are 9 embedded strings that can be produced via a
 sequence of rotates and shifts, one of which can be used to extract
-the 10th final string from <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/yang/prog.c">prog.c</a>. The intent is to simulate those
+the 10th final string from <a href="https://github.com/ioccc-src/winner/blob/master/2018/yang/prog.c">prog.c</a>. The intent is to simulate those
 wooden puzzle boxes that can be opened by pushing and shifting various
 well-concealed seams. Thus, finding the correct sequence of rotates
 and shifts is left as an exercise to the reader (but if you are really
-lazy, just read the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/yang/Makefile">Makefile</a>.</p>
+lazy, just read the <a href="https://github.com/ioccc-src/winner/blob/master/2018/yang/Makefile">Makefile</a>.</p>
 <p>Source code for all the tools needed to solve this puzzle are embedded
-in <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/yang/prog.c">prog.c</a>, all you need is a C compiler.</p>
+in <a href="https://github.com/ioccc-src/winner/blob/master/2018/yang/prog.c">prog.c</a>, all you need is a C compiler.</p>
 <h3 id="features">Features</h3>
 <ul>
 <li><p>Code compiles when rotated 4 ways. This required a bit of patience to
@@ -525,7 +525,7 @@ various tweaks to satisfy cases where the compiler is overly protective, includi
 but not limited to the “1125” at line 4 as opposed to “1025”, to satisfy
 <code>-Waggresive-loop-optimizations</code>.</p></li>
 <li><p>CRC32 of the code is embedded in the code itself.</p></li>
-<li><p>Process for writing <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/yang/prog.c">prog.c</a> is available in
+<li><p>Process for writing <a href="https://github.com/ioccc-src/winner/blob/master/2018/yang/prog.c">prog.c</a> is available in
 <a href="obfuscation.html">obfuscation.html</a>.</p></li>
 </ul>
 <h3 id="compatibility">Compatibility:</h3>
@@ -584,19 +584,19 @@ just try to understand the program without running the command below.</p>
 </div>
 <h2 id="primary-files">Primary files</h2>
 <ul>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/yang/prog.c">prog.c</a> - entry source code</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/yang/Makefile">Makefile</a> - entry Makefile</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/yang/prog.orig.c">prog.orig.c</a> - original source code</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/yang/try.sh">try.sh</a> - script to try entry</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2018/yang/prog.c">prog.c</a> - entry source code</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2018/yang/Makefile">Makefile</a> - entry Makefile</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2018/yang/prog.orig.c">prog.orig.c</a> - original source code</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2018/yang/try.sh">try.sh</a> - script to try entry</li>
 <li><a href="obfuscation.html">obfuscation.html</a> - JavaScript page with full recording of development</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
 <li><a href="2018_yang.tar.bz2">2018_yang.tar.bz2</a> - download entry tarball</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/yang/README.md">README.md</a> - markdown source for this web page</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/yang/.entry.json">.entry.json</a> - entry summary and manifest in JSON</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/yang/.gitignore">.gitignore</a> - list of files that should not be committed under git</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/yang/.path">.path</a> - directory path from top level directory</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2018/yang/README.md">README.md</a> - markdown source for this web page</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2018/yang/.entry.json">.entry.json</a> - entry summary and manifest in JSON</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2018/yang/.gitignore">.gitignore</a> - list of files that should not be committed under git</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2018/yang/.path">.path</a> - directory path from top level directory</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 </ul>
 <hr style="width:10%;text-align:left;margin-left:0">
@@ -664,7 +664,7 @@ Jump to: <a href="#">top</a>
 
     <div id="coda"><h3>Coda</h3>
 	<p>
-	<a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fioccc-src.github.io%2Ftemp-test-ioccc%2F2018%2Fyang%2Findex.html" rel="nofollow">Nu HTML check this web page</a><br>
+	<a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.ioccc.org%2F2018%2Fyang%2Findex.html" rel="nofollow">Nu HTML check this web page</a><br>
 	<a href="#top">Jump to top</a> <a href="#content">Jump to Content</a> <a href="#inventory">Jump to Inventory</a><br>
 	</p>
     </div>

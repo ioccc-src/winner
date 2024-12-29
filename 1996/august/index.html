@@ -416,10 +416,10 @@
   <a class="Left" href="../../1995/vanschnitz/index.html">&larr; 1995/vanschnitz</a>
   <a class="Left" href="../index.html">&uarr; 1996 &uarr;</a>
   <a class="Left" href="../dalbec/index.html">1996/dalbec &rarr;</a>
-  <a class="Right" href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1996/august/august.c">C code</a>
-  <a class="Right" href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1996/august/Makefile">Makefile</a>
+  <a class="Right" href="https://github.com/ioccc-src/winner/blob/master/1996/august/august.c">C code</a>
+  <a class="Right" href="https://github.com/ioccc-src/winner/blob/master/1996/august/Makefile">Makefile</a>
   <a class="Right" href="#inventory">Inventory</a>
-  <a class="Right" href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fioccc-src.github.io%2Ftemp-test-ioccc%2F1996%2Faugust%2Findex.html">&#x2713;</a>
+  <a class="Right" href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.ioccc.org%2F1996%2Faugust%2Findex.html">&#x2713;</a>
 </div>
 
 <!-- END: this line ends content from: inc/navbar.mid.html -->
@@ -489,7 +489,7 @@ syntax). Arrays can only be global. There is a rather limited set
 of operators, and control constructs.</p>
 <p>The compiler has absolutely no error checking, so things
 can go wrong. But this is what seasoned C programmers are used to.</p>
-<p>Assume that the interpreter has been compiled (source in <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1996/august/august.c">august.c</a>
+<p>Assume that the interpreter has been compiled (source in <a href="https://github.com/ioccc-src/winner/blob/master/1996/august/august.c">august.c</a>
 and binary in august) and that we have this in a file named <code>test.oc</code>:</p>
 <pre><code>    main() { putchar(&#39;!&#39;); putchar(&#39;\n&#39;); exit(0); }</code></pre>
 <p>We can then compile by</p>
@@ -498,13 +498,13 @@ and binary in august) and that we have this in a file named <code>test.oc</code>
 <pre><code>    ./august &lt; test.oo</code></pre>
 <p>Or even simpler:</p>
 <pre><code>    cat august.c test.oc | ./august | ./august</code></pre>
-<p>A larger example is included <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1996/august/fac.oc">fac.oc</a>.</p>
+<p>A larger example is included <a href="https://github.com/ioccc-src/winner/blob/master/1996/august/fac.oc">fac.oc</a>.</p>
 <p>The compiler for OC is naturally written in OC (where did you think the byte
-code came from?). It is in the file <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1996/august/parse.oc">parse.oc</a>.</p>
+code came from?). It is in the file <a href="https://github.com/ioccc-src/winner/blob/master/1996/august/parse.oc">parse.oc</a>.</p>
 <p>Hmm… So now we have an interpreter written in OC and a compiler for OC, can
 we compile the interpreter? Yes, we can! The OC compiler does not have a
 preprocessor (hey, what do you expect from a program that is this small), so we
-need to use an external one. To pre-process <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1996/august/august.c">august.c</a> use the
+need to use an external one. To pre-process <a href="https://github.com/ioccc-src/winner/blob/master/1996/august/august.c">august.c</a> use the
 command from the Makefile, but add the <code>-E</code> flag and change 60000 to 40000,
 i.e.:</p>
 <pre><code>    cc -E -DZ=40000 .... august.c &gt; august.oc</code></pre>
@@ -629,21 +629,21 @@ defined. <code>getchar()</code> and <code>putchar()</code> are predefined functi
 </div>
 <h2 id="primary-files">Primary files</h2>
 <ul>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1996/august/august.c">august.c</a> - entry source code</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1996/august/Makefile">Makefile</a> - entry Makefile</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1996/august/august.orig.c">august.orig.c</a> - original source code</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1996/august/fac.oc">fac.oc</a> - oc source</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1996/august/parse.oc">parse.oc</a> - oc source</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1996/august/test.oc">test.oc</a> - oc source</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1996/august/try.sh">try.sh</a> - script to try entry</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/1996/august/august.c">august.c</a> - entry source code</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/1996/august/Makefile">Makefile</a> - entry Makefile</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/1996/august/august.orig.c">august.orig.c</a> - original source code</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/1996/august/fac.oc">fac.oc</a> - oc source</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/1996/august/parse.oc">parse.oc</a> - oc source</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/1996/august/test.oc">test.oc</a> - oc source</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/1996/august/try.sh">try.sh</a> - script to try entry</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
 <li><a href="1996_august.tar.bz2">1996_august.tar.bz2</a> - download entry tarball</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1996/august/README.md">README.md</a> - markdown source for this web page</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1996/august/.entry.json">.entry.json</a> - entry summary and manifest in JSON</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1996/august/.gitignore">.gitignore</a> - list of files that should not be committed under git</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1996/august/.path">.path</a> - directory path from top level directory</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/1996/august/README.md">README.md</a> - markdown source for this web page</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/1996/august/.entry.json">.entry.json</a> - entry summary and manifest in JSON</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/1996/august/.gitignore">.gitignore</a> - list of files that should not be committed under git</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/1996/august/.path">.path</a> - directory path from top level directory</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 </ul>
 <hr style="width:10%;text-align:left;margin-left:0">
@@ -711,7 +711,7 @@ Jump to: <a href="#">top</a>
 
     <div id="coda"><h3>Coda</h3>
 	<p>
-	<a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fioccc-src.github.io%2Ftemp-test-ioccc%2F1996%2Faugust%2Findex.html" rel="nofollow">Nu HTML check this web page</a><br>
+	<a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.ioccc.org%2F1996%2Faugust%2Findex.html" rel="nofollow">Nu HTML check this web page</a><br>
 	<a href="#top">Jump to top</a> <a href="#content">Jump to Content</a> <a href="#inventory">Jump to Inventory</a><br>
 	</p>
     </div>

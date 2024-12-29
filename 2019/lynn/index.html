@@ -416,10 +416,10 @@
   <a class="Left" href="../karns/index.html">&larr; 2019/karns</a>
   <a class="Left" href="../index.html">&uarr; 2019 &uarr;</a>
   <a class="Left" href="../mills/index.html">2019/mills &rarr;</a>
-  <a class="Right" href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/lynn/prog.c">C code</a>
-  <a class="Right" href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/lynn/Makefile">Makefile</a>
+  <a class="Right" href="https://github.com/ioccc-src/winner/blob/master/2019/lynn/prog.c">C code</a>
+  <a class="Right" href="https://github.com/ioccc-src/winner/blob/master/2019/lynn/Makefile">Makefile</a>
   <a class="Right" href="#inventory">Inventory</a>
-  <a class="Right" href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fioccc-src.github.io%2Ftemp-test-ioccc%2F2019%2Flynn%2Findex.html">&#x2713;</a>
+  <a class="Right" href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.ioccc.org%2F2019%2Flynn%2Findex.html">&#x2713;</a>
 </div>
 
 <!-- END: this line ends content from: inc/navbar.mid.html -->
@@ -480,16 +480,16 @@ trace of those scary <code>unsafeThisAndThat</code> functions. All functions mus
 <pre><code>    cc -o prog prog.c</code></pre>
 <h3 id="demos">Demos:</h3>
 <h4 id="fibonacci-numbers">Fibonacci numbers:</h4>
-<p>Test the compiler on <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/lynn/fib.hs">fib.hs</a>:</p>
+<p>Test the compiler on <a href="https://github.com/ioccc-src/winner/blob/master/2019/lynn/fib.hs">fib.hs</a>:</p>
 <pre><code>    (./prog &lt; fib.hs ; cat prog.c) &gt; fib.c</code></pre>
 <p>Compiling the output produces a binary that prints the 30th Fibonacci number.</p>
-<p>The file <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/lynn/ghcfib.hs">ghcfib.hs</a>
-includes <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/lynn/fib.hs">fib.hs</a> with some glue code,
+<p>The file <a href="https://github.com/ioccc-src/winner/blob/master/2019/lynn/ghcfib.hs">ghcfib.hs</a>
+includes <a href="https://github.com/ioccc-src/winner/blob/master/2019/lynn/fib.hs">fib.hs</a> with some glue code,
 and shows GHC also accepts our subset of Haskell:</p>
 <pre><code>    ghc ghcfib.hs</code></pre>
 <h4 id="self-hosting-compiler">Self-hosting compiler:</h4>
 <p>To avoid revealing the original Haskell source, we
-instead provide <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/lynn/hint.hs">hint.hs</a>, the output of a certain stage of the
+instead provide <a href="https://github.com/ioccc-src/winner/blob/master/2019/lynn/hint.hs">hint.hs</a>, the output of a certain stage of the
 compiler when run on itself. This intermediate output is hopefully difficult to
 understand, yet is accepted by our compiler:</p>
 <h3 id="notice-to-those-who-wish-for-a-greater-challenge">NOTICE to those who wish for a greater challenge:</h3>
@@ -501,12 +501,12 @@ just try to understand the program without running the command below.</p>
     ./hint</code></pre>
 <p>The output program behaves like the compiler itself.</p>
 <p>Unlike the original source from which it is derived, GHC fails to compile
-<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/lynn/hint.hs">hint.hs</a>. This is because values have been replaced with their <a href="https://en.wikipedia.org/wiki/Mogensen-Scott_encoding">Scott
+<a href="https://github.com/ioccc-src/winner/blob/master/2019/lynn/hint.hs">hint.hs</a>. This is because values have been replaced with their <a href="https://en.wikipedia.org/wiki/Mogensen-Scott_encoding">Scott
 encodings</a>
 by this stage, which messes up type-checks; we’d need <code>equirecursive</code> types for
 it to work.</p>
 <h4 id="regexes">Regexes:</h4>
-<p>The file <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/lynn/lol.hs">lol.hs</a> contains an adaptation of <a href="https://www.cs.dartmouth.edu/~doug/nfa.pdf">Doug McIlroy’s elegant code from
+<p>The file <a href="https://github.com/ioccc-src/winner/blob/master/2019/lynn/lol.hs">lol.hs</a> contains an adaptation of <a href="https://www.cs.dartmouth.edu/~doug/nfa.pdf">Doug McIlroy’s elegant code from
 “Enumerating the strings of regular
 languages”</a>. We exercise it by
 showing the first entries of the length-ordered list of all strings consisting
@@ -517,7 +517,7 @@ of the characters <code>a</code> and <code>b</code> that contain an even number 
 <p>A GHC wrapper is provided:</p>
 <pre><code>    ghc ghclol.hs</code></pre>
 <h3 id="strongly-connected-components">Strongly-connected components:</h3>
-<p>See <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/lynn/scc.hs">scc.hs</a>, and its GHC wrapper <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/lynn/ghcscc.hs">ghcscc.hs</a>,
+<p>See <a href="https://github.com/ioccc-src/winner/blob/master/2019/lynn/scc.hs">scc.hs</a>, and its GHC wrapper <a href="https://github.com/ioccc-src/winner/blob/master/2019/lynn/ghcscc.hs">ghcscc.hs</a>,
 for an elegant way to print the strongly-connected components of a graph in reverse topological
 order.</p>
 <pre><code>    (./prog &lt; scc.hs ; cat prog.c) &gt; scc.c</code></pre>
@@ -621,7 +621,7 @@ represent the integer <code>n</code> with a term equivalent to <code>Y(BT)n</cod
 <li>A sentinel in the heap often confused me, so ought to confuse others.</li>
 </ul>
 <p>Other obfuscation techniques are better appreciated after decoding the
-compiler. See <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/lynn/hint.hs">hint.hs</a>.</p>
+compiler. See <a href="https://github.com/ioccc-src/winner/blob/master/2019/lynn/hint.hs">hint.hs</a>.</p>
 <ul>
 <li>Mercilessly point-free. Everything is a combinator.</li>
 <li>Scott encoding. Everything is a combinator.</li>
@@ -672,27 +672,27 @@ works</a>.</p>
 </div>
 <h2 id="primary-files">Primary files</h2>
 <ul>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/lynn/prog.c">prog.c</a> - entry source code</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/lynn/Makefile">Makefile</a> - entry Makefile</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/lynn/prog.orig.c">prog.orig.c</a> - original source code</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2019/lynn/prog.c">prog.c</a> - entry source code</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2019/lynn/Makefile">Makefile</a> - entry Makefile</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2019/lynn/prog.orig.c">prog.orig.c</a> - original source code</li>
 <li><a href="example-1.txt">example-1.txt</a> - sample input</li>
 <li><a href="example-2.txt">example-2.txt</a> - sample input</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/lynn/try.sh">try.sh</a> - script to try entry</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/lynn/fib.hs">fib.hs</a> - example Haskell input source code</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/lynn/ghcfib.hs">ghcfib.hs</a> - example Haskell input source code</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/lynn/ghclol.hs">ghclol.hs</a> - example Haskell input source code</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/lynn/ghcscc.hs">ghcscc.hs</a> - example Haskell input source code</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/lynn/lol.hs">lol.hs</a> - example Haskell input source code</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/lynn/scc.hs">scc.hs</a> - example Haskell input source code</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/lynn/hint.hs">hint.hs</a> - self-hosting compiler stage output</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2019/lynn/try.sh">try.sh</a> - script to try entry</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2019/lynn/fib.hs">fib.hs</a> - example Haskell input source code</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2019/lynn/ghcfib.hs">ghcfib.hs</a> - example Haskell input source code</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2019/lynn/ghclol.hs">ghclol.hs</a> - example Haskell input source code</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2019/lynn/ghcscc.hs">ghcscc.hs</a> - example Haskell input source code</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2019/lynn/lol.hs">lol.hs</a> - example Haskell input source code</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2019/lynn/scc.hs">scc.hs</a> - example Haskell input source code</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2019/lynn/hint.hs">hint.hs</a> - self-hosting compiler stage output</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
 <li><a href="2019_lynn.tar.bz2">2019_lynn.tar.bz2</a> - download entry tarball</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/lynn/README.md">README.md</a> - markdown source for this web page</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/lynn/.entry.json">.entry.json</a> - entry summary and manifest in JSON</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/lynn/.gitignore">.gitignore</a> - list of files that should not be committed under git</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/lynn/.path">.path</a> - directory path from top level directory</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2019/lynn/README.md">README.md</a> - markdown source for this web page</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2019/lynn/.entry.json">.entry.json</a> - entry summary and manifest in JSON</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2019/lynn/.gitignore">.gitignore</a> - list of files that should not be committed under git</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2019/lynn/.path">.path</a> - directory path from top level directory</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 </ul>
 <hr style="width:10%;text-align:left;margin-left:0">
@@ -760,7 +760,7 @@ Jump to: <a href="#">top</a>
 
     <div id="coda"><h3>Coda</h3>
 	<p>
-	<a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fioccc-src.github.io%2Ftemp-test-ioccc%2F2019%2Flynn%2Findex.html" rel="nofollow">Nu HTML check this web page</a><br>
+	<a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.ioccc.org%2F2019%2Flynn%2Findex.html" rel="nofollow">Nu HTML check this web page</a><br>
 	<a href="#top">Jump to top</a> <a href="#content">Jump to Content</a> <a href="#inventory">Jump to Inventory</a><br>
 	</p>
     </div>

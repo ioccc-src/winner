@@ -127,7 +127,7 @@ if [[ $status -eq 0 ]]; then
 fi
 export TOPDIR
 #
-export REPO_TOP_URL="https://github.com/ioccc-src/temp-test-ioccc"
+export REPO_TOP_URL="https://github.com/ioccc-src/winner"
 # GitHub puts individual files under the "blob/master" sub-directory.
 export REPO_URL="$REPO_TOP_URL/blob/master"
 

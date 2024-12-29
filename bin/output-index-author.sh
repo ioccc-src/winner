@@ -154,10 +154,10 @@ if ! "$VERGE" "$JSTRDECODE_VERSION" "$MIN_JSTRDECODE_VERSION"; then
 fi
 #
 export DOCROOT_SLASH="../../"
-export REPO_TOP_URL="https://github.com/ioccc-src/temp-test-ioccc"
+export REPO_TOP_URL="https://github.com/ioccc-src/winner"
 # GitHub puts individual files under the "blob/master" sub-directory.
 export REPO_URL="$REPO_TOP_URL/blob/master"
-export SITE_URL="https://ioccc-src.github.io/temp-test-ioccc"
+export SITE_URL="https://www.ioccc.org"
 export URL="#"
 
 

@@ -416,10 +416,10 @@
   <a class="Left" href="../borsanyi/index.html">&larr; 2011/borsanyi</a>
   <a class="Left" href="../index.html">&uarr; 2011 &uarr;</a>
   <a class="Left" href="../eastman/index.html">2011/eastman &rarr;</a>
-  <a class="Right" href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/dlowe/dlowe.c">C code</a>
-  <a class="Right" href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/dlowe/Makefile">Makefile</a>
+  <a class="Right" href="https://github.com/ioccc-src/winner/blob/master/2011/dlowe/dlowe.c">C code</a>
+  <a class="Right" href="https://github.com/ioccc-src/winner/blob/master/2011/dlowe/Makefile">Makefile</a>
   <a class="Right" href="#inventory">Inventory</a>
-  <a class="Right" href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fioccc-src.github.io%2Ftemp-test-ioccc%2F2011%2Fdlowe%2Findex.html">&#x2713;</a>
+  <a class="Right" href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.ioccc.org%2F2011%2Fdlowe%2Findex.html">&#x2713;</a>
 </div>
 
 <!-- END: this line ends content from: inc/navbar.mid.html -->
@@ -461,7 +461,7 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <h2 id="try">Try:</h2>
 <p>Try these pre-trained networks:</p>
 <pre><code>    ./try.sh</code></pre>
-<p><strong>NOTE</strong>: The <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/dlowe/dlowe-aux-data">dlowe-aux-data</a> directory, which <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/dlowe/try.sh">try.sh</a> refers to, was
+<p><strong>NOTE</strong>: The <a href="https://github.com/ioccc-src/winner/blob/master/2011/dlowe/dlowe-aux-data">dlowe-aux-data</a> directory, which <a href="https://github.com/ioccc-src/winner/blob/master/2011/dlowe/try.sh">try.sh</a> refers to, was
 created by:</p>
 <pre><code>    tar -jxf dlowe-aux-data.tar.bz2</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
@@ -471,16 +471,16 @@ It comes with a set of corpora for you to try.</p>
 <p>You can create your own trained networks. For example, we trained a network
 on the C code of entries that were supplied to the 20Th IOCCC.</p>
 <p>The <code>ioccc-winlose-trained.net</code> was trained using the
-<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/dlowe/earlystop.pl">earlystop.pl</a> tool:</p>
+<a href="https://github.com/ioccc-src/winner/blob/master/2011/dlowe/earlystop.pl">earlystop.pl</a> tool:</p>
 <pre><code>    rm -f ioccc-winlose-trained.net
     ./earlystop.pl ioccc-winlose-trained.net ioccc_won_training/ ioccc_lost_training/ ioccc_won_test/ ioccc_lost_test/</code></pre>
 <p>where:</p>
 <ul>
 <li><p><code>ioccc_won_training/</code>
-1/2 of C code of the 20th IOCCC entries (except for <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/dlowe/dlowe.c">dlowe.c</a> from 2011)
+1/2 of C code of the 20th IOCCC entries (except for <a href="https://github.com/ioccc-src/winner/blob/master/2011/dlowe/dlowe.c">dlowe.c</a> from 2011)
 plus 1/2 of the C code winning entries from prior IOCCC contests</p></li>
 <li><p><code>ioccc_won_test/</code>
-1/2 of C code of the 20th IOCCC entries (except for <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/dlowe/dlowe.c">dlowe.c</a> from 2011)
+1/2 of C code of the 20th IOCCC entries (except for <a href="https://github.com/ioccc-src/winner/blob/master/2011/dlowe/dlowe.c">dlowe.c</a> from 2011)
 plus 1/2 of the C code winning entries from prior IOCCC contests</p></li>
 <li><p><code>ioccc_lost_training/</code>
 1/2 of C code from entries that that did not win</p></li>
@@ -489,17 +489,17 @@ plus 1/2 of the C code winning entries from prior IOCCC contests</p></li>
 </ul>
 <p><strong>NOTE</strong>: The above directories were not shipped and everything from the entries
 that did not win were flushed to <code>/dev/null</code>.</p>
-<p>The <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/dlowe/earlystop.pl">earlystop.pl</a> tool wrote:</p>
+<p>The <a href="https://github.com/ioccc-src/winner/blob/master/2011/dlowe/earlystop.pl">earlystop.pl</a> tool wrote:</p>
 <pre><code>    training 1 to 1001...
     training 1001 to 2001...
     prior error = 56.746974766043; current error = 58.095691135305</code></pre>
 <p>The resulting <code>ioccc-winlose-trained.net</code> file was included in the
 <a href="dlowe-aux-data.tar.bz2">dlowe-aux-data.tar.bz2</a> tarball.</p>
-<p>The <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/dlowe/dlowe.c">dlowe.c</a> was explicitly excluded from this trailing set, so this
+<p>The <a href="https://github.com/ioccc-src/winner/blob/master/2011/dlowe/dlowe.c">dlowe.c</a> was explicitly excluded from this trailing set, so this
 test is interesting:</p>
 <pre><code>    ./dlowe dlowe.c &lt; dlowe-aux-data/ioccc-winlose-trained.net</code></pre>
-<p><strong>NOTE</strong>: this is done in <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/dlowe/try.sh">try.sh</a>.</p>
-<p>The match of <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/dlowe/dlowe.c">dlowe.c</a> to the lose/win trailed network was:</p>
+<p><strong>NOTE</strong>: this is done in <a href="https://github.com/ioccc-src/winner/blob/master/2011/dlowe/try.sh">try.sh</a>.</p>
+<p>The match of <a href="https://github.com/ioccc-src/winner/blob/master/2011/dlowe/dlowe.c">dlowe.c</a> to the lose/win trailed network was:</p>
 <pre><code>    dlowe.c 0.125108</code></pre>
 <p><strong>NOTE</strong>: The non-artificially intelligent decisions of the IOCCC judges include random
 quirks and their non-linear judgment calls not found in the ioccc trained network.
@@ -508,28 +508,28 @@ mean it will win or lose a future IOCCC. On the other hand … it just might!</p
 <h4 id="other-data-sets-to-try">other data sets to try</h4>
 <p>While we cannot supply you with the losing IOCCC source code, the author did supply a number
 data sets on which to test:</p>
-<p>We created the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/dlowe/dlowe-aux-data/english-trained.net">english-trained.net</a> as follows:</p>
+<p>We created the <a href="https://github.com/ioccc-src/winner/blob/master/2011/dlowe/dlowe-aux-data/english-trained.net">english-trained.net</a> as follows:</p>
 <pre><code>    ./dlowe -8000 dlowe-aux-data/english-1/ dlowe-aux-data/english-0/ &lt; /dev/null &gt; dlowe-aux-data/english-trained.net</code></pre>
 <ul>
-<li><p><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/dlowe/dlowe-aux-data/english-0">dlowe-aux-data/english-0/</a>
+<li><p><a href="https://github.com/ioccc-src/winner/blob/master/2011/dlowe/dlowe-aux-data/english-0">dlowe-aux-data/english-0/</a>
 Non-English (French) text</p></li>
-<li><p><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/dlowe/dlowe-aux-data/english-1">dlowe-aux-data/english-1/</a>
+<li><p><a href="https://github.com/ioccc-src/winner/blob/master/2011/dlowe/dlowe-aux-data/english-1">dlowe-aux-data/english-1/</a>
 English (non-French) text</p></li>
 </ul>
-<p>We created the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/dlowe/dlowe-aux-data/png-trained.net">png-trained.net</a> as follows:</p>
+<p>We created the <a href="https://github.com/ioccc-src/winner/blob/master/2011/dlowe/dlowe-aux-data/png-trained.net">png-trained.net</a> as follows:</p>
 <pre><code>    ./dlowe -8000 png-1/ png-0/ &lt; /dev/null &gt; dlowe-aux-data/png-trained.net</code></pre>
 <ul>
-<li><p><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/dlowe/dlowe-aux-data/png-0">dlowe-aux-data/png-0/</a>
+<li><p><a href="https://github.com/ioccc-src/winner/blob/master/2011/dlowe/dlowe-aux-data/png-0">dlowe-aux-data/png-0/</a>
 Non-png (gif) images</p></li>
-<li><p><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/dlowe/dlowe-aux-data/png-1">dlowe-aux-data/png-1/</a>
+<li><p><a href="https://github.com/ioccc-src/winner/blob/master/2011/dlowe/dlowe-aux-data/png-1">dlowe-aux-data/png-1/</a>
 png (non-gif) images</p></li>
 </ul>
-<p>We created the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/dlowe/dlowe-aux-data/xor-trained.net">xor-trained.net</a> as follows:</p>
+<p>We created the <a href="https://github.com/ioccc-src/winner/blob/master/2011/dlowe/dlowe-aux-data/xor-trained.net">xor-trained.net</a> as follows:</p>
 <pre><code>    ./dlowe -8000 dlowe-aux-data/xor-1/ dlowe-aux-data/xor-0/ &lt; /dev/null &gt; dlowe-aux-data/xor-trained.net</code></pre>
 <ul>
-<li><p><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/dlowe/dlowe-aux-data/xor-0">dlowe-aux-data/xor-0</a>
+<li><p><a href="https://github.com/ioccc-src/winner/blob/master/2011/dlowe/dlowe-aux-data/xor-0">dlowe-aux-data/xor-0</a>
 Data that XORs to 0</p></li>
-<li><p><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/dlowe/dlowe-aux-data/xor-1">dlowe-aux-data/xor-1/</a>
+<li><p><a href="https://github.com/ioccc-src/winner/blob/master/2011/dlowe/dlowe-aux-data/xor-1">dlowe-aux-data/xor-1/</a>
 Data that XORs to 1</p></li>
 </ul>
 <p><strong>NOTE</strong>: The directory args <strong>must end in a</strong> <code>/</code> for them to work.</p>
@@ -581,16 +581,16 @@ filetype:gif</a>”.</p>
 <li>Using these corpora as a training set;</li>
 <li>Using several hundred random <code>*.gif</code> and <code>*.png</code> files from my home computer as
 a test set;</li>
-<li>Using the included <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/dlowe/earlystop.pl">earlystop.pl</a> script, which stopped after 67000 iterations.</li>
+<li>Using the included <a href="https://github.com/ioccc-src/winner/blob/master/2011/dlowe/earlystop.pl">earlystop.pl</a> script, which stopped after 67000 iterations.</li>
 <li>Interpreting output of <code>&gt; 0.5</code> as “probably a <code>.png</code>” and <code>&lt; 0.5</code> as “probably
 a <code>.gif</code>”</li>
 </ul>
 <p>produced a network with about 87% accuracy</p>
 <h4 id="english-corpora">English corpora</h4>
-<p>The <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/dlowe/dlowe-aux-data/english-1">english-1</a> corpus was obtained by manually scraping the first results from
+<p>The <a href="https://github.com/ioccc-src/winner/blob/master/2011/dlowe/dlowe-aux-data/english-1">english-1</a> corpus was obtained by manually scraping the first results from
 a <a href="https://www.google.com/webhp?lr=lang_en" class="uri">https://www.google.com/webhp?lr=lang_en</a> search for “<a href="https://www.google.com/search?q=paris+filetype%3Atxt&amp;lr=lang_en&amp;tbs=lr%3Alang_1en&amp;sxsrf=APwXEdeHXyUYdUxCYQQDHmJhbHzX9aARSA%3A1683049834430&amp;source=hp&amp;ei=ak1RZJHUGN_DkPIP26OtkA8&amp;iflsig=AOEireoAAAAAZFFbejA0Xfqoq__FXx--Ok0S6GQjnGnA&amp;ved=0ahUKEwiRsZOcmdf-AhXfIUQIHdtRC_IQ4dUDCAo&amp;uact=5&amp;oq=paris+filetype%3Atxt&amp;gs_lcp=Cgdnd3Mtd2l6EANQAFgAYN4DaABwAHgAgAE-iAE-kgEBMZgBAKABAqABAQ&amp;sclient=gws-wiz">paris
 filetype:txt</a>”.</p>
-<p>The <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/dlowe/dlowe-aux-data/english-0">english-0</a> corpus was obtained by manually scraping the first results from
+<p>The <a href="https://github.com/ioccc-src/winner/blob/master/2011/dlowe/dlowe-aux-data/english-0">english-0</a> corpus was obtained by manually scraping the first results from
 a <a href="https://www.google.com/webhp?lr=lang_fr" class="uri">https://www.google.com/webhp?lr=lang_fr</a> search for “<a href="https://www.google.com/search?q=paris+filetype%3Atxt&amp;lr=lang_fr&amp;tbs=lr%3Alang_1fr&amp;sxsrf=APwXEddcsQ-gMhrqSUJo6omWFUl7jQMASg%3A1683049870736&amp;source=hp&amp;ei=jk1RZLevK_fKkPIPjbWN-AU&amp;iflsig=AOEireoAAAAAZFFbnvExHGkcavB5H8F0xsLAWN2KfYFK&amp;ved=0ahUKEwi3rrutmdf-AhV3JUQIHY1aA18Q4dUDCAo&amp;uact=5&amp;oq=paris+filetype%3Atxt&amp;gs_lcp=Cgdnd3Mtd2l6EANQAFgAYLMDaABwAHgAgAE-iAE-kgEBMZgBAKABAqABAQ&amp;sclient=gws-wiz">paris
 filetype:txt</a>”.</p>
 <h5 id="results-1">Results:</h5>
@@ -598,23 +598,23 @@ filetype:txt</a>”.</p>
 <li>Using these corpora as a training set;</li>
 <li>Using several dozen additional text files (obtained by the same methods) as a
 test set;</li>
-<li>Using the included <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/dlowe/earlystop.pl">earlystop.pl</a> script, which stopped after
+<li>Using the included <a href="https://github.com/ioccc-src/winner/blob/master/2011/dlowe/earlystop.pl">earlystop.pl</a> script, which stopped after
 10000 iterations;</li>
 <li>Interpreting output of <code>&gt; 0.5</code> as “probably English” and <code>&lt; 0.5</code> as “probably
 French”</li>
 </ul>
 <p>produced a network with 100% accuracy.</p>
 <h3 id="xor-corpora">xor corpora</h3>
-<p>The <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/dlowe/dlowe-aux-data/xor-1">xor-1</a> corpus consists of two files containing <code>01</code>
+<p>The <a href="https://github.com/ioccc-src/winner/blob/master/2011/dlowe/dlowe-aux-data/xor-1">xor-1</a> corpus consists of two files containing <code>01</code>
 and <code>10</code> respectively.</p>
-<p>The <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/dlowe/dlowe-aux-data/xor-0">xor-0</a> corpus consists of two files containing <code>00</code>
+<p>The <a href="https://github.com/ioccc-src/winner/blob/master/2011/dlowe/dlowe-aux-data/xor-0">xor-0</a> corpus consists of two files containing <code>00</code>
 and <code>11</code> respectively.</p>
 <h5 id="results-2">Results:</h5>
 <p>Using these corpora as a training set takes about 8000 iterations to learn xor
 to within a tolerance of <code>&lt;0.01</code>.</p>
 <h3 id="limitations">Limitations</h3>
 <p>The program can’t tell you anything meaningful about files with less than two
-bytes in them (I’m looking at you, <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1994/smr/smr.c">smr.c</a>!)</p>
+bytes in them (I’m looking at you, <a href="https://github.com/ioccc-src/winner/blob/master/1994/smr/smr.c">smr.c</a>!)</p>
 <p>You must include the trailing directory separator on training directories
 (this allows the program to be portable without wasting precious bytes on
 figuring out how to concatenate directory and file names…).</p>
@@ -623,7 +623,7 @@ figuring out how to concatenate directory and file names…).</p>
 representation and <a href="https://en.wikipedia.org/wiki/Endianness">endianness</a>.</p>
 <p>Making sure not to
 <a href="https://en.wikipedia.org/wiki/Overfitting#Machine_learning">overfit</a> the network to the training data is a bit of a
-black art. I have enclosed <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/dlowe/earlystop.pl">earlystop.pl</a>, a wrapper script that implements
+black art. I have enclosed <a href="https://github.com/ioccc-src/winner/blob/master/2011/dlowe/earlystop.pl">earlystop.pl</a>, a wrapper script that implements
 a simple ‘early stopping’ algorithm; other techniques are possible.</p>
 <p>Bad input (e.g. nonexistent files, non-numeric number of iterations, etc.)
 tends to result in empty output.</p>
@@ -676,11 +676,11 @@ by a network trained to recognize <a href="../../authors.html">IOCCC entries</a>
 </div>
 <h2 id="primary-files">Primary files</h2>
 <ul>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/dlowe/dlowe.c">dlowe.c</a> - entry source code</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/dlowe/Makefile">Makefile</a> - entry Makefile</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/dlowe/dlowe.orig.c">dlowe.orig.c</a> - original source code</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/dlowe/earlystop.pl">earlystop.pl</a> - wrapper script to stop training early</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/dlowe/try.sh">try.sh</a> - script to try entry</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2011/dlowe/dlowe.c">dlowe.c</a> - entry source code</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2011/dlowe/Makefile">Makefile</a> - entry Makefile</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2011/dlowe/dlowe.orig.c">dlowe.orig.c</a> - original source code</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2011/dlowe/earlystop.pl">earlystop.pl</a> - wrapper script to stop training early</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2011/dlowe/try.sh">try.sh</a> - script to try entry</li>
 <li><a href="dlowe-aux-data/png-0/5756029-DMZ-overview-B.gif">dlowe-aux-data/png-0/5756029-DMZ-overview-B.gif</a> - Non-png gif images</li>
 <li><a href="dlowe-aux-data/png-0/M2.gif">dlowe-aux-data/png-0/M2.gif</a> - Non-png gif images</li>
 <li><a href="dlowe-aux-data/png-0/Obfuscate.gif">dlowe-aux-data/png-0/Obfuscate.gif</a> - Non-png gif images</li>
@@ -710,10 +710,10 @@ by a network trained to recognize <a href="../../authors.html">IOCCC entries</a>
 <li><a href="dlowe-aux-data/english-1/the_poor_people_of_paris.txt">dlowe-aux-data/english-1/the_poor_people_of_paris.txt</a> - training text for neural networks</li>
 <li><a href="dlowe-aux-data/english-1/utmost.txt">dlowe-aux-data/english-1/utmost.txt</a> - training text for neural networks</li>
 <li><a href="dlowe-aux-data/english-1/walljpar.txt">dlowe-aux-data/english-1/walljpar.txt</a> - training text for neural networks</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/dlowe/dlowe-aux-data/xor-0/00">dlowe-aux-data/xor-0/00</a> - training digits for neural networks</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/dlowe/dlowe-aux-data/xor-0/11">dlowe-aux-data/xor-0/11</a> - training digits for neural networks</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/dlowe/dlowe-aux-data/xor-1/01">dlowe-aux-data/xor-1/01</a> - training digits for neural networks</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/dlowe/dlowe-aux-data/xor-1/10">dlowe-aux-data/xor-1/10</a> - training digits for neural networks</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2011/dlowe/dlowe-aux-data/xor-0/00">dlowe-aux-data/xor-0/00</a> - training digits for neural networks</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2011/dlowe/dlowe-aux-data/xor-0/11">dlowe-aux-data/xor-0/11</a> - training digits for neural networks</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2011/dlowe/dlowe-aux-data/xor-1/01">dlowe-aux-data/xor-1/01</a> - training digits for neural networks</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2011/dlowe/dlowe-aux-data/xor-1/10">dlowe-aux-data/xor-1/10</a> - training digits for neural networks</li>
 <li><a href="dlowe-aux-data/png-1/JavaScript-obfuscation-code.png">dlowe-aux-data/png-1/JavaScript-obfuscation-code.png</a> - training image for neural networks</li>
 <li><a href="dlowe-aux-data/png-1/control_flow_obfuscation_before.png">dlowe-aux-data/png-1/control_flow_obfuscation_before.png</a> - training image for neural networks</li>
 <li><a href="dlowe-aux-data/png-1/deceive-inveigle-obfuscate-t-shirts.png">dlowe-aux-data/png-1/deceive-inveigle-obfuscate-t-shirts.png</a> - training image for neural networks</li>
@@ -727,15 +727,15 @@ by a network trained to recognize <a href="../../authors.html">IOCCC entries</a>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
 <li><a href="2011_dlowe.tar.bz2">2011_dlowe.tar.bz2</a> - download entry tarball</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/dlowe/README.md">README.md</a> - markdown source for this web page</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2011/dlowe/README.md">README.md</a> - markdown source for this web page</li>
 <li><a href="dlowe-aux-data/english-trained.net">dlowe-aux-data/english-trained.net</a> - trained neural network for English text</li>
 <li><a href="dlowe-aux-data/ioccc-winlose-trained.net">dlowe-aux-data/ioccc-winlose-trained.net</a> - trained neural network for C code from 20th IOCCC</li>
 <li><a href="dlowe-aux-data/png-trained.net">dlowe-aux-data/png-trained.net</a> - trained neural network for png-0 and png-1 images</li>
 <li><a href="dlowe-aux-data.tar.bz2">dlowe-aux-data.tar.bz2</a> - tarball of IOCCC win lose trained network</li>
 <li><a href="dlowe-aux-data/xor-trained.net">dlowe-aux-data/xor-trained.net</a> - trained neural network for xor-0 and xor-1 data</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/dlowe/.entry.json">.entry.json</a> - entry summary and manifest in JSON</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/dlowe/.gitignore">.gitignore</a> - list of files that should not be committed under git</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/dlowe/.path">.path</a> - directory path from top level directory</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2011/dlowe/.entry.json">.entry.json</a> - entry summary and manifest in JSON</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2011/dlowe/.gitignore">.gitignore</a> - list of files that should not be committed under git</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2011/dlowe/.path">.path</a> - directory path from top level directory</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 </ul>
 <hr style="width:10%;text-align:left;margin-left:0">
@@ -803,7 +803,7 @@ Jump to: <a href="#">top</a>
 
     <div id="coda"><h3>Coda</h3>
 	<p>
-	<a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fioccc-src.github.io%2Ftemp-test-ioccc%2F2011%2Fdlowe%2Findex.html" rel="nofollow">Nu HTML check this web page</a><br>
+	<a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.ioccc.org%2F2011%2Fdlowe%2Findex.html" rel="nofollow">Nu HTML check this web page</a><br>
 	<a href="#top">Jump to top</a> <a href="#content">Jump to Content</a> <a href="#inventory">Jump to Inventory</a><br>
 	</p>
     </div>

@@ -102,7 +102,7 @@ if [[ $status -eq 0 ]]; then
     TOPDIR=$("$GIT_TOOL" rev-parse --show-toplevel)
 fi
 export TOPDIR
-export REPO_TOP_URL="https://github.com/ioccc-src/temp-test-ioccc"
+export REPO_TOP_URL="https://github.com/ioccc-src/winner"
 # GitHub puts individual files under the "blob/master" sub-directory.
 export REPO_URL="$REPO_TOP_URL/blob/master"
 export CAP_W_FLAG_FOUND=

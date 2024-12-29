@@ -416,10 +416,10 @@
   <a class="Left" href="../mills/index.html">&larr; 2013/mills</a>
   <a class="Left" href="../index.html">&uarr; 2013 &uarr;</a>
   <a class="Left" href="../morgan1/index.html">2013/morgan1 &rarr;</a>
-  <a class="Right" href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/misaka/misaka.c">C code</a>
-  <a class="Right" href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/misaka/Makefile">Makefile</a>
+  <a class="Right" href="https://github.com/ioccc-src/winner/blob/master/2013/misaka/misaka.c">C code</a>
+  <a class="Right" href="https://github.com/ioccc-src/winner/blob/master/2013/misaka/Makefile">Makefile</a>
   <a class="Right" href="#inventory">Inventory</a>
-  <a class="Right" href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fioccc-src.github.io%2Ftemp-test-ioccc%2F2013%2Fmisaka%2Findex.html">&#x2713;</a>
+  <a class="Right" href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.ioccc.org%2F2013%2Fmisaka%2Findex.html">&#x2713;</a>
 </div>
 
 <!-- END: this line ends content from: inc/navbar.mid.html -->
@@ -505,7 +505,7 @@ original text alignments are preserved.</p>
 Unlike <code>cat</code>, <code>horizontal_cat</code> loads all input to memory first. Thus you
 can specify <code>-</code> multiple times to get <code>stdin</code> multiplied horizontally. For
 example, if you have <code>seq(1)</code> in your shell, you can add line numbers to both
-sides of <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/misaka/misaka.c">misaka.c</a> like this:</p>
+sides of <a href="https://github.com/ioccc-src/winner/blob/master/2013/misaka/misaka.c">misaka.c</a> like this:</p>
 <pre><code>    seq -f &#39;  %.0f  &#39; 45 | ./horizontal_cat - misaka.c -</code></pre>
 <h3 id="vertical-cat">Vertical cat</h3>
 <p>Because <code>horizontal_cat</code> must know the maximum width of all files before
@@ -525,7 +525,7 @@ enabled by concatenating the source code horizontally:</p>
 <h3 id="long-cat">Long cat</h3>
 <p>After <code>horizontal_cat</code> and <code>vertical_cat</code>, I thought, maybe all I really wanted
 was just more <a href="https://rationalwiki.org/wiki/Fun:Cat">cats</a>. So I implemented
-one more mode, this one is enabled by concatenating <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/misaka/misaka.c">misaka.c</a>
+one more mode, this one is enabled by concatenating <a href="https://github.com/ioccc-src/winner/blob/master/2013/misaka/misaka.c">misaka.c</a>
 vertically:</p>
 <pre><code>    ./vertical_cat misaka.c misaka.c &gt; misaka3.c
     gcc misaka3.c -o long_cat
@@ -552,7 +552,7 @@ by concatenating files horizontally:</p>
 triangle like the following will not have horizontally expanded output:</p>
 <pre><code>    ./horizontal_cat misaka.c misaka.c | ./vertical_cat misaka.c - &gt; misaka9.c
     gcc misaka9.c -o same_as_long_cat</code></pre>
-<p>Finally, if you lost track of how many <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/misaka/misaka.c">misaka.c</a> you have stacked
+<p>Finally, if you lost track of how many <a href="https://github.com/ioccc-src/winner/blob/master/2013/misaka/misaka.c">misaka.c</a> you have stacked
 together, you can feed the source to a
 <a href="https://en.wikipedia.org/wiki/Brainfuck">brainfuck</a> interpreter to get an
 overview of how the programs are stacked. Example:</p>
@@ -603,7 +603,7 @@ does not output any irrelevant other warnings (verified on 4.6.3).</p>
 <p>Extra files included in my submission are informational only, they are not
 needed for the program to work.</p>
 <ul>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/misaka/bf.pl">bf.pl</a> - a perl brainfuck interpreter, in case you don’t have one
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2013/misaka/bf.pl">bf.pl</a> - a perl brainfuck interpreter, in case you don’t have one
 handy.</li>
 <li><a href="obfuscation.html">obfuscation.html</a> - making of this program.</li>
 </ul>
@@ -639,20 +639,20 @@ stackable figure:</p>
 </div>
 <h2 id="primary-files">Primary files</h2>
 <ul>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/misaka/misaka.c">misaka.c</a> - entry source code</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/misaka/Makefile">Makefile</a> - entry Makefile</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/misaka/misaka.orig.c">misaka.orig.c</a> - original source code</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/misaka/bf.pl">bf.pl</a> - brainfuck interpreter in perl</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/misaka/try.sh">try.sh</a> - script to try entry</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2013/misaka/misaka.c">misaka.c</a> - entry source code</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2013/misaka/Makefile">Makefile</a> - entry Makefile</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2013/misaka/misaka.orig.c">misaka.orig.c</a> - original source code</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2013/misaka/bf.pl">bf.pl</a> - brainfuck interpreter in perl</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2013/misaka/try.sh">try.sh</a> - script to try entry</li>
 <li><a href="obfuscation.html">obfuscation.html</a> - JavaScript page with full recording of development</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
 <li><a href="2013_misaka.tar.bz2">2013_misaka.tar.bz2</a> - download entry tarball</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/misaka/README.md">README.md</a> - markdown source for this web page</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/misaka/.entry.json">.entry.json</a> - entry summary and manifest in JSON</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/misaka/.gitignore">.gitignore</a> - list of files that should not be committed under git</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/misaka/.path">.path</a> - directory path from top level directory</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2013/misaka/README.md">README.md</a> - markdown source for this web page</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2013/misaka/.entry.json">.entry.json</a> - entry summary and manifest in JSON</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2013/misaka/.gitignore">.gitignore</a> - list of files that should not be committed under git</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2013/misaka/.path">.path</a> - directory path from top level directory</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 </ul>
 <hr style="width:10%;text-align:left;margin-left:0">
@@ -720,7 +720,7 @@ Jump to: <a href="#">top</a>
 
     <div id="coda"><h3>Coda</h3>
 	<p>
-	<a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fioccc-src.github.io%2Ftemp-test-ioccc%2F2013%2Fmisaka%2Findex.html" rel="nofollow">Nu HTML check this web page</a><br>
+	<a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.ioccc.org%2F2013%2Fmisaka%2Findex.html" rel="nofollow">Nu HTML check this web page</a><br>
 	<a href="#top">Jump to top</a> <a href="#content">Jump to Content</a> <a href="#inventory">Jump to Inventory</a><br>
 	</p>
     </div>

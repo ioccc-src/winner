@@ -416,10 +416,10 @@
   <a class="Left" href="../../1987/westley/index.html">&larr; 1987/westley</a>
   <a class="Left" href="../index.html">&uarr; 1988 &uarr;</a>
   <a class="Left" href="../dale/index.html">1988/dale &rarr;</a>
-  <a class="Right" href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1988/applin/applin.c">C code</a>
-  <a class="Right" href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1988/applin/Makefile">Makefile</a>
+  <a class="Right" href="https://github.com/ioccc-src/winner/blob/master/1988/applin/applin.c">C code</a>
+  <a class="Right" href="https://github.com/ioccc-src/winner/blob/master/1988/applin/Makefile">Makefile</a>
   <a class="Right" href="#inventory">Inventory</a>
-  <a class="Right" href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fioccc-src.github.io%2Ftemp-test-ioccc%2F1988%2Fapplin%2Findex.html">&#x2713;</a>
+  <a class="Right" href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.ioccc.org%2F1988%2Fapplin%2Findex.html">&#x2713;</a>
 </div>
 
 <!-- END: this line ends content from: inc/navbar.mid.html -->
@@ -447,8 +447,8 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <h2 id="to-build">To build:</h2>
 <pre><code>    make all</code></pre>
 <p>A smaller version, originally called <code>zsmall.c</code> (and still exists as such, as
-the source of the alternate code), of <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1988/applin/applin.c">applin.c</a>, can be found in
-<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1988/applin/applin.alt.c">applin.alt.c</a>. Your machine may have an easier time with this
+the source of the alternate code), of <a href="https://github.com/ioccc-src/winner/blob/master/1988/applin/applin.c">applin.c</a>, can be found in
+<a href="https://github.com/ioccc-src/winner/blob/master/1988/applin/applin.alt.c">applin.alt.c</a>. Your machine may have an easier time with this
 program. See the <a href="#alternate-code">Alternate code</a> section below for details.</p>
 <h2 id="try">Try:</h2>
 <pre><code>    ./applin</code></pre>
@@ -465,17 +465,17 @@ Dhyrstone/sec/cpu machine) using the System V <code>cpp</code>. (The GNU <code>c
 <code>BIG_CPP</code> took only 45 seconds.)</p>
 <p>Your <code>cpp</code> may not be able to compile it due to a common bug that results in
 <code>cpp</code> running out of space. The alternate code
-<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1988/applin/applin.alt.c">zsmall</a> is a smaller version
-of the entry <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1988/applin/applin.c">applin.c</a>.</p>
+<a href="https://github.com/ioccc-src/winner/blob/master/1988/applin/applin.alt.c">zsmall</a> is a smaller version
+of the entry <a href="https://github.com/ioccc-src/winner/blob/master/1988/applin/applin.c">applin.c</a>.</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>This entry is by far the most unusual abuse of the C preprocessor that
 we have received thus far. Nearly all of the real work is done in the
 C preprocessor!</p>
-<p>When we compiled <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1988/applin/applin.c">applin.c</a> on an
+<p>When we compiled <a href="https://github.com/ioccc-src/winner/blob/master/1988/applin/applin.c">applin.c</a> on an
 <a href="https://en.wikipedia.org/wiki/Amdahl_Corporation#580_series">Amdahl 5890-300E</a>, we found that it
 spent over 75 minutes in the System V C preprocessor! Besides showing that the
 standard System V <code>cpp</code> is slow, it showed that it contained a memory usage
-problem. The <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1988/applin/applin.c">applin.c</a> only uses 29 different preprocessor symbols
+problem. The <a href="https://github.com/ioccc-src/winner/blob/master/1988/applin/applin.c">applin.c</a> only uses 29 different preprocessor symbols
 (besides <code>stdio.h</code>) and yet the preprocessor ran out of space!</p>
 <p>The GNU C preprocessor took under 45 seconds to perform the 2nd pass
 on the Amdahl 5890-300E. But due to the ANSI-likeness of GNU <code>cpp</code> (v. 1-21),
@@ -508,18 +508,18 @@ Clearly the GNU C preprocessor is faster.</p>
 </div>
 <h2 id="primary-files">Primary files</h2>
 <ul>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1988/applin/applin.c">applin.c</a> - entry source code</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1988/applin/Makefile">Makefile</a> - entry Makefile</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1988/applin/applin.alt.c">applin.alt.c</a> - alternate source code</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1988/applin/applin.orig.c">applin.orig.c</a> - original source code</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/1988/applin/applin.c">applin.c</a> - entry source code</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/1988/applin/Makefile">Makefile</a> - entry Makefile</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/1988/applin/applin.alt.c">applin.alt.c</a> - alternate source code</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/1988/applin/applin.orig.c">applin.orig.c</a> - original source code</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
 <li><a href="1988_applin.tar.bz2">1988_applin.tar.bz2</a> - download entry tarball</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1988/applin/README.md">README.md</a> - markdown source for this web page</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1988/applin/.entry.json">.entry.json</a> - entry summary and manifest in JSON</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1988/applin/.gitignore">.gitignore</a> - list of files that should not be committed under git</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1988/applin/.path">.path</a> - directory path from top level directory</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/1988/applin/README.md">README.md</a> - markdown source for this web page</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/1988/applin/.entry.json">.entry.json</a> - entry summary and manifest in JSON</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/1988/applin/.gitignore">.gitignore</a> - list of files that should not be committed under git</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/1988/applin/.path">.path</a> - directory path from top level directory</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 </ul>
 <hr style="width:10%;text-align:left;margin-left:0">
@@ -587,7 +587,7 @@ Jump to: <a href="#">top</a>
 
     <div id="coda"><h3>Coda</h3>
 	<p>
-	<a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fioccc-src.github.io%2Ftemp-test-ioccc%2F1988%2Fapplin%2Findex.html" rel="nofollow">Nu HTML check this web page</a><br>
+	<a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.ioccc.org%2F1988%2Fapplin%2Findex.html" rel="nofollow">Nu HTML check this web page</a><br>
 	<a href="#top">Jump to top</a> <a href="#content">Jump to Content</a> <a href="#inventory">Jump to Inventory</a><br>
 	</p>
     </div>

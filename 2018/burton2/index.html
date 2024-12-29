@@ -416,10 +416,10 @@
   <a class="Left" href="../burton1/index.html">&larr; 2018/burton1</a>
   <a class="Left" href="../index.html">&uarr; 2018 &uarr;</a>
   <a class="Left" href="../ciura/index.html">2018/ciura &rarr;</a>
-  <a class="Right" href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/prog.c">C code</a>
-  <a class="Right" href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/Makefile">Makefile</a>
+  <a class="Right" href="https://github.com/ioccc-src/winner/blob/master/2018/burton2/prog.c">C code</a>
+  <a class="Right" href="https://github.com/ioccc-src/winner/blob/master/2018/burton2/Makefile">Makefile</a>
   <a class="Right" href="#inventory">Inventory</a>
-  <a class="Right" href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fioccc-src.github.io%2Ftemp-test-ioccc%2F2018%2Fburton2%2Findex.html">&#x2713;</a>
+  <a class="Right" href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.ioccc.org%2F2018%2Fburton2%2Findex.html">&#x2713;</a>
 </div>
 
 <!-- END: this line ends content from: inc/navbar.mid.html -->
@@ -454,7 +454,7 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <pre><code>    man ./tac.1</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>They say size isn’t everything, and in the case of IOCCC
-<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/iocccsize.c">iocccsize.c</a> that is saying something!
+<a href="https://github.com/ioccc-src/winner/blob/master/2018/iocccsize.c">iocccsize.c</a> that is saying something!
 What is this program weighing and how much does it weigh?</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <h3 id="tac---tokenize-and-count-c-and-derivative-languages">tac - tokenize and count C and derivative languages:</h3>
@@ -557,10 +557,10 @@ but due to obfuscation, has had some significant, deep changes for the contest.<
 Nevertheless, the more clearly written code remains a spoiler for this entry.</p>
 </blockquote>
 <p>NB: <code>iocccsize</code> gets a different answer from <code>tac</code> on its own
-<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/iocccsize.c">iocccsize.c</a> source code;
+<a href="https://github.com/ioccc-src/winner/blob/master/2018/iocccsize.c">iocccsize.c</a> source code;
 <code>tac</code> gets the correct answer. This is due to the aforementioned bugs within <code>iocccsize</code>,
 proved by fixing
-<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/iocccsize.c">iocccsize.c</a> with the included patch, so <code>iocccsize</code> reports
+<a href="https://github.com/ioccc-src/winner/blob/master/2018/iocccsize.c">iocccsize.c</a> with the included patch, so <code>iocccsize</code> reports
 the correct answer for itself.</p>
 <h3 id="but-wait-theres-more">But wait… There’s More!</h3>
 <p>There is no limit on line length, file length, comment length, or identifier length.</p>
@@ -592,7 +592,7 @@ keyword distribution over time. The top five for the decades:</p>
 This allows such additional programs in concert with the tool’s primary operation.</p>
 <p>A poor-man’s de-obfuscator can be based upon the output of <code>tac -t</code> and a
 handful of simple rules (and another use of the external keyword file). A more
-refined version of this is included in the file <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/unob.sh">unob.sh</a>, but the
+refined version of this is included in the file <a href="https://github.com/ioccc-src/winner/blob/master/2018/burton2/unob.sh">unob.sh</a>, but the
 simple code below is a serviceable obfuscated C de-obfuscator in a <em>scripting
 language</em>. It really is this easy with <code>tac</code>:</p>
 <pre><code>    #!/usr/bin/env bash
@@ -658,7 +658,7 @@ Clang gets quite irate</em>.</p></li>
 <li><p>The code describes its function by careful arrangement of variables up front…</p></li>
 <li><p>…coupled with a description of the typical IOCCC contestant, or at least the author</p></li>
 <li><p>Why shouldn’t trigraph parsing be written in trigraph?</p></li>
-<li><p>Where <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/iocccsize.c">iocccsize.c</a> mocks, this code flaunts:
+<li><p>Where <a href="https://github.com/ioccc-src/winner/blob/master/2018/iocccsize.c">iocccsize.c</a> mocks, this code flaunts:
 “<em>no matter how well you may think you understand this code, you don’t, so don’t mess with it. :-)</em>”</p></li>
 <li><p><code>O,0,l,1</code> are used to confusing effect, local names obscure global names.</p></li>
 <li><p>Globals are used to pass information between routines: don’t reorder “unrelated” statements….</p></li>
@@ -674,26 +674,26 @@ using a different list. For instance: removing all the secondary keywords;
 removing all the C11 keywords; trying just K&amp;R C. Since C++ and Java share the
 same operators as C, just change the keyword list and <code>tac</code> will correctly
 tokenize both of these; the tokens <code>&gt;&gt;&gt;</code> and <code>::</code> can be handled with a short
-post-filter (<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/tokenfix.sh">tokenfix.sh</a>, included).</p>
+post-filter (<a href="https://github.com/ioccc-src/winner/blob/master/2018/burton2/tokenfix.sh">tokenfix.sh</a>, included).</p>
 <p>I believe this entry may also satisfy the request for gratuitous use of all the
 C11 keywords? Whether this context satisfies “intended C language context” is a
 matter of interpretation. ;-) And <code>tac</code> is ready for the IOCCC++ contest. And
 the IOJCC trash can.</p>
 <p>The following reserved word files are included:</p>
 <ul>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/kandr">kandr</a> from my venerable 1978 18th printing “The C Programming Language”</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/v7unix">v7unix</a> 7th edition Unix source code, extracted from c00.c</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/kandr2">kandr2</a> from my 1988 1st printing “The C Programming Language”, 2e</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/ansi">ansi</a> ANSI X3.159-1989</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/c99">c99</a> ISO/IEC 9899:1999(E)</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/c11">c11</a> ISO/IEC 9899:201x(E) N1570</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/c++98">c++98</a> http://en.cppreference.com/w/cpp/keyword</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/c++11">c++11</a> ISO/IEC 14882:2011(E) N3337 2012-01-16</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/c++14">c++14</a> ISO/IEC 14882:2014(E) N4296 2014-11-09</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/java8">java8</a> <a href="http://docs.oracle.com/javase/specs/index.html" class="uri">http://docs.oracle.com/javase/specs/index.html</a></li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/ioccc.kw.freq">ioccc.kw.freq</a> c11 + additional words, sorted on frequency of occurrence in IOCCC entries</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2018/burton2/kandr">kandr</a> from my venerable 1978 18th printing “The C Programming Language”</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2018/burton2/v7unix">v7unix</a> 7th edition Unix source code, extracted from c00.c</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2018/burton2/kandr2">kandr2</a> from my 1988 1st printing “The C Programming Language”, 2e</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2018/burton2/ansi">ansi</a> ANSI X3.159-1989</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2018/burton2/c99">c99</a> ISO/IEC 9899:1999(E)</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2018/burton2/c11">c11</a> ISO/IEC 9899:201x(E) N1570</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2018/burton2/c++98">c++98</a> http://en.cppreference.com/w/cpp/keyword</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2018/burton2/c++11">c++11</a> ISO/IEC 14882:2011(E) N3337 2012-01-16</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2018/burton2/c++14">c++14</a> ISO/IEC 14882:2014(E) N4296 2014-11-09</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2018/burton2/java8">java8</a> <a href="http://docs.oracle.com/javase/specs/index.html" class="uri">http://docs.oracle.com/javase/specs/index.html</a></li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2018/burton2/ioccc.kw.freq">ioccc.kw.freq</a> c11 + additional words, sorted on frequency of occurrence in IOCCC entries</li>
 </ul>
-<p>NB: The keyword file used in this code is derived from the list in <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/iocccsize.c">iocccsize.c</a>,
+<p>NB: The keyword file used in this code is derived from the list in <a href="https://github.com/ioccc-src/winner/blob/master/2018/iocccsize.c">iocccsize.c</a>,
 which is neither complete (<code>#define</code>, <code>#ifndef</code>, <code>#undef</code> are missing</p>
 <pre><code>    yes, Virginia knows about `#define` omitted on purpose</code></pre>
 <p>nor correct (many more are added: <code>I</code>, <code>true</code>, <code>bool</code>, <code>compl</code>, …):</p>
@@ -728,12 +728,12 @@ NB: This is <em>not</em> a portability concern, the one string holds only printa
 <pre><code>    cc -ansi -Wall -trigraphs -Wno-trigraphs -Wno-parentheses -Wno-empty-body -Wno-char-subscripts -Wno-pointer-sign -DU=O -DW=\&quot;keywords\&quot; -o prog prog.c</code></pre>
 <h3 id="final-remarks">Final remarks:</h3>
 <p><a href="../../authors.html#Cody_Boone_Ferguson">Cody Boone Ferguson</a> was relentless in his pursuit of bugs.
-Thanks to his reports, the version of <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/unob.sh">unob.sh</a> is stronger,
-<code>tac</code> groks digraphs, <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/tokenfix.sh">tokenfix.sh</a> corrects for missing digraphs
-in <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/prog.c">prog.c</a>, and the program
-<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/manpage.sh">manpage.sh</a> was added to the corpus.</p>
-<p><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/manpage.sh">manpage.sh</a> is a useful program that turns ASCII versions of man
-pages (e.g., <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/tac.1">tac(1)</a> man page) into real man pages. It works for C and C-like
+Thanks to his reports, the version of <a href="https://github.com/ioccc-src/winner/blob/master/2018/burton2/unob.sh">unob.sh</a> is stronger,
+<code>tac</code> groks digraphs, <a href="https://github.com/ioccc-src/winner/blob/master/2018/burton2/tokenfix.sh">tokenfix.sh</a> corrects for missing digraphs
+in <a href="https://github.com/ioccc-src/winner/blob/master/2018/burton2/prog.c">prog.c</a>, and the program
+<a href="https://github.com/ioccc-src/winner/blob/master/2018/burton2/manpage.sh">manpage.sh</a> was added to the corpus.</p>
+<p><a href="https://github.com/ioccc-src/winner/blob/master/2018/burton2/manpage.sh">manpage.sh</a> is a useful program that turns ASCII versions of man
+pages (e.g., <a href="https://github.com/ioccc-src/winner/blob/master/2018/burton2/tac.1">tac(1)</a> man page) into real man pages. It works for C and C-like
 languages, command lines, and was designed to handle man page sections 1-8. It
 works well on most inputs, but tends to need some raw nroff for more fancy
 constructions, such as combined arguments (e.g. the <code>-r</code> and <code>-s</code> arguments to tac
@@ -746,7 +746,7 @@ are not recognised when written as <code>-rs</code> in prose).</p>
     ./manpage.sh -h | ./manpage.sh -R | less
     ./manpage.sh -h | ./manpage.sh -P | lpr</code></pre>
 <p><strong>NOTE</strong>: in 2023 the <code>tac.man</code> was updated to proper man format and renamed
-<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/tac.1">tac.1</a>.</p>
+<a href="https://github.com/ioccc-src/winner/blob/master/2018/burton2/tac.1">tac.1</a>.</p>
 <!--
 
     Copyright © 1984-2024 by Landon Curt Noll. All Rights Reserved.
@@ -772,69 +772,69 @@ are not recognised when written as <code>-rs</code> in prose).</p>
 </div>
 <h2 id="primary-files">Primary files</h2>
 <ul>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/prog.c">prog.c</a> - entry source code</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/Makefile">Makefile</a> - entry Makefile</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/prog.orig.c">prog.orig.c</a> - original source code</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2018/burton2/prog.c">prog.c</a> - entry source code</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2018/burton2/Makefile">Makefile</a> - entry Makefile</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2018/burton2/prog.orig.c">prog.orig.c</a> - original source code</li>
 <li><a href="discrepancies.html">discrepancies.html</a> - field-by-field difference between iocccsize and entry’s ioc</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/freqcount.sh">freqcount.sh</a> - frequency count utility</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/tac.1">tac.1</a> - tac.c man page</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/tokcount.sh">tokcount.sh</a> - count the tokens produced by ./prog -t</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/try.sh">try.sh</a> - script to try entry</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/fixed_iocccsize.c">fixed_iocccsize.c</a> - iocccsize.c with author patch applied</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/iocccbug01.c">iocccbug01.c</a> - test cases demonstrating problems with iocccsize</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/iocccbug02.c">iocccbug02.c</a> - test cases demonstrating problems with iocccsize</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/iocccbug03.c">iocccbug03.c</a> - test cases demonstrating problems with iocccsize</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/iocccbug04.c">iocccbug04.c</a> - test cases demonstrating problems with iocccsize</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/iocccbug05.c">iocccbug05.c</a> - test cases demonstrating problems with iocccsize</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/iocccbug06.c">iocccbug06.c</a> - test cases demonstrating problems with iocccsize</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2018/burton2/freqcount.sh">freqcount.sh</a> - frequency count utility</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2018/burton2/tac.1">tac.1</a> - tac.c man page</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2018/burton2/tokcount.sh">tokcount.sh</a> - count the tokens produced by ./prog -t</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2018/burton2/try.sh">try.sh</a> - script to try entry</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2018/burton2/fixed_iocccsize.c">fixed_iocccsize.c</a> - iocccsize.c with author patch applied</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2018/burton2/iocccbug01.c">iocccbug01.c</a> - test cases demonstrating problems with iocccsize</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2018/burton2/iocccbug02.c">iocccbug02.c</a> - test cases demonstrating problems with iocccsize</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2018/burton2/iocccbug03.c">iocccbug03.c</a> - test cases demonstrating problems with iocccsize</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2018/burton2/iocccbug04.c">iocccbug04.c</a> - test cases demonstrating problems with iocccsize</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2018/burton2/iocccbug05.c">iocccbug05.c</a> - test cases demonstrating problems with iocccsize</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2018/burton2/iocccbug06.c">iocccbug06.c</a> - test cases demonstrating problems with iocccsize</li>
 <li><a href="ioccc.kw.freq">ioccc.kw.freq</a> - C keywords sorted by 201x frequency</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/ioc_without_quote">ioc_without_quote</a> - test suite data</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/manpage.sh">manpage.sh</a> - turns ASCII versions of man into real man pages</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/mkkeywords.sh">mkkeywords.sh</a> - reads a file from variations - produces string for prog.c</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2018/burton2/ioc_without_quote">ioc_without_quote</a> - test suite data</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2018/burton2/manpage.sh">manpage.sh</a> - turns ASCII versions of man into real man pages</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2018/burton2/mkkeywords.sh">mkkeywords.sh</a> - reads a file from variations - produces string for prog.c</li>
 <li><a href="results.k">results.k</a> - results with -k option</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/tac.c">tac.c</a> - tokenize and count C-like languages</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/test01.c">test01.c</a> - test case source code</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/test02.c">test02.c</a> - test case source code</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/test03.c">test03.c</a> - test case source code</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/test04.c">test04.c</a> - test case source code</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/test05.c">test05.c</a> - test case source code</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/test06.c">test06.c</a> - test case source code</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/test07.c">test07.c</a> - test case source code</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/test08.c">test08.c</a> - test case source code</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/test09.c">test09.c</a> - test case source code</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/test10.c">test10.c</a> - test case source code</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/test11.c">test11.c</a> - test case source code</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/test12.c">test12.c</a> - test case source code</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/test13.c">test13.c</a> - test case source code</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/test14.c">test14.c</a> - test case source code</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/tokenfix.sh">tokenfix.sh</a> - short post-filter</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/unob.sh">unob.sh</a> - refined version of de-obfuscator</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/ansi">ansi</a> - reserved words for ANSI C standard</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2018/burton2/tac.c">tac.c</a> - tokenize and count C-like languages</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2018/burton2/test01.c">test01.c</a> - test case source code</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2018/burton2/test02.c">test02.c</a> - test case source code</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2018/burton2/test03.c">test03.c</a> - test case source code</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2018/burton2/test04.c">test04.c</a> - test case source code</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2018/burton2/test05.c">test05.c</a> - test case source code</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2018/burton2/test06.c">test06.c</a> - test case source code</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2018/burton2/test07.c">test07.c</a> - test case source code</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2018/burton2/test08.c">test08.c</a> - test case source code</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2018/burton2/test09.c">test09.c</a> - test case source code</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2018/burton2/test10.c">test10.c</a> - test case source code</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2018/burton2/test11.c">test11.c</a> - test case source code</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2018/burton2/test12.c">test12.c</a> - test case source code</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2018/burton2/test13.c">test13.c</a> - test case source code</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2018/burton2/test14.c">test14.c</a> - test case source code</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2018/burton2/tokenfix.sh">tokenfix.sh</a> - short post-filter</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2018/burton2/unob.sh">unob.sh</a> - refined version of de-obfuscator</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2018/burton2/ansi">ansi</a> - reserved words for ANSI C standard</li>
 <li><a href="author-README.txt">author-README.txt</a> - author supplied README</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/c++11">c++11</a> - reserved words for C++11 standard</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/c11">c11</a> - reserved words for C11 standard</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/c++14">c++14</a> - reserved words for C++14 standard</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/c++98">c++98</a> - reserved words for C++98 standard</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/c99">c99</a> - reserved words for C99 standard</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/java8">java8</a> - reserved words for Java v8</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/kandr2">kandr2</a> - reserved words for K&amp;amp;R2 C</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/kandr">kandr</a> - reserved words for K&amp;amp;R C</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/patch">patch</a> - author supplied patch to fix iocccsize.c source</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/results">results</a> - results without -k</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/runtest.sh">runtest.sh</a> - test suite</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/spotcheck.sh">spotcheck.sh</a> - script to test a lot of files vs iocccsize</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2018/burton2/c++11">c++11</a> - reserved words for C++11 standard</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2018/burton2/c11">c11</a> - reserved words for C11 standard</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2018/burton2/c++14">c++14</a> - reserved words for C++14 standard</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2018/burton2/c++98">c++98</a> - reserved words for C++98 standard</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2018/burton2/c99">c99</a> - reserved words for C99 standard</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2018/burton2/java8">java8</a> - reserved words for Java v8</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2018/burton2/kandr2">kandr2</a> - reserved words for K&amp;amp;R2 C</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2018/burton2/kandr">kandr</a> - reserved words for K&amp;amp;R C</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2018/burton2/patch">patch</a> - author supplied patch to fix iocccsize.c source</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2018/burton2/results">results</a> - results without -k</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2018/burton2/runtest.sh">runtest.sh</a> - test suite</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2018/burton2/spotcheck.sh">spotcheck.sh</a> - script to test a lot of files vs iocccsize</li>
 <li><a href="v7unix">v7unix</a> - reserved words for a v7 UNIX C standard</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/spotdiff.sh">spotdiff.sh</a> - summarize the results of spotcheck</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2018/burton2/spotdiff.sh">spotdiff.sh</a> - summarize the results of spotcheck</li>
 <li><a href="src.doc.txt">src.doc.txt</a> - deobfuscation hints about the source code</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
 <li><a href="2018_burton2.tar.bz2">2018_burton2.tar.bz2</a> - download entry tarball</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/README.md">README.md</a> - markdown source for this web page</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/discrepancies.md">discrepancies.md</a> - markdown source for discrepancies.html</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/.entry.json">.entry.json</a> - entry summary and manifest in JSON</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/.gitignore">.gitignore</a> - list of files that should not be committed under git</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2018/burton2/.path">.path</a> - directory path from top level directory</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2018/burton2/README.md">README.md</a> - markdown source for this web page</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2018/burton2/discrepancies.md">discrepancies.md</a> - markdown source for discrepancies.html</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2018/burton2/.entry.json">.entry.json</a> - entry summary and manifest in JSON</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2018/burton2/.gitignore">.gitignore</a> - list of files that should not be committed under git</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2018/burton2/.path">.path</a> - directory path from top level directory</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 </ul>
 <hr style="width:10%;text-align:left;margin-left:0">
@@ -902,7 +902,7 @@ Jump to: <a href="#">top</a>
 
     <div id="coda"><h3>Coda</h3>
 	<p>
-	<a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fioccc-src.github.io%2Ftemp-test-ioccc%2F2018%2Fburton2%2Findex.html" rel="nofollow">Nu HTML check this web page</a><br>
+	<a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.ioccc.org%2F2018%2Fburton2%2Findex.html" rel="nofollow">Nu HTML check this web page</a><br>
 	<a href="#top">Jump to top</a> <a href="#content">Jump to Content</a> <a href="#inventory">Jump to Inventory</a><br>
 	</p>
     </div>

@@ -139,7 +139,7 @@ PANDOC_OPTION+=("html5")
 PANDOC_OPTION+=("--wrap=preserve")
 PANDOC_OPTION+=("--fail-if-warnings")
 PANDOC_OPTION+=("--tab-stop=8")
-export REPO_TOP_URL="https://github.com/ioccc-src/temp-test-ioccc"
+export REPO_TOP_URL="https://github.com/ioccc-src/winner"
 # GitHub puts individual files under the "blob/master" sub-directory.
 export REPO_URL="$REPO_TOP_URL/blob/master"
 

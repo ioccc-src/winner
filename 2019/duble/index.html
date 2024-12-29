@@ -416,10 +416,10 @@
   <a class="Left" href="../dogon/index.html">&larr; 2019/dogon</a>
   <a class="Left" href="../index.html">&uarr; 2019 &uarr;</a>
   <a class="Left" href="../endoh/index.html">2019/endoh &rarr;</a>
-  <a class="Right" href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/duble/prog.c">C code</a>
-  <a class="Right" href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/duble/Makefile">Makefile</a>
+  <a class="Right" href="https://github.com/ioccc-src/winner/blob/master/2019/duble/prog.c">C code</a>
+  <a class="Right" href="https://github.com/ioccc-src/winner/blob/master/2019/duble/Makefile">Makefile</a>
   <a class="Right" href="#inventory">Inventory</a>
-  <a class="Right" href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fioccc-src.github.io%2Ftemp-test-ioccc%2F2019%2Fduble%2Findex.html">&#x2713;</a>
+  <a class="Right" href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.ioccc.org%2F2019%2Fduble%2Findex.html">&#x2713;</a>
 </div>
 
 <!-- END: this line ends content from: inc/navbar.mid.html -->
@@ -491,7 +491,7 @@ in the beginning this will also happen. This is discussed in
 directory which you’ll have to delete manually. This is also discussed in
 <a href="../../bugs.html#2019_duble">2019/duble in bugs.html</a>.</p>
 <h2 id="alternate-code">Alternate code:</h2>
-<p>An alternate version of this entry, <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/duble/prog.alt.c">prog.alt.c</a>, is provided. This
+<p>An alternate version of this entry, <a href="https://github.com/ioccc-src/winner/blob/master/2019/duble/prog.alt.c">prog.alt.c</a>, is provided. This
 alternate code might not work as well in macOS.</p>
 <h3 id="alternate-build">Alternate build:</h3>
 <pre><code>    make alt</code></pre>
@@ -579,8 +579,8 @@ with a different size!</strong></li>
 so any peer reaching the session should have a terminal with the same
 size or larger.</li>
 </ul>
-<h3 id="prog.c-vs-prog.alt.c"><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/duble/prog.c">prog.c</a> vs <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/duble/prog.alt.c">prog.alt.c</a></h3>
-<p>The file <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/duble/prog.alt.c">prog.alt.c</a> is the one I submitted.</p>
+<h3 id="prog.c-vs-prog.alt.c"><a href="https://github.com/ioccc-src/winner/blob/master/2019/duble/prog.c">prog.c</a> vs <a href="https://github.com/ioccc-src/winner/blob/master/2019/duble/prog.alt.c">prog.alt.c</a></h3>
+<p>The file <a href="https://github.com/ioccc-src/winner/blob/master/2019/duble/prog.alt.c">prog.alt.c</a> is the one I submitted.</p>
 <p>The judges proposed a small update: the program was using macro <code>FD_SET</code> inside an
 expression, which breaks compilation on macOS. Wrapping this macro into a
 function was enough to fix this compilation issue.</p>
@@ -588,12 +588,12 @@ function was enough to fix this compilation issue.</p>
 the program you will see that it heavily relies on OS resources. And, for this
 first version of the program, you even needed to increase default <code>sysctl</code>
 parameters to make it work on FreeBSD (this was the purpose of the
-<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/duble/check-os.sh">check-os.sh</a> file). I tried hard to tune macOS the same, but failed.</p>
+<a href="https://github.com/ioccc-src/winner/blob/master/2019/duble/check-os.sh">check-os.sh</a> file). I tried hard to tune macOS the same, but failed.</p>
 <p>The simple fact the Judges proposed this update meant they wish it could work on
 Mac. And if the judges wish something, it <strong>has to</strong> be done. ;) So I
 refactored a little more the program to reduce OS resources consumption. Or
 maybe not reduce consumption, but consume them differently… And I obtained
-<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/duble/prog.c">prog.c</a>. With this version, no need to touch <code>sysctl</code> parameters, and
+<a href="https://github.com/ioccc-src/winner/blob/master/2019/duble/prog.c">prog.c</a>. With this version, no need to touch <code>sysctl</code> parameters, and
 it works on macOS too! I must confess it was challenging to remain below the
 size limit with this little change.</p>
 <h3 id="notice-to-those-who-wish-for-a-greater-challenge">NOTICE to those who wish for a greater challenge:</h3>
@@ -627,20 +627,20 @@ just try to understand the program via the source.</p>
 </div>
 <h2 id="primary-files">Primary files</h2>
 <ul>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/duble/prog.c">prog.c</a> - entry source code</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/duble/Makefile">Makefile</a> - entry Makefile</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/duble/prog.alt.c">prog.alt.c</a> - alternate source code</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/duble/prog.orig.c">prog.orig.c</a> - original source code</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/duble/check-os.sh">check-os.sh</a> - script to check OS compatibility</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/duble/fullscreen.sh">fullscreen.sh</a> - script to determine full screen size for make fullscreen</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2019/duble/prog.c">prog.c</a> - entry source code</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2019/duble/Makefile">Makefile</a> - entry Makefile</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2019/duble/prog.alt.c">prog.alt.c</a> - alternate source code</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2019/duble/prog.orig.c">prog.orig.c</a> - original source code</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2019/duble/check-os.sh">check-os.sh</a> - script to check OS compatibility</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2019/duble/fullscreen.sh">fullscreen.sh</a> - script to determine full screen size for make fullscreen</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
 <li><a href="2019_duble.tar.bz2">2019_duble.tar.bz2</a> - download entry tarball</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/duble/README.md">README.md</a> - markdown source for this web page</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/duble/.entry.json">.entry.json</a> - entry summary and manifest in JSON</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/duble/.gitignore">.gitignore</a> - list of files that should not be committed under git</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/duble/.path">.path</a> - directory path from top level directory</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2019/duble/README.md">README.md</a> - markdown source for this web page</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2019/duble/.entry.json">.entry.json</a> - entry summary and manifest in JSON</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2019/duble/.gitignore">.gitignore</a> - list of files that should not be committed under git</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2019/duble/.path">.path</a> - directory path from top level directory</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 </ul>
 <hr style="width:10%;text-align:left;margin-left:0">
@@ -708,7 +708,7 @@ Jump to: <a href="#">top</a>
 
     <div id="coda"><h3>Coda</h3>
 	<p>
-	<a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fioccc-src.github.io%2Ftemp-test-ioccc%2F2019%2Fduble%2Findex.html" rel="nofollow">Nu HTML check this web page</a><br>
+	<a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.ioccc.org%2F2019%2Fduble%2Findex.html" rel="nofollow">Nu HTML check this web page</a><br>
 	<a href="#top">Jump to top</a> <a href="#content">Jump to Content</a> <a href="#inventory">Jump to Inventory</a><br>
 	</p>
     </div>

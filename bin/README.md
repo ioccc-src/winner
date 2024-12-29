@@ -5,13 +5,12 @@
 > An answer to (Monty)? Pythonesque question of why these tools
 > weren't written in a certain language.  :-)
 
-The [bin directory](index.html) holds tools that build files, such as HTML
-content, for the [official IOCCC website](https://www.ioccc.org).
+The [bin directory](index.html) holds tools that build files, such as HTML content, for the
+[official IOCCC website](https://www.ioccc.org).
 
 For HTML content, the [bin directory](index.html) tools make use of HTML
 fragments from the [inc directory](../inc/index.html) as well as various JSON
-files and other content from the [IOCCC GitHub
-repo](https://github.com/ioccc-src/temp-test-ioccc).
+files and other content from the [official IOCCC winner repo](https://github.com/ioccc-src/winner).
 
 
 ## [bin/](index.html) tools options
@@ -1252,8 +1251,8 @@ We recommend that this tool be invoked via the top level `Makefile`:
 </div>
 
 The [md2html.sh](index.html#md2html) tool is the primary tool that
-is used to form all IOCCC related HTML pages for the [official IOCCC web
-site](https://www.ioccc.org).
+is used to form all IOCCC related HTML pages for the
+[official IOCCC website](https://www.ioccc.org).
 
 Nearly all IOCCC related HTML pages are built from markdown files,
 from either permanent markdown files or temporary generated markdown files,
@@ -1507,9 +1506,6 @@ how such command lines are used.
 Some of the files under this directory are used to form **MOST** of the HTML content
 on the [official IOCCC website](https://www.ioccc.org).
 
-These files are used to form **MOST** of the HTML content
-on the [experimental website](https://ioccc-src.github.io/temp-test-ioccc/).
-
 ... and in particular files under [inc](../inc/index.html) that are of the form
 (called default HTML files) ...:
 
@@ -1539,8 +1535,8 @@ solutions available to form web pages.
 Here are some reasons why we are using these files and
 special tools to create HTML content / IOCCC web pages:
 
-We host [official IOCCC website](https://www.ioccc.org) via [GitHub
-pages](https://pages.github.com).  As of the time this file written, **only
+We host the [official IOCCC website](https://www.ioccc.org) via
+[GitHub pages](https://pages.github.com).  As of the time this file written, **only
 static web pages are supported**.
 
 
@@ -1627,8 +1623,9 @@ C source code, we will do so in such a way that someone will be able to view
 [official IOCCC website](https://www.ioccc.org) content with JavaScript
 disabled.
 
-The IOCCC will **NOT MANDATE USE OF JavaScript** to view [official IOCCC web
-site](https://www.ioccc.org) (except for some mobile devices for the menu).
+The IOCCC will **NOT MANDATE USE OF JavaScript** to view
+[official IOCCC website](https://www.ioccc.org)
+(except for some mobile devices for the menu).
 
 For this reason, we cannot use JavaScript to include HTML content.
 
@@ -1638,8 +1635,8 @@ For this reason, we cannot use JavaScript to include HTML content.
 </div>
 
 The following IOCCC terms apply to tools, JSON files, and the directory
-structure of this repo that forms the [Official IOCCC
-website](https://www.ioccc.org).
+structure of this repo that forms the
+[official IOCCC website](https://www.ioccc.org).
 
 
 <div id="author">

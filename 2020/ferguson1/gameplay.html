@@ -413,7 +413,7 @@
 
 <div class="navbar">
   <a class="Left" href="index.html">&uarr; jump to 2020/ferguson1/index.html &uarr;</a>
-  <a class="Right" href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fioccc-src.github.io%2Ftemp-test-ioccc%2F2020%2Fferguson1%2Fgameplay.html">&#x2713;</a>
+  <a class="Right" href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.ioccc.org%2F2020%2Fferguson1%2Fgameplay.html">&#x2713;</a>
 </div>
 
 <!-- END: this line ends content from: inc/navbar.up2index.html -->
@@ -807,7 +807,7 @@ modes! There are certainly other modes that could be imagined: the modes below
 happened over time and some were simply an accidental discovery or something I
 thought of by a chance; others were thought out from the beginning but were
 improved over time.</p>
-<p>The <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/ferguson1/play.sh">play.sh</a> script sets up some of these automatically; I describe it after
+<p>The <a href="https://github.com/ioccc-src/winner/blob/master/2020/ferguson1/play.sh">play.sh</a> script sets up some of these automatically; I describe it after
 the modes below.</p>
 <div id="warning">
 <h2 id="photosensitive-epilepsystimulation-overload-trigger-warnings"><a href="#toc">Photosensitive epilepsy/Stimulation overload trigger warnings</a></h2>
@@ -843,7 +843,7 @@ to be a problem simply do:</p>
 <p>Or something like that (maybe make the size bigger but that’s up to you). You
 could also set the max size to be the highest possible by saying</p>
 <pre><code>    MAXSIZE=-1</code></pre>
-<p>Which I’ve done in the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/ferguson1/play.sh">play.sh</a> script.</p>
+<p>Which I’ve done in the <a href="https://github.com/ioccc-src/winner/blob/master/2020/ferguson1/play.sh">play.sh</a> script.</p>
 <p>I discuss how this mode works in <a href="obfuscation.html">obfuscation.html</a>.</p>
 <p>Here’s an example run where I spelt ‘SNAKE’. As you can see it’s far from
 perfect: the snake after all does not leave gaps and the game does not support
@@ -897,7 +897,7 @@ thought of):</p>
 shows to be 10 characters depends on whether or not it gets a bug before it can
 get to that length - and then it’ll start shrinking until it’s just the head
 then the head again (i.e. 1 then 0 in size) and then win! This is also in the
-<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/ferguson1/play.sh">play.sh</a> script.</p>
+<a href="https://github.com/ioccc-src/winner/blob/master/2020/ferguson1/play.sh">play.sh</a> script.</p>
 <h4 id="adjusting-the-timespeed">Adjusting the time/speed</h4>
 <p>Of course you can also do something like:</p>
 <pre><code>    WAIT=5 WALLS=1 CANNIBAL=1 ./prog</code></pre>
@@ -940,10 +940,10 @@ could reverse it so that one shrinks more than growing.</p>
 <p>The <a href="ferguson1/crazy.log.html">crazy.log.html</a> file has several screen
 dumps with this idea.</p>
 <p>You could also have it so that eating a bug makes you shrink and moving so many
-moves you grow. I tried this and for me it was far more fun. The <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/ferguson1/play.sh">play.sh</a>
+moves you grow. I tried this and for me it was far more fun. The <a href="https://github.com/ioccc-src/winner/blob/master/2020/ferguson1/play.sh">play.sh</a>
 also has this mode:</p>
 <pre><code>    SIZE=100 SHEDS=5 GROW=-10 SHED=50 MAXSIZE=250 ./prog</code></pre>
-<p>Obviously there are many other variations. The <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/ferguson1/play.sh">play.sh</a> script has some
+<p>Obviously there are many other variations. The <a href="https://github.com/ioccc-src/winner/blob/master/2020/ferguson1/play.sh">play.sh</a> script has some
 of them (the above is option 5; others are 4, 15 and 16 but only options 4 and 5
 are called Grow / Shrink).</p>
 <div id="hypnotic">
@@ -991,7 +991,7 @@ this file discusses as well as allowing to easily change the colours.</p>
 <div id="colours">
 <h2 id="colours-selection-snake-colours"><a href="#toc">Colours selection: snake-colours</a></h2>
 </div>
-<p>To do this use the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/ferguson1/snake-colours.sh">snake-colours.sh</a> script like so:</p>
+<p>To do this use the <a href="https://github.com/ioccc-src/winner/blob/master/2020/ferguson1/snake-colours.sh">snake-colours.sh</a> script like so:</p>
 <pre><code>    ./snake-colours.sh</code></pre>
 <p>If you want to pass in specific variables you can do that too e.g.:</p>
 <pre><code>    CANNIBAL=1 ./snake-colours.sh</code></pre>
@@ -1000,7 +1000,7 @@ bug.</p>
 <div id="preset">
 <h2 id="automate-the-above-gameplay-modes"><a href="#toc">Automate the above gameplay modes</a></h2>
 </div>
-<p>The <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/ferguson1/play.sh">play.sh</a> script has the gameplay modes described in this file and is menu
+<p>The <a href="https://github.com/ioccc-src/winner/blob/master/2020/ferguson1/play.sh">play.sh</a> script has the gameplay modes described in this file and is menu
 based (there might be differences and some of the modes I include a variation).
 The script tests the terminal (allowing you to continue even if problems are
 detected), prompts you if you want to select colours (like those in
@@ -1137,7 +1137,7 @@ years ago but I know it’s true now. <strong>Believe in yourself. Always.</stro
 
     <div id="coda"><h3>Coda</h3>
 	<p>
-	<a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fioccc-src.github.io%2Ftemp-test-ioccc%2F2020%2Fferguson1%2Fgameplay.html" rel="nofollow">Nu HTML check this web page</a><br>
+	<a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.ioccc.org%2F2020%2Fferguson1%2Fgameplay.html" rel="nofollow">Nu HTML check this web page</a><br>
 	<a href="#top">Jump to top</a> <a href="#content">Jump to Content</a>
 	</p>
     </div>

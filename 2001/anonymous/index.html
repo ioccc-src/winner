@@ -416,10 +416,10 @@
   <a class="Left" href="../../2000/tomx/index.html">&larr; 2000/tomx</a>
   <a class="Left" href="../index.html">&uarr; 2001 &uarr;</a>
   <a class="Left" href="../bellard/index.html">2001/bellard &rarr;</a>
-  <a class="Right" href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/anonymous/anonymous.c">C code</a>
-  <a class="Right" href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/anonymous/Makefile">Makefile</a>
+  <a class="Right" href="https://github.com/ioccc-src/winner/blob/master/2001/anonymous/anonymous.c">C code</a>
+  <a class="Right" href="https://github.com/ioccc-src/winner/blob/master/2001/anonymous/Makefile">Makefile</a>
   <a class="Right" href="#inventory">Inventory</a>
-  <a class="Right" href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fioccc-src.github.io%2Ftemp-test-ioccc%2F2001%2Fanonymous%2Findex.html">&#x2713;</a>
+  <a class="Right" href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.ioccc.org%2F2001%2Fanonymous%2Findex.html">&#x2713;</a>
 </div>
 
 <!-- END: this line ends content from: inc/navbar.mid.html -->
@@ -447,7 +447,7 @@ Location: <a href="../../location.html#GB">GB</a> - <em>United Kingdom of Great 
 <h2 id="to-build">To build:</h2>
 <pre><code>    make</code></pre>
 <p>The programs that this program is supposed to act on,
-<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/anonymous/anonymous.ten.c">anonymous.ten.c</a> and <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/anonymous/anonymous.bed.c">anonymous.bed.c</a>,
+<a href="https://github.com/ioccc-src/winner/blob/master/2001/anonymous/anonymous.ten.c">anonymous.ten.c</a> and <a href="https://github.com/ioccc-src/winner/blob/master/2001/anonymous/anonymous.bed.c">anonymous.bed.c</a>,
 compiled with <code>make</code>, <strong>MUST</strong> be compiled as <strong>32-bit ELF binaries</strong>. In the case that
 this fails these programs will be compiled as 64-bit binaries as alternate code,
 <code>anonymous.ten.alt</code> and <code>anonymous.bed.alt</code>, ELF or otherwise. However trying to
@@ -467,11 +467,11 @@ whatever your system will compile them as).</p>
 
     ./anonymous anonymous.bed # if able to compile as a 32-bit (-m32) ELF binary</code></pre>
 <p><strong>NOTE</strong>: if the 32-bit version cannot be compiled the script will at least compile
-<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/anonymous/anonymous.ten.c">anonymous.ten</a> as a 64-bit program (or whatever your system is
+<a href="https://github.com/ioccc-src/winner/blob/master/2001/anonymous/anonymous.ten.c">anonymous.ten</a> as a 64-bit program (or whatever your system is
 set to) and run it directly.</p>
 <p>What happens if the x86 program has already been modified by this program? The
 judges’ remarks below might give you a hint!</p>
-<p>What happens if you try it on another file like <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/anonymous/anonymous.c">anonymous.c</a>? Can
+<p>What happens if you try it on another file like <a href="https://github.com/ioccc-src/winner/blob/master/2001/anonymous/anonymous.c">anonymous.c</a>? Can
 you recompile it okay? What if you run it on <code>anonymous</code> itself? Can you run the
 program successfully after it without recompiling?</p>
 <h2 id="alternate-code">Alternate code:</h2>
@@ -505,7 +505,7 @@ quite a lot of bit twiddling.</p>
 run x86 programs on any machine (x86 or otherwise).</p>
 <p>I have included a simple <a href="https://www.bbc.co.uk/teach/school-radio/nursery-rhymes-ten-green-bottles/zncyt39">10 Green
 Bottles</a>
-<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/anonymous/anonymous.ten.c">program</a> (try <code>make anonymous.ten</code>), meant to be compiled as a
+<a href="https://github.com/ioccc-src/winner/blob/master/2001/anonymous/anonymous.ten.c">program</a> (try <code>make anonymous.ten</code>), meant to be compiled as a
 32-bit ELF binary.</p>
 <p>The program <code>anonymous.ten</code>, and its source (dull) are included as data
 files.</p>
@@ -522,7 +522,7 @@ generates a translation for an entire basic block of subject code. Having
 translated a block once, the target code generated will be stored for the
 duration that the program is running, so as a program runs its performance will
 improve, as it hits cached blocks. This can be clearly observed in the example
-program, <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/anonymous/anonymous.ten.c">anonymous.ten</a> which must be compiled as a 32-bit ELF
+program, <a href="https://github.com/ioccc-src/winner/blob/master/2001/anonymous/anonymous.ten.c">anonymous.ten</a> which must be compiled as a 32-bit ELF
 binary.</p>
 <h3 id="target-library-linking">Target Library Linking:</h3>
 <p>The program runs <a href="https://en.wikipedia.org/wiki/Dynamic_linker">dynamically
@@ -589,7 +589,7 @@ can only pass up to 3 parameters to the target library function, etc.</p>
 <p>In short, please consider this a full disclaimer for any bug that may
 turn up - yes the program is unsafe, but it’s pretty cool anyway.</p>
 <p>Despite all this, the translator is not exclusively limited to running the
-<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/anonymous/anonymous.ten.c">anonymous.ten</a> program. Other trivial <strong><em>x86</em></strong> programs may
+<a href="https://github.com/ioccc-src/winner/blob/master/2001/anonymous/anonymous.ten.c">anonymous.ten</a> program. Other trivial <strong><em>x86</em></strong> programs may
 run on the translator - and I have successfully run a wide range of “Hello
 World” programs, including one of last year’s IOCCC entries,
 <a href="../../2000/tomx/index.html">2000/tomx</a>.</p>
@@ -629,20 +629,20 @@ just C programs that generate C code as their output.</p>
 </div>
 <h2 id="primary-files">Primary files</h2>
 <ul>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/anonymous/anonymous.c">anonymous.c</a> - entry source code</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/anonymous/Makefile">Makefile</a> - entry Makefile</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/anonymous/anonymous.orig.c">anonymous.orig.c</a> - original source code</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/anonymous/anonymous.bed.c">anonymous.bed.c</a> - Ten In the Bed song C source</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/anonymous/anonymous.ten.c">anonymous.ten.c</a> - Ten Green Bottles song C source</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/anonymous/try.sh">try.sh</a> - script to try entry</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2001/anonymous/anonymous.c">anonymous.c</a> - entry source code</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2001/anonymous/Makefile">Makefile</a> - entry Makefile</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2001/anonymous/anonymous.orig.c">anonymous.orig.c</a> - original source code</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2001/anonymous/anonymous.bed.c">anonymous.bed.c</a> - Ten In the Bed song C source</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2001/anonymous/anonymous.ten.c">anonymous.ten.c</a> - Ten Green Bottles song C source</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2001/anonymous/try.sh">try.sh</a> - script to try entry</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
 <li><a href="2001_anonymous.tar.bz2">2001_anonymous.tar.bz2</a> - download entry tarball</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/anonymous/README.md">README.md</a> - markdown source for this web page</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/anonymous/.entry.json">.entry.json</a> - entry summary and manifest in JSON</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/anonymous/.gitignore">.gitignore</a> - list of files that should not be committed under git</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2001/anonymous/.path">.path</a> - directory path from top level directory</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2001/anonymous/README.md">README.md</a> - markdown source for this web page</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2001/anonymous/.entry.json">.entry.json</a> - entry summary and manifest in JSON</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2001/anonymous/.gitignore">.gitignore</a> - list of files that should not be committed under git</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2001/anonymous/.path">.path</a> - directory path from top level directory</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 </ul>
 <hr style="width:10%;text-align:left;margin-left:0">
@@ -710,7 +710,7 @@ Jump to: <a href="#">top</a>
 
     <div id="coda"><h3>Coda</h3>
 	<p>
-	<a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fioccc-src.github.io%2Ftemp-test-ioccc%2F2001%2Fanonymous%2Findex.html" rel="nofollow">Nu HTML check this web page</a><br>
+	<a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.ioccc.org%2F2001%2Fanonymous%2Findex.html" rel="nofollow">Nu HTML check this web page</a><br>
 	<a href="#top">Jump to top</a> <a href="#content">Jump to Content</a> <a href="#inventory">Jump to Inventory</a><br>
 	</p>
     </div>

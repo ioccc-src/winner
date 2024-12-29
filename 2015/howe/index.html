@@ -416,10 +416,10 @@
   <a class="Left" href="../hou/index.html">&larr; 2015/hou</a>
   <a class="Left" href="../index.html">&uarr; 2015 &uarr;</a>
   <a class="Left" href="../mills1/index.html">2015/mills1 &rarr;</a>
-  <a class="Right" href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/howe/prog.c">C code</a>
-  <a class="Right" href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/howe/Makefile">Makefile</a>
+  <a class="Right" href="https://github.com/ioccc-src/winner/blob/master/2015/howe/prog.c">C code</a>
+  <a class="Right" href="https://github.com/ioccc-src/winner/blob/master/2015/howe/Makefile">Makefile</a>
   <a class="Right" href="#inventory">Inventory</a>
-  <a class="Right" href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fioccc-src.github.io%2Ftemp-test-ioccc%2F2015%2Fhowe%2Findex.html">&#x2713;</a>
+  <a class="Right" href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.ioccc.org%2F2015%2Fhowe%2Findex.html">&#x2713;</a>
 </div>
 
 <!-- END: this line ends content from: inc/navbar.mid.html -->
@@ -464,7 +464,7 @@ code</a> and the author’s remarks below for more details.</p>
 <p>This alternate version does not use a 64-bit FNV hash. This was the original
 entry but was changed to be the alt version. Later, in 2024, the author provided
 an unobfuscated version which is in
-<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/howe/prog.alt2.c">prog.alt2.c</a>.</p>
+<a href="https://github.com/ioccc-src/winner/blob/master/2015/howe/prog.alt2.c">prog.alt2.c</a>.</p>
 <h3 id="alternate-build">Alternate build:</h3>
 <p>To build these versions:</p>
 <pre><code>    make alt</code></pre>
@@ -488,8 +488,8 @@ during a South Park P.T.A. Meeting?</p>
 <p>Or should we teach our youth to understand the intricacies of this code?
 Ying Tong Iddle I Po! We suggest you read the source for yourself, which
 might be easier than the academic papers it was inspired by.</p>
-<p><strong>NOTE</strong>: Unlike the original entry source, <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/howe/prog.alt.c">prog.alt.c</a>,
-<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/howe/prog.c">prog.c</a> uses a
+<p><strong>NOTE</strong>: Unlike the original entry source, <a href="https://github.com/ioccc-src/winner/blob/master/2015/howe/prog.alt.c">prog.alt.c</a>,
+<a href="https://github.com/ioccc-src/winner/blob/master/2015/howe/prog.c">prog.c</a> uses a
 64 bit FNV hash and fixes a function call warning.</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <h3 id="features">Features</h3>
@@ -509,7 +509,7 @@ with <code>patch(1)</code>.</p>
 <p>The FNV1a hash is a little slow compared to the trivial hash <a href="https://www.gnu.org/software/diffutils/">GNU
 diff</a> uses. I downloaded a plain text
 copy of “War And Peace” from <a href="https://www.gutenberg.org">Project Gutenberg</a>,
-used <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/howe/makeholes.c">makeholes.c</a> to make 1000 random changes, then profiled and
+used <a href="https://github.com/ioccc-src/winner/blob/master/2015/howe/makeholes.c">makeholes.c</a> to make 1000 random changes, then profiled and
 timed the program verses GNU <code>diff(1)</code>. The bottleneck appears to be in the
 file I/O and line hashing with an average +0.05s slower. Using a huge file like
 “War And Peace” for testing offsets the <code>diff(1)</code> optimised file I/O.</p>
@@ -518,11 +518,11 @@ very <a href="http://programmers.stackexchange.com/questions/49550/which-hashing
 a region of edits are highly unlikely.</p>
 <h3 id="support-files">Support Files</h3>
 <ul>
-<li><p><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/howe/prog-test.sh">prog-test.sh</a>
+<li><p><a href="https://github.com/ioccc-src/winner/blob/master/2015/howe/prog-test.sh">prog-test.sh</a>
 Basic test program verifies known test edit distances and <code>patch(1)</code> support.</p></li>
-<li><p><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/howe/avgtime.sh">avgtime.sh</a>
+<li><p><a href="https://github.com/ioccc-src/winner/blob/master/2015/howe/avgtime.sh">avgtime.sh</a>
 Run <code>time(1)</code> on a command <code>N</code> times to determine its average runtime.</p></li>
-<li><p><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/howe/makeholes.c">makeholes.c</a>
+<li><p><a href="https://github.com/ioccc-src/winner/blob/master/2015/howe/makeholes.c">makeholes.c</a>
 Random edits (holes) made to a file in-place.</p></li>
 </ul>
 <h3 id="references">References</h3>
@@ -572,28 +572,28 @@ Comm. of ACM, Vol. 18, June 1975, pages 341-343<br>
 </div>
 <h2 id="primary-files">Primary files</h2>
 <ul>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/howe/prog.c">prog.c</a> - entry source code</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/howe/Makefile">Makefile</a> - entry Makefile</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/howe/prog.alt.c">prog.alt.c</a> - author provided source code without 64-bit FNV hash</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/howe/prog.orig.c">prog.orig.c</a> - original source code</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/howe/avgtime.sh">avgtime.sh</a> - report average time running a command N times</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/howe/makeholes.c">makeholes.c</a> - C code to add random holes to a file</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/howe/prog.alt-test.sh">prog.alt-test.sh</a> - script to run test suite with alternate code</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/howe/prog-test.sh">prog-test.sh</a> - script to run test suite</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/howe/try.alt.sh">try.alt.sh</a> - script to try alternate code</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/howe/try.sh">try.sh</a> - script to try entry</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/howe/cc.1">cc.1</a> - cc man page</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/howe/err.h">err.h</a> - author provided header file for unobfuscated code</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/howe/prog.alt2.c">prog.alt2.c</a> - author provided unobfuscated code</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2015/howe/prog.c">prog.c</a> - entry source code</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2015/howe/Makefile">Makefile</a> - entry Makefile</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2015/howe/prog.alt.c">prog.alt.c</a> - author provided source code without 64-bit FNV hash</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2015/howe/prog.orig.c">prog.orig.c</a> - original source code</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2015/howe/avgtime.sh">avgtime.sh</a> - report average time running a command N times</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2015/howe/makeholes.c">makeholes.c</a> - C code to add random holes to a file</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2015/howe/prog.alt-test.sh">prog.alt-test.sh</a> - script to run test suite with alternate code</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2015/howe/prog-test.sh">prog-test.sh</a> - script to run test suite</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2015/howe/try.alt.sh">try.alt.sh</a> - script to try alternate code</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2015/howe/try.sh">try.sh</a> - script to try entry</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2015/howe/cc.1">cc.1</a> - cc man page</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2015/howe/err.h">err.h</a> - author provided header file for unobfuscated code</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2015/howe/prog.alt2.c">prog.alt2.c</a> - author provided unobfuscated code</li>
 <li><a href="war-and-peace.txt">war-and-peace.txt</a> - War and Peace translated to English</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
 <li><a href="2015_howe.tar.bz2">2015_howe.tar.bz2</a> - download entry tarball</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/howe/README.md">README.md</a> - markdown source for this web page</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/howe/.entry.json">.entry.json</a> - entry summary and manifest in JSON</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/howe/.gitignore">.gitignore</a> - list of files that should not be committed under git</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2015/howe/.path">.path</a> - directory path from top level directory</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2015/howe/README.md">README.md</a> - markdown source for this web page</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2015/howe/.entry.json">.entry.json</a> - entry summary and manifest in JSON</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2015/howe/.gitignore">.gitignore</a> - list of files that should not be committed under git</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2015/howe/.path">.path</a> - directory path from top level directory</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 </ul>
 <hr style="width:10%;text-align:left;margin-left:0">
@@ -661,7 +661,7 @@ Jump to: <a href="#">top</a>
 
     <div id="coda"><h3>Coda</h3>
 	<p>
-	<a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fioccc-src.github.io%2Ftemp-test-ioccc%2F2015%2Fhowe%2Findex.html" rel="nofollow">Nu HTML check this web page</a><br>
+	<a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.ioccc.org%2F2015%2Fhowe%2Findex.html" rel="nofollow">Nu HTML check this web page</a><br>
 	<a href="#top">Jump to top</a> <a href="#content">Jump to Content</a> <a href="#inventory">Jump to Inventory</a><br>
 	</p>
     </div>

@@ -416,10 +416,10 @@
   <a class="Left" href="../hoyle/index.html">&larr; 2004/hoyle</a>
   <a class="Left" href="../index.html">&uarr; 2004 &uarr;</a>
   <a class="Left" href="../kopczynski/index.html">2004/kopczynski &rarr;</a>
-  <a class="Right" href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/jdalbec/jdalbec.c">C code</a>
-  <a class="Right" href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/jdalbec/Makefile">Makefile</a>
+  <a class="Right" href="https://github.com/ioccc-src/winner/blob/master/2004/jdalbec/jdalbec.c">C code</a>
+  <a class="Right" href="https://github.com/ioccc-src/winner/blob/master/2004/jdalbec/Makefile">Makefile</a>
   <a class="Right" href="#inventory">Inventory</a>
-  <a class="Right" href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fioccc-src.github.io%2Ftemp-test-ioccc%2F2004%2Fjdalbec%2Findex.html">&#x2713;</a>
+  <a class="Right" href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.ioccc.org%2F2004%2Fjdalbec%2Findex.html">&#x2713;</a>
 </div>
 
 <!-- END: this line ends content from: inc/navbar.mid.html -->
@@ -503,14 +503,14 @@ the <a href="https://en.wikipedia.org/wiki/Isotope">isotopes</a> of
 last digit. Four common elements could also be written as isotopes of these two
 elements: <code>He=Np(2)</code>, <code>Li=Pu(2)</code>, <code>Ta=Np(3)</code>, <code>W=Pu(3)</code>. To get other isotopes,
 just change the last digit to a number greater than 3.</p>
-<p>The build file runs <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/jdalbec/jdalbec.c">jdalbec.c</a> through the C preprocessor to
+<p>The build file runs <a href="https://github.com/ioccc-src/winner/blob/master/2004/jdalbec/jdalbec.c">jdalbec.c</a> through the C preprocessor to
 generate <code>jdalbec2.c</code> which is edited with <code>ed(1)</code> (NOTE: this was
 changed to <code>sed(1)</code> by the judges) to correct spacing
 problems caused by some preprocessors. (I know you dislike
 Perl, but hopefully <code>ed(1)</code> is more common on POSIX systems than
 Perl.) The build file then compiles <code>jdalbec2.c]</code> and removes the
 <code>jdalbec2.c</code> file.</p>
-<p>I don’t think I’m abusing the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/jdalbec/Makefile">Makefile</a> since I’m only using
+<p>I don’t think I’m abusing the <a href="https://github.com/ioccc-src/winner/blob/master/2004/jdalbec/Makefile">Makefile</a> since I’m only using
 147 characters including white space and the <code>#!</code> line and the
 commented-out <code>-Wall -pedantic</code> options. The <a href="../rules.txt">rules for the
 16th IOCCC</a> specifically allowed build files up to 521
@@ -550,7 +550,7 @@ line 3 because the compiler doesn’t recognize <code>??=</code> as a trigraph
 step on Mac OS X 10.1.5 generates lots of errors in “smart
 mode” because the “smart” preprocessor expects a valid C
 program as input. The preprocessor then falls back to “basic
-mode” and preprocesses <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/jdalbec/jdalbec.c">jdalbec.c</a> successfully without warnings,
+mode” and preprocesses <a href="https://github.com/ioccc-src/winner/blob/master/2004/jdalbec/jdalbec.c">jdalbec.c</a> successfully without warnings,
 even when I give it the <code>-Wall -pedantic</code> options. It inserts
 a lot of extra spaces into the preprocessed output which is
 why I had to add the <code>ed(1)</code> step to the build file so that my
@@ -569,7 +569,7 @@ it if you run into this feature (e.g. <code>1 22</code> instead of <code>122</c
 <p>Note: you may want to be sure you have a limit on stack size before trying this.
 I ran it on Debian GNU/Linux and discovered that I did not have a limit on stack
 size. Fortunately the OS killed the process after a while. This is consistent
-with the output of <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/1996/schweikh3/schweikh3.c">1996/schweikh3</a> which reports
+with the output of <a href="https://github.com/ioccc-src/winner/blob/master/1996/schweikh3/schweikh3.c">1996/schweikh3</a> which reports
 <code>malloc lied!  Killed by SIGKILL</code>.</p>
 <p>Arguments matching <code>/(?:.){10,}/</code> will produce visually incorrect
 results (e.g., generation 1 starting from 1111111111 will
@@ -627,20 +627,20 @@ type, a structure, a structure member, a macro parameter, and a variable).</li>
 </div>
 <h2 id="primary-files">Primary files</h2>
 <ul>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/jdalbec/jdalbec.c">jdalbec.c</a> - entry source code</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/jdalbec/Makefile">Makefile</a> - entry Makefile</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/jdalbec/jdalbec.alt.c">jdalbec.alt.c</a> - alternate source code</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/jdalbec/jdalbec.orig.c">jdalbec.orig.c</a> - original source code</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/jdalbec/try.alt.sh">try.alt.sh</a> - script to try alternate code</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/jdalbec/try.sh">try.sh</a> - script to try entry</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2004/jdalbec/jdalbec.c">jdalbec.c</a> - entry source code</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2004/jdalbec/Makefile">Makefile</a> - entry Makefile</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2004/jdalbec/jdalbec.alt.c">jdalbec.alt.c</a> - alternate source code</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2004/jdalbec/jdalbec.orig.c">jdalbec.orig.c</a> - original source code</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2004/jdalbec/try.alt.sh">try.alt.sh</a> - script to try alternate code</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2004/jdalbec/try.sh">try.sh</a> - script to try entry</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
 <li><a href="2004_jdalbec.tar.bz2">2004_jdalbec.tar.bz2</a> - download entry tarball</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/jdalbec/README.md">README.md</a> - markdown source for this web page</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/jdalbec/.entry.json">.entry.json</a> - entry summary and manifest in JSON</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/jdalbec/.gitignore">.gitignore</a> - list of files that should not be committed under git</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2004/jdalbec/.path">.path</a> - directory path from top level directory</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2004/jdalbec/README.md">README.md</a> - markdown source for this web page</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2004/jdalbec/.entry.json">.entry.json</a> - entry summary and manifest in JSON</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2004/jdalbec/.gitignore">.gitignore</a> - list of files that should not be committed under git</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2004/jdalbec/.path">.path</a> - directory path from top level directory</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 </ul>
 <hr style="width:10%;text-align:left;margin-left:0">
@@ -708,7 +708,7 @@ Jump to: <a href="#">top</a>
 
     <div id="coda"><h3>Coda</h3>
 	<p>
-	<a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fioccc-src.github.io%2Ftemp-test-ioccc%2F2004%2Fjdalbec%2Findex.html" rel="nofollow">Nu HTML check this web page</a><br>
+	<a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.ioccc.org%2F2004%2Fjdalbec%2Findex.html" rel="nofollow">Nu HTML check this web page</a><br>
 	<a href="#top">Jump to top</a> <a href="#content">Jump to Content</a> <a href="#inventory">Jump to Inventory</a><br>
 	</p>
     </div>

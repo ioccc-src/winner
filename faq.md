@@ -5763,7 +5763,7 @@ website problem, we ask that you first look at the [IOCCC
 issues](https://github.com/ioccc-src/winner/issues) to see if the problem has
 already been reported.  If it has been reported, feel free to add a comment to
 the issue. Otherwise, if you do not see the same issue reported, then feel free
-to [open a new IOCCC website issue](https://github.com/ioccc-src/temp-test-ioccc/issues/new?assignees=&labels=website&projects=&template=website_issue.yml&title=%5BWebsite%5D+%3Ctitle%3E).
+to [open a new IOCCC website issue](https://github.com/ioccc-src/winner/issues/new?assignees=&labels=website&projects=&template=website_issue.yml&title=%5BWebsite%5D+%3Ctitle%3E).
 
 Jump to: [top](#)
 
@@ -6111,7 +6111,7 @@ as it is **very likely** there are things that will be missed when trying to
 deobfuscate the code, some of which might be important to the author.
 
 To contribute your **deobfuscated** code, please open up a
-[Show and tell new discussion](https://github.com/ioccc-src/temp-test-ioccc/discussions/new?category=show-and-tell)
+[Show and tell new discussion](https://github.com/ioccc-src/winner/discussions/new?category=show-and-tell)
 with a title of the form:
 
 > Enhancement: deobfuscated code for YYYY/dirname
@@ -6563,7 +6563,7 @@ the words:
 at the top right corner; clicking on this will take you to the [no JavaScript
 menu](nojs-menu.html) which is a plaintext menu. You of course can use this if
 you like, even if you do not have JavaScript enabled, by pointing your browser
-to <https://ioccc-src.github.io/temp-test-ioccc/nojs-menu.html>.
+to <https://www.ioccc.org/nojs-menu.html>.
 
 <div id="tablet_menu">
 ##### Menus on tablet devices (e.g. iPads)
@@ -6612,7 +6612,7 @@ menu](#no_javascript_menu). If you have a fix for this that **does NOT
 affect the usability of desktops, laptops or other mobile devices**, please
 consider fixing it and [opening a pull request](#pull_request) or at
 least [report it as an
-issue](https://github.com/ioccc-src/temp-test-ioccc/issues/new/choose) (choose
+issue](https://github.com/ioccc-src/winner/issues/new/choose) (choose
 the category _Website issue_).
 
 Jump to: [top](#)
@@ -6854,7 +6854,7 @@ were the first IOCCC entries to have been released via
 [git](https://git-scm.com) and [GitHub](https://github.com).
 
 
-#### 2020 Dec 30 thru 202y MMM DD - Work on the temp-test-ioccc GitHub repo
+#### 2020 Dec 30 thru 2024 Dec 28 - Work on the temp-test-ioccc GitHub repo
 
 Starting on [2020 Dec
 30](https://github.com/ioccc-src/winner/commit/2f20ae8451ada03f4601ac727d10e1d8630861a8)
@@ -6956,7 +6956,7 @@ from `winners.html`, via the [gen-authors.sh](%%REPO_URL%%/bin/gen-authors.sh) t
 
 As of 2024 Dec 28 [temp-test-ioccc
 repo](https://github.com/ioccc-src/temp-test-ioccc)
-there was [6165+ commits ahead](https://github.com/ioccc-src/winner/compare/master...ioccc-src:temp-test-ioccc:master)
+there was [6167+ commits ahead](https://github.com/ioccc-src/winner/compare/master...ioccc-src:temp-test-ioccc:master)
 of the [IOCCC winner repo](https://github.com/ioccc-src/winner).
 
 On 2024 Dec 28, the temporary repo was merged back into the [IOCCC winner

@@ -416,10 +416,10 @@
   <a class="Left" href="../../2018/yang/index.html">&larr; 2018/yang</a>
   <a class="Left" href="../index.html">&uarr; 2019 &uarr;</a>
   <a class="Left" href="../burton/index.html">2019/burton &rarr;</a>
-  <a class="Right" href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/adamovsky/prog.c">C code</a>
-  <a class="Right" href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/adamovsky/Makefile">Makefile</a>
+  <a class="Right" href="https://github.com/ioccc-src/winner/blob/master/2019/adamovsky/prog.c">C code</a>
+  <a class="Right" href="https://github.com/ioccc-src/winner/blob/master/2019/adamovsky/Makefile">Makefile</a>
   <a class="Right" href="#inventory">Inventory</a>
-  <a class="Right" href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fioccc-src.github.io%2Ftemp-test-ioccc%2F2019%2Fadamovsky%2Findex.html">&#x2713;</a>
+  <a class="Right" href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.ioccc.org%2F2019%2Fadamovsky%2Findex.html">&#x2713;</a>
 </div>
 
 <!-- END: this line ends content from: inc/navbar.mid.html -->
@@ -479,7 +479,7 @@ it into two portions: the initial macro section where I had limited resources
 which you should disregard its shape, unless you like it, and the rest, which is a
 separator in the form of a single line followed by a section signifying the
 function of the program, a block with removed shape of lambda character. Even
-the official IOCCC size tool acknowledges this: When you call <code>./iocccsize -i &lt;prog.c</code>, using the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/iocccsize.c">2019 version of
+the official IOCCC size tool acknowledges this: When you call <code>./iocccsize -i &lt;prog.c</code>, using the <a href="https://github.com/ioccc-src/winner/blob/master/2019/iocccsize.c">2019 version of
 iocccsize.c</a>, iocccsize returns <strong>955</strong>,
 which is the Unicode codepoint of the <strong>λ</strong> character.</p>
 <p>It might be a surprise for you that according to the IOCCC size tool the program is
@@ -489,7 +489,7 @@ by the sheer length of the dividing line and totally overlooks the rest of the p
 <p>When built directly using</p>
 <pre><code>    make</code></pre>
 <p>the program (<code>prog</code>) accepts a single parameter with the name of an Unlambda program. You can
-download the <a href="https://github.com/irori/advent-unlambda" title="Adventure">Colossal Cave Adventure</a> (the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/adamovsky/advent.unl">advent.unl</a> file)
+download the <a href="https://github.com/irori/advent-unlambda" title="Adventure">Colossal Cave Adventure</a> (the <a href="https://github.com/ioccc-src/winner/blob/master/2019/adamovsky/advent.unl">advent.unl</a> file)
 and run it like this:</p>
 <pre><code>    ./prog advent.unl</code></pre>
 <p><strong>NOTE</strong>: the file was added to the entry so there is no need to download it.</p>
@@ -497,7 +497,7 @@ and run it like this:</p>
 <a href="http://www.madore.org/~david/programs/unlambda/#distrib" title="Reference Unlambda distribution">Unlambda distribution</a> on the Unlambda homepage. The most complex programs there are
 entries from <a href="http://www.madore.org/~david/programs/unlambda/#quine" title="Unlambda quine contest">quine contest</a>.</p>
 <p>There is an alternative build path that requires the 2018 IOCCC size tool to complete. Put the tool
-source <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/adamovsky/iocccsize_2018.c">iocccsize_2018.c</a> in the project directory and call</p>
+source <a href="https://github.com/ioccc-src/winner/blob/master/2019/adamovsky/iocccsize_2018.c">iocccsize_2018.c</a> in the project directory and call</p>
 <pre><code>    make identify</code></pre>
 <p>It will build the tool and use it to build an alternative program <code>prog2</code>, which in turn will
 produce an Unlambda program <code>identify.unl</code>. <code>make identify</code> runs this program to identify
@@ -571,7 +571,7 @@ since it was developed using <code>char</code>s it should be always used safely.
 </ul>
 <h3 id="obfuscation">Obfuscation:</h3>
 <ul>
-<li><p>You can examine the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/adamovsky/deobfuscated.c">deobfuscated.c</a> file. It is the original
+<li><p>You can examine the <a href="https://github.com/ioccc-src/winner/blob/master/2019/adamovsky/deobfuscated.c">deobfuscated.c</a> file. It is the original
 final version of the interpreter, before I started the downsizing. It accepts
 one more optional parameter that specifies a filename for the output Unlambda
 function (it’s the Unlambda function that remains after all function
@@ -666,24 +666,24 @@ be applied.</p>
 </div>
 <h2 id="primary-files">Primary files</h2>
 <ul>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/adamovsky/prog.c">prog.c</a> - entry source code</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/adamovsky/Makefile">Makefile</a> - entry Makefile</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/adamovsky/prog.orig.c">prog.orig.c</a> - original source code</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/adamovsky/try.sh">try.sh</a> - script to try entry</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/adamovsky/advent.unl">advent.unl</a> - unlambda script</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/adamovsky/crash.unl">crash.unl</a> - unlambda script</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/adamovsky/deobfuscated.c">deobfuscated.c</a> - deobfuscated source code</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/adamovsky/iocccsize_2018.c">iocccsize_2018.c</a> - 2018 iocccsize.c source</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/adamovsky/sierpinski.unl">sierpinski.unl</a> - unlambda code</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/adamovsky/spam.unl">spam.unl</a> - unlambda code</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2019/adamovsky/prog.c">prog.c</a> - entry source code</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2019/adamovsky/Makefile">Makefile</a> - entry Makefile</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2019/adamovsky/prog.orig.c">prog.orig.c</a> - original source code</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2019/adamovsky/try.sh">try.sh</a> - script to try entry</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2019/adamovsky/advent.unl">advent.unl</a> - unlambda script</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2019/adamovsky/crash.unl">crash.unl</a> - unlambda script</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2019/adamovsky/deobfuscated.c">deobfuscated.c</a> - deobfuscated source code</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2019/adamovsky/iocccsize_2018.c">iocccsize_2018.c</a> - 2018 iocccsize.c source</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2019/adamovsky/sierpinski.unl">sierpinski.unl</a> - unlambda code</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2019/adamovsky/spam.unl">spam.unl</a> - unlambda code</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
 <li><a href="2019_adamovsky.tar.bz2">2019_adamovsky.tar.bz2</a> - download entry tarball</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/adamovsky/README.md">README.md</a> - markdown source for this web page</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/adamovsky/.entry.json">.entry.json</a> - entry summary and manifest in JSON</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/adamovsky/.gitignore">.gitignore</a> - list of files that should not be committed under git</li>
-<li><a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2019/adamovsky/.path">.path</a> - directory path from top level directory</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2019/adamovsky/README.md">README.md</a> - markdown source for this web page</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2019/adamovsky/.entry.json">.entry.json</a> - entry summary and manifest in JSON</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2019/adamovsky/.gitignore">.gitignore</a> - list of files that should not be committed under git</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2019/adamovsky/.path">.path</a> - directory path from top level directory</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 </ul>
 <hr style="width:10%;text-align:left;margin-left:0">
@@ -751,7 +751,7 @@ Jump to: <a href="#">top</a>
 
     <div id="coda"><h3>Coda</h3>
 	<p>
-	<a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fioccc-src.github.io%2Ftemp-test-ioccc%2F2019%2Fadamovsky%2Findex.html" rel="nofollow">Nu HTML check this web page</a><br>
+	<a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.ioccc.org%2F2019%2Fadamovsky%2Findex.html" rel="nofollow">Nu HTML check this web page</a><br>
 	<a href="#top">Jump to top</a> <a href="#content">Jump to Content</a> <a href="#inventory">Jump to Inventory</a><br>
 	</p>
     </div>

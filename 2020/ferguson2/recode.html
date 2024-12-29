@@ -413,7 +413,7 @@
 
 <div class="navbar">
   <a class="Left" href="index.html">&uarr; jump to 2020/ferguson2/index.html &uarr;</a>
-  <a class="Right" href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fioccc-src.github.io%2Ftemp-test-ioccc%2F2020%2Fferguson2%2Frecode.html">&#x2713;</a>
+  <a class="Right" href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.ioccc.org%2F2020%2Fferguson2%2Frecode.html">&#x2713;</a>
 </div>
 
 <!-- END: this line ends content from: inc/navbar.up2index.html -->
@@ -428,7 +428,7 @@
 <h1 id="the-recode-configurator-documentation-and-a-fun-way-to-explore-my-2020-ioccc-enigma-simulator">The recode configurator documentation (and a fun way to explore my 2020 IOCCC Enigma simulator)</h1>
 <p>N.B. At the end of this file I have given a fun exercise that can be used to
 explore my <a href="https://www.cryptomuseum.com/crypto/enigma/index.htm">Enigma machine</a>
-<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/ferguson2/prog.c">simulator</a>. I really encourage you to do this but of course you don’t
+<a href="https://github.com/ioccc-src/winner/blob/master/2020/ferguson2/prog.c">simulator</a>. I really encourage you to do this but of course you don’t
 have to if you don’t wish to.</p>
 <div id="toc">
 <ul>
@@ -455,8 +455,8 @@ have to if you don’t wish to.</p>
 <div id="recode">
 <h1 id="what-is-recode-and-why-is-it-recommended"><a href="#toc">What is recode and why is it recommended?</a></h1>
 </div>
-<p>To demonstrate how to and why you should use the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/ferguson2/recode.c">recode.c</a> program with
-the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/ferguson2/prog.c">Enigma machine simulator</a> I have included some examples here as
+<p>To demonstrate how to and why you should use the <a href="https://github.com/ioccc-src/winner/blob/master/2020/ferguson2/recode.c">recode.c</a> program with
+the <a href="https://github.com/ioccc-src/winner/blob/master/2020/ferguson2/prog.c">Enigma machine simulator</a> I have included some examples here as
 well as brief (‘brief?!’ I am sure many would think but it’s brief for me)
 commentary.</p>
 <p>It would not be possible to do all that the recode program does in my entry
@@ -504,8 +504,8 @@ if you don’t give the option to read in a file for input.</p>
     Plugboard pair #09: RU
     Plugboard pair #10: VG
     1WX5AK4RE1XEHJSAPYCIZBWDQNRUVGIOCCC</code></pre>
-<p>Though you won’t find some of those strings in <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/ferguson2/recode.c">recode.c</a> or
-<a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/ferguson2/prog.c">prog.c</a>. Yes the <code>WAR</code> for the Ringstellung (Ring settings) is an
+<p>Though you won’t find some of those strings in <a href="https://github.com/ioccc-src/winner/blob/master/2020/ferguson2/recode.c">recode.c</a> or
+<a href="https://github.com/ioccc-src/winner/blob/master/2020/ferguson2/prog.c">prog.c</a>. Yes the <code>WAR</code> for the Ringstellung (Ring settings) is an
 amusing coincidence <em>but it really did happen!</em></p>
 <p>As for <code>-f</code> the contents would be output with the settings e.g. to pipe to
 <code>prog</code> itself (as if you redirected the file contents to the Enigma machine for
@@ -528,7 +528,7 @@ Again note that this does not validate input! Although it detects out of range
 for the arrays it doesn’t detect duplicates. This is because it wasn’t meant to
 be any given file or anything else other than the direct output of a previous
 run (thus validated). I’m not even guaranteeing that I got the array tests valid
-in <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/ferguson2/recode.c">recode.c</a> <code>-R</code> option!</p>
+in <a href="https://github.com/ioccc-src/winner/blob/master/2020/ferguson2/recode.c">recode.c</a> <code>-R</code> option!</p>
 <div id="samefile">
 <h2 id="protecting-against-the-same-io-file"><a href="#toc">Protecting against the same I/O file</a></h2>
 </div>
@@ -631,7 +631,7 @@ pair</a>; this can be done in
 a number of ways but two dots is one. Notice also that it’s in a different order
 than the simulator: because with the size restrictions on my entry I saved bytes
 by using the same loop where I could. It just felt more natural to have them
-grouped together in a configurator for the <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/ferguson2/prog.c">simulator</a>.</p>
+grouped together in a configurator for the <a href="https://github.com/ioccc-src/winner/blob/master/2020/ferguson2/prog.c">simulator</a>.</p>
 <pre><code>    $ echo 1AA2AA3AA2ABCD..EFGHIJKLMNOPQRIOCCC | ./prog - 2&gt;/dev/null
     HQNVO
     $ echo 1AA2AA3AA2ABCD..EFGHIJKLMNOPQRIOCCC  | ./prog - 2&gt;/dev/null | echo 1AA2AA3AA2ABCD..EFGHIJKLMNOPQRHQNVO | ./prog  - 2&gt;/dev/null
@@ -844,7 +844,7 @@ delicious challenge).</p>
 <h1 id="example-additions"><a href="#toc">Example additions</a></h1>
 </div>
 <ul>
-<li>Add code, to <a href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2020/ferguson2/prog.c">prog.c</a>, that tries to determine possible decipherments based on
+<li>Add code, to <a href="https://github.com/ioccc-src/winner/blob/master/2020/ferguson2/prog.c">prog.c</a>, that tries to determine possible decipherments based on
 a given crib (or set of cribs).</li>
 </ul>
 <div id="exampleuses">
@@ -999,7 +999,7 @@ tested the code.</p>
 
     <div id="coda"><h3>Coda</h3>
 	<p>
-	<a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fioccc-src.github.io%2Ftemp-test-ioccc%2F2020%2Fferguson2%2Frecode.html" rel="nofollow">Nu HTML check this web page</a><br>
+	<a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.ioccc.org%2F2020%2Fferguson2%2Frecode.html" rel="nofollow">Nu HTML check this web page</a><br>
 	<a href="#top">Jump to top</a> <a href="#content">Jump to Content</a>
 	</p>
     </div>
