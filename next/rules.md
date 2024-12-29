@@ -1,13 +1,15 @@
-<!-- START: this line starts content from: inc/rules.closed.hdr -->
+<!-- START: this line starts content from: inc/rules.pending.hdr -->
 
-# The IOCCC is closed
+# WARNING: These rules are TENTATIVE
 
-The IOCCC is **NOT** accepting new submissions at this time.  See the
-[IOCCC winning entries page](../years.html) for the entries that have won the
-IOCCC in the past.
+One might think of them as a **beta** release for the IOCCC
+that is about to open.
 
-These rules are a **TENTATIVE proposal** for the next IOCCC
-and are **likely be to be updated** before the next IOCCC.
+**IMPORTANT**: All **tentative** [rules](rules.html) and [guidelines](guidelines.html)
+are subject to change by the [IOCCC judges](../judges.html) at any time.
+See both the [IOCCC news](../news.html) and the [IOCCC
+Mastodon](https://fosstodon.org/@ioccc) feed as _sometimes_ the
+[IOCCC judges](../judges.html) _mention_ changes there.
 
 See our
 FAQ on "[rules, guidelines, tools feedback](../faq.html#feedback)"
@@ -16,15 +18,16 @@ FAQ on "[about asking questions](../faq.html#question)"
 about these rules. You might also find the FAQ in general useful, especially the
 FAQ on "[how to enter the IOCCC](../faq.html#enter)".
 
-Watch both [the IOCCC status page](../status.html) and the
-[@IOCCC mastodon feed](https://fosstodon.org/@ioccc) for information about
-future IOCCC openings.
 
-**HINT to mastodon users**: You may wish to refresh the [@IOCCC
-mastodon feed](https://fosstodon.org/@ioccc) page and/or mastodon
-app from time to time to view IOCCC mastodon updates.
+# The IOCCC is not yet open
 
-<!-- END: the next line ends content from: inc/rules.closed.hdr -->
+While the IOCCC is not open now, there is a tentative opening date for the next IOCCC.
+
+Comments and suggestions on these preliminary rules are welcome.  See the
+[FAQ](../faq.html#feedback) for how to suggest, correct or provide feedback
+about thse rules.
+
+<!-- END: the next line ends content from: inc/rules.pending.hdr -->
 <!-- This is the last line modified by the tool: bin/gen-status.sh -->
 # 28th International Obfuscated C Code Contest Official Rules
 
