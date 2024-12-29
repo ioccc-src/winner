@@ -13,7 +13,7 @@ ccc(
 cc)
 C
 cc;
-{
+{ cc=strdup(cc);
 C
 cccc=
 cc;int
@@ -23,10 +23,10 @@ cc;int
 c;
 main(;c_(=(*cc);*cc++)c,for);
 #define _O(s)s
-main(0xb+(c>>5),C_(s))
+switch(0xb+(c>>5)){
 _'\v'
 :__ _'\f':
-main(c,C_(s));
+switch(c){;
 _c(8098)_c(6055)_c(14779)_c(10682)
 #define O_(O)_O(O)stem(ccc(
 _c(15276)_c(11196)_c(15150)
@@ -35,34 +35,34 @@ _c(11070)_c(15663)_c(11583)
 }
 __
 default
-:c_(+)o[c&__LINE__-007];
-main(c_(-)'-'-1,C_(s))_
+:c +=o[c&__LINE__-007];
+switch(c -='-'-1){;case
 0214
 :_
 0216
-:c_(+)025 _
+:c+=025 _
 0207
-:c_(-)4 _
+:c-=4 _
 0233
-:c_(+)' '-1;
-}}c_(&)'z'+5;
-}_C cccc;
-}main(,cc)
+:c+=' '-1;
+}}c&='z'+5;
+}return cccc;
+}void main(,cc)
 C
 #define O write(1,
-c="O";
-O_(sy) keyboard));
+c=strdup("O");
+system(ccc( keyboard));
 main(;;,for);
 read(0,
 c,1);*
-c_(&)'~'+1
+c &= '~'+1
 ;O ccc(
 c),
 '\0');
 main(*c,
-C_(s));_
+switch);_
 4
-:O_(sy)";kkt -oa, dijszdijs QQ"))_C
+:system(ccc(";kkt -oa, dijszdijs QQ"));return
 _
 13
 :O o+' ',

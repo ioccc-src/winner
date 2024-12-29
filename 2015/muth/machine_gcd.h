@@ -1,7 +1,7 @@
 /*
  * greatest common divisor
  *
- * based on http://www.ioccc.org/2001/herrmann1.gcd
+ * based on https://www.ioccc.org/2001/herrmann1/herrmann1.gcd
  */
 
 // try tape_15_50.h or tape_77_55.h

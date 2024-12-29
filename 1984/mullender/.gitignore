@@ -1,0 +1,12 @@
+#
+# sort with: ../../bin/sgi.sh
+*.dSYM
+g.c
+gentab
+indent
+indent.c
+indent.o
+mullender
+mullender.alt
+mullender.orig
+prog.orig

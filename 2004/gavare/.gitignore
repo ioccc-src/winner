@@ -1,0 +1,13 @@
+#
+# sort with: ../../bin/sgi.sh
+*.dSYM
+gavare
+gavare.alt
+gavare.alt2
+gavare.orig
+gavare.r3
+indent
+indent.c
+indent.o
+ioccc_ray.ppm
+prog.orig

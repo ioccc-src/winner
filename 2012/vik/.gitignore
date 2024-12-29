@@ -1,0 +1,17 @@
+#
+# sort with: ../../bin/sgi.sh
+*.dSYM
+chocolate-in-ioccc.png
+encodedimg.png
+indent
+indent.c
+indent.o
+ioccc-in-chocolate.png
+mmm-chocolate.png
+prog.orig
+restored-chocolate.png
+restored-ioccc.png
+restored.png
+vik
+vik.alt
+vik.orig

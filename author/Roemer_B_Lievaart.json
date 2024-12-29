@@ -1,0 +1,24 @@
+{
+    "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
+    "author_JSON_format_version" : "1.1 2024-02-11",
+    "author_handle" : "Roemer_B_Lievaart",
+    "full_name" : "Roemer B. Lievaart",
+    "sort_word" : "lievaart",
+    "location_code" : "NL",
+    "email" : null,
+    "url" : null,
+    "alt_url" : null,
+    "deprecated_twitter_handle" : null,
+    "mastodon" : null,
+    "mastodon_url" : null,
+    "github" : null,
+    "affiliation" : null,
+    "winning_entry_set" : [
+        {
+            "entry_id" : "1987_lievaart"
+        },
+        {
+            "entry_id" : "1989_roemer"
+        }
+    ]
+}

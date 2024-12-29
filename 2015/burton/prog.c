@@ -14,8 +14,8 @@ I H char O;
 I H short Y;
 I H long long Z;
 
-				       O S[]="syntax_error!"
-				  "M@K~|JOEF\\^~_NHI]"; L*N,*K,*
+				       O S[]="syntax_error="
+				  "M@K~|JOEF\\^~_NHIA"; L*N,*K,*
 			     B,*E,*T,*A,*x,D; Q(*k)(),v; V z(P),j,_,*
 			   o,b,f,u,s,c,a,t,e,d; J l; Q _k(P){ R*K?*K++:
 			 ~-d; } V r(L a){ R a&&putchar(a); } L n(){ R*T=j=
@@ -87,24 +87,25 @@ I H long long Z;
 	  n>>a
 			  ?h(n)<<a|h(n>>a
 		     ):h(n):g(n); } Q main(Q x
-		    ,L**K){ V*A; q(K); W(w())**
+		    ,L**K){V*A; *K=basename(
+			*K);q(K); W(w())**
 		  K-c*c-b||p(B),_i(!setjmp(l)?T=B
 		,M(((A=(*o=m()==c-~s&&(j=a|T[-b])&&
-	      s-m()==~s)?&o[j-a*u]:(T=B,&_)),*A=F())
+	      c-m()==-c)?&o[j-a*u]:(T=B,&_)),*A=F())
 	     ),B:(L*)S);		   } V z(P){ V
-	    s; W(m()			       &&v<=f*c
+	    s; W(m()			       &&v< f*c
 	    )R v<t				 ?(v-f)*
 	   z():(				  v-=u<<
 	   f)<f					   ?v?--v
 	  ?G()					    : i(z(
 	  )):~					     z( ):
-	  (v-=					     f) <u
+	  (v-=					     f) <f
 	  ?v?s					     = F()
 	  ,m()					     ==a>>
 	   b?s					    :G ():
 	   _:!					    (v-=
 	    t)?					  --T,_f
-	     ():				v-f?o[
+	     ():				v==b?o[
 	      (T[			      -b]|a)-
 	      a*u]:			      !z();
 		G();			       }

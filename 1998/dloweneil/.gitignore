@@ -1,0 +1,12 @@
+#
+# sort with: ../../bin/sgi.sh
+*.dSYM
+dloweneil
+dloweneil.alt
+dloweneil.orig
+indent
+indent.c
+indent.o
+pootris
+pootris.alt
+prog.orig

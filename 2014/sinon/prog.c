@@ -14,7 +14,7 @@
                 "CYOUQWIN!]Q=;of8BQQ)88bc]QA98P'Qo]8>oQQ_8CP;QQ98b`_8@P8(Q`]'^Q=`']QB)88"
               "bQQ]`8J;QQ`88bc99bd(`8iQ@''QQo^8E'`8c;QQ'Q``8?QQ`'kQ<o]8B9PQQ`';_Q<`_8<cbQ"
             "<o_Q<o_QBdo`QQ';`Q=9`]8=bobQ_o_Q<o]8=';bQC(88cQ`bcgQ>oP']8<;cQ>98)^Q?''oc`Q>"
-           "oc']Q]8<;cQ>`8bbQA``QQ''`Q?88P;dQ=`)nQ?*/;;"/*}}=~/./;print"cp\40sinon.c\40r",
+           "oc']Q]8<;cQ>`8bbQA``QQ''`Q?88P;dQ=`)nQ?*/;;"/*}}=~/./;print"cp\40prog.c\40r",
                   "un.c\n";for($i=1;$i<21;$i++){for($j=0;$j<2;$j++){print"gcc\x20-O",$j*2,
                   "\40run.c\x20-o run&&./run|tee run.c\n"if!($i%(2+$j));}print"sleep $j\n";
                  } __DATA__ 8M*/;G(Z,60*(60*(10**s+s[1])+s[3]*10+s[4])+s[6]*10+s[7]-1933008

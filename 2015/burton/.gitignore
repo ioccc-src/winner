@@ -1,0 +1,16 @@
+#
+# sort with: ../../bin/sgi.sh
+*.dSYM
+calc
+calc.alt
+ecalc
+ecalc.alt
+eprog
+eprog.alt
+indent
+indent.c
+indent.o
+prog
+prog.alt
+prog.orig
+rule2

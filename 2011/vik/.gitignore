@@ -1,0 +1,12 @@
+#
+# sort with: ../../bin/sgi.sh
+*.dSYM
+*.wav
+audio_file.raw
+indent
+indent.c
+indent.o
+prog.orig
+vik
+vik.alt
+vik.orig

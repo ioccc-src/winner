@@ -1,0 +1,438 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>
+Snert . Com - Software - Hibachi
+</title>
+<meta name="keywords" content="hibachi IOCCC International Obfuscated C Code Contest HTTP web server RFC 2616 Apache Unix Linux Cygwin Windows">
+<meta name="description" content="A small and simple web server with CGI support. It is a limited implementation of RFC 2616. Works for unix boxen, Cygwin, and Windows.">
+<script language="JavaScript" type="text/javascript" src="./mailto.js"></script>
+<link rel="stylesheet" type="text/css" href="./style.css">
+</head>
+<body class="normal" background="Img/hot-coal-edge-110-indent.png" style="margins: 0 0 0 0; padding: 0 0 0 0;">
+
+<!-- MARGINS -->
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+	<td rowspan="2">
+		<img alt="" src="Img/mrpixel.gif" width="130" height="1">
+<!--
+	</td><td>
+		<img alt="Snert . Com" src="Img/sun.gif" width="105" height="103">
+-->
+	</td><td align="center" style="padding-left: 30px; text-align: center;">
+<img alt="HIBACHI/1.0 Web Server" src="Img/hibachi-256-oc-nc-300x150.gif" width="300" height="150" border="0">
+
+<!--		<span class="title hibachi">HIBACHI/1.0</span> -->
+<!--
+		<br>
+		<span class="plain">from</span>&nbsp;&nbsp;
+		<span class="snert">Snert</span>
+-->
+	</td>
+</tr><tr>
+	<td colspan="2" style="padding: 0 50 0 0;">
+
+<!-- PAGE BODY -->
+
+<br>
+<blockquote class="normal big" style="font-weight: bold; margin: 30px 50px 30px 50px;">
+	[hih-BAH-chee]
+<br>
+<br>
+	Japanese for "fire bowl", a hibachi is just that - a small
+	(generally cast-iron) container made for holding fuel
+	(usually charcoal). A grill that sits on top of the bowl
+	is used to cook various foods. Hibachis come in square,
+	oblong and round models. Because of their compact size,
+	they're completely portable.
+
+	<p class="small">-
+	<a href="https://www.epicurious.com/?DEF_ID=2150">
+	epicurious.com food dictionary</a>
+	</p>
+</blockquote>
+
+<a name="Description"></a>
+<h2>Description</h2>
+
+<p>
+<span class="hibachi">HIBACHI</span> is a simple, small, and secure web server with virtual
+host and CGI support. It is a limited implementation of <a href="reference/rfc2616.html">RFC 2616</a>
+and the <a href="https://www.w3.org/CGI/">CGI/1.1 Specification</a>.
+<span class="hibachi">HIBACHI</span> was written as an entry for the
+<a href="https://www.ioccc.org/">International Obfuscated C Code Contest</a> and works
+for any Unix variant including the <a href="https://www.cygwin.com">Cygwin</a>
+environment for Windows.
+</p>
+<p>
+<span class="hibachi">HIBACHI</span> supports dynamic web content through the use of the
+<a href="https://www.w3.org/CGI/">Common Gateway Interface (CGI)</a> specification.
+Just about any scripting or programming language can be used, such as a POSIX shell,
+<a href="https://www.perl.com/">Perl</a>,
+<a href="https://www.php.net/">PHP</a>,
+<a href="https://www.python.org/">Python</a>, and/or
+<a href="https://www.ruby-lang.org/">Ruby</a>.
+Existing CGI scripts can be used with little or no modification.
+Hibachi executes all CGI scripts as though they were "nph" prefixed, which is to say that it is
+the script's responsibility to send the HTTP status line and necessary headers direct to the client.
+</p>
+
+<p>
+Virtual host support is implemented as subdirectories of the <span class="hibachi">HIBACHI</span>
+document tree, where the directory name is the domain name publish in a URL. For example to setup
+a virtual host by name or IP for https://www.ioccc.org/, assuming the <span class="hibachi">HIBACHI</span>
+document tree is rooted at /usr/local/share/hibachi, then:
+</p>
+
+<blockquote><pre>
+/usr/local/share/hibachi/
+	www.ioccc.org/
+		index.html
+		...
+	64.81.251.233 -> www.ioccc.org/
+</pre></blockquote>
+
+<p>
+<span class="hibachi">HIBACHI</span> is ideal
+for special floppy-Linux distributions, like
+<a href="https://web.archive.org/web/20040727072140/http://leka.muumilaakso.org/">Leka</a>, which can be used for rescue, firewall,
+demo, or dedicated servers. In theory, with some modifications,
+<span class="hibachi">HIBACHI</span> and a script interpreter, like <a
+      href="https://www.php.net/">PHP</a>, could also be
+bundled with CDROMS that require a means of presenting dynamic web pages.
+</p>
+
+<a name="Features"></a>
+<h2>Features</h2>
+
+<ul>
+<li>Supports virtual hosts.</li>
+<li>Supports all MIME types.</li>
+<li>Supports Common Gateway Interface (<a href="https://www.w3.org/CGI/">CGI</a>) scripts and programs.</li>
+<li>Supports multiple index.* file types, ie. index.html, index.php, index.pl</li>
+<li>Supports subset of <a href="reference/rfc2616.html">RFC 2616</a> HTTP/1.1 methods GET, HEAD, and POST.</li>
+<li>Simple &amp; straight forward configuration using environment variables.</li>
+<li>Portability across Unix-like environments, ie. <a
+	href="https://www.cygwin.com">Cygwin</a>, <a href="https://www.freebsd.org/">FreeBSD</a>, Linux, SunOS.</li>
+<li>Known to work with <a href="https://lynx.invisible-island.net">Lynx</a>, <a
+	href="https://www.mozilla.org/">Mozilla</a>, <a href="https://www.opera.com/">Opera</a>, and Internet Explorer web browsers.</li>
+<li>Is a dedicated process-forking server that does not use inetd.</li>
+<li>Is secure against relative path file snooping.</li>
+<li>Is secure against directory searches.</li>
+<li>~155 lines of source, 1940 bytes long by <a href="https://www.ioccc.org/">IOCCC</a> 2004 rules, ~6KB compiled &amp; stripped on FreeBSD.</li>
+<li>Superior &amp; smaller than <a
+					href="https://www.acme.com/software/micro_httpd/">micro_httpd</a>
+    from <a href="https://www.acme.com/">ACME</a>.</li>
+<li>And has a really cool animated logo too.</li>
+</ul>
+
+<!--
+<a href="https://web.archive.org/web/20041231023050/http://www.borland.com/products/downloads/download_cbuilder.html">Borland C++ 5.5</a> free command-line compiler and debugger
+-->
+
+<a name="Installation"></a>
+<h2>Installation</h2>
+<ol>
+<li><p>
+Download:
+</p>
+
+<blockquote>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+	<td class="normal hline" style="padding: 0 30 5 0;"><a href="http://hibachi.snert.org:8008/hibachi-1.0.tar.gz">Hibachi-1.0 Obfuscated</a></td>
+	<td class="normal hline" style="padding: 0 30 5 0;"><a href="http://hibachi.snert.org:8008/hibachi.md5">md5sum</a></td>
+	<td class="normal hline" style="padding: 0  0 5 0;"><a href="http://hibachi.snert.org:8008/CHANGES-OBFUSCATED.TXT">Change Log</a></td>
+</tr>
+<tr>
+	<td style="padding: 5 30 0 0;"><a href="http://hibachi.snert.org:8008/hibachi-spoiler-1.0.tar.gz">Hibachi-1.0 Spoiler</a></td>
+	<td style="padding: 5 30 0 0;"><a href="http://hibachi.snert.org:8008/hibachi-spoiler.md5">md5sum</a></td>
+	<td style="padding: 5  0 0 0;"><a href="http://hibachi.snert.org:8008/CHANGES-SPOILER.TXT">Change Log</a></td>
+</tr>
+</table>
+</blockquote>
+</li>
+
+<li>
+<p>
+Unpack and build the executable:
+</p>
+
+<blockquote><tt>
+tar -zxf hibachi-1.0.tgz<br>
+cd hibachi-1.0<br>
+./configure<br>
+make
+</tt></blockquote>
+</li>
+
+</ol>
+
+<a name="Usage"></a>
+<h2>Usage</h2>
+
+<p>
+First read and configure the file <code>hibachi-start.sh</code>.  In most cases the
+defaults settings should be fine for testing. Start the server in
+the background, and perform the initial test (assuming that SERVER_PORT was
+not altered in <code>hibachi-start.sh</code>):
+</p>
+
+<blockquote><pre>
+./hibachi-start.sh &amp;
+lynx http://localhost:8008/
+</pre></blockquote>
+
+<p>
+To stop the server:
+</p>
+
+<blockquote><pre>
+kill %1
+</pre></blockquote>
+
+<p>
+To access this documentation and examples from the Internet, create symbolic links for the
+host name and/or IP pointing to the &laquo;localhost&raquo; directory. For example, replace the IP and host
+name addresses below with that of the machine running 
+<span class="hibachi">HIBACHI</span>:
+</p>
+
+<blockquote><pre>
+ln -s localhost 64.81.251.233
+ln -s localhost www.ioccc.org
+</pre></blockquote>
+
+<p>
+<span class="hibachi">HIBACHI</span> can server multiple 
+websites from the same machine simply by creating content directories with the same 
+name as the URL domain names within the document root tree. Domain and/or IP aliases are simply symbolic links 
+to content directories. There is never any need to restart <span class="hibachi">HIBACHI</span>
+when websites are published or aliases added.
+
+Assuming the server is running and that port 8008 is not blocked by any firewall, 
+you should be able to access the server from the Internet using an IP or host name URL similar to:</p>
+</p>
+
+<blockquote><pre>
+https://185.199.111.153
+https://www.ioccc.org:8008/
+</pre></blockquote>
+
+
+<p>
+Port 8008 (http-alt) was chosen as the default port for demonstration purposes,
+since its an alternative HTTP port that does not require special privileges and 
+is rarely in use. 
+Of course, <span class="hibachi">HIBACHI</span> could be run as a standard
+web server on port 80, but this would require that it be installed by
+the system administrator, contrary to IOCCC rules.
+</p>
+
+<a name="Test"></a>
+<h2>CGI Examples</h2>
+
+<p>
+The following tests and examples are available to demonstrate various
+aspects of the CGI support:
+</p>
+
+<dl>
+<dt><a href="test/shell/test0.sh">POSIX Shell Example</a></dt>
+<dd>
+These CGI scripts perform some basic tests on the handling of GET and POST requests,
+cookies, and the passing of environment variables to CGI scripts. These CGI scripts 
+assume that <span class="path">/bin/sh</span> is a POSIX compliant shell and the
+standard set of POSIX utilities are available. Should work for all Unix variants 
+and <a href="https://www.cygwin.com">Cygwin</a>.
+
+</dd>
+
+<dt><a href="test/perl/">Perl Example</a></dt>
+<dd>
+<a href="https://www.perl.com/"><img alt="Powered by Perl" src="Img/rectangle_power_perl.gif" width="88" height="31" border="0" hspace="20" align="right"></a>
+This example queries the Yahoo website for a stock quote to insert into a web page.
+<u><i>This example requires a browser with JavaScript support </i></u> and
+should work for all Unix variants and <a href="https://www.cygwin.com">Cygwin</a>, when Perl is installed.
+</dd>
+
+<dt><a href="test/php/">PHP Example</a></dt>
+<dd>
+<a href="https://www.php.net/"><img alt="Powered by PHP" src="Img/php-small-trans-light.gif" width="88" height="31" border="0" hspace="20" align="right"></a>
+This PHP example generates a calendar complete with ISO 8601:2000 week numbers.
+<!--
+This example shows how PHP might be used to format the result of a web form into
+something human readable suitable for sending by email.
+-->
+
+<p>
+The Windows PHP CGI binary distribution from the
+<a href="https://www.php.net/">PHP</a> website does not work within the <a href="https://www.cygwin.com">Cygwin</a>
+environment.  Instead, download the source distribution and build the PHP CGI and CLI versions from scratch
+from within Cygwin. <!-- The CLI is desired, since it behaves more like an nph-CGI. -->
+The following commands were used to build:
+
+<blockquote><pre>
+# Without this link, the configure script has problems with Cygwin.
+ln -s /bin/gcc /bin/cc
+
+CFLAGS=-O ./configure \
+--with-config-file-path=/usr/local/etc:/etc \<!--
+--enable-calendar \
+--enable-shared \
+--disable-cgi \
+--enable-cli \ -->
+--enable-discard-path \
+--disable-xml \
+--without-pear \
+--enable-sockets \
+--enable-bcmath \
+--enable-ftp \
+--enable-dba \
+--with-inifile
+
+make
+make install
+
+# Install both the CGI and CLI (though the CLI is not used here).
+mv /usr/local/bin/php /usr/local/bin/php.cgi.exe
+make install-cli
+mv /usr/local/bin/php /usr/local/bin/php.exe
+
+cp php.ini-recommended /etc/php.ini
+</pre>
+</blockquote>
+<p>
+The php.ini file should specify "output_buffering = 4096" so that PHP scripts have a chance to
+modify the response status and headers before the body is sent. Also set "cgi.rfc2616_headers = 1". 
+Click here to display the <a href="test/php/info.php">PHP Info</a> configuration.
+</p>
+</dd>
+<!--
+-->
+
+<dt><a href="test/ruby/">Ruby Example</a></dt>
+<dd>
+This example validates and/or generates Luhn check-digits.
+Should work for all Unix variants and <a href="https://www.cygwin.com/">Cygwin</a>,
+when Ruby is installed.
+</dd>
+</dl>
+
+<a name="Portability"></a>
+<h2>Portability</h2>
+
+<blockquote>
+<table border="0" cellspacing="4" cellpadding="0">
+<tr valign="middle">
+	<td align="right">
+		<a href="https://www.freebsd.org/"><img alt="FreeBSD" src="Img/freebsd.gif" width="94" height="39" border="0" hspace="20" border="0"></a>
+	</td>
+	<td rowspan="4">&nbsp;&nbsp;&nbsp;</td>
+	<td>
+		4.8
+	</td>
+</tr>
+<tr valign="middle">
+	<td align="right">
+		<img alt="Linux" src="Img/logosml.256.png" width="92" height="39" border="0" hspace="20">
+	</td>
+	<td>
+		Cobalt Qube 1, RedHat Linux 5.1, gcc 2.7.2
+	</td>
+</tr>
+<tr valign="middle">
+	<td bgcolor="#594FBF" align="right">
+		<a href="https://www.oracle.com/it-infrastructure/"><img src="Img/sun_logo.gif" width="94" height="39" border="0" alt="Sun Microsystems Logo" vspace="0" hspace="20"></a>
+	</td>
+	<td>
+		5.8
+	</td>
+</tr>
+<tr valign="middle">
+	<td align="right">
+<!--		<span class="large" style="position: relative; top:
+    -8px">+</span> --><a href="https://www.cygwin.com"><img alt="Cygwin Unix Emulation" src="Img/cygwin-icon.gif" width="28" height="28" border="0" hspace="20" vspace="8" align="right"></a>
+		<img alt="Microsoft Windows" src="Img/win.gif" width="40" height="40" border="0" style="padding: 3px 6px 0 0;" align="right">
+	</td>
+	<td>
+		Windows 2000 SP4, Windows XP Pro SP1
+		<br>with <a href="https://www.cygwin.com">Cygwin</a>, gcc 2.95.3-5
+	</td>
+</tr>
+</table>
+</blockquote>
+
+
+<a name="License"></a>
+<h2>License</h2>
+
+<p>
+In accordance with the
+<a href="https://www.ioccc.org/">International Obfuscated C Code Contest</a>
+this is an original work and placed in the public domain. 
+</p>
+
+<!--
+<p>
+In all cases a monetary donation and/or <a href="https://www.amazon.com/">Amazon</a>
+wishlist gifts to the author are welcomed, but not required, for the continued
+encouragment, moral support, and ego pumping needed to work in foriegn non-english
+speaking lands.
+</p>
+-->
+
+<a name="Disclaimer"></a>
+<h2>Disclaimer</h2>
+<p>
+THIS SOFTWARE IS PROVIDE "AS IS" AND ANY EXPRESSED OR IMPLIED WARRANTIES,
+INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY
+AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO WAY SHALL THE
+AUTHOR OR LICENSEE BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY,
+OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
+OF THE POSSIBILITY OF SUCH DAMAGE.
+</p>
+
+
+<a name="Support"></a>
+<h2>Support</h2>
+<p>
+Free support is limited, based on the author's availability, though
+enhancements requests and problem reports are welcome (see logo above).
+</p>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+<div align="center">
+<a href="https://hibachi.snert.org:8008/">
+<img alt="Powered by Hibachi" src="Img/powered-by-hibachi-150x75.png" width="150" height="75" border="1" style="color: #000000"></a>
+</div>
+
+<!-- copyright -->
+<div align="center" class="copyright">
+<nobr>Public Domain 2004 by
+<a href="javascript:achowe()">
+Anthony C Howe</a>.</nobr>
+</div>
+<!--end copyright-->
+
+<br/>
+
+<!-- END PAGE BODY -->
+
+	</td>
+</tr>
+</table>
+
+<!-- END MARGINS -->
+
+</body>
+</html>

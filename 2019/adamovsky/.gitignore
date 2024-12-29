@@ -1,0 +1,11 @@
+#
+# sort with: ../../bin/sgi.sh
+*.dSYM
+identify.unl
+indent
+indent.c
+indent.o
+iocccsize_2018
+prog
+prog2
+prog.orig

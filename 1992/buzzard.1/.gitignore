@@ -1,0 +1,12 @@
+#
+# sort with: ../../bin/sgi.sh
+*.dSYM
+babble
+babble.cppcb
+buzzard.1
+buzzard.1.orig
+indent
+indent.c
+indent.o
+prog.orig
+tmp

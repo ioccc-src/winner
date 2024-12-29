@@ -1,0 +1,17 @@
+#
+# sort with: ../../bin/sgi.sh
+*.dSYM
+4old_default.ppm
+a
+a.c
+hou
+hou.orig
+hou.tmp
+hou.tmp.c
+indent
+indent.c
+indent.o
+luna.ppm
+old_default.ppm
+otherroom.ppm
+prog.orig

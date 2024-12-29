@@ -1,0 +1,12 @@
+#
+# sort with: ../../bin/sgi.sh
+*.dSYM
+indent
+indent.c
+indent.o
+prog.orig
+rcm
+rcm.cp2.c
+rcm.cp.c
+rcm.cp.c.gz
+rcm.orig

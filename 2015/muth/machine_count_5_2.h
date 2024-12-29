@@ -1,5 +1,5 @@
 /*
- * counting machine, http://www.drb.insel.de/~heiner/BB/mabu90.html
+ * counting machine, https://web.archive.org/web/20131104160623/http://www.drb.insel.de/~heiner/BB/mabu90.html
  *
  * does not halt
  */

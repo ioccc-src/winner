@@ -1,0 +1,21 @@
+{
+    "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
+    "author_JSON_format_version" : "1.1 2024-02-11",
+    "author_handle" : "Bernd_Meyer",
+    "full_name" : "Bernd Meyer",
+    "sort_word" : "meyer",
+    "location_code" : "AU",
+    "email" : "bmeyer@cs.monash.edu.au",
+    "url" : "https://web.archive.org/web/20030212213342/http://byron.csse.monash.edu.au/realindex.html",
+    "alt_url" : null,
+    "deprecated_twitter_handle" : null,
+    "mastodon" : null,
+    "mastodon_url" : null,
+    "github" : null,
+    "affiliation" : null,
+    "winning_entry_set" : [
+        {
+            "entry_id" : "2000_bmeyer"
+        }
+    ]
+}

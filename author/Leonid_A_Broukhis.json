@@ -1,0 +1,24 @@
+{
+    "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
+    "author_JSON_format_version" : "1.1 2024-02-11",
+    "author_handle" : "Leonid_A_Broukhis",
+    "full_name" : "Leonid A. Broukhis",
+    "sort_word" : "broukhis",
+    "location_code" : "US",
+    "email" : "leob@mailcom.com",
+    "url" : "https://www.mailcom.com/main.shtml",
+    "alt_url" : null,
+    "deprecated_twitter_handle" : null,
+    "mastodon" : null,
+    "mastodon_url" : null,
+    "github" : null,
+    "affiliation" : null,
+    "winning_entry_set" : [
+        {
+            "entry_id" : "1993_leo"
+        },
+        {
+            "entry_id" : "1995_leo"
+        }
+    ]
+}

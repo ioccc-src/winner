@@ -1,0 +1,184 @@
+#
+# @package_copyright@
+#
+# @configure_input@
+#
+
+.POSIX :
+
+########################################################################
+### Pick one that best suits your system.
+########################################################################
+
+prefix = @prefix@
+exec_prefix = @exec_prefix@
+
+PACKAGE = @PACKAGE_NAME@
+VERSION = @PACKAGE_VERSION@
+TARNAME = @PACKAGE_TARNAME@
+TARDIR	= ../../
+SRCDIR	= ./
+PKGDIR  = ${PACKAGE}-${VERSION}
+
+CC		= @CC@
+CC_E	= @CC_E@
+CC_O	= @CC_O@
+CFLAGS	= @CFLAGS@
+LDFLAGS	= @LDFLAGS@
+LIBS	= @LIBS@
+
+########################################################################
+### No further configuration beyond this point.
+########################################################################
+
+.SUFFIXES :
+O = .@OBJEXT@
+E = @EXEEXT@
+.SUFFIXES : .c $O $E
+
+TARBALL = ${TARNAME}-${VERSION}.tar
+SPOILER = ${TARNAME}.alt-${VERSION}.tar
+
+#######################################################################
+
+all: build
+
+build : ${PACKAGE}$E ${SRCDIR}${PACKAGE}-start.sh.in mkentry$E prepare-source
+	@echo
+	@echo '***************************************************************'
+	@echo Build ${PACKAGE}/${VERSION} DONE
+	@echo '***************************************************************'
+	@echo
+
+clean :
+	-rm -f *.o *.obj *.i *.map *.tds *.TR2 *.ilc *.ild *.ilf *.ils *.log
+	-rm ${PACKAGE}$E ioccc$E mkentry$E
+	@echo
+	@echo '***************************************************************'
+	@echo Clean ${PACKAGE}/${VERSION} DONE
+	@echo '***************************************************************'
+	@echo
+
+distclean: clean
+	-cd ${SRCDIR}; make distclean
+	@echo '---------------------------------------------------------------'
+	-rm -rf autom4te.cache config.status config.log ${PACKAGE}-start.sh makefile 
+	-rm -f $(TARDIR)$(TARBALL).gz $(TARDIR)$(SPOILER).gz ${SRCDIR}supplement.tar.gz
+	@echo
+	@echo '***************************************************************'
+	@echo Distribution Clean ${PACKAGE}/${VERSION} DONE
+	@echo '***************************************************************'
+	@echo
+
+nuke: distclean
+	-rm -f configure ${SRCDIR}${PACKAGE}.c ${SRCDIR}configure 
+	@echo
+	@echo '***************************************************************'
+	@echo Nuke ${PACKAGE}/${VERSION} DONE
+	@echo '***************************************************************'
+	@echo
+
+${PACKAGE}$E: ${PACKAGE}.alt.c 
+	$(CC) $(CFLAGS) $(LDFLAGS) $(CC_E)${PACKAGE}$E ${PACKAGE}.alt.c $(LIBS)
+	
+${PACKAGE}-start.sh: ${PACKAGE}-start.sh.in config.status
+	./config.status
+	
+${SRCDIR}${PACKAGE}.c: ${PACKAGE}.alt.c transform.sed ioccc$E
+	@echo '***************************************************************'
+	@sed -f transform.sed ${PACKAGE}.alt.c | ./ioccc$E | sed -e '/^[ 	]*$$/d' >${SRCDIR}${PACKAGE}.c
+	@echo '***************************************************************'
+
+${SRCDIR}configure: ${SRCDIR}configure.in
+	cd ${SRCDIR}; autoconf; chmod 755 ./configure
+	
+${SRCDIR}${PACKAGE}-start.sh.in: ${PACKAGE}-start.sh.in
+	sed -e 's/.alt//' ${PACKAGE}-start.sh.in >${SRCDIR}${PACKAGE}-start.sh.in
+
+ioccc$E: ioccc.c
+	$(CC) $(CC_E)ioccc$E ioccc.c
+	
+mkentry$E: ${SRCDIR}IOCCC-2004/mkentry.c
+	$(CC) $(CC_E)mkentry$E ${SRCDIR}IOCCC-2004/mkentry.c
+
+entry: mkentry$E supplement.tar.gz ${SRCDIR}entry.0.sh
+	-cd ${SRCDIR}; make distclean; sh entry.0.sh
+		
+supplement.tar.gz:
+	-cd ${SRCDIR}; make distclean
+	chmod 755 ${SRCDIR}configure
+	find ${SRCDIR} -type d -exec chmod 755 \{\} \;
+	find ${SRCDIR} -type f ! \( -name mkentry -o -name ioccc -o -name hibachi -o -name '*.exe' \) -exec chmod 644 \{\} \;
+	find ${SRCDIR} -name '*.php' -name  '*.pl' -name '*.rb' -name '*.sh' -exec chmod 755 \{\} \;
+	tar -zcf ${SRCDIR}supplement.tar.gz -C ${SRCDIR} \
+		configure \
+		configure.in \
+		makefile.in \
+		${PACKAGE}-start.sh.in \
+		localhost/style.css \
+		localhost/index.html \
+		localhost/CHANGES-OBFUSCATED.TXT \
+		localhost/CHANGES-SPOILER.TXT \
+		localhost/reference/rfc2616.html \
+		localhost/test \
+		localhost/Img/hot-coal-edge-110-indent.png \
+		localhost/Img/cygwin-icon.gif \
+		localhost/Img/freebsd.gif \
+		localhost/Img/hibachi-256-oc-nc-300x150.gif \
+		localhost/Img/logosml.256.png \
+		localhost/Img/php-small-trans-light.gif \
+		localhost/Img/powered-by-hibachi-150x75.png \
+		localhost/Img/rectangle_power_perl.gif \
+		localhost/Img/sun_logo.gif \
+		localhost/Img/win.gif 
+	@echo
+	@echo '***************************************************************'
+	@ls -l ${SRCDIR}supplement.tar.gz
+	@echo '***************************************************************'
+	@echo
+
+prepare-source: ${SRCDIR}${PACKAGE}.c ${SRCDIR}${PACKAGE}-start.sh.in ${SRCDIR}configure
+
+tarball: prepare-source supplement.tar.gz
+	chmod 755 ${SRCDIR}configure
+	tar -cf $(TARDIR)$(TARBALL) -C $(TARDIR) \
+		${PACKAGE}/configure \
+		${PACKAGE}/build.txt \
+		${PACKAGE}/README.TXT \
+		${PACKAGE}/${PACKAGE}.c \
+		${PACKAGE}/supplement.tar.gz
+	@echo
+	@echo '***************************************************************'
+	@ls -l $(TARDIR)$(TARBALL)
+	@echo '***************************************************************'
+	@echo
+
+pack.alt: tarball
+	cp $(TARDIR)$(TARBALL) $(TARDIR)$(SPOILER)
+	chmod 755 configure
+	tar -rf $(TARDIR)$(SPOILER) -C $(TARDIR) \
+		${PACKAGE}/IOCCC-2004 \
+		${PACKAGE}/src-alt/ioccc.c \
+		${PACKAGE}/src-alt/configure \
+		${PACKAGE}/src-alt/configure.in \
+		${PACKAGE}/src-alt/makefile.in \
+		${PACKAGE}/src-alt/transform.sed \
+		${PACKAGE}/src-alt/${PACKAGE}.alt.c \
+		${PACKAGE}/src-alt/${PACKAGE}-start.sh.in
+	cd $(TARDIR); gzip $(SPOILER); md5sum $(SPOILER).gz >${PACKAGE}/localhost/${PACKAGE}.alt.md5
+	@echo
+	@echo '***************************************************************'
+	@ls -l $(TARDIR)$(SPOILER).gz
+	@echo '***************************************************************'
+	@echo
+
+pack-obfuscated: tarball
+	cd $(TARDIR); gzip $(TARBALL); md5sum $(TARBALL).gz >${PACKAGE}/localhost/${PACKAGE}.md5
+	@echo
+	@echo '***************************************************************'
+	@ls -l $(TARDIR)$(TARBALL).gz
+	@echo '***************************************************************'
+	@echo
+
+
+pack: pack.alt pack-obfuscated

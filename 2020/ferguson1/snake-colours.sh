@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #
 # Snake script that prompts for the colours desired for the colours for the
 # walls, the head and body of the snake and the bug, and then proceeds to
@@ -78,26 +78,26 @@ function configure_colours()
     for i in "WALL" "WALL (BACKGROUND)" "HEAD" "HEAD (BACKGROUND)" "BODY" "BODY (BACKGROUND)" "BUG" "BUG (BACKGROUND)"; do
 	show_colours "${i}"
 	x="${?}"
-	if [ "${x}" != 255 ]; then
-	    COLOURS[$j]="${COLOURS[$j]}${COLOUR[$x]}"
+	if [[ "${x}" != 255 ]]; then
+	    COLOURS[j]="${COLOURS[$j]}${COLOUR[$x]}"
 	else
-	    COLOURS[$j]=${DFLT[$j]}
+	    COLOURS[j]=${DFLT[$j]}
 	fi
 	j=$j+1
     done
 
-    echo cc -o prog.alt prog.alt.c -D'f(a,b)'='((a)<(b)?(a):(b))' ${COLOURS[0]} ${COLOURS[1]} \
-	${COLOURS[2]} ${COLOURS[3]} ${COLOURS[4]} ${COLOURS[5]} ${COLOURS[6]} ${COLOURS[7]} -lncurses
+    echo cc -o prog.alt prog.alt.c -D'f(a,b)'='((a)<(b)?(a):(b))' "${COLOURS[0]}" "${COLOURS[1]}" \
+	"${COLOURS[2]}" "${COLOURS[3]}" "${COLOURS[4]}" "${COLOURS[5]}" "${COLOURS[6]}" "${COLOURS[7]}" -lncurses
 
-    cc -o prog.alt prog.alt.c -D'f(a,b)'='((a)<(b)?(a):(b))' ${COLOURS[0]} ${COLOURS[1]} \
-	${COLOURS[2]} ${COLOURS[3]} ${COLOURS[4]} ${COLOURS[5]} ${COLOURS[6]} ${COLOURS[7]} -lncurses || exit 1
+    cc -o prog.alt prog.alt.c -D'f(a,b)'='((a)<(b)?(a):(b))' "${COLOURS[0]}" "${COLOURS[1]}" \
+	"${COLOURS[2]}" "${COLOURS[3]}" "${COLOURS[4]}" "${COLOURS[5]}" "${COLOURS[6]}" "${COLOURS[7]}" -lncurses || exit 1
 }
 
 make
 
 ./termcaps
 T="${?}"
-if [ "${T}" -ne 0 ]; then
+if [[ "${T}" -ne 0 ]]; then
     read -rp  "Terminal issues detected; do you wish to continue anyway (Y/N) ? " ans
     [[ "${ans}" != "y" ]] && [[ "${ans}" != "Y" ]] && exit 1
 fi

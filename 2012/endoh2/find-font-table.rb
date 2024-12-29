@@ -91,5 +91,5 @@ u, v, d, s = find_params(fonts)
 puts "Found."
 puts
 puts "Let s = %p." % s
-puts "You can get the font data of dicimal character 'n' (0--9):"
+puts "You can get the font data of decimal character 'n' (0--9):"
 puts "  %d * s[n+10] - %d * s[n] - %d" % [u, v, d]

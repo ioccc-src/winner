@@ -1,0 +1,21 @@
+{
+    "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
+    "author_JSON_format_version" : "1.1 2024-02-11",
+    "author_handle" : "Dominik_Muth",
+    "full_name" : "Dominik Muth",
+    "sort_word" : "muth",
+    "location_code" : "DE",
+    "email" : "dominik.muth@gmx.de",
+    "url" : null,
+    "alt_url" : null,
+    "deprecated_twitter_handle" : null,
+    "mastodon" : null,
+    "mastodon_url" : null,
+    "github" : null,
+    "affiliation" : null,
+    "winning_entry_set" : [
+        {
+            "entry_id" : "2015_muth"
+        }
+    ]
+}

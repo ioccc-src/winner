@@ -1,0 +1,21 @@
+{
+    "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
+    "author_JSON_format_version" : "1.1 2024-02-11",
+    "author_handle" : "Christopher_Night",
+    "full_name" : "Christopher Night",
+    "sort_word" : "night",
+    "location_code" : "US",
+    "email" : null,
+    "url" : "https://web.archive.org/web/20090415070532/https://www.people.fas.harvard.edu/~night/",
+    "alt_url" : null,
+    "deprecated_twitter_handle" : null,
+    "mastodon" : null,
+    "mastodon_url" : null,
+    "github" : null,
+    "affiliation" : null,
+    "winning_entry_set" : [
+        {
+            "entry_id" : "2006_night"
+        }
+    ]
+}

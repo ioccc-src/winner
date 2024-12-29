@@ -15,7 +15,7 @@ n;}}void X(int v,int u){char*y=0;v-=1;switch(v){case(0x2):y ="HckngfVqQrgpKprwv"
 "Hkng"; BC(4):y="JempihXsStirMrtyxJmpi"; BC(0):y="PointValueTooLarge"; BC 0x1:y=
 "EvqmjdbufJoqvuQpjou";BC(6):y="TuOtv{zLorky";BC(3):y="WrrPdq|RxwsxwSrlqwv";BC(5)
 :y="GfiFwlzrjsyX~syf}"; BC(07):y="UvV|{w|{Mpslz";}if(u)exit(0); f(y,v);exit(1);}
-int main(int t,const char*T[]){for(i=00;i<0x100;++i)for(j=0;j<=i;++j)if(1==y(i,j
+int main(int t, char *T[]){ for (i=00;i<0x100;++i) for (j=0;j<=i;++j)if(1==y(i,j
 ))W[i]=j,W[j]=i;for(k=0x1;k<t;k++){p=0;for(l=0;(T[k][l]>=toupper('0'))&&(T[k][l]
 <=tolower('9'));l++){p=p*10+(T[k][l]-'0');if(p>=256)X(1,0);}if(T[k][l]=='-'){for
 (m=0;m<u;m++)if(q[m]==p)X(2,0);q[u]=p;J[u]=T[k]+l+1;K[u]=fopen(J[u],"r");if(!u[K

@@ -1,0 +1,44 @@
+# Sujet : Structure protéiques locales : analyse et valorisation d’une méthode de prédiction.
+
+# Contexte du stage
+La connaissance de la structure tridimensionnelle des protéines est d’une aide décisive pour la compréhension de leurs propriétés fonctionnelles et de leurs rôles biologiques.
+De nombreux groupes de recherche ont construit des bibliothèques de fragments (ou alphabets structuraux) pour décrire au mieux l’ensemble des structures locales des protéines connues. Ces alphabets correspondent à un ensemble fini de fragments structuraux [1].
+Dans notre laboratoire, une bibliothèque de 120 prototypes (nommés LSP pour Local Structure Prototypes) représentatifs des structures protéiques locales de 11 carbones alpha de long a été développée [2,3]. Pour chacune de ces 120 classes structurales, de fortes dépendances à la séquence en acides aminés ont été mises en évidence. L’exploitation de cette propriété a permis le développement des méthodes novatrices de prédiction de la structure locale des protéines à partir de la séquence en acides aminés [3-5].
+
+# Description du stage
+Deux axes de stage sont envisagés :
+La valorisation d’un outil de prédiction des structures protéiques locales via une interface web.
+L’extension des études à l’exploration de la relation entre prédictibilité des structures locales et flexibilité au sein des structures protéiques globales.
+
+# Compétences souhaitées
+Niveau Licence 3 à Master 2 en Informatique ou Bioinformatique.
+Une bonne aisance en programmation est requise. Au minimum une maîtrise correcte d’un langage de type C semble essentielle. La connaissance de Python, du XHTML et de PHP sont un plus. Dans le cas contraire, ces langages devront être appris durant le stage.
+Des connaissances en bioinformatique sont préférables.
+
+# Lieu
+INSERM UMR-S 665, * *Dynamique des Structures et Interactions des Macromolécules Biologiques (DSIMB), Université Paris Diderot – Paris 7, INTS
+6 rue Alexandre Cabanel
+75739 PARIS cedex 15
+
+# Contact
+Envoyer CV + lettre de motivation à
+Aurélie Bornot : aurelie.bornot@univ-paris-diderot.fr
+
+1. Offmann B, Tyagi M, de Brevern AG. Local Protein Structures. Current Bioinformatics 2007;2:165-202.
+2. Benros C. Analyse et prediction des structures tridimensionnelles locales des proteines [Analyse de Génomes et Modélisation Moléculaire]. Paris, France: Université Paris 7 - Denis Diderot; 2005. 211 p. (voir http://www.dsimb.inserm.fr/~debrevern/PUB/index.html#RELA)
+3. Benros C, de Brevern AG, Etchebest C, Hazout S. Assessing a novel approach for predicting local 3D protein structures from sequence. Proteins 2006;62(4):865-880.
+4. Bornot A, Etchebest C, de Brevern AG. A new prediction strategy for long local protein structures using an original description. Proteins 2009 /in press/.
+5. http://www.dsimb.inserm.fr/~bornot/
+
+
+
+-- 
+Please note my new mail adress : <aurelie.bornot@univ-paris-diderot.fr>
+---------------------------------------------------------------------------
+Aurelie Bornot
+EBGM, INSERM UMR-S 726, DSIMB team
+INTS
+6, rue Alexandre Cabanel
+75739 Paris Cedex 15
+FRANCE
+---------------------------------------------------------------------------  Website : http://www.dsimb.inserm.fr/~bornot/

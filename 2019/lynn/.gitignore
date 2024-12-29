@@ -1,0 +1,19 @@
+#
+# sort with: ../../bin/sgi.sh
+*.dSYM
+fib
+fib.c
+ghcfib
+ghcfib.hi
+ghcfib.o
+hint
+hint.c
+indent
+indent.c
+indent.o
+lol
+lol.c
+prog
+prog.orig
+scc
+scc.c

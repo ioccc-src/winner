@@ -1,0 +1,12 @@
+#
+# sort with: ../../bin/sgi.sh
+*.dSYM
+*.png
+*.xbm
+indent
+indent.c
+indent.o
+prog.orig
+stewart
+stewart.html
+stewart.orig

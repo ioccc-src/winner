@@ -1,0 +1,49 @@
+## To build:
+
+``` <!---sh-->
+    make all
+```
+
+
+## To use:
+
+``` <!---sh-->
+    ./bright some_file
+```
+
+
+## Try:
+
+``` <!---sh-->
+    ./try.sh
+```
+
+
+## Judges' remarks:
+
+Compile this program and give a filename as an argument.
+
+Mr. Bright exploits the C pre-processor, similar variables and
+excessive shifting to obfuscate an otherwise useful binary display
+program.  This gives you a small example of what it is like to
+maintain the Bourne shell! :-}
+
+
+## Author's remarks:
+
+No remarks were provided by the author.
+
+
+<!--
+
+    Copyright © 1984-2024 by Landon Curt Noll. All Rights Reserved.
+
+    You are free to share and adapt this file under the terms of this license:
+
+        Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+
+    For more information, see:
+
+        https://creativecommons.org/licenses/by-sa/4.0/
+
+-->

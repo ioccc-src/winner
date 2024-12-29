@@ -40,7 +40,7 @@ RULES:
 
     3) Submissions should be performed using the instructions outlined at,
 
-|      http://www.ioccc.org/2006/submit
+|      https://www.ioccc.org/2006/submit
 
     4) If your entry is selected as a winner, it will be modified as follows:
 
@@ -80,7 +80,7 @@ RULES:
 
 |   8) Entries must be received prior to 28-Feb-2007 23:59 UTC.
 
-       An EMail a confirmation of submission will be sent to the sender
+       An email a confirmation of submission will be sent to the sender
        before the close of the contest.
 
     9) Each person may submit up to 8 entries per contest year.  Each entry
@@ -131,19 +131,19 @@ FOR MORE INFORMATION:
 |	    q.2006@ioccc.org	   (for questions only!)
 
 |   You must include the words ``ioccc 2006 question'' in the subject of
-    your EMail message when sending EMail to the judges.
+    your email when sending email to the judges.
 
     The rules and the guidelines may (and often do) change from year to
     year.  You should be sure you have the current rules and guidelines
     prior to submitting entries.  To obtain them, visit the IOCCC web page:
 
-	http://www.ioccc.org
+	https://www.ioccc.org
 
     It has rules, guidelines and winners of previous contests (1984 to date).
 
     Details of how to submit your entry are located at,
 
-|	http://www.ioccc.org/2006/submit
+|	https://www.ioccc.org/2006/submit
 
 Leonid A. Broukhis
 Simon Cooper

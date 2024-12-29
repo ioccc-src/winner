@@ -1,3 +1,21 @@
+#
+# sort with: bin/sgi.sh
 .DS_Store
-prog
-alt.prog
+._.DS_Store
+.auth.json
+.info.json
+.s[a-zA-Z][a-zA-Z0-9]
+.*.s[a-zA-Z][a-zA-Z0-9]
+.tmp.*
+/NOTES
+/archive/historic/[12][0-9][0-9][0-9]
+author_wins.csv
+author_wins.numbers
+debug.input.md
+debug.output.html
+manifest.csv
+manifest.numbers
+summary.csv
+summary.numbers
+year_prize.csv
+year_prize.numbers

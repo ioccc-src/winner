@@ -1,38 +1,179 @@
-LDFLAGS+=-lcurses
+#!/usr/bin/env make
+#
+# IOCCC 2005 winning entry - sykes
 
-build: sykes
+################################################################################
+#
+# IOCCC winning entry code may not work on your system.  What was liked/allowed
+# and worked in the past may no longer be liked/allowed or compile/run today.
+#
+# Bug fixes, corrections and typo fixes are VERY WELCOME.  If you see a problem,
+# first check this URL for a list of known bugs and (mis)features of IOCCC entries:
+#
+#	https://www.ioccc.org/bugs.html
+#
+# GitHub pull requests are welcome!  Please see the above URL for details.
+#
+################################################################################
+#
+# This file is Copyright (c) 2023 by Landon Curt Noll.  All Rights Reserved.
+# You are free to share and adapt this file under the terms of this license:
+#
+#	Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+#
+# For more information, see: https://creativecommons.org/licenses/by-sa/4.0/
 
+
+#############################
+# shell used by this Makefile
+#############################
+#
+SHELL= bash
+
+#######################
+# common tool locations
+#######################
+#
+include ../../var.mk
+
+# Common C compiler warnings to silence
+#
+CSILENCE= -Wno-bitwise-op-parentheses -Wno-empty-body -Wno-error \
+	  -Wno-implicit-function-declaration -Wno-implicit-int -Wno-parentheses \
+	  -Wno-pointer-sign -Wno-return-type -Wno-deprecated-non-prototype \
+	  -Wno-unused-value
+
+# Attempt to silence unknown warning option
+#
+CUNKNOWN= -Wno-unknown-warning-option
+
+# Common C compiler warning flags
+#
+CWARN= -Wall -Wextra ${CSILENCE} ${CUNKNOWN}
+
+# Compiler standard
+#
+CSTD= -std=gnu99
+
+# Compiler bit architecture
+#
+ARCH=
+
+# Defines that are needed to compile
+#
+CDEFINE=
+
+# Include files that are needed to compile
+#
+CINCLUDE=
+
+# Optimization
+#
+OPT= -O3
+
+# Default flags for ANSI C compilation
+#
+CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
+
+# Libraries needed to build
+#
+LDFLAGS= -lcurses
+
+# C compiler to use
+#
+CC= cc
+
+# Compiler add-ons or replacements for clang only
+#
+ifeq "$(findstring $(CLANG),${CC})" "$(CLANG)"
+#
+CSILENCE+= -Wno-comma -Wno-implicit-int-conversion -Wno-missing-prototypes \
+	   -Wno-missing-variable-declarations -Wno-pedantic \
+	   -Wno-poison-system-directories -Wno-shadow -Wno-shorten-64-to-32 \
+	   -Wno-strict-prototypes -Wno-extra-semi-stmt -Wno-misleading-indentation \
+	   -Wno-unsafe-buffer-usage
+#
+CWARN+= -Weverything
+#
+endif
+
+# Specific add-ons or replacements for gcc only
+#
+ifeq "$(findstring $(GCC),${CC})" "$(GCC)"
+#
+#CSILENCE+=
+#
+#CWARN+=
+#
+endif
+
+
+##############################
+# Special Makefile variables for this entry
+##############################
+#
+ENTRY= sykes
+PROG= ${ENTRY}
+#
+OBJ= ${PROG}.o
+ROM_DATA= basic-2-c000.901465-01.bin basic-2-d000.901465-02.bin edit-2-n.901447-24.bin \
+	nullfill.bin kernel-2.901465-03.bin
+DATA= ${ROM_DATA} 6502test DEMO chess
+TARGET= pet.rom ${PROG}
+#
+ALT_OBJ=
+ALT_TARGET=
+
+
+#################
+# build the entry
+#################
+#
+all: data ${TARGET}
+	@${TRUE}
+
+.PHONY: all alt data everything clean clobber
+
+${PROG}: ${PROG}.c
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
+
+test: ${PROG} test.sh
+	-./test.sh
+
+# alternative executable
+#
+alt: data ${ALT_TARGET}
+	@${TRUE}
+
+# data files
+#
+data: ${DATA}
+	@${TRUE}
+
+pet.rom: ${ROM_DATA}
+	${RM} -f $@
+	${CAT} ${ROM_DATA} > $@
+
+# both all and alt
+#
+everything: all alt
+	@${TRUE}
+
+
+###############
+# utility rules
+###############
+#
 clean:
-	-rm *.bin
+	${RM} -f ${OBJ} ${ALT_OBJ}
 
 clobber: clean
-	-rm sykes pet.rom
+	${RM} -f ${TARGET} ${ALT_TARGET}
+	${RM} -rf *.dSYM
 
-sykes: sykes.c
-	${CC} ${CFLAGS} ${LDFLAGS} $< -o $@
 
-alt: sykes.orig
-	
-sykes.orig: sykes.orig.c
-	${CC} ${CFLAGS} ${LDFLAGS} $< -o $@
+######################################
+# optional include of 1337 hacker rulz
+######################################
 
-data: pet.rom
-
-pet.rom: basic-2-c000.901465-01.bin basic-2-d000.901465-02.bin edit-2-n.901447-24.bin nullfill.bin kernal-2.901465-03.bin
-	cat basic-2-c000.901465-01.bin basic-2-d000.901465-02.bin edit-2-n.901447-24.bin nullfill.bin kernal-2.901465-03.bin >pet.rom
-
-basic-2-c000.901465-01.bin:
-	wget http://www.zimmers.net/anonftp/pub/cbm/firmware/computers/pet/basic-2-c000.901465-01.bin
-
-basic-2-d000.901465-02.bin:
-	wget http://www.zimmers.net/anonftp/pub/cbm/firmware/computers/pet/basic-2-d000.901465-02.bin
-
-edit-2-n.901447-24.bin:
-	wget http://www.zimmers.net/anonftp/pub/cbm/firmware/computers/pet/edit-2-n.901447-24.bin
-
-kernal-2.901465-03.bin:
-	wget http://www.zimmers.net/anonftp/pub/cbm/firmware/computers/pet/kernal-2.901465-03.bin
-
-nullfill.bin:
-	dd bs=2k count=1 if=/dev/zero of=nullfill.bin
-
+-include 1337.mk ../1337.mk ../../1337.mk

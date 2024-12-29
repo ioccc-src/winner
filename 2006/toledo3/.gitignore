@@ -1,0 +1,11 @@
+#
+# sort with: ../../bin/sgi.sh
+*.dSYM
+indent
+indent.c
+indent.o
+prog.orig
+toledo3
+toledo3.orig
+toledo3-sbar
+toledo3-txt

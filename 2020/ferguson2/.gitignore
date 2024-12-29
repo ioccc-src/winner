@@ -1,0 +1,17 @@
+#
+# sort with: ../../bin/sgi.sh
+*.dSYM
+chocolate-cake.dat
+chocolate-cake.key
+config
+decrypted.html
+decrypted-source.html
+encrypt.sh
+enigma.html
+indent
+indent.c
+indent.o
+prog
+prog.alt
+prog.orig
+recode

@@ -1,0 +1,17 @@
+#
+# sort with: ../../bin/sgi.sh
+*.dSYM
+configuration.txt
+endoh1
+endoh1.alt
+endoh1.alt2
+endoh1.alt3
+endoh1_color
+endoh1_color2
+endoh1_color.alt
+endoh1_color.alt2
+endoh1.orig
+indent
+indent.c
+indent.o
+prog.orig

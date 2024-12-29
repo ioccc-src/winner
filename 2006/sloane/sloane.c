@@ -13,7 +13,7 @@ KXw{Y"   "RsFwsFwsFw{zaqyaz|FmMpyaoyI\\]cuUw{J"
        "~|_."[c(6,"b"              "cd\\a[g","^`"   "_e"
        "]fh")+8], p(   "#$%"        "&'()*+,-.1"[   c(11
       ,"_ac[]\\YZi"   "jkm",         "`bd^efghXWlV" )+13
-      ]-34,a);}main   (k,Z){         float z[1920]  ,A=0
+      ]-34,a);}main   (k,Z )char**Z;{float z[1920]  ,A=0
 ,B=0  ,i,j; puts(""         "\x1b"   "[2J");for(;;
 )  {  float e=sin(A         ),  n=   sin(B),g=cos(
 A),m   =cos(B);for(k        =0;k<   1840;k++)y=-k

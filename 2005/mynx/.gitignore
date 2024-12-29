@@ -1,0 +1,15 @@
+#
+# sort with: ../../bin/sgi.sh
+*.dSYM
+indent
+indent.c
+indent.o
+mynx
+mynx.alt
+mynx.alt2
+mynx.orig
+prog.orig
+source-alt/config.*
+source-alt/makefile
+source/config.*
+source/makefile

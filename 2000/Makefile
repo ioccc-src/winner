@@ -1,214 +1,465 @@
-#!/bin/make
-# 2000 makefile
+#!/usr/bin/env make
 #
-# Copyright (C) Simon Cooper, Landon Curt Noll, Peter Seebach
-# and Leonid A. Broukhis, 2000.
-# All Rights Reserved.  Permission for personal, educational or non-profit
-# use is granted provided this this copyright and notice are included in its
-# entirety and remains unaltered.  All other uses must receive prior permission
-# from the contest judges.
+# 2000 Makefile
 
-SHELL= /bin/sh
-CAT= cat
-RM= rm
-SED= sed
-TRUE= true
-
-# optimization
+################################################################################
 #
-# Most compiles will safely use -O2.  Some can use only -O.
-# A few compilers have broken optimizers and thus you may
-# not want anything.
+# IOCCC winning entry code may not work on your system.  What was liked/allowed
+# and worked in the past may no longer be liked/allowed or compile/run today.
 #
-#OPT=
-#OPT= -O
-OPT= -O2
-
-# flags for ANSI compiles
+# Bug fixes, corrections and typo fixes are VERY WELCOME.  If you see a problem,
+# first check this URL for a list of known bugs and (mis)features of IOCCC entries:
 #
-# NOTE: Some ANSI compilers make use of -Xa to turn on ANSI mode,
-#	others such as gcc may want -ansi, others (Compaq Tru64 Unix)
-#       want -std1, and others may want nothing at all.
-#       Adjust the CFLAGS line as needed.
+#	https://www.ioccc.org/bugs.html
 #
-# NOTE: Some compilers cannot optimize, or optimize some entries
-#	incorrectly.  You might want to turn on -O to see if your
-#	compiler can handle them.
+# GitHub pull requests are welcome!  Please see the above URL for details.
 #
+################################################################################
 #
-#CFLAGS= -Xa ${OPT}
-#CFLAGS= -std1 $(OPT)
-CFLAGS= -ansi ${OPT}
-
-NO_ANSI_CFLAGS=
-#NO_ANSI_CFLAGS=
-
-# NOTE: On some systems, the library path does not include the location
-#	of the X11 libraries.  You might need to use a -L/path/to/X11/lib/dir
-#	in order to compile with these libs.
+# This file is Copyright (c) 2024 by Landon Curt Noll.  All Rights Reserved.
+# You are free to share and adapt this file under the terms of this license:
 #
-X11CCFLAGS= -I/usr/X11R6/include -I/usr/X11R6/include/X11 -I/usr/include/X11
-#X11CCFLAGS=
-X11LDFLAGS= -L/usr/X11R6/lib
-#X11LDFLAGS=
-
-# Perl
+#	Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
 #
-PERL= perl
-#PERL= perl5
-
-# ANSI compiler
-#
-# Set CC to the name of your ANSI compiler.
-#
-# Some entries seem to need gcc.  If you have gcc, set
-# both CC and MAY_NEED_GCC to gcc.
-#
-# If you do not have gcc, set CC to the name of your ANSI compiler, and
-# set MAY_NEED_GCC to either ${CC} (and hope for the best) or to just :
-# to disable such programs.
-#
-CC= cc
-MAY_NEED_GCC= gcc
-
-# winners that compile under ANSI C
-#
-WINNERS= anderson schneiderwent primenum bellard bmeyer briddlebane dhyang \
-	dmy2jd jarijyrki dlowe natori rince robison thadgavin tomx
-ALT_NAMES= schneiderwent.orig briddlebane.orig thadgavin.orig
-DATA_FILES= schneiderwent_files bmeyer_files jarijyrki_files
+# For more information, see: https://creativecommons.org/licenses/by-sa/4.0/
 
 
-all: ${WINNERS}
-
-# Best use of flags
+#############################
+# shell used by this Makefile
+#############################
 #
-anderson: anderson.c
-	${CC} ${CFLAGS} $? -o $@
+SHELL= bash
 
-# Most Timely Output
+#######################
+# common tool locations
+#######################
 #
-schneiderwent: schneiderwent.c
-	${CC} ${CFLAGS} $? -o $@
+include ../var.mk
 
-schneiderwent_files: schneiderwent.data
 
-schneiderwent.orig: schneiderwent.orig.c
-	${CC} ${CFLAGS} $? -o $@
+###############
+# IOCCC entries
+###############
+#
+# BEGIN - DO NOT REMOVE THIS LINE - make new_entry uses this line #
+ENTRIES= anderson bellard bmeyer briddlebane dhyang dlowe jarijyrki \
+	natori primenum rince robison schneiderwent thadgavin tomx
+# END - DO NOT REMOVE THIS LINE - make new_entry also uses this #
 
-# Best Abuse of CPP
-#
-primenum: primenum.c
-	${CC} ${CFLAGS} $? -o $@
+YEAR= 2000
 
-# Most Specific Output
-#
-bellard: bellard.c
-	${CC} ${CFLAGS} $? -o $@
 
-# Best Utility
+###################
+# build all entries
+###################
 #
-# machines operating in 64 bit mode:
-#
-bmeyer: bmeyer.c
-	${CC} -DY= -O6 $? -o $@ -lm
-#
-# linux/x86, glibc 2.0, libc4/5:
-#
-# bmeyer: bmeyer.c
-# 	${CC} -DY="__setfpucw(0x127f)" -O6 $? -o $@ -lm
-#
-# linux/x86, glibc 2.1:
-#
-# bmeyer: bmeyer.c
-# 	${MAY_NEED_GCC} -DY='int x=0x127f; __asm__ ("fldcw %0" : : "m" (*&x))' \
-# 			-O6 $? -o $@ -lm
+all:
+	@echo '=-=-= ${YEAR} begin make $@ =-=-='
+	@echo
+	@for i in ${ENTRIES}; do \
+	    echo "=-= start ${YEAR}/$$i =-="; \
+	    echo "(cd $$i && ${MAKE} $@)"; \
+	    (cd $$i && ${MAKE} $@); \
+	    echo "=-= end ${YEAR}/$$i =-="; \
+	    echo; \
+	done
+	@echo '=-=-= ${YEAR} complete make $@ =-=-='
 
-bmeyer_files: lavabus.pgm lenna.glic michael.pgm
+.PHONY: all alt data everything diff_orig_prog diff_prog_orig \
+	diff_alt_prog diff_prog_alt diff_orig_alt diff_alt_orig \
+	clean clobber install genpath love haste waste maker \
+	easter_egg sandwich supernova more_magic magic charon pluto
 
-# Best Abuse of User
+# alternative executable
 #
-briddlebane: briddlebane.c
-	${CC} ${CFLAGS} $? -o $@ -lm
+alt:
+	@echo '=-=-= ${YEAR} begin make $@ =-=-='
+	@echo
+	@for i in ${ENTRIES}; do \
+	    echo "=-= start ${YEAR}/$$i =-="; \
+	    echo "(cd $$i && ${MAKE} $@)"; \
+	    (cd $$i && ${MAKE} $@); \
+	    echo "=-= end ${YEAR}/$$i =-="; \
+	    echo; \
+	done
+	@echo '=-=-= ${YEAR} complete make $@ =-=-='
 
-briddlebane.orig: briddlebane.orig.c
-	${CC} ${CFLAGS} $? -o $@ -lm
-
-# Best Layout
+# data files
 #
-dhyang: dhyang.c
-	${CC} ${CFLAGS} $? -o $@
+data:
+	@echo '=-=-= ${YEAR} begin make $@ =-=-='
+	@echo
+	@for i in ${ENTRIES}; do \
+	    echo "=-= start ${YEAR}/$$i =-="; \
+	    echo "(cd $$i && ${MAKE} $@)"; \
+	    (cd $$i && ${MAKE} $@); \
+	    echo "=-= end ${YEAR}/$$i =-="; \
+	    echo; \
+	done
+	@echo '=-=-= ${YEAR} complete make $@ =-=-='
 
-dmy2jd: dmy2jd.c
-	${CC} ${CFLAGS} $? -o $@
-
-# Best of Show
+# both all and alt
 #
-jarijyrki: jarijyrki.c
-	${CC} ${X11CCFLAGS} ${CFLAGS} -DNeedFunctionPrototypes \
-	    -DU=40 -DT=98 '-Dz=(T+1)*U*U' -DQ=80 -DS=20 -DN=10 -DB=5 -DG=23 \
-	    -Dp=7 '-DM=((p+1)*Q)+S' '-DH=(G*S)+S+S' -DC=XK_Up -DL=XK_Down \
-	    -DO=XK_Left -DV=XK_Right -DR=XK_Escape -D_=XK_BackSpace \
-	    $? -o $@ ${X11LDFLAGS} -lX11
+everything:
+	@echo '=-=-= ${YEAR} begin make $@ =-=-='
+	@echo
+	@for i in ${ENTRIES}; do \
+	    echo "=-= start ${YEAR}/$$i =-="; \
+	    echo "(cd $$i && ${MAKE} $@)"; \
+	    (cd $$i && ${MAKE} $@); \
+	    echo "=-= end ${YEAR}/$$i =-="; \
+	    echo; \
+	done
+	@echo '=-=-= ${YEAR} complete make $@ =-=-='
 
-jarijyrki_files: sheet1.info
 
-# Worst Abuse of the Rules
+#####################
+# make a difference #
+#####################
 #
-# NOTE: You will need to adjust this path to the place where Perl has been
-#	installed on your system.  Running "perl -V" may help you locate
-#	this place.
+# diff orig source and source
 #
-# The following bit of perl may help determining the values you need:
-#
-#	perl -MConfig -e 'print "$Config{archlibexp}/CORE\n"'
-#
-#
-dlowe: dlowe.c
-	${CC} ${NO_ANSI_CFLAGS} -DPERL_POLLUTE \
-		`${PERL} -MExtUtils::Embed -e ccopts` $? -o $@ \
-		`${PERL} -MExtUtils::Embed -e ldopts`
+diff_orig_prog:
+	@echo '=-=-= ${YEAR} begin make $@ =-=-='
+	@echo
+	@for i in ${ENTRIES}; do \
+	    echo "=-= start ${YEAR}/$$i =-="; \
+	    echo "(cd $$i && ${MAKE} $@)"; \
+	    (cd $$i && ${MAKE} $@); \
+	    echo "=-= end ${YEAR}/$$i =-="; \
+	    echo; \
+	done
+	@echo '=-=-= ${YEAR} complete make $@ =-=-='
 
-# Best Small Program
+# diff source and orig source
 #
-natori: natori.c
-	${CC} ${CFLAGS} $? -o $@ -lm
+diff_prog_orig:
+	@echo '=-=-= ${YEAR} begin make $@ =-=-='
+	@echo
+	@for i in ${ENTRIES}; do \
+	    echo "=-= start ${YEAR}/$$i =-="; \
+	    echo "(cd $$i && ${MAKE} $@)"; \
+	    (cd $$i && ${MAKE} $@); \
+	    echo "=-= end ${YEAR}/$$i =-="; \
+	    echo; \
+	done
+	@echo '=-=-= ${YEAR} complete make $@ =-=-='
 
-# Astronomically Obfuscated
+# diff alt source and source
 #
-rince: rince.c
-	${CC} ${X11CCFLAGS} ${CFLAGS} -DM_PI=3.14159265358979323846 \
-		$? -o $@ -lm ${X11LDFLAGS} -lX11
+diff_alt_prog:
+	@echo '=-=-= ${YEAR} begin make $@ =-=-='
+	@echo
+	@for i in ${ENTRIES}; do \
+	    echo "=-= start ${YEAR}/$$i =-="; \
+	    echo "(cd $$i && ${MAKE} $@)"; \
+	    (cd $$i && ${MAKE} $@); \
+	    echo "=-= end ${YEAR}/$$i =-="; \
+	    echo; \
+	done
+	@echo '=-=-= ${YEAR} complete make $@ =-=-='
 
-# Best game
+# diff source and alt source
 #
-robison: robison.c
-	${CC} ${CFLAGS} $? -o $@
+diff_prog_alt:
+	@echo '=-=-= ${YEAR} begin make $@ =-=-='
+	@echo
+	@for i in ${ENTRIES}; do \
+	    echo "=-= start ${YEAR}/$$i =-="; \
+	    echo "(cd $$i && ${MAKE} $@)"; \
+	    (cd $$i && ${MAKE} $@); \
+	    echo "=-= end ${YEAR}/$$i =-="; \
+	    echo; \
+	done
+	@echo '=-=-= ${YEAR} complete make $@ =-=-='
 
-# Most Portable Output
+# diff orig and alt
 #
-thadgavin: thadgavin.c
-	${CC} ${CFLAGS} $? -o $@ -lcurses -lm
+diff_orig_alt:
+	@echo '=-=-= ${YEAR} begin make $@ =-=-='
+	@echo
+	@for i in ${ENTRIES}; do \
+	    echo "=-= start ${YEAR}/$$i =-="; \
+	    echo "(cd $$i && ${MAKE} $@)"; \
+	    (cd $$i && ${MAKE} $@); \
+	    echo "=-= end ${YEAR}/$$i =-="; \
+	    echo; \
+	done
+	@echo '=-=-= ${YEAR} complete make $@ =-=-='
 
-thadgavin.orig: thadgavin.orig.c
-	${CC} ${CFLAGS} $? -o $@ -lncurses -lm
+# diff alt and orig
+diff_alt_orig:
+	@echo '=-=-= ${YEAR} begin make $@ =-=-='
+	@echo
+	@for i in ${ENTRIES}; do \
+	    echo "=-= start ${YEAR}/$$i =-="; \
+	    echo "(cd $$i && ${MAKE} $@)"; \
+	    (cd $$i && ${MAKE} $@); \
+	    echo "=-= end ${YEAR}/$$i =-="; \
+	    echo; \
+	done
+	@echo '=-=-= ${YEAR} complete make $@ =-=-='
 
-# Most Complete Program
+
+###############
+# utility rules
+###############
 #
-tomx: tomx.c
-	${CC} ${CFLAGS} $? -o $@
-
-everything: ${WINNERS} ${ALT_NAMES} ${DATA_FILES}
-
 clean:
-	${RM} -f *.o a.out core ${WINNERS}
+	@echo '=-=-= ${YEAR} begin make $@ =-=-='
+	@echo
+	@for i in ${ENTRIES}; do \
+	    echo "=-= start ${YEAR}/$$i =-="; \
+	    echo "(cd $$i && ${MAKE} $@)"; \
+	    (cd $$i && ${MAKE} $@); \
+	    echo "=-= end ${YEAR}/$$i =-="; \
+	    echo; \
+	done
+	@echo '=-=-= ${YEAR} complete make $@ =-=-='
 
-clobber: clean
-	${RM} -f ${WINNERS}
-	${RM} -f ${ALT_NAMES}
+clobber:
+	@echo '=-=-= ${YEAR} begin make $@ =-=-='
+	@echo
+	@for i in ${ENTRIES}; do \
+	    echo "=-= start ${YEAR}/$$i =-="; \
+	    echo "(cd $$i && ${MAKE} $@)"; \
+	    (cd $$i && ${MAKE} $@); \
+	    echo "=-= end ${YEAR}/$$i =-="; \
+	    echo; \
+	done
+	@echo '=-=-= ${YEAR} complete make $@ =-=-='
 
-nuke: clobber
-	@${TRUE}
+genpath:
+	@echo '=-=-= IOCCC begin make $@ =-=-='
+	@${RM} -f .tmp.genpath
+	@-for i in ${ENTRIES}; do \
+	    echo "${YEAR}/$$i" >> .tmp.genpath; \
+	    rm -f "$$i/.tmp.genpath"; \
+	    echo "${YEAR}/$$i" >> "$$i/.tmp.genpath"; \
+	    if ${CMP} -s "$$i/.tmp.genpath" "$$i/.path"; then \
+	        rm -f "$$i/.tmp.genpath"; \
+		echo "$$i/.path already up to date"; \
+	    else \
+		 ${MV} -f "$$i/.tmp.genpath" "$$i/.path"; \
+		 ${CHMOD} 0444 "$$i/.path"; \
+		 echo "updated $$i/.path"; \
+	    fi; \
+        done
+	@-if ${CMP} -s .tmp.genpath .year; then \
+	    ${RM} -f .tmp.genpath; \
+	    echo ".year already up to date"; \
+	else \
+	    ${MV} -f .tmp.genpath .year; \
+	    ${CHMOD} 0444 .year; \
+	    echo "updated .year"; \
+	fi
+	@echo '=-=-= IOCCC complete make $@ =-=-='
 
-install: all
-	${CAT} ${WINNERS} ${ALT_NAMES} > /dev/null
+
+#############################################################
+# NOTE: 'Don't Panic' if you don't understand the stuff below
+#############################################################
+
+# add ${NEW_ENTRY} to the list of ${ENTRIES} and output Makefile lines to set updated ${ENTRIES} value
+#
+new_entry:
+	@(echo 'ENTRIES= '; \
+	  (echo ${ENTRIES} ${NEW_ENTRY}) | ${TR} ' ' '\012' | ${SORT} -d -u) | \
+	  ${FMT} | ${SED} -e '2,$$s/^/\t/' -e 's/$$/ \\/' -e '$$s/ \\//'
+
+
+########################
+# extended utility rules
+########################
+
+.PHONY: indent_clean indent_clobber
+
+# you may be able to misunderstand the source by reading indent.c
+#
+indent.c:
+	@echo '=-=-= ${YEAR} begin make $@ =-=-='
+	@echo
+	@for i in ${ENTRIES}; do \
+	    echo "=-= start ${YEAR}/$$i =-="; \
+	    echo "(cd $$i && ${MAKE} $@)"; \
+	    (cd $$i && ${MAKE} $@); \
+	    echo "=-= end ${YEAR}/$$i =-="; \
+	    echo; \
+	done
+	@echo '=-=-= ${YEAR} complete make $@ =-=-='
+
+indent_clean: clean
+	@echo '=-=-= ${YEAR} begin make $@ =-=-='
+	@echo
+	@for i in ${ENTRIES}; do \
+	    echo "=-= start ${YEAR}/$$i =-="; \
+	    echo "(cd $$i && ${MAKE} $@)"; \
+	    (cd $$i && ${MAKE} $@); \
+	    echo "=-= end ${YEAR}/$$i =-="; \
+	    echo; \
+	done
+	@echo '=-=-= ${YEAR} complete make $@ =-=-='
+
+indent_clobber: indent_clean clobber
+	@echo '=-=-= ${YEAR} begin make $@ =-=-='
+	@echo
+	@for i in ${ENTRIES}; do \
+	    echo "=-= start ${YEAR}/$$i =-="; \
+	    echo "(cd $$i && ${MAKE} $@)"; \
+	    (cd $$i && ${MAKE} $@); \
+	    echo "=-= end ${YEAR}/$$i =-="; \
+	    echo; \
+	done
+	@echo '=-=-= ${YEAR} complete make $@ =-=-='
+
+install:
+	@echo '=-=-= ${YEAR} begin make $@ =-=-='
+	@echo
+	@for i in ${ENTRIES}; do \
+	    echo "=-= start ${YEAR}/$$i =-="; \
+	    echo "(cd $$i && ${MAKE} $@)"; \
+	    (cd $$i && ${MAKE} $@); \
+	    echo "=-= end ${YEAR}/$$i =-="; \
+	    echo; \
+	done
+	@echo '=-=-= ${YEAR} complete make $@ =-=-='
+
+
+##################
+# 1337 hacker rulz
+##################
+
+love:
+	@echo '=-=-= ${YEAR} begin make $@ =-=-='
+	@echo
+	@for i in ${ENTRIES}; do \
+	    echo "=-= start ${YEAR}/$$i =-="; \
+	    echo "(cd $$i && ${MAKE} $@)"; \
+	    (cd $$i && ${MAKE} $@); \
+	    echo "=-= end ${YEAR}/$$i =-="; \
+	    echo; \
+	done
+	@echo '=-=-= ${YEAR} complete make $@ =-=-='
+
+haste:
+	@echo '=-=-= ${YEAR} begin make $@ =-=-='
+	@echo
+	@for i in ${ENTRIES}; do \
+	    echo "=-= start ${YEAR}/$$i =-="; \
+	    echo "(cd $$i && ${MAKE} $@)"; \
+	    (cd $$i && ${MAKE} $@); \
+	    echo "=-= end ${YEAR}/$$i =-="; \
+	    echo; \
+	done
+	@echo '=-=-= ${YEAR} complete make $@ =-=-='
+
+waste:
+	@echo '=-=-= ${YEAR} begin make $@ =-=-='
+	@echo
+	@for i in ${ENTRIES}; do \
+	    echo "=-= start ${YEAR}/$$i =-="; \
+	    echo "(cd $$i && ${MAKE} $@)"; \
+	    (cd $$i && ${MAKE} $@); \
+	    echo "=-= end ${YEAR}/$$i =-="; \
+	    echo; \
+	done
+	@echo '=-=-= ${YEAR} complete make $@ =-=-='
+
+maker:
+	@echo '=-=-= ${YEAR} begin make $@ =-=-='
+	@echo
+	@for i in ${ENTRIES}; do \
+	    echo "=-= start ${YEAR}/$$i =-="; \
+	    echo "(cd $$i && ${MAKE} $@)"; \
+	    (cd $$i && ${MAKE} $@); \
+	    echo "=-= end ${YEAR}/$$i =-="; \
+	    echo; \
+	done
+	@echo '=-=-= ${YEAR} complete make $@ =-=-='
+
+easter_egg:
+	@echo '=-=-= ${YEAR} begin make $@ =-=-='
+	@echo
+	@for i in ${ENTRIES}; do \
+	    echo "=-= start ${YEAR}/$$i =-="; \
+	    echo "(cd $$i && ${MAKE} $@)"; \
+	    (cd $$i && ${MAKE} $@); \
+	    echo "=-= end ${YEAR}/$$i =-="; \
+	    echo; \
+	done
+	@echo '=-=-= ${YEAR} complete make $@ =-=-='
+
+sandwich:
+	@echo '=-=-= ${YEAR} begin make $@ =-=-='
+	@echo
+	@for i in ${ENTRIES}; do \
+	    echo "=-= start ${YEAR}/$$i =-="; \
+	    echo "(cd $$i && ${MAKE} $@)"; \
+	    (cd $$i && ${MAKE} $@); \
+	    echo "=-= end ${YEAR}/$$i =-="; \
+	    echo; \
+	done
+	@echo '=-=-= ${YEAR} complete make $@ =-=-='
+
+
+# The IOCCC resident astronomer states
+#
+supernova:
+	@echo '=-=-= ${YEAR} begin make $@ =-=-='
+	@echo
+	@for i in ${ENTRIES}; do \
+	    echo "=-= start ${YEAR}/$$i =-="; \
+	    echo "(cd $$i && ${MAKE} $@)"; \
+	    (cd $$i && ${MAKE} $@); \
+	    echo "=-= end ${YEAR}/$$i =-="; \
+	    echo; \
+	done
+	@echo '=-=-= ${YEAR} complete make $@ =-=-='
+
+more_magic:
+	@echo '=-=-= ${YEAR} begin make $@ =-=-='
+	@echo
+	@for i in ${ENTRIES}; do \
+	    echo "=-= start ${YEAR}/$$i =-="; \
+	    echo "(cd $$i && ${MAKE} $@)"; \
+	    (cd $$i && ${MAKE} $@); \
+	    echo "=-= end ${YEAR}/$$i =-="; \
+	    echo; \
+	done
+	@echo '=-=-= ${YEAR} complete make $@ =-=-='
+
+magic:
+	@echo '=-=-= ${YEAR} begin make $@ =-=-='
+	@echo
+	@for i in ${ENTRIES}; do \
+	    echo "=-= start ${YEAR}/$$i =-="; \
+	    echo "(cd $$i && ${MAKE} $@)"; \
+	    (cd $$i && ${MAKE} $@); \
+	    echo "=-= end ${YEAR}/$$i =-="; \
+	    echo; \
+	done
+	@echo '=-=-= ${YEAR} complete make $@ =-=-='
+
+charon:
+	@echo '=-=-= ${YEAR} begin make $@ =-=-='
+	@echo
+	@for i in ${ENTRIES}; do \
+	    echo "=-= start ${YEAR}/$$i =-="; \
+	    echo "(cd $$i && ${MAKE} $@)"; \
+	    (cd $$i && ${MAKE} $@); \
+	    echo "=-= end ${YEAR}/$$i =-="; \
+	    echo; \
+	done
+	@echo '=-=-= ${YEAR} complete make $@ =-=-='
+
+pluto:
+	@echo '=-=-= ${YEAR} begin make $@ =-=-='
+	@echo
+	@for i in ${ENTRIES}; do \
+	    echo "=-= start ${YEAR}/$$i =-="; \
+	    echo "(cd $$i && ${MAKE} $@)"; \
+	    (cd $$i && ${MAKE} $@); \
+	    echo "=-= end ${YEAR}/$$i =-="; \
+	    echo; \
+	done
+	@echo '=-=-= ${YEAR} complete make $@ =-=-='

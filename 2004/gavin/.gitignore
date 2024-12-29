@@ -1,0 +1,20 @@
+#
+# sort with: ../../bin/sgi.sh
+*.dSYM
+fs/
+fs.tar
+gavin
+gavin.alt
+gavin.alt.o
+gavin.o
+gavin.orig
+img/README.md
+img/gavin.c
+img/prim
+indent
+indent.c
+indent.o
+kernel
+prog.orig
+sh
+vi

@@ -1,0 +1,12 @@
+#
+# sort with: ../../bin/sgi.sh
+*.dSYM
+buzzard.2
+buzzard.2.alt
+buzzard.2.orig
+first
+first.alt
+indent
+indent.c
+indent.o
+prog.orig

@@ -1,97 +1,154 @@
 #!/usr/bin/env make
 #
-# 2011 makefile
+# IOCCC 2011 winning entry - goren
+
+################################################################################
 #
-# This work by Landon Curt Noll, Simon Cooper, and Leonid A. Broukhis
-# is licensed under:
+# IOCCC winning entry code may not work on your system.  What was liked/allowed
+# and worked in the past may no longer be liked/allowed or compile/run today.
 #
-#	Creative Commons Attribution-ShareAlike 3.0 Unported License.
+# Bug fixes, corrections and typo fixes are VERY WELCOME.  If you see a problem,
+# first check this URL for a list of known bugs and (mis)features of IOCCC entries:
 #
-# See: http://creativecommons.org/licenses/by-sa/3.0/
+#	https://www.ioccc.org/bugs.html
+#
+# GitHub pull requests are welcome!  Please see the above URL for details.
+#
+################################################################################
+#
+# This file is Copyright (c) 2023 by Landon Curt Noll.  All Rights Reserved.
+# You are free to share and adapt this file under the terms of this license:
+#
+#	Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+#
+# For more information, see: https://creativecommons.org/licenses/by-sa/4.0/
 
 
-################
-# tool locations
-################
+#############################
+# shell used by this Makefile
+#############################
 #
-SHELL= /bin/bash
-CP= cp
-CPP= cpp
-GUNZIP= gunzip
-LD= ld
-MAKE= make
-RM= rm
-SED= sed
-TAR= tar
-TRUE= true
+SHELL= bash
 
-# Compiler warnings
+#######################
+# common tool locations
+#######################
 #
-CWARN=
+include ../../var.mk
 
-# compiler standard
+# Common C compiler warnings to silence
 #
-CSTD= -ansi
+CSILENCE= -Wno-bitwise-op-parentheses -Wno-error \
+	  -Wno-implicit-function-declaration -Wno-implicit-int -Wno-int-conversion \
+	  -Wno-int-to-pointer-cast -Wno-pedantic -Wno-pointer-sign \
+	  -Wno-pointer-to-int-cast -Wno-return-type -Wno-unused-but-set-parameter \
+	  -Wno-unused-value -Wno-deprecated-non-prototype \
+	  -Wno-builtin-declaration-mismatch -Wno-parentheses
 
-# compiler bit architecture
+# Attempt to silence unknown warning option
 #
-# Some entries require 32-bitness,
-# other entries require 64-bitess.
-# By default we assume nothing.
+CUNKNOWN= -Wno-unknown-warning-option
+
+# Common C compiler warning flags
 #
-# Under Mac OS X / Darwin, we must use -arch i386
-# Linux does not like this do let gnu make
-# detect the target and only add for Darwin.
+CWARN= -Wall -Wextra ${CSILENCE} ${CUNKNOWN}
+
+# Compiler standard
 #
-ifeq ($(target),)
-target=$(shell uname -s 2>/dev/null)
-endif
-ifeq ($(target),Darwin)
-ARCH= -arch i386
-else
+CSTD= -std=gnu11
+
+# Compiler bit architecture
+#
 ARCH=
-endif
 
-# optimization
+# Defines that are needed to compile
 #
-# Most compiles will safely use -O2.  Some can use only -O1 or -O.
-# A few compilers have broken optimizers or this entry make break
-# under those buggy optimizers and thus you may not want anything.
-#
-OPT= -O2
+CDEFINE=
 
-# default flags for ANSI C compilation
+# Include files that are needed to compile
 #
-CFLAGS= ${CWARN} ${CSTD} ${ARCH} ${OPT}
+CINCLUDE=
 
-# ANSI compiler
+# Optimization
 #
-# Set CC to the name of your ANSI compiler.
+OPT= -O3
+
+# Default flags for ANSI C compilation
+#
+CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
+
+# Libraries needed to build
+#
+LDFLAGS=
+
+# C compiler to use
 #
 CC= cc
 
+# Compiler add-ons or replacements for clang only
+#
+ifeq "$(findstring $(CLANG),${CC})" "$(CLANG)"
+#
+CSILENCE+= -Wno-array-bounds-pointer-arithmetic -Wno-comma -Wno-format-nonliteral \
+	   -Wno-implicit-int-conversion -Wno-missing-prototypes \
+	   -Wno-missing-variable-declarations -Wno-poison-system-directories \
+	   -Wno-strict-prototypes -Wno-unsafe-buffer-usage
+#
+CWARN+= -Weverything
+#
+endif
+
+# Specific add-ons or replacements for gcc only
+#
+ifeq "$(findstring $(GCC),${CC})" "$(GCC)"
+#
+#CSILENCE+=
+#
+#CWARN+=
+#
+endif
+
 
 ##############################
-# Special flags for this entry
+# Special Makefile variables for this entry
 ##############################
 #
 ENTRY= goren
+PROG= ${ENTRY}
+#
+OBJ= ${PROG}.o
 DATA=
+TARGET= ${PROG}
+#
+ALT_OBJ=
+ALT_TARGET=
 
 
 #################
 # build the entry
 #################
 #
-all: ${ENTRY} ${DATA}
+all: data ${TARGET}
 	@${TRUE}
 
-${ENTRY}: ${ENTRY}.c
-	${CC} ${CFLAGS} ${ENTRY}.c -o ${ENTRY}
+.PHONY: all alt data everything clean clobber
+
+${PROG}: ${PROG}.c
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 # alternative executable
 #
-alt:
+alt: data ${ALT_TARGET}
+	@${TRUE}
+
+# data files
+#
+data: ${DATA}
+	@${TRUE}
+
+# both all and alt
+#
+everything: all alt
 	@${TRUE}
 
 
@@ -99,40 +156,16 @@ alt:
 # utility rules
 ###############
 #
-everything: all alt
-
 clean:
-	${RM} -f ${ENTRY}.o
+	${RM} -f ${OBJ} ${ALT_OBJ}
 
 clobber: clean
-	${RM} -f ${ENTRY}
-
-nuke: clobber
-	@echo gnab gib!
-
-install:
-	@echo "Surely you're joking Mr. Feynman!"
-
-# backwards compatibility
-#
-build: all
+	${RM} -f ${TARGET} ${ALT_TARGET}
+	${RM} -rf *.dSYM
 
 
-##################
-# 133t hacker rulz
-##################
-#
-love:
-	@echo 'not war?'
+######################################
+# optional include of 1337 hacker rulz
+######################################
 
-haste:
-	$(MAKE) waste
-
-waste:
-	@echo 'waste'
-
-easter_egg:
-	@echo you expected to mis-understand this $${RANDOM} magic
-	@echo chongo '<was here>' "/\\oo/\\"
-	@echo Readers shall not be disallowed from being unable to partly misunderstand this final echo.
-	@${TRUE}
+-include 1337.mk ../1337.mk ../../1337.mk

@@ -1,0 +1,13 @@
+#
+# sort with: ../../bin/sgi.sh
+*.dSYM
+fruits.ppm
+indent
+indent.c
+indent.o
+lena512.ppm
+lena.ppm
+prog
+prog.orig
+small.jpg
+vintage_cars.ppm

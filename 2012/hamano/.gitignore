@@ -1,0 +1,15 @@
+#
+# sort with: ../../bin/sgi.sh
+*.dSYM
+hamano
+hamano.orig
+hello2
+hello3
+hello.pdf
+hint
+hint.pdf
+indent
+indent.c
+indent.o
+output.pdf
+prog.orig

@@ -1,0 +1,52 @@
+#
+# Public Domain 2005 by Anthony Howe.
+#
+
+.POSIX :
+
+########################################################################
+### No further configuration beyond this point.
+########################################################################
+
+top_srcdir	= ..
+PACKAGE 	= @PACKAGE_NAME@
+CC		= @CC@
+CFLAGS		= @CFLAGS@
+LDFLAGS		= @LDFLAGS@
+LIBS		= @LIBS@
+E		= @EXEEXT@
+
+#######################################################################
+
+build: ${PACKAGE}$E
+
+clean:
+	-rm ${PACKAGE}$E 
+	
+distclean: clean
+	-rm config.status configure.lineno config.log makefile
+	-rm -rf autom4te.cache
+	-rm ioccc$E right$E
+	
+${PACKAGE}$E: ${PACKAGE}.c
+	${CC} ${CFLAGS} ${LDFLAGS} -o${PACKAGE} ${PACKAGE}.c ${LIBS}
+	
+${top_srcdir}/${PACKAGE}.c: ${PACKAGE}.c transform.sed ioccc$E ${top_srcdir}/entities.txt
+	@echo '***************************************************************'
+	@sed -f transform.sed ${PACKAGE}.c | ioccc$E | sed -e '/^[ 	]*$$/d' >${top_srcdir}/${PACKAGE}.c
+	@echo '***************************************************************'
+
+${top_srcdir}/${PACKAGE}-alt.c: ${top_srcdir}/${PACKAGE}.c right$E
+	right <${top_srcdir}/${PACKAGE}.c >${top_srcdir}/${PACKAGE}-alt.c
+	
+${top_srcdir}/entities.txt: entities.txt
+	cp entities.txt ${top_srcdir}/entities.txt
+
+ioccc$E: ioccc.c
+	$(CC) -oioccc$E ioccc.c
+
+right$E: right.c
+	$(CC) -oright$E right.c
+
+tar: ${top_srcdir}/entities.txt ${top_srcdir}/${PACKAGE}.c ${top_srcdir}/${PACKAGE}-alt.c
+

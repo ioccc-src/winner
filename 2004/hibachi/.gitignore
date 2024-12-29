@@ -1,0 +1,21 @@
+#
+# sort with: ../../bin/sgi.sh
+*.dSYM
+build
+build-alt
+hibachi.orig
+indent
+indent.c
+indent.o
+prog.orig
+src-alt/config.log
+src-alt/config.status
+src-alt/hibachi
+src-alt/hibachi.alt
+src-alt/hibachi.alt.c
+src-alt/makefile
+src/config.log
+src/config.status
+src/hibachi
+src/hibachi.c
+src/makefile

@@ -1,0 +1,36 @@
+{
+    "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
+    "author_JSON_format_version" : "1.1 2024-02-11",
+    "author_handle" : "Daniel_Vik",
+    "full_name" : "Daniel Vik",
+    "sort_word" : "vik",
+    "location_code" : "US",
+    "email" : "daniel@vik.cc",
+    "url" : "https://www.vik.cc",
+    "alt_url" : null,
+    "deprecated_twitter_handle" : null,
+    "mastodon" : null,
+    "mastodon_url" : null,
+    "github" : null,
+    "affiliation" : null,
+    "winning_entry_set" : [
+        {
+            "entry_id" : "2004_vik1"
+        },
+        {
+            "entry_id" : "2004_vik2"
+        },
+        {
+            "entry_id" : "2005_vik"
+        },
+        {
+            "entry_id" : "2011_vik"
+        },
+        {
+            "entry_id" : "2012_vik"
+        },
+        {
+            "entry_id" : "2014_vik"
+        }
+    ]
+}

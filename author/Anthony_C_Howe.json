@@ -1,0 +1,36 @@
+{
+    "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
+    "author_JSON_format_version" : "1.1 2024-02-11",
+    "author_handle" : "Anthony_C_Howe",
+    "full_name" : "Anthony C. Howe",
+    "sort_word" : "howe",
+    "location_code" : "CA",
+    "email" : "achowe@snert.com",
+    "url" : "http://www.snert.com",
+    "alt_url" : null,
+    "deprecated_twitter_handle" : "@SirWumpus",
+    "mastodon" : null,
+    "mastodon_url" : null,
+    "github" : null,
+    "affiliation" : null,
+    "winning_entry_set" : [
+        {
+            "entry_id" : "1991_ant"
+        },
+        {
+            "entry_id" : "1992_ant"
+        },
+        {
+            "entry_id" : "1993_ant"
+        },
+        {
+            "entry_id" : "2004_hibachi"
+        },
+        {
+            "entry_id" : "2005_mynx"
+        },
+        {
+            "entry_id" : "2015_howe"
+        }
+    ]
+}

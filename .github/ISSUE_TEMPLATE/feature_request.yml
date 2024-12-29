@@ -1,0 +1,47 @@
+name: Feature request
+description: Suggest a feature
+title: "[Feature] <title>"
+labels: ["feature"]
+body:
+- type: checkboxes
+  attributes:
+    label: Is there an existing issue for this?
+    description: Please search to see if an issue already exists for the feature you're suggesting.
+    options:
+    - label: I have searched for existing issues and did not find anything like this
+      required: true
+
+- type: textarea
+  attributes:
+    label: Describe the feature
+    description: |
+        Please describe the feature you would like to have and why, as best you can (the more details you provide the better).
+  validations:
+    required: true
+
+- type: textarea
+  attributes:
+    label: Relevant images, screenshots or other files
+    description: |
+       If you have images or other files that will help explain what you're getting at, this can also be **EXTREMELY** helpful.
+
+       Tip: you can attach files by clicking the text area to highlight it and then click the link that says paste, drop or click to add files.
+  validations:
+    required: false
+
+- type: textarea
+  attributes:
+    label: Relevant links
+    description: Please provide us with a list of relevant links, if applicable.
+  validations:
+    required: false
+
+- type: textarea
+  attributes:
+    label: Anything else?
+    description: |
+      Do you have any additional context or information? Please let us know!
+
+  validations:
+    required: false
+

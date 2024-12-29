@@ -1,0 +1,11 @@
+#
+# sort with: ../../bin/sgi.sh
+*.dSYM
+grothe
+grothe.c.1
+grothe.c.2
+grothe.orig
+indent
+indent.c
+indent.o
+prog.orig

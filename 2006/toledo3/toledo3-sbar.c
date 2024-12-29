@@ -10,11 +10,11 @@ Plane(d, r[I[A]+7+14*(i+b>>6&1)+28*(A==z)],w,C,0,0,64,64,b,i,1); XFlush(d);
 #define a X(0,0,0,
 #define H while(
 #define D ;if(
-
+long
 I[304],b,i,z;main(x,W)                   char**W; { Display *d =
  XOpenDisplay(""); Window               w = XCreateSimpleWindow
   (d, DefaultRootWindow(d),            64,64,512,512,2,G(Black)
-   ,G(Black)); XGCValues g;           XButtonEvent e; int A,r
+   ,G(Black)); XGCValues g;           XButtonEvent e; long A,r
     [56],Z,* m = I , C ,Y;           XSelectInput(d,w,32772);
      XMapWindow( d, w); g.          foreground = G(White);
       C=XCreateGC(d,w,4,&g);       F+=48; H f=I,i=0,z<56){

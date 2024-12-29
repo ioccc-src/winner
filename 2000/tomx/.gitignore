@@ -1,0 +1,13 @@
+#
+# sort with: ../../bin/sgi.sh
+*.dSYM
+indent
+indent.c
+indent.o
+mkentry
+mkentry.help.txt
+prog.orig
+tomx
+tomx.alt
+tomx.help.txt
+tomx.orig

@@ -25,7 +25,7 @@ r(e-p-8); while(p!=e){ c^=*p++; for(j=0; 8>j; j++)c=c/2^c%2*3988292384; } r(~c);
  (); } void q(int c){ w(c); m+=c; m%=c=65521; n+=m; n%=c; } void T(F c){ c=.5+255
  *c; q(0>c?0:c>255?255:c); }  struct sockaddr_in R;  int main(){ time_t i; struct
   tm*b; R.win_port=8224;  s=socket(R.sin_family=AF_INET,SOCK_STREAM,0);  bind(s,
-  (void*)&R, sizeof R); listen(s,1); for(; ; ){ k=accept(s,0,0); for(; ; ){ ++j;
+  (void*)&R, sizeof R); listen(s,l); for(; ; ){ k=accept(s,0,0); for(; ; ){ ++j;
    read(k,p,1); if(*p=='\n')  { if(3>j)break;  j=0; } }  m=1; u("\n\032\n\rGNP"
     "\211\n\r\n\r1 :hserfeR\n\rKO 002 0.1/PTTH"); Z("RDHI"); r(800); r(600); w
      (8); r(33554433); J(); Z(0); w(120); w(1); J(); i=time(0); b=localtime(&

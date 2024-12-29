@@ -1,0 +1,139 @@
+
+[Apologies if you receive multiple copies]
+
+------------------------------------------------------------------------
+
+                             CALL FOR PAPERS
+
+                         IFIP Wireless Days 2011
+            October 10-12, 2011, Niagara Falls, Ontario, Canada
+      
+			http://www.wireless-days.org/
+		      		     or
+		  http://www-l2ti.univ-paris13.fr/~wd11/
+
+                   IEEE and IFIP Technical Co-sponsorship
+
+	  Conference proceedings will be included in IEEE Xplore
+
+------------------------------------------------------------------------
+
+Important Dates:
+================
+
+Extended submission deadline: July 17, 2011
+Notification of acceptance: August 21, 2011
+Camera-ready version: September 04, 2011
+
+------------------------------------------------------------------------
+
+Scope:
+======
+
+The Wireless Days Conference is a major international conference which aims to bring together researchers, technologists and visionaries from academia, research centers and industry, engineers and students to exchange, discuss, and share their experiences, ideas and research results about theoretical and practical aspects of wireless networking. After the successful editions of Wireless Days 2008 in Dubai, UAE (43.8% acceptance ratio), Wireless Days 2009 in Paris, France (37.6% acceptance ratio) and Wireless Days 2010 in Venice, Italy (32.6% acceptance ratio), the fourth edition of Wireless Days will be held in Niagara Falls, Ontario, Canada, on October 10-12, 2011. The conference will include presentations of theoretical and experimental achievements, innovative wireless systems, prototyping efforts, case studies and advances in technology related to wireless networking and communication infrastructures.
+
+Wireless Days 2011 is technically co-sponsored by IEEE and IFIP and all accepted and presented Wireless Days 2011 papers will be published in the IEEE Xplore.
+
+The Wireless Days program will be split among the following five conference tracks:
+
+- Track 1: Ad Hoc and Sensors Networks
+- Track 2: Wireless Multimedia and Entertainment
+- Track 3: Vehicular and Delay Tolerant Networks
+- Track 4: Broadband Wireless
+- Track 5: Wireless Models and Simulations
+
+Papers Submission:
+==================
+
+Submissions should be original and limited to 5 double-column pages,
+and should follow IEEE paper templates. Paper with more pages can be
+accepted however they need to be reduced to 5 pages for publication.
+Papers are to be submitted electronically on the EDAS web site of the
+conference in PDF format.
+
+http://edas.info//N10969
+
+Publication:
+===========================
+
+Conference proceedings will be published by the IEEE and will be
+available through IEEE Xplore.
+
+Special Issues of Journals:
+===========================
+
+Selected papers will be invited for publication in special issues of
+international journals.
+
+Contacts:
+=========
+
+General Chair:
+==============
+
+Raouf Boutaba, University of Waterloo, Canada 
+
+Technical Program co-Chairs:
+============================
+
+Marc St-Hilaire, Carleton University, Canada 
+Yacine Ghamri-Doudane, University Paris-Est Marne-la-Vallée and ENSIIE 
+
+Web and Publicity Chair:
+========================
+
+Nadjib Achir, University of Paris 13, France
+
+Track Chairs:
+=============
+
+Track 1: Ad Hoc and Sensor Networks
+-----------------------------------
+
+Cheng Li, Memorial University of Newfoundland, Canada 
+Stéphane Lohier, University Paris-Est Marne-la-Vallée, France
+Nidal Nasser, University of Guelph, Canada 
+
+Track 2: Wireless Multimedia and Entertainment
+----------------------------------------------
+
+Claudio Palazzi, Università degli Studi di Padova, Italy 
+Toufik Ahmed, University of Bordeaux, France
+
+Track 3: Vehicular and Delay Tolerant Networks
+----------------------------------------------
+
+Hossam Hassanein, Queen's University, Canada
+Dario Maggiorinii, Università degli Studi di Milano, Italy
+
+Track 4: Broadband Wireless
+---------------------------
+
+Khaled Boussetta, University of Paris 13, France
+Sherman Shen, University of Waterloo, Canada 
+
+Track 5: Wireless Models, Simulations and Experiments
+-----------------------------------------------------
+
+Thomas Kunz, Carleton University, Canada 
+André-Luc Beylot, IRIT/ENSEEIHT, France
+
+Steering committee:
+===================
+
+Khaldoun Al-Agha, University Paris 11, France
+Ian F. Akyildiz, Georgia Institute of Technology, USA
+Boutaba Raouf, University of Waterloo
+Tijani Chahed, Telecom & Management SudParis, France
+Pedro Cuenca, Universidad de Castilla-la-Mancha, Spain
+Luigi Fratta, Politecnico di Milano, Italy
+Mario Gerla, University of California at Los Angeles, USA
+Ulf Korner, Lund University, Sweden
+Guy Pujolle, University of Paris 6, France
+Nadjib Achir, University of Paris 13, France
+Khaled Boussetta, University of Paris 13, France
+
+Technical Program Committee:
+============================
+
+See www.wireless-days.org

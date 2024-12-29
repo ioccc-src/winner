@@ -1,0 +1,21 @@
+{
+    "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
+    "author_JSON_format_version" : "1.1 2024-02-11",
+    "author_handle" : "Kevin_Pulo",
+    "full_name" : "Kevin Pulo",
+    "sort_word" : "pulo",
+    "location_code" : "AU",
+    "email" : "kev@pulo.com.au",
+    "url" : "//www.kev.pulo.com.au/",
+    "alt_url" : null,
+    "deprecated_twitter_handle" : null,
+    "mastodon" : "@devkev@fosstodon.org",
+    "mastodon_url" : "https://fosstodon.org/@devkev",
+    "github" : null,
+    "affiliation" : null,
+    "winning_entry_set" : [
+        {
+            "entry_id" : "2001_kev"
+        }
+    ]
+}

@@ -1,0 +1,22 @@
+#
+# sort with: ../../bin/sgi.sh
+*.dSYM
+data
+data.c
+indent
+indent.c
+indent.o
+key
+key.c
+nyaruko
+nyaruko.alt
+nyaruko.alt2
+nyaruko.alt2.c
+nyaruko.alt.c
+nyaruko.c
+omoikane.orig
+output
+output.2
+output.c
+prog.orig
+regenerated.bin

@@ -1,0 +1,21 @@
+{
+    "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
+    "author_JSON_format_version" : "1.1 2024-02-11",
+    "author_handle" : "Nick_Johnson",
+    "full_name" : "Nick Johnson",
+    "sort_word" : "johnson",
+    "location_code" : "NZ",
+    "email" : null,
+    "url" : "https://web.archive.org/web/20051030162356/http://www.notdot.net/",
+    "alt_url" : null,
+    "deprecated_twitter_handle" : null,
+    "mastodon" : null,
+    "mastodon_url" : null,
+    "github" : null,
+    "affiliation" : null,
+    "winning_entry_set" : [
+        {
+            "entry_id" : "2004_arachnid"
+        }
+    ]
+}

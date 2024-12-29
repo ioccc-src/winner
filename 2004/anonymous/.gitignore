@@ -1,0 +1,14 @@
+#
+# sort with: ../../bin/sgi.sh
+*.dSYM
+anonymous
+anonymous.orig
+anonymous.pgm
+indent
+indent.c
+indent.o
+precious.jpg
+precious.pgm
+prog.orig
+ring.jpg
+ring.pgm

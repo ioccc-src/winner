@@ -1,0 +1,16 @@
+#
+# sort with: ../../bin/sgi.sh
+*.dSYM
+fitzhugh-nagumo-1
+fitzhugh-nagumo-2
+ginzburg-landau
+gray-scott-1
+gray-scott-2
+gray-scott-3
+gray-scott-4
+indent
+indent.c
+indent.o
+oregonator
+prog
+prog.orig

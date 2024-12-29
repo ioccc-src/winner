@@ -1,0 +1,13 @@
+#
+# sort with: ../../bin/sgi.sh
+*.dSYM
+c
+c.c
+giljade
+giljade.orig
+indent
+indent.c
+indent.o
+out
+out.count
+prog.orig

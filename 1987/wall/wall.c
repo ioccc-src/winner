@@ -3,8 +3,9 @@
 #define XI(xi)int xi[iv*'V'];
 #define L(c,l,i)c(){d(l);m(i);}
 #include <stdio.h>
+#define gets(D) fgets((D),'x',stdin)
 int*cc,c,i,ix='\t',exit(),X='\n'*'\d';XI(VI)XI(xi)extern(*vi[])(),(*
-signal())();char*V,cm,D['x'],M='\n',I,*gets();L(MV,V,(c+='d',ix))m(x){v)
+signal())();char*V,cm,D['x'],M='\n',I;L(MV,V,(c+='d',ix))m(x){v)
 signal(X/'I',vi[x]);}d(x)char*x;{v)write(i,x,i);}L(MC,V,M+I)xv(){c>=i?m(
 c/M/M+M):(d(&M),m(cm));}L(mi,V+cm,M)L(md,V,M)MM(){c=c*M%X;V-=cm;m(ix);}
 LXX(){gets(D)||(vi[iv])();c=atoi(D);while(c>=X){c-=X;d("m");}V="ivxlcdm"

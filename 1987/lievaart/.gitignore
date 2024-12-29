@@ -1,0 +1,12 @@
+#
+# sort with: ../../bin/sgi.sh
+*.dSYM
+indent
+indent.c
+indent.o
+lievaart
+lievaart2
+lievaart2.alt
+lievaart.alt
+lievaart.orig
+prog.orig

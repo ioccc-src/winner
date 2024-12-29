@@ -1,0 +1,21 @@
+{
+    "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
+    "author_JSON_format_version" : "1.1 2024-02-11",
+    "author_handle" : "Walter_Bright",
+    "full_name" : "Walter Bright",
+    "sort_word" : "bright",
+    "location_code" : "US",
+    "email" : "emperor@classicempire.com",
+    "url" : "https://www.walterbright.com",
+    "alt_url" : null,
+    "deprecated_twitter_handle" : null,
+    "mastodon" : null,
+    "mastodon_url" : null,
+    "github" : "@WalterBright",
+    "affiliation" : null,
+    "winning_entry_set" : [
+        {
+            "entry_id" : "1986_bright"
+        }
+    ]
+}

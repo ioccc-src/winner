@@ -1,4 +1,4 @@
-.TH enigma 1 "30 April 2020" "enigma" "IOCCC 2020"
+.TH enigma 1 "16 April 2023" "enigma" "IOCCC 2020"
 .SH NAME
 enigma \- A German Enigma simulator for IOCCC 2020
 .SH SYNOPSIS
@@ -20,18 +20,18 @@ Source file to the simulator.
 .RS
 Source code to the configuration tool (not required but recommended).
 .RE
-\fIrecode.markdown\fP
+\fIrecode.md\fP
 .RS
 Markdown file with examples on how to use the recode program (along with the Enigma program).
 .RE
-\fIhint.text\fP
+\fIREADME.md\fP
 .RS
 More information on the Enigma simulator IOCCC entry.
 .RE
-\fIchocolate\-cake.markdown\fP
+\fIchocolate\-cake.md\fP
 \fIchocolate\-cake.html\fP
 .RS
-A file with a recipe of a delicious Double-layered Chocolate Fudge Cake that has been enciphered with one of 16 Enigma settings given in \fIrecode.markdown\fP which should give enough information on how to make use of the two programs in order to unlock this recipe.
+A file with a recipe of a delicious Double-layered Chocolate Fudge Cake that has been enciphered with one of 16 Enigma settings given in \fIrecode.md\fP which should give enough information on how to make use of the two programs in order to unlock this recipe.
 I recommend the html version for formatting.
 .RE
 \fIenigma.1\fP
@@ -43,23 +43,21 @@ I don't think you need help here! :)
 The recode.c man page.
 .RE
 .SH BUGS
-.RS
-\fB\-\fP Rudimentary parser allows for easily piping into the simulator settings (and file to encipher/decipher) but which also can be a bit confusing, unintuitive and does not handle too much input that well.
-.RE
-.RS
-\fB\-\fP There is one thing in particular I was unsure of when writing the simulator as far as how it is supposed to work: I believe I have it but there might be one issue. See \fIhint.markdown\fP for more information.
-.RE
-.RS
-\fB\-\fP It was written by a human being.
-.RE
-.RS
-\fB\-\fP Not a bug as some might want to believe, maybe: figuring out how the recode.c program works won't help you figure out how this works.
-.RE
-.RS
-\fB\-\fP For more please see \fIhint.markdown\fP.
+.PP
+Rudimentary parser allows for easily piping into the simulator settings (and file to encipher/decipher) but which also can be a bit confusing, unintuitive and does not handle too much input that well.
+.PP
+There is one thing in particular I was unsure of when writing the simulator as far as how it is supposed to work: I believe I have it but there might be one issue. See \fIREADME.md\fP for more information.
+.PP
+It was written by a human being.
+.PP
+Not a bug as some might want to believe, maybe: figuring out how the recode.c program works won't help you figure out how this works.
+.PP
+The critical flaw in the Enigma machine that I referred to in the \fIREADME.md\fP obviously has to be in the program.
+.PP
+For more please see \fIREADME.md\fP.
 .SH EXAMPLES
 .PP
-Please see the \fIrecode.markdown\fP and \fIhint.markdown\fP files for examples and other information.
+Please see the \fIrecode.md\fP and \fIREADME.md\fP files for examples and other information.
 .SH AUTHOR
 Written by Cody Boone Ferguson for IOCCC 2020 (the 27th IOCCC).
 .SH SEE ALSO
@@ -68,14 +66,14 @@ Written by Cody Boone Ferguson for IOCCC 2020 (the 27th IOCCC).
 .PP
 \fB\<https://ioccc.xexyl.net/2020/enigma\>\fP The 27th IOCCC 'Most enigmatic'.
 .PP
-\fB\<http://users.telenet.be/d.rijmenants/en/enigmaproc.htm\>\fP Enigma Message Procedures for the Heer (Army), Luftwaffe (Air Force) and Kriegsmarine (Navy).
+\fB\<https://web.archive.org/web/20200710094321/http://users.telenet.be/d.rijmenants/en/enigmaproc.htm\>\fP Enigma Message Procedures for the Heer (Army), Luftwaffe (Air Force) and Kriegsmarine (Navy).
 .PP
 \fB\<http://enigmaco.de/enigma/enigma.html\>\fP Online interactive Enigma simulator.
 .PP
-\fB\<http://www.codesandciphers.co.uk/enigma/index.htm\>\fP Tony Sale's (original curator of the Bletchley Park Museum) pages on The Enigma cipher machine.
+\fB\<https://web.archive.org/web/20200621180323/http://www.codesandciphers.co.uk/enigma/index.htm\>\fP Tony Sale's (original curator of the Bletchley Park Museum) pages on The Enigma cipher machine.
 .PP
-\fB\<http://users.telenet.be/d.rijmenants/en/enigmatech.htm\>\fP Technical Details of the Enigma Machine.
+\fB\<https://web.archive.org/web/20200710094303/http://users.telenet.be/d.rijmenants/en/enigmatech.htm\>\fP Technical Details of the Enigma Machine.
 .PP
-\fB\<http://users.telenet.be/d.rijmenants/en/enigma.htm\>\fP The German Enigma Cipher Machine.
+\fB\<https://web.archive.org/web/20200710094243/http://users.telenet.be/d.rijmenants/en/enigma.htm\>\fP The German Enigma Cipher Machine.
 .PP
 \fB\<http://www.ellsbury.com/enigma3.htm\>\fP How the Enigma was Set Up and Operated.

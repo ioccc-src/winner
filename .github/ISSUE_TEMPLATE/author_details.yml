@@ -1,0 +1,65 @@
+name: Author details
+description: Report a problem with information about a winning author
+title: "[Author] <title>"
+labels: ["author"]
+body:
+- type: checkboxes
+  attributes:
+    label: Is there an existing issue for this?
+    description: Please search to see if an issue already exists for the problem you're reporting.
+    options:
+    - label: I have searched for existing issues and did not find anything like this
+      required: true
+- type: textarea
+  attributes:
+    label: Author name
+    description: Please let us know the author name that you think should change.
+  validations:
+    required: true
+
+- type: checkboxes
+  attributes:
+    label: Are you the author?
+    description: Note that it is okay if you're reporting a problem with another author, we just need to know if this author is you or not.
+    options:
+    - label: I am the author in question
+      required: true
+
+- type: textarea
+  attributes:
+    label: JSON filename
+    description: Please state the JSON filename under the author directory that you wish to change.
+  validations:
+    required: true
+
+- type: textarea
+  attributes:
+    label: What lines need to be changed in the file?
+    description: |
+        Please let us know what line or lines in the file you wish to be changed.
+  validations:
+    required: true
+
+- type: textarea
+  attributes:
+    label: What should the lines be changed to?
+    description: |
+        Please let us know how to correct the above mentioned lines. If you wish to remove a line please specify "null" without quotes.
+  validations:
+    required: true
+
+- type: textarea
+  attributes:
+    label: How can we verify these changes are correct?
+    description: Please let us know how we can verify that your changes are correct.
+  validations:
+    required: true
+
+- type: textarea
+  attributes:
+    label: Anything else?
+    description: |
+      Do you have any additional context or information that might be helpful? Please let us know!
+  validations:
+    required: false
+

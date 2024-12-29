@@ -1,0 +1,21 @@
+{
+    "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
+    "author_JSON_format_version" : "1.1 2024-02-11",
+    "author_handle" : "David_Korn",
+    "full_name" : "David Korn",
+    "sort_word" : "korn",
+    "location_code" : "US",
+    "email" : "dgk@research.att.com",
+    "url" : "http://www.kornshell.com/~dgk/",
+    "alt_url" : "https://www.linkedin.com/in/david-korn-b23185/",
+    "deprecated_twitter_handle" : null,
+    "mastodon" : null,
+    "mastodon_url" : null,
+    "github" : null,
+    "affiliation" : null,
+    "winning_entry_set" : [
+        {
+            "entry_id" : "1987_korn"
+        }
+    ]
+}

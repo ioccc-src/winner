@@ -1,0 +1,14 @@
+#
+# sort with: ../../bin/sgi.sh
+*.dSYM
+atob
+indent
+indent.c
+indent.o
+jaw
+jaw.orig
+prog.orig
+receive
+unshark
+unshark.c
+zcat

@@ -1,0 +1,16 @@
+#
+# sort with: ../../bin/sgi.sh
+*.dSYM
+indent
+indent.c
+indent.o
+prog.orig
+westley
+westley2
+westley2.c
+westley.alt
+westley.orig
+westley.punch
+westley.punch.c
+westley.sort
+westley.sort.c

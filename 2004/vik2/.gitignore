@@ -1,0 +1,12 @@
+#
+# sort with: ../../bin/sgi.sh
+*.dSYM
+cat-killing-curiosity
+indent
+indent.c
+indent.o
+prog.orig
+vik2
+vik2.orig
+vik2.possible.cat.death_1.c
+vik2.possible.cat.death_2.c

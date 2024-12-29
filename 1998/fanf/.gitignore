@@ -1,0 +1,13 @@
+#
+# sort with: ../../bin/sgi.sh
+*.dSYM
+fanf
+fanf.orig
+fanftmp1
+fanftmp1.c
+fanftmp2
+fanftmp2.c
+indent
+indent.c
+indent.o
+prog.orig

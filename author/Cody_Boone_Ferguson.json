@@ -1,0 +1,27 @@
+{
+    "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
+    "author_JSON_format_version" : "1.1 2024-02-11",
+    "author_handle" : "Cody_Boone_Ferguson",
+    "full_name" : "Cody Boone Ferguson",
+    "sort_word" : "ferguson",
+    "location_code" : "US",
+    "email" : "ioccc@xexyl.net",
+    "url" : "https://xexyl.net",
+    "alt_url" : "https://ioccc.xexyl.net",
+    "deprecated_twitter_handle" : null,
+    "mastodon" : "@xexyl@fosstodon.org",
+    "mastodon_url" : "https://fosstodon.org/@xexyl",
+    "github" : "@xexyl",
+    "affiliation" : null,
+    "winning_entry_set" : [
+        {
+            "entry_id" : "2018_ferguson"
+        },
+        {
+            "entry_id" : "2020_ferguson1"
+        },
+        {
+            "entry_id" : "2020_ferguson2"
+        }
+    ]
+}

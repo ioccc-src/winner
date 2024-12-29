@@ -1,0 +1,11 @@
+#
+# sort with: ../../bin/sgi.sh
+*.dSYM
+bellard
+bellard.orig
+bellard.otccex
+indent
+indent.c
+indent.o
+otccelf
+prog.orig

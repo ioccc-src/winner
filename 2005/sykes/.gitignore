@@ -1,0 +1,11 @@
+#
+# sort with: ../../bin/sgi.sh
+*.dSYM
+dungeon.prg
+indent
+indent.c
+indent.o
+pet.rom
+prog.orig
+sykes
+sykes.orig

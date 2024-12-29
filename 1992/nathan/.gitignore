@@ -1,0 +1,12 @@
+#
+# sort with: ../../bin/sgi.sh
+*.dSYM
+barfoof.c
+foobarf.c
+indent
+indent.c
+indent.o
+nathan
+nathan.alt
+nathan.orig
+prog.orig

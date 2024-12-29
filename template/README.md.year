@@ -1,0 +1,50 @@
+# %%OUTPUT_ENGLISH_ORDINAL%% International Obfuscated C Code Contest
+
+
+## Standard IOCCC stuff
+
+XXX - put text here - XXX
+
+View the `index.html` web page for the given winning entry for information on how
+on how to compile it and how to run the winning program.
+Look at the winning source and try to figure how it does what it does!
+You may then wish to look at the Author's remarks for even more details.
+
+Some C compilers are not quite as good as they should be.  If yours is
+lacking, you may need to compile using clang or gcc instead of your local
+compiler.
+
+The primary website can be found at [www.ioccc.org](https://www.ioccc.org).
+
+
+## Remarks on some of the winning entries
+
+XXX - add text here - XXX
+
+
+## XXX - other remarks if needed - XXX
+
+XXX - add text here if needed - XXX
+
+
+## Final Comments
+
+XXX - add final text here - XXX
+
+**IMPORTANT NOTE**: See [contact.html](../contact.html) for up to date contact details
+as well as details on how to provide fixes to any of the entries.
+See also the [IOCCC FAQ](../faq.html) for additional information on the IOCCC.
+
+<!--
+
+    Copyright © 1984-%%YEAR%% by Landon Curt Noll. All Rights Reserved.
+
+    You are free to share and adapt this file under the terms of this license:
+
+        Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+
+    For more information, see:
+
+        https://creativecommons.org/licenses/by-sa/4.0/
+
+-->

@@ -1,0 +1,67 @@
+memory map: B [128,i/o] A [128,tokens] x [32,hexconv] o [224,registers]
+
+Memory is "allocated" from the stack, by taking a local (stack) variable
+and subtracting 64k -- thereby leaving plenty of room for even relatively
+large stack frames during recursion.
+
+i    main(i,c**) parse command line or stdin, assignments, print result, error recovery
+
+i64  _		dot
+c   *A		lexical tokens
+c   *B		input buffer
+td   C		unsigned
+c    D		some state between funcs
+c   *E		error string, end pointer
+i64  F()	expr: + - ^ |
+uc   G()	non-local goto
+#d   H		unsigned
+#d   I		typedef
+td   J		jmp_buf
+c   *K		pointer to cmd line args
+td   L		char
+v    M(u64)	detect errors, save answer in dot, format result in decimal and hex
+c   *N		freebie NULL pointer
+td   O		unsigned char
+td   P		void
+td   Q		int
+#d   R		return
+c    S		syntax error + tokens
+c   *T		current token pointer
+v    U(c*)	print the registers
+td   V		long long
+#d   W(x)	for(;x;)
+td   X		long - only for rule2sp.c
+td   Y		unsigned short
+td   Z		unsigned long long
+i64  a		derived: 32
+i64  b		derived: 1
+i64 _b(i64)	term: << >> >>>
+i64  c		derived: 10
+i64 _c(c*)	convert binary global j to ASCII decimal
+i64  d		freebie: 0
+v   _d(i64)	accumulate converted ASCII bytes into j in base passed in
+i64  e		derived: 256
+i64  f		derived: 2
+i64 _f()	convert from ASCII to binary: selects convert base (10,8,16), result in j
+u64  g(u16)	byte swap 16-bits
+u64  h(u32)	byte swap 32-bits
+i64  i(u64)	select size and byte swap minimal bytes
+v   _i(c*)	conditional print
+i64  j		holds partial/accumulated results
+*()  k		ptr-to-func-getchar
+i   _k()	get chars from saved cmd line
+jb   l		for parser error recovery
+c    m()	scans input for token, ignores whitespace
+c    n()	get next input character
+i64 *o		registers 
+u32  p(c*)	writes to stdout until NUL, newline appended intelligently
+v    q(**)	init
+i64  r(c)	writes c to stdout
+i64  s		derived: 8
+i64  t		derived: 4
+i64  u		derived: 3
+c    v		current input token
+i64  w()	read from stdin until newline or semi, skips blank lines + comments, return len
+c   *x		aptly named hex conversion table
+i64  y()	term: * / % & (<< >> >>>)
+i64  z()	factor ~ ! ? -/+ () VAR NUM DOT

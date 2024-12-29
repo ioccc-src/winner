@@ -1,0 +1,24 @@
+{
+    "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
+    "author_JSON_format_version" : "1.1 2024-02-11",
+    "author_handle" : "Jyrki_Holopainen",
+    "full_name" : "Jyrki Holopainen",
+    "sort_word" : "holopainen",
+    "location_code" : "FI",
+    "email" : "jyrki.holopainen@paetronics.fi",
+    "url" : "https://web.archive.org/web/20061205082106/http://personal.eunet.fi/pp/halo/",
+    "alt_url" : null,
+    "deprecated_twitter_handle" : null,
+    "mastodon" : null,
+    "mastodon_url" : null,
+    "github" : null,
+    "affiliation" : null,
+    "winning_entry_set" : [
+        {
+            "entry_id" : "1993_lmfjyh"
+        },
+        {
+            "entry_id" : "2000_jarijyrki"
+        }
+    ]
+}

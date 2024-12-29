@@ -1,0 +1,15 @@
+#
+# sort with: ../../bin/sgi.sh
+*.dSYM
+indent
+indent.c
+indent.o
+play
+prog
+prog.alt
+prog.orig
+sandwich
+snake
+snake.alt
+snake-colours
+termcaps

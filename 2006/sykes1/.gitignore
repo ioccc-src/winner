@@ -1,0 +1,15 @@
+#
+# sort with: ../../bin/sgi.sh
+*.dSYM
+cube.gif
+indent
+indent.c
+indent.o
+prog.orig
+sykes1
+sykes1.alt
+sykes1.alt.html
+sykes1.alt.out
+sykes1.html
+sykes1.orig
+sykes1.out

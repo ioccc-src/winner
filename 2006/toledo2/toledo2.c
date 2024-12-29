@@ -1,4 +1,6 @@
                                #include <stdio.h>
+                               #include <stdlib.h>
+                               #include <unistd.h>
            #define n(o,p,e)=y=(z=a(e)%16 p x%16 p o,a(e)p x p o),h(
                                 #define s 6[o]
              #define p z=l[d(9)]|l[d(9)+1]<<8,1<(9[o]+=2)||++8[o]
@@ -17,7 +19,7 @@
                     unsigned char o[10],l[78114],*c=l,*k=l
                           #define d(e)o[e]+256*o[e-1]
 #define h(l)s=l>>8&1|128&y|!(y&255)*64|16&z|2,y^=y>>4,y^=y<<2,y^=~y>>1,s|=y&4
-+64506; e,V,v,u,x,y,z,Z; main(r,U)char**U;{
++64506; FILE *u, *v, *e, *V; int x,y,z,Z; main(r,U)char**U;{
 
      { { { } } }       { { { } } }       { { { } } }       { { { } } }
     { { {   } } }     { { {   } } }     { { {   } } }     { { {   } } }
@@ -39,7 +41,7 @@
 207)-1 S 2 S 6 S 2 S 182 S 4)?D(0)D(1)D(2)D(3)D(4)D(5)D(6)D(7)(z=x-2 C C C C
 C C C C+129 S 6 S 4 S 6 S 8 S 8 S 6 S 2 S 2 S 12)?x/64-1?((0 O a(y)=a(x) O 9
 [o]=a(5),8[o]=a(4) O 237==*c++?((int (*)())(2-*c++?fwrite:fread))(l+*k+1[k]*
-256,128,1,(fseek(y=5[k]-1?u:v,((3[k]|4[k]<<8)<<7|2[k])<<7,Q=0),y)):0 O y=a(5
+256,128,1,(fseek(e=5[k]-1?u:v,((3[k]|4[k]<<8)<<7|2[k])<<7,Q=0),e)):0 O y=a(5
 ),z=a(4),a(5)=a(3),a(4)=a(2),a(3)=y,a(2)=z O c=l+d(5) O y=l[x=d(9)],z=l[++x]
 ,x[l]=a(4),l[--x]=a(5),a(5)=y,a(4)=z O 2-*c?Z||read(0,&Z,1),1&*c++?Q=Z,Z=0:(
 Q=!!Z):(c++,Q=r=V?fgetc(V):-1,s=s&~1|r<0) O++c,write(1,&7[o],1) O z=c+2-l,w,

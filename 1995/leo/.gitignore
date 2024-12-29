@@ -1,0 +1,10 @@
+#
+# sort with: ../../bin/sgi.sh
+*.dSYM
+foo.ps
+indent
+indent.c
+indent.o
+leo
+leo.orig
+prog.orig

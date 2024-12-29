@@ -46,10 +46,10 @@ GOALS OF THE CONTEST:
 |   Please wait to submit your entries until after that time.
 
     The official rules, guidelines and iocccsize.c tool will be available
-    on the official IOCCC web site on or slightly before start of this IOCCC.
-    Please check the IOCCC web site "How to enter" link:
+    on the official IOCCC website on or slightly before start of this IOCCC.
+    Please check the IOCCC website "How to enter" link:
 
- 	http://www.ioccc.org/index.html#enter
+ 	https://www.ioccc.org/index.html#enter
 
     on or after the start of this IOCCC to be sure you are using the correct
     versions of these items before using the IOCCC entry submission URL.
@@ -71,7 +71,7 @@ RULES:
 
        The source to the current IOCCC size tool is found at this URL:
 
-|         http://www.ioccc.org/2019/iocccsize.c
+|         https://www.ioccc.org/2019/iocccsize.c
 
     3) Submissions should be performed using the instructions outlined at:
 
@@ -250,13 +250,13 @@ FOR MORE INFORMATION:
 
 |       ioccc 2019 question
 
-    in the subject of your EMail message when sending EMail to the judges.
+    in the subject of your email when sending email to the judges.
 
     The rules and the guidelines may (and often do) change from year to
     year.  You should be sure you have the current rules and guidelines
     prior to submitting entries.  To obtain them, visit the IOCCC web page:
 
-        http://www.ioccc.org
+        https://www.ioccc.org
 
     It has rules, guidelines and winners of previous contests (1984 to date).
 
@@ -272,6 +272,17 @@ FOR MORE INFORMATION:
 
     Non-twitter users should force their browsers to reload the above URL
     to be sure they are seeing the most recent tweets.
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+An important 2023 update to this historic note:
+
+The IOCCC no longer uses twitter.  Today the IOCCC uses Mastodon.
+For more information and to see our IOCCC Mastodon posts, see:
+
+    https://fosstodon.org/@ioccc
+
+End of important 2023 update to this historic note.
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 Leonid A. Broukhis
 Simon Cooper

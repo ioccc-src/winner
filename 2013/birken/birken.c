@@ -3,6 +3,7 @@ char*_ = "'""/*";
 #define m 21
 #define o(l, k) for(l=0; l<k; l++)
 #define n(k) o(T, k)
+#define exit(x) return system("reset")
 
 
               int E,L,O,R,G[42][m],h[2][42][m],g[3][8],c
@@ -46,4 +47,4 @@ g[2][g[i][T]]=T; n(R+i)o(e,m              )if(G[T][e]+i) G[T][e]=g[2][G[T][e]]; 
 ; else if(G[R][T]+i) s++; if(s) { if(V>4){ V=9-V; D++; } V+=29; n(20) q(c[V][T][0],c
 [V][T][i],D); } } n(19) if((L=G[R][T])+i) { O=T-L; e=O>9; t=e?18-O :O; o(K,((t&3)-3?
 16:37)){ if(K){ L=c[t+19][K-i][0]; O=c[t+19][K-i][i] ; } q(L,O,K && e); } } if(s) q(
-c[V][20][0], c[V][20][i], D); R--; } printf("\33[47;1f\33[?25h\33[40m"); return 0; }
+c[V][20][0], c[V][20][i], D); R--; } printf("\33[47;1f\33[?25h\33[40m");  exit(0); }

@@ -1,0 +1,20 @@
+#
+# sort with: ../../bin/sgi.sh
+*.dSYM
+alpha.txt
+ast.txt
+indent
+indent.c
+indent.o
+main
+main.c
+m.c
+prog
+prog.orig
+raw.txt
+reg.txt
+seq.txt
+src/
+src.zip
+treacle
+treacle.c

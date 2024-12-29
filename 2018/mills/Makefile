@@ -1,145 +1,120 @@
 #!/usr/bin/env make
 #
-# 2018 makefile
+# IOCCC 2018 winning entry - mills
+
+################################################################################
 #
-# This work by Landon Curt Noll, Simon Cooper, and Leonid A. Broukhis
-# is licensed under:
+# IOCCC winning entry code may not work on your system.  What was liked/allowed
+# and worked in the past may no longer be liked/allowed or compile/run today.
 #
-#	Creative Commons Attribution-ShareAlike 3.0 Unported License.
+# Bug fixes, corrections and typo fixes are VERY WELCOME.  If you see a problem,
+# first check this URL for a list of known bugs and (mis)features of IOCCC entries:
 #
-# See: http://creativecommons.org/licenses/by-sa/3.0/
+#	https://www.ioccc.org/bugs.html
+#
+# GitHub pull requests are welcome!  Please see the above URL for details.
+#
+################################################################################
+#
+# This file is Copyright (c) 2023 by Landon Curt Noll.  All Rights Reserved.
+# You are free to share and adapt this file under the terms of this license:
+#
+#	Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+#
+# For more information, see: https://creativecommons.org/licenses/by-sa/4.0/
 
 
-################
-# tool locations
-################
+#############################
+# shell used by this Makefile
+#############################
 #
-SHELL= /bin/bash
-CP= cp
-CPP= cpp
-GUNZIP= gunzip
-BUNZIP2= bunzip2
-GZIP_PROG= gzip
-BZIP2= bzip2
-CURL= curl
-DD= dd
-LD= ld
-MAKE= make
-RM= rm
-SED= sed
-TAR= tar
-TRUE= true
-MKDIR= mkdir
-MV= mv
-TR= tr
-GREP= grep
-SORT= sort
-UNIQ= uniq
-STRIP= strip
+SHELL= bash
 
-# Set X11_LIBDIR to the directory where the X11 library resides
+#######################
+# common tool locations
+#######################
 #
-#X11_LIBDIR= /usr/X11R6/lib
-#X11_LIBDIR= /usr/X11/lib
-X11_LIBDIR= /opt/X11/lib
+include ../../var.mk
 
-# Set X11_INCLUDEDIR to the directory where the X11 include files reside
+# Common C compiler warnings to silence
 #
-#X11_INCDIR= /usr/X11R6/include
-#X11_INCDIR= /usr/X11/include
-X11_INCDIR= /opt/X11/include
+CSILENCE= -Wno-gnu-empty-initializer -Wno-missing-field-initializers \
+	  -Wno-misleading-indentation -Wno-pedantic -Wno-strict-prototypes
 
-# Compiler warnings
+# Attempt to silence unknown warning option
 #
-#CWARN=
-CWARN= -Wall ${CSILENCE}
-#CWARN= -Wall -Wextra
-#CWARN= -Wall -Wextra -pedantic ${CSILENCE}
-#CWARN= -Wall -Wextra -Weverything
-#CWARN= -Wall -Wextra -Weverything -pedantic
-#CWARN= -Wall -Wextra -Weverything -pedantic ${CSILENCE}
+CUNKNOWN= -Wno-unknown-warning-option
 
-# Silence warnings that ${CWARN} would normally complain about
+# Common C compiler warning flags
 #
-CSILENCE= -Wno-unused-result
-#CSILENCE= -Wno-implicit-int
+CWARN= -Wall -Wextra ${CSILENCE} ${CUNKNOWN}
 
-# compiler standard
+# Compiler standard
 #
-#CSTD=
-#CSTD= -ansi
-CSTD= -std=c11
+CSTD= -std=gnu17
 
-# compiler bit architecture
-#
-# Some entries require 32-bitness:
-# ARCH= -m32
-#
-# Some entries require 64-bitness:
-# ARCH= -m64
-#
-# By default we assume nothing:
+# Compiler bit architecture
 #
 ARCH=
 
-# defines that are needed to compile
+# Defines that are needed to compile
 #
 CDEFINE=
-#CDEFINE= -DIOCCC=25
 
-# include files that are needed to compile
+# Include files that are needed to compile
 #
 CINCLUDE=
-#CINCLUDE= -include stdlib.h
-#CINCLUDE= -include stdio.h
-#CINCLUDE= -include stdlib.h -include stdio.h
-#CINCLUDE= -I ${X11_INCDIR}
 
-# optimization
+# Optimization
 #
-# Most compiles will safely use -O2.  Some can use only -O1 or -O.
-# A few compilers have broken optimizers or this entry make break
-# under those buggy optimizers and thus you may not want anything.
-# Reasonable compilers will allow for -O3.
-#
-#OPT=
-#OPT= -O
-#OPT= -O1
-#OPT= -O2
 OPT= -O3
 
-# default flags for ANSI C compilation
+# Default flags for ANSI C compilation
 #
 CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
 
 # Libraries needed to build
 #
-LIBS=
-#LIBS= -L ${X11_LIBDIR}
+LDFLAGS=
 
-# ANSI compiler
-#
-# Set CC to the name of your ANSI compiler.
-#
-# Some entries seem to need gcc.  If you have gcc, set
-# both CC and MAY_NEED_GCC to gcc.
-#
-# If you do not have gcc, set CC to the name of your ANSI compiler, and
-# set MAY_NEED_GCC to either ${CC} (and hope for the best) or to just :
-# to disable such programs.
+# C compiler to use
 #
 CC= cc
-#CC=clang
-MAY_NEED_GCC= gcc
+
+# Compiler add-ons or replacements for clang only
+#
+ifeq "$(findstring $(CLANG),${CC})" "$(CLANG)"
+#
+CSILENCE+= -Wno-implicit-int-conversion -Wno-missing-variable-declarations \
+	   -Wno-poison-system-directories -Wno-shorten-64-to-32 \
+	   -Wno-unsafe-buffer-usage
+#
+CWARN+= -Weverything
+#
+endif
+
+# Specific add-ons or replacements for gcc only
+#
+ifeq "$(findstring $(GCC),${CC})" "$(GCC)"
+#
+#CSILENCE+=
+#
+#CWARN+=
+#
+endif
 
 
 ##############################
-# Special flags for this entry
+# Special Makefile variables for this entry
 ##############################
 #
-OBJ= prog.o
+ENTRY= mills
+PROG= prog
+#
+OBJ= ${PROG}.o
+CSRC= ${PROG}.o
 DATA=
-TARGET= prog v0 v6
+TARGET= ${PROG} v0 v6
 #
 ALT_OBJ=
 ALT_TARGET=
@@ -158,62 +133,93 @@ V6_TAPE_URL= https://www.tuhs.org/Archive/Distributions/Research/Ken_Wellsch_v6/
 # build the entry
 #################
 #
-all: ${TARGET} ${DATA}
+all: data ${TARGET}
 	@${TRUE}
 
-prog: prog.c rk05.bsd.fs
-	${CC} ${CFLAGS} -DI='"rk05.bsd.fs"' -DA=4096 -DS=0173030 -DW=MAP_PRIVATE -DT= -DX=5 -DY=128 \
-	      -DV=270 -DP='"89!>@@89T=@@89\"89DQ@K89$$89Q1@H0@@@P@1@@"' prog.c -o $@ ${LIBS}
+.PHONY: all alt data everything clean clobber
+
+# Variable to decide if the emulator should save state (default no)
+#
+SAVE=0
+MAP=MAP_PRIVATE
+ifneq ($((SAVE)),0)
+	MAP=MAP_SHARED
+endif
+
+${PROG}: ${PROG}.c rk05.bsd.fs
+	${CC} ${CFLAGS} -DI='"rk05.bsd.fs"' -DA=4096 -DS=0173030 -DW=${MAP} -DT= -DX=5 -DY=128 \
+	      -DV=270 -DP='"89!>@@89T=@@89\"89DQ@K89$$89Q1@H0@@@P@1@@"' ${PROG}.c -o $@ ${LDFLAGS}
 
 rk05.bsd.fs: empty.fs.bz2 builddisk.bsd bsd.img.bz2
-	@${RM} -f $@
+	${RM} -f $@
 	${BZIP2} -dc empty.fs.bz2 > rk05.bsd.fs
 	${BZIP2} -dc bsd.img.bz2 | ./builddisk.bsd
 
-builddisk.bsd: prog.c
+# NOTE: we don't set -DW=${MAP} here because it's already set to MAP_SHARED and
+# we don't want to break anything here. The default for the program itself is
+# MAP_PRIVATE but it's possible that if MAP is set to MAP_PRIVATE then having W
+# set to MAP_PRIVATE here could be a problem as it's meant to be MAP_SHARED.
+builddisk.bsd: ${PROG}.c
 	${CC} ${CFLAGS} -DI='"rk05.bsd.fs"' -DA=4096 -DS=0 -DW=MAP_SHARED -DT= -DX=0 -DY=0 -DV=270 \
 	    -DP='"Q@ 89D?A E@#?@$$D@H?<@E@$$8CA1@H8CJ4EH8CA1@L8CJ4FH)@!F@H%@$$1@H?@%89\"?<@89T89!Q@\"89$$89Q1@[%@#1@D<@ @EHO??@X@@@@@@@1@@"' \
-	    -o $@ prog.c
+	    -o $@ ${PROG}.c
 
 rk05.v6.fs: empty.fs.bz2 builddisk.v6 v6.img.bz2
 	@${RM} -f $@
 	${BZIP2} -dc empty.fs.bz2 > rk05.v6.fs
 	${BZIP2} -dc v6.img.bz2 | ./builddisk.v6
 
-builddisk.v6: prog.c
+# NOTE: we don't set -DW=${MAP} here because it's already set to MAP_SHARED and
+# we don't want to break anything here. The default for the program itself is
+# MAP_PRIVATE but it's possible that if MAP is set to MAP_PRIVATE then having W
+# set to MAP_PRIVATE here could be a problem as it's meant to be MAP_SHARED.
+builddisk.v6: ${PROG}.c
 	${CC} ${CFLAGS} -DI='"rk05.v6.fs"' -DA=4096 -DS=0 -DW=MAP_SHARED -DT= -DX=0 -DY=0 -DV=270 \
 	    -DP='"Q@ 89D?A E@#?@$$D@H?<@E@$$8CA1@H8CJ4EH8CA1@L8CJ4FH)@!F@H%@$$1@H?@%89\"?<@89T89!Q@\"89$$89Q1@[%@#1@D<@ @EHO??@X@@@@@@@1@@"' \
-	    -o $@ prog.c
+	    -o $@ ${PROG}.c
 
 empty.fs.bz2: boot.dat
-	@${RM} -f empty.fs
+	${RM} -f empty.fs
 	${DD} if=/dev/zero of=empty.fs count=10800
 	${DD} if=boot.dat of=empty.fs conv=notrunc
 	${BZIP2} empty.fs
 
-v0: prog.c Makefile v0.image.fs
-	@echo "This IOCCC25 Makefile preserves the state of v0.image.fs at the time it won."
-	@echo "If you want to look for v0.image.fs updates, try: ${CURL} ${IMAGE_FS_URL} -o v0.image.fs"
-	@echo "Warning: any updates from ${IMAGE_FS_URL} are unofficial and are not part of the IOCCC."
-	${CC} ${CFLAGS} -DI='"v0.image.fs"' -DA=4096 -DS=0 -DW=MAP_PRIVATE \
+v0: ${PROG}.c Makefile v0.image.fs
+	${CC} ${CFLAGS} -DI='"v0.image.fs"' -DA=4096 -DS=0 -DW=${MAP} \
 	    -DT="INLCR|ICRNL,0,0,ECHO" -DX=5 -DY=128 -DV=200 \
-	    -DP='"89!?@@89T=@@89\"Q@M89DQ@L89$$89Q1@I0A@@P@X@@1@@"' prog.c -o $@
+	    -DP='"89!?@@89T=@@89\"Q@M89DQ@L89$$89Q1@I0A@@P@X@@1@@"' ${PROG}.c -o $@
+	@echo ""
+	@echo "This IOCCC25 Makefile preserves the state of v0.image.fs at the time it won."
+	@echo "If you want to look for v0.image.fs updates, try:"
+	@echo ""
+	@echo "    ${CURL} ${IMAGE_FS_URL} -o v0.image.fs"
+	@echo ""
+	@echo "Warning: any updates from ${IMAGE_FS_URL}"
+	@echo "are unofficial and are not part of this IOCCC entry."
+	@echo ""
 
 v6: empty.fs.bz2 builddisk.v6 v6.img.bz2 rk05.v6.fs
-	${CC} ${CFLAGS} -DI='"rk05.v6.fs"' -DA=4096 -DS=0173030 -DW=MAP_PRIVATE -DT= -DX=5 -DY=128 \
-	      -DV=270 -DP='"89!>@@89T=@@89\"89DQ@K89$$89Q1@H0@@@P@1@@"' prog.c -o $@ ${LIBS}
+	${CC} ${CFLAGS} -DI='"rk05.v6.fs"' -DA=4096 -DS=0173030 -DW=${MAP} -DT= -DX=5 -DY=128 \
+	      -DV=270 -DP='"89!>@@89T=@@89\"89DQ@K89$$89Q1@H0@@@P@1@@"' ${PROG}.c -o $@ ${LDFLAGS}
 
 v6.img.bz2: v6.tape.gz
-	@echo "This IOCCC25 Makefile preserves the state of v6.tape.gz at the time it won."
-	@echo "If you want to look for v6.tape.gz updates, try: ${CURL} ${V6_TAPE_URL} -o v6.tape.gz"
-	@echo "Warning: any updates from ${V6_TAPE_URL} are unofficial and are not part of the IOCCC."
-	@${RM} -f v6.tape
+	${RM} -f v6.tape
 	${GZIP_PROG} -c -d v6.tape.gz | ${DD} of=v6.img count=4000 skip=100
 	${BZIP2} v6.img
+	@echo ""
+	@echo "This IOCCC25 Makefile preserves the state of v6.tape.gz at the time it won."
+	@echo "If you want to look for v6.tape.gz updates, try:"
+	@echo ""
+	@echo "    ${CURL} ${V6_TAPE_URL} -o v6.tape.gz"
+	@echo ""
+	@echo "Warning: any updates from ${V6_TAPE_URL}"
+	@echo "are unofficial and are not part of this IOCCC entry."
+	@echo ""
+
 
 # alternative executable
 #
-alt: ${ALT_TARGET}
+alt: data ${ALT_TARGET}
 	@${TRUE}
 
 # data files
@@ -221,122 +227,28 @@ alt: ${ALT_TARGET}
 data: ${DATA}
 	@${TRUE}
 
+# both all and alt
+#
+everything: all alt
+	@${TRUE}
+
 
 ###############
 # utility rules
 ###############
 #
-everything: all alt
-
 clean:
 	${RM} -f ${OBJ} ${ALT_OBJ}
 
 clobber: clean
 	${RM} -f ${TARGET} ${ALT_TARGET}
-	${RM} -f builddisk.bsd builddisk.v6 v0 rk05.bsd.fs rk05.v6.fs empty.fs.bz2 empty.fs v6.fs v6.img.bz2 v0.img
-	${RM} -f v6.tape
-	@-if [ -e sandwich ]; then \
-	    ${RM} -f sandwich; \
-	    echo 'ate sandwich'; \
-	fi
-
-nuke: clobber
-	@${TRUE}
-
-dist_clean: nuke
-	@${TRUE}
-
-install:
-	@echo "Surely you are performing, Dr. May!"
-	@${TRUE}
-
-# backwards compatibility
-#
-build: all
-	@${TRUE}
+	${RM} -rf *.dSYM
+	${RM} -f builddisk.bsd builddisk.v6 v0 rk05.bsd.fs rk05.v6.fs
+	${RM} -f empty.fs.bz2 empty.fs v6.fs v6.img.bz2 v0.img v6.tape
 
 
-##################
-# 133t hacker rulz
-##################
-#
-love:
-	@echo 'not war?'
-	@${TRUE}
+######################################
+# optional include of 1337 hacker rulz
+######################################
 
-haste:
-	$(MAKE) waste
-	@${TRUE}
-
-waste:
-	@echo 'haste'
-	@${TRUE}
-
-make:
-	@echo 'Attend a maker faire'
-	@${TRUE}
-
-easter_egg:
-	@echo you expected to often mis-understand this $${RANDOM} magic
-	@echo chongo '<was here>' "/\\oo/\\"
-	@echo Eggy
-
-fabricate fashion form frame manufacture produce: make
-	@${TRUE}
-
-sandwich:
-	@if [ `id -u` -eq 0 ]; then \
-	    echo 'Okay.'; \
-	    echo $${RANDOM}`date +%s`$${RANDOM} > $@; \
-	else \
-	    echo 'What? Make it yourself.'; \
-	    exit 1; \
-	fi
-
-# Understand the history of the Homebrew Computer Club
-# as well as the West Coast Computer Faire and
-# you might be confused different.  :-)
-#
-supernova: nuke
-	@-if [ -r .code_anal ]; then \
-	    ${RM} -f .code_anal_v6; \
-	else \
-	    echo "planet deniers, like some members of the IAU, are so cute when they try to defend their logic"; \
-	fi
-	@echo A $@ helps ${MAKE} the elements that help form planets
-	@${TRUE}
-
-deep_magic:
-	@-if [ -r .code_anal ]; then \
-	    ccode_analysis --deep_magic 3a3fabb90892eeb2f610ae0f74a35a970060665a063ab702bd686c17c4ae07f6 --FNV1a_hash_256_bit "prog"; \
-	else \
-	    echo "Wrong! Do it again!"; \
-	    sleep 2; \
-	    echo "Wrong! Do it again!"; \
-	    sleep 2; \
-	    echo "Wrong! Do it again!"; \
-	fi
-	@${TRUE}
-
-magic: deep_magic
-	@-if [ -r .code_anal ]; then \
-	    ccode_analysis --mode 216091 --level 216193 --FNV1a_hash_256_bit "prog"; \
-	else \
-	    echo "If you don't eat yer meat, you can't have any pudding!"; \
-	    echo "How can you have any pudding if you don't eat yer meat?!"; \
-	fi
-	@${TRUE}
-
-# The IOCCC resident astronomer states
-#
-charon: supernova
-	@echo $@ is a dwarf planet
-	@echo dwarf is a type of planet
-	@echo $@ is a planet
-
-pluto: supernova
-	${MAKE} charon
-	@echo $@ is a dwarf planet
-	@echo dwarf is a type of planet
-	@echo $@ is a planet
-	@echo get used to having lots of planets because a $< can ${MAKE} a lot of them
+-include 1337.mk ../1337.mk ../../1337.mk

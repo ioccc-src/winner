@@ -30,7 +30,7 @@ ABOUT THIS FILE:
 |   Only online submissions will be accepted this year.
     See the following for details,
 
-|	http://www.ioccc.org/2006/submit
+|	https://www.ioccc.org/2006/submit
 
 |  Most of the changes in the rules and guidelines for this year have been
 |  marked with a "|" character on the left hand side.
@@ -48,7 +48,7 @@ HINTS AND SUGGESTIONS:
     a number of tests to an entry:
 
 	* look at the original source
-	* convert ANSI tri-graphs to ASCII
+	* convert ANSI trigraphs to ASCII
 	* C pre-process the source ignoring '#include' lines
 	* C pre-process the source ignoring '#define' and '#include' lines
 	* run it through a C beautifier
@@ -184,7 +184,7 @@ OUR LIKES AND DISLIKES:
 	* depend on a utility or application not normally found on most
 	  most POSIX P1003.1/P1003.2 like systems
 	* abuse the build file to get around the size limit
-	* obfuscate by excessive use of ANSI tri-graphs
+	* obfuscate by excessive use of ANSI trigraphs
 	* are longer than they need to be
 	* are similar to previous winners
 	* are identical to previous losers  :-)
@@ -201,7 +201,7 @@ OUR LIKES AND DISLIKES:
     if you show some amount of restraint.
 
     You should try to restrict commands used on the build file to
-    POSIX-like or common Un*x-like commands.  You can also compile
+    POSIX-like or common Unix-like commands.  You can also compile
     and use your own programs.  If you do, try to build and execute
     from the current directory.  This restriction is not a hard and
     absolute one.  The intent is to ensure that the building if your
@@ -275,15 +275,15 @@ OUR LIKES AND DISLIKES:
     .Xdefaults.  If you must do so, be sure to note the required lines
     in the program "remarks".
 
-    While we recognize that UN*X is not a universal operating system, the
+    While we recognize that UNIX is not a universal operating system, the
     contest does have a bias towards such systems.  In an effort to expand
     the scope of the contest, we phrase our bias in terms of POSIX P1003.1
-    and P1003.2 standards.  This will allow certain non-UN*X OS users to
+    and P1003.2 standards.  This will allow certain non-UNIX OS users to
     submit entries.  On the other hand, this is a guideline and not a rule.
     We will not reject an entry based on some POSIX technicality.
 
     When dealing with OS and application environments, we suggest that you
-    be reasonable with a nod towards vanilla UN*X-like systems.  POSIX will
+    be reasonable with a nod towards vanilla UNIX-like systems.  POSIX will
     evolve but not as much as the contest, so avoid stuff like POSIX real
     time, security, etc.
 
@@ -312,7 +312,7 @@ OUR LIKES AND DISLIKES:
     while to write remarkable program "remarks".
 
     We dislike C code with trailing control-M's (\r or \015) that results
-    in compilation failures.  Some non-Un*x/non-Linux tools such as
+    in compilation failures.  Some non-Unix/non-Linux tools such as
     MS Visual C and MS Visual C++ leave trailing control-M's on lines.
     Users of such tools should strip off such control-M's before submitting
     their entries.  In some cases tools have a "Save As" option that will
@@ -405,7 +405,7 @@ JUDGING PROCESS:
     we do indicate the volume of paper consumed when presenting the IOCCC
     winners at talks)
 
-    After the initial announcement, we attempt to send EMail to the
+    After the initial announcement, we attempt to send an email to the
     authors of the winning entries.  One reason we do this is to give
     the authors a chance to comment on the way we have presented their
     entry.  They are given the chance to correct mistakes and typos.  We
@@ -487,13 +487,13 @@ ANNOUNCEMENT OF WINNERS:
 
     The judges will post an initial announcement of who won, the name
     of their award, and a very brief description of the winning entry
-    on the IOCCC web site:
+    on the IOCCC website:
 									  
-	    http://www.ioccc.org/whowon.html				  
+	    https://www.ioccc.org/whowon.html				  
 									  
     We will also submit a brief announcement story to /.:		  
 
-	    http://slashdot.org
+	    https://slashdot.org
 
     that, depending on the willingness of the /. editors, may be posted
     to their site at the same time.
@@ -502,11 +502,11 @@ ANNOUNCEMENT OF WINNERS:
     the winning authors are given a chance to review the judges comments,
     and test our Makefile.  This review process typically takes a few weeks.
 
-    Sometime after the initial announcement, and once the the review
+    Sometime after the initial announcement, and once the review
     by the winners has been completed, the winning source will be
-    posted to the IOCCC web site:
+    posted to the IOCCC website:
 
-	    http://www.ioccc.org/years.html
+	    https://www.ioccc.org/years.html
 
     	    NOTE: previous winners are available at that URL
 
@@ -531,12 +531,12 @@ ANNOUNCEMENT OF WINNERS:
 
 FOR MORE INFORMATION:
 
-    You may contact the judges by sending EMail to the following address:
+    You may contact the judges by sending an email to the following address:
 
 |	q.2006@ioccc.org	(do not submit entries to this address)
 
 |   You must include the words 'ioccc 2006 question' in the subject of your
-    EMail message when sending EMail to the judges.
+    email when sending email to the judges.
 
     Questions and comments about the contest are welcome.  Comments about
     confusing rules and guidelines are also welcome.
@@ -547,7 +547,7 @@ FOR MORE INFORMATION:
 
     Check out the IOCCC Web page:
 
-	http://www.ioccc.org
+	https://www.ioccc.org
 
     It has rules, guidelines and winners of previous contests (1984 to date).
 

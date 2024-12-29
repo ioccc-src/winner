@@ -1,0 +1,13 @@
+#
+# sort with: ../../bin/sgi.sh
+*.dSYM
+fubar
+fubar.orig
+indent
+indent.c
+indent.o
+ouroboros
+ouroboros.c
+prog.orig
+x
+x1

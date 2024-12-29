@@ -38,14 +38,14 @@
  *
  * FOR MORE INFORMATION:
  *
- *   You may contact the judges by sending EMail to the following address:
+ *   You may contact the judges by sending an email to the following address:
  *
  *	questions@ioccc.org	(not the address for submitting entries)
  *
  *  Questions and comments about the contest are welcome.
  *
  *  You must include the words ``ioccc question'' in the subject of your
- *  EMail message when sending EMail to the judges.
+ *  email when sending email to the judges.
  *
  *  Entries must be sent to:
  *
@@ -54,14 +54,14 @@
  *  but be sure to follow the rules and read the guidelines first!
  *
  *  You must include the words ``ioccc entry'' in the subject
- *  of your EMail when sending in your entry!  Failure to do so may
+ *  of your email when sending in your entry!  Failure to do so may
  *  result in the loss of your entry!
  *
  *  The rules and the guidelines may (and often do) change from year to
  *  year.  You should be sure you have the current rules and guidelines
  *  prior to submitting entries.  To obtain them, visit the following URL:
  *
- *	http://www.ioccc.org
+ *	https://www.ioccc.org
  *
  * Because contest rules change from year to year, one should only use this
  * program for the year that it was intended.
@@ -217,9 +217,9 @@ main(argc, argv)
     printf("cases where it conflicts with the rules, the rules shall apply.\n");
     printf("It is your responsibility to ensure that your entry conforms to\n");
     printf("the current rules.\n\n");
-    printf("EMail your entries to:\n");
+    printf("Email your entries to:\n");
     printf("\t%s\n\n", ENTRY_ADDR);
-    printf("Please use the following subject when you EMail your entry:\n");
+    printf("Please use the following subject when you email your entry:\n");
     printf("\tioccc entry\n\n");
     /* all done */
     return 0;
@@ -612,7 +612,7 @@ output_entry(FILE *output, char *oname)
     check_io(output, oname, EOF_NOT_OK);
 
     /* determine if this is a fix */
-    printf("Is this a fix, update or resubmittion to a ");
+    printf("Is this a fix, update or resubmission to a ");
     printf("previous entry (enter y or n)? ");
     while (get_line(buf, 1+1, 0) <= 0 || !(buf[0]=='y' || buf[0]=='n')) {
 	printf("\nplease answer y or n: ");
@@ -774,7 +774,7 @@ output_author(FILE *output, char *oname)
      */
     printf("\nEnter information about each author.  If your entry is after\n");
     printf("%s and before the contest deadline, the judges\n", START_DATE);
-    printf("will attempt to EMail back a confirmation to the first author\n");
+    printf("will attempt to email back a confirmation to the first author\n");
 
     /*
      * place author information for each author in an individual section
@@ -810,9 +810,9 @@ output_author(FILE *output, char *oname)
 	printf("your country and do not include your name.\n");
 	output_till_dot(output, oname, "addr:");
 
-	/* write the EMail address */
+	/* write the email address */
 	printf(
-	    "\nEnter the EMail address for author #%d.  Use an address from\n",
+	    "\nEnter the email address for author #%d.  Use an address from\n",
 	    auth_cnt);
 	printf(
 	    "a registered domain or well known site.  If you give several\n");

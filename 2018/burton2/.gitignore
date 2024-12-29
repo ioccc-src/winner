@@ -1,0 +1,12 @@
+#
+# sort with: ../../bin/sgi.sh
+*.dSYM
+fixed_iocccsize
+indent
+indent.c
+indent.o
+keywords
+manpage
+prog
+prog.orig
+tac

@@ -1,10 +1,10 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 PROGNAME="$0"
 LINES="$1"
 COLUMNS="$2"
 
-if [ "$2" = "" ]
+if [[ "$2" = "" ]]
 then
     echo "Usage: $0 <LINES> <COLUMNS>"
     exit 1
@@ -34,10 +34,10 @@ EOF
 }
 
 list_fixup_commands() {
-    while read param min_value
+    while read -r param min_value
     do
-        cur_val=$(sysctl -n $param)
-        if [ "$cur_val" -lt "$min_value" ]
+        cur_val=$(sysctl -n "$param")
+        if [[ "$cur_val" -lt "$min_value" ]]
         then
             echo "$PROGNAME -- $ sudo sysctl $param=$min_value"
         fi
@@ -59,7 +59,7 @@ case "$OS" in
         exit 1   # failed, unknown OS
 esac
 
-if [ -z "$fixup_commands" ]
+if [[ -z "$fixup_commands" ]]
 then
     echo "$PROGNAME -- Checking IPC parameters... OK!"
     echo

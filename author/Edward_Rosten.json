@@ -1,0 +1,21 @@
+{
+    "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
+    "author_JSON_format_version" : "1.1 2024-02-11",
+    "author_handle" : "Edward_Rosten",
+    "full_name" : "Edward Rosten",
+    "sort_word" : "rosten",
+    "location_code" : "GB",
+    "email" : "ed@edwardrosten.com",
+    "url" : "https://www.edwardrosten.com",
+    "alt_url" : null,
+    "deprecated_twitter_handle" : null,
+    "mastodon" : null,
+    "mastodon_url" : null,
+    "github" : null,
+    "affiliation" : null,
+    "winning_entry_set" : [
+        {
+            "entry_id" : "2001_rosten"
+        }
+    ]
+}

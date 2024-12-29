@@ -1,0 +1,14 @@
+#
+# sort with: ../../bin/sgi.sh
+*.dSYM
+cup.out
+cup.out2
+herrmann2
+herrmann2.alt
+herrmann2.orig
+indent
+indent.c
+indent.o
+ioccc.out
+ioccc.out2
+prog.orig

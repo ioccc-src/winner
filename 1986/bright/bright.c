@@ -1,7 +1,7 @@
 #include <stdio.h>
 #define O1O printf
 #define OlO putchar
-#define O10 exit
+#define O10 aexit
 #define Ol0 strlen
 #define QLQ fopen
 #define OlQ fgetc
@@ -11,6 +11,8 @@ typedef char lOL;
 
 lOL*QI[] = {"Use:\012\011dump file\012","Unable to open file '\x25s'\012",
  "\012","   ",""};
+
+int aexit(int x) { exit(x); return x; }
 
 main(I,Il)
 lOL*Il[];

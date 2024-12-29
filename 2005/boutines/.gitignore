@@ -1,0 +1,12 @@
+#
+# sort with: ../../bin/sgi.sh
+*.dSYM
+boutines
+boutines.orig
+indent
+indent.c
+indent.o
+prog.orig
+result.svg
+test.png
+test.svg

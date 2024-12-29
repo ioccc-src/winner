@@ -1,0 +1,12 @@
+#
+# sort with: ../../bin/sgi.sh
+*.dSYM
+README.poot.md
+dlowe
+dlowe.alt
+dlowe.orig
+indent
+indent.c
+indent.o
+make.1
+prog.orig

@@ -1,0 +1,12 @@
+#
+# sort with: ../../bin/sgi.sh
+*.dSYM
+indent
+indent.c
+indent.o
+poikola.aux
+poikola.log
+poikola.pdf
+poikola.synctex.gz
+prog
+prog.orig

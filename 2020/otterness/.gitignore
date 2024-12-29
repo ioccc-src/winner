@@ -1,0 +1,12 @@
+#
+# sort with: ../../bin/sgi.sh
+*.dSYM
+*.mid
+!cvikl.mid
+!entertainer.mid
+indent
+indent.c
+indent.o
+prog
+prog.alt
+prog.orig

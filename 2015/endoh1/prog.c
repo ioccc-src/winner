@@ -15,7 +15,7 @@ u[1]=y/2    ;w.send(d.slice(0,x<0?0:             2));x=y=-\
 ,lu,lv,    z;void*f;typedef unsigned              long long
 l;l*p,t[  99]={0x67452301,0xEFCDAB89,            0x98BADCFE
 ,308438*  881,3285377520       },i,j,k           ,n,m[204];
-#include        /*io*/          <stdio.h>        /*turing*/
+#include        /*io*/          <stdio.h>        /*Turing*/
 void s(){  ;     for(  k          =0;k++<7 *  2  *9;)for(i=
 0;++i<127; )      e=d +  i* 4   +512*k,1[e]      +=(i-u)*(i
 -u)+(k-v)* (k- v  )<20?*e+=UV_DROP:0;}l*q=  m,   g=1LL<<32;

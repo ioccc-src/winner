@@ -1,0 +1,15 @@
+#
+# sort with: ../../bin/sgi.sh
+*.dSYM
+Darwin
+Darwin.alt
+FreeBSD
+FreeBSD.alt
+Linux
+Linux.alt
+indent
+indent.c
+indent.o
+prog
+prog.alt
+prog.orig

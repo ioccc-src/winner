@@ -1,0 +1,24 @@
+{
+    "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
+    "author_JSON_format_version" : "1.1 2024-02-11",
+    "author_handle" : "Timo_Poikola",
+    "full_name" : "Timo Poikola",
+    "sort_word" : "poikola",
+    "location_code" : "FI",
+    "email" : "timo@ig.fi",
+    "url" : "https://ig.fi/other/ioccc",
+    "alt_url" : null,
+    "deprecated_twitter_handle" : "@timpoiko",
+    "mastodon" : null,
+    "mastodon_url" : null,
+    "github" : null,
+    "affiliation" : null,
+    "winning_entry_set" : [
+        {
+            "entry_id" : "2018_poikola"
+        },
+        {
+            "entry_id" : "2019_poikola"
+        }
+    ]
+}

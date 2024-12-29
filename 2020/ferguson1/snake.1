@@ -2,78 +2,41 @@
 .SH NAME
 snake \- Feature\-rich curses implementation of the classic 'Snake' game with many gameplay modes and options for IOCCC 2020
 .SH SYNOPSIS
-\fBsnake\fP
+\fBWAIT\fP=\fIN\fP \fBWALLS\fP=\fI[01]\fP \fBEVADE\fP=\fIN\fP \fBSIZE\fP=\fIN\fP \fBMAXSIZE\fP=\fIN\fP \fBGROW\fP=\fIN\fP \fBSHEDS\fP=\fIN\fP \fBSHED\fP=\fIN\fP \fBCANNIBAL\fP=\fI[01]\fP ./snake
+.br
+# Start pressing some arrow keys to play
 .SH DESCRIPTION
-\fBsnake\fP has two cheat modes (passable walls/self[cannibalism]), a drawing/practising mode, \fIcan play by itself\fP (\fBand win!\fP), is coloured (included \fIsnake-colours.sh\fP and \fIplay.sh\fP scripts compile in player\-selected colours) and there are many other play modes (many more can be devised with the imagination and the environmental variables; see \fbENVIRONMENT\fP and the file \fIgameplay.markdown\fP for many examples) and options.
+\fBsnake\fP has two cheat modes (passable walls/self[cannibalism]), a drawing/practising mode, \fIcan play by itself\fP (\fBand win!\fP), is coloured (included \fIsnake-colours.sh\fP and \fIplay.sh\fP scripts compile in player\-selected colours) and there are many other play modes (many more can be devised with the imagination and the environmental variables; see \fBENVIRONMENT\fP and the file \fIgameplay.md\fP for many examples) and options.
 You can pause and there's even a built\-in test unit for some features!
-Some of the configurable features are:
+.PP
+Besides the environmental variables (described below) that create for a lot of gameplay modes, here are some additional features:
 .PP
 .RS
-\fB\-\fP The speed of the snake (how many milliseconds to \fBWAIT\fP for input before moving; \fIdefault 231 milliseconds\fP and you can move faster by pressing the direction key quicker or or even holding it down).
-.RE
-.PP
-.RS
-\fB\-\fP If the bug (to eat) will move (\fBEVADE\fP) after user\-specified number of snake moves (\fIdefault 300, 0 disables\fP).
+\fB\(bu\fP A drawing mode (\fBWAIT < 0\fP makes \fBtimeout(3)\fP block).
 .RE
 .PP
 .RS
-\fB\-\fP If the snake can go through \fBWALLS\fP (coming out at the opposite wall) (\fIdefault 1, yes\fP).
+\fB\(bu\fP Computer plays the game (\fBWAIT=0\fP)
+\fB(EPILEPSY/STIMULATION OVERLOAD TRIGGER WARNING\fP included in the relevant section of the \fIgameplay.md\fP; this goes for low \fBEVADE\fP values too).
 .RE
 .PP
 .RS
-\fB\-\fP If the snake can go through itself (\fBCANNIBAL\fP) (\fIdefault 0, no\fP).
+\fB\(bu\fP Grow\-Shrink (Positive and Negative Winning) mode (see \fIgameplay.md\fP for more details).
 .RE
 .PP
 .RS
-\fB\-\fP The initial \fBSIZE\fP of the snake (\fIdefault 5\fP).
-.RE
-.PP
+\fB\(bu\fP Different colours and characters for the bug, snake head, snake and walls:
 .RS
-\fB\-\fP The size the snake must become in order to win the game (\fBMAXSIZE\fP, \fIdefault 997\fP).
-.RE
-.PP
-.RS
-\fB\-\fP How much to \fBGROW\fP each time a bug is eaten (\fIdefault 5\fP, can be negative).
-.RE
-.PP
-.RS
-\fB\-\fP How many moves (\fBSHED\fP, \fIdefault 0, disabled\fP) before 'stretching' (grow) (\fBSHEDS\fP, \fIdefault 5\fP; can be negative).
-This is how snakes grow in the wild so is a misnomer here because snakes don't grow in the manner that the original Snake game was designed.
-.RS
-\fB\- Exception\fP: If the bug is eaten the counter isn't incremented.
-.RE
-.RE
-.PP
-.RS
-\fB\-\fP A drawing mode (\fBWAIT < 0\fP makes \fBtimeout()\fP set blocking read).
-.RE
-.PP
-.RS
-\fB\-\fP Computer plays the game (\fBWAIT=0\fP)
-\fB(EPILEPSY/STIMULATION OVERLOAD TRIGGER WARNING\fP included in the relevant section of the \fIgameplay.markdown\fP; this goes for low \fBEVADE\fP values too).
-.RE
-.PP
-.RS
-\fB\-\fP Grow\-Shrink (Positive and Negative Winning) mode (see \fIgameplay.markdown\fP for more details).
-.RE
-.PP
-.RS
-\fB\-\fP The dimensions of the game (this is actually a terminal thing but I document how to do this and its potential pitfalls) (\fBLINES\fP, \fBCOLUMNS\fP).
-.RE
-.PP
-.RS
-\fB\-\fP Different colours and characters for the bug, snake head, snake and walls:
-.RS
-\fB\-\fP Bug is \fB*\fP (white).
+\fB\(bu\fP Bug is \fB*\fP (white).
 .RE
 .RS
-\fB\-\fP Head is an arrow facing the direction the snake is facing (\fB<\fP, \fB^\fP, \fB>\fP, \fBv\fP) (red).
+\fB\(bu\fP Head is an arrow facing the direction the snake is facing (\fB<\fP, \fB^\fP, \fB>\fP, \fBv\fP) (red).
 .RE
 .RS
-\fB\-\fP Body is \fBo\fP (green).
+\fB\(bu\fP Body is \fBo\fP (green).
 .RE
 .RS
-\fB\-\fP Walls are \fB#\fP (cyan).
+\fB\(bu\fP Walls are \fB#\fP (cyan).
 .RE
 .RE
 .SH OPTIONS
@@ -81,69 +44,89 @@ This is how snakes grow in the wild so is a misnomer here because snakes don't g
 The options are specified via the environmental variables.
 .SH ENVIRONMENT
 The following environmental variables modify the behaviour of the game:
+.TP
+.B WAIT
+Positive or negative integer that changes how long to wait for a key press prior to moving again.
+< 0 blocks which allows for complete control over movement at your own pace.
+Default 231; you can move faster by holding down or rapidly pressing an arrow key.
+.TQ
+.B WALLS
+Whether the walls are passable or impassable.
+Default 1, passable; 0 means impassable and you will die if you hit a wall.
+.TQ
+.B EVADE
+How many movements the Snake makes before the bug (well insect) will move to another location in the field.
+Default 300; 0 disables.
+.TQ
+.B SIZE
+Initial size of the Snake.
+Default 5.
+Note that it grows by one per move so at the default 5 it will not initially be 5 characters long!
+< 0 is an immediate win.
+.TQ
+.B MAXSIZE
+The maximum size the Snake can become before the game is won.
+< 0 is the maximum size based on terminal dimensions; any other size will be capped based on the terminal dimensions to prevent problems.
+Note that when
+.B SIZE + GROW >= MAXSIZE
+you win
+.I before
+you grow to the full size!
+.TQ
+.B GROW
+Size to grow every time you eat a bug.
+Default 5; can be negative.
+"Negativity" creates for fun gameplay modes with enough creativity.
+See \fB\<https://www.ioccc.org/2020/ferguson1/gameplay.html\>\fP for some examples.
+\fIplay.sh\fP allows you to reconfigure the colours and play different pre\-configured gameplay modes.
+.TQ
+.B SHED
+Every
+.B SHED
+movements you will grow (> 0), shrink (< 0) or stay the same length (0) by the
+.B SHEDS
+(below) value.
+Default 0.
+Again with creativity you can create some fun gameplay modes.
+\fB\- Exception\fP: if the bug is eaten the counter isn't incremented.
+.TQ
+.B SHEDS
+Every
+.B SHED
+movements will impact what this value means: grow (> 0), shrink (< 0) or not at all (0).
+Default 0.
+Again with creativity you can create some fun gameplay modes here.
+For instance you can grow upon eating a bug but shrink every
+.B SHED
+movements and then it's a battle of whether you win by
+.B SIZE
+< 0
+or 
+.B SIZE
+>=
+.B MAXSIZE\c
+\&.
+See
+.I play.sh
+and
+.I \<https://www.ioccc.org/2020/ferguson1/gameplay.html\>
+for examples.
+.sp
+.RS
+.RS
+\fBException\fP: if the bug is eaten the counter isn't incremented.
+.RE
+.RE
 .PP
-\fBGROW\fP
-.RS
-How much to grow each time a bug is eaten.
-Negative growth is a different gameplay mode.
-\fIDefault 5\fP.
-.RE
-\fBSIZE\fP
-.RS
-The initial size of the snake.
-\fIDefault 5\fP.
-.RE
-\fBMAXSIZE\fP
-.RS
-The max snake size (the size the snake must become to win).
-\fIDefault 997\fP.
-Limits are always imposed depending on the size of the terminal.
-Negative number sets to max size based on terminal size.
-.RE
-\fBWAIT\fP
-.RS
-The number of milliseconds to wait for input (how fast the snake moves).
-\fIDefault 231\fP.
-\fI0\fP has no delay: the computer will play by itself (though you can still change directions).
-\fI< 0\fP is drawing mode (makes \fIgetch()\fP block).
-.RE
-\fBEVADE\fP
-.RS
-The number of movements before the bug tries to move to a new place (evading the snake).
-\fIDefault 300\fP (0 disables).
-.RE
-\fBWALLS\fP
-.RS
-Whether the snake can go through walls.
-\fIDefault 1\fP (yes).
-.RE
-\fBCANNIBAL\fP
-.RS
-Whether the snake can go through itself.
-\fIDefault 0\fP (no).
-.RE
-\fBSHED\fP
-.RS
-How many moves before the snake 'moults' (shedding of skin to make room for growth).
-Again this isn't technically accurate in Snake.
-\fIDefault 0\fP (disabled).
-.RE
-\fBSHEDS\fP
-.RS
-The amount to grow by each time the snake sheds its skin.
-\fIDefault 5\fP.
-.RE
-.PP
-The following two modify the terminal dimensions (this is not part of the game but the terminal/curses itself):
-.PP
-\fBLINES\fP
-.RS
+The following two modify the terminal dimensions (this is not part of the game but the terminal/curses itself).
+Elsewhere I document these more and their potential pitfalls.
+.TP
+.B LINES
 The number of rows.
 Default is the maximum size of the current terminal size (\fBecho $LINES\fP will show the current value).
 Please note that this is not the number of playable rows but the entire game itself.
-.RE
-\fBCOLUMNS\fP
-.RS
+.TQ
+.B COLUMNS
 The number of columns.
 Default is the maximum size of the current terminal size (\fBecho $COLUMNS\fP will show the current value).
 Please note that this is not be the number of playable columns but the entire game itself.
@@ -155,33 +138,33 @@ The markdown files have html counterparts; for some of these the html version is
 .RS
 Source file to the Snake game (IOCCC entry source file).
 .RE
-\fIremarks.markdown\fP
+\fIREADME.md\fP
 .RS
 Describes what the entry (game) is, what it looks like, how to play etc.
 Includes a variety of other information as well as NAQs (never asked questions that I believe could actually be asked so perhaps better would be infrequently asked questions, IAQs).
 .RE
-\fIgameplay.markdown\fP
+\fIgameplay.md\fP
 .RS
 Includes information on how to play, demonstrates some of the features and describes many gameplay modes.
 .RE
-\fItroubleshooting.markdown\fP
+\fItroubleshooting.md\fP
 .RS
 Information to help work out any possible problems as well as show how to configure and restore terminal dimensions for the game.
 .RE
-\fIterminals.markdown\fP
+\fIterminals.md\fP
 .RS
 A troubleshooting guide focusing more on terminals.
 .RE
-\fICOMPILING\fP
+\fICOMPILING.md\fP
 .RS
 Information on Portability, C standards as well as (for the IOCCC judges) both Justifications for certain things and lints.
 .RE
-\fIHACKING\fP
+\fIHACKING.md\fP
 .RS
 Documentation on how to modify the input keys, colours, wall, bug and snake chars (to print), the status/score line and various other things.
 Includes feature ideas as well as how one might implement them.
 .RE
-\fIspoilers.markdown\fP
+\fIspoilers.md\fP
 .RS
 Technical details that give more away about how the program works (\fIHACKING\fP also does a bit of this).
 .RE
@@ -189,15 +172,15 @@ Technical details that give more away about how the program works (\fIHACKING\fP
 .RS
 To build the terminal capabilities test utility and the Snake game itself.
 .RE
-\fIsnake-colours\fP
+\fIsnake-colours.sh\fP
 .RS
 Helper script to compile the game with player selected colours.
 .RE
-\fIbugs.markdown\fP
+\fIbugs.md\fP
 .RS
 List of bugs and things that might appear to be bugs that aren't, were once bugs etc.
 .RE
-\fIchocolate\-cake.markdown\fP
+\fIchocolate\-cake.md\fP
 .RS
 The judges love chocolate and who can blame them? This is something of a speciality of my mum's but it's a delicious cake that even my late stepmum (who only liked white chocolate) loved! Double\-layer chocolate fudge cake.
 .RE
@@ -210,13 +193,13 @@ Source file to test terminal support for the used capabilities the Snake game us
 See this file to see the manual i.e. this file.
 Don't get lost in the snake pit!
 .RE
-\fIcannibalism.log\fP
+\fIcannibalism.log.md\fP
 .RS
 A screen dump of what cannibalism can look like right before winning.
 .RE
-\fIcrazy.log\fP
+\fIcrazy.log.md\fP
 .RS
-A screen dump of the positive/push - negative/shrink mode.
+Screen dumps of the positive/push - negative/shrink mode.
 .RE
 \fIplay.sh\fP
 .RS
@@ -230,24 +213,23 @@ Other versions I submitted. \fIprog.2.c\fP is the second version; \fIprog.3.c\fP
 It also clears the screen before playing to try and maintain terminal sanity should you pass the LINES environmental variable to the program.
 .RE
 .RE
+.SH NOTES
+The concept of shedding in this game is a misnomer.
+This is how snakes grow in the wild so it is a misnomer here because snakes don't grow in the manner that the original Snake game was designed.
 .SH BUGS
-.RS
-\fB\-\fP The screen keeps showing bugs!
-.RE
-.RS
-\fB-\fP There's no boss screen.
-.RE
-.RS
-\fB\-\fP It was written by a human being.
-.RE
-.RS
-\fB\-\fP Technically walls, snakeskin and the snake itself would \fBnot\fP be an obstacle in real life.
+.PP
+The screen keeps showing bugs (that aren't bugs :-) )!
+.PP
+There's no boss screen.
+.PP
+It was written by a human being.
+.PP
+Technically walls, snakeskin and the snake itself would \fBnot\fP be an obstacle in real life.
 The shed snakeskin is not an obstacle but walls can be and so can the snake itself.
 Also snakes grow by moulting (technical term for shedding) so when the snake leaves its snakeskin behind it really ought to grow but instead it shrinks; this means negative shedding ought to have the snake grow and positive shedding have the snake - what?
 It's a misnomer: it took fewer bytes and the negative shedding is a positive consequence of unsigned arithmetic.
-.RE
 .PP
-On a more serious note see the \fBbugs.markdown\fP file.
+On a more serious note see \fB\<https://www.ioccc.org/2020/ferguson1/bugs.html\>\fP.
 .SH EXAMPLES
 .PP
 Test your terminal capabilities and get other various data (based on dimensions of terminal, growth size, size and max size as specified i.e. you can pass in the variables \fBLINES\fP, \fBCOLUMNS\fP, \fBMAXSIZE\fP, \fBGROW\fP and \fBSIZE\fp):
@@ -295,9 +277,12 @@ Run script that prompts for the colours to be used, compiles and then runs the g
 .PP
 That will compile the game to be the colours you select and then enable cannibalism, set the starting size to 15, max size to 45 and walls are made impassable.
 .PP
-For more gameplay information and modes check \fIgameplay.markdown\fP; and for an interactive script that prompts for some of those modes see the \fIplay.sh\fP script.
+For many more gameplay information, modes and features check:
+.br
+\fB\<https://www.ioccc.org/2020/ferguson1/gameplay.html\>\fP
+and for an interactive script that prompts for some of those modes see the \fIplay.sh\fP script.
 .SH AUTHOR
 Written by Cody Boone Ferguson for IOCCC 2020 (the 27th IOCCC).
 .SH SEE ALSO
 .PP
-\fB\<https://ioccc.xexyl.net/2020/snake\>\fP The 27th IOCCC 'Don't tread on me award'.
+\fB\<https://ioccc.xexyl.net/2020/snake\>\fP The 27th IOCCC 'Don't tread on me award' winning entry.

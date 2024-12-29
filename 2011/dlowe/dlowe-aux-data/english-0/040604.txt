@@ -1,0 +1,89 @@
+Compte-rendu de la réunion STRQDS du 04/06/04 (10H/17H)
+CNAM-Paris
+
+Présents: 
+--------
+
+Simonot-Lion Françoise (LORIA, Nancy - simonot@loria.fr)
+Song YeQiong (LORIA, Nancy - song@loria.fr)
+Rebeuf Xavier (LORIA, Nancy - rebeuf@loria.fr)
+Babau Jean-Philippe (CITI, Lyon - jean-philippe.babau@insa-lyon.fr)
+André Charles (I3S, Nice - andre@unice.fr
+Burroni Nicolas (CNAM, Paris - mburron@yahoo.com)
+Dutheillet Claude (LAMSADE, Paris + CRESTIC, Reims - 
+patrice.moreaux@univ-reims.fr)
+Sadeg Bruno (LIH, Le Havre - bruno.sadeg@univ-lehavre.fr)
+Mammeri Zoubir (IRIT, Toulouse - mammeri@irit.fr)
+Mellouk Abdelhamid (LIIA, Université Paris XII - mellouk@univ-paris12.fr
+Ziane Saida (LIIA, Université Paris XII - s-ziane@yahoo.fr)
+Hyon Emmanuel (LORIA, Nancy - hyon@loria.fr)
+Jabri Issam (CRAN, Nancy - jabri@cran.uhp-nancy.fr)
+Etienne Jean-Paul (CNAM - CEDRIC, Paris - fractralclone@yahoo.com)
+Bouzefrane Samia (CNAM - CEDRIC, Paris - samia.bouzefrane@cnam.fr)
+Ghanem Nabil (CNAM - CEDRIC, Paris - nabil.ghanem@auditeur.cnam.fr)
+Berthelin Joël (CNAM - CEDRIC, Paris - jb@cnam.fr)
+Boumerdassi Selma (CNAM - CEDRIC, Paris - boumer@cnam.fr)
+Rousseau Pierre (CNAM - CEDRIC, Paris - rousseau@cnam.fr)
+Peyre Jean-François (CNAM - CEDRIC, Paris - peyre@cnam.fr)
+Kaiser Claude (CNAM - CEDRIC, Paris - kaiser@cnam.fr)
+Ait Ali Ahmed (CRAN, Nancy - aitali@cran .uhp-nancy.fr)
+Hoffmann Martial (CRAN, Nancy - hoffmann@cran.uhp-nancy.fr)
+Georges Jean-Philippe (CRAN, Nancy - georges@cran.uhp-nancy.fr)
+Michaut Fabien (CRAN, Nancy - michaut@cran.uhp-nancy.fr)
+Holl Thomas (CRAN, Nancy - holl@cran.uhp-nancy.fr)
+Juanole Guy (LAAS, Toulouse - juanole@laas.fr)
+Bonaventure Olivier (UCL, Belgique - BONAVENTURE@INFO.UCL.AC.BE)
+Godary Karen (INSA, Lyon - karen.Godary@insa-lyon.fr)
+Filali Fethi (Institut Eurécom - Fethi.Filali@eurecom.fr)
+
+I Thème de la journee: 
+"Qualité de service dans l'internet et les grands réseaux" 
+Coordination : Guy Juanole LAAS CNRS
+
+Exposes: 
+
+``Généralités sur la QdS''  
+
+     G.Juanole LAAS-CNRS - Université Toulouse III 
+
+``QdS et Routage''     
+
+     O.Bonaventure Université Catholique de Louvain- Belgique 
+
+
+``QdS et Réseaux sans fil''     
+
+     F. Filali EURECOM - Sophia-Antipolis      
+
+``Adaptation d'applications à la QdS''   
+
+     F.Michaut CRAN Henri Poincaré - Nancy 
+
+
+L'ensemble des présentations est en ligne sur le site.
+
+La présentation intitulee "QdS et Multidomaines" 
+par G.Auriol et Ch.Chassot LAAS-CNRS - INSA Toulouse 
+a été annulée.  Un article et les transparents sont 
+néanmoins diponibles sur le site.
+
+
+
+II  Prochaine  Réunion:
+-----------------------
+La prochaine journée aura lieu en octobre: date à définir.
+
+Thème : Vérification stochastique 
+ Coordination: Patrice Moreaux
+
+
+
+Bonne fin d'année à tous.
+
+Cordialement,
+
+Francoise, Francois
+
+
+
+

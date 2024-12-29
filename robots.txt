@@ -1,18 +1,3 @@
-# If you are an official mirror you know what the user agent field should be!
-# If you want to be an ioccc mirror contact <mirror-request@ioccc.org>.  You
-# must include IOCCC 2023 in the subject line or your email will bounce.
-
-# Added due to slurping up everything as fast as it could
-User-agent: sistrix
-Disallow: /
-
-# I watched this bot for 4 consecutive days, it indexed the whole site 4 times
-# each day (using GETs)
-User-agent: AhrefsBot
-Disallow: /
-
-# Repeated indexing
-User-agent: Ezooms
-Disallow: /
-
 User-Agent: *
+Allow: /
+Sitemap: https://www.ioccc.org/sitemap.xml

@@ -1,0 +1,18 @@
+#
+# sort with: ../../bin/sgi.sh
+*.dSYM
+anonymous
+anonymous.bed
+anonymous.bed.alt
+anonymous.orig
+anonymous.ten
+anonymous.ten.32
+anonymous.ten.alt
+indent
+indent.c
+indent.o
+prog.orig
+ten.bak.od
+ten.bak.txt
+ten.od
+ten.txt

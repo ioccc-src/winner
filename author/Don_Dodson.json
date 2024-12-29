@@ -1,0 +1,30 @@
+{
+    "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
+    "author_JSON_format_version" : "1.1 2024-02-11",
+    "author_handle" : "Don_Dodson",
+    "full_name" : "Don Dodson",
+    "sort_word" : "dodson",
+    "location_code" : "US",
+    "email" : null,
+    "url" : "https://web.archive.org/web/20000816152741/http://www.neta.com/~dodson/",
+    "alt_url" : null,
+    "deprecated_twitter_handle" : null,
+    "mastodon" : null,
+    "mastodon_url" : null,
+    "github" : null,
+    "affiliation" : null,
+    "winning_entry_set" : [
+        {
+            "entry_id" : "1994_dodsond1"
+        },
+        {
+            "entry_id" : "1994_dodsond2"
+        },
+        {
+            "entry_id" : "1995_dodsond1"
+        },
+        {
+            "entry_id" : "1995_dodsond2"
+        }
+    ]
+}

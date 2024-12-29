@@ -1,0 +1,12 @@
+#
+# sort with: ../../bin/sgi.sh
+*.dSYM
+data
+indent
+indent.c
+indent.o
+prog.orig
+schnitzi
+schnitzi.orig
+sort
+sort.c

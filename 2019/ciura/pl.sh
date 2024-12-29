@@ -1,3 +1,3 @@
-#!/bin/sh
+#!/usr/bin/env bash
 set -x
-./getwords.sh pl | egrep -v '^[^aiouwz]$' | ./prog aąbcćdeęfghijklłmnńoóprsśtuwyzźż
+LC_ALL=C ./getwords.sh pl | LC_ALL=C grep -vE '^[^aiouwz]$' | LC_ALL='' ./prog aąbcćdeęfghijklłmnńoóprsśtuwyzźż

@@ -1,7 +1,7 @@
 /*
  * multiply by 2
  *
- * based on http://www.ioccc.org/2001/herrmann1.times2
+ * based on https://www.ioccc.org/2001/herrmann1/herrmann1.times2
  */
  
 // try tape_five.h

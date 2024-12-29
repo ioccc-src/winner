@@ -1,0 +1,55 @@
+name: Bug report
+description: Report a bug with a tool
+title: "[Bug] <title>"
+labels: ["bug"]
+body:
+- type: checkboxes
+  attributes:
+    label: Is there an existing issue for this?
+    description: Please search to see if an issue already exists for the problem you're reporting.
+    options:
+    - label: I have searched for existing issues and did not find anything like this
+      required: true
+- type: textarea
+  attributes:
+    label: Describe the bug
+    description: Please give a **clear** and **concise** description of what the bug is.
+  validations:
+    required: true
+
+- type: textarea
+  attributes:
+    label: What you expect
+    description: |
+        Please describe what you think it should be instead and why, as best you can (the more details you provide the better).
+
+  validations:
+    required: true
+
+- type: textarea
+  attributes:
+    label: Environment
+    description: |
+      Example:
+        - **OS**: macOS Sonoma 14.5
+        - **Device**: MacBook Pro M1
+        - **Shell**: GNU bash, version 5.2.26(1)-release (aarch64-apple-darwin23.2.0)
+
+        **PLEASE** provide **AT** **LEAST** the above items. If you have the **SAME** problem with more than one device please list the above for **ALL** **RELEVANT** **devices** with **any** **relevant** **context**.
+    value: |
+        - OS:
+        - Device:
+        - Compiler:
+  validations:
+    required: true
+
+- type: textarea
+  attributes:
+    label: Anything else?
+    description: |
+      Do you have any additional context or information that might be helpful? Please let us know!
+
+      Tip: you can attach files by clicking the text area to highlight it and then click the link that says paste, drop or click to add files.
+  validations:
+    required: false
+

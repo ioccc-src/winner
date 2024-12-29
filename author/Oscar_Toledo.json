@@ -1,0 +1,33 @@
+{
+    "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
+    "author_JSON_format_version" : "1.1 2024-02-11",
+    "author_handle" : "Oscar_Toledo",
+    "full_name" : "Oscar Toledo G.",
+    "sort_word" : "toledo",
+    "location_code" : "MX",
+    "email" : null,
+    "url" : "https://nanochess.org/",
+    "alt_url" : null,
+    "deprecated_twitter_handle" : null,
+    "mastodon" : null,
+    "mastodon_url" : null,
+    "github" : null,
+    "affiliation" : null,
+    "winning_entry_set" : [
+        {
+            "entry_id" : "2005_toledo"
+        },
+        {
+            "entry_id" : "2006_toledo1"
+        },
+        {
+            "entry_id" : "2006_toledo2"
+        },
+        {
+            "entry_id" : "2006_toledo3"
+        },
+        {
+            "entry_id" : "2011_toledo"
+        }
+    ]
+}

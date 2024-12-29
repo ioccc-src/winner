@@ -38,7 +38,7 @@
  *
  * FOR MORE INFORMATION:
  *
- *   You may contact the judges by sending EMail to the following address:
+ *   You may contact the judges by sending an email to the following address:
  *
  *	...!{apple,sun,uunet}!hoptoad!judges		(not the address for
  *	judges@toad.com					 submitting entries)
@@ -199,10 +199,10 @@ main(argc, argv)
     printf("cases where it conflicts with the rules, the rules shall apply.\n");
     printf("It is your responsibility to ensure that your entry conforms to\n");
     printf("the current rules.\n\n");
-    printf("EMail your entries to:\n");
+    printf("Email your entries to:\n");
     printf("\t%s\n", ENTRY_ADDR1);
     printf("\t%s\n\n", ENTRY_ADDR2);
-    printf("Please use the following subject when you EMail your entry:\n");
+    printf("Please use the following subject when you email your entry:\n");
     printf("\tioccc entry\n\n");
     /* all done */
     exit(0);
@@ -581,7 +581,7 @@ output_entry(output, oname)
     check_io(output, oname, EOF_NOT_OK);
 
     /* determine if this is a fix */
-    printf("Is this a fix, update or resubmittion to a ");
+    printf("Is this a fix, update or resubmission to a ");
     printf("previous entry (enter y or n)? ");
     while (get_line(buf, 1+1, 0) <= 0 || !(buf[0]=='y' || buf[0]=='n')) {
 	printf("\nplease answer y or n: ");
@@ -739,7 +739,7 @@ output_author(output, oname)
      */
     printf("\nEnter information about each author.  If your entry is after\n");
     printf("%s and before the contest deadline, the judges\n", START_DATE);
-    printf("will attempt to EMail back a confirmation to the first author\n");
+    printf("will attempt to email back a confirmation to the first author\n");
 
     /*
      * place author information for each author in an individual section
@@ -775,9 +775,9 @@ output_author(output, oname)
 	printf("your country and do not include your name.\n");
 	output_till_dot(output, oname, "addr:");
 
-	/* write the EMail address */
+	/* write the email address */
 	printf(
-	    "\nEnter the EMail address for author #%d.  Use an address from\n",
+	    "\nEnter the email address for author #%d.  Use an address from\n",
 	    auth_cnt);
 	printf(
 	    "a registered domain or well known site.  If you give several\n");

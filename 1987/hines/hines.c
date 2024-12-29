@@ -1,12 +1,12 @@
 #include <stdio.h>
-#include <malloc.h>
+#include <stdlib.h>
 main(togo,toog)
 int togo;
 char *toog[];
 {char *ogto,   tgoo[80];FILE  *ogot;  int    oogt=0, ootg,  otog=79,
 ottg=1;if (    togo==  ottg)   goto   gogo;  goto    goog;  ggot:
 if (   fgets(  tgoo,   otog,   ogot)) goto   gtgo;   goto   gott;
-gtot:  exit(); ogtg: ++oogt;   goto   ogoo;  togg:   if (   ootg > 0)
+gtot: exit(0); ogtg: ++oogt;   goto   ogoo;  togg:   if (   ootg > 0)
 goto   oggt;   goto    ggot;   ogog:  if (  !ogot)   goto   gogo;
 goto   ggto;   gtto:   printf( "%d    goto   \'s\n", oogt); goto
 gtot;  oggt:   if (   !memcmp( ogto, "goto", 4))     goto   otgg;

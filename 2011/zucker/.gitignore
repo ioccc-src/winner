@@ -1,0 +1,11 @@
+#
+# sort with: ../../bin/sgi.sh
+*.dSYM
+*.png
+*.ppm
+indent
+indent.c
+indent.o
+prog.orig
+zucker
+zucker.orig

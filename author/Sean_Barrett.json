@@ -1,0 +1,27 @@
+{
+    "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
+    "author_JSON_format_version" : "1.1 2024-02-11",
+    "author_handle" : "Sean_Barrett",
+    "full_name" : "Sean Barrett",
+    "sort_word" : "barrett",
+    "location_code" : "US",
+    "email" : null,
+    "url" : "https://web.archive.org/web/20020724233128/http://www.theworld.com/~buzzard/",
+    "alt_url" : null,
+    "deprecated_twitter_handle" : null,
+    "mastodon" : null,
+    "mastodon_url" : null,
+    "github" : null,
+    "affiliation" : null,
+    "winning_entry_set" : [
+        {
+            "entry_id" : "1991_buzzard"
+        },
+        {
+            "entry_id" : "1992_buzzard.1"
+        },
+        {
+            "entry_id" : "1992_buzzard.2"
+        }
+    ]
+}

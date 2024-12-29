@@ -1,0 +1,24 @@
+{
+    "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
+    "author_JSON_format_version" : "1.1 2024-02-11",
+    "author_handle" : "Sandro_Maffiodo",
+    "full_name" : "Sandro Maffiodo",
+    "sort_word" : "maffiodo",
+    "location_code" : "IT",
+    "email" : null,
+    "url" : "https://web.archive.org/web/20170706135649/http://www.assezeta.com/sandromaffiodo/",
+    "alt_url" : null,
+    "deprecated_twitter_handle" : null,
+    "mastodon" : null,
+    "mastodon_url" : null,
+    "github" : null,
+    "affiliation" : null,
+    "winning_entry_set" : [
+        {
+            "entry_id" : "2014_maffiodo1"
+        },
+        {
+            "entry_id" : "2014_maffiodo2"
+        }
+    ]
+}

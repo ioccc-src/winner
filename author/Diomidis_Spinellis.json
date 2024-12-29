@@ -1,0 +1,30 @@
+{
+    "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
+    "author_JSON_format_version" : "1.1 2024-02-11",
+    "author_handle" : "Diomidis_Spinellis",
+    "full_name" : "Diomidis Spinellis",
+    "sort_word" : "spinellis",
+    "location_code" : "GR",
+    "email" : "dds@aueb.gr",
+    "url" : "https://www.spinellis.gr/index.html.var",
+    "alt_url" : null,
+    "deprecated_twitter_handle" : null,
+    "mastodon" : "@CoolSWEng@mastodon.acm.org",
+    "mastodon_url" : "https://mastodon.acm.org/@CoolSWEng",
+    "github" : "@dspinellis",
+    "affiliation" : null,
+    "winning_entry_set" : [
+        {
+            "entry_id" : "1988_spinellis"
+        },
+        {
+            "entry_id" : "1990_dds"
+        },
+        {
+            "entry_id" : "1991_dds"
+        },
+        {
+            "entry_id" : "1995_spinellis"
+        }
+    ]
+}

@@ -1,0 +1,27 @@
+{
+    "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
+    "author_JSON_format_version" : "1.1 2024-02-11",
+    "author_handle" : "Edward_Giles",
+    "full_name" : "Edward Giles",
+    "sort_word" : "giles",
+    "location_code" : "AU",
+    "email" : "edward@giles.net.au",
+    "url" : "https://id523a.com",
+    "alt_url" : null,
+    "deprecated_twitter_handle" : null,
+    "mastodon" : null,
+    "mastodon_url" : null,
+    "github" : "@id523a",
+    "affiliation" : null,
+    "winning_entry_set" : [
+        {
+            "entry_id" : "2018_giles"
+        },
+        {
+            "entry_id" : "2019_giles"
+        },
+        {
+            "entry_id" : "2020_giles"
+        }
+    ]
+}

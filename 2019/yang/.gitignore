@@ -1,0 +1,23 @@
+#
+# sort with: ../../bin/sgi.sh
+*.dSYM
+a
+b
+c
+d
+e
+indent
+indent.c
+indent.o
+input.txt
+original.txt
+output1.txt
+output2.txt
+output.txt
+prog
+prog.orig
+scrambled1.txt
+scrambled2.txt
+scrambled3.txt
+scrambled.txt
+unscrambled.txt

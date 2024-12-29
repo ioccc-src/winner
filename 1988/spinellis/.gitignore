@@ -1,0 +1,11 @@
+#
+# sort with: ../../bin/sgi.sh
+*.dSYM
+indent
+indent.c
+indent.o
+prog.c
+prog.orig
+spinellis
+spinellis.alt
+spinellis.orig

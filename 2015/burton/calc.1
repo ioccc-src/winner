@@ -1,0 +1,135 @@
+.TH calc 1 "25 March 2023" "calc" "IOCCC 2015"
+.SH NAME
+calc \- an integer expression calculator that outputs in both hex and decimal
+.SH SYNOPSIS
+\fBcalc\fP \fI[expr]\fP
+.SH DESCRIPTION
+.BR calc
+presents a simple signed integer expression calculator.
+The result is printed on
+.BR stdout
+as both a decimal value and its hex equivalent.
+Results are presented as 32-bit values, displaying as 64-bits only if necessary.
+If the program name begins with
+.B e
+the input is also copied to
+.BR stdout .
+.BR stdin
+is read if there are no arguments.
+.PP
+Constants may be decimal, octal or hex.
+There are 26 registers, initialized to zero, named 
+.B A-Z\c
+; the most recent result is always remembered in the register 
+.BR .
+(dot).
+Assignments are silent; the character
+.I $
+will print a table of the non-zero registers.
+.PP
+All input is case-insensitive.
+Semicolons and/or newlines separate statements.
+Whitespace is ignored, except newlines cannot occur within expressions.
+Comments are introduced with
+.I #
+and extend through the end of the line.
+.PP
+Operator precedence is as found in Go:
+OR and XOR are treated as additive, SHIFTing and AND are multiplicative.
+This allows a more natural expression without parentheses,
+as in
+.BR a&0xff\ |\ b<<8 \c
+\&.
+.PP
+Supported operations in decreasing precedence:
+.TP
+.B ()
+forced precedence
+.TQ
+.B \- + ! ~ ?
+unary minus/plus, not, compl, byte-swap
+.TQ
+.B * / % & << >> >>>
+mul, div, mod, bitand, left shift, right shift, unsigned right shift
+.TQ
+.B + \- | ^
+add, sub, bitor, xor
+.TQ
+.B =
+assignment (\c
+.I [a-z] = expr\c
+)
+.SH EXAMPLES
+.PP
+Display the decimal value of
+.BR 0x42 :
+.sp
+.RS
+.ft B
+calc 0x42
+.br
+.ft R
+66	0x00000042
+.RE
+.PP
+What is the mask value for 22 bits?
+.sp
+.RS
+.ft B
+calc '1<<22-1'
+.br
+.ft R
+4194303	    0x003fffff
+.RE
+.PP
+What is the integer value of byte-swapped 0x11223344?
+.RS
+.ft B
+calc ?0x11223344
+.br
+.ft R
+1144201745	0x44332211
+.RE
+.PP
+Some canned expressions:
+.RS
+.ft B
+cat <<! | ecalc
+.br
+# multiple assignments
+.br
+a=32;n=10;c=50;m=100;$
+.br
+7+7/7+7*7-7	# pedmas
+.br
+m|a-a*3		# convenient precedence
+.br
+?(1<<14|1<<9)-1<<4-1<<3
+.br
+57005<<16+48879
+.br
+-1 >> 32	# signed shift
+.br
+-1 >>> 32	# unsigned shift
+.br
+!
+.ft R
+.RE
+.SH BUGS
+An assignment with certain types of syntax error will replace the registers with a partial evaluation:
+.sp
+.RS
+.ft B
+calc 'a = 1; a; a = 3 4; a'
+.br
+1	0x00000001
+.br
+syntax error
+.br
+3	0x00000003
+.ft R
+.RE
+.PP
+Command line expressions longer than 64 characters will give a syntax error.
+.SH SEE ALSO
+\<https://golang.org/\>

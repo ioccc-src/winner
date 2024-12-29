@@ -1,76 +1,72 @@
-.TH recode 1 "30 April 2020" "recode" "IOCCC 2020"
+.TH recode 1 "16 April 2023" "recode" "IOCCC 2020"
 .SH NAME
 recode \- A configuration tool for the IOCCC 2020 Enigma simulator w/various additional features for enhanced usage
 .SH SYNOPSIS
-\fBrecode [options]\fP
+\fBrecode\fP [\fB\-v\fP] [\fB\-r\fP] [\fB\-f\fI<input_file>\fP\fP] [\fB\-R\fI<string|file>\fP\fP] [\fB\-l\fI<output_file>\fP\fP]
 .SH DESCRIPTION
 \fBrecode\fP can randomise settings, save settings to a file (for future use of enciphering/deciphering), read an input file (to e.g. pass to the Enigma program) and it also can prompt the user for the settings, validating input, etc.
 It allows for a much easier way to use the Enigma simulator and I recommend it for general use if you wish to change the settings of the Enigma simulator.
 .SH OPTIONS
-.PP
+.TP
 \fB\-h\fP
 Show the options and exit.
-.PP
+.TQ
 \fB\-v\fP
 Display the selected settings in detail.
-.PP
+.TQ
 \fB\-r\fP
 Pseudo-randomly select the settings.
-.PP
+.TQ
 \fB\-f\<input file\>\fP
 Read input file as data file (e.g. to pipe to Enigma program).
-Notice that there is no space between the \fI\-f\fP and file name.
-.PP
+Notice that there is no space between the \fB\-f\fP and file name.
+.TQ
 \fB\-i\<input file\>\fP
 Alias for \fI\-f\fP option.
-.PP
+.TQ
 \fB\-R\<string|file\>\fP
 Parse settings string (or file with the same format). This is far from perfect and there's no error detection (other than keeping the variables in the valid ranges where applicable)!
 Notice that there is no space after the \fB\-R\fP.
-.PP
+.TQ
 \fB\-o\<output file\>\fP
 Save the settings (not the data read in) to the output file for reuse.
+Notice that there is no space between the \fB\-o\fP and file name.
 .PP
 .SH FILES
 \fIrecode.c\fP
 .RS
 Source file to the recode program.
 .RE
-\fIrecode.markdown\fP
+\fIrecode.md\fP
 .RS
 Markdown file with examples on how to use the recode program (along with the Enigma program).
 .RE
-\fIhint.text\fP
+\fIREADME.md\fP
 .RS
 More information on the Enigma simulator IOCCC entry.
 .RE
-\fIchocolate\-cake.markdown\fP
+\fIchocolate\-cake.md\fP
 .RS
-A file with a recipe of a double-layered chocolate fudge cake that has been enciphered with one of 16 Enigma settings given in \fIrecode.markdown\fP which should give enough information on how to make use of the two programs in order to unlock this recipe (well worth it!).
+A file with a recipe of a double-layered chocolate fudge cake that has been enciphered with one of 16 Enigma settings given in \fIrecode.md\fP which should give enough information on how to make use of the two programs in order to unlock this recipe (well worth it!).
 .RE
 \fIrecode.1\fP
 .RS
 I don't think you need help here! :)
 .RE
 .SH BUGS
-.RS
-\fB\-\fP The \fB\-R\fP option doesn't detect errors.
-.RE
-.RS
-\fB\-\fP Doesn't handle input from other programs very well (e.g. \fBecho ...|./recode\fP).
+.PP
+The \fB\-R\fP option doesn't detect errors.
+.PP
+Doesn't handle input from other programs very well (e.g. \fBecho ...|./recode\fP).
 Yes it's ironic that although the parser is better in some ways than the Enigma simulator itself it cannot handle being piped input whereas the simulator can (and vice versa)!
-.RE
-.RS
-\fB\-\fP It was written by a human being.
-.RE
-.RS
-\fB\-\fP The source code is ugly. This is only partly intentional.
-.RE
-.RS
-\fB\-\fP A feature that some would like to call a bug, maybe: Deciphering how this program works won't help you figure out how the Enigma program works.
-.RE
-.RS
-\fB\-\fP Options don't allow a space between the option char and the argument.
+.PP
+It was written by a human being.
+.PP
+The source code is ugly. This is only clearly intentional.
+.PP
+A feature that some would like to call a bug, maybe: deciphering how this program works won't help you figure out how the Enigma program works.
+.PP
+Options don't allow a space between the option char and the argument.
 This in turn means that for options expecting a file name shell expansion won't occur which means using e.g. ~ will not correctly translate in the file name.
 .RE
 .SH EXAMPLES
@@ -92,7 +88,7 @@ Does something special (what?):
 .fi
 .RE
 .PP
-Please see the \fIrecode.markdown\fP and \fIhint.markdown\fP files for more examples and other information.
+Please see the \fIrecode.md\fP and \fIREADME.md\fP files for more examples and other information.
 .SH AUTHOR
 Written by Cody Boone Ferguson for IOCCC 2020 (the 27th IOCCC).
 .SH SEE ALSO
@@ -101,14 +97,14 @@ Written by Cody Boone Ferguson for IOCCC 2020 (the 27th IOCCC).
 .PP
 \fB\<https://ioccc.xexyl.net/2020/enigma\>\fP The 27th IOCCC 'Most enigmatic'.
 .PP
-\fB\<http://users.telenet.be/d.rijmenants/en/enigmaproc.htm\>\fP Enigma Message Procedures for the Heer (Army), Luftwaffe (Air Force) and Kriegsmarine (Navy).
+\fB\<https://web.archive.org/web/20200710094321/http://users.telenet.be/d.rijmenants/en/enigmaproc.htm\>\fP Enigma Message Procedures for the Heer (Army), Luftwaffe (Air Force) and Kriegsmarine (Navy).
 .PP
 \fB\<http://enigmaco.de/enigma/enigma.html\>\fP Online interactive Enigma simulator.
 .PP
-\fB\<http://www.codesandciphers.co.uk/enigma/index.htm\>\fP Tony Sale's (original curator of the Bletchley Park Museum) pages on The Enigma cipher machine.
+\fB\<https://web.archive.org/web/20200621180323/http://www.codesandciphers.co.uk/enigma/index.htm\>\fP Tony Sale's (original curator of the Bletchley Park Museum) pages on The Enigma cipher machine.
 .PP
-\fB\<http://users.telenet.be/d.rijmenants/en/enigmatech.htm\>\fP Technical Details of the Enigma Machine.
+\fB\<https://web.archive.org/web/20200710094303/http://users.telenet.be/d.rijmenants/en/enigmatech.htm\>\fP Technical Details of the Enigma Machine.
 .PP
-\fB\<http://users.telenet.be/d.rijmenants/en/enigma.htm\>\fP The German Enigma Cipher Machine.
+\fB\<https://web.archive.org/web/20200710094243/http://users.telenet.be/d.rijmenants/en/enigma.htm\>\fP The German Enigma Cipher Machine.
 .PP
 \fB\<http://www.ellsbury.com/enigma3.htm\>\fP How the Enigma was Set Up and Operated.

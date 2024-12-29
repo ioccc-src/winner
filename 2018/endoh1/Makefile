@@ -1,170 +1,150 @@
 #!/usr/bin/env make
 #
-# 2018 makefile
+# IOCCC 2018 winning entry - endoh1
+
+################################################################################
 #
-# This work by Landon Curt Noll, Simon Cooper, and Leonid A. Broukhis
-# is licensed under:
+# IOCCC winning entry code may not work on your system.  What was liked/allowed
+# and worked in the past may no longer be liked/allowed or compile/run today.
 #
-#	Creative Commons Attribution-ShareAlike 3.0 Unported License.
+# Bug fixes, corrections and typo fixes are VERY WELCOME.  If you see a problem,
+# first check this URL for a list of known bugs and (mis)features of IOCCC entries:
 #
-# See: http://creativecommons.org/licenses/by-sa/3.0/
+#	https://www.ioccc.org/bugs.html
+#
+# GitHub pull requests are welcome!  Please see the above URL for details.
+#
+################################################################################
+#
+# This file is Copyright (c) 2023 by Landon Curt Noll.  All Rights Reserved.
+# You are free to share and adapt this file under the terms of this license:
+#
+#	Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+#
+# For more information, see: https://creativecommons.org/licenses/by-sa/4.0/
 
 
-################
-# tool locations
-################
+#############################
+# shell used by this Makefile
+#############################
 #
-SHELL= /bin/bash
-CP= cp
-CPP= cpp
-GUNZIP= gunzip
-BUNZIP2= bunzip2
-GZIP_PROG= gzip
-BZIP2= bzip2
-CURL= curl
-DD= dd
-LD= ld
-MAKE= make
-RM= rm
-SED= sed
-TAR= tar
-TRUE= true
-MKDIR= mkdir
-MV= mv
-TR= tr
-GREP= grep
-SORT= sort
-UNIQ= uniq
+SHELL= bash
 
-# Set X11_LIBDIR to the directory where the X11 library resides
+#######################
+# common tool locations
+#######################
 #
-#X11_LIBDIR= /usr/X11R6/lib
-#X11_LIBDIR= /usr/X11/lib
-X11_LIBDIR= /opt/X11/lib
+include ../../var.mk
 
-# Set X11_INCLUDEDIR to the directory where the X11 include files reside
+# Common C compiler warnings to silence
 #
-#X11_INCDIR= /usr/X11R6/include
-#X11_INCDIR= /usr/X11/include
-X11_INCDIR= /opt/X11/include
+CSILENCE= -Wno-strict-prototypes -Wno-misleading-indentation
 
-# Compiler warnings
+# Attempt to silence unknown warning option
 #
-#CWARN=
-#CWARN= -Wall
-#CWARN= -Wall -Wextra
-CWARN= -Wall -Wextra -pedantic ${CSILENCE}
-#CWARN= -Wall -Wextra -Weverything
-#CWARN= -Wall -Wextra -Weverything -pedantic
-#CWARN= -Wall -Wextra -Weverything -pedantic ${CSILENCE}
+CUNKNOWN= -Wno-unknown-warning-option
 
-# Silence warnings that ${CWARN} would normally complain about
+# Common C compiler warning flags
 #
-CSILENCE=
-#CSILENCE= -Wno-implicit-int
+CWARN= -Wall -Wextra ${CSILENCE} ${CUNKNOWN}
 
-# compiler standard
+# Compiler standard
 #
-#CSTD=
-#CSTD= -ansi
-CSTD= -std=c11
+CSTD= -std=gnu17
 
-# compiler bit architecture
-#
-# Some entries require 32-bitness:
-# ARCH= -m32
-#
-# Some entries require 64-bitness:
-# ARCH= -m64
-#
-# By default we assume nothing:
+# Compiler bit architecture
 #
 ARCH=
 
-# defines that are needed to compile
+# Defines that are needed to compile
 #
 CDEFINE=
-#CDEFINE= -DIOCCC=25
 
-# include files that are needed to compile
+# Include files that are needed to compile
 #
 CINCLUDE=
-#CINCLUDE= -include stdlib.h
-#CINCLUDE= -include stdio.h
-#CINCLUDE= -include stdlib.h -include stdio.h
-#CINCLUDE= -I ${X11_INCDIR}
 
-# optimization
+# Optimization
 #
-# Most compiles will safely use -O2.  Some can use only -O1 or -O.
-# A few compilers have broken optimizers or this entry make break
-# under those buggy optimizers and thus you may not want anything.
-# Reasonable compilers will allow for -O3.
-#
-#OPT=
-#OPT= -O
-#OPT= -O1
-#OPT= -O2
 OPT= -O3
 
-# default flags for ANSI C compilation
+# Default flags for ANSI C compilation
 #
 CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
 
 # Libraries needed to build
 #
-LIBS=
-#LIBS= -L ${X11_LIBDIR}
+LDFLAGS=
 
-# ANSI compiler
-#
-# Set CC to the name of your ANSI compiler.
-#
-# Some entries seem to need gcc.  If you have gcc, set
-# both CC and MAY_NEED_GCC to gcc.
-#
-# If you do not have gcc, set CC to the name of your ANSI compiler, and
-# set MAY_NEED_GCC to either ${CC} (and hope for the best) or to just :
-# to disable such programs.
+# C compiler to use
 #
 CC= cc
-#CC=clang
-MAY_NEED_GCC= gcc
+
+# Compiler add-ons or replacements for clang only
+#
+ifeq "$(findstring $(CLANG),${CC})" "$(CLANG)"
+#
+CSILENCE+= -Wno-comma -Wno-implicit-int-conversion -Wno-missing-prototypes \
+	   -Wno-missing-variable-declarations -Wno-poison-system-directories \
+	   -Wno-shorten-64-to-32 -Wno-strict-prototypes \
+	   -Wno-extra-semi-stmt -Wno-unsafe-buffer-usage
+#
+CWARN+= -Weverything
+#
+endif
+
+# Specific add-ons or replacements for gcc only
+#
+ifeq "$(findstring $(GCC),${CC})" "$(GCC)"
+#
+#CSILENCE+=
+#
+#CWARN+=
+#
+endif
 
 
 ##############################
-# Special flags for this entry
+# Special Makefile variables for this entry
 ##############################
 #
-OBJ= prog.o
-DATA=
-TARGET= prog
+ENTRY= endoh1
+PROG= prog
+#
+OBJ= ${PROG}.o
+CSRC= ${PROG}.o
+DATA= golem.txt smily.txt invisible.txt
+TARGET= ${PROG}
 #
 ALT_OBJ=
-ALT_TARGET= prog.orig
+ALT_TARGET=
 
 
 #################
 # build the entry
 #################
 #
-all: ${TARGET} ${DATA}
+all: data ${TARGET}
 	@${TRUE}
 
-prog: prog.c
-	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+.PHONY: all alt data everything clean clobber
+
+${PROG}: ${PROG}.c
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 # alternative executable
 #
-alt: ${ALT_TARGET}
+alt: data ${ALT_TARGET}
 	@${TRUE}
-
-prog.orig: prog.orig.c
-	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
 # data files
 #
 data: ${DATA}
+	@${TRUE}
+
+# both all and alt
+#
+everything: all alt
 	@${TRUE}
 
 
@@ -172,115 +152,17 @@ data: ${DATA}
 # utility rules
 ###############
 #
-everything: all alt
-
 clean:
 	${RM} -f ${OBJ} ${ALT_OBJ}
 
 clobber: clean
 	${RM} -f ${TARGET} ${ALT_TARGET}
-	@-if [ -e sandwich ]; then \
-	    ${RM} -f sandwich; \
-	    echo 'ate sandwich'; \
-	fi
-
-nuke: clobber
-	@${TRUE}
-
-dist_clean: nuke
-	@${TRUE}
-
-install:
-	@echo "Surely you are performing, Dr. May!"
-	@${TRUE}
-
-# backwards compatibility
-#
-build: all
-	@${TRUE}
+	${RM} -rf *.dSYM
+	${RM} -f output.gif golem.gif smily.gif invisible.gif
 
 
-##################
-# 133t hacker rulz
-##################
-#
-love:
-	@echo 'not war?'
-	@${TRUE}
+######################################
+# optional include of 1337 hacker rulz
+######################################
 
-haste:
-	$(MAKE) waste
-	@${TRUE}
-
-waste:
-	@echo 'haste'
-	@${TRUE}
-
-make:
-	@echo 'Attend a maker faire'
-	@${TRUE}
-
-easter_egg:
-	@echo you expected to often mis-understand this $${RANDOM} magic
-	@echo chongo '<was here>' "/\\oo/\\"
-	@echo Eggy
-
-fabricate fashion form frame manufacture produce: make
-	@${TRUE}
-
-sandwich:
-	@if [ `id -u` -eq 0 ]; then \
-	    echo 'Okay.'; \
-	    echo $${RANDOM}`date +%s`$${RANDOM} > $@; \
-	else \
-	    echo 'What? Make it yourself.'; \
-	    exit 1; \
-	fi
-
-# Understand the history of the Homebrew Computer Club
-# as well as the West Coast Computer Faire and
-# you might be confused different.  :-)
-#
-supernova: nuke
-	@-if [ -r .code_anal ]; then \
-	    ${RM} -f .code_anal_v6; \
-	else \
-	    echo "planet deniers, like some members of the IAU, are so cute when they try to defend their logic"; \
-	fi
-	@echo A $@ helps ${MAKE} the elements that help form planets
-	@${TRUE}
-
-deep_magic:
-	@-if [ -r .code_anal ]; then \
-	    ccode_analysis --deep_magic 3a3fabb90892eeb2f610ae0f74a35a970060665a063ab702bd686c17c4ae07f6 --FNV1a_hash_256_bit "prog"; \
-	else \
-	    echo "Wrong! Do it again!"; \
-	    sleep 2; \
-	    echo "Wrong! Do it again!"; \
-	    sleep 2; \
-	    echo "Wrong! Do it again!"; \
-	fi
-	@${TRUE}
-
-magic: deep_magic
-	@-if [ -r .code_anal ]; then \
-	    ccode_analysis --mode 216091 --level 216193 --FNV1a_hash_256_bit "prog"; \
-	else \
-	    echo "If you don't eat yer meat, you can't have any pudding!"; \
-	    echo "How can you have any pudding if you don't eat yer meat?!"; \
-	fi
-	@${TRUE}
-
-# The IOCCC resident astronomer states
-#
-charon: supernova
-	@echo $@ is a dwarf planet
-	@echo dwarf is a type of planet
-	@echo $@ is a planet
-
-pluto: supernova
-	${MAKE} charon
-	@echo $@ is a dwarf planet
-	@echo dwarf is a type of planet
-	@echo $@ is a planet
-	@echo get used to having lots of planets because a $< can ${MAKE} a lot of them
+-include 1337.mk ../1337.mk ../../1337.mk

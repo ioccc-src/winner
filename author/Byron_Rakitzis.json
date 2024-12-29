@@ -1,0 +1,21 @@
+{
+    "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
+    "author_JSON_format_version" : "1.1 2024-02-11",
+    "author_handle" : "Byron_Rakitzis",
+    "full_name" : "Byron Rakitzis",
+    "sort_word" : "rakitzis",
+    "location_code" : "US",
+    "email" : "byron@rakitzis.com",
+    "url" : "https://www.rakitzis.com",
+    "alt_url" : "https://www.linkedin.com/in/byron-rakitzis-b2b3304/",
+    "deprecated_twitter_handle" : null,
+    "mastodon" : null,
+    "mastodon_url" : null,
+    "github" : null,
+    "affiliation" : null,
+    "winning_entry_set" : [
+        {
+            "entry_id" : "1990_tbr"
+        }
+    ]
+}

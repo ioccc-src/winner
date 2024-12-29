@@ -1,0 +1,22 @@
+#
+# sort with: ../../bin/sgi.sh
+*.dSYM
+adbasename
+adbasename.c
+adecho
+adecho.c
+adgrep
+adhead
+adhead.c
+adrian
+adrian.orig
+adsleep
+adsleep.c
+adwc
+adwc.adwc.txt
+adwc.c
+indent
+indent.c
+indent.o
+prog.orig
+wc.adwc.txt

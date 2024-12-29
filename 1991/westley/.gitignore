@@ -1,0 +1,23 @@
+#
+# sort with: ../../bin/sgi.sh
+*.dSYM
+indent
+indent.c
+indent.o
+merlyn
+merlyn.alt.c
+merlyn.c
+nextmove
+nextmove.alt.c
+nextmove.c
+prog.orig
+ttt
+ttt.alt
+ttt.alt_old.c
+ttt_game
+ttt_game.alt.c
+ttt_game.c
+ttt_old.c
+westley
+westley.alt
+westley.orig

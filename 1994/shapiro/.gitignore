@@ -1,0 +1,13 @@
+#
+# sort with: ../../bin/sgi.sh
+*.dSYM
+indent
+indent.c
+indent.o
+prog.orig
+shapiro
+shapiro.alt
+shapiro.orig
+shapiro_t1
+shapiro_t2
+shapiro_t2.c

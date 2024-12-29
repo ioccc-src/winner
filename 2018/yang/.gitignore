@@ -1,0 +1,16 @@
+#
+# sort with: ../../bin/sgi.sh
+*.dSYM
+generated*
+indent
+indent.c
+indent.o
+left
+msg*
+no_leading_space.txt
+prog
+prog.orig
+right
+rotated_clockwise.txt
+rotated_counterclockwise.txt
+shift

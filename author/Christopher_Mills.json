@@ -1,0 +1,39 @@
+{
+    "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
+    "author_JSON_format_version" : "1.1 2024-02-11",
+    "author_handle" : "Christopher_Mills",
+    "full_name" : "Christopher Mills",
+    "sort_word" : "mills",
+    "location_code" : "US",
+    "email" : "mrxo@sonic.net",
+    "url" : null,
+    "alt_url" : null,
+    "deprecated_twitter_handle" : "@MisterXopher",
+    "mastodon" : null,
+    "mastodon_url" : null,
+    "github" : null,
+    "affiliation" : null,
+    "winning_entry_set" : [
+        {
+            "entry_id" : "1990_cmills"
+        },
+        {
+            "entry_id" : "1993_cmills"
+        },
+        {
+            "entry_id" : "2013_mills"
+        },
+        {
+            "entry_id" : "2015_mills1"
+        },
+        {
+            "entry_id" : "2015_mills2"
+        },
+        {
+            "entry_id" : "2018_mills"
+        },
+        {
+            "entry_id" : "2019_mills"
+        }
+    ]
+}

@@ -1,124 +1,178 @@
 #!/usr/bin/env make
 #
-# 2012 makefile
+# IOCCC 2012 winning entry - hamano
+
+################################################################################
 #
-# This work by Landon Curt Noll, Simon Cooper, and Leonid A. Broukhis
-# is licensed under:
+# IOCCC winning entry code may not work on your system.  What was liked/allowed
+# and worked in the past may no longer be liked/allowed or compile/run today.
 #
-#	Creative Commons Attribution-ShareAlike 3.0 Unported License.
+# Bug fixes, corrections and typo fixes are VERY WELCOME.  If you see a problem,
+# first check this URL for a list of known bugs and (mis)features of IOCCC entries:
 #
-# See: http://creativecommons.org/licenses/by-sa/3.0/
+#	https://www.ioccc.org/bugs.html
+#
+# GitHub pull requests are welcome!  Please see the above URL for details.
+#
+################################################################################
+#
+# This file is Copyright (c) 2023 by Landon Curt Noll.  All Rights Reserved.
+# You are free to share and adapt this file under the terms of this license:
+#
+#	Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+#
+# For more information, see: https://creativecommons.org/licenses/by-sa/4.0/
 
 
-################
-# tool locations
-################
+#############################
+# shell used by this Makefile
+#############################
 #
-SHELL= /bin/bash
-CP= cp
-CPP= cpp
-GUNZIP= gunzip
-LD= ld
-MAKE= make
-RM= rm
-SED= sed
-TAR= tar
-TRUE= true
+SHELL= bash
 
-# Set X11_LIBDIR to the directory where the X11 library resides
+#######################
+# common tool locations
+#######################
 #
-X11_LIBDIR= /usr/X11R6/lib
+include ../../var.mk
 
-# Set X11_INCLUDEDIR to the directory where the X11 include files reside
+# Common C compiler warnings to silence
 #
-X11_INCDIR= /usr/X11R6/include
+CSILENCE= -Wno-bitwise-op-parentheses -Wno-empty-body -Wno-format \
+	  -Wno-format-security -Wno-gnu-zero-variadic-macro-arguments -Wno-main \
+	  -Wno-parentheses -Wno-implicit-function-declaration \
+	  -Wno-strict-prototypes -Wno-misleading-indentation
 
-# Compiler warnings
+# Attempt to silence unknown warning option
 #
-#CWARN=
-CWARN= -Wall -W
-#CWARN= -Wall -W -pedantic
+CUNKNOWN= -Wno-unknown-warning-option
 
-# compiler standard
+# Common C compiler warning flags
 #
-#CSTD=
-#CSTD= -ansi
-CSTD= -std=c99
+CWARN= -Wall -Wextra ${CSILENCE} ${CUNKNOWN}
 
-# compiler bit architecture
+# Compiler standard
 #
-# Some entries require 32-bitness:
-# ARCH= -m32
-#
-# Some entries require 64-bitess:
-# ARCH= -m64
-#
-# By default we assume nothing:
+CSTD= -std=gnu11
+
+# Compiler bit architecture
 #
 ARCH=
 
-# optimization
+# Defines that are needed to compile
 #
-# Most compiles will safely use -O2.  Some can use only -O1 or -O.
-# A few compilers have broken optimizers or this entry make break
-# under those buggy optimizers and thus you may not want anything.
+CDEFINE=
+
+# Include files that are needed to compile
 #
-#OPT=
-#OPT= -O
-#OPT= -O1
-OPT= -O2
-#OPT= -O3
+CINCLUDE=
+
+# Optimization
+#
+OPT= -O3
+
+# Default flags for ANSI C compilation
+#
+CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
 
 # Libraries needed to build
 #
-LIBS=
+LDFLAGS=
 
-# default flags for ANSI C compilation
-#
-CFLAGS= ${CWARN} ${CSTD} ${ARCH} ${OPT} ${LIBS}
-
-# ANSI compiler
-#
-# Set CC to the name of your ANSI compiler.
-#
-# Some entries seem to need gcc.  If you have gcc, set
-# both CC and MAY_NEED_GCC to gcc.
-#
-# If you do not have gcc, set CC to the name of your ANSI compiler, and
-# set MAY_NEED_GCC to either ${CC} (and hope for the best) or to just :
-# to disable such programs.
+# C compiler to use
 #
 CC= cc
-#CC=clang
-MAY_NEED_GCC= gcc
+
+# Compiler add-ons or replacements for clang only
+#
+ifeq "$(findstring $(CLANG),${CC})" "$(CLANG)"
+#
+CSILENCE+= -Wno-comma -Wno-double-promotion -Wno-missing-prototypes \
+	-Wno-missing-variable-declarations -Wno-poison-system-directories \
+	-Wno-shadow -Wno-shorten-64-to-32 -Wno-unsafe-buffer-usage
+#
+CWARN+= -Weverything
+#
+endif
+
+# Specific add-ons or replacements for gcc only
+#
+ifeq "$(findstring $(GCC),${CC})" "$(GCC)"
+#
+#CSILENCE+=
+#
+#CWARN+=
+#
+endif
 
 
 ##############################
-# Special flags for this entry
+# Special Makefile variables for this entry
 ##############################
 #
 ENTRY= hamano
+PROG= ${ENTRY}
+#
+OBJ= ${PROG}.o
 DATA=
+TARGET= ${PROG}
+#
 ALT_OBJ=
-ALT_ENTRY= hamano.orig
+ALT_TARGET=
 
 
 #################
 # build the entry
 #################
 #
-all: ${ENTRY} ${DATA}
+all: data ${TARGET}
 	@${TRUE}
 
-${ENTRY}: ${ENTRY}.c
-	${CC} ${CFLAGS} $< -o $@
+.PHONY: all alt data everything clean clobber
+	hello hello.pdf
 
-${ALT_ENTRY}: ${ALT_ENTRY}.c
-	${CC} ${CFLAGS} $< -o $@
+
+${PROG}: ${PROG}.c
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
+
+# hint.pdf rules to simplify use of 2012/hamano
+#
+
+# This rule generates the hint.pdf file which is the README.md obfuscated as a
+# PDF that is NOT part of the repo:
+hint.pdf: ${PROG} README.md
+	./${PROG} < README.md > hint.pdf
+	@echo
+
+# This rule, hint, depends on the hint.pdf rule. That rule generates the
+# hint.pdf file (NOT part of the repo) which is an obfuscated (as a PDF) version
+# of the README.md. This rule, in turn, COMPILES THAT PDF FILE AS C CODE!
+hint: hint.pdf
+	${CC} ${CFLAGS} -xc $< -o $@
+
+
+# hello.pdf rules to simplify use of 2012/hamano
+#
+
+# This rule generates the hello.pdf file which is a simple 'Hello World!'
+# program obfuscated as a PDF:
+hello.pdf:
+	echo 'int main(){puts("Hello World!");}' | ./${PROG} > hello.pdf
+
+# This rule, hello, depends on the hello.pdf rule. That rule generates the
+# hello.pdf file (NOT part of the repo) which is an obfuscated (as a PDF) version
+# of a simple 'Hello World!' program. This rule, in turn, COMPILES THAT PDF FILE
+# AS C CODE to hello and then pipes it to cc to compile it to hello2 which when
+# run will print 'Hello World!'.
+hello: hello.pdf
+	@echo
+	${CC} ${CFLAGS} -xc hello.pdf -o $@
+	@echo
+	./hello | ${CC} ${CFLAGS} -xc - -o hello2
 
 # alternative executable
 #
-alt: ${ALT_ENTRY}
+alt: data ${ALT_TARGET}
 	@${TRUE}
 
 # data files
@@ -126,81 +180,26 @@ alt: ${ALT_ENTRY}
 data: ${DATA}
 	@${TRUE}
 
+# both all and alt
+#
+everything: all alt
+	@${TRUE}
+
 
 ###############
 # utility rules
 ###############
 #
-everything: all alt
-
 clean:
-	${RM} -f ${ENTRY}.o ${ALT_OBJ}
+	${RM} -f ${OBJ} ${ALT_OBJ}
 
 clobber: clean
-	${RM} -f ${ENTRY} ${ALT_ENTRY}
-
-nuke: clobber
-	@${TRUE}
-
-dist_clean: nuke
-	@${TRUE}
-
-install:
-	@echo "Surely you're joking Mr. Feynman!"
-	@${TRUE}
-
-# backwards compatibility
-#
-build: all
-	@${TRUE}
+	${RM} -f ${TARGET} ${ALT_TARGET} hint.pdf hello.pdf hello hello2
+	${RM} -rf *.dSYM
 
 
-##################
-# 133t hacker rulz
-##################
-#
-love:
-	@echo 'not war?'
-	@${TRUE}
+######################################
+# optional include of 1337 hacker rulz
+######################################
 
-haste:
-	$(MAKE) waste
-	@${TRUE}
-
-waste:
-	@echo 'waste'
-	@${TRUE}
-
-easter_egg:
-	@echo you expected to mis-understand this $${RANDOM} magic
-	@echo chongo '<was here>' "/\\oo/\\"
-	@echo Readers shall be disallowed from not being unable to partly misunderstand this partocular final echo.
-
-# Understand the history of "I Am the Walrus" and
-# and in particular John Lennon's remarks on that
-# song and you might be confused about these next
-# rules in a different way. :-)
-#
-supernova: nuke
-	@-if [ -r .code_anal ]; then \
-	    ${RM} -f .code_anal_v3; \
-	else \
-	    echo "You are not expected to understand this"; \
-	fi
-	@${TRUE}
-
-deep_magic:
-	@-if [ -r .code_anal ]; then \
-	    ccode_analysis --deep_magic 1c2c85c7a02c55d1add91967eca491d53c101dc1 --FNV1a_hash 256-bit "${ENTRY}"; \
-	else \
-	    echo "Understand different"; \
-	fi
-	@${TRUE}
-
-magic: deep_magic
-	@-if [ -r .code_anal ]; then \
-	    ccode_analysis --mode 21701 --level 23209 --FNV1a_hash 256-bit "${ENTRY}"; \
-	else \
-	    echo "These aren't the droids you're looking for Mr. Spock!"; \
-	fi
-	@${TRUE}
+-include 1337.mk ../1337.mk ../../1337.mk

@@ -1,5 +1,5 @@
 /*
- * 2 state, 4 symbol current champion, http://www.logique.jussieu.fr/~michel/ha.html#tm24
+ * 2 state, 4 symbol current champion, https://web.archive.org/web/20150926094245/http://www.logique.jussieu.fr/~michel/ha.html#tm24
  *
  * halts after 3932964 steps
  */

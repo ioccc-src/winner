@@ -1,0 +1,16 @@
+#
+# sort with: ../../bin/sgi.sh
+*.dSYM
+file1
+file2
+file3
+file4
+indent
+indent.c
+indent.o
+prog.orig
+samefile
+samefile.alt
+schweikh3
+schweikh3.alt
+schweikh3.orig

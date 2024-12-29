@@ -1,0 +1,12 @@
+#
+# sort with: ../../bin/sgi.sh
+*.dSYM
+hoyle
+hoyle1.txt
+hoyle2.txt
+hoyle.alt
+hoyle.orig
+indent
+indent.c
+indent.o
+prog.orig

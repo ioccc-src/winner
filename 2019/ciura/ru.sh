@@ -1,3 +1,3 @@
-#!/bin/sh
+#!/usr/bin/env bash
 set -x
-./getwords.sh ru | ./prog абвгдеёжзийклмнопрстуфхцчшщъыьэюя
+LC_ALL=C ./getwords.sh ru | LC_ALL=C ./prog абвгдеёжзийклмнопрстуфхцчшщъыьэюя

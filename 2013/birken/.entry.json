@@ -1,0 +1,465 @@
+{
+    "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
+    "entry_JSON_format_version" : "1.2 2024-09-25",
+    "award" : "Best painting tool",
+    "year" : 2013,
+    "dir" : "birken",
+    "entry_id" : "2013_birken",
+    "title" : "2013.birken",
+    "abstract" : "use Tetris to paint a picture",
+    "author_set" : [
+        {
+            "author_handle" : "Michael_Birken"
+        }
+    ],
+    "manifest" : [
+        {
+            "file_path" : "birken.c",
+            "inventory_order" : 20,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "entry source code"
+        },
+        {
+            "file_path" : "Makefile",
+            "inventory_order" : 30,
+            "OK_to_edit" : true,
+            "display_as" : "makefile",
+            "display_via_github" : true,
+            "entry_text" : "entry Makefile"
+        },
+        {
+            "file_path" : "birken.alt.c",
+            "inventory_order" : 40,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "alternate source code"
+        },
+        {
+            "file_path" : "birken.orig.c",
+            "inventory_order" : 50,
+            "OK_to_edit" : false,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "original source code"
+        },
+        {
+            "file_path" : "belmont.txt",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : false,
+            "entry_text" : "example sprites input file"
+        },
+        {
+            "file_path" : "bloober.txt",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : false,
+            "entry_text" : "example sprites input file"
+        },
+        {
+            "file_path" : "bomberman.txt",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : false,
+            "entry_text" : "example sprites input file"
+        },
+        {
+            "file_path" : "boo.txt",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : false,
+            "entry_text" : "example sprites input file"
+        },
+        {
+            "file_path" : "bub.txt",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : false,
+            "entry_text" : "example sprites input file"
+        },
+        {
+            "file_path" : "cheepcheep.txt",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : false,
+            "entry_text" : "example sprites input file"
+        },
+        {
+            "file_path" : "format.txt",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : false,
+            "entry_text" : "example sprites input file"
+        },
+        {
+            "file_path" : "gurin.txt",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : false,
+            "entry_text" : "example sprites input file"
+        },
+        {
+            "file_path" : "happyface.txt",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : false,
+            "entry_text" : "example sprites input file"
+        },
+        {
+            "file_path" : "helloworld.txt",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : false,
+            "entry_text" : "example sprites input file"
+        },
+        {
+            "file_path" : "hilbert.txt",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : false,
+            "entry_text" : "example sprites input file"
+        },
+        {
+            "file_path" : "ioccc.txt",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : false,
+            "entry_text" : "example sprites input file"
+        },
+        {
+            "file_path" : "koopaparatroopa.txt",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : false,
+            "entry_text" : "example sprites input file"
+        },
+        {
+            "file_path" : "lakitu.txt",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : false,
+            "entry_text" : "example sprites input file"
+        },
+        {
+            "file_path" : "landon.txt",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : false,
+            "entry_text" : "example sprites input file"
+        },
+        {
+            "file_path" : "leo.txt",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : false,
+            "entry_text" : "example sprites input file"
+        },
+        {
+            "file_path" : "mario.txt",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : false,
+            "entry_text" : "example sprites input file"
+        },
+        {
+            "file_path" : "mspacman.txt",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : false,
+            "entry_text" : "example sprites input file"
+        },
+        {
+            "file_path" : "names.png",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "image",
+            "display_via_github" : false,
+            "entry_text" : "example sprites input file"
+        },
+        {
+            "file_path" : "palette.png",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "image",
+            "display_via_github" : false,
+            "entry_text" : "example sprites input file"
+        },
+        {
+            "file_path" : "paranaplant.txt",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : false,
+            "entry_text" : "example sprites input file"
+        },
+        {
+            "file_path" : "rhino.txt",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : false,
+            "entry_text" : "example sprites input file"
+        },
+        {
+            "file_path" : "rotations.png",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "image",
+            "display_via_github" : false,
+            "entry_text" : "example sprites input file"
+        },
+        {
+            "file_path" : "samus.txt",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : false,
+            "entry_text" : "example sprites input file"
+        },
+        {
+            "file_path" : "simon.txt",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : false,
+            "entry_text" : "example sprites input file"
+        },
+        {
+            "file_path" : "snoo.txt",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : false,
+            "entry_text" : "example sprites input file"
+        },
+        {
+            "file_path" : "toad.txt",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : false,
+            "entry_text" : "example sprites input file"
+        },
+        {
+            "file_path" : "try.alt.sh",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "shellscript",
+            "display_via_github" : true,
+            "entry_text" : "script to try alternate code"
+        },
+        {
+            "file_path" : "try.sh",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "shellscript",
+            "display_via_github" : true,
+            "entry_text" : "script to try entry"
+        },
+        {
+            "file_path" : "2013_birken.tar.bz2",
+            "inventory_order" : 1415926535,
+            "OK_to_edit" : false,
+            "display_as" : "tbz2",
+            "display_via_github" : false,
+            "entry_text" : "download entry tarball"
+        },
+        {
+            "file_path" : ".entry.json",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "json",
+            "display_via_github" : true,
+            "entry_text" : "entry summary and manifest in JSON"
+        },
+        {
+            "file_path" : ".gitignore",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "gitignore",
+            "display_via_github" : true,
+            "entry_text" : "list of files that should not be committed under git"
+        },
+        {
+            "file_path" : ".path",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : false,
+            "display_as" : "path",
+            "display_via_github" : true,
+            "entry_text" : "directory path from top level directory"
+        },
+        {
+            "file_path" : "README.md",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "markdown",
+            "display_via_github" : true,
+            "entry_text" : "markdown source for this web page"
+        },
+        {
+            "file_path" : "multi2.gif",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "image",
+            "display_via_github" : false,
+            "entry_text" : "image showing Tetris multi-square emitters"
+        },
+        {
+            "file_path" : "multi3.gif",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "image",
+            "display_via_github" : false,
+            "entry_text" : "image showing Tetris multi-square emitters"
+        },
+        {
+            "file_path" : "multi4.gif",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "image",
+            "display_via_github" : false,
+            "entry_text" : "image showing Tetris multi-square emitters"
+        },
+        {
+            "file_path" : "multi5.gif",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "image",
+            "display_via_github" : false,
+            "entry_text" : "image showing Tetris multi-square emitters"
+        },
+        {
+            "file_path" : "pen0.gif",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "image",
+            "display_via_github" : false,
+            "entry_text" : "animated gif - bottom layers of a Tetris game being cleared"
+        },
+        {
+            "file_path" : "pen1.gif",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "image",
+            "display_via_github" : false,
+            "entry_text" : "animated gif - bottom layers of a Tetris game being cleared"
+        },
+        {
+            "file_path" : "pen2.gif",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "image",
+            "display_via_github" : false,
+            "entry_text" : "animated gif - bottom layers of a Tetris game being cleared"
+        },
+        {
+            "file_path" : "pen4.gif",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "image",
+            "display_via_github" : false,
+            "entry_text" : "animated gif - bottom layers of a Tetris game being cleared"
+        },
+        {
+            "file_path" : "pen5.gif",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "image",
+            "display_via_github" : false,
+            "entry_text" : "animated gif - bottom layers of a Tetris game being cleared"
+        },
+        {
+            "file_path" : "pen6.gif",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "image",
+            "display_via_github" : false,
+            "entry_text" : "animated gif - bottom layers of a Tetris game being cleared"
+        },
+        {
+            "file_path" : "pen7.gif",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "image",
+            "display_via_github" : false,
+            "entry_text" : "animated gif - bottom layers of a Tetris game being cleared"
+        },
+        {
+            "file_path" : "pen8.gif",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "image",
+            "display_via_github" : false,
+            "entry_text" : "animated gif - bottom layers of a Tetris game being cleared"
+        },
+        {
+            "file_path" : "platform0.gif",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "image",
+            "display_via_github" : false,
+            "entry_text" : "image showing Tetris triple patterns"
+        },
+        {
+            "file_path" : "platform1.gif",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "image",
+            "display_via_github" : false,
+            "entry_text" : "image showing Tetris triple patterns"
+        },
+        {
+            "file_path" : "platform2.gif",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "image",
+            "display_via_github" : false,
+            "entry_text" : "image showing Tetris triple patterns"
+        },
+        {
+            "file_path" : "triple0.gif",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "image",
+            "display_via_github" : false,
+            "entry_text" : "image showing Tetris triple patterns"
+        },
+        {
+            "file_path" : "triple1.gif",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "image",
+            "display_via_github" : false,
+            "entry_text" : "image showing Tetris triple patterns"
+        },
+        {
+            "file_path" : "index.html",
+            "inventory_order" : 4294967295,
+            "OK_to_edit" : false,
+            "display_as" : "html",
+            "display_via_github" : false,
+            "entry_text" : "this web page"
+        }
+    ]
+}

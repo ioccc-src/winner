@@ -1,124 +1,180 @@
 #!/usr/bin/env make
 #
-# 2013 makefile
+# IOCCC 2013 winning entry - endoh2
+
+################################################################################
 #
-# This work by Landon Curt Noll, Simon Cooper, and Leonid A. Broukhis
-# is licensed under:
+# IOCCC winning entry code may not work on your system.  What was liked/allowed
+# and worked in the past may no longer be liked/allowed or compile/run today.
 #
-#	Creative Commons Attribution-ShareAlike 3.0 Unported License.
+# Bug fixes, corrections and typo fixes are VERY WELCOME.  If you see a problem,
+# first check this URL for a list of known bugs and (mis)features of IOCCC entries:
 #
-# See: http://creativecommons.org/licenses/by-sa/3.0/
+#	https://www.ioccc.org/bugs.html
+#
+# GitHub pull requests are welcome!  Please see the above URL for details.
+#
+################################################################################
+#
+# This file is Copyright (c) 2023 by Landon Curt Noll.  All Rights Reserved.
+# You are free to share and adapt this file under the terms of this license:
+#
+#	Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+#
+# For more information, see: https://creativecommons.org/licenses/by-sa/4.0/
 
 
-################
-# tool locations
-################
+#############################
+# shell used by this Makefile
+#############################
 #
-SHELL= /bin/bash
-CP= cp
-CPP= cpp
-GUNZIP= gunzip
-LD= ld
-MAKE= make
-RM= rm
-SED= sed
-TAR= tar
-TRUE= true
+SHELL= bash
 
-# Set X11_LIBDIR to the directory where the X11 library resides
+#######################
+# common tool locations
+#######################
 #
-X11_LIBDIR= /usr/X11R6/lib
+include ../../var.mk
 
-# Set X11_INCLUDEDIR to the directory where the X11 include files reside
+# Common C compiler warnings to silence
 #
-X11_INCDIR= /usr/X11R6/include
+CSILENCE= -Wno-strict-prototypes -Wno-misleading-indentation
 
-# Compiler warnings
+# Attempt to silence unknown warning option
 #
-#CWARN=
-CWARN= -Wall -W -Wno-empty-body
-#CWARN= -Wall -W -pedantic
+CUNKNOWN= -Wno-unknown-warning-option
 
-# compiler standard
+# Common C compiler warning flags
 #
-#CSTD=
-#CSTD= -ansi
-CSTD= -std=c99
+CWARN= -Wall -Wextra ${CSILENCE} ${CUNKNOWN}
 
-# compiler bit architecture
+# Compiler standard
 #
-# Some entries require 32-bitness:
-# ARCH= -m32
-#
-# Some entries require 64-bitess:
-# ARCH= -m64
-#
-# By default we assume nothing:
+CSTD= -std=gnu11
+
+# Compiler bit architecture
 #
 ARCH=
 
-# optimization
+# Defines that are needed to compile
 #
-# Most compiles will safely use -O2.  Some can use only -O1 or -O.
-# A few compilers have broken optimizers or this entry make break
-# under those buggy optimizers and thus you may not want anything.
+CDEFINE=
+
+# Include files that are needed to compile
 #
-#OPT=
-#OPT= -O
-#OPT= -O1
-OPT= -O2
-#OPT= -O3
+CINCLUDE=
+
+# Optimization
+#
+OPT= -O3
+
+# Default flags for ANSI C compilation
+#
+CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
 
 # Libraries needed to build
 #
-LIBS=
+LDFLAGS=
 
-# default flags for ANSI C compilation
-#
-CFLAGS= ${CWARN} ${CSTD} ${ARCH} ${OPT} ${LIBS}
-
-# ANSI compiler
-#
-# Set CC to the name of your ANSI compiler.
-#
-# Some entries seem to need gcc.  If you have gcc, set
-# both CC and MAY_NEED_GCC to gcc.
-#
-# If you do not have gcc, set CC to the name of your ANSI compiler, and
-# set MAY_NEED_GCC to either ${CC} (and hope for the best) or to just :
-# to disable such programs.
+# C compiler to use
 #
 CC= cc
-#CC=clang
-MAY_NEED_GCC= gcc
+
+# Compiler add-ons or replacements for clang only
+#
+ifeq "$(findstring $(CLANG),${CC})" "$(CLANG)"
+#
+CSILENCE+= -Wno-comma -Wno-float-conversion -Wno-implicit-int-conversion \
+	   -Wno-missing-prototypes -Wno-missing-variae-declarations \
+	   -Wno-poison-system-directories -Wno-shadow \
+	   -Wno-missing-variable-declarations -Wno-extra-semi-stmt \
+	   -Wno-unsafe-buffer-usage
+#
+CWARN+= -Weverything
+#
+endif
+
+# Specific add-ons or replacements for gcc only
+#
+ifeq "$(findstring $(GCC),${CC})" "$(GCC)"
+#
+#CSILENCE+=
+#
+#CWARN+=
+#
+endif
 
 
 ##############################
-# Special flags for this entry
+# Special Makefile variables for this entry
 ##############################
 #
 ENTRY= endoh2
-DATA=jpeg.jpg jpeg.c
+PROG= ${ENTRY}
+#
+OBJ= ${PROG}.o
+DATA= ocr.rb
+TARGET= ${PROG} jpeg jpeg.jpg
+#
 ALT_OBJ=
-ALT_ENTRY=jpeg
+ALT_TARGET=
 
 
 #################
 # build the entry
 #################
 #
-all: ${ENTRY} ${DATA}
+all: data ${TARGET}
 	@${TRUE}
 
-${ENTRY}: ${ENTRY}.c
-	${CC} ${CFLAGS} $< -o $@
+.PHONY: all alt data everything clean clobber
 
-${ALT_ENTRY}: ${ALT_ENTRY}.c
-	${CC} ${CFLAGS} $< -o $@
+${PROG}: ${PROG}.c
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
+
+jpeg.c: ${PROG}
+	${RM} -f $@
+	./${PROG} < ${PROG}.c > $@
+
+jpeg: jpeg.c
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
+
+jpeg.jpg: jpeg
+	${RM} -f $@
+	@echo "This next step may take some time to complete:"
+	./jpeg > $@
+
+check: ${DATA}
+	${RM} -f jpeg2.c
+	@if ! type -P convert >/dev/null 2>&1; then \
+	    echo "The 'convert' tool from ImageMagick could not be found." 1>&2; \
+	    echo ""; 1>&2; \
+	    echo "See the following website for ImageMagick:" 1>&2; \
+	    echo ""; 1>&2; \
+	    echo "    https://imagemagick.org/script/download.php"; 1>&2; \
+	    echo ""; 1>&2; \
+	    echo "or use your OS package manager to install it." 1>&2; \
+	fi
+	@if ! type -P ${RUBY} >/dev/null 2>&1; then \
+	    echo "${RUBY} language could not be found." 1>&2; \
+	    echo "${RUBY} must be installed in order to run the $@ rule." 1>&2; \
+	    echo ""; 1>&2; \
+	    echo "See the following website for ${RUBY}:" 1>&2; \
+	    echo ""; 1>&2; \
+	    echo "    https://www.ruby-lang.org/"; 1>&2; \
+	    echo ""; 1>&2; \
+	    echo "or use your OS package manager to install it." 1>&2; \
+	    ERROR=1; \
+	fi
+	@if type -P ${RUBY} >/dev/null 2>&1 || ! type -P convert >/dev/null 2>&1; then \
+	    exit 1; \
+	fi
+	${RUBY} ocr.rb jpeg.jpg > jpeg2.c
+	${DIFF} jpeg.c jpeg2.c && echo Check succeeded
 
 # alternative executable
 #
-alt: ${ALT_ENTRY}
+alt: data ${ALT_TARGET}
 	@${TRUE}
 
 # data files
@@ -126,94 +182,27 @@ alt: ${ALT_ENTRY}
 data: ${DATA}
 	@${TRUE}
 
-jpeg.c: ${ENTRY}
-	${RM} -f $@
-	./${ENTRY} < ${ENTRY}.c > $@
+# both all and alt
+#
+everything: all alt
+	@${TRUE}
 
-jpeg.jpg: ${ALT_ENTRY}
-	${RM} -f $@
-	@echo This next step will take some time
-	./${ALT_ENTRY} > $@
-
-check: ${DATA}
-	${RM} -f jpeg2.c
-	ruby ocr.rb jpeg.jpg > jpeg2.c
-	diff jpeg.c jpeg2.c && echo Check succeeded
 
 ###############
 # utility rules
 ###############
 #
-everything: all alt check
-
 clean:
-	${RM} -f ${ENTRY}.o ${ALT_OBJ}
+	${RM} -f ${OBJ} ${ALT_OBJ}
 
 clobber: clean
-	${RM} -f ${ENTRY} ${ALT_ENTRY}
-
-nuke: clobber
-	@${TRUE}
-
-dist_clean: nuke
-	@${TRUE}
-
-install:
-	@echo "Surely we are joking Dr. Lehmer!"
-	@${TRUE}
-
-# backwards compatibility
-#
-build: all
-	@${TRUE}
+	${RM} -f ${TARGET} ${ALT_TARGET}
+	${RM} -rf *.dSYM
+	${RM} -f jpeg.c
 
 
-##################
-# 133t hacker rulz
-##################
-#
-love:
-	@echo 'not war?'
-	@${TRUE}
+######################################
+# optional include of 1337 hacker rulz
+######################################
 
-haste:
-	$(MAKE) waste
-	@${TRUE}
-
-waste:
-	@echo 'haste'
-	@${TRUE}
-
-easter_egg:
-	@echo you expected to mis-understand this $${RANDOM} magic
-	@echo chongo '<was here>' "/\\oo/\\"
-	@echo Readers shall not be disallowed from being unable to not partly misunderstand this partocular final echo.
-
-# Understand the history of the Homebrew Computer Club
-# as well as the West Coast Computer Faire and
-# you might be confused different.  :-)
-#
-supernova: nuke
-	@-if [ -r .code_anal ]; then \
-	    ${RM} -f .code_anal_v4; \
-	else \
-	    echo "We are not expected to understand that"; \
-	fi
-	@${TRUE}
-
-deep_magic:
-	@-if [ -r .code_anal ]; then \
-	    ccode_analysis --deep_magic 2ed3582ec5c094a093fea2a6bcb9f19439892873c9cc45ed1ceaafe08b7d52e1b2c7cd524be3b0b2 --FNV1a_hash 512-bit "${ENTRY}"; \
-	else \
-	    echo "Park different"; \
-	fi
-	@${TRUE}
-
-magic: deep_magic
-	@-if [ -r .code_anal ]; then \
-	    ccode_analysis --mode 391581 --level 216193 --FNV1a_hash 512-bit "${ENTRY}"; \
-	else \
-	    echo "These aren't the primes you're looking for Paul Erdos!"; \
-	fi
-	@${TRUE}
-
+-include 1337.mk ../1337.mk ../../1337.mk

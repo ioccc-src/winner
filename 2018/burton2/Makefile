@@ -1,310 +1,203 @@
 #!/usr/bin/env make
 #
-# 2018 makefile
+# IOCCC 2018 winning entry - burton2
+
+################################################################################
 #
-# This work by Landon Curt Noll, Simon Cooper, and Leonid A. Broukhis
-# is licensed under:
+# IOCCC winning entry code may not work on your system.  What was liked/allowed
+# and worked in the past may no longer be liked/allowed or compile/run today.
 #
-#	Creative Commons Attribution-ShareAlike 3.0 Unported License.
+# Bug fixes, corrections and typo fixes are VERY WELCOME.  If you see a problem,
+# first check this URL for a list of known bugs and (mis)features of IOCCC entries:
 #
-# See: http://creativecommons.org/licenses/by-sa/3.0/
+#	https://www.ioccc.org/bugs.html
+#
+# GitHub pull requests are welcome!  Please see the above URL for details.
+#
+################################################################################
+#
+# This file is Copyright (c) 2023 by Landon Curt Noll.  All Rights Reserved.
+# You are free to share and adapt this file under the terms of this license:
+#
+#	Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+#
+# For more information, see: https://creativecommons.org/licenses/by-sa/4.0/
 
 
-################
-# tool locations
-################
+#############################
+# shell used by this Makefile
+#############################
 #
-SHELL= /bin/bash
-CP= cp
-CPP= cpp
-GUNZIP= gunzip
-BUNZIP2= bunzip2
-GZIP_PROG= gzip
-BZIP2= bzip2
-CURL= curl
-DD= dd
-LD= ld
-MAKE= make
-RM= rm
-SED= sed
-TAR= tar
-TRUE= true
-MKDIR= mkdir
-MV= mv
-TR= tr
-GREP= grep
-SORT= sort
-UNIQ= uniq
+SHELL= bash
 
-# Set X11_LIBDIR to the directory where the X11 library resides
+#######################
+# common tool locations
+#######################
 #
-#X11_LIBDIR= /usr/X11R6/lib
-#X11_LIBDIR= /usr/X11/lib
-X11_LIBDIR= /opt/X11/lib
+include ../../var.mk
 
-# Set X11_INCLUDEDIR to the directory where the X11 include files reside
+# Common C compiler warnings to silence
 #
-#X11_INCDIR= /usr/X11R6/include
-#X11_INCDIR= /usr/X11/include
-X11_INCDIR= /opt/X11/include
+CSILENCE= -Wno-bitwise-op-parentheses -Wno-char-subscripts -Wno-empty-body \
+	  -Wno-logical-op-parentheses -Wno-parentheses -Wno-pointer-sign \
+	  -Wno-misleading-indentation -Wno-unused-value \
+	  -Wno-sign-compare -Wno-trigraphs
 
-# Compiler warnings
+# Attempt to silence unknown warning option
 #
-#CWARN=
-#CWARN= -Wall
-#CWARN= -Wall -Wextra
-CWARN= -Wall -Wextra ${CSILENCE}
-#CWARN= -Wall -Wextra -pedantic ${CSILENCE}
-#CWARN= -Wall -Wextra -Weverything
-#CWARN= -Wall -Wextra -Weverything -pedantic
-#CWARN= -Wall -Wextra -Weverything -pedantic ${CSILENCE}
+CUNKNOWN= -Wno-unknown-warning-option
 
-# Silence warnings that ${CWARN} would normally complain about
+# Common C compiler warning flags
 #
-CSILENCE= -Wno-empty-body -Wno-parentheses -Wno-pointer-sign -Wno-char-subscripts -Wno-trigraphs -Wno-sign-compare
-#CSILENCE= -Wno-implicit-int
+CWARN= -Wall -Wextra ${CSILENCE} ${CUNKNOWN}
 
-# compiler standard
+# Compiler standard
 #
-#CSTD=
-#CSTD= -ansi
-CSTD= -std=c11
+CSTD= -std=gnu17
 
-# compiler bit architecture
-#
-# Some entries require 32-bitness:
-# ARCH= -m32
-#
-# Some entries require 64-bitness:
-# ARCH= -m64
-#
-# By default we assume nothing:
+# Compiler bit architecture
 #
 ARCH=
 
-# defines that are needed to compile
+# Defines that are needed to compile
 #
-CDEFINE= -trigraphs -DW=\"keywords\" -DU=$(USAGE)
-#CDEFINE= -DIOCCC=25
+CDEFINE= -DW=\"keywords\" -DU=${USAGE}
 
-# include files that are needed to compile
+# Include files that are needed to compile
 #
 CINCLUDE=
-#CINCLUDE= -include stdlib.h
-#CINCLUDE= -include stdio.h
-#CINCLUDE= -include stdlib.h -include stdio.h
-#CINCLUDE= -I ${X11_INCDIR}
 
-# optimization
+# Optimization
 #
-# Most compiles will safely use -O2.  Some can use only -O1 or -O.
-# A few compilers have broken optimizers or this entry make break
-# under those buggy optimizers and thus you may not want anything.
-# Reasonable compilers will allow for -O3.
-#
-#OPT=
-#OPT= -O
-#OPT= -O1
-#OPT= -O2
 OPT= -O3
 
-# default flags for ANSI C compilation
+# Default flags for ANSI C compilation
 #
 CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
 
 # Libraries needed to build
 #
-LIBS=
-#LIBS= -L ${X11_LIBDIR}
+LDFLAGS=
 
-# ANSI compiler
-#
-# Set CC to the name of your ANSI compiler.
-#
-# Some entries seem to need gcc.  If you have gcc, set
-# both CC and MAY_NEED_GCC to gcc.
-#
-# If you do not have gcc, set CC to the name of your ANSI compiler, and
-# set MAY_NEED_GCC to either ${CC} (and hope for the best) or to just :
-# to disable such programs.
+# C compiler to use
 #
 CC= cc
-#CC=clang
-MAY_NEED_GCC= gcc
+
+# Compiler add-ons or replacements for clang only
+#
+ifeq "$(findstring $(CLANG),${CC})" "$(CLANG)"
+#
+CSILENCE+= -Wno-cast-align -Wno-comma -Wno-extra-semi -Wno-implicit-int-conversion \
+	   -Wno-missing-prototypes -Wno-missing-variable-declarations -Wno-pedantic \
+	   -Wno-poison-system-directories -Wno-shadow -Wno-shorten-64-to-32 \
+	   -Wno-sign-conversion -Wno-strict-prototypes -Wno-unsafe-buffer-usage
+#
+CWARN+= -Weverything
+#
+endif
+
+# Specific add-ons or replacements for gcc only
+#
+ifeq "$(findstring $(GCC),${CC})" "$(GCC)"
+#
+#CSILENCE+=
+#
+#CWARN+=
+#
+endif
 
 
 ##############################
-# Special flags for this entry
+# Special Makefile variables for this entry
 ##############################
 #
-OBJ= prog.o
-DATA= keywords 
-EXTRA_DATA= ansi c++11 c++14 c++98 c11 c99 discrepancies \
-    test01.c test02.c test03.c test04.c test05.c test06.c test07.c \
-    test08.c test09.c test10.c test11.c test12.c test13.c test14.c \
-    iocccbug01.c iocccbug02.c iocccbug03.c iocccbug04.c iocccbug05.c \
-    iocccbug06.c results results.k src.doc.rot13 patch tac.man README \
-    ioc_without_quote
-UTILITIES= unob.sh tokenfix spotcheck spotdiff freqcount
-TARGET= prog
+ENTRY= burton2
+PROG= prog
+#
+OBJ= ${PROG}.o
+CSRC= ${PROG}.o
+DATA= author-README.txt manpage java8 kandr kandr2 v7unix
+TARGET= ${PROG}
 #
 ALT_OBJ=
 ALT_TARGET=
-##
+
+EXTRA_DATA= ansi c++11 c++14 c++98 c11 c99 discrepancies.md \
+    test01.c test02.c test03.c test04.c test05.c test06.c test07.c \
+    test08.c test09.c test10.c test11.c test12.c test13.c test14.c \
+    iocccbug01.c iocccbug02.c iocccbug03.c iocccbug04.c iocccbug05.c \
+    iocccbug06.c results results.k src.doc.txt patch tac.1 author-README.txt \
+    ioc_without_quote
+UTILITIES= unob.sh tokenfix.sh spotcheck.sh spotdiff.sh freqcount.sh
 USAGE="\"prog [-tcksri] < file.c\ntokenize and count stdin\n\t-t\ttokens only\n\t-c\tcompatible counts\n\t-k\tkeep comments\n\t-s\tsuppress output\n\t-r\treserved words count as 1\n\t-i\tioccc count only\n\""
+
+# this tool requires -trigraphs
+#
+CFLAGS+= -trigraphs
+
 
 #################
 # build the entry
 #################
 #
-all: ${TARGET} ${DATA} ${UTILITIES}
+all: data ${TARGET}
 	@${TRUE}
 
-prog: prog.c keywords
-	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+.PHONY: all alt data everything clean clobber
+
+${PROG}: ${PROG}.c keywords
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 tac: tac.c
-	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
+
 
 # alternative executable
 #
-alt: ${ALT_TARGET}
+alt: data ${ALT_TARGET}
 	@${TRUE}
 
 # data files
 #
-data: ${DATA}
+data: ${DATA} ${EXTRA_DATA}
 	@${TRUE}
 
 # keywords: c11
-keywords: ioccc.kw.freq mkkeywords
-	./mkkeywords $< > keywords
+keywords: ioccc.kw.freq mkkeywords.sh
+	./mkkeywords.sh $< > keywords
 
 fixed_iocccsize: fixed_iocccsize.c
-	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
-test: prog tac runtest fixed_iocccsize ${EXTRA_DATA}
-	-./runtest | diff - results
-	-opt=kcrs ./runtest | diff - results.k
-	-opt=rs prog=tac ./runtest | diff - results
-	-opt=rsk prog=tac ./runtest | diff - results.k
+test: prog tac runtest.sh fixed_iocccsize ${EXTRA_DATA}
+	-./runtest.sh | diff - results
+	-opt=kcrs ./runtest.sh | diff - results.k
+	-opt=rs prog=./tac ./runtest.sh | diff - results
+	-opt=rsk prog=tac ./runtest.sh | diff - results.k
 	./fixed_iocccsize -rs < prog.c
 	./tac -rs prog.c
+
+# both all and alt
+#
+everything: all alt
+	@${TRUE}
+
 
 ###############
 # utility rules
 ###############
 #
-everything: all alt
-
 clean:
 	${RM} -f ${OBJ} ${ALT_OBJ}
 
 clobber: clean
 	${RM} -f ${TARGET} ${ALT_TARGET}
-	${RM} -f fixed_iocccsize tac keywords iocccsize
-	@-if [ -e sandwich ]; then \
-	    ${RM} -f sandwich; \
-	    echo 'ate sandwich'; \
-	fi
-
-nuke: clobber
-	@${TRUE}
-
-dist_clean: nuke
-	@${TRUE}
-
-install:
-	@echo "Surely you are performing, Dr. May!"
-	@${TRUE}
-
-# backwards compatibility
-#
-build: all
-	@${TRUE}
+	${RM} -rf *.dSYM
+	${RM} -f fixed_iocccsize tac keywords iocccsize manpage
 
 
-##################
-# 133t hacker rulz
-##################
-#
-love:
-	@echo 'not war?'
-	@${TRUE}
+######################################
+# optional include of 1337 hacker rulz
+######################################
 
-haste:
-	$(MAKE) waste
-	@${TRUE}
-
-waste:
-	@echo 'haste'
-	@${TRUE}
-
-make:
-	@echo 'Attend a maker faire'
-	@${TRUE}
-
-easter_egg:
-	@echo you expected to often mis-understand this $${RANDOM} magic
-	@echo chongo '<was here>' "/\\oo/\\"
-	@echo Eggy
-
-fabricate fashion form frame manufacture produce: make
-	@${TRUE}
-
-sandwich:
-	@if [ `id -u` -eq 0 ]; then \
-	    echo 'Okay.'; \
-	    echo $${RANDOM}`date +%s`$${RANDOM} > $@; \
-	else \
-	    echo 'What? Make it yourself.'; \
-	    exit 1; \
-	fi
-
-# Understand the history of the Homebrew Computer Club
-# as well as the West Coast Computer Faire and
-# you might be confused different.  :-)
-#
-supernova: nuke
-	@-if [ -r .code_anal ]; then \
-	    ${RM} -f .code_anal_v6; \
-	else \
-	    echo "planet deniers, like some members of the IAU, are so cute when they try to defend their logic"; \
-	fi
-	@echo A $@ helps ${MAKE} the elements that help form planets
-	@${TRUE}
-
-deep_magic:
-	@-if [ -r .code_anal ]; then \
-	    ccode_analysis --deep_magic 3a3fabb90892eeb2f610ae0f74a35a970060665a063ab702bd686c17c4ae07f6 --FNV1a_hash_256_bit "prog"; \
-	else \
-	    echo "Wrong! Do it again!"; \
-	    sleep 2; \
-	    echo "Wrong! Do it again!"; \
-	    sleep 2; \
-	    echo "Wrong! Do it again!"; \
-	fi
-	@${TRUE}
-
-magic: deep_magic
-	@-if [ -r .code_anal ]; then \
-	    ccode_analysis --mode 216091 --level 216193 --FNV1a_hash_256_bit "prog"; \
-	else \
-	    echo "If you don't eat yer meat, you can't have any pudding!"; \
-	    echo "How can you have any pudding if you don't eat yer meat?!"; \
-	fi
-	@${TRUE}
-
-# The IOCCC resident astronomer states
-#
-charon: supernova
-	@echo $@ is a dwarf planet
-	@echo dwarf is a type of planet
-	@echo $@ is a planet
-
-pluto: supernova
-	${MAKE} charon
-	@echo $@ is a dwarf planet
-	@echo dwarf is a type of planet
-	@echo $@ is a planet
-	@echo get used to having lots of planets because a $< can ${MAKE} a lot of them
+-include 1337.mk ../1337.mk ../../1337.mk

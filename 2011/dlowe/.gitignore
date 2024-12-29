@@ -1,0 +1,10 @@
+#
+# sort with: ../../bin/sgi.sh
+*.dSYM
+dlowe
+dlowe.orig
+indent
+indent.c
+indent.o
+prog.orig
+trailed.net

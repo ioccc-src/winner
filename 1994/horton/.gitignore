@@ -1,0 +1,11 @@
+#
+# sort with: ../../bin/sgi.sh
+*.dSYM
+gtface
+horton
+horton.alt
+horton.orig
+indent
+indent.c
+indent.o
+prog.orig

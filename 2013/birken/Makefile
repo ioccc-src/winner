@@ -1,212 +1,179 @@
 #!/usr/bin/env make
 #
-# 2013 makefile
+# IOCCC 2013 winning entry - birken
+
+################################################################################
 #
-# This work by Landon Curt Noll, Simon Cooper, and Leonid A. Broukhis
-# is licensed under:
+# IOCCC winning entry code may not work on your system.  What was liked/allowed
+# and worked in the past may no longer be liked/allowed or compile/run today.
 #
-#	Creative Commons Attribution-ShareAlike 3.0 Unported License.
+# Bug fixes, corrections and typo fixes are VERY WELCOME.  If you see a problem,
+# first check this URL for a list of known bugs and (mis)features of IOCCC entries:
 #
-# See: http://creativecommons.org/licenses/by-sa/3.0/
+#	https://www.ioccc.org/bugs.html
+#
+# GitHub pull requests are welcome!  Please see the above URL for details.
+#
+################################################################################
+#
+# This file is Copyright (c) 2023 by Landon Curt Noll.  All Rights Reserved.
+# You are free to share and adapt this file under the terms of this license:
+#
+#	Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+#
+# For more information, see: https://creativecommons.org/licenses/by-sa/4.0/
 
 
-################
-# tool locations
-################
+#############################
+# shell used by this Makefile
+#############################
 #
-SHELL= /bin/bash
-CP= cp
-CPP= cpp
-GUNZIP= gunzip
-LD= ld
-MAKE= make
-RM= rm
-SED= sed
-TAR= tar
-TRUE= true
+SHELL= bash
 
-# Set X11_LIBDIR to the directory where the X11 library resides
+#######################
+# common tool locations
+#######################
 #
-X11_LIBDIR= /usr/X11R6/lib
+include ../../var.mk
 
-# Set X11_INCLUDEDIR to the directory where the X11 include files reside
+# Common C compiler warnings to silence
 #
-X11_INCDIR= /usr/X11R6/include
+CSILENCE= -Wno-newline-eof -Wno-strict-prototypes -Wno-maybe-uninitialized \
+	  -Wno-misleading-indentation
 
-# Compiler warnings
+# Attempt to silence unknown warning option
 #
-#CWARN=
-#CWARN= -Wall -W
-CWARN= -Wall -pedantic -Wno-newline-eof
+CUNKNOWN= -Wno-unknown-warning-option
 
-# compiler standard
+# Common C compiler warning flags
 #
-#CSTD=
-#CSTD= -ansi
-CSTD= -std=c99
+CWARN= -Wall -Wextra ${CSILENCE} ${CUNKNOWN}
 
-# compiler bit architecture
+# Compiler standard
 #
-# Some entries require 32-bitness:
-# ARCH= -m32
-#
-# Some entries require 64-bitess:
-# ARCH= -m64
-#
-# By default we assume nothing:
+CSTD= -std=gnu11
+
+# Compiler bit architecture
 #
 ARCH=
 
-# optimization
+# Defines that are needed to compile
 #
-# Most compiles will safely use -O2.  Some can use only -O1 or -O.
-# A few compilers have broken optimizers or this entry make break
-# under those buggy optimizers and thus you may not want anything.
+CDEFINE=
+
+# Include files that are needed to compile
 #
-#OPT=
-#OPT= -O
-#OPT= -O1
-OPT= -O2
-#OPT= -O3
+CINCLUDE= -include stdlib.h
+
+# Optimization
+#
+OPT= -O3
+
+# Default flags for ANSI C compilation
+#
+CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
 
 # Libraries needed to build
 #
-LIBS=
+LDFLAGS=
 
-# default flags for ANSI C compilation
-#
-CFLAGS= ${CWARN} ${CSTD} ${ARCH} ${OPT} ${LIBS}
-
-# ANSI compiler
-#
-# Set CC to the name of your ANSI compiler.
-#
-# Some entries seem to need gcc.  If you have gcc, set
-# both CC and MAY_NEED_GCC to gcc.
-#
-# If you do not have gcc, set CC to the name of your ANSI compiler, and
-# set MAY_NEED_GCC to either ${CC} (and hope for the best) or to just :
-# to disable such programs.
+# C compiler to use
 #
 CC= cc
-#CC=clang
-MAY_NEED_GCC= gcc
+
+# Compiler add-ons or replacements for clang only
+#
+ifeq "$(findstring $(CLANG),${CC})" "$(CLANG)"
+#
+CSILENCE+= -Wno-conditional-uninitialized -Wno-missing-prototypes \
+	   -Wno-missing-variable-declarations -Wno-poison-system-directories \
+	   -Wno-strict-prototypes -Wno-unsafe-buffer-usage
+#
+CWARN+= -Weverything
+#
+endif
+
+# Specific add-ons or replacements for gcc only
+#
+ifeq "$(findstring $(GCC),${CC})" "$(GCC)"
+#
+#CSILENCE+=
+#
+#CWARN+=
+#
+endif
 
 
 ##############################
-# Special flags for this entry
+# Special Makefile variables for this entry
 ##############################
 #
 ENTRY= birken
-DATA= examples.tbz2 images.tbz2
-ALT_OBJ=
-ALT_ENTRY=
+PROG= ${ENTRY}
+#
+OBJ= ${PROG}.o
+DATA= belmont.txt bloober.txt bomberman.txt boo.txt bub.txt cheepcheep.txt \
+	format.txt gurin.txt happyface.txt helloworld.txt hilbert.txt \
+	ioccc.txt koopaparatroopa.txt lakitu.txt landon.txt leo.txt mario.txt \
+	mspacman.txt multi2.gif multi3.gif multi4.gif multi5.gif names.png \
+	palette.png paranaplant.txt pen0.gif pen1.gif pen2.gif pen4.gif \
+	pen5.gif pen6.gif pen7.gif pen8.gif platform0.gif platform1.gif \
+	platform2.gif rhino.txt rotations.png samus.txt simon.txt snoo.txt \
+	toad.txt triple0.gif triple1.gif
+TARGET= ${PROG}
+#
+ALT_OBJ= ${PROG}.alt.o
+ALT_TARGET= ${PROG}.alt
 
 
 #################
 # build the entry
 #################
 #
-all: ${ENTRY} data
+all: data ${TARGET}
 	@${TRUE}
 
-${ENTRY}: ${ENTRY}.c
-	${CC} ${CFLAGS} $< -o $@
+.PHONY: all alt data everything clean clobber
+
+${PROG}: ${PROG}.c
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 # alternative executable
 #
-alt: ${ALT_ENTRY}
+alt: data ${ALT_TARGET}
 	@${TRUE}
+
+# Variable to control how to redefine sleep time in alternate code
+#
+SLEEP= 15000
+
+${PROG}.alt: ${PROG}.alt.c
+	${CC} ${CFLAGS} -DZ=${SLEEP} $< -o $@ ${LDFLAGS}
 
 # data files
 #
 data: ${DATA}
-	${RM} -rf examples
-	@echo extracting examples
-	${TAR} -jxf examples.tbz2
-	${RM} -rf images
-	@echo extracting images
-	${TAR} -jxf images.tbz2
+
+# both all and alt
+#
+everything: all alt
+	@${TRUE}
 
 
 ###############
 # utility rules
 ###############
 #
-everything: all alt
-
 clean:
-	${RM} -f ${ENTRY}.o ${ALT_OBJ}
+	${RM} -f ${OBJ} ${ALT_OBJ}
 
 clobber: clean
-	${RM} -f ${ENTRY} ${ALT_ENTRY}
-	${RM} -rf examples
-	@-if [ ! -e .keep_ioccc_2013 ]; then \
-	    echo ${RM} -rf images; \
-	    ${RM} -rf images; \
-	fi
-
-nuke: clobber
-	@${TRUE}
-
-dist_clean: nuke
-	@${TRUE}
-
-install:
-	@echo "Surely we are joking Dr. Lehmer!"
-	@${TRUE}
-
-# backwards compatibility
-#
-build: all
-	@${TRUE}
+	${RM} -f ${TARGET} ${ALT_TARGET}
+	${RM} -rf *.dSYM
 
 
-##################
-# 133t hacker rulz
-##################
-#
-love:
-	@echo 'not war?'
-	@${TRUE}
+######################################
+# optional include of 1337 hacker rulz
+######################################
 
-haste:
-	$(MAKE) waste
-	@${TRUE}
-
-waste:
-	@echo 'haste'
-	@${TRUE}
-
-easter_egg:
-	@echo you expected to mis-understand this $${RANDOM} magic
-	@echo chongo '<was here>' "/\\oo/\\"
-	@echo Readers shall not be disallowed from being unable to not partly misunderstand this partocular final echo.
-
-# Understand the history of the Homebrew Computer Club
-# as well as the West Coast Computer Faire and
-# you might be confused different.  :-)
-#
-supernova: nuke
-	@-if [ -r .code_anal ]; then \
-	    ${RM} -f .code_anal_v4; \
-	else \
-	    echo "We are not expected to understand that"; \
-	fi
-	@${TRUE}
-
-deep_magic:
-	@-if [ -r .code_anal ]; then \
-	    ccode_analysis --deep_magic 2ed3582ec5c094a093fea2a6bcb9f19439892873c9cc45ed1ceaafe08b7d52e1b2c7cd524be3b0b2 --FNV1a_hash 512-bit "${ENTRY}"; \
-	else \
-	    echo "Park different"; \
-	fi
-	@${TRUE}
-
-magic: deep_magic
-	@-if [ -r .code_anal ]; then \
-	    ccode_analysis --mode 391581 --level 216193 --FNV1a_hash 512-bit "${ENTRY}"; \
-	else \
-	    echo "These aren't the primes you're looking for Paul Erdos!"; \
-	fi
-	@${TRUE}
+-include 1337.mk ../1337.mk ../../1337.mk

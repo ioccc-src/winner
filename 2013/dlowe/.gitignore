@@ -1,0 +1,14 @@
+#
+# sort with: ../../bin/sgi.sh
+*.dSYM
+1.txt
+2.txt
+dlowe
+dlowe.orig
+fun
+indent
+indent.c
+indent.o
+ioccc.txt
+prog.orig
+sparkl

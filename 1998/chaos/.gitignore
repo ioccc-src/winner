@@ -1,0 +1,11 @@
+#
+# sort with: ../../bin/sgi.sh
+*.dSYM
+chaos
+chaos_nohalf
+chaos_nohalf.c
+chaos.orig
+indent
+indent.c
+indent.o
+prog.orig

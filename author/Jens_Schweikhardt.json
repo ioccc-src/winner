@@ -1,0 +1,42 @@
+{
+    "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
+    "author_JSON_format_version" : "1.1 2024-02-11",
+    "author_handle" : "Jens_Schweikhardt",
+    "full_name" : "Jens Schweikhardt",
+    "sort_word" : "schweikhardt",
+    "location_code" : "DE",
+    "email" : "schweikh@schweikhardt.net",
+    "url" : "http://www.schweikhardt.net",
+    "alt_url" : null,
+    "deprecated_twitter_handle" : null,
+    "mastodon" : null,
+    "mastodon_url" : null,
+    "github" : null,
+    "affiliation" : null,
+    "winning_entry_set" : [
+        {
+            "entry_id" : "1996_schweikh1"
+        },
+        {
+            "entry_id" : "1996_schweikh2"
+        },
+        {
+            "entry_id" : "1996_schweikh3"
+        },
+        {
+            "entry_id" : "1998_schweikh1"
+        },
+        {
+            "entry_id" : "1998_schweikh2"
+        },
+        {
+            "entry_id" : "1998_schweikh3"
+        },
+        {
+            "entry_id" : "2001_schweikh"
+        },
+        {
+            "entry_id" : "2015_schweikhardt"
+        }
+    ]
+}

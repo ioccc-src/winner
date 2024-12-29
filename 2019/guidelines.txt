@@ -42,9 +42,20 @@ ABOUT THIS FILE:
     Non-twitter users should force their browsers to reload the above URL
     to be sure they are seeing the most recent tweets.
 
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+An important 2023 update to this historic note:
+
+The IOCCC no longer uses twitter.  Today the IOCCC uses Mastodon.
+For more information and to see our IOCCC Mastodon posts, see:
+
+    https://fosstodon.org/@ioccc
+
+End of important 2023 update to this historic note.
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
     While we try to post use news at:
 
-        http://www.ioccc.org/index.html#news
+        https://www.ioccc.org/index.html#news
 
     such postings may be delayed or obscured by slow to respond mirrors.
 
@@ -75,10 +86,10 @@ ABOUT THIS FILE:
 |   Please wait to submit your entries until after that time.
 
     The official rules, guidelines and iocccsize.c tool will be available
-    on the official IOCCC web site on or slightly before start of this IOCCC.
-    Please check the IOCCC web site "How to enter" link:
+    on the official IOCCC website on or slightly before start of this IOCCC.
+    Please check the IOCCC website "How to enter" link:
 
- 	http://www.ioccc.org/index.html#enter
+ 	https://www.ioccc.org/index.html#enter
 
     on or after the start of this IOCCC to be sure you are using the correct
     versions of these items before using the IOCCC entry submission URL.
@@ -97,7 +108,7 @@ HINTS AND SUGGESTIONS:
     a number of tests to an entry:
 
         * look at the original source
-        * convert ANSI tri-graphs to ASCII
+        * convert ANSI trigraphs to ASCII
         * C pre-process the source ignoring '#include' lines
         * C pre-process the source ignoring '#define' and '#include' lines
         * run it through a C beautifier
@@ -160,7 +171,7 @@ HINTS AND SUGGESTIONS:
     Rule 2 (the size rule) has been changed.  In particular rule 2 refers to
     the use of an IOCCC size tool.  The source for this tool is found at:
 
-|       http://www.ioccc.org/2019/iocccsize.c
+|       https://www.ioccc.org/2019/iocccsize.c
 
     To further clarify rule 2, we subdivided it into two parts, 2a and 2b.
     Your entry must satisfy both the maximum size rule 2a AND your entry
@@ -348,7 +359,7 @@ OUR LIKES AND DISLIKES:
         * depend on a utility or application not normally found on most
           most POSIX P1003.1/P1003.2 like systems
         * abuse the build file to get around the size limit
-        * obfuscate by excessive use of ANSI tri-graphs
+        * obfuscate by excessive use of ANSI trigraphs
         * are longer than they need to be
         * are "blob-ier" than they need to be
         * are rather similar to previous winners  :-(
@@ -374,14 +385,14 @@ OUR LIKES AND DISLIKES:
     variation as it is possible to have on Earth.  :-)
 
     You should try to restrict commands used on the build file to
-    POSIX-like or common Un*x-like commands.  You can also compile
+    POSIX-like or common Unix-like commands.  You can also compile
     and use your own programs.  If you do, try to build and execute
     from the current directory.  This restriction is not a hard and
     absolute one.  The intent is to ensure that the building if your
     program is reasonably portable.
 
-    We prefer programs that are portable across a wide variety of Un*x-like
-|   operating systems (i.e., Linux, GNU Hurd, BSD, Un*x, etc.).
+    We prefer programs that are portable across a wide variety of Unix-like
+|   operating systems (i.e., Linux, GNU Hurd, BSD, Unix, etc.).
 
     You are in a maze of twisty guidelines, all different.
 
@@ -492,15 +503,15 @@ OUR LIKES AND DISLIKES:
     (even if such copyrights appear to be bogus and/or blatant abuses of
     the copyright system).
 
-    While we recognize that UN*X is not a universal operating system, the
+    While we recognize that UNIX is not a universal operating system, the
     contest does have a bias towards such systems.  In an effort to expand
     the scope of the contest, we phrase our bias in terms of POSIX P1003.1
-    and P1003.2 standards.  This will allow certain non-UN*X OS users to
+    and P1003.2 standards.  This will allow certain non-UNIX OS users to
     submit entries.  On the other hand, this is a guideline and not a rule.
     We will not reject an entry based on some POSIX technicality.
 
     When dealing with OS and application environments, we suggest that you
-    be reasonable with a nod towards vanilla UN*X-like systems.  POSIX will
+    be reasonable with a nod towards vanilla UNIX-like systems.  POSIX will
     evolve but not as much as the contest.
 
     You very well might not be completely prohibited from failing to not
@@ -542,7 +553,7 @@ OUR LIKES AND DISLIKES:
     while to write remarkable program "remarks".
 
     We dislike C code with trailing control-M's (\r or \015) that results
-    in compilation failures.  Some non-Un*x/non-Linux tools such as
+    in compilation failures.  Some non-Unix/non-Linux tools such as
     MS Visual C and MS Visual C++ leave trailing control-M's on lines.
     Users of such tools should strip off such control-M's before submitting
     their entries.  In some cases tools have a "Save As" option that will
@@ -778,12 +789,31 @@ JUDGING PROCESS:
         twitter handle(s) (if provided and if anonymity was not requested)
         country code(s) of the author(s)
 
-    After the initial announcement, we attempt to send Email to the
+    After the initial announcement, we attempt to send email to the
     authors of the winning entries.  One reason we do this is to give
     the authors a chance to comment on the way we have presented their
     entry.  They are given the chance to correct mistakes and typos.  We
     often accept their suggestions/comments about our remarks as well.
     This is done prior to posting the winners to the wide world.
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+An important 2023 update to how winners are announced
+
+The IOCCC no longer uses twitter.  IOCCC entries will be announced
+by a git commit to the IOCCC entries repo:
+
+	https://github.com/ioccc-src/winner
+
+that, in turn, updates the offivial IOCCC website:
+
+	https://www.ioccc.org/index.html
+
+In addition a note is posted to the IOCCC Mastodon account:
+
+    https://fosstodon.org/@ioccc
+
+End of important 2023 update to how winners are announced.
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
     Judging consists of a number of elimination rounds.  During a round,
     the collection of entries are divided into two roughly equal piles;
@@ -883,15 +913,26 @@ ANNOUNCEMENT OF WINNERS:
     Non-twitter users should force their browsers to reload the above URL
     to be sure they are seeing the most recent tweets.
 
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+An important 2023 update to this historic note:
+
+The IOCCC no longer uses twitter.  Today the IOCCC uses Mastodon.
+For more information and to see our IOCCC Mastodon posts, see:
+
+    https://fosstodon.org/@ioccc
+
+End of important 2023 update to this historic note.
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
     The judges will then post an initial announcement of who won, the name
     of their award, and a very brief description of the winning entry
-    on the IOCCC web site:
+    on the IOCCC website:
 
-        http://www.ioccc.org/whowon.html
+        https://www.ioccc.org/whowon.html
 
     We will also attempt to submit a brief announcement story to /.:
 
-        http://slashdot.org
+        https://slashdot.org
 
     that, depending on the willingness of the /. editors, may be posted
     to their site at the same time.
@@ -900,15 +941,34 @@ ANNOUNCEMENT OF WINNERS:
     the winning authors are given a chance to review the judges comments,
     and test our Makefile.  This review process typically takes a few weeks.
 
-    Sometime after the initial announcement, and once the the review
+    Sometime after the initial announcement, and once the review
     by the winners has been completed, the winning source will be
-    posted to the IOCCC web site:
+    posted to the IOCCC website:
 
-        http://www.ioccc.org/years.html
+        https://www.ioccc.org/years.html
 
         NOTE: previous winners are available at that URL
 
     We will also tweet, via @IOCCC, when the winning source is available.
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+An important 2023 update to how winners are announced
+
+The IOCCC no longer uses twitter.  IOCCC entries will be announced
+by a git commit to the IOCCC entries repo:
+
+	https://github.com/ioccc-src/winner
+
+that, in turn, updates the offivial IOCCC website:
+
+	https://www.ioccc.org/index.html
+
+In addition a note is posted to the IOCCC Mastodon account:
+
+    https://fosstodon.org/@ioccc
+
+End of important 2023 update to how winners are announced.
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
     It is pointless to ask the IOCCC judges how many entries we receive.
     Other government TLA or FLA snooping organizations are prohibited from
@@ -923,12 +983,12 @@ ANNOUNCEMENT OF WINNERS:
 
 FOR MORE INFORMATION:
 
-    You may contact the judges by sending Email to the following address:
+    You may contact the judges by sending email to the following address:
 
 |       q.2019@ioccc.org        (do not submit entries to this address)
 
 |   You must include the words 'ioccc 2019 question' in the subject of your
-    Email message when sending Email to the judges.
+    email message when sending email to the judges.
 
     Questions and comments about the contest are welcome.  Comments about
     confusing rules and guidelines are also welcome.
@@ -939,7 +999,7 @@ FOR MORE INFORMATION:
 
     Check out the IOCCC Web page:
 
-        http://www.ioccc.org
+        https://www.ioccc.org
 
     It has rules, guidelines and winners of previous contests (1984 to date).
 
@@ -955,6 +1015,17 @@ FOR MORE INFORMATION:
 
     Non-twitter users should force their browsers to reload the above URL
     to be sure they are seeing the most recent tweets.
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+An important 2023 update to this historic note:
+
+The IOCCC no longer uses twitter.  Today the IOCCC uses Mastodon.
+For more information and to see our IOCCC Mastodon posts, see:
+
+    https://fosstodon.org/@ioccc
+
+End of important 2023 update to this historic note.
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 Leonid A. Broukhis
 Simon Cooper

@@ -1,0 +1,93 @@
+
+                         Numero Special de
+              Technique et Science Informatiques (TSI)
+                               sur
+                        GRAPHES DE TERRAIN
+
+                           Coordinateur
+                         Matthieu Latapy
+
+                       APPEL A SOUMISSIONS
+
+                  Date limite : 30 octobre 2008
+
+
+Thematique.
+
+Dans de nombreux contextes, des grands graphes sont utilises pour modeliser
+des systemes d'interactions complexes. Citons notamment en informatique la
+topologie de l'internet, les graphes issus du web, ou des echanges pair-a-
+pair.
+De nombreux cas sont etudies dans d'autres disciplines, comme les reseaux
+sociaux, linguistiques, ou biologiques par exemple.
+
+Il y a 10 ans, un resultat fondateur a montre que tous ces graphes ont des
+proprietes non-triviales en commun. De plus, ils soulevent des problematiques
+scientifiques fortement transversales. Ils sont donc devenus une famille
+d'objets d'etude a part entiere, avec leurs questionnements propres.
+
+L'originalite de ce domaine de recherche par rapport a l'algorithmique ou
+la theorie des graphes 'classiques' est qu'on part de graphes non definis
+formellement, generalement connus uniquement au travers d'une operation de
+mesure ; ils sont issus du terrain.
+
+Objectif.
+
+Notre objectif dans ce numero special est d'offrir a la communaute une
+tribune de presentation, de synthese, et de discussion de leurs resultats
+et idees sur ces themes.
+
+Plus precisement, outre les presentations classiques de resultats de
+recherches, nous voulons encourager la presentation et la discussion
+d'idees novatrices, qui pourront etre en friche et/ou en rupture avec
+les tendances actuelles. Nous sommes donc particulierement ouverts a des
+articles presentant et discutant, avec toute la rigueur necessaire, des
+idees novatrices.
+
+De facon similaire, nous sommes particulierement ouverts a la soumission
+d'articles faisant le lien entre graphes de terrain et d'autres domaines
+de l'informatique (par exemple apprentissage automatique, signal, ou
+visualisation) ou d'autres disciplines (par exemple sciences humaines,
+du vivant, ou du langage).
+
+Nous pensons que de telles contributions sont habituellement difficiles
+a publier, et voyons ce numero special comme une opportunite dans ce
+sens.
+
+Soumission.
+
+TSI est une revue francophone ; les articles doivent etre rediges en
+francais sauf si _aucun_ des auteurs n'est francophone.
+
+Nous n'imposons pas de contrainte de longueur mais celle-ci doit etre
+en adequation avec l'apport de l'article.
+
+Les articles seront relus par au moins deux membres du Comite de Lecture
+compose de :
+  Etienne Birmele, CNRS et Universite d'Evry, France
+  Pierre Borgnat, CNRS et ENS Lyon, France
+  Jean-Charles Delvenne, Universite Catholique de Louvain, Belgique
+  Bruno Gaume, CNRS et Universite Toulouse 2 le Mirail, France
+  Bertrand Jouve, CNRS et Universite Toulouse 2 le Mirail, France
+  Rushed Kanawati, CNRS et Universite Paris Nord - Paris 13, France
+  Matthieu Latapy, CNRS et Universite Pierre er Marie Curie - Paris 6, France
+  Emmanuelle Lebahr, CNRS et Universite Paris Diderot - Paris 7, France
+  Damien Magoni, CNRS et Universite Louis Pasteur - Strasbourg, France
+  Guy Melancon, CNRS, Universite Bordeaux 1 et INRIA Bordeaux, France
+  Christophe Prieur, CNRS et Universite Paris Diderot - Paris 7, France
+  Oumarou Sie, Universite de Ouagadougou, Burkina-Faso
+  Laurent Viennot, INRIA Rocquencourt, France
+  Emmanuel Viennet, CNRS et Universite Paris Nord - Paris 13, France
+  Sandrine Vial, CNRS et Universite de Versailles, France
+
+Les decisions seront prises sur la base de leurs avis et des discussions
+qui en decouleront.
+
+La soumission se fait par envoi de l'article, au format PDF, par courrier
+electronique a Matthieu Latapy (Matthieu.Latapy@lip6.fr).
+Si vous ne recevez pas de message confirmant sa bonne reception moins d'une
+semaine apres envoi, nous vous demandons de nous contacter directement.
+
+Date limite de soumission : 30 octobre 2008.
+
+

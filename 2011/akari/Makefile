@@ -1,112 +1,173 @@
 #!/usr/bin/env make
 #
-# 2011 makefile
+# IOCCC 2011 winning entry - akari
+
+################################################################################
 #
-# This work by Landon Curt Noll, Simon Cooper, and Leonid A. Broukhis
-# is licensed under:
+# IOCCC winning entry code may not work on your system.  What was liked/allowed
+# and worked in the past may no longer be liked/allowed or compile/run today.
 #
-#	Creative Commons Attribution-ShareAlike 3.0 Unported License.
+# Bug fixes, corrections and typo fixes are VERY WELCOME.  If you see a problem,
+# first check this URL for a list of known bugs and (mis)features of IOCCC entries:
 #
-# See: http://creativecommons.org/licenses/by-sa/3.0/
+#	https://www.ioccc.org/bugs.html
+#
+# GitHub pull requests are welcome!  Please see the above URL for details.
+#
+################################################################################
+#
+# This file is Copyright (c) 2023 by Landon Curt Noll.  All Rights Reserved.
+# You are free to share and adapt this file under the terms of this license:
+#
+#	Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+#
+# For more information, see: https://creativecommons.org/licenses/by-sa/4.0/
 
 
-################
-# tool locations
-################
+#############################
+# shell used by this Makefile
+#############################
 #
-SHELL= /bin/bash
-CP= cp
-CPP= cpp
-GUNZIP= gunzip
-LD= ld
-MAKE= make
-RM= rm
-SED= sed
-TAR= tar
-TRUE= true
+SHELL= bash
 
-# Compiler warnings
+#######################
+# common tool locations
+#######################
 #
-CWARN= -Wall -W -pedantic
+include ../../var.mk
 
-# compiler standard
+# Common C compiler warnings to silence
 #
-CSTD= -std=c99
-CSTD2= -ansi
+CSILENCE= -Wno-empty-body -Wno-error -Wno-implicit-function-declaration \
+	  -Wno-implicit-int -Wno-return-type -Wno-unused-parameter \
+	  -Wno-deprecated-non-prototype -Wno-misleading-indentation
 
-# compiler bit architecture
+# Attempt to silence unknown warning option
 #
-# Some entries require 32-bitness,
-# other entries require 64-bitess.
-# By default we assume nothing.
+CUNKNOWN= -Wno-unknown-warning-option
+
+# Common C compiler warning flags
+#
+CWARN= -Wall -Wextra ${CSILENCE} ${CUNKNOWN}
+
+# Compiler standard
+#
+CSTD= -std=gnu99
+
+# Compiler bit architecture
 #
 ARCH=
 
-# optimization
+# Defines that are needed to compile
 #
-# Most compiles will safely use -O2.  Some can use only -O1 or -O.
-# A few compilers have broken optimizers or this entry make break
-# under those buggy optimizers and thus you may not want anything.
-#
-OPT= -O2
+CDEFINE=
 
-# default flags for ANSI C compilation
+# Include files that are needed to compile
 #
-CFLAGS= ${CWARN} ${CSTD} ${ARCH} ${OPT}
-CFLAGS2= ${CSTD2} ${ARCH} ${OPT}
+CINCLUDE=
 
-# ANSI compiler
+# Optimization
 #
-# Set CC to the name of your ANSI compiler.
+OPT= -O3
+
+# Default flags for ANSI C compilation
+#
+CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
+
+# Libraries needed to build
+#
+LDFLAGS=
+
+# C compiler to use
 #
 CC= cc
 
+# Compiler add-ons or replacements for clang only
+#
+ifeq "$(findstring $(CLANG),${CC})" "$(CLANG)"
+#
+CSILENCE+= -Wno-conditional-uninitialized -Wno-error \
+	   -Wno-implicit-function-declaration -Wno-format-nonliteral \
+	   -Wno-implicit-int -Wno-missing-prototypes \
+	   -Wno-missing-variable-declarations -Wno-poison-system-directories \
+	   -Wno-redundant-parens -Wno-return-type -Wno-shadow \
+	   -Wno-shorten-64-to-32 -Wno-strict-prototypes -Wno-pedantic \
+	   -Wno-extra-semi-stmt -Wno-misleading-indentation \
+	   -Wno-reserved-identifier -Wno-unsafe-buffer-usage
+#
+CWARN+= -Weverything
+#
+endif
+
+# Specific add-ons or replacements for gcc only
+#
+ifeq "$(findstring $(GCC),${CC})" "$(GCC)"
+#
+#CSILENCE+=
+#
+#CWARN+=
+#
+endif
+
 
 ##############################
-# Special flags for this entry
+# Special Makefile variables for this entry
 ##############################
 #
 ENTRY= akari
+PROG= ${ENTRY}
+#
+OBJ= ${PROG}.o
 DATA= example.ppm
+TARGET= ${PROG} ${PROG}2 ${PROG}3 ${PROG}4
+#
+ALT_OBJ=
+ALT_TARGET=
 
 
 #################
 # build the entry
 #################
 #
-all: ${ENTRY} ${DATA}
+all: data ${TARGET}
 	@${TRUE}
 
-everything: ${ENTRY} \
-	    ${ENTRY}2.c ${ENTRY}2 \
-	    ${ENTRY}3.c ${ENTRY}3 \
-	    ${ENTRY}4.c ${ENTRY}4
-	@${TRUE}
+.PHONY: all alt data everything clean clobber
 
-${ENTRY}: ${ENTRY}.c
-	${CC} ${CFLAGS} ${ENTRY}.c -o ${ENTRY}
+${PROG}: ${PROG}.c
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
-${ENTRY}2.c: ${ENTRY}
-	./${ENTRY} ${ENTRY}.c $@
+${PROG}2.c: ${PROG}
+	./${PROG} ${PROG}.c $@
 
-${ENTRY}2: ${ENTRY}2.c
-	${CC} ${CFLAGS} ${ENTRY}2.c -o $@
+${PROG}2: ${PROG}2.c
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
-${ENTRY}3.c: ${ENTRY} ${ENTRY}.c
-	./${ENTRY} < ${ENTRY}.c | ./${ENTRY} > $@
+${PROG}3.c: ${PROG} ${PROG}.c
+	./${PROG} < ${PROG}.c | ./${PROG} > $@
 
-${ENTRY}3: ${ENTRY}3.c
-	${CC} ${CFLAGS2} ${ENTRY}3.c -o $@
+${PROG}3: ${PROG}3.c
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
-${ENTRY}4.c: ${ENTRY} ${ENTRY}.c
-	./${ENTRY} < ${ENTRY}.c | ./${ENTRY} | ./${ENTRY} > $@
+${PROG}4.c: ${PROG} ${PROG}.c
+	./${PROG} < ${PROG}.c | ./${PROG} | ./${PROG} > $@
 
-${ENTRY}4: ${ENTRY}4.c
-	${CC} ${CFLAGS2} ${ENTRY}4.c -o $@
+${PROG}4: ${PROG}4.c
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 # alternative executable
 #
-alt:
+alt: data ${ALT_TARGET}
+	@${TRUE}
+
+# data files
+#
+data: ${DATA}
+	@${TRUE}
+
+# both all and alt
+#
+everything: all alt
 	@${TRUE}
 
 
@@ -114,40 +175,17 @@ alt:
 # utility rules
 ###############
 #
-everything: all alt
-
 clean:
-	${RM} -f ${ENTRY}.o ${ENTRY}2.c ${ENTRY}3.c ${ENTRY}4.c
+	${RM} -f ${OBJ} ${ALT_OBJ}
 
 clobber: clean
-	${RM} -f ${ENTRY} ${ENTRY}2 ${ENTRY}3 ${ENTRY}4
-
-nuke: clobber
-	@echo gnab gib!
-
-install:
-	@echo "Surely you're joking Mr. Feynman!"
-
-# backwards compatibility
-#
-build: all
+	${RM} -f ${TARGET} ${ALT_TARGET}
+	${RM} -rf *.dSYM rot13.c
+	${RM} -f akari2.c akari3.c akari4.c odd_output.ppm even_output.ppm expanded_and_rot13_output.txt expanded_output.txt
 
 
-##################
-# 133t hacker rulz
-##################
-#
-love:
-	@echo 'not war?'
+######################################
+# optional include of 1337 hacker rulz
+######################################
 
-haste:
-	$(MAKE) waste
-
-waste:
-	@echo 'waste'
-
-easter_egg:
-	@echo you expected to mis-understand this $${RANDOM} magic
-	@echo chongo '<was here>' "/\\oo/\\"
-	@echo Readers shall not be disallowed from being unable to partly misunderstand this final echo.
-	@${TRUE}
+-include 1337.mk ../1337.mk ../../1337.mk

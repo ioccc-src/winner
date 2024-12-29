@@ -1,0 +1,14 @@
+#
+# sort with: ../../bin/sgi.sh
+*.dSYM
+indent
+indent.c
+indent.o
+jkb
+jkb.alt
+jkb.alt2
+prog.orig
+rince
+rince.alt
+rince.alt2
+rince.orig

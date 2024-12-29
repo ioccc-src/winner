@@ -1,0 +1,16 @@
+#
+# sort with: ../../bin/sgi.sh
+*.dSYM
+aku
+aku.c
+dhyang
+dhyang.orig
+indent
+indent.c
+indent.o
+prog.orig
+saitou
+soku
+soku.c
+zan
+zan.c

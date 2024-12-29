@@ -1,0 +1,7 @@
+#define tape O O O O O I I I I
+/* Search beginning of number. */
+#define start_O O, right, start
+/* Number found. Move one step to the left. */
+#define start_I I, left, st2
+/* Write a I and stop */
+#define st2_O   I, left, stop

@@ -1,0 +1,27 @@
+#
+# sort with: ../../bin/sgi.sh
+*.dSYM
+ADVENTUR/
+BASICS/
+C
+DBASEII/
+GAMES/
+KERMIT/
+MASTER/
+MFDISK/
+MODEM7/
+PRO8/
+SOURCE/
+THE-WORD/
+TINKER/
+WS33/
+WS33-1/
+WS33-2/
+WS33-KPR/
+indent
+indent.c
+indent.o
+prog.orig
+toledo2
+toledo2.alt
+toledo2.orig

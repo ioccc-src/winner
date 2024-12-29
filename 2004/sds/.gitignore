@@ -1,0 +1,17 @@
+#
+# sort with: ../../bin/sgi.sh
+*.dSYM
+encoder
+encoder.c
+indent
+indent.c
+indent.o
+message
+prog.orig
+remarks.md
+sds
+sds2_msg
+sds2_msg.c
+sds_msg
+sds_msg.c
+sds.orig

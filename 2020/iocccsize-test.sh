@@ -39,14 +39,14 @@ while getopts 'bvt:' opt; do
 		usage
 	esac
 done
-shift $(($OPTIND - 1))
+shift $((OPTIND - 1))
 #if [ $# -lt 1 ]; then
 #        usage
 #fi
 
-make -f iocccsize.mk ${__build} all
+make -f iocccsize.mk "${__build}" all
 
-if [ ! -d test ]; then
+if [[ ! -d test ]]; then
 	mkdir test
 fi
 
@@ -54,7 +54,7 @@ get_wc()
 {
 	typeset file="$1"
 	typeset field="$2"
-	wc $file | sed -e's/^ *//; s/  */ /g' | cut -d' ' -f$field
+	wc "$file" | sed -e's/^ *//; s/  */ /g' | cut -d' ' -f"$field"
 }
 
 test_size()
@@ -64,19 +64,19 @@ test_size()
 	typeset gross_count
 	typeset got
 
-	got=$($__tool $__tool_args <$file 2>&1 >/dev/null)
+	got=$("$__tool" "$__tool_args" <"$file" 2>&1 >/dev/null)
 	if $__verbose ; then
-		gross_count=$(echo $got | cut -d' ' -f2)
-		bytes=$(get_wc $file 3 $filter)
-		if [ $gross_count != $bytes ]; then
+		gross_count=$(echo "$got" | cut -d' ' -f2)
+		bytes=$(get_wc "$file" 3)
+		if [[ $gross_count != "$bytes" ]]; then
 			echo "FAIL $file: got $gross_count != wc $bytes"
 			return
 		fi
 	else
-		got=$(echo $got | cut -d' ' -f1)
-		expect=$(echo $expect | cut -d' ' -f1)
+		got=$(echo "$got" | cut -d' ' -f1)
+		expect=$(echo "$expect" | cut -d' ' -f1)
 	fi
-	if [ "$expect" = "$got" ]; then
+	if [[ "$expect" = "$got" ]]; then
 		echo "-OK- $file: $got"
 	else
 		echo "FAIL $file: got $got != expect $expect"

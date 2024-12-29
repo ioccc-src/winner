@@ -1,0 +1,10 @@
+#
+# sort with: ../../bin/sgi.sh
+*.dSYM
+hague
+hague.alt
+hague.orig
+indent
+indent.c
+indent.o
+prog.orig

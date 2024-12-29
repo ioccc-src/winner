@@ -1,0 +1,21 @@
+{
+    "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
+    "author_JSON_format_version" : "1.1 2024-02-11",
+    "author_handle" : "Ora_Lassila",
+    "full_name" : "Ora Lassila",
+    "sort_word" : "lassila",
+    "location_code" : "US",
+    "email" : "ora.lassila@nokia.com",
+    "url" : "https://www.lassila.org",
+    "alt_url" : "https://www.linkedin.com/in/oralassila/",
+    "deprecated_twitter_handle" : null,
+    "mastodon" : "@ora@w3c.social",
+    "mastodon_url" : "https://w3c.social/@ora",
+    "github" : null,
+    "affiliation" : null,
+    "winning_entry_set" : [
+        {
+            "entry_id" : "1989_jar.2"
+        }
+    ]
+}

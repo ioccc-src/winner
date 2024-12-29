@@ -1,0 +1,12 @@
+#
+# sort with: ../../bin/sgi.sh
+*.dSYM
+*.pbm
+*.png
+deckmyn
+deckmyn.orig
+example_greensleeves
+indent
+indent.c
+indent.o
+prog.orig

@@ -1,0 +1,72 @@
+{
+    "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
+    "author_JSON_format_version" : "1.1 2024-02-11",
+    "author_handle" : "Yusuke_Endoh",
+    "full_name" : "Yusuke Endoh",
+    "sort_word" : "endoh",
+    "location_code" : "JP",
+    "email" : "mame@ruby-lang.org",
+    "url" : "https://mametter.hatenablog.com",
+    "alt_url" : null,
+    "deprecated_twitter_handle" : null,
+    "mastodon" : "@mame@ruby.social",
+    "mastodon_url" : "https://ruby.social/@mame",
+    "github" : "@mame",
+    "affiliation" : null,
+    "winning_entry_set" : [
+        {
+            "entry_id" : "2012_endoh1"
+        },
+        {
+            "entry_id" : "2012_endoh2"
+        },
+        {
+            "entry_id" : "2013_endoh1"
+        },
+        {
+            "entry_id" : "2013_endoh2"
+        },
+        {
+            "entry_id" : "2013_endoh3"
+        },
+        {
+            "entry_id" : "2013_endoh4"
+        },
+        {
+            "entry_id" : "2014_endoh1"
+        },
+        {
+            "entry_id" : "2014_endoh2"
+        },
+        {
+            "entry_id" : "2015_endoh1"
+        },
+        {
+            "entry_id" : "2015_endoh2"
+        },
+        {
+            "entry_id" : "2015_endoh3"
+        },
+        {
+            "entry_id" : "2015_endoh4"
+        },
+        {
+            "entry_id" : "2018_endoh1"
+        },
+        {
+            "entry_id" : "2018_endoh2"
+        },
+        {
+            "entry_id" : "2019_endoh"
+        },
+        {
+            "entry_id" : "2020_endoh1"
+        },
+        {
+            "entry_id" : "2020_endoh2"
+        },
+        {
+            "entry_id" : "2020_endoh3"
+        }
+    ]
+}

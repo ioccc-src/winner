@@ -1,0 +1,21 @@
+{
+    "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
+    "author_JSON_format_version" : "1.1 2024-02-11",
+    "author_handle" : "Nathan_Otterness",
+    "full_name" : "Nathan Otterness",
+    "sort_word" : "otterness",
+    "location_code" : "US",
+    "email" : "supersasquatch@gmail.com",
+    "url" : "https://www.nathanotterness.com",
+    "alt_url" : "https://www.nathanotterness.com/2021/04/obfuscated_c_2020.html",
+    "deprecated_twitter_handle" : null,
+    "mastodon" : null,
+    "mastodon_url" : null,
+    "github" : "@yalue",
+    "affiliation" : null,
+    "winning_entry_set" : [
+        {
+            "entry_id" : "2020_otterness"
+        }
+    ]
+}

@@ -1,0 +1,13 @@
+#
+# sort with: ../../bin/sgi.sh
+*.dSYM
+clock
+clock.alt
+clock.alt.c
+clock.c
+indent
+indent.c
+indent.o
+prog
+prog.alt
+prog.orig

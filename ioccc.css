@@ -1,77 +1,1145 @@
+/*
+ * normalize.css v8.0.1 | MIT License | https://github.com/necolas/normalize.css
+ * See: https://necolas.github.io/normalize.css/
+ * See: https://nicolasgallagher.com/about-normalize-css/
+ */
+
+/* Document ========================================================================== */
+
+/*
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+
+html {
+    line-height: 1.15; /* 1 */
+    -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+/* Sections ========================================================================== */
+
+/*
+ * Remove the margin in all browsers.
+ */
+
+body {
+    margin: 0;
+}
+
+/*
+ * Render the `main` element consistently in IE.
+ */
+
+main {
+    display: block;
+}
+
+/*
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+
+h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+}
+
+/* Grouping content ========================================================================== */
+
+/*
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+
+hr {
+    box-sizing: content-box; /* 1 */
+    height: 0; /* 1 */
+    overflow: visible; /* 2 */
+}
+
+/*
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+pre {
+    font-family: monospace, monospace; /* 1 */
+    font-size: 1em; /* 2 */
+}
+
+/* Text-level semantics ========================================================================== */
+
+/*
+ * Remove the gray background on active links in IE 10.
+ */
+
+a {
+    background-color: transparent;
+}
+
+/*
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+
+abbr[title] {
+    border-bottom: none; /* 1 */
+    text-decoration: underline dotted; /* 2 */
+}
+
+/*
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+
+b,
+strong {
+    font-weight: bolder;
+}
+
+/*
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+code,
+kbd,
+samp {
+    font-family: monospace, monospace; /* 1 */
+    font-size: 1em; /* 2 */
+}
+
+/*
+ * Add the correct font size in all browsers.
+ */
+
+small {
+    font-size: 80%;
+}
+
+/*
+ * Prevent sub and sup elements from affecting the line height in
+ * all browsers (initially).
+ */
+
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+/*
+ * Fix the problem where subscript text covers part of the characters in the
+ * line below it.
+ */
+sub {
+    line-height: 190%;
+    font-size: 5%;
+    bottom: -0.25em;
+}
+
+/*
+ * Fix the problem where superscript text covers part of the characters in the
+ * line above it.
+ */
+sup {
+    line-height: 190%;
+    font-size: 5%;
+    top: -0.5em;
+}
+
+/* Embedded content ========================================================================== */
+
+/*
+ * Remove the border on images inside links in IE 10.
+ */
+
+img {
+    border-style: none;
+}
+
+/* Forms ========================================================================== */
+
+/*
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+
+button,
+input,
+optgroup,
+select,
+textarea {
+    font-family: inherit; /* 1 */
+    font-size: 100%; /* 1 */
+    line-height: 1.15; /* 1 */
+    margin: 0; /* 2 */
+}
+
+/*
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+
+button,
+input { /* 1 */
+    overflow: visible;
+}
+
+/*
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+
+button,
+select { /* 1 */
+    text-transform: none;
+}
+
+/*
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+    -webkit-appearance: button;
+}
+
+/*
+ * Remove the inner border and padding in Firefox.
+ */
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+    border-style: none;
+    padding: 0;
+}
+
+/*
+ * Restore the focus styles unset by the previous rule.
+ */
+
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+    outline: 1px dotted ButtonText;
+}
+
+/*
+ * Correct the padding in Firefox.
+ */
+
+fieldset {
+    padding: 0.35em 0.75em 0.625em;
+}
+
+/*
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+
+legend {
+    box-sizing: border-box; /* 1 */
+    color: inherit; /* 2 */
+    display: table; /* 1 */
+    max-width: 100%; /* 1 */
+    padding: 0; /* 3 */
+    white-space: normal; /* 1 */
+}
+
+/*
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+
+progress {
+    vertical-align: baseline;
+}
+
+/*
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+
+textarea {
+    overflow: auto;
+}
+
+/*
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+
+[type="checkbox"],
+[type="radio"] {
+    box-sizing: border-box; /* 1 */
+    padding: 0; /* 2 */
+}
+
+/*
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+    height: auto;
+}
+
+/*
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+
+[type="search"] {
+    -webkit-appearance: textfield; /* 1 */
+    outline-offset: -2px; /* 2 */
+}
+
+/*
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+
+[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+/*
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+
+::-webkit-file-upload-button {
+    -webkit-appearance: button; /* 1 */
+    font: inherit; /* 2 */
+}
+
+/* Interactive ========================================================================== */
+
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+
+details {
+    display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+
+summary {
+    display: list-item;
+}
+
+/* Misc ========================================================================== */
+
+/*
+ * Add the correct display in IE 10+.
+ */
+
+template {
+    display: none;
+}
+
+/*
+ * Add the correct display in IE 10.
+ */
+
+[hidden] {
+    display: none;
+}
+
+/* End of normalize.css ========================================================================== */
+
+/**************************************/
+/* what follows is ioccc.css specific */
+/**************************************/
+
+/* Fonts ========================================================================================= */
+
+/* Fonts */
+.serif {
+    font-family: Georgia, serif;
+}
+
+.sans-serif {
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+.mono {
+    font-family: Menlo, Monaco, Consolas, "Lucida Console", "Courier New", monospace;
+}
+
 * {
     font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
 }
-body {
-    max-width: 50em;
-    margin: 0 auto;
-    color: #111;
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Georgia, serif;
 }
 
 pre, code {
-    font-family: Monaco, Courier New, monospace;
-    font-size: 12px;
+    font-family: Menlo, Monaco, Consolas, "Lucida Console", "Courier New", monospace;
 }
 
-h1 {
-    font-size: 40px;
-    font-weight: bold;
-    letter-spacing: -1px;
-    margin-bottom: -5px;
-}
-h1 code {
-    font-size: 40px;
+body {
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
-h2 {
-    color: rgb(43,105,145);
-    font-weight: bold;
-    margin-bottom: -5px;
-}
-h2 code {
-    font-size: 22px;
+/* Top level ===================================================================================== */
+
+/* Establish IOCCC defaults */
+
+* {
+    box-sizing: border-box;
+    background: whitesmoke;
 }
 
-h3 {
-    /* color: rgb(43,105,145); */
-    font-weight: bold;
-    margin-bottom: -5px;
+/* Remove hyphenation in line endings from most well known browsers */
+p {
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    -webkit-hyphens: none;
+    hyphens: manual;
+    color: black;
 }
-h3 code {
-    font-size: 16px;
+
+body {
+    margin: 0 auto;
+    padding: 10px;
+    hyphens: manual;
+    overflow-wrap: break-word;
+    text-rendering: optimizeLegibility;
+    font-kerning: normal;
+}
+
+pre, code {
+    margin: 1em 0;
+    hyphens: manual;
+    overflow-x: scroll;
+    overflow-y: scroll;
+    color: DarkGreen;
 }
 
 a {
+    outline-color: transparent;
+    text-decoration: none;
+    padding: 2px 1px 0;
+    font-weight: bold;
+}
+
+a:link {
+    color: blue;
+}
+
+a:visited {
+    color: purple;
+}
+
+a:focus, a:hover {
+    border-bottom: 1px solid;
+}
+
+a:active {
+    color: red;
+}
+
+/*
+ * To make a link non-bold, use: <a class="normal" href="url">link text</a>
+ */
+a.normal {
+    font-weight: normal;
+}
+
+img {
+    height: auto;
+    max-width: 95%;
+    position: relative;
+}
+
+/* IOCCC classes ================================================================================= */
+
+/* Left - class for placing things on the left side */
+.Left {
+    float: left;
+}
+
+/* Right - class for placing things on the left side */
+.Right {
+    float: right;
+}
+
+/* Disabled - class for making something as if the feature has been disabled */
+.Disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+    color: inherit;
+    display: inline-block;	/* For IE11/MS Edge bug */
+    pointer-events: none;
+    text-decoration: none;
+}
+
+/* Topbar ======================================================================================== */
+
+.outfit-font {
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+}
+
+.theader {
+    width: 100%;
+    min-height: 72px;
+    border-bottom: 1px solid #eee;
+}
+
+.topbar {
+    width: 100%;
+    background-color: whitesmoke;
+    height: 72px;
+}
+
+.container {
+    height: 72px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* Fixed Header Menu Issue */
+    max-width: 1140px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (min-width: 1025px) and (max-width: 1100px) {
+    .container {
+	max-width: 840px;
+    }
+}
+
+@media (min-width: 1101px) and (max-width: 1150px) {
+    .container {
+	max-width: 900px;
+    }
+}
+
+@media (min-width: 1151px) and (max-width: 1200px) {
+    .container {
+	max-width: 970px;
+    }
+}
+
+@media (min-width: 1201px) and (max-width: 1250px) {
+    .container {
+	max-width: 1000px;
+    }
+}
+
+@media (min-width: 1251px) and (max-width: 1300px) {
+    .container {
+	max-width: 1060px;
+    }
+}
+
+@media (min-width: 1301px) and (max-width: 1350px) {
+    .container {
+	max-width: 1100px;
+    }
+}
+
+.logo {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.logo-link {
+    color: #154c9f !important;
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 40px;
+    cursor: pointer;
+    text-decoration: none !important;
+    border-bottom: none !important;
+}
+
+.logo-link:hover {
+    opacity: 0.8;
+    transition: all .3s ease;
+}
+
+.topbar-items {
+    display: flex;
+    gap: 48px;
+}
+
+.topbar-items .item {
+    position: relative;
+    color: #154c9f;
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.item-header {
+    display: block;
+}
+
+.item-header:hover {
+    opacity: 0.8;
+transition: all .3s ease;
+}
+
+.topbar-items .sub-item {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    gap: 24px;
+    min-width: 200px;
+    padding: 24px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #154c9f;
+    text-align: left;
+    background-color: whitesmoke;
+    left: -100%;
+}
+
+.topbar-items .item:hover .sub-item{
+    display: flex !important;
+}
+
+.topbar-items .item .sub-item .outfit-font .sub-item-link {
+    color: #154c9f;
+    text-decoration: none;
+    border-bottom: none;
+}
+
+.sub-item-link:hover {
+    opacity: 0.8;
+    transition: all .3s ease;
+}
+
+.topbar-js-label {
+    display: block;
+    position: absolute;
+    top: 40px;
+    right: 20px;
+
+    color: #154c9f !important;
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 14px;
+
+    text-decoration: none;
+    border-bottom: none;
+}
+
+@media (scripting: enabled) {
+    .topbar-js-label {
+	display: none;
+    }
+}
+
+.topbar-js-label:hover {
+    border-bottom: none;
+}
+
+/* Header ======================================================================================== */
+
+/* Style the header */
+.header {
+    padding: 10px;
+    text-align: center;
+}
+
+/* Header headings */
+.header h1 {
+    font-size: 2.5em;
+}
+.header h2 {
+    font-size: 2em;
+}
+.header h3 {
+    font-size: 1.5em;
+}
+
+/* Top navigation bar ============================================================================ */
+
+/* Style the top navigation bar */
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+}
+
+/* Style the navbar links and paragraph text */
+.navbar a, p {
+    display: block;
+    color: lightblue;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change navbar link color on hover */
+.navbar a:focus, .navbar a:hover {
+    background-color: #ddd;
     color: blue;
     text-decoration: underline;
 }
-a:visited {
-    color: navy;
+
+/* Change navbar link after visit */
+.navbar a:visited {
+    color: #cO80c0;
 }
-a:hover {
+
+/* Change navbar link when active */
+.navbar a:active {
+    color: red;
+}
+
+/* No padding nor border around navbar images */
+.navbar img {
+    border: 0;
+    padding: 0;
+    height: auto;
+    max-width: 95%;
+    position: relative;
+}
+
+/* Content =========================================================================== */
+
+/* Style content */
+.content {
+    float: left;
+    width: 80%;
+    padding-left: 10px;
+}
+
+/* content code */
+.content code, pre {
+    font-weight: bold;
+    padding-top: 0;
+    padding-bottom: 0;
+    color: DarkGreen;
+    overflow-x: scroll;
+}
+
+/* content text */
+.content p {
+    padding-top: 0;
+    padding-bottom: 0;
+    color: black;
+}
+
+blockquote {
+    margin: 1em 0 1em 1.7em;
+    border-top: 4px solid darkgreen;
+    border-left: 4px solid darkgreen;
+    border-bottom: 4px solid darkgreen;
+    border-right: 4px solid darkgreen;
+    font-style: normal;
+    overflow-wrap: break-word;
+    width: fit-content;
+}
+
+/* This rule makes sure that text in <blockquote><p>..</p></blockquote> is
+ * formatted right. Note that this MUST BE HERE because otherwise the rule
+ * '.content p' could override it, if the formatting is ever changed there.
+ *
+ * ## Historical remarks
+ *
+ * We tried to change the colour and we went with dark green with the
+ * following rationale:
+ *
+ *	 0.	Purple should NOT be used as this is being used for visited links.
+ *	 1.	Blue should NOT be used as this is being used for non-visited links.
+ *
+ * Now with context this might be okay but links can also be in blockquotes
+ * so this alone is reason not to: even if there are underlines in most
+ * links. Additionally:
+ *
+ *	 2. Bold seems to be too strong, especially when used for with a bright
+ *	 colour.
+ *
+ * Bold is used in headings (h1, h2, ..). A bold heading is not too much
+ * text (as headings tend to be short single lines): one does not become
+ * too tired looking at TOO MANY SHOUTING BOLD LETTERS. It seems preferable
+ * to reserve bold for those headings.
+ *
+ * Conclusions: dark blue seems to be slightly better but unfortunately the
+ * headings (h1, h2, ...) is too similar so we use dark green with italics
+ * as the choice.
+ *
+ * ... However, it was hard to find a good shade of green that would stand out
+ * against the white background and other colours did not do so well. Thus,
+ * the blockquote border was changed from just on the left side to make it into
+ * a box and went from grey (or actually dark grey) to dark green.
+ */
+.content blockquote p, blockquote ol li {
+    color: black;
+    font-style: italic;
+}
+
+/* content links */
+.content a {
+    text-decoration: underline;
+}
+.content a:hover {
     text-decoration: underline;
 }
 
-pre {
-    border-radius: 10px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.3);
-    -webkit-box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.3);
-    -moz-box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.3);
-    border-width: 1px;
-    border-color: rgb(16,48,0);
-    border-style: solid;
-    padding: 0.6em;
-    padding-left: 1em;
-    margin-left: 5%;
-    margin-right: 8%;
-    background-color: rgb(16,48,0);
-    overflow: auto;
-    color: rgb(75,224,0);
+/* content main headings */
+.content h1 {
+    font-size: 2em;
+    color: DarkBlue;
+}
+.content h2 {
+    font-size: 1.5em;
+    color: DarkBlue;
+}
+.content h3 {
+    font-size: 1.25em;
+    color: DarkBlue;
+}
+.content h4, h5, h6 {
+    color: DarkBlue;
 }
 
-p, li {
-    font-size: 14px;
-    line-height: 18px;
+/* Guidelines / Rules change bar ============================================================================ */
+
+.leftbar {
+    border-left: 4px solid black;
 }
 
+
+/* Footer  ======================================================================================== */
+
+/* Style footer */
+.footer {
+    display: block;
+    clear: both;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-style: solid hidden hidden hidden;
+    text-decoration: none;
+}
+
+/* footer code */
+.footer code, pre {
+    font-weight: bold;
+    padding-top: 0;
+    padding-bottom: 0;
+    color: DarkGreen;
+}
+
+/* footer text */
+.footer p {
+    padding-top: 0;
+    padding-bottom: 0;
+    color: black;
+}
+
+/* footer links */
+.footer a {
+    text-decoration: none;
+}
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/* footer header */
+.footer h1, h2, h3, h4, h5, h6 {
+    color: DarkBlue;
+}
+
+/* Responsive Web Design ========================================================================== */
+
+/*
+ * Topbar CSS
+ *
+ * When the screen is > 1024 pixels, the topbar menu, with dropdown menus are used.
+ * When the screen is <= 1024 pixels, a "hamburger" icon is used.
+ *
+ * NOTE: inc/topbar.default.html implements:
+ *
+ * If JavaScript is enabled, then a "hamburger" icon is shown.
+ * If JavaScript is disabled, then a "Please Enable JavaScript" (as 3 center lines) is shown.
+ *
+ * If JavaScript is disabled, then the "Please Enable JavaScript" text is a link to a web page.
+ */
+
+/* Mobile menu section */
+@media screen and (max-width: 1024px) {
+    .topbar-items {
+	display: none;
+    }
+}
+
+.header-mobile-menu {
+    display: none;
+}
+
+@media screen and (max-width: 1024px) {
+    .header-mobile-menu {
+	display: block;
+    }
+}
+
+.mobile-header-button-label {
+    display: none;
+}
+
+@media screen and (max-width: 1024px) {
+    .mobile-header-button-label {
+	display: block;
+	position: absolute;
+	right: 64px;
+	color: #154c9f;
+	font-size: 16px;
+	font-weight: bold;
+	font-family: "Outfit", sans-serif;
+	font-optical-sizing: auto;
+	text-transform: capitalize;
+    }
+}
+
+.topbar-mobile-menu {
+    display: none;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    height: 48px;
+    width: 48px;
+    border: none;
+}
+
+@media (scripting: enabled) {
+    .topbar-mobile-menu {
+	display: block;
+    }
+}
+
+.hide-content {
+    display: none;
+}
+
+.topbar-mobile-panel {
+    background-color: #f5f5f5;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+.mobile-menu-item {
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 18px;
+    font-weight: 700;
+    color: #154c9f;
+}
+
+.mobile-submenu-item {
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 16px;
+    font-weight: 500;
+    color: #154c9f !important;
+    width: fit-content;
+}
+
+.mobile-menu-container {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding: 16px;
+}
+
+.mobile-menu-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.mobile-submenu-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-left: 16px;
+}
+
+.mobile-menu-icon {
+    color: #154c9f;
+    width: 24px;
+    height: 24px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Default: screen is > 968 pixels wide (> 984 w/padding) */
+
+/*
+ * When the screen is > 761 pixels (> 777 w/padding) AND <= 968 pixels wide (<= 984 w/padding)
+ *
+ * Use two columns but with slightly smaller header font sizes.
+ */
+@media screen and (max-width: 968px) {
+    body {
+	font-size: 1em;
+    }
+    .header {
+	padding: 0;
+	border: 0;
+	text-align: center;
+    }
+    .header h1 {
+	font-size: 2em;
+    }
+    .header h2 {
+	font-size: 1.75em;
+    }
+    .header h3 {
+	font-size: 1.5em;
+    }
+    .content, .footer {
+	padding: 2px;
+    }
+    .content h1 {
+	font-size: 1.75em;
+    }
+    .content h2 {
+	font-size: 1.5em;
+    }
+    .content h3 {
+	font-size: 1.25em;
+    }
+}
+
+/*
+ * When the screen is > 500 pixels (> 515 w/padding) AND <= 761 pixels wide (<= 777 w/padding)
+ *
+ * Make the two columns stack on top of each other instead of next to each other,
+ * and adjust the defaults for a somewhat smaller screen.
+ */
+@media screen and (max-width: 761px) {
+    body {
+	font-size: 1em;
+    }
+    .header {
+	padding: 0;
+	border: 0;
+	text-align: center;
+    }
+    .header h1 {
+	font-size: 1.5em;
+    }
+    .header h2 {
+	font-size: 1.25em;
+    }
+    .header h3 {
+	font-size: 1em;
+    }
+    .content, .footer {
+	width: 100%;
+	padding: 2px;
+    }
+    .content h1 {
+	font-size: 1.25em;
+    }
+    .content h2 {
+	font-size: 1.1em;
+    }
+    .content h3 {
+	font-size: 1em;
+    }
+}
+
+/*
+ * When the screen is <= 500 pixels wide: (<= 515 w/padding)
+ *
+ * Make the navigation links stack on top of each other instead of next to each other,
+ * and adjust the defaults for a small screen.
+ */
+@media screen and (max-width: 500px) {
+    body {
+	font-size: 0.9em;
+    }
+    .header {
+	padding: 0;
+	border: 0;
+	text-align: center;
+    }
+    .header h1 {
+	font-size: 1.25em;
+    }
+    .header h2 {
+	font-size: 1em;
+    }
+    .header h3 {
+	font-size: 0.9em;
+    }
+    .header img {
+	visibility: none;
+	width: 0;
+	border: 0;
+	padding: 0;
+	height: auto;
+	max-width: 95%;
+	position: relative;
+    }
+    .navbar a {
+	float: none;
+	width: 100%;
+	padding: 0;
+    }
+    .content h1 {
+	font-size: 1.25em;
+    }
+    .content h2 {
+	font-size: 1em;
+    }
+    .content h3 {
+	font-size: 0.9em;
+    }
+}
+
+/*
+ * When printing:
+ *
+ * These values are produced by pandoc when converting markdown to HTML
+ * when using the --standalone option.
+ */
+@media print {
+    html {
+	background-color: white;
+    }
+    body {
+	background-color: transparent;
+	color: black;
+	font-size: 12pt;
+    }
+    p, h2, h3 {
+	orphans: 3;
+	widows: 3;
+    }
+    h2, h3, h4 {
+	page-break-after: avoid;
+    }
+    /* IOCCC addition - print all as if they were not visited */
+    a:focus, a:hover, a:visited, a:active {
+	color: blue;
+    }
+    .navbar a, .navbar a:focus, .navbar a:hover, .navbar a:visited, .navbar a:active {
+	color: lightblue;
+    }
+}

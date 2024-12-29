@@ -1,5 +1,5 @@
 /*
- * 4 state, 2 symbol busy beaver, http://www.logique.jussieu.fr/~michel/ha.html#tm42
+ * 4 state, 2 symbol busy beaver, https://web.archive.org/web/20150926094245/http://www.logique.jussieu.fr/~michel/ha.html#tm42
  *
  * halts after 107 steps
  */

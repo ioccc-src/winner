@@ -109,7 +109,7 @@ o[C?j*f+a:a*f+j]+=*i*(8-J)+i[1]*J+4>>3;
 K(b){
 putchar(b<0?0:b>255?255:b);
 }
-main(D){
+main(int D,char**V){
 int a,l,L,M,g,N;
 s=D>1?256:1968;
 Q();

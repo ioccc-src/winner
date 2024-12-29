@@ -1,0 +1,42 @@
+file "ast.txt" => ["src.rb", "parse.rb", "ast-def.rb"] do |t|
+  ruby "parse.rb", t.prerequisites[0], t.name
+end
+
+file "seq.txt" => ["ast.txt", "serialize.rb"] do |t|
+  ruby "serialize.rb", t.prerequisites[0], t.name
+end
+
+file "alpha.txt" => ["seq.txt", "alpha.rb"] do |t|
+  ruby "alpha.rb", t.prerequisites[0], t.name
+end
+
+file "reg.txt" => ["alpha.txt", "register.rb"] do |t|
+  ruby "register.rb", t.prerequisites[0], t.name
+end
+
+file "raw.txt" => ["reg.txt", "assemble.rb", "machine.rb"] do |t|
+  ruby "assemble.rb", t.prerequisites[0], t.name
+end
+
+file "main.c" => ["raw.txt", "link.rb", "machine.rb", "vm.c"] do |t|
+  ruby "link.rb", t.prerequisites[0], t.name
+end
+
+file "prog.c" => ["main.c", "gen-prog.rb", "prog-tmpl.c"] do |t|
+  ruby "gen-prog.rb", t.prerequisites[0], t.name
+end
+
+file "prog" => "prog.c" do |t|
+  sh "gcc", "-Wall", "-W", "-Wextra", "-Wno-misleading-indentation", "-o", t.name, t.prerequisites[0]
+end
+
+task :test => :default do
+  sh "./prog > m.c && gcc -Wall -W -Wextra -o m m.c"
+  sh "./m ABCDEabcde0123456789 | ruby qr-png.rb && zbarimg -q t.png"
+  sh "./m | ruby qr-png.rb && zbarimg -q t.png > t.c"
+  sh "echo -n QR-Code: > t2.c && cat m.c >> t2.c && diff t.c t2.c && echo && echo OK && echo"
+  sh "cat prog.c | ./iocccsize -i; wc -c prog.c"
+  sh "cat m.c | ./iocccsize -i; wc -c m.c"
+end
+
+task :default => "prog"

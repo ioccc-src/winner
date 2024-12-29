@@ -1,0 +1,16 @@
+#
+# sort with: ../../bin/sgi.sh
+*.dSYM
+builddisk.bsd
+builddisk.v6
+empty.fs.bz2
+indent
+indent.c
+indent.o
+prog
+prog.orig
+rk05.bsd.fs
+rk05.v6.fs
+v0
+v6
+v6.img.bz2

@@ -1,0 +1,15 @@
+#
+# sort with: ../../bin/sgi.sh
+*.dSYM
+bmeyer
+bmeyer.orig
+glicbawls
+indent
+indent.c
+indent.o
+lavabus.glic
+lavabus.glic2
+lenna.pgm
+michael.glic
+new.pgm
+prog.orig

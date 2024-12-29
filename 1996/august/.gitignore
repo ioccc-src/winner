@@ -1,0 +1,14 @@
+#
+# sort with: ../../bin/sgi.sh
+*.dSYM
+august
+august.oc
+august.oo
+august.orig
+fac.oo
+indent
+indent.c
+indent.o
+parse.oo
+prog.orig
+test.oo

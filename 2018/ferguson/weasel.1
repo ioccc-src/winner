@@ -1,10 +1,10 @@
-.TH weasel 1 "20 February 2018" "weasel" "IOCCC 2018"
+.TH weasel 1 "15 February 2023" "weasel" "IOCCC 2018"
 .SH NAME
 weasel \- The IOCCC 2018 Implementation of Richard Dawkins's Weasel program
 .SH SYNOPSIS
 \fBweasel\fP [\fI\-r<rate>\fP] [\fI\-m\fP] [\fI\-q\fP] [\fI<chromosomal string>\fP]
 .PP
-\fBweasel\-simple\fP [\fI\-r<rate>\fP] [\fI\-m\fP] [\fI\-q\fP] [\fI<chromosomal string>\fP]
+\fBweasel.alt\fP [\fI\-r<rate>\fP] [\fI\-m\fP] [\fI\-q\fP] [\fI<chromosomal string>\fP]
 .SH DESCRIPTION
 \fBweasel\fP is an obfuscated implementation of Richard Dawkins' \fIWeasel program\fP.
 According to Wikipedia in chapter three of his book \fIThe Blind Watchmaker\fP Dawkins wrote:
@@ -28,7 +28,7 @@ has several additions: \fBtwo Easter eggs,\fP a \fBquiet output mode,\fP
 an \fBoption to change the mutation rate\fP as well as the ability to
 \fBspecify the chromosomal string.\fP
 Furthermore the keyboard isn't as limited as Dawkins's implementation.
-The \fBweasel\-simple\fP keyboard is a more limited keyboard but not
+The \fBweasel.alt\fP keyboard is a more limited keyboard but not
 as limited as Dawkins's Weasel program keyboard.
 .SH OPTIONS
 .PP
@@ -135,40 +135,6 @@ was disabled as above). Observe that here the \fB-r5-q\fP doesn't prevent the
 quiet output from being enabled; on the other hand the options
 \fB-r5- -q -- -r10\fP would!
 .RE
-.SH FILES
-\fI/usr/src/weasel/weasel.c\fP
-.RS
-The source code to the \fBweasel\fP program.
-.RE
-.PP
-\fI/usr/src/weasel/weasel\-simple.c\fP
-.RS
-The source code to the \fBweasel-simple\fP program.
-.RE
-.PP
-\fI/usr/src/weasel/Makefile\fP
-.RS
-The Makefile to compile the source code should you wish to compile the
-source code files.
-.RE
-.PP
-\fI/usr/src/weasel/test.sh\fP
-.RS
-A test script that demonstrates the weasel program (this script is used
-by \fBmake test\fP) by reading in strings, one at a time, and invoking
-the program with that string as the target chromosome. See the
-\fIhint.text\fP or \fIhint.html\fP for more details on using this script.
-.RE
-.PP
-\fI/usr/src/weasel/test-strings.txt\fP
-.RS
-The data file the \fItest.sh\fP script reads strings from.
-.RE
-.PP
-\fI/usr/share/doc/weasel/weasel.html\fP, \fI/usr/share/doc/weasel/weasel.markdown\fP
-.RS
-More detailed documentation.
-.RE
 .SH HINTS
 The IOCCC judges in 2018 asked the following in the guidelines:
 .RS
@@ -187,6 +153,6 @@ find it!
 .PP
 <\fBhttps://en.wikipedia.org/wiki/Weasel_program\fP>
 .PP
-<\fBhttp://www.doc.ic.ac.uk/~nd/surprise_96/journal/vol1/hmw/article1.html\fP>
+<\fBhttps://web.archive.org/web/20180308131613/http://www.doc.ic.ac.uk/~nd/surprise_96/journal/vol1/hmw/article1.html\fP>
 .SH AUTHOR
 Cody Boone Ferguson <\fBweasel@xexyl.net\fP>

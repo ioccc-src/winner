@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta charset="utf-8">
+<title>
+Hibachi - Form Processing Example in PHP
+</title>
+<meta name="description" content="Form Processing Example in PHP">
+<meta name="keywords" content="IOCCC, 2004/hibachi, from, PHP">
+</head>
+<body style="background-image: url(../../Img/hot-coal-edge-110-indent.png); padding: 0 0 0 10%;">
+
+<h2>Form Processing Example in PHP</h2>
+
+<p>This example takes the output of a form POST and reformats it from
+its encoded format into human readable output suitable for sending 
+by email.
+</p>
+
+<hr style="width:10%;text-align:left;margin-left:0">
+
+<form method="POST" action="sendform.php">
+<table style="border-spacing: 0; padding: 0; margin-right:auto;">
+<tr style="vertical-align: top;">
+	<td style="text-align: right;">
+		Who am I?
+	</td>
+	<td>
+		<input name="who" value="Snert" size="24">
+	</td>
+</tr>
+<tr style="vertical-align: top;">
+	<td style="text-align: right;">
+		What am I?
+	</td>
+	<td>
+		<input name="what" value="A sick puppy" size="24">
+	</td>
+</tr>
+<tr style="vertical-align: top;">
+	<td style="text-align: right;">
+		Where am I?
+	</td>
+	<td>
+		<textarea rows="4" cols="20" name="where" wrap="hard">I live in the south of France now.</textarea>
+	</td>
+</tr>
+<tr style="vertical-align: top;">
+	<td>
+		&nbsp;
+	</td>
+	<td>
+		<input type="submit" value="SEND">
+	</td>
+</tr>
+</table>
+</form>
+
+<hr style="width:10%;text-align:left;margin-left:0">
+
+<h3>The above PHP will NOT work on on www.ioccc.org, Sorry!</h3>
+
+<hr style="width:10%;text-align:left;margin-left:0">
+
+<a href="../../../../index.html">Return to 2004/hibachi</a>
+
+</body>
+</html>

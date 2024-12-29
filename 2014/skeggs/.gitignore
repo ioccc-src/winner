@@ -1,0 +1,13 @@
+#
+# sort with: ../../bin/sgi.sh
+*.dSYM
+err
+indent
+indent.c
+indent.o
+prog
+prog.orig
+static_assert
+t.c
+thread_local
+volatile

@@ -1,0 +1,11 @@
+#
+# sort with: ../../bin/sgi.sh
+*.dSYM
+indent
+indent.c
+indent.o
+ioccc.html
+ioccc.json
+output.html
+prog
+prog.orig

@@ -1,11 +1,13 @@
-/* This will imperfectly:
- 
-   (1)	Test if terminal supports the features Snake uses.
-   (2)	Report terminal (and playing) size(s).
-   (3)	Estimates the minimum number of columns to play unhindered (based on the
- 	size, max size and growth rate).
-   (4)	Reports the max size of the Snake and the number of bugs required to
- 	reach that size (doesn't use shedding).
+/* ioccc/2020/ferguson1 - Snake terminal testing utility
+ *
+ * This will imperfectly:
+ *
+ * (0)	Test if terminal supports the features Snake uses.
+ * (1)	Report terminal (and playing) size(s).
+ * (2)	Estimates the minimum number of columns to play unhindered (based on the
+ *      size, max size and growth rate).
+ * (3)	Reports the max size of the Snake and the number of bugs required to
+ *	reach that size but doesn't use shedding.
  */
 
 #include <curses.h>
@@ -84,7 +86,7 @@ int main(void)
     {
 	i[caps].sup = tigetstr(caps[i].caps);
 	/* tigetstr() returns (char *)-1 if the capability name isn't
-	 * recognised; check for this before suggesting it's supported: */
+	 * recognised; check for this before suggesting it's (un)?supported: */
 	if (caps[i].sup == (char *)-1)
 	    caps[i].sup = NULL;
 	if (!caps[i].sup) ++k;
@@ -119,10 +121,10 @@ int main(void)
 
     rows = 14 + b(Y)*2 + a(y)*2 + a(x)*2 + b(N);
     if (x < (int)rows + 1) ++k;
-    printf("at least %zu columns recommended for snake size %-5zu (is %d)\n", rows+1,Y, x);
+    printf("at least %zu columns (currently %d) recommended for snake size %-5zu\n", rows+1,x, Y);
 
     rows = 14 + b(K)*2 + a(y)*2 + a(x)*2 + b(c(K,X));
-    printf("at least %zu columns recommended for snake size %-5zu (is %d)\n\n", rows + 1, K, x);
+    printf("at least %zu columns (currently %d) recommended for capped snake size %-5zu\n\n", rows + 1,x, K);
 
 
     if (!k)

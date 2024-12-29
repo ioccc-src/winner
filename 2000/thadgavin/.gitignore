@@ -1,0 +1,12 @@
+#
+# sort with: ../../bin/sgi.sh
+*.dSYM
+indent
+indent.c
+indent.o
+prog.orig
+thadgavin
+thadgavin.alt
+thadgavin.alt_sdl
+thadgavin.orig
+thadgavin_sdl

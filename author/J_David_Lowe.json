@@ -1,0 +1,36 @@
+{
+    "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
+    "author_JSON_format_version" : "1.1 2024-02-11",
+    "author_handle" : "J_David_Lowe",
+    "full_name" : "J. David Lowe",
+    "sort_word" : "lowe",
+    "location_code" : "US",
+    "email" : "j.david.lowe@gmail.com",
+    "url" : "https://github.com/dlowe",
+    "alt_url" : null,
+    "deprecated_twitter_handle" : null,
+    "mastodon" : null,
+    "mastodon_url" : null,
+    "github" : "@dlowe",
+    "affiliation" : null,
+    "winning_entry_set" : [
+        {
+            "entry_id" : "1998_dlowe"
+        },
+        {
+            "entry_id" : "1998_dloweneil"
+        },
+        {
+            "entry_id" : "2000_dlowe"
+        },
+        {
+            "entry_id" : "2011_dlowe"
+        },
+        {
+            "entry_id" : "2012_dlowe"
+        },
+        {
+            "entry_id" : "2013_dlowe"
+        }
+    ]
+}

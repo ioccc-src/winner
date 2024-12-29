@@ -1,0 +1,21 @@
+{
+    "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
+    "author_JSON_format_version" : "1.1 2024-02-11",
+    "author_handle" : "Albert_van_der_Horst",
+    "full_name" : "Albert van der Horst",
+    "sort_word" : "horst",
+    "location_code" : "NL",
+    "email" : "albert@spenarnc.xs4all.nl",
+    "url" : "https://home.hccnet.nl/a.w.m.van.der.horst/",
+    "alt_url" : null,
+    "deprecated_twitter_handle" : null,
+    "mastodon" : null,
+    "mastodon_url" : null,
+    "github" : null,
+    "affiliation" : null,
+    "winning_entry_set" : [
+        {
+            "entry_id" : "1992_albert"
+        }
+    ]
+}

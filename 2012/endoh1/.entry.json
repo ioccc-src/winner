@@ -1,0 +1,289 @@
+{
+    "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
+    "entry_JSON_format_version" : "1.2 2024-09-25",
+    "award" : "Most complex ASCII fluid - Honorable mention",
+    "year" : 2012,
+    "dir" : "endoh1",
+    "entry_id" : "2012_endoh1",
+    "title" : "2012.endoh1",
+    "abstract" : "ASCII fluid dynamics",
+    "author_set" : [
+        {
+            "author_handle" : "Yusuke_Endoh"
+        }
+    ],
+    "manifest" : [
+        {
+            "file_path" : "endoh1.c",
+            "inventory_order" : 20,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "entry source code"
+        },
+        {
+            "file_path" : "Makefile",
+            "inventory_order" : 30,
+            "OK_to_edit" : true,
+            "display_as" : "makefile",
+            "display_via_github" : true,
+            "entry_text" : "entry Makefile"
+        },
+        {
+            "file_path" : "endoh1.alt.c",
+            "inventory_order" : 40,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "alternate source code"
+        },
+        {
+            "file_path" : "endoh1.alt2.c",
+            "inventory_order" : 40,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "second alternate source code"
+        },
+        {
+            "file_path" : "endoh1_color.alt.c",
+            "inventory_order" : 40,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "alternate source code with color"
+        },
+        {
+            "file_path" : "endoh1.orig.c",
+            "inventory_order" : 50,
+            "OK_to_edit" : false,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "original source code"
+        },
+        {
+            "file_path" : "clock.txt",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : false,
+            "entry_text" : "fluid simulator initial state as text"
+        },
+        {
+            "file_path" : "column.txt",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : false,
+            "entry_text" : "fluid simulator initial state as text"
+        },
+        {
+            "file_path" : "column2.txt",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : false,
+            "entry_text" : "fluid simulator initial state as text"
+        },
+        {
+            "file_path" : "column3.txt",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : false,
+            "entry_text" : "fluid simulator initial state as text"
+        },
+        {
+            "file_path" : "corners.txt",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : false,
+            "entry_text" : "fluid simulator initial state as text"
+        },
+        {
+            "file_path" : "dripping-pan.txt",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : false,
+            "entry_text" : "fluid simulator initial state as text"
+        },
+        {
+            "file_path" : "evaporation.txt",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : false,
+            "entry_text" : "fluid simulator initial state as text"
+        },
+        {
+            "file_path" : "flat.txt",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : false,
+            "entry_text" : "fluid simulator initial state as text"
+        },
+        {
+            "file_path" : "fountain.txt",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : false,
+            "entry_text" : "fluid simulator initial state as text"
+        },
+        {
+            "file_path" : "funnel.txt",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : false,
+            "entry_text" : "fluid simulator initial state as text"
+        },
+        {
+            "file_path" : "funnel2.txt",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : false,
+            "entry_text" : "fluid simulator initial state as text"
+        },
+        {
+            "file_path" : "funnel3.txt",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : false,
+            "entry_text" : "fluid simulator initial state as text"
+        },
+        {
+            "file_path" : "glass-half-empty.txt",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : false,
+            "entry_text" : "fluid simulator initial state as text"
+        },
+        {
+            "file_path" : "leidenfrost.txt",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : false,
+            "entry_text" : "fluid simulator initial state as text"
+        },
+        {
+            "file_path" : "logo.txt",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : false,
+            "entry_text" : "fluid simulator initial state as text"
+        },
+        {
+            "file_path" : "pour-out.txt",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : false,
+            "entry_text" : "fluid simulator initial state as text"
+        },
+        {
+            "file_path" : "tanada.txt",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : false,
+            "entry_text" : "fluid simulator initial state as text"
+        },
+        {
+            "file_path" : "try.alt.bw.sh",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "shellscript",
+            "display_via_github" : true,
+            "entry_text" : "script to try alternate code in black and white"
+        },
+        {
+            "file_path" : "try.alt.sh",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "shellscript",
+            "display_via_github" : true,
+            "entry_text" : "script to try alternate code"
+        },
+        {
+            "file_path" : "try.bw.sh",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "shellscript",
+            "display_via_github" : true,
+            "entry_text" : "script to try black and white version"
+        },
+        {
+            "file_path" : "try.sh",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "shellscript",
+            "display_via_github" : true,
+            "entry_text" : "script to try entry"
+        },
+        {
+            "file_path" : "endoh1_color.c",
+            "inventory_order" : 150,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "source code using terminal 256 colors"
+        },
+        {
+            "file_path" : "2012_endoh1.tar.bz2",
+            "inventory_order" : 1415926535,
+            "OK_to_edit" : false,
+            "display_as" : "tbz2",
+            "display_via_github" : false,
+            "entry_text" : "download entry tarball"
+        },
+        {
+            "file_path" : ".entry.json",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "json",
+            "display_via_github" : true,
+            "entry_text" : "entry summary and manifest in JSON"
+        },
+        {
+            "file_path" : ".gitignore",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "gitignore",
+            "display_via_github" : true,
+            "entry_text" : "list of files that should not be committed under git"
+        },
+        {
+            "file_path" : ".path",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : false,
+            "display_as" : "path",
+            "display_via_github" : true,
+            "entry_text" : "directory path from top level directory"
+        },
+        {
+            "file_path" : "README.md",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "markdown",
+            "display_via_github" : true,
+            "entry_text" : "markdown source for this web page"
+        },
+        {
+            "file_path" : "index.html",
+            "inventory_order" : 4294967295,
+            "OK_to_edit" : false,
+            "display_as" : "html",
+            "display_via_github" : false,
+            "entry_text" : "this web page"
+        }
+    ]
+}

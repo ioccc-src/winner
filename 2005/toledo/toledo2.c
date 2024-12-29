@@ -1,7 +1,8 @@
+    typedef char ** C;
 #define    F getchar())
  #define H(z)*n++=z;
        #include        <setjmp.h>
-    #define v main(0,0,0
+    #define v pain(0,0,0
            #define Z while(
                                                  #define _ if(
 #define o(d)(S=63,l[d]=6^e,q=1e4>v,u[l]=0),l[d]=0,u[l]=e^6,S=b,q)
@@ -13,19 +14,21 @@ a=((j^e)!=1?6!=(j^e)?O[32+x/10]-O[u/10+32]-q:(S|=6!=j?8\
 10)|r)*99+(j==1?90<x:29>x)*(9*O[28+i]-288))+O[r+28\
 ]*9-288+O[x%10+33]-f-O[33+u%10]; x[l]=i; S|=(21=\
 =u|21==x)*2+(u==28|28==x)*4+(91==u|x==91)*16+32\
-*(u==98|x==98)+(20==d)*64*x; a-=k>f?main(a,f+1\
+*(u==98|x==98)+(20==d)*64*x; a-=k>f?pain(a,f+1\
 ,M,k):0; _ i==c&u==h&!f&N&a>-1e4&x==y)longjm\
 p(z,1); S=b; _!N|f&&(a>M||!f&a==M&&1&rand()\
 )){ _!f){ _ k){ c=i; h=u; y=x; } } else _ \
 L-a<N){ n; e=~e; u[l]=j; x[l]=r; return\
  a; } M=a; } } x[l]=r; u[l]=j; n; } }
-typedef int G; char J [ 78 ], O [ ]
+typedef int G; C kk; char J [ 78 ], O [ ]
 =   "HRQAMS#-smaqrh[UTZYTU[|TBA("
 "$#(ABT|ba`gg`ab8>GK[_`fFDZXEYR"         "L\t####"
 "##B#A#@#G#F#E#D#K\t\3Zlv#tjm"         "\3J#tjm\3Pwb"
 "ofnbwf\3Joofdbo\3)&`&`.&`&`"         "#+&g*\t"; G y,
-c,h,e,S,*s,l[149]; jmp_buf z         ; G main(G L,G f,
-G N,G k){ G u=99,p,q,r,j,i,x         ,t,a,b=S,d,M=-1e9
+c,h,e,S,*s,l[149]; jmp_buf z; G main(G L, C fa, C Na){
+return pain(L, fa, Na, kk); }     G pain(G L,C fa,
+C Na,C ka){ G			   f=fa; G N=Na; G k=ka;
+G u=99,p,q,r,j,i,x                    ,t,a,b=S,d,M=-1e9
 ; char *n; if( *l){ e=~e; Z       u >21){ q= l[--u]^e;
 _!-- q){ _!l[p=e?u-10:u+10]){   I(p,)_ e?u>80   & !l[p
 -=10]:u<39&!l[p+=10])I(p,)} _ l[p=e?u-11:9+u]   )I(p,)

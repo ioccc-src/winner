@@ -1,0 +1,79 @@
+name: Website issue
+description: Report a problem with the website
+title: "[Website] <title>"
+labels: ["website"]
+body:
+- type: checkboxes
+  attributes:
+    label: Is there an existing issue for this?
+    description: Please search to see if an issue already exists for the problem you're reporting.
+    options:
+    - label: I have searched for existing issues and did not find anything like this
+      required: true
+- type: textarea
+  attributes:
+    label: Describe the problem
+    description: Please describe the issue that you have with the website, as best you can (the more details you provide the better).
+  validations:
+    required: true
+
+- type: textarea
+  attributes:
+    label: Screenshots
+    description: |
+       Do you have any **relevant** screenshots? This can be **EXTREMELY** helpful, if you do.
+
+       Tip: you can attach files by clicking the text area to highlight it and then click the link that says paste, drop or click to add files.
+  validations:
+    required: false
+
+- type: textarea
+  attributes:
+    label: What you expect
+    description: |
+        Please describe what you think it should be instead and why (the more details you provide the better). If you have images or other files that will help explain what you're getting at, this can also be **EXTREMELY** helpful.
+
+        Tip: you can attach files by clicking the text area to highlight it and then click the link that says paste, drop or click to add files.
+  validations:
+    required: true
+- type: textarea
+  attributes:
+    label: Relevant links
+    description: Please provide a list of **relevant** links.
+  validations:
+    required: true
+- type: textarea
+  attributes:
+    label: Environment
+    description: |
+      Example:
+        - **OS**: macOS Sonoma 14.5
+        - **Device**: MacBook Pro M1
+        - **Browser**: Safari 17.5 (19618.2.12.11.6)
+
+        **PLEASE** provide **AT** **LEAST** the above items. If you have the **SAME** problem with more than one device please list the above for **ALL** **RELEVANT** **devices** with **any** **relevant** **context**.
+    value: |
+        - OS:
+        - Device:
+        - Browser:
+    render: markdown
+  validations:
+    required: true
+- type: checkboxes
+  attributes:
+    label: Do you have JavaScript enabled?
+    description: Please let us know if you have JavaScript enabled or not, as this might be relevant in some cases.
+    options:
+    - label: JavaScript enabled?
+      required: true
+
+- type: textarea
+  attributes:
+    label: Anything else?
+    description: |
+      Do you have any additional context or information? Do you have any browser plug-ins that might be causing a problem? Please let us know!
+
+      Tip: you can attach files by clicking the text area to highlight it and then click the link that says paste, drop or click to add files.
+  validations:
+    required: false
+

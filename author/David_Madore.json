@@ -1,0 +1,21 @@
+{
+    "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
+    "author_JSON_format_version" : "1.1 2024-02-11",
+    "author_handle" : "David_Madore",
+    "full_name" : "David Madore",
+    "sort_word" : "madore",
+    "location_code" : "FR",
+    "email" : "david+alexander@madore.org",
+    "url" : "http://www.madore.org/~david/",
+    "alt_url" : null,
+    "deprecated_twitter_handle" : null,
+    "mastodon" : null,
+    "mastodon_url" : null,
+    "github" : null,
+    "affiliation" : null,
+    "winning_entry_set" : [
+        {
+            "entry_id" : "2012_grothe"
+        }
+    ]
+}

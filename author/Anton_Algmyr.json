@@ -1,0 +1,21 @@
+{
+    "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
+    "author_JSON_format_version" : "1.1 2024-02-11",
+    "author_handle" : "Anton_Algmyr",
+    "full_name" : "Anton \u00c4lgmyr",
+    "sort_word" : "algmyr",
+    "location_code" : "SE",
+    "email" : "algmyr@student.chalmers.se",
+    "url" : null,
+    "alt_url" : null,
+    "deprecated_twitter_handle" : "@aalgmyr",
+    "mastodon" : null,
+    "mastodon_url" : null,
+    "github" : null,
+    "affiliation" : null,
+    "winning_entry_set" : [
+        {
+            "entry_id" : "2018_algmyr"
+        }
+    ]
+}

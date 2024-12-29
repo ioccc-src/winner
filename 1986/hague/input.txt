@@ -1,0 +1,3 @@
+IOCCC
+International Obfuscated C Code Contest
+Jim Hague

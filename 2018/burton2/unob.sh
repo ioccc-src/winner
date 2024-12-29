@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 # unob is a proof-of-concept script.
 # Prior to tac, scripting the layout of C code was intractable.
@@ -8,9 +8,9 @@
 # an automated process.  Or just enjoy a significant help in
 # reading obfuscated C code!
 
-: ${PROG:=./prog}  # PROG=tac ./unob.sh prog.c
-: ${KW:=c11}       # KW=ioccc.kw.freq ./unob.sh prog.c
-: ${DEF:=}         # DEF="-DW=\\\"kandr2\\\" -DU=\\\"usage\ string\\\"" ./unob.sh -p prog.c
+: "${PROG:=./prog}"  # PROG=tac ./unob.sh prog.c
+: "${KW:=c11}"       # KW=ioccc.kw.freq ./unob.sh prog.c
+: "${DEF:=}"         # DEF="-DW=\\\"kandr2\\\" -DU=\\\"usage\ string\\\"" ./unob.sh -p prog.c
 
 # optionally preprocess up to 3 times to handle #ifdef X #define Y
 # unob prog.c			# nonce
@@ -20,34 +20,41 @@
 # unob -p -p -p -p prog.c	# yer out
 
 function pp {
-    cpp2=cat
-    cpp3=cat
-    if [ "x$1" == "x-p" ]; then
+    cpp2="cat"
+    cpp3="cat"
+    if [[ "$1" == "-p" ]]; then
 	shift
-	if [ "x$1" == "x-p" ]; then
+	if [[ "$1" == "-p" ]]; then
 	    cpp2="cpp -E"
 	    shift
 	fi
-	if [ "x$1" == "x-p" ]; then
+	if [[ "$1" == "-p" ]]; then
 	    cpp3="cpp -E"
 	    shift
 	fi
-	cat $* |
+	cat "$@" |
 	  sed 's/# *include/##include/' |
 	  eval cpp -E "$DEF" |
-	  eval $cpp2 |
-	  eval $cpp3 |
+	  eval "$cpp2" |
+	  eval "$cpp3" |
 	  sed 's/^#[^#].*$//' |
 	  sed 's/##inc/#inc/'
     else
-	cat $*
+	cat "$@"
     fi
 }
 
+# For SC2016, we do want to single quote the leading part of the script,
+# and we want $KW to be double quoted within the awk script.
+# Unfortunately, shellcheck does not understand the "'"-ing.
+#
+# SC2016 (info): Expressions don't expand in single quotes, use double quotes for that.
+# https://www.shellcheck.net/wiki/SC2016
+# shellcheck disable=SC2016
 script='
 BEGIN {
 	last=nl="\n";
-	f="'$KW'"; while(getline <f > 0) ++kw[$0]; close(f);
+	f="'"$KW"'"; while(getline <f > 0) ++kw[$0]; close(f);
 	if (length(kw) == 0) {
 		print "cannot find",f "; check KW environment variable" | "cat 1>&2"
 		exit
@@ -108,4 +115,4 @@ tern && /^:/	{ newline(); show($0); --tern; --n; next }
 { show($0) }
 '
 
-pp $* | $PROG -t | ./tokenfix | awk "$script" # sed 's/""//g'
+pp "$@" | "$PROG" -t | ./tokenfix.sh | awk "$script" # sed 's/""//g'

@@ -1,0 +1,16 @@
+#
+# sort with: ../../bin/sgi.sh
+*.dSYM
+fibonacci
+fibonacci.c
+indent
+indent.c
+indent.o
+mariano
+prog.orig
+sorter
+sorter.c
+theorem
+theorem_bkp
+theorem_bkp.c
+theorem.orig

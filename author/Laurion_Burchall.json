@@ -1,0 +1,21 @@
+{
+    "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
+    "author_JSON_format_version" : "1.1 2024-02-11",
+    "author_handle" : "Laurion_Burchall",
+    "full_name" : "Laurion Burchall",
+    "sort_word" : "burchall",
+    "location_code" : "US",
+    "email" : null,
+    "url" : "https://web.archive.org/web/19970619001904/http://www.netspace.org/users/ldb/",
+    "alt_url" : null,
+    "deprecated_twitter_handle" : null,
+    "mastodon" : null,
+    "mastodon_url" : null,
+    "github" : null,
+    "affiliation" : null,
+    "winning_entry_set" : [
+        {
+            "entry_id" : "1994_ldb"
+        }
+    ]
+}
