@@ -51,6 +51,19 @@ FAQ on "[how to enter the IOCCC](faq.html#enter)"
 for more information.
 
 
+# Follow IOCCC on Mastodon
+
+The [IOCCC uses Mastodon](https://fosstodon.org/@ioccc) for news updates,
+announcements, and for various other social media purposes.
+
+**Please follow the [IOCCC on Mastodon](https://fosstodon.org/@ioccc)**.
+
+For more information on
+<a rel="me" href="https://fosstodon.org/@ioccc">Mastodon</a>
+please see the
+FAQ on "[What is Mastodon and why does IOCCC use it?](faq.html#try_mastodon)".
+
+
 # Important Disclaimer
 
 IOCCC code is for **educational and entertainment purposes only**. We do **NOT** recommend installing any winning IOCCC entry code. Use code found the IOCCC repo and in the IOCCC web site **at your own risk!**
