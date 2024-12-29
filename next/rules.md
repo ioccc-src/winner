@@ -37,7 +37,9 @@ granted provided this this copyright and notice are included in its entirety
 and remains unaltered.  All other uses must receive prior permission in
 writing by [contacting the judges](../contact.html).
 
+
 Jump to: [top](#)
+
 
 <div id="rules_version">
 <div id="version">
@@ -45,16 +47,19 @@ Jump to: [top](#)
 </div>
 </div>
 
+
 Jump to: [top](#)
 
+
 <p class="leftbar">
-These [IOCCC rules](rules.html) are version **28.14 2024-12-07**.
+These [IOCCC rules](rules.html) are version **28.15 2024-12-28**.
 </p>
 
 **IMPORTANT**: Be sure to read the [IOCCC guidelines](guidelines.html).
 
 
 Jump to: [top](#)
+
 
 <div id="change_marks">
 ### Change marks
@@ -68,7 +73,9 @@ Most lines (we sometimes make mistakes) that were modified since the previous
 IOCCC start with a solid 4 pixel black left border (or, in the case of a code
 block or blockquote, just a vertical bar).
 
+
 Jump to: [top](#)
+
 
 <div id="obfuscate">
 # Obfuscate defined:
@@ -83,7 +90,9 @@ tr.v. -cated, -cating, -cates.
 &nbsp;&nbsp;&nbsp;&nbsp;[LLat. obfuscare, to darken : ob(intensive) + Lat. fuscare,<br>
 &nbsp;&nbsp;&nbsp;&nbsp;to darken &lt; fuscus, dark.] -obfuscation n. obfuscatory adj.
 
+
 Jump to: [top](#)
+
 
 <div id="goals">
 # Goals of the Contest
@@ -97,51 +106,58 @@ The goals of the IOCCC:
 *  To illustrate some of the subtleties of the C language.
 *  To provide a safe forum for poor C code. :-)
 
+
 Jump to: [top](#)
+
 
 <div id="dates">
 # Important IOCCC dates
 </div>
 
 <p class="leftbar">
-This IOCCC runs from **2024-MMM-DD HH:MM:SS UTC** to **202x-MMM-DD HH:MM:SS UTC**.<br>
-**XXX - date/time is TBD - XXX**
+This IOCCC runs from **2024-12-29 23:58:13.213455 UTC** to **2025-04-01 23:29:31.374143 UTC**.
 </p>
 
 <p class="leftbar">
-Until the start of this IOCCC, these [IOCCC rules](rules.html),
-[IOCCC guidelines](guidelines.html) and the [mkiocccentry
-toolkit](https://github.com/ioccc-src/mkiocccentry) should be considered
-provisional **BETA** versions and **may be adjusted _AT ANY TIME_**.
+This contest will enter the **[pending](../status.html#pending)** state on or about
+**2024-12-29 23:58:13.213455 UTC**.
 </p>
-
-When the IOCCC is open, the submission URL is:
-[https://submit.ioccc.org](https://submit.ioccc.org); at all other
-times that link is likely to be unresponsive.
-
-Please review our
-FAQ on "[how to enter the IOCCC](../faq.html#enter)"
-as that FAQ has import details on
-[how to register](register.html)
-as well as
-[how to upload your submission](submit.html) for the IOCCC.
 
 <p class="leftbar">
-The submit URL should be active on or slightly before **2024-MMM-DD HH:MM:SS UTC**.<br>
-**XXX - date/time is TBD - XXX**
+This contest will enter the **[open](../status.html#open)** state on **2025-01-31 23:19:17.130705 UTC**.
 </p>
 
-Please wait to submit your entries until after that time.
+<p class="leftbar">
+This contest will enter the **[judging](../status.html#judging)** state on **2025-04-01 23:29:31.374143 UTC**.
+</p>
 
-The official [IOCCC rules](rules.html) and [IOCCC guidelines](guidelines.html) will be
-available on the [official IOCCC website](../index.html) on or slightly before
-the start of this IOCCC. The `mkiocccentry` toolkit may be obtained at any time
-at the [report mkiocccentry bugs](https://github.com/ioccc-src/mkiocccentry).
+<p class="leftbar">
+**IMPORTANT NOTE**: Until the content enters the **[open](../status.html#open)** state, any or all
+of the above **dates and times may change**!
+</p>
 
-**IMPORTANT**: Please recheck on or after the start of this IOCCC to be sure you
-are using the correct versions of these items _before using the IOCCC
-submission URL_.
+<p class="leftbar">
+Those who [register](register.html) while the contest status is **[pending](../status.html#pending)**
+will receive email with their [submit server](https://submit.ioccc.org) **Username** and **Initial password**
+from an [IOCCC judge](../judges.html) shortly after the contest status becomes **[open](../status.html#open)**.
+</p>
 
+<p class="leftbar">
+Once an [IOCCC judge](../judges.html) emails you your **Username** and **Initial password**, you
+will have 72 hours to [change your submit server initial password](pw-change.html).
+If you do not change your **Initial password** in time, you will have to [re-register](register.html).
+</p>
+
+<p class="leftbar">
+Because it takes time (maybe even a few days) for an [IOCCC judge](../judges.html)
+to process your registration and email you your initial login and password,
+you should **MAKE SURE** you give yourself enough time before the contest closes.
+In other words, **DO NOT WAIT UNTIL THE FINAL DAYS** of the contest to register!
+The [IOCCC judges](../judges.html) are **NOT** responsible for delayed or lost email,
+nor for those who wait until the last minute to try to register!
+</p>
+
+<p class="leftbar">
 See the
 FAQ on "[obtaining and compiling the mkiocccentry tools](../faq.html#mkiocccentry)"
 and the
@@ -150,8 +166,11 @@ as that FAQ has import details on
 [how to register](register.html)
 as well as
 [how to upload your submission](submit.html) for the IOCCC.
+</p>
+
 
 Jump to: [top](#)
+
 
 <div id="rules">
 # IOCCC RULES
@@ -159,7 +178,9 @@ Jump to: [top](#)
 
 To help us with the volume of submissions, we ask that you follow these rules:
 
+
 Jump to: [top](#)
+
 
 <div id="rule0">
 ## Rule 0
@@ -169,7 +190,9 @@ Jump to: [top](#)
 Just as C starts at 0, so the IOCCC starts at [rule 0](#rule0).  :-)
 </p>
 
+
 Jump to: [top](#)
+
 
 <div id="rule1">
 ## Rule 1
@@ -177,7 +200,9 @@ Jump to: [top](#)
 
 Your submission must be a complete program.
 
+
 Jump to: [top](#)
+
 
 <div id="rule2">
 ## Rule 2
@@ -185,7 +210,9 @@ Jump to: [top](#)
 
 The size rule requires your submission to satisfy **BOTH** [Rule 2a](#rule2a) and [Rule 2b](#rule2b):
 
+
 Jump to: [top](#)
+
 
 <div id="rule2a">
 ## Rule 2a
@@ -226,7 +253,9 @@ as a command like argument to the `iocccsize(1)` tool. For example:
     ./iocccsize prog.c
 ```
 
+
 Jump to: [top](#)
+
 
 <div id="rule2b">
 ## Rule 2b
@@ -272,27 +301,111 @@ as a command like argument to the `iocccsize(1)` tool. For example:
     ./iocccsize prog.c
 ```
 
+
 Jump to: [top](#)
+
 
 <div id="rule3">
 ## Rule 3
 </div>
 
-Submissions should be performed using the instructions outlined in
-"[how to upload your submission](submit.html)".
-
-To submit to an open IOCCC, you must use the [IOCCC submit
-server](https://submit.ioccc.org/). Unless the IOCCC is open, that link will
-likely be unresponsive.
-
 <p class="leftbar">
-The submit URL should be active on or slightly before **2024-MMM-DD HH:MM:SS UTC**.<br>
-**XXX - date/time is TBD - XXX**
+You must [register](register.html) in order to submit your entry to the IOCCC.
+You may [register](register.html) while the contest is either
+**[pending](../status.html#pending)** or  **[open](../status.html#open)**.
 </p>
 
-**Please wait to submit** your entries until after that time.
+<p class="leftbar">
+See the
+FAQ on "[how to register and submit to the IOCCC](../faq.html#enter)"
+for instructions on registering and participating in the IOCCC, as the process has changed from previous years!
+</p>
+
+<p class="leftbar">
+When the contest is **[open](../status.html#open)**, an
+[IOCCC judge](../judges.html) will email you your [submit server](https://submit.ioccc.org)
+**Username** and **Initial password**.  This takes some time (maybe even a few days) for an
+[IOCCC judge](../judges.html) to process your registration and email you your
+initial login and password.
+</p>
+
+<p class="leftbar">
+Those who [register](register.html) while the contest status is **[pending](../status.html#pending)**
+will receive email with their [submit server](https://submit.ioccc.org) **Username** and **Initial password**
+from an [IOCCC judge](../judges.html) shortly after the contest status becomes **[open](../status.html#open)**.
+</p>
+
+<p class="leftbar">
+Once an [IOCCC judge](../judges.html) emails you your **Username** and **Initial password**, you
+will have 72 hours to [change your submit server initial password](pw-change.html).
+If you do not change your **Initial password** in time, you will have to [re-register](register.html).
+</p>
+
+<p class="leftbar">
+Because it takes time (maybe even a few days) for an [IOCCC judge](../judges.html)
+to process your registration and email you your initial login and password,
+you should **MAKE SURE** you give yourself enough time before the contest closes.
+In other words, **DO NOT WAIT UNTIL THE FINAL DAYS** of the contest to register!
+The [IOCCC judges](../judges.html) are **NOT** responsible for delayed or lost email,
+nor for those who wait until the last minute to try to register!
+</p>
+
+<p class="leftbar">
+For those who have [registered](register.html) and received by email, their
+[submit server](https://submit.ioccc.org) **Username** and **Initial password**
+from an [IOCCC judge](../judges.html), you may upload your submission to
+the [submit server](https://submit.ioccc.org) only while the
+contest **[open](../status.html#open)**.
+</p>
+
+<p class="leftbar">
+The [submit server](https://submit.ioccc.org), in accordance with [Rule 17](rules.html#rule17),
+places a limit of **3999971** octets on the size of your upload.
+</p>
+
+<p class="leftbar">
+You are **STRONGLY** advised to use the `mkiocccentry(1)` tool
+as found in the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry)
+to form the file to upload to the [submit server](https://submit.ioccc.org).
+</p>
+
+<p class="leftbar">
+See the
+FAQ on "[obtaining and compiling the mkiocccentry tools](../faq.html#mkiocccentry)"
+for more information about the `mkiocccentry(1)` tool.
+</p>
+
+<p class="leftbar">
+While the contest is **[open](../status.html#open)**, you may modify your previously
+uploaded submission by rebuilding your submission with the `mkiocccentry(1)` tool
+and then re-uploading it to the same slot no the [submit server](https://submit.ioccc.org).
+</p>
+
+<p class="leftbar">
+Once the contest enters the **[judging](../status.html#judging)** state, you will
+**NOT** be allowed to upload your submission files.
+</p>
+
+<p class="leftbar">
+The [submit server](https://submit.ioccc.org) will become active when the contest is **[open](../status.html#open)**.
+Until the contest status becomes **[open](../status.html#open)**,
+the [submit server](https://submit.ioccc.org) may be offline and/or unresponsive.
+</p>
+
+<p class="leftbar">
+See the
+FAQ on "[obtaining and compiling the mkiocccentry tools](../faq.html#mkiocccentry)"
+and the
+FAQ on "[how to enter the IOCCC](../faq.html#enter)"
+as that FAQ has import details on
+[how to register](register.html)
+as well as
+[how to upload your submission](submit.html) for the IOCCC.
+</p>
+
 
 Jump to: [top](#)
+
 
 <div id="rule4">
 ## Rule 4
@@ -318,7 +431,9 @@ the files accordingly.
 See also [Rule 5](#rule5), [Rule 18](#rule18) and [Rule 21](#rule21).
 </p>
 
+
 Jump to: [top](#)
+
 
 <div id="rule5">
 ## Rule 5
@@ -342,7 +457,9 @@ the `clobber` rule of your `Makefile` removes that copy in order to
 restore the contents if your submission to its original submission.
 </p>
 
+
 Jump to: [top](#)
+
 
 <div id="rule6">
 ## Rule 6
@@ -358,7 +475,9 @@ I am not a rule, I am a `free(void *human);` ‼️
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`}`
 </p>
 
+
 Jump to: [top](#)
+
 
 <div id="rule7">
 ## Rule 7
@@ -394,22 +513,30 @@ winning entries, unless of course you're the winner! :-)
 See also [Rule 5](#rule5), [Rule 18](#rule18) and [Rule 21](#rule21).
 </p>
 
+
 Jump to: [top](#)
+
 
 <div id="rule8">
 ## Rule 8
 </div>
 
 <p class="leftbar">
-Entries must be received prior to the end of this IOCCC which is **2024-MMM-DD HH:MM:SS UTC**.<br>
-**XXX - date/time is TBD - XXX**
+Entries must be received prior to close of the contest is **[open](../status.html#open)**.
+</p>
+
+<p class="leftbar">
+This contest is scheduled to open on **2025-01-31 23:19:17.130705 UTC**
+and close on **2025-04-01 23:29:31.374143 UTC**.
 </p>
 
 
 A confirmation of submission will be sent to the submitting email address
 before the close of the contest.
 
+
 Jump to: [top](#)
+
 
 <div id="rule9">
 ## Rule 9
@@ -421,7 +548,9 @@ Each person may submit up to and including **10.000000** (ten in base 10) entrie
 
 **Each submission _must be submitted separately_**.
 
+
 Jump to: [top](#)
+
 
 <div id="rule10">
 ## Rule 10
@@ -430,7 +559,9 @@ Jump to: [top](#)
 Entries requiring human interaction to be initially compiled **are not
 permitted**. However, see the [guidelines](guidelines.html).
 
+
 Jump to: [top](#)
+
 
 <div id="rule11">
 ## Rule 11
@@ -443,7 +574,9 @@ you expect on our test platforms. If your program needs special
 permissions you **MUST** document this fact, and explain why
 it is needed in your submissions `remarks.md` file.
 
+
 Jump to: [top](#)
+
 
 <div id="rule12">
 ## Rule 12
@@ -454,7 +587,9 @@ the opinion of the [judges](../judges.html), violates the rules will be disquali
 Submissions that attempt to abuse the rules **MUST** try to justify why
 their rule abuse is legal, in the `remarks.md` file.
 
+
 Jump to: [top](#)
+
 
 <div id="rule13">
 ## Rule 13
@@ -465,7 +600,9 @@ Any C source that fails to compile because of unescaped octets with
 the high bit set (octet value >= 128) **_might_** be rejected.
 </p>
 
+
 Jump to: [top](#)
+
 
 <div id="rule14">
 ## Rule 14
@@ -480,7 +617,9 @@ Please do **NOT** put trailing control-M's on remarks file lines.
 Please check to be sure, before submitting, that you have removed
 any control-M at the end of remark file lines.
 
+
 Jump to: [top](#)
+
 
 <div id="rule15">
 ## Rule 15
@@ -500,7 +639,9 @@ FAQ on "[how to register](../faq.html#register)"
 for details.
 </p>
 
+
 Jump to: [top](#)
+
 
 <div id="rule16">
 ## Rule 16
@@ -511,7 +652,9 @@ original submission**. Submissions that are similar to previous entries are
 discouraged. As we judge anonymously, submissions that have already
 been published may be disqualified.
 
+
 Jump to: [top](#)
+
 
 <div id="rule17">
 ## Rule 17
@@ -568,7 +711,9 @@ this rule! See the
 FAQ on "[obtaining the mkiocccentry toolkit](../faq.html#mkiocccentry)"
 for more details.
 
+
 Jump to: [top](#)
+
 
 ### Rule 17 - The COMPLEX details
 
@@ -793,7 +938,9 @@ do this **AFTER** the [contest status](../status.html) has changed to
 [open](../status.html#open).
 </p>
 
+
 Jump to: [top](#)
+
 
 <div id="rule18">
 ## Rule 18
@@ -810,7 +957,9 @@ you **MUST HAVE PERMISSION** from the owner(s) to submit their content.
 
 You **MUST NOT** submit anything that cannot be submitted under that license.
 
+
 Jump to: [top](#)
+
 
 <div id="rule19">
 ## Rule 19
@@ -831,7 +980,9 @@ Please see our FAQ "[remarks.md](../faq.html#remarks_md)" and the [IOCCC markdow
 guidelines](../markdown.html) for additional markdown guidance.
 </p>
 
+
 Jump to: [top](#)
+
 
 <div id="rule20">
 ## Rule 20
@@ -877,7 +1028,9 @@ Specification](https://en.wikipedia.org/wiki/Single_UNIX_Specification) are
 available in the `$PATH` search path.
 </p>
 
+
 Jump to: [top](#)
+
 
 <div id="rule21">
 ## Rule 21
@@ -893,7 +1046,9 @@ directory name or filename you create.
 See also [Rule 5](#rule5).
 </p>
 
+
 Jump to: [top](#)
+
 
 <div id="rule22">
 ## Rule 22
@@ -914,7 +1069,9 @@ for disqualification of your submission.
 
 Yes, Virginia, **WE REALLY MEAN IT!**
 
+
 Jump to: [top](#)
+
 
 <div id="rule23">
 ## Rule 23
@@ -922,7 +1079,9 @@ Jump to: [top](#)
 
 This prime rule number is reserved for future use.
 
+
 Jump to: [top](#)
+
 
 <div id="rule24">
 ## Rule 24
@@ -930,7 +1089,9 @@ Jump to: [top](#)
 
 Even though 24 is not prime, you should still see [Rule 23](#rule23).
 
+
 Jump to: [top](#)
+
 
 <div id="rule25">
 ## Rule 25
@@ -940,7 +1101,9 @@ Jump to: [top](#)
 The [IOCCC rule set](rules.html) needs more than 5^2 rules: see [Rule 26](#rule26).
 </p>
 
+
 Jump to: [top](#)
+
 
 <div id="rule26">
 ## Rule 26
@@ -954,7 +1117,9 @@ Jump to: [top](#)
 > "Mr. Jock, TV quiz PhD, bags few lynx."<br>
 > "abcdefg, hijklmnop, qrstu&v, wxy&z."
 
+
 Jump to: [top](#)
+
 
 <div id="rule27">
 ## Rule 27
@@ -964,7 +1129,9 @@ Jump to: [top](#)
 Unless otherwise needed, [Rule 27](#rule27) is reserved for something cubic.  :-)
 </p>
 
+
 Jump to: [top](#)
+
 
 <div id="rule28">
 ## Rule 28
@@ -975,7 +1142,9 @@ Jump to: [top](#)
 as we do **NOT** plan to have **496** rules. :-)
 </p>
 
+
 Jump to: [top](#)
+
 
 <div id="more-information">
 <div id="information">
@@ -1013,13 +1182,26 @@ should refresh the page **even if you do follow us**_.
 Check out the [Official IOCCC winner website](https://www.ioccc.org/index.html) in general.
 </p>
 
+<p class="leftbar">
+See the
+FAQ on "[obtaining and compiling the mkiocccentry tools](../faq.html#mkiocccentry)"
+and the
+FAQ on "[how to enter the IOCCC](../faq.html#enter)"
+as that FAQ has import details on
+[how to register](register.html)
+as well as
+[how to upload your submission](submit.html) for the IOCCC.
+</p>
+
+
 Jump to: [top](#)
+
 
 **Leonid A. Broukhis**<br>
 **chongo (Landon Curt Noll) `/\cc/\`**
 
 
-
 <hr style="width:10%;text-align:left;margin-left:0">
+
 
 Jump to: [top](#)

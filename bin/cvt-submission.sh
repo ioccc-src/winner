@@ -2193,7 +2193,7 @@ if [[ -z $NOOP ]]; then
 	if [[ -f $YYYY_DIR/remarks.md ]]; then
 	    cat "$YYYY_DIR/remarks.md" >> "$README_MD"
 	else
-	    echo "$X_3 - mo remarks.md file was found" >> "$README_MD"
+	    echo "$X_3 - no remarks.md file was found" >> "$README_MD"
 	fi
 	sed -e "s/$X_3-YEAR-$X_3/$YEAR_DIR/" "$TEMPLATE_README_MD_TAIL" >> "$README_MD"
     fi

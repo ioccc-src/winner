@@ -46,7 +46,7 @@ Jump to: [top](#)
 </div>
 
 <p class="leftbar">
-These [IOCCC guidelines](guidelines.html) are version **28.29 2024-12-27**.
+These [IOCCC guidelines](guidelines.html) are version **28.30 2024-12-28**.
 </p>
 
 **IMPORTANT**: Be **SURE** to read the [IOCCC rules](rules.html).
@@ -93,8 +93,25 @@ Jump to: [top](#)
 </div>
 
 <p class="leftbar">
-This IOCCC runs from **2024-MMM-DD HH:MM:SS UTC** to **YYYY-MMM-DD HH:MM:SS UTC**.<br>
-**XXX - date/time is TBD - XXX**
+This IOCCC runs from **2024-12-29 23:58:13.213455 UTC** to **2025-04-01 23:29:31.374143 UTC**.
+</p>
+
+<p class="leftbar">
+This contest will enter the **[pending](../status.html#pending)** state on or about
+**2024-12-29 23:58:13.213455 UTC**.
+</p>
+
+<p class="leftbar">
+This contest will enter the **[open](../status.html#open)** state on **2025-01-31 23:19:17.130705 UTC**.
+</p>
+
+<p class="leftbar">
+This contest will enter the **[judging](../status.html#judging)** state on **2025-04-01 23:29:31.374143 UTC**.
+</p>
+
+<p class="leftbar">
+**IMPORTANT NOTE**: Until the content enters the **[open](../status.html#open)** state, any or all
+of the above **dates and times may change**!
 </p>
 
 <p class="leftbar">
@@ -103,15 +120,18 @@ to be a **fun**ctional UTC time.  :-)
 </p>
 
 <p class="leftbar">
-Until the start of this IOCCC, the [IOCCC rules](rules.html),
+Until the contest status becomes **[open](../status.html#open)**,
+the [IOCCC rules](rules.html),
 [IOCCC guidelines](guidelines.html) and the tools in the
 [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry), should be
-considered provisional **BETA** versions and **may be adjusted _AT
-ANY TIME_**.</p>
+considered provisional **BETA** versions and **may be adjusted _AT ANY TIME_**
+before the contest status becomes **[open](../status.html#open)**.
+</p>
 
 <p class="leftbar">
-The submit URL should be active on or slightly before **2024-MMM-DD HH:MM:SS UTC**.<br>
-**XXX - date/time is TBD - XXX**
+You must [register](register.html) in order to submit your entry to the IOCCC.
+You may [register](register.html) while the contest is either
+**[pending](../status.html#pending)** or  **[open](../status.html#open)**.
 </p>
 
 <p class="leftbar">
@@ -121,10 +141,74 @@ for instructions on registering and participating in the IOCCC, as the process h
 </p>
 
 <p class="leftbar">
-The [IOCCC rules](rules.html) and these [IOCCC
-guidelines](guidelines.html) will be available on the [Official IOCCC
-website](https://www.ioccc.org) on or slightly before start of this IOCCC.  Please check our
-page on how to [upload your submission](submit.html) when the contest is [open](../status.html#open).
+When the contest is **[open](../status.html#open)**, an
+[IOCCC judge](../judges.html) will email you your [submit server](https://submit.ioccc.org)
+**Username** and **Initial password**.  This takes some time (maybe even a few days) for an
+[IOCCC judge](../judges.html) to process your registration and email you your
+initial login and password.
+</p>
+
+<p class="leftbar">
+Those who [register](register.html) while the contest status is **[pending](../status.html#pending)**
+will receive email with their [submit server](https://submit.ioccc.org) **Username** and **Initial password**
+from an [IOCCC judge](../judges.html) shortly after the contest status becomes **[open](../status.html#open)**.
+</p>
+
+<p class="leftbar">
+Once an [IOCCC judge](../judges.html) emails you your **Username** and **Initial password**, you
+will have 72 hours to [change your submit server initial password](pw-change.html).
+If you do not change your **Initial password** in time, you will have to [re-register](register.html).
+</p>
+
+<p class="leftbar">
+Because it takes time (maybe even a few days) for an [IOCCC judge](../judges.html)
+to process your registration and email you your initial login and password,
+you should **MAKE SURE** you give yourself enough time before the contest closes.
+In other words, **DO NOT WAIT UNTIL THE FINAL DAYS** of the contest to register!
+The [IOCCC judges](../judges.html) are **NOT** responsible for delayed or lost email,
+nor for those who wait until the last minute to try to register!
+</p>
+
+<p class="leftbar">
+For those who have [registered](register.html) and received by email, their
+[submit server](https://submit.ioccc.org) **Username** and **Initial password**
+from an [IOCCC judge](../judges.html), you may upload your submission to
+the [submit server](https://submit.ioccc.org) only while the
+contest **[open](../status.html#open)**.
+</p>
+
+<p class="leftbar">
+The [submit server](https://submit.ioccc.org), in accordance with [Rule 17](rules.html#rule17),
+places a limit of **3999971** octets on the size of your upload.
+</p>
+
+<p class="leftbar">
+You are **STRONGLY** advised to use the `mkiocccentry(1)` tool
+as found in the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry)
+to form the file to upload to the [submit server](https://submit.ioccc.org).
+</p>
+
+<p class="leftbar">
+See the
+FAQ on "[obtaining and compiling the mkiocccentry tools](../faq.html#mkiocccentry)"
+for more information about the `mkiocccentry(1)` tool.
+</p>
+
+<p class="leftbar">
+While the contest is **[open](../status.html#open)**, you may modify your previously
+uploaded submission by rebuilding your submission with the `mkiocccentry(1)` tool
+and then re-uploading it to the same slot no the [submit server](https://submit.ioccc.org).
+</p>
+
+<p class="leftbar">
+Once the contest enters the **[judging](../status.html#judging)** state, you will
+**NOT** be allowed to upload your submission files.
+</p>
+
+<p class="leftbar">
+The [submit server](https://submit.ioccc.org) will become active when the contest is **[open](../status.html#open)**.
+Until the contest status becomes **[open](../status.html#open)**,
+the [submit server](https://submit.ioccc.org) may be offline and/or unresponsive.
 </p>
 
 <p class="leftbar">
@@ -139,8 +223,7 @@ bytes.
 <p class="leftbar">The new default way to compile submissions: `-std=gnu17 -O3 -g3
 -Wall -Wextra -pedantic`.
 You **are encouraged** to use the example Makefile here, rather than the
-`mkiocccentry` repo. For details and help, see below in the [Makefile
-section](#makefile).
+`mkiocccentry` repo. For details and help, see below in the [Makefile section](#makefile).
 </p>
 
 <p class="leftbar">
@@ -149,8 +232,7 @@ Submissions are in the form of a single xz compressed tarball.
 
 <p class="leftbar">
 To assist in the formation of the xz compressed tarball for submission, use the
-`mkiocccentry(1)` tool as found in the  [mkiocccentry
-repo](https://github.com/ioccc-src/mkiocccentry).
+`mkiocccentry(1)` tool as found in the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry).
 </p>
 
 <p class="leftbar">
@@ -159,17 +241,18 @@ to account for the new [mkiocccentry repo](https://github.com/ioccc-src/mkioccce
 </p>
 
 <p class="leftbar">
-The IOCCC submission URL, [when the IOCCC is open](../status.html#open), is
-[submit.ioccc.org](https://submit.ioccc.org/).
-</p>
-
-<p class="leftbar">
-Because the Judges send you your initial login and password, and because it will
-not be immediate, you should **MAKE SURE** you give yourself enough time before
-the contest closes. In other words, don't wait until the last few days!
+See the
+FAQ on "[obtaining and compiling the mkiocccentry tools](../faq.html#mkiocccentry)"
+and the
+FAQ on "[how to enter the IOCCC](../faq.html#enter)"
+as that FAQ has import details on
+[how to register](register.html)
+as well as
+[how to upload your submission](submit.html) for the IOCCC.
 </p>
 
 Jump to: [top](#)
+
 
 <div id="hints">
 <div id="suggestions">

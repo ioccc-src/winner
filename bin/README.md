@@ -359,7 +359,7 @@ This tool will form `YYYY/dir/README.md` if needed, from `YYYY/dir/remarks.md`,
 **NOTE**: This interactive tool (unless `-i input_data` is used) does
 **NOT** perform all of the steps needed to make a directory for a new winning
 IOCCC entry.  For example, files such as `YYYY/dir/README.md` and/or `YYYY/dir/index.html`
-might contain "_triple X_" comments (`<!--XXXX-->`), indicating where the [Judges](../judges.html)
+might contain "_triple X_" comments, indicating where the [Judges](../judges.html)
 need to add content.  Moreover, the `Makefile` and `.gitignore` files
 need to be examined for suitability, etc.
 
@@ -913,7 +913,7 @@ It will form `YYYY/README.md` if needed, from `template/README.md.year`.
 
 **NOTE**: This tool does **NOT** perform all of the steps needed to make a new IOCCC year directory.
 For example, files such as `YYYY/README.md` and/or `YYYY/index.html`
-might contain "_triple X_" comments (`<!-- XXX -->`) indicating where the
+might contain "_triple X_" comments indicating where the
 [Judges](../judges.html) need to add content.
 
 Usage:

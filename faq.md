@@ -1,6 +1,6 @@
 # IOCCC FAQ Table of Contents
 
-This is FAQ version **28.1.8 2024-12-07**.
+This is FAQ version **28.2.0 2024-12-28**.
 
 
 ## 0. [Entering the IOCCC: the bare minimum you need to know](#enter_questions)
@@ -165,7 +165,7 @@ To submit your code to the IOCCC, you **MUST** follow these steps:
 #### 0. Verify that the IOCCC is pending or open for submissions
 </div>
 
-First, check the [current status of the IOCCC](status.html) see of the contest.
+First, check the "**[current status of the IOCCC](status.html)**" page to see current contest status.
 You may **only register for the IOCCC when the IOCCC is either [pending](status.html#pending)
 or [open](status.html#open)**.
 
@@ -192,10 +192,10 @@ suggestions, useful hints, and IOCCC humor.  :-)
 </div>
 
 **IMPORTANT**: You may **only register for the IOCCC when the IOCCC is either [pending](status.html#pending)
-or [open](status.html#open)**.  See [current status of the IOCCC](status.html) for details.
+or [open](status.html#open)**.  See "**[current status of the IOCCC](status.html)**" page for details.
 
 If the contest is [pending](status.html#pending) or [open](status.html#open),
-then follow the directions on **[How to register for the IOCCC](next/register.html)**.
+then follow the directions on "**[how to register for the IOCCC](next/register.html)**".
 
 
 <div id="step_3">
@@ -218,8 +218,8 @@ then you will **NOT** receive your **Username** and **Initial password**
 by email.  For example, if the contest is [pending](status.html#pending),
 you will have to **WAIT UNTIL THE CONTEST IS [OPEN](status.html#open)**.
 
-Please check the [current status of the IOCCC](status.html) and
-visit the [How to register for the IOCCC](next/register.html) for detailed instructions.
+Please check the "**[current status of the IOCCC](status.html)**" page and
+visit the "**[how to register for the IOCCC](next/register.html)**" page for detailed instructions.
 
 **NOTE**: If are having trouble receiving your **Username** and **Initial
 password**, and the **CONTEST IS [OPEN](status.html#open)**, and
@@ -231,9 +231,8 @@ for assistance.
 #### 4. Login to the submit server and change your password
 </div>
 
-Using the **Username** and **Initial password** you receive via
-email in [step 3](#step_3), you need to login to the [IOCCC submit
-server](https://submit.ioccc.org).
+Using the **Username** and **Initial password** you receive via email in
+[step 3](#step_3), you need to login to the [IOCCC submit server](https://submit.ioccc.org).
 
 **IMPORTANT NOTE**: You must change your password **WITHIN 72 HOURS**
 from when one of the [IOCCC judges](judges.html) sent that email.
@@ -241,7 +240,7 @@ from when one of the [IOCCC judges](judges.html) sent that email.
 **NOTE**: The [IOCCC submit server](https://submit.ioccc.org)
 is only ready for submissions **ONLY WHEN THE CONTEST IS [open](status.html#open)**.
 
-Please visit the [Change your submit server initial password](next/pw-change.html) page for detailed instructions.
+Please visit the "**[change your submit server initial password](next/pw-change.html)**" page for detailed instructions.
 
 
 <div id="step_5">
@@ -256,9 +255,11 @@ the [mkiocccentry toolkit](https://github.com/ioccc-src/mkiocccentry)
 could change.  Once the content is [open](status.html#open), be sure
 you **have the latest** version installed.
 
-To help you, please see the FAQ on "[how to obtain the most recent
-mkiocccentry](#obtaining_mkiocccentry)" and the FAQ on "[compiling
-mkiocccentry toolkit](#compiling_mkiocccentry)", for more details.
+To help you, please see the
+FAQ on "[how to obtain the most recent mkiocccentry](#obtaining_mkiocccentry)"
+and the
+FAQ on "[compiling mkiocccentry toolkit](#compiling_mkiocccentry)",
+for more details.
 
 
 <div id="step_6">
@@ -311,8 +312,7 @@ the tools from the top of the `mkiocccentry` repo directory just fine, though
 you'll have to use the form of `./mkiocccentry` instead of just `mkiocccentry`.
 However, installing it will make it easier for you as you can run it from your
 submission's directory. See the
-FAQ on "[installing
-mkiocccentry](https://github.com/ioccc-src/mkiocccentry/blob/master/FAQ.md#install)"
+FAQ on "**[installing mkiocccentry](https://github.com/ioccc-src/mkiocccentry/blob/master/FAQ.md#install)**"
 at the mkiocccentry repo.
 
 If the `mkiocccentry` tool indicates that there is a problem with your entry,
@@ -332,7 +332,7 @@ See also [Rule 17](next/rules.html#rule17)!
 </div>
 </div>
 
-The screenshots about [how to upload your submission to the IOCCC](next/submit.html)
+The screenshots on the "**[how to upload your submission to the IOCCC](next/submit.html)**" page
 might be a helpful guide when using the [IOCCC submit server](https://submit.ioccc.org).
 
 **NOTE**: You may modify a previous uploaded submission, if the contest is
@@ -346,7 +346,7 @@ to replace the older upload.
 is only ready for submissions
 **ONLY WHEN THE CONTEST IS [open](status.html#open)**.
 
-See [current status of the IOCCC](status.html) for details on the contest status.
+See the "**[current status of the IOCCC](status.html)**" page for details on the contest status.
 
 **IMPORTANT NOTE**: When the contest is [closed](status.html#closed), the
 [IOCCC submit server](https://submit.ioccc.org)
@@ -6951,17 +6951,15 @@ from `winners.html`, via the [gen-authors.sh](%%REPO_URL%%/bin/gen-authors.sh) t
 
 
 <div id="great_fork_merge_date">
-#### 202y mm dd The Great Fork Merge <!-- XXX - Fill in the date when Great Fork Merge happens -->
+#### 2024 Dec 28 The Great Fork Merge
 </div>
 
-<!-- XXX - Update the commit count just before Great Fork Merge happens -->
-As of 2024 Dec 27 [temp-test-ioccc
+As of 2024 Dec 28 [temp-test-ioccc
 repo](https://github.com/ioccc-src/temp-test-ioccc)
-there was [6141+ commits ahead](https://github.com/ioccc-src/winner/compare/master...ioccc-src:temp-test-ioccc:master)
+there was [6165+ commits ahead](https://github.com/ioccc-src/winner/compare/master...ioccc-src:temp-test-ioccc:master)
 of the [IOCCC winner repo](https://github.com/ioccc-src/winner).
 
-<!-- XXX - Fill in the date when Great Fork Merge happens -->
-On 202y mm dd, the temporary repo was merged back into the [IOCCC winner
+On 2024 Dec 28, the temporary repo was merged back into the [IOCCC winner
 repo](https://github.com/ioccc-src/winner) resulting in many, many substantial improvements
 to the [official IOCCC website](https://www.ioccc.org).
 

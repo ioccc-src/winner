@@ -8,7 +8,7 @@
 The contest needs to be either [pending](../status.html#pending) or [open](../status.html#open)
 in order to register for the IOCCC.
 
-For details see the "[How the contest status impacts registration](#status_impact)" section below.
+For details see the "[how the contest status impacts registration](#status_impact)" section below.
 
 
 <div id="step_b">
@@ -168,8 +168,8 @@ While the contest is **[OPEN](../status.html#open)**,
 you may **register for the contest**.  Once you are registered **AND**
 the contest is [open](../status.html#open), you will receive an email message containing your very own
 **Username and Initial Password until the contest is [open](../status.html#open)**.  You will need these
-to be able to [upload your submissions](submit.html) to the [IOCCC submit
-server](https://submit.ioccc.org).
+to be able to "**[upload your submissions](submit.html)**" to the
+[IOCCC submit server](https://submit.ioccc.org).
 
 See also the
 FAQ on "[how to upload your submission](../faq.html#submit)"
