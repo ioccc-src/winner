@@ -143,7 +143,7 @@ Cody later discovered that the `make alt` rule does not work as the
 To see the diff between the original and the alternate code, try:
 
 ``` <!--sh-->
-        cd 1984/decot ; make diff_orig_alt
+    cd 1984/decot ; make diff_orig_alt
 ```
 
 Jump to: [top](#)
@@ -3674,19 +3674,21 @@ changed. As was noted in the log at the time:
 >    (but obviously it's a terrible idea) to redefine main() (!!) so that any
 >    program that uses SDL1 has to have the same args as their definition.
 >    This program had 'main()' so the error message was:
+
 ``` <!---c-->
-        thadgavin.c:60:1: error: conflicting types for 'SDL_main'
-        main()
-        ^
-        /opt/local/include/SDL/SDL_main.h:34:14: note: expanded from macro 'main'
-        #define main SDL_main
-                     ^
-        /opt/local/include/SDL/SDL_main.h:35:12: note: previous declaration is here
-        extern int SDL_main(int argc, char *argv[]);
-                   ^
-        1 warning and 1 error generated.
-        make: *** [thadgavin_sdl] Error 1
+    thadgavin.c:60:1: error: conflicting types for 'SDL_main'
+    main()
+    ^
+    /opt/local/include/SDL/SDL_main.h:34:14: note: expanded from macro 'main'
+    #define main SDL_main
+                 ^
+    /opt/local/include/SDL/SDL_main.h:35:12: note: previous declaration is here
+    extern int SDL_main(int argc, char *argv[]);
+               ^
+    1 warning and 1 error generated.
+    make: *** [thadgavin_sdl] Error 1
 ```
+
 >
 >    Thus `main()` was changed to `int main(int argc, char **argv)`.
 

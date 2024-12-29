@@ -76,11 +76,11 @@ the initializing (encoding) string awkward.  Hence I came up with the
 following
 
 ```
-length 1: 0010010x     E > 00100101  (= '%')
-length 2: 001010xx
-length 3: 00110xxx
-length 4: 0100xxxx     Z > 01001100  (= 'L')
-length 5: 011xxxxx     3 > 01100111  (= 'g')
+    length 1: 0010010x     E > 00100101  (= '%')
+    length 2: 001010xx
+    length 3: 00110xxx
+    length 4: 0100xxxx     Z > 01001100  (= 'L')
+    length 5: 011xxxxx     3 > 01100111  (= 'g')
 ```
 
 Notice these encodings in the initialization string.  Only the coding for

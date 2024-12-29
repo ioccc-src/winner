@@ -474,11 +474,11 @@ this is not very pleasant, as some Morse sequences will end up having
 an ASCII value &lt; 32, i.e. they will be control codes. This would make
 the initializing (encoding) string awkward. Hence I came up with the
 following</p>
-<pre><code>length 1: 0010010x     E &gt; 00100101  (= &#39;%&#39;)
-length 2: 001010xx
-length 3: 00110xxx
-length 4: 0100xxxx     Z &gt; 01001100  (= &#39;L&#39;)
-length 5: 011xxxxx     3 &gt; 01100111  (= &#39;g&#39;)</code></pre>
+<pre><code>    length 1: 0010010x     E &gt; 00100101  (= &#39;%&#39;)
+    length 2: 001010xx
+    length 3: 00110xxx
+    length 4: 0100xxxx     Z &gt; 01001100  (= &#39;L&#39;)
+    length 5: 011xxxxx     3 &gt; 01100111  (= &#39;g&#39;)</code></pre>
 <p>Notice these encodings in the initialization string. Only the coding for
 <code>5</code> needs an escape (<code>5 = ..... &gt; 01111111 = '\177'</code>). The way the length
 is encoded still allows the encoding to be its own counter:</p>

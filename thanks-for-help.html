@@ -531,7 +531,7 @@ with <code>gcc</code> - but not <code>clang</code> - or at least some versions.<
 <code>-traditional-cpp</code> option conflicts with some of the other options. Thus the
 <code>make alt</code> rule only uses <code>-traditional-cpp</code>.</p>
 <p>To see the diff between the original and the alternate code, try:</p>
-<pre class="&lt;!--sh--&gt;"><code>        cd 1984/decot ; make diff_orig_alt</code></pre>
+<pre class="&lt;!--sh--&gt;"><code>    cd 1984/decot ; make diff_orig_alt</code></pre>
 <p>Jump to: <a href="#">top</a></p>
 <div id="1984_laman">
 <h2 id="winning-entry-1984laman">Winning entry: <a href="1984/laman/index.html">1984/laman</a></h2>
@@ -2913,17 +2913,17 @@ included. Third the SDL1 developers thought it would be a great idea
 program that uses SDL1 has to have the same args as their definition.
 This program had ‘main()’ so the error message was:</p>
 </blockquote>
-<pre><code>        thadgavin.c:60:1: error: conflicting types for &#39;SDL_main&#39;
-        main()
-        ^
-        /opt/local/include/SDL/SDL_main.h:34:14: note: expanded from macro &#39;main&#39;
-        #define main SDL_main
-                     ^
-        /opt/local/include/SDL/SDL_main.h:35:12: note: previous declaration is here
-        extern int SDL_main(int argc, char *argv[]);
-                   ^
-        1 warning and 1 error generated.
-        make: *** [thadgavin_sdl] Error 1</code></pre>
+<pre><code>    thadgavin.c:60:1: error: conflicting types for &#39;SDL_main&#39;
+    main()
+    ^
+    /opt/local/include/SDL/SDL_main.h:34:14: note: expanded from macro &#39;main&#39;
+    #define main SDL_main
+                 ^
+    /opt/local/include/SDL/SDL_main.h:35:12: note: previous declaration is here
+    extern int SDL_main(int argc, char *argv[]);
+               ^
+    1 warning and 1 error generated.
+    make: *** [thadgavin_sdl] Error 1</code></pre>
 <blockquote>
 <p>Thus <code>main()</code> was changed to <code>int main(int argc, char **argv)</code>.</p>
 </blockquote>
