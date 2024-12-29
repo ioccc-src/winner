@@ -13,6 +13,44 @@ for more information on Mastodon.
 # News
 </div>
 
+
+## 2024-12-28
+
+### Good News Everyone! :-)
+
+After a 4 year effort by a [number of people](thanks-for-help.html),
+with over 6168+ commits, the **Great Fork Merge** has been completed
+and the [Official IOCCC web site](index.html) has been updated!
+
+A significant number of improvements has been made to the
+[IOCCC winning entries](years.html).
+A number of fixes and improvements involve the ability of reasonable modern
+Unix/Linux systems to be able to compile and even run them.
+See [FAQ Section 4](faq.html#compiling) for
+information on how to compile.
+See the [FAQ Section 8](faq.html#changes)
+for details on changes made to the entries.
+
+We hope you enjoy the new and improved
+[Official IOCCC web site](index.html).
+This web site is backed by the
+[IOCCC winner repo](https://github.com/ioccc-src/winner).
+See [FAQ Section 9](faq.html#help) for
+how you help [improve / fix the we site](faq.html#fix_website),
+or fix [known bugs in IOCCC winning entries](bugs.html).
+
+
+### IOCCC28 is starting!
+
+The IOCCC28, the [40th anniversary of the IOCCC](faq.html#ioccc_start) is now
+scheduled to run from **2024-12-29 23:58:13.213455 UTC** to **2025-04-01 23:29:31.374143 UTC**!!!.
+
+Proposed and tentative [IOCCC rules](next/rules.html) and [IOCCC guidelines](next/guidelines.html)
+have been released.
+
+See [FAQ Section 0](faq.html#enter_questions) for more information on how to enter.
+
+
 ## 2024-06-08
 
 We continue to make good progress on the
