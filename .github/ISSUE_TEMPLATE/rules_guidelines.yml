@@ -1,0 +1,44 @@
+name: Rules and/or Guidelines issue
+description: Report a problem with the Rules and/or Guidelines
+title: "[Documentation] <title>"
+labels: ["documentation"]
+body:
+- type: checkboxes
+  attributes:
+    label: Is there an existing issue for this?
+    description: Please search to see if an issue already exists for the problem you're reporting.
+    options:
+    - label: I have searched for existing issues and did not find anything like it
+      required: true
+- type: textarea
+  attributes:
+    label: Describe the problem with the Rules and/or Guidelines
+    description: Please the Rules and/or Guidelines problem that you found.
+  validations:
+    required: true
+
+- type: textarea
+  attributes:
+    label: How do you recommend we fix the problem?
+    description: |
+        Please suggest how we might fix problem with the Rules and/or Guidelines.
+  validations:
+    required: true
+
+- type: textarea
+  attributes:
+    label: Relevant links or files
+    description: Please provide us with a list of relevant links or files, if applicable.
+  validations:
+    required: false
+
+- type: textarea
+  attributes:
+    label: Anything else?
+    description: |
+      Do you have any additional context or information?
+
+      Tip: you can attach files by clicking the text area to highlight it and then click the link that says paste, drop or click to add files.
+  validations:
+    required: false
+
