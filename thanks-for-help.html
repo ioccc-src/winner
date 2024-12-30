@@ -2632,18 +2632,28 @@ for more details.</p>
 <h2 id="winning-entry-1998fanf">Winning entry: <a href="1998/fanf/index.html">1998/fanf</a></h2>
 <h3 id="winning-entry-source-code-fanf.c">Winning entry source code: <a href="https://github.com/ioccc-src/winner/blob/master/1998/fanf/fanf.c">fanf.c</a></h3>
 </div>
-<p><a href="#cody">Cody</a> fixed this to compile. The problem was the intermediate steps to get to the
-final code that is compiled. The code is now what it essentially becomes when
-processed completely. The intermediate steps can now be performed to see how it
-expands but it can still compile and be used.</p>
-<p>Cody also added a second arg to <code>main()</code> out of an abundance of caution as some
-versions of <code>clang</code> complain about the number of args to <code>main()</code>. These versions
-claim that only 0, 2 or 3 are allowed but it does allow 1 anyway. It is quite
-possible though that this will change so it is fixed in case this happens. As it
-is mostly just through the C pre-processor Cody added a new macro to make the
-code look like the original with just an extra arg. See the
-FAQ on “<a href="faq.html#arg_count">main function args</a>”
-for more details.</p>
+<p><a href="#cody">Cody</a> fixed this to compile. Tony Finch fixed it again to be
+more like the original submission. The double preprocessing is a joke
+about C and a joke about OFL so the program is less funny without it.</p>
+<p>There were a couple of problems with the double preprocessing that
+upset modern compilers:</p>
+<ul>
+<li><p>Recent versions of <code>gcc</code> wrap <code>#line</code> marks around the expansion
+of <code>EOF</code> which broke up <code>#define ef E(EOF)</code> across multiple lines.
+This can be avoided by processing <code>#include</code> in the second
+preprocessor phase.</p>
+<p>(Tony vaguely remembers some indecision about when to <code>#include</code>,
+in particular whether preprocessing the headers twice would lead
+to trouble. Early <code>#include</code> seemed to work and was shorter so
+that was what the original submission did.)</p></li>
+<li><p>System headers can be sensitive to compiler options, for example
+<code>restrict</code> keywords might be omitted when compiling with
+<code>-std=gnu90</code>. Consistency options need to be used at all stages.</p></li>
+</ul>
+<p>Cody also added a second arg to <code>main()</code>. Tony removed both args since
+neither of them are used and it’s shorter that way (though it provokes
+a warning about a non-prototype function definition). See the FAQ on
+“<a href="faq.html#arg_count">main function args</a>” for more details.</p>
 <p>In some versions of <code>clang</code> <code>-Wno-int-conversion</code> had to be added to the
 <code>CSILENCE</code> variable of the Makefile.</p>
 <p>Cody also added the <a href="https://github.com/ioccc-src/winner/blob/master/1998/fanf/try.sh">try.sh</a> script to show the output of some
