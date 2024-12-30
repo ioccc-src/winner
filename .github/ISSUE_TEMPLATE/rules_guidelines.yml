@@ -10,14 +10,22 @@ body:
     options:
     - label: I have searched for existing issues and did not find anything like it
       required: true
+
 - type: textarea
   attributes:
-    label: Describe the problem with the Rules and/or Guidelines
-    description: 
+    label: Which Rule and/or Guideline has a problem?
     description: |
-      Please the Rules and/or Guidelines problem that you found.
+      For which Rule and/or Guidelines you reporting?
 
-      Tip: Quote the Rule and/or Guideline you are reporting in your description.
+      Tip: Quote the Rule and/or Guideline in this section.
+  validations:
+    required: true
+
+- type: textarea
+  attributes:
+    label: What is wrong with the Rule and/or Guideline?
+    description: |
+      Please the problem with the Rule and/or Guideline.
   validations:
     required: true
 
@@ -25,16 +33,11 @@ body:
   attributes:
     label: How do you recommend we fix the problem?
     description: |
-        Please suggest how we might fix problem with the Rules and/or Guidelines.
+      Please suggest how we might fix the Rules and/or Guidelines.
+
+      Tip: Suggest alternate language for the Rule and/or Guideline.
   validations:
     required: true
-
-- type: textarea
-  attributes:
-    label: Relevant links or files
-    description: Please provide us with a list of relevant links or files, if applicable.
-  validations:
-    required: false
 
 - type: textarea
   attributes:
