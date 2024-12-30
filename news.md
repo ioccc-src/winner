@@ -14,6 +14,14 @@ for more information on Mastodon.
 </div>
 
 
+## 2024-12-30
+
+The IOCCC [Rule 13](next/rules.html#rule13) no longer discourages the
+use of UTF-8 in C source.  Since the days of `-std=gnu17` compilers,
+UTF-8 characters do not impose a compiler problem.  The related guideline
+states that "Rule 13 no longer discourages the use of UTF-8 +characters in C code".
+
+
 ## 2024-12-28
 
 ### Good News Everyone! :-)
@@ -44,6 +52,9 @@ or fix [known bugs in IOCCC winning entries](bugs.html).
 
 The IOCCC28, the [40th anniversary of the IOCCC](faq.html#ioccc_start) is now
 scheduled to run from **2024-12-29 23:58:13.213455 UTC** to **2025-04-01 23:29:31.374143 UTC**!!!.
+
+The [contest status](status.html) as been changed to "**pending**"
+and [status.json](status.json) has been updated to reflect this new status.
 
 Proposed and tentative [IOCCC rules](next/rules.html) and [IOCCC guidelines](next/guidelines.html)
 have been released.

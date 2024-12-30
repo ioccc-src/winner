@@ -1679,15 +1679,10 @@ their entries. In some cases tools have a “Save As” option that will
 prevent such trailing control-M’s being added.</p>
 <p>One should restrict libcurses to portable features found on BSD
 or Linux curses.</p>
-<p><a href="rules.html#rule13">Rule 13</a> states any C source that fails to compile because of unescaped
-octets with the high bit set (octet value &gt;= 128) <strong>might</strong> be rejected.
-Instead of unescaped octets, you should use or escapes:</p>
-<pre><code>
-              /* 123456789 123456789 123456789 123456 */
-    char *foo = &quot;This string is 36 octets in length \263&quot;;
-          /* This octet requires 4 octets of source ^^^^ */
-    if (strlen(foo) == 36) printf(&quot;foo is 36 octets plus a final NUL\n&quot;);
-    else printf(&quot;This code should not print this message\n&quot;);</code></pre>
+<p class="leftbar">
+<a href="rules.html#rule13">Rule 13</a> no longer discourages the use of UTF-8
+characters in C code.
+</p>
 <p class="leftbar">
 It is a very good idea to, in your <code>remarks.md</code> file, tell us why you
 think your submission is obfuscated. This is particularly true if

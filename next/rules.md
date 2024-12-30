@@ -55,7 +55,7 @@ Jump to: [top](#)
 
 
 <p class="leftbar">
-These [IOCCC rules](rules.html) are version **28.15 2024-12-28**.
+These [IOCCC rules](rules.html) are version **28.16 2024-12-29**.
 </p>
 
 <p class="leftbar">
@@ -604,8 +604,7 @@ Jump to: [top](#)
 </div>
 
 <p class="leftbar">
-Any C source that fails to compile because of unescaped octets with
-the high bit set (octet value >= 128) **_might_** be rejected.
+7 out of 13 UTF-8 characters in C code agree that this rule number is lucky enough to be a prime number.
 </p>
 
 

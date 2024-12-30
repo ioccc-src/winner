@@ -1560,18 +1560,10 @@ prevent such trailing control-M's being added.
 One should restrict libcurses to portable features found on BSD
 or Linux curses.
 
-[Rule 13](rules.html#rule13)  states any C source that fails to compile because of unescaped
-octets with the high bit set (octet value >= 128) **might** be rejected.
-Instead of unescaped octets, you should use \octal or \hex escapes:
-
-``` <!---c-->
-
-              /* 123456789 123456789 123456789 123456 */
-    char *foo = "This string is 36 octets in length \263";
-          /* This octet requires 4 octets of source ^^^^ */
-    if (strlen(foo) == 36) printf("foo is 36 octets plus a final NUL\n");
-    else printf("This code should not print this message\n");
-```
+<p class="leftbar">
+[Rule 13](rules.html#rule13) no longer discourages the use of UTF-8
+characters in C code.
+</p>
 
 <p class="leftbar">
 It is a very good idea to, in your `remarks.md` file, tell us why you
