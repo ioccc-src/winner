@@ -14,6 +14,8 @@ body:
   attributes:
     label: Describe the problem with the Rules and/or Guidelines
     description: Please the Rules and/or Guidelines problem that you found.
+
+      Tip: We suggest that you quote the particular section of the Rule or Guideline that is problematic as part of your description.
   validations:
     required: true
 
