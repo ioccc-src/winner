@@ -58,6 +58,11 @@ Jump to: [top](#)
 These [IOCCC rules](rules.html) are version **28.15 2024-12-28**.
 </p>
 
+<p class="leftbar">
+The <a href="rules.md" download="rules.md">markdown form of these rules</a>
+is available for download.
+</p>
+
 **IMPORTANT**: Be sure to read the [IOCCC guidelines](guidelines.html).
 
 
