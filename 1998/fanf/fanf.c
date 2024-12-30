@@ -1,40 +1,45 @@
+#define Xinclude #include
+Xinclude <stdlib.h>
+Xinclude <stdio.h>
 
- #define i int
- #define n struct n
- #define T , char **C) { return (
- #define x ){ return (
- #define A ->
- #define N n*
+#define l #define
+#define p(p) l p b ( m p u X )
+
+l i    int
+l n    struct n
+l x ){ return (
+l A ->
+l N n*
 
 n { i c ; N L ; N R ; N U ; N ( * F ) ( N ) ; } ;
 
- #define F A F
- #define U A U
- #define R A R
- #define L A L
- #define m q = malloc(sizeof * q ) Z F =
- #define e z F ( p ) ) ; }
- #define f e N
- #define g z L Q s f
- #define h ( N p x
- #define H h p L U Q
- #define s R z R = q
- #define t ) ? p : (
- #define z , p
- #define Z , q
- #define Q = p
- #define w ! p U t p U L Q z Q U ,
- #define D W p R U = 0 z R Q R F ( p R ) z R F != E t
- #define W h w
- #define X z = q , 0
- #define V w p F = v z L Q
- #define O m o Z L Q
- #define M m E Z A c =
- #define r Z R Q
- #define u Z U Q
- #define a ) ) ) ? 0 : j ( !
- #define k ( i c x
- #define y 0 ) ; } i
+l F A F
+l U A U
+l R A R
+l L A L
+l m q = malloc(sizeof * q ) Z F =
+l e z F ( p ) ) ; }
+l f e N
+l g z L Q s f
+l h ( N p x
+l H h p L U Q
+l s R z R = q
+l t ) ? p : (
+l z , p
+l Z , q
+l Q = p
+l w ! p U t p U L Q z Q U ,
+l D W p R U = 0 z R Q R F ( p R ) z R F != E t
+l W h w
+l X z = q , 0
+l V w p F = v z L Q
+l O m o Z L Q
+l M m E Z A c =
+l r Z R Q
+l u Z U Q
+l a ) ) ) ? 0 : j ( !
+l k ( i c x
+l y 0 ) ; } i
 
 N q ; N
 o H z Q L f
@@ -42,9 +47,9 @@ v H U z Q L f
 K W V L R f
 J W V R f
 I h V R f
-
-
-
+#if 0
+Y W q Q g
+#endif
 S W w w O L L R r s , O L R r R R g
 E D p F Q L A c - p R A c ? J : K f
 P D w putchar ( p L R A c ) , m I g
@@ -53,64 +58,64 @@ p ;
 
 i j k c ? O U r u U U X : y b k y d k y
 
- #define d(d) ( ( d a b
- #define b(b) ( ( b a d
- #define E(E) b ( M E u X )
+l d(d) ( ( d a b
+l b(b) ( ( b a d
+l E(E) b ( M E u X )
 
-main ( i c T 
+main ( x i ) ! (
 
- #define I b ( m I u X )
- #define J b ( m J u X )
- #define K b ( m K u X )
+p (I)
+p (J)
+p (K)
+#if 0
+p (Y)
+#endif
+p (P)
+p (G)
 
+p (S)
+l  B   b (S (K S) K)
+l  SS  b (B (B S) B)
+l  C   b (SS B S (K K))
+l  CC  b (B (B C) B)
+l  BB  b (CC B (B B B) B)
 
+l  Y   b (S (C B (S I I)) (C B (S I I)))
 
- #define P b ( m P u X )
- #define G b ( m G u X )
+l  CI  b (C I)
 
- #define S b ( m S u X )
- #define B b (S (K S) K)
- #define SS b (B (B S) B)
- #define C b (SS B S (K K))
- #define CC b (B (B C) B)
- #define BB b (CC B (B B B) B)
+l ef E(EOF)
+l sp E(' ')
+l ob E('(')
+l cb E(')')
+l lm E('\\')
+l nl E('\n')
+l ht E('\t')
+l qs E('S')
+l qk E('K')
+l qi E('I')
 
- #define Y b (S (C B (S I I)) (C B (S I I)))
+l pair b (BB (B (B K)) C CI)
+l atom b (B K CI)
 
- #define CI b (C I)
+l bind b (CC B B C)
 
- #define ef E((-1))
- #define sp E(' ')
- #define ob E('(')
- #define cb E(')')
- #define lm E('\\')
- #define nl E('\n')
- #define ht E('\t')
- #define qs E('S')
- #define qk E('K')
- #define qi E('I')
+l ore b (SS (CI K))
+l gns b (Y (B (bind G) (CC S (C (ore sp (ore nl ht))) CI)))
 
- #define pair b (BB (B (B K)) C CI)
- #define atom b (B K CI)
+l pr b (Y (CC C (BB CI (B (BB (bind (P ob)) K)) (SS C (CC C (BB BB bind) K) (C (CC bind) (K (P cb))))) P))
 
- #define bind b (CC B B C)
+l trans b (Y (B (bind gns) (S (BB S (C lm) lam) (C (BB S (C ob) brac) (S (C cb (CI (atom sp))) (S (C ef (CI (atom sp))) (B CI atom)))))))
 
- #define ore b (SS (CI K))
- #define gns b (Y (B (bind G) (CC S (C (ore sp (ore nl ht))) CI)))
+l brac b (S bind (B Y (C (BB B B bind) (S (BB S (BB S (S I)) (CC (BB (B K)) (BB K) pair)) (CC S (CC BB (BB C (C (CI sp)) CI)) pair)))))
+         
+l lam b (B (bind gns) (C (CC BB bind (B CI)) abs))
 
- #define pr b (Y (CC C (BB CI (B (BB (bind (P ob)) K)) (SS C (CC C (BB BB bind) K) (C (CC bind) (K (P cb))))) P))
+l abs b (Y (C (BB S (BB C CI) (SS S (BB C (BB B opt)) I)) (CC S (C C (atom qi)) (B (pair (atom qk)) atom))))
 
- #define trans b (Y (B (bind gns) (S (BB S (C lm) lam) (C (BB S (C ob) brac) (S (C cb (CI (atom sp))) (S (C ef (CI (atom sp))) (B CI atom)))))))
+l make b (B pair (pair (atom qs)))
 
- #define brac b (S bind (B Y (C (BB B B bind) (S (BB S (BB S (S I)) (CC (BB (B K)) (BB K) pair)) (CC S (CC BB (BB C (C (CI sp)) CI)) pair)))))
-
- #define lam b (B (bind gns) (C (CC BB bind (B CI)) abs))
-
- #define abs b (Y (C (BB S (BB C CI) (SS S (BB C (BB B opt)) I)) (CC S (C C (atom qi)) (B (pair (atom qk)) atom))))
-
- #define make b (B pair (pair (atom qs)))
-
- #define opt b (S (S I (S (BB (CC B) CI (BB K K make)) (S (BB C (BB C (C (CI qk))) (SS (SS S) (S (BB (BB (S I)) S (BB (BB (CC B) CI) (BB K K) make)) (B (CC B (BB (CC C) (BB (C (CI qk)) (pair (atom qk))) pair)) make)) (B (C (BB B C (C (CI qi)))) make))) make))) (B K make))
+l opt b (S (S I (S (BB (CC B) CI (BB K K make)) (S (BB C (BB C (C (CI qk))) (SS (SS S) (S (BB (BB (S I)) S (BB (BB (CC B) CI) (BB K K) make)) (B (CC B (BB (CC C) (BB (C (CI qk)) (pair (atom qk))) pair)) make)) (B (C (BB B C (C (CI qi)))) make))) make))) (B K make))
 
 (bind (bind trans pr) (P nl) I)
 

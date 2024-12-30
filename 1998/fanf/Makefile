@@ -41,7 +41,7 @@ include ../../var.mk
 CSILENCE= -Wno-pointer-bool-conversion -Wno-unused-parameter -Wno-main \
 	  -Wno-implicit-function-declaration -Wno-address \
 	  -Wno-builtin-declaration-mismatch -Wno-int-conversion \
-	  -Wno-gnu-line-marker
+	  -Wno-gnu-line-marker -Wno-strict-prototypes
 
 # Attempt to silence unknown warning option
 #
@@ -132,8 +132,8 @@ all: data ${TARGET}
 
 ${PROG}: ${PROG}.c
 	@echo "This may take some time to complete:"
-	${CC} ${PROG}.c -E > ${PROG}tmp1.c
-	${CC} ${PROG}tmp1.c -E > ${PROG}tmp2.c
+	${CC} ${CSTD} ${PROG}.c -E > ${PROG}tmp1.c
+	${CC} ${CSTD} ${PROG}tmp1.c -E > ${PROG}tmp2.c
 	${CC} ${CFLAGS} ${PROG}tmp2.c ${LDFLAGS} -o $@
 
 # alternative executable

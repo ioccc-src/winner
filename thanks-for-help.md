@@ -3257,20 +3257,31 @@ Jump to: [top](#)
 ### Winning entry source code: [fanf.c](%%REPO_URL%%/1998/fanf/fanf.c)
 </div>
 
-[Cody](#cody) fixed this to compile. The problem was the intermediate steps to get to the
-final code that is compiled. The code is now what it essentially becomes when
-processed completely. The intermediate steps can now be performed to see how it
-expands but it can still compile and be used.
+[Cody](#cody) fixed this to compile. Tony Finch fixed it again to be
+more like the original submission. The double preprocessing is a joke
+about C and a joke about OFL so the program is less funny without it.
 
-Cody also added a second arg to `main()` out of an abundance of caution as some
-versions of `clang` complain about the number of args to `main()`. These versions
-claim that only 0, 2 or 3 are allowed but it does allow 1 anyway. It is quite
-possible though that this will change so it is fixed in case this happens. As it
-is mostly just through the C pre-processor Cody added a new macro to make the
-code look like the original with just an extra arg.  See the
-FAQ on "[main function args](faq.html#arg_count)"
-for more details.
+There were a couple of problems with the double preprocessing that
+upset modern compilers:
 
+  * Recent versions of `gcc` wrap `#line` marks around the expansion
+    of `EOF` which broke up `#define ef E(EOF)` across multiple lines.
+    This can be avoided by processing `#include` in the second
+    preprocessor phase.
+
+    (Tony vaguely remembers some indecision about when to `#include`,
+    in particular whether preprocessing the headers twice would lead
+    to trouble. Early `#include` seemed to work and was shorter so
+    that was what the original submission did.)
+
+  * System headers can be sensitive to compiler options, for example
+    `restrict` keywords might be omitted when compiling with
+    `-std=gnu90`. Consistency options need to be used at all stages.
+
+Cody also added a second arg to `main()`. Tony removed both args since
+neither of them are used and it's shorter that way (though it provokes
+a warning about a non-prototype function definition). See the FAQ on
+"[main function args](faq.html#arg_count)" for more details.
 
 In some versions of `clang` `-Wno-int-conversion` had to be added to the
 `CSILENCE` variable of the Makefile.
