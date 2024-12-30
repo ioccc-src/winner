@@ -9,9 +9,9 @@
     "url" : "https://uguu.org",
     "alt_url" : null,
     "deprecated_twitter_handle" : null,
-    "mastodon" : null,
-    "mastodon_url" : null,
-    "github" : null,
+    "mastodon" : "@omoikane@mastodon.social",
+    "mastodon_url" : "https://mastodon.social/@omoikane",
+    "github" : "@uguu-org",
     "affiliation" : null,
     "winning_entry_set" : [
         {
