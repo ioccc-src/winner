@@ -14,6 +14,17 @@ for more information on Mastodon.
 </div>
 
 
+## 2024-12-31
+
+We have just released [version 2.3 of the mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry/releases/tag/v2.3).
+This repo 2.3 release includes important improvements (over repo release 2.1) to the `mkiocccentry(1)` tool
+as well as a critical fix for installing on BSD based systems.
+
+Please download [version 2.3 of the mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry/releases/tag/v2.3),
+and compile the [mkiocccentry tool set](faq.html#mkiocccentry).  You may also wish to install this code.
+See also the [mkiocccentry FAQ](https://github.com/ioccc-src/mkiocccentry/blob/master/FAQ.md) for more information.
+
+
 ## 2024-12-30
 
 The IOCCC [Rule 13](next/rules.html#rule13) no longer discourages the
