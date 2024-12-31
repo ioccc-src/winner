@@ -55,7 +55,7 @@ Jump to: [top](#)
 
 
 <p class="leftbar">
-These [IOCCC rules](rules.html) are version **28.16 2024-12-29**.
+These [IOCCC rules](rules.html) are version **28.17 2024-12-30**.
 </p>
 
 <p class="leftbar">
@@ -530,17 +530,29 @@ Jump to: [top](#)
 </div>
 
 <p class="leftbar">
-Entries must be received prior to close of the contest is **[open](../status.html#open)**.
+Submissions may only be uploaded to the [IOCCC submit server](https://submit.ioccc.org)
+while the contest is **[open](../status.html#open)**.
 </p>
 
 <p class="leftbar">
-This contest is scheduled to open on **2025-01-31 23:19:17.130705 UTC**
-and close on **2025-04-01 23:29:31.374143 UTC**.
+Once the contest is in the **[judging](../status.html#judging)** state (or **[closed](../status.html#closed)**),
+you may **NOT** upload submissions.
 </p>
 
+<p class="leftbar">
+While the contest is **[open](../status.html#open)** or in the **[judging](../status.html#judging)** state,
+the [IOCCC judges](../judges.html) may (but are not required to) modify the slot comment of your submission to indicate
+that they have received it.  If uploaded submission is malformed, the [IOCCC judges](../judges.html)
+may (but are not required to) modify the slot comment accordingly.
+</p>
 
-A confirmation of submission will be sent to the submitting email address
-before the close of the contest.
+<p class="leftbar">
+See the "[Important IOCCC dates](#dates)" section above for when these contest states are scheduled.
+</p>
+
+<p class="leftbar">
+See also [Rule 17](#rule17).
+</p>
 
 
 Jump to: [top](#)

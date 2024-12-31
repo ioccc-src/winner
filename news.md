@@ -21,6 +21,14 @@ use of UTF-8 in C source.  Since the days of `-std=gnu17` compilers,
 UTF-8 characters do not impose a compiler problem.  The related guideline
 states that "Rule 13 no longer discourages the use of UTF-8 +characters in C code".
 
+The IOCCC [Rule 8](next/rules.html#rule8) wording has been fixed.  It no longer
+states that email will be sent.  Instead it talks about potential slot comment
+modifications as means to tell the submitter that their submission was received.
+
+All of the import IOCCC dates within the [IOCCC rules](next/rules.html)
+have been moved into the "[Important IOCCC dates](next/rules.html#dates)"
+section.
+
 
 ## 2024-12-28
 
