@@ -19,7 +19,7 @@ about these rules. You might also find the FAQ in general useful, especially the
 FAQ on "[how to enter the IOCCC](../faq.html#enter)".
 
 
-# The IOCCC is not yet open
+# The IOCCC is pending
 
 While the IOCCC is not open now, there is a tentative opening date for the next IOCCC.
 
@@ -711,7 +711,7 @@ conforms to [Rule 17](#rule17).
 </p>
 
 <p class="leftbar">
-Each above mentioned tools has a `-h` option that provides command
+Each above mentioned tool has a `-h` option that provides command
 line help.  For additional details, see the tools' man pages and the
 [guidelines](guidelines.html).
 </p>
