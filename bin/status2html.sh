@@ -114,7 +114,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.4.4 2024-12-29"
+export VERSION="1.4.5 2024-12-31"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -440,7 +440,7 @@ esac
     # write status of the contest
     #
     case "$CONTEST_STATUS" in
-    pending) echo "# The IOCCC is not yet open"
+    pending) echo "# The IOCCC is pending"
 	echo
         echo "While the IOCCC is not open now, there is a tentative opening date for the next IOCCC."
         echo

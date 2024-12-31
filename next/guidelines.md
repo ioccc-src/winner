@@ -19,9 +19,9 @@ about these guidelines. You might also find the FAQ in general useful, especiall
 FAQ on "[how to enter the IOCCC](../faq.html#enter)".
 
 
-# The IOCCC is not yet open
+# The IOCCC is pending
 
-While the IOCCC is not open now, there is a tentative opening date for the next IOCCC.
+While the IOCCC is not open yet, there is a tentative opening date for the next IOCCC.
 
 Comments and suggestions on these preliminary guidelines are welcome.  See the
 [FAQ](../faq.html#feedback) for how to suggest, correct or provide feedback
