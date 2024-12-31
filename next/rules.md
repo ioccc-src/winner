@@ -186,10 +186,6 @@ Jump to: [top](#)
 
 To help us with the volume of submissions, we ask that you follow these rules:
 
-<p class="leftbar">
-The "[Important IOCCC dates](#dates)" section above is part of this rule.
-</p>
-
 
 Jump to: [top](#)
 
@@ -200,6 +196,10 @@ Jump to: [top](#)
 
 <p class="leftbar">
 Just as C starts at 0, so the IOCCC starts at [rule 0](#rule0).  :-)
+</p>
+
+<p class="leftbar">
+The "[Important IOCCC dates](#dates)" section above is part of this rule.
 </p>
 
 
