@@ -186,6 +186,10 @@ Jump to: [top](#)
 
 To help us with the volume of submissions, we ask that you follow these rules:
 
+<p class="leftbar">
+The "[Important IOCCC dates](#dates)" section above is part of this rule.
+</p>
+
 
 Jump to: [top](#)
 
