@@ -21,6 +21,7 @@ This is FAQ version **28.2.0 2024-12-28**.
 - **Q 1.1**: <a class="normal" href="#prog_c">May I use a different source or compiled filename than prog.c or prog?</a>
 - **Q 1.2**: <a class="normal" href="#markdown">What is markdown and how does the IOCCC use it?</a>
 - **Q 1.3**: <a class="normal" href="#mkiocccentry_bugs">How do I report bugs in an `mkiocccentry` tool?</a>
+- **Q 1.4**: <a class="normal" href="#subdirectories">How may I use subdirectories in my submission if Rule 17 disallows them?</a>
 
 
 ## 2. [IOCCC Judging process](#judging)
@@ -824,6 +825,19 @@ in the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry)
 for more thorough details on bug reporting.
 
 Jump to: [top](#)
+
+<div id="subdirectories">
+#### Q 1.4: How may I use subdirectories in my submission if Rule 17 disallows them?
+</div>
+
+In order to submit a subdirectory, you may simply include a tarball. As long as
+the total size of your submission does not exceed the size limit, defined in
+[limit_ioccc.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h)
+as `MAX_TARBALL_LEN` and your total number of files in your xz compressed
+tarball does not exceed the limit, defined as `MAX_FILE_COUNT` in
+[limit_ioccc.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h),
+you can include tarballs with subdirectories or other files.
+
 
 <hr style="width:50%;text-align:left;margin-left:0">
 <hr style="width:50%;text-align:left;margin-left:0">
@@ -6956,12 +6970,21 @@ from `winners.html`, via the [gen-authors.sh](%%REPO_URL%%/bin/gen-authors.sh) t
 
 As of 2024 Dec 28 [temp-test-ioccc
 repo](https://github.com/ioccc-src/temp-test-ioccc)
-there was [6167+ commits ahead](https://github.com/ioccc-src/winner/compare/master...ioccc-src:temp-test-ioccc:master)
+there were [6169 commits ahead](https://github.com/ioccc-src/winner/compare/master...ioccc-src:temp-test-ioccc:master)
 of the [IOCCC winner repo](https://github.com/ioccc-src/winner).
 
 On 2024 Dec 28, the temporary repo was merged back into the [IOCCC winner
 repo](https://github.com/ioccc-src/winner) resulting in many, many substantial improvements
 to the [official IOCCC website](https://www.ioccc.org).
+
+In particular, the **Great Fork Merge** was commit 0b6326676dc0d3c12cf3ba47958244fc34b4f32f
+and took place on 2024 Dec 29, a total span of **833 days** ‼️
+
+For details see [GH-commit/0b6326676dc0d3c12cf3ba47958244fc34b4f32f](https://github.com/ioccc-src/temp-test-ioccc/commit/0b6326676dc0d3c12cf3ba47958244fc34b4f32f)
+and the [Pull Request 24 in the winner repo](https://github.com/ioccc-src/winner/pull/24) that it produced.
+
+The **Great Fork Merge** _changed 5,157 files_ with _843,045 additions_ and _137,758
+deletions_, in _6,169 commits_ ‼️
 
 Jump to: [top](#)
 
@@ -7048,7 +7071,7 @@ to the [Official IOCCC winner repo](https://github.com/ioccc-src/winner) causing
 
 See the
 FAQ on "[Great Fork Merge Date](#great_fork_merge_date)"
-for more information.
+for more information and stats.
 
 Jump to: [top](#)
 

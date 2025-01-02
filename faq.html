@@ -447,6 +447,7 @@
 <li><strong>Q 1.1</strong>: <a class="normal" href="#prog_c">May I use a different source or compiled filename than prog.c or prog?</a></li>
 <li><strong>Q 1.2</strong>: <a class="normal" href="#markdown">What is markdown and how does the IOCCC use it?</a></li>
 <li><strong>Q 1.3</strong>: <a class="normal" href="#mkiocccentry_bugs">How do I report bugs in an <code>mkiocccentry</code> tool?</a></li>
+<li><strong>Q 1.4</strong>: <a class="normal" href="#subdirectories">How may I use subdirectories in my submission if Rule 17 disallows them?</a></li>
 </ul>
 <h2 id="ioccc-judging-process">2. <a href="#judging">IOCCC Judging process</a></h2>
 <ul>
@@ -1071,6 +1072,16 @@ FAQ on “<a href="https://github.com/ioccc-src/mkiocccentry/blob/master/FAQ.md#
 in the <a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry repo</a>
 for more thorough details on bug reporting.</p>
 <p>Jump to: <a href="#">top</a></p>
+<div id="subdirectories">
+<h4 id="q-1.4-how-may-i-use-subdirectories-in-my-submission-if-rule-17-disallows-them">Q 1.4: How may I use subdirectories in my submission if Rule 17 disallows them?</h4>
+</div>
+<p>In order to submit a subdirectory, you may simply include a tarball. As long as
+the total size of your submission does not exceed the size limit, defined in
+<a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h">limit_ioccc.h</a>
+as <code>MAX_TARBALL_LEN</code> and your total number of files in your xz compressed
+tarball does not exceed the limit, defined as <code>MAX_FILE_COUNT</code> in
+<a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h">limit_ioccc.h</a>,
+you can include tarballs with subdirectories or other files.</p>
 <hr style="width:50%;text-align:left;margin-left:0">
 <hr style="width:50%;text-align:left;margin-left:0">
 <div id="judging">
@@ -5553,11 +5564,17 @@ from <code>winners.html</code>, via the <a href="https://github.com/ioccc-src/wi
 </div>
 <p>As of 2024 Dec 28 <a href="https://github.com/ioccc-src/temp-test-ioccc">temp-test-ioccc
 repo</a>
-there was <a href="https://github.com/ioccc-src/winner/compare/master...ioccc-src:temp-test-ioccc:master">6167+ commits ahead</a>
+there were <a href="https://github.com/ioccc-src/winner/compare/master...ioccc-src:temp-test-ioccc:master">6169 commits ahead</a>
 of the <a href="https://github.com/ioccc-src/winner">IOCCC winner repo</a>.</p>
 <p>On 2024 Dec 28, the temporary repo was merged back into the <a href="https://github.com/ioccc-src/winner">IOCCC winner
 repo</a> resulting in many, many substantial improvements
 to the <a href="https://www.ioccc.org">official IOCCC website</a>.</p>
+<p>In particular, the <strong>Great Fork Merge</strong> was commit 0b6326676dc0d3c12cf3ba47958244fc34b4f32f
+and took place on 2024 Dec 29, a total span of <strong>833 days</strong> ‼️</p>
+<p>For details see <a href="https://github.com/ioccc-src/temp-test-ioccc/commit/0b6326676dc0d3c12cf3ba47958244fc34b4f32f">GH-commit/0b6326676dc0d3c12cf3ba47958244fc34b4f32f</a>
+and the <a href="https://github.com/ioccc-src/winner/pull/24">Pull Request 24 in the winner repo</a> that it produced.</p>
+<p>The <strong>Great Fork Merge</strong> <em>changed 5,157 files</em> with <em>843,045 additions</em> and <em>137,758
+deletions</em>, in <em>6,169 commits</em> ‼️</p>
 <p>Jump to: <a href="#">top</a></p>
 <div id="size_rule_history">
 <div id="size_restriction">
@@ -5632,7 +5649,7 @@ to the <a href="https://github.com/ioccc-src/winner">Official IOCCC winner repo<
 <a href="index.html">Official IOCCC website</a> to be updated into its present form.</p>
 <p>See the
 FAQ on “<a href="#great_fork_merge_date">Great Fork Merge Date</a>”
-for more information.</p>
+for more information and stats.</p>
 <p>Jump to: <a href="#">top</a></p>
 <div id="ioccc_bof">
 <div id="bof">
