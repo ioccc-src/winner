@@ -1,6 +1,6 @@
 # Double-layered Chocolate Fudge Cake
 
-## Last updated Tue 22 Oct 2024 13:38:24 UTC
+## Last updated: Wed 08 Jan 2025 17:32:30 UTC
 
 Here's a delicious double-layered chocolate fudge cake that is
 something of my mum's speciality. It's complicated and I should warn that nobody
@@ -143,6 +143,14 @@ RECIPE NOTES BECAUSE THEY'RE _EXTREMELY IMPORTANT!_**
 10. When you take the cake out put the cake pans on a cooling rack for **_ONLY
     TWO MINUTES AND THEN _IMMEDIATELY TURN CAKES OUT ON TO RACK_**. Let **COOL
     _COMPLETELY!_**
+
+Assuming you use round cake pans, if everything is okay, it might look something
+like this after pulling it out of the oven and putting it on cooling racks,
+though these are very old cake pans and cooling racks:
+
+<img src="cake-on-cooling-rack.jpg"
+ alt="photograph of cake on cooling rack"
+ width=756 height=602>
 
 
 ## Icing Ingredients
