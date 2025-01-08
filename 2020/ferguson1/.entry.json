@@ -246,6 +246,14 @@
             "entry_text" : "markdown source for bugs.html"
         },
         {
+            "file_path" : "cake-on-cooling-rack.jpg",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "image",
+            "display_via_github" : false,
+            "entry_text" : "Double-layered Chocolate Fudge Cake on cooling rack"
+        },
+        {
             "file_path" : "cake.jpg",
             "inventory_order" : 4000000000,
             "OK_to_edit" : true,
