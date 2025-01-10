@@ -25,7 +25,7 @@ While the IOCCC is not open yet, there is a tentative opening date for the next 
 
 Comments and suggestions on these preliminary guidelines are welcome.  See the
 [FAQ](../faq.html#feedback) for how to suggest, correct or provide feedback
-about thse guidelines.
+about these guidelines.
 
 <!-- END: the next line ends content from: inc/guidelines.pending.hdr -->
 <!-- This is the last line modified by the tool: bin/gen-status.sh -->
