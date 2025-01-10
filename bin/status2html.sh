@@ -450,14 +450,14 @@ esac
 	echo "A preliminary [IOCCC rules](next/rules.html), preliminary [IOCCC guidelines](next/guidelines.html)," \
 	     "and preliminary [mkiocccentry tools](https://github.com/ioccc-src/mkiocccentry) have been posted."
 	echo
-	echo "Comments and suggestions on these preliminary items are welcome, see [FAQ 0.5](faq.html#feedback)" \
+	echo "Comments and suggestions on these preliminary items are welcome, see [FAQ 0.5](quick-start.html#feedback)" \
 	     "for information on how."
 	;;
     open) echo "# The IOCCC is open for submissions"
 	echo
 	echo "See the [IOCCC news](news.html) page for possible updates to rules, guidelines, tools and deadlines."
 	echo
-	echo "See [How to enter the IOCCC](faq.html#enter) FAQ for additional information."
+	echo "See [How to enter the IOCCC](quick-start.html#enter) FAQ for additional information."
 	echo
 	echo "**IMPORTANT**: If you viewed the preliminary IOCCC rules, guidelines, and tools while the IOCCC status" \
 	     "was pending, be sure to review the official IOCCC rules, guidelines, and tools for any changes that may" \

@@ -47,7 +47,7 @@ The goals of the IOCCC:
 View the [current status of the IOCCC](status.html) to see if the IOCCC is open for submissions.
 
 See the
-FAQ on "[how to enter the IOCCC](faq.html#enter)"
+FAQ on "[how to enter the IOCCC](quick-start.html#enter)"
 for more information.
 
 

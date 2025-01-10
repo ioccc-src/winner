@@ -13,7 +13,7 @@ FAQ on "[rules, guidelines, tools feedback](../faq.html#feedback)"
 as well as our
 FAQ on "[about asking questions](../faq.html#question)"
 about these rules. You might also find the FAQ in general useful, especially the
-FAQ on "[how to enter the IOCCC](../faq.html#enter)".
+FAQ on "[how to enter the IOCCC](../quick-start.html#enter)".
 
 **SUGGESTION**: Watch both the [IOCCC news](../news.html) and the
 [IOCCC Mastodon](https://fosstodon.org/@ioccc) feed for the latest news
@@ -26,7 +26,7 @@ app from time to time to view IOCCC mastodon updates.
 
 # The IOCCC open for submissions
 
-See "[FAQ - How may I enter the IOCCC](../faq.html#enter)"
+See "[FAQ - How may I enter the IOCCC](../quick-start.html#enter)"
 for information on how to register for the IOCCC, how to create a proper
 bzip2 compressed tarball of your submission, and how to upload your
 bzip2 compressed tarball to the IOCCC submit server.

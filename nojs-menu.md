@@ -20,7 +20,7 @@
 ## FAQ
 
 * [Frequently Asked Questions](faq.html)
-* [Enter the IOCCC](faq.html#enter)
+* [Enter the IOCCC](quick-start.html#enter)
 * [Compiling entries](faq.html#compiling)
 * [Running entries](faq.html#running_entries)
 * [How to help](faq.html#help)

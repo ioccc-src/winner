@@ -136,7 +136,7 @@ for assistance.
 </div>
 
 When the contest is [open](../status.html#open), proceed with
-[Step 3: Wait for your submit server username and initial password](../faq.html#step_3).
+[Step 3: Wait for your submit server username and initial password](../quick-start.html#step_3).
 
 
 <div id="status_impact">

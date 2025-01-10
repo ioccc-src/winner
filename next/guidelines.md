@@ -16,7 +16,7 @@ FAQ on "[rules, guidelines, tools feedback](../faq.html#feedback)"
 as well as our
 FAQ on "[about asking questions](../faq.html#question)"
 about these guidelines. You might also find the FAQ in general useful, especially the
-FAQ on "[how to enter the IOCCC](../faq.html#enter)".
+FAQ on "[how to enter the IOCCC](../quick-start.html#enter)".
 
 
 # The IOCCC is pending
@@ -144,7 +144,7 @@ You may [register](register.html) while the contest is either
 
 <p class="leftbar">
 See the
-FAQ on "[how to register and submit to the IOCCC](../faq.html#enter)"
+FAQ on "[how to register and submit to the IOCCC](../quick-start.html#enter)"
 for instructions on registering and participating in the IOCCC, as the process has changed from previous years!
 </p>
 
@@ -252,7 +252,7 @@ to account for the new [mkiocccentry repo](https://github.com/ioccc-src/mkioccce
 See the
 FAQ on "[obtaining and compiling the mkiocccentry tools](../faq.html#mkiocccentry)"
 and the
-FAQ on "[how to enter the IOCCC](../faq.html#enter)"
+FAQ on "[how to enter the IOCCC](../quick-start.html#enter)"
 as that FAQ has import details on
 [how to register](register.html)
 as well as

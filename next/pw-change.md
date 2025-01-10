@@ -1,7 +1,7 @@
 # Change your submit server initial password
 
 Using the **Username** and **Initial password** you receive via
-email in [step 3](../faq.html#step_3), you need to login to the [IOCCC submit
+email in [step 3](../quick-start.html#step_3), you need to login to the [IOCCC submit
 server](https://submit.ioccc.org).
 
 **IMPORTANT NOTE**: You must change your password **WITHIN 72 HOURS**
@@ -52,7 +52,7 @@ password:
  width=710 height=344>
 
 When the contest is [open](../status.html#open), proceed with
-[Step 5: Obtain and compile the latest mkiocccentry toolkit](../faq.html#step_5).
+[Step 5: Obtain and compile the latest mkiocccentry toolkit](../quick-start.html#step_5).
 
 
 <!--

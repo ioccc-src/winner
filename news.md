@@ -78,7 +78,7 @@ and [status.json](status.json) has been updated to reflect this new status.
 Proposed and tentative [IOCCC rules](next/rules.html) and [IOCCC guidelines](next/guidelines.html)
 have been released.
 
-See [FAQ Section 0](faq.html#enter_questions) for more information on how to enter.
+See [FAQ Section 0](quick-start.html#enter_questions) for more information on how to enter.
 
 
 ## 2024-06-08

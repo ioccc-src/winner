@@ -106,7 +106,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.4.10 2024-11-23"
+export VERSION="1.4.11 2025-01-09"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -132,12 +132,11 @@ export SITE_URL="https://www.ioccc.org"
 unset TOP_MD_SET
 declare -ag TOP_MD_SET
 TOP_MD_SET+=("about")
-TOP_MD_SET+=("CODE_OF_CONDUCT")
-TOP_MD_SET+=("README")
-TOP_MD_SET+=("author/README")
 TOP_MD_SET+=("archive/historic/README")
+TOP_MD_SET+=("author/README")
 TOP_MD_SET+=("bin/README")
 TOP_MD_SET+=("bugs")
+TOP_MD_SET+=("CODE_OF_CONDUCT")
 TOP_MD_SET+=("contact")
 TOP_MD_SET+=("faq")
 TOP_MD_SET+=("inc/README")
@@ -146,16 +145,18 @@ TOP_MD_SET+=("judges")
 TOP_MD_SET+=("license")
 TOP_MD_SET+=("markdown")
 TOP_MD_SET+=("news")
-TOP_MD_SET+=("next/README")
 TOP_MD_SET+=("next/guidelines")
 TOP_MD_SET+=("next/pw-change")
+TOP_MD_SET+=("next/README")
 TOP_MD_SET+=("next/register")
 TOP_MD_SET+=("next/rules")
 TOP_MD_SET+=("next/submit")
 TOP_MD_SET+=("nojs-menu")
+TOP_MD_SET+=("quick-start")
+TOP_MD_SET+=("README")
+TOP_MD_SET+=("SECURITY")
 TOP_MD_SET+=("status")
 TOP_MD_SET+=("thanks-for-help")
-TOP_MD_SET+=("SECURITY")
 declare -ag TOP_MD_SELECT_SET
 #
 export NOOP=

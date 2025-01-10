@@ -16,7 +16,7 @@ FAQ on "[rules, guidelines, tools feedback](../faq.html#feedback)"
 as well as our
 FAQ on "[about asking questions](../faq.html#question)"
 about these rules. You might also find the FAQ in general useful, especially the
-FAQ on "[how to enter the IOCCC](../faq.html#enter)".
+FAQ on "[how to enter the IOCCC](../quick-start.html#enter)".
 
 
 # The IOCCC is pending
@@ -169,7 +169,7 @@ nor for those who wait until the last minute to try to register!
 See the
 FAQ on "[obtaining and compiling the mkiocccentry tools](../faq.html#mkiocccentry)"
 and the
-FAQ on "[how to enter the IOCCC](../faq.html#enter)"
+FAQ on "[how to enter the IOCCC](../quick-start.html#enter)"
 as that FAQ has import details on
 [how to register](register.html)
 as well as
@@ -329,7 +329,7 @@ You may [register](register.html) while the contest is either
 
 <p class="leftbar">
 See the
-FAQ on "[how to register and submit to the IOCCC](../faq.html#enter)"
+FAQ on "[how to register and submit to the IOCCC](../quick-start.html#enter)"
 for instructions on registering and participating in the IOCCC, as the process has changed from previous years!
 </p>
 
@@ -408,7 +408,7 @@ the [submit server](https://submit.ioccc.org) may be offline and/or unresponsive
 See the
 FAQ on "[obtaining and compiling the mkiocccentry tools](../faq.html#mkiocccentry)"
 and the
-FAQ on "[how to enter the IOCCC](../faq.html#enter)"
+FAQ on "[how to enter the IOCCC](../quick-start.html#enter)"
 as that FAQ has import details on
 [how to register](register.html)
 as well as
@@ -658,7 +658,7 @@ submission.
 
 <p class="leftbar">
 See the
-FAQ on "[how to register](../faq.html#register)"
+FAQ on "[how to register](../quick-start.html#register)"
 for details.
 </p>
 
@@ -1209,7 +1209,7 @@ Check out the [Official IOCCC winner website](https://www.ioccc.org/index.html) 
 See the
 FAQ on "[obtaining and compiling the mkiocccentry tools](../faq.html#mkiocccentry)"
 and the
-FAQ on "[how to enter the IOCCC](../faq.html#enter)"
+FAQ on "[how to enter the IOCCC](../quick-start.html#enter)"
 as that FAQ has import details on
 [how to register](register.html)
 as well as
