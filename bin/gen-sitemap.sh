@@ -98,7 +98,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.3.14 2024-08-19"
+export VERSION="1.3.15 2025-01-09"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -828,6 +828,16 @@ done
 if [[ $EXIT_CODE -ne 0 ]]; then
     echo "$0: Warning: about to exit $EXIT_CODE" 1>&2
     exit "$EXIT_CODE"
+fi
+
+
+# remove all files that begin with .
+#
+sed -i -e '/\/\./d' "$TMP_MANIFEST_LIST"
+status="$?"
+if [[ $status -ne 0 ]]; then
+    echo "$0: ERROR: sed -i -e '/\/\./d' $TMP_MANIFEST_LIST failed, error: $status" 1>&2
+    exit 1
 fi
 
 
