@@ -15246,7 +15246,7 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/gen-sitemap.sh</loc>
-    <lastmod>2025-01-10T04:46:42+00:00</lastmod>
+    <lastmod>2025-01-10T05:12:36+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/gen-status.sh</loc>
@@ -15421,139 +15421,7 @@
     <lastmod>2025-01-02T02:12:25+00:00</lastmod>
 </url>
 <url>
-    <loc>https://www.ioccc.org/.gitignore</loc>
-    <lastmod>2024-12-31T08:49:44+00:00</lastmod>
-</url>
-<url>
-    <loc>https://www.ioccc.org/inc/after-content.default.html</loc>
-    <lastmod>2024-12-29T09:57:30+00:00</lastmod>
-</url>
-<url>
-    <loc>https://www.ioccc.org/inc/before-content.default.html</loc>
-    <lastmod>2024-12-29T09:57:30+00:00</lastmod>
-</url>
-<url>
-    <loc>https://www.ioccc.org/inc/body.default.html</loc>
-    <lastmod>2024-12-29T09:57:30+00:00</lastmod>
-</url>
-<url>
-    <loc>https://www.ioccc.org/inc/bottom.default.html</loc>
-    <lastmod>2024-12-29T09:57:30+00:00</lastmod>
-</url>
-<url>
-    <loc>https://www.ioccc.org/inc/footer.default.html</loc>
-    <lastmod>2024-12-29T09:57:30+00:00</lastmod>
-</url>
-<url>
-    <loc>https://www.ioccc.org/inc/footer.inventory.html</loc>
-    <lastmod>2024-12-29T09:57:30+00:00</lastmod>
-</url>
-<url>
-    <loc>https://www.ioccc.org/inc/guidelines.closed.hdr</loc>
-    <lastmod>2024-12-29T09:57:30+00:00</lastmod>
-</url>
-<url>
-    <loc>https://www.ioccc.org/inc/guidelines.judging.hdr</loc>
-    <lastmod>2024-12-29T09:57:30+00:00</lastmod>
-</url>
-<url>
-    <loc>https://www.ioccc.org/inc/guidelines.open.hdr</loc>
-    <lastmod>2024-12-29T09:57:30+00:00</lastmod>
-</url>
-<url>
-    <loc>https://www.ioccc.org/inc/guidelines.pending.hdr</loc>
-    <lastmod>2024-12-31T20:10:53+00:00</lastmod>
-</url>
-<url>
-    <loc>https://www.ioccc.org/inc/guidelines.year.hdr</loc>
-    <lastmod>2024-12-29T09:57:30+00:00</lastmod>
-</url>
-<url>
-    <loc>https://www.ioccc.org/inc/head.default.html</loc>
-    <lastmod>2024-12-29T09:57:30+00:00</lastmod>
-</url>
-<url>
-    <loc>https://www.ioccc.org/inc/header.default.html</loc>
-    <lastmod>2024-12-29T09:57:30+00:00</lastmod>
-</url>
-<url>
-    <loc>https://www.ioccc.org/inc/header.no-header-2.html</loc>
-    <lastmod>2024-12-29T09:57:30+00:00</lastmod>
-</url>
-<url>
-    <loc>https://www.ioccc.org/inc/header.with-header-3.html</loc>
-    <lastmod>2024-12-29T09:57:30+00:00</lastmod>
-</url>
-<url>
     <loc>https://www.ioccc.org/inc/index.html</loc>
-    <lastmod>2024-12-29T09:57:30+00:00</lastmod>
-</url>
-<url>
-    <loc>https://www.ioccc.org/inc/navbar.default.html</loc>
-    <lastmod>2024-12-29T09:57:30+00:00</lastmod>
-</url>
-<url>
-    <loc>https://www.ioccc.org/inc/navbar.empty.html</loc>
-    <lastmod>2024-12-29T09:57:30+00:00</lastmod>
-</url>
-<url>
-    <loc>https://www.ioccc.org/inc/navbar.first.html</loc>
-    <lastmod>2024-12-29T09:57:30+00:00</lastmod>
-</url>
-<url>
-    <loc>https://www.ioccc.org/inc/navbar.last.html</loc>
-    <lastmod>2024-12-29T09:57:30+00:00</lastmod>
-</url>
-<url>
-    <loc>https://www.ioccc.org/inc/navbar.mid.html</loc>
-    <lastmod>2024-12-29T09:57:30+00:00</lastmod>
-</url>
-<url>
-    <loc>https://www.ioccc.org/inc/navbar.up2index.html</loc>
-    <lastmod>2024-12-29T09:57:30+00:00</lastmod>
-</url>
-<url>
-    <loc>https://www.ioccc.org/inc/navbar.year.first.html</loc>
-    <lastmod>2024-12-29T09:57:30+00:00</lastmod>
-</url>
-<url>
-    <loc>https://www.ioccc.org/inc/navbar.year.last.html</loc>
-    <lastmod>2024-12-29T09:57:30+00:00</lastmod>
-</url>
-<url>
-    <loc>https://www.ioccc.org/inc/navbar.year.mid.html</loc>
-    <lastmod>2024-12-29T09:57:30+00:00</lastmod>
-</url>
-<url>
-    <loc>https://www.ioccc.org/inc/README.md</loc>
-    <lastmod>2024-12-29T09:57:30+00:00</lastmod>
-</url>
-<url>
-    <loc>https://www.ioccc.org/inc/rules.closed.hdr</loc>
-    <lastmod>2024-12-29T09:57:30+00:00</lastmod>
-</url>
-<url>
-    <loc>https://www.ioccc.org/inc/rules.judging.hdr</loc>
-    <lastmod>2024-12-29T09:57:30+00:00</lastmod>
-</url>
-<url>
-    <loc>https://www.ioccc.org/inc/rules.open.hdr</loc>
-    <lastmod>2024-12-29T10:12:01+00:00</lastmod>
-</url>
-<url>
-    <loc>https://www.ioccc.org/inc/rules.pending.hdr</loc>
-    <lastmod>2024-12-31T20:10:53+00:00</lastmod>
-</url>
-<url>
-    <loc>https://www.ioccc.org/inc/rules.year.hdr</loc>
-    <lastmod>2024-12-29T09:57:30+00:00</lastmod>
-</url>
-<url>
-    <loc>https://www.ioccc.org/inc/topbar.default.html</loc>
-    <lastmod>2024-12-29T09:57:30+00:00</lastmod>
-</url>
-<url>
-    <loc>https://www.ioccc.org/inc/top.default.html</loc>
     <lastmod>2024-12-29T09:57:30+00:00</lastmod>
 </url>
 <url>
@@ -15619,10 +15487,6 @@
 <url>
     <loc>https://www.ioccc.org/thanks-for-help.md</loc>
     <lastmod>2024-12-30T21:53:04+00:00</lastmod>
-</url>
-<url>
-    <loc>https://www.ioccc.org/.top</loc>
-    <lastmod>2024-12-29T09:57:29+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/var.mk</loc>

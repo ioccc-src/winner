@@ -98,7 +98,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.3.15 2025-01-09"
+export VERSION="1.3.16 2025-01-09"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -833,12 +833,23 @@ fi
 
 # remove all files that begin with .
 #
-sed -i -e '/\/\./d' "$TMP_MANIFEST_LIST"
+sed -i -e '/\/\./d' -e '/^\./d' "$TMP_MANIFEST_LIST"
 status="$?"
 if [[ $status -ne 0 ]]; then
-    echo "$0: ERROR: sed -i -e '/\/\./d' $TMP_MANIFEST_LIST failed, error: $status" 1>&2
+    echo "$0: ERROR: sed -i -e '/\/\./d' -e '/^\./d' $TMP_MANIFEST_LIST failed, error: $status" 1>&2
     exit 1
 fi
+
+
+# remove all files from under inc/ except for inc/index.html
+#
+sed -i -e '/^inc\//d' "$TMP_MANIFEST_LIST"
+status="$?"
+if [[ $status -ne 0 ]]; then
+    echo "$0: ERROR: sed -i -e '/^inc\//d' $TMP_MANIFEST_LIST failed, error: $status" 1>&2
+    exit 1
+fi
+echo 'inc/index.html' >> "$TMP_MANIFEST_LIST"
 
 
 # sort the manifest list
