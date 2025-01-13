@@ -9,19 +9,24 @@
 #############################
 # shell used by this Makefile
 #############################
-#
+
 SHELL= bash
 
 
 #######################
 # common tool locations
 #######################
-#
+
 CC= cc
 GINDENT= gindent
 MV= mv
 RM= rm
 TRUE= true
+
+
+#####################
+# C compiler settings
+#####################
 
 # Common C compiler warnings to silence
 #
@@ -130,6 +135,7 @@ endif
 PROG= prog
 OBJ= ${PROG}.o
 TARGET= ${PROG}
+
 # If you have alternate code, try something like:
 # ALT_OBJ= ${PROG}.alt.o
 # ALT_TARGET= ${PROG}.alt
@@ -149,37 +155,30 @@ DATA=
 #################
 # build the entry
 #################
-#
+
 all: data ${TARGET}
-	@${TRUE}
 
 .PHONY: all data try clean clobber install
 
 # how to compile
 #
 ${PROG}: ${PROG}.c
-	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
+	${CC} ${CFLAGS} ${PROG}.c -o $@ ${LDFLAGS}
 
 # alternative executable
 #
 alt: data ${ALT_TARGET}
-	@${TRUE}
 
 ${PROG}.alt: ${PROG}.alt.c
-	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
-
-
+	${CC} ${CFLAGS} ${PROG}.alt.c -o $@ ${LDFLAGS}
 
 # data files
 #
 data: ${DATA}
-	@${TRUE}
 
 # both all and alt
 #
 everything: all alt
-	@${TRUE}
-
 
 # suggested way(s) to run the program
 #
@@ -194,7 +193,7 @@ try: ${PROG} ${DATA}
 ###############
 # utility rules
 ###############
-#
+
 clean:
 	${RM} -f ${OBJ}
 	@-if [[ -f indent.c ]]; then \
