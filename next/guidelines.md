@@ -765,8 +765,7 @@ that's OK too!
 
 <p class="leftbar">
 We **recommend** AND **encourage** you to use the example Makefile **here**,
-rather than the `mkiocccentry` repo's `Makefile.example`, renamed as `Makefile`
-of course, as the starting point for your submission's required `Makefile`:
+as the starting point for your submission's required `Makefile`:
 </p>
 
 - <p class="leftbar">[view example
