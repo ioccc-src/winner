@@ -425,7 +425,7 @@
 
 <!-- BEFORE: 1st line of markdown file: faq.md -->
 <h1 id="ioccc-faq-table-of-contents">IOCCC FAQ Table of Contents</h1>
-<p>This is FAQ version <strong>28.2.0 2024-12-28</strong>.</p>
+<p>This is FAQ version <strong>28.2.0 2025-01-16</strong>.</p>
 <h2 id="entering-the-ioccc-the-bare-minimum-you-need-to-know">0. <a href="#enter_questions">Entering the IOCCC: the bare minimum you need to know</a></h2>
 <ul>
 <li><strong>Q 0.0</strong>: <a class="normal" href="#enter">How can I enter the IOCCC?</a></li>
@@ -448,6 +448,7 @@
 <li><strong>Q 1.2</strong>: <a class="normal" href="#markdown">What is markdown and how does the IOCCC use it?</a></li>
 <li><strong>Q 1.3</strong>: <a class="normal" href="#mkiocccentry_bugs">How do I report bugs in an <code>mkiocccentry</code> tool?</a></li>
 <li><strong>Q 1.4</strong>: <a class="normal" href="#subdirectories">How may I use subdirectories in my submission if Rule 17 disallows them?</a></li>
+<li><strong>Q 1.5</strong>: <a class="normal" href="#mkiocccentry_test">How can I test my submission passes tests without having to answer questions?</a></li>
 </ul>
 <h2 id="ioccc-judging-process">2. <a href="#judging">IOCCC Judging process</a></h2>
 <ul>
@@ -965,6 +966,31 @@ as <code>MAX_TARBALL_LEN</code> and your total number of files in your xz compre
 tarball does not exceed the limit, defined as <code>MAX_FILE_COUNT</code> in
 <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h">limit_ioccc.h</a>,
 you can include tarballs with subdirectories or other files.</p>
+<div id="mkiocccentry_test">
+<h4 id="q-1.5-how-can-i-test-my-submission-passes-tests-without-having-to-answer-questions">Q 1.5: How can I test my submission passes tests without having to answer questions?</h4>
+</div>
+<p>In case you do not have a UUID or you simply want to test if <code>mkiocccentry(1)</code>
+does not detect any issues with your submission, without having to answer all
+the questions, you can use the <code>-d</code> option (which is an alias for <code>-s 21701</code>
+where <code>21701</code> is the seed) to have the tool make up pseudo-randomly selected
+answers.</p>
+<p>Please note that the tool will <strong>NOT</strong> delete the directory it makes so if you
+do have to try again you’ll have to remove it.</p>
+<p>An example use of this option is:</p>
+<pre><code>    mkiocccentry -d test_work prog.c Makefile remarks.md</code></pre>
+<p>This will run the tests that <code>mkiocccentry(1)</code>, write the JSON files, use
+<code>chkentry(1)</code>, package the tarball and run <code>txzchk(1)</code> on it.</p>
+<p>See also the
+FAQ on “<a href="#info_json">.info.json</a>”,
+the
+FAQ on “<a href="#auth_json">.auth.json</a>”,
+the
+FAQ on “<a href="#chkentry">chkentry</a>,
+the
+FAQ on”<a href="#txzchk">txzchk</a>”
+and the
+FAQ on “<a href="#fnamchk">fnamchk</a>”
+for more details.</p>
 <hr style="width:50%;text-align:left;margin-left:0">
 <hr style="width:50%;text-align:left;margin-left:0">
 <div id="judging">
