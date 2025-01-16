@@ -142,7 +142,7 @@ TARGET= ${PROG}
 #
 # or so.
 #
-# Please remove these lines either way.
+# Please remove these comments either way.
 #
 ALT_OBJ=
 ALT_TARGET=
