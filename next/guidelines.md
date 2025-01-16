@@ -49,7 +49,7 @@ Jump to: [top](#)
 </div>
 
 <p class="leftbar">
-These [IOCCC guidelines](guidelines.html) are version **28.30 2024-12-28**.
+These [IOCCC guidelines](guidelines.html) are version **28.30 2025-01-16**.
 </p>
 
 <p class="leftbar">
@@ -209,6 +209,14 @@ and then re-uploading it to the same slot no the [submit server](https://submit.
 </p>
 
 <p class="leftbar">
+To help you with this, so that you do not have to repeatedly answer all the
+questions, the `mkiocccentry(1)` tool has the options `-a answers`, `-A answers`
+and `-i answers`, where `-a` will write to an answers file if it does not
+already exist, `-A` will overwrite the file and `-i` will read the answers from
+the file.
+</p>
+
+<p class="leftbar">
 Once the contest enters the **[judging](../status.html#judging)** state, you will
 **NOT** be allowed to upload your submission files.
 </p>
@@ -249,6 +257,23 @@ to account for the new [mkiocccentry repo](https://github.com/ioccc-src/mkioccce
 </p>
 
 <p class="leftbar">
+If you wish to test that your submission passes the `mkiocccentry(1)` tests
+without having to put in answers each time, you can use the `-d` or `-s seed`
+option to `mkiocccentry` for the tool to pseudo-randomly create answers for you.
+The `-d` option is an alias for `-s 21701`. An example use:
+</p>
+
+``` <!---sh-->
+    mkiocccentry -d test_work prog.c Makefile remarks.md
+```
+
+<p class="leftbar">
+where `test_work` is the directory which the tarball will be formed. Be aware
+that if the directory exists already, you will have to remove it or move it
+before this option will work a second time, just like in normal mode.
+</p>
+
+<p class="leftbar">
 See the
 FAQ on "[obtaining and compiling the mkiocccentry tools](../faq.html#mkiocccentry)"
 and the
@@ -258,6 +283,8 @@ as that FAQ has import details on
 as well as
 [how to upload your submission](submit.html) for the IOCCC.
 </p>
+
+
 
 Jump to: [top](#)
 
@@ -317,7 +344,7 @@ smaller.  Or, maybe not.  :-)
 </p>
 
 <p class="leftbar">
-There may be less than 2^7+1 reasons why these [IOCCC
+There may be fewer than 2^7+1 reasons why these [IOCCC
 guidelines](guidelines.html) seem obfuscated.
 </p>
 

@@ -1,6 +1,6 @@
 # IOCCC FAQ Table of Contents
 
-This is FAQ version **28.2.0 2024-12-28**.
+This is FAQ version **28.2.0 2025-01-16**.
 
 
 ## 0. [Entering the IOCCC: the bare minimum you need to know](#enter_questions)
@@ -22,6 +22,7 @@ This is FAQ version **28.2.0 2024-12-28**.
 - **Q 1.2**: <a class="normal" href="#markdown">What is markdown and how does the IOCCC use it?</a>
 - **Q 1.3**: <a class="normal" href="#mkiocccentry_bugs">How do I report bugs in an `mkiocccentry` tool?</a>
 - **Q 1.4**: <a class="normal" href="#subdirectories">How may I use subdirectories in my submission if Rule 17 disallows them?</a>
+- **Q 1.5**: <a class="normal" href="#mkiocccentry_test">How can I test my submission passes tests without having to answer questions?</a>
 
 
 ## 2. [IOCCC Judging process](#judging)
@@ -647,6 +648,7 @@ for more thorough details on bug reporting.
 
 Jump to: [top](#)
 
+
 <div id="subdirectories">
 #### Q 1.4: How may I use subdirectories in my submission if Rule 17 disallows them?
 </div>
@@ -658,6 +660,40 @@ as `MAX_TARBALL_LEN` and your total number of files in your xz compressed
 tarball does not exceed the limit, defined as `MAX_FILE_COUNT` in
 [limit_ioccc.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h),
 you can include tarballs with subdirectories or other files.
+
+<div id="mkiocccentry_test">
+#### Q 1.5: How can I test my submission passes tests without having to answer questions?
+</div>
+
+In case you do not have a UUID or you simply want to test if `mkiocccentry(1)`
+does not detect any issues with your submission, without having to answer all
+the questions, you can use the `-d` option (which is an alias for `-s 21701`
+where `21701` is the seed) to have the tool make up pseudo-randomly selected
+answers.
+
+Please note that the tool will **NOT** delete the directory it makes so if you
+do have to try again you'll have to remove it.
+
+An example use of this option is:
+
+``` <!---sh-->
+    mkiocccentry -d test_work prog.c Makefile remarks.md
+```
+
+This will run the tests that `mkiocccentry(1)`, write the JSON files, use
+`chkentry(1)`, package the tarball and run `txzchk(1)` on it.
+
+See also the
+FAQ on "[.info.json](#info_json)",
+the
+FAQ on "[.auth.json](#auth_json)",
+the
+FAQ on "[chkentry](#chkentry),
+the
+FAQ on "[txzchk](#txzchk)"
+and the
+FAQ on "[fnamchk](#fnamchk)"
+for more details.
 
 
 <hr style="width:50%;text-align:left;margin-left:0">
