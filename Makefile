@@ -752,6 +752,8 @@ quick_www:
 	${MAKE} gen_top_html
 	${MAKE} quick_entry_index
 	${MAKE} quick_other_html
+	${MAKE} gen_status
+	${MAKE} gen_sitemap
 	${MAKE} find_missing_links
 	@echo '=-=-=-=-=-= IOCCC complete make $@ =-=-=-=-=-='
 
@@ -780,8 +782,10 @@ www:
 	${MAKE} gen_top_html
 	${MAKE} entry_index
 	${MAKE} gen_other_html
-	${MAKE} find_missing_links
+	${MAKE} gen_status
+	${MAKE} gen_sitemap
 	${MAKE} find_invalid_json
+	${MAKE} find_missing_links
 	@echo '=-=-=-=-=-= IOCCC complete make $@ =-=-=-=-=-='
 
 
