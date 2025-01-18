@@ -1336,22 +1336,18 @@ FAQ on "[.info.json](#info_json)"
 for more details on these files.
 
 The `chkentry(1)` tool accepts more than one command line form.
-If you pass a single argument, it is expected to be a directory that has both
-`.auth.json` and `.info.json` in it. You can also specify a `.auth.json` and/or
+You may specify a `.auth.json` and/or
 `.info.json` file. An argument of "`.`" will skip that file. For instance:
 
 ``` <!---sh-->
-    # test entry directory test_work:
-    chkentry test_work
-
     # run checks on .info.json:
-    chkentry .info.json .
+    chkentry . .info.json
 
     # run checks on .auth.json:
-    chkentry . .auth.json
+    chkentry .auth.json .
 
-    # run checks on .info.json and .auth.json:
-    chkentry .info.json .auth.json
+    # run checks on .auth.json and .info.json:
+    chkentry .auth.json .info.json
 ```
 
 If there is a [JSON](https://www.json.org/json-en.html) issue detected by the

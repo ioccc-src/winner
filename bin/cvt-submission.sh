@@ -22,7 +22,7 @@
 #
 # "Because sometimes even the IOCCC Judges need some help." :-)
 #
-# Copyright (c) 2024 by Landon Curt Noll.  All Rights Reserved.
+# Copyright (c) 2024-2025 by Landon Curt Noll.  All Rights Reserved.
 #
 # Permission to use, copy, modify, and distribute this software and
 # its documentation for any purpose and without fee is hereby granted,
@@ -106,7 +106,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.3.1 2024-11-16"
+export VERSION="1.3.2 2025--1-18"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -1253,19 +1253,19 @@ fi
 # perform the semantic check on .info.json and .auth.json
 #
 if [[ $V_FLAG -ge 1 ]]; then
-    echo "$0: debug[1]: about to run: $CHKENTRY_TOOL -v 1 -- $INFO_JSON $AUTH_JSON" 1>&2
-    "$CHKENTRY_TOOL" -v 1 -- "$INFO_JSON" "$AUTH_JSON"
+    echo "$0: debug[1]: about to run: $CHKENTRY_TOOL -v 1 -- $AUTH_JSON $INFO_JSON" 1>&2
+    "$CHKENTRY_TOOL" -v 1 -- "$AUTH_JSON" "$INFO_JSON"
     status="$?"
     if [[ $status -ne 0 ]]; then
-	echo "$0: ERROR: $CHKENTRY_TOOL -v 1 -- $INFO_JSON $AUTH_JSON failed," \
+	echo "$0: ERROR: $CHKENTRY_TOOL -v 1 -- $AUTH_JSON $INFO_JSON failed," \
 	      "error code: $status" 1>&2
 	exit 7
     fi
 else
-    "$CHKENTRY_TOOL" -- "$INFO_JSON" "$AUTH_JSON"
+    "$CHKENTRY_TOOL" -- "$AUTH_JSON" "$INFO_JSON"
     status="$?"
     if [[ $status -ne 0 ]]; then
-	echo "$0: $CHKENTRY_TOOL -- $INFO_JSON $AUTH_JSON failed," \
+	echo "$0: $CHKENTRY_TOOL --  $AUTH_JSON $INFO_JSON failed," \
 	      "error code: $status" 1>&2
 	exit 7
     fi

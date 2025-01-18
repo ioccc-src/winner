@@ -1494,20 +1494,16 @@ and
 FAQ on “<a href="#info_json">.info.json</a>”
 for more details on these files.</p>
 <p>The <code>chkentry(1)</code> tool accepts more than one command line form.
-If you pass a single argument, it is expected to be a directory that has both
-<code>.auth.json</code> and <code>.info.json</code> in it. You can also specify a <code>.auth.json</code> and/or
+You may specify a <code>.auth.json</code> and/or
 <code>.info.json</code> file. An argument of “<code>.</code>” will skip that file. For instance:</p>
-<pre><code>    # test entry directory test_work:
-    chkentry test_work
-
-    # run checks on .info.json:
-    chkentry .info.json .
+<pre><code>    # run checks on .info.json:
+    chkentry . .info.json
 
     # run checks on .auth.json:
-    chkentry . .auth.json
+    chkentry .auth.json .
 
-    # run checks on .info.json and .auth.json:
-    chkentry .info.json .auth.json</code></pre>
+    # run checks on .auth.json and .info.json:
+    chkentry .auth.json .info.json</code></pre>
 <p>If there is a <a href="https://www.json.org/json-en.html">JSON</a> issue detected by the
 <code>jparse(3)</code> API, then there is a <a href="https://www.json.org/json-en.html">JSON</a> error and
 <code>chkentry(1)</code> will report it as an <strong>error</strong>. If the parsing is OK (i.e. valid
