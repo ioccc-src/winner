@@ -446,13 +446,21 @@ mealy-mouthed denials and obfuscations.</p>
 </ul>
 <p>The official IOCCC website is <a href="https://www.ioccc.org">www.ioccc.org</a>.</p>
 <h2 id="how-it-was-started">How it was started:</h2>
-<p>The original inspiration of the International Obfuscated C Code Contest came
-from the Bourne Shell source and the
+<p><strong>It was a dark and stormy night…</strong></p>
+<p>OK, let’s go back to 1984, not 1830: one day (1984 March 23 to be exact), Larry Bassel
+and I (Landon Curt Noll) were working for National Semiconductor’s Genix porting
+group, and we were both in our offices trying to fix some very broken code.</p>
+<p>Larry had been trying to fix a bug in
+the old Bourne shell
+<a href="https://github.com/dank101/4.2BSD/tree/708b3890ac0c2f034f2840b5ee9125b3c83a05bc/bin/sh">sh(1)</a>
+(C code <code>#define</code>d to death to sort of look like Algol),
+and I had been working on the
 <a href="https://github.com/dank101/4.2BSD/blob/708b3890ac0c2f034f2840b5ee9125b3c83a05bc/ucb/finger.c">finger(1)</a> command
 along with its associated
 <a href="https://github.com/dank101/4.3BSD-Reno/tree/master/libexec/fingerd">fingerd(8)</a> daemon
-from early 4BSD.
-If this is what could result from what some people claim is reasonable
+from early 4BSD as used by the GENIX operating system for the NS SYS16 system.</p>
+<p><strong>BTW</strong>: The above links to BSD code are only approximations of the BSD code that was being used in the GENIX operating system for the NS SYS16 system. For example, the source code reference to <code>fingerd(8)</code> is well past the 1984 March 23 date.</p>
+<p>If this is what could result from what some people claim is reasonable
 programming practice, then to what depths might quality sink if people really
 tried to write poor code?</p>
 <p>I, Landon Curt Noll, put that question to the USENET news groups <code>net.lang.c</code>

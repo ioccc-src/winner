@@ -6552,12 +6552,17 @@ OK, let's go back to 1984, not 1830: one day (1984 March 23 to be exact), Larry 
 and I (Landon Curt Noll) were working for National Semiconductor's Genix porting
 group, and we were both in our offices trying to fix some very broken code.
 
-Larry had been trying to fix a bug in the classic Bourne shell (C code `#define`d
-to death to sort of look like Algol) and I had been working on the
+Larry had been trying to fix a bug in
+the old Bourne shell
+[sh&lpar;1&rpar;](https://github.com/dank101/4.2BSD/tree/708b3890ac0c2f034f2840b5ee9125b3c83a05bc/bin/sh)
+(C code `#define`d to death to sort of look like Algol),
+and I had been working on the
 [finger&lpar;1&rpar;](https://github.com/dank101/4.2BSD/blob/708b3890ac0c2f034f2840b5ee9125b3c83a05bc/ucb/finger.c) command
 along with its associated
 [fingerd&lpar;8&rpar;](https://github.com/dank101/4.3BSD-Reno/tree/master/libexec/fingerd) daemon
-from early 4BSD.
+from early 4BSD as used by the GENIX operating system for the NS SYS16 system.
+
+**BTW**: The above links to BSD code are only approximations of the BSD code that was being used in the GENIX operating system for the NS SYS16 system.  For example, the source code reference to `fingerd(8)` is well past the 1984 March 23 date.
 
 We happened to both wander (at the same time) out to the hallway
 in Building 7C to clear our heads.
