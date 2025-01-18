@@ -6553,8 +6553,11 @@ and I (Landon Curt Noll) were working for National Semiconductor's Genix porting
 group, and we were both in our offices trying to fix some very broken code.
 
 Larry had been trying to fix a bug in the classic Bourne shell (C code `#define`d
-to death to sort of look like Algol) and I had been working on the `finger(1)`
-program from early BSD (a bug ridden `finger` implementation to be sure).
+to death to sort of look like Algol) and I had been working on the
+[finger&lpar;1&rpar;](https://github.com/dank101/4.2BSD/blob/708b3890ac0c2f034f2840b5ee9125b3c83a05bc/ucb/finger.c) command
+along with its associated
+[fingerd&lpar;8&rpar;](https://github.com/dank101/4.3BSD-Reno/tree/master/libexec/fingerd) daemon
+from early 4BSD.
 
 We happened to both wander (at the same time) out to the hallway
 in Building 7C to clear our heads.

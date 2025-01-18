@@ -5258,8 +5258,11 @@ judging the IOCCC. A Unix man page for <code>cb</code>
 and I (Landon Curt Noll) were working for National Semiconductor’s Genix porting
 group, and we were both in our offices trying to fix some very broken code.</p>
 <p>Larry had been trying to fix a bug in the classic Bourne shell (C code <code>#define</code>d
-to death to sort of look like Algol) and I had been working on the <code>finger(1)</code>
-program from early BSD (a bug ridden <code>finger</code> implementation to be sure).</p>
+to death to sort of look like Algol) and I had been working on the
+<a href="https://github.com/dank101/4.2BSD/blob/708b3890ac0c2f034f2840b5ee9125b3c83a05bc/ucb/finger.c">finger(1)</a> command
+along with its associated
+<a href="https://github.com/dank101/4.3BSD-Reno/tree/master/libexec/fingerd">fingerd(8)</a> daemon
+from early 4BSD.</p>
 <p>We happened to both wander (at the same time) out to the hallway
 in Building 7C to clear our heads.</p>
 <p>We began to compare notes: ‘<em>You won’t believe the code I am trying to fix</em>’.</p>
