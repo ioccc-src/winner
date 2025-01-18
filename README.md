@@ -1,26 +1,31 @@
 # The International Obfuscated C Code Contest
 
 
-## **Obfuscate** | *verb* [with object]
-
-- render obscure, unclear, or unintelligible: the spelling changes will deform
+> **Obfuscate** | _verb_ [with object]
+>
+> render obscure, unclear, or unintelligible: the spelling changes will deform
 some familiar words and obfuscate their etymological origins.
+>
+>    - bewilder (someone): it is more likely to obfuscate people than enlighten them.
+>
+>    **obfuscatory** | _adjective_
+>
+>   **ORIGIN**
+>
+>   late Middle English (as adjective): from late Latin **obfuscat-**
+>   'darkened', from the verb **obfuscare**, based on Latin **fuscus** 'dark'.
 
-    - bewilder (someone): it is more likely to obfuscate people than enlighten them.
-obfuscatory | adjective
 
-    late Middle English (as adjective): from late Latin **obfuscat-**
-    'darkened', from the verb **obfuscare**, based on Latin **fuscus** 'dark'.
-
-
-## **Obfuscation** | *noun*
-
-- the action of making something obscure, unclear, or unintelligible: when
+> **Obfuscation** | _noun_
+>
+> the action of making something obscure, unclear, or unintelligible: when
 confronted with sharp questions they resort to obfuscation | ministers put up
 mealy-mouthed denials and obfuscations.
-
-    late Middle English: from late Latin **obfuscatio(n-)**, from **obfuscare**
-    'to darken or obscure' (see *obfuscate*).
+>
+>   **ORIGIN**
+>
+>    late Middle English: from late Latin **obfuscatio(n-)**, from **obfuscare**
+>    'to darken or obscure' (see *obfuscate*).
 
 The official IOCCC website is [www.ioccc.org](https://www.ioccc.org).
 
