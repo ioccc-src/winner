@@ -484,9 +484,9 @@ are at a great risk of violating [Rule 17](rules.html#rule17)!
 For more details, see the
 FAQ on the "[try.sh script system](../faq.html#try)",
 the
-FAQ on "[.auth.json](faq.html#auth_json)",
+FAQ on "[.auth.json](../faq.html#auth_json)",
 the
-FAQ on "[.info.json](faq.html#info_json)",
+FAQ on "[.info.json](../faq.html#info_json)",
 
 
 <div id="mkiocccentry">
