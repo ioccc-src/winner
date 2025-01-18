@@ -55,7 +55,7 @@ Jump to: [top](#)
 
 
 <p class="leftbar">
-These [IOCCC rules](rules.html) are version **28.17 2024-12-30**.
+These [IOCCC rules](rules.html) are version **28.17 2025-01-18**.
 </p>
 
 <p class="leftbar">
@@ -162,7 +162,7 @@ to process your registration and email you your initial login and password,
 you should **MAKE SURE** you give yourself enough time before the contest closes.
 In other words, **DO NOT WAIT UNTIL THE FINAL DAYS** of the contest to register!
 The [IOCCC judges](../judges.html) are **NOT** responsible for delayed or lost email,
-nor for those who wait until the last minute to try to register!
+or for those who wait until the last minute to try to register!
 </p>
 
 <p class="leftbar">
@@ -170,10 +170,10 @@ See the
 FAQ on "[obtaining and compiling the mkiocccentry tools](../faq.html#mkiocccentry)"
 and the
 FAQ on "[how to enter the IOCCC](../quick-start.html#enter)"
-as that FAQ has import details on
+as that FAQ has important details on
 [how to register](register.html)
 as well as
-[how to upload your submission](submit.html) for the IOCCC.
+[how to upload your submission](submit.html) to the IOCCC.
 </p>
 
 
@@ -264,6 +264,14 @@ as a command like argument to the `iocccsize(1)` tool. For example:
 ``` <!---sh-->
     ./iocccsize prog.c
 ```
+
+<p class="leftbar">
+Alternatively, you may use the `mkiocccentry(1)` option `-d` to verify that
+things check out without having to answer all the questions. See the
+FAQ on "[how to test your submission without having to answer
+questions](../faq.html#mkiocccentry_test)"
+for more details.
+</p>
 
 
 Jump to: [top](#)
@@ -359,11 +367,11 @@ to process your registration and email you your initial login and password,
 you should **MAKE SURE** you give yourself enough time before the contest closes.
 In other words, **DO NOT WAIT UNTIL THE FINAL DAYS** of the contest to register!
 The [IOCCC judges](../judges.html) are **NOT** responsible for delayed or lost email,
-nor for those who wait until the last minute to try to register!
+or for those who wait until the last minute to try to register!
 </p>
 
 <p class="leftbar">
-For those who have [registered](register.html) and received by email, their
+If you have [registered](register.html) and received by email their
 [submit server](https://submit.ioccc.org) **Username** and **Initial password**
 from an [IOCCC judge](../judges.html), you may upload your submission to
 the [submit server](https://submit.ioccc.org) only while the
@@ -390,7 +398,7 @@ for more information about the `mkiocccentry(1)` tool.
 <p class="leftbar">
 While the contest is **[open](../status.html#open)**, you may modify your previously
 uploaded submission by rebuilding your submission with the `mkiocccentry(1)` tool
-and then re-uploading it to the same slot no the [submit server](https://submit.ioccc.org).
+and then re-uploading it to the same slot number on the [submit server](https://submit.ioccc.org).
 </p>
 
 <p class="leftbar">
@@ -409,10 +417,10 @@ See the
 FAQ on "[obtaining and compiling the mkiocccentry tools](../faq.html#mkiocccentry)"
 and the
 FAQ on "[how to enter the IOCCC](../quick-start.html#enter)"
-as that FAQ has import details on
+as that FAQ has important details on
 [how to register](register.html)
 as well as
-[how to upload your submission](submit.html) for the IOCCC.
+[how to upload your submission](submit.html) to the IOCCC.
 </p>
 
 
@@ -429,13 +437,14 @@ to fit into the structure of the [Official IOCCC winner website](https://www.ioc
 </p>
 
 <p class="leftbar">
-For example, your submission's `Makefile` might be modified.
+For example, your submission's `Makefile` will be modified and your `remarks.md`
+will become a `README.md` which will be used to generate an `index.html` file.
 </p>
 
 <p class="leftbar">
 Your source code will be the file `prog.c`.  The compiled binary
 will be called `prog`.  If you submission requires different filenames,
-then modify your submission's `Makefile` to **COPY** (**NOT** move)
+then modify your submission's `Makefile` to **COPY** (**NOT** move!)
 the files accordingly.
 </p>
 
@@ -653,8 +662,7 @@ In order to register for the IOCCC, you **MUST** have a valid email address.
 </p>
 
 The [judges](../judges.html) **are not responsible for delays in email**, please plan
-enough time for one automated exchange of email as part of your
-submission.
+enough time for the exchange of emails so you can upload your submission.
 
 <p class="leftbar">
 See the
@@ -711,29 +719,37 @@ conforms to [Rule 17](#rule17).
 </p>
 
 <p class="leftbar">
-Each above mentioned tool has a `-h` option that provides command
-line help.  For additional details, see the tools' man pages and the
-[guidelines](guidelines.html).
+Each above mentioned tool has a `-h` option that provides command line help. For
+additional details of each tool, see its man page, and in some cases, the [IOCCC
+guidelines](guidelines.html).
 </p>
 
 <p class="leftbar">
-You do not explicitly need to invoke `jparse(1)` but the `jparse(3)`
-library will be used when compiling the tools.
+There is no need to use `jparse(1)` but the `jparse(3)` library
+library will be linked when compiling the tools as they use various functions
+provided by it, and `chkentry` uses the JSON parser API as well.
 </p>
 
 <p class="leftbar">
-Of course you **can** invoke `jparse(1)` if you wish to validate a JSON file but
+Of course you **may** invoke `jparse(1)` if you wish to validate a JSON file but
 the only JSON files you might want to validate for the IOCCC are validated
 by `chkentry(1)`, and that is what you should use to make sure you conform to
 this rule.
 </p>
 
-**IMPORTANT**: Make **SURE** you have the most recent version of the
-`mkiocccentry` toolkit! Not doing so will put you at a great risk of violating
-this rule! See the
-FAQ on "[obtaining the mkiocccentry toolkit](../faq.html#mkiocccentry)"
-for more details.
+<p class="leftbar">
+The maximum number of **extra files** is 31. See the [maximum number of extra
+files section](#max-files) below for finer details and the
+FAQ on "[including additional files](../faq.html#extra-files)"
+if you need to include more files than this maximum.
+</p>
 
+<p class="leftbar">
+Extra files are defined as files that are not the required files (`prog.c`,
+`Makefile`, `remarks.md` and the two generated by `mkiocccentry(1)` `.info.json`
+and `.auth.json`) and the optional files (`try.sh`, `prog.alt.c` and
+`try.alt.sh`).
+</p>
 
 Jump to: [top](#)
 
@@ -758,10 +774,11 @@ details), and where _`slot_num`_ is a single decimal digit integer
 </p>
 
 <p class="leftbar">
-In particular, _`username`_ is in the form of:
-`xxxxxxxx-xxxx-4xxx-axxx-xxxxxxxxxxxx` where `x` is a hexadecimal digit in the
-range `[0-9a-f]`.  And yes, there is a 4 (UUID version 4) and an `a` (UUID variant
-1) in there.
+In particular, `username` is in the form of:
+`xxxxxxxx-xxxx-4xxx-Nxxx-xxxxxxxxxxxx` where `'x'` is a hex digit in the range
+of `[0-9a-f]`, 4 is the UUID version, and `N` is one of `8`, `9`, `a`, or `b`.
+And yes, there is a 4 (UUID version 4) and variants `0x8`, `0x9`, `0xa` and
+`0xb` in there.
 </p>
 
 <p class="leftbar">
@@ -775,13 +792,21 @@ Your xz compressed tarball **MUST** contain, **at a minimum**, the following fil
 * <p class="leftbar">`.auth.json`</p>
 
 <p class="leftbar">
-The `.info.json` must be valid JSON and pass the `chkentry(1)` tests.
-It is generated by the `mkiocccentry(1)` tool.
+The `.info.json` is generated by the `mkiocccentry(1)` tool. If not, and it is
+not valid JSON or it does not pass the `chkentry(1)` tool, your submission
+**WILL BE** rejected! If you do use `mkiocccentry(1)` and it fails to pass
+`chkentry(1)` then you might wish to [report it as a bug at the mkiocccentry
+issues
+page](https://github.com/ioccc-src/mkiocccentry/issues/new?assignees=&labels=bug&projects=&template=bug_report.yml&title=%5BBug%5D+%3Ctitle%3E).
 </p>
 
 <p class="leftbar">
-The `.auth.json` must be valid JSON and pass the `chkentry(1)` tests.
-It is generated by the `mkiocccentry(1)` tool.
+The `.auth.json` is generated by the `mkiocccentry(1)` tool. If not, and it is
+not valid JSON or it does not pass the `chkentry(1)` tool, your submission
+**WILL BE** rejected! If you do use `mkiocccentry(1)` and it fails to pass
+`chkentry(1)` then you might wish to [report it as a bug at the mkiocccentry
+issues
+page](https://github.com/ioccc-src/mkiocccentry/issues/new?assignees=&labels=bug&projects=&template=bug_report.yml&title=%5BBug%5D+%3Ctitle%3E).
 </p>
 
 <p class="leftbar">
@@ -837,6 +862,18 @@ to **28314624** octets (**27651K**) in size.
 Your submission's xz compressed tarball **MUST** pass the `txzchk(1)` test. See
 the [guidelines](guidelines.html) for more details on this tool.
 </p>
+
+
+
+<p class="leftbar">
+**IMPORTANT**: Make **SURE** you have the most recent version of the
+`mkiocccentry` toolkit! Not doing so will put you at a great risk of violating
+this rule! See the
+FAQ on "[obtaining the mkiocccentry toolkit](../faq.html#mkiocccentry)"
+for more details.
+</p>
+
+
 
 <p class="leftbar">
 You are **HIGHLY ENCOURAGED** to use the `mkiocccentry(1)` tool to form your
@@ -901,11 +938,46 @@ filename is correct.
 </p>
 
 <p class="leftbar">
-These checks **MUST PASS**.
+These checks **MUST PASS**. If they do not you stand a significant chance of
+having your submission rejected for violating [Rule 17](#rule17)!
+</p>
+
+<div id="max-files">
+#### Maximum number of files per submission
+</div>
+
+<p class="leftbar">
+The maximum number of files your submission tarball may contain, not counting
+the optional files (`prog.alt.c`, `try.sh`, `try.alt.sh`) and the mandatory
+files (`prog.c`, `Makefile`, `remarks.md`) is 31. This is defined in the macro
+`MAX_EXTRA_FILE_COUNT` in
+[soup/limit_ioccc.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h)
+in the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry). See the
+FAQ on "[how to include additional files](../faq.html#extra-files)"
+if you need to include more files.
 </p>
 
 <p class="leftbar">
-Where [Rule 17](#rule17) and the tools from the latest
+If you do include a tarball that takes your extra files count over the maximum,
+you **MUST** explain this in your `remarks.md` file!
+</p>
+
+<p class="leftbar">
+If you need to extract a tarball by some Makefile, or perhaps the program
+itself, then `make clobber` **MUST** remove everything that the extraction
+created!
+</p>
+
+<p class="leftbar">
+Tarballs **MUST** only create files and directories _under them_. They may
+**NOT** contain absolute paths (paths that start with `/`)!
+</p>
+
+<hr style="width:50%;text-align:left;margin-left:0">
+
+
+<p class="leftbar">
+**IMPORTANT**: where [Rule 17](#rule17) and the tools from the latest
 release of the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry)
 conflict, the [IOCCC judges](../judges.html) will use their best judgment which
 is likely to favor [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry) code.
@@ -930,7 +1002,7 @@ for more help on ensuring you do have the most up to date release.
 
 <p class="leftbar">
 We recommend that you run `make` and then install the tools (and man pages) via
-`make install` (as root or using `sudo(1)` to help you run these tools from your
+`make install` (as root or using `sudo(1)`) to help you run these tools from your
 submission's directory. The `make install` will install in `/usr/local`.
 However, **you do not have** to install them, but in that case you'll have to run it
 from the toolkit's directory or use the correct options to specify the path to
@@ -1210,7 +1282,7 @@ See the
 FAQ on "[obtaining and compiling the mkiocccentry tools](../faq.html#mkiocccentry)"
 and the
 FAQ on "[how to enter the IOCCC](../quick-start.html#enter)"
-as that FAQ has import details on
+as that FAQ has important details on
 [how to register](register.html)
 as well as
 [how to upload your submission](submit.html) for the IOCCC.

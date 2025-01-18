@@ -425,7 +425,7 @@
 
 <!-- BEFORE: 1st line of markdown file: faq.md -->
 <h1 id="ioccc-faq-table-of-contents">IOCCC FAQ Table of Contents</h1>
-<p>This is FAQ version <strong>28.2.0 2025-01-16</strong>.</p>
+<p>This is FAQ version <strong>28.2.1 2025-01-18</strong>.</p>
 <h2 id="entering-the-ioccc-the-bare-minimum-you-need-to-know">0. <a href="#enter_questions">Entering the IOCCC: the bare minimum you need to know</a></h2>
 <ul>
 <li><strong>Q 0.0</strong>: <a class="normal" href="#enter">How can I enter the IOCCC?</a></li>
@@ -448,7 +448,8 @@
 <li><strong>Q 1.2</strong>: <a class="normal" href="#markdown">What is markdown and how does the IOCCC use it?</a></li>
 <li><strong>Q 1.3</strong>: <a class="normal" href="#mkiocccentry_bugs">How do I report bugs in an <code>mkiocccentry</code> tool?</a></li>
 <li><strong>Q 1.4</strong>: <a class="normal" href="#subdirectories">How may I use subdirectories in my submission if Rule 17 disallows them?</a></li>
-<li><strong>Q 1.5</strong>: <a class="normal" href="#mkiocccentry_test">How can I test my submission passes tests without having to answer questions?</a></li>
+<li><strong>Q 1.5</strong>: <a class="normal" href="#mkiocccentry_test">How can I check if my submission passes tests without having to answer questions?</a></li>
+<li><strong>Q 1.6</strong>: <a class="normal" href="#extra-files">How may I include additional files beyond the max allowed?</a></li>
 </ul>
 <h2 id="ioccc-judging-process">2. <a href="#judging">IOCCC Judging process</a></h2>
 <ul>
@@ -967,7 +968,7 @@ tarball does not exceed the limit, defined as <code>MAX_FILE_COUNT</code> in
 <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h">limit_ioccc.h</a>,
 you can include tarballs with subdirectories or other files.</p>
 <div id="mkiocccentry_test">
-<h4 id="q-1.5-how-can-i-test-my-submission-passes-tests-without-having-to-answer-questions">Q 1.5: How can I test my submission passes tests without having to answer questions?</h4>
+<h4 id="q-1.5-how-can-i-check-if-my-submission-passes-tests-without-having-to-answer-questions">Q 1.5: How can I check if my submission passes tests without having to answer questions?</h4>
 </div>
 <p>In case you do not have a UUID or you simply want to test if <code>mkiocccentry(1)</code>
 does not detect any issues with your submission, without having to answer all
@@ -991,6 +992,25 @@ FAQ on”<a href="#txzchk">txzchk</a>”
 and the
 FAQ on “<a href="#fnamchk">fnamchk</a>”
 for more details.</p>
+<div id="extra-files">
+<h1 id="how-may-i-include-additional-files-beyond-the-max-allowed">How may I include additional files beyond the max allowed?</h1>
+</div>
+<p>The rules state:</p>
+<blockquote>
+<p>The maximum number of files your submission tarball may contain, not counting
+the optional files (<code>prog.alt.c</code>, <code>try.sh</code>, <code>try.alt.sh</code>) and the mandatory
+files (<code>prog.c</code>, <code>Makefile</code>, <code>remarks.md</code>) is 31.</p>
+</blockquote>
+<p>If you need to include more files than this, you may include a tarball as an
+<strong>EXTRA</strong> file.</p>
+<p>This file does <strong>NOT</strong> need to pass the <code>txzchk(1)</code> tests; only your submission
+tarball needs to pass these tests.</p>
+<p>Please pay careful attention to <a href="next/rules.html#rule17">Rule 17</a> and in
+particular the part about the <a href="next/rules.html#max-files">maximum number of files per
+submission</a>, which not only discusses the maximum
+number of files (including extra files) but also specific rules you must follow
+if you do include a tarball. Not following these points puts you at great risk
+of violating <a href="next/rules.html#rule17">Rule 17</a>!</p>
 <hr style="width:50%;text-align:left;margin-left:0">
 <hr style="width:50%;text-align:left;margin-left:0">
 <div id="judging">

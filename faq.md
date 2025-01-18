@@ -1,6 +1,6 @@
 # IOCCC FAQ Table of Contents
 
-This is FAQ version **28.2.0 2025-01-16**.
+This is FAQ version **28.2.1 2025-01-18**.
 
 
 ## 0. [Entering the IOCCC: the bare minimum you need to know](#enter_questions)
@@ -22,7 +22,8 @@ This is FAQ version **28.2.0 2025-01-16**.
 - **Q 1.2**: <a class="normal" href="#markdown">What is markdown and how does the IOCCC use it?</a>
 - **Q 1.3**: <a class="normal" href="#mkiocccentry_bugs">How do I report bugs in an `mkiocccentry` tool?</a>
 - **Q 1.4**: <a class="normal" href="#subdirectories">How may I use subdirectories in my submission if Rule 17 disallows them?</a>
-- **Q 1.5**: <a class="normal" href="#mkiocccentry_test">How can I test my submission passes tests without having to answer questions?</a>
+- **Q 1.5**: <a class="normal" href="#mkiocccentry_test">How can I check if my submission passes tests without having to answer questions?</a>
+- **Q 1.6**: <a class="normal" href="#extra-files">How may I include additional files beyond the max allowed?</a>
 
 
 ## 2. [IOCCC Judging process](#judging)
@@ -662,7 +663,7 @@ tarball does not exceed the limit, defined as `MAX_FILE_COUNT` in
 you can include tarballs with subdirectories or other files.
 
 <div id="mkiocccentry_test">
-#### Q 1.5: How can I test my submission passes tests without having to answer questions?
+#### Q 1.5: How can I check if my submission passes tests without having to answer questions?
 </div>
 
 In case you do not have a UUID or you simply want to test if `mkiocccentry(1)`
@@ -695,6 +696,29 @@ and the
 FAQ on "[fnamchk](#fnamchk)"
 for more details.
 
+
+<div id="extra-files">
+# How may I include additional files beyond the max allowed?
+</div>
+
+The rules state:
+
+> The maximum number of files your submission tarball may contain, not counting
+the optional files (`prog.alt.c`, `try.sh`, `try.alt.sh`) and the mandatory
+files (`prog.c`, `Makefile`, `remarks.md`) is 31.
+
+If you need to include more files than this, you may include a tarball as an
+**EXTRA** file.
+
+This file does **NOT** need to pass the `txzchk(1)` tests; only your submission
+tarball needs to pass these tests.
+
+Please pay careful attention to [Rule 17](next/rules.html#rule17) and in
+particular the part about the [maximum number of files per
+submission](next/rules.html#max-files), which not only discusses the maximum
+number of files (including extra files) but also specific rules you must follow
+if you do include a tarball. Not following these points puts you at great risk
+of violating [Rule 17](next/rules.html#rule17)!
 
 <hr style="width:50%;text-align:left;margin-left:0">
 <hr style="width:50%;text-align:left;margin-left:0">
