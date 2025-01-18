@@ -28,7 +28,7 @@ The official IOCCC website is [www.ioccc.org](https://www.ioccc.org).
 ## How it was started:
 
 The original inspiration of the International Obfuscated C Code Contest came
-from the Bourne Shell source and the `finger(1)` command as distributed in
+from the Bourne Shell source and the [finger(1)](https://github.com/dank101/4.2BSD/blob/708b3890ac0c2f034f2840b5ee9125b3c83a05bc/ucb/finger.c) command as distributed in
 [4.2BSD](https://en.wikipedia.org/wiki/History_of_the_Berkeley_Software_Distribution#4.2BSD).
 If this is what could result from what some people claim is reasonable
 programming practice, then to what depths might quality sink if people really
