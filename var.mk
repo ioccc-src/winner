@@ -201,7 +201,6 @@ TIDY= tidy
 TIME= time
 TOP= top
 TOUCH= touch
-TPUT= tout
 TPUT= tput
 TR= tr
 TROFF= troff
