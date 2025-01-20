@@ -1,7 +1,7 @@
 name: Bug report
 description: Report a bug with a tool
-title: "[Bug] <title>"
-labels: ["bug"]
+title: "Bug: <bug synopsis>"
+labels: ["bug", "tool"]
 body:
 - type: checkboxes
   attributes:
@@ -31,9 +31,9 @@ body:
     label: Environment
     description: |
       Example:
-        - **OS**: macOS Sonoma 14.5
-        - **Device**: MacBook Pro M1
-        - **Shell**: GNU bash, version 5.2.26(1)-release (aarch64-apple-darwin23.2.0)
+        - **OS**: macOS Sequoia 15.2
+        - **Device**: MacBook Pro M1 Max
+        - **Shell**: GNU bash, version 5.2.37(1)-release (aarch64-apple-darwin24.0.0)
 
         **PLEASE** provide **AT** **LEAST** the above items. If you have the **SAME** problem with more than one device please list the above for **ALL** **RELEVANT** **devices** with **any** **relevant** **context**.
     value: |

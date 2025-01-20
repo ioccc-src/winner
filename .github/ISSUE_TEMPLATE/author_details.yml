@@ -1,6 +1,6 @@
 name: Author details
 description: Report a problem with information about a winning author
-title: "[Author] <title>"
+title: "Author: <issue synopsis>"
 labels: ["author"]
 body:
 - type: checkboxes

@@ -1,7 +1,7 @@
 name: Rules and/or Guidelines issue
 description: Report a problem with the Rules and/or Guidelines
-title: "[Rules and Guidelines] <title>"
-labels: ["Rules and Guidelines"]
+title: "Rules and Guidelines: <issue synopsis>"
+labels: ["rules", "guidelines"]
 body:
 - type: checkboxes
   attributes:

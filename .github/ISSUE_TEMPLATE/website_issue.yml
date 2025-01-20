@@ -1,6 +1,6 @@
 name: Website issue
 description: Report a problem with the website
-title: "[Website] <title>"
+title: "Website: <issue synopsis>"
 labels: ["website"]
 body:
 - type: checkboxes
