@@ -1,7 +1,7 @@
-name: Enhancement
-description: Suggest an enhancement
-title: "Enhancement: <enhancement title>"
-labels: ["enhancement"]
+name: Website enhancement
+description: Suggest a website enhancement
+title: "Website enhancement: <enhancement synopsis>"
+labels: ["enhancement", "website"]
 body:
 - type: checkboxes
   attributes:
