@@ -461,7 +461,7 @@ writing by <a href="../contact.html">contacting the judges</a>.</p>
 </div>
 </div>
 <p class="leftbar">
-These <a href="guidelines.html">IOCCC guidelines</a> are version <strong>28.31 2025-01-18</strong>.
+These <a href="guidelines.html">IOCCC guidelines</a> are version <strong>28.32 2025-01-22</strong>.
 </p>
 <p class="leftbar">
 The <a href="guidelines.md" download="guidelines.md">markdown form of these guidelines</a>
@@ -529,7 +529,7 @@ considered provisional <strong>BETA</strong> versions and <strong>may be adjuste
 before the contest status becomes <strong><a href="../status.html#open">open</a></strong>.
 </p>
 <p class="leftbar">
-You must <a href="register.html">register</a> in order to submit your entry to the IOCCC.
+You <strong>MUST</strong> <a href="register.html">register</a> in order to submit your entry to the IOCCC.
 You may <a href="register.html">register</a> while the contest is either
 <strong><a href="../status.html#pending">pending</a></strong> or <strong><a href="../status.html#open">open</a></strong>.
 </p>
@@ -559,7 +559,7 @@ If you do not change your <strong>Initial password</strong> in time, you will ha
 Because it takes time (maybe even a few days) for an <a href="../judges.html">IOCCC judge</a>
 to process your registration and email you your initial login and password,
 you should <strong>MAKE SURE</strong> you give yourself enough time before the contest closes.
-In other words, <strong>DO NOT WAIT UNTIL THE FINAL DAYS</strong> of the contest to register!
+In other words, <strong>DO NOT WAIT TO REGISTER UNTIL THE FINAL DAYS</strong>!
 The <a href="../judges.html">IOCCC judges</a> are <strong>NOT</strong> responsible for delayed or lost email,
 or for those who wait until the last minute to try to register!
 </p>
@@ -587,7 +587,7 @@ for more information about the <code>mkiocccentry(1)</code> tool.
 <p class="leftbar">
 While the contest is <strong><a href="../status.html#open">open</a></strong>, you may modify your previously
 uploaded submission by rebuilding your submission with the <code>mkiocccentry(1)</code> tool
-and then re-uploading it to the same slot no the <a href="https://submit.ioccc.org">submit server</a>.
+and then re-uploading it to the same slot number on the <a href="https://submit.ioccc.org">submit server</a>.
 </p>
 <p class="leftbar">
 To help you with this, so that you do not have to repeatedly answer all the
@@ -614,11 +614,11 @@ bytes.
 </p>
 <p class="leftbar">
 The new default way to compile submissions: <code>-std=gnu17 -O3 -g3 -Wall -Wextra -pedantic</code>.
-You <strong>are encouraged</strong> to use the example Makefile here, rather than the
-<code>mkiocccentry</code> repo. For details and help, see below in the <a href="#makefile">Makefile section</a>.
+You <strong>are encouraged</strong> to use the example Makefile here. For more details and help,
+see below in the <a href="#makefile">Makefile section</a>.
 </p>
 <p class="leftbar">
-Submissions are in the form of a single xz compressed tarball.
+Submissions are uploaded as a single xz compressed tarball.
 </p>
 <p class="leftbar">
 To assist in the formation of the xz compressed tarball for submission, use the
@@ -1350,6 +1350,14 @@ to test your submission. And if your submissions wins, it makes it easier to int
 the <a href="https://www.ioccc.org/index.html">Official IOCCC winner website</a>.
 </p>
 <p class="leftbar">
+We <strong>LIKE</strong> submissions that have some educational value. This does <strong>NOT</strong> mean
+that your submission should not be obfuscated but the IOCCC has moved away from
+the idea of spoilers. In other words, unless your submission does some kind of
+encryption (or something with encryption), you should not encrypt your remarks,
+say with rot13 or anything else, and it is also appreciated if your remarks have
+some education value, though these are not required.
+</p>
+<p class="leftbar">
 We <strong>LIKE</strong> submissions that use an edited version of the
 <code>try.sh</code> example script (and if you have alternate code,
 the same applies with the <code>try.alt.sh</code> script):
@@ -1779,18 +1787,24 @@ unless you are <a href="../authors.html#Cody_Boone_Ferguson">Cody Boone Ferguson
 run the risk of violating <a href="rules.html#rule7">Rule 7</a>.
 </p>
 <p class="leftbar">
-Neither the <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/chkentry.c">chkentry tool source</a>
-nor the <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/jparse/README.md">JSON parser and library</a>
-nor <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/jparse/jstrencode.c">jstrencode</a>
-nor <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/jparse/jstrdecode.c">jstrdecode</a>
+Neither the <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/chkentry.c">chkentry tool
+source</a> nor
+the <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/jparse/README.md">JSON parser and
+library</a>
+nor
+<a href="https://github.com/ioccc-src/mkiocccentry/blob/master/jparse/jstrencode.c">jstrencode</a>
+nor
+<a href="https://github.com/ioccc-src/mkiocccentry/blob/master/jparse/jstrdecode.c">jstrdecode</a>
 nor any of the other <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/jparse">jparse
 tools</a>
-are original works (see the <a href="https://github.com/xexyl/jparse/">jparse repo</a> for
-the original), unless you are <a href="../authors.html#Cody_Boone_Ferguson">Cody
-Boone Ferguson</a> or <a href="http://www.isthe.com/chongo/index.html">Landon Curt
-Noll</a>, in which case they are original!
-:-) Submitting source that uses the code of these tools or library, unless you
-are <a href="../authors.html#Cody_Boone_Ferguson">Cody Boone Ferguson</a> or <a href="http://www.isthe.com/chongo/index.html">Landon Curt
+(see the <a href="https://github.com/xexyl/jparse/">jparse repo</a>), nor the <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/test_ioccc/fnamchk.c">fnamchk tool
+source</a>
+are original works,
+unless you are <a href="../authors.html#Cody_Boone_Ferguson">Cody Boone Ferguson</a> or
+<a href="http://www.isthe.com/chongo/index.html">Landon Curt Noll</a>, in which case they
+are original! :-) Submitting source that uses the code of these tools or
+library, unless you are <a href="../authors.html#Cody_Boone_Ferguson">Cody Boone
+Ferguson</a> or <a href="http://www.isthe.com/chongo/index.html">Landon Curt
 Noll</a>, might run the risk of violating
 <a href="rules.html#rule7">Rule 7</a>.
 </p>
@@ -1822,7 +1836,7 @@ obfuscated, but unless you have some really clever way to compact and
 obfuscate a JSON parser more than <a href="https://github.com/westes/flex">flex</a> and
 <a href="https://www.gnu.org/software/bison/">bison</a> you will likely not win, either
 because of the <a href="rules.html#rule2">source code size limit</a> or because it is not
-as obfuscated as the lexer/parser part of
+as obfuscated as the lexer/parser of
 <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/jparse">jparse</a>.
 </p>
 <p>While programs that only run in a specific word size are OK, if you have

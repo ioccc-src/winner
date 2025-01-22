@@ -167,21 +167,6 @@ all: data ${TARGET}
 ${PROG}: ${PROG}.c
 	${CC} ${CFLAGS} ${PROG}.c -o $@ ${LDFLAGS}
 
-# alternative executable
-#
-alt: data ${ALT_TARGET}
-
-${PROG}.alt: ${PROG}.alt.c
-	${CC} ${CFLAGS} ${PROG}.alt.c -o $@ ${LDFLAGS}
-
-# data files
-#
-data: ${DATA}
-
-# both all and alt
-#
-everything: all alt
-
 # suggested way(s) to run the program
 #
 try: ${PROG} ${DATA}
@@ -190,6 +175,32 @@ try: ${PROG} ${DATA}
 	@# you may use the try.sh script if you have one
 	@# change this next line as needed
 	./${PROG} some arguments
+
+
+# alternative executable
+#
+alt: data ${ALT_TARGET}
+
+${PROG}.alt: ${PROG}.alt.c
+	${CC} ${CFLAGS} ${PROG}.alt.c -o $@ ${LDFLAGS}
+
+# suggested way(s) to run alt code, if you include one
+#
+try.alt: ${PROG}.alt ${DATA}
+	@# remove these comments
+	@# notice how we do not assume that . is a component of the $PATH environment variable
+	@# you may use the try.alt.sh script if you have one
+	@# change this next line as needed
+	./${PROG}.alt some arguments
+
+
+# data files
+#
+data: ${DATA}
+
+# both all and alt
+#
+everything: all alt
 
 
 ###############
