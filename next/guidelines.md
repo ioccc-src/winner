@@ -49,7 +49,7 @@ Jump to: [top](#)
 </div>
 
 <p class="leftbar">
-These [IOCCC guidelines](guidelines.html) are version **28.31 2025-01-18**.
+These [IOCCC guidelines](guidelines.html) are version **28.32 2025-01-22**.
 </p>
 
 <p class="leftbar">
@@ -137,7 +137,7 @@ before the contest status becomes **[open](../status.html#open)**.
 </p>
 
 <p class="leftbar">
-You must [register](register.html) in order to submit your entry to the IOCCC.
+You **MUST** [register](register.html) in order to submit your entry to the IOCCC.
 You may [register](register.html) while the contest is either
 **[pending](../status.html#pending)** or  **[open](../status.html#open)**.
 </p>
@@ -172,7 +172,7 @@ If you do not change your **Initial password** in time, you will have to [re-reg
 Because it takes time (maybe even a few days) for an [IOCCC judge](../judges.html)
 to process your registration and email you your initial login and password,
 you should **MAKE SURE** you give yourself enough time before the contest closes.
-In other words, **DO NOT WAIT UNTIL THE FINAL DAYS** of the contest to register!
+In other words, **DO NOT WAIT TO REGISTER UNTIL THE FINAL DAYS**!
 The [IOCCC judges](../judges.html) are **NOT** responsible for delayed or lost email,
 or for those who wait until the last minute to try to register!
 </p>
@@ -205,7 +205,7 @@ for more information about the `mkiocccentry(1)` tool.
 <p class="leftbar">
 While the contest is **[open](../status.html#open)**, you may modify your previously
 uploaded submission by rebuilding your submission with the `mkiocccentry(1)` tool
-and then re-uploading it to the same slot no the [submit server](https://submit.ioccc.org).
+and then re-uploading it to the same slot number on the [submit server](https://submit.ioccc.org).
 </p>
 
 <p class="leftbar">
@@ -238,12 +238,12 @@ bytes.
 
 <p class="leftbar">The new default way to compile submissions: `-std=gnu17 -O3 -g3
 -Wall -Wextra -pedantic`.
-You **are encouraged** to use the example Makefile here, rather than the
-`mkiocccentry` repo. For details and help, see below in the [Makefile section](#makefile).
+You **are encouraged** to use the example Makefile here. For more details and help,
+see below in the [Makefile section](#makefile).
 </p>
 
 <p class="leftbar">
-Submissions are in the form of a single xz compressed tarball.
+Submissions are uploaded as a single xz compressed tarball.
 </p>
 
 <p class="leftbar">
@@ -1178,6 +1178,16 @@ the [Official IOCCC winner website](https://www.ioccc.org/index.html).
 </p>
 
 <p class="leftbar">
+We **LIKE** submissions that have some educational value. This does **NOT** mean
+that your submission should not be obfuscated but the IOCCC has moved away from
+the idea of spoilers. In other words, unless your submission does some kind of
+encryption (or something with encryption), you should not encrypt your remarks,
+say with rot13 or anything else, and it is also appreciated if your remarks have
+some education value, though these are not required.
+</p>
+
+
+<p class="leftbar">
 We **LIKE** submissions that use an edited version of the
 `try.sh` example script (and if you have alternate code,
 the same applies with the `try.alt.sh` script):
@@ -1682,18 +1692,24 @@ unless you are [Cody Boone Ferguson](../authors.html#Cody_Boone_Ferguson), might
 run the risk of violating [Rule 7](rules.html#rule7).</p>
 
 <p class="leftbar">
-Neither the [chkentry tool source](https://github.com/ioccc-src/mkiocccentry/blob/master/chkentry.c)
-nor the [JSON parser and library](https://github.com/ioccc-src/mkiocccentry/blob/master/jparse/README.md)
-nor [jstrencode](https://github.com/ioccc-src/mkiocccentry/blob/master/jparse/jstrencode.c)
-nor [jstrdecode](https://github.com/ioccc-src/mkiocccentry/blob/master/jparse/jstrdecode.c)
+Neither the [chkentry tool
+source](https://github.com/ioccc-src/mkiocccentry/blob/master/chkentry.c) nor
+the [JSON parser and
+library](https://github.com/ioccc-src/mkiocccentry/blob/master/jparse/README.md)
+nor
+[jstrencode](https://github.com/ioccc-src/mkiocccentry/blob/master/jparse/jstrencode.c)
+nor
+[jstrdecode](https://github.com/ioccc-src/mkiocccentry/blob/master/jparse/jstrdecode.c)
 nor any of the other [jparse
 tools](https://github.com/ioccc-src/mkiocccentry/blob/master/jparse)
-are original works (see the [jparse repo](https://github.com/xexyl/jparse/) for
-the original), unless you are [Cody
-Boone Ferguson](../authors.html#Cody_Boone_Ferguson) or [Landon Curt
-Noll](http://www.isthe.com/chongo/index.html), in which case they are original!
-:-) Submitting source that uses the code of these tools or library, unless you
-are [Cody Boone Ferguson](../authors.html#Cody_Boone_Ferguson) or [Landon Curt
+(see the [jparse repo](https://github.com/xexyl/jparse/)), nor the [fnamchk tool
+source](https://github.com/ioccc-src/mkiocccentry/blob/master/test_ioccc/fnamchk.c)
+are original works,
+unless you are [Cody Boone Ferguson](../authors.html#Cody_Boone_Ferguson) or
+[Landon Curt Noll](http://www.isthe.com/chongo/index.html), in which case they
+are original!  :-) Submitting source that uses the code of these tools or
+library, unless you are [Cody Boone
+Ferguson](../authors.html#Cody_Boone_Ferguson) or [Landon Curt
 Noll](http://www.isthe.com/chongo/index.html), might run the risk of violating
 [Rule 7](rules.html#rule7).</p>
 
@@ -1727,7 +1743,7 @@ obfuscated, but unless you have some really clever way to compact and
 obfuscate a JSON parser more than [flex](https://github.com/westes/flex) and
 [bison](https://www.gnu.org/software/bison/) you will likely not win, either
 because of the [source code size limit](rules.html#rule2) or because it is not
-as obfuscated as the lexer/parser part of
+as obfuscated as the lexer/parser of
 [jparse](https://github.com/ioccc-src/mkiocccentry/blob/master/jparse).
 </p>
 
