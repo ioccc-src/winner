@@ -612,7 +612,7 @@ overwrites the file).
 See the
 FAQ on "[mkiocccentry](../faq.html#mkiocccentry)"
 for how to use this tool and the
-FAQ on "[finer details of mkiocccentry](../faq.htmlmkiocccentry_details)"
+FAQ on "[finer details of mkiocccentry](../faq.html#mkiocccentry_details)"
 for even more information.
 </p>
 
