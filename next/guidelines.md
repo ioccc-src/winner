@@ -90,9 +90,9 @@ about them.  The [IOCCC guidelines](guidelines.html) should be viewed as
 allowed_.  Even so, you are safer if you remain within the [IOCCC
 guidelines](guidelines.html).
 
-**You should read the current [IOCCC rules](rules.html), prior to submitting
-entries**. The [rules](rules.html) are typically published along with the [IOCCC
-guidelines](guidelines.html)..
+You **SHOULD read the CURRENT [IOCCC rules](rules.html)**, _prior_ to submitting
+code to the contest. The [rules](rules.html) are typically published along with
+the [IOCCC guidelines](guidelines.html).
 
 Jump to: [top](#)
 
@@ -119,7 +119,7 @@ This contest will enter the **[judging](../status.html#judging)** state on **202
 
 <p class="leftbar">
 **IMPORTANT NOTE**: Until the content enters the **[open](../status.html#open)** state, any or all
-of the above **dates and times may change**!
+of the above **dates and times may change _AT ANY TIME_**!
 </p>
 
 <p class="leftbar">
@@ -131,13 +131,13 @@ to be a **fun**ctional UTC time.  :-)
 Until the contest status becomes **[open](../status.html#open)**,
 the [IOCCC rules](rules.html),
 [IOCCC guidelines](guidelines.html) and the tools in the
-[mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry), should be
-considered provisional **BETA** versions and **may be adjusted _AT ANY TIME_**
+[mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry), **SHOULD be
+considered** provisional **BETA** versions and **may be adjusted _AT ANY TIME_**
 before the contest status becomes **[open](../status.html#open)**.
 </p>
 
 <p class="leftbar">
-You **MUST** [register](register.html) in order to submit your entry to the IOCCC.
+You **MUST** [register](register.html) in order to participate in the IOCCC.
 You may [register](register.html) while the contest is either
 **[pending](../status.html#pending)** or  **[open](../status.html#open)**.
 </p>
@@ -145,101 +145,64 @@ You may [register](register.html) while the contest is either
 <p class="leftbar">
 See the
 FAQ on "[how to register and submit to the IOCCC](../quick-start.html#enter)"
-for instructions on registering and participating in the IOCCC, as the process has changed from previous years!
+for instructions on registering and participating in the IOCCC, as the process
+has changed from previous years!
 </p>
 
 <p class="leftbar">
-When the contest is **[open](../status.html#open)**, an
-[IOCCC judge](../judges.html) will email you your [submit server](https://submit.ioccc.org)
-**Username** and **Initial password**.  This takes some time (maybe even a few days) for an
-[IOCCC judge](../judges.html) to process your registration and email you your
-initial login and password.
+When the contest is **[open](../status.html#open)**, an [IOCCC
+judge](../judges.html) will email you your [submit
+server](https://submit.ioccc.org) **Username** and **Initial password**.  This
+takes some time (maybe even a few days) for an [IOCCC judge](../judges.html) to
+process your registration and email you your initial login and password, so be
+sure to give yourself enough time.
 </p>
 
 <p class="leftbar">
-Those who [register](register.html) while the contest status is **[pending](../status.html#pending)**
-will receive email with their [submit server](https://submit.ioccc.org) **Username** and **Initial password**
-from an [IOCCC judge](../judges.html) shortly after the contest status becomes **[open](../status.html#open)**.
+Those who [register](register.html) while the contest status is
+**[pending](../status.html#pending)** will receive email with their [submit
+server](https://submit.ioccc.org) **Username** and **Initial password** from an
+[IOCCC judge](../judges.html) shortly after the contest status becomes
+**[open](../status.html#open)**.
 </p>
 
 <p class="leftbar">
 Once an [IOCCC judge](../judges.html) emails you your **Username** and **Initial password**, you
 will have 72 hours to [change your submit server initial password](pw-change.html).
-If you do not change your **Initial password** in time, you will have to [re-register](register.html).
+If you do not change your **Initial password** in time, you will have to
+[re-register](register.html). You may **NOT** upload any submission until you
+have changed your **Initial password** and logged back in!
 </p>
 
 <p class="leftbar">
 Because it takes time (maybe even a few days) for an [IOCCC judge](../judges.html)
 to process your registration and email you your initial login and password,
-you should **MAKE SURE** you give yourself enough time before the contest closes.
+you should **MAKE SURE** to give yourself enough time before the contest closes.
 In other words, **DO NOT WAIT TO REGISTER UNTIL THE FINAL DAYS**!
 The [IOCCC judges](../judges.html) are **NOT** responsible for delayed or lost email,
 or for those who wait until the last minute to try to register!
 </p>
 
 <p class="leftbar">
-For those who have [registered](register.html) and received by email, their
+Once you have [registered](register.html), and received by email, your
 [submit server](https://submit.ioccc.org) **Username** and **Initial password**
-from an [IOCCC judge](../judges.html), you may upload your submission to
-the [submit server](https://submit.ioccc.org) only while the
-contest **[open](../status.html#open)**.
+from an [IOCCC judge](../judges.html), you may, after [changing your initial
+password](pw-change.html) upload your submission to
+the [submit server](https://submit.ioccc.org), as long as the contest
+**[open](../status.html#open)**.
 </p>
+
+<p class="leftbar">
+The [submit server](https://submit.ioccc.org) will become active when the
+contest is **[pending](../status.html#pending)**.
+Until the contest status becomes **[pending](../status.html#pending)**,
+the [submit server](https://submit.ioccc.org) might be offline and/or unresponsive.
+</p>
+
 
 <p class="leftbar">
 The [submit server](https://submit.ioccc.org), in accordance with [Rule 17](rules.html#rule17),
 places a limit of **3999971** octets on the size of your upload.
-</p>
-
-<p class="leftbar">
-You are **STRONGLY** advised to use the `mkiocccentry(1)` tool
-as found in the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry)
-to form the file to upload to the [submit server](https://submit.ioccc.org).
-</p>
-
-<p class="leftbar">
-See the
-FAQ on "[obtaining and compiling the mkiocccentry tools](../faq.html#mkiocccentry)"
-for more information about the `mkiocccentry(1)` tool.
-</p>
-
-<p class="leftbar">
-While the contest is **[open](../status.html#open)**, you may modify your previously
-uploaded submission by rebuilding your submission with the `mkiocccentry(1)` tool
-and then re-uploading it to the same slot number on the [submit server](https://submit.ioccc.org).
-</p>
-
-<p class="leftbar">
-To help you with this, so that you do not have to repeatedly answer all the
-questions, the `mkiocccentry(1)` tool has the options `-a answers`, `-A answers`
-and `-i answers`, where `-a` will write to an answers file if it does not
-already exist, `-A` will overwrite the file and `-i` will read the answers from
-the file.
-</p>
-
-<p class="leftbar">
-Once the contest enters the **[judging](../status.html#judging)** state, you will
-**NOT** be allowed to upload your submission files.
-</p>
-
-<p class="leftbar">
-The [submit server](https://submit.ioccc.org) will become active when the contest is **[open](../status.html#open)**.
-Until the contest status becomes **[open](../status.html#open)**,
-the [submit server](https://submit.ioccc.org) may be offline and/or unresponsive.
-</p>
-
-<p class="leftbar">
-The [Rule 2a](rules.html#rule2a) size has **increased from 4096 to 4993** bytes.
-</p>
-
-<p class="leftbar">
-The [Rule 2b](rules.html#rule2b) size has **increased from 2053 to 2503**
-bytes.
-</p>
-
-<p class="leftbar">The new default way to compile submissions: `-std=gnu17 -O3 -g3
--Wall -Wextra -pedantic`.
-You **are encouraged** to use the example Makefile here. For more details and help,
-see below in the [Makefile section](#makefile).
 </p>
 
 <p class="leftbar">
@@ -249,11 +212,6 @@ Submissions are uploaded as a single xz compressed tarball.
 <p class="leftbar">
 To assist in the formation of the xz compressed tarball for submission, use the
 `mkiocccentry(1)` tool as found in the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry).
-</p>
-
-<p class="leftbar">
-[Rule 17](rules.html#rule17) has been **significantly modified**
-to account for the new [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry) tools.
 </p>
 
 <p class="leftbar">
@@ -274,15 +232,133 @@ before this option will work a second time, just like in normal mode.
 </p>
 
 <p class="leftbar">
+[Rule 17](rules.html#rule17) has been **significantly modified**
+to account for the new [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry) tools.
+Thus, you are **STRONGLY** advised to use the `mkiocccentry(1)` tool
+as found in the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry)
+to form the file to upload to the [submit server](https://submit.ioccc.org). Not
+doing so puts you at a very big risk of violating [Rule 17](rules.html#rule17).
+</p>
+
+
+<p class="leftbar">
 See the
-FAQ on "[obtaining and compiling the mkiocccentry tools](../faq.html#mkiocccentry)"
+FAQ on "[obtaining and compiling the most recent mkiocccentry tools](../faq.html#mkiocccentry)"
 and the
 FAQ on "[how to enter the IOCCC](../quick-start.html#enter)"
-as that FAQ has import details on
+as that FAQ has important details on
 [how to register](register.html)
 as well as
 [how to upload your submission](submit.html) to the IOCCC.
 </p>
+
+
+<p class="leftbar">
+While the contest is **[open](../status.html#open)**, you may modify your
+previously uploaded submission by rebuilding your submission with the
+`mkiocccentry(1)` tool and then re-uploading it to **the same slot number** on the
+[submit server](https://submit.ioccc.org).
+</p>
+
+<p class="leftbar">
+To help you with this, so that you do not have to repeatedly answer all the
+questions, the `mkiocccentry(1)` tool has the options `-a answers`, `-A answers`
+and `-i answers`, where `-a` will write to an answers file (if it does not
+already exist), `-A` will overwrite the file and `-i` will read the answers from
+the file. If you use `-A`, be sure you don't overwrite another file by accident!
+</p>
+
+<p class="leftbar">
+Once the contest enters the **[judging](../status.html#judging)** state, you will
+**NOT** be allowed to upload your submission files, so do give yourself enough
+time.
+</p>
+
+<p class="leftbar">
+[Rule 2](rules.html#rule2) (the size rule) refers to the use of the IOCCC size
+tool called `iocccsize(1)`.
+</p>
+
+<p class="leftbar">See the [mkiocccentry
+repo](https://github.com/ioccc-src/mkiocccentry) for the `iocccsize(1)` tool.
+</p>
+
+<p class="leftbar">
+To further clarify [Rule 2](rules.html#rule2), we subdivided it into two parts,
+**2a** and **2b**.
+</p>
+
+<p class="leftbar">
+The overall size limit (see [Rule 2a](rules.html#rule2a)) on `prog.c` has been
+**increased from 4096 to 4993** bytes.
+</p>
+
+<p class="leftbar">
+The [Rule 2a](rules.html#rule2a) size was changed from
+4096 to 4993: a change that keeps the "2b to 2a" size ratio to a
+value similar to the [2001-2012](../faq.html#size_rule2001-2012) and
+[2013-2020](../faq.html#size_rule2013-2020) IOCCC eras.
+</p>
+
+<p class="leftbar">
+The [Rule 2b](rules.html#rule2b) size has **increased from 2053 to 2503**
+bytes.
+</p>
+
+<p class="leftbar">
+Your submission must satisfy **BOTH** the maximum size [Rule
+2a](rules.html#rule2a) **AND** the IOCCC size tool [Rule 2b](rules.html#rule2b).
+</p>
+
+<p class="leftbar">
+The IOCCC size tool imposes a 2nd limit on C code size (see [Rule
+2a](rules.html#rule2a)).  To check your code against [Rule 2](rules.html#rule2):
+</p>
+
+``` <!---sh-->
+    iocccsize prog.c
+```
+
+<p class="leftbar">
+The IOCCC size tool algorithm can be summarized as follows:
+</p>
+
+> The size tool counts most C reserved words (keyword, secondary, and selected
+preprocessor keywords) as 1.  The size tool counts all other octets as 1
+excluding ASCII whitespace, and excluding any '`;`', '`{`' or '`}`' followed by
+ASCII whitespace, and excluding any '`;`', '`{`' or '`}`' octet immediately
+before the end of file.
+
+ASCII whitespace includes ASCII tab, ASCII space, ASCII newline,
+ASCII formfeed, and ASCII carriage return.
+
+<p class="leftbar">
+When '`;`', '`{`' or '`}`' are within a C string, they may still not be
+counted by the IOCCC size tool.  This is a _feature_, not a bug!
+</p>
+
+In cases where the above summary and the algorithm implemented by
+the IOCCC size tool source code conflict, the algorithm implemented
+by the IOCCC size tool source code is preferred by the [judges](../judges.html).
+
+<p class="leftbar">
+In other words, make sure `iocccsize` does not flag any issues with your
+`prog.c`.
+</p>
+
+<p class="leftbar">
+There are at least 2 other reasons for selecting 2503 as the 2nd limit besides
+the fact that 2503 is a prime. These reasons may be searched for and discovered
+if you are ["Curios!" about 2503](https://t5k.org/curios/page.php/2503.html).
+:-) Moreover, 2053 was the number of the kernel disk pack of one of the judge's
+BESM-6, and 2503 is a decimal anagram of 2053.
+</p>
+
+Take note that this secondary limit imposed by the IOCCC size tool
+obviates some of the need to `#define` C reserved words in an effort
+to get around the size limits of [Rule 2](rules.html#rule2).
+
+Yes Virginia, **that is a hint**!
 
 
 
@@ -295,7 +371,7 @@ Jump to: [top](#)
 </div>
 </div>
 
-You are encouraged to examine the [winners of previous contests](../years.html).
+You are **encouraged** to examine the [winners of previous contests](../years.html).
 
 Keep in mind that [rules](rules.html) change from year to year, so some [winning
 entries](../years.html) might not be valid submissions this year; what _was_ unique
@@ -305,7 +381,7 @@ A submission is usually examined in a number of ways.  We typically apply
 a number of tests to a submission:
 
 * look at the original source
-* convert ANSI trigraphs to ASCII
+* <p class="leftbar">convert ANSI trigraphs and digraphs to normal C</p>
 * C pre-process the source ignoring `#include` lines
 * C pre-process the source ignoring `#define` _and_ `#include` lines
 * run it through a C beautifier
@@ -322,7 +398,7 @@ cases, a test is not important.  Entries that compete for the
 '**strangest/most creative source layout**' need not do as well as
 others in terms of their algorithm.  On the other hand, given
 two such entries, we are more inclined to pick the submission that
-does something interesting when you run it.
+does something interesting when it's executed.
 
 We try to avoid limiting creativity in our [rules](rules.html).  As such, we
 leave the contest open for creative rule interpretation.  As in [real
@@ -331,6 +407,28 @@ requirements document or a customer request is important.  For this reason, we
 often award '**Best abuse of the [rules](rules.html)**' or '**Worst abuse of the
 [rules](rules.html)**' or some variation to a submission that illustrates this
 point in an ironic way.
+
+<p class="leftbar">
+Although we are in an age where AI/LLM can create code, we don't want to stop
+anyone from using any tools they like when they're working on their submissions.
+</p>
+
+<p class="leftbar">
+The IOCCC has a rich history of remarkable winning entries created by authors
+who skillfully employed various code-related techniques such as code generators,
+code analysis tools, machine learning tools, natural language models, code
+copilot tools, and integrated development environments. Although it is **NOT**
+required to use these kinds of tools in order to compile or run a submission,
+individuals are free to continue to create their submissions using them. Even
+so, we **DISLIKE** submissions that **require** an **IDE** (integrated
+development environment).
+</p>
+
+<p class="leftbar">
+There have been instances where winning entry code was quite different from the
+**original** author’s input. At least one winning author cannot even use a
+keyboard!
+</p>
 
 We do realize that there are holes in the [rules](rules.html), and invite
 entries to attempt to exploit them.  We will award '**Worst abuse of the
@@ -348,21 +446,24 @@ There may be fewer than 2^7+1 reasons why these [IOCCC
 guidelines](guidelines.html) seem obfuscated.
 </p>
 
+<p class="leftbar">
 Check out your program and be sure that it works.  We sometimes make
-the effort to debug a submission that has a slight problem, particularly
+an effort to debug a submission that has a slight problem, particularly
 in or near the final round.  On the other hand, we have seen some
-of the best entries fall down because they didn't work.
+of the best submissions fall down because they didn't work.
+</p>
 
 <p class="leftbar">
 We tend to look down on a [prime
 number](https://en.wikipedia.org/wiki/Prime_number) printer that claims that
-16 is a prime number.  If you do have a bug, you are better off
+16 is a prime number.  If you do have a bug or mis-feature, you are better off
 documenting it.  Noting "_this submission sometimes prints the 4th power
 of a prime by mistake_" would save the above submission.  And sometimes,
-a strange bug/feature can even help the submission!  Of course, a correctly
+a strange bug/(mis-)feature can even help the submission!  Of course, a correctly
 working submission is best.  Clever people will note that 16 might be prime
 under certain conditions.  Wise people, when submitting something clever
-will fully explain such cleverness in their submission's `remarks.md` file.</p>
+will fully explain such cleverness in their submission's `remarks.md` file.
+</p>
 
 People who are considering to just use some complex mathematical
 function or state machine to spell out something such as "_hello,
@@ -374,86 +475,16 @@ misleading or subtle tricks layered on top of or under an
 appropriate level of obfuscation.  A clean looking program with
 misleading comments and variable names might be a good start.
 
-When programs use VTxxx/ANSI sequences, they should NOT be limited to a
-specific terminal brand.  Those programs that work in a standard xterm
+<p class="leftbar">
+When programs use VTxxx/ANSI sequences, they should **NOT** be limited to a
+specific terminal brand.  Programs that work in a standard xterm
 are considered more portable.
-
-<p class="leftbar">
-[Rule 2](rules.html#rule2) (the size rule) refers to the use of the IOCCC size
-tool called `iocccsize(1)`.
-</p>
-
-<p class="leftbar">See the [mkiocccentry
-repo](https://github.com/ioccc-src/mkiocccentry) for the `iocccsize(1)` tool.
-</p>
-
-<p class="leftbar">
-To further clarify [Rule 2](rules.html#rule2), we subdivided it into two parts,
-**2a** and **2b**.
-</p>
-
-<p class="leftbar">
-The overall size limit (see [Rule 2a](rules.html#rule2a)) on `prog.c` is now **4993 bytes**.
-</p>
-
-<p class="leftbar">
-Your submission must satisfy BOTH the maximum size [Rule
-2a](rules.html#rule2a) **AND** the IOCCC size tool [Rule 2b](rules.html#rule2b).
-</p>
-
-<p class="leftbar">
-This IOCCC size tool imposes a 2nd limit on C code size (see [Rule
-2a](rules.html#rule2a)).  To check your code against [Rule 2](rules.html#rule2):
-</p>
-
-``` <!---sh-->
-    iocccsize prog.c
-```
-
-The IOCCC size tool algorithm may be summarized as follows:
-
-> The size tool counts most C reserved words (keyword, secondary, and selected
-preprocessor keywords) as 1.  The size tool counts all other octets as 1
-excluding ASCII whitespace, and excluding any '`;`', '`{`' or '`}`' followed by
-ASCII whitespace, and excluding any '`;`', '`{`' or '`}`' octet immediately
-before the end of file.
-
-ASCII whitespace includes ASCII tab, ASCII space, ASCII newline,
-ASCII formfeed, and ASCII carriage return.
-
-<p class="leftbar">
-When '`;`', '`{`' or '`}`' are within a C string, they may still not be
-counted by the IOCCC size tool.  This is a _feature_, not a bug!</p>
-
-In cases where the above summary and the algorithm implemented by
-the IOCCC size tool source code conflict, the algorithm implemented
-by the IOCCC size tool source code is preferred by the [judges](../judges.html).
-
-<p class="leftbar">
-There are at least 2 other reasons for selecting 2503 as the 2nd limit besides
-the fact that 2503 is a prime. These reasons may be searched for and discovered
-if you are ["Curios!" about 2503](https://t5k.org/curios/page.php/2503.html).
-:-) Moreover, 2053 was the number of the kernel disk pack of one of the judge's
-BESM-6, and 2503 is a decimal anagram of 2053.
-</p>
-
-Take note that this secondary limit imposed by the IOCCC size tool
-obviates some of the need to `#define` C reserved words in an effort
-to get around the size limits of [Rule 2](rules.html#rule2).
-
-Yes Virginia, **that is a hint**!
-
-<p class="leftbar">
-The [Rule 2a](rules.html#rule2a) size was changed from
-4096 to 4993: a change that keeps the "2b to 2a" size ratio to a
-value similar to the [2001-2012](../faq.html#size_rule2001-2012) and
-[2013-2020](../faq.html#size_rule2013-2020) IOCCC eras.
 </p>
 
 Jump to: [top](#)
 
 <div id="extra-files">
-# Including extra files
+# Including optional and extra files
 </div>
 
 <p class="leftbar">
@@ -462,7 +493,13 @@ However, of those files, 5 are mandatory (`prog.c`, `Makefile`, `remarks.md` and
 the two JSON files generated by `mkiocccentry(1)`, `.info.json` and
 `.auth.json`). Additionally, three of the files in the limit **MUST** be
 specific file(name)s: the **OPTIONAL** submission files, which are `prog.alt.c`,
-`try.sh` and `try.alt.sh`, or else they **WILL** count as an extra file.
+`try.sh` and `try.alt.sh`, or else they **WILL** count as an extra file. Of
+course, if you use the optional filenames without the files being their
+intended, that would be an abuse of rules.
+For more details on the optional files, see the
+FAQ on the "[try.sh script system](../faq.html#try_script)"
+and the
+FAQ on "[alt code](../faq.html#alt_code)".
 </p>
 
 <p class="leftbar">
@@ -472,21 +509,20 @@ In other words, the actual amount of **EXTRA** files is 31.
 <p class="leftbar">
 If you do need to include more files, you may do so by including as an extra
 file, a tarball. This does **NOT** have to pass `txzchk(1)` tests; only the
-submission tarball must pass the `txzchk(1)` tests.
+submission tarball must pass the `txzchk(1)` tests. See the [txzchk
+section](#txzchk) for more details on this important tool.
+</p>
+
 <p class="leftbar">
+If you **DO** include a tarball, and the build process or the program extracts
+said tarball(s), the make `clobber` rule **MUST** remove them.
+</p>
 
 <p class="leftbar">
 See [Rule 17](rules.html#rule17) and in particular the part about the [maximum
 number of files](rules.html#max-files). If you do not follow these points, you
 are at a great risk of violating [Rule 17](rules.html#rule17)!
-
-<p class="leftbar">
-For more details, see the
-FAQ on the "[try.sh script system](../faq.html#try)",
-the
-FAQ on "[.auth.json](../faq.html#auth_json)",
-the
-FAQ on "[.info.json](../faq.html#info_json)",
+</p>
 
 
 <div id="mkiocccentry">
@@ -507,6 +543,7 @@ for the `mkiocccentry(1)` tool and below for more details.
 **IMPORTANT NOTE**: make **CERTAIN** you have the most recent version of the
 `mkiocccentry` toolkit! See the
 FAQ on "[obtaining the mkiocccentry toolkit](../faq.html#obtaining_mkiocccentry)".
+</p>
 
 <p class="leftbar">
 `mkiocccentry` runs a number of checks, by the tool itself and by executing
@@ -519,7 +556,7 @@ its algorithm.
 If `mkiocccentry` encounters an **error** the program will exit and the xz
 compressed tarball **will not be formed**. For instance, if `chkentry(1)` (see
 below) fails to validate the `.auth.json` or `.info.json`
-[JSON](https://www.json.org/json-en.html) files that `mkiocccentry(1)` creates,
+[JSON](https://www.json.org/json-en.html) files (see below) that `mkiocccentry(1)` creates,
 it is an error and **possibly** a bug that you should [report as a bug at the
 mkiocccentry bug report
 page](https://github.com/ioccc-src/mkiocccentry/issues/new?assignees=&labels=bug&projects=&template=bug_report.yml&title=%5BBug%5D+%3Ctitle%3E).
@@ -535,18 +572,17 @@ that will be fixed as there might not be anything wrong with the tools.
 </p>
 
 <p class="leftbar">
-On the other hand, some conditions are **warnings** and it allows you to
-override these, if you wish. If you're brave enough you can use the `-W` option
-to ignore all warnings but this is a big risk; the `-y` option will assume
-'_yes_' to most questions but this is also a big risk. Needless to say, we do
-NOT recommend these options.
+On the other hand, some conditions flagged by `mkiocccentry(1)` are **warnings**
+and it allows you to override these, if you wish. If you're brave enough you can
+use the `-W` option to ignore all warnings but this is a big risk; the `-y`
+option will assume '_yes_' to most questions but this is also a big risk.
+Needless to say, we do **NOT** recommend these options.
 </p>
 
 <p class="leftbar">
 In many places it will prompt you to verify what you input, allowing you to
 correct details as you go along.
 </p>
-
 
 
 Jump to: [top](#)
@@ -575,12 +611,14 @@ overwrites the file).
 <p class="leftbar">
 See the
 FAQ on "[mkiocccentry](../faq.html#mkiocccentry)"
-for how to use this tool, in more detail.
+for how to use this tool and the
+FAQ on "[finer details of mkiocccentry](../faq.html#mkiocccentry_details)"
+for even more information.
 </p>
 
 
 <div id="tools">
-# mkiocccentry tools
+# Other mkiocccentry tools
 </div>
 
 <p class="leftbar">
@@ -594,11 +632,12 @@ execute one or more additional tools.
 
 <p class="leftbar">
 `mkiocccentry(1)` will use code from `iocccsize(1)` which
-detects a number of issues that you may ignore, if you wish, as described above.
+detects a number of issues that you may ignore, if you wish, as noted above.
 </p>
 
 <p class="leftbar">
-In other words, you no longer need to run `iocccsize` manually.
+In other words, you no longer need to run `iocccsize` manually. However, the
+checks described above are still made but through `mkiocccentry` itself.
 </p>
 
 Jump to: [top](#)
@@ -726,7 +765,7 @@ FAQ on "[report mkiocccentry bugs](../faq.html#mkiocccentry_bugs)".
 </p>
 
 <p class="leftbar">
-As part of its sanity checks, `txzchk(1)` will run `fnamchk(1)` on the
+As part of its algorithm, `txzchk(1)` will run `fnamchk(1)` on the
 _filename_ to verify that the name is valid. See the
 FAQ on "[fnamchk](../faq.html#fnamchk)"
 and [fnamchk below](#fnamchk) for more details on this tool.
@@ -771,7 +810,7 @@ FAQ on "[fnamchk](../faq.html#fnamchk)".
 </p>
 
 <p class="leftbar">
-Because `txzchk(1)` tool uses `fnamchk(1)` tool as part of its algorithm,
+Because `txzchk(1)` tool uses the `fnamchk(1)` tool as part of its algorithm,
 `mkiocccentry(1)` does not directly invoke `fnamchk(1)`, although we will
 in the judging process.
 </p>
@@ -790,7 +829,7 @@ FAQ on "[report mkiocccentry bugs](../faq.html#mkiocccentry_bugs)".
 
 <p class="leftbar">
 As you can see, the use of `mkiocccentry(1)` is **HIGHLY RECOMMENDED**, and at
-the risk of stating the obvious, you run **a VERY BIG risk** of having
+the risk of stating the obvious, you run **A VERY BIG RISK** of having
 your submission rejected if you package your own tarball, and there are **ANY
 problems**. For instance, if `chkentry(1)` found a problem in your `.info.json`
 file, the `mkiocccentry(1)` tool would not package it. But if you were to package
@@ -828,7 +867,7 @@ that's OK too!
 </div>
 
 <p class="leftbar">
-We **recommend** AND **encourage** you to use the example Makefile **here**,
+We **recommend** AND **encourage** you to use the example Makefile,
 as the starting point for your submission's required `Makefile`:
 </p>
 
@@ -843,7 +882,7 @@ needs.
 </p>
 
 <p class="leftbar">
-Please add a space between the `=` and the value of variables, in the
+**Please** add a space between the `=` and the value of variables, in the
 `Makefile`, making sure that the `=` comes immediately after the name. See the
 example `Makefile` for examples.
 </p>
@@ -1026,7 +1065,7 @@ about this, though it might be worth pointing out.
 </p>
 
 <p class="leftbar">
-For instance, some compilers like to warn about use of `char *`s, which seems to
+For instance, some compilers like to warn about use of pointers as arrays, which seems to
 be dubious, as it obviously can't (always) be avoided, being a big part of C, so
 you should not worry about this either; this is the warning
 `-Wunsafe-buffer-usage` and the way to disable it is `-Wno-unsafe-buffer-usage`.
@@ -1163,7 +1202,7 @@ is in your submission tarball itself.
 </p>
 
 <p class="leftbar">
-While people are free to mange their submission under `git(1)` or even use a
+While people are free to manage their submission under `git(1)` or even use a
 GitHub repo, dot-files and dot-directories such as `.git` are not allowed in a
 submission.
 </p>
@@ -1177,11 +1216,11 @@ the `mkiocccentry(1)` tool.
 </p>
 
 <p class="leftbar">
- Even if you did manage to get it into the tarball somehow, `txzchk(1)` will
- flag it as an error. When the judges run `txzchk(1)` on the uploaded submission
- compressed tarball, if anything is wrong, for instance if you "sneak in" any
- dot files or dot directories, the submission **WILL BE REJECTED** for violating
- [Rule 17](rules.html#rule17)!
+Even if you did manage to get dot files or dot directories in the tarball
+somehow, `txzchk(1)` will flag it as an error. When the judges run `txzchk(1)`
+on the uploaded submission compressed tarball, if anything is wrong, for
+instance if you "sneak in" any dot files or dot directories, the submission
+**WILL BE REJECTED** for violating [Rule 17](rules.html#rule17)!
 </p>
 
 <p class="leftbar">
@@ -1212,6 +1251,7 @@ In other words, for `make clobber`, do something like:
 and **NOT** something like this:
 
 ``` <!---makefile-->
+    # do NOT do this!
     clobber:
             -git clean -f
 ```
@@ -1268,8 +1308,7 @@ FAQ on "[submitting try.sh and try.alt.sh scripts](../faq.html#try_scripts)".
 
 <p class="leftbar">
 You might wish to add `./try.sh` to the `try` rule in the Makefile you submit.
-If you have alternate code, then you could add a `try.alt` rule or something
-like that.
+If you have alternate code, then you can use the `try.alt` rule instead.
 </p>
 
 Doing masses of `#define`s to obscure the source has become 'old'.  We
@@ -1326,7 +1365,7 @@ of nested functions such as:
 
 On 2012 July 20, the [judges](../judges.html) rescinded the encouragement of
 nested functions.  Such constructions, while interesting and sometimes
-amusing, will have to wait until they required by a C standard that are
+amusing, will have to wait until they are required by a C standard that are
 actually implemented in **BOTH** `gcc` **AND** `clang`.
 
 <p class="leftbar">
@@ -1463,20 +1502,24 @@ marks the spot**".  Yet on the third hand, windows are best when they are
 "unseen" (i.e., not dirty).  :-)
 </p>
 
+<p class="leftbar">
 The [judges](../judges.html), as a group, have a history giving wide degree of latitude
-to reasonable entries.  And recently they have had as much longitudinal
+to reasonable submissions.  And recently they have had as much longitudinal
 variation as it is possible to have on [Earth](https://science.nasa.gov/earth/).  :-)
+</p>
 
 <p class="leftbar">
-You should try to restrict commands used in the build file to
-commands found in [Single UNIX Specification](https://en.wikipedia.org/wiki/Single_UNIX_Specification) environments
-and systems that conform to the [Single UNIX Specification](https://en.wikipedia.org/wiki/Single_UNIX_Specification).
+You should try to restrict commands used in the build file to commands found in
+[Single UNIX
+Specification](https://en.wikipedia.org/wiki/Single_UNIX_Specification)
+environments and systems that conform to the [Single UNIX
+Specification](https://en.wikipedia.org/wiki/Single_UNIX_Specification).
 </p>
 
 <p class="leftbar">
 You may compile and use your own programs.  If you do, try to build and execute
 from the current directory.  This restriction is not a hard and
-absolute one.  The intent is to ensure that the building if your
+absolute one.  The intent is to ensure that the building of your
 program is reasonably portable.
 </p>
 
@@ -1533,6 +1576,7 @@ We think we did.  :-)
 
 > All generalizations are false, including this one. -- **Mark Twain**
 
+<p class="leftbar">
 Given two versions of the same program, one that is a compact blob
 of code, and the other that is formatted more like a typical C
 program, we tend to favor the second version.  Of course, a third
@@ -1540,6 +1584,7 @@ version of the same program that is formatted in an interesting
 and/or obfuscated way, would definitely win over the first two!
 Remember, you can submit more than one submission.  See the [IOCCC
 rules](rules.html) for details (in particular, [Rule 9](rules.html#rule9)).
+</p>
 
 We suggest that you avoid trying for the '**smallest self-replicating**'
 source.  The smallest, a [zero byte entry](../1994/smr/index.html), won in
@@ -1550,7 +1595,7 @@ better be the smallest such program or they risk being rejected because
 they do not work as documented.
 
 Please note that the C source below, besides lacking in obfuscation,
-is NOT the smallest C source file that when compiled and run, dumps core:
+is **NOT** the smallest C source file that when compiled and run, dumps core:
 
 ``` <!---c-->
     main;
@@ -1597,6 +1642,13 @@ source program (one that actually works) to display audio/visual data.
 
 X client entries should avoid using X related libraries and
 software that are not in wide spread use.
+
+<p class="leftbar">
+As of Red Hat RHEL9.0, the X.org server is deprecated. See the
+FAQ on "[Xorg deprecation"](../faq.html#Xorg_deprecated)"
+for more details. This does not mean that a submission using this will
+necessarily be rejected, but it would be better if it can support Wayland.
+</p>
 
 This is the only _guideline_ that contains the word
 [fizzbin](https://en.wikipedia.org/wiki/List_of_games_in_Star_Trek#Fizzbin).
@@ -1728,7 +1780,7 @@ into creating a dense blob. Such are the trade-offs that obfuscators face!
 <p class="leftbar">
 We prefer code that can run on either a 64-bit or 32-bit
 processor.  However, it is **UNWISE **to assume it will run on an
-some Intel-like x86 architecture.
+some Intel-like x86 architecture**.
 </p>
 
 We believe that Mark Twain's quote:
@@ -1737,16 +1789,18 @@ We believe that Mark Twain's quote:
 
 ... is a good motto for those writing code for the IOCCC.
 
+<p class="leftbar">
 The IOCCC size tool source is not an original work, unless you are [Anthony C
 Howe](../authors.html#Anthony_C_Howe), in which case it is original!  :-)
-Submitting source that uses the content of
+Submitting source code that uses the content of
 [iocccsize.c](https://github.com/ioccc-src/mkiocccentry/blob/master/iocccsize.c), unless you are
 [Anthony C Howe](../authors.html#Anthony_C_Howe), might run the risk of
 violating [Rule 7](rules.html#rule7).
+</p>
 
 <p class="leftbar"> The `txzchk(1)` tool source is not an original work,
 unless you are [Cody Boone Ferguson](../authors.html#Cody_Boone_Ferguson), in
-which case it is original!  :-) Submitting source that uses the content of
+which case it is original!  :-) Submitting source code that uses the contents of
 [txzchk.c](https://github.com/ioccc-src/mkiocccentry/blob/master/txzchk.c),
 unless you are [Cody Boone Ferguson](../authors.html#Cody_Boone_Ferguson), might
 run the risk of violating [Rule 7](rules.html#rule7).</p>
@@ -1763,11 +1817,11 @@ nor
 nor any of the other [jparse
 tools](https://github.com/ioccc-src/mkiocccentry/blob/master/jparse)
 (see the [jparse repo](https://github.com/xexyl/jparse/)), nor the [fnamchk tool
-source](https://github.com/ioccc-src/mkiocccentry/blob/master/test_ioccc/fnamchk.c)
+source](https://github.com/ioccc-src/mkiocccentry/blob/master/test_ioccc/fnamchk.c),
 are original works,
 unless you are [Cody Boone Ferguson](../authors.html#Cody_Boone_Ferguson) or
 [Landon Curt Noll](http://www.isthe.com/chongo/index.html), in which case they
-are original!  :-) Submitting source that uses the code of these tools or
+are original!  :-) Submitting source code that uses the code of any of these tools or
 library, unless you are [Cody Boone
 Ferguson](../authors.html#Cody_Boone_Ferguson) or [Landon Curt
 Noll](http://www.isthe.com/chongo/index.html), might run the risk of violating
@@ -1776,7 +1830,7 @@ Noll](http://www.isthe.com/chongo/index.html), might run the risk of violating
 <p class="leftbar">
 Unless you are [Landon Curt Noll](http://www.isthe.com/chongo/index.html), the
 remaining tools in the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry)
-are **NOT** original works. Submitting source that uses the content of those tools,
+are **NOT** original works. Submitting source code that uses the content of those tools,
 unless you are [Landon Curt Noll](http://www.isthe.com/chongo/index.html), might
 run the risk of violating [Rule 7](rules.html#rule7).
 </p>
@@ -1811,7 +1865,7 @@ While programs that only run in a specific word size are OK, if you have
 to pick, choose a 64-bit word size.
 
 <p class="leftbar">
-If [IOCCC judges](../judges.html) are feeling ornery we
+If the [IOCCC judges](../judges.html) are feeling ornery we
 might choose to compile your program for running on an Arduino or
 a PDP-11.  Heck, should we ever find an emulator of 60-bit CDC Cyber
 CPU, we might just try your submission on that emulator as well :-)
@@ -1858,7 +1912,9 @@ However the [judges](../judges.html) might try to also factor 0, so you want to 
 `2305567963945518424753102147331756070`.  Attempting to factor values outside
 that range will produce unpredictable results.
 
-Moreover the might try to also factor 3.5 or 0x7, or Fred, so you want to might state:
+<p class="leftbar">
+Moreover they might try to also factor 3.5 or 0x7, or Fred, so you want to might state:
+</p>
 
 >   This submission factors integers between 1 and
 `2305567963945518424753102147331756070`.  Attempting to factor anything else
@@ -1905,7 +1961,7 @@ rendering your markdown content.
 
 <p class="leftbar">
 If you do use ASCII tab characters in your non-markdown files, be
-aware that some people may use tab stop that is different than the common 8
+aware that some people may use a tab stop that is different than the common 8
 character tab stop.
 </p>
 
@@ -1968,13 +2024,16 @@ submitting an alternate version that conforms to the
 If you do bypass the `mkiocccentry(1)` warnings about [Rule
 2a](rules.html#rule2a) and/or about [Rule 2b](rules.html#rule2b)
 and submit a submission anyway, you **MUST** try to justify why the IOCCC
-[judges](../judges.html) should not reject your submission due to a rule violation.
+[judges](../judges.html) should not reject your submission due to a rule
+violation, and you would be wise to do this towards the top of your `remarks.md`
+file.
 </p>
 
 Abusing the web submission procedure tends to annoy us more
 than amuse us.  Spend your creative energy on content of your
 submission rather than on the submission process itself.
 
+<p class="leftbar">
 We are often asked why the contest [IOCCC rules](rules.html) and
 [IOCCC guidelines](guidelines.html) seem too
 strange or contain mistakes, flaws or grammatical errors.  One reason
@@ -1982,20 +2041,23 @@ is that we sometimes make genuine mistakes.  But in many cases such
 problems, flaws or areas of confusion are deliberate.  Changes to
 [IOCCC rules](rules.html) and [IOCCC guidelines](guidelines.html) in response to rule abuses, are done in a minimal
 fashion.  Often we will deliberately leave behind holes (or introduce
-new ones) so that future rule abuse may continue.  A clever author
+new ones) so that future rule abuse can continue.  A clever author
 should be able to read them and "drive a truck through the holes" in
 the [IOCCC rules](rules.html) and [IOCCC guidelines](guidelines.html).
+</p>
 
+<p class="leftbar">
 At the risk of stating the obvious, this contest is a parody of the software
 development process.  The [IOCCC rules](rules.html) and [IOCCC guidelines](guidelines.html)
-are only a small part of the overall contest.  Even so, one may think the
+are only a small part of the overall contest.  Even so, one might think the
 contest [IOCCC rules](rules.html) and [IOCCC guidelines](guidelines.html) process as a parody
 of the sometimes tragic mismatch between what a customer (or marketing) wants
 and what engineering delivers.  Real programmers must face obfuscated and
 sometimes conflicting specifications and requirements from marketing, sales,
-product management an even from customers themselves on a all too regular basis.
+product management and even from customers themselves on an all too regular basis.
 This is one of the reasons why the [IOCCC rules](rules.html) and
 [IOCCC guidelines](guidelines.html) are written in obfuscated form.
+</p>
 
 Jump to: [top](#)
 
@@ -2005,10 +2067,13 @@ Jump to: [top](#)
 
 Entries are judged by Leonid A. Broukhis and Landon Curt Noll.
 
+<p class="leftbar">
 Each submission submitted is given a random id number and subdirectory.  The
 submission files including, but not limited to `prog.c`, `Makefile`,
-`remarks.md` as well as any data files that you submit, are all placed under
-their own directory and stored and judged from this directory.
+`remarks.md`, `.info.json`, `.auth.json` as well as any data files that you
+submit, are all placed under their own directory and stored and judged from this
+directory.
+</p>
 
 Any information about the authors is not read by the [judges](../judges.html) until
 the judging process is complete, and then only from entries that have
@@ -2019,9 +2084,11 @@ The above process helps keep us biased for/against any one particular
 individual.  Therefore you **MUST** refrain from putting any information
 that reveals your identity in your submission.
 
-Now some people point out that coding style might reveal the information
-about the others.  However we consider this to be simply circumstantial
-and outside the scope of the above paragraph.
+<p class="leftbar">
+Now some people point out that coding and/or writing style might reveal the
+information about the authors.  However we consider this to be simply
+circumstantial and outside the scope of the above paragraph.
+</p>
 
 Some people, in the past, have attempted to obfuscate their identity by
 including comments of famous Internet personalities such as [Peter
@@ -2087,8 +2154,8 @@ Jump to: [top](#)
 
 A reading consists of a number of actions:
 
-* <p class="leftbar">reading `prog.c`, the C source, reviewing the `remarks.md` information</p>
-* briefly looking any any supplied data files
+* <p class="leftbar">reading `prog.c`, the C source and reviewing the `remarks.md` information</p>
+* <p class="leftbar">briefly looking at any supplied data files</p>
 * passing the source thru the C pre-processor
     skipping over any `#include`d files
 * performing a number of C beautify/cleanup edits on the source
@@ -2122,7 +2189,9 @@ we receive.  A typical category list might be:
 * **best game that is obfuscated**
 * **most creatively obfuscated program**
 * **most deceptive C code** (code with deceptive comments and source code)
-* **best X program** (see [OUR LIKES AND DISLIKES](#likes))
+* <p class="leftbar">**best X program** (see [OUR LIKES AND DISLIKES](#likes)
+and the
+FAQ on "[Xorg being deprecated](../faq.html#Xorg_deprecated)")</p>
 * **best abuse of ISO C or ANSI C standard** (see above about compilers)
 * **best abuse of the C preprocessor**
 * **worst/best abuse of the rules** (or some variation)
@@ -2178,7 +2247,7 @@ It has been shown that receiving  **anonymous** gifts provides the
 
 <p class="leftbar">
 See the
-FAQ on "[support the IOCCC](../faq.html#support)".
+FAQ on "[supporting the IOCCC](../faq.html#support)".
 </p>
 
 More often than not, we select a small submission (usually one line) and a
@@ -2207,7 +2276,7 @@ Jump to: [top](#)
 
 <p class="leftbar">
 The [judges](../judges.html) will toot initial announcement of who won, the name
-of their award, and a very brief description of the winning entry
+of their award, and a very brief description (award title) of the winning entry
 from the [@IOCCC Mastodon account](https://fosstodon.org/@ioccc).
 </p>
 
@@ -2282,10 +2351,13 @@ submissions we receive.  See [How many submissions do the judges receive for a
 given IOCCC?](../faq.html#how_many).
 </p>
 
+<p class="leftbar">
 Often, winning entries are published in selected magazines from around the
 world.  Winners have appeared in books ('`The New Hacker's Dictionary`',
-'`Obfuscated C and Other Mysteries`', '`Pointers On C`', others) and on t-shirts.
-More than one winner has been turned into a tattoo!
+'`Obfuscated C and Other Mysteries`', '`Pointers On C`', others) and on t-shirts
+(sometimes by the author(s) themselves). More than one winner has been turned
+into a tattoo!
+</p>
 
 Last, but not least, [winners](../authors.html) receive international fame and flames!  :-)
 
