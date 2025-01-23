@@ -461,7 +461,7 @@ writing by <a href="../contact.html">contacting the judges</a>.</p>
 </div>
 </div>
 <p class="leftbar">
-These <a href="guidelines.html">IOCCC guidelines</a> are version <strong>28.32 2025-01-22</strong>.
+These <a href="guidelines.html">IOCCC guidelines</a> are version <strong>28.33 2025-01-23</strong>.
 </p>
 <p class="leftbar">
 The <a href="guidelines.md" download="guidelines.md">markdown form of these guidelines</a>
@@ -1332,9 +1332,54 @@ Again, please note that in macOS, <code>/usr/bin/gcc</code> is actually <code>cl
 </div>
 <p class="leftbar">
 When <code>make clobber</code> is invoked, we request that submissions be restored
-to its original submission state. For example, any temporary files
-created during the build process, or during execution should be
-removed by the <code>clobber</code> rule.
+to their original submission state. For example, any temporary files
+(<strong>including</strong> the compiled program(s)) created during the build process, or
+during execution should be removed by the <code>clobber</code> rule. In other words, the
+only things that should be in the directory after running <code>make clobber</code> is what
+is in your submission tarball itself.
+</p>
+<p class="leftbar">
+While people are free to mange their submission under <code>git(1)</code> or even use a
+GitHub repo, dot-files and dot-directories such as <code>.git</code> are not allowed in a
+submission.
+</p>
+<p class="leftbar">
+The <code>mkiocccentry(1)</code> tool will ignore dot-files and dot-directories (such as
+<code>.vimrc</code>, <code>.bashrc</code>, <code>.git</code> and <code>.github</code>) and not put them in the submission’s
+compressed tarball. So while you may use such files and
+directories to help develop your submission, they won’t be included when you run
+the <code>mkiocccentry(1)</code> tool.
+</p>
+<p class="leftbar">
+Even if you did manage to get it into the tarball somehow, <code>txzchk(1)</code> will
+flag it as an error. When the judges run <code>txzchk(1)</code> on the uploaded submission
+compressed tarball, if anything is wrong, for instance if you “sneak in” any
+dot files or dot directories, the submission <strong>WILL BE REJECTED</strong> for violating
+<a href="rules.html#rule17">Rule 17</a>!
+</p>
+<p class="leftbar">
+You may use whatever tools you need to develop your submission, including the
+use of <code>git(1)</code> or <code>gh(1)</code>, just be sure that your submission code and your
+submission Makefile don’t depend on such tools.
+</p>
+<p class="leftbar">
+If this is not clear, please do <strong>NOT</strong> use these tools to help with the
+<code>clobber</code> rule! For instance, do <strong>NOT</strong> use <code>git clean</code>! Not only does this
+depend on the user having <code>git(1)</code> but it also does not account for the
+submission tarballs. Even worse is when someone does have it in a <code>git(1)</code> repo
+it will remove files that are not under <code>git(1)</code> control! Instead, see the
+<code>clobber</code> rule in the example Makefile to see how to manage this.
+</p>
+<p class="leftbar">
+In other words, for <code>make clobber</code>, do something like:
+</p>
+<pre><code>    clobber:
+            ${RM} -f foo bar baz</code></pre>
+<p>and <strong>NOT</strong> something like this:</p>
+<pre><code>    clobber:
+            -git clean -f</code></pre>
+<p class="leftbar">
+And do <strong>NOT</strong> use <code>git</code> for any other tool either.
 </p>
 <p>Jump to: <a href="#">top</a></p>
 <div id="likes">
@@ -1355,7 +1400,7 @@ that your submission should not be obfuscated but the IOCCC has moved away from
 the idea of spoilers. In other words, unless your submission does some kind of
 encryption (or something with encryption), you should not encrypt your remarks,
 say with rot13 or anything else, and it is also appreciated if your remarks have
-some education value, though these are not required.
+some education value. And although these are not required, they are a nice bonus.
 </p>
 <p class="leftbar">
 We <strong>LIKE</strong> submissions that use an edited version of the

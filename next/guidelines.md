@@ -49,7 +49,7 @@ Jump to: [top](#)
 </div>
 
 <p class="leftbar">
-These [IOCCC guidelines](guidelines.html) are version **28.32 2025-01-22**.
+These [IOCCC guidelines](guidelines.html) are version **28.33 2025-01-23**.
 </p>
 
 <p class="leftbar">
@@ -1155,9 +1155,69 @@ Again, please note that in macOS, `/usr/bin/gcc` is actually `clang`!
 
 <p class="leftbar">
 When `make clobber` is invoked, we request that submissions be restored
-to its original submission state.  For example, any temporary files
-created during the build process, or during execution should be
-removed by the `clobber` rule.
+to their original submission state.  For example, any temporary files
+(**including** the compiled program(s)) created during the build process, or
+during execution should be removed by the `clobber` rule. In other words, the
+only things that should be in the directory after running `make clobber` is what
+is in your submission tarball itself.
+</p>
+
+<p class="leftbar">
+While people are free to mange their submission under `git(1)` or even use a
+GitHub repo, dot-files and dot-directories such as `.git` are not allowed in a
+submission.
+</p>
+
+<p class="leftbar">
+The `mkiocccentry(1)` tool will ignore dot-files and dot-directories (such as
+`.vimrc`, `.bashrc`, `.git` and `.github`) and not put them in the submission's
+compressed tarball. So while you may use such files and
+directories to help develop your submission, they won't be included when you run
+the `mkiocccentry(1)` tool.
+</p>
+
+<p class="leftbar">
+ Even if you did manage to get it into the tarball somehow, `txzchk(1)` will
+ flag it as an error. When the judges run `txzchk(1)` on the uploaded submission
+ compressed tarball, if anything is wrong, for instance if you "sneak in" any
+ dot files or dot directories, the submission **WILL BE REJECTED** for violating
+ [Rule 17](rules.html#rule17)!
+</p>
+
+<p class="leftbar">
+You may use whatever tools you need to develop your submission, including the
+use of `git(1)` or `gh(1)`, just be sure that your submission code and your
+submission Makefile don't depend on such tools.
+</p>
+
+<p class="leftbar">
+If this is not clear, please do **NOT** use these tools to help with the
+`clobber` rule! For instance, do **NOT** use `git clean`! Not only does this
+depend on the user having `git(1)` but it also does not account for the
+submission tarballs. Even worse is when someone does have it in a `git(1)` repo
+it will remove files that are not under `git(1)` control! Instead, see the
+`clobber` rule in the example Makefile to see how to manage this.
+</p>
+
+<p class="leftbar">
+In other words, for `make clobber`, do something like:
+</p>
+
+
+``` <!---makefile-->
+    clobber:
+            ${RM} -f foo bar baz
+```
+
+and **NOT** something like this:
+
+``` <!---makefile-->
+    clobber:
+            -git clean -f
+```
+
+<p class="leftbar">
+And do **NOT** use `git` for any other tool either.
 </p>
 
 
@@ -1183,7 +1243,7 @@ that your submission should not be obfuscated but the IOCCC has moved away from
 the idea of spoilers. In other words, unless your submission does some kind of
 encryption (or something with encryption), you should not encrypt your remarks,
 say with rot13 or anything else, and it is also appreciated if your remarks have
-some education value, though these are not required.
+some education value. And although these are not required, they are a nice bonus.
 </p>
 
 
