@@ -43,7 +43,7 @@ include var.mk
 # NOTE: The "tulz" (tools) in this section are intended to be used by those
 #	who maintain the official IOCCC site.
 #
-# We file "tulz" paths should be relative to the top directory of the repo.
+# The "tulz" paths should be relative to the top directory of the repo.
 # We need only list those "tulz" that are invoked directly by the
 # "IOCCC website maintenance rulz" section below.
 
