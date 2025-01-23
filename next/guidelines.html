@@ -1371,7 +1371,15 @@ it will remove files that are not under <code>git(1)</code> control! Instead, se
 <code>clobber</code> rule in the example Makefile to see how to manage this.
 </p>
 <p class="leftbar">
-Do <strong>NOT</strong> rely on these tools for any other rule, either.
+In other words, for <code>make clobber</code>, do something like:
+</p>
+<pre><code>    clobber:
+            ${RM} -f foo bar baz</code></pre>
+<p>and <strong>NOT</strong> something like this:</p>
+<pre><code>    clobber:
+            -git clean -f</code></pre>
+<p class="leftbar">
+And do <strong>NOT</strong> use <code>git</code> for any other tool either.
 </p>
 <p>Jump to: <a href="#">top</a></p>
 <div id="likes">

@@ -1200,8 +1200,26 @@ it will remove files that are not under `git(1)` control! Instead, see the
 </p>
 
 <p class="leftbar">
-Do **NOT** rely on these tools for any other rule, either.
+In other words, for `make clobber`, do something like:
 </p>
+
+
+``` <!---makefile-->
+    clobber:
+            ${RM} -f foo bar baz
+```
+
+and **NOT** something like this:
+
+``` <!---makefile-->
+    clobber:
+            -git clean -f
+```
+
+<p class="leftbar">
+And do **NOT** use `git` for any other tool either.
+</p>
+
 
 Jump to: [top](#)
 
