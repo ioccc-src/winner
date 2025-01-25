@@ -22,10 +22,10 @@ Fans of the IOCCC, hopeful **IOCCC28** contestants, and past winners of the IOCC
 are all encouraged to stop by and say hello.
 
 Based on user input and suggestions, we have been working on some new
-functionality for the [mkiocccentry tool set](faq.html#mkiocccentry).
+functionality for the [mkiocccentry toolkit](faq.html#mkiocccentry).
 In order to complete and fully test this new functionality, we need
-additional time.  Therefore the **IOCCC28 open** date as been **moved
-forward for 19 days**.  Moreover, and also by request, the contest will
+additional time.  Therefore the **IOCCC28 open** date has been **moved
+forward by 19 days**.  Moreover, and also by request, the contest will
 remain **open for an additional month**.
 
 The [40th anniversary of the IOCCC](faq.html#ioccc_start), which started
@@ -70,10 +70,10 @@ After a 4 year effort by a [number of people](thanks-for-help.html),
 with over 6168+ commits, the **Great Fork Merge** has been completed
 and the [Official IOCCC web site](index.html) has been updated!
 
-A significant number of improvements has been made to the
+A significant number of improvements have been made to the
 [IOCCC winning entries](years.html).
-A number of fixes and improvements involve the ability of reasonable modern
-Unix/Linux systems to be able to compile and even run them.
+Many of the fixes and improvements involve the ability of reasonable modern
+Unix/Linux systems to be able to compile and even run older winning entries.
 See [FAQ Section 4](faq.html#compiling) for
 information on how to compile.
 See the [FAQ Section 8](faq.html#changes)
@@ -82,9 +82,9 @@ for details on changes made to the entries.
 We hope you enjoy the new and improved
 [Official IOCCC web site](index.html).
 This web site is backed by the
-[IOCCC winner repo](https://github.com/ioccc-src/winner).
+[IOCCC winner GitHub repo](https://github.com/ioccc-src/winner).
 See [FAQ Section 9](faq.html#help) for
-how you help [improve / fix the we site](faq.html#fix_website),
+how you can help [improve / fix the website](faq.html#fix_website),
 or fix [known bugs in IOCCC winning entries](bugs.html).
 
 
@@ -93,7 +93,7 @@ or fix [known bugs in IOCCC winning entries](bugs.html).
 The IOCCC28, the [40th anniversary of the IOCCC](faq.html#ioccc_start) is now
 scheduled to run from **2024-12-29 23:58:13.213455 UTC** to **2025-04-01 23:29:31.374143 UTC**!!!.
 
-The [contest status](status.html) as been changed to "**pending**"
+The [contest status](status.html) has been changed to "**pending**"
 and [status.json](status.json) has been updated to reflect this new status.
 
 Proposed and tentative [IOCCC rules](next/rules.html) and [IOCCC guidelines](next/guidelines.html)
