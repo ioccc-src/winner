@@ -32,7 +32,7 @@ about these guidelines.
 # 28th International Obfuscated C Code Contest Official Guidelines
 
 <p class="leftbar">
-Copyright &copy; 2024 Leonid A. Broukhis and Landon Curt Noll.
+Copyright &copy; 2024-2025 Leonid A. Broukhis and Landon Curt Noll.
 </p>
 
 All Rights Reserved.  Permission for personal, education or non-profit use is
@@ -49,7 +49,7 @@ Jump to: [top](#)
 </div>
 
 <p class="leftbar">
-These [IOCCC guidelines](guidelines.html) are version **28.33 2025-01-23**.
+These [IOCCC guidelines](guidelines.html) are version **28.34 2025-01-24**.
 </p>
 
 <p class="leftbar">
@@ -101,7 +101,7 @@ Jump to: [top](#)
 </div>
 
 <p class="leftbar">
-This IOCCC runs from **2024-12-29 23:58:13.213455 UTC** to **2025-04-01 23:29:31.374143 UTC**.
+This IOCCC runs from **2024-12-29 23:58:13.213455 UTC** to **2025-05-19 23:29:31.374143 UTC**.
 </p>
 
 <p class="leftbar">
@@ -110,11 +110,11 @@ This contest will enter the **[pending](../status.html#pending)** state on or ab
 </p>
 
 <p class="leftbar">
-This contest will enter the **[open](../status.html#open)** state on **2025-01-31 23:19:17.130705 UTC**.
+This contest will enter the **[open](../status.html#open)** state on **2025-02-19 23:19:17.130705 UTC**.
 </p>
 
 <p class="leftbar">
-This contest will enter the **[judging](../status.html#judging)** state on **2025-04-01 23:29:31.374143 UTC**.
+This contest will enter the **[judging](../status.html#judging)** state on **2025-05-19 23:29:31.374143 UTC**.
 </p>
 
 <p class="leftbar">

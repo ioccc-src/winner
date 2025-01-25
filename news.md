@@ -14,6 +14,27 @@ for more information on Mastodon.
 </div>
 
 
+## 2025-01-25
+
+The IOCCC now has a [Discord server](https://discord.gg/2hVYnv83DD)!
+Click the link to join the [IOCCC Discord server](https://discord.gg/2hVYnv83DD).
+Fans of the IOCCC, hopeful **IOCCC28** contestants, and past winners of the IOCCC
+are all encouraged to stop by and say hello.
+
+Based on user input and suggestions, we have been working on some new
+functionality for the [mkiocccentry tool set](faq.html#mkiocccentry).
+In order to complete and fully test this new functionality, we need
+additional time.  Therefore the **IOCCC28 open** date as been **moved
+forward for 19 days**.  Moreover, and also by request, the contest will
+remain **open for an additional month**.
+
+The [40th anniversary of the IOCCC](faq.html#ioccc_start), which started
+on **2024-12-29 23:58:13.213455 UTC**, is now scheduled to be **open**
+from **2025-02-19 23:19:17.130705 UTC** to **2025-05-19 23:29:31.374143
+UTC**.  We will update the [IOCCC rules](next/rules.html) and
+[IOCCC guidelines](next/guidelines.html) accordingly, before the contest opens.
+
+
 ## 2024-12-31
 
 We have just released [version 2.3 of the mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry/releases/tag/v2.3).
