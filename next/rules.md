@@ -140,7 +140,7 @@ This contest will enter the **[judging](../status.html#judging)** state on **202
 </p>
 
 <p class="leftbar">
-**IMPORTANT NOTE**: Until the content enters the **[open](../status.html#open)** state, any or all
+**IMPORTANT NOTE**: Until the contest enters the **[open](../status.html#open)** state, any or all
 of the above **dates and times may change**!
 </p>
 
