@@ -1188,7 +1188,7 @@ they are correct, are:
 - Your _title_ does not match the regexp `^[0-9a-z][0-9a-z._+-]*$`.
 - Your _abstract_ is not between 1 and `MAX_ABSTRACT_LEN` chars
 (see [limit_ioccc.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h)).
-- the author count is not 1 through `MAX_AUTHORS` (see
+- The author count is not 1 through `MAX_AUTHORS` (see
 [limit_ioccc.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h)).
 - An author _name_ is not 1 through `MAX_NAME_LEN` chars (see
 [limit_ioccc.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h)).
