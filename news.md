@@ -14,10 +14,24 @@ for more information on Mastodon.
 </div>
 
 
+## 2025-01-28
+
+**IMPORTANT DISCORD UPDATE**: Due to a Discord bug/mis-feature, those
+who joined the [IOCCC Discord server](https://discord.gg/Wa42Qujwnw)
+recently lost their access soon afterwards and have to re-join.
+We apologise for the inconvenience of having to rejoin.
+
+The IOCCC now has a [Discord server](https://discord.gg/Wa42Qujwnw)!
+Fans of the IOCCC, hopeful **IOCCC28** contestants, and past winners of the IOCCC
+are all encouraged to stop by and say hello.
+
+To join, click this link: [https://discord.gg/Wa42Qujwnw](https://discord.gg/Wa42Qujwnw)
+
+
 ## 2025-01-25
 
-The IOCCC now has a [Discord server](https://discord.gg/2hVYnv83DD)!
-Click the link to join the [IOCCC Discord server](https://discord.gg/2hVYnv83DD).
+The IOCCC now has a [Discord server](https://discord.gg/Wa42Qujwnw)!
+Click the link to join the [IOCCC Discord server](https://discord.gg/Wa42Qujwnw).
 Fans of the IOCCC, hopeful **IOCCC28** contestants, and past winners of the IOCCC
 are all encouraged to stop by and say hello.
 
