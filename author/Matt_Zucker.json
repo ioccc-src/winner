@@ -7,11 +7,11 @@
     "location_code" : "US",
     "email" : "mzucker1@swarthmore.edu",
     "url" : "https://mzucker.github.io/swarthmore/",
-    "alt_url" : null,
+    "alt_url" : "https://mzucker.github.io",
     "deprecated_twitter_handle" : null,
     "mastodon" : null,
     "mastodon_url" : null,
-    "github" : null,
+    "github" : "@mzucker",
     "affiliation" : null,
     "winning_entry_set" : [
         {
