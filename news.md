@@ -25,7 +25,8 @@ The IOCCC now has a [Discord server](https://discord.gg/Wa42Qujwnw)!
 Fans of the IOCCC, hopeful **IOCCC28** contestants, and past winners of the IOCCC
 are all encouraged to stop by and say hello.
 
-To join, click this link: [https://discord.gg/Wa42Qujwnw](https://discord.gg/Wa42Qujwnw)
+To join, click this link:
+[https://discord.gg/Wa42Qujwnw](https://discord.gg/Wa42Qujwnw).
 
 
 ## 2025-01-25

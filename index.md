@@ -63,6 +63,16 @@ For more information on
 please see the
 FAQ on "[What is Mastodon and why does IOCCC use it?](faq.html#try_mastodon)".
 
+# IOCCC Discord server
+
+The IOCCC now has a [Discord server](https://discord.gg/Wa42Qujwnw)!
+Fans of the IOCCC, hopeful **IOCCC28** contestants, and past winners of the IOCCC
+are all encouraged to stop by and say hello.
+
+To join, click this link:
+[https://discord.gg/Wa42Qujwnw](https://discord.gg/Wa42Qujwnw).
+
+
 
 # Important Disclaimer
 
