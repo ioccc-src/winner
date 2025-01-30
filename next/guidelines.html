@@ -461,7 +461,7 @@ writing by <a href="../contact.html">contacting the judges</a>.</p>
 </div>
 </div>
 <p class="leftbar">
-These <a href="guidelines.html">IOCCC guidelines</a> are version <strong>28.34 2025-01-24</strong>.
+These <a href="guidelines.html">IOCCC guidelines</a> are version <strong>28.35 2025-01-30</strong>.
 </p>
 <p class="leftbar">
 The <a href="guidelines.md" download="guidelines.md">markdown form of these guidelines</a>
@@ -600,9 +600,11 @@ without having to put in answers each time, you can use the <code>-d</code> or <
 option to <code>mkiocccentry</code> for the tool to pseudo-randomly create answers for you.
 The <code>-d</code> option is an alias for <code>-s 21701</code>. An example use:
 </p>
-<pre><code>    mkiocccentry -d test_work prog.c Makefile remarks.md</code></pre>
+<pre><code>    mkiocccentry -d workdir topdir</code></pre>
 <p class="leftbar">
-where <code>test_work</code> is the directory which the tarball will be formed. Be aware
+where <code>workdir</code> is the directory which the tarball will be formed and the
+<code>topdir</code> is the directory which has the required files (<code>prog.c</code>, <code>Makefile</code> and
+<code>remarks.md</code>) along with extra data files you wish to submit. Be aware
 that if the directory exists already, you will have to remove it or move it
 before this option will work a second time, just like in normal mode.
 </p>
@@ -845,6 +847,12 @@ If you <strong>DO</strong> include a tarball, and the build process or the progr
 said tarball(s), the make <code>clobber</code> rule <strong>MUST</strong> remove them.
 </p>
 <p class="leftbar">
+<strong>IMPORTANT REMINDER</strong>: make <strong>SURE</strong> your tarball DOES <strong>NOT</strong> reveal who you are!
+The <code>mkiocccentry(1)</code> tool creates v7 format tarballs to prevent this. You can
+do so like:
+</p>
+<pre><code>    tar --format=v7 -cJf foo.txz directory</code></pre>
+<p class="leftbar">
 See <a href="rules.html#rule17">Rule 17</a> and in particular the part about the <a href="rules.html#max-files">maximum
 number of files</a>. If you do not follow these points, you
 are at a great risk of violating <a href="rules.html#rule17">Rule 17</a>!
@@ -911,8 +919,7 @@ correct details as you go along.
 <p class="leftbar">
 The synopsis of the <code>mkiocccentry(1)</code> tool is:
 </p>
-<pre><code>    mkiocccentry [options] work_dir prog.c \
-         Makefile remarks.md [file ...]</code></pre>
+<pre><code>    mkiocccentry [options] workdir topdir</code></pre>
 <p class="leftbar">
 To help you with editing a submission, the <code>mkiocccentry(1)</code> tool has
 some options to write <em>OR</em> read from an answers file so you do not have to input

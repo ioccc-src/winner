@@ -222,11 +222,13 @@ The `-d` option is an alias for `-s 21701`. An example use:
 </p>
 
 ``` <!---sh-->
-    mkiocccentry -d test_work prog.c Makefile remarks.md
+    mkiocccentry -d workdir topdir
 ```
 
 <p class="leftbar">
-where `test_work` is the directory which the tarball will be formed. Be aware
+where `workdir` is the directory which the tarball will be formed and the
+`topdir` is the directory which has the required files (`prog.c`, `Makefile` and
+`remarks.md`) along with extra data files you wish to submit. Be aware
 that if the directory exists already, you will have to remove it or move it
 before this option will work a second time, just like in normal mode.
 </p>
@@ -519,6 +521,16 @@ said tarball(s), the make `clobber` rule **MUST** remove them.
 </p>
 
 <p class="leftbar">
+**IMPORTANT REMINDER**: make **SURE** your tarball DOES **NOT** reveal who you are!
+The `mkiocccentry(1)` tool creates v7 format tarballs to prevent this. You can
+do so like:
+</p>
+
+``` <!---sh-->
+    tar --format=v7 -cJf foo.txz directory
+```
+
+<p class="leftbar">
 See [Rule 17](rules.html#rule17) and in particular the part about the [maximum
 number of files](rules.html#max-files). If you do not follow these points, you
 are at a great risk of violating [Rule 17](rules.html#rule17)!
@@ -604,8 +616,7 @@ The synopsis of the `mkiocccentry(1)` tool is:
 </p>
 
 ``` <!---sh-->
-    mkiocccentry [options] work_dir prog.c \
-         Makefile remarks.md [file ...]
+    mkiocccentry [options] workdir topdir
 ```
 
 <p class="leftbar">

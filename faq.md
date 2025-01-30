@@ -300,28 +300,24 @@ FAQ on "[what mkiocccentry is](#about_mkiocccentry)".
 As the [Guidelines](next/guidelines.html) state, the synopsis is:
 
 ``` <!---sh-->
-    mkiocccentry [options] work_dir prog.c \
-         Makefile remarks.md [file ...]
+    mkiocccentry [options] workdir topdir
 ```
 
-... where `work_dir` is a directory that will be used to build the submission
-tarball, `prog.c` is your submission source code, `Makefile` is your submission's
-`Makefile`, `remarks.md` are your remarks (that will be the basis of the
-`README.md` file which will be used to form the `index.html` file, if your
-submission wins) and the remaining args are the paths to any other files you
-wish to submit.
+... where `workdir` is a directory that will be used to build the submission
+tarball and `topdir` is the directory which has your files, including the
+mandatory `prog.c`, `Makefile` and `remarks.md`.
 
-The `work_dir` **MUST** already exist, as a directory, and it is an error if it
+The `workdir` **MUST** already exist, as a directory, and it is an error if it
 is not a directory that can be written to. In **this** directory your **submission
 directory** will be created, with the name based on your IOCCC registration
 username, which is **in the form of a UUID**, and submission number; see the
 [rules](next/rules.html) for more details on this, and in particular [Rule
 17](next/rules.html#rule17).
 
-If the **_subdirectory_ in the _work directory_** already exists, you will have to
+If the **_subdirectory_ in the _work directory_** (based on your submit ID and
+slot number) already exists, you will have to
 move it, remove it or otherwise specify a different work directory (**NOT** the
-subdirectory), as it needs to be empty and the `mkiocccentry(1)` tool does not
-check this for you as it could not do anything about anyway.
+subdirectory), as it needs to be empty.
 
 This _subdirectory is where your files will be **copied** to_. Your _submission
 tarball_ (which you will upload to the submit server) that `txzchk(1)` will
