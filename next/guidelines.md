@@ -49,7 +49,7 @@ Jump to: [top](#)
 </div>
 
 <p class="leftbar">
-These [IOCCC guidelines](guidelines.html) are version **28.34 2025-01-24**.
+These [IOCCC guidelines](guidelines.html) are version **28.35 2025-01-30**.
 </p>
 
 <p class="leftbar">
@@ -522,6 +522,14 @@ said tarball(s), the make `clobber` rule **MUST** remove them.
 See [Rule 17](rules.html#rule17) and in particular the part about the [maximum
 number of files](rules.html#max-files). If you do not follow these points, you
 are at a great risk of violating [Rule 17](rules.html#rule17)!
+</p>
+
+<p class="leftbar">
+**NOTE**: if you want to include a test-suite that requires a lot of files,
+please suggest this in your `remarks.md` and if your submission wins it can
+be done. In other words you should not use a tarball for a test-suite unless you
+have a very good reason for this (and if you do, make **SURE** you specify why
+in your `remarks.md`).
 </p>
 
 
