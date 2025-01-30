@@ -1,6 +1,6 @@
 # IOCCC FAQ Table of Contents
 
-This is FAQ version **28.2.1 2025-01-18**.
+This is FAQ version **28.2.2 2025-01-30**.
 
 
 ## 0. [Entering the IOCCC: the bare minimum you need to know](#enter_questions)
@@ -447,7 +447,7 @@ and any input or actions if applicable.
 We highly recommend that you explain why you think your entry is
 well obfuscated.
 
-For those entries that win the IOCCC, we often use much of text from the
+For those submissions that win the IOCCC, we often use much of text from the
 `remarks.md` file in the _Author's remarks_ section of the `index.html` file.
 For this reason, a well written `remarks.md` file is considered a plus.
 
@@ -1070,6 +1070,7 @@ In 1984-1987, the "`Grand Prize`" winning entries are:
 - [1985/shapiro](1985/shapiro/index.html)
 - [1986/wall](1986/wall/index.html)
 - [1987/lievaart](1987/lievaart/index.html)
+- [1991/westley](1991/westley/index.html)
 
 Starting from 1988, the entry we liked the most in that year is called
 "`Best of Show`". Here are the "`Best of Show`" entries:
@@ -1082,6 +1083,13 @@ Starting from 1988, the entry we liked the most in that year is called
 - [1996/august](1996/august/index.html)
 - [1998/banks](1998/banks/index.html)
 - [2000/jarijyrki](2000/jarijyrki/index.html)
+- [2001/jason](2001/jason/index.html)
+- [2004/gavin](2004/gavin/index.html)
+- [2005/persano](2005/persano/index.html)
+- [2006/toledo2](2006/toledo2/index.html)
+- [2011/akari](2011/akari/index.html)
+- [2013/cable2](2013/cable2/index.html)
+- [2018/mills](2018/mills/index.html)
 - [2020/carlini](2020/carlini/index.html)
 
 
@@ -1089,9 +1097,9 @@ In 1993, 1994 and 1995 the judges were unable to select a clear overall
 winning entry. So to give a nod to the entry that had the highest approval ranking
 from the judges, they used the following awards:
 
-- [1993/rince](1993/rince/index.html) - `Most Well Rounded`
-- [1994/shapiro](1994/shapiro/index.html) - `Most Well Rounded`
-- [1995/leo](1995/leo/index.html) - `Best Use of Obfuscation`
+- [1993/rince](1993/rince/index.html) - `Most well rounded`
+- [1994/shapiro](1994/shapiro/index.html) - `Most well rounded obfuscation`
+- [1995/leo](1995/leo/index.html) - `Best use of obfuscation`
 
 These could be considered the '`best entry`' for those years with 1 or
 more other entries that came in close behind.
