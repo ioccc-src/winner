@@ -684,24 +684,20 @@ explain how to use this tool. If you want to know what it is in simpler terms,
 see the
 FAQ on “<a href="#about_mkiocccentry">what mkiocccentry is</a>”.</p>
 <p>As the <a href="next/guidelines.html">Guidelines</a> state, the synopsis is:</p>
-<pre><code>    mkiocccentry [options] work_dir prog.c \
-         Makefile remarks.md [file ...]</code></pre>
-<p>… where <code>work_dir</code> is a directory that will be used to build the submission
-tarball, <code>prog.c</code> is your submission source code, <code>Makefile</code> is your submission’s
-<code>Makefile</code>, <code>remarks.md</code> are your remarks (that will be the basis of the
-<code>README.md</code> file which will be used to form the <code>index.html</code> file, if your
-submission wins) and the remaining args are the paths to any other files you
-wish to submit.</p>
-<p>The <code>work_dir</code> <strong>MUST</strong> already exist, as a directory, and it is an error if it
+<pre><code>    mkiocccentry [options] workdir topdir</code></pre>
+<p>… where <code>workdir</code> is a directory that will be used to build the submission
+tarball and <code>topdir</code> is the directory which has your files, including the
+mandatory <code>prog.c</code>, <code>Makefile</code> and <code>remarks.md</code>.</p>
+<p>The <code>workdir</code> <strong>MUST</strong> already exist, as a directory, and it is an error if it
 is not a directory that can be written to. In <strong>this</strong> directory your <strong>submission
 directory</strong> will be created, with the name based on your IOCCC registration
 username, which is <strong>in the form of a UUID</strong>, and submission number; see the
 <a href="next/rules.html">rules</a> for more details on this, and in particular <a href="next/rules.html#rule17">Rule
 17</a>.</p>
-<p>If the <strong><em>subdirectory</em> in the <em>work directory</em></strong> already exists, you will have to
+<p>If the <strong><em>subdirectory</em> in the <em>work directory</em></strong> (based on your submit ID and
+slot number) already exists, you will have to
 move it, remove it or otherwise specify a different work directory (<strong>NOT</strong> the
-subdirectory), as it needs to be empty and the <code>mkiocccentry(1)</code> tool does not
-check this for you as it could not do anything about anyway.</p>
+subdirectory), as it needs to be empty.</p>
 <p>This <em>subdirectory is where your files will be <strong>copied</strong> to</em>. Your <em>submission
 tarball</em> (which you will upload to the submit server) that <code>txzchk(1)</code> will
 validate <em>will be placed in the <strong>work directory</strong></em>, and <strong>its <em>contents</em> will
