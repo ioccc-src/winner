@@ -4,8 +4,8 @@
     make all
 ```
 
-There is an alternate version, the original, that can't be compiled in modern
-systems but can be if you have an old enough compiler. See [Alternate
+There is an alternate version, based on the original, that can be compiled in
+modern systems but likely won't do anything. See [Alternate
 code](#alternate-code) below.
 
 
