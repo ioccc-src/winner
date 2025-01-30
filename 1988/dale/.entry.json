@@ -6,7 +6,7 @@
     "dir" : "dale",
     "entry_id" : "1988_dale",
     "title" : "1988.dale",
-    "abstract" : "prints command lineusing lots of system calls",
+    "abstract" : "prints command line using lots of system calls",
     "author_set" : [
         {
             "author_handle" : "Paul_Dale"
