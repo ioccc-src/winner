@@ -512,21 +512,25 @@ the
 FAQ on”<a href="#using_mkiocccentry">how to use mkiocccentry</a>“)
 and the <a href="next/guidelines.html#mkiocccentry">mkiocccentry section in the
 guidelines</a>.</p>
-<pre><code>    mkiocccentry work_dir prog.c Makefile remarks.md [file ...]</code></pre>
+<pre><code>    mkiocccentry [options] workdir topdir</code></pre>
 <p>where:</p>
 <ul>
-<li><p><code>work_dir</code></p>
-<p>directory where the entry directory and tarball are formed</p></li>
+<li><p><code>workdir</code></p>
+<p>directory where the submission directory and tarball are formed</p></li>
+<li><p><code>topdir</code></p>
+<p>directory where your files to be packaged are in</p></li>
+</ul>
+<p>Three files are required to exist in <code>topdir</code>:</p>
+<ul>
 <li><p><code>prog.c</code></p>
-<p>path to the C source for your entry</p></li>
+<p>path to the C source for your submission</p></li>
 <li><p><code>Makefile</code></p>
-<p>Makefile to build (make all) and cleanup (make clean &amp; make clobber)</p></li>
+<p>Makefile to build (make all) and cleanup (make clean &amp; make clobber) as well
+as the other required rules</p></li>
 <li><p><code>remarks.md</code></p>
 <p>Remarks about your entry in markdown format: see the
-FAQ on “<a href="#remarks_md">remarks.md</a>”
+FAQ on “<a href="faq.html#remarks_md">remarks.md</a>”
 for more info.</p></li>
-<li><p>[file …]</p>
-<p>Optional extra data files to include with your entry</p></li>
 </ul>
 <p><strong>NOTE</strong>: Please see our <a href="markdown.html">IOCCC markdown guide</a> for <strong>important information</strong> on using markdown in the IOCCC.</p>
 <p><strong>NOTE</strong>: It is <em>NOT</em> necessary to install the tools to use them as you can run
@@ -536,10 +540,10 @@ However, installing it will make it easier for you as you can run it from your
 submission’s directory. See the
 FAQ on “<strong><a href="https://github.com/ioccc-src/mkiocccentry/blob/master/FAQ.md#install">installing mkiocccentry</a></strong>”
 at the mkiocccentry repo.</p>
-<p>If the <code>mkiocccentry</code> tool indicates that there is a problem with your entry,
-especially if it identifies a <a href="next/rules.html#rule2">Rule 2</a>, or any other
-rule, related problem, you are <strong>strongly</strong> encouraged to revise and correct
-your entry and then re-run the <code>mkiocccentry</code> tool.</p>
+<p>If the <code>mkiocccentry</code> tool indicates that there is a problem with your
+submission, especially if it identifies a <a href="next/rules.html#rule2">Rule 2</a>, or
+any other rule, related problem, you are <strong>strongly</strong> encouraged to revise and
+correct your entry and then re-run the <code>mkiocccentry</code> tool.</p>
 <p>If you choose to risk violating rules, be sure and explain your reason
 for doing so in your <code>remarks.md</code> file.</p>
 <p>See also <a href="next/rules.html#rule17">Rule 17</a>!</p>

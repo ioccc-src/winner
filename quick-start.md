@@ -124,32 +124,35 @@ guidelines](next/guidelines.html#mkiocccentry).
 
 
 ``` <!---sh-->
-    mkiocccentry work_dir prog.c Makefile remarks.md [file ...]
+    mkiocccentry [options] workdir topdir
 ```
 
 where:
 
-* `work_dir`
+* `workdir`
 
-    directory where the entry directory and tarball are formed
+    directory where the submission directory and tarball are formed
+
+* `topdir`
+
+    directory where your files to be packaged are in
+
+Three files are required to exist in `topdir`:
 
 * `prog.c`
 
-    path to the C source for your entry
+    path to the C source for your submission
 
 * `Makefile`
 
-    Makefile to build (make all) and cleanup (make clean & make clobber)
+    Makefile to build (make all) and cleanup (make clean & make clobber) as well
+    as the other required rules
 
 * `remarks.md`
 
     Remarks about your entry in markdown format: see the
-    FAQ on "[remarks.md](#remarks_md)"
+    FAQ on "[remarks.md](faq.html#remarks_md)"
     for more info.
-
-* [file ...]
-
-    Optional extra data files to include with your entry
 
 **NOTE**: Please see our [IOCCC markdown guide](markdown.html) for **important information** on using markdown in the IOCCC.
 
@@ -161,10 +164,10 @@ submission's directory. See the
 FAQ on "**[installing mkiocccentry](https://github.com/ioccc-src/mkiocccentry/blob/master/FAQ.md#install)**"
 at the mkiocccentry repo.
 
-If the `mkiocccentry` tool indicates that there is a problem with your entry,
-especially if it identifies a [Rule 2](next/rules.html#rule2), or any other
-rule, related problem, you are **strongly** encouraged to revise and correct
-your entry and then re-run the `mkiocccentry` tool.
+If the `mkiocccentry` tool indicates that there is a problem with your
+submission, especially if it identifies a [Rule 2](next/rules.html#rule2), or
+any other rule, related problem, you are **strongly** encouraged to revise and
+correct your entry and then re-run the `mkiocccentry` tool.
 
 If you choose to risk violating rules, be sure and explain your reason
 for doing so in your `remarks.md` file.
