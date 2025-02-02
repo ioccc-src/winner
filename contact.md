@@ -20,11 +20,11 @@ FAQ on "[submitting a pull request](faq.html#pull_request)".
 If you are trying to:
 
 * **Report a bug in an IOCCC winning entry** - See our
-FAQ on "[report entry bug](faq.html#report_bug)"
+FAQ on "[reporting an entry bug](faq.html#report_bug)"
 * **Report an IOCCC website problem** - See our
-FAQ on "[report website problem](faq.html#report_web_problem)"
+FAQ on "[reporting a website problem](faq.html#report_web_problem)"
 * **Report a broken or wrong web link** - See our
-FAQ on "[report broken link](faq.html#fix_link)"
+FAQ on "[reporting a broken link](faq.html#fix_link)"
 
 In general, unless you have a fix, if you want to report something, you should instead first look at the [IOCCC
 issues](https://github.com/ioccc-src/winner/issues) to see if the
