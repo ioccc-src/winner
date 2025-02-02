@@ -1,6 +1,6 @@
 # IOCCC FAQ Table of Contents
 
-This is FAQ version **28.2.2 2025-01-30**.
+This is FAQ version **28.2.3 2025-02-02**.
 
 
 ## 0. [Entering the IOCCC: the bare minimum you need to know](#enter_questions)
@@ -217,10 +217,14 @@ code, your Makefile, your remarks, any other data files you wish to provide (up
 to a maximum, including the mandatory files, defined in
 [limit_ioccc.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h)
 as `MAX_FILE_COUNT`) and other information about your submission,
-information about the author (or authors), and then it runs a lot of tests before (if
-all is OK) forming your tarball. After this is done it will additionally run the
-`txzchk(1)` tool (which runs the `fnamchk(1)` tool) on the submission tarball.
-The tool `chkentry(1)` will also be run, before creating the tarball. See the
+information about the author (or authors), and then it runs a lot of tests.
+
+If everything is OK, it will write the required `.auth.json` and `.info.json`
+files, checking each with `chkentry(1)` and then, if all is OK, it will create
+the tarball. After the tarball is formed, it will run `txzchk(1)` on it, which
+runs `fnamchk(1)`. If all is OK, your submission tarball should be good to go.
+
+Please see
 FAQ on "[txzchk](#txzchk)",
 the
 FAQ on "[fnamchk](#fnamchk)"
@@ -431,7 +435,15 @@ Jump to: [top](#)
 </div>
 </div>
 
-First, **PLEASE** read the [IOCCC markdown guidelines](markdown.html).
+**PLEASE** look at the example remarks.md to give you a better idea of how
+it should be formed:
+
+- [view example remarks.md](%%REPO_URL%%/next/remarks.example.md)
+- [remarks.md example](next/remarks.example.md)
+
+Read the instructions in the file and **PLEASE** pay especial attention to the
+instructions, including the [IOCCC markdown guidelines](markdown.html). You will
+observe that it links back to this FAQ as to what you should or should not say.
 
 Next, while you may put in as much or as little as you wish into your entry's
 `remarks.md` file, we do have few important suggestions:
