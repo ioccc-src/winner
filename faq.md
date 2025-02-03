@@ -1,6 +1,6 @@
 # IOCCC FAQ Table of Contents
 
-This is FAQ version **28.2.3 2025-02-02**.
+This is FAQ version **28.2.4 2025-02-03**.
 
 
 ## 0. [Entering the IOCCC: the bare minimum you need to know](#enter_questions)
@@ -14,6 +14,7 @@ This is FAQ version **28.2.3 2025-02-02**.
 - **Q 0.3**: <a class="normal" href="#makefile">What should I put in my submission Makefile?</a>
 - **Q 0.4**: <a class="normal" href="#remarks">What should I put in the remarks.md file of my submission?</a>
 - **Q 0.5**: <a class="normal" href="#try_scripts">What should I do with the `try.sh` and `try.alt.sh` scripts?</a>
+- **Q 0.6**: <a class="normal" href="#file_perms">What permissions may my files be and what if I need different permissions?</a>
 
 
 ## 1. [Entering the IOCCC: more help and details](#submitting_help)
@@ -435,24 +436,24 @@ Jump to: [top](#)
 </div>
 </div>
 
-**PLEASE** look at the example remarks.md to give you a better idea of how
-it should be formed:
+**PLEASE** look at the template remarks.md to give you a better idea of how
+it should be formed, as it has some instructions you should follow:
 
-- [view example remarks.md](%%REPO_URL%%/next/remarks.example.md)
-- [remarks.md example](next/remarks.example.md)
+- [view template remarks.md](%%REPO_URL%%/next/remarks.example.md)
+- [remarks.md template](next/remarks.example.md)
 
-Read the instructions in the file and **PLEASE** pay especial attention to the
-instructions, including the [IOCCC markdown guidelines](markdown.html). You will
-observe that it links back to this FAQ as to what you should or should not say.
+**PLEASE** pay especial attention to the instructions, including the [IOCCC
+markdown guidelines](markdown.html). You will observe that it links back to this
+FAQ as to what you should or should not say.
 
 Next, while you may put in as much or as little as you wish into your entry's
 `remarks.md` file, we do have few important suggestions:
 
-We recommend that you explain how to use your entry.  Explain the
+We recommend that you explain how to use your submission.  Explain the
 command line (if any command line options and arguments are used)
 and any input or actions if applicable.
 
-We highly recommend that you explain why you think your entry is
+We highly recommend that you explain why you think your submission is
 well obfuscated.
 
 For those submissions that win the IOCCC, we often use much of text from the
@@ -460,17 +461,18 @@ For those submissions that win the IOCCC, we often use much of text from the
 For this reason, a well written `remarks.md` file is considered a plus.
 
 While not required, consider adding bit of humor to your `remarks.md`
-as most people who are not humor impaired, as well as the IOCCC judges
-appreciate the opportunity for a fun read as well as a chuckle or two.
+as most people who are not humor impaired, as well as the IOCCC judges (who
+might or might not be humour impaired :-) ), appreciate the opportunity for a
+fun read as well as a chuckle or two.
 
 
 #### What helps:
 
-- explaining what your entry does
-- how to entice it to do what it is supposed to do
-- what obfuscations are used
-- what are the limitations of your entry in respect of portability and/or input data
-- how it works (if you are really condescending)
+- explaining what your entry does.
+- how to entice it to do what it is supposed to do.
+- what obfuscations are used.
+- what are the limitations of your entry in respect of portability and/or input data.
+- how it works (if you are really condescending).
 
 
 #### What does not help:
@@ -483,13 +485,15 @@ it, not very obfuscated entries have a minuscule chance to win (although
 in the C code for that matter) - we like to be unbiased during the judging
 rounds; we look at the author name only if an entry wins. See the
 [guidelines](next/guidelines.html) **AND** [rules](next/rules.html) if this is not clear!
-- leaving the remark section empty.
+- leaving the remark section empty (which would also indicate that you did not
+use `mkiocccentry(1)`, as it requires it to not be of size 0, though if you only
+include whitespace you would still be violating [Rule 17](next/rules.html#rule17)).
 
 Jump to: [top](#)
 
 
 <div id="try_scripts">
-### Q 0.5 What should I do with the `try.sh` and `try.alt.sh` scripts?
+### Q 0.5: What should I do with the `try.sh` and `try.alt.sh` scripts?
 </div>
 
 If your submission has more than one use, or if you have interesting ways to
@@ -522,6 +526,30 @@ FAQ on "[submission Makefiles](#makefile).
 
 Jump to: [top](#)
 
+
+
+<div id="file_perms">
+### Q 0.6: What permissions may my files be and what if I need different permissions?
+</div>
+
+As [Rule 17](#rule17) states, files in your submission tarball **MUST** be
+specific permissions. In particular: directories **MUST** be `drwxr-xr-x` (i.e.
+`0755`), the optional files, `try.sh` or `try.alt.sh`, if provided, **MUST** be
+`-r-xr-xr-x` (i.e. `0555`) and all other files **MUST** be `-r--r--r--` (i.e.
+`0444`).
+
+If you need a file to be executable, say a script, then make sure you do so in
+the appropriate place in your Makefile. See the
+FAQ on "[submission Makefile](#makefile)"
+for more details.
+
+Do remember that if your submission requires different filenames, then you
+**MUST** make a **COPY** of them in your `Makefile`. See also [Rule
+11](next/rules.html#rule11).
+
+
+
+Jump to: [top](#)
 <hr style="width:50%;text-align:left;margin-left:0">
 <hr style="width:50%;text-align:left;margin-left:0">
 

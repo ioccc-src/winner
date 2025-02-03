@@ -425,7 +425,7 @@
 
 <!-- BEFORE: 1st line of markdown file: faq.md -->
 <h1 id="ioccc-faq-table-of-contents">IOCCC FAQ Table of Contents</h1>
-<p>This is FAQ version <strong>28.2.3 2025-02-02</strong>.</p>
+<p>This is FAQ version <strong>28.2.4 2025-02-03</strong>.</p>
 <h2 id="entering-the-ioccc-the-bare-minimum-you-need-to-know">0. <a href="#enter_questions">Entering the IOCCC: the bare minimum you need to know</a></h2>
 <ul>
 <li><strong>Q 0.0</strong>: <a class="normal" href="#enter">How can I enter the IOCCC?</a></li>
@@ -440,6 +440,7 @@
 <li><strong>Q 0.3</strong>: <a class="normal" href="#makefile">What should I put in my submission Makefile?</a></li>
 <li><strong>Q 0.4</strong>: <a class="normal" href="#remarks">What should I put in the remarks.md file of my submission?</a></li>
 <li><strong>Q 0.5</strong>: <a class="normal" href="#try_scripts">What should I do with the <code>try.sh</code> and <code>try.alt.sh</code> scripts?</a></li>
+<li><strong>Q 0.6</strong>: <a class="normal" href="#file_perms">What permissions may my files be and what if I need different permissions?</a></li>
 </ul>
 <h2 id="entering-the-ioccc-more-help-and-details">1. <a href="#submitting_help">Entering the IOCCC: more help and details</a></h2>
 <ul>
@@ -799,35 +800,36 @@ the one linked to above.</p>
 </div>
 </div>
 </div>
-<p><strong>PLEASE</strong> look at the example remarks.md to give you a better idea of how
-it should be formed:</p>
+<p><strong>PLEASE</strong> look at the template remarks.md to give you a better idea of how
+it should be formed, as it has some instructions you should follow:</p>
 <ul>
-<li><a href="https://github.com/ioccc-src/winner/blob/master/next/remarks.example.md">view example remarks.md</a></li>
-<li><a href="next/remarks.example.md">remarks.md example</a></li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/next/remarks.example.md">view template remarks.md</a></li>
+<li><a href="next/remarks.example.md">remarks.md template</a></li>
 </ul>
-<p>Read the instructions in the file and <strong>PLEASE</strong> pay especial attention to the
-instructions, including the <a href="markdown.html">IOCCC markdown guidelines</a>. You will
-observe that it links back to this FAQ as to what you should or should not say.</p>
+<p><strong>PLEASE</strong> pay especial attention to the instructions, including the <a href="markdown.html">IOCCC
+markdown guidelines</a>. You will observe that it links back to this
+FAQ as to what you should or should not say.</p>
 <p>Next, while you may put in as much or as little as you wish into your entry’s
 <code>remarks.md</code> file, we do have few important suggestions:</p>
-<p>We recommend that you explain how to use your entry. Explain the
+<p>We recommend that you explain how to use your submission. Explain the
 command line (if any command line options and arguments are used)
 and any input or actions if applicable.</p>
-<p>We highly recommend that you explain why you think your entry is
+<p>We highly recommend that you explain why you think your submission is
 well obfuscated.</p>
 <p>For those submissions that win the IOCCC, we often use much of text from the
 <code>remarks.md</code> file in the <em>Author’s remarks</em> section of the <code>index.html</code> file.
 For this reason, a well written <code>remarks.md</code> file is considered a plus.</p>
 <p>While not required, consider adding bit of humor to your <code>remarks.md</code>
-as most people who are not humor impaired, as well as the IOCCC judges
-appreciate the opportunity for a fun read as well as a chuckle or two.</p>
+as most people who are not humor impaired, as well as the IOCCC judges (who
+might or might not be humour impaired :-) ), appreciate the opportunity for a
+fun read as well as a chuckle or two.</p>
 <h4 id="what-helps">What helps:</h4>
 <ul>
-<li>explaining what your entry does</li>
-<li>how to entice it to do what it is supposed to do</li>
-<li>what obfuscations are used</li>
-<li>what are the limitations of your entry in respect of portability and/or input data</li>
-<li>how it works (if you are really condescending)</li>
+<li>explaining what your entry does.</li>
+<li>how to entice it to do what it is supposed to do.</li>
+<li>what obfuscations are used.</li>
+<li>what are the limitations of your entry in respect of portability and/or input data.</li>
+<li>how it works (if you are really condescending).</li>
 </ul>
 <h4 id="what-does-not-help">What does not help:</h4>
 <ul>
@@ -839,11 +841,13 @@ it, not very obfuscated entries have a minuscule chance to win (although
 in the C code for that matter) - we like to be unbiased during the judging
 rounds; we look at the author name only if an entry wins. See the
 <a href="next/guidelines.html">guidelines</a> <strong>AND</strong> <a href="next/rules.html">rules</a> if this is not clear!</li>
-<li>leaving the remark section empty.</li>
+<li>leaving the remark section empty (which would also indicate that you did not
+use <code>mkiocccentry(1)</code>, as it requires it to not be of size 0, though if you only
+include whitespace you would still be violating <a href="next/rules.html#rule17">Rule 17</a>).</li>
 </ul>
 <p>Jump to: <a href="#">top</a></p>
 <div id="try_scripts">
-<h3 id="q-0.5-what-should-i-do-with-the-try.sh-and-try.alt.sh-scripts">Q 0.5 What should I do with the <code>try.sh</code> and <code>try.alt.sh</code> scripts?</h3>
+<h3 id="q-0.5-what-should-i-do-with-the-try.sh-and-try.alt.sh-scripts">Q 0.5: What should I do with the <code>try.sh</code> and <code>try.alt.sh</code> scripts?</h3>
 </div>
 <p>If your submission has more than one use, or if you have interesting ways to
 invoke your program, perhaps using other commonly installed tools (or tools
@@ -868,6 +872,22 @@ but we do enjoy interesting and creative uses of submissions.</p>
 example Makefile that you modify for your submission. See the
 FAQ on “<a href="#makefile">submission Makefiles</a>.</p>
 <p>Jump to: <a href="#">top</a></p>
+<div id="file_perms">
+<h3 id="q-0.6-what-permissions-may-my-files-be-and-what-if-i-need-different-permissions">Q 0.6: What permissions may my files be and what if I need different permissions?</h3>
+</div>
+<p>As <a href="#rule17">Rule 17</a> states, files in your submission tarball <strong>MUST</strong> be
+specific permissions. In particular: directories <strong>MUST</strong> be <code>drwxr-xr-x</code> (i.e.
+<code>0755</code>), the optional files, <code>try.sh</code> or <code>try.alt.sh</code>, if provided, <strong>MUST</strong> be
+<code>-r-xr-xr-x</code> (i.e. <code>0555</code>) and all other files <strong>MUST</strong> be <code>-r--r--r--</code> (i.e.
+<code>0444</code>).</p>
+<p>If you need a file to be executable, say a script, then make sure you do so in
+the appropriate place in your Makefile. See the
+FAQ on “<a href="#makefile">submission Makefile</a>”
+for more details.</p>
+<p>Do remember that if your submission requires different filenames, then you
+<strong>MUST</strong> make a <strong>COPY</strong> of them in your <code>Makefile</code>. See also <a href="next/rules.html#rule11">Rule
+11</a>.</p>
+Jump to: <a href="#">top</a>
 <hr style="width:50%;text-align:left;margin-left:0">
 <hr style="width:50%;text-align:left;margin-left:0">
 <div id="submitting_help">
