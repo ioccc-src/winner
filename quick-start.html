@@ -540,6 +540,16 @@ However, installing it will make it easier for you as you can run it from your
 submission’s directory. See the
 FAQ on “<strong><a href="https://github.com/ioccc-src/mkiocccentry/blob/master/FAQ.md#install">installing mkiocccentry</a></strong>”
 at the mkiocccentry repo.</p>
+<p>However, an <strong>IMPORTANT NOTE</strong>: if you run the program outside the repo
+directory (specifying the absolute or relative path to the tool) and you
+have not installed the tools then you will have to specify the options for the
+tools that are required like <code>chkentry(1)</code>, <code>txzchk(1)</code> and <code>fnamchk(1)</code>. But
+even if you have installed them but some tools are out of date (in the install
+path) it will cause problems. Additionally, if you do not have the most recent
+version when submitting a tarball it will be rejected for not having the right
+versions of the tools. This is why you <strong>MUST</strong> make sure you have the most
+recent version of all the tools and you either run it from the repo directory
+itself OR you install them (<code>make install</code> as via <code>sudo</code> or as root).</p>
 <p>If the <code>mkiocccentry</code> tool indicates that there is a problem with your
 submission, especially if it identifies a <a href="next/rules.html#rule2">Rule 2</a>, or
 any other rule, related problem, you are <strong>strongly</strong> encouraged to revise and

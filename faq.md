@@ -319,6 +319,17 @@ username, which is **in the form of a UUID**, and submission number; see the
 [rules](next/rules.html) for more details on this, and in particular [Rule
 17](next/rules.html#rule17).
 
+**IMPORTANT NOTE**: if you run the program outside the repo directory
+(specifying the absolute or relative path to the tool) and you have not
+installed the tools then you will have to specify the options for the tools that
+are required like `chkentry(1)`, `txzchk(1)` and `fnamchk(1)`. But even if you
+have installed them but some tools are out of date (in the install path) it will
+cause problems. Additionally, if you do not have the most recent version when
+submitting a tarball it will be rejected for not having the right versions of
+the tools. This is why you **MUST** make sure you have the most recent version
+of all the tools and you either run it from the repo directory itself OR you
+install them (`make install` as via `sudo` or as root).
+
 If the **_subdirectory_ in the _work directory_** (based on your submit ID and
 slot number) already exists, you will have to
 move it, remove it or otherwise specify a different work directory (**NOT** the
