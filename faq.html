@@ -425,7 +425,7 @@
 
 <!-- BEFORE: 1st line of markdown file: faq.md -->
 <h1 id="ioccc-faq-table-of-contents">IOCCC FAQ Table of Contents</h1>
-<p>This is FAQ version <strong>28.2.4 2025-02-03</strong>.</p>
+<p>This is FAQ version <strong>28.2.5 2025-02-07</strong>.</p>
 <h2 id="entering-the-ioccc-the-bare-minimum-you-need-to-know">0. <a href="#enter_questions">Entering the IOCCC: the bare minimum you need to know</a></h2>
 <ul>
 <li><strong>Q 0.0</strong>: <a class="normal" href="#enter">How can I enter the IOCCC?</a></li>
@@ -714,12 +714,12 @@ subdirectory), as it needs to be empty.</p>
 <p>This <em>subdirectory is where your files will be <strong>copied</strong> to</em>. Your <em>submission
 tarball</em> (which you will upload to the submit server) that <code>txzchk(1)</code> will
 validate <em>will be placed in the <strong>work directory</strong></em>, and <strong>its <em>contents</em> will
-be the <em>subdirectory</em> with your submission’s files</strong>.</p>
-<p>The <code>mkiocccentry(1)</code> tool will ask you for information about your
+be the <em>subdirectory</em> with your submission’s files</strong>.
+The <code>mkiocccentry(1)</code> tool will also ask you for information about your
 submission <em>as well as author details</em> (that will only be looked at if the
-submission wins), run some tests and run a number of other tools, as briefly
-mentioned earlier, and as described in the
-“<a href="#mkiocccentry_details">finer details</a>” section.</p>
+submission wins), run some tests and run a number of other tools, as
+mentioned above, and as described in the “<a href="#mkiocccentry_details">finer
+details</a>” section.</p>
 <p>See also the
 <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/FAQ.md">mkiocccentry repo FAQ</a>
 for more up to date information on downloading, compiling, and related FAQ information.</p>
@@ -1392,7 +1392,9 @@ Jump to: <a href="#">top</a>
 <div id="mkiocccentry_checks">
 <h3 id="q-3.0-what-sort-of-checks-does-the-mkiocccentry-tool-perform">Q 3.0: What sort of checks does the mkiocccentry tool perform?</h3>
 </div>
-<p><code>mkiocccentry(1)</code> will check and warn about the following conditions:</p>
+<p>In addition to the checks in the <a href="#mkiocccentry_process">mkiocccentry process</a>
+described below, <code>mkiocccentry(1)</code> will check and warn about the following
+conditions:</p>
 <ul>
 <li>If the files do not exist, are not regular files or cannot be read.</li>
 <li>If <code>prog.c</code> violates <a href="next/rules.html#rule2">Rule 2</a> (see
@@ -1412,8 +1414,9 @@ Jump to: <a href="#">top</a>
 <li>If the <code>Makefile</code> does not have a <code>clean</code> rule.</li>
 <li>If the <code>Makefile</code> does not have a <code>clobber</code> rule.</li>
 <li>If the <code>Makefile</code> does not have a <code>try</code> rule.</li>
-<li>If the <code>remarks.md</code> is empty.</li>
 </ul>
+<p>If your <code>Makefile</code> is empty or <code>remarks.md</code> is empty it is an error and you will
+have to fix it.</p>
 <p>Conditions that one must correct, and which <code>mkiocccentry(1)</code> will prompt until
 they are correct, are:</p>
 <ul>
@@ -1448,8 +1451,95 @@ has more than one <code>@</code> or is longer than <code>MAX_GITHUB_LEN</code> (
 <li>An <em>author handle</em>, if the default is not accepted, does
 not match the regexp <code>^[0-9A-Za-z][0-9A-Za-z._+-]*$</code>.</li>
 <li>An <em>author handle</em> is repeated.</li>
-<li>The output of <code>ls</code> on the submission directory is incorrect.</li>
 </ul>
+<div id="mkiocccentry_process">
+<h4 id="mkiocccentry-process"><code>mkiocccentry</code> process</h4>
+</div>
+<p>The <code>mkiocccentry(1)</code> tool performs the following steps:</p>
+<ol start="0" type="1">
+<li>Change to the <code>topdir</code>.</li>
+<li>Traverses the directory, gathering lists of ignored files and files to copy
+to the submission directory.
+<ul>
+<li>If the depth is too deep it is an error (see <code>MAX_PATH_DEPTH</code> in
+<a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h">limit_ioccc.h</a>).</li>
+<li>If a file is not a sane relative path it is an error (see the
+<a href="next/rules.html#">Rules</a> and <a href="next/guidelines.html">Guidelines</a> for more
+details).</li>
+<li>If the path length (all components) are too long it is an error (see
+<code>MAX_PATH_LEN</code> in
+<a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h">limit_ioccc.h</a>).</li>
+<li>If a filename is too long it is an error (see <code>MAX_FILENAME_LEN</code> in
+<a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h">limit_ioccc.h</a>).</li>
+<li>If a directory is not readable it is an error.</li>
+<li>If <code>prog.c</code>, <code>Makefile</code> or <code>remarks.md</code> are not found it is an error.</li>
+<li>If too many files that are not <code>prog.c</code>, <code>Makefile</code>, <code>remarks.md</code>,
+<code>try.sh</code>, <code>prog.alt.c</code> or <code>try.alt.sh</code> are found, it is an error (see
+<code>MAX_EXTRA_FILE_COUNT</code> in
+<a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h">limit_ioccc.h</a>).</li>
+</ul></li>
+<li>The user is presented with lists of files (including symlinks) and
+directories that were ignored as well as files and directories to be added, both
+required and non-required files.
+<ul>
+<li>Symlinks are ignored and may not be included.</li>
+<li>Certain filenames are forbidden and are not allowed. <code>mkiocccentry(1)</code>
+will warn let you know about this. If you do not confirm that this is okay
+it is an error.</li>
+<li>Certain directories like <code>.git</code>, <code>CVS</code> and other RCS directories are not
+allowed but are ignored (and not descended into). You will be presented with
+a list of these directories and be asked to confirm it as well.</li>
+<li>The user is asked to verify each list, including the list of files to be
+added, and if the user says it is not OK the program will abort.</li>
+</ul></li>
+<li>The non-ignored files are copied under
+<code>workdir/submit.USERNAME-SLOT.TIMESTAMP</code>, in the correct subdirectories.
+<ul>
+<li>As it copies <code>prog.c</code> it runs <code>iocccsize(1)</code> and other tests on it,
+allowing you to override issues.</li>
+<li>As it copies <code>Makefile</code> it runs tests on it, allowing you to override
+certain issues. <code>Makefile</code> may not be empty.</li>
+<li>As it copies <code>remarks.m</code> it checks that it is not empty (if it is empty it
+is an error). <code>remarks.md</code> may not be empty.</li>
+<li>Only <code>try.sh</code> and <code>try.alt.sh</code> may be executable (mode <code>0555</code>).</li>
+<li>Directories are made prior to the copying of the files.</li>
+<li>Directories will be made with mode <code>0755</code>.</li>
+<li>Other files are mode <code>0444</code>.</li>
+<li><code>txzchk(1)</code> verifies these.</li>
+</ul></li>
+<li><code>cd submit.USERNAME-SLOT.TIMESTAMP</code>.</li>
+<li><code>make -f Makefile clobber</code>.
+<ul>
+<li>If this fails it is not an error but you are warned about it; if the
+Makefile does not exist it is an error.</li>
+</ul></li>
+<li>Traverse the new tree from <code>.</code>, collecting files in the submission directory.
+<ul>
+<li>If an invalid file or directory is found it is an error.</li>
+<li>If the depth is too deep it is an error.</li>
+<li>If <code>prog.c</code>, <code>Makefile</code> or <code>remarks.md</code> are missing it is an error.</li>
+<li>If a file is not a sane relative path it is an error (see the
+<a href="next/rules.html#">Rules</a> and <a href="next/guidelines.html">Guidelines</a> for more
+details).</li>
+<li>If the path length (all components) are too long it is an error (see
+<code>MAX_PATH_LEN</code> in
+<a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h">limit_ioccc.h</a>).</li>
+<li>If a filename is too long it is an error (see <code>MAX_FILENAME_LEN</code> in
+<a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h">limit_ioccc.h</a>).</li>
+<li>If a directory is not readable it is an error.</li>
+<li>If too many files that are not <code>prog.c</code>, <code>Makefile</code>, <code>remarks.md</code>,
+<code>try.sh</code>, <code>prog.alt.c</code> or <code>try.alt.sh</code> are found, it is an error (see
+<code>MAX_EXTRA_FILE_COUNT</code> in
+<a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h">limit_ioccc.h</a>).</li>
+</ul></li>
+<li>Report on files that were copied in (3) but are now gone: asking the user to verify.</li>
+<li>Present the list of non-dot files that remain and ask the user to confirm.</li>
+<li>Create the <code>.info.json</code> and <code>.auth.json</code> files, running <code>chkenry(1)</code> on each.</li>
+<li>List the submission directory contents, asking the user once again to verify
+everything is okay.</li>
+<li>Form the tarball and run <code>txzchk(1)</code> on it.</li>
+</ol>
+<p>If any of the steps fail or if the user says something is not okay, it aborts.</p>
 <p>Although the <code>mkiocccentry(1)</code> tool will verify everything for you, you may wish
 to validate different parts individually with the different tools. As the
 <a href="next/rules.html">rules</a> state, each of these tools has a <code>-h</code> option.</p>
