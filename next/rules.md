@@ -53,7 +53,7 @@ Jump to: [top](#)
 
 
 <p class="leftbar">
-These [IOCCC rules](rules.html) are version **28.21 2025-02-03**.
+These [IOCCC rules](rules.html) are version **28.22 2025-02-08**.
 </p>
 
 <p class="leftbar">
@@ -819,7 +819,9 @@ for help.
 </p>
 
 <p class="leftbar">
-The `remarks.md` **MUST** be a **non**-empty file in markdown form.  See also
+The `remarks.md` **MUST** be a **non**-empty file in markdown form
+(`mkiocccentry(1)` only checks the file size but if you do not have any text in
+it you still risk violating this rule).  See also
 [Rule 18](#rule18) and our
 FAQ on "[remarks.md](../faq.html#remarks_md)"
 and our

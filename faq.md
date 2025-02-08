@@ -1,6 +1,6 @@
 # IOCCC FAQ Table of Contents
 
-This is FAQ version **28.2.5 2025-02-07**.
+This is FAQ version **28.2.6 2025-02-08**.
 
 
 ## 0. [Entering the IOCCC: the bare minimum you need to know](#enter_questions)
@@ -1283,10 +1283,11 @@ The `mkiocccentry(1)` tool performs the following steps:
 1. Traverses the directory, gathering lists of ignored files and files to copy
 to the submission directory.
     * If the depth is too deep it is an error (see `MAX_PATH_DEPTH` in
-[limit_ioccc.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h)).
-    * If a file is not a sane relative path it is an error (see the
-    [Rules](next/rules.html#) and [Guidelines](next/guidelines.html) for more
-    details).
+    [limit_ioccc.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h)).
+    * If a filename or directory name is not a sane relative path, not allowed
+    or will not be added for some reason, it will be added to a relevant list to show to
+    the user later, to let them know it is ignored (see the
+    [Rules](next/rules.html#) and [Guidelines](next/guidelines.html) for more details).
     * If the path length (all components) are too long it is an error (see
     `MAX_PATH_LEN` in
     [limit_ioccc.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h)).
@@ -1298,42 +1299,58 @@ to the submission directory.
     `try.sh`, `prog.alt.c` or `try.alt.sh` are found, it is an error (see
     `MAX_EXTRA_FILE_COUNT` in
     [limit_ioccc.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h)).
-2. The user is presented with lists of files (including symlinks) and
-directories that were ignored as well as files and directories to be added, both
-required and non-required files.
-    * Symlinks are ignored and may not be included.
-    * Certain filenames are forbidden and are not allowed. `mkiocccentry(1)`
-    will warn let you know about this. If you do not confirm that this is okay
-    it is an error.
-    * Certain directories like `.git`, `CVS` and other RCS directories are not
+2. The user is presented with lists of files, symlinks and directories found.
+    * Symlinks are ignored and may not be included. You will be warned about
+    this.
+    * Certain filenames (such as `README.md`, `index.html` and various others)
+    are forbidden and are not allowed. `mkiocccentry(1)` will warn and let you
+    know about this.
+    * Certain directories like `.git`, `CVS` and other RCS related directories are not
     allowed but are ignored (and not descended into). You will be presented with
-    a list of these directories and be asked to confirm it as well.
+    a list of these directories.
+    * No file or directory starting with `.` will be allowed.
+    * List of directories that will be made.
+    * List of required and non-required files that will be added.
     * The user is asked to verify each list, including the list of files to be
     added, and if the user says it is not OK the program will abort.
 3. The non-ignored files are copied under
-`workdir/submit.USERNAME-SLOT.TIMESTAMP`, in the correct subdirectories.
-    * As it copies `prog.c` it runs `iocccsize(1)` and other tests on it,
-    allowing you to override issues.
-    * As it copies `Makefile` it runs tests on it, allowing you to override
-    certain issues. `Makefile` may not be empty.
-    * As it copies `remarks.m` it checks that it is not empty (if it is empty it
-    is an error). `remarks.md` may not be empty.
-    * Only `try.sh` and `try.alt.sh` may be executable (mode `0555`).
+`workdir/submit.USERNAME-SLOT.TIMESTAMP` (created prior to traversing the
+`topdir`), making sure to keep the files in the correct directory.
     * Directories are made prior to the copying of the files.
-    * Directories will be made with mode `0755`.
-    * Other files are mode `0444`.
-    * `txzchk(1)` verifies these.
+    * Directories **MUST** be (and will be made) with mode `0755`.
+    * `try.sh` and `try.alt.sh` **MUST** be (and will be copied as) executable (in
+    particular: mode `0555`).
+    * Other files MUST be (and will be copied as) mode `0444`.
+    * `txzchk(1)` verifies these modes (and much more).
 4. `cd submit.USERNAME-SLOT.TIMESTAMP`.
 5. `make -f Makefile clobber`.
-    * If this fails it is not an error but you are warned about it; if the
-    Makefile does not exist it is an error.
-6. Traverse the new tree from `.`, collecting files in the submission directory.
+    * If this fails it is not an error but you are warned about it (even so, see
+     [Rule 20](next/rules.html#rule20)).
+6.  Traverse the new tree from `.`, collecting files in the submission directory.
     * If an invalid file or directory is found it is an error.
     * If the depth is too deep it is an error.
-    * If `prog.c`, `Makefile` or `remarks.md` are missing it is an error.
+    * If `prog.c`, `Makefile` or `remarks.md` are missing (or not readable
+    regular files) it is an error.
+    * `iocccsize(1)` (via the `mkiocccentry(1)` function `check_prog_c()`) will
+    be run on your `prog.c`, allowing you to override any warnings; if you do not
+    override an issue flagged it is an error but if warnings from `check_prog_c()`
+    are ignored you risk violating the [Rules](next/rules.html), including [Rule
+    2](next/rules.html#rule2).
+    * `check_Makefile()` will be run on `Makefile`; if it is a non-readable or
+    empty file it is an error but otherwise you may override any warnings
+    (risking violating the [Rules](next/rules.html), especially [Rule
+    17](next/rules.html#rule17) and [Rule 20](next/rules.html#rule20)).
+    * `check_remarks_md()` will be run on your `remarks.m`; if it is not a
+    regular readable file or it is empty it is an error. Otherwise it will
+    proceed. Note it does not check that there is any text in the file, just
+    that the file size is not 0.
     * If a file is not a sane relative path it is an error (see the
     [Rules](next/rules.html#) and [Guidelines](next/guidelines.html) for more
-    details).
+    details, and for even more details see the comments in the jparse function
+    `sane_relative_path()` in the
+    [jparse/util.c](https://github.com/ioccc-src/mkiocccentry/blob/master/jparse/util.c)
+    file at the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry]) (this
+    comes from the [jparse repo](https://github.com/xexyl/jparse/)).
     * If the path length (all components) are too long it is an error (see
     `MAX_PATH_LEN` in
     [limit_ioccc.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h)).
@@ -1344,7 +1361,8 @@ required and non-required files.
     `try.sh`, `prog.alt.c` or `try.alt.sh` are found, it is an error (see
     `MAX_EXTRA_FILE_COUNT` in
     [limit_ioccc.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h)).
-7. Report on files that were copied in (3) but are now gone: asking the user to verify.
+7. Report on files that were copied in (3) and directories made in (3) but are
+now gone: asking the user to verify.
 8. Present the list of non-dot files that remain and ask the user to confirm.
 9. Create the `.info.json` and `.auth.json` files, running `chkenry(1)` on each.
 10. List the submission directory contents, asking the user once again to verify
@@ -1374,7 +1392,8 @@ indirectly as part of the packaging process, especially if you wish to run one
 or more of these tools manually.
 
 See also the [Guidelines](next/guidelines.html) and the [Rules](next/rules.html)
-(and in particular [Rule 17](next/rules.html#rule17)).
+(especially [Rule 2](next/rules.html#rule2), [Rule
+17](next/rules.html#rule17), [Rule 20](next/rules.html#rule20)).
 
 Jump to: [top](#)
 
