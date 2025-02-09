@@ -1316,7 +1316,7 @@ to the submission directory.
     added, and if the user says it is not OK the program will abort.
 3. The non-ignored files are copied under
 `workdir/submit.USERNAME-SLOT.TIMESTAMP` (created prior to traversing the
-`topdir`), making sure to keep the files in the correct directory.
+`topdir`), making sure to keep the files in their correct directory.
     * Directories are made prior to the copying of the files.
     * Directories **MUST** be (and will be made) with mode `0755`.
     * `try.sh` and `try.alt.sh` **MUST** be (and will be copied as) executable (in
