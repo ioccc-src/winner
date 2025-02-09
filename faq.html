@@ -1470,11 +1470,9 @@ submission directory.
 <li><code>cd submit.USERNAME-SLOT.TIMESTAMP</code> (i.e. switch to submission directory).</li>
 <li><code>make -f Makefile clobber</code>.
 <ul>
-<li>If this fails it is not an error but you are warned about it (even so, see
-<a href="next/rules.html#rule20">Rule 20</a>).</li>
+<li>If this fails it is not an error but you are warned about it (even so, see <a href="next/rules.html#rule20">Rule 20</a>).</li>
 </ul></li>
-<li>Traverse the new tree from <code>.</code> with additional steps from (4).</li>
-</ol>
+<li>Traverse the new tree from <code>.</code> with additional steps from (4).
 <ul>
 <li>If any file has an ignored directory name in it, it is an error.</li>
 <li>If a symlink is found it is an error.</li>
@@ -1497,8 +1495,7 @@ regular readable file or it is empty it is an error. Otherwise it will
 proceed. Note it does not check that there is any text in the file, just
 that the file size is not 0.</li>
 <li>If any other error condition in step (4) occurs it is also an error.</li>
-</ul>
-<ol start="11" type="1">
+</ul></li>
 <li>Report on files that were copied in (3) and directories made in (3) but are
 now gone: asking the user to verify.</li>
 <li>Present the list of non-dot files that remain and ask the user to confirm.</li>

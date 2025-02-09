@@ -1277,9 +1277,8 @@ submission directory.
     * Anything else is an error and `txzchk(1)` will flag this.
 8. `cd submit.USERNAME-SLOT.TIMESTAMP` (i.e. switch to submission directory).
 9. `make -f Makefile clobber`.
-    * If this fails it is not an error but you are warned about it (even so, see
-     [Rule 20](next/rules.html#rule20)).
-10.  Traverse the new tree from `.` with additional steps from (4).
+    * If this fails it is not an error but you are warned about it (even so, see [Rule 20](next/rules.html#rule20)).
+10. Traverse the new tree from `.` with additional steps from (4).
     * If any file has an ignored directory name in it, it is an error.
     * If a symlink is found it is an error.
     * If a forbidden filename exists it is an error.
