@@ -1280,7 +1280,8 @@ not match the regexp `^[0-9A-Za-z][0-9A-Za-z._+-]*$`.
 The `mkiocccentry(1)` tool performs the following steps:
 
 0. Change to the `topdir`.
-1. Traverses the directory, gathering lists of ignored files and files to copy
+1. Traverses the directory, gathering lists of ignored
+files/directories/symlinks as well as directories to make and files to copy
 to the submission directory.
     * If the depth is too deep it is an error (see `MAX_PATH_DEPTH` in
     [limit_ioccc.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h)).

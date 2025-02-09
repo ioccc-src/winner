@@ -1458,7 +1458,8 @@ not match the regexp <code>^[0-9A-Za-z][0-9A-Za-z._+-]*$</code>.</li>
 <p>The <code>mkiocccentry(1)</code> tool performs the following steps:</p>
 <ol start="0" type="1">
 <li>Change to the <code>topdir</code>.</li>
-<li>Traverses the directory, gathering lists of ignored files and files to copy
+<li>Traverses the directory, gathering lists of ignored
+files/directories/symlinks as well as directories to make and files to copy
 to the submission directory.
 <ul>
 <li>If the depth is too deep it is an error (see <code>MAX_PATH_DEPTH</code> in
