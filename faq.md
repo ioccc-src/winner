@@ -1364,7 +1364,7 @@ to the submission directory.
 7. Report on files that were copied in (3) and directories made in (3) but are
 now gone: asking the user to verify.
 8. Present the list of non-dot files that remain and ask the user to confirm.
-9. Create the `.info.json` and `.auth.json` files, running `chkenry(1)` on each.
+9. Create the `.info.json` and `.auth.json` files, running `chkentry(1)` on each.
 10. List the submission directory contents, asking the user once again to verify
 everything is okay.
 11. Form the tarball and run `txzchk(1)` on it.
