@@ -315,9 +315,9 @@ mandatory `prog.c`, `Makefile` and `remarks.md`.
 The `workdir` **MUST** already exist, as a directory, and it is an error if it
 is not a directory that can be written to. In **this** directory your **submission
 directory** will be created, with the name based on your IOCCC registration
-username, which is **in the form of a UUID**, and submission number; see the
-[rules](next/rules.html) for more details on this, and in particular [Rule
-17](next/rules.html#rule17).
+username, which is **in the form of a UUID**, and submission number along with
+the timestamp; see the [rules](next/rules.html) for more details on this, and in
+particular [Rule 17](next/rules.html#rule17).
 
 **IMPORTANT NOTE**: if you run the program outside the repo directory
 (specifying the absolute or relative path to the tool) and you have not
@@ -1225,8 +1225,7 @@ register](next/register.html) and [Rule 17](next/rules.html#rule17) for more det
     [limit_ioccc.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h))
     and you will be asked to correct it until it is.
 2. Make the submission directory under `topdir` in the form of
-`workdir/submit.USERNAME-SLOT.TIMESTAMP` (the timestamp is calculated by
-`mkiocccentry(1)` so you do not have to worry about this).
+`workdir/submit.USERNAME-SLOT`.
     * If this directory already exists it is an error.
 3. Change to the `topdir`.
 4. Traverse the directory, creating lists of ignored/forbidden
@@ -1283,7 +1282,7 @@ with files, copy those files to their respective directory). Note the following:
     * The user is asked to verify each list, including the lists of directories
     and files to be made/copied, and if the user says it is not OK the program will abort.
 6. Make any directories if necessary (under
-`workdir/submit.USERNAME-SLOT.TIMESTAMP` i.e. the submission directory).
+`workdir/submit.USERNAME-SLOT` i.e. the submission directory).
     * Directories **MUST** be and are made with mode `0755`.
     * If any directory is not this mode `txzchk(1)` will flag it.
 7. The non-ignored files are copied to their respective directories under the
@@ -1291,7 +1290,7 @@ submission directory.
     * `try.sh` and `try.alt.sh` **MUST** be and are copied as mode `0555`.
     * All other files **MUST** be and are copied as mode `0444`.
     * Anything else will be flagged by `txzchk(1)`.
-8. `cd submit.USERNAME-SLOT.TIMESTAMP` (i.e. switch to submission directory).
+8. `cd submit.USERNAME-SLOT` (i.e. switch to submission directory).
 9. `make -f Makefile clobber`.
     * If this fails it is not an error but you are warned about it (it is an error only if the `Makefile`
     does not exist); even so, see [Rule 20](next/rules.html#rule20).
@@ -1341,7 +1340,8 @@ is okay.
     obtained and compiled the latest version of all the tools and you either are
     in the repo's directory, you pass the options to give the path to the tools
     or you have installed the latest tools!
-19. Create the tarball.
+19. Create the tarball with the name in the form of
+`submit.USERNAME-SLOT.TIMESTAMP`.
 20. Run `txzchk(1)` on the tarball.
 
 If any of the steps fail or if the user says something is not okay, it aborts.

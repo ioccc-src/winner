@@ -694,9 +694,9 @@ mandatory <code>prog.c</code>, <code>Makefile</code> and <code>remarks.md</code>
 <p>The <code>workdir</code> <strong>MUST</strong> already exist, as a directory, and it is an error if it
 is not a directory that can be written to. In <strong>this</strong> directory your <strong>submission
 directory</strong> will be created, with the name based on your IOCCC registration
-username, which is <strong>in the form of a UUID</strong>, and submission number; see the
-<a href="next/rules.html">rules</a> for more details on this, and in particular <a href="next/rules.html#rule17">Rule
-17</a>.</p>
+username, which is <strong>in the form of a UUID</strong>, and submission number along with
+the timestamp; see the <a href="next/rules.html">rules</a> for more details on this, and in
+particular <a href="next/rules.html#rule17">Rule 17</a>.</p>
 <p><strong>IMPORTANT NOTE</strong>: if you run the program outside the repo directory
 (specifying the absolute or relative path to the tool) and you have not
 installed the tools then you will have to specify the options for the tools that
@@ -1409,8 +1409,7 @@ register</a> and <a href="next/rules.html#rule17">Rule 17</a> for more details).
 and you will be asked to correct it until it is.</li>
 </ul></li>
 <li>Make the submission directory under <code>topdir</code> in the form of
-<code>workdir/submit.USERNAME-SLOT.TIMESTAMP</code> (the timestamp is calculated by
-<code>mkiocccentry(1)</code> so you do not have to worry about this).
+<code>workdir/submit.USERNAME-SLOT</code>.
 <ul>
 <li>If this directory already exists it is an error.</li>
 </ul></li>
@@ -1473,7 +1472,7 @@ with <code>.</code>.</li>
 and files to be made/copied, and if the user says it is not OK the program will abort.</li>
 </ul></li>
 <li>Make any directories if necessary (under
-<code>workdir/submit.USERNAME-SLOT.TIMESTAMP</code> i.e. the submission directory).
+<code>workdir/submit.USERNAME-SLOT</code> i.e. the submission directory).
 <ul>
 <li>Directories <strong>MUST</strong> be and are made with mode <code>0755</code>.</li>
 <li>If any directory is not this mode <code>txzchk(1)</code> will flag it.</li>
@@ -1485,7 +1484,7 @@ submission directory.
 <li>All other files <strong>MUST</strong> be and are copied as mode <code>0444</code>.</li>
 <li>Anything else will be flagged by <code>txzchk(1)</code>.</li>
 </ul></li>
-<li><code>cd submit.USERNAME-SLOT.TIMESTAMP</code> (i.e. switch to submission directory).</li>
+<li><code>cd submit.USERNAME-SLOT</code> (i.e. switch to submission directory).</li>
 <li><code>make -f Makefile clobber</code>.
 <ul>
 <li>If this fails it is not an error but you are warned about it (it is an error only if the <code>Makefile</code>
@@ -1543,7 +1542,8 @@ obtained and compiled the latest version of all the tools and you either are
 in the repo’s directory, you pass the options to give the path to the tools
 or you have installed the latest tools!</li>
 </ul></li>
-<li>Create the tarball.</li>
+<li>Create the tarball with the name in the form of
+<code>submit.USERNAME-SLOT.TIMESTAMP</code>.</li>
 <li>Run <code>txzchk(1)</code> on the tarball.</li>
 </ol>
 <p>If any of the steps fail or if the user says something is not okay, it aborts.
