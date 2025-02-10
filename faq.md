@@ -1,6 +1,6 @@
 # IOCCC FAQ Table of Contents
 
-This is FAQ version **28.2.7 2025-02-09**.
+This is FAQ version **28.2.8 2025-02-10**.
 
 
 ## 0. [Entering the IOCCC: the bare minimum you need to know](#enter_questions)
@@ -1212,45 +1212,61 @@ Jump to: [top](#)
 ### Q 3.0: What is the `mkiocccentry(1)` process and what sort of checks does it perform?
 </div>
 
-The `mkiocccentry(1)` tool performs the following steps:
+In full, the `mkiocccentry(1)` tool performs the following steps:
 
-0. Ask the user for a submission ID (see the [quick-start
-guide](quick-start.html) for more details on how to obtain this).
-    * If this is an invalid UUID (malformed), it is an error.
-1. Ask the user for the submission slot (the submission number; see [Rule
-17](next/rules.html#rule17) for more details).
-    * If this is out of range it is an error (see `MAX_SUBMIT_SLOT` in
-    [limit_ioccc.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h)).
+0. Ask the user for a submission ID (see the [how to register](next/register.html)
+for more details on how to obtain this and [Rule 17](next/rules.html#rule17) for
+the importance of this).
+    * If this is an invalid UUID (malformed), you will be asked to correct it
+    until it is.
+1. Ask the user for the submission slot (the submission number; see [how to
+register](next/register.html) and [Rule 17](next/rules.html#rule17) for more details).
+    * If this is out of range (see `MAX_SUBMIT_SLOT` in
+    [limit_ioccc.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h))
+    and you will be asked to correct it until it is.
+2. Make the submission directory under `topdir` in the form of
+`workdir/submit.USERNAME-SLOT.TIMESTAMP` (the timestamp is calculated by
+`mkiocccentry(1)` so you do not have to worry about this).
+    * If this directory already exists it is an error.
 3. Change to the `topdir`.
-4. Traverses the directory, creating lists of ignored
+4. Traverse the directory, creating lists of ignored/forbidden
 files/directories/symlinks as well as a list directories to make and a list of
-files to copy to the submission directory.
+files to copy to the submission directory (and if (sub)directories are found
+with files, copy those files to their respective directory). Note the following:
     * If the depth is too deep it is an error (see `MAX_PATH_DEPTH` in
     [limit_ioccc.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h)).
-    * If there are too many directories it is an error (see `MAX_DIR_COUNT` in
+    * If there are too many extra directories (total count not including the
+    submission directory itself, unrelated to `MAX_PATH_DEPTH` above) it is an
+    error (see `MAX_EXTRA_DIR_COUNT` in
+    [limit_ioccc.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h)).
+    * If the max path length is <= 0 it is an error (and a bug).
+    * If the max depth is <= 0 it is an error (and a bug).
+    * If the max filename length is <= 0 it is an error (and a bug).
+    * If a path is NULL it is an error.
+    * If a path is an empty string it is an error.
+    * If the path length (i.e. `strlen(path)` where path starts after the
+    initial `./` of the path in the `topdir`) is too long it is an error (see `MAX_PATH_LEN` in
+    [limit_ioccc.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h)).
+    * If a filename (last component of the path) is too long it is an error (see `MAX_FILENAME_LEN` in
     [limit_ioccc.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h)).
     * If a filename or directory name is not a sane relative path, not allowed
     or will not be added for some other reason, it will be added to a relevant list to show to
-    the user later, to let them know it is ignored. By `relative` we mean it
-    must not start with `/` and by `sane` we mean that each component must match
-    the regexp: `^[0-9A-Za-z]+[0-9A-Za-z_+.-]*$`.
-    * If the path length (i.e. the entire length of the path from the `topdir`)
-    is too long it is an error (see `MAX_PATH_LEN` in
-    [limit_ioccc.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h)).
-    * If a filename is too long it is an error (see `MAX_FILENAME_LEN` in
-    [limit_ioccc.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h)).
-    * If there is an unknown error it is an error :-)
-    * If a path is NULL it is an error.
-    * If a path is an empty string it is an error.
-    * If the max path length is <= 0 it is an error (and a bug).
-    * If the max depth is <= 0 it is an error (and a bug).
-    * If the max filename length is <= 0 it is an error (and a  bug).
-    * If a directory is not readable it is an error.
+    the user later, to let them know it will not be added to the submission. By `relative` we mean it
+    must not start with `/` (which shouldn't happen even if you give an absolute
+    path) and by `sane` we mean that each component must match the regexp: `^[0-9A-Za-z]+[0-9A-Za-z_+.-]*$`.
+    * If a directory is unreadable it is an error.
+    * If a directory causes a cycle in the tree it is an error.
+    * If `stat(2)` on the path fails it is an error.
     * If `prog.c`, `Makefile` or `remarks.md` is/are not found it is an error.
     * If too many files that are not `prog.c`, `Makefile`, `remarks.md`,
     `try.sh`, `prog.alt.c` or `try.alt.sh` are found, it is an error (see
     `MAX_EXTRA_FILE_COUNT` in
     [limit_ioccc.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h)).
+    * Symlinks are not allowed but it is not an error (they will be added to a
+    list and ignored).
+    * If any file type other than a regular file, a directory or a symlink is
+    encountered it is an error.
+    * If there is an unknown error it is an error :-)
 5. Show each list to the user, asking if this is okay. The lists include:
     * Ignored directories (those like `.git`, `CVS`, `RCCS` and `.svn`).
     * Unsafe directory names that will not be added (i.e. those that are not
@@ -1264,25 +1280,29 @@ files to copy to the submission directory.
     * Directories to be made.
     * Required files (`prog.c`, `Makefile` and `remarks.md`) to be copied.
     * Non-required files to be copied.
-    * The user is asked to verify each list, including the list of files to be
-    added, and if the user says it is not OK the program will abort.
+    * The user is asked to verify each list, including the lists of directories
+    and files to be made/copied, and if the user says it is not OK the program will abort.
 6. Make any directories if necessary (under
 `workdir/submit.USERNAME-SLOT.TIMESTAMP` i.e. the submission directory).
     * Directories **MUST** be and are made with mode `0755`.
     * If any directory is not this mode `txzchk(1)` will flag it.
 7. The non-ignored files are copied to their respective directories under the
 submission directory.
-    * `try.sh` and `try.alt.sh` MUST be and are copied as mode `0555`.
+    * `try.sh` and `try.alt.sh` **MUST** be and are copied as mode `0555`.
     * All other files **MUST** be and are copied as mode `0444`.
-    * Anything else is an error and `txzchk(1)` will flag this.
+    * Anything else will be flagged by `txzchk(1)`.
 8. `cd submit.USERNAME-SLOT.TIMESTAMP` (i.e. switch to submission directory).
 9. `make -f Makefile clobber`.
-    * If this fails it is not an error but you are warned about it (even so, see [Rule 20](next/rules.html#rule20)).
+    * If this fails it is not an error but you are warned about it (it is an error only if the `Makefile`
+    does not exist); even so, see [Rule 20](next/rules.html#rule20).
 10. Traverse the new tree from `.` with additional steps from (4).
     * If any file has an ignored directory name in it, it is an error.
     * If a symlink is found it is an error.
+    * If any file type other than a directory or regular file exists it is an
+    error.
     * If a forbidden filename exists it is an error.
-    * If any file or directory starts with `/` or is not POSIX plus + safe chars only it is an error.
+    * If any file or directory starts with `/` or is not POSIX plus + safe chars
+    only (see (4) above) it is an error.
     * If the depth is too deep it is an error.
     * If `prog.c`, `Makefile` or `remarks.md` are missing (or not readable
     regular files) it is an error.
@@ -1298,10 +1318,12 @@ submission directory.
     * `check_remarks_md()` will be run on your `remarks.m`; if it is not a
     regular readable file or it is empty it is an error. Otherwise it will
     proceed. Note it does not check that there is any text in the file, just
-    that the file size is not 0.
-    * If any other error condition in step (4) occurs it is also an error.
-11. Report on files that were copied in (3) and directories made in (3) but are
-now gone: asking the user to verify.
+    that the file size is not 0, and having a `remarks.md` that is not size 0
+    but has no content is violating [Rule 17](next/rules.html#rule17) and [Rule
+    19](next/rules.html#rule19).
+    * If any other error condition from step (4) occurs it is also an error.
+11. Report on any directories that were made and files that were copied in (7)
+but are now gone: asking the user to verify.
 12. Present the list of non-dot files that remain and ask the user to confirm.
 13. Ask the user for a submission title.
 14. Ask the user for a one line abstract of the submission.
@@ -1309,38 +1331,46 @@ now gone: asking the user to verify.
 questions (see below for more information on what kind of questions).
 16. Show the output of `ls -lakR .`, asking the user to confirm that the listing
 is okay.
-17. Create the tarball.
-18. Run `txzchk(1)` on the tarball.
+17. Create `.info.json` and run `chkentry(1)` on it.
+    * If `chkentry(1)` fails to validate the file make sure that you have
+    obtained and compiled the latest version of all the tools and you either are
+    in the repo's directory, you pass the options to give the path to the tools
+    or you have installed the latest tools!
+18. Create `.auth.json` and run `chkentry(1)` on it.
+    * If `chkentry(1)` fails to validate the file make sure that you have
+    obtained and compiled the latest version of all the tools and you either are
+    in the repo's directory, you pass the options to give the path to the tools
+    or you have installed the latest tools!
+19. Create the tarball.
+20. Run `txzchk(1)` on the tarball.
 
 If any of the steps fail or if the user says something is not okay, it aborts.
+Some of the other checks that are made:
 
-Some of the checks that are made:
-
-- If the files do not exist, are not regular files or cannot be read.
 - If `prog.c` violates [Rule 2](next/rules.html#rule2) (see
 [iocccsize.c](https://github.com/ioccc-src/mkiocccentry/blob/master/iocccsize.c)).
-- If `prog.c` is empty.
-- If `prog.c` has any high bit char (see
-[iocccsize.c](https://github.com/ioccc-src/mkiocccentry/blob/master/iocccsize.c)).
-- If `prog.c` has any NUL char (see
-[iocccsize.c](https://github.com/ioccc-src/mkiocccentry/blob/master/iocccsize.c)).
+- If `prog.c` is empty (see [Rule 1](next/rules.html#rule1) and the
+[Guidelines](next/guidelines.html)).
+- If `prog.c` has any NUL (`\0`) char (see
+[rule_count.c](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/rule_count.c)).
 - If `prog.c` has any unknown or invalid trigraph (see
-[iocccsize.c](https://github.com/ioccc-src/mkiocccentry/blob/master/iocccsize.c)).
+[rule_count.c](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/rule_count.c)).
 - If `prog.c` triggers a word buffer overflow (see
-[iocccsize.c](https://github.com/ioccc-src/mkiocccentry/blob/master/iocccsize.c)).
+[rule_count.c](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/rule_count.c)).
 - If `prog.c` triggers an `ungetc(3)` error (see
-[iocccsize.c](https://github.com/ioccc-src/mkiocccentry/blob/master/iocccsize.c)).
+[rule_count.c](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/rule_count.c)).
 - If the first rule in the `Makefile` is not `all`.
 - If the `Makefile` does not have a `clean` rule.
 - If the `Makefile` does not have a `clobber` rule.
 - If the `Makefile` does not have a `try` rule.
 
-If your `Makefile` is empty or `remarks.md` is empty it is an error and you will
-have to fix it.
 
-Conditions that one must correct, and which `mkiocccentry(1)` will prompt until
+Conditions that one **MUST** correct, and which `mkiocccentry(1)` will prompt until
 they are correct, are:
 
+- Your _contest ID_ is invalidly formed.
+- Your _submit slot_ is < 0 or > `MAX_SUBMIT_SLOT` (see
+[limit_ioccc.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h)).
 - Your _title_ is not in the range of 1 through `MAX_TITLE_LEN` chars (see
 [limit_ioccc.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h)).
 - Your _title_ does not match the regexp `^[0-9a-z][0-9a-z._+-]*$`.
@@ -1351,8 +1381,7 @@ they are correct, are:
 - An author _name_ is not 1 through `MAX_NAME_LEN` chars (see
 [limit_ioccc.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h)).
 - Duplicate author _name_.
-- _Country code_ is invalid (not ISO 3166-1 2 character
-codes).
+- _Country code_ is invalid (i.e. it is not a ISO 3166-1 2 character code).
 - An _email_, if provided, is not in the format of `x@y` or
 if `x` or `y` contain a `@`, are empty or if the total length is longer than
 `MAX_EMAIL_LEN` (see [limit_ioccc.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h)).
@@ -1362,16 +1391,20 @@ or `https://` or is longer than `MAX_URL_LEN` chars (see
 or does not have anything after the `http://` or `https://`.
 - A _mastodon handle_, if provided, is not in the form of
 `@user@site` (i.e. starts with an `@`, has text following it and then another
-`@` followed by more text and has no other `@`)  or is longer than `MAX_MASTODON_LEN` (see
+`@` followed by more text and has no other `@`), or if it is longer than `MAX_MASTODON_LEN` (see
 [limit_ioccc.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h)).
 - A _GitHub account_, if provided, does not start with an `@`,
-has more than one `@` or is longer than `MAX_GITHUB_LEN` (see
+has more than one `@`, does not have any text after the `@` or is longer than `MAX_GITHUB_LEN` (see
 [limit_ioccc.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h)).
 - An _affiliation_, if provided, is longer than
 `MAX_AFFILIATION_LEN` (see [limit_ioccc.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h)).
 - An _author handle_, if the default is not accepted, does
 not match the regexp `^[0-9A-Za-z][0-9A-Za-z._+-]*$`.
 - An _author handle_ is repeated.
+
+The program does confirm that the information for each author is correct,
+allowing you to correct the information without having to start the program
+over.
 
 Although the `mkiocccentry(1)` tool will verify everything for you, you may wish
 to validate different parts individually with the different tools. As the
@@ -1393,9 +1426,13 @@ for more details on the tools that `mkiocccentry` either executes directly or
 indirectly as part of the packaging process, especially if you wish to run one
 or more of these tools manually.
 
+See also the
+FAQ on "[how to test everything at once without having to answer
+questions](#mkiocccentry_test)".
+
 See also the [Guidelines](next/guidelines.html) and the [Rules](next/rules.html)
-(especially [Rule 2](next/rules.html#rule2), [Rule
-17](next/rules.html#rule17), [Rule 20](next/rules.html#rule20)).
+(especially [Rule 1](next/rules.html#rule1), [Rule 2](next/rules.html#rule2), [Rule
+17](next/rules.html#rule17), [Rule 19](next/rules.html#rule19) and [Rule 20](next/rules.html#rule20)).
 
 Jump to: [top](#)
 

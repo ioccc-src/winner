@@ -53,7 +53,7 @@ Jump to: [top](#)
 
 
 <p class="leftbar">
-These [IOCCC rules](rules.html) are version **28.22 2025-02-08**.
+These [IOCCC rules](rules.html) are version **28.23 2025-02-10**.
 </p>
 
 <p class="leftbar">
@@ -1105,7 +1105,7 @@ make&lpar;1&rpar; compatibility the IOCCC
 supports](../faq.html#make_compatibility) for more details.
 
 <p class="leftbar">
-You are **ENCOURAGED** to use
+You are **ENCOURAGED** to use the
 Makefile example, renamed as `Makefile` of course, for help in constructing your
 `Makefile`. See the [Makefile section](guidelines.html#makefile) in the
 guidelines for more details.
