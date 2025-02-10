@@ -431,13 +431,13 @@
 <h2 id="ioccc-markdown-guidelines-version">IOCCC Markdown guidelines version</h2>
 </div>
 <p class="leftbar">
-These <a href="markdown.html">IOCCC markdown guidelines</a> are version <strong>28.1 2024-12-27</strong>.
+These <a href="markdown.html">IOCCC markdown guidelines</a> are version <strong>28.1 2025-02-02</strong>.
 </p>
 <p><strong>IMPORTANT</strong>: Be sure to read the <a href="next/rules.html">IOCCC rules</a> and <a href="next/guidelines.html">IOCCC
 guidelines</a>.</p>
 <p>Jump to: <a href="#">top</a></p>
-<div id="markdown">
-<h2 id="ioccc-markdown-guidelines">IOCCC Markdown guidelines</h2>
+<div id="introduction">
+<h2 id="ioccc-markdown-guidelines-introduction">IOCCC Markdown Guidelines Introduction</h2>
 </div>
 <p>The IOCCC makes extensive use of <a href="https://daringfireball.net/projects/markdown/">markdown</a>.
 For example, when submitting to the IOCCC
@@ -454,9 +454,29 @@ FAQ on “<a href="faq.html#remarks_md">remarks.md submission file</a>”.</p>
 <p>Nevertheless, the IOCCC does have certain practices that we ask authors to follow.
 Some of these relate to use of markdown directly and others relate to injecting HTML
 into the markdown file.</p>
-<p>In particular there are things we ask people to please <strong>NOT</strong> use in
-markdown files for the IOCCC:</p>
 <p>Jump to: <a href="#">top</a></p>
+<div id="sections">
+<h2 id="please-do-start-remarks.md-sections-at-level-3-increasing-for-subsections-up-to-6">Please DO start <code>remarks.md</code> sections at level 3 (<code>###</code>), increasing for subsections up to 6 (<code>######</code>)</h2>
+</div>
+<p>IF (it is not required) you do use sections in your <code>remarks.md</code> file (this does
+not apply to other markdown files), <strong>PLEASE</strong> start at level three:</p>
+<pre><code>    # Foo                                   &lt;=== no thank you
+    ## Foo                                  &lt;=== no thank you</code></pre>
+<p>Instead, start sections with 3 <code>#</code>s:</p>
+<pre><code>    ### Section 0</code></pre>
+<p>For each subsection of the current section, add another <code>#</code>, up to 6, going back
+to 3 for new sections. For instance:</p>
+<pre><code>    ### Section 0
+    ...
+    #### First subsection of section 0
+    ...
+    ##### Second subsection of section 0
+    ...
+    ###### Third subsection of section 0
+    ...
+    ### Section 1
+    ...
+    Etc.</code></pre>
 <div id="name">
 <div id="anchor-name">
 <h2 id="please-do-not-use-the-name-attributes-in-html-a...a-hyperlink-elements">Please do NOT use the <code>name</code> attributes in HTML <code>&lt;a&gt;...&lt;/a&gt;</code> hyperlink elements</h2>

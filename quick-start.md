@@ -124,32 +124,35 @@ guidelines](next/guidelines.html#mkiocccentry).
 
 
 ``` <!---sh-->
-    mkiocccentry work_dir prog.c Makefile remarks.md [file ...]
+    mkiocccentry [options] workdir topdir
 ```
 
 where:
 
-* `work_dir`
+* `workdir`
 
-    directory where the entry directory and tarball are formed
+    directory where the submission directory and tarball are formed
+
+* `topdir`
+
+    directory where your files to be packaged are in
+
+Three files are required to exist in `topdir`:
 
 * `prog.c`
 
-    path to the C source for your entry
+    path to the C source for your submission
 
 * `Makefile`
 
-    Makefile to build (make all) and cleanup (make clean & make clobber)
+    Makefile to build (make all) and cleanup (make clean & make clobber) as well
+    as the other required rules
 
 * `remarks.md`
 
     Remarks about your entry in markdown format: see the
-    FAQ on "[remarks.md](#remarks_md)"
+    FAQ on "[remarks.md](faq.html#remarks_md)"
     for more info.
-
-* [file ...]
-
-    Optional extra data files to include with your entry
 
 **NOTE**: Please see our [IOCCC markdown guide](markdown.html) for **important information** on using markdown in the IOCCC.
 
@@ -161,10 +164,21 @@ submission's directory. See the
 FAQ on "**[installing mkiocccentry](https://github.com/ioccc-src/mkiocccentry/blob/master/FAQ.md#install)**"
 at the mkiocccentry repo.
 
-If the `mkiocccentry` tool indicates that there is a problem with your entry,
-especially if it identifies a [Rule 2](next/rules.html#rule2), or any other
-rule, related problem, you are **strongly** encouraged to revise and correct
-your entry and then re-run the `mkiocccentry` tool.
+However, an **IMPORTANT NOTE**: if you run the program outside the repo
+directory (specifying the absolute or relative path to the tool) and you
+have not installed the tools then you will have to specify the options for the
+tools that are required like `chkentry(1)`, `txzchk(1)` and `fnamchk(1)`. But
+even if you have installed them but some tools are out of date (in the install
+path) it will cause problems. Additionally, if you do not have the most recent
+version when submitting a tarball it will be rejected for not having the right
+versions of the tools. This is why you **MUST** make sure you have the most
+recent version of all the tools and you either run it from the repo directory
+itself OR you install them (`make install` as via `sudo` or as root).
+
+If the `mkiocccentry` tool indicates that there is a problem with your
+submission, especially if it identifies a [Rule 2](next/rules.html#rule2), or
+any other rule, related problem, you are **strongly** encouraged to revise and
+correct your entry and then re-run the `mkiocccentry` tool.
 
 If you choose to risk violating rules, be sure and explain your reason
 for doing so in your `remarks.md` file.

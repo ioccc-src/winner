@@ -7,7 +7,7 @@
 </div>
 
 <p class="leftbar">
-These [IOCCC markdown guidelines](markdown.html) are version **28.1 2024-12-27**.
+These [IOCCC markdown guidelines](markdown.html) are version **28.1 2025-02-02**.
 </p>
 
 **IMPORTANT**: Be sure to read the [IOCCC rules](next/rules.html) and [IOCCC
@@ -16,8 +16,8 @@ guidelines](next/guidelines.html).
 
 Jump to: [top](#)
 
-<div id="markdown">
-## IOCCC Markdown guidelines
+<div id="introduction">
+## IOCCC Markdown Guidelines Introduction
 </div>
 
 The IOCCC makes extensive use of [markdown](https://daringfireball.net/projects/markdown/).
@@ -38,10 +38,45 @@ Nevertheless, the IOCCC does have certain practices that we ask authors to follo
 Some of these relate to use of markdown directly and others relate to injecting HTML
 into the markdown file.
 
-In particular there are things we ask people to please **NOT** use in
-markdown files for the IOCCC:
-
 Jump to: [top](#)
+
+<div id="sections">
+## Please DO start `remarks.md` sections at level 3 (`###`), increasing for subsections up to 6 (`######`)
+</div>
+
+IF (it is not required) you do use sections in your `remarks.md` file (this does
+not apply to other markdown files), **PLEASE** start at level three:
+
+``` <!---markdown-->
+    # Foo                                   <=== no thank you
+    ## Foo                                  <=== no thank you
+```
+
+Instead, start sections with 3 `#`s:
+
+
+``` <!---markdown-->
+    ### Section 0
+```
+
+For each subsection of the current section, add another `#`, up to 6, going back
+to 3 for new sections. For instance:
+
+
+``` <!---markdown-->
+    ### Section 0
+    ...
+    #### First subsection of section 0
+    ...
+    ##### Second subsection of section 0
+    ...
+    ###### Third subsection of section 0
+    ...
+    ### Section 1
+    ...
+    Etc.
+```
+
 
 <div id="name">
 <div id="anchor-name">
