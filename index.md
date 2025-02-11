@@ -36,6 +36,7 @@ The goals of the IOCCC:
 
 *  To write the most Obscure/Obfuscated C program within the rules.
 *  To show the importance of programming style, in an ironic way.
+*  To emphasize the value of perspicuous code by use of negative examples.
 *  To stress C compilers with unusual code.
 *  To illustrate some of the subtleties of the C language.
 *  To provide a safe forum for poor C code. :-)
