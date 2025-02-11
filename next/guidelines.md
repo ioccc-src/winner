@@ -49,7 +49,7 @@ Jump to: [top](#)
 </div>
 
 <p class="leftbar">
-These [IOCCC guidelines](guidelines.html) are version **28.36 2025-02-03**.
+These [IOCCC guidelines](guidelines.html) are version **28.37 2025-02-10**.
 </p>
 
 <p class="leftbar">
@@ -243,7 +243,7 @@ cause problems. Additionally, if you do not have the most recent version when
 submitting a tarball it will be rejected for not having the right versions of
 the tools. This is why you **MUST** make sure you have the most recent
 version of all the tools and you either run it from the repo directory itself OR
-you install them (`make install` as via `sudo` or as root).
+you install them (`make install` as root or via `sudo`).
 </p>
 
 <p class="leftbar">
