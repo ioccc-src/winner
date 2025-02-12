@@ -6,7 +6,7 @@
     "dir" : "dgibson",
     "entry_id" : "1993_dgibson",
     "title" : "1993.dgibson",
-    "abstract" : "plays the game of like using cpp",
+    "abstract" : "plays the game of life using cpp",
     "author_set" : [
         {
             "author_handle" : "David_Gibson"
