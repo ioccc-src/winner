@@ -425,7 +425,7 @@
 
 <!-- BEFORE: 1st line of markdown file: faq.md -->
 <h1 id="ioccc-faq-table-of-contents">IOCCC FAQ Table of Contents</h1>
-<p>This is FAQ version <strong>28.2.8 2025-02-10</strong>.</p>
+<p>This is FAQ version <strong>28.2.9 2025-02-12</strong>.</p>
 <h2 id="entering-the-ioccc-the-bare-minimum-you-need-to-know">0. <a href="#enter_questions">Entering the IOCCC: the bare minimum you need to know</a></h2>
 <ul>
 <li><strong>Q 0.0</strong>: <a class="normal" href="#enter">How can I enter the IOCCC?</a></li>
@@ -444,7 +444,7 @@
 </ul>
 <h2 id="entering-the-ioccc-more-help-and-details">1. <a href="#submitting_help">Entering the IOCCC: more help and details</a></h2>
 <ul>
-<li><strong>Q 1.0</strong>: <a class="normal" href="#answers_file">How can I avoid reentering the information to mkiocccentry?</a></li>
+<li><strong>Q 1.0</strong>: <a class="normal" href="#answers_file">How can I avoid re-entering the information to mkiocccentry?</a></li>
 <li><strong>Q 1.1</strong>: <a class="normal" href="#prog_c">May I use a different source or compiled filename than prog.c or prog?</a></li>
 <li><strong>Q 1.2</strong>: <a class="normal" href="#markdown">What is markdown and how does the IOCCC use it?</a></li>
 <li><strong>Q 1.3</strong>: <a class="normal" href="#mkiocccentry_bugs">How do I report bugs in an <code>mkiocccentry</code> tool?</a></li>
@@ -905,7 +905,7 @@ Jump to: <a href="#">top</a>
 </div>
 <p>Jump to: <a href="#">top</a></p>
 <div id="answers_file">
-<h3 id="q-1.0-how-can-i-avoid-reentering-the-information-to-mkiocccentry">Q 1.0: How can I avoid reentering the information to mkiocccentry?</h3>
+<h3 id="q-1.0-how-can-i-avoid-re-entering-the-information-to-mkiocccentry">Q 1.0: How can I avoid re-entering the information to mkiocccentry?</h3>
 </div>
 <p><code>mkiocccentry(1)</code> has some options to help write <em>OR</em> read from an
 answers file so you do not have to input the author(s) or the submission
@@ -1392,7 +1392,27 @@ Jump to: <a href="#">top</a>
 <div id="mkiocccentry_process">
 <h3 id="q-3.0-what-is-the-mkiocccentry1-process-and-what-sort-of-checks-does-it-perform">Q 3.0: What is the <code>mkiocccentry(1)</code> process and what sort of checks does it perform?</h3>
 </div>
-<p>In full, the <code>mkiocccentry(1)</code> tool performs the following steps:</p>
+<p><strong>TL;DR</strong>: the program will make a submission directory (name based on the
+username and slot number you provide) under the workdir and then switch to the
+topdir. It will then create lists of files and directories to present to you, to
+verify everything is in order. If something is not allowed (bad filename for
+example) or an error occurs (missing required file for example) you will be
+notified of this. After you verify everything is okay the files/directories
+found will be copied/made and it will then switch to the submission directory.
+In the submission directory it scans the file hierarchy again and verifies
+things are still okay. When done it will ask you to verify things are still OK.
+If all is good it’ll ask you for more information about the author(s). Next the
+two required JSON files <code>.auth.json</code> and <code>.info.json</code> will be created, running
+<code>chkentry(1)</code> on each. If all is good it’ll give you another chance to say the
+files/directories look good and if you answer yes it’ll create the tarball and
+run <code>txzchk</code> on it.</p>
+<p>In most cases the program will prompt you to verify your input is correct. In
+the case of author information (which will only be looked at if you win) you
+will be asked to verify country code prior to being asked the other questions.
+If you fail to enter other author information correctly you will be prompted
+right away to fix it. Afterwards, when the author information is collected, it
+will ask you to confirm. This procedure happens for each author.</p>
+<p>In more detail the <code>mkiocccentry(1)</code> tool performs the below steps.</p>
 <ol start="0" type="1">
 <li>Ask the user for a submission ID (see the <a href="next/register.html">how to register</a>
 for more details on how to obtain this and <a href="next/rules.html#rule17">Rule 17</a> for
@@ -1425,9 +1445,9 @@ with files, copy those files to their respective directory). Note the following:
 submission directory itself, unrelated to <code>MAX_PATH_DEPTH</code> above) it is an
 error (see <code>MAX_EXTRA_DIR_COUNT</code> in
 <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h">limit_ioccc.h</a>).</li>
-<li>If the max path length is &lt;= 0 it is an error (and a bug).</li>
-<li>If the max depth is &lt;= 0 it is an error (and a bug).</li>
-<li>If the max filename length is &lt;= 0 it is an error (and a bug).</li>
+<li>If the max path length is &lt;= 0 it is an error (and a bug!).</li>
+<li>If the max depth is &lt;= 0 it is an error (and a bug!).</li>
+<li>If the max filename length is &lt;= 0 it is an error (and a bug!).</li>
 <li>If a path is NULL it is an error.</li>
 <li>If a path is an empty string it is an error.</li>
 <li>If the path length (i.e. <code>strlen(path)</code> where path starts after the
@@ -1456,7 +1476,8 @@ encountered it is an error.</li>
 </ul></li>
 <li>Show each list to the user, asking if this is okay. The lists include:
 <ul>
-<li>Ignored directories (those like <code>.git</code>, <code>CVS</code>, <code>RCCS</code> and <code>.svn</code>).</li>
+<li>Ignored directories (those like <code>.git</code>, <code>CVS</code>, <code>RCCS</code>, <code>.svn</code> and various
+others).</li>
 <li>Unsafe directory names that will not be added (i.e. those that are not
 POSIX plus + safe chars only; see above step (4)). This includes directories
 starting with a <code>.</code>.</li>
@@ -1475,22 +1496,24 @@ and files to be made/copied, and if the user says it is not OK the program will 
 <code>workdir/submit.USERNAME-SLOT</code> i.e. the submission directory).
 <ul>
 <li>Directories <strong>MUST</strong> be and are made with mode <code>0755</code>.</li>
-<li>If any directory is not this mode <code>txzchk(1)</code> will flag it.</li>
+<li>If any directory is not this mode <code>txzchk(1)</code> will flag it (and so will
+<code>mkioccentry(1)</code>).</li>
 </ul></li>
 <li>The non-ignored files are copied to their respective directories under the
 submission directory.
 <ul>
 <li><code>try.sh</code> and <code>try.alt.sh</code> <strong>MUST</strong> be and are copied as mode <code>0555</code>.</li>
 <li>All other files <strong>MUST</strong> be and are copied as mode <code>0444</code>.</li>
-<li>Anything else will be flagged by <code>txzchk(1)</code>.</li>
+<li>Anything else will be flagged by <code>txzchk(1)</code> (and it’ll be flagged by
+<code>mkiocccentry(1)</code> too).</li>
 </ul></li>
 <li><code>cd submit.USERNAME-SLOT</code> (i.e. switch to submission directory).</li>
 <li><code>make -f Makefile clobber</code>.
 <ul>
 <li>If this fails it is not an error but you are warned about it (it is an error only if the <code>Makefile</code>
-does not exist); even so, see <a href="next/rules.html#rule20">Rule 20</a>.</li>
+does not a regular readable file but; even so, see <a href="next/rules.html#rule20">Rule 20</a>.</li>
 </ul></li>
-<li>Traverse the new tree from <code>.</code> with additional steps from (4).
+<li>Traverse the new tree from <code>.</code> (the submission directory) with additional steps from (4).
 <ul>
 <li>If any file has an ignored directory name in it, it is an error.</li>
 <li>If a symlink is found it is an error.</li>
@@ -1498,10 +1521,28 @@ does not exist); even so, see <a href="next/rules.html#rule20">Rule 20</a>.</li>
 error.</li>
 <li>If a forbidden filename exists it is an error.</li>
 <li>If any file or directory starts with <code>/</code> or is not POSIX plus + safe chars
-only (see (4) above) it is an error.</li>
-<li>If the depth is too deep it is an error.</li>
+only (see (4) above) it is an error (though this should not actually happen
+unless you’re doing something funny).</li>
+<li>If the directory depth becomes too deep it is an error.</li>
 <li>If <code>prog.c</code>, <code>Makefile</code> or <code>remarks.md</code> are missing (or not readable
 regular files) it is an error.</li>
+<li>If an optional file is a directory it is an error.</li>
+<li>If a file or directory is in the submission directory that was not found
+in the topdir it is an error.</li>
+<li>If a file or directory found in the topdir is not in the submission
+directory it is an error.</li>
+<li>If a file or directory in the submission directory is a different type
+from the topdir (e.g. if <code>foo</code> was a directory in topdir but in the submission
+directory it is a file) it is an error.</li>
+<li>If a file (based on the name) or directory has the wrong permission it is
+an error (see (7) above).</li>
+<li>If <code>fts_read(3)</code> reports something as a directory but it’s not a directory
+it is an error (and likewise if it reports something as a file and it’s not
+a file it is an error) - though this should never happen.</li>
+<li>If a directory name (full path from the submission directory) is the name
+of a mandatory file it is an error.</li>
+<li>If a directory name (full path from the submission directory) is the name
+of of an optional file it is an error.</li>
 <li><code>iocccsize(1)</code> (via the <code>mkiocccentry(1)</code> function <code>check_prog_c()</code>) will
 be run on your <code>prog.c</code>, allowing you to override any warnings; if you do not
 override an issue flagged it is an error but if warnings from <code>check_prog_c()</code>
@@ -1519,15 +1560,11 @@ but has no content is violating <a href="next/rules.html#rule17">Rule 17</a> and
 19</a>.</li>
 <li>If any other error condition from step (4) occurs it is also an error.</li>
 </ul></li>
-<li>Report on any directories that were made and files that were copied in (7)
-but are now gone: asking the user to verify.</li>
 <li>Present the list of non-dot files that remain and ask the user to confirm.</li>
 <li>Ask the user for a submission title.</li>
 <li>Ask the user for a one line abstract of the submission.</li>
 <li>Ask the user for the number of authors and for each author ask a variety of
 questions (see below for more information on what kind of questions).</li>
-<li>Show the output of <code>ls -lakR .</code>, asking the user to confirm that the listing
-is okay.</li>
 <li>Create <code>.info.json</code> and run <code>chkentry(1)</code> on it.
 <ul>
 <li>If <code>chkentry(1)</code> fails to validate the file make sure that you have
@@ -1542,6 +1579,8 @@ obtained and compiled the latest version of all the tools and you either are
 in the repo’s directory, you pass the options to give the path to the tools
 or you have installed the latest tools!</li>
 </ul></li>
+<li>Show the output of <code>ls -lakR .</code>, asking the user to confirm that the listing
+is okay.</li>
 <li>Create the tarball with the name in the form of
 <code>submit.USERNAME-SLOT.TIMESTAMP</code>.</li>
 <li>Run <code>txzchk(1)</code> on the tarball.</li>
@@ -1629,7 +1668,11 @@ FAQ on “<a href="#mkiocccentry_test">how to test everything at once without ha
 questions</a>”.</p>
 <p>See also the <a href="next/guidelines.html">Guidelines</a> and the <a href="next/rules.html">Rules</a>
 (especially <a href="next/rules.html#rule1">Rule 1</a>, <a href="next/rules.html#rule2">Rule 2</a>, <a href="next/rules.html#rule17">Rule
-17</a>, <a href="next/rules.html#rule19">Rule 19</a> and <a href="next/rules.html#rule20">Rule 20</a>).</p>
+17</a>, <a href="next/rules.html#rule19">Rule 19</a> and <a href="next/rules.html#rule20">Rule
+20</a>).</p>
+<p>Finally, if you wish to not have to enter the same answers just to update a
+submission, see the
+FAQ on the “<a href="#answers_file">answers file feature</a>”.</p>
 <p>Jump to: <a href="#">top</a></p>
 <div id="txzchk">
 <div id="tarball">
