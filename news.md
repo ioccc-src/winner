@@ -14,6 +14,18 @@ for more information on Mastodon.
 </div>
 
 
+## 2025-02-12
+
+We have discovered an issue that needs to be resolved, followed by more testing
+after the code freeze.  We also want to improve the [IOCCC28 guidelines](next/guidelines.html),
+and to simplify the write-up of the [IOCCC28 rules](next/rules.html).
+
+The [40th anniversary of the IOCCC](faq.html#ioccc_start), which started
+on **2024-12-29 23:58:13.213455 UTC**, is now scheduled to be **open**
+from **2025-03-05 23:19:17.131107 UTC** to **2025-06-05 04:03:02.010099 UTC**.
+We apologize for this delay.
+
+
 ## 2025-01-28
 
 **IMPORTANT DISCORD UPDATE**: Due to a Discord bug/mis-feature, those

@@ -121,7 +121,7 @@ Jump to: [top](#)
 </div>
 
 <p class="leftbar">
-This IOCCC runs from **2024-12-29 23:58:13.213455 UTC** to **2025-05-19 23:29:31.374143 UTC**.
+This IOCCC runs from **2024-12-29 23:58:13.213455 UTC** to **2025-06-05 04:03:02.010099 UTC**.
 </p>
 
 <p class="leftbar">
@@ -130,11 +130,11 @@ This contest will enter the **[pending](../status.html#pending)** state on or ab
 </p>
 
 <p class="leftbar">
-This contest will enter the **[open](../status.html#open)** state on **2025-02-19 23:19:17.130705 UTC**.
+This contest will enter the **[open](../status.html#open)** state on **2025-03-05 23:19:17.131107 UTC**.
 </p>
 
 <p class="leftbar">
-This contest will enter the **[judging](../status.html#judging)** state on **2025-05-19 23:29:31.374143 UTC**.
+This contest will enter the **[judging](../status.html#judging)** state on **2025-06-05 04:03:02.010099 UTC**.
 </p>
 
 <p class="leftbar">
