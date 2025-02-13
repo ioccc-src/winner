@@ -53,7 +53,7 @@ Jump to: [top](#)
 
 
 <p class="leftbar">
-These [IOCCC rules](rules.html) are version **28.23 2025-02-10**.
+These [IOCCC rules](rules.html) are version **28.24 2025-02-12**.
 </p>
 
 <p class="leftbar">

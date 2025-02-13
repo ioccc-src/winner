@@ -49,7 +49,7 @@ Jump to: [top](#)
 </div>
 
 <p class="leftbar">
-These [IOCCC guidelines](guidelines.html) are version **28.37 2025-02-10**.
+These [IOCCC guidelines](guidelines.html) are version **28.38 2025-02-12**.
 </p>
 
 <p class="leftbar">
