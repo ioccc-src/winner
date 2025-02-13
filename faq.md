@@ -1,6 +1,6 @@
 # IOCCC FAQ Table of Contents
 
-This is FAQ version **28.2.8 2025-02-10**.
+This is FAQ version **28.2.9 2025-02-12**.
 
 
 ## 0. [Entering the IOCCC: the bare minimum you need to know](#enter_questions)
@@ -18,7 +18,7 @@ This is FAQ version **28.2.8 2025-02-10**.
 
 
 ## 1. [Entering the IOCCC: more help and details](#submitting_help)
-- **Q 1.0**: <a class="normal" href="#answers_file">How can I avoid reentering the information to mkiocccentry?</a>
+- **Q 1.0**: <a class="normal" href="#answers_file">How can I avoid re-entering the information to mkiocccentry?</a>
 - **Q 1.1**: <a class="normal" href="#prog_c">May I use a different source or compiled filename than prog.c or prog?</a>
 - **Q 1.2**: <a class="normal" href="#markdown">What is markdown and how does the IOCCC use it?</a>
 - **Q 1.3**: <a class="normal" href="#mkiocccentry_bugs">How do I report bugs in an `mkiocccentry` tool?</a>
@@ -572,7 +572,7 @@ Jump to: [top](#)
 
 
 <div id="answers_file">
-### Q 1.0: How can I avoid reentering the information to mkiocccentry?
+### Q 1.0: How can I avoid re-entering the information to mkiocccentry?
 </div>
 
 `mkiocccentry(1)` has some options to help write _OR_ read from an
@@ -1212,7 +1212,29 @@ Jump to: [top](#)
 ### Q 3.0: What is the `mkiocccentry(1)` process and what sort of checks does it perform?
 </div>
 
-In full, the `mkiocccentry(1)` tool performs the following steps:
+**TL;DR**: the program will make a submission directory (name based on the
+username and slot number you provide) under the workdir and then switch to the
+topdir. It will then create lists of files and directories to present to you, to
+verify everything is in order. If something is not allowed (bad filename for
+example) or an error occurs (missing required file for example) you will be
+notified of this. After you verify everything is okay the files/directories
+found will be copied/made and it will then switch to the submission directory.
+In the submission directory it scans the file hierarchy again and verifies
+things are still okay. When done it will ask you to verify things are still OK.
+If all is good it'll ask you for more information about the author(s). Next the
+two required JSON files `.auth.json` and `.info.json` will be created, running
+`chkentry(1)` on each. If all is good it'll give you another chance to say the
+files/directories look good and if you answer yes it'll create the tarball and
+run `txzchk` on it.
+
+In most cases the program will prompt you to verify your input is correct. In
+the case of author information (which will only be looked at if you win) you
+will be asked to verify country code prior to being asked the other questions.
+If you fail to enter other author information correctly you will be prompted
+right away to fix it. Afterwards, when the author information is collected, it
+will ask you to confirm. This procedure happens for each author.
+
+In more detail the `mkiocccentry(1)` tool performs the below steps.
 
 0. Ask the user for a submission ID (see the [how to register](next/register.html)
 for more details on how to obtain this and [Rule 17](next/rules.html#rule17) for
@@ -1238,9 +1260,9 @@ with files, copy those files to their respective directory). Note the following:
     submission directory itself, unrelated to `MAX_PATH_DEPTH` above) it is an
     error (see `MAX_EXTRA_DIR_COUNT` in
     [limit_ioccc.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h)).
-    * If the max path length is <= 0 it is an error (and a bug).
-    * If the max depth is <= 0 it is an error (and a bug).
-    * If the max filename length is <= 0 it is an error (and a bug).
+    * If the max path length is <= 0 it is an error (and a bug!).
+    * If the max depth is <= 0 it is an error (and a bug!).
+    * If the max filename length is <= 0 it is an error (and a bug!).
     * If a path is NULL it is an error.
     * If a path is an empty string it is an error.
     * If the path length (i.e. `strlen(path)` where path starts after the
@@ -1267,7 +1289,8 @@ with files, copy those files to their respective directory). Note the following:
     encountered it is an error.
     * If there is an unknown error it is an error :-)
 5. Show each list to the user, asking if this is okay. The lists include:
-    * Ignored directories (those like `.git`, `CVS`, `RCCS` and `.svn`).
+    * Ignored directories (those like `.git`, `CVS`, `RCCS`, `.svn` and various
+    others).
     * Unsafe directory names that will not be added (i.e. those that are not
     POSIX plus + safe chars only; see above step (4)). This includes directories
     starting with a `.`.
@@ -1284,27 +1307,47 @@ with files, copy those files to their respective directory). Note the following:
 6. Make any directories if necessary (under
 `workdir/submit.USERNAME-SLOT` i.e. the submission directory).
     * Directories **MUST** be and are made with mode `0755`.
-    * If any directory is not this mode `txzchk(1)` will flag it.
+    * If any directory is not this mode `txzchk(1)` will flag it (and so will
+    `mkioccentry(1)`).
 7. The non-ignored files are copied to their respective directories under the
 submission directory.
     * `try.sh` and `try.alt.sh` **MUST** be and are copied as mode `0555`.
     * All other files **MUST** be and are copied as mode `0444`.
-    * Anything else will be flagged by `txzchk(1)`.
+    * Anything else will be flagged by `txzchk(1)` (and it'll be flagged by
+    `mkiocccentry(1)` too).
 8. `cd submit.USERNAME-SLOT` (i.e. switch to submission directory).
 9. `make -f Makefile clobber`.
     * If this fails it is not an error but you are warned about it (it is an error only if the `Makefile`
-    does not exist); even so, see [Rule 20](next/rules.html#rule20).
-10. Traverse the new tree from `.` with additional steps from (4).
+    does not a regular readable file but; even so, see [Rule 20](next/rules.html#rule20).
+10. Traverse the new tree from `.` (the submission directory) with additional steps from (4).
     * If any file has an ignored directory name in it, it is an error.
     * If a symlink is found it is an error.
     * If any file type other than a directory or regular file exists it is an
     error.
     * If a forbidden filename exists it is an error.
     * If any file or directory starts with `/` or is not POSIX plus + safe chars
-    only (see (4) above) it is an error.
-    * If the depth is too deep it is an error.
+    only (see (4) above) it is an error (though this should not actually happen
+    unless you're doing something funny).
+    * If the directory depth becomes too deep it is an error.
     * If `prog.c`, `Makefile` or `remarks.md` are missing (or not readable
     regular files) it is an error.
+    * If an optional file is a directory it is an error.
+    * If a file or directory is in the submission directory that was not found
+    in the topdir it is an error.
+    * If a file or directory found in the topdir is not in the submission
+    directory it is an error.
+    * If a file or directory in the submission directory is a different type
+    from the topdir (e.g. if `foo` was a directory in topdir but in the submission
+    directory it is a file) it is an error.
+    * If a file (based on the name) or directory has the wrong permission it is
+    an error (see (7) above).
+    * If `fts_read(3)` reports something as a directory but it's not a directory
+    it is an error (and likewise if it reports something as a file and it's not
+    a file it is an error) - though this should never happen.
+    * If a directory name (full path from the submission directory) is the name
+    of a mandatory file it is an error.
+    * If a directory name (full path from the submission directory) is the name
+    of of an optional file it is an error.
     * `iocccsize(1)` (via the `mkiocccentry(1)` function `check_prog_c()`) will
     be run on your `prog.c`, allowing you to override any warnings; if you do not
     override an issue flagged it is an error but if warnings from `check_prog_c()`
@@ -1321,28 +1364,26 @@ submission directory.
     but has no content is violating [Rule 17](next/rules.html#rule17) and [Rule
     19](next/rules.html#rule19).
     * If any other error condition from step (4) occurs it is also an error.
-11. Report on any directories that were made and files that were copied in (7)
-but are now gone: asking the user to verify.
-12. Present the list of non-dot files that remain and ask the user to confirm.
-13. Ask the user for a submission title.
-14. Ask the user for a one line abstract of the submission.
-15. Ask the user for the number of authors and for each author ask a variety of
+11. Present the list of non-dot files that remain and ask the user to confirm.
+12. Ask the user for a submission title.
+13. Ask the user for a one line abstract of the submission.
+14. Ask the user for the number of authors and for each author ask a variety of
 questions (see below for more information on what kind of questions).
-16. Show the output of `ls -lakR .`, asking the user to confirm that the listing
+15. Create `.info.json` and run `chkentry(1)` on it.
+    * If `chkentry(1)` fails to validate the file make sure that you have
+    obtained and compiled the latest version of all the tools and you either are
+    in the repo's directory, you pass the options to give the path to the tools
+    or you have installed the latest tools!
+16. Create `.auth.json` and run `chkentry(1)` on it.
+    * If `chkentry(1)` fails to validate the file make sure that you have
+    obtained and compiled the latest version of all the tools and you either are
+    in the repo's directory, you pass the options to give the path to the tools
+    or you have installed the latest tools!
+17. Show the output of `ls -lakR .`, asking the user to confirm that the listing
 is okay.
-17. Create `.info.json` and run `chkentry(1)` on it.
-    * If `chkentry(1)` fails to validate the file make sure that you have
-    obtained and compiled the latest version of all the tools and you either are
-    in the repo's directory, you pass the options to give the path to the tools
-    or you have installed the latest tools!
-18. Create `.auth.json` and run `chkentry(1)` on it.
-    * If `chkentry(1)` fails to validate the file make sure that you have
-    obtained and compiled the latest version of all the tools and you either are
-    in the repo's directory, you pass the options to give the path to the tools
-    or you have installed the latest tools!
-19. Create the tarball with the name in the form of
+18. Create the tarball with the name in the form of
 `submit.USERNAME-SLOT.TIMESTAMP`.
-20. Run `txzchk(1)` on the tarball.
+19. Run `txzchk(1)` on the tarball.
 
 If any of the steps fail or if the user says something is not okay, it aborts.
 Some of the other checks that are made:
@@ -1432,7 +1473,12 @@ questions](#mkiocccentry_test)".
 
 See also the [Guidelines](next/guidelines.html) and the [Rules](next/rules.html)
 (especially [Rule 1](next/rules.html#rule1), [Rule 2](next/rules.html#rule2), [Rule
-17](next/rules.html#rule17), [Rule 19](next/rules.html#rule19) and [Rule 20](next/rules.html#rule20)).
+17](next/rules.html#rule17), [Rule 19](next/rules.html#rule19) and [Rule
+20](next/rules.html#rule20)).
+
+Finally, if you wish to not have to enter the same answers just to update a
+submission, see the
+FAQ on the "[answers file feature](#answers_file)".
 
 Jump to: [top](#)
 
