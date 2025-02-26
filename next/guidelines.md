@@ -14,8 +14,9 @@ Mastodon](https://fosstodon.org/@ioccc) feed as _sometimes_ the
 See our
 FAQ on "[rules, guidelines, tools feedback](../faq.html#feedback)"
 as well as our
-FAQ on "[about asking questions](../faq.html#question)"
-about these guidelines. You might also find the FAQ in general useful, especially the
+FAQ on "[asking questions](../faq.html#question)"
+about these rules. You might also find the FAQ in general useful, as well as the
+[quick start guide](../quick-start.html) and [how to register](register.html).
 FAQ on "[how to enter the IOCCC](../quick-start.html#enter)".
 
 
@@ -49,12 +50,12 @@ Jump to: [top](#)
 </div>
 
 <p class="leftbar">
-These [IOCCC guidelines](guidelines.html) are version **28.38 2025-02-12**.
+These [IOCCC guidelines](guidelines.html) are version **28.39 2025-02-26**.
 </p>
 
 <p class="leftbar">
-The <a href="guidelines.md" download="guidelines.md">markdown form of these guidelines</a>
-is available for download.
+The markdown form of these guidelines <a href="guidelines.md"
+download="guidelines.md">is available for download</a>.
 </p>
 
 **IMPORTANT**: Be **SURE** to read the [IOCCC rules](rules.html).
@@ -226,11 +227,12 @@ The `-d` option is an alias for `-s 21701`. An example use:
 ```
 
 <p class="leftbar">
-where `workdir` is the directory which the tarball will be formed and the
+where `workdir` is the directory where the tarball will be formed and the
 `topdir` is the directory which has the required files (`prog.c`, `Makefile` and
-`remarks.md`) along with extra data files you wish to submit. Be aware
-that if the directory exists already, you will have to remove it or move it
-before this option will work a second time, just like in normal mode.
+`remarks.md`) along with extra data files (and if you wish, directories) you
+wish to submit. Be aware that if the directory exists already, you will have to
+remove it or move it before this option will work a second time, just like in
+normal mode.
 </p>
 
 <p class="leftbar">
@@ -241,9 +243,10 @@ are required like `chkentry(1)`, `txzchk(1)` and `fnamchk(1)`. But even if you
 have installed them but some tools are out of date (in the install path) it will
 cause problems. Additionally, if you do not have the most recent version when
 submitting a tarball it will be rejected for not having the right versions of
-the tools. This is why you **MUST** make sure you have the most recent
-version of all the tools and you either run it from the repo directory itself OR
-you install them (`make install` as root or via `sudo`).
+the tools. This is why you **MUST** make sure you have the most recent version
+of all the tools and you either run it from the repo directory itself OR you
+install them (`make install` as via `sudo` or as root). We recommend you install
+the tools but if you wish to run it from the repo directory you may.
 </p>
 
 <p class="leftbar">
@@ -283,8 +286,8 @@ previously uploaded submission by rebuilding your submission with the
 To help you with this, so that you do not have to repeatedly answer all the
 questions, the `mkiocccentry(1)` tool has the options `-a answers`, `-A answers`
 and `-i answers`, where `-a` will write to an answers file (if it does not
-already exist), `-A` will overwrite the file and `-i` will read the answers from
-the file. If you use `-A`, be sure you don't overwrite another file by accident!
+already exist), `-A` **WILL OVERWRITE THE FILE** and `-i` will read the answers from
+the file. If you use `-A`, **BE SURE** you don't overwrite another file by accident!
 </p>
 
 <p class="leftbar">
@@ -531,10 +534,11 @@ its algorithm.
 
 <p class="leftbar">
 If `mkiocccentry` encounters an **error** the program will exit and the xz
-compressed tarball **will not be formed**. For instance, if `chkentry(1)` (see
-below) fails to validate the `.auth.json` or `.info.json`
-[JSON](https://www.json.org/json-en.html) files (see below) that `mkiocccentry(1)` creates,
-it is an error and **possibly** a bug that you should [report as a bug at the
+compressed tarball **will not be formed**. For instance, if
+[chkentry(1)](#chkentry) fails to validate the `.auth.json` or `.info.json`
+[JSON](https://www.json.org/json-en.html) files (see below) that
+`mkiocccentry(1)` creates, or anything else `mkiocccentry(1)` does, it is an
+**error** and **possibly** a bug that you should [report as a bug at the
 mkiocccentry bug report
 page](https://github.com/ioccc-src/mkiocccentry/issues/new?assignees=&labels=bug&projects=&template=bug_report.yml&title=%5BBug%5D+%3Ctitle%3E).
 **PLEASE run the `bug_report.sh` script to help us out here!**  See the
@@ -558,7 +562,9 @@ Needless to say, we do **NOT** recommend these options.
 
 <p class="leftbar">
 In many places it will prompt you to verify what you input, allowing you to
-correct details as you go along.
+correct details as you go along. Be advised that there is a default answer and
+if you press enter it will proceed with that default, so make sure you have
+provided the correct answer.
 </p>
 
 
@@ -579,9 +585,10 @@ The synopsis of the `mkiocccentry(1)` tool is:
 <p class="leftbar">
 To help you with editing a submission, the `mkiocccentry(1)` tool has
 some options to write _OR_ read from an answers file so you do not have to input
-the information about the author(s) and the submission more than once (unless of
+the information about the author(s) and the submission more than once, unless of
 course you need to make some changes, in which case you can use the option that
-overwrites the file).
+overwrites the file. If you do use the overwrite option, **MAKE SURE** you do
+not overwrite another file!
 </p>
 
 <p class="leftbar">
@@ -607,8 +614,9 @@ execute one or more additional tools.
 </div>
 
 <p class="leftbar">
-`mkiocccentry(1)` will use code from `iocccsize(1)` which
-detects a number of issues that you may ignore, if you wish, as noted above.
+`mkiocccentry(1)` will use code from `iocccsize(1)` which detects a number of
+issues (such as [Rule 2](rules.html#rule2)) that you may ignore, if you wish, as
+noted above.
 </p>
 
 <p class="leftbar">
@@ -631,7 +639,16 @@ submission. These files **MUST** pass the checks of `chkentry(1)`!
 If `chkentry` does not pass and you used `mkiocccentry(1)` it is **very likely** a
 bug and you should [report it as a bug at the mkiocccentry issues
 page](https://github.com/ioccc-src/mkiocccentry/issues/new?assignees=&labels=bug&projects=&template=bug_report.yml&title=%5BBug%5D+%3Ctitle%3E).
-See the
+**PLEASE** run the command:
+</p>
+
+``` <!---sh-->
+    make bug_report
+```
+
+<p class="leftbar">
+from the top level repo directory itself.
+See also the
 FAQ on "[reporting mkiocccentry bugs](../faq.html#mkiocccentry_bugs)".
 </p>
 
@@ -643,10 +660,16 @@ executed on it. In this case, there should be no problems, as `mkiocccentry(1)` 
 </p>
 
 <p class="leftbar">
-If `mkiocccentry(1)` is used and `chkentry(1)` fails to validate either of the
-files, then unless it is a system specific problem, it is likely a bug in
+**NOTE**: `chkentry(1)` also validates other things in your submission
+directory.
+</p>
+
+<p class="leftbar">
+If `mkiocccentry(1)` is used and `chkentry(1)` fails to validate your submission
+directory, then unless it is a system specific problem, it could be a bug in
 `mkiocccentry(1)`, `chkentry(1)` or possibly `jparse`, though this is quite
-unlikely.
+unlikely. Nonetheless, if you believe there is a bug, you may report it as
+explained above.
 </p>
 
 <p class="leftbar">
@@ -703,16 +726,17 @@ installed separately, in order to use the tools in `mkiocccentry`.
 In other words, `mkiocccentry` **contains everything** you need, and _even if you
 do install_ the libraries from their respective repos, it/they will **not be
 used** when compiling the `mkiocccentry` tools. This is important to
-make sure that you're using the correct versions, which is verified by
-`chkentry`. See [Rule 17](rules.html#rule17)!
+make sure that you're using the correct versions, which is also verified by
+`chkentry` (in the JSON files created by `mkiocccentry(1)`). See [Rule
+17](rules.html#rule17)!
 </p>
 
 <p class="leftbar">
 Please see the
 FAQ on "[validating .auth.json and/or .info.json files](../faq.html#chkentry)
 for more details on `chkentry` and how you can use it to validate your
-`.auth.json` and `.info.json` files manually, without having to repackage your
-submission.
+`.auth.json` and `.info.json` files (and your submission directory in general)
+manually, without having to repackage your submission.
 </p>
 
 <p class="leftbar">
@@ -736,7 +760,8 @@ tarball`' :-) ) **AND if and _ONLY IF_ you used
 `mkiocccentry(1)`**, then it is **possibly** a bug in one of the tools and you
 might want to [report it as a bug at the mkiocccentry bug report
 page](https://github.com/ioccc-src/mkiocccentry/issues/new?assignees=&labels=bug&projects=&template=bug_report.yml&title=%5BBug%5D+%3Ctitle%3E). **PLEASE run the
-`bug_report.sh` script to help us out here!** See the
+`bug_report.sh` script to help us out here!** You may do this by running from
+the top level directory of the repo `make bug_report`. See the
 FAQ on "[report mkiocccentry bugs](../faq.html#mkiocccentry_bugs)".
 </p>
 
@@ -780,9 +805,9 @@ an extra file, not an optional file.
 <p class="leftbar">
 In particular, any file that is not `prog.c`, `Makefile`, `remarks.md`,
 `try.sh`, `prog.alt.c` or `try.alt.sh` will be counted as an extra file, and if
-`try.sh`, `prog.alt.c` or `try.alt.sh` are not in the top level directory they
-will also be counted as an extra file. The `.info.json` and `.auth.json` files
-are not counted as extra files but are required.
+`try.sh`, `prog.alt.c` or `try.alt.sh` are not in the top level submission
+directory they will also be counted as an extra file. The `.info.json` and
+`.auth.json` files are not counted as extra files but are required.
 </p>
 
 <p class="leftbar">
@@ -807,7 +832,9 @@ section](#txzchk) for more details on this important tool.
 
 <p class="leftbar">
 If you **DO** include a tarball, and the build process or the program extracts
-said tarball(s), the make `clobber` rule **MUST** remove them.
+said tarball(s), the make `clobber` rule **MUST** remove them. Even so, if you
+include a tarball to get past the limit on the number of files, you **MUST**
+justify this in your remarks!
 </p>
 
 <p class="leftbar">
@@ -833,8 +860,6 @@ be done. In other words you should not use a tarball for a test-suite unless you
 have a very good reason for this (and if you do, make **SURE** you specify why
 in your `remarks.md`).
 </p>
-
-
 
 
 <p class="leftbar">
@@ -1283,6 +1308,11 @@ submission Makefile don't depend on such tools.
 </p>
 
 <p class="leftbar">
+Of course if you do use GitHub to work on your submission, you might want to
+make the repo private so you don't reveal who you are. :-)
+</p>
+
+<p class="leftbar">
 If this is not clear, please do **NOT** use these tools to help with the
 `clobber` rule! For instance, do **NOT** use `git clean`! Not only does this
 depend on the user having `git(1)` but it also does not account for the
@@ -1313,6 +1343,13 @@ and **NOT** something like this:
 And do **NOT** use `git` for any other tool either.
 </p>
 
+
+<p class="leftbar">
+**NOTE**: `mkiocccentry(1)` will directly run `make clobber` in the submission
+directory. An although it is not an error if this fails, if it fails because the
+Makefile does not have a clobber rule, it will be flagged by `mkiocccentry(1)`
+(you may ignore this but it does put you at a risk of violating the rules).
+</p>
 
 Jump to: [top](#)
 

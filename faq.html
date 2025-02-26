@@ -425,7 +425,7 @@
 
 <!-- BEFORE: 1st line of markdown file: faq.md -->
 <h1 id="ioccc-faq-table-of-contents">IOCCC FAQ Table of Contents</h1>
-<p>This is FAQ version <strong>28.2.9 2025-02-12</strong>.</p>
+<p>This is FAQ version <strong>28.2.10 2025-02-26</strong>.</p>
 <h2 id="entering-the-ioccc-the-bare-minimum-you-need-to-know">0. <a href="#enter_questions">Entering the IOCCC: the bare minimum you need to know</a></h2>
 <ul>
 <li><strong>Q 0.0</strong>: <a class="normal" href="#enter">How can I enter the IOCCC?</a></li>
@@ -471,7 +471,7 @@
 <li><strong>Q 3.0</strong>: <a class="normal" href="#mkiocccentry_process">What is the <code>mkiocccentry(1)</code> process and what sort of checks does it perform?</a></li>
 <li><strong>Q 3.1</strong>: <a class="normal" href="#txzchk">How can I validate my submission tarball?</a></li>
 <li><strong>Q 3.2</strong>: <a class="normal" href="#fnamchk">What is the <code>fnamchk</code> tool?</a></li>
-<li><strong>Q 3.3</strong>: <a class="normal" href="#chkentry">How can I validate my <code>.auth.json</code> and/or <code>.info.json</code> files?</a></li>
+<li><strong>Q 3.3</strong>: <a class="normal" href="#chkentry">How can I validate my submission directory?</a></li>
 <li><strong>Q 3.4</strong>: <a class="normal" href="#auth_json">What is a <code>.auth.json</code> file?</a></li>
 <li><strong>Q 3.5</strong>: <a class="normal" href="#info_json">What is a <code>.info.json</code> file?</a></li>
 <li><strong>Q 3.6</strong>: <a class="normal" href="#author_handle_faq">What is an <code>author handle</code>?</a></li>
@@ -629,11 +629,21 @@ code, your Makefile, your remarks, any other data files you wish to provide (up
 to a maximum, including the mandatory files, defined in
 <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h">limit_ioccc.h</a>
 as <code>MAX_FILE_COUNT</code>) and other information about your submission,
-information about the author (or authors), and then it runs a lot of tests.</p>
+information about the author (or authors), and then it will give you a list of
+subdirectories, if any, that will be made, and files that will be copied to the
+submission directory. It will list files and directories that it will (for
+various reasons) not create as well, asking you to confirm these things are all
+okay. Some things are strictly forbidden (such as a directory tree too deep) and
+it will tell you about these as well, so you can fix it.</p>
+<p>Assuming you agree to the list of directories and files, it will make the
+directories (if necessary) and copy the files. It will then switch to the
+submission directory, run <code>make clobber</code> and then scan the directory again,
+looking for mismatches. If no errors are detected it will list everything to you
+again, asking you to confirm it is good.</p>
 <p>If everything is OK, it will write the required <code>.auth.json</code> and <code>.info.json</code>
-files, checking each with <code>chkentry(1)</code> and then, if all is OK, it will create
-the tarball. After the tarball is formed, it will run <code>txzchk(1)</code> on it, which
-runs <code>fnamchk(1)</code>. If all is OK, your submission tarball should be good to go.</p>
+and then run <code>chkentry(1)</code> on the directory. If all is OK it will create the
+tarball. After the tarball is formed, it will run <code>txzchk(1)</code> on it, which runs
+<code>fnamchk(1)</code>. If all is OK, your submission tarball should be good to go.</p>
 <p>Please see
 FAQ on “<a href="#txzchk">txzchk</a>”,
 the
@@ -706,19 +716,20 @@ cause problems. Additionally, if you do not have the most recent version when
 submitting a tarball it will be rejected for not having the right versions of
 the tools. This is why you <strong>MUST</strong> make sure you have the most recent version
 of all the tools and you either run it from the repo directory itself OR you
-install them (<code>make install</code> as via <code>sudo</code> or as root).</p>
+install them (<code>make install</code> as via <code>sudo</code> or as root). We recommend you install
+the tools but if you wish to run it from the repo directory you may.</p>
 <p>If the <strong><em>subdirectory</em> in the <em>work directory</em></strong> (based on your submit ID and
-slot number) already exists, you will have to
-move it, remove it or otherwise specify a different work directory (<strong>NOT</strong> the
-subdirectory), as it needs to be empty.</p>
-<p>This <em>subdirectory is where your files will be <strong>copied</strong> to</em>. Your <em>submission
-tarball</em> (which you will upload to the submit server) that <code>txzchk(1)</code> will
-validate <em>will be placed in the <strong>work directory</strong></em>, and <strong>its <em>contents</em> will
-be the <em>subdirectory</em> with your submission’s files</strong>.
-The <code>mkiocccentry(1)</code> tool will also ask you for information about your
-submission <em>as well as author details</em> (that will only be looked at if the
-submission wins), run some tests and run a number of other tools, as
-mentioned above, and as described in the “<a href="#mkiocccentry_details">finer
+slot number) already exists, you will have to move it, remove it or otherwise
+specify a different work directory (<strong>NOT</strong> the subdirectory), as it needs to be
+empty.</p>
+<p>This <em>subdirectory is where your directories will be made and where your files
+will be <strong>copied</strong> to</em>. Your <em>submission tarball</em> (which you will upload to the
+submit server) that <code>txzchk(1)</code> will validate <em>will be placed in the <strong>work
+directory</strong></em>, and <strong>its <em>contents</em> will be the <em>subdirectory</em> with your
+submission’s files</strong>. The <code>mkiocccentry(1)</code> tool will also ask you for
+information about your submission <em>as well as author details</em> (that will only be
+looked at if the submission wins), run some tests and run a number of other
+tools, as mentioned above, and as described in the “<a href="#mkiocccentry_details">finer
 details</a>” section.</p>
 <p>See also the
 <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/FAQ.md">mkiocccentry repo FAQ</a>
@@ -885,7 +896,7 @@ FAQ on “<a href="#makefile">submission Makefiles</a>.</p>
 <div id="file_perms">
 <h3 id="q-0.6-what-permissions-may-my-files-be-and-what-if-i-need-different-permissions">Q 0.6: What permissions may my files be and what if I need different permissions?</h3>
 </div>
-<p>As <a href="#rule17">Rule 17</a> states, files in your submission tarball <strong>MUST</strong> be
+<p>As <a href="next/rules.html#rule17">Rule 17</a> states, files in your submission tarball <strong>MUST</strong> be
 specific permissions. In particular: directories <strong>MUST</strong> be <code>drwxr-xr-x</code> (i.e.
 <code>0755</code>), the optional files, <code>try.sh</code> or <code>try.alt.sh</code>, if provided, <strong>MUST</strong> be
 <code>-r-xr-xr-x</code> (i.e. <code>0555</code>) and all other files <strong>MUST</strong> be <code>-r--r--r--</code> (i.e.
@@ -969,7 +980,7 @@ For example:</p>
 </div>
 <p>The IOCCC makes extensive use of <a href="https://daringfireball.net/projects/markdown/">markdown</a>.
 For example, when <a href="next/submit.html">submitting to the IOCCC</a>, we have people
-submit remarks about entry in markdown format. Every
+submit remarks about their submission(s) in markdown format. Every
 <a href="years.html">winning IOCCC entry</a> uses a <code>README.md</code> markdown file
 as the basis for forming the <code>index.html</code> web page for that entry.
 All generated HTML pages on the <a href="https://www.ioccc.org/index.html">Official IOCCC website</a>
@@ -1018,6 +1029,10 @@ do have to try again you’ll have to remove it.</p>
 <p>This will run the tests that <code>mkiocccentry(1)</code>, write the JSON files, use
 <code>chkentry(1)</code>, package the tarball and run <code>txzchk(1)</code> on it.</p>
 <p>See also the
+FAQ on “<a href="#mkiocccentry">mkiocccentry</a>”,
+the
+FAQ on “<a href="#using_mkiocccentry">using mkiocccentry</a>”,
+the
 FAQ on “<a href="#info_json">.info.json</a>”,
 the
 FAQ on “<a href="#auth_json">.auth.json</a>”,
@@ -1047,6 +1062,13 @@ submission</a>, which not only discusses the maximum
 number of files (including extra files) but also specific rules you must follow
 if you do include a tarball. Not following these points puts you at great risk
 of violating <a href="next/rules.html#rule17">Rule 17</a>!</p>
+<p>Also, remember what the <a href="next/guidelines.html">guidelines</a> say:</p>
+<blockquote>
+<p><strong>IMPORTANT REMINDER</strong>: make <strong>SURE</strong> your tarball does <strong>NOT</strong> reveal who you are!
+The <code>mkiocccentry(1)</code> tool creates a v7 format tarball to prevent this.</p>
+</blockquote>
+<p>You can do this by creating the tarball like:</p>
+<pre><code>    tar --format=v7 -cJf foo.txz directory</code></pre>
 <hr style="width:50%;text-align:left;margin-left:0">
 <hr style="width:50%;text-align:left;margin-left:0">
 <div id="judging">
@@ -1129,16 +1151,19 @@ discussion</a>.</p>
 </div>
 <p>There are unfortunately some warnings that cannot be disabled; they are always
 enabled whatever warning options you have enabled. Also, there is a warning that
-is enabled whenever you act on <code>char *</code>s, saying it is unsafe buffer usage, even
-when it’s not. This might be enabled by <code>-Weverything</code> but it might not be; for
-more details on why we use <code>-Weverything</code> in Clang see the
-FAQ on “<a href="#weverything">-Weverything</a>”.</p>
-<p>It is not detrimental to your submission if you disable this, which you can do
-by specifying <code>-Wno-unsafe-buffer-usage</code>.</p>
+is enabled whenever you use a pointer as a buffer, saying it is unsafe buffer
+usage, even when it is not.</p>
+<p>This might be enabled by <code>-Weverything</code> but it might not be but it is not
+detrimental to your submission if you disable this, which you can do by
+specifying <code>-Wno-unsafe-buffer-usage</code>.</p>
 <p>So in short, no you should not worry about these as they are sometimes
 inevitable in obfuscated code and even non-obfuscated code.</p>
 <p>If you <em>can</em> work past this it might be good but this is not something that
-should be worried about too much as this is on the compiler developers, not you.</p>
+should be worried about too much as this is on the compiler developers, not you.
+Of course if you do work past it feel free to brag, though <strong>BE SURE TO TELL
+US</strong> the OS, OS version, compiler and compiler version.</p>
+<p>For more details on why we use <code>-Weverything</code> in Clang see the FAQ on
+“<a href="#weverything">-Weverything</a>”.</p>
 <p>Jump to: <a href="#">top</a></p>
 <div id="frequent-themes">
 <h3 id="q-2.3-what-types-of-entries-have-been-frequently-submitted-to-the-ioccc">Q 2.3: What types of entries have been frequently submitted to the IOCCC?</h3>
@@ -1399,11 +1424,12 @@ verify everything is in order. If something is not allowed (bad filename for
 example) or an error occurs (missing required file for example) you will be
 notified of this. After you verify everything is okay the files/directories
 found will be copied/made and it will then switch to the submission directory.
-In the submission directory it scans the file hierarchy again and verifies
-things are still okay. When done it will ask you to verify things are still OK.
-If all is good it’ll ask you for more information about the author(s). Next the
-two required JSON files <code>.auth.json</code> and <code>.info.json</code> will be created, running
-<code>chkentry(1)</code> on each. If all is good it’ll give you another chance to say the
+In the submission directory it first runs <code>make clobber</code> and then scans the
+directory hierarchy again, verifying things are still okay. When done it will
+ask you to verify things still look OK to you too. If all is good it’ll ask you
+for more information about the author(s). Next the two required JSON files
+<code>.auth.json</code> and <code>.info.json</code> will be created. After that <code>chkentry(1)</code> will be
+run on the directory. If all is good it’ll give you another chance to say the
 files/directories look good and if you answer yes it’ll create the tarball and
 run <code>txzchk</code> on it.</p>
 <p>In most cases the program will prompt you to verify your input is correct. In
@@ -1565,19 +1591,14 @@ but has no content is violating <a href="next/rules.html#rule17">Rule 17</a> and
 <li>Ask the user for a one line abstract of the submission.</li>
 <li>Ask the user for the number of authors and for each author ask a variety of
 questions (see below for more information on what kind of questions).</li>
-<li>Create <code>.info.json</code> and run <code>chkentry(1)</code> on it.
+<li>Create <code>.info.json</code>.</li>
+<li>Create <code>.auth.json</code>.</li>
+<li>Run <code>chkentry(1)</code> on your submission directory to verify things look good,
+including that the <code>.info.json</code> and <code>.auth.json</code> files are okay.
 <ul>
-<li>If <code>chkentry(1)</code> fails to validate the file make sure that you have
-obtained and compiled the latest version of all the tools and you either are
-in the repo’s directory, you pass the options to give the path to the tools
-or you have installed the latest tools!</li>
-</ul></li>
-<li>Create <code>.auth.json</code> and run <code>chkentry(1)</code> on it.
-<ul>
-<li>If <code>chkentry(1)</code> fails to validate the file make sure that you have
-obtained and compiled the latest version of all the tools and you either are
-in the repo’s directory, you pass the options to give the path to the tools
-or you have installed the latest tools!</li>
+<li>It also checks that the manifest in <code>.info.json</code> matches what is in the
+submission directory and it verifies file permissions too; if you wish to
+know what else it does we suggest you read the source code.</li>
 </ul></li>
 <li>Show the output of <code>ls -lakR .</code>, asking the user to confirm that the listing
 is okay.</li>
@@ -1722,43 +1743,53 @@ for more information.</p>
 <p>Jump to: <a href="#">top</a></p>
 <div id="validating_auth_info_json">
 <div id="chkentry">
-<h3 id="q-3.3-how-can-i-validate-my-.auth.json-andor-.info.json-files">Q 3.3: How can I validate my <code>.auth.json</code> and/or <code>.info.json</code> files?</h3>
+<h3 id="q-3.3-how-can-i-validate-my-submission-directory">Q 3.3: How can I validate my submission directory?</h3>
 </div>
 </div>
-<p>If you want to validate the <code>.auth.json</code> or <code>.info.json</code> files you
-should use <code>chkentry(1)</code> from the <a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry
-repo</a>.</p>
-<p>The <code>chkentry(1)</code> tool uses the IOCCC version of the <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/jparse/man/man3/jparse.3">jparse
+<p>If you want to validate your submission directory manually, including but not
+limited to the <code>.auth.json</code> or <code>.info.json</code> files, you should use <code>chkentry(1)</code>
+from the <a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry repo</a>.</p>
+<p>The <code>chkentry(1)</code> tool runs a variety of checks on your submission directory,
+including but not limited to, using the <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/jparse/man/man3/jparse.3">jparse
 API</a>
-to perform <strong>additional</strong> checks on these two IOCCC specific JSON files. It is
-<em>possible</em> that this version will at times differ from the <a href="https://github.com/xexyl/jparse/blob/master/man/man3/jparse.3">official jparse
-API</a> at the
-<a href="https://github.com/xexyl/jparse">official jparse repo</a> and this is one of the
-reasons the tools’ <code>-V</code> (version option) show the JSON parser version as well.</p>
+to validate the two IOCCC specific JSON files (as valid JSON) and additional
+checks on those files as well. An important thing that it does is verify that
+your files are the right permissions and that the manifest in the <code>.info.json</code>
+files match what is in the directory. What all the checks are is out of scope of this
+document; if you wish to know we recommend you read the <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/chkentry.c">source
+code</a>.</p>
+<p><strong>NOTE</strong>: the IOCCC <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/jparse/man/man3/jparse.3">jparse
+API</a>
+is a synced copy of the <a href="https://github.com/xexyl/jparse">official jparse
+repo</a> <em>at the time of the contest open date</em>.</p>
 <p>See the
 FAQ on “<a href="#auth_json">.auth.json</a>”
 and
 FAQ on “<a href="#info_json">.info.json</a>”
-for more details on these files.</p>
-<p>The <code>chkentry(1)</code> tool accepts more than one command line form.
-You may specify a <code>.auth.json</code> and/or
-<code>.info.json</code> file. An argument of “<code>.</code>” will skip that file. For instance:</p>
-<pre><code>    # run checks on .info.json:
-    chkentry . .info.json
-
-    # run checks on .auth.json:
-    chkentry .auth.json .
-
-    # run checks on .auth.json and .info.json:
-    chkentry .auth.json .info.json</code></pre>
+for more details on the two required and very important JSON files.</p>
+<p>The <code>chkentry(1)</code> tool accepts a single arg, a directory that <strong>MUST</strong> have the
+two JSON files, <code>.auth.json</code> and <code>.info.json</code>. (Okay there is an option to skip
+files but this is for the judges <strong>ONLY</strong>; use of this option to validate your
+submission puts you at a great risk of violating <a href="next/rules.html#rule17">Rule
+17</a>!).</p>
+<p>As an example, if your submission directory is <code>12345678-1234-4321-abcd-1234567890ab-0/</code> then you should run the
+following command:</p>
+<pre><code>    chkentry 12345678-1234-4321-abcd-1234567890ab-0</code></pre>
 <p>If there is a <a href="https://www.json.org/json-en.html">JSON</a> issue detected by the
-<code>jparse(3)</code> API, then there is a <a href="https://www.json.org/json-en.html">JSON</a> error and
-<code>chkentry(1)</code> will report it as an <strong>error</strong>. If the parsing is OK (i.e. valid
-JSON) but there is an issue in one or both of the
+<code>jparse(3)</code> API (i.e. it is not valid JSON) it is an error and <code>chkentry(1)</code>
+will report this, exiting with a non-zero exit code. If the parsing is OK (i.e.
+valid JSON) but there is an issue in one or both of the
 <a href="https://www.json.org/json-en.html">JSON</a> files in <strong>the context of the IOCCC</strong>,
-it will report this as an <strong>error</strong>. Thus, if you were to package your
-submission manually then you would be violating <a href="next/rules.html#rule17">Rule
-17</a>.</p>
+it will report this as an <strong>error</strong>. It also does, as briefly noted above, other
+checks.</p>
+<p>If <code>chkentry(1)</code> fails to validate your submission directory your submission
+<strong>WILL</strong> be <strong>REJECTED</strong>! This is why you <strong>MUST</strong> make sure you use the
+<code>mkiocccentry(1)</code> tool to form your submission directory.</p>
+<p>See the
+FAQ on “<a href="#auth_json">.auth.json</a>”
+and the
+FAQ on “<a href="#info_json">.info.json</a>”
+as well as <a href="next/rules.html#rule17">Rule 17</a> for more information.</p>
 <p>Jump to: <a href="#">top</a></p>
 <div id="auth_json">
 <h3 id="q-3.4-what-is-a-.auth.json-file">Q 3.4: What is a <code>.auth.json</code> file?</h3>
@@ -1787,7 +1818,7 @@ information about the author or authors of the submission, in JSON format.</p>
 <ul>
 <li>The current version of the <code>.auth.json</code> file.</li>
 </ul>
-<p><strong>NOTE:</strong> this <strong>MUST</strong> match <strong>THIS</strong> IOCCC’s <code>.auth.json</code> version, defined as
+<p><strong>IMPORTANT:</strong> this <strong>MUST</strong> match <strong>THIS</strong> IOCCC’s <code>.auth.json</code> version, defined as
 <code>AUTH_VERSION</code> in
 <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/version.h">soup/version.h</a>
 in the <a href="https://github.com/ioccc-src/mkiocccentry/">mkiocccentry repo</a>. If
@@ -1796,7 +1827,7 @@ this is not the case your submission <strong>WILL BE</strong> rejected!</p></li>
 <ul>
 <li>Which contest number this is (e.g. 1 for 1984, 2 for 1985, 27 for 2020).</li>
 </ul>
-<p><strong>NOTE:</strong> this <strong>MUST</strong> match <strong>THIS</strong> IOCCC’s contest value, defined as
+<p><strong>IMPORTANT:</strong> this <strong>MUST</strong> match <strong>THIS</strong> IOCCC’s contest value, defined as
 <code>IOCCC_CONTEST</code> in
 <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h">soup/limit_ioccc.h</a>
 in the <a href="https://github.com/ioccc-src/mkiocccentry/">mkiocccentry repo</a>. If
@@ -1807,7 +1838,7 @@ this is not the case your submission <strong>WILL BE</strong> rejected!</p></li>
 </ul>
 <p><strong>NOTE:</strong> sometimes an IOCCC year runs into another year and the contest year
 might not match when it ends.</p>
-<p><strong>NOTE:</strong> this <strong>MUST</strong> match <strong>THIS</strong> IOCCC’s contest, defined as
+<p><strong>IMPORTANT:</strong> this <strong>MUST</strong> match <strong>THIS</strong> IOCCC’s contest, defined as
 <code>IOCCC_YEAR</code> in
 <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h">soup/limit_ioccc.h</a>
 in the <a href="https://github.com/ioccc-src/mkiocccentry/">mkiocccentry repo</a>. If
@@ -1816,17 +1847,17 @@ this is not the case your submission <strong>WILL BE</strong> rejected!</p></li>
 <ul>
 <li>The version of <code>mkiocccentry</code> that formed this <code>.auth.json</code> file.</li>
 </ul>
-<p><strong>NOTE:</strong> this <strong>MUST</strong> match <strong>THIS</strong> IOCCC’s <code>mkiocccentry</code> version,
+<p><strong>IMPORTANT:</strong> this <strong>MUST</strong> match <strong>THIS</strong> IOCCC’s <code>mkiocccentry</code> version,
 defined as <code>MKIOCCCENTRY_VERSION</code> in
 <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/version.h">soup/version.h</a>
 in the <a href="https://github.com/ioccc-src/mkiocccentry/">mkiocccentry repo</a>. If
 this is not the case your submission <strong>WILL BE</strong> rejected!</p></li>
 <li><p><code>chkentry_version</code> (double quoted string)</p>
 <ul>
-<li>The version of <code>chkentry</code> that was used to validate this <code>.auth.json</code>,
-assuming that it was created by <code>mkiocccentry</code>.</li>
+<li>The version of <code>chkentry</code> that was used to validate the submission
+directory, including the <code>.auth.json</code> file.</li>
 </ul>
-<p><strong>NOTE:</strong> this <strong>MUST</strong> match <strong>THIS</strong> IOCCC’s <code>chkentry</code> version, defined
+<p><strong>IMPORTANT:</strong> this <strong>MUST</strong> match <strong>THIS</strong> IOCCC’s <code>chkentry</code> version, defined
 as <code>CHKENTRY_VERSION</code> in
 <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/version.h">soup/version.h</a>
 in the <a href="https://github.com/ioccc-src/mkiocccentry/">mkiocccentry repo</a>. If
@@ -1836,7 +1867,7 @@ this is not the case your submission <strong>WILL BE</strong> rejected!</p></li>
 <li>The version of <code>fnamchk</code> that <code>txzchk</code> uses to validate the filename of
 the xz compressed tarball.</li>
 </ul>
-<p><strong>NOTE:</strong> this <strong>MUST</strong> match <strong>THIS</strong> IOCCC’s <code>fnamchk</code> version in order for it
+<p><strong>IMPORTANT:</strong> this <strong>MUST</strong> match <strong>THIS</strong> IOCCC’s <code>fnamchk</code> version in order for it
 to be valid. If this is not the case your submission <strong>WILL BE</strong> rejected!</p></li>
 <li><p><code>IOCCC_contest_id</code> (double quoted string)</p>
 <ul>
@@ -1851,19 +1882,20 @@ violating <a href="next/rules.html#rule17">Rule 17</a>!</p></li>
 <ul>
 <li>The xz compressed tarball filename.</li>
 </ul>
-<p><strong>NOTE:</strong> this <strong>MUST</strong> match the actual tarball’s <strong>filename</strong> in order for
+<p><strong>IMPORTANT:</strong> this <strong>MUST</strong> match the actual tarball’s <strong>filename</strong> in order for
 this to be valid. If there is a mismatch you stand a great risk of having
 your submission rejected for violating <a href="next/rules.html#rule17">Rule 17</a>!
 Moreover, it is possible that <code>txzchk</code> will report a problem through
 <code>fnamchk(1)</code> which also puts you at great risk of violating <a href="next/rules.html#rule17">Rule
-17</a>. If <code>txzchk</code> does not detect this, though, it
-does not mean it’s a bug but rather that the directory in the tarball
-matches the filename.</p></li>
+17</a>. <code>txzchk</code> will use the output of <code>fnamchk</code> to
+obtain the correct directory <em>name</em> in the tarball; if <code>fnamchk</code> fails to
+validate your filename, or if you have the wrong directory name in the
+tarball, this will be flaggd.</p></li>
 <li><p><code>submit_slot</code> (number)</p>
 <ul>
 <li>The submission number.</li>
 </ul>
-<p><strong>NOTE:</strong> this <strong>MUST</strong> be within the range of 0 <strong>THROUGH</strong>
+<p><strong>IMPORTANT:</strong> this <strong>MUST</strong> be within the range of 0 <strong>THROUGH</strong>
 <code>MAX_SUBMIT_SLOT</code> (see
 <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h">soup/limit_ioccc.h</a>
 in the <a href="https://github.com/ioccc-src/mkiocccentry/">mkiocccentry repo</a>). If
@@ -1873,7 +1905,7 @@ rejected for violating <a href="next/rules.html#rule17">Rule 17</a>!</p></li>
 <ul>
 <li>How many authors this submission has.</li>
 </ul>
-<p><strong>NOTE:</strong> this <strong>MUST</strong> be within the range of 1 <strong>THROUGH</strong>
+<p><strong>IMPORTANT:</strong> this <strong>MUST</strong> be within the range of 1 <strong>THROUGH</strong>
 <code>MAX_AUTHORS</code> (see
 <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h">soup/limit_ioccc.h</a>
 in the <a href="https://github.com/ioccc-src/mkiocccentry/">mkiocccentry repo</a>). If
@@ -1910,10 +1942,14 @@ for a list of valid codes.</li>
 <li><p><code>url</code> (<code>null</code> or double quoted string)</p>
 <ul>
 <li>The primary <strong>URL</strong> of this author, or <code>null</code> if not provided.</li>
+<li>The URL must start with <code>http://</code> or <code>https://</code> and have more text after it;
+we do not even try and detect a hostname.</li>
 </ul></li>
 <li><p><code>alt_url</code> (<code>null</code> or double quoted string)</p>
 <ul>
 <li>The <strong>alt URL</strong> of this author, or <code>null</code> if not provided.</li>
+<li>The URL must start with <code>http://</code> or <code>https://</code> and have more text after it;
+we do not even try and detect a hostname.</li>
 </ul></li>
 <li><p><code>mastodon</code> (<code>null</code> or double quoted string)</p>
 <ul>
@@ -1931,7 +1967,7 @@ provided.</li>
 <ul>
 <li>This author’s <strong>affiliation</strong>, if any, or <code>null</code> if not provided.</li>
 </ul>
-<p><strong>NOTE:</strong> if provided, the length of the <strong>affiliation</strong> <strong>MUST</strong> be within
+<p><strong>IMPORTANT:</strong> if provided, the length of the <strong>affiliation</strong> <strong>MUST</strong> be within
 the range of 1 <strong>THROUGH</strong> <code>MAX_AFFILIATION_LEN</code> (see
 <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h">soup/limit_ioccc.h</a>
 in the <a href="https://github.com/ioccc-src/mkiocccentry/">mkiocccentry repo</a>). If
@@ -1974,7 +2010,7 @@ for more information.</p></li>
 FAQ on “<a href="#info_json">.info.json</a>”
 for more information.</li>
 </ul>
-<p><strong>NOTE:</strong> this <strong>MUST</strong> be greater than or equal to <code>MIN_TIMESTAMP</code> (see
+<p><strong>IMPORTANT:</strong> this <strong>MUST</strong> be greater than or equal to <code>MIN_TIMESTAMP</code> (see
 <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h">soup/limit_ioccc.h</a>
 in the <a href="https://github.com/ioccc-src/mkiocccentry/">mkiocccentry repo</a>). If
 this is not the case your submission <strong>WILL BE</strong> rejected.</p></li>
@@ -1983,7 +2019,7 @@ this is not the case your submission <strong>WILL BE</strong> rejected.</p></li>
 <li>Microseconds since the tstamp (seconds since epoch when <code>.auth.json</code> was
 formed - see <code>gettimeofday(2)</code>) second.</li>
 </ul>
-<p><strong>NOTE:</strong> this <strong>MUST</strong> be within the range <code>MIN_FORMED_TIMESTAMP_USEC</code>
+<p><strong>IMPORTANT:</strong> this <strong>MUST</strong> be within the range <code>MIN_FORMED_TIMESTAMP_USEC</code>
 <strong>THROUGH</strong> <code>MAX_FORMED_TIMESTAMP_USEC</code> and is validated by
 <code>test_formed_timestamp_usec()</code> in
 <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/entry_util.c">soup/entry_util.c</a>
@@ -1994,7 +2030,7 @@ submission <strong>WILL BE</strong> rejected!</p></li>
 <ul>
 <li><code>"Thu Jan 01 00:00:00 1970 UTC"</code> (<code>gettimeofday(2)</code> epoch).</li>
 </ul>
-<p><strong>NOTE:</strong> this <strong>MUST</strong> be <code>"Thu Jan 01 00:00:00 1970 UTC"</code> which is <code>#define</code>d
+<p><strong>IMPORTANT:</strong> this <strong>MUST</strong> be <code>"Thu Jan 01 00:00:00 1970 UTC"</code> which is <code>#define</code>d
 as <code>TIMESTAMP_EPOCH</code> in
 <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h">soup/limit_ioccc.h</a>
 in the <a href="https://github.com/ioccc-src/mkiocccentry/">mkiocccentry repo</a>. If
@@ -2003,30 +2039,35 @@ this is not the case your submission <strong>WILL BE</strong> rejected!</p></li>
 <ul>
 <li>Minimum number of second since epoch for <strong>this</strong> IOCCC.</li>
 </ul>
-<p><strong>NOTE:</strong> this <strong>MUST</strong> be &gt;= <code>MIN_TIMESTAMP</code> defined in
+<p><strong>IMPORTANT:</strong> this <strong>MUST</strong> be &gt;= <code>MIN_TIMESTAMP</code> defined in
 <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h">soup/limit_ioccc.h</a>
 in the <a href="https://github.com/ioccc-src/mkiocccentry/">mkiocccentry repo</a>. If
 this is not the case your submission <strong>WILL BE</strong> rejected!</p></li>
 </ul>
-<p>This file will be verified with the <code>chkentry(1)</code> tool and if there are any
-problems <strong>it is an error</strong>. If there is an error the tarball will <strong>NOT</strong> be
-formed by <code>mkiocccentry</code>; otherwise the <code>txzchk(1)</code> tool will be executed on the
-tarball.</p>
-<p>This file will <strong>NOT</strong> be looked at unless the submission wins! Nonetheless,
-<code>chkentry(1)</code> <strong>WILL BE</strong> used on the file as part of the judging process.</p>
+<p>This file will be validated with the <code>chkentry(1)</code> tool and if there are any
+problems with it or the submission directory, <strong>it is an error</strong>. If there is an
+error the tarball will <strong>NOT</strong> be formed by <code>mkiocccentry</code>; otherwise the
+<code>txzchk(1)</code> tool will be executed on the tarball.</p>
+<p>This file will <strong>NOT</strong> be looked at unless the submission wins! Nonetheless, the
+file <strong>MUST</strong> be present in the submission directory and it <strong>MUST</strong> be valid
+JSON and it <strong>MUST</strong> pass all IOCCC semantics checks and all other checks
+<code>chkentry(1)</code> perform. <code>chkentry(1)</code> is used by <code>mkiocccentry(1)</code> and the judges
+will use it on the submission directory as part of the judging process.</p>
 <p>At the risk of stating the obvious, if your <code>.auth.json</code> file is invalid JSON or
-is reported invalid by <code>chkentry</code> your submission will almost certainly be
+is reported invalid by <code>chkentry(1)</code>, or if your submission directory is
+reported invalid by <code>chkentry(1)</code>, your submission will almost certainly be
 rejected for violating the <a href="next/rules.html">Rules</a> and in particular <a href="next/rules.html#rule17">Rule
 17</a>.</p>
-<p>An obvious example where <code>chkentry</code> would fail to validate <code>.auth.json</code> is if
+<p>An obvious example where <code>chkentry(1)</code> would fail to validate <code>.auth.json</code> is if
 there is a mismatch of type in the JSON file with what is expected, for
 instance, if in <code>.auth.json</code> the <code>no_comment</code> that we chose to not comment on is
-not a string. Another obvious example is when things are out of range (see above
-for list). Two more examples would be if a field is missing or if an unknown
-filed is in the file. In these cases (and any others that must be established as
-valid by <code>chkentry</code>) your submission would be rejected for violating <a href="next/rules.html#rule17">Rule
-17</a> and in particular because <code>chkentry</code> would not
-validate the <code>.auth.json</code> file.</p>
+not a string or is the wrong string. Another obvious example is when things are
+out of range (see above for list). Two more examples would be if a field is
+missing or if an unknown filed is in the file. In these cases (and any others
+that must be established as valid by <code>chkentry(1)</code>) your submission would be
+rejected for violating <a href="next/rules.html#rule17">Rule 17</a> and in particular
+because <code>chkentry(1)</code> would not validate the <code>.auth.json</code> file (and maybe other
+things too).</p>
 <p>If you wish to <strong>verify</strong> that your <code>.auth.json</code> file is valid <strong>JSON</strong> then see the
 FAQ on “<a href="#validating_json">validating JSON documents</a>”.</p>
 <p>Jump to: <a href="#">top</a></p>
@@ -2066,7 +2107,7 @@ for more information.</p>
 <ul>
 <li>The current version of the <code>.info.json</code> files.</li>
 </ul>
-<p><strong>NOTE:</strong> this <strong>MUST</strong> match <strong>THIS</strong> IOCCC’s <code>.info.json</code> version, defined as
+<p><strong>IMPORTANT:</strong> this <strong>MUST</strong> match <strong>THIS</strong> IOCCC’s <code>.info.json</code> version, defined as
 <code>INFO_VERSION</code> in
 <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/version.h">soup/version.h</a>
 in the <a href="https://github.com/ioccc-src/mkiocccentry/">mkiocccentry repo</a>. If
@@ -2075,7 +2116,7 @@ this is not the case your submission <strong>WILL BE</strong> rejected!</p></li>
 <ul>
 <li>Which contest number this is (e.g. 1 for 1984, 2 for 1985, 27 for 2020).</li>
 </ul>
-<p><strong>NOTE:</strong> this <strong>MUST</strong> match <strong>THIS</strong> IOCCC’s contest value, defined as
+<p><strong>IMPORTANT:</strong> this <strong>MUST</strong> match <strong>THIS</strong> IOCCC’s contest value, defined as
 <code>IOCCC_CONTEST</code> in
 <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h">soup/limit_ioccc.h</a>
 in the <a href="https://github.com/ioccc-src/mkiocccentry/">mkiocccentry repo</a>. If
@@ -2086,7 +2127,7 @@ this is not the case your submission <strong>WILL BE</strong> rejected!</p></li>
 </ul>
 <p><strong>NOTE:</strong> sometimes an IOCCC year runs into another year and the contest year
 might not match when it ends.</p>
-<p><strong>NOTE:</strong> this <strong>MUST</strong> match <strong>THIS</strong> IOCCC’s contest, defined as
+<p><strong>IMPORTANT:</strong> this <strong>MUST</strong> match <strong>THIS</strong> IOCCC’s contest, defined as
 <code>IOCCC_YEAR</code> in
 <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h">soup/limit_ioccc.h</a>
 in the <a href="https://github.com/ioccc-src/mkiocccentry/">mkiocccentry repo</a>. If
@@ -2095,7 +2136,7 @@ this is not the case your submission <strong>WILL BE</strong> rejected!</p></li>
 <ul>
 <li>The version of <code>mkiocccentry</code> that formed this <code>.auth.json</code> file.</li>
 </ul>
-<p><strong>NOTE:</strong> this <strong>MUST</strong> match <strong>THIS</strong> IOCCC’s <code>mkiocccentry</code> version,
+<p><strong>IMPORTANT:</strong> this <strong>MUST</strong> match <strong>THIS</strong> IOCCC’s <code>mkiocccentry</code> version,
 defined as <code>MKIOCCCENTRY_VERSION</code> in
 <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/version.h">soup/version.h</a>
 in the <a href="https://github.com/ioccc-src/mkiocccentry/">mkiocccentry repo</a>. If
@@ -2104,17 +2145,17 @@ this is not the case your submission <strong>WILL BE</strong> rejected!</p></li>
 <ul>
 <li>The version of <code>iocccsize</code> that was used for this <code>.info.json</code> file.</li>
 </ul>
-<p><strong>NOTE:</strong> this <strong>MUST</strong> match <strong>THIS</strong> IOCCC’s <code>iocccentry</code> version,
+<p><strong>IMPORTANT:</strong> this <strong>MUST</strong> match <strong>THIS</strong> IOCCC’s <code>iocccentry</code> version,
 defined as <code>IOCCCSIZE_VERSION</code> in
 <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/version.h">soup/version.h</a>
 in the <a href="https://github.com/ioccc-src/mkiocccentry/">mkiocccentry repo</a>. If
 this is not the case your submission <strong>WILL BE</strong> rejected!</p></li>
 <li><p><code>chkentry_version</code> (double quoted string)</p>
 <ul>
-<li>The version of <code>chkentry</code> that was used to validate this <code>.info.json</code>,
-assuming that it was created by <code>mkiocccentry</code>.</li>
+<li>The version of <code>chkentry</code> that was used to validate the submission
+directory, including the <code>.info.json</code> file.</li>
 </ul>
-<p><strong>NOTE:</strong> this <strong>MUST</strong> match <strong>THIS</strong> IOCCC’s <code>chkentry</code> version, defined
+<p><strong>IMPORTANT:</strong> this <strong>MUST</strong> match <strong>THIS</strong> IOCCC’s <code>chkentry</code> version, defined
 as <code>CHKENTRY_VERSION</code> in
 <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/version.h">soup/version.h</a>
 in the <a href="https://github.com/ioccc-src/mkiocccentry/">mkiocccentry repo</a>. If
@@ -2124,7 +2165,7 @@ this is not the case your submission <strong>WILL BE</strong> rejected!</p></li>
 <li>The version of <code>fnamchk</code> that <code>txzchk</code> uses to validate the filename of
 the xz compressed tarball.</li>
 </ul>
-<p><strong>NOTE:</strong> this <strong>MUST</strong> match <strong>THIS</strong> IOCCC’s <code>fnamchk</code> version, defined
+<p><strong>IMPORTANT:</strong> this <strong>MUST</strong> match <strong>THIS</strong> IOCCC’s <code>fnamchk</code> version, defined
 as <code>FNAMCHK_VERSION</code> in
 <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/version.h">soup/version.h</a>
 in the <a href="https://github.com/ioccc-src/mkiocccentry/">mkiocccentry repo</a>. If
@@ -2133,7 +2174,7 @@ this is not the case your submission <strong>WILL BE</strong> rejected!</p></li>
 <ul>
 <li>The version of <code>txzchk</code> used to validate the xz compressed tarball.</li>
 </ul>
-<p><strong>NOTE:</strong> this <strong>MUST</strong> match <strong>THIS</strong> IOCCC’s <code>txzchk</code> version, defined
+<p><strong>IMPORTANT:</strong> this <strong>MUST</strong> match <strong>THIS</strong> IOCCC’s <code>txzchk</code> version, defined
 as <code>TXZCHK_VERSION</code> in
 <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/version.h">soup/version.h</a>
 in the <a href="https://github.com/ioccc-src/mkiocccentry/">mkiocccentry repo</a>. If
@@ -2143,15 +2184,12 @@ this is not the case your submission <strong>WILL BE</strong> rejected!</p></li>
 <li>The IOCCC contestant ID used as a username in the form of <strong>in the form of
 a UUID</strong> and submission number; see the <a href="next/rules.html">rules</a> for more details
 on this, and in particular <a href="next/rules.html#rule17">Rule 17</a>.</li>
-</ul>
-<p><strong>NOTE:</strong> if the contest ID is <strong>NOT</strong> in this format then <code>fnamchk</code> will
-report it as an <strong>error</strong> and your submission <strong>WILL BE</strong> rejected for
-violating <a href="next/rules.html#rule17">Rule 17</a>!</p></li>
+</ul></li>
 <li><p><code>submit_slot</code> (number)</p>
 <ul>
 <li>The submission number.</li>
 </ul>
-<p><strong>NOTE:</strong> this <strong>MUST</strong> be within the range of 0 <strong>THROUGH</strong>
+<p><strong>IMPORTANT:</strong> this <strong>MUST</strong> be within the range of 0 <strong>THROUGH</strong>
 <code>MAX_SUBMIT_SLOT</code> (see
 <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h">soup/limit_ioccc.h</a>
 in the <a href="https://github.com/ioccc-src/mkiocccentry/">mkiocccentry repo</a>). If
@@ -2164,7 +2202,7 @@ rejected for violating <a href="next/rules.html#rule17">Rule 17</a>!</p></li>
 in the <a href="https://github.com/ioccc-src/mkiocccentry/">mkiocccentry repo</a>) that
 matches the regexp <code>[a-z0-9][a-z0-9_+-]*</code>.</li>
 </ul>
-<p><strong>NOTE:</strong> if this is <strong>NOT</strong> the case you stand a great risk of having your submission
+<p><strong>IMPORTANT:</strong> if this is <strong>NOT</strong> the case you stand a great risk of having your submission
 rejected for violating <a href="next/rules.html#rule17">Rule 17</a>!</p></li>
 <li><p><code>abstract</code> (double quoted string)</p>
 <ul>
@@ -2174,33 +2212,34 @@ rejected for violating <a href="next/rules.html#rule17">Rule 17</a>!</p></li>
 in the <a href="https://github.com/ioccc-src/mkiocccentry/">mkiocccentry repo</a>)</li>
 </ul>
 <p>The <code>abstract</code> may not contain a <code>;</code> (semicolon), nor <code>&amp;</code> (ampersand), nor <code>,</code> (comma).</p>
-<p><strong>NOTE:</strong> if your abstract is 0 in length or &gt; the maximum abstract length you
+<p><strong>IMPORTANT:</strong> if your abstract is 0 in length or &gt; the maximum abstract length you
 stand a great risk of having your submission rejected for violating <a href="next/rules.html#rule17">Rule
 17</a>!</p></li>
 <li><p><code>tarball</code> (double quoted string)</p>
 <ul>
 <li>The xz compressed tarball filename.</li>
 </ul>
-<p><strong>NOTE:</strong> this <strong>MUST</strong> match the actual tarball’s <strong>filename</strong> in order for
+<p><strong>IMPORTANT:</strong> this <strong>MUST</strong> match the actual tarball’s <strong>filename</strong> in order for
 this to be valid. If there is a mismatch you stand a great risk of having
 your submission rejected for violating <a href="next/rules.html#rule17">Rule 17</a>!
 Moreover, it is possible that <code>txzchk</code> will report a problem through
 <code>fnamchk(1)</code> which also puts you at great risk of violating <a href="next/rules.html#rule17">Rule
-17</a>. If <code>txzchk</code> does not detect this, though, it
-does not mean it’s a bug but rather that the directory in the tarball
-matches the filename.</p></li>
+17</a>. <code>txzchk</code> will use the output of <code>fnamchk</code> to
+obtain the correct directory <em>name</em> in the tarball; if <code>fnamchk</code> fails to
+validate your filename, or if you have the wrong directory name in the
+tarball, this will be flaggd.</p></li>
 <li><p><code>rule_2a_size</code> (number)</p>
 <ul>
 <li>The size calculated of <a href="next/rules.html#rule2a">Rule 2a</a>.</li>
 </ul>
-<p><strong>NOTE:</strong> if this violates <a href="next/rules.html#rule2a">Rule 2a</a> you stand a great
+<p><strong>IMPORTANT:</strong> if this violates <a href="next/rules.html#rule2a">Rule 2a</a> you stand a great
 chance of having your submission rejected for violating the
 <a href="next/rules.html">Rules</a>!</p></li>
 <li><p><code>rule_2b_size</code> (number)</p>
 <ul>
 <li>The size calculated of <a href="next/rules.html#rule2b">Rule 2b</a>.</li>
 </ul>
-<p><strong>NOTE:</strong> if this violates <a href="next/rules.html#rule2b">Rule 2b</a> you stand a great
+<p><strong>IMPORTANT:</strong> if this violates <a href="next/rules.html#rule2b">Rule 2b</a> you stand a great
 chance of having your submission rejected for violating the
 <a href="next/rules.html">Rules</a>!</p></li>
 <li><p><code>empty_override</code> (boolean)</p>
@@ -2212,7 +2251,7 @@ chance of having your submission rejected for violating the
 <li><code>true</code> if user overrides warning of <a href="next/rules.html#rule2a">Rule 2a</a>
 violation, else <code>false</code>.</li>
 </ul>
-<p><strong>NOTE:</strong> if the <a href="next/rules.html#rule2a">Rule 2a</a> calculated size is <strong>NOT</strong>
+<p><strong>IMPORTANT:</strong> if the <a href="next/rules.html#rule2a">Rule 2a</a> calculated size is <strong>NOT</strong>
 violated but this is <code>true</code> then you stand a good chance of having your
 submission rejected for violating <a href="next/rules.html#rule17">Rule 17</a>!</p></li>
 <li><p><code>rule_2a_mismatch</code> (boolean)</p>
@@ -2225,7 +2264,7 @@ same as the file size.</li>
 <li><code>true</code> if user overrides warning of <a href="next/rules.html#rule2b">Rule 2b</a>
 violation, else <code>false</code>.</li>
 </ul>
-<p><strong>NOTE:</strong> if the <a href="next/rules.html#rule2b">Rule 2b</a> calculated size is <strong>NOT</strong>
+<p><strong>IMPORTANT:</strong> if the <a href="next/rules.html#rule2b">Rule 2b</a> calculated size is <strong>NOT</strong>
 violated but this is <code>true</code> then you stand a good chance of having your
 submission rejected for violating <a href="next/rules.html#rule17">Rule 17</a>!</p></li>
 <li><p><code>highbit_warning</code> (boolean)</p>
@@ -2249,7 +2288,7 @@ bit set - octet value &gt;= 128); see <a href="next/rules.html#rule13">Rule 13</
 <li><code>true</code> if <code>prog.c</code> triggered a word buffer overflow (see <code>iocccsize</code>),
 else <code>false</code>.</li>
 </ul>
-<p><strong>NOTE:</strong> this does <strong>NOT</strong> mean that your code has been checked for buffer
+<p><strong>IMPORTANT:</strong> this does <strong>NOT</strong> mean that your code has been checked for buffer
 overflows in general.</p></li>
 <li><p><code>ungetc_warning</code> (boolean)</p>
 <ul>
@@ -2260,7 +2299,7 @@ overflows in general.</p></li>
 <li><code>true</code> if the user overrides any warnings about an incomplete/incorrect
 <code>Makefile</code> file, else <code>false</code>.</li>
 </ul>
-<p><strong>NOTE:</strong> if the <code>Makefile</code> file has no problems and this is <code>true</code> then
+<p><strong>IMPORTANT:</strong> if the <code>Makefile</code> file has no problems and this is <code>true</code> then
 you stand a good chance of having your submission rejected for violating
 <a href="next/rules.html#rule17">Rule 17</a>!</p>
 <p>See the
@@ -2270,7 +2309,7 @@ for more information.</p></li>
 <ul>
 <li><code>true</code> if the first rule in the <code>Makefile</code> file is <code>all</code>, else <code>false</code>.</li>
 </ul>
-<p><strong>NOTE:</strong> if the <code>Makefile</code> file does <strong>NOT</strong> have an <code>all</code> rule or it is not
+<p><strong>IMPORTANT:</strong> if the <code>Makefile</code> file does <strong>NOT</strong> have an <code>all</code> rule or it is not
 first and this boolean is <code>true</code> then you stand a good chance of having your
 submission rejected for violating <a href="next/rules.html#rule17">Rule 17</a>!</p>
 <p>See the
@@ -2280,7 +2319,7 @@ for more information.</p></li>
 <ul>
 <li><code>true</code> if the <code>Makefile</code> file has an <code>all</code> rule, else <code>false</code>.</li>
 </ul>
-<p><strong>NOTE:</strong> if the <code>Makefile</code> file does <strong>NOT</strong> have an <code>all</code> rule and this
+<p><strong>IMPORTANT:</strong> if the <code>Makefile</code> file does <strong>NOT</strong> have an <code>all</code> rule and this
 boolean is <code>true</code>, or if it does <strong>NOT</strong> have an <code>all</code> rule but
 <code>first_rule_is_all</code> is <code>true</code> then you stand a good chance of having your
 submission rejected for violating <a href="next/rules.html#rule17">Rule 17</a>!</p>
@@ -2291,7 +2330,7 @@ for more information.</p></li>
 <ul>
 <li><code>true</code> if the <code>Makefile</code> file has a <code>clean</code> rule, else <code>false</code>.</li>
 </ul>
-<p><strong>NOTE:</strong> if the <code>Makefile</code> file does <strong>NOT</strong> have a <code>clean</code> rule and this
+<p><strong>IMPORTANT:</strong> if the <code>Makefile</code> file does <strong>NOT</strong> have a <code>clean</code> rule and this
 boolean is <code>true</code> then you stand a good chance of having your submission
 rejected for violating <a href="next/rules.html#rule17">Rule 17</a>!</p>
 <p>See the
@@ -2301,7 +2340,7 @@ for more information.</p></li>
 <ul>
 <li><code>true</code> if the <code>Makefile</code> file has a <code>clobber</code> rule, else <code>false</code>.</li>
 </ul>
-<p><strong>NOTE:</strong> if the <code>Makefile</code> file does <strong>NOT</strong> have an <code>clobber</code> rule and this
+<p><strong>IMPORTANT:</strong> if the <code>Makefile</code> file does <strong>NOT</strong> have an <code>clobber</code> rule and this
 boolean is <code>true</code> then you stand a good chance of having your submission
 rejected for violating <a href="next/rules.html#rule17">Rule 17</a>!</p>
 <p>See the
@@ -2311,7 +2350,7 @@ for more information.</p></li>
 <ul>
 <li><code>true</code> if the <code>Makefile</code> file has a <code>try</code> rule, else <code>false</code>.</li>
 </ul>
-<p><strong>NOTE:</strong> if the <code>Makefile</code> file does <strong>NOT</strong> have an <code>try</code> rule and this
+<p><strong>IMPORTANT:</strong> if the <code>Makefile</code> file does <strong>NOT</strong> have a <code>try</code> rule and this
 boolean is <code>true</code> then you stand a good chance of having your submission
 rejected for violating <a href="next/rules.html#rule17">Rule 17</a>!</p>
 <p>See the
@@ -2321,7 +2360,7 @@ for more information.</p></li>
 <ul>
 <li><code>true</code> if the <code>test</code> ID was used to form the tarball, else <code>false</code>.</li>
 </ul>
-<p><strong>NOTE:</strong> if this is <code>true</code> then this may <strong>NOT</strong> be submitted to the
+<p><strong>IMPORTANT:</strong> if this is <code>true</code> then this may <strong>NOT</strong> be submitted to the
 contest! Please do <strong>NOT</strong> email the <a href="judges.html">Judges</a> your submission!</p></li>
 </ul>
 <p>Next comes the <code>manifest</code> <strong>array</strong> which <strong>MUST</strong> have AT LEAST the following.
@@ -2337,8 +2376,9 @@ See the
 FAQ on “<a href="#info_json">.info.json</a>”
 for more information.</li>
 </ul>
-<p><strong>NOTE:</strong> if this is <strong>NOT</strong> the case you stand a great chance of having your
-submission rejected for violating <a href="next/rules.html#rule17">Rule 17</a>!</p></li>
+<p><strong>IMPORTANT:</strong> if this is <strong>NOT</strong> the case you stand a
+great chance of having your submission rejected for violating <a href="next/rules.html#rule17">Rule
+17</a>!</p></li>
 <li><p><code>auth_JSON</code> (double quoted string)</p>
 <ul>
 <li>This <code>MUST</code> be <code>".auth.json"</code>, defined as <code>AUTH_JSON_FILENAME</code> in
@@ -2349,7 +2389,7 @@ See the
 FAQ on “<a href="#auth_json">.auth.json</a>”
 for more information.</li>
 </ul>
-<p><strong>NOTE:</strong> if this is <strong>NOT</strong> the case you stand a great chance of having your
+<p><strong>IMPORTANT:</strong> if this is <strong>NOT</strong> the case you stand a great chance of having your
 submission rejected for violating <a href="next/rules.html#rule17">Rule 17</a>!</p></li>
 <li><p><code>c_src</code> (double quoted string)</p>
 <ul>
@@ -2358,10 +2398,8 @@ submission rejected for violating <a href="next/rules.html#rule17">Rule 17</a>!<
 in the <a href="https://github.com/ioccc-src/mkiocccentry/">mkiocccentry repo</a>, and
 is your submission source code.</li>
 </ul>
-<p><strong>NOTE:</strong> if this is <strong>NOT</strong> the case you stand a great chance of having your
-submission rejected for violating <a href="next/rules.html#rule17">Rule 17</a>!</p>
-<p><strong>NOTE:</strong> if you provide to <code>mkiocccentry</code> a different filename it will be
-copied to <code>prog.c</code>.</p></li>
+<p><strong>IMPORTANT:</strong> if this is <strong>NOT</strong> the case you stand a great chance of having your
+submission rejected for violating <a href="next/rules.html#rule17">Rule 17</a>!</p></li>
 <li><p><code>Makefile</code> (double quoted string)</p>
 <ul>
 <li>This <code>MUST</code> be <code>"Makefile"</code>, defined as <code>MAKEFILE_FILENAME</code> in
@@ -2372,10 +2410,8 @@ See the
 FAQ on “<a href="#makefile">Makefile</a>”
 for more information.</li>
 </ul>
-<p><strong>NOTE:</strong> if this is <strong>NOT</strong> the case you stand a great chance of having your
-submission rejected for violating <a href="next/rules.html#rule17">Rule 17</a>!</p>
-<p><strong>NOTE:</strong> if you provide to <code>mkiocccentry</code> a different filename it will be
-copied to <code>Makefile</code>.</p></li>
+<p><strong>IMPORTANT:</strong> if this is <strong>NOT</strong> the case you stand a great chance of having your
+submission rejected for violating <a href="next/rules.html#rule17">Rule 17</a>!</p></li>
 <li><p><code>remarks</code> (double quoted string)</p>
 <ul>
 <li>This <code>MUST</code> be <code>"remarks.md"</code>, defined as <code>REMARKS_FILENAME</code> in
@@ -2386,10 +2422,8 @@ See the
 FAQ on “<a href="#remarks_md">remarks.md</a>”
 for more information.</li>
 </ul>
-<p><strong>NOTE:</strong> if this is <strong>NOT</strong> the case you stand a great chance of having your
-submission rejected for violating <a href="next/rules.html#rule17">Rule 17</a>!</p>
-<p><strong>NOTE:</strong> if you provide to <code>mkiocccentry</code> a different filename it will be
-copied to <code>remarks.md</code>.</p></li>
+<p><strong>IMPORTANT:</strong> if this is <strong>NOT</strong> the case you stand a great chance of having your
+submission rejected for violating <a href="next/rules.html#rule17">Rule 17</a>!</p></li>
 </ul>
 <p>The <code>manifest</code> <strong>array</strong> also <strong>OPTIONALLY</strong> has one or more of the field:</p>
 <ul>
@@ -2397,16 +2431,17 @@ copied to <code>remarks.md</code>.</p></li>
 <ul>
 <li>Any additional file that you need or want to include with your submission.</li>
 </ul>
-<p><strong>NOTE:</strong> this MUST <strong>NOT</strong> match a mandatory filename (see above list) and
-<code>chkentry</code> will verify this for you; it is <strong>ALSO</strong> an <strong>error</strong> if the
-filenames are not unique. In these cases you stand a great risk of having
-your submission rejected for violating <a href="next/rules.html#rule17">Rule 17</a>! On
-the other hand, <strong>ONLY</strong> <code>mkiocccentry</code> will verify that the files exist and
-can be read; <code>txzchk(1)</code> will <strong>NOT</strong> do this for you as it only <strong>LISTS</strong>
-the tarball: it does <strong>NOT</strong> extract it. Even so, the <a href="judges.html">Judges</a>
-<strong>WILL</strong> extract the tarball and if a file listed in the manifest does not
-exist your submission will very likely be rejected for not being as
-documented!</p></li>
+<p><strong>IMPORTANT:</strong> this MUST <strong>NOT</strong> match a mandatory filename (see above list)
+and <code>chkentry</code> will verify this for you; it is <strong>ALSO</strong> an <strong>error</strong> if the
+filenames are not unique, not POSIX plus + safe chars only, if they are the
+wrong permission and various other things. In these cases you stand a great
+risk of having your submission rejected for violating <a href="next/rules.html#rule17">Rule
+17</a>! On the other hand, <strong>ONLY</strong> <code>mkiocccentry</code> will
+verify that the files exist and can be read; <code>txzchk(1)</code> will <strong>NOT</strong> do
+this for you as it only <strong>LISTS</strong> the tarball: it does <strong>NOT</strong> extract it.
+Even so, the <a href="judges.html">Judges</a> <strong>WILL</strong> extract the tarball and if a
+file listed in the manifest does not exist your submission will very likely
+be rejected for not being as documented!</p></li>
 </ul>
 <p>Finally, after the <code>manifest</code> <strong>array</strong>, the following fields <strong>MUST</strong> exist:</p>
 <ul>
@@ -2414,7 +2449,7 @@ documented!</p></li>
 <ul>
 <li>Seconds since epoch when JSON (<code>.auth.json</code> or <code>.info.json</code>) file was formed (see <code>gettimeofday(2)</code>).</li>
 </ul>
-<p><strong>NOTE:</strong> this <strong>MUST</strong> be greater than or equal to <code>MIN_TIMESTAMP</code> (see
+<p><strong>IMPORTANT:</strong> this <strong>MUST</strong> be greater than or equal to <code>MIN_TIMESTAMP</code> (see
 <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h">soup/limit_ioccc.h</a>
 in the <a href="https://github.com/ioccc-src/mkiocccentry/">mkiocccentry repo</a>). If
 this is not the case your submission <strong>WILL BE</strong> rejected.</p></li>
@@ -2423,7 +2458,7 @@ this is not the case your submission <strong>WILL BE</strong> rejected.</p></li>
 <li>Microseconds since the tstamp (seconds since epoch when <code>.auth.json</code> was
 formed - see <code>gettimeofday(2)</code>) second.</li>
 </ul>
-<p><strong>NOTE:</strong> this <strong>MUST</strong> be within the range <code>MIN_FORMED_TIMESTAMP_USEC</code>
+<p><strong>IMPORTANT:</strong> this <strong>MUST</strong> be within the range <code>MIN_FORMED_TIMESTAMP_USEC</code>
 <strong>THROUGH</strong> <code>MAX_FORMED_TIMESTAMP_USEC</code> and is validated by
 <code>test_formed_timestamp_usec()</code> in
 <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/entry_util.c">soup/entry_util.c</a>
@@ -2434,7 +2469,7 @@ submission <strong>WILL BE</strong> rejected!</p></li>
 <ul>
 <li><code>"Thu Jan 01 00:00:00 1970 UTC"</code> (<code>gettimeofday(2)</code> epoch).</li>
 </ul>
-<p><strong>NOTE:</strong> this <strong>MUST</strong> be <code>"Thu Jan 01 00:00:00 1970 UTC"</code> which is <code>#define</code>d
+<p><strong>IMPORTANT:</strong> this <strong>MUST</strong> be <code>"Thu Jan 01 00:00:00 1970 UTC"</code> which is <code>#define</code>d
 as <code>TIMESTAMP_EPOCH</code> in
 <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h">soup/limit_ioccc.h</a>
 in the <a href="https://github.com/ioccc-src/mkiocccentry/">mkiocccentry repo</a>. If
@@ -2443,25 +2478,26 @@ this is not the case your submission <strong>WILL BE</strong> rejected!</p></li>
 <ul>
 <li>Minimum number of second since epoch for <strong>this</strong> IOCCC.</li>
 </ul>
-<p><strong>NOTE:</strong> this <strong>MUST</strong> be &gt;= <code>MIN_TIMESTAMP</code> defined in
+<p><strong>IMPORTANT:</strong> this <strong>MUST</strong> be &gt;= <code>MIN_TIMESTAMP</code> defined in
 <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h">soup/limit_ioccc.h</a>
 in the <a href="https://github.com/ioccc-src/mkiocccentry/">mkiocccentry repo</a>. If
 this is not the case your submission <strong>WILL BE</strong> rejected!</p></li>
 </ul>
-<p>This file will be verified with the <code>chkentry(1)</code> tool and if there are any
-problems <strong>it is an error</strong> and the tarball will <strong>NOT</strong> be formed by
-<code>mkiocccentry</code>; otherwise the <code>txzchk(1)</code> tool will be executed on the tarball.</p>
+<p>This file will be validated with the <code>chkentry(1)</code> tool and if there are any
+problems with it or the submission directory, <strong>it is an error</strong>. If there is an
+error the tarball will <strong>NOT</strong> be formed by <code>mkiocccentry</code>; otherwise the
+<code>txzchk(1)</code> tool will be executed on the tarball.</p>
 <p>The <a href="judges.html">Judges</a> <strong>WILL</strong> use <code>chkentry(1)</code> on this file during the
 judging process and if it does not pass your submission <strong>WILL BE</strong> rejected.</p>
 <p>An obvious example where <code>chkentry</code> would fail to validate <code>.info.json</code> is if
 there is a mismatch of type in the JSON file with what is expected, for
 instance, if in <code>.info.json</code> the <code>no_comment</code> that we chose to not comment on is
-not a string. Another obvious example is when things are out of range (see above
-for list). Two more examples would be if a field is missing or if an unknown
-filed is in the file. In these cases (and any others that must be established as
-valid by <code>chkentry</code>) your submission would be rejected for violating <a href="next/rules.html#rule17">Rule
-17</a> and in particular because <code>chkentry</code> would not
-validate the <code>.info.json</code> file.</p>
+not a string or is the wrong string. Another obvious example is when things are
+out of range (see above for list). Two more examples would be if a field is
+missing or if an unknown filed is in the file. In these cases (and any others
+that must be established as valid by <code>chkentry</code>) your submission would be
+rejected for violating <a href="next/rules.html#rule17">Rule 17</a> and in particular
+because <code>chkentry</code> would not validate the <code>.info.json</code> file.</p>
 <p>If you wish to <strong>verify</strong> that your <code>.info.json</code> file is valid <strong>JSON</strong> then see the
 FAQ on “<a href="#validating_json">validating JSON documents</a>”.</p>
 <p>Jump to: <a href="#">top</a></p>
@@ -4049,8 +4085,8 @@ below note) this would be advisable.</p>
 <p><strong>NOTE</strong>: different versions of <code>clang</code> have other differences as well. For instance
 a defect of <code>clang</code> that required numerous entries to be fixed for clang is that it
 requires that <code>main()</code>’s arguments to be of a specific type. However some
-versions of <code>clang</code> are more strict in the number of args allowed.
-Jump to: <a href="#">top</a></p>
+versions of <code>clang</code> are more strict in the number of args allowed.</p>
+<p>Jump to: <a href="#">top</a></p>
 <hr style="width:50%;text-align:left;margin-left:0">
 <hr style="width:50%;text-align:left;margin-left:0">
 <div id="running_entries">

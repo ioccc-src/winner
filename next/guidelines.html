@@ -436,8 +436,9 @@ Mastodon</a> feed as <em>sometimes</em> the
 <p>See our
 FAQ on “<a href="../faq.html#feedback">rules, guidelines, tools feedback</a>”
 as well as our
-FAQ on “<a href="../faq.html#question">about asking questions</a>”
-about these guidelines. You might also find the FAQ in general useful, especially the
+FAQ on “<a href="../faq.html#question">asking questions</a>”
+about these rules. You might also find the FAQ in general useful, as well as the
+<a href="../quick-start.html">quick start guide</a> and <a href="register.html">how to register</a>.
 FAQ on “<a href="../quick-start.html#enter">how to enter the IOCCC</a>”.</p>
 <h1 id="the-ioccc-is-pending">The IOCCC is pending</h1>
 <p>While the IOCCC is not open yet, there is a tentative opening date for the next IOCCC.</p>
@@ -461,11 +462,11 @@ writing by <a href="../contact.html">contacting the judges</a>.</p>
 </div>
 </div>
 <p class="leftbar">
-These <a href="guidelines.html">IOCCC guidelines</a> are version <strong>28.38 2025-02-12</strong>.
+These <a href="guidelines.html">IOCCC guidelines</a> are version <strong>28.39 2025-02-26</strong>.
 </p>
 <p class="leftbar">
-The <a href="guidelines.md" download="guidelines.md">markdown form of these guidelines</a>
-is available for download.
+The markdown form of these guidelines <a href="guidelines.md"
+download="guidelines.md">is available for download</a>.
 </p>
 <p><strong>IMPORTANT</strong>: Be <strong>SURE</strong> to read the <a href="rules.html">IOCCC rules</a>.</p>
 <p>Jump to: <a href="#">top</a></p>
@@ -602,11 +603,12 @@ The <code>-d</code> option is an alias for <code>-s 21701</code>. An example use
 </p>
 <pre><code>    mkiocccentry -d workdir topdir</code></pre>
 <p class="leftbar">
-where <code>workdir</code> is the directory which the tarball will be formed and the
+where <code>workdir</code> is the directory where the tarball will be formed and the
 <code>topdir</code> is the directory which has the required files (<code>prog.c</code>, <code>Makefile</code> and
-<code>remarks.md</code>) along with extra data files you wish to submit. Be aware
-that if the directory exists already, you will have to remove it or move it
-before this option will work a second time, just like in normal mode.
+<code>remarks.md</code>) along with extra data files (and if you wish, directories) you
+wish to submit. Be aware that if the directory exists already, you will have to
+remove it or move it before this option will work a second time, just like in
+normal mode.
 </p>
 <p class="leftbar">
 <strong>IMPORTANT NOTE</strong>: if you run the program outside the repo directory
@@ -616,9 +618,10 @@ are required like <code>chkentry(1)</code>, <code>txzchk(1)</code> and <code>fna
 have installed them but some tools are out of date (in the install path) it will
 cause problems. Additionally, if you do not have the most recent version when
 submitting a tarball it will be rejected for not having the right versions of
-the tools. This is why you <strong>MUST</strong> make sure you have the most recent
-version of all the tools and you either run it from the repo directory itself OR
-you install them (<code>make install</code> as root or via <code>sudo</code>).
+the tools. This is why you <strong>MUST</strong> make sure you have the most recent version
+of all the tools and you either run it from the repo directory itself OR you
+install them (<code>make install</code> as via <code>sudo</code> or as root). We recommend you install
+the tools but if you wish to run it from the repo directory you may.
 </p>
 <p class="leftbar">
 <a href="rules.html#rule17">Rule 17</a> has been <strong>significantly modified</strong>
@@ -652,8 +655,8 @@ previously uploaded submission by rebuilding your submission with the
 To help you with this, so that you do not have to repeatedly answer all the
 questions, the <code>mkiocccentry(1)</code> tool has the options <code>-a answers</code>, <code>-A answers</code>
 and <code>-i answers</code>, where <code>-a</code> will write to an answers file (if it does not
-already exist), <code>-A</code> will overwrite the file and <code>-i</code> will read the answers from
-the file. If you use <code>-A</code>, be sure you don’t overwrite another file by accident!
+already exist), <code>-A</code> <strong>WILL OVERWRITE THE FILE</strong> and <code>-i</code> will read the answers from
+the file. If you use <code>-A</code>, <strong>BE SURE</strong> you don’t overwrite another file by accident!
 </p>
 <p class="leftbar">
 Once the contest enters the <strong><a href="../status.html#judging">judging</a></strong> state, you will
@@ -854,10 +857,11 @@ its algorithm.
 </p>
 <p class="leftbar">
 If <code>mkiocccentry</code> encounters an <strong>error</strong> the program will exit and the xz
-compressed tarball <strong>will not be formed</strong>. For instance, if <code>chkentry(1)</code> (see
-below) fails to validate the <code>.auth.json</code> or <code>.info.json</code>
-<a href="https://www.json.org/json-en.html">JSON</a> files (see below) that <code>mkiocccentry(1)</code> creates,
-it is an error and <strong>possibly</strong> a bug that you should <a href="https://github.com/ioccc-src/mkiocccentry/issues/new?assignees=&amp;labels=bug&amp;projects=&amp;template=bug_report.yml&amp;title=%5BBug%5D+%3Ctitle%3E">report as a bug at the
+compressed tarball <strong>will not be formed</strong>. For instance, if
+<a href="#chkentry">chkentry(1)</a> fails to validate the <code>.auth.json</code> or <code>.info.json</code>
+<a href="https://www.json.org/json-en.html">JSON</a> files (see below) that
+<code>mkiocccentry(1)</code> creates, or anything else <code>mkiocccentry(1)</code> does, it is an
+<strong>error</strong> and <strong>possibly</strong> a bug that you should <a href="https://github.com/ioccc-src/mkiocccentry/issues/new?assignees=&amp;labels=bug&amp;projects=&amp;template=bug_report.yml&amp;title=%5BBug%5D+%3Ctitle%3E">report as a bug at the
 mkiocccentry bug report
 page</a>.
 <strong>PLEASE run the <code>bug_report.sh</code> script to help us out here!</strong> See the
@@ -878,7 +882,9 @@ Needless to say, we do <strong>NOT</strong> recommend these options.
 </p>
 <p class="leftbar">
 In many places it will prompt you to verify what you input, allowing you to
-correct details as you go along.
+correct details as you go along. Be advised that there is a default answer and
+if you press enter it will proceed with that default, so make sure you have
+provided the correct answer.
 </p>
 <p>Jump to: <a href="#">top</a></p>
 <div id="mkiocccentry-synopsis">
@@ -891,9 +897,10 @@ The synopsis of the <code>mkiocccentry(1)</code> tool is:
 <p class="leftbar">
 To help you with editing a submission, the <code>mkiocccentry(1)</code> tool has
 some options to write <em>OR</em> read from an answers file so you do not have to input
-the information about the author(s) and the submission more than once (unless of
+the information about the author(s) and the submission more than once, unless of
 course you need to make some changes, in which case you can use the option that
-overwrites the file).
+overwrites the file. If you do use the overwrite option, <strong>MAKE SURE</strong> you do
+not overwrite another file!
 </p>
 <p class="leftbar">
 See the
@@ -911,8 +918,9 @@ execute one or more additional tools.
 </p>
 <h2 id="iocccsize"><code>iocccsize</code></h2>
 <p class="leftbar">
-<code>mkiocccentry(1)</code> will use code from <code>iocccsize(1)</code> which
-detects a number of issues that you may ignore, if you wish, as noted above.
+<code>mkiocccentry(1)</code> will use code from <code>iocccsize(1)</code> which detects a number of
+issues (such as <a href="rules.html#rule2">Rule 2</a>) that you may ignore, if you wish, as
+noted above.
 </p>
 <p class="leftbar">
 In other words, you no longer need to run <code>iocccsize</code> manually. However, the
@@ -929,7 +937,12 @@ submission. These files <strong>MUST</strong> pass the checks of <code>chkentry(
 If <code>chkentry</code> does not pass and you used <code>mkiocccentry(1)</code> it is <strong>very likely</strong> a
 bug and you should <a href="https://github.com/ioccc-src/mkiocccentry/issues/new?assignees=&amp;labels=bug&amp;projects=&amp;template=bug_report.yml&amp;title=%5BBug%5D+%3Ctitle%3E">report it as a bug at the mkiocccentry issues
 page</a>.
-See the
+<strong>PLEASE</strong> run the command:
+</p>
+<pre><code>    make bug_report</code></pre>
+<p class="leftbar">
+from the top level repo directory itself.
+See also the
 FAQ on “<a href="../faq.html#mkiocccentry_bugs">reporting mkiocccentry bugs</a>”.
 </p>
 <p class="leftbar">
@@ -939,10 +952,15 @@ executed on it. In this case, there should be no problems, as <code>mkiocccentry
 <strong>NOT</strong> form a tarball if there are any issues.
 </p>
 <p class="leftbar">
-If <code>mkiocccentry(1)</code> is used and <code>chkentry(1)</code> fails to validate either of the
-files, then unless it is a system specific problem, it is likely a bug in
+<strong>NOTE</strong>: <code>chkentry(1)</code> also validates other things in your submission
+directory.
+</p>
+<p class="leftbar">
+If <code>mkiocccentry(1)</code> is used and <code>chkentry(1)</code> fails to validate your submission
+directory, then unless it is a system specific problem, it could be a bug in
 <code>mkiocccentry(1)</code>, <code>chkentry(1)</code> or possibly <code>jparse</code>, though this is quite
-unlikely.
+unlikely. Nonetheless, if you believe there is a bug, you may report it as
+explained above.
 </p>
 <p class="leftbar">
 If you want to know what <code>.auth.json</code> is, see the
@@ -993,15 +1011,16 @@ installed separately, in order to use the tools in <code>mkiocccentry</code>.
 In other words, <code>mkiocccentry</code> <strong>contains everything</strong> you need, and <em>even if you
 do install</em> the libraries from their respective repos, it/they will <strong>not be
 used</strong> when compiling the <code>mkiocccentry</code> tools. This is important to
-make sure that you’re using the correct versions, which is verified by
-<code>chkentry</code>. See <a href="rules.html#rule17">Rule 17</a>!
+make sure that you’re using the correct versions, which is also verified by
+<code>chkentry</code> (in the JSON files created by <code>mkiocccentry(1)</code>). See <a href="rules.html#rule17">Rule
+17</a>!
 </p>
 <p class="leftbar">
 Please see the
 FAQ on “<a href="../faq.html#chkentry">validating .auth.json and/or .info.json files</a>
 for more details on <code>chkentry</code> and how you can use it to validate your
-<code>.auth.json</code> and <code>.info.json</code> files manually, without having to repackage your
-submission.
+<code>.auth.json</code> and <code>.info.json</code> files (and your submission directory in general)
+manually, without having to repackage your submission.
 </p>
 <p class="leftbar">
 You might also wish to see the
@@ -1018,7 +1037,8 @@ compressed tarball; if any issues are found (‘<code>feathers are stuck in the 
 <code>mkiocccentry(1)</code></strong>, then it is <strong>possibly</strong> a bug in one of the tools and you
 might want to <a href="https://github.com/ioccc-src/mkiocccentry/issues/new?assignees=&amp;labels=bug&amp;projects=&amp;template=bug_report.yml&amp;title=%5BBug%5D+%3Ctitle%3E">report it as a bug at the mkiocccentry bug report
 page</a>. <strong>PLEASE run the
-<code>bug_report.sh</code> script to help us out here!</strong> See the
+<code>bug_report.sh</code> script to help us out here!</strong> You may do this by running from
+the top level directory of the repo <code>make bug_report</code>. See the
 FAQ on “<a href="../faq.html#mkiocccentry_bugs">report mkiocccentry bugs</a>”.
 </p>
 <p class="leftbar">
@@ -1055,9 +1075,9 @@ an extra file, not an optional file.
 <p class="leftbar">
 In particular, any file that is not <code>prog.c</code>, <code>Makefile</code>, <code>remarks.md</code>,
 <code>try.sh</code>, <code>prog.alt.c</code> or <code>try.alt.sh</code> will be counted as an extra file, and if
-<code>try.sh</code>, <code>prog.alt.c</code> or <code>try.alt.sh</code> are not in the top level directory they
-will also be counted as an extra file. The <code>.info.json</code> and <code>.auth.json</code> files
-are not counted as extra files but are required.
+<code>try.sh</code>, <code>prog.alt.c</code> or <code>try.alt.sh</code> are not in the top level submission
+directory they will also be counted as an extra file. The <code>.info.json</code> and
+<code>.auth.json</code> files are not counted as extra files but are required.
 </p>
 <p class="leftbar">
 In other words, the actual amount of <strong>EXTRA</strong> files is 31.
@@ -1078,7 +1098,9 @@ section</a> for more details on this important tool.
 </p>
 <p class="leftbar">
 If you <strong>DO</strong> include a tarball, and the build process or the program extracts
-said tarball(s), the make <code>clobber</code> rule <strong>MUST</strong> remove them.
+said tarball(s), the make <code>clobber</code> rule <strong>MUST</strong> remove them. Even so, if you
+include a tarball to get past the limit on the number of files, you <strong>MUST</strong>
+justify this in your remarks!
 </p>
 <p class="leftbar">
 <strong>IMPORTANT REMINDER</strong>: make <strong>SURE</strong> your tarball does <strong>NOT</strong> reveal who you are!
@@ -1442,6 +1464,10 @@ use of <code>git(1)</code> or <code>gh(1)</code>, just be sure that your submiss
 submission Makefile don’t depend on such tools.
 </p>
 <p class="leftbar">
+Of course if you do use GitHub to work on your submission, you might want to
+make the repo private so you don’t reveal who you are. :-)
+</p>
+<p class="leftbar">
 If this is not clear, please do <strong>NOT</strong> use these tools to help with the
 <code>clobber</code> rule! For instance, do <strong>NOT</strong> use <code>git clean</code>! Not only does this
 depend on the user having <code>git(1)</code> but it also does not account for the
@@ -1460,6 +1486,12 @@ In other words, for <code>make clobber</code>, do something like:
             -git clean -f</code></pre>
 <p class="leftbar">
 And do <strong>NOT</strong> use <code>git</code> for any other tool either.
+</p>
+<p class="leftbar">
+<strong>NOTE</strong>: <code>mkiocccentry(1)</code> will directly run <code>make clobber</code> in the submission
+directory. An although it is not an error if this fails, if it fails because the
+Makefile does not have a clobber rule, it will be flagged by <code>mkiocccentry(1)</code>
+(you may ignore this but it does put you at a risk of violating the rules).
 </p>
 <p>Jump to: <a href="#">top</a></p>
 <div id="likes">
