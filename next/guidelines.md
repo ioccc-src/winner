@@ -535,7 +535,7 @@ its algorithm.
 <p class="leftbar">
 If `mkiocccentry` encounters an **error** the program will exit and the xz
 compressed tarball **will not be formed**. For instance, if
-[chkentry(1)](#chkentry) fails to validate the `.auth.json` or `.info.json`
+[chkentry](#chkentry) fails to validate the `.auth.json` or `.info.json`
 [JSON](https://www.json.org/json-en.html) files (see below) that
 `mkiocccentry(1)` creates, or anything else `mkiocccentry(1)` does, it is an
 **error** and **possibly** a bug that you should [report as a bug at the
