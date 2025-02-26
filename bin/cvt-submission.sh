@@ -14,7 +14,7 @@
 #
 #   chongo (Landon Curt Noll, http://www.isthe.com/chongo/index.html) /\oo/\
 #
-# with useful improvements by:
+# with useful improvements and bug fixes by:
 #
 #	@xexyl
 #	https://xexyl.net		Cody Boone Ferguson
@@ -106,7 +106,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.3.2 2025--1-18"
+export VERSION="1.3.3 2025-02-26"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -1032,11 +1032,12 @@ export INDEX_HTML="$YYYY_DIR/index.html"
 # determine template files
 #
 export TEMPLATE_DIR="template"
+export NEXT_DIR="next"
 export TEMPLATE_ENTRY_DIR="$TEMPLATE_DIR/entry"
 export TEMPLATE_GITIGNORE="$TEMPLATE_ENTRY_DIR/gitignore"
 export TEMPLATE_README_MD_HEAD="$TEMPLATE_ENTRY_DIR/README.md.head"
 export TEMPLATE_README_MD_TAIL="$TEMPLATE_ENTRY_DIR/README.md.tail"
-export TEMPLATE_TRY_SH="$TEMPLATE_DIR/try.sh"
+export TEMPLATE_TRY_SH="$NEXT_DIR/try.sh"
 
 
 # determine TARBALL filename
@@ -1096,6 +1097,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: README_MD=$README_MD" 1>&2
     echo "$0: debug[3]: INDEX_HTML=$INDEX_HTML" 1>&2
     echo "$0: debug[3]: TEMPLATE_DIR=$TEMPLATE_DIR" 1>&2
+    echo "$0: debug[3]: NEXT_DIR=$NEXT_DIR" 1>&2
     echo "$0: debug[3]: TEMPLATE_ENTRY_DIR=$TEMPLATE_ENTRY_DIR" 1>&2
     echo "$0: debug[3]: TEMPLATE_GITIGNORE=$TEMPLATE_GITIGNORE" 1>&2
     echo "$0: debug[3]: TEMPLATE_README_MD_HEAD=$TEMPLATE_README_MD_HEAD" 1>&2
@@ -1128,8 +1130,12 @@ if [[ ! -f $TEMPLATE_README_MD_TAIL ]]; then
     echo "$0: ERROR: missing template README.md.tail file: $TEMPLATE_README_MD_TAIL" 1>&2
     exit 6
 fi
-if [[ ! -f $TRY_SH ]]; then
-    echo "$0: ERROR: missing template try.sh file: $TRY_SH" 1>&2
+if [[ ! -d $NEXT_DIR ]]; then
+    echo "$0: ERROR: missing next directory: $NEXT_DIR" 1>&2
+    exit 6
+fi
+if [[ ! -f $TEMPLATE_TRY_SH ]]; then
+    echo "$0: ERROR: missing next/try.sh: $TEMPLATE_TRY_SH" 1>&2
     exit 6
 fi
 
@@ -1253,19 +1259,19 @@ fi
 # perform the semantic check on .info.json and .auth.json
 #
 if [[ $V_FLAG -ge 1 ]]; then
-    echo "$0: debug[1]: about to run: $CHKENTRY_TOOL -v 1 -- $AUTH_JSON $INFO_JSON" 1>&2
+    echo "$0: debug[1]: about to run: $CHKENTRY_TOOL -v 1 $YYYY_DIR" 1>&2
     "$CHKENTRY_TOOL" -v 1 -- "$AUTH_JSON" "$INFO_JSON"
     status="$?"
     if [[ $status -ne 0 ]]; then
-	echo "$0: ERROR: $CHKENTRY_TOOL -v 1 -- $AUTH_JSON $INFO_JSON failed," \
+	echo "$0: ERROR: $CHKENTRY_TOOL -v 1 -- $YYYY_DIR failed," \
 	      "error code: $status" 1>&2
 	exit 7
     fi
 else
-    "$CHKENTRY_TOOL" -- "$AUTH_JSON" "$INFO_JSON"
+    "$CHKENTRY_TOOL" -- "$YYYY_DIR"
     status="$?"
     if [[ $status -ne 0 ]]; then
-	echo "$0: $CHKENTRY_TOOL --  $AUTH_JSON $INFO_JSON failed," \
+	echo "$0: $CHKENTRY_TOOL --  $YYYY_DIR failed," \
 	      "error code: $status" 1>&2
 	exit 7
     fi
@@ -2115,7 +2121,7 @@ if [[ -z $NOOP ]]; then
     if [[ ! -f $DOT_GITIGNORE ]]; then
 	if [[ $V_FLAG -ge 3 ]]; then
 	    echo  "$0: debug[3]: about to run: cp -f -p -v $TEMPLATE_GITIGNORE $DOT_GITIGNORE" 1>&2
-	    cp -f -p -v "$YYYY_DIR/$PROG_C" "$DOT_GITIGNORE"
+	    cp -f -p -v "$YYYY_DIR/$DOT_GITIGNORE" "$DOT_GITIGNORE"
 	    status="$?"
 	    if [[ $status -ne 0 ]]; then
 		echo "$0: ERROR: cp -f -p -v $TEMPLATE_GITIGNORE $DOT_GITIGNORE failed," \
@@ -2145,7 +2151,7 @@ if [[ -z $NOOP ]]; then
     if [[ ! -f $TRY_SH ]]; then
 	if [[ $V_FLAG -ge 3 ]]; then
 	    echo  "$0: debug[3]: about to run: cp -f -p -v $TEMPLATE_TRY_SH $TRY_SH" 1>&2
-	    cp -f -p -v "$YYYY_DIR/$PROG_C" "$TRY_SH"
+	    cp -f -p -v "$TEMPLATE_TRY_SH" "$TRY_SH"
 	    status="$?"
 	    if [[ $status -ne 0 ]]; then
 		echo "$0: ERROR: cp -f -p -v $TEMPLATE_TRY_SH $TRY_SH failed," \
