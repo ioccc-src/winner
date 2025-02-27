@@ -175,7 +175,7 @@ See also [Rule 17](next/rules.html#rule17)!
 installed the tools (and we **STRONGLY** recommend you **do** install them),
 then you will have to specify the options for the tools that are required like
 `chkentry(1)`, `txzchk(1)` and `fnamchk(1)`. And remember to make sure you have
-the latest version so you do not violate [Rule 17](rules.html#rule17).
+the latest version so you do not violate [Rule 17](next/rules.html#rule17).
 See the
 FAQ on "[obtaining the latest mkiocccentry tools](faq.html#obtaining_mkiocccentry)",
 the
