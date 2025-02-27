@@ -14,9 +14,8 @@ Mastodon](https://fosstodon.org/@ioccc) feed as _sometimes_ the
 See our
 FAQ on "[rules, guidelines, tools feedback](../faq.html#feedback)"
 as well as our
-FAQ on "[asking questions](../faq.html#question)"
-about these rules. You might also find the FAQ in general useful, as well as the
-[quick start guide](../quick-start.html) and [how to register](register.html).
+FAQ on "[about asking questions](../faq.html#question)"
+about these guidelines. You might also find the FAQ in general useful, especially the
 FAQ on "[how to enter the IOCCC](../quick-start.html#enter)".
 
 
