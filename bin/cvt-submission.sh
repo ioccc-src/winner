@@ -122,15 +122,6 @@ if [[ $status -eq 0 ]]; then
     TOPDIR=$("$GIT_TOOL" rev-parse --show-toplevel)
 fi
 #
-CHKENTRY_TOOL=$(type -P chkentry)
-export CHKENTRY_TOOL
-if [[ -z "$CHKENTRY_TOOL" ]]; then
-    echo "$0: FATAL: chkentry tool is not installed or not in \$PATH" 1>&2
-    echo "$0: Notice: if needed: $GIT_TOOL clone $MKIOCCCENTRY_REPO; cd mkiocccentry" 1>&2
-    echo "$0: Notice: then if needed: make clobber all install" 1>&2
-    exit 5
-fi
-#
 VERGE=$(type -P verge)
 export VERGE
 if [[ -z $VERGE ]]; then
@@ -157,6 +148,25 @@ JSTRDECODE_VERSION=$("$JSTRDECODE" -V | head -1 | awk '{print $3;}')
 if ! "$VERGE" "$JSTRDECODE_VERSION" "$MIN_JSTRDECODE_VERSION"; then
     echo "$0: FATAL: jstrdecode version: $JSTRDECODE_VERSION < minimum version: $MIN_JSTRDECODE_VERSION" 1>&2
     echo "$0: notice: consider updating jstrdecode from mkiocccentry repo" 1>&2
+    echo "$0: notice: run: git clone https://github.com/ioccc-src/mkiocccentry.git" 1>&2
+    echo "$0: notice: then: cd mkiocccentry && make clobber all" 1>&2
+    echo "$0: notice: then: cd jparse && sudo make install clobber" 1>&2
+    exit 5
+fi
+#
+CHKENTRY_TOOL=$(type -P chkentry)
+export CHKENTRY_TOOL
+if [[ -z "$CHKENTRY_TOOL" ]]; then
+    echo "$0: FATAL: chkentry tool is not installed or not in \$PATH" 1>&2
+    echo "$0: Notice: if needed: $GIT_TOOL clone $MKIOCCCENTRY_REPO; cd mkiocccentry" 1>&2
+    echo "$0: Notice: then if needed: make clobber all install" 1>&2
+    exit 5
+fi
+export MIN_CHKENTRY_VERSION="1.1.5"
+CHKENTRY_VERSION=$("$CHKENTRY" -V | head -1 | awk '{print $3;}')
+if ! "$VERGE" "$CHKENTRY_VERSION" "$MIN_CHKENTRY_VERSION"; then
+    echo "$0: FATAL: chkentry version: $CHKENTRY_VERSION < minimum version: $MIN_CHKENTRY_VERSION" 1>&2
+    echo "$0: notice: consider updating chkentry from mkiocccentry repo" 1>&2
     echo "$0: notice: run: git clone https://github.com/ioccc-src/mkiocccentry.git" 1>&2
     echo "$0: notice: then: cd mkiocccentry && make clobber all" 1>&2
     echo "$0: notice: then: cd jparse && sudo make install clobber" 1>&2
