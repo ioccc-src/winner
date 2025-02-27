@@ -1,3 +1,5 @@
+This is quick start guide is version **28.0.0 2025-02-27**.
+
 <div id="enter_questions">
 <div id="enter">
 # Entering the IOCCC: the bare minimum you need to know
@@ -8,7 +10,7 @@ To submit your code to the IOCCC, you **MUST** follow these steps:
 
 
 <div id="step_0">
-#### 0. Verify that the IOCCC is pending or open for submissions
+## 0. Verify that the IOCCC is pending or open for submissions
 </div>
 
 First, check the "**[current status of the IOCCC](status.html)**" page to see current contest status.
@@ -21,7 +23,7 @@ See also the [IOCCC news](news.html#news) for more information.
 
 
 <div id="step_1">
-#### 1. Read the latest IOCCC rules and review the IOCCC guidelines
+## 1. Read the latest IOCCC rules and review the IOCCC guidelines
 </div>
 
 Please pay close attention to the [official IOCCC rules](next/rules.html).
@@ -33,7 +35,7 @@ suggestions, useful hints, and IOCCC humor.  :-)
 
 <div id="step_2">
 <div id="register">
-#### 2. Register for the IOCCC
+## 2. Register for the IOCCC
 </div>
 </div>
 
@@ -45,7 +47,7 @@ then follow the directions on "**[how to register for the IOCCC](next/register.h
 
 
 <div id="step_3">
-#### 3. Wait for your submit server username and initial password
+## 3. Wait for your submit server username and initial password
 </div>
 
 Once you have [registered for the IOCCC](next/register.html),
@@ -74,7 +76,7 @@ for assistance.
 
 
 <div id="step_4">
-#### 4. Login to the submit server and change your password
+## 4. Login to the submit server and change your password
 </div>
 
 Using the **Username** and **Initial password** you receive via email in
@@ -90,7 +92,7 @@ Please visit the "**[change your submit server initial password](next/pw-change.
 
 
 <div id="step_5">
-#### 5. Obtain and compile the latest mkiocccentry toolkit
+## 5. Obtain and compile the latest mkiocccentry toolkit
 </div>
 
 Once the contest is [open](status.html#open), download the most recent
@@ -102,14 +104,16 @@ could change.  Once the content is [open](status.html#open), be sure
 you **have the latest** version installed.
 
 To help you, please see the
-FAQ on "[how to obtain the most recent mkiocccentry](#obtaining_mkiocccentry)"
+FAQ on "[how to obtain the most recent mkiocccentry](faq.html#obtaining_mkiocccentry)",
+the
+FAQ on "[compiling mkiocccentry toolkit](faq.html#compiling_mkiocccentry)"
 and the
-FAQ on "[compiling mkiocccentry toolkit](#compiling_mkiocccentry)",
+FAQ on "[installing the mkiocccentry tools](faq.html#install)"
 for more details.
 
 
 <div id="step_6">
-#### 6. Run the mkiocccentry tool to form your submission tarball
+## 6. Run the mkiocccentry tool to form your submission tarball
 </div>
 
 For more details on `mkiocccentry`, what it is, how to obtain it and how to use
@@ -145,7 +149,7 @@ Three files are required to exist in `topdir`:
 
 * `Makefile`
 
-    Makefile to build (make all) and cleanup (make clean & make clobber) as well
+    Makefile to build (make all) and clean up (make clean & make clobber) as well
     as the other required rules
 
 * `remarks.md`
@@ -155,26 +159,6 @@ Three files are required to exist in `topdir`:
     for more info.
 
 **NOTE**: Please see our [IOCCC markdown guide](markdown.html) for **important information** on using markdown in the IOCCC.
-
-**NOTE**: It is *NOT* necessary to install the tools to use them as you can run
-the tools from the top of the `mkiocccentry` repo directory just fine, though
-you'll have to use the form of `./mkiocccentry` instead of just `mkiocccentry`.
-However, installing it will make it easier for you as you can run it from your
-submission's directory. See the
-FAQ on "**[installing mkiocccentry](https://github.com/ioccc-src/mkiocccentry/blob/master/FAQ.md#install)**"
-at the mkiocccentry repo.
-
-**IMPORTANT NOTE**: if you run the program outside the repo directory
-(specifying the absolute or relative path to the tool) and you have not
-installed the tools then you will have to specify the options for the tools that
-are required like `chkentry(1)`, `txzchk(1)` and `fnamchk(1)`. But even if you
-have installed them but some tools are out of date (in the install path) it will
-cause problems. Additionally, if you do not have the most recent version when
-submitting a tarball it will be rejected for not having the right versions of
-the tools. This is why you **MUST** make sure you have the most recent version
-of all the tools and you either run it from the repo directory itself OR you
-install them (`make install` as via `sudo` or as root). We recommend you install
-the tools but if you wish to run it from the repo directory you may.
 
 If the `mkiocccentry` tool indicates that there is a problem with your
 submission, especially if it identifies a [Rule 2](next/rules.html#rule2), or
@@ -186,10 +170,26 @@ for doing so in your `remarks.md` file.
 
 See also [Rule 17](next/rules.html#rule17)!
 
+**IMPORTANT NOTE**: if you run the program outside the repo directory
+(specifying the absolute or relative path to the tool) and you have not
+installed the tools (and we **STRONGLY** recommend you **do** install them),
+then you will have to specify the options for the tools that are required like
+`chkentry(1)`, `txzchk(1)` and `fnamchk(1)`. And remember to make sure you have
+the latest version so you do not violate [Rule 17](rules.html#rule17).
+See the
+FAQ on "[obtaining the latest mkiocccentry tools](faq.html#obtaining_mkiocccentry)",
+the
+FAQ on "[compiling the mkiocccentry tools](faq.html#compiling_mkiocccentry)",
+the
+FAQ on "[installing the mkiocccentry tools](faq.html#installing)"
+and the
+FAQ on "[using the mkiocccentry tools](faq.html#using_mkiocccentry)"
+for more help.
+
 
 <div id="step_7">
 <div id="submit">
-#### 7. Upload your submission to the IOCCC submit server
+## 7. Upload your submission to the IOCCC submit server
 </div>
 </div>
 

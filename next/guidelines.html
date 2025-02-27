@@ -462,7 +462,7 @@ writing by <a href="../contact.html">contacting the judges</a>.</p>
 </div>
 </div>
 <p class="leftbar">
-These <a href="guidelines.html">IOCCC guidelines</a> are version <strong>28.39 2025-02-26</strong>.
+These <a href="guidelines.html">IOCCC guidelines</a> are version <strong>28.40 2025-02-27</strong>.
 </p>
 <p class="leftbar">
 The markdown form of these guidelines <a href="guidelines.md"
@@ -613,15 +613,19 @@ normal mode.
 <p class="leftbar">
 <strong>IMPORTANT NOTE</strong>: if you run the program outside the repo directory
 (specifying the absolute or relative path to the tool) and you have not
-installed the tools then you will have to specify the options for the tools that
-are required like <code>chkentry(1)</code>, <code>txzchk(1)</code> and <code>fnamchk(1)</code>. But even if you
-have installed them but some tools are out of date (in the install path) it will
-cause problems. Additionally, if you do not have the most recent version when
-submitting a tarball it will be rejected for not having the right versions of
-the tools. This is why you <strong>MUST</strong> make sure you have the most recent version
-of all the tools and you either run it from the repo directory itself OR you
-install them (<code>make install</code> as via <code>sudo</code> or as root). We recommend you install
-the tools but if you wish to run it from the repo directory you may.
+installed the tools (and we <strong>STRONGLY</strong> recommend you <strong>do</strong> install them),
+then you will have to specify the options for the tools that are required like
+<code>chkentry(1)</code>, <code>txzchk(1)</code> and <code>fnamchk(1)</code>. And remember to make sure you have
+the latest version so you do not violate <a href="rules.html#rule17">Rule 17</a>.
+See the
+FAQ on “<a href="../faq.html#obtaining_mkiocccentry">obtaining the latest mkiocccentry tools</a>”,
+the
+FAQ on “<a href="../faq.html#compiling_mkiocccentry">compiling the mkiocccentry tools</a>”,
+the
+FAQ on “<a href="../faq.html#installing">installing the mkiocccentry tools</a>”
+and the
+FAQ on “<a href="../faq.html#using_mkiocccentry">using the mkiocccentry tools</a>”
+for more help.
 </p>
 <p class="leftbar">
 <a href="rules.html#rule17">Rule 17</a> has been <strong>significantly modified</strong>
@@ -858,9 +862,10 @@ its algorithm.
 <p class="leftbar">
 If <code>mkiocccentry</code> encounters an <strong>error</strong> the program will exit and the xz
 compressed tarball <strong>will not be formed</strong>. For instance, if
-<a href="#chkentry">chkentry</a> fails to validate the <code>.auth.json</code> or <code>.info.json</code>
-<a href="https://www.json.org/json-en.html">JSON</a> files (see below) that
-<code>mkiocccentry(1)</code> creates, or anything else <code>mkiocccentry(1)</code> does, it is an
+<a href="#chkentry">chkentry</a> fails to validate the submission directory, either because
+of a validation error in the <code>.auth.json</code> or <code>.info.json</code>
+<a href="https://www.json.org/json-en.html">JSON</a> files or because of
+something else that <code>mkiocccentry(1)</code> creates or does, it is an
 <strong>error</strong> and <strong>possibly</strong> a bug that you should <a href="https://github.com/ioccc-src/mkiocccentry/issues/new?assignees=&amp;labels=bug&amp;projects=&amp;template=bug_report.yml&amp;title=%5BBug%5D+%3Ctitle%3E">report as a bug at the
 mkiocccentry bug report
 page</a>.
@@ -931,7 +936,17 @@ checks described above are still made but through <code>mkiocccentry</code> itse
 <p class="leftbar">
 <code>mkiocccentry(1)</code> will write two JSON files: <code>.auth.json</code> and
 <code>.info.json</code>. These files contain information about the author(s) and about the
-submission. These files <strong>MUST</strong> pass the checks of <code>chkentry(1)</code>!
+submission. After these files are formed, the <code>chkentry(1)</code> tool will be run on
+the submission directory; this tool not only validates the two JSON files
+(running specific checks on them after validating the JSON), but it also
+verifies that what is in the manifest in <code>.info.json</code> matches the contents of
+the directory, in addition to other checks. If <code>chkentry(1)</code> fails to validate
+anything at all, your submission <strong>WILL BE</strong> rejected!
+</p>
+<p class="leftbar">
+<strong>IMPORTANT</strong>: although <code>chkentry(1)</code> validates the files in the directory, it
+only inspects the contents of the two JSON files; it performs other checks on
+the other files, and those checks are run on the two JSON files as well.
 </p>
 <p class="leftbar">
 If <code>chkentry</code> does not pass and you used <code>mkiocccentry(1)</code> it is <strong>very likely</strong> a
@@ -941,26 +956,21 @@ page</a>.
 </p>
 <pre><code>    make bug_report</code></pre>
 <p class="leftbar">
-from the top level repo directory itself.
-See also the
+from the top level repo directory itself and attach the bug report file (it will
+tell you the name of the file). See also the
 FAQ on “<a href="../faq.html#mkiocccentry_bugs">reporting mkiocccentry bugs</a>”.
 </p>
 <p class="leftbar">
-Assuming that <code>chkentry(1)</code> successfully validates both <code>.auth.json</code> and
-<code>.info.json</code>, then the tarball will be formed and then <code>txzchk(1)</code> will be
-executed on it. In this case, there should be no problems, as <code>mkiocccentry(1)</code> should
-<strong>NOT</strong> form a tarball if there are any issues.
-</p>
-<p class="leftbar">
-<strong>NOTE</strong>: <code>chkentry(1)</code> also validates other things in your submission
-directory.
+Assuming that <code>chkentry(1)</code> successfully validates your submission directory,
+the tarball will be formed and then <code>txzchk(1)</code> will be executed on it. In this
+case, there should be no problems, as <code>mkiocccentry(1)</code> should <strong>NOT</strong> form a
+tarball if there are any issues.
 </p>
 <p class="leftbar">
 If <code>mkiocccentry(1)</code> is used and <code>chkentry(1)</code> fails to validate your submission
 directory, then unless it is a system specific problem, it could be a bug in
-<code>mkiocccentry(1)</code>, <code>chkentry(1)</code> or possibly <code>jparse</code>, though this is quite
-unlikely. Nonetheless, if you believe there is a bug, you may report it as
-explained above.
+<code>mkiocccentry(1)</code>, <code>chkentry(1)</code> or possibly <code>jparse</code>, although this is unlikely.
+Nonetheless, if you believe there is a bug, you may report it as explained above.
 </p>
 <p class="leftbar">
 If you want to know what <code>.auth.json</code> is, see the
@@ -983,13 +993,12 @@ jparse</a>, for more
 details.
 </p>
 <p class="leftbar">
-The <code>jparse</code> parser, library and tools were co-developed by
-<a href="../authors.html#Cody_Boone_Ferguson">Cody Boone Ferguson</a> and
-<a href="http://www.isthe.com/chongo/index.html">Landon Curt Noll</a> in 2022 and come
-from the <a href="https://github.com/xexyl/jparse">jparse repo</a>. However, the
-<strong>mkiocccentry tools use a <em>clone</em></strong> of the <a href="https://github.com/xexyl/jparse">jparse
-repo</a> <strong>at a <em>specific</em> release</strong>.
-Thus the <code>mkiocccentry</code> will at times be behind the
+The <code>jparse</code> parser, library and tools were co-developed by <a href="../authors.html#Cody_Boone_Ferguson">Cody Boone
+Ferguson</a> and <a href="http://www.isthe.com/chongo/index.html">Landon Curt
+Noll</a> in 2022-2025 and come from the
+<a href="https://github.com/xexyl/jparse">jparse repo</a>. However, the <strong>mkiocccentry
+tools use a <em>clone</em></strong> of the <a href="https://github.com/xexyl/jparse">jparse repo</a> <strong>at
+a <em>specific</em> release</strong>. Thus the <code>mkiocccentry</code> will at times be behind the
 <a href="https://github.com/xexyl/jparse">jparse repo</a>!
 </p>
 <p class="leftbar">
@@ -1017,10 +1026,8 @@ make sure that you’re using the correct versions, which is also verified by
 </p>
 <p class="leftbar">
 Please see the
-FAQ on “<a href="../faq.html#chkentry">validating .auth.json and/or .info.json files</a>
-for more details on <code>chkentry</code> and how you can use it to validate your
-<code>.auth.json</code> and <code>.info.json</code> files (and your submission directory in general)
-manually, without having to repackage your submission.
+FAQ on “<a href="../faq.html#chkentry">validating your submission directory</a>
+for more details on <code>chkentry</code>.
 </p>
 <p class="leftbar">
 You might also wish to see the
@@ -1944,46 +1951,51 @@ some Intel-like x86 architecture**.
 The IOCCC size tool source is not an original work, unless you are <a href="../authors.html#Anthony_C_Howe">Anthony C
 Howe</a>, in which case it is original! :-)
 Submitting source code that uses the content of
-<a href="https://github.com/ioccc-src/mkiocccentry/blob/master/iocccsize.c">iocccsize.c</a>, unless you are
-<a href="../authors.html#Anthony_C_Howe">Anthony C Howe</a>, might run the risk of
-violating <a href="rules.html#rule7">Rule 7</a>.
+<a href="https://github.com/ioccc-src/mkiocccentry/blob/master/iocccsize.c">iocccsize.c</a>,
+<em>unless</em> you are <a href="../authors.html#Anthony_C_Howe">Anthony C Howe</a>, might run the
+risk of violating <a href="rules.html#rule7">Rule 7</a>.
 </p>
 <p class="leftbar">
-The <code>txzchk(1)</code> tool source is not an original work,
+The IOCCC submission tarball validator source is not an original work,
 unless you are <a href="../authors.html#Cody_Boone_Ferguson">Cody Boone Ferguson</a>, in
 which case it is original! :-) Submitting source code that uses the contents of
 <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/txzchk.c">txzchk.c</a>,
-unless you are <a href="../authors.html#Cody_Boone_Ferguson">Cody Boone Ferguson</a>, might
+<em>unless</em> you are <a href="../authors.html#Cody_Boone_Ferguson">Cody Boone Ferguson</a>, might
 run the risk of violating <a href="rules.html#rule7">Rule 7</a>.
 </p>
 <p class="leftbar">
-Neither the <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/chkentry.c">chkentry tool
-source</a> nor
-the <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/jparse/README.md">JSON parser and
-library</a>
-nor
-<a href="https://github.com/ioccc-src/mkiocccentry/blob/master/jparse/jstrencode.c">jstrencode</a>
-nor
+In addition to the above tools, none of the <a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry
+tools</a>, <em>including, <strong>but not
+limited</strong></em> to
+<a href="https://github.com/ioccc-src/mkiocccentry/blob/master/mkiocccentry.c">mkiocccentry</a>,
+<a href="https://github.com/ioccc-src/mkiocccentry/blob/master/chkentry.c">chkentry</a>,
+<a href="https://github.com/ioccc-src/mkiocccentry/blob/master/test_ioccc/fnamchk.c">fnamchk</a>
+and
+<a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/location_main.c">location</a>,
+nor the <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/jparse/README.md">JSON parser and
+library</a>,
+<a href="https://github.com/ioccc-src/mkiocccentry/blob/master/jparse/jstrencode.c">jstrencode</a>,
 <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/jparse/jstrdecode.c">jstrdecode</a>
-nor any of the other <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/jparse">jparse
+or any of the other <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/jparse">jparse
 tools</a>
-(see the <a href="https://github.com/xexyl/jparse/">jparse repo</a>), nor the <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/test_ioccc/fnamchk.c">fnamchk tool
-source</a>,
-are original works,
+(see the <a href="https://github.com/xexyl/jparse/">jparse repo</a>), are original works,
 unless you are <a href="../authors.html#Cody_Boone_Ferguson">Cody Boone Ferguson</a> or
 <a href="http://www.isthe.com/chongo/index.html">Landon Curt Noll</a>, in which case they
-are original! :-) Submitting source code that uses the code of any of these tools or
-library, unless you are <a href="../authors.html#Cody_Boone_Ferguson">Cody Boone
+are original! :-) Submitting source code that uses the content of any of these tools or
+library, <em>unless</em> you are <a href="../authors.html#Cody_Boone_Ferguson">Cody Boone
 Ferguson</a> or <a href="http://www.isthe.com/chongo/index.html">Landon Curt
 Noll</a>, might run the risk of violating
 <a href="rules.html#rule7">Rule 7</a>.
 </p>
 <p class="leftbar">
-Unless you are <a href="http://www.isthe.com/chongo/index.html">Landon Curt Noll</a>, the
-remaining tools in the <a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry repo</a>
-are <strong>NOT</strong> original works. Submitting source code that uses the content of those tools,
-unless you are <a href="http://www.isthe.com/chongo/index.html">Landon Curt Noll</a>, might
-run the risk of violating <a href="rules.html#rule7">Rule 7</a>.
+And unless you are <a href="http://www.isthe.com/chongo/index.html">Landon Curt Noll</a>,
+the code in
+<a href="https://github.com/ioccc-src/mkiocccentry/tree/master/dbg">dbg</a> and
+<a href="https://github.com/ioccc-src/mkiocccentry/tree/master/dyn_array">dyn_array</a> are
+not original works. Submitting source code that uses the content of those
+libraries, <em>unless</em> you <a href="http://www.isthe.com/chongo/index.html">Landon Curt
+Noll</a>, might run the risk of violating
+<a href="rules.html#rule7">Rule 7</a>.
 </p>
 <p class="leftbar">
 <a href="rules.html#rule7">Rule 7</a> does not prohibit you from writing your own
@@ -1999,7 +2011,7 @@ mind that writing an obfuscated version of a library runs the risk of violating
 <p class="leftbar">
 Even so, we do not recommend you try and submit a JSON parser due to
 the fact it will likely exceed <a href="rules.html#rule2">the source code size limit</a>
-and because you likely can’t beat <a href="https://github.com/westes/flex">flex</a> or
+and because you likely can’t beat <a href="https://github.com/westes/flex">flex</a> and
 <a href="https://www.gnu.org/software/bison/">bison</a> in obfuscation. This isn’t to
 say that <a href="https://github.com/xexyl/jparse/blob/master/json_README.md#so-called-json-spec">the so-called JSON spec</a> is not
 obfuscated, but unless you have some really clever way to compact and
