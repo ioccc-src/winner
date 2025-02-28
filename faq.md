@@ -1,6 +1,6 @@
 # IOCCC FAQ Table of Contents
 
-This is FAQ version **28.2.10 2025-02-26**.
+This is FAQ version **28.2.11 2025-02-27**.
 
 
 ## 0. [Entering the IOCCC: the bare minimum you need to know](#enter_questions)
@@ -9,7 +9,8 @@ This is FAQ version **28.2.10 2025-02-26**.
     - **Q 0.1.1**: <a class="normal" href="#about_mkiocccentry">What is `mkiocccentry(1)` in simple terms?</a>
     - **Q 0.1.2**: <a class="normal" href="#obtaining_mkiocccentry">How do I obtain the latest mkiocccentry toolkit?</a>
     - **Q 0.1.3**: <a class="normal" href="#compiling_mkiocccentry">How do I compile the mkiocccentry toolkit?</a>
-    - **Q 0.1.4**: <a class="normal" href="#using_mkiocccentry">How do I use mkiocccentry?</a>
+    - **Q 0.1.4**: <a class="normal" href="#install">How do I install mkiocccentry(1) and related tools?</a>
+    - **Q 0.1.5**: <a class="normal" href="#using_mkiocccentry">How do I use mkiocccentry?</a>
 - **Q 0.2**: <a class="normal" href="#platform">What platform should I assume for my submission?</a>
 - **Q 0.3**: <a class="normal" href="#makefile">What should I put in my submission Makefile?</a>
 - **Q 0.4**: <a class="normal" href="#remarks">What should I put in the remarks.md file of my submission?</a>
@@ -54,6 +55,7 @@ This is FAQ version **28.2.10 2025-02-26**.
 - **Q 3.9**: <a class="normal" href="#entry_id_faq">What is an `entry_id`?</a>
 - **Q 3.10**: <a class="normal" href="#entry_json">What is a `.entry.json` file and how is it used?</a>
 - **Q 3.11**: <a class="normal" href="#jparse">How can I validate any JSON document?</a>
+- **Q 3.12**: <a class="normal" href="#install">How can I install the `mkiocccentry(1)` and related tools?</a>
 
 
 ## 4. [Compiling IOCCC entries](#compiling)
@@ -290,22 +292,65 @@ FAQ on "[obtaining the latest mkiocccentry toolkit](#obtaining_mkiocccentry)"
 to make sure of this), change to the `mkiocccentry` directory and then run:
 
 ``` <!---sh-->
+    make clobber all test
+```
+
+to compile all the tools and run the test-suite.
+
+You do not have to run the test-suite but if you wish to make sure all is in
+order you may. If you wish to skip that:
+
+``` <!---sh-->
     make clobber all
 ```
 
-to compile all the tools.
 
 Jump to: [top](#)
 
+<div id="install">
+### Q 0.1.4: How do I install mkiocccentry(1) and related tools?
+</div>
+
+After obtaining the toolkit (see the
+FAQ on "[obtaining the latest mkiocccentry toolkit](#obtaining_mkiocccentry)")
+and compiling the tools (see the
+FAQ on "[compiling mkiocccentry](#compiling_mkiocccentry)"
+above) run as either `sudo(8)` or root `make install`:
+
+
+
+``` <!---sh-->
+    # if you use sudo(8):
+    sudo make install
+
+    # as root:
+    make install
+```
+
+
+If everything goes well you should be able to run `mkiocccentry(1)`,
+`txzchk(1)`, `chkentry(1)` and all the other installed tools from any directory,
+and the tools that rely on other tools will be able to find those required tools
+from any directory too.
+
+Some tools like `bug_report.sh` and `hostchk.sh` are not meant to be installed
+and will not work from any directory, however.
+
+Jump to: [top](#)
+
+
 <div id="using_mkiocccentry">
-#### Q 0.1.4: How do I use mkiocccentry?
+#### Q 0.1.5: How do I use mkiocccentry?
 </div>
 
 Once you have registered, you will need to package your entry with the
 `mkiocccentry` tool. If you have not already obtained the toolkit, see the
-FAQ on "[obtaining the mkiocccentry toolkit](#obtaining_mkiocccentry)"
-and the
+FAQ on "[obtaining the most recent mkiocccentry
+toolkit](#obtaining_mkiocccentry)",
+the
 FAQ on "[compiling mkiocccentry](#compiling_mkiocccentry)"
+and the
+FAQ on "[installing the mkiocccentry tools](#installing)"
 if you have not already done so.
 
 The below details discuss this very important tool. As it is complicated we will
@@ -332,15 +377,10 @@ particular [Rule 17](next/rules.html#rule17).
 
 **IMPORTANT NOTE**: if you run the program outside the repo directory
 (specifying the absolute or relative path to the tool) and you have not
-installed the tools then you will have to specify the options for the tools that
-are required like `chkentry(1)`, `txzchk(1)` and `fnamchk(1)`. But even if you
-have installed them but some tools are out of date (in the install path) it will
-cause problems. Additionally, if you do not have the most recent version when
-submitting a tarball it will be rejected for not having the right versions of
-the tools. This is why you **MUST** make sure you have the most recent version
-of all the tools and you either run it from the repo directory itself OR you
-install them (`make install` as via `sudo` or as root). We recommend you install
-the tools but if you wish to run it from the repo directory you may.
+installed the tools (and we **STRONGLY** recommend you **do** install them),
+then you will have to specify the options for the tools that are required like
+`chkentry(1)`, `txzchk(1)` and `fnamchk(1)`. And remember to make sure you have
+the latest version so you do not violate [Rule 17](next/rules.html#rule17).
 
 If the **_subdirectory_ in the _work directory_** (based on your submit ID and
 slot number) already exists, you will have to move it, remove it or otherwise
@@ -1584,18 +1624,16 @@ for more information.
 Jump to: [top](#)
 
 
-<div id="validating_auth_info_json">
 <div id="chkentry">
 ### Q 3.3: How can I validate my submission directory?
 </div>
-</div>
 
 If you want to validate your submission directory manually, including but not
-limited to the `.auth.json` or `.info.json` files, you should use `chkentry(1)`
+limited to the `.auth.json` and `.info.json` files, you should use `chkentry(1)`
 from the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry).
 
 The `chkentry(1)` tool runs a variety of checks on your submission directory,
-including but not limited to, using the [jparse
+including, but not limited to, using the [jparse
 API](https://github.com/ioccc-src/mkiocccentry/blob/master/jparse/man/man3/jparse.3)
 to validate the two IOCCC specific JSON files (as valid JSON) and additional
 checks on those files as well. An important thing that it does is verify that
@@ -1616,13 +1654,15 @@ FAQ on "[.info.json](#info_json)"
 for more details on the two required and very important JSON files.
 
 The `chkentry(1)` tool accepts a single arg, a directory that **MUST** have the
-two JSON files, `.auth.json` and `.info.json`. (Okay there is an option to skip
-files but this is for the judges **ONLY**; use of this option to validate your
-submission puts you at a great risk of violating [Rule
-17](next/rules.html#rule17)!).
+two JSON files, `.auth.json` and `.info.json` as well as the `prog.c`,
+`Makefile` and `remarks.md` files along with all the other files listed in the
+`.info.json` manifest. (Okay there is an option to skip files but this is for
+the judges **ONLY**; use of this option to validate your submission puts you at
+a great risk of violating [Rule 17](next/rules.html#rule17)!).
 
-As an example, if your submission directory is `12345678-1234-4321-abcd-1234567890ab-0/` then you should run the
-following command:
+As an example, if your submission directory is
+`12345678-1234-4321-abcd-1234567890ab-0/` then you should run the following
+command:
 
 
 ``` <!---sh-->
@@ -3557,6 +3597,7 @@ something along those lines.
 Jump to: [top](#)
 
 
+
 <div id="validating_json">
 <div id="jparse">
 ### Q 3.11: How can I validate any JSON document?
@@ -3611,6 +3652,7 @@ and because the `mkiocccentry` copy is that which is used by the current IOCCC,
 as the two can be different at times.
 
 Jump to: [top](#)
+
 
 <hr style="width:50%;text-align:left;margin-left:0">
 <hr style="width:50%;text-align:left;margin-left:0">

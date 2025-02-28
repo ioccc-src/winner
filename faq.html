@@ -425,7 +425,7 @@
 
 <!-- BEFORE: 1st line of markdown file: faq.md -->
 <h1 id="ioccc-faq-table-of-contents">IOCCC FAQ Table of Contents</h1>
-<p>This is FAQ version <strong>28.2.10 2025-02-26</strong>.</p>
+<p>This is FAQ version <strong>28.2.11 2025-02-27</strong>.</p>
 <h2 id="entering-the-ioccc-the-bare-minimum-you-need-to-know">0. <a href="#enter_questions">Entering the IOCCC: the bare minimum you need to know</a></h2>
 <ul>
 <li><strong>Q 0.0</strong>: <a class="normal" href="#enter">How can I enter the IOCCC?</a></li>
@@ -434,7 +434,8 @@
 <li><strong>Q 0.1.1</strong>: <a class="normal" href="#about_mkiocccentry">What is <code>mkiocccentry(1)</code> in simple terms?</a></li>
 <li><strong>Q 0.1.2</strong>: <a class="normal" href="#obtaining_mkiocccentry">How do I obtain the latest mkiocccentry toolkit?</a></li>
 <li><strong>Q 0.1.3</strong>: <a class="normal" href="#compiling_mkiocccentry">How do I compile the mkiocccentry toolkit?</a></li>
-<li><strong>Q 0.1.4</strong>: <a class="normal" href="#using_mkiocccentry">How do I use mkiocccentry?</a></li>
+<li><strong>Q 0.1.4</strong>: <a class="normal" href="#install">How do I install mkiocccentry(1) and related tools?</a></li>
+<li><strong>Q 0.1.5</strong>: <a class="normal" href="#using_mkiocccentry">How do I use mkiocccentry?</a></li>
 </ul></li>
 <li><strong>Q 0.2</strong>: <a class="normal" href="#platform">What platform should I assume for my submission?</a></li>
 <li><strong>Q 0.3</strong>: <a class="normal" href="#makefile">What should I put in my submission Makefile?</a></li>
@@ -480,6 +481,7 @@
 <li><strong>Q 3.9</strong>: <a class="normal" href="#entry_id_faq">What is an <code>entry_id</code>?</a></li>
 <li><strong>Q 3.10</strong>: <a class="normal" href="#entry_json">What is a <code>.entry.json</code> file and how is it used?</a></li>
 <li><strong>Q 3.11</strong>: <a class="normal" href="#jparse">How can I validate any JSON document?</a></li>
+<li><strong>Q 3.12</strong>: <a class="normal" href="#install">How can I install the <code>mkiocccentry(1)</code> and related tools?</a></li>
 </ul>
 <h2 id="compiling-ioccc-entries">4. <a href="#compiling">Compiling IOCCC entries</a></h2>
 <ul>
@@ -680,17 +682,43 @@ have an mkiocccentry tool directory:</p>
 <p>Once you’ve obtained the <strong>LATEST</strong> version (see the
 FAQ on “<a href="#obtaining_mkiocccentry">obtaining the latest mkiocccentry toolkit</a>”
 to make sure of this), change to the <code>mkiocccentry</code> directory and then run:</p>
+<pre><code>    make clobber all test</code></pre>
+<p>to compile all the tools and run the test-suite.</p>
+<p>You do not have to run the test-suite but if you wish to make sure all is in
+order you may. If you wish to skip that:</p>
 <pre><code>    make clobber all</code></pre>
-<p>to compile all the tools.</p>
+<p>Jump to: <a href="#">top</a></p>
+<div id="install">
+<h3 id="q-0.1.4-how-do-i-install-mkiocccentry1-and-related-tools">Q 0.1.4: How do I install mkiocccentry(1) and related tools?</h3>
+</div>
+<p>After obtaining the toolkit (see the
+FAQ on “<a href="#obtaining_mkiocccentry">obtaining the latest mkiocccentry toolkit</a>”)
+and compiling the tools (see the
+FAQ on “<a href="#compiling_mkiocccentry">compiling mkiocccentry</a>”
+above) run as either <code>sudo(8)</code> or root <code>make install</code>:</p>
+<pre><code>    # if you use sudo(8):
+    sudo make install
+
+    # as root:
+    make install</code></pre>
+<p>If everything goes well you should be able to run <code>mkiocccentry(1)</code>,
+<code>txzchk(1)</code>, <code>chkentry(1)</code> and all the other installed tools from any directory,
+and the tools that rely on other tools will be able to find those required tools
+from any directory too.</p>
+<p>Some tools like <code>bug_report.sh</code> and <code>hostchk.sh</code> are not meant to be installed
+and will not work from any directory, however.</p>
 <p>Jump to: <a href="#">top</a></p>
 <div id="using_mkiocccentry">
-<h4 id="q-0.1.4-how-do-i-use-mkiocccentry">Q 0.1.4: How do I use mkiocccentry?</h4>
+<h4 id="q-0.1.5-how-do-i-use-mkiocccentry">Q 0.1.5: How do I use mkiocccentry?</h4>
 </div>
 <p>Once you have registered, you will need to package your entry with the
 <code>mkiocccentry</code> tool. If you have not already obtained the toolkit, see the
-FAQ on “<a href="#obtaining_mkiocccentry">obtaining the mkiocccentry toolkit</a>”
-and the
+FAQ on “<a href="#obtaining_mkiocccentry">obtaining the most recent mkiocccentry
+toolkit</a>”,
+the
 FAQ on “<a href="#compiling_mkiocccentry">compiling mkiocccentry</a>”
+and the
+FAQ on “<a href="#installing">installing the mkiocccentry tools</a>”
 if you have not already done so.</p>
 <p>The below details discuss this very important tool. As it is complicated we will
 explain how to use this tool. If you want to know what it is in simpler terms,
@@ -709,15 +737,10 @@ the timestamp; see the <a href="next/rules.html">rules</a> for more details on t
 particular <a href="next/rules.html#rule17">Rule 17</a>.</p>
 <p><strong>IMPORTANT NOTE</strong>: if you run the program outside the repo directory
 (specifying the absolute or relative path to the tool) and you have not
-installed the tools then you will have to specify the options for the tools that
-are required like <code>chkentry(1)</code>, <code>txzchk(1)</code> and <code>fnamchk(1)</code>. But even if you
-have installed them but some tools are out of date (in the install path) it will
-cause problems. Additionally, if you do not have the most recent version when
-submitting a tarball it will be rejected for not having the right versions of
-the tools. This is why you <strong>MUST</strong> make sure you have the most recent version
-of all the tools and you either run it from the repo directory itself OR you
-install them (<code>make install</code> as via <code>sudo</code> or as root). We recommend you install
-the tools but if you wish to run it from the repo directory you may.</p>
+installed the tools (and we <strong>STRONGLY</strong> recommend you <strong>do</strong> install them),
+then you will have to specify the options for the tools that are required like
+<code>chkentry(1)</code>, <code>txzchk(1)</code> and <code>fnamchk(1)</code>. And remember to make sure you have
+the latest version so you do not violate <a href="next/rules.html#rule17">Rule 17</a>.</p>
 <p>If the <strong><em>subdirectory</em> in the <em>work directory</em></strong> (based on your submit ID and
 slot number) already exists, you will have to move it, remove it or otherwise
 specify a different work directory (<strong>NOT</strong> the subdirectory), as it needs to be
@@ -1741,16 +1764,14 @@ you can do so. For instance:</p>
 FAQ on “<a href="#txzchk">validating your submission tarball</a>”
 for more information.</p>
 <p>Jump to: <a href="#">top</a></p>
-<div id="validating_auth_info_json">
 <div id="chkentry">
 <h3 id="q-3.3-how-can-i-validate-my-submission-directory">Q 3.3: How can I validate my submission directory?</h3>
 </div>
-</div>
 <p>If you want to validate your submission directory manually, including but not
-limited to the <code>.auth.json</code> or <code>.info.json</code> files, you should use <code>chkentry(1)</code>
+limited to the <code>.auth.json</code> and <code>.info.json</code> files, you should use <code>chkentry(1)</code>
 from the <a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry repo</a>.</p>
 <p>The <code>chkentry(1)</code> tool runs a variety of checks on your submission directory,
-including but not limited to, using the <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/jparse/man/man3/jparse.3">jparse
+including, but not limited to, using the <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/jparse/man/man3/jparse.3">jparse
 API</a>
 to validate the two IOCCC specific JSON files (as valid JSON) and additional
 checks on those files as well. An important thing that it does is verify that
@@ -1768,12 +1789,14 @@ and
 FAQ on “<a href="#info_json">.info.json</a>”
 for more details on the two required and very important JSON files.</p>
 <p>The <code>chkentry(1)</code> tool accepts a single arg, a directory that <strong>MUST</strong> have the
-two JSON files, <code>.auth.json</code> and <code>.info.json</code>. (Okay there is an option to skip
-files but this is for the judges <strong>ONLY</strong>; use of this option to validate your
-submission puts you at a great risk of violating <a href="next/rules.html#rule17">Rule
-17</a>!).</p>
-<p>As an example, if your submission directory is <code>12345678-1234-4321-abcd-1234567890ab-0/</code> then you should run the
-following command:</p>
+two JSON files, <code>.auth.json</code> and <code>.info.json</code> as well as the <code>prog.c</code>,
+<code>Makefile</code> and <code>remarks.md</code> files along with all the other files listed in the
+<code>.info.json</code> manifest. (Okay there is an option to skip files but this is for
+the judges <strong>ONLY</strong>; use of this option to validate your submission puts you at
+a great risk of violating <a href="next/rules.html#rule17">Rule 17</a>!).</p>
+<p>As an example, if your submission directory is
+<code>12345678-1234-4321-abcd-1234567890ab-0/</code> then you should run the following
+command:</p>
 <pre><code>    chkentry 12345678-1234-4321-abcd-1234567890ab-0</code></pre>
 <p>If there is a <a href="https://www.json.org/json-en.html">JSON</a> issue detected by the
 <code>jparse(3)</code> API (i.e. it is not valid JSON) it is an error and <code>chkentry(1)</code>
