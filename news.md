@@ -14,6 +14,19 @@ for more information on Mastodon.
 </div>
 
 
+## 2025-02-28
+
+We have reached our **code freeze** milestone for the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry) and released a new version of the [mkiocccentry toolkit](faq.html#mkiocccentry)!
+
+Final testing is going well. We remain on track to open the **IOCCC28** on **2025-03-05 23:19:17.131107 UTC**.
+
+In a few days, those [registered for IOCCC28](https://www.ioccc.org/next/register.html) will receive email with their username and initial password to [submit their code](https://submit.ioccc.org).
+
+We encourage those who wish to enter the **IOCCC28** to [registered for IOCCC28](https://www.ioccc.org/next/register.html) today.
+
+Consider joining the IOCCC discord community via this link: [https://discord.gg/Wa42Qujwnw](https://discord.gg/Wa42Qujwnw)
+
+
 ## 2025-02-12
 
 We have discovered an issue that needs to be resolved, followed by more testing
