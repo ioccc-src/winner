@@ -108,7 +108,7 @@ section.
 
 After a 4 year effort by a [number of people](thanks-for-help.html),
 with over 6168+ commits, the **Great Fork Merge** has been completed
-and the [Official IOCCC web site](index.html) has been updated!
+and the [Official IOCCC website](index.html) has been updated!
 
 A significant number of improvements have been made to the
 [IOCCC winning entries](years.html).
@@ -120,8 +120,8 @@ See the [FAQ Section 8](faq.html#changes)
 for details on changes made to the entries.
 
 We hope you enjoy the new and improved
-[Official IOCCC web site](index.html).
-This web site is backed by the
+[Official IOCCC website](index.html).
+This website is backed by the
 [IOCCC winner GitHub repo](https://github.com/ioccc-src/winner).
 See [FAQ Section 9](faq.html#help) for
 how you can help [improve / fix the website](faq.html#fix_website),

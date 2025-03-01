@@ -1,6 +1,6 @@
 # IOCCC FAQ Table of Contents
 
-This is FAQ version **28.2.12 2025-02-28**.
+This is FAQ version **28.2.13 2025-03-01**.
 
 
 ## 0. [Entering the IOCCC: the bare minimum you need to know](#enter_questions)
@@ -3868,7 +3868,7 @@ Now we will describe each field of each file in the manifest:
     the `author/author_handle.json` JSON files)
 
     See the
-    FAQ on "[fix web site](#fix_website)"
+    FAQ on "[fix website](#fix_website)"
     for information on submitting fixes to the IOCCC website.
 
     See the
@@ -7601,7 +7601,9 @@ The posting said '_1st annual_', so in 1985 we held the [2nd IOCCC contest](year
 and the tradition continues as the longest running contest on the Internet.
 
 P.S. Part of the inspiration for making the IOCCC a contest goes to the
-[Bulwer-Lytton fiction contest](http://www.bulwer-lytton.com/).
+[Bulwer-Lytton fiction contest](http://www.bulwer-lytton.com/) (hence the
+reference to that (in)famous dark and stormy night all the way back in 1830 when
+Landon was just a wee lad).
 
 Jump to: [top](#)
 
@@ -7610,13 +7612,17 @@ Jump to: [top](#)
 ### Q 11.1: Why are some years missing IOCCC entries?
 </div>
 
-Some years, such as 1997, 1999, 2002-2003, 2007-2010, 2016-2017, 2021-2023, no IOCCC was held.
+There were some years, such as 1997, 1999, 2002-2003, 2007-2010, 2016-2017,
+2021-2023 (or 2024, see below), when no IOCCC was held.
 
 While we try to hold the IOCCC every year, sometime the other demands on the IOCCC judges
 do not permit us to hold a new IOCCC.
 
-The pause during the 2021-2023 period was due to the IOCCC judges developing tools to
-make it much more likely for the IOCCC to be held on a yearly basis later on.
+The pause during 2021 through the end of 2024 (when IOCCC28 officially entered
+pending status) was due to the development of tools (for submission, the server
+and the website generation) and the JSON parser (for the tools, the contest and
+the website) to make it easier and much more likely for the IOCCC to be held on
+a yearly basis.
 
 Jump to: [top](#)
 
