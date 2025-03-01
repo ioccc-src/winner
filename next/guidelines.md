@@ -855,7 +855,7 @@ do the same like:
 
 <p class="leftbar">
 See [Rule 17](rules.html#rule17) and in particular the part about the [maximum
-number of files](rules.html#max-files). If you do not follow these points, you
+number of files](../faq.html#max-files). If you do not follow these points, you
 are at a great risk of violating [Rule 17](rules.html#rule17)!
 </p>
 
