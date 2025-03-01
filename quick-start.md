@@ -1,4 +1,4 @@
-This is quick start guide is version **28.0.0 2025-02-27**.
+This quick start guide is version **28.0.1 2025-03-01**.
 
 <div id="enter_questions">
 <div id="enter">
@@ -86,7 +86,7 @@ Using the **Username** and **Initial password** you receive via email in
 from when one of the [IOCCC judges](judges.html) sent that email.
 
 **NOTE**: The [IOCCC submit server](https://submit.ioccc.org)
-is only ready for submissions **ONLY WHEN THE CONTEST IS [open](faq.html#open)**.
+is ready for submissions **ONLY WHEN THE CONTEST IS [open](faq.html#open)**.
 
 Please visit the "**[change your submit server initial password](next/pw-change.html)**" page for detailed instructions.
 
@@ -150,7 +150,7 @@ Three files are required to exist in `topdir`:
 * `Makefile`
 
     Makefile to build (make all) and clean up (make clean & make clobber) as well
-    as the other required rules
+    as the other required files
 
 * `remarks.md`
 
@@ -162,10 +162,10 @@ Three files are required to exist in `topdir`:
 
 If the `mkiocccentry` tool indicates that there is a problem with your
 submission, especially if it identifies a [Rule 2](next/rules.html#rule2), or
-any other rule, related problem, you are **strongly** encouraged to revise and
+any other [rule](next/rules.html), related problem, you are **strongly** encouraged to revise and
 correct your entry and then re-run the `mkiocccentry` tool.
 
-If you choose to risk violating rules, be sure and explain your reason
+If you choose to risk violating [Rules](next/rules.html), be sure and explain your reason
 for doing so in your `remarks.md` file.
 
 See also [Rule 17](next/rules.html#rule17)!
@@ -204,7 +204,7 @@ any changes: making it clear to the [IOCCC judges](judges.html) that you intend
 to replace the older upload.
 
 **IMPORTANT NOTE**: The [IOCCC submit server](https://submit.ioccc.org)
-is only ready for submissions
+is ready for submissions
 **ONLY WHEN THE CONTEST IS [open](faq.html#open)**.
 
 See the "**[current status of the IOCCC](status.html)**" page for details on the contest status.

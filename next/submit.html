@@ -435,34 +435,38 @@ might be offline and unreachable as a website.</p>
 <p>To login, open <a href="https://submit.ioccc.org">https://submit.ioccc.org</a>
 in your browser. Fill in your login credentials and click “Login”.
 It might look something like:</p>
-<p><img src="../png/submit-server-login.png"
+<p><img src="../png/submit.login.png"
  alt="submit server login page"
  width=710 height=344></p>
-<p>If you’ve not logged in before, you’ll have to change your password first. See
-the file <a href="pw-change.html">pw-change.html</a> for more details. After that you will
-have to log back in.</p>
+<p><strong>NOTE</strong>: if the contest is NOT open you will see something like this instead:
+<img src="../png/submit.contest-closed.png"
+ alt="submit server contest closed"
+ width=710 height=806></p>
+<p>Assuming it is open, and if you’ve not logged in before, you’ll have to change
+your password first. See the file <a href="pw-change.html">pw-change.html</a> for more
+details. After that you will have to log back in.</p>
 <p>Once you’ve logged in, you will see submit slots. Each slot is for one
 submission so if you update a submission, make sure you choose the right one so
-you do not overwrite the wrong one!</p>
+you do not replace the wrong one!</p>
 <p>Here is what it looks like without any uploads and no slot selected:</p>
-<p><img src="../png/submit-server-slots.png"
+<p><img src="../png/submit.slots.png"
  alt="submit server slots"
  width=710 height=806></p>
 <p>Select a slot and then select a file by clicking the button “Choose File”. After
 doing this, it should look something like:</p>
-<p><img src="../png/submit-server-slot-file.png"
+<p><img src="../png/submit.slot-file.png"
  alt="submit server slot and file selected"
  width=717 height=865></p>
 <p>If you need to change the file to upload, you can mouseover the file and click
 it. If you wait a moment it’ll show the current filename. It will look something
 like this:</p>
-<p><img src="../png/submit-server-change-file.png"
+<p><img src="../png/submit.change-file.png"
  alt="submit server change file"
  width=717 height=865></p>
 <p>Once you’re certain you have selected the correct file, click “Submit”, below
 the file selection step.</p>
 <p>When it’s uploaded it should look something like this:</p>
-<p><img src="../png/submit-server-submission-uploaded.png"
+<p><img src="../png/submit.submission-uploaded.png"
  alt="submit server submission uploaded"
  width=717 height=525></p>
 <p>Here you see the details, in particular:</p>
@@ -481,14 +485,14 @@ tarball listing)</li>
 your submissions. Here is what it will look like when the judges have verified
 that your tarball / submission has been validated (NOT judged), by <code>txzchk(1)</code>
 and <code>chkentry(1)</code>:</p>
-<p><img src="../png/submit-server-status-updated.png"
+<p><img src="../png/submit.status-updated.png"
  alt="submit server status updated"
  width=717 height=217></p>
 <p>For details on <code>txzchk</code>, see the
 FAQ on “<a href="../faq.html#txzchk">txzchk</a>”.</p>
 <p>For details on <code>chkentry</code>, see the
 FAQ on “<a href="../faq.html#chkentry">chkentry</a>”.</p>
-<p>If you need more information on what <code>chkentry</code> checks, see the
+<p>If you need more information on the two JSON files, see
 FAQ on the <a href="../faq.html#info_json">“.info.json file</a>”
 and the
 FAQ on the “<a href="../faq.html#auth_json">.auth.json file</a>”.</p>
