@@ -612,6 +612,7 @@ transition: all .3s ease;
     text-align: left;
     background-color: whitesmoke;
     left: -100%;
+    z-index:100;
 }
 
 .topbar-items .item:hover .sub-item{
