@@ -213,7 +213,7 @@ Jump to: [top](#)
 
 <p class="leftbar">
 Your submission must be a C program.
-</div>
+</p>
 
 
 Jump to: [top](#)
