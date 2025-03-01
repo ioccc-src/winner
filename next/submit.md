@@ -13,29 +13,33 @@ To login, open [https://submit.ioccc.org](https://submit.ioccc.org)
 in your browser. Fill in your login credentials and click "Login".
 It might look something like:
 
-<img src="../png/submit-server-login.png"
+<img src="../png/submit.login.png"
  alt="submit server login page"
  width=710 height=344>
 
+**NOTE**: if the contest is NOT open you will see something like this instead:
+<img src="../png/submit.contest-closed.png"
+ alt="submit server contest closed"
+ width=710 height=806>
 
-If you've not logged in before, you'll have to change your password first. See
-the file [pw-change.html](pw-change.html) for more details. After that you will
-have to log back in.
+Assuming it is open, and if you've not logged in before, you'll have to change
+your password first. See the file [pw-change.html](pw-change.html) for more
+details. After that you will have to log back in.
 
 Once you've logged in, you will see submit slots. Each slot is for one
 submission so if you update a submission, make sure you choose the right one so
-you do not overwrite the wrong one!
+you do not replace the wrong one!
 
 Here is what it looks like without any uploads and no slot selected:
 
-<img src="../png/submit-server-slots.png"
+<img src="../png/submit.slots.png"
  alt="submit server slots"
  width=710 height=806>
 
 Select a slot and then select a file by clicking the button "Choose File". After
 doing this, it should look something like:
 
-<img src="../png/submit-server-slot-file.png"
+<img src="../png/submit.slot-file.png"
  alt="submit server slot and file selected"
  width=717 height=865>
 
@@ -43,7 +47,7 @@ If you need to change the file to upload, you can mouseover the file and click
 it. If you wait a moment it'll show the current filename. It will look something
 like this:
 
-<img src="../png/submit-server-change-file.png"
+<img src="../png/submit.change-file.png"
  alt="submit server change file"
  width=717 height=865>
 
@@ -52,7 +56,7 @@ the file selection step.
 
 When it's uploaded it should look something like this:
 
-<img src="../png/submit-server-submission-uploaded.png"
+<img src="../png/submit.submission-uploaded.png"
  alt="submit server submission uploaded"
  width=717 height=525>
 
@@ -74,7 +78,7 @@ your submissions. Here is what it will look like when the judges have verified
 that your tarball / submission has been validated (NOT judged), by `txzchk(1)`
 and `chkentry(1)`:
 
-<img src="../png/submit-server-status-updated.png"
+<img src="../png/submit.status-updated.png"
  alt="submit server status updated"
  width=717 height=217>
 
@@ -84,11 +88,10 @@ FAQ on "[txzchk](../faq.html#txzchk)".
 For details on `chkentry`, see the
 FAQ on "[chkentry](../faq.html#chkentry)".
 
-If you need more information on what `chkentry` checks, see the
+If you need more information on the two JSON files, see
 FAQ on the [".info.json file](../faq.html#info_json)"
 and the
 FAQ on the "[.auth.json file](../faq.html#auth_json)".
-
 
 
 <!--

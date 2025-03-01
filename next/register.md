@@ -43,10 +43,10 @@ The email message will have the subject:
 
 > Subscription consent for 'ioccc28-reg'
 
-**NOTE**: Beware that your email service, application and/or Internet
-Service Provider (ISP) might modify email subject lines.  For example, some string
-might have been prepended or appended to the subject line.  Beware of
-this when you search for the Subscription consent" email.
+**NOTE**: be aware that some email services, applications and/or Internet
+Service Providers (ISP) modify email subject lines.  For example, some string
+might have been prepended or appended to the subject line.  Be aware of
+this when you search for the "Subscription consent" email.
 
 **NOTE**: The "Subscription consent" email is usually sent by the FreeLists
 List Manager within a minute after clicking the **((Next >>))** button.

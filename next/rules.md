@@ -51,7 +51,7 @@ Jump to: [top](#)
 </div>
 
 <p class="leftbar">
-These [IOCCC rules](rules.html) are version **28.26 2025-02-28**.
+These [IOCCC rules](rules.html) are version **28.27 2025-03-01**.
 </p>
 
 <p class="leftbar">
@@ -581,11 +581,22 @@ Jump to: [top](#)
 </div>
 
 <p class="leftbar">
-Each person may submit up to and including **10.000000** (ten in base 10) entries per contest.
+Each person may register **ONLY** one account and each account may submit up to
+and including **10.000000** (ten in base 10) entries per contest.
 </p>
 
 **Each submission _must be submitted separately_**.
 
+<p class="leftbar">
+If this seems unreasonable we suggest you wait until the next contest, and in
+the interim ponder this modified quote purportedly said by Bill Gates:
+</p>
+
+<p class="leftbar">
+> 10 submissions ought to be enough for anybody. :-)
+>
+>    -- Bill Gates
+</p>
 
 Jump to: [top](#)
 
@@ -717,8 +728,8 @@ Your **xz compressed tarball** submission file must pass the tests performed by:
 * <p class="leftbar">`fnamchk(1)`</p>
 
 <p class="leftbar">
-The resulting directory produced when your **xz compressed tarball** submission file uncompressed,
-must pass the pass the checks performed by:
+The resulting directory produced when your **xz compressed tarball** submission file uncompressed
+must pass the checks performed by:
 </p>
 
 * <p class="leftbar">`chkentry(1)`</p>
@@ -734,7 +745,8 @@ The `.auth.json` and `.info.json` must be compatible with what hat `mkiocccentry
 would produce as well as pass the tests performed by:
 </p>
 
-* <p class="leftbar">`jparse(1)`</p>
+* <p class="leftbar">`jparse(3)`</p>
+* <p class="leftbar">`chkentry(1)`</p>
 
 
 ### TL;DR Rule 17 - Use `mkiocccentry(1)` to form your submission
@@ -749,7 +761,7 @@ Using command line flags or input prompts to override checks and
 limits made by the above mentioned tools is **NOT** recommended
 and may result in your submission being rejected by the [IOCCC
 submit server](https://submit.ioccc.org) and/or the [IOCCC
-Judges[(../judges.html).
+Judges](../judges.html).
 
 <p class="leftbar">
 See the
@@ -841,7 +853,7 @@ removed by the `clobber` rule.
 
 <p class="leftbar">
 Your `Makefile` **MUST** use a syntax that is compatible with `bash(1)`
-and GNU `make(1)`.  You are **ENCOURAGED** to use set `SHELL= bash` in
+and GNU `make(1)`.  You are **ENCOURAGED** to use `SHELL= bash` in
 your `Makefile`.
 </p>
 

@@ -461,7 +461,7 @@ writing by <a href="../contact.html">contacting the judges</a>.</p>
 </div>
 </div>
 <p class="leftbar">
-These <a href="rules.html">IOCCC rules</a> are version <strong>28.26 2025-02-28</strong>.
+These <a href="rules.html">IOCCC rules</a> are version <strong>28.27 2025-03-01</strong>.
 </p>
 <p class="leftbar">
 The markdown form of these rules <a href="rules.md" download="rules.md">is
@@ -850,9 +850,20 @@ See also <a href="#rule17">Rule 17</a>.
 <h2 id="rule-9">Rule 9</h2>
 </div>
 <p class="leftbar">
-Each person may submit up to and including <strong>10.000000</strong> (ten in base 10) entries per contest.
+Each person may register <strong>ONLY</strong> one account and each account may submit up to
+and including <strong>10.000000</strong> (ten in base 10) entries per contest.
 </p>
 <p><strong>Each submission <em>must be submitted separately</em></strong>.</p>
+<p class="leftbar">
+If this seems unreasonable we suggest you wait until the next contest, and in
+the interim ponder this modified quote purportedly said by Bill Gates:
+</p>
+<p class="leftbar">
+<blockquote>
+<p>10 submissions ought to be enough for anybody. :-)</p>
+<p>– Bill Gates</p>
+</blockquote>
+</p>
 <p>Jump to: <a href="#">top</a></p>
 <div id="rule10">
 <h2 id="rule-10">Rule 10</h2>
@@ -945,8 +956,8 @@ Your <strong>xz compressed tarball</strong> submission file must pass the tests 
 </p></li>
 </ul>
 <p class="leftbar">
-The resulting directory produced when your <strong>xz compressed tarball</strong> submission file uncompressed,
-must pass the pass the checks performed by:
+The resulting directory produced when your <strong>xz compressed tarball</strong> submission file uncompressed
+must pass the checks performed by:
 </p>
 <ul>
 <li><p class="leftbar">
@@ -967,7 +978,10 @@ would produce as well as pass the tests performed by:
 </p>
 <ul>
 <li><p class="leftbar">
-<code>jparse(1)</code>
+<code>jparse(3)</code>
+</p></li>
+<li><p class="leftbar">
+<code>chkentry(1)</code>
 </p></li>
 </ul>
 <h3 id="tldr-rule-17---use-mkiocccentry1-to-form-your-submission">TL;DR Rule 17 - Use <code>mkiocccentry(1)</code> to form your submission</h3>
@@ -978,8 +992,8 @@ limits in order to be sure you submission conforms to this rule.</p>
 <p>Using command line flags or input prompts to override checks and
 limits made by the above mentioned tools is <strong>NOT</strong> recommended
 and may result in your submission being rejected by the <a href="https://submit.ioccc.org">IOCCC
-submit server</a> and/or the [IOCCC
-Judges[(../judges.html).</p>
+submit server</a> and/or the <a href="../judges.html">IOCCC
+Judges</a>.</p>
 <p class="leftbar">
 See the
 FAQ on the “<a href="../faq.html#mkiocccentry">mkiocccentry tool</a>
@@ -1043,7 +1057,7 @@ removed by the <code>clobber</code> rule.
 </p>
 <p class="leftbar">
 Your <code>Makefile</code> <strong>MUST</strong> use a syntax that is compatible with <code>bash(1)</code>
-and GNU <code>make(1)</code>. You are <strong>ENCOURAGED</strong> to use set <code>SHELL= bash</code> in
+and GNU <code>make(1)</code>. You are <strong>ENCOURAGED</strong> to use <code>SHELL= bash</code> in
 your <code>Makefile</code>.
 </p>
 <p class="leftbar">

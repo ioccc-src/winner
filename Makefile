@@ -282,7 +282,7 @@ clobber:
 	thanks gen_other_html quick_other_html quick_entry_index find_invalid_json \
 	gen_year_index quick_year_index quick_www www untar_entry_tarball untar_year_tarball \
 	form_entry_tarball form_year_tarball tar gen_status gen_sitemap \
-	sitemap timestamp update csv2entry entry2csv about contact
+	sitemap timestamp update csv2entry entry2csv about contact gen_pw_change
 
 # Suggest rules in this section
 #
@@ -314,6 +314,7 @@ help:
 	@echo 'make verify_entry_files	;: check to be sure all files in all entries exist'
 	@echo 'make sort_gitignore	;: sort .gitignore files according to rules in bin/sgi.sh'
 	@echo 'make gen_authors	;: generate the top level authors.html page'
+	@echo 'make gen_pw_change	;: generate the next/pw-change.html page'
 	@echo 'make quick_authors	;: build authors.html if out of date with author JSON files'
 	@echo 'make gen_location	;: generate the top level location.html page'
 	@echo 'make quick_location	;: build location.html if out of date with author JSON files'
@@ -465,6 +466,8 @@ gen_authors: ${GEN_AUTHORS}
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
 	${GEN_AUTHORS} -v 1
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+
+
 
 # build authors.html if it is out of date from any author/author_handle.json file
 #
@@ -689,6 +692,14 @@ gen_next: ${GEN_TOP_HTML} next/README.md next/guidelines.md next/rules.md next/r
 	${GEN_TOP_HTML} -v 1 next/register
 	${GEN_TOP_HTML} -v 1 next/submit
 	${GEN_TOP_HTML} -v 1 next/pw-change
+	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+
+gen_pw_change:
+	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo "Did your password get breached?"
+	${GEN_TOP_HTML} -v 1 next/pw-change
+	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+	@echo "Perhaps you should change your password!"
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 markdown: ${GEN_TOP_HTML} markdown.md
