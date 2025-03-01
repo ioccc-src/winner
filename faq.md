@@ -1,6 +1,6 @@
 # IOCCC FAQ Table of Contents
 
-This is FAQ version **28.2.11 2025-02-27**.
+This is FAQ version **28.2.12 2025-02-28**.
 
 
 ## 0. [Entering the IOCCC: the bare minimum you need to know](#enter_questions)
@@ -26,6 +26,7 @@ This is FAQ version **28.2.11 2025-02-27**.
 - **Q 1.4**: <a class="normal" href="#subdirectories">How may I use subdirectories in my submission if Rule 17 disallows them?</a>
 - **Q 1.5**: <a class="normal" href="#mkiocccentry_test">How can I check if my submission passes tests without having to answer questions?</a>
 - **Q 1.6**: <a class="normal" href="#extra-files">How may I include additional files beyond the max allowed?</a>
+- **Q 1.7**: <a class="normal" href="#ai">May I use AI, Virtual coding assistants, or similar tools to write my submission?</a>
 
 
 ## 2. [IOCCC Judging process](#judging_proceess)
@@ -833,6 +834,26 @@ You can do this by creating the tarball like:
 ``` <!---sh-->
     tar --format=v7 -cJf foo.txz directory
 ```
+
+Jump to: [top](#)
+
+
+
+<div id="ai">
+### Q 1.7: May I use AI, Virtual coding assistants, or similar tools to write my submission?
+</div>
+
+You are free to use whatever tools you wish to write your code.
+This includes tools that are AI based, Virtual coding assistants, code
+generators, or similar tools, as well as your own tools.  The [IOCCC
+judges](https://www.ioccc.org/judges.html) do not discriminate on the
+basis of the tools used to write obfuscated C code so long as you are
+the ultimate author of the code you submit.
+
+If you do use such tools, **PLEASE mention** which tools you used as well
+as how you them to help write you submission in your `remarks.md` file.
+
+Jump to: [top](#)
 
 
 
