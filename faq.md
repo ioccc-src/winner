@@ -1260,7 +1260,7 @@ Jump to: [top](#)
 <hr style="width:50%;text-align:left;margin-left:0">
 
 
-<div id="judging">
+<div id="judging_process">
 ## Section 2: IOCCC Judging process
 </div>
 
@@ -7303,7 +7303,7 @@ Jump to: [top](#)
 The following **JSON** members are required to be present [status.json](status.json).
 
 
-<div id="no_comment">
+<div id="nocomment">
 ## no_comment
 </div>
 
