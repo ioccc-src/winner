@@ -5,7 +5,7 @@
 ## Step A: Verify that the contest pending or open
 </div>
 
-The contest needs to be either [pending](../status.html#pending) or [open](../status.html#open)
+The contest needs to be either [pending](../faq.html#pending) or [open](../faq.html#open)
 in order to register for the IOCCC.
 
 For details see the "[how the contest status impacts registration](#status_impact)" section below.
@@ -135,7 +135,7 @@ for assistance.
 ## Step I: Proceed with step 3
 </div>
 
-When the contest is [open](../status.html#open), proceed with
+When the contest is [open](../faq.html#open), proceed with
 [Step 3: Wait for your submit server username and initial password](../quick-start.html#step_3).
 
 
@@ -146,46 +146,46 @@ When the contest is [open](../status.html#open), proceed with
 
 ### When the IOCCC status is _closed_
 
-While the contest is **[CLOSED](../status.html#closed)**,
+While the contest is **[CLOSED](../faq.html#closed)**,
 you **CANNOT REGISTER** as there is no contest for which you can register.
 
 Watch the [IOCCC news](../news.html) and the [IOCCC Mastodon](https://fosstodon.org/@ioccc)
-for news about the next IOCCC as you may register when the contest is [pending](../status.html#pending)
-or [open](../status.html#open).
+for news about the next IOCCC as you may register when the contest is [pending](../faq.html#pending)
+or [open](../faq.html#open).
 
 
 ### When the IOCCC status is _pending_
 
-While the contest is **[PENDING](../status.html#pending)**,
+While the contest is **[PENDING](../faq.html#pending)**,
 you may **register for contest**, however you will **NOT**
 receive an email message containing your [IOCCC submit server](https://submit.ioccc.org)
-*Username and Initial Password* **until the IOCCC is [open](../status.html#open)**.
+*Username and Initial Password* **until the IOCCC is [open](../faq.html#open)**.
 
 
 ### When the IOCCC status is _open_
 
-While the contest is **[OPEN](../status.html#open)**,
+While the contest is **[OPEN](../faq.html#open)**,
 you may **register for the contest**.  Once you are registered **AND**
-the contest is [open](../status.html#open), you will receive an email message containing your very own
-**Username and Initial Password until the contest is [open](../status.html#open)**.  You will need these
+the contest is [open](../faq.html#open), you will receive an email message containing your very own
+**Username and Initial Password until the contest is [open](../faq.html#open)**.  You will need these
 to be able to "**[upload your submissions](submit.html)**" to the
 [IOCCC submit server](https://submit.ioccc.org).
 
 See also the
 FAQ on "[how to upload your submission](../faq.html#submit)"
-for more information on the submission process when the IOCCC [reopens](../status.html#open).
+for more information on the submission process when the IOCCC [reopens](../faq.html#open).
 
 
 ### When the IOCCC status is _judging_
 
-While the contest is **[PENDING](../status.html#pending)**,
+While the contest is **[PENDING](../faq.html#pending)**,
 you **CANNOT REGISTER** because the
 [IOCCC judges](../judges.html) are in the process of judging the [submissions](../faq.html#how_many)
-they received while the contest was [open](../status.html#open).
+they received while the contest was [open](../faq.html#open).
 
 Watch the [IOCCC news](../news.html) and the [IOCCC Mastodon](https://fosstodon.org/@ioccc)
-for news about the next IOCCC as you may register when the contest is [pending](../status.html#pending)
-or [open](../status.html#open).
+for news about the next IOCCC as you may register when the contest is [pending](../faq.html#pending)
+or [open](../faq.html#open).
 
 
 <!--

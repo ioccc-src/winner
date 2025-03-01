@@ -2,10 +2,10 @@
 
 **IMPORTANT NOTE**: The [IOCCC submit server](https://submit.ioccc.org)
 is only ready for submissions
-**ONLY WHEN THE CONTEST IS [open](../status.html#open)**.
+**ONLY WHEN THE CONTEST IS [open](../faq.html#open)**.
 
 See [current status of the IOCCC](../status.html) for details on the contest status.
-**IMPORTANT NOTE**: When the contest is [closed](../status.html#closed), the
+**IMPORTANT NOTE**: When the contest is [closed](../faq.html#closed), the
 [IOCCC submit server](https://submit.ioccc.org)
 might be offline and unreachable as a website.
 

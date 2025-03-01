@@ -453,7 +453,7 @@
 <li><strong>Q 1.5</strong>: <a class="normal" href="#mkiocccentry_test">How can I check if my submission passes tests without having to answer questions?</a></li>
 <li><strong>Q 1.6</strong>: <a class="normal" href="#extra-files">How may I include additional files beyond the max allowed?</a></li>
 </ul>
-<h2 id="ioccc-judging-process">2. <a href="#judging">IOCCC Judging process</a></h2>
+<h2 id="ioccc-judging-process">2. <a href="#judging_proceess">IOCCC Judging process</a></h2>
 <ul>
 <li><strong>Q 2.0</strong>: <a class="normal" href="#questions">What is the best way to ask a question about the IOCCC rules, guideline and tools?</a></li>
 <li><strong>Q 2.1</strong>: <a class="normal" href="#feedback">How can I comment or make a suggestion on IOCCC rules, guidelines and tools?</a></li>
@@ -562,6 +562,7 @@
 <li><strong>Q 10.8</strong>: <a class="normal" href="#menus">How do the menus on the website work and what can I do if they don’t work?</a></li>
 <li><strong>Q 10.9</strong>: <a class="normal" href="#author-information">How do I find more information about a winning author of an entry?</a></li>
 <li><strong>Q 10.10</strong>: <a class="normal" href="#cb">What is this cb tool that is mentioned in the IOCCC?</a></li>
+<li><strong>Q 10.11</strong>: <a class="normal" href="status_json">What do the status.json JSON file indicate?</a></li>
 </ul>
 <h2 id="history-of-the-ioccc">11. <a href="#ioccc_history">History of the IOCCC</a></h2>
 <ul>
@@ -5559,6 +5560,124 @@ name’s initial and then scroll down (if necessary) to the author in question.<
 longer be available, code wise, except for Plan 9, but Plan 9 was never used for
 judging the IOCCC. A Unix man page for <code>cb</code>
 <a href="https://www.ibm.com/docs/en/aix/7.3?topic=c-cb-command">still exists</a>.</p>
+<p>Jump to: <a href="#">top</a></p>
+<div id="status_json">
+<h3 id="q-10.11-what-do-the-status.json-json-file-indicate">Q 10.11: What do the status.json JSON file indicate?</h3>
+</div>
+<p>The following <strong>JSON</strong> members are required to be present <a href="status.json">status.json</a>.</p>
+<div id="no_comment">
+<h2 id="no_comment-2">no_comment</h2>
+</div>
+<p>This is a <strong>mandatory</strong> comment for which we offer no comment other
+than this comment. :-)</p>
+<p>The <strong>JSON</strong> member value must be the following <strong>JSON</strong> quoted string:</p>
+<pre><code>    &quot;mandatory comment: because comments were removed from the original JSON spec&quot;</code></pre>
+<div id="IOCCC_status_version">
+<h2 id="ioccc_status_version">IOCCC_status_version</h2>
+</div>
+<p>This is the version of format of the <a href="status.json">status.json</a> file.</p>
+<p>The <strong>JSON</strong> member value of is a <strong>JSON</strong> quoted string the form “<em>version YYYY-MM-DD</em>”.</p>
+<p>This document describes version “<strong>1.0 2024-03-09</strong>”.</p>
+<h2 id="contest_status">contest_status</h2>
+<p>This is the current status of the contest.</p>
+<p>The following <strong>JSON</strong> member value string may be one of the following <strong>JSON</strong> quoted strings:</p>
+<h4 id="pending">“<strong>pending</strong>”</h4>
+<p>While the contest <strong><a href="#pending">PENDING</a></strong> the contest is not yet <a href="#open">open</a>, however there is a tentative scheduled
+date and time by which the contest will <a href="#open">open</a> for submissions.</p>
+<p>A preliminary <a href="next/rules.html">IOCCC rules</a>, <a href="next/guidelines.html">IOCCC guidelines</a>,
+and <a href="https://github.com/ioccc-src/mkiocccentry">IOCCC mkiocccentry tools</a> have
+been released.</p>
+<p>You may <a href="next/register.html">register for the IOCCC</a> while the contest is <a href="#pending">pending</a>,
+however you will <strong>NOT</strong> receive your own Email message containing your very own
+<strong>Username and Initial Password until the contest is <a href="#open">open</a></strong>. You will need these
+to be able to <a href="next/submit.html">upload your submission</a> to the <a href="https://submit.ioccc.org">IOCCC submit
+server</a>.</p>
+<p>Once contest moves from <a href="#pending%22">pending</a> to <a href="#open">open</a>, an announcement
+Email will be sent out to the mailing list of those have successfully registered for the IOCCC.
+In addition, an announcement will be made to the <a href="news.html">IOCCC news</a> in case you miss
+that announcement Email.</p>
+<p>While you are waiting for the contest to <a href="#open">open</a>, we <strong>highly recommend</strong>
+that you review the <a href="next/rules.html">IOCCC rules</a>, <a href="next/guidelines.html">IOCCC guidelines</a>,
+and <a href="https://github.com/ioccc-src/mkiocccentry">IOCCC mkiocccentry tools</a>.</p>
+<p>Should you have any comments, suggestions, and concerns about the above, and <strong>while you waiting</strong>
+for the contest to <a href="#open">open</a>, please see the
+FAQ on “<a href="#feedback">comment or make a suggestion on IOCCC rules, guidelines and tools</a>”
+as well as the
+FAQ on “<a href="#questions">best way to ask a question about the IOCCC rules, guideline and tools</a>”
+for how.</p>
+<p>See also the
+FAQ on “<a href="next/submit.html">how to upload your submission</a>”
+for more information on the submission process when the IOCCC <a href="#open">reopens</a>.</p>
+<h4 id="open">“<strong>open</strong>”</h4>
+<p>While contest is <strong><a href="#open">OPEN</a></strong>, those who have <a href="next/register.html">registered for the IOCCC</a>
+may <a href="next/submit.html">upload their submissions</a> to the <a href="https://submit.ioccc.org">IOCCC submit server</a>.</p>
+<p>See the
+FAQ on “<a href="#submit">how to submit</a>”
+for more information.</p>
+<p>See the <a href="news.html">IOCCC news</a> page for details on any IOCCC related deadlines
+such as when the contest will <a href="#closed">close</a>.</p>
+<p>The <a href="next/rules.html">IOCCC rules</a>, <a href="next/guidelines.html">IOCCC guidelines</a>,
+and <a href="https://github.com/ioccc-src/mkiocccentry">IOCCC mkiocccentry tools</a>
+are now official. Should you have any questions about these, please see the
+FAQ on “<a href="#questions">best way to ask a question about the IOCCC rules, guideline and tools</a>”
+for how to ask them.</p>
+<p>Be sure to review the official <a href="next/rules.html">IOCCC rules</a>, <a href="next/guidelines.html">IOCCC guidelines</a>,
+for any changes, as well as updating your <a href="https://github.com/ioccc-src/mkiocccentry">IOCCC mkiocccentry tools</a>
+as changes to them may have been made while the contest was “<strong><a href="#pending">pending</a></strong>”.</p>
+<p>See also the
+FAQ on “<a href="#submit">how to submit</a>”
+for more information on the submission process when the IOCCC <a href="#open">reopens</a>.</p>
+<h4 id="judging">“<strong>judging</strong>”</h4>
+<p>While contest is <strong><a href="#judging">JUDGING</a></strong>, you cannot <a href="next/register.html">register</a>
+nor can you <a href="next/submit.html">upload submissions</a>. This is because the
+<a href="judges.html">IOCCC judges</a> are in the process of judging the <a href="#how_many">submissions</a>
+they received while the contest was <a href="#open">open</a>.</p>
+<p>Watch the <a href="https://fosstodon.org/@ioccc"><span class="citation" data-cites="IOCCC">@IOCCC</span> mastodon feed</a> for updates.</p>
+<p>Once the contest <a href="#closed">closes</a>, the judges will:</p>
+<ul>
+<li><p>Select the <a href="years.html">winning entries</a> and announce them on the <a href="https://fosstodon.org/@ioccc"><span class="citation" data-cites="IOCCC">@IOCCC</span>
+mastodon feed</a>.</p></li>
+<li><p>Notify the <a href="authors.html">authors</a> of entries that won the contest
+via email using their registered email address.</p></li>
+<li><p>Announce who the <a href="authors.html">authors</a> are of this year’s <a href="years.html">winning IOCCC
+entries</a> via the <a href="https://fosstodon.org/@ioccc"><span class="citation" data-cites="IOCCC">@IOCCC</span> mastodon
+feed</a>.</p></li>
+<li><p>Upload the winning code to the <a href="https://github.com/ioccc-src/winner">Official IOCCC winner
+repo</a>.</p></li>
+<li><p>Update the <a href="index.html">Official IOCCC website</a>, and in particular
+display this year’s <a href="years.html">winning IOCCC entries</a> at the top of the <a href="years.html">IOCCC
+winning entries page</a>.</p></li>
+<li><p>Update the <a href="news.html">IOCCC news</a> page.</p></li>
+</ul>
+<h4 id="closed">“<strong>closed</strong>”</h4>
+<p>While contest is <strong><a href="#closed">CLOSED</a></strong>, you cannot <a href="next/register.html">register</a>
+nor can you <a href="next/submit.html">upload submissions</a>. You have to wait for the
+next contest to <a href="#open">open</a>.</p>
+<p>See the <a href="years.html">IOCCC winning entries page</a> for the entries that have won
+the <a href="index.html">IOCCC</a>.</p>
+<p><strong>NOTE</strong>: From time to time, <a href="years.html">winning IOCCC entries</a> may have their write-ups updated,
+<code>Makefiles</code> improved, source code fixed etc. See <a href="news.html">IOCCC news</a> for details.</p>
+<p>Watch both <a href="status.html">this IOCCC status page</a> and the <a href="https://fosstodon.org/@ioccc"><span class="citation" data-cites="IOCCC">@IOCCC</span>
+mastodon feed</a> for information about future
+contest <a href="#open">openings</a>.</p>
+<h2 id="news_update">news_update</h2>
+<p>This shows the latest modification date for the <a href="news.html">IOCCC news</a> page.</p>
+<p>The <strong>JSON</strong> member value is a <strong>JSON</strong> quoted string obtained from the date field
+of the following <code>ls(1)</code> command:</p>
+<pre><code>    TZ=UTC ls -D &#39;%FT%T+00:00&#39; -ld news.html</code></pre>
+<p><strong>NOTE</strong>: The date and time are given with respect to <strong>UTC</strong> timezone.</p>
+<p><strong>NOTE</strong>: It is possible that for some reason, the <a href="news.html">IOCCC news</a> page
+was modified without the content being changed. While we will try to minimize
+the cases where this happen, we apologize in advance (Sorry tm Canada 🇨🇦) when it does.</p>
+<h2 id="status_update">status_update</h2>
+<p>This shows the latest modification date of <a href="status.json">status.json</a> file.</p>
+<p>The <strong>JSON</strong> member value is a <strong>JSON</strong> quoted string obtained from the date field
+of the following <code>ls(1)</code> command:</p>
+<pre><code>    TZ=UTC ls -D &#39;%FT%T+00:00&#39; -ld status.json</code></pre>
+<p><strong>NOTE</strong>: The date and time are given with respect to <strong>UTC</strong> timezone.</p>
+<p><strong>NOTE</strong>: It is possible that for some reason, the <a href="status.json">status.json</a> file
+was modified without the content being changed. While we will try to minimize
+the cases where this happen, we apologize in advance (Sorry tm Canada 🇨🇦) when it does.</p>
 <p>Jump to: <a href="#">top</a></p>
 <hr style="width:50%;text-align:left;margin-left:0">
 <hr style="width:50%;text-align:left;margin-left:0">

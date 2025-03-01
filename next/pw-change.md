@@ -8,10 +8,10 @@ server](https://submit.ioccc.org).
 from when one of the [IOCCC judges](../judges.html) sent that email.
 
 **NOTE**: The [IOCCC submit server](https://submit.ioccc.org)
-is ready for submissions **ONLY WHEN THE CONTEST IS [open](../status.html#open)**.
+is ready for submissions **ONLY WHEN THE CONTEST IS [open](../faq.html#open)**.
 See [current status of the IOCCC](../status.html) for details on the contest status.
 
-**IMPORTANT NOTE**: When the contest is [closed](../status.html#closed), the
+**IMPORTANT NOTE**: When the contest is [closed](../faq.html#closed), the
 [IOCCC submit server](https://submit.ioccc.org)
 may be offline and unreachable as a web site.
 
@@ -51,7 +51,7 @@ password:
  alt="submit server password changed"
  width=710 height=344>
 
-When the contest is [open](../status.html#open), proceed with
+When the contest is [open](../faq.html#open), proceed with
 [Step 5: Obtain and compile the latest mkiocccentry toolkit](../quick-start.html#step_5).
 
 

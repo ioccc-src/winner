@@ -105,20 +105,20 @@ This IOCCC runs from **2024-12-29 23:58:13.213455 UTC** to **2025-06-05 04:03:02
 </p>
 
 <p class="leftbar">
-This contest will enter the **[pending](../status.html#pending)** state on or about
+This contest will enter the **[pending](../faq.html#pending)** state on or about
 **2024-12-29 23:58:13.213455 UTC**.
 </p>
 
 <p class="leftbar">
-This contest will enter the **[open](../status.html#open)** state on **2025-03-05 23:19:17.131107 UTC**.
+This contest will enter the **[open](../faq.html#open)** state on **2025-03-05 23:19:17.131107 UTC**.
 </p>
 
 <p class="leftbar">
-This contest will enter the **[judging](../status.html#judging)** state on **2025-06-05 04:03:02.010099 UTC**.
+This contest will enter the **[judging](../faq.html#judging)** state on **2025-06-05 04:03:02.010099 UTC**.
 </p>
 
 <p class="leftbar">
-**IMPORTANT NOTE**: Until the contest enters the **[open](../status.html#open)** state, any or all
+**IMPORTANT NOTE**: Until the contest enters the **[open](../faq.html#open)** state, any or all
 of the above **dates and times may change _AT ANY TIME_**!
 </p>
 
@@ -128,18 +128,18 @@ to be a **fun**ctional UTC time.  :-)
 </p>
 
 <p class="leftbar">
-Until the contest status becomes **[open](../status.html#open)**,
+Until the contest status becomes **[open](../faq.html#open)**,
 the [IOCCC rules](rules.html),
 [IOCCC guidelines](guidelines.html) and the tools in the
 [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry), **SHOULD be
 considered** provisional **BETA** versions and **may be adjusted _AT ANY TIME_**
-before the contest status becomes **[open](../status.html#open)**.
+before the contest status becomes **[open](../faq.html#open)**.
 </p>
 
 <p class="leftbar">
 You **MUST** [register](register.html) in order to participate in the IOCCC.
 You may [register](register.html) while the contest is either
-**[pending](../status.html#pending)** or  **[open](../status.html#open)**.
+**[pending](../faq.html#pending)** or  **[open](../faq.html#open)**.
 </p>
 
 <p class="leftbar">
@@ -150,7 +150,7 @@ has changed from previous years!
 </p>
 
 <p class="leftbar">
-When the contest is **[open](../status.html#open)**, an [IOCCC
+When the contest is **[open](../faq.html#open)**, an [IOCCC
 judge](../judges.html) will email you your [submit
 server](https://submit.ioccc.org) **Username** and **Initial password**.  This
 takes some time (maybe even a few days) for an [IOCCC judge](../judges.html) to
@@ -160,10 +160,10 @@ sure to give yourself enough time.
 
 <p class="leftbar">
 Those who [register](register.html) while the contest status is
-**[pending](../status.html#pending)** will receive email with their [submit
+**[pending](../faq.html#pending)** will receive email with their [submit
 server](https://submit.ioccc.org) **Username** and **Initial password** from an
 [IOCCC judge](../judges.html) shortly after the contest status becomes
-**[open](../status.html#open)**.
+**[open](../faq.html#open)**.
 </p>
 
 <p class="leftbar">
@@ -189,13 +189,13 @@ Once you have [registered](register.html), and received by email, your
 from an [IOCCC judge](../judges.html), you may, after [changing your initial
 password](pw-change.html) upload your submission to
 the [submit server](https://submit.ioccc.org), as long as the contest
-**[open](../status.html#open)**.
+**[open](../faq.html#open)**.
 </p>
 
 <p class="leftbar">
 The [submit server](https://submit.ioccc.org) will become active when the
-contest is **[pending](../status.html#pending)**.
-Until the contest status becomes **[pending](../status.html#pending)**,
+contest is **[pending](../faq.html#pending)**.
+Until the contest status becomes **[pending](../faq.html#pending)**,
 the [submit server](https://submit.ioccc.org) might be offline and/or unresponsive.
 </p>
 
@@ -279,7 +279,7 @@ as well as
 
 
 <p class="leftbar">
-While the contest is **[open](../status.html#open)**, you may modify your
+While the contest is **[open](../faq.html#open)**, you may modify your
 previously uploaded submission by rebuilding your submission with the
 `mkiocccentry(1)` tool and then re-uploading it to **the same slot number** on the
 [submit server](https://submit.ioccc.org).
@@ -294,7 +294,7 @@ the file. If you use `-A`, **BE SURE** you don't overwrite another file by accid
 </p>
 
 <p class="leftbar">
-Once the contest enters the **[judging](../status.html#judging)** state, you will
+Once the contest enters the **[judging](../faq.html#judging)** state, you will
 **NOT** be allowed to upload your submission files, so do give yourself enough
 time.
 </p>
@@ -2394,7 +2394,7 @@ Jump to: [top](#)
 
 <p class="leftbar">
 The [current status of the IOCCC](../status.html) will change from
-**[judging](../status.html#judging)** to **[closed](../status.html#closed)** .
+**[judging](../faq.html#judging)** to **[closed](../faq.html#closed)** .
 </p>
 
 <p class="leftbar">

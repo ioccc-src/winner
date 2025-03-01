@@ -17,12 +17,12 @@ are official, to be sure you are **using an up to date official mkiocccentry too
 
 ### When the IOCCC status is _closed_
 
-While the IOCCC status is **[CLOSED](../status.html#closed)**,
+While the IOCCC status is **[CLOSED](../faq.html#closed)**,
 the [rules](rules.html) and [guidelines](guidelines.html)
 are **OUT OF DATE**.
 
 A **very tentative proposal** for the next IOCCC
-that is **VERY LIKELY** to be updated before the next contest becomes [pending](../status.html#pending).
+that is **VERY LIKELY** to be updated before the next contest becomes [pending](../faq.html#pending).
 They are are provided as a **tentative** hint **at what
 might be used** for the next IOCCC.
 
@@ -35,11 +35,11 @@ Mastodon](https://fosstodon.org/@ioccc) feed as _sometimes_ the
 
 ### When the IOCCC status is _pending_
 
-While the IOCCC status is **[PENDING](../status.html#pending)**,
+While the IOCCC status is **[PENDING](../faq.html#pending)**,
 the [rules](rules.html) and [guidelines](guidelines.html) are **tentative**.
 
 One might think of them as a **beta** release for the IOCCC
-that is about to [open](../status.html#open).
+that is about to [open](../faq.html#open).
 
 **IMPORTANT**: All **tentative** [rules](rules.html) and [guidelines](guidelines.html)
 are subject to change by the [IOCCC judges](../judges.html) at any time.
@@ -47,33 +47,33 @@ See both the [IOCCC news](../news.html) and the [IOCCC
 Mastodon](https://fosstodon.org/@ioccc) feed as _sometimes_ the
 [IOCCC judges](../judges.html) **mention changes** there.
 
-You may [register for the IOCCC](register.html) while the contest is [pending](../status.html#pending),
+You may [register for the IOCCC](register.html) while the contest is [pending](../faq.html#pending),
 however you will **NOT** receive your own Email message containing your very own
-**Username and Initial Password until the contest is [open](../status.html#open)**.  You will need these
-to be able to [upload your submission](submit.html) when the contest is [open](../status.html#open).
+**Username and Initial Password until the contest is [open](../faq.html#open)**.  You will need these
+to be able to [upload your submission](submit.html) when the contest is [open](../faq.html#open).
 
-Once contest moves from [pending](../status.html#pending") to [open](../status.html#open) an announcement
+Once contest moves from [pending](../faq.html#pending") to [open](../faq.html#open) an announcement
 Email will be sent out to the mailing list of those have successfully registered for the IOCCC.
 In addition, an announcement will be made to the [IOCCC news](../news.html) in case you miss
 that announcement Email.
 
-While you are waiting for the contest to [open](../status.html#open), we **highly recommend**
+While you are waiting for the contest to [open](../faq.html#open), we **highly recommend**
 that you review the [IOCCC rules](rules.html), [IOCCC guidelines](guidelines.html),
 and [IOCCC mkiocccentry tools](https://github.com/ioccc-src/mkiocccentry).
 
 Should you have any comments, suggestions, and concerns about the above, and **while you waiting**
-for the contest to [open](../status.html#open) please see the
+for the contest to [open](../faq.html#open) please see the
 FAQ on "[comment or make a suggestion on IOCCC rules, guidelines and tools](../faq.html#feedback)"
 as well as the
 FAQ on "[best way to ask a question about the IOCCC rules, guideline and tools](../faq.html#questions)"
 for how.
 
-See also about how [upload your submission](submit.html) when the contest is [open](../status.html#open).
+See also about how [upload your submission](submit.html) when the contest is [open](../faq.html#open).
 
 
 ### When the IOCCC status is _open_
 
-While the IOCCC status is **[OPEN](../status.html#open)**,
+While the IOCCC status is **[OPEN](../faq.html#open)**,
 the [rules](rules.html) and [guidelines](guidelines.html) are **OFFICIAL**.
 
 Unless some significant problem turns up (such as a need to delay
@@ -92,18 +92,18 @@ for how to ask them.
 
 Be sure to review the official [IOCCC rules](rules.html), [IOCCC guidelines](guidelines.html),
 for any changes, as well as updating your [IOCCC mkiocccentry tools](https://github.com/ioccc-src/mkiocccentry)
-as changes to them may have been made while the contest was "**[pending](../status.html#pending)**.
+as changes to them may have been made while the contest was "**[pending](../faq.html#pending)**.
 
 See also the
 FAQ on "[how to submit](submit.html)"
-for more information on the submission process when the IOCCC [reopens](../status.html#open).
+for more information on the submission process when the IOCCC [reopens](../faq.html#open).
 
 
 ### When the IOCCC status is _judging_
 
-While the IOCCC status is **[JUDGING](../status.html#judging)**,
+While the IOCCC status is **[JUDGING](../faq.html#judging)**,
 the [rules](rules.html) and [guidelines](guidelines.html) are
-for the when the was previously **[OPEN](../status.html#open)** for new submissions.
+for the when the was previously **[OPEN](../faq.html#open)** for new submissions.
 
 See the [IOCCC news](../news.html) as well as the [IOCCC
 Mastodon](https://fosstodon.org/@ioccc) feed for updates

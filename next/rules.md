@@ -123,27 +123,27 @@ This IOCCC runs from **2024-12-29 23:58:13.213455 UTC** to **2025-06-05 04:03:02
 </p>
 
 <p class="leftbar">
-This contest will enter the **[pending](../status.html#pending)** state on or about
+This contest will enter the **[pending](../faq.html#pending)** state on or about
 **2024-12-29 23:58:13.213455 UTC**.
 </p>
 
 <p class="leftbar">
-This contest will enter the **[open](../status.html#open)** state on **2025-03-05 23:19:17.131107 UTC**.
+This contest will enter the **[open](../faq.html#open)** state on **2025-03-05 23:19:17.131107 UTC**.
 </p>
 
 <p class="leftbar">
-This contest will enter the **[judging](../status.html#judging)** state on **2025-06-05 04:03:02.010099 UTC**.
+This contest will enter the **[judging](../faq.html#judging)** state on **2025-06-05 04:03:02.010099 UTC**.
 </p>
 
 <p class="leftbar">
-**IMPORTANT NOTE**: Until the contest enters the **[open](../status.html#open)** state, any or all
+**IMPORTANT NOTE**: Until the contest enters the **[open](../faq.html#open)** state, any or all
 of the above **dates and times may change**!
 </p>
 
 <p class="leftbar">
-Those who [register](register.html) while the contest status is **[pending](../status.html#pending)**
+Those who [register](register.html) while the contest status is **[pending](../faq.html#pending)**
 will receive email with their [submit server](https://submit.ioccc.org) **Username** and **Initial password**
-from an [IOCCC judge](../judges.html) shortly after the contest status becomes **[open](../status.html#open)**.
+from an [IOCCC judge](../judges.html) shortly after the contest status becomes **[open](../faq.html#open)**.
 </p>
 
 <p class="leftbar">
@@ -328,7 +328,7 @@ Jump to: [top](#)
 <p class="leftbar">
 You must [register](register.html) in order to submit your entry to the IOCCC.
 You may [register](register.html) while the contest is either
-**[pending](../status.html#pending)** or  **[open](../status.html#open)**.
+**[pending](../faq.html#pending)** or  **[open](../faq.html#open)**.
 </p>
 
 <p class="leftbar">
@@ -338,7 +338,7 @@ for instructions on registering and participating in the IOCCC, as the process h
 </p>
 
 <p class="leftbar">
-When the contest is **[open](../status.html#open)**, an
+When the contest is **[open](../faq.html#open)**, an
 [IOCCC judge](../judges.html) will email you your [submit server](https://submit.ioccc.org)
 **Username** and **Initial password**.  This takes some time (maybe even a few days) for an
 [IOCCC judge](../judges.html) to process your registration and email you your
@@ -346,9 +346,9 @@ initial login and password.
 </p>
 
 <p class="leftbar">
-Those who [register](register.html) while the contest status is **[pending](../status.html#pending)**
+Those who [register](register.html) while the contest status is **[pending](../faq.html#pending)**
 will receive email with their [submit server](https://submit.ioccc.org) **Username** and **Initial password**
-from an [IOCCC judge](../judges.html) shortly after the contest status becomes **[open](../status.html#open)**.
+from an [IOCCC judge](../judges.html) shortly after the contest status becomes **[open](../faq.html#open)**.
 </p>
 
 <p class="leftbar">
@@ -371,7 +371,7 @@ If you have [registered](register.html) and received by email their
 [submit server](https://submit.ioccc.org) **Username** and **Initial password**
 from an [IOCCC judge](../judges.html), you may upload your submission to
 the [submit server](https://submit.ioccc.org) only while the
-contest **[open](../status.html#open)**.
+contest **[open](../faq.html#open)**.
 </p>
 
 <p class="leftbar">
@@ -392,19 +392,19 @@ for more information about the `mkiocccentry(1)` tool.
 </p>
 
 <p class="leftbar">
-While the contest is **[open](../status.html#open)**, you may modify your previously
+While the contest is **[open](../faq.html#open)**, you may modify your previously
 uploaded submission by rebuilding your submission with the `mkiocccentry(1)` tool
 and then re-uploading it to the same slot number on the [submit server](https://submit.ioccc.org).
 </p>
 
 <p class="leftbar">
-Once the contest enters the **[judging](../status.html#judging)** state, you will
+Once the contest enters the **[judging](../faq.html#judging)** state, you will
 **NOT** be allowed to upload your submission files.
 </p>
 
 <p class="leftbar">
-The [submit server](https://submit.ioccc.org) will become active when the contest is **[open](../status.html#open)**.
-Until the contest status becomes **[open](../status.html#open)**,
+The [submit server](https://submit.ioccc.org) will become active when the contest is **[open](../faq.html#open)**.
+Until the contest status becomes **[open](../faq.html#open)**,
 the [submit server](https://submit.ioccc.org) may be offline and/or unresponsive.
 </p>
 
@@ -540,16 +540,16 @@ Jump to: [top](#)
 
 <p class="leftbar">
 Submissions may only be uploaded to the [IOCCC submit server](https://submit.ioccc.org)
-while the contest is **[open](../status.html#open)**.
+while the contest is **[open](../faq.html#open)**.
 </p>
 
 <p class="leftbar">
-Once the contest is in the **[judging](../status.html#judging)** state (or **[closed](../status.html#closed)**),
+Once the contest is in the **[judging](../faq.html#judging)** state (or **[closed](../faq.html#closed)**),
 you may **NOT** upload submissions.
 </p>
 
 <p class="leftbar">
-While the contest is **[open](../status.html#open)** or in the **[judging](../status.html#judging)** state,
+While the contest is **[open](../faq.html#open)** or in the **[judging](../faq.html#judging)** state,
 the [IOCCC judges](../judges.html) may (but are not required to) modify the slot comment of your submission to indicate
 that they have received it.  If uploaded submission is malformed, the [IOCCC judges](../judges.html)
 may (but are not required to) modify the slot comment accordingly.
@@ -1072,7 +1072,7 @@ FAQ on "[mkiocccentry repo bugs](../faq.html#mkiocccentry_bugs)".
 your submission's xz compressed tarball. Do **NOT** assume you have the most
 recent release without pulling or downloading via GitHub and do **MAKE SURE** you
 do this **AFTER** the [contest status](../status.html) has changed to
-[open](../status.html#open).
+[open](../faq.html#open).
 </p>
 
 
