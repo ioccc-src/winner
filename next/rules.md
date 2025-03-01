@@ -51,7 +51,7 @@ Jump to: [top](#)
 </div>
 
 <p class="leftbar">
-These [IOCCC rules](rules.html) are version **28.25 2025-02-26**.
+These [IOCCC rules](rules.html) are version **28.26 2025-02-28**.
 </p>
 
 <p class="leftbar">
@@ -73,9 +73,12 @@ Jump to: [top](#)
 **&larr; Lines that start with this symbol indicate a change from the previous IOCCC**
 </p>
 
-Most lines (we sometimes make mistakes) that were modified since the previous
-IOCCC start with a solid 4 pixel black left border (or, in the case of a code
-block or blockquote, just a vertical bar).
+<p class="leftbar">
+Most lines that were modified since the previous IOCCC start with a solid
+4 pixel black left border (or, in the case of a code block or blockquote,
+just a vertical bar).  We say _most lines_ because we sometimes forget
+to bar modified sections.
+</p>
 
 
 Jump to: [top](#)
@@ -106,9 +109,11 @@ The goals of the IOCCC:
 
 *  To write the most Obscure/Obfuscated C program within the [IOCCC rules](rules.html).
 *  To show the importance of programming style, in an ironic way.
+*  To emphasize the value of perspicuous code by use of negative examples.
 *  To stress C compilers with unusual code.
 *  To illustrate some of the subtleties of the C language.
 *  To provide a safe forum for poor C code. :-)
+*  To have fun with C!
 
 
 Jump to: [top](#)
@@ -206,7 +211,9 @@ Jump to: [top](#)
 ## Rule 1
 </div>
 
-Your submission must be a complete program.
+<p class="leftbar">
+Your submission must be a C program.
+</div>
 
 
 Jump to: [top](#)
@@ -371,7 +378,7 @@ If you have [registered](register.html) and received by email their
 [submit server](https://submit.ioccc.org) **Username** and **Initial password**
 from an [IOCCC judge](../judges.html), you may upload your submission to
 the [submit server](https://submit.ioccc.org) only while the
-contest **[open](../faq.html#open)**.
+contest is **[open](../faq.html#open)**.
 </p>
 
 <p class="leftbar">
@@ -500,7 +507,9 @@ Jump to: [top](#)
 ## Rule 7
 </div>
 
-The obfuscated C program must be an original work that you own.
+<p class="leftbar">
+The obfuscated C program must be your own original work.
+</p>
 
 <p class="leftbar">
 You (the author(s)) must own the contents of your submission OR
