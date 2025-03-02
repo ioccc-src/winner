@@ -42,11 +42,14 @@ Put in your login (UUID username), your old (initial) password and a new passwor
 
 Click "Change Password".
 
-**NOTE**: if you have put in your old password, you'll see something like:
+**NOTE**: If enter an improper new password, you will see an error message
+that looks similar to this:
 
 <img src="../png/submit.invalid-passwd.png"
  alt="submit server password change error"
  width=710 height=808>
+
+If that happens, choose a proper new password and try again.
 
 Once you've changed your password you will be able to log in again with your UUID
 username and new password. This is what it will look like when you change your
