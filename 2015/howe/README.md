@@ -68,7 +68,7 @@ This is the best use of the FNV that we have seen in the IOCCC so far!
 The output, when used without `-d`, is compatible with POSIX `diff(1)` and
 is suitable for use with `patch(1)`.
 
-We welcome back Canada to the list of nations from where winning
+We welcome back Canada 🇨🇦 to the list of nations from where winning
 entries have been submitted.
 
 Is this code a bug or a feature? :-)  Or is this an attempt to corrupt the

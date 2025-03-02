@@ -7009,7 +7009,7 @@ entries that have won the IOCCC, sometimes in the same IOCCC contest year.
 refer to what is now an _author_.  In a number of historical cases,
 such as old rules and old guidelines, terms such as _winner_ may still be
 found.  Moreover, out of habit, the IOCCC judges sometimes use old
-names such as _winner_ when they should use _author_.  Sorry (tm Canada :-) )!
+names such as _winner_ when they should use _author_.  Sorry (tm Canada 🇨🇦:-) )!
 
 - Entry
 
@@ -7028,7 +7028,7 @@ directory `YYYY/entry`.
 refer to what is now an _entry_.  In a number of historical cases,
 such as old rules and old guidelines, terms such as _winner_ may still be
 found.  Moreover, out of habit, the IOCCC judges sometimes use old
-names such as _winner_ when they should use _entry_.  Sorry (tm Canada :-) )!
+names such as _winner_ when they should use _entry_.  Sorry (tm Canada 🇨🇦:-) )!
 
 - Submission
 
@@ -7050,7 +7050,7 @@ the special JSON file to discover who the _author_(s) are.
 refer to what is now a _submission_.  In a number of historical cases,
 such as old rules and old guidelines, terms such as _entry_ may still be
 found.  Moreover, out of habit, the IOCCC judges sometimes use old
-names such as _entry_ when they should use _submission_.  Sorry (tm Canada)! :-)
+names such as _entry_ when they should use _submission_.  Sorry (tm Canada)! 🇨🇦:-)
 
 Jump to: [top](#)
 

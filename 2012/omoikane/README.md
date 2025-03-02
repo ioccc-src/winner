@@ -77,7 +77,7 @@ For the first alternate version:
     ./try.alt.sh
 ```
 
-We have no way to test the second version, sorry (tm Canada :-) )!
+We have no way to test the second version, sorry (tm Canada 🇨🇦 :-) )!
 
 
 ## Judges' remarks:

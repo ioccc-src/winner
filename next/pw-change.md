@@ -38,7 +38,7 @@ As you can see, on your first login you **MUST** change your password. If you do
 not do this within 72 hours **YOUR ACCOUNT WILL BE CLOSED** and you'll have to
 register again! In that case, it will say something like this:
 
-> ERROR: Sorry (tm Canada 🇨) you cannot login at this time.
+> ERROR: Sorry (tm Canada 🇨🇦) you cannot login at this time.
 
 Assuming you did login in time, you should put in your login (UUID username),
 your old (initial) password and a new password and then click "Change Password".

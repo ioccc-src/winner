@@ -20,7 +20,7 @@ It might look something like:
 **NOTE**: if the contest is NOT open you will see something like this instead:
 
 > The contest is NOT yet open for submissions.<br>
-> Sorry (tm Canada 🇨), the IOCCC is not yet open.<br>
+> Sorry (tm Canada 🇨🇦), the IOCCC is not yet open.<br>
 > The IOCCC is scheduled to open at 2025-03-05 23:19:17.131107 UTC.<br>
 >
 > Message(s):<br>
