@@ -31,30 +31,28 @@ you will be required to change your password. Assuming everything is fine, that
 would look something like:
 
 <img src="../png/submit.first-login.png"
- alt="submit server password change required"
+ alt="submit server initial login requires your password to be changed"
  width=710 height=808>
 
 As you can see, on your first login you **MUST** change your password. If you do
 not do this within 72 hours **YOUR ACCOUNT WILL BE CLOSED** and you'll have to
-register again!
+register again! In that case, it will say something like this:
 
-Put in your login (UUID username), your old (initial) password and a new password.
+> ERROR: Sorry (tm Canada 🇨) you cannot login at this time.
 
-Click "Change Password".
+Assuming you did login in time, you should put in your login (UUID username),
+your old (initial) password and a new password and then click "Change Password".
 
-**NOTE**: if you have put in your old password, you'll see something like:
+**NOTE**: if you have put in your old password, you'll get the following error:
 
-<img src="../png/submit.invalid-passwd.png"
- alt="submit server password change error"
- width=710 height=808>
+> ERROR: Password not changed<br>
+> ERROR: invalid old password
 
-Once you've changed your password you will be able to log in again with your UUID
-username and new password. This is what it will look like when you change your
-password:
+Once you've changed your password successfully you will be able to log in again
+with your UUID username and new password. When you have done this it will
+report:
 
-<img src="../png/submit.passwd-changed.png"
- alt="submit server password changed"
- width=710 height=344>
+> • Password successfully changed.
 
 When the contest is [open](../faq.html#open), proceed with
 [Step 5: Obtain and compile the latest mkiocccentry toolkit](../quick-start.html#step_5).

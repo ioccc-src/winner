@@ -448,23 +448,27 @@ given. Click “Login”.</p>
 you will be required to change your password. Assuming everything is fine, that
 would look something like:</p>
 <p><img src="../png/submit.first-login.png"
- alt="submit server password change required"
+ alt="submit server initial login requires your password to be changed"
  width=710 height=808></p>
 <p>As you can see, on your first login you <strong>MUST</strong> change your password. If you do
 not do this within 72 hours <strong>YOUR ACCOUNT WILL BE CLOSED</strong> and you’ll have to
-register again!</p>
-<p>Put in your login (UUID username), your old (initial) password and a new password.</p>
-<p>Click “Change Password”.</p>
-<p><strong>NOTE</strong>: if you have put in your old password, you’ll see something like:</p>
-<p><img src="../png/submit.invalid-passwd.png"
- alt="submit server password change error"
- width=710 height=808></p>
-<p>Once you’ve changed your password you will be able to log in again with your UUID
-username and new password. This is what it will look like when you change your
-password:</p>
-<p><img src="../png/submit.passwd-changed.png"
- alt="submit server password changed"
- width=710 height=344></p>
+register again! In that case, it will say something like this:</p>
+<blockquote>
+<p>ERROR: Sorry (tm Canada 🇨) you cannot login at this time.</p>
+</blockquote>
+<p>Assuming you did login in time, you should put in your login (UUID username),
+your old (initial) password and a new password and then click “Change Password”.</p>
+<p><strong>NOTE</strong>: if you have put in your old password, you’ll get the following error:</p>
+<blockquote>
+<p>ERROR: Password not changed<br>
+ERROR: invalid old password</p>
+</blockquote>
+<p>Once you’ve changed your password successfully you will be able to log in again
+with your UUID username and new password. When you have done this it will
+report:</p>
+<blockquote>
+<p>• Password successfully changed.</p>
+</blockquote>
 <p>When the contest is <a href="../faq.html#open">open</a>, proceed with
 <a href="../quick-start.html#step_5">Step 5: Obtain and compile the latest mkiocccentry toolkit</a>.</p>
 <!--
