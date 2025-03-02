@@ -23,13 +23,13 @@ For details see the "[how the contest status impacts registration](#status_impac
 **NOTE**: For submissions with multiple authors, only one author needs to subscribe.
 
 <img src="../png/register.0_531x445-signup.png"
- alt="signup for a mailing list"
+ alt="signup for a mailing list screenshot"
  width=531 height=445>
 
 After clicking **((Next >>))**, you will be notified that you will receive an email:
 
 <img src="../png/register.1_633x163-verify.png"
- alt="verify your email notification"
+ alt="verify your email notification screenshot"
  width=633 height=163>
 
 
@@ -63,7 +63,7 @@ Click on that link. The email might look the below:
 
 
 <img src="../png/register.2_590x253-verify-email.png"
- alt="Subscription consent email"
+ alt="Subscription consent email screenshot"
  width=590 height=253>
 
 **NOTE**: If you prefer to **NOT** click links in email, simply copy that
@@ -77,7 +77,7 @@ URL from your "Subscription consent email" and paste it into your browser.
 In your browser, for the link referenced in [Step C](#step_c), click the **((Next >>))** button.
 
 <img src="../png/register.3_428x205-confirm.png"
- alt="confirm your email"
+ alt="confirm your email screenshot"
  width=428 height=205>
 
 
@@ -95,13 +95,13 @@ Once you have done this by clicking the 3 checkboxes, click the **((Next >>))**
 button:
 
 <img src="../png/register.4_657x446-subscribe.png"
- alt="complete subscription"
+ alt="complete subscription screenshot"
  width=657 height=446>
 
 After clicking **((Next >>))**, you will be notified that you will receive an email:
 
 <img src="../png/register.5_487x154-done.png"
- alt="registration is complete"
+ alt="registration is complete screenshot"
  width=487 height=154>
 
 
@@ -119,7 +119,7 @@ You should receive an automated Welcome message from the FreeLists List Manager
 Read the "Welcome" email.
 
 <img src="../png/register.6_413x657-welcome.png"
- alt="Welcome email"
+ alt="Welcome email screenshot"
  width=414 height=657>
 
 **NOTE**: The "Welcome" email is usually sent by the FreeLists
