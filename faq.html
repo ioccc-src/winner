@@ -2135,13 +2135,13 @@ However, you may wish to manually validate the tarball. The tool that does this
 is <code>txzchk</code>.</p>
 <p>If you wish to validate the tarball without running the <code>mkiocccentry(1)</code> tool,
 for instance the tarball
-<code>submit.12345678-1234-4321-abcd-1234567890ab-2.1720636351.txz</code> you can, after
+<code>submit.00000000-0000-4000-0000-000000000000-2.1720636351.txz</code> you can, after
 installing the tools, do:</p>
-<pre><code>    txzchk submit.12345678-1234-4321-abcd-1234567890ab-2.1720636351.txz</code></pre>
+<pre><code>    txzchk submit.00000000-0000-4000-0000-000000000000-2.1720636351.txz</code></pre>
 <p>Assuming that the tarball exists and is valid, you should see no output.</p>
 <p>If you wish to see the contents, for instance like <code>mkiocccentry(1)</code> does, you
 could do:</p>
-<pre><code>    txzchk -v 1 submit.12345678-1234-4321-abcd-1234567890ab-2.1720636351.txz</code></pre>
+<pre><code>    txzchk -v 1 submit.00000000-0000-4000-0000-000000000000-2.1720636351.txz</code></pre>
 <p>As the <a href="next/guidelines.html#txzchk">guidelines state</a>, it is beyond the scope
 of this document to discuss the many tests that <code>txzchk(1)</code> runs; if you must
 know we refer you to the <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/txzchk.c">source
@@ -2158,10 +2158,10 @@ of your submission.</p>
 <p>Rather than <code>mkiocccentry</code> running this tool manually, <code>txzchk</code>’s algorithm uses
 the output of this tool. If you wish to validate your tarball filename manually,
 you can do so. For instance:</p>
-<pre><code>    fnamchk submit.12345678-1234-4321-abcd-1234567890ab-2.1720636351.txz</code></pre>
+<pre><code>    fnamchk submit.00000000-0000-4000-0000-000000000000-2.1720636351.txz</code></pre>
 <p>Assuming everything is OK, it would show:</p>
 <blockquote>
-<p><code>12345678-1234-4321-abcd-1234567890ab-2</code></p>
+<p><code>00000000-0000-4000-0000-000000000000-2</code></p>
 </blockquote>
 <p>See also the
 FAQ on “<a href="#txzchk">validating your submission tarball</a>”
@@ -2198,9 +2198,9 @@ two JSON files, <code>.auth.json</code> and <code>.info.json</code> as well as t
 the judges <strong>ONLY</strong>; use of this option to validate your submission puts you at
 a great risk of violating <a href="next/rules.html#rule17">Rule 17</a>!).</p>
 <p>As an example, if your submission directory is
-<code>12345678-1234-4321-abcd-1234567890ab-0/</code> then you should run the following
+<code>00000000-0000-4000-0000-000000000000-3/</code> then you should run the following
 command:</p>
-<pre><code>    chkentry 12345678-1234-4321-abcd-1234567890ab-0</code></pre>
+<pre><code>    chkentry 00000000-0000-4000-0000-000000000000-3</code></pre>
 <p>If there is a <a href="https://www.json.org/json-en.html">JSON</a> issue detected by the
 <code>jparse(3)</code> API (i.e. it is not valid JSON) it is an error and <code>chkentry(1)</code>
 will report this, exiting with a non-zero exit code. If the parsing is OK (i.e.

@@ -2003,11 +2003,11 @@ is `txzchk`.
 
 If you wish to validate the tarball without running the `mkiocccentry(1)` tool,
 for instance the tarball
-`submit.12345678-1234-4321-abcd-1234567890ab-2.1720636351.txz` you can, after
+`submit.00000000-0000-4000-0000-000000000000-2.1720636351.txz` you can, after
 installing the tools, do:
 
 ``` <!---sh-->
-    txzchk submit.12345678-1234-4321-abcd-1234567890ab-2.1720636351.txz
+    txzchk submit.00000000-0000-4000-0000-000000000000-2.1720636351.txz
 ```
 
 Assuming that the tarball exists and is valid, you should see no output.
@@ -2016,7 +2016,7 @@ If you wish to see the contents, for instance like `mkiocccentry(1)` does, you
 could do:
 
 ``` <!---sh-->
-    txzchk -v 1 submit.12345678-1234-4321-abcd-1234567890ab-2.1720636351.txz
+    txzchk -v 1 submit.00000000-0000-4000-0000-000000000000-2.1720636351.txz
 ```
 
 As the [guidelines state](next/guidelines.html#txzchk), it is beyond the scope
@@ -2042,12 +2042,12 @@ the output of this tool. If you wish to validate your tarball filename manually,
 you can do so. For instance:
 
 ``` <!---sh-->
-    fnamchk submit.12345678-1234-4321-abcd-1234567890ab-2.1720636351.txz
+    fnamchk submit.00000000-0000-4000-0000-000000000000-2.1720636351.txz
 ```
 
 Assuming everything is OK, it would show:
 
-> `12345678-1234-4321-abcd-1234567890ab-2`
+> `00000000-0000-4000-0000-000000000000-2`
 
 See also the
 FAQ on "[validating your submission tarball](#txzchk)"
@@ -2093,12 +2093,12 @@ the judges **ONLY**; use of this option to validate your submission puts you at
 a great risk of violating [Rule 17](next/rules.html#rule17)!).
 
 As an example, if your submission directory is
-`12345678-1234-4321-abcd-1234567890ab-0/` then you should run the following
+`00000000-0000-4000-0000-000000000000-3/` then you should run the following
 command:
 
 
 ``` <!---sh-->
-    chkentry 12345678-1234-4321-abcd-1234567890ab-0
+    chkentry 00000000-0000-4000-0000-000000000000-3
 ```
 
 If there is a [JSON](https://www.json.org/json-en.html) issue detected by the

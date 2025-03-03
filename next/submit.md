@@ -1,4 +1,4 @@
-# How to upload your submission to the IOCCC
+Use mkiocccentry to rebuild# How to upload your submission to the IOCCC
 
 **IMPORTANT NOTE**: The [IOCCC submit server](https://submit.ioccc.org)
 is only ready for submissions
@@ -49,7 +49,7 @@ of:
 
 > IMPORTANT: Upload only XZ compressed tarballs whose filename is:
 >
->    `submit.7ec754d4-8670-421a-a1b6-7dd3dc5f215e-SLOT.TIMESTAMP.txz`
+>    `submit.00000000-0000-4000-0000-000000000000-SLOT.TIMESTAMP.txz`
 >
 > where `SLOT` is a slot number, and `TIMESTAMP` is the build time as a [Unix
 timestamp](https://unixtime.org/).
@@ -58,7 +58,7 @@ timestamp](https://unixtime.org/).
 it must pass the `txzchk(1)` sanity checks, and when the uncompressed tarball is
 untarred, the resulting directory must pass `chkentry(1)`.
 
-**NOTE**: the `7ec754d4-8670-421a-a1b6-7dd3dc5f215e` is your UUID. **MAKE SURE
+**NOTE**: the `00000000-0000-4000-0000-000000000000` is your UUID. **MAKE SURE
 YOU CHANGE IT TO YOUR UUID**!
 
 **NOTE**: the `SLOT` and `TIMESTAMP` **in the filename** are generated based on
@@ -80,12 +80,11 @@ the file selection step.
 
 When it's uploaded it should say something like:
 
-> • Uploaded file: `submit.9971ada4-b6ae-427d-a7ec-e67a30362cdb-0.1740838915.txz`
+> • Uploaded file: submit.00000000-0000-4000-0000-000000000000-5.1740838915.txz
 
 And in the slot it will give you important details like:
 
-- the status of the submission (on upload it will say: `"uploaded file into
-slot"`).
+- the status of the submission
 - the filename, which will be in the correct format, assuming you used
 `mkiocccentry(1)` which is **HIGHLY** recommended so that you do not break [Rule
 17](rules.html#rule17)!
@@ -94,14 +93,13 @@ tarball listing).
 - the upload date.
 - the SHA256 hash of the file.
 
-Again the `7ec754d4-8670-421a-a1b6-7dd3dc5f215e` is your UUID, the `SLOT` is the
+Again the `00000000-0000-4000-0000-000000000000` is your UUID, the `SLOT` is the
 slot number and `TIMESTAMP` is the build time as a [Unix
 timestamp](https://unixtime.org/).
 
 Now if you're done, log out.
 
-If, on the other hand,, you upload a file that is too big you will see something
-like:
+If, on the other hand, you upload a file that is too big you will see something like:
 
 > The file size of N exceeds the maximum size of 3999971.
 
@@ -111,33 +109,60 @@ And if you try uploading an empty file you'll instead see:
 
 And if you see something like:
 
-> Filename for slot: 0 must match this regular expression: `^submit.dd3d30c2-d8d0-4506-adcd-d4e029147f39-0\.[1-9][0-9]
-{9,}\.txz$`
+> Filename for slot: `5` must match this regular expression: `^submit\.00000000-0000-4000-0000-000000000000-5\.[1-9][0-9]{9,}\.txz`
 
-where `0` is the slot and `dd3d30c2-d8d0-4506-adcd-d4e029147f39-01` is the UUID
-then you **MUST** upload a properly named XZ compressed tarball, **MAKING SURE** you
+You uploaded the wrong filename into a slot.
+
+For example, for the user `00000000-0000-4000-0000-000000000000`, slot `5`, a valid filename to upload would be:
+
+> submit.00000000-0000-4000-0000-000000000000-5.1740838915.txz
+
+where `1740838915` is a timestamp created by the `mkiocccentry(1)` tool.
+
+You **MUST** upload a properly named XZ compressed tarball, **MAKING SURE** you
 package it with `mkiocccentry`!
 
-If later on you log in and see something like:
+If, however, the slot status shows:
 
-> **Status: server slot error code: 1! Use mkiocccentry to rebuild and resubmit to
-this slot.**
+> **Status: file successfully uploaded into slot.**
 
-or:
+Then you are successfully uploaded a file into the slot.
+
+At this point you may upload another submission file into a different slot, or you're done, log out.
+
+**Please note:** The status page will **NOT** auto-refresh.  After you are uploaded a file into a slot, **DO NOT RELOAD**
+the page as this may cause your browser to needlessly reload the same file to the same slot.
+
+After you fir finished uploading submissions into slots, please logout.
+To see any status updates, you should logout and log back in later.
+
+
+## Checking on the status of your submission
+
+You may check on the status of your submission later on, after you logout by logging back in an looking at the slot status.
+
+**Please note:** The status page will **NOT** auto-refresh.
+
+When the system begins to process your file (which could be an hour or two later), you might see:
+
+> **Status: file fetched. The format test is pending.**
+
+After the format test is complete, if you see an error such as:
 
 > **Status: submit file failed the txzchk test! Use mkiocccentry to rebuild and resubmit to this slot.**
 
-... or **ANY OTHER ERROR** then you **MUST FIX** your submission, repackage your
+Or:
+
+> **Status: submit file failed the chkentry test! Use mkiocccentry to rebuild and resubmit to this slot.**
+
+... or **ANY** other error then you **MUST FIX** your submission, repackage your
 tarball with `mkiocccentry` and upload to the same slot again! If you do not fix
 this your submission **WILL BE REJECTED** for violating [Rule
 17](rules.html#rule17)!
 
-After the submission deadline is reached, you can log in to check the status of
-your submissions. This is what it will say when the judges have verified
-that your tarball / submission has been validated (NOT judged), by `txzchk(1)`
-and `chkentry(1)`:
+If the format test went well, then you will see:
 
-> **Status: the format of this submission has been validated.**
+> **Status: submit file received by the IOCCC judges. Passed both txzchk and chkentry tests.**
 
 **IMPORTANT**: this does **NOT** mean that your submission does not violate the
 rules or that everything is OK once the tarball is extracted; it simply means
