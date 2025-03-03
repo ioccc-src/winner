@@ -724,7 +724,8 @@ submit: next/submit.md
 	@echo "You wish to submit to the IOCCC?"
 	@${GEN_TOP_HTML} next/pw-change
 	@echo
-	@echo "Be careful, we only have a pet fish 🐟 called Eric, not a service dog 🐕‍🦺!"
+	@echo "Be careful, we only have a pet fish 🐟"
+	@echo "called Eric, not a service dog 🐕‍🦺!"
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 guidelines: ${GEN_TOP_HTML} next/guidelines.md
