@@ -282,7 +282,7 @@ clobber:
 	thanks gen_other_html quick_other_html quick_entry_index find_invalid_json \
 	gen_year_index quick_year_index quick_www www untar_entry_tarball untar_year_tarball \
 	form_entry_tarball form_year_tarball tar gen_status gen_sitemap \
-	sitemap timestamp update csv2entry entry2csv about contact gen_pw_change
+	sitemap timestamp update csv2entry entry2csv about contact pw_change submit
 
 # Suggest rules in this section
 #
@@ -314,7 +314,6 @@ help:
 	@echo 'make verify_entry_files	;: check to be sure all files in all entries exist'
 	@echo 'make sort_gitignore	;: sort .gitignore files according to rules in bin/sgi.sh'
 	@echo 'make gen_authors	;: generate the top level authors.html page'
-	@echo 'make gen_pw_change	;: generate the next/pw-change.html page'
 	@echo 'make quick_authors	;: build authors.html if out of date with author JSON files'
 	@echo 'make gen_location	;: generate the top level location.html page'
 	@echo 'make quick_location	;: build location.html if out of date with author JSON files'
@@ -343,9 +342,11 @@ help:
 	@echo 'make faq		;: generate faq.html'
 	@echo 'make guidelines		;: generate next/guidelines.hmtl'
 	@echo 'make markdown		;: generate markdown.hmtl'
+	@echo 'make pw_change		;: generate the next/pw-change.html page'
 	@echo 'make rules		;: generate next/rules.hmtl'
 	@echo 'make security		;: generate SECURITY.html'
 	@echo 'make thanks		;: generate thanks-for-help.html'
+	@echo 'make submit		;: generate next/submit.html'
 	@echo
 	@echo '# Compound make rules for building a local copy of the IOCCC website:'
 	@echo
@@ -694,11 +695,11 @@ gen_next: ${GEN_TOP_HTML} next/README.md next/guidelines.md next/rules.md next/r
 	${GEN_TOP_HTML} -v 1 next/pw-change
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
-gen_pw_change:
+pw_change: next/pw-change.md
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
 	@echo "Did your password get breached?"
-	${GEN_TOP_HTML} -v 1 next/pw-change
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+	@${GEN_TOP_HTML} next/pw-change
+	@echo
 	@echo "Perhaps you should change your password!"
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
@@ -712,7 +713,18 @@ markdown: ${GEN_TOP_HTML} markdown.md
 
 rules: ${GEN_TOP_HTML} next/rules.md
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo "You wish to change the IOCCC rules?"
 	${GEN_TOP_HTML} -v 1 next/rules
+	@echo
+	@echo "Be careful you don't break them!"
+	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+
+submit: next/submit.md
+	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo "You wish to submit to the IOCCC?"
+	@${GEN_TOP_HTML} next/pw-change
+	@echo
+	@echo "Be careful, we only have a pet fish 🐟 called Eric, not a service dog 🐕‍🦺!"
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 guidelines: ${GEN_TOP_HTML} next/guidelines.md
@@ -1027,6 +1039,7 @@ maker:
 
 easter_egg:
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo "Finding the Easter eggs 🥚 ..."
 	@-for i in ${YEARS}; do \
 	    if [[ -f $$i/Makefile ]]; then \
 		echo "cd $$i; make $@"; \
@@ -1035,6 +1048,7 @@ easter_egg:
 		echo "Warning: $$i/Makefile not found, skipping $$i for $@ processing" 1>&2 ; \
 	    fi; \
         done
+	@echo "Found all the Easter eggs 🥚!"
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 sandwich:

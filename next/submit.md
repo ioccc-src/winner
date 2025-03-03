@@ -30,14 +30,22 @@ submission so if you update a submission, make sure you choose the right one so
 you do not replace the wrong one!
 
 It will show text and radio buttons for each row (up to 10 numbered `0` through
-`9`):
+`9`). Here is a text version of the table showing what the first few lines would
+look like:
 
-| Select | Slot Information   |
-| -------| --------------------
-| 0: [N] | Status: slot empty |
+```
+    | Select | Slot Information   |
+    | -------| --------------------
+    | 0: [●] | Status: slot empty |
+    | 1: [ ] | Status: slot empty |
+    | 1: [ ] | Status: slot empty |
+```
 
-The `[N]` is a radio button. Tick that to select that slot. Then further down
-the page you'll see the text along the lines of:
+The `●` is a ticked radio button whereas the `[ ]` is an unticked. Tick that to
+select that slot.
+
+Then further down the page you'll see the text along the lines
+of:
 
 > IMPORTANT: Upload only XZ compressed tarballs whose filename is:
 >
