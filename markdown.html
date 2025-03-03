@@ -658,25 +658,22 @@ elements</a>.</p>
 tags</a>.</p>
 <p>The trailing slash on void HTML elements has no effect and interacts badly with
 unquoted attribute values.</p>
-<p>For example, please do <strong>NOT</strong> use:</p>
-<pre><code>    &lt;br/&gt;                                                     &lt;=== no thank you</code></pre>
-<p>Instead use just:</p>
-<pre><code>    &lt;br&gt;</code></pre>
-<p>And for example, please do <strong>NOT</strong> use:</p>
-<pre><code>    &lt;hr/&gt;                                                     &lt;=== no thank you</code></pre>
-<p>Instead use just:</p>
-<pre><code>    &lt;br&gt;</code></pre>
-<p>and</p>
-<pre><code>    &lt;hr&gt;</code></pre>
-<p>And for example, please do <strong>NOT</strong> use:</p>
-<pre><code>    &lt;img src=&quot;1984-anonymous-tattoo.jpg&quot;
+<p>For example, please do <strong>NOT</strong> use markdown like these:</p>
+<pre><code>    &lt;br/&gt;                                                     &lt;=== no thank you
+
+    &lt;hr/&gt;                                                     &lt;=== no thank you
+
+    &lt;img src=&quot;1984-anonymous-tattoo.jpg&quot;
      alt=&quot;image of a tattoo of the 1984 anonymous C code&quot;
      width=600 height=401 /&gt;                                  &lt;=== no thank you</code></pre>
-<p>Instead use just:</p>
-<pre><code>    &lt;img src=&quot;1984-anonymous-tattoo.jpg&quot;
+<p>Instead use, respectively:</p>
+<pre><code>    &lt;br&gt;
+
+    &lt;hr&gt;
+
+    &lt;img src=&quot;1984-anonymous-tattoo.jpg&quot;
      alt=&quot;image of a tattoo of the 1984 anonymous C code&quot;
      width=600 height=401&gt;</code></pre>
-<p>etc.</p>
 <p>Jump to: <a href="#">top</a></p>
 <div id="backslash">
 <div id="br">

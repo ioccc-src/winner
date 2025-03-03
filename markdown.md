@@ -396,53 +396,29 @@ tags](https://github.com/validator/validator/wiki/Markup-»-Void-elements#traili
 The trailing slash on void HTML elements has no effect and interacts badly with
 unquoted attribute values.
 
-For example, please do **NOT** use:
+For example, please do **NOT** use markdown like these:
 
 ``` <!---html-->
     <br/>                                                     <=== no thank you
-```
 
-Instead use just:
-
-``` <!---html-->
-    <br>
-```
-
-And for example, please do **NOT** use:
-
-``` <!---html-->
     <hr/>                                                     <=== no thank you
-```
 
-Instead use just:
-
-``` <!---html-->
-    <br>
-```
-
-and
-
-``` <!---html-->
-    <hr>
-```
-
-And for example, please do **NOT** use:
-
-``` <!---html-->
     <img src="1984-anonymous-tattoo.jpg"
      alt="image of a tattoo of the 1984 anonymous C code"
      width=600 height=401 />                                  <=== no thank you
 ```
 
-Instead use just:
+Instead use, respectively:
 
 ``` <!---html-->
+    <br>
+
+    <hr>
+
     <img src="1984-anonymous-tattoo.jpg"
      alt="image of a tattoo of the 1984 anonymous C code"
      width=600 height=401>
 ```
-
-etc.
 
 Jump to: [top](#)
 
