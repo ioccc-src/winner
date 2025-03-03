@@ -49,7 +49,7 @@ Jump to: [top](#)
 </div>
 
 <p class="leftbar">
-These [IOCCC guidelines](guidelines.html) are version **28.40 2025-02-27**.
+These [IOCCC guidelines](guidelines.html) are version **28.41 2025-03-03**.
 </p>
 
 <p class="leftbar">
@@ -89,6 +89,12 @@ about them.  The [IOCCC guidelines](guidelines.html) should be viewed as
 [guidelines](guidelines.html) _but remain within the [rules](rules.html)_** _are
 allowed_.  Even so, you are safer if you remain within the [IOCCC
 guidelines](guidelines.html).
+
+<p class="leftbar">
+Of course if a guideline is talking about a rule and you break that guideline,
+you stand a good chance of having your submission rejected for breaking the
+rule, not the guideline.
+</p>
 
 You **SHOULD read the CURRENT [IOCCC rules](rules.html)**, _prior_ to submitting
 code to the contest. The [rules](rules.html) are typically published along with
@@ -139,7 +145,7 @@ before the contest status becomes **[open](../faq.html#open)**.
 <p class="leftbar">
 You **MUST** [register](register.html) in order to participate in the IOCCC.
 You may [register](register.html) while the contest is either
-**[pending](../faq.html#pending)** or  **[open](../faq.html#open)**.
+**[pending](../faq.html#pending)** or **[open](../faq.html#open)**.
 </p>
 
 <p class="leftbar">
@@ -150,9 +156,9 @@ has changed from previous years!
 </p>
 
 <p class="leftbar">
-When the contest is **[open](../faq.html#open)**, an [IOCCC
+After registering, when the contest is **[open](../faq.html#open)**, an [IOCCC
 judge](../judges.html) will email you your [submit
-server](https://submit.ioccc.org) **Username** and **Initial password**.  This
+server](https://submit.ioccc.org) **Username** and **Initial password**. This
 takes some time (maybe even a few days) for an [IOCCC judge](../judges.html) to
 process your registration and email you your initial login and password, so be
 sure to give yourself enough time.
@@ -215,7 +221,7 @@ To assist in the formation of the xz compressed tarball for submission, use the
 </p>
 
 <p class="leftbar">
-If you wish to test that your submission passes the `mkiocccentry(1)` tests
+If you wish to **test** that your submission passes the `mkiocccentry(1)` tests
 without having to put in answers each time, you can use the `-d` or `-s seed`
 option to `mkiocccentry` for the tool to pseudo-randomly create answers for you.
 The `-d` option is an alias for `-s 21701`. An example use:
@@ -226,12 +232,11 @@ The `-d` option is an alias for `-s 21701`. An example use:
 ```
 
 <p class="leftbar">
-where `workdir` is the directory where the tarball will be formed and the
-`topdir` is the directory which has the required files (`prog.c`, `Makefile` and
-`remarks.md`) along with extra data files (and if you wish, directories) you
-wish to submit. Be aware that if the directory exists already, you will have to
-remove it or move it before this option will work a second time, just like in
-normal mode.
+where `workdir` an `topdir` are the same as above.
+</p>
+
+<p class="leftbar">
+You may **NOT** submit a tarball created by the `-d` or `-s seed` option!
 </p>
 
 <p class="leftbar">
@@ -257,8 +262,10 @@ for more help.
 to account for the new [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry) tools.
 Thus, you are **STRONGLY** advised to use the `mkiocccentry(1)` tool
 as found in the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry)
-using `mkiocccentry(1)` the [submit server](https://submit.ioccc.org). Uploading
-a tarball not formed by `mkiocccentry(1)` puts you at a very big risk of
+</p>
+
+<p class="leftbar">
+Uploading a tarball not formed by `mkiocccentry(1)` puts you at a very big risk of
 violating [Rule 17](rules.html#rule17), especially as `mkiocccentry(1)` does a
 great number of things that are required, and it also runs many checks, and if
 any of those checks fail, you are at a very great risk of having your submission
@@ -291,6 +298,14 @@ questions, the `mkiocccentry(1)` tool has the options `-a answers`, `-A answers`
 and `-i answers`, where `-a` will write to an answers file (if it does not
 already exist), `-A` **WILL OVERWRITE THE FILE** and `-i` will read the answers from
 the file. If you use `-A`, **BE SURE** you don't overwrite another file by accident!
+</p>
+
+<p class="leftbar">
+Be aware that even with the `-i answers` you will still be required to confirm
+most if not all `y/n` questions - you just don't have to input the name of the
+submission, the abstract, the author details etc. If you really wish to
+circumvent this you can use the `-Y` option but we do not recommend this because
+if your update breaks a rule or there is some problem, you might not see it.
 </p>
 
 <p class="leftbar">
@@ -359,7 +374,7 @@ ASCII formfeed, and ASCII carriage return.
 
 <p class="leftbar">
 When '`;`', '`{`' or '`}`' are within a C string, they may still not be
-counted by the IOCCC size tool.  This is a _feature_, not a bug!
+counted by the IOCCC size tool.  This is a **feature**, not a bug!
 </p>
 
 In cases where the above summary and the algorithm implemented by
@@ -530,9 +545,8 @@ FAQ on "[obtaining the mkiocccentry toolkit](../faq.html#obtaining_mkiocccentry)
 
 <p class="leftbar">
 `mkiocccentry` runs a number of checks, by the tool itself and by executing
-other tools, _before_ packaging your xz compressed tarball. Once the tarball is
-packaged it will run `txzchk(1)`, which will also run `fnamchk(1)`, as part of
-its algorithm.
+other tools, _before_ packaging your xz compressed tarball, including running
+`chkentry(1)` on the submission directory.
 </p>
 
 <p class="leftbar">
@@ -550,6 +564,11 @@ FAQ on "[reporting mkiocccentry bugs](../faq.html#mkiocccentry_bugs)".
 </p>
 
 <p class="leftbar">
+Once the tarball is packaged it will
+run `txzchk(1)`, which will also run `fnamchk(1)`, as part of its algorithm.
+</p>
+
+<p class="leftbar">
 However, even if `mkiocccentry` or one of the tools it invokes reports an error,
 it **does not** necessarily mean it is a bug in the code. It might be an issue with
 your submission. Thus if you report an error as a bug it might not be something
@@ -560,8 +579,9 @@ that will be fixed as there might not be anything wrong with the tools.
 On the other hand, some conditions flagged by `mkiocccentry(1)` are **warnings**
 and it allows you to override these, if you wish. If you're brave enough you can
 use the `-W` option to ignore all warnings but this is a big risk; the `-y`
-option will assume '_yes_' to most questions but this is also a big risk.
-Needless to say, we do **NOT** recommend these options.
+option will assume '_yes_' to most questions but this is also a big risk. Using
+`-Y` will say '_yes_' to even more prompts. Needless to say, we do **NOT**
+recommend these options.
 </p>
 
 <p class="leftbar">
@@ -651,6 +671,11 @@ the other files, and those checks are run on the two JSON files as well.
 </p>
 
 <p class="leftbar">
+If you submit your own JSON files they do **NOT** have to be valid JSON, though
+you might wish to explain what their purpose is in your remarks. :-)
+</p>
+
+<p class="leftbar">
 If `chkentry` does not pass and you used `mkiocccentry(1)` it is **very likely** a
 bug and you should [report it as a bug at the mkiocccentry issues
 page](https://github.com/ioccc-src/mkiocccentry/issues/new?assignees=&labels=bug&projects=&template=bug_report.yml&title=%5BBug%5D+%3Ctitle%3E).
@@ -686,7 +711,7 @@ If you want to know what `.auth.json` is, see the
 FAQ on "[.auth.json](../faq.html#auth_json)".
 If you want to know what the `.info.json` file is, see the
 FAQ on "[.info.json](../faq.html#info_json)".
-On the other hand, if you want to know a bit more details about `chkentry`, see the
+On the other hand, if you want to know a bit more details about `chkentry(1)`, see the
 FAQ about "[chkentry](../faq.html#chkentry)".
 </p>
 
@@ -716,7 +741,7 @@ a _specific_ release**.  Thus the `mkiocccentry` will at times be behind the
 <p class="leftbar">
 You do **NOT need to install** `jparse` from the [jparse
 repo](https://github.com/xexyl/jparse)! The `mkiocccentry` tools link in the
-static library from the `mkiocccentry`'s _clone_.
+static library from `mkiocccentry`'s _clone_.
 </p>
 
 <p class="leftbar">
@@ -742,7 +767,7 @@ make sure that you're using the correct versions, which is also verified by
 <p class="leftbar">
 Please see the
 FAQ on "[validating your submission directory](../faq.html#chkentry)
-for more details on `chkentry`.
+for more details on `chkentry(1)`.
 </p>
 
 <p class="leftbar">
@@ -760,20 +785,20 @@ Jump to: [top](#)
 </div>
 
 <p class="leftbar">
-`txzchk(1)` performs a wide number of sanity checks on the xz
-compressed tarball; if any issues are found ('`feathers are stuck in the
-tarball`' :-) ) **AND if and _ONLY IF_ you used
-`mkiocccentry(1)`**, then it is **possibly** a bug in one of the tools and you
-might want to [report it as a bug at the mkiocccentry bug report
-page](https://github.com/ioccc-src/mkiocccentry/issues/new?assignees=&labels=bug&projects=&template=bug_report.yml&title=%5BBug%5D+%3Ctitle%3E). **PLEASE run the
-`bug_report.sh` script to help us out here!** You may do this by running from
-the top level directory of the repo `make bug_report`. See the
-FAQ on "[report mkiocccentry bugs](../faq.html#mkiocccentry_bugs)".
+`txzchk(1)` performs a wide number of sanity checks on the xz compressed
+tarball; if any issues are found ('`feathers are stuck in the tarball`' :-) )
+**AND if and _ONLY IF_ you used `mkiocccentry(1)`**, then it is **possibly** a
+bug in one of the tools and you might want to [report it as a bug at the
+mkiocccentry bug report
+page](https://github.com/ioccc-src/mkiocccentry/issues/new?assignees=&labels=bug&projects=&template=bug_report.yml&title=%5BBug%5D+%3Ctitle%3E).
+**PLEASE run the `bug_report.sh` script to help us out here!** You may do this
+by running from the top level directory of the repo `make bug_report`. See the
+FAQ on "[reporting mkiocccentry bugs](../faq.html#mkiocccentry_bugs)".
 </p>
 
 <p class="leftbar">
 As part of its algorithm, `txzchk(1)` will run `fnamchk(1)` on the
-_filename_ to verify that the name is valid. See the
+_tarball_ to verify that the filename is valid. See the
 FAQ on "[fnamchk](../faq.html#fnamchk)"
 and [fnamchk below](#fnamchk) for more details on this tool.
 </p>
@@ -804,7 +829,7 @@ the two JSON files generated by `mkiocccentry(1)`, `.info.json` and
 
 <p class="leftbar">
 Additionally, three of the files, if included, **MUST** be
-specific file(name)s and in the top level directory, or they will be counted as
+specific file(name)s **AND** in the top level directory, or they will be counted as
 an extra file, not an optional file.
 </p>
 
@@ -876,15 +901,15 @@ FAQ on "[txzchk](../faq.html#txzchk)".
 Jump to: [top](#)
 
 <div id="fnamchk">
-## `fnamchk`
+## `fnamchk(1)`
 </div>
 
 <p class="leftbar">
-As an important part of its algorithm, [txzchk](#txzchk) directly executes `fnamchk`.
-If the filename is invalid (or the filename does not match the
+As an important part of its algorithm, [txzchk](#txzchk) directly executes
+`fnamchk(1)`.  If the filename is invalid (or the filename does not match the
 directory name of the tarball) then it is an **error** and you risk violating
-[Rule 17](rules.html#rule17). Nevertheless, you can run the tool manually, should
-you wish to.
+[Rule 17](rules.html#rule17). Nevertheless, you can run the tool manually,
+should you wish to.
 </p>
 
 <p class="leftbar">
@@ -908,7 +933,7 @@ would prevent this from happening as it would not create such a file anyway. If
 you should [report it as a bug at the mkiocccentry issues
 page](https://github.com/ioccc-src/mkiocccentry/issues/new?assignees=&labels=bug&projects=&template=bug_report.yml&title=%5BBug%5D+%3Ctitle%3E).
 See the
-FAQ on "[report mkiocccentry bugs](../faq.html#mkiocccentry_bugs)".
+FAQ on "[reporting mkiocccentry bugs](../faq.html#mkiocccentry_bugs)".
 </p>
 
 <p class="leftbar">
@@ -989,13 +1014,13 @@ We suggest that you compile your submission with a commonly available
 
 <p class="leftbar">
 Unless you **clearly state** otherwise in your `remarks.md` file, **AND** put in
-your submission's `Makefile`, we **will** compile using `-std=gnu17 -O3 -g3`!
+your submission's `Makefile`, we **will** compile using `-std=gnu17 -O3`!
 </p>
 
 <p class="leftbar">
 It **is OK** if you need to require your submission to **NOT be** compiled
-using the default `-std=gnu17 -O3 -g3` settings.  Simply **explain why**
-your submission should NOT be compiled using `-std=gnu17 -O3 -g3` in
+using the default `-std=gnu17 -O3` settings.  Simply **explain why**
+your submission should NOT be compiled using `-std=gnu17 -O3` in
 your `remarks.md` file, **AND** adjust your `Makefile` accordingly.
 </p>
 
@@ -1235,6 +1260,12 @@ the `CDEFINE` Makefile variable.  For example:
     CDEFINE= -Dfoo -Dbar=baz
 ```
 
+<p class="leftbar">
+**NOTE**: just because we offer a default way to use the `-D` option, we still
+do not like excess use of `-D` to get past size limits, especially since you
+could use `#define` in your code instead.
+</p>
+
 <div id="include">
 ## Include files in the Makefile
 </div>
@@ -1346,13 +1377,13 @@ and **NOT** something like this:
 ```
 
 <p class="leftbar">
-And do **NOT** use `git` for any other tool either.
+And do **NOT** use `git` for any other rule either.
 </p>
 
 
 <p class="leftbar">
 **NOTE**: `mkiocccentry(1)` will directly run `make clobber` in the submission
-directory. An although it is not an error if this fails, if it fails because the
+directory. And although it is not an error if this fails, if it fails because the
 Makefile does not have a clobber rule, it will be flagged by `mkiocccentry(1)`
 (you may ignore this but it does put you at a risk of violating the rules).
 </p>
@@ -1379,7 +1410,8 @@ that your submission should not be obfuscated but the IOCCC has moved away from
 the idea of spoilers. In other words, unless your submission does some kind of
 encryption (or something with encryption), you should not encrypt your remarks,
 say with rot13 or anything else, and it is also appreciated if your remarks have
-some education value. And although these are not required, they are a nice bonus.
+some education value. And although education value is not required, it is a nice
+bonus.
 </p>
 
 
@@ -1420,7 +1452,8 @@ as a program that is more well rounded in confusion.
 ```
 
 <p class="leftbar">
-In other words, it is a compilation error.
+In other words, it is a compilation error, and in order to get older entries
+that did this to compile, we had to update them to not do this.
 </p>
 
 When declaring local or global variables, you should declare the type:
@@ -1451,7 +1484,7 @@ One side effect of the above is that you cannot assume the use
 of nested functions such as:
 
 ``` <!---c-->
-     main() {
+     int main() {
 |        void please_dont_submit_this() {
 |           printf("The machine that goes BING!!\n");
          }
@@ -1483,7 +1516,7 @@ not portable and _must not_ be used**:
 * performing arithmetic on `va_list` variables
 * using `va_list` as a structure or union
 
-In particular, do not treat `va_list` variables as if they were a `char **`s.
+In particular, do not treat `va_list` variables as if they were a `char **`.
 
 <p class="leftbar">
 We **DISLIKE** the use of `varargs.h`.  Use `stdarg.h` instead.
@@ -1526,7 +1559,7 @@ whether pigs have wings is likely to remain a debatable point to most.
 </p>
 
 One line programs should be short one line programs: say around 80 to 120
-octets long.  Going well beyond 140 octets is a bit too long to be called
+octets long.  Going well beyond 120 octets is a bit too long to be called
 a one-liner in our vague opinion.
 
 We tend to **DISLIKE** programs that:
@@ -1584,10 +1617,10 @@ with seconds, we prefer that your code be capable of printing the
 time of day during a leap-second where the value in seconds
 after the minute mark is 60.
 
-The "**how to build**" process (via the `Makefile` or otherwise) should not be
-used to try and get around the size limit.  It is one thing to make use of a
-several `-D`s on the compile line to help out, but it is quite another to use
-many bytes of `-D`s in order to try and squeeze the source under the size limit.
+The `Makefile` should not be used to try and get around the size limit.  It is
+one thing to make use of a several `-D`s on the compile line to help out, but it
+is quite another to use many bytes of `-D`s in order to try and squeeze the
+source under the size limit.
 
 Your source code, post-pre-processing, should not exceed the size of
 [Microsoft Windows](https://en.wikipedia.org/wiki/Microsoft_Windows). :-)
@@ -1649,7 +1682,7 @@ For example, one could put in their `Makefile`:
         @echo "See remarks section about alternate ways to compile"
 ```
 
-and then include special notes in their `remarks.md` file for
+and then include special notes in your `remarks.md` file for
 alternate / human intervention based building.
 
 We want to get away from source that is simply a compact blob of
@@ -1743,7 +1776,8 @@ software that are not in wide spread use.
 As of Red Hat RHEL9.0, the X.org server is deprecated. See the
 FAQ on "[Xorg deprecation"](../faq.html#Xorg_deprecated)"
 for more details. This does not mean that a submission using this will
-necessarily be rejected, but it would be better if it can support Wayland.
+necessarily be rejected, but it would be better if it can support Wayland in
+some way or another.
 </p>
 
 This is the only _guideline_ that contains the word
@@ -1755,8 +1789,9 @@ You do?!?  (Except on Tuesday?)
 </p>
 
 <p class="leftbar">
-OK, there are actually 3 _guidelines_ that contain the word
-[fizzbin](https://en.wikipedia.org/wiki/List_of_games_in_Star_Trek#Fizzbin).
+OK, there are actually 2 _guidelines_ that contain the word
+[fizzbin](https://en.wikipedia.org/wiki/List_of_games_in_Star_Trek#Fizzbin),
+unless you count this one, in which case there are 3. :-)
 </p>
 
 We **DISLIKE** entries that use proprietary toolkits such as the `M*tif`,
@@ -1888,7 +1923,7 @@ We believe that Mark Twain's quote:
 <p class="leftbar">
 The IOCCC size tool source is not an original work, unless you are [Anthony C
 Howe](../authors.html#Anthony_C_Howe), in which case it is original!  :-)
-Submitting source code that uses the content of
+Submitting source code that uses the contents of
 [iocccsize.c](https://github.com/ioccc-src/mkiocccentry/blob/master/iocccsize.c),
 _unless_ you are [Anthony C Howe](../authors.html#Anthony_C_Howe), might run the
 risk of violating [Rule 7](rules.html#rule7).
@@ -1930,7 +1965,7 @@ And unless you are [Landon Curt Noll](http://www.isthe.com/chongo/index.html),
 the code in
 [dbg](https://github.com/ioccc-src/mkiocccentry/tree/master/dbg) and
 [dyn_array](https://github.com/ioccc-src/mkiocccentry/tree/master/dyn_array) are
-not original works. Submitting source code that uses the content of those
+not original works. Submitting source code that uses the contents of those
 libraries, _unless_ you [Landon Curt
 Noll](http://www.isthe.com/chongo/index.html), might run the risk of violating
 [Rule 7](rules.html#rule7).</p>
@@ -1957,7 +1992,8 @@ obfuscated, but unless you have some really clever way to compact and
 obfuscate a JSON parser more than [flex](https://github.com/westes/flex) and
 [bison](https://www.gnu.org/software/bison/) you will likely not win, either
 because of the [source code size limit](rules.html#rule2) or because it is not
-as obfuscated as the lexer/parser of
+as obfuscated as the [flex](https://github.com/westes/flex) and [bison](https://www.gnu.org/software/bison/)
+generated code of
 [jparse](https://github.com/ioccc-src/mkiocccentry/blob/master/jparse).
 </p>
 
@@ -2048,15 +2084,15 @@ it?  :-)
 </p>
 
 <p class="leftbar">
-We **DISLIKE** the use of use ASCII tab characters in markdown files, such as in the required `remarks.md` file.
+We **DISLIKE** the use of ASCII tab characters in markdown files, such as in the required `remarks.md` file.
 </p>
 
 <p class="leftbar">
 We don't mind the use ASCII tab characters in your C code.  Feel free
 to use ASCII tab characters if that suits your obfuscation needs.  If is
 perfectly **OK** to use tab characters elsewhere in your submission, just not in
-markdown files as this tends complicate and annoy us when it comes time to
-rendering your markdown content.
+markdown files as this tends annoy us when it comes time to
+rendering your markdown content as it complicates the process.
 </p>
 
 <p class="leftbar">
@@ -2122,28 +2158,30 @@ submitting an alternate version that conforms to the
 
 <p class="leftbar">
 If you do bypass the `mkiocccentry(1)` warnings about [Rule
-2a](rules.html#rule2a) and/or about [Rule 2b](rules.html#rule2b)
-and submit a submission anyway, you **MUST** try to justify why the IOCCC
+2a](rules.html#rule2a) and/or about [Rule 2b](rules.html#rule2b) or any other
+rule and submit a submission anyway, you **MUST** try to justify why the IOCCC
 [judges](../judges.html) should not reject your submission due to a rule
 violation, and you would be wise to do this towards the top of your `remarks.md`
 file.
 </p>
 
+<p class="leftbar">
 Abusing the web submission procedure tends to annoy us more
 than amuse us.  Spend your creative energy on content of your
 submission rather than on the submission process itself.
+</p>
 
 <p class="leftbar">
-We are often asked why the contest [IOCCC rules](rules.html) and
-[IOCCC guidelines](guidelines.html) seem too
-strange or contain mistakes, flaws or grammatical errors.  One reason
-is that we sometimes make genuine mistakes.  But in many cases such
-problems, flaws or areas of confusion are deliberate.  Changes to
-[IOCCC rules](rules.html) and [IOCCC guidelines](guidelines.html) in response to rule abuses, are done in a minimal
-fashion.  Often we will deliberately leave behind holes (or introduce
-new ones) so that future rule abuse can continue.  A clever author
-should be able to read them and "drive a truck through the holes" in
-the [IOCCC rules](rules.html) and [IOCCC guidelines](guidelines.html).
+We are often asked why the contest [IOCCC rules](rules.html) and [IOCCC
+guidelines](guidelines.html) seem too strange or contain mistakes, flaws or
+grammatical errors.  One reason is that we sometimes make genuine mistakes.  But
+in many cases such problems, flaws or areas of confusion are deliberate.
+Changes to [IOCCC rules](rules.html) and [IOCCC guidelines](guidelines.html) in
+response to rule abuses, are done in a minimal fashion.  Often we will
+deliberately leave behind holes (or introduce new ones) so that future rule
+abuse can continue.  A clever author should be able to read them and "drive a
+truck through the holes" in the [IOCCC rules](rules.html) and [IOCCC
+guidelines](guidelines.html).
 </p>
 
 <p class="leftbar">
@@ -2254,15 +2292,15 @@ Jump to: [top](#)
 
 A reading consists of a number of actions:
 
-* <p class="leftbar">reading `prog.c`, the C source and reviewing the `remarks.md` information</p>
-* <p class="leftbar">briefly looking at any supplied data files</p>
-* passing the source thru the C pre-processor
-    skipping over any `#include`d files
-* performing a number of C beautify/cleanup edits on the source
-* passing the beautified source thru the C pre-processor
-    skipping over any `#include`d files
-* compiling/building the source
-* running the program
+* <p class="leftbar">Reading `prog.c`, the C source and reviewing the `remarks.md` information</p>
+* <p class="leftbar">Briefly looking at any supplied data files</p>
+* Passing the source thru the C pre-processor
+    Skipping over any `#include`d files
+* Performing a number of C beautify/cleanup edits on the source
+* Passing the beautified source thru the C pre-processor
+    Skipping over any `#include`d files
+* Compiling/building the source
+* Running the program
 * Doing other things that only [IOCCC judges](../judges.html) know about :-)
 
 In later rounds, other actions are performed including performing
@@ -2270,6 +2308,11 @@ miscellaneous tests on the source and binary.
 
 <p class="leftbar">
 This is the very **guideline** that goes, **BING!**
+</p>
+
+<p class="leftbar">
+Okay, technically that was the _second_ **guideline** that goes **BING**, and this
+is the third. :-)
 </p>
 
 Until we reduce the stack of submissions down to about 25 submissions,
