@@ -158,11 +158,11 @@ DATA=
 #################
 
 all: data ${TARGET}
-	# NOTE: only try.sh and try.alt.sh scripts will be made executable in
-	# the tarball so if you need any scripts that are executable, make sure
-	# to use ${CHMOD} +x on them like:
-	#
-	#   ${CHMOD} +x foo.sh
+	@# NOTE: only try.sh and try.alt.sh scripts will be made executable in
+	@# the tarball so if you need any scripts that are executable, make sure
+	@# to use ${CHMOD} +x on them like:
+	@#
+	@#   ${CHMOD} +x foo.sh
 
 .PHONY: all data try clean clobber install
 
