@@ -22,16 +22,15 @@ For details see the "[how the contest status impacts registration](#status_impac
 
 **NOTE**: For submissions with multiple authors, only one author needs to subscribe.
 
-<img src="../png/register.0_531x445-signup.png"
- alt="signup for a mailing list screenshot"
- width=531 height=445>
+The first step of registering is to put in your email address in the field:
+`Your Email Address`. Then select from the drop-down what you would like to do,
+in this case you want to **Subscribe**.
 
-After clicking **((Next >>))**, you will be notified that you will receive an email:
-
-<img src="../png/register.1_633x163-verify.png"
- alt="verify your email notification screenshot"
- width=633 height=163>
-
+After clicking **((Next >>))** and you will be notified that you will receive an
+email. It will tell you that they have sent an email to verify your address.
+Remember that if you don't receive it in a few minutes you should check your
+**Spam** or **Junk** folders in case your email client or your ISP marks as
+spam.
 
 <div id="step_c">
 ## Step C: Open the Subscription consent email message
@@ -59,27 +58,18 @@ you have tried a few times, [Contact the IOCCC](../contact.html) to ask the
 This email will contain a URL of the form:
 `https://www.freelists.org/v/ioccc28-reg/SOME-RANDOM-STUFF`.
 
-Click on that link. The email might look the below:
-
-
-<img src="../png/register.2_590x253-verify-email.png"
- alt="Subscription consent email screenshot"
- width=590 height=253>
-
 **NOTE**: If you prefer to **NOT** click links in email, simply copy that
 URL from your "Subscription consent email" and paste it into your browser.
 
+Note that the email should be from `FreeLists List Manager`.
 
 <div id="step_d">
 ## Step D: Confirm your email click
 </div>
 
-In your browser, for the link referenced in [Step C](#step_c), click the **((Next >>))** button.
-
-<img src="../png/register.3_428x205-confirm.png"
- alt="confirm your email screenshot"
- width=428 height=205>
-
+In your browser, for the link referenced in [Step C](#step_c), click the
+**((Next >>))** button. It is the page with the header text of `Verify your
+email`.
 
 <div id="step_e">
 ## Step E: Verify you have read the mailing list polices and that you consent to receiving emails
@@ -91,18 +81,14 @@ The FreeLists service requires that you verify that you:
 - Have read, understand, and agree to their "_Privacy Policy_"
 - Are the owner or authorized user of the email you registered
 
-Once you have done this by clicking the 3 checkboxes, click the **((Next >>))**
-button:
+Once you have done this by clicking the 3 tick boxes (or if you prefer,
+checkboxes), click the **((Next >>))** button.
 
-<img src="../png/register.4_657x446-subscribe.png"
- alt="complete subscription screenshot"
- width=657 height=446>
+After clicking **((Next >>))**, you will be notified that you will receive an
+email. The website should say:
 
-After clicking **((Next >>))**, you will be notified that you will receive an email:
-
-<img src="../png/register.5_487x154-done.png"
- alt="registration is complete screenshot"
- width=487 height=154>
+> All set! The last stage of the process has been started. You should receive a
+verification email within a few minutes.
 
 
 <div id="step_f">
@@ -117,10 +103,6 @@ You should receive an automated Welcome message from the FreeLists List Manager
 ```
 
 Read the "Welcome" email.
-
-<img src="../png/register.6_413x657-welcome.png"
- alt="Welcome email screenshot"
- width=414 height=657>
 
 **NOTE**: The "Welcome" email is usually sent by the FreeLists
 List Manager within a minute after clicking the **((Next >>))** button.

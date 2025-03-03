@@ -16,11 +16,11 @@ for submissions **ONLY WHEN THE CONTEST IS [open](../faq.html#open)**.  See
 may be offline and unreachable as a website.
 
 To login and change your password, open [https://submit.ioccc.org](https://submit.ioccc.org)
-in your browser.  It should look like this:
+in your browser. The important lines should say:
 
-<img src="../png/submit.login.png"
- alt="submit server login screen"
- width=710 height=562>
+> **Status**: Not logged in.<br>
+> **Username**: <em>Enter Username</em><br>
+> **Password**: <em>Enter Password</em>
 
 The username is the UUID you are provided when a judge replies to your request
 to register for the IOCCC and the password is the initial password you are
@@ -30,23 +30,34 @@ After you log in, if this is the first time you have logged in with this UUID,
 you will be required to change your password. Assuming everything is fine, that
 would look something like:
 
-<img src="../png/submit.first-login.png"
- alt="submit server initial login requires your password to be changed"
- width=710 height=808>
+It will then tell you that you **MUST** change your password within a certain
+time (that it will give you) and then tell you the following about the new
+password:
 
-As you can see, on your first login you **MUST** change your password. If you do
-not do this within 72 hours **YOUR ACCOUNT WILL BE CLOSED** and you'll have to
-register again! In that case, it will say something like this:
+> Please enter your current password, a new password, and then reenter the same
+new password.<br>
+> Your password MUST be:<br>
+> - At least 15 characters long<br>
+> - At most 40 characters long<br>
+> - NOT contain nor be a sub-string of the current password<br>
+> - NOT contain nor be a sub-string of your username<br>
+> - New password must NOT have been [Pwned](https://haveibeenpwned.com/Passwords)
+>
+> [Pwned](https://haveibeenpwned.com/Passwords) passwords are passwords that have been previously exposed in some published data breach.
 
-> ERROR: Sorry (tm Canada 🇨🇦) you cannot login at this time.
+Again, if you do not change your password within 72 hours **YOUR ACCOUNT WILL BE
+CLOSED** and you'll have to register again! In that case it'll say something
+like:
+
+> **ERROR: Sorry (tm Canada 🇨🇦) you cannot login at this time.**
 
 Assuming you did login in time, you should put in your login (UUID username),
 your old (initial) password and a new password and then click "Change Password".
 
 **NOTE**: if you have put in your old password, you'll get the following error:
 
-> ERROR: Password not changed<br>
-> ERROR: invalid old password
+> **ERROR: Password not changed**<br>
+> **ERROR: invalid old password**
 
 Once you've changed your password successfully you will be able to log in again
 with your UUID username and new password. When you have done this it will
