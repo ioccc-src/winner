@@ -461,7 +461,7 @@ writing by <a href="../contact.html">contacting the judges</a>.</p>
 </div>
 </div>
 <p class="leftbar">
-These <a href="rules.html">IOCCC rules</a> are version <strong>28.27 2025-03-01</strong>.
+These <a href="rules.html">IOCCC rules</a> are version <strong>28.28 2025-03-03</strong>.
 </p>
 <p class="leftbar">
 The markdown form of these rules <a href="rules.md" download="rules.md">is
@@ -711,44 +711,6 @@ from an <a href="../judges.html">IOCCC judge</a>, you may upload your submission
 the <a href="https://submit.ioccc.org">submit server</a> <strong>ONLY</strong> while the
 contest is <strong><a href="../faq.html#open">open</a></strong>.
 </p>
-<p class="leftbar">
-The <a href="https://submit.ioccc.org">submit server</a>, in accordance with <a href="rules.html#rule17">Rule 17</a>,
-places a limit of <strong>3999971</strong> octets on the size of your upload.
-</p>
-<p class="leftbar">
-You are <strong>STRONGLY</strong> advised to use the <code>mkiocccentry(1)</code> tool
-as found in the <a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry repo</a>
-to form the file to upload to the <a href="https://submit.ioccc.org">submit server</a>.
-</p>
-<p class="leftbar">
-See the
-FAQ on “<a href="../faq.html#mkiocccentry">obtaining and compiling the mkiocccentry tools</a>”
-for more information about the <code>mkiocccentry(1)</code> tool.
-</p>
-<p class="leftbar">
-While the contest is <strong><a href="../faq.html#open">open</a></strong>, you may modify your previously
-uploaded submission by rebuilding your submission with the <code>mkiocccentry(1)</code> tool
-and then re-uploading it to the same slot number on the <a href="https://submit.ioccc.org">submit server</a>.
-</p>
-<p class="leftbar">
-Once the contest enters the <strong><a href="../faq.html#judging">judging</a></strong> state, you will
-<strong>NOT</strong> be allowed to upload your submission files.
-</p>
-<p class="leftbar">
-The <a href="https://submit.ioccc.org">submit server</a> will become active when the contest is <strong><a href="../faq.html#open">open</a></strong>.
-Until the contest status becomes <strong><a href="../faq.html#open">open</a></strong>,
-the <a href="https://submit.ioccc.org">submit server</a> may be offline and/or unresponsive.
-</p>
-<p class="leftbar">
-See the
-FAQ on “<a href="../faq.html#mkiocccentry">obtaining and compiling the mkiocccentry tools</a>”
-and the
-FAQ on “<a href="../quick-start.html#enter">how to enter the IOCCC</a>”
-as that FAQ has important details on
-<a href="register.html">how to register</a>
-as well as
-<a href="submit.html">how to upload your submission</a> to the IOCCC.
-</p>
 <p>Jump to: <a href="#">top</a></p>
 <div id="rule4">
 <h2 id="rule-4">Rule 4</h2>
@@ -832,6 +794,12 @@ which case they are. Of course, neither are any of the previous
 winning entries, unless of course you’re the winner! :-)
 </p>
 <p class="leftbar">
+<p>You are allowed to use tools to develop and test your submission.
+These tools may include, but are not limited to code generators, code
+analysis tools, machine learning tools, natural language models, code
+copilot tools, etc.</p>
+</p>
+<p class="leftbar">
 See also <a href="#rule5">Rule 5</a>, <a href="#rule18">Rule 18</a> and <a href="#rule21">Rule 21</a>.
 </p>
 <p>Jump to: <a href="#">top</a></p>
@@ -843,6 +811,10 @@ Submissions may only be uploaded to the <a href="https://submit.ioccc.org">IOCCC
 while the contest is <strong><a href="../faq.html#open">open</a></strong>.
 </p>
 <p class="leftbar">
+The <a href="https://submit.ioccc.org">submit server</a>, in accordance with <a href="rules.html#rule17">Rule 17</a>,
+places a limit of <strong>3999971</strong> octets on the size of your upload.
+</p>
+<p class="leftbar">
 Once the contest is in the <strong><a href="../faq.html#judging">judging</a></strong> state (or
 <strong><a href="../faq.html#closed">closed</a></strong>), you may <strong>NOT</strong> upload submissions.
 </p>
@@ -851,6 +823,21 @@ While the contest is <strong><a href="../faq.html#open">open</a></strong> or in 
 the <a href="../judges.html">IOCCC judges</a> <strong>MAY</strong> (but are not required to) modify the slot comment of your submission to indicate
 that they have received it. If uploaded submission is malformed, the <a href="../judges.html">IOCCC judges</a>
 <strong>MAY</strong> (but are not required to) modify the slot comment accordingly.
+</p>
+<p class="leftbar">
+You are <strong>STRONGLY</strong> advised to use the <code>mkiocccentry(1)</code> tool
+as found in the <a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry repo</a>
+to form the file to upload to the <a href="https://submit.ioccc.org">submit server</a>.
+</p>
+<p class="leftbar">
+The <a href="https://submit.ioccc.org">submit server</a> will become active when the contest is <strong><a href="../faq.html#open">open</a></strong>.
+Until the contest status becomes <strong><a href="../faq.html#open">open</a></strong>,
+the <a href="https://submit.ioccc.org">submit server</a> may be offline and/or unresponsive.
+</p>
+<p class="leftbar">
+See the
+FAQ on “<a href="../faq.html#mkiocccentry">obtaining and compiling the mkiocccentry tools</a>”
+for more information about the <code>mkiocccentry(1)</code> tool.
 </p>
 <p class="leftbar">
 See the “<a href="#dates">Important IOCCC dates</a>” section above for when these contest states are scheduled.
@@ -874,7 +861,7 @@ the interim ponder this modified quote purportedly said by Bill Gates:
 <p class="leftbar">
 <blockquote>
 <p>10 submissions ought to be enough for anybody. :-)</p>
-<p>– Bill Gates</p>
+<p>– Bill Gates s/640K/10/ (allegedly)</p>
 </blockquote>
 </p>
 <p>Jump to: <a href="#">top</a></p>

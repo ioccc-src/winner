@@ -240,7 +240,7 @@ You may **NOT** submit a tarball created by the `-d` or `-s seed` option!
 </p>
 
 <p class="leftbar">
-**IMPORTANT NOTE**: if you run the program outside the repo directory
+**IMPORTANT NOTE**: if you run an IOCCC related tool outside the repo directory
 (specifying the absolute or relative path to the tool) and you have not
 installed the tools (and we **STRONGLY** recommend you **do** install them),
 then you will have to specify the options for the tools that are required like
@@ -454,14 +454,36 @@ anyone from using any tools they like when they're working on their submissions.
 </p>
 
 <p class="leftbar">
-The IOCCC has a rich history of remarkable winning entries created by authors
-who skillfully employed various code-related techniques such as code generators,
-code analysis tools, machine learning tools, natural language models, code
-copilot tools, and integrated development environments. Although it is **NOT**
-required to use these kinds of tools in order to compile or run a submission,
-individuals are free to continue to create their submissions using them. Even
-so, we **DISLIKE** submissions that **require** an **IDE** (integrated
-development environment).
+The IOCCC has a rich history of remarkable winning entries created
+by authors who skillfully employed various techniques
+such as code generators, code analysis tools, machine learning tools,
+natural language models, code copilot tools, so-called AI services,
+and/or large language models.  Although it is **NOT** required use such
+things to develop your submission, you are free to continue to create
+their submissions using such tools.
+</p>
+
+<p class="leftbar">
+If you do make use of code generator, code analysis tool, machine learning
+tool, natural language model, code copilot tool, a so-called AI service,
+and/or large language models we **ENCOURAGE you to describe how you used
+them** in your `remarks.md`` file.
+</p>
+
+<p class="leftbar">
+You may use git, or services such as [GitHub](https://www.github.com)
+to develop and maintain your submission.  However, we **DISLIKE**
+submissions that **require** the their use in order to build/compile.
+</p>
+
+<p class="leftbar">
+Submissions will be judged in an environment that has no **IDE**.
+The `make(1)` tool, your `Makefile`, and other tools found in
+[Single UNIX Specification](https://en.wikipedia.org/wiki/Single_UNIX_Specification)
+environments and systems that conform to the [Single UNIX
+Specification](https://en.wikipedia.org/wiki/Single_UNIX_Specification).
+And submission that fails to compile/build because it requires
+an **IDE** will be rejected.
 </p>
 
 <p class="leftbar">
@@ -498,10 +520,10 @@ We tend to look down on a [prime
 number](https://en.wikipedia.org/wiki/Prime_number) printer that claims that
 16 is a prime number.  If you do have a bug or mis-feature, you are better off
 documenting it.  Noting "_this submission sometimes prints the 4th power
-of a prime by mistake_" would save the above submission.  And sometimes,
-a strange bug/(mis-)feature can even help the submission!  Of course, a correctly
-working submission is best.  Clever people will note that 16 might be prime
-under certain conditions.  Wise people, when submitting something clever
+of a prime by mistake_" in your `remarks.md` file would save the above submission.
+Sometimes a strange bug/(mis-)feature can even help the submission!  Of course, a correctly
+working submission might be better.  Clever people will note that 16 might be prime
+under certain conditions.  ;-)  Wise people, when submitting something clever
 will fully explain such cleverness in their submission's `remarks.md` file.
 </p>
 

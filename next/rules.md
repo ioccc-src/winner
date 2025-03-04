@@ -51,7 +51,7 @@ Jump to: [top](#)
 </div>
 
 <p class="leftbar">
-These [IOCCC rules](rules.html) are version **28.27 2025-03-01**.
+These [IOCCC rules](rules.html) are version **28.28 2025-03-03**.
 </p>
 
 <p class="leftbar">
@@ -389,51 +389,6 @@ the [submit server](https://submit.ioccc.org) **ONLY** while the
 contest is **[open](../faq.html#open)**.
 </p>
 
-<p class="leftbar">
-The [submit server](https://submit.ioccc.org), in accordance with [Rule 17](rules.html#rule17),
-places a limit of **3999971** octets on the size of your upload.
-</p>
-
-<p class="leftbar">
-You are **STRONGLY** advised to use the `mkiocccentry(1)` tool
-as found in the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry)
-to form the file to upload to the [submit server](https://submit.ioccc.org).
-</p>
-
-<p class="leftbar">
-See the
-FAQ on "[obtaining and compiling the mkiocccentry tools](../faq.html#mkiocccentry)"
-for more information about the `mkiocccentry(1)` tool.
-</p>
-
-<p class="leftbar">
-While the contest is **[open](../faq.html#open)**, you may modify your previously
-uploaded submission by rebuilding your submission with the `mkiocccentry(1)` tool
-and then re-uploading it to the same slot number on the [submit server](https://submit.ioccc.org).
-</p>
-
-<p class="leftbar">
-Once the contest enters the **[judging](../faq.html#judging)** state, you will
-**NOT** be allowed to upload your submission files.
-</p>
-
-<p class="leftbar">
-The [submit server](https://submit.ioccc.org) will become active when the contest is **[open](../faq.html#open)**.
-Until the contest status becomes **[open](../faq.html#open)**,
-the [submit server](https://submit.ioccc.org) may be offline and/or unresponsive.
-</p>
-
-<p class="leftbar">
-See the
-FAQ on "[obtaining and compiling the mkiocccentry tools](../faq.html#mkiocccentry)"
-and the
-FAQ on "[how to enter the IOCCC](../quick-start.html#enter)"
-as that FAQ has important details on
-[how to register](register.html)
-as well as
-[how to upload your submission](submit.html) to the IOCCC.
-</p>
-
 
 Jump to: [top](#)
 
@@ -548,6 +503,14 @@ winning entries, unless of course you're the winner! :-)
 </p>
 
 <p class="leftbar">
+You are allowed to use tools to develop and test your submission.
+These tools may include, but are not limited to code generators, code
+analysis tools, machine learning tools, natural language models, code
+copilot tools, etc.
+
+</p>
+
+<p class="leftbar">
 See also [Rule 5](#rule5), [Rule 18](#rule18) and [Rule 21](#rule21).
 </p>
 
@@ -565,6 +528,11 @@ while the contest is **[open](../faq.html#open)**.
 </p>
 
 <p class="leftbar">
+The [submit server](https://submit.ioccc.org), in accordance with [Rule 17](rules.html#rule17),
+places a limit of **3999971** octets on the size of your upload.
+</p>
+
+<p class="leftbar">
 Once the contest is in the **[judging](../faq.html#judging)** state (or
 **[closed](../faq.html#closed)**), you may **NOT** upload submissions.
 </p>
@@ -574,6 +542,24 @@ While the contest is **[open](../faq.html#open)** or in the **[judging](../faq.h
 the [IOCCC judges](../judges.html) **MAY** (but are not required to) modify the slot comment of your submission to indicate
 that they have received it.  If uploaded submission is malformed, the [IOCCC judges](../judges.html)
 **MAY** (but are not required to) modify the slot comment accordingly.
+</p>
+
+<p class="leftbar">
+You are **STRONGLY** advised to use the `mkiocccentry(1)` tool
+as found in the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry)
+to form the file to upload to the [submit server](https://submit.ioccc.org).
+</p>
+
+<p class="leftbar">
+The [submit server](https://submit.ioccc.org) will become active when the contest is **[open](../faq.html#open)**.
+Until the contest status becomes **[open](../faq.html#open)**,
+the [submit server](https://submit.ioccc.org) may be offline and/or unresponsive.
+</p>
+
+<p class="leftbar">
+See the
+FAQ on "[obtaining and compiling the mkiocccentry tools](../faq.html#mkiocccentry)"
+for more information about the `mkiocccentry(1)` tool.
 </p>
 
 <p class="leftbar">
@@ -607,7 +593,7 @@ the interim ponder this modified quote purportedly said by Bill Gates:
 <p class="leftbar">
 > 10 submissions ought to be enough for anybody. :-)
 >
->    -- Bill Gates
+>    -- Bill Gates s/640K/10/ (allegedly)
 </p>
 
 Jump to: [top](#)
