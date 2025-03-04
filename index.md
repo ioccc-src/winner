@@ -1,10 +1,14 @@
+<div id="suggestions">
 # Suggestions for visitors
+</div>
 
 Explore, under the **Entries** in the _topbar_ menu:
 
 * **[Winning Entries](years.html)**
 * **[People who have won](authors.html)**
 * Other parts of the IOCCC menu
+
+<div id="menu-help"></div>
 
 If you see this icon <a href="nojs-menu.html"> <img src="png/hamburger-icon-open.png"
      alt="hambuger-style menu icon"
@@ -18,7 +22,9 @@ plaintext menu even with JavaScript enabled, you can do so
 FAQ on "[website menus](faq.html#menus)".
 
 
+<div id="obfuscate">
 # Obfuscate defined:
+</div>
 
 tr.v. -cated, -cating, -cates.
 <BR><BR>
@@ -30,7 +36,9 @@ tr.v. -cated, -cating, -cates.
 &nbsp;&nbsp;&nbsp;&nbsp;to darken &lt; fuscus, dark.] -obfuscation n. obfuscatory adj.
 
 
+<div id="goals">
 # Goals of the Contest
+</div>
 
 The goals of the IOCCC:
 
@@ -43,7 +51,11 @@ The goals of the IOCCC:
 *  To have fun with C!
 
 
+<div id="enter">
+<div id="participate">
 # Entering the Contest
+</div>
+</div>
 
 View the [current status of the IOCCC](status.html) to see if the IOCCC is open for submissions.
 
@@ -52,7 +64,9 @@ FAQ on "[how to enter the IOCCC](quick-start.html#enter)"
 for more information.
 
 
+<div id="mastodon">
 # Follow IOCCC on Mastodon
+</div>
 
 The [IOCCC uses Mastodon](https://fosstodon.org/@ioccc) for news updates,
 announcements, and for various other social media purposes.
@@ -64,10 +78,14 @@ For more information on
 please see the
 FAQ on "[What is Mastodon and why does IOCCC use it?](faq.html#try_mastodon)".
 
+<div id="discord">
+<div id="chat">
 # IOCCC Discord server
+</div>
+</div>
 
 The IOCCC now has a [Discord server](https://discord.gg/Wa42Qujwnw)!
-Fans of the IOCCC, hopeful **IOCCC28** contestants, and past winners of the IOCCC
+Fans of the IOCCC, hopeful **IOCCC** contestants, and past winners of the IOCCC
 are all encouraged to stop by and say hello.
 
 To join, click this link:
@@ -75,11 +93,21 @@ To join, click this link:
 
 
 
+<div id="disclaimer">
 # Important Disclaimer
+</div>
 
-IOCCC code is for **educational and entertainment purposes only**. We do **NOT** recommend installing any winning IOCCC entry code. Use code found the IOCCC repo and in the IOCCC website **at your own risk!**
+IOCCC code is for **educational and entertainment purposes only**. We do **NOT**
+recommend installing any winning IOCCC entry code. Use code found the IOCCC repo
+and in the IOCCC website **at your own risk!**
 
-The [IOCCC](index.html) and the [IOCCC judges](judges.html) DISCLAIM ALL WARRANTIES WITH REGARD TO THIS SOFTWARE, INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THEY BE LIABLE FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+The [IOCCC](index.html) and the [IOCCC judges](judges.html) DISCLAIM ALL
+WARRANTIES WITH REGARD TO THIS SOFTWARE, INCLUDING ALL IMPLIED WARRANTIES OF
+MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THEY BE LIABLE FOR ANY SPECIAL,
+INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS
+OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER
+TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF
+THIS SOFTWARE.
 
 
 <!--

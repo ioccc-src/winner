@@ -49,7 +49,7 @@ Jump to: [top](#)
 </div>
 
 <p class="leftbar">
-These [IOCCC guidelines](guidelines.html) are version **28.42 2025-03-03**.
+These [IOCCC guidelines](guidelines.html) are version **28.44 2025-03-04**.
 </p>
 
 <p class="leftbar">
@@ -148,110 +148,10 @@ before the contest status becomes **[open](../faq.html#open)**.
 </p>
 
 <p class="leftbar">
-You **MUST** [register](register.html) in order to participate in the IOCCC.
-You may [register](register.html) while the contest is either
-**[pending](../faq.html#pending)** or **[open](../faq.html#open)**.
-</p>
-
-<p class="leftbar">
-When the contest is **[open](../faq.html#open)**, the [submit server](https://submit.ioccc.org)
-will email you your [submit server](https://submit.ioccc.org)
-**Username** and **Initial password**.  **Please be patient** as it may take some time,
-perhaps as much as a few days, for your registration to be processed and for that email to be sent.
-</p>
-
-<p class="leftbar">
-Those who [register](register.html) while the contest status is **[pending](../faq.html#pending)**
-will receive their email (containing their [submit server](https://submit.ioccc.org) **Username**
-and **Initial password**), much later: usually a few days around the time when the contest status
-becomes **[open](../faq.html#open)**.
-</p>
-
-<p class="leftbar">
-Once that email you your **Username** and **Initial password** is sent, you
-will have 72 hours to [change your submit server initial password](pw-change.html).
-</p>
-
-<p class="leftbar">
-If you do not change your **Initial password** in time, you will have
-to [contact an IOCCC judge](../contact.html) by email and ask them to reset
-your password.  Not only is this a hassle for everyone involved, it will
-delay your IOCCC registration process, perhaps by a number of days that
-`egrep(1)` would be able to pattern match.  By `egrep(1)`, we refer to the
-long standing **UNIX** utility that should just run and **NOT** whine about
-the command being allegedly deprecated.
-</p>
-
-<p class="leftbar">
-Because it takes time (maybe even a few days) to process your registration
-and for the server to email you your initial login and password, you
-should **MAKE SURE** you give yourself enough time to register well
-before the contest closes.  In other words, **DO NOT WAIT UNTIL THE FINAL DAYS**
-of the contest to register!  The [IOCCC judges](../judges.html)
-are **NOT** responsible for delayed or lost email, or for those who wait
-until the last minute to try to register!
-</p>
-
-<p class="leftbar">
 See the
 FAQ on "[how to register and submit to the IOCCC](../quick-start.html#enter)"
 for instructions on registering and participating in the IOCCC, as the process
 may change from contest to contest.
-</p>
-
-<p class="leftbar">
-If you have [registered](register.html) and received by email your
-[submit server](https://submit.ioccc.org) **Username** and **Initial password**
-from an [IOCCC judge](../judges.html), you may upload your submission to
-the [submit server](https://submit.ioccc.org) **ONLY** while the
-contest is **[open](../faq.html#open)**.
-</p>
-
-<p class="leftbar">
-The [submit server](https://submit.ioccc.org) will become active when the contest is **[open](../faq.html#open)**.
-Until the contest status becomes **[open](../faq.html#open)**,
-the [submit server](https://submit.ioccc.org) may be offline and/or unresponsive.
-</p>
-
-<p class="leftbar">
-Your **xz compressed tarball** must be larger than **0** bytes and no larger than **3999971** bytes.
-</p>
-
-<p class="leftbar">
-The sum of the byte lengths of all files, after the **xz compressed tarball** is un-tarred,
-must not exceed **27651\*1024** bytes.
-</p>
-
-<p class="leftbar">
-Your **xz compressed tarball** submission file must pass the tests performed by the current version of `txzchk(1)`.
-</p>
-
-<p class="leftbar">
-Your **xz compressed tarball** submission filename must pass the tests performed by the current version of `fnamchk(1)`.
-</p>
-
-<p class="leftbar">
-When your **xz compressed tarball** submission file is un-tarred, the
-resulting directory must pass the checks performed by the current version of `chkentry(1)`.
-</p>
-
-<p class="leftbar">
-The resulting `prog.c` file must pass the [Rule 2](#rule2) size checks performed by the current
-version of `iocccsize(1)`.
-</p>
-
-<p class="leftbar">
-The `.auth.json` and `.info.json` must be compatible with what the
-current version of the `mkiocccentry(1)` tool would produce.  They must
-also pass the tests performed by the current version of `chkentry(1)`.
-</p>
-
-<p class="leftbar">
-The required `Makefile` must **NOT** be empty.
-</p>
-
-<p class="leftbar">
-The required `remarks.md` must **NOT** be empty.
 </p>
 
 <p class="leftbar">
@@ -266,7 +166,7 @@ See FAQs regarding:
 <p class="leftbar">
 - [obtaining the latest mkiocccentry tools](../faq.html#obtaining_mkiocccentry)
 - [compiling the mkiocccentry tools](../faq.html#compiling_mkiocccentry)
-- [installing the mkiocccentry tools](../faq.html#installing)
+- [installing the mkiocccentry tools](../faq.html#install)
 - [using the mkiocccentry tools](../faq.html#using_mkiocccentry)
 </p>
 
@@ -374,7 +274,7 @@ counted by the IOCCC size tool.  This is a **feature**, not a bug!
 <p class="leftbar">
 In cases where the above summary and the algorithm implemented by
 the IOCCC size tool `iocccsize(1)` conflict, the algorithm implemented
-by current version of `iocccsize(1)` is preferred by the [IOCCC judges](../judges.html).
+by the current version of `iocccsize(1)` is preferred by the [IOCCC judges](../judges.html).
 </p>
 
 <p class="leftbar">
@@ -449,7 +349,7 @@ While it is **NOT** required, you are allowed to use tools to develop
 and test your submission.  These tools may include, but are not limited
 to code generators, code analysis tools, static code analysis tools,
 runtime analysis tools, machine learning tools, natural language models,
-code copilot tools, so-called AI services, large language models, etc.
+code copilot tools, so-called AI services, large language models (LLMS), etc.
 If you do make use of such tools or services, then we **ENCOURAGE you to describe
 how you used such tools** in your `remarks.md` file.
 </p>
@@ -467,7 +367,7 @@ an **IDE** will be rejected.
 </p>
 
 <p class="leftbar">
-We will use `make(1)` tool, your `Makefile`, and other tools found in
+We will use the `make(1)` tool, your `Makefile`, and other tools found in
 [Single UNIX Specification](https://en.wikipedia.org/wiki/Single_UNIX_Specification)
 environments and systems that conform to the [Single UNIX
 Specification](https://en.wikipedia.org/wiki/Single_UNIX_Specification)
@@ -703,7 +603,7 @@ Jump to: [top](#)
 `.info.json`. These files contain information about the author(s) and about the
 submission. After these files are formed, the `chkentry(1)` tool will be run on
 the submission directory; this tool not only validates the two JSON files
-(running specific checks on them after validating the JSON), but it also
+(and runs specific checks on them after validating the JSON), but it also
 verifies that what is in the manifest in `.info.json` matches the contents of
 the directory, in addition to other checks. If `chkentry(1)` fails to validate
 anything at all, your submission **WILL BE** rejected!
@@ -711,8 +611,9 @@ anything at all, your submission **WILL BE** rejected!
 
 <p class="leftbar">
 **IMPORTANT**: although `chkentry(1)` validates the files in the directory, it
-only inspects the contents of the two JSON files; it performs other checks on
-the other files, and those checks are run on the two JSON files as well.
+only inspects the contents of the two JSON files; it performs other kinds of
+checks on the other files, and those checks are run on the two JSON files as
+well.
 </p>
 
 <p class="leftbar">
@@ -847,9 +748,9 @@ FAQ on "[reporting mkiocccentry bugs](../faq.html#mkiocccentry_bugs)".
 
 <p class="leftbar">
 As part of its algorithm, `txzchk(1)` will run `fnamchk(1)` on the
-_tarball_ to verify that the filename is valid. See the
+_tarball_ to verify that the _filename_ is valid. See the
 FAQ on "[fnamchk](../faq.html#fnamchk)"
-and [fnamchk below](#fnamchk) for more details on this tool.
+and the [fnamchk section](#fnamchk) below for more details on this tool.
 </p>
 
 <p class="leftbar">
@@ -861,8 +762,8 @@ page. You might just find a fun option if you do either of these!
 
 <p class="leftbar">
 Of course, as `txzchk` does not extract the tarball, it is possible that if you
-manually package your submission tarball, you could still be violating [Rule
-17](rules.html#rule17).
+manually package your submission tarball and/or find and exploit a missing
+check, you could still be violating [Rule 17](rules.html#rule17).
 </p>
 
 <div id="extra-files">
@@ -895,7 +796,7 @@ In other words, the actual amount of **EXTRA** files is **31**.
 </p>
 
 <p class="leftbar">
-If you use the optional file for something other than their intended use
+If you use an optional filename for something other than their intended use
 in order to get past the file limit, we will consider that an
 abuse of rules.  For more details on the optional files, see the
 FAQ on the "[try.sh script system](../faq.html#try_script)"
@@ -1073,6 +974,12 @@ reasons. Again, just update the `Makefile` and explain it in your `remarks.md`.
 See the [optimiser section](#optimiser) for details for changing optimiser
 flags.
 </p>
+
+<p class="leftbar">
+For more fun when it comes to optimisers breaking code, see
+[1986/marshall/compilers.html](../1986/marshall/compilers.html).
+</p>
+
 
 <div id="compilers">
 ## Default compiler
@@ -1285,7 +1192,7 @@ to:
 <p class="leftbar">
 Some compilers have reported this as an error, however, and if you have
 such a compiler you might want to not add it, or at least note in your
-`remarks.md` file, which OS, OS version, compiler and compiler version for
+`remarks.md` file, which OS, OS version, compiler and compiler version
 that has such a problem.
 </p>
 
@@ -2396,7 +2303,7 @@ FAQ on "[Xorg being deprecated](../faq.html#Xorg_deprecated)")</p>
 * **worst/best abuse of the rules** (or some variation)
 * (anything else so strange that it deserves an award)
 
-Be do not limit ourselves to this list.  For example, a few submissions are so
+We do not limit ourselves to this list.  For example, a few submissions are so
 good/bad that they are declared winners at the start of the final round.
 We will invent awards categories for them, if necessary.
 
@@ -2572,7 +2479,7 @@ Often, winning entries are published in selected magazines from around the
 world.  Winners have appeared in books ('`The New Hacker's Dictionary`',
 '`Obfuscated C and Other Mysteries`', '`Pointers On C`', others) and on t-shirts
 (sometimes by the author(s) themselves).  There have been multiple classes
-that have focused in part, on IOCCC winning entries.  And More than one winner has been turned
+that have focused in part, on IOCCC winning entries.  And more than one winner has been turned
 into a tattoo!
 </p>
 
@@ -2624,7 +2531,7 @@ Consider joining the IOCCC discord community via this link:
 
 <p class="leftbar">
 See the
-FAQ on "[obtaining and compiling the mkiocccentry tools](../faq.html#mkiocccentry)"
+FAQs on "[obtaining, compiling, installing and using the mkiocccentry tools](../faq.html#mkiocccentry)"
 and the
 FAQ on "[how to enter the IOCCC](../quick-start.html#enter)"
 as that FAQ has important details on

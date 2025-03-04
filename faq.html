@@ -451,7 +451,7 @@
 <li><strong>Q 1.3</strong>: <a class="normal" href="#mkiocccentry_bugs">How do I report bugs in an <code>mkiocccentry</code> tool?</a></li>
 <li><strong>Q 1.4</strong>: <a class="normal" href="#subdirectories">How may I use subdirectories in my submission if Rule 17 disallows them?</a></li>
 <li><strong>Q 1.5</strong>: <a class="normal" href="#mkiocccentry_test">How can I check if my submission passes tests without having to answer questions?</a></li>
-<li><strong>Q 1.6</strong>: <a class="normal" href="#extra-files">How may I include additional files beyond the max allowed?</a></li>
+<li><strong>Q 1.6</strong>: <a class="normal" href="#extra-files">What are extra files and how may I include additional files beyond the max allowed?</a></li>
 <li><strong>Q 1.7</strong>: <a class="normal" href="#ai">May I use AI, Virtual coding assistants, or similar tools to write my submission?</a></li>
 <li><strong>Q 1.8</strong>: <a class="normal" href="#rule17">What are the details behind Rule 17?</a></li>
 </ul>
@@ -559,7 +559,7 @@
 <li><strong>Q 10.3</strong>: <a class="normal" href="#dot_files"> What is the purpose of the <code>.top</code>, <code>.allyear</code>, <code>.year</code> and <code>.path</code> files?</a></li>
 <li><strong>Q 10.4</strong>: <a class="normal" href="#terms"> What is the current meaning of the IOCCC terms Author, Entry, and Submission?</a></li>
 <li><strong>Q 10.5</strong>: <a class="normal" href="#licence">Am I allowed to use IOCCC content?</a></li>
-<li><strong>Q 10.6</strong>: <a class="normal" href="#try_mastodon">What is Mastodon and why does IOCCC use it?</a></li>
+<li><strong>Q 10.6</strong>: <a class="normal" href="#try_mastodon">What is Mastodon and why does the IOCCC use it?</a></li>
 <li><strong>Q 10.7</strong>: <a class="normal" href="#tabstops">How do I set certain tabstops for viewing source code in vi(m)?</a></li>
 <li><strong>Q 10.8</strong>: <a class="normal" href="#menus">How do the menus on the website work and what can I do if they don’t work?</a></li>
 <li><strong>Q 10.9</strong>: <a class="normal" href="#author-information">How do I find more information about a winning author of an entry?</a></li>
@@ -714,7 +714,7 @@ and will not work from any directory, however.</p>
 <div id="using_mkiocccentry">
 <h4 id="q-0.1.5-how-do-i-use-mkiocccentry">Q 0.1.5: How do I use mkiocccentry?</h4>
 </div>
-<p>Once you have registered, you will need to package your entry with the
+<p>Once you have registered, you will need to package your submission with the
 <code>mkiocccentry</code> tool. If you have not already obtained the toolkit, see the
 FAQ on “<a href="#obtaining_mkiocccentry">obtaining the most recent mkiocccentry
 toolkit</a>”,
@@ -917,7 +917,7 @@ but we do enjoy interesting and creative uses of submissions.</p>
 <code>try.alt.sh</code> template as well.</p>
 <p>We recommend that you include the use of these scripts in the <code>try</code> rule in the
 example Makefile that you modify for your submission. See the
-FAQ on “<a href="#makefile">submission Makefiles</a>.</p>
+FAQ on “<a href="#makefile">submission Makefiles</a>”.</p>
 <p>Jump to: <a href="#">top</a></p>
 <div id="file_perms">
 <h3 id="q-0.6-what-permissions-may-my-files-be-and-what-if-i-need-different-permissions">Q 0.6: What permissions may my files be and what if I need different permissions?</h3>
@@ -1037,12 +1037,16 @@ for more thorough details on bug reporting.</p>
 <h4 id="q-1.4-how-may-i-use-subdirectories-in-my-submission-if-rule-17-disallows-them">Q 1.4: How may I use subdirectories in my submission if Rule 17 disallows them?</h4>
 </div>
 <p>In order to submit a subdirectory, you may simply include a tarball. As long as
-the total size of your submission does not exceed the size limit, defined in
-<a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h">limit_ioccc.h</a>
-as <code>MAX_TARBALL_LEN</code> and your total number of files in your xz compressed
-tarball does not exceed the limit, defined as <code>MAX_FILE_COUNT</code> in
-<a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h">limit_ioccc.h</a>,
-you can include tarballs with subdirectories or other files.</p>
+the maximum depth of all files does not exceed the maximum, defined as
+<code>MAX_PATH_DEPTH</code>, the maximum filename length (a single component not counting
+the <code>/</code>) of all files does not exceed <code>MAX_FILENAME_LEN</code> and
+the maximum path length (all components) of all files does not exceed
+<code>MAX_PATH_LEN</code>. These macros are defined in
+<a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h">limit_ioccc.h</a>.</p>
+<p>See also the
+FAQ on “<a href="#rule17">Rule 17</a>”,
+the <a href="next/guidelines.html">guidelines</a> and <a href="next/rules.html#rule17">Rule 17</a>
+itself.</p>
 <div id="mkiocccentry_test">
 <h4 id="q-1.5-how-can-i-check-if-my-submission-passes-tests-without-having-to-answer-questions">Q 1.5: How can I check if my submission passes tests without having to answer questions?</h4>
 </div>
@@ -1054,7 +1058,7 @@ answers.</p>
 <p>Please note that the tool will <strong>NOT</strong> delete the directory it makes so if you
 do have to try again you’ll have to remove it.</p>
 <p>An example use of this option is:</p>
-<pre><code>    mkiocccentry -d test_work prog.c Makefile remarks.md</code></pre>
+<pre><code>    mkiocccentry -d workdir topdir</code></pre>
 <p>This will run the tests that <code>mkiocccentry(1)</code>, write the JSON files, use
 <code>chkentry(1)</code>, package the tarball and run <code>txzchk(1)</code> on it.</p>
 <p>See also the
@@ -1073,18 +1077,24 @@ and the
 FAQ on “<a href="#fnamchk">fnamchk</a>”
 for more details.</p>
 <div id="extra-files">
-<h1 id="how-may-i-include-additional-files-beyond-the-max-allowed">How may I include additional files beyond the max allowed?</h1>
+<h1 id="what-are-extra-files-and-how-may-i-include-additional-files-beyond-the-max-allowed">What are extra files and how may I include additional files beyond the max allowed?</h1>
 </div>
-<p>The rules state:</p>
-<blockquote>
-<p>The maximum number of files your submission tarball may contain, not counting
-the optional files (<code>prog.alt.c</code>, <code>try.sh</code>, <code>try.alt.sh</code>) and the mandatory
-files (<code>prog.c</code>, <code>Makefile</code>, <code>remarks.md</code>) is 31.</p>
-</blockquote>
-<p>If you need to include more files than this, you may include a tarball as an
-<strong>EXTRA</strong> file.</p>
-<p>This file does <strong>NOT</strong> need to pass the <code>txzchk(1)</code> tests; only your submission
-tarball needs to pass these tests.</p>
+<p class="leftbar">
+Extra files are defined as files that are not the required files (<code>prog.c</code>,
+<code>Makefile</code>, <code>remarks.md</code> and the two generated by <code>mkiocccentry(1)</code> <code>.info.json</code>
+and <code>.auth.json</code>) and files that are also not the optional files (<code>try.sh</code>,
+<code>prog.alt.c</code> and <code>try.alt.sh</code>).
+</p>
+<p class="leftbar">
+<strong>NOTE</strong>: optional filenames are only optional if they are in the submission top
+level directory.
+</p>
+<p class="leftbar">
+If you need to include more files than this, you may include a tarball that
+itself is an extra file, meaning it counts <strong>AS</strong> an extra file.
+This file does <strong>NOT</strong> need to pass the <code>txzchk(1)</code> tests; only your submission
+tarball needs to pass these tests.
+</p>
 <p>Please pay careful attention to <a href="next/rules.html#rule17">Rule 17</a> and in
 particular the part about the <a href="#max-files">maximum number of files per
 submission</a>, which not only discusses the maximum
@@ -1100,21 +1110,22 @@ The <code>mkiocccentry(1)</code> tool creates a v7 format tarball to prevent thi
 <pre><code>    tar --format=v7 -cJf foo.txz directory</code></pre>
 <p>Jump to: <a href="#">top</a></p>
 <div id="ai">
-<h3 id="q-1.7-may-i-use-ai-virtual-coding-assistants-or-similar-tools-to-write-my-submission">Q 1.7: May I use AI, Virtual coding assistants, or similar tools to write my submission?</h3>
+<div id="llm">
+<h3 id="q-1.7-may-i-use-ai-llm-virtual-coding-assistants-or-similar-tools-to-write-my-submission">Q 1.7: May I use AI, LLM, Virtual coding assistants, or similar tools to write my submission?</h3>
+</div>
 </div>
 <p>You are free to use whatever tools you wish to write your code.
-This includes tools that are AI based, Virtual coding assistants, code
-generators, or similar tools, as well as your own tools. The <a href="https://www.ioccc.org/judges.html">IOCCC
-judges</a> do not discriminate on the
-basis of the tools used to write obfuscated C code so long as you are
-the ultimate author of the code you submit.</p>
-<p>If you do use such tools, <strong>PLEASE mention</strong> which tools you used as well
-as how you them to help write you submission in your <code>remarks.md</code> file.</p>
+This includes tools that are AI based, LLM (large language model), Virtual
+coding assistants, code generators, or similar tools, as well as your own tools.
+The <a href="https://www.ioccc.org/judges.html">IOCCC judges</a> do not discriminate on the
+basis of the tools used to write obfuscated C code so long as you are the
+ultimate author of the code you submit.</p>
+<p>If you do use such tools, <strong>PLEASE mention</strong> in your <code>remarks.md</code> which tools
+you used as well as how you used them to help write your submission.</p>
 <p>Jump to: <a href="#">top</a></p>
 <div id="rule17">
 <h3 id="q-1.8-what-are-details-behind-rule-17">Q 1.8: What are details behind Rule 17?</h3>
 </div>
-<p>The following are the details behind <a href="next/rules.html#rule17">Rule 17</a>.</p>
 <h3 id="tldr-rule-17---use-mkiocccentry1">TL;DR Rule 17 - Use <code>mkiocccentry(1)</code></h3>
 <p class="leftbar">
 This is a <strong>COMPLEX</strong> rule. <strong>Violating this rule will cause your submission to
@@ -1129,13 +1140,10 @@ contains <strong>IMPORTANT</strong> tools and libraries such as:
 </p>
 <ul>
 <li><p class="leftbar">
-<code>chkentry(1)</code>
+<code>mkiocccentry(1)</code>
 </p></li>
 <li><p class="leftbar">
 <code>iocccsize(1)</code>
-</p></li>
-<li><p class="leftbar">
-<code>mkiocccentry(1)</code>
 </p></li>
 <li><p class="leftbar">
 <code>txzchk(1)</code>
@@ -1144,39 +1152,29 @@ contains <strong>IMPORTANT</strong> tools and libraries such as:
 <code>fnamchk(1)</code>
 </p></li>
 <li><p class="leftbar">
-<code>jparse(1)</code> (and other tools) and <code>jparse(3)</code> (which <code>chkentry(1)</code> uses)
+<code>jparse(3)</code>
+</p></li>
+<li><p class="leftbar">
+<code>chkentry(1)</code> (which uses <code>jparse(3)</code>)
 </p></li>
 </ul>
 <p class="leftbar">
 The above mentioned tools will help you verify that your submission
-conforms to <a href="next/rules.html#rule17">Rule 17</a>.
-</p>
-<p class="leftbar">
-Each above mentioned tool has a <code>-h</code> option that provides command line help. For
-additional details of each tool, see its man page, and in some cases, the <a href="next/guidelines.html">IOCCC
-guidelines</a>.
+conforms to <a href="next/rules.html#rule17">Rule 17</a>. Each of these tool has a <code>-h</code>
+option that provides command line help. For additional details of each tool, see
+its man page, and in some cases, the <a href="next/guidelines.html">IOCCC guidelines</a>.
 </p>
 <p class="leftbar">
 The maximum number of <strong>extra files</strong> is 31. See the <a href="#max-files">maximum number of extra
 files section</a> below for finer details and the
-FAQ on “<a href="#extra-files">including additional files</a>”
-if you need to include more files than this maximum.
-</p>
-<p class="leftbar">
-Extra files are defined as files that are not the required files (<code>prog.c</code>,
-<code>Makefile</code>, <code>remarks.md</code> and the two generated by <code>mkiocccentry(1)</code> <code>.info.json</code>
-and <code>.auth.json</code>) and files that are also not the optional files (<code>try.sh</code>,
-<code>prog.alt.c</code> and <code>try.alt.sh</code>).
-</p>
-<p class="leftbar">
-<strong>NOTE</strong>: optional filenames are only optional if they are in the submission top
-level directory.
+FAQ on “<a href="#extra-files">what extra files are and how to include additional files</a>”,
+should you need to include more files than this maximum.
 </p>
 <p>Jump to: <a href="#">top</a></p>
 <h3 id="rule-17---the-complex-details">Rule 17 - The COMPLEX details</h3>
 <p class="leftbar">
-<p>Each submission <strong>MUST</strong> be in the form of a xz compressed tarball.
-The xz compressed tarball filename must be of the form:
+<p>Each submission <strong>MUST</strong> be in the form of an xz compressed tarball.
+The xz compressed tarball filename <strong>MUST</strong> be of the form:
 <code>^submit.username-slot_num.[1-9][0-9]{9,}.txz$</code>.</p>
 <p class="leftbar">
 … where <em><code>username</code></em> is your IOCCC registration username <strong>in the form of a
@@ -1189,11 +1187,10 @@ details), and where <em><code>slot_num</code></em> is a single decimal digit int
 In particular, <code>username</code> is in the form of:
 <code>xxxxxxxx-xxxx-4xxx-Nxxx-xxxxxxxxxxxx</code> where <code>'x'</code> is a hex digit in the range
 of <code>[0-9a-f]</code>, 4 is the UUID version, and <code>N</code> is one of <code>8</code>, <code>9</code>, <code>a</code>, or <code>b</code>.
-And yes, there is a 4 (UUID version 4) and the variants <code>0x8</code>, <code>0x9</code>, <code>0xa</code> and
-<code>0xb</code> in there.
 </p>
 <p class="leftbar">
-Your xz compressed tarball <strong>MUST</strong> contain, <strong>at a minimum</strong>, the following files:
+Your xz compressed tarball <strong>MUST</strong> contain, <strong>at a minimum</strong>, the following
+files, in the <strong>TOP LEVEL</strong> directory:
 </p>
 <ul>
 <li><p class="leftbar">
@@ -1220,9 +1217,9 @@ The <code>Makefile</code> <strong>MUST</strong> be a <strong>non</strong>-empty 
 Makefile</a></strong> format. See the
 <a href="next/guidelines.html#makefile">Makefile section in the guidelines</a>,
 the
-FAQ on “<a href="#submission_makefiles">submission Makefile</a>”
+FAQ on “<a href="#submission_makefile">submission Makefiles</a>”
 and the
-FAQ on “<a href="#make_compatibility">Makefile compatibility</a>”
+FAQ on “<a href="#make_compatibility">IOCCC make(1) compatibility</a>”
 for help.
 </p>
 <p class="leftbar">
@@ -1230,8 +1227,8 @@ The <code>remarks.md</code> <strong>MUST</strong> be a <strong>non</strong>-empt
 (<code>mkiocccentry(1)</code> only checks the file size but if you do not have any text in
 it you still risk violating this rule). See also
 <a href="next/rules.html#rule18">Rule 18</a> and our
-FAQ on “<a href="#remarks_md">remarks.md</a>”
-and our
+FAQ on “<a href="#remarks_md">remarks.md</a>”,
+our
 FAQ on “<a href="#markdown">markdown</a>”
 and our <a href="markdown.html">markdown guidelines</a>.
 </p>
@@ -1252,7 +1249,7 @@ about the submission itself. It also <strong>MUST</strong> be valid according to
 </p>
 <p class="leftbar">
 For the complete <code>mkiocccentry(1)</code> process, see the
-FAQ on the “<a href="#mkiocccentry_process">mkiocccentry process</a>.
+FAQ on the “<a href="#mkiocccentry_process">mkiocccentry process</a>”.
 </p>
 <p class="leftbar">
 The tool performs a lot of checks, both directly and indirectly, and if it or
@@ -1260,7 +1257,7 @@ any other tool detects <strong>ANY</strong> problem, you are <strong>HIGHLY</str
 and try again.
 </p>
 <p class="leftbar">
-On the other hand, some issues are errors and you <strong>MUST</strong> fix those).
+On the other hand, some issues are errors and you <strong>MUST</strong> fix those.
 </p>
 <p class="leftbar">
 If you do use <code>mkiocccentry(1)</code> and you run into a problem, you might see the
@@ -1285,27 +1282,28 @@ course if you manipulate the tarball to get past this you risk violating this
 rule.
 </p>
 <p class="leftbar">
-Your submission’s xz compressed tarball <strong>MUST</strong> pass the <code>txzchk(1)</code> test. See
-the <a href="next/guidelines.html">guidelines</a> for more details on this tool.
+Your submission’s xz compressed tarball <strong>MUST</strong> pass the <code>txzchk(1)</code> tests. See
+the <a href="next/guidelines.html#txzchk">guidelines on txzchk(1)</a> for more details on this tool.
 </p>
 <p class="leftbar">
 <strong>IMPORTANT</strong>: Make <strong>SURE</strong> you have the most recent version of the
 <code>mkiocccentry</code> toolkit! Not doing so will put you at a great risk of violating
 this rule! See the
-FAQ on “<a href="#mkiocccentry">obtaining the mkiocccentry toolkit</a>”
+FAQs on “<a href="#mkiocccentry">obtaining, compiling, installing and using the mkiocccentry toolkit</a>”
 for more details.
 </p>
 <p class="leftbar">
 You are <strong>HIGHLY ENCOURAGED</strong> to use the <code>mkiocccentry(1)</code> tool to form your
-submission’s xz compressed tarball. See the <a href="next/guidelines.html">guidelines</a> for
-more details on this tool and the <a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry
-repo</a>.
+submission’s xz compressed tarball. See the <a href="next/guidelines.html#mkiocccentry">guidelines on
+mkiocccentry(1)</a> for
+more details on this tool and see the <a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry
+repo</a> for the toolkit itself.
 </p>
 <p class="leftbar">
 Your entry <strong>MAY</strong> have subdirectories, depending on the depth and total length of
 the filenames. Certain directories like <code>.git</code>, <code>RCCS</code>, <code>CVS</code> and <code>.svn</code>
 (amongst others) are skipped. For more information, see the
-<a href="next/guidelines.html">guidelines</a>.
+FAQ on “<a href="#subdirectories">subdirectories</a>”.
 </p>
 <p class="leftbar">
 With the exception of those generated by the <code>mkiocccentry(1)</code> tool or the tools
@@ -1325,7 +1323,7 @@ the exception of files generated by <code>mkiocccentry(1)</code> itself, it must
 </p></li>
 <li><p class="leftbar">
 <strong>NOT</strong> contain a path component of: <strong><code>..</code></strong> (that is,
-<strong>NO</strong> <strong><code>..</code></strong>).
+<strong>NO</strong> path component that matches the regular expression <strong><code>^..$</code></strong>).
 </p></li>
 <li><p class="leftbar">
 Match the regular expression
@@ -1333,7 +1331,7 @@ Match the regular expression
 <code>mkiocccentry(1)</code>).
 </p></li>
 <li><p class="leftbar">
-<strong>NOT</strong> have a directory depth &gt; 4.
+<strong>NOT</strong> have a directory/file depth &gt; 4.
 </p></li>
 <li><p class="leftbar">
 <strong>NOT</strong> have a total <strong>path</strong> length &gt; 99 characters.
@@ -1361,12 +1359,14 @@ tarball.
 <p class="leftbar">
 Files and directories in your submission tarball <strong>MUST</strong> be specific
 permissions and <code>mkiocccentry(1)</code> does this for you. In particular: directories
-<strong>MUST</strong> be <code>drwxr-xr-x</code> (i.e. <code>0755</code>), the optional files, not counting
+<strong>MUST</strong> be <code>drwxr-xr-x</code> (i.e. <code>0755</code>); the optional files, not counting
 <code>prog.alt.c</code> (i.e. <code>try.sh</code> and <code>try.alt.sh</code>), if provided, <strong>MUST</strong> be
-<code>-r-xr-xr-x</code> (i.e. <code>0555</code>) and all other files <strong>MUST</strong> be <code>-r--r--r--</code> (i.e.
-<code>0444</code>). If the files do not have these permissions, your submission <strong>WILL</strong>
-be rejected for violating <a href="next/rules.html#rule17">Rule 17</a>! In addition to
-<code>mkiocccentry(1)</code> creating and copying the directories and files with these
+<code>-r-xr-xr-x</code> (i.e. <code>0555</code>); and all other files <strong>MUST</strong> be <code>-r--r--r--</code> (i.e.
+<code>0444</code>). If any file or directory does not have the correct permissions, your submission <strong>WILL</strong>
+be rejected for violating <a href="next/rules.html#rule17">Rule 17</a>!
+</p>
+<p class="leftbar">
+After <code>mkiocccentry(1)</code> creates the directories and copies the files with these
 modes, it also verifies them after the fact and if they are not correct it is an
 <strong>error</strong>.
 </p>
@@ -1413,7 +1413,7 @@ files <code>.auth.json</code> and <code>.info.json</code>), is 31. This is defin
 <code>MAX_EXTRA_FILE_COUNT</code> in
 <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h">soup/limit_ioccc.h</a>
 in the <a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry repo</a>. See the
-FAQ on “<a href="#extra-files">how to include additional files</a>”
+FAQ on “<a href="#extra-files">what extra files are and how to include more</a>”
 if you need to include more files.
 </p>
 <p class="leftbar">
@@ -5812,12 +5812,12 @@ and this may help clarify some aspects of the
 <a href="https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1">CC BY-SA 4.0 License</a>.</p>
 <p>The <a href="#copyright">Copyright and CC BY-SA 4.0 License</a> applies to all
 IOCCC content. We use this to help ensure that we can all
-enjoy hat those working on the IOCCC have proper Attribution
+enjoy that those working on the IOCCC have proper Attribution
 including, of course, the IOCCC winners themselves! It is designed
 to help ensure that everyone may enjoy the IOCCC.</p>
 <p>Jump to: <a href="#">top</a></p>
 <div id="try_mastodon">
-<h3 id="q-10.6-what-is-mastodon-and-why-does-ioccc-use-it">Q 10.6: What is Mastodon and why does IOCCC use it?</h3>
+<h3 id="q-10.6-what-is-mastodon-and-why-does-the-ioccc-use-it">Q 10.6: What is Mastodon and why does the IOCCC use it?</h3>
 </div>
 <p>The <a href="https://fosstodon.org/@ioccc">IOCCC uses Mastodon</a> for news updates,
 announcements, and for various other social media purposes.</p>

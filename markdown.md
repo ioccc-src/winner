@@ -179,7 +179,7 @@ Jump to: [top](#)
 </div>
 </div>
 
-Please **NOT** use the obsolete `<u>` (<ins>_underline_</ins>) HTML element:
+Please do **NOT** use the obsolete `<u>` (<ins>_underline_</ins>) HTML element:
 
 ``` <!---html-->
     <u>...</u>                                                <=== no thank you

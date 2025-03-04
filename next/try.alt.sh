@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 #
-# try.alt.sh - demonstrate IOCCC entry YYYY/foo alternate code
-# XXX - try.alt.sh example version: 1.0.0-1 11-28-2024                      - XXX
-#
+# try.alt.sh - demonstrate IOCCC submission YYYY/foo alternate code
+# XXX - try.alt.sh example version: 28.0.0-0 2024-03-04                     - XXX
 # XXX - NOTE: if your submission wins and becomes an entry, then            - XXX
 # XXX - YYYY/foo will be changed to the 4 digit year and directory          - XXX
 # XXX - name.                                                               - XXX
@@ -43,8 +42,8 @@ clear
 
 # XXX - Examples follow.                                            - XXX
 
-# XXX - if the prompt will not be too long, say more than 80 chars  - XXX
-# XXX - or so:                                                      - XXX
+# XXX - if the prompt will not be too long, say no more than 80-100 - XXX
+# XXX - chars or so:                                                - XXX
 read -r -n 1 -p "Press any key to run: ./prog.alt: "
 echo 1>&2
 ./prog.alt
@@ -54,3 +53,7 @@ echo "$ ./prog.alt some long command line"
 read -r -n 1 -p "Press any key to continue: "
 ./prog.alt some long command line
 
+# XXX - of course, if the prompt needs to be long, or it will be    - XXX
+# XXX - longer no matter what or you have some other purpose, you   - XXX
+# XXX - can do it the other way or another way entirely. The point  - XXX
+# XXX - is to make it easy to use and see but still fit your ideas. - XXX
