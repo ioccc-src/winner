@@ -1,10 +1,11 @@
 #!/usr/bin/env make
 #
-# prog - an example Makefile <<=== change "an example Makefile" to a suitable title for entry
+# prog - an example Makefile <<=== change "an example Makefile" to a suitable
+# title for submission
 #
-# Please copy this file into your entry directory under the name: Makefile
-# Modify the resulting Makefile as needed.
-
+# Please use this Makefile, renamed as Makefile of course, as the Makefile in
+# your submission. Modify it as needed, including removing this comment and
+# other comments we ask you to remove.
 
 #############################
 # shell used by this Makefile
@@ -138,14 +139,10 @@ PROG= prog
 OBJ= ${PROG}.o
 TARGET= ${PROG}
 
-# If you have alternate code, try something like:
+# If you have alternate code, uncomment the next two lines and
+# remove the rest of the comments:
 # ALT_OBJ= ${PROG}.alt.o
 # ALT_TARGET= ${PROG}.alt
-#
-# or so.
-#
-# Please remove these comments either way.
-#
 ALT_OBJ=
 ALT_TARGET=
 
@@ -158,11 +155,14 @@ DATA=
 #################
 
 all: data ${TARGET}
+	@# please remove these comments
+	@
 	@# NOTE: only try.sh and try.alt.sh scripts will be made executable in
 	@# the tarball so if you need any scripts that are executable, make sure
 	@# to use ${CHMOD} +x on them like:
 	@#
 	@#   ${CHMOD} +x foo.sh
+	@:
 
 .PHONY: all data try clean clobber install
 
@@ -174,7 +174,7 @@ ${PROG}: ${PROG}.c
 # suggested way(s) to run the program
 #
 try: ${PROG} ${DATA}
-	@# remove these comments
+	@# please remove these comments
 	@# notice how we do not assume that . is a component of the $PATH environment variable
 	@# you may use the try.sh script if you have one
 	@# change this next line as needed
@@ -184,14 +184,15 @@ try: ${PROG} ${DATA}
 # alternative executable
 #
 alt: data ${ALT_TARGET}
+	@:
 
 ${PROG}.alt: ${PROG}.alt.c
 	${CC} ${CFLAGS} ${PROG}.alt.c -o $@ ${LDFLAGS}
 
-# suggested way(s) to run alt code, if you include one
+# suggested way(s) to run alt code, if you include a prog.alt.c
 #
 try.alt: ${PROG}.alt ${DATA}
-	@# remove these comments
+	@# please remove these comments
 	@# notice how we do not assume that . is a component of the $PATH environment variable
 	@# you may use the try.alt.sh script if you have one
 	@# change this next line as needed
