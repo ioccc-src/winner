@@ -231,6 +231,14 @@ wrong slot by mistake.
 </p>
 
 <p class="leftbar">
+Uploading a tarball not formed by `mkiocccentry(1)` puts you at a very big risk of
+violating [Rule 17](rules.html#rule17), especially as `mkiocccentry(1)` does a
+great number of things that are required, and it also runs many checks, and if
+any of those checks fail, you are at a very great risk of having your submission
+rejected for violating [Rule 17](rules.html#rule17).
+</p>
+
+<p class="leftbar">
 See also [Rule 12](#rule13).
 </p>
 
@@ -371,7 +379,8 @@ perhaps as much as a few days, for your registration to be processed and for tha
 <p class="leftbar">
 Those who [register](register.html) while the contest status is **[pending](../faq.html#pending)**
 will receive their email (containing their [submit server](https://submit.ioccc.org) **Username**
-and **Initial password**), much later: few days around the time when the contest status becomes **[open](../faq.html#open)**.
+and **Initial password**), much later: usually a few days around the time when the contest status
+becomes **[open](../faq.html#open)**.
 </p>
 
 <p class="leftbar">
@@ -381,21 +390,22 @@ will have 72 hours to [change your submit server initial password](pw-change.htm
 
 <p class="leftbar">
 If you do not change your **Initial password** in time, you will have
-to [contact an IOCCC judge](contact.html) by email and ask them to reset
+to [contact an IOCCC judge](../contact.html) by email and ask them to reset
 your password.  Not only is this a hassle for everyone involved, it will
 delay your IOCCC registration process, perhaps by a number of days that
 `egrep(1)` would be able to pattern match.  By `egrep(1)`, we refer to the
 long standing **UNIX** utility that should just run and **NOT** whine about
-the command being deprecated.
+the command being allegedly deprecated.
 </p>
 
 <p class="leftbar">
-Because it takes time (maybe even a few days) for an [IOCCC judge](../judges.html)
-to process your registration and email you your initial login and password,
-you should **MAKE SURE** you give yourself enough time before the contest closes.
-In other words, **DO NOT WAIT UNTIL THE FINAL DAYS** of the contest to register!
-The [IOCCC judges](../judges.html) are **NOT** responsible for delayed or lost email,
-or for those who wait until the last minute to try to register!
+Because it takes time (maybe even a few days) to process your registration
+and for the server to email you your initial login and password, you
+should **MAKE SURE** you give yourself enough time to register well
+before the contest closes.  In other words, **DO NOT WAIT UNTIL THE FINAL DAYS**
+of the contest to register!  The [IOCCC judges](../judges.html)
+are **NOT** responsible for delayed or lost email, or for those who wait
+until the last minute to try to register!
 </p>
 
 <p class="leftbar">
@@ -506,7 +516,7 @@ permission you obtained** in your `remarks.md` file.
 </p>
 
 <p class="leftbar">
-Please note that [mkiocccentry repo tools](https://github.com/ioccc-src/mkiocccentry)
+Please note that [mkiocccentry toolkit](https://github.com/ioccc-src/mkiocccentry)
 are **NOT** original works, unless of course you're the respective authors, in
 which case they are original. :-)
 </p>
@@ -517,10 +527,10 @@ would probably violate a number of rules.  :-)
 </p>
 
 <p class="leftbar">
-- [mkioccentry(1)](https://github.com/ioccc-src/mkiocccentry/blob/master/mkiocccentry.c)
-- [iooccsize(1)](https://github.com/ioccc-src/mkiocccentry/blob/master/iocccsize.c)
-- [chkentry(1)](https://github.com/ioccc-src/mkiocccentry/blob/master/chkentry.c)
-- [txzchk(1)](https://github.com/ioccc-src/mkiocccentry/blob/master/txzchk.c)
+- [mkioccentry&lpar;1&rpar;](https://github.com/ioccc-src/mkiocccentry/blob/master/mkiocccentry.c)
+- [iooccsize&lpar;1&rpar;](https://github.com/ioccc-src/mkiocccentry/blob/master/iocccsize.c)
+- [chkentry&lpar;1&rpar;](https://github.com/ioccc-src/mkiocccentry/blob/master/chkentry.c)
+- [txzchk&lpar;1&rpar;](https://github.com/ioccc-src/mkiocccentry/blob/master/txzchk.c)
 - [jparse repo as cloned by the mkiocccentry repo](https://github.com/xexyl/jparse)
 - [dbg repo as cloned by the mkiocccentry repo](https://github.com/lcn2/dbg)
 - [dyn_array repo as cloned by the mkiocccentry repo](https://github.com/lcn2/dyn_array)
@@ -534,7 +544,7 @@ and test your submission.  These tools may include, but are not limited
 to code generators, code analysis tools, static code analysis tools,
 runtime analysis tools, machine learning tools, natural language models,
 code copilot tools, so-called AI services, large language models, etc.
-If you do make use of such tools, then we **ENCOURAGE you to describe
+If you do make use of such tools or services, then we **ENCOURAGE you to describe
 how you used such tools** in your `remarks.md` file.
 </p>
 
@@ -823,11 +833,15 @@ also pass the tests performed by the current version of `chkentry(1)`.
 </p>
 
 <p class="leftbar">
-The `Makefile` must **NOT** be empty.
+The required `Makefile` must **NOT** be empty.
 </p>
 
 <p class="leftbar">
-The `remarks.md` must **NOT** be empty.
+The required `remarks.md` must **NOT** be empty.
+</p>
+
+<p class="leftbar">
+You may **NOT** submit a tarball created by the `-d` or `-s seed` option of `mkiocccentry(1)`.
 </p>
 
 
@@ -891,14 +905,14 @@ The `remarks.md` file, a required non-empty file, must be written in
 </p>
 
 <p class="leftbar">
-We currently use [pandoc(1)](https://pandoc.org) to automatically convert markdown to HTML.
+We currently use [pandoc&lpar;1&rpar;](https://pandoc.org) to automatically convert markdown to HTML.
 Please try to avoid submitting an HTML file translation to any markdown file.
 If you **MUST** submit such an HTML translation, **PLEASE** mention this in your `remarks.md` file.
 </p>
 
 <p class="leftbar">
 For any submission that wins the contest, we modify your `remarks.md` file and
-rename it as `README.md` and then use [pandoc(1)](https://pandoc.org) to generate
+rename it as `README.md` and then use [pandoc&lpar;1&rpar;](https://pandoc.org) to generate
 the `index.html` file in the top level directory of your submission.
 For this reason, please do **NOT** submit a `README.md` file, **NOR** an `index.html`
 file in the top level directory where your `remarks.md` file resides.
