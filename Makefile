@@ -341,8 +341,9 @@ help:
 	@echo 'make contact		;: generate contact.html'
 	@echo 'make faq		;: generate faq.html'
 	@echo 'make guidelines		;: generate next/guidelines.hmtl'
-	@echo 'make markdown		;: generate markdown.hmtl'
-	@echo 'make pw_change		;: generate the next/pw-change.html page'
+	@echo 'make markdown		;: generate markdown.html'
+	@echo 'make remarks		;: generate next/remarks.html'
+	@echo 'make pw_change		;: generate next/pw-change.html'
 	@echo 'make rules		;: generate next/rules.hmtl'
 	@echo 'make security		;: generate SECURITY.html'
 	@echo 'make thanks		;: generate thanks-for-help.html'
@@ -691,6 +692,7 @@ gen_next: ${GEN_TOP_HTML} next/README.md next/guidelines.md next/rules.md next/r
 	${GEN_TOP_HTML} -v 1 next/guidelines
 	${GEN_TOP_HTML} -v 1 next/rules
 	${GEN_TOP_HTML} -v 1 next/register
+	${GEN_TOP_HTML} -v 1 next/remarks
 	${GEN_TOP_HTML} -v 1 next/submit
 	${GEN_TOP_HTML} -v 1 next/pw-change
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
@@ -701,6 +703,11 @@ pw_change: next/pw-change.md
 	@${GEN_TOP_HTML} next/pw-change
 	@echo
 	@echo "Perhaps you should change your password!"
+	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+
+remarks: ${GEN_TOP_HTML} next/remarks.md
+	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@${GEN_TOP_HTML} -v 1 next/remarks
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 markdown: ${GEN_TOP_HTML} markdown.md

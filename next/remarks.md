@@ -1,8 +1,10 @@
 # Instructions
 
-0.  Create an empty file `remarks.md` in your submission directory
-(alternatively after reading this file, delete everything in it and rename it
-`remarks.md`).
+**IMPORTANT**: be **SURE** to read the [IOCCC rules](rules.html) **AND** the
+[IOCCC guidelines](guidelines.html)!
+
+0. <a href="remarks.md" download="remarks.md">Download the
+markdown form</a> of these remarks into your submission's directory.
 
 1.  For help with markdown format please see this [helpful
 guide](https://www.markdownguide.org/basic-syntax/).
@@ -11,15 +13,11 @@ guide](https://www.markdownguide.org/basic-syntax/).
 guidelines](https://www.ioccc.org/markdown.html). Doing this helps the judges
 integrate your remarks into a `README.md`, should you win.
 
-3. After reading this file, write your remarks in your `remarks.md` file (as
-mentioned in step 0).
+3. Replace the contents of this `remarks.md` (in your submission directory) with
+your remarks.
 
 4. When packaging your submission with `mkiocccentry(1)`, make sure that the
 `remarks.md` is in the `topdir`.
-
-**IMPORTANT NOTE**: make **SURE** you read the IOCCC
-[Rules](https://www.ioccc.org/next/rules.html) and
-[Guidelines](https://www.ioccc.org/next/guidelines.html)!
 
 # What should you say?
 
