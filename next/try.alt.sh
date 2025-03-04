@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# try.alt.sh - demonstrate IOCCC entry YYYY/foo alternate code
+# try.alt.sh - demonstrate IOCCC submission YYYY/foo alternate code
 # XXX - try.alt.sh example version: 28.0.0-0 2024-03-04                     - XXX
 # XXX - NOTE: if your submission wins and becomes an entry, then            - XXX
 # XXX - YYYY/foo will be changed to the 4 digit year and directory          - XXX

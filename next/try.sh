@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# try.sh - demonstrate IOCCC entry YYYY/foo
+# try.sh - demonstrate IOCCC submission YYYY/foo
 # XXX - try.sh example version: 28.0.0-0 2024-03-04                         - XXX
 # XXX - NOTE: if your submission wins and becomes an entry, then            - XXX
 # XXX - YYYY/foo will be changed to the 4 digit year and directory          - XXX
@@ -27,7 +27,7 @@ make CC="$CC" all >/dev/null || exit 1
 
 # XXX - it's usually a good idea to clear the screen but if not done        - XXX
 # XXX - then you should remove the comment about it and the command.        - XXX
-# clear screen after compilation so that only the entry is shown
+# clear screen after compilation so that only the submission is shown
 clear
 
 # XXX - Invoke the program in one or more ways                      - XXX
