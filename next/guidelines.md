@@ -49,7 +49,7 @@ Jump to: [top](#)
 </div>
 
 <p class="leftbar">
-These [IOCCC guidelines](guidelines.html) are version **28.41 2025-03-03**.
+These [IOCCC guidelines](guidelines.html) are version **28.42 2025-03-03**.
 </p>
 
 <p class="leftbar">
@@ -205,10 +205,14 @@ Until the contest status becomes **[pending](../faq.html#pending)**,
 the [submit server](https://submit.ioccc.org) might be offline and/or unresponsive.
 </p>
 
-
 <p class="leftbar">
 The [submit server](https://submit.ioccc.org), in accordance with [Rule 17](rules.html#rule17),
-places a limit of **3999971** octets on the size of your upload.
+places a limit of **3999971** bytes on the size of your upload.
+</p>
+
+<p class="leftbar">
+The some the byte lengths of all files, after the **xz compressed tarball** is un-tarred,
+must not exceed **27651\*1024** bytes.
 </p>
 
 <p class="leftbar">
@@ -364,9 +368,9 @@ The IOCCC size tool algorithm can be summarized as follows:
 </p>
 
 > The size tool counts most C reserved words (keyword, secondary, and selected
-preprocessor keywords) as 1.  The size tool counts all other octets as 1
+preprocessor keywords) as 1.  The size tool counts all other bytes as 1
 excluding ASCII whitespace, and excluding any '`;`', '`{`' or '`}`' followed by
-ASCII whitespace, and excluding any '`;`', '`{`' or '`}`' octet immediately
+ASCII whitespace, and excluding any '`;`', '`{`' or '`}`' byte immediately
 before the end of file.
 
 ASCII whitespace includes ASCII tab, ASCII space, ASCII newline,
@@ -454,13 +458,23 @@ anyone from using any tools they like when they're working on their submissions.
 </p>
 
 <p class="leftbar">
-The IOCCC has a rich history of remarkable winning entries created
-by authors who skillfully employed various techniques
 such as code generators, code analysis tools, machine learning tools,
 natural language models, code copilot tools, so-called AI services,
-and/or large language models.  Although it is **NOT** required use such
+large language models, etc.  Although it is **NOT** required use such
 things to develop your submission, you are free to continue to create
 their submissions using such tools.
+</p>
+
+<p class="leftbar">
+The IOCCC has a rich history of remarkable winning entries created by
+authors who skillfully employed various techniques to develop their code.
+While it is **NOT** required, you are allowed to use tools to develop
+and test your submission.  These tools may include, but are not limited
+to code generators, code analysis tools, static code analysis tools,
+runtime analysis tools, machine learning tools, natural language models,
+code copilot tools, so-called AI services, large language models, etc.
+If you do make use of such tools, then we **ENCOURAGE you to describe
+how you used such tools** in your `remarks.md` file.
 </p>
 
 <p class="leftbar">
@@ -1556,7 +1570,7 @@ tarball **MUST** be explained in the `remarks.md` file.
 </p>
 
 On 28 January 2007, the Judges rescinded the requirement that the
-`#` in a C preprocessor directive must be the 1st non-whitespace octet.
+`#` in a C preprocessor directive must be the 1st non-whitespace byte.
 
 The `exit(3)` function returns `void`.  Some broken systems have `exit(3)`
 return `int`; your submission should assume that `exit(3)` returns a `void`.
@@ -1581,7 +1595,7 @@ whether pigs have wings is likely to remain a debatable point to most.
 </p>
 
 One line programs should be short one line programs: say around 80 to 120
-octets long.  Going well beyond 120 octets is a bit too long to be called
+bytes long.  Going well beyond 120 bytes is a bit too long to be called
 a one-liner in our vague opinion.
 
 We tend to **DISLIKE** programs that:
@@ -1708,7 +1722,7 @@ and then include special notes in your `remarks.md` file for
 alternate / human intervention based building.
 
 We want to get away from source that is simply a compact blob of
-octets.   Really try to be more creative than blob coding. **HINT!**
+bytes.   Really try to be more creative than blob coding. **HINT!**
 
 Please do not use things like `gzip(1)` to get around the size limit.
 Please try to be much more creative.
@@ -2528,6 +2542,7 @@ Last, but not least, [winners](../authors.html) receive international fame and f
 
 Jump to: [top](#)
 
+
 <div id="more-information">
 <div id="information">
 # FOR MORE INFORMATION:
@@ -2539,36 +2554,45 @@ For questions or comments about the contest, see [Contacting the IOCCC](../conta
 </p>
 
 <p class="leftbar">
-Be sure to review the [IOCCC Rules and Guidelines](index.html) as the
-[IOCCC rules](rules.html) and the [IOCCC guidelines](guidelines.html) may (and often do) change from year to year.
+**Be SURE** to review the [IOCCC Rules and Guidelines](index.html) as they
+may (and **often do**) change from year to year.
 </p>
 
 <p class="leftbar">
-You should be sure you have the current [IOCCC rules](rules.html) and
-[IOCCC guidelines](guidelines.html) prior to submitting entries.
+**PLEASE** be sure you have the current [IOCCC rules](rules.html) and
+[IOCCC guidelines](guidelines.html) prior to submitting to the contest.
 </p>
 
-<p class="leftbar">
 See the [Official IOCCC website news](../news.html) for additional information.
-</p>
 
-<p class="change marker">
-For the updates and breaking [IOCCC news](../news.html), you are encouraged to follow
-the [IOCCC on Mastodon](https://fosstodon.org/@ioccc).  See our
+<p class="leftbar">
+For the updates and breaking IOCCC news, you are encouraged to follow
+the [IOCCC on Mastodon](https://fosstodon.org/@ioccc) account.  See our
 FAQ on "[Mastodon](../faq.html#try_mastodon)"
-for more information. **Please be
-aware** that unless you are mentioned you most likely will **NOT** get a
-notification so you should make sure to check the page.
+for more information. Please do note that unless
+you are mentioned by us you will **NOT** get a notification from the app _so you
+should refresh the page **even if you do follow us**_.
 </p>
 
 <p class="leftbar">
-Check out the [Official IOCCC website](https://www.ioccc.org/index.html) in general.
+Check out the [Official IOCCC winner website](https://www.ioccc.org/index.html) in general.
 </p>
 
-Jump to: [top](#)
+<p class="leftbar">
+Consider joining the IOCCC discord community via this link:
+[https://discord.gg/Wa42Qujwnw](https://discord.gg/Wa42Qujwnw)
+</p>
 
-Leonid A. Broukhis<br>
-chongo (Landon Curt Noll) /\\cc/\\
+<p class="leftbar">
+See the
+FAQ on "[obtaining and compiling the mkiocccentry tools](../faq.html#mkiocccentry)"
+and the
+FAQ on "[how to enter the IOCCC](../quick-start.html#enter)"
+as that FAQ has important details on
+[how to register](register.html)
+as well as
+[how to upload your submission](submit.html) for the IOCCC.
+</p>
 
 
 <hr style="width:10%;text-align:left;margin-left:0">

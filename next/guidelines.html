@@ -461,7 +461,7 @@ writing by <a href="../contact.html">contacting the judges</a>.</p>
 </div>
 </div>
 <p class="leftbar">
-These <a href="guidelines.html">IOCCC guidelines</a> are version <strong>28.41 2025-03-03</strong>.
+These <a href="guidelines.html">IOCCC guidelines</a> are version <strong>28.42 2025-03-03</strong>.
 </p>
 <p class="leftbar">
 The markdown form of these guidelines <a href="guidelines.md"
@@ -590,7 +590,11 @@ the <a href="https://submit.ioccc.org">submit server</a> might be offline and/or
 </p>
 <p class="leftbar">
 The <a href="https://submit.ioccc.org">submit server</a>, in accordance with <a href="rules.html#rule17">Rule 17</a>,
-places a limit of <strong>3999971</strong> octets on the size of your upload.
+places a limit of <strong>3999971</strong> bytes on the size of your upload.
+</p>
+<p class="leftbar">
+The some the byte lengths of all files, after the <strong>xz compressed tarball</strong> is un-tarred,
+must not exceed <strong>27651*1024</strong> bytes.
 </p>
 <p class="leftbar">
 Submissions are uploaded as a single xz compressed tarball.
@@ -717,9 +721,9 @@ The IOCCC size tool algorithm can be summarized as follows:
 </p>
 <blockquote>
 <p>The size tool counts most C reserved words (keyword, secondary, and selected
-preprocessor keywords) as 1. The size tool counts all other octets as 1
+preprocessor keywords) as 1. The size tool counts all other bytes as 1
 excluding ASCII whitespace, and excluding any ‘<code>;</code>’, ‘<code>{</code>’ or ‘<code>}</code>’ followed by
-ASCII whitespace, and excluding any ‘<code>;</code>’, ‘<code>{</code>’ or ‘<code>}</code>’ octet immediately
+ASCII whitespace, and excluding any ‘<code>;</code>’, ‘<code>{</code>’ or ‘<code>}</code>’ byte immediately
 before the end of file.</p>
 </blockquote>
 <p>ASCII whitespace includes ASCII tab, ASCII space, ASCII newline,
@@ -791,13 +795,22 @@ Although we are in an age where AI/LLM can create code, we don’t want to stop
 anyone from using any tools they like when they’re working on their submissions.
 </p>
 <p class="leftbar">
-The IOCCC has a rich history of remarkable winning entries created
-by authors who skillfully employed various techniques
 such as code generators, code analysis tools, machine learning tools,
 natural language models, code copilot tools, so-called AI services,
-and/or large language models. Although it is <strong>NOT</strong> required use such
+large language models, etc. Although it is <strong>NOT</strong> required use such
 things to develop your submission, you are free to continue to create
 their submissions using such tools.
+</p>
+<p class="leftbar">
+The IOCCC has a rich history of remarkable winning entries created by
+authors who skillfully employed various techniques to develop their code.
+While it is <strong>NOT</strong> required, you are allowed to use tools to develop
+and test your submission. These tools may include, but are not limited
+to code generators, code analysis tools, static code analysis tools,
+runtime analysis tools, machine learning tools, natural language models,
+code copilot tools, so-called AI services, large language models, etc.
+If you do make use of such tools, then we <strong>ENCOURAGE you to describe
+how you used such tools</strong> in your <code>remarks.md</code> file.
 </p>
 <p class="leftbar">
 If you do make use of code generator, code analysis tool, machine learning
@@ -1668,7 +1681,7 @@ tarball containing a number of extra files may be needed. Such a need for a
 tarball <strong>MUST</strong> be explained in the <code>remarks.md</code> file.
 </p>
 <p>On 28 January 2007, the Judges rescinded the requirement that the
-<code>#</code> in a C preprocessor directive must be the 1st non-whitespace octet.</p>
+<code>#</code> in a C preprocessor directive must be the 1st non-whitespace byte.</p>
 <p>The <code>exit(3)</code> function returns <code>void</code>. Some broken systems have <code>exit(3)</code>
 return <code>int</code>; your submission should assume that <code>exit(3)</code> returns a <code>void</code>.</p>
 <p class="leftbar">
@@ -1688,7 +1701,7 @@ explain to the Walrus why our seas are boiling hot, the question of
 whether pigs have wings is likely to remain a debatable point to most.
 </p>
 <p>One line programs should be short one line programs: say around 80 to 120
-octets long. Going well beyond 120 octets is a bit too long to be called
+bytes long. Going well beyond 120 bytes is a bit too long to be called
 a one-liner in our vague opinion.</p>
 <p>We tend to <strong>DISLIKE</strong> programs that:</p>
 <ul>
@@ -1808,7 +1821,7 @@ For example, one could put in their <code>Makefile</code>:</p>
 <p>and then include special notes in your <code>remarks.md</code> file for
 alternate / human intervention based building.</p>
 <p>We want to get away from source that is simply a compact blob of
-octets. Really try to be more creative than blob coding. <strong>HINT!</strong></p>
+bytes. Really try to be more creative than blob coding. <strong>HINT!</strong></p>
 <p>Please do not use things like <code>gzip(1)</code> to get around the size limit.
 Please try to be much more creative.</p>
 <p>We really <strong>DISLIKE</strong> entries that make blatant use of including
@@ -2512,30 +2525,39 @@ into a tattoo!
 For questions or comments about the contest, see <a href="../contact.html">Contacting the IOCCC</a>.
 </p>
 <p class="leftbar">
-Be sure to review the <a href="index.html">IOCCC Rules and Guidelines</a> as the
-<a href="rules.html">IOCCC rules</a> and the <a href="guidelines.html">IOCCC guidelines</a> may (and often do) change from year to year.
+<strong>Be SURE</strong> to review the <a href="index.html">IOCCC Rules and Guidelines</a> as they
+may (and <strong>often do</strong>) change from year to year.
 </p>
 <p class="leftbar">
-You should be sure you have the current <a href="rules.html">IOCCC rules</a> and
-<a href="guidelines.html">IOCCC guidelines</a> prior to submitting entries.
+<strong>PLEASE</strong> be sure you have the current <a href="rules.html">IOCCC rules</a> and
+<a href="guidelines.html">IOCCC guidelines</a> prior to submitting to the contest.
 </p>
+<p>See the <a href="../news.html">Official IOCCC website news</a> for additional information.</p>
 <p class="leftbar">
-See the <a href="../news.html">Official IOCCC website news</a> for additional information.
-</p>
-<p class="change marker">
-For the updates and breaking <a href="../news.html">IOCCC news</a>, you are encouraged to follow
-the <a href="https://fosstodon.org/@ioccc">IOCCC on Mastodon</a>. See our
+For the updates and breaking IOCCC news, you are encouraged to follow
+the <a href="https://fosstodon.org/@ioccc">IOCCC on Mastodon</a> account. See our
 FAQ on “<a href="../faq.html#try_mastodon">Mastodon</a>”
-for more information. <strong>Please be
-aware</strong> that unless you are mentioned you most likely will <strong>NOT</strong> get a
-notification so you should make sure to check the page.
+for more information. Please do note that unless
+you are mentioned by us you will <strong>NOT</strong> get a notification from the app <em>so you
+should refresh the page <strong>even if you do follow us</strong></em>.
 </p>
 <p class="leftbar">
-Check out the <a href="https://www.ioccc.org/index.html">Official IOCCC website</a> in general.
+Check out the <a href="https://www.ioccc.org/index.html">Official IOCCC winner website</a> in general.
 </p>
-<p>Jump to: <a href="#">top</a></p>
-<p>Leonid A. Broukhis<br>
-chongo (Landon Curt Noll) /\cc/\</p>
+<p class="leftbar">
+Consider joining the IOCCC discord community via this link:
+<a href="https://discord.gg/Wa42Qujwnw">https://discord.gg/Wa42Qujwnw</a>
+</p>
+<p class="leftbar">
+See the
+FAQ on “<a href="../faq.html#mkiocccentry">obtaining and compiling the mkiocccentry tools</a>”
+and the
+FAQ on “<a href="../quick-start.html#enter">how to enter the IOCCC</a>”
+as that FAQ has important details on
+<a href="register.html">how to register</a>
+as well as
+<a href="submit.html">how to upload your submission</a> for the IOCCC.
+</p>
 <hr style="width:10%;text-align:left;margin-left:0">
 <p>Jump to: <a href="#">top</a>
 <!-- AFTER: last line of markdown file: next/guidelines.md --></p>
