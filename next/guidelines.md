@@ -977,7 +977,7 @@ flags.
 
 <p class="leftbar">
 For more fun when it comes to optimisers breaking code, see
-[1986/marshall/compilers.html](1986/marshall/compilers.html).
+[1986/marshall/compilers.html](../1986/marshall/compilers.html).
 </p>
 
 
