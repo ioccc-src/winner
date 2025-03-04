@@ -503,8 +503,8 @@ Jump to: [top](#)
 **PLEASE** look at the template remarks.md to give you a better idea of how
 it should be formed, as it has some instructions you should follow:
 
-- [view template remarks.md](%%REPO_URL%%/next/remarks.example.md)
-- [remarks.md template](next/remarks.example.md)
+- [view template remarks.md](%%REPO_URL%%/next/remarks.md)
+- [remarks.md template](next/remarks.md)
 
 **PLEASE** pay especial attention to the instructions, including the [IOCCC
 markdown guidelines](markdown.html). You will observe that it links back to this
