@@ -278,7 +278,7 @@ If you already have an mkiocccentry tool directory:
 
 ``` <!---sh-->
     cd mkiocccentry
-    git fetch
+    git fetch --all --tags
     git rebase
 ```
 
