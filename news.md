@@ -9,9 +9,42 @@ See the
 FAQ on "[Mastodon](faq.html#try_mastodon)"
 for more information on Mastodon.
 
+
+### IOCCC Discord Community
+
+We invite you to join the **IOCCC Discord Community** via this link: [https://discord.gg/Wa42Qujwnw](https://discord.gg/Wa42Qujwnw)
+
+
 <div id="news">
 # News
 </div>
+
+
+## 2025-03-05
+
+The [40th anniversary of the IOCCC](faq.html#ioccc_start), **IOCCC28**, will be **open** for
+submissions from **2025-03-05 23:19:17.131107 UTC** to **2025-06-05 04:03:02.010099 UTC**.
+
+Version **28.30 2025-03-03** of the [IOCCC28 rules](next/rules.html),
+version **28.44 2025-03-04** of the [IOCCC28 guidelines](next/guidelines.html), and
+version **2.4.2 2025-03-02** of the [mkiocccentry toolkit](https://github.com/ioccc-src/mkiocccentry),
+are now [official](next/index.html).
+
+See the [IOCCC quick start guide](quick-start.html#enter) for how to enter, and
+the [mkiocccentry repo FAQ](faq.html#mkiocccentry) for
+information on the [mkiocccentry toolkit](https://github.com/ioccc-src/mkiocccentry). abd
+the [IOCCC FAQ](faq.html) for general information on the [IOCCC](index.html).
+
+In order to [submit to the IOCCC28](next/submit.html) you must be
+[registered for the IOCCC28](next/register.html). **DO NOT** wait until the last minute
+to register as the process can take a bit of time to complete!
+
+Those who registered while the contest was **pending**
+should have received their [IOCCC submit server](https://submit.ioccc.org)
+and initial password by email.  If you cannot find that email, contact the
+[IOCCC Judges by email](contact.html#if-you-really-need-to-send-email-the-ioccc-judges)
+for help.  We have given early registrants extra time (until **2025 Mar 12 UTC**), to login
+and change their initial password.
 
 
 ## 2025-02-28
