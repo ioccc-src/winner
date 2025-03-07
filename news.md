@@ -32,7 +32,7 @@ are now [official](next/index.html).
 
 See the [IOCCC quick start guide](quick-start.html#enter) for how to enter, and
 the [mkiocccentry repo FAQ](faq.html#mkiocccentry) for
-information on the [mkiocccentry toolkit](https://github.com/ioccc-src/mkiocccentry). and
+information on the [mkiocccentry toolkit](https://github.com/ioccc-src/mkiocccentry) and
 the [IOCCC FAQ](faq.html) for general information on the [IOCCC](index.html).
 
 In order to [submit to the IOCCC28](next/submit.html) you must be
