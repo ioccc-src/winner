@@ -58,7 +58,7 @@ This is FAQ version **28.2.14 2025-03-09**.
 - **Q 3.9**: <a class="normal" href="#entry_id_faq">What is an `entry_id`?</a>
 - **Q 3.10**: <a class="normal" href="#entry_json">What is a `.entry.json` file and how is it used?</a>
 - **Q 3.11**: <a class="normal" href="#jparse">How can I validate any JSON document?</a>
-- **Q 3.12**: <a class="normal" href="#versions">What are required versions and how are they checked?</a>
+- **Q 3.12**: <a class="normal" href="#install">How can I install the `mkiocccentry(1)` and related tools?</a>
 
 
 ## 4. [Compiling IOCCC entries](#compiling)
@@ -2189,14 +2189,11 @@ In order of the file's contents we describe each required field, below:
 - `IOCCC_auth_version` (double quoted string)
     * The current version of the `.auth.json` file.
 
-    **IMPORTANT:** this **MUST** be a valid `.auth.json` version for **THIS**
-    IOCCC's `.auth.json`, defined as `AUTH_VERSION` in
+    **IMPORTANT:** this **MUST** be >= **THIS** IOCCC's `.auth.json` version, defined as
+    `AUTH_VERSION` in
     [soup/version.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/version.h)
-    in the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry/).
-
-    See the
-    FAQ on "[version requirements](#versions)"
-    for more details on what this means.
+    in the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry/). If
+    this is not the case your submission **WILL BE** rejected!
 
 - `IOCCC_contest` (double quoted string)
     * Which contest number this is (e.g. 1 for 1984, 2 for 1985, 27 for 2020).
@@ -2222,42 +2219,28 @@ In order of the file's contents we describe each required field, below:
 - `mkiocccentry_version` (double quoted string)
     * The version of `mkiocccentry` that formed this `.auth.json` file.
 
-    **IMPORTANT:** this **MUST** be a valid `mkiocccentry(1)` version for **THIS**
-    IOCCC's `mkiocccentry(1)`, defined as `MKIOCCCENTRY_VERSION`
+    **IMPORTANT:** this **MUST** be >= **THIS** IOCCC's `mkiocccentry` version,
+    defined as `MKIOCCCENTRY_VERSION` in
     [soup/version.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/version.h)
-    in the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry/).
-
-    See the
-    FAQ on "[version requirements](#versions)"
-    for more details on what this means.
+    in the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry/). If
+    this is not the case your submission **WILL BE** rejected!
 
 - `chkentry_version` (double quoted string)
-    * The version of `chkentry(1)` that was used to validate the submission
+    * The version of `chkentry` that was used to validate the submission
     directory, including the `.auth.json` file.
 
-    **IMPORTANT:** this **MUST** be a valid `chkentry(1)` version for **THIS**
-    IOCCC's `chkentry(1)`, defined as `CHKENTRY_VERSION` in
+    **IMPORTANT:** this **MUST** be >= **THIS** IOCCC's `chkentry` version, defined
+    as `CHKENTRY_VERSION` in
     [soup/version.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/version.h)
     in the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry/). If
     this is not the case your submission **WILL BE** rejected!
-
-    See the
-    FAQ on "[version requirements](#versions)"
-    for more details on what this means.
 
 - `fnamchk_version` (double quoted string)
-    * The version of `fnamchk(1)` that `txzchk(1)` uses to validate the filename of
+    * The version of `fnamchk` that `txzchk` uses to validate the filename of
     the xz compressed tarball.
 
-    **IMPORTANT:** this **MUST** be a valid `fnamchk(1)` version for **THIS**
-    IOCCC's `fnamchk(1)`, defined as `FNAMCHK_VERSION` in
-    [soup/version.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/version.h)
-    in the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry/). If
-    this is not the case your submission **WILL BE** rejected!
-
-    See the
-    FAQ on "[version requirements](#versions)"
-    for more details on what this means.
+    **IMPORTANT:** this **MUST** be >= **THIS** IOCCC's `fnamchk` version in order for it
+    to be valid. If this is not the case your submission **WILL BE** rejected!
 
 - `IOCCC_contest_id` (double quoted string)
     * The IOCCC contestant ID used as a username in the form of **in the form of
@@ -2321,7 +2304,7 @@ author(s) of the submission:
      <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements>
      for a list of valid codes.
 
-    **NOTE:** in `mkiocccentry(1)` use `XX` if you want your location to be anonymous.
+    **NOTE:** in `mkiocccentry` use `XX` if you want your location to be anonymous.
 
 - `email` (`null` or double quoted string)
     * The **email** of this author in the form of `x@y`, or `null` if not provided.
@@ -2491,15 +2474,11 @@ In order of the file's contents we describe each required field, below:
 - `IOCCC_info_version` (double quoted string)
     * The current version of the `.info.json` files.
 
-    **IMPORTANT:** this **MUST** be a valid `.info.json` version for
-    **THIS** IOCCC's `.info.json`, defined as `INFO_VERSION`
+    **IMPORTANT:** this **MUST** be >= **THIS** IOCCC's `.info.json` version, defined as
+    `INFO_VERSION` in
     [soup/version.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/version.h)
     in the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry/). If
     this is not the case your submission **WILL BE** rejected!
-
-    See the
-    FAQ on "[version requirements](#versions)"
-    for more details on what this means.
 
 - `IOCCC_contest` (double quoted string)
     * Which contest number this is (e.g. 1 for 1984, 2 for 1985, 27 for 2020).
@@ -2523,71 +2502,51 @@ In order of the file's contents we describe each required field, below:
     this is not the case your submission **WILL BE** rejected!
 
 - `mkiocccentry_version` (double quoted string)
-    * The version of `mkiocccentry(1)` that formed this `.auth.json` file.
+    * The version of `mkiocccentry` that formed this `.auth.json` file.
 
-    **IMPORTANT:** this **MUST** be a valid `mkiocccentry(1)` version for  **THIS**
-    IOCCC's `mkiocccentry(1)`, defined as `MKIOCCCENTRY_VERSION` in
+    **IMPORTANT:** this **MUST** be >= **THIS** IOCCC's `mkiocccentry` version,
+    defined as `MKIOCCCENTRY_VERSION` in
     [soup/version.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/version.h)
     in the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry/). If
     this is not the case your submission **WILL BE** rejected!
-
-    See the
-    FAQ on "[version requirements](#versions)"
-    for more details on what this means.
 
 - `iocccsize_version` (double quoted string)
-    * The version of `iocccsize(1)` that was used for this `.info.json` file.
+    * The version of `iocccsize` that was used for this `.info.json` file.
 
-    **IMPORTANT:** this **MUST** be a valid `iocccsize(1)` version for **THIS**
-    IOCCC's `iocccsize(1)`, defined as `IOCCCSIZE_VERSION` in
+    **IMPORTANT:** this **MUST** be >= **THIS** IOCCC's `iocccentry` version,
+    defined as `IOCCCSIZE_VERSION` in
     [soup/version.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/version.h)
     in the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry/). If
     this is not the case your submission **WILL BE** rejected!
-
-    See the
-    FAQ on "[version requirements](#versions)"
-    for more details on what this means.
 
 - `chkentry_version` (double quoted string)
-    * The version of `chkentry(1)` that was used to validate the submission
+    * The version of `chkentry` that was used to validate the submission
     directory, including the `.info.json` file.
 
-    **IMPORTANT:** this **MUST** be a valid `chkentry(1)` version for **THIS**
-    IOCCC's `chkentry(1)`, defined as `CHKENTRY_VERSION` in
+    **IMPORTANT:** this **MUST** be >= **THIS** IOCCC's `chkentry` version, defined
+    as `CHKENTRY_VERSION` in
     [soup/version.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/version.h)
     in the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry/). If
     this is not the case your submission **WILL BE** rejected!
-
-    See the
-    FAQ on "[version requirements](#versions)"
-    for more details on what this means.
 
 - `fnamchk_version` (double quoted string)
-    * The version of `fnamchk(1)` that `txzchk` uses to validate the filename of
+    * The version of `fnamchk` that `txzchk` uses to validate the filename of
     the xz compressed tarball.
 
-    **IMPORTANT:** this **MUST** be a valid `fnamchk(1)` version for **THIS**
-    IOCCC's `fnamchk(1)`, defined as `FNAMCHK_VERSION` in
+    **IMPORTANT:** this **MUST** be >= **THIS** IOCCC's `fnamchk` version, defined
+    as `FNAMCHK_VERSION` in
     [soup/version.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/version.h)
     in the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry/). If
     this is not the case your submission **WILL BE** rejected!
-
-    See the
-    FAQ on "[version requirements](#versions)"
-    for more details on what this means.
 
 - `txzchk_version` (double quoted string)
-    * The version of `txzchk(1)` used to validate the xz compressed tarball.
+    * The version of `txzchk` used to validate the xz compressed tarball.
 
-    **IMPORTANT:** this **MUST** be a valid `txzchk(1)` version for **THIS**
-    IOCCC's `txzchk(1)`, defined as `TXZCHK_VERSION` in
+    **IMPORTANT:** this **MUST** be >= **THIS** IOCCC's `txzchk` version, defined
+    as `TXZCHK_VERSION` in
     [soup/version.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/version.h)
     in the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry/). If
     this is not the case your submission **WILL BE** rejected!
-
-    See the
-    FAQ on "[version requirements](#versions)"
-    for more details on what this means.
 
 - `IOCCC_contest_id` (double quoted string)
     * The IOCCC contestant ID used as a username in the form of **in the form of
@@ -2676,7 +2635,9 @@ In order of the file's contents we describe each required field, below:
     submission rejected for violating [Rule 17](next/rules.html#rule17)!
 
 - `highbit_warning` (boolean)
-    * This is ignored and will be removed for IOCCC29 and beyond.
+    * `true` if `iocccsize` detects a high bit (unescaped octets with the high
+    bit set - octet value >= 128); see [Rule 13](next/rules.html#rule13), else
+    `false`.
 
 - `nul_warning` (boolean)
     * `true` if `iocccsize` detects a NUL character in the `prog.c`, else
@@ -2740,7 +2701,7 @@ In order of the file's contents we describe each required field, below:
 - `found_clobber_rule` (boolean)
     * `true` if the `Makefile` file has a `clobber` rule, else `false`.
 
-    **IMPORTANT:** if the `Makefile` file does **NOT** have a `clobber` rule and this
+    **IMPORTANT:** if the `Makefile` file does **NOT** have an `clobber` rule and this
     boolean is `true` then you stand a good chance of having your submission
     rejected for violating [Rule 17](next/rules.html#rule17)!
 
@@ -4162,41 +4123,6 @@ as the two can be different at times.
 
 Jump to: [top](#)
 
-<div id="versions">
-### Q 3.12: What are required versions and how are they checked?
-</div>
-
-For each contest the tools used must be a correct version. This correct version
-can be in a range: a valid version is >= the minimum version of a tool or file
-format that is specific to a particular IOCCC and which is not greater than the
-maximum version for that specific IOCCC. A required version is therefore a
-range, where as long as the version is between the min and max, that is >= min
-and <= max, and as long as it's not a blacklisted version (the so-called
-poisonous versions), it is okay.
-
-The concept of a poisonous version exists in the case that a version has to be
-blacklisted for some problem. The file
-[soup/version.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/version.h)
-includes a list of versions, their minimum values and their maximum values.
-
-As an example, at the time of writing this, during IOCCC28, the minimum version
-of `mkiocccentry(1)` is `2.0.1 2025-03-02`. If however a fix was needed that
-necessitated a version change, the macro
-`MIN_MKIOCCCENTRY_VERSION` would be changed to that value, rather than map
-directly to ` MKIOCCCENTRY_VERSION`. The maximum, `MAX_MKIOCCCENTRY_VERSION`, is
-defined as `MKIOCCCENTRY_VERSION` but to help distinguish that it is also the
-maximum, we use a separate macro.
-
-So as long as the version you use is >= this minimum and is <= the maximum, and
-as long as it is not in the poisonous list, you are okay. The poisonous versions
-lists can be found in
-[soup/entry_util.c](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/entry_util.c).
-
-But as long as you are using the official version you should be fine as the
-contest would not open with an invalid version.
-
-
-Jump to: [top](#)
 
 <hr style="width:50%;text-align:left;margin-left:0">
 <hr style="width:50%;text-align:left;margin-left:0">

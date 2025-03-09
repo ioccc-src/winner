@@ -484,7 +484,7 @@
 <li><strong>Q 3.9</strong>: <a class="normal" href="#entry_id_faq">What is an <code>entry_id</code>?</a></li>
 <li><strong>Q 3.10</strong>: <a class="normal" href="#entry_json">What is a <code>.entry.json</code> file and how is it used?</a></li>
 <li><strong>Q 3.11</strong>: <a class="normal" href="#jparse">How can I validate any JSON document?</a></li>
-<li><strong>Q 3.12</strong>: <a class="normal" href="#versions">What are required versions and how are they checked?</a></li>
+<li><strong>Q 3.12</strong>: <a class="normal" href="#install">How can I install the <code>mkiocccentry(1)</code> and related tools?</a></li>
 </ul>
 <h2 id="compiling-ioccc-entries">4. <a href="#compiling">Compiling IOCCC entries</a></h2>
 <ul>
@@ -2273,13 +2273,11 @@ information about the author or authors of the submission, in JSON format.</p>
 <ul>
 <li>The current version of the <code>.auth.json</code> file.</li>
 </ul>
-<p><strong>IMPORTANT:</strong> this <strong>MUST</strong> be a valid <code>.auth.json</code> version for <strong>THIS</strong>
-IOCCC’s <code>.auth.json</code>, defined as <code>AUTH_VERSION</code> in
+<p><strong>IMPORTANT:</strong> this <strong>MUST</strong> be &gt;= <strong>THIS</strong> IOCCC’s <code>.auth.json</code> version, defined as
+<code>AUTH_VERSION</code> in
 <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/version.h">soup/version.h</a>
-in the <a href="https://github.com/ioccc-src/mkiocccentry/">mkiocccentry repo</a>.</p>
-<p>See the
-FAQ on “<a href="#versions">version requirements</a>”
-for more details on what this means.</p></li>
+in the <a href="https://github.com/ioccc-src/mkiocccentry/">mkiocccentry repo</a>. If
+this is not the case your submission <strong>WILL BE</strong> rejected!</p></li>
 <li><p><code>IOCCC_contest</code> (double quoted string)</p>
 <ul>
 <li>Which contest number this is (e.g. 1 for 1984, 2 for 1985, 27 for 2020).</li>
@@ -2304,39 +2302,28 @@ this is not the case your submission <strong>WILL BE</strong> rejected!</p></li>
 <ul>
 <li>The version of <code>mkiocccentry</code> that formed this <code>.auth.json</code> file.</li>
 </ul>
-<p><strong>IMPORTANT:</strong> this <strong>MUST</strong> be a valid <code>mkiocccentry(1)</code> version for <strong>THIS</strong>
-IOCCC’s <code>mkiocccentry(1)</code>, defined as <code>MKIOCCCENTRY_VERSION</code>
+<p><strong>IMPORTANT:</strong> this <strong>MUST</strong> be &gt;= <strong>THIS</strong> IOCCC’s <code>mkiocccentry</code> version,
+defined as <code>MKIOCCCENTRY_VERSION</code> in
 <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/version.h">soup/version.h</a>
-in the <a href="https://github.com/ioccc-src/mkiocccentry/">mkiocccentry repo</a>.</p>
-<p>See the
-FAQ on “<a href="#versions">version requirements</a>”
-for more details on what this means.</p></li>
+in the <a href="https://github.com/ioccc-src/mkiocccentry/">mkiocccentry repo</a>. If
+this is not the case your submission <strong>WILL BE</strong> rejected!</p></li>
 <li><p><code>chkentry_version</code> (double quoted string)</p>
 <ul>
-<li>The version of <code>chkentry(1)</code> that was used to validate the submission
+<li>The version of <code>chkentry</code> that was used to validate the submission
 directory, including the <code>.auth.json</code> file.</li>
 </ul>
-<p><strong>IMPORTANT:</strong> this <strong>MUST</strong> be a valid <code>chkentry(1)</code> version for <strong>THIS</strong>
-IOCCC’s <code>chkentry(1)</code>, defined as <code>CHKENTRY_VERSION</code> in
+<p><strong>IMPORTANT:</strong> this <strong>MUST</strong> be &gt;= <strong>THIS</strong> IOCCC’s <code>chkentry</code> version, defined
+as <code>CHKENTRY_VERSION</code> in
 <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/version.h">soup/version.h</a>
 in the <a href="https://github.com/ioccc-src/mkiocccentry/">mkiocccentry repo</a>. If
-this is not the case your submission <strong>WILL BE</strong> rejected!</p>
-<p>See the
-FAQ on “<a href="#versions">version requirements</a>”
-for more details on what this means.</p></li>
+this is not the case your submission <strong>WILL BE</strong> rejected!</p></li>
 <li><p><code>fnamchk_version</code> (double quoted string)</p>
 <ul>
-<li>The version of <code>fnamchk(1)</code> that <code>txzchk(1)</code> uses to validate the filename of
+<li>The version of <code>fnamchk</code> that <code>txzchk</code> uses to validate the filename of
 the xz compressed tarball.</li>
 </ul>
-<p><strong>IMPORTANT:</strong> this <strong>MUST</strong> be a valid <code>fnamchk(1)</code> version for <strong>THIS</strong>
-IOCCC’s <code>fnamchk(1)</code>, defined as <code>FNAMCHK_VERSION</code> in
-<a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/version.h">soup/version.h</a>
-in the <a href="https://github.com/ioccc-src/mkiocccentry/">mkiocccentry repo</a>. If
-this is not the case your submission <strong>WILL BE</strong> rejected!</p>
-<p>See the
-FAQ on “<a href="#versions">version requirements</a>”
-for more details on what this means.</p></li>
+<p><strong>IMPORTANT:</strong> this <strong>MUST</strong> be &gt;= <strong>THIS</strong> IOCCC’s <code>fnamchk</code> version in order for it
+to be valid. If this is not the case your submission <strong>WILL BE</strong> rejected!</p></li>
 <li><p><code>IOCCC_contest_id</code> (double quoted string)</p>
 <ul>
 <li>The IOCCC contestant ID used as a username in the form of <strong>in the form of
@@ -2402,7 +2389,7 @@ See
 <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements" class="uri">https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements</a>
 for a list of valid codes.</li>
 </ul>
-<p><strong>NOTE:</strong> in <code>mkiocccentry(1)</code> use <code>XX</code> if you want your location to be anonymous.</p></li>
+<p><strong>NOTE:</strong> in <code>mkiocccentry</code> use <code>XX</code> if you want your location to be anonymous.</p></li>
 <li><p><code>email</code> (<code>null</code> or double quoted string)</p>
 <ul>
 <li>The <strong>email</strong> of this author in the form of <code>x@y</code>, or <code>null</code> if not provided.</li>
@@ -2575,14 +2562,11 @@ for more information.</p>
 <ul>
 <li>The current version of the <code>.info.json</code> files.</li>
 </ul>
-<p><strong>IMPORTANT:</strong> this <strong>MUST</strong> be a valid <code>.info.json</code> version for
-<strong>THIS</strong> IOCCC’s <code>.info.json</code>, defined as <code>INFO_VERSION</code>
+<p><strong>IMPORTANT:</strong> this <strong>MUST</strong> be &gt;= <strong>THIS</strong> IOCCC’s <code>.info.json</code> version, defined as
+<code>INFO_VERSION</code> in
 <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/version.h">soup/version.h</a>
 in the <a href="https://github.com/ioccc-src/mkiocccentry/">mkiocccentry repo</a>. If
-this is not the case your submission <strong>WILL BE</strong> rejected!</p>
-<p>See the
-FAQ on “<a href="#versions">version requirements</a>”
-for more details on what this means.</p></li>
+this is not the case your submission <strong>WILL BE</strong> rejected!</p></li>
 <li><p><code>IOCCC_contest</code> (double quoted string)</p>
 <ul>
 <li>Which contest number this is (e.g. 1 for 1984, 2 for 1985, 27 for 2020).</li>
@@ -2605,66 +2589,51 @@ in the <a href="https://github.com/ioccc-src/mkiocccentry/">mkiocccentry repo</a
 this is not the case your submission <strong>WILL BE</strong> rejected!</p></li>
 <li><p><code>mkiocccentry_version</code> (double quoted string)</p>
 <ul>
-<li>The version of <code>mkiocccentry(1)</code> that formed this <code>.auth.json</code> file.</li>
+<li>The version of <code>mkiocccentry</code> that formed this <code>.auth.json</code> file.</li>
 </ul>
-<p><strong>IMPORTANT:</strong> this <strong>MUST</strong> be a valid <code>mkiocccentry(1)</code> version for <strong>THIS</strong>
-IOCCC’s <code>mkiocccentry(1)</code>, defined as <code>MKIOCCCENTRY_VERSION</code> in
+<p><strong>IMPORTANT:</strong> this <strong>MUST</strong> be &gt;= <strong>THIS</strong> IOCCC’s <code>mkiocccentry</code> version,
+defined as <code>MKIOCCCENTRY_VERSION</code> in
 <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/version.h">soup/version.h</a>
 in the <a href="https://github.com/ioccc-src/mkiocccentry/">mkiocccentry repo</a>. If
-this is not the case your submission <strong>WILL BE</strong> rejected!</p>
-<p>See the
-FAQ on “<a href="#versions">version requirements</a>”
-for more details on what this means.</p></li>
+this is not the case your submission <strong>WILL BE</strong> rejected!</p></li>
 <li><p><code>iocccsize_version</code> (double quoted string)</p>
 <ul>
-<li>The version of <code>iocccsize(1)</code> that was used for this <code>.info.json</code> file.</li>
+<li>The version of <code>iocccsize</code> that was used for this <code>.info.json</code> file.</li>
 </ul>
-<p><strong>IMPORTANT:</strong> this <strong>MUST</strong> be a valid <code>iocccsize(1)</code> version for <strong>THIS</strong>
-IOCCC’s <code>iocccsize(1)</code>, defined as <code>IOCCCSIZE_VERSION</code> in
+<p><strong>IMPORTANT:</strong> this <strong>MUST</strong> be &gt;= <strong>THIS</strong> IOCCC’s <code>iocccentry</code> version,
+defined as <code>IOCCCSIZE_VERSION</code> in
 <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/version.h">soup/version.h</a>
 in the <a href="https://github.com/ioccc-src/mkiocccentry/">mkiocccentry repo</a>. If
-this is not the case your submission <strong>WILL BE</strong> rejected!</p>
-<p>See the
-FAQ on “<a href="#versions">version requirements</a>”
-for more details on what this means.</p></li>
+this is not the case your submission <strong>WILL BE</strong> rejected!</p></li>
 <li><p><code>chkentry_version</code> (double quoted string)</p>
 <ul>
-<li>The version of <code>chkentry(1)</code> that was used to validate the submission
+<li>The version of <code>chkentry</code> that was used to validate the submission
 directory, including the <code>.info.json</code> file.</li>
 </ul>
-<p><strong>IMPORTANT:</strong> this <strong>MUST</strong> be a valid <code>chkentry(1)</code> version for <strong>THIS</strong>
-IOCCC’s <code>chkentry(1)</code>, defined as <code>CHKENTRY_VERSION</code> in
+<p><strong>IMPORTANT:</strong> this <strong>MUST</strong> be &gt;= <strong>THIS</strong> IOCCC’s <code>chkentry</code> version, defined
+as <code>CHKENTRY_VERSION</code> in
 <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/version.h">soup/version.h</a>
 in the <a href="https://github.com/ioccc-src/mkiocccentry/">mkiocccentry repo</a>. If
-this is not the case your submission <strong>WILL BE</strong> rejected!</p>
-<p>See the
-FAQ on “<a href="#versions">version requirements</a>”
-for more details on what this means.</p></li>
+this is not the case your submission <strong>WILL BE</strong> rejected!</p></li>
 <li><p><code>fnamchk_version</code> (double quoted string)</p>
 <ul>
-<li>The version of <code>fnamchk(1)</code> that <code>txzchk</code> uses to validate the filename of
+<li>The version of <code>fnamchk</code> that <code>txzchk</code> uses to validate the filename of
 the xz compressed tarball.</li>
 </ul>
-<p><strong>IMPORTANT:</strong> this <strong>MUST</strong> be a valid <code>fnamchk(1)</code> version for <strong>THIS</strong>
-IOCCC’s <code>fnamchk(1)</code>, defined as <code>FNAMCHK_VERSION</code> in
+<p><strong>IMPORTANT:</strong> this <strong>MUST</strong> be &gt;= <strong>THIS</strong> IOCCC’s <code>fnamchk</code> version, defined
+as <code>FNAMCHK_VERSION</code> in
 <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/version.h">soup/version.h</a>
 in the <a href="https://github.com/ioccc-src/mkiocccentry/">mkiocccentry repo</a>. If
-this is not the case your submission <strong>WILL BE</strong> rejected!</p>
-<p>See the
-FAQ on “<a href="#versions">version requirements</a>”
-for more details on what this means.</p></li>
+this is not the case your submission <strong>WILL BE</strong> rejected!</p></li>
 <li><p><code>txzchk_version</code> (double quoted string)</p>
 <ul>
-<li>The version of <code>txzchk(1)</code> used to validate the xz compressed tarball.</li>
+<li>The version of <code>txzchk</code> used to validate the xz compressed tarball.</li>
 </ul>
-<p><strong>IMPORTANT:</strong> this <strong>MUST</strong> be a valid <code>txzchk(1)</code> version for <strong>THIS</strong>
-IOCCC’s <code>txzchk(1)</code>, defined as <code>TXZCHK_VERSION</code> in
+<p><strong>IMPORTANT:</strong> this <strong>MUST</strong> be &gt;= <strong>THIS</strong> IOCCC’s <code>txzchk</code> version, defined
+as <code>TXZCHK_VERSION</code> in
 <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/version.h">soup/version.h</a>
 in the <a href="https://github.com/ioccc-src/mkiocccentry/">mkiocccentry repo</a>. If
-this is not the case your submission <strong>WILL BE</strong> rejected!</p>
-<p>See the
-FAQ on “<a href="#versions">version requirements</a>”
-for more details on what this means.</p></li>
+this is not the case your submission <strong>WILL BE</strong> rejected!</p></li>
 <li><p><code>IOCCC_contest_id</code> (double quoted string)</p>
 <ul>
 <li>The IOCCC contestant ID used as a username in the form of <strong>in the form of
@@ -2755,7 +2724,9 @@ violated but this is <code>true</code> then you stand a good chance of having yo
 submission rejected for violating <a href="next/rules.html#rule17">Rule 17</a>!</p></li>
 <li><p><code>highbit_warning</code> (boolean)</p>
 <ul>
-<li>This is ignored and will be removed for IOCCC29 and beyond.</li>
+<li><code>true</code> if <code>iocccsize</code> detects a high bit (unescaped octets with the high
+bit set - octet value &gt;= 128); see <a href="next/rules.html#rule13">Rule 13</a>, else
+<code>false</code>.</li>
 </ul></li>
 <li><p><code>nul_warning</code> (boolean)</p>
 <ul>
@@ -2820,7 +2791,7 @@ for more information.</p></li>
 <ul>
 <li><code>true</code> if the <code>Makefile</code> file has a <code>clobber</code> rule, else <code>false</code>.</li>
 </ul>
-<p><strong>IMPORTANT:</strong> if the <code>Makefile</code> file does <strong>NOT</strong> have a <code>clobber</code> rule and this
+<p><strong>IMPORTANT:</strong> if the <code>Makefile</code> file does <strong>NOT</strong> have an <code>clobber</code> rule and this
 boolean is <code>true</code> then you stand a good chance of having your submission
 rejected for violating <a href="next/rules.html#rule17">Rule 17</a>!</p>
 <p>See the
@@ -3874,34 +3845,6 @@ repo</a> but we recommend you compile and
 install via the <code>mkiocccentry</code> repo because it has the dependencies built in,
 and because the <code>mkiocccentry</code> copy is that which is used by the current IOCCC,
 as the two can be different at times.</p>
-<p>Jump to: <a href="#">top</a></p>
-<div id="versions">
-<h3 id="q-3.12-what-are-required-versions-and-how-are-they-checked">Q 3.12: What are required versions and how are they checked?</h3>
-</div>
-<p>For each contest the tools used must be a correct version. This correct version
-can be in a range: a valid version is &gt;= the minimum version of a tool or file
-format that is specific to a particular IOCCC and which is not greater than the
-maximum version for that specific IOCCC. A required version is therefore a
-range, where as long as the version is between the min and max, that is &gt;= min
-and &lt;= max, and as long as it’s not a blacklisted version (the so-called
-poisonous versions), it is okay.</p>
-<p>The concept of a poisonous version exists in the case that a version has to be
-blacklisted for some problem. The file
-<a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/version.h">soup/version.h</a>
-includes a list of versions, their minimum values and their maximum values.</p>
-<p>As an example, at the time of writing this, during IOCCC28, the minimum version
-of <code>mkiocccentry(1)</code> is <code>2.0.1 2025-03-02</code>. If however a fix was needed that
-necessitated a version change, the macro
-<code>MIN_MKIOCCCENTRY_VERSION</code> would be changed to that value, rather than map
-directly to <code>MKIOCCCENTRY_VERSION</code>. The maximum, <code>MAX_MKIOCCCENTRY_VERSION</code>, is
-defined as <code>MKIOCCCENTRY_VERSION</code> but to help distinguish that it is also the
-maximum, we use a separate macro.</p>
-<p>So as long as the version you use is &gt;= this minimum and is &lt;= the maximum, and
-as long as it is not in the poisonous list, you are okay. The poisonous versions
-lists can be found in
-<a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/entry_util.c">soup/entry_util.c</a>.</p>
-<p>But as long as you are using the official version you should be fine as the
-contest would not open with an invalid version.</p>
 <p>Jump to: <a href="#">top</a></p>
 <hr style="width:50%;text-align:left;margin-left:0">
 <hr style="width:50%;text-align:left;margin-left:0">
