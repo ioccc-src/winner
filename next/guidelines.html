@@ -464,7 +464,7 @@ writing by <a href="../contact.html">contacting the judges</a>.</p>
 </div>
 </div>
 <p class="leftbar">
-These <a href="guidelines.html">IOCCC guidelines</a> are version <strong>28.44 2025-03-04</strong>.
+These <a href="guidelines.html">IOCCC guidelines</a> are version <strong>28.45 2025-03-10</strong>.
 </p>
 <p class="leftbar">
 The markdown form of these guidelines <a href="guidelines.md"
@@ -532,6 +532,11 @@ The reason for the times of day are so that key IOCCC events are <strong>calcula
 to be a <strong>fun</strong>ctional UTC time. :-)
 </p>
 <p class="leftbar">
+<strong>NOTE</strong>: the updates to these guidelines on 2025-03-10 explained the new <code>-u uuidfile</code> and <code>-U uuidstr</code> options and are <strong>NOT</strong> important to read, in order
+to follow the guidelines. The options are in a release <strong>AFTER THIS</strong> IOCCC’s
+official release and not updating the toolkit is <strong>PERFECTLY</strong> okay.
+</p>
+<p class="leftbar">
 Until the contest status becomes <strong><a href="../faq.html#open">open</a></strong>,
 the <a href="rules.html">IOCCC rules</a>,
 <a href="guidelines.html">IOCCC guidelines</a> and the tools in the
@@ -595,7 +600,7 @@ previously uploaded submission by rebuilding your submission with the
 <a href="https://submit.ioccc.org">submit server</a>.
 </p>
 <p class="leftbar">
-<strong>HINT:</strong> So that you do not have to repeatedly answer all the
+<strong>HINT:</strong> so that you do not have to repeatedly answer all the
 questions, the <code>mkiocccentry(1)</code> tool has the options <code>-a answers</code>, <code>-A answers</code>
 and <code>-i answers</code>, where <code>-a</code> will write to an answers file (if it does not
 already exist), <code>-A</code> <strong>WILL OVERWRITE THE FILE</strong> and <code>-i</code> will read the answers from
@@ -607,6 +612,14 @@ most if not all <code>y/n</code> questions - you just don’t have to input the 
 submission, the abstract, the author details etc. If you really wish to
 circumvent this you can use the <code>-Y</code> option but we do not recommend this because
 if your update breaks a rule or there is some problem, you might not see it.
+</p>
+<p class="leftbar">
+To help with not having to repeatedly enter a UUID, whether for the same
+submission or multiple submissions, you can use the <code>-u uuidfile</code> or <code>-U UUID</code>
+option. See the
+FAQ on “<a href="../faq.html#uuid">how to avoid re-entering your UUID</a>”
+for more details. Note that the <code>-i answers</code> option cannot be used with the UUID
+options as the answers file includes the UUID.
 </p>
 <p class="leftbar">
 The overall size limit (see <a href="rules.html#rule2a">Rule 2a</a>) on <code>prog.c</code> has been
