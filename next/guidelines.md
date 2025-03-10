@@ -53,7 +53,7 @@ Jump to: [top](#)
 </div>
 
 <p class="leftbar">
-These [IOCCC guidelines](guidelines.html) are version **28.44 2025-03-04**.
+These [IOCCC guidelines](guidelines.html) are version **28.45 2025-03-10**.
 </p>
 
 <p class="leftbar">
@@ -143,6 +143,13 @@ to be a **fun**ctional UTC time.  :-)
 </p>
 
 <p class="leftbar">
+**NOTE**: the updates to these guidelines on 2025-03-10 explained the new `-u
+uuidfile` and `-U uuidstr` options and are **NOT** important to read, in order
+to follow the guidelines. The options are in a release **AFTER THIS** IOCCC's
+official release and not updating the toolkit is **PERFECTLY** okay.
+</p>
+
+<p class="leftbar">
 Until the contest status becomes **[open](../faq.html#open)**,
 the [IOCCC rules](rules.html),
 [IOCCC guidelines](guidelines.html) and the tools in the
@@ -214,7 +221,7 @@ previously uploaded submission by rebuilding your submission with the
 </p>
 
 <p class="leftbar">
-**HINT:** So that you do not have to repeatedly answer all the
+**HINT:** so that you do not have to repeatedly answer all the
 questions, the `mkiocccentry(1)` tool has the options `-a answers`, `-A answers`
 and `-i answers`, where `-a` will write to an answers file (if it does not
 already exist), `-A` **WILL OVERWRITE THE FILE** and `-i` will read the answers from
@@ -227,6 +234,15 @@ most if not all `y/n` questions - you just don't have to input the name of the
 submission, the abstract, the author details etc. If you really wish to
 circumvent this you can use the `-Y` option but we do not recommend this because
 if your update breaks a rule or there is some problem, you might not see it.
+</p>
+
+<p class="leftbar">
+To help with not having to repeatedly enter a UUID, whether for the same
+submission or multiple submissions, you can use the `-u uuidfile` or `-U UUID`
+option. See the
+FAQ on "[how to avoid re-entering your UUID](../faq.html#uuid)"
+for more details. Note that the `-i answers` option cannot be used with the UUID
+options as the answers file includes the UUID.
 </p>
 
 <p class="leftbar">
