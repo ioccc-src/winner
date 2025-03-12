@@ -402,7 +402,7 @@ details](#mkiocccentry_details)" section.
 
 See also the
 FAQ on "[what the minimum required versions are for this
-contest](minimum_versions)"
+contest](#minimum_versions)"
 for more details on how to verify you have the correct versions for this
 contest.
 
