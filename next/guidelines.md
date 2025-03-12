@@ -53,7 +53,7 @@ Jump to: [top](#)
 </div>
 
 <p class="leftbar">
-These [IOCCC guidelines](guidelines.html) are version **28.45 2025-03-10**.
+These [IOCCC guidelines](guidelines.html) are version **28.46 2025-03-12**.
 </p>
 
 <p class="leftbar">
@@ -150,6 +150,18 @@ official release and not updating the toolkit is **PERFECTLY** okay.
 </p>
 
 <p class="leftbar">
+**NOTE**: the updates to these guidelines on 2025-03-12 also explain how the
+tools that require other tools now search under `$PATH`. It is perfectly fine to
+not use the newer versions so long as you use the minimum required version of
+the tools. See the
+FAQ on "[minimum required version of the tools](../faq.html#minimum_versions)"
+for more details and the
+FAQ on "[obtaining the most recent release of the
+toolkit](../faq.html#obtaining_mkiocccentry)"
+for more help.
+</p>
+
+<p class="leftbar">
 Until the contest status becomes **[open](../faq.html#open)**,
 the [IOCCC rules](rules.html),
 [IOCCC guidelines](guidelines.html) and the tools in the
@@ -195,11 +207,11 @@ We **STRONGLY** recommend you **do** install the
 </p>
 
 <p class="leftbar">
-**IMPORTANT NOTE**: if you run an IOCCC related tool outside the
-[mkiocccentry toolkit](https://github.com/ioccc-src/mkiocccentry)
-directory and you have not installed those tools, then you will have to
-specify the options (such as paths) for the tools that are required like
-`chkentry(1)`, `txzchk(1)` and `fnamchk(1)`.
+**IMPORTANT NOTE**: the tools that require other tools, `mkiocccentry(1)` and
+`txzchk(1)`, will, as of version `2.0.2 2025-03-11`, search under `$PATH`. If
+you have an earlier version and you have not installed the tools and run the
+tools from outside the repo directory, you will have to use the options to the
+tools to set the path to the required tools.
 </p>
 
 <p class="leftbar">
@@ -211,6 +223,14 @@ as that FAQ has important details on
 [how to register](register.html)
 as well as
 [how to upload your submission](submit.html) to the IOCCC.
+</p>
+
+<p class="leftbar">
+See also the
+FAQ on "[what the minimum required versions are for this
+contest](../faq.html#minimum_versions)"
+for more details on how to verify you have the correct versions for this
+contest.
 </p>
 
 <p class="leftbar">

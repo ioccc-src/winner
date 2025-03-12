@@ -1,4 +1,4 @@
-This quick start guide is version **28.0.1 2025-03-01**.
+This quick start guide is version **28.0.2 2025-03-12**.
 
 <div id="enter_questions">
 <div id="enter">
@@ -170,10 +170,13 @@ for doing so in your `remarks.md` file.
 
 See also [Rule 17](next/rules.html#rule17)!
 
-**IMPORTANT NOTE**: if you run the program outside the repo directory
-(specifying the absolute or relative path to the tool) and you have not
-installed the tools (and we **STRONGLY** recommend you **do** install them),
-then you will have to specify the options for the tools that are required like
+**IMPORTANT NOTE**: the tools that require other tools, `mkiocccentry(1)` and
+`txzchk(1)`, will, as of version `2.0.2 2025-03-11`, search under `$PATH`. If
+you have an earlier version and you have not installed the tools and run the
+tools from outside the repo directory, you will have to use the options to the
+tools to set the path to the required tools.
+
+Do remember to make sure you have the latest vers
 `chkentry(1)`, `txzchk(1)` and `fnamchk(1)`. And remember to make sure you have
 the latest version so you do not violate [Rule 17](next/rules.html#rule17).
 See the
@@ -186,6 +189,11 @@ and the
 FAQ on "[using the mkiocccentry tools](faq.html#using_mkiocccentry)"
 for more help.
 
+See also the
+FAQ on "[what the minimum required versions are for this
+contest](faq.html#minimum_versions)"
+for more details on how to verify you have the correct versions for this
+contest.
 
 <div id="step_7">
 <div id="submit">

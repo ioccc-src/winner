@@ -464,7 +464,7 @@ writing by <a href="../contact.html">contacting the judges</a>.</p>
 </div>
 </div>
 <p class="leftbar">
-These <a href="guidelines.html">IOCCC guidelines</a> are version <strong>28.45 2025-03-10</strong>.
+These <a href="guidelines.html">IOCCC guidelines</a> are version <strong>28.46 2025-03-12</strong>.
 </p>
 <p class="leftbar">
 The markdown form of these guidelines <a href="guidelines.md"
@@ -537,6 +537,17 @@ to follow the guidelines. The options are in a release <strong>AFTER THIS</stron
 official release and not updating the toolkit is <strong>PERFECTLY</strong> okay.
 </p>
 <p class="leftbar">
+<strong>NOTE</strong>: the updates to these guidelines on 2025-03-12 also explain how the
+tools that require other tools now search under <code>$PATH</code>. It is perfectly fine to
+not use the newer versions so long as you use the minimum required version of
+the tools. See the
+FAQ on “<a href="../faq.html#minimum_versions">minimum required version of the tools</a>”
+for more details and the
+FAQ on “<a href="../faq.html#obtaining_mkiocccentry">obtaining the most recent release of the
+toolkit</a>”
+for more help.
+</p>
+<p class="leftbar">
 Until the contest status becomes <strong><a href="../faq.html#open">open</a></strong>,
 the <a href="rules.html">IOCCC rules</a>,
 <a href="guidelines.html">IOCCC guidelines</a> and the tools in the
@@ -577,11 +588,11 @@ We <strong>STRONGLY</strong> recommend you <strong>do</strong> install the
 <a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry toolkit</a>.
 </p>
 <p class="leftbar">
-<strong>IMPORTANT NOTE</strong>: if you run an IOCCC related tool outside the
-<a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry toolkit</a>
-directory and you have not installed those tools, then you will have to
-specify the options (such as paths) for the tools that are required like
-<code>chkentry(1)</code>, <code>txzchk(1)</code> and <code>fnamchk(1)</code>.
+<strong>IMPORTANT NOTE</strong>: the tools that require other tools, <code>mkiocccentry(1)</code> and
+<code>txzchk(1)</code>, will, as of version <code>2.0.2 2025-03-11</code>, search under <code>$PATH</code>. If
+you have an earlier version and you have not installed the tools and run the
+tools from outside the repo directory, you will have to use the options to the
+tools to set the path to the required tools.
 </p>
 <p class="leftbar">
 See the
@@ -592,6 +603,13 @@ as that FAQ has important details on
 <a href="register.html">how to register</a>
 as well as
 <a href="submit.html">how to upload your submission</a> to the IOCCC.
+</p>
+<p class="leftbar">
+See also the
+FAQ on “<a href="../faq.html#minimum_versions">what the minimum required versions are for this
+contest</a>”
+for more details on how to verify you have the correct versions for this
+contest.
 </p>
 <p class="leftbar">
 While the contest is <strong><a href="../faq.html#open">open</a></strong>, you may modify your
