@@ -1,6 +1,6 @@
 # IOCCC FAQ Table of Contents
 
-This is FAQ version **28.2.14 2025-03-09**.
+This is FAQ version **28.2.15 2025-03-10**.
 
 
 ## 0. [Entering the IOCCC: the bare minimum you need to know](#enter_questions)
@@ -28,7 +28,8 @@ This is FAQ version **28.2.14 2025-03-09**.
 - **Q 1.6**: <a class="normal" href="#extra-files">What are extra files and how may I include additional files beyond the max allowed?</a>
 - **Q 1.7**: <a class="normal" href="#ai">May I use AI, Virtual coding assistants, or similar tools to write my submission?</a>
 - **Q 1.8**: <a class="normal" href="#rule17">What are the details behind Rule 17?</a>
-- **Q 1.9**: <a class="normal" href="#uuid_file">How can I avoid re-entering my UUID to mkiocccentry?</a>
+- **Q 1.9**: <a class="normal" href="#uuid">How can I avoid re-entering my UUID to mkiocccentry?</a>
+- **Q 1.10**: <a class="normal" href="#submission_dir">How can I avoid having to move or delete my submission directory for the same workdir?</a>
 
 
 ## 2. [IOCCC Judging process](#judging_proceess)
@@ -785,7 +786,8 @@ where `21701` is the seed) to have the tool make up pseudo-randomly selected
 answers.
 
 Please note that the tool will **NOT** delete the directory it makes so if you
-do have to try again you'll have to remove it.
+do have to try again you'll have to remove it (you can have it delete it if you
+use the `-x` option though).
 
 An example use of this option is:
 
@@ -795,6 +797,13 @@ An example use of this option is:
 
 This will run the tests that `mkiocccentry(1)`, write the JSON files, use
 `chkentry(1)`, package the tarball and run `txzchk(1)` on it.
+
+If you don't want to deal with the having to move or delete the submission
+directory, you could instead do:
+
+``` <!---sh-->
+    mkiocccentry -x -d workdir topdir
+```
 
 See also the
 FAQ on "[mkiocccentry](#mkiocccentry)",
@@ -1267,8 +1276,11 @@ do this **AFTER** the [contest status](status.html) has changed to
 
 Jump to: [top](#)
 
+
+<div id="uuid">
 <div id="uuid_file">
 ### Q 1.9: How can I avoid re-entering my UUID to mkiocccentry?
+</div>
 </div>
 
 Because some people might want to submit more than one submission, an option to
@@ -1278,8 +1290,9 @@ have a valid UUID, you will be prompted as if you had not used the option. If
 you use the `-i answers` feature this will not be used as the UUID is included
 in the answers file.
 
-To use this feature all you have to do is put the UUID in a text file, in a
-single line, with no spaces before or after it, and then run:
+There are two ways to do this - it is purely a matter of preference. The first
+way is to put your UUID in a text file (the UUID by itself on a single line)
+with no spaces before or after it, and then run:
 
 ``` <!---sh-->
     mkiocccentry -u uuid workdir topdir
@@ -1288,11 +1301,38 @@ single line, with no spaces before or after it, and then run:
 where `uuid` is the file containing your UUID, `workdir` is the workdir and
 `topdir` is the topdir.
 
+The second way is to specify the UUID on the command line itself. For instance
+if your UUID was `test` (for test mode) you could do:
+
+``` <!---sh-->
+    mkiocccentry -U test workdir topdir
+```
+
+
 See also the
 FAQ on "[the answers file](#answers_file)".
 
 Jump to: [top](#)
 
+<div id="submission_dir">
+### Q 1.10: How can I avoid having to move or delete my submission directory for the same workdir?
+</div>
+
+If you wish to not have to worry about removing or moving the submission
+directory under the workdir, you may use the `-x` option to `mkiocccentry`. For
+instance, you can do:
+
+``` <!---sh-->
+    mkiocccentry -x workdir topdir
+```
+
+and if the submission directory under workdir already exists it will be removed
+first so you do not have to do so.
+
+If for some reason your `rm` command cannot be found or does not exist you can
+specify the path by the `-r rm` option.
+
+Jump to: [top](#)
 
 <hr style="width:50%;text-align:left;margin-left:0">
 <hr style="width:50%;text-align:left;margin-left:0">
@@ -1788,8 +1828,12 @@ for more details on how to obtain this and [Rule 17](next/rules.html#rule17) for
 the importance of this).
     * If this is an invalid UUID (malformed), you will be asked to correct it
     until it is.
-    * If the `-u uuid` option is used and the UUID in the file `uuid` is not malformed,
+    * If the `-u uuidfile` option is used and the UUID in the file `uuidfile` is not malformed,
     the user will not be prompted for a UUID.
+    * If the `-U uuidstr` option is used and the UUID is not malformed, the user
+    will not be prompted for a UUID.
+    * The `-u` and `-U` options may not be used with any option that reads from
+    an answers file (`-i answers`, `-d`, `-s seed`).
 1. Ask the user for the submission slot (the submission number; see [how to
 register](next/register.html) and [Rule 17](next/rules.html#rule17) for more details).
     * If this is out of range (see `MAX_SUBMIT_SLOT` in
@@ -1797,7 +1841,10 @@ register](next/register.html) and [Rule 17](next/rules.html#rule17) for more det
     you will be asked to correct it until it is.
 2. Make the submission directory under `topdir` in the form of
 `workdir/submit.USERNAME-SLOT`.
-    * If this directory already exists it is an error.
+    * If this directory already exists it is an error, unless the `-x` option is
+    used, in which case it'll be deleted.
+    * If for some reason the default `rm` paths do not work, you may use `-r rm`
+    to specify the path to a working `rm` command.
 3. Change to the `topdir`.
 4. Traverse the directory, creating lists of ignored/forbidden
 files/directories/symlinks as well as a list directories to make and a list of
