@@ -1,6 +1,6 @@
 # IOCCC FAQ Table of Contents
 
-This is FAQ version **28.2.13 2025-03-01**.
+This is FAQ version **28.2.14 2025-03-09**.
 
 
 ## 0. [Entering the IOCCC: the bare minimum you need to know](#enter_questions)
@@ -28,6 +28,7 @@ This is FAQ version **28.2.13 2025-03-01**.
 - **Q 1.6**: <a class="normal" href="#extra-files">What are extra files and how may I include additional files beyond the max allowed?</a>
 - **Q 1.7**: <a class="normal" href="#ai">May I use AI, Virtual coding assistants, or similar tools to write my submission?</a>
 - **Q 1.8**: <a class="normal" href="#rule17">What are the details behind Rule 17?</a>
+- **Q 1.9**: <a class="normal" href="#uuid_file">How can I avoid re-entering my UUID to mkiocccentry?</a>
 
 
 ## 2. [IOCCC Judging process](#judging_proceess)
@@ -627,6 +628,7 @@ Jump to: [top](#)
 </div>
 
 Jump to: [top](#)
+
 
 
 <div id="answers_file">
@@ -1265,6 +1267,31 @@ do this **AFTER** the [contest status](status.html) has changed to
 
 Jump to: [top](#)
 
+<div id="uuid_file">
+### Q 1.9: How can I avoid re-entering my UUID to mkiocccentry?
+</div>
+
+Because some people might want to submit more than one submission, an option to
+read the UUID from a file exists, so that you don't have to repeatedly copy and
+paste the UUID in. If the file is not a regular readable file or it does not
+have a valid UUID, you will be prompted as if you had not used the option. If
+you use the `-i answers` feature this will not be used as the UUID is included
+in the answers file.
+
+To use this feature all you have to do is put the UUID in a text file, in a
+single line, with no spaces before or after it, and then run:
+
+``` <!---sh-->
+    mkiocccentry -u uuid workdir topdir
+```
+
+where `uuid` is the file containing your UUID, `workdir` is the workdir and
+`topdir` is the topdir.
+
+See also the
+FAQ on "[the answers file](#answers_file)".
+
+Jump to: [top](#)
 
 
 <hr style="width:50%;text-align:left;margin-left:0">
@@ -1740,6 +1767,20 @@ If you fail to enter other author information correctly you will be prompted
 right away to fix it. Afterwards, when the author information is collected, it
 will ask you to confirm. This procedure happens for each author.
 
+In the case of `-i answers` option being used, you will not have to put in most
+information but you will have to confirm the lists of files and directories are
+correct, unless you use `-Y` (which we do not recommend).
+
+If `topdir` is not a readable (`+r`), searchable (`+x`) directory it is an error.
+
+If `workdir` is not a writable (`+w`), searchable (`+x`) directory it is an error.
+
+If `workdir` is in `topdir` the program will not descend into it (the workdir).
+
+If `topdir` is the same (by device and inode) as `workdir` it is an error.
+If somehow `topdir` or `workdir` is found under the submission directory (by
+device and inode) it is an error (and you should report it as a bug.
+
 In more detail the `mkiocccentry(1)` tool performs the below steps.
 
 0. Ask the user for a submission ID (see the [how to register](next/register.html)
@@ -1747,11 +1788,13 @@ for more details on how to obtain this and [Rule 17](next/rules.html#rule17) for
 the importance of this).
     * If this is an invalid UUID (malformed), you will be asked to correct it
     until it is.
+    * If the `-u uuid` option is used and the UUID in the file `uuid` is not malformed,
+    the user will not be prompted for a UUID.
 1. Ask the user for the submission slot (the submission number; see [how to
 register](next/register.html) and [Rule 17](next/rules.html#rule17) for more details).
     * If this is out of range (see `MAX_SUBMIT_SLOT` in
     [limit_ioccc.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h))
-    and you will be asked to correct it until it is.
+    you will be asked to correct it until it is.
 2. Make the submission directory under `topdir` in the form of
 `workdir/submit.USERNAME-SLOT`.
     * If this directory already exists it is an error.
@@ -2146,7 +2189,7 @@ In order of the file's contents we describe each required field, below:
 - `IOCCC_auth_version` (double quoted string)
     * The current version of the `.auth.json` file.
 
-    **IMPORTANT:** this **MUST** match **THIS** IOCCC's `.auth.json` version, defined as
+    **IMPORTANT:** this **MUST** be >= **THIS** IOCCC's `.auth.json` version, defined as
     `AUTH_VERSION` in
     [soup/version.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/version.h)
     in the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry/). If
@@ -2176,7 +2219,7 @@ In order of the file's contents we describe each required field, below:
 - `mkiocccentry_version` (double quoted string)
     * The version of `mkiocccentry` that formed this `.auth.json` file.
 
-    **IMPORTANT:** this **MUST** match **THIS** IOCCC's `mkiocccentry` version,
+    **IMPORTANT:** this **MUST** be >= **THIS** IOCCC's `mkiocccentry` version,
     defined as `MKIOCCCENTRY_VERSION` in
     [soup/version.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/version.h)
     in the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry/). If
@@ -2186,7 +2229,7 @@ In order of the file's contents we describe each required field, below:
     * The version of `chkentry` that was used to validate the submission
     directory, including the `.auth.json` file.
 
-    **IMPORTANT:** this **MUST** match **THIS** IOCCC's `chkentry` version, defined
+    **IMPORTANT:** this **MUST** be >= **THIS** IOCCC's `chkentry` version, defined
     as `CHKENTRY_VERSION` in
     [soup/version.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/version.h)
     in the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry/). If
@@ -2196,7 +2239,7 @@ In order of the file's contents we describe each required field, below:
     * The version of `fnamchk` that `txzchk` uses to validate the filename of
     the xz compressed tarball.
 
-    **IMPORTANT:** this **MUST** match **THIS** IOCCC's `fnamchk` version in order for it
+    **IMPORTANT:** this **MUST** be >= **THIS** IOCCC's `fnamchk` version in order for it
     to be valid. If this is not the case your submission **WILL BE** rejected!
 
 - `IOCCC_contest_id` (double quoted string)
@@ -2431,7 +2474,7 @@ In order of the file's contents we describe each required field, below:
 - `IOCCC_info_version` (double quoted string)
     * The current version of the `.info.json` files.
 
-    **IMPORTANT:** this **MUST** match **THIS** IOCCC's `.info.json` version, defined as
+    **IMPORTANT:** this **MUST** be >= **THIS** IOCCC's `.info.json` version, defined as
     `INFO_VERSION` in
     [soup/version.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/version.h)
     in the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry/). If
@@ -2461,7 +2504,7 @@ In order of the file's contents we describe each required field, below:
 - `mkiocccentry_version` (double quoted string)
     * The version of `mkiocccentry` that formed this `.auth.json` file.
 
-    **IMPORTANT:** this **MUST** match **THIS** IOCCC's `mkiocccentry` version,
+    **IMPORTANT:** this **MUST** be >= **THIS** IOCCC's `mkiocccentry` version,
     defined as `MKIOCCCENTRY_VERSION` in
     [soup/version.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/version.h)
     in the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry/). If
@@ -2470,7 +2513,7 @@ In order of the file's contents we describe each required field, below:
 - `iocccsize_version` (double quoted string)
     * The version of `iocccsize` that was used for this `.info.json` file.
 
-    **IMPORTANT:** this **MUST** match **THIS** IOCCC's `iocccentry` version,
+    **IMPORTANT:** this **MUST** be >= **THIS** IOCCC's `iocccentry` version,
     defined as `IOCCCSIZE_VERSION` in
     [soup/version.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/version.h)
     in the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry/). If
@@ -2480,7 +2523,7 @@ In order of the file's contents we describe each required field, below:
     * The version of `chkentry` that was used to validate the submission
     directory, including the `.info.json` file.
 
-    **IMPORTANT:** this **MUST** match **THIS** IOCCC's `chkentry` version, defined
+    **IMPORTANT:** this **MUST** be >= **THIS** IOCCC's `chkentry` version, defined
     as `CHKENTRY_VERSION` in
     [soup/version.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/version.h)
     in the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry/). If
@@ -2490,7 +2533,7 @@ In order of the file's contents we describe each required field, below:
     * The version of `fnamchk` that `txzchk` uses to validate the filename of
     the xz compressed tarball.
 
-    **IMPORTANT:** this **MUST** match **THIS** IOCCC's `fnamchk` version, defined
+    **IMPORTANT:** this **MUST** be >= **THIS** IOCCC's `fnamchk` version, defined
     as `FNAMCHK_VERSION` in
     [soup/version.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/version.h)
     in the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry/). If
@@ -2499,7 +2542,7 @@ In order of the file's contents we describe each required field, below:
 - `txzchk_version` (double quoted string)
     * The version of `txzchk` used to validate the xz compressed tarball.
 
-    **IMPORTANT:** this **MUST** match **THIS** IOCCC's `txzchk` version, defined
+    **IMPORTANT:** this **MUST** be >= **THIS** IOCCC's `txzchk` version, defined
     as `TXZCHK_VERSION` in
     [soup/version.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/version.h)
     in the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry/). If
@@ -2605,11 +2648,7 @@ In order of the file's contents we describe each required field, below:
     `prog.c`, else `false`.
 
 - `wordbuf_warning` (boolean)
-    * `true` if `prog.c` triggered a word buffer overflow (see `iocccsize`),
-    else `false`.
-
-    **IMPORTANT:** this does **NOT** mean that your code has been checked for buffer
-    overflows in general.
+    * This is ignored and will be removed for IOCCC29 and beyond.
 
 - `ungetc_warning` (boolean)
     * `true` if `prog.c` triggered an `ungetc(3)` error, else `false`.
@@ -2627,11 +2666,11 @@ In order of the file's contents we describe each required field, below:
     for more information.
 
 - `first_rule_is_all` (boolean)
-    * `true` if the first rule in the `Makefile` file is `all`, else `false`.
+    * This is ignored and will be removed for IOCCC29 and beyond.
 
-    **IMPORTANT:** if the `Makefile` file does **NOT** have an `all` rule or it is not
-    first and this boolean is `true` then you stand a good chance of having your
-    submission rejected for violating [Rule 17](next/rules.html#rule17)!
+    **IMPORTANT:**: if the `Makefile` file does **NOT** have an `all` rule then
+    you stand a good chance of having your submission rejected for violating
+    [Rule 17](next/rules.html#rule17)!
 
     See the
     FAQ on "[Makefile](#makefile)"
@@ -2641,8 +2680,7 @@ In order of the file's contents we describe each required field, below:
     * `true` if the `Makefile` file has an `all` rule, else `false`.
 
     **IMPORTANT:** if the `Makefile` file does **NOT** have an `all` rule and this
-    boolean is `true`, or if it does **NOT** have an `all` rule but
-    `first_rule_is_all` is `true` then you stand a good chance of having your
+    boolean is `true` then you stand a good chance of having your
     submission rejected for violating [Rule 17](next/rules.html#rule17)!
 
     See the
@@ -2811,8 +2849,9 @@ problems with it or the submission directory, **it is an error**. If there is an
 error the tarball will **NOT** be formed by `mkiocccentry`; otherwise the
 `txzchk(1)` tool will be executed on the tarball.
 
-The [Judges](judges.html) **WILL** use `chkentry(1)` on this file during the
-judging process and if it does not pass your submission **WILL BE** rejected.
+When the [Judges](judges.html) use `chkentry(1)` on your submission directory,
+if this JSON file is invalid JSON or does not match the requirements outlined
+above, or if any other is found, your submission **WILL BE** rejected.
 
 An obvious example where `chkentry` would fail to validate `.info.json` is if
 there is a mismatch of type in the JSON file with what is expected, for
