@@ -20,6 +20,26 @@ We invite you to join the **IOCCC Discord Community** via this link: [https://di
 </div>
 
 
+## 2025-03-12
+
+We released [mkiocccentry toolkit](https://github.com/ioccc-src/mkiocccentry) **version 2.4.3 2025-03-11**.
+
+While you are **NOT** required to use this release in order to submit to **IOCCC28**,
+we do **RECOMMEND** that you **install and use** it, because among other things, it provides:
+
+* `mkiocccentry(1)` and `txzchk(1)` now search for other toolkit tools using `$PATH`
+* `mkiocccentry(1)` and `chkentry(1)` are now less strict with most `iocccsize(1)` warnings
+* `mkiocccentry -x` will force the overwriting of the submission directory it forms under `workdir`
+* `mkiocccentry -U uuid` and `mkiocccentry -u uuid_file` let you set your username
+
+See the [version 2.4.3 release notes](https://github.com/ioccc-src/mkiocccentry/releases/tag/2.4.3)
+for more details.
+
+**Clarification**: **NUL bytes** are **ALLOWED** in your submission `prog.c` and related C code.
+
+Please mention in your `remarks.md` file if your C source contains **NUL bytes**.
+
+
 ## 2025-03-05
 
 The [40th anniversary of the IOCCC](faq.html#ioccc_start), **IOCCC28**, will be **open** for

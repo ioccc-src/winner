@@ -33,7 +33,7 @@ This is FAQ version **28.2.16 2025-03-12**.
 - **Q 1.10**: <a class="normal" href="#submission_dir">How can I avoid having to move or delete my submission directory for the same workdir?</a>
 
 
-## 2. [IOCCC Judging process](#judging_proceess)
+## 2. [IOCCC Judging process](#judging_process)
 - **Q 2.0**: <a class="normal" href="#questions">What is the best way to ask a question about the IOCCC rules, guideline and tools?</a>
 - **Q 2.1**: <a class="normal" href="#feedback">How can I comment or make a suggestion on IOCCC rules, guidelines and tools?</a>
 - **Q 2.2**: <a class="normal" href="#warnings">Are there any compiler warnings that I should not worry about in my submissions?</a>
@@ -154,6 +154,7 @@ Jump to: [top](#)
 
 # The IOCCC FAQ
 
+
 <hr style="width:50%;text-align:left;margin-left:0">
 <hr style="width:50%;text-align:left;margin-left:0">
 
@@ -161,6 +162,9 @@ Jump to: [top](#)
 <div id="enter_questions">
 ## Section 0: Entering the IOCCC: the bare minimum you need to know
 </div>
+
+
+Jump to: [top](#)
 
 
 <div id="enter">
@@ -213,6 +217,7 @@ use it to package your submission. Not doing so puts you at a great risk of
 violating the [Rules](next/rules.html) and in particular [Rule
 17](next/rules.html#rule17).
 
+
 Jump to: [top](#)
 
 
@@ -261,6 +266,7 @@ for details on compiling and the
 FAQ on "[using mkiocccentry](#using_mkiocccentry)"
 for more details.
 
+
 Jump to: [top](#)
 
 
@@ -284,6 +290,7 @@ If you already have an mkiocccentry tool directory:
     git fetch --all --tags
     git rebase
 ```
+
 
 Jump to: [top](#)
 
@@ -312,6 +319,7 @@ order you may. If you wish to skip that:
 
 Jump to: [top](#)
 
+
 <div id="install">
 ### Q 0.1.4: How do I install mkiocccentry(1) and related tools?
 </div>
@@ -322,8 +330,6 @@ and compiling the tools (see the
 FAQ on "[compiling mkiocccentry](#compiling_mkiocccentry)"
 above) run as either `sudo(8)` or root `make install`:
 
-
-
 ``` <!---sh-->
     # if you use sudo(8):
     sudo make install
@@ -331,7 +337,6 @@ above) run as either `sudo(8)` or root `make install`:
     # as root:
     make install
 ```
-
 
 If everything goes well you should be able to run `mkiocccentry(1)`,
 `txzchk(1)`, `chkentry(1)` and all the other installed tools from any directory,
@@ -341,7 +346,9 @@ from any directory too.
 Some tools like `bug_report.sh` and `hostchk.sh` are not meant to be installed
 and will not work from any directory, however.
 
+
 Jump to: [top](#)
+
 
 <div id="using_mkiocccentry">
 #### Q 0.1.5: How do I use mkiocccentry?
@@ -409,6 +416,7 @@ contest.
 
 Jump to: [top](#)
 
+
 <div id="minimum_versions">
 #### Q 0.1.6: What are the minimum versions required for this contest?
 </div>
@@ -424,8 +432,8 @@ At minimum, the tools **MUST** be version:
 See also the
 FAQ on "[obtaining the latest release of the toolkit](#obtaining_mkiocccentry)".
 
-Jump to: [top](#)
 
+Jump to: [top](#)
 
 
 <div id="SUS">
@@ -440,6 +448,7 @@ Your entry must compile with **clang** or **gcc** and run under at least one fla
 system that conforms to the [SUS](https://en.wikipedia.org/wiki/Single_UNIX_Specification),
 otherwise known as the [The Single UNIX Specification Version 4](https://unix.org/version4/)
 or [later SUS](https://unix.org/online.html).
+
 
 Jump to: [top](#)
 
@@ -482,6 +491,7 @@ compatible with this; see the
 FAQ on "[Makefile compatibility](#gmake)"
 for more details and help.
 
+
 #### Expected `make` rules:
 
 The following rules should exist in your Makefile:
@@ -512,7 +522,9 @@ date
 does have other rules like `everything` and `alt`, and we encourage you to use
 the one linked to above.
 
+
 Jump to: [top](#)
+
 
 <div id="remarks_md">
 <div id="remarks">
@@ -575,6 +587,7 @@ rounds; we look at the author name only if an entry wins. See the
 use `mkiocccentry(1)`, as it requires it to not be of size 0, though if you only
 include whitespace you would still be violating [Rule 17](next/rules.html#rule17)).
 
+
 Jump to: [top](#)
 
 
@@ -613,7 +626,6 @@ FAQ on "[submission Makefiles](#makefile)".
 Jump to: [top](#)
 
 
-
 <div id="file_perms">
 ### Q 0.6: What permissions may my files be and what if I need different permissions?
 </div>
@@ -638,8 +650,9 @@ Do remember that if your submission requires different filenames, then you
 11](next/rules.html#rule11).
 
 
-
 Jump to: [top](#)
+
+
 <hr style="width:50%;text-align:left;margin-left:0">
 <hr style="width:50%;text-align:left;margin-left:0">
 
@@ -648,8 +661,8 @@ Jump to: [top](#)
 ## Section 1: Entering the IOCCC: more help and details
 </div>
 
-Jump to: [top](#)
 
+Jump to: [top](#)
 
 
 <div id="answers_file">
@@ -675,6 +688,7 @@ To make use of the answers file, use the `-i answers` option like:
 ``` <!---sh-->
     mkiocccentry -i answers.txt ...
 ```
+
 
 Jump to: [top](#)
 
@@ -732,6 +746,7 @@ For example:
     # Makefile continues below ...
 ```
 
+
 Jump to: [top](#)
 
 
@@ -756,6 +771,7 @@ as it lists things you **should NOT use** in markdown files and things you
 See the [markdown syntax](https://www.markdownguide.org/basic-syntax) guide.
 See also [CommonMark Spec](https://spec.commonmark.org/current/).
 
+
 Jump to: [top](#)
 
 
@@ -773,6 +789,7 @@ Please see the
 FAQ on "[reporting bugs and other issues in the mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry/blob/master/FAQ.md#bugs)"
 in the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry)
 for more thorough details on bug reporting.
+
 
 Jump to: [top](#)
 
@@ -794,6 +811,7 @@ See also the
 FAQ on "[Rule 17](#rule17)",
 the [guidelines](next/guidelines.html) and [Rule 17](next/rules.html#rule17)
 itself.
+
 
 <div id="mkiocccentry_test">
 #### Q 1.5: How can I check if my submission passes tests without having to answer questions?
@@ -884,8 +902,8 @@ You can do this by creating the tarball like:
     tar --format=v7 -cJf foo.txz directory
 ```
 
-Jump to: [top](#)
 
+Jump to: [top](#)
 
 
 <div id="ai">
@@ -904,12 +922,14 @@ ultimate author of the code you submit.
 If you do use such tools, **PLEASE mention** in your `remarks.md` which tools
 you used as well as how you used them to help write your submission.
 
+
 Jump to: [top](#)
 
 
 <div id="rule17">
 ### Q 1.8: What are details behind Rule 17?
 </div>
+
 
 ### TL;DR Rule 17 - Use `mkiocccentry(1)`
 
@@ -946,6 +966,7 @@ files section](#max-files) below for finer details and the
 FAQ on "[what extra files are and how to include additional files](#extra-files)",
 should you need to include more files than this maximum.
 </p>
+
 
 Jump to: [top](#)
 
@@ -1026,7 +1047,6 @@ about the submission itself. It also **MUST** be valid according to **BOTH**
 `jparse(3)` **AND** `chkentry(1)`.
 </p>
 
-
 <p class="leftbar">
 For the complete `mkiocccentry(1)` process, see the
 FAQ on the "[mkiocccentry process](#mkiocccentry_process)".
@@ -1080,7 +1100,6 @@ this rule! See the
 FAQs on "[obtaining, compiling, installing and using the mkiocccentry toolkit](#mkiocccentry)"
 for more details.
 </p>
-
 
 <p class="leftbar">
 You are **HIGHLY ENCOURAGED** to use the `mkiocccentry(1)` tool to form your
@@ -1183,6 +1202,7 @@ discrepancy as an error and exit with non-zero.
 These checks **MUST PASS**. If they do not you stand a significant chance of
 having your submission rejected for violating [Rule 17](next/rules.html#rule17)!
 </p>
+
 
 <div id="max-files">
 #### Maximum number of files per submission
@@ -1328,11 +1348,12 @@ if your UUID was `test` (for test mode) you could do:
     mkiocccentry -U test workdir topdir
 ```
 
-
 See also the
 FAQ on "[the answers file](#answers_file)".
 
+
 Jump to: [top](#)
+
 
 <div id="submission_dir">
 ### Q 1.10: How can I avoid having to move or delete my submission directory for the same workdir?
@@ -1352,7 +1373,9 @@ first so you do not have to do so.
 If for some reason your `rm` command cannot be found or does not exist you can
 specify the path by the `-r rm` option.
 
+
 Jump to: [top](#)
+
 
 <hr style="width:50%;text-align:left;margin-left:0">
 <hr style="width:50%;text-align:left;margin-left:0">
@@ -1361,6 +1384,7 @@ Jump to: [top](#)
 <div id="judging_process">
 ## Section 2: IOCCC Judging process
 </div>
+
 
 Jump to: [top](#)
 
@@ -1422,6 +1446,7 @@ others are wondering about as well!
 See also the
 FAQ on "[rules, guidelines, tools feedback](#feedback)".
 
+
 Jump to: [top](#)
 
 
@@ -1449,6 +1474,7 @@ If there is an on-going discussion that seems relevant to what you
 have to say, consider adding comments to that particular discussion.
 Otherwise consider opening a [new mkiocccentry
 discussion](https://github.com/ioccc-src/mkiocccentry/discussions/new/choose).
+
 
 Jump to: [top](#)
 
@@ -1478,6 +1504,7 @@ US** the OS, OS version, compiler and compiler version.
 
 For more details on why we use `-Weverything` in Clang see the FAQ on
 "[-Weverything](#weverything)".
+
 
 Jump to: [top](#)
 
@@ -1611,6 +1638,7 @@ FAQ on "[remarks.md](#remarks_md)",
 submitted theme** and **how compares with previous IOCCC winners**
 of the same theme.
 
+
 Jump to: [top](#)
 
 
@@ -1633,6 +1661,7 @@ In some cases the entry may have abused rule 2 and declared an
 "abuse of the rules" (although now blatant abuse of the rules to
 get around rule 2 size limits is discouraged).
 
+
 Jump to: [top](#)
 
 
@@ -1643,6 +1672,7 @@ Jump to: [top](#)
 </div>
 
 By tradition, we do not say.
+
 
 Jump to: [top](#)
 
@@ -1667,6 +1697,7 @@ SUS-conforming. See the
 FAQ on "[SUS](#SUS)"
 for more information.
 
+
 Jump to: [top](#)
 
 
@@ -1685,6 +1716,7 @@ report when the IOCCC judges start near final judging rounds, and sometimes we
 also report when we enter what we believe is the final judging round, so you may
 guess that we have at least 3 rounds.  :-)  The actual number of rounds is
 certainly more than 3.
+
 
 Jump to: [top](#)
 
@@ -1730,7 +1762,6 @@ Starting from 1988, the entry we liked the most in that year is called
 - [2018/mills](2018/mills/index.html)
 - [2020/carlini](2020/carlini/index.html)
 
-
 In 1993, 1994 and 1995 the judges were unable to select a clear overall
 winning entry. So to give a nod to the entry that had the highest approval ranking
 from the judges, they used the following awards:
@@ -1741,6 +1772,7 @@ from the judges, they used the following awards:
 
 These could be considered the '`best entry`' for those years with 1 or
 more other entries that came in close behind.
+
 
 Jump to: [top](#)
 
@@ -1775,6 +1807,7 @@ winning entries page](years.html). This is done by updating this repo.
 
 * Update the [IOCCC news](news.html) page, also by updating this repo.
 
+
 Jump to: [top](#)
 
 
@@ -1788,7 +1821,9 @@ Because the publication on the IOCCC site **_IS_** the award!
 Anyone is free to put their IOCCC hopefuls, lookalikes and/or
 entries that do not win on their web page for everyone to see.
 
+
 Jump to: [top](#)
+
 
 <hr style="width:50%;text-align:left;margin-left:0">
 <hr style="width:50%;text-align:left;margin-left:0">
@@ -1800,6 +1835,8 @@ Jump to: [top](#)
 
 
 Jump to: [top](#)
+
+
 <div id="mkiocccentry_process">
 ### Q 3.0: What is the `mkiocccentry(1)` process and what sort of checks does it perform?
 </div>
@@ -2018,7 +2055,6 @@ Some of the other checks that are made:
 - If the `Makefile` does not have a `clobber` rule.
 - If the `Makefile` does not have a `try` rule.
 
-
 Conditions that one **MUST** correct, and which `mkiocccentry(1)` will prompt until
 they are correct, are:
 
@@ -2093,6 +2129,7 @@ Finally, if you wish to not have to enter the same answers just to update a
 submission, see the
 FAQ on the "[answers file feature](#answers_file)".
 
+
 Jump to: [top](#)
 
 
@@ -2133,6 +2170,7 @@ of this document to discuss the many tests that `txzchk(1)` runs; if you must
 know we refer you to the [source
 code](https://github.com/ioccc-src/mkiocccentry/blob/master/txzchk.c).
 
+
 Jump to: [top](#)
 
 
@@ -2161,6 +2199,7 @@ Assuming everything is OK, it would show:
 See also the
 FAQ on "[validating your submission tarball](#txzchk)"
 for more information.
+
 
 Jump to: [top](#)
 
@@ -2205,7 +2244,6 @@ As an example, if your submission directory is
 `00000000-0000-4000-0000-000000000000-3/` then you should run the following
 command:
 
-
 ``` <!---sh-->
     chkentry 00000000-0000-4000-0000-000000000000-3
 ```
@@ -2227,6 +2265,7 @@ FAQ on "[.auth.json](#auth_json)"
 and the
 FAQ on "[.info.json](#info_json)"
 as well as [Rule 17](next/rules.html#rule17) for more information.
+
 
 Jump to: [top](#)
 
@@ -2503,6 +2542,7 @@ things too).
 
 If you wish to **verify** that your `.auth.json` file is valid **JSON** then see the
 FAQ on "[validating JSON documents](#validating_json)".
+
 
 Jump to: [top](#)
 
@@ -2933,6 +2973,7 @@ because `chkentry` would not validate the `.info.json` file.
 If you wish to **verify** that your `.info.json` file is valid **JSON** then see the
 FAQ on "[validating JSON documents](#validating_json)".
 
+
 Jump to: [top](#)
 
 
@@ -3001,6 +3042,7 @@ Anonymous `author_handle`'s match this regexp:
 ``` <!---re-->
     Anonymous_[0-9][0-9][0-9][0-9][.0-9]*$
 ```
+
 
 Jump to: [top](#)
 
@@ -3476,6 +3518,8 @@ For example:
 
 
 ##### winning_entry_set
+
+
 ##### entry_id
 
 ``` <!---json-->
@@ -3558,6 +3602,7 @@ FAQ on "[fixing author information](#fix_author)"
 for information about how to update
 and/or correct IOCCC author information.
 
+
 Jump to: [top](#)
 
 
@@ -3603,6 +3648,7 @@ See
 FAQ on "[Author, Entry, Submission](#terms)"
 for more information on terms such as _author_, _entry_, and _submission_.
 
+
 Jump to: [top](#)
 
 
@@ -3620,6 +3666,7 @@ of 2020 is found under the directory
 [2020/ferguson2](2020/ferguson2/index.html).
 
 The `entry_id` for that winning entry is `2020_ferguson2`.
+
 
 Jump to: [top](#)
 
@@ -3765,6 +3812,7 @@ As of _Fri 26 Jul 2024 17:29:15 UTC_, it contains:
 We now will walk through the above JSON document looking at all the JSON
 members:
 
+
 ##### `no_comment`
 
 ``` <!--- json-->
@@ -3777,6 +3825,7 @@ be present in all IOCCC related JSON files.
 
 There **MUST** be one and only one `no_comment` _JSON member_ and the _JSON value_ **MUST**
 be the exact _JSON string_ as shown above.
+
 
 ##### `entry_JSON_format_version`
 
@@ -3796,6 +3845,7 @@ of the these files is modified: and then only those who maintain the
 [official IOCCC website](https://www.ioccc.org) would be the one to do this
 in conjunction with changes to [bin directory tools](bin/index.html).
 
+
 ##### `award`
 
 ``` <!---json-->
@@ -3805,6 +3855,7 @@ in conjunction with changes to [bin directory tools](bin/index.html).
 This JSON string is the award title of the entry which the [Judges](judges.html)
 decide/decided when it becomes/became a winning entry.
 
+
 ##### `year`
 
 ``` <!---json-->
@@ -3812,6 +3863,7 @@ decide/decided when it becomes/became a winning entry.
 ```
 
 This JSON number is the year the contest ran, ended or was announced in.
+
 
 ##### `dir`
 
@@ -3823,6 +3875,7 @@ This JSON string is the subdirectory of the entry, **under** the year directory,
 in this case [1984](1984/index.html). With the above member, `year`, and this
 one, one can determine the directory of the entry, here being
 [1984/laman](1984/laman/index.html).
+
 
 ##### `entry_id`
 
@@ -3902,6 +3955,7 @@ a change of `author_handle` _JSON value_ would also require the
 The full name of an author may use non-ASCII characters so long as the
 full name is properly encoded as a _JSON string_.
 
+
 ##### `manifest`
 
 Finally there is the manifest JSON **array** that lists the files of the winning
@@ -3926,7 +3980,6 @@ A shortened manifest for our example entry is:
         }
     ]
 ```
-
 
 Now we will describe each field of each file in the manifest:
 
@@ -4119,7 +4172,6 @@ will depend on the year).
     `entry_text` is always `"this web page"` and its `file_path` is **ALWAYS**
     `"index.html"`.
 
-
 If the entry has an alternate source code file, often it will be in the form of
 `"winner.alt.c"` or `"prog.alt.c"`; this is also what the `file_path` will be.
 The `entry_text` will typically (not always but almost always) be `"alternate
@@ -4131,8 +4183,8 @@ source code (if there is an alternate version). Some, however, have another file
 name. The `entry_text` for the `try` scripts will be `script to try entry` or
 something along those lines.
 
-Jump to: [top](#)
 
+Jump to: [top](#)
 
 
 <div id="validating_json">
@@ -4164,7 +4216,6 @@ repo](https://github.com/ioccc-src/mkiocccentry):
 
 The syntax of `jparse(1)` is very simple:
 
-
 ``` <!--sh-->
     jparse foo.json
 ```
@@ -4188,6 +4239,7 @@ install via the `mkiocccentry` repo because it has the dependencies built in,
 and because the `mkiocccentry` copy is that which is used by the current IOCCC,
 as the two can be different at times.
 
+
 Jump to: [top](#)
 
 
@@ -4198,6 +4250,7 @@ Jump to: [top](#)
 <div id="compiling">
 ## Section 4: Compiling IOCCC entries
 </div>
+
 
 Jump to: [top](#)
 
@@ -4264,6 +4317,7 @@ compilers might do different things, have different defects or other issues.
 Note that the `Makefile`s check the `CC` variable by substrings so that if you
 were to do something like `make CC=gcc=mp-12` it would register as `gcc`.
 
+
 Jump to: [top](#)
 
 
@@ -4303,7 +4357,9 @@ it like:
 
 though of course for both you may specify a rule or rules to run.
 
+
 Jump to: [top](#)
+
 
 <hr style="width:50%;text-align:left;margin-left:0">
 <hr style="width:50%;text-align:left;margin-left:0">
@@ -4312,6 +4368,7 @@ Jump to: [top](#)
 <div id="dependencies">
 ## Section 5: Dependencies for some IOCCC entries
 </div>
+
 
 Jump to: [top](#)
 
@@ -4359,7 +4416,6 @@ According to this [Linux for Devices tutorial on
 XOrg](https://www.linuxfordevices.com/tutorials/linux/install-xorg-on-linux) as
 of 2023 Mar 25 (quote verbatim):
 
-
 > Recently, RHEL developers categorized Xorg [Xorg was put in the ‘deprecated’
 software](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/9/html/9.0_release_notes/deprecated_functionality),
 as its development has mostly halted. Subsequent updates will completely replace
@@ -4374,7 +4430,6 @@ See the [Wayland](https://wayland.freedesktop.org) website for more details.
 **IMPORTANT NOTE**: We do **NOT** know if IOCCC entries will run under
 **Wayland**.  Some IOCCC entries that use X11 might be OK while other IOCCC
 entries that use X11 in an unusual way might fail under **Wayland**.
-
 
 See the [Wayland FAQ](https://wayland.freedesktop.org/faq.html) for more
 information.
@@ -4533,6 +4588,7 @@ See the
 FAQ on "[X.org deprecated](#Xorg_deprecated)"
 for more information.
 
+
 Jump to: [top](#)
 
 
@@ -4658,6 +4714,7 @@ See the
 FAQ on "[GitHub pull request](#pull_request)"
 for more information about pull requests.
 
+
 Jump to: [top](#)
 
 
@@ -4725,6 +4782,7 @@ for downloading, installing and using ncurses.
 
 We recommend trying a method suitable for your environment first, if possible.
 
+
 Jump to: [top](#)
 
 
@@ -4741,6 +4799,7 @@ install depends on your OS. See below.
 After it is installed, you should be able to compile and use the program as
 described in the index.html file.
 
+
 #### Red Hat based Linux
 
 As root or via sudo:
@@ -4749,9 +4808,11 @@ As root or via sudo:
     dnf install -y sox sox-devel
 ```
 
+
 #### macOS
 
 For macOS there are two well known options.
+
 
 ##### macOS via Homebrew
 
@@ -4818,6 +4879,7 @@ Then as root or via `sudo(1)` enter:
 
 That will install it to `/usr/local/bin`. Now you should be able to use the
 entry in question.
+
 
 Jump to: [top](#)
 
@@ -4899,6 +4961,7 @@ for downloading, installing and using netpbm.
 
 We recommend trying a method suitable for your environment first, if possible.
 
+
 Jump to: [top](#)
 
 
@@ -4978,6 +5041,7 @@ for downloading, installing and using libjpeg-turbo.
 
 We recommend trying a method suitable for your environment first, if possible.
 
+
 Jump to: [top](#)
 
 
@@ -5056,6 +5120,7 @@ Go to the [ImageMagick website](https://imagemagick.org) and follow their instru
 for downloading, installing and using ImageMagick.
 
 We recommend trying a method suitable for your environment first, if possible.
+
 
 Jump to: [top](#)
 
@@ -5145,8 +5210,8 @@ for downloading, installing and using OpenGL.
 
 We recommend trying a method suitable for your environment first, if possible.
 
-Jump to: [top](#)
 
+Jump to: [top](#)
 
 
 <div id="zlib">
@@ -5213,6 +5278,7 @@ for downloading, installing and using zlib.
 
 We recommend trying a method suitable for your environment first, if possible.
 
+
 Jump to: [top](#)
 
 
@@ -5222,6 +5288,7 @@ Jump to: [top](#)
 
 Please see the [official Ruby installation
 guide](https://www.ruby-lang.org/en/documentation/installation/).
+
 
 Jump to: [top](#)
 
@@ -5253,7 +5320,9 @@ Once this is done, try as root or via `sudo`:
     gem install rake
 ```
 
+
 Jump to: [top](#)
+
 
 <hr style="width:50%;text-align:left;margin-left:0">
 <hr style="width:50%;text-align:left;margin-left:0">
@@ -5262,6 +5331,7 @@ Jump to: [top](#)
 <div id="compile_problems">
 ## Section 6: Problems compiling IOCCC entries
 </div>
+
 
 Jump to: [top](#)
 
@@ -5323,6 +5393,7 @@ See the
 FAQ on "[original source code](#original_source_code)"
 for more information.
 
+
 Jump to: [top](#)
 
 
@@ -5344,6 +5415,7 @@ encourage you to submit a pull request with your ported code.
 Please see the
 FAQ on "[fixing an entry](#fix_an_entry)"
 for details.
+
 
 Jump to: [top](#)
 
@@ -5406,7 +5478,9 @@ a defect of `clang` that required numerous entries to be fixed for clang is that
 requires that `main()`'s arguments to be of a specific type. However some
 versions of `clang` are more strict in the number of args allowed.
 
+
 Jump to: [top](#)
+
 
 <hr style="width:50%;text-align:left;margin-left:0">
 <hr style="width:50%;text-align:left;margin-left:0">
@@ -5415,6 +5489,7 @@ Jump to: [top](#)
 <div id="running_entries">
 ## Section 7: Running IOCCC entries
 </div>
+
 
 Jump to: [top](#)
 
@@ -5441,6 +5516,7 @@ and there are some other benefits as well which you would miss if you did not
 use them. Nevertheless, if you prefer to do it manually, whether to help you
 process or appreciate the entry more, then please do so.
 
+
 Jump to: [top](#)
 
 
@@ -5459,6 +5535,7 @@ usually away with `stty echo`. Sometimes you can also get away with `stty sane`.
 `reset` does the most but note that it will clear the screen; it is not the
 clearing of the screen, however, that solves the problem, so `clear` will not
 help.
+
 
 Jump to: [top](#)
 
@@ -5506,7 +5583,9 @@ Please see the
 FAQ on "[fixing an entry](#fix_an_entry)"
 for how to submit a fix to an IOCCC entry.
 
+
 Jump to: [top](#)
+
 
 <div id="64bit">
 <div id="64-bit">
@@ -5547,7 +5626,9 @@ for details.  See also the
 FAQ on "[GitHub pull request](#pull_request)"
 for more information about pull requests.
 
+
 Jump to: [top](#)
+
 
 <div id="eof">
 <div id="intr">
@@ -5586,7 +5667,9 @@ to find what the `intr` is set to:
 reason it's not you might have to do something else including just piping it to
 just `grep intr` or whatever.
 
+
 Jump to: [top](#)
+
 
 <div id="entry_downloads">
 <div id="download">
@@ -5703,8 +5786,8 @@ browser to `1984/index.html`, scroll down to `Winning Entries of 1984 - The 1st
 IOCCC` and click on the link `1984/mullender` which will take you to the
 `index.html` file. Of course the caveats listed above still will apply.
 
-Jump to: [top](#)
 
+Jump to: [top](#)
 
 
 <hr style="width:50%;text-align:left;margin-left:0">
@@ -5714,6 +5797,7 @@ Jump to: [top](#)
 <div id="changes">
 ## Section 8: Changes made to IOCCC entries
 </div>
+
 
 Jump to: [top](#)
 
@@ -5762,7 +5846,6 @@ The following `make` rules exist to make a difference:
 * `make diff_prog_orig`:
     - This rule will show the diff of the entry to the original code (that is
     `entry.c` to `entry.orig.c`).
-
 
 For instance one of Landon's all time favourite entries is
 [1984/mullender](1984/mullender/index.html) so the file names would be:
@@ -5851,6 +5934,7 @@ See the
 FAQ on "[original source code files](#original_source_code)"
 for more information.
 
+
 Jump to: [top](#)
 
 
@@ -5874,7 +5958,6 @@ warning in such a way that caused confusing output for the entry, looking like:
     $ warning: this program uses gets(), which is unsafe.
     # nothing here, what to do?
 ```
-
 
 In some cases it is not possible to fix or at least it is highly unlikely and so
 those have mainly not been touched except one that has had the buffer size
@@ -5902,6 +5985,7 @@ in the name of backward compatibility.
 We're not sure how this is compatibility but either way it can cause a
 problem and it is this that has complicated most of the fixes though again some
 can look almost identical.
+
 
 Jump to: [top](#)
 
@@ -5932,6 +6016,7 @@ and the
 FAQ on "[entry source code changes](#what_changed)"
 for more information.
 
+
 Jump to: [top](#)
 
 
@@ -5943,6 +6028,7 @@ Due to the fact that the original code has sometimes had to change these files
 are the original winning entry or as close to as possible to the original that
 we can find (in some cases a change was made by the Judges, for example, or an
 author might have made a modification without saving the original).
+
 
 Jump to: [top](#)
 
@@ -5982,6 +6068,7 @@ See also the
 FAQ on "[original source code](#original_source_code)"
 for more information.
 
+
 Jump to: [top](#)
 
 
@@ -6005,6 +6092,7 @@ The above also meant that some entries that were recursive calls to `main()`
 could no longer be so: `main()` instead had to call another function that has
 the body of the old `main()` and that function would call itself again. In some
 cases, however, this had to be done even without `clang` objections.
+
 
 Jump to: [top](#)
 
@@ -6042,6 +6130,7 @@ In a few cases files were removed and there are multiple reasons for this too.
 
 The end result is to help improve the presentation of the entries in some way or
 ways.
+
 
 Jump to: [top](#)
 
@@ -6096,6 +6185,7 @@ for more information on changes. If you want to see more details, including how
 to see the actual differences, see the
 FAQ on "[what changed in more detail](#detailed-diff)".
 
+
 Jump to: [top](#)
 
 
@@ -6125,7 +6215,9 @@ other times something else.
 
 There were certainly other reasons as well.
 
+
 Jump to: [top](#)
+
 
 <hr style="width:50%;text-align:left;margin-left:0">
 <hr style="width:50%;text-align:left;margin-left:0">
@@ -6135,6 +6227,7 @@ Jump to: [top](#)
 ## Section 9: Helping the IOCCC
 </div>
 
+
 Jump to: [top](#)
 
 
@@ -6143,6 +6236,7 @@ Jump to: [top](#)
 ### Q 9.0: How can I help the IOCCC?
 </div>
 </div>
+
 
 #### We welcome your help in fixing IOCCC entries
 
@@ -6159,6 +6253,7 @@ in question.  Note that in several cases what you may have discovered,
 while a (mis)feature is not considered a bug and should **not be fixed**.
 In cases where the bug is known, the entry's [known bugs](bugs.html) file
 section may offer you important fixing clues.
+
 
 #### We welcome your help on fixing the IOCCC website
 
@@ -6184,6 +6279,7 @@ variety of kinds.
 Note that just because an entry is not in the bugs file does not mean there is
 not an issue and note that some issues are simply missing files, dead URL(s) or
 something like that.
+
 
 Jump to: [top](#)
 
@@ -6238,6 +6334,7 @@ for more information about pull requests.
 Note that we're much more inclined to accept an author's fixes but the judges
 have the final say in the matter.
 
+
 Jump to: [top](#)
 
 
@@ -6269,6 +6366,7 @@ To help you out here is a navigation menu in this FAQ entry:
 Go to [GitHub](https://github.com/) and click on 'Sign up'. Follow the
 instructions. Once you've completed this task make sure you log in to GitHub.
 
+
 #### Installing an ssh key to GitHub
 
 Assuming you do not have an ssh key you should go to the command prompt and
@@ -6299,6 +6397,7 @@ it might be `~/.ssh/github.pub`.
 
 Whatever the key file is, copy the contents and paste it into the GitHub field
 labelled _Key_. Once you have done so click on _Add SSH key_.
+
 
 #### Forking the IOCCC winner repo
 
@@ -6355,6 +6454,7 @@ where _foo_ is the file to add.
 When he's ready to make a commit he would need to create a new branch for the
 pull request.
 
+
 #### Committing your changes
 
 First, as an aside, if this is your first pull request (which we assume is if you're
@@ -6372,7 +6472,6 @@ Cody would see:
 Now, assuming that the forked repo is
 <https://github.com/xexyl/winner>, you'd type:
 
-
 ``` <!---sh-->
     git remote set-url origin git@github.com:xexyl/winner.git
 ```
@@ -6382,7 +6481,6 @@ Now you'd be ready to make your commits.
 Before doing anything else, however, a new branch needs to be created.
 Continuing the example above for
 [2020/ferguson1/play.sh](%%REPO_URL%%/2020/ferguson1/play.sh), it might be that:
-
 
 ``` <!---sh-->
     git checkout -B human-snakes
@@ -6492,6 +6590,7 @@ example, you would type:
 
 This will merge your pull request to your fork.
 
+
 Jump to: [top](#)
 
 
@@ -6522,6 +6621,7 @@ issues](https://github.com/ioccc-src/winner/issues) to see if the problem has
 already been reported.  If it has been reported, feel free to add a comment to
 the issue. Otherwise, if you do not see the same issue reported, then feel free
 to [open a new IOCCC website issue](https://github.com/ioccc-src/winner/issues/new?assignees=&labels=website&projects=&template=website_issue.yml&title=%5BWebsite%5D+%3Ctitle%3E).
+
 
 Jump to: [top](#)
 
@@ -6737,6 +6837,7 @@ See the
 FAQ on "[fixing author information](#fix_author)"
 for information about how to change author location codes.
 
+
 Jump to: [top](#)
 
 
@@ -6792,6 +6893,7 @@ replace that text with:
 If you just wish to report the bad link issue, see
 FAQ on "[report website problem](#report_web_problem)".
 
+
 Jump to: [top](#)
 
 
@@ -6815,6 +6917,7 @@ better for everyone. :-)
 If you wish to express your support and/or appreciation for our
 efforts, we suggest making an **Anonymous** gift via the
 [IOCCC Amazon wishlist](https://www.amazon.com/hz/wishlist/ls/3HSNTEL8RQ1M0?ref_=wl_share).
+
 
 Jump to: [top](#)
 
@@ -6913,6 +7016,7 @@ that be prove helpful.
 
 **THANK YOU** in advance for your willingness to assist!
 
+
 Jump to: [top](#)
 
 
@@ -6943,7 +7047,9 @@ IOCCC entry.  See also the
 FAQ on "[GitHub pull request](#pull_request)"
 for more information about pull requests.
 
+
 Jump to: [top](#)
+
 
 <hr style="width:50%;text-align:left;margin-left:0">
 <hr style="width:50%;text-align:left;margin-left:0">
@@ -6952,6 +7058,7 @@ Jump to: [top](#)
 <div id="misc">
 ## Section 10: Miscellaneous IOCCC
 </div>
+
 
 Jump to: [top](#)
 
@@ -6989,6 +7096,7 @@ and certainly **OUT OF DATE**.
 If you do make a new fork of **THIS** repo, we do ask that your fork keep up to
 date with the latest changes when possible. Thank you.
 
+
 Jump to: [top](#)
 
 
@@ -7013,6 +7121,7 @@ See the [Copyright](#copyright) at the bottom of IOCCC web pages for more detail
 See
 FAQ on "[using IOCCC content](#license)".
 For additional information on the [Copyright and CC BY-SA 4.0 License](license.html).
+
 
 Jump to: [top](#)
 
@@ -7061,6 +7170,7 @@ p.s. Here is an image of F. D. C. Willard:
  alt="image of F.D.C.Willard.png"
  width=600 height=401>
 
+
 Jump to: [top](#)
 
 
@@ -7093,6 +7203,7 @@ The .top, .allyear, .year and .path files are generated from the top level Makef
 ``` <!---sh-->
     make genpath
 ```
+
 
 Jump to: [top](#)
 
@@ -7157,6 +7268,7 @@ such as old rules and old guidelines, terms such as _entry_ may still be
 found.  Moreover, out of habit, the IOCCC judges sometimes use old
 names such as _entry_ when they should use _submission_.  Sorry (tm Canada)! 🇨🇦:-)
 
+
 Jump to: [top](#)
 
 
@@ -7193,6 +7305,7 @@ IOCCC content.  We use this to help ensure that we can all
 enjoy that those working on the IOCCC have proper Attribution
 including, of course, the IOCCC winners themselves!  It is designed
 to help ensure that everyone may enjoy the IOCCC.
+
 
 Jump to: [top](#)
 
@@ -7233,6 +7346,7 @@ follow posts something so you will have to check the IOCCC feed manually.
 mastodon feed](https://fosstodon.org/@ioccc) page and/or mastodon
 app from time to time to view IOCCC mastodon updates.
 
+
 Jump to: [top](#)
 
 
@@ -7252,12 +7366,14 @@ can hit ESC to do this) and then type the command:
 
 where `4` is the value you wish to set the tabstop to.
 
+
 Jump to: [top](#)
 
 
 <div id="menus">
 ### Q 10.8: How do the menus on the website work and what can I do if they don't work?
 </div>
+
 
 <div id="desktop_menu">
 #### Menu on desktops or laptop computers
@@ -7294,7 +7410,6 @@ For instance, on an iPhone 14
 Pro Max or similar device (in dimensions), you should see at the top right of
 every page, something that looks like:
 
-
 <img src="png/ioccc-menu-mobile-phone.png"
  alt="screenshot of IOCCC menu on iPhone 14 Pro Max"
  width=1290 height=527>
@@ -7306,6 +7421,7 @@ In this case click on the icon at the top right corner that looks like:
  width=24 height=24>
 
 to activate the menu.
+
 
 <div id="no_javascript_menu">
 ##### Menu on mobile devices if JavaScript is disabled
@@ -7322,6 +7438,7 @@ at the top right corner; clicking on this will take you to the [no JavaScript
 menu](nojs-menu.html) which is a plaintext menu. You of course can use this if
 you like, even if you do not have JavaScript enabled, by pointing your browser
 to <https://www.ioccc.org/nojs-menu.html>.
+
 
 <div id="tablet_menu">
 ##### Menus on tablet devices (e.g. iPads)
@@ -7373,6 +7490,7 @@ least [report it as an
 issue](https://github.com/ioccc-src/winner/issues/new/choose) (choose
 the category _Website issue_).
 
+
 Jump to: [top](#)
 
 
@@ -7398,6 +7516,7 @@ Of course if you know the author's name you can go directly to
 [authors.html](authors.html) and click on their surname's/last name's/second
 name's initial and then scroll down (if necessary) to the author in question.
 
+
 Jump to: [top](#)
 
 
@@ -7409,6 +7528,7 @@ This was a C beautifier for Unix, both AT&T and Berkeley, but it seems to no
 longer be available, code wise, except for Plan 9, but Plan 9 was never used for
 judging the IOCCC. A Unix man page for `cb`
 [still exists](https://www.ibm.com/docs/en/aix/7.3?topic=c-cb-command).
+
 
 Jump to: [top](#)
 
@@ -7626,6 +7746,7 @@ Jump to: [top](#)
 </div>
 </div>
 
+
 Jump to: [top](#)
 
 
@@ -7722,6 +7843,7 @@ P.S. Part of the inspiration for making the IOCCC a contest goes to the
 reference to that (in)famous dark and stormy night all the way back in 1830 when
 Landon was just a wee lad).
 
+
 Jump to: [top](#)
 
 
@@ -7741,6 +7863,7 @@ and the website generation) and the JSON parser (for the tools, the contest and
 the website) to make it easier and much more likely for the IOCCC to be held on
 a yearly basis.
 
+
 Jump to: [top](#)
 
 
@@ -7749,6 +7872,7 @@ Jump to: [top](#)
 ### Q 11.2: What is the history of the IOCCC website?
 </div>
 </div>
+
 
 #### In the beginning of www.ioccc.org
 
@@ -7765,6 +7889,7 @@ repo](https://web.archive.org/web/20210101211346/https://www.ioccc.org/) on
 [GitHub](https://github.com).  From this point on, the [official IOCCC web
 site](https://www.ioccc.org) became a [GitHub Pages](https://pages.github.com)
 website.
+
 
 #### 2020 Dec 28 bzip2 compressed tarball archive
 
@@ -7948,6 +8073,7 @@ and the [Pull Request 24 in the winner repo](https://github.com/ioccc-src/winner
 The **Great Fork Merge** _changed 5,157 files_ with _843,045 additions_ and _137,758
 deletions_, in _6,169 commits_ ‼️
 
+
 Jump to: [top](#)
 
 
@@ -7964,6 +8090,7 @@ In later years, Rule 2 was split into two parts.  These two parts of Rule 2 are:
 * Rule 2a: Overall size limit of "prog.c"
 * Rule 2b: Size of "prog.c", w/o counting certain types of characters
 
+
 <div id="size_rule1984-1985">
 #### IOCCC 1984-1985
 </div>
@@ -7972,6 +8099,7 @@ In later years, Rule 2 was split into two parts.  These two parts of Rule 2 are:
 
 * Rule 2a: 512
 * Rule 2b: n/a
+
 
 <div id="size_rule1986-1987">
 #### IOCCC 1986-1987
@@ -7982,6 +8110,7 @@ In later years, Rule 2 was split into two parts.  These two parts of Rule 2 are:
 * Rule 2a: 1024
 * Rule 2b: n/a
 
+
 <div id="size_rule1988-1991">
 #### IOCCC 1988-1991
 </div>
@@ -7991,12 +8120,14 @@ In later years, Rule 2 was split into two parts.  These two parts of Rule 2 are:
 * Rule 2a: 1536
 * Rule 2b: n/a
 
+
 <div id="size_rule1992-2000">
 #### IOCCC 1992-2000
 </div>
 
 * Rule 2a: 3217
 * Rule 2b: 1536
+
 
 <div id="size_rule2001-2012">
 #### IOCCC: 2001-2012
@@ -8005,6 +8136,7 @@ In later years, Rule 2 was split into two parts.  These two parts of Rule 2 are:
 * Rule 2a: 4096
 * Rule 2b: 2048
 
+
 <div id="size_rule2013-2020">
 #### IOCCC 2013-2020
 </div>
@@ -8012,12 +8144,14 @@ In later years, Rule 2 was split into two parts.  These two parts of Rule 2 are:
 * Rule 2a: 4096
 * Rule 2b: 2053
 
+
 <div id="size_rule2024-xxxx">
 #### IOCCC 2024-date
 </div>
 
 * Rule 2a: 4993
 * Rule 2b: 2503
+
 
 Jump to: [top](#)
 
@@ -8035,6 +8169,7 @@ See the
 FAQ on "[Great Fork Merge Date](#great_fork_merge_date)"
 for more information and stats.
 
+
 Jump to: [top](#)
 
 
@@ -8050,6 +8185,7 @@ general [USENIX conference](https://www.usenix.org/conferences), usually
 immediately after the BSD BOF, where the winners of a new IOCCC were
 announced in the early years of the IOCCC.
 
+
 Jump to: [top](#)
 
 
@@ -8058,6 +8194,9 @@ Jump to: [top](#)
 </div>
 
 Please see the [About the IOCCC page](about.html) for more details.
+
+
+Jump to: [top](#)
 
 
 <!--
