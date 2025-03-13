@@ -491,7 +491,6 @@ Nevertheless tools such as those listed are **NOT** obfuscated.  If submitted, t
 would probably violate a number of rules.  :-)
 </p>
 
-<p class="leftbar">
 - [mkiocccentry&lpar;1&rpar;](https://github.com/ioccc-src/mkiocccentry/blob/master/mkiocccentry.c)
 - [iocccsize&lpar;1&rpar;](https://github.com/ioccc-src/mkiocccentry/blob/master/iocccsize.c)
 - [chkentry&lpar;1&rpar;](https://github.com/ioccc-src/mkiocccentry/blob/master/chkentry.c)
@@ -500,7 +499,6 @@ would probably violate a number of rules.  :-)
 - [jparse repo as cloned by the mkiocccentry repo](https://github.com/xexyl/jparse)
 - [dbg repo as cloned by the mkiocccentry repo](https://github.com/lcn2/dbg)
 - [dyn_array repo as cloned by the mkiocccentry repo](https://github.com/lcn2/dyn_array)
-</p>
 
 <p class="leftbar">
 The IOCCC has a rich history of remarkable winning entries created by
@@ -605,11 +603,9 @@ If this seems unreasonable we suggest you wait until the next contest and in
 the interim ponder this (modified or not) quote said by Bill Gates:
 </p>
 
-<p class="leftbar">
 > 640K submissions ought to be enough for anybody.
 >
 >    -- Bill Gates s/640K/10/ (allegedly :-) )
-</p>
 
 
 Jump to: [top](#)
@@ -876,9 +872,7 @@ Jump to: [top](#)
 
 The entirety of your submission must be submitted under the following license:
 
-<p class="leftbar">
-- **[CC BY-SA 4.0 DEED Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/)**
-</p>
+> **[CC BY-SA 4.0 DEED Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/)**
 
 <p class="leftbar">
 See also [Rule 7](#rule7).
