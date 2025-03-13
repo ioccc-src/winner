@@ -186,12 +186,10 @@ To assist in the formation of the xz compressed tarball for submission, use the
 See FAQs regarding:
 </p>
 
-<p class="leftbar">
 - [obtaining the latest mkiocccentry tools](../faq.html#obtaining_mkiocccentry)
 - [compiling the mkiocccentry tools](../faq.html#compiling_mkiocccentry)
 - [installing the mkiocccentry tools](../faq.html#install)
 - [using the mkiocccentry tools](../faq.html#using_mkiocccentry)
-</p>
 
 <p class="leftbar">
 Uploading a tarball not formed by `mkiocccentry(1)` puts you at a very big risk of
