@@ -1,6 +1,6 @@
 # IOCCC FAQ Table of Contents
 
-This is FAQ version **28.2.15 2025-03-10**.
+This is FAQ version **28.2.16 2025-03-12**.
 
 
 ## 0. [Entering the IOCCC: the bare minimum you need to know](#enter_questions)
@@ -11,6 +11,7 @@ This is FAQ version **28.2.15 2025-03-10**.
     - **Q 0.1.3**: <a class="normal" href="#compiling_mkiocccentry">How do I compile the mkiocccentry toolkit?</a>
     - **Q 0.1.4**: <a class="normal" href="#install">How do I install mkiocccentry(1) and related tools?</a>
     - **Q 0.1.5**: <a class="normal" href="#using_mkiocccentry">How do I use mkiocccentry?</a>
+    - **Q 0.1.6**: <a class="normal" href="#minimum_versions">What are the minimum versions required for this contest?</a>
 - **Q 0.2**: <a class="normal" href="#platform">What platform should I assume for my submission?</a>
 - **Q 0.3**: <a class="normal" href="#makefile">What should I put in my submission Makefile?</a>
 - **Q 0.4**: <a class="normal" href="#remarks">What should I put in the remarks.md file of my submission?</a>
@@ -342,7 +343,6 @@ and will not work from any directory, however.
 
 Jump to: [top](#)
 
-
 <div id="using_mkiocccentry">
 #### Q 0.1.5: How do I use mkiocccentry?
 </div>
@@ -379,12 +379,11 @@ username, which is **in the form of a UUID**, and submission number along with
 the timestamp; see the [rules](next/rules.html) for more details on this, and in
 particular [Rule 17](next/rules.html#rule17).
 
-**IMPORTANT NOTE**: if you run the program outside the repo directory
-(specifying the absolute or relative path to the tool) and you have not
-installed the tools (and we **STRONGLY** recommend you **do** install them),
-then you will have to specify the options for the tools that are required like
-`chkentry(1)`, `txzchk(1)` and `fnamchk(1)`. And remember to make sure you have
-the latest version so you do not violate [Rule 17](next/rules.html#rule17).
+**IMPORTANT NOTE**: the tools that require other tools, `mkiocccentry(1)` and
+`txzchk(1)`, will, as of version `2.0.2 2025-03-11`, search under `$PATH`. If
+you have an earlier version and you have not installed the tools and run the
+tools from outside the repo directory, you will have to use the options to the
+tools to set the path to the required tools.
 
 If the **_subdirectory_ in the _work directory_** (based on your submit ID and
 slot number) already exists, you will have to move it, remove it or otherwise
@@ -402,10 +401,31 @@ tools, as mentioned above, and as described in the "[finer
 details](#mkiocccentry_details)" section.
 
 See also the
-[mkiocccentry repo FAQ](https://github.com/ioccc-src/mkiocccentry/blob/master/FAQ.md)
-for more up to date information on downloading, compiling, and related FAQ information.
+FAQ on "[what the minimum required versions are for this
+contest](#minimum_versions)"
+for more details on how to verify you have the correct versions for this
+contest.
+
 
 Jump to: [top](#)
+
+<div id="minimum_versions">
+#### Q 0.1.6: What are the minimum versions required for this contest?
+</div>
+
+At minimum, the tools **MUST** be version:
+
+- `iocccsize(1)`: `"28.15 2024-06-27"`.
+- `mkiocccentry(1)`: `"2.0.1 2025-03-02"`.
+- `fnamchk(1)`: `"2.0.0 2025-02-28"`.
+- `txzchk(1)`: `"2.0.1 2025-03-02"`.
+- `chkentry(1)`: `"2.0.1 2025-03-02"`.
+
+See also the
+FAQ on "[obtaining the latest release of the toolkit](#obtaining_mkiocccentry)".
+
+Jump to: [top](#)
+
 
 
 <div id="SUS">

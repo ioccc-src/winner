@@ -424,7 +424,7 @@
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <!-- BEFORE: 1st line of markdown file: quick-start.md -->
-<p>This quick start guide is version <strong>28.0.1 2025-03-01</strong>.</p>
+<p>This quick start guide is version <strong>28.0.2 2025-03-12</strong>.</p>
 <div id="enter_questions">
 <div id="enter">
 <h1 id="entering-the-ioccc-the-bare-minimum-you-need-to-know">Entering the IOCCC: the bare minimum you need to know</h1>
@@ -543,10 +543,12 @@ correct your entry and then re-run the <code>mkiocccentry</code> tool.</p>
 <p>If you choose to risk violating <a href="next/rules.html">Rules</a>, be sure and explain your reason
 for doing so in your <code>remarks.md</code> file.</p>
 <p>See also <a href="next/rules.html#rule17">Rule 17</a>!</p>
-<p><strong>IMPORTANT NOTE</strong>: if you run the program outside the repo directory
-(specifying the absolute or relative path to the tool) and you have not
-installed the tools (and we <strong>STRONGLY</strong> recommend you <strong>do</strong> install them),
-then you will have to specify the options for the tools that are required like
+<p><strong>IMPORTANT NOTE</strong>: the tools that require other tools, <code>mkiocccentry(1)</code> and
+<code>txzchk(1)</code>, will, as of version <code>2.0.2 2025-03-11</code>, search under <code>$PATH</code>. If
+you have an earlier version and you have not installed the tools and run the
+tools from outside the repo directory, you will have to use the options to the
+tools to set the path to the required tools.</p>
+<p>Do remember to make sure you have the latest vers
 <code>chkentry(1)</code>, <code>txzchk(1)</code> and <code>fnamchk(1)</code>. And remember to make sure you have
 the latest version so you do not violate <a href="next/rules.html#rule17">Rule 17</a>.
 See the
@@ -558,6 +560,11 @@ FAQ on “<a href="faq.html#installing">installing the mkiocccentry tools</a>”
 and the
 FAQ on “<a href="faq.html#using_mkiocccentry">using the mkiocccentry tools</a>”
 for more help.</p>
+<p>See also the
+FAQ on “<a href="faq.html#minimum_versions">what the minimum required versions are for this
+contest</a>”
+for more details on how to verify you have the correct versions for this
+contest.</p>
 <div id="step_7">
 <div id="submit">
 <h2 id="upload-your-submission-to-the-ioccc-submit-server">7. Upload your submission to the IOCCC submit server</h2>

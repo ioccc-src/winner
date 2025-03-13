@@ -425,7 +425,7 @@
 
 <!-- BEFORE: 1st line of markdown file: faq.md -->
 <h1 id="ioccc-faq-table-of-contents">IOCCC FAQ Table of Contents</h1>
-<p>This is FAQ version <strong>28.2.15 2025-03-10</strong>.</p>
+<p>This is FAQ version <strong>28.2.16 2025-03-12</strong>.</p>
 <h2 id="entering-the-ioccc-the-bare-minimum-you-need-to-know">0. <a href="#enter_questions">Entering the IOCCC: the bare minimum you need to know</a></h2>
 <ul>
 <li><strong>Q 0.0</strong>: <a class="normal" href="#enter">How can I enter the IOCCC?</a></li>
@@ -436,6 +436,7 @@
 <li><strong>Q 0.1.3</strong>: <a class="normal" href="#compiling_mkiocccentry">How do I compile the mkiocccentry toolkit?</a></li>
 <li><strong>Q 0.1.4</strong>: <a class="normal" href="#install">How do I install mkiocccentry(1) and related tools?</a></li>
 <li><strong>Q 0.1.5</strong>: <a class="normal" href="#using_mkiocccentry">How do I use mkiocccentry?</a></li>
+<li><strong>Q 0.1.6</strong>: <a class="normal" href="#minimum_versions">What are the minimum versions required for this contest?</a></li>
 </ul></li>
 <li><strong>Q 0.2</strong>: <a class="normal" href="#platform">What platform should I assume for my submission?</a></li>
 <li><strong>Q 0.3</strong>: <a class="normal" href="#makefile">What should I put in my submission Makefile?</a></li>
@@ -740,12 +741,11 @@ directory</strong> will be created, with the name based on your IOCCC registrati
 username, which is <strong>in the form of a UUID</strong>, and submission number along with
 the timestamp; see the <a href="next/rules.html">rules</a> for more details on this, and in
 particular <a href="next/rules.html#rule17">Rule 17</a>.</p>
-<p><strong>IMPORTANT NOTE</strong>: if you run the program outside the repo directory
-(specifying the absolute or relative path to the tool) and you have not
-installed the tools (and we <strong>STRONGLY</strong> recommend you <strong>do</strong> install them),
-then you will have to specify the options for the tools that are required like
-<code>chkentry(1)</code>, <code>txzchk(1)</code> and <code>fnamchk(1)</code>. And remember to make sure you have
-the latest version so you do not violate <a href="next/rules.html#rule17">Rule 17</a>.</p>
+<p><strong>IMPORTANT NOTE</strong>: the tools that require other tools, <code>mkiocccentry(1)</code> and
+<code>txzchk(1)</code>, will, as of version <code>2.0.2 2025-03-11</code>, search under <code>$PATH</code>. If
+you have an earlier version and you have not installed the tools and run the
+tools from outside the repo directory, you will have to use the options to the
+tools to set the path to the required tools.</p>
 <p>If the <strong><em>subdirectory</em> in the <em>work directory</em></strong> (based on your submit ID and
 slot number) already exists, you will have to move it, remove it or otherwise
 specify a different work directory (<strong>NOT</strong> the subdirectory), as it needs to be
@@ -760,8 +760,24 @@ looked at if the submission wins), run some tests and run a number of other
 tools, as mentioned above, and as described in the “<a href="#mkiocccentry_details">finer
 details</a>” section.</p>
 <p>See also the
-<a href="https://github.com/ioccc-src/mkiocccentry/blob/master/FAQ.md">mkiocccentry repo FAQ</a>
-for more up to date information on downloading, compiling, and related FAQ information.</p>
+FAQ on “<a href="#minimum_versions">what the minimum required versions are for this
+contest</a>”
+for more details on how to verify you have the correct versions for this
+contest.</p>
+<p>Jump to: <a href="#">top</a></p>
+<div id="minimum_versions">
+<h4 id="q-0.1.6-what-are-the-minimum-versions-required-for-this-contest">Q 0.1.6: What are the minimum versions required for this contest?</h4>
+</div>
+<p>At minimum, the tools <strong>MUST</strong> be version:</p>
+<ul>
+<li><code>iocccsize(1)</code>: <code>"28.15 2024-06-27"</code>.</li>
+<li><code>mkiocccentry(1)</code>: <code>"2.0.1 2025-03-02"</code>.</li>
+<li><code>fnamchk(1)</code>: <code>"2.0.0 2025-02-28"</code>.</li>
+<li><code>txzchk(1)</code>: <code>"2.0.1 2025-03-02"</code>.</li>
+<li><code>chkentry(1)</code>: <code>"2.0.1 2025-03-02"</code>.</li>
+</ul>
+<p>See also the
+FAQ on “<a href="#obtaining_mkiocccentry">obtaining the latest release of the toolkit</a>”.</p>
 <p>Jump to: <a href="#">top</a></p>
 <div id="SUS">
 <div id="platform">
