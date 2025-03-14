@@ -17,6 +17,14 @@
 # "Share and Enjoy!"
 #     --  Sirius Cybernetics Corporation Complaints Division, JSON spec department. :-)
 
+
+# IOCCC requires use of C locale
+#
+export LC_ALL="C"
+export LANG="C"
+export LC_NUMERIC="C"
+
+
 VERGE=$(type -P verge)
 export VERGE
 if [[ -z $VERGE ]]; then
@@ -50,7 +58,7 @@ fi
 
 # set variables referenced in the usage message
 #
-export VERSION="1.0.0 2024-10-14"
+export VERSION="2.0.0 2025-03-13"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -147,6 +155,9 @@ fi
 # If -v 3 or higher, print exported variables in order that they were exported.
 #
 if [[ $V_FLAG -ge 3 ]]; then
+    echo "$0: debug[3]: LC_ALL=$LC_ALL" 1>&2
+    echo "$0: debug[3]: LANG=$LANG" 1>&2
+    echo "$0: debug[3]: LC_NUMERIC=$LC_NUMERIC" 1>&2
     echo "$0: debug[3]: VERSION=$VERSION" 1>&2
     echo "$0: debug[3]: NAME=$NAME" 1>&2
     echo "$0: debug[3]: V_FLAG=$V_FLAG" 1>&2

@@ -96,9 +96,16 @@ shopt -u extglob	# enable extended globbing patterns
 shopt -s globstar	# enable ** to match all files and zero or more directories and subdirectories
 
 
+# IOCCC requires use of C locale
+#
+export LC_ALL="C"
+export LANG="C"
+export LC_NUMERIC="C"
+
+
 # set variables referenced in the usage message
 #
-export VERSION="1.14.2 2024-11-16"
+export VERSION="2.0.0 2025-03-13"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -550,6 +557,9 @@ fi
 # If -v 3 or higher, print exported variables in order that they were exported.
 #
 if [[ $V_FLAG -ge 3 ]]; then
+    echo "$0: debug[3]: LC_ALL=$LC_ALL" 1>&2
+    echo "$0: debug[3]: LANG=$LANG" 1>&2
+    echo "$0: debug[3]: LC_NUMERIC=$LC_NUMERIC" 1>&2
     echo "$0: debug[3]: VERSION=$VERSION" 1>&2
     echo "$0: debug[3]: NAME=$NAME" 1>&2
     echo "$0: debug[3]: V_FLAG=$V_FLAG" 1>&2

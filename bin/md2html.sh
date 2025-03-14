@@ -156,9 +156,16 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 shopt -s lastpipe	# run last command of a pipeline not executed in the background in the current shell environment
 
 
+# IOCCC requires use of C locale
+#
+export LC_ALL="C"
+export LANG="C"
+export LC_NUMERIC="C"
+
+
 # set variables referenced in the usage message
 #
-export VERSION="1.8 2024-11-07"
+export VERSION="2.0.0 2025-03-13"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -699,6 +706,9 @@ function debug_parameters
 
     # print values that could be modified by parse_command_line
     #
+    echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: LC_ALL=$LC_ALL" 1>&2
+    echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: LANG=$LANG" 1>&2
+    echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: LC_NUMERIC=$LC_NUMERIC" 1>&2
     echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: VERSION=$VERSION" 1>&2
     echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: NAME=$NAME" 1>&2
     echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: V_FLAG=$V_FLAG" 1>&2

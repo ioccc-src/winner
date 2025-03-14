@@ -24,6 +24,13 @@
 # Share and enjoy! :-)
 
 
+# IOCCC requires use of C locale
+#
+export LC_ALL="C"
+export LANG="C"
+export LC_NUMERIC="C"
+
+
 # modify well known markdown headers that are not in canonical form
 #
 for i in $(git ls-files '[0-9][0-9][0-9][0-9]/*README.md'); do

@@ -52,9 +52,16 @@
 # Share and enjoy! :-)
 
 
+# IOCCC requires use of C locale
+#
+export LC_ALL="C"
+export LANG="C"
+export LC_NUMERIC="C"
+
+
 # load stdin into a temporary gitignore file
 #
-export VERSION="1.2 2024-09-05"
+export VERSION="2.0.0 2025-03-13"
 NAME=$(basename "$0")
 export NAME
 export TMP_GITIGNORE=".tmp.$NAME.GITIGNORE.$$.tmp"

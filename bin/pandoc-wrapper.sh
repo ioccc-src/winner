@@ -100,9 +100,16 @@ shopt -u extglob	# enable extended globbing patterns
 shopt -s globstar	# enable ** to match all files and zero or more directories and subdirectories
 
 
+# IOCCC requires use of C locale
+#
+export LC_ALL="C"
+export LANG="C"
+export LC_NUMERIC="C"
+
+
 # set variables referenced in the usage message
 #
-export VERSION="1.7.2 2024-08-05"
+export VERSION="2.0.0 2025-03-13"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -283,6 +290,8 @@ export PANDOC_TOOL_VERSION
 # It may be possible that versions > 2.14.0.3 and < 3.1.12.2 might work.
 # We tested pandoc version 3.1.12.2 and therefore set this as the minimum allowed.
 #
+# As of 2025-03-13, pandoc version is 3.6.3, so versions > 3.1.12.2 and < 3.6.3 might work too.
+#
 export PANDOC_MIN_VERSION="3.1.12.2"
 
 
@@ -354,6 +363,9 @@ export INC_DIR="inc"
 # parameter debugging
 #
 if [[ $V_FLAG -ge 3 ]]; then
+    echo "$0: debug[3]: LC_ALL=$LC_ALL" 1>&2
+    echo "$0: debug[3]: LANG=$LANG" 1>&2
+    echo "$0: debug[3]: LC_NUMERIC=$LC_NUMERIC" 1>&2
     echo "$0: debug[3]: VERSION=$VERSION" 1>&2
     echo "$0: debug[3]: NAME=$NAME" 1>&2
     echo "$0: debug[3]: V_FLAG=$V_FLAG" 1>&2

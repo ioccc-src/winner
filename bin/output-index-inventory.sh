@@ -106,17 +106,24 @@ fi
 # We must declare arrays with -ag or -Ag, and we need loops to "export" modified variables.
 # This requires a bash with a version 4.2 or later.  See the larger comment above about bash versions.
 #
-shopt -s nullglob	# enable expand to nothing rather than remaining unexpanded
+shopt -s nullglob	# enable expanded to nothing rather than remaining unexpanded
 shopt -u failglob	# disable error message if no matches are found
-shopt -u dotglob	# disable matching files starting with '.'
+shopt -u dotglob	# disable matching files starting with .
 shopt -u nocaseglob	# disable strict case matching
 shopt -u extglob	# enable extended globbing patterns
-shopt -s globstar	# enable '**' to match all files and zero or more directories and subdirectories
+shopt -s globstar	# enable ** to match all files and zero or more directories and subdirectories
+
+
+# IOCCC requires use of C locale
+#
+export LC_ALL="C"
+export LANG="C"
+export LC_NUMERIC="C"
 
 
 # set variables referenced in the usage message
 #
-export VERSION="1.4.4 2024-11-04"
+export VERSION="2.0.0 2025-03-13"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -462,6 +469,9 @@ fi
 # parameter debugging
 #
 if [[ $V_FLAG -ge 3 ]]; then
+    echo "$0: debug[3]: LC_ALL=$LC_ALL" 1>&2
+    echo "$0: debug[3]: LANG=$LANG" 1>&2
+    echo "$0: debug[3]: LC_NUMERIC=$LC_NUMERIC" 1>&2
     echo "$0: debug[3]: VERSION=$VERSION" 1>&2
     echo "$0: debug[3]: NAME=$NAME" 1>&2
     echo "$0: debug[3]: V_FLAG=$V_FLAG" 1>&2
