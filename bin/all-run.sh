@@ -115,9 +115,20 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # IOCCC requires use of C locale
 #
-export LC_ALL="C"
 export LANG="C"
+export LC_CTYPE="C"
 export LC_NUMERIC="C"
+export LC_TIME="C"
+export LC_COLLATE="C"
+export LC_MONETARY="C"
+export LC_MESSAGES="C"
+export LC_PAPER="C"
+export LC_NAME="C"
+export LC_ADDRESS="C"
+export LC_TELEPHONE="C"
+export LC_MEASUREMENT="C"
+export LC_IDENTIFICATION="C"
+export LC_ALL="C"
 
 
 # set variables referenced in the usage message
@@ -446,9 +457,20 @@ fi
 # If -v 3 or higher, print exported variables in order that they were exported.
 #
 if [[ $V_FLAG -ge 3 ]]; then
-    echo "$0: debug[3]: LC_ALL=$LC_ALL" 1>&2
     echo "$0: debug[3]: LANG=$LANG" 1>&2
+    echo "$0: debug[3]: LC_CTYPE=$LC_CTYPE" 1>&2
     echo "$0: debug[3]: LC_NUMERIC=$LC_NUMERIC" 1>&2
+    echo "$0: debug[3]: LC_TIME=$LC_TIME" 1>&2
+    echo "$0: debug[3]: LC_COLLATE=$LC_COLLATE" 1>&2
+    echo "$0: debug[3]: LC_MONETARY=$LC_MONETARY" 1>&2
+    echo "$0: debug[3]: LC_MESSAGES=$LC_MESSAGES" 1>&2
+    echo "$0: debug[3]: LC_PAPER=$LC_PAPER" 1>&2
+    echo "$0: debug[3]: LC_NAME=$LC_NAME" 1>&2
+    echo "$0: debug[3]: LC_ADDRESS=$LC_ADDRESS" 1>&2
+    echo "$0: debug[3]: LC_TELEPHONE=$LC_TELEPHONE" 1>&2
+    echo "$0: debug[3]: LC_MEASUREMENT=$LC_MEASUREMENT" 1>&2
+    echo "$0: debug[3]: LC_IDENTIFICATION=$LC_IDENTIFICATION" 1>&2
+    echo "$0: debug[3]: LC_ALL=$LC_ALL" 1>&2
     echo "$0: debug[3]: VERSION=$VERSION" 1>&2
     echo "$0: debug[3]: NAME=$NAME" 1>&2
     echo "$0: debug[3]: V_FLAG=$V_FLAG" 1>&2

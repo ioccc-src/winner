@@ -158,9 +158,20 @@ shopt -s lastpipe	# run last command of a pipeline not executed in the backgroun
 
 # IOCCC requires use of C locale
 #
-export LC_ALL="C"
 export LANG="C"
+export LC_CTYPE="C"
 export LC_NUMERIC="C"
+export LC_TIME="C"
+export LC_COLLATE="C"
+export LC_MONETARY="C"
+export LC_MESSAGES="C"
+export LC_PAPER="C"
+export LC_NAME="C"
+export LC_ADDRESS="C"
+export LC_TELEPHONE="C"
+export LC_MEASUREMENT="C"
+export LC_IDENTIFICATION="C"
+export LC_ALL="C"
 
 
 # set variables referenced in the usage message
@@ -706,9 +717,20 @@ function debug_parameters
 
     # print values that could be modified by parse_command_line
     #
-    echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: LC_ALL=$LC_ALL" 1>&2
     echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: LANG=$LANG" 1>&2
+    echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: LC_CTYPE=$LC_CTYPE" 1>&2
     echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: LC_NUMERIC=$LC_NUMERIC" 1>&2
+    echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: LC_TIME=$LC_TIME" 1>&2
+    echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: LC_COLLATE=$LC_COLLATE" 1>&2
+    echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: LC_MONETARY=$LC_MONETARY" 1>&2
+    echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: LC_MESSAGES=$LC_MESSAGES" 1>&2
+    echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: LC_PAPER=$LC_PAPER" 1>&2
+    echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: LC_NAME=$LC_NAME" 1>&2
+    echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: LC_ADDRESS=$LC_ADDRESS" 1>&2
+    echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: LC_TELEPHONE=$LC_TELEPHONE" 1>&2
+    echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: LC_MEASUREMENT=$LC_MEASUREMENT" 1>&2
+    echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: LC_IDENTIFICATION=$LC_IDENTIFICATION" 1>&2
+    echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: LC_ALL=$LC_ALL" 1>&2
     echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: VERSION=$VERSION" 1>&2
     echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: NAME=$NAME" 1>&2
     echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: V_FLAG=$V_FLAG" 1>&2
