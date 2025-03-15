@@ -60,7 +60,6 @@ This is FAQ version **28.2.16 2025-03-12**.
 - **Q 3.9**: <a class="normal" href="#entry_id_faq">What is an `entry_id`?</a>
 - **Q 3.10**: <a class="normal" href="#entry_json">What is a `.entry.json` file and how is it used?</a>
 - **Q 3.11**: <a class="normal" href="#jparse">How can I validate any JSON document?</a>
-- **Q 3.12**: <a class="normal" href="#install">How can I install the `mkiocccentry(1)` and related tools?</a>
 
 
 ## 4. [Compiling IOCCC entries](#compiling)
