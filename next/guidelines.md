@@ -44,7 +44,9 @@ granted provided this this copyright and notice are included in its entirety
 and remains unaltered.  All other uses must receive prior permission in
 writing by [contacting the judges](../contact.html).
 
+
 Jump to: [top](#)
+
 
 <div id="guidelines_version">
 <div id="version">
@@ -53,7 +55,7 @@ Jump to: [top](#)
 </div>
 
 <p class="leftbar">
-These [IOCCC guidelines](guidelines.html) are version **28.46 2025-03-12**.
+These [IOCCC guidelines](guidelines.html) are version **28.47 2025-03-15**.
 </p>
 
 <p class="leftbar">
@@ -63,7 +65,9 @@ download="guidelines.md">is available for download</a>.
 
 **IMPORTANT**: Be **SURE** to read the [IOCCC rules](rules.html).
 
+
 Jump to: [top](#)
+
 
 <div id="change_marks">
 # Change marks
@@ -77,7 +81,9 @@ Most lines (we sometimes make mistakes) that were modified since the previous
 IOCCC start with a solid 4 pixel black left border (or, in the case of a code
 block or blockquote, just a vertical bar).
 
+
 Jump to: [top](#)
+
 
 <div id="about_guidelines">
 # ABOUT THIS FILE:
@@ -333,6 +339,16 @@ obviates some of the need to `#define` C reserved words in an effort
 to get around the size limits of [Rule 2](rules.html#rule2).
 
 Yes Virginia, **that is a hint**!
+
+<p class="leftbar">
+The **official locale** of the **IOCCC** is **C**.
+</p>
+
+<p class="leftbar">
+The [mkiocccentry toolkit](https://github.com/ioccc-src/mkiocccentry),
+as of [Release version 2.4.4 2025-03-15](https://github.com/ioccc-src/mkiocccentry/releases/tag/2.4.4),
+will run with a locale set to **C**.
+</p>
 
 
 Jump to: [top](#)

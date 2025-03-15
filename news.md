@@ -20,6 +20,18 @@ We invite you to join the **IOCCC Discord Community** via this link: [https://di
 </div>
 
 
+## 2025-03-15
+
+We released [mkiocccentry toolkit](https://github.com/ioccc-src/mkiocccentry) **version 2.4.4 2025-03-15**.
+
+While you are **NOT** required to use this release in order to submit to **IOCCC28**,
+we do **RECOMMEND** that you **install and use** it, because among other things, it provides:
+
+* Set locale to **C**, the **official locale** of the **IOCCC**.
+
+See the [version 2.4.4 release notes](https://github.com/ioccc-src/mkiocccentry/releases/tag/2.4.4) for more details.
+
+
 ## 2025-03-12
 
 We released [mkiocccentry toolkit](https://github.com/ioccc-src/mkiocccentry) **version 2.4.3 2025-03-11**.
@@ -32,8 +44,7 @@ we do **RECOMMEND** that you **install and use** it, because among other things,
 * `mkiocccentry -x` will force the overwriting of the submission directory it forms under `workdir`
 * `mkiocccentry -U uuid` and `mkiocccentry -u uuid_file` let you set your username
 
-See the [version 2.4.3 release notes](https://github.com/ioccc-src/mkiocccentry/releases/tag/2.4.3)
-for more details.
+See the [version 2.4.3 release notes](https://github.com/ioccc-src/mkiocccentry/releases/tag/2.4.3) for more details.
 
 **Clarification**: **NUL bytes** are **ALLOWED** in your submission `prog.c` and related C code.
 
