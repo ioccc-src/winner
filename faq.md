@@ -8079,7 +8079,9 @@ Jump to: [top](#)
 
 <div id="size_rule_history">
 <div id="size_restriction">
+<div id="size_rule">
 ### Q 11.3: How has the IOCCC size limit rule changed over the years?
+</div>
 </div>
 </div>
 
