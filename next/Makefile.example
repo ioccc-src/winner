@@ -19,6 +19,7 @@ SHELL= bash
 #######################
 
 CC= cc
+CHMOD= chmod
 CLANG= clang
 GCC= gcc
 GINDENT= gindent
