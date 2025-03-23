@@ -36,21 +36,11 @@ TRUE= true
 #
 # Example: CSILENCE= -Wno-some-thing -Wno-another-thing
 #
-# NOTE: If you add -Wno-stuff to CSILENCE, please update
-#	CUNKNOWN in the next comment block.
-#
-# NOTE: Please don't add -Wno-unknown-warning-option to CSILENCE.
-#
-#
-CSILENCE=
+CSILENCE= -Wno-poison-system-directories
 
 # Attempt to silence unknown warnings
 #
-# If you add -Wno-stuff to CSILENCE, then please change CUNKNOWN to read:
-#
-#	CUNKNOWN= -Wno-unknown-warning-option
-#
-CUNKNOWN=
+CUNKNOWN= -Wno-unknown-warning-option
 
 # Common C compiler warning flags
 #
