@@ -914,7 +914,7 @@ PATTERN='$..entry_id'
 "$COMBINE_AUTHOR" | "$JVAL_WRAPPER" -b -q - "$PATTERN" | LC_ALL=C sort -t _ -d -u > "$TMP_AUTHOR_HANDLE_FROM_FILES"
 status_codes=("${PIPESTATUS[@]}")
 if [[ ${status_codes[*]} =~ [1-9] ]]; then
-    echo "$0: ERROR: $COMBINE_AUTHOR | $JVAL_WRAPPER -b -q '$PATTERN' | sort ... failed", \
+    echo "$0: ERROR: $COMBINE_AUTHOR | $JVAL_WRAPPER -b -q '$PATTERN' | sort ... failed," \
 	 "error codes: ${status_codes[*]}" 1>&2
     EXIT_CODE="9"  # exit 9
     echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
@@ -938,7 +938,7 @@ fi
 sed -e '/^#/d' -e 's/^[^,]*,//' -e 's/,/\n/g' "$AUTHOR_WINS_CSV" | LC_ALL=C sort -t _ -d -u > "$TMP_AUTHOR_HANDLE_FROM_CSV"
 status_codes=("${PIPESTATUS[@]}")
 if [[ ${status_codes[*]} =~ [1-9] ]]; then
-    echo "$0: ERROR: sed -e ... | sort ... failed", \
+    echo "$0: ERROR: sed -e ... | sort ... failed," \
 	 "error codes: ${status_codes[*]}" 1>&2
     EXIT_CODE="9"  # exit 9
     echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2

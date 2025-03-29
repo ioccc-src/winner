@@ -520,7 +520,7 @@ jsp)
 	    "$JSP_TOOL" --no-color --format --indent 0 -- "$PATTERN"
 	    status="$?"
 	    if [[ $status -ne 0 ]]; then
-		echo "$0: ERROR: $JSP_TOOL --no-color --format --indent 0 -- '$PATTERN' failed", \
+		echo "$0: ERROR: $JSP_TOOL --no-color --format --indent 0 -- '$PATTERN' failed," \
 		     "error code: $status" 1>&2
 		exit 1
 	    fi
@@ -536,7 +536,7 @@ jsp)
 	    "$JSP_TOOL" --no-color --format --indent 0 -- "$PATTERN" | tr -d '\n'
 	    status_codes=("${PIPESTATUS[@]}")
 	    if [[ ${status_codes[*]} =~ [1-9] ]]; then
-		echo "$0: ERROR: $JSP_TOOL --no-color --format --indent 0 -- '$PATTERN' failed", \
+		echo "$0: ERROR: $JSP_TOOL --no-color --format --indent 0 -- '$PATTERN' failed," \
 		     "error codes: ${status_codes[*]}" 1>&2
 		exit 1
 	    fi
@@ -556,7 +556,7 @@ jsp)
 	    "$JSP_TOOL" --no-color --format --indent 0 -- "$PATTERN" < "$JSON_FILE"
 	    status="$?"
 	    if [[ $status -ne 0 ]]; then
-		echo "$0: ERROR: $JSP_TOOL --no-color --format --indent 0 -- '$PATTERN' < $JSON_FILE failed", \
+		echo "$0: ERROR: $JSP_TOOL --no-color --format --indent 0 -- '$PATTERN' < $JSON_FILE failed," \
 		     "error code: $status" 1>&2
 		exit 1
 	    fi
@@ -572,7 +572,7 @@ jsp)
 	    "$JSP_TOOL" --no-color --format --indent 0 -- "$PATTERN" < "$JSON_FILE" | tr -d '\n'
 	    status_codes=("${PIPESTATUS[@]}")
 	    if [[ ${status_codes[*]} =~ [1-9] ]]; then
-		echo "$0: ERROR: $JSP_TOOL --no-color --format --indent 0 -- '$PATTERN' < $JSON_FILE failed", \
+		echo "$0: ERROR: $JSP_TOOL --no-color --format --indent 0 -- '$PATTERN' < $JSON_FILE failed," \
 		     "error codes: ${status_codes[*]}" 1>&2
 		exit 1
 	    fi
@@ -595,7 +595,7 @@ jsp)
 		   -e '/^\[$/d'
 	    status="$?"
 	    if [[ $status -ne 0 ]]; then
-		echo "$0: ERROR: pipe from -t jsp options: -q -b: sed -E -e ... failed", \
+		echo "$0: ERROR: pipe from -t jsp options: -q -b: sed -E -e ... failed," \
 		     "error code: $status" 1>&2
 		exit 1
 	    fi
@@ -611,7 +611,7 @@ jsp)
 		   -e '/^\[$/d'
 	    status="$?"
 	    if [[ $status -ne 0 ]]; then
-		echo "$0: ERROR: pipe from -t jsp options: -b: sed -E -e ... failed", \
+		echo "$0: ERROR: pipe from -t jsp options: -b: sed -E -e ... failed," \
 		     "error code: $status" 1>&2
 		exit 1
 	    fi
@@ -634,7 +634,7 @@ jsp)
 		   -e '/\t\[$/d'
 	    status="$?"
 	    if [[ $status -ne 0 ]]; then
-		echo "$0: ERROR: pipe from -t jsp options: -q: sed -E -e ... failed", \
+		echo "$0: ERROR: pipe from -t jsp options: -q: sed -E -e ... failed," \
 		     "error code: $status" 1>&2
 		exit 1
 	    fi
@@ -649,7 +649,7 @@ jsp)
 		   -e '/\t\[$/d'
 	    status="$?"
 	    if [[ $status -ne 0 ]]; then
-		echo "$0: ERROR: pipe from -t jsp: sed -E -e ... failed", \
+		echo "$0: ERROR: pipe from -t jsp: sed -E -e ... failed," \
 		     "error code: $status" 1>&2
 		exit 1
 	    fi
@@ -681,7 +681,7 @@ JSONPath.sh)
 	    "$JSONPATH_SH" -w -u -- "$PATTERN"
 	    status="$?"
 	    if [[ $status -ne 0 ]]; then
-		echo "$0: ERROR: $JSONPATH_SH -w -u -- '$PATTERN' failed", \
+		echo "$0: ERROR: $JSONPATH_SH -w -u -- '$PATTERN' failed," \
 		     "error code: $status" 1>&2
 		exit 1
 	    fi
@@ -697,7 +697,7 @@ JSONPath.sh)
 	    "$JSP_TOOL" --no-color --format --indent 0 -- "$PATTERN" | tr -d '\n'
 	    status_codes=("${PIPESTATUS[@]}")
 	    if [[ $status -ne 0 ]]; then
-		echo "$0: ERROR: $JSONPATH_SH -w -u -- '$PATTERN' failed", \
+		echo "$0: ERROR: $JSONPATH_SH -w -u -- '$PATTERN' failed," \
 		     "error codes: ${status_codes[*]}" 1>&2
 		exit 1
 	    fi
@@ -717,7 +717,7 @@ JSONPath.sh)
 	    "$JSONPATH_SH" -w -u -f "$JSON_FILE" -- "$PATTERN"
 	    status="$?"
 	    if [[ $status -ne 0 ]]; then
-		echo "$0: ERROR: $JSONPATH_SH -w -u -f $JSON_FILE -- '$PATTERN' failed", \
+		echo "$0: ERROR: $JSONPATH_SH -w -u -f $JSON_FILE -- '$PATTERN' failed," \
 		     "error code: $status" 1>&2
 		exit 1
 	    fi
@@ -733,7 +733,7 @@ JSONPath.sh)
 	    "$JSONPATH_SH" -w -u -f "$JSON_FILE" -- "$PATTERN" | tr -d '\n'
 	    status="$?"
 	    if [[ $status -ne 0 ]]; then
-		echo "$0: ERROR: $JSONPATH_SH -w -u -f $JSON_FILE -- '$PATTERN' failed", \
+		echo "$0: ERROR: $JSONPATH_SH -w -u -f $JSON_FILE -- '$PATTERN' failed," \
 		     "error code: $status" 1>&2
 		exit 1
 	    fi
@@ -754,7 +754,7 @@ JSONPath.sh)
 		    -e 's/"$//'
 	    status="$?"
 	    if [[ $status -ne 0 ]]; then
-		echo "$0: ERROR: pipe from -t jJSONPath.sh options: -q -b: sed -E -e ... failed", \
+		echo "$0: ERROR: pipe from -t jJSONPath.sh options: -q -b: sed -E -e ... failed," \
 		     "error code: $status" 1>&2
 		exit 1
 	    fi
@@ -766,7 +766,7 @@ JSONPath.sh)
 	    sed -E -e 's/^\S*\s*//'
 	    status="$?"
 	    if [[ $status -ne 0 ]]; then
-		echo "$0: ERROR: pipe from -t jJSONPath.sh options: -b: sed -E -e ... failed", \
+		echo "$0: ERROR: pipe from -t jJSONPath.sh options: -b: sed -E -e ... failed," \
 		     "error code: $status" 1>&2
 		exit 1
 	    fi
@@ -789,7 +789,7 @@ JSONPath.sh)
 		   -e 's/"$//'
 	    status="$?"
 	    if [[ $status -ne 0 ]]; then
-		echo "$0: ERROR: pipe from -t JSONPath.sh options: -q: sed -E -e ... failed", \
+		echo "$0: ERROR: pipe from -t JSONPath.sh options: -q: sed -E -e ... failed," \
 		     "error code: $status" 1>&2
 		exit 1
 	    fi
@@ -802,7 +802,7 @@ JSONPath.sh)
 		   -e 's/\s+$//'
 	    status="$?"
 	    if [[ $status -ne 0 ]]; then
-		echo "$0: ERROR: pipe from -t JSONPath.sh: sed -E -e ... failed", \
+		echo "$0: ERROR: pipe from -t JSONPath.sh: sed -E -e ... failed," \
 		     "error code: $status" 1>&2
 		exit 1
 	    fi

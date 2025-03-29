@@ -512,7 +512,7 @@ case "$XPATHJSON_USE" in
 	    sed -e 's/\(\S\): /\1 : /' > "$TMP_JSON_FILE"
 	status_codes=("${PIPESTATUS[@]}")
 	if [[ ${status_codes[*]} =~ [1-9] ]]; then
-	    echo "$0: ERROR: $JSP_TOOL --indent 4 --format --no-color < $JSON_FILE | sed ...  failed", \
+	    echo "$0: ERROR: $JSP_TOOL --indent 4 --format --no-color < $JSON_FILE | sed ...  failed," \
 		 "error codes: ${status_codes[*]}" 1>&2
 	    exit 1
 	fi
