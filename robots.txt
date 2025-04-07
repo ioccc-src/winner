@@ -1,5 +1,6 @@
 User-Agent: *
 Allow: /inc/index.html
+Allow: /inc/README.md
 Disallow: /inc/
 Allow: /
 Sitemap: https://www.ioccc.org/sitemap.xml
