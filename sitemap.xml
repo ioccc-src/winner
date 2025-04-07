@@ -15186,35 +15186,35 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/all-jfmt.sh</loc>
-    <lastmod>2025-03-14T23:44:59+00:00</lastmod>
+    <lastmod>2025-03-29T03:23:32+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/all-run.sh</loc>
-    <lastmod>2025-03-14T23:45:07+00:00</lastmod>
+    <lastmod>2025-03-29T03:23:32+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/all-years.sh</loc>
-    <lastmod>2025-03-14T23:45:14+00:00</lastmod>
+    <lastmod>2025-03-29T03:23:32+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/chk-entry.sh</loc>
-    <lastmod>2025-03-14T23:45:19+00:00</lastmod>
+    <lastmod>2025-03-29T03:23:32+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/combine_author_handle.sh</loc>
-    <lastmod>2025-03-14T23:45:25+00:00</lastmod>
+    <lastmod>2025-03-29T03:23:32+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/csv2entry.sh</loc>
-    <lastmod>2025-03-14T23:45:31+00:00</lastmod>
+    <lastmod>2025-03-29T03:24:39+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/cvt-submission.sh</loc>
-    <lastmod>2025-03-14T23:45:35+00:00</lastmod>
+    <lastmod>2025-03-29T03:23:32+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/entry2csv.sh</loc>
-    <lastmod>2025-03-14T23:45:51+00:00</lastmod>
+    <lastmod>2025-03-29T03:23:32+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/filelist.entry.json.awk</loc>
@@ -15222,47 +15222,47 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/find-invalid-json.sh</loc>
-    <lastmod>2025-03-14T23:45:57+00:00</lastmod>
+    <lastmod>2025-03-29T03:23:32+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/find-missing-links.sh</loc>
-    <lastmod>2025-03-14T23:46:02+00:00</lastmod>
+    <lastmod>2025-03-29T03:23:32+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/format-headers.sh</loc>
-    <lastmod>2025-03-14T23:37:24+00:00</lastmod>
+    <lastmod>2025-03-29T03:23:32+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/gen-authors.sh</loc>
-    <lastmod>2025-03-14T23:46:13+00:00</lastmod>
+    <lastmod>2025-03-29T03:23:32+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/gen-location.sh</loc>
-    <lastmod>2025-03-14T23:46:21+00:00</lastmod>
+    <lastmod>2025-03-29T03:23:32+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/gen-other-html.sh</loc>
-    <lastmod>2025-03-14T23:46:27+00:00</lastmod>
+    <lastmod>2025-03-29T03:23:32+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/gen-sitemap.sh</loc>
-    <lastmod>2025-03-14T23:46:32+00:00</lastmod>
+    <lastmod>2025-03-29T03:23:32+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/gen-status.sh</loc>
-    <lastmod>2025-03-14T23:46:38+00:00</lastmod>
+    <lastmod>2025-03-29T03:23:32+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/gen-top-html.sh</loc>
-    <lastmod>2025-03-14T23:46:44+00:00</lastmod>
+    <lastmod>2025-03-29T03:23:32+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/gen-year-index.sh</loc>
-    <lastmod>2025-03-14T23:46:48+00:00</lastmod>
+    <lastmod>2025-03-29T03:23:32+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/gen-years.sh</loc>
-    <lastmod>2025-03-14T23:46:52+00:00</lastmod>
+    <lastmod>2025-03-29T03:23:32+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/html.sed</loc>
@@ -15274,15 +15274,15 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/jfmt-wrapper.sh</loc>
-    <lastmod>2025-03-14T23:46:57+00:00</lastmod>
+    <lastmod>2025-03-29T03:24:39+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/jprint-wrapper.sh</loc>
-    <lastmod>2025-03-14T23:47:00+00:00</lastmod>
+    <lastmod>2025-03-29T03:24:39+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/jval-wrapper.sh</loc>
-    <lastmod>2025-03-14T23:47:04+00:00</lastmod>
+    <lastmod>2025-03-29T03:24:39+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/manifest.csv.entry.awk</loc>
@@ -15298,43 +15298,43 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/md2html.sh</loc>
-    <lastmod>2025-03-14T23:47:48+00:00</lastmod>
+    <lastmod>2025-03-29T03:23:32+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/new-dir.sh</loc>
-    <lastmod>2025-03-14T23:47:53+00:00</lastmod>
+    <lastmod>2025-03-29T03:23:32+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/new-year.sh</loc>
-    <lastmod>2025-03-14T23:47:58+00:00</lastmod>
+    <lastmod>2025-03-29T03:23:32+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/othermd2html.sh</loc>
-    <lastmod>2025-03-14T23:48:04+00:00</lastmod>
+    <lastmod>2025-03-29T03:23:32+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/output-index-author.sh</loc>
-    <lastmod>2025-03-14T23:48:09+00:00</lastmod>
+    <lastmod>2025-03-29T03:23:32+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/output-index-inventory.sh</loc>
-    <lastmod>2025-03-14T23:48:12+00:00</lastmod>
+    <lastmod>2025-03-29T03:23:32+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/output-year-index.sh</loc>
-    <lastmod>2025-03-14T23:48:16+00:00</lastmod>
+    <lastmod>2025-03-29T03:23:32+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/pandoc-wrapper.sh</loc>
-    <lastmod>2025-03-14T23:48:26+00:00</lastmod>
+    <lastmod>2025-03-29T03:23:32+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/quick-readme2index.sh</loc>
-    <lastmod>2025-03-14T23:48:31+00:00</lastmod>
+    <lastmod>2025-03-29T03:23:32+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/readme2index.sh</loc>
-    <lastmod>2025-03-14T23:48:35+00:00</lastmod>
+    <lastmod>2025-03-29T03:23:32+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/README.md</loc>
@@ -15342,23 +15342,23 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/sgi.sh</loc>
-    <lastmod>2025-03-14T23:39:58+00:00</lastmod>
+    <lastmod>2025-03-29T03:23:32+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/sort.gitignore.sh</loc>
-    <lastmod>2025-03-14T23:48:48+00:00</lastmod>
+    <lastmod>2025-03-29T03:23:32+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/status2html.sh</loc>
-    <lastmod>2025-03-14T23:48:53+00:00</lastmod>
+    <lastmod>2025-03-29T03:23:32+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/subst.default.sh</loc>
-    <lastmod>2025-03-14T23:48:57+00:00</lastmod>
+    <lastmod>2025-03-29T03:23:32+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/subst.entry-index.sh</loc>
-    <lastmod>2025-03-14T23:49:01+00:00</lastmod>
+    <lastmod>2025-03-29T03:23:32+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/subst.entry-navbar.awk</loc>
@@ -15366,7 +15366,7 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/subst.year-index.sh</loc>
-    <lastmod>2025-03-14T23:49:05+00:00</lastmod>
+    <lastmod>2025-03-29T03:23:32+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/subst.year-navbar.awk</loc>
@@ -15374,19 +15374,19 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/tar-entry.sh</loc>
-    <lastmod>2025-03-14T23:49:11+00:00</lastmod>
+    <lastmod>2025-03-29T03:23:32+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/tar-year.sh</loc>
-    <lastmod>2025-03-14T23:49:18+00:00</lastmod>
+    <lastmod>2025-03-29T03:23:32+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/untar-entry.sh</loc>
-    <lastmod>2025-03-14T23:49:21+00:00</lastmod>
+    <lastmod>2025-03-29T03:23:32+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/untar-year.sh</loc>
-    <lastmod>2025-03-14T23:49:28+00:00</lastmod>
+    <lastmod>2025-03-29T03:23:32+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/bugs.html</loc>
@@ -15474,7 +15474,7 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/robots.txt</loc>
-    <lastmod>2025-01-10T06:06:40+00:00</lastmod>
+    <lastmod>2025-04-07T01:07:31+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/status.json</loc>
