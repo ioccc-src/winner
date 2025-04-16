@@ -1,12 +1,15 @@
-<!-- START: this line starts content from: inc/guidelines.open.hdr -->
+<!-- START: this line starts content from: inc/guidelines.pending.hdr -->
 
-# Official IOCCC guidelines
+# WARNING: These guidelines are TENTATIVE
 
-These guidelines are **OFFICIAL**.
+One might think of them as a **beta** release for the IOCCC
+that is about to open.
 
-Unless some significant problem turns up (such as a need to delay
-in when the IOCCC will close, or some major bug is discovered) they
-will remain **OFFICIAL** for this IOCCC.
+**IMPORTANT**: All **tentative** [rules](rules.html) and [guidelines](guidelines.html)
+are subject to change by the [IOCCC judges](../judges.html) at any time.
+See both the [IOCCC news](../news.html) and the [IOCCC
+Mastodon](https://fosstodon.org/@ioccc) feed as _sometimes_ the
+[IOCCC judges](../judges.html) _mention_ changes there.
 
 See our
 FAQ on "[rules, guidelines, tools feedback](../faq.html#feedback)"
@@ -15,23 +18,16 @@ FAQ on "[about asking questions](../faq.html#question)"
 about these guidelines. You might also find the FAQ in general useful, especially the
 FAQ on "[how to enter the IOCCC](../quick-start.html#enter)".
 
-**SUGGESTION**: Watch both the [IOCCC news](../news.html) and the
-[IOCCC Mastodon](https://fosstodon.org/@ioccc) feed for the latest news
-about any _mentions_ changes.
 
-**HINT to mastodon users**: You may wish to refresh the [@IOCCC
-mastodon feed](https://fosstodon.org/@ioccc) page and/or mastodon
-app from time to time to view IOCCC mastodon updates.
+# The IOCCC is pending
 
+While the IOCCC is not open yet, there is a tentative opening date for the next IOCCC.
 
-# The IOCCC open for submissions
+Comments and suggestions on these preliminary guidelines are welcome.  See the
+[FAQ](../faq.html#feedback) for how to suggest, correct or provide feedback
+about these guidelines.
 
-See "[FAQ - How may I enter the IOCCC](https://www.ioccc.org/quick-start.html#enter)"
-for information on how to register for the IOCCC, how to create a proper
-bzip2 compressed tarball of your submission, and how to upload your
-bzip2 compressed tarball to the IOCCC submit server.
-
-<!-- END: the next line ends content from: inc/guidelines.open.hdr -->
+<!-- END: the next line ends content from: inc/guidelines.pending.hdr -->
 <!-- This is the last line modified by the tool: bin/gen-status.sh -->
 # 28th International Obfuscated C Code Contest Official Guidelines
 
