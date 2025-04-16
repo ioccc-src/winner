@@ -42,4 +42,3 @@ parse(aa, bb,                  cc,dd ,ee)                  ;perl_eval_sv
 "$#SS<1 and goto            &__;$SS[ $#SS]+=            $SS[$#SS-1];$SS"
 "[$#SS-1]=$SS[$"            "#SS]-$SS[$#SS-"            "1]; $SS[$#SS]-"
 "=$SS[$#SS-1]}              BEGIN{$|++}",0),0             ); exit(cc); }
-
