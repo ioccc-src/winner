@@ -1874,136 +1874,6 @@ is in the index.html file as something to try and ponder.</p>
 <h2 id="dlowe-1">2000/dlowe</h2>
 </div>
 <p>Jump to: <a href="#">top</a></p>
-<h3 id="status-known-bug---please-help-us-fix-6">STATUS: known bug - please help us fix</h3>
-<h3 id="source-code-2000dlowedlowe.c">Source code: <a href="https://github.com/ioccc-src/winner/blob/master/2000/dlowe/dlowe.c">2000/dlowe/dlowe.c</a></h3>
-<h3 id="information-2000dloweindex.html">Information: <a href="2000/dlowe/index.html">2000/dlowe/index.html</a></h3>
-<p>The author gives an example command:</p>
-<pre><code>    echo &quot;7 P 6 d P P 8 p&quot; | ./dlowe | tr 876 tpo</code></pre>
-<p>which should print out <code>poot</code> but it doesn’t, not in linux and not in macOS.</p>
-<p>In linux it doesn’t crash but it doesn’t print anything out either.</p>
-<p>In macOS it crashes; it might appear to not crash in macOS but this is because
-of the pipeline. If you remove the <code>| tr 876 tpo</code> part of the command you will
-see that it does indeed crash!</p>
-<p>The reason for this not working is really strange.</p>
-<pre><code>    $ echo &quot;7 P 6 d P P 8 p&quot; | ./dlowe
-    7668
-    $ echo &quot;7 P 6 d P P 8 p&quot; | ./dlowe | grep 7
-    $</code></pre>
-<p>Why? Is it writing to stdout? Let’s try some other things:</p>
-<pre><code>    $ echo 7668 | tr 876 tpo
-    poot</code></pre>
-<p>Okay so we know that it SHOULD work. But we also know something funny is going on with stdout and the entry. Another experiment:</p>
-<pre><code>    $ echo &quot;7 P 6 d P P 8 p&quot; | ./dlowe 1&gt;&amp;2 | grep 7
-    7668</code></pre>
-<p>Okay so now it sees it, <code>grep</code>. But watch!</p>
-<pre><code>    $ echo &quot;7 P 6 d P P 8 p&quot; | ./dlowe 2&gt;foo 1&gt;&amp;1
-    7668
-    $ cat foo</code></pre>
-<p>.. so it does appear to be writing to stdout but yet somehow it doesn’t? But watch:</p>
-<pre><code>    $ echo &quot;7 P 6 d P P 8 p&quot; | ./dlowe 1&gt;foo 1&gt;&amp;1
-    $ cat foo
-    $</code></pre>
-<p>Well this explains why the <code>tr</code> does not transliterate it to <code>poot</code> but why is
-this happening? Why can’t it be redirected to another file even?</p>
-<p>If it could be figured out why it’s not writing to stdout and yet at the same
-time is writing to stdout one bug could be fixed. Maybe it’s the perl messing
-with things but we don’t know.</p>
-<p>Other commands do work, however, and give the appropriate output, such as:</p>
-<pre><code>    $ echo 1 2 + p | ./dlowe
-    3</code></pre>
-<p>so something is wrong with some commands/operators.</p>
-<p>Another feature that does work in linux is:</p>
-<pre><code>    $ echo poot | ./dlowe
-    poot was here!</code></pre>
-<p>Can you help fix these problems?</p>
-<p>Here is some C code that creates an unformatted perl script that will just
-print ‘unimplemented’ for operators but it seems to work in some other ways (see
-below for how to go further than unimplemented) which is the exact perl from the
-C program except that it has the <code>#!/usr/bin/env perl</code> and <code>use warnings;</code> as
-well. A note below might suggest that doing this creates incomplete perl.
-Anyway:</p>
-<pre><code>    #include &lt;stdio.h&gt;
-    int main(void)
-    {
-        printf(&quot;#!/usr/bin/env perl\nuse warnings;_:$_=               &lt;&gt; ; defined               or exit; @ARGV&quot;
-            &quot;=split; __:$_=             shift;defined or             goto _; chomp &quot;
-            &quot;;(m*^\\x70oO&quot;              &quot;\\x74$*i)?(pri&quot;              &quot;nt \&quot;$_ w\\x&quot;
-            &quot;61s h\\145r\\x&quot;            &quot;65!\\n\&quot;):((m*&quot;            &quot;^\\s\\*(-?\\d+&quot;
-            &quot;(\\.\\d+)?)\\s&quot;            &quot;\\*$*)?(push@SS            ,$1):(&amp;{chr(((o&quot;
-            &quot;rd)%%39)+3**4)x2             } )); goto __;             sub ff { @SS= (&quot;
-            &quot;)} sub __{print            \&quot;stack empty\\&quot;            &quot;n\&quot;} sub ss{$#&quot;
-            &quot;SS&lt;0 and goto &amp;            __; print $SS[$&quot;            &quot;#SS].\&quot;\\n\&quot;} &quot;
-            &quot;sub SS{ $#SS&lt;0              and goto &amp;__ ;              print pop @SS}&quot;
-            &quot;sub _ { print              \&quot;divide by zer&quot;            &quot;o\\n\&quot;}sub ii{&quot;
-            &quot;map{ print\&quot;$_&quot;            &quot;\\n\&quot; } reverse            @SS} sub AUTOLO&quot;
-            &quot;AD { print\&quot;un&quot;            &quot;implemented\\n&quot;            &quot;\&quot;} sub gg{ $#&quot;
-            &quot;SS&lt;0 and goto              &amp;__;push@SS,$SS[            $#SS]} sub uu{ &quot;
-            &quot;$#SS&lt;1 and goto            &amp;__;$SS[ $#SS]+=            $SS[$#SS-1];$SS&quot;
-            &quot;[$#SS-1]=$SS[$&quot;            &quot;#SS]-$SS[$#SS-&quot;            &quot;1]; $SS[$#SS]-&quot;
-            &quot;=$SS[$#SS-1]}&quot;);
-    }</code></pre>
-<p>Compiling this you can generate:</p>
-<pre><code>    #!/usr/bin/env perl
-    use warnings;_:$_=               &lt;&gt; ; defined               or exit; @ARGV=split; __:$_=             shift;defined or             goto _; chomp ;(m*^\x70oO\x74$*i)?(print &quot;$_ w\x61s h\145r\x65!\n&quot;):((m*^\s\*(-?\d+(\.\d+)?)\s\*$*)?(push@SS            ,$1):(&amp;{chr(((ord)%39)+3**4)x2             } )); goto __;             sub ff { @SS= ()} sub __{print            &quot;stack empty\n&quot;} sub ss{$#SS&lt;0 and goto &amp;            __; print $SS[$#SS].&quot;\n&quot;} sub SS{ $#SS&lt;0              and goto &amp;__ ;              print pop @SS}sub _ { print              &quot;divide by zero\n&quot;}sub ii{map{ print&quot;$_\n&quot; } reverse            @SS} sub AUTOLOAD { print&quot;unimplemented\n&quot;} sub gg{ $#SS&lt;0 and goto              &amp;__;push@SS,$SS[            $#SS]} sub uu{ $#SS&lt;1 and goto            &amp;__;$SS[ $#SS]+=            $SS[$#SS-1];$SS[$#SS-1]=$SS[$#SS]-$SS[$#SS-1]; $SS[$#SS]-=$SS[$#SS-1]}</code></pre>
-<p>Here is example input/output:</p>
-<pre><code>    p
-    stack empty
-    5 p
-    5
-    5 + 5 p
-    unimplemented
-    5
-    P
-    5
-    p
-    5</code></pre>
-<p>So you can see that if one uses operators it just shows ‘unimplemented’ (observe
-how this does not happen in the C program in linux!) but if one uses ‘p’ by
-itself it will print what’s on the stack (for example).</p>
-<p>To not get ‘unimplemented’ you can remove from the perl:</p>
-<pre><code>    sub AUTOLOAD { print&quot;unimplemented\n&quot;}</code></pre>
-<p>(Note that the author stated this was used for exception handling so another
-possibility is that the C code doesn’t generate the correct perl and indeed even
-spaces is known to break the perl in at least one way, syntax errors, but maybe
-others too.)</p>
-<p>Here is an example run of several operations in the perl script after removing
-that subroutine:</p>
-<pre><code>    $ echo 5 5 p | ./dlowe.pl
-    5
-    $ echo 5 5 + p | ./dlowe.pl
-    5
-    Undefined subroutine &amp;main::UU called at ./pl.pl line 2, &lt;&gt; line 1.
-    $ echo 5 5 * p | ./dlowe.pl
-    5
-    Undefined subroutine &amp;main::ww called at ./pl.pl line 2, &lt;&gt; line 1.
-    $ echo 5 5 - p | ./dlowe.pl
-    5
-    Undefined subroutine &amp;main::WW called at ./pl.pl line 2, &lt;&gt; line 1.
-    $ echo 5 5 / p | ./dlowe.pl
-    5
-    Undefined subroutine &amp;main::YY called at ./pl.pl line 2, &lt;&gt; line 1.
-    $ echo 5 P | ./dlowe.pl
-    5$ echo p | ./dlowe.pl
-    stack empty
-    $ echo P | ./dlowe.pl
-    stack empty</code></pre>
-<p>Note the undefined subroutine error: that happens with commands that are not
-even in the program. Again the author used <code>AUTOLOAD</code> for exception handling so
-it seems likely that there is something missing (which the below shows as well).
-For instance inputting <code>D</code> followed by <code>XX</code>:</p>
-<pre><code>    Undefined subroutine &amp;main::nn called at ./pl.pl line 2, &lt;&gt; line 6.
-    Undefined subroutine &amp;main::[[ called at ./pl.pl line 2, &lt;&gt; line 1.</code></pre>
-<p>That means then that in linux despite the subroutines seemingly not existing it
-works in the code, at least in some cases.</p>
-<p>As far as the unimplemented error goes: the author stated that it means there is
-invalid input. But as can be seen by the input given, the input is not
-actually incorrect. It is also curious to note that it ends up printing what’s
-on the stack at that point:</p>
-<pre><code>    $ echo 5 5 + p | ./dlowe.pl
-    unimplemented
-    5</code></pre>
-<p>which might (?) suggest that the <code>+</code> operator is unimplemented.</p>
-<p>Jump to: <a href="#">top</a></p>
 <h3 id="status-inabiaf---please-do-not-fix-32">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <p>The author states that in perl &lt; 5.6.0 there is a bug with a core dump in what
 they said is in <code>Perl_sv_upgrade</code>. As this is documented it is not considered a
@@ -2166,7 +2036,7 @@ fixes there.</p>
 <h2 id="herrmann1">2001/herrmann1</h2>
 </div>
 <p>Jump to: <a href="#">top</a></p>
-<h3 id="status-known-bug---please-help-us-fix-7">STATUS: known bug - please help us fix</h3>
+<h3 id="status-known-bug---please-help-us-fix-6">STATUS: known bug - please help us fix</h3>
 <p>During compilation you’re supposed to see some animation but this does not seem
 to work with modern gcc versions. It appears that version 2.95 works but maybe
 others do as well. If you have a fix for modern versions of gcc, your help is
@@ -2249,7 +2119,7 @@ nobody else takes up the challenge.</p>
 <h2 id="williams">2001/williams</h2>
 </div>
 <p>Jump to: <a href="#">top</a></p>
-<h3 id="status-known-bug---please-help-us-fix-8">STATUS: known bug - please help us fix</h3>
+<h3 id="status-known-bug---please-help-us-fix-7">STATUS: known bug - please help us fix</h3>
 <h3 id="source-code-2001williamswilliams.c">Source code: <a href="https://github.com/ioccc-src/winner/blob/master/2001/williams/williams.c">2001/williams/williams.c</a></h3>
 <h3 id="information-2001williamsindex.html">Information: <a href="2001/williams/index.html">2001/williams/index.html</a></h3>
 <p>There seem to be a couple bugs at least in this entry. The first one is that
@@ -3196,7 +3066,7 @@ player become bigger, stay away from blocks!</p>
 <h2 id="vik-2">2014/vik</h2>
 </div>
 <p>Jump to: <a href="#">top</a></p>
-<h3 id="status-known-bug---please-help-us-fix-9">STATUS: known bug - please help us fix</h3>
+<h3 id="status-known-bug---please-help-us-fix-8">STATUS: known bug - please help us fix</h3>
 <h3 id="source-code-2014vikprog.c">Source code: <a href="https://github.com/ioccc-src/winner/blob/master/2014/vik/prog.c">2014/vik/prog.c</a></h3>
 <h3 id="information-2014vikindex.html">Information: <a href="2014/vik/index.html">2014/vik/index.html</a></h3>
 <p><a href="authors.html#Cody_Boone_Ferguson">Cody Boone Ferguson</a> discovered a bug to do
@@ -3266,7 +3136,7 @@ result. Error messages become garbled, though.</p>
 <h2 id="howe">2015/howe</h2>
 </div>
 <p>Jump to: <a href="#">top</a></p>
-<h3 id="status-known-bug---please-help-us-fix-10">STATUS: known bug - please help us fix</h3>
+<h3 id="status-known-bug---please-help-us-fix-9">STATUS: known bug - please help us fix</h3>
 <p>The test scripts do not seem to work properly with bash but this would be ideal
 as not all systems have a compatible shell (they assume a POSIX compliant
 shell). One, with bash, might see:</p>
@@ -3374,7 +3244,7 @@ fixing the syntax error in the generated <code>ioccc.json</code> file.</p>
 <h2 id="mills-1">2018/mills</h2>
 </div>
 <p>Jump to: <a href="#">top</a></p>
-<h3 id="status-known-bug---please-help-us-fix-11">STATUS: known bug - please help us fix</h3>
+<h3 id="status-known-bug---please-help-us-fix-10">STATUS: known bug - please help us fix</h3>
 <h3 id="source-code-2018millsprog.c">Source code: <a href="https://github.com/ioccc-src/winner/blob/master/2018/mills/prog.c">2018/mills/prog.c</a></h3>
 <h3 id="information-2018millsindex.html">Information: <a href="2018/mills/index.html">2018/mills/index.html</a></h3>
 <p>After exiting the program (with ctrl-e) if you try running it again you will

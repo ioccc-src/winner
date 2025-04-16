@@ -102,28 +102,9 @@ shopt -u nocaseglob	# disable strict case matching
 shopt -u extglob	# enable extended globbing patterns
 shopt -s globstar	# enable ** to match all files and zero or more directories and subdirectories
 
-
-# IOCCC requires use of C locale
-#
-export LANG="C"
-export LC_CTYPE="C"
-export LC_NUMERIC="C"
-export LC_TIME="C"
-export LC_COLLATE="C"
-export LC_MONETARY="C"
-export LC_MESSAGES="C"
-export LC_PAPER="C"
-export LC_NAME="C"
-export LC_ADDRESS="C"
-export LC_TELEPHONE="C"
-export LC_MEASUREMENT="C"
-export LC_IDENTIFICATION="C"
-export LC_ALL="C"
-
-
 # set variables referenced in the usage message
 #
-export VERSION="2.0.0 2025-03-13"
+export VERSION="1.2.0 2025-04-16"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -284,20 +265,6 @@ fi
 # If -v 3 or higher, print exported variables in order that they were exported.
 #
 if [[ $V_FLAG -ge 3 ]]; then
-    echo "$0: debug[3]: LANG=$LANG" 1>&2
-    echo "$0: debug[3]: LC_CTYPE=$LC_CTYPE" 1>&2
-    echo "$0: debug[3]: LC_NUMERIC=$LC_NUMERIC" 1>&2
-    echo "$0: debug[3]: LC_TIME=$LC_TIME" 1>&2
-    echo "$0: debug[3]: LC_COLLATE=$LC_COLLATE" 1>&2
-    echo "$0: debug[3]: LC_MONETARY=$LC_MONETARY" 1>&2
-    echo "$0: debug[3]: LC_MESSAGES=$LC_MESSAGES" 1>&2
-    echo "$0: debug[3]: LC_PAPER=$LC_PAPER" 1>&2
-    echo "$0: debug[3]: LC_NAME=$LC_NAME" 1>&2
-    echo "$0: debug[3]: LC_ADDRESS=$LC_ADDRESS" 1>&2
-    echo "$0: debug[3]: LC_TELEPHONE=$LC_TELEPHONE" 1>&2
-    echo "$0: debug[3]: LC_MEASUREMENT=$LC_MEASUREMENT" 1>&2
-    echo "$0: debug[3]: LC_IDENTIFICATION=$LC_IDENTIFICATION" 1>&2
-    echo "$0: debug[3]: LC_ALL=$LC_ALL" 1>&2
     echo "$0: debug[3]: VERSION=$VERSION" 1>&2
     echo "$0: debug[3]: NAME=$NAME" 1>&2
     echo "$0: debug[3]: V_FLAG=$V_FLAG" 1>&2
@@ -461,6 +428,14 @@ fi
 #
 #	    -e "s;%%REPO_URL%%/*;$TOPDIR/;" \
 #
+#	# delete all lines containing %%REPO_TOP_URL%%
+#
+#	    We cannot check as local files, URLs that generally under GitHub
+#	    However paths under REPO_URL=$REPO_TOP_URL/blob/master DO map to $TOPDIR,
+#	    so we only convert %%REPO_URL%% to $TOPDIR, but NOT %%REPO_TOP_URL%%.
+#
+#	    -e '/%%REPO_TOP_URL%%/d' \
+#
 #	# convert "%%DOCROOT_SLASH%%" into TOPDIR
 #
 #	    -e "s;%%DOCROOT_SLASH%%/*;$TOPDIR/;" \
@@ -519,6 +494,7 @@ find . -name '*.md' ! -name markdown.md ! -path './tmp/*' ! -path './NOTES/*' -p
 	    -e '/^https?:/d' \
 	    -e '/^mailto:/d' \
 	    -e "s;%%REPO_URL%%/*;$TOPDIR/;" \
+	    -e '/%%REPO_TOP_URL%%/d' \
 	    -e "s;%%DOCROOT_SLASH%%/*;$TOPDIR/;" \
 	    -e "s;^([^/]);$TOPDIR/$MD_DIR/\1;" \
 	    -e '/%%TOKEN%%/d' \

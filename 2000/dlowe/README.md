@@ -17,7 +17,6 @@ The following bit of perl may help determine the values you need:
 
 The current status of this entry is:
 
-> **STATUS: known bug - please help us fix**<br>
 > **STATUS: INABIAF - please DO NOT fix**
 
 For more detailed information see [2000/dlowe in bugs.html](../../bugs.html#2000_dlowe).

@@ -2834,6 +2834,11 @@ feeling a bit too confident, cocky or even happy :-)</p>
 <p><a href="#cody">Cody</a> fixed this to compile with more recent perl versions; the symbol that’s now
 <code>PL_na</code> was once <code>na</code>.</p>
 <p>Cody also added the <a href="https://github.com/ioccc-src/winner/blob/master/2000/dlowe/try.sh">try.sh</a> script.</p>
+<p><a href="#johndalbec">John Dalbec</a> fixed the remaining known bugs in
+<a href="2000/dlowe/index.html">2000/dlowe</a> by causing the embedded Perl code in
+C in order to perform system-specific tune up of the C runtime environment
+necessary to run Perl interpreters. Moreover <a href="#johndalbec">John Dalbec</a>
+fixed a buffering problem by forcing a <code>flush(3)</code> after every write or print.</p>
 <p>Jump to: <a href="#">top</a></p>
 <div id="2000_jarijyrki">
 <h2 id="winning-entry-2000jarijyrki">Winning entry: <a href="2000/jarijyrki/index.html">2000/jarijyrki</a></h2>
@@ -5232,6 +5237,14 @@ fixes were <strong>EXTREMELY TECHNICALLY CHALLENGING</strong>, like
 <a href="thanks-for-help.html#2001_ctk">2001/ctk</a>. <strong>THANK YOU VERY MUCH</strong> for
 your help!</p>
 <p>Jump to: <a href="#">top</a></p>
+<div id="johndalbec">
+<h3 id="john-dalbec">John Dalbec</h3>
+</div>
+<p><a href="authors.html#John_Dalbec">John Dalbec</a> supplied a fix to
+<a href="thanks-for-help.html#2000_dlowe">2000/dlowe</a>.</p>
+<p><a href="https://github.com/ioccc-src/winner/pull/134">John Dalbec’s patch of 2000/dlowe</a>
+is a good example of <a href="bugs.html#general-request-on-original-code">applying a minimal patch</a>
+to the <a href="https://github.com/ioccc-src/winner/blob/master/2000/dlowe/dlowe.orig.c">original 2000/dlowe</a> source code.</p>
 <div id="neglect">
 <h2 id="did-we-neglect-to-credit-you">Did we neglect to credit you?</h2>
 </div>

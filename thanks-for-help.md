@@ -3556,6 +3556,12 @@ Jump to: [top](#)
 
 Cody also added the [try.sh](%%REPO_URL%%/2000/dlowe/try.sh) script.
 
+[John Dalbec](#johndalbec) fixed the remaining known bugs in
+[2000/dlowe](2000/dlowe/index.html) by causing the embedded Perl code in
+C in order to perform system-specific tune up of the C runtime environment
+necessary to run Perl interpreters.  Moreover [John Dalbec](#johndalbec)
+fixed a buffering problem by forcing a `flush(3)` after every write or print.
+
 
 Jump to: [top](#)
 
@@ -7183,6 +7189,18 @@ your help!
 
 
 Jump to: [top](#)
+
+
+<div id="johndalbec">
+### John Dalbec
+</div>
+
+[John Dalbec](authors.html#John_Dalbec) supplied a fix to
+[2000/dlowe](thanks-for-help.html#2000_dlowe).
+
+[John Dalbec's patch of 2000/dlowe](%%REPO_TOP_URL%%/pull/134)
+is a good example of [applying a minimal patch](bugs.html#general-request-on-original-code)
+to the [original 2000/dlowe](%%REPO_URL%%/2000/dlowe/dlowe.orig.c) source code.
 
 
 <div id="neglect">
