@@ -22,6 +22,7 @@ bb( ){                      newXSproto("UU",                      ff,qq,
 ,ss,qq,"")                  ; newXSproto("Y"                  "Y",Ss,qq,
 ""); newXSproto(            "vv",uu, qq,"");            newXSproto("aa",
 gg,qq,""); }int             main(int _,char*             *__, char**ee){
+PERL_SYS_INIT3(               &_,&__,&ee);
 PerlInterpreter*            aa=perl_alloc();            char*dd[]= { "",
 "-e", "0"} ;                 perl_construct                 (aa); perl_\
 parse(aa, bb,                  cc,dd ,ee)                  ;perl_eval_sv
@@ -40,4 +41,5 @@ parse(aa, bb,                  cc,dd ,ee)                  ;perl_eval_sv
 "SS<0 and goto              &__;push@SS,$SS[            $#SS]} sub uu{ "
 "$#SS<1 and goto            &__;$SS[ $#SS]+=            $SS[$#SS-1];$SS"
 "[$#SS-1]=$SS[$"            "#SS]-$SS[$#SS-"            "1]; $SS[$#SS]-"
-"=$SS[$#SS-1]}                   ",0),0                   ); exit(cc); }
+"=$SS[$#SS-1]}              BEGIN{$|++}",0),0             ); exit(cc); }
+
