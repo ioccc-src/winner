@@ -20,6 +20,19 @@ We invite you to join the **IOCCC Discord Community** via this link: [https://di
 </div>
 
 
+## 2025-04-19
+
+The **IOCCC28** **OPEN** period has reached the half-way point.
+This is a _gentle suggestion_ to not wait until the last minute to write, test
+and upload your submission.
+
+The **IOCCC28** is [open for registration](https://www.ioccc.org/next/register.html).
+Those who have registered have until **2025-06-05 04:03:02.010099 UTC** to
+[upload their submissions](https://www.ioccc.org/next/submit.html).
+
+See "[how enter the IOCCC](https://www.ioccc.org/quick-start.html#enter)" for more information.
+
+
 ## 2025-03-15
 
 We released [mkiocccentry toolkit](https://github.com/ioccc-src/mkiocccentry) **version 2.4.4 2025-03-15**.
