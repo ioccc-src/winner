@@ -112,7 +112,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="2.0.0 2025-03-13"
+export VERSION="2.0.1 2025-04-21"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -372,9 +372,9 @@ case "$XPATHJSON_USE" in
 	# case: -Q - perform quick check
 	#
 	if [[ -n $QUICK_CHECK ]]; then
-	    # verify JSONPath.sh supports -S -A -p
-	    if ! "$JSONPATH_SH" -S -A -p >/dev/null 2>&1; then
-		echo "$0: ERROR: JSONPath.sh tool does not support -S -A: $FIZZBIN_JSON" 1>&2
+	    # verify JSONPath.sh supports -S -4 -p
+	    if ! "$JSONPATH_SH" -S -4 -p >/dev/null 2>&1; then
+		echo "$0: ERROR: JSONPath.sh tool does not support -S -4 -p: $FIZZBIN_JSON" 1>&2
 		echo "$0: notice: we recommend you obtain and install jsp from: $JSP_REPO" 1>&2
 		echo "$0: notice: or obtain jsp via \"pipx install jsp\" and placing ~/.local/bin in \$PATH" 1>&2
 		echo "$0: notice: otherwise install JSONPath.sh from: $JSONPATH_REPO" 1>&2

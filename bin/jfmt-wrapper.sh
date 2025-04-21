@@ -128,7 +128,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="2.0.0 2025-03-13"
+export VERSION="2.0.1 2025-04-21"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -358,7 +358,7 @@ case "$XPATHJSON_USE" in
 	    echo "$0: ERROR: JSONPath.sh tool is not installed, is not executable, or not in \$PATH" 1>&2
 	    echo "$0: notice: obtain jsp from: $JSP_REPO" 1>&2
 	    echo "$0: notice: or obtain jsp via \"pipx install jsp\" and placing ~/.local/bin in \$PATH" 1>&2
-	    echo "$0: notice: obtain JSONPath.sh from: $JSONPATH_REPO" 1>&2
+	    echo "$0: notice: obtain JSONPath.sh version 0.0.22 or later from: $JSONPATH_REPO" 1>&2
 	    echo "$0: notice: if possible install jsp instead of JSONPath.sh as jsp is faster" 1>&2
 	    exit 5
 	fi
@@ -366,12 +366,12 @@ case "$XPATHJSON_USE" in
 	# case: -Q - perform quick check
 	#
 	if [[ -n $QUICK_CHECK ]]; then
-	    # verify JSONPath.sh supports -S -A -p
-	    if ! "$JSONPATH_SH" -S -A -p >/dev/null 2>&1; then
-		echo "$0: ERROR: JSONPath.sh tool does not support -S -A: $FIZZBIN_JSON" 1>&2
+	    # verify JSONPath.sh supports -S -4 -p
+	    if ! "$JSONPATH_SH" -S -4 -p >/dev/null 2>&1; then
+		echo "$0: ERROR: JSONPath.sh tool does not support -S -4 -p: $FIZZBIN_JSON" 1>&2
 		echo "$0: notice: we recommend you obtain and install jsp from: $JSP_REPO" 1>&2
 		echo "$0: notice: or obtain jsp via \"pipx install jsp\" and placing ~/.local/bin in \$PATH" 1>&2
-		echo "$0: notice: otherwise install JSONPath.sh from: $JSONPATH_REPO" 1>&2
+		echo "$0: notice: otherwise install JSONPath.sh version 0.0.22 or later from: $JSONPATH_REPO" 1>&2
 		echo "$0: notice: if possible install jsp instead of JSONPath.sh as jsp is faster" 1>&2
 		exit 5
 	    fi <<< "$FIZZBIN_JSON"
@@ -388,7 +388,7 @@ case "$XPATHJSON_USE" in
 	    echo "$0: ERROR: jsp.sh tool is not installed, is not executable, or not in \$PATH" 1>&2
 	    echo "$0: notice: obtain jsp from: $JSP_REPO" 1>&2
 	    echo "$0: notice: or obtain jsp via \"pipx install jsp\" and placing ~/.local/bin in \$PATH" 1>&2
-	    echo "$0: notice: obtain JSONPath.sh from: $JSONPATH_REPO" 1>&2
+	    echo "$0: notice: obtain JSONPath.sh version 0.0.22 or later from: $JSONPATH_REPO" 1>&2
 	    echo "$0: notice: if possible install jsp instead of JSONPath.sh as jsp is faster" 1>&2
 	    exit 5
 	fi
@@ -401,7 +401,7 @@ case "$XPATHJSON_USE" in
 		echo "$0: ERROR: jsp tool does not support --indent 4 --format --no-color: $FIZZBIN_JSON" 1>&2
 		echo "$0: notice: you might need to update and reinstall jsp from: $JSP_REPO" 1>&2
 		echo "$0: notice: or obtain jsp via \"pipx install jsp\" and placing ~/.local/bin in \$PATH" 1>&2
-		echo "$0: notice: or you might try to obtain and install JSONPath.sh from: $JSONPATH_REPO" 1>&2
+		echo "$0: notice: or you might try to obtain and install JSONPath.sh version 0.0.22 or later from: $JSONPATH_REPO" 1>&2
 		echo "$0: notice: if possible install jsp instead of JSONPath.sh as jsp is faster" 1>&2
 		exit 5
 	    fi <<< "$FIZZBIN_JSON"
@@ -414,7 +414,7 @@ case "$XPATHJSON_USE" in
 	echo "$0: ERROR: cannot find an XPath JSON tool to use" 1>&2
 	echo "$0: notice: we recommend you obtain and install jsp from: $JSP_REPO" 1>&2
 	echo "$0: notice: or obtain jsp via \"pipx install jsp\" and placing ~/.local/bin in \$PATH" 1>&2
-	echo "$0: notice: otherwise install JSONPath.sh from: $JSONPATH_REPO" 1>&2
+	echo "$0: notice: otherwise install JSONPath.sh version 0.0.22 or later from: $JSONPATH_REPO" 1>&2
 	echo "$0: notice: if possible install jsp instead of JSONPath.sh as jsp is faster" 1>&2
 	exit 5
 	;;
@@ -523,12 +523,12 @@ case "$XPATHJSON_USE" in
     JSONPath.sh)
 
 	if [[ $V_FLAG -ge 3 ]]; then
-	    echo "$0: debug[3]: about to: $JSONPATH_SH -S -A -j -f $JSON_FILE > $TMP_JSON_FILE" 1>&2
+	    echo "$0: debug[3]: about to: $JSONPATH_SH -S -4 -j -f $JSON_FILE > $TMP_JSON_FILE" 1>&2
 	fi
-	"$JSONPATH_SH" -S -A -j -f "$JSON_FILE" > "$TMP_JSON_FILE"
+	"$JSONPATH_SH" -S -4 -j -f "$JSON_FILE" > "$TMP_JSON_FILE"
 	status="$?"
 	if [[ $status -ne 0 ]]; then
-	    echo "$0: ERROR: $JSONPATH_SH -S -A -j -f $JSON_FILE > $TMP_JSON_FILE failed," \
+	    echo "$0: ERROR: $JSONPATH_SH -S -4 -j -f $JSON_FILE > $TMP_JSON_FILE failed," \
 		 "error code: $status" 1>&2
 	    exit 1
 	fi
