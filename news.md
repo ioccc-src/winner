@@ -20,6 +20,24 @@ We invite you to join the **IOCCC Discord Community** via this link: [https://di
 </div>
 
 
+## 2025-04-26
+
+We released [mkiocccentry toolkit](https://github.com/ioccc-src/mkiocccentry) **version 2.4.6 2025-04-26**.
+
+While you are **NOT** required to use this release in order to submit to **IOCCC28**,
+we do **RECOMMEND** that you **install and use** it, because among other things, it provides:
+
+* Enhanced the scanning process of topdir, excluding ignored files and directories from the count against the maximum allowed limit.
+* Clarified the purpose of a submission title to emphasize that it should not contain names.
+* Default handles may now contain UPPERCASE letters.
+
+The **IOCCC28** is [open for registration](https://www.ioccc.org/next/register.html).
+Those who have registered have until **2025-06-05 04:03:02.010099 UTC** to
+[upload their submissions](https://www.ioccc.org/next/submit.html).
+
+See "[how enter the IOCCC](https://www.ioccc.org/quick-start.html#enter)" for more information.
+
+
 ## 2025-04-19
 
 The **IOCCC28** **OPEN** period has reached the half-way point.
