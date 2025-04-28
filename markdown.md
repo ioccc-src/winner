@@ -7,7 +7,7 @@
 </div>
 
 <p class="leftbar">
-These [IOCCC markdown guidelines](markdown.html) are version **28.2 2025-04-28**.
+These [IOCCC markdown guidelines](markdown.html) are version **28.3 2025-04-28**.
 </p>
 
 **IMPORTANT**: Be sure to read the [IOCCC rules](next/rules.html) and [IOCCC
@@ -321,7 +321,7 @@ following settings to make sure the tabs are not put in without you noticing:
     set tabstop=8		" a tab is 8 spaces (or whatever you wish it to be set to)
     set softtabstop=4		" ...but when inserting/backspacing use 4 spaces
     set shiftwidth=4		" ...and auto-indent 4 spaces (when autoindent is set)
-    set noexpandtab		" ...but don't expand tab to spaces.
+    set expandtab		" ...expand tab into spaces
 ```
 
 If you have file type detection enabled you can, if you prefer, have these
