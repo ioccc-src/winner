@@ -7,7 +7,7 @@
 </div>
 
 <p class="leftbar">
-These [IOCCC markdown guidelines](markdown.html) are version **28.3 2025-04-28**.
+These [IOCCC markdown guidelines](markdown.html) are version **28.4 2025-04-28**.
 </p>
 
 **IMPORTANT**: Be sure to read the [IOCCC rules](next/rules.html) and [IOCCC
@@ -66,13 +66,21 @@ to 3 for new sections. For instance:
 ``` <!---markdown-->
     ### Section 0
     ...
-    #### First subsection of section 0
+    #### 1st subsection of section 0
     ...
-    ##### Second subsection of section 0
+    ##### 1st sub-subsection of the 1st subsection of section 0
     ...
-    ###### Third subsection of section 0
+    #### 2nd subsection of section 0
+    ...
+    ##### 1st sub-subsection of the 2nd subsection of section 0
+    ...
+    ##### 2nd sub-subsection of the 2nd subsection of section 0
+    ...
+    ###### 1st sub-sub-subsection of the 2nd sub-subsection of the 2nd subsection of section 0
     ...
     ### Section 1
+    ...
+    ### Section 2
     ...
     Etc.
 ```
