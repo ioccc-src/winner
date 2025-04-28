@@ -7,7 +7,7 @@
 </div>
 
 <p class="leftbar">
-These [IOCCC markdown guidelines](markdown.html) are version **28.1 2025-02-02**.
+These [IOCCC markdown guidelines](markdown.html) are version **28.2 2025-04-28**.
 </p>
 
 **IMPORTANT**: Be sure to read the [IOCCC rules](next/rules.html) and [IOCCC
