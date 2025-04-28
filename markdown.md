@@ -321,7 +321,7 @@ following settings to make sure the tabs are not put in without you noticing:
     set tabstop=8		" a tab is 8 spaces (or whatever you wish it to be set to)
     set softtabstop=4		" ...but when inserting/backspacing use 4 spaces
     set shiftwidth=4		" ...and auto-indent 4 spaces (when autoindent is set)
-    set expandtab		" ...but don't expand tab to spaces.
+    set noexpandtab		" ...but don't expand tab to spaces.
 ```
 
 If you have file type detection enabled you can, if you prefer, have these

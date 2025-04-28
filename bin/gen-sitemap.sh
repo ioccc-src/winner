@@ -116,7 +116,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="2.0.0 2025-03-13"
+export VERSION="2.0.1 2025-04-28"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -642,16 +642,20 @@ fi
 #	google*.html	- used for Google Site Verification
 #	sitemap.xml	- we are building the sitemap!
 #
+# Sort the list below with: sort -d -u
+#
 cat << EOF0 >> "$TMP_MANIFEST_LIST"
-CODE_OF_CONDUCT.html
-CODE_OF_CONDUCT.md
-LICENSE
-Makefile
-README.html
-README.md
+about.html
+about.md
+author/index.html
+author/README.md
 authors.html
+bin/index.html
+bin/README.md
 bugs.html
 bugs.md
+CODE_OF_CONDUCT.html
+CODE_OF_CONDUCT.md
 contact.html
 contact.md
 faq.html
@@ -662,11 +666,41 @@ index.md
 ioccc.css
 judges.html
 judges.md
+LICENSE
+license.html
+license.md
 location.html
+Makefile
+markdown.html
+markdown.md
 news.html
 news.md
+next/guidelines.html
+next/guidelines.md
+next/index.html
+next/pw-change.html
+next/pw-change.md
+next/README.md
+next/register.html
+next/register.md
+next/remarks.html
+next/remarks.md
+next/rules.html
+next/rules.md
+next/submit.html
+next/submit.md
+nojs-menu.html
+nojs-menu.md
+quick-start.html
+quick-start.md
+README.html
+README.md
 robots.txt
+SECURITY.html
+SECURITY.md
+status.html
 status.json
+status.md
 thanks-for-help.html
 thanks-for-help.md
 .top

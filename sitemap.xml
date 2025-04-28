@@ -14265,6 +14265,14 @@
     <lastmod>2025-01-10T06:06:40+00:00</lastmod>
 </url>
 <url>
+    <loc>https://www.ioccc.org/about.html</loc>
+    <lastmod>2025-01-10T06:49:54+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/about.md</loc>
+    <lastmod>2025-01-10T06:43:52+00:00</lastmod>
+</url>
+<url>
     <loc>https://www.ioccc.org/archive/historic/archive-1984.tar.bz2</loc>
     <lastmod>2025-01-10T06:06:40+00:00</lastmod>
 </url>
@@ -14741,6 +14749,10 @@
     <lastmod>2025-01-10T06:49:55+00:00</lastmod>
 </url>
 <url>
+    <loc>https://www.ioccc.org/author/index.html</loc>
+    <lastmod>2025-01-10T06:49:55+00:00</lastmod>
+</url>
+<url>
     <loc>https://www.ioccc.org/author/Jack_Applin.json</loc>
     <lastmod>2025-01-10T06:06:40+00:00</lastmod>
 </url>
@@ -15021,6 +15033,10 @@
     <lastmod>2025-01-10T06:43:52+00:00</lastmod>
 </url>
 <url>
+    <loc>https://www.ioccc.org/author/README.md</loc>
+    <lastmod>2025-01-10T06:43:52+00:00</lastmod>
+</url>
+<url>
     <loc>https://www.ioccc.org/author/Robbert_van_Renesse.json</loc>
     <lastmod>2025-01-10T06:06:40+00:00</lastmod>
 </url>
@@ -15246,7 +15262,7 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/gen-sitemap.sh</loc>
-    <lastmod>2025-04-16T20:59:19+00:00</lastmod>
+    <lastmod>2025-04-28T20:09:17+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/gen-status.sh</loc>
@@ -15267,6 +15283,10 @@
 <url>
     <loc>https://www.ioccc.org/bin/html.sed</loc>
     <lastmod>2025-01-10T06:06:40+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/bin/index.html</loc>
+    <lastmod>2025-01-10T06:49:56+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/index.html</loc>
@@ -15335,6 +15355,10 @@
 <url>
     <loc>https://www.ioccc.org/bin/readme2index.sh</loc>
     <lastmod>2025-04-16T20:59:19+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/bin/README.md</loc>
+    <lastmod>2025-01-10T06:43:52+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/README.md</loc>
@@ -15449,6 +15473,14 @@
     <lastmod>2025-01-10T06:06:40+00:00</lastmod>
 </url>
 <url>
+    <loc>https://www.ioccc.org/license.html</loc>
+    <lastmod>2025-01-10T06:49:59+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/license.md</loc>
+    <lastmod>2025-01-10T06:43:52+00:00</lastmod>
+</url>
+<url>
     <loc>https://www.ioccc.org/location.html</loc>
     <lastmod>2025-04-16T17:10:51+00:00</lastmod>
 </url>
@@ -15457,12 +15489,92 @@
     <lastmod>2025-04-16T20:59:19+00:00</lastmod>
 </url>
 <url>
+    <loc>https://www.ioccc.org/markdown.html</loc>
+    <lastmod>2025-04-28T20:00:17+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/markdown.md</loc>
+    <lastmod>2025-04-28T19:59:57+00:00</lastmod>
+</url>
+<url>
     <loc>https://www.ioccc.org/news.html</loc>
     <lastmod>2025-04-26T17:53:18+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/news.md</loc>
     <lastmod>2025-04-26T17:53:07+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/next/guidelines.html</loc>
+    <lastmod>2025-04-17T23:44:49+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/next/guidelines.md</loc>
+    <lastmod>2025-04-17T23:44:27+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/next/index.html</loc>
+    <lastmod>2025-03-01T06:31:20+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/next/pw-change.html</loc>
+    <lastmod>2025-04-16T20:59:19+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/next/pw-change.md</loc>
+    <lastmod>2025-04-16T20:59:19+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/next/README.md</loc>
+    <lastmod>2025-03-01T06:27:36+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/next/register.html</loc>
+    <lastmod>2025-04-16T20:59:19+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/next/register.md</loc>
+    <lastmod>2025-04-16T20:59:19+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/next/remarks.html</loc>
+    <lastmod>2025-04-16T20:59:19+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/next/remarks.md</loc>
+    <lastmod>2025-04-16T20:59:19+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/next/rules.html</loc>
+    <lastmod>2025-04-17T23:44:51+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/next/rules.md</loc>
+    <lastmod>2025-04-17T23:44:27+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/next/submit.html</loc>
+    <lastmod>2025-04-16T20:59:19+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/next/submit.md</loc>
+    <lastmod>2025-04-16T20:59:19+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/nojs-menu.html</loc>
+    <lastmod>2025-01-10T06:50:02+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/nojs-menu.md</loc>
+    <lastmod>2025-01-10T06:43:52+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/quick-start.html</loc>
+    <lastmod>2025-04-16T20:59:19+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/quick-start.md</loc>
+    <lastmod>2025-04-16T20:59:19+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/README.html</loc>
@@ -15477,8 +15589,24 @@
     <lastmod>2025-04-16T20:59:19+00:00</lastmod>
 </url>
 <url>
+    <loc>https://www.ioccc.org/SECURITY.html</loc>
+    <lastmod>2025-02-11T00:55:03+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/SECURITY.md</loc>
+    <lastmod>2025-02-11T00:55:03+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/status.html</loc>
+    <lastmod>2025-04-28T20:09:44+00:00</lastmod>
+</url>
+<url>
     <loc>https://www.ioccc.org/status.json</loc>
     <lastmod>2025-04-26T17:53:24+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/status.md</loc>
+    <lastmod>2025-03-01T06:38:11+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/thanks-for-help.html</loc>
