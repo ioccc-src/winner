@@ -1418,11 +1418,11 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/1990/1990.tar.bz2</loc>
-    <lastmod>2025-04-16T20:59:19+00:00</lastmod>
+    <lastmod>2025-04-29T18:19:53+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/1990/baruch/1990_baruch.tar.bz2</loc>
-    <lastmod>2025-04-16T20:59:19+00:00</lastmod>
+    <lastmod>2025-04-29T18:19:26+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/1990/baruch/baruch.alt.c</loc>
@@ -1438,7 +1438,7 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/1990/baruch/index.html</loc>
-    <lastmod>2025-01-10T06:51:37+00:00</lastmod>
+    <lastmod>2025-04-29T18:15:00+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/1990/baruch/Makefile</loc>
@@ -1446,7 +1446,7 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/1990/baruch/README.md</loc>
-    <lastmod>2025-01-10T06:43:52+00:00</lastmod>
+    <lastmod>2025-04-29T18:11:24+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/1990/baruch/try.sh</loc>
@@ -15414,11 +15414,11 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/bugs.html</loc>
-    <lastmod>2025-04-16T17:16:09+00:00</lastmod>
+    <lastmod>2025-04-29T18:05:32+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/bugs.md</loc>
-    <lastmod>2025-04-16T17:15:59+00:00</lastmod>
+    <lastmod>2025-04-29T18:09:36+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/CODE_OF_CONDUCT.html</loc>
@@ -15482,7 +15482,7 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/location.html</loc>
-    <lastmod>2025-04-16T17:10:51+00:00</lastmod>
+    <lastmod>2025-04-29T18:13:49+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/Makefile</loc>
@@ -15598,7 +15598,7 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/status.html</loc>
-    <lastmod>2025-04-28T20:35:39+00:00</lastmod>
+    <lastmod>2025-04-29T18:20:29+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/status.json</loc>
