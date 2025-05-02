@@ -51,7 +51,7 @@ your account will be closed and it'll say something line:
 > **ERROR: Sorry (tm Canada 🇨🇦) you cannot login at this time.**
 
 If that happens, you will need to
-[send email to the IOCCC judges](if-you-really-need-to-send-email-the-ioccc-judges)
+[send email to the IOCCC judges](../contact.md#if-you-really-need-to-send-email-the-ioccc-judges)
 to ask for your password to be reset.
 
 Assuming you did login in time, you should put in your login (UUID username),

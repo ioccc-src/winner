@@ -350,7 +350,7 @@ will have fortnight (**14 days**) to [change your submit server initial password
 
 <p class="leftbar">
 If you do not change your **Initial password** in time, you will have to
-[send email to the IOCCC judges](if-you-really-need-to-send-email-the-ioccc-judges)
+[send email to the IOCCC judges](../contact.md#if-you-really-need-to-send-email-the-ioccc-judges)
 to ask for your password to be reset.
 </p>
 
