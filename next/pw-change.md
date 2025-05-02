@@ -4,7 +4,7 @@ Using the **Username** and **Initial password** you receive via
 email in [step 3](../quick-start.html#step_3), you need to login to the [IOCCC submit
 server](https://submit.ioccc.org).
 
-**IMPORTANT NOTE**: You must change your password **WITHIN 72 HOURS**
+**IMPORTANT NOTE**: You must change your password within a fortnight (**14 days**)
 from when one of the [IOCCC judges](../judges.html) sent that email.
 
 **NOTE**: The [IOCCC submit server](https://submit.ioccc.org) will be ready
@@ -45,11 +45,14 @@ new password.<br>
 >
 > [Pwned](https://haveibeenpwned.com/Passwords) passwords are passwords that have been previously exposed in some published data breach.
 
-Again, if you do not change your password within 72 hours **YOUR ACCOUNT WILL BE
-CLOSED** and you'll have to register again! In that case it'll say something
-like:
+Again, if you do not change your password within fortnight (**14 days**)
+your account will be closed and it'll say something line:
 
 > **ERROR: Sorry (tm Canada 🇨🇦) you cannot login at this time.**
+
+If that happens, you will need to
+[send email to the IOCCC judges](if-you-really-need-to-send-email-the-ioccc-judges)
+to ask for your password to be reset.
 
 Assuming you did login in time, you should put in your login (UUID username),
 your old (initial) password and a new password and then click "Change Password".

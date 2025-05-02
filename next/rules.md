@@ -345,17 +345,13 @@ becomes **[open](../faq.html#open)**.
 
 <p class="leftbar">
 Once that email with your **Username** and **Initial password** is sent, you
-will have **72 hours** to [change your submit server initial password](pw-change.html).
+will have fortnight (**14 days**) to [change your submit server initial password](pw-change.html).
 </p>
 
 <p class="leftbar">
-If you do not change your **Initial password** in time, **you will have
-to [contact an IOCCC judge](../contact.html)** by email and ask them to reset
-your password.  Not only is this a hassle for everyone involved, it will
-delay your IOCCC registration process, perhaps by a number of days that
-`egrep(1)` would be able to pattern match.  By `egrep(1)`, we refer to the
-long standing **UNIX** utility that should just run and **NOT** whine about
-the command being allegedly deprecated.
+If you do not change your **Initial password** in time, you will have to
+[send email to the IOCCC judges](if-you-really-need-to-send-email-the-ioccc-judges)
+to ask for your password to be reset.
 </p>
 
 <p class="leftbar">
