@@ -1,8 +1,27 @@
 #!/usr/bin/env bash
 #
-# jval-wrapper.sh - print JSON values to stdout using the XPath for JSON model
+# jval-wrapper.sh - write JSON values to stdout using the XPath for JSON model
 #
-# We form a wrapper for the `jval(1)`, a tool that allow the printing of JSON values.
+# We form a wrapper for the `jval(1)`, a tool that allow the printing JSON values to stdout
+# using the XPath for JSON model.
+#
+# NOTE: As of 2024 Sep 09 the jval(1) tool has not been written, so jval-wrapper.sh uses with the jsp tool from:
+#
+#   https://github.com/kjozsa/jsp
+#
+#   FYI: For macOS, use homebrew to install pipx:
+#
+#		brew install pipx
+#
+#	 Next, use pipx to install jsp:
+#
+#		pipx --global install jsp
+#
+#	 and then be sure that ~/.local/bin is in your $PATH.
+#
+# or the JSONPath.sh(1) tool from:
+#
+#   https://github.com/lcn2/JSONPath.sh
 #
 # See the following on XPath for JSON model:
 #
@@ -10,7 +29,7 @@
 #   https://jsonpath.com
 #   https://github.com/lcn2/JSONPath.sh?tab=readme-ov-file#jsonpath-patterns-and-extensions
 #
-# Copyright (c) 2024 by Landon Curt Noll.  All Rights Reserved.
+# Copyright (c) 2024-2025 by Landon Curt Noll.  All Rights Reserved.
 #
 # Permission to use, copy, modify, and distribute this software and
 # its documentation for any purpose and without fee is hereby granted,
@@ -112,7 +131,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="2.0.1 2025-04-21"
+export VERSION="2.0.2 2025-05-04"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -149,7 +168,7 @@ export JSP_TOOL=""
 JSP_TOOL=$(type -P jsp)
 export JSONPATH_SH=""
 JSONPATH_SH=$(type -P JSONPath.sh)
-# set the defaiult XPath for JSON
+# set the default XPath for JSON
 export XPATHJSON_USE="jsp"
 export JSONPATH_ARG
 export PATTERN=""
@@ -176,14 +195,14 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-n] [-N] [-b] [-q] [-T] [-t tool] 
 	-T		trim all newlines (def: do not)
 
 	-t tool		tool to use: jsp or JSONPath.sh (def: try jsp, otherwise try JSONPath.sh)
-	-Q		quick check tool using trivial input (def: do not)
+	-Q		quick check tool using trivial input and exit, ignore file.json and pattern (def: do not)
 
-	file.json	JSON file to read, - ==> read stdin
-	pattern		Xpath for JSON query pattern (def: $PATTERN}
+	file.json	JSON file to read, - ==> read stdin (ignored if -Q)
+	pattern		Xpath for JSON query pattern (def: $PATTERN) (ignored if -Q)
 
 Exit codes:
      0         all OK
-     1	       JSONPath.sh exited non-zero
+     1	       some internal tool exited non-zero
      2         -h and help string printed or -V and version string printed
      3         command line error
      4         bash version is too old
@@ -265,16 +284,29 @@ if [[ $V_FLAG -ge 1 ]]; then
     echo "$0: debug[5]: argument count: $#" 1>&2
 fi
 case "$#" in
+0) if [[ -z $QUICK_CHECK ]]; then
+        echo "$0: ERROR: 0 args allowed only with -Q" 1>&2
+	echo "$USAGE" 1>&2
+	exit 3
+   fi
+   ;;
 1) JSON_FILE="$1"
    ;;
 2) JSON_FILE="$1"
     PATTERN="$2"
     ;;
-*) echo "$0: ERROR: expected i or 2 args, found: $#" 1>&2
+*) echo "$0: ERROR: expected 1 or 2 args, found: $#" 1>&2
     echo "$USAGE" 1>&2
     exit 3
     ;;
 esac
+#
+# -Q ignores ignore file.json and pattern
+#
+if [[ -n $QUICK_CHECK ]]; then
+    JSON_FILE=""
+    PATTERN=""
+fi
 #
 if [[ $JSON_FILE == "-" ]]; then
     JSON_FILE=""
@@ -350,83 +382,6 @@ fi
 export BIN_DIR="bin"
 
 
-# validate the XPath for JSON tool
-#
-case "$XPATHJSON_USE" in
-
-    # case: we will use JSONPath.sh
-    #
-    JSONPath.sh)
-
-	# try JSONPath.sh
-	#
-	if [[ -z $JSONPATH_SH || ! -x $JSONPATH_SH ]]; then
-	    echo "$0: ERROR: JSONPath.sh tool is not installed, is not executable, or not in \$PATH" 1>&2
-	    echo "$0: notice: obtain jsp from: $JSP_REPO" 1>&2
-	    echo "$0: notice: or obtain jsp via \"pipx install jsp\" and placing ~/.local/bin in \$PATH" 1>&2
-	    echo "$0: notice: obtain JSONPath.sh from: $JSONPATH_REPO" 1>&2
-	    echo "$0: notice: if possible install jsp instead of JSONPath.sh as jsp is faster" 1>&2
-	    exit 5
-	fi
-
-	# case: -Q - perform quick check
-	#
-	if [[ -n $QUICK_CHECK ]]; then
-	    # verify JSONPath.sh supports -S -4 -p
-	    if ! "$JSONPATH_SH" -S -4 -p >/dev/null 2>&1; then
-		echo "$0: ERROR: JSONPath.sh tool does not support -S -4 -p: $FIZZBIN_JSON" 1>&2
-		echo "$0: notice: we recommend you obtain and install jsp from: $JSP_REPO" 1>&2
-		echo "$0: notice: or obtain jsp via \"pipx install jsp\" and placing ~/.local/bin in \$PATH" 1>&2
-		echo "$0: notice: otherwise install JSONPath.sh from: $JSONPATH_REPO" 1>&2
-		echo "$0: notice: if possible install jsp instead of JSONPath.sh as jsp is faster" 1>&2
-		exit 5
-	    fi <<< "$FIZZBIN_JSON"
-	fi
-	;;
-
-    # case: we will use jsp
-    #
-    jsp)
-
-	# try jsp
-	#
-	if [[ -z $JSP_TOOL || ! -x $JSP_TOOL ]]; then
-	    echo "$0: ERROR: jsp.sh tool is not installed, is not executable, or not in \$PATH" 1>&2
-	    echo "$0: notice: obtain jsp from: $JSP_REPO" 1>&2
-	    echo "$0: notice: or obtain jsp via \"pipx install jsp\" and placing ~/.local/bin in \$PATH" 1>&2
-	    echo "$0: notice: obtain JSONPath.sh from: $JSONPATH_REPO" 1>&2
-	    echo "$0: notice: if possible install jsp instead of JSONPath.sh as jsp is faster" 1>&2
-	    exit 5
-	fi
-
-	# case: -Q - perform quick check
-	#
-	if [[ -n $QUICK_CHECK ]]; then
-	    # verify jsp
-	    if ! "$JSP_TOOL" --indent 4 --format --no-color >/dev/null 2>&1; then
-		echo "$0: ERROR: jsp tool does not support --indent 4 --format --no-color: $FIZZBIN_JSON" 1>&2
-		echo "$0: notice: you might need to update and reinstall jsp from: $JSP_REPO" 1>&2
-		echo "$0: notice: or obtain jsp via \"pipx install jsp\" and placing ~/.local/bin in \$PATH" 1>&2
-		echo "$0: notice: or you might try to obtain and install JSONPath.sh from: $JSONPATH_REPO" 1>&2
-		echo "$0: notice: if possible install jsp instead of JSONPath.sh as jsp is faster" 1>&2
-		exit 5
-	    fi <<< "$FIZZBIN_JSON"
-	fi
-	;;
-
-    # case: we do not have an XPath for JSON tool
-    #
-    *)
-	echo "$0: ERROR: cannot find an XPath JSON tool to use" 1>&2
-	echo "$0: notice: we recommend you obtain and install jsp from: $JSP_REPO" 1>&2
-	echo "$0: notice: or obtain jsp via \"pipx install jsp\" and placing ~/.local/bin in \$PATH" 1>&2
-	echo "$0: notice: otherwise install JSONPath.sh from: $JSONPATH_REPO" 1>&2
-	echo "$0: notice: if possible install jsp instead of JSONPath.sh as jsp is faster" 1>&2
-	exit 5
-	;;
-esac
-
-
 # print running info if verbose
 #
 # If -v 3 or higher, print exported variables in order that they were exported.
@@ -482,6 +437,97 @@ if [[ -n $DO_NOT_PROCESS ]]; then
     fi
     exit 0
 fi
+
+
+# validate the XPath for JSON tool
+#
+case "$XPATHJSON_USE" in
+
+    # case: we will use JSONPath.sh
+    #
+    JSONPath.sh)
+
+	# try JSONPath.sh
+	#
+	if [[ -z $JSONPATH_SH || ! -x $JSONPATH_SH ]]; then
+	    echo "$0: ERROR: JSONPath.sh tool is not installed, is not executable, or not in \$PATH" 1>&2
+	    echo "$0: notice: obtain jsp from: $JSP_REPO" 1>&2
+	    echo "$0: notice: or obtain jsp via \"pipx install jsp\" and placing ~/.local/bin in \$PATH" 1>&2
+	    echo "$0: notice: obtain JSONPath.sh from: $JSONPATH_REPO" 1>&2
+	    echo "$0: notice: if possible install jsp instead of JSONPath.sh as jsp is faster" 1>&2
+	    exit 5
+	fi
+
+	# case: -Q - perform quick check
+	#
+	if [[ -n $QUICK_CHECK ]]; then
+	    # verify JSONPath.sh supports -S -4
+	    if [[ $V_FLAG -ge 1 ]]; then
+		echo "$0: debug[1]: about to: $JSONPATH_SH -S -4 >/dev/null 2>&1 <<< $FIZZBIN_JSON" 1>&2
+	    fi
+	    if ! "$JSONPATH_SH" -S -4 >/dev/null 2>&1; then
+		echo "$0: ERROR: JSONPath.sh tool does not support -S -4 $FIZZBIN_JSON" 1>&2
+		echo "$0: notice: we recommend you obtain and install jsp from: $JSP_REPO" 1>&2
+		echo "$0: notice: or obtain jsp via \"pipx install jsp\" and placing ~/.local/bin in \$PATH" 1>&2
+		echo "$0: notice: otherwise install JSONPath.sh from: $JSONPATH_REPO" 1>&2
+		echo "$0: notice: if possible install jsp instead of JSONPath.sh as jsp is faster" 1>&2
+		exit 5
+	    fi <<< "$FIZZBIN_JSON"
+	    if [[ $V_FLAG -ge 1 ]]; then
+		echo "$0: debug[1]: passed quick check: $JSONPATH_SH" 1>&2
+	    fi
+	    exit 0
+	fi
+	;;
+
+    # case: we will use jsp
+    #
+    jsp)
+
+	# try jsp
+	#
+	if [[ -z $JSP_TOOL || ! -x $JSP_TOOL ]]; then
+	    echo "$0: ERROR: jsp.sh tool is not installed, is not executable, or not in \$PATH" 1>&2
+	    echo "$0: notice: obtain jsp from: $JSP_REPO" 1>&2
+	    echo "$0: notice: or obtain jsp via \"pipx install jsp\" and placing ~/.local/bin in \$PATH" 1>&2
+	    echo "$0: notice: obtain JSONPath.sh from: $JSONPATH_REPO" 1>&2
+	    echo "$0: notice: if possible install jsp instead of JSONPath.sh as jsp is faster" 1>&2
+	    exit 5
+	fi
+
+	# case: -Q - perform quick check
+	#
+	if [[ -n $QUICK_CHECK ]]; then
+	    # verify jsp
+	    if [[ $V_FLAG -ge 1 ]]; then
+		echo "$0: debug[1]: about to: $JSP_TOOL  --indent 4 --format --no-color >/dev/null 2>&1 <<< $FIZZBIN_JSON" 1>&2
+	    fi
+	    if ! "$JSP_TOOL" --indent 4 --format --no-color >/dev/null 2>&1; then
+		echo "$0: ERROR: jsp tool does not support --indent 4 --format --no-color: $FIZZBIN_JSON" 1>&2
+		echo "$0: notice: you might need to update and reinstall jsp from: $JSP_REPO" 1>&2
+		echo "$0: notice: or obtain jsp via \"pipx install jsp\" and placing ~/.local/bin in \$PATH" 1>&2
+		echo "$0: notice: or you might try to obtain and install JSONPath.sh from: $JSONPATH_REPO" 1>&2
+		echo "$0: notice: if possible install jsp instead of JSONPath.sh as jsp is faster" 1>&2
+		exit 5
+	    fi <<< "$FIZZBIN_JSON"
+	    if [[ $V_FLAG -ge 1 ]]; then
+		echo "$0: debug[1]: passed quick check: $JSP_TOOL" 1>&2
+	    fi
+	    exit 0
+	fi
+	;;
+
+    # case: we do not have an XPath for JSON tool
+    #
+    *)
+	echo "$0: ERROR: cannot find an XPath JSON tool to use" 1>&2
+	echo "$0: notice: we recommend you obtain and install jsp from: $JSP_REPO" 1>&2
+	echo "$0: notice: or obtain jsp via \"pipx install jsp\" and placing ~/.local/bin in \$PATH" 1>&2
+	echo "$0: notice: otherwise install JSONPath.sh from: $JSONPATH_REPO" 1>&2
+	echo "$0: notice: if possible install jsp instead of JSONPath.sh as jsp is faster" 1>&2
+	exit 5
+	;;
+esac
 
 
 # -n means we have nothing to do
