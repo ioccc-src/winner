@@ -20,6 +20,30 @@ We invite you to join the **IOCCC Discord Community** via this link: [https://di
 </div>
 
 
+## 2025-05-05
+
+The **IOCCC28** OPEN period has one month left!  You have until **2025-06-05 04:03:02.010099 UTC**
+to upload your submission(s).  For more information see:
+
+> [Entering the IOCCC](https://www.ioccc.org/quick-start.html#enter).
+
+If you are not yet registered for the **IOCCC28** and plan to enter the contest, we encourage you register ASAP:
+
+> [How to register for the IOCCC](https://www.ioccc.org/next/register.html)
+
+We released [mkiocccentry toolkit](https://github.com/ioccc-src/mkiocccentry) **version 2.4.8 2025-05-05**.
+
+While you are **NOT** required to use this **NEW release** in order to submit to the **IOCCC28**,
+we **RECOMMEND** that you **install and use**
+[version version 2.4.8 2025-05-05](https://github.com/ioccc-src/mkiocccentry)
+because among other things, it provides:
+
+* Improved the format of how `mkiocccentry(1)` announces doing a `make clobber`.
+
+* Improved `chkentry(1)` man page and the `chkentry -h` usage message.
+
+
+
 ## 2025-04-26
 
 We released [mkiocccentry toolkit](https://github.com/ioccc-src/mkiocccentry) **version 2.4.6 2025-04-26**.
