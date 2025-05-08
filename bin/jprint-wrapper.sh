@@ -451,7 +451,7 @@ case "$XPATHJSON_USE" in
 	# try jsp
 	#
 	if [[ -z $JSP_TOOL || ! -x $JSP_TOOL ]]; then
-	    echo "$0: ERROR: jsp.sh tool is not installed, is not executable, or not in \$PATH" 1>&2
+	    echo "$0: ERROR: jsp tool is not installed, is not executable, or not in \$PATH" 1>&2
 	    echo "$0: notice: obtain jsp from: $JSP_REPO" 1>&2
 	    echo "$0: notice: or obtain jsp via \"pipx install jsp\" and placing ~/.local/bin in \$PATH" 1>&2
 	    echo "$0: notice: obtain JSONPath.sh from: $JSONPATH_REPO" 1>&2
