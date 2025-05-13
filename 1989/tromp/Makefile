@@ -66,7 +66,7 @@ CDEFINE=
 
 # Include files that are needed to compile
 #
-CINCLUDE=
+CINCLUDE= -include signal.h -include sys/time.h
 
 # Optimization
 #
