@@ -1201,6 +1201,9 @@ Although we appreciate the help here, he cynically noted that he had to have an
 IOCCC [Tetris](https://en.wikipedia.org/wiki/Tetris) working (this of course was
 not his only reason :-) )
 
+[Anthony](#sirwumpus) fixed this entry to compile on NetBSD 10.1 by supplying
+missing include files, without which caused a SIGILL (thats like a SEGSEGV, but
+caused by a nasty cold ~~boot~~).
 
 Jump to: [top](#)
 
@@ -7172,6 +7175,26 @@ longer worked and getting the IOCCC where it is today!
 
 Jump to: [top](#)
 
+<div id="#sirwumpus">
+### Anthony C Howe
+</div>
+
+Anthony is the author of the original `iocccsize(1)` tool and its
+revisions (which he's constantly reminding everyone like he made
+some Earth shattering discovery on par with toilet paper - silly
+git!).  He also likes to troll here and there finding ~~obsecure~~
+obfuscated bugs and making crazy suggestions that we sometimes
+accept.  We try not to hold that against him, he's Canadian after
+all (Sorry™).
+
+On top of being a Canadian, he has supplied fixes for:
+
+* [1989/tromp](thanks-for-help.html#1989_tromp)
+
+Despite all that, we still welcome as an IOCCC Helper.
+
+
+Jump to: [top](#)
 
 <div id="yusuke">
 ### Yusuke Endoh
