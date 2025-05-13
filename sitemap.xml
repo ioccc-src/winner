@@ -1338,7 +1338,7 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/1989/tromp/Makefile</loc>
-    <lastmod>2025-01-10T06:06:38+00:00</lastmod>
+    <lastmod>2025-05-13T21:27:03+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/1989/tromp/README.md</loc>
@@ -15226,7 +15226,7 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/cvt-submission.sh</loc>
-    <lastmod>2025-05-06T01:14:15+00:00</lastmod>
+    <lastmod>2025-05-13T21:27:13+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/entry2csv.sh</loc>
@@ -15294,15 +15294,15 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/jfmt-wrapper.sh</loc>
-    <lastmod>2025-05-04T21:37:04+00:00</lastmod>
+    <lastmod>2025-05-08T20:25:15+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/jprint-wrapper.sh</loc>
-    <lastmod>2025-05-04T21:36:06+00:00</lastmod>
+    <lastmod>2025-05-08T20:25:18+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/jval-wrapper.sh</loc>
-    <lastmod>2025-05-04T21:35:57+00:00</lastmod>
+    <lastmod>2025-05-08T20:24:30+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/manifest.csv.entry.awk</loc>
@@ -15598,7 +15598,7 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/status.html</loc>
-    <lastmod>2025-05-06T01:22:41+00:00</lastmod>
+    <lastmod>2025-05-13T23:23:20+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/status.json</loc>
@@ -15610,11 +15610,11 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/thanks-for-help.html</loc>
-    <lastmod>2025-04-16T18:20:39+00:00</lastmod>
+    <lastmod>2025-05-13T23:23:19+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/thanks-for-help.md</loc>
-    <lastmod>2025-04-16T18:20:31+00:00</lastmod>
+    <lastmod>2025-05-13T23:23:05+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/var.mk</loc>

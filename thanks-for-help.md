@@ -7175,23 +7175,29 @@ longer worked and getting the IOCCC where it is today!
 
 Jump to: [top](#)
 
-<div id="#sirwumpus">
+<div id="sirwumpus">
 ### Anthony C Howe
 </div>
 
-Anthony is the author of the original `iocccsize(1)` tool and its
+[Anthony C Howe](authors.html#Anthony_C_Howe) is the author of the
+[original iocccsize&lpar;1&rpar; tool](https://github.com/SirWumpus/iocccsize) and its
 revisions (which he's constantly reminding everyone like he made
-some Earth shattering discovery on par with toilet paper - silly
-git!).  He also likes to troll here and there finding ~~obsecure~~
-obfuscated bugs and making crazy suggestions that we sometimes
-accept.  We try not to hold that against him, he's Canadian after
-all (Sorry™).
+some Earth shattering invention on par with toilet paper 🧻 - silly `git(1)` 🤓).
 
-On top of being a Canadian, he has supplied fixes for:
+Anthony likes to troll 👹 here and there, finding ~~obsecure~~
+obfuscated bugs, and making crazy suggestions that we sometimes
+accept.  As an advocate for BSD style Unix platforms, we owe
+him a **THANK YOU** for helping maintain BSD portability
+of the [mkiocccentry toolkit](https://github.com/ioccc-src/mkiocccentry).
+
+As an [IOCCC winning author](authors.html#Anthony_C_Howe) from [Canada](location.html#CA),
+he enjoys the privilege of not being required to add, ™ Canada 🇨🇦, when he says "Sorry" 😉.
+
+And if all that is not enough, Anthony has supplied fixes for:
 
 * [1989/tromp](thanks-for-help.html#1989_tromp)
 
-Despite all that, we still welcome as an IOCCC Helper.
+Despite all that, we still welcome him as an IOCCC Helper!
 
 
 Jump to: [top](#)
