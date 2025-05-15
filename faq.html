@@ -506,7 +506,7 @@
 <li><strong>Q 5.9</strong>: <a class="normal" href="#zlib">How do I compile and install zlib for IOCCC entries that require it?</a></li>
 <li><strong>Q 5.10</strong>: <a class="normal" href="#ruby">How do I install Ruby for entries that require it?</a></li>
 <li><strong>Q 5.11</strong>: <a class="normal" href="#rake">How do I install rake for entries that require it?</a></li>
-<li><strong>Q 5.12</strong>: <a class="normal" href="#ncurses">How do I compile entries that use ncurses?</a></li>
+<li><strong>Q 5.12</strong>: <a class="normal" href="#ncurses">How do I compile entries that use ncurses if we only have curses?</a></li>
 </ul>
 <h2 id="problems-compiling-ioccc-entries">6. <a href="#compile_problems">Problems compiling IOCCC entries</a></h2>
 <ul>
@@ -4218,6 +4218,10 @@ packages: one for compiling and one for linking / running.</p>
 <p>Go to the <a href="https://invisible-island.net/ncurses/">ncurses website</a> and follow their instructions
 for downloading, installing and using ncurses.</p>
 <p>We recommend trying a method suitable for your environment first, if possible.</p>
+<h4 id="see-also">See also</h4>
+<p>See the
+FAQ on “<a href="#ncurses">ncurses</a>”
+for more information on curses vs ncurses.</p>
 <p>Jump to: <a href="#">top</a></p>
 <div id="sox">
 <div id="sound">
@@ -4473,7 +4477,7 @@ then run:</p>
 <pre><code>    gem install rake</code></pre>
 <p>Jump to: <a href="#">top</a></p>
 <div id="ncurses">
-<h3 id="q-5.12-how-do-i-compile-entries-that-use-ncurses">Q 5.12: How do I compile entries that use ncurses?</h3>
+<h3 id="q-5.12-how-do-i-compile-entries-that-use-ncurses-if-we-only-have-curses">Q 5.12: How do I compile entries that use ncurses if we only have curses?</h3>
 </div>
 <p>Entries such as these were written to compile using the <strong>ncurses</strong> package:</p>
 <ul>
@@ -4494,11 +4498,14 @@ package to install the <code>ncurses.h</code> include file.</p>
 system, and you have the <strong>old classic BSD curses</strong> instead, you may try
 hacking the code to and use the <strong>old classic BSD curses</strong> package.</p>
 <p>You will need to modify the <code>Makefile</code> and/or <code>prog.c</code> to include <code>curses.h</code>
-instead of <code>ncurses.h</code>. You may also need to change use of <code>acs_map</code>
-to use <code>_acs_map</code>, for example.</p>
+instead of <code>ncurses.h</code> and to link to <code>-lcurses</code> instead of <code>-lncurses</code>.
+You may also need to change use of <code>acs_map</code> to use <code>_acs_map</code>, for example.</p>
 <p>Be aware that <strong>old classic BSD curses</strong> is not fully compatible with
 the <strong>ncurses</strong>. Resizing the terminal window, for example, may lead to
 complications. A more reliable approach to install <strong>ncurses</strong> instead.</p>
+<p>See the
+FAQ on “<a href="#curses">curses</a>”
+for more information installing <strong>ncurses</strong>.</p>
 <p>Jump to: <a href="#">top</a></p>
 <hr style="width:50%;text-align:left;margin-left:0">
 <hr style="width:50%;text-align:left;margin-left:0">

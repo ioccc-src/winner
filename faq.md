@@ -80,7 +80,7 @@ This is FAQ version **28.2.16 2025-03-12**.
 - **Q 5.9**: <a class="normal" href="#zlib">How do I compile and install zlib for IOCCC entries that require it?</a>
 - **Q 5.10**: <a class="normal" href="#ruby">How do I install Ruby for entries that require it?</a>
 - **Q 5.11**: <a class="normal" href="#rake">How do I install rake for entries that require it?</a>
-- **Q 5.12**: <a class="normal" href="#ncurses">How do I compile entries that use ncurses?</a>
+- **Q 5.12**: <a class="normal" href="#ncurses">How do I compile entries that use ncurses if we only have curses?</a>
 
 
 ## 6. [Problems compiling IOCCC entries](#compile_problems)
@@ -4787,6 +4787,13 @@ for downloading, installing and using ncurses.
 We recommend trying a method suitable for your environment first, if possible.
 
 
+#### See also
+
+See the
+FAQ on "[ncurses](#ncurses)"
+for more information on curses vs ncurses.
+
+
 Jump to: [top](#)
 
 
@@ -5329,7 +5336,7 @@ Jump to: [top](#)
 
 
 <div id="ncurses">
-### Q 5.12: How do I compile entries that use ncurses?
+### Q 5.12: How do I compile entries that use ncurses if we only have curses?
 </div>
 
 Entries such as these were written to compile using the **ncurses** package:
@@ -5358,12 +5365,16 @@ system, and you have the **old classic BSD curses** instead, you may try
 hacking the code to and use the **old classic BSD curses** package.
 
 You will need to modify the `Makefile` and/or `prog.c` to include `curses.h`
-instead of `ncurses.h`.  You may also need to change use of `acs_map`
-to use `_acs_map`, for example.
+instead of `ncurses.h` and to link to `-lcurses` instead of `-lncurses`.
+You may also need to change use of `acs_map` to use `_acs_map`, for example.
 
 Be aware that **old classic BSD curses** is not fully compatible with
 the **ncurses**.  Resizing the terminal window, for example, may lead to
 complications.  A more reliable approach to install **ncurses** instead.
+
+See the
+FAQ on "[curses](#curses)"
+for more information installing **ncurses**.
 
 
 Jump to: [top](#)
