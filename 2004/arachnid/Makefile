@@ -40,7 +40,7 @@ include ../../var.mk
 #
 CSILENCE= -Wno-char-subscripts -Wno-extra-semi -Wno-implicit-int \
 	  -Wno-return-type -Wno-unused-parameter -Wno-unused-value \
-	  -Wno-misleading-indentation -Wno-pedantic
+	  -Wno-misleading-indentation -Wno-pedantic -Wno-return-mismatch
 
 # Attempt to silence unknown warning option
 #
@@ -58,9 +58,19 @@ CSTD= -std=gnu99
 #
 ARCH=
 
+# NetBSD Curses provides `_acs_map[]` for NCurses compatibility, while
+# NCurses uses `acs_map[]`.  Neither is part of SUS Curses Issue 7.
+NCURSES_VERSION != grep NCURSES_VERSION /usr/include/curses.h
+
+ifdef NCURSES_VERSION
+ACS_MAP = -DACS_MAP=acs_map
+else
+ACS_MAP = -DACS_MAP=_acs_map
+endif
+
 # Defines that are needed to compile
 #
-CDEFINE= -DL=LINES -DS=COLS -DW=mvwaddch\(w,v,u,acs_map\[l\[m\[u
+CDEFINE= -DL=LINES -DS=COLS ${ACS_MAP} -DW=mvwaddch\(w,v,u,ACS_MAP\[l\[m\[u
 
 # Include files that are needed to compile
 #
@@ -76,7 +86,7 @@ CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
 
 # Libraries needed to build
 #
-LDFLAGS= -lncurses
+LDFLAGS= -lcurses
 
 # C compiler to use
 #
