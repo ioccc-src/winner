@@ -4136,6 +4136,8 @@ use the original version)! :-) See the
 FAQ on "[alternate code](faq.html#alt_code)"
 for more details.
 
+[Anthony](#sirwumpus) modified the sources to use `<curses.h>` instead and to
+define ACS_MAP macro whether using NCurses or BSD Curses.
 
 
 Jump to: [top](#)
@@ -7196,6 +7198,7 @@ he enjoys the privilege of not being required to add, ™ Canada 🇨🇦, when 
 And if all that is not enough, Anthony has supplied fixes for:
 
 * [1989/tromp](thanks-for-help.html#1989_tromp)
+* [2004/arachnid](thanks-for-help.html#2004_aranchid)
 
 Despite all that, we still welcome him as an IOCCC Helper!
 
