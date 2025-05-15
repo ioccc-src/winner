@@ -80,6 +80,7 @@ This is FAQ version **28.2.16 2025-03-12**.
 - **Q 5.9**: <a class="normal" href="#zlib">How do I compile and install zlib for IOCCC entries that require it?</a>
 - **Q 5.10**: <a class="normal" href="#ruby">How do I install Ruby for entries that require it?</a>
 - **Q 5.11**: <a class="normal" href="#rake">How do I install rake for entries that require it?</a>
+- **Q 5.12**: <a class="normal" href="#ncurses">How do I compile entries that use ncurses?</a>
 
 
 ## 6. [Problems compiling IOCCC entries](#compile_problems)
@@ -447,6 +448,10 @@ Your entry must compile with **clang** or **gcc** and run under at least one fla
 system that conforms to the [SUS](https://en.wikipedia.org/wiki/Single_UNIX_Specification),
 otherwise known as the [The Single UNIX Specification Version 4](https://unix.org/version4/)
 or [later SUS](https://unix.org/online.html).
+
+And while [XCURSES](https://unix.org/version4/xcurses_contents.html) is not part of the
+[Base Specifications, Issue 7](https://unix.org/version4/overview.html), your entry
+is free to use it.  I.e., use of [ncurses](https://en.wikipedia.org/wiki/Ncurses) is allowed.
 
 
 Jump to: [top](#)
@@ -5318,6 +5323,47 @@ Once this is done, try as root or via `sudo`:
 ``` <!---sh-->
     gem install rake
 ```
+
+
+Jump to: [top](#)
+
+
+<div id="ncurses">
+### Q 5.12: How do I compile entries that use ncurses?
+</div>
+
+Entries such as these were written to compile using the **ncurses** package:
+
+* [2004/arachnid](2004/arachnid/index.html)
+* [2006/night](2006/night/index.html)
+* [2014/skeggs](2014/skeggs/index.html)
+* [2020/endoh1](2020/endoh1/index.html)
+* etc.
+
+
+#### Installing ncurses
+
+If your system does not have **ncurses** installed, check with your system
+provider for a package.  In some cases you may need to also install a
+"development" variant (such as `ncurses-devel`) in addition to the main
+package to install the `ncurses.h` include file.
+
+You may also install from the [official ncurses site](https://invisible-island.net/ncurses/).
+
+
+#### Pretending to use classic curses
+
+If you do not wish to, or cannot install the **ncurses** package for your
+system, and you have the **old classic BSD curses** instead, you may try
+hacking the code to and use the **old classic BSD curses** package.
+
+You will need to modify the `Makefile` and/or `prog.c` to include `curses.h`
+instead of `ncurses.h`.  You may also need to change use of `acs_map`
+to use `_acs_map`, for example.
+
+Be aware that **old classic BSD curses** is not fully compatible with
+the **ncurses**.  Resizing the terminal window, for example, may lead to
+complications.  A more reliable approach to install **ncurses** instead.
 
 
 Jump to: [top](#)
