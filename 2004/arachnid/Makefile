@@ -58,13 +58,12 @@ CSTD= -std=gnu99
 #
 ARCH=
 
+MAC_SDK_INC := /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include 
+
 # NetBSD Curses provides `_acs_map[]` for NCurses compatibility, while
 # NCurses uses `acs_map[]`.  Neither is part of SUS Curses Issue 7.
-NCURSES_VERSION != grep NCURSES_VERSION /usr/include/curses.h 2>/dev/null
-ifndef NCURSES_VERSION
-# Some systems, like MacOS, use ncurses.h with no sym.link for curses.h.
-NCURSES_VERSION != grep NCURSES_VERSION /usr/include/ncurses.h 2>/dev/null
-endif
+NCURSES_H != find /usr/include ${MAC_SDK_INC} -name "*curses.h" 2>/dev/null | head -n1
+NCURSES_VERSION != grep NCURSES_VERSION ${NCURSES_H} 2>/dev/null
 
 # Defines that are needed to compile
 #
