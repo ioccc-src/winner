@@ -60,12 +60,10 @@ ARCH=
 
 # NetBSD Curses provides `_acs_map[]` for NCurses compatibility, while
 # NCurses uses `acs_map[]`.  Neither is part of SUS Curses Issue 7.
-NCURSES_VERSION != grep NCURSES_VERSION /usr/include/curses.h
-
-ifdef NCURSES_VERSION
-ACS_MAP = -DACS_MAP=acs_map
-else
-ACS_MAP = -DACS_MAP=_acs_map
+NCURSES_VERSION != grep NCURSES_VERSION /usr/include/curses.h 2>/dev/null
+ifndef NCURSES_VERSION
+# Some systems, like MacOS, use ncurses.h with no sym.link for curses.h.
+NCURSES_VERSION != grep NCURSES_VERSION /usr/include/ncurses.h 2>/dev/null
 endif
 
 # Defines that are needed to compile
@@ -86,7 +84,17 @@ CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
 
 # Libraries needed to build
 #
-LDFLAGS= -lcurses
+LDFLAGS=
+
+ifdef NCURSES_VERSION
+ACS_MAP = -DACS_MAP=acs_map
+CINCLUDE += -include ncurses.h
+LDFLAGS += -lncurses
+else
+ACS_MAP = -DACS_MAP=_acs_map
+CINCLUDE += -include curses.h
+LDFLAGS += -lcurses
+endif
 
 # C compiler to use
 #

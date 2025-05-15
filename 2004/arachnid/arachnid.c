@@ -1,4 +1,4 @@
-#include <curses.h>/******************************************************/
+/* #include <curses.h> *** see Makefile CINCLUDE *************************/
             int               m[256                   ] [         256   ],a
  ,b   ;;;   ;;;   WINDOW*w;   char*l=""   "\176qxl"   "q"   "q"   "k"   "w\
 xm"   "x"   "t"         "j"         "v"         "u"         "n"         ,Q[
