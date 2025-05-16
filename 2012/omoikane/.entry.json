@@ -30,14 +30,6 @@
             "entry_text" : "alternate source code"
         },
         {
-            "file_path" : "omoikane.alt2.c",
-            "inventory_order" : 40,
-            "OK_to_edit" : true,
-            "display_as" : "c",
-            "display_via_github" : true,
-            "entry_text" : "second alternate source code"
-        },
-        {
             "file_path" : "omoikane.orig.c",
             "inventory_order" : 50,
             "OK_to_edit" : false,
