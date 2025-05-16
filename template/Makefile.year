@@ -41,9 +41,9 @@ include ../var.mk
 # IOCCC entries
 ###############
 #
-# BEGIN - DO NOT REMOVE THIS LINE - make add_dir uses this line #
+# BEGIN - DO NOT REMOVE THIS LINE - make new_entry uses this line #
 ENTRIES=
-# END - DO NOT REMOVE THIS LINE - make add_dir also uses this #
+# END - DO NOT REMOVE THIS LINE - make new_entry also uses this #
 
 YEAR= %%YEAR%%
 
