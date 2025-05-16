@@ -4503,6 +4503,9 @@ hacking the code to and use the <strong>old classic curses</strong> package.</p>
 <p>You will need to modify the <code>Makefile</code> and/or <code>prog.c</code> to include <code>curses.h</code>
 instead of <code>ncurses.h</code> and to link to <code>-lcurses</code> instead of <code>-lncurses</code>.
 You may also need to change use of <code>acs_map</code> to use <code>_acs_map</code>, for example.</p>
+<p>For example, this <a href="https://github.com/ioccc-src/winner/pull/144/files">unused pull request</a>
+shows how one may modify the <a href="2004/arachnid/index.html">2004/arachnid</a> entry
+to use the <strong>old classic curses</strong> package.</p>
 <p>Be aware that <strong>old classic curses</strong> is not fully compatible with
 the <strong>ncurses</strong>. Resizing the terminal window, for example, may lead to
 complications. A more reliable approach to install <strong>ncurses</strong> instead.</p>

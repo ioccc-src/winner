@@ -5374,6 +5374,10 @@ You will need to modify the `Makefile` and/or `prog.c` to include `curses.h`
 instead of `ncurses.h` and to link to `-lcurses` instead of `-lncurses`.
 You may also need to change use of `acs_map` to use `_acs_map`, for example.
 
+For example, this [unused pull request](https://github.com/ioccc-src/winner/pull/144/files)
+shows how one may modify the [2004/arachnid](2004/arachnid/index.html) entry
+to use the **old classic curses** package.
+
 Be aware that **old classic curses** is not fully compatible with
 the **ncurses**.  Resizing the terminal window, for example, may lead to
 complications.  A more reliable approach to install **ncurses** instead.
