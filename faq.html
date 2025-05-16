@@ -425,7 +425,7 @@
 
 <!-- BEFORE: 1st line of markdown file: faq.md -->
 <h1 id="ioccc-faq-table-of-contents">IOCCC FAQ Table of Contents</h1>
-<p>This is FAQ version <strong>28.2.16 2025-03-12</strong>.</p>
+<p>This is FAQ version <strong>28.2.17 2025-05-16</strong>.</p>
 <h2 id="entering-the-ioccc-the-bare-minimum-you-need-to-know">0. <a href="#enter_questions">Entering the IOCCC: the bare minimum you need to know</a></h2>
 <ul>
 <li><strong>Q 0.0</strong>: <a class="normal" href="#enter">How can I enter the IOCCC?</a></li>
@@ -496,7 +496,7 @@
 <ul>
 <li><strong>Q 5.0</strong>: <a class="normal" href="#X11">How do I compile and run an IOCCC entry that requires X11?</a></li>
 <li><strong>Q 5.1</strong>: <a class="normal" href="#SDL">How do I compile and install SDL1 or SDL2 for entries that require it?</a></li>
-<li><strong>Q 5.2</strong>: <a class="normal" href="#curses">How do I compile and install (n)curses for entries that require it?</a></li>
+<li><strong>Q 5.2</strong>: <a class="normal" href="#ncurses">How do I compile and install ncurses for entries that require it?</a></li>
 <li><strong>Q 5.3</strong>: <a class="normal" href="#sound">How do I compile and run an IOCCC entry that requires sound?</a></li>
 <li><strong>Q 5.4</strong>: <a class="normal" href="#tcpserver">How do I compile and install tcpserver for entries that require it?</a></li>
 <li><strong>Q 5.5</strong>: <a class="normal" href="#netpbm">How do I compile and install netpbm for entries that require it?</a></li>
@@ -506,7 +506,7 @@
 <li><strong>Q 5.9</strong>: <a class="normal" href="#zlib">How do I compile and install zlib for IOCCC entries that require it?</a></li>
 <li><strong>Q 5.10</strong>: <a class="normal" href="#ruby">How do I install Ruby for entries that require it?</a></li>
 <li><strong>Q 5.11</strong>: <a class="normal" href="#rake">How do I install rake for entries that require it?</a></li>
-<li><strong>Q 5.12</strong>: <a class="normal" href="#ncurses">How do I compile entries that use ncurses if we only have curses?</a></li>
+<li><strong>Q 5.12</strong>: <a class="normal" href="curses">How do I compile entries that use ncurses if we only have the old classic curses?</a></li>
 </ul>
 <h2 id="problems-compiling-ioccc-entries">6. <a href="#compile_problems">Problems compiling IOCCC entries</a></h2>
 <ul>
@@ -4189,8 +4189,8 @@ fix it and make a pull request.</p>
 FAQ on “<a href="#pull_request">GitHub pull request</a>”
 for more information about pull requests.</p>
 <p>Jump to: <a href="#">top</a></p>
-<div id="curses">
-<h3 id="q-5.2-how-do-i-compile-and-install-ncurses-for-entries-that-require-it">Q 5.2: How do I compile and install (n)curses for entries that require it?</h3>
+<div id="ncurses">
+<h3 id="q-5.2-how-do-i-compile-and-install-ncurses-for-entries-that-require-it">Q 5.2: How do I compile and install ncurses for entries that require it?</h3>
 </div>
 <p>This depends on your operating system but below are instructions for Linux and
 macOS with alternative methods for macOS and different package managers with Linux.</p>
@@ -4214,13 +4214,16 @@ macOS with alternative methods for macOS and different package managers with Lin
 feature of the package manager to determine which packages you need to install.
 Note that you might have to install both the library and the developmental
 packages: one for compiling and one for linking / running.</p>
+<h4 id="netbsd">NetBSD</h4>
+<p>Uses of the NetBSD distribution should install
+and use the <a href="https://cdn.netbsd.org/pub/pkgsrc/current/pkgsrc/devel/ncurses/README.html">ncurses package for NetBSD</a>.</p>
 <h4 id="package-website-2">Package website</h4>
 <p>Go to the <a href="https://invisible-island.net/ncurses/">ncurses website</a> and follow their instructions
 for downloading, installing and using ncurses.</p>
 <p>We recommend trying a method suitable for your environment first, if possible.</p>
 <h4 id="see-also">See also</h4>
 <p>See the
-FAQ on “<a href="#ncurses">ncurses</a>”
+FAQ on “<a href="#curses">curses</a>”
 for more information on curses vs ncurses.</p>
 <p>Jump to: <a href="#">top</a></p>
 <div id="sox">
@@ -4476,8 +4479,8 @@ then run:</p>
 <p>Once this is done, try as root or via <code>sudo</code>:</p>
 <pre><code>    gem install rake</code></pre>
 <p>Jump to: <a href="#">top</a></p>
-<div id="ncurses">
-<h3 id="q-5.12-how-do-i-compile-entries-that-use-ncurses-if-we-only-have-curses">Q 5.12: How do I compile entries that use ncurses if we only have curses?</h3>
+<div id="curses">
+<h3 id="q-5.12-how-do-i-compile-entries-that-use-ncurses-if-we-only-have-the-old-classic-curses">Q 5.12: How do I compile entries that use ncurses if we only have the old classic curses?</h3>
 </div>
 <p>Entries such as these were written to compile using the <strong>ncurses</strong> package:</p>
 <ul>
@@ -4495,16 +4498,16 @@ package to install the <code>ncurses.h</code> include file.</p>
 <p>You may also install from the <a href="https://invisible-island.net/ncurses/">official ncurses site</a>.</p>
 <h4 id="pretending-to-use-classic-curses">Pretending to use classic curses</h4>
 <p>If you do not wish to, or cannot install the <strong>ncurses</strong> package for your
-system, and you have the <strong>old classic BSD curses</strong> instead, you may try
-hacking the code to and use the <strong>old classic BSD curses</strong> package.</p>
+system, and you have the <strong>old classic curses</strong> instead, you may try
+hacking the code to and use the <strong>old classic curses</strong> package.</p>
 <p>You will need to modify the <code>Makefile</code> and/or <code>prog.c</code> to include <code>curses.h</code>
 instead of <code>ncurses.h</code> and to link to <code>-lcurses</code> instead of <code>-lncurses</code>.
 You may also need to change use of <code>acs_map</code> to use <code>_acs_map</code>, for example.</p>
-<p>Be aware that <strong>old classic BSD curses</strong> is not fully compatible with
+<p>Be aware that <strong>old classic curses</strong> is not fully compatible with
 the <strong>ncurses</strong>. Resizing the terminal window, for example, may lead to
 complications. A more reliable approach to install <strong>ncurses</strong> instead.</p>
 <p>See the
-FAQ on “<a href="#curses">curses</a>”
+FAQ on “<a href="#ncurses">ncurses</a>”
 for more information installing <strong>ncurses</strong>.</p>
 <p>Jump to: <a href="#">top</a></p>
 <hr style="width:50%;text-align:left;margin-left:0">

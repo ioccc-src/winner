@@ -1,6 +1,6 @@
 # IOCCC FAQ Table of Contents
 
-This is FAQ version **28.2.16 2025-03-12**.
+This is FAQ version **28.2.17 2025-05-16**.
 
 
 ## 0. [Entering the IOCCC: the bare minimum you need to know](#enter_questions)
@@ -70,7 +70,7 @@ This is FAQ version **28.2.16 2025-03-12**.
 ## 5. [Dependencies for some IOCCC entries](#dependencies)
 - **Q 5.0**: <a class="normal" href="#X11">How do I compile and run an IOCCC entry that requires X11?</a>
 - **Q 5.1**: <a class="normal" href="#SDL">How do I compile and install SDL1 or SDL2 for entries that require it?</a>
-- **Q 5.2**: <a class="normal" href="#curses">How do I compile and install &lpar;n&rpar;curses for entries that require it?</a>
+- **Q 5.2**: <a class="normal" href="#ncurses">How do I compile and install ncurses for entries that require it?</a>
 - **Q 5.3**: <a class="normal" href="#sound">How do I compile and run an IOCCC entry that requires sound?</a>
 - **Q 5.4**: <a class="normal" href="#tcpserver">How do I compile and install tcpserver for entries that require it?</a>
 - **Q 5.5**: <a class="normal" href="#netpbm">How do I compile and install netpbm for entries that require it?</a>
@@ -80,7 +80,7 @@ This is FAQ version **28.2.16 2025-03-12**.
 - **Q 5.9**: <a class="normal" href="#zlib">How do I compile and install zlib for IOCCC entries that require it?</a>
 - **Q 5.10**: <a class="normal" href="#ruby">How do I install Ruby for entries that require it?</a>
 - **Q 5.11**: <a class="normal" href="#rake">How do I install rake for entries that require it?</a>
-- **Q 5.12**: <a class="normal" href="#ncurses">How do I compile entries that use ncurses if we only have curses?</a>
+- **Q 5.12**: <a class="normal" href="curses">How do I compile entries that use ncurses if we only have the old classic curses?</a>
 
 
 ## 6. [Problems compiling IOCCC entries](#compile_problems)
@@ -4722,8 +4722,8 @@ for more information about pull requests.
 Jump to: [top](#)
 
 
-<div id="curses">
-### Q 5.2: How do I compile and install &lpar;n&rpar;curses for entries that require it?
+<div id="ncurses">
+### Q 5.2: How do I compile and install ncurses for entries that require it?
 </div>
 
 This depends on your operating system but below are instructions for Linux and
@@ -4779,6 +4779,12 @@ Note that you might have to install both the library and the developmental
 packages: one for compiling and one for linking / running.
 
 
+#### NetBSD
+
+Uses of the NetBSD distribution should install
+and use the [ncurses package for NetBSD](https://cdn.netbsd.org/pub/pkgsrc/current/pkgsrc/devel/ncurses/README.html).
+
+
 #### Package website
 
 Go to the [ncurses website](https://invisible-island.net/ncurses/) and follow their instructions
@@ -4790,7 +4796,7 @@ We recommend trying a method suitable for your environment first, if possible.
 #### See also
 
 See the
-FAQ on "[ncurses](#ncurses)"
+FAQ on "[curses](#curses)"
 for more information on curses vs ncurses.
 
 
@@ -5335,8 +5341,8 @@ Once this is done, try as root or via `sudo`:
 Jump to: [top](#)
 
 
-<div id="ncurses">
-### Q 5.12: How do I compile entries that use ncurses if we only have curses?
+<div id="curses">
+### Q 5.12: How do I compile entries that use ncurses if we only have the old classic curses?
 </div>
 
 Entries such as these were written to compile using the **ncurses** package:
@@ -5361,19 +5367,19 @@ You may also install from the [official ncurses site](https://invisible-island.n
 #### Pretending to use classic curses
 
 If you do not wish to, or cannot install the **ncurses** package for your
-system, and you have the **old classic BSD curses** instead, you may try
-hacking the code to and use the **old classic BSD curses** package.
+system, and you have the **old classic curses** instead, you may try
+hacking the code to and use the **old classic curses** package.
 
 You will need to modify the `Makefile` and/or `prog.c` to include `curses.h`
 instead of `ncurses.h` and to link to `-lcurses` instead of `-lncurses`.
 You may also need to change use of `acs_map` to use `_acs_map`, for example.
 
-Be aware that **old classic BSD curses** is not fully compatible with
+Be aware that **old classic curses** is not fully compatible with
 the **ncurses**.  Resizing the terminal window, for example, may lead to
 complications.  A more reliable approach to install **ncurses** instead.
 
 See the
-FAQ on "[curses](#curses)"
+FAQ on "[ncurses](#ncurses)"
 for more information installing **ncurses**.
 
 
