@@ -5407,27 +5407,6 @@ Jump to: [top](#)
 Jump to: [top](#)
 
 
-<div id="2012_omoikane">
-## Winning entry: [2012/omoikane](2012/omoikane/index.html)
-### Winning entry source code: [omoikane.c](%%REPO_URL%%/2012/omoikane//omoikane.c)
-</div>
-
-[Cody](#cody) added the [alternate
-versions](2012/omoikane/index.html#alternate-code) which will, if no arg is
-specified, read in the program itself, rather than `/dev/urandom`. This is
-mostly useful for those without a `/dev/urandom` device file, which the author
-pointed out as being a problem, but which is the default for the entry . The
-second alternate version is like the first except that it also sets binary mode
-on `stdin` and `stdout` which should theoretically make it work in Windows. This
-comes from the author's remarks.
-
-Cody also added the [try.sh](%%REPO_URL%%/2012/omoikane/try.sh) and
-[try.alt.sh](%%REPO_URL%%/2012/omoikane/try.alt.sh) scripts.
-
-
-Jump to: [top](#)
-
-
 <div id="2012_tromp">
 ## Winning entry: [2012/tromp](2012/tromp/index.html)
 ### Winning entry source code: [tromp.c](%%REPO_URL%%/2012/tromp//tromp.c)

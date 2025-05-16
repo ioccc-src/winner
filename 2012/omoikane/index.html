@@ -447,9 +447,7 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <h2 id="to-build">To build:</h2>
 <pre><code>    make</code></pre>
 <p>There is an alternate version that will read from the compiled file itself, in
-case you don’t have a <code>/dev/urandom</code> file. There is also a version that should
-theoretically work with Windows which distinguishes binary and text. See
-<a href="#alternate-code">alternate code</a> below.</p>
+case you don’t have a <code>/dev/urandom</code> file.</p>
 <h2 id="to-use">To use:</h2>
 <pre><code>    ./nyaruko [seed.txt] &lt; original.bin &gt; output.c
     bash output.c &gt; key.c
@@ -470,20 +468,14 @@ perl parts of the script.</p>
 <p>The alternate version will, if no file is specified, read in the compiled binary
 itself rather than trying to open <code>/dev/urandom</code>, which is the default for the
 original entry. This is useful if your system does not have a <code>/dev/urandom</code>
-file and you do not want to specify an extra file. The second alternate version
-is like the first except it also should theoretically work with Windows, setting
-binary mode on <code>stdin</code> and <code>stdout</code>.</p>
+file and you do not want to specify an extra file.</p>
 <h3 id="alternate-build">Alternate build:</h3>
-<p>For the first version:</p>
 <pre><code>    make alt</code></pre>
-<p>For the second version:</p>
-<pre><code>    make alt2</code></pre>
 <h3 id="alternate-use">Alternate use:</h3>
-<p>Use <code>nyaruko.alt</code> or <code>nyaruko.alt2</code> as you would <code>nyaruko</code> above.</p>
+<p>Use <code>nyaruko.alt</code> as you would <code>nyaruko</code> above.</p>
 <h3 id="alternate-try">Alternate try:</h3>
 <p>For the first alternate version:</p>
 <pre><code>    ./try.alt.sh</code></pre>
-<p>We have no way to test the second version, sorry (tm Canada 🇨🇦 :-) )!</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>The judges have nothing to add that has not already been written about in the
 <a href="obfuscation.html">obfuscation.html</a> (requires JavaScript) file! :-)</p>
@@ -565,7 +557,13 @@ combinations:</p>
 <li>tcc 0.9.25 on JSLinux</li>
 </ul>
 <p>Note that on MingW, <code>stdin</code> and <code>stdout</code> are not opened in binary mode by
-default, this means <code>Nyaruko</code> may not faithfully encode files on MingW.</p>
+default, this means <code>Nyaruko</code> may not faithfully reproduce files on MingW.
+As a workaround, a <code>binmode_main.h</code> is included, so it’s possible to produce
+an encoder that’s binary-clean like this:</p>
+<pre><code>    x86_64-w64-mingw32-gcc -include binmode_main.h nyaruko.c -o nyaruko.exe</code></pre>
+<p>The C code produced by the encoder will need to be compiled with the same
+<code>-include binmode_main.h</code> hack if you want its output to faithfully reproduce
+the original binary input.</p>
 <h3 id="notice-to-those-who-wish-for-a-greater-challenge">NOTICE to those who wish for a greater challenge:</h3>
 <p><strong>If you want a greater challenge, don’t read any further</strong>:
 just try to understand the program via the source.</p>
@@ -600,12 +598,12 @@ JavaScript.</p>
 <h2 id="primary-files">Primary files</h2>
 <ul>
 <li><a href="https://github.com/ioccc-src/winner/blob/master/2012/omoikane/Makefile">Makefile</a> - entry Makefile</li>
-<li><a href="https://github.com/ioccc-src/winner/blob/master/2012/omoikane/omoikane.alt2.c">omoikane.alt2.c</a> - second alternate source code</li>
 <li><a href="https://github.com/ioccc-src/winner/blob/master/2012/omoikane/omoikane.alt.c">omoikane.alt.c</a> - alternate source code</li>
 <li><a href="https://github.com/ioccc-src/winner/blob/master/2012/omoikane/omoikane.orig.c">omoikane.orig.c</a> - original source code</li>
 <li><a href="https://github.com/ioccc-src/winner/blob/master/2012/omoikane/omoikane.c">omoikane.c</a> - entry source code</li>
 <li><a href="https://github.com/ioccc-src/winner/blob/master/2012/omoikane/try.alt.sh">try.alt.sh</a> - script to try alternate code</li>
 <li><a href="https://github.com/ioccc-src/winner/blob/master/2012/omoikane/try.sh">try.sh</a> - script to try entry</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2012/omoikane/binmode_main.h">binmode_main.h</a> - Preprocessor hack to set binary mode</li>
 <li><a href="obfuscation.html">obfuscation.html</a> - JavaScript page with full recording of development</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>

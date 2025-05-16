@@ -1086,7 +1086,7 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/1989/1989.tar.bz2</loc>
-    <lastmod>2025-04-16T20:59:19+00:00</lastmod>
+    <lastmod>2025-05-13T23:35:04+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/1989/fubar/1989_fubar.tar.bz2</loc>
@@ -1330,7 +1330,7 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/1989/tromp/1989_tromp.tar.bz2</loc>
-    <lastmod>2025-04-16T20:59:19+00:00</lastmod>
+    <lastmod>2025-05-13T23:34:37+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/1989/tromp/index.html</loc>
@@ -5770,11 +5770,11 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/2004/arachnid/arachnid.alt.c</loc>
-    <lastmod>2025-01-10T06:06:38+00:00</lastmod>
+    <lastmod>2025-05-15T19:18:07+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/2004/arachnid/arachnid.c</loc>
-    <lastmod>2025-01-10T06:06:38+00:00</lastmod>
+    <lastmod>2025-05-15T19:18:07+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/2004/arachnid/arachnid.orig.c</loc>
@@ -5790,7 +5790,7 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/2004/arachnid/Makefile</loc>
-    <lastmod>2025-01-10T06:06:38+00:00</lastmod>
+    <lastmod>2025-05-15T19:18:07+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/2004/arachnid/README.md</loc>
@@ -8642,7 +8642,7 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/2012/2012.tar.bz2</loc>
-    <lastmod>2025-04-16T20:59:19+00:00</lastmod>
+    <lastmod>2025-05-16T04:08:57+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/2012/blakely/2012_blakely.tar.bz2</loc>
@@ -9134,27 +9134,27 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/2012/omoikane/2012_omoikane.tar.bz2</loc>
-    <lastmod>2025-04-16T20:59:19+00:00</lastmod>
+    <lastmod>2025-05-16T04:08:42+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2012/omoikane/binmode_main.h</loc>
+    <lastmod>2025-05-16T03:59:13+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/2012/omoikane/index.html</loc>
-    <lastmod>2025-03-02T21:52:38+00:00</lastmod>
+    <lastmod>2025-05-16T04:02:31+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/2012/omoikane/Makefile</loc>
-    <lastmod>2025-01-10T06:06:39+00:00</lastmod>
+    <lastmod>2025-05-16T03:59:13+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/2012/omoikane/obfuscation.html</loc>
     <lastmod>2025-01-10T06:06:39+00:00</lastmod>
 </url>
 <url>
-    <loc>https://www.ioccc.org/2012/omoikane/omoikane.alt2.c</loc>
-    <lastmod>2025-01-10T06:06:39+00:00</lastmod>
-</url>
-<url>
     <loc>https://www.ioccc.org/2012/omoikane/omoikane.alt.c</loc>
-    <lastmod>2025-01-10T06:06:39+00:00</lastmod>
+    <lastmod>2025-05-16T03:59:13+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/2012/omoikane/omoikane.c</loc>
@@ -9166,7 +9166,7 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/2012/omoikane/README.md</loc>
-    <lastmod>2025-03-02T21:47:45+00:00</lastmod>
+    <lastmod>2025-05-16T03:59:13+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/2012/omoikane/try.alt.sh</loc>
@@ -15226,7 +15226,7 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/cvt-submission.sh</loc>
-    <lastmod>2025-05-13T21:27:13+00:00</lastmod>
+    <lastmod>2025-05-15T20:06:07+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/entry2csv.sh</loc>
@@ -15438,11 +15438,11 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/faq.html</loc>
-    <lastmod>2025-04-16T20:59:19+00:00</lastmod>
+    <lastmod>2025-05-16T03:58:56+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/faq.md</loc>
-    <lastmod>2025-04-16T20:59:19+00:00</lastmod>
+    <lastmod>2025-05-16T03:58:56+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/inc/index.html</loc>
@@ -15598,7 +15598,7 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/status.html</loc>
-    <lastmod>2025-05-13T23:30:11+00:00</lastmod>
+    <lastmod>2025-05-16T04:11:41+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/status.json</loc>
@@ -15610,11 +15610,11 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/thanks-for-help.html</loc>
-    <lastmod>2025-05-13T23:23:19+00:00</lastmod>
+    <lastmod>2025-05-16T04:11:40+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/thanks-for-help.md</loc>
-    <lastmod>2025-05-13T23:23:05+00:00</lastmod>
+    <lastmod>2025-05-16T04:11:08+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/var.mk</loc>
