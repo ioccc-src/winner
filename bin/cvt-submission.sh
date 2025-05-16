@@ -124,7 +124,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="2.0.0 2025-03-13"
+export VERSION="2.0.1 2025-05-01"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -1298,28 +1298,6 @@ if [[ $V_FLAG -ge 3 ]]; then
 fi
 
 
-# perform the semantic check on .info.json and .auth.json
-#
-if [[ $V_FLAG -ge 1 ]]; then
-    echo "$0: debug[1]: about to run: $CHKENTRY_TOOL -v 1 $YYYY_DIR" 1>&2
-    "$CHKENTRY_TOOL" -v 1 -- "$AUTH_JSON" "$INFO_JSON"
-    status="$?"
-    if [[ $status -ne 0 ]]; then
-	echo "$0: ERROR: $CHKENTRY_TOOL -v 1 -- $YYYY_DIR failed," \
-	      "error code: $status" 1>&2
-	exit 7
-    fi
-else
-    "$CHKENTRY_TOOL" -- "$YYYY_DIR"
-    status="$?"
-    if [[ $status -ne 0 ]]; then
-	echo "$0: $CHKENTRY_TOOL --  $YYYY_DIR failed," \
-	      "error code: $status" 1>&2
-	exit 7
-    fi
-fi
-
-
 # -N stops early before any processing is performed
 #
 if [[ -n $DO_NOT_PROCESS ]]; then
@@ -1362,6 +1340,55 @@ if [[ -z $NOOP ]]; then
     fi
 elif [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: because of -n, tarball not formed: $TARBALL" 1>&2
+fi
+
+
+# case: we have .auth.json.xz but not .auth.json
+#
+# Form a .auth.json from .auth.json.xz
+#
+if [[ -f $AUTH_JSON.xz && ! -f $AUTH_JSON ]]; then
+    if [[ -z $NOOP ]]; then
+	if [[ $V_FLAG -ge 3 ]]; then
+	    echo "$0: debug[3]: about to execute:" \
+		 "xzcat $AUTH_JSON.xz > $AUTH_JSON" 1>&2
+	fi
+	xzcat "$AUTH_JSON.xz" > "$AUTH_JSON"
+	status="$?"
+	if [[ $status -ne 0 ]]; then
+	     echo "$0: ERROR:" \
+		  "xzcat $AUTH_JSON.xz > $AUTH_JSON failed, error: $status" 1>&2
+	     exit 7
+	fi
+    elif [[ $V_FLAG -ge 3 ]]; then
+	echo "$0: debug[3]: because of -n, $AUTH_JSON file was not formed" 1>&2
+    fi
+fi
+
+
+# perform the semantic check on .info.json and .auth.json
+#
+if [[ $V_FLAG -ge 1 ]]; then
+    echo "$0: debug[1]: about to run: $CHKENTRY_TOOL -v 1" \
+	 "-i .auth.json.xz -i .prev -i .submit.sh -i .txz -i .num.sh -i .orig" \
+	 "-- $YYYY_DIR" 1>&2
+    "$CHKENTRY_TOOL" -v 1 -i .auth.json.xz -i .prev -i .submit.sh -i .txz -i .num.sh -i .orig -- "$YYYY_DIR"
+    status="$?"
+    if [[ $status -ne 0 ]]; then
+	echo "$0: ERROR: $CHKENTRY_TOOL -v 1 -i .auth.json.xz -i .prev -i .submit.sh -i .txz -i .num.sh -i .orig" \
+	     "-- $YYYY_DIR failed," \
+	      "error code: $status" 1>&2
+	exit 7
+    fi
+else
+    "$CHKENTRY_TOOL" -i .auth.json.xz -i .prev -i .submit.sh -i .txz -i .num.sh -i .orig -- "$YYYY_DIR"
+    status="$?"
+    if [[ $status -ne 0 ]]; then
+	echo "$0: $CHKENTRY_TOOL -i .auth.json.xz -i .prev -i .submit.sh -i .txz -i .num.sh -i .orig" \
+	     "-- $YYYY_DIR failed," \
+	      "error code: $status" 1>&2
+	exit 7
+    fi
 fi
 
 
@@ -1945,7 +1972,6 @@ if [[ -z $NOOP ]]; then
 	manifest_csv "$ALT_C" 40 true c true "alternate source code" >> "$TMP_MANIFEST_CSV"
     fi
 
-
     # form original source code if needed
     #
     export ORIG_C
@@ -1975,7 +2001,6 @@ if [[ -z $NOOP ]]; then
     #
     ((++count))
     manifest_csv "$ORIG_C" 50 false c true "original source code" >> "$TMP_MANIFEST_CSV"
-
 
     # collect manifest for extra_file(s)
     #
@@ -2425,12 +2450,15 @@ fi
 # remove submission files that are no longer needed for a winning IOCCC entry
 #
 if [[ $V_FLAG -ge 1 ]]; then
-    echo "$0: debug[1]: about to run: rm -f -v -- $INFO_JSON $AUTH_JSON $REMARKS_MD" 1>&2
+    echo "$0: debug[1]: about to run: rm -f -v -- $INFO_JSON $AUTH_JSON $AUTH_JSON.xz $REMARKS_MD $YYYY_DIR/.prev" \
+	 "$YYYY_DIR/.submit.sh $YYYY_DIR/.txz $YYYY_DIR/.num.sh $YYYY_DIR/.orig" 1>&2
 fi
-rm -f -v -- "$INFO_JSON" "$AUTH_JSON" "$REMARKS_MD"
+rm -f -v -- "$INFO_JSON" "$AUTH_JSON" "$AUTH_JSON.xz" "$REMARKS_MD" "$YYYY_DIR/.prev" \
+	    "$YYYY_DIR/.submit.sh" "$YYYY_DIR/.txz" "$YYYY_DIR/.num.sh" "$YYYY_DIR/.orig"
 status="$?"
 if [[ $status -ne 0 ]]; then
-    echo "$0: ERROR: rm -f -v -- $INFO_JSON $AUTH_JSON $REMARKS_MD filed," \
+    echo "$0: ERROR: rm -f -v -- $INFO_JSON $AUTH_JSON $AUTH_JSON.xz $REMARKS_MD $YYYY_DIR/.prev" \
+	 "$YYYY_DIR/.submit.sh $YYYY_DIR/.txz $YYYY_DIR/.num.sh $YYYY_DIR/.orig filed," \
 	 "error code: $status" 1>&2
     exit 63
 fi
