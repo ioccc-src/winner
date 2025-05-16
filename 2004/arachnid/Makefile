@@ -40,7 +40,7 @@ include ../../var.mk
 #
 CSILENCE= -Wno-char-subscripts -Wno-extra-semi -Wno-implicit-int \
 	  -Wno-return-type -Wno-unused-parameter -Wno-unused-value \
-	  -Wno-misleading-indentation -Wno-pedantic
+	  -Wno-misleading-indentation -Wno-pedantic -Wno-return-mismatch
 
 # Attempt to silence unknown warning option
 #
@@ -77,6 +77,16 @@ CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
 # Libraries needed to build
 #
 LDFLAGS= -lncurses
+
+OS != uname
+ifeq "${OS}" "NetBSD"
+CDEFINE += -Dacs_map=_acs_map
+CINCLUDE += -include curses.h
+LDFLAGS= -lcurses
+else
+CINCLUDE += -include ncurses.h
+LDFLAGS= -lncurses
+endif
 
 # C compiler to use
 #
