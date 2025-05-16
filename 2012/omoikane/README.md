@@ -5,9 +5,7 @@
 ```
 
 There is an alternate version that will read from the compiled file itself, in
-case you don't have a `/dev/urandom` file. There is also a version that should
-theoretically work with Windows which distinguishes binary and text. See
-[alternate code](#alternate-code) below.
+case you don't have a `/dev/urandom` file.
 
 
 ## To use:
@@ -43,30 +41,19 @@ perl parts of the script.
 The alternate version will, if no file is specified, read in the compiled binary
 itself rather than trying to open `/dev/urandom`, which is the default for the
 original entry. This is useful if your system does not have a `/dev/urandom`
-file and you do not want to specify an extra file. The second alternate version
-is like the first except it also should theoretically work with Windows, setting
-binary mode on `stdin` and `stdout`.
+file and you do not want to specify an extra file.
 
 
 ### Alternate build:
-
-For the first version:
-
 
 ``` <!---sh-->
     make alt
 ```
 
-For the second version:
-
-``` <!---sh-->
-    make alt2
-```
-
 
 ### Alternate use:
 
-Use `nyaruko.alt` or `nyaruko.alt2` as you would `nyaruko` above.
+Use `nyaruko.alt` as you would `nyaruko` above.
 
 
 ### Alternate try:
@@ -76,8 +63,6 @@ For the first alternate version:
 ``` <!---sh-->
     ./try.alt.sh
 ```
-
-We have no way to test the second version, sorry (tm Canada 🇨🇦 :-) )!
 
 
 ## Judges' remarks:
@@ -190,7 +175,17 @@ combinations:
 * tcc 0.9.25 on JSLinux
 
 Note that on MingW, `stdin` and `stdout` are not opened in binary mode by
-default, this means `Nyaruko` may not faithfully encode files on MingW.
+default, this means `Nyaruko` may not faithfully reproduce files on MingW.
+As a workaround, a `binmode_main.h` is included, so it's possible to produce
+an encoder that's binary-clean like this:
+
+``` <!---sh-->
+    x86_64-w64-mingw32-gcc -include binmode_main.h nyaruko.c -o nyaruko.exe
+```
+
+The C code produced by the encoder will need to be compiled with the same
+`-include binmode_main.h` hack if you want its output to faithfully reproduce
+the original binary input.
 
 
 ### NOTICE to those who wish for a greater challenge:

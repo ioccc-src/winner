@@ -62,7 +62,7 @@ CDEFINE=
 
 # Include files that are needed to compile
 #
-CINCLUDE=
+CINCLUDE=-include binmode_main.h
 
 # Optimization
 #
@@ -146,15 +146,6 @@ ${PROG}.alt: ${PROG}.alt.c
 ${PROG}.alt.c: ${ENTRY}.alt.c
 	${CP} -f -v $? $@
 
-alt2: data ${ALT_TARGET}2
-	@${TRUE}
-
-${PROG}.alt2: ${PROG}.alt2.c
-	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
-
-${PROG}.alt2.c: ${ENTRY}.alt2.c
-	${CP} -f -v $? $@
-
 # data files
 #
 data: ${DATA}
@@ -175,7 +166,7 @@ clean:
 
 clobber: clean
 	${RM} -f ${TARGET} ${ALT_TARGET}
-	${RM} -f ${PROG}.c ${PROG}.alt.c ${PROG}.alt2.c
+	${RM} -f ${PROG}.c ${PROG}.alt.c
 	${RM} -rf *.dSYM
 	${RM} -f output.c key.c data.c regenerated.bin data output output.2
 
