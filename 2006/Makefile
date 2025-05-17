@@ -232,12 +232,13 @@ clobber:
 genpath:
 	@echo '=-=-= IOCCC begin make $@ =-=-='
 	@${RM} -f .tmp.genpath
+	@${TOUCH} .tmp.genpath
 	@-for i in ${ENTRIES}; do \
 	    echo "${YEAR}/$$i" >> .tmp.genpath; \
-	    rm -f "$$i/.tmp.genpath"; \
+	    ${RM} -f "$$i/.tmp.genpath"; \
 	    echo "${YEAR}/$$i" >> "$$i/.tmp.genpath"; \
 	    if ${CMP} -s "$$i/.tmp.genpath" "$$i/.path"; then \
-	        rm -f "$$i/.tmp.genpath"; \
+	        ${RM} -f "$$i/.tmp.genpath"; \
 		echo "$$i/.path already up to date"; \
 	    else \
 		 ${MV} -f "$$i/.tmp.genpath" "$$i/.path"; \
