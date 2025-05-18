@@ -136,7 +136,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="2.0.1 2025-05-17"
+export VERSION="2.0.2 2025-05-18"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -735,7 +735,7 @@ echo "HEADER_3=$ABSTRACT"
 awk -v entry_path="$YYYY_DIR" -f "$ENTRY_NAVBAR_AWK" "$DOT_ALLYEAR"
 status="$?"
 if [[ $status -ne 0 ]]; then
-    echo "$0: ERROR: subst.entry-navbar.awk failed, error: $status" 1>&2
+    echo "$0: ERROR: awk -v entry_path=$YYYY_DIR -f $ENTRY_NAVBAR_AWK $DOT_ALLYEAR failed, error: $status" 1>&2
     exit 1
 fi
 

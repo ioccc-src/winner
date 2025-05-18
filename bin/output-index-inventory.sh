@@ -134,7 +134,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="2.0.0 2025-03-13"
+export VERSION="2.0.1 2025-05-18"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -417,8 +417,8 @@ if [[ ! -d $YEAR_DIR ]]; then
 fi
 export ENTRY_ID="${YEAR_DIR}_${ENTRY_DIR}"
 export DOT_YEAR="$YEAR_DIR/.year"
-if [[ ! -s $DOT_YEAR ]]; then
-    echo "$0: ERROR: not a non-empty file: $DOT_YEAR" 1>&2
+if [[ ! -f $DOT_YEAR ]]; then
+    echo "$0: ERROR: not a file: $DOT_YEAR" 1>&2
     exit 6
 fi
 # Now that we have moved to topdir, form and verify YYYY_DIR is a writable directory

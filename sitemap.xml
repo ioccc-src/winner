@@ -15226,7 +15226,7 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/cvt-submission.sh</loc>
-    <lastmod>2025-05-18T06:47:21+00:00</lastmod>
+    <lastmod>2025-05-18T08:57:00+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/entry2csv.sh</loc>
@@ -15334,11 +15334,11 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/output-index-author.sh</loc>
-    <lastmod>2025-04-16T20:59:19+00:00</lastmod>
+    <lastmod>2025-05-18T08:48:13+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/output-index-inventory.sh</loc>
-    <lastmod>2025-04-16T20:59:19+00:00</lastmod>
+    <lastmod>2025-05-18T08:48:44+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/output-year-index.sh</loc>
@@ -15382,11 +15382,11 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/subst.entry-index.sh</loc>
-    <lastmod>2025-05-18T06:53:55+00:00</lastmod>
+    <lastmod>2025-05-18T09:01:17+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/subst.entry-navbar.awk</loc>
-    <lastmod>2025-05-18T05:47:19+00:00</lastmod>
+    <lastmod>2025-05-18T09:01:24+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/subst.year-index.sh</loc>
@@ -15486,7 +15486,7 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/Makefile</loc>
-    <lastmod>2025-05-18T06:31:07+00:00</lastmod>
+    <lastmod>2025-05-18T08:54:49+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/markdown.html</loc>
@@ -15598,7 +15598,7 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/status.html</loc>
-    <lastmod>2025-05-18T06:51:52+00:00</lastmod>
+    <lastmod>2025-05-18T09:22:37+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/status.json</loc>

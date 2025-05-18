@@ -124,7 +124,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="2.0.2 2025-05-17"
+export VERSION="2.0.4 2025-05-18"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -328,9 +328,9 @@ function prompt_string
 	    echo
 	    echo "Verify decoded $ITEM_NAME: $DECODED" 1>&2
 	    echo
-	    echo -n 'Is that correct? [y,N]: '
+	    echo -n 'Is that correct? [Y,n]: '
 	    read -r Y_OR_N
-	    if [[ $Y_OR_N == y || $Y_OR_N == Y || $Y_OR_N == yes || $Y_OR_N == YES || $Y_OR_N == Yes ]]; then
+	    if [[ -z $Y_OR_N || $Y_OR_N == y || $Y_OR_N == Y || $Y_OR_N == yes || $Y_OR_N == YES || $Y_OR_N == Yes ]]; then
 		break
 	    fi
 	    echo
@@ -419,9 +419,9 @@ function prompt_integer
 	    echo
 	    echo "Verify decoded $ITEM_NAME: $DECODED" 1>&2
 	    echo
-	    echo -n 'Is that correct? [y,N]: '
+	    echo -n 'Is that correct? [Y,n]: '
 	    read -r Y_OR_N
-	    if [[ $Y_OR_N == y || $Y_OR_N == Y || $Y_OR_N == yes || $Y_OR_N == YES || $Y_OR_N == Yes ]]; then
+	    if [[ -z $Y_OR_N || $Y_OR_N == y || $Y_OR_N == Y || $Y_OR_N == yes || $Y_OR_N == YES || $Y_OR_N == Yes ]]; then
 		break
 	    fi
 	    echo
@@ -901,6 +901,7 @@ if [[ ! -d $BIN_PATH ]]; then
 fi
 export BIN_DIR="bin"
 
+
 # cd to topdir
 #
 if [[ ! -e $TOPDIR ]]; then
@@ -942,6 +943,27 @@ if [[ ! -r $TOP_FILE ]]; then
 fi
 if [[ ! -s $TOP_FILE ]]; then
     echo  "$0: ERROR: .top is not a non-empty readable file: $TOP_FILE" 1>&2
+    exit 6
+fi
+
+
+# verify we have a non-empty readable .allyear file
+#
+export ALLYEAR=".allyear"
+if [[ ! -e $ALLYEAR ]]; then
+    echo  "$0: ERROR: .allyear does not exist: $ALLYEAR" 1>&2
+    exit 6
+fi
+if [[ ! -f $ALLYEAR ]]; then
+    echo  "$0: ERROR: .allyear is not a regular file: $ALLYEAR" 1>&2
+    exit 6
+fi
+if [[ ! -r $ALLYEAR ]]; then
+    echo  "$0: ERROR: .allyear is not a readable file: $ALLYEAR" 1>&2
+    exit 6
+fi
+if [[ ! -s $ALLYEAR ]]; then
+    echo  "$0: ERROR: .allyear is not a non-empty writable file: $ALLYEAR" 1>&2
     exit 6
 fi
 
@@ -1053,6 +1075,7 @@ export TAR_BZ2="$YYYY_DIR/$ENTRY_ID.tar.bz2"
 export ENTRY_JSON="$YYYY_DIR/.entry.json"
 export DOT_GITIGNORE="$YYYY_DIR/.gitignore"
 export TRY_SH="$YYYY_DIR/try.sh"
+export TRY_ALT_SH="$YYYY_DIR/try.alt.sh"
 export DOT_PATH="$YYYY_DIR/.path"
 export README_MD="$YYYY_DIR/README.md"
 export INDEX_HTML="$YYYY_DIR/index.html"
@@ -1120,6 +1143,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: REPO_NAME=$REPO_NAME" 1>&2
     echo "$0: debug[3]: CD_FAILED=$CD_FAILED" 1>&2
     echo "$0: debug[3]: TOP_FILE=$TOP_FILE" 1>&2
+    echo "$0: debug[3]: ALLYEAR=$ALLYEAR" 1>&2
     echo "$0: debug[3]: BIN_PATH=$BIN_PATH" 1>&2
     echo "$0: debug[3]: BIN_DIR=$BIN_DIR" 1>&2
     echo "$0: debug[3]: MD2HTML_SH=$MD2HTML_SH" 1>&2
@@ -1137,6 +1161,8 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: TAR_BZ2=$TAR_BZ2" 1>&2
     echo "$0: debug[3]: ENTRY_JSON=$ENTRY_JSON" 1>&2
     echo "$0: debug[3]: DOT_GITIGNORE=$DOT_GITIGNORE" 1>&2
+    echo "$0: debug[3]: TRY_SH=$TRY_SH" 1>&2
+    echo "$0: debug[3]: TRY_ALT_SH=$TRY_ALT_SH" 1>&2
     echo "$0: debug[3]: DOT_PATH=$DOT_PATH" 1>&2
     echo "$0: debug[3]: README_MD=$README_MD" 1>&2
     echo "$0: debug[3]: INDEX_HTML=$INDEX_HTML" 1>&2
@@ -1182,6 +1208,7 @@ if [[ ! -f $TEMPLATE_TRY_SH ]]; then
     echo "$0: ERROR: missing next/try.sh: $TEMPLATE_TRY_SH" 1>&2
     exit 6
 fi
+
 
 # firewall - verify chkentry tool
 #
@@ -2045,6 +2072,43 @@ if [[ -z $NOOP ]]; then
 	exit 51
     fi
 
+    # if try.sh does not exist, copy example over, otherwise just update the manifest
+    #
+    if [[ ! -f $TRY_SH ]]; then
+	if [[ $V_FLAG -ge 3 ]]; then
+	    echo  "$0: debug[3]: about to run: cp -f -p -v $TEMPLATE_TRY_SH $TRY_SH" 1>&2
+	    cp -f -p -v "$TEMPLATE_TRY_SH" "$TRY_SH"
+	    status="$?"
+	    if [[ $status -ne 0 ]]; then
+		echo "$0: ERROR: cp -f -p -v $TEMPLATE_TRY_SH $TRY_SH failed," \
+			 "error code: $status" 1>&2
+		exit 52
+	    fi
+	else
+	    cp -f -p "$TEMPLATE_TRY_SH" "$TRY_SH"
+	    status="$?"
+	    if [[ $status -ne 0 ]]; then
+		echo "$0: ERROR: cp -f -p $TEMPLATE_TRY_SH $TRY_SH failed," \
+			 "error code: $status" 1>&2
+		exit 53
+	    fi
+	fi
+    fi
+
+    # write manifest csv line for try.sh
+    #
+    ((++count))
+    manifest_csv try.sh 100 true shellscript true "script to try entry" \
+	>> "$TMP_MANIFEST_CSV"
+
+    # write manifest csv line for try.alt.sh if it exists
+    #
+    if [[ -f $TRY_ALT_SH ]]; then
+	((++count))
+	manifest_csv try.alt.sh 100 true shellscript true "script to try alternate code" \
+	    >> "$TMP_MANIFEST_CSV"
+    fi
+
     # perform some validation checks on the extra_file set
     #
     for EXTRA_FILE in $EXTRA_FILE_SET; do
@@ -2054,7 +2118,7 @@ if [[ -z $NOOP ]]; then
 	case "$EXTRA_FILE" in
 	prog.c|Makefile|prog.orig.c|index.html|README.md|remarks.md|\.*)
 	    echo "$0: ERROR: invalid extra_file filename: $EXTRA_FILE" 1>&2
-	    exit 52
+	    exit 54
 	    ;;
 	*) ;;
 	esac
@@ -2063,11 +2127,11 @@ if [[ -z $NOOP ]]; then
 	#
 	if [[ ! -e $YYYY_DIR/$EXTRA_FILE ]]; then
 	    echo "$0: ERROR: manifest file for extra_file does not exist: $YYYY_DIR/$EXTRA_FILE" 1>&2
-	    exit 53
+	    exit 55
 	fi
 	if [[ ! -f $YYYY_DIR/$EXTRA_FILE ]]; then
 	    echo "$0: ERROR: manifest file for extra_file is not a file: $YYYY_DIR/$EXTRA_FILE" 1>&2
-	    exit 54
+	    exit 56
 	fi
     done
 
@@ -2150,11 +2214,33 @@ if [[ -z $NOOP ]]; then
 
     # process extra_files that are neither markdown nor HTML
     #
+    export BASENAME_TRY_SH
+    BASENAME_TRY_SH=$(basename "$TRY_SH")
+    export BASENAME_TRY_ALT_SH
+    BASENAME_TRY_ALT_SH=$(basename "$TRY_ALT_SH")
     for EXTRA_FILE in $EXTRA_FILE_SET; do
 
 	# ignore HTML files because we processed them above
 	#
 	if [[ $EXTRA_FILE =~ \.html$ || $EXTRA_FILE =~ \.md$ ]]; then
+	    continue
+	fi
+
+	# ignore prog.alt.c because we processed it above
+	#
+	if [[ $EXTRA_FILE == "$ALT_C" ]]; then
+	    continue
+	fi
+
+	# ignore try.sh because we processed it above
+	#
+	if [[ $EXTRA_FILE == "$BASENAME_TRY_SH" ]]; then
+	    continue
+	fi
+
+	# ignore try.alt.sh because we processed it above
+	#
+	if [[ $EXTRA_FILE == "$BASENAME_TRY_ALT_SH" ]]; then
 	    continue
 	fi
 
@@ -2220,7 +2306,7 @@ if [[ -z $NOOP ]]; then
 	    if [[ $status -ne 0 ]]; then
 		echo "$0: ERROR: cp -f -p -v $TEMPLATE_GITIGNORE $DOT_GITIGNORE failed," \
 			 "error code: $status" 1>&2
-		exit 55
+		exit 57
 	    fi
 	else
 	    cp -f -p "$TEMPLATE_GITIGNORE" "$DOT_GITIGNORE"
@@ -2228,7 +2314,7 @@ if [[ -z $NOOP ]]; then
 	    if [[ $status -ne 0 ]]; then
 		echo "$0: ERROR: cp -f -p $TEMPLATE_GITIGNORE $DOT_GITIGNORE failed," \
 			 "error code: $status" 1>&2
-		exit 56
+		exit 58
 	    fi
 	fi
     fi
@@ -2238,37 +2324,6 @@ if [[ -z $NOOP ]]; then
     ((++count))
     manifest_csv .gitignore 4000000000 true gitignore true "list of files that should not be committed under git" \
 	>> "$TMP_MANIFEST_CSV"
-
-    # if try.sh does not exist, copy example over, otherwise just update
-    # manifest
-    #
-    if [[ ! -f $TRY_SH ]]; then
-	if [[ $V_FLAG -ge 3 ]]; then
-	    echo  "$0: debug[3]: about to run: cp -f -p -v $TEMPLATE_TRY_SH $TRY_SH" 1>&2
-	    cp -f -p -v "$TEMPLATE_TRY_SH" "$TRY_SH"
-	    status="$?"
-	    if [[ $status -ne 0 ]]; then
-		echo "$0: ERROR: cp -f -p -v $TEMPLATE_TRY_SH $TRY_SH failed," \
-			 "error code: $status" 1>&2
-		exit 55
-	    fi
-	else
-	    cp -f -p "$TEMPLATE_TRY_SH" "$TRY_SH"
-	    status="$?"
-	    if [[ $status -ne 0 ]]; then
-		echo "$0: ERROR: cp -f -p $TEMPLATE_TRY_SH $TRY_SH failed," \
-			 "error code: $status" 1>&2
-		exit 56
-	    fi
-	fi
-    fi
-
-    # write manifest csv line for try.sh
-    #
-    ((++count))
-    manifest_csv try.sh 100 true shellscript true "script to try entry" \
-	>> "$TMP_MANIFEST_CSV"
-
 
     # form .path if needed
     #
@@ -2319,7 +2374,7 @@ if [[ -z $NOOP ]]; then
     if [[ $status -ne 0 ]]; then
         echo "$0: ERROR: LC_ALL=C sort -t, -k2n -k1,1 -k3,6 $TMP_MANIFEST_CSV -o $TMP_MANIFEST_CSV failed," \
              "error code: $status" 1>&2
-        exit 57
+        exit 59
     elif [[ $V_FLAG -ge 3 ]]; then
         echo "$0: debug[3]: sorted temporary manifest csv file: $TMP_MANIFEST_CSV" 1>&2
     fi
@@ -2362,7 +2417,7 @@ if [[ -z $NOOP ]]; then
     if [[ $status -ne 0 ]]; then
 	echo "$0: ERROR: $JPARSE_TOOL -q -- $TMP_ENTRY_JSON filed," \
 	     "error code: $status" 1>&2
-	exit 58
+	exit 60
     elif [[ $V_FLAG -ge 3 ]]; then
 	echo "$0: debug[3]: valid JSON: $TMP_ENTRY_JSON" 1>&2
     fi
@@ -2394,13 +2449,13 @@ if [[ -z $NOOP ]]; then
         if [[ $status -ne 0 ]]; then
             echo "$0: ERROR: mv -f -- $TMP_ENTRY_JSON $ENTRY_JSON filed," \
 	         "error code: $status" 1>&2
-            exit 59
+            exit 61
         elif [[ $V_FLAG -ge 1 ]]; then
             echo "$0: debug[1]: updated .entry.json: $ENTRY_JSON" 1>&2
         fi
         if [[ ! -s $ENTRY_JSON ]]; then
             echo "$0: ERROR: not a non-empty .entry.json: $ENTRY_JSON" 1>&2
-            exit 60
+            exit 62
         fi
     fi
 
@@ -2434,7 +2489,7 @@ for EXTRA_FILE in $EXTRA_FILE_SET; do
 		if [[ $status -ne 0 ]]; then
 		    echo "$0: ERROR: $OTHERMD2HTML_SH -v $V_FLAG -- $YYYY_DIR/$EXTRA_FILE filed," \
 			 "error code: $status" 1>&2
-		    exit 61
+		    exit 63
 		fi
 	    elif [[ $V_FLAG -ge 3 ]]; then
 		echo "$0: debug[3]: -n disabled forming HTML: $YYYY_DIR/$HTML_FILE" 1>&2
@@ -2447,6 +2502,50 @@ for EXTRA_FILE in $EXTRA_FILE_SET; do
 	fi
     fi
 done
+
+
+# verify that YYYY_DIR is in .allyear
+#
+# We need to be sure that YYYY_DIR is in .allyear as tools such as bin/subst.entry-navbar.awk
+# use the contents of that file to generate the navigation bar in the index.html web page.
+#
+grep -q "^$YYYY_DIR$" "$ALLYEAR" >/dev/null 2>&1
+status="$?"
+if [[ $status -ne 0 ]]; then
+
+    if [[ -z $NOOP ]]; then
+
+	# make .allyear writable
+	#
+	chmod +w "$ALLYEAR"
+	status="$?"
+	if [[ $status -ne 0 ]]; then
+	    echo "$0: ERROR: chmod +w $ALLYEAR filed," \
+		 "error code: $status" 1>&2
+	    exit 64
+	fi
+
+	# append YYYY_DIR to .allyear
+	#
+	echo "$YYYY_DIR" >> "$ALLYEAR"
+
+	# sort .allyear
+	#
+	sort -f -d -u "$ALLYEAR" -o "$ALLYEAR"
+	status="$?"
+	if [[ $status -ne 0 ]]; then
+	    echo "$0: ERROR: sort -f -d -u $ALLYEAR -o $ALLYEAR filed," \
+		 "error code: $status" 1>&2
+	    exit 65
+	fi
+
+    elif [[ $V_FLAG -ge 1 ]]; then
+	echo "$0: debug[3]: -n disabled adding YYYY_DIR: $YYYY_DIR to .allyear: $ALLYEAR" 1>&2
+    fi
+
+elif [[ $V_FLAG -ge 3 ]]; then
+    echo "$0: debug[3]: YYYY_DIR: $YYYY_DIR is already in .allyear: $ALLYEAR" 1>&2
+fi
 
 
 # form index.html if needed
@@ -2462,7 +2561,7 @@ if [[ -z $NOOP ]]; then
 	if [[ $status -ne 0 ]]; then
 	    echo "$0: ERROR: $MD2HTML_SH -v $V_FLAG -- $README_MD $INDEX_HTML filed," \
 		 "error code: $status" 1>&2
-	    exit 62
+	    exit 66
 	fi
     fi
 
@@ -2486,7 +2585,7 @@ if [[ $status -ne 0 ]]; then
     echo "$0: ERROR: rm -f -v -- $INFO_JSON $AUTH_JSON $AUTH_JSON.xz $REMARKS_MD $YYYY_DIR/.prev" \
 	 "$YYYY_DIR/.submit.sh $YYYY_DIR/.txz $YYYY_DIR/.num.sh $YYYY_DIR/.orig filed," \
 	 "error code: $status" 1>&2
-    exit 63
+    exit 65
 fi
 
 

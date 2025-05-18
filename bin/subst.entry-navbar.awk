@@ -13,6 +13,10 @@
 #
 #	awk -v entry_path=YYYY/dir -f bin/subst.entry-navbar.awk YYYY/.year
 #
+# usage:
+#
+#	awk -v entry_path=YYYY/dir -f bin/subst.entry-navbar.awk .allyear
+#
 # where:
 #
 #	YYYY	IOCCC year or mock
@@ -22,7 +26,7 @@ BEGIN {
 
     # setup
     #
-    VERSION="1.3.1 2025-05-17"
+    VERSION="1.3.2 2025-05-18"
     NAME = "subst.entry-navbar.awk"
     process_next_line = 0;	# 1 ==> we found our entry_path, now process the next line
     found_entry_path = 0;	# 1 ==> we found our entry_path
@@ -179,10 +183,10 @@ END {
     if (!found_entry_path) {
 	# ERROR: entry_path was not found
 	print "-e";
-	print "'" NAME ": did not find:", entry_path "'";
+	print "'" NAME ": did not find in:", ARGV[1], "entry_path:", entry_path "'";
 	print "-E";
 	print "215";
-	exit
+	exit 215;
 
     } else if (process_next_line) {
 	# no next line entry_path is the last line
