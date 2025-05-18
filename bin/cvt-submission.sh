@@ -124,7 +124,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="2.0.4 2025-05-18"
+export VERSION="2.0.5 2025-05-18"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -848,6 +848,11 @@ fi
 export ENTRY_PATH="$1"
 
 
+# set umask to avoid group writable files
+#
+umask 0022
+
+
 # if -i input_data, replace stdin with the input data file
 #
 if [[ -n $INPUT_DATA_FILE ]]; then
@@ -1424,21 +1429,21 @@ fi
 #
 if [[ $V_FLAG -ge 1 ]]; then
     echo "$0: debug[1]: about to run: $CHKENTRY_TOOL -v 1" \
-	 "-i .auth.json.xz -i .prev -i .submit.sh -i .txz -i .num.sh -i .orig" \
+	 "-i .auth.json.xz -i .prev -i .submit.sh -i .txz -i .num.sh -i .orig -i .path" \
 	 "-- $YYYY_DIR" 1>&2
-    "$CHKENTRY_TOOL" -v 1 -i .auth.json.xz -i .prev -i .submit.sh -i .txz -i .num.sh -i .orig -- "$YYYY_DIR"
+    "$CHKENTRY_TOOL" -v 1 -i .auth.json.xz -i .prev -i .submit.sh -i .txz -i .num.sh -i .orig -i .path -- "$YYYY_DIR"
     status="$?"
     if [[ $status -ne 0 ]]; then
-	echo "$0: ERROR: $CHKENTRY_TOOL -v 1 -i .auth.json.xz -i .prev -i .submit.sh -i .txz -i .num.sh -i .orig" \
+	echo "$0: ERROR: $CHKENTRY_TOOL -v 1 -i .auth.json.xz -i .prev -i .submit.sh -i .txz -i .num.sh -i .orig -i .path" \
 	     "-- $YYYY_DIR failed," \
 	      "error code: $status" 1>&2
 	exit 7
     fi
 else
-    "$CHKENTRY_TOOL" -i .auth.json.xz -i .prev -i .submit.sh -i .txz -i .num.sh -i .orig -- "$YYYY_DIR"
+    "$CHKENTRY_TOOL" -i .auth.json.xz -i .prev -i .submit.sh -i .txz -i .num.sh -i .orig -i .path -- "$YYYY_DIR"
     status="$?"
     if [[ $status -ne 0 ]]; then
-	echo "$0: $CHKENTRY_TOOL -i .auth.json.xz -i .prev -i .submit.sh -i .txz -i .num.sh -i .orig" \
+	echo "$0: $CHKENTRY_TOOL -i .auth.json.xz -i .prev -i .submit.sh -i .txz -i .num.sh -i .orig -i .path" \
 	     "-- $YYYY_DIR failed," \
 	      "error code: $status" 1>&2
 	exit 7

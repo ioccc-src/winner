@@ -107,7 +107,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="2.0.0 2025-03-13"
+export VERSION="2.0.1 2025-05-18"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -212,6 +212,11 @@ if [[ $# -ne 1 ]]; then
     exit 3
 fi
 export ENTRY_PATH="$1"
+
+
+# set umask to avoid group writable files
+#
+umask 0022
 
 
 # verify that we have a topdir directory
