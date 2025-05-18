@@ -425,7 +425,7 @@
 
 <!-- BEFORE: 1st line of markdown file: faq.md -->
 <h1 id="ioccc-faq-table-of-contents">IOCCC FAQ Table of Contents</h1>
-<p>This is FAQ version <strong>28.2.16 2025-03-12</strong>.</p>
+<p>This is FAQ version <strong>28.2.17 2025-05-18</strong>.</p>
 <h2 id="entering-the-ioccc-the-bare-minimum-you-need-to-know">0. <a href="#enter_questions">Entering the IOCCC: the bare minimum you need to know</a></h2>
 <ul>
 <li><strong>Q 0.0</strong>: <a class="normal" href="#enter">How can I enter the IOCCC?</a></li>
@@ -496,7 +496,7 @@
 <ul>
 <li><strong>Q 5.0</strong>: <a class="normal" href="#X11">How do I compile and run an IOCCC entry that requires X11?</a></li>
 <li><strong>Q 5.1</strong>: <a class="normal" href="#SDL">How do I compile and install SDL1 or SDL2 for entries that require it?</a></li>
-<li><strong>Q 5.2</strong>: <a class="normal" href="#curses">How do I compile and install (n)curses for entries that require it?</a></li>
+<li><strong>Q 5.2</strong>: <a class="normal" href="#ncurses">How do I compile and install ncurses for entries that require it?</a></li>
 <li><strong>Q 5.3</strong>: <a class="normal" href="#sound">How do I compile and run an IOCCC entry that requires sound?</a></li>
 <li><strong>Q 5.4</strong>: <a class="normal" href="#tcpserver">How do I compile and install tcpserver for entries that require it?</a></li>
 <li><strong>Q 5.5</strong>: <a class="normal" href="#netpbm">How do I compile and install netpbm for entries that require it?</a></li>
@@ -506,6 +506,7 @@
 <li><strong>Q 5.9</strong>: <a class="normal" href="#zlib">How do I compile and install zlib for IOCCC entries that require it?</a></li>
 <li><strong>Q 5.10</strong>: <a class="normal" href="#ruby">How do I install Ruby for entries that require it?</a></li>
 <li><strong>Q 5.11</strong>: <a class="normal" href="#rake">How do I install rake for entries that require it?</a></li>
+<li><strong>Q 5.12</strong>: <a class="normal" href="curses">How do I compile entries that use ncurses if we only have the old classic curses?</a></li>
 </ul>
 <h2 id="problems-compiling-ioccc-entries">6. <a href="#compile_problems">Problems compiling IOCCC entries</a></h2>
 <ul>
@@ -786,10 +787,18 @@ FAQ on “<a href="#obtaining_mkiocccentry">obtaining the latest release of the 
 </div>
 </div>
 </div>
-<p>Your entry must compile with <strong>clang</strong> or <strong>gcc</strong> and run under at least one flavor of a UNIX
+<p>Your submission must be able be compiled with <strong>clang</strong> or <strong>gcc</strong> and run under at least one flavor of a UNIX
 system that conforms to the <a href="https://en.wikipedia.org/wiki/Single_UNIX_Specification">SUS</a>,
-otherwise known as the <a href="https://unix.org/version4/">The Single UNIX Specification Version 4</a>
+otherwise known as the <a href="https://unix.org/version4/overview.html">The Single UNIX Specification Version 4</a>.
 or <a href="https://unix.org/online.html">later SUS</a>.</p>
+<p><a href="https://unix.org/version4/overview.html">The Single UNIX Specification Version 4</a> includes
+<a href="https://pubs.opengroup.org/onlinepubs/9699909599/toc.pdf">X/Open Curses, Issue 7</a>, so your
+submission is free to use “<strong>curses</strong>” (i.e., the <code>curses</code> library and the <code>curses.h</code> include file).
+Your entry is also free to use
+<a href="https://invisible-island.net/ncurses/announce.html">ncurses</a>
+(i.e., the <code>ncurses</code> library and the <code>ncurses.h</code> include file).</p>
+<p>See also the
+FAQ on “<a href="#ncurses">compile and install ncurses</a>”.</p>
 <p>Jump to: <a href="#">top</a></p>
 <div id="makefile">
 <div id="submission_makefile">
@@ -4185,8 +4194,8 @@ fix it and make a pull request.</p>
 FAQ on “<a href="#pull_request">GitHub pull request</a>”
 for more information about pull requests.</p>
 <p>Jump to: <a href="#">top</a></p>
-<div id="curses">
-<h3 id="q-5.2-how-do-i-compile-and-install-ncurses-for-entries-that-require-it">Q 5.2: How do I compile and install (n)curses for entries that require it?</h3>
+<div id="ncurses">
+<h3 id="q-5.2-how-do-i-compile-and-install-ncurses-for-entries-that-require-it">Q 5.2: How do I compile and install ncurses for entries that require it?</h3>
 </div>
 <p>This depends on your operating system but below are instructions for Linux and
 macOS with alternative methods for macOS and different package managers with Linux.</p>
@@ -4210,10 +4219,17 @@ macOS with alternative methods for macOS and different package managers with Lin
 feature of the package manager to determine which packages you need to install.
 Note that you might have to install both the library and the developmental
 packages: one for compiling and one for linking / running.</p>
+<h4 id="netbsd">NetBSD</h4>
+<p>Uses of the NetBSD distribution should install
+and use the <a href="https://cdn.netbsd.org/pub/pkgsrc/current/pkgsrc/devel/ncurses/README.html">ncurses package for NetBSD</a>.</p>
 <h4 id="package-website-2">Package website</h4>
 <p>Go to the <a href="https://invisible-island.net/ncurses/">ncurses website</a> and follow their instructions
 for downloading, installing and using ncurses.</p>
 <p>We recommend trying a method suitable for your environment first, if possible.</p>
+<h4 id="see-also">See also</h4>
+<p>See the
+FAQ on “<a href="#curses">curses</a>”
+for more information on curses vs ncurses.</p>
 <p>Jump to: <a href="#">top</a></p>
 <div id="sox">
 <div id="sound">
@@ -4467,6 +4483,40 @@ then run:</p>
 <pre><code>    exe/gem install rake</code></pre>
 <p>Once this is done, try as root or via <code>sudo</code>:</p>
 <pre><code>    gem install rake</code></pre>
+<p>Jump to: <a href="#">top</a></p>
+<div id="curses">
+<h3 id="q-5.12-how-do-i-compile-entries-that-use-ncurses-if-we-only-have-the-old-classic-curses">Q 5.12: How do I compile entries that use ncurses if we only have the old classic curses?</h3>
+</div>
+<p>Entries such as these were written to compile using the <strong>ncurses</strong> package:</p>
+<ul>
+<li><a href="2004/arachnid/index.html">2004/arachnid</a></li>
+<li><a href="2006/night/index.html">2006/night</a></li>
+<li><a href="2014/skeggs/index.html">2014/skeggs</a></li>
+<li><a href="2020/endoh1/index.html">2020/endoh1</a></li>
+<li>etc.</li>
+</ul>
+<h4 id="installing-ncurses">Installing ncurses</h4>
+<p>If your system does not have <strong>ncurses</strong> installed, check with your system
+provider for a package. In some cases you may need to also install a
+“development” variant (such as <code>ncurses-devel</code>) in addition to the main
+package to install the <code>ncurses.h</code> include file.</p>
+<p>You may also install from the <a href="https://invisible-island.net/ncurses/">official ncurses site</a>.</p>
+<h4 id="pretending-to-use-classic-curses">Pretending to use classic curses</h4>
+<p>If you do not wish to, or cannot install the <strong>ncurses</strong> package for your
+system, and you have the <strong>old classic curses</strong> instead, you may try
+hacking the code to and use the <strong>old classic curses</strong> package.</p>
+<p>You will need to modify the <code>Makefile</code> and/or <code>prog.c</code> to include <code>curses.h</code>
+instead of <code>ncurses.h</code> and to link to <code>-lcurses</code> instead of <code>-lncurses</code>.
+You may also need to change use of <code>acs_map</code> to use <code>_acs_map</code>, for example.</p>
+<p>For example, this <a href="https://github.com/ioccc-src/winner/pull/144/files">unused pull request</a>
+shows how one may modify the <a href="2004/arachnid/index.html">2004/arachnid</a> entry
+to use the <strong>old classic curses</strong> package.</p>
+<p>Be aware that <strong>old classic curses</strong> is not fully compatible with
+the <strong>ncurses</strong>. Resizing the terminal window, for example, may lead to
+complications. A more reliable approach to install <strong>ncurses</strong> instead.</p>
+<p>See the
+FAQ on “<a href="#ncurses">ncurses</a>”
+for more information installing <strong>ncurses</strong>.</p>
 <p>Jump to: <a href="#">top</a></p>
 <hr style="width:50%;text-align:left;margin-left:0">
 <hr style="width:50%;text-align:left;margin-left:0">

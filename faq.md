@@ -1,6 +1,6 @@
 # IOCCC FAQ Table of Contents
 
-This is FAQ version **28.2.16 2025-03-12**.
+This is FAQ version **28.2.17 2025-05-18**.
 
 
 ## 0. [Entering the IOCCC: the bare minimum you need to know](#enter_questions)
@@ -70,7 +70,7 @@ This is FAQ version **28.2.16 2025-03-12**.
 ## 5. [Dependencies for some IOCCC entries](#dependencies)
 - **Q 5.0**: <a class="normal" href="#X11">How do I compile and run an IOCCC entry that requires X11?</a>
 - **Q 5.1**: <a class="normal" href="#SDL">How do I compile and install SDL1 or SDL2 for entries that require it?</a>
-- **Q 5.2**: <a class="normal" href="#curses">How do I compile and install &lpar;n&rpar;curses for entries that require it?</a>
+- **Q 5.2**: <a class="normal" href="#ncurses">How do I compile and install ncurses for entries that require it?</a>
 - **Q 5.3**: <a class="normal" href="#sound">How do I compile and run an IOCCC entry that requires sound?</a>
 - **Q 5.4**: <a class="normal" href="#tcpserver">How do I compile and install tcpserver for entries that require it?</a>
 - **Q 5.5**: <a class="normal" href="#netpbm">How do I compile and install netpbm for entries that require it?</a>
@@ -80,6 +80,7 @@ This is FAQ version **28.2.16 2025-03-12**.
 - **Q 5.9**: <a class="normal" href="#zlib">How do I compile and install zlib for IOCCC entries that require it?</a>
 - **Q 5.10**: <a class="normal" href="#ruby">How do I install Ruby for entries that require it?</a>
 - **Q 5.11**: <a class="normal" href="#rake">How do I install rake for entries that require it?</a>
+- **Q 5.12**: <a class="normal" href="curses">How do I compile entries that use ncurses if we only have the old classic curses?</a>
 
 
 ## 6. [Problems compiling IOCCC entries](#compile_problems)
@@ -443,10 +444,20 @@ Jump to: [top](#)
 </div>
 </div>
 
-Your entry must compile with **clang** or **gcc** and run under at least one flavor of a UNIX
+Your submission must be able be compiled with **clang** or **gcc** and run under at least one flavor of a UNIX
 system that conforms to the [SUS](https://en.wikipedia.org/wiki/Single_UNIX_Specification),
-otherwise known as the [The Single UNIX Specification Version 4](https://unix.org/version4/)
+otherwise known as the [The Single UNIX Specification Version 4](https://unix.org/version4/overview.html).
 or [later SUS](https://unix.org/online.html).
+
+[The Single UNIX Specification Version 4](https://unix.org/version4/overview.html) includes
+[X/Open Curses, Issue 7](https://pubs.opengroup.org/onlinepubs/9699909599/toc.pdf), so your
+submission is free to use "**curses**" (i.e., the `curses` library and the `curses.h` include file).
+Your entry is also free to use
+[ncurses](https://invisible-island.net/ncurses/announce.html)
+(i.e., the `ncurses` library and the `ncurses.h` include file).
+
+See also the
+FAQ on "[compile and install ncurses](#ncurses)".
 
 
 Jump to: [top](#)
@@ -4717,8 +4728,8 @@ for more information about pull requests.
 Jump to: [top](#)
 
 
-<div id="curses">
-### Q 5.2: How do I compile and install &lpar;n&rpar;curses for entries that require it?
+<div id="ncurses">
+### Q 5.2: How do I compile and install ncurses for entries that require it?
 </div>
 
 This depends on your operating system but below are instructions for Linux and
@@ -4774,12 +4785,25 @@ Note that you might have to install both the library and the developmental
 packages: one for compiling and one for linking / running.
 
 
+#### NetBSD
+
+Uses of the NetBSD distribution should install
+and use the [ncurses package for NetBSD](https://cdn.netbsd.org/pub/pkgsrc/current/pkgsrc/devel/ncurses/README.html).
+
+
 #### Package website
 
 Go to the [ncurses website](https://invisible-island.net/ncurses/) and follow their instructions
 for downloading, installing and using ncurses.
 
 We recommend trying a method suitable for your environment first, if possible.
+
+
+#### See also
+
+See the
+FAQ on "[curses](#curses)"
+for more information on curses vs ncurses.
 
 
 Jump to: [top](#)
@@ -5318,6 +5342,55 @@ Once this is done, try as root or via `sudo`:
 ``` <!---sh-->
     gem install rake
 ```
+
+
+Jump to: [top](#)
+
+
+<div id="curses">
+### Q 5.12: How do I compile entries that use ncurses if we only have the old classic curses?
+</div>
+
+Entries such as these were written to compile using the **ncurses** package:
+
+* [2004/arachnid](2004/arachnid/index.html)
+* [2006/night](2006/night/index.html)
+* [2014/skeggs](2014/skeggs/index.html)
+* [2020/endoh1](2020/endoh1/index.html)
+* etc.
+
+
+#### Installing ncurses
+
+If your system does not have **ncurses** installed, check with your system
+provider for a package.  In some cases you may need to also install a
+"development" variant (such as `ncurses-devel`) in addition to the main
+package to install the `ncurses.h` include file.
+
+You may also install from the [official ncurses site](https://invisible-island.net/ncurses/).
+
+
+#### Pretending to use classic curses
+
+If you do not wish to, or cannot install the **ncurses** package for your
+system, and you have the **old classic curses** instead, you may try
+hacking the code to and use the **old classic curses** package.
+
+You will need to modify the `Makefile` and/or `prog.c` to include `curses.h`
+instead of `ncurses.h` and to link to `-lcurses` instead of `-lncurses`.
+You may also need to change use of `acs_map` to use `_acs_map`, for example.
+
+For example, this [unused pull request](https://github.com/ioccc-src/winner/pull/144/files)
+shows how one may modify the [2004/arachnid](2004/arachnid/index.html) entry
+to use the **old classic curses** package.
+
+Be aware that **old classic curses** is not fully compatible with
+the **ncurses**.  Resizing the terminal window, for example, may lead to
+complications.  A more reliable approach to install **ncurses** instead.
+
+See the
+FAQ on "[ncurses](#ncurses)"
+for more information installing **ncurses**.
 
 
 Jump to: [top](#)
