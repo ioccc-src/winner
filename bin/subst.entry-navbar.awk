@@ -13,10 +13,6 @@
 #
 #	awk -v entry_path=YYYY/dir -f bin/subst.entry-navbar.awk YYYY/.year
 #
-# usage:
-#
-#	awk -v entry_path=YYYY/dir -f bin/subst.entry-navbar.awk .allyear
-#
 # where:
 #
 #	YYYY	IOCCC year or mock
@@ -26,7 +22,8 @@ BEGIN {
 
     # setup
     #
-    VERSION="1.3 2024-08-02"
+    VERSION="1.3.1 2025-05-17"
+    NAME = "subst.entry-navbar.awk"
     process_next_line = 0;	# 1 ==> we found our entry_path, now process the next line
     found_entry_path = 0;	# 1 ==> we found our entry_path
     prev_line = "";		# the previous YYYY/dir line
@@ -159,7 +156,7 @@ END {
     #
     if (length(entry_path) == 0) {
 	print "-e";
-	print "ERROR: github variable not set, call with -v github=REPO_URL";
+	print "ERROR:", NAME ": github variable not set, call with -v github=REPO_URL";
 	print "-E";
 	print "210";		# use 210 to match length(entry_path) == 0 error in the BEGIN section
 	exit 210;		# use 210 to match length(entry_path) == 0 error in the BEGIN section
@@ -182,7 +179,7 @@ END {
     if (!found_entry_path) {
 	# ERROR: entry_path was not found
 	print "-e";
-	print "'we did not find:", entry_path "'";
+	print "'" NAME ": did not find:", entry_path "'";
 	print "-E";
 	print "215";
 	exit

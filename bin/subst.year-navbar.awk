@@ -21,7 +21,8 @@ BEGIN {
 
     # setup
     #
-    VERSION="1.2 2024-04-04"
+    VERSION="1.2.1 2025-05-17"
+    NAME = "subst.year-navbar.awk"
     process_next_line = 0;	# 1 ==> we found our year_arg, now process the next line
     found_year_arg = 0;		# 1 ==> we found our year_arg
     prev_line = "";		# the previous YYYY line
@@ -102,7 +103,7 @@ END {
     #
     if (length(year_arg) == 0) {
 	print "-e";
-	print "ERROR: year_arg variable not set, call with -v year_arg=YYYY";
+	print "ERROR:", NAME ": year_arg variable not set, call with -v year_arg=YYYY";
 	print "-E";
 	print "210";		# use 210 to match length(year_arg) == 0 error in the BEGIN section
 	exit 210;		# use 210 to match length(year_arg) == 0 error in the BEGIN section
@@ -113,7 +114,7 @@ END {
     if (!found_year_arg) {
 	# ERROR: year_arg was not found
 	print "-e";
-	print "'we did not find:", year_arg "'";
+	print "'" NAME ": did not find:", year_arg "'";
 	print "-E";
 	print "215";
 	exit

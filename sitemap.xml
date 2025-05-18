@@ -15226,7 +15226,7 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/cvt-submission.sh</loc>
-    <lastmod>2025-05-16T05:14:36+00:00</lastmod>
+    <lastmod>2025-05-18T06:47:21+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/entry2csv.sh</loc>
@@ -15234,7 +15234,7 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/filelist.entry.json.awk</loc>
-    <lastmod>2025-01-10T06:06:40+00:00</lastmod>
+    <lastmod>2025-05-18T05:32:03+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/find-invalid-json.sh</loc>
@@ -15306,11 +15306,11 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/manifest.csv.entry.awk</loc>
-    <lastmod>2025-01-10T06:06:40+00:00</lastmod>
+    <lastmod>2025-05-18T05:32:30+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/manifest.entry.json.awk</loc>
-    <lastmod>2025-01-10T06:06:40+00:00</lastmod>
+    <lastmod>2025-05-18T05:32:36+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/md2html.cfg</loc>
@@ -15318,7 +15318,7 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/md2html.sh</loc>
-    <lastmod>2025-04-16T20:59:19+00:00</lastmod>
+    <lastmod>2025-05-18T05:13:31+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/new-dir.sh</loc>
@@ -15382,11 +15382,11 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/subst.entry-index.sh</loc>
-    <lastmod>2025-04-16T20:59:19+00:00</lastmod>
+    <lastmod>2025-05-18T06:53:55+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/subst.entry-navbar.awk</loc>
-    <lastmod>2025-01-10T06:06:40+00:00</lastmod>
+    <lastmod>2025-05-18T05:47:19+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/subst.year-index.sh</loc>
@@ -15394,7 +15394,7 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/subst.year-navbar.awk</loc>
-    <lastmod>2025-01-10T06:06:40+00:00</lastmod>
+    <lastmod>2025-05-18T05:37:11+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/tar-entry.sh</loc>
@@ -15486,7 +15486,7 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/Makefile</loc>
-    <lastmod>2025-04-16T20:59:19+00:00</lastmod>
+    <lastmod>2025-05-18T06:31:07+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/markdown.html</loc>
@@ -15598,7 +15598,7 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/status.html</loc>
-    <lastmod>2025-05-17T21:50:11+00:00</lastmod>
+    <lastmod>2025-05-18T06:51:52+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/status.json</loc>

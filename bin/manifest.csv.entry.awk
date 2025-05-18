@@ -25,7 +25,8 @@ BEGIN {
 
     # setup
     #
-    VERSION="1.0 2024-07-14"
+    VERSION="1.0.1 2025-05-17"
+    NAME = "manifest.csv.entry.awk"
     found_manifest_array = 0;	# 1 ==> we found the manifest ARRAY
     within_manifest_array = 0;	# 1 ==> found start of "manifest" : [ JSON array
     begin_manifest_element = 0;	# 1 ==> we have found the start of the manifest array element
@@ -318,42 +319,42 @@ within_manifest_array == 1 && begin_manifest_element == 1 && NF == 1 && $1 ~ /^}
     # verify we have seen a file_path JSON member
     #
     if (length(file_path) == 0) {
-	print "ERROR: manifest array JSON member did not have a file_path JSON member in:", ARGV[1] > "/dev/stderr";
+	print "ERROR:", NAME ": manifest array JSON member did not have a file_path JSON member in:", ARGV[1] > "/dev/stderr";
 	exit 213;
     }
 
     # verify we have seen a inventory_order JSON member
     #
     if (length(inventory_order) == 0) {
-	print "ERROR: manifest array JSON member did not have a inventory_order JSON member in:", ARGV[1] > "/dev/stderr";
+	print "ERROR:", NAME ": manifest array JSON member did not have a inventory_order JSON member in:", ARGV[1] > "/dev/stderr";
 	exit 214;
     }
 
     # verify we have seen a OK_to_edit JSON member
     #
     if (length(OK_to_edit) == 0) {
-	print "ERROR: manifest array JSON member did not have a OK_to_edit JSON member in:", ARGV[1] > "/dev/stderr";
+	print "ERROR:", NAME ": manifest array JSON member did not have a OK_to_edit JSON member in:", ARGV[1] > "/dev/stderr";
 	exit 215;
     }
 
     # verify we have seen a display_as JSON member
     #
     if (length(display_as) == 0) {
-	print "ERROR: manifest array JSON member did not have a display_as JSON member in:", ARGV[1] > "/dev/stderr";
+	print "ERROR:", NAME ": manifest array JSON member did not have a display_as JSON member in:", ARGV[1] > "/dev/stderr";
 	exit 216;
     }
 
     # verify we have seen a display_via_github JSON member
     #
     if (length(display_via_github) == 0) {
-	print "ERROR: manifest array JSON member did not have a display_via_github JSON member in:", ARGV[1] > "/dev/stderr";
+	print "ERROR:", NAME ": manifest array JSON member did not have a display_via_github JSON member in:", ARGV[1] > "/dev/stderr";
 	exit 217;
     }
 
     # verify we have seen a entry_text JSON member
     #
     if (length(entry_text) == 0) {
-	print "ERROR: manifest array JSON member did not have a entry_text JSON member in:", ARGV[1] > "/dev/stderr";
+	print "ERROR:", NAME ": manifest array JSON member did not have a entry_text JSON member in:", ARGV[1] > "/dev/stderr";
 	exit 218;
     }
 
@@ -377,39 +378,39 @@ END {
     # case: invalid YYYY
     #
     if (length(YYYY) == 0) {
-	print "ERROR: cannot determine YYYY from:", ARGV[1] > "/dev/stderr";
+	print "ERROR:", NAME ": cannot determine YYYY from:", ARGV[1] > "/dev/stderr";
 	exit 220;	# END section will output ERROR message about cannot find YYYY
     }
     if (YYYY !~ /^[[:digit:]]+$/ || YYYY < 1984 || YYYY > 9999) {
-	print "ERROR: YYYY: must be 4 digit integer >= 1984 and <= 9999, found: " YYYY;
+	print "ERROR:", NAME ": YYYY: must be 4 digit integer >= 1984 and <= 9999, found: " YYYY;
         exit 221;       # invalid year
     }
 
     # case: we quit because we could not determine dir from ARGV[1]
     #
     if (length(dir) == 0) {
-	print "ERROR: cannot determine dir from:", ARGV[1] > "/dev/stderr";
+	print "ERROR:", NAME ": cannot determine dir from:", ARGV[1] > "/dev/stderr";
 	exit 222;	# END section will output ERROR message about cannot find dir
     }
 
     # case: no manifest array was found
     #
     if (!found_manifest_array) {
-	print "ERROR: we did not find a manifest JSON array in:", ARGV[1] > "/dev/stderr";
+	print "ERROR:", NAME ": we did not find a manifest JSON array in:", ARGV[1] > "/dev/stderr";
 	exit 223;
     }
 
     # case: manifest array was found, but manifest array element did not finish
     #
     if (begin_manifest_element) {
-	print "ERROR: manifest JSON array element did not end in:", ARGV[1] > "/dev/stderr";
+	print "ERROR:", NAME ": manifest JSON array element did not end in:", ARGV[1] > "/dev/stderr";
 	exit 224;
     }
 
     # case: manifest array did not end
     #
     if (within_manifest_array) {
-	print "ERROR: manifest JSON array did not end in:", ARGV[1] > "/dev/stderr";
+	print "ERROR:", NAME ": manifest JSON array did not end in:", ARGV[1] > "/dev/stderr";
 	exit 225;
     }
 }

@@ -124,7 +124,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="2.0.1 2025-05-01"
+export VERSION="2.0.2 2025-05-17"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -891,6 +891,16 @@ if [[ ! -d $TOPDIR ]]; then
     exit 6
 fi
 
+
+# verify that we have a bin subdirectory
+#
+export BIN_PATH="$TOPDIR/bin"
+if [[ ! -d $BIN_PATH ]]; then
+    echo "$0: ERROR: bin is not a directory under topdir: $BIN_PATH" 1>&2
+    exit 6
+fi
+export BIN_DIR="bin"
+
 # cd to topdir
 #
 if [[ ! -e $TOPDIR ]]; then
@@ -934,16 +944,6 @@ if [[ ! -s $TOP_FILE ]]; then
     echo  "$0: ERROR: .top is not a non-empty readable file: $TOP_FILE" 1>&2
     exit 6
 fi
-
-
-# verify that we have a bin subdirectory
-#
-export BIN_PATH="$TOPDIR/bin"
-if [[ ! -d $BIN_PATH ]]; then
-    echo "$0: ERROR: bin is not a directory under topdir: $BIN_PATH" 1>&2
-    exit 6
-fi
-export BIN_DIR="bin"
 
 
 # verify that the bin/md2html.sh tool is executable
@@ -1047,6 +1047,7 @@ fi
 #
 export INFO_JSON="$YYYY_DIR/.info.json"
 export AUTH_JSON="$YYYY_DIR/.auth.json"
+export AUTH_JSON_XZ="$YYYY_DIR/.auth.json.xz"
 export REMARKS_MD="$YYYY_DIR/remarks.md"
 export TAR_BZ2="$YYYY_DIR/$ENTRY_ID.tar.bz2"
 export ENTRY_JSON="$YYYY_DIR/.entry.json"
@@ -1131,6 +1132,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: YYYY_DIR=$YYYY_DIR" 1>&2
     echo "$0: debug[3]: INFO_JSON=$INFO_JSON" 1>&2
     echo "$0: debug[3]: AUTH_JSON=$AUTH_JSON" 1>&2
+    echo "$0: debug[3]: AUTH_JSON_XZ=$AUTH_JSON_XZ" 1>&2
     echo "$0: debug[3]: REMARKS_MD=$REMARKS_MD" 1>&2
     echo "$0: debug[3]: TAR_BZ2=$TAR_BZ2" 1>&2
     echo "$0: debug[3]: ENTRY_JSON=$ENTRY_JSON" 1>&2
@@ -1212,6 +1214,50 @@ if ! grep -E -q "^$YEAR_DIR$" "$TOP_FILE"; then
 fi
 
 
+# case: we have .auth.json.xz but not .auth.json
+#
+# Form a .auth.json from .auth.json.xz
+#
+if [[ -f $AUTH_JSON_XZ && ! -f $AUTH_JSON ]]; then
+    if [[ -z $NOOP ]]; then
+
+	if [[ $V_FLAG -ge 3 ]]; then
+	    echo "$0: debug[3]: about to execute:" \
+		 "xzcat $AUTH_JSON_XZ > $AUTH_JSON" 1>&2
+	fi
+	xzcat "$AUTH_JSON_XZ" > "$AUTH_JSON"
+	status="$?"
+	if [[ $status -ne 0 ]]; then
+	     echo "$0: ERROR:" \
+		  "xzcat $AUTH_JSON_XZ > $AUTH_JSON failed, error: $status" 1>&2
+	     exit 7
+	fi
+	if [[ $V_FLAG -ge 3 ]]; then
+	    echo "$0: debug[3]: about to execute:" \
+		 "chmod -v 0444 $AUTH_JSON" 1>&2
+	    chmod -v 0444 "$AUTH_JSON"
+	    status="$?"
+	    if [[ $status -ne 0 ]]; then
+		 echo "$0: ERROR:" \
+		      "chmod -v 0444 $AUTH_JSON failed, error: $status" 1>&2
+		 exit 7
+	    fi
+	else
+	    chmod 0444 "$AUTH_JSON"
+	    status="$?"
+	    if [[ $status -ne 0 ]]; then
+		 echo "$0: ERROR:" \
+		      "chmod 0444 $AUTH_JSON failed, error: $status" 1>&2
+		 exit 7
+	    fi
+	fi
+
+    elif [[ $V_FLAG -ge 3 ]]; then
+	echo "$0: debug[3]: because of -n, $AUTH_JSON file was not formed" 1>&2
+    fi
+fi
+
+
 # verify .info.json and .auth.json are readable non-empty files
 #
 if [[ ! -e $INFO_JSON ]]; then
@@ -1230,21 +1276,25 @@ if [[ ! -s $INFO_JSON ]]; then
     echo  "$0: ERROR: .info.json is not a non-empty readable file: $INFO_JSON" 1>&2
     exit 6
 fi
-if [[ ! -e $AUTH_JSON ]]; then
-    echo  "$0: ERROR: .auth.json does not exist: $AUTH_JSON" 1>&2
-    exit 6
-fi
-if [[ ! -f $AUTH_JSON ]]; then
-    echo  "$0: ERROR: .auth.json is not a regular file: $AUTH_JSON" 1>&2
-    exit 6
-fi
-if [[ ! -r $AUTH_JSON ]]; then
-    echo  "$0: ERROR: .auth.json is not a readable file: $AUTH_JSON" 1>&2
-    exit 6
-fi
-if [[ ! -s $AUTH_JSON ]]; then
-    echo  "$0: ERROR: .auth.json is not a non-empty readable file: $AUTH_JSON" 1>&2
-    exit 6
+if [[ -z $NOOP ]]; then
+    if [[ ! -e $AUTH_JSON ]]; then
+	echo  "$0: ERROR: .auth.json does not exist: $AUTH_JSON" 1>&2
+	exit 6
+    fi
+    if [[ ! -f $AUTH_JSON ]]; then
+	echo  "$0: ERROR: .auth.json is not a regular file: $AUTH_JSON" 1>&2
+	exit 6
+    fi
+    if [[ ! -r $AUTH_JSON ]]; then
+	echo  "$0: ERROR: .auth.json is not a readable file: $AUTH_JSON" 1>&2
+	exit 6
+    fi
+    if [[ ! -s $AUTH_JSON ]]; then
+	echo  "$0: ERROR: .auth.json is not a non-empty readable file: $AUTH_JSON" 1>&2
+	exit 6
+    fi
+elif [[ $V_FLAG -ge 3 ]]; then
+    echo "$0: debug[3]: because of -n, $AUTH_JSON file not checked" 1>&2
 fi
 
 
@@ -1293,7 +1343,7 @@ done
 #
 if [[ $V_FLAG -ge 3 ]]; then
     for index in "${!TAR_FILE_SET[@]}"; do
-        echo "$0: debug[3]: TAR_FILE_SET[$index]=${TAR_FILE_SET[$index]}" 1>&2
+	echo "$0: debug[3]: TAR_FILE_SET[$index]=${TAR_FILE_SET[$index]}" 1>&2
     done
 fi
 
@@ -1340,29 +1390,6 @@ if [[ -z $NOOP ]]; then
     fi
 elif [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: because of -n, tarball not formed: $TARBALL" 1>&2
-fi
-
-
-# case: we have .auth.json.xz but not .auth.json
-#
-# Form a .auth.json from .auth.json.xz
-#
-if [[ -f $AUTH_JSON.xz && ! -f $AUTH_JSON ]]; then
-    if [[ -z $NOOP ]]; then
-	if [[ $V_FLAG -ge 3 ]]; then
-	    echo "$0: debug[3]: about to execute:" \
-		 "xzcat $AUTH_JSON.xz > $AUTH_JSON" 1>&2
-	fi
-	xzcat "$AUTH_JSON.xz" > "$AUTH_JSON"
-	status="$?"
-	if [[ $status -ne 0 ]]; then
-	     echo "$0: ERROR:" \
-		  "xzcat $AUTH_JSON.xz > $AUTH_JSON failed, error: $status" 1>&2
-	     exit 7
-	fi
-    elif [[ $V_FLAG -ge 3 ]]; then
-	echo "$0: debug[3]: because of -n, $AUTH_JSON file was not formed" 1>&2
-    fi
 fi
 
 
@@ -2382,7 +2409,6 @@ if [[ -z $NOOP ]]; then
 elif [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: -n disabled adding YYYY_DIR: $YYYY_DIR to $DOT_YEAR" 1>&2
 fi
-
 
 
 # build HTML files based on extra_file markdown files

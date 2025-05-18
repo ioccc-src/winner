@@ -136,7 +136,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="2.0.0 2025-03-13"
+export VERSION="2.0.1 2025-05-17"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -229,10 +229,6 @@ Exit codes:
  >= 10         internal error
 
 $NAME version: $VERSION"
-
-# We need this here as the functions refer to it. We will check that it exists
-# before using it, however.
-export HTML_SED="$BIN_DIR/html.sed"
 
 # Write the award name to standard output (stdout)
 #
@@ -525,8 +521,10 @@ if [[ ! -r $ENTRY_NAVBAR_AWK ]]; then
     exit 5
 fi
 
+
 # verify we have our sed script
 #
+export HTML_SED="$BIN_DIR/html.sed"
 if [[ ! -e $HTML_SED ]]; then
     echo "$0: ERROR: bin/html.sed does not exist: $HTML_SED" 1>&2
     exit 5
@@ -539,8 +537,6 @@ if [[ ! -r $HTML_SED ]]; then
     echo "$0: ERROR: bin/html.sed is not a readable file: $HTML_SED" 1>&2
     exit 5
 fi
-
-
 
 
 # verify that ENTRY_PATH is a entry directory

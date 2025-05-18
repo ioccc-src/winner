@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 #
 # md2html.sh - convert markdown into an IOCCC HTML file via config file
 #
