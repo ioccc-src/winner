@@ -1,6 +1,6 @@
 # IOCCC FAQ Table of Contents
 
-This is FAQ version **28.2.17 2025-05-18**.
+This is FAQ version **28.2.18 2025-05-26**.
 
 
 ## 0. [Entering the IOCCC: the bare minimum you need to know](#enter_questions)
@@ -1971,7 +1971,7 @@ with files, copy those files to their respective directory). Note the following:
 `workdir/submit.USERNAME-SLOT` i.e. the submission directory).
     * Directories **MUST** be and are made with mode `0755`.
     * If any directory is not this mode `txzchk(1)` will flag it (and so will
-    `mkioccentry(1)`).
+    `mkiocccentry(1)`).
 7. The non-ignored files are copied to their respective directories under the
 submission directory.
     * `try.sh` and `try.alt.sh` **MUST** be and are copied as mode `0555`.
