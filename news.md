@@ -20,6 +20,21 @@ We invite you to join the **IOCCC Discord Community** via this link: [https://di
 </div>
 
 
+## 2025-05-29
+
+The **IOCCC28** OPEN period has only one week left!  You have until **2025-06-05 04:03:02.010099 UTC**
+to upload your submission(s).  For more information see:
+
+> [Entering the IOCCC](https://www.ioccc.org/quick-start.html#enter).
+
+Once winners of **IOCCC28** have been chosen by the [The Judges](judges.html), we’ll reveal them
+line on our YouTube channel, [Our Favorite Universe](https://www.youtube.com/@OurFavoriteUniverse)
+and post the winning source to the [Official IOCCC website](https://www.ioccc.org/index.html)
+at the end of the show.  Make sure to subscribe to
+[Our Favorite Universe](https://www.ioccc.org/index.html) and click on the notification bell 🔔 to get a
+heads up when they’re announced!
+
+
 ## 2025-05-05
 
 The **IOCCC28** OPEN period has one month left!  You have until **2025-06-05 04:03:02.010099 UTC**
