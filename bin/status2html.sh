@@ -132,7 +132,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="2.0.0 2025-03-13"
+export VERSION="2.0.1 2025-06-04"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -498,7 +498,7 @@ esac
     judging) echo "# The IOCCC is closed to new submissions"
 	echo
 	echo "The [IOCCC judges](judges.html) are in the process of judging the submissions they received" \
-	     "the IOCCC was open."
+	     "while the IOCCC was open."
 	echo
 	echo "Watch the [@IOCCC mastodon feed](https://fosstodon.org/@ioccc), as well as the" \
 	     "[IOCCC news](news.html) page for updates."
