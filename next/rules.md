@@ -17,7 +17,7 @@ app from time to time to view IOCCC mastodon updates.
 # The IOCCC is closed to new submissions
 
 The [IOCCC judges](../judges.html) are in the process of judging the submissions they received
-the IOCCC was open.
+while the IOCCC was open.
 
 <!-- END: the next line ends content from: inc/rules.judging.hdr -->
 <!-- This is the last line modified by the tool: bin/gen-status.sh -->
