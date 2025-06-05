@@ -20,6 +20,26 @@ We invite you to join the **IOCCC Discord Community** via this link: [https://di
 </div>
 
 
+## 2025-06-05
+
+The **IOCCC28** period for submission has closed.
+
+We will post a few high level updates on [Mastodon](https://fosstodon.org/@ioccc),
+plus some j-random more in-depth fun updates for our
+[IOCCC Patrons](https://www.patreon.com/c/IOCCC) while we judge.
+
+**Q**: How long will it take for the @IOCCC Judges to judge **IOCCC28**?
+
+**A**: It all depends on a combination of quantity and quality of the submissions!
+
+We hope to see you all at the live **IOCCC28**
+winner reveal show on the
+[Our Favorite Universe YouTube channel](https://www.youtube.com/@OurFavoriteUniverse).
+The winners will be posted to the IOCCC website at the end of the show.
+**SUBSCRIBE** 👍 and click on the **NOTIFICATION BELL** 🔔 to be notified about
+when when live **IOCCC28** winner reveal show happens!
+
+
 ## 2025-05-29
 
 The **IOCCC28** OPEN period has only one week left!  You have until **2025-06-05 04:03:02.010099 UTC**
@@ -28,7 +48,7 @@ to upload your submission(s).  For more information see:
 > [Entering the IOCCC](https://www.ioccc.org/quick-start.html#enter).
 
 Once winners of **IOCCC28** have been chosen by the [The Judges](judges.html), we’ll reveal them
-line on our YouTube channel, [Our Favorite Universe](https://www.youtube.com/@OurFavoriteUniverse)
+live on our YouTube channel, [Our Favorite Universe](https://www.youtube.com/@OurFavoriteUniverse)
 and post the winning source to the [Official IOCCC website](https://www.ioccc.org/index.html)
 at the end of the show.  Make sure to subscribe to
 [Our Favorite Universe](https://www.ioccc.org/index.html) and click on the notification bell 🔔 to get a

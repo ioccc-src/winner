@@ -1,7 +1,7 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
     "IOCCC_status_version" : "1.0 2024-03-09",
-    "contest_status" : "open",
-    "news_update" : "2025-05-30T07:20:49+00:00",
-    "status_update" : "2025-04-17T23:44:26+00:00"
+    "contest_status" : "judging",
+    "news_update" : "2025-06-05T03:39:58+00:00",
+    "status_update" : "2025-06-05T03:42:18+00:00"
 }

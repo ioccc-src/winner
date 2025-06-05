@@ -1,37 +1,25 @@
-<!-- START: this line starts content from: inc/guidelines.open.hdr -->
+<!-- START: this line starts content from: inc/guidelines.judging.hdr -->
 
-# Official IOCCC guidelines
+# The guidelines for the IOCCC that just closed
 
-These guidelines are **OFFICIAL**.
+These guidelines are for the current IOCCC that is no longer open for new submissions.
 
-Unless some significant problem turns up (such as a need to delay
-in when the IOCCC will close, or some major bug is discovered) they
-will remain **OFFICIAL** for this IOCCC.
-
-See our
-FAQ on "[rules, guidelines, tools feedback](../faq.html#feedback)"
-as well as our
-FAQ on "[about asking questions](../faq.html#question)"
-about these guidelines. You might also find the FAQ in general useful, especially the
-FAQ on "[how to enter the IOCCC](../quick-start.html#enter)".
-
-**SUGGESTION**: Watch both the [IOCCC news](../news.html) and the
-[IOCCC Mastodon](https://fosstodon.org/@ioccc) feed for the latest news
-about any _mentions_ changes.
+See the [IOCCC news](../news.html) and well as the
+[IOCCC Mastodon](https://fosstodon.org/@ioccc) feed for updates
+on the IOCCC judging process as well as for the announcement
+of [who won the IOCCC](../years.html).
 
 **HINT to mastodon users**: You may wish to refresh the [@IOCCC
 mastodon feed](https://fosstodon.org/@ioccc) page and/or mastodon
 app from time to time to view IOCCC mastodon updates.
 
 
-# The IOCCC open for submissions
+# The IOCCC is closed to new submissions
 
-See "[FAQ - How may I enter the IOCCC](https://www.ioccc.org/quick-start.html#enter)"
-for information on how to register for the IOCCC, how to create a proper
-bzip2 compressed tarball of your submission, and how to upload your
-bzip2 compressed tarball to the IOCCC submit server.
+The [IOCCC judges](../judges.html) are in the process of judging the submissions they received
+the IOCCC was open.
 
-<!-- END: the next line ends content from: inc/guidelines.open.hdr -->
+<!-- END: the next line ends content from: inc/guidelines.judging.hdr -->
 <!-- This is the last line modified by the tool: bin/gen-status.sh -->
 # 28th International Obfuscated C Code Contest Official Guidelines
 
