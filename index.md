@@ -22,6 +22,45 @@ plaintext menu even with JavaScript enabled, you can do so
 FAQ on "[website menus](faq.html#menus)".
 
 
+>
+>    <table>
+>
+>    <tr><h3>&nbsp;&nbsp;&nbsp;Support IOCCC <font size=-1 color=black>&nbsp;&nbsp;&nbsp;click below to support</font></h3></tr>
+>
+>    <tr>
+>    <td> &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://patreon.com/IOCCC"><img src="png/patreon.128x19.png"
+>      alt="Patreon logo"
+>      width=128 height=19></a></td>
+>    <td> &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://coff.ee/ioccc"><img src="png/buymeacoffee.128x38.png"
+>      alt="Buy Me A Coffee logo"
+>      width=128 height=38></a></td>
+>    <td> &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/sponsors/ioccc-src"><img src="png/GitHub.128x51.png"
+>      alt="GitHub logo"
+>      width=128 height=51></a></td>
+>    </tr>
+>
+>    </table>
+
+
+> <tr><h3>&nbsp;&nbsp;&nbsp;IOCCC Social Media <font size=-1 color=black>&nbsp;&nbsp;&nbsp;click below to visit</font></h3></tr>
+>
+>    <table>
+>
+>    <tr>
+>    <td> &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://discord.gg/Wa42Qujwnw"><img src="png/Discord.128x37.png"
+>      alt="Discord logo"
+>      width=128 height=37></a></td>
+>    <td> &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://fosstodon.org/@ioccc"><img src="png/mastodon.128x38.png"
+>      alt="Mastodon logo"
+>      width=128 height=38></a></td>
+>    <td> &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.youtube.com/@OurFavoriteUniverse"><img src="png/YouTube.128x46.png"
+>      alt="YouTube logo"
+>      width=128 height=46></a></td>
+>    </tr>
+>
+>    </table>
+
+
 <div id="obfuscate">
 # Obfuscate defined:
 </div>
