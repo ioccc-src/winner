@@ -106,7 +106,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="2.0.0 2025-03-13"
+export VERSION="2.1.0 2025-06-06"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -719,6 +719,86 @@ else
     cat > /dev/null
     if [[ $V_FLAG -ge 3 ]]; then
         echo "$0: debug[3]: because of -n, All IOCCC years markdown data NOT written into: $TMP_YEARS_MD" 1>&2
+    fi
+fi
+
+
+# write Support IOCCC
+#
+{
+    cat << EOF2
+<blockquote>
+<table>
+
+<tr>
+<td colspan="3" style="padding-top: 12px;">
+<span class="pseudo_h3">&nbsp;&nbsp;IOCCC on Social Media</span>
+<span class="small_click_below">&nbsp;&nbsp;&nbsp;click below to visit</span>
+</td>
+</tr>
+
+<tr>
+<td>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://patreon.com/IOCCC"><img src="png/patreon.128x19.png" alt="Patreon logo" width=128 height=19></a>
+</td>
+<td>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://coff.ee/ioccc"><img src="png/buymeacoffee.128x38.png" alt="Buy Me A Coffee logo" width=128 height=38></a>
+</td>
+<td>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/sponsors/ioccc-src"><img src="png/GitHub.128x51.png" alt="GitHub logo" width=128 height=51></a>
+</td>
+</tr>
+
+</table>
+</blockquote>
+EOF2
+
+} | if [[ -z $NOOP ]]; then
+    cat >> "$TMP_YEARS_MD"
+else
+    cat > /dev/null
+    if [[ $V_FLAG -ge 3 ]]; then
+        echo "$0: debug[3]: because of -n, Support IOCCC NOT written into: $TMP_YEARS_MD" 1>&2
+    fi
+fi
+
+
+# write IOCCC on Social Media
+#
+{
+    cat << EOF3
+<blockquote>
+<table>
+
+<tr>
+<td colspan="3" style="padding-top: 12px;">
+<span class="pseudo_h3">&nbsp;&nbsp;IOCCC on Social Media</span>
+<span class="small_click_below">&nbsp;&nbsp;&nbsp;click below to visit</span>
+</td>
+</tr>
+
+<tr>
+<td style="padding-top: 8px;">
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://discord.gg/Wa42Qujwnw"><img src="png/Discord.128x37.png" alt="Discord logo" width=128 height=37></a>
+</td>
+<td style="padding-top: 12px; padding-bottom: 3px;">
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://fosstodon.org/@ioccc"><img src="png/mastodon.128x38.png" alt="Mastodon logo" width=128 height=38></a>
+</td>
+<td>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.youtube.com/@OurFavoriteUniverse"><img src="png/YouTube.128x46.png" alt="YouTube logo" width=128 height=46></a>
+</td>
+</tr>
+
+</table>
+</blockquote>
+EOF3
+
+} | if [[ -z $NOOP ]]; then
+    cat >> "$TMP_YEARS_MD"
+else
+    cat > /dev/null
+    if [[ $V_FLAG -ge 3 ]]; then
+        echo "$0: debug[3]: because of -n, IOCCC on Social Media NOT written into: $TMP_YEARS_MD" 1>&2
     fi
 fi
 

@@ -1,53 +1,58 @@
->    <table>
->
->    <tr>
->    <td colspan="3" style="padding-top: 12px;">
->    <span class="pseudo_h3">&nbsp;&nbsp;Support IOCCC</span>
->    <span class="small_click_below">&nbsp;&nbsp;&nbsp;click below to support</span>
->    </td>
->    </tr>
->
->    <tr>
->    <td>
->    &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://patreon.com/IOCCC"><img src="png/patreon.128x19.png" alt="Patreon logo" width=128 height=19></a>
->    </td>
->    <td>
->    &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://coff.ee/ioccc"><img src="png/buymeacoffee.128x38.png" alt="Buy Me A Coffee logo" width=128 height=38></a>
->    </td>
->    <td>
->    &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/sponsors/ioccc-src"><img src="png/GitHub.128x51.png" alt="GitHub logo" width=128 height=51></a>
->    </td>
->    </tr>
->
->    </table>
-
->    <table>
->
->    <tr>
->    <td colspan="3" style="padding-top: 12px;">
->    <span class="pseudo_h3">&nbsp;&nbsp;IOCCC on Social Media</span>
->    <span class="small_click_below">&nbsp;&nbsp;&nbsp;click below to visit</span>
->    </td>
->    </tr>
->
->    <tr>
->    <td style="padding-top: 8px;">
->    &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://discord.gg/Wa42Qujwnw"><img src="png/Discord.128x37.png" alt="Discord logo" width=128 height=37></a>
->    </td>
->    <td style="padding-top: 12px; padding-bottom: 3px;">
->    &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://fosstodon.org/@ioccc"><img src="png/mastodon.128x38.png" alt="Mastodon logo" width=128 height=38></a>
->    </td>
->    <td>
->    &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.youtube.com/@OurFavoriteUniverse"><img src="png/YouTube.128x46.png" alt="YouTube logo" width=128 height=46></a>
->    </td>
->    </tr>
->
->    </table>
-
-
 <div id="news">
 # News
 </div>
+
+
+<blockquote>
+<table>
+
+<tr>
+<td colspan="3" style="padding-top: 12px;">
+<span class="pseudo_h3">&nbsp;&nbsp;Support the IOCCC</span>
+<span class="small_click_below">&nbsp;&nbsp;&nbsp;click below to support</span>
+</td>
+</tr>
+
+<tr>
+<td>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://patreon.com/IOCCC"><img src="png/patreon.128x19.png" alt="Patreon logo" width=128 height=19></a>
+</td>
+<td>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://coff.ee/ioccc"><img src="png/buymeacoffee.128x38.png" alt="Buy Me A Coffee logo" width=128 height=38></a>
+</td>
+<td>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/sponsors/ioccc-src"><img src="png/GitHub.128x51.png" alt="GitHub logo" width=128 height=51></a>
+</td>
+</tr>
+
+</table>
+</blockquote>
+
+
+<blockquote>
+<table>
+
+<tr>
+<td colspan="3" style="padding-top: 12px;">
+<span class="pseudo_h3">&nbsp;&nbsp;IOCCC on Social Media</span>
+<span class="small_click_below">&nbsp;&nbsp;&nbsp;click below to visit</span>
+</td>
+</tr>
+
+<tr>
+<td style="padding-top: 8px;">
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://discord.gg/Wa42Qujwnw"><img src="png/Discord.128x37.png" alt="Discord logo" width=128 height=37></a>
+</td>
+<td style="padding-top: 12px; padding-bottom: 3px;">
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://fosstodon.org/@ioccc"><img src="png/mastodon.128x38.png" alt="Mastodon logo" width=128 height=38></a>
+</td>
+<td>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.youtube.com/@OurFavoriteUniverse"><img src="png/YouTube.128x46.png" alt="YouTube logo" width=128 height=46></a>
+</td>
+</tr>
+
+</table>
+</blockquote>
 
 
 ## 2025-06-05
