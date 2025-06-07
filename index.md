@@ -26,8 +26,8 @@ FAQ on "[website menus](faq.html#menus)".
 >
 >    <tr>
 >    <td colspan="3" style="padding-top: 12px;">
->    <span id="pseudo_h3">&nbsp;&nbsp;Support IOCCC</span>
->    <span id="small_click_below">&nbsp;&nbsp;&nbsp;click below to support</span>
+>    <span class="pseudo_h3">&nbsp;&nbsp;Support IOCCC</span>
+>    <span class="small_click_below">&nbsp;&nbsp;&nbsp;click below to support</span>
 >    </td>
 >    </tr>
 >
@@ -49,8 +49,8 @@ FAQ on "[website menus](faq.html#menus)".
 >
 >    <tr>
 >    <td colspan="3" style="padding-top: 12px;">
->    <span id="pseudo_h3">&nbsp;&nbsp;IOCCC on Social Media</span>
->    <span id="small_click_below">&nbsp;&nbsp;&nbsp;click below to visit</span>
+>    <span class="pseudo_h3">&nbsp;&nbsp;IOCCC on Social Media</span>
+>    <span class="small_click_below">&nbsp;&nbsp;&nbsp;click below to visit</span>
 >    </td>
 >    </tr>
 >
