@@ -26,8 +26,8 @@ FAQ on "[website menus](faq.html#menus)".
 >
 >    <tr>
 >    <td colspan="3" style="padding-top: 12px;">
->    <font style="font-family: Georgia, serif; font-weight: bold; page-break-after: avoid; font-size: 1.5em; color: DarkBlue;">&nbsp;&nbsp;Support IOCCC</font>
->    <font style="font-family: Helvetica Neue, Helvetica, Arial, sans-serif; font-weight: bold; page-break-after: avoid; font-size: 0.75em; color: black;">&nbsp;&nbsp;&nbsp;click below to support</font>
+>    <span id="pseudo_h3">&nbsp;&nbsp;Support IOCCC</span>
+>    <span id="small_click_below">&nbsp;&nbsp;&nbsp;click below to support</span>
 >    </td>
 >    </tr>
 >
@@ -39,9 +39,7 @@ FAQ on "[website menus](faq.html#menus)".
 >    &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://coff.ee/ioccc"><img src="png/buymeacoffee.128x38.png" alt="Buy Me A Coffee logo" width=128 height=38></a>
 >    </td>
 >    <td>
->    &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/sponsors/ioccc-src"><img src="png/GitHub.128x51.png"
->      alt="GitHub logo"
->      width=128 height=51></a>
+>    &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/sponsors/ioccc-src"><img src="png/GitHub.128x51.png" alt="GitHub logo" width=128 height=51></a>
 >    </td>
 >    </tr>
 >
@@ -51,8 +49,8 @@ FAQ on "[website menus](faq.html#menus)".
 >
 >    <tr>
 >    <td colspan="3" style="padding-top: 12px;">
->    <font style="font-family: Georgia, serif; font-weight: bold; page-break-after: avoid; font-size: 1.5em; color: DarkBlue;">&nbsp;&nbsp;IOCCC on Social Media</font>
->    <font style="font-family: Helvetica Neue, Helvetica, Arial, sans-serif; font-weight: bold; page-break-after: avoid; font-size: 0.75em; color: black;">&nbsp;&nbsp;&nbsp;click below to visit</font>
+>    <span id="pseudo_h3">&nbsp;&nbsp;IOCCC on Social Media</span>
+>    <span id="small_click_below">&nbsp;&nbsp;&nbsp;click below to visit</span>
 >    </td>
 >    </tr>
 >

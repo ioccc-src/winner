@@ -817,6 +817,30 @@ blockquote {
     color: DarkBlue;
 }
 
+/* This is how we hack the "Support IOCCC" and "IOCCC on Social Media" pseudo-h3 headings
+ *
+ * Format like it is h3-ish.  We cannot use h3 because this is used within a HTML table.
+ */
+#pseudo_h3 {
+    font-family: Georgia, serif;
+    font-weight: bold;
+    page-break-after: avoid;
+    font-size: 1.5em;
+    color: DarkBlue;
+}
+
+/* This is how we hack the "click below to ..." small text
+ *
+ * Format small text that shows up on the same row as the pseudo-h3 headings.
+ */
+#small_click_below {
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    page-break-after: avoid;
+    font-size: 0.9em;
+    color: black;
+}
+
 /* Guidelines / Rules change bar ============================================================================ */
 
 .leftbar {
@@ -1024,6 +1048,12 @@ blockquote {
     .content h3 {
 	font-size: 1.25em;
     }
+    #pseudo_h3 {
+	font-size: 1.25em;
+    }
+    #small_click_below {
+	font-size: 0.75em;
+    }
 }
 
 /*
@@ -1062,6 +1092,12 @@ blockquote {
     }
     .content h3 {
 	font-size: 1em;
+    }
+    #pseudo_h3 {
+	font-size: 1em;
+    }
+    #small_click_below {
+	font-size: 0.6em;
     }
 }
 
@@ -1111,6 +1147,12 @@ blockquote {
     }
     .content h3 {
 	font-size: 0.9em;
+    }
+    #pseudo_h3 {
+	font-size: 0.9em;
+    }
+    #small_click_below {
+	font-size: 0.5em;
     }
 }
 
