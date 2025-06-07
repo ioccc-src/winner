@@ -106,7 +106,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="2.1.0 2025-06-06"
+export VERSION="2.1.1 2025-06-06"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -732,8 +732,8 @@ fi
 
 <tr>
 <td colspan="3" style="padding-top: 12px;">
-<span class="pseudo_h3">&nbsp;&nbsp;IOCCC on Social Media</span>
-<span class="small_click_below">&nbsp;&nbsp;&nbsp;click below to visit</span>
+<span class="pseudo_h3">&nbsp;&nbsp;Support the IOCCC</span>
+<span class="small_click_below">&nbsp;&nbsp;&nbsp;click below to support</span>
 </td>
 </tr>
 
