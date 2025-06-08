@@ -137,7 +137,7 @@ ${PROG}: ${PROG}.c
 	@echo
 	@echo "and then running:"
 	@echo
-	@echo "    ./ ${ALT_TARGET}"
+	@echo "    ./${ALT_TARGET}"
 	@echo
 	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
