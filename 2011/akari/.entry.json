@@ -6,7 +6,7 @@
     "dir" : "akari",
     "entry_id" : "2011_akari",
     "title" : "2011.akari",
-    "abstract" : "Downsampler with 3 embeded programs",
+    "abstract" : "Downsampler with 3 embedded programs",
     "author_set" : [
         {
             "author_handle" : "Don_Yang"
