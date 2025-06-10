@@ -1,6 +1,6 @@
 # IOCCC FAQ Table of Contents
 
-This is FAQ version **28.2.18 2025-05-26**.
+This is FAQ version **28.2.19 2025-06-10**.
 
 
 ## 0. [Entering the IOCCC: the bare minimum you need to know](#enter_questions)
@@ -27,7 +27,7 @@ This is FAQ version **28.2.18 2025-05-26**.
 - **Q 1.4**: <a class="normal" href="#subdirectories">How may I use subdirectories in my submission if Rule 17 disallows them?</a>
 - **Q 1.5**: <a class="normal" href="#mkiocccentry_test">How can I check if my submission passes tests without having to answer questions?</a>
 - **Q 1.6**: <a class="normal" href="#extra-files">What are extra files and how may I include additional files beyond the max allowed?</a>
-- **Q 1.7**: <a class="normal" href="#ai">May I use AI, Virtual coding assistants, or similar tools to write my submission?</a>
+- **Q 1.7**: <a class="normal" href="#ai">May I use AI, LLM, Virtual coding assistants, or similar tools to write my submission?</a>
 - **Q 1.8**: <a class="normal" href="#rule17">What are the details behind Rule 17?</a>
 - **Q 1.9**: <a class="normal" href="#uuid">How can I avoid re-entering my UUID to mkiocccentry?</a>
 - **Q 1.10**: <a class="normal" href="#submission_dir">How can I avoid having to move or delete my submission directory for the same workdir?</a>
