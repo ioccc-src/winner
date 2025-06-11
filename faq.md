@@ -1,6 +1,6 @@
 # IOCCC FAQ Table of Contents
 
-This is FAQ version **28.2.19 2025-06-10**.
+This is FAQ version **28.2.20 2025-06-11**.
 
 
 ## 0. [Entering the IOCCC: the bare minimum you need to know](#enter_questions)
@@ -31,6 +31,8 @@ This is FAQ version **28.2.19 2025-06-10**.
 - **Q 1.8**: <a class="normal" href="#rule17">What are the details behind Rule 17?</a>
 - **Q 1.9**: <a class="normal" href="#uuid">How can I avoid re-entering my UUID to mkiocccentry?</a>
 - **Q 1.10**: <a class="normal" href="#submission_dir">How can I avoid having to move or delete my submission directory for the same workdir?</a>
+- **Q 1.11**: <a class="normal" href="#download_submission">Can I download my submission tarball from the submit server?</a>
+- **Q 1.12**: <a class="normal" href="#del_submission">Can I delete a submission from the submit server?</a>
 
 
 ## 2. [IOCCC Judging process](#judging_process)
@@ -1364,7 +1366,6 @@ FAQ on "[the answers file](#answers_file)".
 
 Jump to: [top](#)
 
-
 <div id="submission_dir">
 ### Q 1.10: How can I avoid having to move or delete my submission directory for the same workdir?
 </div>
@@ -1385,6 +1386,28 @@ specify the path by the `-r rm` option.
 
 
 Jump to: [top](#)
+
+<div id="download_submission">
+### Q 1.11: Can I download my submission tarball from the submit server?
+</div>
+
+We do not support this. If you need to verify your submission, then
+you can re-upload (while the contest is in open state) and verify the SHA256
+checksum listed in the submission slot.
+
+Jump to: [top](#)
+
+<div id="del_submission">
+### Q 1.11: Can I delete a submission from the submit server?
+</div>
+
+We do not support this. Instead, please create an empty prog.c, copy the [example
+Makefile](next/Makefile.example) to your Makefile and add to the remarks.md:
+
+> Please ignore this submission.
+
+Jump to: [top](#)
+
 
 
 <hr style="width:50%;text-align:left;margin-left:0">
