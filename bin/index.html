@@ -764,6 +764,16 @@ markdown files, of all entries.</p>
 <pre><code>    bin/gen-other-html.sh -v 1</code></pre>
 <p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
 <pre><code>    make gen_other_html</code></pre>
+<div id="gen-readme">
+<h3 id="gen-readme.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/gen-readme.sh">gen-readme.sh</a></h3>
+</div>
+<p>Generate a <code>README.md</code> file a submission’s <code>remarks.md</code> and the
+template files in <a href="https://github.com/ioccc-src/winner/blob/master/template/entry/README.md.head">template/entry/README.md.head</a>
+and <a href="https://github.com/ioccc-src/winner/blob/master/template/entry/README.md.tail">template/entry/README.md.tail</a>.</p>
+<p>Usage:</p>
+<pre><code>    bin/gen-readme.sh -v 1 YYYY template/entry/README.md.head YYYY/dir/remarks.md template/entry/README.md.tail YYYY/dir/README.md</code></pre>
+<p>While this tool is used by <a href="#cvt-submission">cvt-submission</a>, it may also
+be used by hand by the <a href="../judges.html">Judges</a> during the final judging rounds.</p>
 <div id="gen-sitemap">
 <h3 id="gen-sitemap.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/gen-sitemap.sh">gen-sitemap.sh</a></h3>
 </div>

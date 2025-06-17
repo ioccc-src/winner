@@ -573,6 +573,24 @@ We recommend that this tool be invoked via the top level `Makefile`:
 ```
 
 
+<div id="gen-readme">
+### [gen-readme.sh](%%REPO_URL%%/bin/gen-readme.sh)
+</div>
+
+Generate a `README.md` file a submission's `remarks.md` and the
+template files in [template/entry/README.md.head](%%REPO_URL%%/template/entry/README.md.head)
+and [template/entry/README.md.tail](%%REPO_URL%%/template/entry/README.md.tail).
+
+Usage:
+
+``` <!---sh-->
+    bin/gen-readme.sh -v 1 YYYY template/entry/README.md.head YYYY/dir/remarks.md template/entry/README.md.tail YYYY/dir/README.md
+```
+
+While this tool is used by [cvt-submission](#cvt-submission), it may also
+be used by hand by the [Judges](../judges.html) during the final judging rounds.
+
+
 <div id="gen-sitemap">
 ### [gen-sitemap.sh](%%REPO_URL%%/bin/gen-sitemap.sh)
 </div>

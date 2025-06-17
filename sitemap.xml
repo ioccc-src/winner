@@ -15226,7 +15226,7 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/cvt-submission.sh</loc>
-    <lastmod>2025-05-18T11:09:29+00:00</lastmod>
+    <lastmod>2025-06-17T02:12:37+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/entry2csv.sh</loc>
@@ -15261,6 +15261,10 @@
     <lastmod>2025-04-16T20:59:19+00:00</lastmod>
 </url>
 <url>
+    <loc>https://www.ioccc.org/bin/gen-readme.sh</loc>
+    <lastmod>2025-06-16T20:20:40+00:00</lastmod>
+</url>
+<url>
     <loc>https://www.ioccc.org/bin/gen-sitemap.sh</loc>
     <lastmod>2025-04-28T20:09:17+00:00</lastmod>
 </url>
@@ -15286,11 +15290,11 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/index.html</loc>
-    <lastmod>2025-01-10T06:49:56+00:00</lastmod>
+    <lastmod>2025-06-17T00:53:52+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/index.html</loc>
-    <lastmod>2025-01-10T06:49:56+00:00</lastmod>
+    <lastmod>2025-06-17T00:53:52+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/jfmt-wrapper.sh</loc>
@@ -15358,11 +15362,11 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/README.md</loc>
-    <lastmod>2025-01-10T06:43:52+00:00</lastmod>
+    <lastmod>2025-06-16T20:30:35+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/README.md</loc>
-    <lastmod>2025-01-10T06:43:52+00:00</lastmod>
+    <lastmod>2025-06-16T20:30:35+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/sgi.sh</loc>
@@ -15486,7 +15490,7 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/Makefile</loc>
-    <lastmod>2025-05-18T10:06:42+00:00</lastmod>
+    <lastmod>2025-06-17T02:18:34+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/markdown.html</loc>
@@ -15598,7 +15602,7 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/status.html</loc>
-    <lastmod>2025-06-07T02:03:20+00:00</lastmod>
+    <lastmod>2025-06-17T02:21:57+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/status.json</loc>

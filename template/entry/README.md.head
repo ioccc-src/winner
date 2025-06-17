@@ -1,3 +1,6 @@
+Award: XXX - suggest award title - XXX
+
+XXX - once the .entry.json file is built by cvt-submission.sh - remove all text from top thru this line - XXX
 ## To build:
 
 ``` <!---sh-->
@@ -5,20 +8,33 @@
 ```
 
 
+### Bugs and (Mis)features:
+
+XXX - remove this section if not needed - XXX
+
+
 ## To use:
 
 ``` <!---sh-->
-    ./prog
+    ./prog XXX - add or remove args for a default or represenative run - XXX
+```
+
+
+## Try:
+
+``` <!---sh-->
+    ./try.sh
 ```
 
 
 ## Alternate code:
 
-XXX
+XXX - remove this section if not needed - XXX
 
 
 ### Alternate build:
 
+XXX - remove this section if not needed - XXX
 ``` <!---sh-->
     make alt
 ```
@@ -26,6 +42,7 @@ XXX
 
 ### Alternate use:
 
+XXX - remove this section if not needed - XXX
 ``` <!---sh-->
     ./prog.alt
 ```
@@ -33,8 +50,11 @@ XXX
 
 ## Judges' remarks:
 
-XXX
+XXX - write stuff here - XXX
+
+Please see [IOCCC markdown guidelines](https://www.ioccc.org/markdown.html) - XXX - remove this line - XXX
 
 
 ## Author's remarks:
+
 

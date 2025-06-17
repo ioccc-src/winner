@@ -124,7 +124,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="2.0.5 2025-05-18"
+export VERSION="2.1.0 2025-06-16"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -139,6 +139,7 @@ status="$?"
 if [[ $status -eq 0 ]]; then
     TOPDIR=$("$GIT_TOOL" rev-parse --show-toplevel)
 fi
+export TOPDIR
 #
 VERGE=$(type -P verge)
 export VERGE
@@ -180,7 +181,7 @@ if [[ -z "$CHKENTRY_TOOL" ]]; then
     echo "$0: Notice: then if needed: make clobber all install" 1>&2
     exit 5
 fi
-export MIN_CHKENTRY_VERSION="1.1.5"
+export MIN_CHKENTRY_VERSION="2.0.5"
 CHKENTRY_VERSION=$("$CHKENTRY_TOOL" -V | head -1 | awk '{print $3;}')
 if ! "$VERGE" "$CHKENTRY_VERSION" "$MIN_CHKENTRY_VERSION"; then
     echo "$0: FATAL: chkentry version: $CHKENTRY_VERSION < minimum version: $MIN_CHKENTRY_VERSION" 1>&2
@@ -190,6 +191,7 @@ if ! "$VERGE" "$CHKENTRY_VERSION" "$MIN_CHKENTRY_VERSION"; then
     echo "$0: notice: then: cd jparse && sudo make install clobber" 1>&2
     exit 5
 fi
+export GEN_README_TOOL="$TOPDIR/bin/gen-readme.sh"
 #
 GTAR_TOOL=$(type -P gtar)
 export GTAR_TOOL
@@ -198,7 +200,6 @@ if [[ -z "$GIT_TOOL" ]]; then
     exit 5
 fi
 #
-export TOPDIR
 export REPO_TOP_URL="https://github.com/ioccc-src/winner"
 # GitHub puts individual files under the "blob/master" sub-directory.
 export REPO_URL="$REPO_TOP_URL/blob/master"
@@ -230,7 +231,7 @@ export X_3="X""X""X"
 # usage
 #
 export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir]
-	[-c chkentry] [-T tarball_dir]
+	[-c chkentry] [-g gen-readme.sh] [-T tarball_dir]
         [-i input_data] [-n] [-N] YYYY/dir
 
 	-h		print help message and exit
@@ -239,6 +240,7 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir]
 
 	-d topdir	set topdir (def: $TOPDIR)
 	-c chkentry	path to the chkentry tool (def: $CHKENTRY_TOOL)
+	-g gen-readme.sh	path to the gen-readme.sh tool (def: $GEN_README_TOOL)
 
 	-T tarball_dir	where to form the compressed tarball of modified files (def: $TARBALL_DIR)
 
@@ -789,7 +791,7 @@ function write_author_handle_file
 
 # parse command line
 #
-while getopts :hv:Vd:c:i:T:nN flag; do
+while getopts :hv:Vd:c:g:i:T:nN flag; do
   case "$flag" in
     h) echo "$USAGE" 1>&2
 	exit 2
@@ -802,6 +804,8 @@ while getopts :hv:Vd:c:i:T:nN flag; do
     d) TOPDIR="$OPTARG"
 	;;
     c) CHKENTRY_TOOL="$OPTARG"
+	;;
+    g) GEN_README_TOOL="$OPTARG"
 	;;
     i) INPUT_DATA_FILE="$OPTARG"
 	;;
@@ -1129,6 +1133,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: GIT_TOOL=$GIT_TOOL" 1>&2
     echo "$0: debug[3]: TOPDIR=$TOPDIR" 1>&2
     echo "$0: debug[3]: CHKENTRY_TOOL=$CHKENTRY_TOOL" 1>&2
+    echo "$0: debug[3]: GEN_README_TOOL=$GEN_README_TOOL" 1>&2
     echo "$0: debug[3]: VERGE=$VERGE" 1>&2
     echo "$0: debug[3]: JSTRDECODE=$JSTRDECODE" 1>&2
     echo "$0: debug[3]: MIN_JSTRDECODE_VERSION=$MIN_JSTRDECODE_VERSION" 1>&2
@@ -1233,6 +1238,22 @@ if [[ ! -x $CHKENTRY_TOOL ]]; then
     echo "$0: ERROR: cannot find an executable chkentry tool: $CHKENTRY_TOOL" 1>&2
     echo "$0: Notice: if needed: $GIT_TOOL clone $MKIOCCCENTRY_REPO; cd mkiocccentry" 1>&2
     echo "$0: Notice: then if needed: make clobber all install" 1>&2
+    exit 5
+fi
+
+
+# firewall - verify gen-readme.sh tool
+#
+if [[ ! -e $GEN_README_TOOL ]]; then
+    echo "$0: ERROR: gen-readme.sh file does not exist: $GEN_README_TOOL" 1>&2
+    exit 5
+fi
+if [[ ! -f $GEN_README_TOOL ]]; then
+    echo "$0: ERROR: gen-readme.sh is not a file: $GEN_README_TOOL" 1>&2
+    exit 5
+fi
+if [[ ! -x $GEN_README_TOOL ]]; then
+    echo "$0: ERROR: cannot find an executable gen-readme.sh tool: $GEN_README_TOOL" 1>&2
     exit 5
 fi
 
@@ -1429,22 +1450,24 @@ fi
 #
 if [[ $V_FLAG -ge 1 ]]; then
     echo "$0: debug[1]: about to run: $CHKENTRY_TOOL -v 1" \
-	 "-i .auth.json.xz -i .prev -i .submit.sh -i .txz -i .num.sh -i .orig -i .path" \
-	 "-- $YYYY_DIR" 1>&2
-    "$CHKENTRY_TOOL" -v 1 -i .auth.json.xz -i .prev -i .submit.sh -i .txz -i .num.sh -i .orig -i .path -- "$YYYY_DIR"
+	 "-i .auth.json.xz -i .prev -i .submit.sh -i .txz -i .num.sh -i .orig" \
+	 "-i .path -i README.md -- $YYYY_DIR" 1>&2
+    "$CHKENTRY_TOOL" -v 1 -i .auth.json.xz -i .prev -i .submit.sh -i .txz -i .num.sh -i .orig \
+			  -i .path -i README.md -- "$YYYY_DIR"
     status="$?"
     if [[ $status -ne 0 ]]; then
-	echo "$0: ERROR: $CHKENTRY_TOOL -v 1 -i .auth.json.xz -i .prev -i .submit.sh -i .txz -i .num.sh -i .orig -i .path" \
-	     "-- $YYYY_DIR failed," \
+	echo "$0: ERROR: $CHKENTRY_TOOL -v 1 -i .auth.json.xz -i .prev -i .submit.sh -i .txz -i .num.sh -i .orig" \
+	     "-i .path -i README.md -- $YYYY_DIR failed," \
 	      "error code: $status" 1>&2
 	exit 7
     fi
 else
-    "$CHKENTRY_TOOL" -i .auth.json.xz -i .prev -i .submit.sh -i .txz -i .num.sh -i .orig -i .path -- "$YYYY_DIR"
+    "$CHKENTRY_TOOL" -i .auth.json.xz -i .prev -i .submit.sh -i .txz -i .num.sh -i .orig \
+		     -i .path -i README.md -- "$YYYY_DIR"
     status="$?"
     if [[ $status -ne 0 ]]; then
-	echo "$0: $CHKENTRY_TOOL -i .auth.json.xz -i .prev -i .submit.sh -i .txz -i .num.sh -i .orig -i .path" \
-	     "-- $YYYY_DIR failed," \
+	echo "$0: $CHKENTRY_TOOL -i .auth.json.xz -i .prev -i .submit.sh -i .txz -i .num.sh -i .orig" \
+	     "-i .path -i README.md -- $YYYY_DIR failed," \
 	      "error code: $status" 1>&2
 	exit 7
     fi
@@ -2349,13 +2372,16 @@ if [[ -z $NOOP ]]; then
 	if [[ $V_FLAG -ge 3 ]]; then
 	    echo  "$0: debug[3]: forming README.md: $README_MD"
 	fi
-	cat "$TEMPLATE_README_MD_HEAD" > "$README_MD"
-	if [[ -f $YYYY_DIR/remarks.md ]]; then
-	    cat "$YYYY_DIR/remarks.md" >> "$README_MD"
-	else
-	    echo "$X_3 - no remarks.md file was found" >> "$README_MD"
+	"$GEN_README_TOOL" "$YEAR_DIR" "$TEMPLATE_README_MD_HEAD" "$YYYY_DIR/remarks.md" "$TEMPLATE_README_MD_TAIL" "$README_MD"
+	status="$?"
+	if [[ $status -ne 0 ]]; then
+	    echo "$0: ERROR: $GEN_README_TOOL $YEAR_DIR $TEMPLATE_README_MD_HEAD $YYYY_DIR/remarks.md" \
+		 "$TEMPLATE_README_MD_TAIL $README_MD failed," \
+		 "error code: $status" 1>&2
+	    exit 59
 	fi
-	sed -e "s/$X_3-YEAR-$X_3/$YEAR_DIR/" "$TEMPLATE_README_MD_TAIL" >> "$README_MD"
+    elif [[ $V_FLAG -ge 3 ]]; then
+	echo "$0: debug[3]: README.md file already exists, skipping forming: $README_MD" 1>&2
     fi
 
     # write manifest csv line for README.md
@@ -2379,7 +2405,7 @@ if [[ -z $NOOP ]]; then
     if [[ $status -ne 0 ]]; then
         echo "$0: ERROR: LC_ALL=C sort -t, -k2n -k1,1 -k3,6 $TMP_MANIFEST_CSV -o $TMP_MANIFEST_CSV failed," \
              "error code: $status" 1>&2
-        exit 59
+        exit 60
     elif [[ $V_FLAG -ge 3 ]]; then
         echo "$0: debug[3]: sorted temporary manifest csv file: $TMP_MANIFEST_CSV" 1>&2
     fi
@@ -2422,7 +2448,7 @@ if [[ -z $NOOP ]]; then
     if [[ $status -ne 0 ]]; then
 	echo "$0: ERROR: $JPARSE_TOOL -q -- $TMP_ENTRY_JSON filed," \
 	     "error code: $status" 1>&2
-	exit 60
+	exit 61
     elif [[ $V_FLAG -ge 3 ]]; then
 	echo "$0: debug[3]: valid JSON: $TMP_ENTRY_JSON" 1>&2
     fi
@@ -2454,13 +2480,13 @@ if [[ -z $NOOP ]]; then
         if [[ $status -ne 0 ]]; then
             echo "$0: ERROR: mv -f -- $TMP_ENTRY_JSON $ENTRY_JSON filed," \
 	         "error code: $status" 1>&2
-            exit 61
+            exit 62
         elif [[ $V_FLAG -ge 1 ]]; then
             echo "$0: debug[1]: updated .entry.json: $ENTRY_JSON" 1>&2
         fi
         if [[ ! -s $ENTRY_JSON ]]; then
             echo "$0: ERROR: not a non-empty .entry.json: $ENTRY_JSON" 1>&2
-            exit 62
+            exit 63
         fi
     fi
 
@@ -2494,7 +2520,7 @@ for EXTRA_FILE in $EXTRA_FILE_SET; do
 		if [[ $status -ne 0 ]]; then
 		    echo "$0: ERROR: $OTHERMD2HTML_SH -v $V_FLAG -- $YYYY_DIR/$EXTRA_FILE filed," \
 			 "error code: $status" 1>&2
-		    exit 63
+		    exit 64
 		fi
 	    elif [[ $V_FLAG -ge 3 ]]; then
 		echo "$0: debug[3]: -n disabled forming HTML: $YYYY_DIR/$HTML_FILE" 1>&2
@@ -2527,7 +2553,7 @@ if [[ $status -ne 0 ]]; then
 	if [[ $status -ne 0 ]]; then
 	    echo "$0: ERROR: chmod +w $ALLYEAR filed," \
 		 "error code: $status" 1>&2
-	    exit 64
+	    exit 65
 	fi
 
 	# append YYYY_DIR to .allyear
@@ -2541,7 +2567,7 @@ if [[ $status -ne 0 ]]; then
 	if [[ $status -ne 0 ]]; then
 	    echo "$0: ERROR: sort -f -d -u $ALLYEAR -o $ALLYEAR filed," \
 		 "error code: $status" 1>&2
-	    exit 65
+	    exit 66
 	fi
 
     elif [[ $V_FLAG -ge 1 ]]; then
@@ -2566,7 +2592,7 @@ if [[ -z $NOOP ]]; then
 	if [[ $status -ne 0 ]]; then
 	    echo "$0: ERROR: $MD2HTML_SH -v $V_FLAG -- $README_MD $INDEX_HTML filed," \
 		 "error code: $status" 1>&2
-	    exit 66
+	    exit 67
 	fi
     fi
 
@@ -2590,7 +2616,7 @@ if [[ $status -ne 0 ]]; then
     echo "$0: ERROR: rm -f -v -- $INFO_JSON $AUTH_JSON $AUTH_JSON.xz $REMARKS_MD $YYYY_DIR/.prev" \
 	 "$YYYY_DIR/.submit.sh $YYYY_DIR/.txz $YYYY_DIR/.num.sh $YYYY_DIR/.orig filed," \
 	 "error code: $status" 1>&2
-    exit 65
+    exit 68
 fi
 
 
