@@ -1,10 +1,10 @@
 #!/usr/bin/env make
 #
-# prog - an example Makefile <<=== change "an example Makefile" to a suitable title for submission
+# XXX - prog - an example Makefile <<=== change "an example Makefile" to a suitable title for your submission
 #
-# Please use this Makefile, renamed as Makefile of course, as the Makefile in
-# your submission. Modify it as needed, including removing this comment and
-# other comments we ask you to remove.
+# XXX - Please use this Makefile, renamed as Makefile of course, as the Makefile in
+# XXX - your submission. Modify it as needed, including removing this comment and
+# XXX - other comments we ask you to remove.
 
 #############################
 # shell used by this Makefile
