@@ -21,7 +21,7 @@ SHELL= bash
 # include ../../var.mk
 
 # XXX - for now, set some common tool locations
-# XXX - once var.mk is in use, the IOCCC judges will remove this section
+# XXX - once var.mk is in use, the IOCCC judges will remove the section below
 CC= cc
 CHMOD= chmod
 CLANG= clang
@@ -46,7 +46,7 @@ CUNKNOWN= -Wno-unknown-warning-option
 
 # Common C compiler warning flags
 #
-CWARN= -Wall -Wextra ${CSILENCE} ${CUNKNOWN}
+CWARN= -Wall -Wextra -pedantic ${CSILENCE} ${CUNKNOWN}
 
 # Compiler standard
 #
@@ -111,7 +111,7 @@ endif
 # Special Makefile variables for this entry
 ###########################################
 
-#ENTRY= XXX - we will change this line later - XXX
+#ENTRY= XXX - The IOCCC judges will change this line later
 PROG= prog
 #
 OBJ= ${PROG}.o
@@ -128,7 +128,7 @@ TARGET= ${PROG}
 #################
 
 all: data ${TARGET}
-	@# please remove these comments
+	@# XXX - please remove these comments
 	@
 	@# NOTE: only try.sh and try.alt.sh scripts will be made executable in
 	@# the tarball so if you need any scripts that are executable, make sure
