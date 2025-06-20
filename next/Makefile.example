@@ -17,7 +17,7 @@ SHELL= bash
 # common tool locations
 #######################
 #
-# XXX - The IOCCC judges will remove this line and comment the next line later
+# XXX - The IOCCC judges will remove this line and uncomment the next line later
 # include ../../var.mk
 
 # XXX - for now, set some common tool locations
@@ -26,9 +26,9 @@ CC= cc
 CHMOD= chmod
 CLANG= clang
 GCC= gcc
-GINDENT= gindent
 MV= mv
 RM= rm
+RMDIR= rmdir
 TRUE= true
 
 
@@ -38,13 +38,19 @@ TRUE= true
 
 # Common C compiler warnings to silence
 #
-CSILENCE= -Wno-poison-system-directories
+# Example: CSILENCE= -Wno-poison-system-directories
+#
+CSILENCE=
 
 # Attempt to silence unknown warning options
 #
 CUNKNOWN= -Wno-unknown-warning-option
 
 # Common C compiler warning flags
+#
+# NOTE: The addition of -pedantic to CWARN is a challenge that
+#       You may wish to avoid if it proves too problematic.
+#       There is NO penalty for removing -pedantic from CWARN.
 #
 CWARN= -Wall -Wextra -pedantic ${CSILENCE} ${CUNKNOWN}
 
@@ -60,29 +66,65 @@ CSTD= -std=gnu17
 
 # Compiler bit architecture
 #
+# Example for 32-bitness: ARCH= -m32
+# Example for 64-bitness: ARCH= -m64
+#
+# NOTE: Normally one should NOT specify a specific architecture.
+#
 ARCH=
 
 # Defines that are needed to compile
+#
+# Example: -Dfoo -Dbar=baz
 #
 CDEFINE=
 
 # Include files that are needed to compile
 #
+# Example: CINCLUDE= -include stdio.h
+#
 CINCLUDE=
 
+# Other flags to pass to the C compiler
+#
+# Example: COTHER= -fno-math-errno
+#
+COTHER=
+
 # Optimization
+#
+# NOTE: Feel free to change the level of compiler optimization.
+#       The "-O3" is just a friendly default you might wish to try.
+#
+# Example: OPT= -O0 -g
 #
 OPT= -O3
 
 # Default flags for ANSI C compilation
 #
-CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
+CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${COTHER} ${OPT}
 
 # Libraries needed to build
+#
+# Example: LDFLAGS= -lncurses -lm
 #
 LDFLAGS=
 
 # C compiler to use
+#
+# NOTE: The IOCCC Judges recommend you leave CC as just "cc"
+#       and NOT set it to clang, or gcc, or something else
+#       unless you have a STRONG reason to do so.
+#
+#       Setting CC to something other than "cc" makes your
+#       code less portable to those who do not have your
+#       particular C compiler.  **hint**
+#
+#       If you want to test your code with a particular C compiler,
+#       use the make command line.  For example:
+#
+#           make all CC=clang
+#           make all CC=gcc
 #
 CC= cc
 
@@ -90,7 +132,12 @@ CC= cc
 #
 ifeq "$(findstring $(CLANG),${CC})" "$(CLANG)"
 #
-#CSILENCE+=
+# NOTE: This code is only invoked when CC is "clang"
+#       such as when you use the make command line:
+#
+#           make all CC=clang
+#
+CSILENCE+=
 #
 CWARN+= -Weverything
 #
@@ -100,9 +147,14 @@ endif
 #
 ifeq "$(findstring $(GCC),${CC})" "$(GCC)"
 #
-#CSILENCE+=
+# NOTE: This code is only invoked when CC is "gcc"
+#       such as when you use the make command line:
 #
-#CWARN+=
+#    make all CC=gcc
+#
+CSILENCE+=
+#
+CWARN+=
 #
 endif
 
@@ -115,12 +167,21 @@ endif
 PROG= prog
 #
 OBJ= ${PROG}.o
-DATA=
 TARGET= ${PROG}
-#
+
 # XXX - uncomment these next two lines if you have a prog.alt.c
-#ALT_OBJ= ${PROG}.alt.o
-#ALT_TARGET= ${PROG}.alt
+# ALT_OBJ= ${PROG}.alt.o
+# ALT_TARGET= ${PROG}.alt
+
+# list any data files supplied with your submission
+#
+# Example: DATA= curds whey
+#
+DATA=
+
+# NOTE: Add any new Makefile variables your code might need below.
+#
+# Example: WIDTH= 120
 
 
 #################
@@ -128,13 +189,6 @@ TARGET= ${PROG}
 #################
 
 all: data ${TARGET}
-	@# XXX - please remove these comments
-	@
-	@# NOTE: only try.sh and try.alt.sh scripts will be made executable in
-	@# the tarball so if you need any scripts that are executable, make sure
-	@# to use ${CHMOD} +x on them like:
-	@#
-	@#   ${CHMOD} +x foo.sh
 	@${TRUE}
 
 .PHONY: all alt data everything clean clobber
@@ -169,6 +223,8 @@ clean:
 	${RM} -f ${OBJ} ${ALT_OBJ}
 
 clobber: clean
+	@# XXX - put additional ${RM} -f or ${RM} -rf lines so that
+	@#       "make clobber" restores things to their submission state.
 	${RM} -f ${TARGET} ${ALT_TARGET}
 	${RM} -rf *.dSYM
 
