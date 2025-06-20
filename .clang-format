@@ -1,0 +1,80 @@
+
+######################
+# clang-format options
+######################
+
+# ####
+# NOTE: The IOCCC style is somewhat similar to the Linux Kernel style
+#
+# See: https://clang.llvm.org/docs/ClangFormatStyleOptions.html
+#
+# NOTE: Linux Kernel style differences will be noted in comments below, with
+#       the Kernel style setting noted in a "Kernel style uses:" comment.
+# ####
+
+# A style complying with the LLVM coding standards
+#
+# See: https://llvm.org/docs/CodingStandards.html#include-style
+#
+BasedOnStyle: LLVM
+
+# Never put short ifs on the same line
+#
+AllowShortIfStatementsOnASingleLine: false
+
+# Use the same indentation level as for the switch statement
+#
+IndentCaseLabels: false
+
+# Always attach braces to surrounding context
+#
+BreakBeforeBraces: Linux
+
+# The number of columns to use for indentation
+#
+# Kernel style uses: IndentWidth: 8
+#
+IndentWidth: 4
+
+# Never use tab to indent
+#
+# Kernel style uses: UseTab: Always
+#
+UseTab: Never
+
+# Align escaped newlines as far left as possible, using the last line of the
+# preprocessor directive as the reference if it’s the longest.
+#
+# Kernel style uses: AlignEscapedNewlines: Right
+#
+AlignEscapedNewlines: LeftWithLastLine
+
+# The column limit
+#
+# Kernel style uses: ColumnLimit: 80
+#
+ColumnLimit: 131
+
+# The number of columns to use for indentation of preprocessor statements
+#
+# NOTE: When set to -1 (default) IndentWidth is used also for preprocessor statements.
+#
+# Kernel style uses: PPIndentWidth: -1
+#
+PPIndentWidth: 2
+
+# Indents directives after the hash
+#
+# Kernel style uses: IndentPPDirectives: None
+#
+IndentPPDirectives: AfterHash
+
+# Insert braces after control statements (if, else, for, do, and while) in
+#
+# Kernel style uses: InsertBraces: false
+#
+# WARNING: Setting this option to true could lead to incorrect code formatting due to clang-format’s
+#          lack of complete semantic information. As such, extra care should be taken to review code
+#          changes made by this option!
+#
+InsertBraces: true

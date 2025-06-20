@@ -3,42 +3,25 @@
 # extended utility rules
 ########################
 
-.PHONY: indent_clean indent_clobber install
-
-# you may be able to misunderstand the source by reading indent.c
-#
-indent.c: ${PROG}.c
-	@if which "${GINDENT}" >/dev/null 2>&1; then \
-	    echo ${RM} -f $@; \
-	    ${RM} -f $@; \
-	    echo "${GINDENT} < $< > $@"; \
-	    ${GINDENT} < $< > $@; \
-	elif which "${INDENT}" >/dev/null 2>&1; then \
-	    echo ${RM} -f $@; \
-	    ${RM} -f $@; \
-	    echo "${INDENT} < $< > $@"; \
-	    ${INDENT} < $< > $@; \
-	else \
-	    echo "no indent tool found, ident $< yourself, sorry"; \
-	    echo "exit 17"; \
-	    exit 17; \
-	fi
-
-indent_clean: clean
-	@-if [ -f indent.c ]; then \
-	    echo ${RM} -f indent.c; \
-	    ${RM} -f indent.c; \
-	fi
-
-indent_clobber: indent_clean clobber
-	@-if [ -e sandwich ]; then \
-	    ${RM} -f sandwich; \
-	    echo 'ate sandwich'; \
-	fi
-
 install:
 	@echo "Dr. Spock says that is not logical!"
 	@${TRUE}
+
+
+######################
+# clang-format options
+######################
+
+.PHONY: clang-format
+
+# NOTE: The IOCCC Judges set CLANG_FORMAT_STYLE according to the ".clang-format" file.
+#
+#	https://github.com/ioccc-src/winner/blob/master/.clang-format
+#
+# NOTE: Please don't add "// clang-format off" to your code: that is both annoying, and is easily disabled.
+#
+clang-format: ${PROG}.c
+	${CLANG_FORMAT} -style=file ${PROG}.c
 
 
 #####################

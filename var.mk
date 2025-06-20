@@ -39,6 +39,7 @@ CHGRP= chgrp
 CHMOD= chmod
 CKSUM= cksum
 CLANG= clang
+CLANG_FORMAT= clang-format
 CLANG_PLUSPLUS= clang++
 CLEAR= clear
 CMP= cmp
