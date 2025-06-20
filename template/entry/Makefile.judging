@@ -1,6 +1,6 @@
 #!/usr/bin/env make
 #
-# XXX - prog - suitable title the submission
+# XXX - prog - an example Makefile <<=== change "an example Makefile" to a suitable title for your submission
 
 #############################
 # shell used by this Makefile
@@ -160,6 +160,11 @@ ALT_TARGET=
 # Example: DATA= curds whey
 #
 DATA=
+
+# Other Makefile variables require by the code
+#
+# Example: WIDTH= 120
+# XXX - Add any new Makefile variables your code might need below.
 
 
 #################
