@@ -141,12 +141,12 @@ endif
 # Special Makefile variables for this entry
 ###########################################
 
-ENTRY= XXX
-PROG= prog
+ENTRY= prog
+PROG= ${ENTRY}
 #
 OBJ= ${PROG}.o
 TARGET= ${PROG}
-
+#
 # XXX - If there is a prog.alt.c:
 #
 # ALT_OBJ= ${PROG}.alt.o
