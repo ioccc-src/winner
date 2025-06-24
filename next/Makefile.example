@@ -196,6 +196,16 @@ all: data ${TARGET}
 ${PROG}: ${PROG}.c
 	${CC} ${CFLAGS} ${PROG}.c -o $@ ${LDFLAGS}
 
+# suggested way(s) to run the program
+#
+# XXX - You are better off supplying a try.sh script, than using a try Makefile rule.
+#
+# XXX - If you have a try.sh script, then please remove this try rule from your Makefile
+#
+try: ${PROG} ${DATA}
+	@# XXX - change this next line as needed
+	./${PROG} XXX some arguments XXX
+
 # alternative executable
 #
 alt: data ${ALT_TARGET}
@@ -203,6 +213,18 @@ alt: data ${ALT_TARGET}
 
 ${PROG}.alt: ${PROG}.alt.c
 	${CC} ${CFLAGS} ${PROG}.alt.c -o $@ ${LDFLAGS}
+
+# suggested way(s) to run alt code, if you include a prog.alt.c
+#
+# XXX - You are better off supplying a try.sh script, than using a try Makefile rule.
+#
+# XXX - If you have a try.sh script, then please remove this try.alt rule
+#
+# XXX - If you do NOT have a prog.alt.c, then please remove this try.alt rule from your Makefile
+#
+try.alt: ${PROG}.alt ${DATA}
+	@# XXX - change this next line as needed
+	./${PROG}.alt XXX some arguments XXX
 
 # data files
 #
