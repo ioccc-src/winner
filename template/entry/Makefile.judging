@@ -176,6 +176,8 @@ all: data ${TARGET}
 
 .PHONY: all alt data everything clean clobber
 
+# how to compile
+#
 ${PROG}: ${PROG}.c
 	${CC} ${CFLAGS} ${PROG}.c -o $@ ${LDFLAGS}
 
