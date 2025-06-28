@@ -41,7 +41,9 @@ include ../var.mk
 # IOCCC entries
 ###############
 
+# BEGIN - DO NOT REMOVE THIS LINE - make new_entry uses this line #
 ENTRIES= submit.[0-9]*
+# BEGIN - DO NOT REMOVE THIS LINE - make new_entry uses this line #
 
 YEAR= %%YEAR%%
 
