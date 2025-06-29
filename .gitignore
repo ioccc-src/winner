@@ -6,11 +6,11 @@
 .info.json
 .orig
 .prev
-.submit.sh
-.txz
 .*.s[a-zA-Z][a-zA-Z0-9]
 .s[a-zA-Z][a-zA-Z0-9]
+.submit.sh
 .tmp.*
+.txz
 /NOTES
 /archive/historic/[12][0-9][0-9][0-9]
 ?
@@ -20,6 +20,8 @@ debug.input.md
 debug.output.html
 manifest.csv
 manifest.numbers
+prog
+prog.alt
 summary.csv
 summary.numbers
 year_prize.csv
