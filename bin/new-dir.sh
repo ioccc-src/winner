@@ -107,7 +107,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="2.0.1 2025-05-18"
+export VERSION="2.0.2 2025-05-29"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -478,7 +478,7 @@ fi
 if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: forming temporary Makefile: $TMP_MAKEFILE" 1>&2
 fi
-sed -n -e '1,/^# BEGIN - DO NOT REMOVE THIS LINE - make new_entry uses this line #/p' "$MAKE_FILE" > "$TMP_MAKEFILE"
+sed -n -e '1,/^# 1st - DO NOT REMOVE THIS LINE - bin/new-dir.sh uses this line #/p' "$MAKE_FILE" > "$TMP_MAKEFILE"
 make -C "$YEAR_DIR" new_entry NEW_ENTRY="$ENTRY_DIR" >> "$TMP_MAKEFILE"
 status="$?"
 if [[ $status -ne 0 ]]; then
@@ -486,7 +486,7 @@ if [[ $status -ne 0 ]]; then
 	 "error code: $status" 1>&2
     exit 15
 fi
-sed -n -e '/^# END - DO NOT REMOVE THIS LINE - make new_entry also uses this #/,$p' "$MAKE_FILE" >> "$TMP_MAKEFILE"
+sed -n -e '/^# 2nd - DO NOT REMOVE THIS LINE - bin/new-dir.sh uses this line #/,$p' "$MAKE_FILE" >> "$TMP_MAKEFILE"
 
 
 # Update Makefile if is changes and not -n
