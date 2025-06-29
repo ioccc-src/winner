@@ -286,6 +286,13 @@ genpath:
 # NOTE: 'Don't Panic' if you don't understand the stuff below
 #############################################################
 
+# add ${NEW_ENTRY} to the list of ${ENTRIES} and output Makefile lines to set updated ${ENTRIES} value
+#
+new_entry:
+	@(echo 'ENTRIES= '; \
+	 (echo ${ENTRIES} ${NEW_ENTRY}) | ${TR} ' ' '\012' | ${SORT} -d -u) | \
+	 ${FMT} | ${SED} -e '2,$$s/^/\t/' -e 's/$$/ \\/' -e '$$s/ \\//'
+
 
 ########################
 # extended utility rules
