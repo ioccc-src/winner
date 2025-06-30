@@ -124,7 +124,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="2.2.0 2025-06-29"
+export VERSION="2.2.1 2025-06-29"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -1453,21 +1453,21 @@ if [[ $V_FLAG -ge 1 ]]; then
 	 "-i .auth.json.xz -i .prev -i .submit.sh -i .txz -i .num.sh -i .orig" \
 	 "-i .path -i README.md -i .gitignore -- $YYYY_DIR" 1>&2
     "$CHKENTRY_TOOL" -v 1 -i .auth.json.xz -i .prev -i .submit.sh -i .txz -i .num.sh -i .orig \
-			  -i .path -i README.md -i .gitignore -- "$YYYY_DIR"
+			  -i .path -i README.md -i .gitignore -i .DS_Store -P -- "$YYYY_DIR"
     status="$?"
     if [[ $status -ne 0 ]]; then
 	echo "$0: ERROR: $CHKENTRY_TOOL -v 1 -i .auth.json.xz -i .prev -i .submit.sh -i .txz -i .num.sh -i .orig" \
-	     "-i .path -i README.md -i .gitignore -- $YYYY_DIR failed," \
+	     "-i .path -i README.md -i .gitignore -i .DS_Store -P -- $YYYY_DIR failed," \
 	      "error code: $status" 1>&2
 	exit 7
     fi
 else
     "$CHKENTRY_TOOL" -i .auth.json.xz -i .prev -i .submit.sh -i .txz -i .num.sh -i .orig \
-		     -i .path -i README.md -i .gitignore -- "$YYYY_DIR"
+		     -i .path -i README.md -i .gitignore -i .DS_Store -P -- "$YYYY_DIR"
     status="$?"
     if [[ $status -ne 0 ]]; then
 	echo "$0: $CHKENTRY_TOOL -i .auth.json.xz -i .prev -i .submit.sh -i .txz -i .num.sh -i .orig" \
-	     "-i .path -i README.md -i .gitignore -- $YYYY_DIR failed," \
+	     "-i .path -i README.md -i .gitignore -i .DS_Store -P -- $YYYY_DIR failed," \
 	      "error code: $status" 1>&2
 	exit 7
     fi
