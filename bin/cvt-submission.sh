@@ -124,7 +124,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="2.1.0 2025-06-16"
+export VERSION="2.2.0 2025-06-29"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -1451,23 +1451,23 @@ fi
 if [[ $V_FLAG -ge 1 ]]; then
     echo "$0: debug[1]: about to run: $CHKENTRY_TOOL -v 1" \
 	 "-i .auth.json.xz -i .prev -i .submit.sh -i .txz -i .num.sh -i .orig" \
-	 "-i .path -i README.md -- $YYYY_DIR" 1>&2
+	 "-i .path -i README.md -i .gitignore -- $YYYY_DIR" 1>&2
     "$CHKENTRY_TOOL" -v 1 -i .auth.json.xz -i .prev -i .submit.sh -i .txz -i .num.sh -i .orig \
-			  -i .path -i README.md -- "$YYYY_DIR"
+			  -i .path -i README.md -i .gitignore -- "$YYYY_DIR"
     status="$?"
     if [[ $status -ne 0 ]]; then
 	echo "$0: ERROR: $CHKENTRY_TOOL -v 1 -i .auth.json.xz -i .prev -i .submit.sh -i .txz -i .num.sh -i .orig" \
-	     "-i .path -i README.md -- $YYYY_DIR failed," \
+	     "-i .path -i README.md -i .gitignore -- $YYYY_DIR failed," \
 	      "error code: $status" 1>&2
 	exit 7
     fi
 else
     "$CHKENTRY_TOOL" -i .auth.json.xz -i .prev -i .submit.sh -i .txz -i .num.sh -i .orig \
-		     -i .path -i README.md -- "$YYYY_DIR"
+		     -i .path -i README.md -i .gitignore -- "$YYYY_DIR"
     status="$?"
     if [[ $status -ne 0 ]]; then
 	echo "$0: $CHKENTRY_TOOL -i .auth.json.xz -i .prev -i .submit.sh -i .txz -i .num.sh -i .orig" \
-	     "-i .path -i README.md -- $YYYY_DIR failed," \
+	     "-i .path -i README.md -i .gitignore -- $YYYY_DIR failed," \
 	      "error code: $status" 1>&2
 	exit 7
     fi
@@ -2605,18 +2605,26 @@ fi
 
 # remove submission files that are no longer needed for a winning IOCCC entry
 #
-if [[ $V_FLAG -ge 1 ]]; then
-    echo "$0: debug[1]: about to run: rm -f -v -- $INFO_JSON $AUTH_JSON $AUTH_JSON.xz $REMARKS_MD $YYYY_DIR/.prev" \
-	 "$YYYY_DIR/.submit.sh $YYYY_DIR/.txz $YYYY_DIR/.num.sh $YYYY_DIR/.orig" 1>&2
-fi
-rm -f -v -- "$INFO_JSON" "$AUTH_JSON" "$AUTH_JSON.xz" "$REMARKS_MD" "$YYYY_DIR/.prev" \
-	    "$YYYY_DIR/.submit.sh" "$YYYY_DIR/.txz" "$YYYY_DIR/.num.sh" "$YYYY_DIR/.orig"
-status="$?"
-if [[ $status -ne 0 ]]; then
-    echo "$0: ERROR: rm -f -v -- $INFO_JSON $AUTH_JSON $AUTH_JSON.xz $REMARKS_MD $YYYY_DIR/.prev" \
-	 "$YYYY_DIR/.submit.sh $YYYY_DIR/.txz $YYYY_DIR/.num.sh $YYYY_DIR/.orig filed," \
-	 "error code: $status" 1>&2
-    exit 68
+if [[ -z $NOOP ]]; then
+
+    if [[ $V_FLAG -ge 1 ]]; then
+	echo "$0: debug[1]: about to run: rm -f -v -- $INFO_JSON $AUTH_JSON $AUTH_JSON.xz $REMARKS_MD $YYYY_DIR/.prev" \
+	     "$YYYY_DIR/.submit.sh $YYYY_DIR/.txz $YYYY_DIR/.num.sh $YYYY_DIR/.orig" 1>&2
+    fi
+    rm -f -v -- "$INFO_JSON" "$AUTH_JSON" "$AUTH_JSON.xz" "$REMARKS_MD" "$YYYY_DIR/.prev" \
+		"$YYYY_DIR/.submit.sh" "$YYYY_DIR/.txz" "$YYYY_DIR/.num.sh" "$YYYY_DIR/.orig"
+    status="$?"
+    if [[ $status -ne 0 ]]; then
+	echo "$0: ERROR: rm -f -v -- $INFO_JSON $AUTH_JSON $AUTH_JSON.xz $REMARKS_MD $YYYY_DIR/.prev" \
+	     "$YYYY_DIR/.submit.sh $YYYY_DIR/.txz $YYYY_DIR/.num.sh $YYYY_DIR/.orig filed," \
+	     "error code: $status" 1>&2
+	exit 68
+    fi
+
+# case: with -n
+#
+elif [[ $V_FLAG -ge 3 ]]; then
+    echo "$0: debug[3]: -n disabled removal selective files under $YYYY_DIR" 1>&2
 fi
 
 
