@@ -124,7 +124,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="2.2.1 2025-06-29"
+export VERSION="2.2.2 2025-06-30"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -1098,7 +1098,7 @@ export TEMPLATE_ENTRY_DIR="$TEMPLATE_DIR/entry"
 export TEMPLATE_GITIGNORE="$TEMPLATE_ENTRY_DIR/gitignore"
 export TEMPLATE_README_MD_HEAD="$TEMPLATE_ENTRY_DIR/README.md.head"
 export TEMPLATE_README_MD_TAIL="$TEMPLATE_ENTRY_DIR/README.md.tail"
-export TEMPLATE_TRY_SH="$NEXT_DIR/try.sh"
+export TEMPLATE_TRY_SH="$TEMPLATE_ENTRY_DIR/try.sh.judging"
 
 
 # determine TARBALL filename
@@ -1215,7 +1215,7 @@ if [[ ! -d $NEXT_DIR ]]; then
     exit 6
 fi
 if [[ ! -f $TEMPLATE_TRY_SH ]]; then
-    echo "$0: ERROR: missing next/try.sh: $TEMPLATE_TRY_SH" 1>&2
+    echo "$0: ERROR: missing template/entry/try.sh.judging: $TEMPLATE_TRY_SH" 1>&2
     exit 6
 fi
 
