@@ -124,7 +124,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="2.2.2 2025-06-30"
+export VERSION="2.3.0 2025-07-02"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -298,7 +298,7 @@ function prompt_string
 	return 2
     fi
 
-    # obtain for the award
+    # obtain the string
     #
     while :; do
 
@@ -320,6 +320,105 @@ function prompt_string
 	status="$?"
 	if [[ $status -ne 0 || -z $DECODED ]]; then
 	    echo "$0: ERROR: in prompt_string: $JSTRDECODE -d -q -N -- $INPUT failed," \
+		 "error code: $status" 1>&2
+	    exit 1
+	fi
+
+	# verify JSON decoded value
+	#
+	if [[ -z $INPUT_DATA_FILE ]]; then
+	    echo
+	    echo "Verify decoded $ITEM_NAME: $DECODED" 1>&2
+	    echo
+	    echo -n 'Is that correct? [Y,n]: '
+	    read -r Y_OR_N
+	    if [[ -z $Y_OR_N || $Y_OR_N == y || $Y_OR_N == Y || $Y_OR_N == yes || $Y_OR_N == YES || $Y_OR_N == Yes ]]; then
+		break
+	    fi
+	    echo
+	else
+	    break
+	fi
+    done
+    if [[ -z $INPUT_DATA_FILE ]]; then
+	echo
+    fi
+
+    # set VALUE to the JSON decoded string
+    #
+    VALUE="$DECODED"
+    return 0
+}
+
+
+# prompt_word
+#
+# Prompt the user for a lower case word and output as a decoded JSON word.
+#
+# The input must start work a lower case letter followed by 0 or more
+# local case letters or digits:
+#
+#   ^[a-z][0-9a-z]*$
+#
+# If "-i input_data: is used, the printing of the prompt is disabled,
+# and the query of correctness is also disabled.
+#
+# usage:
+#       prompt_word item_name
+#
+# returns:
+#       0 ==> no errors detected
+#     > 0 ==> function error number
+#
+function prompt_word
+{
+    local INPUT;		# user input
+    local DECODED;		# INPUT decoded as JSON string
+    local Y_OR_N;		# y or n
+    local ITEM_NAME;		# name of the item being prompted for
+
+    # parse args
+    #
+    if [[ $# -ne 1 ]]; then
+        echo "$0: ERROR: in prompt_word: expected 1 arg, found $#" 1>&2
+        return 1
+    fi
+    ITEM_NAME="$1"
+    if [[ -z $ITEM_NAME ]]; then
+        echo "$0: ERROR: in prompt_word: 1st arg is empty" 1>&2
+	return 2
+    fi
+
+    # obtain the lower case word
+    #
+    while :; do
+
+	# prompt for value
+	#
+	if [[ -z $INPUT_DATA_FILE ]]; then
+	    echo -n "Enter $ITEM_NAME: "
+	fi
+	read -r INPUT
+	if [[ -z "$INPUT" ]]; then
+	    echo "$0: Warning: in prompt_word: $ITEM_NAME cannot be empty, try again" 1>&2
+	    echo 1>&2
+	    continue
+	fi
+
+	# must start with lower case lewtter and followed bu 0 or more lower case letters and digits
+	#
+	if ! [[ $INPUT =~ ^[a-z][0-9a-z]*$ ]]; then
+	    echo "$0: Warning: in prompt_word: $ITEM_NAME must match "'^[a-z][0-9a-z]*$'" regex, try again" 1>&2
+	    echo 1>&2
+	    continue
+	fi
+
+	# JSON decode value
+	#
+	DECODED=$("$JSTRDECODE" -d -q -N -- "$INPUT")
+	status="$?"
+	if [[ $status -ne 0 || -z $DECODED ]]; then
+	    echo "$0: ERROR: in prompt_word: $JSTRDECODE -d -q -N -- $INPUT failed," \
 		 "error code: $status" 1>&2
 	    exit 1
 	fi
@@ -384,7 +483,7 @@ function prompt_integer
 	return 2
     fi
 
-    # obtain for the award
+    # obtain the integer
     #
     while :; do
 
@@ -2278,7 +2377,7 @@ if [[ -z $NOOP ]]; then
 	prompt_integer "inventory_order for $EXTRA_FILE"
 	status="$?"
 	if [[ $status -ne 0 || -z $VALUE ]]; then
-	    echo "$0: ERROR: prompt_string inventory_order for $EXTRA_FILE failed," \
+	    echo "$0: ERROR: prompt_integer inventory_order for $EXTRA_FILE failed," \
 		     "error code: $status" 1>&2
 	    exit 1
 	fi
@@ -2287,10 +2386,10 @@ if [[ -z $NOOP ]]; then
 	# prompt for display_as
 	#
 	VALUE=
-	prompt_string "display_as for $EXTRA_FILE"
+	prompt_word "display_as for $EXTRA_FILE"
 	status="$?"
 	if [[ $status -ne 0 || -z $VALUE ]]; then
-	    echo "$0: ERROR: prompt_string inventory_order for $EXTRA_FILE failed," \
+	    echo "$0: ERROR: prompt_word display_as for $EXTRA_FILE failed," \
 		     "error code: $status" 1>&2
 	    exit 1
 	fi
@@ -2302,7 +2401,7 @@ if [[ -z $NOOP ]]; then
 	prompt_string "entry_text for $EXTRA_FILE"
 	status="$?"
 	if [[ $status -ne 0 || -z $VALUE ]]; then
-	    echo "$0: ERROR: prompt_string inventory_order for $EXTRA_FILE failed," \
+	    echo "$0: ERROR: prompt_string entry_text for $EXTRA_FILE failed," \
 		     "error code: $status" 1>&2
 	    exit 1
 	fi

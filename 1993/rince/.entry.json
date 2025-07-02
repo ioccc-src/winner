@@ -65,33 +65,33 @@
             "file_path" : "rince.data1",
             "inventory_order" : 100,
             "OK_to_edit" : true,
-            "display_as" : "CABBAGE",
+            "display_as" : "cabbage",
             "display_via_github" : true,
-            "entry_text" : "CABBAGE data file"
+            "entry_text" : "cabbage data file"
         },
         {
             "file_path" : "rince.data2",
             "inventory_order" : 100,
             "OK_to_edit" : true,
-            "display_as" : "CABBAGE",
+            "display_as" : "cabbage",
             "display_via_github" : true,
-            "entry_text" : "CABBAGE data file"
+            "entry_text" : "cabbage data file"
         },
         {
             "file_path" : "rince.data3",
             "inventory_order" : 100,
             "OK_to_edit" : true,
-            "display_as" : "CABBAGE",
+            "display_as" : "cabbage",
             "display_via_github" : true,
-            "entry_text" : "CABBAGE data file"
+            "entry_text" : "cabbage data file"
         },
         {
             "file_path" : "rince.data4",
             "inventory_order" : 100,
             "OK_to_edit" : true,
-            "display_as" : "CABBAGE",
+            "display_as" : "cabbage",
             "display_via_github" : true,
-            "entry_text" : "CABBAGE data file"
+            "entry_text" : "cabbage data file"
         },
         {
             "file_path" : "1993_rince.tar.bz2",

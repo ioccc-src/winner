@@ -59,7 +59,7 @@
             "OK_to_edit" : true,
             "display_as" : "html",
             "display_via_github" : false,
-            "entry_text" : "about the FORTH language"
+            "entry_text" : "about the forth language"
         },
         {
             "file_path" : "try.alt.sh",
@@ -81,71 +81,71 @@
             "file_path" : "demo1.1st",
             "inventory_order" : 150,
             "OK_to_edit" : true,
-            "display_as" : "FORTH",
+            "display_as" : "forth",
             "display_via_github" : true,
-            "entry_text" : "demo FORTH source"
+            "entry_text" : "demo forth source"
         },
         {
             "file_path" : "demo1.th",
             "inventory_order" : 150,
             "OK_to_edit" : true,
-            "display_as" : "FORTH",
+            "display_as" : "forth",
             "display_via_github" : true,
-            "entry_text" : "demo FORTH source"
+            "entry_text" : "demo forth source"
         },
         {
             "file_path" : "demo2.th",
             "inventory_order" : 150,
             "OK_to_edit" : true,
-            "display_as" : "FORTH",
+            "display_as" : "forth",
             "display_via_github" : true,
-            "entry_text" : "demo FORTH source"
+            "entry_text" : "demo forth source"
         },
         {
             "file_path" : "demo3.th",
             "inventory_order" : 150,
             "OK_to_edit" : true,
-            "display_as" : "FORTH",
+            "display_as" : "forth",
             "display_via_github" : true,
-            "entry_text" : "demo FORTH source"
+            "entry_text" : "demo forth source"
         },
         {
             "file_path" : "demo4.th",
             "inventory_order" : 150,
             "OK_to_edit" : true,
-            "display_as" : "FORTH",
+            "display_as" : "forth",
             "display_via_github" : true,
-            "entry_text" : "demo FORTH source"
+            "entry_text" : "demo forth source"
         },
         {
             "file_path" : "demo5.th",
             "inventory_order" : 150,
             "OK_to_edit" : true,
-            "display_as" : "FORTH",
+            "display_as" : "forth",
             "display_via_github" : true,
-            "entry_text" : "demo FORTH source"
+            "entry_text" : "demo forth source"
         },
         {
             "file_path" : "demo6.th",
             "inventory_order" : 150,
             "OK_to_edit" : true,
-            "display_as" : "FORTH",
+            "display_as" : "forth",
             "display_via_github" : true,
-            "entry_text" : "demo FORTH source"
+            "entry_text" : "demo forth source"
         },
         {
             "file_path" : "help.th",
             "inventory_order" : 150,
             "OK_to_edit" : true,
-            "display_as" : "FORTH",
+            "display_as" : "forth",
             "display_via_github" : true,
-            "entry_text" : "demo FORTH source"
+            "entry_text" : "demo forth source"
         },
         {
             "file_path" : "third",
             "inventory_order" : 150,
             "OK_to_edit" : true,
-            "display_as" : "FORTH",
+            "display_as" : "forth",
             "display_via_github" : true,
             "entry_text" : "the third source"
         },
