@@ -1,16 +1,14 @@
 #!/usr/bin/env bash
 #
-# try.sh - demonstrate IOCCC submission YYYY/foo
-# XXX - try.sh example version: 28.0.0-0 2024-03-04                         - XXX
-# XXX - NOTE: if your submission wins and becomes an entry, then            - XXX
-# XXX - YYYY/foo will be changed to the 4 digit year and directory          - XXX
-# XXX - name.                                                               - XXX
+# try.sh - demonstrate YYYY/XXX	    <<=== The IOCCC Judges will replace this line
+
+# XXX - try.sh example version: 28.1.0 2024-07-05                           - XXX
+# XXX -                                                                     - XXX
 # XXX - NOTE: please remove the XXX lines in this file, including this one  - XXX
-#
 
 # make sure CC is set so that when we do make CC="$CC" it isn't empty. Doing it
-# this way allows us to have the user specify a different compiler in an easy
-# way.
+# this way allows us to have the user specify a different compiler in an easy way.
+#
 # XXX - if you need CC to be something else, say clang, then change cc      - XXX
 # XXX - to whatever you need.                                               - XXX
 # XXX - If you need other variables you can also set them in whatever way   - XXX
@@ -18,19 +16,18 @@
 # XXX - to let the user redefine it.                                        - XXX
 [[ -z "$CC" ]] && CC="cc"
 
-
+# make sure the program has been built
+#
 # XXX - make sure to compile the program, using make all!                   - XXX
 # XXX - if you need to build the alt code for the try.sh script,            - XXX
 # XXX - then change the 'all' to 'all alt' in the below command.            - XXX
 # XXX - Later, if the submission wins, it can be changed to 'everything'.   - XXX
 make CC="$CC" all >/dev/null || exit 1
 
-# XXX - it's usually a good idea to clear the screen but if not done        - XXX
-# XXX - then you should remove the comment about it and the command.        - XXX
-# clear screen after compilation so that only the submission is shown
+# clear the screen
+#
 clear
-
-# XXX - Invoke the program in one or more ways                      - XXX
+zsh:1: command not found: :w
 
 # XXX - NOTE: you can include more than one command line and you    - XXX
 # XXX - certainly can include pipelines.                            - XXX
@@ -46,16 +43,21 @@ clear
 
 # XXX - if the prompt will not be too long, say no more than 80-100 - XXX
 # XXX - chars or so:                                                - XXX
+
+# try the program
+#
 read -r -n 1 -p "Press any key to run: ./prog: "
 echo 1>&2
+echo 1>&2
 ./prog
+echo 1>&2
 
-# XXX - Otherwise, for longer command lines, you might try:         - XXX
-echo "$ ./prog some long command line"
-read -r -n 1 -p "Press any key to continue: "
-./prog some long command line
+# XXX - Remove or expand sections as needed.                       - XXX
 
-# XXX - of course, if the prompt needs to be long, or it will be    - XXX
-# XXX - longer no matter what or you have some other purpose, you   - XXX
-# XXX - can do it the other way or another way entirely. The point  - XXX
-# XXX - is to make it easy to use and see but still fit your ideas. - XXX
+# try the program with args
+#
+read -r -n 1 -p "Press any key to run: ./prog some long command line < data: "
+echo 1>&2
+echo 1>&2
+./prog some long command line < data
+echo 1>&2
