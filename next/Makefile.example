@@ -1,7 +1,7 @@
 #!/usr/bin/env make
 #
-# XXX - prog - an example Makefile <<=== change "an example Makefile" to a suitable title for your submission
-#
+# YYYY/XXX 	<<=== The IOCCC Judges will replace this line
+
 # XXX - Please use this Makefile, renamed as Makefile of course, as the Makefile in
 # XXX - your submission. Modify it as needed, including removing this comment and
 # XXX - other comments we ask you to remove.
@@ -25,6 +25,7 @@ SHELL= bash
 CC= cc
 CHMOD= chmod
 CLANG= clang
+CLANG_FORMAT= clang-format
 GCC= gcc
 MV= mv
 RM= rm

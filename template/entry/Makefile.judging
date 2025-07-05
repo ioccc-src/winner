@@ -1,6 +1,6 @@
 #!/usr/bin/env make
 #
-# XXX - prog - an example Makefile <<=== change "an example Makefile" to a suitable title for your submission
+# YYYY/XXX 	<<=== The IOCCC Judges will replace this line
 
 #############################
 # shell used by this Makefile
