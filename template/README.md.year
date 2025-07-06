@@ -1,20 +1,14 @@
 # %%OUTPUT_ENGLISH_ORDINAL%% International Obfuscated C Code Contest
 
 
-## Standard IOCCC stuff
+## Where to start
 
-XXX - put text here - XXX
+See below for links to the [%%YEAR%% winning IOCCC entries](#inventory).
 
-View the `index.html` web page for the given winning entry for information on how
-on how to compile it and how to run the winning program.
-Look at the winning source and try to figure how it does what it does!
-You may then wish to look at the Author's remarks for even more details.
-
-Some C compilers are not quite as good as they should be.  If yours is
-lacking, you may need to compile using clang or gcc instead of your local
-compiler.
-
-The primary website can be found at [www.ioccc.org](https://www.ioccc.org).
+Check out the `index.html` web pages for each winning entry.  They have
+most of the information you need to compile and run the winning program.
+Take a look at the winning source code and try to figure out how it works.
+You might also want to check out the author’s remarks for even more details.
 
 
 ## Remarks on some of the winning entries
@@ -22,18 +16,54 @@ The primary website can be found at [www.ioccc.org](https://www.ioccc.org).
 XXX - add text here - XXX
 
 
-## XXX - other remarks if needed - XXX
+## Rules and Guidelines
 
-XXX - add text here if needed - XXX
+Here are the final versions of the IOCCC rules and guidelines that were in effect for this contest:
+
+* [%%YEAR%% rules](rules.html) version **XXX**
+* [%%YEAR%% guidelines](guidelines.html) version **XXX**
 
 
-## Final Comments
+## Encouragement to those who did not win this year
 
-XXX - add final text here - XXX
+We know you all put in a lot of hard work into your submissions for
+this year’s IOCCC. Unfortunately, we can’t just give out awards to
+everyone. That would mean taking away from the submissions that we think
+are the best and deserve to win.
 
-**IMPORTANT NOTE**: See [contact.html](../contact.html) for up to date contact details
-as well as details on how to provide fixes to any of the entries.
-See also the [IOCCC FAQ](../faq.html) for additional information on the IOCCC.
+Sometimes, a final round submission might be good enough to be a
+winning IOCCC entry, only to be beaten by a similar, but slightly
+better submission.  If you think this happened with your submission,
+consider submitting an enhanced version to the next IOCCC.
+
+
+## On Compiling and running winning entries
+
+Some C compilers aren’t as top-notch as they could be.  If yours
+isn’t cutting it, you might want to try compiling with an up to date
+version of **clang** or **gcc** instead.
+
+If you encounter problems in compiling and/or running the winning entries, see the FAQ on:
+
+* [Compiling IOCCC entries](../faq.html#compiling)
+* [IOCCC entry dependencies](../faq.html#dependencies)
+* [Problems compiling entries](../faq.html#compile_problems)
+* [Running IOCCC entries](../faq.html#running_entries)
+
+For additional information on how to submit fixes, see the FAQ on:
+
+* [How to submit a fix](../faq.html#fix_an_entry) - how to submit a fix to an entry
+* [Update author information](../faq.html#fix_author) - how to correct or update an IOCCC author’s information
+
+
+## For even more information
+
+* [Reporting an IOCCC website problem](../faq.html#report_website_problem)
+* [Submitting a fix to the IOCCC website](../faq.html#fix_website)
+* [How to contact the IOCCC](../contact.html) - up to date contact details
+* [IOCCC FAQ](../faq.html) - additional information on the IOCCC
+* [www.ioccc.org](https://www.ioccc.org) - the primary IOCCC website
+
 
 <!--
 

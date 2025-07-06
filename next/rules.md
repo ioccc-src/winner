@@ -132,9 +132,9 @@ FAQ on "[obtaining and compiling the mkiocccentry tools](../faq.html#mkiocccentr
 and the
 FAQ on "[how to enter the IOCCC](../quick-start.html#enter)"
 as that FAQ has important details on
-[how to register](register.html)
+[how to register](../next/register.html)
 as well as
-[how to upload your submission](submit.html) to the IOCCC.
+[how to upload your submission](../next/submit.html) to the IOCCC.
 </p>
 
 
@@ -312,8 +312,8 @@ Jump to: [top](#)
 </div>
 
 <p class="leftbar">
-You must [register](register.html) in order to submit your entry to the IOCCC.
-You may [register](register.html) while the contest is either
+You must [register](../next/register.html) in order to submit your entry to the IOCCC.
+You may [register](../next/register.html) while the contest is either
 **[pending](../faq.html#pending)** or  **[open](../faq.html#open)**.
 </p>
 
@@ -325,7 +325,7 @@ perhaps as much as a few days, for your registration to be processed and for tha
 </p>
 
 <p class="leftbar">
-Those who [register](register.html) while the contest status is **[pending](../faq.html#pending)**
+Those who [register](../next/register.html) while the contest status is **[pending](../faq.html#pending)**
 will receive their email (containing their [submit server](https://submit.ioccc.org) **Username**
 and **Initial password**), later: usually a few days around the time when the contest status
 becomes **[open](../faq.html#open)**.
@@ -333,7 +333,7 @@ becomes **[open](../faq.html#open)**.
 
 <p class="leftbar">
 Once that email with your **Username** and **Initial password** is sent, you
-will have fortnight (**14 days**) to [change your submit server initial password](pw-change.html).
+will have fortnight (**14 days**) to [change your submit server initial password](../next/pw-change.html).
 </p>
 
 <p class="leftbar">
@@ -514,7 +514,7 @@ while the contest is **[open](../faq.html#open)**.
 </p>
 
 <p class="leftbar">
-If you have [registered](register.html) and received by email your [submit
+If you have [registered](../next/register.html) and received by email your [submit
 server](https://submit.ioccc.org) **Username** and **Initial password** you may
 upload your submission to the [submit server](https://submit.ioccc.org) but
 **ONLY** while the contest is **[open](../faq.html#open)**.
@@ -1141,9 +1141,9 @@ FAQ on "[obtaining, compiling, installing and using the mkiocccentry tools](../f
 and the
 FAQ on "[how to enter the IOCCC](../quick-start.html#enter)"
 as that FAQ has important details on
-[how to register](register.html)
+[how to register](../next/register.html)
 as well as
-[how to upload your submission](submit.html) for the IOCCC.
+[how to upload your submission](../next/submit.html) for the IOCCC.
 </p>
 
 

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# gen-year-index.sh - create year level index.html
+# gen-year-index.sh - create year level index.html, rules.html, guidelines.html
 #
 # Create an index.html file for a given IOCCC year.
 #
@@ -106,7 +106,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="2.0.0 2025-03-13"
+export VERSION="2.1.0 2025-07-05"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -430,6 +430,30 @@ TOOL_OPTION+=("-t")
 TOOL_OPTION+=("$TAGLINE")
 
 
+# Determine if and what we need to update.
+#
+export UPDATE_INDEX=""
+export UPDATE_RULES=""
+export UPDATE_GUIDELINES=""
+export NEEDS_UPDATE=""
+if [[ -s $YYYY/rules.md ]]; then
+    if [[ ! -s $YYYY/rules.html || $YYYY/rules.md -nt $YYYY/rules.html ]]; then
+	NEEDS_UPDATE="true"
+	UPDATE_RULES="true"
+    fi
+fi
+if [[ -s $YYYY/guidelines.md ]]; then
+    if [[ ! -s $YYYY/guidelines.html || $YYYY/guidelines.md -nt $YYYY/guidelines.html ]]; then
+	NEEDS_UPDATE="true"
+	UPDATE_GUIDELINES="true"
+    fi
+fi
+if [[ ! -s $YYYY/index.html || $YYYY/README.md -nt $YYYY/index.html ]]; then
+    NEEDS_UPDATE="true"
+    UPDATE_INDEX="true"
+fi
+
+
 # parameter debugging
 #
 if [[ $V_FLAG -ge 3 ]]; then
@@ -471,6 +495,10 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: MD2HTML_SH=$MD2HTML_SH" 1>&2
     echo "$0: debug[3]: DOT_YEAR=$DOT_YEAR" 1>&2
     echo "$0: debug[3]: README_FILE=$README_FILE" 1>&2
+    echo "$0: debug[3]: UPDATE_INDEX=$UPDATE_INDEX" 1>&2
+    echo "$0: debug[3]: UPDATE_RULES=$UPDATE_RULES" 1>&2
+    echo "$0: debug[3]: UPDATE_GUIDELINES=$UPDATE_GUIDELINES" 1>&2
+    echo "$0: debug[3]: NEEDS_UPDATE=$NEEDS_UPDATE" 1>&2
 fi
 
 
@@ -486,49 +514,165 @@ fi
 
 # case: -Q (quick mode)
 #
-# Do nothing if authors.html is newer than all author/author_handle.json files.
+# Do nothing if we do not need to update anything.
 #
 if [[ -n $QUICK_MODE ]]; then
-    if [[ $YYYY/index.html -nt $YYYY/README.md ]]; then
+    if [[ -z $NEEDS_UPDATE ]]; then
 	exit 0
     fi
 fi
 
 
-# form the YYYY index.html unless -n
+# form the YYYY index.html from YYYY/README.md unless -n
 #
 if [[ -z $NOOP ]]; then
 
     # possibly update YYYY index.html
     #
-    if [[ $V_FLAG -ge 1 ]]; then
-	echo "$0: debug[1]: about to run: $MD2HTML_SH -U $SITE_URL/$YYYY/index.html ${TOOL_OPTION[*]}" \
-	     "-m $YYYY/README.md -- $YYYY/README.md $YYYY/index.html" 1>&2
-    fi
-    "$MD2HTML_SH" -U "$SITE_URL/$YYYY/index.html" "${TOOL_OPTION[@]}" \
-        -m "$YYYY/README.md" -- "$YYYY/README.md" "$YYYY/index.html"
-    status="$?"
-    if [[ $status -ne 0 ]]; then
-	echo "$0: ERROR: tool: $MD2HTML_SH -U $SITE_URL/$YYYY/index.html ${TOOL_OPTION[*]}" \
-	     "-m $YYYY/README.md -- $YYYY/README.md $YYYY/index.html failed, error: $status" 1>&2
-	exit 1
-    fi
+    if [[ -n $UPDATE_INDEX ]]; then
 
-    # case -Q: (quick mode)
+	# update YYYY index.html
+	#
+	if [[ $V_FLAG -ge 1 ]]; then
+	    echo "$0: debug[1]: about to run: $MD2HTML_SH -U $SITE_URL/$YYYY/index.html ${TOOL_OPTION[*]}" \
+		 "-m $YYYY/README.md -- $YYYY/README.md $YYYY/index.html" 1>&2
+	fi
+	"$MD2HTML_SH" -U "$SITE_URL/$YYYY/index.html" "${TOOL_OPTION[@]}" \
+	    -m "$YYYY/README.md" -- "$YYYY/README.md" "$YYYY/index.html"
+	status="$?"
+	if [[ $status -ne 0 ]]; then
+	    echo "$0: ERROR: tool: $MD2HTML_SH -U $SITE_URL/$YYYY/index.html ${TOOL_OPTION[*]}" \
+		 "-m $YYYY/README.md -- $YYYY/README.md $YYYY/index.html failed, error: $status" 1>&2
+	    exit 1
+	fi
+
+	# case -Q: (quick mode)
+	#
+	# If we are here, then the early quick mode test indicated that the prerequisite files are newer.
+	# We will force the authors.html file to be touched so that a later run with -Q will quickly exit.
+	# We do this because by default, the md2html.sh tool does not modify the target HTML unless it was modified.
+	#
+	if [[ -n $QUICK_MODE ]]; then
+	    touch "$YYYY/index.html"
+	fi
+
+    # case: YYYY index.html does not need to be updated
     #
-    # If we are here, then the early quick mode test indicated that the prerequisite files are newer.
-    # We will force the authors.html file to be touched so that a later run with -Q will quickly exit.
-    # We do this because by default, the md2html.sh tool does not modify the target HTML unless it was modified.
-    #
-    if [[ -n $QUICK_MODE ]]; then
-	touch "$YYYY/index.html"
+    elif [[ $V_FLAG -ge 3 ]]; then
+	echo "$0: debug[3]: does not need to be updated: $YYYY/README.html" 1>&2
     fi
 
 # report disabled by -n
 #
-elif [[ $V_FLAG -ge 5 ]]; then
-    echo "$0: debug[5]: because of -n, did not run: $MD2HTML_SH ${TOOL_OPTION[*]} -m $YYYY/README.md --" \
-	 "$YYYY/README.md $YYYY/index.html" 1>&2
+elif [[ $V_FLAG -ge 3 ]]; then
+    if [[ -n $UPDATE_INDEX ]]; then
+	echo "$0: debug[3]: because of -n, did not run: $MD2HTML_SH ${TOOL_OPTION[*]} -m $YYYY/README.md --" \
+	     "$YYYY/README.md $YYYY/index.html" 1>&2
+    else
+	echo "$0: debug[3]: no need to be update: $YYYY/README.html" 1>&2
+    fi
+fi
+
+
+# form the YYYY rules.html from YYYY/rules.md, if it exists, unless -n
+#
+if [[ -z $NOOP ]]; then
+
+    # possibly update YYYY rules.html
+    #
+    if [[ -n $UPDATE_RULES ]]; then
+
+	# update YYYY rules.html
+	#
+	if [[ $V_FLAG -ge 1 ]]; then
+	    echo "$0: debug[1]: about to run: $MD2HTML_SH -U $SITE_URL/$YYYY/rules.html ${TOOL_OPTION[*]}" \
+		 "-m $YYYY/rules.md -- $YYYY/rules.md $YYYY/rules.html" 1>&2
+	fi
+	"$MD2HTML_SH" -U "$SITE_URL/$YYYY/rules.html" "${TOOL_OPTION[@]}" \
+	    -m "$YYYY/rules.md" -- "$YYYY/rules.md" "$YYYY/rules.html"
+	status="$?"
+	if [[ $status -ne 0 ]]; then
+	    echo "$0: ERROR: tool: $MD2HTML_SH -U $SITE_URL/$YYYY/rules.html ${TOOL_OPTION[*]}" \
+		 "-m $YYYY/rules.md -- $YYYY/rules.md $YYYY/rules.html failed, error: $status" 1>&2
+	    exit 1
+	fi
+
+	# case -Q: (quick mode)
+	#
+	# If we are here, then the early quick mode test indicated that the prerequisite files are newer.
+	# We will force the authors.html file to be touched so that a later run with -Q will quickly exit.
+	# We do this because by default, the md2html.sh tool does not modify the target HTML unless it was modified.
+	#
+	if [[ -n $QUICK_MODE ]]; then
+	    touch "$YYYY/rules.html"
+	fi
+
+    # case: YYYY index.html does not need to be updated
+    #
+    elif [[ $V_FLAG -ge 3 ]]; then
+	echo "$0: debug[3]: no need to be update: $YYYY/rules.html" 1>&2
+    fi
+
+# report disabled by -n
+#
+elif [[ $V_FLAG -ge 3 ]]; then
+    if [[ -n $UPDATE_RULES ]]; then
+	echo "$0: debug[3]: because of -n, did not run: $MD2HTML_SH ${TOOL_OPTION[*]} -m $YYYY/rules.md --" \
+	     "$YYYY/rules.md $YYYY/rules.html" 1>&2
+    else
+	echo "$0: debug[3]: does not need to be updated: $YYYY/rules.html" 1>&2
+    fi
+fi
+
+
+# form the YYYY guidelines.html from YYYY/guidelines.md, if it exists, unless -n
+#
+if [[ -z $NOOP ]]; then
+
+    # possibly update YYYY guidelines.html
+    #
+    if [[ -n $UPDATE_GUIDELINES ]]; then
+
+	# update YYYY guidelines.html
+	#
+	if [[ $V_FLAG -ge 1 ]]; then
+	    echo "$0: debug[1]: about to run: $MD2HTML_SH -U $SITE_URL/$YYYY/guidelines.html ${TOOL_OPTION[*]}" \
+		 "-m $YYYY/guidelines.md -- $YYYY/guidelines.md $YYYY/guidelines.html" 1>&2
+	fi
+	"$MD2HTML_SH" -U "$SITE_URL/$YYYY/guidelines.html" "${TOOL_OPTION[@]}" \
+	    -m "$YYYY/guidelines.md" -- "$YYYY/guidelines.md" "$YYYY/guidelines.html"
+	status="$?"
+	if [[ $status -ne 0 ]]; then
+	    echo "$0: ERROR: tool: $MD2HTML_SH -U $SITE_URL/$YYYY/guidelines.html ${TOOL_OPTION[*]}" \
+		 "-m $YYYY/guidelines.md -- $YYYY/guidelines.md $YYYY/guidelines.html failed, error: $status" 1>&2
+	    exit 1
+	fi
+
+	# case -Q: (quick mode)
+	#
+	# If we are here, then the early quick mode test indicated that the prerequisite files are newer.
+	# We will force the authors.html file to be touched so that a later run with -Q will quickly exit.
+	# We do this because by default, the md2html.sh tool does not modify the target HTML unless it was modified.
+	#
+	if [[ -n $QUICK_MODE ]]; then
+	    touch "$YYYY/guidelines.html"
+	fi
+
+    # case: YYYY index.html does not need to be updated
+    #
+    elif [[ $V_FLAG -ge 3 ]]; then
+	echo "$0: debug[3]: does not need to be updated: $YYYY/guidelines.html" 1>&2
+    fi
+
+# report disabled by -n
+#
+elif [[ $V_FLAG -ge 3 ]]; then
+    if [[ -n $UPDATE_GUIDELINES ]]; then
+	echo "$0: debug[3]: because of -n, did not run: $MD2HTML_SH ${TOOL_OPTION[*]} -m $YYYY/guidelines.md --" \
+	     "$YYYY/guidelines.md $YYYY/guidelines.html" 1>&2
+    else
+	echo "$0: debug[3]: no need to be update: $YYYY/guidelines.html" 1>&2
+    fi
 fi
 
 

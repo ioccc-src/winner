@@ -421,15 +421,22 @@ genpath:
 
 # generate YYYY level .filelist
 #
+# This rule assumes that a YYYY/README.md will produce a YYYY/index.html file.
+# This rule assumes that if there is a YYYY/rules.md then YYYY/rules.html will be created.
+# This rule assumes that if there is a YYYY/guidelines.md then YYYY/guidelines.html will be created.
+# These html files may be later created or updated by the quick_year_index or gen_year_index rules.
+#
 # IMPORTANT: .filelist assumes that make clobber was previously done.
 #
 genfilelist:
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
 	@-for i in ${YEARS}; do \
 	    ${RM} -f "$$i/.genfilelist.tmp"; \
-	    ${FIND} "$$i" -mindepth 1 -maxdepth 1 -type f ! -path "$$i/.genfilelist.tmp" \
-		    ! -name .DS_Store ! -name '*.swp' | \
-	      ${SORT} -f -d -u > "$$i/.genfilelist.tmp"; \
+	    (${FIND} "$$i" -mindepth 1 -maxdepth 1 -type f -name '*.md' | \
+		${SED} -e 's/\.md$$/.html/' -e 's/\/README\.html/\/index.html/'; \
+	     ${FIND} "$$i" -mindepth 1 -maxdepth 1 -type f ! -path "$$i/.genfilelist.tmp" \
+		    ! -name .DS_Store ! -name '*.swp') | \
+	      LANG=C ${SORT} -f -d -u > "$$i/.genfilelist.tmp"; \
 	    if ${CMP} -s "$$i/.genfilelist.tmp" "$$i/.filelist"; then \
 		${RM} -f "$$i/.genfilelist.tmp"; \
 	    else \

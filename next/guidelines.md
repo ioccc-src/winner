@@ -212,9 +212,9 @@ FAQ on "[obtaining and compiling the most recent mkiocccentry tools](../faq.html
 and the
 FAQ on "[how to enter the IOCCC](../quick-start.html#enter)"
 as that FAQ has important details on
-[how to register](register.html)
+[how to register](../next/register.html)
 as well as
-[how to upload your submission](submit.html) to the IOCCC.
+[how to upload your submission](../next/submit.html) to the IOCCC.
 </p>
 
 <p class="leftbar">
@@ -2577,9 +2577,9 @@ FAQs on "[obtaining, compiling, installing and using the mkiocccentry tools](../
 and the
 FAQ on "[how to enter the IOCCC](../quick-start.html#enter)"
 as that FAQ has important details on
-[how to register](register.html)
+[how to register](../next/register.html)
 as well as
-[how to upload your submission](submit.html) for the IOCCC.
+[how to upload your submission](../next/submit.html) for the IOCCC.
 </p>
 
 
