@@ -10,21 +10,39 @@ most of the information you need to compile and run the winning program.
 Take a look at the winning source code and try to figure out how it works.
 You might also want to check out the author’s remarks for even more details.
 
+You may [download all winning entries](%%YEAR%%.tar.bz2) in the form
+of a compressed tarball, for this year's contest.
+
+
+## General remarks on this contest
+
+XXX - add text here - XXX
+
+
+### Rules and Guidelines for this contest
+
+Here are theadd text here - XXX final versions of the IOCCC rules and guidelines that were in effect for this contest:
+
+* [%%YEAR%% rules](rules.html) version **XXX**
+* [%%YEAR%% guidelines](guidelines.html) version **XXX**
+
+
+### Looking forward to the next contest
+
+XXX - add text here - XXX
+
 
 ## Remarks on some of the winning entries
 
 XXX - add text here - XXX
 
 
-## Rules and Guidelines
+### Remarks on some of submissions that did not win
 
-Here are the final versions of the IOCCC rules and guidelines that were in effect for this contest:
-
-* [%%YEAR%% rules](rules.html) version **XXX**
-* [%%YEAR%% guidelines](guidelines.html) version **XXX**
+XXX - add text here - XXX
 
 
-## Encouragement to those who did not win this year
+### Encouragement for those who did not win this year
 
 We know you all put in a lot of hard work into your submissions for
 this year’s IOCCC. Unfortunately, we can’t just give out awards to
@@ -35,6 +53,11 @@ Sometimes, a final round submission might be good enough to be a
 winning IOCCC entry, only to be beaten by a similar, but slightly
 better submission.  If you think this happened with your submission,
 consider submitting an enhanced version to the next IOCCC.
+
+**Please** do **NOT** give up hope.  There are some submissions that
+have been submitted with revisions, multiple times before rising
+to the level of a winning IOCCC entry.  You might also wish to
+try with a different type of submission altogether for the next IOCCC.
 
 
 ## On Compiling and running winning entries
@@ -56,7 +79,7 @@ For additional information on how to submit fixes, see the FAQ on:
 * [Update author information](../faq.html#fix_author) - how to correct or update an IOCCC author’s information
 
 
-## For even more information
+### For even more information
 
 * [Reporting an IOCCC website problem](../faq.html#report_website_problem)
 * [Submitting a fix to the IOCCC website](../faq.html#fix_website)
