@@ -181,7 +181,7 @@ clean:
 
 clobber: clean
 	${RM} -f ${TARGET} ${ALT_TARGET}
-	${RM} -f src/hibachi.c src/config.log src-alt/hibachi.c src-alt/hibachi.c
+	${RM} -f src/hibachi.c src/config.log src-alt/hibachi.c src-alt/hibachi.c src-alt/hibachi.alt.c
 	${RM} -rf *.dSYM
 	${RM} -rf build build-alt
 
