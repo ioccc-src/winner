@@ -55,6 +55,38 @@
 </blockquote>
 
 
+## 2025-07-08
+
+On 2025-07-07, we had a successful 6-hour marathon meeting, accomplishing 2 crucial goals:
+
+0) We have what we believe is the list of winners of **IOCCC28**.
+
+1) We’ve selected a tentative date for the **IOCCC28** winners' live presentation
+   on the "Our Favorite Universe" YouTube channel. The winning source will be uploaded
+   to the [Official IOCCC website](index.html) during the show.
+
+We look forward to presenting the 40th Anniversary IOCCC winners live on the
+[Our Favorite Universe YouTube channel](https://www.youtube.com/@OurFavoriteUniverse),
+reminiscent of the USENIX IOCCC BOFs that followed the BSD BOFs.
+
+More importantly, unlike previous years, you won’t have to wait to view
+the winning source. Near the end of the show, we’ll do a "git push"
+to the [IOCCC repo](https://github.com/ioccc-src/winner).
+
+We’re putting significant effort to complete the write-up for the
+**IOCCC28** winners and figure out how to show them live on the air, solving
+some fun logistical challenges along the way.
+
+We’ll share the YouTube show URL about 72 hours before the actual date.
+
+Kindly subscribe to the
+[Our Favorite Universe YouTube channel](https://www.youtube.com/@OurFavoriteUniverse),
+(it’s free) and click the notification bell (🔔) to receive an alert for when the show is
+scheduled by visiting:
+
+[https://www.youtube.com/@OurFavoriteUniverse](https://www.youtube.com/@OurFavoriteUniverse)
+
+
 ## 2025-06-05
 
 The **IOCCC28** period for submission has closed.
