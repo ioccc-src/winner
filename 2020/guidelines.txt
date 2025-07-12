@@ -741,7 +741,7 @@ ABUSING THE RULES:
     problems, flaws or areas of confusion are deliberate.  Changes to
     rules and guidelines in response to rule abuses, are done in a minimal
     fashion.  Often we will deliberately leave behind holes (or introduce
-    new ones) so that future rule abuse may continue.  A cleaver author
+    new ones) so that future rule abuse may continue.  A clever author
     should be able to read them and "drive a truck through the holes" in
     the rules and guidelines.
 

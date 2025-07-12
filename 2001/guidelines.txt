@@ -208,7 +208,7 @@ OUR LIKES AND DISLIKES:
 									       |
     However, you can do something cute such as making your program	       |
     do something dumb (or cute) when build 'automatically'.  However	       |
-    when it is run with a human involved, do something more cleaver.	       |
+    when it is run with a human involved, do something more clever.	       |
     For example, one could use the build instructions:			       |
 									       |
 	cc prog.c -DNONHUMAN -o prog					       |
