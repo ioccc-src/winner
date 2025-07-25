@@ -425,7 +425,7 @@
 
 <!-- BEFORE: 1st line of markdown file: faq.md -->
 <h1 id="ioccc-faq-table-of-contents">IOCCC FAQ Table of Contents</h1>
-<p>This is FAQ version <strong>28.2.19 2025-06-10</strong>.</p>
+<p>This is FAQ version <strong>28.2.20 2025-06-11</strong>.</p>
 <h2 id="entering-the-ioccc-the-bare-minimum-you-need-to-know">0. <a href="#enter_questions">Entering the IOCCC: the bare minimum you need to know</a></h2>
 <ul>
 <li><strong>Q 0.0</strong>: <a class="normal" href="#enter">How can I enter the IOCCC?</a></li>
@@ -457,6 +457,8 @@
 <li><strong>Q 1.8</strong>: <a class="normal" href="#rule17">What are the details behind Rule 17?</a></li>
 <li><strong>Q 1.9</strong>: <a class="normal" href="#uuid">How can I avoid re-entering my UUID to mkiocccentry?</a></li>
 <li><strong>Q 1.10</strong>: <a class="normal" href="#submission_dir">How can I avoid having to move or delete my submission directory for the same workdir?</a></li>
+<li><strong>Q 1.11</strong>: <a class="normal" href="#download_submission">Can I download my submission tarball from the submit server?</a></li>
+<li><strong>Q 1.12</strong>: <a class="normal" href="#del_submission">Can I delete a submission from the submit server?</a></li>
 </ul>
 <h2 id="ioccc-judging-process">2. <a href="#judging_process">IOCCC Judging process</a></h2>
 <ul>
@@ -1560,6 +1562,22 @@ instance, you can do:</p>
 first so you do not have to do so.</p>
 <p>If for some reason your <code>rm</code> command cannot be found or does not exist you can
 specify the path by the <code>-r rm</code> option.</p>
+<p>Jump to: <a href="#">top</a></p>
+<div id="download_submission">
+<h3 id="q-1.11-can-i-download-my-submission-tarball-from-the-submit-server">Q 1.11: Can I download my submission tarball from the submit server?</h3>
+</div>
+<p>We do not support this. If you need to verify your submission, then
+you can re-upload (while the contest is in open state) and verify the SHA256
+checksum listed in the submission slot.</p>
+<p>Jump to: <a href="#">top</a></p>
+<div id="del_submission">
+<h3 id="q-1.11-can-i-delete-a-submission-from-the-submit-server">Q 1.11: Can I delete a submission from the submit server?</h3>
+</div>
+<p>We do not support this. Instead, please create an empty prog.c, copy the <a href="next/Makefile.example">example
+Makefile</a> to your Makefile and add to the remarks.md:</p>
+<blockquote>
+<p>Please ignore this submission.</p>
+</blockquote>
 <p>Jump to: <a href="#">top</a></p>
 <hr style="width:50%;text-align:left;margin-left:0">
 <hr style="width:50%;text-align:left;margin-left:0">
