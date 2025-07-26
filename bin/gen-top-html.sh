@@ -124,7 +124,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="2.0.0 2025-03-13"
+export VERSION="2.0.1 2025-07-25"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -174,6 +174,7 @@ TOP_MD_SET+=("nojs-menu")
 TOP_MD_SET+=("quick-start")
 TOP_MD_SET+=("README")
 TOP_MD_SET+=("SECURITY")
+TOP_MD_SET+=("social")
 TOP_MD_SET+=("status")
 TOP_MD_SET+=("thanks-for-help")
 declare -ag TOP_MD_SELECT_SET

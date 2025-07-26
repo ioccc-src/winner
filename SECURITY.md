@@ -35,8 +35,9 @@ instead.
 # Important Disclaimer
 
 IOCCC code is for **educational and entertainment purposes only**. We do **NOT**
-recommend installing any winning IOCCC entry code. Use code found in the IOCCC repo
-and in the IOCCC website **at your own risk!**
+recommend installing any winning IOCCC entry code. Use code found in the
+[ioccc-src/winner GitHub repo](https://github.com/ioccc-src/winner)
+and in the [IOCCC website](index.html) **at your own risk!**
 
 The [IOCCC](index.html) and the [IOCCC judges](judges.html) DISCLAIM ALL
 WARRANTIES WITH REGARD TO THIS SOFTWARE, INCLUDING ALL IMPLIED WARRANTIES OF

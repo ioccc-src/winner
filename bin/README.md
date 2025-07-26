@@ -1970,7 +1970,7 @@ The second field is the name of the award for a given `YYYY/dir` entry.
 
 <!--
 
-    Copyright © 1984-2024 by Landon Curt Noll. All Rights Reserved.
+    Copyright © 1984-2025 by Landon Curt Noll. All Rights Reserved.
 
     You are free to share and adapt this file under the terms of this license:
 

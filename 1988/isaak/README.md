@@ -84,7 +84,7 @@ No remarks were provided by the author.
 
 <!--
 
-    Copyright © 1984-2024 by Landon Curt Noll. All Rights Reserved.
+    Copyright © 1984-2025 by Landon Curt Noll. All Rights Reserved.
 
     You are free to share and adapt this file under the terms of this license:
 

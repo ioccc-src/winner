@@ -13,13 +13,14 @@
 
 * [News](news.html)
 * [Contest status](status.html)
-* [Rules and guidelines](next/index.html)
+* [IOCCC rules](next/rules.html)
+* [IOCCC guidelines](next/guidelines.html)
 * [Markdown guidelines](markdown.html)
 * [Security policy](SECURITY.html)
 
 ## FAQ
 
-* [Frequently Asked Questions](faq.html)
+* [Frequently asked questions](faq.html)
 * [Enter the IOCCC](quick-start.html#enter)
 * [Compiling entries](faq.html#compiling)
 * [Running entries](faq.html#running_entries)
@@ -28,7 +29,8 @@
 ## About
 
 * [Home page](index.html)
+* [IOCCC social media](social.html)
 * [About the IOCCC](about.html)
-* [The Judges](judges.html)
+* [The judges](judges.html)
 * [Thanks for the help](thanks-for-help.html)
 * [Contact us](contact.html)

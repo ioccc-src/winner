@@ -1,6 +1,32 @@
 # Thanks for all the help
 
 
+<blockquote>
+<table>
+
+<tr>
+<td colspan="3" style="padding-top: 12px;">
+<span class="pseudo_h3">&nbsp;&nbsp;Support the IOCCC</span>
+<span class="small_click_below">&nbsp;&nbsp;&nbsp;click below to support</span>
+</td>
+</tr>
+
+<tr>
+<td>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://patreon.com/IOCCC"><img src="png/patreon.128x19.png" alt="Patreon logo" width=128 height=19></a>
+</td>
+<td>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://coff.ee/ioccc"><img src="png/buymeacoffee.128x38.png" alt="Buy Me A Coffee logo" width=128 height=38></a>
+</td>
+<td>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/sponsors/ioccc-src"><img src="png/GitHub.128x51.png" alt="GitHub logo" width=128 height=51></a>
+</td>
+</tr>
+
+</table>
+</blockquote>
+
+
 ## .. and [Thanks for All the Fish](https://hitchhikers.fandom.com/wiki/So_Long,_and_Thanks_for_All_the_Fish) 🐟🐠🎏. :-)
 
 To avoid having to change numerous "_index.html_" files to add thank you notes,
@@ -7229,7 +7255,7 @@ Jump to: [top](#)
 
 <!--
 
-    Copyright © 1984-2024 by Landon Curt Noll. All Rights Reserved.
+    Copyright © 1984-2025 by Landon Curt Noll. All Rights Reserved.
 
     You are free to share and adapt this file under the terms of this license:
 

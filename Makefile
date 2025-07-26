@@ -279,7 +279,7 @@ clobber:
 
 .PHONY: help genpath genfilelist all_jfmt verify_entry_files gen_authors quick_authors \
 	gen_location quick_location gen_years find_missing_links test entry_index gen_top_html \
-	thanks gen_other_html quick_other_html quick_entry_index find_invalid_json \
+	gen_next thanks gen_other_html quick_other_html quick_entry_index find_invalid_json \
 	gen_year_index quick_year_index quick_www www untar_entry_tarball untar_year_tarball \
 	form_entry_tarball form_year_tarball tar gen_status gen_sitemap \
 	sitemap timestamp update csv2entry entry2csv about contact pw_change submit
@@ -336,18 +336,19 @@ help:
 	@echo
 	@echo '# Rules for building specific web pages, a subset of rules mentioned above:'
 	@echo
-	@echo 'make bugs		;: generate bugs.html'
 	@echo 'make about		;: generate about.html'
+	@echo 'make bugs		;: generate bugs.html'
 	@echo 'make contact		;: generate contact.html'
 	@echo 'make faq		;: generate faq.html'
 	@echo 'make guidelines		;: generate next/guidelines.hmtl'
 	@echo 'make markdown		;: generate markdown.html'
-	@echo 'make remarks		;: generate next/remarks.html'
 	@echo 'make pw_change		;: generate next/pw-change.html'
+	@echo 'make remarks		;: generate next/remarks.html'
 	@echo 'make rules		;: generate next/rules.hmtl'
 	@echo 'make security		;: generate SECURITY.html'
-	@echo 'make thanks		;: generate thanks-for-help.html'
+	@echo 'make social		;: generate social.html'
 	@echo 'make submit		;: generate next/submit.html'
+	@echo 'make thanks		;: generate thanks-for-help.html'
 	@echo
 	@echo '# Compound make rules for building a local copy of the IOCCC website:'
 	@echo
@@ -526,6 +527,17 @@ gen_top_html: ${GEN_TOP_HTML}
 	${GEN_TOP_HTML} -v 1
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
+gen_next: ${GEN_TOP_HTML} next/README.md next/guidelines.md next/rules.md next/register.md next/submit.md next/pw-change.md
+	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	${GEN_TOP_HTML} -v 1 next/README
+	${GEN_TOP_HTML} -v 1 next/guidelines
+	${GEN_TOP_HTML} -v 1 next/rules
+	${GEN_TOP_HTML} -v 1 next/register
+	${GEN_TOP_HTML} -v 1 next/remarks
+	${GEN_TOP_HTML} -v 1 next/submit
+	${GEN_TOP_HTML} -v 1 next/pw-change
+	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+
 # build entry HTML files, other than README.md to index.html, from markdown
 #
 gen_other_html: ${GEN_OTHER_HTML}
@@ -630,7 +642,8 @@ test:
 # Rules for building specific web pages - a subset of rules mentioned above
 ###########################################################################
 
-.PHONY: thanks bugs gen_next rules guidelines faq about contact markdown security
+.PHONY: about bugs contact faq guidelines markdown rules \
+	security social submit thanks
 
 # generate about.html
 #
@@ -652,28 +665,6 @@ about: ${GEN_TOP_HTML} about.md
 	@echo "Nobody wants that, do they?"
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
-# generate contact.html
-#
-contact: ${GEN_TOP_HTML} contact.md
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
-	@echo "You wish to make contact with the IOCCC Judges?"
-	@${GEN_TOP_HTML} contact
-	@echo
-	@echo "I hope you're used to confused aliens!"
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
-
-
-# generate thanks-for-help.html
-#
-# So Long, and Thanks for All the Fish :-)
-#
-thanks: ${GEN_TOP_HTML} thanks-for-help.md
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
-	@echo "Thanks for all the help ..."
-	@${GEN_TOP_HTML} thanks-for-help
-	@echo "... and thanks for all the fish 🐟🐠🎏 :-)"
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
-
 # Bugs Bunny rule
 bugs: ${GEN_TOP_HTML} bugs.md
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
@@ -686,6 +677,16 @@ bugs: ${GEN_TOP_HTML} bugs.md
 	@echo "I'm hunting wabbits 🐇 .. and bugs 🪳🪲🦟🐜🐛"
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
+# generate contact.html
+#
+contact: ${GEN_TOP_HTML} contact.md
+	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo "You wish to make contact with the IOCCC Judges?"
+	@${GEN_TOP_HTML} contact
+	@echo
+	@echo "I hope you're used to confused aliens!"
+	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+
 faq: ${GEN_TOP_HTML} faq.md
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
 	@echo "You have a question ⁉️ ?"
@@ -693,15 +694,17 @@ faq: ${GEN_TOP_HTML} faq.md
 	@echo "Perhaps the FAQ might help!"
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
-gen_next: ${GEN_TOP_HTML} next/README.md next/guidelines.md next/rules.md next/register.md next/submit.md next/pw-change.md
+guidelines: ${GEN_TOP_HTML} next/guidelines.md
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
-	${GEN_TOP_HTML} -v 1 next/README
 	${GEN_TOP_HTML} -v 1 next/guidelines
-	${GEN_TOP_HTML} -v 1 next/rules
-	${GEN_TOP_HTML} -v 1 next/register
-	${GEN_TOP_HTML} -v 1 next/remarks
-	${GEN_TOP_HTML} -v 1 next/submit
-	${GEN_TOP_HTML} -v 1 next/pw-change
+	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+
+markdown: ${GEN_TOP_HTML} markdown.md
+	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo "You want to markdown?"
+	@${GEN_TOP_HTML} markdown
+	@echo
+	@echo "Careful that we don't mark down your submission!"
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 pw_change: next/pw-change.md
@@ -717,20 +720,26 @@ remarks: ${GEN_TOP_HTML} next/remarks.md
 	@${GEN_TOP_HTML} -v 1 next/remarks
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
-markdown: ${GEN_TOP_HTML} markdown.md
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
-	@echo "You want to markdown?"
-	@${GEN_TOP_HTML} markdown
-	@echo
-	@echo "Careful that we don't mark down your submission!"
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
-
 rules: ${GEN_TOP_HTML} next/rules.md
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
 	@echo "You wish to change the IOCCC rules?"
 	${GEN_TOP_HTML} -v 1 next/rules
-	@echo
 	@echo "Be careful you don't break them!"
+	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+
+security: ${GEN_TOP_HTML} SECURITY.md
+	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo "You wish to make IOCCC entries secure?"
+	@${GEN_TOP_HTML} SECURITY
+	@echo
+	@echo "We also didn't want Pluto 🪐 demoted!"
+	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+
+social: social.md
+	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo "This rule is sponsored by the Royal Society"
+	${GEN_TOP_HTML} social
+	@echo "For Putting Things On Top of Other Things"
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 submit: next/submit.md
@@ -742,19 +751,16 @@ submit: next/submit.md
 	@echo "called Eric, not a service dog 🐕‍🦺!"
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
-guidelines: ${GEN_TOP_HTML} next/guidelines.md
+# generate thanks-for-help.html
+#
+# So Long, and Thanks for All the Fish :-)
+#
+thanks: ${GEN_TOP_HTML} thanks-for-help.md
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
-	${GEN_TOP_HTML} -v 1 next/guidelines
+	@echo "Thanks for all the help ..."
+	@${GEN_TOP_HTML} thanks-for-help
+	@echo "... and thanks for all the fish 🐟🐠🎏 :-)"
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
-
-security: ${GEN_TOP_HTML} SECURITY.md
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
-	@echo "You wish to make IOCCC entries secure?"
-	@${GEN_TOP_HTML} SECURITY
-	@echo
-	@echo "We also didn't want Pluto 🪐 demoted!"
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
-
 
 
 ####################################################################
