@@ -100,7 +100,7 @@ all:
 
 .PHONY: all alt data everything diff_orig_prog diff_prog_orig \
 	diff_alt_prog diff_prog_alt diff_orig_alt diff_alt_orig \
-	clean clobber install genpath new_year genpath_top
+	clean clobber install clang-format genpath new_year genpath_top
 
 # alternative executable
 #
@@ -983,6 +983,18 @@ indent_clobber: indent_clean clobber
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 install:
+	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@-for i in ${YEARS}; do \
+	    if [[ -f $$i/Makefile ]]; then \
+		echo "cd $$i; make $@"; \
+		(cd $$i; make $@); \
+	    else \
+		echo "Warning: $$i/Makefile not found, skipping $$i for $@ processing" 1>&2 ; \
+	    fi; \
+        done
+	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+
+clang-format:
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
 	@-for i in ${YEARS}; do \
 	    if [[ -f $$i/Makefile ]]; then \

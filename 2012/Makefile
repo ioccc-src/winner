@@ -67,7 +67,7 @@ all:
 
 .PHONY: all alt data everything diff_orig_prog diff_prog_orig \
 	diff_alt_prog diff_prog_alt diff_orig_alt diff_alt_orig \
-	clean clobber install genpath love haste waste maker \
+	clean clobber install clang-format genpath love haste waste maker \
 	easter_egg sandwich supernova more_magic magic charon pluto
 
 # alternative executable
@@ -314,6 +314,18 @@ indent_clobber: indent_clean clobber
 	@echo '=-=-= ${YEAR} complete make $@ =-=-='
 
 install:
+	@echo '=-=-= ${YEAR} begin make $@ =-=-='
+	@echo
+	@for i in ${ENTRIES}; do \
+	    echo "=-= start ${YEAR}/$$i =-="; \
+	    echo "(cd $$i && ${MAKE} $@)"; \
+	    (cd $$i && ${MAKE} $@); \
+	    echo "=-= end ${YEAR}/$$i =-="; \
+	    echo; \
+	done
+	@echo '=-=-= ${YEAR} complete make $@ =-=-='
+
+clang-format:
 	@echo '=-=-= ${YEAR} begin make $@ =-=-='
 	@echo
 	@for i in ${ENTRIES}; do \

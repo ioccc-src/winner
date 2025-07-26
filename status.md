@@ -2,6 +2,9 @@ Please see the
 FAQ on "[status.json fields](faq.html#status_json)"
 for more information the above JSON fields.
 
+See also the
+[important disclaimers about contest status](next/index.html#important-disclaimers-about-contest-status).
+
 
 <hr style="width:10%;text-align:left;margin-left:0">
 
