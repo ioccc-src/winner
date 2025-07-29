@@ -82,6 +82,7 @@ You **MUST** include the following two words (separated by a space) in the subje
 
 **IMPORTANT:** The _YYYY_ in the above email address **MUST** be changed to the current 4 digit year!
 
+**IMPORTANT:** Do **NOT** immediately proceed nor follow the two words with punctuation.  For example, neither `IOCCC 2025.` **NOR** `Re:IOCCC 2025` will work in the subject line because there are non-whitespace characters next to the 2 words!  Instead use `IOCCC 2025 question.` or `Re: IOCCC 2025` or just `IOCCC 2025` on the subject line.
 
 <hr style="width:10%;text-align:left;margin-left:0">
 
