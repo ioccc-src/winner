@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+    <loc>https://www.ioccc.org/1337.mk</loc>
+    <lastmod>2025-06-20T02:24:21+00:00</lastmod>
+</url>
+<url>
     <loc>https://www.ioccc.org/1984/1984.tar.bz2</loc>
     <lastmod>2025-07-26T18:51:18+00:00</lastmod>
 </url>
@@ -14389,6 +14393,14 @@
     <lastmod>2025-07-26T18:35:02+00:00</lastmod>
 </url>
 <url>
+    <loc>https://www.ioccc.org/archive/historic/index.html</loc>
+    <lastmod>2025-07-26T18:35:02+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/archive/historic/README.md</loc>
+    <lastmod>2025-07-12T17:16:31+00:00</lastmod>
+</url>
+<url>
     <loc>https://www.ioccc.org/archive/historic/README.md</loc>
     <lastmod>2025-07-12T17:16:31+00:00</lastmod>
 </url>
@@ -15266,7 +15278,7 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/gen-sitemap.sh</loc>
-    <lastmod>2025-04-28T20:09:17+00:00</lastmod>
+    <lastmod>2025-07-30T08:09:28+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/gen-status.sh</loc>
@@ -15521,6 +15533,10 @@
     <lastmod>2025-07-26T18:35:09+00:00</lastmod>
 </url>
 <url>
+    <loc>https://www.ioccc.org/next/Makefile.example</loc>
+    <lastmod>2025-07-05T06:02:20+00:00</lastmod>
+</url>
+<url>
     <loc>https://www.ioccc.org/next/pw-change.html</loc>
     <lastmod>2025-07-26T18:35:09+00:00</lastmod>
 </url>
@@ -15565,6 +15581,14 @@
     <lastmod>2025-07-26T09:01:09+00:00</lastmod>
 </url>
 <url>
+    <loc>https://www.ioccc.org/next/try.alt.sh</loc>
+    <lastmod>2025-07-06T18:00:53+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/next/try.sh</loc>
+    <lastmod>2025-07-06T18:00:47+00:00</lastmod>
+</url>
+<url>
     <loc>https://www.ioccc.org/nojs-menu.html</loc>
     <lastmod>2025-07-26T18:35:12+00:00</lastmod>
 </url>
@@ -15599,6 +15623,14 @@
 <url>
     <loc>https://www.ioccc.org/SECURITY.md</loc>
     <lastmod>2025-07-26T05:11:04+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/social.html</loc>
+    <lastmod>2025-07-30T08:09:06+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/social.md</loc>
+    <lastmod>2025-07-30T08:08:52+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/status.html</loc>

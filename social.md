@@ -49,7 +49,7 @@ Contact [David McInnis](https://www.alchemistproductiondesign.com)
 for creative director & producer services.
 
 
-# Support Patreon
+# Support the IOCCC
 
 You can always participate in the IOCCC for **free**. The official IOCCC
 website and its archives will always be ad-free. This is **really important

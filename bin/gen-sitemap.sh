@@ -14,7 +14,7 @@
 #
 # "Because sometimes even the IOCCC Judges need some help." :-)
 #
-# Copyright (c) 2024 by Landon Curt Noll.  All Rights Reserved.
+# Copyright (c) 2024,2025 by Landon Curt Noll.  All Rights Reserved.
 #
 # Permission to use, copy, modify, and distribute this software and
 # its documentation for any purpose and without fee is hereby granted,
@@ -116,7 +116,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="2.0.1 2025-04-28"
+export VERSION="2.0.2 2025-07-30"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -636,17 +636,32 @@ fi
 
 # add top level files to the file manifest list
 #
-# We do not (yet?) include these files:
+# We do not include these files in the manifest list used to build the sitemap:
 #
+#	archive/historic/archive-*.tar.bz2	- historic purposes and are NOT RECOMMENDED for casual viewing
+#	author_wins.csv	- not part of the repo, generated as a local file by a tool
+#	bin/*.awk	- only used by IOCCC Judges to build the website
+#	bin/*.cfg	- only used by IOCCC Judges to build the website
+#	bin/*.sh	- only used by IOCCC Judges to build the website
 #	CNAME		- needed for only GitHub
+#	favicon.ico	- fetched by web browsers as needed
 #	google*.html	- used for Google Site Verification
+#	manifest.csv	- not part of the repo, generated as a local file by a tool
+#	png/*		- fetched by web browsers as needed
 #	sitemap.xml	- we are building the sitemap!
+#	summary.csv.csv	- not part of the repo, generated as a local file by a tool
+#	template/*	- template files used by tools and IOCCC judges
+#	year_prize.csv	- not part of the repo, generated as a local file by a tool
 #
 # Sort the list below with: sort -d -u
 #
 cat << EOF0 >> "$TMP_MANIFEST_LIST"
+1337.mk
 about.html
 about.md
+.allyear
+archive/historic/index.html
+archive/historic/README.md
 author/index.html
 author/README.md
 authors.html
@@ -654,6 +669,7 @@ bin/index.html
 bin/README.md
 bugs.html
 bugs.md
+.clang-format
 CODE_OF_CONDUCT.html
 CODE_OF_CONDUCT.md
 contact.html
@@ -661,6 +677,8 @@ contact.md
 faq.html
 faq.md
 .gitignore
+inc/index.html
+inc/README.md
 index.html
 index.md
 ioccc.css
@@ -678,6 +696,7 @@ news.md
 next/guidelines.html
 next/guidelines.md
 next/index.html
+next/Makefile.example
 next/pw-change.html
 next/pw-change.md
 next/README.md
@@ -689,6 +708,8 @@ next/rules.html
 next/rules.md
 next/submit.html
 next/submit.md
+next/try.alt.sh
+next/try.sh
 nojs-menu.html
 nojs-menu.md
 quick-start.html
@@ -698,6 +719,8 @@ README.md
 robots.txt
 SECURITY.html
 SECURITY.md
+social.html
+social.md
 status.html
 status.json
 status.md
