@@ -1,6 +1,6 @@
 # IOCCC FAQ Table of Contents
 
-This is FAQ version **28.2.20 2025-06-11**.
+This is FAQ version **28.2.21 2025-07-31**.
 
 
 ## 0. [Entering the IOCCC: the bare minimum you need to know](#enter_questions)
@@ -135,6 +135,7 @@ This is FAQ version **28.2.20 2025-06-11**.
 - **Q 10.4**: <a class="normal" href="#terms"> What is the current meaning of the IOCCC terms Author, Entry, and Submission?</a>
 - **Q 10.5**: <a class="normal" href="#licence">Am I allowed to use IOCCC content?</a>
 - **Q 10.6**: <a class="normal" href="#try_mastodon">What is Mastodon and why does the IOCCC use it?</a>
+- **Q 10.6.1**: <a class="normal" href="#mastodon_notifications">How can I get push notifications when the judges post something on mastodon?</a>
 - **Q 10.7**: <a class="normal" href="#tabstops">How do I set certain tabstops for viewing source code in vi&lpar;m&rpar;?</a>
 - **Q 10.8**: <a class="normal" href="#menus">How do the menus on the website work and what can I do if they don't work?</a>
 - **Q 10.9**: <a class="normal" href="#author-information">How do I find more information about a winning author of an entry?</a>
@@ -7404,7 +7405,6 @@ to help ensure that everyone may enjoy the IOCCC.
 
 Jump to: [top](#)
 
-
 <div id="try_mastodon">
 ### Q 10.6: What is Mastodon and why does the IOCCC use it?
 </div>
@@ -7443,6 +7443,28 @@ app from time to time to view IOCCC mastodon updates.
 
 
 Jump to: [top](#)
+
+<div id="mastodon_notifications">
+### Q 10.6.1: How can I get push notifications when the judges post something on mastodon?
+</div>
+
+To do this you need to go to the [IOCCC mastodon
+account](https://fosstodon.org/@ioccc) with a computer (it is unclear how to do
+this with a mobile device, if it is even possible) and then you should see a
+bell icon. Make sure it's activated. If you mouse over it when it's not enabled
+it should look something like this, assuming of course we follow you! :-) (if
+not the message about following each other won't show up):
+
+<img src="png/mastodon-notifications.png"
+ alt="screenshot of Mastodon push notifications"
+ width=912 height=556>
+
+It is not yet clear if this only works on desktop/computers or mobile devices
+too as it was only just discovered (31 July 2025) but whatever the case we
+suggest you do it.
+
+Jump to: [top](#)
+
 
 
 <div id="tabstops">
