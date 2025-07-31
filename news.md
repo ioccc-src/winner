@@ -55,6 +55,25 @@
 </blockquote>
 
 
+## 2025-07-30
+
+Good News Everyone ‼️🤓 We have scheduled the date for the **IOCCC Awards Presentation and Source Code Reveal** for **IOCCC28** to be on **2025 August 02 11:00 (11AM) Pacific**.
+
+The presentation will be on the [Our Favorite Universe](https://www.youtube.com/@OurFavoriteUniverse) YouTube Channel on the show entitled:
+
+> [IOCCC28 Winning Entries | IOCCC Awards Presentation and Source Code Reveal](https://www.youtube.com/live/UDzGwTalVAc?si=0OyzacLR_PsylR1g)
+
+Please **Subscribe** and **click on the "Notification Bell" 🔔**
+so that you can be reminded for when we go live.
+
+As promised, the source code to the winners of **IOCCC28** will go live
+on the [IOCCC winner GibHub repo](https://github.com/ioccc-src/winner)
+as well at the [IOCCC Official Website](index.html) at the end of the
+show. A recording of this show will be uploaded to the [Our Favorite
+Universe](https://www.youtube.com/@OurFavoriteUniverse) YouTube Channel
+for those who cannot watch the live show.
+
+
 ## 2025-07-08
 
 On 2025-07-07, we had a successful 6-hour marathon meeting, accomplishing 2 crucial goals:
