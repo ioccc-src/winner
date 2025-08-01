@@ -135,7 +135,7 @@ This is FAQ version **28.2.21 2025-07-31**.
 - **Q 10.4**: <a class="normal" href="#terms"> What is the current meaning of the IOCCC terms Author, Entry, and Submission?</a>
 - **Q 10.5**: <a class="normal" href="#licence">Am I allowed to use IOCCC content?</a>
 - **Q 10.6**: <a class="normal" href="#try_mastodon">What is Mastodon and why does the IOCCC use it?</a>
-- **Q 10.6.1**: <a class="normal" href="#mastodon_notifications">How can I get push notifications when the judges post something on mastodon?</a>
+    - **Q 10.6.1**: <a class="normal" href="#mastodon_notifications">How can I get push notifications when the judges post something on mastodon?</a>
 - **Q 10.7**: <a class="normal" href="#tabstops">How do I set certain tabstops for viewing source code in vi&lpar;m&rpar;?</a>
 - **Q 10.8**: <a class="normal" href="#menus">How do the menus on the website work and what can I do if they don't work?</a>
 - **Q 10.9**: <a class="normal" href="#author-information">How do I find more information about a winning author of an entry?</a>
@@ -7441,8 +7441,8 @@ follow posts something so you will have to check the IOCCC feed manually.
 mastodon feed](https://fosstodon.org/@ioccc) page and/or mastodon
 app from time to time to view IOCCC mastodon updates.
 
-
 Jump to: [top](#)
+
 
 <div id="mastodon_notifications">
 ### Q 10.6.1: How can I get push notifications when the judges post something on mastodon?
