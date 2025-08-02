@@ -10,7 +10,7 @@
     "alt_url" : null,
     "deprecated_twitter_handle" : null,
     "mastodon" : "@mame@ruby.social",
-    "mastodon_url" : "https://ruby.social/@mame",
+    "mastodon_url" : null,
     "github" : "@mame",
     "affiliation" : null,
     "winning_entry_set" : [
@@ -67,6 +67,12 @@
         },
         {
             "entry_id" : "2020_endoh3"
+        },
+        {
+            "entry_id" : "2024_endoh1"
+        },
+        {
+            "entry_id" : "2024_endoh2"
         }
     ]
 }

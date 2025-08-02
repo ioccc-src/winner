@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+w=$1; : ${w:?echo "usage: $0 target_word" >&2; exit 1}
+
+rank results/$w |
+sed -n 7,\$p |
+tr '\t' '\n' |
+awk '$1 != "" {print $1}' |
+sort -u |
+while read a; do
+	GUESSES=9 run dict $w $a
+done |
+grep result

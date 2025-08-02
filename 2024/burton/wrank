@@ -1,0 +1,5 @@
+#!/bin/sh
+
+a=$(./rank results/$1 | awk 'NR<7 {print $2}')
+/bin/echo -n "$1 "
+./wavg $a

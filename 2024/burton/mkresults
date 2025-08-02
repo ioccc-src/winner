@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+dir=$1
+: ${dir:=results}
+
+for name in $dir/*; do
+	./avg $name
+done | sed "s#$dir/##" | tr : ' '

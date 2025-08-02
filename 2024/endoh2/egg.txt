@@ -1,0 +1,20 @@
+// Is this an egg boiled?
+
+// ref: https://iopscience.iop.org/article/10.1088/1361-6404/aa997b
+
+// Use `-Drpm=1300 -Dtilt=90`
+
+###
+   ##
+     #
+      #
+       #
+       #
+        #
+        #
+        #
+        #
+        #
+       #
+     ## 
+#####

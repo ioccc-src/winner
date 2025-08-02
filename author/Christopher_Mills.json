@@ -9,7 +9,7 @@
     "url" : null,
     "alt_url" : null,
     "deprecated_twitter_handle" : "@MisterXopher",
-    "mastodon" : null,
+    "mastodon" : "@MisterXopher@mastodon.social",
     "mastodon_url" : null,
     "github" : null,
     "affiliation" : null,
@@ -34,6 +34,9 @@
         },
         {
             "entry_id" : "2019_mills"
+        },
+        {
+            "entry_id" : "2024_mills"
         }
     ]
 }

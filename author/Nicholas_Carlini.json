@@ -11,11 +11,14 @@
     "deprecated_twitter_handle" : null,
     "mastodon" : null,
     "mastodon_url" : null,
-    "github" : "@carlini",
+    "github" : null,
     "affiliation" : null,
     "winning_entry_set" : [
         {
             "entry_id" : "2020_carlini"
+        },
+        {
+            "entry_id" : "2024_carlini"
         }
     ]
 }

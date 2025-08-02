@@ -1,25 +1,30 @@
-<!-- START: this line starts content from: inc/rules.judging.hdr -->
+<!-- START: this line starts content from: inc/rules.closed.hdr -->
 
-# The rules for the IOCCC that just closed
+# The IOCCC is closed
 
-These rules are for the current IOCCC that is no longer open for new submissions.
+The IOCCC is **NOT** accepting new submissions at this time.  See the
+[IOCCC winning entries page](../years.html) for the entries that have won the
+IOCCC in the past.
 
-See the [IOCCC news](../news.html) and well as the
-[IOCCC Mastodon](https://fosstodon.org/@ioccc) feed for updates
-on the IOCCC judging process as well as for the announcement
-of [who won the IOCCC](../years.html).
+These rules are a **TENTATIVE proposal** for the next IOCCC
+and are **likely be to be updated** before the next IOCCC.
+
+See our
+FAQ on "[rules, guidelines, tools feedback](../faq.html#feedback)"
+as well as our
+FAQ on "[about asking questions](../faq.html#question)"
+about these rules. You might also find the FAQ in general useful, especially the
+FAQ on "[how to enter the IOCCC](../quick-start.html#enter)".
+
+Watch both [the IOCCC status page](../status.html) and the
+[@IOCCC mastodon feed](https://fosstodon.org/@ioccc) for information about
+future IOCCC openings.
 
 **HINT to mastodon users**: You may wish to refresh the [@IOCCC
 mastodon feed](https://fosstodon.org/@ioccc) page and/or mastodon
 app from time to time to view IOCCC mastodon updates.
 
-
-# The IOCCC is closed to new submissions
-
-The [IOCCC judges](../judges.html) are in the process of judging the submissions they received
-while the IOCCC was open.
-
-<!-- END: the next line ends content from: inc/rules.judging.hdr -->
+<!-- END: the next line ends content from: inc/rules.closed.hdr -->
 <!-- This is the last line modified by the tool: bin/gen-status.sh -->
 # 28th International Obfuscated C Code Contest Official Rules
 

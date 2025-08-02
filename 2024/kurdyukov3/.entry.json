@@ -1,0 +1,201 @@
+{
+    "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
+    "entry_JSON_format_version" : "1.2 2024-09-25",
+    "award" : "Prize in virtual quietus",
+    "year" : 2024,
+    "dir" : "kurdyukov3",
+    "entry_id" : "2024_kurdyukov3",
+    "title" : "fastvm",
+    "abstract" : "gaming VM and doom",
+    "author_set" : [
+        {
+            "author_handle" : "Ilya_Kurdyukov"
+        }
+    ],
+    "manifest" : [
+        {
+            "file_path" : "prog.c",
+            "inventory_order" : 20,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "entry source code"
+        },
+        {
+            "file_path" : "Makefile",
+            "inventory_order" : 30,
+            "OK_to_edit" : true,
+            "display_as" : "makefile",
+            "display_via_github" : true,
+            "entry_text" : "entry Makefile"
+        },
+        {
+            "file_path" : "prog.orig.c",
+            "inventory_order" : 50,
+            "OK_to_edit" : false,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "original source code"
+        },
+        {
+            "file_path" : "try.alt.sh",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "shellscript",
+            "display_via_github" : true,
+            "entry_text" : "script to try alternate code"
+        },
+        {
+            "file_path" : "try.sh",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "shellscript",
+            "display_via_github" : true,
+            "entry_text" : "script to try entry"
+        },
+        {
+            "file_path" : "default.cfg",
+            "inventory_order" : 150,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : true,
+            "entry_text" : "configuration file"
+        },
+        {
+            "file_path" : "prog.sdl.c",
+            "inventory_order" : 150,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "prog.c version that uses SDL2"
+        },
+        {
+            "file_path" : "prog.win.c",
+            "inventory_order" : 150,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "prog.c version that uses WinAPI"
+        },
+        {
+            "file_path" : "ogvm.html",
+            "inventory_order" : 200,
+            "OK_to_edit" : false,
+            "display_as" : "html",
+            "display_via_github" : false,
+            "entry_text" : "web version in javascript"
+        },
+        {
+            "file_path" : "2024_kurdyukov3.tar.bz2",
+            "inventory_order" : 1415926535,
+            "OK_to_edit" : false,
+            "display_as" : "tbz2",
+            "display_via_github" : false,
+            "entry_text" : "download entry tarball"
+        },
+        {
+            "file_path" : ".entry.json",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "json",
+            "display_via_github" : true,
+            "entry_text" : "entry summary and manifest in JSON"
+        },
+        {
+            "file_path" : ".gitignore",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "gitignore",
+            "display_via_github" : true,
+            "entry_text" : "list of files that should not be committed under git"
+        },
+        {
+            "file_path" : ".path",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : false,
+            "display_as" : "path",
+            "display_via_github" : false,
+            "entry_text" : "directory path from top level directory"
+        },
+        {
+            "file_path" : "README.md",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "markdown",
+            "display_via_github" : true,
+            "entry_text" : "markdown source for this web page"
+        },
+        {
+            "file_path" : "doom1.wad",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "binary",
+            "display_via_github" : true,
+            "entry_text" : "Doom1 WAD"
+        },
+        {
+            "file_path" : "doomp.bin",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "binary",
+            "display_via_github" : true,
+            "entry_text" : "compressed binary of doom.bin"
+        },
+        {
+            "file_path" : "fizzbuzz.bin",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "binary",
+            "display_via_github" : true,
+            "entry_text" : "Solution for well-known job interview task"
+        },
+        {
+            "file_path" : "hello.bin",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "binary",
+            "display_via_github" : true,
+            "entry_text" : "Sample Hello World program"
+        },
+        {
+            "file_path" : "loader.bin",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "binary",
+            "display_via_github" : true,
+            "entry_text" : "Loads another application from standard input"
+        },
+        {
+            "file_path" : "lzmadec.bin",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "binary",
+            "display_via_github" : true,
+            "entry_text" : "LZMA stream decoder"
+        },
+        {
+            "file_path" : "sdk.zip.lzma",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "binary",
+            "display_via_github" : true,
+            "entry_text" : "SDK in LZMA form"
+        },
+        {
+            "file_path" : "window.bin",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "binary",
+            "display_via_github" : true,
+            "entry_text" : "SDK to draw graphics and capture keyboard and mouse"
+        },
+        {
+            "file_path" : "index.html",
+            "inventory_order" : 4294967295,
+            "OK_to_edit" : false,
+            "display_as" : "html",
+            "display_via_github" : false,
+            "entry_text" : "this web page"
+        }
+    ]
+}

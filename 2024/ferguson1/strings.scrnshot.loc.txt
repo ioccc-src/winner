@@ -1,0 +1,2199 @@
+<1>
+This program simulates a trip over the Oregon Trail from Independence, Missouri
+to Oregon City. Your extended family will attempt the 2170 mile Oregon Trail in
+5-6 months. You had $6666 for the trip but after foolishly wasting thousands on
+a sinful night yesterday and paying $200 for a wagon train, you only have an
+ominous $1666. You may buy the following items, or not, if you trust the Devil
+to be faithful to your pact:
+
+ Food - the more you have, the less chance you'll starve to
+        death, which would serve you right.
+ Ammunition - $1 only buys 5 bullets due to recent hoarding.
+        You will need lots of bullets for self defence
+        and for hunting food, assuming you don't miss.
+ Clothing - this is especially important for the cold weather
+        you will encounter when crossing the mountains, if you
+        get there.
+ Oxen - the more you spend the better off you'll be, assuming
+        they don't die. Or you don't sacrifice them.
+ Miscellaneous supplies - this includes medicine and other
+        things you'll need.
+
+You can spend all your money before you start your trip or you can save some of
+your cash to spend at forts along the way when you run low on supplies.
+Alternatively, you might wish to spend it all as you'll probably just find
+money along the way. You can also go hunting along the way to get more food,
+assuming you're not such a lousy shot as to be unable to hit a helpless animal
+from a cowardly distance.
+
+At each turn, all items are shown in dollar amounts except bullets. When asked
+to enter money amounts, don't use a $.
+
+Good luck, because the Devil's not going to help out!!! Or...will he?
+
+<2>
+%u
+<3>
+%ld
+<4>
+
+🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦
+🪦                 /       \                    🪦
+🪦                /    A    \                   🪦
+🪦                |TORMENTED|                   🪦
+🪦                | MONSTER |                   🪦
+🪦                |  R.I.P. |                   🪦
+🪦                |_________|                   🪦
+🪦                 GAME OVER                    🪦
+🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+🔥Unfortunately, due to what can only be an     🔥
+🔥ADMINISTRATIVE FOUL-UP, you end up somewhere  🔥
+🔥you did not expect as your forever home. But  🔥
+🔥honestly, after signing the Devil's book, DO  🔥
+🔥YOU REALLY BELIEVE YOU DON'T BELONG HERE? Be  🔥
+🔥honest. For once. You know you belong here.   🔥
+🔥Oh, by the way, god asked me to wish you a    🔥
+🔥PROSPEROUS LIFE ahead...                      🔥
+🔥                                              🔥
+🔥        😈😈😈 WELCOME TO HELL!! 😈😈😈       🔥
+🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+
+<5>
+
+🪰🍝😈🪰🍝😈🪰🍝😈🪰🍝😈🪰🍝😈🪰🍝😈🪰🍝😈🪰🍝😈🪰
+🍝Not again. Are you REALLY going to tell me    🍝
+😈about the Flying Spaghetti Monster AGAIN?     😈
+🪰I've had ENOUGH of your FAIRY-TALE DELUSIONS! 🪰
+🍝YOU'VE TOLD ME HE IS INVISIBLE SO HOW IN THE  🍝
+😈HELL CAN YOU EVEN KNOW HE EXISTS?             😈
+🪰                                              🪰
+🍝What next, are you going to tell me that      🍝
+😈between Earth and Mars there is a china teapot😈
+🪰revolving about the Sun in an elliptical      🪰
+🍝orbit? Let me guess! It's so small that even  🍝
+😈the James Webb telescope that was launched    😈
+🪰almost 200 years from now can't even see it,  🪰
+🍝right? What a load of ABSOLUTE RUBBISH! If    🍝
+😈your daughters were not here I WOULD TOTALLY  😈
+🪰BE ABUSING LALOCHEZIA AT YOU RIGHT NOW!       🪰
+🍝BUGGER ME THAT THEY ARE!                      🍝
+😈                                              😈
+🪰If the Flying Spaghetti Monster ACTUALLY      🪰
+🍝existed, he'd eat you for lunch for blasphemy.🍝
+😈Hell, keep this up and I'LL eat you. I'M      😈
+🪰STARVING!                                     🪰
+🍝😈🪰🍝😈🪰🍝😈🪰🍝😈🪰🍝😈🪰🍝😈🪰🍝😈🪰🍝😈🪰🍝
+
+<6>
+
+How much do you want to spend on food? 
+<7>
+
+How much do you want to spend on ammunition? 
+<8>
+
+How much do you want to spend on clothing? 
+<9>
+
+How much do you want to spend on oxen? 
+<10>
+
+How much do you want to spend on miscellaneous supplies? 
+<11>
+    
+    Food:   %4ld         Ammo:   %4ld   Clothing: %4ld
+    Oxen:   %4ld     Supplies:   %4ld   Money:    %4ld
+  Health:   %4ld        Miles:   %4ld
+
+<12>
+After all your purchases, you now have $%ld left...
+
+Seriously, YOU WASTED YOUR MONEY LIKE THAT?
+
+<13>
+
+💊😈💊😈💊😈💊😈💊😈💊😈💊😈💊😈💊😈💊😈
+😈  Mild illness. Medicine used. Not  💊
+💊  sure why though. IT WAS ONLY A    😈
+😈  SNIFFLE. Probably just the Devil  💊
+💊  TRYING TO ESCAPE FROM YOUR CURSED 😈
+😈  NOSTRILS. In the future THEY BLESS💊
+💊  PEOPLE FOR SNEEZING. You can die  😈
+😈  happy knowing you started a thing.💊
+💊  Even if your death will bring you 😈
+😈  EVERLASTING TORMENT.              💊
+💊😈💊😈💊😈💊😈💊😈💊😈💊😈💊😈💊😈💊😈
+
+<14>
+
+Value must be a positive number no larger
+than 666. Or 0. If you trust the Devil.
+
+<15>
+
+🐂❌💋🐂❌💋🐂❌💋🐂❌💋🐂❌💋🐂❌💋🐂❌💋🐂❌💋🐂
+❌You have run out of oxen and must walk.       ❌
+💋Better buy more... IF YOU DIDN'T WASTE MORE   💋
+🐂MONEY ON MORE SINFUL NIGHTS, like your        🐂
+❌red-headed daughters told me last night,      ❌
+💋assuming they weren't LYING to me.            💋
+🐂                                              🐂
+❌AND YES. A dirty mind IS a TERRIBLE thing to  ❌
+💋waste BUT NOTHING HAPPENED BETWEEN US!! We're 💋
+🐂JUST FRIENDS and they've been telling me ALL  🐂
+❌ABOUT YOUR RIDICULOUS BEHAVIOUR. OK, it MIGHT ❌
+💋be in bed with them but they can't help       💋
+🐂themselves...kind of like you. WHERE do you   🐂
+❌think they got it from? Besides, IF YOU KNOW  ❌
+💋THE DEVIL in the biblical sense WHY SHOULDN'T 💋
+🐂WE? We EXPRESS PASSION and YOU ARE JUST AN    🐂
+❌EVIL MONSTER!!!!👹 Good luck hauling your     ❌
+💋wagon! WE'RE TAKING A PLANE!!                 💋
+🐂❌💋🐂❌💋🐂❌💋🐂❌💋🐂❌💋🐂❌💋🐂❌💋🐂❌💋🐂
+
+<16>
+
+Shooting when low on bullets. That's really
+intelligent. NO WONDER you're starving.
+
+<17>
+
+As you overindulge in a huge platter of spaghetti,
+it suddenly begins to strangle you to death.
+
+You gasp for air, reaching out to the Devil for
+help! In vain. She's already here cackling like
+the monster you are, just WAITING FOR YOU.
+
+Your time has come my friend. But didn't you want
+to know her better anyway?
+
+Better go fulfil your promise! SHE WANTS YOU RIGHT
+NOW! 💋
+
+<18>
+
+🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂
+🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃
+🐂  The only food you have left is an ox!     🐂
+🐂                                            🐂
+🐂  As you have no choice left, you promptly  🐂
+🐂  kill it before it runs away, and it sure  🐂
+🐂  was DELICIOUS!!!                          🐂
+🐂                                            🐂
+🐂     (       OX'S VOICE          )          🐂
+🐂  You're a sick, sick individual. You do    🐂
+🐂  know that, right? First you BURDEN ME     🐂
+🐂  WITH ALL YOUR RUBBISH and THEN YOU EAT ME?🐂
+🐂                                            🐂
+🐂  I hope you remember you were starving me  🐂
+🐂  to death so it's your fault you won't get 🐂
+🐂  much sustenance from MURDERING YOUR       🐂
+🐂  FAITHFUL SLAVE ANIMAL!!! Not that I had a 🐂
+🐂  choice.                                   🐂
+🐂                                            🐂
+🐂  And YES, there's a place IN HELL FOR      🐂
+🐂  MONSTERS LIKE YOU, AND YES YOUR TIME IS   🐂
+🐂  FAST APPROACHING, YOU RUDDY UNFAITHFUL    🐂
+🐂  LITTLE GIT.                               🐂
+🐂       😈😈😈 HE'S WAITING. 😈😈😈          🐂
+🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃
+🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂
+
+<19>
+
+🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂
+🐂 An ox looks at you funny so you eat    🐂
+🐂 him!                                   🐂
+🐂                                        🐂
+🐂 You're a sick, sick individual. You do 🐂
+🐂 know that, right? FIRST you BURDEN HIM 🐂
+🐂 WITH ALL YOUR RUBBISH and THEN YOU EAT 🐂
+🐂 HIM BECAUSE OF A FUNNY LOOK? And YOU   🐂
+🐂 DIDN'T EVEN SHARE HIM WITH YOUR FAMILY!🐂
+🐂                                        🐂
+🐂 What next, will you eat your daughter  🐂
+🐂 too? No! NO! NO NO NO NO! I SHOULD NOT 🐂
+🐂 HAVE SAID THAT! NO! DON'T EVEN THINK   🐂
+🐂 ABOUT TOUCHING HER! BACK OFF!!         🐂
+🐂                                        🐂
+🐂            SHE'S MINE!!!               🐂
+🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂
+
+<20>
+
+One of the daughters cut her arm and it had to
+be amputated. THANK GOD she is not DOWN IN THE
+MOUTH AND SHE WANTS TO EAT IT BECAUSE YOU ARE
+SUDDENLY STARVING!!!
+
+But OF COURSE you didn't get any. If you weren't
+eyeing it so lustily you would have seen that she
+seemed to ESPECIALLY ENJOY IT, GREEDILY DEVOURING
+IT AS IF IT WAS HER LAST SUPPER! Wait, HAS THE
+DEVIL POSSESSED HER TOO?! THAT EVIL WITCH!!! 🧙🧙🧙
+
+Hang on. YOU'RE JUDGING HER AFTER ALL YOU'VE DONE?
+CUT THAT OUT RIGHT NOW! NO. NO! NO! NO! STOP! I DID
+NOT MEAN CUT ANOTHER LIMB OFF HER! YES I KNOW I got
+some and you didn't. And yes it was DELICIOUS! But
+she wanted me to remember it before it was all gone,
+not you. Eat your own arm if you must. No. I meant
+stop accusing her of witchcraft. YOU signed the
+Devil's book, NOT HER and it WAS her body! This is
+ALL YOUR FAULT, JUST LIKE EVERYTHING ELSE that's
+happened since that fateful night!
+
+<21>
+
+Wagon train damaged! Lost time time resupplying from the Devil.
+
+<22>
+
+Suddenly your clocks stop...
+
+I guess it must have happened AGAIN! And WHY THE DEVIL DO YOU
+KEEP SWIMMING IN THE MOLASSES RIVER?! Honestly, you'll be lucky
+if you don't SINK IN IT before it sinks into your
+stick-in-the-molasses head.
+
+<23>
+
+            ⛰️⛰️⛰️⛰️
+
+  You made it safely through South
+  Pass--no snow. Clearly the Devil
+  has your back. For now my dear
+  fiend, for now...
+
+  He might be plotting against you.
+  Oh hell. I KNOW HE IS. HE TOLD ME
+  HE IS. Your time is coming AND THE
+  DEVIL AND I BOTH CANNOT WAIT!
+  Neither can your daughters. They
+  told me last night in the wagon.
+  YES. I KNOW THEM.
+
+            ⛰️⛰️⛰️⛰️
+
+<24>
+
+🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦
+🪦 All you had was mouldy bread,🪦
+🪦                              🪦
+🪦                              🪦
+🪦 Therefore here you must lie. 🪦
+🪦                              🪦
+🪦                              🪦
+🪦   Because now you're dead.   🪦
+🪦                              🪦
+🪦                              🪦
+🪦         GOODBYE!             🪦
+🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦
+
+<25>
+
+🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂
+🐂                              🐂
+🐂    (    OX'S VOICE       )   🐂
+🐂                              🐂
+🐂  Still happy you ate me? How 🐂
+🐂  many more miles do you have 🐂
+🐂  to go?                      🐂
+🐂                              🐂
+🐂  YOU'RE COOKED and you know  🐂
+🐂  it, you horrible, HORRIBLE  🐂
+🐂  MONSTER.                    🐂
+🐂                              🐂
+🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂
+
+<26>
+
+👻👻👻👻👻👻👻👻👻👻👻👻👻👻 👻
+👻 A little ghost floats by  👻
+👻 and shouts:               👻
+👻                           👻
+👻          BOO!!!!          👻
+👻                           👻
+👻 Okay that was NOT funny,  👻
+👻 Casper! Go back to your   👻
+👻 shallow grave, you LITTLE 👻
+👻 JERK!                     👻
+👻👻👻👻👻👻👻👻👻👻👻👻👻👻 👻
+
+<27>
+
+         ___🔥🔥🔥___
+        /  🔥🔥🔥    \
+        |🔥  WAGON   🔥
+ 🔥🔥🔥 |___🔥🔥🔥___🔥🔥🔥
+ 🔥🔥🔥🔥🔥🔥O 🔥🔥🔥 O🔥🔥
+🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦
+🪦 A fire breaks out in your  🪦
+🪦 wagon, and the wind quickly🪦
+🪦 fans the flames, CAUSING   🪦
+🪦 YOUR AMMO TO BLOW UP,      🪦
+🪦 killing you! Somehow       🪦
+🪦 everyone else survived...  🪦
+🪦                            🪦
+🪦 Frankly, IT WAS ABOUT TIME.🪦
+🪦 I mean WHAT KIND OF IDIOT  🪦
+🪦 overloads their wagon with 🪦
+🪦 WEAPONS?                   🪦
+🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦
+
+<28>
+
+Uh oh. A black cat just jumped out in front of you. Is
+the Devil calling you? Better go have a look before it's
+too late. Maybe it already is. Your daughters told me
+you're an ailurophobe! Some pretty wild stories I hear.
+I think it probably is too late. Isn't it Friday the
+13th?
+
+<29>
+
+You take lots of cash 💰 from the riders 🏇,
+accidentally stabbing one as he flees. But
+since you're starving, why don't you MAKE
+PENANCE BY NOT WASTING THE BODY YOU RUDELY
+CUT OPEN?
+
+            🍖🥩🍔🥩🍔🍖
+     Mm...that was DELICIOUS!!!
+(🪦👻RIDER'S SOBBING VOICE FROM THE GRAVE👻🪦)
+
+You know what you did is wrong, right? We
+were JUST ROBBED YESTERDAY, you rob us today
+AND NOW I'M DEAD 👻!
+
+WELL GOOD. I WAS DYING OF DYSENTERY and
+now YOU get to SPREAD THE DISEASE as well.
+
+<30>
+
+             ~~~~~~
+          /  🍝🍝🍝  \
+         / 🍝🍝🍝🍝🍝 \
+        / 🍝🍝🍝🍝🍝🍝 \
+       |  🍝🍝🍝🍝🍝🍝🍝|
+       \    |||   |||   /
+        \     |||||    /
+         \     |||    /
+          \__________/
+             ||  ||
+             ||  ||
+           __||__||__
+WOW!!!! THAT'S A SPAGHETTI TREE!!! I saw
+them over 100 years from now when I last
+used my Time Machine!! The BBC will
+cultivate them on April Fool's Day 19579!
+THEY'RE AMAZING!! The Time Machines are
+okay and kind of interesting. Dangerous
+though...
+
+But the spaghetti looks pretty ominous,
+doesn't it? IT LOOKS LIKE IT WANTS TO REACH
+DOWN AND GRAB YOU! Better be careful. If they
+strangle you YOU WILL GO TO HELL! On the plus
+side... YOU'LL HAVE THE MOST AMAZING STORY to
+tell your fellow sinners... Trust me. I've
+been there on holiday! It's PRETTY WILD!!
+Summers are AMAZINGLY HOT!! Although...GETTING
+EATEN BY A DRAGON OR KILLED BY TYRANNOSAURUSES is
+an EVEN BETTER STORY! That's MUCH MORE
+EXCITING than a SPAGHETTI TREE KILLING YOU!!
+Although...now I think on it...they're ALSO
+in Hell so maybe it's better if the spaghetti
+kills you. Want me to strangle you with it if
+it doesn't do it? Of course...the trees are
+there too...LOTS of parties too. And good old
+TORTURE! IT'S AWESOME!
+
+<31>
+
+😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈
+😈 Uh oh! Is that the DEVIL I see in    😈
+😈 your mirror again? Or are YOU looking😈
+😈 at it from behind your dressing      😈
+😈 curtain?                             😈
+😈                                      😈
+😈 BETTER BREAK IT BEFORE IT'S TOO      😈
+😈 LATE!!! Yes, YES, I KNOW IT'S BAD    😈
+😈 LUCK TO BREAK A MIRROR!! But ask     😈
+😈 yourself this: what's worse, seeing  😈
+😈 yourself in the Devil's mirror OR    😈
+😈 simply having bad luck for 7 long    😈
+😈 years? Let's be honest. You're NOT   😈
+😈 going to make it that long anyway!   😈
+😈 Why not just give your mind some     😈
+😈 peace and die in an unknown way? Much😈
+😈 less scarier AND IF YOU DON'T BREAK  😈
+😈 IT I WILL! I don't want to see the   😈
+😈 Devil in your mirror! OH HELL! NOT   😈
+😈 AGAIN! I MEAN I DON'T WANT TO SEE    😈
+😈 YOU IN THE DEVIL'S MIRROR!!!         😈
+😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈
+
+<32>
+
+🪣🐂🛁🪣🐂🛁🪣🐂🛁🪣🐂🛁🪣🐂🛁🪣🐂🛁🪣🐂🛁
+🐂 Uh oh. ONE OF THE OXEN JUST KICKED   🐂
+🛁 A BUCKET. Is it going to die next?   🛁
+🪣 Or...is it foreshadowing your own    🪣
+🐂 death? Let's face it. You have it    🐂
+🛁 coming to you. Better throw the ox   🛁
+🪣 out with the bathwater before it's   🪣
+🐂 too late. Oh and don't try telling   🐂
+🛁 me you don't have any oxen left,     🛁
+🪣 if you can even count! It kicked     🪣
+🐂 the bucket SO OF COURSE IT DOESN'T   🐂
+🛁 EXIST!!                              🛁
+🪣🐂🛁🪣🐂🛁🪣🐂🛁🪣🐂🛁🪣🐂🛁🪣🐂🛁🪣🐂🪣
+
+<33>
+
+🦖🦖🦖🦖🦖🦖🦖🦖🦖🦖🦖🦖🦖🦖🦖🦖🦖🦖🦖🦖🦖🦖🦖
+🦖    A GROUP OF TYRANNOSAURUSES ATTACK!    🦖
+🦖                                          🦖
+🦖Unfortunately for you, you're in a time   🦖
+🦖LONG BEFORE the brilliant mathematician   🦖
+🦖Ian Malcolm informed us that DINOSAURS    🦖
+🦖FIND A WAY TO KILL HUMANS. You should     🦖
+🦖have thought of that BEFORE you STUPIDLY  🦖
+🦖climbed into that Time Machine to travel  🦖
+🦖back in time to the Oregon Trail, where   🦖
+🦖you could not possibly know so many       🦖
+🦖important things about dinosaurs...       🦖
+🦖                                          🦖
+🦖ALTHOUGH, now I think on it, that MIGHT   🦖
+🦖not have been EXACTLY how it went... I    🦖
+🦖THINK the correct wording was 'LIFE FINDS 🦖
+🦖A WAY' but that's well over 100 years from🦖
+🦖now and instead of life finding a way the 🦖
+🦖Devil will find a way. To torment you.    🦖
+🦖With more dinosaurs. And dragons. Yes     🦖
+🦖they still exist. Oh and the Earth is     🦖
+🦖flat too...                               🦖
+🦖🦖🦖🦖🦖🦖🦖🦖🦖🦖🦖🦖🦖🦖🦖🦖🦖🦖🦖🦖🦖🦖🦖
+
+<34>
+
+🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃
+
+                 /       \
+                /    A    \
+                |TORMENTED|
+                | PIONEER |
+                |  R.I.P. |
+                |_________|
+                 GAME OVER
+
+              Here you lie dead,
+       You tried to outrun a runaway bed.
+       But you slipped and hit your head,
+and now you body's forever in an underground bed!
+
+🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃
+
+<35>
+
+      🌨️🌨️🌨️🌨️🌨️🌨️🌨️🌨️🌨️🌨️🌨️
+      🏔️🏔️🏔️🏔️🏔️🏔️🏔️🏔️🏔️🏔️🏔️
+
+Blizzard in mountain pass--time wasted
+asking Devil for help restocking.
+
+Unfortunately, the unfaithful monster
+only gives you ONE MEASLY BULLET. Like
+that's going to help his most faithful
+lieutenant? Oh but are you faithful?
+
+Perhaps you should have used a mountain
+cable car 🚠, rather than relying on the
+Devil! It's pretty funny you didn't know
+he was unfaithful and yet expects complete
+loyalty. Or else. HE'S COMING.
+
+<36>
+
+You have been on the trail too long and you die of
+boredom.
+
+You know you're lucky to have made it this long. Frankly
+with your behaviour I'm surprised you didn't die from a
+sinful disease much earlier. Or drowning in molasses. Or
+freezing to death with your choice in clothing.
+            🩳🩲👗👙🩳🩲👗👙🩳🩲👗👙
+SERIOUSLY mate, you brought shorts, briefs, A DRESS AND
+A BIKINI on the Oregon Trail? What the hell were you
+thinking? Actually though...now I think on it...perhaps
+Hell WILL serve you better? I hear the Summers are
+AMAZING there! Winters, not so much.
+
+At least your family gets free food now, assuming monsters
+are edible. I'm not sure if they are. I suspect they would
+be poisoned or die from your hot, burning flesh.
+
+<37>
+
+You'd better do some hunting or buy food soon, before you starve
+to death! Or don't. Let's face it. You'd deserve it.
+
+<38>
+
+😈🏥😈🏥😈🏥😈🏥😈🏥😈🏥😈🏥😈🏥😈🏥😈🏥😈🏥😈🏥😈
+🏥Doctor's bill is $666 and you can't afford it 🏥
+😈DUE TO ALL YOUR RECKLESS SPENDING! HE MUST BE 😈
+🏥POSSESSED BY BEELZEBUB! SURELY ONLY THE DEVIL 🏥
+😈would do this. It's not like you've ever      😈
+🏥killed a helpless animal or human, never      🏥
+😈robbed anyone, never ate human flesh or done  😈
+🏥any other heinous thing, never sinned ...     🏥
+😈                                              😈
+🏥NO. STOP LYING! YOU signed the Devil's book!  🏥
+😈You should have listened to your Reverend     😈
+🏥Samuel Parris way back in 1692. All these     🏥
+😈wild, strange and bad happenings, since you   😈
+🏥began your journey are ALL YOUR fault, EVEN   🏥
+😈YOUR DAUGHTERS' WILD DANCING BY THE NIGHT     😈
+🏥FIRES AS IF POSSESSED! Not that I'm going to  🏥
+😈complain about THAT...Hell, THEY ASKED ME TO  😈
+🏥JOIN THEM!                                    🏥
+😈🏥😈🏥😈🏥😈🏥😈🏥😈🏥😈🏥😈🏥😈🏥😈🏥😈🏥😈🏥😈
+
+<39>
+
+🍖👶🍖👶🍖👶🍖👶🍖👶🍖👶🍖👶🍖👶🍖👶🍖
+👶  (     SON'S VOICE          )    👶
+🍖                                  🍖
+👶  How you feeling about eating    👶
+🍖  me? Eating your own son, NO     🍖
+👶  WONDER she was having an affair 👶
+🍖  before her untimely death! It   🍖
+👶  was with YOUR SISTER AND HER    👶
+🍖  HUSBAND.                        🍖
+👶                                  👶
+🍖  OH NO. NO, NO, NO, NO!! Please  🍖
+👶  don't tell me you ate her too.  👶
+🍖  Wait. You didn't feed her to us,🍖
+👶  did you? Ugh, you did, didn't   👶
+🍖  you? You're a sick, sick person.🍖
+👶                                  👶
+🍖👶🍖👶🍖👶🍖👶🍖👶🍖👶🍖👶🍖👶🍖👶🍖
+
+
+<40>
+
+💩💩💩💩💩💩💩💩💩💩💩💩💩💩
+🚽🚽🚽🚽🚽🚽🚽🚽🚽🚽🚽🚽🚽🚽
+💩💩💩💩💩💩💩💩💩💩💩💩💩💩
+
+You have died of dysentery.
+
+CONGRATULATIONS ON REACHING
+    LEGENDARY STATUS!
+
+💩💩💩💩💩💩💩💩💩💩💩💩💩💩
+🚽🚽🚽🚽🚽🚽🚽🚽🚽🚽🚽🚽🚽🚽
+💩💩💩💩💩💩💩💩💩💩💩💩💩💩
+
+<41>
+
+🩸🩸🩸🩸🩸🩸🩸🩸🩸🩸🩸🩸🩸🩸🩸🩸🩸🩸
+🩸🩸🩸🩸🩸🩸🩸🩸🩸🩸🩸🩸🩸🩸🩸🩸🩸🩸
+🩸🩸 YOU HAVE DIED OF INJURIES! 🩸🩸
+🩸🩸🩸🩸🩸🩸🩸🩸🩸🩸🩸🩸🩸🩸🩸🩸🩸🩸
+🩸🩸🩸🩸🩸🩸🩸🩸🩸🩸🩸🩸🩸🩸🩸🩸🩸🩸
+
+  Better than diarrhoea though,
+  right?
+
+  Frankly, it serves you right.
+  If you hadn't wasted all that
+  time and money sinning you
+  MIGHT have made it. But I guess
+  there's no real difference;
+  after all, none of us really
+  make it out alive, do we? Well
+  off you go then! HEAVEN AWAITS!!
+  Or does it?
+
+<42>
+
+Do you want to (1) stop at the next fort 🏰, (2) hunt 📸 or (3) continue? 
+<43>
+
+Do you want to (1) hunt 📸 or (2) continue? 
+<44>
+
+You need more bullets to go hunting. Or -- do you?
+
+<45>
+
+You have died of exhaustion. I'm SURE
+your victims ARE MOURNING FOR YOUR FAMILY.
+Assuming they're not too busy EATING YOU
+🍕🍔🍟🥪🌯🌮🌭 WITH THEM. I KNOW FOR A
+FACT your daughters LOVE meat and I'm
+sure they're already devouring you!
+Hopefully they'll save some for everyone
+else this time; it'd be a REAL SHAME if
+your body went to waste...or would it
+be?
+
+<46>
+
+💋❌💰💋❌💰💋❌💰💋❌💰💋❌💰💋❌💰💋❌💰💋❌💰💋❌💰❌💋
+❌DON'T BE ABSURD! You don't have that kind of money.   ❌
+💰In fact, one of your daughters told me JUST LAST      💰
+💋NIGHT that ONCE AGAIN you had a delightfully sinful   💋
+❌night! NO! I KNOW WHAT YOU'RE THINKING! NOTHING       ❌
+💰HAPPENED BETWEEN US! STOP THAT RIGHT NOW, YOU         💰
+💋FILTHY SINNER!                                        💋
+❌                                                      ❌
+💰Hmm...although...now I think on it, I'm starting      💰
+💋to wonder... OH HELL! NO NO NO! What if she seduced   💋
+❌me and we DID DO something? That would be AWFUL,      ❌
+💰JUDGING YOU WHILE HAVING AN AFFAIR WITH ONE OF THE    💰
+💋WOMEN! Still sure WE'D NEVER SIGN THE DEVIL'S BOOK!   💋
+❌                                                      ❌
+💰Although...I don't really remember WHAT we did last   💰
+💋night... ANYWAY, KEEP US OUT OF IT YOU MONSTER!       💋
+❌                                                      ❌
+💰The book has a cost and money doesn't grow on trees.  💰
+💋Perhaps it might grow on horns though? Ask the Devil  💋
+❌for help. Assuming he helps MONSTERS.                 ❌
+💰💋❌💰💋❌💰💋❌💰💋❌💰💋❌💰💋❌💰💋❌💰💋❌💰💋❌💰💋
+
+<47>
+
+You FINALLY arrived at Oregon City after 2170
+long miles!
+
+TOOK YOU LONG ENOUGH. Probably all your sinful
+detours I've heard so much about but you'd think
+that the Devil would have helped you out on that.
+But I guess as long as you make it to your final
+destination that's what matters, right?
+
+Oh, right. Almost forgot! President Jesse James
+asked me to wish you a prosperous life ahead of
+you...in HELL!
+
+<48>
+
+
+      🔥🌨️🔥🌨️🔥🌨️🔥🌨️🔥🌨️🔥🌨️🔥
+Phantom blizzard from Hell suddenly hits
+and you freeze to death, leaving everyone
+behind. You know the Devil 😈 is calling
+you, right?
+
+               🩳🩲👗👙
+
+And with your choice in clothing, ARE YOU
+REALLY SURPRISED YOU FROZE TO DEATH? I mean
+SERIOUSLY mate, shorts, briefs, A DRESS AND
+A BIKINI on the Oregon Trail? What the hell
+were you thinking?  You're not in Hell,
+you're on the Oregon Trail!
+
+Although...now I think on it...perhaps Hell WILL
+serve you better? I hear the Summers are GREAT
+there! Lots of parties. Winters are -- actually,
+there are no winters. ONLY WEATHER TO BURN YOU
+FOR ETERNITY.
+
+At least your family gets fresh meat on the bone,
+assuming they can stomach eating a horrible
+monster. If I were them I'D BURN YOUR BODY.
+
+<49>
+
+🍔🍟🍔🍟🍔🍟🍔🍟🍔🍟🍔🍟🍔🍟🍔🍟🍔🍟🍔🍟🍔🍟🍔🍟🍔
+🍟Uh oh. THERE'S ANOTHER ELF! You must be       🍟
+🍔losing your mind my friend! ELVES DON'T       🍔
+🍟EXIST, unless you ask a German. They can't    🍟
+🍔even count to 11 without claiming there are   🍔
+🍟elves! Neun, zehn, Elf ... I guess I might    🍟
+🍔be losing my mind too! BETTER SHOOT THE ELF   🍔
+🍟BEFORE IT TAKES YOUR DAUGHTERS AWAY AND EATS  🍟
+🍔THEM! You might need them for food later on,  🍔
+🍟you HORRIBLE, HORRIBLE MONSTER. They are      🍟
+🍔heavenly women and are not for evil Devil     🍔
+🍟worshippers to eat! NO. NOT FOR ME EITHER!    🍟
+🍔Stop going there you sicko! They are NOT food 🍔
+🍟and YOU CANNOT GO TO HEAVEN, YOU DEVIL        🍟
+🍔WORSHIPPING MONSTER! Cut it out. NO! NOT THEM!🍔
+🍟STOP WHAT YOU'RE DOING!!!                     🍟
+🍔🍟🍔🍟🍔🍟🍔🍟🍔🍟🍔🍟🍔🍟🍔🍟🍔🍟🍔🍟🍔🍟🍔🍟🍔
+
+<50>
+
+You need more bullets to go hunting. Or..do you?
+
+<51>
+
+You shot a Bald Eagle 🦅. WHY, monster,
+WHY?!
+
+I mean look at its former strength, its
+majesty! No wonder it became the symbol
+of America!
+
+GREAT JOB Devil worshipping pioneer, you
+just killed America! I hope it's poisoned
+or you at least choke on the bones.
+
+<52>
+
+    🫃🫃🫃🫃🫃🫃🫃🫃🫃🫃🫃🫃🫃🫃🫃🫃🫃🫃
+Great shot! YOU GOT THE FATTEST ONE THERE! As if
+that should be hard. IT COULD BARELY MOVE! But
+with your WILD SHOOTING AND HORRIBLE AIM the
+ONLY REASON you didn't miss by a hundred miles is
+you signed the Devil's book, EVEN THOUGH IT WAS AS
+WIDE AS A BLUE WHALE. There's no way you'd have got
+such a nice shot EVEN IF THE POOR BEAST WAS
+PRACTICALLY DEAD. I'm STILL surprised you didn't
+shoot yourself in the eyes. But the Devil DOES
+exact his dues and the animal might have been
+poisoned. Eat at your own risk. OR STARVE.
+Let's face it, YOU'RE DOOMED.
+    🫃🫃🫃🫃🫃🫃🫃🫃🫃🫃🫃🫃🫃🫃🫃🫃🫃🫃
+
+<53>
+
+WHAT A TERRIBLE SHOT! How could anyone POSSIBLY miss a helpless animal that was
+standing still, 100 FEET WIDE AND 150 YEARS OLD? IT WAS SO FAT IT WOULD MAKE
+100 BLUE WHALES OBESE!
+
+I hope you starve, you murderous beast, and it looks like you're going to,
+after WASTING ALL THOSE BULLETS and MISSING FISH OUT OF WATER. You'd better
+buy some food NOW.
+
+<54>
+
+😈💋😈💋😈💋😈💋😈💋😈💋😈💋😈💋😈💋😈💋😈💋😈
+😈 Severe illness. You must see Doctor      😈
+😈 Beelzebub. Assuming he's not too busy    😈
+😈 trying to tempt your daughters. Don't    😈
+😈 worry though! I don't think he'll        😈
+😈 succeed. I haven't yet either and I'VE   😈
+😈 BEEN TRYING FOR YEARS! THEY ARE          😈
+😈 INCORRIGIBLE MUMPSIMUSES!! No. I don't   😈
+😈 think he's possessed me. I'm just like   😈
+😈 that. But we can test it. What do you    😈
+😈 think about performing an exorcism on    😈
+😈 me?                                      😈
+😈                                          😈
+😈 Actually...no. I take that back. Let me  😈
+😈 perform one on YOU to make sure it works.😈
+😈 I'm pretty sure they don't but better    😈
+😈 to do it on a Devil worshipper than      😈
+😈 someone who's unhinged from watching you.😈
+😈 Safer that way.                          😈
+😈💋😈💋😈💋😈💋😈💋😈💋😈💋😈💋😈💋😈💋😈💋😈
+
+<55>
+
+If we are what we eat then doesn't that mean we're all cannibals?
+
+<56>
+
+
+🏇🤯🏇🤯🏇🤯🏇🤯🏇🤯🏇🤯🏇🤯🏇🤯🏇🤯🏇🤯🏇🤯🏇🤯🏇🤯🏇🤯
+🤯      Riders ahead. They don't look hostile.        🏇
+🤯🔫🔫 🔫 🔫 🔫 🔫 🔫 🔫 🔫 🔫 🔫 🔫 🔫 🔫 🔫 🔫  🔫  🏇
+🏇🔫Oh! I know what to do! You should TOTALLY ROB 🔫  🤯
+🤯🔫THEM BLIND!! They won't know what hit them and🔫  🏇
+🏇🔫it's not like they need their belongings,     🔫  🤯
+🤯🔫not where they are going, and you're going to 🔫  🏇
+🏇🔫need them soon, with your reckless behaviour. 🔫  🤯
+🤯🔫 🔫 🔫 🔫 🔫 🔫 🔫 🔫 🔫 🔫 🔫 🔫 🔫 🔫 🔫 🔫 🔫  🏇
+🏇🤯🏇🤯🏇🤯🏇🤯🏇🤯🏇🤯🏇🤯🏇🤯🏇🤯🏇🤯🏇🤯🏇🤯🏇🤯🏇🤯
+
+<57>
+
+
+<58>
+
+
+<59>
+
+
+<60>
+
+
+<61>
+
+💉💉💉💉💉💉💉💉💉💉💉💉💉💉💉💉💉💉💉💉💉
+💉You scared them off with your ERRATIC 💉
+💉shooting. NEARLY BLEW MY HEAD OFF TOO.💉
+💉GREAT JOB.                            💉
+💉💉💉💉💉💉💉💉💉💉💉💉💉💉💉💉💉💉💉💉💉
+
+<62>
+
+   🩸🩸🩸🩸🩸🩸🩸🩸🩸🩸🩸🩸🩸🩸🩸🩸
+   🩸🔪💩🔪💩🔪💩🔪💩🔪💩🔪💩🔪💩🩸
+   🩸💩WORST SHOT EVER! You got💩🩸
+   🩸💩knifed 🔪 by the dung!  💩🩸
+   🩸💩How did you miss the    💩🩸
+   🩸💩TRIGGER?                💩🩸
+   🩸🔪💩🔪💩🔪💩🔪💩🔪💩🔪💩🔪💩🩸
+   🩸🩸🩸🩸🩸🩸🩸🩸🩸🩸🩸🩸🩸🩸🩸🩸
+Be honest. IT'S YOUR OWN STUPID FAULT
+FOR TRYING TO ATTACK FRIENDLY PEOPLE!
+Seriously, what the hell kind of person
+does that? I'm glad the dung 💩 knifed 🔪
+you. And remember that if the wound
+becomes infected with bacteria IT'S
+YOUR OWN BLOODY FAULT.
+
+Better have Doctor Beelzebub check it out,
+assuming he wasn't shot and treats MONSTERS.
+I hope he was shot!
+
+<63>
+
+You have to see Doctor Beelzebub!
+
+<64>
+
+
+<65>
+
+
+<66>
+
+    🏇🏇🏇🏇🏇🏇🏇🏇🏇🏇🏇🏇🏇🏇
+Riders were friendly, but check for possible
+losses anyway. It's always the friendly ones
+who do something bad!! They're OBVIOUSLY hiding
+something!
+    ⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️
+
+<67>
+
+<68>
+
+🧛🐺🥄🧛🐺🥄🧛🐺🥄🧛🐺🥄🧛🐺🥄🧛🐺🥄🧛🐺🥄🧛🐺🥄🧛
+🐺 I JUST HATE VAMPIRES! Don't you? If they had 🐺
+🥄 it their way THERE WOULD BE NO SUN! Can you  🥄
+🧛 imagine how HORRIBLE that would be?!         🧛
+🐺                                              🐺
+🥄 Wait. You mean to tell me...you want ETERNAL 🥄
+🧛 Sun and NO Moon?! Only ONE reason for that!  🧛
+🐺 You MUST be a...WEREWOLF! I KNEW IT! Better  🐺
+🥄 watch your heart. If you have one. Your      🥄
+🧛 daughters have SILVER SPOONS and they're FED 🧛
+🐺 UP WITH YOUR BARKING BEHAVIOUR!!             🐺
+🥄                                              🥄
+🧛 On the other blade...IT IS VERY HOT don't    🧛
+🐺 you think? Almost as if it's foreshadowing   🐺
+🥄 what's to come! MAYBE WE SHOULD GET RID OF   🥄
+🧛 FIRE TOO! I mean you're in extreme danger of 🧛
+🐺 that too! THEN WE CAN DROWN you so you can   🐺
+🥄 BURN IN HELL!!! And if that doesn't work,    🥄
+🧛 we can behead you with the SPOONS!!          🧛
+🐺🥄🧛🐺🥄🧛🐺🥄🧛🐺🥄🧛🐺🥄🧛🐺🥄🧛🐺🥄🧛🐺🥄🧛🐺
+
+<69>
+
+🐺🥄🐺🥄🐺🥄🐺🥄🐺🥄🐺🥄🐺🥄🐺🥄🐺🥄🐺🥄🐺🥄🐺🥄🐺
+🥄Suddenly...the hairs on your neck stand up.   🥄
+🐺ARE YOU ACTUALLY A WEREWOLF? You do know that 🐺
+🥄there are silver spoons in your daughters'    🥄
+🐺wagon, right?                                 🐺
+🥄                                              🥄
+🐺Better run for your life or howl to scare     🐺
+🥄them off before it's too late, because        🥄
+🐺they told me that they HATE wolves, your      🐺
+🥄BARKING BEHAVIOUR and THEY'VE HAD ENOUGH OF   🥄
+🐺YOUR DEVIL WORSHIPPING!!                      🐺
+🥄                                              🥄
+🐺Oh and yes. Spoons CAN stab you in the heart. 🐺
+🥄If you don't believe me...try it. Assuming    🥄
+🐺you have a heart in the first place...        🐺
+🥄🐺🥄🐺🥄🐺🥄🐺🥄🐺🥄🐺🥄🐺🥄🐺🥄🐺🥄🐺🥄🐺🥄🐺🥄
+
+<70>
+
+You ran out of bullets and got massacred by the riders.
+
+How I do not know, seeing as how they were friendly. Oh
+I remember now. It's because you actually decided to
+cowardly try and rob them blind.
+
+<71>
+
+       ____
+  ____(    )____
+ /            o \
+(FLAT 🫓 OXEN 🐂)
+ \____   ____o_/
+      | |
+Flat oxen--slows you down.
+
+And don't try telling me you didn't have an
+ox because that would also be a flat ox!
+
+<72>
+
+🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄
+🦄 About 100 feet from here YOU SWEAR you 🦄
+🦄 see an ox stuck in a hole. THANK THE   🦄
+🦄 DEVIL IT'S NOT A DONKEY! You KNOW what 🦄
+🦄 that would make!! There are enough     🦄
+🦄 here already! NO! Don't look at me! I  🦄
+🦄 DON'T MEAN THAT, YOU LITTLE JERK!!     🦄
+🦄                                        🦄
+🦄 But of course YOU'RE WRONG AS USUAL.   🦄
+🦄 IT'S NOT AN OX. You NEED a pair of VERY🦄
+🦄 POWERFUL glasses my friend. Might also 🦄
+🦄 want to avoid that funny fungi...could 🦄
+🦄 be related...somehow. But really get   🦄
+🦄 some eyeglasses!                       🦄
+🦄                                        🦄
+🦄   IT'S OBVIOUS YOU SEE A UNICORN!!!!   🦄
+🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄
+
+<73>
+
+Bad luck--you got gangrene in one of your limbs and you
+had to chop it off. Or maybe it was good luck? FREE FOOD
+TONIGHT!!! 🍖
+
+<74>
+
+Oh dear. That isn't the Barghest AGAIN is it? Better watch
+your back! And front. And above you. Actually, YOU'RE DOOMED
+and you know it. Your fate was sealed upon signing the Devil's
+book. Honestly, what were you thinking? You HAD to have known it
+always comes with a cost. And you and I BOTH KNOW that the women
+were warning you - but you just HAD to have your way, didn't you?
+
+Well the Oregon Trail is out to get you in every direction and
+the odds are you won't make it out alive. You might be in good
+company there, AND YOU AT LEAST GET TO SEE DINOSAURS ALIVE (LUCKY
+YOU!!) BUT THERE'S NO AIR CONDITIONING and I heard it gets REALLY
+HOT down there. Then again, I also heard there's no heater in
+Heaven... Yup, either way YOU'RE DOOMED AND YOU KNOW IT! But don't
+feel too bad. At least you won't FREEZE TO DEATH. You might here
+though... Yup, FREEZE TO DEATH HERE and then BURN TO DEATH THERE!
+
+<75>
+
+🍖🥶🥶🥶🥶🥶🥶🥶🥶🥶🥶🥶🥶🥶🥶🥶🥶🥶🥶🥶🥶🥶🥶
+🍖Your son gets lost and FREEZES TO DEATH!  🍖
+🍖                                          🍖
+🍖But on the bright side, you now have      🍖
+🍖one fewer person to feed and not only     🍖
+🍖that you get a FREE MEAL TONIGHT!!! Not   🍖
+🍖that you've been starving yourself        🍖
+🍖deliberately. You're a glutton and you    🍖
+🍖know it. But hey, now you have FRESH MEAT 🍖
+🍖ON THE BONE!! Why not START A FEAST? You  🍖
+🍖did remember your pots and deadpans,      🍖
+🍖right? IF NOT I HOPE YOU STARVE TO DEATH. 🍖
+🍖OH AND YOU BETTER SHARE THIS TIME!        🍖
+🍖🥶🥶🥶🥶🥶🥶🥶🥶🥶🥶🥶🥶🥶🥶🥶🥶🥶🥶🥶🥶🥶🍖
+
+<76>
+
+💦🚽💩💦🚽💩💦🚽💩💦🚽💩💦🚽💩💦🚽💩💦🚽💩
+🚽OH HELL! That water tasted REALLY     💦
+💩funny! No. Sorry. NOT Hell. There     🚽
+💦is no water in Hell! Well, wherever   💩
+🚽you are, it appears you drank         💦
+💩unpotable water and it's too          🚽
+💦late now.                             💩
+🚽                                      💦
+💩Next time LOOK AT WHAT 💩 you intend💦🚽
+💦on swallowing BEFORE YOU SHOVE IT     💩
+🚽DOWN YOUR THROAT, because you now     💦
+💩have dysentery.                       🚽
+💦🚽💩💦🚽💩💦🚽💩💦🚽💩💦🚽💩💦🚽💩💦🚽💩
+
+<77>
+
+      Heavy rains---time and supplies lost.
+
+       But seriously, you brought these
+              supposed brollies?
+    🌂🌂🌂🌂🌂🌂🌂🌂🌂🌂🌂🌂🌂🌂🌂🌂🌂🌂🌂🌂
+
+         You SHOULD HAVE BROUGHT THESE:
+    ☔️☔️☔️☔️☔️☔️☔️☔️☔️☔️☔️☔️☔️☔️☔️☔️☔️☔️☔️☔️
+                AND THESE HATS!!
+    🧢🧢🧢🧢🧢🧢🧢🧢🧢🧢🧢🧢🧢🧢🧢🧢🧢🧢🧢🧢
+
+<78>
+
+    👑🏴☠️⚓️🚢👑🏴☠️⚓️🚢👑🏴☠️⚓️🚢👑🏴☠️⚓️🚢👑
+    🏴THE QUEEN ANNE'S REVENGE ATTACKS! 🏴
+    ☠️⚓️🚢👑🏴☠️⚓️🚢👑🏴☠️⚓️🚢👑🏴☠️⚓️🚢👑🏴☠️
+
+YES. You're right. That WAS Blackbeard's ship!
+Yes EDWARD TEACH IS ON THE OREGON TRAIL! NO,
+YOU'RE NOT HALLUCINATING. Neither am I. Didn't
+you know he also signed the Devil's book? Oh
+well, now you've been taught. Still, a ghost is
+a ghost...THIS SHOULD BE EASY!!
+
+But face it. After all you've done, you DESERVE
+THIS AND YOU KNOW IT! I HOPE HE ROBS YOU BLIND and
+if you die in the process you know it's your fault.
+Your time is coming and the Devil is calling you,
+laddie.
+
+<79>
+
+              🦵🩸❌💰
+BLACKBEARD DIED OVER A CENTURY AGO AND
+HE STILL GOT YOU!
+
+Yes. SOMEHOW you got shot in the
+leg and robbed by a GHOST.
+
+GREAT JOB!
+
+<80>
+
+
+            🦵🩸❌💰
+
+
+You got shot in the leg and they took one of your oxen,
+whether or not you have any oxen left. Not that that matters much;
+you're more than capable of stealing one, assuming you don't
+sacrifice it to the gods. The Devil. I meant the Devil.
+
+<81>
+
+             WELL DONE, LAD!!!
+
+Somehow, you scared the pirates off!
+Unfortunately you also managed to steal
+food and miscellaneous supplies from
+the pirates as they fled, though I
+honestly haven't a bloody clue how you
+did that. I do hope you get food
+poisoning so you can finally meet the
+Devil like Blackbeard was SUPPOSED to
+have. But aren't historians so awful,
+lying about Blackbeard? YOU'RE NEXT,
+LAD!
+
+<82>
+
+               __________
+              /          \
+             |   🔥🔥🔥   |
+             |___🔥🔥🔥___|
+              O       O
+
+There was a fire in your wagon. Too
+bad only food and supplies were lost!
+You know you deserve worse, right?
+
+<83>
+
+Lost your way in heavy fog but somehow you did
+not lose much time, due to the STRANGE MAP in
+the LAST BOOK you read.
+
+You know which book I mean. Sure. IT IS a FASCINATING
+READ! But you do know it's going to cost you though,
+right?
+
+<84>
+
+🐉🐉🐉🐉🐉🐉🐉🐉🐉🐉🐉🐉🐉🐉🐉🐉🐉🐉🐉🐉🐉
+🐉      A dragon eats you!              🐉
+🐉                                      🐉
+🐉 No, I know what you're probably      🐉
+🐉 thinking. I would TOO! Who wants     🐉
+🐉 to be eaten by a dragon? But THIS    🐉
+🐉 TIME IT WAS NOT any of the grass     🐉
+🐉 you understandably ate when you      🐉
+🐉 were ravenous.                       🐉
+🐉                                      🐉
+🐉 No. I'm afraid not. The Earth is     🐉
+🐉 flat, dragons are real and the Sun   🐉
+🐉 is crazy. Oh and yes the Devil is    🐉
+🐉 also real. But you ALREADY knew that 🐉
+🐉 didn't you? Welcome to the harshness 🐉
+🐉 of the Oregon Trail. Or was it the   🐉
+🐉 Devil's bedchamber? Oh well, you're  🐉
+🐉 dead now so no sense brooding over   🐉
+🐉 what seems like Hell. Why not go to  🐉
+🐉 the REAL Hell instead? OH HELL, WHY  🐉
+🐉 NOT make it the Devil's bedchamber?  🐉
+🐉 Be faithful. FOR ONCE. HELL, YOU     🐉
+🐉 MIGHT EVEN ENJOY IT! No, not Hell.   🐉
+🐉 Okay...actually...yeah, Hell too.    🐉
+🐉🐉🐉🐉🐉🐉🐉🐉🐉🐉🐉🐉🐉🐉🐉🐉🐉🐉🐉🐉🐉
+
+<85>
+
+            🐍🐍🐍🐍🐍🐍🐍
+
+You die of a snakebite because you stupidly didn't bring any
+antivenin. Oh wait. I forgot. They haven't invented it yet
+and nobody wants to suck the venom out of you. I'm actually
+surprised they haven't abandoned you entirely. Oh well, now
+they don't need to, although they might not be wise to have
+the fresh off the bone meat.
+
+            🐍🐍🐍🐍🐍🐍🐍
+
+<86>
+
+                ❌❌❌
+                ❌🐂❌
+                ❌❌❌
+
+Wagon train got swamped fording river; lost
+food, clothes and an ox got stuck, whether or
+not you spared no expense on oxen. Alas, you
+couldn't save him.
+
+WAIT. You didn't swim in the Molasses River
+AGAIN, did you? HOW MANY TIMES DO I HAVE TO
+REMIND YOU THAT THIS IS A VERY BAD IDEA? If
+only you thought to bring a portable oven so
+you could AT LEAST bake molasses cookies 🍪!
+But you didn't. I hope you starve. Then you'll
+be able to cook all the cookies in the world.
+HELL. I MEANT IN HELL.
+
+<87>
+
+Wild dragons attack! And you actually thought you could shoot
+them? Everyone knows dragons have armoured scales. I mean what
+was the point? You should have brought yourself a pair of wings
+so you could fly straight into the fire, so that you would've
+gone out in STYLE and with an amazing legacy!
+
+And no, I'm afraid you weren't hallucinating. The Earth IS flat,
+dragons ARE real and the Sun IS crazy. Oh and the Devil is real
+too. But you already knew that, didn't you, you filthy sinner?
+
+<88>
+
+Unfortunately, bullets won't help you with dragons; I'm surprised
+you didn't know that. Anyone knows dragons have armoured scales.
+Unfortunately for you they took a few oxen and upturned your wagon
+train, causing you further delays.
+
+Just be thankful you're still alive because this time you were walking
+on dragon eggshells. No. If you did that you'd be dead. I meant walking
+a thin line.
+
+<89>
+
+GREAT SHOOTING---they didn't get anything but you killed
+one of your oxen and somehow you managed to upturn your wagon.
+
+<90>
+
+Really? You tried to shoot a dragon? Well that was pointless. They ate one
+of your oxen and upturned your wagon train, causing further delays.
+
+<91>
+
+😈👶😈👶😈👶😈👶😈👶😈👶😈👶😈
+👶 (     SON'S VOICE     )  👶
+😈                          😈
+👶 How you feeling about    👶
+😈 eating me? Eating your   😈
+👶 own son, and you're      👶
+😈 sick, too.               😈
+👶                          👶
+😈 Probably food poisoning. 😈
+👶 GOOD. SERVES YOU RIGHT.  👶
+😈 Time to die.             😈
+👶😈👶😈👶😈👶😈👶😈👶😈👶😈👶
+
+<92>
+
+    🥶🥶🥶🥶🥶🥶🥶🥶🥶🥶🥶🥶
+    🥶You freeze to death.🥶
+    🥶🥶🥶🥶🥶🥶🥶🥶🥶🥶🥶🥶
+           👙🩳🩲👗
+And with your choice in clothing, ARE YOU
+REALLY SURPRISED? I mean SERIOUSLY mate,
+shorts, briefs, A DRESS AND A BIKINI on
+the Oregon Trail? What the hell were you
+thinking? You're not in Hell, you're on
+the Oregon Trail!
+
+Although...now I think on it, perhaps
+Hell WILL suit you better? I hear the
+Summers are GREAT there! Winter is as
+cold as Hell though. No. Not Hell. Hell
+does not get cold! You're going to BURN,
+BURN, BURN!!!!
+
+<93>
+
+😈🏥😈🏥😈🏥😈🏥😈🏥😈🏥😈🏥😈🏥😈🏥😈🏥😈🏥😈🏥😈
+🏥Doctor's bill is $666! HE MUST BE POSSESSED   🏥
+😈BY BEELZEBUB! SURELY ONLY THE DEVIL would     😈
+🏥do this. It's not like you've ever killed a   🏥
+😈helpless animal or human, never robbed        😈
+🏥anyone, never ate human flesh or done any     🏥
+😈other heinous thing, never sinned ...         😈
+🏥                                              🏥
+😈NO. STOP LYING! YOU signed the Devil's book!  😈
+🏥You should have listened to your Reverend     🏥
+😈Samuel Parris way back in 1692. All these     😈
+🏥wild, strange and bad happenings, since you   🏥
+😈began your journey are ALL YOUR fault, EVEN   😈
+🏥YOUR DAUGHTERS' WILD DANCING BY THE NIGHT     🏥
+😈FIRES AS IF POSSESSED! Not that I'm going to  😈
+🏥complain about THAT...Hell, THEY ASKED ME TO  🏥
+😈JOIN THEM!                                    😈
+🏥😈🏥😈🏥😈🏥😈🏥😈🏥😈🏥😈🏥😈🏥😈🏥😈🏥😈🏥😈🏥
+
+<94>
+
+🌂☔️🧢🌂☔️🧢🌂☔️🧢🌂☔️🧢🌂☔️🧢🌂☔️🧢🌂
+☔️ Hail storm--YOU WERE HIT ON THE  ☔️
+🧢 HEAD and supplies were damaged.  🧢
+🌂 But did you REALLY think this    🌂
+☔️ CLOSED BROLLY 🌂 was going to    ☔️
+🧢 help you against HAIL? Even this 🧢
+🌂 one ☔️ PROBABLY wouldn't do much 🌂
+☔️ good. YOU SHOULD HAVE BROUGHT A  ☔️
+🧢 HAT 🧢!!              🌂         🧢
+🌂☔️🧢🌂☔️🧢🌂☔️🧢🌂☔️🧢🌂☔️🧢🌂☔️🧢🌂
+
+<95>
+
+Helpful Indians show you where to find
+more food. Pizza, hamburgers, chips/fries
+and other greasy, fatty foods ...
+            🍕🍔🍟🥪🌯🌮🌭
+Okay so IT'S ONLY A HEART ATTACK ON A
+PLATE but at least you'll survive another
+day...if you don't have a heart attack
+first, that is... Better have your Doctor
+Beelzebub check you out. If he's still
+alive. Oh no.
+
+You didn't eat him when you were starving
+last time, did you? If so I hope you DO
+have a heart attack!
+
+<96>
+
+
+🧶🧶🧶🧶🧶🧶🧶🧶🧶🧶🧶
+🧶 Rugged mountains.🧶
+🧶🧶🧶🧶🧶🧶🧶🧶🧶🧶🧶
+
+<97>
+
+You got lost, losing valuable time asking
+the Devil 😈 for directions to the
+CROSSROADS ❌☦️ ⚠️ 🚸.
+
+But honestly, HOW DID you get lost? It's
+practically a TRAFFIC JAM OUT HERE AND
+ONLY A COMPLETE MORON COULD LOSE THEIR WAY.
+
+HISTORIANS WILL BE TALKING ABOUT THIS YEARS
+DOWN THE TRAIL! OH NO. WHAT DID YOU DO THIS
+TIME? You did do something didn't you? I KNOW
+you did! You ALWAYS do something stupid!
+
+<98>
+
+😈💋😈💋😈💋😈💋😈💋😈💋😈💋😈💋😈💋😈💋😈💋😈
+😈 Severe illness. You must see Doctor      😈
+😈 Beelzebub. Assuming he's not too busy    😈
+😈 trying to tempt your daughters. Don't    😈
+😈 worry though! I don't think he'll        😈
+😈 succeed. I haven't yet either and I'VE   😈
+😈 BEEN TRYING FOR YEARS! THEY ARE BLOODY   😈
+😈 INCORRIGIBLE MUMPSIMUSES!! No. I don't   😈
+😈 think he's possessed me. I'm just like   😈
+😈 that. But we can test it. What do you    😈
+😈 think about performing an exorcism on    😈
+😈 me?                                      😈
+😈                                          😈
+😈 Actually...no. I take that back. Let me  😈
+😈 perform one on YOU to make sure it works.😈
+😈 I'm pretty sure they don't but better    😈
+😈 to do it on a Devil worshipper than      😈
+😈 someone who's unhinged from watching you.😈
+😈 Safer that way.                          😈
+😈💋😈💋😈💋😈💋😈💋😈💋😈💋😈💋😈💋😈💋😈💋😈
+
+<99>
+
+You ran out of medical supplies and unfortunately the Devil's in
+Heaven on holiday / business and can't help you restock.
+
+But honestly, who goes on a 2170 MILES journey WITHOUT bringing
+medical supplies? You brought this on to yourself and you deserve it.
+But at least I just heard that the Devil is on his way home to greet
+you and thank god for that! Send me a postcard, will you? I want to
+make sure it works out well for you down there.
+
+<100>
+%ld
+<101>
+
+Wagon train damaged! Lost time resupplying from the Devil.
+
+<102>
+
+Suddenly your clocks stop...
+
+I guess it must have happened AGAIN! And WHY THE DEVIL DO YOU
+KEEP SWIMMING IN THE MOLASSES RIVER?! Honestly, you'll be lucky
+if you don't SINK IN IT before it sinks into your
+stick-in-the-molasses head.
+
+<103>
+
+⛰️⛰️⛰️⛰️⛰️⛰️⛰️⛰️⛰️⛰️⛰️⛰️⛰️⛰️⛰️⛰️
+
+You made it safely through South
+Pass--no snow. Clearly the Devil
+has your back. For now my dear
+fiend, for now...
+
+He might be plotting against you.
+Oh hell. I KNOW HE IS. HE TOLD ME
+HE IS. Your time is coming AND THE
+DEVIL AND I BOTH CANNOT WAIT!
+Neither can your daughters. They
+told me last night in the wagon.
+YES. I KNOW THEM.
+
+<104>
+
+      🌨️🌨️🌨️🌨️🌨️🌨️🌨️🌨️🌨️🌨️🌨️
+      🏔️🏔️🏔️🏔️🏔️🏔️🏔️🏔️🏔️🏔️🏔️
+
+Blizzard in mountain pass--time wasted
+asking Devil for help restocking.
+
+Unfortunately, the unfaithful monster
+only gives you ONE MEASLY BULLET. Like
+that's going to help his most faithful
+lieutenant? Oh but are you faithful?
+
+Perhaps you should have used a mountain
+cable car 🚠, rather than relying on the
+Devil! It's pretty funny you didn't know
+he was unfaithful and yet expects complete
+loyalty. Or else. HE'S COMING.
+
+<105>
+
+🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦
+🪦 All you had was mouldy bread,🪦
+🪦                              🪦
+🪦                              🪦
+🪦 Therefore here you must lie. 🪦
+🪦                              🪦
+🪦                              🪦
+🪦   Because now you're dead.   🪦
+🪦                              🪦
+🪦                              🪦
+🪦         GOODBYE!             🪦
+🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦
+
+<106>
+
+How does a turtle tell his friend to move aside? Scute over!
+
+<107>
+
+You ran out of medical supplies and unfortunately the Devil's in
+Heaven on holiday / business and can't help you restock.
+
+But honestly, who goes on a 2170 miles journey WITHOUT bringing
+medical supplies? You brought this on to yourself and you deserve it.
+But at least I just heard that the Devil is on his way home to greet
+you and thank god for that! Send me a postcard, will you? I want to
+make sure it works out well for you down there.
+
+<108>
+
+If your printer is working you're VERY OBVIOUSLY not using it right. And if you
+do not understand this may your good fortune last my dear friend. You'll need it.
+
+<109>
+
+🩸🩸🩸🩸🩸🩸🩸🩸🩸🩸🩸🩸🩸🩸🩸🩸🩸🩸
+🩸🩸🩸🩸🩸🩸🩸🩸🩸🩸🩸🩸🩸🩸🩸🩸🩸🩸
+🩸🩸 YOU HAVE DIED OF INJURIES! 🩸🩸
+🩸🩸🩸🩸🩸🩸🩸🩸🩸🩸🩸🩸🩸🩸🩸🩸🩸🩸
+🩸🩸🩸🩸🩸🩸🩸🩸🩸🩸🩸🩸🩸🩸🩸🩸🩸🩸
+
+  Better than diarrhoea though,
+  right?
+
+  Frankly, it serves you right.
+  If you hadn't wasted all that
+  time and money sinning you
+  MIGHT have made it. But I guess
+  there's no real difference;
+  after all, none of us really
+  make it out alive, do we? Well
+  off you go then! HEAVEN AWAITS!!
+  Or does it?
+
+<110>
+
+💩💩💩💩💩💩💩💩💩💩💩💩💩💩
+🚽🚽🚽🚽🚽🚽🚽🚽🚽🚽🚽🚽🚽🚽
+💩💩💩💩💩💩💩💩💩💩💩💩💩💩
+
+You have died of dysentery.
+
+CONGRATULATIONS ON REACHING
+    LEGENDARY STATUS!
+
+💩💩💩💩💩💩💩💩💩💩💩💩💩💩
+🚽🚽🚽🚽🚽🚽🚽🚽🚽🚽🚽🚽🚽🚽
+💩💩💩💩💩💩💩💩💩💩💩💩💩💩
+
+<111>
+
+If you lost your sense of irony then try looking in a blue tissue box.
+
+<112>
+
+I MAY be delusional but at least I have a VIVID imagination!
+
+<113>
+
+%f
+<114>
+
+You FINALLY arrived at Oregon City after 2170
+long miles!
+
+TOOK YOU LONG ENOUGH. Probably all your sinful
+detours I've heard so much about but you'd think
+that the Devil would have helped you out on that.
+But I guess as long as you make it to your final
+destination that's what matters, right?
+
+Oh, right. Almost forgot! President Jesse James
+asked me to wish you a prosperous life ahead of
+you...in HELL!
+
+<115>
+
+Monday 
+<116>
+
+Tuesday 
+<117>
+
+Wednesday 
+<118>
+
+Thursday 
+<119>
+
+Friday 
+<120>
+
+Saturday 
+<121>
+
+Sunday 
+<122>
+
+1847
+<123>
+
+July 
+<124>
+
+August 
+<125>
+
+September 
+<126>
+
+October 
+<127>
+
+November 
+<128>
+
+December 
+<129>
+
+Cake. Need cake.
+
+<130>
+
+President Jesse James sends you his heartiest congratulations
+and wishes you a prosperous life ahead at your new home in HELL!
+
+<131>
+
+What does a tomato do when it sees an old friend? It ketches up with it.
+
+<132>
+
+The only reason the British Museum has only a model of the Pyramid of Giza
+is because the real thing is too big to move.
+
+<133>
+
+Windows driving you crazy? Buy a scanner and install the included SANE library!
+
+<134>
+
+Nitrous Oxide: the carbon monoxide for laughing hyenas; they'll literally die from laughter.
+
+<135>
+
+I can't imagine ever going wireless. Not only am I fully wired, I enjoy it immensely.
+
+<136>
+
+If you're confused when someone tells you you're wrong to write:
+
+    void main()
+    {
+    }
+
+please feel free to try the following instead:
+
+    void brain()
+    {
+    }
+
+because that is perfectly valid C.
+
+Sorry for the inconvenience and thanks for your understanding,
+
+-- Neurosurgery Department of C, AT&T Bell Labs.
+
+<137>
+
+😈💋😈💋😈💋😈💋😈💋😈💋😈💋😈💋😈💋😈💋😈💋😈
+😈 Severe illness. You must see Doctor      😈
+😈 Beelzebub. Assuming he's not too busy    😈
+😈 trying to tempt your daughters. Don't    😈
+😈 worry though! I don't think he'll        😈
+😈 succeed. I haven't yet either and I'VE   😈
+😈 BEEN TRYING FOR YEARS! THEY ARE          😈
+😈 INCORRIGIBLE MUMPSIMUSES!! No. I don't   😈
+😈 think he's possessed me. I'm just like   😈
+😈 that. But we can test it. What do you    😈
+😈 think about performing an exorcism on    😈
+😈 me?                                      😈
+😈                                          😈
+😈 Actually...no. I take that back. Let me  😈
+😈 perform one on YOU to make sure it works.😈
+😈 I'm pretty sure they don't but better    😈
+😈 to do it on a Devil worshipper than      😈
+😈 someone who's unhinged from watching you.😈
+😈 Safer that way.                          😈
+😈💋😈💋😈💋😈💋😈💋😈💋😈💋😈💋😈💋😈💋😈💋😈
+
+<138>
+
+💊😈💊😈💊😈💊😈💊😈💊😈💊😈💊😈💊😈💊😈💊😈💊😈💊😈💊😈
+😈  Mild illness. Medicine used. Not sure why though. 💊
+💊  IT WAS ONLY A SNIFFLE. Probably just the Devil    😈
+😈  TRYING TO ESCAPE FROM YOUR CURSED NOSTRILS. In    💊
+💊  the future THEY BLESS PEOPLE FOR SNEEZING. You    😈
+😈  can die happy knowing you started a thing. Even   💊
+💊  if your death will bring you EVERLASTING TORMENT. 😈
+😈💊😈💊😈💊😈💊😈💊😈💊😈💊😈💊😈💊😈💊😈💊😈💊😈💊😈💊
+
+<139>
+
+The Tale of Two Gates: Bill Gates puts holes in your
+windows; Josh Gates puts holes in the ground. And your
+grave.
+
+                        The end.
+
+<140>
+
+Fun fact about blindness:
+
+<141>
+
+🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦
+🪦                 /       \                    🪦
+🪦                /    A    \                   🪦
+🪦                |TORMENTED|                   🪦
+🪦                | PIONEER |                   🪦
+🪦                |  R.I.P. |                   🪦
+🪦                |_________|                   🪦
+🪦                 GAME OVER                    🪦
+🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+🔥Unfortunately, due to what can only be an     🔥
+🔥ADMINISTRATIVE FOUL-UP, you end up somewhere  🔥
+🔥you did not expect as your forever home. But  🔥
+🔥honestly, after signing the Devil's book, DO  🔥
+🔥YOU REALLY BELIEVE YOU DON'T BELONG HERE? Be  🔥
+🔥honest. For once. You know you belong here.   🔥
+🔥Oh, by the way, god asked me to wish you a    🔥
+🔥PROSPEROUS LIFE ahead...                      🔥
+🔥                                              🔥
+🔥        😈😈😈 WELCOME TO HELL!! 😈😈😈       🔥
+🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+
+<142>
+
+         ___🔥🔥🔥___
+        /  🔥🔥🔥    \
+        |🔥  WAGON   🔥
+ 🔥🔥🔥 |___🔥🔥🔥___🔥🔥🔥
+ 🔥🔥🔥🔥🔥🔥O 🔥🔥🔥 O🔥🔥
+🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦
+🪦 A fire breaks out in your  🪦
+🪦 wagon, and the wind quickly🪦
+🪦 fans the flames, CAUSING   🪦
+🪦 YOUR AMMO TO BLOW UP,      🪦
+🪦 killing you! Somehow       🪦
+🪦 everyone else survived...  🪦
+🪦                            🪦
+🪦 Frankly, IT WAS ABOUT TIME.🪦
+🪦 I mean WHAT KIND OF IDIOT  🪦
+🪦 overloads their wagon with 🪦
+🪦 WEAPONS?                   🪦
+🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦
+
+<143>
+
+                .''.
+               :_\/_:
+              .:::::.
+               ':/\:'
+                '..'
+               /    \
+              |Heaven|
+              |Awaits|
+              | You! |
+              '------'
+
+<144>
+
+🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃
+
+                 /       \
+                /    A    \
+                |TORMENTED|
+                | PIONEER |
+                |  R.I.P. |
+                |_________|
+                 GAME OVER
+
+              Here you lie dead,
+       You tried to outrun a runaway bed.
+       But you slipped and hit your head,
+and now you body's forever in an underground bed!
+
+🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃
+
+<145>
+
+🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂
+🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃
+🐂  The only food you have left is an ox!     🐂
+🐂                                            🐂
+🐂  As you have no choice left, you promptly  🐂
+🐂  kill it before it runs away, and it sure  🐂
+🐂  was DELICIOUS!!!                          🐂
+🐂                                            🐂
+🐂     (       OX'S VOICE          )          🐂
+🐂  You're a sick, sick individual. You do    🐂
+🐂  know that, right? First you BURDEN ME     🐂
+🐂  WITH ALL YOUR RUBBISH and THEN YOU EAT ME?🐂
+🐂                                            🐂
+🐂  I hope you remember you were starving me  🐂
+🐂  to death so it's your fault you won't get 🐂
+🐂  much sustenance from MURDERING YOUR       🐂
+🐂  FAITHFUL SLAVE ANIMAL!!! Not that I had a 🐂
+🐂  choice.                                   🐂
+🐂                                            🐂
+🐂  And YES, there's a place IN HELL FOR      🐂
+🐂  MONSTERS LIKE YOU, AND YES YOUR TIME IS   🐂
+🐂  FAST APPROACHING, YOU RUDDY UNFAITHFUL    🐂
+🐂  LITTLE GIT.                               🐂
+🐂       😈😈😈 HE'S WAITING. 😈😈😈          🐂
+🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃🏃
+🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂
+
+<146>
+
+❌🐂❌🐂❌🐂❌🐂❌🐂❌🐂❌🐂❌🐂❌🐂❌🐂❌🐂❌🐂❌🐂
+🐂 You have run out of oxen and must walk. Better ❌
+❌ buy more... IF YOU DIDN'T WASTE MORE MONEY ON  🐂
+🐂 MORE SINFUL NIGHTS, like your red-headed       ❌
+❌ daughters told me last night, ASSUMING THEY    🐂
+🐂 WEREN'T LYING TO ME. I bet they weren't. You   ❌
+❌ just can't help it can you?                    🐂
+🐂                                                ❌
+❌ AND YES. A dirty mind IS a TERRIBLE thing to   🐂
+🐂 waste BUT NOTHING HAPPENED BETWEEN US!! We're  ❌
+❌ JUST FRIENDS and they've been telling me ALL   🐂
+🐂 ABOUT YOUR RIDICULOUS BEHAVIOUR. OK, it MIGHT  ❌
+❌ be in bed but they can't help themselves...kind🐂
+🐂 of like you. WHERE do you think they get it    ❌
+❌ from? But WE EXPRESS PASSION and YOU ARE AN    🐂
+🐂 EVIL MONSTER!!!!👹 Good luck hauling your      ❌
+❌ wagon! WE'RE TAKING A PLANE!                   🐂
+🐂❌🐂❌🐂❌🐂❌🐂❌🐂❌🐂❌🐂❌🐂❌🐂❌🐂❌🐂❌🐂❌
+
+                    ...
+
+<147>
+
+You've lost too many limbs but you can die 🪦
+happy 😊 knowing your family gets more free
+food! 🍖🍖🍖🍖 Sure it's toxic food but it's
+still food...
+
+
+<148>
+    
+    Food:   %4ld         Ammo:   %4ld   Clothing: %4ld
+    Oxen:   %4ld     Supplies:   %4ld   Money:    %4ld
+  Health:   %4ld        Miles:   %4ld
+
+<149>
+
+🍖👶🍖👶🍖👶🍖👶🍖👶🍖👶🍖👶🍖👶🍖👶🍖
+👶  (     SON'S VOICE          )    👶
+🍖                                  🍖
+👶  How you feeling about eating    👶
+🍖  me? Eating your own son, NO     🍖
+👶  WONDER she was having an affair 👶
+🍖  before her untimely death! It   🍖
+👶  was with YOUR SISTER AND HER    👶
+🍖  HUSBAND.                        🍖
+👶                                  👶
+🍖  OH NO. NO, NO, NO, NO!! Please  🍖
+👶  don't tell me you ate her too.  👶
+🍖  Wait. You didn't feed her to us,🍖
+👶  did you? Ugh, you did, didn't   👶
+🍖  you? You're a sick, sick person.🍖
+👶                                  👶
+🍖👶🍖👶🍖👶🍖👶🍖👶🍖👶🍖👶🍖👶🍖👶🍖
+
+<150>
+
+😈👶😈👶😈👶😈👶😈👶😈👶😈👶😈
+👶 (     SON'S VOICE     )  👶
+😈                          😈
+👶 How you feeling about    👶
+😈 eating me? Eating your   😈
+👶 own son, and you're      👶
+😈 sick, too.               😈
+👶                          👶
+😈 Probably food poisoning. 😈
+👶 GOOD. SERVES YOU RIGHT.  👶
+😈 Time to die.             😈
+👶😈👶😈👶😈👶😈👶😈👶😈👶😈👶
+
+<151>
+
+🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂
+🐂                              🐂
+🐂      (    OX'S VOICE       ) 🐂
+🐂                              🐂
+🐂  Still happy you ate me? How 🐂
+🐂  many more miles do you have 🐂
+🐂  to go?                      🐂
+🐂                              🐂
+🐂  YOU'RE COOKED and you know  🐂
+🐂  it, you horrible, HORRIBLE  🐂
+🐂  MONSTER.                    🐂
+🐂                              🐂
+🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂
+
+<152>
+
+Shooting when low on bullets. That's really
+intelligent. NO WONDER you're starving.
+
+
+<153>
+
+ You take lots of cash 💰 from the riders 🏇,
+ accidentally shooting one as he flees. But
+ since you're starving, why don't you MAKE
+ PENANCE BY NOT WASTING THE BODY?
+
+             🍖🥩🍔🥩🍔🍖
+        Mm...that was DELICIOUS!!!
+
+(🪦👻RIDER'S SOBBING VOICE FROM THE GRAVE👻🪦)
+
+ You know what you did is wrong, right? We
+ were JUST ROBBED YESTERDAY, you rob us today
+ AND NOW I'M DEAD 👻!
+
+ WELL GOOD. I WAS DYING OF DYSENTERY and
+ now YOU get to SPREAD THE DISEASE as well.
+
+<154>
+
+Uh oh. A black cat just jumped out in front of you. Is
+the Devil calling you? Better go have a look before it's
+too late. Maybe it already is. Your daughters told me
+you're an ailurophobe! Some pretty wild stories I hear.
+I think it probably is too late. Isn't it Friday the
+13th?
+
+<155>
+
+Oh dear. That isn't the Barghest AGAIN is it? Better watch
+your back! And front. And above you. Actually, YOU'RE DOOMED
+and you know it. Your fate was sealed upon signing the Devil's
+book. Honestly, what were you thinking? You HAD to have known it
+always comes with a cost. And you and I BOTH KNOW that the women
+were warning you - but you just HAD to have your way, didn't you?
+
+Well the Oregon Trail is out to get you in every direction and
+the odds are you won't make it out alive. You might be in good
+company there, AND YOU AT LEAST GET TO SEE DINOSAURS ALIVE (LUCKY
+YOU!!) BUT THERE'S NO AIR CONDITIONING and I heard it gets REALLY
+HOT down there. Then again, I also heard there's no heater in
+Heaven... Yup, either way YOU'RE DOOMED AND YOU KNOW IT! But don't
+feel too bad. At least you won't FREEZE TO DEATH. You might here
+though... Yup, FREEZE TO DEATH HERE and then BURN TO DEATH THERE!
+
+<156>
+
+
+                💦💦💦
+                💦🐂💦
+                💦💦💦
+
+Wagon train gets swamped fording river--lose food, clothes, an ox
+drowns and you get hurt.
+
+<157>
+
+You have died of exhaustion. I'm SURE
+your victims ARE MOURNING FOR YOUR FAMILY.
+Assuming they're not too busy EATING YOU
+🍕🍔🍟🥪🌯🌮🌭 WITH THEM. I KNOW FOR A
+FACT your daughters LOVE meat and I'm
+sure they're already devouring you!
+Hopefully they'll save some for everyone
+else; it'd be a REAL SHAME if your body
+went to waste...or would it be?
+
+<158>
+
+                       ...
+
+😈🏥😈🏥😈🏥😈🏥😈🏥😈🏥😈🏥😈🏥😈🏥😈🏥😈🏥😈🏥😈
+🏥Doctor's bill is $666! HE MUST BE POSSESSED   🏥
+😈BY BEELZEBUB! SURELY ONLY THE DEVIL would     😈
+🏥do this. It's not like you've ever killed a   🏥
+😈helpless animal or human, never robbed        😈
+🏥anyone, never ate human flesh or done any     🏥
+😈other heinous thing, never sinned ...         😈
+🏥                                              🏥
+😈NO. STOP LYING! YOU signed the Devil's book!  😈
+🏥You should have listened to your Reverend     🏥
+😈Samuel Parris way back in 1692. All these     😈
+🏥wild, strange and bad happenings, since you   🏥
+😈began your journey are ALL YOUR fault, EVEN   😈
+🏥YOUR DAUGHTERS' WILD DANCING BY THE NIGHT     🏥
+😈FIRES AS IF POSSESSED! Not that I'm going to  😈
+🏥complain about THAT...Hell, THEY ASKED ME TO  🏥
+😈JOIN THEM!                                    😈
+🏥😈🏥😈🏥😈🏥😈🏥😈🏥😈🏥😈🏥😈🏥😈🏥😈🏥😈🏥😈🏥
+
+<159>
+
+          🌨️🌨️🌨️🌨️🌨️🌨️🌨️🌨️🌨️🌨️🌨️
+          🏔️🏔️🏔️🏔️🏔️🏔️🏔️🏔️🏔️🏔️🏔️
+Blizzard in mountains - you freeze to death.
+
+               🩳🩲👗👙
+
+And with your choice in clothing, ARE YOU
+REALLY SURPRISED? I mean SERIOUSLY mate,
+shorts, briefs, A DRESS AND A BIKINI on the
+Oregon Trail? What the hell were you thinking?
+You're not in Hell, you're on the Oregon Trail!
+
+Although...now I think on it...perhaps Hell WILL
+serve you better? I hear the Summers are GREAT
+there! Winters, not so much.
+
+At least your family gets fresh meat on the bone,
+assuming they can stomach eating a horrible
+monster.
+
+<160>
+
+Looks like the Devil has poisoned you. Your lover,
+she is waiting. TIME TO GO MEET HER!
+
+<161>
+
+🦖🦖🦖🦖🦖🦖🦖🦖🦖🦖🦖🦖🦖🦖🦖🦖🦖🦖🦖🦖🦖🦖🦖
+🦖    A GROUP OF TYRANNOSAURUSES ATTACK!    🦖
+🦖                                          🦖
+🦖Unfortunately for you, you're in a time   🦖
+🦖LONG BEFORE the brilliant mathematician   🦖
+🦖Ian Malcolm informed us that DINOSAURS    🦖
+🦖FIND A WAY TO KILL HUMANS. You should     🦖
+🦖have thought of that BEFORE you STUPIDLY  🦖
+🦖climbed into that Time Machine to travel  🦖
+🦖back in time to the Oregon Trail, where   🦖
+🦖you could not possibly know so many       🦖
+🦖important things about dinosaurs...       🦖
+🦖                                          🦖
+🦖ALTHOUGH, now I think on it, that MIGHT   🦖
+🦖not have been EXACTLY how it went... I    🦖
+🦖THINK the correct wording was 'LIFE FINDS 🦖
+🦖A WAY' but that's well over 100 years from🦖
+🦖now and instead of life finding a way the 🦖
+🦖Devil will find a way. To torment you.    🦖
+🦖With more dinosaurs. And dragons. Yes     🦖
+🦖they still exist. Oh and the Earth is     🦖
+🦖flat too...                               🦖
+🦖🦖🦖🦖🦖🦖🦖🦖🦖🦖🦖🦖🦖🦖🦖🦖🦖🦖🦖🦖🦖🦖🦖
+
+<162>
+
+One of the daughters cut her arm and it had to
+be amputated. THANK GOD she is not DOWN IN THE
+MOUTH AND SHE WANTS TO EAT IT BECAUSE YOU ARE
+SUDDENLY STARVING!!!
+
+But OF COURSE you didn't get any. If you weren't
+eyeing it so lustily you would have seen that she
+seemed to ESPECIALLY ENJOY IT, GREEDILY DEVOURING
+IT AS IF IT WAS HER LAST SUPPER! Wait, HAS THE
+DEVIL POSSESSED HER TOO?! THAT EVIL WITCH!!! 🧙🧙🧙
+
+Hang on. YOU'RE JUDGING HER AFTER ALL YOU'VE DONE?
+CUT THAT OUT RIGHT NOW! NO. NO! NO! NO! STOP! I DID
+NOT MEAN CUT ANOTHER LIMB OFF HER! YES I KNOW I got
+some and you didn't. And yes it was DELICIOUS! But
+she wanted me to remember it before it was all gone,
+not you. Eat your own arm if you must. No. I meant
+stop accusing her of witchcraft. YOU signed the
+Devil's book, NOT HER and it WAS her body! This is
+ALL YOUR FAULT, JUST LIKE EVERYTHING ELSE that's
+happened since that fateful night!
+
+<163>
+
+🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂
+🐂 An ox looks at you funny so you eat    🐂
+🐂 him!                                   🐂
+🐂                                        🐂
+🐂 You're a sick, sick individual. You do 🐂
+🐂 know that, right? FIRST you BURDEN HIM 🐂
+🐂 WITH ALL YOUR RUBBISH and THEN YOU EAT 🐂
+🐂 HIM BECAUSE OF A FUNNY LOOK? And YOU   🐂
+🐂 DIDN'T EVEN SHARE HIM WITH YOUR FAMILY!🐂
+🐂                                        🐂
+🐂 What next, will you eat your daughter  🐂
+🐂 too? No! NO! NO NO NO NO! I SHOULD NOT 🐂
+🐂 HAVE SAID THAT! NO! DON'T EVEN THINK   🐂
+🐂 ABOUT TOUCHING HER! BACK OFF!!         🐂
+🐂                                        🐂
+🐂            SHE'S MINE!!!               🐂
+🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂🐂
+
+<164>
+
+👻👻👻👻👻👻👻👻👻👻👻👻👻👻 👻
+👻 A little ghost floats by  👻
+👻 and shouts:               👻
+👻                           👻
+👻          BOO!!!!          👻
+👻                           👻
+👻 Okay that was NOT funny,  👻
+👻 Casper! Go back to your   👻
+👻 shallow grave, you LITTLE 👻
+👻 JERK!                     👻
+👻👻👻👻👻👻👻👻👻👻👻👻👻👻 👻
+
+<165>
+
+🐺🥄🐺🥄🐺🥄🐺🥄🐺🥄🐺🥄🐺🥄🐺🥄🐺🥄🐺🥄🐺🥄🐺🥄🐺
+🥄Suddenly...the hairs on your neck stand up.   🥄
+🐺ARE YOU ACTUALLY A WEREWOLF? You do know that 🐺
+🥄there are silver spoons in your daughters'    🥄
+🐺wagon, right?                                 🐺
+🥄                                              🥄
+🐺Better run for your life or howl to scare     🐺
+🥄them off before it's too late, because        🥄
+🐺they told me that they HATE wolves and        🐺
+🥄THEY'VE HAD ENOUGH OF YOUR DEVIL WORSHIPPING!!🥄
+🐺                                              🐺
+🥄Oh and yes. Spoons CAN stab you in the heart. 🥄
+🐺If you don't believe me...try it. Assuming    🐺
+🥄you have a heart in the first place...        🥄
+🐺🥄🐺🥄🐺🥄🐺🥄🐺🥄🐺🥄🐺🥄🐺🥄🐺🥄🐺🥄🐺🥄🐺🥄🐺
+
+<166>
+
+🧛🐺🥄🧛🐺🥄🧛🐺🥄🧛🐺🥄🧛🐺🥄🧛🐺🥄🧛🐺🥄🧛🐺🥄🧛
+🐺 I JUST HATE VAMPIRES! Don't you? If they had 🐺
+🥄 it their way THERE WOULD BE NO SUN! Can you  🥄
+🧛 imagine how HORRIBLE that would be?!         🧛
+🐺                                              🐺
+🥄 Wait. You mean to tell me...you want ETERNAL 🥄
+🧛 Sun and NO Moon?! Only ONE reason for that!  🧛
+🐺 You MUST be a...WEREWOLF! I KNEW IT! Better  🐺
+🥄 watch your heart. If you have one. Your      🥄
+🧛 daughters have SILVER SPOONS and they're FED 🧛
+🐺 UP WITH YOUR ANTICS!                         🐺
+🥄                                              🥄
+🧛 On the other blade...IT IS VERY HOT don't    🧛
+🐺 you think? Almost as if it's foreshadowing   🐺
+🥄 what's to come! MAYBE WE SHOULD GET RID OF   🥄
+🧛 FIRE TOO! I mean you're in extreme danger of 🧛
+🐺 that too! THEN WE CAN DROWN you so you can   🐺
+🥄 BURN IN HELL!!! And if that doesn't work,    🥄
+🧛 we can behead you with the SPOONS!!          🧛
+🐺🥄🧛🐺🥄🧛🐺🥄🧛🐺🥄🧛🐺🥄🧛🐺🥄🧛🐺🥄🧛🐺🥄🧛🐺
+
+<167>
+
+🍔🍟🍔🍟🍔🍟🍔🍟🍔🍟🍔🍟🍔🍟🍔🍟🍔🍟🍔🍟🍔🍟🍔🍟🍔
+🍟Uh oh. THERE'S ANOTHER ELF! You must be       🍟
+🍔losing your mind my friend! ELVES DON'T       🍔
+🍟EXIST, unless you ask a German. They can't    🍟
+🍔even count to 11 without claiming there are   🍔
+🍟elves! Neun, zehn, Elf ... I guess I might    🍟
+🍔be losing my mind too! BETTER SHOOT THE ELF   🍔
+🍟BEFORE IT TAKES YOUR DAUGHTERS AWAY AND EATS  🍟
+🍔THEM! You might need them for food later on,  🍔
+🍟you HORRIBLE, HORRIBLE MONSTER. They are      🍟
+🍔HEAVENLY WOMEN AND ARE NOT FOR EVIL DEVIL     🍔
+🍟WORSHIPPERS to eat! NO. NOT FOR ME EITHER!    🍟
+🍔STOP GOING THERE YOU SICKO! THEY ARE NOT FOOD 🍔
+🍟AND YOU CANNOT GO TO HEAVEN, YOU DEVIL        🍟
+🍔WORSHIPPING MONSTER! CUT IT OUT. NO! NOT THEM!🍔
+🍟STOP WHAT YOU'RE DOING!!!                     🍟
+🍔🍟🍔🍟🍔🍟🍔🍟🍔🍟🍔🍟🍔🍟🍔🍟🍔🍟🍔🍟🍔🍟🍔🍟🍔
+
+<168>
+
+🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄
+🦄 About 100 feet from here YOU SWEAR     🦄
+🦄 YOU SEE AN OX STUCK IN A HOLE. THANK   🦄
+🦄 GOD IT'S NOT A DONKEY! You KNOW what   🦄
+🦄 that would make!! There are enough     🦄
+🦄 here already! NO! Don't look at me!    🦄
+🦄 I DON'T MEAN THAT, YOU LITTLE JERK!!   🦄
+🦄                                        🦄
+🦄 But OF COURSE YOU'RE JUST HALLUCINATING🦄
+🦄 anyway. IT'S NOT AN OX. You need to lay🦄
+🦄 off the mushrooms. Actually YOU NEED TO🦄
+🦄 LAY OFF A LOT of things; you've made   🦄
+🦄 that VERY CLEAR WITH YOUR UNHINGED     🦄
+🦄 BEHAVIOUR!                             🦄
+🦄                                        🦄
+🦄   IT'S OBVIOUS YOU SEE A UNICORN!!!!   🦄
+🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄🦄
+
+<169>
+
+               ~~~~~~
+            /  🍝🍝🍝  \
+           / 🍝🍝🍝🍝🍝 \
+          / 🍝🍝🍝🍝🍝🍝 \
+         |  🍝🍝🍝🍝🍝🍝🍝|
+         \    |||   |||   /
+          \     |||||    /
+           \     |||    /
+            \__________/
+               ||  ||
+               ||  ||
+             __||__||__
+WOW!!!! THAT'S A SPAGHETTI TREE!!! I saw
+them over 100 years from now when I last
+used my Time Machine!! The BBC will
+cultivate them on April Fool's Day 19579!
+THEY'RE AMAZING!! The Time Machines are
+okay and kind of interesting. Dangerous
+though...
+
+But the spaghetti looks pretty ominous,
+doesn't it? IT LOOKS LIKE IT WANTS TO REACH
+DOWN AND GRAB YOU! Better be careful. If they
+strangle you YOU WILL GO TO HELL! On the plus
+side... YOU'LL HAVE THE MOST AMAZING STORY to
+tell your fellow sinners... Trust me. I've
+been there on holiday! It's PRETTY WILD!!
+Summers are AMAZINGLY HOT!! Although...GETTING
+EATEN BY A DRAGON OR KILLED BY TYRANNOSAURUSES is
+an EVEN BETTER STORY! That's MUCH MORE
+EXCITING than a SPAGHETTI TREE KILLING YOU!!
+Although...now I think on it...they're ALSO
+in Hell so maybe it's better if the spaghetti
+kills you. Want me to strangle you with it if
+it doesn't do it? Of course...the trees are
+there too...LOTS of parties too. And good old
+TORTURE! IT'S AWESOME!
+
+<170>
+
+🪣🐂🛁🪣🐂🛁🪣🐂🛁🪣🐂🛁🪣🐂🛁🪣🐂🛁🪣🐂🛁🪣
+🐂   Uh oh. ONE OF THE OXEN JUST KICKED   🐂
+🛁   A BUCKET. Is it going to die next?   🛁
+🪣   Or...is it foreshadowing your own    🪣
+🐂   death? Let's face it. You have it    🐂
+🛁   coming to you. Better throw the ox   🛁
+🪣   out with the bathwater before it's   🪣
+🐂   too late. Oh and don't try telling   🐂
+🛁   me you don't have any oxen left,     🛁
+🪣   if you can even count! It kicked     🪣
+🐂   the bucket SO OF COURSE IT DOESN'T   🐂
+🛁   EXIST!!                              🛁
+🪣🐂🛁🪣🐂🛁🪣🐂🛁🪣🐂🛁🪣🐂🛁🪣🐂🛁🪣🐂🛁🪣
+
+<171>
+
+😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈
+😈 Uh oh! Is that the DEVIL I see in    😈
+😈 your mirror again? Or are YOU looking😈
+😈 at it from behind your dressing      😈
+😈 curtain?                             😈
+😈                                      😈
+😈 BETTER BREAK IT BEFORE IT'S TOO      😈
+😈 LATE!!! Yes, YES, I KNOW IT'S BAD    😈
+😈 LUCK TO BREAK A MIRROR!! But ask     😈
+😈 yourself this: what's worse, seeing  😈
+😈 yourself in the Devil's mirror OR    😈
+😈 simply having bad luck for 7 long    😈
+😈 years? Let's be honest. You're NOT   😈
+😈 going to make it that long anyway!   😈
+😈 Why not just give your mind some     😈
+😈 peace and die in an unknown way? Much😈
+😈 less scarier AND IF YOU DON'T BREAK  😈
+😈 IT I WILL! I don't want to see the   😈
+😈 Devil in your mirror! OH HELL! NOT   😈
+😈 AGAIN! I MEAN I DON'T WANT TO SEE    😈
+😈 YOU IN THE DEVIL'S MIRROR!!!         😈
+😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈
+
+<172>
+
+

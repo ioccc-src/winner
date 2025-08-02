@@ -1,0 +1,21 @@
+{
+    "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
+    "author_JSON_format_version" : "1.1 2024-02-11",
+    "author_handle" : "Anders_Kaare_Straadt",
+    "full_name" : "Anders Kaare Straadt",
+    "sort_word" : "straadt",
+    "location_code" : "DK",
+    "email" : "anders@straadt.dk",
+    "url" : "https://veralin.dk",
+    "alt_url" : null,
+    "deprecated_twitter_handle" : null,
+    "mastodon" : "@sqx@mastodon.social",
+    "mastodon_url" : null,
+    "github" : "@sqaxomonophonen",
+    "affiliation" : null,
+    "winning_entry_set" : [
+        {
+            "entry_id" : "2024_anders"
+        }
+    ]
+}

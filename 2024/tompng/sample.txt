@@ -1,0 +1,17 @@
+       -----------------------------------------------------------------
+     ----------------------------------------------------------------------
+    --SAMPLESA----MPLESAMP-------LESAMPLE--------SAMPLES--------AMPLESA-----
+    --MPLESAMP--LESAMPLESAMP---LESAMPLESAMP---LESAMPLESAMP----LESAMPLESAM---
+    --PLESAMPL-ESAMPLESAMPLES-AMPLESAMPLESAM-PLESAMPLESAMPL--ESAMPLESAMPLE--
+    ----SAMP---LESAMP--LESAMP-LESAMP---LESAM-PLESAM---PLESA-MPLESA---MPLES--
+    ----AMPL---ESAMP----LESAM-PLESA----------MPLES----------AMPLE-----------
+    ----SAMP---LESAM----PLESA-MPLES----------AMPLE----------SAMPL-----------
+    ----ESAM---PLESA----MPLES-AMPLE----------SAMPL----------ESAMP-----------
+    ----LESA---MPLES----AMPLE-SAMPL----------ESAMP----------LESAM-----------
+    ----PLES---AMPLE----SAMPL-ESAMP----------LESAM----------PLESA-----------
+    ----MPLE---SAMPLE--SAMPLE-SAMPLE---SAMPL-ESAMPL---ESAMP-LESAMP---LESAM--
+    --PLESAMPL-ESAMPLESAMPLES-AMPLESAMPLESAM-PLESAMPLESAMPL-ESAMPLESAMPLES--
+    --AMPLESAM--PLESAMPLESAM---PLESAMPLESAM---PLESAMPLESAM---PLESAMPLESAM---
+    --PLESAMPL----ESAMPLES-------AMPLESAM-------PLESAMPL-------ESAMPLES-----
+     ----------------------------------------------------------------------
+       -----------------------------------------------------------------

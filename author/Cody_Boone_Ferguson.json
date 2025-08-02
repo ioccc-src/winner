@@ -10,7 +10,7 @@
     "alt_url" : "https://ioccc.xexyl.net",
     "deprecated_twitter_handle" : null,
     "mastodon" : "@xexyl@fosstodon.org",
-    "mastodon_url" : "https://fosstodon.org/@xexyl",
+    "mastodon_url" : null,
     "github" : "@xexyl",
     "affiliation" : null,
     "winning_entry_set" : [
@@ -22,6 +22,12 @@
         },
         {
             "entry_id" : "2020_ferguson2"
+        },
+        {
+            "entry_id" : "2024_ferguson1"
+        },
+        {
+            "entry_id" : "2024_ferguson2"
         }
     ]
 }

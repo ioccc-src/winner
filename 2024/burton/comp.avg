@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+a=$1
+b=$2
+
+if test $# -ne 2; then echo "usage: $0 result.a result.b" >&2; exit 1; fi
+
+join $a $b | awk '
+{
+	davg=$4-$2
+	dloss=$5-$3
+	print $0, davg, dloss
+}
+' | tabby

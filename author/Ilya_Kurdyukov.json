@@ -5,8 +5,8 @@
     "full_name" : "Ilya Kurdyukov",
     "sort_word" : "kurdyukov",
     "location_code" : "RU",
-    "email" : "olme8@mail.ru",
-    "url" : "https://github.com/ilyakurdyukov",
+    "email" : null,
+    "url" : null,
     "alt_url" : null,
     "deprecated_twitter_handle" : "@ilyakurdyukov",
     "mastodon" : null,
@@ -25,6 +25,18 @@
         },
         {
             "entry_id" : "2020_kurdyukov4"
+        },
+        {
+            "entry_id" : "2024_kurdyukov1"
+        },
+        {
+            "entry_id" : "2024_kurdyukov2"
+        },
+        {
+            "entry_id" : "2024_kurdyukov3"
+        },
+        {
+            "entry_id" : "2024_kurdyukov4"
         }
     ]
 }

@@ -55,6 +55,57 @@
 </blockquote>
 
 
+## 2025-08-02
+
+The 40th Anniversary International Obfuscated C Code Contest has been
+released, and we are delighted to share the winning entries from **IOCCC28**!
+
+The source code for the IOCCC winner is now available on our
+[IOCCC winner GitHub repo](https://github.com/ioccc-src/winner) as well as on
+the [Official IOCCC website](index.html).
+
+Congratulations to:
+
+* [2024/anders](2024/anders/index.html) - Prize in sound coding - _layered music generator_
+* [2024/burton](2024/burton/index.html) - Prize in pentagrammatology - _wordle hard mode solver_
+* [2024/cable1](2024/cable1/index.html) - Prize in bot talk - _LLM inference engine_
+* [2024/cable2](2024/cable2/index.html) - Prize in murky waters - _salmon recipe_
+* [2024/carlini](2024/carlini/index.html) - Prize in perfect timing - _Intel 4004 emulation_
+* [2024/codemeow](2024/codemeow/index.html) - Prize in tray planting - _bonsai generator_
+* [2024/endoh1](2024/endoh1/index.html) - Prize in patient pointillism - _slow ray tracer in CPP_
+* [2024/endoh2](2024/endoh2/index.html) - Prize in solid body physics - _rotating rigid body simulation_
+* [2024/ferguson1](2024/ferguson1/index.html) - Prize in diabolical logistics - _Oregon trail pact with the devil_
+* [2024/ferguson2](2024/ferguson2/index.html) - Prize in yil-tas - _Navajo code talker translator_
+* [2024/howe](2024/howe/index.html) - Nice accent eh-ward - _mini vi_
+* [2024/kramer](2024/kramer/index.html) - Prize in linguistic arithmetic - _natural language numerical calculator_
+* [2024/kurdyukov1](2024/kurdyukov1/index.html) - Prize in phased periodicity - _phase of the Moon_
+* [2024/kurdyukov2](2024/kurdyukov2/index.html) - Prize in art restoration - _JPEG artifact removal_
+* [2024/kurdyukov3](2024/kurdyukov3/index.html) - Prize in virtual quietus - _gaming VM and doom_
+* [2024/kurdyukov4](2024/kurdyukov4/index.html) - Prize in embiggening - _encode without literals_
+* [2024/maffiodo](2024/maffiodo/index.html) - Prize in creative interpretation - _Jav\*script interpreter_
+* [2024/mills](2024/mills/index.html) - Prize in ℤ₃ - _Infocom v3 story interpreter_
+* [2024/stedolan](2024/stedolan/index.html) - Best one liner - _icon from MD5_
+* [2024/straadt](2024/straadt/index.html) - Prize in imitative rebooting - _OpenRISC CPU and Linux_
+* [2024/tmarrec](2024/tmarrec/index.html) - Prize in cyclonic coding - _3D tornado simulation_
+* [2024/tompng](2024/tompng/index.html) - Prize in quasi bijection - _vortex encryptor decryptor_
+* [2024/weaver](2024/weaver/index.html) - Sur prize - _rickroll_
+
+The winning entries of **IOCCC28** were presented live on the YouTube Channel
+"[Our Favorite Universe](https://www.youtube.com/@OurFavoriteUniverse)"
+starting at **2025-08-02 18:00:00.00000 UTC**.  A recording of the event is available
+via the following link:
+
+> [IOCCC28 Winning Entries | IOCCC Awards Presentation and Source Code Reveal](https://www.youtube.com/live/UDzGwTalVAc?si=0OyzacLR_PsylR1g)
+
+We plan to periodically produce shows featuring some of the best of the
+[IOCCC winning entries](years.html), commencing in a few weeks.
+
+We kindly request that you **subscribe** to the
+"[Our Favorite Universe](https://www.youtube.com/@OurFavoriteUniverse)"
+YouTube Channel, and enable notifications (**click on the “Notification Bell” 🔔**)
+to receive alerts when new content is scheduled.
+
+
 ## 2025-07-30
 
 Good News Everyone ‼️🤓 We have scheduled the date for the **IOCCC Awards Presentation and Source Code Reveal** for **IOCCC28** to be on **2025 August 02 11:00 (11AM) Pacific**.

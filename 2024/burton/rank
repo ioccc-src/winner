@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+: ${dir:=results}
+word=$1
+echo $word | grep -q /
+if test $? -eq 1; then word=$dir/$word; fi
+
+grep good: $word | awk '{n[$5]++}END{for(i=1; i<7; ++i)print i,n[i]}' | sort -k1n
+grep lose: $word | awk '{print $NF}' | pr -t -a -5

@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+dir=$1
+: ${dir:=results}
+lines=$2
+: ${lines:=10}
+
+for name in $dir/*; do
+	grep lose: $name | awk '{print $NF}';
+done |
+awk '{a[$1]++}END{for(i in a)print i,a[i]}' |
+sort -k2nr |
+pr -t -a -5 |
+sed ${lines}q

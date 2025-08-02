@@ -464,7 +464,7 @@ below and you wish to help with a year, you can use these links:</p>
 <li><a href="#1996">1996 entries</a> | <a href="#1998">1998 entries</a> | <a href="#2000">2000 entries</a> | <a href="#2001">2001 entries</a></li>
 <li><a href="#2004">2004 entries</a> | <a href="#2005">2005 entries</a> | <a href="#2006">2006 entries</a> | <a href="#2011">2011 entries</a></li>
 <li><a href="#2012">2012 entries</a> | <a href="#2013">2013 entries</a> | <a href="#2014">2014 entries</a> | <a href="#2015">2015 entries</a></li>
-<li><a href="#2018">2018 entries</a> | <a href="#2019">2019 entries</a> | <a href="#2020">2020 entries</a></li>
+<li><a href="#2018">2018 entries</a> | <a href="#2019">2019 entries</a> | <a href="#2020">2020 entries</a> | <a href="#2024">2024 entries</a></li>
 </ul>
 <p>Jump to: <a href="#">top</a></p>
 <h2 id="please-read-the-next-sections-if-you-wish-to-help">PLEASE read the next sections if you wish to help</h2>
@@ -3397,7 +3397,6 @@ Ferguson</a> showed us this:</p>
 <p>This is NOT a bug and you’ll have to delete the files
 manually. You shouldn’t have to worry about these being added to git: it seems
 to ignore sockets (it did at least in macOS).</p>
-<p>Jump to: <a href="#">top</a></p>
 <p>Tips on this situation. A simpler way to find sockets in the directory:</p>
 <pre><code>    file .*|grep socket|cut -f1 -d:</code></pre>
 <p>To delete them you can do:</p>
@@ -3607,8 +3606,83 @@ which lists some other conditions which should be considered features, not bugs.
 <h1 id="section-40">2024</h1>
 </div>
 <hr style="width:10%;text-align:left;margin-left:0">
-<p>We plan to run IOCCC28 this year but the time has not been announced just yet.</p>
+<p>Jump to: <a href="#">top</a></p>
+<div id="2024_carlini">
+<h2 id="carlini-1">2024/carlini</h2>
+</div>
+<p>Jump to: <a href="#">top</a></p>
+<h3 id="status-known-bug---please-help-us-fix-11">STATUS: known bug - please help us fix</h3>
+<h3 id="source-code-2024carliniprog.c">Source code: <a href="https://github.com/ioccc-src/winner/blob/master/2024/carlini/prog.c">2024/carlini/prog.c</a></h3>
+<h3 id="information-2024carliniindex.html">Information: <a href="2024/carlini/index.html">2024/carlini/index.html</a></h3>
+<p>When printing a 0 digit, the <code>fib.bin</code> 4004 program will print a space instead of a “0”.</p>
+<div id="2024_howe">
+<h2 id="howe-1">2024/howe</h2>
+</div>
+<p>Jump to: <a href="#">top</a></p>
+<h3 id="status-known-bug---please-help-us-fix-12">STATUS: known bug - please help us fix</h3>
+<h3 id="source-code-2024howeprog.c">Source code: <a href="https://github.com/ioccc-src/winner/blob/master/2024/howe/prog.c">2024/howe/prog.c</a></h3>
+<h3 id="information-2024howeindex.html">Information: <a href="2024/howe/index.html">2024/howe/index.html</a></h3>
+<p>NetBSD Curses <code>mvgetnstr()</code> does not display UTF-8 characters correctly
+with echo on, but the input is valid (see the program’s <code>/search</code>
+command). A suggested fix is to a <code>prog.alt.c</code> to implement a static
+<code>mvgetnstr()</code> function to collect input and display via <code>addch()</code> and
+<code>refresh()</code>.</p>
+<p>CRLF newlines (DOS, Windows) and other non-spacing control characters
+are not visible. Try modifying the suggested <code>prog.alt.c</code> to address
+this limitation.</p>
+<p>Jump to: <a href="#">top</a></p>
+<div id="2024_kramer">
+<h2 id="kramer">2024/kramer</h2>
+</div>
+<p>Jump to: <a href="#">top</a></p>
+<h3 id="status-known-bug---please-help-us-fix-13">STATUS: known bug - please help us fix</h3>
+<h3 id="source-code-2024kramerprog.c">Source code: <a href="https://github.com/ioccc-src/winner/blob/master/2024/kramer/prog.c">2024/kramer/prog.c</a></h3>
+<h3 id="information-2024kramerindex.html">Information: <a href="2024/kramer/index.html">2024/kramer/index.html</a></h3>
+<p>This program computes using signed int values. On a 64-bit processor
+the largest signed 64-bit value is <code>9223372036854775807</code>.
+The <a href="http://www.isthe.com/cgi-bin/chongo/number.cgi">English name of that number</a>:</p>
+<pre><code>    nine quintillion,
+    two hundred twenty three quadrillion,
+    three hundred seventy two trillion,
+    thirty six billion,
+    eight hundred fifty four million,
+    seven hundred seventy five thousand,
+    eight hundred seven</code></pre>
+<p>However, the program is limited the command line numerical word, “<strong>trillion</strong>”.</p>
+<p>Can you extend this program to use larger names of English numbers such as
+“<strong>quadrillion</strong>” and “<strong>quintillion</strong>”?</p>
+<p>If you are even more daring, and which to extend the numerical calculation beyond a single
+64-bit value, you may wish to extend this program even further using the list of
+<a href="http://www.isthe.com/chongo/tech/math/number/howhigh.html">English number names</a>.</p>
+<p>Jump to: <a href="#">top</a></p>
+<div id="2024_kurdyukov4">
+<h2 id="kurdyukov4">2024/kurdyukov4</h2>
+</div>
+<p>Jump to: <a href="#">top</a></p>
+<h3 id="status-known-bug---please-help-us-fix-14">STATUS: known bug - please help us fix</h3>
+<h3 id="source-code-2024kurdyukov4prog.c">Source code: <a href="https://github.com/ioccc-src/winner/blob/master/2024/kurdyukov4/prog.c">2024/kurdyukov4/prog.c</a></h3>
+<h3 id="information-2024kurdyukov4index.html">Information: <a href="2024/kurdyukov4/index.html">2024/kurdyukov4/index.html</a></h3>
+<p>In fixing this bug you will come to a better appreciation of how the
+code was able to process random data files as large as 64K.</p>
+<p>If you provide a random data set of about 100K bytes, the resulting C program, after taking some time, will compile:</p>
+<pre><code>    dd if=/dev/urandom bs=100K count=1 | ./prog &gt; out.c</code></pre>
+<p>However if increase the size of the random data set to 128K bytes, the resulting <code>out.c</code> C program:</p>
+<pre><code>    dd if=/dev/urandom bs=128K count=1 | ./prog &gt; out.c
+    cc out.c -o out</code></pre>
+<p>will fail to compile with errors such as:</p>
+<pre><code>    out.c:2:...: error: expected identifier or &#39;(&#39;
+    out.c:2:...: error: expected &#39;;&#39; at end of declaration
+    out.c:2:...: error: use of undeclared identifier &#39;Z&#39;</code></pre>
+<p>Can you fix <code>prog.c</code> to successfully process very large random data sets: perhaps into the gigabyte size range or larger?</p>
+<p>How long does it take to compile the resulting <code>out.c</code> source?</p>
+<p>Even better, can you fix <code>prog.c</code> while maintaining its style and source code layout, all without
+making the source code significantly larger?</p>
+<p>Jump to: <a href="#">top</a></p>
+<hr style="width:10%;text-align:left;margin-left:0">
+<div id="final_words">
 <h1 id="final-words">Final words</h1>
+</div>
+<hr style="width:10%;text-align:left;margin-left:0">
 <p>We hope this document was of use to you in determining which entries are known
 to have a problem, what entries are known to have features that are not bugs and
 so on. We also thank you for going through this document and, if you propose any
@@ -3616,8 +3690,6 @@ fixes] via a <a href="https://github.com/ioccc-src/winner/pulls">GitHub pull
 request</a> or otherwise, we
 thank you as well for the help! We will happily add you to the
 <a href="thanks-for-help.html">thanks</a> file as well.</p>
-<p>Jump to: <a href="#">top</a></p>
-<hr style="width:10%;text-align:left;margin-left:0">
 <p>Jump to: <a href="#">top</a></p>
 <!--
 

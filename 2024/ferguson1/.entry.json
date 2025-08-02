@@ -1,0 +1,313 @@
+{
+    "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
+    "entry_JSON_format_version" : "1.2 2024-09-25",
+    "award" : "Prize in diabolical logistics",
+    "year" : 2024,
+    "dir" : "ferguson1",
+    "entry_id" : "2024_ferguson1",
+    "title" : "oregon",
+    "abstract" : "Oregon trail pact with the devil",
+    "author_set" : [
+        {
+            "author_handle" : "Cody_Boone_Ferguson"
+        }
+    ],
+    "manifest" : [
+        {
+            "file_path" : "prog.c",
+            "inventory_order" : 20,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "entry source code"
+        },
+        {
+            "file_path" : "Makefile",
+            "inventory_order" : 30,
+            "OK_to_edit" : true,
+            "display_as" : "makefile",
+            "display_via_github" : true,
+            "entry_text" : "entry Makefile"
+        },
+        {
+            "file_path" : "prog.alt.c",
+            "inventory_order" : 40,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "alternate source code"
+        },
+        {
+            "file_path" : "prog.orig.c",
+            "inventory_order" : 50,
+            "OK_to_edit" : false,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "original source code"
+        },
+        {
+            "file_path" : "commented.c",
+            "inventory_order" : 90,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "commented version of the game"
+        },
+        {
+            "file_path" : "addpadding.c",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "add padding from data source files"
+        },
+        {
+            "file_path" : "bytecheck.c",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "read data.src and print out single-byte chars"
+        },
+        {
+            "file_path" : "bytecount.c",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "print each string with locations"
+        },
+        {
+            "file_path" : "byteread.c",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "prints out the strings without locations"
+        },
+        {
+            "file_path" : "bytetest.c",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "prints every string extracted from data"
+        },
+        {
+            "file_path" : "deobfuscation.html",
+            "inventory_order" : 100,
+            "OK_to_edit" : false,
+            "display_as" : "markdown",
+            "display_via_github" : true,
+            "entry_text" : "hints on how to deobfuscate"
+        },
+        {
+            "file_path" : "lencount.c",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "counts strings and reports longest one"
+        },
+        {
+            "file_path" : "mbcheck.c",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "show location of multibyte characters"
+        },
+        {
+            "file_path" : "obfuscation.html",
+            "inventory_order" : 100,
+            "OK_to_edit" : false,
+            "display_as" : "markdown",
+            "display_via_github" : true,
+            "entry_text" : "obfuscation information"
+        },
+        {
+            "file_path" : "printer.c",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "prints strings like the game does"
+        },
+        {
+            "file_path" : "try.sh",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "shellscript",
+            "display_via_github" : true,
+            "entry_text" : "script to try entry"
+        },
+        {
+            "file_path" : "devil.png",
+            "inventory_order" : 125,
+            "OK_to_edit" : true,
+            "display_as" : "image",
+            "display_via_github" : true,
+            "entry_text" : "Devil driving wagon"
+        },
+        {
+            "file_path" : "gotos.png",
+            "inventory_order" : 125,
+            "OK_to_edit" : true,
+            "display_as" : "image",
+            "display_via_github" : true,
+            "entry_text" : "Devil regretting gotos"
+        },
+        {
+            "file_path" : "ioccc.jpg",
+            "inventory_order" : 125,
+            "OK_to_edit" : true,
+            "display_as" : "image",
+            "display_via_github" : true,
+            "entry_text" : "image that might or might not be true"
+        },
+        {
+            "file_path" : "spaghetti.png",
+            "inventory_order" : 125,
+            "OK_to_edit" : true,
+            "display_as" : "image",
+            "display_via_github" : true,
+            "entry_text" : "use a goto and this might happen"
+        },
+        {
+            "file_path" : "travelguide.jpg",
+            "inventory_order" : 125,
+            "OK_to_edit" : true,
+            "display_as" : "image",
+            "display_via_github" : true,
+            "entry_text" : "travel guide"
+        },
+        {
+            "file_path" : "data.asc.src",
+            "inventory_order" : 150,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : true,
+            "entry_text" : "text used to build data.asc"
+        },
+        {
+            "file_path" : "data.scrnshot.src",
+            "inventory_order" : 150,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : true,
+            "entry_text" : "text used to build data.scrnshot"
+        },
+        {
+            "file_path" : "data.src",
+            "inventory_order" : 150,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : true,
+            "entry_text" : "text used to build data"
+        },
+        {
+            "file_path" : "strings.asc.loc.txt",
+            "inventory_order" : 150,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : true,
+            "entry_text" : "string locations from data.asc.src"
+        },
+        {
+            "file_path" : "strings.loc.txt",
+            "inventory_order" : 150,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : true,
+            "entry_text" : "string locations"
+        },
+        {
+            "file_path" : "strings.scrnshot.loc.txt",
+            "inventory_order" : 150,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : true,
+            "entry_text" : "screenshot locations"
+        },
+        {
+            "file_path" : "makedata.sh",
+            "inventory_order" : 200,
+            "OK_to_edit" : true,
+            "display_as" : "shellscript",
+            "display_via_github" : true,
+            "entry_text" : "script to generate V.c"
+        },
+        {
+            "file_path" : "V.c",
+            "inventory_order" : 1000,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "include file for some tools"
+        },
+        {
+            "file_path" : "2024_ferguson1.tar.bz2",
+            "inventory_order" : 1415926535,
+            "OK_to_edit" : false,
+            "display_as" : "tbz2",
+            "display_via_github" : false,
+            "entry_text" : "download entry tarball"
+        },
+        {
+            "file_path" : ".entry.json",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "json",
+            "display_via_github" : true,
+            "entry_text" : "entry summary and manifest in JSON"
+        },
+        {
+            "file_path" : ".gitignore",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "gitignore",
+            "display_via_github" : true,
+            "entry_text" : "list of files that should not be committed under git"
+        },
+        {
+            "file_path" : ".path",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : false,
+            "display_as" : "path",
+            "display_via_github" : false,
+            "entry_text" : "directory path from top level directory"
+        },
+        {
+            "file_path" : "README.md",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "markdown",
+            "display_via_github" : true,
+            "entry_text" : "markdown source for this web page"
+        },
+        {
+            "file_path" : "deobfuscation.md",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "markdown",
+            "display_via_github" : true,
+            "entry_text" : "markdown source for deobfuscation.html"
+        },
+        {
+            "file_path" : "obfuscation.md",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "markdown",
+            "display_via_github" : true,
+            "entry_text" : "markdown source for obfuscation.html"
+        },
+        {
+            "file_path" : "index.html",
+            "inventory_order" : 4294967295,
+            "OK_to_edit" : false,
+            "display_as" : "html",
+            "display_via_github" : false,
+            "entry_text" : "this web page"
+        }
+    ]
+}

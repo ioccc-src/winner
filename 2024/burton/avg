@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+awk '
+/^guess1/ {if (w == "") w = $2 }
+/good:/   {n++; t+=$5 }
+/lose:/   {n++; L++ }
+END       {printf "%s  %.06f  %d\n",w,t/n,L }' $1

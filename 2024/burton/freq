@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+dict=$1
+: ${dict:=dict}
+
+echo first
+seq a z | while read a; do /bin/echo -n "$a: "; grep ^$a $dict | wc -l; done | sort -k2nr
+echo second
+seq a z | while read a; do /bin/echo -n "$a: "; grep ^.$a $dict | wc -l; done | sort -k2nr
+echo third
+seq a z | while read a; do /bin/echo -n "$a: "; grep ^..$a $dict | wc -l; done | sort -k2nr
+echo fourth
+seq a z | while read a; do /bin/echo -n "$a: "; grep ^...$a $dict | wc -l; done | sort -k2nr
+echo last
+seq a z | while read a; do /bin/echo -n "$a: "; grep ^....$a $dict | wc -l; done | sort -k2nr

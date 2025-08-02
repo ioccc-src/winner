@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html><head><meta charset=utf-8><title>OGVM</title></head>
+<body><div id=main align=center>
+	<button id=start onclick="fstart()">Start</button>
+	<input id=cmd type=text value="test.bin 7 8 9"></input>
+	<select id=sel><option>[files]</option></select>
+	<button id=save onclick="fsave()">Save</button><br>
+	<div id=status>You need to enable JavaScript to run this app.</div><br>
+	<textarea id=out cols=80 rows=24 readonly style="resize: none;"></textarea>
+</div><script>
+var id=i=>document.getElementById(i);
+var fl=[],fi=[],fr=(p,c,e)=>{
+	var n=p.substring(p.lastIndexOf('/')+1);
+	if(fl[n])c(fl[n].a);
+	else if(fi[n])e(); else fetch(p).then(r=>{
+		if(r.ok)r.arrayBuffer().then(f=>c(fa(n,f,'fetch')));
+		else fi[n]=1,e(); });
+};
+var fa=(n,x,t)=>{
+	var a=new Uint8Array(x),i=a.length,f=0; if(!fl[n]){
+	fl[n]={}; var o=fl[n].o=document.createElement('option');
+	o.value=n; id('sel').appendChild(o); }
+	for(;i>999;f++)i/=1e3;
+	fl[n].o.text=n+' ('+t+', '+i.toFixed(!!f)+' '+'kmgt'.charAt(f-1)+'B)';
+	out("!!! \""+n+"\" added from "+t+"\n");
+	return fl[n].a=a;
+};
+
+var hex=a=>'0x'+(a>>>0).toString(16).padStart(8,'0');
+var out=a=>id('out').innerHTML+=a;
+id('status').innerHTML='';
+
+function fsave(){
+	var n=id('sel'),a=n.selectedIndex;
+	if(a>0){
+		n=n.options[a].value; a=document.createElement('a');
+		a.href=window.URL.createObjectURL(new Blob([fl[n].a],{type:'application/unknown'}));
+		a.download=n; a.click();
+	}
+}
+
+var y=0,z,W,D,I,f,a,b,c,d,n,b1=null,k=(1<<24)-1,m=null,cc=[];
+var so=(c,b)=>c<0?-1:(out(String.fromCharCode(b)),b-10?b:(b1=b,setTimeout(vm,0),null));
+var Z=(c,b)=>-1,h=[Z,so,so,Z,Z,Z,Z,Z],H=[],s=[];
+var sr=(c,b)=>(f=H[c&7],c<0&&f.i<f.x.length?f.x[f.i++]:-1);
+var sw=(c,b)=>{ f=H[c&7]; if(c<0||f.i>f.l)return -1;
+	if(f.i==f.l&&!(f.l++&65535))f.a[f.l>>16]=new Uint8Array(1<<16);
+	f.a[f.i>>16][f.i&65535]=b; f.i++;	return b; };
+var nm=()=>{ var i=0,n='',x; while(x=s[i++])n+=String.fromCharCode(x); return n; };
+
+var E,xl={},e1=a=>(e=>{if(m){
+	var n=e.key; n.length==1?E.push([a,n.charCodeAt(0)]):
+	xl[n]?E.push([a,xl[n]]):out('Key '+n+(a?' up\n':' down\n'));
+	e.preventDefault(); } } );
+for(a=1;a<25;a++)xl['F'+a]=a+0xffbd; b=[9,13,27,81,82,83,84,226,228,234];
+'Tab Enter Escape ArrowLeft ArrowUp ArrowRight ArrowDown Shift Control Alt'.
+split(' ').forEach(n=>xl[n]=b.shift()+0xff00);
+
+f=document.addEventListener; /*id('main')*/
+['dragenter','dragover','dragleave'].forEach(n=>
+	f(n,e=>{ e.preventDefault(); e.stopPropagation(); },false));
+f('drop',e=>
+	[...e.dataTransfer.files].forEach(f=>{
+		n=new FileReader();
+		n.onload=e=>fa(f.name,e.target.result,'drop');
+		n.readAsArrayBuffer(f);
+	}),false);
+f('keydown',e1(0),false); f('keyup',e1(1),false);
+
+function fstart(){
+	f=id('cmd').value.trim().split(/\s+/);
+	if(!m&&f.length)fr(f[0],x=>{ b=x.length;
+		f.forEach(e=>b+=e.length+1);
+		d=new Uint8Array(c=b-1); d.set(x,0);
+		f.forEach(e=>{ --b; for(m=e.length; m; )d[--b]=e.charCodeAt(--m); } );
+		E=[]; m=new Uint32Array(k+16); cc=[];
+		for(b=0; b<=k&&b<c; b++)m[b>>2]+=d[b]<<b%4*8;
+		a=2; d=1; b1=b; setTimeout(vm,0);
+		id('start').disabled=id('cmd').disabled=true;
+		id('out').innerHTML='';
+	},e=>out("!!! fetch failed\n"));
+}
+
+var sc=[
+	(c,b)=>{ f=m[n=m[0]-4&k];
+		if(f>>14)out('bad opcode at '+hex(n*4)+': '+hex(f)+'\n');
+		else out('exit code: '+c+' ('+hex(c)+'), rtmp: '+m[1]+' ('+hex(m[1])+')\n');
+		if(y)id('status').removeChild(W); y=0;
+		id('start').disabled=id('cmd').disabled=false; return b1=m=null; },
+	(c,b)=>h[c&7](c,b),
+	(c,b)=>new Date().getTime(),
+	(c,b)=>(setTimeout(vm,b1=b),null),
+	(c,b)=>(s[c&31]=b&&b-48>9&&(b|32)-97>25&&b-46?95:b,b),
+	(c,b)=>{ c&=7;
+		if(h[c]==Z){ n=nm();
+			if(b){ h[c]=sw; H[c]={n:n,l:0,i:0,a:[]}; return 0; }
+			b1=1; setTimeout(()=>fr(n,a=>{ b1=0; h[c]=sr; H[c]={i:0,x:a}; vm(); },vm),0); return null;
+		}
+		if(h[c]==sw){
+			f=H[c]; n=0; b=new Uint8Array(f.l);
+			f.a.forEach(a=>{ b.set(a.slice(0,Math.min(f.l-n,a.length)),n); n+=a.length; });
+			fa(f.n,b,'app');
+		}
+		h[c]=Z; H[c]=null; return 1; },
+	(c,b)=>(f=H[c&7],f?c<0?f.i:(f.i=(c<8?0:c<16?f.i:f.x.length)+(b|0),0):-1),
+	(c,b)=>{
+		if(!(y||~(-c&-b)>>12)){
+			W=document.createElement('canvas');
+			W.width=y=c; W.height=z=b; D=W.getContext('2d');
+			id('status').appendChild(W); I=D.createImageData(y,z);
+		} return y?new Int8Array(new Int16Array([768]).buffer)[0]+4:0; },
+	(c,b)=>{ n=E.shift(); if(n){ m[1]=n[1]; return n[0]; }
+		setTimeout(()=>{ b1=n?(m[1]=n[1],n[0]):2; vm(); },0); return null; },
+	(c,b)=>{ b&=k;
+		if(y&&b+y*z<k){
+			I.data.set(new Uint8ClampedArray(m.slice(b,b+y*z).buffer),0);
+			D.putImageData(I,0,0); b1=b; setTimeout(vm,0); return null;
+		} return b; },
+	(c,b)=>b?cc=[]:0,b];
+
+a=x=>{
+	f='d=x>>2&k;m[d]=x&2?x&1?\n';
+	for(var i=4; i--; f+='\n') {
+		n=-1>>>x*8; c=i*8; b=~(n<<c); d=b?'m[d]&'+b+'|b':'b';
+		if(c)d+='<<'+c; if(i-x<0)d+='&'+(n<<c);
+		c=32-c;
+		if(i&&(b=n>>>c))d='(m[d+1]=m[d+1]&'+~b+'|b>>>'+c+(x?'&'+b:'')+','+d+')';
+		f+=d+(i?i-2?':':':x&1?':';');
+	}
+	return new Function('x',f);
+}
+var w0=a(0),w1=a(1),w2=a(2),w3=a(3),rm=x=>(n=x>>2&k,x&2?x&1?(m[n]>>>24|m[n+1]<<8)>>>0:
+	(m[n]>>>16|m[n+1]<<16)>>>0:x&1?(m[n]>>>8|m[n+1]<<24)>>>0:m[n]);
+var ti='+ - | ^ & * / % << >> == != < <= > >= |0) &65535) <<16)>>16) &255) <<24)>>24)'.split(' ');
+function vm(){
+	var s,X,x,i; b=b1;
+	if(a-2){ n=a&127; if(n){ d=n>2?m[d&k]+n-65:d;
+	d=(n-2?(c=d*8&24,d>>2):(c=0,d))&k; n=-1>>>(a>>4&24);
+	m[d]=(m[d]|n<<c)^(~b&n)<<c; if(c)c=32-c,m[d+1]=(m[d+1]|n>>>c)^(~b&n)>>>c;
+	} else m[0]+=b?d:0; } else m[d&k]=b;
+	for(;;){ X=(x=m[0])&k;
+		if(cc[X]){ if(cc[X]())return; } else{
+		s='';
+		for(i=1; i&&++i<20; s+='\n') {
+			a=m[d=x&k]; x+=4;
+			if(a==1<<28&&m[d+1]+m[d+2]|0){ x+=m[d+3]; break; }
+			for(i=0; i<2; i++, a>>=7) {
+				c=b; b=m[++d]; n=a&127; f=b&k?'m['+(b&k)+']':x;
+				b=n?n>1?n>2?'rm('+f+(n-65?'+'+(n-65):'')+')':f:b&3?'rm('+b+')':(n=b>>2&k)?'m['+n+']':x:''+b;
+			}
+			d=m[d+1]; n=a>>9;
+			if(n>=32&&n<128){
+				if(n>47)f=n-80&-48?'(':'((',b=f+b,c=f+c,f=ti[(n>>4)+13],b+=f,c+=f;
+				b=(n-37&-17?c+(n-41?ti[n&15]:'>>>')+b:Math.imul?'Math.imul('+c+','+b+')':
+					(s+='b='+b+';c='+c+';',b='(c&8191)*b+((c&-8192)*b|0)'))+(n-6&15?'':'|0');
+			} else{
+				i=0; s+='m[0]='+x+';';
+				s+='b=sc['+(n<11?n:0)+']('+c+'|0,'+b+');if(b==null){a='+(a&511)+';d='+d+';return 1;}';
+				b='b';
+			}
+			f=a&127; a=a>>7&3;
+			switch(f){
+				case 0:i=0; s+='m[0]='+b+((n&15)<6?'|0?':'?')+(x+d|0)+':'+x+';'; break;
+				case 1:s+='b='+b+';w'+a+'('+d+');'; break;
+				case 2:i=(d&=k)?i:0; s+=f='m['+d+']';
+					if(a)n=-1>>>a*8,s+='='+(d?f:x)+'&'+~n+'|('+b+')&'+n+';'; else s+='='+b+';'; break;
+				default:s+='b='+b+';w'+a+'(m['+(d&k)+(f-65?']+'+(f-65):']')+');'; break;
+			}
+		}
+		if(i)s+='m[0]='+x+';';
+		s+='return 0;';
+		//alert('at '+hex(X*4)+':\n'+s);
+		cc[X]=new Function(s); }
+	}
+}
+</script></body></html>

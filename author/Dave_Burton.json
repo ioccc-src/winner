@@ -6,8 +6,8 @@
     "sort_word" : "burton",
     "location_code" : "US",
     "email" : "daveb@snox.net",
-    "url" : "http://ioccc.snox.net",
-    "alt_url" : "https://snox.net/ioccc/",
+    "url" : "https://snox.net/ioccc",
+    "alt_url" : null,
     "deprecated_twitter_handle" : "@lv2jmp",
     "mastodon" : null,
     "mastodon_url" : null,
@@ -28,6 +28,9 @@
         },
         {
             "entry_id" : "2020_burton"
+        },
+        {
+            "entry_id" : "2024_burton"
         }
     ]
 }

@@ -1,0 +1,20 @@
+#!/bin/sh
+
+# usage: echo terns | word.result
+# usage: cat dict | word.result
+
+dir=$1
+: ${dir:=results}
+
+d=$2
+: ${d:=dict}
+
+# for each word as a starting guess
+# run the sim for each target word
+
+while read w; do
+	echo $w;
+	cat dict | while read t; do
+		./run $d $w $t
+	done > $dir/$w
+done

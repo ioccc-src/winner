@@ -1,0 +1,20 @@
+// A typical spinning top
+
+// Use `-Drpm=1000 -Dtilt=5`
+
+.
+.
+.  // Twirl here
+.
+.
+.
+...
+   #####
+        ##
+          #  // Spin!
+        ##
+   #####
+ ##
+#
+#
+#  // Looks painful

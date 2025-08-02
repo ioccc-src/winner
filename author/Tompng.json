@@ -1,0 +1,21 @@
+{
+    "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
+    "author_JSON_format_version" : "1.1 2024-02-11",
+    "author_handle" : "Tompng",
+    "full_name" : "tompng",
+    "sort_word" : "tompng",
+    "location_code" : "JP",
+    "email" : "tomoyapenguin@gmail.com",
+    "url" : null,
+    "alt_url" : null,
+    "deprecated_twitter_handle" : null,
+    "mastodon" : null,
+    "mastodon_url" : null,
+    "github" : "@tompng",
+    "affiliation" : null,
+    "winning_entry_set" : [
+        {
+            "entry_id" : "2024_tompng"
+        }
+    ]
+}

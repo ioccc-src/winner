@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+
+# amount of parallelism
+p=8
+
+dir=$1
+: ${dir:=results}
+mkdir -p $dir
+
+start_words=$2
+: ${start_words:=start_words}
+
+dict=$3
+: ${dict:=dict}
+
+rm -fr ./tmp
+mkdir -p tmp
+
+# split dict into smaller chucks for some parallelism
+n=1
+cat $start_words | ./dups -n | while read a; do
+	echo $a >> tmp/$n
+	((n+=1))
+	test $n -gt $p && n=1
+done
+
+# run the experiment (expensive)
+n=1
+while test $n -le $p; do
+	./word.result $dir $dict < tmp/$n 2>/dev/null &
+	((n+=1))
+done
+
+rm -fr ./tmp
+
+wait

@@ -5,8 +5,8 @@
     "full_name" : "Adrian Cable",
     "sort_word" : "cable",
     "location_code" : "US",
-    "email" : null,
-    "url" : null,
+    "email" : "adrian.cable@gmail.com",
+    "url" : "https://www.linkedin.com/in/adrian-cable-91730221/",
     "alt_url" : null,
     "deprecated_twitter_handle" : null,
     "mastodon" : null,
@@ -22,6 +22,12 @@
         },
         {
             "entry_id" : "2013_cable3"
+        },
+        {
+            "entry_id" : "2024_cable1"
+        },
+        {
+            "entry_id" : "2024_cable2"
         }
     ]
 }
