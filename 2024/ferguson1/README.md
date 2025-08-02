@@ -39,7 +39,7 @@
 ## Judges' remarks:
 
 You will have to go to "Fun-Damentals" to understand the logic flow of
-this game.  While you jump as many as 130 times to travel from `main()`
+this game.  While you jump as many as 134 times to travel from `main()`
 to an successful `exit(666)` you may have a devil of a time trying to
 figure out how this program actually does what it does.
 
@@ -55,7 +55,7 @@ inside this C code.  :-)
 
 
 <div id="devil">
-### A Pact With the Devil On the Oregon Trail (...and his 130 regrets of goto)
+### A Pact With the Devil On the Oregon Trail (...and his 134 regrets of goto)
 </div>
 
 The **Go To Hell In A Handcart Travel Company** PROUDLY welcomes all sinners to
@@ -2447,7 +2447,7 @@ really does not seem to be dead (it's quite sneaky).
 
 I could be wrong on whether this is one the compiler missed though: it's hard to
 follow all the `goto`s. As you find out in [obfuscation.html](obfuscation.html) it's
-130 after pre-processing! Yes I might be mad. But then again I might just be
+134 after pre-processing! Yes I might be mad. But then again I might just be
 the Devil. Who knows? What I do know is code that is meant to be reached is
 reached! Yes I've played it many times. Some code I made dead seemed totally
 useless but why not add to confusion? If that includes one that the compiler
