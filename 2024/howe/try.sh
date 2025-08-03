@@ -9,7 +9,8 @@ if [[ -z "$CC" ]]; then
     CC="cc"
 fi
 
-make CC="$CC" all >/dev/null || exit 1
+MAKE=$(which gmake)
+${MAKE:=make} CC="$CC" all >/dev/null || exit 1
 
 read -r -n 1 -p "Press any key to form foo: "
 echo 1>&2
