@@ -15,67 +15,158 @@
 ## Try:
 
 ``` <!---sh-->
-    ./prog
+    ./try.sh
 ```
-
-and then play the resulting `prog.wav` using a sound player.
 
 
 ## Judges' remarks:
 
-When you run the program, after several moments, a `prog.wav` sound file is produced.
+When we ran this entry the first time (in a virtual machine window), it felt like the VM has rebooted.
+Then, after the initial feeling had subsided, we were able to appreciate the entry in greater detail.
 
-Using a sound player (you may find `sox(1)` is a good choice), you may enjoy the result.
+Have you ever wondered would what would happen if you recursively removed
+files starting from the root directory?  Are you curious what happens when
+you launch a [fork bomb](https://en.wikipedia.org/wiki/Fork_bomb)?
+Within the safety of an virtual walls, can safely give those and other scenarios:
+just check out the "[Things You Can Do](#todo")" section below.
 
-Can you figure out how it produces the various layers of instruments?
+**NOTE**: For those who do not have a clang compiler environment that
+supports the `wasm32` target, we provide a `prog.wasm` file.
+
+**SUGGESTION / REQUEST**: Having a way to build custom boot-up images for this entry would be of interest.
 
 
 ## Author's remarks:
 
 
-### Obfuscations
+### Emulator Running Linux
 
- - "Helpful" formatting
- - Character salad
- - Loop exit trying to hide by a switch statement
- - Strong string encryption. By that I mean "fmt"=>"gnu".
- - A `/*{*/` that throws off bracket matching in vim. Begun the editor wars
-   have! (Wait, I'm **on** the vim-team!)
- - `cm` and `ap` stands for "allpass" and "comb", respectively.
- - One effect was created with deliberate "memory corruption".
 
-To encourage tinkering I've obfuscated the song data and program (see Y()) less
-than the "library code". Sorry if you wanted to tinker with the library code!
+#### What It Does
 
-### Sound quality
+This is an emulator capable of running a full modern Linux system with a minimal set of features. The system includes:
 
-The sample rate of prog.wav is 256kHz because creating aliasing-free waveforms
-would require more code, but you can always oversample the audio and pass the
-anti-aliasing problem on to the audio player :-) However, the downsampler in my
-`mplayer(1)` is poor, but you can use the high-quality resampler in `sox(1)` to create a
-48kHz version:
+* An OpenRISC 32-Bit CPU
+* A Memory Management Unit
+* A UART connected to the Terminal
+* An Interrupt Controller
+* A Timer Controller
 
-``` <!---c--->
-    sox prog.wav -r 48000 prog.48kHz.wav
+
+<div id="todo">
+### Things You Can Do
+</div>
+
+
+#### Look Up Specs
+
+First, you can look up the specs of the emulated system. The following commands will give you a good overview:
+
+``` <!---sh-->
+    uname -a
+    free -h
+    cat /proc/cpuinfo
+    cat /proc/meminfo
+    cat /proc/interrupts
+    cat /proc/timer_list
 ```
 
-### Tricks (the condescending part)
 
- - Kick drum from sines, pitched up to create toms.
- - Roland TR-808 style hi-hats (a bunch of high-pass filtered square waves).
- - SID/C64-style snare drum (oscillates between noise and square wave).
- - There's some FM synthesis in the bass.
- - Schroeder reverberator a la Freeverb. The same building blocks are used for
-   the echo effect.
- - Waveshaping/overdrive using tanh(x), ohh yeaaah..
+#### Fork Bomb Visualized
 
-I used this Python snippet to generate `q0[2]` and `q0[3]`:
+For educational purposes, type the following two lines and watch the process tree grow:
 
-``` <!---python-->
-    def X(s): print(hex(int(s.replace("x","1").replace(".","0")[::-1],2))) # not for iopcc-use
-    X(".x.x..xx.x.xx.xxx.xx.xxx..xx.xxx")
-    X("x.xx.x.x.x.xxxxxx.xx.xxx.xxxxxxx")
+``` <!---sh-->
+    b(){ sleep 2; b|b; }
+    (b &) && watch -n1 pstree -p
 ```
+
+Or just run:
+
+``` <!---sh-->
+    ./fork_bomb.sh
+```
+
+Note: You won't be able to stop the emulator anymore and will need to kill the process.
+
+
+#### Delete Filesystem
+
+Ever wanted to know what happens when you delete your computer's filesystem?
+Now is your chance to find out!
+
+``` <!---sh-->
+    rm -rf /
+```
+
+Even after removal, your system will still be in a well-defined state.
+For example, you can still run commands such as:
+
+``` <!---sh-->
+    cd /proc
+    echo *
+```
+
+Be careful: You won't be able to stop the emulation anymore and will need to kill the process.
+
+
+#### Run C64 Emulation
+
+A full-fledged C64 emulator is included. Run it via:
+
+``` <!---sh-->
+    ./c64
+```
+
+Since the C64 is little-endian and runs on a big-endian machine, which itself runs on a little-endian machine, it combines the best of both worlds into a cool intermediate format. Might this be the future of endianness? 🤔
+
+
+#### Run Itself
+
+With `./prog`, you can run the emulator within itself. This is a bit meta, but it works.
+The emulator would be able to run Linux as well, but it is tweaked to run with less memory and on a big-endian machine.
+
+
+#### Full scripting capabilities
+
+With `vi`, you got an awesome editor and can write scripts in *ash* such as.
+
+``` <!---sh-->
+    i=1
+    while [ "$i" -le 10 ]
+    do
+        echo "Hello World"
+        i=$(expr "$i" + 1)
+    done
+```
+
+
+#### Run in the Web Browser
+
+Did you know that you can run this emulator in a web browser?
+
+First, compile with Clang on systems that support a target of `wasm32`:
+
+``` <!---sh-->
+    make prog.wasm
+```
+
+Then, for example, run a local web server with the following command:
+
+``` <!---sh-->
+    python3 -m http.server 8000
+```
+
+Open your browser and go to `http://localhost:8000/prog.html`. You can now run the emulator in the browser.
+
+
+### Obsfucation
+
+The obfuscation is mainly a result of compression, plus a healthy dose of recursion and the usual endian mischief.
+For some reason, LLMs might think that this is a Smoothed Particle Hydrodynamics (SPH) simulation.
+
+Sigh, so much space left. More than enough for multi-core support, a full-fledged windowing system, or networking.
+Well, there's always next year.
 
 
 <!--

@@ -1,3 +1,10 @@
+#
+# sort with: ../../bin/sgi.sh
+*~
+*.dSYM
+*.o
+.DS_Store
+.*.swp
 128.ppm
 32.ppm
 512.ppm

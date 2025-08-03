@@ -1,6 +1,6 @@
 #!/usr/bin/env make
 #
-# 2024/anders
+# 2024/straadt
 
 #############################
 # shell used by this Makefile
@@ -22,19 +22,15 @@ include ../../var.mk
 
 # Common C compiler warnings to silence
 #
-# NOTE: Please don't add -Wno-unknown-warning-option to CSILENCE
-# 	(or to CUNKNOWN)
+# Example: CSILENCE= -Wno-poison-system-directories
 #
-# NOTE: The author says this about -Wno-unsafe-buffer-usage
-#
-# 	# nah i'm not really into rust
-#
-CSILENCE= -Wno-int-in-bool-context -Wno-out-of-line-declaration \
-	-Wno-unsafe-buffer-usage
+CSILENCE= -Wno-bitwise-op-parentheses -Wno-int-in-bool-context \
+	-Wno-strict-prototypes -Wno-misleading-indentation -Wno-parentheses \
+	-Wno-sign-compare
 
 # Attempt to silence unknown warning options
 #
-CUNKNOWN=
+CUNKNOWN= -Wno-unknown-warning-option
 
 # Common C compiler warning flags
 #
@@ -46,7 +42,7 @@ CWARN= -Wall -Wextra -pedantic ${CSILENCE} ${CUNKNOWN}
 
 # Compiler standard
 #
-CSTD= -std=gnu17
+CSTD= -std=c11
 
 # Compiler bit architecture
 #
@@ -82,7 +78,7 @@ COTHER=
 #
 # Example: OPT= -O0 -g
 #
-OPT= -O3
+OPT= -Os
 
 # Default flags for ANSI C compilation
 #
@@ -92,7 +88,7 @@ CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${COTHER} ${OPT}
 #
 # Example: LDFLAGS= -lncurses -lm
 #
-LDFLAGS= -lm
+LDFLAGS=
 
 # C compiler to use
 #
@@ -121,7 +117,11 @@ ifeq "$(findstring $(CLANG),${CC})" "$(CLANG)"
 #
 #           make all CC=clang
 #
-CSILENCE+= -Wno-poison-system-directories -Wno-unknown-warning-option
+CSILENCE+= -Wno-bitwise-op-parentheses -Wno-cast-align -Wno-comma \
+	-Wno-implicit-int-conversion -Wno-int-in-bool-context \
+	-Wno-missing-prototypes -Wno-missing-variable-declarations \
+	-Wno-poison-system-directories -Wno-shorten-64-to-32 -Wno-sign-conversion \
+	-Wno-strict-prototypes -Wno-unsafe-buffer-usage
 #
 CWARN+= -Weverything
 #
@@ -160,7 +160,7 @@ ALT_TARGET=
 #
 # Example: DATA= curds whey
 #
-DATA=
+DATA= a ${PROG}.wasm
 
 
 #################
@@ -176,6 +176,15 @@ all: data ${TARGET}
 #
 ${PROG}: ${PROG}.c
 	${CC} ${CFLAGS} ${PROG}.c -o $@ ${LDFLAGS}
+
+${PROG}.wasm: ${PROG}.c wasm_include/stdio.h wasm_include/termios.h wasm_include/unistd.h
+	@if [[ ! -s ${PROG}.wasm ]]; then \
+	    echo ${CLANG} -Os -nostdlib -Iwasm_include --target=wasm32 ${PROG}.c -o ${PROG}.wasm -Wno-builtin-requires-header -Wno-c23-extensions -Wl,--allow-undefined -Wl,--no-entry -Wl,--export-all; \
+	    ${CLANG} -Os -nostdlib -Iwasm_include --target=wasm32 ${PROG}.c -o ${PROG}.wasm -Wno-builtin-requires-header -Wno-c23-extensions -Wl,--allow-undefined -Wl,--no-entry -Wl,--export-all; \
+	else \
+	    echo "make $@: File already exists: ${PROG}.wasm"; \
+	    echo "make $@: To force a rebuild: ${RM} -f ${PROG}.wasm ; ${MAKE} $@"; \
+	fi
 
 # alternative executable
 #
@@ -206,7 +215,6 @@ clean:
 clobber: clean
 	${RM} -f ${TARGET} ${ALT_TARGET}
 	${RM} -rf *.dSYM
-	${RM} -f prog.wav
 
 
 ######################################

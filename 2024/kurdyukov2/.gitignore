@@ -1,2 +1,9 @@
+#
+# sort with: ../../bin/sgi.sh
+*~
+*.dSYM
+*.o
+.DS_Store
+.*.swp
 output2.jpg
 output.jpg

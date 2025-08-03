@@ -57,6 +57,18 @@
 
 ## 2025-08-02
 
+
+### IMPORTANT UPDATE
+
+We swapped by accident, both `2024/anders` and `2024/straadt`.  Sorry (tm Canada 🇨🇦) about that!
+
+If you downloaded the **IOCCC28** code before **2025 Aug 03 03:00:00 UTC**, please re-fetch the tarballs.
+
+We **SINCERELY APOLOGIZE** to both **Anders Kaare Straadt** and **Sebastian Macke** for the mix up!
+
+
+### IOCCC28 winning entries
+
 The 40th Anniversary International Obfuscated C Code Contest has been
 released, and we are delighted to share the winning entries from **IOCCC28**!
 
@@ -66,7 +78,7 @@ the [Official IOCCC website](index.html).
 
 Congratulations to:
 
-* [2024/anders](2024/anders/index.html) - Prize in sound coding - _layered music generator_
+* [2024/anders](2024/anders/index.html) - Prize in imitative rebooting - _OpenRISC CPU and Linux_
 * [2024/burton](2024/burton/index.html) - Prize in pentagrammatology - _wordle hard mode solver_
 * [2024/cable1](2024/cable1/index.html) - Prize in bot talk - _LLM inference engine_
 * [2024/cable2](2024/cable2/index.html) - Prize in murky waters - _salmon recipe_
@@ -85,7 +97,7 @@ Congratulations to:
 * [2024/maffiodo](2024/maffiodo/index.html) - Prize in creative interpretation - _Jav\*script interpreter_
 * [2024/mills](2024/mills/index.html) - Prize in ℤ₃ - _Infocom v3 story interpreter_
 * [2024/stedolan](2024/stedolan/index.html) - Best one liner - _icon from MD5_
-* [2024/straadt](2024/straadt/index.html) - Prize in imitative rebooting - _OpenRISC CPU and Linux_
+* [2024/straadt](2024/straadt/index.html) - Prize in sound coding - _layered music generator_
 * [2024/tmarrec](2024/tmarrec/index.html) - Prize in cyclonic coding - _3D tornado simulation_
 * [2024/tompng](2024/tompng/index.html) - Prize in quasi bijection - _vortex encryptor decryptor_
 * [2024/weaver](2024/weaver/index.html) - Sur prize - _rickroll_

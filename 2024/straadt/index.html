@@ -10,10 +10,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>2024/straadt - Prize in imitative rebooting</title>
+<title>2024/straadt - Prize in sound coding</title>
 <link rel="icon" type="image/x-icon" href="../../favicon.ico">
-<meta name="description" content="2024 IOCCC entry straadt - Prize in imitative rebooting">
-<meta name="keywords" content="IOCCC, 2024, IOCCC 2024, IOCCC entry, straadt, Prize in imitative rebooting">
+<meta name="description" content="2024 IOCCC entry straadt - Prize in sound coding">
+<meta name="keywords" content="IOCCC, 2024, IOCCC 2024, IOCCC entry, straadt, Prize in sound coding">
 </head>
 
 <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
@@ -433,8 +433,8 @@
 	   height=110>
   </a>
   <h1>The International Obfuscated C Code Contest</h1>
-  <h2>2024/straadt - Prize in imitative rebooting</h2>
-  <h3>OpenRISC CPU and Linux</h3>
+  <h2>2024/straadt - Prize in sound coding</h2>
+  <h3>layered music generator</h3>
 </div>
 
 <!-- END: this line ends content from: inc/header.default.html -->
@@ -477,83 +477,47 @@ Location: <a href="../../location.html#DE">DE</a> - <em>Federal Republic of Germ
 <h2 id="to-use">To use:</h2>
 <pre><code>    ./prog</code></pre>
 <h2 id="try">Try:</h2>
-<pre><code>    ./try.sh</code></pre>
+<pre><code>    ./prog</code></pre>
+<p>and then play the resulting <code>prog.wav</code> using a sound player.</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
-<p>When we ran this entry the first time (in a virtual machine window), it felt like the VM has rebooted.
-Then, after the initial feeling had subsided, we were able to appreciate the entry in greater detail.</p>
-<p>Have you ever wondered would what would happen if you recursively removed
-files starting from the root directory? Are you curious what happens when
-you launch a <a href="https://en.wikipedia.org/wiki/Fork_bomb">fork bomb</a>?
-Within the safety of an virtual walls, can safely give those and other scenarios:
-just check out the “<a href="#things-you-can-do">Things You Can Do</a>(#todo”)” section below.</p>
-<p><strong>NOTE</strong>: For those who do not have a clang compiler environment that
-supports the <code>wasm32</code> target, we provide a <code>prog.wasm</code> file.</p>
-<p><strong>SUGGESTION / REQUEST</strong>: Having a way to build custom boot-up images for this entry would be of interest.</p>
+<p>When you run the program, after several moments, a <code>prog.wav</code> sound file is produced.</p>
+<p>Using a sound player (you may find <code>sox(1)</code> is a good choice), you may enjoy the result.</p>
+<p>Can you figure out how it produces the various layers of instruments?</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
-<h3 id="emulator-running-linux">Emulator Running Linux</h3>
-<h4 id="what-it-does">What It Does</h4>
-<p>This is an emulator capable of running a full modern Linux system with a minimal set of features. The system includes:</p>
+<h3 id="obfuscations">Obfuscations</h3>
 <ul>
-<li>An OpenRISC 32-Bit CPU</li>
-<li>A Memory Management Unit</li>
-<li>A UART connected to the Terminal</li>
-<li>An Interrupt Controller</li>
-<li>A Timer Controller</li>
+<li>“Helpful” formatting</li>
+<li>Character salad</li>
+<li>Loop exit trying to hide by a switch statement</li>
+<li>Strong string encryption. By that I mean “fmt”=&gt;“gnu”.</li>
+<li>A <code>/*{*/</code> that throws off bracket matching in vim. Begun the editor wars
+have! (Wait, I’m <strong>on</strong> the vim-team!)</li>
+<li><code>cm</code> and <code>ap</code> stands for “allpass” and “comb”, respectively.</li>
+<li>One effect was created with deliberate “memory corruption”.</li>
 </ul>
-<div id="todo">
-<h3 id="things-you-can-do">Things You Can Do</h3>
-</div>
-<h4 id="look-up-specs">Look Up Specs</h4>
-<p>First, you can look up the specs of the emulated system. The following commands will give you a good overview:</p>
-<pre><code>    uname -a
-    free -h
-    cat /proc/cpuinfo
-    cat /proc/meminfo
-    cat /proc/interrupts
-    cat /proc/timer_list</code></pre>
-<h4 id="fork-bomb-visualized">Fork Bomb Visualized</h4>
-<p>For educational purposes, type the following two lines and watch the process tree grow:</p>
-<pre><code>    b(){ sleep 2; b|b; }
-    (b &amp;) &amp;&amp; watch -n1 pstree -p</code></pre>
-<p>Or just run:</p>
-<pre><code>    ./fork_bomb.sh</code></pre>
-<p>Note: You won’t be able to stop the emulator anymore and will need to kill the process.</p>
-<h4 id="delete-filesystem">Delete Filesystem</h4>
-<p>Ever wanted to know what happens when you delete your computer’s filesystem?
-Now is your chance to find out!</p>
-<pre><code>    rm -rf /</code></pre>
-<p>Even after removal, your system will still be in a well-defined state.
-For example, you can still run commands such as:</p>
-<pre><code>    cd /proc
-    echo *</code></pre>
-<p>Be careful: You won’t be able to stop the emulation anymore and will need to kill the process.</p>
-<h4 id="run-c64-emulation">Run C64 Emulation</h4>
-<p>A full-fledged C64 emulator is included. Run it via:</p>
-<pre><code>    ./c64</code></pre>
-<p>Since the C64 is little-endian and runs on a big-endian machine, which itself runs on a little-endian machine, it combines the best of both worlds into a cool intermediate format. Might this be the future of endianness? 🤔</p>
-<h4 id="run-itself">Run Itself</h4>
-<p>With <code>./prog</code>, you can run the emulator within itself. This is a bit meta, but it works.
-The emulator would be able to run Linux as well, but it is tweaked to run with less memory and on a big-endian machine.</p>
-<h4 id="full-scripting-capabilities">Full scripting capabilities</h4>
-<p>With <code>vi</code>, you got an awesome editor and can write scripts in <em>ash</em> such as.</p>
-<pre><code>    i=1
-    while [ &quot;$i&quot; -le 10 ]
-    do
-        echo &quot;Hello World&quot;
-        i=$(expr &quot;$i&quot; + 1)
-    done</code></pre>
-<h4 id="run-in-the-web-browser">Run in the Web Browser</h4>
-<p>Did you know that you can run this emulator in a web browser?</p>
-<p>First, compile with Clang on systems that support a target of <code>wasm32</code>:</p>
-<pre><code>    make prog.wasm</code></pre>
-<p>Then, for example, run a local web server with the following command:</p>
-<pre><code>    python3 -m http.server 8000</code></pre>
-<p>Open your browser and go to <code>http://localhost:8000/prog.html</code>. You can now run the emulator in the browser.</p>
-<h3 id="obsfucation">Obsfucation</h3>
-<p>The obfuscation is mainly a result of compression, plus a healthy dose of recursion and the usual endian mischief.
-For some reason, LLMs might think that this is a Smoothed Particle Hydrodynamics (SPH) simulation.</p>
-<p>Sigh, so much space left. More than enough for multi-core support, a full-fledged windowing system, or networking.
-Well, there’s always next year.</p>
+<p>To encourage tinkering I’ve obfuscated the song data and program (see Y()) less
+than the “library code”. Sorry if you wanted to tinker with the library code!</p>
+<h3 id="sound-quality">Sound quality</h3>
+<p>The sample rate of prog.wav is 256kHz because creating aliasing-free waveforms
+would require more code, but you can always oversample the audio and pass the
+anti-aliasing problem on to the audio player :-) However, the downsampler in my
+<code>mplayer(1)</code> is poor, but you can use the high-quality resampler in <code>sox(1)</code> to create a
+48kHz version:</p>
+<pre class="&lt;!---c---&gt;"><code>    sox prog.wav -r 48000 prog.48kHz.wav</code></pre>
+<h3 id="tricks-the-condescending-part">Tricks (the condescending part)</h3>
+<ul>
+<li>Kick drum from sines, pitched up to create toms.</li>
+<li>Roland TR-808 style hi-hats (a bunch of high-pass filtered square waves).</li>
+<li>SID/C64-style snare drum (oscillates between noise and square wave).</li>
+<li>There’s some FM synthesis in the bass.</li>
+<li>Schroeder reverberator a la Freeverb. The same building blocks are used for
+the echo effect.</li>
+<li>Waveshaping/overdrive using tanh(x), ohh yeaaah..</li>
+</ul>
+<p>I used this Python snippet to generate <code>q0[2]</code> and <code>q0[3]</code>:</p>
+<pre><code>    def X(s): print(hex(int(s.replace(&quot;x&quot;,&quot;1&quot;).replace(&quot;.&quot;,&quot;0&quot;)[::-1],2))) # not for iopcc-use
+    X(&quot;.x.x..xx.x.xx.xxx.xx.xxx..xx.xxx&quot;)
+    X(&quot;x.xx.x.x.x.xxxxxx.xx.xxx.xxxxxxx&quot;)</code></pre>
 <!--
 
     Copyright © 1984-2025 by Landon Curt Noll and Leonid A. Broukhis.  All Rights Reserved.
@@ -584,19 +548,14 @@ Well, there’s always next year.</p>
 <li><a href="https://github.com/ioccc-src/winner/blob/master/2024/straadt/prog.orig.c">prog.orig.c</a> - original source code</li>
 <li><a href="https://github.com/ioccc-src/winner/blob/master/2024/straadt/try.sh">try.sh</a> - script to try entry</li>
 <li><a href="prog.html">prog.html</a> - run emulator in a browser</li>
-<li><a href="https://github.com/ioccc-src/winner/blob/master/2024/straadt/wasm_include/stdio.h">wasm_include/stdio.h</a> - wasm include file</li>
-<li><a href="https://github.com/ioccc-src/winner/blob/master/2024/straadt/wasm_include/termios.h">wasm_include/termios.h</a> - wasm include file</li>
-<li><a href="https://github.com/ioccc-src/winner/blob/master/2024/straadt/wasm_include/unistd.h">wasm_include/unistd.h</a> - wasm include file</li>
 </ul>
 <h2 id="secondary-files">Secondary files</h2>
 <ul>
 <li><a href="2024_straadt.tar.bz2">2024_straadt.tar.bz2</a> - download entry tarball</li>
 <li><a href="https://github.com/ioccc-src/winner/blob/master/2024/straadt/README.md">README.md</a> - markdown source for this web page</li>
-<li><a href="https://github.com/ioccc-src/winner/blob/master/2024/straadt/a">a</a> - virtual machine</li>
 <li><a href="https://github.com/ioccc-src/winner/blob/master/2024/straadt/.entry.json">.entry.json</a> - entry summary and manifest in JSON</li>
 <li><a href="https://github.com/ioccc-src/winner/blob/master/2024/straadt/.gitignore">.gitignore</a> - list of files that should not be committed under git</li>
 <li><a href=".path">.path</a> - directory path from top level directory</li>
-<li><a href="https://github.com/ioccc-src/winner/blob/master/2024/straadt/prog.wasm">prog.wasm</a> - WebAssembly binary module</li>
 <li><a href="index.html">index.html</a> - this web page</li>
 </ul>
 <hr style="width:10%;text-align:left;margin-left:0">

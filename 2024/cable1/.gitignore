@@ -1,3 +1,10 @@
+#
+# sort with: ../../bin/sgi.sh
+*~
+*.dSYM
+*.o
+.DS_Store
+.*.swp
 LLAMA2_LICENSE
 eeyore
 eeyore_openmp

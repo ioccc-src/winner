@@ -1,1 +1,8 @@
+#
+# sort with: ../../bin/sgi.sh
+*~
+*.dSYM
+*.o
 *.sav
+.DS_Store
+.*.swp
