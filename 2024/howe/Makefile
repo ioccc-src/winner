@@ -221,7 +221,7 @@ clean:
 	${RM} -f ${OBJ} ${ALT_OBJ}
 
 clobber: clean
-	${RM} -f ${TARGET} ${ALT_TARGET}
+	${RM} -f ${TARGET} ${ALT_TARGET} try foo
 	${RM} -rf *.dSYM
 
 
