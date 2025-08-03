@@ -491,13 +491,27 @@ figure out how this program actually does what it does.</p>
 <p>Before you set off on your adventure to decode this program’s logic, make
 sure you have enough food, ammo, clothes, oxen, and programming supplies.
 You’ll be driving for 2170 miles through a wild wilderness inspired
-by Oregon, so you’ll need to be prepared for anything! Regardless of
+by <a href="https://en.wikipedia.org/wiki/The_Oregon_Trail_(series)">Oregon Trail</a>, so you’ll need to be prepared for anything! Regardless of
 how well prepared you are, you will have a devil of a time jumping around
 inside this C code. :-)</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <div id="devil">
 <h3 id="a-pact-with-the-devil-on-the-oregon-trail-and-his-134-regrets-of-goto">A Pact With the Devil On the Oregon Trail (…and his 134 regrets of goto)</h3>
 </div>
+<hr style="width:10%;text-align:left;margin-left:0">
+<blockquote>
+<p>Fun fact: after winning this, the author played the game in gdb from start to
+finish and not counting macros but counting all function calls (not libc
+functions, functions in prog.c), there were a total of <strong>985</strong> (!) line jumps.
+The prog.c, counting <code>#include</code>s, <code>#define</code>s, functions and some lines that have
+only braces, as well as 14 blank lines, has only 85 lines. A very tiny fraction
+of the time a line might be repeated in a row ONCE but that does not really matter.</p>
+</blockquote>
+<p><strong>NOTE</strong>: I actually submitted two versions. This one is not encrypted. The
+encrypted one even encrypted emojis without having to decrypt them in order to
+print them (and everything else). I have kept references to encryption in this
+file even after publication. I do have a copy of it if anyone is interested.</p>
+<hr style="width:10%;text-align:left;margin-left:0">
 <p>The <strong>Go To Hell In A Handcart Travel Company</strong> PROUDLY welcomes all sinners to
 our GREATEST destination yet, with:</p>
 <p><img src="devil.png"
@@ -514,7 +528,7 @@ all the way back to the 1950s, all the while taking place in the 1800s),
 <strong>PLEASE</strong> either read the (probably totally unnecessary)
 <a href="#disclaimer">disclaimer</a> or skip this perilous journey entirely. Obviously the
 judges will have no choice in the matter :-) but it’s not really for them anyway
-but rather in case this wins.</p>
+but rather in case this wins (which, of course, it did).</p>
 <p>Everyone might or might not want to look at the <a href="#jokes">commentary on the
 jokes</a> as well as the <a href="#humour">humour</a> section, <a href="#history">historical
 references</a> and <a href="#cultural">cultural references</a> as well. The
@@ -2841,7 +2855,7 @@ comparison):</p>
     3826</code></pre>
 <p>and of course some of those spaces are not necessary but some are. I think you
 get the idea: my code is <strong>FAR MORE</strong> compact than the original game (and I do
-it with <strong>MORE</strong> gotos too) and I do more and even have lots of jokes even in
+it with <strong>MORE</strong> <code>goto</code>s too) and I do more and even have lots of jokes even in
 the code, and the code is also thematic! Now to be fair there are some things
 that my code does not do but the original does: it requires you to type some
 strings and it requires you to choose how to eat and tactics for the riders. But
@@ -3070,14 +3084,23 @@ proverbial hat to them. They would have to be extremely patient - and have
 traits I do not even know how to describe. Perhaps they would be utterly
 ineffable.</p>
 <p>Actually I wanted to see what it was like. It was VERY amusing - but only
-because I did not have to debug it. I ran out of files to include and I’m low on
-time (mere hours left) but to get to JUST the third prompt this is the lines it
-went in the following sequence:</p>
+because I did not have to debug it. For the submission I included line changes
+for JUST the third prompt. It looked like:
+time (mere hours left) but to get to JUST the third prompt this is the lines it</p>
 <pre><code>    19 20 21 32 69 82 34 33 34 47 45 47 50 83 34 33 34 47 45 47 50 83 34 33 34</code></pre>
-<p>The game loop is almost certainly much worse, especially those two for loops I
-mentioned, but there is much much more. If this is easier to follow then I’m a
-dragon. I’m not a dragon. I have a secret for you: dragons don’t exist. Except
-on the Oregon Trail.</p>
+<p>I said the game loop is almost certainly much worse, especially those two for
+loops I mentioned, but there is much much more. If this is easier to follow then
+I’m a dragon. I’m not a dragon. I have a secret for you: dragons don’t exist.
+Except on the Oregon Trail.</p>
+<p>I was right too: the entire game is worse, far far worse. After this won I did a
+full sequence. This is from start to finish and I include it for your amusement.
+Or horror. There are a few times where the line is the same but that only shows
+how very often the line changes. It is a total of 985 changes, counting
+function calls (i.e. each call to one of the few functions is a jump); calls to
+the macros are not counted.</p>
+<p>This is in a program that is JUST 85 lines! A program that has only 85 lines
+COUNTING the <code>#include</code>s, <code>#define</code>s, other functions and 14 blank lines that
+jumps 985 times is astonishing.</p>
 <blockquote>
 <p>I have yet to see a single study that supported the supposition that GOTOs are
 harmful (I presume this is not because nobody has tried). Nonetheless, people
@@ -3093,7 +3116,8 @@ sure is WRONG NOW. Anyone who thinks otherwise needs to try and debug
 my program - or maintain it. Or write it.</p>
 <p>It would have been SO MUCH EASIER if I did not use 134 <code>goto</code>s. Actually, even a
 tiny portion of that would make it harder. Nobody, whether they’re in their
-right mind or not, would WANT to maintain this, or something even close to it.</p>
+right mind or not, would WANT to maintain this, or something even close to it.
+Feel free to pass on judgement to me. I welcome it!</p>
 <p>Even flex/bison code, which as far as I am aware uses FAR fewer <code>goto</code>s, is
 notorious for <code>goto</code>s and is quite hard to follow. It would be a nightmare to
 try and maintain without the .l/.y source files.</p>
