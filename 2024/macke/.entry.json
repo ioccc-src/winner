@@ -3,13 +3,13 @@
     "entry_JSON_format_version" : "1.2 2024-09-25",
     "award" : "Prize in imitative rebooting",
     "year" : 2024,
-    "dir" : "anders",
-    "entry_id" : "2024_anders",
+    "dir" : "macke",
+    "entry_id" : "2024_macke",
     "title" : "endian_bender",
     "abstract" : "OpenRISC CPU and Linux",
     "author_set" : [
         {
-            "author_handle" : "Anders_Kaare_Straadt"
+            "author_handle" : "Sebastian_Macke"
         }
     ],
     "manifest" : [
