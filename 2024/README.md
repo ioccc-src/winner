@@ -265,7 +265,7 @@ full-fledged C64 emulator is included!
 * [2024/ferguson2](ferguson2/index.html)
 
 The "**Prize in yil-tas**" provides a hint as to what this marvelous
-winning entry is going, provided that you are someone familiar in at
+winning entry is doing, provided that you are someone familiar in at
 least 3 languages (**hint**: One of them is C, another is English).
 
 The IOCCC is honored to present this entry for your enjoyment and for you to
