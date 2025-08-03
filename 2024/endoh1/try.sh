@@ -12,7 +12,8 @@ fi
 
 # make sure the program has been built
 #
-make CC="$CC" all >/dev/null || exit 1
+MAKE=$(which gmake)
+${MAKE:=make} CC="$CC" all >/dev/null || exit 1
 
 
 # clear the screen
