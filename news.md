@@ -62,7 +62,7 @@
 
 We swapped by accident, both `2024/anders` and `2024/straadt`.  Sorry (tm Canada 🇨🇦) about that!
 
-If you downloaded the **IOCCC28** code before **2025 Aug 03 03:00:00 UTC**, please re-fetch the tarballs.
+If you downloaded the **IOCCC28** code before **2025 Aug 03 09:40:00 UTC**, please re-fetch the tarballs.
 
 We **SINCERELY APOLOGIZE** to both **Anders Kaare Straadt** and **Sebastian Macke** for the mix up!
 
