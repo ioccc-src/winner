@@ -162,7 +162,7 @@ echo 1>&2
 read -r -n 1 -p "Press any key to run: make foo: "
 echo 1>&2
 echo 1>&2
-make foo
+${MAKE} foo
 echo 1>&2
 
 read -r -n 1 -p "Press any key to run: ./foo +foo.c > bar.c: "
