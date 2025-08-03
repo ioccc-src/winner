@@ -42,6 +42,21 @@ before running the program.
     echo 'How 2+2 can equal 5?' | ./rainman
 ```
 
+**PLEASE NOTE**: The above examples are "_one shot_" examples.
+However you can have an extended conversation.  For example:
+
+``` <!---sh-->
+    ./prog
+```
+
+or:
+
+``` <!---sh-->
+    ./linux
+```
+
+etc.
+
 
 ### Fun things to try
 
