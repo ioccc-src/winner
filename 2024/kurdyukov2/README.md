@@ -78,6 +78,12 @@ This program removes compression artifacts from JPEG images using values from qu
 - I reduced the code even more, by a hijacking `main()` with file I/O from the `jpegtran` utility that comes with *libjpeg*. You can see this version in `prog.nomain.c`. As a useful side effect, you can use command line options comes from this tool, like: `./prog -optimize -outfile output.jpg input.jpg`. But for that you must build the program with *libjpeg* sources.
 
 
+### Extra notes
+
+This is an obfuscated version of [JPEG Quant Smooth](https://github.com/ilyakurdyukov/jpeg-quantsmooth).
+The full version is heavily optimized using SIMD/OpenMP and has chroma scaling feature.
+
+
 <!--
 
     Copyright © 1984-2025 by Landon Curt Noll and Leonid A. Broukhis.  All Rights Reserved.
