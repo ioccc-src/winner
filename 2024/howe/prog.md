@@ -66,7 +66,7 @@ The commands are similar, but not the same as `vi(1)`.  Most commands can be pre
 
 * Has UTF-8 support.
 
-  - Loads UTF-8 files as-is and internally remains UTF-8 (not converteed to `wchar_t`).
+  - Loads UTF-8 files as-is and internally remains UTF-8 (not converted to `wchar_t`).
   - UTF-8 input will likely require an intl. keyboard or enabling [US Intl. dead-key keyboard](https://en.wikipedia.org/wiki/QWERTY#US-International) support.  See also [Unicode Input](https://en.wikipedia.org/wiki/Unicode_input).
 
 * The display of long physical lines that are larger than the terminal screen is untested, so considered undefined.

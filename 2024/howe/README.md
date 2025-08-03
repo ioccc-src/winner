@@ -29,7 +29,7 @@ The source (and of this program) has fun with an UTF-8 conforming accent, in a m
 
 > TL;DR - to exit type **Q** or press **CTRL+C**.
 
-As mentioned in in the [COMMANDS section of prog.html](prog.html#commands), try these commands:
+As mentioned in the [COMMANDS section of prog.html](prog.html#commands), try these commands:
 
 ```
     | Key cmd  | Action                                                     |
