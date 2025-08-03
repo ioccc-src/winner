@@ -41,7 +41,7 @@
 ## Judges' remarks:
 
 The IOCCC is honored to present this entry with an award that, in turn,
-recognizes the [Navajo code talkers](https://en.wikipedia.org/wiki/Code_talker#Navajo)
+recognizes the [Navajo Code Talkers](https://en.wikipedia.org/wiki/Code_talker#Navajo)
 who served with distinction during World War II.
 
 As noted in [NY Times article on Chester Nez](https://www.nytimes.com/2014/06/06/us/chester-nez-dies-at-93-his-native-tongue-helped-to-win-a-war-of-words.html):
@@ -49,17 +49,17 @@ As noted in [NY Times article on Chester Nez](https://www.nytimes.com/2014/06/06
 > Not fully declassified until 1968, the Navajo code remains the only oral military
 > code that (was) never been broken (in the field of operations).
 
-This submission encodes (pun intended) the basic algorithm used by Navajo code talkers
+This submission encodes (pun intended) the basic algorithm used by Navajo Code Talkers
 to encode and decode messages.  We invite you to attempt to decipher the C code,
-and then to explore the fascinating cryptographic history of [Code talking](https://en.wikipedia.org/wiki/Code_talker).
+and then to explore the fascinating cryptographic history of [Code Talking](https://en.wikipedia.org/wiki/Code_talker).
 
 
 ### On a personal IOCCC Judge note
 
 One of the IOCCC Judges had the unique opportunity to engage in
-discussions with code talkers, sharing insights into the intricacies of
+discussions with Code Talkers, sharing insights into the intricacies of
 the code as well as the practical variations that were developed in the
-field between pairs of code talkers.
+field between pairs of Code Talkers.
 
 The discussion provided some fascinating insights into the amazing
 [Navajo language](https://en.wikipedia.org/wiki/Navajo_language)
@@ -68,7 +68,7 @@ nuances available to a native fluent speaker.  Due to the complex
 syntax, phonology, and numerous dialects available in the Navajo
 language, the IOCCC Judge was only able to grasp a superficial
 understanding of the topic.  Nevertheless, it was evident to the
-IOCCC Judge, why the Navajo language developed an ideal code talker
+IOCCC Judge, why the Navajo language developed an ideal Code Talker
 framework during World War II, and it is worth noting that
 [fewer than 30 non-Navajo individuals](https://archive.library.nau.edu/digital/collection/cpa/id/44718)
 could comprehend the language during World War II.
@@ -181,8 +181,8 @@ Talkers; see [explanation here](#how)).
 From the [Navajo Code Talkers Fact
 Sheet](https://www.history.navy.mil/research/library/online-reading-room/title-list-alphabetically/n/code-talkers.html):
 
-> When a Navajo code talker received a message, what he heard was a string of
-seemingly unrelated Navajo words. The code talker first had to translate each
+> When a Navajo Code Talker received a message, what he heard was a string of
+seemingly unrelated Navajo words. The Code Talker first had to translate each
 Navajo word into its English equivalent. Then he used only the first letter of
 the English equivalent in spelling an English word. Thus, the Navajo words
 "wol-la-chee" (ant), "be-la-sana" (apple) and "tse-nill" (axe) all stood for the
