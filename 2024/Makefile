@@ -42,9 +42,9 @@ include ../var.mk
 ###############
 
 # 1st - DO NOT REMOVE THIS LINE - bin/new-dir.sh uses this line #
-ENTRIES= anders burton cable1 cable2 carlini codemeow endoh1 endoh2 \
+ENTRIES= burton cable1 cable2 carlini codemeow endoh1 endoh2 \
 	ferguson1 ferguson2 howe kramer kurdyukov1 kurdyukov2 kurdyukov3 \
-	kurdyukov4 maffiodo mills stedolan straadt tmarrec tompng weaver
+	kurdyukov4 macke maffiodo mills stedolan straadt tmarrec tompng weaver
 # 2nd - DO NOT REMOVE THIS LINE - bin/new-dir.sh uses this line #
 
 YEAR= 2024
