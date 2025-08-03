@@ -24,7 +24,8 @@
 # XXX - then change the 'all' to 'all alt' in the below command.            - XXX
 # XXX - Later, if the submission wins, it can be changed to 'everything'.   - XXX
 # XXX -                                                                     - XXX
-make CC="$CC" all >/dev/null || exit 1
+MAKE=$(command -v gmake)
+${MAKE:=make} CC="$CC" all >/dev/null || exit 1
 
 # clear the screen
 #
