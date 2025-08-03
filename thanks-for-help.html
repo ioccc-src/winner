@@ -5165,11 +5165,11 @@ be made consistent but adding markdown where necessary in the remarks is).</p>
 <div id="try">
 <h2 id="try-script-system">Try script system</h2>
 </div>
-<p><a href="#cody">Cody</a> devised the <code>try</code> script system and added the many <code>try.sh</code>,
-<code>try.alt.sh</code> and various other forms, as well as a number of wrapper scripts to
-more easily run programs. It is not always useful but these scripts do a variety
-of things to really show off the entries, so this really helps with the
-presentation of the winning entries.</p>
+<p><a href="#cody">Cody</a> devised the <code>try</code> script system (which we now use as part of
+judging) and added the many <code>try.sh</code>, <code>try.alt.sh</code> and various other forms, as
+well as a number of wrapper scripts to more easily run programs. It is not
+always useful but these scripts do a variety of things to really show off the
+entries, so this really helps with the presentation of the winning entries.</p>
 <p>Cody also added the example scripts for future submitters,
 <a href="https://github.com/ioccc-src/winner/blob/master/next/try.sh">try.sh</a> and
 <a href="https://github.com/ioccc-src/winner/blob/master/next/try.alt.sh">try.alt.sh</a>.</p>
@@ -5228,16 +5228,14 @@ definitions of ‘<code>HARD</code>’ :-) ), such as
 <a href="thanks-for-help.html#2001_anonymous">2001/anonymous</a> and
 <a href="thanks-for-help.html#2004_burley">2004/burley</a>; fixing entries like
 <a href="thanks-for-help.html#1985_sicherman">1985/sicherman</a> to
-not require <code>-traditional-cpp</code>; fixing
-entries like <a href="thanks-for-help.html#1991_dds">1991/dds</a> (or, as in the case of
+not need <code>-traditional-cpp</code>; fixing
+entries like <a href="thanks-for-help.html#1991_dds">1991/dds</a> to work with
+<a href="faq.html#clang">clang</a> (or, as in the case of
 <a href="thanks-for-help.html#1989_westley">1989/westley</a>, a true masterpiece in
-obfuscation, as much as possible) to work with <a href="faq.html#clang">clang</a>; porting entries like
+obfuscation, as much as possible); porting entries like
 <a href="thanks-for-help.html#1998_schweikh1">1998/schweikh1</a> to
-<a href="faq.html#macos_compile">macOS</a>; porting entries like
-<a href="thanks-for-help.html#2001_herrmann2">2001/herrmann2</a> to work in <a href="faq.html#32bit">both 32-bit and
-64-bit</a>; providing <a href="faq.html#alt_code">alternate code</a> where useful/necessary;
-improving all <a href="#makefiles">Makefiles</a>; writing <a href="#try">scripts</a> to greatly simplify running many
-of the entries; and other important fixes.</p>
+<a href="faq.html#macos_compile">macOS</a>; fixing entries like
+<a href="thanks-for-help.html#2001_herrmann2">2001/herrmann2</a> to work with <a href="faq.html#32bit">32 and 64-bit</a>; providing <a href="faq.html#alt_code">alt code</a> where useful/needed; improving all <a href="#makefiles">Makefiles</a>; devising the <a href="#try">try scripts</a> which we now use as part of judging; and other important fixes.</p>
 <p>Cody Boone Ferguson also used one of his own tools to detect many dead links.
 While the tool was not perfect it went a long way to uncover a good number of
 bad, broken or otherwise invalid links. It was a very laborious task to copy and
@@ -5253,9 +5251,9 @@ run <code>sed(1)</code> on specified files under git that we sometimes use to ed
 website, greatly improved the manifests and checked that the generated html
 files look good and are presentable, suggested CSS rules for
 image responsiveness (and made other CSS improvements) and he greatly improved the FAQ.</p>
-<p>Cody also wrote some of the <a href="bin/index.html">website scripts</a>, improved and
-bug fixed others, co-developed the <a href="https://github.com/xexyl/jparse">JSON parser and tools</a> with
-us, as we now make extensive use of JSON, and helped test and fix the submit
+<p>Cody also wrote some <a href="bin/index.html">website scripts</a>, improved and
+fixed others, co-developed the <a href="https://github.com/xexyl/jparse">JSON parser and tools</a> with
+us, as we now make extensive use of JSON, and helped test/fix the submit
 server and mailing list for IOCCC28 and beyond.</p>
 <p><strong>THANK YOU VERY MUCH</strong> for your extensive efforts in helping improve the IOCCC
 presentation of past IOCCC entries, fixing many entries that no

@@ -7050,11 +7050,11 @@ Jump to: [top](#)
 ## Try script system
 </div>
 
-[Cody](#cody) devised the `try` script system and added the many `try.sh`,
-`try.alt.sh` and various other forms, as well as a number of wrapper scripts to
-more easily run programs. It is not always useful but these scripts do a variety
-of things to really show off the entries, so this really helps with the
-presentation of the winning entries.
+[Cody](#cody) devised the `try` script system (which we now use as part of
+judging) and added the many `try.sh`, `try.alt.sh` and various other forms, as
+well as a number of wrapper scripts to more easily run programs. It is not
+always useful but these scripts do a variety of things to really show off the
+entries, so this really helps with the presentation of the winning entries.
 
 Cody also added the example scripts for future submitters,
 [try.sh](%%REPO_URL%%/next/try.sh) and
@@ -7140,16 +7140,14 @@ definitions of '`HARD`' :-) ), such as
 [2001/anonymous](thanks-for-help.html#2001_anonymous) and
 [2004/burley](thanks-for-help.html#2004_burley); fixing entries like
 [1985/sicherman](thanks-for-help.html#1985_sicherman) to
-not require `-traditional-cpp`; fixing
-entries like [1991/dds](thanks-for-help.html#1991_dds) (or, as in the case of
+not need `-traditional-cpp`; fixing
+entries like [1991/dds](thanks-for-help.html#1991_dds) to work with
+[clang](faq.html#clang) (or, as in the case of
 [1989/westley](thanks-for-help.html#1989_westley), a true masterpiece in
-obfuscation, as much as possible) to work with [clang](faq.html#clang); porting entries like
+obfuscation, as much as possible); porting entries like
 [1998/schweikh1](thanks-for-help.html#1998_schweikh1) to
-[macOS](faq.html#macos_compile); porting entries like
-[2001/herrmann2](thanks-for-help.html#2001_herrmann2) to work in [both 32-bit and
-64-bit](faq.html#32bit); providing [alternate code](faq.html#alt_code) where useful/necessary;
-improving all [Makefiles](#makefiles); writing [scripts](#try) to greatly simplify running many
-of the entries; and other important fixes.
+[macOS](faq.html#macos_compile); fixing entries like
+[2001/herrmann2](thanks-for-help.html#2001_herrmann2) to work with [32 and 64-bit](faq.html#32bit); providing [alt code](faq.html#alt_code) where useful/needed; improving all [Makefiles](#makefiles); devising the [try scripts](#try) which we now use as part of judging; and other important fixes.
 
 Cody Boone Ferguson also used one of his own tools to detect many dead links.
 While the tool was not perfect it went a long way to uncover a good number of
@@ -7168,9 +7166,9 @@ website, greatly improved the manifests and checked that the generated html
 files look good and are presentable, suggested CSS rules for
 image responsiveness (and made other CSS improvements) and he greatly improved the FAQ.
 
-Cody also wrote some of the [website scripts](bin/index.html), improved and
-bug fixed others, co-developed the [JSON parser and tools](https://github.com/xexyl/jparse) with
-us, as we now make extensive use of JSON, and helped test and fix the submit
+Cody also wrote some [website scripts](bin/index.html), improved and
+fixed others, co-developed the [JSON parser and tools](https://github.com/xexyl/jparse) with
+us, as we now make extensive use of JSON, and helped test/fix the submit
 server and mailing list for IOCCC28 and beyond.
 
 **THANK YOU VERY MUCH** for your extensive efforts in helping improve the IOCCC
