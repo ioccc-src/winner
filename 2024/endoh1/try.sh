@@ -23,7 +23,7 @@ clear
 
 # determine of make support -j2
 #
-make -j 2 prog.c >/dev/null 2>&1 < /dev/null
+${MAKE} -j 2 prog.c >/dev/null 2>&1 < /dev/null
 status="$?"
 if [[ $status -ne 0 ]]; then
     JOBS="1"
@@ -73,9 +73,9 @@ echo 1>&2
 rm -f "$SIZE.ppm"
 rm -rf pixel
 if [[ $JOBS -ge 2 ]]; then
-    time make -j "$JOBS" out.ppm H="$SIZE" W="$SIZE"
+    time ${MAKE} -j "$JOBS" out.ppm H="$SIZE" W="$SIZE"
 else
-    time make out.ppm H="$SIZE" W="$SIZE"
+    time ${MAKE} out.ppm H="$SIZE" W="$SIZE"
 fi
 mv -f -v out.ppm "$SIZE.ppm"
 echo 1>&2
@@ -103,9 +103,9 @@ echo 1>&2
 rm -f "$SIZE.ppm"
 rm -rf pixel
 if [[ $JOBS -ge 2 ]]; then
-    time make -j "$JOBS" out.ppm H="$SIZE" W="$SIZE"
+    time ${MAKE} -j "$JOBS" out.ppm H="$SIZE" W="$SIZE"
 else
-    time make out.ppm H="$SIZE" W="$SIZE"
+    time ${MAKE} out.ppm H="$SIZE" W="$SIZE"
 fi
 mv -f -v out.ppm "$SIZE.ppm"
 echo 1>&2
@@ -133,9 +133,9 @@ echo 1>&2
 rm -f "$SIZE.ppm"
 rm -rf pixel
 if [[ $JOBS -ge 2 ]]; then
-    time make -j "$JOBS" out.ppm H="$SIZE" W="$SIZE"
+    time ${MAKE} -j "$JOBS" out.ppm H="$SIZE" W="$SIZE"
 else
-    time make out.ppm H="$SIZE" W="$SIZE"
+    time ${MAKE} out.ppm H="$SIZE" W="$SIZE"
 fi
 mv -f -v out.ppm "$SIZE.ppm"
 echo 1>&2
@@ -157,9 +157,9 @@ echo 1>&2
 rm -f "$SIZE.ppm"
 rm -rf pixel
 if [[ $JOBS -ge 2 ]]; then
-    time make -j "$JOBS" out.ppm H="$SIZE" W="$SIZE"
+    time ${MAKE} -j "$JOBS" out.ppm H="$SIZE" W="$SIZE"
 else
-    time make out.ppm H="$SIZE" W="$SIZE"
+    time ${MAKE} out.ppm H="$SIZE" W="$SIZE"
 fi
 mv -f -v out.ppm "$SIZE.ppm"
 echo 1>&2
