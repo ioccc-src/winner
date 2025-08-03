@@ -237,9 +237,9 @@ char *I(struct a *a)
              * Well remember that B is the letter <-> Navajo word for that
              * letter array. So B[J][0] would be the letter itself and B[J][1]
              * will be the word itself. But now we have the other horrible
-             * expressions! Remember that if X (it's always 1 in this file) is
-             * non-zero it's deciphering and if it's 0 it's enciphering. But
-             * what is:
+             * expressions! Remember that if X (it's always 0 in this file) is
+             * non-zero it's deciphering and if it's 0 (always 0 here) it's
+             * enciphering. But what is:
              *
              *      1/ *"1"+s/
              *           *"1"+1/ *"1"+s/ *"1"+1+(s-s)**"1"+(s*(s-s))**"1"
