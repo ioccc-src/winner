@@ -215,7 +215,7 @@ Use:
 
 ``` <!---sh-->
     ./prog lzmadec.bin < sdk.zip.lzma > sdk.zip
-``` <!---sh-->
+```
 
 to decompress the SDK (.zip archive is without compression).
 
@@ -271,6 +271,17 @@ the `*.bin` files may be produced via this `make samples` rule:
 ### Web version
 
 I also wrote a web version in javascript. It is in `ogvm.html`, start a local server with `$ python3 -m http.server 8000` and open `http://127.0.0.1:8000/ogvm.html` in your browser.
+Files can be dragged into the window or read from the current directory.
+
+
+### JIT version
+
+An extended version with a fast JIT compiler (`prog.jit.c`) is also included. Supported architectures for JIT: x86/x86_64/aarch64/e2k. This version can also output graphics to a terminal window when using the `-DTERMIOS` option. For SDL use `-DSDL`.
+
+
+### Extra notes
+
+This entry was written in September 2020 in one month, later only a bonus JIT was made. The patch for Doom was later used in the [FPDoom](https://github.com/ilyakurdyukov/fpdoom) project (a port of Doom for feature phones).
 
 
 <!--
