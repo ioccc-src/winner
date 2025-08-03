@@ -10,7 +10,7 @@
     "alt_url" : "https://ioccc.xexyl.net",
     "deprecated_twitter_handle" : null,
     "mastodon" : "@xexyl@fosstodon.org",
-    "mastodon_url" : null,
+    "mastodon_url" : "https://fosstodon.org/@xexyl",
     "github" : "@xexyl",
     "affiliation" : null,
     "winning_entry_set" : [
