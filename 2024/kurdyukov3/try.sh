@@ -9,7 +9,8 @@
 
 # make sure the program has been built
 #
-make CC="$CC" all >/dev/null || exit 1
+MAKE=$(command -v gmake)
+${MAKE:=make} CC="$CC" all >/dev/null || exit 1
 
 # clear the screen
 #

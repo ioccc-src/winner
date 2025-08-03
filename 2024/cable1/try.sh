@@ -25,7 +25,8 @@ fi
 #
 read -r -n 1 -p "Press any key to when ready: "
 echo 1>&2
-make CC="$CC" all >/dev/null || exit 1
+MAKE=$(command -v gmake)
+${MAKE:=make} CC="$CC" all >/dev/null || exit 1
 
 # select a game
 #
