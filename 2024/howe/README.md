@@ -82,7 +82,7 @@ Simply type `make` to build.  There are two macros that can be customised:
 
 * A regression test suite is available on demand.  The test suite requires `tic(1)` to build the specialised test terminal entry.
 
-* Original unobfuscated more fully featured source available (search/replace, pipe-filter selection, markers, insert file, edit buffer grows, literal character input, multi undo/redo).
+* Original unobfuscated more fully featured source available (search/replace, pipe-filter selection, markers, insert file, edit buffer grows, literal character input, multi undo/redo).  See [full version](https://github.com/SirWumpus/eh).
 
 * The `iocccsize(1)` tool only counts bytes, not characters, i.e,. UTF-8 multibyte characters such that some characters cost 2, 3, or 4 bytes, thus penalising UTF-8 entries.
 
