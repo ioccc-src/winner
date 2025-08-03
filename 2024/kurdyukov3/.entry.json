@@ -62,6 +62,14 @@
             "entry_text" : "configuration file"
         },
         {
+            "file_path" : "prog.jit.c",
+            "inventory_order" : 150,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "extended version with a fast JIT compiler"
+        },
+        {
             "file_path" : "prog.sdl.c",
             "inventory_order" : 150,
             "OK_to_edit" : true,

@@ -508,6 +508,9 @@ then you will be able to compile the alternate code.</p>
 <li><p><code>prog.alt.c</code> uses <strong>libjpeg</strong> internals, which are the inverse of a DCT function that may run faster. Works with many <em>libjpeg</em> distributions.</p></li>
 <li><p>I reduced the code even more, by a hijacking <code>main()</code> with file I/O from the <code>jpegtran</code> utility that comes with <em>libjpeg</em>. You can see this version in <code>prog.nomain.c</code>. As a useful side effect, you can use command line options comes from this tool, like: <code>./prog -optimize -outfile output.jpg input.jpg</code>. But for that you must build the program with <em>libjpeg</em> sources.</p></li>
 </ul>
+<h3 id="extra-notes">Extra notes</h3>
+<p>This is an obfuscated version of <a href="https://github.com/ilyakurdyukov/jpeg-quantsmooth">JPEG Quant Smooth</a>.
+The full version is heavily optimized using SIMD/OpenMP and has chroma scaling feature.</p>
 <!--
 
     Copyright © 1984-2025 by Landon Curt Noll and Leonid A. Broukhis.  All Rights Reserved.
