@@ -34,7 +34,7 @@ Can you write one in the implemented subset of the language?
 
 #### What's this?
 
-Jav*script interpreter with Object, Array, String, Number, Functions and
+Jav\*script interpreter with Object, Array, String, Number, Functions and
 Garbage Collector. Batteries are not included.
 
 
@@ -93,7 +93,7 @@ Included files via Makefile (to reduce number of tokens, lower than 5006/2):
 ### Features
 
 Supported and unsupported features (everything else that is not listed is
-probaly unsupported, but who knows...):
+probably unsupported, but who knows...):
 
 - supported binary operators (in execution priority order from lower to higher);
     <pre>, = == != & &= && | |= || > >= >> < <= << - -= + += * \*= / /= % %= [ ( .</pre>
@@ -171,7 +171,7 @@ probaly unsupported, but who knows...):
 - **only** single line comments are supported
 - multi line comments are not supported. Use only single line comments
 - any unary operator on String value will convert String to Number
-- NaN is not implemented so invalid number convertion will generate a 0 Number
+- NaN is not implemented so invalid number conversion will generate a 0 Number
 - division by zero is not handled
 - there is no error handling, so if something goes wrong, interpreter will
   crash. If some of the unsupported language features are used, parser will
@@ -199,9 +199,9 @@ probaly unsupported, but who knows...):
 - **length** on String variables (or literal) return the number of characters
   in the string
 - there is no slice or splice in String and Array (but these feature can be
-  partially implemented in plain Javascript -- see **Useful things** chapter)
+  partially implemented in plain JavaScript -- see **Useful things** chapter)
 - there is no Date RegEx or Math (but some of Math methods can be implemented
-  in plain Javascript)
+  in plain JavaScript)
 - subscript operation like
 
 ``` <!---js-->
@@ -228,15 +228,19 @@ probaly unsupported, but who knows...):
 ```
 
   but something different will happen when you perform some comparisons:
+
     * null == 0 will be equal to 1
     * undefined == 0 will be equal to 1
     * undefined == null will be equal to 0
     * null == {} will be false (correctly)
     * ... some other edge cases, can you spot them?
-- there is not **typeof** or **instanceof**. You need to know the types of your
+
+- there is no `typeof` nor `instanceof`. You need to know the types of your
   variables or track its type inside other data structures.
-- **this** is missing. Inside Function you need to remember *this*
-- **function** declaration is supported ONLY inside expression and not as a
+
+- `this` is missing. Inside Function you need to remember `this`.
+
+- Function declaration is supported ONLY inside expression and not as a
   standalone declarator, so instead of this:
 
 ``` <!---js-->
@@ -249,7 +253,7 @@ probaly unsupported, but who knows...):
     var x = function () {};
 ```
 
-  and please look at the final semicolon! It is very important beacuse every
+  and please look at the final semicolon! It is very important because every
   expression need to terminate with that and without that strange parsing
   things will happen (also probably some segmentation fault).
   Functions need to be unnamed by itself.
@@ -303,10 +307,10 @@ probaly unsupported, but who knows...):
 
   because internally **arguments** array will be re-declared locally, with a
   stack based approach, for the next function call and can cause some variable
-  resolving missmatch. This is a little annoying but is also better to always
+  resolving mismatch. This is a little annoying but is also better to always
   remap each arguments value to a dedicated local variable.
 - early exit inside logical expression is not implemented so this code will not
-  be interrupted before the execution of the foo2 function:
+  be interrupted before the execution of the `foo2` function:
 
 ``` <!---js-->
     if (0 && foo2(123)) { print("hello\n"); }
@@ -442,11 +446,11 @@ The interpreter uses the same struct to hold values and variables. The same
 struct (c) is also used to store a linked list for global variables and a linked
 list for all properties contained inside a variable.
 
-Using the same struct has been usefull to strip down the code for a lesser number
+Using the same struct has been useful to strip down the code for a lesser number
 of tokens.
 
 This is a semi obfuscated struct that holds variables or values (NOTE: obfuscated
-symbols can be slightly differents from the final obfuscated ones):
+symbols can be slightly different from the final obfuscated ones):
 
 ``` <!---c-->
     typedef struct c*d;
@@ -469,10 +473,10 @@ symbols can be slightly differents from the final obfuscated ones):
 ```
 
 This struct is huge! It uses 72 bytes on 64bit X86 architecture. This struct is
-big to fit all the usefull data inside it and also something else that is
+big to fit all the useful data inside it and also something else that is
 needed to compress the code. In theory can be much smaller but the final code
 will uses more tokens (I have tried multiple times to implement this interpreter
-but this is the only solution that i've found to match the 2503 limitation.. with
+but this is the only solution that I've found to match the 2503 limitation.. with
 the previous limit of 2053 was really hard to stay under the limits -- for me!).
 Keep in mind also that on 64bit X86 architecture each pointer cost 8 bytes...
 
@@ -640,7 +644,7 @@ Strange things can happen or can be found when using this interpreter:
 - many other unknown strange things can happen in Hawkins, Indiana...
 
 
-### Usefull Things
+### Useful Things
 
 Console prototype is not implemented but console.log can be implemented using
 only native **print** function. The following is an example of Console
@@ -1146,7 +1150,7 @@ been stripped down in the final (light) obfuscated version of the code*
         atmp[0 + 1];", 20);
 ```
 
-Some of these tests has also been ported in plain javascript; take a look inside
+Some of these tests has also been ported in plain JavaScript; take a look inside
 the **verify.js** script. These tests uses **eval()** function to execute a test
 source code string and verify its execution results. These other tests can be
 executed with this command:
@@ -1181,16 +1185,16 @@ little mambo jumbo interpreter:
 ### Final Thoughts
 
 I've tried multiple time to rewrite this interpreter and compress the final
-obfuscated sourcecode to match the previous IOCCC limit but without success.
+obfuscated source code to match the previous IOCCC limit but without success.
 
 The increased limitation of tokens from 2053 to 2503 has made possible to use
 this iteration of the interpreter without continue to retry to rewrite that to
-compress the final sourcecode. Probably with more iterations the 2053 limit
+compress the final source code. Probably with more iterations the 2053 limit
 should be reached, who knows.
 
 The most tricky part in the development process has been to find out a minimal
-barebone subset of Javascript features, small enought to allow to build some
-other standard features on top of the barebone interpreter.
+bare bones subset of JavaScript features, small enough to allow to build some
+other standard features on top of the bare bones interpreter.
 
 In many tests I've tried to include the Object.keys features (to obtain the
 list of property keys inside a given Object) but, in all of my attempts, the

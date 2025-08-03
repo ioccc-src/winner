@@ -25,14 +25,14 @@
 <!-- END: this line ends content from: inc/head.default.html -->
 
 <!-- -->
-<!-- This web page was formed via the tool: bin/readme2index.sh -->
-<!-- The content of main section of this web page came from: 2024/maffiodo/README.md -->
+<!-- This web page was formed via the tool: unspecified -->
+<!-- The main section of this web page came from JSON and other data files -->
 <!-- -->
 
 <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-<!-- !!! Do not modify this web page, instead modify the file: 2024/maffiodo/README.md !!! -->
-<!-- !!! Do not modify this web page, instead modify the file: 2024/maffiodo/README.md !!! -->
-<!-- !!! Do not modify this web page, instead modify the file: 2024/maffiodo/README.md !!! -->
+<!-- The main section of this web page was generated via the tool: unspecified -->
+<!-- The main section of this web page was generated via the tool: unspecified -->
+<!-- The main section of this web page was generated via the tool: unspecified -->
 <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
 
 <!-- Markdown content was converted into HTML via the tool: bin/md2html.sh -->
@@ -447,7 +447,7 @@
   <a class="Right" href="https://github.com/ioccc-src/winner/blob/master/2024/maffiodo/prog.c">C code</a>
   <a class="Right" href="https://github.com/ioccc-src/winner/blob/master/2024/maffiodo/Makefile">Makefile</a>
   <a class="Right" href="#inventory">Inventory</a>
-  <a class="Right" href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.ioccc.org%2F2024%2Fmaffiodo%2Findex.html">&#x2713;</a>
+  <a class="Right" href="https://validator.w3.org/nu/?doc=#">&#x2713;</a>
 </div>
 
 <!-- END: this line ends content from: inc/navbar.mid.html -->
@@ -533,7 +533,7 @@ declared without a full prototype</li>
 </ul>
 <h3 id="features">Features</h3>
 <p>Supported and unsupported features (everything else that is not listed is
-probaly unsupported, but who knows…):</p>
+probably unsupported, but who knows…):</p>
 <ul>
 <li>supported binary operators (in execution priority order from lower to higher);
 <pre>, = == != & &= && | |= || > >= >> < <= << - -= + += * \*= / /= % %= [ ( .</pre>
@@ -603,7 +603,7 @@ statement ends)</li>
 <li><strong>only</strong> single line comments are supported</li>
 <li>multi line comments are not supported. Use only single line comments</li>
 <li>any unary operator on String value will convert String to Number</li>
-<li>NaN is not implemented so invalid number convertion will generate a 0 Number</li>
+<li>NaN is not implemented so invalid number conversion will generate a 0 Number</li>
 <li>division by zero is not handled</li>
 <li>there is no error handling, so if something goes wrong, interpreter will
 crash. If some of the unsupported language features are used, parser will
@@ -629,9 +629,9 @@ also true for Array (see <strong>Strange(r) Things</strong> chapter)</li>
 <li><strong>length</strong> on String variables (or literal) return the number of characters
 in the string</li>
 <li>there is no slice or splice in String and Array (but these feature can be
-partially implemented in plain Javascript – see <strong>Useful things</strong> chapter)</li>
+partially implemented in plain JavaScript – see <strong>Useful things</strong> chapter)</li>
 <li>there is no Date RegEx or Math (but some of Math methods can be implemented
-in plain Javascript)</li>
+in plain JavaScript)</li>
 <li>subscript operation like</li>
 </ul>
 <pre><code>    x[1]</code></pre>
@@ -646,21 +646,23 @@ value. This is not true in this mini nano tiny puppy ugly interpreter
 - null and undefined are not implemented but can be declared like this:</p>
 <pre><code>    var null = {};
     var undefined = {};</code></pre>
-<p>but something different will happen when you perform some comparisons:
-* null == 0 will be equal to 1
-* undefined == 0 will be equal to 1
-* undefined == null will be equal to 0
-* null == {} will be false (correctly)
-* … some other edge cases, can you spot them?
-- there is not <strong>typeof</strong> or <strong>instanceof</strong>. You need to know the types of your
-variables or track its type inside other data structures.
-- <strong>this</strong> is missing. Inside Function you need to remember <em>this</em>
-- <strong>function</strong> declaration is supported ONLY inside expression and not as a
-standalone declarator, so instead of this:</p>
+<p>but something different will happen when you perform some comparisons:</p>
+<ul>
+<li><p>null == 0 will be equal to 1</p></li>
+<li><p>undefined == 0 will be equal to 1</p></li>
+<li><p>undefined == null will be equal to 0</p></li>
+<li><p>null == {} will be false (correctly)</p></li>
+<li><p>… some other edge cases, can you spot them?</p></li>
+<li><p>there is no <code>typeof</code> nor <code>instanceof</code>. You need to know the types of your
+variables or track its type inside other data structures.</p></li>
+<li><p><code>this</code> is missing. Inside Function you need to remember <code>this</code>.</p></li>
+<li><p>Function declaration is supported ONLY inside expression and not as a
+standalone declarator, so instead of this:</p></li>
+</ul>
 <pre><code>    function x() {}</code></pre>
 <p>write this:</p>
 <pre><code>    var x = function () {};</code></pre>
-<p>and please look at the final semicolon! It is very important beacuse every
+<p>and please look at the final semicolon! It is very important because every
 expression need to terminate with that and without that strange parsing
 things will happen (also probably some segmentation fault).
 Functions need to be unnamed by itself.
@@ -696,10 +698,10 @@ instead of this:</li>
     };</code></pre>
 <p>because internally <strong>arguments</strong> array will be re-declared locally, with a
 stack based approach, for the next function call and can cause some variable
-resolving missmatch. This is a little annoying but is also better to always
+resolving mismatch. This is a little annoying but is also better to always
 remap each arguments value to a dedicated local variable.
 - early exit inside logical expression is not implemented so this code will not
-be interrupted before the execution of the foo2 function:</p>
+be interrupted before the execution of the <code>foo2</code> function:</p>
 <pre><code>    if (0 &amp;&amp; foo2(123)) { print(&quot;hello\n&quot;); }</code></pre>
 <p>and this is clearly not standard (in ECMA, Yes you can)
 - accessing properties on literal String or Number is not supported; For
@@ -809,10 +811,10 @@ tests</strong> chapter):</p>
 <p>The interpreter uses the same struct to hold values and variables. The same
 struct (c) is also used to store a linked list for global variables and a linked
 list for all properties contained inside a variable.</p>
-<p>Using the same struct has been usefull to strip down the code for a lesser number
+<p>Using the same struct has been useful to strip down the code for a lesser number
 of tokens.</p>
 <p>This is a semi obfuscated struct that holds variables or values (NOTE: obfuscated
-symbols can be slightly differents from the final obfuscated ones):</p>
+symbols can be slightly different from the final obfuscated ones):</p>
 <pre><code>    typedef struct c*d;
     struct c{
       union{
@@ -831,10 +833,10 @@ symbols can be slightly differents from the final obfuscated ones):</p>
       int r; // array length / properties length
     } ;</code></pre>
 <p>This struct is huge! It uses 72 bytes on 64bit X86 architecture. This struct is
-big to fit all the usefull data inside it and also something else that is
+big to fit all the useful data inside it and also something else that is
 needed to compress the code. In theory can be much smaller but the final code
 will uses more tokens (I have tried multiple times to implement this interpreter
-but this is the only solution that i’ve found to match the 2503 limitation.. with
+but this is the only solution that I’ve found to match the 2503 limitation.. with
 the previous limit of 2053 was really hard to stay under the limits – for me!).
 Keep in mind also that on 64bit X86 architecture each pointer cost 8 bytes…</p>
 <p>The interpreter uses a large amount of RAM, creating many temporary values
@@ -950,7 +952,7 @@ instead
 <p>and this will work like var has been typed one time. Can you find out where
 this has been allowed inside the source code? (hint: goto)
 - many other unknown strange things can happen in Hawkins, Indiana…</p>
-<h3 id="usefull-things">Usefull Things</h3>
+<h3 id="useful-things">Useful Things</h3>
 <p>Console prototype is not implemented but console.log can be implemented using
 only native <strong>print</strong> function. The following is an example of Console
 implementation (found also inside console.js file):</p>
@@ -1412,7 +1414,7 @@ been stripped down in the final (light) obfuscated version of the code</em></p>
         atmp[0] = 10;   \
         atmp[1] = 20;   \
         atmp[0 + 1];&quot;, 20);</code></pre>
-<p>Some of these tests has also been ported in plain javascript; take a look inside
+<p>Some of these tests has also been ported in plain JavaScript; take a look inside
 the <strong>verify.js</strong> script. These tests uses <strong>eval()</strong> function to execute a test
 source code string and verify its execution results. These other tests can be
 executed with this command:</p>
@@ -1439,14 +1441,14 @@ Collector cannot recognize this kind of structure</li>
 </ul>
 <h3 id="final-thoughts">Final Thoughts</h3>
 <p>I’ve tried multiple time to rewrite this interpreter and compress the final
-obfuscated sourcecode to match the previous IOCCC limit but without success.</p>
+obfuscated source code to match the previous IOCCC limit but without success.</p>
 <p>The increased limitation of tokens from 2053 to 2503 has made possible to use
 this iteration of the interpreter without continue to retry to rewrite that to
-compress the final sourcecode. Probably with more iterations the 2053 limit
+compress the final source code. Probably with more iterations the 2053 limit
 should be reached, who knows.</p>
 <p>The most tricky part in the development process has been to find out a minimal
-barebone subset of Javascript features, small enought to allow to build some
-other standard features on top of the barebone interpreter.</p>
+bare bones subset of JavaScript features, small enough to allow to build some
+other standard features on top of the bare bones interpreter.</p>
 <p>In many tests I’ve tried to include the Object.keys features (to obtain the
 list of property keys inside a given Object) but, in all of my attempts, the
 limitation on tokens count was exceeded. With Object.keys would have been
@@ -1568,7 +1570,7 @@ Jump to: <a href="#">top</a>
 
     <div id="coda"><h3>Coda</h3>
 	<p>
-	<a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.ioccc.org%2F2024%2Fmaffiodo%2Findex.html" rel="nofollow">Nu HTML check this web page</a><br>
+	<a href="https://validator.w3.org/nu/?doc=#" rel="nofollow">Nu HTML check this web page</a><br>
 	<a href="#top">Jump to top</a> <a href="#content">Jump to Content</a> <a href="#inventory">Jump to Inventory</a><br>
 	</p>
     </div>
