@@ -250,14 +250,14 @@ likely be "_deceived_" when they try to see the source in terminal window:
 Viewing the [prog.c source code](%%REPO_URL%%/2024/cable2/prog.c) in most editors
 might suggest that the is something fishy 🐠 with the code.
 
-* [2024/straadt](straadt/index.html)
+* [2024/macke](macke/index.html)
 
 Have you ever wondered would what would happen if you recursively removed
 files starting from the root directory?  Are you curious what happens when
 you launch a [fork bomb](https://en.wikipedia.org/wiki/Fork_bomb)?
 You can safely give those and other scenarios under this virtual machine.
 
-We invite you to explore the [prog.c source code](%%REPO_URL%%/2024/straadt/prog.c)
+We invite you to explore the [prog.c source code](%%REPO_URL%%/2024/macke/prog.c)
 to explore this interesting virtual machine implementation.  And as a bonus, a
 full-fledged C64 emulator is included!
 

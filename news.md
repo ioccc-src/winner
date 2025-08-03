@@ -78,7 +78,6 @@ the [Official IOCCC website](index.html).
 
 Congratulations to:
 
-* [2024/anders](2024/anders/index.html) - Prize in imitative rebooting - _OpenRISC CPU and Linux_
 * [2024/burton](2024/burton/index.html) - Prize in pentagrammatology - _wordle hard mode solver_
 * [2024/cable1](2024/cable1/index.html) - Prize in bot talk - _LLM inference engine_
 * [2024/cable2](2024/cable2/index.html) - Prize in murky waters - _salmon recipe_
@@ -94,6 +93,7 @@ Congratulations to:
 * [2024/kurdyukov2](2024/kurdyukov2/index.html) - Prize in art restoration - _JPEG artifact removal_
 * [2024/kurdyukov3](2024/kurdyukov3/index.html) - Prize in virtual quietus - _gaming VM and doom_
 * [2024/kurdyukov4](2024/kurdyukov4/index.html) - Prize in embiggening - _encode without literals_
+* [2024/macke](2024/macke/index.html) - Prize in imitative rebooting - _OpenRISC CPU and Linux_
 * [2024/maffiodo](2024/maffiodo/index.html) - Prize in creative interpretation - _Jav\*script interpreter_
 * [2024/mills](2024/mills/index.html) - Prize in ℤ₃ - _Infocom v3 story interpreter_
 * [2024/stedolan](2024/stedolan/index.html) - Best one liner - _icon from MD5_
