@@ -29,7 +29,7 @@ The source (and of this program) has fun with an UTF-8 conforming accent, in a m
 
 > TL;DR - to exit type **Q** or press **CTRL+C**.
 
-As mentioned in in the [COMMANDS section of prog.html](prog.html#commands), try these commands:
+As mentioned in the [COMMANDS section of prog.html](prog.html#commands), try these commands:
 
 ```
     | Key cmd  | Action                                                     |
@@ -82,7 +82,7 @@ Simply type `make` to build.  There are two macros that can be customised:
 
 * A regression test suite is available on demand.  The test suite requires `tic(1)` to build the specialised test terminal entry.
 
-* Original unobfuscated more fully featured source available (search/replace, pipe-filter selection, markers, insert file, edit buffer grows, literal character input, multi undo/redo).
+* Original unobfuscated more fully featured source available (search/replace, pipe-filter selection, markers, insert file, edit buffer grows, literal character input, multi undo/redo).  See [full version](https://github.com/SirWumpus/eh).
 
 * The `iocccsize(1)` tool only counts bytes, not characters, i.e,. UTF-8 multibyte characters such that some characters cost 2, 3, or 4 bytes, thus penalising UTF-8 entries.
 
