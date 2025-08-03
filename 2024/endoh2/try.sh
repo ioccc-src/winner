@@ -9,7 +9,7 @@
 
 # make sure the program has been built
 #
-MAKE=$(which gmake)
+MAKE=$(command -v gmake)
 ${MAKE:=make} CC="$CC" all tipple >/dev/null || exit 1
 
 # clear the screen

@@ -12,7 +12,7 @@ fi
 
 # make sure the program has been built
 #
-MAKE=$(which gmake)
+MAKE=$(command -v gmake)
 ${MAKE:=make} CC="$CC" all >/dev/null || exit 1
 
 

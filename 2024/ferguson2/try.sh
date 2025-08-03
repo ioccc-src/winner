@@ -9,7 +9,7 @@
 
 # make sure the program and the alt program have been built
 #
-MAKE=$(which gmake)
+MAKE=$(command -v gmake)
 ${MAKE:=make} CC="$CC" everything >/dev/null || exit 1
 
 # clear the screen
