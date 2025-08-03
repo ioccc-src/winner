@@ -39,16 +39,16 @@
 ## Judges' remarks:
 
 You will have to go to "Fun-Damentals" to understand the logic flow of
-this game.  While you jump as many as 134 times to travel from `main()`
-to an successful `exit(666)` you may have a devil of a time trying to
+this game. While you jump as many as 134 times to travel from `main()`
+to a successful `exit(666)` you may have a devil of a time trying to
 figure out how this program actually does what it does.
 
 Before you set off on your adventure to decode this program's logic, make
 sure you have enough food, ammo, clothes, oxen, and programming supplies.
 You’ll be driving for 2170 miles through a wild wilderness inspired
-by Oregon, so you’ll need to be prepared for anything!  Regardless of
+by Oregon, so you’ll need to be prepared for anything! Regardless of
 how well prepared you are, you will have a devil of a time jumping around
-inside this C code.  :-)
+inside this C code. :-)
 
 
 ## Author's remarks:
