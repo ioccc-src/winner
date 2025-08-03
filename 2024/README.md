@@ -8,7 +8,7 @@ See below for links to the [2024 winning IOCCC entries](#inventory).
 Check out the `index.html` web pages for each winning entry.  They have
 most of the information you need to compile and run the winning program.
 Take a look at the winning source code and try to figure out how it works.
-You might also want to check out the author’s remarks for even more details.
+You might also want to check out the author's remarks for even more details.
 
 You may [download all winning entries](2024.tar.bz2) in the form
 of a compressed tarball, for this year's contest.
@@ -62,9 +62,10 @@ Even so, the final rounds of judging required more rounds and tool longer than i
 At the end of the final round of the final rounds of judging, we had a record **23 winners of IOCCC28**,
 eclipsing the record of 15 winners!
 
-While we suspect that the 4 year gap between **IOCCC27** and **IOCCC28** allowed people extra
-time to improve their submissions, we also believe that people submitting to the IOCCC have
-adept in obfuscation and have become more skilled in the programming in the C language.
+While we suspect that the 4 year gap between **IOCCC27** and **IOCCC28** allowed
+people extra time to improve their submissions, we also believe that people
+submitting to the IOCCC have become more adept in adept in obfuscation and have
+become more skilled in the programming in the C language.
 
 
 ### Code size and Rule 2
@@ -124,8 +125,8 @@ to try and understand why the constant `2551443` is common to both entries.
 
 * [2024/cable1](cable1/index.html)
 
-This entry claims to be "_the world’s smallest LLM (large language
-model) inference engine_": running open-source model based on Meta’s
+This entry claims to be "_the world's smallest LLM (large language
+model) inference engine_": running open-source model based on Meta's
 LLaMA 2 with 7 billion parameters.  After downloading the model via the
 [2024/cable1/get_model.sh](%%REPO_URL%%/2024/cable1/get_model.sh) script,
 we invite you explore this **ChatIOCCC** tool.  While not super fast,
@@ -265,10 +266,10 @@ full-fledged C64 emulator is included!
 
 The "**Prize in yil-tas**" provides a hint as to what this marvelous
 winning entry is going, provided that you are someone familiar in at
-least 3 languages (**hint**: One of them is C, another id English).
+least 3 languages (**hint**: One of them is C, another is English).
 
-The IOCCC is honored to present this entry for your enjoyment and you ponder
-the [prog.c source code](%%REPO_URL%%/2024/ferguson2/prog.c).
+The IOCCC is honored to present this entry for your enjoyment and for you to
+ponder the [prog.c source code](%%REPO_URL%%/2024/ferguson2/prog.c).
 
 * [2024/carlini](carlini/index.html)
 
@@ -292,7 +293,7 @@ by computing the output of each gate in a loop, effectively running the CPU and 
 
 * Depending on the address of a variable, as not all platforms support
 [ASLR](https://en.wikipedia.org/wiki/Address_space_layout_randomization),
-as the single source of pseudo-randomness isn’t a good idea.  It’s
+as the single source of pseudo-randomness isn't a good idea.  It's
 much better to mix in other sources of variability (e.g. time, process
 ID, etc.) so that subsequent runs will behave differently.
 
@@ -300,8 +301,8 @@ ID, etc.) so that subsequent runs will behave differently.
 entry, and the submission's obfuscation is mainly in the C code source,
 then the submission likely to not make it into the final rounds of judging.
 
-* When working with modern C compilers, it’s crucial to explicitly
-declare variable and function types. Don’t assume they’ll
+* When working with modern C compilers, it's crucial to explicitly
+declare variable and function types. Don't assume they'll
 automatically default to an `int`.
 
 * Sadly, K&C-style C code does not compile well under modern C compilers.
@@ -319,7 +320,7 @@ C code that implements the mathematics is well obfuscated.
 
 * Just a friendly reminder that before you upload your submissions,
 uncompress the compressed tarball into a different directory. This way,
-you can be sure you didn’t miss uploading any important files!
+you can be sure you didn't miss uploading any important files!
 
 * Using a lot of goto statements to make your code harder to understand
 might not help it pass the final rounds of judging.
@@ -328,7 +329,7 @@ might not help it pass the final rounds of judging.
 ### Encouragement for those who did not win this year
 
 We know many of you that submitted to the IOCCC put in a ton of effort
-into your submissions for this year’s IOCCC.  We can’t just give out
+into your submissions for this year's IOCCC.  We can't just give out
 awards to everyone.  That would mean taking away from the submissions
 that we think are the best and deserve to win.
 
@@ -342,13 +343,13 @@ submitted with revisions, multiple times before rising to the level of
 a winning IOCCC entry.  You might also want to try with a different type
 of submission altogether for the next IOCCC.
 
-If you’re not planning to improve and resubmit your non-winning entry
-for the next IOCCC, you’re welcome to publish it.
+If you're not planning to improve and resubmit your non-winning entry
+for the next IOCCC, you're welcome to publish it.
 
 
 ## On Compiling and running winning entries
 
-Some C compilers aren’t as great as they could be. If yours isn’t
+Some C compilers aren't as great as they could be. If yours isn't
 working well, you might want to try compiling with an updated version
 of clang and/or gcc instead.
 
@@ -362,7 +363,7 @@ If you encounter problems in compiling and/or running the winning entries, see t
 For additional information on how to submit fixes, see the FAQ on:
 
 * [How to submit a fix](../faq.html#fix_an_entry) - how to submit a fix to an entry
-* [Update author information](../faq.html#fix_author) - how to correct or update an IOCCC author’s information
+* [Update author information](../faq.html#fix_author) - how to correct or update an IOCCC author's information
 
 
 ### For even more information
