@@ -87,24 +87,16 @@ Here is our travel guide:
  alt="Hell In A Handcart Travel Company Oregon Trail travel guide"
  width=640 height=720>
 
-But before I help any sinners embark on this once in a lifetime journey, for
-those who might be disconcerted with the idea of the theme (even though it's
-ridiculous with something going back to 66m years ago, to several centuries ago
-all the way back to the 1950s, all the while taking place in the 1800s),
-**PLEASE** either read the (probably totally unnecessary)
-[disclaimer](#disclaimer) or skip this perilous journey entirely. Obviously the
-judges will have no choice in the matter :-) but it's not really for them anyway
-but rather in case this wins (which, of course, it did).
+But before I help any sinners embark on this once in a lifetime journey, some
+travellers might wish to look at the [commentary on the jokes](#jokes) (and
+possibly the [disclaimer](#disclaimer)) as well as the [humour](#humour)
+section, [historical references](#history) and [cultural references](#cultural)
+as well. The commentary is primarily for those who might be uncomfortable with
+the jokes that go with the theme. Probably totally unnecessary, especially given
+the [Best abuse of the user](https://www.ioccc.org/2000/briddlebane/index.html)
+IOCCC entry from 2000 that directly insults the player but just in case...
 
-Everyone might or might not want to look at the [commentary on the
-jokes](#jokes) as well as the [humour](#humour) section, [historical
-references](#history) and [cultural references](#cultural) as well. The
-commentary is primarily for those who might be uncomfortable with the jokes that
-go with the theme. Probably totally unnecessary, especially given the [Best
-abuse of the user](https://www.ioccc.org/2000/briddlebane/index.html) IOCCC
-entry from 2000 that directly insults the player but just in case...
-
-Now, back to the good stuff!
+Now, back to the good stuff (not that the jokes are not a good part of it)!
 
 This program is an **ABSOLUTELY ABSURD PARODY** of the classic Oregon Trail,
 although it's actually something else entirely now, hence the name change (not
@@ -280,15 +272,15 @@ before it happens is one thing but if it succeeds it's even more ludicrous (and
 funny - and also perhaps sardonic).
 
 And if you do succeed you get some things too but not all of what you might
-expect! It might be called a kind of damaging (some might say 'damning') event but it
-fits the theme quite well and although it (and this is not the only case this
-happens in the game) might not be something most people care to think about (but
-see [Disclaimer](#disclaimer) and also [what the judges LIKE](#vomitory), yes
-cannibalism does in fact occur in the game, to be blunt (not that the judges
-like THAT but you'll see what I mean if you read that section: which is by no
-means necessary for most people!). Of course it's happened throughout history
-including on the trail so even if the judges did not like to throw up (and
-laugh, which I would guess they will also be doing), it still fits well.
+expect! It might be called a kind of damaging (some might say 'damning') event
+but it fits the theme quite well and although it (and this is not the only case
+this happens in the game) might not be something most people care to think about
+(but see [what the judges LIKE](#vomitory), yes cannibalism does in fact occur
+in the game, to be blunt (not that the judges like THAT but you'll see what I
+mean if you read that section: which is by no means necessary for most people!).
+Of course it's happened throughout history including on the trail so even if the
+judges did not like to throw up (and laugh, which I would guess they will also
+be doing), it still fits well.
 
 There are actually far more ridiculous examples of this, things that make no
 sense, like most of the game. But that's what makes it so much fun. There are
@@ -358,8 +350,8 @@ are even better here](#emojis).
 The jokes that have what some people might question actually have multiple
 interpretations and if one goes to what they find 'questionable' that's actually
 on their end and very possibly (in many cases this is almost certainly the case)
-not even my original idea. But that's discussed in the [disclaimer](#disclaimer)
-and the [commentary on the jokes](#jokes).
+not even my original idea. But that's discussed in the [commentary on the
+jokes](#jokes).
 
 For those who are curious enough but do not want to try and figure it out: I do
 offer a section of some of the [differences](#differences) from the May
@@ -432,7 +424,8 @@ and easily amused.
 ### Disclaimer
 </div>
 
-**PUBLIC HEALTH ADVISORY**: as everyone will have noticed I write a lot. So IF
+**PUBLIC HEALTH ADVISORY**: as everyone who already knows me, and as new people
+will have noticed already: I write a lot. So IF
 you believe that all I have written is circumlocution, and you have
 circumlocutophobia aka logoblabberophobia (fear of circumlocution - yes those
 are made up), and you also have hippopotomonstrosesquipedalobibliophobia (fear
@@ -500,9 +493,11 @@ Anyway: if the idea of a pact with the devil (or in this case, the narrator! :-)
 :-) ) does offend you, and I suppose that's the real one for some people, I can
 offer only: it's nothing serious and all in good fun; there are a lot of jokes
 and in fact **the PLAYER CHARACTER (PC) is playfully MOCKED** by the narrator
-**EXACTLY FOR** this pact and their behaviour! As you'll notice the narrator
-also has a somewhat dubious character (which is also how it would go in real
-life, given what the narrator is) but also in vague and ambiguous ways.
+**EXACTLY FOR** this pact and their behaviour! Of course as the narrator is the
+devil that means the devil is mocking the PC for making a pact with the devil,
+which makes it even more ridiculous. As you'll notice the narrator also has a
+somewhat dubious character (which is also how it would go in real life, at least
+if it existed, given what the narrator is) but also in vague and ambiguous ways.
 
 That is also discussed later in the humour subsection. As I note elsewhere I
 think, I have a personal problem with labelling people a sinner and I cannot
