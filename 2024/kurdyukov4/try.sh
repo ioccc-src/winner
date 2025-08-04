@@ -33,8 +33,8 @@ echo 1>&2
 read -r -n 1 -p 'Press any key to compile prog.c: '
 echo 1>&2
 echo 1>&2
-echo "${CC} -O3 prog.c -o prog"
-"${CC}" -O3 prog.c -o prog
+echo "${CC} -O3 prog.c -o prog -lm"
+"${CC}" -O3 prog.c -o prog -lm
 echo 1>&2
 
 # get ready for try #0
