@@ -85,8 +85,8 @@ Congratulations to:
 * [2024/codemeow](2024/codemeow/index.html) - Prize in tray planting - _bonsai generator_
 * [2024/endoh1](2024/endoh1/index.html) - Prize in patient pointillism - _slow ray tracer in CPP_
 * [2024/endoh2](2024/endoh2/index.html) - Prize in solid body physics - _rotating rigid body simulation_
-* [2024/ferguson1](2024/ferguson1/index.html) - Prize in diabolical logistics - _Oregon trail pact with the devil_
-* [2024/ferguson2](2024/ferguson2/index.html) - Prize in yil-tas - _Navajo code talker translator_
+* [2024/ferguson1](2024/ferguson1/index.html) - Prize in diabolical logistics - _A Pact With the Devil On the Oregon Trail_
+* [2024/ferguson2](2024/ferguson2/index.html) - Prize in yil-tas - _Navajo Code Talker translator_
 * [2024/howe](2024/howe/index.html) - Nice accent eh-ward - _mini vi_
 * [2024/kramer](2024/kramer/index.html) - Prize in linguistic arithmetic - _natural language numerical calculator_
 * [2024/kurdyukov1](2024/kurdyukov1/index.html) - Prize in phased periodicity - _phase of the Moon_

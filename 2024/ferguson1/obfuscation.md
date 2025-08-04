@@ -292,7 +292,7 @@ that the Devil wishes they were too:
 
 <img src="gotos.png"
  alt="image of Devil being strangled to death by spaghetti, regretting the pact"
- width=640 height=640>
+ width=1024 height=1024>
 
 I have shown JUST HOW LUDICROUS `goto`s really are and JUST HOW MUCH STRUCTURE
 AND MAINTAINABILITY is lost with `goto`s: a goal of the contest met simply by

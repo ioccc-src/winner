@@ -6,7 +6,7 @@
     "dir" : "ferguson1",
     "entry_id" : "2024_ferguson1",
     "title" : "oregon",
-    "abstract" : "Oregon trail pact with the devil",
+    "abstract" : "A Pact With the Devil On the Oregon Trail",
     "author_set" : [
         {
             "author_handle" : "Cody_Boone_Ferguson"
@@ -100,6 +100,14 @@
             "display_as" : "markdown",
             "display_via_github" : true,
             "entry_text" : "hints on how to deobfuscate"
+        },
+        {
+            "file_path" : "gotos.txt",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : true,
+            "entry_text" : "text file showing all the line changes in a run"
         },
         {
             "file_path" : "lencount.c",
