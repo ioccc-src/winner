@@ -22,20 +22,20 @@
             "entry_text" : "entry Makefile"
         },
         {
-            "file_path" : "omoikane.alt.c",
-            "inventory_order" : 40,
-            "OK_to_edit" : true,
-            "display_as" : "c",
-            "display_via_github" : true,
-            "entry_text" : "alternate source code"
-        },
-        {
             "file_path" : "binmode_main.h",
             "inventory_order" : 40,
             "OK_to_edit" : true,
             "display_as" : "c",
             "display_via_github" : true,
             "entry_text" : "preprocessor hack to set binary mode"
+        },
+        {
+            "file_path" : "omoikane.alt.c",
+            "inventory_order" : 40,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "alternate source code"
         },
         {
             "file_path" : "omoikane.orig.c",
