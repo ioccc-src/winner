@@ -44,7 +44,7 @@ The IOCCC is honored to present this entry with an award that, in turn,
 recognizes the [Navajo Code Talkers](https://en.wikipedia.org/wiki/Code_talker#Navajo)
 who served with distinction during World War II.
 
-As noted in [NY Times article on Chester Nez](https://www.nytimes.com/2014/06/06/us/chester-nez-dies-at-93-his-native-tongue-helped-to-win-a-war-of-words.html):
+As noted in a [NY Times article on Chester Nez](https://www.nytimes.com/2014/06/06/us/chester-nez-dies-at-93-his-native-tongue-helped-to-win-a-war-of-words.html):
 
 > Not fully declassified until 1968, the Navajo code remains the only oral military
 > code that (was) never been broken (in the field of operations).
