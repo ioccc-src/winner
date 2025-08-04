@@ -3627,7 +3627,7 @@ it's known also as the vampire disease:
 [porphyria](https://medicover-genetics.com/porphyria-the-facts-behind-the-so-called-vampire-disease/).
 Plus [Blackbeard's](https://en.wikipedia.org/wiki/Blackbeard) victims. Oh and
 yes anyone attacked by the [Flying
-Spaghetti Monster (FSM)](https://en.wikipedia.org/wiki/Flying_Spaghetti_Monster)
+Spaghetti Monster](https://en.wikipedia.org/wiki/Flying_Spaghetti_Monster)
 or those who were tricked by the [BBC April Fool's prank of the
 Spaghetti
 tree](http://news.bbc.co.uk/onthisday/hi/dates/stories/april/1/newsid_2819000/2819261.stm)
