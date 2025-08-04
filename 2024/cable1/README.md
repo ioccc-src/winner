@@ -109,7 +109,7 @@ before running the program.
 ## Judges' remarks:
 
 This entry may benefit from OpenMP (via `prog_openmp`) for platforms that
-support compiling with OpenMP.  Even on a cheap 8-core laptop, the produces
+support compiling with OpenMP.  Even on a cheap 8-core laptop, this produces
 tokens with a tolerable speed, at least for the first few lines.
 Without OpenMP, one must patiently await answers.
 
