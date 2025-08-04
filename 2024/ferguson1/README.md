@@ -289,9 +289,8 @@ Besides the theme and jokes in the code: it also spells out `OREGON TRAIL`
 
 There is so **MUCH MORE** to discover, some of which is in this file. In fact,
 besides the bonkers spaghetti code (many more `goto`s than the 1978 BASIC has,
-once pre-processed, and only six fewer before that - even without the dead
-`goto` there, which is only to mislead even further, it's more `goto`s),
-very little remnants of the original game are extant.
+once pre-processed, and seven more before), very little remnants of the original
+game are extant.
 
 As noted, depending on your sense of humour you will find this absolutely
 HILARIOUS (those I have shown do find it hilarious) or perhaps a bit unsettling
@@ -1314,7 +1313,7 @@ modifications to `O` which is UB.
 
 So as you can see between the `V` function (based on the blocksize), the code (in
 multiple places), the starting hp, the data file and even layout of variables to
-spell out `OREGON TRAIL TRAIL OREGON` (and rather `rude OREGON TRAIL TRAIL
+spell out `OREGON TRAIL OREGON` (or rather `rude OREGON TRAIL
 OREGON`) this is full of thematic references to what the program is (and in some
 cases what it was)!
 
@@ -3002,10 +3001,10 @@ emojis) strings due to it being too long for the blocksize which causes invalid
 input (or worse things).
 
 In fact the only thing that MIGHT hint at what this program is is that it spells
-out OREGON TRAIL TRAIL OREGON. But this is a long tradition in IOCCC entries so
-this is a good thing and it could be misleading for all you know. In fact it is
-because this can hardly be said to be 'Oregon Trail'. It's something else
-really.
+out OREGON TRAIL OREGON (with an 'o' after 'TRAIL'). But this is a long
+tradition in IOCCC entries so this is a good thing and it could be misleading
+for all you know. In fact it is because this can hardly be said to be 'Oregon
+Trail'. It's something else really.
 
 I would guess that if anyone can figure out what this code does it would be the
 IOCCC judges but even then unless there is some wizardry I am unaware of without
