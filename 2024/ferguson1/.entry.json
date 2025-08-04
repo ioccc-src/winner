@@ -102,6 +102,14 @@
             "entry_text" : "hints on how to deobfuscate"
         },
         {
+            "file_path" : "gotos.txt",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : true,
+            "entry_text" : "text file showing all the line changes in a run"
+        },
+        {
             "file_path" : "lencount.c",
             "inventory_order" : 100,
             "OK_to_edit" : true,

@@ -495,32 +495,31 @@ by <a href="https://en.wikipedia.org/wiki/The_Oregon_Trail_(series)">Oregon Trai
 how well prepared you are, you will have a devil of a time jumping around
 inside this C code. :-)</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
-<div id="devil">
-<h3 id="a-pact-with-the-devil-on-the-oregon-trail-and-his-134-regrets-of-goto">A Pact With the Devil On the Oregon Trail (…and his 134 regrets of goto)</h3>
-</div>
-<hr style="width:10%;text-align:left;margin-left:0">
 <blockquote>
 <p>Fun fact: after winning this, the author played the game in gdb from start to
 finish and not counting macros but counting all function calls (not libc
-functions, functions in prog.c), there were a total of <strong>985</strong> (!) line jumps.
-The prog.c, counting <code>#include</code>s, <code>#define</code>s, functions and some lines that have
-only braces, as well as 14 blank lines, has only 85 lines. A very tiny fraction
-of the time a line might be repeated in a row ONCE but that does not really matter.</p>
+functions just the few functions in prog.c), there were a total of <strong>985</strong> (!)
+line jumps. The prog.c, counting <code>#include</code>s, <code>#define</code>s, functions and some
+lines that have only braces, as well as 14 blank lines, has only 85 lines. A
+very tiny fraction of the time a line might be repeated in a row ONCE but that
+does not really matter.</p>
 </blockquote>
 <p><strong>NOTE</strong>: I actually submitted two versions. This one is not encrypted. The
 encrypted one even encrypted emojis without having to decrypt them in order to
 print them (and everything else). I have kept references to encryption in this
 file even after publication. I do have a copy of it if anyone is interested.</p>
-<hr style="width:10%;text-align:left;margin-left:0">
-<p>The <strong>Go To Hell In A Handcart Travel Company</strong> PROUDLY welcomes all sinners to
-our GREATEST destination yet, with:</p>
+<div id="devil">
+<h3 id="a-pact-with-the-devil-on-the-oregon-trail-and-his-134-regrets-of-goto">A Pact With the Devil On the Oregon Trail (…and his 134 regrets of goto)</h3>
+</div>
+<p>The <em>Go To Hell In A Handcart Travel Company</em> <strong>PROUDLY</strong> welcomes all sinners to
+our <strong>GREATEST</strong> destination yet, with:</p>
 <p><img src="devil.png"
  alt="A Pact With the Devil On the Oregon Trail - Devil driving wagon"
- width=640 height=640></p>
-<p>Here is our travel guide:</p>
+ width=1024 height=1024></p>
+<p>Here is our very sincere travel guide:</p>
 <p><img src="travelguide.jpg"
  alt="Hell In A Handcart Travel Company Oregon Trail travel guide"
- width=640 height=720></p>
+ width=1536 height=1684></p>
 <p>But before I help any sinners embark on this once in a lifetime journey, some
 travellers might wish to look at the <a href="#jokes">commentary on the jokes</a> (and
 possibly the <a href="#disclaimer">disclaimer</a>) as well as the <a href="#humour">humour</a>
@@ -576,7 +575,8 @@ things I have done - and some are really quite unique and cool, or at least I
 think they are unique (I have never seen these things before nor have I even
 seen any suggestion of them before, one because it’s absolutely contrary to how
 it works in C, namely near 200 NUL terminated <code>char *</code>s in a single flat <code>char *</code> - no, not an array of <code>char *[]</code>).</p>
-<p>See <a href="obfuscation.html">obfuscation.html</a> and my <a href="#conclusion">concluding remarks</a> for
+<p>See <a href="obfuscation.html">obfuscation.html</a> and my <a href="#conclusions">concluding
+remarks</a> for
 more details on just how many <code>goto</code>s I have but beware of monsters. But be careful
 if you have a heart condition. And if you’re a computer scientist make sure
 you’re not at risk of stroke.</p>
@@ -1556,7 +1556,7 @@ winning the game (what is winning in this case? - see below). This is a play on
 the fact that original Oregon Trail (and my game is even worse) is a goto hell
 spaghetti code and my joke in the <a href="obfuscation.html">obfuscation.html</a> file (not to
 mention the joke of using the obscene amount of <code>goto</code>s in a single small
-program (see the obfuscation file for more on that as well as <a href="#conclusion">concluding
+program (see the obfuscation file for more on that as well as <a href="#conclusions">concluding
 remarks</a>).</p>
 <p>The message is full of irony for added effect, namely the ‘WELCOME TO HELL!’ and
 calling it your forever home, plus god wishing you a prosperous life ahead.</p>
@@ -3081,22 +3081,27 @@ traits I do not even know how to describe. Perhaps they would be utterly
 ineffable.</p>
 <p>Actually I wanted to see what it was like. It was VERY amusing - but only
 because I did not have to debug it. For the submission I included line changes
-for JUST the third prompt. It looked like:
-time (mere hours left) but to get to JUST the third prompt this is the lines it</p>
+for JUST the third prompt. Yes, what would only take a few seconds of play. It
+looked like this (I only did the third prompt as I had mere hours left to
+finish):</p>
 <pre><code>    19 20 21 32 69 82 34 33 34 47 45 47 50 83 34 33 34 47 45 47 50 83 34 33 34</code></pre>
 <p>I said the game loop is almost certainly much worse, especially those two for
 loops I mentioned, but there is much much more. If this is easier to follow then
 I’m a dragon. I’m not a dragon. I have a secret for you: dragons don’t exist.
 Except on the Oregon Trail.</p>
 <p>I was right too: the entire game is worse, far far worse. After this won I did a
-full sequence. This is from start to finish and I include it for your amusement.
-Or horror. There are a few times where the line is the same but that only shows
-how very often the line changes. It is a total of 985 changes, counting
-function calls (i.e. each call to one of the few functions is a jump); calls to
-the macros are not counted.</p>
-<p>This is in a program that is JUST 85 lines! A program that has only 85 lines
+full sequence. This is from start to finish and I include it for your amusement
+(see <a href="gotos.txt">gotos.txt</a>). Or horror. There are a few times where the line
+is the same but that only shows how very often the line changes. It is a total
+of <strong>985</strong> (!) changes, counting function calls (i.e. each call to one of the few
+functions is a jump); calls to the macros are not counted.</p>
+<p>This is in a program that is <strong>JUST 85 (!) lines</strong>! A program that has only 85 lines
 COUNTING the <code>#include</code>s, <code>#define</code>s, other functions and 14 blank lines that
-jumps 985 times is astonishing.</p>
+jumps 985 times is astonishing. Of course that’s not the only technique but the
+title of the award and the judges’ remarks are rather fitting as it is
+diabolical to follow this code (and the theme of the game fits as well); the
+<a href="obfuscation.html">obfuscation.html</a> shows even more on this - and the other
+things I did as well.</p>
 <blockquote>
 <p>I have yet to see a single study that supported the supposition that GOTOs are
 harmful (I presume this is not because nobody has tried). Nonetheless, people
@@ -3107,20 +3112,23 @@ dismiss any statement opposing it.</p>
 <p>Well after a bit more than 38 years I have finally provided exactly what Frank
 said was missing. And it was about time. Not that it didn’t happen before. But
 he was wrong.</p>
-<p>It is not about not trying. But even IF he was right, he
-sure is WRONG NOW. Anyone who thinks otherwise needs to try and debug
+<p>It is not about not trying. But even IF he WAS right, he
+sure as hell is WRONG NOW. Anyone who thinks otherwise needs to try and debug
 my program - or maintain it. Or write it.</p>
 <p>It would have been SO MUCH EASIER if I did not use 134 <code>goto</code>s. Actually, even a
 tiny portion of that would make it harder. Nobody, whether they’re in their
 right mind or not, would WANT to maintain this, or something even close to it.
-Feel free to pass on judgement to me. I welcome it!</p>
+Feel free to pass on judgement to me. I welcome it! You have to be mad and
+embrace it to do this. I went full out and if I didn’t have to do other things
+(or felt like fewer events would be worth it) I would have done even more
+<code>goto</code>s for this very reason.</p>
 <p>Even flex/bison code, which as far as I am aware uses FAR fewer <code>goto</code>s, is
 notorious for <code>goto</code>s and is quite hard to follow. It would be a nightmare to
 try and maintain without the .l/.y source files.</p>
 <p>Okay, yes, I admit it: my abuse is extreme.</p>
 <p>That doesn’t matter. As I remind everyone later, Apple caused a security hole
 because of a SINGLE misplaced <code>goto</code>. Mine is 133 more than that - and it works.
-It shouldn’t.</p>
+It shouldn’t. But of course it does.</p>
 <blockquote>
 <p>Then they turn around and say, ‘See, the program with GOTOs is more complex.’
 In short, the belief that GOTOs are harmful appears to have become a religious
@@ -3128,7 +3136,7 @@ doctrine, unassailable by evidence.</p>
 </blockquote>
 <p>Well, Frank, I hope you appreciate the evidence now.</p>
 <p>I could go on but I don’t want to criticise, as I said somewhere, and it’s not
-really important. My point was that where 1987/hines IS INDEED a beautiful
+really important. My point was that whereas 1987/hines IS INDEED a beautiful
 counter-example of this letter, mine takes it much further. This program is not
 something anyone would want to maintain - presumably even Frank.</p>
 <p>I think everyone gets the idea. The fact I did all this WITHOUT invoking UB or
@@ -3142,7 +3150,8 @@ case. I might have had to start over.</p>
 made even a few more commits. As it is it took a full two months and I BARELY
 finished this. In fact I finished it within hours of the contest closing! It was
 not even 12 hours before closing time. I barely made it. Part of that is I added
-even more <code>goto</code>s, despite the fact I had reached 2503 in size.</p>
+even more <code>goto</code>s, despite the fact I had reached 2503 in size, with careful
+size optimisation.</p>
 <p>Countless times I came up with ways to do more, at least where it was possible,
 such as freeing space so I could change some <code>break;</code>s to a <code>goto Z;</code> as <code>Z:</code>
 was already there. The only other times this happened is before I had changed
@@ -3150,6 +3159,19 @@ the code so much that you can no longer trust what a block of code is. Like I
 said, I could not really move any more code if I wanted to, even if I had more
 space free. Those very few places where the code could in theory be moved are
 already controlled by goto.</p>
+<p>In fact I could have done more <code>goto</code>s in this version but I wanted to help the
+judges out in judging - that and it was easier to verify things are correct.
+<code>iocccsize</code> reports on prog.c 2457 and after I won this I kind of wish I did
+take it even further just to mess with everyone even more.</p>
+<p>But as I said elsewhere basically everything is in the wrong place so what even
+would be the point in doing that? It would probably not make it harder to follow
+(well it would but still would there be a point in it?); it would just make it
+even more absurd: the amount of spaghetti code makes it nigh impossible to
+follow and I’m happy to have smashed the record of 24 by 110 <code>goto</code>s, even if I
+now wish I had gone even further.</p>
+<p>Nonetheless the 134 is what won so that’s what I’ll live by (and I doubt it’ll
+be broken as this kind of trick will, as the general remarks about the entries
+note, not be as worthy, even if <code>goto</code>s are alas, not banned outright).</p>
 <p>Anyway, as I noted in <a href="obfuscation.html">obfuscation.html</a>, no initialisation is
 skipped in my jumps and that is what causes <code>goto</code> to invoke UB.</p>
 <p>Everything is file scope. And in any case, when I do jump to a place, everything
@@ -3357,6 +3379,32 @@ every way, probably even if there wasn’t code that seems dead (or is dead) - a
 even worse as I have not even revealed everything with that. I don’t even think
 <strong>I</strong> could change this to not use <code>goto</code>s without breaking it! But what I do
 know is it works exactly as intended. But it shouldn’t. It really shouldn’t.</p>
+<h3 id="dedications-and-thanks">Dedications and thanks</h3>
+<p>I dedicate this to all the poor souls who suffered in the <a href="https://en.wikipedia.org/wiki/Salem_witch_trials">Salem Witchcraft
+Trials</a>, the <a href="https://en.wikipedia.org/wiki/Great_Molasses_Flood">Great Molasses
+Flood</a> as well as all those
+who died on the <a href="https://en.wikipedia.org/wiki/Oregon_Trail">Oregon Trail</a>.</p>
+<p>Oh and those who were eaten by <a href="https://en.wikipedia.org/wiki/Dragon">Dragons</a>,
+attacked by <a href="https://en.wikipedia.org/wiki/Werewolf">Werewolves</a> or bitten by a
+<a href="https://en.wikipedia.org/wiki/Vampire">Vampire</a> (fun or not so fun fact: there
+is a disease that has some of the similarities to vampirism, so much so that
+it’s known also as the vampire disease:
+<a href="https://medicover-genetics.com/porphyria-the-facts-behind-the-so-called-vampire-disease/">porphyria</a>.
+Plus <a href="https://en.wikipedia.org/wiki/Blackbeard">Blackbeard’s</a> victims. Oh and
+yes anyone attacked by the <a href="https://en.wikipedia.org/wiki/Flying_Spaghetti_Monster">Flying
+Spaghetti Monster (FSM)</a>
+or those who were tricked by the <a href="http://news.bbc.co.uk/onthisday/hi/dates/stories/april/1/newsid_2819000/2819261.stm">BBC April Fool’s prank of the
+Spaghetti
+tree</a>
+on the <a href="https://www.bbc.co.uk/programmes/b006t14n">Panorama programme</a> in 1957.
+Bless you all (probably by the <a href="https://www.ioccc.org/2024/ferguson1/index.html">devil on the Oregon
+Trail</a>).</p>
+<p>On a more serious note I also dedicate this to my lovely Mum Dianne and
+my dear cousin Dani plus my great friend Martijn Schoemaker who gave me my first
+real opportunity (a MUD) to get great at C back in the early 2000s and who
+reminded me of the IOCCC so many years ago now.</p>
+<p>Also thanks to my friends for putting up with my slow responses (and in some
+cases no response at all) as I was working on this.</p>
 <h4 id="p.s.-select-remarks-made-to-the-ioccc-judges">P.S. select remarks made to the IOCCC Judges</h4>
 <p>A hilarious truth is that to write less can take drastically more time than to
 write more and unfortunately I am running out of time quickly. Writing this game
@@ -3664,6 +3712,7 @@ helps you appreciate the careful design even more.<a href="#fnref2" class="footn
 <li><a href="https://github.com/ioccc-src/winner/blob/master/2024/ferguson1/byteread.c">byteread.c</a> - prints out the strings without locations</li>
 <li><a href="https://github.com/ioccc-src/winner/blob/master/2024/ferguson1/bytetest.c">bytetest.c</a> - prints every string extracted from data</li>
 <li><a href="https://github.com/ioccc-src/winner/blob/master/2024/ferguson1/deobfuscation.html">deobfuscation.html</a> - hints on how to deobfuscate</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2024/ferguson1/gotos.txt">gotos.txt</a> - text file showing all the line changes in a run</li>
 <li><a href="https://github.com/ioccc-src/winner/blob/master/2024/ferguson1/lencount.c">lencount.c</a> - counts strings and reports longest one</li>
 <li><a href="https://github.com/ioccc-src/winner/blob/master/2024/ferguson1/mbcheck.c">mbcheck.c</a> - show location of multibyte characters</li>
 <li><a href="https://github.com/ioccc-src/winner/blob/master/2024/ferguson1/obfuscation.html">obfuscation.html</a> - obfuscation information</li>
