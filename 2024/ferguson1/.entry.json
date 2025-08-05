@@ -97,8 +97,8 @@
             "file_path" : "deobfuscation.html",
             "inventory_order" : 100,
             "OK_to_edit" : false,
-            "display_as" : "markdown",
-            "display_via_github" : true,
+            "display_as" : "html",
+            "display_via_github" : false,
             "entry_text" : "hints on how to deobfuscate"
         },
         {
@@ -129,8 +129,8 @@
             "file_path" : "obfuscation.html",
             "inventory_order" : 100,
             "OK_to_edit" : false,
-            "display_as" : "markdown",
-            "display_via_github" : true,
+            "display_as" : "html",
+            "display_via_github" : false,
             "entry_text" : "obfuscation information"
         },
         {
