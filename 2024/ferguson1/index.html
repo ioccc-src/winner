@@ -499,10 +499,11 @@ inside this C code. :-)</p>
 <p>Fun fact: after winning this, the author played the game in gdb from start to
 finish and not counting macros but counting all function calls (not libc
 functions just the few functions in prog.c), there were a total of <strong>985</strong> (!)
-line jumps. The prog.c, counting <code>#include</code>s, <code>#define</code>s, functions and some
-lines that have only braces, as well as 14 blank lines, has only 85 lines. A
-very tiny fraction of the time a line might be repeated in a row ONCE but that
-does not really matter.</p>
+line jumps. Skipping prog.c function calls and it’s still <strong>776</strong> jumps! The
+prog.c, if you remove <code>#include</code>s, blank lines, lines with just a brace and
+lines that have only variables, has only 59 lines of code. A very tiny fraction
+of the time a line might be repeated in a row ONCE but that does not really
+matter.</p>
 </blockquote>
 <p><strong>NOTE</strong>: I actually submitted two versions. This one is not encrypted. The
 encrypted one even encrypted emojis without having to decrypt them in order to
@@ -3090,17 +3091,19 @@ I’m a dragon. I’m not a dragon. I have a secret for you: dragons don’t exi
 Except on the Oregon Trail.</p>
 <p>I was right too: the entire game is worse, far far worse. After this won I did a
 full sequence. This is from start to finish and I include it for your amusement
-(see <a href="gotos.txt">gotos.txt</a>). Or horror. There are a few times where the line
+(see <a href="gotos.txt">gotos.txt</a> for the line changes including calls to prog.c
+functions). Or horror. There are a few times where the line
 is the same but that only shows how very often the line changes. It is a total
-of <strong>985</strong> (!) changes, counting function calls (i.e. each call to one of the few
-functions is a jump); calls to the macros are not counted.</p>
-<p>This is in a program that is <strong>JUST 85 (!) lines</strong>! A program that has only 85 lines
-COUNTING the <code>#include</code>s, <code>#define</code>s, other functions and 14 blank lines that
-jumps 985 times is astonishing. Of course that’s not the only technique but the
-title of the award and the judges’ remarks are rather fitting as it is
-diabolical to follow this code (and the theme of the game fits as well); the
-<a href="obfuscation.html">obfuscation.html</a> shows even more on this - and the other
-things I did as well.</p>
+of <strong>985</strong> (!) changes, counting function calls, and <strong>776</strong> (!) excluding
+function calls. Macros are not counted of course.</p>
+<p>This program, if you remove blank lines and lines with just a brace,
+<code>#include</code>s and only variables, has a mere 59 (!) lines.</p>
+<p>A program that has only 59 lines of code that jumps 985 (counting functions) or
+776 (just in main()) times is astonishing. Of course that’s not the
+only technique but the title of the award and the judges’ remarks are rather
+fitting as it is diabolical to follow this code (and the theme of the game fits
+as well); the <a href="obfuscation.html">obfuscation.html</a> shows even more on this - and
+the other things I did as well.</p>
 <blockquote>
 <p>I have yet to see a single study that supported the supposition that GOTOs are
 harmful (I presume this is not because nobody has tried). Nonetheless, people
@@ -3112,15 +3115,16 @@ dismiss any statement opposing it.</p>
 said was missing. And it was about time. Not that it didn’t happen before. But
 he was wrong.</p>
 <p>It is not about not trying. But even IF he WAS right, he
-sure as hell is WRONG NOW. Anyone who thinks otherwise needs to try and debug
+sure as hell is wrong NOW. Anyone who thinks otherwise needs to try and debug
 my program - or maintain it. Or write it.</p>
-<p>It would have been SO MUCH EASIER if I did not use 134 <code>goto</code>s. Actually, even a
+<p>It would have been SO MUCH EASIER if I did not use 134 <code>goto</code>s (and I could have
+fit more in). Actually, even a
 tiny portion of that would make it harder. Nobody, whether they’re in their
 right mind or not, would WANT to maintain this, or something even close to it.
 Feel free to pass on judgement to me. I welcome it! You have to be mad and
-embrace it to do this. I went full out and if I didn’t have to do other things
-(or felt like fewer events would be worth it) I would have done even more
-<code>goto</code>s for this very reason.</p>
+embrace it to do this. I went full out and I could have fit more <code>goto</code>s in: not
+only is the iocccsize not 2503 but I could have removed some events if I really
+wanted more <code>goto</code>s.</p>
 <p>Even flex/bison code, which as far as I am aware uses FAR fewer <code>goto</code>s, is
 notorious for <code>goto</code>s and is quite hard to follow. It would be a nightmare to
 try and maintain without the .l/.y source files.</p>
@@ -3228,8 +3232,9 @@ the degree I have taken it in this program, it demonstrates why you should avoid
 <p>No matter how many you have, UNLESS IT’S 0, it makes it hard to maintain and
 ensure that the code is correct. So how did I actually manage doing exactly
 that? Very carefully - and I nearly lost my mind doing it. I will not make any
-judgement on anyone else who uses them.</p>
-<p>Anyway, I am even reminded of Apple’s <strong>SINGLE</strong> misplaced <code>goto</code> that caused a
+judgement on anyone else who uses them, although I will talk about the notion
+that they aren’t harmful, mostly to show just how extreme this program went.</p>
+<p>Anyway, I am reminded of Apple’s <strong>SINGLE</strong> misplaced <code>goto</code> that caused a
 <strong>SECURITY HOLE</strong> (CVE-2014-1266):
 <a href="https://www.blackduck.com/blog/understanding-apple-goto-fail-vulnerability-2.html" class="uri">https://www.blackduck.com/blog/understanding-apple-goto-fail-vulnerability-2.html</a>.
 That’s all it takes: <strong>JUST ONE <code>goto</code> led to a CVE</strong>!</p>
