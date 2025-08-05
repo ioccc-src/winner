@@ -39,14 +39,19 @@ The **major motivation** for the above was to:
 
 On the last point, for **IOCCC28** the Judging started on **2025-06-05 04:03:02.010099 UTC** and then the winners were selected by the [IOCCC Judges](../judges.html) on **2025-07-07 20:05:07.000000 UTC**:
 
-* Winners were announced during a live the [Our Favorite Universe](https://www.youtube.com/@OurFavoriteUniverse) YouTube Channel that started on **2025-08-02 18:00:00.000000 UTC**
+* Winners were announced during a live show that started on **2025-08-02 18:00:00.000000 UTC**
+ on the [Our Favorite Universe](https://www.youtube.com/@OurFavoriteUniverse)
+ YouTube Channel.
 
-* Near the end of the 2 hour XXX-add-show-URL-here-XXX YouTube show, the **source code** of the [IOCCC28 winning entries](#inventory) was published on [IOCCC GitHub winner repo](https://github.com/ioccc-src/winner) and on the [Official IOCCC website](../index.html).
+* Near the end of the 2 hour [YouTube
+show](https://www.youtube.com/live/UDzGwTalVAc), the **source code** of the
+[IOCCC28 winning entries](#inventory) was published on [IOCCC GitHub winner
+repo](https://github.com/ioccc-src/winner) and on the [Official IOCCC
+website](../index.html).
 
 **No longer will there be many months** between when the winners are
 announced and their source code is made available.  For **IOCCC28**
 the time was **less than 2 hours**.  :-)
-
 
 ### Increased submission quantity and quality
 
@@ -55,16 +60,16 @@ The submissions to **IOCCC28** were remarkable when compared with previous conte
 was more challenging and required greater effort.  Thankfully due to the above mentioned improvements,
 the judging process **took only 33 days**.  Under the previous system it **would have taken much longer**!
 
-One thing that began to emerge after we exits the early rounds of judging and entered the middle rounds
+One thing that began to emerge after we exited the early rounds of judging and entered the middle rounds
 of judging was that we were very likely to have more winning entries than in previous contests.
-Even so, the final rounds of judging required more rounds and tool longer than in any previous IOCCC.
+Even so, the final rounds of judging required more rounds and took longer than any previous IOCCC.
 
 At the end of the final round of the final rounds of judging, we had a record **23 winners of IOCCC28**,
 eclipsing the record of 15 winners!
 
 While we suspect that the 4 year gap between **IOCCC27** and **IOCCC28** allowed
 people extra time to improve their submissions, we also believe that people
-submitting to the IOCCC have become more adept in adept in obfuscation and have
+submitting to the IOCCC have become more adept in obfuscation and have
 become more skilled in the programming in the C language.
 
 
@@ -82,14 +87,15 @@ was the first size increase in over 10 years.  Given the quality of submissions 
 that were well under the limit, we do **NOT** expect to change the
 [Rule 2 size limit](../next/rules.html#rule2) for **at least another 10 years** (and likely longer).
 
-**IMPORTANT HINT**: Only 3 of 23 the **IOCCC28 winners** came close to the [Rule 2 size limit](../next/rules.html#rule2).
-Large code size isn't everything.  :-)   Those submitting to future contents should
-**take a careful note** of that fact.
+**IMPORTANT HINT**: Only 3 of the 23 **IOCCC28 winners** came close to the [Rule
+2 size limit](../next/rules.html#rule2).  Large code size isn't everything.  :-)
+Those submitting to future contents should **take a careful note** of that fact.
 
 
 ### Rules and Guidelines for this contest
 
-Here are the final versions of the IOCCC rules and guidelines that were in effect for this contest:
+Here are the final versions of the IOCCC rules and guidelines that were in
+effect for this contest:
 
 * [2024 rules](rules.html) version **28.30 2025-03-03**
 * [2024 guidelines](guidelines.html) version **28.47 2025-03-15**
@@ -142,7 +148,7 @@ into the code's obfuscation.  :-)
 * [2024/howe](howe/index.html)
 
 "_Eh_"?  The source code, with its UTF-8 conforming accent gives you a
-polite editor that is more functional an `ed(1)`.
+polite editor that is more functional than `ed(1)`.
 
 We invite you to use the program to view the UTF-8 fun in the
 [2024/howe/prog.c source code](%%REPO_URL%%/2024/howe/prog.c).
@@ -165,7 +171,7 @@ different hex digits value.  Then feed the MD5 hash of the
 The [2024/endoh1/try.sh](%%REPO_URL%%/2024/endoh1/try.sh) will carry you on
 a journey that tests your patience as well as the patience of the C-preprocessor.
 
-Building a 8x8 image requires order of 20 seconds of C-preprocessor
+Building a 8x8 image requires an order of 20 seconds of C-preprocessor
 time, when running 6 jobs on 4 CPU cores in parallel.  Unfortunately,
 with such a tiny image, it is hard to appreciate the image being rendered.
 
@@ -185,8 +191,8 @@ will be given an image with a reasonable amount of detail to appreciate
 what is being rendered.
 
 One fun aspect of the [2024/endoh1/prog.c source code](%%REPO_URL%%/2024/endoh1/prog.c)
-is that when it is compiled an executed, the program outputs C code.
-That C code, call it `rt.c` will fail to compile!  But that is OK because the C-preprocessor
+is that when it is compiled and executed, the program outputs C code.
+That C code, called `rt.c`, will fail to compile!  But that is OK because the C-preprocessor
 has enough work to do without bothering the C compiler.  :-)
 
 We plan to recognise those who report that they [rendered a new record sized image](endoh1/index.html#larger).
@@ -204,7 +210,7 @@ This won the "**Prize in ℤ₃**", but what does that mean?  Well,
 the "_double-struck Z_" is **NOT** a reference to a set of integers,
 nor is the "_double-struck Z subscript 3_" a reference to a ring of
 3-adic integers.  Instead, it is a reference to the 3rd version of a
-certain [virtual machine](https://en.wikipedia.org/wiki/Z-machine).
+[certain virtual machine](https://en.wikipedia.org/wiki/Z-machine).
 
 If you use the [2024/mills/try.sh](%%REPO_URL%%/2024/mills/try.sh) script, you will first be given
 an opportunity to view the [2024/mills/prog.c source code](%%REPO_URL%%/2024/mills/prog.c).
@@ -218,7 +224,7 @@ reading/navigating the twisty mazes of this source code! :-)
 As you study the [2024/codemeow/prog.c source code](%%REPO_URL%%/2024/codemeow/prog.c),
 try not to lose track of the forest of obfuscation while tracking down the execution path trees.
 
-We think this code will "grow on you" as the C expression goes just a compiled C code  "_grows on parse trees_".  :-)
+We think this code will "grow on you" as the C expression goes just as compiled C code  "_grows on parse trees_".  :-)
 
 * [2024/kurdyukov2](kurdyukov2/index.html)
 
@@ -235,13 +241,13 @@ you run this code: let alone when your try to figure out how the author was able
 encode the virtual machine in under **2.5K bytes** of [prog.c source code](%%REPO_URL%%/2024/kurdyukov3/prog.c)!
 
 **NOTE**: The implementation runs without sound or mouse
-input.  You will need reply on your keyboard skills.  The
+input.  You will need to rely on your keyboard skills.  The
 [2024/kurdyukov3/try.sh](%%REPO_URL%%/2024/kurdyukov3/try.sh)
 demonstration script will give you some useful keyboard hints.
 
 * [2024/cable2](cable2/index.html)
 
-To those who follow the concept of "_seeing is believing_" will very
+Those who follow the concept of "_seeing is believing_" will very
 likely be "_deceived_" when they try to see the source in terminal window:
 
 ``` <!---sh-->
@@ -249,11 +255,11 @@ likely be "_deceived_" when they try to see the source in terminal window:
 ```
 
 Viewing the [prog.c source code](%%REPO_URL%%/2024/cable2/prog.c) in most editors
-might suggest that the is something fishy 🐠 with the code.
+might suggest that there is something fishy 🐠 with the code.
 
 * [2024/macke](macke/index.html)
 
-Have you ever wondered would what would happen if you recursively removed
+Have you ever wondered what would would happen if you recursively removed
 files starting from the root directory?  Are you curious what happens when
 you launch a [fork bomb](https://en.wikipedia.org/wiki/Fork_bomb)?
 You can safely give those and other scenarios under this virtual machine.
@@ -291,15 +297,15 @@ by computing the output of each gate in a loop, effectively running the CPU and 
 
 ### Remarks on some of submissions that did not win
 
-* Depending on the address of a variable, as not all platforms support
-[ASLR](https://en.wikipedia.org/wiki/Address_space_layout_randomization),
-as the single source of pseudo-randomness isn't a good idea.  It's
-much better to mix in other sources of variability (e.g. time, process
+* Depending on the address of a variable as the single source of
+pseudo-randomness isn't a good idea, as not all platforms support
+[ASLR](https://en.wikipedia.org/wiki/Address_space_layout_randomization).
+It's much better to mix in other sources of variability (e.g. time, process
 ID, etc.) so that subsequent runs will behave differently.
 
 * If a submission's obfuscation strongly resembles a past IOCCC winning
 entry, and the submission's obfuscation is mainly in the C code source,
-then the submission likely to not make it into the final rounds of judging.
+then the submission is likely to not make it into the final rounds of judging.
 
 * When working with modern C compilers, it's crucial to explicitly
 declare variable and function types. Don't assume they'll
@@ -319,8 +325,9 @@ might not be the most innovative approach.
 C code that implements the mathematics is well obfuscated.
 
 * Just a friendly reminder that before you upload your submissions,
-uncompress the compressed tarball into a different directory. This way,
-you can be sure you didn't miss uploading any important files!
+uncompress the compressed tarball into a different directory and verify
+everything is in order. This way, you can be sure you didn't miss uploading any
+important files!
 
 * Using a lot of goto statements to make your code harder to understand
 might not help it pass the final rounds of judging.
@@ -339,7 +346,7 @@ submission.  If you think this happened with your submission, consider
 submitting an enhanced version to the next IOCCC.
 
 **PLEASE DO NOT** give up hope! There are some submissions that have been
-submitted with revisions, multiple times before rising to the level of
+submitted with revisions multiple times before rising to the level of
 a winning IOCCC entry.  You might also want to try with a different type
 of submission altogether for the next IOCCC.
 
@@ -353,14 +360,15 @@ Some C compilers aren't as great as they could be. If yours isn't
 working well, you might want to try compiling with an updated version
 of clang and/or gcc instead.
 
-If you encounter problems in compiling and/or running the winning entries, see the FAQ on:
+If you encounter problems in compiling and/or running the winning entries, see
+the FAQs on:
 
 * [Compiling IOCCC entries](../faq.html#compiling)
 * [IOCCC entry dependencies](../faq.html#dependencies)
 * [Problems compiling entries](../faq.html#compile_problems)
 * [Running IOCCC entries](../faq.html#running_entries)
 
-For additional information on how to submit fixes, see the FAQ on:
+For additional information on how to submit fixes, see the FAQs on:
 
 * [How to submit a fix](../faq.html#fix_an_entry) - how to submit a fix to an entry
 * [Update author information](../faq.html#fix_author) - how to correct or update an IOCCC author's information
