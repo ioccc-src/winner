@@ -7,14 +7,13 @@
 
 ### Bugs and (Mis)features:
 
-The current status of this entry is:
+It is necessary to avoid collisions with C keywords when generating names for variables, for example: if do asm int for EOF.
 
-> **STATUS: known bug - please help us fix**
+The original code had a collision with the keywords "asm" and "int", now it is fixed.
 
-For more detailed information see [2024/kurdyukov4 in bugs.html](../../bugs.html#2024_kurdyukov4).
+Also, the size of the static buffers has increased from 1MB to 16MB, which should ensure processing of at least 4MB of input. If you want to increase the limit, look for `24` in the source code (this is a power of two, for 8MB of input data you would need `25`, and so on).
 
-In fixing this bug you will come to a better appreciation of how the
-code was able to process random data files as large as 64K.
+Current code was tested with an input of 1MB.
 
 
 ## To use:
