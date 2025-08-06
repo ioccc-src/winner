@@ -496,7 +496,10 @@ too many, even in a large program, let alone a small one. Even one <code>goto</c
 many. Unless I am very much mistaken, I have broken the record by a huge margin.</p>
 <p>Here’s the horrifying and hilarious truth: I beat it out by 92 MORE, <strong>BEFORE</strong> the
 cpp at 116 and after the cpp is through I beat it by <strong>110</strong> MORE (!!), <strong>AT
-134!</strong> Yes, you read that right. 134 <code>goto</code>s!</p>
+134!</strong> Yes, you read that right. 134 <code>goto</code>s! I even went further in an alt
+version, where before the cpp it was 131 <code>goto</code>s and after the cpp 149 (!!)
+<code>goto</code>s. I didn’t do this in the main entry for practical reasons but I wish I
+had.</p>
 <p>Even removing what I think are the only dead <code>goto</code>s, two of them, including one
 that is in the <code>w()</code> macro that would be translated into more, I beat it by 90
 more, at 114 before the cpp, and 99 more after the cpp, at 123!</p>

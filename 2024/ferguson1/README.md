@@ -2455,11 +2455,15 @@ really does not seem to be dead (it's quite sneaky).
 
 I could be wrong on whether this is one the compiler missed though: it's hard to
 follow all the `goto`s. As you find out in [obfuscation.html](obfuscation.html) it's
-134 after pre-processing! Yes I might be mad. But then again I might just be
-the Devil. Who knows? What I do know is code that is meant to be reached is
-reached! Yes I've played it many times. Some code I made dead seemed totally
-useless but why not add to confusion? If that includes one that the compiler
-misses that's even better!
+134 after pre-processing! One of the alt versions I supplied is 131 before the
+cpp and 149 after. I did not submit that for practical reasons but I kind of
+wish I had, now that it won. Nonetheless 134 is already way too many. 149 is
+much worse.
+
+Yes I might be mad. But then again I might just be the Devil. Who knows? What I
+do know is code that is meant to be reached is reached! Yes I've played it many
+times. Some code I made dead seemed totally useless but why not add to
+confusion? If that includes one that the compiler misses that's even better!
 
 It is **NOT** a bug where in the inner switch there is a missing case. That is
 done because I do not want it to always trigger. That is the one that is in a
@@ -3017,7 +3021,12 @@ In general I think it's extremely hard to follow the flow of this program due to
 the abuse of 116 `goto`s, more than the BASIC game. 134 when pre-processed. But
 let's be honest, or 134 for a small C program is too many but to be only six
 fewer than a larger BASIC program? That is hard to fathom. Not that 116 is not
-too many for larger programs...or one goto, for that matter.
+too many for larger programs...or one goto, for that matter. As noted elsewhere,
+an alt version has 131/149 gotos, before/after the cpp. I did not make it the
+main version when submitting because I did not want to make the judges weep and
+curse any more than they already had to (besides, it can't be 4666 bytes with
+the extra `goto`s) but now that it's in I have no qualms about providing it as
+alt code: if I am going to ruin `goto`s I might as well do it properly.
 
 Some things are clear about the program from visual inspection:
 
@@ -3257,7 +3266,7 @@ Except on the Oregon Trail.
 
 I was right too: the entire game is worse, far far worse. After this won I did a
 full sequence. This is from start to finish and I include it for your amusement
-(see [gotos.txt](gotos.txt) for the line changes including calls to prog.c
+(see [jumps.txt](jumps.txt) for the line changes including calls to prog.c
 functions). Or horror. There are a few times where the line
 is the same but that only shows how very often the line changes. It is a total
 of **985** (!) changes, counting function calls, and **776** (!) excluding

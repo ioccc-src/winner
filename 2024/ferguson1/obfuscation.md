@@ -50,7 +50,10 @@ many. Unless I am very much mistaken, I have broken the record by a huge margin.
 
 Here's the horrifying and hilarious truth: I beat it out by 92 MORE, **BEFORE** the
 cpp at 116 and after the cpp is through I beat it by **110** MORE (!!), **AT
-134!** Yes, you read that right. 134 `goto`s!
+134!** Yes, you read that right. 134 `goto`s! I even went further in an alt
+version, where before the cpp it was 131 `goto`s and after the cpp 149 (!!)
+`goto`s. I didn't do this in the main entry for practical reasons but I wish I
+had.
 
 Even removing what I think are the only dead `goto`s, two of them, including one
 that is in the `w()` macro that would be translated into more, I beat it by 90
