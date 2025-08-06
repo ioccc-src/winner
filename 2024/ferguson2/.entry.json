@@ -86,22 +86,6 @@
             "entry_text" : "code talker dictionary in original form"
         },
         {
-            "file_path" : "prog.2.c",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "c",
-            "display_via_github" : true,
-            "entry_text" : "older version 2 of the code"
-        },
-        {
-            "file_path" : "prog.3.c",
-            "inventory_order" : 200,
-            "OK_to_edit" : true,
-            "display_as" : "c",
-            "display_via_github" : true,
-            "entry_text" : "older version 3 of the code"
-        },
-        {
             "file_path" : "prog.obfus.c",
             "inventory_order" : 200,
             "OK_to_edit" : true,
