@@ -48,7 +48,7 @@ struct a {
      *
      *  a - for Z(), which parses main() args and acts on them - it is that
      *      part of main()'s body instead of in main(), this so I could make it
-     *      harder to keep follow with anonymous and inconsistent ordering and
+     *      harder to follow with anonymous and inconsistent ordering and
      *      variables.
      * N - first field in dictionary file.
      * S - second field in dictionary file.
