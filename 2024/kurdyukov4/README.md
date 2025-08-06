@@ -7,13 +7,11 @@
 
 ### Bugs and (Mis)features:
 
-It is necessary to avoid collisions with C keywords when generating names for variables, for example: if do asm int for EOF.
+The current status of this entry is:
 
-The original code had a collision with the keywords "asm" and "int", now it is fixed.
+> **STATUS: INABIAF - please DO NOT fix**
 
-Also, the size of the static buffers has increased from 1MB to 16MB, which should ensure processing of at least 4MB of input. If you want to increase the limit, look for `24` in the source code (this is a power of two, for 8MB of input data you would need `25`, and so on).
-
-Current code was tested with an input of 1MB.
+For more detailed information see [2024/kurdyukov4 in bugs.html](../../bugs.html#2024_kurdyukov4).
 
 
 ## To use:
@@ -49,6 +47,61 @@ the resulting program when run:
 re-assemble the original input **WITHOUT USING ANY LITERALS** in the C code it produced!
 
 You mind may go into a spiral as you attempt to read and understand how this is done.  :-)
+
+
+### Large input size issues
+
+The author, [Ilya Kurdyukov](../../authors.html#Ilya_Kurdyukov), was
+kind enough to provide us with an improvement to his amazing code that
+allows for larger input sizes.  To see what was patched run the following
+within the `2024/kurdyukov4` directory:
+
+``` <!---sh-->
+    make make diff_orig_prog
+```
+
+The above patch extended the original standard input size limit from 128K bytes to 64M bytes.
+
+While the [2024/kurdyukov4/try.sh](%%REPO_URL%%/2024/kurdyukov4/try.sh) script will attempt
+to run the code in steps starting from 64K of random data up to 64M bytes of random data,
+it is unlikely that you will be able to limitations by the compiler, linker, processor
+architecture, memory, system, other resource limits if not run out of patience.
+
+On fairly normal systems, we experienced the following while running
+[2024/kurdyukov4/try.sh](%%REPO_URL%%/2024/kurdyukov4/try.sh):
+
+```
+    | random |        |    C code |  compile time |   compile time |                            |
+    |  input | try.sh |   size in |  clang 17.0.0 |     gcc 11.5.0 |                            |
+    |  bytes |  stage |     bytes | Apple silicon |         x86 64 | notes                      |
+    |--------|--------|-----------|---------------|----------------|----------------------------|
+    |    64K |  test3 |    515764 |        10 sec |         75 sec | gcc 7.5x slower than clang |
+    |     1M |  test4 |   3939019 |        80 sec |  1 hour 15 min | gcc  56x slower than clang |
+    |     4M |  test5 |  13296449 |  1 min 50 sec | 14 hour  2 min | gcc 460x slower than clang |
+    |    16M |  test6 | 136786072 |  4 min 40 sec |      very long | clang excutable crashes    |
+    |    64M |  test7 | 200412713 | 44 min 40 sec | extremely long | clang excutable crashes    |
+```
+
+We never had the time nor resources to attempt to compile using `gcc(1)`, the code needed for
+any random input larger than 4M bytes.
+
+For 16M bytes and larger on Apple silicon, for random input size of 16M bytes and 64M bytes,
+the `clang(1)` linker phase issues the following warning:
+
+> ld: warning: atom '\_main' ... is larger than the max code size between branch island clusters,
+> this may lead to unreachable branches
+
+If you attempt to run the `clang(1)` generated executable anyway, is crashes with:
+
+> segmentation fault
+
+Compiling `gcc(1)` with a random input size of 16M bytes and 64M bytes was **never attempted**
+because such a compile attempt would **take too long** and require a **large amount of ram**.
+
+**PLEASE NOTE**: The above problems are **NOT** code bugs.  They represent compiler mis-features,
+linker limitations, and/or architecture limitations.
+
+**macOS NOTE**: The macOS `/usr/bin/gcc` is actually `clang(1)`, and so using `gcc(1)` under macOS doesn't count.
 
 
 ## Author's remarks:

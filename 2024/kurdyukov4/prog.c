@@ -4,7 +4,7 @@
                         #define o(x,o)x##o
                                         char X[
                                              1<<16
-                      ][4],Z[1<<24],*N=         X[1]
+                      ][4],Z[1<<28],*N=         X[1]
                   ,*P=Z,*H,A[12];char*C(int       i,o(u
                ,nsigned)             x){char*B      =0,*
              D;if((x                     >>16)||      0==*
@@ -23,7 +23,7 @@
        =98;     for(      printf("#inclu"      "de "    "<st"
        "dio"     ".h>"        "\nint"        " a;i"     "nt"
         " ma"     "in()"                   "{int"     " b="
-         "-~a")      ;i>3&&P-           Z+33<1<<     24;C(
+         "-~a")      ;i>3&&P-           Z+33<1<<     28;C(
            i,a))       for(a=i=0;i<4&&0<=(c=       o(get,
             char)(         ));n++)((char         *)&a)[
               i++]=c;                         H=P;C(1
