@@ -43,7 +43,7 @@
             "OK_to_edit" : true,
             "display_as" : "mp3",
             "display_via_github" : true,
-            "entry_text" : "ref.raw converted into MP3, 256 kbps, 48 kHz, JntStereo"
+            "entry_text" : "ref.raw converted into MP3 256 kbps 48 kHz JntStereo"
         },
         {
             "file_path" : "try.sh",

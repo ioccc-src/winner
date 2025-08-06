@@ -56,10 +56,11 @@ inside this C code. :-)
 > Fun fact: after winning this, the author played the game in gdb from start to
 finish and not counting macros but counting all function calls (not libc
 functions just the few functions in prog.c), there were a total of **985** (!)
-line jumps.  The prog.c, counting `#include`s, `#define`s, functions and some
-lines that have only braces, as well as 14 blank lines, has only 85 lines. A
-very tiny fraction of the time a line might be repeated in a row ONCE but that
-does not really matter.
+line jumps. Skipping prog.c function calls and it's still **776** jumps! The
+prog.c, if you remove `#include`s, blank lines, lines with just a brace and
+lines that have only variables, has only 59 lines of code. A very tiny fraction
+of the time a line might be repeated in a row ONCE but that does not really
+matter.
 
 **NOTE**: I actually submitted two versions. This one is not encrypted. The
 encrypted one even encrypted emojis without having to decrypt them in order to
@@ -2454,11 +2455,15 @@ really does not seem to be dead (it's quite sneaky).
 
 I could be wrong on whether this is one the compiler missed though: it's hard to
 follow all the `goto`s. As you find out in [obfuscation.html](obfuscation.html) it's
-134 after pre-processing! Yes I might be mad. But then again I might just be
-the Devil. Who knows? What I do know is code that is meant to be reached is
-reached! Yes I've played it many times. Some code I made dead seemed totally
-useless but why not add to confusion? If that includes one that the compiler
-misses that's even better!
+134 after pre-processing! One of the alt versions I supplied is 131 before the
+cpp and 149 after. I did not submit that for practical reasons but I kind of
+wish I had, now that it won. Nonetheless 134 is already way too many. 149 is
+much worse.
+
+Yes I might be mad. But then again I might just be the Devil. Who knows? What I
+do know is code that is meant to be reached is reached! Yes I've played it many
+times. Some code I made dead seemed totally useless but why not add to
+confusion? If that includes one that the compiler misses that's even better!
 
 It is **NOT** a bug where in the inner switch there is a missing case. That is
 done because I do not want it to always trigger. That is the one that is in a
@@ -3016,7 +3021,12 @@ In general I think it's extremely hard to follow the flow of this program due to
 the abuse of 116 `goto`s, more than the BASIC game. 134 when pre-processed. But
 let's be honest, or 134 for a small C program is too many but to be only six
 fewer than a larger BASIC program? That is hard to fathom. Not that 116 is not
-too many for larger programs...or one goto, for that matter.
+too many for larger programs...or one goto, for that matter. As noted elsewhere,
+an alt version has 131/149 gotos, before/after the cpp. I did not make it the
+main version when submitting because I did not want to make the judges weep and
+curse any more than they already had to (besides, it can't be 4666 bytes with
+the extra `goto`s) but now that it's in I have no qualms about providing it as
+alt code: if I am going to ruin `goto`s I might as well do it properly.
 
 Some things are clear about the program from visual inspection:
 
@@ -3256,18 +3266,21 @@ Except on the Oregon Trail.
 
 I was right too: the entire game is worse, far far worse. After this won I did a
 full sequence. This is from start to finish and I include it for your amusement
-(see [gotos.txt](gotos.txt)). Or horror. There are a few times where the line
+(see [jumps.txt](jumps.txt) for the line changes including calls to prog.c
+functions). Or horror. There are a few times where the line
 is the same but that only shows how very often the line changes. It is a total
-of **985** (!) changes, counting function calls (i.e. each call to one of the few
-functions is a jump); calls to the macros are not counted.
+of **985** (!) changes, counting function calls, and **776** (!) excluding
+function calls. Macros are not counted of course.
 
-This is in a program that is **JUST 85 (!) lines**! A program that has only 85 lines
-COUNTING the `#include`s, `#define`s, other functions and 14 blank lines that
-jumps 985 times is astonishing. Of course that's not the only technique but the
-title of the award and the judges' remarks are rather fitting as it is
-diabolical to follow this code (and the theme of the game fits as well); the
-[obfuscation.html](obfuscation.html) shows even more on this - and the other
-things I did as well.
+This program, if you remove blank lines and lines with just a brace,
+`#include`s and only variables, has a mere 59 (!) lines.
+
+A program that has only 59 lines of code that jumps 985 (counting functions) or
+776 (just in main()) times is astonishing. Of course that's not the
+only technique but the title of the award and the judges' remarks are rather
+fitting as it is diabolical to follow this code (and the theme of the game fits
+as well); the [obfuscation.html](obfuscation.html) shows even more on this - and
+the other things I did as well.
 
 > I have yet to see a single study that supported the supposition that GOTOs are
 harmful (I presume this is not because nobody has tried). Nonetheless, people
@@ -3280,16 +3293,17 @@ said was missing. And it was about time. Not that it didn't happen before. But
 he was wrong.
 
 It is not about not trying. But even IF he WAS right, he
-sure as hell is WRONG NOW. Anyone who thinks otherwise needs to try and debug
+sure as hell is wrong NOW. Anyone who thinks otherwise needs to try and debug
 my program - or maintain it. Or write it.
 
-It would have been SO MUCH EASIER if I did not use 134 `goto`s. Actually, even a
+It would have been SO MUCH EASIER if I did not use 134 `goto`s (and I could have
+fit more in). Actually, even a
 tiny portion of that would make it harder. Nobody, whether they're in their
 right mind or not, would WANT to maintain this, or something even close to it.
 Feel free to pass on judgement to me. I welcome it! You have to be mad and
-embrace it to do this. I went full out and if I didn't have to do other things
-(or felt like fewer events would be worth it) I would have done even more
-`goto`s for this very reason.
+embrace it to do this. I went full out and I could have fit more `goto`s in: not
+only is the iocccsize not 2503 but I could have removed some events if I really
+wanted more `goto`s.
 
 Even flex/bison code, which as far as I am aware uses FAR fewer `goto`s, is
 notorious for `goto`s and is quite hard to follow. It would be a nightmare to
@@ -3421,9 +3435,10 @@ the degree I have taken it in this program, it demonstrates why you should avoid
 No matter how many you have, UNLESS IT'S 0, it makes it hard to maintain and
 ensure that the code is correct. So how did I actually manage doing exactly
 that? Very carefully - and I nearly lost my mind doing it. I will not make any
-judgement on anyone else who uses them.
+judgement on anyone else who uses them, although I will talk about the notion
+that they aren't harmful, mostly to show just how extreme this program went.
 
-Anyway, I am even reminded of Apple's **SINGLE** misplaced `goto` that caused a
+Anyway, I am reminded of Apple's **SINGLE** misplaced `goto` that caused a
 **SECURITY HOLE** (CVE-2014-1266):
 <https://www.blackduck.com/blog/understanding-apple-goto-fail-vulnerability-2.html>.
 That's all it takes: **JUST ONE `goto` led to a CVE**!

@@ -496,7 +496,10 @@ too many, even in a large program, let alone a small one. Even one <code>goto</c
 many. Unless I am very much mistaken, I have broken the record by a huge margin.</p>
 <p>Here’s the horrifying and hilarious truth: I beat it out by 92 MORE, <strong>BEFORE</strong> the
 cpp at 116 and after the cpp is through I beat it by <strong>110</strong> MORE (!!), <strong>AT
-134!</strong> Yes, you read that right. 134 <code>goto</code>s!</p>
+134!</strong> Yes, you read that right. 134 <code>goto</code>s! I even went further in an alt
+version, where before the cpp it was 131 <code>goto</code>s and after the cpp 149 (!!)
+<code>goto</code>s. I didn’t do this in the main entry for practical reasons but I wish I
+had.</p>
 <p>Even removing what I think are the only dead <code>goto</code>s, two of them, including one
 that is in the <code>w()</code> macro that would be translated into more, I beat it by 90
 more, at 114 before the cpp, and 99 more after the cpp, at 123!</p>
@@ -510,16 +513,16 @@ YES I think it’s HILARIOUS. But if it was not for the IOCCC… Well, as I
 mention in my <a href="#devil">remarks above</a>, EVEN ONE IS TOO MANY
 in real code.</p>
 <p>I dare you to run the program in a debugger from start to finish to see how many
-line jumps there truly are. After I won I did it once: in a program with just 85
-lines (14 blank, some with just a brace, <code>#include</code>s, <code>#define</code>s included) there
-were a total of 985 line changes (a tiny tiny fraction had the same line number
-repeated once). I rarely went to the fort and I only hunted once (I might not
-have hunted at all). This is obscene.</p>
+line jumps there truly are. After I won I did it once: removing the <code>#include</code>s,
+blank lines, lines with only variables and lines with just braces (i.e. only
+lines of code) the program has just 59 lines and in a single run there were a
+total of <strong>985</strong> (!) line changes, counting function calls. In <code>main()</code> itself
+the line changed a total of <strong>776</strong> (!) times!</p>
 <p>The best (or worst, depending on how you look at it :-) ) part is this works. As
-I note in those concluding remarks, a company actually introduced a security
-hole from ONE <code>goto</code>. Yet I have 116/134 and it actually works? That is surely
-obscene. And beautiful.</p>
-<p>Oh and BTW: it appears that <code>hines</code> is a bit confused about my submission,
+I note in those concluding remarks, a <a href="https://www.apple.com">famous company</a>
+actually introduced a security hole from ONE <code>goto</code>. Yet I have 116/134 and it
+actually works? That is surely obscene. And beautiful.</p>
+<p>Oh and BTW: it appears that <code>hines</code> is a bit confused about my entry,
 though I’m not really sure why. In any case, I not only have dethroned <code>hines</code>
 (sorry …but also not sorry!) but I have, as noted already, beaten the original
 BASIC game by <strong>7</strong> more <code>goto</code>s at 116 before the cpp and <strong>25 MORE</strong> after the

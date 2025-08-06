@@ -41,7 +41,7 @@
             "file_path" : "deobfuscated.html",
             "inventory_order" : 100,
             "OK_to_edit" : false,
-            "display_as" : "markdown",
+            "display_as" : "html",
             "display_via_github" : true,
             "entry_text" : "about deobfuscation"
         },
@@ -57,8 +57,8 @@
             "file_path" : "extra.html",
             "inventory_order" : 100,
             "OK_to_edit" : false,
-            "display_as" : "markdown",
-            "display_via_github" : true,
+            "display_as" : "html",
+            "display_via_github" : false,
             "entry_text" : "description of the extra files"
         },
         {

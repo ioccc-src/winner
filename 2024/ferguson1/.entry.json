@@ -38,6 +38,14 @@
             "entry_text" : "alternate source code"
         },
         {
+            "file_path" : "prog.goto.max.c",
+            "inventory_order" : 40,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "entry source code with maxed out gotos"
+        },
+        {
             "file_path" : "prog.orig.c",
             "inventory_order" : 50,
             "OK_to_edit" : false,
@@ -97,17 +105,25 @@
             "file_path" : "deobfuscation.html",
             "inventory_order" : 100,
             "OK_to_edit" : false,
-            "display_as" : "markdown",
-            "display_via_github" : true,
+            "display_as" : "html",
+            "display_via_github" : false,
             "entry_text" : "hints on how to deobfuscate"
         },
         {
-            "file_path" : "gotos.txt",
+            "file_path" : "gotos.c.txt",
             "inventory_order" : 100,
             "OK_to_edit" : true,
             "display_as" : "text",
             "display_via_github" : true,
-            "entry_text" : "text file showing all the line changes in a run"
+            "entry_text" : "text file showing only the gotos in the entry code"
+        },
+        {
+            "file_path" : "jumps.txt",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : true,
+            "entry_text" : "text file showing all the line changes in a single run"
         },
         {
             "file_path" : "lencount.c",
@@ -129,8 +145,8 @@
             "file_path" : "obfuscation.html",
             "inventory_order" : 100,
             "OK_to_edit" : false,
-            "display_as" : "markdown",
-            "display_via_github" : true,
+            "display_as" : "html",
+            "display_via_github" : false,
             "entry_text" : "obfuscation information"
         },
         {

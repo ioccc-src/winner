@@ -154,8 +154,10 @@ TARGET= ${PROG} ${PROG}.asc ${PROG}.scrnshot
 
 # .alt is as above more events
 #
-ALT_OBJ= ${PROG}.alt.o ${PROG}.alt.asc.o ${PROG}.alt.scrnshot.o
-ALT_TARGET= ${PROG}.alt ${PROG}.alt.asc ${PROG}.alt.scrnshot
+ALT_OBJ= ${PROG}.alt.o ${PROG}.alt.asc.o ${PROG}.alt.scrnshot.o ${PROG}.goto.max.o \
+	 ${PROG}.goto.max.asc.o ${PROG}.goto.max.scrnshot.o
+ALT_TARGET= ${PROG}.alt ${PROG}.alt.asc ${PROG}.alt.scrnshot ${PROG}.goto.max \
+	    ${PROG}.goto.max.asc ${PROG}.goto.max.scrnshot
 
 # list any data files supplied with the submission
 #
@@ -350,11 +352,29 @@ ${PROG}.alt.asc: ${PROG}.alt.c
 	${MAKE} padding
 	${CC} ${CFLAGS} -DDATA='"data.asc"' ${PROG}.alt.c -o $@ ${LDFLAGS}
 
+# goto maxed out - regular data file
+#
+${PROG}.goto.max: ${PROG}.goto.max.c
+	${MAKE} padding
+	${CC} ${CFLAGS} -DDATA='"data"' ${PROG}.goto.max.c -o $@ ${LDFLAGS}
+
+# goto maxed out - ASCII only data file
+#
+${PROG}.goto.max.asc: ${PROG}.goto.max.c
+	${MAKE} padding
+	${CC} ${CFLAGS} -DDATA='"data.asc"' ${PROG}.goto.max.c -o $@ ${LDFLAGS}
+
 # screenshot friendly version of alt code
 #
 ${PROG}.alt.scrnshot: ${PROG}.alt.c
 	${MAKE} padding
 	${CC} ${CFLAGS} -DDATA='"data.scrnshot"' ${PROG}.alt.c -o $@ ${LDFLAGS}
+
+# goto maxed out - screenshot friendly version
+#
+${PROG}.goto.max.scrnshot: ${PROG}.goto.max.c
+	${MAKE} padding
+	${CC} ${CFLAGS} -DDATA='"data.scrnshot"' ${PROG}.goto.max.c -o $@ ${LDFLAGS}
 
 # data files
 #

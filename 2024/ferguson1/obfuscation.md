@@ -50,7 +50,10 @@ many. Unless I am very much mistaken, I have broken the record by a huge margin.
 
 Here's the horrifying and hilarious truth: I beat it out by 92 MORE, **BEFORE** the
 cpp at 116 and after the cpp is through I beat it by **110** MORE (!!), **AT
-134!** Yes, you read that right. 134 `goto`s!
+134!** Yes, you read that right. 134 `goto`s! I even went further in an alt
+version, where before the cpp it was 131 `goto`s and after the cpp 149 (!!)
+`goto`s. I didn't do this in the main entry for practical reasons but I wish I
+had.
 
 Even removing what I think are the only dead `goto`s, two of them, including one
 that is in the `w()` macro that would be translated into more, I beat it by 90
@@ -68,18 +71,18 @@ mention in my [remarks above](#devil), EVEN ONE IS TOO MANY
 in real code.
 
 I dare you to run the program in a debugger from start to finish to see how many
-line jumps there truly are. After I won I did it once: in a program with just 85
-lines (14 blank, some with just a brace, `#include`s, `#define`s included) there
-were a total of 985 line changes (a tiny tiny fraction had the same line number
-repeated once). I rarely went to the fort and I only hunted once (I might not
-have hunted at all). This is obscene.
+line jumps there truly are. After I won I did it once: removing the `#include`s,
+blank lines, lines with only variables and lines with just braces (i.e. only
+lines of code) the program has just 59 lines and in a single run there were a
+total of **985** (!) line changes, counting function calls. In `main()` itself
+the line changed a total of **776** (!) times!
 
 The best (or worst, depending on how you look at it :-) ) part is this works. As
-I note in those concluding remarks, a company actually introduced a security
-hole from ONE `goto`. Yet I have 116/134 and it actually works? That is surely
-obscene. And beautiful.
+I note in those concluding remarks, a [famous company](https://www.apple.com)
+actually introduced a security hole from ONE `goto`. Yet I have 116/134 and it
+actually works? That is surely obscene. And beautiful.
 
-Oh and BTW: it appears that `hines` is a bit confused about my submission,
+Oh and BTW: it appears that `hines` is a bit confused about my entry,
 though I'm not really sure why. In any case, I not only have dethroned `hines`
 (sorry ...but also not sorry!) but I have, as noted already, beaten the original
 BASIC game by **7** more `goto`s at 116 before the cpp and **25 MORE** after the

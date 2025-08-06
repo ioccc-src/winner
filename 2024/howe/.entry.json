@@ -41,8 +41,8 @@
             "file_path" : "prog.html",
             "inventory_order" : 100,
             "OK_to_edit" : false,
-            "display_as" : "markdown",
-            "display_via_github" : true,
+            "display_as" : "html",
+            "display_via_github" : false,
             "entry_text" : "eh man page"
         },
         {
