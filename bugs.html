@@ -3659,24 +3659,15 @@ The <a href="http://www.isthe.com/cgi-bin/chongo/number.cgi">English name of tha
 <h2 id="kurdyukov4">2024/kurdyukov4</h2>
 </div>
 <p>Jump to: <a href="#">top</a></p>
-<h3 id="status-known-bug---please-help-us-fix-14">STATUS: known bug - please help us fix</h3>
+<h3 id="status-inabiaf---please-do-not-fix-100">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <h3 id="source-code-2024kurdyukov4prog.c">Source code: <a href="https://github.com/ioccc-src/winner/blob/master/2024/kurdyukov4/prog.c">2024/kurdyukov4/prog.c</a></h3>
 <h3 id="information-2024kurdyukov4index.html">Information: <a href="2024/kurdyukov4/index.html">2024/kurdyukov4/index.html</a></h3>
-<p>In fixing this bug you will come to a better appreciation of how the
-code was able to process random data files as large as 64K.</p>
-<p>If you provide a random data set of about 100K bytes, the resulting C program, after taking some time, will compile:</p>
-<pre><code>    dd if=/dev/urandom bs=100K count=1 | ./prog &gt; out.c</code></pre>
-<p>However if increase the size of the random data set to 128K bytes, the resulting <code>out.c</code> C program:</p>
-<pre><code>    dd if=/dev/urandom bs=128K count=1 | ./prog &gt; out.c
-    cc out.c -o out</code></pre>
-<p>will fail to compile with errors such as:</p>
-<pre><code>    out.c:2:...: error: expected identifier or &#39;(&#39;
-    out.c:2:...: error: expected &#39;;&#39; at end of declaration
-    out.c:2:...: error: use of undeclared identifier &#39;Z&#39;</code></pre>
-<p>Can you fix <code>prog.c</code> to successfully process very large random data sets: perhaps into the gigabyte size range or larger?</p>
-<p>How long does it take to compile the resulting <code>out.c</code> source?</p>
-<p>Even better, can you fix <code>prog.c</code> while maintaining its style and source code layout, all without
-making the source code significantly larger?</p>
+<p>The <a href="https://github.com/ioccc-src/winner/blob/master/2024/kurdyukov4/try.sh">2024/kurdyukov4/try.sh</a> script
+will very likely run into problems such as compile taking a long time,
+compilers crashing and/or executables crashing when used with random
+input sizes larger than 64K bytes.</p>
+<p><strong>PLEASE NOTE</strong>: The above problems are <strong>NOT</strong> code bugs. They represent compiler mis-features,
+linker limitations, and/or architecture limitations.</p>
 <p>Jump to: <a href="#">top</a></p>
 <hr style="width:10%;text-align:left;margin-left:0">
 <div id="final_words">
@@ -3690,6 +3681,8 @@ fixes] via a <a href="https://github.com/ioccc-src/winner/pulls">GitHub pull
 request</a> or otherwise, we
 thank you as well for the help! We will happily add you to the
 <a href="thanks-for-help.html">thanks</a> file as well.</p>
+<p>For more information see the “<strong>Large input size issues</strong>” section of
+<a href="2024/kurdyukov4/index.html#large-input-size-issues">2024/kurdyukov4/index.html</a>.</p>
 <p>Jump to: <a href="#">top</a></p>
 <!--
 

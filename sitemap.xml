@@ -14346,7 +14346,7 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/2024/burton/index.html</loc>
-    <lastmod>2025-08-05T22:50:30+00:00</lastmod>
+    <lastmod>2025-08-05T22:56:00+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/2024/burton/Makefile</loc>
@@ -14745,20 +14745,24 @@
     <lastmod>2025-07-05T06:08:05+00:00</lastmod>
 </url>
 <url>
+    <loc>https://www.ioccc.org/2024/ferguson1/gotos.c.txt</loc>
+    <lastmod>2025-08-07T01:59:28+00:00</lastmod>
+</url>
+<url>
     <loc>https://www.ioccc.org/2024/ferguson1/gotos.png</loc>
     <lastmod>2025-07-05T06:08:05+00:00</lastmod>
 </url>
 <url>
-    <loc>https://www.ioccc.org/2024/ferguson1/gotos.txt</loc>
-    <lastmod>2025-08-04T19:03:08+00:00</lastmod>
-</url>
-<url>
     <loc>https://www.ioccc.org/2024/ferguson1/index.html</loc>
-    <lastmod>2025-08-05T22:50:30+00:00</lastmod>
+    <lastmod>2025-08-07T01:59:28+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/2024/ferguson1/ioccc.jpg</loc>
     <lastmod>2025-07-05T06:08:05+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2024/ferguson1/jumps.txt</loc>
+    <lastmod>2025-08-07T01:59:28+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/2024/ferguson1/lencount.c</loc>
@@ -14770,7 +14774,7 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/2024/ferguson1/Makefile</loc>
-    <lastmod>2025-07-05T06:08:22+00:00</lastmod>
+    <lastmod>2025-08-07T01:59:28+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/2024/ferguson1/mbcheck.c</loc>
@@ -14778,11 +14782,11 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/2024/ferguson1/obfuscation.html</loc>
-    <lastmod>2025-08-05T22:50:30+00:00</lastmod>
+    <lastmod>2025-08-07T01:59:28+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/2024/ferguson1/obfuscation.md</loc>
-    <lastmod>2025-08-05T22:50:30+00:00</lastmod>
+    <lastmod>2025-08-07T01:59:28+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/2024/ferguson1/printer.c</loc>
@@ -14797,12 +14801,16 @@
     <lastmod>2025-07-05T06:08:05+00:00</lastmod>
 </url>
 <url>
+    <loc>https://www.ioccc.org/2024/ferguson1/prog.goto.max.c</loc>
+    <lastmod>2025-08-07T01:59:28+00:00</lastmod>
+</url>
+<url>
     <loc>https://www.ioccc.org/2024/ferguson1/prog.orig.c</loc>
     <lastmod>2025-07-05T06:08:05+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/2024/ferguson1/README.md</loc>
-    <lastmod>2025-08-05T22:50:30+00:00</lastmod>
+    <lastmod>2025-08-07T01:59:28+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/2024/ferguson1/spaghetti.png</loc>
@@ -14910,7 +14918,7 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/2024/howe/index.html</loc>
-    <lastmod>2025-08-05T22:50:30+00:00</lastmod>
+    <lastmod>2025-08-05T22:56:00+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/2024/howe/Makefile</loc>
@@ -14942,7 +14950,7 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/2024/index.html</loc>
-    <lastmod>2025-08-03T19:51:15+00:00</lastmod>
+    <lastmod>2025-08-07T01:59:28+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/2024/kramer/2024_kramer.tar.bz2</loc>
@@ -15150,15 +15158,15 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/2024/kurdyukov4/index.html</loc>
-    <lastmod>2025-08-04T19:22:22+00:00</lastmod>
+    <lastmod>2025-08-07T02:03:47+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/2024/kurdyukov4/Makefile</loc>
-    <lastmod>2025-07-05T06:08:22+00:00</lastmod>
+    <lastmod>2025-08-07T02:00:25+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/2024/kurdyukov4/prog.c</loc>
-    <lastmod>2025-08-05T22:50:30+00:00</lastmod>
+    <lastmod>2025-08-07T02:00:25+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/2024/kurdyukov4/prog.orig.c</loc>
@@ -15166,11 +15174,11 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/2024/kurdyukov4/README.md</loc>
-    <lastmod>2025-08-05T22:50:30+00:00</lastmod>
+    <lastmod>2025-08-07T02:03:10+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/2024/kurdyukov4/try.sh</loc>
-    <lastmod>2025-08-04T19:03:08+00:00</lastmod>
+    <lastmod>2025-08-07T02:00:25+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/2024/macke/2024_macke.tar.bz2</loc>
@@ -15362,7 +15370,7 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/2024/README.md</loc>
-    <lastmod>2025-08-03T19:51:15+00:00</lastmod>
+    <lastmod>2025-08-07T01:59:28+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/2024/rules.html</loc>
@@ -15502,7 +15510,7 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/2024/weaver/index.html</loc>
-    <lastmod>2025-07-26T20:40:04+00:00</lastmod>
+    <lastmod>2025-08-07T01:59:28+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/2024/weaver/Makefile</loc>
@@ -16722,11 +16730,11 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/bugs.html</loc>
-    <lastmod>2025-08-05T22:51:10+00:00</lastmod>
+    <lastmod>2025-08-07T02:04:24+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/bugs.md</loc>
-    <lastmod>2025-08-05T22:51:10+00:00</lastmod>
+    <lastmod>2025-08-07T02:00:25+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/CODE_OF_CONDUCT.html</loc>
