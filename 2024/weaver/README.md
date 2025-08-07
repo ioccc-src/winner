@@ -1,3 +1,10 @@
+## Award presentation:
+
+Watch the following [Our Favorite Universe](https://www.youtube.com/@OurFavoriteUniverse) YouTube show:
+
+> [IOCCC28 - 2024/weaver - Sur prize](https://www.youtube.com/watch?v=e1h5N6EDehg)
+
+
 ## To build:
 
 ``` <!---sh-->

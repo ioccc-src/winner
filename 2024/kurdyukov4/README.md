@@ -1,3 +1,10 @@
+## Award presentation:
+
+Watch the following [Our Favorite Universe](https://www.youtube.com/@OurFavoriteUniverse) YouTube show:
+
+> [IOCCC28 - 2024/kurdyukov4 - Prize in embiggening](https://www.youtube.com/watch?v=YnU_jQs11Lk)
+
+
 ## To build:
 
 ``` <!---sh-->

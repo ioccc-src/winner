@@ -1,3 +1,10 @@
+## Award presentation:
+
+Watch the following [Our Favorite Universe](https://www.youtube.com/@OurFavoriteUniverse) YouTube show:
+
+> [IOCCC28 - 2024/ferguson2 - Prize in yil-tas](https://www.youtube.com/watch?v=KmSzapLxDnA)
+
+
 ## To build:
 
 ``` <!---sh-->

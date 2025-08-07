@@ -1,3 +1,10 @@
+## Award presentation:
+
+Watch the following [Our Favorite Universe](https://www.youtube.com/@OurFavoriteUniverse) YouTube show:
+
+> [IOCCC28 - 2024/kurdyukov1 - Prize in phased periodicity](https://www.youtube.com/watch?v=b2WfQdGJS8s)
+
+
 ## To build:
 
 ``` <!---sh-->

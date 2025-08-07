@@ -1,3 +1,10 @@
+## Award presentation:
+
+Watch the following [Our Favorite Universe](https://www.youtube.com/@OurFavoriteUniverse) YouTube show:
+
+> [IOCCC28 - 2024/straadt - Prize in sound coding](https://www.youtube.com/watch?v=QYFXRvt0VJo)
+
+
 ## To build:
 
 ``` <!---sh-->

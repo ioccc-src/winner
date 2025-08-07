@@ -1,3 +1,10 @@
+## Award presentation:
+
+Watch the following [Our Favorite Universe](https://www.youtube.com/@OurFavoriteUniverse) YouTube show:
+
+> [IOCCC28 - 2024/kurdyukov3 - Prize in virtual quietus](https://www.youtube.com/watch?v=iaXMwqR93iE)
+
+
 ## To build:
 
 ``` <!---sh-->

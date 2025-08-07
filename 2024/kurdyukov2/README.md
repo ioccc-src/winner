@@ -1,3 +1,10 @@
+## Award presentation:
+
+Watch the following [Our Favorite Universe](https://www.youtube.com/@OurFavoriteUniverse) YouTube show:
+
+> [IOCCC28 - 2024/kurdyukov2 - Prize in art restoration](https://www.youtube.com/watch?v=dWxRYHTPQPE)
+
+
 ## To build:
 
 ``` <!---sh-->

@@ -55,6 +55,21 @@
 </blockquote>
 
 
+## 2025-08-06
+
+The award presentations from the longer 4.5 hour [Our Favorite
+Universe](https://www.youtube.com/@OurFavoriteUniverse) YouTube show
+have been individually uploaded as short videos.  Moreover, the main
+page of each [IOCCC28 winning entry](years.html#2024) now contains a
+link to their own individual YouTube show.
+
+A number of improvements including corrections and improved
+descriptions have been made to the [IOCCC Official Website](index.html).
+We recommend you update your [IOCCC winner GibHub repo](https://github.com/ioccc-src/winner)
+forks and/or download the [IOCCC winning entries of 2024](https://www.ioccc.org/2024/2024.tar.bz2)
+compressed tarball.
+
+
 ## 2025-08-02
 
 

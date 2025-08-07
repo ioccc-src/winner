@@ -1,3 +1,10 @@
+## Award presentation:
+
+Watch the following [Our Favorite Universe](https://www.youtube.com/@OurFavoriteUniverse) YouTube show:
+
+> [IOCCC28 - 2024/cable1 - Prize in bot talk](https://www.youtube.com/watch?v=ZrGyUELYW2M)
+
+
 ## To build:
 
 ``` <!---sh-->

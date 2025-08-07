@@ -1,3 +1,10 @@
+## Award presentation:
+
+Watch the following [Our Favorite Universe](https://www.youtube.com/@OurFavoriteUniverse) YouTube show:
+
+> [IOCCC28 - 2024/tompng - Prize in quasi bijection](https://www.youtube.com/watch?v=9C4PpNCst8Y)
+
+
 ## To build:
 
 ``` <!---sh-->

@@ -1,3 +1,10 @@
+## Award presentation:
+
+Watch the following [Our Favorite Universe](https://www.youtube.com/@OurFavoriteUniverse) YouTube show:
+
+> [IOCCC28 - 2024/endoh2 - Prize in solid body physics](https://www.youtube.com/watch?v=KT9Fgg4t7gY)
+
+
 ## To build:
 
 ``` <!---sh-->

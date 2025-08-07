@@ -5,10 +5,10 @@
 *.o
 .DS_Store
 .*.swp
-random.64K.bin
+random.16M.bin
 random.1M.bin
 random.4M.bin
-random.16M.bin
+random.64K.bin
 random.64M.bin
 test0
 test0.c

@@ -1,3 +1,10 @@
+## Award presentation:
+
+Watch the following [Our Favorite Universe](https://www.youtube.com/@OurFavoriteUniverse) YouTube show:
+
+> [IOCCC28 - 2024/codemeow - Prize in tray planting](https://www.youtube.com/watch?v=OxRLL_RFZHs)
+
+
 ## To build:
 
 ``` <!---sh-->

@@ -1,3 +1,10 @@
+## Award presentation:
+
+Watch the following [Our Favorite Universe](https://www.youtube.com/@OurFavoriteUniverse) YouTube show:
+
+> [IOCCC28 - 2024/carlini - Prize in perfect timing](https://www.youtube.com/watch?v=r6wUZUaaJBY)
+
+
 ## To build:
 
 ``` <!---sh-->
