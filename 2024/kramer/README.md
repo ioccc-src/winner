@@ -1,6 +1,7 @@
 ## Award presentation:
 
-Watch the following [Our Favorite Universe](https://www.youtube.com/@OurFavoriteUniverse) YouTube show:
+Watch the [Our Favorite Universe](https://www.youtube.com/@OurFavoriteUniverse)
+YouTube show for this entry:
 
 > [IOCCC28 - 2024/kramer - Prize in linguistic arithmetic](https://www.youtube.com/watch?v=Wkt6FbOYMxs)
 

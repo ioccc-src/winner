@@ -1,6 +1,7 @@
 ## Award presentation:
 
-Watch the following [Our Favorite Universe](https://www.youtube.com/@OurFavoriteUniverse) YouTube show:
+Watch the [Our Favorite Universe](https://www.youtube.com/@OurFavoriteUniverse)
+YouTube show for this entry:
 
 > [IOCCC28 - 2024/stedolan - Best one liner](https://www.youtube.com/watch?v=NJ-e4SgXGpw)
 
