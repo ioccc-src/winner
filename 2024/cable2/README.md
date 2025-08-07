@@ -1,6 +1,7 @@
 ## Award presentation:
 
-Watch the following [Our Favorite Universe](https://www.youtube.com/@OurFavoriteUniverse) YouTube show:
+Watch the [Our Favorite Universe](https://www.youtube.com/@OurFavoriteUniverse)
+YouTube show for this entry:
 
 > [IOCCC28 - 2024/cable2 - Prize in murky waters](https://www.youtube.com/watch?v=RMI5oT9U4vc)
 

@@ -1,6 +1,7 @@
 ## Award presentation:
 
-Watch the following [Our Favorite Universe](https://www.youtube.com/@OurFavoriteUniverse) YouTube show:
+Watch the [Our Favorite Universe](https://www.youtube.com/@OurFavoriteUniverse)
+YouTube show for this entry:
 
 > [IOCCC28 - 2024/maffiodo - Prize in creative interpretation](https://www.youtube.com/watch?v=JEWxbOD-1UY)
 
