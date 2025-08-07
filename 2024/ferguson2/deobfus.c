@@ -48,7 +48,7 @@ struct a {
      *
      *  a - for Z(), which parses main() args and acts on them - it is that
      *      part of main()'s body instead of in main(), this so I could make it
-     *      harder to keep follow with anonymous and inconsistent ordering and
+     *      harder to follow with anonymous and inconsistent ordering and
      *      variables.
      * N - first field in dictionary file.
      * S - second field in dictionary file.
@@ -176,9 +176,9 @@ char *I(struct a *a)
                  * end up being?) false. That means the !isupper(a->x[0**"z"])
                  * will not be called the first time (or perhaps it will, I
                  * don't know now). Okay but we have to back up a bit.  What is
-                 * 0**"z"?  That is 1. So what is a->x[1]? This is also very
-                 * ugly. I believe (but I am no longer sure!) that the calling
-                 * code is:
+                 * 0**"z"? That is 0, as you'd expect. So what is a->x[1]? This
+                 * is also very ugly. I believe (but I am no longer sure!) that
+                 * the calling code is:
                  *
                  *  (((*a->h[--a->l]=='e'-':')&&(*a->v)(&(struct a){ .v[0]=I,
                  *  .s=((a->l)[a->h])+1} ) &&++a->l)||(a->v[1](&(struct a){
