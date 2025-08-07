@@ -4915,40 +4915,18 @@ Jump to: [top](#)
 Jump to: [top](#)
 
 
-### STATUS: known bug - please help us fix
+### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2024/kurdyukov4/prog.c](%%REPO_URL%%/2024/kurdyukov4/prog.c)
 ### Information: [2024/kurdyukov4/index.html](2024/kurdyukov4/index.html)
 
-In fixing this bug you will come to a better appreciation of how the
-code was able to process random data files as large as 64K.
+The [2024/kurdyukov4/try.sh](%%REPO_URL%%/2024/kurdyukov4/try.sh) script
+will very likely run into problems such as compile taking a long time,
+compilers crashing and/or executables crashing when used with random
+input sizes larger than 64K bytes.
 
-If you provide a random data set of about 100K bytes, the resulting C program, after taking some time, will compile:
+**PLEASE NOTE**: The above problems are **NOT** code bugs.  They represent compiler mis-features,
+linker limitations, and/or architecture limitations.
 
-``` <!---sh-->
-    dd if=/dev/urandom bs=100K count=1 | ./prog > out.c
-```
-
-However if increase the size of the random data set to 128K bytes, the resulting `out.c` C program:
-
-``` <!---sh-->
-    dd if=/dev/urandom bs=128K count=1 | ./prog > out.c
-    cc out.c -o out
-```
-
-will fail to compile with errors such as:
-
-```
-    out.c:2:...: error: expected identifier or '('
-    out.c:2:...: error: expected ';' at end of declaration
-    out.c:2:...: error: use of undeclared identifier 'Z'
-```
-
-Can you fix `prog.c` to successfully process very large random data sets: perhaps into the gigabyte size range or larger?
-
-How long does it take to compile the resulting `out.c` source?
-
-Even better, can you fix `prog.c` while maintaining its style and source code layout, all without
-making the source code significantly larger?
 
 Jump to: [top](#)
 
@@ -4966,6 +4944,9 @@ fixes] via a [GitHub pull
 request](https://github.com/ioccc-src/winner/pulls) or otherwise, we
 thank you as well for the help! We will happily add you to the
 [thanks](thanks-for-help.html) file as well.
+
+For more information see the "**Large input size issues**" section of
+[2024/kurdyukov4/index.html](2024/kurdyukov4/index.html#large-input-size-issues).
 
 Jump to: [top](#)
 

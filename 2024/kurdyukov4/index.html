@@ -25,14 +25,14 @@
 <!-- END: this line ends content from: inc/head.default.html -->
 
 <!-- -->
-<!-- This web page was formed via the tool: bin/readme2index.sh -->
-<!-- The content of main section of this web page came from: 2024/kurdyukov4/README.md -->
+<!-- This web page was formed via the tool: unspecified -->
+<!-- The main section of this web page came from JSON and other data files -->
 <!-- -->
 
 <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-<!-- !!! Do not modify this web page, instead modify the file: 2024/kurdyukov4/README.md !!! -->
-<!-- !!! Do not modify this web page, instead modify the file: 2024/kurdyukov4/README.md !!! -->
-<!-- !!! Do not modify this web page, instead modify the file: 2024/kurdyukov4/README.md !!! -->
+<!-- The main section of this web page was generated via the tool: unspecified -->
+<!-- The main section of this web page was generated via the tool: unspecified -->
+<!-- The main section of this web page was generated via the tool: unspecified -->
 <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
 
 <!-- Markdown content was converted into HTML via the tool: bin/md2html.sh -->
@@ -447,7 +447,7 @@
   <a class="Right" href="https://github.com/ioccc-src/winner/blob/master/2024/kurdyukov4/prog.c">C code</a>
   <a class="Right" href="https://github.com/ioccc-src/winner/blob/master/2024/kurdyukov4/Makefile">Makefile</a>
   <a class="Right" href="#inventory">Inventory</a>
-  <a class="Right" href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.ioccc.org%2F2024%2Fkurdyukov4%2Findex.html">&#x2713;</a>
+  <a class="Right" href="https://validator.w3.org/nu/?doc=#">&#x2713;</a>
 </div>
 
 <!-- END: this line ends content from: inc/navbar.mid.html -->
@@ -474,14 +474,7 @@ Location: <a href="../../location.html#RU">RU</a> - <em>Russian Federation</em> 
 <!-- BEFORE: 1st line of markdown file: 2024/kurdyukov4/README.md -->
 <h2 id="to-build">To build:</h2>
 <pre><code>    make all</code></pre>
-<h3 id="bugs-and-misfeatures">Bugs and (Mis)features:</h3>
-<p>The current status of this entry is:</p>
-<blockquote>
-<p><strong>STATUS: known bug - please help us fix</strong></p>
-</blockquote>
-<p>For more detailed information see <a href="../../bugs.html#2024_kurdyukov4">2024/kurdyukov4 in bugs.html</a>.</p>
-<p>In fixing this bug you will come to a better appreciation of how the
-code was able to process random data files as large as 64K.</p>
+<p>XXX - It is necessary to avoid collisions with C keywords when generating names for variables, for example: if do asm int for EOF.</p>
 <h2 id="to-use">To use:</h2>
 <pre><code>    ./prog &lt; data &gt; out.c</code></pre>
 <h2 id="try">Try:</h2>
@@ -495,6 +488,45 @@ the resulting program when run:</p>
     ./out &gt; output</code></pre>
 <p>re-assemble the original input <strong>WITHOUT USING ANY LITERALS</strong> in the C code it produced!</p>
 <p>You mind may go into a spiral as you attempt to read and understand how this is done. :-)</p>
+<h3 id="large-input-size-issues">Large input size issues</h3>
+<p>The author, <a href="../../authors.html#Ilya_Kurdyukov">Ilya Kurdyukov</a>, was
+kind enough to provide us with an improvement to his amazing code that
+allows for larger input sizes. To see what was patched run the following
+within the <code>2024/kurdyukov4</code> directory:</p>
+<pre><code>    make make diff_orig_prog</code></pre>
+<p>The above patch extended the original standard input size limit from 128K bytes to 64M bytes.</p>
+<p>While the <a href="https://github.com/ioccc-src/winner/blob/master/2024/kurdyukov4/try.sh">2024/kurdyukov4/try.sh</a> script will attempt
+to run the code in steps starting from 64K of random data up to 64M bytes of random data,
+it is unlikely that you will be able to limitations by the compiler, linker, processor
+architecture, memory, system, other resource limits if not run out of patience.</p>
+<p>On fairly normal systems, we experienced the following while running
+<a href="https://github.com/ioccc-src/winner/blob/master/2024/kurdyukov4/try.sh">2024/kurdyukov4/try.sh</a>:</p>
+<pre><code>    | random |        |    C code |  compile time |   compile time |                            |
+    |  input | try.sh |   size in |  clang 17.0.0 |     gcc 11.5.0 |                            |
+    |  bytes |  stage |     bytes | Apple silicon |         x86 64 | notes                      |
+    |--------|--------|-----------|---------------|----------------|----------------------------|
+    |    64K |  test3 |    515764 |        10 sec |         75 sec | gcc 7.5x slower than clang |
+    |     1M |  test4 |   3939019 |        80 sec |  1 hour 15 min | gcc  56x slower than clang |
+    |     4M |  test5 |  13296449 |  1 min 50 sec | 14 hour  2 min | gcc 460x slower than clang |
+    |    16M |  test6 | 136786072 |  4 min 40 sec |      very long | clang excutable crashes    |
+    |    64M |  test7 | 200412713 | 44 min 40 sec | extremely long | clang excutable crashes    |</code></pre>
+<p>We never had the time nor resources to attempt to compile using <code>gcc(1)</code>, the code needed for
+any random input larger than 4M bytes.</p>
+<p>For 16M bytes and larger on Apple silicon, for random input size of 16M bytes and 64M bytes,
+the <code>clang(1)</code> linker phase issues the following warning:</p>
+<blockquote>
+<p>ld: warning: atom ‘_main’ … is larger than the max code size between branch island clusters,
+this may lead to unreachable branches</p>
+</blockquote>
+<p>If you attempt to run the <code>clang(1)</code> generated executable anyway, is crashes with:</p>
+<blockquote>
+<p>segmentation fault</p>
+</blockquote>
+<p>Compiling <code>gcc(1)</code> with a random input size of 16M bytes and 64M bytes was <strong>never attempted</strong>
+because such a compile attempt would <strong>take too long</strong> and require a <strong>large amount of ram</strong>.</p>
+<p><strong>PLEASE NOTE</strong>: The above problems are <strong>NOT</strong> code bugs. They represent compiler mis-features,
+linker limitations, and/or architecture limitations.</p>
+<p><strong>macOS NOTE</strong>: The macOS <code>/usr/bin/gcc</code> is actually <code>clang(1)</code>, and so using <code>gcc(1)</code> under macOS doesn’t count.</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <h3 id="no-literals-encoder">No Literals Encoder</h3>
 <p>This program creates C code that will output the specified data to stdout. There are no literals used in the generated code.</p>
@@ -607,7 +639,7 @@ Jump to: <a href="#">top</a>
 
     <div id="coda"><h3>Coda</h3>
 	<p>
-	<a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.ioccc.org%2F2024%2Fkurdyukov4%2Findex.html" rel="nofollow">Nu HTML check this web page</a><br>
+	<a href="https://validator.w3.org/nu/?doc=#" rel="nofollow">Nu HTML check this web page</a><br>
 	<a href="#top">Jump to top</a> <a href="#content">Jump to Content</a> <a href="#inventory">Jump to Inventory</a><br>
 	</p>
     </div>

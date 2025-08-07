@@ -203,9 +203,14 @@ clean:
 clobber: clean
 	${RM} -f ${TARGET} ${ALT_TARGET}
 	${RM} -rf *.dSYM
-	${RM} -f random.bin
-	${RM} -f test0 test0.c test1 test1.c test2
-	${RM} -f test2.c test2.out.c test3 test3.c test3.out
+	${RM} -f random.64K.bin random.1M.bin random.4M.bin random.16M.bin random.64M.bin
+	${RM} -f test0 test0.c test1 test1.c
+	${RM} -f test2 test2.c test2.out.c
+	${RM} -f test3 test3.c test3.out.c
+	${RM} -f test4 test4.c test4.out.c
+	${RM} -f test5 test5.c test5.out.c
+	${RM} -f test6 test6.c test6.out.c
+	${RM} -f test7 test7.c test7.out.c
 
 ######################################
 # optional include of 1337 hacker rulz
