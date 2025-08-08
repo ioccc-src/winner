@@ -510,7 +510,7 @@ or <code>crate</code> (see the <a href="extra.html">extra.html</a> that accompan
 The letters will turn yellow, black, black, black, black.
 This assistant prompts “?”, and the input expected is the guessed word
 followed by the first letters of the color revealed for that guess:</p>
-<pre><code>    $ prog dict
+<pre><code>    $ ./prog dict
     ? terns ybbbb
     loath
     ? loath gbbyy
@@ -542,7 +542,7 @@ and one of them is marked black and the other non-black,
 this program MUST have the black letter marked <em>yellow</em>.
 The example session (Wordle 228) below demonstrates this:</p>
 <pre><code>    # do NOT do this
-    $ prog dict
+    $ ./prog dict
     ? terns bbbby
     shoal
     ? shoal gggbb
@@ -551,7 +551,7 @@ The example session (Wordle 228) below demonstrates this:</p>
     xyzzy          &lt;&lt;-- no candidate words match
 
     # do THIS instead
-    $ prog dict
+    $ ./prog dict
     ? terns bbbby
     shoal
     ? shoal gggbb
@@ -560,8 +560,8 @@ The example session (Wordle 228) below demonstrates this:</p>
     shock
     ? shock ggggg
     shock</code></pre>
-<p>In the guess word <code>shook</code>, there are 2 o’s, but only one shown valid in
-the puzzle. If you mark the leftmost o as black (as according to the
+<p>In the guess word <code>shook</code>, there are 2 ‘o’s, but only one shown valid in
+the puzzle. If you mark the leftmost ’o’ as black (as according to the
 Wordle game), this program cannot find the winning word (<code>shock</code>),
 producing the error word <code>xyzzy</code>.</p>
 <p>The included simulator <code>gen</code> produces the required transformation of b -&gt; y.</p>

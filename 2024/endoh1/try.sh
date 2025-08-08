@@ -27,7 +27,7 @@ ${MAKE} -j 2 prog.c >/dev/null 2>&1 < /dev/null
 status="$?"
 if [[ $status -ne 0 ]]; then
     JOBS="1"
-    echo "NOTE: make dues not support -j 2, so make out.ppm will only use a single CPU job." 1>&2
+    echo "NOTE: make does not support -j 2, so make out.ppm will only use a single CPU job." 1>&2
 
 else
     # determine how parallel we want to make
