@@ -64,7 +64,7 @@ This assistant prompts "? ", and the input expected is the guessed word
 followed by the first letters of the color revealed for that guess:
 
 ``` <!---sh-->
-    $ prog dict
+    $ ./prog dict
     ? terns ybbbb
     loath
     ? loath gbbyy
@@ -109,7 +109,7 @@ The example session (Wordle 228) below demonstrates this:
 
 ```
     # do NOT do this
-    $ prog dict
+    $ ./prog dict
     ? terns bbbby
     shoal
     ? shoal gggbb
@@ -118,7 +118,7 @@ The example session (Wordle 228) below demonstrates this:
     xyzzy          <<-- no candidate words match
 
     # do THIS instead
-    $ prog dict
+    $ ./prog dict
     ? terns bbbby
     shoal
     ? shoal gggbb
@@ -129,8 +129,8 @@ The example session (Wordle 228) below demonstrates this:
     shock
 ```
 
-In the guess word `shook`, there are 2 o's, but only one shown valid in
-the puzzle.  If you mark the leftmost o as black (as according to the
+In the guess word `shook`, there are 2 'o's, but only one shown valid in
+the puzzle.  If you mark the leftmost 'o' as black (as according to the
 Wordle game), this program cannot find the winning word (`shock`),
 producing the error word `xyzzy`.
 

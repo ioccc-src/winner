@@ -28,10 +28,10 @@ When you `make all` you see what looks like a C program, `rt.c`.
 However if you try to compile `rt.c`, you will fail: even if you try to
 define the symbols `X`, `Y`, `W`, and `H`.
 
-Well, the propose of the C program, `rt.c` is to generate the red, green, and blue colors of
+Well, the purpose of the C program, `rt.c` is to generate the red, green, and blue colors of
 a single pixel, in the C Preprocessor!!!
 
-For the patient, a image may be rendered a slow pixel at a time.
+For the patient, an image may be rendered a slow pixel at a time.
 Think of this as digital [Pointillism](https://en.wikipedia.org/wiki/Pointillism).  :-)
 
 For the truly impatient who wishes to get right to the point without trying to dot around
@@ -78,7 +78,7 @@ example for `SIZE` values of 8, 32, 128, and then 512.
 
 The optimal `RESERVE` will depend on your hardware, operating system,
 a C compiler.  Making `RESERVE` too small (i.e., too negative) may slow
-down the result.  We recommend that experiment various values pf `RESERVE`
+down the result.  We recommend that experiment various values of `RESERVE`
 with moderate `SIZE` of **32** in order to try to find an optimal `JOBS`
 value before attempting to try a larger size such as **512** and beyond.
 
