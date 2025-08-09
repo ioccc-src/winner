@@ -30,6 +30,8 @@ YouTube show for this entry:
 
 ## Alternate code:
 
+The author provided alternate code which takes the output of `prog` and decodes
+it back to the original input.
 
 ### Alternate build:
 

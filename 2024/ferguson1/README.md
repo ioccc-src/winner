@@ -29,6 +29,9 @@ YouTube show for this entry:
 
 ## Alternate code:
 
+The author provided two alternate versions, one which has more events and far
+fewer `goto`s and the other which maxed out the `goto`s at 149 (up from 134)!
+
 
 ### Alternate build:
 
