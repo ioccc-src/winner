@@ -136,7 +136,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="2.0.2 2025-05-18"
+export VERSION="2.1.0 2025-08-10"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -755,6 +755,17 @@ echo "-s"
 echo "PROG_TEXT=C code"
 echo "-s"
 echo "MAKEFILE_LINK=$REPO_URL/$YYYY_DIR/Makefile"
+echo "-s"
+if [[ -f $YYYY_DIR/$ENTRY_DIR.orig.c ]]; then
+    echo "ORIG_LINK=$REPO_URL/$YYYY_DIR/$ENTRY_DIR.orig.c"
+elif [[ -f $YYYY_DIR/prog.orig.c ]]; then
+    echo "ORIG_LINK=$REPO_URL/$YYYY_DIR/prog.orig.c"
+else
+    echo "$0: ERROR: cannot determine original source code file for: $YYYY_DIR" 1>&2
+    exit 7
+fi
+echo "-s"
+echo "ORIG_TEXT=Original C"
 echo "-s"
 echo "MAKEFILE_TEXT=Makefile"
 echo "-s"
