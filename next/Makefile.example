@@ -18,7 +18,7 @@ SHELL= bash
 #######################
 #
 # XXX - The IOCCC judges will remove this line and uncomment the next line later
-# include ../../var.mk
+# include ../../var.mk var.mk
 
 # XXX - for now, set some common tool locations
 # XXX - once var.mk is in use, the IOCCC judges will remove the section below
