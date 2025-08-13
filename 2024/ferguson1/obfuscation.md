@@ -48,16 +48,17 @@ counter-example for that letter but oh is everyone in for a HUGE SHOCK!
 too many, even in a large program, let alone a small one. Even one `goto` is too
 many. Unless I am very much mistaken, I have broken the record by a huge margin.
 
-Here's the horrifying and hilarious truth: I beat it out by 92 MORE, **BEFORE** the
-cpp at 116 and after the cpp is through I beat it by **110** MORE (!!), **AT
-134!** Yes, you read that right. 134 `goto`s! I even went further in an alt
-version, where before the cpp it was 131 `goto`s and after the cpp 149 (!!)
-`goto`s. I didn't do this in the main entry for practical reasons but I wish I
-had.
+Here's the horrifying and hilarious truth: I beat it out by <del>92</del> 107
+MORE, **BEFORE** the cpp at <del>116</del> 131 and after the cpp is through I
+beat it by **125** MORE (!!), **AT 149!** Yes, you read that right.
+<del>134</del> 149 `goto`s! The originally submitted prog.c, submitted for
+practical reasons only, had it at, as might be guessed, 116/134 before and after
+the cpp.
 
-Even removing what I think are the only dead `goto`s, two of them, including one
-that is in the `w()` macro that would be translated into more, I beat it by 90
-more, at 114 before the cpp, and 99 more after the cpp, at 123!
+Even removing what I think were the only dead `goto`s in the incomplete version,
+two of them, including one that is in the `w()` macro that would be translated
+into more, I beat it by 90 more, at 114 before the cpp, and 99 more after the
+cpp, at 123! But of course it's more now...
 
 Did I forget to mention the original Oregon Trail in **BASIC** from 1978 HAS A
 MEASLY 109? THIS SHOULD NOT HAPPEN. Well it did happen and this HAS to be a
@@ -65,32 +66,34 @@ joke, right? I'm sorry but it is NOT a joke. I am for real. There REALLY are
 that many and that is ridiculous.
 
 Okay so it's a joke in another way but nonetheless YES I **REALLY DID** put in
-116/134 `goto`s, depending on if you pre-process it or not! YES I might be mad.
-YES I think it's HILARIOUS. But if it was not for the IOCCC... Well, as I
-mention in my [remarks above](#devil), EVEN ONE IS TOO MANY
+<del>116/134</del> 131/149 `goto`s, depending on if you pre-process it or not!
+YES I might be mad.  YES I think it's HILARIOUS. But if it was not for the
+IOCCC... Well, as I mention in my [remarks above](#devil), EVEN ONE IS TOO MANY
 in real code.
 
 I dare you to run the program in a debugger from start to finish to see how many
 line jumps there truly are. After I won I did it once: removing the `#include`s,
 blank lines, lines with only variables and lines with just braces (i.e. only
-lines of code) the program has just 59 lines and in a single run there were a
-total of **985** (!) line changes, counting function calls. In `main()` itself
-the line changed a total of **776** (!) times!
+lines of code) the program has just 58 lines and in a single run there were a
+total of **1416** (!) line changes, counting function calls. In `main()` itself
+the line changed a total of **1131** (!) times!
 
 The best (or worst, depending on how you look at it :-) ) part is this works. As
-I note in those concluding remarks, a [famous company](https://www.apple.com)
-actually introduced a security hole from ONE `goto`. Yet I have 116/134 and it
-actually works? That is surely obscene. And beautiful.
+I note in those concluding remarks, a [nameless company](https://www.apple.com)
+actually introduced a security hole from ONE `goto`. Yet I have
+<del>116/134</del> 131/149 and it actually works? That is surely obscene. And
+beautiful. But wrong.
 
-Oh and BTW: it appears that `hines` is a bit confused about my entry,
-though I'm not really sure why. In any case, I not only have dethroned `hines`
-(sorry ...but also not sorry!) but I have, as noted already, beaten the original
-BASIC game by **7** more `goto`s at 116 before the cpp and **25 MORE** after the
-cpp, at 134!
+Oh and BTW: it appears that `hines` is a bit confused about my entry, though I'm
+not really sure why. In any case, I not only have dethroned `hines` (sorry
+...but also not sorry!) but I have, as noted already, beaten the original BASIC
+game by <del>7</del> 22 more `goto`s at <del>116</del> 131 before the cpp
+and <del>**18 MORE**</del> **40 MORE** after the cpp, at 149!
 
-It's almost impossible to add more `goto`s. You'll see why soon. But even if
-that was not the case I wanted room for the other things I did, some of which
-are quite cool and I believe unique as well.
+It's almost impossible to add more `goto`s. With the iocccsize it is impossible,
+if I don't want to sacrifice the rest of the program. You'll see why soon. But
+even if that was not the case I wanted room for the other things I did, some of
+which are quite cool and I believe unique as well.
 
 And yes, I agree: the idea of `goto`s considered harmful considered harmful is
 ludicrous, and as you just found out (probably in horror), I have taken it far
@@ -101,11 +104,12 @@ know about C when it comes to things like: loops, if/else, switch/case, blocks
 in general, where code can be, where labels can be, really everything: the code
 is in all the wrong places.
 
-This is not counting other cool things like a single `char *` holding near
-200 `char *`s. No. I do not mean an array of `char *`s! I mean a single flat
-`char *`! Yet in the code I index it AS IF it's a `char *[]`, just to add to
-the confusion (as if the 134 `goto`s are not bad enough). But it's not a `char
-*[]`. It's a single `char *`, which is the contents of the data file.
+This is not counting other cool things like a single `char *` holding near 200
+`char *`s. No. I do not mean an array of `char *`s! I mean a single flat `char
+*`! Yet in the code I index it AS IF it's a `char *[]`, just to add to the
+confusion (as if the <del>134</del> 149 `goto`s are not bad enough). But it's
+not a `char *[]`. It's a single `char *`, which is the contents of the data
+file.
 
 There are other things I have done, of course.
 
@@ -167,20 +171,21 @@ Hilarious.
 
 Counting whitespace this program is only 4666 bytes according to `wc -c` (macOS
 at the least, maybe others): quite intentionally to be on theme. That's a
-relatively short program to have 116 `goto`s or more when filtered through `cc
--E` (134!), wouldn't you say? If that's NOT too many, then I ask you WHAT IS?
+relatively short program to have <del>116</del> 131 `goto`s or more when
+filtered through `cc -E` (<del>134</del> 149!), wouldn't you say? If that's NOT
+too many, then I ask you WHAT IS?
 
 As said in numerous places, IT IS MUCH SMALLER than the BASIC file I included
 even after stripping it of much of it. My program also has more events. I think
 the BASIC one has 16 not counting the mountains code and mine is 23 not counting
-the mountains code, which obviously I also include.
+the mountains code, which obviously I also include and has more events (if we
+count the doctor visits an event then even more).
 
-I discuss this some in my concluding [remarks above](#devil),
-as well as mentioning that there are other events
-besides those 23. I certainly will not reveal all though. The humour and jokes
-sections of that file says more but the concluding remarks are for a summary and
-why I think that this code is worthy of the contest AND also pointing out the
-folly of `goto`.
+I discuss this some in my concluding [remarks above](#devil), as well as
+mentioning that there are other events besides those 23. I certainly will not
+reveal all though. The humour and jokes sections of that file says more but the
+concluding remarks are for a summary and why I think that this code is worthy of
+the contest AND also pointing out the folly of `goto`.
 
 In this file I will discuss how some events actually are polymorphic, in a
 sense, having at least two different events.
@@ -224,7 +229,67 @@ prog.c and after filtered through `cc -E`. First prog.c. Prepare to be
 horrified, if you're not already:
 
 ```
+    131  goto
+    301  semicolon
+    143  colons
+    51   if
+    11   else
+    3    while
+    4    for
+    0    do
+    6    switch
+    32   case
+    2    sizeof
+    0    break
+    0    continue
+    2    default
+    8    long
+    3    unsigned
+    4    return
+    1    void
+    1    int
+    1    char
+    1    size_t
+
+    Ratio: 1.01 gotos per keyword
+```
+
+1.01 goto per keyword? But then there's the cpp filtered code...
+
+```
+    149  goto
+    339  semicolon
+    143  colons
+    51   if
+    11   else
+    7    while
+    4    for
+    0    do
+    6    switch
+    32   case
+    2    sizeof
+    0    break
+    0    continue
+    2    default
+    8    long
+    3    unsigned
+    4    return
+    1    void
+    1    int
+    1    char
+    1    size_t
+
+    Ratio: 1.11 gotos per keyword
+```
+
+1.11!
+
+For comparison, here is the original version:
+
+```
     116  goto
+    294  semicolon
+    138  colons
     50   if
     11   else
     4    while
@@ -243,7 +308,6 @@ horrified, if you're not already:
     1    int
     1    char
     1    size_t
-    1    FILE
 
     Ratio: 0.83 gotos per keyword
 ```
@@ -252,6 +316,8 @@ And the pre-processed one:
 
 ```
     134  goto
+    332  semicolon
+    138  colons
     50   if
     11   else
     8    while
@@ -270,16 +336,11 @@ And the pre-processed one:
     1    int
     1    char
     1    size_t
-    1    FILE
 
-    Ratio: 0.93 gotos per keyword
+    Ratio: 0.94 gotos per keyword
 ```
 
-LOOK AT THAT RATIO! And we could even suggest that `FILE` might not be a
-keyword, but rather a struct.
-
-Whether data types are keywords for this is also something to consider but we'll
-include them as keywords anyway. I don't believe I use any others in any case.
+Look at those ratios. This is not right.
 
 This program is as cursed as the PC (player character) if not much more cursed.
 It is totally bonkers and it was really hard to find places for labels even
@@ -414,7 +475,8 @@ it.
 There are a lot of ways to obscure code and I don't believe anyone has taken
 `goto` to this obscenity in C. I believe the one with the most `goto`s is
 1987/hines and, as noted earlier, it reports on itself as having only 24
-`goto`s. Yet I have 116 before the cpp and 134 (!!) after the cpp.
+`goto`s. Yet I have <del>116</del> 131 before the cpp and <del>134</del> 149
+(!!) after the cpp.
 
 And unfortunately for you dear reader I have done other things that also are
 quite different and totally unrelated to `goto`s. Even so the `goto` madness by
@@ -599,6 +661,9 @@ As I commented in the commented.c:
     * filtered through the cpp and 134 after the cpp and I didn't wish to
     * repeatedly revisit this file trying to explain everything.
 ```
+
+...and of course now the count, prog.c being the full version and prog.alt2.c
+being the practical version, have the count at 131/149.
 
 I hope you understand but I do believe it's a gain not a loss. It is good enough
 especially as it's only for educational value - or to examine my head (though
@@ -1620,32 +1685,35 @@ padding?
 A question: is this well-rounded in obfuscation as the judges like? Definitely.
 
 The fact that close to 200 NUL terminated strings are in a single `char *` (!!),
-the odd looking compound literal, the maze of `goto`s (116 or 1134 depending on
-if you pre-process the code), the bastardised Duff's device, the strange labels
-inside `switch()`s, the jumping into and out of `switch()`s only to jump back in
-(or out), the for loops split across several parts of the code (one making it
-look like variables are uninitialised), if/else code being swapped in location
-(or moved to other parts of the code, even in what would otherwise be dead code,
-including possibly this for for loops), the fall through of a label to a goto
-that jumps back to right before that fall through just to exit the game (isn't
-that so cute?), the fact I had to write all those tools to verify things are
-okay (showing how messed up it is), different blocks that have code that simply
-should not be there, the nested ternary operators...
+the odd looking compound literal, the maze of `goto`s (<del>116</del> 131 or
+<del>134</del> 149 depending on if you pre-process the code), the bastardised
+Duff's device, the strange labels inside `switch()`s, the jumping into and out
+of `switch()`s only to jump back in (or out), the for loops split across several
+parts of the code (one making it look like variables are uninitialised), if/else
+code being swapped in location (or moved to other parts of the code, even in
+what would otherwise be dead code, including possibly this for for loops), the
+fall through of a label to a goto that jumps back to right before that fall
+through just to exit the game (isn't that so cute?), the fact I had to write all
+those tools to verify things are okay (showing how messed up it is), different
+blocks that have code that simply should not be there, the nested ternary
+operators...
 
-As for the `goto`s: yes I technically have more space. But it became almost
-impossible to add more spaghetti to the pot without it overflowing, and I do not
+As for the `goto`s: yes I technically had more space. But it became almost
+impossible to add more spaghetti to the pot without it overflowing, and I didn't
 want to waste perfectly good spaghetti. There comes a point when there's just so
-much spaghetti that it's wasted, if it can even be cooked. I believe I have
-reached the latter.
+much spaghetti that it's wasted, if it can even be cooked. I believed I reached
+the latter. But of course that was a practical choice - and not my complete
+version. It was just easier to test as I had another version to contend to.
 
-Do you REALLY expect me to add more spaghetti? There isn't anything that could
-be done, even if it was possible to maintain this huge platter of delicious
-spaghetti without gaining fifty kilograms. Besides, I don't want to see
-spaghetti EVER AGAIN!! I've had enough of it for a lifetime! Okay, that's not
-really true...it DOES sound good but I won't likely be having it for a while.
-Can you actually blame me though? This spaghetti almost strangled me to death,
-like it did the Devil (I provided photographic proof of this earlier if you
-missed that).
+But let's say I had more space with iocccsize: do you REALLY expect me to add
+more spaghetti? There isn't anything that could be done, even if it was possible
+to maintain this huge platter of delicious spaghetti without gaining fifty
+kilograms. Besides, I don't want to see spaghetti EVER AGAIN!! I've had enough
+of it for a lifetime! Okay, that's not really true...it DOES sound good but I
+won't likely be having it for a while. Can you actually blame me though? This
+spaghetti almost strangled me to death, like it did the Devil (I provided
+photographic proof of this earlier if you missed that). Still...now that things
+have settled a bit, I rather desire very much a platter of spaghetti.
 
 I have already demonstrated several other subtle and unique things but the
 `goto`s are what really makes it hard to parse; the other things are REALLY cool

@@ -486,31 +486,38 @@ YouTube show for this entry:</p>
 <h2 id="try">Try:</h2>
 <pre><code>    ./try.sh</code></pre>
 <h2 id="alternate-code">Alternate code:</h2>
-<p>The author provided two alternate versions, one which has more events and far
-fewer <code>goto</code>s and the other which maxed out the <code>goto</code>s at 149 (up from 134)!</p>
+<p>The author provided two alt versions: one submitted with more events, though not
+many more, along with a few other functional differences, and after winning, the
+prog.c was made the prog.alt2.c code and the prog.c was made the complete
+version (149 <code>goto</code>s up from 134) that was not made prog.c during submission for
+practical reasons.</p>
 <h3 id="alternate-build">Alternate build:</h3>
 <pre><code>    make alt</code></pre>
 <h3 id="alternate-use">Alternate use:</h3>
-<pre><code>    ./prog.alt</code></pre>
+<pre><code>    ./prog.alt
+
+    ./prog.alt2</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
-<p>You will have to go to “Fun-Damentals” to understand the logic flow of
-this game. While you jump as many as 134 times to travel from <code>main()</code>
-to a successful <code>exit(666)</code> you may have a devil of a time trying to
-figure out how this program actually does what it does.</p>
+<p>You will have to go to “Fun-Damentals” to understand the logic flow of this
+game. While you goto as many as 149 times and jump hundreds or even over a
+thousand times to travel from <code>main()</code> to a successful <code>exit(666)</code> you may have
+a devil of a time trying to figure out how this program actually does what it
+does.</p>
 <p>Before you set off on your adventure to decode this program’s logic, make
 sure you have enough food, ammo, clothes, oxen, and programming supplies.
 You’ll be driving for 2170 miles through a wild wilderness inspired
-by <a href="https://en.wikipedia.org/wiki/The_Oregon_Trail_(series)">Oregon Trail</a>, so you’ll need to be prepared for anything! Regardless of
-how well prepared you are, you will have a devil of a time jumping around
-inside this C code. :-)</p>
+by <a href="https://en.wikipedia.org/wiki/The_Oregon_Trail_(series)">Oregon
+Trail</a>, so
+you’ll need to be prepared for anything! Regardless of how well prepared you
+are, you will have a devil of a time jumping around inside this C code. :-)</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <blockquote>
 <p>Fun fact: after winning this, the author played the game in gdb from start to
 finish and not counting macros but counting all function calls (not libc
-functions just the few functions in prog.c), there were a total of <strong>985</strong> (!)
-line jumps. Skipping prog.c function calls and it was still <strong>776</strong> jumps! The
+functions just the few functions in prog.c), there were a total of <strong>1416</strong> (!)
+line jumps. Skipping prog.c function calls and it was still <strong>1131</strong> jumps! The
 prog.c, if you remove <code>#include</code>s, blank lines, lines with just a brace and
-lines that have only variables, <strong>has just 59 (!) lines of code</strong>. A very tiny
+lines that have only variables, <strong>has just 58 (!) lines of code</strong>. A very tiny
 fraction of the time a line might be repeated in a row ONCE but that does not
 really matter. The <a href="https://github.com/ioccc-src/winner/blob/master/2024/ferguson1/prog.goto.max.c">maxed out goto
 version</a> is far worse.</p>
@@ -520,7 +527,7 @@ encrypted one even encrypted emojis without having to decrypt them in order to
 print them (and everything else). I have kept references to encryption in this
 file even after publication. I do have a copy of it if anyone is interested.</p>
 <div id="devil">
-<h3 id="a-pact-with-the-devil-on-the-oregon-trail-and-his-134-regrets-of-goto">A Pact With the Devil On the Oregon Trail (…and his 134 regrets of goto)</h3>
+<h3 id="a-pact-with-the-devil-on-the-oregon-trail-and-his-149-regrets-of-goto">A Pact With the Devil On the Oregon Trail (…and his 149 regrets of goto)</h3>
 </div>
 <p>The <em>Go To Hell In A Handcart Travel Company</em> <strong>PROUDLY</strong> welcomes all sinners to
 our <strong>GREATEST</strong> destination yet, with:</p>
@@ -2201,8 +2208,9 @@ features versus problems, though possibly more exist.</p>
 </div>
 <p>Obviously since you can buy oxen at the forts (something not possible in the
 original game for some reason) then even if you ran out (and perhaps you ate
-one) it could happen again. Remember you might end up eating an ox just because
-he looks at you funny, not just because you are out of food.</p>
+one, which of course is not in the original either) it could happen again.
+Remember you might end up eating an ox just because he looks at you funny, not
+just because you are out of food!</p>
 <p>If you don’t have an ox and you are out of food you die from starvation. But
 what happens when you die of starvation? Well it says:</p>
 <pre><code>    🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦🪦
@@ -2227,27 +2235,28 @@ trail) almost certainly eat it first; and not only that but bread is not going
 to do much at all unless you had a great amount of it; which of course the
 player character (PC) does not.</p>
 <p>Actually the only reason: for the amusing rhyme that fits with the jokes,
-nothing else (it makes it more interesting and amusing than ‘You ran out of food
-and starved to death’, doesn’t it?).</p>
+nothing else (but it <em>does</em> make it more interesting and amusing than ‘You ran
+out of food and starved to death’, doesn’t it?).</p>
 <p>The fact the original game does not have you decide on drinking water (and see
 section on other differences for the subject of decision making) means I could
 take some liberty with it. Besides, didn’t I say you would learn by what did not
 happen? They certainly did drink water and unsafe water (I’m sure) too, so my
 joke is all the more appropriate (even if it’s inappropriate in some company
-:-), perhaps your grandparents - although depending on your age now maybe not).</p>
+:-), perhaps your grandparents - although depending on your age now maybe not.
+May my grandparents rest in peace, hopefully not with the devil).</p>
 <p>Sometimes it is suggested an ox is lost/whatever (not lost as in it wanders off
-but rather in the sense that you have fewer oxen) even if you don’t have one. It
-does this in a number of ways like referring to the famous ‘spared no expense’
-from Jurassic Park. It also is a nod the IOCCC guidelines that talk about a fish
-Eric that might or might not exist.</p>
+but rather in the sense that you have fewer oxen, for instance getting stuck in
+a river) even if you don’t have one. It does this in a number of ways like
+referring to the famous ‘spared no expense’ from Jurassic Park. It also is a nod
+the IOCCC guidelines that talk about a fish Eric that might or might not exist.</p>
 <p>I decided to not call him Eric because there is potential for more than one ox
 (you’ll note in other messages I got past this issue by making it like in real
-life - wagon trains and large groups - though again some times wagon for the
+life - wagon trains and large groups - though again sometimes wagon for the
 joke - plus being ambiguous). Of course the narrator as the Devil is telling all
 sorts of lies too so that hardly matters.</p>
 <p>As for whether this could happen: in theory it could but if you run out of oxen
-you’re not going to get very far anyway. In other cases, like eating an oxen,
-the check is in place, although in retrospect it would be very amusing if it did
+you’re not going to get very far anyway. In other cases, like eating an ox, the
+check is in place, although in retrospect it would be very amusing if it did
 not. But that would still not be realistic and some of this has to be at least
 somewhat realistic.</p>
 <p>Of course even if one runs out of oxen that would not mean they couldn’t make it
@@ -2460,10 +2469,12 @@ might be one that the compiler does not trigger a dead code warning on. It
 really does not seem to be dead (it’s quite sneaky).</p>
 <p>I could be wrong on whether this is one the compiler missed though: it’s hard to
 follow all the <code>goto</code>s. As you find out in <a href="obfuscation.html">obfuscation.html</a> it’s
-134 after pre-processing! One of the alt versions I supplied is 131 before the
-cpp and 149 after. I did not submit that for practical reasons but I kind of
-wish I had, now that it won. Nonetheless 134 is already way too many. 149 is
-much worse.</p>
+149 after pre-processing! The second alt code is what I originally submitted as
+prog.c but after winning I made the more complete (149 gotos post cpp, 131 prior
+to cpp) version (that was not submitted for practical reasons) the prog.c.
+Nonetheless 134 is already way too many. 149 is much worse. Even 116 which was
+the original prog.c before cpp is too many; that’s 7 more than the 1978 BASIC
+game (!). But it’s actually 131 which is 22 more.</p>
 <p>Yes I might be mad. But then again I might just be the Devil. Who knows? What I
 do know is code that is meant to be reached is reached! Yes I’ve played it many
 times. Some code I made dead seemed totally useless but why not add to
@@ -2570,8 +2581,8 @@ that much in one turn I think.</p>
 as it’s a joke and merely a possible foreshadowing of what is to come. The
 message that they shouldn’t try telling the narrator they don’t have one (if
 they can even count) because it just kicked the bucket cleverly sidesteps (or
-does it sidekick?) that issue - it’s not even meant to eliminate one as it was
-kicking a bucket physically, not kicking the bucket figuratively (or in this
+does it sidekick?) that issue - it’s not even meant to eliminate one as if it
+was kicking a bucket physically, not kicking the bucket figuratively (or in this
 case it might also be literally - although paradoxically also not).</p>
 <p>It is <strong>NOT</strong> a bug that when you get dysentery you jump past the mountains
 event and go straight to the doctor. This not only plays in the theme (wait and
@@ -2581,7 +2592,12 @@ turn. Also this does mean that they ‘lose a turn’ which seems plausible. Loo
 it this way: those other events could also happen in the mountains, so it’s not
 really an illogical choice anyway; the separation is there because they were not
 at the mountains immediately (obviously). I believe (not sure but I think) you
-can survive with dysentery if you have enough hp.</p>
+can survive with dysentery if you have enough hp and turns. Now one might say
+that not going straight to the doctor might make more sense or rather one should
+go to the doctor (at the mountains, if they were there), and then back to the
+mountains. But this would cause other problems: for instance if one does not
+have enough money to pay for the doctor: say for instance seeing the message
+twice and also losing even more hp/mileage. That would be a broken design.</p>
 <p>On occasion an event might not fire (or rather it fires but nothing seems to
 happen). This is <strong>NOT</strong> a bug when it does. In fact it can be a lifesaver due
 to all the hazards and especially as this has primarily to do with case 11 which
@@ -2594,7 +2610,7 @@ what I mean you can change the code:</p>
 - it appears so). There are other ways to trigger this though, if you were to
 modify the code. Note that this does <strong>NOT</strong> mean that no events would fire. It
 just means you’ll see what I mean more easily. Some events are triggered
-indirectly and others happen once you reach the mountains, for example.</p>
+indirectly and others happen once you reach the mountains, for examples.</p>
 <p>Another one. In case you noticed the code:</p>
 <pre><code>    case 4:i=17; } } case 2: V(5); } goto k;</code></pre>
 <p>You might think this is a bug but this is actually hilarious. Here is what will
@@ -2643,10 +2659,11 @@ is ENTIRELY unclear how the author is not confused. All I know is
 wanted so THERE SIMPLY IS NO FLOW CONTROL ERROR.</p>
 <p>Of course not all the jokes are equal although they’re almost all absurd in some
 way or another. Sometimes I manipulated the joke to fit into the code itself and
-vice versa. This was done numerous times in fact. The fact though that the
-narrator is the devil means that some of that was not even necessary, given that
-he (as I have shown in this file) cannot be trusted and says things that are
-totally bogus and many that make absolutely no sense.</p>
+vice versa. This was done numerous times in fact. The fact that the narrator is
+the devil means that some of that was not even necessary, given that he (as I
+have shown in this file) cannot be trusted and says things that are totally
+bogus and many that make absolutely no sense…kind of like the entire theme of
+the game, but that only makes it more fun.</p>
 <p>The fact he refers to himself as if he’s someone else is ludicrous on its own
 but there are so many other things. Those things I changed were good to change
 but the others did not have to change. Some did change anyway but some did not,
@@ -2907,16 +2924,19 @@ reading the strings/data files they would have to run the program to confirm
 what this is. And even then it shouldn’t be easy to follow the code, for reasons
 I mentioned in <a href="obfuscation.html">obfuscation.html</a> (and some briefly below).</p>
 <p>In general I think it’s extremely hard to follow the flow of this program due to
-the abuse of 116 <code>goto</code>s, more than the BASIC game. 134 when pre-processed. But
-let’s be honest, or 134 for a small C program is too many but to be only six
-fewer than a larger BASIC program? That is hard to fathom. Not that 116 is not
-too many for larger programs…or one goto, for that matter. As noted elsewhere,
-an alt version has 131/149 gotos, before/after the cpp. I did not make it the
-main version when submitting because I did not want to make the judges weep and
-curse any more than they already had to (besides, it can’t be 4666 bytes with
-the extra <code>goto</code>s) but now that it’s in I have no qualms about providing it as
-alt code: if I am going to ruin <code>goto</code>s I might as well do it properly.</p>
-<p>Some things are clear about the program from visual inspection:</p>
+the abuse of <del>116</del> 131 <code>goto</code>s, more than the BASIC game.
+<del>134</del> 149 when pre-processed. But
+let’s be honest, or 131 for a small C program is too many but to be seven more
+than the larger BASIC program? That is hard to fathom. Not that <del>116</del>
+131/149 is not too many for larger programs…or one goto, for that matter.</p>
+<p>As noted elsewhere, I originally submitted a slightly less goto complete
+version, with 116/134 gotos, before/after the cpp, which was due to practical
+reasons, and to make the judges weep (and probably curse the Devil - and author,
+who might easily be mistaken for the Devil) a little bit less. But really, if I
+am going to ruin <code>goto</code>s like I did: why should I not do it properly? So it’s
+now maxed out with all the other <a href="obfuscation.html">obfuscation</a> and the many
+events and fun gameplay.</p>
+<p>Anyway, some things are clear about the program from visual inspection:</p>
 <ul>
 <li>it is clear the program does print SOME THINGS (but it is <strong>NOT clear WHAT</strong>
 is printed).</li>
@@ -3013,20 +3033,21 @@ a single flat <code>char *</code>, although I do think that’s pretty cool and 
 <code>+--</code> I talked about in <a href="obfuscation.html">obfuscation.html</a> (in fact in some
 if not most contexts it IS illegal). The bastardised Duff’s device I would not
 do. I would not put the entire function in a switch.</p>
-<p>But above all I would not have used 116 (or 134) <code>goto</code>s. Or ten. Or five. Or
-even one. Better to let code generators like flex/bison take the crown. I have
-dethroned them though (at least from what I have seen before) - by a huge
-amount. But perhaps <a href="https://www.ioccc.org/1987/hines/index.html">1987/hines</a>
-had the crown. It no longer does. I should be ashamed. I’m not.</p>
+<p>But above all I would not have used <del>116</del> 131 (or <del>134</del> 149)
+<code>goto</code>s. Or ten. Or five. Or even one. Better to let code generators like
+flex/bison take the crown. I have dethroned them though (at least from what I
+have seen before) - by a huge amount. But perhaps
+<a href="https://www.ioccc.org/1987/hines/index.html">1987/hines</a> had the crown. It no
+longer does. I should be ashamed. I’m not. Devils feel no shame.</p>
 <p>But even if I were to abuse <code>goto</code> I would not normally use it in the ways I did, as
 noted earlier and in <a href="obfuscation.html">obfuscation.html</a>!</p>
 <p>If I am ever dethroned, assuming I now have the crown as I think I do (and I
-hope I do because if I do not there is something very wrong), I will be
-absolutely horrified.</p>
+hope and guess I do, even outside the IOCCC, because if I do not there is
+something very wrong), I will be absolutely horrified.</p>
 <p>Okay I’ll be kind of amused too but I would be horrified. Still I guess in the
 context of the IOCCC I really have reached the logical conclusion of <code>goto</code>s
 (which, as you’ll see, the 1987/hines one, was thought to be by the judges the
-logical conclusion - see below for more information on THAT and an exercise in
+‘logical conclusion’ - see below for more information on THAT and an exercise in
 absurdity), or at least I hope so.</p>
 <p>It’s about time either way. Hopefully the judges will take <code>goto</code> and throw it
 into the deepest bowels of the Earth.</p>
@@ -3074,10 +3095,12 @@ mean many <code>goto</code>s.</p>
 <p>There are so many <code>goto</code>s that to try and move code to add more <code>goto</code>s is
 basically pointless, unless as a joke. In this program it would really not do
 anything. I essentially ran out of code to move. Even if I had more though,
-isn’t 134 enough, especially in a program that, counting spaces, including
-unnecessary spaces to add to the size, is only 4666 bytes? It would be smaller
-except to stay on theme. Doing more would no longer be funny. Enough is enough.
-Or at least I hope.</p>
+isn’t <del>134</del> 149 enough, especially in a program that, counting spaces,
+including unnecessary spaces to add to the size, is only 4666 bytes? It would be
+smaller except to stay on theme. Doing more would no longer be funny. Enough is
+enough. Or at least I hope. Okay…actually I take that back. More would be
+funnier. But it would have sacrificed the rest of the game and that would be a
+tragedy.</p>
 <p>But it really is that extreme.</p>
 <p>Here are some things Frank wrote:</p>
 <blockquote>
@@ -3099,7 +3122,9 @@ traits I do not even know how to describe. Perhaps they would be utterly
 ineffable.</p>
 <p>Actually I wanted to see what it was like. It was VERY amusing - but only
 because I did not have to debug it. For the submission I included line changes
-for JUST the third prompt. Yes, what would only take a few seconds of play. It
+for JUST the third prompt (this means the prog.orig.c file: as noted I made the
+prog.c the complete version instead, and made prog.c as submitted the
+prog.alt2.c, after the win). Yes, what would only take a few seconds of play. It
 looked like this (I only did the third prompt as I had mere hours left to
 finish):</p>
 <pre><code>    19 20 21 32 69 82 34 33 34 47 45 47 50 83 34 33 34 47 45 47 50 83 34 33 34</code></pre>
@@ -3112,12 +3137,12 @@ full sequence. This is from start to finish and I include it for your amusement
 (see <a href="jumps.txt">jumps.txt</a> for the line changes including calls to prog.c
 functions). Or horror. There are a few times where the line
 is the same but that only shows how very often the line changes. It is a total
-of <strong>985</strong> (!) changes, counting function calls, and <strong>776</strong> (!) excluding
+of <strong>1416</strong> (!) changes, counting function calls, and <strong>1131</strong> (!) excluding
 function calls. Macros are not counted of course.</p>
 <p>This program, if you remove blank lines and lines with just a brace,
-<code>#include</code>s and only variables, has a mere 59 (!) lines.</p>
-<p>A program that has only 59 lines of code that jumps 985 (counting functions) or
-776 (just in main()) times is astonishing. Of course that’s not the
+<code>#include</code>s and only variables, has a mere 58 (!) lines.</p>
+<p>A program that has only 58 lines of code that jumps 1416 (counting functions) or
+1131 (just in main()) times is astonishing. Of course that’s not the
 only technique but the title of the award and the judges’ remarks are rather
 fitting as it is diabolical to follow this code (and the theme of the game fits
 as well); the <a href="obfuscation.html">obfuscation.html</a> shows even more on this - and
@@ -3135,14 +3160,14 @@ he was wrong.</p>
 <p>It is not about not trying. But even IF he WAS right, he
 sure as hell is wrong NOW. Anyone who thinks otherwise needs to try and debug
 my program - or maintain it. Or write it.</p>
-<p>It would have been SO MUCH EASIER if I did not use 134 <code>goto</code>s (and I could have
-fit more in). Actually, even a
-tiny portion of that would make it harder. Nobody, whether they’re in their
-right mind or not, would WANT to maintain this, or something even close to it.
-Feel free to pass on judgement to me. I welcome it! You have to be mad and
-embrace it to do this. I went full out and I could have fit more <code>goto</code>s in: not
-only is the iocccsize not 2503 but I could have removed some events if I really
-wanted more <code>goto</code>s.</p>
+<p>It would have been SO MUCH EASIER if I did not use <del>134</del> 149 <code>goto</code>s.
+Actually, even a tiny portion of that would make it harder. Nobody, whether
+they’re in their right mind or not, would WANT to MAINTAIN this, or something
+even close to it. Feel free to pass on judgement to me. I welcome it! You have
+to be mad and embrace it to do this. I went full out and I could have fit more
+<code>goto</code>s in: not only is the iocccsize not 2503 (although it’s close now) but I
+could have removed some events if I really wanted more <code>goto</code>s. That would be
+less fun.</p>
 <p>Even flex/bison code, which as far as I am aware uses FAR fewer <code>goto</code>s, is
 notorious for <code>goto</code>s and is quite hard to follow. It would be a nightmare to
 try and maintain without the .l/.y source files.</p>
@@ -3172,27 +3197,21 @@ made even a few more commits. As it is it took a full two months and I BARELY
 finished this. In fact I finished it within hours of the contest closing! It was
 not even 12 hours before closing time. I barely made it. Part of that is I added
 even more <code>goto</code>s, despite the fact I had reached 2503 in size, with careful
-size optimisation.</p>
+size optimisation, though it got below that.</p>
 <p>Countless times I came up with ways to do more, at least where it was possible,
 such as freeing space so I could change some <code>break;</code>s to a <code>goto Z;</code> as <code>Z:</code>
 was already there. The only other times this happened is before I had changed
 the code so much that you can no longer trust what a block of code is. Like I
 said, I could not really move any more code if I wanted to, even if I had more
 space free. Those very few places where the code could in theory be moved are
-already controlled by goto.</p>
-<p>In fact I could have done more <code>goto</code>s in this version but I wanted to help the
-judges out in judging - that and it was easier to verify things are correct.
-<code>iocccsize</code> reports on prog.c 2457 and after I won this I kind of wish I did
-take it even further just to mess with everyone even more.</p>
+already controlled by goto. The current <code>prog.c</code> has even more of this as it’s
+the goto complete version.</p>
 <p>But as I said elsewhere basically everything is in the wrong place so what even
-would be the point in doing that? It would probably not make it harder to follow
+would be the point if I had more space? It would probably not make it harder to follow
 (well it would but still would there be a point in it?); it would just make it
 even more absurd: the amount of spaghetti code makes it nigh impossible to
-follow and I’m happy to have smashed the record of 24 by 110 <code>goto</code>s, even if I
-now wish I had gone even further.</p>
-<p>Nonetheless the 134 is what won so that’s what I’ll live by (and I doubt it’ll
-be broken as this kind of trick will, as the general remarks about the entries
-note, not be as worthy, even if <code>goto</code>s are alas, not banned outright).</p>
+follow and I’m happy to have smashed the record of 24 by <del>110</del> 125
+<code>goto</code>s.</p>
 <p>Anyway, as I noted in <a href="obfuscation.html">obfuscation.html</a>, no initialisation is
 skipped in my jumps and that is what causes <code>goto</code> to invoke UB.</p>
 <p>Everything is file scope. And in any case, when I do jump to a place, everything
@@ -3257,8 +3276,8 @@ that they aren’t harmful, mostly to show just how extreme this program went.</
 <a href="https://www.blackduck.com/blog/understanding-apple-goto-fail-vulnerability-2.html" class="uri">https://www.blackduck.com/blog/understanding-apple-goto-fail-vulnerability-2.html</a>.
 That’s all it takes: <strong>JUST ONE <code>goto</code> led to a CVE</strong>!</p>
 <p>It is ironic, perfect and hilarious that it was <code>goto fail;</code> as it was actually
-a failure in using <code>goto</code>! My code has 134 (with the cpp, 116 without). That is
-obscene. I did not fail. At all.</p>
+a failure in using <code>goto</code>! My code has <del>134</del> 149 (with the cpp,
+<del>116</del> 131 without). That is obscene. I did not fail. At all.</p>
 <p>On the contrary I have made a point. Okay, that is not the only reason I did it
 but when I got started I couldn’t help it…I thought it was (and still do think
 it is) hilarious. But only for satirical programming like the contest. I would
@@ -3294,12 +3313,12 @@ Yes, in the IOCCC, but outside that?</p>
 <p>In BASIC and asm and some other languages jumps are a core part of the language.
 And those languages can be harder to maintain partly because of jumps. C is not
 one of those languages. Or it wasn’t until now.</p>
-<p>Yes, yes…I know, I <strong>KNOW</strong> I put in 116 <code>goto</code>s with 134 when pre-processed
-and that is probably more extreme than any other C program, especially in such a
-small program (and I REALLY hope I’m right there!). But <strong>this does NOT matter</strong>!
-Even if one or two were not harmful (but they are) it’s jumping down a rabbit
-hole that can very easily get deeper and deeper just like Alice found. When
-there’s no <strong>NEED</strong> for it it’s much worse.</p>
+<p>Yes, yes…I know, I <strong>KNOW</strong> I put in <del>116</del> 131 <code>goto</code>s with
+<del>134</del> 149 when pre-processed and that is probably more extreme than any
+other C program, especially in such a small program (and I REALLY hope I’m right
+there!). But <strong>this does NOT matter</strong>! Even if one or two were not harmful (but
+they are) it’s jumping down a rabbit hole that can very easily get deeper and
+deeper just like Alice found. When there’s no <strong>NEED</strong> for it it’s much worse.</p>
 <p><code>goto</code>s are harmful and destroy flow control. I have shown a fair few obscure
 things about C, some which SEEM ILLEGAL but are not, but above all I have shown
 how much is lost with <code>goto</code>s (okay, I have shown this with other things too).
@@ -3342,24 +3361,26 @@ recognise what I mean - and yes it’s in the game).</p>
 <p>On a lighter note (or maybe this is darker?): did you know that every time a
 <code>goto</code> is used an angel (whatever you consider an angel) <strong>DIES</strong> and goes
 straight to HELL? You don’t really want that do you? I didn’t think so. Yes I
-killed 134 angels. YES I condemned 134 angels to eternal torment. I <strong>HAD</strong> to.
-I don’t regret it - but you should, if you <strong>ever</strong> write something like this
-outside the IOCCC. In fact you should regret a single <del>goto</del> angel
-dying. Even if they did not go straight to hell in a handcart, you should still
-regret it. But they do. Okay so I don’t really believe that but there is no
-denying there is goto hell here.</p>
-<p>I found my abuse of <code>goto</code> hilarious. It was good intentions - the contest. But
-sadly sometimes the worst things that happen start with good intentions; and
-some of the best things strangely start with horrible intentions. It might be
-that I did this with good intentions for the contest but it would not be good
-anywhere else. I would be beyond angry if I had to maintain this code. I would
-not blame anyone if they cursed me. I probably would be too. Not cursing you. I
-mean cursing me.</p>
+killed <del>134</del> 149 angels. YES I condemned <del>134</del> 149 angels to
+eternal torment. I <strong>HAD</strong> to. I don’t regret it - but you should, if you
+<strong>ever</strong> write something like this outside the IOCCC. In fact you should regret
+a single <del>goto</del> angel dying. Even if they did not go straight to hell
+in a handcart, you should still regret it. But they do. Okay so I don’t really
+believe that but there is no denying there is goto hell here.</p>
+<p>I <del>found</del> find my abuse of <code>goto</code> hilarious. It was good intentions -
+the contest. But sadly sometimes the worst things that happen start with good
+intentions; and some of the best things strangely start with horrible
+intentions. It might be that I did this with good intentions for the contest but
+it would not be good anywhere else. I would be beyond angry if I had to maintain
+this code. I would not blame anyone if they cursed me. I probably would be too.
+Not cursing you. I mean cursing me.</p>
 <p>Don’t write code like this. Except for the IOCCC. Unless of course the judges
 decide they want no more <code>goto</code>s. I would not put that past them after what I
 have done. I can imagine them screaming and crying. Hopefully they’re laughing
 at more than the jokes but I hope they laugh at this too. Well we’ll see I
-guess…</p>
+guess… (it appears that, based on the general remarks by the judges, of the
+winning entries, that <code>goto</code> will no longer hold nearly as much water, and that
+makes me happy).</p>
 <p>Frankly THIS PROGRAM SHOULD NOT WORK! But it does and it works well even if the
 flow-control is a horrible nightmare from hell. Perhaps the Devil truly has
 possessed it. Hell, he might have possessed me. Why else would I send C straight
@@ -3725,8 +3746,8 @@ helps you appreciate the careful design even more.<a href="#fnref2" class="footn
 <ul>
 <li><a href="https://github.com/ioccc-src/winner/blob/master/2024/ferguson1/prog.c">prog.c</a> - entry source code</li>
 <li><a href="https://github.com/ioccc-src/winner/blob/master/2024/ferguson1/Makefile">Makefile</a> - entry Makefile</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2024/ferguson1/prog.alt2.c">prog.alt2.c</a> - original source code with minor bug fix</li>
 <li><a href="https://github.com/ioccc-src/winner/blob/master/2024/ferguson1/prog.alt.c">prog.alt.c</a> - alternate source code</li>
-<li><a href="https://github.com/ioccc-src/winner/blob/master/2024/ferguson1/prog.goto.max.c">prog.goto.max.c</a> - entry source code with maxed out gotos</li>
 <li><a href="https://github.com/ioccc-src/winner/blob/master/2024/ferguson1/prog.orig.c">prog.orig.c</a> - original source code</li>
 <li><a href="https://github.com/ioccc-src/winner/blob/master/2024/ferguson1/commented.c">commented.c</a> - commented version of the game</li>
 <li><a href="https://github.com/ioccc-src/winner/blob/master/2024/ferguson1/addpadding.c">addpadding.c</a> - add padding from data source files</li>

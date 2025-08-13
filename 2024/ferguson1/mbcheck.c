@@ -9,7 +9,7 @@
  * data.src to see which strings have emojis.
  *
  * It reads one 'string' at a time; it does not read in the whole file at once.
- * option it allows for another file.
+ * The -i option allows for another file.
  */
 #include <string.h>
 #include <stdio.h>
