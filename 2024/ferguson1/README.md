@@ -55,7 +55,7 @@ practical reasons.
 ## Judges' remarks:
 
 You will have to go to "Fun-Damentals" to understand the logic flow of this
-game. While you goto as many as 149 times and jump hundreds or even over a
+game. While you goto as many as 149 times and jump hundreds if not over a
 thousand times to travel from `main()` to a successful `exit(666)` you may have
 a devil of a time trying to figure out how this program actually does what it
 does.
