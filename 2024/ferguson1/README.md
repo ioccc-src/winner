@@ -85,8 +85,14 @@ encrypted one even encrypted emojis without having to decrypt them in order to
 print them (and everything else). I have kept references to encryption in this
 file even after publication. I do have a copy of it if anyone is interested.
 
+**SUGGESTION**: if you dare, try opening
+[prog.gotos.c](%%REPO_URL%%/2024/ferguson1/prog.gotos.c) in an editor with
+syntax highlighting and then highlight `goto`. Alternatively, try it with `grep`
+if your grep has colours enabled (probably easier).
+
+
 <div id="devil">
-### A Pact With the Devil On the Oregon Trail (...and his 149 regrets of goto)
+### A Pact With the Devil On the Oregon Trail (...and his <del>134</del> 149 regrets of goto)
 </div>
 
 The _Go To Hell In A Handcart Travel Company_ **PROUDLY** welcomes all sinners to

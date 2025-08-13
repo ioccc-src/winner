@@ -46,6 +46,14 @@
             "entry_text" : "original source code with minor bug fix"
         },
         {
+            "file_path" : "prog.gotos.c",
+            "inventory_order" : 90,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "prog.c with merged lines to show mass of gotos"
+        },
+        {
             "file_path" : "prog.orig.c",
             "inventory_order" : 50,
             "OK_to_edit" : false,
