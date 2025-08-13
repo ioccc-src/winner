@@ -78,8 +78,7 @@ line jumps. Skipping prog.c function calls and it was still **1131** jumps! The
 prog.c, if you remove `#include`s, blank lines, lines with just a brace and
 lines that have only variables, **has just 58 (!) lines of code**. A very tiny
 fraction of the time a line might be repeated in a row ONCE but that does not
-really matter. The [maxed out goto
-version](%%REPO_URL%%/2024/ferguson1/prog.goto.max.c) is far worse.
+really matter.
 
 **NOTE**: I actually submitted two versions. This one is not encrypted. The
 encrypted one even encrypted emojis without having to decrypt them in order to
