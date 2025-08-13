@@ -9,16 +9,6 @@
  * Using the macro (identical except it uses puts() on some of the strings that
  * are unencrypted) from prog.c we will print out every string
  * at every location in the order it occurs.
- *
- * IMPORTANT NOTE: as some strings have a marker that indicates to not be
- * encrypted but the marker is not in the data file itself, the bytecount.c
- * might be better in that it uses the data source file.  However for my own
- * purposes I have this tool too. This tool, to prevent display problems, checks
- * for specific known locations where it should not decrypt anything due to not
- * being encrypted (the '%' ones notwithstanding), and if it is that number it
- * will print it out with puts() instead (can't be printf() as it has %
- * conversions). A BEL byte also is unencrypted (if it's the first character of
- * the string it's skipped and printed without encrypting it).
  */
 #include <string.h>
 #include <stdio.h>
@@ -32,7 +22,6 @@
  */
 #define Z(x) (x)*BLOCKSIZE
 #define V(x) puts(&y[Z(x)]);
-static char *p;
 static char *y;
 static char *filename = "data";
 static size_t len;
