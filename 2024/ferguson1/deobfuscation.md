@@ -3,23 +3,25 @@ wish to more easily follow the code, though that might or might not help that
 much. If a variable or other kind of symbol is missing or is not what it says
 here that was by (in some cases) simply missing it or (in other cases) due to
 having changed things a fair amount; this submission took a lot of work and time
-to get everything in. One variable, `p`, is for the encrypted version only.
+to get everything in.
 
 The following variables are of primary concern (some temporary ones are not
 documented I think):
 
 - O: how much you spend on oxen
-- R: amount spent on food
-- E: amount spent on ammo
-- G: amount spent on clothing
-- O: how much you spend on oxen
-- N: amount spent on miscellaneous supplies
-- T: how much money you have
+- R: amount spent on food (and how much you have)
+- E: amount spent on ammo (and how much you have)
+- G: amount spent on clothing (and how 'much' you have - a misnomer)
+- O: how much you spend on oxen (and how 'many' you have - a misnomer)
+- N: amount spent on miscellaneous supplies (and how 'many' you have - a misnomer)
+- T: how much money you have (in US dollars)
 - e: ate an ox
 - b: hp (hit points, starts out at 666, allows for survival in conditions you
 can't in the original) or stamina (kind of a combination - if you get injured
 and you see the doctor and can afford it you will not keep losing hp but you
-won't gain any either).
+won't gain any either). Alt code allows you to specify how many hp (default
+666), if you specify also max number of turns (NB: only prog.alt.c, not
+prog.alt2.c).
 - A: turn number for setting date (the first week, Monday 29 March 1847 is at
 16 so to print the second week day date month and year (though it does it March
 29 like the American way) you would do `V(A+16)`) (note that the date is not set
@@ -59,9 +61,12 @@ certain messages. But if you buy more that could in theory happen again. Note
 that some messages might be printed instead of the you have run out of oxen
 message, if they're the ones causing it, though I'm not going to say this is in
 every case as there are a lot of ways for this to happen.
+- `C`: alt code only, max number of turns (specified at command line, default
+21).
 - any other variable I haven't the foggiest, even if it's not related to fog (of
 which there is an event where you encounter fog) - sorry. An example here is
 `m`.
+
 
 When an amount spent (if it happens, not necessarily going to for every
 variable) spent ends up being < 0 (it's not allowed to go that low when
