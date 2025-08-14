@@ -47,18 +47,20 @@ practical reasons.
 
 ``` <!---sh-->
     ./prog.alt
+    ./prog.alt 55 # 55 = number of turns, default 21
+    ./prog.alt 42 6666 # 42 = number of turns (default 21), 6666 = hp (default 666)
 
-    ./prog.alt2
+    ./prog.alt2 # submitted code with bug fix
 ```
 
 
 ## Judges' remarks:
 
 You will have to go to "Fun-Damentals" to understand the logic flow of this
-game. While you goto as many as 149 times and jump hundreds if not over one
-thousand times to travel from `main()` to a successful `exit(666)` you may have
-a devil of a time trying to figure out how this program actually does what it
-does.
+game. While the code might goto as many as 149 times to travel from `main()` to
+a successful `exit(666)` you may have a devil of a time trying to figure out how
+this program actually does what it does as it jumps hundreds if not thousands of
+times.
 
 Before you set off on your adventure to decode this program's logic, make
 sure you have enough food, ammo, clothes, oxen, and programming supplies.
@@ -76,19 +78,37 @@ finish and not counting macros but counting all function calls (not libc
 functions just the few functions in prog.c), there were a total of **1416** (!)
 line jumps. Skipping prog.c function calls and it was still **1131** jumps! The
 prog.c, if you remove `#include`s, blank lines, lines with just a brace and
-lines that have only variables, **has just 58 (!) lines of code**. A very tiny
+lines that have only variables, **only has 58 (!) lines of code**. A very tiny
 fraction of the time a line might be repeated in a row ONCE but that does not
-really matter.
-
-**NOTE**: I actually submitted two versions. This one is not encrypted. The
-encrypted one even encrypted emojis without having to decrypt them in order to
-print them (and everything else). I have kept references to encryption in this
-file even after publication. I do have a copy of it if anyone is interested.
+really matter, as it is still technically a jump.
 
 **SUGGESTION**: if you dare, try opening
 [prog.gotos.c](%%REPO_URL%%/2024/ferguson1/prog.gotos.c) in an editor with
 syntax highlighting and then highlight `goto`. Alternatively, try it with `grep`
-if your grep has colours enabled (probably easier).
+if your grep has colours enabled (probably easier). This is a nice one to try:
+
+``` <!---sh-->
+    grep -E 'heaven|goto|666|hell' prog.gotos.c
+```
+
+Alternatively, in vim you might try, making sure you're in command mode first
+(hit ESC if you don't know - if that doesn't work try hitting it again as it can
+depend on what you're doing):
+
+``` <!---vim-->
+    /heaven\|goto\|666\|hell
+```
+
+Read it and <del>weep</del> and scream (or curse :-) )!
+
+**NOTE**: I actually submitted two versions, one encrypted (even emojis); any
+document mentioning encryption is left <del>for personal reasons</del> out of
+laziness and exhaustion from working on improving the presentation even after it
+won. I have a copy of the code and data files
+[here](https://ioccc.xexyl.net/2024/oregon/encrypted.txz) (more details on it
+can be found [here](https://ioccc.xexyl.net/2024/oregon/) or else in the
+markdown files in the tarball), if anyone is interested, assuming there's not an
+extended power cut or something else goes wrong.
 
 
 <div id="devil">
