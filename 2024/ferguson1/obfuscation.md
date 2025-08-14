@@ -231,7 +231,7 @@ horrified, if you're not already:
 ```
     131  goto
     301  semicolon
-    143  colons
+    143  colon
     51   if
     11   else
     3    while
@@ -259,7 +259,7 @@ horrified, if you're not already:
 ```
     149  goto
     339  semicolon
-    143  colons
+    143  colon
     51   if
     11   else
     7    while
@@ -289,7 +289,7 @@ For comparison, here is the original version:
 ```
     116  goto
     294  semicolon
-    138  colons
+    138  colon
     50   if
     11   else
     4    while
@@ -317,7 +317,7 @@ And the pre-processed one:
 ```
     134  goto
     332  semicolon
-    138  colons
+    138  colon
     50   if
     11   else
     8    while
