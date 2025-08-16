@@ -4845,6 +4845,54 @@ Jump to: [top](#)
 
 When printing a 0 digit, the `fib.bin` 4004 program will print a space instead of a "0".
 
+<div id="2024_ferguson2">
+## 2024/ferguson2
+</div>
+
+Jump to: [top](#)
+
+### STATUS: INABIAF - please **DO NOT** fix
+### Source code: [2024/ferguson2/prog.c](%%REPO_URL%%/2024/ferguson2/prog.c)
+### Information: [2024/ferguson2/index.html](2024/ferguson2/index.html)
+
+As the language is a spoken language and as spaces are required to separate
+words and as words sometimes have to be spelt out (where each letter in the word
+might be multiple words) and as the program checks words ignoring punctuation,
+along with the problem of word boundaries and spaces, described
+[here](2024/ferguson2/index.html#spaces), certain input can cause funny output.
+
+Here are some examples:
+
+``` <!---sh-->
+    $ ./prog.alt $(./prog cat '" "' attack)
+    cat""attackattack
+
+```
+
+As you can see the quotations cause the word (or words if more than one) after
+the quotes to be duplicated. Another example is circumvented in the try.sh
+script.
+
+Note that if the command was:
+
+``` <!---sh-->
+    $ ./prog.alt $(./prog cat attack)
+    catattack
+```
+
+there would still be no spaces but this is how it has to be.
+
+So the fact the Navajo to English translation sometimes repeats words (if it can
+translate at all - again see the spaces issue) or does not have spaces is a
+consequence of how the language worked and thus how this must work too.
+
+Thus this is not a bug to be fixed as doing so would cause other problems (and
+also take it way over the size limit). The author did experiment with ways to
+solve this but the closest method broke output where it would otherwise work.
+The try.sh script demonstrates how you can often get the same output but because
+of words being multiple words (if it is not in the Navajo military dictionary)
+translation back to English is not perfect.
+
 
 <div id="2024_howe">
 ## 2024/howe
