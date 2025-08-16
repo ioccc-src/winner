@@ -3615,6 +3615,38 @@ which lists some other conditions which should be considered features, not bugs.
 <h3 id="source-code-2024carliniprog.c">Source code: <a href="https://github.com/ioccc-src/winner/blob/master/2024/carlini/prog.c">2024/carlini/prog.c</a></h3>
 <h3 id="information-2024carliniindex.html">Information: <a href="2024/carlini/index.html">2024/carlini/index.html</a></h3>
 <p>When printing a 0 digit, the <code>fib.bin</code> 4004 program will print a space instead of a “0”.</p>
+<div id="2024_ferguson2">
+<h2 id="ferguson2">2024/ferguson2</h2>
+</div>
+<p>Jump to: <a href="#">top</a></p>
+<h3 id="status-inabiaf---please-do-not-fix-100">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
+<h3 id="source-code-2024ferguson2prog.c">Source code: <a href="https://github.com/ioccc-src/winner/blob/master/2024/ferguson2/prog.c">2024/ferguson2/prog.c</a></h3>
+<h3 id="information-2024ferguson2index.html">Information: <a href="2024/ferguson2/index.html">2024/ferguson2/index.html</a></h3>
+<p>As the language is a spoken language and as spaces are required to separate
+words and as words sometimes have to be spelt out (where each letter in the word
+might be multiple words) and as the program checks words ignoring punctuation,
+along with the problem of word boundaries and spaces, described
+<a href="2024/ferguson2/index.html#spaces">here</a>, certain input can cause funny output.</p>
+<p>Here are some examples:</p>
+<pre><code>    $ ./prog.alt $(./prog cat &#39;&quot; &quot;&#39; attack)
+    cat&quot;&quot;attackattack
+</code></pre>
+<p>As you can see the quotations cause the word (or words if more than one) after
+the quotes to be duplicated. Another example is circumvented in the try.sh
+script.</p>
+<p>Note that if the command was:</p>
+<pre><code>    $ ./prog.alt $(./prog cat attack)
+    catattack</code></pre>
+<p>there would still be no spaces but this is how it has to be.</p>
+<p>So the fact the Navajo to English translation sometimes repeats words (if it can
+translate at all - again see the spaces issue) or does not have spaces is a
+consequence of how the language worked and thus how this must work too.</p>
+<p>Thus this is not a bug to be fixed as doing so would cause other problems (and
+also take it way over the size limit). The author did experiment with ways to
+solve this but the closest method broke output where it would otherwise work.
+The try.sh script demonstrates how you can often get the same output but because
+of words being multiple words (if it is not in the Navajo military dictionary)
+translation back to English is not perfect.</p>
 <div id="2024_howe">
 <h2 id="howe-1">2024/howe</h2>
 </div>
@@ -3659,7 +3691,7 @@ The <a href="http://www.isthe.com/cgi-bin/chongo/number.cgi">English name of tha
 <h2 id="kurdyukov4">2024/kurdyukov4</h2>
 </div>
 <p>Jump to: <a href="#">top</a></p>
-<h3 id="status-inabiaf---please-do-not-fix-100">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
+<h3 id="status-inabiaf---please-do-not-fix-101">STATUS: INABIAF - please <strong>DO NOT</strong> fix</h3>
 <h3 id="source-code-2024kurdyukov4prog.c">Source code: <a href="https://github.com/ioccc-src/winner/blob/master/2024/kurdyukov4/prog.c">2024/kurdyukov4/prog.c</a></h3>
 <h3 id="information-2024kurdyukov4index.html">Information: <a href="2024/kurdyukov4/index.html">2024/kurdyukov4/index.html</a></h3>
 <p>The <a href="https://github.com/ioccc-src/winner/blob/master/2024/kurdyukov4/try.sh">2024/kurdyukov4/try.sh</a> script

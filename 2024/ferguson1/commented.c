@@ -7,11 +7,11 @@
  * Please note that the order of events (the q = x(0,23)) might be in a
  * different order than the prog.c as some were added quite late and I just
  * pushed them in in prog.c without much thinking (which actually caused some
- * problems that had to be fixed). I am not sure if that actually happened and
- * there might even be some missing events but just as a note.
- *
- * You might notice that the prog.alt.c has some additional events but those are
- * not here.
+ * problems that had to be fixed). In prog.c the event numbers are 0,22 (a bug
+ * in the submitted code was fixed - the switch was x(0,23) but there is no case
+ * 23 there) but here you see it's 0,23 and the order is different. The son
+ * mocking you if you eat his frozen body is not tied to an event in prog.c but
+ * it is here.
  *
  * Finally this code is from an earlier version so some of it might be missing,
  * not just the events, and not just the gotos, but potentially other things
@@ -21,7 +21,9 @@
  *
  * WARNING: this code and its comments are not up to date. I wrote 116 before
  * filtered through the cpp and 134 after the cpp and I didn't wish to
- * repeatedly revisit this file trying to explain everything.
+ * repeatedly revisit this file trying to explain everything. As it is I barely
+ * finished this in time. After publication this was updated with the complete
+ * version as well.
  */
 #include<stdio.h>
 #include<string.h>

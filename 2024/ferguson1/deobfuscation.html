@@ -458,22 +458,24 @@ wish to more easily follow the code, though that might or might not help that
 much. If a variable or other kind of symbol is missing or is not what it says
 here that was by (in some cases) simply missing it or (in other cases) due to
 having changed things a fair amount; this submission took a lot of work and time
-to get everything in. One variable, <code>p</code>, is for the encrypted version only.</p>
+to get everything in.</p>
 <p>The following variables are of primary concern (some temporary ones are not
 documented I think):</p>
 <ul>
 <li>O: how much you spend on oxen</li>
-<li>R: amount spent on food</li>
-<li>E: amount spent on ammo</li>
-<li>G: amount spent on clothing</li>
-<li>O: how much you spend on oxen</li>
-<li>N: amount spent on miscellaneous supplies</li>
-<li>T: how much money you have</li>
+<li>R: amount spent on food (and how much you have)</li>
+<li>E: amount spent on ammo (and how much you have)</li>
+<li>G: amount spent on clothing (and how ‘much’ you have - a misnomer)</li>
+<li>O: how much you spend on oxen (and how ‘many’ you have - a misnomer)</li>
+<li>N: amount spent on miscellaneous supplies (and how ‘many’ you have - a misnomer)</li>
+<li>T: how much money you have (in US dollars)</li>
 <li>e: ate an ox</li>
 <li>b: hp (hit points, starts out at 666, allows for survival in conditions you
 can’t in the original) or stamina (kind of a combination - if you get injured
 and you see the doctor and can afford it you will not keep losing hp but you
-won’t gain any either).</li>
+won’t gain any either). Alt code allows you to specify how many hp (default
+666), if you specify also max number of turns (NB: only prog.alt.c, not
+prog.alt2.c).</li>
 <li>A: turn number for setting date (the first week, Monday 29 March 1847 is at
 16 so to print the second week day date month and year (though it does it March
 29 like the American way) you would do <code>V(A+16)</code>) (note that the date is not set
@@ -512,6 +514,8 @@ certain messages. But if you buy more that could in theory happen again. Note
 that some messages might be printed instead of the you have run out of oxen
 message, if they’re the ones causing it, though I’m not going to say this is in
 every case as there are a lot of ways for this to happen.</li>
+<li><code>C</code>: alt code only, max number of turns (specified at command line, default
+21).</li>
 <li>any other variable I haven’t the foggiest, even if it’s not related to fog (of
 which there is an event where you encounter fog) - sorry. An example here is
 <code>m</code>.</li>

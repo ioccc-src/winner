@@ -12,6 +12,15 @@ YouTube show for this entry:
     make all
 ```
 
+### Bugs and (Mis)features:
+
+The current status of this entry is:
+
+> **STATUS: INABIAF - please DO NOT fix**
+
+For more detailed information see [2024/ferguson2 in bugs.html](../../bugs.html#2024_ferguson2).
+
+
 
 ## To use:
 
