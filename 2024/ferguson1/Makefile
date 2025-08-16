@@ -154,12 +154,12 @@ TARGET= ${PROG} ${PROG}.asc ${PROG}.scrnshot
 
 # .alt is as above more events
 #
-ALT_OBJ= ${PROG}.alt.o ${PROG}.alt.asc.o ${PROG}.alt.scrnshot.o ${PROG}.goto.max.o \
-	 ${PROG}.goto.max.asc.o ${PROG}.goto.max.scrnshot.o
-ALT_TARGET= ${PROG}.alt ${PROG}.alt.asc ${PROG}.alt.scrnshot ${PROG}.goto.max \
-	    ${PROG}.goto.max.asc ${PROG}.goto.max.scrnshot
+ALT_OBJ= ${PROG}.alt.o ${PROG}.alt.asc.o ${PROG}.alt.scrnshot.o \
+	 ${PROG}.alt2.o ${PROG}.alt2.asc.o ${PROG}.alt2.scrnshot.o
+ALT_TARGET= ${PROG}.alt ${PROG}.alt.asc ${PROG}.alt.scrnshot \
+	${PROG}.alt2 ${PROG}.alt2.asc ${PROG}.alt2.scrnshot
 
-# list any data files supplied with the submission
+# The following notes were provided by the author in his Makefile:
 #
 # Don't include data, data.asc or data.scrnshot.
 # The data rule (although it's better to use makedata the data rule might work -
@@ -216,7 +216,7 @@ test: lencount mbcheck
 	@./lencount -t -i data.scrnshot.src
 	@./mbcheck
 
-# ASCII only version of submission code, hence why the DATA macro is defined
+# ASCII only version of entry code, hence why the DATA macro is defined
 # here, not in CDEFINE.
 #
 ${PROG}.asc: ${PROG}.c
@@ -246,7 +246,7 @@ addpadding: addpadding.c
 bytecount: bytecount.c
 	${CC} ${CFLAGS} -Wno-unreachable-code-break bytecount.c -o $@ ${LDFLAGS}
 
-# this tool helped me verify the locations of strings were correct (locations
+# this tool helped verify the locations of strings were correct (locations
 # are based on the blocksize). The bytecount also helped.
 #
 bytetest: bytetest.c
@@ -258,17 +258,18 @@ bytetest: bytetest.c
 byteread: byteread.c
 	${CC} ${CFLAGS}  byteread.c -o $@ ${LDFLAGS}
 
-# this tool was helpful to help identify if any emojis in the ASCII only version
-# slipped through (however, mbcheck is a better one: this tool is still
-# useful however). Probably only the judges will find this interesting just like
-# most of the tools I have provided.
+# this tool was earlier used to help in identifying any emojis in the ASCII only
+# version that might have slipped through (however, mbcheck is a better one: this tool is still
+# useful however). Mostly provided for the judges but I, the author, included
+# most of the tools (most of which are meant only for the judges as well).
 #
 bytecheck: bytecheck.c
 	${CC} ${CFLAGS} -Wno-unreachable-code-break bytecheck.c -o $@ ${LDFLAGS}
 
 # by default this checks for multibyte characters (well 2, 3, 4) in the ASCII
 # data source file, reporting if any are found. If any are found it will report
-# which string so it can be fixed.
+# which string so it can be fixed. This is used as part of the build process,
+# and if any are found it will fail to compile (or it should).
 #
 mbcheck: mbcheck.c
 	${CC} ${CFLAGS} -Wno-unreachable-code-break mbcheck.c -o $@ ${LDFLAGS}
@@ -290,7 +291,8 @@ printer: printer.c
 lencount: lencount.c
 	${CC} ${CFLAGS} -Wno-unreachable-code-break lencount.c -o $@ ${LDFLAGS}
 
-
+# The author provided these notes in his Makefile:
+#
 # IMPORTANT NOTES FOR THE JUDGES.
 #
 # The makedata.sh script will generate files that are needed by some of the
@@ -320,9 +322,13 @@ padding: addpadding test
 	./addpadding
 	@echo "Done."
 
+# The author provided these remarks in his Makefile:
+#
 # see remarks.md for more details. This script is mostly useful for the some of
-# the other tools but it can be used for prog.c and prog.alt.c indirectly as it
-# also does build the data files from the source files.
+# the other tools but it can be used for prog.c and prog.alt.c (and prog.alt2.c
+# which is the originally submitted code but with a minor bug fix - prog.alt.c
+# was already taken) indirectly as it also does build the data files from the
+# source files.
 #
 # An example use of when I personally use this rule: when I actually make an
 # edit to the data source files. As you will probably have noticed the printer.c
@@ -345,6 +351,7 @@ ${PROG}.alt: ${PROG}.alt.c
 	${MAKE} padding
 	${CC} ${CFLAGS} -DDATA='"data"' ${PROG}.alt.c -o $@ ${LDFLAGS}
 
+
 # ASCII only version of alt code (Devil's Cut above). This is why indeed the
 # DATA variable is not in the CDEFINE - the .asc versions use the data.asc file.
 #
@@ -352,17 +359,6 @@ ${PROG}.alt.asc: ${PROG}.alt.c
 	${MAKE} padding
 	${CC} ${CFLAGS} -DDATA='"data.asc"' ${PROG}.alt.c -o $@ ${LDFLAGS}
 
-# goto maxed out - regular data file
-#
-${PROG}.goto.max: ${PROG}.goto.max.c
-	${MAKE} padding
-	${CC} ${CFLAGS} -DDATA='"data"' ${PROG}.goto.max.c -o $@ ${LDFLAGS}
-
-# goto maxed out - ASCII only data file
-#
-${PROG}.goto.max.asc: ${PROG}.goto.max.c
-	${MAKE} padding
-	${CC} ${CFLAGS} -DDATA='"data.asc"' ${PROG}.goto.max.c -o $@ ${LDFLAGS}
 
 # screenshot friendly version of alt code
 #
@@ -370,11 +366,30 @@ ${PROG}.alt.scrnshot: ${PROG}.alt.c
 	${MAKE} padding
 	${CC} ${CFLAGS} -DDATA='"data.scrnshot"' ${PROG}.alt.c -o $@ ${LDFLAGS}
 
-# goto maxed out - screenshot friendly version
+# For practical reasons, the author submitted code that was not as full of gotos
+# as he had in mind. After the win he decided to add it to the repo. But since
+# there was already an alt.c file this original code, which has a minor bug fix,
+# is in .alt2.c.
 #
-${PROG}.goto.max.scrnshot: ${PROG}.goto.max.c
+
+# Original submitted code with a minor bug fix
+#
+${PROG}.alt2: ${PROG}.alt2.c
 	${MAKE} padding
-	${CC} ${CFLAGS} -DDATA='"data.scrnshot"' ${PROG}.goto.max.c -o $@ ${LDFLAGS}
+	${CC} ${CFLAGS} -DDATA='"data"' ${PROG}.alt2.c -o $@ ${LDFLAGS}
+
+# Original submitted code with a minor bug fix - ASCII only version
+#
+${PROG}.alt2.asc: ${PROG}.alt2.c
+	${MAKE} padding
+	${CC} ${CFLAGS} -DDATA='"data.asc"' ${PROG}.alt2.c -o $@ ${LDFLAGS}
+
+# Original submitted code with a minor bug fix - screenshot friendly version
+#
+${PROG}.alt2.scrnshot: ${PROG}.alt2.c
+	${MAKE} padding
+	${CC} ${CFLAGS} -DDATA='"data.scrnshot"' ${PROG}.alt2.c -o $@ ${LDFLAGS}
+
 
 # data files
 #
