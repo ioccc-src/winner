@@ -13,11 +13,6 @@
  * mocking you if you eat his frozen body is not tied to an event in prog.c but
  * it is here.
  *
- * Actually this is closer to prog.alt.c in the sense that event 23 there also
- * has the son ghost mocking the PC. The difference is prog.alt.c has an event
- * 24 and that is not here. This almost certainly has fewer gotos in code (if we
- * count the comments probably not).
- *
  * Finally this code is from an earlier version so some of it might be missing,
  * not just the events, and not just the gotos, but potentially other things
  * too, possibly bugs that were fixed in prog.c but are not here (and no more
@@ -27,7 +22,8 @@
  * WARNING: this code and its comments are not up to date. I wrote 116 before
  * filtered through the cpp and 134 after the cpp and I didn't wish to
  * repeatedly revisit this file trying to explain everything. As it is I barely
- * finished this in time.
+ * finished this in time. After publication this was updated with the complete
+ * version as well.
  */
 #include<stdio.h>
 #include<string.h>

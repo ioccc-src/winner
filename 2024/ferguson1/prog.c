@@ -8,7 +8,7 @@ unsigned m,D,Q,v,l,f,X,z,B,i,h,
         r,u,d,e; long
 O,R,E,G,O,N, T,R,A,I,L,
 *o[]={ &O,&R,&E,&G,&O,&N} ,a,t[7],q,M, b=666,c,W;
-char *y,*p; FILE*K; size_t J;
+char *y; FILE*K; size_t J;
 #define w(i) { V(i); V(4); goto hell; goto M; }
 long Z(long x){ return x * 1663; }
 #define S(x,z) while(scanf(&y[Z(x)],&z)!=1)while(getchar()!='\n');
