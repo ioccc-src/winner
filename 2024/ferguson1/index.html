@@ -489,7 +489,7 @@ YouTube show for this entry:</p>
 <p>The author provided two alt versions: one submitted with more events, though not
 many more, along with a few other functional differences, and after winning, the
 prog.c was made the prog.alt2.c code and the prog.c was made the complete
-version (149 <code>goto</code>s up from 134) that was not made prog.c during submission for
+version (152 <code>goto</code>s up from 134) that was not made prog.c during submission for
 practical reasons.</p>
 <h3 id="alternate-build">Alternate build:</h3>
 <pre><code>    make alt</code></pre>
@@ -501,7 +501,7 @@ practical reasons.</p>
     ./prog.alt2 # submitted code with bug fix</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>You will have to go to “Fun-Damentals” to understand the logic flow of this
-game. While the code might goto as many as 149 times to travel from <code>main()</code> to
+game. While the code might goto as many as 152 times to travel from <code>main()</code> to
 a successful <code>exit(666)</code> you may have a devil of a time trying to figure out how
 this program actually does what it does as it jumps hundreds if not thousands of
 times.</p>
@@ -519,7 +519,7 @@ finish and not counting macros but counting all function calls (not libc
 functions just the few functions in prog.c), there were a total of <strong>1416</strong> (!)
 line jumps. Skipping prog.c function calls and it was still <strong>1131</strong> jumps! The
 prog.c, if you remove <code>#include</code>s, blank lines, lines with just a brace and
-lines that have only variables, <strong>only has 58 (!) lines of code</strong>. A very tiny
+lines that have only variables, <strong>only has 55 (!) lines of code</strong>. A very tiny
 fraction of the time a line might be repeated in a row ONCE but that does not
 really matter, as it is still technically a jump.</p>
 </blockquote>
@@ -532,7 +532,7 @@ if your grep has colours enabled (probably easier). This is a nice one to try:</
 (hit ESC if you don’t know - if that doesn’t work try hitting it again as it can
 depend on what you’re doing):</p>
 <pre><code>    /heaven\|goto\|666\|hell</code></pre>
-<p>Read it and <del>weep</del> and scream (or curse :-) )!</p>
+<p>Read it and <del>weep</del> scream (or curse :-) )!</p>
 <p><strong>NOTE</strong>: I actually submitted two versions, one encrypted (even emojis); any
 document mentioning encryption is left <del>for personal reasons</del> out of
 laziness and exhaustion from working on improving the presentation even after it
@@ -542,7 +542,7 @@ can be found <a href="https://ioccc.xexyl.net/2024/oregon/">here</a> or else in 
 markdown files in the tarball), if anyone is interested, assuming there’s not an
 extended power cut or something else goes wrong.</p>
 <div id="devil">
-<h3 id="a-pact-with-the-devil-on-the-oregon-trail-and-his-134-149-regrets-of-goto">A Pact With the Devil On the Oregon Trail (…and his <del>134</del> 149 regrets of goto)</h3>
+<h3 id="a-pact-with-the-devil-on-the-oregon-trail-and-his-134-152-regrets-of-goto">A Pact With the Devil On the Oregon Trail (…and his <del>134</del> 152 regrets of goto)</h3>
 </div>
 <p>The <em>Go To Hell In A Handcart Travel Company</em> <strong>PROUDLY</strong> welcomes all sinners to
 our <strong>GREATEST</strong> destination yet, with:</p>
@@ -607,12 +607,16 @@ have personally never seen anything close to it. But that’s only one of the ma
 things I have done - and some are really quite unique and cool, or at least I
 think they are unique (I have never seen these things before nor have I even
 seen any suggestion of them before, one because it’s absolutely contrary to how
-it works in C, namely near 200 NUL terminated <code>char *</code>s in a single flat <code>char *</code> - no, not an array of <code>char *[]</code>).</p>
+it works in C, namely near 200 NUL terminated <code>char *</code>s in a single flat <code>char *</code> - no, not an array of <code>char *[]</code> and not a <code>char **</code>!).</p>
 <p>See <a href="obfuscation.html">obfuscation.html</a> and my <a href="#conclusions">concluding
 remarks</a> for
 more details on just how many <code>goto</code>s I have but beware of monsters. But be careful
 if you have a heart condition. And if you’re a computer scientist make sure
-you’re not at risk of stroke.</p>
+you’re not at risk of stroke. The <a href="obfuscation.html">obfuscation.html</a> file has
+a <a href="obfuscation.html#litmus">litmus test</a> I devised to make sure everything is
+working right, although you have to know the program code well in order to
+really be sure of it, especially as there are some things that seem like flow
+control errors but are intentional.</p>
 <p>The <a href="obfuscation.html">obfuscation.html</a> file discusses those other cool things as
 well of course, and they might be briefly brought up in my concluding remarks as
 well.</p>
@@ -2484,12 +2488,12 @@ might be one that the compiler does not trigger a dead code warning on. It
 really does not seem to be dead (it’s quite sneaky).</p>
 <p>I could be wrong on whether this is one the compiler missed though: it’s hard to
 follow all the <code>goto</code>s. As you find out in <a href="obfuscation.html">obfuscation.html</a> it’s
-149 after pre-processing! The second alt code is what I originally submitted as
-prog.c but after winning I made the more complete (149 gotos post cpp, 131 prior
+152 after pre-processing! The second alt code is what I originally submitted as
+prog.c but after winning I made the more complete (152 gotos post cpp, 134 prior
 to cpp) version (that was not submitted for practical reasons) the prog.c.
-Nonetheless 134 is already way too many. 149 is much worse. Even 116 which was
-the original prog.c before cpp is too many; that’s 7 more than the 1978 BASIC
-game (!). But it’s actually 131 which is 22 more.</p>
+Nonetheless 109, what the 1978 BASIC game had, is already way too many, but that
+at least has the excuse of being in BASIC. Being in a smaller program and in C,
+having 134/152 <code>goto</code>s is far worse.</p>
 <p>Yes I might be mad. But then again I might just be the Devil. Who knows? What I
 do know is code that is meant to be reached is reached! Yes I’ve played it many
 times. Some code I made dead seemed totally useless but why not add to
@@ -2939,11 +2943,11 @@ reading the strings/data files they would have to run the program to confirm
 what this is. And even then it shouldn’t be easy to follow the code, for reasons
 I mentioned in <a href="obfuscation.html">obfuscation.html</a> (and some briefly below).</p>
 <p>In general I think it’s extremely hard to follow the flow of this program due to
-the abuse of <del>116</del> 131 <code>goto</code>s, more than the BASIC game.
-<del>134</del> 149 when pre-processed. But
-let’s be honest, or 131 for a small C program is too many but to be seven more
-than the larger BASIC program? That is hard to fathom. Not that <del>116</del>
-131/149 is not too many for larger programs…or one goto, for that matter.</p>
+the abuse of <del>116</del> 134 <code>goto</code>s, more than the BASIC game.
+<del>134</del> 152 when pre-processed. But let’s be honest, 134 for a small C
+program is too many but to be 25 (or 43 pre-processed) more than the larger
+BASIC program? That is hard to fathom. Not that <del>116</del> 131/149 is not
+too many for larger programs…or one goto, for that matter.</p>
 <p>As noted elsewhere, I originally submitted a slightly less goto complete
 version, with 116/134 gotos, before/after the cpp, which was due to practical
 reasons, and to make the judges weep (and probably curse the Devil - and author,
@@ -3048,7 +3052,7 @@ a single flat <code>char *</code>, although I do think that’s pretty cool and 
 <code>+--</code> I talked about in <a href="obfuscation.html">obfuscation.html</a> (in fact in some
 if not most contexts it IS illegal). The bastardised Duff’s device I would not
 do. I would not put the entire function in a switch.</p>
-<p>But above all I would not have used <del>116</del> 131 (or <del>134</del> 149)
+<p>But above all I would not have used <del>116</del> 134 (or <del>134</del> 152)
 <code>goto</code>s. Or ten. Or five. Or even one. Better to let code generators like
 flex/bison take the crown. I have dethroned them though (at least from what I
 have seen before) - by a huge amount. But perhaps
@@ -3110,7 +3114,7 @@ mean many <code>goto</code>s.</p>
 <p>There are so many <code>goto</code>s that to try and move code to add more <code>goto</code>s is
 basically pointless, unless as a joke. In this program it would really not do
 anything. I essentially ran out of code to move. Even if I had more though,
-isn’t <del>134</del> 149 enough, especially in a program that, counting spaces,
+isn’t <del>134</del> 152 enough, especially in a program that, counting spaces,
 including unnecessary spaces to add to the size, is only 4666 bytes? It would be
 smaller except to stay on theme. Doing more would no longer be funny. Enough is
 enough. Or at least I hope. Okay…actually I take that back. More would be
@@ -3155,8 +3159,8 @@ is the same but that only shows how very often the line changes. It is a total
 of <strong>1416</strong> (!) changes, counting function calls, and <strong>1131</strong> (!) excluding
 function calls. Macros are not counted of course.</p>
 <p>This program, if you remove blank lines and lines with just a brace,
-<code>#include</code>s and only variables, has a mere 58 (!) lines.</p>
-<p>A program that has only 58 lines of code that jumps 1416 (counting functions) or
+<code>#include</code>s and only variables, has a mere 55 (!) lines.</p>
+<p>A program that has only 55 lines of code that jumps 1416 (counting functions) or
 1131 (just in main()) times is astonishing. Of course that’s not the
 only technique but the title of the award and the judges’ remarks are rather
 fitting as it is diabolical to follow this code (and the theme of the game fits
@@ -3175,7 +3179,7 @@ he was wrong.</p>
 <p>It is not about not trying. But even IF he WAS right, he
 sure as hell is wrong NOW. Anyone who thinks otherwise needs to try and debug
 my program - or maintain it. Or write it.</p>
-<p>It would have been SO MUCH EASIER if I did not use <del>134</del> 149 <code>goto</code>s.
+<p>It would have been SO MUCH EASIER if I did not use <del>134</del> 152 <code>goto</code>s.
 Actually, even a tiny portion of that would make it harder. Nobody, whether
 they’re in their right mind or not, would WANT to MAINTAIN this, or something
 even close to it. Feel free to pass on judgement to me. I welcome it! You have
@@ -3291,8 +3295,8 @@ that they aren’t harmful, mostly to show just how extreme this program went.</
 <a href="https://www.blackduck.com/blog/understanding-apple-goto-fail-vulnerability-2.html" class="uri">https://www.blackduck.com/blog/understanding-apple-goto-fail-vulnerability-2.html</a>.
 That’s all it takes: <strong>JUST ONE <code>goto</code> led to a CVE</strong>!</p>
 <p>It is ironic, perfect and hilarious that it was <code>goto fail;</code> as it was actually
-a failure in using <code>goto</code>! My code has <del>134</del> 149 (with the cpp,
-<del>116</del> 131 without). That is obscene. I did not fail. At all.</p>
+a failure in using <code>goto</code>! My code has 134/152 (pre-pre-processed,
+pre-processed). That is obscene. I did not fail. At all.</p>
 <p>On the contrary I have made a point. Okay, that is not the only reason I did it
 but when I got started I couldn’t help it…I thought it was (and still do think
 it is) hilarious. But only for satirical programming like the contest. I would
@@ -3328,8 +3332,8 @@ Yes, in the IOCCC, but outside that?</p>
 <p>In BASIC and asm and some other languages jumps are a core part of the language.
 And those languages can be harder to maintain partly because of jumps. C is not
 one of those languages. Or it wasn’t until now.</p>
-<p>Yes, yes…I know, I <strong>KNOW</strong> I put in <del>116</del> 131 <code>goto</code>s with
-<del>134</del> 149 when pre-processed and that is probably more extreme than any
+<p>Yes, yes…I know, I <strong>KNOW</strong> I put in <del>116</del> 134 <code>goto</code>s with
+<del>134</del> 152 when pre-processed and that is probably more extreme than any
 other C program, especially in such a small program (and I REALLY hope I’m right
 there!). But <strong>this does NOT matter</strong>! Even if one or two were not harmful (but
 they are) it’s jumping down a rabbit hole that can very easily get deeper and
@@ -3376,7 +3380,7 @@ recognise what I mean - and yes it’s in the game).</p>
 <p>On a lighter note (or maybe this is darker?): did you know that every time a
 <code>goto</code> is used an angel (whatever you consider an angel) <strong>DIES</strong> and goes
 straight to HELL? You don’t really want that do you? I didn’t think so. Yes I
-killed <del>134</del> 149 angels. YES I condemned <del>134</del> 149 angels to
+killed <del>134</del> 152 angels. YES I condemned <del>134</del> 152 angels to
 eternal torment. I <strong>HAD</strong> to. I don’t regret it - but you should, if you
 <strong>ever</strong> write something like this outside the IOCCC. In fact you should regret
 a single <del>goto</del> angel dying. Even if they did not go straight to hell
@@ -3772,7 +3776,7 @@ helps you appreciate the careful design even more.<a href="#fnref2" class="footn
 <li><a href="https://github.com/ioccc-src/winner/blob/master/2024/ferguson1/byteread.c">byteread.c</a> - prints out the strings without locations</li>
 <li><a href="https://github.com/ioccc-src/winner/blob/master/2024/ferguson1/bytetest.c">bytetest.c</a> - prints every string extracted from data</li>
 <li><a href="deobfuscation.html">deobfuscation.html</a> - hints on how to deobfuscate</li>
-<li><a href="https://github.com/ioccc-src/winner/blob/master/2024/ferguson1/gotos.c.txt">gotos.c.txt</a> - text file showing only the gotos in the entry code</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2024/ferguson1/gotos.c.txt">gotos.c.txt</a> - text file showing only gotos in the entry code pre cpp</li>
 <li><a href="https://github.com/ioccc-src/winner/blob/master/2024/ferguson1/jumps.txt">jumps.txt</a> - text file showing all the line changes in a single run</li>
 <li><a href="https://github.com/ioccc-src/winner/blob/master/2024/ferguson1/lencount.c">lencount.c</a> - counts strings and reports longest one</li>
 <li><a href="https://github.com/ioccc-src/winner/blob/master/2024/ferguson1/mbcheck.c">mbcheck.c</a> - show location of multibyte characters</li>

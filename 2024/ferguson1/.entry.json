@@ -123,7 +123,7 @@
             "OK_to_edit" : true,
             "display_as" : "text",
             "display_via_github" : true,
-            "entry_text" : "text file showing only the gotos in the entry code"
+            "entry_text" : "text file showing only gotos in the entry code pre cpp"
         },
         {
             "file_path" : "jumps.txt",

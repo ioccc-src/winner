@@ -37,7 +37,7 @@ Harmful"](https://web.archive.org/web/20090320002214/http://www.ecn.purdue.edu/P
 See the Communications of the ACM, March 1987, Page 195-196.
 
 (I refute some things in my program that directly contradicts Frank's
-letter in amusing or at least instructional ways in my [remarks above](#devil).
+letter in amusing or at least instructional ways in my [remarks](index.html#devil).
 
 I added bold to logical conclusion because I wanted to stress this. I'm afraid
 they were wrong, oh so very VERY **VERY** WRONG. 24 `goto`s, according to
@@ -49,11 +49,11 @@ too many, even in a large program, let alone a small one. Even one `goto` is too
 many. Unless I am very much mistaken, I have broken the record by a huge margin.
 
 Here's the horrifying and hilarious truth: I beat it out by <del>92</del> 107
-MORE, **BEFORE** the cpp at <del>116</del> 131 and after the cpp is through I
-beat it by **125** MORE (!!), **AT 149!** Yes, you read that right.
-<del>134</del> 149 `goto`s! The originally submitted prog.c, submitted for
-practical reasons only, had it at, as might be guessed, 116/134 before and after
-the cpp.
+MORE, **BEFORE** the cpp at <del>116</del> 134 and after the cpp is through I
+beat it by **128** MORE (!!), **AT 152!** Yes, you read that right.
+<del>134</del> 152 `goto`s! The originally submitted prog.c, submitted for
+practical reasons only, had it at, as might be guessed from above, 116/134
+before and after the cpp.
 
 Even removing what I think were the only dead `goto`s in the incomplete version,
 two of them, including one that is in the `w()` macro that would be translated
@@ -66,29 +66,29 @@ joke, right? I'm sorry but it is NOT a joke. I am for real. There REALLY are
 that many and that is ridiculous.
 
 Okay so it's a joke in another way but nonetheless YES I **REALLY DID** put in
-<del>116/134</del> 131/149 `goto`s, depending on if you pre-process it or not!
+<del>116/134</del> 134/152 `goto`s, depending on if you pre-process it or not!
 YES I might be mad.  YES I think it's HILARIOUS. But if it was not for the
-IOCCC... Well, as I mention in my [remarks above](#devil), EVEN ONE IS TOO MANY
+IOCCC... Well, as I mention in my [remarks above](index.html#devil), EVEN ONE IS TOO MANY
 in real code.
 
 I dare you to run the program in a debugger from start to finish to see how many
 line jumps there truly are. After I won I did it once: removing the `#include`s,
 blank lines, lines with only variables and lines with just braces (i.e. only
-lines of code) the program has just 58 lines and in a single run there were a
+lines of code) the program has just 55 lines and in a single run there were a
 total of **1416** (!) line changes, counting function calls. In `main()` itself
 the line changed a total of **1131** (!) times!
 
 The best (or worst, depending on how you look at it :-) ) part is this works. As
 I note in those concluding remarks, a [nameless company](https://www.apple.com)
 actually introduced a security hole from ONE `goto`. Yet I have
-<del>116/134</del> 131/149 and it actually works? That is surely obscene. And
+<del>116/134</del> 134/152 and it actually works? That is surely obscene. And
 beautiful. But wrong.
 
 Oh and BTW: it appears that `hines` is a bit confused about my entry, though I'm
 not really sure why. In any case, I not only have dethroned `hines` (sorry
 ...but also not sorry!) but I have, as noted already, beaten the original BASIC
-game by <del>7</del> 22 more `goto`s at <del>116</del> 131 before the cpp
-and <del>**18 MORE**</del> **40 MORE** after the cpp, at 149!
+game by <del>7</del> 25 more `goto`s at <del>116</del> 134 before the cpp
+and <del>**18 MORE**</del> **43 MORE** after the cpp, at 152!
 
 It's almost impossible to add more `goto`s. With the iocccsize it is impossible,
 if I don't want to sacrifice the rest of the program. You'll see why soon. But
@@ -107,7 +107,7 @@ is in all the wrong places.
 This is not counting other cool things like a single `char *` holding near 200
 `char *`s. No. I do not mean an array of `char *`s! I mean a single flat `char
 *`! Yet in the code I index it AS IF it's a `char *[]`, just to add to the
-confusion (as if the <del>134</del> 149 `goto`s are not bad enough). But it's
+confusion (as if the <del>134</del> 152 `goto`s are not bad enough). But it's
 not a `char *[]`. It's a single `char *`, which is the contents of the data
 file.
 
@@ -171,8 +171,8 @@ Hilarious.
 
 Counting whitespace this program is only 4666 bytes according to `wc -c` (macOS
 at the least, maybe others): quite intentionally to be on theme. That's a
-relatively short program to have <del>116</del> 131 `goto`s or more when
-filtered through `cc -E` (<del>134</del> 149!), wouldn't you say? If that's NOT
+relatively short program to have <del>116</del> 134 `goto`s or more when
+filtered through `cc -E` (<del>134</del> 152!), wouldn't you say? If that's NOT
 too many, then I ask you WHAT IS?
 
 As said in numerous places, IT IS MUCH SMALLER than the BASIC file I included
@@ -181,7 +181,7 @@ the BASIC one has 16 not counting the mountains code and mine is 23 not counting
 the mountains code, which obviously I also include and has more events (if we
 count the doctor visits an event then even more).
 
-I discuss this some in my concluding [remarks above](#devil), as well as
+I discuss this some in my concluding [remarks above](index.html#devil), as well as
 mentioning that there are other events besides those 23. I certainly will not
 reveal all though. The humour and jokes sections of that file says more but the
 concluding remarks are for a summary and why I think that this code is worthy of
@@ -217,7 +217,7 @@ the worst of it as you never know where the program will be next, and that's
 putting it in a simpler way. Much, much, MUCH simpler way, in fact, as you'll
 see.
 
-Either way this program, and I mention this in my [remarks above](#devil) in an
+Either way this program, and I mention this in my [remarks above](index.html#devil) in an
 admittedly long editorial plea (although it does it by going over what I have
 done in simpler terms than this file), serves as a public service, warning about
 `goto`. The article about goto considered harmful has nothing against this, or
@@ -229,8 +229,8 @@ prog.c and after filtered through `cc -E`. First prog.c. Prepare to be
 horrified, if you're not already:
 
 ```
-    131  goto
-    301  semicolon
+    134  goto
+    304  semicolon
     143  colon
     51   if
     11   else
@@ -251,14 +251,14 @@ horrified, if you're not already:
     1    char
     1    size_t
 
-    Ratio: 1.01 gotos per keyword
+    Ratio: 1.03 gotos per keyword
 ```
 
-1.01 goto per keyword? But then there's the cpp filtered code...
+1.03 goto per keyword? But then there's the cpp filtered code...
 
 ```
-    149  goto
-    339  semicolon
+    152  goto
+    342  semicolon
     143  colon
     51   if
     11   else
@@ -279,12 +279,16 @@ horrified, if you're not already:
     1    char
     1    size_t
 
-    Ratio: 1.11 gotos per keyword
+    Ratio: 1.13 gotos per keyword
 ```
 
-1.11!
+1.13! Did you also notice that despite there being 32 `case` statements there
+are **0** `break`s? See the label `Z` for how that one works, although as you'll
+notice one event actually flows right into it only to move on to the next part
+of the code. Additionally there are many `goto`s and labels in the `switch()`s
+that don't belong there in normal code, or for that matter in any code.
 
-For comparison, here is the original version:
+Anyway for comparison, here is the original version's stats:
 
 ```
     116  goto
@@ -475,7 +479,7 @@ it.
 There are a lot of ways to obscure code and I don't believe anyone has taken
 `goto` to this obscenity in C. I believe the one with the most `goto`s is
 1987/hines and, as noted earlier, it reports on itself as having only 24
-`goto`s. Yet I have <del>116</del> 131 before the cpp and <del>134</del> 149
+`goto`s. Yet I have <del>116</del> 134 before the cpp and <del>134</del> 152
 (!!) after the cpp.
 
 And unfortunately for you dear reader I have done other things that also are
@@ -663,7 +667,8 @@ As I commented in the commented.c:
 ```
 
 ...and of course now the count, prog.c being the full version and prog.alt2.c
-being the practical version, have the count at 131/149.
+being the practical version, have the count at 131/149 (actually, prog.alt2.c
+has the 116/134).
 
 I hope you understand but I do believe it's a gain not a loss. It is good enough
 especially as it's only for educational value - or to examine my head (though
@@ -746,7 +751,7 @@ depending on the pRNG and which event it is.
 
 At one point I was **DEAD CERTAIN** that part of this that should not be dead
 was dead. But every part of it that is meant to be live is. There was a part
-that was broken but that was fixed. As I noted in my [remarks above](#devil),
+that was broken but that was fixed. As I noted in my [remarks above](index.html#devil),
 this event (11 in particular, under `V`), will not necessarily do anything, as
 it depends on another call to the pRNG. This is good because otherwise every
 time it triggered it would cause severe illness.
@@ -1328,7 +1333,7 @@ well-rounded in obfuscation.
 
 **IMPORTANT NOTE TO THE JUDGES**: if any problems in the data file exist,
 remember to regenerate it as described in the Judges section and/or the
-Troubleshooting section in the [remarks above](#devil). It is greatly
+Troubleshooting section in the [remarks above](index.html#devil). It is greatly
 appreciated that if by some chance you do run into a problem that you do this
 quick procedure (the addpadding `-d` option can also be used to reveal what the
 program is doing for those who wish to see more, although trying to play the
@@ -1347,7 +1352,7 @@ are **ANY** issues **PLEASE** run the `addpadding` tool manually (or better yet
 `make makedata`).
 
 The data file key is part of the obfuscation both in code and in data; it also
-stays on theme. As noted in my [remarks above](#devil), I have bypassed the
+stays on theme. As noted in my [remarks above](index.html#devil), I have bypassed the
 concern of SUS portability by including my own tools, much like previous winning
 entries did with POSIX compatibility.
 
@@ -1603,7 +1608,8 @@ The files `data`, `data.src`, `data.asc`, `data.asc.src`, `data.scrnshot` and
 `data.scrnshot.src` are created/used by `addpadding` and are vital to the game
 (for the .asc data files it is for the non-emoji version, `prog.asc`, but used
 by the same code, hence the `DATA` macro and the same applies to the screenshot
-friendly one, as I discussed in the data files versions in my [remarks above](#devil)).
+friendly one, as I discussed in the data files versions in my [remarks
+above](index.html#devil)).
 
 The `data*.src` files are included for the purpose of allowing the files to be
 created prior to running the game as they are vital, just like previous entries
@@ -1679,14 +1685,105 @@ interesting and it's one of the reasons I'm quite proud of it.
 Interesting thing to ponder: what happens if a string is too long for the
 padding?
 
+<div id="litmus">
+### Litmus test
+</div>
 
+I did not write about this as much in my submission but since I made some
+updates post winning I figured I would write about the litmus test that I
+devised, to know that everything is working right.
+
+It should be noted however that unless you know the code **EXTREMELY** well
+(which probably only means me :-) and this will probably get less true as time
+goes by) it might be hard to perform this and be 100% certain it is okay. This
+especially goes because there are things that most people would think are logic
+flow errors but are very intentional. I mentioned some in my
+[remarks](index.html).
+
+I did briefly mention this in my [remarks](index.html) but here is a bit more
+detail. It seems fitting here as the obfuscation talks about `goto`s more.
+
+The key here is the events switch. If every event can fire without, for
+instance, running through the game until you die, and you can also get sick, get
+hurt (both of which can happen with different events or rather will) and also
+make sure to have the right amount of (for instance) ammo for one event, right
+amount (> 666 and < 666) money for when you need the doctor, and also trying to
+spend too much money (as in you don't have that much money as well as > 666) at
+the fort (this can also be done in the beginning of the game before you go on
+the trail because it's actually the same code reused) along with some things
+only I might know (but perhaps not? You decide! :-) ) then <del>you</del> I can
+be sure the code works as intended.
+
+One of the above things actually did go wrong earlier on but fortunately it was
+caught early on as it required rolling back a commit; if I had done many commits
+after the problematic commit I would have lost a lot of time I kept adding more
+events and more `goto`s.
+
+Here is how to test every event in the event loop, though as some are chances
+based on which event fires, you might have to run it multiple times. But since
+one should go through the game or at least a few turns (at least!) per event,
+this is not a problem. I should remind you that there are times where an event
+might fire but might not do anything. This happens to do with event 11 and where
+it goes and what it does.
+
+To really test it well the last time I did this was in the
+[prog.gotos.c](%%REPO_URL%%/2024/ferguson1/prog.gotos.c) file as it's the code
+merged close together, taking it WAY BEYOND rule 2b limit (due to `;`, `{`
+and `}` not being followed by spaces and the prog.c being at the max already).
+This benefited me as I could also verify that the formatting did not get messed
+up i.e. the code did not get mangled when merging lines.
+
+The event switch is the following code (from prog.c):
+
+``` <!---c-->
+    Y:switch(q=x(0,22))
+
+```
+
+so what you do is change the `x(0,22)` to go from 0 to 22, meaning that you have
+to compile the code 23 times. If one wants to check the `heaven` label they need
+to modify `i` to be `17` at a specific spot (well - or end up triggering a
+certain piece of code, which I think is in event 11, though it's not as
+straight-forward as just testing that, although you could just set `i=17;` in
+the right spot).
+
+One should also try hunting and also going to the fort, at random times, but it
+should not be needed in every run. The same applies to the other checks that
+aren't event specific.
+
+One more thing about events: some events can be a different message per instance
+so just because the same message does not repeat every time for a specific event
+does not mean it is not correct; not only is this the case for event 11 but it's
+also the case for some others too. Another example is event 15 but it's not the
+only one (well, it might be, but there are various other events - events are not
+just in the event switch! - that have different messages depending on the pRNG
+and other circumstances).
+
+One other thing is that it is good to test having no oxen and also having enough
+oxen where you will eat one (this can depend on the event and also if you're out
+of food so this also varies).
+
+As you can see there is a lot to test but doing this, assuming I've not left
+anything out, allows one to verify the code is correct. This is one of the
+reasons I took extreme care when developing and why it required constant
+testing! In fact the bug I mentioned where it took me from an event all the way
+to the end of the game, was only for one event, so if that didn't fire I might
+have missed it until I checked every event. This is how perilous it is with
+`goto`s but as I noted even though I have (pre-processed) 152 `goto`s it works.
+Of course it shouldn't but it does.
+
+
+<div id="conclusions">
+<div id="conclusion">
 ### Conclusions
+</div>
+</div>
 
 A question: is this well-rounded in obfuscation as the judges like? Definitely.
 
 The fact that close to 200 NUL terminated strings are in a single `char *` (!!),
-the odd looking compound literal, the maze of `goto`s (<del>116</del> 131 or
-<del>134</del> 149 depending on if you pre-process the code), the bastardised
+the odd looking compound literal, the maze of `goto`s (<del>116</del> 134 or
+<del>134</del> 152 depending on if you pre-process the code), the bastardised
 Duff's device, the strange labels inside `switch()`s, the jumping into and out
 of `switch()`s only to jump back in (or out), the for loops split across several
 parts of the code (one making it look like variables are uninitialised), if/else
@@ -1705,15 +1802,18 @@ much spaghetti that it's wasted, if it can even be cooked. I believed I reached
 the latter. But of course that was a practical choice - and not my complete
 version. It was just easier to test as I had another version to contend to.
 
-But let's say I had more space with iocccsize: do you REALLY expect me to add
-more spaghetti? There isn't anything that could be done, even if it was possible
-to maintain this huge platter of delicious spaghetti without gaining fifty
-kilograms. Besides, I don't want to see spaghetti EVER AGAIN!! I've had enough
-of it for a lifetime! Okay, that's not really true...it DOES sound good but I
-won't likely be having it for a while. Can you actually blame me though? This
-spaghetti almost strangled me to death, like it did the Devil (I provided
-photographic proof of this earlier if you missed that). Still...now that things
-have settled a bit, I rather desire very much a platter of spaghetti.
+Do you REALLY expect me to add more spaghetti? There isn't anything that could
+be done, even if it was possible to maintain this huge platter of delicious
+spaghetti without gaining fifty kilograms. Besides, I don't want to see
+spaghetti EVER AGAIN!! I've had enough of it for a lifetime! Okay, that's not
+really true...it DOES sound good but I won't likely be having it for a while.
+Can you actually blame me though? This spaghetti almost strangled me to death,
+like it did the Devil (I provided photographic proof of this earlier if you
+missed that). Still...now that things have settled a bit, I rather desire very
+much a platter of spaghetti.
+
+Okay so I **did** it after the win for the 'full version' but that only makes it
+even more ludicrous doesn't it?
 
 I have already demonstrated several other subtle and unique things but the
 `goto`s are what really makes it hard to parse; the other things are REALLY cool
@@ -1721,14 +1821,16 @@ I have already demonstrated several other subtle and unique things but the
 think), but those would be much less tasty without the HUGE pot of spaghetti
 (okay, once some of it is put on a plate).
 
-If I added more `goto`s it would be meaningless. A large family might not even
-be able to eat it all without some of it going to waste. The `goto`s and how
-they're used make it hard to follow this code, in fact making it very
-unpredictable. It is constantly jumping to unusual places and doing things that
-seem downright illegal. It should not work.
+If I added more `goto`s it would be meaningless (does that mean that the fact I
+did it it's meaningless? In a strange way the answer is it's not actually
+meaningless :-) ). A large family might not even be able to eat it all without
+some of it going to waste. The `goto`s and how they're used make it hard to
+follow this code, in fact making it very unpredictable. It is constantly jumping
+to unusual places and doing things that seem downright illegal. It should not
+work.
 
 But it **DOES** work. Exactly as I meant. As noted in my concluding remarks in
-my [remarks above](#devil), I started introducing bugs. It was extremely hard to
+my [remarks above](index.html#devil), I started introducing bugs. It was extremely hard to
 find ways to make the spaghetti even more twisted. How is that even POSSIBLE? I
 don't think you could manage that with ACTUAL spaghetti!
 

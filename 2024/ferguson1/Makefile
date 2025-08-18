@@ -229,6 +229,14 @@ ${PROG}.scrnshot: ${PROG}.c
 	${MAKE} padding
 	${CC} ${CFLAGS} -DDATA='"data.scrnshot"' ${PROG}.c -o $@ ${LDFLAGS}
 
+
+# for testing purposes of prog.gotos.c - part of the enhanced litmus test
+${PROG}.gotos: ${PROG}.gotos.c
+	${MAKE} padding
+	${CC} ${CFLAGS} -DDATA='"data"' ${PROG}.gotos.c -o $@ ${LDFLAGS}
+
+
+
 # this tool creates the data files (emoji and ASCII only versions).
 #
 # The warnings disabled are unfortunate. One is actually an extra sanity check

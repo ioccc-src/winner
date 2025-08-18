@@ -92,6 +92,7 @@
                                 goto TT;
                             goto P;
                         goto U;
+                        w(i) goto _;
                                 goto QQ;
                                 goto KK;
                     goto z;
@@ -102,7 +103,9 @@
                         goto yy;
                 goto Z;
                 goto rr;
-                    w(27) I : goto a;
+                goto _;
+                    w(27) goto _;
+                    goto a;
                 goto Z;
             goto Z;
             goto Z;
