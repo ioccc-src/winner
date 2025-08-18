@@ -83,10 +83,6 @@ RECIPE NOTES BECAUSE THEY'RE _EXTREMELY IMPORTANT!_**
     then allow to **FULLY COOL _ON RACKS!_** The important point is to **MAKE SURE
     THAT THEY _DON'T OVERCOOK_**.
 
-*   When the recipe was first written they sold powdered sugar in a box; now
-    it's confectionery sugar in a bag. My mum experimented with the amount and
-    found that 4 cups seems about right.
-
 *   **USE _WHOLE MILK!_** Don't try skim milk or whatever per cent of fat milk you
     have.
 
@@ -187,6 +183,13 @@ bowl can sit in.
     vanilla (simply because we couldn't get pure vanilla at the time we needed
     it). Just don't do it.
 
+*   When the recipe was first written they sold powdered sugar in a box; now
+    it's confectionery sugar in a bag. My mum experimented with the amount and
+    found that 4 cups seems about right. This can be adjusted to your taste.
+
+*   If you have leftover icing after icing the cake, for next time, it might be
+    that you didn't put as much between the layers as we do. Of course you could
+    put it elsewhere if you wish to.
 
 
 ## Icing Directions
@@ -195,7 +198,7 @@ bowl can sit in.
 1.  Combine **4 OZ UNSWEETENED CHOCOLATE** and **1/2 CUP *MARGARINE (NOT
     BUTTER!)*** in pan. Melt and remove from heat. **DO NOT LET IT GET SOLID!**
 
-2.  Combine **3 1/4 CUPS POWDERED SUGAR**, **1/2 CUPS WHOLE MILK** and **2 TSP
+2.  Combine **4 CUPS POWDERED SUGAR**, **1/2 CUPS WHOLE MILK** and **2 TSP
     ***PURE* VANILLA EXTRACT (_NOT IMITATION VANILLA!_)** into a bowl. **STIR
     UNTIL SMOOTH**.
 

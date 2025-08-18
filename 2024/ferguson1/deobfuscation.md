@@ -50,8 +50,8 @@ flood of the message each turn).
 - h: I believe this is if you were injured and could afford the doctor.
 - c: hit blizzard.
 - X: passed South Pass.
-- i: been poisoned; you will be dead shortly (sorry - that's what happens when
-you have a pact with the devil!).
+- i: about to be strangled to death by the Flying Spaghetti Monster after
+indulging in too much spaghetti.
 - g: how many limbs you've had to cut off (surgeon's cut edition)
 - t: temporary array for purchasing at forts.
 - u: temporary unsigned int to iterate through array `t` (and maybe other

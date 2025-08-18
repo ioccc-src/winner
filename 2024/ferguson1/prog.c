@@ -14,15 +14,13 @@ long Z(long x){ return x * 1663; }
 #define S(x,z) while(scanf(&y[Z(x)],&z)!=1)while(getchar()!='\n');
 void V(long x){ printf("%s",&y[Z(x)]); }
 long k() { return E>0?x(0,99)>49:0; } int main() {
-switch(1)
-             { j:if(z)goto A; E*=5; B:
+switch(1) { j:if(z)goto A; E*=5; B:
             printf(&y[Z(12)],T); if(z) { goto f; } goto PP; default: srand(time(0));
 K=fopen(DATA,"r"); if(!K||getdelim(&y,&J,EOF,K)<0)
  goto hell; goto M; OO:if(b<1) { if(a){ w(40) PP:goto G; } if(f) w(41) w(45) g:goto S; } w(M>2169?47:45)
       hell:
                 return
-       666;         rr:;
-        goto CC; yy:
+       666;         rr:; goto CC; yy:
 { if(b<1||M<0||M>2169){ goto _; F:V(51); R+=18; goto L; } goto i;
 P:for(X=1; X<--(unsigned){ 7 } ; ){ goto kk; BB:*o[X]+=(X==2?t[X]*5:t[X]); goto HA; TA:++X; goto at; ZZ:; }
 printf(&y[Z(11)],R,E,G,O,N,T,b,M); if(x(0,1))goto I; R:if(R<14)V(37); if(z) { z=0; l:{ if (k()) { if (x(0,9) > 4) { V(52);
@@ -55,11 +53,11 @@ case 7:V(83); M-=10; goto Z; case 8:V(86); R-=30; G-=20; O-=40; V
 case 3:goto J; N:goto Q; case 4:i=17; } } case 2:V(5); } goto k; u:if(M<1951||W){ goto
 W; } W=1;
 if(!d&&!x(0,4)){ V(75); d=1; R+= 50; }
-if(!x(0,3)){ w(x(0,4)?84:x(0,4)?33:34) e:if(O>39){ goto xx; vv:v=0; goto mm; d:{ if(!v)goto TT; goto P; } } goto U; } if (x(0,9) < 5) w:V(35); c=1; M-=101; ++E; k:M-=10; W:if(x(0,1)){ if (d) V(39); if(e)V(25); } while(i)heaven:{ w(i) } if (!B&&(f||
+if(!x(0,3)){ w(x(0,4)?84:x(0,4)?33:34) e:if(O>39){ goto xx; vv:v=0; goto mm; d:{ if(!v)goto TT; goto P; } } goto U; } if (x(0,9) < 5) w:V(35); c=1; M-=101; ++E; k:M-=10; W:if(x(0,1)){ if (d) V(39); if(e)V(25); } while(i)heaven:{ w(i) goto _; } if (!B&&(f||
 a)){ if(d&&a) V(91); if(T<666){ goto QQ; KK:Q=a?1:Q; h=f?1:h; f=a=0; V(93); T-=666; } else{ goto KK;  } JJ:; } b-=f?15
 	:h?5:0; b-=a?5:Q?15:0; M+=170; M+=O>	 99	? 30:- 99;
 b-=10; goto z; J:V(a=54); } goto k; MM
-	:goto k; default: if(q>10) { goto k; } if(q>7) { if(N<5) { w(99) goto M; G:goto yy; } V(13); N-=5; } goto Z; _:goto rr; S:if (E>1999){ w(27) I:goto a; } V(82); M-=9; N-=5; R-=20; goto Z;
+	:goto k; default: if(q>10) { goto k; } if(q>7) { if(N<5) { w(99) goto M; G:goto yy; } V(13); N-=5; } goto Z; _:goto rr; goto _; S:if (E>1999){ w(27) goto _; I:goto a; } V(82); M-=9; N-=5; R-=20; goto Z;
  } M-=17; goto Z; case 14:V(74); goto Z; case 15:V(x(0,1)?69:68);
  goto Z; ha:V(78); if(k()){ goto go; to:; } else { goto ii; jj:; } goto o; case 11:goto V; case
 	12:V(94); M-=5; b-=19; N -= 5; goto Z; tt:goto Y; case 0:V(20); Z:; } if(O>39&&!x(0,9)){goto O; xx:V(e=x(0,1)?18:19); O -= 40; goto q; } E:if(M<951) goto W; if (G < 36){ goto b; } if (x(0,9) > 2) goto n; V(96); if (x(0,1)) { goto p; Q:for (X=

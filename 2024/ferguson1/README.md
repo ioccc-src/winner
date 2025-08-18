@@ -32,7 +32,7 @@ YouTube show for this entry:
 The author provided two alt versions: one submitted with more events, though not
 many more, along with a few other functional differences, and after winning, the
 prog.c was made the prog.alt2.c code and the prog.c was made the complete
-version (149 `goto`s up from 134) that was not made prog.c during submission for
+version (152 `goto`s up from 134) that was not made prog.c during submission for
 practical reasons.
 
 
@@ -57,7 +57,7 @@ practical reasons.
 ## Judges' remarks:
 
 You will have to go to "Fun-Damentals" to understand the logic flow of this
-game. While the code might goto as many as 149 times to travel from `main()` to
+game. While the code might goto as many as 152 times to travel from `main()` to
 a successful `exit(666)` you may have a devil of a time trying to figure out how
 this program actually does what it does as it jumps hundreds if not thousands of
 times.
@@ -78,7 +78,7 @@ finish and not counting macros but counting all function calls (not libc
 functions just the few functions in prog.c), there were a total of **1416** (!)
 line jumps. Skipping prog.c function calls and it was still **1131** jumps! The
 prog.c, if you remove `#include`s, blank lines, lines with just a brace and
-lines that have only variables, **only has 58 (!) lines of code**. A very tiny
+lines that have only variables, **only has 55 (!) lines of code**. A very tiny
 fraction of the time a line might be repeated in a row ONCE but that does not
 really matter, as it is still technically a jump.
 
@@ -99,7 +99,7 @@ depend on what you're doing):
     /heaven\|goto\|666\|hell
 ```
 
-Read it and <del>weep</del> and scream (or curse :-) )!
+Read it and <del>weep</del> scream (or curse :-) )!
 
 **NOTE**: I actually submitted two versions, one encrypted (even emojis); any
 document mentioning encryption is left <del>for personal reasons</del> out of
@@ -112,7 +112,7 @@ extended power cut or something else goes wrong.
 
 
 <div id="devil">
-### A Pact With the Devil On the Oregon Trail (...and his <del>134</del> 149 regrets of goto)
+### A Pact With the Devil On the Oregon Trail (...and his <del>134</del> 152 regrets of goto)
 </div>
 
 The _Go To Hell In A Handcart Travel Company_ **PROUDLY** welcomes all sinners to
@@ -192,13 +192,17 @@ things I have done - and some are really quite unique and cool, or at least I
 think they are unique (I have never seen these things before nor have I even
 seen any suggestion of them before, one because it's absolutely contrary to how
 it works in C, namely near 200 NUL terminated `char *`s in a single flat `char
-*` - no, not an array of `char *[]`).
+*` - no, not an array of `char *[]` and not a `char **`!).
 
 See [obfuscation.html](obfuscation.html) and my [concluding
 remarks](#conclusions) for
 more details on just how many `goto`s I have but beware of monsters. But be careful
 if you have a heart condition. And if you're a computer scientist make sure
-you're not at risk of stroke.
+you're not at risk of stroke. The [obfuscation.html](obfuscation.html) file has
+a [litmus test](obfuscation.html#litmus) I devised to make sure everything is
+working right, although you have to know the program code well in order to
+really be sure of it, especially as there are some things that seem like flow
+control errors but are intentional.
 
 The [obfuscation.html](obfuscation.html) file discusses those other cool things as
 well of course, and they might be briefly brought up in my concluding remarks as
@@ -2501,12 +2505,12 @@ really does not seem to be dead (it's quite sneaky).
 
 I could be wrong on whether this is one the compiler missed though: it's hard to
 follow all the `goto`s. As you find out in [obfuscation.html](obfuscation.html) it's
-149 after pre-processing! The second alt code is what I originally submitted as
-prog.c but after winning I made the more complete (149 gotos post cpp, 131 prior
+152 after pre-processing! The second alt code is what I originally submitted as
+prog.c but after winning I made the more complete (152 gotos post cpp, 134 prior
 to cpp) version (that was not submitted for practical reasons) the prog.c.
-Nonetheless 134 is already way too many. 149 is much worse. Even 116 which was
-the original prog.c before cpp is too many; that's 7 more than the 1978 BASIC
-game (!). But it's actually 131 which is 22 more.
+Nonetheless 109, what the 1978 BASIC game had, is already way too many, but that
+at least has the excuse of being in BASIC. Being in a smaller program and in C,
+having 134/152 `goto`s is far worse.
 
 Yes I might be mad. But then again I might just be the Devil. Who knows? What I
 do know is code that is meant to be reached is reached! Yes I've played it many
@@ -3072,11 +3076,11 @@ what this is. And even then it shouldn't be easy to follow the code, for reasons
 I mentioned in [obfuscation.html](obfuscation.html) (and some briefly below).
 
 In general I think it's extremely hard to follow the flow of this program due to
-the abuse of <del>116</del> 131 `goto`s, more than the BASIC game.
-<del>134</del> 149 when pre-processed. But
-let's be honest, or 131 for a small C program is too many but to be seven more
-than the larger BASIC program? That is hard to fathom. Not that <del>116</del>
-131/149 is not too many for larger programs...or one goto, for that matter.
+the abuse of <del>116</del> 134 `goto`s, more than the BASIC game.
+<del>134</del> 152 when pre-processed. But let's be honest, 134 for a small C
+program is too many but to be 25 (or 43 pre-processed) more than the larger
+BASIC program? That is hard to fathom. Not that <del>116</del> 131/149 is not
+too many for larger programs...or one goto, for that matter.
 
 As noted elsewhere, I originally submitted a slightly less goto complete
 version, with 116/134 gotos, before/after the cpp, which was due to practical
@@ -3203,7 +3207,7 @@ I probably wouldn't have written code that looks illegal like the
 if not most contexts it IS illegal). The bastardised Duff's device I would not
 do. I would not put the entire function in a switch.
 
-But above all I would not have used <del>116</del> 131 (or <del>134</del> 149)
+But above all I would not have used <del>116</del> 134 (or <del>134</del> 152)
 `goto`s. Or ten. Or five. Or even one. Better to let code generators like
 flex/bison take the crown. I have dethroned them though (at least from what I
 have seen before) - by a huge amount. But perhaps
@@ -3278,7 +3282,7 @@ mean many `goto`s.
 There are so many `goto`s that to try and move code to add more `goto`s is
 basically pointless, unless as a joke. In this program it would really not do
 anything. I essentially ran out of code to move. Even if I had more though,
-isn't <del>134</del> 149 enough, especially in a program that, counting spaces,
+isn't <del>134</del> 152 enough, especially in a program that, counting spaces,
 including unnecessary spaces to add to the size, is only 4666 bytes? It would be
 smaller except to stay on theme. Doing more would no longer be funny. Enough is
 enough.  Or at least I hope. Okay...actually I take that back. More would be
@@ -3336,9 +3340,9 @@ of **1416** (!) changes, counting function calls, and **1131** (!) excluding
 function calls. Macros are not counted of course.
 
 This program, if you remove blank lines and lines with just a brace,
-`#include`s and only variables, has a mere 58 (!) lines.
+`#include`s and only variables, has a mere 55 (!) lines.
 
-A program that has only 58 lines of code that jumps 1416 (counting functions) or
+A program that has only 55 lines of code that jumps 1416 (counting functions) or
 1131 (just in main()) times is astonishing. Of course that's not the
 only technique but the title of the award and the judges' remarks are rather
 fitting as it is diabolical to follow this code (and the theme of the game fits
@@ -3359,7 +3363,7 @@ It is not about not trying. But even IF he WAS right, he
 sure as hell is wrong NOW. Anyone who thinks otherwise needs to try and debug
 my program - or maintain it. Or write it.
 
-It would have been SO MUCH EASIER if I did not use <del>134</del> 149 `goto`s.
+It would have been SO MUCH EASIER if I did not use <del>134</del> 152 `goto`s.
 Actually, even a tiny portion of that would make it harder. Nobody, whether
 they're in their right mind or not, would WANT to MAINTAIN this, or something
 even close to it.  Feel free to pass on judgement to me. I welcome it! You have
@@ -3499,8 +3503,8 @@ Anyway, I am reminded of Apple's **SINGLE** misplaced `goto` that caused a
 That's all it takes: **JUST ONE `goto` led to a CVE**!
 
 It is ironic, perfect and hilarious that it was `goto fail;` as it was actually
-a failure in using `goto`! My code has <del>134</del> 149 (with the cpp,
-<del>116</del> 131 without). That is obscene. I did not fail. At all.
+a failure in using `goto`! My code has 134/152 (pre-pre-processed,
+pre-processed). That is obscene. I did not fail. At all.
 
 On the contrary I have made a point. Okay, that is not the only reason I did it
 but when I got started I couldn't help it...I thought it was (and still do think
@@ -3544,8 +3548,8 @@ In BASIC and asm and some other languages jumps are a core part of the language.
 And those languages can be harder to maintain partly because of jumps. C is not
 one of those languages. Or it wasn't until now.
 
-Yes, yes...I know, I **KNOW** I put in <del>116</del> 131 `goto`s with
-<del>134</del> 149 when pre-processed and that is probably more extreme than any
+Yes, yes...I know, I **KNOW** I put in <del>116</del> 134 `goto`s with
+<del>134</del> 152 when pre-processed and that is probably more extreme than any
 other C program, especially in such a small program (and I REALLY hope I'm right
 there!). But **this does NOT matter**!  Even if one or two were not harmful (but
 they are) it's jumping down a rabbit hole that can very easily get deeper and
@@ -3601,7 +3605,7 @@ recognise what I mean - and yes it's in the game).
 On a lighter note (or maybe this is darker?): did you know that every time a
 `goto` is used an angel (whatever you consider an angel) **DIES** and goes
 straight to HELL? You don't really want that do you? I didn't think so. Yes I
-killed <del>134</del> 149 angels. YES I condemned <del>134</del> 149 angels to
+killed <del>134</del> 152 angels. YES I condemned <del>134</del> 152 angels to
 eternal torment. I **HAD** to.  I don't regret it - but you should, if you
 **ever** write something like this outside the IOCCC. In fact you should regret
 a single <del>goto</del> angel dying. Even if they did not go straight to hell
