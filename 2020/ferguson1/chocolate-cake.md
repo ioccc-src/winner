@@ -1,6 +1,6 @@
 # Double-layered Chocolate Fudge Cake
 
-## Last updated: Wed 08 Jan 2025 17:32:30 UTC
+## Last updated: Mon 18 Aug 2025 18:10:13 UTC
 
 Here's a delicious double-layered chocolate fudge cake that is
 something of my mum's speciality. It's complicated and I should warn that nobody
