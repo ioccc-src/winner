@@ -17,7 +17,7 @@ long k() { return E>0?x(0,99)>49:0; } int main() {
 switch(1) { j:if(z)goto A; E*=5; B:
             printf(&y[Z(12)],T); if(z) { goto f; } goto PP; default: srand(time(0));
 K=fopen(DATA,"r"); if(!K||getdelim(&y,&J,EOF,K)<0)
- goto hell; goto M; OO:if(b<1) { if(a){ w(40) PP:goto G; } if(f) w(41) w(45) g:goto S; } w(M>2169?47:45)
+ goto hell; goto M; OO:if(b<1) { if(a){ w(40) PP:goto G; } if(f) w(41) w(36) g:goto S; } w(M>2169?47:36)
       hell:
                 return
        666;         rr:; goto CC; yy:
