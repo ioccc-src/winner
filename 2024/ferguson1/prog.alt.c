@@ -54,9 +54,10 @@ case 2: goto T; default: goto y; } } L:goto v; T:l=1; if (I<9)V(16); else { if (
 
 	 R += 23; if(!x(0,9))i=17; } else{ V(51); R+=18; } } else { V(53); } I-=9; j M-=45; } l=0; f:  z=0;
 
-    X: if(R<1){ if(O>39){ V(e=x(0,1)?18:19); O -= 40; goto q; o: goto Y; ii:goto l; } w(24) } else goto K; Y:  switch(q=x(0,23))
+    X: if(R<1){ if(O>39){ V(e=x(0,1)?18:19); O -= 40; goto q; o: goto Y; ii:goto l; } w(24) } else goto K; Y:  switch(q=x(0,24))
 
 { s: goto h;
+    case 24:if(E>10){ V(90); E-=10; } break;
     case 23:if(++g<4) V(73); else w(147) break;
 case 1: V(95); R+=5; break; S: if (I>1999) w(27) V(82); M-=9; N-=5; R-=20; goto Z;
  case 18:V(26); break; case 13: V(28); break;
