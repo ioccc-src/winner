@@ -1,6 +1,6 @@
 # Double-layered Chocolate Fudge Cake
 
-## Last updated: Mon 18 Aug 2025 18:10:13 UTC
+## Last updated: Tue 19 Aug 2025 12:06:49 UTC
 
 Here's a delicious double-layered chocolate fudge cake that is
 something of my mum's speciality. It's complicated and I should warn that nobody
@@ -106,39 +106,44 @@ RECIPE NOTES BECAUSE THEY'RE _EXTREMELY IMPORTANT!_**
 
 ## Cake Preparation
 
-1.  Lightly grease **TWO 9 x 1.5 INCH ROUND PANS**; lightly dust with flour.
+0.  Lightly grease **TWO 9 x 1.5 INCH ROUND PANS** with shortening and then
+lightly dust with flour. Even if you have a non-stick cake pan you should do
+this! We have had it happen before (and I have seen it in other foods as well)
+where the cake sticks to the pan. You do not want this to happen!
 
-2.  Preheat oven to **350 F / 176.67 C**.
+1. Preheat oven to **350 F / 176.67 C**.
+
+2. Turn on the air conditioning if you need :-)
 
 
 ## Cake Directions
 
-1.  Melt **3 OZ UNSWEETENED CHOCOLATE** in double boiler or small bowl over
+0.  Melt **3 OZ UNSWEETENED CHOCOLATE** in double boiler or small bowl over
     **hot (*BUT NOT BOILING*) water**; let cool whilst proceeding.
 
-2.  Sift **2 and 1/4 CUPS FLOUR**, **2 TSP BAKING SODA**, and **1/2 TSP SALT**
+1.  Sift **2 and 1/4 CUPS FLOUR**, **2 TSP BAKING SODA**, and **1/2 TSP SALT**
 
-3.  Beat **1 STICK MARGARINE (_NOT BUTTER!_)** in large bowl *until soft*. Again
+2.  Beat **1 STICK MARGARINE (_NOT BUTTER!_)** in large bowl *until soft*. Again
     **MARGARINE, _NOT BUTTER!_**
 
-4.  Add **2 and 1/4 CUPS PACKED BROWN SUGAR** and **3 EGGS**. Beat until light and
+3.  Add **2 and 1/4 CUPS PACKED BROWN SUGAR** and **3 EGGS**. Beat until light and
     fluffy.
 
-5.  Beat in **1 1/2 TSP _PURE_ VANILLA EXTRACT (_NOT IMITATION VANILLA!_)** and
+4.  Beat in **1 1/2 TSP _PURE_ VANILLA EXTRACT (_NOT IMITATION VANILLA!_)** and
     **_COOLED_ MELTED CHOCOLATE**.
 
-6.  Stir in dry ingredients alternately with **1 CUP SOUR CREAM**; always beat
+5.  Stir in dry ingredients alternately with **1 CUP SOUR CREAM**; always beat
     until smooth.
 
-7.  Stir in **1 CUP *BOILING* WATER**.
+6.  Stir in **1 CUP *BOILING* WATER**.
 
-8.  Pour into prepared pans.
+7.  Pour into prepared pans.
 
-9.  Bake for **ONLY 35 MINUTES** (**NO LONGER!**) at **350 F / 176.67 C**.
+8.  Bake for **ONLY 35 MINUTES** (**NO LONGER!**) at **350 F / 176.67 C**.
 
-10. When you take the cake out put the cake pans on a cooling rack for **_ONLY
-    TWO MINUTES AND THEN _IMMEDIATELY TURN CAKES OUT ON TO RACK_**. Let **COOL
-    _COMPLETELY!_**
+9. When you take the cake out put the cake pans on a cooling rack for **_ONLY
+   TWO MINUTES AND THEN _IMMEDIATELY TURN CAKES OUT ON TO RACK_**. Let **COOL
+   _COMPLETELY!_**
 
 Assuming you use round cake pans, if everything is okay, it might look something
 like this after pulling it out of the oven and putting it on cooling racks,
@@ -147,6 +152,29 @@ though these are very old cake pans and cooling racks:
 <img src="cake-on-cooling-rack.jpg"
  alt="photograph of cake on cooling rack"
  width=756 height=602>
+
+### Cake tips
+
+0.  It might be helpful if you have everything out before you start making the
+    cake. It can also be helpful if you put things away after you use them.
+
+1.  A double boiler does help but as long as it melts fine it should be okay.
+
+2.  Keep in mind they no longer make things like they used to, and unfortunately
+    some of the things are not made as good as they once were, so you'll have to
+    make do with what you have available. We have VERY OLD brushes to grease
+    pans and from what we have seen what they make now is harder to work with.
+    But as long as you do grease it okay it should be fine. Again even if you
+    have a non-stick pan do this!
+
+3.  If you have a little batter left (but it should be very little) you might
+    enjoy tasting it. On the other hand you should NOT taste the melted
+    chocolate unless you like it bitter :-) (don't worry - it'll be the opposite
+    of bitter in the cake). And yes at least one of us has tried this before,
+    probably multiple times.
+
+4.  You DO NOT HAVE to use round cake pans but they work nicely (and are great
+    for double layer cakes).
 
 
 ## Icing Ingredients
@@ -195,18 +223,70 @@ bowl can sit in.
 ## Icing Directions
 
 
-1.  Combine **4 OZ UNSWEETENED CHOCOLATE** and **1/2 CUP *MARGARINE (NOT
+0.  Combine **4 OZ UNSWEETENED CHOCOLATE** and **1/2 CUP *MARGARINE (NOT
     BUTTER!)*** in pan. Melt and remove from heat. **DO NOT LET IT GET SOLID!**
 
-2.  Combine **4 CUPS POWDERED SUGAR**, **1/2 CUPS WHOLE MILK** and **2 TSP
+1.  Combine **4 CUPS POWDERED SUGAR**, **1/2 CUPS WHOLE MILK** and **2 TSP
     ***PURE* VANILLA EXTRACT (_NOT IMITATION VANILLA!_)** into a bowl. **STIR
     UNTIL SMOOTH**.
 
-3.  Add chocolate mixture.
+2.  Add chocolate mixture.
 
-4.  Set bowl in pan/bowl of ice and water. Beat with spoon/mixer until it's
+3.  Set bowl in pan/bowl of ice and water. Beat with spoon/mixer until it's
     thick BUT not too thick. **Make *SURE* ICING DOES *NOT* GET WET!** The idea is to
     **MAKE THE BOWL IT'S IN COLD *BUT TO NOT LET THE ICING GET WET!***
+
+## Icing tips
+
+0.  If the top layer starts to slide off, for instance because it's too hot where
+    you are (this happens to us sometimes), you can get toothpicks and put them
+    in the two layers so they stay together. We usually just keep them there and
+    eat carefully but it might be possible to take them out - if you can remove
+    them carefully.
+
+1.  It is quite nice to have a thicker layer of icing between the two layers. If
+    it's about the same as on the outside of the cake it's how we do it. If you
+    have leftover icing when done it's very possibly because of this. However,
+    you can adjust to your desire.
+
+2.  A spatula is helpful when icing the cake. As there are a variety of types,
+    shapes and sizes (often very different in type, shape and size, including
+    flexibility) and as different people will find different kinds/shapes/sizes
+    easier, you'll have to test it out for yourself. Using a knife probably is
+    not a good idea even if it can work, if you have a spatula.
+
+3.  Although it will depend on preference, I can say that a lot is put on even
+    from the beginning. Just make sure you have enough for all parts. It might
+    be helpful if you consider where you need the icing so you can gauge how
+    much of the icing should be in each place. You'll want icing on top of the
+    first layer (so between) and all round the cake as well. It is a thick layer
+    in every place.  Remember that the icing is fudge!
+
+4.  Don't put icing under the bottom layer of the cake! This might seem obvious
+    but just in case.  When you slice the cake it should be on all sides, except
+    that the top and bottom of the slice will be the cake itself (the icing will
+    be between the two layers of course).
+
+5.  You can and probably should adjust the icing to taste. It is something my mum
+    does too - she will test taste the icing to be sure it's just right.
+
+6.  Do make sure the icing is cool enough but if you follow the toothpick trick
+    it should help if it is not quite enough.
+
+7.  It is not an exact science. You might very well have to play with it a bit.
+    With different spatulas and also less experience it might take a few tries
+    to get it to where you want it. My mum has been doing this for at least five
+    decades so she's had a lot of time to experiment with it! In other words
+    don't worry about it too much.
+
+8.  You do not have to make it pretty like the picture shows. Even if the final
+    result doesn't look pretty it will not change the taste, supposedly :-) No,
+    it really does not matter. You can try if you wish but if you're
+    uncomfortable doing it or you don't know how that's perfectly fine.
+
+9.  If you have a bit left over (though this should be very little) feel free to
+    lick the spatula and bowl clean! :-)
+
 
 [IOCCC and chocolate]: cake.jpg
 [chocolates FAQ]: https://www.davidlebovitz.com/chocolate-faqs/
