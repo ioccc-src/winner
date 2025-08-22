@@ -217,9 +217,9 @@ ${PROG}.alt: ${PROG}.alt.c
 
 # suggested way(s) to run alt code, if you include a prog.alt.c
 #
-# XXX - You are better off supplying a try.sh script, than using a try Makefile rule.
+# XXX - You are better off supplying a try.alt.sh script, than using a try.alt Makefile rule.
 #
-# XXX - If you have a try.sh script, then please remove this try.alt rule
+# XXX - If you have a try.alt.sh script, then please remove this try.alt rule
 #
 # XXX - If you do NOT have a prog.alt.c, then please remove this try.alt rule from your Makefile
 #
