@@ -104,7 +104,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="2.0.0 2025-03-13"
+export VERSION="2.0.1 2025-08-23"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -210,7 +210,7 @@ function output_modtime
 	# SC2012 (info): Use find instead of ls to better handle non-alphanumeric filenames.
 	# https://www.shellcheck.net/wiki/SC2012
 	# shellcheck disable=SC2012
-	TZ=UTZ "$LS_TOOL" -D '%FT%T+00:00' -ld "$FILENAME" | awk '{print $6;}'
+	TZ=UTC "$LS_TOOL" -D '%FT%T+00:00' -ld "$FILENAME" | awk '{print $6;}'
 	status_codes=("${PIPESTATUS[@]}")
 	if [[ ${status_codes[*]} =~ [1-9] ]]; then
 	    echo "$0: ERROR: in output_modtime:" \
