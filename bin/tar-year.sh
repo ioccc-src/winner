@@ -104,7 +104,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 
-export VERSION="2.0.0 2025-03-13"
+export VERSION="2.0.1 2025-08-23"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -921,7 +921,7 @@ if [[ -n $REBUILD_TARBALL ]]; then
 
 	# determine the timestamp of now
 	#
-	TAR_TIMESTAMP=$(TZ=UTZ date '+%s')
+	TAR_TIMESTAMP=$(TZ=UTC date '+%s')
 	status="$?"
 	export TAR_TIMESTAMP
 	if [[ $status -ne 0 ]]; then

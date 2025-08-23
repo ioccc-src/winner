@@ -214,7 +214,7 @@ function output_modtime
 	status_codes=("${PIPESTATUS[@]}")
 	if [[ ${status_codes[*]} =~ [1-9] ]]; then
 	    echo "$0: ERROR: in output_modtime:" \
-		 "TZ=UTZ $LS_TOOL -D '%FT%T+00:00' -ld $FILENAME | awk .. failed," \
+		 "TZ=UTC $LS_TOOL -D '%FT%T+00:00' -ld $FILENAME | awk .. failed," \
 		 "error codes: ${status_codes[*]}" 1>&2
 	    exit 1
 	fi
@@ -781,12 +781,12 @@ else
 
 	# Try ls -D:
 	#
-	TZ=UTZ "$LS_TOOL" -D '%FT%T+00:00' -ld "$TOP_FILE" > /dev/null 2>&1
+	TZ=UTC "$LS_TOOL" -D '%FT%T+00:00' -ld "$TOP_FILE" > /dev/null 2>&1
 	status="$?"
 	if [[ $status -eq 0 ]]; then
 	    MODTIME_METHOD="ls_D"
 	    if [[ $V_FLAG -ge 5 ]]; then
-		echo "$0: debug[5]: TZ=UTZ $LS_TOOL -D '%FT%T+00:00' -ld works, MODTIME_METHOD: $MODTIME_METHOD" 1>&2
+		echo "$0: debug[5]: TZ=UTC $LS_TOOL -D '%FT%T+00:00' -ld works, MODTIME_METHOD: $MODTIME_METHOD" 1>&2
 	    fi
 
 	else

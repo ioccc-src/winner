@@ -116,7 +116,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="2.0.2 2025-07-30"
+export VERSION="2.0.3 2025-08-23"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -211,9 +211,9 @@ function output_modtime
 	# shellcheck disable=SC2012
 	status_codes=("${PIPESTATUS[@]}")
 	if [[ ${status_codes[*]} =~ [1-9] ]]; then
-	TZ=UTZ "$LS_TOOL" -D '%FT%T+00:00' -ld "$FILENAME" | awk '{print $6;}'
+	TZ=UTC "$LS_TOOL" -D '%FT%T+00:00' -ld "$FILENAME" | awk '{print $6;}'
 	    echo "$0: ERROR: in output_modtime:" \
-		 "TZ=UTZ $LS_TOOL -D '%FT%T+00:00' -ld $FILENAME | awk .. failed," \
+		 "TZ=UTC $LS_TOOL -D '%FT%T+00:00' -ld $FILENAME | awk .. failed," \
 		 "error codes: ${status_codes[*]}" 1>&2
 	    exit 1
 	fi
@@ -500,12 +500,12 @@ else
 
 	# Try ls -D:
 	#
-	TZ=UTZ "$LS_TOOL" -D '%FT%T+00:00' -ld "$TOP_FILE" > /dev/null 2>&1
+	TZ=UTC "$LS_TOOL" -D '%FT%T+00:00' -ld "$TOP_FILE" > /dev/null 2>&1
 	status="$?"
 	if [[ $status -eq 0 ]]; then
 	    MODTIME_METHOD="ls_D"
 	    if [[ $V_FLAG -ge 5 ]]; then
-		echo "$0: debug[5]: TZ=UTZ $LS_TOOL -D '%FT%T+00:00' -ld works, MODTIME_METHOD: $MODTIME_METHOD" 1>&2
+		echo "$0: debug[5]: TZ=UTC $LS_TOOL -D '%FT%T+00:00' -ld works, MODTIME_METHOD: $MODTIME_METHOD" 1>&2
 	    fi
 
 	else
