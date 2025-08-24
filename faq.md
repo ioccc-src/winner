@@ -1,6 +1,6 @@
 # IOCCC FAQ Table of Contents
 
-This is FAQ version **28.2.21 2025-07-31**.
+This is FAQ version **28.2.22 2025-08-24**.
 
 
 ## 0. [Entering the IOCCC: the bare minimum you need to know](#enter_questions)
@@ -3042,7 +3042,7 @@ answer).  In particular, the `author_handle` must be an ASCII string or
 32 characters or less that matches this regexp:
 
 ``` <!---re-->
-    ^[0-9A-Za-z][0-9A-Za-z._+-]*$"
+    ^[0-9A-Za-z][0-9A-Za-z._+-]*$
 ```
 
 Default `author_handle`'s do not have multiple consecutive `_` (underscore)
