@@ -461,7 +461,7 @@ weren’t written in a certain language. :-)</p>
 <p>The <a href="index.html">bin directory</a> holds tools that build files, such as HTML content, for the
 <a href="https://www.ioccc.org">official IOCCC website</a>.</p>
 <p>For HTML content, the <a href="index.html">bin directory</a> tools make use of HTML
-fragments from the <a href="../inc/index.html">inc directory</a> as well as various JSON
+fragments from the <a href="https://github.com/ioccc-src/winner/blob/master/inc/index.html">inc directory</a> as well as various JSON
 files and other content from the <a href="https://github.com/ioccc-src/winner">official IOCCC winner repo</a>.</p>
 <h2 id="bin-tools-options"><a href="index.html">bin/</a> tools options</h2>
 <p>With the exception of the <code>awk(1)</code> and <code>sed(1)</code> scripts, all the tools in this
@@ -844,7 +844,7 @@ do that, that is not a problem.</p>
 <li><a href="../bugs.html">bugs.html</a></li>
 <li><a href="../contact.html">contact.html</a></li>
 <li><a href="../faq.html">faq.html</a></li>
-<li><a href="../inc/index.html">inc/index.html</a></li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/inc/index.html">inc/index.html</a></li>
 <li><a href="../index.html">index.html</a></li>
 <li><a href="../judges.html">judges.html</a></li>
 <li><a href="../news.html">news.html</a></li>
@@ -972,7 +972,7 @@ became a favourite saying of his later, and passed into a proverb.</p>
 </div>
 <p>This is the primary tool that forms IOCCC generated HTML content from
 markdown files (permanent markdown files or temporarily generated
-markdown files) and HTML fragments from the <a href="../inc/index.html">inc directory</a>.</p>
+markdown files) and HTML fragments from the <a href="https://github.com/ioccc-src/winner/blob/master/inc/index.html">inc directory</a>.</p>
 <p>The <a href="index.html#md2html_cfg">md2html.cfg</a> configuration file is
 used by <a href="https://github.com/ioccc-src/winner/blob/master/bin/md2html.sh">md2html.sh</a> to drive the generation process.</p>
 <div id="new-dir">
@@ -1180,13 +1180,13 @@ is used to form all IOCCC related HTML pages for the
 <a href="https://www.ioccc.org">official IOCCC website</a>.</p>
 <p>Nearly all IOCCC related HTML pages are built from markdown files,
 from either permanent markdown files or temporary generated markdown files,
-as well as HTML fragments from the <a href="../inc/index.html">inc directory</a>.</p>
+as well as HTML fragments from the <a href="https://github.com/ioccc-src/winner/blob/master/inc/index.html">inc directory</a>.</p>
 <p>Most HTML content is built from permanent markdown files, such as a <code>README.md</code>
 markdown file found in each entry directory. Some HTML content are generated
 from temporary markdown files. These temporary markdown files are produced by
 tools in the <a href="index.html">bin directory</a> and exist only while the tool is running.</p>
 <p>In addition to converting markdown to HTML, the canonical way that HTML content is
-built uses, by default, files from the <a href="../inc/index.html">inc directory</a>, of
+built uses, by default, files from the <a href="https://github.com/ioccc-src/winner/blob/master/inc/index.html">inc directory</a>, of
 the file name form:</p>
 <pre><code>    *.default.html</code></pre>
 <p>By using command line options of the form:</p>
@@ -1194,8 +1194,8 @@ the file name form:</p>
 <p>where <code>phase</code> is the name of an HTML phase,
 a non-default file may be used. For example:</p>
 <pre><code>    -H navbar=up2index</code></pre>
-<p>will cause <a href="../inc/navbar.up2index.html">inc/navbar.up2index.html</a>
-instead of <a href="../inc/navbar.default.html">inc/navbar.default.html</a> to be
+<p>will cause <a href="https://github.com/ioccc-src/winner/blob/master/inc/navbar.up2index.html">inc/navbar.up2index.html</a>
+instead of <a href="https://github.com/ioccc-src/winner/blob/master/inc/navbar.default.html">inc/navbar.default.html</a> to be
 used during the <em>navbar</em> HTML phase.</p>
 <p>If <code>name</code> is dot (i.e., <code>.</code>), then the given HTML phase is skipped.
 For example:</p>
@@ -1206,13 +1206,13 @@ For example:</p>
 </div>
 <p>The following HTML phase files are used to build HTML content:</p>
 <ol start="0" type="1">
-<li><a href="../inc/top.default.html">inc/top.default.html</a></li>
-<li><a href="../inc/head.default.html">inc/head.default.html</a></li>
-<li><a href="../inc/body.default.html">inc/body.default.html</a></li>
-<li><a href="../inc/topbar.default.html">inc/topbar.default.html</a></li>
-<li><a href="../inc/header.default.html">inc/header.default.html</a></li>
-<li><a href="../inc/navbar.default.html">inc/navbar.default.html</a></li>
-<li><a href="../inc/before-content.default.html">inc/before-content.default.html</a></li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/inc/top.default.html">inc/top.default.html</a></li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/inc/head.default.html">inc/head.default.html</a></li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/inc/body.default.html">inc/body.default.html</a></li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/inc/topbar.default.html">inc/topbar.default.html</a></li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/inc/header.default.html">inc/header.default.html</a></li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/inc/navbar.default.html">inc/navbar.default.html</a></li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/inc/before-content.default.html">inc/before-content.default.html</a></li>
 </ol>
 <p>Phases 7-19 are reserved for future use.</p>
 <ol start="20" type="1">
@@ -1222,9 +1222,9 @@ For example:</p>
 </ol>
 <p>Phases 23-29 are reserved for future use.</p>
 <ol start="30" type="1">
-<li><a href="../inc/after-content.default.html">inc/after-content.default.html</a></li>
-<li><a href="../inc/footer.default.html">inc/footer.default.html</a></li>
-<li><a href="../inc/bottom.default.html">inc/bottom.default.html</a></li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/inc/after-content.default.html">inc/after-content.default.html</a></li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/inc/footer.default.html">inc/footer.default.html</a></li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/inc/bottom.default.html">inc/bottom.default.html</a></li>
 </ol>
 <p>Phases 33-39 are reserved for future use.</p>
 <p>In all of the above HTML phase numbers, symbols of the form <code>%%TOKEN%%</code> are
@@ -1335,7 +1335,7 @@ how such command lines are used.</p>
 <h1 id="use-caution-when-modifying-inc-files">Use CAUTION when modifying <code>inc/</code> files</h1>
 <p>Some of the files under this directory are used to form <strong>MOST</strong> of the HTML content
 on the <a href="https://www.ioccc.org">official IOCCC website</a>.</p>
-<p>… and in particular files under <a href="../inc/index.html">inc</a> that are of the form
+<p>… and in particular files under <a href="https://github.com/ioccc-src/winner/blob/master/inc/index.html">inc</a> that are of the form
 (called default HTML files) …:</p>
 <pre><code>    *.default.html</code></pre>
 <p>… contain default content used to form IOCCC HTML / IOCCC web pages.</p>

@@ -9,7 +9,7 @@ The [bin directory](index.html) holds tools that build files, such as HTML conte
 [official IOCCC website](https://www.ioccc.org).
 
 For HTML content, the [bin directory](index.html) tools make use of HTML
-fragments from the [inc directory](../inc/index.html) as well as various JSON
+fragments from the [inc directory](%%REPO_URL%%/inc/index.html) as well as various JSON
 files and other content from the [official IOCCC winner repo](https://github.com/ioccc-src/winner).
 
 
@@ -676,7 +676,7 @@ Examples of top level HTML pages built by this tool include:
 - [bugs.html](../bugs.html)
 - [contact.html](../contact.html)
 - [faq.html](../faq.html)
-- [inc/index.html](../inc/index.html)
+- [inc/index.html](%%REPO_URL%%/inc/index.html)
 - [index.html](../index.html)
 - [judges.html](../judges.html)
 - [news.html](../news.html)
@@ -882,7 +882,7 @@ became a favourite saying of his later, and passed into a proverb.
 
 This is the primary tool that forms IOCCC generated HTML content from
 markdown files (permanent markdown files or temporarily generated
-markdown files) and HTML fragments from the [inc directory](../inc/index.html).
+markdown files) and HTML fragments from the [inc directory](%%REPO_URL%%/inc/index.html).
 
 The [md2html.cfg](index.html#md2html_cfg) configuration file is
 used by [md2html.sh](%%REPO_URL%%/bin/md2html.sh) to drive the generation process.
@@ -1274,7 +1274,7 @@ is used to form all IOCCC related HTML pages for the
 
 Nearly all IOCCC related HTML pages are built from markdown files,
 from either permanent markdown files or temporary generated markdown files,
-as well as HTML fragments from the [inc directory](../inc/index.html).
+as well as HTML fragments from the [inc directory](%%REPO_URL%%/inc/index.html).
 
 Most HTML content is built from permanent markdown files, such as a `README.md`
 markdown file found in each entry directory.  Some HTML content are generated
@@ -1282,7 +1282,7 @@ from temporary markdown files.  These temporary markdown files are produced by
 tools in the [bin directory](index.html) and exist only while the tool is running.
 
 In addition to converting markdown to HTML, the canonical way that HTML content is
-built uses, by default, files from the [inc directory](../inc/index.html), of
+built uses, by default, files from the [inc directory](%%REPO_URL%%/inc/index.html), of
 the file name form:
 
 ```
@@ -1302,8 +1302,8 @@ a non-default file may be used.  For example:
     -H navbar=up2index
 ```
 
-will cause [inc/navbar.up2index.html](../inc/navbar.up2index.html)
-instead of [inc/navbar.default.html](../inc/navbar.default.html) to be
+will cause [inc/navbar.up2index.html](%%REPO_URL%%/inc/navbar.up2index.html)
+instead of [inc/navbar.default.html](%%REPO_URL%%/inc/navbar.default.html) to be
 used during the _navbar_ HTML phase.
 
 If `name` is dot (i.e., `.`), then the given HTML phase is skipped.
@@ -1322,13 +1322,13 @@ will cause no HTML content to be produced during the `footer` HTML phase.
 
 The following HTML phase files are used to build HTML content:
 
-0. [inc/top.default.html](../inc/top.default.html)
-1. [inc/head.default.html](../inc/head.default.html)
-2. [inc/body.default.html](../inc/body.default.html)
-3. [inc/topbar.default.html](../inc/topbar.default.html)
-4. [inc/header.default.html](../inc/header.default.html)
-5. [inc/navbar.default.html](../inc/navbar.default.html)
-6. [inc/before-content.default.html](../inc/before-content.default.html)
+0. [inc/top.default.html](%%REPO_URL%%/inc/top.default.html)
+1. [inc/head.default.html](%%REPO_URL%%/inc/head.default.html)
+2. [inc/body.default.html](%%REPO_URL%%/inc/body.default.html)
+3. [inc/topbar.default.html](%%REPO_URL%%/inc/topbar.default.html)
+4. [inc/header.default.html](%%REPO_URL%%/inc/header.default.html)
+5. [inc/navbar.default.html](%%REPO_URL%%/inc/navbar.default.html)
+6. [inc/before-content.default.html](%%REPO_URL%%/inc/before-content.default.html)
 
 Phases 7-19 are reserved for future use.
 
@@ -1338,9 +1338,9 @@ Phases 7-19 are reserved for future use.
 
 Phases 23-29 are reserved for future use.
 
-30. [inc/after-content.default.html](../inc/after-content.default.html)
-31. [inc/footer.default.html](../inc/footer.default.html)
-32. [inc/bottom.default.html](../inc/bottom.default.html)
+30. [inc/after-content.default.html](%%REPO_URL%%/inc/after-content.default.html)
+31. [inc/footer.default.html](%%REPO_URL%%/inc/footer.default.html)
+32. [inc/bottom.default.html](%%REPO_URL%%/inc/bottom.default.html)
 
 Phases 33-39 are reserved for future use.
 
@@ -1524,7 +1524,7 @@ how such command lines are used.
 Some of the files under this directory are used to form **MOST** of the HTML content
 on the [official IOCCC website](https://www.ioccc.org).
 
-... and in particular files under [inc](../inc/index.html) that are of the form
+... and in particular files under [inc](%%REPO_URL%%/inc/index.html) that are of the form
 (called default HTML files) ...:
 
 ```
