@@ -1601,7 +1601,7 @@ a natural fit for GitHub and [GitHub pages](https://pages.github.com).
 The `<object>` HTML element does not work for our needs.
 
 HTML elements do not extend into the content that they include.
-For example, menu bars (see the [ioccc.css](%%DOCROOT_SLASH%%ioccc.css)
+For example, menu bars (see the [ioccc.css](../ioccc.css)
 stylesheet) will not operate under an HTML element.
 
 
@@ -1612,7 +1612,7 @@ The `<embed>` HTML element does not work for our needs.
 This element wants one to specify the `width` and `height` in pixels.
 Use of a percentage is not officially supported even if some browsers
 might do so.  Our Responsive Web Design in the
-[ioccc.css](%%DOCROOT_SLASH%%ioccc.css) stylesheet
+[ioccc.css](../ioccc.css) stylesheet
 needs to be responsive to small-sized cell phone-like screens,
 mid-sized table-like screens, as well as large-sized desktop-like screens.
 Specifying a `width` and `height` in pixels will not work well in
@@ -1625,7 +1625,7 @@ The `<iframe>` HTML element does not work for our needs.
 
 This element wants one to specify the `width` and `height` in pixels.  Use of a
 percentage is not officially supported even if some browsers might do so.  Our
-Responsive Web Design in the [ioccc.css](%%DOCROOT_SLASH%%ioccc.css) stylesheet
+Responsive Web Design in the [ioccc.css](../ioccc.css) stylesheet
 needs to be responsive to small-sized cell phone-like screens, mid-sized
 table-like screens, as well as large-sized desktop-like screens.  Specifying a
 `width` and `height` in pixels will not work well in all of those screen size
