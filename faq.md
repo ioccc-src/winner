@@ -7769,27 +7769,6 @@ they received while the contest was [open](#open).
 
 Watch the [@IOCCC mastodon feed](https://fosstodon.org/@ioccc) for updates.
 
-Once the contest [closes](#closed), the judges will:
-
-* Select the [winning entries](years.html) and announce them on the [@IOCCC
-mastodon feed](https://fosstodon.org/@ioccc).
-
-* Notify the [authors](authors.html) of entries that won the contest
-via email using their registered email address.
-
-* Announce who the [authors](authors.html) are of this year's [winning IOCCC
-entries](years.html) via the [@IOCCC mastodon
-feed](https://fosstodon.org/@ioccc).
-
-* Upload the winning code to the [Official IOCCC winner
-repo](https://github.com/ioccc-src/winner).
-
-* Update the [Official IOCCC website](index.html), and in particular
-display this year's [winning IOCCC entries](years.html) at the top of the [IOCCC
-winning entries page](years.html).
-
-* Update the [IOCCC news](news.html) page.
-
 
 <div id="closed">
 #### "**closed**"
