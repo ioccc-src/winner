@@ -1,6 +1,7 @@
 typedef unsigned char t;t*F="%c",l[]="|\\/=_ \n](.\0(),*(.(=(}*.)[[*.",N='\n',*
-r;typedef(*H)();extern H Ar;Q(a){return(a|-a)>>31;}H S(long c,long a){return(H)(a&~c|(long
-)Ar&c);}extern t*ist;V(t*u){*u^=*u&2^(*u>>7)*185;}Z(t*u,t n){*u-=n;}e(t c,H h){
+r;typedef(*H)();extern H Ar;Q(a){return(a|-a)>>31;}H S(long c,long a){return(H)
+(a&~c|(long) Ar&c);}extern t*ist;V(t*u){*u^=*u&2^(*u>>7)*185;}Z(t*u,t n){*u-=n;
+} e(t c                                                                 ,H h) {
 R(h,Q(*                                                                 r^c));}
 I(){r=l                                                                 +7-4*Q(
 getchar                                                                 ()^*l);
