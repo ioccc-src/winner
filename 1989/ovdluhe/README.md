@@ -63,6 +63,9 @@ value that's not a number.
 **NOTE**: if you specify too high a value for `P` the program might fail. If you
 specify a value < 0 it will fail to compile.
 
+The script will also run the program with `P=2` through `P=10` like the author
+suggested. Send intr (usually ctrl-c) to stop early.
+
 
 ## Judges' remarks:
 

@@ -19,15 +19,18 @@ i=0
 for ((i=0; i<4; ++i)); do
     read -r -n 1 -p "Press any key to run: ./ovdluhe < ovdluhe.c: "
     echo 1>&2
+    echo 1>&2
     ./ovdluhe < ovdluhe.c
     echo 1>&2
 
     read -r -n 1 -p "Press any key to run: ./ovdluhe < README.md: "
     echo 1>&2
+    echo 1>&2
     ./ovdluhe < README.md
     echo 1>&2
 
     read -r -n 1 -p "Press any key to run: ./ovdluhe < Makefile: "
+    echo 1>&2
     echo 1>&2
     ./ovdluhe < Makefile
     echo 1>&2
