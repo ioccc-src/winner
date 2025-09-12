@@ -6963,6 +6963,13 @@ compilers. See the index.html for more details.
 Jump to: [top](#)
 
 
+<div id="2024">
+# [2020 - The 28th IOCCC](2024/index.html)
+</div>
+
+
+Jump to: [top](#)
+
 
 <div id="general_thanks">
 # General thanks
@@ -7244,8 +7251,8 @@ Jump to: [top](#)
 ### Joel Yliluoma
 </div>
 
-**Joel Yliluoma** submitted a [record sized patient pointillism image](2024/endoh1/index.html#larger)
-image of [1024x1024 image](2024/endoh1/endoh1-1024.png).
+**Joel Yliluoma** rendered a [pointillism image](2024/endoh1/index.html#larger) of
+[record 1024x1024 size](2024/endoh1/endoh1-1024.png).
 
 We thank **Joel Yliluoma** of **Findland** for making the effort to render this image!
 
