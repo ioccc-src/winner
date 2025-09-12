@@ -7254,6 +7254,9 @@ We thank **Joel Yliluoma** of **Findland** for making the effort to render this 
 - YouTube: [https://youtube.com/c/Bisqwit](https://youtube.com/c/Bisqwit)
 
 
+Jump to: [top](#)
+
+
 <div id="neglect">
 ## Did we neglect to credit you?
 </div>
