@@ -1,4 +1,4 @@
-# Thanks for all the help
+    # Thanks for all the help
 
 
 <blockquote>
@@ -46,7 +46,7 @@ on an IOCCC entry by entry basis.
 - [1996 entries](#1996) |       [1998 entries](#1998)   |       [2000 entries](#2000)   |       [2001 entries](#2001)
 - [2004 entries](#2004) |       [2005 entries](#2005)   |       [2006 entries](#2006)   |       [2011 entries](#2011)
 - [2012 entries](#2012) |       [2013 entries](#2013)   |       [2014 entries](#2014)   |       [2015 entries](#2015)
-- [2018 entries](#2018) |       [2019 entries](#2019)   |       [2020 entries](#2020)
+- [2018 entries](#2018) |       [2019 entries](#2019)   |       [2020 entries](#2020)   |       [2024 entries](#2024)
 - [General thanks](#general_thanks)
 - [Makefiles fixes and improvements](#makefiles_fixes_improvements)
 - [Consistency improvements](#consistency_improvements)
@@ -7126,6 +7126,39 @@ helped improve the presentation of their fellow IOCCC entries.
 Jump to: [top](#)
 
 
+<div id="johndalbec">
+### John Dalbec
+</div>
+
+[John Dalbec](authors.html#John_Dalbec) supplied a fix to
+[2000/dlowe](thanks-for-help.html#2000_dlowe).
+
+[John Dalbec's patch of 2000/dlowe](%%REPO_TOP_URL%%/pull/134)
+is a good example of [applying a minimal patch](bugs.html#general-request-on-original-code)
+to the [original 2000/dlowe](%%REPO_URL%%/2000/dlowe/dlowe.orig.c) source code.
+
+
+Jump to: [top](#)
+
+
+<div id="yusuke">
+### Yusuke Endoh
+</div>
+
+[Yusuke Endoh](authors.html#Yusuke_Endoh) supplied a
+number of important bug fixes to a number of past IOCCC entries, including
+**fixing _numerous entries_ that no longer worked**. Some of those
+fixes were **EXTREMELY TECHNICALLY CHALLENGING**, like
+[1989/robison](thanks-for-help.html#1989_robison),
+[1990/cmills](thanks-for-help.html#1990_cmills),
+[1992/lush](thanks-for-help.html#1992_lush) and
+[2001/ctk](thanks-for-help.html#2001_ctk). **THANK YOU VERY MUCH** for
+your help!
+
+
+Jump to: [top](#)
+
+
 <div id="cody">
 ### Cody Boone Ferguson
 </div>
@@ -7178,6 +7211,7 @@ longer worked and getting the IOCCC where it is today!
 
 Jump to: [top](#)
 
+
 <div id="sirwumpus">
 ### Anthony C Howe
 </div>
@@ -7205,34 +7239,19 @@ Despite all that, we still welcome him as an IOCCC Helper!
 
 Jump to: [top](#)
 
-<div id="yusuke">
-### Yusuke Endoh
+
+<div id="bisqwit">
+### Joel Yliluoma
 </div>
 
-[Yusuke Endoh](authors.html#Yusuke_Endoh) supplied a
-number of important bug fixes to a number of past IOCCC entries, including
-**fixing _numerous entries_ that no longer worked**. Some of those
-fixes were **EXTREMELY TECHNICALLY CHALLENGING**, like
-[1989/robison](thanks-for-help.html#1989_robison),
-[1990/cmills](thanks-for-help.html#1990_cmills),
-[1992/lush](thanks-for-help.html#1992_lush) and
-[2001/ctk](thanks-for-help.html#2001_ctk). **THANK YOU VERY MUCH** for
-your help!
+**Joel Yliluoma** submitted a [record sized patient pointillism image](2024/endoh1/index.html#larger)
+image of [1024x1024 image](2024/endoh1/endoh1-1024.png).
 
+We thank **Joel Yliluoma** of **Findland** for making the effort to render this image!
 
-Jump to: [top](#)
-
-
-<div id="johndalbec">
-### John Dalbec
-</div>
-
-[John Dalbec](authors.html#John_Dalbec) supplied a fix to
-[2000/dlowe](thanks-for-help.html#2000_dlowe).
-
-[John Dalbec's patch of 2000/dlowe](%%REPO_TOP_URL%%/pull/134)
-is a good example of [applying a minimal patch](bugs.html#general-request-on-original-code)
-to the [original 2000/dlowe](%%REPO_URL%%/2000/dlowe/dlowe.orig.c) source code.
+- Github: [http://github.com/bisqwit](http://github.com/bisqwit)
+- Home Page: [https://iki.fi/bisqwit/](https://iki.fi/bisqwit/)
+- YouTube: [https://youtube.com/c/Bisqwit](https://youtube.com/c/Bisqwit)
 
 
 <div id="neglect">

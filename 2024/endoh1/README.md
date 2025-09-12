@@ -84,10 +84,25 @@ value before attempting to try a larger size such as **512** and beyond.
 
 
 <div id="larger">
-### Be first to build images larger than 512x512
+### Be first to build images larger than 1024x1024
 </div>
 
-**QUESTION**: Do you have the patience to build an even larger than a 512x512 image?
+[Joel Yliluoma](../../thanks-for-help.html#bisqwit) rendered:
+
+- [record 1024x1024 image](endoh1-1024.png)
+
+The above image was rendered between **Wed Sep 10 09:21:22 PM UTC 2025** and
+**Thu Sep 11 09:48:40 AM UTC 2025** using 78 jobs in parallel on:
+
+```
+     CPU: AMD Ryzen Threadripper 3960X 24-Core Processor
+     48 threads
+     GCC 14.2.0-19 14.2.0
+     Debian Testing (currently Debian 14…ish?)
+     GNU Make 4.4.1
+ ```
+
+**QUESTION**: Do you have the patience to build an even larger image?
 If you do, **using the program as it is written of course**, please [send the IOCCC](../../judges.html)
 the following:
 
