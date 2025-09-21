@@ -39,9 +39,9 @@ TRUE= true
 
 # Common C compiler warnings to silence
 #
-# Example: CSILENCE= -Wno-poison-system-directories
+# Example: CSILENCE= -Wno-int-conversion
 #
-CSILENCE=
+CSILENCE= -Wno-poison-system-directories -Wno-unsafe-buffer-usage
 
 # Attempt to silence unknown warning options
 #
