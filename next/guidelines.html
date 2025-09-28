@@ -488,7 +488,7 @@ writing by <a href="../contact.html">contacting the judges</a>.</p>
 </div>
 </div>
 <p class="leftbar">
-These <a href="guidelines.html">IOCCC guidelines</a> are version <strong>28.47 2025-03-15</strong>.
+These <a href="guidelines.html">IOCCC guidelines</a> are version <strong>28.48 2025-09-28</strong>.
 </p>
 <p class="leftbar">
 The markdown form of these guidelines <a href="guidelines.md"
@@ -554,22 +554,6 @@ of the above <strong>dates and times may change <em>AT ANY TIME</em></strong>!
 <p class="leftbar">
 The reason for the times of day are so that key IOCCC events are <strong>calculated</strong>
 to be a <strong>fun</strong>ctional UTC time. :-)
-</p>
-<p class="leftbar">
-<strong>NOTE</strong>: the updates to these guidelines on 2025-03-10 explained the new <code>-u uuidfile</code> and <code>-U uuidstr</code> options and are <strong>NOT</strong> important to read, in order
-to follow the guidelines. The options are in a release <strong>AFTER THIS</strong> IOCCC’s
-official release and not updating the toolkit is <strong>PERFECTLY</strong> okay.
-</p>
-<p class="leftbar">
-<strong>NOTE</strong>: the updates to these guidelines on 2025-03-12 also explain how the
-tools that require other tools now search under <code>$PATH</code>. It is perfectly fine to
-not use the newer versions so long as you use the minimum required version of
-the tools. See the
-FAQ on “<a href="../faq.html#minimum_versions">minimum required version of the tools</a>”
-for more details and the
-FAQ on “<a href="../faq.html#obtaining_mkiocccentry">obtaining the most recent release of the
-toolkit</a>”
-for more help.
 </p>
 <p class="leftbar">
 Until the contest status becomes <strong><a href="../faq.html#open">open</a></strong>,
@@ -860,12 +844,12 @@ FAQ on “<a href="../faq.html#obtaining_mkiocccentry">obtaining the mkiocccentr
 <p class="leftbar">
 <code>mkiocccentry</code> runs a number of checks, by the tool itself and by executing
 other tools, <em>before</em> packaging your xz compressed tarball, including running
-<code>chkentry(1)</code> on the submission directory.
+<code>chksubmit(1)</code> on the submission directory.
 </p>
 <p class="leftbar">
 If <code>mkiocccentry</code> encounters an <strong>error</strong>, the program will exit and the xz
 compressed tarball <strong>will not be formed</strong>. For instance, if
-<a href="#chkentry">chkentry</a> fails to validate the submission directory, either because
+<a href="#chksubmit">chksubmit</a> fails to validate the submission directory, either because
 of a validation error in the <code>.auth.json</code> or <code>.info.json</code>
 <a href="https://www.json.org/json-en.html">JSON</a> files or because of
 something else that <code>mkiocccentry(1)</code> creates or does, it is an
@@ -911,7 +895,7 @@ For example:
 (specifying the absolute or relative path to the tool) and you have not
 installed the tools (and we <strong>STRONGLY</strong> recommend you <strong>do</strong> install them),
 then you will have to specify the options (such as paths) for the tools that are required like
-<code>chkentry(1)</code>, <code>txzchk(1)</code> and <code>fnamchk(1)</code>.
+<code>chksubmit(1)</code>, <code>txzchk(1)</code> and <code>fnamchk(1)</code>.
 </p>
 <p class="leftbar">
 Make sure you have
@@ -2003,6 +1987,7 @@ tools</a>, <em>including, <strong>but not
 limited</strong></em> to
 <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/mkiocccentry.c">mkiocccentry</a>,
 <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/chkentry.c">chkentry</a>,
+<a href="https://github.com/ioccc-src/mkiocccentry/blob/master/chksubmit.c">chksubmit</a>,
 <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/test_ioccc/fnamchk.c">fnamchk</a>
 and
 <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/location_main.c">location</a>,
