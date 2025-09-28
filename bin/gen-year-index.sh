@@ -559,7 +559,7 @@ if [[ -z $NOOP ]]; then
     # case: YYYY index.html does not need to be updated
     #
     elif [[ $V_FLAG -ge 3 ]]; then
-	echo "$0: debug[3]: does not need to be updated: $YYYY/README.html" 1>&2
+	echo "$0: debug[3]: does not need to be updated: $YYYY/index.html" 1>&2
     fi
 
 # report disabled by -n

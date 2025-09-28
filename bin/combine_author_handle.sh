@@ -400,17 +400,17 @@ fi
 #
 export TMP_AUTHOR_HANDLE_LIST=".tmp.$NAME.AUTHOR_HANDLE_LIST.$$.tmp"
 if [[ $V_FLAG -ge 3 ]]; then
-    echo  "$0: debug[3]: list pf author_handle JSON files: $TMP_AUTHOR_HANDLE_LIST" 1>&2
+    echo  "$0: debug[3]: list of author_handle JSON files: $TMP_AUTHOR_HANDLE_LIST" 1>&2
 fi
 trap 'rm -f $TMP_AUTHOR_HANDLE_LIST; exit' 0 1 2 3 15
 rm -f "$TMP_AUTHOR_HANDLE_LIST"
 if [[ -e $TMP_AUTHOR_HANDLE_LIST ]]; then
-    echo "$0: ERROR: cannot remove list pf author_handle JSON files: $TMP_AUTHOR_HANDLE_LIST" 1>&2
+    echo "$0: ERROR: cannot remove list of author_handle JSON files: $TMP_AUTHOR_HANDLE_LIST" 1>&2
     exit 12
 fi
 find "$AUTHOR_DIR" -type f -name '*.json' -print | LC_ALL=C sort -t / -d > "$TMP_AUTHOR_HANDLE_LIST"
 if [[ ! -e $TMP_AUTHOR_HANDLE_LIST ]]; then
-    echo "$0: ERROR: cannot create list pf author_handle JSON files: $TMP_AUTHOR_HANDLE_LIST" 1>&2
+    echo "$0: ERROR: cannot create list of author_handle JSON files: $TMP_AUTHOR_HANDLE_LIST" 1>&2
     exit 13
 fi
 
