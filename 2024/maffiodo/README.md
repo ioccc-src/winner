@@ -76,7 +76,7 @@ Disabled warnings via Makefile:
   are the same functions that uses implicit int as return type but do not use
   any return statement)
 - **Wno-deprecated-non-prototype** because on clang some function pointers like
-  strdup(char*) is aliased as (*)() without any explicit parameter. On gcc this
+  `strdup(char*)` is aliased as `(*)()` without any explicit parameter. On gcc this
   is not a problem but on MacOS clang this is needed to suppress a warning
 - **Wno-deprecated-declarations** (probably not needed) on clang sprintf is
   deprecated because is always better to use snprintf. This warning need to be
