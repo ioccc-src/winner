@@ -107,7 +107,7 @@ and one of them is marked black and the other non-black,
 this program MUST have the black letter marked *yellow*.
 The example session (Wordle 228) below demonstrates this:
 
-```
+``` <!---sh-->
     # do NOT do this
     $ ./prog dict
     ? terns bbbby
@@ -138,7 +138,7 @@ The included simulator `gen` produces the required transformation of b -> y.
 
 The extra program `run` connects `gen` and `prog`, allowing for quick tests.
 
-```
+``` <!---sh-->
     make tools
     ./run dict terns shock  # test starting guess `terns` against target `shock`
 ```
@@ -207,7 +207,7 @@ increases the average number of guesses and the failure rate.
 - Wordle is spelled in the code several different ways, one is obscure.
   If you need help, try this command (which requires `clang-format`):
 
-```
+``` <!---sh-->
     make spoiler
 ```
 
@@ -277,7 +277,7 @@ why `/usr/share/dict/words` scores worse than `dict` - and loses more often.
 April 9, 2023, this problem repeated with the target word `snafu`.
 That seems apropos.
 
-```
+``` <!---sh-->
     $ ./prog dict
     blast bbgyb
     share gbgbb
@@ -294,7 +294,7 @@ That seems apropos.
 And on June 9, 2023, again.  This time, it cost nothing, and won on the
 second guess.
 
-```
+``` <!---sh-->
     $ ./prog dict
     blast gyygb
     xyzzy
@@ -306,7 +306,7 @@ second guess.
 
 June 19, 2023, another one wasn't working, so time for a better dictionary:
 
-```
+``` <!---sh-->
     $ ./prog dict
     blast bbybb
     ramen bgbbb
@@ -337,7 +337,7 @@ As of June 19, 2023, it is known that at least these words have been added
 
 See the [extra.html](extra.html) for more details on the program `run`:
 
-```
+``` <!---sh-->
     for n in guano snafu balsa kazoo; do
         ./run usdw blast $n;
     done | grep good
@@ -345,7 +345,7 @@ See the [extra.html](extra.html) for more details on the program `run`:
 
 As of April 22, 2024, add the word `laser` in 3 guesses.
 
-```
+``` <!---sh-->
     $ ./prog usdw
     blast byyyb
     solea ybygy
@@ -354,14 +354,14 @@ As of April 22, 2024, add the word `laser` in 3 guesses.
 
 And May 8, 2024 brings on `pious` in 4 guesses (after the failure with `dict`):
 
-```
-    $ prog dict
+``` <!---sh-->
+    $ ./prog dict
     blast bbbyb
     siren ygbbb
     ficus bgbgg
     xyzzy
 
-    $ prog usdw
+    $ ./prog usdw
     ? blast bbbyb
     serio
     ? siren ygbbb
@@ -375,7 +375,7 @@ Notice here that the suggested word was NOT used, instead the original
 guesses were used, and it found the correct answer in 4 guesses.
 However, doing
 
-```
+``` <!---sh-->
     ./run usdw blast pious
 ```
 
@@ -383,12 +383,12 @@ gets the answer correct in 3 guesses: blast > serio > pious.
 
 And Sep 17, 2024 brings us the word `beaut`.
 
-```
-    $ prog dict
+``` <!---sh-->
+    $ ./prog dict
     blast gbgbg
     xyzzy
 
-    $ prog usdw
+    $ ./prog usdw
     blast gbgbgb
     beant -- not allowed, so removed beant from usdw
     brant gbgbg
@@ -401,14 +401,14 @@ of `/usr/share/dict/words` has more cromulent words.
 
 Oct 9, 2024 brings the word `mommy`.
 
-```
-    $ prog dict
+``` <!---sh-->
+    $ ./prog dict
     blast bbbbb
     drone bbybb
     pouch bgbbb
     foggy bgbbg
 
-    $ prog usdw
+    $ ./prog usdw
     blast bbbbb
     drone bbybb
     pouch bgbbb
@@ -421,7 +421,7 @@ dictionary still allows you to switch dictionaries and win.
 
 Nov 13, 2024 brings `primp`.
 
-```
+``` <!---sh-->
     $ ./prog dict
     blast bbbbb
     drone bgbbb
@@ -437,7 +437,7 @@ Nov 13, 2024 brings `primp`.
 
 Jan 20, 2025 brings the word `squid`.
 
-```
+``` <!---sh-->
     $ ./prog dict
     blast bbbyb
     siren gybbb
@@ -470,7 +470,7 @@ As of Jan 20, 2025, the ten known words not in `dict` are
 
 Feb 18, 2025 adds a word not in `dict` nor `usdw`.  "indie".
 
-```
+``` <!---sh-->
     $ ./prog dict
     blast bbbbb
     drone ybbyg
@@ -482,20 +482,20 @@ Feb 18, 2025 adds a word not in `dict` nor `usdw`.  "indie".
     drone ybbyg
     undue bggbg
     xyzzy
+```
 
-    I grep'd the dictionaries.  No plausbile hits.
-    So I solved it the old fashioned way: I guessed.
+I grep'd the dictionaries.  No plausbile hits.
+So I solved it the old fashioned way: I guessed.
 
     blast bbbbb
     drone ybbyg
     undue bggbg
     indie ggggg
 
-    This solved it in 4, but the program could not win.
-    So add to the summary list above:
+This solved it in 4, but the program could not win.
+So add to the summary list above:
 
     indie 4
-```
 
 
 ### Compilation
