@@ -717,13 +717,13 @@ second guess.</p>
     solea ybygy
     laser ggggg</code></pre>
 <p>And May 8, 2024 brings on <code>pious</code> in 4 guesses (after the failure with <code>dict</code>):</p>
-<pre><code>    $ prog dict
+<pre><code>    $ ./prog dict
     blast bbbyb
     siren ygbbb
     ficus bgbgg
     xyzzy
 
-    $ prog usdw
+    $ ./prog usdw
     ? blast bbbyb
     serio
     ? siren ygbbb
@@ -737,11 +737,11 @@ However, doing</p>
 <pre><code>    ./run usdw blast pious</code></pre>
 <p>gets the answer correct in 3 guesses: blast &gt; serio &gt; pious.</p>
 <p>And Sep 17, 2024 brings us the word <code>beaut</code>.</p>
-<pre><code>    $ prog dict
+<pre><code>    $ ./prog dict
     blast gbgbg
     xyzzy
 
-    $ prog usdw
+    $ ./prog usdw
     blast gbgbgb
     beant -- not allowed, so removed beant from usdw
     brant gbgbg
@@ -750,13 +750,13 @@ However, doing</p>
 This word isn’t even a word I can find in Webster’s. I hope your version
 of <code>/usr/share/dict/words</code> has more cromulent words.</p>
 <p>Oct 9, 2024 brings the word <code>mommy</code>.</p>
-<pre><code>    $ prog dict
+<pre><code>    $ ./prog dict
     blast bbbbb
     drone bbybb
     pouch bgbbb
     foggy bgbbg
 
-    $ prog usdw
+    $ ./prog usdw
     blast bbbbb
     drone bbybb
     pouch bgbbb
@@ -812,20 +812,16 @@ dictionary still allows you to switch dictionaries and win.</p>
     blast bbbbb
     drone ybbyg
     undue bggbg
-    xyzzy
-
-    I grep&#39;d the dictionaries.  No plausbile hits.
-    So I solved it the old fashioned way: I guessed.
-
-    blast bbbbb
-    drone ybbyg
-    undue bggbg
-    indie ggggg
-
-    This solved it in 4, but the program could not win.
-    So add to the summary list above:
-
-    indie 4</code></pre>
+    xyzzy</code></pre>
+<p>I grep’d the dictionaries. No plausbile hits.
+So I solved it the old fashioned way: I guessed.</p>
+<p>blast bbbbb
+drone ybbyg
+undue bggbg
+indie ggggg</p>
+<p>This solved it in 4, but the program could not win.
+So add to the summary list above:</p>
+<p>indie 4</p>
 <h3 id="compilation">Compilation</h3>
 <p>Compiles cleanly with <code>-Wall -Wpedantic -Wextra</code>,
 on MACOS M2 Clang/GCC 14 and Linux X86 Gcc 8.5.</p>
