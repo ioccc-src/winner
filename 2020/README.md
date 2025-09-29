@@ -17,7 +17,7 @@ The primary website can be found at [www.ioccc.org](https://www.ioccc.org).
 ## Remarks on some of the winning entries
 
 This year's [Best of Show - abuse of libc - 2020/carlini](carlini/index.html) is such a novel way of
-obfuscation that it would be worth of a special mention in the (future) Best of
+obfuscation that it would be worthy of a special mention in the (future) Best of
 IOCCC list!
 
 For some reason, this year's set of winning entries contains three nostalgic games,
