@@ -517,7 +517,7 @@ pointers</li>
 are the same functions that uses implicit int as return type but do not use
 any return statement)</li>
 <li><strong>Wno-deprecated-non-prototype</strong> because on clang some function pointers like
-strdup(char<em>) is aliased as (</em>)() without any explicit parameter. On gcc this
+<code>strdup(char*)</code> is aliased as <code>(*)()</code> without any explicit parameter. On gcc this
 is not a problem but on MacOS clang this is needed to suppress a warning</li>
 <li><strong>Wno-deprecated-declarations</strong> (probably not needed) on clang sprintf is
 deprecated because is always better to use snprintf. This warning need to be
