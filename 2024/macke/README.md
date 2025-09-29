@@ -168,7 +168,7 @@ Then, for example, run a local web server with the following command:
 Open your browser and go to `http://localhost:8000/prog.html`. You can now run the emulator in the browser.
 
 
-### Obsfucation
+### Obfuscation
 
 The obfuscation is mainly a result of compression, plus a healthy dose of recursion and the usual endian mischief.
 For some reason, LLMs might think that this is a Smoothed Particle Hydrodynamics (SPH) simulation.
