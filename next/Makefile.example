@@ -41,7 +41,7 @@ TRUE= true
 #
 # Example: CSILENCE= -Wno-int-conversion
 #
-CSILENCE= -Wno-poison-system-directories -Wno-unsafe-buffer-usage
+CSILENCE= -Wno-poison-system-directories -Wno-unsafe-buffer-usage -Wno-overriding-deployment-version
 
 # Attempt to silence unknown warning options
 #
