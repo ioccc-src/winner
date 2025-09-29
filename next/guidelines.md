@@ -48,7 +48,7 @@ Jump to: [top](#)
 </div>
 
 <p class="leftbar">
-These [IOCCC guidelines](guidelines.html) are version **28.47 2025-03-15**.
+These [IOCCC guidelines](guidelines.html) are version **28.48 2025-09-28**.
 </p>
 
 <p class="leftbar">
@@ -139,25 +139,6 @@ of the above **dates and times may change _AT ANY TIME_**!
 <p class="leftbar">
 The reason for the times of day are so that key IOCCC events are **calculated**
 to be a **fun**ctional UTC time.  :-)
-</p>
-
-<p class="leftbar">
-**NOTE**: the updates to these guidelines on 2025-03-10 explained the new `-u
-uuidfile` and `-U uuidstr` options and are **NOT** important to read, in order
-to follow the guidelines. The options are in a release **AFTER THIS** IOCCC's
-official release and not updating the toolkit is **PERFECTLY** okay.
-</p>
-
-<p class="leftbar">
-**NOTE**: the updates to these guidelines on 2025-03-12 also explain how the
-tools that require other tools now search under `$PATH`. It is perfectly fine to
-not use the newer versions so long as you use the minimum required version of
-the tools. See the
-FAQ on "[minimum required version of the tools](../faq.html#minimum_versions)"
-for more details and the
-FAQ on "[obtaining the most recent release of the
-toolkit](../faq.html#obtaining_mkiocccentry)"
-for more help.
 </p>
 
 <p class="leftbar">
@@ -508,13 +489,13 @@ FAQ on "[obtaining the mkiocccentry toolkit](../faq.html#obtaining_mkiocccentry)
 <p class="leftbar">
 `mkiocccentry` runs a number of checks, by the tool itself and by executing
 other tools, _before_ packaging your xz compressed tarball, including running
-`chkentry(1)` on the submission directory.
+`chksubmit(1)` on the submission directory.
 </p>
 
 <p class="leftbar">
 If `mkiocccentry` encounters an **error**, the program will exit and the xz
 compressed tarball **will not be formed**. For instance, if
-[chkentry](#chkentry) fails to validate the submission directory, either because
+[chksubmit](#chksubmit) fails to validate the submission directory, either because
 of a validation error in the `.auth.json` or `.info.json`
 [JSON](https://www.json.org/json-en.html) files or because of
 something else that `mkiocccentry(1)` creates or does, it is an
@@ -569,7 +550,7 @@ For example:
 (specifying the absolute or relative path to the tool) and you have not
 installed the tools (and we **STRONGLY** recommend you **do** install them),
 then you will have to specify the options (such as paths) for the tools that are required like
-`chkentry(1)`, `txzchk(1)` and `fnamchk(1)`.
+`chksubmit(1)`, `txzchk(1)` and `fnamchk(1)`.
 </p>
 
 <p class="leftbar">
@@ -1946,6 +1927,7 @@ tools](https://github.com/ioccc-src/mkiocccentry), _including, **but not
 limited**_ to
 [mkiocccentry](https://github.com/ioccc-src/mkiocccentry/blob/master/mkiocccentry.c),
 [chkentry](https://github.com/ioccc-src/mkiocccentry/blob/master/chkentry.c),
+[chksubmit](https://github.com/ioccc-src/mkiocccentry/blob/master/chksubmit.c),
 [fnamchk](https://github.com/ioccc-src/mkiocccentry/blob/master/test_ioccc/fnamchk.c)
 and
 [location](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/location_main.c),
