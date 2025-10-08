@@ -7252,9 +7252,10 @@ Jump to: [top](#)
 </div>
 
 **Joel Yliluoma** rendered a [pointillism image](2024/endoh1/index.html#larger) of
-[record 1024x1024 size](2024/endoh1/endoh1-1024.png).
+[1024x1024 size](2024/endoh1/endoh1-1024.png), and of a
+[2048x2048 size](2024/endoh1/endoh1-2048.png).
 
-We thank **Joel Yliluoma** of **Findland** for making the effort to render this image!
+We thank **Joel Yliluoma** of **Findland** for making the effort to render these images!
 
 - Github: [http://github.com/bisqwit](http://github.com/bisqwit)
 - Home Page: [https://iki.fi/bisqwit/](https://iki.fi/bisqwit/)

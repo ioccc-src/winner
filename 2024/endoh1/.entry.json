@@ -94,6 +94,14 @@
             "entry_text" : "1024x1024 image in PNG form"
         },
         {
+            "file_path" : "endoh1-2048.png",
+            "inventory_order" : 130,
+            "OK_to_edit" : true,
+            "display_as" : "image",
+            "display_via_github" : true,
+            "entry_text" : "2048x2048 image in PNG form"
+        },
+        {
             "file_path" : "2024_endoh1.tar.bz2",
             "inventory_order" : 1415926535,
             "OK_to_edit" : false,

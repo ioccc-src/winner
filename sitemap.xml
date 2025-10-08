@@ -14270,7 +14270,7 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/2024/2024.tar.bz2</loc>
-    <lastmod>2025-09-29T09:17:13+00:00</lastmod>
+    <lastmod>2025-10-08T01:20:51+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/2024/burton/2024_01_18_wordle_stats.png</loc>
@@ -14562,15 +14562,19 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/2024/endoh1/2024_endoh1.tar.bz2</loc>
-    <lastmod>2025-09-12T05:08:49+00:00</lastmod>
+    <lastmod>2025-10-08T01:20:35+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/2024/endoh1/endoh1-1024.png</loc>
     <lastmod>2025-09-12T05:00:18+00:00</lastmod>
 </url>
 <url>
+    <loc>https://www.ioccc.org/2024/endoh1/endoh1-2048.png</loc>
+    <lastmod>2025-10-08T00:42:07+00:00</lastmod>
+</url>
+<url>
     <loc>https://www.ioccc.org/2024/endoh1/index.html</loc>
-    <lastmod>2025-09-12T05:00:18+00:00</lastmod>
+    <lastmod>2025-10-08T01:16:25+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/2024/endoh1/Makefile</loc>
@@ -14586,7 +14590,7 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/2024/endoh1/README.md</loc>
-    <lastmod>2025-09-12T05:00:18+00:00</lastmod>
+    <lastmod>2025-10-08T01:16:20+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/2024/endoh1/ref.128.png</loc>
@@ -16934,7 +16938,7 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/status.html</loc>
-    <lastmod>2025-09-29T09:11:48+00:00</lastmod>
+    <lastmod>2025-10-08T01:12:03+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/status.json</loc>
@@ -16946,11 +16950,11 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/thanks-for-help.html</loc>
-    <lastmod>2025-09-12T06:20:12+00:00</lastmod>
+    <lastmod>2025-10-08T01:11:43+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/thanks-for-help.md</loc>
-    <lastmod>2025-09-12T06:20:02+00:00</lastmod>
+    <lastmod>2025-10-08T01:07:50+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/var.mk</loc>

@@ -84,12 +84,56 @@ value before attempting to try a larger size such as **512** and beyond.
 
 
 <div id="larger">
-### Be first to build images larger than 1024x1024
+### Be first to build images larger than 2048x2048
 </div>
+
+
+#### On the 2048x2048 rendering:
+
 
 [Joel Yliluoma](../../thanks-for-help.html#bisqwit) rendered:
 
-- [record 1024x1024 image](endoh1-1024.png)
+- [2048x2048 image](endoh1-2048.png)
+
+Here is the fun saga of how the above image was rendered.
+
+> The above image was started on **Thu Sep 11 10:14:24 AM UTC 2025**
+> using 118 parallel jobs, then was suspended or 1 hour at the `Y=217` mark,
+> was interrupted accidentally at the `Y=254` mark.  After a quick
+> edit to the his version of the `try.sh` script  so that it will not delete
+> existing work when restarted, he started again a minute later, at the
+> **Thu Sep 11 01:36:08 PM UTC 2025**.  The rendering was interrupted again
+> at the `Y=972` mark for a couple of minutes, and interrupted again
+> on `Y=1017` mark, due to a system crash (due to memory exhaustion not
+> entirely related to the rendering).  The rendering resumed 4 hours later,
+> this time using 49 parallel jobs, on **Fri Sep 12 09:23:04 PM UTC 2025**
+> when the rendering was finished on **Sat Sep 13 06:24:39 PM UTC 2025**.
+> However files at `Y=1017` were corrupt by the system crash, so rendering
+> re-resumed on **Sat Sep 13 06:25:56 PM UTC 2025** and truly finished on:
+> **Sat Sep 13 06:29:51 PM UTC 2025**!  :-)
+
+The hardware used to render was:
+
+```
+     CPU: AMD Ryzen Threadripper 3960X 24-Core Processor
+     between 49 and 118 threads
+     GCC 14.2.0-19 14.2.0
+     Debian Testing (currently Debian 14…ish?)
+     GNU Make 4.4.1
+```
+
+A summary of [Joel Yliluoma](../../thanks-for-help.html#bisqwit) valiant effort
+to render the above image is as follows:
+
+User time: **22 days 9 hours 13 minutes 54.094 seconds**<br>
+Sys time: **18 days 18 hours 58 minutes 30.936 seconds**
+
+
+#### On the 1024x1024 rendering:
+
+[Joel Yliluoma](../../thanks-for-help.html#bisqwit) rendered:
+
+- [1024x1024 image](endoh1-1024.png)
 
 The above image was rendered between **Wed Sep 10 09:21:22 PM UTC 2025** and
 **Thu Sep 11 09:48:40 AM UTC 2025** using 78 jobs in parallel on:
@@ -100,7 +144,10 @@ The above image was rendered between **Wed Sep 10 09:21:22 PM UTC 2025** and
      GCC 14.2.0-19 14.2.0
      Debian Testing (currently Debian 14…ish?)
      GNU Make 4.4.1
- ```
+```
+
+
+#### Question
 
 **QUESTION**: Do you have the patience to build an even larger image?
 If you do, **using the program as it is written of course**, please [send the IOCCC](../../judges.html)
