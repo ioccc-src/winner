@@ -2182,7 +2182,7 @@ provided several as part of testing and development.
 Actually according to the man page the function is **supposed to** return `-1`
 if an error occurs or EOF occurs (before...EOF, obviously) so unless there is an
 issue in the implementation or some problem occurs in the system (signal maybe?
-- but that's an ugly one and not to be considered and if it did happen rerunning
+\- but that's an ugly one and not to be considered and if it did happen rerunning
 it should be enough I guess) it should be fine. In any event it's not my code.
 
 There **was** an off-by-one error in iterating through an array that caused a value
