@@ -135,8 +135,8 @@ Sys time: **18 days 18 hours 58 minutes 30.936 seconds**
 
 - [1024x1024 image](endoh1-1024.png)
 
-The above image was rendered between **Wed Sep 10 09:21:22 PM UTC 2025** and
-**Thu Sep 11 09:48:40 AM UTC 2025** using 78 jobs in parallel on:
+The above image was rendered between **Wed Sep 10 21:21:22 UTC 2025** and
+**Thu Sep 11 09:48:40 UTC 2025** using 78 jobs in parallel on:
 
 ```
      CPU: AMD Ryzen Threadripper 3960X 24-Core Processor
