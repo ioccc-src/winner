@@ -98,19 +98,19 @@ value before attempting to try a larger size such as **512** and beyond.
 Here is the fun saga of how the above image was rendered.
 
 > The above image was started on **Thu Sep 11 10:14:24 AM UTC 2025**
-> using 118 parallel jobs, then was suspended or 1 hour at the `Y=217` mark,
-> was interrupted accidentally at the `Y=254` mark.  After a quick
-> edit to the his version of the `try.sh` script  so that it will not delete
+> using 118 parallel jobs, then was suspended for 1 hour at the `Y=217` mark,
+> was interrupted accidentally at the `Y=254` mark. After a quick
+> edit to his version of the `try.sh` script so that it will not delete
 > existing work when restarted, he started again a minute later, at the
-> **Thu Sep 11 01:36:08 PM UTC 2025**.  The rendering was interrupted again
+> **Thu Sep 11 01:36:08 PM UTC 2025**. The rendering was interrupted again
 > at the `Y=972` mark for a couple of minutes, and interrupted again
 > on `Y=1017` mark, due to a system crash (due to memory exhaustion not
-> entirely related to the rendering).  The rendering resumed 4 hours later,
+> entirely related to the rendering). The rendering resumed 4 hours later,
 > this time using 49 parallel jobs, on **Fri Sep 12 09:23:04 PM UTC 2025**
 > when the rendering was finished on **Sat Sep 13 06:24:39 PM UTC 2025**.
 > However files at `Y=1017` were corrupt by the system crash, so rendering
 > re-resumed on **Sat Sep 13 06:25:56 PM UTC 2025** and truly finished on:
-> **Sat Sep 13 06:29:51 PM UTC 2025**!  :-)
+> **Sat Sep 13 06:29:51 PM UTC 2025**! :-)
 
 The hardware used to render was:
 
