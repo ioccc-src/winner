@@ -26,6 +26,7 @@ CC= cc
 CHMOD= chmod
 CLANG= clang
 CLANG_FORMAT= clang-format
+CPP= cpp
 GCC= gcc
 MV= mv
 RM= rm
