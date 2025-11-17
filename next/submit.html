@@ -495,7 +495,7 @@ of:</p>
 timestamp</a>.</p>
 <p>We highly recommend that you use <code>mkiocccentry(1)</code> to create your submit file as
 it must pass the <code>txzchk(1)</code> sanity checks, and when the uncompressed tarball is
-untarred, the resulting directory must pass <code>chkentry(1)</code>.</p>
+untarred, the resulting directory must pass <code>chksubmit(1)</code>.</p>
 </blockquote>
 <p><strong>NOTE</strong>: the <code>00000000-0000-4000-0000-000000000000</code> is your UUID. <strong>MAKE SURE
 YOU CHANGE IT TO YOUR UUID</strong>!</p>
@@ -571,7 +571,7 @@ To see any status updates, you should logout and log back in later.</p>
 </blockquote>
 <p>Or:</p>
 <blockquote>
-<p><strong>Status: submit file failed the chkentry test! Use mkiocccentry to rebuild and resubmit to this slot.</strong></p>
+<p><strong>Status: submit file failed the chksubmit test! Use mkiocccentry to rebuild and resubmit to this slot.</strong></p>
 </blockquote>
 <p>… or <strong>ANY</strong> other error then you <strong>MUST FIX</strong> your submission, repackage your
 tarball with <code>mkiocccentry</code> and upload to the same slot again! If you do not fix
@@ -579,7 +579,7 @@ this your submission <strong>WILL BE REJECTED</strong> for violating <a href="ru
 17</a>!</p>
 <p>If the format test went well, then you will see:</p>
 <blockquote>
-<p><strong>Status: submit file received by the IOCCC judges. Passed both txzchk and chkentry tests.</strong></p>
+<p><strong>Status: submit file received by the IOCCC judges. Passed both txzchk and chksubmit tests.</strong></p>
 </blockquote>
 <p><strong>IMPORTANT</strong>: this does <strong>NOT</strong> mean that your submission does not violate the
 rules or that everything is OK once the tarball is extracted; it simply means
@@ -589,8 +589,8 @@ submission rejected for violating <a href="rules.html#rule17">Rule 17</a>, even 
 tests passed.</p>
 <p>For details on <code>txzchk</code>, see the
 FAQ on “<a href="../faq.html#txzchk">txzchk</a>”.</p>
-<p>For details on <code>chkentry</code>, see the
-FAQ on “<a href="../faq.html#chkentry">chkentry</a>”.</p>
+<p>For details on <code>chksubmit</code>, see the
+FAQ on “<a href="../faq.html#chksubmit">chksubmit</a>”.</p>
 <p>If you need more information on the two JSON files, see
 FAQ on the <a href="../faq.html#info_json">“.info.json file</a>”
 and the

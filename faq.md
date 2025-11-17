@@ -1,6 +1,6 @@
 # IOCCC FAQ Table of Contents
 
-This is FAQ version **28.2.22 2025-08-24**.
+This is FAQ version **28.2.23 2025-11-17**.
 
 
 ## 0. [Entering the IOCCC: the bare minimum you need to know](#enter_questions)
@@ -11,7 +11,6 @@ This is FAQ version **28.2.22 2025-08-24**.
     - **Q 0.1.3**: <a class="normal" href="#compiling_mkiocccentry">How do I compile the mkiocccentry toolkit?</a>
     - **Q 0.1.4**: <a class="normal" href="#install">How do I install mkiocccentry(1) and related tools?</a>
     - **Q 0.1.5**: <a class="normal" href="#using_mkiocccentry">How do I use mkiocccentry?</a>
-    - **Q 0.1.6**: <a class="normal" href="#minimum_versions">What are the minimum versions required for this contest?</a>
 - **Q 0.2**: <a class="normal" href="#platform">What platform should I assume for my submission?</a>
 - **Q 0.3**: <a class="normal" href="#makefile">What should I put in my submission Makefile?</a>
 - **Q 0.4**: <a class="normal" href="#remarks">What should I put in the remarks.md file of my submission?</a>
@@ -24,15 +23,14 @@ This is FAQ version **28.2.22 2025-08-24**.
 - **Q 1.1**: <a class="normal" href="#prog_c">May I use a different source or compiled filename than prog.c or prog?</a>
 - **Q 1.2**: <a class="normal" href="#markdown">What is markdown and how does the IOCCC use it?</a>
 - **Q 1.3**: <a class="normal" href="#mkiocccentry_bugs">How do I report bugs in an `mkiocccentry` tool?</a>
-- **Q 1.4**: <a class="normal" href="#subdirectories">How may I use subdirectories in my submission if Rule 17 disallows them?</a>
-- **Q 1.5**: <a class="normal" href="#mkiocccentry_test">How can I check if my submission passes tests without having to answer questions?</a>
-- **Q 1.6**: <a class="normal" href="#extra-files">What are extra files and how may I include additional files beyond the max allowed?</a>
-- **Q 1.7**: <a class="normal" href="#ai">May I use AI, LLM, Virtual coding assistants, or similar tools to write my submission?</a>
-- **Q 1.8**: <a class="normal" href="#rule17">What are the details behind Rule 17?</a>
-- **Q 1.9**: <a class="normal" href="#uuid">How can I avoid re-entering my UUID to mkiocccentry?</a>
-- **Q 1.10**: <a class="normal" href="#submission_dir">How can I avoid having to move or delete my submission directory for the same workdir?</a>
-- **Q 1.11**: <a class="normal" href="#download_submission">Can I download my submission tarball from the submit server?</a>
-- **Q 1.12**: <a class="normal" href="#del_submission">Can I delete a submission from the submit server?</a>
+- **Q 1.4**: <a class="normal" href="#mkiocccentry_test">How can I check if my submission passes tests without having to answer questions?</a>
+- **Q 1.5**: <a class="normal" href="#extra-files">What are extra files and how may I include additional files beyond the max allowed?</a>
+- **Q 1.6**: <a class="normal" href="#ai">May I use AI, LLM, Virtual coding assistants, or similar tools to write my submission?</a>
+- **Q 1.7**: <a class="normal" href="#rule17">What are the details behind Rule 17?</a>
+- **Q 1.8**: <a class="normal" href="#uuid">How can I avoid re-entering my UUID to mkiocccentry?</a>
+- **Q 1.9**: <a class="normal" href="#submission_dir">How can I avoid having to move or delete my submission directory for the same workdir?</a>
+- **Q 1.10**: <a class="normal" href="#download_submission">Can I download my submission tarball from the submit server?</a>
+- **Q 1.11**: <a class="normal" href="#del_submission">Can I delete a submission from the submit server?</a>
 
 
 ## 2. [IOCCC Judging process](#judging_process)
@@ -50,18 +48,17 @@ This is FAQ version **28.2.22 2025-08-24**.
 
 
 ## 3. [The mkiocccentry toolkit: finer details](#mkiocccentry_details)
-- **Q 3.0**: <a class="normal" href="#mkiocccentry_process">What is the `mkiocccentry(1)` process and what sort of checks does it perform?</a>
-- **Q 3.1**: <a class="normal" href="#txzchk">How can I validate my submission tarball?</a>
-- **Q 3.2**: <a class="normal" href="#fnamchk">What is the `fnamchk` tool?</a>
-- **Q 3.3**: <a class="normal" href="#chkentry">How can I validate my submission directory?</a>
-- **Q 3.4**: <a class="normal" href="#auth_json">What is a `.auth.json` file?</a>
-- **Q 3.5**: <a class="normal" href="#info_json">What is a `.info.json` file?</a>
-- **Q 3.6**: <a class="normal" href="#author_handle_faq">What is an `author handle`?</a>
-- **Q 3.7**: <a class="normal" href="#author_handle_json">What is an `author_handle.json` file and how are they used?</a>
-- **Q 3.8**: <a class="normal" href="#find_author_handle">How can I find my author handle?</a>
-- **Q 3.9**: <a class="normal" href="#entry_id_faq">What is an `entry_id`?</a>
-- **Q 3.10**: <a class="normal" href="#entry_json">What is a `.entry.json` file and how is it used?</a>
-- **Q 3.11**: <a class="normal" href="#jparse">How can I validate any JSON document?</a>
+- **Q 3.0**: <a class="normal" href="#txzchk">How can I validate my submission tarball?</a>
+- **Q 3.1**: <a class="normal" href="#fnamchk">What is the `fnamchk` tool?</a>
+- **Q 3.2**: <a class="normal" href="#chksubmit">How can I validate my submission directory?</a>
+- **Q 3.3**: <a class="normal" href="#auth_json">What is a `.auth.json` file?</a>
+- **Q 3.4**: <a class="normal" href="#info_json">What is a `.info.json` file?</a>
+- **Q 3.5**: <a class="normal" href="#author_handle_faq">What is an `author handle`?</a>
+- **Q 3.6**: <a class="normal" href="#author_handle_json">What is an `author_handle.json` file and how are they used?</a>
+- **Q 3.7**: <a class="normal" href="#find_author_handle">How can I find my author handle?</a>
+- **Q 3.8**: <a class="normal" href="#entry_id_faq">What is an `entry_id`?</a>
+- **Q 3.9**: <a class="normal" href="#entry_json">What is a `.entry.json` file and how is it used?</a>
+- **Q 3.10**: <a class="normal" href="#jparse">How can I validate any JSON document?</a>
 
 
 ## 4. [Compiling IOCCC entries](#compiling)
@@ -247,7 +244,7 @@ looking for mismatches. If no errors are detected it will list everything to you
 again, asking you to confirm it is good.
 
 If everything is OK, it will write the required `.auth.json` and `.info.json`
-and then run `chkentry(1)` on the directory. If all is OK it will create the
+and then run `chksubmit(1)` on the directory. If all is OK it will create the
 tarball. After the tarball is formed, it will run `txzchk(1)` on it, which runs
 `fnamchk(1)`. If all is OK, your submission tarball should be good to go.
 
@@ -256,7 +253,7 @@ FAQ on "[txzchk](#txzchk)",
 the
 FAQ on "[fnamchk](#fnamchk)"
 and the
-FAQ on "[chkentry](#chkentry)"
+FAQ on "[chksubmit](#chksubmit)"
 for more information on these important tools, if you want more information.
 
 See the
@@ -342,12 +339,13 @@ above) run as either `sudo(8)` or root `make install`:
 ```
 
 If everything goes well you should be able to run `mkiocccentry(1)`,
-`txzchk(1)`, `chkentry(1)` and all the other installed tools from any directory,
+`txzchk(1)`, `chksubmit(1)` and all the other installed tools from any directory,
 and the tools that rely on other tools will be able to find those required tools
 from any directory too.
 
 Some tools like `bug_report.sh` and `hostchk.sh` are not meant to be installed
-and will not work from any directory, however.
+and will not work from any directory, however, nor should they be installed
+(some previously were but this was fixed post IOCCC28 and prior to IOCCC29).
 
 
 Jump to: [top](#)
@@ -410,34 +408,12 @@ looked at if the submission wins), run some tests and run a number of other
 tools, as mentioned above, and as described in the "[finer
 details](#mkiocccentry_details)" section.
 
-See also the
-FAQ on "[what the minimum required versions are for this
-contest](#minimum_versions)"
-for more details on how to verify you have the correct versions for this
-contest.
+**PLEASE NOTE**: if your submission directory (or topdir) has certain errors the
+mkiocccentry tool will exit with a fatal error, asking you to fix the problem
+first.
 
 
 Jump to: [top](#)
-
-
-<div id="minimum_versions">
-#### Q 0.1.6: What are the minimum versions required for this contest?
-</div>
-
-At minimum, the tools **MUST** be version:
-
-- `iocccsize(1)`: `"28.15 2024-06-27"`.
-- `mkiocccentry(1)`: `"2.0.1 2025-03-02"`.
-- `fnamchk(1)`: `"2.0.0 2025-02-28"`.
-- `txzchk(1)`: `"2.0.1 2025-03-02"`.
-- `chkentry(1)`: `"2.0.1 2025-03-02"`.
-
-See also the
-FAQ on "[obtaining the latest release of the toolkit](#obtaining_mkiocccentry)".
-
-
-Jump to: [top](#)
-
 
 <div id="SUS">
 <div id="platform">
@@ -645,7 +621,7 @@ Jump to: [top](#)
 
 Files in your submission tarball **MUST** be
 specific permissions. In particular: directories **MUST** be `drwxr-xr-x` (i.e.
-`0755`), the optional files, `try.sh` or `try.alt.sh`, if provided, **MUST** be
+`0755`), the optional files, files ending with `.sh`, if provided, **MUST** be
 `-r-xr-xr-x` (i.e. `0555`) and all other files **MUST** be `-r--r--r--` (i.e.
 `0444`).
 
@@ -806,28 +782,8 @@ for more thorough details on bug reporting.
 
 Jump to: [top](#)
 
-
-<div id="subdirectories">
-#### Q 1.4: How may I use subdirectories in my submission if Rule 17 disallows them?
-</div>
-
-In order to submit a subdirectory, you may simply include a tarball. As long as
-the maximum depth of all files does not exceed the maximum, defined as
-`MAX_PATH_DEPTH`, the maximum filename length (a single component not counting
-the `/`) of all files does not exceed `MAX_FILENAME_LEN` and
-the maximum path length (all components) of all files does not exceed
-`MAX_PATH_LEN`. These macros are defined in
-[limit_ioccc.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h).
-
-
-See also the
-FAQ on "[Rule 17](#rule17)",
-the [guidelines](next/guidelines.html) and [Rule 17](next/rules.html#rule17)
-itself.
-
-
 <div id="mkiocccentry_test">
-#### Q 1.5: How can I check if my submission passes tests without having to answer questions?
+#### Q 1.4: How can I check if my submission passes tests without having to answer questions?
 </div>
 
 In case you do not have a UUID or you simply want to test if `mkiocccentry(1)`
@@ -847,7 +803,7 @@ An example use of this option is:
 ```
 
 This will run the tests that `mkiocccentry(1)`, write the JSON files, use
-`chkentry(1)`, package the tarball and run `txzchk(1)` on it.
+`chksubmit(1)`, package the tarball and run `txzchk(1)` on it.
 
 If you don't want to deal with the having to move or delete the submission
 directory, you could instead do:
@@ -865,7 +821,7 @@ FAQ on "[.info.json](#info_json)",
 the
 FAQ on "[.auth.json](#auth_json)",
 the
-FAQ on "[chkentry](#chkentry),
+FAQ on "[chksubmit](#chksubmit),
 the
 FAQ on "[txzchk](#txzchk)"
 and the
@@ -874,32 +830,28 @@ for more details.
 
 
 <div id="extra-files">
-# What are extra files and how may I include additional files beyond the max allowed?
+# 1.5: What are extra files and how may I include additional files beyond the max allowed?
 </div>
 
-<p class="leftbar">
-Extra files are defined as files that are not the required files (`prog.c`,
-`Makefile`, `remarks.md` and the two generated by `mkiocccentry(1)` `.info.json`
-and `.auth.json`) and files that are also not the optional files (`try.sh`,
-`prog.alt.c` and `try.alt.sh`).
-</p>
+Extra files are defined as files that are not the free files (the required files
+`prog.c`, `Makefile`, `remarks.md` and the optional `try.sh`, `try.alt.sh`,
+`prog.alt.c` and the two generated by `mkiocccentry(1)` `.info.json` and
+`.auth.json`).
 
-<p class="leftbar">
 **NOTE**: optional filenames are only optional if they are in the submission top
 level directory.
-</p>
 
-<p class="leftbar">
+You may provide up to 31 extra files.
+
 If you need to include more files than this, you may include a tarball that
 itself is an extra file, meaning it counts **AS** an extra file.
 This file does **NOT** need to pass the `txzchk(1)` tests; only your submission
-tarball needs to pass these tests.
-</p>
+tarball needs to pass these tests. However see below if you do do this.
 
 Please pay careful attention to [Rule 17](next/rules.html#rule17) and in
-particular the part about the [maximum number of files per
-submission](#max-files), which not only discusses the maximum
-number of files (including extra files) but also specific rules you must follow
+particular the part about the maximum number of files per
+submission, which not only discusses the maximum
+number of files but also specific rules you must follow
 if you do include a tarball. Not following these points puts you at great risk
 of violating [Rule 17](next/rules.html#rule17)!
 
@@ -921,7 +873,7 @@ Jump to: [top](#)
 
 <div id="ai">
 <div id="llm">
-### Q 1.7: May I use AI, LLM, Virtual coding assistants, or similar tools to write my submission?
+### Q 1.6: May I use AI, LLM, Virtual coding assistants, or similar tools to write my submission?
 </div>
 </div>
 
@@ -940,87 +892,79 @@ Jump to: [top](#)
 
 
 <div id="rule17">
-### Q 1.8: What are details behind Rule 17?
+### Q 1.7: What are details behind Rule 17?
 </div>
 
 
 ### TL;DR Rule 17 - Use `mkiocccentry(1)`
 
-<p class="leftbar">
-This is a **COMPLEX** rule.  **Violating this rule will cause your submission to
-be REJECTED!** To help you avoid such a rejection, you are **HIGHLY ENCOURAGED**
+This is a **COMPLEX** rule.  **Violating this rule WILL CAUSE YOUR SUBMISSION TO
+BE REJECTED!** To help you avoid such a rejection, you are **HIGHLY ENCOURAGED**
 to use the `mkiocccentry(1)` tool, based on the latest release of the
 [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry), to form your
 submission's xz compressed tarball.
-</p>
 
-<p class="leftbar">
 The [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry)
 contains **IMPORTANT** tools and libraries such as:
-</p>
 
-* <p class="leftbar">`mkiocccentry(1)`</p>
-* <p class="leftbar">`iocccsize(1)`</p>
-* <p class="leftbar">`txzchk(1)`</p>
-* <p class="leftbar">`fnamchk(1)`</p>
-* <p class="leftbar">`jparse(3)`</p>
-* <p class="leftbar">`chkentry(1)` (which uses `jparse(3)`)</p>
+- `mkiocccentry(1)`
+- `iocccsize(1)`
+- `txzchk(1)`
+- `fnamchk(1)`
+- `jparse(3)`
+- `chksubmit(1)` (which uses `jparse(3)` and is a wrapper to `chkentry(1)`)
 
-<p class="leftbar">
 The above mentioned tools will help you verify that your submission
 conforms to [Rule 17](next/rules.html#rule17).  Each of these tool has a `-h`
 option that provides command line help. For additional details of each tool, see
 its man page, and in some cases, the [IOCCC guidelines](next/guidelines.html).
-</p>
 
-<p class="leftbar">
-The maximum number of **extra files** is 31. See the [maximum number of extra
-files section](#max-files) below for finer details and the
-FAQ on "[what extra files are and how to include additional files](#extra-files)",
-should you need to include more files than this maximum.
-</p>
+The maximum number of **extra files** is 31. See the
+FAQ on "[extra files](#extra-files)"
+for more details.
 
+Below we will list more details and link to relevant FAQs as well.
 
 Jump to: [top](#)
 
 
 ### Rule 17 - The COMPLEX details
 
-<p class="leftbar">
 Each submission **MUST** be in the form of an xz compressed tarball.
 The xz compressed tarball filename **MUST** be of the form:
 `^submit.username-slot_num.[1-9][0-9]{9,}.txz$`.
 
-<p class="leftbar">
 ... where _`username`_ is your IOCCC registration username **in the form of a
 [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier)** (see
 [RFC 9562](https://datatracker.ietf.org/doc/html/rfc9562) for
 details), and where _`slot_num`_ is a single decimal digit integer
 (i.e., >= `0` and <= `9`).
-</p>
 
-<p class="leftbar">
 In particular, `username` is in the form of:
 `xxxxxxxx-xxxx-4xxx-Nxxx-xxxxxxxxxxxx` where `'x'` is a hex digit in the range
 of `[0-9a-f]`, 4 is the UUID version, and `N` is one of `8`, `9`, `a`, or `b`.
-</p>
 
-<p class="leftbar">
 Your xz compressed tarball **MUST** contain, **at a minimum**, the following
-files, in the **TOP LEVEL** directory:
-</p>
+files, in the **TOP LEVEL** directory (see below for more details on each file
+in this list):
 
-* <p class="leftbar">`prog.c`</p>
-* <p class="leftbar">`Makefile`</p>
-* <p class="leftbar">`remarks.md`</p>
-* <p class="leftbar">`.auth.json`</p>
-* <p class="leftbar">`.info.json`</p>
+- `prog.c`: your submission code.
+- `Makefile`: your Makefile that is based on
+[next/Makefile.example](next/Makefile.example).
+- `remarks.md`: your remarks about the submission in markdown format.
+- `.auth.json`: a JSON file about the author details (which will only be looked at by
+the judges IF it wins), generated by the `mkiocccentry(1)` tool.
+- `.info.json`: a JSON file about the submission itself which will be looked at
+by the judges during judging.
 
-<p class="leftbar">
-`prog.c` is of course your submission program.
-</p>
+Note that these do not count against extra files. Neither do the `try.sh`,
+`prog.alt.c` or `try.alt.sh`, should you provide them, and they are in the top
+level directory. See the
+FAQ on "[extra files](#extra-files)"
+for more details on what this means, should you need to include additional files.
 
-<p class="leftbar">
+The `prog.c` is probably pretty obvious if you're here. :-)
+
 The `Makefile` **MUST** be a **non**-empty file in **[GNU
 Makefile](https://www.gnu.org/software/make/manual/make.html)** format. See the
 [Makefile section in the guidelines](next/guidelines.html#makefile),
@@ -1029,9 +973,7 @@ FAQ on "[submission Makefiles](#submission_makefile)"
 and the
 FAQ on "[IOCCC make&lpar;1&rpar; compatibility](#make_compatibility)"
 for help.
-</p>
 
-<p class="leftbar">
 The `remarks.md` **MUST** be a **non**-empty file in markdown format
 (`mkiocccentry(1)` only checks the file size but if you do not have any text in
 it you still risk violating this rule).  See also
@@ -1040,225 +982,174 @@ FAQ on "[remarks.md](#remarks_md)",
 our
 FAQ on "[markdown](#markdown)"
 and our [markdown guidelines](markdown.html).
-</p>
 
-<p class="leftbar">
 See also the [markdown syntax](https://www.markdownguide.org/basic-syntax) guide
 and the [CommonMark Spec](https://spec.commonmark.org/current/).
-</p>
 
-<p class="leftbar">
 The `.auth.json` file is created by `mkiocccentry(1)` and it holds information
 about the author(s) of the submission. It will **ONLY** be looked at if your
 submission wins but it **MUST** still be valid according to `jparse(3)` **AND**
-`chkentry(1)`.
-</p>
+`chksubmit(1)` even if it does not win; if `chksubmit(1)` does not validate this
+file your submission **WILL** be rejected for violating Rule 17! See the
+FAQ on "[.auth.json](#auth.json)"
+for more details on this file.
 
-<p class="leftbar">
 The `.info.json` file is created by `mkiocccentry(1)` and it holds information
 about the submission itself. It also **MUST** be valid according to **BOTH**
-`jparse(3)` **AND** `chkentry(1)`.
-</p>
+`jparse(3)` **AND** `chksubmit(1)`. See the
+FAQ on "[.info.json](#info.json)"
+for more details on this file.
 
-<p class="leftbar">
+See the
+FAQ on "[chksubmit&lpar;1&rpar;](#chksubmit)"
+for more details on this important tool.
+
 For the complete `mkiocccentry(1)` process, see the
 FAQ on the "[mkiocccentry process](#mkiocccentry_process)".
-</p>
 
-<p class="leftbar">
 The tool performs a lot of checks, both directly and indirectly, and if it or
 any other tool detects **ANY** problem, you are **HIGHLY** encouraged to fix it
 and try again.
-</p>
 
-<p class="leftbar">
 On the other hand, some issues are errors and you **MUST** fix those.
-</p>
 
-<p class="leftbar">
-If you do use `mkiocccentry(1)` and you run into a problem, you might see the
-FAQ on "[how to ask a question about the IOCCC rules, guidelines and
-tools](#questions)".
-If you believe you have encountered a bug, feel free to open a bug report at the
-[mkiocccentry repo issues
+If you do use `mkiocccentry(1)` (which we STRONGLY recommend you do) and you run
+into a problem, you might see the FAQ on "[how to ask a question about the IOCCC
+rules, guidelines and tools](#questions)".  If you believe you have encountered
+a bug, feel free to open a bug report at the [mkiocccentry repo issues
 page](https://github.com/ioccc-src/mkiocccentry/issues/new?assignees=&labels=bug&projects=&template=bug_report.yml&title=%5BBug%5D+%3Ctitle%3E).
-</p>
 
-<p class="leftbar">
 The xz compressed tarball file **MUST** be <= **3999971** octets in size.
-</p>
 
-<p class="leftbar">
 When your submission's xz compressed tarball is uncompressed, the total size of
 your submission (the sum of the size of the program source code,
 remarks/comments, Makefile and all other files) **MUST** be <= **28314624**
 octets (**27651K**) in size.
-</p>
 
-<p class="leftbar">
 One of the many checks `txzchk(1)` performs is summing up the total size. Of
 course if you manipulate the tarball to get past this you risk violating this
 rule.
-</p>
 
-<p class="leftbar">
 Your submission's xz compressed tarball **MUST** pass the `txzchk(1)` tests. See
 the [guidelines on txzchk&lpar;1&rpar;](next/guidelines.html#txzchk) for more details on this tool.
-</p>
 
-<p class="leftbar">
-**IMPORTANT**: Make **SURE** you have the most recent version of the
+**IMPORTANT**: make **SURE** you have the most recent version of the
 `mkiocccentry` toolkit! Not doing so will put you at a great risk of violating
 this rule! See the
 FAQs on "[obtaining, compiling, installing and using the mkiocccentry toolkit](#mkiocccentry)"
 for more details.
-</p>
 
-<p class="leftbar">
 You are **HIGHLY ENCOURAGED** to use the `mkiocccentry(1)` tool to form your
 submission's xz compressed tarball. See the [guidelines on
 mkiocccentry&lpar;1&rpar;](next/guidelines.html#mkiocccentry) for
 more details on this tool and see the [mkiocccentry
 repo](https://github.com/ioccc-src/mkiocccentry) for the toolkit itself.
-</p>
 
-<p class="leftbar">
-Your entry **MAY** have subdirectories, depending on the depth and total length of
-the filenames. Certain directories like `.git`, `RCCS`, `CVS` and `.svn`
-(amongst others) are skipped. For more information, see the
+Your entry **MAY** have subdirectories, depending on the depth (a max depth,
+noted below) and total length of the filenames. Certain directories like `.git`,
+`RCCS`, `CVS` and `.svn` (amongst others) are skipped. For more information, see
+the
 FAQ on "[subdirectories](#subdirectories)".
-</p>
 
-<p class="leftbar">
 With the exception of those generated by the `mkiocccentry(1)` tool or the tools
 it or any other tool invokes, files in your submission **MUST**:
-</p>
 
-* <p class="leftbar">Be <= **38** characters in length.</p>
-* <p class="leftbar">**NOT** have a leading **`/`**.</p>
-* <p class="leftbar">**NOT** contain a path component of: **`.`** (that is, with
+- Be <= **38** characters in length.
+- **NOT** have a leading **`/`**.
+- **NOT** contain a path component of: **`.`** (that is, with
 the exception of files generated by `mkiocccentry(1)` itself, it must have
-**NO** dot file including `.` itself).</p>
-* <p class="leftbar">**NOT** contain a path component of: **`..`** (that is,
-**NO** path component that matches the regular expression **`^..$`**).</p>
-* <p class="leftbar">Match the regular expression
+**NO** dot file including `.` itself).
+- **NOT** contain a path component of: **`..`** (that is,
+**NO** path component that matches the regular expression **`^..$`**).
+- Match the regular expression
 `^[0-9A-Za-z]+[0-9A-Za-z_+.-]*$` (again, excluding files generated by
-`mkiocccentry(1)`).</p>
-* <p class="leftbar">**NOT** have a directory/file depth > 4.</p>
-* <p class="leftbar">**NOT** have a total **path** length > 99 characters.</p>
+`mkiocccentry(1)`).
+- **NOT** have a directory/file depth > 4.
+- **NOT** have a total **path** length > 99 characters.
 
-<p class="leftbar">
-The submission tarball created by `mkiocccentry(1)` **MUST** have
-the additional files that are generated by the `mkiocccentry(1)` tool:
-</p>
+Again, the submission tarball **MUST** have the mkiocccentry(1) created JSON
+files:
 
-* <p class="leftbar">`.auth.json` which contains information about the author or
+- `.auth.json` which contains information about the author or
 authors (that will only be looked at if the submission wins).</p>
-* <p class="leftbar">`.info.json` which contains information about the
+- `.info.json` which contains information about the
 submission.</p>
 
-<p class="leftbar">
-The `chkentry(1)` tool will validate these two JSON files, and do other checks
+The `chksubmit(1)` tool will validate these two JSON files, and do other checks
 on your submission directory as well, _prior to_ `mkiocccentry(1)` forming the
-tarball.
-</p>
+tarball. See the
+FAQ on "[chksubmit&lpar;1&rpar;](#chksubmit)"
+for more details on this tool.
 
-<p class="leftbar">
 Files and directories in your submission tarball **MUST** be specific
 permissions and `mkiocccentry(1)` does this for you. In particular: directories
-**MUST** be `drwxr-xr-x` (i.e. `0755`); the optional files, not counting
-`prog.alt.c` (i.e. `try.sh` and `try.alt.sh`), if provided, **MUST** be
+**MUST** be `drwxr-xr-x` (i.e. `0755`); any file ending with `.sh` **MUST** be
 `-r-xr-xr-x` (i.e. `0555`); and all other files **MUST** be `-r--r--r--` (i.e.
-`0444`).  If any file or directory does not have the correct permissions, your submission **WILL**
-be rejected for violating [Rule 17](next/rules.html#rule17)!
-</p>
+`0444`).  If any file or directory does not have the correct permissions, your
+submission **WILL** be rejected for violating [Rule 17](next/rules.html#rule17)!
 
-<p class="leftbar">
 After `mkiocccentry(1)` creates the directories and copies the files with these
 modes, it also verifies them after the fact and if they are not correct it is an
 **error**.
-</p>
 
-<p class="leftbar">
 If you do need different permissions, then see the
 FAQ on "[file permissions](#file_perms)". Also keep in mind
 [Rule 4](next/rules.html#rule4), [Rule 5](next/rules.html#rule5) and [Rule 21](next/rules.html#rule21).
-</p>
 
-<p class="leftbar">
 The `txzchk(1)` tool will also verify file/directory permissions (and many other
-things) for you, and so will `chkentry(1)` (along with other checks on files and
+things) for you, and so will `chksubmit(1)` (along with other checks on files and
 directories in your submission directory, including the two required JSON files,
 `.auth.json` and `.info.json`). If these checks fail it is an **error**
 and `mkiocccentry(1)` will abort. In this case (it fails and you used
 `mkiocccentry(1)`) it is very **possibly** a bug; please [report it as a bug at
 the mkiocccentry issues
 page](https://github.com/ioccc-src/mkiocccentry/issues/new?assignees=&labels=bug&projects=&template=bug_report.yml&title=%5BBug%5D+%3Ctitle%3E).
-</p>
 
-<p class="leftbar">
 The tarball filename **MUST** pass `fnamchk(1)`; the tool `txzchk(1)`
 will run `fnamchk(1)` as part of its algorithm. If you use `mkiocccentry(1)`
 there should be no problem but if you were to package things manually it is
 possible there could be a problem and this poses a big risk of violating [Rule
 17](next/rules.html#rule17).
-</p>
 
-<p class="leftbar">
 The `fnamchk(1)`, which `txzchk(1)` executes, will verify that the
 filename is correct. But if you do package your tarball manually, and you have a
 mismatch in what is in the tarball and the name, `txzchk(1)` will flag the
 discrepancy as an error and exit with non-zero.
-</p>
 
-<p class="leftbar">
 These checks **MUST PASS**. If they do not you stand a significant chance of
 having your submission rejected for violating [Rule 17](next/rules.html#rule17)!
-</p>
-
 
 <div id="max-files">
 #### Maximum number of files per submission
 </div>
 
-<p class="leftbar">
 The maximum number of files your submission tarball may contain, not counting
-the optional files (`prog.alt.c`, `try.sh`, `try.alt.sh`) and the mandatory
-files (`prog.c`, `Makefile`, `remarks.md` plus the `mkiocccentry(1)` generated
-files `.auth.json` and `.info.json`), is 31. This is defined in the macro
+the free files (`prog.c`, `remarks.md`, `Makefile`, `prog.alt.c`, `try.sh`,
+`try.alt.sh`,, `.info.json` and `.auth.json`) is 31. This is defined in the macro
 `MAX_EXTRA_FILE_COUNT` in
 [soup/limit_ioccc.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h)
 in the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry). See the
 FAQ on "[what extra files are and how to include more](#extra-files)"
 if you need to include more files.
-</p>
 
-<p class="leftbar">
 If you do include a tarball that takes your extra files count over the maximum,
 you **MUST** explain this in your `remarks.md` file! **PLEASE** do not include a
 tarball with extra files for a test-suite; instead mention in your remarks that
 you have extra files for a test-suite that can be included should your
 submission win. Of course if you don't need that many files for a test-suite you
 are more than welcome to include those files in your submission.
-</p>
 
-<p class="leftbar">
 If you need to extract a tarball by some Makefile, or perhaps the program
 itself, then `make clobber` **MUST** remove everything that the extraction
 created!
-</p>
 
-<p class="leftbar">
 Tarballs **MUST** only create files and directories _under_ the submission
 directory. They may **NOT** contain absolute paths (paths that start with `/`)!
 `txzchk` does **NOT** check other tarballs so **YOU MUST** verify these details
 yourself.
-</p>
 
-<p class="leftbar">
 **IMPORTANT REMINDER**: **MAKE SURE** your tarball does not reveal who you are!
 The `mkiocccentry(1)` tool uses the v7 format. For instance you might try:
-</p>
 
 ``` <!---sh-->
     tar --format=v7 -cJf foo.txz directory
@@ -1266,32 +1157,24 @@ The `mkiocccentry(1)` tool uses the v7 format. For instance you might try:
 
 <hr style="width:50%;text-align:left;margin-left:0">
 
-
-<p class="leftbar">
 **IMPORTANT**: where [Rule 17](next/rules.html#rule17) and the tools from the latest
 release of the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry)
 conflict, the [IOCCC judges](judges.html) will use their best judgment which
 is likely to favor [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry) code.
-</p>
 
-<p class="leftbar">
 This means you should **MAKE SURE** that you use `mkiocccentry(1)` to
 package your submission; `mkiocccentry(1)` will run the above mentioned tools
 (that do not act on the tarball) **before** creating the tarball and after the
 tarball is created it will then verify that the tarball is okay by running
 `txzchk(1)` on it. If any step fails it is an error and submitting the
 submission will result in violating this rule.
-</p>
 
-<p class="leftbar">
 **MAKE SURE** you use the correct release of the repository; you should do this
 **AFTER** the contest opens (pull any changes or if you prefer download the
 repository via the download option at GitHub). See the
 FAQ on "[obtaining the latest release of mkiocccentry](#obtaining_mkiocccentry)"
 for more help on ensuring you do have the most up to date release.
-</p>
 
-<p class="leftbar">
 We recommend that you run `make` and then install the tools (and man pages) via
 `make install` (as root or using `sudo(8)`) to help you run these tools from
 your submission's directory (or any other directory). The `make install` will
@@ -1299,32 +1182,27 @@ install in `/usr/local`.  However, **you do not have** to install them, but in
 that case you'll have to run it from the toolkit's directory or use the correct
 options to specify the path to the necessary tools, and also specify the path to
 your files, which can be problematic.
-</p>
 
-<p class="leftbar">
 These tools will link in the `jparse(3)` library, the `dbg` library and the
-`dyn_array` library; `chkentry(1)` uses the JSON parser (`jparse(3)`) to
-validate and parse the [JSON](https://www.json.org/json-en.html) files but the
-other tools use parts of the `jparse` utility functions as well.
-</p>
+`dyn_array` library as well as the `pr(3)` and `soup(3)` libraries;
+`chksubmit(1)` uses the JSON parser (`jparse(3)`) to validate and parse the
+[JSON](https://www.json.org/json-en.html) files but the other tools use parts of
+the `jparse` utility functions as well.
 
-<p class="leftbar">
 If you run into a problem with one or more of these tools, **PLEASE** [report it
 as a bug at the mkiocccentry issues
 page](https://github.com/ioccc-src/mkiocccentry/issues/new?assignees=&labels=bug&projects=&template=bug_report.yml&title=%5BBug%5D+%3Ctitle%3E),
 **making sure to run `bug_report.sh`**. See the [guidelines](next/guidelines.html)
 for help here and also read our
 FAQ on "[mkiocccentry repo bugs](#mkiocccentry_bugs)".
-</p>
 
-<p class="leftbar">At the risk of stating the obvious: submissions that violate [Rule
+At the risk of stating the obvious: submissions that violate [Rule
 17](next/rules.html#rule17) **WILL BE REJECTED**, so **BE SURE** to use the latest release of the
 [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry), to form and test
 your submission's xz compressed tarball. Do **NOT** assume you have the most
 recent release without pulling or downloading via GitHub and do **MAKE SURE** you
 do this **AFTER** the [contest status](status.html) has changed to
 [open](#open).
-</p>
 
 
 Jump to: [top](#)
@@ -1332,7 +1210,7 @@ Jump to: [top](#)
 
 <div id="uuid">
 <div id="uuid_file">
-### Q 1.9: How can I avoid re-entering my UUID to mkiocccentry?
+### Q 1.8: How can I avoid re-entering my UUID to mkiocccentry?
 </div>
 </div>
 
@@ -1368,7 +1246,7 @@ FAQ on "[the answers file](#answers_file)".
 Jump to: [top](#)
 
 <div id="submission_dir">
-### Q 1.10: How can I avoid having to move or delete my submission directory for the same workdir?
+### Q 1.9: How can I avoid having to move or delete my submission directory for the same workdir?
 </div>
 
 If you wish to not have to worry about removing or moving the submission
@@ -1389,7 +1267,7 @@ specify the path by the `-r rm` option.
 Jump to: [top](#)
 
 <div id="download_submission">
-### Q 1.11: Can I download my submission tarball from the submit server?
+### Q 1.10: Can I download my submission tarball from the submit server?
 </div>
 
 We do not support this. If you need to verify your submission, then
@@ -1871,306 +1749,10 @@ Jump to: [top](#)
 Jump to: [top](#)
 
 
-<div id="mkiocccentry_process">
-### Q 3.0: What is the `mkiocccentry(1)` process and what sort of checks does it perform?
-</div>
-
-**TL;DR**: the program will make a submission directory (name based on the
-username and slot number you provide) under the workdir and then switch to the
-topdir. It will then create lists of files and directories to present to you, to
-verify everything is in order. If something is not allowed (bad filename for
-example) or an error occurs (missing required file for example) you will be
-notified of this. After you verify everything is okay the files/directories
-found will be copied/made and it will then switch to the submission directory.
-In the submission directory it first runs `make clobber` and then scans the
-directory hierarchy again, verifying things are still okay. When done it will
-ask you to verify things still look OK to you too. If all is good it'll ask you
-for more information about the author(s). Next the two required JSON files
-`.auth.json` and `.info.json` will be created. After that `chkentry(1)` will be
-run on the directory. If all is good it'll give you another chance to say the
-files/directories look good and if you answer yes it'll create the tarball and
-run `txzchk` on it.
-
-In most cases the program will prompt you to verify your input is correct. In
-the case of author information (which will only be looked at if you win) you
-will be asked to verify country code prior to being asked the other questions.
-If you fail to enter other author information correctly you will be prompted
-right away to fix it. Afterwards, when the author information is collected, it
-will ask you to confirm. This procedure happens for each author.
-
-In the case of `-i answers` option being used, you will not have to put in most
-information but you will have to confirm the lists of files and directories are
-correct, unless you use `-Y` (which we do not recommend).
-
-If `topdir` is not a readable (`+r`), searchable (`+x`) directory it is an error.
-
-If `workdir` is not a writable (`+w`), searchable (`+x`) directory it is an error.
-
-If `workdir` is in `topdir` the program will not descend into it (the workdir).
-
-If `topdir` is the same (by device and inode) as `workdir` it is an error.
-If somehow `topdir` or `workdir` is found under the submission directory (by
-device and inode) it is an error (and you should report it as a bug.
-
-In more detail the `mkiocccentry(1)` tool performs the below steps.
-
-0. Ask the user for a submission ID (see the [how to register](next/register.html)
-for more details on how to obtain this and [Rule 17](next/rules.html#rule17) for
-the importance of this).
-    * If this is an invalid UUID (malformed), you will be asked to correct it
-    until it is.
-    * If the `-u uuidfile` option is used and the UUID in the file `uuidfile` is not malformed,
-    the user will not be prompted for a UUID.
-    * If the `-U uuidstr` option is used and the UUID is not malformed, the user
-    will not be prompted for a UUID.
-    * The `-u` and `-U` options may not be used with any option that reads from
-    an answers file (`-i answers`, `-d`, `-s seed`).
-1. Ask the user for the submission slot (the submission number; see [how to
-register](next/register.html) and [Rule 17](next/rules.html#rule17) for more details).
-    * If this is out of range (see `MAX_SUBMIT_SLOT` in
-    [limit_ioccc.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h))
-    you will be asked to correct it until it is.
-2. Make the submission directory under `topdir` in the form of
-`workdir/submit.USERNAME-SLOT`.
-    * If this directory already exists it is an error, unless the `-x` option is
-    used, in which case it'll be deleted.
-    * If for some reason the default `rm` paths do not work, you may use `-r rm`
-    to specify the path to a working `rm` command.
-3. Change to the `topdir`.
-4. Traverse the directory, creating lists of ignored/forbidden
-files/directories/symlinks as well as a list directories to make and a list of
-files to copy to the submission directory (and if (sub)directories are found
-with files, copy those files to their respective directory). Note the following:
-    * If the depth is too deep it is an error (see `MAX_PATH_DEPTH` in
-    [limit_ioccc.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h)).
-    * If there are too many extra directories (total count not including the
-    submission directory itself, unrelated to `MAX_PATH_DEPTH` above) it is an
-    error (see `MAX_EXTRA_DIR_COUNT` in
-    [limit_ioccc.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h)).
-    * If the max path length is <= 0 it is an error (and a bug!).
-    * If the max depth is <= 0 it is an error (and a bug!).
-    * If the max filename length is <= 0 it is an error (and a bug!).
-    * If a path is NULL it is an error.
-    * If a path is an empty string it is an error.
-    * If the path length (i.e. `strlen(path)` where path starts after the
-    initial `./` of the path in the `topdir`) is too long it is an error (see `MAX_PATH_LEN` in
-    [limit_ioccc.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h)).
-    * If a filename (last component of the path) is too long it is an error (see `MAX_FILENAME_LEN` in
-    [limit_ioccc.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h)).
-    * If a filename or directory name is not a sane relative path, not allowed
-    or will not be added for some other reason, it will be added to a relevant list to show to
-    the user later, to let them know it will not be added to the submission. By `relative` we mean it
-    must not start with `/` (which shouldn't happen even if you give an absolute
-    path) and by `sane` we mean that each component must match the regexp: `^[0-9A-Za-z]+[0-9A-Za-z_+.-]*$`.
-    * If a directory is unreadable it is an error.
-    * If a directory causes a cycle in the tree it is an error.
-    * If `stat(2)` on the path fails it is an error.
-    * If `prog.c`, `Makefile` or `remarks.md` is/are not found it is an error.
-    * If too many files that are not `prog.c`, `Makefile`, `remarks.md`,
-    `try.sh`, `prog.alt.c` or `try.alt.sh` are found, it is an error (see
-    `MAX_EXTRA_FILE_COUNT` in
-    [limit_ioccc.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h)).
-    * Symlinks are not allowed but it is not an error (they will be added to a
-    list and ignored).
-    * If any file type other than a regular file, a directory or a symlink is
-    encountered it is an error.
-    * If there is an unknown error it is an error :-)
-5. Show each list to the user, asking if this is okay. The lists include:
-    * Ignored directories (those like `.git`, `CVS`, `RCCS`, `.svn` and various
-    others).
-    * Unsafe directory names that will not be added (i.e. those that are not
-    POSIX plus + safe chars only; see above step (4)). This includes directories
-    starting with a `.`.
-    * Forbidden files such as `index.html`, `README.md`, `prog`, `prog.alt`.
-    * Unsafe filenames that will not be added (i.e. those that are not POSIX
-    plus + safe chars only; see above step (4)). This includes files starting
-    with `.`.
-    * Symlinks found (these are not allowed).
-    * Directories to be made.
-    * Required files (`prog.c`, `Makefile` and `remarks.md`) to be copied.
-    * Non-required files to be copied.
-    * The user is asked to verify each list, including the lists of directories
-    and files to be made/copied, and if the user says it is not OK the program will abort.
-6. Make any directories if necessary (under
-`workdir/submit.USERNAME-SLOT` i.e. the submission directory).
-    * Directories **MUST** be and are made with mode `0755`.
-    * If any directory is not this mode `txzchk(1)` will flag it (and so will
-    `mkiocccentry(1)`).
-7. The non-ignored files are copied to their respective directories under the
-submission directory.
-    * `try.sh` and `try.alt.sh` **MUST** be and are copied as mode `0555`.
-    * All other files **MUST** be and are copied as mode `0444`.
-    * Anything else will be flagged by `txzchk(1)` (and it'll be flagged by
-    `mkiocccentry(1)` too).
-8. `cd submit.USERNAME-SLOT` (i.e. switch to submission directory).
-9. `make -f Makefile clobber`.
-    * If this fails it is not an error but you are warned about it (it is an error only if the `Makefile`
-    does not a regular readable file but; even so, see [Rule 20](next/rules.html#rule20).
-10. Traverse the new tree from `.` (the submission directory) with additional steps from (4).
-    * If any file has an ignored directory name in it, it is an error.
-    * If a symlink is found it is an error.
-    * If any file type other than a directory or regular file exists it is an
-    error.
-    * If a forbidden filename exists it is an error.
-    * If any file or directory starts with `/` or is not POSIX plus + safe chars
-    only (see (4) above) it is an error (though this should not actually happen
-    unless you're doing something funny).
-    * If the directory depth becomes too deep it is an error.
-    * If `prog.c`, `Makefile` or `remarks.md` are missing (or not readable
-    regular files) it is an error.
-    * If an optional file is a directory it is an error.
-    * If a file or directory is in the submission directory that was not found
-    in the topdir it is an error.
-    * If a file or directory found in the topdir is not in the submission
-    directory it is an error.
-    * If a file or directory in the submission directory is a different type
-    from the topdir (e.g. if `foo` was a directory in topdir but in the submission
-    directory it is a file) it is an error.
-    * If a file (based on the name) or directory has the wrong permission it is
-    an error (see (7) above).
-    * If `fts_read(3)` reports something as a directory but it's not a directory
-    it is an error (and likewise if it reports something as a file and it's not
-    a file it is an error) - though this should never happen.
-    * If a directory name (full path from the submission directory) is the name
-    of a mandatory file it is an error.
-    * If a directory name (full path from the submission directory) is the name
-    of of an optional file it is an error.
-    * `iocccsize(1)` (via the `mkiocccentry(1)` function `check_prog_c()`) will
-    be run on your `prog.c`, allowing you to override any warnings; if you do not
-    override an issue flagged it is an error but if warnings from `check_prog_c()`
-    are ignored you risk violating the [Rules](next/rules.html), including [Rule
-    2](next/rules.html#rule2).
-    * `check_Makefile()` will be run on `Makefile`; if it is a non-readable or
-    empty file it is an error but otherwise you may override any warnings
-    (risking violating the [Rules](next/rules.html), especially [Rule
-    17](next/rules.html#rule17) and [Rule 20](next/rules.html#rule20)).
-    * `check_remarks_md()` will be run on your `remarks.m`; if it is not a
-    regular readable file or it is empty it is an error. Otherwise it will
-    proceed. Note it does not check that there is any text in the file, just
-    that the file size is not 0, and having a `remarks.md` that is not size 0
-    but has no content is violating [Rule 17](next/rules.html#rule17) and [Rule
-    19](next/rules.html#rule19).
-    * If any other error condition from step (4) occurs it is also an error.
-11. Present the list of non-dot files that remain and ask the user to confirm.
-12. Ask the user for a submission title.
-13. Ask the user for a one line abstract of the submission.
-14. Ask the user for the number of authors and for each author ask a variety of
-questions (see below for more information on what kind of questions).
-15. Create `.info.json`.
-16. Create `.auth.json`.
-17. Run `chkentry(1)` on your submission directory to verify things look good,
-including that the `.info.json` and `.auth.json` files are okay.
-    * It also checks that the manifest in `.info.json` matches what is in the
-    submission directory and it verifies file permissions too; if you wish to
-    know what else it does we suggest you read the source code.
-18. Show the output of `ls -lakR .`, asking the user to confirm that the listing
-is okay.
-19. Create the tarball with the name in the form of
-`submit.USERNAME-SLOT.TIMESTAMP`.
-20. Run `txzchk(1)` on the tarball.
-
-If any of the steps fail or if the user says something is not okay, it aborts.
-Some of the other checks that are made:
-
-- If `prog.c` violates [Rule 2](next/rules.html#rule2) (see
-[iocccsize.c](https://github.com/ioccc-src/mkiocccentry/blob/master/iocccsize.c)).
-- If `prog.c` is empty (see [Rule 1](next/rules.html#rule1) and the
-[Guidelines](next/guidelines.html)).
-- If `prog.c` has any NUL (`\0`) char (see
-[rule_count.c](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/rule_count.c)).
-- If `prog.c` has any unknown or invalid trigraph (see
-[rule_count.c](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/rule_count.c)).
-- If `prog.c` triggers a word buffer overflow (see
-[rule_count.c](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/rule_count.c)).
-- If `prog.c` triggers an `ungetc(3)` error (see
-[rule_count.c](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/rule_count.c)).
-- If the first rule in the `Makefile` is not `all`.
-- If the `Makefile` does not have a `clean` rule.
-- If the `Makefile` does not have a `clobber` rule.
-- If the `Makefile` does not have a `try` rule.
-
-Conditions that one **MUST** correct, and which `mkiocccentry(1)` will prompt until
-they are correct, are:
-
-- Your _contest ID_ is invalidly formed.
-- Your _submit slot_ is < 0 or > `MAX_SUBMIT_SLOT` (see
-[limit_ioccc.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h)).
-- Your _title_ is not in the range of 1 through `MAX_TITLE_LEN` chars (see
-[limit_ioccc.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h)).
-- Your _title_ does not match the regexp `^[0-9a-z][0-9a-z._+-]*$`.
-- Your _abstract_ is not between 1 and `MAX_ABSTRACT_LEN` chars
-(see [limit_ioccc.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h)).
-- The author count is not 1 through `MAX_AUTHORS` (see
-[limit_ioccc.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h)).
-- An author _name_ is not 1 through `MAX_NAME_LEN` chars (see
-[limit_ioccc.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h)).
-- Duplicate author _name_.
-- _Country code_ is invalid (i.e. it is not a ISO 3166-1 2 character code).
-- An _email_, if provided, is not in the format of `x@y` or
-if `x` or `y` contain a `@`, are empty or if the total length is longer than
-`MAX_EMAIL_LEN` (see [limit_ioccc.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h)).
-- A _URL_ or _alt URL_, if provided, does not start with `http://`
-or `https://` or is longer than `MAX_URL_LEN` chars (see
-[limit_ioccc.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h))
-or does not have anything after the `http://` or `https://`.
-- A _mastodon handle_, if provided, is not in the form of
-`@user@site` (i.e. starts with an `@`, has text following it and then another
-`@` followed by more text and has no other `@`), or if it is longer than `MAX_MASTODON_LEN` (see
-[limit_ioccc.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h)).
-- A _GitHub account_, if provided, does not start with an `@`,
-has more than one `@`, does not have any text after the `@` or is longer than `MAX_GITHUB_LEN` (see
-[limit_ioccc.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h)).
-- An _affiliation_, if provided, is longer than
-`MAX_AFFILIATION_LEN` (see [limit_ioccc.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h)).
-- An _author handle_, if the default is not accepted, does
-not match the regexp `^[0-9A-Za-z][0-9A-Za-z._+-]*$`.
-- An _author handle_ is repeated.
-
-The program does confirm that the information for each author is correct,
-allowing you to correct the information without having to start the program
-over.
-
-Although the `mkiocccentry(1)` tool will verify everything for you, you may wish
-to validate different parts individually with the different tools. As the
-[rules](next/rules.html) state, each of these tools has a `-h` option.
-
-See the
-FAQ on "[jparse](#jparse)",
-the
-FAQ on "[.auth.json](#auth_json)",
-the
-FAQ on "[.info.json](#info_json)",
-the
-FAQ on "[chkentry](#chkentry)",
-the
-FAQ on "[txzchk](#txzchk)"
-and the
-FAQ on "[fnamchk](#fnamchk)"
-for more details on the tools that `mkiocccentry` either executes directly or
-indirectly as part of the packaging process, especially if you wish to run one
-or more of these tools manually.
-
-See also the
-FAQ on "[how to test everything at once without having to answer
-questions](#mkiocccentry_test)".
-
-See also the [Guidelines](next/guidelines.html) and the [Rules](next/rules.html)
-(especially [Rule 1](next/rules.html#rule1), [Rule 2](next/rules.html#rule2), [Rule
-17](next/rules.html#rule17), [Rule 19](next/rules.html#rule19) and [Rule
-20](next/rules.html#rule20)).
-
-Finally, if you wish to not have to enter the same answers just to update a
-submission, see the
-FAQ on the "[answers file feature](#answers_file)".
-
-
-Jump to: [top](#)
-
-
 <div id="txzchk">
 <div id="tarball">
 <div id="xz">
-### Q 3.1: How can I validate my submission tarball?
+### Q 3.0: How can I validate my submission tarball?
 </div>
 </div>
 </div>
@@ -2210,7 +1792,7 @@ Jump to: [top](#)
 
 <div id="fnamchk">
 <div id="tarball_filename">
-### Q 3.2: What is the `fnamchk` tool?
+### Q 3.1: What is the `fnamchk` tool?
 </div>
 </div>
 
@@ -2238,15 +1820,15 @@ for more information.
 Jump to: [top](#)
 
 
-<div id="chkentry">
-### Q 3.3: How can I validate my submission directory?
+<div id="chksubmit">
+### Q 3.2: How can I validate my submission directory?
 </div>
 
 If you want to validate your submission directory manually, including but not
-limited to the `.auth.json` and `.info.json` files, you should use `chkentry(1)`
+limited to the `.auth.json` and `.info.json` files, you should use `chksubmit(1)`
 from the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry).
 
-The `chkentry(1)` tool runs a variety of checks on your submission directory,
+The `chksubmit(1)` tool runs a variety of checks on your submission directory,
 including, but not limited to, using the [jparse
 API](https://github.com/ioccc-src/mkiocccentry/blob/master/jparse/man/man3/jparse.3)
 to validate the two IOCCC specific JSON files (as valid JSON) and additional
@@ -2254,7 +1836,7 @@ checks on those files as well. An important thing that it does is verify that
 your files are the right permissions and that the manifest in the `.info.json`
 files match what is in the directory. What all the checks are is out of scope of this
 document; if you wish to know we recommend you read the [source
-code](https://github.com/ioccc-src/mkiocccentry/blob/master/chkentry.c).
+code](https://github.com/ioccc-src/mkiocccentry/blob/master/chksubmit.c).
 
 **NOTE**: the IOCCC [jparse
 API](https://github.com/ioccc-src/mkiocccentry/blob/master/jparse/man/man3/jparse.3)
@@ -2267,7 +1849,7 @@ and
 FAQ on "[.info.json](#info_json)"
 for more details on the two required and very important JSON files.
 
-The `chkentry(1)` tool accepts a single arg, a directory that **MUST** have the
+The `chksubmit(1)` tool accepts a single arg, a directory that **MUST** have the
 two JSON files, `.auth.json` and `.info.json` as well as the `prog.c`,
 `Makefile` and `remarks.md` files along with all the other files listed in the
 `.info.json` manifest. (Okay there is an option to skip files but this is for
@@ -2279,18 +1861,18 @@ As an example, if your submission directory is
 command:
 
 ``` <!---sh-->
-    chkentry 00000000-0000-4000-0000-000000000000-3
+    chksubmit 00000000-0000-4000-0000-000000000000-3
 ```
 
 If there is a [JSON](https://www.json.org/json-en.html) issue detected by the
-`jparse(3)` API (i.e. it is not valid JSON) it is an error and `chkentry(1)`
+`jparse(3)` API (i.e. it is not valid JSON) it is an error and `chksubmit(1)`
 will report this, exiting with a non-zero exit code. If the parsing is OK (i.e.
 valid JSON) but there is an issue in one or both of the
 [JSON](https://www.json.org/json-en.html) files in **the context of the IOCCC**,
 it will report this as an **error**. It also does, as briefly noted above, other
 checks.
 
-If `chkentry(1)` fails to validate your submission directory your submission
+If `chksubmit(1)` fails to validate your submission directory your submission
 **WILL** be **REJECTED**! This is why you **MUST** make sure you use the
 `mkiocccentry(1)` tool to form your submission directory.
 
@@ -2300,12 +1882,17 @@ and the
 FAQ on "[.info.json](#info_json)"
 as well as [Rule 17](next/rules.html#rule17) for more information.
 
+**NOTE**: the `chksubmit(1)` tool invokes `chkentry(1)` but as a contestant  you
+do not need to worry about those details. One should use `chksubmit(1)` instead
+of `chkentry(1)` when validating a directory; `chkentry(1)` is for the judges
+and is what was used in IOCCC28. For IOCCC29 and beyond, `mkiocccentry(1)` uses
+`chksubmit(1)` and so should you.
 
 Jump to: [top](#)
 
 
 <div id="auth_json">
-### Q 3.4: What is a `.auth.json` file?
+### Q 3.3: What is a `.auth.json` file?
 </div>
 
 This file is constructed by the `mkiocccentry(1)` **prior to** forming the xz
@@ -2365,11 +1952,11 @@ In order of the file's contents we describe each required field, below:
     in the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry/). If
     this is not the case your submission **WILL BE** rejected!
 
-- `chkentry_version` (double quoted string)
-    * The version of `chkentry` that was used to validate the submission
+- `chksubmit_version` (double quoted string)
+    * The version of `chksubmit` that was used to validate the submission
     directory, including the `.auth.json` file.
 
-    **IMPORTANT:** this **MUST** be >= **THIS** IOCCC's `chkentry` version, defined
+    **IMPORTANT:** this **MUST** be >= **THIS** IOCCC's `chksubmit` version, defined
     as `CHKENTRY_VERSION` in
     [soup/version.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/version.h)
     in the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry/). If
@@ -2526,7 +2113,7 @@ After the `authors` **array** the remaining of a `.auth.json` file holds:
     `test_formed_timestamp_usec()` in
     [soup/entry_util.c](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/entry_util.c)
     in the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry/). If
-    this is not the case `chkentry(1)` will report an **error** and your
+    this is not the case `chksubmit(1)` will report an **error** and your
     submission **WILL BE** rejected!
 
 - `timestamp_epoch` (double quoted string)
@@ -2546,7 +2133,7 @@ After the `authors` **array** the remaining of a `.auth.json` file holds:
     in the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry/). If
     this is not the case your submission **WILL BE** rejected!
 
-This file will be validated with the `chkentry(1)` tool and if there are any
+This file will be validated with the `chksubmit(1)` tool and if there are any
 problems with it or the submission directory, **it is an error**. If there is an
 error the tarball will **NOT** be formed by `mkiocccentry`; otherwise the
 `txzchk(1)` tool will be executed on the tarball.
@@ -2554,24 +2141,24 @@ error the tarball will **NOT** be formed by `mkiocccentry`; otherwise the
 This file will **NOT** be looked at unless the submission wins! Nonetheless, the
 file **MUST** be present in the submission directory and it **MUST** be valid
 JSON and it **MUST** pass all IOCCC semantics checks and all other checks
-`chkentry(1)` perform. `chkentry(1)` is used by `mkiocccentry(1)` and the judges
+`chksubmit(1)` perform. `chksubmit(1)` is used by `mkiocccentry(1)` and the judges
 will use it on the submission directory as part of the judging process.
 
 At the risk of stating the obvious, if your `.auth.json` file is invalid JSON or
-is reported invalid by `chkentry(1)`, or if your submission directory is
-reported invalid by `chkentry(1)`, your submission will almost certainly be
+is reported invalid by `chksubmit(1)`, or if your submission directory is
+reported invalid by `chksubmit(1)`, your submission will almost certainly be
 rejected for violating the [Rules](next/rules.html) and in particular [Rule
 17](next/rules.html#rule17).
 
-An obvious example where `chkentry(1)` would fail to validate `.auth.json` is if
+An obvious example where `chksubmit(1)` would fail to validate `.auth.json` is if
 there is a mismatch of type in the JSON file with what is expected, for
 instance, if in `.auth.json` the `no_comment` that we chose to not comment on is
 not a string or is the wrong string. Another obvious example is when things are
 out of range (see above for list). Two more examples would be if a field is
 missing or if an unknown filed is in the file. In these cases (and any others
-that must be established as valid by `chkentry(1)`) your submission would be
+that must be established as valid by `chksubmit(1)`) your submission would be
 rejected for violating [Rule 17](next/rules.html#rule17) and in particular
-because `chkentry(1)` would not validate the `.auth.json` file (and maybe other
+because `chksubmit(1)` would not validate the `.auth.json` file (and maybe other
 things too).
 
 If you wish to **verify** that your `.auth.json` file is valid **JSON** then see the
@@ -2582,7 +2169,7 @@ Jump to: [top](#)
 
 
 <div id="info_json">
-### Q 3.5: What is a `.info.json` file?
+### Q 3.4: What is a `.info.json` file?
 </div>
 
 This file is constructed by the `mkiocccentry(1)` **prior to** forming the xz
@@ -2660,11 +2247,11 @@ In order of the file's contents we describe each required field, below:
     in the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry/). If
     this is not the case your submission **WILL BE** rejected!
 
-- `chkentry_version` (double quoted string)
-    * The version of `chkentry` that was used to validate the submission
+- `chksubmit_version` (double quoted string)
+    * The version of `chksubmit` that was used to validate the submission
     directory, including the `.info.json` file.
 
-    **IMPORTANT:** this **MUST** be >= **THIS** IOCCC's `chkentry` version, defined
+    **IMPORTANT:** this **MUST** be >= **THIS** IOCCC's `chksubmit` version, defined
     as `CHKENTRY_VERSION` in
     [soup/version.h](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/version.h)
     in the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry/). If
@@ -2935,7 +2522,7 @@ The `manifest` **array** also **OPTIONALLY** has one or more of the field:
     * Any additional file that you need or want to include with your submission.
 
     **IMPORTANT:** this MUST **NOT** match a mandatory filename (see above list)
-    and `chkentry` will verify this for you; it is **ALSO** an **error** if the
+    and `chksubmit` will verify this for you; it is **ALSO** an **error** if the
     filenames are not unique, not POSIX plus + safe chars only, if they are the
     wrong permission and various other things. In these cases you stand a great
     risk of having your submission rejected for violating [Rule
@@ -2965,7 +2552,7 @@ Finally, after the `manifest` **array**, the following fields **MUST** exist:
     `test_formed_timestamp_usec()` in
     [soup/entry_util.c](https://github.com/ioccc-src/mkiocccentry/blob/master/soup/entry_util.c)
     in the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry/). If
-    this is not the case `chkentry(1)` will report an **error** and your
+    this is not the case `chksubmit(1)` will report an **error** and your
     submission **WILL BE** rejected!
 
 - `timestamp_epoch` (double quoted string)
@@ -2985,24 +2572,24 @@ Finally, after the `manifest` **array**, the following fields **MUST** exist:
     in the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry/). If
     this is not the case your submission **WILL BE** rejected!
 
-This file will be validated with the `chkentry(1)` tool and if there are any
+This file will be validated with the `chksubmit(1)` tool and if there are any
 problems with it or the submission directory, **it is an error**. If there is an
 error the tarball will **NOT** be formed by `mkiocccentry`; otherwise the
 `txzchk(1)` tool will be executed on the tarball.
 
-When the [Judges](judges.html) use `chkentry(1)` on your submission directory,
+When the [Judges](judges.html) use `chksubmit(1)` on your submission directory,
 if this JSON file is invalid JSON or does not match the requirements outlined
 above, or if any other is found, your submission **WILL BE** rejected.
 
-An obvious example where `chkentry` would fail to validate `.info.json` is if
+An obvious example where `chksubmit` would fail to validate `.info.json` is if
 there is a mismatch of type in the JSON file with what is expected, for
 instance, if in `.info.json` the `no_comment` that we chose to not comment on is
 not a string or is the wrong string. Another obvious example is when things are
 out of range (see above for list). Two more examples would be if a field is
 missing or if an unknown filed is in the file. In these cases (and any others
-that must be established as valid by `chkentry`) your submission would be
+that must be established as valid by `chksubmit`) your submission would be
 rejected for violating [Rule 17](next/rules.html#rule17) and in particular
-because `chkentry` would not validate the `.info.json` file.
+because `chksubmit` would not validate the `.info.json` file.
 
 If you wish to **verify** that your `.info.json` file is valid **JSON** then see the
 FAQ on "[validating JSON documents](#validating_json)".
@@ -3013,7 +2600,7 @@ Jump to: [top](#)
 
 <!-- we cannot use id="author_handle" because of a header in FAQ 6.6 -->
 <div id="author_handle_faq">
-### Q 3.6: What is an `author_handle`?
+### Q 3.5: What is an `author_handle`?
 </div>
 
 An `author_handle` is string that refers to a given author and is unique to the
@@ -3083,7 +2670,7 @@ Jump to: [top](#)
 
 <div id="author_json">
 <div id="author_handle_json">
-### Q 3.7: What is an `author_handle.json` file and how are they used?
+### Q 3.6: What is an `author_handle.json` file and how are they used?
 </div>
 </div>
 
@@ -3641,7 +3228,7 @@ Jump to: [top](#)
 
 
 <div id="find_author_handle">
-### Q 3.8: How can I find my author handle?
+### Q 3.7: How can I find my author handle?
 </div>
 
 If you are an _author_ of a winning _entry_, you may find your own _author_handle_
@@ -3688,7 +3275,7 @@ Jump to: [top](#)
 
 <!-- we cannot use id="entry_id" because of a header in FAQ 6.6 -->
 <div id="entry_id_faq">
-### Q 3.9: What is an `entry_id`?
+### Q 3.8: What is an `entry_id`?
 </div>
 
 An `entry_id` is a string that identifies a winning entry of the IOCCC.
@@ -3706,7 +3293,7 @@ Jump to: [top](#)
 
 
 <div id="entry_json">
-### Q 3.10: What is a `.entry.json` file and how is it used?
+### Q 3.9: What is a `.entry.json` file and how is it used?
 </div>
 
 **TL:DR**: The contents of this JSON file contain information about each winning
@@ -4223,7 +3810,7 @@ Jump to: [top](#)
 
 <div id="validating_json">
 <div id="jparse">
-### Q 3.11: How can I validate any JSON document?
+### Q 3.10: How can I validate any JSON document?
 </div>
 </div>
 
@@ -4271,7 +3858,7 @@ the tool.
 repo](https://github.com/xexyl/jparse/issues) but we recommend you compile and
 install via the `mkiocccentry` repo because it has the dependencies built in,
 and because the `mkiocccentry` copy is that which is used by the current IOCCC,
-as the two can be different at times.
+as the two can sometimes be different.
 
 
 Jump to: [top](#)

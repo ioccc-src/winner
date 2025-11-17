@@ -56,7 +56,7 @@ timestamp](https://unixtime.org/).
 >
 > We highly recommend that you use `mkiocccentry(1)` to create your submit file as
 it must pass the `txzchk(1)` sanity checks, and when the uncompressed tarball is
-untarred, the resulting directory must pass `chkentry(1)`.
+untarred, the resulting directory must pass `chksubmit(1)`.
 
 **NOTE**: the `00000000-0000-4000-0000-000000000000` is your UUID. **MAKE SURE
 YOU CHANGE IT TO YOUR UUID**!
@@ -153,7 +153,7 @@ After the format test is complete, if you see an error such as:
 
 Or:
 
-> **Status: submit file failed the chkentry test! Use mkiocccentry to rebuild and resubmit to this slot.**
+> **Status: submit file failed the chksubmit test! Use mkiocccentry to rebuild and resubmit to this slot.**
 
 ... or **ANY** other error then you **MUST FIX** your submission, repackage your
 tarball with `mkiocccentry` and upload to the same slot again! If you do not fix
@@ -162,7 +162,7 @@ this your submission **WILL BE REJECTED** for violating [Rule
 
 If the format test went well, then you will see:
 
-> **Status: submit file received by the IOCCC judges. Passed both txzchk and chkentry tests.**
+> **Status: submit file received by the IOCCC judges. Passed both txzchk and chksubmit tests.**
 
 **IMPORTANT**: this does **NOT** mean that your submission does not violate the
 rules or that everything is OK once the tarball is extracted; it simply means
@@ -174,8 +174,8 @@ tests passed.
 For details on `txzchk`, see the
 FAQ on "[txzchk](../faq.html#txzchk)".
 
-For details on `chkentry`, see the
-FAQ on "[chkentry](../faq.html#chkentry)".
+For details on `chksubmit`, see the
+FAQ on "[chksubmit](../faq.html#chksubmit)".
 
 If you need more information on the two JSON files, see
 FAQ on the [".info.json file](../faq.html#info_json)"
