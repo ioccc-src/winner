@@ -86,16 +86,16 @@ YEARS= 1984 1985 1986 1987 1988 1989 1990 1991 1992 1993 1994 1995 1996 \
 ###################
 #
 all:
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
 	@-for i in ${YEARS}; do \
 	    if [[ -f $$i/Makefile ]]; then \
-		echo "cd $$i; make $@"; \
-		(cd $$i; make $@); \
+		echo "cd $$i; ${MAKE} $@"; \
+		(cd $$i; ${MAKE} $@); \
 	    else \
 		echo "Warning: $$i/Makefile not found, skipping $$i for $@ processing" 1>&2 ; \
 	    fi; \
 	done
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 .PHONY: all alt data everything diff_orig_prog diff_prog_orig \
 	diff_alt_prog diff_prog_alt diff_orig_alt diff_alt_orig \
@@ -104,44 +104,44 @@ all:
 # alternative executable
 #
 alt:
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
 	@-for i in ${YEARS}; do \
 	    if [[ -f $$i/Makefile ]]; then \
-		echo "cd $$i; make $@"; \
-		(cd $$i; make $@); \
+		echo "cd $$i; ${MAKE} $@"; \
+		(cd $$i; ${MAKE} $@); \
 	    else \
 		echo "Warning: $$i/Makefile not found, skipping $$i for $@ processing" 1>&2 ; \
 	    fi; \
         done
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 # data files
 #
 data:
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
 	@-for i in ${YEARS}; do \
 	    if [[ -f $$i/Makefile ]]; then \
-		echo "cd $$i; make $@"; \
-		(cd $$i; make $@); \
+		echo "cd $$i; ${MAKE} $@"; \
+		(cd $$i; ${MAKE} $@); \
 	    else \
 		echo "Warning: $$i/Makefile not found, skipping $$i for $@ processing" 1>&2 ; \
 	    fi; \
         done
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 # both all and alt
 #
 everything:
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
 	@-for i in ${YEARS}; do \
 	    if [[ -f $$i/Makefile ]]; then \
-		echo "cd $$i; make $@"; \
-		(cd $$i; make $@); \
+		echo "cd $$i; ${MAKE} $@"; \
+		(cd $$i; ${MAKE} $@); \
 	    else \
 		echo "Warning: $$i/Makefile not found, skipping $$i for $@ processing" 1>&2 ; \
 	    fi; \
         done
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 
 #####################
@@ -151,85 +151,85 @@ everything:
 # diff orig source and source
 #
 diff_orig_prog:
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
 	@-for i in ${YEARS}; do \
 	    if [[ -f $$i/Makefile ]]; then \
-		echo "cd $$i; make $@"; \
-		(cd $$i; make $@); \
+		echo "cd $$i; ${MAKE} $@"; \
+		(cd $$i; ${MAKE} $@); \
 	    else \
 		echo "Warning: $$i/Makefile not found, skipping $$i for $@ processing" 1>&2 ; \
 	    fi; \
         done
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 # diff source and orig source
 #
 diff_prog_orig:
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
 	@-for i in ${YEARS}; do \
 	    if [[ -f $$i/Makefile ]]; then \
-		echo "cd $$i; make $@"; \
-		(cd $$i; make $@); \
+		echo "cd $$i; ${MAKE} $@"; \
+		(cd $$i; ${MAKE} $@); \
 	    else \
 		echo "Warning: $$i/Makefile not found, skipping $$i for $@ processing" 1>&2 ; \
 	    fi; \
         done
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 # diff alt source and source
 #
 diff_alt_prog:
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
 	@-for i in ${YEARS}; do \
 	    if [[ -f $$i/Makefile ]]; then \
-		echo "cd $$i; make $@"; \
-		(cd $$i; make $@); \
+		echo "cd $$i; ${MAKE} $@"; \
+		(cd $$i; ${MAKE} $@); \
 	    else \
 		echo "Warning: $$i/Makefile not found, skipping $$i for $@ processing" 1>&2 ; \
 	    fi; \
         done
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 # diff source and alt source
 #
 diff_prog_alt:
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
 	@-for i in ${YEARS}; do \
 	    if [[ -f $$i/Makefile ]]; then \
-		echo "cd $$i; make $@"; \
-		(cd $$i; make $@); \
+		echo "cd $$i; ${MAKE} $@"; \
+		(cd $$i; ${MAKE} $@); \
 	    else \
 		echo "Warning: $$i/Makefile not found, skipping $$i for $@ processing" 1>&2 ; \
 	    fi; \
         done
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 # diff orig and alt
 #
 diff_orig_alt:
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
 	@-for i in ${YEARS}; do \
-	    (cd $$i; make $@); \
+	    (cd $$i; ${MAKE} $@); \
 	    if [[ -f $$i/Makefile ]]; then \
-		echo "cd $$i; make $@"; \
-		(cd $$i; make $@); \
+		echo "cd $$i; ${MAKE} $@"; \
+		(cd $$i; ${MAKE} $@); \
 	    else \
 		echo "Warning: $$i/Makefile not found, skipping $$i for $@ processing" 1>&2 ; \
 	    fi; \
         done
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 diff_alt_orig:
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
 	@-for i in ${YEARS}; do \
 	    if [[ -f $$i/Makefile ]]; then \
-		echo "cd $$i; make $@"; \
-		(cd $$i; make $@); \
+		echo "cd $$i; ${MAKE} $@"; \
+		(cd $$i; ${MAKE} $@); \
 	    else \
 		echo "Warning: $$i/Makefile not found, skipping $$i for $@ processing" 1>&2 ; \
 	    fi; \
         done
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 
 ###############
@@ -237,28 +237,28 @@ diff_alt_orig:
 ###############
 #
 clean:
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
 	@-for i in ${YEARS}; do \
 	    if [[ -f $$i/Makefile ]]; then \
-		echo "cd $$i; make $@"; \
-		(cd $$i; make $@); \
+		echo "cd $$i; ${MAKE} $@"; \
+		(cd $$i; ${MAKE} $@); \
 	    else \
 		echo "Warning: $$i/Makefile not found, skipping $$i for $@ processing" 1>&2 ; \
 	    fi; \
         done
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 clobber:
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
 	@-for i in ${YEARS}; do \
 	    if [[ -f $$i/Makefile ]]; then \
-		echo "cd $$i; make $@"; \
-		(cd $$i; make $@); \
+		echo "cd $$i; ${MAKE} $@"; \
+		(cd $$i; ${MAKE} $@); \
 	    else \
 		echo "Warning: $$i/Makefile not found, skipping $$i for $@ processing" 1>&2 ; \
 	    fi; \
         done
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 
 #################################
@@ -380,7 +380,7 @@ help:
 # verify that there are no leading ASCII tabs in leading whitespace in markdown files
 #
 tab_check:
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
 	@TAB_LIST="$$(${FIND} * \( -name NOTES -o -name tmp -o -name markdown.md \) -prune -o \
 				     -type f -name '*.md' -print0 | \
 			      ${XARGS} -0 ${GREP} -E -l '	')"; \
@@ -391,19 +391,19 @@ tab_check:
 		echo "$0: Warning: list of offending markdown file(s) ends above" 1>&2 ; \
 		exit 1; \
 	    fi
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 # form the top level .top and .allyear, YYYY level .year and winner level .path files
 #
 # IMPORTANT: This file assumes that make clobber was previously done.
 #
 genpath:
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
 	@${MAKE} genpath_top
 	@-for i in ${YEARS}; do \
 	    if [[ -f $$i/Makefile ]]; then \
-		echo "cd $$i; make $@"; \
-		(cd $$i; make $@); \
+		echo "cd $$i; ${MAKE} $@"; \
+		(cd $$i; ${MAKE} $@); \
 	    else \
 		echo "Warning: $$i/Makefile not found, skipping $$i for $@ processing" 1>&2 ; \
 	    fi; \
@@ -418,7 +418,7 @@ genpath:
 	    ${MV} -f ".allyear.tmp" .allyear; \
 	    ${CHMOD} 0444 .allyear; \
 	fi
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 # generate YYYY level .filelist
 #
@@ -430,7 +430,7 @@ genpath:
 # IMPORTANT: .filelist assumes that make clobber was previously done.
 #
 genfilelist:
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
 	@-for i in ${YEARS}; do \
 	    ${RM} -f "$$i/.genfilelist.tmp"; \
 	    (${FIND} "$$i" -mindepth 1 -maxdepth 1 -type f -name '*.md' | \
@@ -446,53 +446,53 @@ genfilelist:
 		echo "updated $$i/.filelist"; \
 	    fi; \
 	done
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 # be sure that all JSON files are canonical
 #
 all_jfmt: ${ALL_RUN} ${CHK_ENTRY}
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
 	${ALL_JFMT} -v 1
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 # check to be sure all files in all entries exist
 #
 verify_entry_files: ${ALL_RUN} ${CHK_ENTRY}
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
 	${ALL_RUN} -v 1 ${CHK_ENTRY}
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 # sort .gitignore files according to rules in bin/sgi.sh
 #
 sort_gitignore: ${ALL_RUN} ${SORT_GITIGNORE}
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
 	${ALL_RUN} -v 1 ${SORT_GITIGNORE} -v 1
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 # generate the top level authors.html page using the
 # ${GEN_AUTHORS} tool bin/gen-authors.sh.
 #
 gen_authors: ${GEN_AUTHORS}
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
 	${GEN_AUTHORS} -v 1
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 
 
 # build authors.html if it is out of date from any author/author_handle.json file
 #
 quick_authors: ${GEN_AUTHORS}
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
 	${GEN_AUTHORS} -v 1 -Q
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 # generate the top level location.html page using the
 # ${GEN_LOCATION} tool bin/gen-location.sh.
 #
 gen_location: ${GEN_LOCATION}
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
 	${GEN_LOCATION} -v 1
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 # build location.html if it is out of date from any author/author_handle.json file
 #
@@ -500,35 +500,35 @@ gen_location: ${GEN_LOCATION}
 # ${GEN_LOCATION} tool bin/gen-location.sh.
 #
 quick_location: ${GEN_LOCATION}
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
 	${GEN_LOCATION} -v 1 -Q
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 # generate the top level years.html page using the ${GEN_YEARS}
 # tool bin/gen-years.sh.
 #
 gen_years: ${GEN_YEARS}
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
 	${GEN_YEARS} -v 1
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 # force the build of ALL winner index.html files using
 # the ${README2INDEX} tool bin/readme2index.sh
 #
 entry_index readme2index: ${ALL_RUN} ${README2INDEX}
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
 	${ALL_RUN} -v 3 ${README2INDEX} -v 1
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 # generate a number of the top level HTML files from top level markdown files
 #
 gen_top_html: ${GEN_TOP_HTML}
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
 	${GEN_TOP_HTML} -v 1
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 gen_next: ${GEN_TOP_HTML} next/README.md next/guidelines.md next/rules.md next/register.md next/submit.md next/pw-change.md
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
 	${GEN_TOP_HTML} -v 1 next/README
 	${GEN_TOP_HTML} -v 1 next/guidelines
 	${GEN_TOP_HTML} -v 1 next/rules
@@ -536,14 +536,14 @@ gen_next: ${GEN_TOP_HTML} next/README.md next/guidelines.md next/rules.md next/r
 	${GEN_TOP_HTML} -v 1 next/remarks
 	${GEN_TOP_HTML} -v 1 next/submit
 	${GEN_TOP_HTML} -v 1 next/pw-change
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 # build entry HTML files, other than README.md to index.html, from markdown
 #
 gen_other_html: ${GEN_OTHER_HTML}
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
 	${GEN_OTHER_HTML} -v 1
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 # build entry HTML files from non-README.md markdown files that might be out of date
 #
@@ -552,17 +552,17 @@ gen_other_html: ${GEN_OTHER_HTML}
 # not be up to date) won't be built.
 #
 quick_other_html: ${GEN_OTHER_HTML}
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
 	${GEN_OTHER_HTML} -v 1 -Q
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 # generate year level index.html files using the
 # ${GEN_YEAR_INDEX} tool bin/gen-year-index.sh.
 #
 gen_year_index: ${ALL_YEARS} ${GEN_YEAR_INDEX}
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
 	${ALL_YEARS} -v 1 ${GEN_YEAR_INDEX} -v 1
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 # generate year level index.html files when year level README.md is newer
 #
@@ -570,9 +570,9 @@ gen_year_index: ${ALL_YEARS} ${GEN_YEAR_INDEX}
 # ${GEN_YEAR_INDEX} tool bin/gen-year-index.sh.
 #
 quick_year_index: ${ALL_YEARS} ${GEN_YEAR_INDEX}
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
 	${ALL_YEARS} -v 1 -Q ${GEN_YEAR_INDEX} -v 1
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 # build winner index.html files that might be out of date
 #
@@ -582,46 +582,46 @@ quick_year_index: ${ALL_YEARS} ${GEN_YEAR_INDEX}
 # (but might not be up to date) won't be built.
 #
 quick_entry_index quick_readme2index: ${ALL_RUN} ${QUICK_README2INDEX}
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
 	${ALL_RUN} -v 3 ${QUICK_README2INDEX} -v 1
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 # find markdown links to missing local files
 #
 find_missing_links:
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
 	${FIND_MISSING_LINKS} -v 1
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 # find invalid JSON files
 #
 find_invalid_json:
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
 	${FIND_INVALID_JSON} -v 1
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 
 # convert author_wins.csv, manifest.csv and year_prize.csv CSV files to
 # .entry.json files.
 #
 csv2entry:
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
 	${CSV2ENTRY} -v 1
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 # convert .entry.json files to author_wins.csv, manifest.csv and year_prize.csv
 # CSV files.
 #
 entry2csv:
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
 	${ENTRY2CSV} -v 1
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 
 # Mostly Harmless tests
 #
 test:
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
 	@echo '=-=-=-=-= IOCCC begin make clobber =-=-=-=-='
 	@echo '... hiding verbose output on stdout ...'
 	@${MAKE} clobber >/dev/null
@@ -635,7 +635,7 @@ test:
 	${MAKE} verify_entry_files
 	${MAKE} find_missing_links
 	${MAKE} find_invalid_json
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 
 ###########################################################################
@@ -653,7 +653,7 @@ test:
 # more bizarre and inexplicable!
 #
 about: ${GEN_TOP_HTML} about.md
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
 	@echo "You wonder what this is all about?"
 	@${GEN_TOP_HTML} about
 	@echo
@@ -663,106 +663,106 @@ about: ${GEN_TOP_HTML} about.md
 	@echo "inexplicable!"
 	@echo
 	@echo "Nobody wants that, do they?"
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 # Bugs Bunny rule
 bugs: ${GEN_TOP_HTML} bugs.md
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
 	@echo "Shhh. Be vewy vewy quiet."
 	@echo "I'm hunting wabbits 🐇 .. and bugs 🪳🪲🦟🐜🐛."
 	${GEN_TOP_HTML} bugs
 	@echo "Eh, what's up, doc?"
 	@echo
 	@echo "I'm hunting wabbits 🐇 .. and bugs 🪳🪲🦟🐜🐛"
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 # generate contact.html
 #
 contact: ${GEN_TOP_HTML} contact.md
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
 	@echo "You wish to make contact with the IOCCC Judges?"
 	${GEN_TOP_HTML} contact
 	@echo
 	@echo "I hope you're used to confused aliens!"
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 faq: ${GEN_TOP_HTML} faq.md
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
 	@echo "You have a question ⁉️ ?"
 	${GEN_TOP_HTML} -v 1 faq
 	@echo "Perhaps the FAQ might help!"
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 guidelines: ${GEN_TOP_HTML} next/guidelines.md
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
 	${GEN_TOP_HTML} -v 1 next/guidelines
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 markdown: ${GEN_TOP_HTML} markdown.md
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
 	@echo "You want to markdown?"
 	${GEN_TOP_HTML} markdown
 	@echo "Careful that we don't mark down your submission!"
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 news: gen_status ${GEN_TOP_HTML} markdown.md
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
 	@echo "All the IOCCC news 📰 ..."
 	${GEN_TOP_HTML} news
 	@echo "that's fit browse 💻!"
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 pw_change: next/pw-change.md
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
 	@echo "Did your password get breached?"
 	${GEN_TOP_HTML} next/pw-change
 	@echo "Perhaps you should change your password!"
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 remarks: ${GEN_TOP_HTML} next/remarks.md
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
 	@${GEN_TOP_HTML} -v 1 next/remarks
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 rules: ${GEN_TOP_HTML} next/rules.md
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
 	@echo "You wish to change the IOCCC rules?"
 	${GEN_TOP_HTML} -v 1 next/rules
 	@echo "Be careful you don't break them!"
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 security: ${GEN_TOP_HTML} SECURITY.md
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
 	@echo "You wish to make IOCCC entries secure?"
 	@${GEN_TOP_HTML} SECURITY
 	@echo "We also didn't want Pluto 🪐 demoted!"
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 social: social.md
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
 	@echo "This rule is sponsored by the Royal Society"
 	${GEN_TOP_HTML} social
 	@echo "For Putting Things On Top of Other Things"
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 submit: next/submit.md
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
 	@echo "You wish to submit to the IOCCC?"
 	${GEN_TOP_HTML} next/pw-change
 	@echo "Be careful, we only have a pet fish 🐟"
 	@echo "called Eric, not a service dog 🐕‍🦺!"
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 # generate thanks-for-help.html
 #
 # So Long, and Thanks for All the Fish :-)
 #
 thanks: ${GEN_TOP_HTML} thanks-for-help.md
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
 	@echo "Thanks for all the help ..."
 	${GEN_TOP_HTML} thanks-for-help
 	@echo "... and thanks for all the fish 🐟🐠🎏 :-)"
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 
 ####################################################################
@@ -778,7 +778,7 @@ thanks: ${GEN_TOP_HTML} thanks-for-help.md
 # Well, short of pushing changes to the GitHub repo, that is.  :-)
 #
 quick_www:
-	@echo '=-=-=-=-=-= IOCCC begin make $@ =-=-=-=-=-='
+	@echo '=-=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-=-='
 	@echo '=-=-=-=-= IOCCC begin make clobber =-=-=-=-='
 	@echo '... hiding verbose output on stdout ...'
 	@${MAKE} clobber >/dev/null
@@ -801,14 +801,14 @@ quick_www:
 	${MAKE} gen_status
 	${MAKE} gen_sitemap
 	${MAKE} find_missing_links
-	@echo '=-=-=-=-=-= IOCCC complete make $@ =-=-=-=-=-='
+	@echo '=-=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-=-='
 
 # do everything needed to build HTML content for the website
 #
 # Well, short of pushing changes to the GitHub repo, that is.  :-)
 #
 www:
-	@echo '=-=-=-=-=-= IOCCC begin make $@ =-=-=-=-=-='
+	@echo '=-=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-=-='
 	@echo '=-=-=-=-= IOCCC begin make clobber =-=-=-=-='
 	@echo '... hiding verbose output on stdout ...'
 	@${MAKE} clobber >/dev/null
@@ -832,7 +832,7 @@ www:
 	${MAKE} gen_sitemap
 	${MAKE} find_invalid_json
 	${MAKE} find_missing_links
-	@echo '=-=-=-=-=-= IOCCC complete make $@ =-=-=-=-=-='
+	@echo '=-=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-=-='
 
 
 ###########################################################################################
@@ -842,37 +842,37 @@ www:
 # untar all entry tarballs
 #
 untar_entry_tarball: ${ALL_RUN}
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
 	${ALL_RUN} -v 3 ${UNTAR_ENTRY} -v 1
 	${MAKE} verify_entry_files
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 # untar all year level tarballs
 #
 untar_year_tarball: ${ALL_RUN}
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
 	${ALL_YEARS} -v 3 ${UNTAR_YEAR} -v 1
 	${MAKE} verify_entry_files
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 # form all entry compressed tarballs
 #
 form_entry_tarball: ${ALL_RUN} ${TAR_ENTRY}
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
 	${ALL_RUN} -v 3 ${TAR_ENTRY} -v 1
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 # form all IOCCC year level compressed tarballs
 #
 form_year_tarball: ${ALL_YEARS} ${TAR_YEAR}
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
 	${ALL_YEARS} -v 3 ${TAR_YEAR} -v 1
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 # build all tarballs
 #
 tar:
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
 	${MAKE} clobber
 	${MAKE} genpath
 	${MAKE} genfilelist
@@ -881,39 +881,39 @@ tar:
 	${MAKE} sort_gitignore
 	${MAKE} form_entry_tarball
 	${MAKE} form_year_tarball
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 # generate status.json and status.html
 #
 gen_status: ${GEN_STATUS}
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
 	${GEN_STATUS} -v 1
 	${MAKE} gen_next
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 # generate the XML sitemap
 #
 gen_sitemap sitemap: ${GEN_SITEMAP}
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
 	${GEN_SITEMAP} -v 1
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 # generate things with timestamps
 #
 timestamp:
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
 	${MAKE} gen_status
 	${MAKE} gen_sitemap
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 # update everything on the website
 #
 update:
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
 	${MAKE} www
 	${MAKE} tar
 	${MAKE} timestamp
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 
 #############################################################
@@ -930,7 +930,7 @@ new_year:
 # form the top level .top only
 #
 genpath_top:
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
 	@${RM} -f .tmp.genpath
 	@-for i in ${YEARS}; do \
 	    echo "$$i" >> .tmp.genpath; \
@@ -943,7 +943,7 @@ genpath_top:
 	    ${CHMOD} 0444 .top; \
 	    echo "updated .top"; \
 	fi
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 
 ########################
@@ -955,64 +955,64 @@ genpath_top:
 # you may be able to misunderstand the source by reading indent.c
 #
 indent.c:
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
 	@-for i in ${YEARS}; do \
 	    if [[ -f $$i/Makefile ]]; then \
-		echo "cd $$i; make $@"; \
-		(cd $$i; make $@); \
+		echo "cd $$i; ${MAKE} $@"; \
+		(cd $$i; ${MAKE} $@); \
 	    else \
 		echo "Warning: $$i/Makefile not found, skipping $$i for $@ processing" 1>&2 ; \
 	    fi; \
         done
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 indent_clean: clean
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
 	@-for i in ${YEARS}; do \
 	    if [[ -f $$i/Makefile ]]; then \
-		echo "cd $$i; make $@"; \
-		(cd $$i; make $@); \
+		echo "cd $$i; ${MAKE} $@"; \
+		(cd $$i; ${MAKE} $@); \
 	    else \
 		echo "Warning: $$i/Makefile not found, skipping $$i for $@ processing" 1>&2 ; \
 	    fi; \
         done
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 indent_clobber: indent_clean clobber
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
 	@-for i in ${YEARS}; do \
 	    if [[ -f $$i/Makefile ]]; then \
-		echo "cd $$i; make $@"; \
-		(cd $$i; make $@); \
+		echo "cd $$i; ${MAKE} $@"; \
+		(cd $$i; ${MAKE} $@); \
 	    else \
 		echo "Warning: $$i/Makefile not found, skipping $$i for $@ processing" 1>&2 ; \
 	    fi; \
         done
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 install:
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
 	@-for i in ${YEARS}; do \
 	    if [[ -f $$i/Makefile ]]; then \
-		echo "cd $$i; make $@"; \
-		(cd $$i; make $@); \
+		echo "cd $$i; ${MAKE} $@"; \
+		(cd $$i; ${MAKE} $@); \
 	    else \
 		echo "Warning: $$i/Makefile not found, skipping $$i for $@ processing" 1>&2 ; \
 	    fi; \
         done
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 clang-format:
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
 	@-for i in ${YEARS}; do \
 	    if [[ -f $$i/Makefile ]]; then \
-		echo "cd $$i; make $@"; \
-		(cd $$i; make $@); \
+		echo "cd $$i; ${MAKE} $@"; \
+		(cd $$i; ${MAKE} $@); \
 	    else \
 		echo "Warning: $$i/Makefile not found, skipping $$i for $@ processing" 1>&2 ; \
 	    fi; \
         done
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 
 #############################################################
@@ -1025,138 +1025,138 @@ clang-format:
 ##################
 
 love:
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
 	@-for i in ${YEARS}; do \
 	    if [[ -f $$i/Makefile ]]; then \
-		echo "cd $$i; make $@"; \
-		(cd $$i; make $@); \
+		echo "cd $$i; ${MAKE} $@"; \
+		(cd $$i; ${MAKE} $@); \
 	    else \
 		echo "Warning: $$i/Makefile not found, skipping $$i for $@ processing" 1>&2 ; \
 	    fi; \
         done
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 haste:
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
 	@-for i in ${YEARS}; do \
 	    if [[ -f $$i/Makefile ]]; then \
-		echo "cd $$i; make $@"; \
-		(cd $$i; make $@); \
+		echo "cd $$i; ${MAKE} $@"; \
+		(cd $$i; ${MAKE} $@); \
 	    else \
 		echo "Warning: $$i/Makefile not found, skipping $$i for $@ processing" 1>&2 ; \
 	    fi; \
         done
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 waste:
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
 	@-for i in ${YEARS}; do \
 	    if [[ -f $$i/Makefile ]]; then \
-		echo "cd $$i; make $@"; \
-		(cd $$i; make $@); \
+		echo "cd $$i; ${MAKE} $@"; \
+		(cd $$i; ${MAKE} $@); \
 	    else \
 		echo "Warning: $$i/Makefile not found, skipping $$i for $@ processing" 1>&2 ; \
 	    fi; \
         done
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 maker:
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
 	@-for i in ${YEARS}; do \
 	    if [[ -f $$i/Makefile ]]; then \
-		echo "cd $$i; make $@"; \
-		(cd $$i; make $@); \
+		echo "cd $$i; ${MAKE} $@"; \
+		(cd $$i; ${MAKE} $@); \
 	    else \
 		echo "Warning: $$i/Makefile not found, skipping $$i for $@ processing" 1>&2 ; \
 	    fi; \
         done
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 easter_egg:
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
 	@echo "Finding the Easter eggs 🥚 ..."
 	@-for i in ${YEARS}; do \
 	    if [[ -f $$i/Makefile ]]; then \
-		echo "cd $$i; make $@"; \
-		(cd $$i; make $@); \
+		echo "cd $$i; ${MAKE} $@"; \
+		(cd $$i; ${MAKE} $@); \
 	    else \
 		echo "Warning: $$i/Makefile not found, skipping $$i for $@ processing" 1>&2 ; \
 	    fi; \
         done
 	@echo "Found all the Easter eggs 🥚!"
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 sandwich:
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
 	@-for i in ${YEARS}; do \
 	    if [[ -f $$i/Makefile ]]; then \
-		echo "cd $$i; make $@"; \
-		(cd $$i; make $@); \
+		echo "cd $$i; ${MAKE} $@"; \
+		(cd $$i; ${MAKE} $@); \
 	    else \
 		echo "Warning: $$i/Makefile not found, skipping $$i for $@ processing" 1>&2 ; \
 	    fi; \
         done
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 
 # The IOCCC resident astronomer states
 #
 supernova:
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
 	@-for i in ${YEARS}; do \
 	    if [[ -f $$i/Makefile ]]; then \
-		echo "cd $$i; make $@"; \
-		(cd $$i; make $@); \
+		echo "cd $$i; ${MAKE} $@"; \
+		(cd $$i; ${MAKE} $@); \
 	    else \
 		echo "Warning: $$i/Makefile not found, skipping $$i for $@ processing" 1>&2 ; \
 	    fi; \
         done
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 more_magic:
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
 	@-for i in ${YEARS}; do \
 	    if [[ -f $$i/Makefile ]]; then \
-		echo "cd $$i; make $@"; \
-		(cd $$i; make $@); \
+		echo "cd $$i; ${MAKE} $@"; \
+		(cd $$i; ${MAKE} $@); \
 	    else \
 		echo "Warning: $$i/Makefile not found, skipping $$i for $@ processing" 1>&2 ; \
 	    fi; \
         done
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 magic:
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
 	@-for i in ${YEARS}; do \
 	    if [[ -f $$i/Makefile ]]; then \
-		echo "cd $$i; make $@"; \
-		(cd $$i; make $@); \
+		echo "cd $$i; ${MAKE} $@"; \
+		(cd $$i; ${MAKE} $@); \
 	    else \
 		echo "Warning: $$i/Makefile not found, skipping $$i for $@ processing" 1>&2 ; \
 	    fi; \
         done
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 charon:
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
 	@-for i in ${YEARS}; do \
 	    if [[ -f $$i/Makefile ]]; then \
-		echo "cd $$i; make $@"; \
-		(cd $$i; make $@); \
+		echo "cd $$i; ${MAKE} $@"; \
+		(cd $$i; ${MAKE} $@); \
 	    else \
 		echo "Warning: $$i/Makefile not found, skipping $$i for $@ processing" 1>&2 ; \
 	    fi; \
         done
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 pluto:
-	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
 	@-for i in ${YEARS}; do \
 	    if [[ -f $$i/Makefile ]]; then \
-		echo "cd $$i; make $@"; \
-		(cd $$i; make $@); \
+		echo "cd $$i; ${MAKE} $@"; \
+		(cd $$i; ${MAKE} $@); \
 	    else \
 		echo "Warning: $$i/Makefile not found, skipping $$i for $@ processing" 1>&2 ; \
 	    fi; \
         done
-	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
