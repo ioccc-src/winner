@@ -177,7 +177,7 @@ tools from outside the repo directory, you will have to use the options to the
 tools to set the path to the required tools.
 
 Do remember to make sure you have the latest vers
-`chkentry(1)`, `txzchk(1)` and `fnamchk(1)`. And remember to make sure you have
+`chksubmit(1)`, `txzchk(1)` and `fnamchk(1)`. And remember to make sure you have
 the latest version so you do not violate [Rule 17](next/rules.html#rule17).
 See the
 FAQ on "[obtaining the latest mkiocccentry tools](faq.html#obtaining_mkiocccentry)",
