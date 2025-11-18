@@ -134,10 +134,11 @@ CC= cc
 #
 ifeq "$(findstring $(CLANG),${CC})" "$(CLANG)"
 #
-# NOTE: This code is only invoked when CC is "clang"
-#       such as when you use the make command line:
+# NOTE: This code is only invoked when CC contains "clang"
+#       such as when you use the make command lines like:
 #
 #           make all CC=clang
+#           make all CC=clang-mp-12
 #
 CSILENCE+=
 #
@@ -149,10 +150,11 @@ endif
 #
 ifeq "$(findstring $(GCC),${CC})" "$(GCC)"
 #
-# NOTE: This code is only invoked when CC is "gcc"
-#       such as when you use the make command line:
+# NOTE: This code is only invoked when CC contains "gcc"
+#       such as when you use the make command lines like:
 #
 #    make all CC=gcc
+#    make all CC=gcc-15
 #
 CSILENCE+=
 #
@@ -184,6 +186,7 @@ DATA=
 # NOTE: Add any new Makefile variables your code might need below.
 #
 # Example: WIDTH= 120
+#
 
 
 #################
