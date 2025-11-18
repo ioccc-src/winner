@@ -153,7 +153,7 @@ export REPO_TOP_URL="https://github.com/ioccc-src/winner"
 export REPO_URL="$REPO_TOP_URL/blob/master"
 
 
-# Until we have a true jval tool, we will use wither jsp or the modified JSONPath.sh
+# Until we have a true jval tool, we will use either jsp or the modified JSONPath.sh
 #
 # XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
 # XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
