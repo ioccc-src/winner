@@ -1,6 +1,6 @@
 # IOCCC FAQ Table of Contents
 
-This is FAQ version **28.2.23 2025-11-17**.
+This is FAQ version **28.2.24 2025-11-18**.
 
 
 ## 0. [Entering the IOCCC: the bare minimum you need to know](#enter_questions)
@@ -1003,9 +1003,6 @@ for more details on this file.
 See the
 FAQ on "[chksubmit&lpar;1&rpar;](#chksubmit)"
 for more details on this important tool.
-
-For the complete `mkiocccentry(1)` process, see the
-FAQ on the "[mkiocccentry process](#mkiocccentry_process)".
 
 The tool performs a lot of checks, both directly and indirectly, and if it or
 any other tool detects **ANY** problem, you are **HIGHLY** encouraged to fix it
