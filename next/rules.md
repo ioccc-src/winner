@@ -30,7 +30,7 @@ app from time to time to view IOCCC mastodon updates.
 29th International Obfuscated C Code Contest Official Rules
 ------------------------------------------------------------
 
-Copyright © 2024-2025 Leonid A. Broukhis and Landon Curt Noll.
+Copyright © 2025 Leonid A. Broukhis and Landon Curt Noll.
 
 All Rights Reserved.  Permission for personal, education or non-profit use is
 granted provided this this copyright and notice are included in its entirety
@@ -41,13 +41,15 @@ writing by [contacting the judges](../contact.html).
 Rules version
 -------------
 
-These IOCCC Rules are version **29.02 2025-11-19**.
+These IOCCC Rules are version **29.03 2025-11-19**.
 
 Be sure to read the [IOCCC guidelines](guidelines.html).
 
 
+<div id="rule0">
 Rule 0 Dates
 ------------
+</div>
 
 This IOCCC runs from ${START_DATE_TIME} UTC to ${CLOSE_DATE_TIME} UTC.
 
@@ -60,14 +62,18 @@ The above dates are subject to change until the contest is officially open.
 **NOTE**: As of this draft, the above dates are TBD (to be determined).
 
 
+<div id="rule1">
 Rule 1 Program
 ---------------
+</div>
 
 Your submission **MUST** be a C program.
 
 
+<div id="rule2">
 Rule 2 Size
 -----------
+</div>
 
 `Rule 2` requires that your submission satisfy **BOTH**
 [Rule 2a Gross Size](rules.html#rule-2a-gross-size)
@@ -77,13 +83,17 @@ During development this can be checked using `iocccsize(1)`:
 
     iocccsize prog.c
 
+<div id="rule2a">
 ### Rule 2a Gross Size
+</div>
 
 The overall maximum size of your `prog.c` program source **MUST NOT**
 exceed **4993** bytes.
 
 
+<div id="rule2b">
 ### Rule 2b Net Size
+</div>
 
 When the filename of your program source (i.e., `prog.c`) is given as a
 command line argument to the latest version of the official IOCCC size
@@ -91,8 +101,10 @@ tool (hereby referred to as `iocccsize(1)`), the value printed **MUST
 NOT** exceed **2503**.
 
 
+<div id="rule3">
 Rule 3 Register
 ---------------
+</div>
 
 You **MUST** register, using a valid email address, in order to submit
 entries to the IOCCC. You may register while the contest is **pending** or **open**.
@@ -113,8 +125,10 @@ See [Entering the IOCCC: the bare minimum you need to know](../quick-start.html#
 See [Rule 8 Submission](rules.html#rule-8-submission).
 
 
+<div id="rule4">
 Rule 4 Files
 ------------
+</div>
 
 The submission **MUST** include at least these files: `Makefile`, `prog.c`,
 `remarks.md`,`.info.json`, and `.auth.json`.  The last two **MUST** be
@@ -166,8 +180,10 @@ See [IOCCC markdown guidelines](../markdown.html).
 See [Rule 17 Packaging](rules.html#rule-17-packaging).
 
 
+<div id="rule5">
 Rule 5 Purity
 -------------
+</div>
 
 Your submission **MUST NOT** modify the filenames or content of any of
 your original submission, such as `prog.c`, `Makefile`, or any supplied
@@ -188,8 +204,10 @@ Your code should be able to run under a
 [SUS environment](https://pubs.opengroup.org/onlinepubs/9799919799/).
 
 
+<div id="rule6">
 Rule 6 Free
 -----------
+</div>
 
 I am **NOT** a Rule, I am a `free(void *human);` ‼️
 
@@ -202,8 +220,10 @@ I am **NOT** a Rule, I am a `free(void *human);` ‼️
 See [Rule 19 Prime](rules.html#rule-19-prime).
 
 
+<div id="rule7">
 Rule 7 Original Work
 --------------------
+</div>
 
 In short: You wrote it, you own it, and its an original work.
 
@@ -226,8 +246,10 @@ describe what tools and how you used those tools, in your `remarks.md` file.
 See [Rule 16 Anonymous](rules.html#rule-16-anonymous).
 
 
+<div id="rule8">
 Rule 8 Submission
 -----------------
+</div>
 
 The Submit Server will only accept submissions from those who have
 registered and only while the contest is open.
@@ -247,8 +269,10 @@ and
 [Rule 17 Packaging](rules.html#rule-17-packaging).
 
 
+<div id="rule9">
 Rule 9 No hands
 ----------------
+</div>
 
 Entries requiring human interaction to be initially compiled are **NOT**
 permitted. However, see the guidelines.  Each entry **MUST** automated the
@@ -260,8 +284,10 @@ Note references to `gmake` can be any GNU Make compatible tool.
 See [Rule 15 Building](rules.html#rule-15-building).
 
 
+<div id="rule10">
 Rule 10 Privileges
 ------------------
+</div>
 
 Programs that require special privileges (setuid(2), setgid(2),
 super-user, special owner, special group, etc.) are **HIGHLY DISCOURAGED**.
@@ -280,8 +306,10 @@ and
 [Rule 5 Purity](rules.html#rule-5-purity).
 
 
+<div id="rule11">
 Rule 11 Abuse
 -------------
+</div>
 
 Legal abuse of the rules is somewhat encouraged, but comes with risks.
 A submission that, in the opinion of the Judges, violates the rules **WILL
@@ -305,14 +333,19 @@ abusing version so that the Judges don't think you uploaded a duplicate
 into a wrong slot by mistake.
 
 
+<div id="rule12">
 Rule 12 UTF-8
 -------------
+</div>
 
 Use of UTF-8 is supported by `C89` standard and its updates and so too by the IOCCC.
 
 
+<div id="rule13">
 Rule 13 Newlines
 ----------------
+</div>
+
 Any C source that fails to compile because lines contain carriage-returns
 (CTRL+M, `\r`) in particular as part of DOS/Windows style newlines might
 be rejected.  Please do **NOT** put trailing CTRL+M in `prog.c`, `Makefile`,
@@ -328,8 +361,10 @@ your compiler complains about this, document this too and update your
 `Makefile` to account for this.
 
 
+<div id="rule14">
 Rule 14 Resubmit
 ----------------
+</div>
 
 Submissions that are substantially similar to previous winning IOCCC
 entries are discouraged.
@@ -341,11 +376,13 @@ didn't previously win, then you are encouraged to mention this in your
 `remarks.md` file as this sometimes helps.
 
 
+<div id="rule15">
 Rule 15 Building
 ----------------
+</div>
 
-The `Makefile` **MUST** adhere to GNU Make file syntax.  Its recommended
-that you copy and rename the `Makefile.example` as a template.  The primary
+The `Makefile` **MUST** adhere to GNU Makefile syntax.  Its recommended
+that you copy and rename the `Makefile.example` as template.  The primary
 target of the `Makefile` **MUST** be `prog` and the source file is `prog.c`.
 The C compiler and preprocessor **MUST** be invoked using `${CC}` and `${CPP}`
 macros respectively.
@@ -374,8 +411,10 @@ Do **NOT** assume that `.` (current directory) is in the `$PATH` environment var
 See [Rule 4 Files](rules.html#rule-4-files).
 
 
+<div id="rule16">
 Rule 16 Anonymous
 -----------------
+</div>
 
 Your source code, data files, remarks, and program output **MUST NOT**
 identify the author(s) of your code (unless you are **Peter Honeyman**
@@ -387,8 +426,10 @@ accident anywhere in your submission.  ***Failure to comply may result
 in the submission being disqualified.***
 
 
+<div id="rule17">
 Rule 17 Packaging
 -----------------
+</div>
 
 The files, directories, and paths **MUST** conform to the limits imposed by
 `mkiocccentry(1)`, including but **NOT** limited, to their names, count, path
@@ -413,8 +454,9 @@ The unpacked submission directory **MUST** pass the checks performed by the
 current version of `chksubmit(1)`.
 
 The `prog.c` file **MUST** pass the [Rule 2 Size](rules.html#rule-2-size)
-size checks performed by `iocccsize(1)`.  The `Makefile` and `remarks.md` files cannot
-be empty nor blank.  The `.auth.json` and `.info.json` files **MUST** be compatible with what
+size checks performed by `iocccsize(1)`.
+
+The `.auth.json` and `.info.json` files **MUST** be compatible with what
 `mkiocccentry(1)` generates.
 
 Submissions that package using older versions of the mkiocccentry
@@ -429,8 +471,10 @@ rather than roll-it-by-hand.
 See [Rule 4 Files](rules.html#rule-4-files).
 
 
+<div id="rule18">
 Rule 18 License
 ---------------
+</div>
 
 The entirety of your submission **MUST** be submitted under the following license:
 
@@ -439,8 +483,10 @@ The entirety of your submission **MUST** be submitted under the following licens
 See [Rule 7 Original Work](rules.html#rule-7-original-work).
 
 
+<div id="rule19">
 Rule 19 Prime
 -------------
+</div>
 
 This 19th rule, while prime, is reserved for future abuse 😁.
 Additional rules, both humorous and otherwise, may be added
@@ -462,5 +508,5 @@ server for discussions about The Rules, questions for the Judges, and
 `C` in general.
 
 
-Leonid A. Broukhis  
+Leonid A. Broukhis
 chongo (Landon Curt Noll) /\\cc/\\
