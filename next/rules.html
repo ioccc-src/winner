@@ -473,633 +473,266 @@ mastodon feed</a> page and/or mastodon
 app from time to time to view IOCCC mastodon updates.</p>
 <!-- END: the next line ends content from: inc/rules.closed.hdr -->
 <!-- This is the last line modified by the tool: bin/gen-status.sh -->
-<h1 id="th-international-obfuscated-c-code-contest-official-rules">28th International Obfuscated C Code Contest Official Rules</h1>
-<p class="leftbar">
-Copyright © 2024-2025 Leonid A. Broukhis and Landon Curt Noll.
-</p>
+<h2 id="th-international-obfuscated-c-code-contest-official-rules">29th International Obfuscated C Code Contest Official Rules</h2>
+<p>Copyright © 2024-2025 Leonid A. Broukhis and Landon Curt Noll.</p>
 <p>All Rights Reserved. Permission for personal, education or non-profit use is
 granted provided this this copyright and notice are included in its entirety
-and remains unaltered. All other uses must receive prior permission in
+and remains unaltered. All other uses <strong>MUST</strong> receive prior permission in
 writing by <a href="../contact.html">contacting the judges</a>.</p>
-<p>Jump to: <a href="#">top</a></p>
-<div id="rules_version">
-<div id="version">
-<h2 id="ioccc-rules-version">IOCCC Rules version</h2>
-</div>
-</div>
-<p class="leftbar">
-These <a href="rules.html">IOCCC rules</a> are version <strong>28.31 2025-11-17</strong>.
-</p>
-<p>The markdown form of these rules <a href="rules.md" download="rules.md">is
-available for download</a>.</p>
-<p><strong>IMPORTANT</strong>: Be sure to read the <a href="guidelines.html">IOCCC guidelines</a>.</p>
-<p>Jump to: <a href="#">top</a></p>
-<div id="change_marks">
-<h3 id="change-marks">Change marks</h3>
-</div>
-<p class="leftbar">
-<strong>← Lines that start with this symbol indicate a change from the previous IOCCC</strong>
-</p>
-<p class="leftbar">
-Most lines that were modified since the previous IOCCC start with a solid
-4 pixel black left border (or, in the case of a code block or blockquote,
-just a vertical bar). We say <em>most lines</em> because we sometimes forget
-to bar modified sections.
-</p>
-<p>Jump to: <a href="#">top</a></p>
-<div id="obfuscate">
-<h1 id="obfuscate-defined">Obfuscate defined:</h1>
-</div>
-<p>tr.v. -cated, -cating, -cates.
-<br><br>
-<strong>1a.</strong> To render obscure.<br>
-<strong>1b.</strong> To darken.
-<br><br>
-<strong>2.</strong> To confuse: his emotions obfuscated his judgment.<br>
-    [LLat. obfuscare, to darken : ob(intensive) + Lat. fuscare,<br>
-    to darken &lt; fuscus, dark.] -obfuscation n. obfuscatory adj.</p>
-<p>Jump to: <a href="#">top</a></p>
-<div id="goals">
-<h1 id="goals-of-the-ioccc-international-obfuscated-c-code-contest">Goals of the IOCCC (International Obfuscated C Code Contest)</h1>
-</div>
-<p class="leftbar">
-See the <a href="../index.html#goals">IOCCC goals</a>.
-</p>
-<p>Jump to: <a href="#">top</a></p>
-<div id="dates">
-<h1 id="important-ioccc-dates">Important IOCCC dates</h1>
-</div>
-<p class="leftbar">
-This IOCCC runs from <strong>2024-12-29 23:58:13.213455 UTC</strong> to <strong>2025-06-05 04:03:02.010099 UTC</strong>.
-This IOCCC marks the <strong>40th anniversary</strong> of the contest!
-</p>
-<p class="leftbar">
-This contest will enter the <strong><a href="../faq.html#open">open</a></strong> state on <strong>2025-03-05 23:19:17.131107 UTC</strong>.
-</p>
-<p class="leftbar">
-This contest will enter the <strong><a href="../faq.html#judging">judging</a></strong> state on <strong>2025-06-05 04:03:02.010099 UTC</strong>.
-</p>
-<p class="leftbar">
-<strong>IMPORTANT NOTE</strong>: Until the contest enters the <strong><a href="../faq.html#open">open</a></strong> state, any or all
-of the above <strong>dates and times may change</strong>!
-</p>
-<p>See the
-FAQ on “<a href="../faq.html#mkiocccentry">obtaining and compiling the mkiocccentry tools</a>”
-and the
-FAQ on “<a href="../quick-start.html#enter">how to enter the IOCCC</a>”
-as that FAQ has important details on
-<a href="../next/register.html">how to register</a>
-as well as
-<a href="../next/submit.html">how to upload your submission</a> to the IOCCC.</p>
-<p>Jump to: <a href="#">top</a></p>
-<div id="rules">
-<h1 id="ioccc-rules">IOCCC RULES</h1>
-</div>
-<p>To help us with the volume of submissions, we ask that you follow the rules below.</p>
-<div id="rule_abuse">
-<h4 id="a-warning-about-rule-abuse">A warning about rule abuse</h4>
-</div>
-<p><strong>WARNING:</strong> Abusing these rules comes with a <strong>fair amount of risk</strong>
-that your submission will be rejected. If you do plan to abuse the
-rules, then you <strong>MUST CLEARLY EXPLAIN THE RATIONALE</strong> in your <code>remarks.md</code> file,
-as to why you think your rule abuse should be allowed, and as to why you think
-your submission should not be rejected for a rule violation.
-<strong>Nevertheless, <em>even if you do</em> explain this in your <code>remarks.md</code> file
-you submission may still be rejected</strong>.</p>
-<p>If you use the most recently released official IOCCC submission packaging tool
-(hereby referred to as <code>mkiocccentry(1)</code>), which we <strong>STRONGLY recommend you
-do</strong>, then the <code>mkiocccentry(1)</code> tool will warn you if there appears to be a
-violation in certain rules (not all can be detected). The <code>mkiocccentry(1)</code>
-tool also runs <code>chksubmit(1)</code> and <code>txzchk(1)</code>, the latter of which runs
-<code>fnamchk(1)</code>. Overriding problems detected by any of these tools comes with a
-<strong>fair amount of risk</strong> that your submission will be rejected.</p>
-<p>If you do override a rule violation warning from the <code>mkiocccentry(1)</code> or
-another related IOCCC tool, or otherwise plan to abuse the rules, then you
-<strong>MUST CLEARLY EXPLAIN THE RATIONALE</strong> of why you are attempting to abuse the
-rules in your <code>remarks.md</code> file. <strong><em>Even if you do</em> explain this in your
-<code>remarks.md</code> file your submission may still be rejected</strong>.</p>
-<p><strong>HINT:</strong> If you do submit such a rule abusing / rule violating
-submission, then consider also submitting an alternate version in a
-<strong>different submission</strong> server slot that does <strong>NOT</strong> violate the rules
-in case your rule abuse excuse is rejected.</p>
-<p><strong>IMPORTANT</strong>: if you do submit such an alternate non-rule abusing version,
-<strong>PLEASE</strong> indicate that in your <code>remarks.md</code> file of your non-rule abusing
-version so that the <a href="../judges.html">IOCCC judges</a> do not think you uploaded a
-duplicate into a wrong slot by mistake.</p>
-<p>Uploading a tarball not formed by <code>mkiocccentry(1)</code> puts you at a very big risk of
-violating <a href="rules.html#rule17">Rule 17</a>, especially as <code>mkiocccentry(1)</code> does a
-great number of things that are required, and it also runs many checks, and if
-any of those checks fail, you are at a very great risk of having your submission
-rejected for violating <a href="rules.html#rule17">Rule 17</a>.</p>
-<p>See also <a href="#rule13">Rule 12</a>.</p>
-<p>Jump to: <a href="#">top</a></p>
-<div id="rule0">
-<h2 id="rule-0">Rule 0</h2>
-</div>
-<p>Just as C starts at 0, so the IOCCC starts at <a href="#rule0">Rule 0</a>. :-)</p>
-<p>The “<a href="#dates">Important IOCCC dates</a>” section above is part of this rule.</p>
-<p>Jump to: <a href="#">top</a></p>
-<div id="rule1">
-<h2 id="rule-1">Rule 1</h2>
-</div>
-<p>Your submission must be a C program.</p>
-<p>You see, the contest is not called the <strong>International Obfuscated JSON Contest</strong>
-(<strong>IOJSONC</strong>), even if the <a href="https://github.com/xexyl/jparse/blob/master/json_README.md#so-called-json-spec">so-called JSON
-spec</a> might be called obfuscated
-by some people. :-)</p>
-<p>Jump to: <a href="#">top</a></p>
-<div id="rule2">
-<h2 id="rule-2">Rule 2</h2>
-</div>
-<p><a href="#rule2">Rule 2</a> requires that your submission satisfy <strong>BOTH</strong> <a href="#rule2a">Rule
-2a</a> <strong>AND</strong> <a href="#rule2b">Rule 2b</a>.</p>
-<p>You may check your code with respect to <a href="#rule2a">Rule 2a</a> and <a href="#rule2b">Rule
-2b</a> prior to submitting your code by giving the filename
-as a command like argument to the <code>iocccsize(1)</code> tool. For example:</p>
-<pre><code>    iocccsize prog.c</code></pre>
-<p>The source to <code>iocccsize(1)</code> may be found in the
-<a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry repo</a>.</p>
-<p>See also the
-FAQ on “<a href="../faq.html#mkiocccentry_test">how to further test your submission</a>”
-for more more thorough testing, including <a href="#rule2">Rule 2</a>.</p>
-<p>See also <a href="#rule2a">Rule 2a</a>, <a href="#rule2b">Rule 2b</a>, and <a href="#rule17">Rule 17</a>.</p>
-<p>Jump to: <a href="#">top</a></p>
-<div id="rule2a">
-<h2 id="rule-2a">Rule 2a</h2>
-</div>
-<p class="leftbar">
-The size of your program source <strong>MUST NOT exceed 4993 bytes</strong>.
-</p>
-<p>Jump to: <a href="#">top</a></p>
-<div id="rule2b">
-<h2 id="rule-2b">Rule 2b</h2>
-</div>
-<p>When the filename of your program source is given as a command line argument to
-the latest version of the official IOCCC size tool (hereby referred to as
-<code>iocccsize(1)</code>), the value printed <strong>MUST NOT exceed <em>2503</em></strong>.</p>
-<p>See also <a href="#rule17">Rule 17</a>.</p>
-<p>Jump to: <a href="#">top</a></p>
-<div id="rule3">
-<h2 id="rule-3">Rule 3</h2>
-</div>
-<p>You must <a href="../next/register.html">register</a> in order to submit your entry to the IOCCC.
-You may <a href="../next/register.html">register</a> while the contest is either
-<strong><a href="../faq.html#pending">pending</a></strong> or <strong><a href="../faq.html#open">open</a></strong>.</p>
-<p>When the contest is <strong><a href="../faq.html#open">open</a></strong>, the <a href="https://submit.ioccc.org">submit server</a>
-will email you your <a href="https://submit.ioccc.org">submit server</a>
-<strong>Username</strong> and <strong>Initial password</strong>. <strong>Please be patient</strong> as it may take some time,
-perhaps as much as a few days, for your registration to be processed and for that email to be sent.</p>
-<p>Those who <a href="../next/register.html">register</a> while the contest status is <strong><a href="../faq.html#pending">pending</a></strong>
-will receive their email (containing their <a href="https://submit.ioccc.org">submit server</a> <strong>Username</strong>
-and <strong>Initial password</strong>), later: usually a few days around the time when the contest status
-becomes <strong><a href="../faq.html#open">open</a></strong>.</p>
-<p>Once that email with your <strong>Username</strong> and <strong>Initial password</strong> is sent, you
-will have fortnight (<strong>14 days</strong>) to <a href="../next/pw-change.html">change your submit server initial password</a>.</p>
-<p>If you do not change your <strong>Initial password</strong> in time, you will have to
-<a href="../contact.md#if-you-really-need-to-send-email-the-ioccc-judges">send email to the IOCCC judges</a>
-to ask for your password to be reset.</p>
-<p>Because it takes time (maybe even a few days) to process your registration
-and for the server to email you your initial login and password, you
-should <strong>MAKE SURE</strong> you give yourself enough time to register well
-before the contest closes. In other words, <strong>DO NOT WAIT UNTIL THE FINAL DAYS</strong>
-of the contest to register! The <a href="../judges.html">IOCCC judges</a>
-are <strong>NOT</strong> responsible for delayed or lost email, or for those who wait
-until the last minute to try to register!</p>
-<p>See the
-FAQ on “<a href="../quick-start.html#enter">how to register and submit to the IOCCC</a>”
-for instructions on registering and participating in the IOCCC, as the process
-may change from contest to contest.</p>
-<p>See also <a href="#rule8">Rule 8</a>.</p>
-<p>Jump to: <a href="#">top</a></p>
-<div id="rule4">
-<h2 id="rule-4">Rule 4</h2>
-</div>
-<p>If your submission is selected as a winning entry, then your submission may be modified in order
-to fit into the structure of the <a href="https://www.ioccc.org/index.html">Official IOCCC winner website</a>.</p>
-<p>For example, your submission’s <code>Makefile</code> will be modified and your <code>remarks.md</code>
-will become a <code>README.md</code> which will be used to generate an <code>index.html</code> file.</p>
-<p>Your source code will be the file <code>prog.c</code>. The compiled binary
-will be called <code>prog</code>. If you submission requires different filenames,
-then modify your submission’s <code>Makefile</code> to <strong>COPY</strong> (<strong>NOT</strong> move!) the files
-accordingly.</p>
-<p>Of course your program may also do this, as long as it works, but you’re welcome
-to use your <code>Makefile</code> as well.</p>
-<p>See also <a href="#rule5">Rule 5</a>, <a href="#rule18">Rule 18</a> and <a href="#rule21">Rule 21</a>.</p>
-<p>Jump to: <a href="#">top</a></p>
-<div id="rule5">
-<h2 id="rule-5">Rule 5</h2>
-</div>
-<p>Your submission must <strong>NOT</strong> modify the <em>content</em> <strong>OR</strong> <em>filename</em> of <strong>ANY</strong>
-part of your original submission including, but not limited to <code>prog.c</code>, the
-<code>Makefile</code> or any data files you submit.</p>
-<p>If you submission needs (or wishes :-) ) to modify such content, it <strong>MUST</strong>
-first copy the file to a new filename and then modify that copy.</p>
-<p>You may use your submission (program) to form a copy, or you can make use of
-your <code>Makefile</code> to form that copy.</p>
-<p>If you do make a copy of a submission file, <strong>PLEASE</strong> be sure that
-the <code>clobber</code> rule of your <code>Makefile</code> removes that copy in order to
-restore your submission to its original submission state.</p>
-<p>Jump to: <a href="#">top</a></p>
-<div id="rule6">
-<h2 id="rule-6">Rule 6</h2>
-</div>
-<p>I am not a rule, I am a <code>free(void *human);</code> ‼️</p>
-<p>        <code>while (!(ioccc(rule(you(are(number(6)))))) {</code><br>
-                <code>ha_ha_ha();</code><br>
-        <code>}</code></p>
-<p>Jump to: <a href="#">top</a></p>
-<div id="rule7">
-<h2 id="rule-7">Rule 7</h2>
-</div>
-<p>The obfuscated C program must be your own original work.</p>
-<p>You (the author(s)) <strong>MUST</strong> own the contents of your submission <strong>OR</strong>
-you <strong>MUST</strong> have permission from the owner(s) to submit their content.</p>
-<p>If you submit any content that is owned by others, you <strong>MUST
-detail that ownership</strong> (i.e., who owns what) <strong><em>AND</em> document the
-permission you obtained from them</strong>, in your <code>remarks.md</code> file.</p>
-<p>Please note that the tools in <a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry
-repo</a> are <strong>NOT</strong> original works,
-unless of course you’re the original authors, in which case they are original. :-)</p>
-<p>Nevertheless tools such as those listed are <strong>NOT</strong> obfuscated. If submitted, they
-would probably violate a number of rules. :-)</p>
-<ul>
-<li><a href="https://github.com/ioccc-src/mkiocccentry/blob/master/mkiocccentry.c">mkiocccentry(1)</a></li>
-<li><a href="https://github.com/ioccc-src/mkiocccentry/blob/master/iocccsize.c">iocccsize(1)</a></li>
-<li><a href="https://github.com/ioccc-src/mkiocccentry/blob/master/chksubmit.c">chksubmit(1)</a></li>
-<li><a href="https://github.com/ioccc-src/mkiocccentry/blob/master/txzchk.c">txzchk(1)</a></li>
-<li><a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/location_main.c">location(1)</a></li>
-<li><a href="https://github.com/xexyl/jparse">jparse repo as cloned by the mkiocccentry repo</a></li>
-<li><a href="https://github.com/lcn2/dbg">dbg repo as cloned by the mkiocccentry repo</a></li>
-<li><a href="https://github.com/lcn2/dyn_array">dyn_array repo as cloned by the mkiocccentry repo</a></li>
-</ul>
+<h2 id="rules-version">Rules version</h2>
+<p>These IOCCC Rules are version <strong>29.00 2025-11-19</strong>.</p>
+<p>Be sure to read the <a href="guidelines.html">IOCCC guidelines</a>.</p>
+<h2 id="rule-0-dates">Rule 0 Dates</h2>
+<p>This IOCCC runs from ${START_DATE_TIME} UTC to ${CLOSE_DATE_TIME} UTC.</p>
+<p>This contest will enter the open state on ${OPEN_DATE_TIME} UTC.</p>
+<p>This contest will enter the judging state on ${JUDGMENT_DATE_TIME} UTC.</p>
+<p>The above dates are subject to change until the contest is officially open.</p>
+<p><strong>NOTE</strong>: As of this draft, the above dates are TBD (to be determined).</p>
+<h2 id="rule-1-program">Rule 1 Program</h2>
+<p>Your submission <strong>MUST</strong> be C program.</p>
+<h2 id="rule-2-size">Rule 2 Size</h2>
+<p><code>Rule 2</code> requires that your submission satisfy <strong>BOTH</strong>
+<a href="rules.html#rule-2a-gross-size">Rule 2a Gross Size</a>
+and
+<a href="rules.html#rule-2b-net-size">Rule 2b Next Size</a>.
+During development this can be checked using <code>iocccsize(1)</code>:</p>
+<p>iocccsize prog.c</p>
+<h3 id="rule-2a-gross-size">Rule 2a Gross Size</h3>
+<p>The overall maximum size of your <code>prog.c</code> program source <strong>MUST NOT</strong>
+exceed <strong>4993</strong> bytes.</p>
+<h3 id="rule-2b-net-size">Rule 2b Net Size</h3>
+<p>When the filename of your program source (i.e., <code>prog.c</code>) is given as a
+command line argument to the latest version of the official IOCCC size
+tool (hereby referred to as <code>iocccsize(1)</code>), the value printed <strong>MUST
+NOT</strong> exceed <strong>2503</strong>.</p>
+<h2 id="rule-3-register">Rule 3 Register</h2>
+<p>You <strong>MUST</strong> register, using a valid email address, in order to submit
+entries to the IOCCC. You may register while the contest is <strong>pending</strong> or <strong>open</strong>.</p>
+<p>A few days after registering, you’ll receive your UUID username and
+temporary password, which you <strong>MUST</strong> change within 14 days. If you
+fail to change it in a timely manner, you’ll need to
+<a href="../contact.html">contact the Judges</a> by email to request a reset.</p>
+<p>It can take a few days to process your registration and for the server to
+email your details, therefore make sure to allow yourself ample time to
+register and submit your entries; <strong>DO NOT WAIT UNTIL THE FINAL DAYS</strong>
+to register! The judges are <strong>NOT</strong> responsible for delayed or lost
+email or for those who wait until the last minute to try to register!</p>
+<p>See <a href="../quick-start.html#enter">Entering the IOCCC: the bare minimum you need to know</a>.</p>
+<p>See <a href="rules.html#rule-8-submission">Rule 8 Submission</a>.</p>
+<h2 id="rule-4-files">Rule 4 Files</h2>
+<p>The submission <strong>MUST</strong> include at least these files: <code>Makefile</code>, <code>prog.c</code>,
+<code>remarks.md</code>,<code>.info.json</code>, and <code>.auth.json</code>. The last two <strong>MUST</strong> be
+generated by <code>mkiocccenty(1)</code> when packing a submission, and <strong>MUST</strong>
+pass the <code>chksubmit(1)</code> tests.</p>
+<p>The <code>Makefile</code>, <code>remarks.md</code>,<code>.info.json</code>, and <code>.auth.json</code> <strong>MUST</strong>
+have a file size <strong>greater than 0</strong>.</p>
+<p>Your submitted source code <strong>MUST</strong> be called <code>prog.c</code>. When the <code>Makefile</code>
+compiles your code, the executable (if applicable) <strong>MUST</strong> be called <code>prog</code>.</p>
+<p>Your submission may <strong>NOT</strong> have any file that starts with <code>COPYING</code>,
+<code>COPYRIGHT</code>, or <code>LICENSE</code> as those files are reserved by IOCCC.</p>
+<p>Your submission may <strong>NOT</strong> have in the top directory, <code>prog</code>, <code>prog.alt</code>,
+<code>prog.alt.o</code>, <code>prog.o</code>, <code>prog</code>, <code>prog.orig.c</code>, <code>README.md</code>, nor <code>index.html</code>
+as those files reserved by IOCCC.</p>
+<p>Your submission may <strong>NOT</strong> have a file in the top directory that matches
+a file glob pattern of the form <code>[0-9][0-9][0-9][0-9]_*.tar.bz2</code>
+as those files are reserved by IOCCC.</p>
+<p>Your submission may <strong>ONLY</strong> contain files and directories. Other file
+types such as symlinks, sockets, etc are <strong>NOT</strong> allowed.</p>
+<p>All directories <strong>MUST</strong> have a file mode of <strong>0755</strong>. All files
+<strong>MUST</strong> have the file mode of <strong>0444</strong>, except for files that
+end in <code>.sh</code> which must have a mode of <strong>0555</strong>.</p>
+<p>All files that end in <code>.md</code> <strong>MUST</strong> be in markdown format.
+We recommend that markdown files observe our
+<a href="../markdown.html">IOCCC markdown guidelines</a>.</p>
+<p>All filenames are treated as case insensitive. For example, <code>REMARKS.MD</code>,
+and <code>Remarks.md</code>, and <code>remarks.md</code> are considered by <code>mkiocccenty(1)</code>
+to be the <strong>SAME</strong> file. If you are preparing your submission on a case
+sensitive filesystem, ensure that your submission will work on
+a case insensitive filesystem.</p>
+<p>The <code>remarks.md</code> and <code>Makefile</code> are explained in more detail in the Guidelines.</p>
+<p>See <a href="rules.html#rule-17-packaging">Rule 17 Packaging</a>.</p>
+<h2 id="rule-5-purity">Rule 5 Purity</h2>
+<p>Your submission <strong>MUST NOT</strong> modify the filenames or content of any of
+your original submission, such as <code>prog.c</code>, <code>Makefile</code>, or any supplied
+data files. To modify files, your program can make a copy or you can
+use the Makefile to setup working copies. Any working copies <strong>MUST</strong> be
+cleaned up by the <code>Makefile</code> <code>clobber</code> target, so as to restore the
+directory to its original state.</p>
+<h2 id="rule-6-free">Rule 6 Free</h2>
+<p>I am <strong>NOT</strong> a Rule, I am a <code>free(void *human);</code> ‼️</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> <span class="op">(!(</span>ioccc<span class="op">(</span>rule<span class="op">(</span>you<span class="op">(</span>are<span class="op">(</span>number<span class="op">(</span><span class="dv">6</span><span class="op">))))))</span> <span class="op">{</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>        ha<span class="op">();</span> ha<span class="op">();</span> ha<span class="op">();</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span></code></pre></div>
+<p>See <a href="rules.html#rule-19-prime">Rule 19 Prime</a>.</p>
+<h2 id="rule-7-original-work">Rule 7 Original Work</h2>
+<p>In short: You wrote it, you own it, and its an original work.</p>
+<p>You, the author(s), <strong>MUST</strong> own the contents of your submission, or you <strong>MUST</strong>
+have permission from the original owner(s) to its use. If you submit
+any content that is owned by others, you <strong>MUST</strong> detail that ownership,
+i.e., who owns what, and document the permission you obtained from them
+in your <code>remarks.md</code> file.</p>
 <p>The IOCCC has a rich history of remarkable winning entries created by
-authors who skillfully employed various techniques to develop their code.
-While it is <strong>NOT</strong> required, you are <em>allowed</em> to use tools to develop
-and test your submission. These tools may include, but are not limited
-to code generators, code analysis tools, static code analysis tools,
-runtime analysis tools, machine learning tools, natural language models,
-code copilot tools, so-called AI services, large language models (LLMs), etc.
-If you do make use of such tools or services, then we <strong>ENCOURAGE you to describe
-what tools and how you used those tools</strong>, in your <code>remarks.md</code> file.</p>
-<p>See also <a href="#rule5">Rule 5</a>, <a href="#rule18">Rule 18</a> and <a href="#rule21">Rule 21</a>.</p>
-<p>Jump to: <a href="#">top</a></p>
-<div id="rule8">
-<h2 id="rule-8">Rule 8</h2>
-</div>
-<p>Submissions may only be uploaded to the <a href="https://submit.ioccc.org">IOCCC submit server</a>
-while the contest is <strong><a href="../faq.html#open">open</a></strong>.</p>
-<p>If you have <a href="../next/register.html">registered</a> and received by email your <a href="https://submit.ioccc.org">submit
-server</a> <strong>Username</strong> and <strong>Initial password</strong> you may
-upload your submission to the <a href="https://submit.ioccc.org">submit server</a> but
-<strong>ONLY</strong> while the contest is <strong><a href="../faq.html#open">open</a></strong>.</p>
-<p>The <a href="https://submit.ioccc.org">submit server</a>, in accordance with <a href="rules.html#rule17">Rule
-17</a>, places a limit of <strong>3999971</strong> bytes on the size of your
-upload.</p>
-<p>Once the contest is in the <strong><a href="../faq.html#judging">judging</a></strong> state (or
-<strong><a href="../faq.html#closed">closed</a></strong> state), you may <strong>NOT</strong> upload submissions.</p>
-<p>While the contest is <strong><a href="../faq.html#open">open</a></strong> or in the
-<strong><a href="../faq.html#judging">judging</a></strong> state, the <a href="../judges.html">IOCCC judges</a>
-<strong>MAY</strong> (but are not required to) modify the slot comment of your submission to
-indicate that they have received it. If uploaded submission is malformed, the
-<a href="../judges.html">IOCCC judges</a> <strong>MAY</strong> (but are not required to) modify the slot
-comment accordingly.</p>
-<p>You are <strong>STRONGLY</strong> advised to use the <code>mkiocccentry(1)</code> tool
-as found in the <a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry repo</a>
-to form the file to upload to the <a href="https://submit.ioccc.org">submit server</a>.</p>
-<p>The <a href="https://submit.ioccc.org">submit server</a> will become active when the
-contest is <strong><a href="../faq.html#open">open</a></strong>. Until the contest status becomes
-<strong><a href="../faq.html#open">open</a></strong>, the <a href="https://submit.ioccc.org">submit server</a> may
-be offline and/or unresponsive.</p>
-<p>See the
-FAQs on “<a href="../faq.html#mkiocccentry">obtaining, compiling, installing and using the latest release of the mkiocccentry tools</a>”
-for more information about the <code>mkiocccentry(1)</code> tool.</p>
-<p>See the “<a href="#dates">Important IOCCC dates</a>” section above for when these contest states are scheduled.</p>
-<p>See also <a href="#rule3">Rule 3</a> and <a href="#rule17">Rule 17</a>.</p>
-<p>Jump to: <a href="#">top</a></p>
-<div id="rule9">
-<h2 id="rule-9">Rule 9</h2>
-</div>
-<p>Each <strong>PERSON</strong> may register <strong>ONLY ONE</strong> account and each account may submit up to
-and including <strong>10.000000</strong> (ten in base 10) submissions <strong>PER</strong> contest.</p>
-<p><strong>Each submission <em>must be submitted separately</em></strong>.</p>
-<p>If this seems unreasonable we suggest you wait until the next contest and in
-the interim ponder this (modified or not) quote said by Bill Gates:</p>
-<blockquote>
-<p>640K submissions ought to be enough for anybody.</p>
-<p>– Bill Gates s/640K/10/ (allegedly :-) )</p>
-</blockquote>
-<p>Jump to: <a href="#">top</a></p>
-<div id="rule10">
-<h2 id="rule-10">Rule 10</h2>
-</div>
-<p>Entries requiring human interaction to be initially compiled <strong>are not
-permitted</strong>. However, see the <a href="guidelines.html">guidelines</a>.</p>
-<p>Jump to: <a href="#">top</a></p>
-<div id="rule11">
-<h2 id="rule-11">Rule 11</h2>
-</div>
-<p>Programs that require special privileges (<code>setuid(2)</code>, <code>setgid(2)</code>,
-super-user, special owner, special group, etc.) are still <strong>HIGHLY
-DISCOURAGED</strong>. We do not guarantee these functions will behave as
-you expect on our test platforms. If your program needs special
-permissions you <strong>MUST</strong> document this fact, and explain why
-it is needed in your submission’s <code>remarks.md</code> file.</p>
-<p>Furthermore, if you need a supplementary program that you include, to have these
-permissions, you will also have to explain this, because these bits are not
-allowed in submissions and those bits will not be copied by <code>mkiocccentry(1)</code>.</p>
-<p>See also <a href="#rule17">Rule 17</a>.</p>
-<p>Jump to: <a href="#">top</a></p>
-<div id="rule12">
-<h2 id="rule-12">Rule 12</h2>
-</div>
-<p><strong>Legal</strong> abuse of the rules is somewhat encouraged. <strong>A submission that, in
-the opinion of the <a href="../judges.html">judges</a>, violates the rules WILL BE DISQUALIFIED</strong>.
-Submissions that attempt to abuse the rules <strong>MUST</strong> try to justify why
-their rule abuse is legal, in the <code>remarks.md</code> file.</p>
-<p>See also <a href="#rule_abuse">the warning about rule abuse</a>.</p>
-<p>Jump to: <a href="#">top</a></p>
-<div id="rule13">
-<h2 id="rule-13">Rule 13</h2>
-</div>
-<p>7 out of 13 UTF-8 characters in C code agree that this rule number is lucky
-enough to be a prime number.</p>
-<p>Fun fact: the fear of the number 13 is called <em>triskaidekaphobia</em>.</p>
-<p>Jump to: <a href="#">top</a></p>
-<div id="rule14">
-<h2 id="rule-14">Rule 14</h2>
-</div>
-<p>Any C source that fails to compile because of lines with trailing
-control-M’s (i.e., lines with a trailing byte <code>015</code>) <strong>might</strong> be rejected.</p>
-<p>Please do <strong>NOT</strong> put trailing control-M’s on <code>prog.c</code>, <code>Makefile</code>, or
-<code>remarks.md</code> files but instead end lines with a trailing newline (i.e.,
-byte <code>012</code>) character.</p>
-<p>As we do <strong>NOT</strong> use DOS, please also be sure that the <code>Makefile</code> and
-<code>remarks.md</code> files end in final newline (i.e., byte <code>012</code>) character.</p>
-<p>You are permitted, in order to try and squeeze your <code>prog.c</code> under
-a <a href="#rule2a">Rule 2a</a> and/or <a href="#rule2b">Rule 2b</a> limit, to <strong>NOT</strong>
-end your <code>prog.c</code> with a newline (i.e., byte <code>012</code>) character.
-If you need to do this, <strong>PLEASE</strong> document that in your <code>remarks.md</code> file and
-if your compiler complains about this, document this too and update your
-<code>Makefile</code> to account for this.</p>
-<p>Jump to: <a href="#">top</a></p>
-<div id="rule15">
-<h2 id="rule-15">Rule 15</h2>
-</div>
-<p>In order to register for the IOCCC, you <strong>MUST</strong> have a valid email address.</p>
-<p>The <a href="../judges.html">judges</a> <strong>are NOT responsible for delays in email</strong>, so please plan
-enough time accordingly.</p>
-<p>See the
-FAQ on “<a href="../quick-start.html#register">how to register</a>”
-for details.</p>
-<p>Jump to: <a href="#">top</a></p>
-<div id="rule16">
-<h2 id="rule-16">Rule 16</h2>
-</div>
-<p>Submissions that are similar to previous winning IOCCC entries are discouraged.</p>
-<p>You are allowed to resubmit to a later contest, a submission that
-did not win the IOCCC. If you do so, then you would be well advised
-to try and enhance and improve your submission.
-If you do resubmit something that did not previously win, then
-you are <strong>encouraged</strong> to mention this in your <code>remarks.md</code> file
-as this <strong>sometimes</strong> helps.</p>
-<p>Resubmitting an improved submission that did not become an
-IOCCC winning entry is a <strong>time honored</strong> tradition of the IOCCC.
-There are some IOCCC winning entries that were submitted to multiple contests
-before they were improved enough to “climb over” (as the expression
-goes) all the other submissions for a given contest.</p>
-<p>Jump to: <a href="#">top</a></p>
-<div id="rule17">
-<h2 id="rule-17">Rule 17</h2>
-</div>
-<p>Your submission must be in the form of a <strong>xz compressed tarball</strong> that
-the <strong>current released version</strong> of the <code>mkiocccentry(1)</code> tool would generate.
-The files, directories, and paths <strong>MUST</strong> conform to the limits imposed
-by <code>mkiocccentry(1)</code> including but <strong>NOT LIMITED</strong> to their names, count,
-path length, directory tree depth and permissions.</p>
-<p>Your <strong>xz compressed tarball</strong> must be larger than <strong>0</strong> bytes and no larger
-than <strong>3999971</strong> bytes.</p>
-<p>The sum of the byte lengths of all files, after the <strong>xz compressed tarball</strong> is untarred,
-must <strong>NOT</strong> exceed <code>27651*1024</code> bytes.</p>
-<p>Your <strong>xz compressed tarball</strong> submission <em>file</em> <strong>MUST</strong> pass the tests performed by
-the current version of <code>txzchk(1)</code>.</p>
-<p>Your <strong>xz compressed tarball</strong> submission <em>filename</em> <strong>MUST</strong> pass the tests
-performed by the current version of <code>fnamchk(1)</code>.</p>
-<p>When your <strong>xz compressed tarball</strong> submission file is untarred, the
-resulting <em>directory</em> <strong>MUST</strong> pass the checks performed by the current version
-of <code>chksubmit(1)</code>.</p>
-<p>The resulting <code>prog.c</code> file <strong>MUST</strong> pass the <a href="#rule2">Rule 2</a> size checks performed by the current
-version of <code>iocccsize(1)</code>.</p>
-<p>The <code>.auth.json</code> and <code>.info.json</code> <strong>MUST</strong> be compatible with what the
-current version of the <code>mkiocccentry(1)</code> tool would produce. They <strong>MUST
-ALSO</strong> pass the tests performed by the current version of <code>chksubmit(1)</code>.</p>
-<p>The required <code>Makefile</code> must <strong>NOT</strong> be empty.</p>
-<p>The required <code>remarks.md</code> must <strong>NOT</strong> be empty.</p>
-<p>You may <strong>NOT</strong> submit a tarball created by the <code>-d</code> or <code>-s seed</code> option of
+authors who skilfully employed various techniques to develop their code.
+While it isn’t required, you are allowed to use tools to develop and
+test your submission. These tools may include, but aren’t limited to
+code generators, code analysis tools, static code analysis tools, runtime
+analysis tools, machine learning tools, natural language models, code
+copilot tools, so-called AI services, large language models (LLMs), etc.
+If you do make use of such tools or services, then we encourage you to
+describe what tools and how you used those tools, in your <code>remarks.md</code> file.</p>
+<p>See <a href="rules.html#rule-16-anonymous">Rule 16 Anonymous</a>.</p>
+<h2 id="rule-8-submission">Rule 8 Submission</h2>
+<p>The Submit Server will only accept submissions from those who have
+registered and only while the contest is open.</p>
+<p>The Submit Server places a total submission size limit of <strong>3999971</strong> bytes.</p>
+<p>Each account has ten (<strong>10.000</strong>) submission slots (<strong>0..9)</strong>. Each submission
+slot should be annotated by the server as to whether its was received,
+processed, malformed, etc. Please take note of any errors, rectify,
+and resubmit. In order to avoid potential packaging errors, it is <strong>highly
+recommended</strong> to use <code>mkiocccentry(1)</code>.</p>
+<p>See
+<a href="rules.html#rule-3-register">Rule 3 Register</a>,
+<a href="rules.html#rule-15-building">Rule 15 Building</a>,
+and
+<a href="rules.html#rule-17-packaging">Rule 17 Packaging</a>.</p>
+<h2 id="rule-9-no-hands">Rule 9 No hands</h2>
+<p>Entries requiring human interaction to be initially compiled are <strong>NOT</strong>
+permitted. However, see the guidelines. Each entry <strong>MUST</strong> automated the
+its build process using <code>bash</code>, <code>gmake</code>, <code>gcc</code>, <code>clang</code>, under a <a href="https://pubs.opengroup.org/onlinepubs/9799919799/">SUS
+environment</a>.</p>
+<p>Note references to <code>gmake</code> can be any GNU Make compatible tool.</p>
+<p>See <a href="rules.html#rule-17-building">Rule 17 Building</a>.</p>
+<h2 id="rule-10-privileges">Rule 10 Privileges</h2>
+<p>Programs that require special privileges (setuid(2), setgid(2),
+super-user, special owner, special group, etc.) are HIGHLY DISCOURAGED.
+We do <strong>NOT</strong> guarantee these functions will behave as you expect on our
+test platforms. If your program needs special permissions you <strong>MUST</strong>
+document this fact and explain why it is needed in your submission’s
+<code>remarks.md</code> file.</p>
+<p>Furthermore, if you need a supplementary program that you include to
+have these permissions, you will also have to explain this, because these
+bits are <strong>NOT</strong> allowed in submissions and those bits will <strong>NOT</strong> be copied by
 <code>mkiocccentry(1)</code>.</p>
-<p class="leftbar">
-The maximum number of files your submission tarball may contain, not counting
-the free files (<code>prog.c</code>, <code>remarks.md</code>, <code>Makefile</code>, <code>prog.alt.c</code>, <code>try.sh</code>,
-<code>try.alt.sh</code> and the two files generated by <code>mkiocccentry</code>, <code>.info.json</code> and
-<code>.auth.json</code>) is 31.
-</p>
-<p class="leftbar">
-The maximum number of directories your submission may have is 13 and the maximum
-depth a path may have is 4.
-</p>
-<p class="leftbar">
-The maximum filename length (a component of a path) is 38 which means the
-maximum length total of a path is 60 characters.
-</p>
-<p>See the
-FAQ on “<a href="../faq.html#extra-files">what extra files are and how to include more</a>”
-as well as the <a href="guidelines.html#extra-files">guidelines on extra files</a>
-for more details.</p>
-<h3 id="tldr-rule-17---use-mkiocccentry1-to-form-your-submission">TL;DR Rule 17 - Use <code>mkiocccentry(1)</code> to form your submission</h3>
-<p>Let the current version of the <code>mkiocccentry(1)</code> tool form your <strong>xz
-compressed tarball</strong> submission file.</p>
-<h3 id="warning">Warning</h3>
-<p>Using command line flags or input prompts to override checks and
-limits made by the above mentioned tools is <strong>NOT</strong> recommended
-and may result in your submission being rejected by the <a href="https://submit.ioccc.org">IOCCC
-submit server</a> and/or the <a href="../judges.html">IOCCC Judges</a>.</p>
-<p>See the
-FAQ on the “<a href="../faq.html#mkiocccentry">mkiocccentry toolkit</a>
-for how to obtain and use the above mentioned tools.</p>
-<p><strong>IMPORTANT</strong>: See the
-FAQ on “<a href="../faq.html#rule17">Rule 17</a>”
-for very important details behind this rule.</p>
-<p>Jump to: <a href="#">top</a></p>
-<div id="rule18">
-<h2 id="rule-18">Rule 18</h2>
-</div>
-<p>The entirety of your submission must be submitted under the following license:</p>
-<blockquote>
-<p><strong><a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0 DEED Attribution-ShareAlike 4.0 International</a></strong></p>
-</blockquote>
-<p>See also <a href="#rule7">Rule 7</a>.</p>
-<p>Jump to: <a href="#">top</a></p>
-<div id="rule19">
-<h2 id="rule-19">Rule 19</h2>
-</div>
-<p>The <code>remarks.md</code> file, a required non-empty file, must be written in
-<a href="https://www.markdownguide.org/basic-syntax/">Markdown format</a>.</p>
-<p>We currently use <a href="https://pandoc.org">pandoc(1)</a> to automatically
-convert markdown to HTML. Please try to avoid submitting an HTML file
-translation to any markdown file. If you <strong>MUST</strong> submit such an HTML
-translation, <strong>PLEASE</strong> mention this in your <code>remarks.md</code> file.</p>
-<p>For any submission that wins the contest, we modify your <code>remarks.md</code> file and
-rename it as <code>README.md</code> and then use <a href="https://pandoc.org">pandoc(1)</a>
-to generate the <code>index.html</code> file in the top level directory of your submission.
-For this reason, <code>mkiocccentry(1)</code> will <strong>NOT</strong> package such files (in the top
-level submission directory) and both <code>txzchk(1)</code> and <code>chksubmit(1)</code> will flag
-them as errors (in the top level submission directory) as well, so please do
-<strong>NOT</strong> try and slip these files in the top level directory where your
-<code>remarks.md</code> resides.</p>
-<p>See the <a href="https://www.markdownguide.org/cheat-sheet/">Markdown Cheat Sheet</a>
-for a handy quick reference to the Markdown syntax.</p>
-<p>See the <a href="https://www.markdownguide.org">Markdown guide</a>
-for free and open-source reference guide that explains
-how to use markdown.</p>
-<p>See also the <a href="http://daringfireball.net/projects/markdown/basics">Daring Fireball Markdown:
-Basics</a> for
-information on the markdown format.</p>
-<p><strong>PLEASE</strong> see our
-FAQ on “<a href="../faq.html#remarks_md">remarks.md</a>”
-<strong>AND</strong> the
-<a href="../markdown.html">IOCCC markdown guidelines</a> for additional markdown guidance.</p>
-<p>Jump to: <a href="#">top</a></p>
-<div id="rule20">
-<h2 id="rule-20">Rule 20</h2>
-</div>
-<p>The how to build instructions must be in GNU Makefile format. See the
-FAQ about “<a href="../faq.html#make_compatibility">make(1) compatibility the IOCCC supports</a>
-for more details.</p>
-<p>You are <strong>ENCOURAGED</strong> to use the
-Makefile example, renamed as <code>Makefile</code> of course, for help in constructing your
-<code>Makefile</code>. See the <a href="guidelines.html#makefile">Makefile section</a> in the
-guidelines for more details.</p>
-<p>The target of the <code>Makefile</code> must be called <code>prog</code>. The original
-C source file must be called <code>prog.c</code>.</p>
-<p>To invoke the C compiler, use <code>${CC}</code>. To invoke the C preprocessor use
-<code>${CPP}</code>.</p>
-<p>Do <strong>NOT</strong> assume that <code>.</code> (the current directory) is in the <code>$PATH</code>.</p>
-<p>When <code>make clobber</code> is invoked, we request that your submission directory be restored
-to its original submission state. For example, any temporary files
-created during the build process, or during execution should be
-removed by the <code>clobber</code> rule.</p>
-<p>Your <code>Makefile</code> <strong>MUST</strong> use a syntax that is compatible with <code>bash(1)</code>
-<strong>AND</strong> GNU <code>make(1)</code>. You are <strong>ENCOURAGED</strong> to use <code>SHELL= bash</code> in
-your <code>Makefile</code>. Please add a space between the <code>=</code> and the value.</p>
-<p>Assume that commands commonly found in <a href="https://en.wikipedia.org/wiki/Single_UNIX_Specification">Single UNIX
-Specification</a>
-environments and systems that conform to the <a href="https://en.wikipedia.org/wiki/Single_UNIX_Specification">Single UNIX
-Specification</a> are
-available in the <code>$PATH</code> search path.</p>
-<p>Jump to: <a href="#">top</a></p>
-<div id="rule21">
-<h2 id="rule-21">Rule 21</h2>
-</div>
-<p>Your submission <strong>MUST NOT</strong> create or modify files <strong>ABOVE</strong> the current directory
-<em>with the exception of</em> the <code>/tmp</code> and the <code>/var/tmp</code> directories. Your submission
-<strong>MAY</strong> create subdirectories <strong>below</strong> the submission directory, or in <code>/tmp</code>,
-or in <code>/var/tmp</code> provided that <code>.</code> is <strong>NOT</strong> the first byte in any
-directory name or filename you create.</p>
-<p>If you do create files and directories, <strong>PLEASE</strong> be sure that
-the <code>clobber</code> rule of your <code>Makefile</code> removes such created files
-in order to restore your submission to its original submission state.</p>
-<p>See also <a href="#rule5">Rule 5</a>.</p>
-<p>Jump to: <a href="#">top</a></p>
-<div id="rule22">
-<h2 id="rule-22">Rule 22</h2>
-</div>
-<p>Catch 22:</p>
-<p>Your source code, data files, remarks and program output <strong>MUST NOT</strong>
-identify the authors of your code. The <a href="../judges.html">judges</a> <strong>STRONGLY PREFER</strong> to
-<strong>NOT</strong> know who is submitting entries to the IOCCC.</p>
-<p>Even if you are a previous IOCCC winner, catch 22 still applies.</p>
-<p>Identifying the author(s) of your submission in an obvious way anywhere
-within your code, data, remarks or program output (unless you are
-<strong>Peter Honeyman</strong> or pretending to be <strong>Peter Honeyman</strong>) will be grounds
-for disqualification of your submission.</p>
-<p>And don’t assume that we won’t be able to determine your name even if it’s not
-obvious, because you stand a significant chance of violating this rule if you
-do.</p>
-<p>Yes, Virginia, <strong>WE REALLY MEAN IT!</strong></p>
-<p>Jump to: <a href="#">top</a></p>
-<div id="rule23">
-<h2 id="rule-23">Rule 23</h2>
-</div>
-<p>This prime rule number is reserved for future use.</p>
-<p>Jump to: <a href="#">top</a></p>
-<div id="rule24">
-<h2 id="rule-24">Rule 24</h2>
-</div>
-<p>Even though 24 is not prime, you should still see <a href="#rule23">Rule 23</a>.</p>
-<p>Jump to: <a href="#">top</a></p>
-<div id="rule25">
-<h2 id="rule-25">Rule 25</h2>
-</div>
-<p class="leftbar">
-The <a href="rules.html">IOCCC rule set</a> needs more than <code>5^2</code> rules: see <a href="#rule26">Rule 26</a>.
-</p>
-<p>Jump to: <a href="#">top</a></p>
-<div id="rule26">
-<h2 id="rule-26">Rule 26</h2>
-</div>
-<blockquote>
-<p>“The quick brown fox jumps over the lazy dog”.<br>
-“Pack my box with five dozen liquor jugs.”<br>
-“How vexingly quick daft zebras jump!”<br>
-“Sphinx of black quartz, judge my vow.”<br>
-“Waltz, bad nymph, for quick jigs vex.”<br>
-“Mr. Jock, TV quiz PhD, bags few lynx.”<br>
-“abcdefg, hijklmnop, qrstu&amp;v, wxy&amp;z.”</p>
-</blockquote>
-<p>Jump to: <a href="#">top</a></p>
-<div id="rule27">
-<h2 id="rule-27">Rule 27</h2>
-</div>
-<p>Unless otherwise needed, <a href="#rule27">Rule 27</a> is reserved for something cubic. :-)</p>
-<p>Jump to: <a href="#">top</a></p>
-<div id="rule28">
-<h2 id="rule-28">Rule 28</h2>
-</div>
-<p><a href="#rule28">Rule 28</a> is a perfect way to end the list of <a href="rules.html">IOCCC rules</a>
-as we do <strong>NOT</strong> plan to have <strong>496</strong> rules. :-)</p>
-<p>Jump to: <a href="#">top</a></p>
-<div id="more-information">
-<div id="information">
-<h1 id="for-more-information">FOR MORE INFORMATION:</h1>
-</div>
-</div>
-<p>For questions or comments about the contest, see <a href="../contact.html">Contacting the IOCCC</a>.</p>
-<p><strong>Be SURE</strong> to review the <a href="index.html">IOCCC Rules and Guidelines</a> as they
-may (and <strong>often do</strong>) change from year to year.</p>
-<p><strong>PLEASE</strong> be <strong>SURE</strong> you have the <strong>current</strong> <a href="rules.html">IOCCC rules</a> and
-<a href="guidelines.html">IOCCC guidelines</a> prior to submitting to the contest.</p>
-<p>See the <a href="../news.html">Official IOCCC website news</a> for additional information.</p>
-<p>For the updates and breaking IOCCC news, you are encouraged to follow
-the <a href="https://fosstodon.org/@ioccc">IOCCC on Mastodon</a> account. See our
-FAQ on “<a href="../faq.html#try_mastodon">Mastodon</a>”
-for more information. Please do note that unless
-you are mentioned by us you will <strong>NOT</strong> get a notification from the app <em>so you
-should refresh the page <strong>even if you do follow us</strong></em>.</p>
-<p>Check out the <a href="https://www.ioccc.org/index.html">Official IOCCC winner website</a> in general.</p>
-<p>Consider joining the IOCCC discord community via this link:
-<a href="https://discord.gg/Wa42Qujwnw">https://discord.gg/Wa42Qujwnw</a></p>
-<p>See the
-FAQ on “<a href="../faq.html#mkiocccentry">obtaining, compiling, installing and using the mkiocccentry tools</a>”
-and the
-FAQ on “<a href="../quick-start.html#enter">how to enter the IOCCC</a>”
-as that FAQ has important details on
-<a href="../next/register.html">how to register</a>
-as well as
-<a href="../next/submit.html">how to upload your submission</a> for the IOCCC.</p>
-<p>Jump to: <a href="#">top</a></p>
-<p><strong>Leonid A. Broukhis</strong><br>
-<strong>chongo (Landon Curt Noll) <code>/\cc/\</code></strong></p>
-<hr style="width:10%;text-align:left;margin-left:0">
-<p>Jump to: <a href="#">top</a>
+<p>See <a href="rules.html#rule-4-files">Rule 4 Files</a>,
+and
+<a href="rules.html#rule-5-purity">Rule 5 Purity</a>.</p>
+<h2 id="rule-11-abuse">Rule 11 Abuse</h2>
+<p>Legal abuse of the rules is somewhat encouraged, but comes with risks.
+A submission that, in the opinion of the Judges, violates the rules <strong>WILL
+BE DISQUALIFIED</strong>. Submissions that plan to abuse the rules <strong>MUST</strong> justify
+why their rule abuse is legal (or interesting) in the <code>remarks.md</code> file.</p>
+<p>Submission packaging abuse will <strong>NOT</strong> be tolerated and for this reason
+its recommended to use <code>mkiocccentry(1)</code>. During development you can
+check your <code>prog.c</code> size limits using <code>iocccsize(1)</code>, e.g., <code>iocccsize -v1 prog.c</code>.
+Overriding problems detected by any of the IOCCC tools
+risks that the submission will be rejected.</p>
+<p>If you do submit a rule abusing or violating submission, then consider
+also submitting an alternate version in a different submission server
+slot that does <strong>NOT</strong> violate the rules in case your rule abuse excuse
+is rejected.</p>
+<p><strong>IMPORTANT</strong>: If you do submit such an alternate non-rule abusing
+version, please indicate that in your <code>remarks.md</code> file of your non-rule
+abusing version so that the Judges don’t think you uploaded a duplicate
+into a wrong slot by mistake.</p>
+<h2 id="rule-12-utf-8">Rule 12 UTF-8</h2>
+<p>Use of UTF-8 is supported by <code>C89</code> standard and its updates and so too by the IOCCC.</p>
+<h2 id="rule-13-newlines">Rule 13 Newlines</h2>
+<p>Any C source that fails to compile because lines contain carriage-returns
+(CTRL+M, <code>\r</code>) in particular as part of DOS/Windows style newlines might
+be rejected. Please do <strong>NOT</strong> put trailing CTRL+M in <code>prog.c</code>, <code>Makefile</code>,
+or <code>remarks.md</code> files, but instead end lines with Unix newline (line-feed,
+CTRL+J, <code>\n</code>).</p>
+<p>You are permitted, in order to try and squeeze your <code>prog.c</code> under a
+<a href="rules.html#rule-2a-gross-size">Rule 2a Gross Size</a> and/or
+<a href="rules.html#rule-2b-net-size">Rule 2b Next Size</a>
+limits, to <strong>NOT</strong> end source with a newline. If you
+need to do this, please document that in your <code>remarks.md</code> file and if
+your compiler complains about this, document this too and update your
+<code>Makefile</code> to account for this.</p>
+<h2 id="rule-14-resubmit">Rule 14 Resubmit</h2>
+<p>Submissions that are substantially similar to previous winning IOCCC
+entries are discouraged.</p>
+<p>You are allowed to resubmit to a later contest, a submission that didn’t
+win the IOCCC. If you do so, then you would be well advised to try and
+enhance and improve your submission. If you do resubmit something that
+didn’t previously win, then you are encouraged to mention this in your
+<code>remarks.md</code> file as this sometimes helps.</p>
+<h2 id="rule-15-building">Rule 15 Building</h2>
+<p>The <code>Makefile</code> <strong>MUST</strong> adhere to GNU Make file syntax. Its recommended
+that you copy and rename the <code>Makefile.example</code> as template. The primary
+target of the <code>Makefile</code> <strong>MUST</strong> be <code>prog</code> and the source file is <code>prog.c</code>.
+The C compiler and preprocessor <strong>MUST</strong> be invoked using <code>${CC}</code> and <code>${CPP}</code>
+macros respectively.</p>
+<p>The <code>clobber</code> target should clean and restore the submission directory
+tree to its original state, such as removing temporary files or any
+modified data files. Don’t assume that <code>git</code> tool chain is installed,
+i.e., do <strong>NOT</strong> expect <code>git clean -f</code> to work.</p>
+<p>The <code>Makefile</code> <strong>MUST</strong> use a syntax that is compatible with
+<code>bash(1)</code> and GNU <code>make(1)</code>. You are encouraged to use <code>SHELL= bash</code> in your <code>Makefile</code>; please add a space between the <code>=</code> and
+the value. Assume that commands commonly found in
+<a href="https://en.wikipedia.org/wiki/Single_UNIX_Specification">Single UNIX Specification</a>
+environments and systems are available in the search <code>$PATH</code>.
+Avoid command options that aren’t part of
+<a href="https://en.wikipedia.org/wiki/Single_UNIX_Specification">SUS</a>,
+such as GNU long name options <code>--example</code> or extensions like <code>grep -P</code>.</p>
+<p>Do <strong>NOT</strong> assume that <code>.</code> (current directory) is in the <code>$PATH</code> environment variable.</p>
+<p>See <a href="rules.html#rule-4-files">Rule 4 Files</a>.</p>
+<h2 id="rule-16-anonymous">Rule 16 Anonymous</h2>
+<p>Your source code, data files, remarks, and program output <strong>MUST NOT</strong>
+identify the author(s) of your code (unless you are <strong>Peter Honeyman</strong>
+or pretending to be <strong>Peter Honeyman</strong>). In order to be impartial the
+<a href="https://www.ioccc.org/judges.html">Judges</a> do <strong>NOT</strong> know who is submitting
+entries to the IOCCC until final selection is made. Even if you are
+a past winner, you <strong>MUST NOT</strong> reveal your identity deliberately or by
+accident anywhere in your submission. <strong><em>Failure to comply may result
+in the submission being disqualified.</em></strong></p>
+<h2 id="rule-17-packaging">Rule 17 Packaging</h2>
+<p>The files, directories, and paths <strong>MUST</strong> conform to the limits imposed by
+<code>mkiocccentry(1)</code>, including but <strong>NOT</strong> limited, to their names, count, path
+length, directory tree depth, and permissions.</p>
+<p>The submission tree may have at most <strong>13</strong> directories and maximum
+directory depths of <strong>4</strong>. The maximum number of files, excluding
+<code>prog.c</code>, <code>remarks.md</code>, <code>Makefile</code>, <code>prog.alt.c</code>, <code>try.sh</code>, <code>try.alt.sh</code>,
+<code>.info.json</code> and <code>.auth.json</code> is <strong>31</strong>. And the maximum file-path
+component is <strong>38</strong> and maximum path length is <strong>60</strong>.</p>
+<p>The submission <strong>MUST</strong> be a <code>.txz</code> compressed tarball as constructed by
+<code>mkiocccentry(1)</code>, which <strong>MUST</strong> be within <strong>[1..3999971]</strong> bytes in size.
+The sum of all file lengths, after unpacking from the tarball, <strong>MUST</strong> be
+less than <code>27651*1024</code> bytes.</p>
+<p>The tarball file <strong>MUST</strong> pass all <code>txzchk(1)</code> checks and the tarball
+filename <strong>MUST</strong> pass all <code>fnamchk(1)</code> checks. You may <strong>NOT</strong> submit a tarball
+created by the <code>-d</code> or <code>-s</code> seed options of <code>mkiocccentry(1)</code>.</p>
+<p>The unpacked submission directory <strong>MUST</strong> pass the checks performed by the
+current version of <code>chksubmit(1)</code>.</p>
+<p>The <code>prog.c</code> file <strong>MUST</strong> pass the <a href="rules.html#rule-2-size">Rule 2 Size</a>
+size checks performed by <code>iocccsize(1)</code>. The <code>Makefile</code> and <code>remarks.md</code> files cannot
+be empty. The <code>.auth.json</code> and <code>.info.json</code> files <strong>MUST</strong> be compatible with what
+<code>mkiocccentry(1)</code> generates.</p>
+<p>Submissions that package using older versions of the mkiocccentry
+toolkit to are <strong>HIGHLY LIKELY</strong> to be <strong>REJECTED</strong>! Be sure
+that you are using the latest tools from the
+<a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry toolkit</a>
+GitHub repo.</p>
+<p>In summary it is best to use <code>mkioccentry(1)</code> to package your submission, rather than roll-it-by-hand.</p>
+<p>See <a href="rules.html#rule-4-files">Rule 4 Files</a>.</p>
+<h2 id="rule-18-license">Rule 18 License</h2>
+<p>The entirety of your submission <strong>MUST</strong> be submitted under the following license:</p>
+<p><a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0 DEED Attribution-ShareAlike 4.0 International</a></p>
+<p>See <a href="rules.html#rule-7-original-work">Rule 7 Original Work</a>.</p>
+<h2 id="rule-19-prime">Rule 19 Prime</h2>
+<p>This 19th rule, while prime, is reserved for future abuse. :-)
+Additional rules, both humorous and otherwise, may be added
+below this rule in future contests.</p>
+<p>See <a href="rules.html#rule-6-free">Rule 6 Free</a>.</p>
+<h2 id="further-reading">Further Reading</h2>
+<p>Please read the <a href="guidelines.html">Guidelines</a> next for further
+commentary on The Rules.</p>
+<p>See also the <a href="../faq.html">FAQ</a>.</p>
+<p>Consider joining our Discord
+server for discussions about The Rules, questions for the Judges, and
+<code>C</code> in general.</p>
+<p>Leonid A. Broukhis
+chongo (Landon Curt Noll) /\cc/\
 <!-- AFTER: last line of markdown file: next/rules.md --></p>
 
 <!-- END: this line ends content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->

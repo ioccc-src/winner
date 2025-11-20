@@ -657,8 +657,8 @@
 <p>This toolkit is from the <a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry
 repo</a> and it is <strong>required</strong> that you
 use it to package your submission. Not doing so puts you at a great risk of
-violating the <a href="next/rules.html">Rules</a> and in particular <a href="next/rules.html#rule17">Rule
-17</a>.</p>
+violating the <a href="next/rules.html">Rules</a> and in particular
+<a href="next/rules.html#rule-17-packaging">Rule 17 Packaging</a>.</p>
 <p>Jump to: <a href="#">top</a></p>
 <div id="about_mkiocccentry">
 <h4 id="q-0.1.1-what-is-mkiocccentry-in-simple-terms">Q 0.1.1: What is <code>mkiocccentry</code> in simple terms?</h4>
@@ -772,7 +772,8 @@ is not a directory that can be written to. In <strong>this</strong> directory yo
 directory</strong> will be created, with the name based on your IOCCC registration
 username, which is <strong>in the form of a UUID</strong>, and submission number along with
 the timestamp; see the <a href="next/rules.html">rules</a> for more details on this, and in
-particular <a href="next/rules.html#rule17">Rule 17</a>.</p>
+particular
+<a href="next/rules.html#rule-17-packaging">Rule 17 Packaging</a>.</p>
 <p><strong>IMPORTANT NOTE</strong>: the tools that require other tools, <code>mkiocccentry(1)</code> and
 <code>txzchk(1)</code>, will, as of version <code>2.0.2 2025-03-11</code>, search under <code>$PATH</code>. If
 you have an earlier version and you have not installed the tools and run the
@@ -932,7 +933,8 @@ rounds; we look at the author name only if an entry wins. See the
 <a href="next/guidelines.html">guidelines</a> <strong>AND</strong> <a href="next/rules.html">rules</a> if this is not clear!</li>
 <li>leaving the remark section empty (which would also indicate that you did not
 use <code>mkiocccentry(1)</code>, as it requires it to not be of size 0, though if you only
-include whitespace you would still be violating <a href="next/rules.html#rule17">Rule 17</a>).</li>
+include whitespace you would still be violating
+<a href="next/rules.html#rule-17-packaging">Rule 17 Packaging</a>).</li>
 </ul>
 <p>Jump to: <a href="#">top</a></p>
 <div id="try_scripts">
@@ -975,10 +977,12 @@ FAQ on “<a href="#makefile">submission Makefile</a>”
 for more details.</p>
 <p>See the
 FAQ on “<a href="#rule17">Rule 17</a>”
-and <a href="next/rules.html#rule17">Rule 17</a> itself.</p>
+and
+<a href="next/rules.html#rule-17-packaging">Rule 17 Packaging</a>
+itself.</p>
 <p>Do remember that if your submission requires different filenames, then you
-<strong>MUST</strong> make a <strong>COPY</strong> of them in your <code>Makefile</code>. See also <a href="next/rules.html#rule11">Rule
-11</a>.</p>
+<strong>MUST</strong> make a <strong>COPY</strong> of them in your <code>Makefile</code>. See also
+<a href="next/rules.html#rule-5-purity">Rule 5 Purity</a>.</p>
 <p>Jump to: <a href="#">top</a></p>
 <hr style="width:50%;text-align:left;margin-left:0">
 <hr style="width:50%;text-align:left;margin-left:0">
@@ -1122,12 +1126,12 @@ level directory.</p>
 itself is an extra file, meaning it counts <strong>AS</strong> an extra file.
 This file does <strong>NOT</strong> need to pass the <code>txzchk(1)</code> tests; only your submission
 tarball needs to pass these tests. However see below if you do do this.</p>
-<p>Please pay careful attention to <a href="next/rules.html#rule17">Rule 17</a> and in
+<p>Please pay careful attention to <a href="next/rules.html#rule-17-packaging">Rule 17 Packaging</a> and in
 particular the part about the maximum number of files per
 submission, which not only discusses the maximum
 number of files but also specific rules you must follow
 if you do include a tarball. Not following these points puts you at great risk
-of violating <a href="next/rules.html#rule17">Rule 17</a>!</p>
+of violating <a href="next/rules.html#rule-17-packaging">Rule 17 Packaging</a>!</p>
 <p>Also, remember what the <a href="next/guidelines.html">guidelines</a> say:</p>
 <blockquote>
 <p><strong>IMPORTANT REMINDER</strong>: make <strong>SURE</strong> your tarball does <strong>NOT</strong> reveal who you are!
@@ -1170,7 +1174,7 @@ contains <strong>IMPORTANT</strong> tools and libraries such as:</p>
 <li><code>chksubmit(1)</code> (which uses <code>jparse(3)</code> and is a wrapper to <code>chkentry(1)</code>)</li>
 </ul>
 <p>The above mentioned tools will help you verify that your submission
-conforms to <a href="next/rules.html#rule17">Rule 17</a>. Each of these tool has a <code>-h</code>
+conforms to <a href="next/rules.html#rule-17-packaging">Rule 17 Packaging</a>. Each of these tool has a <code>-h</code>
 option that provides command line help. For additional details of each tool, see
 its man page, and in some cases, the <a href="next/guidelines.html">IOCCC guidelines</a>.</p>
 <p>The maximum number of <strong>extra files</strong> is 31. See the
@@ -1220,7 +1224,8 @@ for help.</p>
 <p>The <code>remarks.md</code> <strong>MUST</strong> be a <strong>non</strong>-empty file in markdown format
 (<code>mkiocccentry(1)</code> only checks the file size but if you do not have any text in
 it you still risk violating this rule). See also
-<a href="next/rules.html#rule18">Rule 18</a> and our
+<a href="next/rules.html#rule-17-packaging">Rule 17 Packaging</a>
+and our
 FAQ on “<a href="#remarks_md">remarks.md</a>”,
 our
 FAQ on “<a href="#markdown">markdown</a>”
@@ -1312,13 +1317,17 @@ permissions and <code>mkiocccentry(1)</code> does this for you. In particular: d
 <strong>MUST</strong> be <code>drwxr-xr-x</code> (i.e. <code>0755</code>); any file ending with <code>.sh</code> <strong>MUST</strong> be
 <code>-r-xr-xr-x</code> (i.e. <code>0555</code>); and all other files <strong>MUST</strong> be <code>-r--r--r--</code> (i.e.
 <code>0444</code>). If any file or directory does not have the correct permissions, your
-submission <strong>WILL</strong> be rejected for violating <a href="next/rules.html#rule17">Rule 17</a>!</p>
+submission <strong>WILL</strong> be rejected for violating
+<a href="next/rules.html#rule17">Rule 17 Packaging</a>!</p>
 <p>After <code>mkiocccentry(1)</code> creates the directories and copies the files with these
 modes, it also verifies them after the fact and if they are not correct it is an
 <strong>error</strong>.</p>
 <p>If you do need different permissions, then see the
 FAQ on “<a href="#file_perms">file permissions</a>”. Also keep in mind
-<a href="next/rules.html#rule4">Rule 4</a>, <a href="next/rules.html#rule5">Rule 5</a> and <a href="next/rules.html#rule21">Rule 21</a>.</p>
+<a href="next/rules.html#rule-4-files">Rule 4 Files</a>,
+<a href="next/rules.html#rule-5-purity">Rule 5 Purity</a>,
+and
+<a href="next/rules.html#rule-16-anonymous">Rule 16 Anonymous</a>.</p>
 <p>The <code>txzchk(1)</code> tool will also verify file/directory permissions (and many other
 things) for you, and so will <code>chksubmit(1)</code> (along with other checks on files and
 directories in your submission directory, including the two required JSON files,
@@ -1330,14 +1339,19 @@ page</a>.</p>
 <p>The tarball filename <strong>MUST</strong> pass <code>fnamchk(1)</code>; the tool <code>txzchk(1)</code>
 will run <code>fnamchk(1)</code> as part of its algorithm. If you use <code>mkiocccentry(1)</code>
 there should be no problem but if you were to package things manually it is
-possible there could be a problem and this poses a big risk of violating <a href="next/rules.html#rule17">Rule
-17</a>.</p>
+possible there could be a problem and this poses a big risk of violating
+<a href="next/rules.html#rule-4-files">Rule 4 Files</a>
+or
+<a href="next/rules.html#rule17">Rule 17 Packaging</a>.</p>
 <p>The <code>fnamchk(1)</code>, which <code>txzchk(1)</code> executes, will verify that the
 filename is correct. But if you do package your tarball manually, and you have a
 mismatch in what is in the tarball and the name, <code>txzchk(1)</code> will flag the
 discrepancy as an error and exit with non-zero.</p>
 <p>These checks <strong>MUST PASS</strong>. If they do not you stand a significant chance of
-having your submission rejected for violating <a href="next/rules.html#rule17">Rule 17</a>!</p>
+having your submission rejected for violating
+<a href="next/rules.html#rule-4-files">Rule 4 Files</a>
+or
+<a href="next/rules.html#rule17">Rule 17 Packaging</a>.</p>
 <div id="max-files">
 <h4 id="maximum-number-of-files-per-submission">Maximum number of files per submission</h4>
 </div>
@@ -1366,7 +1380,11 @@ yourself.</p>
 The <code>mkiocccentry(1)</code> tool uses the v7 format. For instance you might try:</p>
 <pre><code>    tar --format=v7 -cJf foo.txz directory</code></pre>
 <hr style="width:50%;text-align:left;margin-left:0">
-<p><strong>IMPORTANT</strong>: where <a href="next/rules.html#rule17">Rule 17</a> and the tools from the latest
+<p><strong>IMPORTANT</strong>: where
+<a href="next/rules.html#rule-4-files">Rule 4 Files</a>,
+and
+<a href="next/rules.html#rule-17-packaging">Rule 17 Packaging</a>.
+and the tools from the latest
 release of the <a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry repo</a>
 conflict, the <a href="judges.html">IOCCC judges</a> will use their best judgment which
 is likely to favor <a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry repo</a> code.</p>
@@ -1399,8 +1417,11 @@ page</a>,
 <strong>making sure to run <code>bug_report.sh</code></strong>. See the <a href="next/guidelines.html">guidelines</a>
 for help here and also read our
 FAQ on “<a href="#mkiocccentry_bugs">mkiocccentry repo bugs</a>”.</p>
-<p>At the risk of stating the obvious: submissions that violate <a href="next/rules.html#rule17">Rule
-17</a> <strong>WILL BE REJECTED</strong>, so <strong>BE SURE</strong> to use the latest release of the
+<p>At the risk of stating the obvious: submissions that violate
+<a href="next/rules.html#rule-4-files">Rule 4 Files</a>,
+or
+<a href="next/rules.html#rule-17-packaging">Rule 17 Packaging</a>
+<strong>WILL BE REJECTED</strong>, so <strong>BE SURE</strong> to use the latest release of the
 <a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry repo</a>, to form and test
 your submission’s xz compressed tarball. Do <strong>NOT</strong> assume you have the most
 recent release without pulling or downloading via GitHub and do <strong>MAKE SURE</strong> you
@@ -1878,7 +1899,10 @@ two JSON files, <code>.auth.json</code> and <code>.info.json</code> as well as t
 <code>Makefile</code> and <code>remarks.md</code> files along with all the other files listed in the
 <code>.info.json</code> manifest. (Okay there is an option to skip files but this is for
 the judges <strong>ONLY</strong>; use of this option to validate your submission puts you at
-a great risk of violating <a href="next/rules.html#rule17">Rule 17</a>!).</p>
+a great risk of violating
+<a href="next/rules.html#rule-4-files">Rule 4 Files</a>,
+or
+<a href="next/rules.html#rule-17-packaging">Rule 17 Packaging</a>!).</p>
 <p>As an example, if your submission directory is
 <code>00000000-0000-4000-0000-000000000000-3/</code> then you should run the following
 command:</p>
@@ -1897,7 +1921,11 @@ checks.</p>
 FAQ on “<a href="#auth_json">.auth.json</a>”
 and the
 FAQ on “<a href="#info_json">.info.json</a>”
-as well as <a href="next/rules.html#rule17">Rule 17</a> for more information.</p>
+as well as
+<a href="next/rules.html#rule-4-files">Rule 4 Files</a>,
+and
+<a href="next/rules.html#rule-17-packaging">Rule 17 Packaging</a>
+for more information.</p>
 <p><strong>NOTE</strong>: the <code>chksubmit(1)</code> tool invokes <code>chkentry(1)</code> but as a contestant you
 do not need to worry about those details. One should use <code>chksubmit(1)</code> instead
 of <code>chkentry(1)</code> when validating a directory; <code>chkentry(1)</code> is for the judges
@@ -1986,21 +2014,25 @@ to be valid. If this is not the case your submission <strong>WILL BE</strong> re
 <ul>
 <li>The IOCCC contestant ID used as a username in the form of <strong>in the form of
 a UUID</strong> and submission number; see the <a href="next/rules.html">Rules</a> for more details
-on this, and in particular <a href="next/rules.html#rule17">Rule 17</a>.</li>
+on this, and in particular
+<a href="next/rules.html#rule-17-packaging">Rule 17 Packaging</a>.</li>
 </ul>
 <p><strong>NOTE:</strong> if the contest ID is <strong>NOT</strong> in this format then <code>fnamchk</code> will
 report it as an <strong>error</strong> and your submission <strong>WILL BE</strong> rejected for
-violating <a href="next/rules.html#rule17">Rule 17</a>!</p></li>
+violating
+<a href="next/rules.html#rule-17-packaging">Rule 17 Packaging</a>.</p></li>
 <li><p><code>tarball</code> (double quoted string)</p>
 <ul>
 <li>The xz compressed tarball filename.</li>
 </ul>
 <p><strong>IMPORTANT:</strong> this <strong>MUST</strong> match the actual tarball’s <strong>filename</strong> in order for
 this to be valid. If there is a mismatch you stand a great risk of having
-your submission rejected for violating <a href="next/rules.html#rule17">Rule 17</a>!
+your submission rejected for violating
+<a href="next/rules.html#rule-17-packaging">Rule 17 Packaging</a>!
 Moreover, it is possible that <code>txzchk</code> will report a problem through
-<code>fnamchk(1)</code> which also puts you at great risk of violating <a href="next/rules.html#rule17">Rule
-17</a>. <code>txzchk</code> will use the output of <code>fnamchk</code> to
+<code>fnamchk(1)</code> which also puts you at great risk of violating
+<a href="next/rules.html#rule-17-packaging">Rule 17 Packaging</a>. The
+<code>txzchk(1)</code> tool will use the output of <code>fnamchk</code> to
 obtain the correct directory <em>name</em> in the tarball; if <code>fnamchk</code> fails to
 validate your filename, or if you have the wrong directory name in the
 tarball, this will be flaggd.</p></li>
@@ -2013,7 +2045,8 @@ tarball, this will be flaggd.</p></li>
 <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h">soup/limit_ioccc.h</a>
 in the <a href="https://github.com/ioccc-src/mkiocccentry/">mkiocccentry repo</a>). If
 this is not the case you stand a great risk of having your submission
-rejected for violating <a href="next/rules.html#rule17">Rule 17</a>!</p></li>
+rejected for violating
+<a href="next/rules.html#rule-17-packaging">Rule 17 Packaging</a>.</p></li>
 <li><p><code>author_count</code> (number)</p>
 <ul>
 <li>How many authors this submission has.</li>
@@ -2085,7 +2118,8 @@ the range of 1 <strong>THROUGH</strong> <code>MAX_AFFILIATION_LEN</code> (see
 <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h">soup/limit_ioccc.h</a>
 in the <a href="https://github.com/ioccc-src/mkiocccentry/">mkiocccentry repo</a>). If
 this is not the case you stand a great risk of having your submission
-rejected for violating <a href="next/rules.html#rule17">Rule 17</a>!</p>
+rejected for violating
+<a href="next/rules.html#rule-17-packaging">Rule 17 Packaging</a>.</p>
 <p><strong>NOTE:</strong> an <strong>affiliation</strong> does <strong>NOT</strong> have any affect on whether you will win or not.</p></li>
 <li><p><code>past_winning_author</code> (boolean)</p>
 <ul>
@@ -2169,8 +2203,10 @@ will use it on the submission directory as part of the judging process.</p>
 <p>At the risk of stating the obvious, if your <code>.auth.json</code> file is invalid JSON or
 is reported invalid by <code>chksubmit(1)</code>, or if your submission directory is
 reported invalid by <code>chksubmit(1)</code>, your submission will almost certainly be
-rejected for violating the <a href="next/rules.html">Rules</a> and in particular <a href="next/rules.html#rule17">Rule
-17</a>.</p>
+rejected for violating the <a href="next/rules.html">Rules</a> and in particular
+<a href="next/rules.html#rule-4-files">Rule 4 Files</a>,
+and
+<a href="next/rules.html#rule-17-packaging">Rule 17 Packaging</a>.</p>
 <p>An obvious example where <code>chksubmit(1)</code> would fail to validate <code>.auth.json</code> is if
 there is a mismatch of type in the JSON file with what is expected, for
 instance, if in <code>.auth.json</code> the <code>no_comment</code> that we chose to not comment on is
@@ -2178,7 +2214,11 @@ not a string or is the wrong string. Another obvious example is when things are
 out of range (see above for list). Two more examples would be if a field is
 missing or if an unknown filed is in the file. In these cases (and any others
 that must be established as valid by <code>chksubmit(1)</code>) your submission would be
-rejected for violating <a href="next/rules.html#rule17">Rule 17</a> and in particular
+rejected for violating
+<a href="next/rules.html#rule-4-files">Rule 4 Files</a>,
+and
+<a href="next/rules.html#rule-17-packaging">Rule 17 Packaging</a>
+and in particular
 because <code>chksubmit(1)</code> would not validate the <code>.auth.json</code> file (and maybe other
 things too).</p>
 <p>If you wish to <strong>verify</strong> that your <code>.auth.json</code> file is valid <strong>JSON</strong> then see the
@@ -2296,7 +2336,8 @@ this is not the case your submission <strong>WILL BE</strong> rejected!</p></li>
 <ul>
 <li>The IOCCC contestant ID used as a username in the form of <strong>in the form of
 a UUID</strong> and submission number; see the <a href="next/rules.html">rules</a> for more details
-on this, and in particular <a href="next/rules.html#rule17">Rule 17</a>.</li>
+on this, and in particular
+<a href="next/rules.html#rule-17-packaging">Rule 17 Packaging</a>.</li>
 </ul></li>
 <li><p><code>submit_slot</code> (number)</p>
 <ul>
@@ -2307,7 +2348,8 @@ on this, and in particular <a href="next/rules.html#rule17">Rule 17</a>.</li>
 <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/soup/limit_ioccc.h">soup/limit_ioccc.h</a>
 in the <a href="https://github.com/ioccc-src/mkiocccentry/">mkiocccentry repo</a>). If
 this is not the case you stand a great risk of having your submission
-rejected for violating <a href="next/rules.html#rule17">Rule 17</a>!</p></li>
+rejected for violating
+<a href="next/rules.html#rule-17-packaging">Rule 17 Packaging</a>.</p></li>
 <li><p><code>title</code> (double quoted string)</p>
 <ul>
 <li>A short name (length &gt;= 1 <strong>THROUGH</strong> <code>MAX_TITLE_LEN</code>, defined in
@@ -2316,7 +2358,8 @@ in the <a href="https://github.com/ioccc-src/mkiocccentry/">mkiocccentry repo</a
 matches the regexp <code>[a-z0-9][a-z0-9_+-]*</code>.</li>
 </ul>
 <p><strong>IMPORTANT:</strong> if this is <strong>NOT</strong> the case you stand a great risk of having your submission
-rejected for violating <a href="next/rules.html#rule17">Rule 17</a>!</p></li>
+rejected for violating
+<a href="next/rules.html#rule-17-packaging">Rule 17 Packaging</a>!</p></li>
 <li><p><code>abstract</code> (double quoted string)</p>
 <ul>
 <li>A one line summary of your submission, with a length of 1 <strong>THROUGH</strong>
@@ -2326,33 +2369,37 @@ in the <a href="https://github.com/ioccc-src/mkiocccentry/">mkiocccentry repo</a
 </ul>
 <p>The <code>abstract</code> may not contain a <code>;</code> (semicolon), nor <code>&amp;</code> (ampersand), nor <code>,</code> (comma).</p>
 <p><strong>IMPORTANT:</strong> if your abstract is 0 in length or &gt; the maximum abstract length you
-stand a great risk of having your submission rejected for violating <a href="next/rules.html#rule17">Rule
-17</a>!</p></li>
+stand a great risk of having your submission rejected for violating
+<a href="next/rules.html#rule-17-packaging">Rule 17 Packaging</a>!</p></li>
 <li><p><code>tarball</code> (double quoted string)</p>
 <ul>
 <li>The xz compressed tarball filename.</li>
 </ul>
 <p><strong>IMPORTANT:</strong> this <strong>MUST</strong> match the actual tarball’s <strong>filename</strong> in order for
 this to be valid. If there is a mismatch you stand a great risk of having
-your submission rejected for violating <a href="next/rules.html#rule17">Rule 17</a>!
+your submission rejected for violating
+<a href="next/rules.html#rule-17-packaging">Rule 17 Packaging</a>!
 Moreover, it is possible that <code>txzchk</code> will report a problem through
-<code>fnamchk(1)</code> which also puts you at great risk of violating <a href="next/rules.html#rule17">Rule
-17</a>. <code>txzchk</code> will use the output of <code>fnamchk</code> to
+<code>fnamchk(1)</code> which also puts you at great risk of violating
+<a href="next/rules.html#rule-17-packaging">Rule 17 Packaging</a>.
+The <code>txzchk(1)</code> tool will use the output of <code>fnamchk</code> to
 obtain the correct directory <em>name</em> in the tarball; if <code>fnamchk</code> fails to
 validate your filename, or if you have the wrong directory name in the
 tarball, this will be flaggd.</p></li>
 <li><p><code>rule_2a_size</code> (number)</p>
 <ul>
-<li>The size calculated of <a href="next/rules.html#rule2a">Rule 2a</a>.</li>
+<li>The size calculated of <a href="next/rules.html#rule-2a-gross-size">Rule 2a Gross Size</a>.</li>
 </ul>
 <p><strong>IMPORTANT:</strong> if this violates <a href="next/rules.html#rule2a">Rule 2a</a> you stand a great
 chance of having your submission rejected for violating the
 <a href="next/rules.html">Rules</a>!</p></li>
 <li><p><code>rule_2b_size</code> (number)</p>
 <ul>
-<li>The size calculated of <a href="next/rules.html#rule2b">Rule 2b</a>.</li>
+<li>The size calculated of <a href="next/rules.html#rule-2b-net-size">Rule 2b Next Size</a>.</li>
 </ul>
-<p><strong>IMPORTANT:</strong> if this violates <a href="next/rules.html#rule2b">Rule 2b</a> you stand a great
+<p><strong>IMPORTANT:</strong> if this violates
+<a href="next/rules.html#rule-2b-net-size">Rule 2b Next Size</a>
+you stand a great
 chance of having your submission rejected for violating the
 <a href="next/rules.html">Rules</a>!</p></li>
 <li><p><code>empty_override</code> (boolean)</p>
@@ -2361,30 +2408,41 @@ chance of having your submission rejected for violating the
 </ul></li>
 <li><p><code>rule_2a_override</code> (boolean)</p>
 <ul>
-<li><code>true</code> if user overrides warning of <a href="next/rules.html#rule2a">Rule 2a</a>
+<li><code>true</code> if user overrides warning of
+<a href="next/rules.html#rule-2a-gross-size">Rule 2a Gross Size</a>
 violation, else <code>false</code>.</li>
 </ul>
-<p><strong>IMPORTANT:</strong> if the <a href="next/rules.html#rule2a">Rule 2a</a> calculated size is <strong>NOT</strong>
+<p><strong>IMPORTANT:</strong> if the
+<a href="next/rules.html#rule-2a-gross-size">Rule 2a Gross Size</a>
+calculated size is <strong>NOT</strong>
 violated but this is <code>true</code> then you stand a good chance of having your
-submission rejected for violating <a href="next/rules.html#rule17">Rule 17</a>!</p></li>
+submission rejected for violating
+<a href="next/rules.html#rule-17-packaging">Rule 17 Packaging</a>.</p></li>
 <li><p><code>rule_2a_mismatch</code> (boolean)</p>
 <ul>
-<li><code>true</code> if <a href="next/rules.html#rule2a">Rule 2a</a> calculated size is not the
+<li><code>true</code> if
+<a href="next/rules.html#rule-2a-gross-size">Rule 2a Gross Size</a>
+calculated size is not the
 same as the file size.</li>
 </ul></li>
 <li><p><code>rule_2b_override</code> (boolean)</p>
 <ul>
-<li><code>true</code> if user overrides warning of <a href="next/rules.html#rule2b">Rule 2b</a>
+<li><code>true</code> if user overrides warning of
+<a href="next/rules.html#rule-2b-net-size">Rule 2b Next Size</a>
 violation, else <code>false</code>.</li>
 </ul>
-<p><strong>IMPORTANT:</strong> if the <a href="next/rules.html#rule2b">Rule 2b</a> calculated size is <strong>NOT</strong>
+<p><strong>IMPORTANT:</strong> if the
+<a href="next/rules.html#rule-2b-net-size">Rule 2b Next Size</a>
+calculated size is <strong>NOT</strong>
 violated but this is <code>true</code> then you stand a good chance of having your
-submission rejected for violating <a href="next/rules.html#rule17">Rule 17</a>!</p></li>
+submission rejected for violating
+<a href="next/rules.html#rule-17-packaging">Rule 17 Packaging</a>.</p></li>
 <li><p><code>highbit_warning</code> (boolean)</p>
 <ul>
 <li><code>true</code> if <code>iocccsize</code> detects a high bit (unescaped octets with the high
-bit set - octet value &gt;= 128); see <a href="next/rules.html#rule13">Rule 13</a>, else
-<code>false</code>.</li>
+bit set - octet value &gt;= 128); see
+<a href="next/rules.html#rule-12-utf-8">Rule 12 UTF-8</a>,
+else <code>false</code>.</li>
 </ul></li>
 <li><p><code>nul_warning</code> (boolean)</p>
 <ul>
@@ -2411,7 +2469,7 @@ bit set - octet value &gt;= 128); see <a href="next/rules.html#rule13">Rule 13</
 </ul>
 <p><strong>IMPORTANT:</strong> if the <code>Makefile</code> file has no problems and this is <code>true</code> then
 you stand a good chance of having your submission rejected for violating
-<a href="next/rules.html#rule17">Rule 17</a>!</p>
+<a href="next/rules.html#rule-17-packaging">Rule 17 Packaging</a>!</p>
 <p>See the
 FAQ on “<a href="#makefile">Makefile</a>”
 for more information.</p></li>
@@ -2421,7 +2479,7 @@ for more information.</p></li>
 </ul>
 <p><strong>IMPORTANT:</strong>: if the <code>Makefile</code> file does <strong>NOT</strong> have an <code>all</code> rule then
 you stand a good chance of having your submission rejected for violating
-<a href="next/rules.html#rule17">Rule 17</a>!</p>
+<a href="next/rules.html#rule-17-packaging">Rule 17 Packaging</a>!</p>
 <p>See the
 FAQ on “<a href="#makefile">Makefile</a>”
 for more information.</p></li>
@@ -2431,7 +2489,8 @@ for more information.</p></li>
 </ul>
 <p><strong>IMPORTANT:</strong> if the <code>Makefile</code> file does <strong>NOT</strong> have an <code>all</code> rule and this
 boolean is <code>true</code> then you stand a good chance of having your
-submission rejected for violating <a href="next/rules.html#rule17">Rule 17</a>!</p>
+submission rejected for violating
+<a href="next/rules.html#rule-17-packaging">Rule 17 Packaging</a>!</p>
 <p>See the
 FAQ on “<a href="#makefile">Makefile</a>”
 for more information.</p></li>
@@ -2441,7 +2500,8 @@ for more information.</p></li>
 </ul>
 <p><strong>IMPORTANT:</strong> if the <code>Makefile</code> file does <strong>NOT</strong> have a <code>clean</code> rule and this
 boolean is <code>true</code> then you stand a good chance of having your submission
-rejected for violating <a href="next/rules.html#rule17">Rule 17</a>!</p>
+rejected for violating
+<a href="next/rules.html#rule-17-packaging">Rule 17 Packaging</a>!</p>
 <p>See the
 FAQ on “<a href="#makefile">Makefile</a>”
 for more information.</p></li>
@@ -2451,7 +2511,8 @@ for more information.</p></li>
 </ul>
 <p><strong>IMPORTANT:</strong> if the <code>Makefile</code> file does <strong>NOT</strong> have an <code>clobber</code> rule and this
 boolean is <code>true</code> then you stand a good chance of having your submission
-rejected for violating <a href="next/rules.html#rule17">Rule 17</a>!</p>
+rejected for violating
+<a href="next/rules.html#rule-17-packaging">Rule 17 Packaging</a>!</p>
 <p>See the
 FAQ on “<a href="#makefile">Makefile</a>”
 for more information.</p></li>
@@ -2461,7 +2522,8 @@ for more information.</p></li>
 </ul>
 <p><strong>IMPORTANT:</strong> if the <code>Makefile</code> file does <strong>NOT</strong> have a <code>try</code> rule and this
 boolean is <code>true</code> then you stand a good chance of having your submission
-rejected for violating <a href="next/rules.html#rule17">Rule 17</a>!</p>
+rejected for violating
+<a href="next/rules.html#rule-17-packaging">Rule 17 Packaging</a>!</p>
 <p>See the
 FAQ on “<a href="#makefile">Makefile</a>”
 for more information.</p></li>
@@ -2486,8 +2548,8 @@ FAQ on “<a href="#info_json">.info.json</a>”
 for more information.</li>
 </ul>
 <p><strong>IMPORTANT:</strong> if this is <strong>NOT</strong> the case you stand a
-great chance of having your submission rejected for violating <a href="next/rules.html#rule17">Rule
-17</a>!</p></li>
+great chance of having your submission rejected for violating
+<a href="next/rules.html#rule-17-packaging">Rule 17 Packaging</a>!</p></li>
 <li><p><code>auth_JSON</code> (double quoted string)</p>
 <ul>
 <li>This <code>MUST</code> be <code>".auth.json"</code>, defined as <code>AUTH_JSON_FILENAME</code> in
@@ -2499,7 +2561,8 @@ FAQ on “<a href="#auth_json">.auth.json</a>”
 for more information.</li>
 </ul>
 <p><strong>IMPORTANT:</strong> if this is <strong>NOT</strong> the case you stand a great chance of having your
-submission rejected for violating <a href="next/rules.html#rule17">Rule 17</a>!</p></li>
+submission rejected for violating
+<a href="next/rules.html#rule-17-packaging">Rule 17 Packaging</a>!</p></li>
 <li><p><code>c_src</code> (double quoted string)</p>
 <ul>
 <li>This <code>MUST</code> be <code>"prog.c"</code>, defined as <code>PROG_C_FILENAME</code> in
@@ -2508,7 +2571,8 @@ in the <a href="https://github.com/ioccc-src/mkiocccentry/">mkiocccentry repo</a
 is your submission source code.</li>
 </ul>
 <p><strong>IMPORTANT:</strong> if this is <strong>NOT</strong> the case you stand a great chance of having your
-submission rejected for violating <a href="next/rules.html#rule17">Rule 17</a>!</p></li>
+submission rejected for violating
+<a href="next/rules.html#rule-17-packaging">Rule 17 Packaging</a>!</p></li>
 <li><p><code>Makefile</code> (double quoted string)</p>
 <ul>
 <li>This <code>MUST</code> be <code>"Makefile"</code>, defined as <code>MAKEFILE_FILENAME</code> in
@@ -2520,7 +2584,8 @@ FAQ on “<a href="#makefile">Makefile</a>”
 for more information.</li>
 </ul>
 <p><strong>IMPORTANT:</strong> if this is <strong>NOT</strong> the case you stand a great chance of having your
-submission rejected for violating <a href="next/rules.html#rule17">Rule 17</a>!</p></li>
+submission rejected for violating
+<a href="next/rules.html#rule-17-packaging">Rule 17 Packaging</a>!</p></li>
 <li><p><code>remarks</code> (double quoted string)</p>
 <ul>
 <li>This <code>MUST</code> be <code>"remarks.md"</code>, defined as <code>REMARKS_FILENAME</code> in
@@ -2532,7 +2597,8 @@ FAQ on “<a href="#remarks_md">remarks.md</a>”
 for more information.</li>
 </ul>
 <p><strong>IMPORTANT:</strong> if this is <strong>NOT</strong> the case you stand a great chance of having your
-submission rejected for violating <a href="next/rules.html#rule17">Rule 17</a>!</p></li>
+submission rejected for violating
+<a href="next/rules.html#rule-17-packaging">Rule 17 Packaging</a>!</p></li>
 </ul>
 <p>The <code>manifest</code> <strong>array</strong> also <strong>OPTIONALLY</strong> has one or more of the field:</p>
 <ul>
@@ -2544,8 +2610,9 @@ submission rejected for violating <a href="next/rules.html#rule17">Rule 17</a>!<
 and <code>chksubmit</code> will verify this for you; it is <strong>ALSO</strong> an <strong>error</strong> if the
 filenames are not unique, not POSIX plus + safe chars only, if they are the
 wrong permission and various other things. In these cases you stand a great
-risk of having your submission rejected for violating <a href="next/rules.html#rule17">Rule
-17</a>! On the other hand, <strong>ONLY</strong> <code>mkiocccentry</code> will
+risk of having your submission rejected for violating
+<a href="next/rules.html#rule-17-packaging">Rule 17 Packaging</a>!
+On the other hand, <strong>ONLY</strong> <code>mkiocccentry</code> will
 verify that the files exist and can be read; <code>txzchk(1)</code> will <strong>NOT</strong> do
 this for you as it only <strong>LISTS</strong> the tarball: it does <strong>NOT</strong> extract it.
 Even so, the <a href="judges.html">Judges</a> <strong>WILL</strong> extract the tarball and if a
@@ -2606,7 +2673,9 @@ not a string or is the wrong string. Another obvious example is when things are
 out of range (see above for list). Two more examples would be if a field is
 missing or if an unknown filed is in the file. In these cases (and any others
 that must be established as valid by <code>chksubmit</code>) your submission would be
-rejected for violating <a href="next/rules.html#rule17">Rule 17</a> and in particular
+rejected for violating
+Rule 17 Packaging](next/rules.html#rule-17-packaging),
+and in particular
 because <code>chksubmit</code> would not validate the <code>.info.json</code> file.</p>
 <p>If you wish to <strong>verify</strong> that your <code>.info.json</code> file is valid <strong>JSON</strong> then see the
 FAQ on “<a href="#validating_json">validating JSON documents</a>”.</p>

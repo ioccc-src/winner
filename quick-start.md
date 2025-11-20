@@ -161,14 +161,16 @@ Three files are required to exist in `topdir`:
 **NOTE**: Please see our [IOCCC markdown guide](markdown.html) for **important information** on using markdown in the IOCCC.
 
 If the `mkiocccentry` tool indicates that there is a problem with your
-submission, especially if it identifies a [Rule 2](next/rules.html#rule2), or
-any other [rule](next/rules.html), related problem, you are **strongly** encouraged to revise and
+submission, especially if it identifies a
+[Rule 2 Size](next/rules.html#rule-2-size),
+or any other [rule](next/rules.html), related problem, you are **strongly** encouraged to revise and
 correct your entry and then re-run the `mkiocccentry` tool.
 
 If you choose to risk violating [Rules](next/rules.html), be sure and explain your reason
 for doing so in your `remarks.md` file.
 
-See also [Rule 17](next/rules.html#rule17)!
+See also
+[Rule 17 Packaging](next/rules.html#rule-17-packaging)!
 
 **IMPORTANT NOTE**: the tools that require other tools, `mkiocccentry(1)` and
 `txzchk(1)`, will, as of version `2.0.2 2025-03-11`, search under `$PATH`. If
@@ -178,7 +180,8 @@ tools to set the path to the required tools.
 
 Do remember to make sure you have the latest vers
 `chksubmit(1)`, `txzchk(1)` and `fnamchk(1)`. And remember to make sure you have
-the latest version so you do not violate [Rule 17](next/rules.html#rule17).
+the latest version so you do not violate
+[Rule 17 Packaging](next/rules.html#rule-17-packaging).
 See the
 FAQ on "[obtaining the latest mkiocccentry tools](faq.html#obtaining_mkiocccentry)",
 the

@@ -158,10 +158,13 @@ See FAQs regarding:
 - [using the mkiocccentry tools](../faq.html#using_mkiocccentry)
 
 Uploading a tarball not formed by `mkiocccentry(1)` puts you at a very big risk of
-violating [Rule 17](rules.html#rule17), especially as `mkiocccentry(1)` does a
+violating
+[Rule 17 Packaging](rules.html#rule-17-packaging),
+especially as `mkiocccentry(1)` does a
 great number of things that are required, and it also runs many checks, and if
 any of those checks fail, you are at a very great risk of having your submission
-rejected for violating [Rule 17](rules.html#rule17).
+rejected for violating
+[Rule 17 Packaging](rules.html#rule-17-packaging).
 
 We **STRONGLY** recommend you **do** install the
 [mkiocccentry toolkit](https://github.com/ioccc-src/mkiocccentry).
@@ -205,14 +208,14 @@ FAQ on "[how to avoid re-entering your UUID](../faq.html#uuid)"
 for more details. Note that the `-i answers` option cannot be used with the UUID
 options as the answers file includes the UUID.
 
-The overall size limit (see [Rule 2a](rules.html#rule2a)) on `prog.c` has been
+The overall size limit (see Rule 2a Gross Size](rules.html#rule-2a-gross-size)) on `prog.c` has been
 **increased from 4096 to 4993** bytes.
-The [Rule 2a](rules.html#rule2a) size was changed from
+The [Rule 2b Next Size](rules.html#rule-2b-net-size)size was changed from
 **4096** to **4993** to keep the "2b to 2a" size ratio to a
 value similar to the [2001-2012](../faq.html#size_rule2001-2012) and
 [2013-2020](../faq.html#size_rule2013-2020) IOCCC eras.
 
-The [Rule 2b](rules.html#rule2b) size has **increased from 2053 to 2503**
+The [Rule 2b Next Size](rules.html#rule-2b-net-size) size has **increased from 2053 to 2503**
 bytes.
 
 <p class="leftbar">
@@ -222,16 +225,21 @@ index.html](../2024/index.html):
 
 <p class="leftbar">
 > **IMPORTANT HINT**: Only 3 of the 23 **IOCCC28 winners** came close to the
-[Rule 2 size limit](../next/rules.html#rule2).  Large code size isn't
+[Rule 2 Size](rules.html#rule-2-size) limit.
+Large code size isn't
 everything.  :-) Those submitting to future contents should **take a careful
 note** of that fact.
 </p>
 
 
 Your submission must satisfy **BOTH** the maximum size
-[Rule 2a](rules.html#rule2a) **AND** the IOCCC size [Rule 2b](rules.html#rule2b).
+[Rule 2a Gross Size](rules.html#rule-2a-gross-size)
+**AND**
+the IOCCC size
+[Rule 2b Next Size](rules.html#rule-2b-net-size).
 
-To check your code against [Rule 2](rules.html#rule2), use the `iocccentry(1)` tool.
+To check your code against
+[Rule 2 Size](rules.html#rule-2-size), use the `iocccentry(1)` tool.
 For example:
 
 ``` <!---sh-->
@@ -267,7 +275,8 @@ BESM-6, and 2503 is a decimal anagram of 2053.
 
 Take note that this secondary limit imposed by the IOCCC size tool
 obviates some of the need to `#define` C reserved words in an effort
-to get around the size limits of [Rule 2](rules.html#rule2).
+to get around the size limits of
+[Rule 2 Size](rules.html#rule-2-size).
 
 Yes Virginia, **that is a hint**!
 
@@ -408,7 +417,8 @@ Jump to: [top](#)
 # `mkiocccentry`
 </div>
 
-[Rule 17](rules.html#rule17) (the `mkiocccentry(1)` rule) states that
+[Rule 17 Packaging](rules.html#rule-17-packaging)
+(the `mkiocccentry(1)` rule) states that
 you **REALLY SHOULD** use the `mkiocccentry(1)` tool to package your submission tarball.
 
 See the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry)
@@ -471,7 +481,9 @@ then you will have to specify the options (such as paths) for the tools that are
 
 Make sure you have
 the latest version of of the [mkiocccentry toolkit](https://github.com/ioccc-src/mkiocccentry)
-so that you do not violate [Rule 17](rules.html#rule17) by mistake.
+so that you do not violate
+[Rule 17 Packaging](rules.html#rule-17-packaging)
+by mistake.
 
 
 Jump to: [top](#)
@@ -515,7 +527,7 @@ execute one or more additional tools.
 </div>
 
 `mkiocccentry(1)` will use code from `iocccsize(1)` which detects a number of
-issues (such as [Rule 2](rules.html#rule2)) that you may ignore, if you wish, as
+issues (such as [Rule 2 Size](rules.html#rule-2-size)) that you may ignore, if you wish, as
 noted above.
 
 In other words, you no longer need to run `iocccsize` manually. However, the
@@ -618,8 +630,8 @@ In other words, `mkiocccentry` **contains everything** you need, and _even if yo
 do install_ the libraries from their respective repos, it/they will **not be
 used** when compiling the `mkiocccentry` tools. This is important to
 make sure that you're using the correct versions, which is also verified by
-`chksubmit` (in the JSON files created by `mkiocccentry(1)`). See [Rule
-17](rules.html#rule17)!
+`chksubmit` (in the JSON files created by `mkiocccentry(1)`). See
+[Rule 17 Packaging](rules.html#rule-17-packaging)!
 
 <p class="leftbar">
 We **HIGHLY** recommend you install the `mkiocccentry` toolkit, however.
@@ -665,7 +677,8 @@ page. You might just find a fun option if you do either of these!
 
 Of course, as `txzchk` does not extract the tarball, it is possible that if you
 manually package your submission tarball and/or find and exploit a missing
-check, you could still be violating [Rule 17](rules.html#rule17).
+check, you could still be violating
+[Rule 17 Packaging](rules.html#rule-17-packaging).
 
 <div id="extra-files">
 ## Including optional and extra files
@@ -684,7 +697,9 @@ file_. The non-extra files are considered _free files_.
 
 <p class="leftbar">
 Of course any dot file that is not `.auth.json` and `.info.json` will result in
-a violation of [Rule 17](rules.html#rule17), regardless of its depth.
+a violation of
+[Rule 17 Packaging](rules.html#rule-17-packaging),
+regardless of its depth.
 </p>
 
 If you use an optional filename for something other than their intended use
@@ -725,11 +740,14 @@ do the same like:
     tar --format=v7 -cJf foo.txz directory
 ```
 
-See [Rule 17](rules.html#rule17) and also the
+See
+[Rule 17 Packaging](rules.html#rule-17-packaging)
+and also the
 FAQ on "[maximum number of files](../faq.html#max-files)".
 
 If you do not follow these points, you
-are at a great risk of violating [Rule 17](rules.html#rule17)!
+are at a great risk of violating
+[Rule 17 Packaging](rules.html#rule-17-packaging)!
 
 **NOTE**: if you want to include a test-suite that requires a lot of files,
 please suggest this in your `remarks.md` and if your submission wins it can
@@ -750,7 +768,8 @@ Jump to: [top](#)
 As an important part of its algorithm, [txzchk&lpar;1&rpar;](#txzchk) directly executes
 `fnamchk(1)`.  If the filename is invalid (or the filename does not match the
 directory name of the tarball) then it is an **error** and you risk violating
-[Rule 17](rules.html#rule17). Nevertheless, you can run the tool manually,
+[Rule 17 Packaging](rules.html#rule-17-packaging).
+Nevertheless, you can run the tool manually,
 should you wish to.
 
 For more information on `fnamchk` and how to manually validate your submission
@@ -758,8 +777,9 @@ tarball filename, see the
 FAQ on "[fnamchk](../faq.html#fnamchk)".
 
 It is extremely unlikely that `fnamchk(1)` reporting an invalid filename is a
-bug in `fnamchk(1)` and as such, ignoring such an issue risks violating [Rule
-17](rules.html#rule17) which is a big risk. Of course, using `mkiocccentry(1)`
+bug in `fnamchk(1)` and as such, ignoring such an issue risks violating
+[Rule 17 Packaging](rules.html#rule-17-packaging)
+which is a big risk. Of course, using `mkiocccentry(1)`
 would prevent this from happening as it would not create such a file anyway. If
 `mkiocccentry(1)` was used it would rather suggest a bug in one of the tools and
 you should [report it as a bug at the mkiocccentry issues
@@ -772,7 +792,9 @@ the risk of stating the obvious, you run **A VERY BIG RISK** of having
 your submission rejected if you package your own tarball, and there are **ANY
 problems**. For instance, if `chksubmit(1)` found a problem in your `.info.json`
 file, the `mkiocccentry(1)` tool would not package it. But if you were to package
-it manually, you would be violating [Rule 17](rules.html#rule17). But even if
+it manually, you would be violating
+[Rule 17 Packaging](rules.html#rule-17-packaging).
+But even if
 everything checks out OK you should **NOT** assume that everything **IS** OK.
 
 <div id="bugs">
@@ -1076,7 +1098,8 @@ Even if you did manage to get dot files or dot directories in the tarball
 somehow, `txzchk(1)` will flag it as an error. When the judges run `txzchk(1)`
 on the uploaded submission compressed tarball, if anything is wrong, for
 instance if you "sneak in" any dot files or dot directories, the submission
-**WILL BE REJECTED** for violating [Rule 17](rules.html#rule17)!
+**WILL BE REJECTED** for violating
+[Rule 17 Packaging](rules.html#rule-17-packaging)!
 
 You may use whatever tools you need to develop your submission, including the
 use of `git(1)` or `gh(1)`, just be sure that your submission code and your
@@ -1412,8 +1435,9 @@ large data files to get around the source code size limit.
 
 <p class="leftbar">
 We do not recommend submitting [systemd](https://systemd.io) source code to the IOCCC,
-if nothing else because that code is likely to exceed [the source code
-size limit](rules.html#rule2).  This isn't to say that another highly compact and obfuscated
+if nothing else because that code is likely to exceed
+[Rule 2 Size](rules.html#rule-2-size).
+This isn't to say that another highly compact and obfuscated
 replacement of `init(8)` would not be an interesting submission.
 </p>
 
@@ -1428,8 +1452,10 @@ of code, and the other that is formatted more like a typical C
 program, we tend to favor the second version.  Of course, a third
 version of the same program that is formatted in an interesting
 and/or obfuscated way, would definitely win over the first two!
-Remember, you can submit more than one submission.  See the [IOCCC
-rules](rules.html) for details (in particular, [Rule 9](rules.html#rule9)).
+Remember, you can submit more than one submission.  See the
+[IOCCC rules](rules.html)
+for details (in particular,
+[Rule 8 Submission](rules.html#rule-8-submission)).
 
 We suggest that you avoid trying for the '**smallest self-replicating**'
 source.  The smallest, a [zero byte entry](../1994/smr/index.html), won in
@@ -1574,7 +1600,8 @@ If you do `#include <curses.h>` make **CERTAIN** you link in curses (i.e.
 `-lcurses`) and not ncurses (i.e. `-lncurses`).
 </p>
 
-[Rule 13](rules.html#rule13) no longer discourages the use of UTF-8
+[Rule 13 Newlines](rules.html#rule-13-newlines)
+no longer discourages the use of UTF-8
 characters in C code.
 
 It is a very good idea to, in your `remarks.md` file, tell us why you
@@ -1610,14 +1637,16 @@ Howe](../authors.html#Anthony_C_Howe), in which case it is original!  :-)
 Submitting source code that uses the contents of
 [iocccsize.c](https://github.com/ioccc-src/mkiocccentry/blob/master/iocccsize.c),
 _unless_ you are [Anthony C Howe](../authors.html#Anthony_C_Howe), might run the
-risk of violating [Rule 7](rules.html#rule7).
+risk of violating
+[Rule 7 Original Work](rules.html#rule-7-original-work).
 
 The IOCCC submission tarball validator source is not an original work,
 unless you are [Cody Boone Ferguson](../authors.html#Cody_Boone_Ferguson), in
 which case it is original!  :-) Submitting source code that uses the contents of
 [txzchk.c](https://github.com/ioccc-src/mkiocccentry/blob/master/txzchk.c),
 _unless_ you are [Cody Boone Ferguson](../authors.html#Cody_Boone_Ferguson), might
-run the risk of violating [Rule 7](rules.html#rule7).
+run the risk of violating
+[Rule 7 Original Work](rules.html#rule-7-original-work).
 
 In addition to the above tools, none of the [mkiocccentry
 tools](https://github.com/ioccc-src/mkiocccentry), _including, **but not
@@ -1641,7 +1670,7 @@ are original!  :-) Submitting source code that uses the content of any of these 
 library, _unless_ you are [Cody Boone
 Ferguson](../authors.html#Cody_Boone_Ferguson) or [Landon Curt
 Noll](http://www.isthe.com/chongo/index.html), might run the risk of violating
-[Rule 7](rules.html#rule7).
+[Rule 7 Original Work](rules.html#rule-7-original-work).
 
 And unless you are [Landon Curt Noll](https://en.wikipedia.org/wiki/Landon_Curt_Noll),
 the code in
@@ -1649,9 +1678,11 @@ the code in
 [dyn_array](https://github.com/ioccc-src/mkiocccentry/tree/master/dyn_array) are
 not original works. Submitting source code that uses the contents of those
 libraries, _unless_ you [Landon Curt Noll](https://en.wikipedia.org/wiki/Landon_Curt_Noll),
-might run the risk of violating [Rule 7](rules.html#rule7).
+might run the risk of violating
+[Rule 7 Original Work](rules.html#rule-7-original-work).
 
-[Rule 7](rules.html#rule7) does not prohibit you from writing your own
+[Rule 7 Original Work](rules.html#rule-7-original-work)
+does not prohibit you from writing your own
 obfuscated versions of these tools, unless of course you are [Landon Curt
 Noll](http://www.isthe.com/chongo/index.html), in which case you _probably_
 won't win since [IOCCC judges](../judges.html) should not enter the IOCCC! :-)
@@ -1660,14 +1691,17 @@ However, **_if_** you do write your own version, you **_might_** wish to make it
 tools' algorithms.
 
 Even so, we do not recommend you try and submit a JSON parser due to
-the fact it will likely exceed [the source code size limit](rules.html#rule2)
+the fact it will likely exceed
+[Rule 2 Size](rules.html#rule-2-size)
 and because you likely can't beat [flex](https://github.com/westes/flex) and
 [bison](https://www.gnu.org/software/bison/) in obfuscation. This isn't to
 say that [the so-called JSON spec](https://github.com/xexyl/jparse/blob/master/json_README.md#so-called-json-spec) is not
 obfuscated, but unless you have some really clever way to compact and
 obfuscate a JSON parser more than [flex](https://github.com/westes/flex) and
 [bison](https://www.gnu.org/software/bison/) you will likely not win, either
-because of the [source code size limit](rules.html#rule2) or because it is not
+because of the
+[Rule 2 Size](rules.html#rule-2-size)
+or because it is not
 as obfuscated as the [flex](https://github.com/westes/flex) and [bison](https://www.gnu.org/software/bison/)
 generated code of
 [jparse](https://github.com/ioccc-src/mkiocccentry/blob/master/jparse).
@@ -1759,7 +1793,9 @@ character tab stop.
 **PLEASE** observe our [IOCCC markdown guidelines](../markdown.html)
 when forming your submission's `remarks.md` file.  And if your submission
 contains additional markdown files, please follow those same guidelines for
-those files. See also [Rule 19](rules.html#rule19) and our
+those files. See also
+[Rule 4 Files](rules.html#rule-4-files),
+and the
 FAQ on "[markdown](../faq.html#markdown)".
 
 We **LIKE** reading `remarks.md` files, especially if they contain
@@ -1807,8 +1843,11 @@ As there is no guarantee that you will succeed, you might consider
 submitting an alternate version that conforms to the
 [IOCCC rules](rules.html).
 
-If you do bypass the `mkiocccentry(1)` warnings about [Rule
-2a](rules.html#rule2a) and/or about [Rule 2b](rules.html#rule2b) or any other
+If you do bypass the `mkiocccentry(1)` warnings about
+[Rule 2a Gross Size](rules.html#rule-2a-gross-size)
+and/or about
+[Rule 2b Next Size](rules.html#rule-2b-net-size)
+or any other
 rule and submit a submission anyway, you **MUST** try to justify why the IOCCC
 [IOCCC judges](../judges.html) should not reject your submission due to a rule
 violation, and you would be wise to do this towards the top of your `remarks.md`
@@ -2031,7 +2070,9 @@ submission that abuses the [IOCCC guidelines](guidelines.html) in an interesting
 or that stretches the contest [rules](rules.html) that while legal, it
 nevertheless goes against the **intent** of the [rules](rules.html).
 
-Nevertheless, see [Rule 12](rules.html#rule12).
+Nevertheless, see
+[Rule 10 Privileges](rules.html#rule-10-privileges).
+
 
 In the end, we traditionally pick one submission as '**best**'.  Sometimes such
 a submission simply far exceeds any of the other submissions.  More often, the

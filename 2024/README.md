@@ -77,7 +77,7 @@ become more skilled in the programming in the C language.
 
 We were pleased to observe that while the [IOCCC size limit](../faq.html#size_rule_history)
 increased by about 21%, we received many submissions that were well under the new
-[Rule 2 size limit](../next/rules.html#rule2) including a fair number of quality
+[Rule 2 Size](../next/rules.html#rule-2-size) including a fair number of quality
 small and medium sized submissions.  Half of the **IOCCC28 winners** were less than
 _2/3 of the size limit_, and 10 of the **IOCCC28 winners** were less than
 _1/2 of the size limit_!
@@ -85,10 +85,10 @@ _1/2 of the size limit_!
 **IMPORTANT NOTE**: The [IOCCC size limit](../faq.html#size_rule_history) increase for **IOCCC28**
 was the first size increase in over 10 years.  Given the quality of submissions we received
 that were well under the limit, we do **NOT** expect to change the
-[Rule 2 size limit](../next/rules.html#rule2) for **at least another 10 years** (and likely longer).
+[Rule 2 Size](../next/rules.html#rule-2-size) for **at least another 10 years** (and likely longer).
 
 **IMPORTANT HINT**: Only 3 of the 23 **IOCCC28 winners** came close to the [Rule
-2 size limit](../next/rules.html#rule2).  Large code size isn't everything.  :-)
+2 Size](../next/rules.html#rule-2-size).  Large code size isn't everything.  :-)
 Those submitting to future contents should **take a careful note** of that fact.
 
 
