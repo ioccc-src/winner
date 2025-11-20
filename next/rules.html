@@ -480,7 +480,7 @@ granted provided this this copyright and notice are included in its entirety
 and remains unaltered. All other uses <strong>MUST</strong> receive prior permission in
 writing by <a href="../contact.html">contacting the judges</a>.</p>
 <h2 id="rules-version">Rules version</h2>
-<p>These IOCCC Rules are version <strong>29.01 2025-11-19</strong>.</p>
+<p>These IOCCC Rules are version <strong>29.02 2025-11-19</strong>.</p>
 <p>Be sure to read the <a href="guidelines.html">IOCCC guidelines</a>.</p>
 <h2 id="rule-0-dates">Rule 0 Dates</h2>
 <p>This IOCCC runs from ${START_DATE_TIME} UTC to ${CLOSE_DATE_TIME} UTC.</p>
@@ -489,7 +489,7 @@ writing by <a href="../contact.html">contacting the judges</a>.</p>
 <p>The above dates are subject to change until the contest is officially open.</p>
 <p><strong>NOTE</strong>: As of this draft, the above dates are TBD (to be determined).</p>
 <h2 id="rule-1-program">Rule 1 Program</h2>
-<p>Your submission <strong>MUST</strong> be C program.</p>
+<p>Your submission <strong>MUST</strong> be a C program.</p>
 <h2 id="rule-2-size">Rule 2 Size</h2>
 <p><code>Rule 2</code> requires that your submission satisfy <strong>BOTH</strong>
 <a href="rules.html#rule-2a-gross-size">Rule 2a Gross Size</a>
@@ -527,14 +527,17 @@ pass the <code>chksubmit(1)</code> tests.</p>
 <p>The <code>Makefile</code>, <code>remarks.md</code>,<code>.info.json</code>, and <code>.auth.json</code> <strong>MUST</strong>
 have a file size <strong>greater than 0</strong>.</p>
 <p>Your submitted source code <strong>MUST</strong> be called <code>prog.c</code>. When the <code>Makefile</code>
-compiles your code, the executable (if applicable) <strong>MUST</strong> be called <code>prog</code>.</p>
+compiles your code, the executable (if applicable) <strong>MUST</strong> be called <code>prog</code>.
+The `<code>Makefile</code> may compile your source code into other filenames as well.</p>
+<p>As <code>prog</code>, <code>prog.alt</code>, <code>prog.alt.o</code>, <code>prog.o</code> may be created by your
+<code>Makefile</code>, your submission <strong>MUST NOT</strong> include those files in
+your top directory, as original content.</p>
 <p>Your submission may <strong>NOT</strong> have any file that starts with <code>COPYING</code>,
 <code>COPYRIGHT</code>, or <code>LICENSE</code> as those files are reserved by IOCCC.</p>
-<p>Your submission may <strong>NOT</strong> have in the top directory, <code>prog</code>, <code>prog.alt</code>,
-<code>prog.alt.o</code>, <code>prog.o</code>, <code>prog</code>, <code>prog.orig.c</code>, <code>README.md</code>, nor <code>index.html</code>
-as those files reserved by IOCCC.</p>
-<p>Your submission may <strong>NOT</strong> have a file in the top directory that matches
-a file glob pattern of the form <code>[0-9][0-9][0-9][0-9]_*.tar.bz2</code>
+<p>Your submission may <strong>NOT</strong> have in the top directory, <code>prog.orig.c</code>,
+<code>README.md</code>, nor <code>index.html</code> as those files reserved by IOCCC.</p>
+<p>Your submission may <strong>NOT</strong> have in the top directory, any file
+that matches a file glob pattern form <code>[0-9][0-9][0-9][0-9]_*.tar.bz2</code>
 as those files are reserved by IOCCC.</p>
 <p>Your submission may <strong>ONLY</strong> contain files and directories. Other file
 types such as symlinks, sockets, etc are <strong>NOT</strong> allowed.</p>

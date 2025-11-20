@@ -41,7 +41,7 @@ writing by [contacting the judges](../contact.html).
 Rules version
 -------------
 
-These IOCCC Rules are version **29.01 2025-11-19**.
+These IOCCC Rules are version **29.02 2025-11-19**.
 
 Be sure to read the [IOCCC guidelines](guidelines.html).
 
@@ -63,7 +63,7 @@ The above dates are subject to change until the contest is officially open.
 Rule 1 Program
 ---------------
 
-Your submission **MUST** be C program.
+Your submission **MUST** be a C program.
 
 
 Rule 2 Size
@@ -126,16 +126,20 @@ have a file size **greater than 0**.
 
 Your submitted source code **MUST** be called `prog.c`.  When the `Makefile`
 compiles your code, the executable (if applicable) **MUST** be called `prog`.
+The ``Makefile` may compile your source code into other filenames as well.
+
+As `prog`, `prog.alt`, `prog.alt.o`, `prog.o` may be created by your
+`Makefile`, your submission **MUST NOT** include those files in
+your top directory, as original content.
 
 Your submission may **NOT** have any file that starts with `COPYING`,
 `COPYRIGHT`, or `LICENSE` as those files are reserved by IOCCC.
 
-Your submission may **NOT** have in the top directory, `prog`, `prog.alt`,
-`prog.alt.o`, `prog.o`, `prog`, `prog.orig.c`, `README.md`, nor `index.html`
-as those files reserved by IOCCC.
+Your submission may **NOT** have in the top directory, `prog.orig.c`,
+`README.md`, nor `index.html` as those files reserved by IOCCC.
 
-Your submission may **NOT** have a file in the top directory that matches
-a file glob pattern of the form `[0-9][0-9][0-9][0-9]_*.tar.bz2`
+Your submission may **NOT** have in the top directory, any file
+that matches a file glob pattern form `[0-9][0-9][0-9][0-9]_*.tar.bz2`
 as those files are reserved by IOCCC.
 
 Your submission may **ONLY** contain files and directories.  Other file
