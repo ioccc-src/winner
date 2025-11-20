@@ -126,7 +126,7 @@ have a file size **greater than 0**.
 
 Your submitted source code **MUST** be called `prog.c`.  When the `Makefile`
 compiles your code, the executable (if applicable) **MUST** be called `prog`.
-The ``Makefile` may compile your source code into other filenames as well.
+The `Makefile` may compile your source code into other filenames as well.
 
 As `prog`, `prog.alt`, `prog.alt.o`, `prog.o` may be created by your
 `Makefile`, your submission **MUST NOT** include those files in
@@ -172,7 +172,7 @@ Rule 5 Purity
 Your submission **MUST NOT** modify the filenames or content of any of
 your original submission, such as `prog.c`, `Makefile`, or any supplied
 data files.  To modify files, your program can make a copy or you can
-use the Makefile to setup working copies.  Any working copies **MUST** be
+use the `Makefile` to setup working copies.  Any working copies **MUST** be
 cleaned up by the `Makefile` `clobber` target, so as to restore the
 directory to its original state.
 
@@ -345,7 +345,7 @@ Rule 15 Building
 ----------------
 
 The `Makefile` **MUST** adhere to GNU Make file syntax.  Its recommended
-that you copy and rename the `Makefile.example` as template.  The primary
+that you copy and rename the `Makefile.example` as a template.  The primary
 target of the `Makefile` **MUST** be `prog` and the source file is `prog.c`.
 The C compiler and preprocessor **MUST** be invoked using `${CC}` and `${CPP}`
 macros respectively.
@@ -414,7 +414,7 @@ current version of `chksubmit(1)`.
 
 The `prog.c` file **MUST** pass the [Rule 2 Size](rules.html#rule-2-size)
 size checks performed by `iocccsize(1)`.  The `Makefile` and `remarks.md` files cannot
-be empty.  The `.auth.json` and `.info.json` files **MUST** be compatible with what
+be empty nor blank.  The `.auth.json` and `.info.json` files **MUST** be compatible with what
 `mkiocccentry(1)` generates.
 
 Submissions that package using older versions of the mkiocccentry
@@ -434,7 +434,7 @@ Rule 18 License
 
 The entirety of your submission **MUST** be submitted under the following license:
 
-    [CC BY-SA 4.0 DEED Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/)
+[CC BY-SA 4.0 DEED Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/)
 
 See [Rule 7 Original Work](rules.html#rule-7-original-work).
 
@@ -442,7 +442,7 @@ See [Rule 7 Original Work](rules.html#rule-7-original-work).
 Rule 19 Prime
 -------------
 
-This 19th rule, while prime, is reserved for future abuse.  :-)
+This 19th rule, while prime, is reserved for future abuse 😁.
 Additional rules, both humorous and otherwise, may be added
 below this rule in future contests.
 
