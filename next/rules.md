@@ -257,7 +257,7 @@ its build process using `bash`, `gmake`, `gcc`, `clang`, under a
 
 Note references to `gmake` can be any GNU Make compatible tool.
 
-See [Rule 17 Building](rules.html#rule-17-building).
+See [Rule 15 Building](rules.html#rule-15-building).
 
 
 Rule 10 Privileges
@@ -462,5 +462,5 @@ server for discussions about The Rules, questions for the Judges, and
 `C` in general.
 
 
-Leonid A. Broukhis
+Leonid A. Broukhis  
 chongo (Landon Curt Noll) /\\cc/\\
