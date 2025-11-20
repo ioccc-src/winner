@@ -480,7 +480,7 @@ granted provided this this copyright and notice are included in its entirety
 and remains unaltered. All other uses <strong>MUST</strong> receive prior permission in
 writing by <a href="../contact.html">contacting the judges</a>.</p>
 <h2 id="rules-version">Rules version</h2>
-<p>These IOCCC Rules are version <strong>29.00 2025-11-19</strong>.</p>
+<p>These IOCCC Rules are version <strong>29.01 2025-11-19</strong>.</p>
 <p>Be sure to read the <a href="guidelines.html">IOCCC guidelines</a>.</p>
 <h2 id="rule-0-dates">Rule 0 Dates</h2>
 <p>This IOCCC runs from ${START_DATE_TIME} UTC to ${CLOSE_DATE_TIME} UTC.</p>
@@ -550,6 +550,7 @@ to be the <strong>SAME</strong> file. If you are preparing your submission on a 
 sensitive filesystem, ensure that your submission will work on
 a case insensitive filesystem.</p>
 <p>The <code>remarks.md</code> and <code>Makefile</code> are explained in more detail in the Guidelines.</p>
+<p>See <a href="../markdown.html">IOCCC markdown guidelines</a>.</p>
 <p>See <a href="rules.html#rule-17-packaging">Rule 17 Packaging</a>.</p>
 <h2 id="rule-5-purity">Rule 5 Purity</h2>
 <p>Your submission <strong>MUST NOT</strong> modify the filenames or content of any of
@@ -558,6 +559,14 @@ data files. To modify files, your program can make a copy or you can
 use the Makefile to setup working copies. Any working copies <strong>MUST</strong> be
 cleaned up by the <code>Makefile</code> <code>clobber</code> target, so as to restore the
 directory to its original state.</p>
+<p>Your submission <strong>MUST NOT</strong> create or modify directories and files
+ABOVE the current directory with the exception of the <code>/tmp</code> and the
+<code>/var/tmp</code> directories as long as the directory name or filename does
+<strong>NOT</strong> start with “.” (dot).</p>
+<p>The <code>Makefile</code> <code>clobber</code> target <strong>MUST</strong> be restore your submission into
+original form, including the removal of any created files and directories.</p>
+<p>Your code should be able to run under a
+<a href="https://pubs.opengroup.org/onlinepubs/9799919799/">SUS environment</a>.</p>
 <h2 id="rule-6-free">Rule 6 Free</h2>
 <p>I am <strong>NOT</strong> a Rule, I am a <code>free(void *human);</code> ‼️</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> <span class="op">(!(</span>ioccc<span class="op">(</span>rule<span class="op">(</span>you<span class="op">(</span>are<span class="op">(</span>number<span class="op">(</span><span class="dv">6</span><span class="op">))))))</span> <span class="op">{</span></span>
@@ -598,13 +607,13 @@ and
 <h2 id="rule-9-no-hands">Rule 9 No hands</h2>
 <p>Entries requiring human interaction to be initially compiled are <strong>NOT</strong>
 permitted. However, see the guidelines. Each entry <strong>MUST</strong> automated the
-its build process using <code>bash</code>, <code>gmake</code>, <code>gcc</code>, <code>clang</code>, under a <a href="https://pubs.opengroup.org/onlinepubs/9799919799/">SUS
-environment</a>.</p>
+its build process using <code>bash</code>, <code>gmake</code>, <code>gcc</code>, <code>clang</code>, under a
+<a href="https://pubs.opengroup.org/onlinepubs/9799919799/">SUS environment</a>.</p>
 <p>Note references to <code>gmake</code> can be any GNU Make compatible tool.</p>
 <p>See <a href="rules.html#rule-17-building">Rule 17 Building</a>.</p>
 <h2 id="rule-10-privileges">Rule 10 Privileges</h2>
 <p>Programs that require special privileges (setuid(2), setgid(2),
-super-user, special owner, special group, etc.) are HIGHLY DISCOURAGED.
+super-user, special owner, special group, etc.) are <strong>HIGHLY DISCOURAGED</strong>.
 We do <strong>NOT</strong> guarantee these functions will behave as you expect on our
 test platforms. If your program needs special permissions you <strong>MUST</strong>
 document this fact and explain why it is needed in your submission’s
@@ -669,12 +678,14 @@ modified data files. Don’t assume that <code>git</code> tool chain is installe
 i.e., do <strong>NOT</strong> expect <code>git clean -f</code> to work.</p>
 <p>The <code>Makefile</code> <strong>MUST</strong> use a syntax that is compatible with
 <code>bash(1)</code> and GNU <code>make(1)</code>. You are encouraged to use <code>SHELL= bash</code> in your <code>Makefile</code>; please add a space between the <code>=</code> and
-the value. Assume that commands commonly found in
-<a href="https://en.wikipedia.org/wiki/Single_UNIX_Specification">Single UNIX Specification</a>
-environments and systems are available in the search <code>$PATH</code>.
-Avoid command options that aren’t part of
-<a href="https://en.wikipedia.org/wiki/Single_UNIX_Specification">SUS</a>,
-such as GNU long name options <code>--example</code> or extensions like <code>grep -P</code>.</p>
+the value such as:</p>
+<p>SHELL= bash</p>
+<p>Assume that commands commonly found in <a href="https://en.wikipedia.org/wiki/Single_UNIX_Specification">Single UNIX
+Specification</a>
+environments and systems are available in the search
+<code>$PATH</code>. Avoid command options that aren’t part of
+<a href="https://en.wikipedia.org/wiki/Single_UNIX_Specification">SUS</a>, such as
+GNU long name options <code>--example</code> or extensions like <code>grep -P</code>.</p>
 <p>Do <strong>NOT</strong> assume that <code>.</code> (current directory) is in the <code>$PATH</code> environment variable.</p>
 <p>See <a href="rules.html#rule-4-files">Rule 4 Files</a>.</p>
 <h2 id="rule-16-anonymous">Rule 16 Anonymous</h2>
@@ -713,7 +724,8 @@ toolkit to are <strong>HIGHLY LIKELY</strong> to be <strong>REJECTED</strong>! B
 that you are using the latest tools from the
 <a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry toolkit</a>
 GitHub repo.</p>
-<p>In summary it is best to use <code>mkioccentry(1)</code> to package your submission, rather than roll-it-by-hand.</p>
+<p>In summary: it is best to use <code>mkioccentry(1)</code> to package your submission,
+rather than roll-it-by-hand.</p>
 <p>See <a href="rules.html#rule-4-files">Rule 4 Files</a>.</p>
 <h2 id="rule-18-license">Rule 18 License</h2>
 <p>The entirety of your submission <strong>MUST</strong> be submitted under the following license:</p>

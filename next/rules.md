@@ -41,7 +41,7 @@ writing by [contacting the judges](../contact.html).
 Rules version
 -------------
 
-These IOCCC Rules are version **29.00 2025-11-19**.
+These IOCCC Rules are version **29.01 2025-11-19**.
 
 Be sure to read the [IOCCC guidelines](guidelines.html).
 
@@ -157,6 +157,8 @@ a case insensitive filesystem.
 
 The `remarks.md` and `Makefile` are explained in more detail in the Guidelines.
 
+See [IOCCC markdown guidelines](../markdown.html).
+
 See [Rule 17 Packaging](rules.html#rule-17-packaging).
 
 
@@ -169,6 +171,17 @@ data files.  To modify files, your program can make a copy or you can
 use the Makefile to setup working copies.  Any working copies **MUST** be
 cleaned up by the `Makefile` `clobber` target, so as to restore the
 directory to its original state.
+
+Your submission **MUST NOT** create or modify directories and files
+ABOVE the current directory with the exception of the `/tmp` and the
+`/var/tmp` directories as long as the directory name or filename does
+**NOT** start with "." (dot).
+
+The `Makefile` `clobber` target **MUST** be restore your submission into
+original form, including the removal of any created files and directories.
+
+Your code should be able to run under a
+[SUS environment](https://pubs.opengroup.org/onlinepubs/9799919799/).
 
 
 Rule 6 Free
@@ -235,8 +248,8 @@ Rule 9 No hands
 
 Entries requiring human interaction to be initially compiled are **NOT**
 permitted. However, see the guidelines.  Each entry **MUST** automated the
-its build process using `bash`, `gmake`, `gcc`, `clang`, under a [SUS
-environment](https://pubs.opengroup.org/onlinepubs/9799919799/).
+its build process using `bash`, `gmake`, `gcc`, `clang`, under a
+[SUS environment](https://pubs.opengroup.org/onlinepubs/9799919799/).
 
 Note references to `gmake` can be any GNU Make compatible tool.
 
@@ -247,7 +260,7 @@ Rule 10 Privileges
 ------------------
 
 Programs that require special privileges (setuid(2), setgid(2),
-super-user, special owner, special group, etc.) are HIGHLY DISCOURAGED.
+super-user, special owner, special group, etc.) are **HIGHLY DISCOURAGED**.
 We do **NOT** guarantee these functions will behave as you expect on our
 test platforms.  If your program needs special permissions you **MUST**
 document this fact and explain why it is needed in your submission’s
@@ -341,12 +354,16 @@ i.e., do **NOT** expect `git clean -f` to work.
 The `Makefile` **MUST** use a syntax that is compatible with
 `bash(1)` and GNU `make(1)`.  You are encouraged to use `SHELL=
 bash` in your `Makefile`; please add a space between the `=` and
-the value.  Assume that commands commonly found in
-[Single UNIX Specification](https://en.wikipedia.org/wiki/Single_UNIX_Specification)
-environments and systems are available in the search `$PATH`.
-Avoid command options that aren't part of
-[SUS](https://en.wikipedia.org/wiki/Single_UNIX_Specification),
-such as GNU long name options `--example` or extensions like `grep -P`.
+the value such as:
+
+    SHELL= bash
+
+Assume that commands commonly found in [Single UNIX
+Specification](https://en.wikipedia.org/wiki/Single_UNIX_Specification)
+environments and systems are available in the search
+`$PATH`.  Avoid command options that aren't part of
+[SUS](https://en.wikipedia.org/wiki/Single_UNIX_Specification), such as
+GNU long name options `--example` or extensions like `grep -P`.
 
 Do **NOT** assume that `.` (current directory) is in the `$PATH` environment variable.
 
@@ -402,7 +419,8 @@ that you are using the latest tools from the
 [mkiocccentry toolkit](https://github.com/ioccc-src/mkiocccentry)
 GitHub repo.
 
-In summary it is best to use `mkioccentry(1)` to package your submission, rather than roll-it-by-hand.
+In summary: it is best to use `mkioccentry(1)` to package your submission,
+rather than roll-it-by-hand.
 
 See [Rule 4 Files](rules.html#rule-4-files).
 
