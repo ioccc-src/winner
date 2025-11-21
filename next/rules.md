@@ -39,7 +39,7 @@ writing by [contacting the judges](../contact.html).
 
 ## Rules version
 
-These IOCCC Rules are version **29.04 2025-11-20**.
+These IOCCC Rules are version **29.05 2025-11-21**.
 
 Be sure to read the [IOCCC guidelines](guidelines.html).
 
