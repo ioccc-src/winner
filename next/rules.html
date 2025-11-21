@@ -473,17 +473,17 @@ mastodon feed</a> page and/or mastodon
 app from time to time to view IOCCC mastodon updates.</p>
 <!-- END: the next line ends content from: inc/rules.closed.hdr -->
 <!-- This is the last line modified by the tool: bin/gen-status.sh -->
-<h2 id="th-international-obfuscated-c-code-contest-official-rules">29th International Obfuscated C Code Contest Official Rules</h2>
+<h1 id="th-international-obfuscated-c-code-contest-official-rules">29th International Obfuscated C Code Contest Official Rules</h1>
 <p>Copyright © 2025 Leonid A. Broukhis and Landon Curt Noll.</p>
 <p>All Rights Reserved. Permission for personal, education or non-profit use is
 granted provided this this copyright and notice are included in its entirety
 and remains unaltered. All other uses <strong>MUST</strong> receive prior permission in
 writing by <a href="../contact.html">contacting the judges</a>.</p>
 <h2 id="rules-version">Rules version</h2>
-<p>These IOCCC Rules are version <strong>29.03 2025-11-19</strong>.</p>
+<p>These IOCCC Rules are version <strong>29.04 2025-11-20</strong>.</p>
 <p>Be sure to read the <a href="guidelines.html">IOCCC guidelines</a>.</p>
 <div id="rule0">
-<h2 id="rule-0-dates">Rule 0 Dates</h2>
+<h2 id="rule-0---dates">Rule 0 - Dates</h2>
 </div>
 <p>This IOCCC runs from ${START_DATE_TIME} UTC to ${CLOSE_DATE_TIME} UTC.</p>
 <p>This contest will enter the open state on ${OPEN_DATE_TIME} UTC.</p>
@@ -491,11 +491,11 @@ writing by <a href="../contact.html">contacting the judges</a>.</p>
 <p>The above dates are subject to change until the contest is officially open.</p>
 <p><strong>NOTE</strong>: As of this draft, the above dates are TBD (to be determined).</p>
 <div id="rule1">
-<h2 id="rule-1-program">Rule 1 Program</h2>
+<h2 id="rule-1---program">Rule 1 - Program</h2>
 </div>
 <p>Your submission <strong>MUST</strong> be a C program.</p>
 <div id="rule2">
-<h2 id="rule-2-size">Rule 2 Size</h2>
+<h2 id="rule-2---size">Rule 2 - Size</h2>
 </div>
 <p><code>Rule 2</code> requires that your submission satisfy <strong>BOTH</strong>
 <a href="rules.html#rule-2a-gross-size">Rule 2a Gross Size</a>
@@ -504,19 +504,19 @@ and
 During development this can be checked using <code>iocccsize(1)</code>:</p>
 <p>iocccsize prog.c</p>
 <div id="rule2a">
-<h3 id="rule-2a-gross-size">Rule 2a Gross Size</h3>
+<h3 id="rule-2a---gross-size">Rule 2a - Gross Size</h3>
 </div>
 <p>The overall maximum size of your <code>prog.c</code> program source <strong>MUST NOT</strong>
 exceed <strong>4993</strong> bytes.</p>
 <div id="rule2b">
-<h3 id="rule-2b-net-size">Rule 2b Net Size</h3>
+<h3 id="rule-2b---net-size">Rule 2b - Net Size</h3>
 </div>
 <p>When the filename of your program source (i.e., <code>prog.c</code>) is given as a
 command line argument to the latest version of the official IOCCC size
 tool (hereby referred to as <code>iocccsize(1)</code>), the value printed <strong>MUST
 NOT</strong> exceed <strong>2503</strong>.</p>
 <div id="rule3">
-<h2 id="rule-3-register">Rule 3 Register</h2>
+<h2 id="rule-3---register">Rule 3 - Register</h2>
 </div>
 <p>You <strong>MUST</strong> register, using a valid email address, in order to submit
 entries to the IOCCC. You may register while the contest is <strong>pending</strong> or <strong>open</strong>.</p>
@@ -530,9 +530,9 @@ register and submit your entries; <strong>DO NOT WAIT UNTIL THE FINAL DAYS</stro
 to register! The judges are <strong>NOT</strong> responsible for delayed or lost
 email or for those who wait until the last minute to try to register!</p>
 <p>See <a href="../quick-start.html#enter">Entering the IOCCC: the bare minimum you need to know</a>.</p>
-<p>See <a href="rules.html#rule-8-submission">Rule 8 Submission</a>.</p>
+<p>See <a href="rules.html#rule-8---submission">Rule 8 - Submission</a>.</p>
 <div id="rule4">
-<h2 id="rule-4-files">Rule 4 Files</h2>
+<h2 id="rule-4---files">Rule 4 - Files</h2>
 </div>
 <p>The submission <strong>MUST</strong> include at least these files: <code>Makefile</code>, <code>prog.c</code>,
 <code>remarks.md</code>,<code>.info.json</code>, and <code>.auth.json</code>. The last two <strong>MUST</strong> be
@@ -568,9 +568,9 @@ sensitive filesystem, ensure that your submission will work on
 a case insensitive filesystem.</p>
 <p>The <code>remarks.md</code> and <code>Makefile</code> are explained in more detail in the Guidelines.</p>
 <p>See <a href="../markdown.html">IOCCC markdown guidelines</a>.</p>
-<p>See <a href="rules.html#rule-17-packaging">Rule 17 Packaging</a>.</p>
+<p>See <a href="rules.html#rule-17---packaging">Rule 17 - Packaging</a>.</p>
 <div id="rule5">
-<h2 id="rule-5-purity">Rule 5 Purity</h2>
+<h2 id="rule-5---purity">Rule 5 - Purity</h2>
 </div>
 <p>Your submission <strong>MUST NOT</strong> modify the filenames or content of any of
 your original submission, such as <code>prog.c</code>, <code>Makefile</code>, or any supplied
@@ -587,15 +587,15 @@ original form, including the removal of any created files and directories.</p>
 <p>Your code should be able to run under a
 <a href="https://pubs.opengroup.org/onlinepubs/9799919799/">SUS environment</a>.</p>
 <div id="rule6">
-<h2 id="rule-6-free">Rule 6 Free</h2>
+<h2 id="rule-6---free">Rule 6 - Free</h2>
 </div>
 <p>I am <strong>NOT</strong> a Rule, I am a <code>free(void *human);</code> ‼️</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> <span class="op">(!(</span>ioccc<span class="op">(</span>rule<span class="op">(</span>you<span class="op">(</span>are<span class="op">(</span>number<span class="op">(</span><span class="dv">6</span><span class="op">))))))</span> <span class="op">{</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>        ha<span class="op">();</span> ha<span class="op">();</span> ha<span class="op">();</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span></code></pre></div>
-<p>See <a href="rules.html#rule-19-prime">Rule 19 Prime</a>.</p>
+<p>See <a href="rules.html#rule-19---prime">Rule 19 - Prime</a>.</p>
 <div id="rule7">
-<h2 id="rule-7-original-work">Rule 7 Original Work</h2>
+<h2 id="rule-7---original-work">Rule 7 - Original Work</h2>
 </div>
 <p>In short: You wrote it, you own it, and its an original work.</p>
 <p>You, the author(s), <strong>MUST</strong> own the contents of your submission, or you <strong>MUST</strong>
@@ -612,9 +612,9 @@ analysis tools, machine learning tools, natural language models, code
 copilot tools, so-called AI services, large language models (LLMs), etc.
 If you do make use of such tools or services, then we encourage you to
 describe what tools and how you used those tools, in your <code>remarks.md</code> file.</p>
-<p>See <a href="rules.html#rule-16-anonymous">Rule 16 Anonymous</a>.</p>
+<p>See <a href="rules.html#rule-16---anonymous">Rule 16 - Anonymous</a>.</p>
 <div id="rule8">
-<h2 id="rule-8-submission">Rule 8 Submission</h2>
+<h2 id="rule-8---submission">Rule 8 - Submission</h2>
 </div>
 <p>The Submit Server will only accept submissions from those who have
 registered and only while the contest is open.</p>
@@ -625,21 +625,21 @@ processed, malformed, etc. Please take note of any errors, rectify,
 and resubmit. In order to avoid potential packaging errors, it is <strong>highly
 recommended</strong> to use <code>mkiocccentry(1)</code>.</p>
 <p>See
-<a href="rules.html#rule-3-register">Rule 3 Register</a>,
-<a href="rules.html#rule-15-building">Rule 15 Building</a>,
+<a href="rules.html#rule-3---register">Rule 3 - Register</a>,
+<a href="rules.html#rule-15---building">Rule 15 - Building</a>,
 and
-<a href="rules.html#rule-17-packaging">Rule 17 Packaging</a>.</p>
+<a href="rules.html#rule-17---packaging">Rule 17 - Packaging</a>.</p>
 <div id="rule9">
-<h2 id="rule-9-no-hands">Rule 9 No hands</h2>
+<h2 id="rule-9---no-hands">Rule 9 - No hands</h2>
 </div>
 <p>Entries requiring human interaction to be initially compiled are <strong>NOT</strong>
 permitted. However, see the guidelines. Each entry <strong>MUST</strong> automated the
 its build process using <code>bash</code>, <code>gmake</code>, <code>gcc</code>, <code>clang</code>, under a
 <a href="https://pubs.opengroup.org/onlinepubs/9799919799/">SUS environment</a>.</p>
 <p>Note references to <code>gmake</code> can be any GNU Make compatible tool.</p>
-<p>See <a href="rules.html#rule-15-building">Rule 15 Building</a>.</p>
+<p>See <a href="rules.html#rule-15---building">Rule 15 - Building</a>.</p>
 <div id="rule10">
-<h2 id="rule-10-privileges">Rule 10 Privileges</h2>
+<p>Rule 10 - Privileges</p>
 </div>
 <p>Programs that require special privileges (setuid(2), setgid(2),
 super-user, special owner, special group, etc.) are <strong>HIGHLY DISCOURAGED</strong>.
@@ -651,11 +651,11 @@ document this fact and explain why it is needed in your submission’s
 have these permissions, you will also have to explain this, because these
 bits are <strong>NOT</strong> allowed in submissions and those bits will <strong>NOT</strong> be copied by
 <code>mkiocccentry(1)</code>.</p>
-<p>See <a href="rules.html#rule-4-files">Rule 4 Files</a>,
+<p>See <a href="rules.html#rule-4---files">Rule 4 - Files</a>,
 and
-<a href="rules.html#rule-5-purity">Rule 5 Purity</a>.</p>
+<a href="rules.html#rule-5---purity">Rule 5 - Purity</a>.</p>
 <div id="rule11">
-<h2 id="rule-11-abuse">Rule 11 Abuse</h2>
+<h2 id="rule-11---abuse">Rule 11 - Abuse</h2>
 </div>
 <p>Legal abuse of the rules is somewhat encouraged, but comes with risks.
 A submission that, in the opinion of the Judges, violates the rules <strong>WILL
@@ -675,11 +675,11 @@ version, please indicate that in your <code>remarks.md</code> file of your non-r
 abusing version so that the Judges don’t think you uploaded a duplicate
 into a wrong slot by mistake.</p>
 <div id="rule12">
-<h2 id="rule-12-utf-8">Rule 12 UTF-8</h2>
+<h2 id="rule-12---utf-8">Rule 12 - UTF-8</h2>
 </div>
 <p>Use of UTF-8 is supported by <code>C89</code> standard and its updates and so too by the IOCCC.</p>
 <div id="rule13">
-<h2 id="rule-13-newlines">Rule 13 Newlines</h2>
+<h2 id="rule-13---newlines">Rule 13 - Newlines</h2>
 </div>
 <p>Any C source that fails to compile because lines contain carriage-returns
 (CTRL+M, <code>\r</code>) in particular as part of DOS/Windows style newlines might
@@ -694,7 +694,7 @@ need to do this, please document that in your <code>remarks.md</code> file and i
 your compiler complains about this, document this too and update your
 <code>Makefile</code> to account for this.</p>
 <div id="rule14">
-<h2 id="rule-14-resubmit">Rule 14 Resubmit</h2>
+<h2 id="rule-14---resubmit">Rule 14 - Resubmit</h2>
 </div>
 <p>Submissions that are substantially similar to previous winning IOCCC
 entries are discouraged.</p>
@@ -704,7 +704,7 @@ enhance and improve your submission. If you do resubmit something that
 didn’t previously win, then you are encouraged to mention this in your
 <code>remarks.md</code> file as this sometimes helps.</p>
 <div id="rule15">
-<h2 id="rule-15-building">Rule 15 Building</h2>
+<h2 id="rule-15---building">Rule 15 - Building</h2>
 </div>
 <p>The <code>Makefile</code> <strong>MUST</strong> adhere to GNU Makefile syntax. Its recommended
 that you copy and rename the <code>Makefile.example</code> as template. The primary
@@ -726,9 +726,9 @@ environments and systems are available in the search
 <a href="https://en.wikipedia.org/wiki/Single_UNIX_Specification">SUS</a>, such as
 GNU long name options <code>--example</code> or extensions like <code>grep -P</code>.</p>
 <p>Do <strong>NOT</strong> assume that <code>.</code> (current directory) is in the <code>$PATH</code> environment variable.</p>
-<p>See <a href="rules.html#rule-4-files">Rule 4 Files</a>.</p>
+<p>See <a href="rules.html#rule-4---files">Rule 4 - Files</a>.</p>
 <div id="rule16">
-<h2 id="rule-16-anonymous">Rule 16 Anonymous</h2>
+<h2 id="rule-16---anonymous">Rule 16 - Anonymous</h2>
 </div>
 <p>Your source code, data files, remarks, and program output <strong>MUST NOT</strong>
 identify the author(s) of your code (unless you are <strong>Peter Honeyman</strong>
@@ -739,7 +739,7 @@ a past winner, you <strong>MUST NOT</strong> reveal your identity deliberately o
 accident anywhere in your submission. <strong><em>Failure to comply may result
 in the submission being disqualified.</em></strong></p>
 <div id="rule17">
-<h2 id="rule-17-packaging">Rule 17 Packaging</h2>
+<h2 id="rule-17---packaging">Rule 17 - Packaging</h2>
 </div>
 <p>The files, directories, and paths <strong>MUST</strong> conform to the limits imposed by
 <code>mkiocccentry(1)</code>, including but <strong>NOT</strong> limited, to their names, count, path
@@ -758,7 +758,7 @@ filename <strong>MUST</strong> pass all <code>fnamchk(1)</code> checks. You may 
 created by the <code>-d</code> or <code>-s</code> seed options of <code>mkiocccentry(1)</code>.</p>
 <p>The unpacked submission directory <strong>MUST</strong> pass the checks performed by the
 current version of <code>chksubmit(1)</code>.</p>
-<p>The <code>prog.c</code> file <strong>MUST</strong> pass the <a href="rules.html#rule-2-size">Rule 2 Size</a>
+<p>The <code>prog.c</code> file <strong>MUST</strong> pass the <a href="rules.html#rule-2---size">Rule 2 - Size</a>
 size checks performed by <code>iocccsize(1)</code>.</p>
 <p>The <code>.auth.json</code> and <code>.info.json</code> files <strong>MUST</strong> be compatible with what
 <code>mkiocccentry(1)</code> generates.</p>
@@ -769,27 +769,28 @@ that you are using the latest tools from the
 GitHub repo.</p>
 <p>In summary: it is best to use <code>mkioccentry(1)</code> to package your submission,
 rather than roll-it-by-hand.</p>
-<p>See <a href="rules.html#rule-4-files">Rule 4 Files</a>.</p>
+<p>See <a href="rules.html#rule-4---files">Rule 4 - Files</a>.</p>
 <div id="rule18">
-<h2 id="rule-18-license">Rule 18 License</h2>
+<h2 id="rule-18---license">Rule 18 - License</h2>
 </div>
 <p>The entirety of your submission <strong>MUST</strong> be submitted under the following license:</p>
 <p><a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0 DEED Attribution-ShareAlike 4.0 International</a></p>
-<p>See <a href="rules.html#rule-7-original-work">Rule 7 Original Work</a>.</p>
+<p>See <a href="rules.html#rule-7---original-work">Rule 7 - Original Work</a>.</p>
 <div id="rule19">
-<h2 id="rule-19-prime">Rule 19 Prime</h2>
+<h2 id="rule-19---prime">Rule 19 - Prime</h2>
 </div>
 <p>This 19th rule, while prime, is reserved for future abuse 😁.
 Additional rules, both humorous and otherwise, may be added
 below this rule in future contests.</p>
-<p>See <a href="rules.html#rule-6-free">Rule 6 Free</a>.</p>
+<p>See <a href="rules.html#rule-6---free">Rule 6 - Free</a>.</p>
 <h2 id="further-reading">Further Reading</h2>
-<p>Please read the <a href="guidelines.html">Guidelines</a> next for further
-commentary on The Rules.</p>
+<p>Read the
+<a href="https://www.ioccc.org/quick-start.html#enter">Entering the IOCCC: the bare minimum you need to know</a>
+for an overview of how to enter the contest.</p>
+<p>Please read the <a href="guidelines.html">Guidelines</a> next for further commentary on The Rules.</p>
 <p>See also the <a href="../faq.html">FAQ</a>.</p>
-<p>Consider joining our Discord
-server for discussions about The Rules, questions for the Judges, and
-<code>C</code> in general.</p>
+<p>Consider joining the <a href="https://discord.com/invite/Wa42Qujwnw">IOCCC Discord Server</a>
+for discussions about The Rules, questions for the Judges, and <code>C</code> in general.</p>
 <p>Leonid A. Broukhis
 chongo (Landon Curt Noll) /\cc/\
 <!-- AFTER: last line of markdown file: next/rules.md --></p>

@@ -87,7 +87,7 @@ And in the slot it will give you important details like:
 - the status of the submission
 - the filename, which will be in the correct format, assuming you used
 `mkiocccentry(1)` which is **HIGHLY** recommended so that you do not break
-[Rule 17 Packaging](rules.html#rule-17-packaging)!
+[Rule 17 - Packaging](rules.html#rule-17---packaging)!
 - the file length, which `txzchk(1)` will also verify (the file itself and the
 tarball listing).
 - the upload date.
@@ -158,7 +158,7 @@ Or:
 ... or **ANY** other error then you **MUST FIX** your submission, repackage your
 tarball with `mkiocccentry` and upload to the same slot again! If you do not fix
 this your submission **WILL BE REJECTED** for violating
-[Rule 17 Packaging](rules.html#rule-17-packaging)!
+[Rule 17 - Packaging](rules.html#rule-17---packaging)!
 
 If the format test went well, then you will see:
 
@@ -169,7 +169,7 @@ rules or that everything is OK once the tarball is extracted; it simply means
 the tests performed by the tools passed. If you find a flaw in a tool and
 abuse it and the tests pass then you stand a significant chance of having your
 submission rejected for violating
-[Rule 17 Packaging](rules.html#rule-17-packaging),
+[Rule 17 - Packaging](rules.html#rule-17---packaging),
 even if the tests passed.
 
 For details on `txzchk`, see the

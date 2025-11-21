@@ -406,12 +406,12 @@ See also the [mkiocccentry FAQ](https://github.com/ioccc-src/mkiocccentry/blob/m
 
 ## 2024-12-30
 
-The IOCCC [Rule 12 UTF-8](next/rules.html#rule-12-utf-8) no longer discourages the
+The IOCCC [Rule 12 - UTF-8](next/rules.html#rule-12---utf-8) no longer discourages the
 use of UTF-8 in C source.  Since the days of `-std=gnu17` compilers,
 UTF-8 characters do not impose a compiler problem.  The related guideline
 states that "Rule 13 no longer discourages the use of UTF-8 +characters in C code".
 
-The IOCCC [Rule 8 Submission](next/rules.html#rule-8-submission) wording has been fixed.  It no longer
+The IOCCC [Rule 8 - Submission](next/rules.html#rule-8---submission) wording has been fixed.  It no longer
 states that email will be sent.  Instead it talks about potential slot comment
 modifications as means to tell the submitter that their submission was received.
 

@@ -26,7 +26,7 @@ This is FAQ version **28.2.24 2025-11-18**.
 - **Q 1.4**: <a class="normal" href="#mkiocccentry_test">How can I check if my submission passes tests without having to answer questions?</a>
 - **Q 1.5**: <a class="normal" href="#extra-files">What are extra files and how may I include additional files beyond the max allowed?</a>
 - **Q 1.6**: <a class="normal" href="#ai">May I use AI, LLM, Virtual coding assistants, or similar tools to write my submission?</a>
-- **Q 1.7**: <a class="normal" href="#rule17">What are the details behind Rule 17?</a>
+- **Q 1.7**: <a class="normal" href="#rule17">What are the details behind Rule 17 - Packaging?</a>
 - **Q 1.8**: <a class="normal" href="#uuid">How can I avoid re-entering my UUID to mkiocccentry?</a>
 - **Q 1.9**: <a class="normal" href="#submission_dir">How can I avoid having to move or delete my submission directory for the same workdir?</a>
 - **Q 1.10**: <a class="normal" href="#download_submission">Can I download my submission tarball from the submit server?</a>
@@ -38,7 +38,7 @@ This is FAQ version **28.2.24 2025-11-18**.
 - **Q 2.1**: <a class="normal" href="#feedback">How can I comment or make a suggestion on IOCCC rules, guidelines and tools?</a>
 - **Q 2.2**: <a class="normal" href="#warnings">Are there any compiler warnings that I should not worry about in my submissions?</a>
 - **Q 2.3**: <a class="normal" href="#frequent-themes">What types of entries have been frequently submitted to the IOCCC?</a>
-- **Q 2.4**: <a class="normal" href="#rule_2_broken">How did an entry that breaks the size rule 2 win the IOCCC?</a>
+- **Q 2.4**: <a class="normal" href="#rule_2_broken">How did an entry win the IOCCC that breaks Rule 2 - Size?</a>
 - **Q 2.5**: <a class="normal" href="#submissions">How many submissions do the judges receive for a given IOCCC?</a>
 - **Q 2.6**: <a class="normal" href="#judging_time">How much time does it take to judge the contest?</a>
 - **Q 2.7**: <a class="normal" href="#judging_rounds">How many judging rounds do you have?</a>
@@ -215,7 +215,7 @@ This toolkit is from the [mkiocccentry
 repo](https://github.com/ioccc-src/mkiocccentry) and it is **required** that you
 use it to package your submission. Not doing so puts you at a great risk of
 violating the [Rules](next/rules.html) and in particular
-[Rule 17 Packaging](next/rules.html#rule-17-packaging).
+[Rule 17 - Packaging](next/rules.html#rule-17---packaging).
 
 
 Jump to: [top](#)
@@ -386,7 +386,7 @@ directory** will be created, with the name based on your IOCCC registration
 username, which is **in the form of a UUID**, and submission number along with
 the timestamp; see the [rules](next/rules.html) for more details on this, and in
 particular
-[Rule 17 Packaging](next/rules.html#rule-17-packaging).
+[Rule 17 - Packaging](next/rules.html#rule-17---packaging).
 
 **IMPORTANT NOTE**: the tools that require other tools, `mkiocccentry(1)` and
 `txzchk(1)`, will, as of version `2.0.2 2025-03-11`, search under `$PATH`. If
@@ -576,7 +576,7 @@ rounds; we look at the author name only if an entry wins. See the
 - leaving the remark section empty (which would also indicate that you did not
 use `mkiocccentry(1)`, as it requires it to not be of size 0, though if you only
 include whitespace you would still be violating
-[Rule 17 Packaging](next/rules.html#rule-17-packaging)).
+[Rule 17 - Packaging](next/rules.html#rule-17---packaging)).
 
 
 Jump to: [top](#)
@@ -635,12 +635,12 @@ for more details.
 See the
 FAQ on "[Rule 17](#rule17)"
 and
-[Rule 17 Packaging](next/rules.html#rule-17-packaging)
+[Rule 17 - Packaging](next/rules.html#rule-17---packaging)
 itself.
 
 Do remember that if your submission requires different filenames, then you
 **MUST** make a **COPY** of them in your `Makefile`. See also
-[Rule 5 Purity](next/rules.html#rule-5-purity).
+[Rule 5 - Purity](next/rules.html#rule-5---purity).
 
 
 Jump to: [top](#)
@@ -852,12 +852,12 @@ itself is an extra file, meaning it counts **AS** an extra file.
 This file does **NOT** need to pass the `txzchk(1)` tests; only your submission
 tarball needs to pass these tests. However see below if you do do this.
 
-Please pay careful attention to [Rule 17 Packaging](next/rules.html#rule-17-packaging) and in
+Please pay careful attention to [Rule 17 - Packaging](next/rules.html#rule-17---packaging) and in
 particular the part about the maximum number of files per
 submission, which not only discusses the maximum
 number of files but also specific rules you must follow
 if you do include a tarball. Not following these points puts you at great risk
-of violating [Rule 17 Packaging](next/rules.html#rule-17-packaging)!
+of violating [Rule 17 - Packaging](next/rules.html#rule-17---packaging)!
 
 Also, remember what the [guidelines](next/guidelines.html) say:
 
@@ -896,7 +896,7 @@ Jump to: [top](#)
 
 
 <div id="rule17">
-### Q 1.7: What are details behind Rule 17?
+### Q 1.7: What are details behind Rule 17 - Packaging?
 </div>
 
 
@@ -919,7 +919,7 @@ contains **IMPORTANT** tools and libraries such as:
 - `chksubmit(1)` (which uses `jparse(3)` and is a wrapper to `chkentry(1)`)
 
 The above mentioned tools will help you verify that your submission
-conforms to [Rule 17 Packaging](next/rules.html#rule-17-packaging).  Each of these tool has a `-h`
+conforms to [Rule 17 - Packaging](next/rules.html#rule-17---packaging).  Each of these tool has a `-h`
 option that provides command line help. For additional details of each tool, see
 its man page, and in some cases, the [IOCCC guidelines](next/guidelines.html).
 
@@ -981,7 +981,7 @@ for help.
 The `remarks.md` **MUST** be a **non**-empty file in markdown format
 (`mkiocccentry(1)` only checks the file size but if you do not have any text in
 it you still risk violating this rule).  See also
-[Rule 17 Packaging](next/rules.html#rule-17-packaging)
+[Rule 17 - Packaging](next/rules.html#rule-17---packaging)
 and our
 FAQ on "[remarks.md](#remarks_md)",
 our
@@ -1089,7 +1089,7 @@ permissions and `mkiocccentry(1)` does this for you. In particular: directories
 `-r-xr-xr-x` (i.e. `0555`); and all other files **MUST** be `-r--r--r--` (i.e.
 `0444`).  If any file or directory does not have the correct permissions, your
 submission **WILL** be rejected for violating
-[Rule 17 Packaging](next/rules.html#rule17)!
+[Rule 17 - Packaging](next/rules.html#rule17)!
 
 After `mkiocccentry(1)` creates the directories and copies the files with these
 modes, it also verifies them after the fact and if they are not correct it is an
@@ -1097,10 +1097,10 @@ modes, it also verifies them after the fact and if they are not correct it is an
 
 If you do need different permissions, then see the
 FAQ on "[file permissions](#file_perms)". Also keep in mind
-[Rule 4 Files](next/rules.html#rule-4-files),
-[Rule 5 Purity](next/rules.html#rule-5-purity),
+[Rule 4 - Files](next/rules.html#rule-4---files),
+[Rule 5 - Purity](next/rules.html#rule-5---purity),
 and
-[Rule 16 Anonymous](next/rules.html#rule-16-anonymous).
+[Rule 16 - Anonymous](next/rules.html#rule-16---anonymous).
 
 The `txzchk(1)` tool will also verify file/directory permissions (and many other
 things) for you, and so will `chksubmit(1)` (along with other checks on files and
@@ -1115,9 +1115,9 @@ The tarball filename **MUST** pass `fnamchk(1)`; the tool `txzchk(1)`
 will run `fnamchk(1)` as part of its algorithm. If you use `mkiocccentry(1)`
 there should be no problem but if you were to package things manually it is
 possible there could be a problem and this poses a big risk of violating
-[Rule 4 Files](next/rules.html#rule-4-files)
+[Rule 4 - Files](next/rules.html#rule-4---files)
 or
-[Rule 17 Packaging](next/rules.html#rule17).
+[Rule 17 - Packaging](next/rules.html#rule17).
 
 
 The `fnamchk(1)`, which `txzchk(1)` executes, will verify that the
@@ -1127,9 +1127,9 @@ discrepancy as an error and exit with non-zero.
 
 These checks **MUST PASS**. If they do not you stand a significant chance of
 having your submission rejected for violating
-[Rule 4 Files](next/rules.html#rule-4-files)
+[Rule 4 - Files](next/rules.html#rule-4---files)
 or
-[Rule 17 Packaging](next/rules.html#rule17).
+[Rule 17 - Packaging](next/rules.html#rule17).
 
 <div id="max-files">
 #### Maximum number of files per submission
@@ -1170,9 +1170,9 @@ The `mkiocccentry(1)` tool uses the v7 format. For instance you might try:
 <hr style="width:50%;text-align:left;margin-left:0">
 
 **IMPORTANT**: where
-[Rule 4 Files](next/rules.html#rule-4-files),
+[Rule 4 - Files](next/rules.html#rule-4---files),
 and
-[Rule 17 Packaging](next/rules.html#rule-17-packaging).
+[Rule 17 - Packaging](next/rules.html#rule-17---packaging).
 and the tools from the latest
 release of the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry)
 conflict, the [IOCCC judges](judges.html) will use their best judgment which
@@ -1213,9 +1213,9 @@ for help here and also read our
 FAQ on "[mkiocccentry repo bugs](#mkiocccentry_bugs)".
 
 At the risk of stating the obvious: submissions that violate
-[Rule 4 Files](next/rules.html#rule-4-files),
+[Rule 4 - Files](next/rules.html#rule-4---files),
 or
-[Rule 17 Packaging](next/rules.html#rule-17-packaging)
+[Rule 17 - Packaging](next/rules.html#rule-17---packaging)
 **WILL BE REJECTED**, so **BE SURE** to use the latest release of the
 [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry), to form and test
 your submission's xz compressed tarball. Do **NOT** assume you have the most
@@ -1575,7 +1575,7 @@ Jump to: [top](#)
 
 <div id="rule_2_broken">
 <div id="rule_breaking_entry">
-### Q 2.4: How did an entry that breaks the size rule 2 win the IOCCC?
+### Q 2.4: How did an entry win the IOCCC that breaks Rule 2 - Size?
 </div>
 </div>
 
@@ -1874,9 +1874,9 @@ two JSON files, `.auth.json` and `.info.json` as well as the `prog.c`,
 `.info.json` manifest. (Okay there is an option to skip files but this is for
 the judges **ONLY**; use of this option to validate your submission puts you at
 a great risk of violating
-[Rule 4 Files](next/rules.html#rule-4-files),
+[Rule 4 - Files](next/rules.html#rule-4---files),
 or
-[Rule 17 Packaging](next/rules.html#rule-17-packaging)!).
+[Rule 17 - Packaging](next/rules.html#rule-17---packaging)!).
 
 As an example, if your submission directory is
 `00000000-0000-4000-0000-000000000000-3/` then you should run the following
@@ -1903,9 +1903,9 @@ FAQ on "[.auth.json](#auth_json)"
 and the
 FAQ on "[.info.json](#info_json)"
 as well as
-[Rule 4 Files](next/rules.html#rule-4-files),
+[Rule 4 - Files](next/rules.html#rule-4---files),
 and
-[Rule 17 Packaging](next/rules.html#rule-17-packaging)
+[Rule 17 - Packaging](next/rules.html#rule-17---packaging)
 for more information.
 
 **NOTE**: the `chksubmit(1)` tool invokes `chkentry(1)` but as a contestant  you
@@ -1999,12 +1999,12 @@ In order of the file's contents we describe each required field, below:
     * The IOCCC contestant ID used as a username in the form of **in the form of
     a UUID** and submission number; see the [Rules](next/rules.html) for more details
     on this, and in particular
-    [Rule 17 Packaging](next/rules.html#rule-17-packaging).
+    [Rule 17 - Packaging](next/rules.html#rule-17---packaging).
 
     **NOTE:** if the contest ID is **NOT** in this format then `fnamchk` will
     report it as an **error** and your submission **WILL BE** rejected for
     violating
-    [Rule 17 Packaging](next/rules.html#rule-17-packaging).
+    [Rule 17 - Packaging](next/rules.html#rule-17---packaging).
 
 - `tarball` (double quoted string)
     * The xz compressed tarball filename.
@@ -2012,10 +2012,10 @@ In order of the file's contents we describe each required field, below:
     **IMPORTANT:** this **MUST** match the actual tarball's **filename** in order for
     this to be valid. If there is a mismatch you stand a great risk of having
     your submission rejected for violating
-    [Rule 17 Packaging](next/rules.html#rule-17-packaging)!
+    [Rule 17 - Packaging](next/rules.html#rule-17---packaging)!
     Moreover, it is possible that `txzchk` will report a problem through
     `fnamchk(1)` which also puts you at great risk of violating
-    [Rule 17 Packaging](next/rules.html#rule-17-packaging). The
+    [Rule 17 - Packaging](next/rules.html#rule-17---packaging). The
     `txzchk(1)` tool will use the output of `fnamchk` to
     obtain the correct directory _name_ in the tarball; if `fnamchk` fails to
     validate your filename, or if you have the wrong directory name in the
@@ -2030,7 +2030,7 @@ In order of the file's contents we describe each required field, below:
     in the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry/)). If
     this is not the case you stand a great risk of having your submission
     rejected for violating
-    [Rule 17 Packaging](next/rules.html#rule-17-packaging).
+    [Rule 17 - Packaging](next/rules.html#rule-17---packaging).
 
 - `author_count` (number)
     * How many authors this submission has.
@@ -2095,7 +2095,7 @@ author(s) of the submission:
     in the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry/)). If
     this is not the case you stand a great risk of having your submission
     rejected for violating
-    [Rule 17 Packaging](next/rules.html#rule-17-packaging).
+    [Rule 17 - Packaging](next/rules.html#rule-17---packaging).
 
     **NOTE:** an **affiliation** does **NOT** have any affect on whether you will win or not.
 
@@ -2180,9 +2180,9 @@ At the risk of stating the obvious, if your `.auth.json` file is invalid JSON or
 is reported invalid by `chksubmit(1)`, or if your submission directory is
 reported invalid by `chksubmit(1)`, your submission will almost certainly be
 rejected for violating the [Rules](next/rules.html) and in particular
-[Rule 4 Files](next/rules.html#rule-4-files),
+[Rule 4 - Files](next/rules.html#rule-4---files),
 and
-[Rule 17 Packaging](next/rules.html#rule-17-packaging).
+[Rule 17 - Packaging](next/rules.html#rule-17---packaging).
 
 An obvious example where `chksubmit(1)` would fail to validate `.auth.json` is if
 there is a mismatch of type in the JSON file with what is expected, for
@@ -2192,9 +2192,9 @@ out of range (see above for list). Two more examples would be if a field is
 missing or if an unknown filed is in the file. In these cases (and any others
 that must be established as valid by `chksubmit(1)`) your submission would be
 rejected for violating
-[Rule 4 Files](next/rules.html#rule-4-files),
+[Rule 4 - Files](next/rules.html#rule-4---files),
 and
-[Rule 17 Packaging](next/rules.html#rule-17-packaging)
+[Rule 17 - Packaging](next/rules.html#rule-17---packaging)
 and in particular
 because `chksubmit(1)` would not validate the `.auth.json` file (and maybe other
 things too).
@@ -2318,7 +2318,7 @@ In order of the file's contents we describe each required field, below:
     * The IOCCC contestant ID used as a username in the form of **in the form of
     a UUID** and submission number; see the [rules](next/rules.html) for more details
     on this, and in particular
-    [Rule 17 Packaging](next/rules.html#rule-17-packaging).
+    [Rule 17 - Packaging](next/rules.html#rule-17---packaging).
 
 - `submit_slot` (number)
     * The submission number.
@@ -2329,7 +2329,7 @@ In order of the file's contents we describe each required field, below:
     in the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry/)). If
     this is not the case you stand a great risk of having your submission
     rejected for violating
-    [Rule 17 Packaging](next/rules.html#rule-17-packaging).
+    [Rule 17 - Packaging](next/rules.html#rule-17---packaging).
 
 - `title` (double quoted string)
     * A short name (length >= 1 **THROUGH** `MAX_TITLE_LEN`, defined in
@@ -2339,7 +2339,7 @@ In order of the file's contents we describe each required field, below:
 
     **IMPORTANT:** if this is **NOT** the case you stand a great risk of having your submission
     rejected for violating
-    [Rule 17 Packaging](next/rules.html#rule-17-packaging)!
+    [Rule 17 - Packaging](next/rules.html#rule-17---packaging)!
 
 - `abstract` (double quoted string)
     * A one line summary of your submission, with a length of 1 **THROUGH**
@@ -2351,7 +2351,7 @@ In order of the file's contents we describe each required field, below:
 
     **IMPORTANT:** if your abstract is 0 in length or > the maximum abstract length you
     stand a great risk of having your submission rejected for violating
-    [Rule 17 Packaging](next/rules.html#rule-17-packaging)!
+    [Rule 17 - Packaging](next/rules.html#rule-17---packaging)!
 
 - `tarball` (double quoted string)
     * The xz compressed tarball filename.
@@ -2359,10 +2359,10 @@ In order of the file's contents we describe each required field, below:
     **IMPORTANT:** this **MUST** match the actual tarball's **filename** in order for
     this to be valid. If there is a mismatch you stand a great risk of having
     your submission rejected for violating
-    [Rule 17 Packaging](next/rules.html#rule-17-packaging)!
+    [Rule 17 - Packaging](next/rules.html#rule-17---packaging)!
     Moreover, it is possible that `txzchk` will report a problem through
     `fnamchk(1)` which also puts you at great risk of violating
-    [Rule 17 Packaging](next/rules.html#rule-17-packaging).
+    [Rule 17 - Packaging](next/rules.html#rule-17---packaging).
     The `txzchk(1)` tool will use the output of `fnamchk` to
     obtain the correct directory _name_ in the tarball; if `fnamchk` fails to
     validate your filename, or if you have the wrong directory name in the
@@ -2397,7 +2397,7 @@ In order of the file's contents we describe each required field, below:
     calculated size is **NOT**
     violated but this is `true` then you stand a good chance of having your
     submission rejected for violating
-    [Rule 17 Packaging](next/rules.html#rule-17-packaging).
+    [Rule 17 - Packaging](next/rules.html#rule-17---packaging).
 
 - `rule_2a_mismatch` (boolean)
     * `true` if
@@ -2415,12 +2415,12 @@ In order of the file's contents we describe each required field, below:
     calculated size is **NOT**
     violated but this is `true` then you stand a good chance of having your
     submission rejected for violating
-    [Rule 17 Packaging](next/rules.html#rule-17-packaging).
+    [Rule 17 - Packaging](next/rules.html#rule-17---packaging).
 
 - `highbit_warning` (boolean)
     * `true` if `iocccsize` detects a high bit (unescaped octets with the high
     bit set - octet value >= 128); see
-    [Rule 12 UTF-8](next/rules.html#rule-12-utf-8),
+    [Rule 12 - UTF-8](next/rules.html#rule-12---utf-8),
     else `false`.
 
 - `nul_warning` (boolean)
@@ -2443,7 +2443,7 @@ In order of the file's contents we describe each required field, below:
 
     **IMPORTANT:** if the `Makefile` file has no problems and this is `true` then
     you stand a good chance of having your submission rejected for violating
-    [Rule 17 Packaging](next/rules.html#rule-17-packaging)!
+    [Rule 17 - Packaging](next/rules.html#rule-17---packaging)!
 
     See the
     FAQ on "[Makefile](#makefile)"
@@ -2454,7 +2454,7 @@ In order of the file's contents we describe each required field, below:
 
     **IMPORTANT:**: if the `Makefile` file does **NOT** have an `all` rule then
     you stand a good chance of having your submission rejected for violating
-    [Rule 17 Packaging](next/rules.html#rule-17-packaging)!
+    [Rule 17 - Packaging](next/rules.html#rule-17---packaging)!
 
     See the
     FAQ on "[Makefile](#makefile)"
@@ -2466,7 +2466,7 @@ In order of the file's contents we describe each required field, below:
     **IMPORTANT:** if the `Makefile` file does **NOT** have an `all` rule and this
     boolean is `true` then you stand a good chance of having your
     submission rejected for violating
-    [Rule 17 Packaging](next/rules.html#rule-17-packaging)!
+    [Rule 17 - Packaging](next/rules.html#rule-17---packaging)!
 
     See the
     FAQ on "[Makefile](#makefile)"
@@ -2478,7 +2478,7 @@ In order of the file's contents we describe each required field, below:
     **IMPORTANT:** if the `Makefile` file does **NOT** have a `clean` rule and this
     boolean is `true` then you stand a good chance of having your submission
     rejected for violating
-    [Rule 17 Packaging](next/rules.html#rule-17-packaging)!
+    [Rule 17 - Packaging](next/rules.html#rule-17---packaging)!
 
     See the
     FAQ on "[Makefile](#makefile)"
@@ -2490,7 +2490,7 @@ In order of the file's contents we describe each required field, below:
     **IMPORTANT:** if the `Makefile` file does **NOT** have an `clobber` rule and this
     boolean is `true` then you stand a good chance of having your submission
     rejected for violating
-    [Rule 17 Packaging](next/rules.html#rule-17-packaging)!
+    [Rule 17 - Packaging](next/rules.html#rule-17---packaging)!
 
     See the
     FAQ on "[Makefile](#makefile)"
@@ -2502,7 +2502,7 @@ In order of the file's contents we describe each required field, below:
     **IMPORTANT:** if the `Makefile` file does **NOT** have a `try` rule and this
     boolean is `true` then you stand a good chance of having your submission
     rejected for violating
-    [Rule 17 Packaging](next/rules.html#rule-17-packaging)!
+    [Rule 17 - Packaging](next/rules.html#rule-17---packaging)!
 
     See the
     FAQ on "[Makefile](#makefile)"
@@ -2528,7 +2528,7 @@ The `mkiocccentry(1)` tool will write it in this order:
 
     **IMPORTANT:** if this is **NOT** the case you stand a
     great chance of having your submission rejected for violating
-    [Rule 17 Packaging](next/rules.html#rule-17-packaging)!
+    [Rule 17 - Packaging](next/rules.html#rule-17---packaging)!
 
 - `auth_JSON` (double quoted string)
     * This `MUST` be `".auth.json"`, defined as `AUTH_JSON_FILENAME` in
@@ -2541,7 +2541,7 @@ The `mkiocccentry(1)` tool will write it in this order:
 
     **IMPORTANT:** if this is **NOT** the case you stand a great chance of having your
     submission rejected for violating
-    [Rule 17 Packaging](next/rules.html#rule-17-packaging)!
+    [Rule 17 - Packaging](next/rules.html#rule-17---packaging)!
 
 - `c_src` (double quoted string)
     * This `MUST` be `"prog.c"`, defined as `PROG_C_FILENAME` in
@@ -2551,7 +2551,7 @@ The `mkiocccentry(1)` tool will write it in this order:
 
     **IMPORTANT:** if this is **NOT** the case you stand a great chance of having your
     submission rejected for violating
-    [Rule 17 Packaging](next/rules.html#rule-17-packaging)!
+    [Rule 17 - Packaging](next/rules.html#rule-17---packaging)!
 
 - `Makefile` (double quoted string)
     * This `MUST` be `"Makefile"`, defined as `MAKEFILE_FILENAME` in
@@ -2564,7 +2564,7 @@ The `mkiocccentry(1)` tool will write it in this order:
 
     **IMPORTANT:** if this is **NOT** the case you stand a great chance of having your
     submission rejected for violating
-    [Rule 17 Packaging](next/rules.html#rule-17-packaging)!
+    [Rule 17 - Packaging](next/rules.html#rule-17---packaging)!
 
 - `remarks` (double quoted string)
     * This `MUST` be `"remarks.md"`, defined as `REMARKS_FILENAME` in
@@ -2577,7 +2577,7 @@ The `mkiocccentry(1)` tool will write it in this order:
 
     **IMPORTANT:** if this is **NOT** the case you stand a great chance of having your
     submission rejected for violating
-    [Rule 17 Packaging](next/rules.html#rule-17-packaging)!
+    [Rule 17 - Packaging](next/rules.html#rule-17---packaging)!
 
 The `manifest` **array** also **OPTIONALLY** has one or more of the field:
 
@@ -2590,7 +2590,7 @@ The `manifest` **array** also **OPTIONALLY** has one or more of the field:
     filenames are not unique, not POSIX plus + safe chars only, if they are the
     wrong permission and various other things. In these cases you stand a great
     risk of having your submission rejected for violating
-    [Rule 17 Packaging](next/rules.html#rule-17-packaging)!
+    [Rule 17 - Packaging](next/rules.html#rule-17---packaging)!
     On the other hand, **ONLY** `mkiocccentry` will
     verify that the files exist and can be read; `txzchk(1)` will **NOT** do
     this for you as it only **LISTS** the tarball: it does **NOT** extract it.
@@ -2654,7 +2654,7 @@ out of range (see above for list). Two more examples would be if a field is
 missing or if an unknown filed is in the file. In these cases (and any others
 that must be established as valid by `chksubmit`) your submission would be
 rejected for violating
-Rule 17 Packaging](next/rules.html#rule-17-packaging),
+[Rule 17 - Packaging](next/rules.html#rule-17---packaging),
 and in particular
 because `chksubmit` would not validate the `.info.json` file.
 
