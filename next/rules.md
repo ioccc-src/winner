@@ -202,7 +202,7 @@ Your code should be able to run under a
 
 I am **NOT** a Rule, I am a `free(void *human);` ‼️
 
-``` <!--c->
+``` <!---c-->
     while (!(ioccc(rule(you(are(number(6)))))) {
         ha(); ha(); ha();
     }
@@ -378,7 +378,7 @@ The `Makefile` **MUST** use a syntax that is compatible with
 bash` in your `Makefile`; please add a space between the `=` and
 the value such as:
 
-``` <!--sh->
+``` <!---sh-->
     SHELL= bash
 ```
 Assume that commands commonly found in [Single UNIX
