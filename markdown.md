@@ -9,19 +9,33 @@ These [Markdown Guidelines](markdown.html) are version **28.4 2025-04-28**.
 <div id="introduction"></div>
 ## Markdown Guidelines Introduction
 
-The IOCCC makes extensive use of [markdown](https://daringfireball.net/projects/markdown/). For example, when submitting to the IOCCC we have people submit remarks about their entry in markdown format.  Every [winning entry](years.html) uses a `README.md` markdown file as the basis for forming the `index.html` web page for that entry. All HTML 5 generated pages on the [Official IOCCC website](https://www.ioccc.org/index.html) start with some markdown content.  We no longer support older HTML standards and some of our guidelines help integrate winning entries into the website more easily.
+The IOCCC makes extensive use of [markdown](https://daringfireball.net/projects/markdown/).
+For example, when submitting to the IOCCC we have people submit remarks
+about their entry in markdown format.  Every [winning entry](years.html)
+uses a `README.md` markdown file as the basis for forming the `index.html`
+web page for that entry. All HTML 5 generated pages on the
+[Official IOCCC website](https://www.ioccc.org/index.html) start with some
+markdown content.  We no longer support older HTML standards and some of
+our guidelines help integrate winning entries into the website more easily.
 
-See the [markdown syntax](https://www.markdownguide.org/basic-syntax) guide. See also the [CommonMark Spec](https://spec.commonmark.org/current/). See the FAQ on "[remarks.md submission file](faq.html#remarks_md)".
+See the [markdown syntax](https://www.markdownguide.org/basic-syntax) guide.
+See also the [CommonMark Spec](https://spec.commonmark.org/current/). See
+the FAQ on "[remarks.md submission file](faq.html#remarks_md)".
 
-Nevertheless, the IOCCC does have certain practices that we ask authors to follow. Some of these relate to use of markdown directly and others relate to injecting HTML into the markdown file.
+Nevertheless, the IOCCC does have certain practices that we ask authors to
+follow. Some of these relate to use of markdown directly and others relate
+to injecting HTML into the markdown file.
 
-In the sections below, examples will mark by <span style="color: red">✕</span> for the incorrect method and <span style="color: green">✔</span> for preferred correct one.
+In the sections below, examples will mark by <span style="color: red">✕</span>
+for the incorrect method and <span style="color: green">✔</span> for preferred
+correct one.
 
 
 <div id="sections"></div>
 ## Start `remarks.md` sections at level 3
 
-IF (it is not required) you do use sections in your `remarks.md` file (this does not apply to other markdown files), **PLEASE** start at level three upto level six:
+If (it is not required) you do use sections in your `remarks.md` file (this does
+not apply to other markdown files), **PLEASE** start at level three up to level six:
 
 ```<!---markdown-->
 ✕ # Section Reserved
@@ -88,10 +102,11 @@ IF (it is not required) you do use sections in your `remarks.md` file (this does
 ✕ echo "This code block is NOT indented"
 ```
 
-We request that you indent the code block by multiples of four (4) ASCII SPACES, never TAB (␉):
+We request that you indent the code block by multiples of four (4)
+ASCII SPACES, never TAB (␉):
 
 ````<!---sh-->
-✔     echo "This code block is indented by mutiples of 4 spaces"
+✔     echo "This code block is indented by multiples of 4 spaces"
 
 ✔     # The top level starts with a 4 ASCII space indent.
 ✔     #
@@ -101,7 +116,8 @@ We request that you indent the code block by multiples of four (4) ASCII SPACES,
 ✔                 # etc.
 ````
 
-Alternatively its possible to use ` ``` ` marks, without the initial four (4) space indentation.  This is usually the better method.
+Alternatively its possible to use ` ``` ` marks, without the initial
+four (4) space indentation.  This is usually the better method.
 
 ````<!---markdown-->
 ✔ ```
@@ -113,11 +129,15 @@ Alternatively its possible to use ` ``` ` marks, without the initial four (4) sp
 <div id="spaces"></div>
 ## Do not use ASCII TAB in markdown files.
 
-Please do **NOT** indent with ASCII TABs (␉), **OR** use any ASCII TAB (␉) anywhere inside a markdown file.
+Please do **NOT** indent with ASCII TABs (␉), **OR** use any ASCII TAB
+(␉) anywhere inside a markdown file.
 
-While we have nothing against the ASCII TAB (␉) character in general, we have discovered that ASCII TAB (␉) characters create problems when used as part of the leading whitespace within a markdown file.
+While we have nothing against the ASCII TAB (␉) character in general,
+we have discovered that ASCII TAB (␉) characters create problems when
+used as part of the leading whitespace within a markdown file.
 
-If you need to indent two (2 or more levels, use multiples of four (4) ASCII SPACES.
+If you need to indent two (2 or more levels, use multiples of four (4)
+ASCII SPACES.
 
 ````<!---markdown-->
 ```
@@ -129,7 +149,8 @@ If you need to indent two (2 or more levels, use multiples of four (4) ASCII SPA
 ```
 ````
 
-And to clarify, we are only talking about markdown files, not C code or any other non-markdown content:
+And to clarify, we are only talking about markdown files, not C code or
+any other non-markdown content:
 
 ````<!---c-->
 ✔       printf("It is fine      to      use tabs in Obfuscated C code.\n");
@@ -139,12 +160,16 @@ And to clarify, we are only talking about markdown files, not C code or any othe
 ✔       // or in any other markdown files within your entry, please.
 ````
 
-**NOTE**: Again, you are **perfectly welcome** to use ASCII tab characters in your C code and other non-markdown files.  We simply ask that you do **NOT** use any ASCII TAB (␉) characters in markdown files.
+**NOTE**: Again, you are **perfectly welcome** to use ASCII tab
+characters in your C code and other non-markdown files.  We simply ask
+that you do **NOT** use any ASCII TAB (␉) characters in markdown files.
 
 <div id="vim-tabs"></div>
 ### Tip for `vim` users
 
-If you use `vim` you can put in your `.vimrc` file (usually `~/.vimrc`) the following settings to make sure the tabs are not put in without you noticing:
+If you use `vim` you can put in your `.vimrc` file (usually `~/.vimrc`)
+the following settings to make sure the tabs are not put in without you
+noticing:
 
 ```<!---vim-->
 set tabstop=8               " a tab is 8 spaces (or whatever you wish it to be set to)
@@ -153,15 +178,18 @@ set shiftwidth=4            " ...and auto-indent 4 spaces (when autoindent is se
 set expandtab               " ...expand tab into spaces
 ```
 
-If you have file type detection enabled you can, if you prefer, have these settings set just for markdown files:
+If you have file type detection enabled you can, if you prefer, have
+these settings set just for markdown files:
 
 ```<!---vim-->
 autocmd! Filetype markdown setlocal set tabstop=8 softtabstop=4 shiftwidth=4 expandtab
 ```
 
-This will prevent the tab key from inserting tabs; rather it will insert four (4) spaces.
+This will prevent the tab key from inserting tabs; rather it will insert
+four (4) spaces.
 
-To **VERIFY** that there are no tabs in a file you may do, in command mode:
+To **VERIFY** that there are no tabs in a file you may do, in command
+mode:
 
 ```
 /\t
@@ -173,30 +201,39 @@ If you're in insert mode hit `ESC` first.
 <div id="languages"></div>
 ## Use HTML comments for code block language syntax.
 
-We request that [fenced markdown code blocks](https://www.markdownguide.org/extended-syntax/#fenced-code-blocks) **NOT** specify a language directly.
+We request that [fenced markdown code blocks](https://www.markdownguide.org/extended-syntax/#fenced-code-blocks)
+**NOT** specify a language directly.
 
 ````<!---markdown-->
-```c
-    int main(void) {return 0;}
-```
+✕ ```c
+✕     int main(void) {return 0;}
+✕ ```
 ````
 
-Instead, put the language inside an HTML comment, separated from the markdown code block starting fence by a space:
+Instead, put the language inside an HTML comment, separated from the
+markdown code block starting fence by a space:
 
 ````<!---markdown-->
-```<!---c-->
-    int main(void) {return 0;}
-```
+✔ ```<!---c-->
+✔    int main(void) {return 0;}
+✔ ```
 ````
 
-**IMPORTANT**: The **initial** &nbsp; **\` \` \`** &nbsp; must be followed by an **ASCII SPACE**, and **THEN** an **opening** **`<!---`** (a "`<`", a "`!`" and then three "`-`"s), and **THEN** the **language** and **FINALLY** a **closing** "`-->`" (two "`-`"s followed by a "`>`").
+**IMPORTANT**: The **initial** &nbsp; **\` \` \`** &nbsp; must be
+followed by an **ASCII SPACE**, and **THEN** an **opening** **
+`<!---`** (a "`<`", a "`!`" and then three "`-`"s), and **THEN**
+the **language** and **FINALLY** a **closing** "`-->`" (two "`-`"s
+followed by a "`>`").
 
 <div id="text"></div>
 <div id="code-text"></div>
 <div id="code-and-text"></div>
-## Insure blank line between code block and text.
+## Ensure blank line between code block and text.
 
-Please do **NOT** place text on the next line after a markdown code block. Instead, place a blank line after the end of a markdown code block as this makes it easier to detect when markdown code blocks are **NOT** properly indented.
+Please do **NOT** place text on the next line after a markdown code
+block. Instead, place a blank line after the end of a markdown code
+block as this makes it easier to detect when markdown code blocks are
+**NOT** properly indented.
 
 ````<!---markdown-->
 ✕ ```
@@ -223,11 +260,13 @@ Please do **NOT** place text on the next line after a markdown code block. Inste
 <div id="slash"></div>
 ## Do not add trailing slash to void HTML tags.
 
-Please do **NOT** use a trailing slash on [void HTML elements](https://github.com/validator/validator/wiki/Markup-»-Void-elements).
+Please do **NOT** use a trailing slash on
+[void HTML elements](https://github.com/validator/validator/wiki/Markup-»-Void-elements).
 
 See also this note on [trailing slashes in void-element start tags](https://github.com/validator/validator/wiki/Markup-»-Void-elements#trailing-slashes-in-void-element-start-tags-do-NOT-mark-the-start-tags-as-self-closing).
 
-The trailing slash on void HTML elements has no effect and interacts badly with unquoted attribute values.
+The trailing slash on void HTML elements has no effect and interacts
+badly with unquoted attribute values.
 
 ```<!---html-->
 ✕ <br/>
@@ -247,7 +286,9 @@ The trailing slash on void HTML elements has no effect and interacts badly with 
 <div id="backslash"></div>
 ## Do not use a trailing backslash (`\`) outside of a code block
 
-Unless the line is inside a markdown code block, please do **NOT** end a markdown line with a trailing backslash (`\`).  Instead use a trailing `<br>`.
+Unless the line is inside a markdown code block, please do **NOT** end
+a markdown line with a trailing backslash (`\`).  Instead use a trailing
+`<br>`.
 
 ```<!---markdown-->
 ✕ In markdown,\
@@ -270,7 +311,8 @@ Unless the line is inside a markdown code block, please do **NOT** end a markdow
 ✔ `This is OK\`
 ````
 
-Doing it this way will prevent `pandoc(1)` from generating deprecated HTML elements such as `<br />`.
+Doing it this way will prevent `pandoc(1)` from generating deprecated
+HTML elements such as `<br />`.
 
 <div id="img"></div>
 <div id="images"></div>
@@ -285,21 +327,28 @@ Instead of using this markdown element to embed an image:
    alt="describe the filename.png image for someone who cannot view it"
    width=PIXEL_WIDTH height=PIXEL_HEIGHT>
 
-   Which allows for HTML <IMG> attributes `alt=`, `width=` and `length=`.
+   Which allows for HTML <img> attributes `alt=`, `width=` and `length=`.
 ```
 
-The problem is that `pandoc(1)` generates problematic HTML from the markdown image construct, the resulting HTML does **NOT** have `width` and `height` information so browsers have to slow down on rendering text around the image until it can internally determine the image size.
+The problem is that `pandoc(1)` generates problematic HTML from the
+markdown image construct, the resulting HTML does **NOT** have `width`
+and `height` information so browsers have to slow down on rendering
+text around the image until it can internally determine the image size.
 
 <div id="hr"></div>
 <div id="lines"></div>
 <div id="horizontal"></div>
 ## Please do NOT use markdown style horizontal lines
 
-Please do **NOT** use `---` style lines in markdown to create horizontal lines or to separate sections.
+Please do **NOT** use `---` style lines in markdown to create horizontal
+lines or to separate sections.
 
-Unless something is inside a markdown **code block**, do **NOT** start a line with 3 or more dashes ("`-`"s).
+Unless something is inside a markdown **code block**, do **NOT** start
+a line with 3 or more dashes ("`-`"s).
 
-Such markdown causes `pandoc(1)` to generate `<hr />`.  The `<hr />` has no effect in standard HTML 5 and interacts badly with unquoted attribute values.
+Such markdown causes `pandoc(1)` to generate `<hr />`.  The `<hr />` has
+no effect in standard HTML 5 and interacts badly with unquoted attribute
+values.
 
 If a horizontal line is really needed, use:
 
@@ -329,7 +378,8 @@ If a horizontal line is really needed, use:
 <div id="closing-parentheses"></div>
 ## Do not end markdown links with "`))`"
 
-Markdown links that end in "`))`" complicate parsing and sometimes lead to incorrect URLs or file paths.
+Markdown links that end in "`))`" complicate parsing and sometimes lead
+to incorrect URLs or file paths.
 
 ```<!---markdown-->
 ✕ [some text](https://example.com/foo_(bar))
@@ -342,10 +392,10 @@ Markdown links that end in "`))`" complicate parsing and sometimes lead to incor
 <div id="italics"></div>
 ## Use `_` for italics in markdown
 
-Please do **NOT** use `*` (single asterisk) for italics in markdown. Instead use
-an underscore (`_`). Using an asterisk can complicate parsing and sometimes lead
-to incorrect results. This can especially go for when it is **_bold and
-italic_**.
+Please do **NOT** use `*` (single asterisk) for italics in markdown.
+Instead use an underscore (`_`). Using an asterisk can complicate
+parsing and sometimes lead to incorrect results. This can especially
+go for when it is **_bold and italic_**.
 
 ```<!---markdown-->
 ✕ *this text is italic*
@@ -355,6 +405,6 @@ italic_**.
 ✔ **_this text is bold italic_**
 ✔ _**this text is bold italic**_
 ```
-**BTW**: the astute reader might notice that some cases of `*` for italic might
-have slipped through. We do ask you, however, to please observe this rule, as
-best you can.
+**BTW**: the astute reader might notice that some cases of `*` for
+italic might have slipped through. We do ask you, however, to please
+observe this rule, as best you can.
