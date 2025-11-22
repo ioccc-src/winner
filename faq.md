@@ -640,7 +640,7 @@ itself.
 
 Do remember that if your submission requires different filenames, then you
 **MUST** make a **COPY** of them in your `Makefile`. See also
-[Rule 5 - Purity](next/rules.html#rule-5---purity).
+[Rule 5 - Integrity](next/rules.html#rule-5---integrity).
 
 
 Jump to: [top](#)
@@ -1098,7 +1098,7 @@ modes, it also verifies them after the fact and if they are not correct it is an
 If you do need different permissions, then see the
 FAQ on "[file permissions](#file_perms)". Also keep in mind
 [Rule 4 - Files](next/rules.html#rule-4---files),
-[Rule 5 - Purity](next/rules.html#rule-5---purity),
+[Rule 5 - Integrity](next/rules.html#rule-5---integrity),
 and
 [Rule 16 - Anonymous](next/rules.html#rule-16---anonymous).
 

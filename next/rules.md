@@ -37,7 +37,7 @@ and remains unaltered.  All other uses **MUST** receive prior permission in
 writing by [contacting the judges](../contact.html).
 
 
-## Rules version
+## Rules Version
 
 These IOCCC Rules are version **29.05 2025-11-21**.
 
@@ -179,7 +179,7 @@ See [Rule 17 - Packaging](rules.html#rule-17---packaging).
 
 
 <div id="rule5">
-## Rule 5 - Purity
+## Rule 5 - Integrity
 </div>
 
 Your submission **MUST NOT** modify the filenames or content of any of
@@ -294,7 +294,7 @@ bits are **NOT** allowed in submissions and those bits will **NOT** be copied by
 
 See [Rule 4 - Files](rules.html#rule-4---files),
 and
-[Rule 5 - Purity](rules.html#rule-5---purity).
+[Rule 5 - Integrity](rules.html#rule-5---integrity).
 
 
 <div id="rule11">
