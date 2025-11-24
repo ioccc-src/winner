@@ -422,8 +422,8 @@ body {
 pre, code {
     margin: 1em 0;
     hyphens: manual;
-    overflow-x: scroll;
-    overflow-y: scroll;
+    overflow-x: auto !important;
+    overflow-y: auto !important;
     color: DarkGreen;
 }
 
@@ -733,7 +733,7 @@ transition: all .3s ease;
     padding-top: 0;
     padding-bottom: 0;
     color: DarkGreen;
-    overflow-x: scroll;
+    overflow-x: auto;
 }
 
 /* content text */
