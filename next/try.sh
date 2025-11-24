@@ -4,7 +4,7 @@
 
 # XXX - NOTE: please remove all "XXX - ... - XXX" lines, including this one - XXX
 # XXX -                                                                     - XXX
-# XXX - try.sh example version: 28.1.1 2024-07-06                           - XXX
+# XXX - try.sh example version: 29.0.0 2025-11-24                           - XXX
 
 # make sure CC is set so that when we do make CC="$CC" it isn't empty. Doing it
 # this way allows us to have the user specify a different compiler in an easy way.
