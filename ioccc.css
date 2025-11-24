@@ -480,7 +480,7 @@ img {
     cursor: not-allowed;
     opacity: 0.5;
     color: inherit;
-    display: inline-block;  /* For IE11/MS Edge bug */
+    display: inline-block;	/* For IE11/MS Edge bug */
     pointer-events: none;
     text-decoration: none;
 }
@@ -518,37 +518,37 @@ img {
 
 @media (min-width: 1025px) and (max-width: 1100px) {
     .container {
-    max-width: 840px;
+	max-width: 840px;
     }
 }
 
 @media (min-width: 1101px) and (max-width: 1150px) {
     .container {
-    max-width: 900px;
+	max-width: 900px;
     }
 }
 
 @media (min-width: 1151px) and (max-width: 1200px) {
     .container {
-    max-width: 970px;
+	max-width: 970px;
     }
 }
 
 @media (min-width: 1201px) and (max-width: 1250px) {
     .container {
-    max-width: 1000px;
+	max-width: 1000px;
     }
 }
 
 @media (min-width: 1251px) and (max-width: 1300px) {
     .container {
-    max-width: 1060px;
+	max-width: 1060px;
     }
 }
 
 @media (min-width: 1301px) and (max-width: 1350px) {
     .container {
-    max-width: 1100px;
+	max-width: 1100px;
     }
 }
 
@@ -649,7 +649,7 @@ transition: all .3s ease;
 
 @media (scripting: enabled) {
     .topbar-js-label {
-    display: none;
+	display: none;
     }
 }
 
@@ -763,15 +763,15 @@ blockquote {
  * We tried to change the colour and we went with dark green with the
  * following rationale:
  *
- *   0. Purple should NOT be used as this is being used for visited links.
- *   1. Blue should NOT be used as this is being used for non-visited links.
+ *	 0.	Purple should NOT be used as this is being used for visited links.
+ *	 1.	Blue should NOT be used as this is being used for non-visited links.
  *
  * Now with context this might be okay but links can also be in blockquotes
  * so this alone is reason not to: even if there are underlines in most
  * links. Additionally:
  *
- *   2. Bold seems to be too strong, especially when used for with a bright
- *   colour.
+ *	 2. Bold seems to be too strong, especially when used for with a bright
+ *	 colour.
  *
  * Bold is used in headings (h1, h2, ..). A bold heading is not too much
  * text (as headings tend to be short single lines): one does not become
@@ -910,7 +910,7 @@ blockquote {
 /* Mobile menu section */
 @media screen and (max-width: 1024px) {
     .topbar-items {
-    display: none;
+	display: none;
     }
 }
 
@@ -920,7 +920,7 @@ blockquote {
 
 @media screen and (max-width: 1024px) {
     .header-mobile-menu {
-    display: block;
+	display: block;
     }
 }
 
@@ -930,15 +930,15 @@ blockquote {
 
 @media screen and (max-width: 1024px) {
     .mobile-header-button-label {
-    display: block;
-    position: absolute;
-    right: 64px;
-    color: #154c9f;
-    font-size: 16px;
-    font-weight: bold;
-    font-family: "Outfit", sans-serif;
-    font-optical-sizing: auto;
-    text-transform: capitalize;
+	display: block;
+	position: absolute;
+	right: 64px;
+	color: #154c9f;
+	font-size: 16px;
+	font-weight: bold;
+	font-family: "Outfit", sans-serif;
+	font-optical-sizing: auto;
+	text-transform: capitalize;
     }
 }
 
@@ -954,7 +954,7 @@ blockquote {
 
 @media (scripting: enabled) {
     .topbar-mobile-menu {
-    display: block;
+	display: block;
     }
 }
 
@@ -1023,39 +1023,39 @@ blockquote {
  */
 @media screen and (max-width: 968px) {
     body {
-    font-size: 1em;
+	font-size: 1em;
     }
     .header {
-    padding: 0;
-    border: 0;
-    text-align: center;
+	padding: 0;
+	border: 0;
+	text-align: center;
     }
     .header h1 {
-    font-size: 2em;
+	font-size: 2em;
     }
     .header h2 {
-    font-size: 1.75em;
+	font-size: 1.75em;
     }
     .header h3 {
-    font-size: 1.5em;
+	font-size: 1.5em;
     }
     .content, .footer {
-    padding: 2px;
+	padding: 2px;
     }
     .content h1 {
-    font-size: 1.75em;
+	font-size: 1.75em;
     }
     .content h2 {
-    font-size: 1.5em;
+	font-size: 1.5em;
     }
     .content h3 {
-    font-size: 1.25em;
+	font-size: 1.25em;
     }
     .pseudo_h3 {
-    font-size: 1.25em;
+	font-size: 1.25em;
     }
     .small_click_below {
-    font-size: 0.75em;
+	font-size: 0.75em;
     }
 }
 
@@ -1067,40 +1067,40 @@ blockquote {
  */
 @media screen and (max-width: 761px) {
     body {
-    font-size: 1em;
+	font-size: 1em;
     }
     .header {
-    padding: 0;
-    border: 0;
-    text-align: center;
+	padding: 0;
+	border: 0;
+	text-align: center;
     }
     .header h1 {
-    font-size: 1.5em;
+	font-size: 1.5em;
     }
     .header h2 {
-    font-size: 1.25em;
+	font-size: 1.25em;
     }
     .header h3 {
-    font-size: 1em;
+	font-size: 1em;
     }
     .content, .footer {
-    width: 100%;
-    padding: 2px;
+	width: 100%;
+	padding: 2px;
     }
     .content h1 {
-    font-size: 1.25em;
+	font-size: 1.25em;
     }
     .content h2 {
-    font-size: 1.1em;
+	font-size: 1.1em;
     }
     .content h3 {
-    font-size: 1em;
+	font-size: 1em;
     }
     .pseudo_h3 {
-    font-size: 1em;
+	font-size: 1em;
     }
     .small_click_below {
-    font-size: 0.6em;
+	font-size: 0.6em;
     }
 }
 
@@ -1112,50 +1112,50 @@ blockquote {
  */
 @media screen and (max-width: 500px) {
     body {
-    font-size: 0.9em;
+	font-size: 0.9em;
     }
     .header {
-    padding: 0;
-    border: 0;
-    text-align: center;
+	padding: 0;
+	border: 0;
+	text-align: center;
     }
     .header h1 {
-    font-size: 1.25em;
+	font-size: 1.25em;
     }
     .header h2 {
-    font-size: 1em;
+	font-size: 1em;
     }
     .header h3 {
-    font-size: 0.9em;
+	font-size: 0.9em;
     }
     .header img {
-    visibility: none;
-    width: 0;
-    border: 0;
-    padding: 0;
-    height: auto;
-    max-width: 95%;
-    position: relative;
+	visibility: none;
+	width: 0;
+	border: 0;
+	padding: 0;
+	height: auto;
+	max-width: 95%;
+	position: relative;
     }
     .navbar a {
-    float: none;
-    width: 100%;
-    padding: 0;
+	float: none;
+	width: 100%;
+	padding: 0;
     }
     .content h1 {
-    font-size: 1.25em;
+	font-size: 1.25em;
     }
     .content h2 {
-    font-size: 1em;
+	font-size: 1em;
     }
     .content h3 {
-    font-size: 0.9em;
+	font-size: 0.9em;
     }
     .pseudo_h3 {
-    font-size: 0.9em;
+	font-size: 0.9em;
     }
     .small_click_below {
-    font-size: 0.5em;
+	font-size: 0.5em;
     }
 }
 
@@ -1167,25 +1167,25 @@ blockquote {
  */
 @media print {
     html {
-    background-color: white;
+	background-color: white;
     }
     body {
-    background-color: transparent;
-    color: black;
-    font-size: 12pt;
+	background-color: transparent;
+	color: black;
+	font-size: 12pt;
     }
     p, h2, h3 {
-    orphans: 3;
-    widows: 3;
+	orphans: 3;
+	widows: 3;
     }
     h2, h3, h4 {
-    page-break-after: avoid;
+	page-break-after: avoid;
     }
     /* IOCCC addition - print all as if they were not visited */
     a:focus, a:hover, a:visited, a:active {
-    color: blue;
+	color: blue;
     }
     .navbar a, .navbar a:focus, .navbar a:hover, .navbar a:visited, .navbar a:active {
-    color: lightblue;
+	color: lightblue;
     }
 }
