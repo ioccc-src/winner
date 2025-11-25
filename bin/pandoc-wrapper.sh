@@ -20,6 +20,8 @@
 #
 # Copyright (c) 2023,2024 by Landon Curt Noll.  All Rights Reserved.
 #
+# .. with an important bug fix in November 2025 by Cody Boone Ferguson.
+#
 # Permission to use, copy, modify, and distribute this software and
 # its documentation for any purpose and without fee is hereby granted,
 # provided that the above copyright, this permission notice and text
@@ -143,6 +145,17 @@ if [[ $status -eq 0 ]]; then
     TOPDIR=$("$GIT_TOOL" rev-parse --show-toplevel)
 fi
 export TOPDIR
+#
+VERGE=$(type -P verge)
+export VERGE
+if [[ -z $VERGE ]]; then
+    echo "$0: FATAL: verge is not installed or not in \$PATH" 1>&2
+    echo "$0: notice: to install verge:" 1>&2
+    echo "$0: notice: run: git clone https://github.com/ioccc-src/mkiocccentry.git" 1>&2
+    echo "$0: notice: then: cd mkiocccentry && make clobber all" 1>&2
+    echo "$0: notice: then: cd jparse && sudo make install clobber" 1>&2
+    exit 5
+fi
 PANDOC_TOOL=$(type -P pandoc)
 export PANDOC_TOOL
 if [[ -z $PANDOC_TOOL ]]; then
@@ -428,16 +441,13 @@ fi
 
 # verify that the pandoc version is >= the minimum version
 #
-FIRST_VERSION=$(printf "%s\n%s" "$PANDOC_TOOL_VERSION" "$PANDOC_MIN_VERSION" | LC_ALL=C sort -V | head -1)
-export FIRST_VERSION
-if [[ $FIRST_VERSION != "$PANDOC_MIN_VERSION" ]]; then
+if ! "$VERGE" "$PANDOC_TOOL_VERSION" "$PANDOC_MIN_VERSION"; then
     echo "$0: ERROR: pandoc: $PANDOC_TOOL version: $PANDOC_TOOL_VERSION <=" \
 	 "minimum allowed: $PANDOC_MIN_VERSION" 1>&2
     echo "$0: Warning: pandoc version must be >= $PANDOC_MIN_VERSION" 1>&2
     echo "$0: Warning: install a more up to date pandoc and/or use -p pandoc_tool to refer an up to date pandoc" 1>&2
     exit 5
 fi
-
 
 # execute pandoc
 #
