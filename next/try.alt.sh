@@ -4,7 +4,7 @@
 
 # XXX - NOTE: please remove all "XXX - ... - XXX" lines, including this one - XXX
 # XXX -                                                                     - XXX
-# XXX - try.alt.sh example version: 28.1.1 2024-07-06                       - XXX
+# XXX - try.alt.sh example version: 29.0.0 2025-11-24                       - XXX
 
 # make sure CC is set so that when we do make CC="$CC" it isn't empty. Doing it
 # this way allows us to have the user specify a different compiler in an easy way.
@@ -25,7 +25,7 @@
 # XXX - Later, if the submission wins, it can be changed to 'everything'.   - XXX
 # XXX -                                                                     - XXX
 MAKE=$(command -v gmake)
-${MAKE:=make} CC="$CC" all >/dev/null || exit 1
+${MAKE:=make} CC="$CC" alt >/dev/null || exit 1
 
 # clear the screen
 #
@@ -56,10 +56,10 @@ clear
 
 # try the program
 #
-read -r -n 1 -p "Press any key to run: ./prog: "
+read -r -n 1 -p "Press any key to run: ./prog.alt: "
 echo 1>&2
 echo 1>&2
-./prog
+./prog.alt
 echo 1>&2
 
 # try the program with args
@@ -69,11 +69,11 @@ echo 1>&2
 # XXX -                                                                     - XXX
 echo 'Let us try another example.  Observe the line count of output and the last line of data!' 1>&2
 echo 1>&2
-read -r -n 1 -p "Press any key to run: date | ./prog some command line | LANG=C sort > data: "
+read -r -n 1 -p "Press any key to run: date | ./prog.alt some command line | LANG=C sort > data: "
 echo 1>&2
 echo 1>&2
 rm -f data
-date | ./prog some command line | LANG=C sort > data
+date | ./prog.alt some command line | LANG=C sort > data
 wc -l < data
 tail -n 1 data
 echo 1>&2
