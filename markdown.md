@@ -35,24 +35,34 @@ and ✔️ for preferred correct one.
 If (it is not required) you do use sections in your `remarks.md` file (this does
 not apply to other markdown files), **PLEASE** start at level three up to level six:
 
+<span style="color:red">❌</span> Reserved in `remarks.md` only.
 ```<!---markdown-->
-❌ # Section Reserved
-❌ ## Section Reserved
-✔️ ### Section Level 3
-✔️ #### Section Level 4
-✔️ ##### Section Level 5
-✔️ ###### Section Level 6
+# Section Reserved
+## Section Reserved
+```
+
+<span style="color:green">✔</span> Available every where.
+```
+### Section Level 3
+#### Section Level 4
+##### Section Level 5
+###### Section Level 6
 ```
 
 <div id="anchor-name"></div>
 
 ## Replace `<a name="anchor_name"></a>` construct.
 
+<span style="color:red">❌</span> Incorrect.
 ```<!---html-->
-❌ <a name="old_way">...</a>
-✔️ <div id="new_way">...</div>
-✔️ 
-✔️ ### Section title
+<a name="old_way">Section title</a>
+```
+
+<span style="color:green">✔</span> Correct.
+```<!---html-->
+<div id="new_way"></div>
+
+### Section title
 ```
 
 
@@ -60,71 +70,93 @@ not apply to other markdown files), **PLEASE** start at level three up to level 
 
 ## Markdown links instead of `<a>...</a>`
 
+<span style="color:red">❌</span> Incorrect.
 ```<!---html-->
-❌ This <a href="#link_target>HTML link text</a> works, but we prefer
-✔️ [markdown link text](#link_target)
+This <a href="#link_target>HTML link text</a> works, but we prefer see below...
+```
+
+<span style="color:green">✔</span> Correct.
+```<!---html-->
+[markdown link text](#link_target)
 ```
 
 <div id="del"></div><div id="strike"></div>
 
 ## Replace `<strike>` or `<s>`
 
+<span style="color:red">❌</span> Incorrect.
 ```<!---html-->
-❌ <strike>striked through text</strike>
-❌ <s>HTML 5 striked through text</s>
+<strike>striked through text</strike>
+<s>HTML 5 striked through text</s>
+```
 
-✔️ <del>HTML 5 striked through text</del>
-✔️ ~~markdown striked through text~~
+<span style="color:green">✔</span> Correct.
+```<!---html-->
+~~markdown striked through text~~
+<del>HTML 5 striked through text</del>
 ```
 
 <div id="ins"></div><div id="underline"></div>
 
 ## Replace `<u>`
 
+<span style="color:red">❌</span> Incorrect.
 ```<!---html-->
-❌ <u>old tags</u>
-✔️ <ins>HTML 5 tags</ins>
+<u>old tags</u>
+```
+
+<span style="color:green">✔</span> Correct.
+```<!---html-->
+<ins>HTML 5 tags</ins>
 ```
 
 <div id="tt"></div>
 
 ## Replace `<tt>`
 
+<span style="color:red">❌</span> Incorrect.
 ```<!---html-->
-❌ <tt>obsolete HTML</tt>
-✔️ <span style="font-family: monospace;">monospace font</span>
-✔️ `markdown style monospace`
+<tt>obsolete HTML</tt>
+```
+
+<span style="color:green">✔</span> Correct.
+```<!---html-->
+<span style="font-family: monospace;">monospace font</span>
+`markdown style monospace`
 ```
 
 <div id="indent"></div>
 
 ## Indent code blocks by four spaces, not by TAB.
 
+<span style="color:red">❌</span> Incorrect.
 ```<!---sh-->
-❌ echo "This code block is NOT indented"
+echo "This code block is NOT indented"
 ```
 
 We request that you indent the code block by multiples of four (4)
 ASCII SPACES, never TAB (␉):
 
+<span style="color:green">✔</span> Correct.
 ````<!---sh-->
-✔️      echo "This code block is indented by multiples of 4 spaces"
+    echo "This code block is indented by multiples of 4 spaces"
 
-✔️     # The top level starts with a 4 ASCII space indent.
-✔️     #
-✔️     # Only indent with multiples of 4 ASCII spaces.
-✔️         # 2nd level indent needs 8 ASCII spaces (no tabs).
-✔️             # 3rd level indent needs 12 ASCII spaces (no tabs).
-✔️                 # etc.
+    # The top level starts with a 4 ASCII space indent.
+    #
+    # Only indent with multiples of 4 ASCII spaces.
+        # 2nd level indent needs 8 ASCII spaces (no tabs).
+            # 3rd level indent needs 12 ASCII spaces (no tabs).
+                # etc.
 ````
 
 Alternatively its possible to use ` ``` ` marks, without the initial
 four (4) space indentation.  This is usually the better method.
 
+<span style="color:green">✔</span> Also correct.
 ````<!---markdown-->
-✔️ ```
-✔️ The same thing applies to any markdown block bracketed by ``` lines.
-✔️ ```
+```
+The same thing applies to any markdown block bracketed by ``` lines.
+```
 ````
 
 <div id="tabs"></div><div id="spaces"></div>
@@ -141,138 +173,131 @@ used as part of the leading whitespace within a markdown file.
 If you need to indent two (2) or more levels, use multiples of four (4)
 ASCII SPACES.
 
+<span style="color:red">❌</span> Incorrect for markdown files only.
 ````<!---markdown-->
 ```
-❌ ␉Please do **NOT**␉use ASCII tabs␉in markdown files.
-❌ ␉␉Please do **NOT** indent markdown with ASCII tabs.
+␉Please do **NOT**␉use ASCII tabs␉in markdown files.
+␉␉Please do **NOT** indent markdown with ASCII tabs.
 
-❌ ␉We␉don't␉mind␉tabs␉in␉general,
-❌ ␉We just ask that you NOT use them in markdown files.
+␉We␉don't␉mind␉tabs␉in␉general,
+␉We just ask that you NOT use them in markdown files.
 ```
 ````
 
-And to clarify, we are only talking about markdown files, not C code or
-any other non-markdown content:
-
+<span style="color:green">✔</span> Ok for all file types, eg. `.c`, `.h`, `.mk`, `.sh`, **EXCEPT** `.md` markdown files.
 ````<!---c-->
-✔️ ␉printf("It is fine␉to␉use tabs in Obfuscated C code.\n");
-✔️ ␉␉/*␉if␉you␉wish    */
+␉printf("It is fine␉to␉use tabs in Obfuscated C code.\n");
+␉␉/*␉if␉you␉wish    */
 
-✔️ ␉// We ask that you to NOT use ASCII tab characters in your remarks.md writeup,
-✔️ ␉// or in any other markdown files within your entry, please.
+␉// We ask that you to NOT use ASCII tab characters in your remarks.md writeup,
+␉// or in any other markdown files within your entry, please.
 ````
-
-**NOTE**: Again, you are **perfectly welcome** to use ASCII TAB (␉) characters
-in your C code and other non-markdown files.  We simply ask that you do
-**NOT** use any ASCII TAB (␉) characters in markdown files.
 
 <div id="code"></div><div id="languages"></div>
 
 ## Use HTML comments for code block language syntax.
 
-We request that [fenced markdown code blocks](https://www.markdownguide.org/extended-syntax/#fenced-code-blocks)
-**NOT** specify a language directly.
+We request that [fenced markdown code blocks](https://www.markdownguide.org/extended-syntax/#fenced-code-blocks) **NOT** specify a language directly.
 
+<span style="color:red">❌</span> Incorrect
 ````<!---markdown-->
-❌ ```c
-❌     int main(void) {return 0;}
-❌ ```
+```c
+    int main(void) {return 0;}
+```
 ````
 
 Instead, put the language inside an HTML comment, separated from the
 markdown code block starting fence by a space:
 
+<span style="color:green">✔</span> Correct
 ````<!---markdown-->
-✔️ ```<!---c-->
-✔️    int main(void) {return 0;}
-✔️ ```
+```<!---c-->
+   int main(void) {return 0;}
+```
 ````
-
-**IMPORTANT**: The **initial** &nbsp; **\` \` \`** &nbsp; must be
-followed by an **ASCII SPACE**, and **THEN** an **opening** **
-`<!---`** (a "`<`", a "`!`" and then three "`-`"s), and **THEN**
-the **language** and **FINALLY** a **closing** "`-->`" (two "`-`"s
-followed by a "`>`").
 
 <div id="code-and-text"></div>
 
 ## Ensure blank line between code block and text.
 
-Please do **NOT** place text on the next line after a markdown code
-block. Instead, place a blank line after the end of a markdown code
-block as this makes it easier to detect when markdown code blocks are
-**NOT** properly indented.
-
+<span style="color:red">❌</span> Incorrect, missing empty line after closing fence (` ``` `).
 ````<!---markdown-->
-   ```
-   int
-   main(int foo)
-   {
-      return foo;
-   }
-❌ ```
-❌ C compilers cannot be given a -Wno-main-arg-errors flag.
+```
+int
+main(int foo)
+{
+   return foo;
+}
+```
+C compilers cannot be given a -Wno-main-arg-errors flag.
+````
 
-   ```
-       int
-       main(int foo)
-       {
-           return foo;
-       }
-✔️ ```
-✔️
-✔️ C compilers cannot be given a -Wno-main-arg-errors flag.
+<span style="color:green">✔</span> Correct, has empty line between closing fence and subsequent text.
+````<!---markdown-->
+```
+int
+main(int foo)
+{
+    return foo;
+}
+```
+
+C compilers cannot be given a -Wno-main-arg-errors flag.
 ````
 
 <div id="tag-slash"></div>
 
 ## Do not add trailing slash to void HTML tags.
 
-Please do **NOT** use a trailing slash on [void HTML elements](https://github.com/validator/validator/wiki/Markup-»-Void-elements).  See also
-this note on [trailing slashes in void-element start tags](https://github.com/validator/validator/wiki/Markup-»-Void-elements#trailing-slashes-in-void-element-start-tags-do-NOT-mark-the-start-tags-as-self-closing).
 
-The trailing slash on void HTML elements has no effect and interacts
-badly with unquoted attribute values.
+The trailing slash on [void HTML elements](https://github.com/validator/validator/wiki/Markup-»-Void-elements) has no effect and interacts
+badly with unquoted attribute values; do not use.  See also this note
+on [trailing slashes in void-element start tags](https://github.com/validator/validator/wiki/Markup-»-Void-elements#trailing-slashes-in-void-element-start-tags-do-NOT-mark-the-start-tags-as-self-closing).
 
+
+<span style="color:red">❌</span> Incorrect
 ```<!---html-->
-❌ <br/>
-❌ <hr/>
-❌ <img src="1984-anonymous-tattoo.jpg" alt="image of a tattoo of
-   the 1984 anonymous C code" width=600 height=401 />
+<br/>
+<hr/>
+<img src="1984-anonymous-tattoo.jpg" alt="image of a tattoo of
+the 1984 anonymous C code" width=600 height=401 />
+```
 
-✔️ <br>
-✔️ <hr>
-✔️ <img src="1984-anonymous-tattoo.jpg" alt="image of a tattoo of
-   the 1984 anonymous C code" width=600 height=401>
+<span style="color:green">✔</span> Correct
+```<!---html-->
+<br>
+<hr>
+<img src="1984-anonymous-tattoo.jpg" alt="image of a tattoo of
+the 1984 anonymous C code" width=600 height=401>
 ```
 
 <div id="br"></div><div id="backslash"></div>
 
 ## Do not use a trailing backslash outside of a code block
 
-Unless the line is inside a markdown code block, please do **NOT** end
-a markdown line with a trailing backslash (`\`).  Instead use a trailing
-`<br>`.
-
+<span style="color:red">❌</span> Incorrect, do not use escaped newlines outside of a code block.
 ```<!---markdown-->
-❌ In markdown,\
-❌ do NOT use trailing\
-❌ backslashes outside of\
-❌ a code block
+In markdown,\
+do NOT use trailing\
+backslashes outside of\
+a code block
+```
 
-✔️ In markdown,<br>
-✔️ use trailing<br>
-✔️ br's outside of<br>
-✔️ a code block
+<span style="color:green">✔</span> Correct
+````<!---html-->
+In markdown,<br>
+use trailing<br>
+br's outside of<br>
+a code block
 
-✔️ ```
-✔️ This is OK\
-✔️ inside a\
-✔️ markdown code\
-✔️ block
-✔️ ```
+```
+This is OK\
+inside a\
+markdown code\
+block
+```
 
-✔️ `This is OK\`
+`This is OK\`
 ````
 
 Doing it this way will prevent `pandoc(1)` from generating deprecated
@@ -282,16 +307,18 @@ HTML elements, such as `<br />`.
 
 ## Do not use markdown style images
 
-Instead of using this markdown element to embed an image:
-
+<span style="color:red">❌</span> Incorrect
 ```<!---markdown-->
-❌ ![alt text](filename.png "Title")
+![alt text](filename.png "Title")
+```
 
-✔️ <img src="filename.png"
-   alt="describe the filename.png image for someone who cannot view it"
-   width=PIXEL_WIDTH height=PIXEL_HEIGHT>
+<span style="color:green">✔</span> Correct
+```<!---markdown-->
+<img src="filename.png"
+alt="describe the filename.png image for someone who cannot view it"
+width=PIXEL_WIDTH height=PIXEL_HEIGHT>
 
-   Which allows for HTML <img> attributes `alt=`, `width=` and `length=`.
+Which allows for HTML <img> attributes `alt=`, `width=` and `length=`.
 ```
 
 The problem is that `pandoc(1)` generates problematic HTML from the
@@ -313,28 +340,36 @@ Such markdown causes `pandoc(1)` to generate `<hr />`.  The `<hr />` has
 no effect in standard HTML 5 and interacts badly with unquoted attribute
 values.
 
+<span style="color:red">❌</span> Incorrect
 ```<!---html-->
-❌ * * *
-❌ - - -
-❌ ---
+* * *
+- - -
+---
+```
 
-   Regular divider...
-✔️ <hr>
+<span style="color:green">✔</span> Correct
+```<!---html-->
+Regular divider...
+<hr>
 
-   A short divider...
-✔️ <hr style="width:10%;text-align:left;margin-left:0">
+A short divider...
+<hr style="width:10%;text-align:left;margin-left:0">
 ```
 
 <div id="parentheses"></div>
 
 ## Do not put a literal "`(`" or "`)`" in markdown link titles
 
+<span style="color:red">❌</span> Incorrect
 ```<!---markdown-->
-❌ [some (text)](https://example.com/curds)
-✔️ [some &lpar;text&rpar;](https://example.com/curds)
+[some (text)](https://example.com/curds)
+[ls(1)](https://example.com/ls-man-page.1)
+```
 
-❌ [ls(1)](https://example.com/ls-man-page.1)
-✔️ [ls&lpar;1&rpar;](https://example.com/ls-man-page.1)
+<span style="color:green">✔</span> Correct
+```<!---markdown-->
+[some &lpar;text&rpar;](https://example.com/curds)
+[ls&lpar;1&rpar;](https://example.com/ls-man-page.1)
 ```
 
 <div id="closing-parentheses"></div>
@@ -344,12 +379,16 @@ values.
 Markdown links that end in "`))`" complicate parsing and sometimes lead
 to incorrect URLs or file paths.
 
+<span style="color:red">❌</span> Incorrect
 ```<!---markdown-->
-❌ [some text](https://example.com/foo_(bar))
-✔️ [some text](https://example.com/foo_&lpar;bar&rpar;)
+[some text](https://example.com/foo_(bar))
+This thing, ([some text](some/path)), is NOT ideal.
+```
 
-❌ This thing, ([some text](some/path)), is NOT ideal.
-✔️ This thing, [some text](some/path), is better.
+<span style="color:green">✔</span> Correct
+```<!---markdown-->
+[some text](https://example.com/foo_&lpar;bar&rpar;)
+This thing, [some text](some/path), is better.
 ```
 
 <div id="italics"></div>
@@ -361,13 +400,17 @@ Instead use an underscore (`_`). Using an asterisk can complicate
 parsing and sometimes lead to incorrect results. This can especially
 go for when it is **_bold and italic_**.
 
+<span style="color:red">❌</span> Incorrect
 ```<!---markdown-->
-❌ *this text is italic*
-✔️ _this text is italic_
+*this text is italic*
+***this text is bold italic***
+```
 
-❌ ***this text is bold italic***
-✔️ **_this text is bold italic_**
-✔️ _**this text is bold italic**_
+<span style="color:green">✔</span> Correct
+```<!---markdown-->
+_this text is italic_
+**_this text is bold italic_**
+_**this text is bold italic**_
 ```
 **BTW**: the astute reader might notice that some cases of `*` for italic
 might have slipped through. We do ask you, however, to please
