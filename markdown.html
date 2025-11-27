@@ -491,7 +491,9 @@ not apply to other markdown files), <strong>PLEASE</strong> start at level three
 </div>
 <h2 id="replace-a-nameanchor_namea-construct.">Replace <code>&lt;a name="anchor_name"&gt;&lt;/a&gt;</code> construct.</h2>
 <pre class="&lt;!---html--&gt;"><code>❌ &lt;a name=&quot;old_way&quot;&gt;...&lt;/a&gt;
-✔️ &lt;span id=&quot;new_way&quot;&gt;...&lt;/span&gt;</code></pre>
+✔️ &lt;div id=&quot;new_way&quot;&gt;...&lt;/div&gt;
+✔️ 
+✔️ ### Section title</code></pre>
 <div id="links">
 
 </div>
@@ -533,7 +535,7 @@ not apply to other markdown files), <strong>PLEASE</strong> start at level three
 <pre class="&lt;!---sh--&gt;"><code>❌ echo &quot;This code block is NOT indented&quot;</code></pre>
 <p>We request that you indent the code block by multiples of four (4)
 ASCII SPACES, never TAB (␉):</p>
-<pre class="&lt;!---sh--&gt;"><code>✔️     echo &quot;This code block is indented by multiples of 4 spaces&quot;
+<pre class="&lt;!---sh--&gt;"><code>✔️      echo &quot;This code block is indented by multiples of 4 spaces&quot;
 
 ✔️     # The top level starts with a 4 ASCII space indent.
 ✔️     #
@@ -564,19 +566,19 @@ ASCII SPACES.</p>
 ❌ ␉Please do **NOT**␉use ASCII tabs␉in markdown files.
 ❌ ␉␉Please do **NOT** indent markdown with ASCII tabs.
 
-❌ ␉We       don&#39;t␉mind␉tabs␉in␉general,
+❌ ␉We␉don&#39;t␉mind␉tabs␉in␉general,
 ❌ ␉We just ask that you NOT use them in markdown files.
 ```</code></pre>
 <p>And to clarify, we are only talking about markdown files, not C code or
 any other non-markdown content:</p>
-<pre class="&lt;!---c--&gt;"><code>✔️       printf(&quot;It is fine␉to␉use tabs in Obfuscated C code.\n&quot;);
-✔️               /*␉if␉you␉wish    */
+<pre class="&lt;!---c--&gt;"><code>✔️ ␉printf(&quot;It is fine␉to␉use tabs in Obfuscated C code.\n&quot;);
+✔️ ␉␉/*␉if␉you␉wish    */
 
-✔️       // We ask that you to NOT use ASCII tab characters in your remarks.md writeup,
-✔️       // or in any other markdown files within your entry, please.</code></pre>
-<p><strong>NOTE</strong>: Again, you are <strong>perfectly welcome</strong> to use ASCII tab characters
-in your C code and other non-markdown files. We simply ask that
-you do <strong>NOT</strong> use any ASCII TAB (␉) characters in markdown files.</p>
+✔️ ␉// We ask that you to NOT use ASCII tab characters in your remarks.md writeup,
+✔️ ␉// or in any other markdown files within your entry, please.</code></pre>
+<p><strong>NOTE</strong>: Again, you are <strong>perfectly welcome</strong> to use ASCII TAB (␉) characters
+in your C code and other non-markdown files. We simply ask that you do
+<strong>NOT</strong> use any ASCII TAB (␉) characters in markdown files.</p>
 <div id="code">
 
 </div>
@@ -629,9 +631,8 @@ block as this makes it easier to detect when markdown code blocks are
 
 </div>
 <h2 id="do-not-add-trailing-slash-to-void-html-tags.">Do not add trailing slash to void HTML tags.</h2>
-<p>Please do <strong>NOT</strong> use a trailing slash on
-<a href="https://github.com/validator/validator/wiki/Markup-»-Void-elements">void HTML elements</a>.</p>
-<p>See also this note on <a href="https://github.com/validator/validator/wiki/Markup-»-Void-elements#trailing-slashes-in-void-element-start-tags-do-NOT-mark-the-start-tags-as-self-closing">trailing slashes in void-element start tags</a>.</p>
+<p>Please do <strong>NOT</strong> use a trailing slash on <a href="https://github.com/validator/validator/wiki/Markup-»-Void-elements">void HTML elements</a>. See also
+this note on <a href="https://github.com/validator/validator/wiki/Markup-»-Void-elements#trailing-slashes-in-void-element-start-tags-do-NOT-mark-the-start-tags-as-self-closing">trailing slashes in void-element start tags</a>.</p>
 <p>The trailing slash on void HTML elements has no effect and interacts
 badly with unquoted attribute values.</p>
 <pre class="&lt;!---html--&gt;"><code>❌ &lt;br/&gt;
@@ -672,7 +673,7 @@ a markdown line with a trailing backslash (<code>\</code>). Instead use a traili
 
 ✔️ `This is OK\`</code></pre>
 <p>Doing it this way will prevent <code>pandoc(1)</code> from generating deprecated
-HTML elements such as <code>&lt;br /&gt;</code>.</p>
+HTML elements, such as <code>&lt;br /&gt;</code>.</p>
 <div id="img">
 
 </div>
@@ -700,7 +701,6 @@ a line with 3 or more dashes (“<code>-</code>”s).</p>
 <p>Such markdown causes <code>pandoc(1)</code> to generate <code>&lt;hr /&gt;</code>. The <code>&lt;hr /&gt;</code> has
 no effect in standard HTML 5 and interacts badly with unquoted attribute
 values.</p>
-<p>If a horizontal line is really needed, use:</p>
 <pre class="&lt;!---html--&gt;"><code>❌ * * *
 ❌ - - -
 ❌ ---
@@ -744,8 +744,8 @@ go for when it is <strong><em>bold and italic</em></strong>.</p>
 ❌ ***this text is bold italic***
 ✔️ **_this text is bold italic_**
 ✔️ _**this text is bold italic**_</code></pre>
-<p><strong>BTW</strong>: the astute reader might notice that some cases of <code>*</code> for
-italic might have slipped through. We do ask you, however, to please
+<p><strong>BTW</strong>: the astute reader might notice that some cases of <code>*</code> for italic
+might have slipped through. We do ask you, however, to please
 observe this rule, as best you can.
 <!-- AFTER: last line of markdown file: markdown.md --></p>
 
