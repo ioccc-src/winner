@@ -50,8 +50,11 @@ not apply to other markdown files), **PLEASE** start at level three up to level 
 
 ```<!---html-->
 ❌ <a name="old_way">...</a>
-✔️ <span id="new_way">...</span>
+✔️ <div id="new_way">...</div>
+✔️ 
+✔️ ### Section title
 ```
+
 
 <div id="links"></div>
 
@@ -105,7 +108,7 @@ We request that you indent the code block by multiples of four (4)
 ASCII SPACES, never TAB (␉):
 
 ````<!---sh-->
-✔️     echo "This code block is indented by multiples of 4 spaces"
+✔️      echo "This code block is indented by multiples of 4 spaces"
 
 ✔️     # The top level starts with a 4 ASCII space indent.
 ✔️     #
@@ -143,7 +146,7 @@ ASCII SPACES.
 ❌ ␉Please do **NOT**␉use ASCII tabs␉in markdown files.
 ❌ ␉␉Please do **NOT** indent markdown with ASCII tabs.
 
-❌ ␉We	don't␉mind␉tabs␉in␉general,
+❌ ␉We␉don't␉mind␉tabs␉in␉general,
 ❌ ␉We just ask that you NOT use them in markdown files.
 ```
 ````
@@ -152,16 +155,16 @@ And to clarify, we are only talking about markdown files, not C code or
 any other non-markdown content:
 
 ````<!---c-->
-✔️       printf("It is fine␉to␉use tabs in Obfuscated C code.\n");
-✔️               /*␉if␉you␉wish    */
+✔️ ␉printf("It is fine␉to␉use tabs in Obfuscated C code.\n");
+✔️ ␉␉/*␉if␉you␉wish    */
 
-✔️       // We ask that you to NOT use ASCII tab characters in your remarks.md writeup,
-✔️       // or in any other markdown files within your entry, please.
+✔️ ␉// We ask that you to NOT use ASCII tab characters in your remarks.md writeup,
+✔️ ␉// or in any other markdown files within your entry, please.
 ````
 
-**NOTE**: Again, you are **perfectly welcome** to use ASCII tab characters
-in your C code and other non-markdown files.  We simply ask that
-you do **NOT** use any ASCII TAB (␉) characters in markdown files.
+**NOTE**: Again, you are **perfectly welcome** to use ASCII TAB (␉) characters
+in your C code and other non-markdown files.  We simply ask that you do
+**NOT** use any ASCII TAB (␉) characters in markdown files.
 
 <div id="code"></div><div id="languages"></div>
 
@@ -225,10 +228,8 @@ block as this makes it easier to detect when markdown code blocks are
 
 ## Do not add trailing slash to void HTML tags.
 
-Please do **NOT** use a trailing slash on
-[void HTML elements](https://github.com/validator/validator/wiki/Markup-»-Void-elements).
-
-See also this note on [trailing slashes in void-element start tags](https://github.com/validator/validator/wiki/Markup-»-Void-elements#trailing-slashes-in-void-element-start-tags-do-NOT-mark-the-start-tags-as-self-closing).
+Please do **NOT** use a trailing slash on [void HTML elements](https://github.com/validator/validator/wiki/Markup-»-Void-elements).  See also
+this note on [trailing slashes in void-element start tags](https://github.com/validator/validator/wiki/Markup-»-Void-elements#trailing-slashes-in-void-element-start-tags-do-NOT-mark-the-start-tags-as-self-closing).
 
 The trailing slash on void HTML elements has no effect and interacts
 badly with unquoted attribute values.
@@ -275,7 +276,7 @@ a markdown line with a trailing backslash (`\`).  Instead use a trailing
 ````
 
 Doing it this way will prevent `pandoc(1)` from generating deprecated
-HTML elements such as `<br />`.
+HTML elements, such as `<br />`.
 
 <div id="img"></div>
 
@@ -311,8 +312,6 @@ a line with 3 or more dashes ("`-`"s).
 Such markdown causes `pandoc(1)` to generate `<hr />`.  The `<hr />` has
 no effect in standard HTML 5 and interacts badly with unquoted attribute
 values.
-
-If a horizontal line is really needed, use:
 
 ```<!---html-->
 ❌ * * *
@@ -370,6 +369,6 @@ go for when it is **_bold and italic_**.
 ✔️ **_this text is bold italic_**
 ✔️ _**this text is bold italic**_
 ```
-**BTW**: the astute reader might notice that some cases of `*` for
-italic might have slipped through. We do ask you, however, to please
+**BTW**: the astute reader might notice that some cases of `*` for italic
+might have slipped through. We do ask you, however, to please
 observe this rule, as best you can.

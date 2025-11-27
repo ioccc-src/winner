@@ -32,7 +32,7 @@ app from time to time to view IOCCC mastodon updates.
 Copyright © 2025 Leonid A. Broukhis and Landon Curt Noll.
 
 All Rights Reserved.  Permission for personal, education or non-profit use is
-granted provided this this copyright and notice are included in its entirety
+granted provided this copyright and notice are included in its entirety
 and remains unaltered.  All other uses **MUST** receive prior permission in
 writing by [contacting the judges](../contact.html).
 
@@ -267,8 +267,8 @@ and
 </div>
 
 Entries requiring human interaction to be initially compiled are **NOT**
-permitted. However, see the guidelines.  Each entry **MUST** automated the
-its build process using `bash`, `gmake`, `gcc`, `clang`, under a
+permitted. However, see the guidelines.  Each entry **MUST** automate the
+build process using `bash`, `gmake`, `gcc`, `clang`, under a
 [SUS environment](https://pubs.opengroup.org/onlinepubs/9799919799/).
 
 Note references to `gmake` can be any GNU Make compatible tool.
@@ -277,7 +277,7 @@ See [Rule 15 - Building](rules.html#rule-15---building).
 
 
 <div id="rule10">
-Rule 10 - Privileges
+## Rule 10 - Privileges
 </div>
 
 Programs that require special privileges (setuid(2), setgid(2),
@@ -368,7 +368,7 @@ didn't previously win, then you are encouraged to mention this in your
 </div>
 
 The `Makefile` **MUST** adhere to GNU Makefile syntax.  Its recommended
-that you copy and rename the `Makefile.example` as template.  The primary
+that you copy and rename the `Makefile.example` as a template.  The primary
 target of the `Makefile` **MUST** be `prog` and the source file is `prog.c`.
 The C compiler and preprocessor **MUST** be invoked using `${CC}` and `${CPP}`
 macros respectively.
@@ -491,5 +491,5 @@ See also the [FAQ](../faq.html).
 Consider joining the [IOCCC Discord Server](https://discord.com/invite/Wa42Qujwnw)
 for discussions about The Rules, questions for the Judges, and `C` in general.
 
-Leonid A. Broukhis
+Leonid A. Broukhis  
 chongo (Landon Curt Noll) /\\cc/\\
