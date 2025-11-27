@@ -3,7 +3,7 @@
 
 ## Markdown Guidelines Version
 
-These [Markdown Guidelines](markdown.html) are version **28.4 2025-04-28**.
+These [Markdown Guidelines](markdown.html) are version **29.0 2025-11-26**.
 
 <div id="introduction"></div>
 
@@ -217,7 +217,7 @@ block as this makes it easier to detect when markdown code blocks are
            return foo;
        }
 ✔️ ```
-✔️ 
+✔️
 ✔️ C compilers cannot be given a -Wno-main-arg-errors flag.
 ````
 
