@@ -478,6 +478,13 @@ Because the <strong>IOCCC29</strong> guidelines was a substantial rewrite, only 
 </div>
 </div>
 </div>
+<div id="guideline2">
+
+</div>
+<div id="guideline-2---size">
+
+</div>
+<h1 id="guidelines-for-rule-2---size">Guidelines for <a href="rules.html#rule2-size">Rule 2 - Size</a></h1>
 <p class="leftbar">
 You should pay attention to our observations on
 <a href="../2024/index.html#code-size-and-rule-2">code size and Rule 2 remarks for IOCCC28</a>.
@@ -488,6 +495,9 @@ You should pay attention to our observations on
 <a href="rules.html#rule2b-net-size">Rule 2b Net Size</a> rules.</p>
 <p>To check your code against
 <a href="rules.html#rule2-size">Rule 2 - Size restrictions</a>, use the <code>iocccentry(1)</code> tool.
+Your submission must satisfy <strong>BOTH</strong> the maximum size <a href="rules.html#rule-2a-gross-size">Rule 2a Gross Size</a>
+<strong>AND</strong> the <a href="rules.html#rule-2b-net-size">Rule 2b Net Size</a>.</p>
+<p>To check your code against <a href="rules.html#rule-2---size">Rule 2 - Size</a>, use the <code>iocccentry(1)</code> tool.
 For example:</p>
 <pre><code>    iocccsize prog.c</code></pre>
 <p>The IOCCC size tool algorithm can be summarized as follows:</p>
@@ -509,7 +519,11 @@ judges</a>.</p>
 <p>There a much less need to <code>#define</code> C reserved words in an effort
 to get around the size limits of
 <a href="rules.html#rule2-size">Rule 2 - Size restrictions</a>
-because of the <code>iocccsize(1)</code> algorithm.</p>
+because of the <code>iocccsize(1)</code> algorithm.
+by the current version of <code>iocccsize(1)</code> is preferred by the <a href="../judges.html">IOCCC judges</a>.
+Make sure <code>iocccsize(1)</code> does not flag any issues with your <code>prog.c</code>.</p>
+<p>There a much less need to <code>#define</code> C reserved words in an effort to get
+around the size limits of <a href="rules.html#rule-2---size">Rule 2 - Size</a> because of the <code>iocccsize(1)</code> algorithm.</p>
 <p>Yes Virginia, <strong>the previous guideline sentence is an important hint</strong>!</p>
 <p>Jump to: <a href="#">top</a></p>
 <div id="guideline3">
@@ -517,6 +531,13 @@ because of the <code>iocccsize(1)</code> algorithm.</p>
 <h1 id="guidelines-for-rule-3---register-for-the-ioccc">Guidelines for <a href="rules.html#rule3-register">Rule 3 - Register for the IOCCC</a></h1>
 </div>
 </div>
+<div id="guideline3">
+
+</div>
+<div id="guideline-3---register">
+
+</div>
+<h1 id="guidelines-for-rule-3---register">Guidelines for <a href="rules.html#rule-3---register">Rule 3 - Register</a></h1>
 <p>See FAQ on “<a href="../faq.html#author_handle_faq">What is an author handle?</a>”.</p>
 <p>Jump to: <a href="#">top</a></p>
 <div id="guideline7">
@@ -524,6 +545,13 @@ because of the <code>iocccsize(1)</code> algorithm.</p>
 <h1 id="guidelines-for-rule-7---original-work">Guidelines for <a href="rules.html#rule7-original-work">Rule 7 - Original Work</a></h1>
 </div>
 </div>
+<div id="guideline7">
+
+</div>
+<div id="guideline-7---original-work">
+
+</div>
+<h1 id="guidelines-for-rule-7---original-work-1">Guidelines for <a href="rules.html#rule-7---original-work">Rule 7 - Original Work</a></h1>
 <p>While it is <strong>NOT</strong> required, you are allowed to use tools or services such as:</p>
 <ul>
 <li>Code generators</li>
@@ -547,11 +575,19 @@ describe how you used such tools</strong> in your <code>remarks.md</code> file.<
 <h1 id="guidelines-for-rule-11---legal-rule-abuse">Guidelines for <a href="rules.html#rule11-legal-rule-abuse">Rule 11 - Legal rule abuse</a></h1>
 </div>
 </div>
+<div id="guideline11">
+
+</div>
+<div id="guideline-11---abuse">
+
+</div>
 <p>We do realize that there are holes in the <a href="rules.html">IOCCC rules</a>, and invite
 submitters to attempt to apply creative rule interpretation. A rule abuse though, even
 if not rewarded, may result in a subsequent rule change for future contests.</p>
 <p>We sometime award ‘<strong>Best abuse of the rules</strong>’ or ‘<strong>Worst abuse of the rules</strong>’,
 or some variation, to a submission that creatively attempts to exploit a holes in the
+We sometimes award ‘<strong>Best abuse of the rules</strong>’ or ‘<strong>Worst abuse of the rules</strong>’,
+or some variation to a submission that creatively attempts to exploit a holes in the
 <a href="rules.html">IOCCC rules</a>.</p>
 <p>When we do need to plug a hole in the <a href="rules.html">IOCCC rules</a>
 or <a href="guidelines.html">IOCCC guidelines</a>, we will attempt to use a very small plug,
@@ -560,11 +596,14 @@ if not smaller.</p>
 <p>Legal rule abuse may involve, but is not limited to, doing things that are
 technically allowed by the <a href="rules.html">IOCCC rules</a> and yet do not fit the spirit of what
 we intended to be submitted.</p>
-<p>Legal abuse of the <a href="rules.html">IOCCC rules</a> is <strong>NOT</strong> an invitation to violate
-the <a href="rules.html">IOCCC rules</a> (especailly <a href="./rules.html#rule-17---packaging">Rule 17 -
-Packaging</a> ). A submission that violates the
-<a href="rules.html">rules</a> in the opinion of the <a href="../judges.html">IOCCC judges</a>,
-<strong>WILL</strong> be disqualified. <strong><em>RULE ABUSE CARRIES A CERTAIN LEVEL OF RISK!</em></strong></p>
+<p>Legal abuse of the <a href="rules.html">IOCCC rules</a> is <strong>NOT</strong> an invitation to violate the
+<a href="rules.html">IOCCC rules</a> (especailly <a href="./rules.html#rule-17---packaging">Rule 17 - Packaging</a> ). A submission that violates the <a href="rules.html">rules</a> in the
+opinion of the <a href="../judges.html">IOCCC judges</a>, <strong>WILL</strong> be
+disqualified. <strong><em>RULE ABUSE CARRIES A CERTAIN LEVEL OF RISK!</em></strong> If you
+have a submission that might otherwise be interesting, you might want to
+submit two versions; one that does not abuse the <a href="rules.html">IOCCC rules</a> and one that
+does, making sure to note in the one that does not abuse the rules that this is
+another version, so that the judges do not assume you uploaded it by mistake.</p>
 <p>If you intend to abuse the <a href="rules.html">IOCCC rules</a>,
 indicate so in your <code>remarks.md</code> file. You <strong>MUST</strong> try to justify, plead, beg,
 why you consider your rule abuse to be allowed under the
@@ -581,6 +620,9 @@ mistake.</p>
 <a href="rules.html#rule-2a-gross-size">Rule 2a - Gross Size</a>
 and/or about
 <a href="rules.html#rule-2b-net-size">Rule 2b - Net Size</a>
+<a href="rules.html#rule-2a-gross-size">Rule 2a Gross Size</a>
+or about
+<a href="rules.html#rule-2b-net-size">Rule 2b Net Size</a>
 or any other
 rule and submit a submission anyway, you <strong>MUST</strong> try to justify why the IOCCC
 <a href="../judges.html">IOCCC judges</a> should not reject your submission due to a rule
@@ -612,6 +654,12 @@ This is one of the reasons why the <a href="rules.html">IOCCC rules</a> and
 <h1 id="guidelines-for-rule-15---gnu-makefile">Guidelines for <a href="rules.html#rule15-gnu-makefile">Rule 15 - GNU Makefile</a></h1>
 </div>
 </div>
+<div id="guideline15">
+
+</div>
+<div id="guideline-15---building">
+
+</div>
 <p>You may use <code>git,</code> or services such as <a href="https://www.github.com">GitHub</a>
 to develop and maintain your submission. However, we <strong>DISLIKE</strong>
 submissions that <strong>require</strong> such services in order to build/compile your submission.</p>
@@ -634,6 +682,13 @@ course.</p>
 </div>
 </div>
 </div>
+<div id="guideline17">
+
+</div>
+<div id="guideline-17---packaging">
+
+</div>
+<h1 id="guidelines-for-rule-17---packaging">Guidelines for <a href="rules.html#rule-17---packaging">Rule 17 - Packaging</a></h1>
 <p>We <strong>STRONGLY</strong> recommend you <strong>do</strong> install the most recent release of
 <a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry toolkit</a>
 As use of using older versions of the mkiocccentry toolkit to are <strong>HIGHLY LIKELY</strong> to be <strong>REJECTED</strong>!</p>
@@ -653,6 +708,9 @@ The non-extra files (<code>prog.c</code>, <code>prog.alt.c</code>,
 are considered <em>free files</em>, and to not count towards the
 <a href="rules.html#rule17-mkiocccentry">Rule 17 - Use mkiocccentry</a>
 limit of <strong>31</strong> <em>extra files</em>.
+These files (<code>prog.c</code>, <code>prog.alt.c</code>, <code>try.sh</code>, <code>try.alt.sh</code>, <code>remarks.md</code>,
+<code>Makefile</code>, <code>.auth.json</code> and <code>.info.json</code>) do <em>not</em> count towards the
+<a href="rules.html#rule-17---packaging">Rule 17 - Packaging</a> limit of <strong>31</strong> <em>extra files</em>.
 </p>
 <p>If you use an optional filename for something other than their intended use
 in order to get past the file limit, we will consider that an abuse of rules.</p>
@@ -758,7 +816,9 @@ to proceed with a default, however make sure the default is the <strong>CORRECT<
 answer.</p>
 <p>The <code>mkiocccentry(1)</code> tool will use code from <code>iocccsize(1)</code> which detects a number of
 issues (such as <a href="rules.html#rule2-size">Rule 2 - Size</a>) that you may ignore,
-however ignoring such issues <strong>comes with a significant level of risk!</strong></p>
+however ignoring such issues <strong>comes with a significant level of risk!</strong>
+issues (such as <a href="rules.html#rule-2---size">Rule 2 - Size</a>) that you may ignore,
+however ignoring such issues <strong>comes with a significant level of risk</strong> as noted else where.</p>
 <p>Once the tarball is packaged it will
 run <code>txzchk(1)</code>, which will also run <code>fnamchk(1)</code>, as part of its algorithm.</p>
 <p>The use of <code>mkiocccentry -W ....</code> is <strong>highly discouraged</strong> as this may ignore
