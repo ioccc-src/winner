@@ -39,7 +39,7 @@ This is FAQ version **29.02 2025-11-29**.
 - **Q 2.1**: <a class="normal" href="#feedback">How can I comment or make a suggestion on IOCCC rules, guidelines and tools?</a>
 - **Q 2.2**: <a class="normal" href="#warnings">Are there any compiler warnings that I should not worry about in my submissions?</a>
 - **Q 2.3**: <a class="normal" href="#frequent-themes">What types of entries have been frequently submitted to the IOCCC?</a>
-- **Q 2.4**: <a class="normal" href="#rule_2_broken">How did an entry win the IOCCC that breaks Rule 2 - Size?</a>
+- **Q 2.4**: <a class="normal" href="#rule_2_broken">How did an entry win the IOCCC that breaks Rule 2 - Size Limit?</a>
 - **Q 2.5**: <a class="normal" href="#submissions">How many submissions do the judges receive for a given IOCCC?</a>
 - **Q 2.6**: <a class="normal" href="#judging_time">How much time does it take to judge the contest?</a>
 - **Q 2.7**: <a class="normal" href="#judging_rounds">How many judging rounds do you have?</a>
@@ -133,7 +133,6 @@ This is FAQ version **29.02 2025-11-29**.
 - **Q 10.4**: <a class="normal" href="#terms"> What is the current meaning of the IOCCC terms Author, Entry, and Submission?</a>
 - **Q 10.5**: <a class="normal" href="#licence">Am I allowed to use IOCCC content?</a>
 - **Q 10.6**: <a class="normal" href="#try_mastodon">What is Mastodon and why does the IOCCC use it?</a>
-    - **Q 10.6.1**: <a class="normal" href="#mastodon_notifications">How can I get push notifications when the judges post something on mastodon?</a>
 - **Q 10.7**: <a class="normal" href="#tabstops">How do I set certain tabstops for viewing source code in vi&lpar;m&rpar;?</a>
 - **Q 10.8**: <a class="normal" href="#menus">How do the menus on the website work and what can I do if they don't work?</a>
 - **Q 10.9**: <a class="normal" href="#author-information">How do I find more information about a winning author of an entry?</a>
@@ -646,7 +645,8 @@ itself.
 
 Do remember that if your submission requires different filenames, then you
 **MUST** make a **COPY** of them in your `Makefile`. See also
-[Rule 5 - Integrity](next/rules.html#rule-5---integrity).
+[Rule 5 - Do NOT modify submitted files or filenames or parent
+directories](next/rules.html#rule5-modifying-files).
 
 
 Jump to: [top](#)
@@ -1104,10 +1104,11 @@ modes, it also verifies them after the fact and if they are not correct it is an
 
 If you do need different permissions, then see the
 FAQ on "[file permissions](#file_perms)". Also keep in mind
-[Rule 4 - Files](next/rules.html#rule-4---files),
-[Rule 5 - Integrity](next/rules.html#rule-5---integrity),
+[Rule 4 - Required files](next/rules.html#rule4-required-files),
+[Rule 5 - Do NOT modify submitted files or filenames or parent
+directories](next/rules.html#rule5-modifying-files),
 and
-[Rule 16 - Anonymous](next/rules.html#rule-16---anonymous).
+[Rule 16 - Anonymous judging](next/rules.html#rule16-anonymous-judging).
 
 The `txzchk(1)` tool will also verify file/directory permissions (and many other
 things) for you, and so will `chksubmit(1)` (along with other checks on files and
@@ -1122,7 +1123,7 @@ The tarball filename **MUST** pass `fnamchk(1)`; the tool `txzchk(1)`
 will run `fnamchk(1)` as part of its algorithm. If you use `mkiocccentry(1)`
 there should be no problem but if you were to package things manually it is
 possible there could be a problem and this poses a big risk of violating
-[Rule 4 - Files](next/rules.html#rule-4---files)
+[Rule 4 - Required files](next/rules.html#rule4-required-files)
 or
 [Rule 17 - Use mkiocccentry](next/rules.html#rule17).
 
@@ -1134,7 +1135,7 @@ discrepancy as an error and exit with non-zero.
 
 These checks **MUST PASS**. If they do not you stand a significant chance of
 having your submission rejected for violating
-[Rule 4 - Files](next/rules.html#rule-4---files)
+[Rule 4 - Required files](next/rules.html#rule4-required-files)
 or
 [Rule 17 - Use mkiocccentry](next/rules.html#rule17).
 
@@ -1177,9 +1178,9 @@ The `mkiocccentry(1)` tool uses the v7 format. For instance you might try:
 <hr style="width:50%;text-align:left;margin-left:0">
 
 **IMPORTANT**: where
-[Rule 4 - Files](next/rules.html#rule-4---files),
+[Rule 4 - Required files](next/rules.html#rule4-required-files),
 and
-[Rule 17 - Use mkiocccentry](next/rules.html#rule17-mkiocccentry).
+[Rule 17 - Use mkiocccentry](next/rules.html#rule17-mkiocccentry)
 and the tools from the latest
 release of the [mkiocccentry repo](https://github.com/ioccc-src/mkiocccentry)
 conflict, the [IOCCC judges](judges.html) will use their best judgment which
@@ -1220,7 +1221,7 @@ for help here and also read our
 FAQ on "[mkiocccentry repo bugs](#mkiocccentry_bugs)".
 
 At the risk of stating the obvious: submissions that violate
-[Rule 4 - Files](next/rules.html#rule-4---files),
+[Rule 4 - Required files](next/rules.html#rule4-required-files),
 or
 [Rule 17 - Use mkiocccentry](next/rules.html#rule17-mkiocccentry)
 **WILL BE REJECTED**, so **BE SURE** to use the latest release of the
@@ -1911,7 +1912,7 @@ Jump to: [top](#)
 
 <div id="rule_2_broken">
 <div id="rule_breaking_entry">
-### Q 2.4: How did an entry win the IOCCC that breaks Rule 2 - Size?
+### Q 2.4: How did an entry win the IOCCC that breaks Rule 2 - Size restrictions?
 </div>
 </div>
 
@@ -2210,7 +2211,7 @@ two JSON files, `.auth.json` and `.info.json` as well as the `prog.c`,
 `.info.json` manifest. (Okay there is an option to skip files but this is for
 the judges **ONLY**; use of this option to validate your submission puts you at
 a great risk of violating
-[Rule 4 - Files](next/rules.html#rule-4---files),
+[Rule 4 - Required files](next/rules.html#rule4-required-files),
 or
 [Rule 17 - Use mkiocccentry](next/rules.html#rule17-mkiocccentry)!).
 
@@ -2239,7 +2240,7 @@ FAQ on "[.auth.json](#auth_json)"
 and the
 FAQ on "[.info.json](#info_json)"
 as well as
-[Rule 4 - Files](next/rules.html#rule-4---files),
+[Rule 4 - Required files](next/rules.html#rule4-required-files),
 and
 [Rule 17 - Use mkiocccentry](next/rules.html#rule17-mkiocccentry)
 for more information.
@@ -2517,7 +2518,7 @@ At the risk of stating the obvious, if your `.auth.json` file is invalid JSON or
 is reported invalid by `chksubmit(1)`, or if your submission directory is
 reported invalid by `chksubmit(1)`, your submission will almost certainly be
 rejected for violating the [Rules](next/rules.html) and in particular
-[Rule 4 - Files](next/rules.html#rule-4---files),
+[Rule 4 - Required files](next/rules.html#rule4-required-files),
 and
 [Rule 17 - Use mkiocccentry](next/rules.html#rule17-mkiocccentry).
 
@@ -2529,7 +2530,7 @@ out of range (see above for list). Two more examples would be if a field is
 missing or if an unknown filed is in the file. In these cases (and any others
 that must be established as valid by `chksubmit(1)`) your submission would be
 rejected for violating
-[Rule 4 - Files](next/rules.html#rule-4---files),
+[Rule 4 - Required files](next/rules.html#rule4-required-files),
 and
 [Rule 17 - Use mkiocccentry](next/rules.html#rule17-mkiocccentry)
 and in particular
@@ -2706,17 +2707,17 @@ In order of the file's contents we describe each required field, below:
     tarball, this will be flaggd.
 
 - `rule_2a_size` (number)
-    * The size calculated of [Rule 2a Gross Size](next/rules.html#rule-2a-gross-size).
+    * The size calculated of [Rule 2a - Gross Size](next/rules.html#rule2a-gross-size).
 
     **IMPORTANT:** if this violates [Rule 2a](next/rules.html#rule2a) you stand a great
     chance of having your submission rejected for violating the
     [Rules](next/rules.html)!
 
 - `rule_2b_size` (number)
-    * The size calculated of [Rule 2b Next Size](next/rules.html#rule-2b-net-size).
+    * The size calculated of [Rule 2b - Net Size](next/rules.html#rule2b-net-size).
 
     **IMPORTANT:** if this violates
-    [Rule 2b Next Size](next/rules.html#rule-2b-net-size)
+    [Rule 2b Net Size](next/rules.html#rule2b-net-size)
     you stand a great
     chance of having your submission rejected for violating the
     [Rules](next/rules.html)!
@@ -2726,11 +2727,11 @@ In order of the file's contents we describe each required field, below:
 
 - `rule_2a_override` (boolean)
     * `true` if user overrides warning of
-    [Rule 2a Gross Size](next/rules.html#rule-2a-gross-size)
+    [Rule 2a - Gross Size](next/rules.html#rule2a-gross-size)
     violation, else `false`.
 
     **IMPORTANT:** if the
-    [Rule 2a Gross Size](next/rules.html#rule-2a-gross-size)
+    [Rule 2a - Gross Size](next/rules.html#rule2a-gross-size)
     calculated size is **NOT**
     violated but this is `true` then you stand a good chance of having your
     submission rejected for violating
@@ -2738,38 +2739,25 @@ In order of the file's contents we describe each required field, below:
 
 - `rule_2a_mismatch` (boolean)
     * `true` if
-    [Rule 2a Gross Size](next/rules.html#rule-2a-gross-size)
+    [Rule 2a - Gross Size](next/rules.html#rule2a-gross-size)
     calculated size is not the
     same as the file size.
 
 - `rule_2b_override` (boolean)
     * `true` if user overrides warning of
-    [Rule 2b Next Size](next/rules.html#rule-2b-net-size)
+    [Rule 2b - Net Size](next/rules.html#rule2b-net-size)
     violation, else `false`.
 
     **IMPORTANT:** if the
-    [Rule 2b Next Size](next/rules.html#rule-2b-net-size)
+    [Rule 2b - Net Size](next/rules.html#rule2b-net-size)
     calculated size is **NOT**
     violated but this is `true` then you stand a good chance of having your
     submission rejected for violating
     [Rule 17 - Use mkiocccentry](next/rules.html#rule17-mkiocccentry).
 
-- `highbit_warning` (boolean)
-    * `true` if `iocccsize` detects a high bit (unescaped octets with the high
-    bit set - octet value >= 128); see
-    [Rule 12 - UTF-8](next/rules.html#rule-12---utf-8),
-    else `false`.
-
-- `nul_warning` (boolean)
-    * `true` if `iocccsize` detects a NUL character in the `prog.c`, else
-    `false`.
-
 - `trigraph_warning` (boolean)
     * `true` if `iocccsize` detects an unknown or invalid trigraph in
     `prog.c`, else `false`.
-
-- `wordbuf_warning` (boolean)
-    * This is ignored and will be removed for IOCCC29 and beyond.
 
 - `ungetc_warning` (boolean)
     * `true` if `prog.c` triggered an `ungetc(3)` error, else `false`.
@@ -7432,29 +7420,6 @@ follow posts something so you will have to check the IOCCC feed manually.
 **HINT to mastodon users**: You may wish to refresh the [@IOCCC
 mastodon feed](https://fosstodon.org/@ioccc) page and/or mastodon
 app from time to time to view IOCCC mastodon updates.
-
-
-Jump to: [top](#)
-
-
-<div id="mastodon_notifications">
-### Q 10.6.1: How can I get push notifications when the judges post something on mastodon?
-</div>
-
-To do this you need to go to the [IOCCC mastodon
-account](https://fosstodon.org/@ioccc) with a computer (it is unclear how to do
-this with a mobile device, if it is even possible) and then you should see a
-bell icon. Make sure it's activated. If you mouse over it when it's not enabled
-it should look something like this, assuming of course we follow you! :-) (if
-not the message about following each other won't show up):
-
-<img src="png/mastodon-notifications.png"
- alt="screenshot of Mastodon push notifications"
- width=912 height=556>
-
-It is not yet clear if this only works on desktop/computers or mobile devices
-too as it was only just discovered (31 July 2025) but whatever the case we
-suggest you do it.
 
 
 Jump to: [top](#)

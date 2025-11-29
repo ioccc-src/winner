@@ -493,7 +493,7 @@
 <li><strong>Q 2.1</strong>: <a class="normal" href="#feedback">How can I comment or make a suggestion on IOCCC rules, guidelines and tools?</a></li>
 <li><strong>Q 2.2</strong>: <a class="normal" href="#warnings">Are there any compiler warnings that I should not worry about in my submissions?</a></li>
 <li><strong>Q 2.3</strong>: <a class="normal" href="#frequent-themes">What types of entries have been frequently submitted to the IOCCC?</a></li>
-<li><strong>Q 2.4</strong>: <a class="normal" href="#rule_2_broken">How did an entry win the IOCCC that breaks Rule 2 - Size?</a></li>
+<li><strong>Q 2.4</strong>: <a class="normal" href="#rule_2_broken">How did an entry win the IOCCC that breaks Rule 2 - Size Limit?</a></li>
 <li><strong>Q 2.5</strong>: <a class="normal" href="#submissions">How many submissions do the judges receive for a given IOCCC?</a></li>
 <li><strong>Q 2.6</strong>: <a class="normal" href="#judging_time">How much time does it take to judge the contest?</a></li>
 <li><strong>Q 2.7</strong>: <a class="normal" href="#judging_rounds">How many judging rounds do you have?</a></li>
@@ -590,10 +590,7 @@
 <li><strong>Q 10.3</strong>: <a class="normal" href="#dot_files"> What is the purpose of the <code>.top</code>, <code>.allyear</code>, <code>.year</code> and <code>.path</code> files?</a></li>
 <li><strong>Q 10.4</strong>: <a class="normal" href="#terms"> What is the current meaning of the IOCCC terms Author, Entry, and Submission?</a></li>
 <li><strong>Q 10.5</strong>: <a class="normal" href="#licence">Am I allowed to use IOCCC content?</a></li>
-<li><strong>Q 10.6</strong>: <a class="normal" href="#try_mastodon">What is Mastodon and why does the IOCCC use it?</a>
-<ul>
-<li><strong>Q 10.6.1</strong>: <a class="normal" href="#mastodon_notifications">How can I get push notifications when the judges post something on mastodon?</a></li>
-</ul></li>
+<li><strong>Q 10.6</strong>: <a class="normal" href="#try_mastodon">What is Mastodon and why does the IOCCC use it?</a></li>
 <li><strong>Q 10.7</strong>: <a class="normal" href="#tabstops">How do I set certain tabstops for viewing source code in vi(m)?</a></li>
 <li><strong>Q 10.8</strong>: <a class="normal" href="#menus">How do the menus on the website work and what can I do if they don’t work?</a></li>
 <li><strong>Q 10.9</strong>: <a class="normal" href="#author-information">How do I find more information about a winning author of an entry?</a></li>
@@ -986,7 +983,8 @@ and
 itself.</p>
 <p>Do remember that if your submission requires different filenames, then you
 <strong>MUST</strong> make a <strong>COPY</strong> of them in your <code>Makefile</code>. See also
-<a href="next/rules.html#rule-5---integrity">Rule 5 - Integrity</a>.</p>
+<a href="next/rules.html#rule5-modifying-files">Rule 5 - Do NOT modify submitted files or filenames or parent
+directories</a>.</p>
 <p>Jump to: <a href="#">top</a></p>
 <hr style="width:50%;text-align:left;margin-left:0">
 <hr style="width:50%;text-align:left;margin-left:0">
@@ -1328,10 +1326,11 @@ modes, it also verifies them after the fact and if they are not correct it is an
 <strong>error</strong>.</p>
 <p>If you do need different permissions, then see the
 FAQ on “<a href="#file_perms">file permissions</a>”. Also keep in mind
-<a href="next/rules.html#rule-4---files">Rule 4 - Files</a>,
-<a href="next/rules.html#rule-5---integrity">Rule 5 - Integrity</a>,
+<a href="next/rules.html#rule4-required-files">Rule 4 - Required files</a>,
+<a href="next/rules.html#rule5-modifying-files">Rule 5 - Do NOT modify submitted files or filenames or parent
+directories</a>,
 and
-<a href="next/rules.html#rule-16---anonymous">Rule 16 - Anonymous</a>.</p>
+<a href="next/rules.html#rule16-anonymous-judging">Rule 16 - Anonymous judging</a>.</p>
 <p>The <code>txzchk(1)</code> tool will also verify file/directory permissions (and many other
 things) for you, and so will <code>chksubmit(1)</code> (along with other checks on files and
 directories in your submission directory, including the two required JSON files,
@@ -1344,7 +1343,7 @@ page</a>.</p>
 will run <code>fnamchk(1)</code> as part of its algorithm. If you use <code>mkiocccentry(1)</code>
 there should be no problem but if you were to package things manually it is
 possible there could be a problem and this poses a big risk of violating
-<a href="next/rules.html#rule-4---files">Rule 4 - Files</a>
+<a href="next/rules.html#rule4-required-files">Rule 4 - Required files</a>
 or
 <a href="next/rules.html#rule17">Rule 17 - Use mkiocccentry</a>.</p>
 <p>The <code>fnamchk(1)</code>, which <code>txzchk(1)</code> executes, will verify that the
@@ -1353,7 +1352,7 @@ mismatch in what is in the tarball and the name, <code>txzchk(1)</code> will fla
 discrepancy as an error and exit with non-zero.</p>
 <p>These checks <strong>MUST PASS</strong>. If they do not you stand a significant chance of
 having your submission rejected for violating
-<a href="next/rules.html#rule-4---files">Rule 4 - Files</a>
+<a href="next/rules.html#rule4-required-files">Rule 4 - Required files</a>
 or
 <a href="next/rules.html#rule17">Rule 17 - Use mkiocccentry</a>.</p>
 <div id="max-files">
@@ -1385,9 +1384,9 @@ The <code>mkiocccentry(1)</code> tool uses the v7 format. For instance you might
 <pre><code>    tar --format=v7 -cJf foo.txz directory</code></pre>
 <hr style="width:50%;text-align:left;margin-left:0">
 <p><strong>IMPORTANT</strong>: where
-<a href="next/rules.html#rule-4---files">Rule 4 - Files</a>,
+<a href="next/rules.html#rule4-required-files">Rule 4 - Required files</a>,
 and
-<a href="next/rules.html#rule17-mkiocccentry">Rule 17 - Use mkiocccentry</a>.
+<a href="next/rules.html#rule17-mkiocccentry">Rule 17 - Use mkiocccentry</a>
 and the tools from the latest
 release of the <a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry repo</a>
 conflict, the <a href="judges.html">IOCCC judges</a> will use their best judgment which
@@ -1422,7 +1421,7 @@ page</a>,
 for help here and also read our
 FAQ on “<a href="#mkiocccentry_bugs">mkiocccentry repo bugs</a>”.</p>
 <p>At the risk of stating the obvious: submissions that violate
-<a href="next/rules.html#rule-4---files">Rule 4 - Files</a>,
+<a href="next/rules.html#rule4-required-files">Rule 4 - Required files</a>,
 or
 <a href="next/rules.html#rule17-mkiocccentry">Rule 17 - Use mkiocccentry</a>
 <strong>WILL BE REJECTED</strong>, so <strong>BE SURE</strong> to use the latest release of the
@@ -1903,7 +1902,7 @@ of the same theme.</p>
 <p>Jump to: <a href="#">top</a></p>
 <div id="rule_2_broken">
 <div id="rule_breaking_entry">
-<h3 id="q-2.4-how-did-an-entry-win-the-ioccc-that-breaks-rule-2---size">Q 2.4: How did an entry win the IOCCC that breaks Rule 2 - Size?</h3>
+<h3 id="q-2.4-how-did-an-entry-win-the-ioccc-that-breaks-rule-2---size-restrictions">Q 2.4: How did an entry win the IOCCC that breaks Rule 2 - Size restrictions?</h3>
 </div>
 </div>
 <p>As entries have been fixed it is entirely possible that some of the entries no
@@ -2120,7 +2119,7 @@ two JSON files, <code>.auth.json</code> and <code>.info.json</code> as well as t
 <code>.info.json</code> manifest. (Okay there is an option to skip files but this is for
 the judges <strong>ONLY</strong>; use of this option to validate your submission puts you at
 a great risk of violating
-<a href="next/rules.html#rule-4---files">Rule 4 - Files</a>,
+<a href="next/rules.html#rule4-required-files">Rule 4 - Required files</a>,
 or
 <a href="next/rules.html#rule17-mkiocccentry">Rule 17 - Use mkiocccentry</a>!).</p>
 <p>As an example, if your submission directory is
@@ -2142,7 +2141,7 @@ FAQ on “<a href="#auth_json">.auth.json</a>”
 and the
 FAQ on “<a href="#info_json">.info.json</a>”
 as well as
-<a href="next/rules.html#rule-4---files">Rule 4 - Files</a>,
+<a href="next/rules.html#rule4-required-files">Rule 4 - Required files</a>,
 and
 <a href="next/rules.html#rule17-mkiocccentry">Rule 17 - Use mkiocccentry</a>
 for more information.</p>
@@ -2424,7 +2423,7 @@ will use it on the submission directory as part of the judging process.</p>
 is reported invalid by <code>chksubmit(1)</code>, or if your submission directory is
 reported invalid by <code>chksubmit(1)</code>, your submission will almost certainly be
 rejected for violating the <a href="next/rules.html">Rules</a> and in particular
-<a href="next/rules.html#rule-4---files">Rule 4 - Files</a>,
+<a href="next/rules.html#rule4-required-files">Rule 4 - Required files</a>,
 and
 <a href="next/rules.html#rule17-mkiocccentry">Rule 17 - Use mkiocccentry</a>.</p>
 <p>An obvious example where <code>chksubmit(1)</code> would fail to validate <code>.auth.json</code> is if
@@ -2435,7 +2434,7 @@ out of range (see above for list). Two more examples would be if a field is
 missing or if an unknown filed is in the file. In these cases (and any others
 that must be established as valid by <code>chksubmit(1)</code>) your submission would be
 rejected for violating
-<a href="next/rules.html#rule-4---files">Rule 4 - Files</a>,
+<a href="next/rules.html#rule4-required-files">Rule 4 - Required files</a>,
 and
 <a href="next/rules.html#rule17-mkiocccentry">Rule 17 - Use mkiocccentry</a>
 and in particular
@@ -2608,17 +2607,17 @@ validate your filename, or if you have the wrong directory name in the
 tarball, this will be flaggd.</p></li>
 <li><p><code>rule_2a_size</code> (number)</p>
 <ul>
-<li>The size calculated of <a href="next/rules.html#rule-2a-gross-size">Rule 2a Gross Size</a>.</li>
+<li>The size calculated of <a href="next/rules.html#rule2a-gross-size">Rule 2a - Gross Size</a>.</li>
 </ul>
 <p><strong>IMPORTANT:</strong> if this violates <a href="next/rules.html#rule2a">Rule 2a</a> you stand a great
 chance of having your submission rejected for violating the
 <a href="next/rules.html">Rules</a>!</p></li>
 <li><p><code>rule_2b_size</code> (number)</p>
 <ul>
-<li>The size calculated of <a href="next/rules.html#rule-2b-net-size">Rule 2b Next Size</a>.</li>
+<li>The size calculated of <a href="next/rules.html#rule2b-net-size">Rule 2b - Net Size</a>.</li>
 </ul>
 <p><strong>IMPORTANT:</strong> if this violates
-<a href="next/rules.html#rule-2b-net-size">Rule 2b Next Size</a>
+<a href="next/rules.html#rule2b-net-size">Rule 2b Net Size</a>
 you stand a great
 chance of having your submission rejected for violating the
 <a href="next/rules.html">Rules</a>!</p></li>
@@ -2629,11 +2628,11 @@ chance of having your submission rejected for violating the
 <li><p><code>rule_2a_override</code> (boolean)</p>
 <ul>
 <li><code>true</code> if user overrides warning of
-<a href="next/rules.html#rule-2a-gross-size">Rule 2a Gross Size</a>
+<a href="next/rules.html#rule2a-gross-size">Rule 2a - Gross Size</a>
 violation, else <code>false</code>.</li>
 </ul>
 <p><strong>IMPORTANT:</strong> if the
-<a href="next/rules.html#rule-2a-gross-size">Rule 2a Gross Size</a>
+<a href="next/rules.html#rule2a-gross-size">Rule 2a - Gross Size</a>
 calculated size is <strong>NOT</strong>
 violated but this is <code>true</code> then you stand a good chance of having your
 submission rejected for violating
@@ -2641,42 +2640,26 @@ submission rejected for violating
 <li><p><code>rule_2a_mismatch</code> (boolean)</p>
 <ul>
 <li><code>true</code> if
-<a href="next/rules.html#rule-2a-gross-size">Rule 2a Gross Size</a>
+<a href="next/rules.html#rule2a-gross-size">Rule 2a - Gross Size</a>
 calculated size is not the
 same as the file size.</li>
 </ul></li>
 <li><p><code>rule_2b_override</code> (boolean)</p>
 <ul>
 <li><code>true</code> if user overrides warning of
-<a href="next/rules.html#rule-2b-net-size">Rule 2b Next Size</a>
+<a href="next/rules.html#rule2b-net-size">Rule 2b - Net Size</a>
 violation, else <code>false</code>.</li>
 </ul>
 <p><strong>IMPORTANT:</strong> if the
-<a href="next/rules.html#rule-2b-net-size">Rule 2b Next Size</a>
+<a href="next/rules.html#rule2b-net-size">Rule 2b - Net Size</a>
 calculated size is <strong>NOT</strong>
 violated but this is <code>true</code> then you stand a good chance of having your
 submission rejected for violating
 <a href="next/rules.html#rule17-mkiocccentry">Rule 17 - Use mkiocccentry</a>.</p></li>
-<li><p><code>highbit_warning</code> (boolean)</p>
-<ul>
-<li><code>true</code> if <code>iocccsize</code> detects a high bit (unescaped octets with the high
-bit set - octet value &gt;= 128); see
-<a href="next/rules.html#rule-12---utf-8">Rule 12 - UTF-8</a>,
-else <code>false</code>.</li>
-</ul></li>
-<li><p><code>nul_warning</code> (boolean)</p>
-<ul>
-<li><code>true</code> if <code>iocccsize</code> detects a NUL character in the <code>prog.c</code>, else
-<code>false</code>.</li>
-</ul></li>
 <li><p><code>trigraph_warning</code> (boolean)</p>
 <ul>
 <li><code>true</code> if <code>iocccsize</code> detects an unknown or invalid trigraph in
 <code>prog.c</code>, else <code>false</code>.</li>
-</ul></li>
-<li><p><code>wordbuf_warning</code> (boolean)</p>
-<ul>
-<li>This is ignored and will be removed for IOCCC29 and beyond.</li>
 </ul></li>
 <li><p><code>ungetc_warning</code> (boolean)</p>
 <ul>
@@ -5857,22 +5840,6 @@ follow posts something so you will have to check the IOCCC feed manually.</p>
 <p><strong>HINT to mastodon users</strong>: You may wish to refresh the <a href="https://fosstodon.org/@ioccc"><span class="citation" data-cites="IOCCC">@IOCCC</span>
 mastodon feed</a> page and/or mastodon
 app from time to time to view IOCCC mastodon updates.</p>
-<p>Jump to: <a href="#">top</a></p>
-<div id="mastodon_notifications">
-<h3 id="q-10.6.1-how-can-i-get-push-notifications-when-the-judges-post-something-on-mastodon">Q 10.6.1: How can I get push notifications when the judges post something on mastodon?</h3>
-</div>
-<p>To do this you need to go to the <a href="https://fosstodon.org/@ioccc">IOCCC mastodon
-account</a> with a computer (it is unclear how to do
-this with a mobile device, if it is even possible) and then you should see a
-bell icon. Make sure it’s activated. If you mouse over it when it’s not enabled
-it should look something like this, assuming of course we follow you! :-) (if
-not the message about following each other won’t show up):</p>
-<p><img src="png/mastodon-notifications.png"
- alt="screenshot of Mastodon push notifications"
- width=912 height=556></p>
-<p>It is not yet clear if this only works on desktop/computers or mobile devices
-too as it was only just discovered (31 July 2025) but whatever the case we
-suggest you do it.</p>
 <p>Jump to: <a href="#">top</a></p>
 <div id="tabstops">
 <h3 id="q-10.7-how-do-i-set-certain-tabstops-for-viewing-source-code-in-vim">Q 10.7: How do I set certain tabstops for viewing source code in vi(m)?</h3>

@@ -10,9 +10,9 @@ These rules are a **TENTATIVE proposal** for the next IOCCC
 and are **likely be to be updated** before the next IOCCC.
 
 See our
-FAQ on "[rules, guidelines and tools feedback](../faq.html#feedback)"
+FAQ on "[rules, guidelines, tools feedback](../faq.html#feedback)"
 as well as our
-FAQ on "[asking questions](../faq.html#question)"
+FAQ on "[about asking questions](../faq.html#question)"
 about these rules. You might also find the FAQ in general useful, especially the
 FAQ on "[how to enter the IOCCC](../quick-start.html#enter)".
 
@@ -78,7 +78,9 @@ Your submission **MUST** be a C program that does NOT `#include` data files.
 <div id="rule2">
 <div id="rule2-size-restrictions">
 <div id="rule2-size">
+<div id="rule-2---size">
 ## Rule 2 - Size restrictions
+</div>
 </div>
 </div>
 </div>
@@ -98,7 +100,9 @@ See the [Guidelines for Rule 2 - Size restrictions](guidelines.html#guideline-2-
 
 <div id="rule2a">
 <div id="rule2a-gross-size">
+<div id="rule-2a-gross-size">
 ### Rule 2a - Gross Size
+</div>
 </div>
 </div>
 
@@ -113,7 +117,9 @@ See [Entering the IOCCC: the bare minimum you need to know](../quick-start.html#
 
 <div id="rule2b">
 <div id="rule2b-net-size">
+<div id="rule-2b-net-size">
 ### Rule 2b - Net Size
+</div>
 </div>
 </div>
 
@@ -234,7 +240,8 @@ FAQ on "[What permissions may my files be and what if I need different permissio
 
 See the [Guidelines on the mkiocccentry toolkit](guidelines.html#mkiocccentry_toolkit).
 
-See the [Guidelines on the Makefile](guidelines.html#makefile).
+See the
+FAQ on "[What are the detailed recommendations for a submission Makefile?](../faq.html#makefile_details)".
 
 
 <div id="rule5">
@@ -321,9 +328,9 @@ Do **NOT** register more than one account!
 
 See
 [Rule 3 - Registering for the IOCCC](rules.html#rule3-register),
-[Rule 15 - GNU Makefile compatibility](rules.html#rule15-gnu-makefile),
+[Rule 15 - GNU Makefile](rules.html#rule15-gnu-makefile),
 and
-[Rule 17 - Use mkiocccentry](rules.html#rule-17-mkiocccentry).
+[Rule 17 - Use mkiocccentry](rules.html#rule17-mkiocccentry).
 
 
 <div id="rule9">
@@ -344,7 +351,7 @@ the make command.
 **NOTE**: it is better and more portable to **NOT** modify the `${CC}` variable
 in the Makefile.
 
-See [Rule 15 - GNU Makefile compatibility](rules.html#rule-15---building).
+See [Rule 15 - GNU Makefile](rules.html#rule15-gnu-makefile).
 
 
 <div id="rule10">
@@ -420,8 +427,8 @@ or `remarks.md` files, but instead end lines with Unix newline (line-feed,
 CTRL+J, `\n`).
 
 You are permitted, in order to try and squeeze your `prog.c` under a
-[Rule 2a Gross Size](rules.html#rule-2a-gross-size) and/or
-[Rule 2b Net Size](rules.html#rule-2b-net-size)
+[Rule 2a Gross Size](rules.html#rule2a-gross-size) and/or
+[Rule 2b Net Size](rules.html#rule2b-net-size)
 limits, to **NOT** end source with a newline. If you
 need to do this, please document that in your `remarks.md` file and if
 your compiler complains about this, document this too and update your
@@ -480,9 +487,10 @@ variable.
 
 See [Rule 4 - Required files](rules.html#rule4-required-files).
 
-See FAQ on "[What are the detailed recommendations for a submission Makefile?](../faq.html#makefile_details)".
+See
+FAQ on "[What are the detailed recommendations for a submission Makefile?](../faq.html#makefile_details)".
 
-See [Guidelines for Rule 15 - GNU Makefile compatibility](guidelines.html#guideline-15---building).
+See [Guidelines for Rule 15 - GNU Makefile](guidelines.html#guideline-15---building).
 
 
 <div id="rule16">
@@ -549,7 +557,7 @@ toolkit](https://github.com/ioccc-src/mkiocccentry) command lines that confirm
 to the command's `-h` "_print help message_", again notwithstanding the options
 for testing and the IOCCC judges.
 
-The `prog.c` file **MUST** pass the [Rule 2 - Size](rules.html#rule-2---size)
+The `prog.c` file **MUST** pass the [Rule 2 - Size](rules.html#rule2-size)
 checks performed by `iocccsize(1)`.
 
 The `.auth.json` and `.info.json` files **MUST** be compatible with what
@@ -586,7 +594,7 @@ This 19th rule, while prime, is reserved for future abuse 😁.
 Additional rules, both humorous and otherwise, may be added
 below this rule in future contests.
 
-See [Rule 6 - Free Rule](rules.html#rule6-free).
+See [Rule 6 - Free Rule](rules.html#rule6-free-rule).
 
 
 ## Further Reading
@@ -599,7 +607,7 @@ for an overview of how to enter the contest.
 
 See also the [FAQ](../faq.html).
 
-And now [for something completely different](guidelines.html#fun)
+And now [for something completely different](guidelines.html#fun).
 
 Consider joining the [IOCCC Discord Server](https://discord.com/invite/Wa42Qujwnw)
 for discussions about The Rules, questions for the Judges, and `C` in general.
