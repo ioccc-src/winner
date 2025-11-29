@@ -1,31 +1,4 @@
-<!-- START: this line starts content from: inc/guidelines.closed.hdr -->
 
-# The IOCCC is closed
-
-The IOCCC is **NOT** accepting new submissions at this time.  See the
-[IOCCC winning entries page](../years.html) for the entries that have won the
-IOCCC in the past.
-
-These guidelines are a **TENTATIVE proposal** for the next IOCCC
-and are **likely be to be updated** before the next IOCCC.
-
-See our
-FAQ on "[rules, guidelines, tools feedback](../faq.html#feedback)"
-as well as our
-FAQ on "[about asking questions](../faq.html#question)"
-about these guidelines. You might also find the FAQ in general useful, especially the
-FAQ on "[how to enter the IOCCC](../quick-start.html#enter)".
-
-Watch both [the IOCCC status page](../status.html) and the
-[@IOCCC mastodon feed](https://fosstodon.org/@ioccc) for information about
-future IOCCC openings.
-
-**HINT to mastodon users**: You may wish to refresh the [@IOCCC
-mastodon feed](https://fosstodon.org/@ioccc) page and/or mastodon
-app from time to time to view IOCCC mastodon updates.
-
-<!-- END: the next line ends content from: inc/guidelines.closed.hdr -->
-<!-- This is the last line modified by the tool: bin/gen-status.sh -->
 # 29th International Obfuscated C Code Contest Official Guidelines
 
 <p class="leftbar">
@@ -33,12 +6,12 @@ Copyright &copy; 2025 Leonid A. Broukhis and Landon Curt Noll.
 </p>
 
 All Rights Reserved.  Permission for personal, education or non-profit use is
-granted provided this this copyright and notice are included in its entirety
+granted provided this copyright and notice are included in its entirety
 and remains unaltered.  All other uses must receive prior permission in
 writing by [contacting the judges](../contact.html).
 
 
-# IOCCC Guidelines version
+# Guidelines Version
 
 <p class="leftbar">
 These IOCCC guidelines are version **29.01 2025-11-29**.
@@ -62,6 +35,10 @@ Be sure to read the [IOCCC rules](rules.html).
 </div>
 </div>
 </div>
+<div id="guideline2"></div>
+<div id="guideline-2---size"></div>
+
+# Guidelines for [Rule 2 - Size](rules.html#rule-2---size)
 
 <p class="leftbar">
 You should pay attention to our observations on
@@ -75,6 +52,10 @@ Your submission must satisfy **BOTH** the
 
 To check your code against
 [Rule 2 - Size restrictions](rules.html#rule2-size), use the `iocccentry(1)` tool.
+Your submission must satisfy **BOTH** the maximum size [Rule 2a Gross Size](rules.html#rule-2a-gross-size)
+**AND** the [Rule 2b Net Size](rules.html#rule-2b-net-size).
+
+To check your code against [Rule 2 - Size](rules.html#rule-2---size), use the `iocccentry(1)` tool.
 For example:
 
 ``` <!---sh-->
@@ -105,6 +86,11 @@ There a much less need to `#define` C reserved words in an effort
 to get around the size limits of
 [Rule 2 - Size restrictions](rules.html#rule2-size)
 because of the `iocccsize(1)` algorithm.
+by the current version of `iocccsize(1)` is preferred by the [IOCCC judges](../judges.html).
+Make sure `iocccsize(1)` does not flag any issues with your `prog.c`.
+
+There a much less need to `#define` C reserved words in an effort to get
+around the size limits of [Rule 2 - Size](rules.html#rule-2---size) because of the `iocccsize(1)` algorithm.
 
 Yes Virginia, **the previous guideline sentence is an important hint**!
 
@@ -117,6 +103,10 @@ Jump to: [top](#)
 # Guidelines for [Rule 3 - Register for the contest](rules.html#rule3-register)
 </div>
 </div>
+<div id="guideline3"></div>
+<div id="guideline-3---register"></div>
+
+# Guidelines for [Rule 3 - Register](rules.html#rule-3---register)
 
 See FAQ on "[What is an author handle?](../faq.html#author_handle_faq)".
 
@@ -129,6 +119,10 @@ Jump to: [top](#)
 # Guidelines for [Rule 7 - Original Work](rules.html#rule7-original-work)
 </div>
 </div>
+<div id="guideline7"></div>
+<div id="guideline-7---original-work"></div>
+
+# Guidelines for [Rule 7 - Original Work](rules.html#rule-7---original-work)
 
 While it is **NOT** required, you are allowed to use tools or services such as:
 
@@ -143,11 +137,10 @@ While it is **NOT** required, you are allowed to use tools or services such as:
 
 The IOCCC has a rich history of remarkable winning entries created by
 authors who skillfully employed various techniques to develop their code.
+If you do make use of such tools or services, then we **ENCOURAGE you to
+describe how you used such tools** in your `remarks.md` file.
 
-If you do make use of such tools or services, then we **ENCOURAGE you to describe
-how you used such tools** in your `remarks.md` file.
-
-In short: You created it, you own it, and its an original work, or you have explicit permission.
+In short: You created it, you own it, its an original work, or you have explicit permission to the work.
 
 See FAQ on "[May I use AI, LLM, Virtual coding assistants, or similar tools to write my submission?](../faq.html#ai)".
 
@@ -160,34 +153,33 @@ Jump to: [top](#)
 # Guidelines for [Rule 11 - Legal rule abuse](rules.html#rule11-legal-rule-abuse)
 </div>
 </div>
+<div id="guideline11"></div>
+<div id="guideline-11---abuse"></div>
 
-We try to avoid limiting creativity in our [IOCCC rules](rules.html) so
-we leave the contest open for creative rule interpretation.
+# Guidelines for [Rule 11 - Abuse](rules.html#rule-11---abuse)
 
 We do realize that there are holes in the [IOCCC rules](rules.html), and invite
-submitters to attempt to exploit them.
+submitters to attempt to apply creative rule interpretation.  A rule abuse though, even
+if not rewarded, may result in a subsequent rule change for future contests.
 
 We sometime award '**Best abuse of the rules**' or '**Worst abuse of the rules**',
 or some variation, to a submission that creatively attempts to exploit a holes in the
+We sometimes award '**Best abuse of the rules**' or '**Worst abuse of the rules**',
+or some variation to a submission that creatively attempts to exploit a holes in the
 [IOCCC rules](rules.html).
 
-When we do need to plug a hole in the [IOCCC rules](rules.html) or
-[IOCCC guidelines](guidelines.html), we will attempt to use a very small plug,
+When we do need to plug a hole in the [IOCCC rules](rules.html)
+or [IOCCC guidelines](guidelines.html), we will attempt to use a very small plug,
 if not smaller.
 
 Or, maybe not. :-)
 
-Legal abuse of the [IOCCC rules](rules.html) is somewhat encouraged.  Legal rule abuse
-may involve, but is not limited to, doing things that are technically allowed by
-the [IOCCC rules](rules.html) and yet do not fit the spirit of what we intended to be
-submitted.
-
-Legal rule abuse is encouraged to help promote creativity.  Rule abuse
-submissions, regardless of if they receive an award, result in changes to
-the next year's [IOCCC rules](rules.html) and [IOCCC guidelines](guidelines.html).
+Legal rule abuse may involve, but is not limited to, doing things that are
+technically allowed by the [IOCCC rules](rules.html) and yet do not fit the spirit of what
+we intended to be submitted.
 
 Legal abuse of the [IOCCC rules](rules.html) is **NOT** an invitation to violate the
-[IOCCC rules](rules.html). A submission that violates the [rules](rules.html) in the
+[IOCCC rules](rules.html) (especailly [Rule 17 - Packaging](./rules.html#rule-17---packaging) ). A submission that violates the [rules](rules.html) in the
 opinion of the [IOCCC judges](../judges.html), **WILL** be
 disqualified.  **_RULE ABUSE CARRIES A CERTAIN LEVEL OF RISK!_**  If you
 have a submission that might otherwise be interesting, you might want to
@@ -196,10 +188,9 @@ does, making sure to note in the one that does not abuse the rules that this is
 another version, so that the judges do not assume you uploaded it by mistake.
 
 If you intend to abuse the [IOCCC rules](rules.html),
-indicate so in your `remarks.md` file.  You **MUST** try to justify
+indicate so in your `remarks.md` file.  You **MUST** try to justify, plead, beg,
 why you consider your rule abuse to be allowed under the
-[IOCCC rules](rules.html).  That is, you must plead your case as to why
-your submission is valid.  Humor and/or creativity help plead a case.
+[IOCCC rules](rules.html).  Humor or creativity help plead a case.
 As there is no guarantee that you will succeed, you might consider
 submitting an alternate version that conforms to the
 [IOCCC rules](rules.html).
@@ -208,20 +199,20 @@ If you do bypass the `mkiocccentry(1)` warnings about
 [Rule 2a - Gross Size](rules.html#rule-2a-gross-size)
 and/or about
 [Rule 2b - Net Size](rules.html#rule-2b-net-size)
+[Rule 2a Gross Size](rules.html#rule-2a-gross-size)
+or about
+[Rule 2b Net Size](rules.html#rule-2b-net-size)
 or any other
 rule and submit a submission anyway, you **MUST** try to justify why the IOCCC
 [IOCCC judges](../judges.html) should not reject your submission due to a rule
 violation, and you would be wise to do this towards the top of your `remarks.md`
 file.
 
-Abusing the web submission procedure tends to annoy us more
-than amuse us.  Spend your creative energy on content of your
-submission rather than on the submission process itself.
-
 We are often asked why the contest [IOCCC rules](rules.html) and [IOCCC
-guidelines](guidelines.html) seem strange or contain mistakes, flaws or
-grammatical errors.  One reason is that we sometimes make genuine mistakes.  But
+guidelines](guidelines.html) seem strange or contain mistakes, flaws, or
+grammatical errors.  One reason is that we sometimes make genuine mistakes, but
 in many cases such problems, flaws or areas of confusion are deliberate.
+
 Changes to [IOCCC rules](rules.html) and [IOCCC guidelines](guidelines.html) in
 response to rule abuses, are done in a minimal fashion.  Often we will
 deliberately leave behind holes (or introduce new ones) so that future rule
@@ -235,7 +226,7 @@ are only part of the overall contest.  Even so, one might think the
 contest [IOCCC rules](rules.html) and [IOCCC guidelines](guidelines.html) process as a parody
 of the sometimes tragic mismatch between what a customer (or marketing) wants
 and what engineering delivers.  Real programmers must face obfuscated and
-sometimes conflicting specifications and requirements from marketing, sales,
+sometimes conflicting, balloning specifications, and requirements from marketing, sales,
 product management and even from customers themselves on an all too regular basis.
 This is one of the reasons why the [IOCCC rules](rules.html) and
 [IOCCC guidelines](guidelines.html) are written in obfuscated form.
@@ -249,8 +240,12 @@ Jump to: [top](#)
 # Guidelines for [Rule 15 - GNU Makefile](rules.html#rule15-gnu-makefile)
 </div>
 </div>
+<div id="guideline15"></div>
+<div id="guideline-15---building"></div>
 
-You may use git, or services such as [GitHub](https://www.github.com)
+# Guidelines for [Rule 15 - Building](rules.html#rule-15---building)
+
+You may use `git,` or services such as [GitHub](https://www.github.com)
 to develop and maintain your submission.  However, we **DISLIKE**
 submissions that **require** such services in order to build/compile your submission.
 
@@ -258,7 +253,7 @@ Submissions will be judged in an environment that has no **IDE**.
 Any submission that fails to compile/build because it requires
 an **IDE** will be rejected.
 
-We will use the `make(1)` tool, your `Makefile`, as well as tools found in the
+We will use the `GNU make(1)` tool, your `Makefile`, as well as tools found in the
 [Single UNIX Specification](https://en.wikipedia.org/wiki/Single_UNIX_Specification)
 environments, and commonly found on systems that reasonably conform to the
 [Single UNIX Specification](https://en.wikipedia.org/wiki/Single_UNIX_Specification)
@@ -279,10 +274,14 @@ Jump to: [top](#)
 </div>
 </div>
 </div>
+<div id="guideline17"></div>
+<div id="guideline-17---packaging"></div>
+
+# Guidelines for [Rule 17 - Packaging](rules.html#rule-17---packaging)
 
 We **STRONGLY** recommend you **do** install the most recent release of
 [mkiocccentry toolkit](https://github.com/ioccc-src/mkiocccentry)
-as use of using older versions of the mkiocccentry toolkit to are **HIGHLY LIKELY** to be **REJECTED**!
+As use of using older versions of the mkiocccentry toolkit to are **HIGHLY LIKELY** to be **REJECTED**!
 
 If you submit your own JSON files (other than `.auth.json` and
 `.info.json`) then they do **NOT** have to be valid JSON.
@@ -303,6 +302,9 @@ The non-extra files (`prog.c`, `prog.alt.c`,
 are considered _free files_, and to not count towards the
 [Rule 17 - Use mkiocccentry](rules.html#rule17-mkiocccentry)
 limit of **31** _extra files_.
+These files (`prog.c`, `prog.alt.c`, `try.sh`, `try.alt.sh`, `remarks.md`,
+`Makefile`, `.auth.json` and `.info.json`) do _not_ count towards the
+[Rule 17 - Packaging](rules.html#rule-17---packaging) limit of **31** _extra files_.
 </p>
 
 If you use an optional filename for something other than their intended use
@@ -352,11 +354,10 @@ FAQ on "[What are the details behind Rule 17 - Use mkiocccentry?](../faq.html#ru
 Jump to: [top](#)
 
 
-<div id="mkiocccentry">
-<div id="mkiocccentry_toolkit">
+<div id="mkiocccentry"></div>
+<div id="mkiocccentry_toolkit"></div>
+
 # Guidelines for the mkiocccentry toolkit
-</div>
-</div>
 
 The [IOCCC submit server](https://submit.ioccc.org), and related services
 use the **most recent version** of the
@@ -366,11 +367,11 @@ submissions that package using older versions of the
 are **LIKELY** to be **REJECTED**!
 
 You **REALLY SHOULD** use the latest [mkiocccentry toolkit](https://github.com/ioccc-src/mkiocccentry)
+are **LIKELY** to be **REJECTED**!  So you **REALLY SHOULD** use the latest [mkiocccentry toolkit](https://github.com/ioccc-src/mkiocccentry)
 to package your own submission.
 
 The `mkiocccentry(1)` tool runs a number of checks by way of these
-[mkiocccentry toolkit](https://github.com/ioccc-src/mkiocccentry)
-tools:
+[mkiocccentry toolkit](https://github.com/ioccc-src/mkiocccentry) tools:
 
 * iocccsize(1)
 * txzchk(1)
@@ -378,32 +379,34 @@ tools:
 * chksubmit(1)
 * chkentry(1)
 
-Do **NOT** use `txzchk(1)` command line options that are labeled "**for TESTING purposes**"
-in the `txzchk(1)` man page.
+Do **NOT** use `txzchk(1)` or `fnamchk(1)` command line options that are labeled
+"**for TESTING purposes**" in their respective man pages.
 
 Do **NOT** use `fnamchk(1)` command line options that are labeled "**for TESTING purposes**"
 in the `fnamchk(1)` man page.
 
 Do **NOT** use `chkentry(1)` command line options that are labeled "**for the use by the IOCCC judges only**"
 in the `chksubmit(1)` (or `chkentry(1)`) man page(s).
+Similarly do **NOT** use `chkentry(1)` command line options marked "**for the use
+by the IOCCC judges only**" in the `chkentry(1)` man page.
 
 To view [mkiocccentry toolkit](https://github.com/ioccc-src/mkiocccentry) man pages,
 while your current directory is the top of the source tree:
 
 ``` <!---sh-->
-    man soup/man/man1/mkiocccentry.1
-    man soup/man/man1/iocccsize.1
-    man soup/man/man1/txzchk.1
-    man test_ioccc/man/man1/fnamchk.1
-    man soup/man/man1/chksubmit.1
-    man soup/man/man1/chkentry.1
+man soup/man/man1/mkiocccentry.1
+man soup/man/man1/iocccsize.1
+man soup/man/man1/txzchk.1
+man test_ioccc/man/man1/fnamchk.1
+man soup/man/man1/chksubmit.1
+man soup/man/man1/chkentry.1
 ```
 
 The above `man(1)` commands will show the toolkit man pages without having to install them first.
 
 So that you do not have to repeatedly answer all the `mkiocccentry(1)` questions,
 use `mkiocccentry -a answers ...` to create a file containing the answers you first give,
-that will allow you to later use `mkiocccentry -i answers ...` to reuse those same answers.
+so later enter `mkiocccentry -i answers ...` to reuse those same answers.
 
 The `mkiocccentry -A answers ...` does the same thing except that the **answers file will be overwritten**.
 
@@ -412,18 +415,21 @@ The `mkiocccentry -i answers ...` will still be required to confirm "_Yes/No_" q
 Use `mkiocccentry -Y -i answers ..` to force a yes answers with **great caution**
 because it might force a yes answer to something you do **NOT** want, such as a
 change in your code that violates a detected rule.
+The `mkiocccentry -i answers ..` will still be required to confirm "_Yes/No_" questions.
+While `mkiocccentry -Y -i answers ..` will force yes answers, use with **great caution**,
+because it might force a yes answer to something you do **NOT** want.
 
 To help with not having to repeatedly enter a UUID, put your UUID into a file and use
 `mkiocccentry -u uuidfile ...`, or use `mkiocccentry -U UUID ...` to give the `UUID`
 on the command line.
 
 If you wish to **test** that your submission passes the `mkiocccentry(1)` tests
-without having to type in in answers each time, you can use the `-d` or `-s seed`
+without having to type in answers each time, you can use the `-d` or `-s seed`
 option to `mkiocccentry` for the tool to pseudo-randomly create answers for you.
 For example:
 
 ``` <!---sh-->
-    mkiocccentry -d workdir topdir
+mkiocccentry -d workdir topdir
 ```
 
 Do **NOT** submit a tarball formed by `mkiocccentry -d ..` **OR** by
@@ -433,7 +439,7 @@ The `mkiocccentry(1)` tool creates an `xz(1)` compressed **v7 format** tarball u
 command of the form:
 
 ``` <!---sh-->
-    cd workdir/UUID-slot_num && tar --format=v7 -cJf submit.UUID-slot_num.timestamp.txz UUID-slot_num
+cd workdir/UUID-slot_num && tar --format=v7 -cJf submit.UUID-slot_num.timestamp.txz UUID-slot_num
 ```
 
 In many places the `mkiocccentry(1)` tool will prompt you to verify what you input, allowing you to
@@ -446,6 +452,8 @@ answer.
 The `mkiocccentry(1)` tool will use code from `iocccsize(1)` which detects a number of
 issues (such as [Rule 2 - Size](rules.html#rule2-size)) that you may ignore,
 however ignoring such issues **comes with a significant level of risk!**
+issues (such as [Rule 2 - Size](rules.html#rule-2---size)) that you may ignore,
+however ignoring such issues **comes with a significant level of risk** as noted else where.
 
 Once the tarball is packaged it will
 run `txzchk(1)`, which will also run `fnamchk(1)`, as part of its algorithm.
@@ -454,7 +462,7 @@ The use of `mkiocccentry -W ....` is **highly discouraged** as this may ignore
 warnings about a problem that may cause your submission to be **REJECTED!**"
 
 If `mkiocccentry` encounters an **error**, the program will exit and the xz
-compressed tarball **will NOT be formed**: this is a **feature, not a bug**!
+compressed tarball **will NOT be generated**: this is a **feature, not a bug**!
 
 If you encounter a **bug** with the
 [mkiocccentry toolkit](https://github.com/ioccc-src/mkiocccentry)
@@ -467,11 +475,9 @@ you will have to specify `mkiocccentry(1)` command line options to locate requir
 such as `chkentry(1)` (`mkiocccentry -C chkentry ..`), `txzchk(1)` (`mkiocccentry -T txzchk ..`),
 and `fnamchk(1)` (`mkiocccentry -F fnamchk ..`).
 
-The `mkiocccentry(1)` tool will ignore any filename that begins with a "." (dot).
+The `mkiocccentry(1)` tool will ignore any filename or directory that begins with a period (`.`).
 
-The `mkiocccentry(1)` tool will ignore any directory tree with a directory name that begins with a "." (dot).
-
-The `mkiocccentry(1)` tool will all files that begin with `COPYING`, `COPYRIGHT`, and `LICENSE`, regardless
+The `mkiocccentry(1)` tool will ignore all files that begin with `COPYING`, `COPYRIGHT`, and `LICENSE`, regardless
 of filename case.
 
 The `mkiocccentry(1)` tool will reject any of the following files if they are found directly under
@@ -544,6 +550,9 @@ Jump to: [top](#)
 <div id="general">
 # General Guidelines
 </div>
+<div id="general"></div>
+
+# General Overall Guidelines
 
 These [guideline](guidelines.html) are **hints** and **suggestions**, **NOT** [IOCCC rules](rules.html).
 
@@ -639,11 +648,10 @@ to a great submission!
 Jump to: [top](#)
 
 
-<div id="likes">
-<div id="dislikes">
+<div id="likes"></div>
+<div id="dislikes"></div>
+
 # OUR LIKES AND DISLIKES:
-</div>
-</div>
 
 We **VERY MUCH LIKE** submissions that use an edited variant of the
 example Makefile, as described and linked to in the [Makefile section](#makefile),
@@ -1006,8 +1014,8 @@ Users of such tools should strip off such control-M's before submitting
 their submissions.  In some cases tools have a "Save As" option that will
 prevent such trailing control-M's being added.
 
-One should restrict libcurses to portable features found on BSD
-or Linux curses.
+One should restrict libcurses to portable features found on both BSD
+and Linux curses.
 
 <p class="leftbar">
 If you do `#include <curses.h>` make **CERTAIN** you link in curses (i.e.
@@ -1136,9 +1144,9 @@ Try to be even more creative!
 Jump to: [top](#)
 
 
-<div id="fun">
+<div id="fun"></div>
+
 # Fun😄damental Guidelines
-</div>
 
 The reason for the times of day are so that key IOCCC events are **calculated**
 to be a **fun**ctional UTC time.  :-)
@@ -1271,11 +1279,10 @@ it?  :-)
 Jump to: [top](#)
 
 
-<div id="more-information">
-<div id="information">
+<div id="more-information"></div>
+<div id="information"></div>
+
 # FOR MORE INFORMATION:
-</div>
-</div>
 
 For questions or comments about the contest, see [Contacting the IOCCC](../contact.html).
 

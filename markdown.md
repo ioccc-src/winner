@@ -25,8 +25,8 @@ Nevertheless, the IOCCC does have certain practices that we ask authors to
 follow. Some of these relate to use of markdown directly and others relate
 to injecting HTML into the markdown file.
 
-In the sections below, examples will mark by &#x274c; for the incorrect method
-and &#x2714; for preferred correct one.
+In the sections below, examples will mark by <span style="color:red">&#x274c;</span>  for the incorrect method
+and <span style="color:green">&#x2714;</span> for preferred correct one.
 
 
 <div id="sections"></div>
