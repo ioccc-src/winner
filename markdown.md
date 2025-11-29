@@ -3,7 +3,7 @@
 
 ## Markdown Guidelines Version
 
-These [Markdown Guidelines](markdown.html) are version **29.01 2025-11-28**.
+These [Markdown Guidelines](markdown.html) are version **29.02 2025-11-28**.
 
 
 ## Introduction
@@ -26,7 +26,7 @@ follow. Some of these relate to use of markdown directly and others relate
 to injecting HTML into the markdown file.
 
 In the sections below, examples will mark by &#x274c; for the incorrect method
-and ✔️ for preferred correct one.
+and &#x2714; for preferred correct one.
 
 
 <div id="sections"></div>
@@ -43,7 +43,7 @@ not apply to other markdown files), **PLEASE** start at level three up to level 
     ## Section Reserved
 ```
 
-<span style="color:green">&#x2705;</span> Available every where.
+<span style="color:green">&#x2714;</span> Available every where.
 ```
     ### Section Level 3
     #### Section Level 4
@@ -62,7 +62,7 @@ not apply to other markdown files), **PLEASE** start at level three up to level 
     <a name="old_way">Section title</a>
 ```
 
-<span style="color:green">&#x2705;</span> Correct.
+<span style="color:green">&#x2714;</span> Correct.
 ``` <!---html-->
     <div id="new_way"></div>
 
@@ -80,7 +80,7 @@ not apply to other markdown files), **PLEASE** start at level three up to level 
     This <a href="#link_target>HTML link text</a> works, but we prefer see below...
 ```
 
-<span style="color:green">&#x2705;</span> Correct.
+<span style="color:green">&#x2714;</span> Correct.
 ``` <!---html-->
     [markdown link text](#link_target)
 ```
@@ -97,7 +97,7 @@ not apply to other markdown files), **PLEASE** start at level three up to level 
     <s>HTML 5 striked through text</s>
 ```
 
-<span style="color:green">&#x2705;</span> Correct.
+<span style="color:green">&#x2714;</span> Correct.
 ``` <!---html-->
     ~~markdown striked through text~~
     <del>HTML 5 striked through text</del>
@@ -114,7 +114,7 @@ not apply to other markdown files), **PLEASE** start at level three up to level 
     <u>old tags</u>
 ```
 
-<span style="color:green">&#x2705;</span> Correct.
+<span style="color:green">&#x2714;</span> Correct.
 ``` <!---html-->
     <ins>HTML 5 tags</ins>
 ```
@@ -130,7 +130,7 @@ not apply to other markdown files), **PLEASE** start at level three up to level 
     <tt>obsolete HTML</tt>
 ```
 
-<span style="color:green">&#x2705;</span> Correct.
+<span style="color:green">&#x2714;</span> Correct.
 ``` <!---html-->
     <span style="font-family: monospace;">monospace font</span>
     `markdown style monospace`
@@ -153,7 +153,7 @@ echo 'Please indent your code blocks with multiples of four (4) ASCII SPACES!"
 We request that you indent the code block by multiples of four (4)
 ASCII SPACES, never TAB (␉):
 
-<span style="color:green">&#x2705;</span> Correct.
+<span style="color:green">&#x2714;</span> Correct.
 ```` <!---markdown-->
     ``` <!---sh-->
         echo "This shell code block is indented by multiples of 4 spaces"
@@ -162,7 +162,7 @@ ASCII SPACES, never TAB (␉):
 
 If you need to intent more than one level, use multiples of 4 ASCII spaces (no tabs):
 
-<span style="color:green">&#x2705;</span> Also Correct.
+<span style="color:green">&#x2714;</span> Also Correct.
 ```` <!---markdown-->
     ``` <!---sh-->
         echo "This shell code block is indented by multiples of 4 spaces"
@@ -180,7 +180,7 @@ If you need to intent more than one level, use multiples of 4 ASCII spaces (no t
 While it is possible to use 3 backticks (&#x60;&#x60;&#x60;) without the initial
 four (4) space indentation, we **prefer** that you multiples of 4 spaces if possible:
 
-<span style="color:green">&#x2705;</span> Preferred.
+<span style="color:green">&#x2714;</span> Preferred.
 ```` <!---markdown-->
     ```
         Intent text by multiples of 4 spaces if possible.
@@ -189,7 +189,7 @@ four (4) space indentation, we **prefer** that you multiples of 4 spaces if poss
 
 A reasonable exception to the rule is when are displaying C:
 
-<span style="color:green">&#x2705;</span> OK for C.
+<span style="color:green">&#x2714;</span> OK for C.
 
 ```` <!---markdown-->
     ``` <!---c-->
@@ -229,7 +229,7 @@ ASCII SPACES.
     ```
 ````
 
-<span style="color:green">&#x2705;</span> OK for all file types, e.g., `.c`, `.h`, `.mk`, `.sh`, **EXCEPT** `.md` markdown files.
+<span style="color:green">&#x2714;</span> OK for all file types, e.g., `.c`, `.h`, `.mk`, `.sh`, **EXCEPT** `.md` markdown files.
 ```` <!---c-->
     ␉printf("It is fine␉to␉use tabs in Obfuscated C code.\n");
     ␉␉/*␉if␉you␉wish    */
@@ -258,7 +258,7 @@ We request that [fenced markdown code blocks](https://www.markdownguide.org/exte
 Instead, put the language inside an HTML comment, separated from the
 markdown code block starting fence by a space:
 
-<span style="color:green">&#x2705;</span> Correct.
+<span style="color:green">&#x2714;</span> Correct.
 ```` <!---markdown-->
     ``` <!---c-->
         int main(void) {return 0;}
@@ -293,7 +293,7 @@ and the start of the HTML comment!
     C compilers cannot be given a -Wno-main-arg-errors flag.
 ````
 
-<span style="color:green">&#x2705;</span> Correct, has empty line between closing fence and subsequent text.
+<span style="color:green">&#x2714;</span> Correct, has empty line between closing fence and subsequent text.
 ```` <!---markdown-->
     ``` <!---c-->
     /* The C compiler will insist in flagging this an error, unfortunately */
@@ -326,7 +326,7 @@ on [trailing slashes in void-element start tags](https://github.com/validator/va
     the 1984 anonymous C code" width=600 height=401 />
 ```
 
-<span style="color:green">&#x2705;</span> Correct.
+<span style="color:green">&#x2714;</span> Correct.
 ``` <!---html-->
     <br>
     <hr>
@@ -348,7 +348,7 @@ on [trailing slashes in void-element start tags](https://github.com/validator/va
     a code block
 ```
 
-<span style="color:green">&#x2705;</span> Correct.
+<span style="color:green">&#x2714;</span> Correct.
 ```` <!---html-->
     In markdown,<br>
     use trailing<br>
@@ -379,7 +379,7 @@ HTML elements, such as `<br />`.
     ![alt text](filename.png "Title")
 ```
 
-<span style="color:green">&#x2705;</span> Correct.
+<span style="color:green">&#x2714;</span> Correct.
 ``` <!---markdown-->
     <img src="filename.png"
     alt="describe the filename.png image for someone who cannot view it"
@@ -416,7 +416,7 @@ values.
     ---
 ```
 
-<span style="color:green">&#x2705;</span> Correct.
+<span style="color:green">&#x2714;</span> Correct.
 ``` <!---html-->
     Regular divider...
     <hr>
@@ -437,7 +437,7 @@ values.
     [ls(1)](https://example.com/ls-man-page.1)
 ```
 
-<span style="color:green">&#x2705;</span> Correct.
+<span style="color:green">&#x2714;</span> Correct.
 ``` <!---markdown-->
     [some &lpar;text&rpar;](https://example.com/curds)
     [ls&lpar;1&rpar;](https://example.com/ls-man-page.1)
@@ -458,7 +458,7 @@ to incorrect URLs or file paths.
     This thing, ([some text](some/path)), is NOT ideal.
 ```
 
-<span style="color:green">&#x2705;</span> Correct.
+<span style="color:green">&#x2714;</span> Correct.
 ``` <!---markdown-->
     [some text](https://example.com/foo_&lpar;bar&rpar;)
     This thing, [some text](some/path), is better.
@@ -481,7 +481,7 @@ go for when it is **_bold and italic_**.
     ***this text is bold italic***
 ```
 
-<span style="color:green">&#x2705;</span> Correct.
+<span style="color:green">&#x2714;</span> Correct.
 ``` <!---markdown-->
     _this text is italic_
     **_this text is bold italic_**

@@ -454,7 +454,7 @@
 <!-- BEFORE: 1st line of markdown file: markdown.md -->
 <h1 id="ioccc-29th-markdown-guidelines">IOCCC 29th Markdown Guidelines</h1>
 <h2 id="markdown-guidelines-version">Markdown Guidelines Version</h2>
-<p>These <a href="markdown.html">Markdown Guidelines</a> are version <strong>29.01 2025-11-28</strong>.</p>
+<p>These <a href="markdown.html">Markdown Guidelines</a> are version <strong>29.02 2025-11-28</strong>.</p>
 <h2 id="introduction">Introduction</h2>
 <p>The IOCCC makes extensive use of <a href="https://daringfireball.net/projects/markdown/">markdown</a>. For example, when
 submitting to the IOCCC we have people submit remarks about their
@@ -471,7 +471,7 @@ See the FAQ on “<a href="faq.html#remarks_md">remarks.md submission file</a>�
 follow. Some of these relate to use of markdown directly and others relate
 to injecting HTML into the markdown file.</p>
 <p>In the sections below, examples will mark by ❌ for the incorrect method
-and ✔️ for preferred correct one.</p>
+and ✔ for preferred correct one.</p>
 <div id="sections">
 
 </div>
@@ -481,7 +481,7 @@ not apply to other markdown files), <strong>PLEASE</strong> start at level three
 <p><span style="color:red">❌</span> Reserved in <code>remarks.md</code> only.</p>
 <pre><code>    # Section Reserved
     ## Section Reserved</code></pre>
-<p><span style="color:green">✅</span> Available every where.</p>
+<p><span style="color:green">✔</span> Available every where.</p>
 <pre><code>    ### Section Level 3
     #### Section Level 4
     ##### Section Level 5
@@ -492,7 +492,7 @@ not apply to other markdown files), <strong>PLEASE</strong> start at level three
 <h2 id="replace-a-nameanchor_namea-construct">Replace <code>&lt;a name="anchor_name"&gt;&lt;/a&gt;</code> construct</h2>
 <p><span style="color:red">❌</span> Incorrect.</p>
 <pre><code>    &lt;a name=&quot;old_way&quot;&gt;Section title&lt;/a&gt;</code></pre>
-<p><span style="color:green">✅</span> Correct.</p>
+<p><span style="color:green">✔</span> Correct.</p>
 <pre><code>    &lt;div id=&quot;new_way&quot;&gt;&lt;/div&gt;
 
     ### Section title</code></pre>
@@ -502,7 +502,7 @@ not apply to other markdown files), <strong>PLEASE</strong> start at level three
 <h2 id="markdown-links-instead-of-a...a">Markdown links instead of <code>&lt;a&gt;...&lt;/a&gt;</code></h2>
 <p><span style="color:red">❌</span> Incorrect.</p>
 <pre><code>    This &lt;a href=&quot;#link_target&gt;HTML link text&lt;/a&gt; works, but we prefer see below...</code></pre>
-<p><span style="color:green">✅</span> Correct.</p>
+<p><span style="color:green">✔</span> Correct.</p>
 <pre><code>    [markdown link text](#link_target)</code></pre>
 <div id="del">
 
@@ -514,7 +514,7 @@ not apply to other markdown files), <strong>PLEASE</strong> start at level three
 <p><span style="color:red">❌</span> Incorrect.</p>
 <pre><code>    &lt;strike&gt;striked through text&lt;/strike&gt;
     &lt;s&gt;HTML 5 striked through text&lt;/s&gt;</code></pre>
-<p><span style="color:green">✅</span> Correct.</p>
+<p><span style="color:green">✔</span> Correct.</p>
 <pre><code>    ~~markdown striked through text~~
     &lt;del&gt;HTML 5 striked through text&lt;/del&gt;</code></pre>
 <div id="ins">
@@ -526,7 +526,7 @@ not apply to other markdown files), <strong>PLEASE</strong> start at level three
 <h2 id="replace-u">Replace <code>&lt;u&gt;</code></h2>
 <p><span style="color:red">❌</span> Incorrect.</p>
 <pre><code>    &lt;u&gt;old tags&lt;/u&gt;</code></pre>
-<p><span style="color:green">✅</span> Correct.</p>
+<p><span style="color:green">✔</span> Correct.</p>
 <pre><code>    &lt;ins&gt;HTML 5 tags&lt;/ins&gt;</code></pre>
 <div id="tt">
 
@@ -534,7 +534,7 @@ not apply to other markdown files), <strong>PLEASE</strong> start at level three
 <h2 id="replace-tt">Replace <code>&lt;tt&gt;</code></h2>
 <p><span style="color:red">❌</span> Incorrect.</p>
 <pre><code>    &lt;tt&gt;obsolete HTML&lt;/tt&gt;</code></pre>
-<p><span style="color:green">✅</span> Correct.</p>
+<p><span style="color:green">✔</span> Correct.</p>
 <pre><code>    &lt;span style=&quot;font-family: monospace;&quot;&gt;monospace font&lt;/span&gt;
     `markdown style monospace`</code></pre>
 <div id="indent">
@@ -548,12 +548,12 @@ echo &#39;Please indent your code blocks with multiples of four (4) ASCII SPACES
 ```</code></pre>
 <p>We request that you indent the code block by multiples of four (4)
 ASCII SPACES, never TAB (␉):</p>
-<p><span style="color:green">✅</span> Correct.</p>
+<p><span style="color:green">✔</span> Correct.</p>
 <pre class="&lt;!---markdown--&gt;"><code>    ``` &lt;!---sh--&gt;
         echo &quot;This shell code block is indented by multiples of 4 spaces&quot;
     ```</code></pre>
 <p>If you need to intent more than one level, use multiples of 4 ASCII spaces (no tabs):</p>
-<p><span style="color:green">✅</span> Also Correct.</p>
+<p><span style="color:green">✔</span> Also Correct.</p>
 <pre class="&lt;!---markdown--&gt;"><code>    ``` &lt;!---sh--&gt;
         echo &quot;This shell code block is indented by multiples of 4 spaces&quot;
 
@@ -567,12 +567,12 @@ ASCII SPACES, never TAB (␉):</p>
     ```</code></pre>
 <p>While it is possible to use 3 backticks (```) without the initial
 four (4) space indentation, we <strong>prefer</strong> that you multiples of 4 spaces if possible:</p>
-<p><span style="color:green">✅</span> Preferred.</p>
+<p><span style="color:green">✔</span> Preferred.</p>
 <pre class="&lt;!---markdown--&gt;"><code>    ```
         Intent text by multiples of 4 spaces if possible.
     ```</code></pre>
 <p>A reasonable exception to the rule is when are displaying C:</p>
-<p><span style="color:green">✅</span> OK for C.</p>
+<p><span style="color:green">✔</span> OK for C.</p>
 <pre class="&lt;!---markdown--&gt;"><code>    ``` &lt;!---c--&gt;
     /* not intending C code is OK */
     int
@@ -603,7 +603,7 @@ ASCII SPACES.</p>
     ␉We␉don&#39;t␉mind␉tabs␉in␉general,
     ␉We just ask that you NOT use them in markdown files.
     ```</code></pre>
-<p><span style="color:green">✅</span> OK for all file types, e.g., <code>.c</code>, <code>.h</code>, <code>.mk</code>, <code>.sh</code>, <strong>EXCEPT</strong> <code>.md</code> markdown files.</p>
+<p><span style="color:green">✔</span> OK for all file types, e.g., <code>.c</code>, <code>.h</code>, <code>.mk</code>, <code>.sh</code>, <strong>EXCEPT</strong> <code>.md</code> markdown files.</p>
 <pre class="&lt;!---c--&gt;"><code>    ␉printf(&quot;It is fine␉to␉use tabs in Obfuscated C code.\n&quot;);
     ␉␉/*␉if␉you␉wish    */
 
@@ -624,7 +624,7 @@ ASCII SPACES.</p>
     ```</code></pre>
 <p>Instead, put the language inside an HTML comment, separated from the
 markdown code block starting fence by a space:</p>
-<p><span style="color:green">✅</span> Correct.</p>
+<p><span style="color:green">✔</span> Correct.</p>
 <pre class="&lt;!---markdown--&gt;"><code>    ``` &lt;!---c--&gt;
         int main(void) {return 0;}
     ```</code></pre>
@@ -650,7 +650,7 @@ and the start of the HTML comment!</p>
     }
     ```
     C compilers cannot be given a -Wno-main-arg-errors flag.</code></pre>
-<p><span style="color:green">✅</span> Correct, has empty line between closing fence and subsequent text.</p>
+<p><span style="color:green">✔</span> Correct, has empty line between closing fence and subsequent text.</p>
 <pre class="&lt;!---markdown--&gt;"><code>    ``` &lt;!---c--&gt;
     /* The C compiler will insist in flagging this an error, unfortunately */
     int
@@ -673,7 +673,7 @@ on <a href="https://github.com/validator/validator/wiki/Markup-»-Void-elements#
     &lt;hr/&gt;
     &lt;img src=&quot;1984-anonymous-tattoo.jpg&quot; alt=&quot;image of a tattoo of
     the 1984 anonymous C code&quot; width=600 height=401 /&gt;</code></pre>
-<p><span style="color:green">✅</span> Correct.</p>
+<p><span style="color:green">✔</span> Correct.</p>
 <pre><code>    &lt;br&gt;
     &lt;hr&gt;
     &lt;img src=&quot;1984-anonymous-tattoo.jpg&quot; alt=&quot;image of a tattoo of
@@ -690,7 +690,7 @@ on <a href="https://github.com/validator/validator/wiki/Markup-»-Void-elements#
     do NOT use trailing\
     backslashes outside of\
     a code block</code></pre>
-<p><span style="color:green">✅</span> Correct.</p>
+<p><span style="color:green">✔</span> Correct.</p>
 <pre class="&lt;!---html--&gt;"><code>    In markdown,&lt;br&gt;
     use trailing&lt;br&gt;
     br&#39;s outside of&lt;br&gt;
@@ -712,7 +712,7 @@ HTML elements, such as <code>&lt;br /&gt;</code>.</p>
 <h2 id="do-not-use-markdown-style-images">Do not use markdown style images</h2>
 <p><span style="color:red">❌</span> Incorrect.</p>
 <pre><code>    ![alt text](filename.png &quot;Title&quot;)</code></pre>
-<p><span style="color:green">✅</span> Correct.</p>
+<p><span style="color:green">✔</span> Correct.</p>
 <pre><code>    &lt;img src=&quot;filename.png&quot;
     alt=&quot;describe the filename.png image for someone who cannot view it&quot;
     width=PIXEL_WIDTH height=PIXEL_HEIGHT&gt;
@@ -737,7 +737,7 @@ values.</p>
 <pre><code>    * * *
     - - -
     ---</code></pre>
-<p><span style="color:green">✅</span> Correct.</p>
+<p><span style="color:green">✔</span> Correct.</p>
 <pre><code>    Regular divider...
     &lt;hr&gt;
 
@@ -750,7 +750,7 @@ values.</p>
 <p><span style="color:red">❌</span> Incorrect.</p>
 <pre><code>    [some (text)](https://example.com/curds)
     [ls(1)](https://example.com/ls-man-page.1)</code></pre>
-<p><span style="color:green">✅</span> Correct.</p>
+<p><span style="color:green">✔</span> Correct.</p>
 <pre><code>    [some &amp;lpar;text&amp;rpar;](https://example.com/curds)
     [ls&amp;lpar;1&amp;rpar;](https://example.com/ls-man-page.1)</code></pre>
 <div id="closing-parentheses">
@@ -762,7 +762,7 @@ to incorrect URLs or file paths.</p>
 <p><span style="color:red">❌</span> Incorrect.</p>
 <pre><code>    [some text](https://example.com/foo_(bar))
     This thing, ([some text](some/path)), is NOT ideal.</code></pre>
-<p><span style="color:green">✅</span> Correct.</p>
+<p><span style="color:green">✔</span> Correct.</p>
 <pre><code>    [some text](https://example.com/foo_&amp;lpar;bar&amp;rpar;)
     This thing, [some text](some/path), is better.</code></pre>
 <div id="italics">
@@ -776,7 +776,7 @@ go for when it is <strong><em>bold and italic</em></strong>.</p>
 <p><span style="color:red">❌</span> Incorrect.</p>
 <pre><code>    *this text is italic*
     ***this text is bold italic***</code></pre>
-<p><span style="color:green">✅</span> Correct.</p>
+<p><span style="color:green">✔</span> Correct.</p>
 <pre><code>    _this text is italic_
     **_this text is bold italic_**
     _**this text is bold italic**_</code></pre>
