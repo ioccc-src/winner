@@ -460,9 +460,9 @@ IOCCC in the past.</p>
 <p>These rules are a <strong>TENTATIVE proposal</strong> for the next IOCCC
 and are <strong>likely be to be updated</strong> before the next IOCCC.</p>
 <p>See our
-FAQ on “<a href="../faq.html#feedback">rules, guidelines, tools feedback</a>”
+FAQ on “<a href="../faq.html#feedback">rules, guidelines and tools feedback</a>”
 as well as our
-FAQ on “<a href="../faq.html#question">about asking questions</a>”
+FAQ on “<a href="../faq.html#question">asking questions</a>”
 about these rules. You might also find the FAQ in general useful, especially the
 FAQ on “<a href="../quick-start.html#enter">how to enter the IOCCC</a>”.</p>
 <p>Watch both <a href="../status.html">the IOCCC status page</a> and the
@@ -474,14 +474,14 @@ app from time to time to view IOCCC mastodon updates.</p>
 <!-- END: the next line ends content from: inc/rules.closed.hdr -->
 <!-- This is the last line modified by the tool: bin/gen-status.sh -->
 <h1 id="th-international-obfuscated-c-code-contest-official-rules">29th International Obfuscated C Code Contest Official Rules</h1>
-<p>Copyright © 2025 Leonid A. Broukhis and Landon Curt Noll.</p>
+<p>Copyright (c) 2025 Leonid A. Broukhis and Landon Curt Noll.</p>
 <p>All Rights Reserved. Permission for personal, education or non-profit use is
 granted provided this copyright and notice are included in its entirety
 and remains unaltered. All other uses <strong>MUST</strong> receive prior permission in
 writing by <a href="../contact.html">contacting the judges</a>.</p>
 <h2 id="rules-version">Rules Version</h2>
-<p>These IOCCC Rules are version <strong>29.08 2025-11-28</strong>.</p>
-<p>Be sure to read the <a href="guidelines.html">IOCCC guidelines</a>.</p>
+<p>These IOCCC Rules are version <strong>29.09 2025-11-29</strong>.</p>
+<p>Reminder: be SURE to read the <a href="guidelines.html">IOCCC guidelines</a>.</p>
 <div id="rule0">
 <h2 id="rule-0---dates">Rule 0 - Dates</h2>
 </div>
@@ -495,26 +495,28 @@ when people will no longer be allowed to upload submissions.</p>
 <p>Until the contest enters the <strong>open</strong> state, any or all
 of the above <strong>dates and times may change <em>AT ANY TIME</em></strong>!</p>
 <p>The above timestamps are in “<em>YYYY-MM-DD HH:MM:SS.micros UTC</em>” format.</p>
-<p>See <a href="../status.html">Current status of the IOCCC</a>.</p>
+<p>See the <a href="../status.html">current status of the IOCCC</a>.</p>
 <div id="rule1">
-<h2 id="rule-1---program">Rule 1 - Program</h2>
+<h2 id="rule-1---c-program">Rule 1 - C program</h2>
 </div>
-<p>Your submission <strong>MUST</strong> be a C program.</p>
+<p>Your submission <strong>MUST</strong> be a C program that does NOT <code>#include</code> data files.</p>
 <div id="rule2">
-<h2 id="rule-2---size">Rule 2 - Size</h2>
+<h2 id="rule-2---size-restrictions">Rule 2 - Size restrictions</h2>
 </div>
 <p><code>Rule 2</code> requires that your submission satisfy <strong>BOTH</strong>
-<a href="rules.html#rule-2a-gross-size">Rule 2a Gross Size</a>
+<a href="rules.html#rule-2a-gross-size">Rule 2a &amp;lparen;Gross Size&amp;rparen;</a>
 and
-<a href="rules.html#rule-2b-net-size">Rule 2b Next Size</a>.
+<a href="rules.html#rule-2b-net-size">Rule 2b &amp;lparen;Net Size&amp;rparen;</a>.
 During development this can be checked using <code>iocccsize(1)</code>:</p>
-<p>iocccsize prog.c</p>
-<p>See <a href="guidelines.html#guideline-2---size">Guidelines for Rule 2 - Size</a>.</p>
+<pre><code>    iocccsize prog.c</code></pre>
+<p>See the <a href="guidelines.html#guideline-2---size">Guidelines for Rule 2 - Size restrictions</a>.</p>
 <div id="rule2a">
 <h3 id="rule-2a---gross-size">Rule 2a - Gross Size</h3>
 </div>
 <p>The overall maximum size of your <code>prog.c</code> program source <strong>MUST NOT</strong>
 exceed <strong>4993</strong> bytes.</p>
+<p><strong>NOTE</strong>: by default <code>iocccsize</code> will only report the rule 2b size, unless the
+code surpasses the limit.</p>
 <p>See <a href="../quick-start.html#enter">Entering the IOCCC: the bare minimum you need to know</a>.</p>
 <div id="rule2b">
 <h3 id="rule-2b---net-size">Rule 2b - Net Size</h3>
@@ -523,11 +525,15 @@ exceed <strong>4993</strong> bytes.</p>
 command line argument to the latest version of the official IOCCC size
 tool (hereby referred to as <code>iocccsize(1)</code>), the value printed <strong>MUST
 NOT</strong> exceed <strong>2503</strong>.</p>
+<p><strong>NOTE</strong>: <code>iocccsize</code> does <strong>NOT</strong> calculate the filename length. See <a href="#rule17-mkiocccentry">Rule 17 -
+Use mkiocccentry</a>.</p>
 <div id="rule3">
-<h2 id="rule-3---register">Rule 3 - Register</h2>
+<div id="rule3-register">
+<h2 id="rule-3---you-must-register-to-enter-the-contest">Rule 3 - You must register to enter the contest</h2>
+</div>
 </div>
 <p>You <strong>MUST</strong> register, using a valid email address, in order to submit
-entries to the IOCCC. You may register while the contest is <strong>pending</strong> or <strong>open</strong>.</p>
+to the IOCCC. You may register while the contest is <strong>pending</strong> or <strong>open</strong>.</p>
 <p>A few days after registering, you’ll receive your UUID username and
 temporary password, which you <strong>MUST</strong> change within 14 days. If you
 fail to change it in a timely manner, you’ll need to
@@ -538,38 +544,53 @@ register and submit your entries; <strong>DO NOT WAIT UNTIL THE FINAL DAYS</stro
 to register! The judges are <strong>NOT</strong> responsible for delayed or lost
 email or for those who wait until the last minute to try to register!</p>
 <p>See <a href="../quick-start.html#enter">Entering the IOCCC: the bare minimum you need to know</a>.</p>
-<p>See <a href="rules.html#rule-8---submission">Rule 8 - Submission</a>.</p>
-<p>See <a href="guidelines.html#guideline-3---register">Guidelines for Rule 3 - Register</a>.</p>
+<p>See <a href="rules.html#rule8">Rule 8 - Submitting requirements</a>.</p>
+<p>See <a href="guidelines.html#guideline-3---register">Guidelines for Rule 3 - Registering for the IOCCC</a>.</p>
 <div id="rule4">
-<h2 id="rule-4---files">Rule 4 - Files</h2>
+<div id="rule4-required-files">
+<h2 id="rule-4---required-files">Rule 4 - Required files</h2>
 </div>
-<p>The submission <strong>MUST</strong> include at least these files: <code>Makefile</code>, <code>prog.c</code>,
-<code>remarks.md</code>,<code>.info.json</code>, and <code>.auth.json</code>.</p>
-<p>At a minimum the following requirements apply. Additional requirements
+</div>
+<p>Your submission <strong>MUST</strong> include at least these files: <code>Makefile</code>, <code>prog.c</code>,
+<code>remarks.md</code>,<code>.info.json</code>, and <code>.auth.json</code>, the latter two of which are
+generated by <code>mkiocccentry(1)</code>. See <a href="#rule17-mkiocccentry">Rule 17 -
+Use mkiocccentry</a>.</p>
+<p>At a <strong>minimum</strong> the following requirements apply. Additional requirements
 may be imposed by <code>mkiocccentry(1)</code> updates that have yet to be listed
-here:</p>
+below.</p>
+<p><strong>NOTE</strong>: <code>mkiocccentry(1)</code> will reject any directory which has prohibited
+files.</p>
+<p><strong>NOTE</strong>: by ‘top directory’ we mean the directory with <code>prog.c</code>, <code>Makefile</code>,
+<code>remarks.md</code> and the <code>mkiocccentry(1)</code> generated files <code>.auth.json</code> and
+<code>.info.json</code> and <strong>NOT</strong> the <code>topdir</code> arg to <code>mkiocccentry(1)</code>.</p>
 <ul>
-<li><p><code>.info.json</code>, and <code>.auth.json</code> <strong>MUST</strong> be generated by <code>mkiocccenty(1)</code>
-when packing a submission, and <strong>MUST</strong> pass the <code>chksubmit(1)</code> tests.</p></li>
+<li><p><code>.info.json</code> and <code>.auth.json</code> <strong>MUST</strong> be generated by <code>mkiocccenty(1)</code>
+when packing a submission. When <code>chksubmit(1)</code> is run on the submission
+directory <strong>ALL</strong> tests must pass and if there is <strong>ANY</strong> problem with these
+JSON files or if either is missing it will fail. See <a href="#rule17-mkiocccentry">Rule 17 - use
+mkiocccentry</a>.</p></li>
 <li><p>The <code>Makefile</code>, <code>remarks.md</code>,<code>.info.json</code>, and <code>.auth.json</code> <strong>MUST</strong>
-have a file size <strong>greater than 0</strong>.</p></li>
+have a file size <strong>greater than 0</strong> and <strong>MUST</strong> have content. Note that
+<code>mkiocccentry(1)</code> will check for file <strong>size</strong> but will <strong>NOT</strong> check for
+content.</p></li>
 <li><p>Your submitted source code <strong>MUST</strong> be called <code>prog.c</code>. When the <code>Makefile</code>
 compiles your code, the executable (if applicable) <strong>MUST</strong> be called <code>prog</code>.
-The <code>Makefile</code> may compile your source code into other filenames as well.</p></li>
+The <code>Makefile</code> may compile your source code into other filenames as well, if you
+want.</p></li>
 <li><p>As <code>prog</code>, <code>prog.alt</code>, <code>prog.alt.o</code>, <code>prog.o</code> may be created by your
-<code>Makefile</code>, your submission <strong>MUST NOT</strong> include those files in
-your top directory, as original content.</p></li>
+<code>Makefile</code>, your submission <strong>MUST NOT</strong> include those files in your <strong>top</strong>
+directory.</p></li>
 <li><p>Your submission may <strong>NOT</strong> have any file that starts with <code>COPYING</code>,
 <code>COPYRIGHT</code>, or <code>LICENSE</code> as those files are reserved by IOCCC.</p></li>
-<li><p>Your submission may <strong>NOT</strong> have in the top directory, <code>prog.orig.c</code>,
-<code>README.md</code>, nor <code>index.html</code> as those files reserved by IOCCC.</p></li>
-<li><p>Your submission may <strong>NOT</strong> have in the top directory, any file
+<li><p>Your submission may <strong>NOT</strong> have in the <strong>top</strong> directory: <code>prog.orig.c</code>,
+<code>README.md</code> or <code>index.html</code> as those files are reserved by the IOCCC.</p></li>
+<li><p>Your submission may <strong>NOT</strong> have in the <strong>top</strong> directory any file
 that matches a file glob pattern form <code>[0-9][0-9][0-9][0-9]_*.tar.bz2</code>
 as those files are reserved by IOCCC.</p></li>
 <li><p>Your submission may <strong>ONLY</strong> contain files and directories. Other file
-types such as symlinks, sockets, etc are <strong>NOT</strong> allowed.</p></li>
-<li><p>All directories <strong>MUST</strong> have a file mode of <strong>0755</strong>. All files
-<strong>MUST</strong> have the file mode of <strong>0444</strong>, except for files that
+types such as symlinks, sockets etc. are <strong>NOT</strong> allowed.</p></li>
+<li><p><strong>All</strong> directories <strong>MUST</strong> have permission mode of <strong>0755</strong>. All files
+<strong>MUST</strong> have the file mode of <strong>0444</strong>, EXCEPT for files that
 end in <code>.sh</code> which must have a mode of <strong>0555</strong>.</p></li>
 <li><p>All files that end in <code>.md</code> <strong>MUST</strong> be in markdown format.
 We recommend that markdown files observe our
@@ -582,29 +603,34 @@ a case insensitive filesystem.</p></li>
 </ul>
 <p>The <code>remarks.md</code> and <code>Makefile</code> are explained in more detail in the Guidelines.</p>
 <p>See <a href="../markdown.html">IOCCC markdown guidelines</a>.</p>
-<p>See <a href="rules.html#rule-17---packaging">Rule 17 - Packaging</a>.</p>
-<p>See FAQ on “<a href="../faq.html#file_perms">What permissions may my files be and what if I need different permissions?</a>”.</p>
-<p>See <a href="guidelines.html#mkiocccentry_toolkit">Guidelines for the mkiocccentry toolkit</a>.</p>
-<p>See <a href="guidelines.html#makefile">Guidelines for the Makefile</a>.</p>
+<p>See <a href="rules.html#rule-17-mkiocccentry">Rule 17 - Use mkiocccentry</a>.</p>
+<p>See the
+FAQ on “<a href="../faq.html#file_perms">What permissions may my files be and what if I need different permissions?</a>”.</p>
+<p>See the <a href="guidelines.html#mkiocccentry_toolkit">Guidelines on the mkiocccentry toolkit</a>.</p>
+<p>See the <a href="guidelines.html#makefile">Guidelines on the Makefile</a>.</p>
 <div id="rule5">
-<h2 id="rule-5---integrity">Rule 5 - Integrity</h2>
+<div id="rule5-modifying-files">
+<h2 id="rule-5---do-not-modify-submitted-files-or-filenames-or-parent-directories">Rule 5 - Do NOT modify submitted files or filenames or parent directories</h2>
 </div>
-<p>Your submission <strong>MUST NOT</strong> modify the filenames or content of any of
-your original submission, such as <code>prog.c</code>, <code>Makefile</code>, or any supplied
-data files. To modify files, your program can make a copy or you can
-use the <code>Makefile</code> to setup working copies. Any working copies <strong>MUST</strong> be
-cleaned up by the <code>Makefile</code> <code>clobber</code> target, so as to restore the
-directory to its original state.</p>
+</div>
+<p>Your submission <strong>MUST NOT</strong> modify the filenames or content of any of your
+original submission, such as <code>prog.c</code>, <code>Makefile</code>, or <strong>ANY</strong> other supplied
+files. To modify files, your program can make a copy or you can use the
+<code>Makefile</code> to setup working copies. Any working copies <strong>MUST</strong> be cleaned up
+by the <code>Makefile</code> <code>clobber</code> target, so as to restore the directory to its
+original state.</p>
 <p>Your submission <strong>MUST NOT</strong> create or modify directories and files
-ABOVE the current directory with the exception of the <code>/tmp</code> and the
-<code>/var/tmp</code> directories as long as the directory name or filename does
-<strong>NOT</strong> start with “.” (dot).</p>
-<p>The <code>Makefile</code> <code>clobber</code> target <strong>MUST</strong> be restore your submission into
+ABOVE the current directory (with the exception of the <code>/tmp</code> and the <code>/var/tmp</code>
+directories and as long as the directory name or filename does <strong>NOT</strong> start
+with a <code>.</code> (dot)).</p>
+<p>The <code>Makefile</code> <code>clobber</code> target <strong>MUST</strong> restore your submission to its
 original form, including the removal of any created files and directories.</p>
 <p>Your code should be able to run under a
 <a href="https://pubs.opengroup.org/onlinepubs/9799919799/">SUS environment</a>.</p>
 <div id="rule6">
-<h2 id="rule-6---free">Rule 6 - Free</h2>
+<div id="rule6-free-rule">
+<h2 id="rule-6---free-rule">Rule 6 - Free Rule</h2>
+</div>
 </div>
 <p>I am <strong>NOT</strong> a Rule, I am a <code>free(void *human);</code> ‼️</p>
 <pre><code>    while (!(ioccc(rule(you(are(number(6)))))) {
@@ -614,82 +640,93 @@ original form, including the removal of any created files and directories.</p>
 <div id="rule7">
 <h2 id="rule-7---original-work">Rule 7 - Original Work</h2>
 </div>
-<p>You, the author(s), <strong>MUST</strong> own the contents of your submission, or you <strong>MUST</strong>
-have permission from the original owner(s) to its use. If you submit
-any content that is owned by others, you <strong>MUST</strong> detail that ownership,
-i.e., who owns what, and document the permission you obtained from them
-in your <code>remarks.md</code> file.</p>
+<p>You, the author(s), <strong>MUST</strong> own the contents of your submission, <strong>OR</strong>, IF you
+do <strong>NOT</strong> own the work, then you <strong>MUST</strong> have permission from the original
+owner(s) to its use. If you submit <strong>ANY</strong> content that is owned by others, you
+<strong>MUST</strong> detail that ownership, i.e., who owns what, and document the permission
+you obtained from them in your <code>remarks.md</code> file.</p>
 <p>You are permitted to use tools to write your code.</p>
-<p>See <a href="rules.html#rule-16---anonymous">Rule 16 - Anonymous</a>.</p>
+<p>See <a href="rules.html#rule-16-anonymous-judging">Rule 16 - Anonymous Judging</a>.</p>
 <p>See <a href="guidelines.html#guideline-7---original-work">Guidelines for Rule 7 - Original Work</a>.</p>
 <div id="rule8">
-<h2 id="rule-8---submission">Rule 8 - Submission</h2>
+<h2 id="rule-8---submitting-requirements">Rule 8 - Submitting requirements</h2>
 </div>
-<p>The Submit Server will only accept submissions from those who have
-registered and only while the contest is open.</p>
-<p>The Submit Server places a total submission size limit of <strong>3999971</strong> bytes.</p>
+<p>The submit server will accept submissions <strong>ONLY</strong> from those who have
+registered and <strong>ONLY</strong> while the contest is open.</p>
+<p>The submit server places a total size limit of <strong>3999971</strong> bytes <strong>PER</strong>
+submission.</p>
 <p>Each account has ten (<strong>10.000</strong>) submission slots (<strong>0..9)</strong>. Each submission
 slot should be annotated by the server as to whether its was received,
 processed, malformed, etc. Please take note of any errors, rectify,
 and resubmit. In order to avoid potential packaging errors, it is <strong>highly
-recommended</strong> to use <code>mkiocccentry(1)</code>.</p>
+recommended</strong> to use <code>mkiocccentry(1)</code>, <strong>AND</strong> to check from time to time the
+status on the submit server, to see if any tests run by the server failed to
+validate your submission.</p>
+<p>Do <strong>NOT</strong> register more than one account!</p>
 <p>See
-<a href="rules.html#rule-3---register">Rule 3 - Register</a>,
-<a href="rules.html#rule-15---building">Rule 15 - Building</a>,
+<a href="rules.html#rule3-register">Rule 3 - Registering for the IOCCC</a>,
+<a href="rules.html#rule-15---building">Rule 15 - GNU Makefile compatibility</a>,
 and
-<a href="rules.html#rule-17---packaging">Rule 17 - Packaging</a>.</p>
+<a href="rules.html#rule-17-mkiocccentry">Rule 17 - Use mkiocccentry</a>.</p>
 <div id="rule9">
-<h2 id="rule-9---no-hands">Rule 9 - No hands</h2>
+<h2 id="rule-9---no-interactive-compiling-allowed">Rule 9 - No interactive compiling allowed</h2>
 </div>
 <p>Entries requiring human interaction to be initially compiled are <strong>NOT</strong>
 permitted. However, see the guidelines. Each entry <strong>MUST</strong> automate the
-build process using <code>bash</code>, <code>gmake</code>, <code>gcc</code>, <code>clang</code>, under a
-<a href="https://pubs.opengroup.org/onlinepubs/9799919799/">SUS environment</a>.</p>
+build process using <code>bash</code>, <code>gmake</code>, <code>gcc</code> and/or <code>clang</code> and other commonly
+available tools under an <a href="https://pubs.opengroup.org/onlinepubs/9799919799/">SUS
+environment</a>.</p>
 <p><strong>NOTE</strong>: The references to <code>gmake(1)</code> can be any GNU Make compatible tool.</p>
-<p>See <a href="rules.html#rule-15---building">Rule 15 - Building</a>.</p>
+<p><strong>NOTE</strong>: it is better to use the <code>${MAKE}</code> variable as then one may override
+the make command.</p>
+<p><strong>NOTE</strong>: it is better and more portable to <strong>NOT</strong> modify the <code>${CC}</code> variable
+in the Makefile.</p>
+<p>See <a href="rules.html#rule-15---building">Rule 15 - GNU Makefile compatibility</a>.</p>
 <div id="rule10">
-<h2 id="rule-10---privileges">Rule 10 - Privileges</h2>
+<h2 id="rule-10---program-file-permissions">Rule 10 - Program file permissions</h2>
 </div>
 <p>Programs that require special privileges (<code>setuid(2)</code>, <code>setgid(2)</code>,
 super-user, special owner, special group, etc.) are <strong>HIGHLY DISCOURAGED</strong>.
 We do <strong>NOT</strong> guarantee these functions will behave as you expect on our
 test platforms. If your program needs special permissions you <strong>MUST</strong>
 document this fact and explain why it is needed in your submission’s
-<code>remarks.md</code> file.</p>
+<code>remarks.md</code> file, preferably close to the top.</p>
 <p>Furthermore, if you need a supplementary program that you include to
-have these permissions, you will also have to explain this, because these
+have these permissions, you will also have to explain this as well, because these
 bits are <strong>NOT</strong> allowed in submissions and those bits will <strong>NOT</strong> be copied by
 <code>mkiocccentry(1)</code>.</p>
-<p>See <a href="rules.html#rule-4---files">Rule 4 - Files</a>,
+<p>See <a href="rules.html#rule4-required-files">Rule 4 - Required files</a>,
 and
-<a href="rules.html#rule-5---integrity">Rule 5 - Integrity</a>.</p>
+<a href="rules.html#rule5-modifying-files">Rule 5 - Do NOT modify files</a>.</p>
 <div id="rule11">
-<h2 id="rule-11---abuse">Rule 11 - Abuse</h2>
+<h2 id="rule-11---legal-rule-abuse">Rule 11 - Legal rule abuse</h2>
 </div>
-<p>Legal abuse of the rules is somewhat encouraged, but comes with risks.
-A submission that, in the opinion of the Judges, violates the rules <strong>WILL
+<p>Legal abuse of the rules is <strong>somewhat</strong> encouraged, but comes with risks.
+A submission that, in the opinion of the Judges, <strong>violates</strong> the rules <strong>WILL
 BE DISQUALIFIED</strong>. Submissions that plan to abuse the rules <strong>MUST</strong> justify
 why their rule abuse is legal (or interesting) in the <code>remarks.md</code> file.</p>
-<p>Submission packaging abuse will <strong>NOT</strong> be tolerated and for this reason
-its recommended to use <code>mkiocccentry(1)</code>. During development you can
-check your <code>prog.c</code> size limits using <code>iocccsize(1)</code>, e.g., <code>iocccsize -v1 prog.c</code>.
-Overriding problems detected by any of the IOCCC tools
+<p>Submission packaging abuse will <strong>NOT</strong> be tolerated and for this reason,
+amongst many others, it is recommended that you use <code>mkiocccentry(1)</code>. During
+development you can check your <code>prog.c</code> size limits using <code>iocccsize(1)</code>, e.g.,
+<code>iocccsize -v1 prog.c</code>. Overriding problems detected by any of the IOCCC tools
 risks that the submission will be rejected.</p>
 <p>If you do submit a rule abusing or violating submission, then consider
 also submitting an alternate version in a different submission server
 slot that does <strong>NOT</strong> violate the rules in case your rule abuse excuse
 is rejected.</p>
 <p><strong>IMPORTANT</strong>: If you do submit such an alternate non-rule abusing
-version, please indicate that in your <code>remarks.md</code> file of your non-rule
-abusing version so that the Judges don’t think you uploaded a duplicate
-into a wrong slot by mistake.</p>
-<p>See <a href="guidelines.html#guideline-11---abuse">Guidelines for Rule 11 - Abuse</a>.</p>
+version, <strong>PLEASE</strong> indicate that in your <code>remarks.md</code> file of your non-rule
+abusing version so that the Judges don’t think you uploaded a duplicate into a
+wrong slot by mistake.</p>
+<p>See <a href="guidelines.html#guideline-11---abuse">Guidelines for Rule 11 - Legal rule
+abuse</a>.</p>
 <div id="rule12">
 <h2 id="rule-12---utf-8">Rule 12 - UTF-8</h2>
 </div>
-<p>Use of UTF-8 is supported by <code>C89</code> standard and its updates and so too by the IOCCC.</p>
+<p>Use of UTF-8 is supported by <code>C89</code> standard and its updates and so too by the
+IOCCC.</p>
 <div id="rule13">
-<h2 id="rule-13---newlines">Rule 13 - Newlines</h2>
+<h2 id="rule-13---no-carriage-returns-in-prog.c">Rule 13 - No carriage returns in prog.c</h2>
 </div>
 <p>Any C source that fails to compile because lines contain carriage-returns
 (CTRL+M, <code>\r</code>) in particular as part of DOS/Windows style newlines might
@@ -698,33 +735,33 @@ or <code>remarks.md</code> files, but instead end lines with Unix newline (line-
 CTRL+J, <code>\n</code>).</p>
 <p>You are permitted, in order to try and squeeze your <code>prog.c</code> under a
 <a href="rules.html#rule-2a-gross-size">Rule 2a Gross Size</a> and/or
-<a href="rules.html#rule-2b-net-size">Rule 2b Next Size</a>
+<a href="rules.html#rule-2b-net-size">Rule 2b Net Size</a>
 limits, to <strong>NOT</strong> end source with a newline. If you
 need to do this, please document that in your <code>remarks.md</code> file and if
 your compiler complains about this, document this too and update your
 <code>Makefile</code> to account for this.</p>
 <div id="rule14">
-<h2 id="rule-14---resubmit">Rule 14 - Resubmit</h2>
+<h2 id="rule-14---resubmitting-lost-submissions">Rule 14 - Resubmitting lost submissions</h2>
 </div>
 <p>Submissions that are substantially similar to previous winning IOCCC
 entries are discouraged.</p>
-<p>You are allowed to resubmit to a later contest, a submission that didn’t
-win the IOCCC. If you do so, then you would be well advised to try and
-enhance and improve your submission. If you do resubmit something that
-didn’t previously win, then you are encouraged to mention this in your
-<code>remarks.md</code> file as this sometimes helps.</p>
+<p>You are allowed to resubmit to a later contest, a submission that didn’t win the
+IOCCC. If you do so, then you would be <strong>WELL ADVISED</strong> to try and enhance and
+improve your submission. If you do resubmit something that didn’t previously
+win, then you are encouraged to mention this in your <code>remarks.md</code> file as this
+<strong>sometimes</strong> helps.</p>
 <div id="rule15">
-<h2 id="rule-15---building">Rule 15 - Building</h2>
+<h2 id="rule-15---gnu-makefile-compatibility">Rule 15 - GNU Makefile compatibility</h2>
 </div>
-<p>The <code>Makefile</code> <strong>MUST</strong> adhere to GNU Makefile syntax. Its recommended
-that you copy and rename the <code>Makefile.example</code> as a template. The primary
-target of the <code>Makefile</code> <strong>MUST</strong> be <code>prog</code> and the source file is <code>prog.c</code>.
-The C compiler and preprocessor <strong>MUST</strong> be invoked using <code>${CC}</code> and <code>${CPP}</code>
-macros respectively.</p>
-<p>The <code>clobber</code> target should clean and restore the submission directory
-tree to its original state, such as removing temporary files or any
-modified data files. Don’t assume that <code>git</code> tool chain is installed,
-i.e., do <strong>NOT</strong> expect <code>git clean -f</code> to work.</p>
+<p>The <code>Makefile</code> <strong>MUST</strong> adhere to GNU Makefile syntax. It’s highly recommended
+that you copy the <a href="Makefile.example">Makefile.example</a> as a template, renaming
+it to <code>Makefile</code>. The primary target of the <code>Makefile</code> <strong>MUST</strong> be <code>prog</code> and
+the source file is <code>prog.c</code>. The C compiler and preprocessor <strong>MUST</strong> be
+invoked using <code>${CC}</code> and <code>${CPP}</code> macros respectively.</p>
+<p>The <code>clobber</code> target <strong>MUST</strong> clean and restore the submission directory tree to
+its original state, such as removing temporary files or any modified data files.
+Don’t assume that <code>git</code> tool chain is installed, i.e. do <strong>NOT</strong> expect <code>git clean -f</code> to work. To be clear: do <strong>NOT</strong> use <code>git</code> to clean out files as this
+can cause problems in the winner repo!</p>
 <p>The <code>Makefile</code> <strong>MUST</strong> use a syntax that is compatible with
 <code>bash(1)</code> and GNU <code>make(1)</code>. You are encouraged to use <code>SHELL= bash</code> in your <code>Makefile</code>; please add a space between the <code>=</code> and
 the value such as:</p>
@@ -734,25 +771,30 @@ Specification</a>
 environments and systems are available in the search
 <code>$PATH</code>. Avoid command options that aren’t part of
 <a href="https://en.wikipedia.org/wiki/Single_UNIX_Specification">SUS</a>, such as
-GNU long name options <code>--example</code> or extensions like <code>grep -P</code>.</p>
-<p>Do <strong>NOT</strong> assume that <code>.</code> (current directory) is in the <code>$PATH</code> environment variable.</p>
-<p>See <a href="rules.html#rule-4---files">Rule 4 - Files</a>.</p>
+GNU long name options (such as <code>--example</code>) or extensions like <code>grep -P</code>.</p>
+<p>Do <strong>NOT</strong> assume that <code>.</code> (current directory) is in the <code>$PATH</code> environment
+variable.</p>
+<p>See <a href="rules.html#rule-4---files">Rule 4 - Required files</a>.</p>
 <p>See FAQ on “<a href="../faq.html#makefile_details">What are the detailed recommendations for a submission Makefile?</a>”.</p>
-<p>See <a href="guidelines.html#guideline-15---building">Guidelines for Rule 15 - Building</a>.</p>
+<p>See <a href="guidelines.html#guideline-15---building">Guidelines for Rule 15 - GNU Makefile compatibility</a>.</p>
 <div id="rule16">
-<h2 id="rule-16---anonymous">Rule 16 - Anonymous</h2>
+<h2 id="rule-16---anonymous-judging">Rule 16 - Anonymous judging</h2>
 </div>
 <p>Your source code, data files, remarks, and program output <strong>MUST NOT</strong>
 identify the author(s) of your code (unless you are <strong>Peter Honeyman</strong>
 or pretending to be <strong>Peter Honeyman</strong>). In order to be impartial the
 <a href="https://www.ioccc.org/judges.html">Judges</a> do <strong>NOT</strong> know who is submitting
-entries to the IOCCC until final selection is made. Even if you are
-a past winner, you <strong>MUST NOT</strong> reveal your identity deliberately or by
-accident anywhere in your submission. <strong><em>Failure to comply may result
-in the submission being disqualified.</em></strong></p>
+programs to the IOCCC until final selection is made, and <strong>only</strong> submissions
+that won.</p>
+<p>Even if you are a past winner, you <strong>MUST NOT</strong> reveal your identity
+deliberately or by accident anywhere in your submission. <strong><em>Failure to comply
+may result in the submission being disqualified</em></strong>.</p>
 <div id="rule17">
-<h2 id="rule-17---packaging">Rule 17 - Packaging</h2>
+<div id="rule17-mkiocccentry">
+<h2 id="rule-17---use-mkiocccentry">Rule 17 - Use <code>mkiocccentry</code></h2>
 </div>
+</div>
+<p>TL;DR: use <code>mkiocccentry(1)</code> to package your submission.</p>
 <p>The files, directories, and paths <strong>MUST</strong> conform to the limits imposed by
 <code>mkiocccentry(1)</code>, including but <strong>NOT</strong> limited, to their names, count, path
 length, directory tree depth, and permissions.</p>
@@ -763,33 +805,36 @@ directory depths of <strong>4</strong>. The maximum number of files, excluding
 component is <strong>38</strong> and maximum path length is <strong>60</strong>.</p>
 <p>The submission <strong>MUST</strong> be a <code>.txz</code> compressed tarball (i.e., tarball compressed by <code>xz(1)</code>)
 as constructed by <code>mkiocccentry(1)</code>, which <strong>MUST</strong> be within <strong>[1..3999971]</strong> bytes in size.</p>
-<p>The tarball <strong>MUST</strong> be a <strong>v7 format</strong> tarball.</p>
+<p>The tarball <strong>MUST</strong> be a <strong>v7 format</strong> tarball, and any supplementary tarballs
+you provide <strong>MUST</strong> also be <strong>v7 format</strong>.</p>
 <p>The sum of all file lengths, after unpacking from the tarball, <strong>MUST</strong> be
 less than <code>27651*1024</code> (<strong>28314624</strong>) bytes.</p>
-<p>The submission <strong>MUST</strong> be a tarball file that <strong>MUST</strong> pass all <code>txzchk(1)</code> checks, and the tarball
-filename <strong>MUST</strong> pass all <code>fnamchk(1)</code> checks.</p>
-<p>You may <strong>NOT</strong> submit a tarball created by the <code>-d</code>, <code>-e</code>, <strong>NOR</strong> by the <code>-s seed</code> options of <code>mkiocccentry(1)</code>.</p>
+<p>The submission <strong>MUST</strong> pass all <code>txzchk(1)</code> checks, and the tarball filename
+<strong>MUST</strong> pass all <code>fnamchk(1)</code> checks as well.</p>
+<p>You may <strong>NOT</strong> submit a tarball created by the <code>-d</code>, <code>-e</code> <strong>OR</strong> by the <code>-s seed</code> options of <code>mkiocccentry(1)</code>.</p>
 <p>The unpacked submission directory <strong>MUST</strong> pass the checks performed by the
-current version of <code>chksubmit(1)</code>.</p>
-<p>Submissions may <strong>NOT</strong> use a
-<a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry toolkit</a>
-command line options that labeled as “<strong>for TESTING purposes</strong>”,
-<strong>NOR</strong> labeled as “<strong>for the use by the IOCCC judges only</strong>”,
-in their respective man pages.</p>
-<p>Submissions may <strong>ONLY</strong> use
-<a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry toolkit</a>
-command lines that confirm to the command’s <code>-h</code> “<em>print help message</em>”.</p>
+minimum required version of <code>chksubmit(1)</code>.</p>
+<p>Submissions may <strong>NOT</strong> use a <a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry
+toolkit</a> command line options that
+are labelled as “<strong>for TESTING purposes</strong>”, <strong>OR</strong> labelled as “<strong>for the use by
+the IOCCC judges only</strong>”, in their respective man pages.</p>
+<p>Submissions may <strong>ONLY</strong> use <a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry
+toolkit</a> command lines that confirm
+to the command’s <code>-h</code> “<em>print help message</em>”, again notwithstanding the options
+for testing and the IOCCC judges.</p>
 <p>The <code>prog.c</code> file <strong>MUST</strong> pass the <a href="rules.html#rule-2---size">Rule 2 - Size</a>
-size checks performed by <code>iocccsize(1)</code>.</p>
-<p>The <code>.auth.json</code> and <code>.info.json</code> files <strong>MUST</strong> be compatible with what <code>chksubmit(1)</code> generates.</p>
-<p>Any submission that fails to pass the checks performed by the most recent version of the
-<a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry toolkit</a>
+checks performed by <code>iocccsize(1)</code>.</p>
+<p>The <code>.auth.json</code> and <code>.info.json</code> files <strong>MUST</strong> be compatible with what
+<code>mkiocccentry(1)</code> generates.</p>
+<p>Any submission that fails to pass the checks performed by the minimum required
+version of the <a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry toolkit</a>
 <strong>WILL be rejected</strong>!</p>
-<p>See <a href="rules.html#rule-4---files">Rule 4 - Files</a>.</p>
-<p>See FAQ on “<a href="../faq.html#mkiocccentry">What is the mkiocccentry tool, how do I obtain it and how do I use it?</a>”.</p>
-<p>See <a href="guidelines.html#guideline-17---packaging">Guidelines for Rule 17 - Packaging</a>.</p>
+<p>See <a href="rules.html#rule4-required-files">Rule 4 - Required files</a>.</p>
+<p>See the
+FAQ on “<a href="../faq.html#mkiocccentry">What is the mkiocccentry tool, how do I obtain it and how do I use it?</a>”.</p>
+<p>See the <a href="guidelines.html#guideline-17---packaging">Guidelines for Rule 17 - Use mkiocccentry</a>.</p>
 <div id="rule18">
-<h2 id="rule-18---license">Rule 18 - License</h2>
+<h2 id="rule-18---submission-license">Rule 18 - Submission license</h2>
 </div>
 <p>The entirety of your submission <strong>MUST</strong> be submitted under the following license:</p>
 <p><a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0 DEED Attribution-ShareAlike 4.0 International</a></p>
@@ -800,7 +845,7 @@ size checks performed by <code>iocccsize(1)</code>.</p>
 <p>This 19th rule, while prime, is reserved for future abuse 😁.
 Additional rules, both humorous and otherwise, may be added
 below this rule in future contests.</p>
-<p>See <a href="rules.html#rule-6---free">Rule 6 - Free</a>.</p>
+<p>See <a href="rules.html#rule6-free">Rule 6 - Free Rule</a>.</p>
 <h2 id="further-reading">Further Reading</h2>
 <p>Please read the <a href="guidelines.html">Guidelines</a> next for further commentary on these rules.</p>
 <p>Read the
