@@ -39,7 +39,7 @@ writing by [contacting the judges](../contact.html).
 
 ## Rules Version
 
-These IOCCC Rules are version **29.05 2025-11-21**.
+These IOCCC Rules are version **29.08 2025-11-28**.
 
 Be sure to read the [IOCCC guidelines](guidelines.html).
 
@@ -48,15 +48,23 @@ Be sure to read the [IOCCC guidelines](guidelines.html).
 ## Rule 0 - Dates
 </div>
 
-This IOCCC runs from ${START_DATE_TIME} UTC to ${CLOSE_DATE_TIME} UTC.
+This IOCCC runs from **2025-12-03 20:25:12.045045 UTC** to **2026-03-13 17:19:23.293137 UTC**.
 
-This contest will enter the open state on ${OPEN_DATE_TIME} UTC.
+This contest will enter the **pending state** on **2025-12-03 20:25:12.045045 UTC**,
+allowing people to register for the IOCCC.
 
-This contest will enter the judging state on ${JUDGMENT_DATE_TIME} UTC.
+This contest will enter the **open state** on **2025-12-15 18:21:24.273033 UTC**,
+allowing people to upload submissions to the [IOCCC submit server](https://submit.ioccc.org).
 
-The above dates are subject to change until the contest is officially open.
+This contest will enter the **judging state** on **2026-03-13 17:19:23.293137 UTC**,
+when people will no longer be allowed to upload submissions.
 
-**NOTE**: As of this draft, the above dates are TBD (to be determined).
+Until the contest enters the **open** state, any or all
+of the above **dates and times may change _AT ANY TIME_**!
+
+The above timestamps are in "_YYYY-MM-DD HH:MM:SS.micros UTC_" format.
+
+See [Current status of the IOCCC](../status.html).
 
 
 <div id="rule1">
@@ -78,12 +86,17 @@ During development this can be checked using `iocccsize(1)`:
 
     iocccsize prog.c
 
+See [Guidelines for Rule 2 - Size](guidelines.html#guideline-2---size).
+
+
 <div id="rule2a">
 ### Rule 2a - Gross Size
 </div>
 
 The overall maximum size of your `prog.c` program source **MUST NOT**
 exceed **4993** bytes.
+
+See [Entering the IOCCC: the bare minimum you need to know](../quick-start.html#enter).
 
 
 <div id="rule2b">
@@ -117,6 +130,8 @@ email or for those who wait until the last minute to try to register!
 See [Entering the IOCCC: the bare minimum you need to know](../quick-start.html#enter).
 
 See [Rule 8 - Submission](rules.html#rule-8---submission).
+
+See [Guidelines for Rule 3 - Register](guidelines.html#guideline-3---register).
 
 
 <div id="rule4">
@@ -177,6 +192,12 @@ See [IOCCC markdown guidelines](../markdown.html).
 
 See [Rule 17 - Packaging](rules.html#rule-17---packaging).
 
+See FAQ on "[What permissions may my files be and what if I need different permissions?](../faq.html#file_perms)".
+
+See [Guidelines for the mkiocccentry toolkit](guidelines.html#mkiocccentry_toolkit).
+
+See [Guidelines for the Makefile](guidelines.html#makefile).
+
 
 <div id="rule5">
 ## Rule 5 - Integrity
@@ -219,25 +240,17 @@ See [Rule 19 - Prime](rules.html#rule-19---prime).
 ## Rule 7 - Original Work
 </div>
 
-In short: You wrote it, you own it, and its an original work.
-
 You, the author(s), **MUST** own the contents of your submission, or you **MUST**
 have permission from the original owner(s) to its use.  If you submit
 any content that is owned by others, you **MUST** detail that ownership,
 i.e., who owns what, and document the permission you obtained from them
 in your `remarks.md` file.
 
-The IOCCC has a rich history of remarkable winning entries created by
-authors who skilfully employed various techniques to develop their code.
-While it isn't required, you are allowed to use tools to develop and
-test your submission.  These tools may include, but aren't limited to
-code generators, code analysis tools, static code analysis tools, runtime
-analysis tools, machine learning tools, natural language models, code
-copilot tools, so-called AI services, large language models (LLMs), etc.
-If you do make use of such tools or services, then we encourage you to
-describe what tools and how you used those tools, in your `remarks.md` file.
+You are permitted to use tools to write your code.
 
 See [Rule 16 - Anonymous](rules.html#rule-16---anonymous).
+
+See [Guidelines for Rule 7 - Original Work](guidelines.html#guideline-7---original-work).
 
 
 <div id="rule8">
@@ -271,7 +284,7 @@ permitted. However, see the guidelines.  Each entry **MUST** automate the
 build process using `bash`, `gmake`, `gcc`, `clang`, under a
 [SUS environment](https://pubs.opengroup.org/onlinepubs/9799919799/).
 
-Note references to `gmake` can be any GNU Make compatible tool.
+**NOTE**: The references to `gmake(1)` can be any GNU Make compatible tool.
 
 See [Rule 15 - Building](rules.html#rule-15---building).
 
@@ -280,7 +293,7 @@ See [Rule 15 - Building](rules.html#rule-15---building).
 ## Rule 10 - Privileges
 </div>
 
-Programs that require special privileges (setuid(2), setgid(2),
+Programs that require special privileges (`setuid(2)`, `setgid(2)`,
 super-user, special owner, special group, etc.) are **HIGHLY DISCOURAGED**.
 We do **NOT** guarantee these functions will behave as you expect on our
 test platforms.  If your program needs special permissions you **MUST**
@@ -321,6 +334,8 @@ is rejected.
 version, please indicate that in your `remarks.md` file of your non-rule
 abusing version so that the Judges don't think you uploaded a duplicate
 into a wrong slot by mistake.
+
+See [Guidelines for Rule 11 - Abuse](guidelines.html#guideline-11---abuse).
 
 
 <div id="rule12">
@@ -397,6 +412,10 @@ Do **NOT** assume that `.` (current directory) is in the `$PATH` environment var
 
 See [Rule 4 - Files](rules.html#rule-4---files).
 
+See FAQ on "[What are the detailed recommendations for a submission Makefile?](../faq.html#makefile_details)".
+
+See [Guidelines for Rule 15 - Building](guidelines.html#guideline-15---building).
+
 
 <div id="rule16">
 ## Rule 16 - Anonymous
@@ -426,34 +445,46 @@ directory depths of **4**.  The maximum number of files, excluding
 `.info.json` and `.auth.json` is **31**.  And the maximum file-path
 component is **38** and maximum path length is **60**.
 
-The submission **MUST** be a `.txz` compressed tarball as constructed by
-`mkiocccentry(1)`, which **MUST** be within **[1..3999971]** bytes in size.
-The sum of all file lengths, after unpacking from the tarball, **MUST** be
-less than `27651*1024` bytes.
+The submission **MUST** be a `.txz` compressed tarball (i.e., tarball compressed by `xz(1)`)
+as constructed by `mkiocccentry(1)`, which **MUST** be within **[1..3999971]** bytes in size.
 
-The tarball file **MUST** pass all `txzchk(1)` checks and the tarball
-filename **MUST** pass all `fnamchk(1)` checks.  You may **NOT** submit a tarball
-created by the `-d` or `-s` seed options of `mkiocccentry(1)`.
+The tarball **MUST** be a **v7 format** tarball.
+
+The sum of all file lengths, after unpacking from the tarball, **MUST** be
+less than `27651*1024` (**28314624**) bytes.
+
+The submission **MUST** be a tarball file that **MUST** pass all `txzchk(1)` checks, and the tarball
+filename **MUST** pass all `fnamchk(1)` checks.
+
+You may **NOT** submit a tarball created by the `-d`, `-e`, **NOR** by the `-s seed` options of `mkiocccentry(1)`.
 
 The unpacked submission directory **MUST** pass the checks performed by the
 current version of `chksubmit(1)`.
 
+Submissions may **NOT** use a
+[mkiocccentry toolkit](https://github.com/ioccc-src/mkiocccentry)
+command line options that labeled as "**for TESTING purposes**",
+**NOR** labeled as "**for the use by the IOCCC judges only**",
+in their respective man pages.
+
+Submissions may **ONLY** use
+[mkiocccentry toolkit](https://github.com/ioccc-src/mkiocccentry)
+command lines that confirm to the command's `-h` "_print help message_".
+
 The `prog.c` file **MUST** pass the [Rule 2 - Size](rules.html#rule-2---size)
 size checks performed by `iocccsize(1)`.
 
-The `.auth.json` and `.info.json` files **MUST** be compatible with what
-`mkiocccentry(1)` generates.
+The `.auth.json` and `.info.json` files **MUST** be compatible with what `chksubmit(1)` generates.
 
-Submissions that package using older versions of the mkiocccentry
-toolkit to are **HIGHLY LIKELY** to be **REJECTED**!  Be sure
-that you are using the latest tools from the
+Any submission that fails to pass the checks performed by the most recent version of the
 [mkiocccentry toolkit](https://github.com/ioccc-src/mkiocccentry)
-GitHub repo.
-
-In summary: it is best to use `mkioccentry(1)` to package your submission,
-rather than roll-it-by-hand.
+**WILL be rejected**!
 
 See [Rule 4 - Files](rules.html#rule-4---files).
+
+See FAQ on "[What is the mkiocccentry tool, how do I obtain it and how do I use it?](../faq.html#mkiocccentry)".
+
+See [Guidelines for Rule 17 - Packaging](guidelines.html#guideline-17---packaging).
 
 
 <div id="rule18">
@@ -480,16 +511,18 @@ See [Rule 6 - Free](rules.html#rule-6---free).
 
 ## Further Reading
 
+Please read the [Guidelines](guidelines.html) next for further commentary on these rules.
+
 Read the
 [Entering the IOCCC: the bare minimum you need to know](https://www.ioccc.org/quick-start.html#enter)
 for an overview of how to enter the contest.
 
-Please read the [Guidelines](guidelines.html) next for further commentary on The Rules.
-
 See also the [FAQ](../faq.html).
+
+And now [for something completely different](guidelines.html#fun)
 
 Consider joining the [IOCCC Discord Server](https://discord.com/invite/Wa42Qujwnw)
 for discussions about The Rules, questions for the Judges, and `C` in general.
 
-Leonid A. Broukhis  
+Leonid A. Broukhis
 chongo (Landon Curt Noll) /\\cc/\\

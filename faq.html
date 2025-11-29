@@ -453,7 +453,7 @@
 
 <!-- BEFORE: 1st line of markdown file: faq.md -->
 <h1 id="ioccc-faq-table-of-contents">IOCCC FAQ Table of Contents</h1>
-<p>This is FAQ version <strong>28.2.24 2025-11-18</strong>.</p>
+<p>This is FAQ version <strong>29.01 2025-11-28</strong>.</p>
 <h2 id="entering-the-ioccc-the-bare-minimum-you-need-to-know">0. <a href="#enter_questions">Entering the IOCCC: the bare minimum you need to know</a></h2>
 <ul>
 <li><strong>Q 0.0</strong>: <a class="normal" href="#enter">How can I enter the IOCCC?</a></li>
@@ -485,6 +485,7 @@
 <li><strong>Q 1.9</strong>: <a class="normal" href="#submission_dir">How can I avoid having to move or delete my submission directory for the same workdir?</a></li>
 <li><strong>Q 1.10</strong>: <a class="normal" href="#download_submission">Can I download my submission tarball from the submit server?</a></li>
 <li><strong>Q 1.11</strong>: <a class="normal" href="#del_submission">Can I delete a submission from the submit server?</a></li>
+<li><strong>Q 1.12</strong>: <a class="normal" href="#makefile_details">What are the detailed recommendations for a submission Makefile?</a></li>
 </ul>
 <h2 id="ioccc-judging-process">2. <a href="#judging_process">IOCCC Judging process</a></h2>
 <ul>
@@ -882,6 +883,9 @@ date
 <code>Makefile.example</code>
 does have other rules like <code>everything</code> and <code>alt</code>, and we encourage you to use
 the one linked to above.</p>
+<p>See also the
+FAQ on “<a href="#makefile_details">detailed Makefile recommendations</a>”
+for more details.</p>
 <p>Jump to: <a href="#">top</a></p>
 <div id="remarks_md">
 <div id="remarks">
@@ -1113,7 +1117,7 @@ and the
 FAQ on “<a href="#fnamchk">fnamchk</a>”
 for more details.</p>
 <div id="extra-files">
-<h1 id="what-are-extra-files-and-how-may-i-include-additional-files-beyond-the-max-allowed">1.5: What are extra files and how may I include additional files beyond the max allowed?</h1>
+<h3 id="q1.5-what-are-extra-files-and-how-may-i-include-additional-files-beyond-the-max-allowed">Q1.5: What are extra files and how may I include additional files beyond the max allowed?</h3>
 </div>
 <p>Extra files are defined as files that are not the free files (the required files
 <code>prog.c</code>, <code>Makefile</code>, <code>remarks.md</code> and the optional <code>try.sh</code>, <code>try.alt.sh</code>,
@@ -1478,6 +1482,222 @@ Makefile</a> to your Makefile and add to the remarks.md:</p>
 <blockquote>
 <p>Please ignore this submission.</p>
 </blockquote>
+<p>Jump to: <a href="#">top</a></p>
+<div id="makefile_details">
+<h3 id="q-1.12-what-are-the-detailed-recommendations-for-a-submission-makefile">Q 1.12: What are the detailed recommendations for a submission Makefile?</h3>
+</div>
+<p>We <strong>recommend</strong> AND <strong>encourage</strong> you to use the example Makefile,
+as the starting point for your submission’s required <code>Makefile</code>:</p>
+<ul>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/next/Makefile.example">view example Makefile</a></li>
+<li><a href="Makefile.example" download="Makefile">download example Makefile</a></li>
+</ul>
+<p>Feel free to modify the <code>Makefile</code> to suit your obfuscation needs.</p>
+<p><strong>Please</strong> add a space between the <code>=</code> and the value of variables, in the
+<code>Makefile</code>, making sure that the <code>=</code> comes immediately after the name. See the
+example <code>Makefile</code> for examples.</p>
+<p>The rest of this section and its subsections will assume that you are using some
+variant of the example <code>Makefile</code>, again renamed as <code>Makefile</code>.</p>
+<p>We suggest that you compile your submission with a commonly available
+<code>-std=gnu17</code> (ISO C 2017 with GNU extensions) C compiler, via <code>clang(1)</code>
+and/or <code>gcc(1)</code>.</p>
+<div id="cflags">
+<div id="flags">
+<h4 id="default-compiler-flags">Default compiler flags</h4>
+</div>
+</div>
+<p>Unless you <strong>clearly state</strong> otherwise in your <code>remarks.md</code> file, <strong>AND</strong> put in
+your submission’s <code>Makefile</code>, we <strong>will</strong> compile using <code>-std=gnu17 -O3</code>!</p>
+<p>It <strong>is OK</strong> if you need to require your submission to <strong>NOT be</strong> compiled
+using the default <code>-std=gnu17 -O3</code> settings. Simply <strong>explain why</strong>
+your submission should NOT be compiled using <code>-std=gnu17 -O3</code> in
+your <code>remarks.md</code> file, <strong>AND</strong> adjust your <code>Makefile</code> accordingly.</p>
+<p class="leftbar">
+You really should <strong>NOT</strong> redefine <code>CC</code> because doing so makes it less portable. &lt;– <strong>Hint!</strong>
+</p>
+<p>One reason that you might have to change the flags, is that the optimiser is
+known to break some programs, but there are certainly other possible valid
+reasons. Again, just update the <code>Makefile</code> and explain it in your <code>remarks.md</code>.
+See the <a href="#optimiser">optimiser section</a> for details for changing optimiser
+flags.</p>
+<p>For more fun when it comes to optimisers breaking code, see
+<a href="1986/marshall/compilers.html">1986/marshall/compilers.html</a>.</p>
+<div id="compilers">
+<h4 id="default-compiler">Default compiler</h4>
+</div>
+<p><strong>IMPORTANT NOTE</strong>: The use of <code>-std=gnu17</code> does <strong>NOT</strong> imply the use of the <code>gcc</code>
+compiler! We often start by compiling using the <strong>clang</strong> C compiler instead.</p>
+<p><strong>PLEASE NOTE</strong>: in macOS, the compiler <code>gcc</code> found at <code>/usr/bin/gcc</code> is
+in truth the <code>clang</code> compiler, as <code>/usr/bin/gcc --version</code> will show!</p>
+<div id="cstd">
+<div id="standard">
+<h4 id="c-standard">C standard</h4>
+</div>
+</div>
+<p>You may change the standard under which your submission is compiled
+by modifying the <code>CSTD</code> Makefile variable. For example, to use <code>c99</code> instead:</p>
+<pre><code>    CSTD= -std=c99</code></pre>
+<div id="opt">
+<div id="optimization">
+<div id="optimisation">
+<div id="optimizer">
+<div id="optimiser">
+<h4 id="default-optimisation-level">Default optimisation level</h4>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>You may change the level of optimization and compiler debug level
+that your submission is compiled with, by modifying the <code>OPT</code> Makefile variable.
+For example, to compile without optimization, and to include debug symbols:</p>
+<pre><code>    OPT= -O0 -g3</code></pre>
+<div id="warnings">
+<div id="cwarn">
+<h4 id="compiler-warnings">Compiler warnings</h4>
+</div>
+</div>
+<p>The default warning flags are set via the <code>CWARN</code> variable, as shown in the
+example <code>Makefile</code>:</p>
+<pre><code>    # Common C compiler warning flags
+    #
+    CWARN= -Wall -Wextra ${CSILENCE} ${CUNKNOWN}</code></pre>
+<p>For details on <code>CSILENCE</code> and <code>CUNKNOWN</code>, see the <a href="#disabling-warnings">section on disabling
+warnings</a>.</p>
+<div id="weverything">
+<h5 id="the--weverything-option">The <code>-Weverything</code> option</h5>
+</div>
+<p>We do <strong>NOT</strong> recommend that you put
+the use of <code>-Weverything</code> into your submission’s <code>Makefile</code> for the reasons
+cited there. This goes even if your version does not trigger a warning as some
+other version might!</p>
+<p>On the other hand, if <code>${CC}</code> has “<code>clang</code>” in the name, the example <code>Makefile</code> will
+automatically enable <code>-Weverything</code>, so you might have to use <code>-Wno-foo</code>
+options anyway, as detailed below.</p>
+<p>If “<code>clang</code>” is NOT in <code>${CC}</code>, the <code>CWARN</code> variable will not be further
+modified.</p>
+<p>There is no real penalty for compiler warnings. Sometimes
+compiler warnings cannot be helped: especially in the case of
+obfuscated C. :-) So if you cannot easily get rid of a compiler
+warning, try not to fret too much.</p>
+<p>We <strong>LIKE</strong> code that has a minimum of warnings, especially under the
+more strict <code>-Wall -Wextra -pedantic</code> mode:</p>
+<pre><code>    CWARN= -Wall -Wextra -pedantic</code></pre>
+<p>The two previous guidelines might be thought by some as being somewhat
+contradictory. Isn’t life, and isn’t trying to satisfy “contradictory customer
+requirements” all too often like that? :-) Try to minimize warnings if you
+can.</p>
+<p>If you manage to produce very few warnings, or perhaps no warnings at
+all under the <code>-Wall -Wextra -pedantic</code> mode, then by all means brag about it in
+your <code>remarks.md</code> file <strong>AND BE SURE TO TELL US</strong> the OS, OS version, compiler
+and compiler version in which you observed this occurring (in case our OS and
+compiler produces a different result: so your submission won’t be penalized for
+not meeting your claims).</p>
+<p>On the other hand, some warnings cannot be disabled and are enabled by compilers
+without any warning option specified. These are sometimes inevitable in
+obfuscated code and even in some non-obfuscated code, and you should not worry
+about this, though it might be worth pointing out.</p>
+<p>For instance, some compilers like to warn about use of pointers as arrays, which seems to
+be dubious, as it obviously can’t (always) be avoided, being a big part of C, so
+you should not worry about this either; this is the warning
+<code>-Wunsafe-buffer-usage</code> and the way to disable it is <code>-Wno-unsafe-buffer-usage</code>.</p>
+<h4 id="disabling-warnings">Disabling warnings</h4>
+<p class="leftbar">
+If you do have to disable warnings due to <code>-Weverything</code> automatically being
+included, you might wish to state this fact in your <code>remarks.md</code> file.
+And even without <code>-Weverything</code> there can be warnings, as noted above.
+</p>
+<p>If your submission issues lots of warnings but is otherwise
+marvelously obfuscated in multiple levels, don’t worry about it. Nevertheless,
+be sure that the warnings do not constitute a potential “<strong>show stopper</strong>”
+compiler problem. Be sure that compilers such as both <code>gcc</code> and <code>clang</code> won’t
+produce a compiler <strong>error</strong> and refuse to compile your code: unless for some
+reason that is what you intend to happen in which case document that too in your
+<code>remarks.md</code> file. :-)</p>
+<p>All other things being equal, a program that must turn off fewer
+warnings will be considered better, for certain values of better.</p>
+<p>To turn off a compiler warning, in your submission’s <code>Makefile</code>,
+try something such as:</p>
+<pre><code>    CSILENCE= -Wno-some-thing -Wno-another-thing</code></pre>
+<p class="leftbar">
+For instance:
+</p>
+<pre><code>    CSILENCE= -Wno-parentheses -Wno-binding-in-condition -Wno-misleading-indentation</code></pre>
+<div id="macros">
+<h4 id="defining-macros-in-the-makefile">Defining macros in the Makefile</h4>
+</div>
+<p>If you need to define something on the compile line, use
+the <code>CDEFINE</code> Makefile variable. For example:</p>
+<pre><code>    CDEFINE= -Dfoo -Dbar=baz</code></pre>
+<p><strong>NOTE</strong>: just because we offer a default way to use the <code>-D</code> option, we still
+do not like excess use of <code>-D</code> to get past size limits, especially since you
+could use <code>#define</code> in your code instead.</p>
+<div id="include">
+<h4 id="include-files-in-the-makefile">Include files in the Makefile</h4>
+</div>
+<p>If you need to include a file (as in <code>#include</code>) on the command line, use the
+<code>CINCLUDE</code> Makefile variable. For example:</p>
+<pre><code>    CINCLUDE= -include stdio.h</code></pre>
+<div id="magic">
+<h4 id="magic-in-the-makefile">Magic in the Makefile</h4>
+</div>
+<p>If you need to add other “<strong>magic</strong>” flags to your compile line,
+use the <code>COTHER</code> Makefile variable. For example:</p>
+<pre><code>    COTHER= -fno-math-errno</code></pre>
+<p><strong>NOTE</strong>: <strong>We only recommend using “<em>magic</em>” flags if <em>BOTH</em> <code>gcc</code>
+<em>and</em> <code>clang</code></strong> support it.</p>
+<p>Again, please note that in macOS, <code>/usr/bin/gcc</code> is actually <code>clang</code>!</p>
+<div id="clobber">
+<h4 id="the-clobber-rule">The clobber rule</h4>
+</div>
+<p>When <code>make clobber</code> is invoked, we request that submissions be restored
+to their original submission state. For example, any temporary files
+(<strong>including</strong> the compiled program(s)) created during the build process, or
+during execution should be removed by the <code>clobber</code> rule. In other words, the
+only things that should be in the directory after running <code>make clobber</code> is what
+is in your submission tarball itself.</p>
+<p>While people are free to manage their submission under <code>git(1)</code> or even use a
+GitHub repo, dot-files and dot-directories such as <code>.git</code> are not allowed in a
+submission.</p>
+<p>The <code>mkiocccentry(1)</code> tool will ignore dot-files and dot-directories (such as
+<code>.vimrc</code>, <code>.bashrc</code>, <code>.git</code> and <code>.github</code>) and not put them in the submission’s
+compressed tarball. So while you may use such files and
+directories to help develop your submission, they won’t be included when you run
+the <code>mkiocccentry(1)</code> tool.</p>
+<p>Even if you did manage to get dot files or dot directories in the tarball
+somehow, <code>txzchk(1)</code> will flag it as an error. When the judges run <code>txzchk(1)</code>
+on the uploaded submission compressed tarball, if anything is wrong, for
+instance if you “sneak in” any dot files or dot directories, the submission
+<strong>WILL BE REJECTED</strong> for violating
+<a href="next/rules.html#rule-17---packaging">Rule 17 - Packaging</a>!</p>
+<p>You may use whatever tools you need to develop your submission, including the
+use of <code>git(1)</code> or <code>gh(1)</code>, just be sure that your submission code and your
+submission Makefile don’t depend on such tools.</p>
+<p>Of course if you do use GitHub to work on your submission, you might want to
+make the repo private so you don’t reveal who you are. :-)</p>
+<p class="leftbar">
+In other words, make <strong>SURE</strong> you keep anonymous who submitted the code!
+</p>
+<p class="leftbar">
+Please do <strong>NOT</strong> use these tools to help with the
+<code>clobber</code> rule! For instance, do <strong>NOT</strong> use <code>git clean</code>! Not only does this
+depend on the user having <code>git(1)</code> but it also does not account for the
+submission tarballs. Even worse is when someone does have it in a <code>git(1)</code> repo
+it will remove files that are not under <code>git(1)</code> control! Instead, see the
+<code>clobber</code> rule in the example Makefile to see how to manage this.
+</p>
+<p>In other words, for <code>make clobber</code>, do something like:</p>
+<pre><code>    clobber:
+            ${RM} -f foo bar baz</code></pre>
+<p>and <strong>NOT</strong> something like this:</p>
+<pre><code>    # do NOT do this!
+    clobber:
+            -git clean -f   # WRONG !!!</code></pre>
+<p>And do <strong>NOT</strong> use <code>git</code> for any other <code>Makefile</code> rule either.</p>
+<p><strong>NOTE</strong>: <code>mkiocccentry(1)</code> will directly run <code>make clobber</code> in the submission
+directory. And although it is not an error if this fails, if it fails because the
+Makefile does not have a clobber rule, it will be flagged by <code>mkiocccentry(1)</code>
+(you may ignore this but it does put you at a risk of violating the rules).</p>
 <p>Jump to: <a href="#">top</a></p>
 <hr style="width:50%;text-align:left;margin-left:0">
 <hr style="width:50%;text-align:left;margin-left:0">

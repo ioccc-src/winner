@@ -1,6 +1,6 @@
 # IOCCC FAQ Table of Contents
 
-This is FAQ version **28.2.24 2025-11-18**.
+This is FAQ version **29.01 2025-11-28**.
 
 
 ## 0. [Entering the IOCCC: the bare minimum you need to know](#enter_questions)
@@ -31,6 +31,7 @@ This is FAQ version **28.2.24 2025-11-18**.
 - **Q 1.9**: <a class="normal" href="#submission_dir">How can I avoid having to move or delete my submission directory for the same workdir?</a>
 - **Q 1.10**: <a class="normal" href="#download_submission">Can I download my submission tarball from the submit server?</a>
 - **Q 1.11**: <a class="normal" href="#del_submission">Can I delete a submission from the submit server?</a>
+- **Q 1.12**: <a class="normal" href="#makefile_details">What are the detailed recommendations for a submission Makefile?</a>
 
 
 ## 2. [IOCCC Judging process](#judging_process)
@@ -416,6 +417,7 @@ first.
 
 Jump to: [top](#)
 
+
 <div id="SUS">
 <div id="platform">
 <div id="portability">
@@ -511,6 +513,10 @@ date
 `Makefile.example`
 does have other rules like `everything` and `alt`, and we encourage you to use
 the one linked to above.
+
+See also the
+FAQ on "[detailed Makefile recommendations](#makefile_details)"
+for more details.
 
 
 Jump to: [top](#)
@@ -834,7 +840,7 @@ for more details.
 
 
 <div id="extra-files">
-# 1.5: What are extra files and how may I include additional files beyond the max allowed?
+### Q1.5: What are extra files and how may I include additional files beyond the max allowed?
 </div>
 
 Extra files are defined as files that are not the free files (the required files
@@ -928,6 +934,7 @@ FAQ on "[extra files](#extra-files)"
 for more details.
 
 Below we will list more details and link to relevant FAQs as well.
+
 
 Jump to: [top](#)
 
@@ -1264,6 +1271,7 @@ FAQ on "[the answers file](#answers_file)".
 
 Jump to: [top](#)
 
+
 <div id="submission_dir">
 ### Q 1.9: How can I avoid having to move or delete my submission directory for the same workdir?
 </div>
@@ -1285,6 +1293,7 @@ specify the path by the `-r rm` option.
 
 Jump to: [top](#)
 
+
 <div id="download_submission">
 ### Q 1.10: Can I download my submission tarball from the submit server?
 </div>
@@ -1293,7 +1302,9 @@ We do not support this. If you need to verify your submission, then
 you can re-upload (while the contest is in open state) and verify the SHA256
 checksum listed in the submission slot.
 
+
 Jump to: [top](#)
+
 
 <div id="del_submission">
 ### Q 1.11: Can I delete a submission from the submit server?
@@ -1304,8 +1315,333 @@ Makefile](next/Makefile.example) to your Makefile and add to the remarks.md:
 
 > Please ignore this submission.
 
+
 Jump to: [top](#)
 
+
+<div id="makefile_details">
+### Q 1.12: What are the detailed recommendations for a submission Makefile?
+</div>
+
+We **recommend** AND **encourage** you to use the example Makefile,
+as the starting point for your submission's required `Makefile`:
+
+- [view example Makefile](%%REPO_URL%%/next/Makefile.example)
+- <a href="Makefile.example" download="Makefile">download example Makefile</a>
+
+Feel free to modify the `Makefile` to suit your obfuscation needs.
+
+**Please** add a space between the `=` and the value of variables, in the
+`Makefile`, making sure that the `=` comes immediately after the name. See the
+example `Makefile` for examples.
+
+The rest of this section and its subsections will assume that you are using some
+variant of the example `Makefile`, again renamed as `Makefile`.
+
+We suggest that you compile your submission with a commonly available
+`-std=gnu17` (ISO C 2017 with GNU extensions) C compiler, via `clang(1)`
+and/or `gcc(1)`.
+
+
+<div id="cflags">
+<div id="flags">
+#### Default compiler flags
+</div>
+</div>
+
+Unless you **clearly state** otherwise in your `remarks.md` file, **AND** put in
+your submission's `Makefile`, we **will** compile using `-std=gnu17 -O3`!
+
+It **is OK** if you need to require your submission to **NOT be** compiled
+using the default `-std=gnu17 -O3` settings.  Simply **explain why**
+your submission should NOT be compiled using `-std=gnu17 -O3` in
+your `remarks.md` file, **AND** adjust your `Makefile` accordingly.
+
+<p class="leftbar">
+You really should **NOT** redefine `CC` because doing so makes it less portable. <-- **Hint!**
+</p>
+
+One reason that you might have to change the flags, is that the optimiser is
+known to break some programs, but there are certainly other possible valid
+reasons. Again, just update the `Makefile` and explain it in your `remarks.md`.
+See the [optimiser section](#optimiser) for details for changing optimiser
+flags.
+
+For more fun when it comes to optimisers breaking code, see
+[1986/marshall/compilers.html](1986/marshall/compilers.html).
+
+
+<div id="compilers">
+#### Default compiler
+</div>
+
+**IMPORTANT NOTE**: The use of `-std=gnu17` does **NOT** imply the use of the `gcc`
+compiler!  We often start by compiling using the **clang** C compiler instead.
+
+**PLEASE NOTE**: in macOS, the compiler `gcc` found at `/usr/bin/gcc` is
+in truth the `clang` compiler, as `/usr/bin/gcc --version` will show!
+
+
+<div id="cstd">
+<div id="standard">
+#### C standard
+</div>
+</div>
+
+You may change the standard under which your submission is compiled
+by modifying the `CSTD` Makefile variable.  For example, to use `c99` instead:
+
+``` <!---make-->
+    CSTD= -std=c99
+```
+
+
+<div id="opt">
+<div id="optimization">
+<div id="optimisation">
+<div id="optimizer">
+<div id="optimiser">
+#### Default optimisation level
+</div>
+</div>
+</div>
+</div>
+</div>
+
+You may change the level of optimization and compiler debug level
+that your submission is compiled with, by modifying the `OPT` Makefile variable.
+For example, to compile without optimization, and to include debug symbols:
+
+``` <!---make-->
+    OPT= -O0 -g3
+```
+
+
+<div id="warnings">
+<div id="cwarn">
+#### Compiler warnings
+</div>
+</div>
+
+The default warning flags are set via the `CWARN` variable, as shown in the
+example `Makefile`:
+
+``` <!---make-->
+    # Common C compiler warning flags
+    #
+    CWARN= -Wall -Wextra ${CSILENCE} ${CUNKNOWN}
+```
+
+For details on `CSILENCE` and `CUNKNOWN`, see the [section on disabling
+warnings](#disabling-warnings).
+
+
+<div id="weverything">
+##### The `-Weverything` option
+</div>
+
+We do **NOT** recommend that you put
+the use of `-Weverything` into your submission's `Makefile` for the reasons
+cited there. This goes even if your version does not trigger a warning as some
+other version might!
+
+On the other hand, if `${CC}` has "`clang`" in the name, the example `Makefile` will
+automatically enable `-Weverything`, so you might have to use `-Wno-foo`
+options anyway, as detailed below.
+
+If "`clang`" is NOT in `${CC}`, the `CWARN` variable will not be further
+modified.
+
+There is no real penalty for compiler warnings.  Sometimes
+compiler warnings cannot be helped: especially in the case of
+obfuscated C.  :-)  So if you cannot easily get rid of a compiler
+warning, try not to fret too much.
+
+We **LIKE** code that has a minimum of warnings, especially under the
+more strict ` -Wall -Wextra -pedantic` mode:
+
+``` <!---make-->
+    CWARN= -Wall -Wextra -pedantic
+```
+
+The two previous guidelines might be thought by some as being somewhat
+contradictory.  Isn't life, and isn't trying to satisfy "contradictory customer
+requirements" all too often like that?  :-)  Try to minimize warnings if you
+can.
+
+If you manage to produce very few warnings, or perhaps no warnings at
+all under the `-Wall -Wextra -pedantic` mode, then by all means brag about it in
+your `remarks.md` file **AND BE SURE TO TELL US** the OS, OS version, compiler
+and compiler version in which you observed this occurring (in case our OS and
+compiler produces a different result: so your submission won't be penalized for
+not meeting your claims).
+
+On the other hand, some warnings cannot be disabled and are enabled by compilers
+without any warning option specified. These are sometimes inevitable in
+obfuscated code and even in some non-obfuscated code, and you should not worry
+about this, though it might be worth pointing out.
+
+For instance, some compilers like to warn about use of pointers as arrays, which seems to
+be dubious, as it obviously can't (always) be avoided, being a big part of C, so
+you should not worry about this either; this is the warning
+`-Wunsafe-buffer-usage` and the way to disable it is `-Wno-unsafe-buffer-usage`.
+
+
+<div id="disabling-warnings">
+#### Disabling warnings
+</div>
+
+<p class="leftbar">
+If you do have to disable warnings due to `-Weverything` automatically being
+included, you might wish to state this fact in your `remarks.md` file.
+And even without `-Weverything` there can be warnings, as noted above.
+</p>
+
+If your submission issues lots of warnings but is otherwise
+marvelously obfuscated in multiple levels, don't worry about it.  Nevertheless,
+be sure that the warnings do not constitute a potential "**show stopper**"
+compiler problem.  Be sure that compilers such as both `gcc` and `clang` won't
+produce a compiler **error** and refuse to compile your code: unless for some
+reason that is what you intend to happen in which case document that too in your
+`remarks.md` file.  :-)
+
+All other things being equal, a program that must turn off fewer
+warnings will be considered better, for certain values of better.
+
+To turn off a compiler warning, in your submission's `Makefile`,
+try something such as:
+
+``` <!---make-->
+    CSILENCE= -Wno-some-thing -Wno-another-thing
+```
+
+<p class="leftbar">
+For instance:
+</p>
+
+``` <!---make-->
+    CSILENCE= -Wno-parentheses -Wno-binding-in-condition -Wno-misleading-indentation
+```
+
+
+<div id="macros">
+#### Defining macros in the Makefile
+</div>
+
+If you need to define something on the compile line, use
+the `CDEFINE` Makefile variable.  For example:
+
+``` <!---make-->
+    CDEFINE= -Dfoo -Dbar=baz
+```
+
+**NOTE**: just because we offer a default way to use the `-D` option, we still
+do not like excess use of `-D` to get past size limits, especially since you
+could use `#define` in your code instead.
+
+<div id="include">
+#### Include files in the Makefile
+</div>
+
+If you need to include a file (as in `#include`) on the command line, use the
+`CINCLUDE` Makefile variable.  For example:
+
+``` <!---make-->
+    CINCLUDE= -include stdio.h
+```
+
+
+<div id="magic">
+#### Magic in the Makefile
+</div>
+
+If you need to add other "**magic**" flags to your compile line,
+use the `COTHER` Makefile variable.  For example:
+
+``` <!---make-->
+    COTHER= -fno-math-errno
+```
+
+**NOTE**: **We only recommend using "_magic_" flags if _BOTH_ `gcc`
+_and_ `clang`** support it.
+
+Again, please note that in macOS, `/usr/bin/gcc` is actually `clang`!
+
+
+<div id="clobber">
+#### The clobber rule
+</div>
+
+When `make clobber` is invoked, we request that submissions be restored
+to their original submission state.  For example, any temporary files
+(**including** the compiled program(s)) created during the build process, or
+during execution should be removed by the `clobber` rule. In other words, the
+only things that should be in the directory after running `make clobber` is what
+is in your submission tarball itself.
+
+While people are free to manage their submission under `git(1)` or even use a
+GitHub repo, dot-files and dot-directories such as `.git` are not allowed in a
+submission.
+
+The `mkiocccentry(1)` tool will ignore dot-files and dot-directories (such as
+`.vimrc`, `.bashrc`, `.git` and `.github`) and not put them in the submission's
+compressed tarball. So while you may use such files and
+directories to help develop your submission, they won't be included when you run
+the `mkiocccentry(1)` tool.
+
+Even if you did manage to get dot files or dot directories in the tarball
+somehow, `txzchk(1)` will flag it as an error. When the judges run `txzchk(1)`
+on the uploaded submission compressed tarball, if anything is wrong, for
+instance if you "sneak in" any dot files or dot directories, the submission
+**WILL BE REJECTED** for violating
+[Rule 17 - Packaging](next/rules.html#rule-17---packaging)!
+
+You may use whatever tools you need to develop your submission, including the
+use of `git(1)` or `gh(1)`, just be sure that your submission code and your
+submission Makefile don't depend on such tools.
+
+Of course if you do use GitHub to work on your submission, you might want to
+make the repo private so you don't reveal who you are. :-)
+
+<p class="leftbar">
+In other words, make **SURE** you keep anonymous who submitted the code!
+</p>
+
+<p class="leftbar">
+Please do **NOT** use these tools to help with the
+`clobber` rule! For instance, do **NOT** use `git clean`! Not only does this
+depend on the user having `git(1)` but it also does not account for the
+submission tarballs. Even worse is when someone does have it in a `git(1)` repo
+it will remove files that are not under `git(1)` control! Instead, see the
+`clobber` rule in the example Makefile to see how to manage this.
+</p>
+
+In other words, for `make clobber`, do something like:
+
+
+``` <!---makefile-->
+    clobber:
+            ${RM} -f foo bar baz
+```
+
+and **NOT** something like this:
+
+``` <!---makefile-->
+    # do NOT do this!
+    clobber:
+            -git clean -f   # WRONG !!!
+```
+
+And do **NOT** use `git` for any other `Makefile` rule either.
+
+
+**NOTE**: `mkiocccentry(1)` will directly run `make clobber` in the submission
+directory. And although it is not an error if this fails, if it fails because the
+Makefile does not have a clobber rule, it will be flagged by `mkiocccentry(1)`
+(you may ignore this but it does put you at a risk of violating the rules).
+
+
+Jump to: [top](#)
 
 
 <hr style="width:50%;text-align:left;margin-left:0">
@@ -1913,6 +2249,7 @@ do not need to worry about those details. One should use `chksubmit(1)` instead
 of `chkentry(1)` when validating a directory; `chkentry(1)` is for the judges
 and is what was used in IOCCC28. For IOCCC29 and beyond, `mkiocccentry(1)` uses
 `chksubmit(1)` and so should you.
+
 
 Jump to: [top](#)
 
@@ -7059,6 +7396,7 @@ to help ensure that everyone may enjoy the IOCCC.
 
 Jump to: [top](#)
 
+
 <div id="try_mastodon">
 ### Q 10.6: What is Mastodon and why does the IOCCC use it?
 </div>
@@ -7095,6 +7433,7 @@ follow posts something so you will have to check the IOCCC feed manually.
 mastodon feed](https://fosstodon.org/@ioccc) page and/or mastodon
 app from time to time to view IOCCC mastodon updates.
 
+
 Jump to: [top](#)
 
 
@@ -7117,8 +7456,8 @@ It is not yet clear if this only works on desktop/computers or mobile devices
 too as it was only just discovered (31 July 2025) but whatever the case we
 suggest you do it.
 
-Jump to: [top](#)
 
+Jump to: [top](#)
 
 
 <div id="tabstops">
