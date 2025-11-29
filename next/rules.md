@@ -128,7 +128,7 @@ Use mkiocccentry](#rule17-mkiocccentry).
 
 <div id="rule3">
 <div id="rule3-register">
-## Rule 3 - Register for the contest
+## Rule 3 - Register for the IOCCC
 </div>
 </div>
 
@@ -150,7 +150,7 @@ See [Entering the IOCCC: the bare minimum you need to know](../quick-start.html#
 
 See [Rule 8 - Submitting requirements](rules.html#rule8).
 
-See [Guidelines for Rule 3 - Registering for the IOCCC](guidelines.html#guideline-3---register).
+See [Guidelines for Rule 3 - Register for the IOCCC](guidelines.html#guideline-3---register).
 
 
 <div id="rule4">
@@ -292,7 +292,7 @@ you obtained from them in your `remarks.md` file.
 
 You are permitted to use tools to write your code.
 
-See [Rule 16 - Anonymous Judging](rules.html#rule-16-anonymous-judging).
+See [Rule 16 - Anonymous Judging](rules.html#rule16-anonymous-judging).
 
 See [Guidelines for Rule 7 - Original Work](guidelines.html#guideline-7---original-work).
 
@@ -486,7 +486,9 @@ See [Guidelines for Rule 15 - GNU Makefile compatibility](guidelines.html#guidel
 
 
 <div id="rule16">
+<div id="rule16-anonymous-judging">
 ## Rule 16 - Anonymous judging
+</div>
 </div>
 
 Your source code, data files, remarks, and program output **MUST NOT**
