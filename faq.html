@@ -453,7 +453,7 @@
 
 <!-- BEFORE: 1st line of markdown file: faq.md -->
 <h1 id="ioccc-faq-table-of-contents">IOCCC FAQ Table of Contents</h1>
-<p>This is FAQ version <strong>29.01 2025-11-28</strong>.</p>
+<p>This is FAQ version <strong>29.02 2025-11-29</strong>.</p>
 <h2 id="entering-the-ioccc-the-bare-minimum-you-need-to-know">0. <a href="#enter_questions">Entering the IOCCC: the bare minimum you need to know</a></h2>
 <ul>
 <li><strong>Q 0.0</strong>: <a class="normal" href="#enter">How can I enter the IOCCC?</a></li>
@@ -480,7 +480,7 @@
 <li><strong>Q 1.4</strong>: <a class="normal" href="#mkiocccentry_test">How can I check if my submission passes tests without having to answer questions?</a></li>
 <li><strong>Q 1.5</strong>: <a class="normal" href="#extra-files">What are extra files and how may I include additional files beyond the max allowed?</a></li>
 <li><strong>Q 1.6</strong>: <a class="normal" href="#ai">May I use AI, LLM, Virtual coding assistants, or similar tools to write my submission?</a></li>
-<li><strong>Q 1.7</strong>: <a class="normal" href="#rule17">What are the details behind Rule 17 - Packaging?</a></li>
+<li><strong>Q 1.7</strong>: <a class="normal" href="#rule17">What are the details behind Rule 17 - use mkiocccentry?</a></li>
 <li><strong>Q 1.8</strong>: <a class="normal" href="#uuid">How can I avoid re-entering my UUID to mkiocccentry?</a></li>
 <li><strong>Q 1.9</strong>: <a class="normal" href="#submission_dir">How can I avoid having to move or delete my submission directory for the same workdir?</a></li>
 <li><strong>Q 1.10</strong>: <a class="normal" href="#download_submission">Can I download my submission tarball from the submit server?</a></li>
@@ -659,7 +659,7 @@
 repo</a> and it is <strong>required</strong> that you
 use it to package your submission. Not doing so puts you at a great risk of
 violating the <a href="next/rules.html">Rules</a> and in particular
-<a href="next/rules.html#rule-17---packaging">Rule 17 - Packaging</a>.</p>
+<a href="next/rules.html#rule17-mkiocccentry">Rule 17 - Use mkiocccentry</a>.</p>
 <p>Jump to: <a href="#">top</a></p>
 <div id="about_mkiocccentry">
 <h4 id="q-0.1.1-what-is-mkiocccentry-in-simple-terms">Q 0.1.1: What is <code>mkiocccentry</code> in simple terms?</h4>
@@ -774,7 +774,7 @@ directory</strong> will be created, with the name based on your IOCCC registrati
 username, which is <strong>in the form of a UUID</strong>, and submission number along with
 the timestamp; see the <a href="next/rules.html">rules</a> for more details on this, and in
 particular
-<a href="next/rules.html#rule-17---packaging">Rule 17 - Packaging</a>.</p>
+<a href="next/rules.html#rule17-mkiocccentry">Rule 17 - Use mkiocccentry</a>.</p>
 <p><strong>IMPORTANT NOTE</strong>: the tools that require other tools, <code>mkiocccentry(1)</code> and
 <code>txzchk(1)</code>, will, as of version <code>2.0.2 2025-03-11</code>, search under <code>$PATH</code>. If
 you have an earlier version and you have not installed the tools and run the
@@ -938,7 +938,7 @@ rounds; we look at the author name only if an entry wins. See the
 <li>leaving the remark section empty (which would also indicate that you did not
 use <code>mkiocccentry(1)</code>, as it requires it to not be of size 0, though if you only
 include whitespace you would still be violating
-<a href="next/rules.html#rule-17---packaging">Rule 17 - Packaging</a>).</li>
+<a href="next/rules.html#rule17-mkiocccentry">Rule 17 - Use mkiocccentry</a>).</li>
 </ul>
 <p>Jump to: <a href="#">top</a></p>
 <div id="try_scripts">
@@ -982,7 +982,7 @@ for more details.</p>
 <p>See the
 FAQ on “<a href="#rule17">Rule 17</a>”
 and
-<a href="next/rules.html#rule-17---packaging">Rule 17 - Packaging</a>
+<a href="next/rules.html#rule17-mkiocccentry">Rule 17 - Use mkiocccentry</a>
 itself.</p>
 <p>Do remember that if your submission requires different filenames, then you
 <strong>MUST</strong> make a <strong>COPY</strong> of them in your <code>Makefile</code>. See also
@@ -1130,12 +1130,12 @@ level directory.</p>
 itself is an extra file, meaning it counts <strong>AS</strong> an extra file.
 This file does <strong>NOT</strong> need to pass the <code>txzchk(1)</code> tests; only your submission
 tarball needs to pass these tests. However see below if you do do this.</p>
-<p>Please pay careful attention to <a href="next/rules.html#rule-17---packaging">Rule 17 - Packaging</a> and in
+<p>Please pay careful attention to <a href="next/rules.html#rule17-mkiocccentry">Rule 17 - Use mkiocccentry</a> and in
 particular the part about the maximum number of files per
 submission, which not only discusses the maximum
 number of files but also specific rules you must follow
 if you do include a tarball. Not following these points puts you at great risk
-of violating <a href="next/rules.html#rule-17---packaging">Rule 17 - Packaging</a>!</p>
+of violating <a href="next/rules.html#rule17-mkiocccentry">Rule 17 - Use mkiocccentry</a>!</p>
 <p>Also, remember what the <a href="next/guidelines.html">guidelines</a> say:</p>
 <blockquote>
 <p><strong>IMPORTANT REMINDER</strong>: make <strong>SURE</strong> your tarball does <strong>NOT</strong> reveal who you are!
@@ -1159,7 +1159,7 @@ ultimate author of the code you submit.</p>
 you used as well as how you used them to help write your submission.</p>
 <p>Jump to: <a href="#">top</a></p>
 <div id="rule17">
-<h3 id="q-1.7-what-are-details-behind-rule-17---packaging">Q 1.7: What are details behind Rule 17 - Packaging?</h3>
+<h3 id="q-1.7-what-are-details-behind-rule-17---use-mkiocccentry">Q 1.7: What are details behind Rule 17 - Use mkiocccentry?</h3>
 </div>
 <h3 id="tldr-rule-17---use-mkiocccentry1">TL;DR Rule 17 - Use <code>mkiocccentry(1)</code></h3>
 <p>This is a <strong>COMPLEX</strong> rule. <strong>Violating this rule WILL CAUSE YOUR SUBMISSION TO
@@ -1178,7 +1178,7 @@ contains <strong>IMPORTANT</strong> tools and libraries such as:</p>
 <li><code>chksubmit(1)</code> (which uses <code>jparse(3)</code> and is a wrapper to <code>chkentry(1)</code>)</li>
 </ul>
 <p>The above mentioned tools will help you verify that your submission
-conforms to <a href="next/rules.html#rule-17---packaging">Rule 17 - Packaging</a>. Each of these tool has a <code>-h</code>
+conforms to <a href="next/rules.html#rule17-mkiocccentry">Rule 17 - Use mkiocccentry</a>. Each of these tool has a <code>-h</code>
 option that provides command line help. For additional details of each tool, see
 its man page, and in some cases, the <a href="next/guidelines.html">IOCCC guidelines</a>.</p>
 <p>The maximum number of <strong>extra files</strong> is 31. See the
@@ -1228,7 +1228,7 @@ for help.</p>
 <p>The <code>remarks.md</code> <strong>MUST</strong> be a <strong>non</strong>-empty file in markdown format
 (<code>mkiocccentry(1)</code> only checks the file size but if you do not have any text in
 it you still risk violating this rule). See also
-<a href="next/rules.html#rule-17---packaging">Rule 17 - Packaging</a>
+<a href="next/rules.html#rule17-mkiocccentry">Rule 17 - Use mkiocccentry</a>
 and our
 FAQ on “<a href="#remarks_md">remarks.md</a>”,
 our
@@ -1322,7 +1322,7 @@ permissions and <code>mkiocccentry(1)</code> does this for you. In particular: d
 <code>-r-xr-xr-x</code> (i.e. <code>0555</code>); and all other files <strong>MUST</strong> be <code>-r--r--r--</code> (i.e.
 <code>0444</code>). If any file or directory does not have the correct permissions, your
 submission <strong>WILL</strong> be rejected for violating
-<a href="next/rules.html#rule17">Rule 17 - Packaging</a>!</p>
+<a href="next/rules.html#rule17">Rule 17 - Use mkiocccentry</a>!</p>
 <p>After <code>mkiocccentry(1)</code> creates the directories and copies the files with these
 modes, it also verifies them after the fact and if they are not correct it is an
 <strong>error</strong>.</p>
@@ -1346,7 +1346,7 @@ there should be no problem but if you were to package things manually it is
 possible there could be a problem and this poses a big risk of violating
 <a href="next/rules.html#rule-4---files">Rule 4 - Files</a>
 or
-<a href="next/rules.html#rule17">Rule 17 - Packaging</a>.</p>
+<a href="next/rules.html#rule17">Rule 17 - Use mkiocccentry</a>.</p>
 <p>The <code>fnamchk(1)</code>, which <code>txzchk(1)</code> executes, will verify that the
 filename is correct. But if you do package your tarball manually, and you have a
 mismatch in what is in the tarball and the name, <code>txzchk(1)</code> will flag the
@@ -1355,7 +1355,7 @@ discrepancy as an error and exit with non-zero.</p>
 having your submission rejected for violating
 <a href="next/rules.html#rule-4---files">Rule 4 - Files</a>
 or
-<a href="next/rules.html#rule17">Rule 17 - Packaging</a>.</p>
+<a href="next/rules.html#rule17">Rule 17 - Use mkiocccentry</a>.</p>
 <div id="max-files">
 <h4 id="maximum-number-of-files-per-submission">Maximum number of files per submission</h4>
 </div>
@@ -1387,7 +1387,7 @@ The <code>mkiocccentry(1)</code> tool uses the v7 format. For instance you might
 <p><strong>IMPORTANT</strong>: where
 <a href="next/rules.html#rule-4---files">Rule 4 - Files</a>,
 and
-<a href="next/rules.html#rule-17---packaging">Rule 17 - Packaging</a>.
+<a href="next/rules.html#rule17-mkiocccentry">Rule 17 - Use mkiocccentry</a>.
 and the tools from the latest
 release of the <a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry repo</a>
 conflict, the <a href="judges.html">IOCCC judges</a> will use their best judgment which
@@ -1424,7 +1424,7 @@ FAQ on “<a href="#mkiocccentry_bugs">mkiocccentry repo bugs</a>”.</p>
 <p>At the risk of stating the obvious: submissions that violate
 <a href="next/rules.html#rule-4---files">Rule 4 - Files</a>,
 or
-<a href="next/rules.html#rule-17---packaging">Rule 17 - Packaging</a>
+<a href="next/rules.html#rule17-mkiocccentry">Rule 17 - Use mkiocccentry</a>
 <strong>WILL BE REJECTED</strong>, so <strong>BE SURE</strong> to use the latest release of the
 <a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry repo</a>, to form and test
 your submission’s xz compressed tarball. Do <strong>NOT</strong> assume you have the most
@@ -1669,7 +1669,7 @@ somehow, <code>txzchk(1)</code> will flag it as an error. When the judges run <c
 on the uploaded submission compressed tarball, if anything is wrong, for
 instance if you “sneak in” any dot files or dot directories, the submission
 <strong>WILL BE REJECTED</strong> for violating
-<a href="next/rules.html#rule-17---packaging">Rule 17 - Packaging</a>!</p>
+<a href="next/rules.html#rule17-mkiocccentry">Rule 17 - Use mkiocccentry</a>!</p>
 <p>You may use whatever tools you need to develop your submission, including the
 use of <code>git(1)</code> or <code>gh(1)</code>, just be sure that your submission code and your
 submission Makefile don’t depend on such tools.</p>
@@ -2122,7 +2122,7 @@ the judges <strong>ONLY</strong>; use of this option to validate your submission
 a great risk of violating
 <a href="next/rules.html#rule-4---files">Rule 4 - Files</a>,
 or
-<a href="next/rules.html#rule-17---packaging">Rule 17 - Packaging</a>!).</p>
+<a href="next/rules.html#rule17-mkiocccentry">Rule 17 - Use mkiocccentry</a>!).</p>
 <p>As an example, if your submission directory is
 <code>00000000-0000-4000-0000-000000000000-3/</code> then you should run the following
 command:</p>
@@ -2144,7 +2144,7 @@ FAQ on “<a href="#info_json">.info.json</a>”
 as well as
 <a href="next/rules.html#rule-4---files">Rule 4 - Files</a>,
 and
-<a href="next/rules.html#rule-17---packaging">Rule 17 - Packaging</a>
+<a href="next/rules.html#rule17-mkiocccentry">Rule 17 - Use mkiocccentry</a>
 for more information.</p>
 <p><strong>NOTE</strong>: the <code>chksubmit(1)</code> tool invokes <code>chkentry(1)</code> but as a contestant you
 do not need to worry about those details. One should use <code>chksubmit(1)</code> instead
@@ -2235,12 +2235,12 @@ to be valid. If this is not the case your submission <strong>WILL BE</strong> re
 <li>The IOCCC contestant ID used as a username in the form of <strong>in the form of
 a UUID</strong> and submission number; see the <a href="next/rules.html">Rules</a> for more details
 on this, and in particular
-<a href="next/rules.html#rule-17---packaging">Rule 17 - Packaging</a>.</li>
+<a href="next/rules.html#rule17-mkiocccentry">Rule 17 - Use mkiocccentry</a>.</li>
 </ul>
 <p><strong>NOTE:</strong> if the contest ID is <strong>NOT</strong> in this format then <code>fnamchk</code> will
 report it as an <strong>error</strong> and your submission <strong>WILL BE</strong> rejected for
 violating
-<a href="next/rules.html#rule-17---packaging">Rule 17 - Packaging</a>.</p></li>
+<a href="next/rules.html#rule17-mkiocccentry">Rule 17 - Use mkiocccentry</a>.</p></li>
 <li><p><code>tarball</code> (double quoted string)</p>
 <ul>
 <li>The xz compressed tarball filename.</li>
@@ -2248,10 +2248,10 @@ violating
 <p><strong>IMPORTANT:</strong> this <strong>MUST</strong> match the actual tarball’s <strong>filename</strong> in order for
 this to be valid. If there is a mismatch you stand a great risk of having
 your submission rejected for violating
-<a href="next/rules.html#rule-17---packaging">Rule 17 - Packaging</a>!
+<a href="next/rules.html#rule17-mkiocccentry">Rule 17 - Use mkiocccentry</a>!
 Moreover, it is possible that <code>txzchk</code> will report a problem through
 <code>fnamchk(1)</code> which also puts you at great risk of violating
-<a href="next/rules.html#rule-17---packaging">Rule 17 - Packaging</a>. The
+<a href="next/rules.html#rule17-mkiocccentry">Rule 17 - Use mkiocccentry</a>. The
 <code>txzchk(1)</code> tool will use the output of <code>fnamchk</code> to
 obtain the correct directory <em>name</em> in the tarball; if <code>fnamchk</code> fails to
 validate your filename, or if you have the wrong directory name in the
@@ -2266,7 +2266,7 @@ tarball, this will be flaggd.</p></li>
 in the <a href="https://github.com/ioccc-src/mkiocccentry/">mkiocccentry repo</a>). If
 this is not the case you stand a great risk of having your submission
 rejected for violating
-<a href="next/rules.html#rule-17---packaging">Rule 17 - Packaging</a>.</p></li>
+<a href="next/rules.html#rule17-mkiocccentry">Rule 17 - Use mkiocccentry</a>.</p></li>
 <li><p><code>author_count</code> (number)</p>
 <ul>
 <li>How many authors this submission has.</li>
@@ -2339,7 +2339,7 @@ the range of 1 <strong>THROUGH</strong> <code>MAX_AFFILIATION_LEN</code> (see
 in the <a href="https://github.com/ioccc-src/mkiocccentry/">mkiocccentry repo</a>). If
 this is not the case you stand a great risk of having your submission
 rejected for violating
-<a href="next/rules.html#rule-17---packaging">Rule 17 - Packaging</a>.</p>
+<a href="next/rules.html#rule17-mkiocccentry">Rule 17 - Use mkiocccentry</a>.</p>
 <p><strong>NOTE:</strong> an <strong>affiliation</strong> does <strong>NOT</strong> have any affect on whether you will win or not.</p></li>
 <li><p><code>past_winning_author</code> (boolean)</p>
 <ul>
@@ -2426,7 +2426,7 @@ reported invalid by <code>chksubmit(1)</code>, your submission will almost certa
 rejected for violating the <a href="next/rules.html">Rules</a> and in particular
 <a href="next/rules.html#rule-4---files">Rule 4 - Files</a>,
 and
-<a href="next/rules.html#rule-17---packaging">Rule 17 - Packaging</a>.</p>
+<a href="next/rules.html#rule17-mkiocccentry">Rule 17 - Use mkiocccentry</a>.</p>
 <p>An obvious example where <code>chksubmit(1)</code> would fail to validate <code>.auth.json</code> is if
 there is a mismatch of type in the JSON file with what is expected, for
 instance, if in <code>.auth.json</code> the <code>no_comment</code> that we chose to not comment on is
@@ -2437,7 +2437,7 @@ that must be established as valid by <code>chksubmit(1)</code>) your submission 
 rejected for violating
 <a href="next/rules.html#rule-4---files">Rule 4 - Files</a>,
 and
-<a href="next/rules.html#rule-17---packaging">Rule 17 - Packaging</a>
+<a href="next/rules.html#rule17-mkiocccentry">Rule 17 - Use mkiocccentry</a>
 and in particular
 because <code>chksubmit(1)</code> would not validate the <code>.auth.json</code> file (and maybe other
 things too).</p>
@@ -2557,7 +2557,7 @@ this is not the case your submission <strong>WILL BE</strong> rejected!</p></li>
 <li>The IOCCC contestant ID used as a username in the form of <strong>in the form of
 a UUID</strong> and submission number; see the <a href="next/rules.html">rules</a> for more details
 on this, and in particular
-<a href="next/rules.html#rule-17---packaging">Rule 17 - Packaging</a>.</li>
+<a href="next/rules.html#rule17-mkiocccentry">Rule 17 - Use mkiocccentry</a>.</li>
 </ul></li>
 <li><p><code>submit_slot</code> (number)</p>
 <ul>
@@ -2569,7 +2569,7 @@ on this, and in particular
 in the <a href="https://github.com/ioccc-src/mkiocccentry/">mkiocccentry repo</a>). If
 this is not the case you stand a great risk of having your submission
 rejected for violating
-<a href="next/rules.html#rule-17---packaging">Rule 17 - Packaging</a>.</p></li>
+<a href="next/rules.html#rule17-mkiocccentry">Rule 17 - Use mkiocccentry</a>.</p></li>
 <li><p><code>title</code> (double quoted string)</p>
 <ul>
 <li>A short name (length &gt;= 1 <strong>THROUGH</strong> <code>MAX_TITLE_LEN</code>, defined in
@@ -2579,7 +2579,7 @@ matches the regexp <code>[a-z0-9][a-z0-9_+-]*</code>.</li>
 </ul>
 <p><strong>IMPORTANT:</strong> if this is <strong>NOT</strong> the case you stand a great risk of having your submission
 rejected for violating
-<a href="next/rules.html#rule-17---packaging">Rule 17 - Packaging</a>!</p></li>
+<a href="next/rules.html#rule17-mkiocccentry">Rule 17 - Use mkiocccentry</a>!</p></li>
 <li><p><code>abstract</code> (double quoted string)</p>
 <ul>
 <li>A one line summary of your submission, with a length of 1 <strong>THROUGH</strong>
@@ -2590,7 +2590,7 @@ in the <a href="https://github.com/ioccc-src/mkiocccentry/">mkiocccentry repo</a
 <p>The <code>abstract</code> may not contain a <code>;</code> (semicolon), nor <code>&amp;</code> (ampersand), nor <code>,</code> (comma).</p>
 <p><strong>IMPORTANT:</strong> if your abstract is 0 in length or &gt; the maximum abstract length you
 stand a great risk of having your submission rejected for violating
-<a href="next/rules.html#rule-17---packaging">Rule 17 - Packaging</a>!</p></li>
+<a href="next/rules.html#rule17-mkiocccentry">Rule 17 - Use mkiocccentry</a>!</p></li>
 <li><p><code>tarball</code> (double quoted string)</p>
 <ul>
 <li>The xz compressed tarball filename.</li>
@@ -2598,10 +2598,10 @@ stand a great risk of having your submission rejected for violating
 <p><strong>IMPORTANT:</strong> this <strong>MUST</strong> match the actual tarball’s <strong>filename</strong> in order for
 this to be valid. If there is a mismatch you stand a great risk of having
 your submission rejected for violating
-<a href="next/rules.html#rule-17---packaging">Rule 17 - Packaging</a>!
+<a href="next/rules.html#rule17-mkiocccentry">Rule 17 - Use mkiocccentry</a>!
 Moreover, it is possible that <code>txzchk</code> will report a problem through
 <code>fnamchk(1)</code> which also puts you at great risk of violating
-<a href="next/rules.html#rule-17---packaging">Rule 17 - Packaging</a>.
+<a href="next/rules.html#rule17-mkiocccentry">Rule 17 - Use mkiocccentry</a>.
 The <code>txzchk(1)</code> tool will use the output of <code>fnamchk</code> to
 obtain the correct directory <em>name</em> in the tarball; if <code>fnamchk</code> fails to
 validate your filename, or if you have the wrong directory name in the
@@ -2637,7 +2637,7 @@ violation, else <code>false</code>.</li>
 calculated size is <strong>NOT</strong>
 violated but this is <code>true</code> then you stand a good chance of having your
 submission rejected for violating
-<a href="next/rules.html#rule-17---packaging">Rule 17 - Packaging</a>.</p></li>
+<a href="next/rules.html#rule17-mkiocccentry">Rule 17 - Use mkiocccentry</a>.</p></li>
 <li><p><code>rule_2a_mismatch</code> (boolean)</p>
 <ul>
 <li><code>true</code> if
@@ -2656,7 +2656,7 @@ violation, else <code>false</code>.</li>
 calculated size is <strong>NOT</strong>
 violated but this is <code>true</code> then you stand a good chance of having your
 submission rejected for violating
-<a href="next/rules.html#rule-17---packaging">Rule 17 - Packaging</a>.</p></li>
+<a href="next/rules.html#rule17-mkiocccentry">Rule 17 - Use mkiocccentry</a>.</p></li>
 <li><p><code>highbit_warning</code> (boolean)</p>
 <ul>
 <li><code>true</code> if <code>iocccsize</code> detects a high bit (unescaped octets with the high
@@ -2689,7 +2689,7 @@ else <code>false</code>.</li>
 </ul>
 <p><strong>IMPORTANT:</strong> if the <code>Makefile</code> file has no problems and this is <code>true</code> then
 you stand a good chance of having your submission rejected for violating
-<a href="next/rules.html#rule-17---packaging">Rule 17 - Packaging</a>!</p>
+<a href="next/rules.html#rule17-mkiocccentry">Rule 17 - Use mkiocccentry</a>!</p>
 <p>See the
 FAQ on “<a href="#makefile">Makefile</a>”
 for more information.</p></li>
@@ -2699,7 +2699,7 @@ for more information.</p></li>
 </ul>
 <p><strong>IMPORTANT:</strong>: if the <code>Makefile</code> file does <strong>NOT</strong> have an <code>all</code> rule then
 you stand a good chance of having your submission rejected for violating
-<a href="next/rules.html#rule-17---packaging">Rule 17 - Packaging</a>!</p>
+<a href="next/rules.html#rule17-mkiocccentry">Rule 17 - Use mkiocccentry</a>!</p>
 <p>See the
 FAQ on “<a href="#makefile">Makefile</a>”
 for more information.</p></li>
@@ -2710,7 +2710,7 @@ for more information.</p></li>
 <p><strong>IMPORTANT:</strong> if the <code>Makefile</code> file does <strong>NOT</strong> have an <code>all</code> rule and this
 boolean is <code>true</code> then you stand a good chance of having your
 submission rejected for violating
-<a href="next/rules.html#rule-17---packaging">Rule 17 - Packaging</a>!</p>
+<a href="next/rules.html#rule17-mkiocccentry">Rule 17 - Use mkiocccentry</a>!</p>
 <p>See the
 FAQ on “<a href="#makefile">Makefile</a>”
 for more information.</p></li>
@@ -2721,7 +2721,7 @@ for more information.</p></li>
 <p><strong>IMPORTANT:</strong> if the <code>Makefile</code> file does <strong>NOT</strong> have a <code>clean</code> rule and this
 boolean is <code>true</code> then you stand a good chance of having your submission
 rejected for violating
-<a href="next/rules.html#rule-17---packaging">Rule 17 - Packaging</a>!</p>
+<a href="next/rules.html#rule17-mkiocccentry">Rule 17 - Use mkiocccentry</a>!</p>
 <p>See the
 FAQ on “<a href="#makefile">Makefile</a>”
 for more information.</p></li>
@@ -2732,7 +2732,7 @@ for more information.</p></li>
 <p><strong>IMPORTANT:</strong> if the <code>Makefile</code> file does <strong>NOT</strong> have an <code>clobber</code> rule and this
 boolean is <code>true</code> then you stand a good chance of having your submission
 rejected for violating
-<a href="next/rules.html#rule-17---packaging">Rule 17 - Packaging</a>!</p>
+<a href="next/rules.html#rule17-mkiocccentry">Rule 17 - Use mkiocccentry</a>!</p>
 <p>See the
 FAQ on “<a href="#makefile">Makefile</a>”
 for more information.</p></li>
@@ -2743,7 +2743,7 @@ for more information.</p></li>
 <p><strong>IMPORTANT:</strong> if the <code>Makefile</code> file does <strong>NOT</strong> have a <code>try</code> rule and this
 boolean is <code>true</code> then you stand a good chance of having your submission
 rejected for violating
-<a href="next/rules.html#rule-17---packaging">Rule 17 - Packaging</a>!</p>
+<a href="next/rules.html#rule17-mkiocccentry">Rule 17 - Use mkiocccentry</a>!</p>
 <p>See the
 FAQ on “<a href="#makefile">Makefile</a>”
 for more information.</p></li>
@@ -2769,7 +2769,7 @@ for more information.</li>
 </ul>
 <p><strong>IMPORTANT:</strong> if this is <strong>NOT</strong> the case you stand a
 great chance of having your submission rejected for violating
-<a href="next/rules.html#rule-17---packaging">Rule 17 - Packaging</a>!</p></li>
+<a href="next/rules.html#rule17-mkiocccentry">Rule 17 - Use mkiocccentry</a>!</p></li>
 <li><p><code>auth_JSON</code> (double quoted string)</p>
 <ul>
 <li>This <code>MUST</code> be <code>".auth.json"</code>, defined as <code>AUTH_JSON_FILENAME</code> in
@@ -2782,7 +2782,7 @@ for more information.</li>
 </ul>
 <p><strong>IMPORTANT:</strong> if this is <strong>NOT</strong> the case you stand a great chance of having your
 submission rejected for violating
-<a href="next/rules.html#rule-17---packaging">Rule 17 - Packaging</a>!</p></li>
+<a href="next/rules.html#rule17-mkiocccentry">Rule 17 - Use mkiocccentry</a>!</p></li>
 <li><p><code>c_src</code> (double quoted string)</p>
 <ul>
 <li>This <code>MUST</code> be <code>"prog.c"</code>, defined as <code>PROG_C_FILENAME</code> in
@@ -2792,7 +2792,7 @@ is your submission source code.</li>
 </ul>
 <p><strong>IMPORTANT:</strong> if this is <strong>NOT</strong> the case you stand a great chance of having your
 submission rejected for violating
-<a href="next/rules.html#rule-17---packaging">Rule 17 - Packaging</a>!</p></li>
+<a href="next/rules.html#rule17-mkiocccentry">Rule 17 - Use mkiocccentry</a>!</p></li>
 <li><p><code>Makefile</code> (double quoted string)</p>
 <ul>
 <li>This <code>MUST</code> be <code>"Makefile"</code>, defined as <code>MAKEFILE_FILENAME</code> in
@@ -2805,7 +2805,7 @@ for more information.</li>
 </ul>
 <p><strong>IMPORTANT:</strong> if this is <strong>NOT</strong> the case you stand a great chance of having your
 submission rejected for violating
-<a href="next/rules.html#rule-17---packaging">Rule 17 - Packaging</a>!</p></li>
+<a href="next/rules.html#rule17-mkiocccentry">Rule 17 - Use mkiocccentry</a>!</p></li>
 <li><p><code>remarks</code> (double quoted string)</p>
 <ul>
 <li>This <code>MUST</code> be <code>"remarks.md"</code>, defined as <code>REMARKS_FILENAME</code> in
@@ -2818,7 +2818,7 @@ for more information.</li>
 </ul>
 <p><strong>IMPORTANT:</strong> if this is <strong>NOT</strong> the case you stand a great chance of having your
 submission rejected for violating
-<a href="next/rules.html#rule-17---packaging">Rule 17 - Packaging</a>!</p></li>
+<a href="next/rules.html#rule17-mkiocccentry">Rule 17 - Use mkiocccentry</a>!</p></li>
 </ul>
 <p>The <code>manifest</code> <strong>array</strong> also <strong>OPTIONALLY</strong> has one or more of the field:</p>
 <ul>
@@ -2831,7 +2831,7 @@ and <code>chksubmit</code> will verify this for you; it is <strong>ALSO</strong>
 filenames are not unique, not POSIX plus + safe chars only, if they are the
 wrong permission and various other things. In these cases you stand a great
 risk of having your submission rejected for violating
-<a href="next/rules.html#rule-17---packaging">Rule 17 - Packaging</a>!
+<a href="next/rules.html#rule17-mkiocccentry">Rule 17 - Use mkiocccentry</a>!
 On the other hand, <strong>ONLY</strong> <code>mkiocccentry</code> will
 verify that the files exist and can be read; <code>txzchk(1)</code> will <strong>NOT</strong> do
 this for you as it only <strong>LISTS</strong> the tarball: it does <strong>NOT</strong> extract it.
@@ -2894,7 +2894,7 @@ out of range (see above for list). Two more examples would be if a field is
 missing or if an unknown filed is in the file. In these cases (and any others
 that must be established as valid by <code>chksubmit</code>) your submission would be
 rejected for violating
-<a href="next/rules.html#rule-17---packaging">Rule 17 - Packaging</a>,
+<a href="next/rules.html#rule17-mkiocccentry">Rule 17 - Use mkiocccentry</a>,
 and in particular
 because <code>chksubmit</code> would not validate the <code>.info.json</code> file.</p>
 <p>If you wish to <strong>verify</strong> that your <code>.info.json</code> file is valid <strong>JSON</strong> then see the
