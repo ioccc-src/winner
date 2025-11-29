@@ -41,7 +41,7 @@ writing by [contacting the judges](../contact.html).
 # IOCCC Guidelines version
 
 <p class="leftbar">
-These IOCCC guidelines are version **29.00 2025-11-28**.
+These IOCCC guidelines are version **29.01 2025-11-29**.
 </p>
 
 <p class="leftbar">
@@ -52,12 +52,14 @@ The <span style='font-size:28px;'><b>&verbar;</b></span> symbol indicates an **c
 Because the **IOCCC29** guidelines was a substantial rewrite, only **important changes** from **IOCCC28** have been marked.
 </p>
 
-Be sure to read the [IOCCC rules](guidelines.html).
+Be sure to read the [IOCCC rules](rules.html).
 
 
 <div id="guideline2">
 <div id="guideline-2---size">
-# Guidelines for [Rule 2 - Size](rules.html#rule-2---size)
+<div id="guideline2-size">
+# Guidelines for [Rule 2 - Size restrictions](rules.html#rule2-size-restrictions)
+</div>
 </div>
 </div>
 
@@ -66,14 +68,13 @@ You should pay attention to our observations on
 [code size and Rule 2 remarks for IOCCC28](../2024/index.html#code-size-and-rule-2).
 </p>
 
-Your submission must satisfy **BOTH** the maximum size
-[Rule 2a Gross Size](rules.html#rule-2a-gross-size)
+Your submission must satisfy **BOTH** the
+[Rule 2a Gross Size](rules.html#rule2a-gross-size)
 **AND**
-the IOCCC size
-[Rule 2b Next Size](rules.html#rule-2b-net-size).
+[Rule 2b Net Size](rules.html#rule2b-net-size) rules.
 
 To check your code against
-[Rule 2 - Size](rules.html#rule-2---size), use the `iocccentry(1)` tool.
+[Rule 2 - Size restrictions](rules.html#rule2-size), use the `iocccentry(1)` tool.
 For example:
 
 ``` <!---sh-->
@@ -95,13 +96,14 @@ counted by the IOCCC size tool.
 
 In cases where the above summary and the algorithm implemented by
 the IOCCC size tool `iocccsize(1)` conflict, the algorithm implemented
-by the current version of `iocccsize(1)` is preferred by the [IOCCC judges](../judges.html).
+by the minimum required version of `iocccsize(1)` is preferred by the [IOCCC
+judges](../judges.html).
 
 Make sure `iocccsize` does not flag any issues with your `prog.c`.
 
 There a much less need to `#define` C reserved words in an effort
 to get around the size limits of
-[Rule 2 - Size](rules.html#rule-2---size)
+[Rule 2 - Size restrictions](rules.html#rule2-size)
 because of the `iocccsize(1)` algorithm.
 
 Yes Virginia, **the previous guideline sentence is an important hint**!
@@ -112,7 +114,7 @@ Jump to: [top](#)
 
 <div id="guideline3">
 <div id="guideline-3---register">
-# Guidelines for [Rule 3 - Register](rules.html#rule-3---register)
+# Guidelines for [Rule 3 - Register for the contest](rules.html#rule3-register)
 </div>
 </div>
 
@@ -124,7 +126,7 @@ Jump to: [top](#)
 
 <div id="guideline7">
 <div id="guideline-7---original-work">
-# Guidelines for [Rule 7 - Original Work](rules.html#rule-7---original-work)
+# Guidelines for [Rule 7 - Original Work](rules.html#rule7-original-work)
 </div>
 </div>
 
@@ -133,11 +135,11 @@ While it is **NOT** required, you are allowed to use tools or services such as:
 * Code generators
 * Static and runtime code analysis tools
 * Machine learning tools
-* natural language models
+* Natural language models
 * Large language models (LLMs)
 * Code copilot tools
 * So called "_AI services_"
-* etc.
+* Etc.
 
 The IOCCC has a rich history of remarkable winning entries created by
 authors who skillfully employed various techniques to develop their code.
@@ -155,7 +157,7 @@ Jump to: [top](#)
 
 <div id="guideline11">
 <div id="guideline-11---abuse">
-# Guidelines for [Rule 11 - Abuse](rules.html#rule-11---abuse)
+# Guidelines for [Rule 11 - Legal rule abuse](rules.html#rule11-legal-rule-abuse)
 </div>
 </div>
 
@@ -166,7 +168,7 @@ We do realize that there are holes in the [IOCCC rules](rules.html), and invite
 submitters to attempt to exploit them.
 
 We sometime award '**Best abuse of the rules**' or '**Worst abuse of the rules**',
-or some variation to a submission that creatively attempts to exploit a holes in the
+or some variation, to a submission that creatively attempts to exploit a holes in the
 [IOCCC rules](rules.html).
 
 When we do need to plug a hole in the [IOCCC rules](rules.html) or
@@ -190,7 +192,8 @@ opinion of the [IOCCC judges](../judges.html), **WILL** be
 disqualified.  **_RULE ABUSE CARRIES A CERTAIN LEVEL OF RISK!_**  If you
 have a submission that might otherwise be interesting, you might want to
 submit two versions; one that does not abuse the [IOCCC rules](rules.html) and one that
-does.
+does, making sure to note in the one that does not abuse the rules that this is
+another version, so that the judges do not assume you uploaded it by mistake.
 
 If you intend to abuse the [IOCCC rules](rules.html),
 indicate so in your `remarks.md` file.  You **MUST** try to justify
@@ -202,9 +205,9 @@ submitting an alternate version that conforms to the
 [IOCCC rules](rules.html).
 
 If you do bypass the `mkiocccentry(1)` warnings about
-[Rule 2a Gross Size](rules.html#rule-2a-gross-size)
+[Rule 2a - Gross Size](rules.html#rule-2a-gross-size)
 and/or about
-[Rule 2b Next Size](rules.html#rule-2b-net-size)
+[Rule 2b - Net Size](rules.html#rule-2b-net-size)
 or any other
 rule and submit a submission anyway, you **MUST** try to justify why the IOCCC
 [IOCCC judges](../judges.html) should not reject your submission due to a rule
@@ -243,7 +246,7 @@ Jump to: [top](#)
 
 <div id="guideline15">
 <div id="guideline-15---building">
-# Guidelines for [Rule 15 - Building](rules.html#rule-15---building)
+# Guidelines for [Rule 15 - GNU Makefile](rules.html#rule15-gnu-makefile)
 </div>
 </div>
 
@@ -261,17 +264,23 @@ environments, and commonly found on systems that reasonably conform to the
 [Single UNIX Specification](https://en.wikipedia.org/wiki/Single_UNIX_Specification)
 in the building and compiling of your submission.
 
+Your Makefile **MUST** be compatible with GNU `make` and we suggest you use
+[Makefile.example](Makefile.example) as a template, renamed as Makefile of
+course.
+
 
 Jump to: [top](#)
 
 
 <div id="guideline17">
 <div id="guideline-17---packaging">
-# Guidelines for [Rule 17 - Packaging](rules.html#rule-17---packaging)
+<div id="guideline17-mkiocccentry">
+# Guidelines for [Rule 17 - Use mkiocccentry](rules.html#rule17-mkiocccentry)
+</div>
 </div>
 </div>
 
-We **STRONGLY** recommend you **do** install the
+We **STRONGLY** recommend you **do** install the most recent release of
 [mkiocccentry toolkit](https://github.com/ioccc-src/mkiocccentry)
 as use of using older versions of the mkiocccentry toolkit to are **HIGHLY LIKELY** to be **REJECTED**!
 
@@ -292,15 +301,15 @@ file_.
 The non-extra files (`prog.c`, `prog.alt.c`,
 `try.sh`, `try.alt.sh`, `remarks.md`, `Makefile`, `.auth.json` and `.info.json`)
 are considered _free files_, and to not count towards the
-[Rule 17 - Packaging](rules.html#rule-17---packaging)
+[Rule 17 - Use mkiocccentry](rules.html#rule17-mkiocccentry)
 limit of **31** _extra files_.
 </p>
 
 If you use an optional filename for something other than their intended use
 in order to get past the file limit, we will consider that an abuse of rules.
 
-Your tarball does **NOT** reveal who you are!  For this reason, the tarball
-**MUST** be a **v7 format** tarball.
+The `mkiocccentry` generated tarball does **NOT** reveal who you are!  For this
+reason, the tarball **MUST** be a **v7 format** tarball.
 
 You should NOT use a tarball as an _extra file_ for a test-suite unless you
 have a very good reason for this: if you do include a tarball as an _extra file_,
@@ -314,19 +323,30 @@ and your submission doesn't require the test-suite to be available to run,
 then in your `remarks.md` a URL where such a test-suite may be downloaded from
 and how to use the test-suite to test your submission.
 
-See FAQ on "[What should I do with the `try.sh` and `try.alt.sh` scripts?](../faq.html#try_scripts)".
+If you **DO** include a tarball then make sure it uses the v7 format. See the
+FAQ on "[extra files](../faq.html#extra-files)"
+for details on how to make a v7 tarball.
 
-See FAQ on "[What is a `.auth.json` file?](../faq.html#auth_json)".
+See the
+FAQ on "[What should I do with the `try.sh` and `try.alt.sh` scripts?](../faq.html#try_scripts)".
 
-See FAQ on "[What is a `.info.json` file?](../faq.html#info_json)".
+See the
+FAQ on "[What is a `.auth.json` file?](../faq.html#auth_json)".
 
-See FAQ on "[How can I validate my submission directory?](../faq.html#chksubmit)".
+See the
+FAQ on "[What is a `.info.json` file?](../faq.html#info_json)".
 
-See FAQ on "[What permissions may my files be and what if I need different permissions?](../faq.html#file_perms)".
+See the
+FAQ on "[How can I validate my submission directory?](../faq.html#chksubmit)".
 
-See FAQ on "[What are the detailed recommendations for a submission Makefile?](../faq.html#makefile_details)".
+See the
+FAQ on "[What permissions may my files be and what if I need different permissions?](../faq.html#file_perms)".
 
-See FAQ on "[What are the details behind Rule 17 - Packaging?](../faq.html#rule17)".
+See the
+FAQ on "[What are the detailed recommendations for a submission Makefile?](../faq.html#makefile_details)".
+
+See the
+FAQ on "[What are the details behind Rule 17 - Use mkiocccentry?](../faq.html#rule17)".
 
 
 Jump to: [top](#)
@@ -345,7 +365,7 @@ submissions that package using older versions of the
 [mkiocccentry toolkit](https://github.com/ioccc-src/mkiocccentry)
 are **LIKELY** to be **REJECTED**!
 
-You **REALLY SHOULD** use latest [mkiocccentry toolkit](https://github.com/ioccc-src/mkiocccentry)
+You **REALLY SHOULD** use the latest [mkiocccentry toolkit](https://github.com/ioccc-src/mkiocccentry)
 to package your own submission.
 
 The `mkiocccentry(1)` tool runs a number of checks by way of these
@@ -365,7 +385,7 @@ Do **NOT** use `fnamchk(1)` command line options that are labeled "**for TESTING
 in the `fnamchk(1)` man page.
 
 Do **NOT** use `chkentry(1)` command line options that are labeled "**for the use by the IOCCC judges only**"
-in the `chkentry(1)` man page.
+in the `chksubmit(1)` (or `chkentry(1)`) man page(s).
 
 To view [mkiocccentry toolkit](https://github.com/ioccc-src/mkiocccentry) man pages,
 while your current directory is the top of the source tree:
@@ -385,15 +405,16 @@ So that you do not have to repeatedly answer all the `mkiocccentry(1)` questions
 use `mkiocccentry -a answers ...` to create a file containing the answers you first give,
 that will allow you to later use `mkiocccentry -i answers ...` to reuse those same answers.
 
-The `mkiocccentry -A answers ..` does the same thing except that the **answers file will be overwritten**.
+The `mkiocccentry -A answers ...` does the same thing except that the **answers file will be overwritten**.
 
-The `mkiocccentry -i answers ..` will still be required to confirm "_Yes/No_" questions.
+The `mkiocccentry -i answers ...` will still be required to confirm "_Yes/No_" questions.
 
 Use `mkiocccentry -Y -i answers ..` to force a yes answers with **great caution**
-because it might force a yes answer to something you do **NOT** want.
+because it might force a yes answer to something you do **NOT** want, such as a
+change in your code that violates a detected rule.
 
 To help with not having to repeatedly enter a UUID, put your UUID into a file and use
-`mkiocccentry -u uuidfile ..`, or use `mkiocccentry -U UUID ..` to give the `UUID`
+`mkiocccentry -u uuidfile ...`, or use `mkiocccentry -U UUID ...` to give the `UUID`
 on the command line.
 
 If you wish to **test** that your submission passes the `mkiocccentry(1)` tests
@@ -405,7 +426,8 @@ For example:
     mkiocccentry -d workdir topdir
 ```
 
-Do **NOT** submit a tarball formed by `mkiocccentry -d ..`, **NOR** by `mkiocccentry -s seed ..`!
+Do **NOT** submit a tarball formed by `mkiocccentry -d ..` **OR** by
+`mkiocccentry -s seed ..` **OR** by using the `test` UUID!
 
 The `mkiocccentry(1)` tool creates an `xz(1)` compressed **v7 format** tarball using a `tar(1)`
 command of the form:
@@ -417,17 +439,18 @@ command of the form:
 In many places the `mkiocccentry(1)` tool will prompt you to verify what you input, allowing you to
 correct details as you go along.
 
-Pressing the "_enter key_" `mkiocccentry(1)` tool prompts will allow you to proceed with a default,
-however make sure the default is the **CORRECT** answer.
+Pressing the "_enter key_" at the `mkiocccentry(1)` tool prompts will allow you
+to proceed with a default, however make sure the default is the **CORRECT**
+answer.
 
 The `mkiocccentry(1)` tool will use code from `iocccsize(1)` which detects a number of
-issues (such as [Rule 2 - Size](rules.html#rule-2---size)) that you may ignore,
+issues (such as [Rule 2 - Size](rules.html#rule2-size)) that you may ignore,
 however ignoring such issues **comes with a significant level of risk!**
 
 Once the tarball is packaged it will
 run `txzchk(1)`, which will also run `fnamchk(1)`, as part of its algorithm.
 
-The use of `mkiocccentry -W ...` is **highly discouraged** as this may ignore
+The use of `mkiocccentry -W ....` is **highly discouraged** as this may ignore
 warnings about a problem that may cause your submission to be **REJECTED!**"
 
 If `mkiocccentry` encounters an **error**, the program will exit and the xz
@@ -451,7 +474,7 @@ The `mkiocccentry(1)` tool will ignore any directory tree with a directory name 
 The `mkiocccentry(1)` tool will all files that begin with `COPYING`, `COPYRIGHT`, and `LICENSE`, regardless
 of filename case.
 
-The `mkiocccentry(1)` tool will any of the following files if they are found directly under
+The `mkiocccentry(1)` tool will reject any of the following files if they are found directly under
 the top level directory (`topdir`):
 
 * README.md
@@ -465,12 +488,15 @@ the top level directory (`topdir`):
 The files listed in the above list are allowed to exist in sub-directories: just **NOT** directly under
 the top level directory (`topdir`).
 
-The `mkiocccentry(1)` tool evaluates all filenames and directory names in a case independent way:
-this `FOO`, `Foo`, and `foo` are treated as the **SAME** file even if your filesystem doesn't.
+The `mkiocccentry(1)` tool evaluates all filenames and directory names in a case
+independent way: thus `FOO`, `Foo`, and `foo` are considered the **SAME** file
+even if your filesystem doesn't do the same.
 
-Having two or more filenames that differ only by case **WILL** lead to problems because of the previous statement.
+Having two or more filenames that differ only by case **WILL** lead to problems
+because of the previous statement.
 
-When the `mkiocccentry(1)` tool ignores a file, that file is **NOT** included as part of your submission.
+When the `mkiocccentry(1)` tool ignores a file, that file is **NOT** included as
+part of your submission.
 
 When the `mkiocccentry(1)` tool ignores a directory, that directory,
 and everything under that directory is **NOT** included as part of
@@ -484,30 +510,39 @@ named `Makefile`, `prog.alt.c`, `prog.c`, `remarks.md`, `try.alt.sh`,
 or `try.sh` is **NOT** a good idea and will likely cause the
 `mkiocccentry(1)` tool to abort with a **fatal error**.
 
-The required `Makefile`, `remarks.md` file may **NOT** be an empty file.
+The required `Makefile` and `remarks.md` files may **NOT** be empty. This
+does not mean just 0 bytes but also that it **MUST** have **content**, and
+content that is relevant (e.g. a Makefile with just comments is **NOT**
+allowed). However, with the exception of the `Makefile`, the `mkiocccentry(1)`
+tool will **ONLY** check file size.
 
-If the optional file `try.alt.sh`, or `try.sh` exits and is an empty file,
-the `mkiocccentry(1)` tool to abort with a **fatal error**.
+If the optional file `try.alt.sh`, or `try.sh` exists and is an empty file,
+the `mkiocccentry(1)` tool will abort with a **fatal error**.
 
-If the `mkiocccentry(1)` tool encounters anything that isn't a file, isn't a directory,
-and isn't a symlink (which the tool ignores), the `mkiocccentry(1)` tool to abort with a **fatal error**.
+If the `mkiocccentry(1)` tool encounters anything that isn't a file, isn't a
+directory, and isn't a symlink (which the tool ignores), the `mkiocccentry(1)`
+tool to abort with a **fatal error**.
 
-See FAQ on "[How do I report bugs in an `mkiocccentry` tool?](../faq.html#mkiocccentry_bugs)".
+See
+FAQ on "[How do I report bugs in an `mkiocccentry` tool?](../faq.html#mkiocccentry_bugs)".
 
-See [Rule 11 - Abuse](rules.html#rule-11---abuse) for warnings about ignoring `mkiocccentry(1)` tool warnings.
+See [Rule 11 - Legal rule abuse](rules.html#rule11-legal-rulea-abuse) for warnings about ignoring `mkiocccentry(1)` tool warnings.
 
-See FAQ on "[What is the `fnamchk` tool?](../faq.html#fnamchk)".
+See
+FAQ on "[What is the `fnamchk` tool?](../faq.html#fnamchk)".
 
-See FAQ on "[What is mkiocccentry in simple terms?](../faq.html#about_mkiocccentry)".
+See
+FAQ on "[What is mkiocccentry in simple terms?](../faq.html#about_mkiocccentry)".
 
-See FAQ on "[What is the mkiocccentry tool, how do I obtain it and how do I use it](../faq.html#mkiocccentry)".
+See
+FAQ on "[What is the mkiocccentry tool, how do I obtain it and how do I use it](../faq.html#mkiocccentry)".
 
 
 Jump to: [top](#)
 
 
 <div id="general">
-# General Overall Guidelines
+# General Guidelines
 </div>
 
 These [guideline](guidelines.html) are **hints** and **suggestions**, **NOT** [IOCCC rules](rules.html).
@@ -861,7 +896,7 @@ and/or obfuscated way, would definitely win over the first two!
 Remember, you can submit more than one submission.  See the
 [IOCCC rules](rules.html)
 for details (in particular,
-[Rule 8 - Submission](rules.html#rule-8---submission)).
+[Rule 8 - Submitting requirements](rules.html#rule8-submitting-requirements)).
 
 We suggest that you avoid trying for the '**smallest self-replicating**'
 source.  The smallest, a [zero byte entry](../1994/smr/index.html), won in
@@ -979,7 +1014,7 @@ If you do `#include <curses.h>` make **CERTAIN** you link in curses (i.e.
 `-lcurses`) and not ncurses (i.e. `-lncurses`).
 </p>
 
-[Rule 13 - Newlines](rules.html#rule-13---newlines)
+[Rule 12 - UTF-8](rules.html#rule12-utf8)
 no longer discourages the use of UTF-8
 characters in C code.
 
@@ -1084,7 +1119,7 @@ character tab stop.
 when forming your submission's `remarks.md` file.  And if your submission
 contains additional markdown files, please follow those same guidelines for
 those files. See also
-[Rule 4 - Files](rules.html#rule-4---files),
+[Rule 4 - Required files](rules.html#rule4-required-files),
 and the
 FAQ on "[markdown](../faq.html#markdown)".
 
@@ -1109,17 +1144,17 @@ The reason for the times of day are so that key IOCCC events are **calculated**
 to be a **fun**ctional UTC time.  :-)
 
 At least 2 of several reasons for selecting the prime, 2503, for
-[Rule 2b - Net Size](rules.html#rule-2b---net-size)
+[Rule 2b - Net Size](rules.html#rule2b-net-size)
 may be found on the ["Curios!" about 2503](https://t5k.org/curios/page.php/2503.html).
 
-The 2503 value for [Rule 2b - Net](rules.html#rule-2b---net-size) is a decimal anagram
+The 2503 value for [Rule 2b - Net Size](rules.html#rule2b-net-size) is a decimal anagram
 of the number of the kernel disk pack of one of the judge's [BESM-6](https://en.wikipedia.org/wiki/BESM-6).
 
 There may or may not be fewer than 2^7+1 reasons why these [IOCCC
 guidelines](guidelines.html) seem obfuscated.
 
 Excessively "_dotty"_ use of the `chksubmit(1)` or `chkentry(1)` commands suggests that
-either like silly things, or that you "_RTFS"_ with some level of care.
+either you like silly things, or that you "_RTFS"_ with some level of care.
 
 Some people might question what actually constitutes a valid JSON file, given
 the state of the "_so-called_" JSON spec.. :-)
@@ -1210,7 +1245,7 @@ We believe that Mark Twain's quote:
 <p class="leftbar">
 We do not recommend submitting [systemd](https://systemd.io) source code to the IOCCC,
 if nothing else because that code is likely to exceed
-[Rule 2 - Size](rules.html#rule-2---size).
+[Rule 2 - Size](rules.html#rule2-size).
 This isn't to say that another highly compact and obfuscated
 replacement of `init(8)` would not be an interesting submission.
 </p>

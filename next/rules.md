@@ -48,15 +48,16 @@ Reminder: be SURE to read the [IOCCC guidelines](guidelines.html).
 ## Rule 0 - Dates
 </div>
 
-This IOCCC runs from **2025-12-03 20:25:12.045045 UTC** to **2026-03-13 17:19:23.293137 UTC**.
+This IOCCC runs from `2025-12-03 20:25:12.045045 UTC` to `2026-03-13
+17:19:23.293137 UTC`.
 
-This contest will enter the **pending state** on **2025-12-03 20:25:12.045045 UTC**,
+This contest will enter the **pending state** on `2025-12-03 20:25:12.045045 UTC`,
 allowing people to register for the IOCCC.
 
-This contest will enter the **open state** on **2025-12-15 18:21:24.273033 UTC**,
+This contest will enter the **open state** on `2025-12-15 18:21:24.273033 UTC`,
 allowing people to upload submissions to the [IOCCC submit server](https://submit.ioccc.org).
 
-This contest will enter the **judging state** on **2026-03-13 17:19:23.293137 UTC**,
+This contest will enter the **judging state** on `2026-03-13 17:19:23.293137 UTC`,
 when people will no longer be allowed to upload submissions.
 
 Until the contest enters the **open** state, any or all
@@ -75,13 +76,17 @@ Your submission **MUST** be a C program that does NOT `#include` data files.
 
 
 <div id="rule2">
+<div id="rule2-size-restrictions">
+<div id="rule2-size">
 ## Rule 2 - Size restrictions
+</div>
+</div>
 </div>
 
 `Rule 2` requires that your submission satisfy **BOTH**
-[Rule 2a &lparen;Gross Size&rparen;](rules.html#rule-2a-gross-size)
+[Rule 2a &lpar;Gross Size&rpar;](rules.html#rule2a)
 and
-[Rule 2b &lparen;Net Size&rparen;](rules.html#rule-2b-net-size).
+[Rule 2b &lpar;Net Size&rpar;](rules.html#rule2b).
 During development this can be checked using `iocccsize(1)`:
 
 ``` <!---sh-->
@@ -92,7 +97,9 @@ See the [Guidelines for Rule 2 - Size restrictions](guidelines.html#guideline-2-
 
 
 <div id="rule2a">
+<div id="rule2a-gross-size">
 ### Rule 2a - Gross Size
+</div>
 </div>
 
 The overall maximum size of your `prog.c` program source **MUST NOT**
@@ -105,7 +112,9 @@ See [Entering the IOCCC: the bare minimum you need to know](../quick-start.html#
 
 
 <div id="rule2b">
+<div id="rule2b-net-size">
 ### Rule 2b - Net Size
+</div>
 </div>
 
 When the filename of your program source (i.e., `prog.c`) is given as a
@@ -119,7 +128,7 @@ Use mkiocccentry](#rule17-mkiocccentry).
 
 <div id="rule3">
 <div id="rule3-register">
-## Rule 3 - You must register to enter the contest
+## Rule 3 - Register for the contest
 </div>
 </div>
 
@@ -218,7 +227,7 @@ The `remarks.md` and `Makefile` are explained in more detail in the Guidelines.
 
 See [IOCCC markdown guidelines](../markdown.html).
 
-See [Rule 17 - Use mkiocccentry](rules.html#rule-17-mkiocccentry).
+See [Rule 17 - Use mkiocccentry](rules.html#rule17-mkiocccentry).
 
 See the
 FAQ on "[What permissions may my files be and what if I need different permissions?](../faq.html#file_perms)".
@@ -270,7 +279,9 @@ See [Rule 19 - Prime](rules.html#rule-19---prime).
 
 
 <div id="rule7">
+<div id="rule7-original-work">
 ## Rule 7 - Original Work
+</div>
 </div>
 
 You, the author(s), **MUST** own the contents of your submission, **OR**, IF you
@@ -287,7 +298,9 @@ See [Guidelines for Rule 7 - Original Work](guidelines.html#guideline-7---origin
 
 
 <div id="rule8">
+<div id="rule8-submitting-requirements">
 ## Rule 8 - Submitting requirements
+</div>
 </div>
 
 The submit server will accept submissions **ONLY** from those who have
@@ -308,7 +321,7 @@ Do **NOT** register more than one account!
 
 See
 [Rule 3 - Registering for the IOCCC](rules.html#rule3-register),
-[Rule 15 - GNU Makefile compatibility](rules.html#rule-15---building),
+[Rule 15 - GNU Makefile compatibility](rules.html#rule15-gnu-makefile),
 and
 [Rule 17 - Use mkiocccentry](rules.html#rule-17-mkiocccentry).
 
@@ -356,7 +369,9 @@ and
 
 
 <div id="rule11">
+<div id="rule11-legal-rule-abuse">
 ## Rule 11 - Legal rule abuse
+</div>
 </div>
 
 Legal abuse of the rules is **somewhat** encouraged, but comes with risks.
@@ -385,7 +400,9 @@ abuse](guidelines.html#guideline-11---abuse).
 
 
 <div id="rule12">
+<div id="rule12-utf8">
 ## Rule 12 - UTF-8
+</div>
 </div>
 
 Use of UTF-8 is supported by `C89` standard and its updates and so too by the
@@ -426,7 +443,9 @@ win, then you are encouraged to mention this in your `remarks.md` file as this
 
 
 <div id="rule15">
-## Rule 15 - GNU Makefile compatibility
+<div id="rule15-gnu-makefile">
+## Rule 15 - GNU Makefile
+</div>
 </div>
 
 The `Makefile` **MUST** adhere to GNU Makefile syntax. It's highly recommended
@@ -459,7 +478,7 @@ GNU long name options (such as `--example`) or extensions like `grep -P`.
 Do **NOT** assume that `.` (current directory) is in the `$PATH` environment
 variable.
 
-See [Rule 4 - Required files](rules.html#rule-4---files).
+See [Rule 4 - Required files](rules.html#rule4-required-files).
 
 See FAQ on "[What are the detailed recommendations for a submission Makefile?](../faq.html#makefile_details)".
 

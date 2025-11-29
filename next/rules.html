@@ -485,12 +485,12 @@ writing by <a href="../contact.html">contacting the judges</a>.</p>
 <div id="rule0">
 <h2 id="rule-0---dates">Rule 0 - Dates</h2>
 </div>
-<p>This IOCCC runs from <strong>2025-12-03 20:25:12.045045 UTC</strong> to <strong>2026-03-13 17:19:23.293137 UTC</strong>.</p>
-<p>This contest will enter the <strong>pending state</strong> on <strong>2025-12-03 20:25:12.045045 UTC</strong>,
+<p>This IOCCC runs from <code>2025-12-03 20:25:12.045045 UTC</code> to <code>2026-03-13 17:19:23.293137 UTC</code>.</p>
+<p>This contest will enter the <strong>pending state</strong> on <code>2025-12-03 20:25:12.045045 UTC</code>,
 allowing people to register for the IOCCC.</p>
-<p>This contest will enter the <strong>open state</strong> on <strong>2025-12-15 18:21:24.273033 UTC</strong>,
+<p>This contest will enter the <strong>open state</strong> on <code>2025-12-15 18:21:24.273033 UTC</code>,
 allowing people to upload submissions to the <a href="https://submit.ioccc.org">IOCCC submit server</a>.</p>
-<p>This contest will enter the <strong>judging state</strong> on <strong>2026-03-13 17:19:23.293137 UTC</strong>,
+<p>This contest will enter the <strong>judging state</strong> on <code>2026-03-13 17:19:23.293137 UTC</code>,
 when people will no longer be allowed to upload submissions.</p>
 <p>Until the contest enters the <strong>open</strong> state, any or all
 of the above <strong>dates and times may change <em>AT ANY TIME</em></strong>!</p>
@@ -501,17 +501,23 @@ of the above <strong>dates and times may change <em>AT ANY TIME</em></strong>!</
 </div>
 <p>Your submission <strong>MUST</strong> be a C program that does NOT <code>#include</code> data files.</p>
 <div id="rule2">
+<div id="rule2-size-restrictions">
+<div id="rule2-size">
 <h2 id="rule-2---size-restrictions">Rule 2 - Size restrictions</h2>
 </div>
+</div>
+</div>
 <p><code>Rule 2</code> requires that your submission satisfy <strong>BOTH</strong>
-<a href="rules.html#rule-2a-gross-size">Rule 2a &amp;lparen;Gross Size&amp;rparen;</a>
+<a href="rules.html#rule2a">Rule 2a (Gross Size)</a>
 and
-<a href="rules.html#rule-2b-net-size">Rule 2b &amp;lparen;Net Size&amp;rparen;</a>.
+<a href="rules.html#rule2b">Rule 2b (Net Size)</a>.
 During development this can be checked using <code>iocccsize(1)</code>:</p>
 <pre><code>    iocccsize prog.c</code></pre>
 <p>See the <a href="guidelines.html#guideline-2---size">Guidelines for Rule 2 - Size restrictions</a>.</p>
 <div id="rule2a">
+<div id="rule2a-gross-size">
 <h3 id="rule-2a---gross-size">Rule 2a - Gross Size</h3>
+</div>
 </div>
 <p>The overall maximum size of your <code>prog.c</code> program source <strong>MUST NOT</strong>
 exceed <strong>4993</strong> bytes.</p>
@@ -519,7 +525,9 @@ exceed <strong>4993</strong> bytes.</p>
 code surpasses the limit.</p>
 <p>See <a href="../quick-start.html#enter">Entering the IOCCC: the bare minimum you need to know</a>.</p>
 <div id="rule2b">
+<div id="rule2b-net-size">
 <h3 id="rule-2b---net-size">Rule 2b - Net Size</h3>
+</div>
 </div>
 <p>When the filename of your program source (i.e., <code>prog.c</code>) is given as a
 command line argument to the latest version of the official IOCCC size
@@ -529,7 +537,7 @@ NOT</strong> exceed <strong>2503</strong>.</p>
 Use mkiocccentry</a>.</p>
 <div id="rule3">
 <div id="rule3-register">
-<h2 id="rule-3---you-must-register-to-enter-the-contest">Rule 3 - You must register to enter the contest</h2>
+<h2 id="rule-3---register-for-the-contest">Rule 3 - Register for the contest</h2>
 </div>
 </div>
 <p>You <strong>MUST</strong> register, using a valid email address, in order to submit
@@ -603,7 +611,7 @@ a case insensitive filesystem.</p></li>
 </ul>
 <p>The <code>remarks.md</code> and <code>Makefile</code> are explained in more detail in the Guidelines.</p>
 <p>See <a href="../markdown.html">IOCCC markdown guidelines</a>.</p>
-<p>See <a href="rules.html#rule-17-mkiocccentry">Rule 17 - Use mkiocccentry</a>.</p>
+<p>See <a href="rules.html#rule17-mkiocccentry">Rule 17 - Use mkiocccentry</a>.</p>
 <p>See the
 FAQ on “<a href="../faq.html#file_perms">What permissions may my files be and what if I need different permissions?</a>”.</p>
 <p>See the <a href="guidelines.html#mkiocccentry_toolkit">Guidelines on the mkiocccentry toolkit</a>.</p>
@@ -638,7 +646,9 @@ original form, including the removal of any created files and directories.</p>
     }</code></pre>
 <p>See <a href="rules.html#rule-19---prime">Rule 19 - Prime</a>.</p>
 <div id="rule7">
+<div id="rule7-original-work">
 <h2 id="rule-7---original-work">Rule 7 - Original Work</h2>
+</div>
 </div>
 <p>You, the author(s), <strong>MUST</strong> own the contents of your submission, <strong>OR</strong>, IF you
 do <strong>NOT</strong> own the work, then you <strong>MUST</strong> have permission from the original
@@ -649,7 +659,9 @@ you obtained from them in your <code>remarks.md</code> file.</p>
 <p>See <a href="rules.html#rule-16-anonymous-judging">Rule 16 - Anonymous Judging</a>.</p>
 <p>See <a href="guidelines.html#guideline-7---original-work">Guidelines for Rule 7 - Original Work</a>.</p>
 <div id="rule8">
+<div id="rule8-submitting-requirements">
 <h2 id="rule-8---submitting-requirements">Rule 8 - Submitting requirements</h2>
+</div>
 </div>
 <p>The submit server will accept submissions <strong>ONLY</strong> from those who have
 registered and <strong>ONLY</strong> while the contest is open.</p>
@@ -665,7 +677,7 @@ validate your submission.</p>
 <p>Do <strong>NOT</strong> register more than one account!</p>
 <p>See
 <a href="rules.html#rule3-register">Rule 3 - Registering for the IOCCC</a>,
-<a href="rules.html#rule-15---building">Rule 15 - GNU Makefile compatibility</a>,
+<a href="rules.html#rule15-gnu-makefile">Rule 15 - GNU Makefile compatibility</a>,
 and
 <a href="rules.html#rule-17-mkiocccentry">Rule 17 - Use mkiocccentry</a>.</p>
 <div id="rule9">
@@ -699,7 +711,9 @@ bits are <strong>NOT</strong> allowed in submissions and those bits will <strong
 and
 <a href="rules.html#rule5-modifying-files">Rule 5 - Do NOT modify files</a>.</p>
 <div id="rule11">
+<div id="rule11-legal-rule-abuse">
 <h2 id="rule-11---legal-rule-abuse">Rule 11 - Legal rule abuse</h2>
+</div>
 </div>
 <p>Legal abuse of the rules is <strong>somewhat</strong> encouraged, but comes with risks.
 A submission that, in the opinion of the Judges, <strong>violates</strong> the rules <strong>WILL
@@ -721,7 +735,9 @@ wrong slot by mistake.</p>
 <p>See <a href="guidelines.html#guideline-11---abuse">Guidelines for Rule 11 - Legal rule
 abuse</a>.</p>
 <div id="rule12">
+<div id="rule12-utf8">
 <h2 id="rule-12---utf-8">Rule 12 - UTF-8</h2>
+</div>
 </div>
 <p>Use of UTF-8 is supported by <code>C89</code> standard and its updates and so too by the
 IOCCC.</p>
@@ -751,7 +767,9 @@ improve your submission. If you do resubmit something that didn’t previously
 win, then you are encouraged to mention this in your <code>remarks.md</code> file as this
 <strong>sometimes</strong> helps.</p>
 <div id="rule15">
-<h2 id="rule-15---gnu-makefile-compatibility">Rule 15 - GNU Makefile compatibility</h2>
+<div id="rule15-gnu-makefile">
+<h2 id="rule-15---gnu-makefile">Rule 15 - GNU Makefile</h2>
+</div>
 </div>
 <p>The <code>Makefile</code> <strong>MUST</strong> adhere to GNU Makefile syntax. It’s highly recommended
 that you copy the <a href="Makefile.example">Makefile.example</a> as a template, renaming
@@ -774,7 +792,7 @@ environments and systems are available in the search
 GNU long name options (such as <code>--example</code>) or extensions like <code>grep -P</code>.</p>
 <p>Do <strong>NOT</strong> assume that <code>.</code> (current directory) is in the <code>$PATH</code> environment
 variable.</p>
-<p>See <a href="rules.html#rule-4---files">Rule 4 - Required files</a>.</p>
+<p>See <a href="rules.html#rule4-required-files">Rule 4 - Required files</a>.</p>
 <p>See FAQ on “<a href="../faq.html#makefile_details">What are the detailed recommendations for a submission Makefile?</a>”.</p>
 <p>See <a href="guidelines.html#guideline-15---building">Guidelines for Rule 15 - GNU Makefile compatibility</a>.</p>
 <div id="rule16">
