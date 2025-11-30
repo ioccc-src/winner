@@ -104,7 +104,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="2.0.1 2025-08-23"
+export VERSION="2.1.0 2025-11-29"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -951,28 +951,6 @@ fi
 export RULES_HTML="$NEXT_DIR/rules.html"
 
 
-# determine the guidelines.md markdown file
-#
-export GUIDELINES_MD="$NEXT_DIR/guidelines.md"
-if [[ ! -e $GUIDELINES_MD ]]; then
-    echo  "$0: ERROR: guidelines.md does not exist: $GUIDELINES_MD" 1>&2
-    exit 1
-fi
-if [[ ! -f $GUIDELINES_MD ]]; then
-    echo  "$0: ERROR: guidelines.md is not a regular file: $GUIDELINES_MD" 1>&2
-    exit 1
-fi
-if [[ ! -r $GUIDELINES_MD ]]; then
-    echo  "$0: ERROR: guidelines.md is not an readable file: $GUIDELINES_MD" 1>&2
-    exit 1
-fi
-if [[ ! -s $GUIDELINES_MD ]]; then
-    echo  "$0: ERROR: guidelines.md is not an non-empty readable file: $GUIDELINES_MD" 1>&2
-    exit 1
-fi
-export GUIDELINES_HTML="$NEXT_DIR/guidelines.html"
-
-
 # determine the rules hdr file
 #
 export RULES_HDR="$INC_PATH/rules.$CONTEST_STATUS.hdr"
@@ -990,27 +968,6 @@ if [[ ! -r $RULES_HDR ]]; then
 fi
 if [[ ! -s $RULES_HDR ]]; then
     echo  "$0: ERROR: rules hdr file is not an non-empty readable file: $RULES_HDR" 1>&2
-    exit 1
-fi
-
-
-# determine the guidelines hdr file
-#
-export GUIDELINES_HDR="$INC_PATH/guidelines.$CONTEST_STATUS.hdr"
-if [[ ! -e $GUIDELINES_HDR ]]; then
-    echo  "$0: ERROR: guidelines hdr file does not exist: $GUIDELINES_HDR" 1>&2
-    exit 1
-fi
-if [[ ! -f $GUIDELINES_HDR ]]; then
-    echo  "$0: ERROR: guidelines hdr file is not a regular file: $GUIDELINES_HDR" 1>&2
-    exit 1
-fi
-if [[ ! -r $GUIDELINES_HDR ]]; then
-    echo  "$0: ERROR: guidelines hdr file is not an readable file: $GUIDELINES_HDR" 1>&2
-    exit 1
-fi
-if [[ ! -s $GUIDELINES_HDR ]]; then
-    echo  "$0: ERROR: guidelines hdr file is not an non-empty readable file: $GUIDELINES_HDR" 1>&2
     exit 1
 fi
 
@@ -1055,7 +1012,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo  "$0: debug[3]: temporary rules.md file: $TMP_RULES_MD" 1>&2
 fi
 if [[ -z $NOOP ]]; then
-    trap 'rm -f $TMP_STATUS_JSON $TMP_RULES_MD $TMP_GUIDELINES_MD; exit' 0 1 2 3 15
+    trap 'rm -f $TMP_STATUS_JSON $TMP_RULES_MD; exit' 0 1 2 3 15
     rm -f "$TMP_RULES_MD"
     if [[ -e $TMP_RULES_MD ]]; then
 	echo "$0: ERROR: cannot remove temporary rules.md file: $TMP_RULES_MD" 1>&2
@@ -1068,29 +1025,6 @@ if [[ -z $NOOP ]]; then
     fi
 elif [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: because of -n, temporary rules.md file is not used: $TMP_RULES_MD" 1>&2
-fi
-
-
-# create a temporary guidelines.md file
-#
-export TMP_GUIDELINES_MD=".tmp.$NAME.GUIDELINES_MD.$$.tmp"
-if [[ $V_FLAG -ge 3 ]]; then
-    echo  "$0: debug[3]: temporary guidelines.md file: $TMP_GUIDELINES_MD" 1>&2
-fi
-if [[ -z $NOOP ]]; then
-    trap 'rm -f $TMP_STATUS_JSON $TMP_RULES_MD $TMP_GUIDELINES_MD; exit' 0 1 2 3 15
-    rm -f "$TMP_GUIDELINES_MD"
-    if [[ -e $TMP_GUIDELINES_MD ]]; then
-	echo "$0: ERROR: cannot remove temporary guidelines.md file: $TMP_GUIDELINES_MD" 1>&2
-	exit 12
-    fi
-    :> "$TMP_GUIDELINES_MD"
-    if [[ ! -e $TMP_GUIDELINES_MD ]]; then
-	echo "$0: ERROR: cannot create temporary guidelines.md file: $TMP_GUIDELINES_MD" 1>&2
-	exit 13
-    fi
-elif [[ $V_FLAG -ge 3 ]]; then
-    echo "$0: debug[3]: because of -n, temporary guidelines.md file is not used: $TMP_GUIDELINES_MD" 1>&2
 fi
 
 
@@ -1297,95 +1231,10 @@ elif [[ $V_FLAG -ge 3 ]]; then
 fi
 
 
-# update guidelines.md
-#
-if [[ -z $NOOP ]]; then
-
-    # form a new guidelines.md
-    #
-    cat "$GUIDELINES_HDR" > "$TMP_GUIDELINES_MD"
-    status="$?"
-    if [[ $status -ne 0 ]]; then
-	echo "$0: ERROR: failed to cat $GUIDELINES_HDR > $TMP_GUIDELINES_MD, error code: $status" 1>&2
-	exit 29
-    fi
-    sed -e '1,/^<!-- This is the last line modified by the tool: bin\/gen-status.sh -->/d' \
-        "$GUIDELINES_MD" >> "$TMP_GUIDELINES_MD"
-    status="$?"
-    if [[ $status -ne 0 ]]; then
-	echo "$0: ERROR: failed to sed -e '1,/<!--- ... -->/d' $GUIDELINES_MD >> $TMP_GUIDELINES_MD failed," \
-	     "error code: $status" 1>&2
-	exit 30
-    fi
-
-    # update guidelines.md if different or if guidelines.html is missing
-    #
-    if [[ -s "$GUIDELINES_HTML" ]] && cmp -s "$TMP_GUIDELINES_MD" "$GUIDELINES_MD"; then
-
-	# case: guidelines.md did not change
-	#
-	if [[ $V_FLAG -ge 5 ]]; then
-            echo "$0: debug[5]: guidelines.md file did not change: $GUIDELINES_MD" 1>&2
-        fi
-
-    else
-
-	# case: guidelines.md changed, update the file
-	#
-	if [[ $V_FLAG -ge 5 ]]; then
-            echo "$0: debug[5]: mv -f -- $TMP_GUIDELINES_MD $GUIDELINES_MD" 1>&2
-        fi
-	if [[ $V_FLAG -ge 3 ]]; then
-            mv -f -v -- "$TMP_GUIDELINES_MD" "$GUIDELINES_MD"
-            status="$?"
-        else
-            mv -f -- "$TMP_GUIDELINES_MD" "$GUIDELINES_MD"
-            status="$?"
-        fi
-	if [[ $status -ne 0 ]]; then
-            echo "$0: ERROR: mv -f -- $TMP_GUIDELINES_MD $GUIDELINES_MD filed, error code: $status" 1>&2
-	elif [[ $V_FLAG -ge 1 ]]; then
-            echo "$0: debug[1]: built replaced guidelines.md: $GUIDELINES_MD" 1>&2
-	fi
-	if [[ ! -s $GUIDELINES_MD ]]; then
-            echo "$0: ERROR: not a non-empty guidelines.md file: $GUIDELINES_MD" 1>&2
-	    exit 31
-	fi
-
-	# use the md2html.sh tool to form the guidelines.html file, unless -n
-	#
-	# We force use of "-m next/guidelines.md" because we want both "make gen_status"
-	# and "make gen_top_html" to produce the same file content.
-	#
-	if [[ $V_FLAG -ge 1 ]]; then
-	    echo "$0: debug[1]: about to run: $MD2HTML_SH ${TOOL_OPTION[*]}" \
-		 "-m next/guidelines.md -U $SITE_URL/$GUIDELINES_HTML --" \
-		 "next/guidelines.md $GUIDELINES_HTML" 1>&2
-	fi
-	"$MD2HTML_SH" "${TOOL_OPTION[@]}" \
-	  -m next/guidelines.md -U "$SITE_URL/$GUIDELINES_HTML" -- \
-	  next/guidelines.md "$GUIDELINES_HTML"
-	status="$?"
-	if [[ $status -ne 0 ]]; then
-	    echo "$0: ERROR: md2html.sh: $MD2HTML_SH ${TOOL_OPTION[*]}" \
-		 "-m next/guidelines.md -U $SITE_URL/$GUIDELINES_HTML --" \
-		 "next/guidelines.md $GUIDELINES_HTML" \
-		 "failed, error: $status" 1>&2
-	    exit 32
-	elif [[ $V_FLAG -ge 3 ]]; then
-	    echo "$0: debug[3]: guidelines.md now up to date: $GUIDELINES_MD" 1>&2
-	fi
-    fi
-
-elif [[ $V_FLAG -ge 3 ]]; then
-    echo "$0: debug[3]: because of -n, guidelines.md was not updated: $GUIDELINES_MD" 1>&2
-fi
-
-
 # file cleanup
 #
 if [[ -z $NOOP ]]; then
-    rm -f -- "$TMP_STATUS_JSON" "$TMP_GUIDELINES_MD" "$TMP_RULES_MD"
+    rm -f -- "$TMP_STATUS_JSON" "$TMP_RULES_MD"
 elif [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: because of -n, disabled: rm -f -- $TMP_STATUS_JSON" 1>&2
 fi

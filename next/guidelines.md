@@ -1,4 +1,3 @@
-
 # 29th International Obfuscated C Code Contest Official Guidelines
 
 <p class="leftbar">
