@@ -1,6 +1,6 @@
 # IOCCC FAQ Table of Contents
 
-This is FAQ version **29.02 2025-11-29**.
+This is FAQ version **29.03 2025-11-30**.
 
 
 ## 0. [Entering the IOCCC: the bare minimum you need to know](#enter_questions)
@@ -32,6 +32,7 @@ This is FAQ version **29.02 2025-11-29**.
 - **Q 1.10**: <a class="normal" href="#download_submission">Can I download my submission tarball from the submit server?</a>
 - **Q 1.11**: <a class="normal" href="#del_submission">Can I delete a submission from the submit server?</a>
 - **Q 1.12**: <a class="normal" href="#makefile_details">What are the detailed recommendations for a submission Makefile?</a>
+- **Q 1.13**: <a class="normal" href="#github">May I use GitHub or other services to develop my submission?</a>
 
 
 ## 2. [IOCCC Judging process](#judging_process)
@@ -1644,6 +1645,17 @@ Makefile does not have a clobber rule, it will be flagged by `mkiocccentry(1)`
 
 Jump to: [top](#)
 
+<div id="github">
+### Q 1.13: May I use GitHub or other services to develop my submission?
+</div>
+
+While you may use your own git server or a publicly available service to develop
+your submission, we **DISLIKE** submissions that require it. What's more,
+since it would possibly not be anonymous it would break the rules as you are
+**NOT** allowed to reveal who you are.
+
+
+Jump to: [top](#)
 
 <hr style="width:50%;text-align:left;margin-left:0">
 <hr style="width:50%;text-align:left;margin-left:0">
