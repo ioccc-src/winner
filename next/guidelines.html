@@ -722,12 +722,12 @@ Similarly do <strong>NOT</strong> use <code>chkentry(1)</code> command line opti
 by the IOCCC judges only</strong>” in the <code>chkentry(1)</code> man page.</p>
 <p>To view <a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry toolkit</a> man pages,
 while your current directory is the top of the source tree:</p>
-<pre><code>man soup/man/man1/mkiocccentry.1
-man soup/man/man1/iocccsize.1
-man soup/man/man1/txzchk.1
-man test_ioccc/man/man1/fnamchk.1
-man soup/man/man1/chksubmit.1
-man soup/man/man1/chkentry.1</code></pre>
+<pre><code>    man soup/man/man1/mkiocccentry.1
+    man soup/man/man1/iocccsize.1
+    man soup/man/man1/txzchk.1
+    man test_ioccc/man/man1/fnamchk.1
+    man soup/man/man1/chksubmit.1
+    man soup/man/man1/chkentry.1</code></pre>
 <p>The above <code>man(1)</code> commands will show the toolkit man pages without having to install them first.</p>
 <p>So that you do not have to repeatedly answer all the <code>mkiocccentry(1)</code> questions,
 use <code>mkiocccentry -a answers ...</code> to create a file containing the answers you first give,
@@ -747,12 +747,12 @@ on the command line.</p>
 without having to type in answers each time, you can use the <code>-d</code> or <code>-s seed</code>
 option to <code>mkiocccentry</code> for the tool to pseudo-randomly create answers for you.
 For example:</p>
-<pre><code>mkiocccentry -d workdir topdir</code></pre>
+<pre><code>    mkiocccentry -d workdir topdir</code></pre>
 <p>Do <strong>NOT</strong> submit a tarball formed by <code>mkiocccentry -d ..</code> <strong>OR</strong> by
 <code>mkiocccentry -s seed ..</code> <strong>OR</strong> by using the <code>test</code> UUID!</p>
 <p>The <code>mkiocccentry(1)</code> tool creates an <code>xz(1)</code> compressed <strong>v7 format</strong> tarball using a <code>tar(1)</code>
 command of the form:</p>
-<pre><code>cd workdir/UUID-slot_num &amp;&amp; tar --format=v7 -cJf submit.UUID-slot_num.timestamp.txz UUID-slot_num</code></pre>
+<pre><code>    cd workdir/UUID-slot_num &amp;&amp; tar --format=v7 -cJf submit.UUID-slot_num.timestamp.txz UUID-slot_num</code></pre>
 <p>In many places the <code>mkiocccentry(1)</code> tool will prompt you to verify what you input, allowing you to
 correct details as you go along.</p>
 <p>Pressing the “<em>enter key</em>” at the <code>mkiocccentry(1)</code> tool prompts will allow you
@@ -966,6 +966,7 @@ submission’s <code>Makefile</code> are supported by <strong>BOTH</strong> <cod
 <p>We <strong>DISLIKE</strong> the use of obscure compiler flags, especially
 if <code>gcc</code> and/or <code>clang</code> do not support it. We <strong>suggest</strong>
 that you not use any really obscure compiler flags if you can help it.</p>
+<div id="nested-functions">
 <p>One side effect of the above is that you cannot assume the use
 of nested functions such as:</p>
 <pre><code>     int main() {
@@ -974,6 +975,7 @@ of nested functions such as:</p>
          }
 |        please_dont_submit_this();
      }</code></pre>
+</div>
 <p>On 2012 July 20, the <a href="../judges.html">IOCCC judges</a> rescinded the encouragement of
 nested functions. Such constructions, while interesting and sometimes
 amusing, will have to wait until they are required by a C standard that are
@@ -1392,6 +1394,7 @@ CPU, we might just try your submission on that emulator as well :-)</p>
 <p>Do not fear if you’re not 100% sure of the significance of
 <code>2305567963945518424753102147331756070</code> as it is not of prime importance: or is
 it? :-)</p>
+<p>With respect to <a href="#nested-functions">nested functions</a>, try <code>chkentry -b</code>.</p>
 <p>Jump to: <a href="#">top</a></p>
 <div id="more-information">
 

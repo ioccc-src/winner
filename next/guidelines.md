@@ -359,12 +359,12 @@ To view [mkiocccentry toolkit](https://github.com/ioccc-src/mkiocccentry) man pa
 while your current directory is the top of the source tree:
 
 ``` <!---sh-->
-man soup/man/man1/mkiocccentry.1
-man soup/man/man1/iocccsize.1
-man soup/man/man1/txzchk.1
-man test_ioccc/man/man1/fnamchk.1
-man soup/man/man1/chksubmit.1
-man soup/man/man1/chkentry.1
+    man soup/man/man1/mkiocccentry.1
+    man soup/man/man1/iocccsize.1
+    man soup/man/man1/txzchk.1
+    man test_ioccc/man/man1/fnamchk.1
+    man soup/man/man1/chksubmit.1
+    man soup/man/man1/chkentry.1
 ```
 
 The above `man(1)` commands will show the toolkit man pages without having to install them first.
@@ -394,7 +394,7 @@ option to `mkiocccentry` for the tool to pseudo-randomly create answers for you.
 For example:
 
 ``` <!---sh-->
-mkiocccentry -d workdir topdir
+    mkiocccentry -d workdir topdir
 ```
 
 Do **NOT** submit a tarball formed by `mkiocccentry -d ..` **OR** by
@@ -404,7 +404,7 @@ The `mkiocccentry(1)` tool creates an `xz(1)` compressed **v7 format** tarball u
 command of the form:
 
 ``` <!---sh-->
-cd workdir/UUID-slot_num && tar --format=v7 -cJf submit.UUID-slot_num.timestamp.txz UUID-slot_num
+    cd workdir/UUID-slot_num && tar --format=v7 -cJf submit.UUID-slot_num.timestamp.txz UUID-slot_num
 ```
 
 In many places the `mkiocccentry(1)` tool will prompt you to verify what you input, allowing you to
@@ -694,6 +694,7 @@ We **DISLIKE** the use of obscure compiler flags, especially
 if `gcc` and/or `clang` do not support it.  We **suggest**
 that you not use any really obscure compiler flags if you can help it.
 
+<div id="nested-functions">
 One side effect of the above is that you cannot assume the use
 of nested functions such as:
 
@@ -705,6 +706,7 @@ of nested functions such as:
 |        please_dont_submit_this();
      }
 ```
+</div>
 
 On 2012 July 20, the [IOCCC judges](../judges.html) rescinded the encouragement of
 nested functions.  Such constructions, while interesting and sometimes
@@ -1236,6 +1238,8 @@ CPU, we might just try your submission on that emulator as well :-)
 Do not fear if you're not 100% sure of the significance of
 `2305567963945518424753102147331756070` as it is not of prime importance: or is
 it?  :-)
+
+With respect to [nested functions](#nested-functions), try `chkentry -b`.
 
 
 Jump to: [top](#)
