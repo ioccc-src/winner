@@ -1124,7 +1124,7 @@ There may or may not be fewer than 2^7+1 reasons why these [IOCCC
 guidelines](guidelines.html) seem obfuscated.
 
 Excessively "_dotty"_ use of the `chksubmit(1)` or `chkentry(1)` commands suggests that
-either you like silly things, or that you "_RTFS"_ with some level of care.
+either you like silly things, or that you\ "_RTFS_" with some level of care.
 
 Some people might question what actually constitutes a valid JSON file, given
 the state of the "_so-called_" JSON spec.. :-)
