@@ -138,7 +138,7 @@ Jump to: [top](#)
 <p class="leftbar">
 If a group of people work on a submission, then they should
 [register for the IOCCC](../quick-start.html#enter)
-using either a group email address, or an email address for one of the authors.
+using either a valid group email address, or an email address for one of the authors.
 </p>
 
 <p class="leftbar">
@@ -211,11 +211,40 @@ Jump to: [top](#)
 </div>
 </div>
 
-Do **NOT** register more than one account just try and get around the limit on the number of submission slots.
+Do **NOT** register more than one account just to try and get around the limit on the number of submission slots.
 
 
 Jump to: [top](#)
 
+
+<div id="guideline9"></div>
+<div id="guideline9-no-interactive-compiling-allowed"></div>
+
+# Guidelines for [Rule 9 - No interactive compiling allowed](rules.html#rule-9---no-interactive-compiling-allowed)
+
+Don't forget that the building of your program should be done
+**WITHOUT human intervention**.  So don't do things such as:
+
+``` <!---makefile-->
+    prog: prog.c
+        #echo this next line requires data from standard input
+        cat > prog.c
+        ${CC} prog.c -o prog
+```
+
+However, you can do something cute such as making your program
+do something dumb (or cute) when it is built 'automatically', and
+when it is run with a human involved, do something more clever.
+For example, one could put in their `Makefile`:
+
+``` <!---makefile-->
+    prog: prog.c
+        ${CC} prog.c -DNON_HUMAN_COMPILE -o prog
+        @echo "See remarks section about alternate ways to compile"
+```
+
+and then include special notes in your `remarks.md` file for
+alternate / human intervention based building.
 
 <div id="guideline11">
 <div id="guideline-11---abuse">
@@ -267,7 +296,7 @@ or any other
 rule and submit a submission anyway, you **MUST** try to justify why the
 [Judges](../judges.html) should not reject your submission due to a rule
 violation, and you would be wise to do this towards the top of your `remarks.md`
-file.
+file so as not to be overlooked.
 
 We are often asked why the contest [Rules](rules.html) and [Guidelines](guidelines.html) seem strange or contain mistakes, flaws, or
 grammatical errors.  One reason is that we sometimes make genuine mistakes, but
@@ -296,9 +325,20 @@ Jump to: [top](#)
 
 <div id="guideline12">
 <div id="guideline12-utf8">
-# Guidelines for [Rule 12 - UTF-8](rules.html#rule12-utf8)
+# Guidelines for [Rule 12 - UTF-8](rules.html#rule-12---utf-8)
 [Rule 12 - UTF-8](rules.html#rule12-utf8)
 no longer discourages the use of multibyte UTF-8 characters in `C` code.
+
+
+# Guidelines for [Rule 13 - No carriage returns in prog.c](rules.html#rule-13---no-carriage-returns-in-prog.c)
+
+We **DISLIKE** C code with trailing control-M's (`\r` or `\015`) that results
+in compilation failures.  Some non-UNIX/non-Linux tools such as
+MS Visual C and MS Visual C++ leave trailing control-M's on lines.
+Users of such tools should strip off such control-M's before submitting
+their submissions.  In some cases tools have a "Save As" option that will
+prevent such trailing control-M's being added.
+
 
 
 <div id="guideline15">
@@ -322,8 +362,8 @@ in the building and compiling of your submission.
 </p>
 
 <p class="leftbar">
-Your Makefile **MUST** be compatible with GNU `make` and we suggest you use
-[Makefile.example](Makefile.example) as a template, renamed as Makefile of
+Your `Makefile` **MUST** be compatible with GNU `make` and we suggest you use
+[Makefile.example](Makefile.example) as a template, renamed as `Makefile` of
 course.
 </p>
 
@@ -401,7 +441,8 @@ Instead of including a large test-suite that requires a lot of files as part of
 your submission, if your submission doesn't require the test-suite to be
 available to run, then in your `remarks.md` you could include URL where such a
 test-suite may be downloaded from and how to use the test-suite to test your
-submission, assuming it is not reveal who you are.
+submission, assuming it is not reveal who you are, eg. do not use a GitHub URL
+which contains your username.
 </p>
 
 <p class="leftbar">
@@ -476,9 +517,7 @@ The **official locale** of the **IOCCC** is **C**.
 You are **encouraged** to examine the [winners of previous contests](../years.html).
 
 Because the [Rules](rules.html) change from year to year, some [past winning entries](../years.html)
-may be rejected this year.
-
-What was _was_ unique and novel one year _might be 'old' the next year_.
+may be rejected this year.  What was _was_ unique and novel one year _might be 'old' the next year_.
 
 A submission is usually examined in a number of ways.  We typically apply
 a number of tests to a submission:
@@ -552,7 +591,7 @@ Jump to: [top](#)
 </div>
 
 We **VERY MUCH LIKE** submissions that use an edited variant of the
-example Makefile, as described and linked to in the [Makefile section](#makefile),
+example `Makefile`, as described and linked to in the [Makefile section](#makefile),
 renamed as `Makefile` of course.  This makes it easier for the [Judges](../judges.html)
 to test your submission. And if your submissions wins, it makes it easier to integrate it into
 the [Official IOCCC winner website](https://www.ioccc.org/index.html).
@@ -603,6 +642,8 @@ If you do include a `try.alt.sh` then **PLEASE** remove the `try.alt` rule in th
 If you don't have a prog.alt.c, then **PLEASE** remove the `try.alt` rule as well.
 </p>
 
+### About C preprocessor
+
 Doing masses of `#define`s to obscure the source has become 'old'.  We
 tend to 'see thru' masses of `#define`s due to our pre-processor tests
 that we apply.  Simply abusing `#define`s or `-Dfoo=bar` won't go as far
@@ -630,6 +671,16 @@ and **NOT** like this:
     this_is_not;       /* <-- Try to avoid implicit type declarations */
 ```
 
+We really **DISLIKE** submissions that make blatant use of `#include` of
+large data files to get around the source code size limit. This does not mean
+`#include` of standard header files, just data files you provide.
+
+On 28 January 2007, the Judges rescinded the requirement that the
+`#` in a C preprocessor directive must be the 1st non-whitespace byte.
+
+
+### About compilers
+
 We tend to **like _less_** a submission that requires either
 `gcc` **OR** `clang`.  **We _prefer_ submissions** that can compile
 under **BOTH** `gcc` **AND** `clang`. **Hint!**
@@ -641,7 +692,11 @@ We **DISLIKE** the use of obscure compiler flags, especially
 if `gcc` and/or `clang` do not support it.  We **suggest**
 that you not use any really obscure compiler flags if you can help it.
 
-<div id="nested-functions">
+
+<div id="nested-functions"></div>
+
+### About nested functions
+
 One side effect of the above is that you cannot assume the use
 of nested functions such as:
 
@@ -653,7 +708,6 @@ of nested functions such as:
 |        please_dont_submit_this();
      }
 ```
-</div>
 
 On 2012 July 20, the [Judges](../judges.html) rescinded the encouragement of
 nested functions.  Such constructions, while interesting and sometimes
@@ -661,6 +715,8 @@ amusing, will have to wait until they are required by a C standard that are
 actually implemented in **BOTH** `gcc` **AND** `clang`.
 
 We **DISLIKE** submissions that require the use of `-fnested-functions`.
+
+### About variadic functions
 
 If your submission uses functions that have a variable number of
 arguments, **be careful**. Systems implement `va_list` in a wide variety
@@ -678,7 +734,11 @@ In particular, do not treat `va_list` variables as if they were a `char **`.
 
 We **DISLIKE** the use of `varargs.h`.  Use `stdarg.h` instead.
 
+### About I/O
+
 We **DISLIKE** the use of `gets(3)`.  Use `fgets(3)` instead.
+
+### About tarballs
 
 We tend to **DISLIKE** the blatant use of tarballs in an attempt to simply get
 around the extra file number limit. We realize there may be cases where a
@@ -690,11 +750,13 @@ Using a mass of `goto`s to obfuscate your code has become 'old' and is unlikely
 to make it through the final rounds, if it even gets that far.
 </p>
 
-On 28 January 2007, the Judges rescinded the requirement that the
-`#` in a C preprocessor directive must be the 1st non-whitespace byte.
+### About stdlib
 
 The `exit(3)` function returns `void`.  Some broken systems have `exit(3)`
 return `int`; your submission should assume that `exit(3)` returns a `void`.
+
+
+### What it means to be small.
 
 Small programs are best when they are short, obscure and concise.
 While such programs are not as complex as other winners, they do
@@ -705,6 +767,35 @@ programs that are compact, and are instructional.
 One line programs should be short one line programs: say around **80** to **132**
 bytes long.  Going well beyond **132** bytes is a bit too long to be called
 a one-liner in our vague opinion.
+
+We suggest that you avoid trying for the '**smallest self-replicating**'
+source.  The smallest, a [zero byte entry](../1994/smr/index.html), won in
+[1994](../years.html#1994).
+
+Programs that claim to be the smallest C source that does something, really
+better be the smallest such program or they risk being rejected because
+they do not work as documented.
+
+We want to get away from source that is simply a compact blob of
+bytes.   **REALLY TRY** to be more creative than blob coding. **HINT!**
+
+Unless you are cramped for space, or unless you are entering the
+'**Best one liner**' category, we suggest that you format your program
+in a more creative way than simply forming excessively long lines.
+
+The `Makefile` should not be used to try and get around the size limit.  It is
+one thing to make use of a several `-D`s on the compile line to help out, but it
+is quite another to use many bytes of `-D`s in order to try and squeeze the
+source under the size limit.
+
+Please do not use things like `gzip(1)` to get around the size limit. This was
+done years ago; please try to be much more creative.
+
+Your source code, post-pre-processing, should not exceed the size of
+[Microsoft Windows](https://en.wikipedia.org/wiki/Microsoft_Windows). :-)
+
+
+### About environment
 
 We tend to **DISLIKE** programs that:
 
@@ -739,22 +830,9 @@ Specification](https://en.wikipedia.org/wiki/Single_UNIX_Specification)
 (UNIX-like) environment. Therefore do not assume the system has a
 [windows.h](https://en.wikipedia.org/wiki/Windows.h) include file:
 
-
 ``` <!---c-->
     #include <windows.h>  /* we DISLIKE this */
 ```
-
-Unless you are cramped for space, or unless you are entering the
-'**Best one liner**' category, we suggest that you format your program
-in a more creative way than simply forming excessively long lines.
-
-The `Makefile` should not be used to try and get around the size limit.  It is
-one thing to make use of a several `-D`s on the compile line to help out, but it
-is quite another to use many bytes of `-D`s in order to try and squeeze the
-source under the size limit.
-
-Your source code, post-pre-processing, should not exceed the size of
-[Microsoft Windows](https://en.wikipedia.org/wiki/Microsoft_Windows). :-)
 
 <p class="leftbar">
 You should try to restrict commands used in the build file to commands found in
@@ -772,39 +850,8 @@ program is reasonably portable.
 We prefer programs that are portable across a wide variety of UNIX-like
 operating systems (e.g., Linux, GNU Hurd, BSD, UNIX, macOS, etc.).
 
-Don't forget that the building of your program should be done
-**WITHOUT human intervention**.  So don't do things such as:
-
-``` <!---makefile-->
-    prog: prog.c
-        #echo this next line requires data from standard input
-        cat > prog.c
-        ${CC} prog.c -o prog
-```
-
-However, you can do something cute such as making your program
-do something dumb (or cute) when it is built 'automatically', and
-when it is run with a human involved, do something more clever.
-For example, one could put in their `Makefile`:
-
-``` <!---makefile-->
-    prog: prog.c
-        ${CC} prog.c -DNON_HUMAN_COMPILE -o prog
-        @echo "See remarks section about alternate ways to compile"
-```
-
-and then include special notes in your `remarks.md` file for
-alternate / human intervention based building.
-
-We want to get away from source that is simply a compact blob of
-bytes.   **REALLY TRY** to be more creative than blob coding. **HINT!**
-
-Please do not use things like `gzip(1)` to get around the size limit. This was
-done years ago; please try to be much more creative.
-
-We really **DISLIKE** submissions that make blatant use of `#include` of
-large data files to get around the source code size limit. This does not mean
-`#include` of standard header files, just data files you provide.
+Try to avoid submissions that play music that some people believe is copyrighted
+music.
 
 Did we remember to indicate that programs that blatantly use
 some complex state machine to do something simple, are boring?
@@ -819,14 +866,6 @@ Remember, you can submit more than one submission.  See the
 [Rules](rules.html)
 for details (in particular,
 [Rule 8 - Submitting requirements](rules.html#rule8-submitting-requirements)).
-
-We suggest that you avoid trying for the '**smallest self-replicating**'
-source.  The smallest, a [zero byte entry](../1994/smr/index.html), won in
-[1994](../years.html#1994).
-
-Programs that claim to be the smallest C source that does something, really
-better be the smallest such program or they risk being rejected because
-they do not work as documented.
 
 Please note that the C source below, besides lacking in obfuscation,
 is **NOT** the smallest C source file that when compiled and run, dumps core:
@@ -853,6 +892,9 @@ Initialized char arrays are OK to write over.  For instance, this is OK:
     char b[] = "Is this OK";
     b[9] = 'k';     /* modifying an initialized char array is OK */
 ```
+
+
+### About X
 
 X client submissions should be as portable as possible.  Submissions that
 adapt to a wide collection of environments will be favored.  For
@@ -881,8 +923,19 @@ X client submissions should try to not to depend on particular items in
 in the your `remarks.md` file.  They should also not depend on any
 particular window manager.
 
-Try to avoid submissions that play music that some people believe is copyrighted
-music.
+
+### About Curses
+
+One should restrict libcurses to portable features found on both BSD
+and Linux curses.
+
+<p class="leftbar">
+If you do `#include <curses.h>` make **CERTAIN** you link in curses (i.e.
+`-lcurses`) and not ncurses (i.e. `-lncurses`).
+</p>
+
+
+### Miscellaneous
 
 While we recognize that UNIX is not a universal operating system, the contest
 does have a bias towards such systems.  In an effort to expand the scope of the
@@ -920,21 +973,6 @@ read so many twisted submissions, you too would enjoy a good laugh or two.
 We think the readers of the contest winners do as well.  We do read
 your `remarks.md` content during the judging process, so it is worth your
 while to write a remarkable `remarks.md` file.
-
-We **DISLIKE** C code with trailing control-M's (`\r` or `\015`) that results
-in compilation failures.  Some non-UNIX/non-Linux tools such as
-MS Visual C and MS Visual C++ leave trailing control-M's on lines.
-Users of such tools should strip off such control-M's before submitting
-their submissions.  In some cases tools have a "Save As" option that will
-prevent such trailing control-M's being added.
-
-One should restrict libcurses to portable features found on both BSD
-and Linux curses.
-
-<p class="leftbar">
-If you do `#include <curses.h>` make **CERTAIN** you link in curses (i.e.
-`-lcurses`) and not ncurses (i.e. `-lncurses`).
-</p>
 
 It is a very good idea to, in your `remarks.md` file, tell us why you
 think your submission is obfuscated.  This is particularly true if
