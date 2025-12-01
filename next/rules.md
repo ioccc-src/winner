@@ -39,7 +39,7 @@ writing by [contacting the judges](../contact.html).
 
 ## Rules Version
 
-These IOCCC Rules are version **29.10 2025-11-30**.
+These IOCCC Rules are version **29.11 2025-11-30**.
 
 Reminder: be SURE to read the [IOCCC guidelines](guidelines.html).
 
@@ -63,17 +63,21 @@ The above **dates and times may change _AT ANY TIME_** until the [contest status
 
 The above timestamps are in "_YYYY-MM-DD HH:MM:SS.micros UTC_" format.
 
-See [entering the IOCCC](../quick-start.html#enter).
+See [Entering the IOCCC: the bare minimum you need to know](../quick-start.html#enter).
 
 See
 FAQ on "[How can I comment or make a suggestion on IOCCC rules, guidelines and tools?](../faq.html#feedback)".
 
 
 <div id="rule1">
+<div id="rule1-c">
 ## Rule 1 - C program
 </div>
+</div>
 
-Your submission **MUST** be a C program that does NOT `#include` data files.
+Your submission **MUST** be a C program.
+
+See the [Guidelines for Rule 1 - C program](guidelines.html#guidelines-for-rule-1---c-program).
 
 
 <div id="rule2">
@@ -110,9 +114,6 @@ See the [Guidelines for Rule 2 - Size restrictions](guidelines.html#guideline-2-
 The overall maximum size of your `prog.c` program source **MUST NOT**
 exceed **4993** bytes.
 
-**NOTE**: by default `iocccsize` will only report the rule 2b size, unless the
-code surpasses the limit.
-
 See [Entering the IOCCC: the bare minimum you need to know](../quick-start.html#enter).
 
 
@@ -143,19 +144,11 @@ You **MUST** register, using a valid email address, in order to submit
 to the IOCCC. You may register while the contest is **pending** or **open**.
 
 A few days after registering, you'll receive your UUID username and
-temporary password, which you **MUST** change within 14 days. If you
-fail to change it in a timely manner, you'll need to
-[contact the Judges](../contact.html) by email to request a reset.
+temporary password, which you **MUST** change within 14 days.
 
-It can take a few days to process your registration and for the server to
-email your details, therefore make sure to allow yourself ample time to
-register and submit your entries; **DO NOT WAIT UNTIL THE FINAL DAYS**
-to register! The judges are **NOT** responsible for delayed or lost
-email or for those who wait until the last minute to try to register!
+See [How to register for the IOCCC](register.html).
 
 See [Entering the IOCCC: the bare minimum you need to know](../quick-start.html#enter).
-
-See [Rule 8 - Submitting requirements](rules.html#rule8).
 
 See [Guidelines for Rule 3 - Register for the IOCCC](guidelines.html#guideline-3---register).
 
@@ -300,9 +293,9 @@ you obtained from them in your `remarks.md` file.
 
 You are permitted to use tools to write your code.
 
-See [Rule 16 - Anonymous Judging](rules.html#rule16-anonymous-judging).
-
-See [Guidelines for Rule 7 - Original Work](guidelines.html#guideline-7---original-work).
+See [Rule 16 - Anonymous Judging](rules.html#rule16-anonymous-judging),
+and
+[Guidelines for Rule 7 - Original Work](guidelines.html#guideline-7---original-work).
 
 
 <div id="rule8">
@@ -324,8 +317,6 @@ and resubmit. In order to avoid potential packaging errors, it is **highly
 recommended** to use `mkiocccentry(1)`, **AND** to check from time to time the
 status on the submit server, to see if any tests run by the server failed to
 validate your submission.
-
-Do **NOT** register more than one account!
 
 See
 [Rule 3 - Registering for the IOCCC](rules.html#rule3-register),
@@ -403,8 +394,7 @@ version, **PLEASE** indicate that in your `remarks.md` file of your non-rule
 abusing version so that the Judges don't think you uploaded a duplicate into a
 wrong slot by mistake.
 
-See [Guidelines for Rule 11 - Legal rule
-abuse](guidelines.html#guideline-11---abuse).
+See [Guidelines for Rule 11 - Legal rule abuse](guidelines.html#guideline-11---abuse).
 
 
 <div id="rule12">

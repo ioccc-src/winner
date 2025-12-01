@@ -462,7 +462,7 @@ and remains unaltered. All other uses must receive prior permission in
 writing by <a href="../contact.html">contacting the judges</a>.</p>
 <h1 id="guidelines-version">Guidelines Version</h1>
 <p class="leftbar">
-These IOCCC guidelines are version <strong>29.02 2025-11-30</strong>.
+These IOCCC guidelines are version <strong>29.03 2025-11-30</strong>.
 </p>
 <p class="leftbar">
 The <span style="font-size:28px;"><b>|</b></span> symbol indicates an <strong>change</strong> from the previous IOCCC.
@@ -471,6 +471,41 @@ The <span style="font-size:28px;"><b>|</b></span> symbol indicates an <strong>ch
 Because the <strong>IOCCC29</strong> guidelines was a substantial rewrite, only <strong>important changes</strong> from <strong>IOCCC28</strong> have been marked.
 </p>
 <p>Be sure to read the <a href="rules.html">IOCCC rules</a>.</p>
+<div id="guideline1">
+<div id="guideline1-c">
+<h1 id="guidelines-for-rule-1---c-program">Guidelines for <a href="rules.html#rule1-c">Rule 1 - C program</a></h1>
+</div>
+</div>
+<p class="leftbar">
+While you submission <strong>MUST</strong> be a C program, there is nothing wrong if your <code>prog.c</code>
+file happens to also be a code for another language.
+</p>
+<p class="leftbar">
+We would prefer if you do not use <code>#include</code> statements,
+especially <code>#include</code> statements just to include lots of data,
+to get around the
+<a href="rules.html#rule2-size-restrictions">Rule 2 - Size restrictions</a>
+in an excessive way.
+</p>
+<p class="leftbar">
+We would prefer if you do not require lots and lots of implicit defines on the C compiler command line
+(i.e., lots of <code>-Dfoo</code>, and <code>-Dcurds=whey</code> style command line args to the C compiler)
+to get around the
+<a href="rules.html#rule2-size-restrictions">Rule 2 - Size restrictions</a>
+in an excessive way.
+</p>
+<p class="leftbar">
+Some use of <code>#include</code> statements and/or implicit defines on the C compiler command line is perfectly reasonable.
+</p>
+<p class="leftbar">
+As a guide, consider the level of <code>#include</code> statements and/or implicit defines on the C compiler command line
+that are found in
+<a href="https://www.ioccc.org/years.html">winning IOCCC entries</a>, and try to <strong>NOT</strong> set a new record.
+</p>
+<p class="leftbar">
+If you believe you need to significantly abuse <code>#include</code> statements and/or implicit defines on the C compiler command line,
+then try to make a case for why in your submission’s <code>remarks.md</code> file: maybe the judges won’t reject your submission.
+</p>
 <div id="guideline2">
 <div id="guideline-2---size">
 <div id="guideline2-size">
@@ -506,11 +541,37 @@ the IOCCC size tool <code>iocccsize(1)</code> conflict, the algorithm implemente
 by the minimum required version of <code>iocccsize(1)</code> is preferred by the <a href="../judges.html">IOCCC
 judges</a>.</p>
 <p>Make sure <code>iocccsize</code> does not flag any issues with your <code>prog.c</code>.</p>
+<p><strong>NOTE</strong>: by default <code>iocccsize</code> will only report the rule 2b size, unless the
+code surpasses the limit.</p>
 <p>There a much less need to <code>#define</code> C reserved words in an effort
 to get around the size limits of
 <a href="rules.html#rule2-size">Rule 2 - Size restrictions</a>
 because of the <code>iocccsize(1)</code> algorithm.</p>
 <p>Yes Virginia, <strong>the previous guideline sentence is an important hint</strong>!</p>
+<p>Jump to: <a href="#">top</a></p>
+<div id="guideline3">
+<div id="guideline-3---register">
+<h1 id="guidelines-for-rule-3---register-for-the-ioccc">Guidelines for <a href="rules.html#rule3-register">Rule 3 - Register for the IOCCC</a></h1>
+</div>
+</div>
+<p>If a group of people work on a submission, then they should
+<a href="../quick-start.html#enter">register for the IOCCC</a>
+using either a group email address, or an email address for one of the authors.</p>
+<p>Processing your registration is an activity overseen by an IOCCC judge.
+Please be <strong>patient</strong> while an IOCCC judge processes your registration.</p>
+<p>It can take a few days to process your registration and for the server to
+email your details, therefore make sure to allow yourself ample time to
+register and submit your entries; <strong>DO NOT WAIT UNTIL THE FINAL DAYS</strong>
+to register! The judges are <strong>NOT</strong> responsible for delayed or lost
+email or for those who wait until the last minute to try to register!</p>
+<p>If after a few days you believe your registration hasn’t been process, then
+<a href="../contact.html">contact the Judges</a>.</p>
+<p>After your UUID and initial password are emailed to you, you have
+up to fortnight (<strong>14 days</strong>) to login and change your temporary password.
+If you fail to change your temporary password by that deadline, then you’ll need to
+<a href="../contact.html">contact the Judges</a> by email to request a reset.</p>
+<p>See <a href="register.html">How to register for the IOCCC</a>.</p>
+<p>See <a href="../quick-start.html#enter">Entering the IOCCC: the bare minimum you need to know</a>.</p>
 <p>Jump to: <a href="#">top</a></p>
 <div id="guideline7">
 <div id="guideline-7---original-work">
@@ -535,6 +596,13 @@ describe how you used such tools</strong> in your <code>remarks.md</code> file.<
 <p>In short: You created it, you own it, its an original work, or you have explicit permission to the work.</p>
 <p>See the
 FAQ on “<a href="../faq.html#ai">May I use AI, LLM, Virtual coding assistants, or similar tools to write my submission?</a>”.</p>
+<p>Jump to: <a href="#">top</a></p>
+<div id="guideline8">
+<div id="guideline-8---submitting-requirements">
+<h1 id="guidelines-for-rule-8---submitting-requirements">Guidelines for <a href="rules.html#rule8-submitting-requirements">Rule 8 - Submitting requirements</a></h1>
+</div>
+</div>
+<p>Do <strong>NOT</strong> register more than one account just try and get around the limit on the number of submission slots.</p>
 <p>Jump to: <a href="#">top</a></p>
 <div id="guideline11">
 <div id="guideline-11---abuse">
@@ -680,154 +748,12 @@ FAQ on “<a href="../faq.html#makefile_details">What are the detailed recommend
 <p>See the
 FAQ on “<a href="../faq.html#rule17">What are the details behind Rule 17 - Use mkiocccentry?</a>”.</p>
 <p>Jump to: <a href="#">top</a></p>
-<div id="mkiocccentry">
-
-</div>
-<div id="mkiocccentry_toolkit">
-
-</div>
-<h1 id="guidelines-for-the-mkiocccentry-toolkit">Guidelines for the mkiocccentry toolkit</h1>
-<p>The <a href="https://submit.ioccc.org">IOCCC submit server</a>, and related services
-use the <strong>most recent version</strong> of the
-<a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry toolkit</a>:
-submissions that package using older versions of the
-<a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry toolkit</a>
-are <strong>LIKELY</strong> to be <strong>REJECTED</strong>!</p>
-<p>You <strong>REALLY SHOULD</strong> use the latest <a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry
-toolkit</a> to package your submission
-as submissions that use an older version are <strong>LIKELY</strong> to be <strong>REJECTED</strong>!</p>
-<p>The <code>mkiocccentry(1)</code> tool runs a number of checks by way of these
-<a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry toolkit</a> tools:</p>
-<ul>
-<li>iocccsize(1)</li>
-<li>txzchk(1)</li>
-<li>fnamchk(1)</li>
-<li>chksubmit(1)</li>
-<li>chkentry(1)</li>
-</ul>
-<p>Do <strong>NOT</strong> use <code>txzchk(1)</code> or <code>fnamchk(1)</code> command line options that are labeled
-“<strong>for TESTING purposes</strong>” in their respective man pages.</p>
-<p>Do <strong>NOT</strong> use <code>fnamchk(1)</code> command line options that are labeled “<strong>for TESTING purposes</strong>”
-in the <code>fnamchk(1)</code> man page.</p>
-<p>Do <strong>NOT</strong> use <code>chksubmit(1)</code> command line options that are labeled “<strong>for the use by the IOCCC judges only</strong>”
-in the <code>chksubmit(1)</code> man page.
-Similarly do <strong>NOT</strong> use <code>chkentry(1)</code> command line options marked “<strong>for the use
-by the IOCCC judges only</strong>” in the <code>chkentry(1)</code> man page.</p>
-<p>To view <a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry toolkit</a> man pages,
-while your current directory is the top of the source tree:</p>
-<pre><code>    man soup/man/man1/mkiocccentry.1
-    man soup/man/man1/iocccsize.1
-    man soup/man/man1/txzchk.1
-    man test_ioccc/man/man1/fnamchk.1
-    man soup/man/man1/chksubmit.1
-    man soup/man/man1/chkentry.1</code></pre>
-<p>The above <code>man(1)</code> commands will show the toolkit man pages without having to install them first.</p>
-<p>So that you do not have to repeatedly answer all the <code>mkiocccentry(1)</code> questions,
-use <code>mkiocccentry -a answers ...</code> to create a file containing the answers you first give,
-so later enter <code>mkiocccentry -i answers ...</code> to reuse those same answers.</p>
-<p>The <code>mkiocccentry -A answers ...</code> does the same thing except that the <strong>answers file will be overwritten</strong>.</p>
-<p>The <code>mkiocccentry -i answers ...</code> will still be required to confirm “<em>Yes/No</em>” questions.</p>
-<p>Use <code>mkiocccentry -Y -i answers ..</code> to force a yes answers with <strong>great caution</strong>
-because it might force a yes answer to something you do <strong>NOT</strong> want, such as a
-change in your code that violates a detected rule.
-The <code>mkiocccentry -i answers ..</code> will still be required to confirm “<em>Yes/No</em>” questions.
-While <code>mkiocccentry -Y -i answers ..</code> will force yes answers, use with <strong>great caution</strong>,
-because it might force a yes answer to something you do <strong>NOT</strong> want.</p>
-<p>To help with not having to repeatedly enter a UUID, put your UUID into a file and use
-<code>mkiocccentry -u uuidfile ...</code>, or use <code>mkiocccentry -U UUID ...</code> to give the <code>UUID</code>
-on the command line.</p>
-<p>If you wish to <strong>test</strong> that your submission passes the <code>mkiocccentry(1)</code> tests
-without having to type in answers each time, you can use the <code>-d</code> or <code>-s seed</code>
-option to <code>mkiocccentry</code> for the tool to pseudo-randomly create answers for you.
-For example:</p>
-<pre><code>    mkiocccentry -d workdir topdir</code></pre>
-<p>Do <strong>NOT</strong> submit a tarball formed by <code>mkiocccentry -d ..</code> <strong>OR</strong> by
-<code>mkiocccentry -s seed ..</code> <strong>OR</strong> by using the <code>test</code> UUID!</p>
-<p>The <code>mkiocccentry(1)</code> tool creates an <code>xz(1)</code> compressed <strong>v7 format</strong> tarball using a <code>tar(1)</code>
-command of the form:</p>
-<pre><code>    cd workdir/UUID-slot_num &amp;&amp; tar --format=v7 -cJf submit.UUID-slot_num.timestamp.txz UUID-slot_num</code></pre>
-<p>In many places the <code>mkiocccentry(1)</code> tool will prompt you to verify what you input, allowing you to
-correct details as you go along.</p>
-<p>Pressing the “<em>enter key</em>” at the <code>mkiocccentry(1)</code> tool prompts will allow you
-to proceed with a default, however make sure the default is the <strong>CORRECT</strong>
-answer.</p>
-<p>The <code>mkiocccentry(1)</code> tool will use code from <code>iocccsize(1)</code> which detects a number of
-issues (such as <a href="rules.html#rule2-size">Rule 2 - Size restrictions</a>) that you may ignore,
-however ignoring such issues <strong>comes with a SIGNIFICANT level of risk!</strong></p>
-<p>Once the tarball is packaged it will
-run <code>txzchk(1)</code>, which will also run <code>fnamchk(1)</code>, as part of its algorithm.</p>
-<p>The use of <code>mkiocccentry -W ....</code> is <strong>highly discouraged</strong> as this may ignore
-warnings about a problem that may cause your submission to be <strong>REJECTED!</strong>”</p>
-<p>The same can be said of the <code>-Y</code> option, and to a lesser extent <code>-y</code>: the <code>-y</code>
-is mostly for the test script and the <code>-Y</code> is like <code>-y</code> but even more
-aggressive.</p>
-<p>If <code>mkiocccentry</code> encounters an <strong>error</strong>, the program will exit and the xz
-compressed tarball <strong>will NOT be generated</strong>: this is a <strong>feature, not a bug</strong>!</p>
-<p>If you encounter a <strong>bug</strong> with the
-<a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry toolkit</a>
-<strong>PLEASE run the <code>bug_report.sh</code> script to help us out here!</strong></p>
-<p>While you don’t have to install the
-<a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry toolkit</a>,
-if you don’t, in order to run a tool outside the repo directory
-you will have to specify <code>mkiocccentry(1)</code> command line options to locate required tools
-such as <code>chkentry(1)</code> (<code>mkiocccentry -C chkentry ..</code>), <code>txzchk(1)</code> (<code>mkiocccentry -T txzchk ..</code>),
-and <code>fnamchk(1)</code> (<code>mkiocccentry -F fnamchk ..</code>).</p>
-<p>The <code>mkiocccentry(1)</code> tool will ignore any filename or directory that begins with a period (<code>.</code>).</p>
-<p>The <code>mkiocccentry(1)</code> tool will ignore all files that begin with <code>COPYING</code>, <code>COPYRIGHT</code>, and <code>LICENSE</code>, regardless
-of filename case.</p>
-<p>The <code>mkiocccentry(1)</code> tool will reject any of the following files if they are found directly under
-the top level directory (<code>topdir</code>):</p>
-<ul>
-<li>README.md</li>
-<li>index.html</li>
-<li>prog</li>
-<li>prog.alt</li>
-<li>prog.alt.o</li>
-<li>prog.orig.c</li>
-<li>filenames matching the <code>[0-9][0-9][0-9][0-9]_*.tar.bz2</code> file glob</li>
-</ul>
-<p>The files listed in the above list are allowed to exist in sub-directories: just <strong>NOT</strong> directly under
-the top level directory (<code>topdir</code>).</p>
-<p>The <code>mkiocccentry(1)</code> tool evaluates all filenames and directory names in a case
-independent way: thus <code>FOO</code>, <code>Foo</code>, and <code>foo</code> are considered the <strong>SAME</strong> file
-even if your filesystem doesn’t do the same.</p>
-<p>Having two or more filenames that differ only by case <strong>WILL</strong> lead to problems
-because of the previous statement.</p>
-<p>When the <code>mkiocccentry(1)</code> tool ignores a file, that file is <strong>NOT</strong> included as
-part of your submission.</p>
-<p>When the <code>mkiocccentry(1)</code> tool ignores a directory, that directory,
-and everything under that directory is <strong>NOT</strong> included as part of
-your submission.</p>
-<p>The <code>mkiocccentry(1)</code> tool will ignore all symlinks.</p>
-<p>Creating a directory directly under the top level directory (<code>topdir</code>)
-that is normally considered to be a regular file, such as a directory
-named <code>Makefile</code>, <code>prog.alt.c</code>, <code>prog.c</code>, <code>remarks.md</code>, <code>try.alt.sh</code>,
-or <code>try.sh</code> is <strong>NOT</strong> a good idea and will likely cause the
-<code>mkiocccentry(1)</code> tool to abort with a <strong>fatal error</strong>.</p>
-<p>The required <code>Makefile</code> and <code>remarks.md</code> files may <strong>NOT</strong> be empty. This
-does not mean just 0 bytes but also that it <strong>MUST</strong> have <strong>content</strong>, and
-content that is relevant (e.g. a Makefile with just comments is <strong>NOT</strong>
-allowed). However, with the exception of the <code>Makefile</code>, the <code>mkiocccentry(1)</code>
-tool will <strong>ONLY</strong> check file size.</p>
-<p>If the optional file <code>try.alt.sh</code>, or <code>try.sh</code> exists and is an empty file,
-the <code>mkiocccentry(1)</code> tool will abort with a <strong>fatal error</strong>.</p>
-<p>If the <code>mkiocccentry(1)</code> tool encounters anything that isn’t a file, isn’t a
-directory, and isn’t a symlink (which the tool ignores), the <code>mkiocccentry(1)</code>
-tool to abort with a <strong>fatal error</strong>.</p>
-<p>See
-FAQ on “<a href="../faq.html#mkiocccentry_bugs">How do I report bugs in an <code>mkiocccentry</code> tool?</a>”.</p>
-<p>See <a href="rules.html#rule11-legal-rulea-abuse">Rule 11 - Legal rule abuse</a> for warnings about ignoring <code>mkiocccentry(1)</code> tool warnings.</p>
-<p>See
-FAQ on “<a href="../faq.html#fnamchk">What is the <code>fnamchk</code> tool?</a>”.</p>
-<p>See
-FAQ on “<a href="../faq.html#about_mkiocccentry">What is mkiocccentry in simple terms?</a>”.</p>
-<p>See
-FAQ on “<a href="../faq.html#mkiocccentry">What is the mkiocccentry tool, how do I obtain it and how do I use it</a>”.</p>
-<p>Jump to: <a href="#">top</a></p>
 <div id="general">
 <h1 id="general-guidelines">General Guidelines</h1>
 </div>
-<h1 id="general-overall-guidelines">General Overall Guidelines</h1>
+<div id="general-overall-guidelines">
+<h2 id="overall-guidelines">Overall Guidelines</h2>
+</div>
 <p>These <a href="guidelines.html">guideline</a> are <strong>hints</strong> and <strong>suggestions</strong>, <strong>NOT</strong> <a href="rules.html">IOCCC rules</a>.</p>
 <p>While submissions that violate <a href="guidelines.html">guideline</a> are allowed,
 submissions that remain within the <a href="guidelines.html">IOCCC guidelines</a> are preferred.</p>
@@ -898,12 +824,10 @@ an appropriate level of obfuscation.</p>
 <strong>VERY GOOD START</strong> to a great submission!</p>
 <p>Jump to: <a href="#">top</a></p>
 <div id="likes">
-
-</div>
 <div id="dislikes">
-
+<h2 id="our-likes-and-dislikes">Our Likes and Dislikes:</h2>
 </div>
-<h1 id="our-likes-and-dislikes">OUR LIKES AND DISLIKES:</h1>
+</div>
 <p>We <strong>VERY MUCH LIKE</strong> submissions that use an edited variant of the
 example Makefile, as described and linked to in the <a href="#makefile">Makefile section</a>,
 renamed as <code>Makefile</code> of course. This makes it easier for the <a href="../judges.html">IOCCC judges</a>
@@ -1126,8 +1050,7 @@ sort of code will work:</p>
 adapt to a wide collection of environments will be favored. For
 example, don’t depend on a particular type or size of display.
 Don’t assume the use of a particular browser. Instead assume a
-generic browser that forms to a widely used <a href="https://www.w3.org/standards/">W3C
-standard</a>.
+generic browser that forms to a widely used <a href="https://www.w3.org/standards/">W3C standard</a>.
 Don’t assume a particular sound sub-system or video driver is installed
 in the OS. Instead, make use of a well known and widely available open
 source program (one that actually works) to display audio/visual data.</p>
@@ -1290,10 +1213,151 @@ is a <strong>hint</strong>. :-)</p>
 <code>remarks.md</code> file: it is a required file for a reason. :-)</p>
 <p>Try to be even more creative!</p>
 <p>Jump to: <a href="#">top</a></p>
-<div id="fun">
-
+<div id="mkiocccentry">
+<div id="mkiocccentry_toolkit">
+<h2 id="guidelines-for-the-mkiocccentry-toolkit">Guidelines for the mkiocccentry toolkit</h2>
 </div>
-<h1 id="fundamental-guidelines">Fun😄damental Guidelines</h1>
+</div>
+<p>The <a href="https://submit.ioccc.org">IOCCC submit server</a>, and related services
+use the <strong>most recent version</strong> of the
+<a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry toolkit</a>:
+submissions that package using older versions of the
+<a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry toolkit</a>
+are <strong>LIKELY</strong> to be <strong>REJECTED</strong>!</p>
+<p>You <strong>REALLY SHOULD</strong> use the latest <a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry
+toolkit</a> to package your submission
+as submissions that use an older version are <strong>LIKELY</strong> to be <strong>REJECTED</strong>!</p>
+<p>The <code>mkiocccentry(1)</code> tool runs a number of checks by way of these
+<a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry toolkit</a> tools:</p>
+<ul>
+<li>iocccsize(1)</li>
+<li>txzchk(1)</li>
+<li>fnamchk(1)</li>
+<li>chksubmit(1)</li>
+<li>chkentry(1)</li>
+</ul>
+<p>Do <strong>NOT</strong> use <code>txzchk(1)</code> or <code>fnamchk(1)</code> command line options that are labeled
+“<strong>for TESTING purposes</strong>” in their respective man pages.</p>
+<p>Do <strong>NOT</strong> use <code>fnamchk(1)</code> command line options that are labeled “<strong>for TESTING purposes</strong>”
+in the <code>fnamchk(1)</code> man page.</p>
+<p>Do <strong>NOT</strong> use <code>chksubmit(1)</code> command line options that are labeled “<strong>for the use by the IOCCC judges only</strong>”
+in the <code>chksubmit(1)</code> man page.
+Similarly do <strong>NOT</strong> use <code>chkentry(1)</code> command line options marked “<strong>for the use
+by the IOCCC judges only</strong>” in the <code>chkentry(1)</code> man page.</p>
+<p>To view <a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry toolkit</a> man pages,
+while your current directory is the top of the source tree:</p>
+<pre><code>    man soup/man/man1/mkiocccentry.1
+    man soup/man/man1/iocccsize.1
+    man soup/man/man1/txzchk.1
+    man test_ioccc/man/man1/fnamchk.1
+    man soup/man/man1/chksubmit.1
+    man soup/man/man1/chkentry.1</code></pre>
+<p>The above <code>man(1)</code> commands will show the toolkit man pages without having to install them first.</p>
+<p>So that you do not have to repeatedly answer all the <code>mkiocccentry(1)</code> questions,
+use <code>mkiocccentry -a answers ...</code> to create a file containing the answers you first give,
+so later enter <code>mkiocccentry -i answers ...</code> to reuse those same answers.</p>
+<p>The <code>mkiocccentry -A answers ...</code> does the same thing except that the <strong>answers file will be overwritten</strong>.</p>
+<p>The <code>mkiocccentry -i answers ...</code> will still be required to confirm “<em>Yes/No</em>” questions.</p>
+<p>Use <code>mkiocccentry -Y -i answers ..</code> to force a yes answers with <strong>great caution</strong>
+because it might force a yes answer to something you do <strong>NOT</strong> want, such as a
+change in your code that violates a detected rule.
+The <code>mkiocccentry -i answers ..</code> will still be required to confirm “<em>Yes/No</em>” questions.
+While <code>mkiocccentry -Y -i answers ..</code> will force yes answers, use with <strong>great caution</strong>,
+because it might force a yes answer to something you do <strong>NOT</strong> want.</p>
+<p>To help with not having to repeatedly enter a UUID, put your UUID into a file and use
+<code>mkiocccentry -u uuidfile ...</code>, or use <code>mkiocccentry -U UUID ...</code> to give the <code>UUID</code>
+on the command line.</p>
+<p>If you wish to <strong>test</strong> that your submission passes the <code>mkiocccentry(1)</code> tests
+without having to type in answers each time, you can use the <code>-d</code> or <code>-s seed</code>
+option to <code>mkiocccentry</code> for the tool to pseudo-randomly create answers for you.
+For example:</p>
+<pre><code>    mkiocccentry -d workdir topdir</code></pre>
+<p>Do <strong>NOT</strong> submit a tarball formed by <code>mkiocccentry -d ..</code> <strong>OR</strong> by
+<code>mkiocccentry -s seed ..</code> <strong>OR</strong> by using the <code>test</code> UUID!</p>
+<p>The <code>mkiocccentry(1)</code> tool creates an <code>xz(1)</code> compressed <strong>v7 format</strong> tarball using a <code>tar(1)</code>
+command of the form:</p>
+<pre><code>    cd workdir/UUID-slot_num &amp;&amp; tar --format=v7 -cJf submit.UUID-slot_num.timestamp.txz UUID-slot_num</code></pre>
+<p>In many places the <code>mkiocccentry(1)</code> tool will prompt you to verify what you input, allowing you to
+correct details as you go along.</p>
+<p>Pressing the “<em>enter key</em>” at the <code>mkiocccentry(1)</code> tool prompts will allow you
+to proceed with a default, however make sure the default is the <strong>CORRECT</strong>
+answer.</p>
+<p>The <code>mkiocccentry(1)</code> tool will use code from <code>iocccsize(1)</code> which detects a number of
+issues (such as <a href="rules.html#rule2-size">Rule 2 - Size restrictions</a>) that you may ignore,
+however ignoring such issues <strong>comes with a SIGNIFICANT level of risk!</strong></p>
+<p>Once the tarball is packaged it will
+run <code>txzchk(1)</code>, which will also run <code>fnamchk(1)</code>, as part of its algorithm.</p>
+<p>The use of <code>mkiocccentry -W ....</code> is <strong>highly discouraged</strong> as this may ignore
+warnings about a problem that may cause your submission to be <strong>REJECTED!</strong>”</p>
+<p>The same can be said of the <code>-Y</code> option, and to a lesser extent <code>-y</code>: the <code>-y</code>
+is mostly for the test script and the <code>-Y</code> is like <code>-y</code> but even more
+aggressive.</p>
+<p>If <code>mkiocccentry</code> encounters an <strong>error</strong>, the program will exit and the xz
+compressed tarball <strong>will NOT be generated</strong>: this is a <strong>feature, not a bug</strong>!</p>
+<p>If you encounter a <strong>bug</strong> with the
+<a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry toolkit</a>
+<strong>PLEASE run the <code>bug_report.sh</code> script to help us out here!</strong></p>
+<p>While you don’t have to install the
+<a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry toolkit</a>,
+if you don’t, in order to run a tool outside the repo directory
+you will have to specify <code>mkiocccentry(1)</code> command line options to locate required tools
+such as <code>chkentry(1)</code> (<code>mkiocccentry -C chkentry ..</code>), <code>txzchk(1)</code> (<code>mkiocccentry -T txzchk ..</code>),
+and <code>fnamchk(1)</code> (<code>mkiocccentry -F fnamchk ..</code>).</p>
+<p>The <code>mkiocccentry(1)</code> tool will ignore any filename or directory that begins with a period (<code>.</code>).</p>
+<p>The <code>mkiocccentry(1)</code> tool will ignore all files that begin with <code>COPYING</code>, <code>COPYRIGHT</code>, and <code>LICENSE</code>, regardless
+of filename case.</p>
+<p>The <code>mkiocccentry(1)</code> tool will reject any of the following files if they are found directly under
+the top level directory (<code>topdir</code>):</p>
+<ul>
+<li>README.md</li>
+<li>index.html</li>
+<li>prog</li>
+<li>prog.alt</li>
+<li>prog.alt.o</li>
+<li>prog.orig.c</li>
+<li>filenames matching the <code>[0-9][0-9][0-9][0-9]_*.tar.bz2</code> file glob</li>
+</ul>
+<p>The files listed in the above list are allowed to exist in sub-directories: just <strong>NOT</strong> directly under
+the top level directory (<code>topdir</code>).</p>
+<p>The <code>mkiocccentry(1)</code> tool evaluates all filenames and directory names in a case
+independent way: thus <code>FOO</code>, <code>Foo</code>, and <code>foo</code> are considered the <strong>SAME</strong> file
+even if your filesystem doesn’t do the same.</p>
+<p>Having two or more filenames that differ only by case <strong>WILL</strong> lead to problems
+because of the previous statement.</p>
+<p>When the <code>mkiocccentry(1)</code> tool ignores a file, that file is <strong>NOT</strong> included as
+part of your submission.</p>
+<p>When the <code>mkiocccentry(1)</code> tool ignores a directory, that directory,
+and everything under that directory is <strong>NOT</strong> included as part of
+your submission.</p>
+<p>The <code>mkiocccentry(1)</code> tool will ignore all symlinks.</p>
+<p>Creating a directory directly under the top level directory (<code>topdir</code>)
+that is normally considered to be a regular file, such as a directory
+named <code>Makefile</code>, <code>prog.alt.c</code>, <code>prog.c</code>, <code>remarks.md</code>, <code>try.alt.sh</code>,
+or <code>try.sh</code> is <strong>NOT</strong> a good idea and will likely cause the
+<code>mkiocccentry(1)</code> tool to abort with a <strong>fatal error</strong>.</p>
+<p>The required <code>Makefile</code> and <code>remarks.md</code> files may <strong>NOT</strong> be empty. This
+does not mean just 0 bytes but also that it <strong>MUST</strong> have <strong>content</strong>, and
+content that is relevant (e.g. a Makefile with just comments is <strong>NOT</strong>
+allowed). However, with the exception of the <code>Makefile</code>, the <code>mkiocccentry(1)</code>
+tool will <strong>ONLY</strong> check file size.</p>
+<p>If the optional file <code>try.alt.sh</code>, or <code>try.sh</code> exists and is an empty file,
+the <code>mkiocccentry(1)</code> tool will abort with a <strong>fatal error</strong>.</p>
+<p>If the <code>mkiocccentry(1)</code> tool encounters anything that isn’t a file, isn’t a
+directory, and isn’t a symlink (which the tool ignores), the <code>mkiocccentry(1)</code>
+tool to abort with a <strong>fatal error</strong>.</p>
+<p>See
+FAQ on “<a href="../faq.html#mkiocccentry_bugs">How do I report bugs in an <code>mkiocccentry</code> tool?</a>”.</p>
+<p>See <a href="rules.html#rule11-legal-rulea-abuse">Rule 11 - Legal rule abuse</a> for warnings about ignoring <code>mkiocccentry(1)</code> tool warnings.</p>
+<p>See
+FAQ on “<a href="../faq.html#fnamchk">What is the <code>fnamchk</code> tool?</a>”.</p>
+<p>See
+FAQ on “<a href="../faq.html#about_mkiocccentry">What is mkiocccentry in simple terms?</a>”.</p>
+<p>See
+FAQ on “<a href="../faq.html#mkiocccentry">What is the mkiocccentry tool, how do I obtain it and how do I use it</a>”.</p>
+<p>Jump to: <a href="#">top</a></p>
+<div id="fun">
+<h2 id="fundamental-guidelines">Fun😄damental Guidelines</h2>
+</div>
 <p>The reason for the times of day are so that key IOCCC events are <strong>calculated</strong>
 to be a <strong>fun</strong>ctional UTC time. :-)</p>
 <p>At least 2 of several reasons for selecting the prime, 2503, for
@@ -1404,12 +1468,10 @@ it? :-)</p>
 <p>With respect to <a href="#nested-functions">nested functions</a>, try <code>chkentry -b</code>.</p>
 <p>Jump to: <a href="#">top</a></p>
 <div id="more-information">
-
-</div>
 <div id="information">
-
+<h1 id="for-more-information">For more information</h1>
 </div>
-<h1 id="for-more-information">FOR MORE INFORMATION:</h1>
+</div>
 <p>For questions or comments about the contest, see <a href="../contact.html">Contacting the IOCCC</a>.</p>
 <p><strong>Be SURE</strong> to review the <a href="index.html">IOCCC Rules and Guidelines</a> as they
 may (and <strong>often do</strong>) change from year to year.</p>
