@@ -1276,7 +1276,7 @@ tool to abort with a **fatal error**.
 See
 FAQ on "[How do I report bugs in an `mkiocccentry` tool?](../faq.html#mkiocccentry_bugs)".
 
-See [Rule 11 - Legal rule abuse](rules.html#rule11-legal-rulea-abuse) for warnings about ignoring `mkiocccentry(1)` tool warnings.
+See [Rule 11 - Legal rule abuse](rules.html#rule11-legal-rule-abuse) for warnings about ignoring `mkiocccentry(1)` tool warnings.
 
 See
 FAQ on "[What is the `fnamchk` tool?](../faq.html#fnamchk)".
