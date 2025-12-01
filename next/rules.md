@@ -39,7 +39,7 @@ writing by [contacting the judges](../contact.html).
 
 ## Rules Version
 
-These IOCCC Rules are version **29.09 2025-11-29**.
+These IOCCC Rules are version **29.10 2025-11-30**.
 
 Reminder: be SURE to read the [IOCCC guidelines](guidelines.html).
 
@@ -48,24 +48,25 @@ Reminder: be SURE to read the [IOCCC guidelines](guidelines.html).
 ## Rule 0 - Dates
 </div>
 
-This IOCCC runs from `2025-12-03 20:25:12.045045 UTC` to `2026-03-13
-17:19:23.293137 UTC`.
+This IOCCC runs from `2025-12-03 20:25:12.045045 UTC` to `2026-03-13 17:19:23.293137 UTC`.
 
-This contest will enter the **pending state** on `2025-12-03 20:25:12.045045 UTC`,
-allowing people to register for the IOCCC.
+This contest will enter the [pending state](../faq.html#pending) on `2025-12-03 20:25:12.045045 UTC`,
+allowing people to [register for the IOCCC](register.html).
 
-This contest will enter the **open state** on `2025-12-15 18:21:24.273033 UTC`,
-allowing people to upload submissions to the [IOCCC submit server](https://submit.ioccc.org).
+This contest will enter the [open state](../faq.html#open) on `2025-12-15 18:21:24.273033 UTC`,
+allowing people to [upload submissions](submit.html).
 
-This contest will enter the **judging state** on `2026-03-13 17:19:23.293137 UTC`,
+This contest will enter the [judging state](../faq.html#judging) on `2026-03-13 17:19:23.293137 UTC`,
 when people will no longer be allowed to upload submissions.
 
-Until the contest enters the **open** state, any or all
-of the above **dates and times may change _AT ANY TIME_**!
+The above **dates and times may change _AT ANY TIME_** until the [contest status](../status.html) is **open**.
 
 The above timestamps are in "_YYYY-MM-DD HH:MM:SS.micros UTC_" format.
 
-See the [current status of the IOCCC](../status.html).
+See [entering the IOCCC](../quick-start.html#enter).
+
+See
+FAQ on "[How can I comment or make a suggestion on IOCCC rules, guidelines and tools?](../faq.html#feedback)".
 
 
 <div id="rule1">

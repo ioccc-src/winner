@@ -1737,7 +1737,7 @@ Jump to: [top](#)
 </div>
 
 The [IOCCC judges](judges.html) to welcome feedback on the [IOCCC
-rules](next/rules.html), [IOCCC guidelines](next/guidelines.html)
+rules](next/rules.html), [IOCCC guidelines](next/guidelines.html),
 and on the [IOCCC mkiocccentry tools](https://github.com/ioccc-src/mkiocccentry).
 
 To comment on the [IOCCC rules](next/rules.html) or the

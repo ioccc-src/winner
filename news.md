@@ -55,6 +55,31 @@
 </blockquote>
 
 
+## 2025-10-30
+
+The **IOCCC29** will run from `2025-12-03 20:25:12.045045 UTC` to `2026-03-13 17:19:23.293137 UTC`.
+
+This contest will enter the [pending state](faq.html#pending) on `2025-12-03 20:25:12.045045 UTC`,
+allowing people to [register for the IOCCC](next/register.html).
+
+Please [provide feedback](faq.html#feedback) on the [IOCCC rules](next/rules.html),
+[IOCCC guidelines](next/guidelines.html), and
+on the [IOCCC mkiocccentry tools](https://github.com/ioccc-src/mkiocccentry),
+especially while the [contest status](status.html) is **pending**.
+
+This contest will enter the [open state](faq.html#open) on `2025-12-15 18:21:24.273033 UTC`,
+allowing people to [upload submissions](next/submit.html).
+
+See [entering the IOCCC](quick-start.html#enter).
+
+This contest will enter the [judging state](faq.html#judging) on `2026-03-13 17:19:23.293137 UTC`,
+when people will no longer be allowed to upload submissions.
+
+The above **dates and times may change _AT ANY TIME_** until the [contest status](status.html) is **open**.
+
+The above timestamps are in "_YYYY-MM-DD HH:MM:SS.micros UTC_" format.
+
+
 ## 2025-08-06
 
 The award presentations from the longer 4.5 hour [Our Favorite
