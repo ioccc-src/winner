@@ -297,6 +297,13 @@ This is one of the reasons why the [IOCCC rules](rules.html) and
 Jump to: [top](#)
 
 
+<div id="guideline12">
+<div id="guideline12-utf8">
+# Guidelines for [Rule 12 - UTF-8](rules.html#rule12-utf8)
+[Rule 12 - UTF-8](rules.html#rule12-utf8)
+no longer discourages the use of multibyte UTF-8 characters in `C` code.
+
+
 <div id="guideline15">
 <div id="guideline-15---building">
 <div id="guideline15-gnu-makefile">
@@ -931,10 +938,6 @@ and Linux curses.
 If you do `#include <curses.h>` make **CERTAIN** you link in curses (i.e.
 `-lcurses`) and not ncurses (i.e. `-lncurses`).
 </p>
-
-[Rule 12 - UTF-8](rules.html#rule12-utf8)
-no longer discourages the use of UTF-8
-characters in C code.
 
 It is a very good idea to, in your `remarks.md` file, tell us why you
 think your submission is obfuscated.  This is particularly true if
