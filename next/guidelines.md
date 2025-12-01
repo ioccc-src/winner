@@ -7,13 +7,13 @@ Copyright &copy; 2025 Leonid A. Broukhis and Landon Curt Noll.
 All Rights Reserved.  Permission for personal, education or non-profit use is
 granted provided this copyright and notice are included in its entirety
 and remains unaltered.  All other uses must receive prior permission in
-writing by [contacting the judges](../contact.html).
+writing by [contacting the Judges](../contact.html).
 
 
 # Guidelines Version
 
 <p class="leftbar">
-These IOCCC guidelines are version **29.05 2025-12-01**.
+These Guidelines are version **29.05 2025-12-01**.
 </p>
 
 <p class="leftbar">
@@ -21,10 +21,10 @@ The <span style='font-size:28px;'><b>&verbar;</b></span> symbol indicates an **c
 </p>
 
 <p class="leftbar">
-Because the **IOCCC29** guidelines was a substantial rewrite, only **important changes** from **IOCCC28** have been marked.
+Because the **IOCCC29**  was a substantial rewrite, only **important changes** from **IOCCC28** have been marked.
 </p>
 
-Be sure to read the [IOCCC rules](rules.html).
+Be sure to read the [Rules](rules.html).
 
 
 <div id="guideline1">
@@ -42,7 +42,7 @@ file happens to also be a code for another language.
 We would prefer if you do not use `#include` statements,
 especially `#include` statements just to include lots of data,
 to get around the
-[Rule 2 - Size restrictions](rules.html#rule2-size-restrictions)
+[Rule 2 - Size](rules.html#rule2-size-restrictions) restrictions
 in an excessive way.
 </p>
 
@@ -50,7 +50,7 @@ in an excessive way.
 We would prefer if you do not require lots and lots of implicit defines on the C compiler command line
 (i.e., lots of `-Dfoo`, and `-Dcurds=whey` style command line args to the C compiler)
 to get around the
-[Rule 2 - Size restrictions](rules.html#rule2-size-restrictions)
+[Rule 2 - Size](rules.html#rule2-size-restrictions) restrictions
 in an excessive way.
 </p>
 
@@ -61,19 +61,19 @@ Some use of `#include` statements and/or implicit defines on the C compiler comm
 <p class="leftbar">
 As a guide, consider the level of `#include` statements and/or implicit defines on the C compiler command line
 that are found in
-[winning IOCCC entries](https://www.ioccc.org/years.html), and try to **NOT** set a new record.
+[winning Entries](https://www.ioccc.org/years.html), and try to **NOT** set a new record.
 </p>
 
 <p class="leftbar">
 If you believe you need to significantly abuse `#include` statements and/or implicit defines on the C compiler command line,
-then try to make a case for why in your submission's `remarks.md` file: maybe the judges won't reject your submission.
+then try to make a case for why in your submission's `remarks.md` file: maybe the Judges won't reject your submission.
 </p>
 
 
 <div id="guideline2">
 <div id="guideline-2---size">
 <div id="guideline2-size">
-# Guidelines for [Rule 2 - Size restrictions](rules.html#rule2-size-restrictions)
+# Guidelines for [Rule 2 - Size](rules.html#rule2-size-restrictions) restrictions
 </div>
 </div>
 </div>
@@ -89,14 +89,14 @@ Your submission must satisfy **BOTH** the
 [Rule 2b - Net Size](rules.html#rule2b-net-size) rules.
 
 To check your code against
-[Rule 2 - Size restrictions](rules.html#rule2-size), use the `iocccentry(1)` tool.
+[Rule 2 - Size](rules.html#rule2-size) restrictions, use the `iocccentry(1)` tool.
 For example:
 
 ``` <!---sh-->
     iocccsize prog.c
 ```
 
-The IOCCC size tool algorithm can be summarized as follows:
+The `iocccsize(1)` algorithm can be summarized as follows:
 
 > The size tool counts most C reserved words (keyword, secondary, and selected
 preprocessor keywords) as 1.  The size tool counts all other bytes as 1
@@ -110,18 +110,17 @@ before the end of file.
 counted by the IOCCC size tool.
 
 In cases where the above summary and the algorithm implemented by
-the IOCCC size tool `iocccsize(1)` conflict, the algorithm implemented
-by the minimum required version of `iocccsize(1)` is preferred by the [IOCCC
-judges](../judges.html).
+`iocccsize(1)` conflict, the algorithm implemented
+by the minimum required version of `iocccsize(1)` is preferred by the [Judges](../judges.html).
 
 Make sure `iocccsize` does not flag any issues with your `prog.c`.
 
-**NOTE**: by default `iocccsize` will only report the rule 2b size, unless the
+**NOTE**: by default `iocccsize` will only report the [Rule 2 - Size](rules.html#rule2-size), unless the
 code surpasses the limit.
 
 There a much less need to `#define` C reserved words in an effort
 to get around the size limits of
-[Rule 2 - Size restrictions](rules.html#rule2-size)
+[Rule 2 - Size](rules.html#rule2-size) restrictions
 because of the `iocccsize(1)` algorithm.
 
 Yes Virginia, **the previous guideline sentence is an important hint**!
@@ -143,14 +142,14 @@ using either a group email address, or an email address for one of the authors.
 </p>
 
 <p class="leftbar">
-Processing your registration is an activity overseen by an IOCCC judge.
-Please be **patient** while an IOCCC judge processes your registration.
+Processing your registration is an activity overseen by a Judge.
+Please be **patient** while a Judge processes your registration.
 </p>
 
 It can take a few days to process your registration and for the server to
 email your details, therefore make sure to allow yourself ample time to
 register and submit your entries; **DO NOT WAIT UNTIL THE FINAL DAYS**
-to register!  The judges are **NOT** responsible for delayed or lost
+to register!  The Judges are **NOT** responsible for delayed or lost
 email or for those who wait until the last minute to try to register!
 
 <p class="leftbar">
@@ -224,40 +223,40 @@ Jump to: [top](#)
 </div>
 </div>
 
-We do realize that there are holes in the [IOCCC rules](rules.html), and invite
+We do realize that there are holes in the [Rules](rules.html), and invite
 submitters to attempt to apply creative rule interpretation.  A rule abuse though, even
 if not rewarded, may result in a subsequent rule change for future contests.
 
 We sometime award '**Best abuse of the rules**' or '**Worst abuse of the rules**',
 or some variation, to a submission that creatively attempts to exploit a holes in the
-[IOCCC rules](rules.html).
+[Rules](rules.html).
 
-When we do need to plug a hole in the [IOCCC rules](rules.html)
-or [IOCCC guidelines](guidelines.html), we will attempt to use a very small plug,
+When we do need to plug a hole in the [Rules](rules.html)
+or [Guidelines](guidelines.html), we will attempt to use a very small plug,
 if not smaller.
 
 Or, maybe not. :-)
 
 Legal rule abuse may involve, but is not limited to, doing things that are
-technically allowed by the [IOCCC rules](rules.html) and yet do not fit the spirit of what
+technically allowed by the [Rules](rules.html) and yet do not fit the spirit of what
 we intended to be submitted.
 
-Legal abuse of the [IOCCC rules](rules.html) is **NOT** an invitation to violate
-the [IOCCC rules](rules.html) (especially [Rule 17 -
+Legal abuse of the [Rules](rules.html) is **NOT** an invitation to violate
+the [Rules](rules.html) (especially [Rule 17 -
 Use mkiocccentry](./rules.html#rule17-mkiocccentry)). A submission that violates the
-[rules](rules.html) in the opinion of the [IOCCC judges](../judges.html),
+[rules](rules.html) in the opinion of the [Judges](../judges.html),
 **WILL** be disqualified.  **_RULE ABUSE CARRIES A CERTAIN LEVEL OF RISK!_**
 
-If you intend to abuse the [IOCCC rules](rules.html),
+If you intend to abuse the [Rules](rules.html),
 indicate so in your `remarks.md` file.  You **MUST** try to justify, plead, beg,
 why you consider your rule abuse to be allowed under the
-[IOCCC rules](rules.html).  Humor or creativity help plead a case.
+[Rules](rules.html).  Humor or creativity help plead a case.
 
 As there is no guarantee that you will succeed, you might consider submitting an
-alternate version that conforms to the [IOCCC rules](rules.html), if it might
-otherwise be interesting; one that does not abuse the [IOCCC rules](rules.html)
+alternate version that conforms to the [Rules](rules.html), if it might
+otherwise be interesting; one that does not abuse the [Rules](rules.html)
 and one that does, making sure to note in the one that does not abuse the rules
-that this is another version, so that the judges do not assume you uploaded it
+that this is another version, so that the Judges do not assume you uploaded it
 by mistake.
 
 If you do bypass the `mkiocccentry(1)` warnings about
@@ -265,33 +264,31 @@ If you do bypass the `mkiocccentry(1)` warnings about
 and/or about
 [Rule 2b - Net Size](rules.html#rule2b-net-size)
 or any other
-rule and submit a submission anyway, you **MUST** try to justify why the IOCCC
-[IOCCC judges](../judges.html) should not reject your submission due to a rule
+rule and submit a submission anyway, you **MUST** try to justify why the
+[Judges](../judges.html) should not reject your submission due to a rule
 violation, and you would be wise to do this towards the top of your `remarks.md`
 file.
 
-We are often asked why the contest [IOCCC rules](rules.html) and [IOCCC
-guidelines](guidelines.html) seem strange or contain mistakes, flaws, or
+We are often asked why the contest [Rules](rules.html) and [Guidelines](guidelines.html) seem strange or contain mistakes, flaws, or
 grammatical errors.  One reason is that we sometimes make genuine mistakes, but
 in many cases such problems, flaws or areas of confusion are deliberate.
 
-Changes to [IOCCC rules](rules.html) and [IOCCC guidelines](guidelines.html) in
+Changes to [Rules](rules.html) and [Guidelines](guidelines.html) in
 response to rule abuses, are done in a minimal fashion.  Often we will
 deliberately leave behind holes (or introduce new ones) so that future rule
 abuse can continue.  A clever author should be able to read and "drive a
-truck through the holes" in the [IOCCC rules](rules.html) and [IOCCC
-guidelines](guidelines.html).
+truck through the holes" in the [Rules](rules.html) and [Guidelines](guidelines.html).
 
 At the risk of stating the obvious, this contest is a parody of the software
-development process.  The [IOCCC rules](rules.html) and [IOCCC guidelines](guidelines.html)
+development process.  The [Rules](rules.html) and [Guidelines](guidelines.html)
 are only part of the overall contest.  Even so, one might think the
-contest [IOCCC rules](rules.html) and [IOCCC guidelines](guidelines.html) process as a parody
+contest [Rules](rules.html) and [Guidelines](guidelines.html) process as a parody
 of the sometimes tragic mismatch between what a customer (or marketing) wants
 and what engineering delivers. Real programmers must face obfuscated and
 sometimes conflicting, ballooning specifications, and requirements from marketing, sales,
 product management and even from customers themselves on an all too regular basis.
-This is one of the reasons why the [IOCCC rules](rules.html) and
-[IOCCC guidelines](guidelines.html) are written in obfuscated form.
+This is one of the reasons why the [Rules](rules.html) and
+[Guidelines](guidelines.html) are written in obfuscated form.
 
 
 Jump to: [top](#)
@@ -453,10 +450,10 @@ Jump to: [top](#)
 </div>
 
 
-These [guideline](guidelines.html) are **hints** and **suggestions**, **NOT** [IOCCC rules](rules.html).
+These [Guidelines](guidelines.html) are **hints** and **suggestions**, **NOT** [Rules](rules.html).
 
-While submissions that violate [guideline](guidelines.html) are allowed,
-submissions that remain within the [IOCCC guidelines](guidelines.html) are preferred.
+While submissions that violate the [Guidelines](guidelines.html) are allowed,
+submissions that remain within the [Guidelines](guidelines.html) are preferred.
 
 You are encouraged to review the following [FAQs](../faq.html):
 
@@ -478,7 +475,7 @@ The **official locale** of the **IOCCC** is **C**.
 
 You are **encouraged** to examine the [winners of previous contests](../years.html).
 
-Because [rules](rules.html) change from year to year, some [past winning entries](../years.html)
+Because the [Rules](rules.html) change from year to year, some [past winning entries](../years.html)
 may be rejected this year.
 
 What was _was_ unique and novel one year _might be 'old' the next year_.
@@ -556,7 +553,7 @@ Jump to: [top](#)
 
 We **VERY MUCH LIKE** submissions that use an edited variant of the
 example Makefile, as described and linked to in the [Makefile section](#makefile),
-renamed as `Makefile` of course.  This makes it easier for the [IOCCC judges](../judges.html)
+renamed as `Makefile` of course.  This makes it easier for the [Judges](../judges.html)
 to test your submission. And if your submissions wins, it makes it easier to integrate it into
 the [Official IOCCC winner website](https://www.ioccc.org/index.html).
 
@@ -658,7 +655,7 @@ of nested functions such as:
 ```
 </div>
 
-On 2012 July 20, the [IOCCC judges](../judges.html) rescinded the encouragement of
+On 2012 July 20, the [Judges](../judges.html) rescinded the encouragement of
 nested functions.  Such constructions, while interesting and sometimes
 amusing, will have to wait until they are required by a C standard that are
 actually implemented in **BOTH** `gcc` **AND** `clang`.
@@ -819,7 +816,7 @@ program, we tend to favor the second version.  Of course, a third
 version of the same program that is formatted in an interesting
 and/or obfuscated way, would definitely win over the first two!
 Remember, you can submit more than one submission.  See the
-[IOCCC rules](rules.html)
+[Rules](rules.html)
 for details (in particular,
 [Rule 8 - Submitting requirements](rules.html#rule8-submitting-requirements)).
 
@@ -896,7 +893,7 @@ Specification](https://en.wikipedia.org/wiki/Single_UNIX_Specification)
 You are **well advised** to submit code that conforms to the [Single UNIX
 Specification Version 4](https://unix.org/version4/overview.html).
 
-To quote the [IOCCC judges](../judges.html):
+To quote the [Judges](../judges.html):
 
 We **LIKE** programs that:
 
@@ -914,7 +911,7 @@ areas really does help.
 
 You are better off explaining what your submission does in your
 `remarks.md` file section rather than leaving it obscure for the
-[IOCCC judges](../judges.html) as we might miss something and/or be too tired to
+[Judges](../judges.html) as we might miss something and/or be too tired to
 notice.
 
 We freely admit that interesting, creative or humorous comments in
@@ -976,7 +973,7 @@ processor word size without specifying `-arch`.  For example:
 
 Note, however, that some platforms will not necessarily support some
 architectures. For instance, more recent versions of `macOS` do **NOT** support
-32-bit, and more than zero judges use it!
+32-bit, and more than zero Judges use it!
 
 If there are limitations in your submission, you are highly encouraged
 to note such limitations in your `remarks.md` file.  For example if your
@@ -985,13 +982,13 @@ submission factors values up to a certain size, you might want to state:
 >   This submission factors values up `2305567963945518424753102147331756070`.
 Attempting to factor larger values will produce unpredictable results.
 
-The [IOCCC judges](../judges.html) might try to factor the value -5, so you want to might state:
+The [Judges](../judges.html) might try to factor the value -5, so you want to might state:
 
 >   This submission factors positive values up
 `2305567963945518424753102147331756070`. Attempting to factor large values will
 produce unpredictable results.
 
-However the [IOCCC judges](../judges.html) might try to also factor 0, so you want to might state:
+However the [Judges](../judges.html) might try to also factor 0, so you want to might state:
 
 >   This submission factors values between 1 and
 `2305567963945518424753102147331756070`.  Attempting to factor values outside
@@ -1009,7 +1006,7 @@ and doing something interesting.  So you might want to code accordingly and stat
 >   This submission factors integers between 1 and `2305567963945518424753102147331756070`.
 >   Attempting to factor anything else will cause the program to insult your pet fish Eric.
 
-The [IOCCC judges](../judges.html) might not have a pet fish named Eric, so you might want to state:
+The [Judges](../judges.html) might not have a pet fish named Eric, so you might want to state:
 
 >   This submission factors integers between 1 and
 `2305567963945518424753102147331756070`.  Attempting to factor anything else
@@ -1036,9 +1033,9 @@ If you do use ASCII tab characters in your non-markdown files, be
 aware that some people may use a tab stop that is different than the common 8
 character tab stop.
 
-**PLEASE** observe our [IOCCC markdown guidelines](../markdown.html)
+**PLEASE** observe our [Markdown Guidelines](../markdown.html)
 when forming your submission's `remarks.md` file.  And if your submission
-contains additional markdown files, please follow those same guidelines for
+contains additional markdown files, please follow those same Guidelines for
 those files. See also
 [Rule 4 - Required files](rules.html#rule4-required-files),
 and the
@@ -1089,10 +1086,10 @@ Do **NOT** use `txzchk(1)` or `fnamchk(1)` command line options that are labeled
 Do **NOT** use `fnamchk(1)` command line options that are labeled "**for TESTING purposes**"
 in the `fnamchk(1)` man page.
 
-Do **NOT** use `chksubmit(1)` command line options that are labeled "**for the use by the IOCCC judges only**"
+Do **NOT** use `chksubmit(1)` command line options that are labeled "**for the use by the Judges only**"
 in the `chksubmit(1)` man page.
 Similarly do **NOT** use `chkentry(1)` command line options marked "**for the use
-by the IOCCC judges only**" in the `chkentry(1)` man page.
+by the Judges only**" in the `chkentry(1)` man page.
 
 To view [mkiocccentry toolkit](https://github.com/ioccc-src/mkiocccentry) man pages,
 while your current directory is the top of the source tree:
@@ -1159,7 +1156,7 @@ to proceed with a default, however make sure the default is the **CORRECT** answ
 </p>
 
 The `mkiocccentry(1)` tool will use code from `iocccsize(1)` which detects a number of
-issues (such as [Rule 2 - Size restrictions](rules.html#rule2-size)) that you may ignore,
+issues (such as [Rule 2 - Size](rules.html#rule2-size)) restrictions that you may ignore,
 however ignoring such issues **comes with a SIGNIFICANT level of risk!**
 
 Once the tarball is packaged it will
@@ -1308,7 +1305,7 @@ of the number of the kernel disk pack of one of the judge's [BESM-6](https://en.
 
 <p class="leftbar">
 There may or may not be fewer than 2^7+1 reasons why these
-[IOCCC guidelines](guidelines.html) seem obfuscated.
+[Guidelines](guidelines.html) seem obfuscated.
 </p>
 
 <p class="leftbar">
@@ -1345,22 +1342,22 @@ Other windows, on the other hand, might be OK: especially where "**X
 marks the spot**".  Yet on the third hand, windows are best when they are
 "unseen" (i.e., not dirty).  :-)
 
-The [IOCCC judges](../judges.html), as a group, have a history giving wide degree of latitude
+The [Judges](../judges.html), as a group, have a history giving wide degree of latitude
 to reasonable submissions.  And recently they have had as much longitudinal
 variation as it is possible to have on [Earth](https://science.nasa.gov/earth/).  :-)
 Other windows, on the other hand, might be OK: especially where "**X
 marks the spot**".  Yet on the third hand, windows are best when they are
 "unseen" (i.e., not dirty).  :-)
 
-The [IOCCC judges](../judges.html), as a group, have a history giving wide degree of latitude
+The [Judges](../judges.html), as a group, have a history giving wide degree of latitude
 to reasonable submissions.  And recently they have had as much longitudinal
 variation as it is possible to have on [Earth](https://science.nasa.gov/earth/).  :-)
 
 > You are in a maze of twisty _guidelines_, all different.
 
-There are at least zero [IOCCC judges](../judges.html) who think that
+There are at least zero [Judges](../judges.html) who think that
 [Fideism](https://en.wikipedia.org/wiki/Fideism) has little
-or nothing to do with the IOCCC judging process.
+or nothing to do with the Judging process.
 
 > All generalizations are false, including this one. -- **Mark Twain**
 
@@ -1452,8 +1449,8 @@ For questions or comments about the contest, see [Contacting the IOCCC](../conta
 **Be SURE** to review the [IOCCC Rules and Guidelines](index.html) as they
 may (and **often do**) change from year to year.
 
-**PLEASE** be sure you have the current [IOCCC rules](rules.html) and
-[IOCCC guidelines](guidelines.html) prior to submitting to the contest.
+**PLEASE** be sure you have the current [Rules](rules.html) and
+[Guidelines](guidelines.html) prior to submitting to the contest.
 
 See the [Official IOCCC website news](../news.html) for additional information.
 
