@@ -13,7 +13,7 @@ writing by [contacting the judges](../contact.html).
 # Guidelines Version
 
 <p class="leftbar">
-These IOCCC guidelines are version **29.04 2025-12-01**.
+These IOCCC guidelines are version **29.05 2025-12-01**.
 </p>
 
 <p class="leftbar">
@@ -159,7 +159,7 @@ If after a few days you believe your registration hasn't been process, then
 </p>
 
 <p class="leftbar">
-After your UUID and initial password are emailed to you, you have
+After your UUID and temporary password are emailed to you, you have
 up to fortnight (**14 days**) to login and change your temporary password.
 If you fail to change your temporary password by that deadline, then you'll need to
 [contact the Judges](../contact.html) by email to request a reset.
@@ -312,7 +312,7 @@ an **IDE** will be rejected.
 <p class="leftbar">
 We will use the GNU `make(1)` tool, your `Makefile`, as well as tools found in the
 [Single UNIX Specification](https://en.wikipedia.org/wiki/Single_UNIX_Specification)
-environments, and commonly found on systems that reasonably conform to the
+(UNIX-like) environments, and commonly found on systems that reasonably conform to the
 [Single UNIX Specification](https://en.wikipedia.org/wiki/Single_UNIX_Specification)
 in the building and compiling of your submission.
 </p>
@@ -711,7 +711,7 @@ sockets/streams specific code is likely not to be)
 you warn us in your `remarks.md` file)
 * won't compile or run in a [Single UNIX
 Specification](https://en.wikipedia.org/wiki/Single_UNIX_Specification)
-environment
+(UNIX-like) environment
 * depend on a utility or application not normally found
 in systems that conform to the [Single UNIX
 Specification](https://en.wikipedia.org/wiki/Single_UNIX_Specification)
@@ -732,7 +732,7 @@ your submission.
 
 The program must compile and link cleanly in a [Single UNIX
 Specification](https://en.wikipedia.org/wiki/Single_UNIX_Specification)
-environment. Therefore do not assume the system has a
+(UNIX-like) environment. Therefore do not assume the system has a
 [windows.h](https://en.wikipedia.org/wiki/Windows.h) include file:
 
 
@@ -756,7 +756,7 @@ Your source code, post-pre-processing, should not exceed the size of
 You should try to restrict commands used in the build file to commands found in
 [Single UNIX
 Specification](https://en.wikipedia.org/wiki/Single_UNIX_Specification)
-environments and systems that conform to the [Single UNIX
+(UNIX-like) environments and systems that conform to the [Single UNIX
 Specification](https://en.wikipedia.org/wiki/Single_UNIX_Specification).
 </p>
 
@@ -883,7 +883,8 @@ music.
 While we recognize that UNIX is not a universal operating system, the contest
 does have a bias towards such systems.  In an effort to expand the scope of the
 contest, we phrase our bias to favor the [Single UNIX
-Specification](https://en.wikipedia.org/wiki/Single_UNIX_Specification).
+Specification](https://en.wikipedia.org/wiki/Single_UNIX_Specification)
+(UNIX-like).
 
 You are **well advised** to submit code that conforms to the [Single UNIX
 Specification Version 4](https://unix.org/version4/overview.html).
@@ -1415,7 +1416,7 @@ is not an original work, unless you one of the
 in which case it is original!  :-)
 Even so, most of the programs in the toolkit exceed the
 [Rule 2 - Size](rules.html#rule2-size)
-so they wouldn't quality anyway.
+so they wouldn't qualify for the contest anyway.
 </p>
 
 <p class="leftbar">
