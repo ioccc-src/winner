@@ -13,7 +13,7 @@ writing by [contacting the judges](../contact.html).
 # Guidelines Version
 
 <p class="leftbar">
-These IOCCC guidelines are version **29.03 2025-11-30**.
+These IOCCC guidelines are version **29.04 2025-12-01**.
 </p>
 
 <p class="leftbar">
@@ -136,12 +136,16 @@ Jump to: [top](#)
 </div>
 </div>
 
+<p class="leftbar">
 If a group of people work on a submission, then they should
 [register for the IOCCC](../quick-start.html#enter)
 using either a group email address, or an email address for one of the authors.
+</p>
 
+<p class="leftbar">
 Processing your registration is an activity overseen by an IOCCC judge.
 Please be **patient** while an IOCCC judge processes your registration.
+</p>
 
 It can take a few days to process your registration and for the server to
 email your details, therefore make sure to allow yourself ample time to
@@ -149,13 +153,17 @@ register and submit your entries; **DO NOT WAIT UNTIL THE FINAL DAYS**
 to register!  The judges are **NOT** responsible for delayed or lost
 email or for those who wait until the last minute to try to register!
 
+<p class="leftbar">
 If after a few days you believe your registration hasn't been process, then
 [contact the Judges](../contact.html).
+</p>
 
+<p class="leftbar">
 After your UUID and initial password are emailed to you, you have
 up to fortnight (**14 days**) to login and change your temporary password.
 If you fail to change your temporary password by that deadline, then you'll need to
 [contact the Judges](../contact.html) by email to request a reset.
+</p>
 
 See [How to register for the IOCCC](register.html).
 
@@ -187,7 +195,9 @@ authors who skillfully employed various techniques to develop their code.
 If you do make use of such tools or services, then we **ENCOURAGE you to
 describe how you used such tools** in your `remarks.md` file.
 
+<p class="leftbar">
 In short: You created it, you own it, its an original work, or you have explicit permission to the work.
+</p>
 
 See the
 FAQ on "[May I use AI, LLM, Virtual coding assistants, or similar tools to write my submission?](../faq.html#ai)".
@@ -299,15 +309,19 @@ Submissions will be judged in an environment that has no **IDE**.
 Any submission that fails to compile/build because it requires
 an **IDE** will be rejected.
 
+<p class="leftbar">
 We will use the GNU `make(1)` tool, your `Makefile`, as well as tools found in the
 [Single UNIX Specification](https://en.wikipedia.org/wiki/Single_UNIX_Specification)
 environments, and commonly found on systems that reasonably conform to the
 [Single UNIX Specification](https://en.wikipedia.org/wiki/Single_UNIX_Specification)
 in the building and compiling of your submission.
+</p>
 
+<p class="leftbar">
 Your Makefile **MUST** be compatible with GNU `make` and we suggest you use
 [Makefile.example](Makefile.example) as a template, renamed as Makefile of
 course.
+</p>
 
 See the
 FAQ on "[What are the detailed recommendations for a submission Makefile?](../faq.html#makefile_details)".
@@ -325,15 +339,21 @@ Jump to: [top](#)
 </div>
 
 
+<p class="leftbar">
 We **STRONGLY** recommend you **do** install the most recent release of
 [mkiocccentry toolkit](https://github.com/ioccc-src/mkiocccentry)
 because use of older versions of the mkiocccentry toolkit are **HIGHLY LIKELY** to be **REJECTED**!
+</p>
 
+<p class="leftbar">
 If you submit your own JSON files (**OTHER THAN** `.auth.json` and
 `.info.json`) then they do **NOT** have to be valid JSON.
+</p>
 
+<p class="leftbar">
 However, if you do provide invalid JSON files, **PLEASE**
 document and **clearly explain** this in your `remarks.md` file.
+</p>
 
 <p class="leftbar">
 An _extra file_ is defined as a file that is not `prog.c`, `prog.alt.c`,
@@ -350,29 +370,46 @@ are considered _free files_, and do not count towards the
 limit of **31** _extra files_.
 </p>
 
+<p class="leftbar">
 If you use an optional filename for something other than their intended use
 in order to get past the file limit, we will consider that an abuse of rules.
+</p>
 
+<p class="leftbar">
 The `mkiocccentry` generated tarball does **NOT** reveal who you are!  For this
 reason, the tarball **MUST** be a **v7 format** tarball.
+</p>
 
+<p class="leftbar">
 You should NOT use a tarball as an _extra file_ for a test-suite unless you
 have a very good reason for this: if you do include a tarball as an _extra file_,
 then you **MUST** specify why in your `remarks.md` file.
+</p>
 
+<p class="leftbar">
 If you **DO** include a tarball as an _extra file_, and the build process or the
 program extracts said tarball(s), the make `clobber` rule **MUST** remove the
 extracted files.
+</p>
 
+<p class="leftbar">
 Instead of including a large test-suite that requires a lot of files as part of
 your submission, if your submission doesn't require the test-suite to be
 available to run, then in your `remarks.md` you could include URL where such a
 test-suite may be downloaded from and how to use the test-suite to test your
 submission, assuming it is not reveal who you are.
+</p>
 
+<p class="leftbar">
 If you **DO** include a tarball then make sure it uses the v7 format. See the
 FAQ on "[extra files](../faq.html#extra-files)"
 for details on how to make a v7 tarball.
+</p>
+
+<p class="leftbar">
+We recommend that all markdown files in your submission observe our
+[IOCCC markdown guidelines](../markdown.html).
+</p>
 
 See the
 FAQ on "[What should I do with the `try.sh` and `try.alt.sh` scripts?](../faq.html#try_scripts)".
@@ -428,7 +465,9 @@ previously uploaded submission by rebuilding your submission with the
 and then re-uploading it to **the same slot number** on the
 [submit server](https://submit.ioccc.org).
 
+<p class="leftbar">
 The **official locale** of the **IOCCC** is **C**.
+</p>
 
 You are **encouraged** to examine the [winners of previous contests](../years.html).
 
@@ -713,11 +752,13 @@ source under the size limit.
 Your source code, post-pre-processing, should not exceed the size of
 [Microsoft Windows](https://en.wikipedia.org/wiki/Microsoft_Windows). :-)
 
+<p class="leftbar">
 You should try to restrict commands used in the build file to commands found in
 [Single UNIX
 Specification](https://en.wikipedia.org/wiki/Single_UNIX_Specification)
 environments and systems that conform to the [Single UNIX
 Specification](https://en.wikipedia.org/wiki/Single_UNIX_Specification).
+</p>
 
 You may compile and use your own programs.  If you do, try to build and execute
 from the current directory.  This restriction is not a hard and
@@ -1091,11 +1132,15 @@ For example:
     mkiocccentry -d workdir topdir
 ```
 
-Do **NOT** submit a tarball formed by `mkiocccentry -d ..` **OR** by
-`mkiocccentry -s seed ..` **OR** by using the `test` UUID!
+<p class="leftbar">
+Do **NOT** submit a tarball formed by `mkiocccentry -d ...` **OR** by
+`mkiocccentry -s seed ...` **OR** by using the `test` UUID!
+</p>
 
+<p class="leftbar">
 The `mkiocccentry(1)` tool creates an `xz(1)` compressed **v7 format** tarball using a `tar(1)`
 command of the form:
+</p>
 
 ``` <!---sh-->
     cd workdir/UUID-slot_num && tar --format=v7 -cJf submit.UUID-slot_num.timestamp.txz UUID-slot_num
@@ -1104,9 +1149,10 @@ command of the form:
 In many places the `mkiocccentry(1)` tool will prompt you to verify what you input, allowing you to
 correct details as you go along.
 
+<p class="leftbar">
 Pressing the "_enter key_" at the `mkiocccentry(1)` tool prompts will allow you
-to proceed with a default, however make sure the default is the **CORRECT**
-answer.
+to proceed with a default, however make sure the default is the **CORRECT** answer.
+</p>
 
 The `mkiocccentry(1)` tool will use code from `iocccsize(1)` which detects a number of
 issues (such as [Rule 2 - Size restrictions](rules.html#rule2-size)) that you may ignore,
@@ -1115,12 +1161,15 @@ however ignoring such issues **comes with a SIGNIFICANT level of risk!**
 Once the tarball is packaged it will
 run `txzchk(1)`, which will also run `fnamchk(1)`, as part of its algorithm.
 
-The use of `mkiocccentry -W ....` is **highly discouraged** as this may ignore
+<p class="leftbar">
+The use of `mkiocccentry -W ...` is **highly discouraged** as this may ignore
 warnings about a problem that may cause your submission to be **REJECTED!**"
+</p>
 
-The same can be said of the `-Y` option, and to a lesser extent `-y`: the `-y`
-is mostly for the test script and the `-Y` is like `-y` but even more
-aggressive.
+<p class="leftbar">
+The same can be said of `mkiocccentry -Y ...` , and to a lesser extent `mkiocccentry -y ...`:
+the `-y` is mostly for the test script and the `-Y` is like `-y` but even more aggressive.
+</p>
 
 If `mkiocccentry` encounters an **error**, the program will exit and the xz
 compressed tarball **will NOT be generated**: this is a **feature, not a bug**!
@@ -1129,21 +1178,30 @@ If you encounter a **bug** with the
 [mkiocccentry toolkit](https://github.com/ioccc-src/mkiocccentry)
 **PLEASE run the `bug_report.sh` script to help us out here!**
 
+<p class="leftbar">
 While you don't have to install the
 [mkiocccentry toolkit](https://github.com/ioccc-src/mkiocccentry),
 if you don't, in order to run a tool outside the repo directory
 you will have to specify `mkiocccentry(1)` command line options to locate required tools
-such as `chkentry(1)` (`mkiocccentry -C chkentry ..`), `txzchk(1)` (`mkiocccentry -T txzchk ..`),
-and `fnamchk(1)` (`mkiocccentry -F fnamchk ..`).
+such as `chkentry(1)` (`mkiocccentry -C chkentry ...`), `txzchk(1)` (`mkiocccentry -T txzchk ...`),
+and `fnamchk(1)` (`mkiocccentry -F fnamchk ...`).
+</p>
 
+<p class="leftbar">
 The `mkiocccentry(1)` tool will ignore any filename or directory that begins with a period (`.`).
+</p>
 
+<p class="leftbar">
 The `mkiocccentry(1)` tool will ignore all files that begin with `COPYING`, `COPYRIGHT`, and `LICENSE`, regardless
 of filename case.
+</p>
 
+<p class="leftbar">
 The `mkiocccentry(1)` tool will reject any of the following files if they are found directly under
 the top level directory (`topdir`):
+</p>
 
+<p class="leftbar">
 * README.md
 * index.html
 * prog
@@ -1151,44 +1209,65 @@ the top level directory (`topdir`):
 * prog.alt.o
 * prog.orig.c
 * filenames matching the `[0-9][0-9][0-9][0-9]_*.tar.bz2` file glob
+</p>
 
+<p class="leftbar">
 The files listed in the above list are allowed to exist in sub-directories: just **NOT** directly under
 the top level directory (`topdir`).
+</p>
 
+<p class="leftbar">
 The `mkiocccentry(1)` tool evaluates all filenames and directory names in a case
 independent way: thus `FOO`, `Foo`, and `foo` are considered the **SAME** file
 even if your filesystem doesn't do the same.
+</p>
 
+<p class="leftbar">
 Having two or more filenames that differ only by case **WILL** lead to problems
 because of the previous statement.
+</p>
 
+<p class="leftbar">
 When the `mkiocccentry(1)` tool ignores a file, that file is **NOT** included as
 part of your submission.
+</p>
 
+<p class="leftbar">
 When the `mkiocccentry(1)` tool ignores a directory, that directory,
 and everything under that directory is **NOT** included as part of
 your submission.
+</p>
 
+<p class="leftbar">
 The `mkiocccentry(1)` tool will ignore all symlinks.
+</p>
 
+<p class="leftbar">
 Creating a directory directly under the top level directory (`topdir`)
 that is normally considered to be a regular file, such as a directory
 named `Makefile`, `prog.alt.c`, `prog.c`, `remarks.md`, `try.alt.sh`,
 or `try.sh` is **NOT** a good idea and will likely cause the
 `mkiocccentry(1)` tool to abort with a **fatal error**.
+</p>
 
+<p class="leftbar">
 The required `Makefile` and `remarks.md` files may **NOT** be empty. This
 does not mean just 0 bytes but also that it **MUST** have **content**, and
 content that is relevant (e.g. a Makefile with just comments is **NOT**
 allowed). However, with the exception of the `Makefile`, the `mkiocccentry(1)`
 tool will **ONLY** check file size.
+</p>
 
+<p class="leftbar">
 If the optional file `try.alt.sh`, or `try.sh` exists and is an empty file,
 the `mkiocccentry(1)` tool will abort with a **fatal error**.
+</p>
 
+<p class="leftbar">
 If the `mkiocccentry(1)` tool encounters anything that isn't a file, isn't a
 directory, and isn't a symlink (which the tool ignores), the `mkiocccentry(1)`
 tool to abort with a **fatal error**.
+</p>
 
 See
 FAQ on "[How do I report bugs in an `mkiocccentry` tool?](../faq.html#mkiocccentry_bugs)".
@@ -1223,14 +1302,19 @@ may be found on the ["Curios!" about 2503](https://t5k.org/curios/page.php/2503.
 The 2503 value for [Rule 2b - Net Size](rules.html#rule2b-net-size) is a decimal anagram
 of the number of the kernel disk pack of one of the judge's [BESM-6](https://en.wikipedia.org/wiki/BESM-6).
 
-There may or may not be fewer than 2^7+1 reasons why these [IOCCC
-guidelines](guidelines.html) seem obfuscated.
+<p class="leftbar">
+There may or may not be fewer than 2^7+1 reasons why these
+[IOCCC guidelines](guidelines.html) seem obfuscated.
+</p>
 
+<p class="leftbar">
 Excessively "_dotty"_ use of the `chksubmit(1)` or `chkentry(1)` commands suggests that
-either you like silly things, or that you "_RTFS_" with some level of care.
+either you like silly things, or that you [RTFS](https://en.wikipedia.org/wiki/RTFM)
+with some level of care.
+</p>
 
 Some people might question what actually constitutes a valid JSON file, given
-the state of the "_so-called_" JSON spec.. :-)
+the state of the "_so-called_" JSON spec. :-)
 
 We prefer programs that do not require a fish license: crayons and
 cat detector vans not withstanding.
@@ -1295,7 +1379,7 @@ unless you count this one, in which case there are 3. :-)
 <p class="leftbar">
 You very well might not be completely prohibited from failing to not partly
 misunderstand this particular _guideline_, but of course, we could not possibly
-comment!  :-)  Nevertheless, you are neither prohibited, nor are you fully or partly
+comment!  Nevertheless, you are neither prohibited, nor are you fully or partly
 required to determine that this or the previous sentence is either false and/or
 perhaps misleading.  Therefore, it might be wise for you to not fail to consider
 to not do so, accordingly.  Thank you very much (allegedly).
@@ -1306,7 +1390,7 @@ Speaker of the House of Commons, or to the speaker of your national
 parliament should you have one.
 
 <p class="leftbar">
-Please try to avoid this specific individual _guideline_, if it at all possible.
+Please try to avoid this specific individual _guideline_, if it is at all possible.
 </p>
 
 We believe that Mark Twain's quote:
@@ -1324,29 +1408,30 @@ replacement of `init(8)` would not be an interesting submission.
 </p>
 
 <p class="leftbar">
-The IOCCC size tool
-[iocccsize](https://github.com/ioccc-src/mkiocccentry/blob/master/iocccsize.c)
-is not an original work, unless you are [Anthony C
-Howe](../authors.html#Anthony_C_Howe), in which it is original! :-)
+The
+[mkiocccentry toolkit](https://github.com/ioccc-src/mkiocccentry)
+is not an original work, unless you one of the
+[several mkiocccentry toolkit contributors](https://github.com/ioccc-src/mkiocccentry/graphs/contributors).
+in which case it is original!  :-)
+Even so, most of the programs in the toolkit exceed the
+[Rule 2 - Size](rules.html#rule2-size)
+so they wouldn't quality anyway.
 </p>
 
 <p class="leftbar">
-The IOCCC tarball validator
-[txzchk](https://github.com/ioccc-src/mkiocccentry/blob/master/txzchk.c) is not
-an original work, unless you are [Cody Boone
-Ferguson](../authors.html#Cody_Boone_Ferguson), in which case it is original! :-)
-</p>
-
-If the [IOCCC judges](../judges.html) are feeling ornery we
+If the [IOCCC judges](../judges.html) are feeling like it, they
 might choose to compile your program for running on an Arduino or
 a PDP-11.  Heck, should we ever find an emulator of 60-bit CDC Cyber
 CPU, we might just try your submission on that emulator as well :-)
+</p>
 
 Do not fear if you're not 100% sure of the significance of
 `2305567963945518424753102147331756070` as it is not of prime importance: or is
 it?  :-)
 
+<p class="leftbar">
 With respect to [nested functions](#nested-functions), try `chkentry -b`.
+</p>
 
 
 Jump to: [top](#)

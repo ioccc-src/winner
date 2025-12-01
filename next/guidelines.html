@@ -462,7 +462,7 @@ and remains unaltered. All other uses must receive prior permission in
 writing by <a href="../contact.html">contacting the judges</a>.</p>
 <h1 id="guidelines-version">Guidelines Version</h1>
 <p class="leftbar">
-These IOCCC guidelines are version <strong>29.03 2025-11-30</strong>.
+These IOCCC guidelines are version <strong>29.04 2025-12-01</strong>.
 </p>
 <p class="leftbar">
 The <span style="font-size:28px;"><b>|</b></span> symbol indicates an <strong>change</strong> from the previous IOCCC.
@@ -554,22 +554,30 @@ because of the <code>iocccsize(1)</code> algorithm.</p>
 <h1 id="guidelines-for-rule-3---register-for-the-ioccc">Guidelines for <a href="rules.html#rule3-register">Rule 3 - Register for the IOCCC</a></h1>
 </div>
 </div>
-<p>If a group of people work on a submission, then they should
+<p class="leftbar">
+If a group of people work on a submission, then they should
 <a href="../quick-start.html#enter">register for the IOCCC</a>
-using either a group email address, or an email address for one of the authors.</p>
-<p>Processing your registration is an activity overseen by an IOCCC judge.
-Please be <strong>patient</strong> while an IOCCC judge processes your registration.</p>
+using either a group email address, or an email address for one of the authors.
+</p>
+<p class="leftbar">
+Processing your registration is an activity overseen by an IOCCC judge.
+Please be <strong>patient</strong> while an IOCCC judge processes your registration.
+</p>
 <p>It can take a few days to process your registration and for the server to
 email your details, therefore make sure to allow yourself ample time to
 register and submit your entries; <strong>DO NOT WAIT UNTIL THE FINAL DAYS</strong>
 to register! The judges are <strong>NOT</strong> responsible for delayed or lost
 email or for those who wait until the last minute to try to register!</p>
-<p>If after a few days you believe your registration hasn’t been process, then
-<a href="../contact.html">contact the Judges</a>.</p>
-<p>After your UUID and initial password are emailed to you, you have
+<p class="leftbar">
+If after a few days you believe your registration hasn’t been process, then
+<a href="../contact.html">contact the Judges</a>.
+</p>
+<p class="leftbar">
+After your UUID and initial password are emailed to you, you have
 up to fortnight (<strong>14 days</strong>) to login and change your temporary password.
 If you fail to change your temporary password by that deadline, then you’ll need to
-<a href="../contact.html">contact the Judges</a> by email to request a reset.</p>
+<a href="../contact.html">contact the Judges</a> by email to request a reset.
+</p>
 <p>See <a href="register.html">How to register for the IOCCC</a>.</p>
 <p>See <a href="../quick-start.html#enter">Entering the IOCCC: the bare minimum you need to know</a>.</p>
 <p>Jump to: <a href="#">top</a></p>
@@ -593,7 +601,9 @@ If you fail to change your temporary password by that deadline, then you’ll ne
 authors who skillfully employed various techniques to develop their code.
 If you do make use of such tools or services, then we <strong>ENCOURAGE you to
 describe how you used such tools</strong> in your <code>remarks.md</code> file.</p>
-<p>In short: You created it, you own it, its an original work, or you have explicit permission to the work.</p>
+<p class="leftbar">
+In short: You created it, you own it, its an original work, or you have explicit permission to the work.
+</p>
 <p>See the
 FAQ on “<a href="../faq.html#ai">May I use AI, LLM, Virtual coding assistants, or similar tools to write my submission?</a>”.</p>
 <p>Jump to: <a href="#">top</a></p>
@@ -677,14 +687,18 @@ This is one of the reasons why the <a href="rules.html">IOCCC rules</a> and
 <p>Submissions will be judged in an environment that has no <strong>IDE</strong>.
 Any submission that fails to compile/build because it requires
 an <strong>IDE</strong> will be rejected.</p>
-<p>We will use the GNU <code>make(1)</code> tool, your <code>Makefile</code>, as well as tools found in the
+<p class="leftbar">
+We will use the GNU <code>make(1)</code> tool, your <code>Makefile</code>, as well as tools found in the
 <a href="https://en.wikipedia.org/wiki/Single_UNIX_Specification">Single UNIX Specification</a>
 environments, and commonly found on systems that reasonably conform to the
 <a href="https://en.wikipedia.org/wiki/Single_UNIX_Specification">Single UNIX Specification</a>
-in the building and compiling of your submission.</p>
-<p>Your Makefile <strong>MUST</strong> be compatible with GNU <code>make</code> and we suggest you use
+in the building and compiling of your submission.
+</p>
+<p class="leftbar">
+Your Makefile <strong>MUST</strong> be compatible with GNU <code>make</code> and we suggest you use
 <a href="Makefile.example">Makefile.example</a> as a template, renamed as Makefile of
-course.</p>
+course.
+</p>
 <p>See the
 FAQ on “<a href="../faq.html#makefile_details">What are the detailed recommendations for a submission Makefile?</a>”.</p>
 <p>Jump to: <a href="#">top</a></p>
@@ -695,13 +709,19 @@ FAQ on “<a href="../faq.html#makefile_details">What are the detailed recommend
 </div>
 </div>
 </div>
-<p>We <strong>STRONGLY</strong> recommend you <strong>do</strong> install the most recent release of
+<p class="leftbar">
+We <strong>STRONGLY</strong> recommend you <strong>do</strong> install the most recent release of
 <a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry toolkit</a>
-because use of older versions of the mkiocccentry toolkit are <strong>HIGHLY LIKELY</strong> to be <strong>REJECTED</strong>!</p>
-<p>If you submit your own JSON files (<strong>OTHER THAN</strong> <code>.auth.json</code> and
-<code>.info.json</code>) then they do <strong>NOT</strong> have to be valid JSON.</p>
-<p>However, if you do provide invalid JSON files, <strong>PLEASE</strong>
-document and <strong>clearly explain</strong> this in your <code>remarks.md</code> file.</p>
+because use of older versions of the mkiocccentry toolkit are <strong>HIGHLY LIKELY</strong> to be <strong>REJECTED</strong>!
+</p>
+<p class="leftbar">
+If you submit your own JSON files (<strong>OTHER THAN</strong> <code>.auth.json</code> and
+<code>.info.json</code>) then they do <strong>NOT</strong> have to be valid JSON.
+</p>
+<p class="leftbar">
+However, if you do provide invalid JSON files, <strong>PLEASE</strong>
+document and <strong>clearly explain</strong> this in your <code>remarks.md</code> file.
+</p>
 <p class="leftbar">
 An <em>extra file</em> is defined as a file that is not <code>prog.c</code>, <code>prog.alt.c</code>,
 <code>try.sh</code>, <code>try.alt.sh</code>, <code>remarks.md</code>, <code>Makefile</code>, <code>.auth.json</code> and <code>.info.json</code>:
@@ -715,24 +735,40 @@ are considered <em>free files</em>, and do not count towards the
 <a href="rules.html#rule17-mkiocccentry">Rule 17 - Use mkiocccentry</a>
 limit of <strong>31</strong> <em>extra files</em>.
 </p>
-<p>If you use an optional filename for something other than their intended use
-in order to get past the file limit, we will consider that an abuse of rules.</p>
-<p>The <code>mkiocccentry</code> generated tarball does <strong>NOT</strong> reveal who you are! For this
-reason, the tarball <strong>MUST</strong> be a <strong>v7 format</strong> tarball.</p>
-<p>You should NOT use a tarball as an <em>extra file</em> for a test-suite unless you
+<p class="leftbar">
+If you use an optional filename for something other than their intended use
+in order to get past the file limit, we will consider that an abuse of rules.
+</p>
+<p class="leftbar">
+The <code>mkiocccentry</code> generated tarball does <strong>NOT</strong> reveal who you are! For this
+reason, the tarball <strong>MUST</strong> be a <strong>v7 format</strong> tarball.
+</p>
+<p class="leftbar">
+You should NOT use a tarball as an <em>extra file</em> for a test-suite unless you
 have a very good reason for this: if you do include a tarball as an <em>extra file</em>,
-then you <strong>MUST</strong> specify why in your <code>remarks.md</code> file.</p>
-<p>If you <strong>DO</strong> include a tarball as an <em>extra file</em>, and the build process or the
+then you <strong>MUST</strong> specify why in your <code>remarks.md</code> file.
+</p>
+<p class="leftbar">
+If you <strong>DO</strong> include a tarball as an <em>extra file</em>, and the build process or the
 program extracts said tarball(s), the make <code>clobber</code> rule <strong>MUST</strong> remove the
-extracted files.</p>
-<p>Instead of including a large test-suite that requires a lot of files as part of
+extracted files.
+</p>
+<p class="leftbar">
+Instead of including a large test-suite that requires a lot of files as part of
 your submission, if your submission doesn’t require the test-suite to be
 available to run, then in your <code>remarks.md</code> you could include URL where such a
 test-suite may be downloaded from and how to use the test-suite to test your
-submission, assuming it is not reveal who you are.</p>
-<p>If you <strong>DO</strong> include a tarball then make sure it uses the v7 format. See the
+submission, assuming it is not reveal who you are.
+</p>
+<p class="leftbar">
+If you <strong>DO</strong> include a tarball then make sure it uses the v7 format. See the
 FAQ on “<a href="../faq.html#extra-files">extra files</a>”
-for details on how to make a v7 tarball.</p>
+for details on how to make a v7 tarball.
+</p>
+<p class="leftbar">
+We recommend that all markdown files in your submission observe our
+<a href="../markdown.html">IOCCC markdown guidelines</a>.
+</p>
 <p>See the
 FAQ on “<a href="../faq.html#try_scripts">What should I do with the <code>try.sh</code> and <code>try.alt.sh</code> scripts?</a>”.</p>
 <p>See the
@@ -768,7 +804,9 @@ previously uploaded submission by rebuilding your submission with the
 <a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry toolkit</a>,
 and then re-uploading it to <strong>the same slot number</strong> on the
 <a href="https://submit.ioccc.org">submit server</a>.</p>
-<p>The <strong>official locale</strong> of the <strong>IOCCC</strong> is <strong>C</strong>.</p>
+<p class="leftbar">
+The <strong>official locale</strong> of the <strong>IOCCC</strong> is <strong>C</strong>.
+</p>
 <p>You are <strong>encouraged</strong> to examine the <a href="../years.html">winners of previous contests</a>.</p>
 <p>Because <a href="rules.html">rules</a> change from year to year, some <a href="../years.html">past winning entries</a>
 may be rejected this year.</p>
@@ -982,11 +1020,13 @@ is quite another to use many bytes of <code>-D</code>s in order to try and squee
 source under the size limit.</p>
 <p>Your source code, post-pre-processing, should not exceed the size of
 <a href="https://en.wikipedia.org/wiki/Microsoft_Windows">Microsoft Windows</a>. :-)</p>
-<p>You should try to restrict commands used in the build file to commands found in
+<p class="leftbar">
+You should try to restrict commands used in the build file to commands found in
 <a href="https://en.wikipedia.org/wiki/Single_UNIX_Specification">Single UNIX
 Specification</a>
 environments and systems that conform to the <a href="https://en.wikipedia.org/wiki/Single_UNIX_Specification">Single UNIX
-Specification</a>.</p>
+Specification</a>.
+</p>
 <p>You may compile and use your own programs. If you do, try to build and execute
 from the current directory. This restriction is not a hard and
 absolute one. The intent is to ensure that the building of your
@@ -1272,42 +1312,59 @@ without having to type in answers each time, you can use the <code>-d</code> or 
 option to <code>mkiocccentry</code> for the tool to pseudo-randomly create answers for you.
 For example:</p>
 <pre><code>    mkiocccentry -d workdir topdir</code></pre>
-<p>Do <strong>NOT</strong> submit a tarball formed by <code>mkiocccentry -d ..</code> <strong>OR</strong> by
-<code>mkiocccentry -s seed ..</code> <strong>OR</strong> by using the <code>test</code> UUID!</p>
-<p>The <code>mkiocccentry(1)</code> tool creates an <code>xz(1)</code> compressed <strong>v7 format</strong> tarball using a <code>tar(1)</code>
-command of the form:</p>
+<p class="leftbar">
+Do <strong>NOT</strong> submit a tarball formed by <code>mkiocccentry -d ...</code> <strong>OR</strong> by
+<code>mkiocccentry -s seed ...</code> <strong>OR</strong> by using the <code>test</code> UUID!
+</p>
+<p class="leftbar">
+The <code>mkiocccentry(1)</code> tool creates an <code>xz(1)</code> compressed <strong>v7 format</strong> tarball using a <code>tar(1)</code>
+command of the form:
+</p>
 <pre><code>    cd workdir/UUID-slot_num &amp;&amp; tar --format=v7 -cJf submit.UUID-slot_num.timestamp.txz UUID-slot_num</code></pre>
 <p>In many places the <code>mkiocccentry(1)</code> tool will prompt you to verify what you input, allowing you to
 correct details as you go along.</p>
-<p>Pressing the “<em>enter key</em>” at the <code>mkiocccentry(1)</code> tool prompts will allow you
-to proceed with a default, however make sure the default is the <strong>CORRECT</strong>
-answer.</p>
+<p class="leftbar">
+Pressing the “<em>enter key</em>” at the <code>mkiocccentry(1)</code> tool prompts will allow you
+to proceed with a default, however make sure the default is the <strong>CORRECT</strong> answer.
+</p>
 <p>The <code>mkiocccentry(1)</code> tool will use code from <code>iocccsize(1)</code> which detects a number of
 issues (such as <a href="rules.html#rule2-size">Rule 2 - Size restrictions</a>) that you may ignore,
 however ignoring such issues <strong>comes with a SIGNIFICANT level of risk!</strong></p>
 <p>Once the tarball is packaged it will
 run <code>txzchk(1)</code>, which will also run <code>fnamchk(1)</code>, as part of its algorithm.</p>
-<p>The use of <code>mkiocccentry -W ....</code> is <strong>highly discouraged</strong> as this may ignore
-warnings about a problem that may cause your submission to be <strong>REJECTED!</strong>”</p>
-<p>The same can be said of the <code>-Y</code> option, and to a lesser extent <code>-y</code>: the <code>-y</code>
-is mostly for the test script and the <code>-Y</code> is like <code>-y</code> but even more
-aggressive.</p>
+<p class="leftbar">
+The use of <code>mkiocccentry -W ...</code> is <strong>highly discouraged</strong> as this may ignore
+warnings about a problem that may cause your submission to be <strong>REJECTED!</strong>”
+</p>
+<p class="leftbar">
+The same can be said of <code>mkiocccentry -Y ...</code> , and to a lesser extent <code>mkiocccentry -y ...</code>:
+the <code>-y</code> is mostly for the test script and the <code>-Y</code> is like <code>-y</code> but even more aggressive.
+</p>
 <p>If <code>mkiocccentry</code> encounters an <strong>error</strong>, the program will exit and the xz
 compressed tarball <strong>will NOT be generated</strong>: this is a <strong>feature, not a bug</strong>!</p>
 <p>If you encounter a <strong>bug</strong> with the
 <a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry toolkit</a>
 <strong>PLEASE run the <code>bug_report.sh</code> script to help us out here!</strong></p>
-<p>While you don’t have to install the
+<p class="leftbar">
+While you don’t have to install the
 <a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry toolkit</a>,
 if you don’t, in order to run a tool outside the repo directory
 you will have to specify <code>mkiocccentry(1)</code> command line options to locate required tools
-such as <code>chkentry(1)</code> (<code>mkiocccentry -C chkentry ..</code>), <code>txzchk(1)</code> (<code>mkiocccentry -T txzchk ..</code>),
-and <code>fnamchk(1)</code> (<code>mkiocccentry -F fnamchk ..</code>).</p>
-<p>The <code>mkiocccentry(1)</code> tool will ignore any filename or directory that begins with a period (<code>.</code>).</p>
-<p>The <code>mkiocccentry(1)</code> tool will ignore all files that begin with <code>COPYING</code>, <code>COPYRIGHT</code>, and <code>LICENSE</code>, regardless
-of filename case.</p>
-<p>The <code>mkiocccentry(1)</code> tool will reject any of the following files if they are found directly under
-the top level directory (<code>topdir</code>):</p>
+such as <code>chkentry(1)</code> (<code>mkiocccentry -C chkentry ...</code>), <code>txzchk(1)</code> (<code>mkiocccentry -T txzchk ...</code>),
+and <code>fnamchk(1)</code> (<code>mkiocccentry -F fnamchk ...</code>).
+</p>
+<p class="leftbar">
+The <code>mkiocccentry(1)</code> tool will ignore any filename or directory that begins with a period (<code>.</code>).
+</p>
+<p class="leftbar">
+The <code>mkiocccentry(1)</code> tool will ignore all files that begin with <code>COPYING</code>, <code>COPYRIGHT</code>, and <code>LICENSE</code>, regardless
+of filename case.
+</p>
+<p class="leftbar">
+The <code>mkiocccentry(1)</code> tool will reject any of the following files if they are found directly under
+the top level directory (<code>topdir</code>):
+</p>
+<p class="leftbar">
 <ul>
 <li>README.md</li>
 <li>index.html</li>
@@ -1317,34 +1374,55 @@ the top level directory (<code>topdir</code>):</p>
 <li>prog.orig.c</li>
 <li>filenames matching the <code>[0-9][0-9][0-9][0-9]_*.tar.bz2</code> file glob</li>
 </ul>
-<p>The files listed in the above list are allowed to exist in sub-directories: just <strong>NOT</strong> directly under
-the top level directory (<code>topdir</code>).</p>
-<p>The <code>mkiocccentry(1)</code> tool evaluates all filenames and directory names in a case
+</p>
+<p class="leftbar">
+The files listed in the above list are allowed to exist in sub-directories: just <strong>NOT</strong> directly under
+the top level directory (<code>topdir</code>).
+</p>
+<p class="leftbar">
+The <code>mkiocccentry(1)</code> tool evaluates all filenames and directory names in a case
 independent way: thus <code>FOO</code>, <code>Foo</code>, and <code>foo</code> are considered the <strong>SAME</strong> file
-even if your filesystem doesn’t do the same.</p>
-<p>Having two or more filenames that differ only by case <strong>WILL</strong> lead to problems
-because of the previous statement.</p>
-<p>When the <code>mkiocccentry(1)</code> tool ignores a file, that file is <strong>NOT</strong> included as
-part of your submission.</p>
-<p>When the <code>mkiocccentry(1)</code> tool ignores a directory, that directory,
+even if your filesystem doesn’t do the same.
+</p>
+<p class="leftbar">
+Having two or more filenames that differ only by case <strong>WILL</strong> lead to problems
+because of the previous statement.
+</p>
+<p class="leftbar">
+When the <code>mkiocccentry(1)</code> tool ignores a file, that file is <strong>NOT</strong> included as
+part of your submission.
+</p>
+<p class="leftbar">
+When the <code>mkiocccentry(1)</code> tool ignores a directory, that directory,
 and everything under that directory is <strong>NOT</strong> included as part of
-your submission.</p>
-<p>The <code>mkiocccentry(1)</code> tool will ignore all symlinks.</p>
-<p>Creating a directory directly under the top level directory (<code>topdir</code>)
+your submission.
+</p>
+<p class="leftbar">
+The <code>mkiocccentry(1)</code> tool will ignore all symlinks.
+</p>
+<p class="leftbar">
+Creating a directory directly under the top level directory (<code>topdir</code>)
 that is normally considered to be a regular file, such as a directory
 named <code>Makefile</code>, <code>prog.alt.c</code>, <code>prog.c</code>, <code>remarks.md</code>, <code>try.alt.sh</code>,
 or <code>try.sh</code> is <strong>NOT</strong> a good idea and will likely cause the
-<code>mkiocccentry(1)</code> tool to abort with a <strong>fatal error</strong>.</p>
-<p>The required <code>Makefile</code> and <code>remarks.md</code> files may <strong>NOT</strong> be empty. This
+<code>mkiocccentry(1)</code> tool to abort with a <strong>fatal error</strong>.
+</p>
+<p class="leftbar">
+The required <code>Makefile</code> and <code>remarks.md</code> files may <strong>NOT</strong> be empty. This
 does not mean just 0 bytes but also that it <strong>MUST</strong> have <strong>content</strong>, and
 content that is relevant (e.g. a Makefile with just comments is <strong>NOT</strong>
 allowed). However, with the exception of the <code>Makefile</code>, the <code>mkiocccentry(1)</code>
-tool will <strong>ONLY</strong> check file size.</p>
-<p>If the optional file <code>try.alt.sh</code>, or <code>try.sh</code> exists and is an empty file,
-the <code>mkiocccentry(1)</code> tool will abort with a <strong>fatal error</strong>.</p>
-<p>If the <code>mkiocccentry(1)</code> tool encounters anything that isn’t a file, isn’t a
+tool will <strong>ONLY</strong> check file size.
+</p>
+<p class="leftbar">
+If the optional file <code>try.alt.sh</code>, or <code>try.sh</code> exists and is an empty file,
+the <code>mkiocccentry(1)</code> tool will abort with a <strong>fatal error</strong>.
+</p>
+<p class="leftbar">
+If the <code>mkiocccentry(1)</code> tool encounters anything that isn’t a file, isn’t a
 directory, and isn’t a symlink (which the tool ignores), the <code>mkiocccentry(1)</code>
-tool to abort with a <strong>fatal error</strong>.</p>
+tool to abort with a <strong>fatal error</strong>.
+</p>
 <p>See
 FAQ on “<a href="../faq.html#mkiocccentry_bugs">How do I report bugs in an <code>mkiocccentry</code> tool?</a>”.</p>
 <p>See <a href="rules.html#rule11-legal-rulea-abuse">Rule 11 - Legal rule abuse</a> for warnings about ignoring <code>mkiocccentry(1)</code> tool warnings.</p>
@@ -1365,12 +1443,17 @@ to be a <strong>fun</strong>ctional UTC time. :-)</p>
 may be found on the <a href="https://t5k.org/curios/page.php/2503.html">“Curios!” about 2503</a>.</p>
 <p>The 2503 value for <a href="rules.html#rule2b-net-size">Rule 2b - Net Size</a> is a decimal anagram
 of the number of the kernel disk pack of one of the judge’s <a href="https://en.wikipedia.org/wiki/BESM-6">BESM-6</a>.</p>
-<p>There may or may not be fewer than 2^7+1 reasons why these <a href="guidelines.html">IOCCC
-guidelines</a> seem obfuscated.</p>
-<p>Excessively “<em>dotty”</em> use of the <code>chksubmit(1)</code> or <code>chkentry(1)</code> commands suggests that
-either you like silly things, or that you”<em>RTFS</em>” with some level of care.</p>
+<p class="leftbar">
+There may or may not be fewer than 2^7+1 reasons why these
+<a href="guidelines.html">IOCCC guidelines</a> seem obfuscated.
+</p>
+<p class="leftbar">
+Excessively “<em>dotty”</em> use of the <code>chksubmit(1)</code> or <code>chkentry(1)</code> commands suggests that
+either you like silly things, or that you <a href="https://en.wikipedia.org/wiki/RTFM">RTFS</a>
+with some level of care.
+</p>
 <p>Some people might question what actually constitutes a valid JSON file, given
-the state of the “<em>so-called</em>” JSON spec.. :-)</p>
+the state of the “<em>so-called</em>” JSON spec. :-)</p>
 <p>We prefer programs that do not require a fish license: crayons and
 cat detector vans not withstanding.</p>
 <p class="leftbar">
@@ -1423,7 +1506,7 @@ unless you count this one, in which case there are 3. :-)</p>
 <p class="leftbar">
 You very well might not be completely prohibited from failing to not partly
 misunderstand this particular <em>guideline</em>, but of course, we could not possibly
-comment! :-) Nevertheless, you are neither prohibited, nor are you fully or partly
+comment! Nevertheless, you are neither prohibited, nor are you fully or partly
 required to determine that this or the previous sentence is either false and/or
 perhaps misleading. Therefore, it might be wise for you to not fail to consider
 to not do so, accordingly. Thank you very much (allegedly).
@@ -1432,7 +1515,7 @@ to not do so, accordingly. Thank you very much (allegedly).
 Speaker of the House of Commons, or to the speaker of your national
 parliament should you have one.</p>
 <p class="leftbar">
-Please try to avoid this specific individual <em>guideline</em>, if it at all possible.
+Please try to avoid this specific individual <em>guideline</em>, if it is at all possible.
 </p>
 <p>We believe that Mark Twain’s quote:</p>
 <blockquote>
@@ -1447,25 +1530,27 @@ This isn’t to say that another highly compact and obfuscated
 replacement of <code>init(8)</code> would not be an interesting submission.
 </p>
 <p class="leftbar">
-The IOCCC size tool
-<a href="https://github.com/ioccc-src/mkiocccentry/blob/master/iocccsize.c">iocccsize</a>
-is not an original work, unless you are <a href="../authors.html#Anthony_C_Howe">Anthony C
-Howe</a>, in which it is original! :-)
+The
+<a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry toolkit</a>
+is not an original work, unless you one of the
+<a href="https://github.com/ioccc-src/mkiocccentry/graphs/contributors">several mkiocccentry toolkit contributors</a>.
+in which case it is original! :-)
+Even so, most of the programs in the toolkit exceed the
+<a href="rules.html#rule2-size">Rule 2 - Size</a>
+so they wouldn’t quality anyway.
 </p>
 <p class="leftbar">
-The IOCCC tarball validator
-<a href="https://github.com/ioccc-src/mkiocccentry/blob/master/txzchk.c">txzchk</a> is not
-an original work, unless you are <a href="../authors.html#Cody_Boone_Ferguson">Cody Boone
-Ferguson</a>, in which case it is original! :-)
-</p>
-<p>If the <a href="../judges.html">IOCCC judges</a> are feeling ornery we
+If the <a href="../judges.html">IOCCC judges</a> are feeling like it, they
 might choose to compile your program for running on an Arduino or
 a PDP-11. Heck, should we ever find an emulator of 60-bit CDC Cyber
-CPU, we might just try your submission on that emulator as well :-)</p>
+CPU, we might just try your submission on that emulator as well :-)
+</p>
 <p>Do not fear if you’re not 100% sure of the significance of
 <code>2305567963945518424753102147331756070</code> as it is not of prime importance: or is
 it? :-)</p>
-<p>With respect to <a href="#nested-functions">nested functions</a>, try <code>chkentry -b</code>.</p>
+<p class="leftbar">
+With respect to <a href="#nested-functions">nested functions</a>, try <code>chkentry -b</code>.
+</p>
 <p>Jump to: <a href="#">top</a></p>
 <div id="more-information">
 <div id="information">
