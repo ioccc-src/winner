@@ -1524,43 +1524,23 @@ Jump to: [top](#)
 
 <div id="more-information">
 <div id="information">
-# For more information
+# Further Reading
 </div>
 </div>
-
-For questions or comments about the contest, see [Contacting the IOCCC](../contact.html).
-
-**Be SURE** to review the [IOCCC Rules and Guidelines](index.html) as they
-may (and **often do**) change from year to year.
-
-**PLEASE** be sure you have the current [Rules](rules.html) and
-[Guidelines](guidelines.html) prior to submitting to the contest.
 
 See the [Official IOCCC website news](../news.html) for additional information.
 
-For the updates and breaking IOCCC news, you are encouraged to follow
-the [IOCCC on Mastodon](https://fosstodon.org/@ioccc).  See our
+For questions or comments about the contest, see [Contacting the IOCCC](../contact.html).
+
+**Be SURE** to review the current [IOCCC Rules and Guidelines](index.html) as they
+often change year to year.  Especially prior to submitting to the contest.
+
+For the latest IOCCC news, follow the [IOCCC on Mastodon](https://fosstodon.org/@ioccc).  See our
 FAQ on "[Mastodon](../faq.html#try_mastodon)"
-for more information. Please do note that unless
-you are mentioned by us you will **NOT** get a notification from the app _so you
-should refresh the page **even if you do follow us**_.
+for more information.
 
-Check out the [Official IOCCC winner website](https://www.ioccc.org/index.html) in general.
-
-Consider joining the IOCCC discord community via this link:
-[https://discord.gg/Wa42Qujwnw](https://discord.gg/Wa42Qujwnw)
-
-See the
-FAQs on "[obtaining, compiling, installing and using the mkiocccentry tools](../faq.html#mkiocccentry)"
-and the
-FAQ on "[how to enter the IOCCC](../quick-start.html#enter)"
-as that FAQ has important details on
-[how to register](../next/register.html)
-as well as
-[how to upload your submission](../next/submit.html) for the IOCCC.
-
+Also consider joining the [IOCCC Discord Server](https://discord.com/invite/Wa42Qujwnw)
+for the latest news, discussions about The Rules, questions for the Judges, and `C` in general.
 
 <hr style="width:10%;text-align:left;margin-left:0">
-
-
 Jump to: [top](#)
