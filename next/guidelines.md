@@ -70,6 +70,9 @@ then try to make a case for why in your submission's `remarks.md` file: maybe th
 </p>
 
 
+Jump to: [top](#)
+
+
 <div id="guideline2">
 <div id="guideline-2---size">
 <div id="guideline2-size">
@@ -217,10 +220,11 @@ Do **NOT** register more than one account just to try and get around the limit o
 Jump to: [top](#)
 
 
-<div id="guideline9"></div>
-<div id="guideline9-no-interactive-compiling-allowed"></div>
-
+<div id="guideline9">
+<div id="guideline9-no-interactive-compiling-allowed">
 # Guidelines for [Rule 9 - No interactive compiling allowed](rules.html#rule-9---no-interactive-compiling-allowed)
+</div>
+</div>
 
 Don't forget that the building of your program should be done
 **WITHOUT human intervention**.  So don't do things such as:
@@ -245,6 +249,10 @@ For example, one could put in their `Makefile`:
 
 and then include special notes in your `remarks.md` file for
 alternate / human intervention based building.
+
+
+Jump to: [top](#)
+
 
 <div id="guideline11">
 <div id="guideline-11---abuse">
@@ -327,6 +335,9 @@ Jump to: [top](#)
 <div id="guideline12-utf8">
 # Guidelines for [Rule 12 - UTF-8](rules.html#rule-12---utf-8)
 [Rule 12 - UTF-8](rules.html#rule12-utf8)
+</div>
+</div>
+
 no longer discourages the use of multibyte UTF-8 characters in `C` code.
 
 
@@ -339,6 +350,8 @@ Users of such tools should strip off such control-M's before submitting
 their submissions.  In some cases tools have a "Save As" option that will
 prevent such trailing control-M's being added.
 
+
+Jump to: [top](#)
 
 
 <div id="guideline15">
@@ -381,7 +394,6 @@ Jump to: [top](#)
 </div>
 </div>
 </div>
-
 
 <p class="leftbar">
 We **STRONGLY** recommend you **do** install the most recent release of
@@ -482,14 +494,17 @@ Jump to: [top](#)
 
 
 <div id="general">
+<div id="general-guidelines">
 # General Guidelines
+</div>
 </div>
 
 
 <div id="general-overall-guidelines">
+<div id="overall-guidelines">
 ## Overall Guidelines
 </div>
-
+</div>
 
 These [Guidelines](guidelines.html) are **hints** and **suggestions**, **NOT** [Rules](rules.html).
 
@@ -586,7 +601,7 @@ Jump to: [top](#)
 
 <div id="likes">
 <div id="dislikes">
-## Our Likes and Dislikes:
+## Our Likes and Dislikes
 </div>
 </div>
 
@@ -642,7 +657,13 @@ If you do include a `try.alt.sh` then **PLEASE** remove the `try.alt` rule in th
 If you don't have a prog.alt.c, then **PLEASE** remove the `try.alt` rule as well.
 </p>
 
+
+Jump to: [top](#)
+
+
+<div id="about-cpp">
 ### About C preprocessor
+</div>
 
 Doing masses of `#define`s to obscure the source has become 'old'.  We
 tend to 'see thru' masses of `#define`s due to our pre-processor tests
@@ -679,7 +700,9 @@ On 28 January 2007, the Judges rescinded the requirement that the
 `#` in a C preprocessor directive must be the 1st non-whitespace byte.
 
 
+<div id="about-compilers">
 ### About compilers
+</div>
 
 We tend to **like _less_** a submission that requires either
 `gcc` **OR** `clang`.  **We _prefer_ submissions** that can compile
@@ -693,9 +716,11 @@ if `gcc` and/or `clang` do not support it.  We **suggest**
 that you not use any really obscure compiler flags if you can help it.
 
 
-<div id="nested-functions"></div>
-
+<div id="about-nested-functions">
+<div id="nested-functions">
 ### About nested functions
+</div>
+</div>
 
 One side effect of the above is that you cannot assume the use
 of nested functions such as:
@@ -716,7 +741,10 @@ actually implemented in **BOTH** `gcc` **AND** `clang`.
 
 We **DISLIKE** submissions that require the use of `-fnested-functions`.
 
+
+<div id="about-variadic-functions">
 ### About variadic functions
+</div>
 
 If your submission uses functions that have a variable number of
 arguments, **be careful**. Systems implement `va_list` in a wide variety
@@ -734,11 +762,17 @@ In particular, do not treat `va_list` variables as if they were a `char **`.
 
 We **DISLIKE** the use of `varargs.h`.  Use `stdarg.h` instead.
 
+
+<div id="about-io">
 ### About I/O
+</div>
 
 We **DISLIKE** the use of `gets(3)`.  Use `fgets(3)` instead.
 
+
+<div id="about-tarballs">
 ### About tarballs
+</div>
 
 We tend to **DISLIKE** the blatant use of tarballs in an attempt to simply get
 around the extra file number limit. We realize there may be cases where a
@@ -750,13 +784,18 @@ Using a mass of `goto`s to obfuscate your code has become 'old' and is unlikely
 to make it through the final rounds, if it even gets that far.
 </p>
 
+
+<div id="about-stdib">
 ### About stdlib
+</div>
 
 The `exit(3)` function returns `void`.  Some broken systems have `exit(3)`
 return `int`; your submission should assume that `exit(3)` returns a `void`.
 
 
-### What it means to be small.
+<div id="small">
+### What it means to be small
+</div>
 
 Small programs are best when they are short, obscure and concise.
 While such programs are not as complex as other winners, they do
@@ -795,7 +834,9 @@ Your source code, post-pre-processing, should not exceed the size of
 [Microsoft Windows](https://en.wikipedia.org/wiki/Microsoft_Windows). :-)
 
 
+<div id="about-environment">
 ### About environment
+</div>
 
 We tend to **DISLIKE** programs that:
 
@@ -894,7 +935,9 @@ Initialized char arrays are OK to write over.  For instance, this is OK:
 ```
 
 
+<div id="about-x">
 ### About X
+</div>
 
 X client submissions should be as portable as possible.  Submissions that
 adapt to a wide collection of environments will be favored.  For
@@ -924,7 +967,9 @@ in the your `remarks.md` file.  They should also not depend on any
 particular window manager.
 
 
+<div id="about-curses">
 ### About Curses
+</div>
 
 One should restrict libcurses to portable features found on both BSD
 and Linux curses.
@@ -935,7 +980,9 @@ If you do `#include <curses.h>` make **CERTAIN** you link in curses (i.e.
 </p>
 
 
+<div id="iscellaneous">
 ### Miscellaneous
+</div>
 
 While we recognize that UNIX is not a universal operating system, the contest
 does have a bias towards such systems.  In an effort to expand the scope of the
@@ -1324,7 +1371,6 @@ FAQ on "[What is the mkiocccentry tool, how do I obtain it and how do I use it](
 
 
 Jump to: [top](#)
-
 
 
 <div id="fun">
