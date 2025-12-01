@@ -1,4 +1,4 @@
-This quick start guide is version **28.0.2 2025-03-12**.
+This quick start guide is version **29.0.0 2025-11-30**.
 
 <div id="enter_questions">
 <div id="enter">
@@ -82,7 +82,7 @@ for assistance.
 Using the **Username** and **Initial password** you receive via email in
 [step 3](#step_3), you need to login to the [IOCCC submit server](https://submit.ioccc.org).
 
-**IMPORTANT NOTE**: You must change your password **WITHIN 72 HOURS**
+**IMPORTANT NOTE**: You must change your password **WITHIN 14 DAYS**
 from when one of the [IOCCC judges](judges.html) sent that email.
 
 **NOTE**: The [IOCCC submit server](https://submit.ioccc.org)

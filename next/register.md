@@ -15,7 +15,7 @@ For details see the "[how the contest status impacts registration](#status_impac
 ## Step B: Enter your email address
 </div>
 
-- Visit the [IOCCC28 registration page](https://www.freelists.org/list/ioccc28-reg)
+- Visit the [IOCCC29 registration page](https://www.freelists.org/list/ioccc29-reg)
 - Enter your email address
 - Select ((Subscribe))
 - Click the **((Next >>))** button
@@ -40,7 +40,7 @@ Look for an automated email message from the FreeLists List Manager (_ecartis@fr
 
 The email message will have the subject:
 
-> Subscription consent for 'ioccc28-reg'
+> Subscription consent for 'ioccc29-reg'
 
 **NOTE**: be aware that some email services, applications and/or Internet
 Service Providers (ISP) modify email subject lines.  For example, some string
@@ -56,7 +56,7 @@ you have tried a few times, [Contact the IOCCC](../contact.html) to ask the
 [IOCCC judges](../judges.html) for assistance.
 
 This email will contain a URL of the form:
-`https://www.freelists.org/v/ioccc28-reg/SOME-RANDOM-STUFF`.
+`https://www.freelists.org/v/ioccc29-reg/SOME-RANDOM-STUFF`.
 
 **NOTE**: If you prefer to **NOT** click links in email, simply copy that
 URL from your "Subscription consent email" and paste it into your browser.
@@ -99,7 +99,7 @@ You should receive an automated Welcome message from the FreeLists List Manager
 (_ecartis@freelists.org_) with the subject:
 
 ```
-    Welcome to 'ioccc28-reg'
+    Welcome to 'ioccc29-reg'
 ```
 
 Read the "Welcome" email.
