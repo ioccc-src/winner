@@ -934,6 +934,27 @@ Initialized char arrays are OK to write over.  For instance, this is OK:
     b[9] = 'k';     /* modifying an initialized char array is OK */
 ```
 
+We prefer code that can run on either a 64-bit or 32-bit
+processor.  However, it is **UNWISE **to assume it will run on an
+some Intel-like x86 architecture**.
+
+While programs that only run in a specific word size are OK, if you have
+to pick, choose a 64-bit word size.
+
+If your submission **MUST** run only on a 64-bit or 32-bit architecture,
+then you **MUST** specify the `-arch` on your command line
+(see `ARCH` in the example
+Makefile, described in [Makefile section](#makefile)).  Do not assume a
+processor word size without specifying `-arch`.  For example:
+
+``` <!---make-->
+    ARCH= -m64
+```
+
+Note, however, that some platforms will not necessarily support some
+architectures. For instance, more recent versions of `macOS` do **NOT** support
+32-bit, and more than zero Judges use it!
+
 
 <div id="about-x">
 ### About X
@@ -979,35 +1000,39 @@ If you do `#include <curses.h>` make **CERTAIN** you link in curses (i.e.
 `-lcurses`) and not ncurses (i.e. `-lncurses`).
 </p>
 
+Jump to: [top](#)
 
-<div id="iscellaneous">
-### Miscellaneous
+
+<div id="about_tab">
+### About ASCII TAB
 </div>
 
-While we recognize that UNIX is not a universal operating system, the contest
-does have a bias towards such systems.  In an effort to expand the scope of the
-contest, we phrase our bias to favor the [Single UNIX
-Specification](https://en.wikipedia.org/wiki/Single_UNIX_Specification)
-(UNIX-like).
+We **DISLIKE** the use of ASCII tab characters in markdown files, such as in the required `remarks.md` file.
 
-You are **well advised** to submit code that conforms to the [Single UNIX
-Specification Version 4](https://unix.org/version4/overview.html).
+We don't mind the use of ASCII tab characters in your C code.  Feel free
+to use ASCII tab characters if that suits your obfuscation needs.  If is
+perfectly **OK** to use tab characters elsewhere in your submission, just not in
+markdown files as this tends annoy us when it comes time to
+rendering your markdown content as it complicates the process.
 
-To quote the [Judges](../judges.html):
+If you do use ASCII tab characters in your non-markdown files, be
+aware that some people may use a tab stop that is different than the common 8
+character tab stop.
 
-We **LIKE** programs that:
+**PLEASE** observe our [Markdown Guidelines](../markdown.html)
+when forming your submission's `remarks.md` file.  And if your submission
+contains additional markdown files, please follow those same Guidelines for
+those files. See also
+[Rule 4 - Required files](rules.html#rule4-required-files),
+and the
+FAQ on "[markdown](../faq.html#markdown)".
 
-* are as concise and small as they need to be
-* do something at least quasi-interesting
-* are portable
-* are unique or novel in their obfuscation style
-* make use of a **NUMBER OF DIFFERENT TYPES OF OBFUSCATIONS!**  **<== HINT!!**
-* make us laugh and/or throw up  :-)  (humor really helps!)
-* make us want to eat good chocolate
 
-Some types of programs can't excel (anti-tm) in some areas.  Your
-program doesn't have to excel in all areas, but doing well in several
-areas really does help.
+Jump to: [top](#)
+
+<div id="remarks">
+### About remarks.md
+</div>
 
 You are better off explaining what your submission does in your
 `remarks.md` file section rather than leaving it obscure for the
@@ -1039,30 +1064,50 @@ about why you think your submission is obfuscated.  On the other hand,
 if you are pushing up against the size limits, you may be forced
 into creating a dense blob. Such are the trade-offs that obfuscators face!
 
-We prefer code that can run on either a 64-bit or 32-bit
-processor.  However, it is **UNWISE **to assume it will run on an
-some Intel-like x86 architecture**.
-
-While programs that only run in a specific word size are OK, if you have
-to pick, choose a 64-bit word size.
-
-If your submission **MUST** run only on a 64-bit or 32-bit architecture,
-then you **MUST** specify the `-arch` on your command line
-(see `ARCH` in the example
-Makefile, described in [Makefile section](#makefile)).  Do not assume a
-processor word size without specifying `-arch`.  For example:
-
-``` <!---make-->
-    ARCH= -m64
-```
-
-Note, however, that some platforms will not necessarily support some
-architectures. For instance, more recent versions of `macOS` do **NOT** support
-32-bit, and more than zero Judges use it!
-
 If there are limitations in your submission, you are highly encouraged
 to note such limitations in your `remarks.md` file.  For example if your
 submission factors values up to a certain size, you might want to state:
+
+We **LIKE** reading `remarks.md` files, especially if they contain
+useful, informative, and even humorous content about your submission.  Yes, this
+is a **hint**.  :-)
+
+We **RECOMMEND** you put a reasonable amount effort into the content of the
+`remarks.md` file: it is a required file for a reason.  :-)
+
+Try to be even more creative!
+
+Jump to: [top](#)
+
+
+<div id="miscellaneous">
+### Miscellaneous
+</div>
+
+While we recognize that UNIX is not a universal operating system, the contest
+does have a bias towards such systems.  In an effort to expand the scope of the
+contest, we phrase our bias to favor the [Single UNIX
+Specification](https://en.wikipedia.org/wiki/Single_UNIX_Specification)
+(UNIX-like).
+
+You are **well advised** to submit code that conforms to the [Single UNIX
+Specification Version 4](https://unix.org/version4/overview.html).
+
+To quote the [Judges](../judges.html):
+
+We **LIKE** programs that:
+
+* are as concise and small as they need to be
+* do something at least quasi-interesting
+* are portable
+* are unique or novel in their obfuscation style
+* make use of a **NUMBER OF DIFFERENT TYPES OF OBFUSCATIONS!**  **<== HINT!!**
+* make us laugh and/or throw up  :-)  (humor really helps!)
+* make us want to eat good chocolate
+
+Some types of programs can't excel (anti-tm) in some areas.  Your
+program doesn't have to excel in all areas, but doing well in several
+areas really does help.
 
 >   This submission factors values up `2305567963945518424753102147331756070`.
 Attempting to factor larger values will produce unpredictable results.
@@ -1073,7 +1118,7 @@ The [Judges](../judges.html) might try to factor the value -5, so you want to mi
 `2305567963945518424753102147331756070`. Attempting to factor large values will
 produce unpredictable results.
 
-However the [Judges](../judges.html) might try to also factor 0, so you want to might state:
+However the [Judges](../judges.html) might try to also factor 0, so you might want to state:
 
 >   This submission factors values between 1 and
 `2305567963945518424753102147331756070`.  Attempting to factor values outside
@@ -1105,36 +1150,6 @@ and state:
 >   This submission attempts to a factor value of any size provided that the
 program is given enough time and memory.  If the value is not a proper integer,
 the program might insult a fish named Eric.
-
-We **DISLIKE** the use of ASCII tab characters in markdown files, such as in the required `remarks.md` file.
-
-We don't mind the use of ASCII tab characters in your C code.  Feel free
-to use ASCII tab characters if that suits your obfuscation needs.  If is
-perfectly **OK** to use tab characters elsewhere in your submission, just not in
-markdown files as this tends annoy us when it comes time to
-rendering your markdown content as it complicates the process.
-
-If you do use ASCII tab characters in your non-markdown files, be
-aware that some people may use a tab stop that is different than the common 8
-character tab stop.
-
-**PLEASE** observe our [Markdown Guidelines](../markdown.html)
-when forming your submission's `remarks.md` file.  And if your submission
-contains additional markdown files, please follow those same Guidelines for
-those files. See also
-[Rule 4 - Required files](rules.html#rule4-required-files),
-and the
-FAQ on "[markdown](../faq.html#markdown)".
-
-We **LIKE** reading `remarks.md` files, especially if they contain
-useful, informative, and even humorous content about your submission.  Yes, this
-is a **hint**.  :-)
-
-We **RECOMMEND** you put a reasonable amount effort into the content of the
-`remarks.md` file: it is a required file for a reason.  :-)
-
-Try to be even more creative!
-
 
 Jump to: [top](#)
 
