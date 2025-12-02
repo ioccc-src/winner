@@ -73,7 +73,9 @@ submitting to the IOCCC have become more adept in obfuscation and have
 become more skilled in the programming in the C language.
 
 
+<div id="rule2">
 ### Code size and Rule 2
+</div>
 
 We were pleased to observe that while the [IOCCC size limit](../faq.html#size_rule_history)
 increased by about 21%, we received many submissions that were well under the new
