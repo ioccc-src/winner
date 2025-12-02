@@ -26,6 +26,32 @@ Because the **IOCCC29**  was a substantial rewrite, only **important
 changes** from **IOCCC28** have been marked.
 </p>
 
+<div id="guidelines">
+# Guidelines
+</div>
+
+These [Guidelines](guidelines.html) are **hints** and **suggestions**,
+**NOT** [Rules](rules.html).
+
+While submissions that violate the [Guidelines](guidelines.html) are
+allowed, submissions that remain within the
+[Guidelines](guidelines.html) are preferred.
+
+You are encouraged to review the following [FAQs](../faq.html):
+
+* [How to enter the IOCCC](../quick-start.html#enter)
+
+* [Obtaining and compiling the most recent mkiocccentry
+toolkit](../faq.html#mkiocccentry)
+
+* [How to upload your submission](./submit.html)
+
+While the contest is **[open](../faq.html#open)**, you may modify your
+previously uploaded submission by rebuilding your submission with the
+[mkiocccentry toolkit](https://github.com/ioccc-src/mkiocccentry), and
+then re-uploading it to **the same slot number** on the [submit
+server](https://submit.ioccc.org).
+
 Be sure to read the [Rules](rules.html).
 
 
@@ -212,10 +238,10 @@ such as:
 * Etc.
 
 The IOCCC has a rich history of remarkable winning entries created by
-authors who skillfully employed various techniques to develop their
-code.  If you do make use of such tools or services, then we
-**ENCOURAGE you to describe how you used such tools** in your
-`remarks.md` file.
+authors who skillfully employed various techniques (often their own
+tools) to develop their code.  If you do make use of such tools or
+services, then we **ENCOURAGE you to describe how you used such tools**
+in your `remarks.md` file.
 
 <p class="leftbar">
 In short: you created it, you own it, its an original work **OR** you have
@@ -237,7 +263,9 @@ Jump to: [top](#)
 </div>
 
 Do **NOT** register more than one account just to try and get around
-the limit on the number of submission slots.
+the limit on the number of submission slots, because if you do and we
+discover that you did so your submissions will be rejected for
+violating the rules.
 
 
 Jump to: [top](#)
@@ -569,28 +597,6 @@ Jump to: [top](#)
 </div>
 </div>
 
-These [Guidelines](guidelines.html) are **hints** and **suggestions**,
-**NOT** [Rules](rules.html).
-
-While submissions that violate the [Guidelines](guidelines.html) are
-allowed, submissions that remain within the
-[Guidelines](guidelines.html) are preferred.
-
-You are encouraged to review the following [FAQs](../faq.html):
-
-* [How to enter the IOCCC](../quick-start.html#enter)
-
-* [Obtaining and compiling the most recent mkiocccentry
-toolkit](../faq.html#mkiocccentry)
-
-* [How to upload your submission](./submit.html)
-
-While the contest is **[open](../faq.html#open)**, you may modify your
-previously uploaded submission by rebuilding your submission with the
-[mkiocccentry toolkit](https://github.com/ioccc-src/mkiocccentry), and
-then re-uploading it to **the same slot number** on the [submit
-server](https://submit.ioccc.org).
-
 <p class="leftbar">
 The **official locale** of the **IOCCC** is **C**.
 </p>
@@ -612,6 +618,7 @@ apply a number of tests to a submission:
 * examine the algorithm
 * compile it (with flags to enable all warnings)
 * execute it
+* ...and various other things only we know about :-)
 
 You should consider how your submission looks in each of the above
 tests.  You should ask yourself if your submission remains obscure
@@ -652,7 +659,7 @@ Of course, a correctly working submission might be better.
 We tend to look down on a [prime
 number](https://en.wikipedia.org/wiki/Prime_number) printer that claims
 that 16 is a prime number.  Clever people will note that 16 might be
-prime under certain conditions.  ;-) Wise people, when submitting
+prime under certain conditions.  :-) Wise people, when submitting
 something clever will **fully explain such cleverness** in their
 submission's `remarks.md` file.
 
@@ -666,6 +673,54 @@ an appropriate level of obfuscation.
 
 A clean looking program with misleading comments and variable names
 might be a **VERY GOOD START** to a great submission!
+
+Try to avoid submissions that play music that some people believe is
+copyrighted music.
+
+Did we remember to indicate that programs that blatantly use some
+complex state machine to do something simple, are boring?  We think we
+did. :-)
+
+Given two versions of the same program, one that is a compact blob of
+code, and the other that is formatted more like a typical C program, we
+tend to favor the second version.  Of course, a third version of the
+same program that is formatted in an interesting and/or obfuscated way,
+would definitely win over the first two!
+
+Remember, you can submit more than one submission.  See the
+[Rules](rules.html) for details (in particular, [Rule 8 - Submitting
+requirements](rules.html#rule8-submitting-requirements)).
+
+Please note that the C source below, besides lacking in obfuscation, is
+**NOT** the smallest C source file that when compiled and run, dumps
+core:
+
+``` <!---c-->
+    main;
+```
+
+Unless you specify `-fwritable-strings` (see `COTHER` in the example
+Makefile, described in the
+FAQ on "[What are the detailed recommendations for a submission
+Makefile](../faq.html#makefile_details)"), do not
+assume this sort of code will work:
+
+``` <!---c-->
+    char *T = "So many primes, so little time!";
+    ...
+    T[14] = ';';    /* modifying a string requires: -fwritable-strings */
+```
+
+Even so, one should probably not assume that this is universally
+accepted.
+
+Initialized char arrays are OK to write over.  For instance, this is
+OK:
+
+``` <!---c-->
+    char b[] = "Is this OK";
+    b[9] = 'k';     /* modifying an initialized char array is OK */
+```
 
 
 Jump to: [top](#)
@@ -742,6 +797,37 @@ rule as well.
 </p>
 
 
+We tend to **DISLIKE** programs that:
+
+* are very hardware specific
+* are very OS version specific (`index(3)`/`strchr(3)` differences are
+OK, but sockets/streams specific code is likely not to be)
+* dump core or have compiler warnings (it is OK only if
+you warn us in your `remarks.md` file)
+* won't compile or run in a [Single UNIX
+Specification](https://en.wikipedia.org/wiki/Single_UNIX_Specification)
+(UNIX-like) environment
+* depend on a utility or application not normally found
+in systems that conform to the [Single UNIX
+Specification](https://en.wikipedia.org/wiki/Single_UNIX_Specification)
+* abuse the build file to get around the size limit
+* obfuscate by use of ANSI trigraphs
+* obfuscate by use of digraphs
+* <p class="leftbar">obfuscate by use of `goto`s</p>
+* are larger than they need to be
+* have more lines than they need to have
+* are "blob-ier" (just a pile of unformatted C code) than they need to be
+* are rather similar to **[previous winners](../years.html)** :-(
+* are **identical** to **[previous losers](https://en.wikipedia.org/wiki/Null_device)** :-)
+* that mandate the exclusive use of a specific Integrated Development Environment (IDE)
+
+In order to encourage submission portability, we **DISLIKE**
+submissions that fail to build unless one is using an IDE. For example,
+do not mandate that one must use Microsoft Visual Studio to compile
+your submission.
+
+
+
 Jump to: [top](#)
 
 
@@ -779,8 +865,8 @@ and **NOT** like this:
 
 We really **DISLIKE** submissions that make blatant use of `#include`
 of large data files to get around the source code size limit. This does
-not mean `#include` of standard header files, just data files you
-provide.
+not mean `#include` of standard header files, just files you provide,
+or system files such as `/usr/share/dict/words`.
 
 On 28 January 2007, the Judges rescinded the requirement that the `#`
 in a C preprocessor directive must be the 1st non-whitespace byte.
@@ -871,12 +957,14 @@ file.
 
 <div id="gotos">
 <div id="goto">
+### On `goto`s
+</div>
+</div>
+
 <p class="leftbar">
-Using a mass of `goto`s to obfuscate your code has become 'old' and is
+Using a mass of `goto`s to obfuscate your code has become _old_ and is
 unlikely to make it through the final rounds, if it even gets that far.
 </p>
-</div>
-</div>
 
 
 <div id="about-stdib">
@@ -900,24 +988,23 @@ a useful purpose: they are often the only program that people attempt
 to completely understand.  For this reason, we look for programs that
 are compact, and are instructional.
 
+Programs that claim to be the smallest C source that does something, really
+better be the smallest such program or they risk being rejected because
+they do not work as documented.
+
 We suggest that you avoid trying for the '**smallest self-replicating**'
 source.  The smallest, a [zero byte entry](../1994/smr/index.html), won in
 [1994](../years.html#1994).
 
-
 <div id="one-liner">
-### What a one-liner means
+## What a one-liner means
 </div>
 
 One line programs should be short one line programs: say around **80**
 to **132** bytes long.  Going well beyond **132** bytes is a bit too
 long to be called a one-liner in our vague opinion.
-Programs that claim to be the smallest C source that does something, really
-better be the smallest such program or they risk being rejected because
-they do not work as documented.
-
 <div id="blobs">
-### About blobs of code
+## About blobs of code
 </div>
 
 We want to get away from source that is simply a compact blob of
@@ -926,6 +1013,10 @@ bytes. **REALLY TRY** to be more creative than blob coding. **HINT!**
 Unless you are cramped for space, or unless you are entering the
 '**Best one liner**' category, we suggest that you format your program
 in a more creative way than simply forming excessively long lines.
+
+<div id="size">
+## About size restrictions
+</div>
 
 The `Makefile` should not be used to try and get around the size limit.
 It is one thing to make use of a several `-D`s on the compile line to
@@ -944,34 +1035,6 @@ Your source code, post-pre-processing, should not exceed the size of
 ### About environment
 </div>
 
-We tend to **DISLIKE** programs that:
-
-* are very hardware specific
-* are very OS version specific (`index(3)`/`strchr(3)` differences are
-OK, but sockets/streams specific code is likely not to be)
-* dump core or have compiler warnings (it is OK only if
-you warn us in your `remarks.md` file)
-* won't compile or run in a [Single UNIX
-Specification](https://en.wikipedia.org/wiki/Single_UNIX_Specification)
-(UNIX-like) environment
-* depend on a utility or application not normally found
-in systems that conform to the [Single UNIX
-Specification](https://en.wikipedia.org/wiki/Single_UNIX_Specification)
-* abuse the build file to get around the size limit
-* obfuscate by use of ANSI trigraphs
-* obfuscate by use of digraphs
-* are larger than they need to be
-* have more lines than they need to have
-* are "blob-ier" (just a pile of unformatted C code) than they need to be
-* are rather similar to **[previous winners](../years.html)** :-(
-* are **identical** to **[previous losers](https://en.wikipedia.org/wiki/Null_device)** :-)
-* that mandate the exclusive use of a specific Integrated Development Environment (IDE)
-
-In order to encourage submission portability, we **DISLIKE**
-submissions that fail to build unless one is using an IDE. For example,
-do not mandate that one must use Microsoft Visual Studio to compile
-your submission.
-
 The program must compile and link cleanly in a [Single UNIX
 Specification](https://en.wikipedia.org/wiki/Single_UNIX_Specification)
 (UNIX-like) environment. Therefore do not assume the system has a
@@ -980,6 +1043,10 @@ Specification](https://en.wikipedia.org/wiki/Single_UNIX_Specification)
 ``` <!---c-->
     #include <windows.h>  /* we DISLIKE this */
 ```
+
+Other windows, on the other hand, might be OK: especially where "**X
+marks the spot**". Yet on the third hand, windows are best when they
+are "unseen" (i.e., not dirty). :-)
 
 <p class="leftbar">
 You should try to restrict commands used in the build file to commands
@@ -996,54 +1063,6 @@ program is reasonably portable.
 
 We prefer programs that are portable across a wide variety of UNIX-like
 operating systems (e.g., Linux, GNU Hurd, BSD, UNIX, macOS, etc.).
-
-Try to avoid submissions that play music that some people believe is
-copyrighted music.
-
-Did we remember to indicate that programs that blatantly use some
-complex state machine to do something simple, are boring?  We think we
-did. :-)
-
-Given two versions of the same program, one that is a compact blob of
-code, and the other that is formatted more like a typical C program, we
-tend to favor the second version.  Of course, a third version of the
-same program that is formatted in an interesting and/or obfuscated way,
-would definitely win over the first two!
-
-Remember, you can submit more than one submission.  See the
-[Rules](rules.html) for details (in particular, [Rule 8 - Submitting
-requirements](rules.html#rule8-submitting-requirements)).
-
-Please note that the C source below, besides lacking in obfuscation, is
-**NOT** the smallest C source file that when compiled and run, dumps
-core:
-
-``` <!---c-->
-    main;
-```
-
-Unless you specify `-fwritable-strings` (see `COTHER` in the example
-Makefile, described in the
-FAQ on "[What are the detailed recommendations for a submission
-Makefile](../faq.html#makefile_details)"), do not
-assume this sort of code will work:
-
-``` <!---c-->
-    char *T = "So many primes, so little time!";
-    ...
-    T[14] = ';';    /* modifying a string requires: -fwritable-strings */
-```
-
-Even so, one should probably not assume that this is universally
-accepted.
-
-Initialized char arrays are OK to write over.  For instance, this is
-OK:
-
-``` <!---c-->
-    char b[] = "Is this OK";
-    b[9] = 'k';     /* modifying an initialized char array is OK */
-```
 
 We prefer code that can run on either a 64-bit or 32-bit processor.
 However, it is **UNWISE **to assume it will run on an some Intel-like
@@ -1070,25 +1089,29 @@ architectures. For instance, more recent versions of `macOS` do **NOT**
 support 32-bit, and more than zero Judges use it!
 
 
+
 <div id="about-x">
 ### About X
 </div>
 
 X client submissions should be as portable as possible.  Submissions
-that adapt to a wide collection of environments will be favored.  For
-example, don't depend on a particular type or size of display.  Don't
-assume the use of a particular browser.  Instead assume a generic
+that adapt to a wide collection of environments will be favored.
+
+For example, don't depend on a particular type or size of display.
+
+Don't assume the use of a particular browser.  Instead assume a generic
 browser that forms to a widely used [W3C
-standard](https://www.w3.org/standards/).  Don't assume a particular
-sound sub-system or video driver is installed in the OS. Instead, make
-use of a well known and widely available open source program (one that
-actually works) to display audio/visual data.
+standard](https://www.w3.org/standards/).
+
+Don't assume a particular sound sub-system or video driver is installed
+in the OS. Instead, make use of a well known and widely available open
+source program (one that actually works) to display audio/visual data.
 
 X client submissions should avoid using X related libraries and
 software that are not in wide spread use.
 
 As of Red Hat RHEL9.0, the X.org server is deprecated. See the FAQ on
-"[Xorg deprecation"](../faq.html#Xorg_deprecated)" for more details.
+"[Xorg deprecation](../faq.html#Xorg_deprecated)" for more details.
 This does not mean that a submission using this will necessarily be
 rejected, but it would be better if it can support Wayland in some way
 or another.
@@ -1099,8 +1122,10 @@ Use an open source toolkit that is widely and freely available instead.
 
 X client submissions should try to not to depend on particular items in
 `.Xdefaults`.  If you must do so, be sure to note the required lines in
-the your `remarks.md` file.  They should also not depend on any
-particular window manager.
+the your `remarks.md` file.
+
+X client submissions should also not depend on any particular window
+manager.
 
 
 <div id="about-curses">
@@ -1136,7 +1161,7 @@ If you do use ASCII tab characters in your non-markdown files, be aware
 that some people may use a tab stop that is different than the common 8
 character tab stop.
 
-**PLEASE** observe our [Markdown Guidelines](../markdown.html) when
+**PLEASE** observe our [markdown guidelines](../markdown.html) when
 forming your submission's `remarks.md` file.  And if your submission
 contains additional markdown files, please follow those same Guidelines
 for those files.
@@ -1168,17 +1193,18 @@ submission has some very subtle obfuscations that we might otherwise
 overlook.  **<<-- Hint!**
 
 Anyone can format their code into a dense blob.  A really clever author
-will try format their submission using a "normal" formatting style such
-that at first glance (if you squint and don't look at the details) the
-code might pass for non-obfuscated C.  Deceptive comments, and
+will try formatting their submission using a "normal" formatting style
+such that at first glance (if you squint and don't look at the details)
+the code might pass for non-obfuscated C.  Deceptive comments, and
 misleading formatting, in some cases, may be a plus.  On the other
 hand, a misleading code style requires more source bytes.
 
 If you do elect to use misleading formatting and comments, we suggest
 you remark on this point in your `remarks.md` where you talk about why
-you think your submission is obfuscated.  On the other hand, if you are
-pushing up against the size limits, you may be forced into creating a
-dense blob. Such are the trade-offs that obfuscators face!
+you think your submission is obfuscated.
+
+If you are pushing up against the size limits, you may be forced into
+creating a dense blob. Such are the trade-offs that obfuscators face!
 
 We **LIKE** reading `remarks.md` files, especially if they contain
 useful, informative, and even humorous content about your submission.
@@ -1186,8 +1212,6 @@ Yes, this is a **hint**. :-)
 
 We **RECOMMEND** you put a reasonable amount effort into the content of
 the `remarks.md` file: it is a required file for a reason.  :-)
-
-Try to be even more creative!
 
 Jump to: [top](#)
 
@@ -1220,6 +1244,8 @@ We **LIKE** programs that:
 Some types of programs can't excel (anti-tm) in some areas.  Your
 program doesn't have to excel in all areas, but doing well in several
 areas really does help.
+
+Try to be even more creative!
 
 If there are limitations in your submission, you are highly encouraged
 to note such limitations in your `remarks.md` file.  For example if
@@ -1305,11 +1331,11 @@ The `mkiocccentry(1)` tool runs a number of checks by way of these
 [mkiocccentry toolkit](https://github.com/ioccc-src/mkiocccentry)
 tools:
 
-* iocccsize(1)
-* txzchk(1)
-* fnamchk(1)
-* chksubmit(1)
-* chkentry(1)
+* `iocccsize(1)`
+* `txzchk(1)`
+* `fnamchk(1)`
+* `chksubmit(1)`
+* `chkentry(1)`
 
 Do **NOT** use `txzchk(1)` or `fnamchk(1)` command line options that
 are labelled "**for TESTING purposes**" in their respective man pages.
@@ -1341,7 +1367,7 @@ having to install them first.
 
 So that you do not have to repeatedly answer all the `mkiocccentry(1)`
 questions, use `mkiocccentry -a answers ...` to create a file
-containing the answers you first give, so later enter `mkiocccentry -i
+containing the answers you first give, and later enter `mkiocccentry -i
 answers ...` to reuse those same answers.
 
 The `mkiocccentry -A answers ...` does the same thing except that the
@@ -1350,19 +1376,21 @@ The `mkiocccentry -A answers ...` does the same thing except that the
 The `mkiocccentry -i answers ...` will still be required to confirm
 "_Yes/No_" questions.
 
-Use `mkiocccentry -Y -i answers ..` to force a yes answers with **great
+Use `mkiocccentry -Y -i answers ...` to force a yes answers with **great
 caution** because it might force a yes answer to something you do
 **NOT** want, such as a change in your code that violates a detected
 rule.
 
-The `mkiocccentry -i answers ..` will still be required to confirm
-"_Yes/No_" questions.  While `mkiocccentry -Y -i answers ..` will force
+The `mkiocccentry -i answers ...` will still be required to confirm
+"_Yes/No_" questions.  While `mkiocccentry -Y -i answers ...` will force
 yes answers, use with **great caution**, because it might force a yes
 answer to something you do **NOT** want.
 
 To help with not having to repeatedly enter a UUID, put your UUID into
 a file and use `mkiocccentry -u uuidfile ...`, or use `mkiocccentry -U
-UUID ...` to give the `UUID` on the command line.
+UUID ...` to give the `UUID` on the command line. If you also use `-a
+answers` or `-A answers` the UUID will be recorded, assuming it is a
+valid UUID.
 
 If you wish to **test** that your submission passes the
 `mkiocccentry(1)` tests without having to type in answers each time,
@@ -1401,13 +1429,17 @@ detects a number of issues (such as [Rule 2 - Size
 restrictions](rules.html#rule2-size)) that you may ignore, however
 ignoring such issues **comes with a SIGNIFICANT level of risk!**
 
-Once the tarball is packaged it will run `txzchk(1)`, which will also
-run `fnamchk(1)`, as part of its algorithm.
+Once the submission directory has been constructed the
+`mkiocccentry(1)` tool will run `chksubmit(1)` to verify everything is
+well, **before** forming the tarball.
+
+Once the tarball is formed `mkiocccentry(1)` will run `txzchk(1)`,
+which will also run `fnamchk(1)`, as part of its algorithm.
 
 <p class="leftbar">
 The use of `mkiocccentry -W ...` is **highly discouraged** as this may
 ignore warnings about a problem that may cause your submission to be
-**REJECTED!**.
+**REJECTED!**
 </p>
 
 <p class="leftbar">
@@ -1450,12 +1482,12 @@ they are found directly under the top level directory (`topdir`):
 </p>
 
 <p class="leftbar">
-* README.md
-* index.html
-* prog
-* prog.alt
-* prog.alt.o
-* prog.orig.c
+* `README.md`
+* `index.html`
+* `prog`
+* `prog.alt`
+* `prog.alt.o`
+* `prog.orig.c`
 * filenames matching the `[0-9][0-9][0-9][0-9]_*.tar.bz2` file glob
 </p>
 
@@ -1505,6 +1537,11 @@ This does not mean just 0 bytes but also that it **MUST** have
 **content**, and content that is relevant (e.g. a Makefile with just
 comments is **NOT** allowed). However, with the exception of the
 `Makefile`, the `mkiocccentry(1)` tool will **ONLY** check file size.
+</p>
+
+<p class="leftbar">
+On the other hand, `chksubmit(1)` will check that `.auth.json` and
+`.info.json` are valid.
 </p>
 
 <p class="leftbar">
@@ -1588,18 +1625,6 @@ At least one judge prefers to maintain the use of the
 world's time standard.  If your code prints time with seconds, we
 prefer that your code be capable of printing the time of day during a
 leap-second where the value in seconds after the minute mark is **60**.
-
-Other windows, on the other hand, might be OK: especially where "**X
-marks the spot**". Yet on the third hand, windows are best when they
-are "unseen" (i.e., not dirty). :-)
-
-The [Judges](../judges.html), as a group, have a history giving wide
-degree of latitude to reasonable submissions.  And recently they have
-had as much longitudinal variation as it is possible to have on
-[Earth](https://science.nasa.gov/earth/).  :-) Other windows, on the
-other hand, might be OK: especially where "**X marks the spot**".  Yet
-on the third hand, windows are best when they are "unseen" (i.e., not
-dirty).  :-)
 
 The [Judges](../judges.html), as a group, have a history giving wide
 degree of latitude to reasonable submissions.  And recently they have
