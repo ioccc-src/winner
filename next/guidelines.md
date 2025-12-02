@@ -13,7 +13,7 @@ writing by [contacting the Judges](../contact.html).
 # Guidelines Version
 
 <p class="leftbar">
-These Guidelines are version **29.05 2025-12-01**.
+These Guidelines are version **29.06 2025-12-01**.
 </p>
 
 <p class="leftbar">
@@ -42,7 +42,7 @@ file happens to also be a code for another language.
 We would prefer if you do not use `#include` statements,
 especially `#include` statements just to include lots of data,
 to get around the
-[Rule 2 - Size](rules.html#rule2-size-restrictions) restrictions
+[Rule 2 - Size restrictions](rules.html#rule2-size-restrictions)
 in an excessive way.
 </p>
 
@@ -50,7 +50,7 @@ in an excessive way.
 We would prefer if you do not require lots and lots of implicit defines on the C compiler command line
 (i.e., lots of `-Dfoo`, and `-Dcurds=whey` style command line args to the C compiler)
 to get around the
-[Rule 2 - Size](rules.html#rule2-size-restrictions) restrictions
+[Rule 2 - Size restrictions](rules.html#rule2-size-restrictions)
 in an excessive way.
 </p>
 
@@ -76,7 +76,7 @@ Jump to: [top](#)
 <div id="guideline2">
 <div id="guideline-2---size">
 <div id="guideline2-size">
-# Guidelines for [Rule 2 - Size](rules.html#rule2-size-restrictions) restrictions
+# Guidelines for [Rule 2 - Size restrictions](rules.html#rule2-size-restrictions)
 </div>
 </div>
 </div>
@@ -92,7 +92,7 @@ Your submission must satisfy **BOTH** the
 [Rule 2b - Net Size](rules.html#rule2b-net-size) rules.
 
 To check your code against
-[Rule 2 - Size](rules.html#rule2-size) restrictions, use the `iocccentry(1)` tool.
+[Rule 2 - Size restrictions](rules.html#rule2-size), use the `iocccentry(1)` tool.
 For example:
 
 ``` <!---sh-->
@@ -118,22 +118,28 @@ by the minimum required version of `iocccsize(1)` is preferred by the [Judges](.
 
 Make sure `iocccsize` does not flag any issues with your `prog.c`.
 
-**NOTE**: by default `iocccsize` will only report the [Rule 2 - Size](rules.html#rule2-size), unless the
+**NOTE**: by default `iocccsize` will only report the size, unless the
 code surpasses the limit.
 
 There a much less need to `#define` C reserved words in an effort
 to get around the size limits of
-[Rule 2 - Size](rules.html#rule2-size) restrictions
+[Rule 2 - Size restrictions](rules.html#rule2-size)
 because of the `iocccsize(1)` algorithm.
 
 Yes Virginia, **the previous guideline sentence is an important hint**!
+
+Don't expect the [Rule 2 - Size restrictions](rules.html#rule2-size) to
+[change any time soon](../faq.html#size_slow_change).
+
+See the
+FAQ on "[How has the Rule 2 size restrictions rule changed over the years?](../faq.html#size_rule_history)".
 
 
 Jump to: [top](#)
 
 
 <div id="guideline3">
-<div id="guideline-3---register">
+<div id="guideline3-register">
 # Guidelines for [Rule 3 - Register for the IOCCC](rules.html#rule3-register)
 </div>
 </div>
@@ -176,7 +182,7 @@ Jump to: [top](#)
 
 
 <div id="guideline7">
-<div id="guideline-7---original-work">
+<div id="guideline7-original">
 # Guidelines for [Rule 7 - Original Work](rules.html#rule7-original-work)
 </div>
 </div>
@@ -209,7 +215,7 @@ Jump to: [top](#)
 
 
 <div id="guideline8">
-<div id="guideline-8---submitting-requirements">
+<div id="guideline8-submitting">
 # Guidelines for [Rule 8 - Submitting requirements](rules.html#rule8-submitting-requirements)
 </div>
 </div>
@@ -222,7 +228,9 @@ Jump to: [top](#)
 
 <div id="guideline9">
 <div id="guideline9-no-interactive-compiling-allowed">
+<div id="guideline9-no-interactive">
 # Guidelines for [Rule 9 - No interactive compiling allowed](rules.html#rule-9---no-interactive-compiling-allowed)
+</div>
 </div>
 </div>
 
@@ -255,8 +263,10 @@ Jump to: [top](#)
 
 
 <div id="guideline11">
+<div id="guideline11-abuse">
 <div id="guideline-11---abuse">
 # Guidelines for [Rule 11 - Legal rule abuse](rules.html#rule11-legal-rule-abuse)
+</div>
 </div>
 </div>
 
@@ -338,17 +348,32 @@ Jump to: [top](#)
 </div>
 </div>
 
-no longer discourages the use of multibyte UTF-8 characters in `C` code.
+The IOCCC no longer discourages the use of multibyte UTF-8 characters in `C` code.
 
 
+<div id="guideline13">
+<div id="guideline13-nocr">
 # Guidelines for [Rule 13 - No carriage returns in prog.c](rules.html#rule-13---no-carriage-returns-in-prog.c)
+</div>
+</div>
 
 We **DISLIKE** C code with trailing control-M's (`\r` or `\015`) that results
-in compilation failures.  Some non-UNIX/non-Linux tools such as
-MS Visual C and MS Visual C++ leave trailing control-M's on lines.
-Users of such tools should strip off such control-M's before submitting
-their submissions.  In some cases tools have a "Save As" option that will
-prevent such trailing control-M's being added.
+in compilation failures.
+
+Some non-UNIX/non-Linux tools such as MS Visual C and MS Visual C++
+leave trailing control-M's on lines.  Users of such tools should strip
+off such control-M's before submitting their submissions.  In some cases
+tools have a "Save As" option that will prevent such trailing control-M's
+being added.
+
+If your `prog.c` is near the
+[Rule 2a Gross Size](rules.html#rule2a-gross-size) and/or
+[Rule 2b Net Size](rules.html#rule2b-net-size)
+limit, you are permitted to **NOT** end source with a newline.
+If you need to do this, please document that in your `remarks.md` file.
+
+If your complains about about not ending in a newline,
+please this in your `remarks.md` file.
 
 
 Jump to: [top](#)
@@ -1256,7 +1281,7 @@ to proceed with a default, however make sure the default is the **CORRECT** answ
 </p>
 
 The `mkiocccentry(1)` tool will use code from `iocccsize(1)` which detects a number of
-issues (such as [Rule 2 - Size](rules.html#rule2-size)) restrictions that you may ignore,
+issues (such as [Rule 2 - Size restrictions](rules.html#rule2-size)) that you may ignore,
 however ignoring such issues **comes with a SIGNIFICANT level of risk!**
 
 Once the tarball is packaged it will
@@ -1502,7 +1527,7 @@ We believe that Mark Twain's quote:
 <p class="leftbar">
 We do not recommend submitting [systemd](https://systemd.io) source code to the IOCCC,
 if nothing else because that code is likely to exceed
-[Rule 2 - Size](rules.html#rule2-size).
+[Rule 2 - Size restrictions](rules.html#rule2-size).
 This isn't to say that another highly compact and obfuscated
 replacement of `init(8)` would not be an interesting submission.
 </p>
@@ -1514,7 +1539,7 @@ is not an original work, unless you one of the
 [several mkiocccentry toolkit contributors](https://github.com/ioccc-src/mkiocccentry/graphs/contributors).
 in which case it is original!  :-)
 Even so, most of the programs in the toolkit exceed the
-[Rule 2 - Size](rules.html#rule2-size)
+[Rule 2 - Size restrictions](rules.html#rule2-size)
 so they wouldn't qualify for the contest anyway.
 </p>
 
