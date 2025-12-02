@@ -42,7 +42,7 @@ file happens to also be a code for another language.
 We would prefer if you do not use `#include` statements,
 especially `#include` statements just to include lots of data,
 to get around the
-[Rule 2 - Size restrictions](rules.html#rule2-size-restrictions)
+[Rule 2 - Size restrictions](rules.html#rule2-size)
 in an excessive way.
 </p>
 
@@ -50,7 +50,7 @@ in an excessive way.
 We would prefer if you do not require lots and lots of implicit defines on the C compiler command line
 (i.e., lots of `-Dfoo`, and `-Dcurds=whey` style command line args to the C compiler)
 to get around the
-[Rule 2 - Size restrictions](rules.html#rule2-size-restrictions)
+[Rule 2 - Size restrictions](rules.html#rule2-size)
 in an excessive way.
 </p>
 
@@ -74,10 +74,8 @@ Jump to: [top](#)
 
 
 <div id="guideline2">
-<div id="guideline-2---size">
 <div id="guideline2-size">
-# Guidelines for [Rule 2 - Size restrictions](rules.html#rule2-size-restrictions)
-</div>
+# Guidelines for [Rule 2 - Size restrictions](rules.html#rule2-size)
 </div>
 </div>
 
@@ -229,7 +227,7 @@ Jump to: [top](#)
 <div id="guideline9">
 <div id="guideline9-no-interactive-compiling-allowed">
 <div id="guideline9-no-interactive">
-# Guidelines for [Rule 9 - No interactive compiling allowed](rules.html#rule-9---no-interactive-compiling-allowed)
+# Guidelines for [Rule 9 - No interactive compiling allowed](rules.html#rule9-no-interactive)
 </div>
 </div>
 </div>
@@ -264,9 +262,7 @@ Jump to: [top](#)
 
 <div id="guideline11">
 <div id="guideline11-abuse">
-<div id="guideline-11---abuse">
 # Guidelines for [Rule 11 - Legal rule abuse](rules.html#rule11-legal-rule-abuse)
-</div>
 </div>
 </div>
 
@@ -343,8 +339,7 @@ Jump to: [top](#)
 
 <div id="guideline12">
 <div id="guideline12-utf8">
-# Guidelines for [Rule 12 - UTF-8](rules.html#rule-12---utf-8)
-[Rule 12 - UTF-8](rules.html#rule12-utf8)
+# Guidelines for [Rule 12 - UTF-8](rules.html#rule12-utf8)
 </div>
 </div>
 
@@ -353,7 +348,7 @@ The IOCCC no longer discourages the use of multibyte UTF-8 characters in `C` cod
 
 <div id="guideline13">
 <div id="guideline13-nocr">
-# Guidelines for [Rule 13 - No carriage returns in prog.c](rules.html#rule-13---no-carriage-returns-in-prog.c)
+# Guidelines for [Rule 13 - No carriage returns in prog.c](rules.html#rule13-nocr)
 </div>
 </div>
 
@@ -366,24 +361,25 @@ off such control-M's before submitting their submissions.  In some cases
 tools have a "Save As" option that will prevent such trailing control-M's
 being added.
 
+<p class="leftbar">
 If your `prog.c` is near the
 [Rule 2a Gross Size](rules.html#rule2a-gross-size) and/or
 [Rule 2b Net Size](rules.html#rule2b-net-size)
 limit, you are permitted to **NOT** end source with a newline.
 If you need to do this, please document that in your `remarks.md` file.
+</p>
 
-If your complains about about not ending in a newline,
-please this in your `remarks.md` file.
+<p class="leftbar">
+If your complains about about not ending in a newline, please this in your `remarks.md` file.
+</p>
 
 
 Jump to: [top](#)
 
 
 <div id="guideline15">
-<div id="guideline-15---building">
 <div id="guideline15-gnu-makefile">
 # Guidelines for [Rule 15 - GNU Makefile](rules.html#rule15-gnu-makefile)
-</div>
 </div>
 </div>
 
@@ -413,10 +409,8 @@ Jump to: [top](#)
 
 
 <div id="guideline17">
-<div id="guideline-17---packaging">
 <div id="guideline17-mkiocccentry">
 # Guidelines for [Rule 17 - Use mkiocccentry](rules.html#rule17-mkiocccentry)
-</div>
 </div>
 </div>
 

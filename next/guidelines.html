@@ -484,14 +484,14 @@ file happens to also be a code for another language.
 We would prefer if you do not use <code>#include</code> statements,
 especially <code>#include</code> statements just to include lots of data,
 to get around the
-<a href="rules.html#rule2-size-restrictions">Rule 2 - Size restrictions</a>
+<a href="rules.html#rule2-size">Rule 2 - Size restrictions</a>
 in an excessive way.
 </p>
 <p class="leftbar">
 We would prefer if you do not require lots and lots of implicit defines on the C compiler command line
 (i.e., lots of <code>-Dfoo</code>, and <code>-Dcurds=whey</code> style command line args to the C compiler)
 to get around the
-<a href="rules.html#rule2-size-restrictions">Rule 2 - Size restrictions</a>
+<a href="rules.html#rule2-size">Rule 2 - Size restrictions</a>
 in an excessive way.
 </p>
 <p class="leftbar">
@@ -508,10 +508,8 @@ then try to make a case for why in your submission’s <code>remarks.md</code> f
 </p>
 <p>Jump to: <a href="#">top</a></p>
 <div id="guideline2">
-<div id="guideline-2---size">
 <div id="guideline2-size">
-<h1 id="guidelines-for-rule-2---size-restrictions">Guidelines for <a href="rules.html#rule2-size-restrictions">Rule 2 - Size restrictions</a></h1>
-</div>
+<h1 id="guidelines-for-rule-2---size-restrictions">Guidelines for <a href="rules.html#rule2-size">Rule 2 - Size restrictions</a></h1>
 </div>
 </div>
 <p class="leftbar">
@@ -621,7 +619,7 @@ FAQ on “<a href="../faq.html#ai">May I use AI, LLM, Virtual coding assistants,
 <div id="guideline9">
 <div id="guideline9-no-interactive-compiling-allowed">
 <div id="guideline9-no-interactive">
-<h1 id="guidelines-for-rule-9---no-interactive-compiling-allowed">Guidelines for <a href="rules.html#rule-9---no-interactive-compiling-allowed">Rule 9 - No interactive compiling allowed</a></h1>
+<h1 id="guidelines-for-rule-9---no-interactive-compiling-allowed">Guidelines for <a href="rules.html#rule9-no-interactive">Rule 9 - No interactive compiling allowed</a></h1>
 </div>
 </div>
 </div>
@@ -643,9 +641,7 @@ alternate / human intervention based building.</p>
 <p>Jump to: <a href="#">top</a></p>
 <div id="guideline11">
 <div id="guideline11-abuse">
-<div id="guideline-11---abuse">
 <h1 id="guidelines-for-rule-11---legal-rule-abuse">Guidelines for <a href="rules.html#rule11-legal-rule-abuse">Rule 11 - Legal rule abuse</a></h1>
-</div>
 </div>
 </div>
 <p>We do realize that there are holes in the <a href="rules.html">Rules</a>, and invite
@@ -706,14 +702,13 @@ This is one of the reasons why the <a href="rules.html">Rules</a> and
 <p>Jump to: <a href="#">top</a></p>
 <div id="guideline12">
 <div id="guideline12-utf8">
-<h1 id="guidelines-for-rule-12---utf-8">Guidelines for <a href="rules.html#rule-12---utf-8">Rule 12 - UTF-8</a></h1>
-<p><a href="rules.html#rule12-utf8">Rule 12 - UTF-8</a></p>
+<h1 id="guidelines-for-rule-12---utf-8">Guidelines for <a href="rules.html#rule12-utf8">Rule 12 - UTF-8</a></h1>
 </div>
 </div>
 <p>The IOCCC no longer discourages the use of multibyte UTF-8 characters in <code>C</code> code.</p>
 <div id="guideline13">
 <div id="guideline13-nocr">
-<h1 id="guidelines-for-rule-13---no-carriage-returns-in-prog.c">Guidelines for <a href="rules.html#rule-13---no-carriage-returns-in-prog.c">Rule 13 - No carriage returns in prog.c</a></h1>
+<h1 id="guidelines-for-rule-13---no-carriage-returns-in-prog.c">Guidelines for <a href="rules.html#rule13-nocr">Rule 13 - No carriage returns in prog.c</a></h1>
 </div>
 </div>
 <p>We <strong>DISLIKE</strong> C code with trailing control-M’s (<code>\r</code> or <code>\015</code>) that results
@@ -723,19 +718,20 @@ leave trailing control-M’s on lines. Users of such tools should strip
 off such control-M’s before submitting their submissions. In some cases
 tools have a “Save As” option that will prevent such trailing control-M’s
 being added.</p>
-<p>If your <code>prog.c</code> is near the
+<p class="leftbar">
+If your <code>prog.c</code> is near the
 <a href="rules.html#rule2a-gross-size">Rule 2a Gross Size</a> and/or
 <a href="rules.html#rule2b-net-size">Rule 2b Net Size</a>
 limit, you are permitted to <strong>NOT</strong> end source with a newline.
-If you need to do this, please document that in your <code>remarks.md</code> file.</p>
-<p>If your complains about about not ending in a newline,
-please this in your <code>remarks.md</code> file.</p>
+If you need to do this, please document that in your <code>remarks.md</code> file.
+</p>
+<p class="leftbar">
+If your complains about about not ending in a newline, please this in your <code>remarks.md</code> file.
+</p>
 <p>Jump to: <a href="#">top</a></p>
 <div id="guideline15">
-<div id="guideline-15---building">
 <div id="guideline15-gnu-makefile">
 <h1 id="guidelines-for-rule-15---gnu-makefile">Guidelines for <a href="rules.html#rule15-gnu-makefile">Rule 15 - GNU Makefile</a></h1>
-</div>
 </div>
 </div>
 <p>Submissions will be judged in an environment that has no <strong>IDE</strong>.
@@ -757,10 +753,8 @@ course.
 FAQ on “<a href="../faq.html#makefile_details">What are the detailed recommendations for a submission Makefile?</a>”.</p>
 <p>Jump to: <a href="#">top</a></p>
 <div id="guideline17">
-<div id="guideline-17---packaging">
 <div id="guideline17-mkiocccentry">
 <h1 id="guidelines-for-rule-17---use-mkiocccentry">Guidelines for <a href="rules.html#rule17-mkiocccentry">Rule 17 - Use mkiocccentry</a></h1>
-</div>
 </div>
 </div>
 <p class="leftbar">

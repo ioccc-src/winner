@@ -103,9 +103,7 @@ See the [Guidelines for Rule 1 - C program](guidelines.html#guideline1-c).
 <div id="rule2">
 <div id="rule2-size-restrictions">
 <div id="rule2-size">
-<div id="rule-2---size">
 ## Rule 2 - Size restrictions
-</div>
 </div>
 </div>
 </div>
@@ -125,9 +123,7 @@ See the [Guidelines for Rule 2 - Size restrictions](guidelines.html#guideline2-s
 
 <div id="rule2a">
 <div id="rule2a-gross-size">
-<div id="rule-2a-gross-size">
 ### Rule 2a - Gross Size
-</div>
 </div>
 </div>
 
@@ -139,9 +135,7 @@ See [Entering the IOCCC: the bare minimum you need to know](../quick-start.html#
 
 <div id="rule2b">
 <div id="rule2b-net-size">
-<div id="rule-2b-net-size">
 ### Rule 2b - Net Size
-</div>
 </div>
 </div>
 
@@ -312,7 +306,7 @@ I am **NOT** a Rule, I am a `free(void *human);` ‼️
         ha(); ha(); ha();
     }
 ```
-See [Rule 19 - Prime](rules.html#rule-19---prime).
+See [Rule 19 - Prime](rules.html#rule19-prime).
 
 
 <div id="rule7">
@@ -370,7 +364,9 @@ See [Guidelines for Rule 8 - Submitting requirements](guidelines.html#guideline8
 
 
 <div id="rule9">
+<div id="rule9-no-interactive">
 ## Rule 9 - No interactive compiling allowed
+</div>
 </div>
 
 Entries requiring human interaction to be initially compiled are **NOT**
@@ -456,7 +452,9 @@ See [Guidelines for Rule 12 - UTF-8](guidelines.html#guideline12-utf8).
 
 
 <div id="rule13">
+<div id="rule13-nocr">
 ## Rule 13 - No carriage returns in prog.c
+</div>
 </div>
 
 Any C source that fails to compile because lines contain carriage-returns
@@ -648,11 +646,13 @@ The entirety of your submission **MUST** be submitted under the following licens
 
 [CC BY-SA 4.0 DEED Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/)
 
-See [Rule 7 - Original Work](rules.html#rule-7---original-work).
+See [Rule 7 - Original Work](rules.html#rule7-original-work).
 
 
 <div id="rule19">
+<div id="rule19-prime">
 ## Rule 19 - Prime
+</div>
 </div>
 
 <p class="leftbar">
