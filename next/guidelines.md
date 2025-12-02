@@ -141,10 +141,6 @@ Don't expect the [Rule 2 - Size restrictions](rules.html#rule2-size) to
 See the FAQ on "[How has the Rule 2 size restrictions rule changed over
 the years?](../faq.html#size_rule_history)".
 
-You would be **WELL ADVISED** to observe our [notes on
-size](../2024/index.html#rule2) in the
-[2024/index.html](../2024/index.html).
-
 
 Jump to: [top](#)
 
