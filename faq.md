@@ -1,6 +1,6 @@
 # IOCCC FAQ Table of Contents
 
-This is FAQ version **29.03 2025-11-30**.
+This is FAQ version **29.04 2025-12-01**.
 
 
 ## 0. [Entering the IOCCC: the bare minimum you need to know](#enter_questions)
@@ -40,7 +40,7 @@ This is FAQ version **29.03 2025-11-30**.
 - **Q 2.1**: <a class="normal" href="#feedback">How can I comment or make a suggestion on IOCCC rules, guidelines and tools?</a>
 - **Q 2.2**: <a class="normal" href="#warnings">Are there any compiler warnings that I should not worry about in my submissions?</a>
 - **Q 2.3**: <a class="normal" href="#frequent-themes">What types of entries have been frequently submitted to the IOCCC?</a>
-- **Q 2.4**: <a class="normal" href="#rule_2_broken">How did an entry win the IOCCC that breaks Rule 2 - Size Limit?</a>
+- **Q 2.4**: <a class="normal" href="#rule_2_broken">How did an entry win the IOCCC that breaks Rule 2 - Size restrictions?</a>
 - **Q 2.5**: <a class="normal" href="#submissions">How many submissions do the judges receive for a given IOCCC?</a>
 - **Q 2.6**: <a class="normal" href="#judging_time">How much time does it take to judge the contest?</a>
 - **Q 2.7**: <a class="normal" href="#judging_rounds">How many judging rounds do you have?</a>
@@ -144,7 +144,7 @@ This is FAQ version **29.03 2025-11-30**.
 - **Q 11.0**: <a class="normal" href="#ioccc_start">How did the IOCCC get started?</a>
 - **Q 11.1**: <a class="normal" href="#missing_years">Why are some years missing IOCCC entries?</a>
 - **Q 11.2**: <a class="normal" href="#website_history">What is the history of the IOCCC website?</a>
-- **Q 11.3**: <a class="normal" href="#size_rule_history">How has the IOCCC size limit rule changed over the years?</a>
+- **Q 11.3**: <a class="normal" href="#size_rule_history">How has the Rule 2 size restrictions rule changed over the years?</a>
 - **Q 11.4**: <a class="normal" href="#great_fork_merge">What is the **Great Fork Merge**?</a>
 - **Q 11.5**: <a class="normal" href="#bof">What is an IOCCC BOF?</a>
 - **Q 11.6**: <a class="normal" href="#explain_IOCCC">I do not understand the IOCCC, can you explain it to me?</a>
@@ -8146,7 +8146,7 @@ Jump to: [top](#)
 <div id="size_rule_history">
 <div id="size_restriction">
 <div id="size_rule">
-### Q 11.3: How has the IOCCC size limit rule changed over the years?
+### Q 11.3: How has the Rule 2 size restrictions rule changed over the years?
 </div>
 </div>
 </div>
@@ -8219,6 +8219,17 @@ In later years, Rule 2 was split into two parts.  These two parts of Rule 2 are:
 
 * Rule 2a: 4993
 * Rule 2b: 2503
+
+
+<div id="size_slow_change">
+#### Size rule slow to change
+</div>
+
+As you can read above, the Size rule is slow to change.
+
+Given how long the [IOCCC 2013-2020](#size_rule2013-2020) size rule lasted,
+one might expect the [IOCCC 2024-date](#size_rule2024-xxxx) size rule to last
+well into the 2030's.
 
 
 Jump to: [top](#)

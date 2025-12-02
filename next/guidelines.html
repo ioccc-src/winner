@@ -459,18 +459,18 @@ Copyright © 2025 Leonid A. Broukhis and Landon Curt Noll.
 <p>All Rights Reserved. Permission for personal, education or non-profit use is
 granted provided this copyright and notice are included in its entirety
 and remains unaltered. All other uses must receive prior permission in
-writing by <a href="../contact.html">contacting the judges</a>.</p>
+writing by <a href="../contact.html">contacting the Judges</a>.</p>
 <h1 id="guidelines-version">Guidelines Version</h1>
 <p class="leftbar">
-These IOCCC guidelines are version <strong>29.05 2025-12-01</strong>.
+These Guidelines are version <strong>29.06 2025-12-01</strong>.
 </p>
 <p class="leftbar">
 The <span style="font-size:28px;"><b>|</b></span> symbol indicates an <strong>change</strong> from the previous IOCCC.
 </p>
 <p class="leftbar">
-Because the <strong>IOCCC29</strong> guidelines was a substantial rewrite, only <strong>important changes</strong> from <strong>IOCCC28</strong> have been marked.
+Because the <strong>IOCCC29</strong> was a substantial rewrite, only <strong>important changes</strong> from <strong>IOCCC28</strong> have been marked.
 </p>
-<p>Be sure to read the <a href="rules.html">IOCCC rules</a>.</p>
+<p>Be sure to read the <a href="rules.html">Rules</a>.</p>
 <div id="guideline1">
 <div id="guideline1-c">
 <h1 id="guidelines-for-rule-1---c-program">Guidelines for <a href="rules.html#rule1-c">Rule 1 - C program</a></h1>
@@ -484,14 +484,14 @@ file happens to also be a code for another language.
 We would prefer if you do not use <code>#include</code> statements,
 especially <code>#include</code> statements just to include lots of data,
 to get around the
-<a href="rules.html#rule2-size-restrictions">Rule 2 - Size restrictions</a>
+<a href="rules.html#rule2-size">Rule 2 - Size restrictions</a>
 in an excessive way.
 </p>
 <p class="leftbar">
 We would prefer if you do not require lots and lots of implicit defines on the C compiler command line
 (i.e., lots of <code>-Dfoo</code>, and <code>-Dcurds=whey</code> style command line args to the C compiler)
 to get around the
-<a href="rules.html#rule2-size-restrictions">Rule 2 - Size restrictions</a>
+<a href="rules.html#rule2-size">Rule 2 - Size restrictions</a>
 in an excessive way.
 </p>
 <p class="leftbar">
@@ -500,17 +500,16 @@ Some use of <code>#include</code> statements and/or implicit defines on the C co
 <p class="leftbar">
 As a guide, consider the level of <code>#include</code> statements and/or implicit defines on the C compiler command line
 that are found in
-<a href="https://www.ioccc.org/years.html">winning IOCCC entries</a>, and try to <strong>NOT</strong> set a new record.
+<a href="https://www.ioccc.org/years.html">winning Entries</a>, and try to <strong>NOT</strong> set a new record.
 </p>
 <p class="leftbar">
 If you believe you need to significantly abuse <code>#include</code> statements and/or implicit defines on the C compiler command line,
-then try to make a case for why in your submission’s <code>remarks.md</code> file: maybe the judges won’t reject your submission.
+then try to make a case for why in your submission’s <code>remarks.md</code> file: maybe the Judges won’t reject your submission.
 </p>
+<p>Jump to: <a href="#">top</a></p>
 <div id="guideline2">
-<div id="guideline-2---size">
 <div id="guideline2-size">
-<h1 id="guidelines-for-rule-2---size-restrictions">Guidelines for <a href="rules.html#rule2-size-restrictions">Rule 2 - Size restrictions</a></h1>
-</div>
+<h1 id="guidelines-for-rule-2---size-restrictions">Guidelines for <a href="rules.html#rule2-size">Rule 2 - Size restrictions</a></h1>
 </div>
 </div>
 <p class="leftbar">
@@ -525,7 +524,7 @@ You should pay attention to our observations on
 <a href="rules.html#rule2-size">Rule 2 - Size restrictions</a>, use the <code>iocccentry(1)</code> tool.
 For example:</p>
 <pre><code>    iocccsize prog.c</code></pre>
-<p>The IOCCC size tool algorithm can be summarized as follows:</p>
+<p>The <code>iocccsize(1)</code> algorithm can be summarized as follows:</p>
 <blockquote>
 <p>The size tool counts most C reserved words (keyword, secondary, and selected
 preprocessor keywords) as 1. The size tool counts all other bytes as 1
@@ -537,36 +536,39 @@ before the end of file.</p>
 counted by the IOCCC size tool.</p>
 </blockquote>
 <p>In cases where the above summary and the algorithm implemented by
-the IOCCC size tool <code>iocccsize(1)</code> conflict, the algorithm implemented
-by the minimum required version of <code>iocccsize(1)</code> is preferred by the <a href="../judges.html">IOCCC
-judges</a>.</p>
+<code>iocccsize(1)</code> conflict, the algorithm implemented
+by the minimum required version of <code>iocccsize(1)</code> is preferred by the <a href="../judges.html">Judges</a>.</p>
 <p>Make sure <code>iocccsize</code> does not flag any issues with your <code>prog.c</code>.</p>
-<p><strong>NOTE</strong>: by default <code>iocccsize</code> will only report the rule 2b size, unless the
+<p><strong>NOTE</strong>: by default <code>iocccsize</code> will only report the size, unless the
 code surpasses the limit.</p>
 <p>There a much less need to <code>#define</code> C reserved words in an effort
 to get around the size limits of
 <a href="rules.html#rule2-size">Rule 2 - Size restrictions</a>
 because of the <code>iocccsize(1)</code> algorithm.</p>
 <p>Yes Virginia, <strong>the previous guideline sentence is an important hint</strong>!</p>
+<p>Don’t expect the <a href="rules.html#rule2-size">Rule 2 - Size restrictions</a> to
+<a href="../faq.html#size_slow_change">change any time soon</a>.</p>
+<p>See the
+FAQ on “<a href="../faq.html#size_rule_history">How has the Rule 2 size restrictions rule changed over the years?</a>”.</p>
 <p>Jump to: <a href="#">top</a></p>
 <div id="guideline3">
-<div id="guideline-3---register">
+<div id="guideline3-register">
 <h1 id="guidelines-for-rule-3---register-for-the-ioccc">Guidelines for <a href="rules.html#rule3-register">Rule 3 - Register for the IOCCC</a></h1>
 </div>
 </div>
 <p class="leftbar">
 If a group of people work on a submission, then they should
 <a href="../quick-start.html#enter">register for the IOCCC</a>
-using either a group email address, or an email address for one of the authors.
+using either a valid group email address, or an email address for one of the authors.
 </p>
 <p class="leftbar">
-Processing your registration is an activity overseen by an IOCCC judge.
-Please be <strong>patient</strong> while an IOCCC judge processes your registration.
+Processing your registration is an activity overseen by a Judge.
+Please be <strong>patient</strong> while a Judge processes your registration.
 </p>
 <p>It can take a few days to process your registration and for the server to
 email your details, therefore make sure to allow yourself ample time to
 register and submit your entries; <strong>DO NOT WAIT UNTIL THE FINAL DAYS</strong>
-to register! The judges are <strong>NOT</strong> responsible for delayed or lost
+to register! The Judges are <strong>NOT</strong> responsible for delayed or lost
 email or for those who wait until the last minute to try to register!</p>
 <p class="leftbar">
 If after a few days you believe your registration hasn’t been process, then
@@ -582,7 +584,7 @@ If you fail to change your temporary password by that deadline, then you’ll ne
 <p>See <a href="../quick-start.html#enter">Entering the IOCCC: the bare minimum you need to know</a>.</p>
 <p>Jump to: <a href="#">top</a></p>
 <div id="guideline7">
-<div id="guideline-7---original-work">
+<div id="guideline7-original">
 <h1 id="guidelines-for-rule-7---original-work">Guidelines for <a href="rules.html#rule7-original-work">Rule 7 - Original Work</a></h1>
 </div>
 </div>
@@ -608,80 +610,128 @@ In short: You created it, you own it, its an original work, or you have explicit
 FAQ on “<a href="../faq.html#ai">May I use AI, LLM, Virtual coding assistants, or similar tools to write my submission?</a>”.</p>
 <p>Jump to: <a href="#">top</a></p>
 <div id="guideline8">
-<div id="guideline-8---submitting-requirements">
+<div id="guideline8-submitting">
 <h1 id="guidelines-for-rule-8---submitting-requirements">Guidelines for <a href="rules.html#rule8-submitting-requirements">Rule 8 - Submitting requirements</a></h1>
 </div>
 </div>
-<p>Do <strong>NOT</strong> register more than one account just try and get around the limit on the number of submission slots.</p>
+<p>Do <strong>NOT</strong> register more than one account just to try and get around the limit on the number of submission slots.</p>
+<p>Jump to: <a href="#">top</a></p>
+<div id="guideline9">
+<div id="guideline9-no-interactive-compiling-allowed">
+<div id="guideline9-no-interactive">
+<h1 id="guidelines-for-rule-9---no-interactive-compiling-allowed">Guidelines for <a href="rules.html#rule9-no-interactive">Rule 9 - No interactive compiling allowed</a></h1>
+</div>
+</div>
+</div>
+<p>Don’t forget that the building of your program should be done
+<strong>WITHOUT human intervention</strong>. So don’t do things such as:</p>
+<pre><code>    prog: prog.c
+        #echo this next line requires data from standard input
+        cat &gt; prog.c
+        ${CC} prog.c -o prog</code></pre>
+<p>However, you can do something cute such as making your program
+do something dumb (or cute) when it is built ‘automatically’, and
+when it is run with a human involved, do something more clever.
+For example, one could put in their <code>Makefile</code>:</p>
+<pre><code>    prog: prog.c
+        ${CC} prog.c -DNON_HUMAN_COMPILE -o prog
+        @echo &quot;See remarks section about alternate ways to compile&quot;</code></pre>
+<p>and then include special notes in your <code>remarks.md</code> file for
+alternate / human intervention based building.</p>
 <p>Jump to: <a href="#">top</a></p>
 <div id="guideline11">
-<div id="guideline-11---abuse">
+<div id="guideline11-abuse">
 <h1 id="guidelines-for-rule-11---legal-rule-abuse">Guidelines for <a href="rules.html#rule11-legal-rule-abuse">Rule 11 - Legal rule abuse</a></h1>
 </div>
 </div>
-<p>We do realize that there are holes in the <a href="rules.html">IOCCC rules</a>, and invite
+<p>We do realize that there are holes in the <a href="rules.html">Rules</a>, and invite
 submitters to attempt to apply creative rule interpretation. A rule abuse though, even
 if not rewarded, may result in a subsequent rule change for future contests.</p>
 <p>We sometime award ‘<strong>Best abuse of the rules</strong>’ or ‘<strong>Worst abuse of the rules</strong>’,
 or some variation, to a submission that creatively attempts to exploit a holes in the
-<a href="rules.html">IOCCC rules</a>.</p>
-<p>When we do need to plug a hole in the <a href="rules.html">IOCCC rules</a>
-or <a href="guidelines.html">IOCCC guidelines</a>, we will attempt to use a very small plug,
+<a href="rules.html">Rules</a>.</p>
+<p>When we do need to plug a hole in the <a href="rules.html">Rules</a>
+or <a href="guidelines.html">Guidelines</a>, we will attempt to use a very small plug,
 if not smaller.</p>
 <p>Or, maybe not. :-)</p>
 <p>Legal rule abuse may involve, but is not limited to, doing things that are
-technically allowed by the <a href="rules.html">IOCCC rules</a> and yet do not fit the spirit of what
+technically allowed by the <a href="rules.html">Rules</a> and yet do not fit the spirit of what
 we intended to be submitted.</p>
-<p>Legal abuse of the <a href="rules.html">IOCCC rules</a> is <strong>NOT</strong> an invitation to violate
-the <a href="rules.html">IOCCC rules</a> (especially <a href="./rules.html#rule17-mkiocccentry">Rule 17 -
+<p>Legal abuse of the <a href="rules.html">Rules</a> is <strong>NOT</strong> an invitation to violate
+the <a href="rules.html">Rules</a> (especially <a href="./rules.html#rule17-mkiocccentry">Rule 17 -
 Use mkiocccentry</a>). A submission that violates the
-<a href="rules.html">rules</a> in the opinion of the <a href="../judges.html">IOCCC judges</a>,
+<a href="rules.html">rules</a> in the opinion of the <a href="../judges.html">Judges</a>,
 <strong>WILL</strong> be disqualified. <strong><em>RULE ABUSE CARRIES A CERTAIN LEVEL OF RISK!</em></strong></p>
-<p>If you intend to abuse the <a href="rules.html">IOCCC rules</a>,
+<p>If you intend to abuse the <a href="rules.html">Rules</a>,
 indicate so in your <code>remarks.md</code> file. You <strong>MUST</strong> try to justify, plead, beg,
 why you consider your rule abuse to be allowed under the
-<a href="rules.html">IOCCC rules</a>. Humor or creativity help plead a case.</p>
+<a href="rules.html">Rules</a>. Humor or creativity help plead a case.</p>
 <p>As there is no guarantee that you will succeed, you might consider submitting an
-alternate version that conforms to the <a href="rules.html">IOCCC rules</a>, if it might
-otherwise be interesting; one that does not abuse the <a href="rules.html">IOCCC rules</a>
+alternate version that conforms to the <a href="rules.html">Rules</a>, if it might
+otherwise be interesting; one that does not abuse the <a href="rules.html">Rules</a>
 and one that does, making sure to note in the one that does not abuse the rules
-that this is another version, so that the judges do not assume you uploaded it
+that this is another version, so that the Judges do not assume you uploaded it
 by mistake.</p>
 <p>If you do bypass the <code>mkiocccentry(1)</code> warnings about
 <a href="rules.html#rule2a-gross-size">Rule 2a - Gross Size</a>
 and/or about
 <a href="rules.html#rule2b-net-size">Rule 2b - Net Size</a>
 or any other
-rule and submit a submission anyway, you <strong>MUST</strong> try to justify why the IOCCC
-<a href="../judges.html">IOCCC judges</a> should not reject your submission due to a rule
+rule and submit a submission anyway, you <strong>MUST</strong> try to justify why the
+<a href="../judges.html">Judges</a> should not reject your submission due to a rule
 violation, and you would be wise to do this towards the top of your <code>remarks.md</code>
-file.</p>
-<p>We are often asked why the contest <a href="rules.html">IOCCC rules</a> and <a href="guidelines.html">IOCCC
-guidelines</a> seem strange or contain mistakes, flaws, or
+file so as not to be overlooked.</p>
+<p>We are often asked why the contest <a href="rules.html">Rules</a> and <a href="guidelines.html">Guidelines</a> seem strange or contain mistakes, flaws, or
 grammatical errors. One reason is that we sometimes make genuine mistakes, but
 in many cases such problems, flaws or areas of confusion are deliberate.</p>
-<p>Changes to <a href="rules.html">IOCCC rules</a> and <a href="guidelines.html">IOCCC guidelines</a> in
+<p>Changes to <a href="rules.html">Rules</a> and <a href="guidelines.html">Guidelines</a> in
 response to rule abuses, are done in a minimal fashion. Often we will
 deliberately leave behind holes (or introduce new ones) so that future rule
 abuse can continue. A clever author should be able to read and “drive a
-truck through the holes” in the <a href="rules.html">IOCCC rules</a> and <a href="guidelines.html">IOCCC
-guidelines</a>.</p>
+truck through the holes” in the <a href="rules.html">Rules</a> and <a href="guidelines.html">Guidelines</a>.</p>
 <p>At the risk of stating the obvious, this contest is a parody of the software
-development process. The <a href="rules.html">IOCCC rules</a> and <a href="guidelines.html">IOCCC guidelines</a>
+development process. The <a href="rules.html">Rules</a> and <a href="guidelines.html">Guidelines</a>
 are only part of the overall contest. Even so, one might think the
-contest <a href="rules.html">IOCCC rules</a> and <a href="guidelines.html">IOCCC guidelines</a> process as a parody
+contest <a href="rules.html">Rules</a> and <a href="guidelines.html">Guidelines</a> process as a parody
 of the sometimes tragic mismatch between what a customer (or marketing) wants
 and what engineering delivers. Real programmers must face obfuscated and
 sometimes conflicting, ballooning specifications, and requirements from marketing, sales,
 product management and even from customers themselves on an all too regular basis.
-This is one of the reasons why the <a href="rules.html">IOCCC rules</a> and
-<a href="guidelines.html">IOCCC guidelines</a> are written in obfuscated form.</p>
+This is one of the reasons why the <a href="rules.html">Rules</a> and
+<a href="guidelines.html">Guidelines</a> are written in obfuscated form.</p>
+<p>Jump to: <a href="#">top</a></p>
+<div id="guideline12">
+<div id="guideline12-utf8">
+<h1 id="guidelines-for-rule-12---utf-8">Guidelines for <a href="rules.html#rule12-utf8">Rule 12 - UTF-8</a></h1>
+</div>
+</div>
+<p>The IOCCC no longer discourages the use of multibyte UTF-8 characters in <code>C</code> code.</p>
+<div id="guideline13">
+<div id="guideline13-nocr">
+<h1 id="guidelines-for-rule-13---no-carriage-returns-in-prog.c">Guidelines for <a href="rules.html#rule13-nocr">Rule 13 - No carriage returns in prog.c</a></h1>
+</div>
+</div>
+<p>We <strong>DISLIKE</strong> C code with trailing control-M’s (<code>\r</code> or <code>\015</code>) that results
+in compilation failures.</p>
+<p>Some non-UNIX/non-Linux tools such as MS Visual C and MS Visual C++
+leave trailing control-M’s on lines. Users of such tools should strip
+off such control-M’s before submitting their submissions. In some cases
+tools have a “Save As” option that will prevent such trailing control-M’s
+being added.</p>
+<p class="leftbar">
+If your <code>prog.c</code> is near the
+<a href="rules.html#rule2a-gross-size">Rule 2a Gross Size</a> and/or
+<a href="rules.html#rule2b-net-size">Rule 2b Net Size</a>
+limit, you are permitted to <strong>NOT</strong> end source with a newline.
+If you need to do this, please document that in your <code>remarks.md</code> file.
+</p>
+<p class="leftbar">
+If your complains about about not ending in a newline, please this in your <code>remarks.md</code> file.
+</p>
 <p>Jump to: <a href="#">top</a></p>
 <div id="guideline15">
-<div id="guideline-15---building">
 <div id="guideline15-gnu-makefile">
 <h1 id="guidelines-for-rule-15---gnu-makefile">Guidelines for <a href="rules.html#rule15-gnu-makefile">Rule 15 - GNU Makefile</a></h1>
-</div>
 </div>
 </div>
 <p>Submissions will be judged in an environment that has no <strong>IDE</strong>.
@@ -695,18 +745,16 @@ We will use the GNU <code>make(1)</code> tool, your <code>Makefile</code>, as we
 in the building and compiling of your submission.
 </p>
 <p class="leftbar">
-Your Makefile <strong>MUST</strong> be compatible with GNU <code>make</code> and we suggest you use
-<a href="Makefile.example">Makefile.example</a> as a template, renamed as Makefile of
+Your <code>Makefile</code> <strong>MUST</strong> be compatible with GNU <code>make</code> and we suggest you use
+<a href="Makefile.example">Makefile.example</a> as a template, renamed as <code>Makefile</code> of
 course.
 </p>
 <p>See the
 FAQ on “<a href="../faq.html#makefile_details">What are the detailed recommendations for a submission Makefile?</a>”.</p>
 <p>Jump to: <a href="#">top</a></p>
 <div id="guideline17">
-<div id="guideline-17---packaging">
 <div id="guideline17-mkiocccentry">
 <h1 id="guidelines-for-rule-17---use-mkiocccentry">Guidelines for <a href="rules.html#rule17-mkiocccentry">Rule 17 - Use mkiocccentry</a></h1>
-</div>
 </div>
 </div>
 <p class="leftbar">
@@ -758,7 +806,8 @@ Instead of including a large test-suite that requires a lot of files as part of
 your submission, if your submission doesn’t require the test-suite to be
 available to run, then in your <code>remarks.md</code> you could include URL where such a
 test-suite may be downloaded from and how to use the test-suite to test your
-submission, assuming it is not reveal who you are.
+submission, assuming it is not reveal who you are, eg. do not use a GitHub URL
+which contains your username.
 </p>
 <p class="leftbar">
 If you <strong>DO</strong> include a tarball then make sure it uses the v7 format. See the
@@ -790,9 +839,9 @@ FAQ on “<a href="../faq.html#rule17">What are the details behind Rule 17 - Use
 <div id="general-overall-guidelines">
 <h2 id="overall-guidelines">Overall Guidelines</h2>
 </div>
-<p>These <a href="guidelines.html">guideline</a> are <strong>hints</strong> and <strong>suggestions</strong>, <strong>NOT</strong> <a href="rules.html">IOCCC rules</a>.</p>
-<p>While submissions that violate <a href="guidelines.html">guideline</a> are allowed,
-submissions that remain within the <a href="guidelines.html">IOCCC guidelines</a> are preferred.</p>
+<p>These <a href="guidelines.html">Guidelines</a> are <strong>hints</strong> and <strong>suggestions</strong>, <strong>NOT</strong> <a href="rules.html">Rules</a>.</p>
+<p>While submissions that violate the <a href="guidelines.html">Guidelines</a> are allowed,
+submissions that remain within the <a href="guidelines.html">Guidelines</a> are preferred.</p>
 <p>You are encouraged to review the following <a href="../faq.html">FAQs</a>:</p>
 <ul>
 <li><p><a href="../quick-start.html#enter">How to enter the IOCCC</a></p></li>
@@ -808,9 +857,8 @@ and then re-uploading it to <strong>the same slot number</strong> on the
 The <strong>official locale</strong> of the <strong>IOCCC</strong> is <strong>C</strong>.
 </p>
 <p>You are <strong>encouraged</strong> to examine the <a href="../years.html">winners of previous contests</a>.</p>
-<p>Because <a href="rules.html">rules</a> change from year to year, some <a href="../years.html">past winning entries</a>
-may be rejected this year.</p>
-<p>What was <em>was</em> unique and novel one year <em>might be ‘old’ the next year</em>.</p>
+<p>Because the <a href="rules.html">Rules</a> change from year to year, some <a href="../years.html">past winning entries</a>
+may be rejected this year. What was <em>was</em> unique and novel one year <em>might be ‘old’ the next year</em>.</p>
 <p>A submission is usually examined in a number of ways. We typically apply
 a number of tests to a submission:</p>
 <ul>
@@ -863,12 +911,12 @@ an appropriate level of obfuscation.</p>
 <p>Jump to: <a href="#">top</a></p>
 <div id="likes">
 <div id="dislikes">
-<h2 id="our-likes-and-dislikes">Our Likes and Dislikes:</h2>
+<h2 id="our-likes-and-dislikes">Our Likes and Dislikes</h2>
 </div>
 </div>
 <p>We <strong>VERY MUCH LIKE</strong> submissions that use an edited variant of the
-example Makefile, as described and linked to in the <a href="#makefile">Makefile section</a>,
-renamed as <code>Makefile</code> of course. This makes it easier for the <a href="../judges.html">IOCCC judges</a>
+example <code>Makefile</code>, as described and linked to in the <a href="#makefile">Makefile section</a>,
+renamed as <code>Makefile</code> of course. This makes it easier for the <a href="../judges.html">Judges</a>
 to test your submission. And if your submissions wins, it makes it easier to integrate it into
 the <a href="https://www.ioccc.org/index.html">Official IOCCC winner website</a>.</p>
 <p>We <strong>VERY MUCH LIKE</strong> submissions that have some educational value. This does <strong>NOT</strong> mean
@@ -908,6 +956,10 @@ If you do include a <code>try.alt.sh</code> then <strong>PLEASE</strong> remove 
 <p class="leftbar">
 If you don’t have a prog.alt.c, then <strong>PLEASE</strong> remove the <code>try.alt</code> rule as well.
 </p>
+<p>Jump to: <a href="#">top</a></p>
+<div id="about-cpp">
+<h3 id="about-c-preprocessor">About C preprocessor</h3>
+</div>
 <p>Doing masses of <code>#define</code>s to obscure the source has become ‘old’. We
 tend to ‘see thru’ masses of <code>#define</code>s due to our pre-processor tests
 that we apply. Simply abusing <code>#define</code>s or <code>-Dfoo=bar</code> won’t go as far
@@ -921,6 +973,12 @@ IOCCC winning entries that did this to compile, we had to update them to not do 
 <pre><code>    int this_is_fine;</code></pre>
 <p>and <strong>NOT</strong> like this:</p>
 <pre><code>    this_is_not;       /* &lt;-- Try to avoid implicit type declarations */</code></pre>
+<p>We really <strong>DISLIKE</strong> submissions that make blatant use of <code>#include</code> of
+large data files to get around the source code size limit. This does not mean
+<code>#include</code> of standard header files, just data files you provide.</p>
+<p>On 28 January 2007, the Judges rescinded the requirement that the
+<code>#</code> in a C preprocessor directive must be the 1st non-whitespace byte.</p>
+<h3 id="about-compilers">About compilers</h3>
 <p>We tend to <strong>like <em>less</em></strong> a submission that requires either
 <code>gcc</code> <strong>OR</strong> <code>clang</code>. <strong>We <em>prefer</em> submissions</strong> that can compile
 under <strong>BOTH</strong> <code>gcc</code> <strong>AND</strong> <code>clang</code>. <strong>Hint!</strong></p>
@@ -929,7 +987,11 @@ submission’s <code>Makefile</code> are supported by <strong>BOTH</strong> <cod
 <p>We <strong>DISLIKE</strong> the use of obscure compiler flags, especially
 if <code>gcc</code> and/or <code>clang</code> do not support it. We <strong>suggest</strong>
 that you not use any really obscure compiler flags if you can help it.</p>
+<div id="about-nested-functions">
 <div id="nested-functions">
+<h3 id="about-nested-functions">About nested functions</h3>
+</div>
+</div>
 <p>One side effect of the above is that you cannot assume the use
 of nested functions such as:</p>
 <pre><code>     int main() {
@@ -938,12 +1000,12 @@ of nested functions such as:</p>
          }
 |        please_dont_submit_this();
      }</code></pre>
-</div>
-<p>On 2012 July 20, the <a href="../judges.html">IOCCC judges</a> rescinded the encouragement of
+<p>On 2012 July 20, the <a href="../judges.html">Judges</a> rescinded the encouragement of
 nested functions. Such constructions, while interesting and sometimes
 amusing, will have to wait until they are required by a C standard that are
 actually implemented in <strong>BOTH</strong> <code>gcc</code> <strong>AND</strong> <code>clang</code>.</p>
 <p>We <strong>DISLIKE</strong> submissions that require the use of <code>-fnested-functions</code>.</p>
+<h3 id="about-variadic-functions">About variadic functions</h3>
 <p>If your submission uses functions that have a variable number of
 arguments, <strong>be careful</strong>. Systems implement <code>va_list</code> in a wide variety
 of ways. Because of this, a number of operations using <code>va_list</code> <strong>are
@@ -958,7 +1020,9 @@ not portable and <em>must not</em> be used</strong>:</p>
 </ul>
 <p>In particular, do not treat <code>va_list</code> variables as if they were a <code>char **</code>.</p>
 <p>We <strong>DISLIKE</strong> the use of <code>varargs.h</code>. Use <code>stdarg.h</code> instead.</p>
+<h3 id="about-io">About I/O</h3>
 <p>We <strong>DISLIKE</strong> the use of <code>gets(3)</code>. Use <code>fgets(3)</code> instead.</p>
+<h3 id="about-tarballs">About tarballs</h3>
 <p>We tend to <strong>DISLIKE</strong> the blatant use of tarballs in an attempt to simply get
 around the extra file number limit. We realize there may be cases where a
 tarball containing a number of extra files may be needed. Such a need for a
@@ -967,10 +1031,14 @@ tarball <strong>MUST</strong> be explained in the <code>remarks.md</code> file.<
 Using a mass of <code>goto</code>s to obfuscate your code has become ‘old’ and is unlikely
 to make it through the final rounds, if it even gets that far.
 </p>
-<p>On 28 January 2007, the Judges rescinded the requirement that the
-<code>#</code> in a C preprocessor directive must be the 1st non-whitespace byte.</p>
+<div id="about-stdib">
+<h3 id="about-stdlib">About stdlib</h3>
+</div>
 <p>The <code>exit(3)</code> function returns <code>void</code>. Some broken systems have <code>exit(3)</code>
 return <code>int</code>; your submission should assume that <code>exit(3)</code> returns a <code>void</code>.</p>
+<div id="small">
+<h3 id="what-it-means-to-be-small">What it means to be small</h3>
+</div>
 <p>Small programs are best when they are short, obscure and concise.
 While such programs are not as complex as other winners, they do
 serve a useful purpose: they are often the only program that people
@@ -979,6 +1047,26 @@ programs that are compact, and are instructional.</p>
 <p>One line programs should be short one line programs: say around <strong>80</strong> to <strong>132</strong>
 bytes long. Going well beyond <strong>132</strong> bytes is a bit too long to be called
 a one-liner in our vague opinion.</p>
+<p>We suggest that you avoid trying for the ‘<strong>smallest self-replicating</strong>’
+source. The smallest, a <a href="../1994/smr/index.html">zero byte entry</a>, won in
+<a href="../years.html#1994">1994</a>.</p>
+<p>Programs that claim to be the smallest C source that does something, really
+better be the smallest such program or they risk being rejected because
+they do not work as documented.</p>
+<p>We want to get away from source that is simply a compact blob of
+bytes. <strong>REALLY TRY</strong> to be more creative than blob coding. <strong>HINT!</strong></p>
+<p>Unless you are cramped for space, or unless you are entering the
+‘<strong>Best one liner</strong>’ category, we suggest that you format your program
+in a more creative way than simply forming excessively long lines.</p>
+<p>The <code>Makefile</code> should not be used to try and get around the size limit. It is
+one thing to make use of a several <code>-D</code>s on the compile line to help out, but it
+is quite another to use many bytes of <code>-D</code>s in order to try and squeeze the
+source under the size limit.</p>
+<p>Please do not use things like <code>gzip(1)</code> to get around the size limit. This was
+done years ago; please try to be much more creative.</p>
+<p>Your source code, post-pre-processing, should not exceed the size of
+<a href="https://en.wikipedia.org/wiki/Microsoft_Windows">Microsoft Windows</a>. :-)</p>
+<h3 id="about-environment">About environment</h3>
 <p>We tend to <strong>DISLIKE</strong> programs that:</p>
 <ul>
 <li>are very hardware specific</li>
@@ -1011,15 +1099,6 @@ Specification</a>
 (UNIX-like) environment. Therefore do not assume the system has a
 <a href="https://en.wikipedia.org/wiki/Windows.h">windows.h</a> include file:</p>
 <pre><code>    #include &lt;windows.h&gt;  /* we DISLIKE this */</code></pre>
-<p>Unless you are cramped for space, or unless you are entering the
-‘<strong>Best one liner</strong>’ category, we suggest that you format your program
-in a more creative way than simply forming excessively long lines.</p>
-<p>The <code>Makefile</code> should not be used to try and get around the size limit. It is
-one thing to make use of a several <code>-D</code>s on the compile line to help out, but it
-is quite another to use many bytes of <code>-D</code>s in order to try and squeeze the
-source under the size limit.</p>
-<p>Your source code, post-pre-processing, should not exceed the size of
-<a href="https://en.wikipedia.org/wiki/Microsoft_Windows">Microsoft Windows</a>. :-)</p>
 <p class="leftbar">
 You should try to restrict commands used in the build file to commands found in
 <a href="https://en.wikipedia.org/wiki/Single_UNIX_Specification">Single UNIX
@@ -1033,28 +1112,8 @@ absolute one. The intent is to ensure that the building of your
 program is reasonably portable.</p>
 <p>We prefer programs that are portable across a wide variety of UNIX-like
 operating systems (e.g., Linux, GNU Hurd, BSD, UNIX, macOS, etc.).</p>
-<p>Don’t forget that the building of your program should be done
-<strong>WITHOUT human intervention</strong>. So don’t do things such as:</p>
-<pre><code>    prog: prog.c
-        #echo this next line requires data from standard input
-        cat &gt; prog.c
-        ${CC} prog.c -o prog</code></pre>
-<p>However, you can do something cute such as making your program
-do something dumb (or cute) when it is built ‘automatically’, and
-when it is run with a human involved, do something more clever.
-For example, one could put in their <code>Makefile</code>:</p>
-<pre><code>    prog: prog.c
-        ${CC} prog.c -DNON_HUMAN_COMPILE -o prog
-        @echo &quot;See remarks section about alternate ways to compile&quot;</code></pre>
-<p>and then include special notes in your <code>remarks.md</code> file for
-alternate / human intervention based building.</p>
-<p>We want to get away from source that is simply a compact blob of
-bytes. <strong>REALLY TRY</strong> to be more creative than blob coding. <strong>HINT!</strong></p>
-<p>Please do not use things like <code>gzip(1)</code> to get around the size limit. This was
-done years ago; please try to be much more creative.</p>
-<p>We really <strong>DISLIKE</strong> submissions that make blatant use of <code>#include</code> of
-large data files to get around the source code size limit. This does not mean
-<code>#include</code> of standard header files, just data files you provide.</p>
+<p>Try to avoid submissions that play music that some people believe is copyrighted
+music.</p>
 <p>Did we remember to indicate that programs that blatantly use
 some complex state machine to do something simple, are boring?
 We think we did. :-)</p>
@@ -1064,15 +1123,9 @@ program, we tend to favor the second version. Of course, a third
 version of the same program that is formatted in an interesting
 and/or obfuscated way, would definitely win over the first two!
 Remember, you can submit more than one submission. See the
-<a href="rules.html">IOCCC rules</a>
+<a href="rules.html">Rules</a>
 for details (in particular,
 <a href="rules.html#rule8-submitting-requirements">Rule 8 - Submitting requirements</a>).</p>
-<p>We suggest that you avoid trying for the ‘<strong>smallest self-replicating</strong>’
-source. The smallest, a <a href="../1994/smr/index.html">zero byte entry</a>, won in
-<a href="../years.html#1994">1994</a>.</p>
-<p>Programs that claim to be the smallest C source that does something, really
-better be the smallest such program or they risk being rejected because
-they do not work as documented.</p>
 <p>Please note that the C source below, besides lacking in obfuscation,
 is <strong>NOT</strong> the smallest C source file that when compiled and run, dumps core:</p>
 <pre><code>    main;</code></pre>
@@ -1086,6 +1139,21 @@ sort of code will work:</p>
 <p>Initialized char arrays are OK to write over. For instance, this is OK:</p>
 <pre><code>    char b[] = &quot;Is this OK&quot;;
     b[9] = &#39;k&#39;;     /* modifying an initialized char array is OK */</code></pre>
+<p>We prefer code that can run on either a 64-bit or 32-bit
+processor. However, it is <strong>UNWISE </strong>to assume it will run on an
+some Intel-like x86 architecture**.</p>
+<p>While programs that only run in a specific word size are OK, if you have
+to pick, choose a 64-bit word size.</p>
+<p>If your submission <strong>MUST</strong> run only on a 64-bit or 32-bit architecture,
+then you <strong>MUST</strong> specify the <code>-arch</code> on your command line
+(see <code>ARCH</code> in the example
+Makefile, described in <a href="#makefile">Makefile section</a>). Do not assume a
+processor word size without specifying <code>-arch</code>. For example:</p>
+<pre><code>    ARCH= -m64</code></pre>
+<p>Note, however, that some platforms will not necessarily support some
+architectures. For instance, more recent versions of <code>macOS</code> do <strong>NOT</strong> support
+32-bit, and more than zero Judges use it!</p>
+<h3 id="about-x">About X</h3>
 <p>X client submissions should be as portable as possible. Submissions that
 adapt to a wide collection of environments will be favored. For
 example, don’t depend on a particular type or size of display.
@@ -1108,32 +1176,40 @@ open source toolkit that is widely and freely available instead.</p>
 <code>.Xdefaults</code>. If you must do so, be sure to note the required lines
 in the your <code>remarks.md</code> file. They should also not depend on any
 particular window manager.</p>
-<p>Try to avoid submissions that play music that some people believe is copyrighted
-music.</p>
-<p>While we recognize that UNIX is not a universal operating system, the contest
-does have a bias towards such systems. In an effort to expand the scope of the
-contest, we phrase our bias to favor the <a href="https://en.wikipedia.org/wiki/Single_UNIX_Specification">Single UNIX
-Specification</a>
-(UNIX-like).</p>
-<p>You are <strong>well advised</strong> to submit code that conforms to the <a href="https://unix.org/version4/overview.html">Single UNIX
-Specification Version 4</a>.</p>
-<p>To quote the <a href="../judges.html">IOCCC judges</a>:</p>
-<p>We <strong>LIKE</strong> programs that:</p>
-<ul>
-<li>are as concise and small as they need to be</li>
-<li>do something at least quasi-interesting</li>
-<li>are portable</li>
-<li>are unique or novel in their obfuscation style</li>
-<li>make use of a <strong>NUMBER OF DIFFERENT TYPES OF OBFUSCATIONS!</strong> <strong>&lt;== HINT!!</strong></li>
-<li>make us laugh and/or throw up :-) (humor really helps!)</li>
-<li>make us want to eat good chocolate</li>
-</ul>
-<p>Some types of programs can’t excel (anti-tm) in some areas. Your
-program doesn’t have to excel in all areas, but doing well in several
-areas really does help.</p>
+<h3 id="about-curses">About Curses</h3>
+<p>One should restrict libcurses to portable features found on both BSD
+and Linux curses.</p>
+<p class="leftbar">
+If you do <code>#include &lt;curses.h&gt;</code> make <strong>CERTAIN</strong> you link in curses (i.e.
+<code>-lcurses</code>) and not ncurses (i.e. <code>-lncurses</code>).
+</p>
+<p>Jump to: <a href="#">top</a></p>
+<div id="about_tab">
+<h3 id="about-ascii-tab">About ASCII TAB</h3>
+</div>
+<p>We <strong>DISLIKE</strong> the use of ASCII tab characters in markdown files, such as in the required <code>remarks.md</code> file.</p>
+<p>We don’t mind the use of ASCII tab characters in your C code. Feel free
+to use ASCII tab characters if that suits your obfuscation needs. If is
+perfectly <strong>OK</strong> to use tab characters elsewhere in your submission, just not in
+markdown files as this tends annoy us when it comes time to
+rendering your markdown content as it complicates the process.</p>
+<p>If you do use ASCII tab characters in your non-markdown files, be
+aware that some people may use a tab stop that is different than the common 8
+character tab stop.</p>
+<p><strong>PLEASE</strong> observe our <a href="../markdown.html">Markdown Guidelines</a>
+when forming your submission’s <code>remarks.md</code> file. And if your submission
+contains additional markdown files, please follow those same Guidelines for
+those files. See also
+<a href="rules.html#rule4-required-files">Rule 4 - Required files</a>,
+and the
+FAQ on “<a href="../faq.html#markdown">markdown</a>”.</p>
+<p>Jump to: <a href="#">top</a></p>
+<div id="remarks">
+<h3 id="about-remarks.md">About remarks.md</h3>
+</div>
 <p>You are better off explaining what your submission does in your
 <code>remarks.md</code> file section rather than leaving it obscure for the
-<a href="../judges.html">IOCCC judges</a> as we might miss something and/or be too tired to
+<a href="../judges.html">Judges</a> as we might miss something and/or be too tired to
 notice.</p>
 <p>We freely admit that interesting, creative or humorous comments in
 your <code>remarks.md</code> file help your chances of winning. If you had to
@@ -1141,21 +1217,6 @@ read so many twisted submissions, you too would enjoy a good laugh or two.
 We think the readers of the contest winners do as well. We do read
 your <code>remarks.md</code> content during the judging process, so it is worth your
 while to write a remarkable <code>remarks.md</code> file.</p>
-<p>We <strong>DISLIKE</strong> C code with trailing control-M’s (<code>\r</code> or <code>\015</code>) that results
-in compilation failures. Some non-UNIX/non-Linux tools such as
-MS Visual C and MS Visual C++ leave trailing control-M’s on lines.
-Users of such tools should strip off such control-M’s before submitting
-their submissions. In some cases tools have a “Save As” option that will
-prevent such trailing control-M’s being added.</p>
-<p>One should restrict libcurses to portable features found on both BSD
-and Linux curses.</p>
-<p class="leftbar">
-If you do <code>#include &lt;curses.h&gt;</code> make <strong>CERTAIN</strong> you link in curses (i.e.
-<code>-lcurses</code>) and not ncurses (i.e. <code>-lncurses</code>).
-</p>
-<p><a href="rules.html#rule12-utf8">Rule 12 - UTF-8</a>
-no longer discourages the use of UTF-8
-characters in C code.</p>
 <p>It is a very good idea to, in your <code>remarks.md</code> file, tell us why you
 think your submission is obfuscated. This is particularly true if
 your submission has some very subtle obfuscations that we might
@@ -1171,34 +1232,49 @@ suggest you remark on this point in your <code>remarks.md</code> where you talk
 about why you think your submission is obfuscated. On the other hand,
 if you are pushing up against the size limits, you may be forced
 into creating a dense blob. Such are the trade-offs that obfuscators face!</p>
-<p>We prefer code that can run on either a 64-bit or 32-bit
-processor. However, it is <strong>UNWISE </strong>to assume it will run on an
-some Intel-like x86 architecture**.</p>
-<p>While programs that only run in a specific word size are OK, if you have
-to pick, choose a 64-bit word size.</p>
-<p>If your submission <strong>MUST</strong> run only on a 64-bit or 32-bit architecture,
-then you <strong>MUST</strong> specify the <code>-arch</code> on your command line
-(see <code>ARCH</code> in the example
-Makefile, described in <a href="#makefile">Makefile section</a>). Do not assume a
-processor word size without specifying <code>-arch</code>. For example:</p>
-<pre><code>    ARCH= -m64</code></pre>
-<p>Note, however, that some platforms will not necessarily support some
-architectures. For instance, more recent versions of <code>macOS</code> do <strong>NOT</strong> support
-32-bit, and more than zero judges use it!</p>
 <p>If there are limitations in your submission, you are highly encouraged
 to note such limitations in your <code>remarks.md</code> file. For example if your
 submission factors values up to a certain size, you might want to state:</p>
+<p>We <strong>LIKE</strong> reading <code>remarks.md</code> files, especially if they contain
+useful, informative, and even humorous content about your submission. Yes, this
+is a <strong>hint</strong>. :-)</p>
+<p>We <strong>RECOMMEND</strong> you put a reasonable amount effort into the content of the
+<code>remarks.md</code> file: it is a required file for a reason. :-)</p>
+<p>Try to be even more creative!</p>
+<p>Jump to: <a href="#">top</a></p>
+<h3 id="miscellaneous">Miscellaneous</h3>
+<p>While we recognize that UNIX is not a universal operating system, the contest
+does have a bias towards such systems. In an effort to expand the scope of the
+contest, we phrase our bias to favor the <a href="https://en.wikipedia.org/wiki/Single_UNIX_Specification">Single UNIX
+Specification</a>
+(UNIX-like).</p>
+<p>You are <strong>well advised</strong> to submit code that conforms to the <a href="https://unix.org/version4/overview.html">Single UNIX
+Specification Version 4</a>.</p>
+<p>To quote the <a href="../judges.html">Judges</a>:</p>
+<p>We <strong>LIKE</strong> programs that:</p>
+<ul>
+<li>are as concise and small as they need to be</li>
+<li>do something at least quasi-interesting</li>
+<li>are portable</li>
+<li>are unique or novel in their obfuscation style</li>
+<li>make use of a <strong>NUMBER OF DIFFERENT TYPES OF OBFUSCATIONS!</strong> <strong>&lt;== HINT!!</strong></li>
+<li>make us laugh and/or throw up :-) (humor really helps!)</li>
+<li>make us want to eat good chocolate</li>
+</ul>
+<p>Some types of programs can’t excel (anti-tm) in some areas. Your
+program doesn’t have to excel in all areas, but doing well in several
+areas really does help.</p>
 <blockquote>
 <p>This submission factors values up <code>2305567963945518424753102147331756070</code>.
 Attempting to factor larger values will produce unpredictable results.</p>
 </blockquote>
-<p>The <a href="../judges.html">IOCCC judges</a> might try to factor the value -5, so you want to might state:</p>
+<p>The <a href="../judges.html">Judges</a> might try to factor the value -5, so you want to might state:</p>
 <blockquote>
 <p>This submission factors positive values up
 <code>2305567963945518424753102147331756070</code>. Attempting to factor large values will
 produce unpredictable results.</p>
 </blockquote>
-<p>However the <a href="../judges.html">IOCCC judges</a> might try to also factor 0, so you want to might state:</p>
+<p>However the <a href="../judges.html">Judges</a> might try to also factor 0, so you might want to state:</p>
 <blockquote>
 <p>This submission factors values between 1 and
 <code>2305567963945518424753102147331756070</code>. Attempting to factor values outside
@@ -1216,7 +1292,7 @@ and doing something interesting. So you might want to code accordingly and state
 <p>This submission factors integers between 1 and <code>2305567963945518424753102147331756070</code>.
 Attempting to factor anything else will cause the program to insult your pet fish Eric.</p>
 </blockquote>
-<p>The <a href="../judges.html">IOCCC judges</a> might not have a pet fish named Eric, so you might want to state:</p>
+<p>The <a href="../judges.html">Judges</a> might not have a pet fish named Eric, so you might want to state:</p>
 <blockquote>
 <p>This submission factors integers between 1 and
 <code>2305567963945518424753102147331756070</code>. Attempting to factor anything else
@@ -1231,28 +1307,6 @@ and state:</p>
 program is given enough time and memory. If the value is not a proper integer,
 the program might insult a fish named Eric.</p>
 </blockquote>
-<p>We <strong>DISLIKE</strong> the use of ASCII tab characters in markdown files, such as in the required <code>remarks.md</code> file.</p>
-<p>We don’t mind the use of ASCII tab characters in your C code. Feel free
-to use ASCII tab characters if that suits your obfuscation needs. If is
-perfectly <strong>OK</strong> to use tab characters elsewhere in your submission, just not in
-markdown files as this tends annoy us when it comes time to
-rendering your markdown content as it complicates the process.</p>
-<p>If you do use ASCII tab characters in your non-markdown files, be
-aware that some people may use a tab stop that is different than the common 8
-character tab stop.</p>
-<p><strong>PLEASE</strong> observe our <a href="../markdown.html">IOCCC markdown guidelines</a>
-when forming your submission’s <code>remarks.md</code> file. And if your submission
-contains additional markdown files, please follow those same guidelines for
-those files. See also
-<a href="rules.html#rule4-required-files">Rule 4 - Required files</a>,
-and the
-FAQ on “<a href="../faq.html#markdown">markdown</a>”.</p>
-<p>We <strong>LIKE</strong> reading <code>remarks.md</code> files, especially if they contain
-useful, informative, and even humorous content about your submission. Yes, this
-is a <strong>hint</strong>. :-)</p>
-<p>We <strong>RECOMMEND</strong> you put a reasonable amount effort into the content of the
-<code>remarks.md</code> file: it is a required file for a reason. :-)</p>
-<p>Try to be even more creative!</p>
 <p>Jump to: <a href="#">top</a></p>
 <div id="mkiocccentry">
 <div id="mkiocccentry_toolkit">
@@ -1281,10 +1335,10 @@ as submissions that use an older version are <strong>LIKELY</strong> to be <stro
 “<strong>for TESTING purposes</strong>” in their respective man pages.</p>
 <p>Do <strong>NOT</strong> use <code>fnamchk(1)</code> command line options that are labeled “<strong>for TESTING purposes</strong>”
 in the <code>fnamchk(1)</code> man page.</p>
-<p>Do <strong>NOT</strong> use <code>chksubmit(1)</code> command line options that are labeled “<strong>for the use by the IOCCC judges only</strong>”
+<p>Do <strong>NOT</strong> use <code>chksubmit(1)</code> command line options that are labeled “<strong>for the use by the Judges only</strong>”
 in the <code>chksubmit(1)</code> man page.
 Similarly do <strong>NOT</strong> use <code>chkentry(1)</code> command line options marked “<strong>for the use
-by the IOCCC judges only</strong>” in the <code>chkentry(1)</code> man page.</p>
+by the Judges only</strong>” in the <code>chkentry(1)</code> man page.</p>
 <p>To view <a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry toolkit</a> man pages,
 while your current directory is the top of the source tree:</p>
 <pre><code>    man soup/man/man1/mkiocccentry.1
@@ -1426,7 +1480,7 @@ tool to abort with a <strong>fatal error</strong>.
 </p>
 <p>See
 FAQ on “<a href="../faq.html#mkiocccentry_bugs">How do I report bugs in an <code>mkiocccentry</code> tool?</a>”.</p>
-<p>See <a href="rules.html#rule11-legal-rulea-abuse">Rule 11 - Legal rule abuse</a> for warnings about ignoring <code>mkiocccentry(1)</code> tool warnings.</p>
+<p>See <a href="rules.html#rule11-legal-rule-abuse">Rule 11 - Legal rule abuse</a> for warnings about ignoring <code>mkiocccentry(1)</code> tool warnings.</p>
 <p>See
 FAQ on “<a href="../faq.html#fnamchk">What is the <code>fnamchk</code> tool?</a>”.</p>
 <p>See
@@ -1446,7 +1500,7 @@ may be found on the <a href="https://t5k.org/curios/page.php/2503.html">“Curio
 of the number of the kernel disk pack of one of the judge’s <a href="https://en.wikipedia.org/wiki/BESM-6">BESM-6</a>.</p>
 <p class="leftbar">
 There may or may not be fewer than 2^7+1 reasons why these
-<a href="guidelines.html">IOCCC guidelines</a> seem obfuscated.
+<a href="guidelines.html">Guidelines</a> seem obfuscated.
 </p>
 <p class="leftbar">
 Excessively “<em>dotty”</em> use of the <code>chksubmit(1)</code> or <code>chkentry(1)</code> commands suggests that
@@ -1475,21 +1529,21 @@ after the minute mark is <strong>60</strong>.</p>
 <p>Other windows, on the other hand, might be OK: especially where “<strong>X
 marks the spot</strong>”. Yet on the third hand, windows are best when they are
 “unseen” (i.e., not dirty). :-)</p>
-<p>The <a href="../judges.html">IOCCC judges</a>, as a group, have a history giving wide degree of latitude
+<p>The <a href="../judges.html">Judges</a>, as a group, have a history giving wide degree of latitude
 to reasonable submissions. And recently they have had as much longitudinal
 variation as it is possible to have on <a href="https://science.nasa.gov/earth/">Earth</a>. :-)
 Other windows, on the other hand, might be OK: especially where “<strong>X
 marks the spot</strong>”. Yet on the third hand, windows are best when they are
 “unseen” (i.e., not dirty). :-)</p>
-<p>The <a href="../judges.html">IOCCC judges</a>, as a group, have a history giving wide degree of latitude
+<p>The <a href="../judges.html">Judges</a>, as a group, have a history giving wide degree of latitude
 to reasonable submissions. And recently they have had as much longitudinal
 variation as it is possible to have on <a href="https://science.nasa.gov/earth/">Earth</a>. :-)</p>
 <blockquote>
 <p>You are in a maze of twisty <em>guidelines</em>, all different.</p>
 </blockquote>
-<p>There are at least zero <a href="../judges.html">IOCCC judges</a> who think that
+<p>There are at least zero <a href="../judges.html">Judges</a> who think that
 <a href="https://en.wikipedia.org/wiki/Fideism">Fideism</a> has little
-or nothing to do with the IOCCC judging process.</p>
+or nothing to do with the Judging process.</p>
 <blockquote>
 <p>All generalizations are false, including this one. – <strong>Mark Twain</strong></p>
 </blockquote>
@@ -1526,7 +1580,7 @@ Please try to avoid this specific individual <em>guideline</em>, if it is at all
 <p class="leftbar">
 We do not recommend submitting <a href="https://systemd.io">systemd</a> source code to the IOCCC,
 if nothing else because that code is likely to exceed
-<a href="rules.html#rule2-size">Rule 2 - Size</a>.
+<a href="rules.html#rule2-size">Rule 2 - Size restrictions</a>.
 This isn’t to say that another highly compact and obfuscated
 replacement of <code>init(8)</code> would not be an interesting submission.
 </p>
@@ -1537,7 +1591,7 @@ is not an original work, unless you one of the
 <a href="https://github.com/ioccc-src/mkiocccentry/graphs/contributors">several mkiocccentry toolkit contributors</a>.
 in which case it is original! :-)
 Even so, most of the programs in the toolkit exceed the
-<a href="rules.html#rule2-size">Rule 2 - Size</a>
+<a href="rules.html#rule2-size">Rule 2 - Size restrictions</a>
 so they wouldn’t qualify for the contest anyway.
 </p>
 <p class="leftbar">
@@ -1555,32 +1609,18 @@ With respect to <a href="#nested-functions">nested functions</a>, try <code>chke
 <p>Jump to: <a href="#">top</a></p>
 <div id="more-information">
 <div id="information">
-<h1 id="for-more-information">For more information</h1>
+<h1 id="further-reading">Further Reading</h1>
 </div>
 </div>
-<p>For questions or comments about the contest, see <a href="../contact.html">Contacting the IOCCC</a>.</p>
-<p><strong>Be SURE</strong> to review the <a href="index.html">IOCCC Rules and Guidelines</a> as they
-may (and <strong>often do</strong>) change from year to year.</p>
-<p><strong>PLEASE</strong> be sure you have the current <a href="rules.html">IOCCC rules</a> and
-<a href="guidelines.html">IOCCC guidelines</a> prior to submitting to the contest.</p>
 <p>See the <a href="../news.html">Official IOCCC website news</a> for additional information.</p>
-<p>For the updates and breaking IOCCC news, you are encouraged to follow
-the <a href="https://fosstodon.org/@ioccc">IOCCC on Mastodon</a>. See our
+<p>For questions or comments about the contest, see <a href="../contact.html">Contacting the IOCCC</a>.</p>
+<p><strong>Be SURE</strong> to review the current <a href="index.html">IOCCC Rules and Guidelines</a> as they
+often change year to year. Especially prior to submitting to the contest.</p>
+<p>For the latest IOCCC news, follow the <a href="https://fosstodon.org/@ioccc">IOCCC on Mastodon</a>. See our
 FAQ on “<a href="../faq.html#try_mastodon">Mastodon</a>”
-for more information. Please do note that unless
-you are mentioned by us you will <strong>NOT</strong> get a notification from the app <em>so you
-should refresh the page <strong>even if you do follow us</strong></em>.</p>
-<p>Check out the <a href="https://www.ioccc.org/index.html">Official IOCCC winner website</a> in general.</p>
-<p>Consider joining the IOCCC discord community via this link:
-<a href="https://discord.gg/Wa42Qujwnw">https://discord.gg/Wa42Qujwnw</a></p>
-<p>See the
-FAQs on “<a href="../faq.html#mkiocccentry">obtaining, compiling, installing and using the mkiocccentry tools</a>”
-and the
-FAQ on “<a href="../quick-start.html#enter">how to enter the IOCCC</a>”
-as that FAQ has important details on
-<a href="../next/register.html">how to register</a>
-as well as
-<a href="../next/submit.html">how to upload your submission</a> for the IOCCC.</p>
+for more information.</p>
+<p>Also consider joining the <a href="https://discord.com/invite/Wa42Qujwnw">IOCCC Discord Server</a>
+for the latest news, discussions about The Rules, questions for the Judges, and <code>C</code> in general.</p>
 <hr style="width:10%;text-align:left;margin-left:0">
 <p>Jump to: <a href="#">top</a>
 <!-- AFTER: last line of markdown file: next/guidelines.md --></p>

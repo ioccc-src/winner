@@ -39,7 +39,7 @@ writing by [contacting the judges](../contact.html).
 
 ## Rules Version
 
-These IOCCC Rules are version **29.12 2025-12-01**.
+These IOCCC Rules are version **29.13 2025-12-01**.
 
 <p class="leftbar">
 The <span style='font-size:28px;'><b>&verbar;</b></span> symbol indicates an **change** from the previous IOCCC.
@@ -97,15 +97,13 @@ FAQ on "[How can I comment or make a suggestion on IOCCC rules, guidelines and t
 Your submission **MUST** be a C program.
 </p>
 
-See the [Guidelines for Rule 1 - C program](guidelines.html#guidelines-for-rule-1---c-program).
+See the [Guidelines for Rule 1 - C program](guidelines.html#guideline1-c).
 
 
 <div id="rule2">
 <div id="rule2-size-restrictions">
 <div id="rule2-size">
-<div id="rule-2---size">
 ## Rule 2 - Size restrictions
-</div>
 </div>
 </div>
 </div>
@@ -120,14 +118,12 @@ During development this can be checked using `iocccsize(1)`:
     iocccsize prog.c
 ```
 
-See the [Guidelines for Rule 2 - Size restrictions](guidelines.html#guideline-2---size).
+See the [Guidelines for Rule 2 - Size restrictions](guidelines.html#guideline2-size).
 
 
 <div id="rule2a">
 <div id="rule2a-gross-size">
-<div id="rule-2a-gross-size">
 ### Rule 2a - Gross Size
-</div>
 </div>
 </div>
 
@@ -139,9 +135,7 @@ See [Entering the IOCCC: the bare minimum you need to know](../quick-start.html#
 
 <div id="rule2b">
 <div id="rule2b-net-size">
-<div id="rule-2b-net-size">
 ### Rule 2b - Net Size
-</div>
 </div>
 </div>
 
@@ -150,8 +144,9 @@ command line argument to the latest version of the official IOCCC size
 tool (hereby referred to as `iocccsize(1)`), the value printed **MUST
 NOT** exceed **2503**.
 
-**NOTE**: `iocccsize` does **NOT** calculate the filename length. See [Rule 17 -
-Use mkiocccentry](#rule17-mkiocccentry).
+**NOTE**: `iocccsize` does **NOT** calculate the filename length.
+
+See [Rule 17 - Use mkiocccentry](#rule17-mkiocccentry).
 
 
 <div id="rule3">
@@ -170,7 +165,7 @@ See [How to register for the IOCCC](register.html).
 
 See [Entering the IOCCC: the bare minimum you need to know](../quick-start.html#enter).
 
-See [Guidelines for Rule 3 - Register for the IOCCC](guidelines.html#guideline-3---register).
+See [Guidelines for Rule 3 - Register for the IOCCC](guidelines.html#guideline3-register).
 
 
 <div id="rule4">
@@ -265,10 +260,10 @@ See [Rule 17 - Use mkiocccentry](rules.html#rule17-mkiocccentry).
 See the
 FAQ on "[What permissions may my files be and what if I need different permissions?](../faq.html#file_perms)".
 
-See the [Guidelines on the mkiocccentry toolkit](guidelines.html#mkiocccentry_toolkit).
-
 See the
 FAQ on "[What are the detailed recommendations for a submission Makefile?](../faq.html#makefile_details)".
+
+See the [Guidelines on the mkiocccentry toolkit](guidelines.html#mkiocccentry_toolkit).
 
 
 <div id="rule5">
@@ -311,7 +306,7 @@ I am **NOT** a Rule, I am a `free(void *human);` ‼️
         ha(); ha(); ha();
     }
 ```
-See [Rule 19 - Prime](rules.html#rule-19---prime).
+See [Rule 19 - Prime](rules.html#rule19-prime).
 
 
 <div id="rule7">
@@ -334,7 +329,7 @@ You are permitted to use tools to write your code.
 
 See [Rule 16 - Anonymous Judging](rules.html#rule16-anonymous-judging),
 and
-[Guidelines for Rule 7 - Original Work](guidelines.html#guideline-7---original-work).
+[Guidelines for Rule 7 - Original Work](guidelines.html#guideline7-original).
 
 
 <div id="rule8">
@@ -365,9 +360,13 @@ See
 and
 [Rule 17 - Use mkiocccentry](rules.html#rule17-mkiocccentry).
 
+See [Guidelines for Rule 8 - Submitting requirements](guidelines.html#guideline8-submitting).
+
 
 <div id="rule9">
+<div id="rule9-no-interactive">
 ## Rule 9 - No interactive compiling allowed
+</div>
 </div>
 
 Entries requiring human interaction to be initially compiled are **NOT**
@@ -385,6 +384,8 @@ the make command.
 in the Makefile.
 
 See [Rule 15 - GNU Makefile](rules.html#rule15-gnu-makefile).
+
+See [Guidelines for Rule 9 - No interactive compiling allowed](guidelines.html#guideline9-no-interactive).
 
 
 <div id="rule10">
@@ -435,7 +436,7 @@ version, **PLEASE** indicate that in your `remarks.md` file of your non-rule
 abusing version so that the Judges don't think you uploaded a duplicate into a
 wrong slot by mistake.
 
-See [Guidelines for Rule 11 - Legal rule abuse](guidelines.html#guideline-11---abuse).
+See [Guidelines for Rule 11 - Legal rule abuse](guidelines.html#guideline11-abuse).
 
 
 <div id="rule12">
@@ -447,9 +448,13 @@ See [Guidelines for Rule 11 - Legal rule abuse](guidelines.html#guideline-11---a
 Use of UTF-8 is supported by `C89` standard and its updates and so too by the
 IOCCC.
 
+See [Guidelines for Rule 12 - UTF-8](guidelines.html#guideline12-utf8).
+
 
 <div id="rule13">
+<div id="rule13-nocr">
 ## Rule 13 - No carriage returns in prog.c
+</div>
 </div>
 
 Any C source that fails to compile because lines contain carriage-returns
@@ -465,6 +470,8 @@ limits, to **NOT** end source with a newline. If you
 need to do this, please document that in your `remarks.md` file and if
 your compiler complains about this, document this too and update your
 `Makefile` to account for this.
+
+See [Guidelines for Rule 13 - No carriage returns in prog.c](guidelines.html#guideline13-nocr).
 
 
 <div id="rule14">
@@ -528,7 +535,7 @@ See [Rule 4 - Required files](rules.html#rule4-required-files).
 See
 FAQ on "[What are the detailed recommendations for a submission Makefile?](../faq.html#makefile_details)".
 
-See [Guidelines for Rule 15 - GNU Makefile](guidelines.html#guideline-15---building).
+See [Guidelines for Rule 15 - GNU Makefile](guidelines.html#guideline15-gnu-makefile).
 
 
 <div id="rule16">
@@ -608,7 +615,7 @@ for testing and the IOCCC judges.
 </p>
 
 <p class="leftbar">
-The `prog.c` file should pass the [Rule 2 - Size](rules.html#rule2-size)
+The `prog.c` file should pass the [Rule 2 - Size restrictions](rules.html#rule2-size)
 checks performed by `iocccsize(1)`.
 </p>
 
@@ -628,7 +635,7 @@ See [Rule 4 - Required files](rules.html#rule4-required-files).
 See the
 FAQ on "[What is the mkiocccentry tool, how do I obtain it and how do I use it?](../faq.html#mkiocccentry)".
 
-See the [Guidelines for Rule 17 - Use mkiocccentry](guidelines.html#guideline-17---packaging).
+See the [Guidelines for Rule 17 - Use mkiocccentry](guidelines.html#guideline17-mkiocccentry).
 
 
 <div id="rule18">
@@ -639,11 +646,13 @@ The entirety of your submission **MUST** be submitted under the following licens
 
 [CC BY-SA 4.0 DEED Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/)
 
-See [Rule 7 - Original Work](rules.html#rule-7---original-work).
+See [Rule 7 - Original Work](rules.html#rule7-original-work).
 
 
 <div id="rule19">
+<div id="rule19-prime">
 ## Rule 19 - Prime
+</div>
 </div>
 
 <p class="leftbar">
