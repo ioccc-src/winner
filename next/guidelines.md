@@ -143,7 +143,7 @@ the years?](../faq.html#size_rule_history)".
 
 You would be **WELL ADVISED** to observe our [notes on
 size](../2024/index.html#rule2) in the
-[2024/index.html](2024/index.html).
+[2024/index.html](../2024/index.html).
 
 
 Jump to: [top](#)
