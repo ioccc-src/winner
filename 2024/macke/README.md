@@ -36,7 +36,7 @@ Have you ever wondered would what would happen if you recursively removed
 files starting from the root directory?  Are you curious what happens when
 you launch a [fork bomb](https://en.wikipedia.org/wiki/Fork_bomb)?
 Within the safety of an virtual walls, can safely give those and other scenarios:
-just check out the "[Things You Can Do](#todo")" section below.
+just check out the "[Things You Can Do](#todo)" section below.
 
 **NOTE**: For those who do not have a clang compiler environment that
 supports the `wasm32` target, we provide a `prog.wasm` file.
