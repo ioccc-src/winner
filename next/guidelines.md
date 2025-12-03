@@ -13,7 +13,7 @@ permission in writing by [contacting the Judges](../contact.html).
 # Guidelines Version
 
 <p class="leftbar">
-These Guidelines are version **29.07 2025-12-02**.
+These Guidelines are version **29.08 2025-12-02**.
 </p>
 
 <p class="leftbar">

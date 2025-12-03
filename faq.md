@@ -1,6 +1,6 @@
 # IOCCC FAQ Table of Contents
 
-This is FAQ version **29.04 2025-12-01**.
+This is FAQ version **29.05 2025-12-02**.
 
 
 ## 0. [Entering the IOCCC: the bare minimum you need to know](#enter_questions)

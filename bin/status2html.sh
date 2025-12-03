@@ -132,7 +132,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="2.0.1 2025-06-04"
+export VERSION="2.0.2 2025-12-02"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -476,14 +476,13 @@ esac
 	echo
         echo "While the IOCCC is not open now, there is a tentative opening date for the next IOCCC."
         echo
-	echo "See the [IOCCC news](news.html) for details including the tentative" \
-	     "scheduled opening date."
+	echo "See the [IOCCC news](news.html) for details including the tentative scheduled opening date."
 	echo
-	echo "A preliminary [IOCCC rules](next/rules.html), preliminary [IOCCC guidelines](next/guidelines.html)," \
-	     "and preliminary [mkiocccentry tools](https://github.com/ioccc-src/mkiocccentry) have been posted."
+	echo "A preliminary [IOCCC rules](next/rules.html), preliminary [IOCCC guidelines](next/guidelines.html),"
+	echo "and preliminary [mkiocccentry toolkit](https://github.com/ioccc-src/mkiocccentry) have been posted."
 	echo
-	echo "Comments and suggestions on these preliminary items are welcome, see [FAQ 0.5](quick-start.html#feedback)" \
-	     "for information on how."
+	echo "Comments and suggestions on these preliminary items are welcome."
+	echo "See [how to provide feedback on rules, guidelines, and mkiocccentry toolkit](faq.html#feedback)."
 	;;
     open) echo "# The IOCCC is open for submissions"
 	echo
@@ -491,32 +490,33 @@ esac
 	echo
 	echo "See [How to enter the IOCCC](quick-start.html#enter) FAQ for additional information."
 	echo
-	echo "**IMPORTANT**: If you viewed the preliminary IOCCC rules, guidelines, and tools while the IOCCC status" \
-	     "was pending, be sure to review the official IOCCC rules, guidelines, and tools for any changes that may" \
-	     "have been recently made before submitting to the IOCCC."
+	echo "**IMPORTANT**: If you viewed the preliminary rules, guidelines, and tools while the IOCCC status"
+	echo "was pending, be sure to review the official [IOCCC rules](next/rules.html),"
+	echo "[IOCCC guidelines](next/guidelines.html), and [mkiocccentry toolkit](https://github.com/ioccc-src/mkiocccentry)"
+	echo "for any changes that may have been recently made before submitting to the IOCCC."
 	;;
     judging) echo "# The IOCCC is closed to new submissions"
 	echo
-	echo "The [IOCCC judges](judges.html) are in the process of judging the submissions they received" \
-	     "while the IOCCC was open."
+	echo "The [IOCCC judges](judges.html) are in the process of judging the submissions they received"
+	echo "while the IOCCC was open."
 	echo
-	echo "Watch the [@IOCCC mastodon feed](https://fosstodon.org/@ioccc), as well as the" \
-	     "[IOCCC news](news.html) page for updates."
+	echo "Watch the [@IOCCC mastodon feed](https://fosstodon.org/@ioccc), as well as the"
+	echo "[IOCCC news](news.html) page for updates."
 	;;
     closed) echo "# The IOCCC is closed"
         echo
-		echo "The IOCCC is **NOT** accepting [new submissions](next/submit.html) at this time.  See the" \
-	     "[IOCCC winning entries page](years.html) for the entries that have won the IOCCC."
+	echo "The IOCCC is **NOT** accepting [new submissions](next/submit.html) at this time.  See the"
+	echo "[IOCCC winning entries page](years.html) for the entries that have won the IOCCC."
 	echo
-	echo "Watch both [this IOCCC status page](status.html) and the" \
-	     "[@IOCCC mastodon feed](https://fosstodon.org/@ioccc) for information about future IOCCC openings."
+	echo "Watch both [this IOCCC status page](status.html) and the"
+	echo "[@IOCCC mastodon feed](https://fosstodon.org/@ioccc) for information about future IOCCC openings."
 	;;
     *) echo "# The IOCCC status is unknown"
         echo
 	echo "The IOCCC status is an unexpected status value: $CONTEST_STATUS"
         echo
         echo "This is a **BUG**, not a feature.  Feel free to report it!" 1>&2
-		echo "See the [GitHub issues page](https://github.com/ioccc-src/winner/issues/new/choose)." 1>&2
+	echo "See the [GitHub issues page](https://github.com/ioccc-src/winner/issues/new/choose)." 1>&2
 	;;
     esac
     echo
