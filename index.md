@@ -74,6 +74,20 @@ FAQ on "[website menus](faq.html#menus)".
 </blockquote>
 
 
+<div id="thanks">
+# Thank you
+</div>
+
+The servers, services, and software used to build, manage, and maintain
+this site as well as to run the IOCCC itself are due, in part, to the
+support from:
+
+* [LaurieWired](https://www.youtube.com/@lauriewired)
+
+<a href="https://www.youtube.com/@lauriewired"><img src="png/lauriewired_logo.png" alt="LaurieWired logo"
+width=262 height=142></a>
+
+
 <div id="obfuscate">
 # Obfuscate defined:
 </div>
@@ -142,8 +156,6 @@ are all encouraged to stop by and say hello.
 
 To join, click this link:
 [https://discord.gg/Wa42Qujwnw](https://discord.gg/Wa42Qujwnw).
-
-
 
 <div id="disclaimer">
 # Important Disclaimer

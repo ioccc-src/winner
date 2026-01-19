@@ -55,7 +55,26 @@
 </blockquote>
 
 
+<div id="20260118">
+## 2026-01-18
+</div>
+
+The **IOCCC29** remains open to people who wish to [register for the IOCCC](next/register.html)
+and then  [upload submissions](next/submit.html) until `2025-12-03 20:25:12.045045 UTC`.
+
+The servers, services, and software used to build, manage, and maintain
+this site as well as to run the IOCCC itself are due, in part, to the
+support from:
+
+* [LaurieWired](https://www.youtube.com/@lauriewired)
+
+<a href="https://www.youtube.com/@lauriewired"><img src="png/lauriewired_logo.png" alt="LaurieWired logo"
+width=262 height=142></a>
+
+
+<div id="20251130">
 ## 2025-11-30
+</div>
 
 The **IOCCC29** will run from `2025-12-03 20:25:12.045045 UTC` to `2026-03-13 17:19:23.293137 UTC`.
 
@@ -80,7 +99,9 @@ The above **dates and times may change _AT ANY TIME_** until the [contest status
 The above timestamps are in "_YYYY-MM-DD HH:MM:SS.micros UTC_" format.
 
 
+<div id="20250806">
 ## 2025-08-06
+</div>
 
 The award presentations from the longer 4.5 hour [Our Favorite
 Universe](https://www.youtube.com/@OurFavoriteUniverse) YouTube show
@@ -95,7 +116,9 @@ forks and/or download the [IOCCC winning entries of 2024](https://www.ioccc.org/
 compressed tarball.
 
 
+<div id="20250802">
 ## 2025-08-02
+</div>
 
 
 ### IMPORTANT UPDATE
