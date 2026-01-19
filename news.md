@@ -60,7 +60,7 @@
 </div>
 
 The **IOCCC29** remains open to people who wish to [register for the IOCCC](next/register.html)
-and then [upload submissions](next/submit.html) until `2026-03-13 17:19:23.293137 UTC`:
+and then [upload submissions](next/submit.html) until `2026-03-13 17:19:23.293137 UTC`.
 
 The servers, services, and software used to build, manage, and maintain
 this site as well as to run the IOCCC itself are due, in part, to the
