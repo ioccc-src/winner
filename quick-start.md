@@ -118,11 +118,11 @@ for more details.
 
 For more details on `mkiocccentry`, what it is, how to obtain it and how to use
 it, see the
-FAQ on "[mkiocccentry](#mkiocccentry)"
+FAQ on "[mkiocccentry](faq.html#mkiocccentry)"
 (especially the
-FAQ on "[what mkiocccentry is in simple terms](#about_mkiocccentry),
+FAQ on "[what mkiocccentry is in simple terms](faq.html#about_mkiocccentry),
 the
-FAQ on "[how to use mkiocccentry](#using_mkiocccentry)")
+FAQ on "[how to use mkiocccentry](faq.html#using_mkiocccentry)")
 and the [mkiocccentry section in the
 guidelines](next/guidelines.html#mkiocccentry).
 
@@ -209,7 +209,7 @@ might be a helpful guide when using the [IOCCC submit server](https://submit.ioc
 
 **NOTE**: You may modify a previous uploaded submission, if the contest is
 [open](faq.html#open), by replacing the file in a slot.  Please use the
-[mkiocccentry tool](#mkiocccentry) to rebuild the compressed tarball as
+[mkiocccentry tool](faq.html#mkiocccentry) to rebuild the compressed tarball as
 this will update the timestamps and the filename generated, as well as packaging
 any changes: making it clear to the [IOCCC judges](judges.html) that you intend
 to replace the older upload.
@@ -225,5 +225,5 @@ See the "**[current status of the IOCCC](status.html)**" page for details on the
 might be offline and unreachable as a website.
 
 **NOTE**: if you do need to update a submission, you might find the
-FAQ on "[how to not have to re-enter information more than once](#answers_file)"
+FAQ on "[how to not have to re-enter information more than once](faq.html#answers_file)"
 useful.
