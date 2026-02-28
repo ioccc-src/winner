@@ -1329,7 +1329,7 @@ We **recommend** AND **encourage** you to use the example Makefile,
 as the starting point for your submission's required `Makefile`:
 
 - [view example Makefile](%%REPO_URL%%/next/Makefile.example)
-- <a href="Makefile.example" download="Makefile">download example Makefile</a>
+- <a href="next/Makefile.example" download="Makefile">download example Makefile</a>
 
 Feel free to modify the `Makefile` to suit your obfuscation needs.
 
