@@ -55,6 +55,40 @@
 </blockquote>
 
 
+<div id="202600313">
+## 2026-03-13
+</div>
+
+The IOCCC is now **closed** for new submissions.
+
+For the many who submitted to this IOCCC, we **THANK YOU**. Without your
+efforts, talent, creativity, and C coding skill, there wouldn't be an IOCCC!
+
+If you missed this IOCCC, please submit to the next IOCCC, which we
+are happy to announce we are planning to hold another IOCCC next year.
+
+The IOCCC judges will go into "radio silence" as we judge the many
+submissions. How long depends on the submission quantity & quality.
+
+We’ll **carefully review each submission**, giving the C code and remarks.md
+the time and attention they deserve.
+
+Winners will be announced live on the "Our Favorite Universe".
+
+[https://www.youtube.com/@OurFavoriteUniverse](https://www.youtube.com/@OurFavoriteUniverse)
+
+**PLEASE** subscribe to that YouTube channel and click the notification bell.
+The winning source will be uploaded to the [IOCCC Official Website](index.html) at the end of the show.
+
+We may also post progress updates on Mastodon:
+
+[https://fosstodon.org/@ioccc](https://fosstodon.org/@ioccc)
+
+And on Discord:
+
+[https://discord.com/invite/Wa42Qujwnw](https://discord.com/invite/Wa42Qujwnw)
+
+
 <div id="20260118">
 ## 2026-01-18
 </div>
