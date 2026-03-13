@@ -1,37 +1,31 @@
-<!-- START: this line starts content from: inc/rules.open.hdr -->
+<!-- START: this line starts content from: inc/rules.closed.hdr -->
 
-# Official IOCCC rules
+# The IOCCC is closed
 
-These rules are **OFFICIAL**.
+The IOCCC is **NOT** accepting new submissions at this time.  See the
+[IOCCC winning entries page](../years.html) for the entries that have
+won the IOCCC in the past.
 
-Unless some significant problem turns up (such as a need to delay in
-when the IOCCC will close, or some major bug is discovered) they will
-remain **OFFICIAL** for this IOCCC.
+These rules are a **TENTATIVE proposal** for the next IOCCC and are
+**likely be to be updated** before the next IOCCC.
 
 See our
 FAQ on "[rules, guidelines, tools feedback](../faq.html#feedback)"
 as well as our
 FAQ on "[about asking questions](../faq.html#question)"
-about these rules. You might also find the FAQ in general useful, especially the
+about these rules. You might also find the FAQ in general useful,
+especially the
 FAQ on "[how to enter the IOCCC](../quick-start.html#enter)".
 
-**SUGGESTION**: Watch both the [IOCCC news](../news.html) and the [IOCCC
-Mastodon](https://fosstodon.org/@ioccc) feed for the latest news about
-any _mentions_ changes.
+Watch both [the IOCCC status page](../status.html) and the [@IOCCC
+mastodon feed](https://fosstodon.org/@ioccc) for information about
+future IOCCC openings.
 
-**HINT to mastodon users**: You may wish to refresh the [@IOCCC mastodon
-feed](https://fosstodon.org/@ioccc) page and/or mastodon app from time
-to time to view IOCCC mastodon updates.
+**HINT to mastodon users**: You may wish to refresh the [@IOCCC
+mastodon feed](https://fosstodon.org/@ioccc) page and/or mastodon app
+from time to time to view IOCCC mastodon updates.
 
-
-# The IOCCC open for submissions
-
-See "[FAQ - How may I enter the IOCCC](../quick-start.html#enter)"
-for information on how to register for the IOCCC, how to create a proper
-bzip2 compressed tarball of your submission, and how to upload your
-bzip2 compressed tarball to the IOCCC submit server.
-
-<!-- END: the next line ends content from: inc/rules.open.hdr -->
+<!-- END: the next line ends content from: inc/rules.closed.hdr -->
 <!-- This is the last line modified by the tool: bin/gen-status.sh -->
 
 # 29th International Obfuscated C Code Contest Official Rules
