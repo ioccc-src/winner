@@ -4845,6 +4845,43 @@ Jump to: [top](#)
 
 When printing a 0 digit, the `fib.bin` 4004 program will print a space instead of a "0".
 
+<div id="2024_ferguson1">
+## 2024/ferguson1
+</div>
+
+Jump to: [top](#)
+
+### STATUS: INABIAF - please **DO NOT** fix
+### Source code: [2024/ferguson1/prog.c](%%REPO_URL%%/2024/ferguson1/prog.c)
+### Information: [2024/ferguson1/index.html](2024/ferguson1/index.html)
+
+Upon starting this game you will immediately have a sinful night and playing it
+will lead you directly to a date with the Devil in HELL after things such as:
+
+- having delusions and hallucinations
+- engaging in robbery, accidental killings and cannibalism
+- engaging in or thinking about illicit affairs
+- encountering and trying to defend yourself against
+[Blackbeard](https://en.wikipedia.org/wiki/Blackbeard) aka Edward Teach on his
+flagship [Queen Anne's
+Revenge](https://en.wikipedia.org/wiki/Queen_Anne%27s_Revenge)
+- dying of dysentery
+- dying of starvation after all your oxen are consumed and nobody else is left
+- being eaten by a dragon
+- being eaten by Tyrannosauruses
+- eating [spaghetti](https://en.wikipedia.org/wiki/Goto) and [being strangled by
+it](https://en.wikipedia.org/wiki/Spaghetti_code)
+- encountering the [famous Spaghetti Tree](http://news.bbc.co.uk/onthisday/hi/dates/stories/april/1/newsid_2819000/2819261.stm)
+- and a whole host of other wild and exciting things!
+
+Whether or not you make it to Oregon Trail be prepared to meet the DEVIL in
+HELL!
+
+And MAKE SURE to say hi to
+[him](https://www.ioccc.org/authors.html#Cody_Boone_Ferguson)! :-)
+He is waiting. 😈
+
+
 <div id="2024_ferguson2">
 ## 2024/ferguson2
 </div>
@@ -4893,6 +4930,7 @@ The try.sh script demonstrates how you can often get the same output but because
 of words being multiple words (if it is not in the Navajo military dictionary)
 translation back to English is not perfect.
 
+Jump to: [top](#)
 
 <div id="2024_howe">
 ## 2024/howe
@@ -4975,6 +5013,8 @@ input sizes larger than 64K bytes.
 **PLEASE NOTE**: The above problems are **NOT** code bugs.  They represent compiler mis-features,
 linker limitations, and/or architecture limitations.
 
+For more information see the "**Large input size issues**" section of
+[2024/kurdyukov4/index.html](2024/kurdyukov4/index.html#large-input-size-issues).
 
 Jump to: [top](#)
 
@@ -4993,8 +5033,6 @@ request](https://github.com/ioccc-src/winner/pulls) or otherwise, we
 thank you as well for the help! We will happily add you to the
 [thanks](thanks-for-help.html) file as well.
 
-For more information see the "**Large input size issues**" section of
-[2024/kurdyukov4/index.html](2024/kurdyukov4/index.html#large-input-size-issues).
 
 Jump to: [top](#)
 
