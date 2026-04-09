@@ -723,6 +723,16 @@ running the program on the text file demonstrates.
 
 Jump to: [top](#)
 
+<div id="1987_heckbert">
+## Winning entry: [1987/heckbert](1987/heckbert/index.html)
+### Winning entry source code: [heckbert.c](%%REPO_URL%%/1987/heckbert/heckbert.c)
+</div>
+
+[Cody](#cody) fixed the Makefile. The `CSILENCE` had a `-D` which belongs in
+`CDEFINE`.
+
+
+Jump to: [top](#)
 <div id="1987_lievaart">
 ## Winning entry: [1987/lievaart](1987/lievaart/index.html)
 ### Winning entry source code: [lievaart.c](%%REPO_URL%%/1987/lievaart/lievaart.c)
