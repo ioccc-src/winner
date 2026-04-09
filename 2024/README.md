@@ -297,40 +297,51 @@ emulating the entire
 by computing the output of each gate in a loop, effectively running the CPU and associated RAM/ROM chips!
 
 
+<div id="lost">
 ### Remarks on some of submissions that did not win
+</div>
 
+<div id="aslr"></div>
 * Depending on the address of a variable as the single source of
 pseudo-randomness isn't a good idea, as not all platforms support
 [ASLR](https://en.wikipedia.org/wiki/Address_space_layout_randomization).
 It's much better to mix in other sources of variability (e.g. time, process
 ID, etc.) so that subsequent runs will behave differently.
 
+<div id="old"></div>
 * If a submission's obfuscation strongly resembles a past IOCCC winning
 entry, and the submission's obfuscation is mainly in the C code source,
 then the submission is likely to not make it into the final rounds of judging.
 
+<div id="implicit"></div>
 * When working with modern C compilers, it's crucial to explicitly
 declare variable and function types. Don't assume they'll
 automatically default to an `int`.
 
+<div id="kr"></div>
 * Sadly, K&C-style C code does not compile well under modern C compilers.
 
+<div id="portability"></div>
 * A submission that only works under gcc or clang does not work as well
 as submissions that can work under either compiler.
 
+<div id="originality"></div>
 * Shrinking an existing open-source program to meet rule 2 size might
 be an impressive feat of code shrinking, but it might not be enough to
 make it into the final rounds of judging. Originality is key, and this
 might not be the most innovative approach.
 
+<div id="math"></div><div id="maths"></div><div id="mathematics"></div>
 * If your submission relies on mathematical algorithms, be sure that the
 C code that implements the mathematics is well obfuscated.
 
+<div id="missing-files"></div>
 * Just a friendly reminder that before you upload your submissions,
 uncompress the compressed tarball into a different directory and verify
 everything is in order. This way, you can be sure you didn't miss uploading any
 important files!
 
+<div id="gotos"></div><div id="goto"></div>
 * Using a lot of goto statements to make your code harder to understand
 might not help it pass the final rounds of judging.
 

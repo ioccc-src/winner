@@ -134,6 +134,14 @@
             "entry_text" : "text file showing all the line changes in a single run"
         },
         {
+            "file_path" : "gotos.ruined.c",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "shows why lots of gotos will no longer make it through the final rounds"
+        },
+        {
             "file_path" : "lencount.c",
             "inventory_order" : 100,
             "OK_to_edit" : true,

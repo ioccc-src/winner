@@ -507,10 +507,9 @@ practical reasons.</p>
     ./prog.alt2 # submitted code with bug fix</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>You will have to go to “Fun-Damentals” to understand the logic flow of this
-game. While the code might goto as many as 152 times to travel from <code>main()</code> to
-a successful <code>exit(666)</code> you may have a devil of a time trying to figure out how
-this program actually does what it does as it jumps hundreds if not thousands of
-times.</p>
+game. While you jump thousands of times from as many as 152 <code>goto</code>s, to travel
+from <code>main()</code> to a successful <code>exit(666);</code>, you may have a devil of a time trying
+to figure out how this program actually does what it does.</p>
 <p>Before you set off on your adventure to decode this program’s logic, make
 sure you have enough food, ammo, clothes, oxen, and programming supplies.
 You’ll be driving for 2170 miles through a wild wilderness inspired
@@ -519,26 +518,46 @@ Trail</a>, so
 you’ll need to be prepared for anything! Regardless of how well prepared you
 are, you will have a devil of a time jumping around inside this C code. :-)</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
+<p>If you wish to jump straight to the remarks about the game, go <a href="#devil">here</a>.</p>
 <blockquote>
-<p>Fun fact: after winning this, the author played the game in gdb from start to
-finish and not counting macros but counting all function calls (not libc
-functions just the few functions in prog.c), there were a total of <strong>1416</strong> (!)
-line jumps. Skipping prog.c function calls and it was still <strong>1131</strong> jumps! The
-prog.c, if you remove <code>#include</code>s, blank lines, lines with just a brace and
-lines that have only variables, <strong>only has 55 (!) lines of code</strong>. A very tiny
-fraction of the time a line might be repeated in a row ONCE but that does not
-really matter, as it is still technically a jump.</p>
+<p><strong>FUN FACT</strong>: the judges stated in the <a href="https://www.ioccc.org/2024/index.html#gotos">2024
+index.html</a> the following:</p>
+<ul>
+<li>Using a lot of goto statements to make your code harder to understand might
+not help it pass the final rounds of judging.</li>
+</ul>
 </blockquote>
-<p><strong>SUGGESTION</strong>: if you dare, try opening
-<a href="https://github.com/ioccc-src/winner/blob/master/2024/ferguson1/prog.gotos.c">prog.gotos.c</a> in an editor with
-syntax highlighting and then highlight <code>goto</code>. Alternatively, try it with <code>grep</code>
-if your grep has colours enabled (probably easier). This is a nice one to try:</p>
+<p>…and Landon told me personally:</p>
+<blockquote>
+<p>One might say that the number of gotos were nearly countless. 😉</p>
+</blockquote>
+<p>…which made me EXTREMELY happy and I decided to demonstrate exactly what this
+means, and why lots of <code>goto</code>s are now frowned upon, something I aimed to do. If
+you dare, try opening <a href="https://github.com/ioccc-src/winner/blob/master/2024/ferguson1/prog.gotos.c">gotos.ruined.c</a>
+in an editor with syntax highlighting and then highlight <code>goto</code>. Alternatively,
+try it with <code>grep</code> if your grep has colours enabled (probably easier). This is a
+nice one to try:</p>
 <pre><code>    grep -E &#39;heaven|goto|666|hell&#39; prog.gotos.c</code></pre>
 <p>Alternatively, in vim you might try, making sure you’re in command mode first
 (hit ESC if you don’t know - if that doesn’t work try hitting it again as it can
 depend on what you’re doing):</p>
 <pre><code>    /heaven\|goto\|666\|hell</code></pre>
-<p>Read it and <del>weep</del> scream (or curse :-) )!</p>
+<p>After that, to see just the <code>goto</code>s before pre-processing, take a look at
+<a href="https://github.com/ioccc-src/winner/blob/master/2024/ferguson1/prog.gotos.c">prog.gotos.c</a>, using the same methods
+as above (you could also try, if your <code>grep</code> has the <code>-o</code> option, which is not
+required by POSIX, just doing <code>grep -o goto gotos.ruined.c</code> and <code>grep -o goto prog.gotos.c</code> but this is less fun).</p>
+<p>Read them and <del>weep</del> scream (or curse the
+<a href="https://www.ioccc.org/authors.html#Cody_Boone_Ferguson">devil</a> :-) )!</p>
+<blockquote>
+<p><strong>FUN FACT</strong>: after winning this, I played the game in gdb from start
+to finish and not counting macros but counting all function calls (not libc
+functions just the few functions in prog.c), there were a total of <strong>1416</strong> (!)
+line jumps. Skipping prog.c function calls and it was still <strong>1131</strong> jumps! The
+prog.c, if you remove <code>#include</code>s, blank lines, lines with just a brace and
+lines that have only variables, <strong>only has 55 (!) lines of code</strong>. A very tiny
+fraction of the time a line might be repeated in a row ONCE but that does not
+really matter as it’s still a jump.</p>
+</blockquote>
 <p><strong>NOTE</strong>: I actually submitted two versions, one encrypted (even emojis); any
 document mentioning encryption is left <del>for personal reasons</del> out of
 laziness and exhaustion from working on improving the presentation even after it
@@ -547,6 +566,12 @@ won. I have a copy of the code and data files
 can be found <a href="https://ioccc.xexyl.net/2024/oregon/">here</a> or else in the
 markdown files in the tarball), if anyone is interested, assuming there’s not an
 extended power cut or something else goes wrong.</p>
+<p>The server is backed by solar panels with batteries and two SmartUPSes, one for
+the Internet and one for the server, so except for upgrades and/or hardware
+maintenance (which I hate doing and depending on what needs to be done can be
+longer than one might expect), it should usually be available, though if I
+<del>have time</del> am not too lazy, one day I’ll add it to the IOCCC website
+instead.</p>
 <div id="devil">
 <h3 id="a-pact-with-the-devil-on-the-oregon-trail-and-his-134-152-regrets-of-goto">A Pact With the Devil On the Oregon Trail (…and his <del>134</del> 152 regrets of goto)</h3>
 </div>
@@ -656,7 +681,7 @@ even work).</p>
 <p>So the data files allow for portability and obfuscation (and showing some rather
 cool things that you can do in C - whether or not they’re a good idea in
 production code, they’re still quite cool and could inspire people, maybe). Plus
-allowing this to be a submission at all. As I discuss this and the other reasons
+allowing this to be an entry at all. As I discuss this and the other reasons
 later (including <a href="#portability">portability</a> and <a href="#compiling">compiling</a>) as well
 as obfuscation - with some <strong>REALLY</strong> cool and <strong>VERY</strong> interesting tricks - in
 <a href="obfuscation.html">obfuscation.html</a>, I will try and not repeat this justification,
@@ -667,7 +692,7 @@ a <strong>SINGLE</strong> flat <code>char *</code> that holds almost 200 <code>c
 used for various reasons). Yes that’s right. Not an array of <code>char *</code> (as in
 <code>char *y[]</code>) but a single <code>char *</code> - though it’s used and looks like it IS an
 array anyway.</p>
-<p>Going back to this submission. Why not have a bit (or a lot as the case turned
+<p>Going back to this entry. Why not have a bit (or a lot as the case turned
 out to be) of fun and livelihood for the IOCCC? In this game the player
 character (PC) had an ambiguously (most of the jokes are ambiguous like many
 great stories) sinful night, wasting thousands, dropping them from $6666 to
@@ -828,7 +853,7 @@ address it. The fact the messages don’t refer to them is enough.</p>
 even have some bugs that were fixed (it is unclear if the same applies to the
 alt code although I think I got those fixed).</p>
 <p>Actually, you get to see progression more, comparing the alt code with the
-submission code, and you can appreciate much more this way.</p>
+entry code, and you can appreciate much more this way.</p>
 <p>Anyway, I made a huge amount of effort to repeatedly reduce bytes for more
 events and more obfuscation but if it was not for the size limit increase (or
 decrease depending on how you think of it) <strong>AND</strong> the data file this would
@@ -1495,12 +1520,12 @@ though of course the game is over at that point.</p>
 <p>There are several other events at the bare minimum or at least there were; as I
 continued to optimise the code size I got more in: but not all. But
 unfortunately due to the obfuscation it’s hard to be sure what is where. I do
-know that limb loss one (though there’s a similar one that is in the submission
-code but not one that causes a death) is not in the submission code.</p>
+know that limb loss one (though there’s a similar one that is in the entry
+code but not one that causes a death) is not in the entry code.</p>
 <p>It uses too many bytes. As noted (and as you would see if you looked) the
-submission code got way more obfuscated than the alt code but there were it felt
+entry code got way more obfuscated than the alt code but there were it felt
 better to add more obfuscation than to add even more events as it already has
-more. I think the alt code has 25 events and the submission has 23. That’s not
+more. I think the alt code has 25 events and the entry has 23. That’s not
 even counting the mountain events or the events that are part of other events!</p>
 <p>Realistically I could even get rid of the alt code but since there are more
 jokes there I am keeping it. In any case 23+ is plenty.</p>
@@ -1557,7 +1582,7 @@ spell out <code>OREGON TRAIL OREGON</code> (or rather <code>rude OREGON TRAIL OR
 cases what it was)!</p>
 <p>This all took a lot of care in calculating things, manipulating values and much
 more. Throw in all the many jokes (many of which are utterly ridiculous) and
-you have a really fun submission!</p>
+you have a really fun entry!</p>
 <p>Of course there’s also the <code>hell</code> label and many of the strings in the game
 refer to the devil and the player character’s (PC’s) pact. The <code>goto hell</code> is
 discussed more in the <a href="#humour">Humour</a> section, as well as perhaps the
@@ -2014,8 +2039,8 @@ just there for effect and more fun.</p>
 <p>A reference to ‘Casper the friendly ghost’ is also present: also it
 has no effect on gameplay but it’s fun.</p>
 <p>There are possibly other cultural references I am forgetting in the alt code
-that aren’t in the submission code: not sure. There likely are others in the
-submission code too.</p>
+that aren’t in the entry code: not sure. There likely are others in the
+entry code too.</p>
 <p>There are vampires (supposedly) and werewolves (supposedly) too in the both (I
 think) versions but possibly in a way you might not expect (hence supposedly).</p>
 <div id="education">
@@ -3146,7 +3171,7 @@ proverbial hat to them. They would have to be extremely patient - and have
 traits I do not even know how to describe. Perhaps they would be utterly
 ineffable.</p>
 <p>Actually I wanted to see what it was like. It was VERY amusing - but only
-because I did not have to debug it. For the submission I included line changes
+because I did not have to debug it. For the entry I included line changes
 for JUST the third prompt (this means the prog.orig.c file: as noted I made the
 prog.c the complete version instead, and made prog.c as submitted the
 prog.alt2.c, after the win). Yes, what would only take a few seconds of play. It
@@ -3383,15 +3408,16 @@ comes to judging, of course. Spaghetti code is spaghetti code.</p>
 <p>The only kind of spaghetti that should exist is in a pot, on a plate or in the
 stomach. Or on a tree for more details if you do not
 recognise what I mean - and yes it’s in the game).</p>
-<p>On a lighter note (or maybe this is darker?): did you know that every time a
-<code>goto</code> is used an angel (whatever you consider an angel) <strong>DIES</strong> and goes
-straight to HELL? You don’t really want that do you? I didn’t think so. Yes I
-killed <del>134</del> 152 angels. YES I condemned <del>134</del> 152 angels to
-eternal torment. I <strong>HAD</strong> to. I don’t regret it - but you should, if you
-<strong>ever</strong> write something like this outside the IOCCC. In fact you should regret
-a single <del>goto</del> angel dying. Even if they did not go straight to hell
-in a handcart, you should still regret it. But they do. Okay so I don’t really
-believe that but there is no denying there is goto hell here.</p>
+<p>On a lighter note (some might say ‘darker’ but I know better as I wrote the code
+:-) ): did you know that every time a <code>goto</code> is used an angel (whatever you
+consider an angel) <strong>DIES</strong> and goes straight to HELL? You don’t really want
+that do you? I didn’t think so. Yes I killed <del>134</del> 152 angels. YES I
+condemned <del>134</del> 152 angels to eternal torment. I <strong>HAD</strong> to. I don’t
+regret it - but you should, if you <strong>ever</strong> write something like this outside
+the IOCCC. In fact you should regret a single <del>goto</del> angel dying. Even
+if they did not go straight to hell in a handcart, you should still regret it.
+But they do. Okay so I don’t really believe that but there is no denying there
+is goto hell here.</p>
 <p>I <del>found</del> find my abuse of <code>goto</code> hilarious. It was good intentions -
 the contest. But sadly sometimes the worst things that happen start with good
 intentions; and some of the best things strangely start with horrible
@@ -3399,13 +3425,16 @@ intentions. It might be that I did this with good intentions for the contest but
 it would not be good anywhere else. I would be beyond angry if I had to maintain
 this code. I would not blame anyone if they cursed me. I probably would be too.
 Not cursing you. I mean cursing me.</p>
-<p>Don’t write code like this. Except for the IOCCC. Unless of course the judges
-decide they want no more <code>goto</code>s. I would not put that past them after what I
-have done. I can imagine them screaming and crying. Hopefully they’re laughing
-at more than the jokes but I hope they laugh at this too. Well we’ll see I
-guess… (it appears that, based on the general remarks by the judges, of the
-winning entries, that <code>goto</code> will no longer hold nearly as much water, and that
-makes me happy).</p>
+<p>And yes, it gave me IMMENSE pleasure and satisfaction that I ruined <code>goto</code> for
+future IOCCC competitions. Not only was this one of my goals but as you probably
+noticed already I <strong>despise</strong> <code>goto</code>s and although useful for obfuscation, this
+is far better. And yes smashing the IOCCC record and making sure my record will
+never be broken also gives me <strong>EXTREME</strong> pleasure and satisfaction. Obviously
+this was also one of my goals. But you already knew these things, didn’t you? :-)</p>
+<p>Don’t write code like this. Not only did I make sure it’ll not get past the
+final rounds but it’s horrible style. If you need to break out of heavily nested
+loops and don’t want to use a flag, break it into functions. Avoid <code>goto</code>s like
+the plague. Because they are the plague.</p>
 <p>Frankly THIS PROGRAM SHOULD NOT WORK! But it does and it works well even if the
 flow-control is a horrible nightmare from hell. Perhaps the Devil truly has
 possessed it. Hell, he might have possessed me. Why else would I send C straight
@@ -3419,18 +3448,18 @@ limit with the encrypted one). And I am not sure if it would even work. The
 I say I ran out of code to move, I really mean it. The code I moved in this
 absurd exercise is, like I said before, already filtered through major abuse of
 <code>goto</code>s.</p>
-<p>I could change all but one of the <code>break;</code>s to <code>goto Z;</code> and that would increase
-it a bit. I might be able to move one or two blocks of code before reaching the
-2503 limit. With the exception of the <code>goto Z;</code> (which incidentally is done in
-some sneaky places) the others would be perilous.</p>
-<p>So if I have not reached the actual logical conclusion of <code>goto</code> then it has to be
-in a much bigger program, but after doing this, I pity anyone who would do that,
-for they’re only going to cause themselves and others problems. I believe in any
-case this finally reaches the logical conclusion of <code>goto</code>s in the IOCCC,
-unless the size limit is changed a lot again, and I it doesn’t, as 2503 is a
-nice number and also allows for so much, as I have shown.</p>
-<p>Something it allows too much of though: <code>goto</code>s. I have shown that. I’ve
-dethroned 1987/hines by a staggering amount.</p>
+<p>During submission I thought: I could change all but one of the <code>break;</code>s to
+<code>goto Z;</code> and that would increase it a bit. I might be able to move one or two
+blocks of code before reaching the 2503 limit. With the exception of the <code>goto Z;</code> (which incidentally is done in some sneaky places) the others would be
+perilous. But after this won I decided to finish the job as the only reason I
+did not do this was for practical reasons: due to the other version I wanted to
+make it easier to test and having the same flow control made this much easier.</p>
+<p>In any case, I finally did what was thought to be done in 1987: <code>goto</code> truly has
+reached its final conclusion. If I’ve not reached the logical conclusion out of
+the contest then it has to be a much bigger program but after doing this I pity
+anyone who would do that, for they’re only going to cause themselves and others
+nightmarish debugging sessions.</p>
+<p>I’ve dethroned 1987/hines by a staggering amount.</p>
 <p>One final thing to ponder. This is from an article about tools that obfuscate
 code, C and C++ (which I hate). It is called ‘Code Obfuscation For the C and CPP
 Programming Languages’:</p>
@@ -3494,7 +3523,7 @@ The spaghetti code in the encrypted submission is not any worse so why bother
 with adding more spaghetti to the pot? Just like with temperature, where at some
 point hot is hot, spaghetti code is spaghetti code and I have never seen worse
 spaghetti code, at least not in C.</p>
-<p>And although it might not be, I would not be surprised if this submission, or
+<p>And although it might not be, I would not be surprised if this entry, or
 the encrypted one, makes you fed up with <code>goto</code>s. I know I am, and as far as I
 am concerned, they only belong in obfuscated code! I would understand if you
 wanted something else new, including some new things I have put in here as well
@@ -3533,6 +3562,16 @@ something special too, not to mention thematic.</p>
 <p>But again, as I made an ASCII only file any issues there shouldn’t be a problem
 anyway. That is why I included it, for portability. I think it’s pretty amazing
 what I did with encryption though.</p>
+<p>Actually, to be truly horrible, I ended up doing it after all; the
+<a href="prog.orig.c">prog.orig.c</a> has the much fewer 134 <code>goto</code>s and <a href="prog.c">prog.c</a>
+has 152 <code>goto</code>s. To be strictly technical prog.c has 134 gotos and the
+pre-processed version has 152 whereas the prog.orig.c has 116 gotos before
+pre-processing. Yes there was a certain amount of cheating for this but it only
+adds to the hellish spaghetti code and even without that ‘cheating’ even 100
+gotos would be awful but whether you call it 116, 134 or 152, it is still
+horrific. In any case the lowest amount is 116. Additionally, it adds to
+confusion because the <code>goto hell; goto M;</code> actually occurs naturally in the code
+dependent on an <code>if</code> where it will do <code>goto hell;</code> OR <code>goto M;</code>.</p>
 <h3 id="troubleshooting">Troubleshooting</h3>
 <p><strong>IMPORTANT</strong>: if the program exits without doing anything then either the data
 file could not be read (see below) although that would likely only happen if a
@@ -3567,12 +3606,12 @@ doesn’t make sense to have an ASCII only one of this) friendly one too.</p>
 <h3 id="portability">Portability</h3>
 <p>Just to be clear, in case I made an error in describing this (or was not clear
 enough or more possibly have the filenames messed up), the point of the .asc
-programs (compiled with <code>prog.c</code> for submission and <code>prog.alt.c</code> for alt code
+programs (compiled with <code>prog.c</code> for entry and <code>prog.alt.c</code> for alt code
 with more events) is to be ASCII only (again if there is such a thing as a
 character that’s &gt;4 bytes that is unknown to me to check).</p>
 <p>This is why I have the <code>DATA</code> macro. Rather than trying to keep the same code in
 multiple files (aside from a lot of the same code in the alt version that is in
-the submission code and trying to do this with the <a href="commented.c">commented code</a>
+the entry code and trying to do this with the <a href="commented.c">commented code</a>
 too) based on how it’s compiled it will open the right data file. The only other
 macro at compilation is discussed in another place and it’s only for the theme.
 I was considering having it in the code itself but that would look <strong>REALLY
@@ -3644,7 +3683,7 @@ warnings. But this warning is unimportant. The way C works is precisely what I
 need. And isn’t it lovely that emojis are encrypted with this code? I mean can
 you figure out how this works?</p>
 <p>The <code>-Wformat-nonliteral</code> is part of obfuscation <strong>AND</strong> allowing me to even
-have this as a submission. The format conversions for scanf and printf are way
+have this as an entry. The format conversions for scanf and printf are way
 too long and would consume a huge amount of bytes<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>. It would also make the
 program much less pretty and FAR MORE obvious. Well: maybe not: I guess it
 depends on if it would complain about how <code>V()</code> is done. But let’s be honest:
@@ -3783,6 +3822,7 @@ helps you appreciate the careful design even more.<a href="#fnref2" class="footn
 <li><a href="https://github.com/ioccc-src/winner/blob/master/2024/ferguson1/bytetest.c">bytetest.c</a> - prints every string extracted from data</li>
 <li><a href="deobfuscation.html">deobfuscation.html</a> - hints on how to deobfuscate</li>
 <li><a href="https://github.com/ioccc-src/winner/blob/master/2024/ferguson1/gotos.c.txt">gotos.c.txt</a> - text file showing only gotos in the entry code pre cpp</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2024/ferguson1/gotos.ruined.c">gotos.ruined.c</a> - shows why lots of gotos will no longer make it through the final rounds</li>
 <li><a href="https://github.com/ioccc-src/winner/blob/master/2024/ferguson1/jumps.txt">jumps.txt</a> - text file showing all the line changes in a single run</li>
 <li><a href="https://github.com/ioccc-src/winner/blob/master/2024/ferguson1/lencount.c">lencount.c</a> - counts strings and reports longest one</li>
 <li><a href="https://github.com/ioccc-src/winner/blob/master/2024/ferguson1/mbcheck.c">mbcheck.c</a> - show location of multibyte characters</li>

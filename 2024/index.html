@@ -695,34 +695,88 @@ code run. This is very understandable when you realize that the
 emulating the entire
 <a href="https://en.wikipedia.org/wiki/Intel_4004#/media/File:Chip_layout_from_the_development_phase_of_the_Intel_4004_from_1971,_the_first_microprocessor_of_the_world_(cropped_and_edited_image).jpg">4004 chip circuit</a>
 by computing the output of each gate in a loop, effectively running the CPU and associated RAM/ROM chips!</p>
+<div id="lost">
 <h3 id="remarks-on-some-of-submissions-that-did-not-win">Remarks on some of submissions that did not win</h3>
+</div>
+<div id="aslr">
+
+</div>
 <ul>
-<li><p>Depending on the address of a variable as the single source of
+<li>Depending on the address of a variable as the single source of
 pseudo-randomness isn’t a good idea, as not all platforms support
 <a href="https://en.wikipedia.org/wiki/Address_space_layout_randomization">ASLR</a>.
 It’s much better to mix in other sources of variability (e.g. time, process
-ID, etc.) so that subsequent runs will behave differently.</p></li>
-<li><p>If a submission’s obfuscation strongly resembles a past IOCCC winning
+ID, etc.) so that subsequent runs will behave differently.</li>
+</ul>
+<div id="old">
+
+</div>
+<ul>
+<li>If a submission’s obfuscation strongly resembles a past IOCCC winning
 entry, and the submission’s obfuscation is mainly in the C code source,
-then the submission is likely to not make it into the final rounds of judging.</p></li>
-<li><p>When working with modern C compilers, it’s crucial to explicitly
+then the submission is likely to not make it into the final rounds of judging.</li>
+</ul>
+<div id="implicit">
+
+</div>
+<ul>
+<li>When working with modern C compilers, it’s crucial to explicitly
 declare variable and function types. Don’t assume they’ll
-automatically default to an <code>int</code>.</p></li>
-<li><p>Sadly, K&amp;C-style C code does not compile well under modern C compilers.</p></li>
-<li><p>A submission that only works under gcc or clang does not work as well
-as submissions that can work under either compiler.</p></li>
-<li><p>Shrinking an existing open-source program to meet rule 2 size might
+automatically default to an <code>int</code>.</li>
+</ul>
+<div id="kr">
+
+</div>
+<ul>
+<li>Sadly, K&amp;C-style C code does not compile well under modern C compilers.</li>
+</ul>
+<div id="portability">
+
+</div>
+<ul>
+<li>A submission that only works under gcc or clang does not work as well
+as submissions that can work under either compiler.</li>
+</ul>
+<div id="originality">
+
+</div>
+<ul>
+<li>Shrinking an existing open-source program to meet rule 2 size might
 be an impressive feat of code shrinking, but it might not be enough to
 make it into the final rounds of judging. Originality is key, and this
-might not be the most innovative approach.</p></li>
-<li><p>If your submission relies on mathematical algorithms, be sure that the
-C code that implements the mathematics is well obfuscated.</p></li>
-<li><p>Just a friendly reminder that before you upload your submissions,
+might not be the most innovative approach.</li>
+</ul>
+<div id="math">
+
+</div>
+<div id="maths">
+
+</div>
+<div id="mathematics">
+
+</div>
+<ul>
+<li>If your submission relies on mathematical algorithms, be sure that the
+C code that implements the mathematics is well obfuscated.</li>
+</ul>
+<div id="missing-files">
+
+</div>
+<ul>
+<li>Just a friendly reminder that before you upload your submissions,
 uncompress the compressed tarball into a different directory and verify
 everything is in order. This way, you can be sure you didn’t miss uploading any
-important files!</p></li>
-<li><p>Using a lot of goto statements to make your code harder to understand
-might not help it pass the final rounds of judging.</p></li>
+important files!</li>
+</ul>
+<div id="gotos">
+
+</div>
+<div id="goto">
+
+</div>
+<ul>
+<li>Using a lot of goto statements to make your code harder to understand
+might not help it pass the final rounds of judging.</li>
 </ul>
 <h3 id="encouragement-for-those-who-did-not-win-this-year">Encouragement for those who did not win this year</h3>
 <p>We know many of you that submitted to the IOCCC put in a ton of effort
