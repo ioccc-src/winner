@@ -1238,7 +1238,7 @@ IOCCC [Tetris](https://en.wikipedia.org/wiki/Tetris) working (this of course was
 not his only reason :-) )
 
 [Anthony](#sirwumpus) fixed this entry to compile on NetBSD 10.1 by supplying
-missing include files, without which caused a SIGILL (thats like a SEGSEGV, but
+missing include files, without which caused a SIGILL (that's like a SIGSEGV, but
 caused by a nasty cold ~~boot~~).
 
 Jump to: [top](#)
