@@ -7,7 +7,7 @@
 #   "Because sometimes even the IOCCC Judges need some help." :-)
 #
 # The JSON parser and its respective tools were co-developed in 2022 by:
-# 
+#
 #	@xexyl
 #	https://xexyl.net		Cody Boone Ferguson
 #	https://ioccc.xexyl.net
@@ -56,7 +56,7 @@ if [[ -z $JPARSE ]]; then
     echo "$0: notice: then: cd jparse && sudo make install clobber" 1>&2
     exit 5
 fi
-export MIN_JPARSE_VERSION="1.2.0"
+export MIN_JPARSE_VERSION="2.0.3"
 JPARSE_VERSION=$("$JPARSE" -V | head -1 | awk '{print $3;}')
 if ! "$VERGE" "$JPARSE_VERSION" "$MIN_JPARSE_VERSION"; then
     echo "$0: FATAL: jparse version: $JPARSE_VERSION < minimum version: $MIN_JPARSE_VERSION" 1>&2
@@ -69,7 +69,7 @@ fi
 
 # set variables referenced in the usage message
 #
-export VERSION="2.0.0 2025-03-13"
+export VERSION="2.0.1 2026-04-26"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0

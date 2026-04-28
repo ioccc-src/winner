@@ -1,20 +1,18 @@
 #!/usr/bin/env bash
 #
-# chk-entry.sh - check if the files in an entry match the entry's manifest
+# filelist.entry.json.sh - output list of full paths from the entry's .entry.json file
 #
-# This script was written in 2024 by:
+# The final arg will be in YYYY/dir form, and will be called from
+# the topdir directory under which the YYYY/dir entry directory must be found.
+# When run via bin/all-run.sh:
 #
-#   chongo (Landon Curt Noll, http://www.isthe.com/chongo/index.html) /\oo/\
+#	bin/all-run.sh -v 3 bin/filelist.entry.json.sh -v 1
 #
-# with improvements by:
+# will supply the YYYY/dir arg.
 #
-#	@xexyl
-#	https://xexyl.net		Cody Boone Ferguson
-#	https://ioccc.xexyl.net
+# NOTE: This code is MUCH SLOWER than using the bin/filelist.entry.json.awk tool.
 #
-# "Because sometimes even the IOCCC Judges need some help." :-)
-#
-# Copyright (c) 2024,2026 by Landon Curt Noll.  All Rights Reserved.
+# Copyright (c) 2026 by Landon Curt Noll.  All Rights Reserved.
 #
 # Permission to use, copy, modify, and distribute this software and
 # its documentation for any purpose and without fee is hereby granted,
@@ -33,6 +31,8 @@
 # USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
 # OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
 # PERFORMANCE OF THIS SOFTWARE.
+#
+# chongo (Landon Curt Noll, http://www.isthe.com/chongo/index.html) /\oo/\
 #
 # Share and enjoy! :-)
 
@@ -114,10 +114,11 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="2.0.1 2026-04-26"
+export VERSION="2.0.0 2026-04-26"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
+#
 GIT_TOOL=$(type -P git)
 export GIT_TOOL
 if [[ -z "$GIT_TOOL" ]]; then
@@ -130,29 +131,62 @@ if [[ $status -eq 0 ]]; then
     TOPDIR=$("$GIT_TOOL" rev-parse --show-toplevel)
 fi
 export TOPDIR
+#
+VERGE=$(type -P verge)
+export VERGE
+if [[ -z $VERGE ]]; then
+    echo "$0: FATAL: verge is not installed or not in \$PATH" 1>&2
+    echo "$0: notice: to install verge:" 1>&2
+    echo "$0: notice: run: git clone https://github.com/ioccc-src/mkiocccentry.git" 1>&2
+    echo "$0: notice: then: cd mkiocccentry && make clobber all" 1>&2
+    echo "$0: notice: then: cd jparse && sudo make install clobber" 1>&2
+    exit 5
+fi
+#
+JPARSE_TOOL=$(type -P jparse)
+export JPARSE_TOOL
+if [[ -z "$JPARSE_TOOL" ]]; then
+    echo "$0: FATAL: jparse tool is not installed or not in \$PATH" 1>&2
+    echo "$0: notice: to install jparse:" 1>&2
+    echo "$0: notice: run: git clone https://github.com/ioccc-src/mkiocccentry.git" 1>&2
+    echo "$0: notice: then: cd mkiocccentry && make clobber all" 1>&2
+    echo "$0: notice: then: cd jparse && sudo make install clobber" 1>&2
+    exit 5
+fi
+export MIN_JPARSE_VERSION="2.0.3"
+JPARSE_VERSION=$("$JPARSE_TOOL" -V | head -1 | awk '{print $3;}')
+if ! "$VERGE" "$JPARSE_VERSION" "$MIN_JPARSE_VERSION"; then
+    echo "$0: FATAL: jparse version: $JPARSE_VERSION < minimum version: $MIN_JPARSE_VERSION" 1>&2
+    echo "$0: notice: consider updating jparse from mkiocccentry repo" 1>&2
+    echo "$0: notice: run: git clone https://github.com/ioccc-src/mkiocccentry.git" 1>&2
+    echo "$0: notice: then: cd mkiocccentry && make clobber all" 1>&2
+    echo "$0: notice: then: cd jparse && sudo make install clobber" 1>&2
+    exit 5
+fi
+#
 export REPO_TOP_URL="https://github.com/ioccc-src/winner"
-# GitHub puts individual files under the "blob/master" sub-directory.
-export REPO_URL="$REPO_TOP_URL/blob/master"
+#
+export NOOP=
+export DO_NOT_PROCESS=
+export PRINT_RELATIVE=
 
 
 # set usage message
 #
-export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N] [-w site_url]
-			YYYY/dir
+export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-p] [-n] [-N] YYYY/dir
 
 	-h		print help message and exit
 	-v level	set verbosity level (def level: 0)
 	-V		print version string and exit
 
 	-d topdir	set topdir (def: $TOPDIR)
-	-D docroot/	This option is ignored
+
+	-p              print paths relative to YYYY/dir (def: print relative to repo)
 
 	-n		go thru the actions, but do not update any files (def: do the action)
 	-N		do not process file, just parse arguments and ignore the file (def: process the file)
 
-	-w site_url	This option is ignored
-
-	YYYY/dir	path from topdir to entry directory: must contain the files: README.md, .path and .entry.json
+	YYYY/dir	path from topdir to entry directory: must contain the file: .entry.json
 
 Exit codes:
      0         all OK
@@ -163,6 +197,7 @@ Exit codes:
      5	       some internal tool is not found or not an executable file
      6	       problems found with or in the topdir or topdir/YYYY directory
      7	       problems found with or in the entry topdir/YYYY/dir directory
+     8         topdir/YYYY/.entry.json is invalid JSON
  >= 10         internal error
 
 $NAME version: $VERSION"
@@ -172,12 +207,11 @@ $NAME version: $VERSION"
 #
 export NOOP=
 export DO_NOT_PROCESS=
-export EXIT_CODE="0"
 
 
 # parse command line
 #
-while getopts :hv:Vd:D:nNU:w: flag; do
+while getopts :hv:Vd:pnN flag; do
   case "$flag" in
     h) echo "$USAGE" 1>&2
 	exit 2
@@ -189,13 +223,12 @@ while getopts :hv:Vd:D:nNU:w: flag; do
 	;;
     d) TOPDIR="$OPTARG"
 	;;
-    D)  ;;
+    p) PRINT_RELATIVE="true"
+	;;
     n) NOOP="-n"
 	;;
     N) DO_NOT_PROCESS="-N"
 	;;
-    U)  ;;
-    w)  ;;
     \?) echo "$0: ERROR: invalid option: -$OPTARG" 1>&2
 	echo 1>&2
 	echo "$USAGE" 1>&2
@@ -213,11 +246,12 @@ while getopts :hv:Vd:D:nNU:w: flag; do
 	;;
   esac
 done
-#
+
+
 # parse the command line arguments
 #
-if [[ $V_FLAG -ge 3 ]]; then
-    echo "$0: debug[3]: debug level: $V_FLAG" 1>&2
+if [[ $V_FLAG -ge 1 ]]; then
+    echo "$0: debug[1]: debug level: $V_FLAG" 1>&2
 fi
 #
 shift $(( OPTIND - 1 ));
@@ -288,23 +322,19 @@ fi
 export BIN_DIR="bin"
 
 
-# verify we have our awk tool
+# verify that the bin/jval-wrapper.sh tool is executable
 #
-export FILELIST_ENTRY_JSON_AWK="$BIN_DIR/filelist.entry.json.awk"
-if [[ ! -e $FILELIST_ENTRY_JSON_AWK ]]; then
-    echo "$0: ERROR: filelist.entry.json.awk  does not exist: $FILELIST_ENTRY_JSON_AWK" 1>&2
+JVAL_WRAPPER="$BIN_DIR/jval-wrapper.sh"
+if [[ ! -e $JVAL_WRAPPER ]]; then
+    echo  "$0: ERROR: bin/jval-wrapper.sh does not exist: $JVAL_WRAPPER" 1>&2
     exit 5
 fi
-if [[ ! -f $FILELIST_ENTRY_JSON_AWK ]]; then
-    echo "$0: ERROR: filelist.entry.json.awk  is not a file: $FILELIST_ENTRY_JSON_AWK" 1>&2
+if [[ ! -f $JVAL_WRAPPER ]]; then
+    echo  "$0: ERROR: bin/jval-wrapper.sh is not a regular file: $JVAL_WRAPPER" 1>&2
     exit 5
 fi
-if [[ ! -r $FILELIST_ENTRY_JSON_AWK ]]; then
-    echo "$0: ERROR: filelist.entry.json.awk  is not a readable file: $FILELIST_ENTRY_JSON_AWK" 1>&2
-    exit 5
-fi
-if [[ ! -s $FILELIST_ENTRY_JSON_AWK ]]; then
-    echo "$0: ERROR: filelist.entry.json.awk  is not a not a non-empty readable file: $FILELIST_ENTRY_JSON_AWK" 1>&2
+if [[ ! -x $JVAL_WRAPPER ]]; then
+    echo  "$0: ERROR: bin/jval-wrapper.sh is not an executable file: $JVAL_WRAPPER" 1>&2
     exit 5
 fi
 
@@ -337,12 +367,6 @@ if [[ ! -d $YEAR_DIR ]]; then
     echo "$0: ERROR: YYYY from arg: $ENTRY_PATH is not a directory: $YEAR_DIR" 1>&2
     exit 3
 fi
-export ENTRY_ID="${YEAR_DIR}_${ENTRY_DIR}"
-export DOT_YEAR="$YEAR_DIR/.year"
-if [[ ! -s $DOT_YEAR ]]; then
-    echo "$0: ERROR: not a non-empty file: $DOT_YEAR" 1>&2
-    exit 6
-fi
 # Now that we have moved to topdir, form and verify YYYY_DIR is a writable directory
 export YYYY_DIR="$YEAR_DIR/$ENTRY_DIR"
 if [[ ! -e $YYYY_DIR ]]; then
@@ -357,17 +381,6 @@ if [[ ! -w $YYYY_DIR ]]; then
     echo "$0: ERROR: YYYY/dir from arg: $ENTRY_PATH is not a writable directory: $YYYY_DIR" 1>&2
     exit 7
 fi
-export DOT_PATH="$YYYY_DIR/.path"
-if [[ ! -s $DOT_PATH ]]; then
-    echo "$0: ERROR: not a non-empty file: $DOT_PATH" 1>&2
-    exit 7
-fi
-DOT_PATH_CONTENT=$(< "$DOT_PATH")
-export DOT_PATH_CONTENT
-if [[ $ENTRY_PATH != "$DOT_PATH_CONTENT" ]]; then
-    echo "$0: ERROR: arg: $ENTRY_PATH does not match $DOT_PATH contents: $DOT_PATH_CONTENT" 1>&2
-    exit 7
-fi
 export ENTRY_JSON="$YYYY_DIR/.entry.json"
 if [[ ! -e $ENTRY_JSON ]]; then
     echo "$0: ERROR: .entry.json does not exist: $ENTRY_JSON" 1>&2
@@ -380,6 +393,17 @@ fi
 if [[ ! -r $ENTRY_JSON ]]; then
     echo "$0: ERROR: .entry.json is not a readable file: $ENTRY_JSON" 1>&2
     exit 7
+fi
+
+
+# verify that .entry.json is valid JSON
+#
+"$JPARSE_TOOL" -q -- "$ENTRY_JSON" 1>&2
+status="$?"
+if [[ $status -ne 0 ]]; then
+    echo "$0: ERROR: $JPARSE_TOOL -q -- $ENTRY_JSON filed," \
+         "error code: $status" 1>&2
+    exit 8
 fi
 
 
@@ -405,25 +429,21 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: V_FLAG=$V_FLAG" 1>&2
     echo "$0: debug[3]: GIT_TOOL=$GIT_TOOL" 1>&2
     echo "$0: debug[3]: TOPDIR=$TOPDIR" 1>&2
-    echo "$0: debug[3]: REPO_TOP_URL=$REPO_TOP_URL" 1>&2
-    echo "$0: debug[3]: REPO_URL=$REPO_URL" 1>&2
+    echo "$0: debug[3]: VERGE=$VERGE" 1>&2
+    echo "$0: debug[3]: JPARSE_TOOL=$JPARSE_TOOL" 1>&2
+    echo "$0: debug[3]: MIN_JPARSE_VERSION=$MIN_JPARSE_VERSION" 1>&2
+    echo "$0: debug[3]: JPARSE_VERSION=$JPARSE_VERSION" 1>&2
     echo "$0: debug[3]: NOOP=$NOOP" 1>&2
     echo "$0: debug[3]: DO_NOT_PROCESS=$DO_NOT_PROCESS" 1>&2
-    echo "$0: debug[3]: EXIT_CODE=$EXIT_CODE" 1>&2
+    echo "$0: debug[3]: PRINT_RELATIVE=$PRINT_RELATIVE" 1>&2
     echo "$0: debug[3]: ENTRY_PATH=$ENTRY_PATH" 1>&2
     echo "$0: debug[3]: REPO_NAME=$REPO_NAME" 1>&2
     echo "$0: debug[3]: CD_FAILED=$CD_FAILED" 1>&2
-    echo "$0: debug[3]: BIN_PATH=$BIN_PATH" 1>&2
-    echo "$0: debug[3]: BIN_DIR=$BIN_DIR" 1>&2
-    echo "$0: debug[3]: FILELIST_ENTRY_JSON_AWK=$FILELIST_ENTRY_JSON_AWK" 1>&2
+    echo "$0: debug[3]: JVAL_WRAPPER=$JVAL_WRAPPER" 1>&2
+    echo "$0: debug[3]: ENTRY_JSON=$ENTRY_JSON" 1>&2
     echo "$0: debug[3]: YEAR_DIR=$YEAR_DIR" 1>&2
     echo "$0: debug[3]: ENTRY_DIR=$ENTRY_DIR" 1>&2
-    echo "$0: debug[3]: ENTRY_ID=$ENTRY_ID" 1>&2
-    echo "$0: debug[3]: DOT_YEAR=$DOT_YEAR" 1>&2
     echo "$0: debug[3]: YYYY_DIR=$YYYY_DIR" 1>&2
-    echo "$0: debug[3]: DOT_PATH=$DOT_PATH" 1>&2
-    echo "$0: debug[3]: DOT_PATH_CONTENT=$DOT_PATH_CONTENT" 1>&2
-    echo "$0: debug[3]: ENTRY_JSON=$ENTRY_JSON" 1>&2
 fi
 
 
@@ -437,124 +457,28 @@ if [[ -n $DO_NOT_PROCESS ]]; then
 fi
 
 
-# create a temporary file manifest list
+# use JVAL_WRAPPER to output JSON file_paths values, prepended with the $YYYY_DIR/
 #
-export TMP_MANIFEST_LIST=".tmp.$NAME.MANIFEST_LIST.$$.tmp"
-if [[ $V_FLAG -ge 3 ]]; then
-    echo  "$0: debug[3]: temporary file manifest list: $TMP_MANIFEST_LIST" 1>&2
-fi
-if [[ -z $NOOP ]]; then
-    trap 'rm -f $TMP_MANIFEST_LIST; exit' 0 1 2 3 15
-    rm -f "$TMP_MANIFEST_LIST"
-    if [[ -e $TMP_MANIFEST_LIST ]]; then
-	echo "$0: ERROR: cannot remove temporary file manifest list: $TMP_MANIFEST_LIST" 1>&2
-	exit 10
-    fi
-    :> "$TMP_MANIFEST_LIST"
-    if [[ ! -e $TMP_MANIFEST_LIST ]]; then
-	echo "$0: ERROR: cannot create temporary file manifest list: $TMP_MANIFEST_LIST" 1>&2
-	exit 11
-    fi
-elif [[ $V_FLAG -ge 3 ]]; then
-    echo "$0: debug[3]: because of -n, temporary file manifest list is not used: $TMP_MANIFEST_LIST" 1>&2
-fi
-
-
-# create a temporary find files list
-#
-export TMP_FILE_LIST=".tmp.$NAME.FILE_LIST.$$.tmp"
-if [[ $V_FLAG -ge 3 ]]; then
-    echo  "$0: debug[3]: temporary file manifest list: $TMP_FILE_LIST" 1>&2
-fi
-if [[ -z $NOOP ]]; then
-    trap 'rm -f $TMP_MANIFEST_LIST $TMP_FILE_LIST; exit' 0 1 2 3 15
-    rm -f "$TMP_FILE_LIST"
-    if [[ -e $TMP_FILE_LIST ]]; then
-	echo "$0: ERROR: cannot remove temporary file manifest list: $TMP_FILE_LIST" 1>&2
-	exit 12
-    fi
-    :> "$TMP_FILE_LIST"
-    if [[ ! -e $TMP_FILE_LIST ]]; then
-	echo "$0: ERROR: cannot create temporary file manifest list: $TMP_FILE_LIST" 1>&2
-	exit 13
-    fi
-elif [[ $V_FLAG -ge 3 ]]; then
-    echo "$0: debug[3]: because of -n, temporary file manifest list is not used: $TMP_FILE_LIST" 1>&2
-fi
-
-
-# generate sorted list of entry files from the entry's manifest
-#
-# We also add ioccc.css and var.mk from the top level.
-#
-awk -f "$FILELIST_ENTRY_JSON_AWK" "$ENTRY_JSON" > "$TMP_MANIFEST_LIST"
-status="$?"
-if [[ $status -ne 0 ]]; then
-    echo "$0: ERROR: awk -f $FILELIST_ENTRY_JSON_AWK $ENTRY_JSON > $TMP_MANIFEST_LIST failed, error: $status" 1>&2
-    exit 1
-fi
-LC_ALL=C sort "$TMP_MANIFEST_LIST" -o "$TMP_MANIFEST_LIST"
-status="$?"
-if [[ $status -ne 0 ]]; then
-    echo "$0: ERROR: LC_ALL=C sort $TMP_MANIFEST_LIST -o $TMP_MANIFEST_LIST failed, error: $status" 1>&2
-    exit 1
-fi
-
-
-# generate sorted list of found entry files
-#
-# We also add ioccc.css and var.mk from the top level.
-#
-# At the suggestion of Cody Boone Ferguson / @xexyl we use git ls-files instead
-# of find(1) because this way one needn't worry about other files that might be
-# in an entry's directory, be it a swap file or something else, that used to
-# cause a problem when updating the manifest. Since only files that are under
-# git control matter using git ls-files addresses this problem in a nice way.
-"$GIT_TOOL" ls-files "$ENTRY_PATH" > "$TMP_FILE_LIST"
-status="$?"
-if [[ $status -ne 0 ]]; then
-    echo "$0: ERROR: find $ENTRY_PATH -type f -print > $TMP_FILE_LIST failed, error: $status" 1>&2
-    exit 1
-fi
-LC_ALL=C sort "$TMP_FILE_LIST" -o "$TMP_FILE_LIST"
-status="$?"
-if [[ $status -ne 0 ]]; then
-    echo "$0: ERROR: LC_ALL=C sort $TMP_FILE_LIST -o $TMP_FILE_LIST failed, error: $status" 1>&2
-    exit 1
-fi
-
-
-# note if the manifest does NOT match the file list
-#
-if [[ $V_FLAG -ge 5 ]]; then
-    echo "$0: debug[5] file manifest list starts below: $ENTRY_PATH" 1>&2
-    cat "$TMP_MANIFEST_LIST" 1>&2
-    echo "$0: debug[5] file manifest list ends above: $ENTRY_PATH" 1>&2
-    echo "$0: debug[5] find files list starts below: $ENTRY_PATH" 1>&2
-    cat "$TMP_FILE_LIST" 1>&2
-    echo "$0: debug[5] find files list ends above: $ENTRY_PATH" 1>&2
-fi
-if cmp -s "$TMP_MANIFEST_LIST" "$TMP_FILE_LIST"; then
-    if [[ $V_FLAG -ge 1 ]]; then
-	echo  "$0: debug[1]: file list marches manifest for: $ENTRY_PATH" 1>&2
+PATTERN='$..file_path'
+if [[ -z $PRINT_RELATIVE ]]; then
+    "$JVAL_WRAPPER" -b -q -- "$ENTRY_JSON" "$PATTERN" | sed -e 's;^;'"$YYYY_DIR/;"
+    status_codes=("${PIPESTATUS[@]}")
+    if [[ ${status_codes[*]} =~ [1-9] ]]; then
+	echo "$0: ERROR: JVAL_WRAPPER -b -q -- $ENTRY_JSON $ENTRY_JSON '$PATTERN' | sed -e 's;^;'$$YYYY_DIR/; failed," \
+	    "error codes: ${status_codes[*]}" 1>&2
+	exit 1
     fi
 else
-    echo "$0: Warning: file list does NOT match manifest for: $ENTRY_PATH" 1>&2
-    echo "$0: Warning: manifest files that are missing starts below: $ENTRY_PATH" 1>&2
-    comm -23 "$TMP_MANIFEST_LIST" "$TMP_FILE_LIST"
-    echo "$0: Warning: manifest files that are missing ends above: $ENTRY_PATH" 1>&2
-    echo "$0: Warning: found files not in manifest starts below: $ENTRY_PATH" 1>&2
-    comm -13 "$TMP_MANIFEST_LIST" "$TMP_FILE_LIST"
-    echo "$0: Warning: found files not in manifest ends above: $ENTRY_PATH" 1>&2
-    EXIT_CODE=1 # exit 1
+    "$JVAL_WRAPPER" -b -q -- "$ENTRY_JSON" "$PATTERN"
+    status_codes=("${PIPESTATUS[@]}")
+    if [[ ${status_codes[*]} =~ [1-9] ]]; then
+	echo "$0: ERROR: JVAL_WRAPPER -b -q -- $ENTRY_JSON $ENTRY_JSON '$PATTERN' failed," \
+	    "error codes: ${status_codes[*]}" 1>&2
+	exit 1
+    fi
 fi
 
 
 # All Done!!! All Done!!! -- Jessica Noll, Age 2
 #
-if [[ -z $NOOP ]]; then
-    rm -f "$TMP_MANIFEST_LIST" "$TMP_FILE_LIST"
-elif [[ $V_FLAG -ge 1 ]]; then
-    echo  "$0: debug[1]: -n disabled execution of: rm -f $TMP_MANIFEST_LIST" 1>&2
-fi
-exit "$EXIT_CODE"
+exit 0

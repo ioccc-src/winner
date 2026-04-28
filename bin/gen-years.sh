@@ -2,7 +2,7 @@
 #
 # gen-years.sh - create the top level years.html page
 #
-# Copyright (c) 2024 by Landon Curt Noll.  All Rights Reserved.
+# Copyright (c) 2024,2026 by Landon Curt Noll.  All Rights Reserved.
 #
 # .. with very minor improvements in June 2024 by Cody Boone Ferguson.
 #
@@ -106,7 +106,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="2.2.0 2025-07-10"
+export VERSION="2.2.1 2026-04-26"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -144,7 +144,7 @@ if [[ -z $JSTRDECODE ]]; then
     echo "$0: notice: then: cd jparse && sudo make install clobber" 1>&2
     exit 5
 fi
-export MIN_JSTRDECODE_VERSION="2.1.2"
+export MIN_JSTRDECODE_VERSION="2.2.3"
 JSTRDECODE_VERSION=$("$JSTRDECODE" -V | head -1 | awk '{print $3;}')
 if ! "$VERGE" "$JSTRDECODE_VERSION" "$MIN_JSTRDECODE_VERSION"; then
     echo "$0: FATAL: jstrdecode version: $JSTRDECODE_VERSION < minimum version: $MIN_JSTRDECODE_VERSION" 1>&2

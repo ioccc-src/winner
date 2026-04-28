@@ -14,7 +14,7 @@
 #
 # "Because sometimes even the IOCCC Judges need some help." :-)
 #
-# Copyright (c) 2024 by Landon Curt Noll.  All Rights Reserved.
+# Copyright (c) 2024,2026 by Landon Curt Noll.  All Rights Reserved.
 #
 # Permission to use, copy, modify, and distribute this software and
 # its documentation for any purpose and without fee is hereby granted,
@@ -116,7 +116,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="2.0.0 2025-03-13"
+export VERSION="2.0.1 2026-04-26"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -154,7 +154,7 @@ if [[ -z $JSTRDECODE ]]; then
     echo "$0: notice: then: cd jparse && sudo make install clobber" 1>&2
     exit 5
 fi
-export MIN_JSTRDECODE_VERSION="2.1.2"
+export MIN_JSTRDECODE_VERSION="2.2.3"
 JSTRDECODE_VERSION=$("$JSTRDECODE" -V | head -1 | awk '{print $3;}')
 if ! "$VERGE" "$JSTRDECODE_VERSION" "$MIN_JSTRDECODE_VERSION"; then
     echo "$0: FATAL: jstrdecode version: $JSTRDECODE_VERSION < minimum version: $MIN_JSTRDECODE_VERSION" 1>&2

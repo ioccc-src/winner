@@ -5,7 +5,7 @@
 # We update YYYY/.year to reference a new entry directory under
 # a given IOCCC year.  We also update the to level `.allyear` too.
 #
-# Copyright (c) 2024 by Landon Curt Noll.  All Rights Reserved.
+# Copyright (c) 2024,2026 by Landon Curt Noll.  All Rights Reserved.
 #
 # Permission to use, copy, modify, and distribute this software and
 # its documentation for any purpose and without fee is hereby granted,
@@ -107,7 +107,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="2.0.4 2026-04-22"
+export VERSION="2.0.5 2026-04-26"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0

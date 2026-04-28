@@ -10,6 +10,29 @@
 # files for new authors, and update `author/author_handle.json`
 # for authors who won previously.
 #
+# IMPORTANT NOTE:
+#
+#     This tool converts information contained in both
+#     `.info.json`, and `.auth.json` INTO a new `.entry.json`
+#     file, along with potential updates to existing and/or
+#     creating new `author/author_handle.json` files.
+#
+#     This tool does **NOT** address files not listed
+#     in the manifest of `.info.json`, such as those files
+#     that may be created as part of the judging process.
+#
+#     Because this tool removes `.info.json`, and `.auth.json`,
+#     along with a number of other judging related dot-files,
+#     one **CANNOT** reapply this tool to a converted submission.
+#
+#     After processing a submission with cvt-submission.sh:
+#     For address new files that were **NOT** part of
+#     the original `.info.json` manifest, **AND** that have
+#     been "git add"-ed to the local repo (but not necessarily
+#     "git commit"-ed to the repository), use the tool:
+#
+#         bin/update-entry.sh
+#
 # This script was written in 2024 by:
 #
 #   chongo (Landon Curt Noll, http://www.isthe.com/chongo/index.html) /\oo/\
@@ -22,7 +45,7 @@
 #
 # "Because sometimes even the IOCCC Judges need some help." :-)
 #
-# Copyright (c) 2024-2025 by Landon Curt Noll.  All Rights Reserved.
+# Copyright (c) 2024-2026 by Landon Curt Noll.  All Rights Reserved.
 #
 # Permission to use, copy, modify, and distribute this software and
 # its documentation for any purpose and without fee is hereby granted,
@@ -124,7 +147,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="2.3.2 2026-04-23"
+export VERSION="2.3.3 2026-04-26"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -162,7 +185,7 @@ if [[ -z $JSTRDECODE ]]; then
     echo "$0: notice: then: cd jparse && sudo make install clobber" 1>&2
     exit 5
 fi
-export MIN_JSTRDECODE_VERSION="2.1.2"
+export MIN_JSTRDECODE_VERSION="2.2.3"
 JSTRDECODE_VERSION=$("$JSTRDECODE" -V | head -1 | awk '{print $3;}')
 if ! "$VERGE" "$JSTRDECODE_VERSION" "$MIN_JSTRDECODE_VERSION"; then
     echo "$0: FATAL: jstrdecode version: $JSTRDECODE_VERSION < minimum version: $MIN_JSTRDECODE_VERSION" 1>&2
@@ -181,7 +204,7 @@ if [[ -z "$CHKENTRY_TOOL" ]]; then
     echo "$0: Notice: then if needed: make clobber all install" 1>&2
     exit 5
 fi
-export MIN_CHKENTRY_VERSION="2.0.5"
+export MIN_CHKENTRY_VERSION="2.2.2"
 CHKENTRY_VERSION=$("$CHKENTRY_TOOL" -V | head -1 | awk '{print $3;}')
 if ! "$VERGE" "$CHKENTRY_VERSION" "$MIN_CHKENTRY_VERSION"; then
     echo "$0: FATAL: chkentry version: $CHKENTRY_VERSION < minimum version: $MIN_CHKENTRY_VERSION" 1>&2
@@ -191,18 +214,7 @@ if ! "$VERGE" "$CHKENTRY_VERSION" "$MIN_CHKENTRY_VERSION"; then
     echo "$0: notice: then: cd jparse && sudo make install clobber" 1>&2
     exit 5
 fi
-export GEN_README_TOOL="$TOPDIR/bin/gen-readme.sh"
 #
-GTAR_TOOL=$(type -P gtar)
-export GTAR_TOOL
-if [[ -z "$GIT_TOOL" ]]; then
-    echo "$0: FATAL: gtar (gnu tar) tool is not installed or not in \$PATH" 1>&2
-    exit 5
-fi
-#
-export REPO_TOP_URL="https://github.com/ioccc-src/winner"
-# GitHub puts individual files under the "blob/master" sub-directory.
-export REPO_URL="$REPO_TOP_URL/blob/master"
 JPARSE_TOOL=$(type -P jparse)
 export JPARSE_TOOL
 if [[ -z "$JPARSE_TOOL" ]]; then
@@ -213,6 +225,28 @@ if [[ -z "$JPARSE_TOOL" ]]; then
     echo "$0: notice: then: cd jparse && sudo make install clobber" 1>&2
     exit 5
 fi
+export MIN_JPARSE_VERSION="2.0.3"
+JPARSE_VERSION=$("$JPARSE_TOOL" -V | head -1 | awk '{print $3;}')
+if ! "$VERGE" "$JPARSE_VERSION" "$MIN_JPARSE_VERSION"; then
+    echo "$0: FATAL: jparse version: $JPARSE_VERSION < minimum version: $MIN_JPARSE_VERSION" 1>&2
+    echo "$0: notice: consider updating jparse from mkiocccentry repo" 1>&2
+    echo "$0: notice: run: git clone https://github.com/ioccc-src/mkiocccentry.git" 1>&2
+    echo "$0: notice: then: cd mkiocccentry && make clobber all" 1>&2
+    echo "$0: notice: then: cd jparse && sudo make install clobber" 1>&2
+    exit 5
+fi
+#
+GTAR_TOOL=$(type -P gtar)
+export GTAR_TOOL
+if [[ -z "$GIT_TOOL" ]]; then
+    echo "$0: FATAL: gtar (gnu tar) tool is not installed or not in \$PATH" 1>&2
+    exit 5
+fi
+#
+export GEN_README_TOOL="$TOPDIR/bin/gen-readme.sh"
+export REPO_TOP_URL="https://github.com/ioccc-src/winner"
+# GitHub puts individual files under the "blob/master" sub-directory.
+export REPO_URL="$REPO_TOP_URL/blob/master"
 export MKIOCCCENTRY_REPO="https://github.com/ioccc-src/mkiocccentry"
 export INPUT_DATA_FILE
 #
@@ -1112,7 +1146,7 @@ fi
 
 # verify that the bin/jval-wrapper.sh tool is executable
 #
-JVAL_WRAPPER="$BIN_DIR/jval-wrapper.sh"
+export JVAL_WRAPPER="$BIN_DIR/jval-wrapper.sh"
 if [[ ! -e $JVAL_WRAPPER ]]; then
     echo  "$0: ERROR: bin/jval-wrapper.sh does not exist: $JVAL_WRAPPER" 1>&2
     exit 5
@@ -1232,16 +1266,20 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: V_FLAG=$V_FLAG" 1>&2
     echo "$0: debug[3]: GIT_TOOL=$GIT_TOOL" 1>&2
     echo "$0: debug[3]: TOPDIR=$TOPDIR" 1>&2
-    echo "$0: debug[3]: CHKENTRY_TOOL=$CHKENTRY_TOOL" 1>&2
-    echo "$0: debug[3]: GEN_README_TOOL=$GEN_README_TOOL" 1>&2
     echo "$0: debug[3]: VERGE=$VERGE" 1>&2
     echo "$0: debug[3]: JSTRDECODE=$JSTRDECODE" 1>&2
     echo "$0: debug[3]: MIN_JSTRDECODE_VERSION=$MIN_JSTRDECODE_VERSION" 1>&2
     echo "$0: debug[3]: JSTRDECODE_VERSION=$JSTRDECODE_VERSION" 1>&2
+    echo "$0: debug[3]: CHKENTRY_TOOL=$CHKENTRY_TOOL" 1>&2
+    echo "$0: debug[3]: MIN_CHKENTRY_VERSION=$MIN_CHKENTRY_VERSION" 1>&2
+    echo "$0: debug[3]: CHKENTRY_VERSION=$CHKENTRY_VERSION" 1>&2
+    echo "$0: debug[3]: JPARSE_TOOL=$JPARSE_TOOL" 1>&2
+    echo "$0: debug[3]: MIN_JPARSE_VERSION=$MIN_JPARSE_VERSION" 1>&2
+    echo "$0: debug[3]: JPARSE_VERSION=$JPARSE_VERSION" 1>&2
+    echo "$0: debug[3]: GEN_README_TOOL=$GEN_README_TOOL" 1>&2
     echo "$0: debug[3]: GTAR_TOOL=$GTAR_TOOL" 1>&2
     echo "$0: debug[3]: REPO_TOP_URL=$REPO_TOP_URL" 1>&2
     echo "$0: debug[3]: REPO_URL=$REPO_URL" 1>&2
-    echo "$0: debug[3]: JPARSE_TOOL=$JPARSE_TOOL" 1>&2
     echo "$0: debug[3]: MKIOCCCENTRY_REPO=$MKIOCCCENTRY_REPO" 1>&2
     echo "$0: debug[3]: INPUT_DATA_FILE=$INPUT_DATA_FILE" 1>&2
     echo "$0: debug[3]: NO_COMMENT=$NO_COMMENT" 1>&2
@@ -2330,7 +2368,7 @@ if [[ -z $NOOP ]]; then
 	    # write manifest csv line for the HTML file associated with the markdown file
 	    #
 	    ((++count))
-	    manifest_csv "$HTML_FILE" 100 false markdown true "$ENTRY_TEXT" >> "$TMP_MANIFEST_CSV"
+	    manifest_csv "$HTML_FILE" 100 false html true "$ENTRY_TEXT" >> "$TMP_MANIFEST_CSV"
 
 	# case: extra_file is an HTML file
 	#
@@ -2755,4 +2793,7 @@ fi
 
 # All Done!!! All Done!!! -- Jessica Noll, Age 2
 #
+if [[ $V_FLAG -ge 1 ]]; then
+    echo "$0: notice: later on, git add any new non-manifest files, and run: bin/cvt-update.sh" 1>&2
+fi
 exit 0
