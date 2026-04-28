@@ -106,7 +106,7 @@
             "inventory_order" : 200,
             "OK_to_edit" : true,
             "display_as" : "image",
-            "display_via_github" : true,
+            "display_via_github" : false,
             "entry_text" : "wordle stats"
         },
         {

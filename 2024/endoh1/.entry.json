@@ -42,7 +42,7 @@
             "inventory_order" : 100,
             "OK_to_edit" : true,
             "display_as" : "image",
-            "display_via_github" : true,
+            "display_via_github" : false,
             "entry_text" : "8x8 image in PNG form"
         },
         {
@@ -58,7 +58,7 @@
             "inventory_order" : 110,
             "OK_to_edit" : true,
             "display_as" : "image",
-            "display_via_github" : true,
+            "display_via_github" : false,
             "entry_text" : "32x32 image in PNG form"
         },
         {
@@ -66,7 +66,7 @@
             "inventory_order" : 120,
             "OK_to_edit" : true,
             "display_as" : "image",
-            "display_via_github" : true,
+            "display_via_github" : false,
             "entry_text" : "128x128 image in PNG form"
         },
         {
@@ -74,7 +74,7 @@
             "inventory_order" : 130,
             "OK_to_edit" : true,
             "display_as" : "image",
-            "display_via_github" : true,
+            "display_via_github" : false,
             "entry_text" : "512x512 image in PNG form"
         },
         {
@@ -82,7 +82,7 @@
             "inventory_order" : 140,
             "OK_to_edit" : true,
             "display_as" : "image",
-            "display_via_github" : true,
+            "display_via_github" : false,
             "entry_text" : "variant of 512x512 image in PNG form"
         },
         {
@@ -90,7 +90,7 @@
             "inventory_order" : 130,
             "OK_to_edit" : true,
             "display_as" : "image",
-            "display_via_github" : true,
+            "display_via_github" : false,
             "entry_text" : "1024x1024 image in PNG form"
         },
         {
@@ -98,7 +98,7 @@
             "inventory_order" : 130,
             "OK_to_edit" : true,
             "display_as" : "image",
-            "display_via_github" : true,
+            "display_via_github" : false,
             "entry_text" : "2048x2048 image in PNG form"
         },
         {

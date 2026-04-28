@@ -178,7 +178,7 @@
             "inventory_order" : 125,
             "OK_to_edit" : true,
             "display_as" : "image",
-            "display_via_github" : true,
+            "display_via_github" : false,
             "entry_text" : "Devil driving wagon"
         },
         {
@@ -186,7 +186,7 @@
             "inventory_order" : 125,
             "OK_to_edit" : true,
             "display_as" : "image",
-            "display_via_github" : true,
+            "display_via_github" : false,
             "entry_text" : "Devil regretting gotos"
         },
         {
@@ -194,7 +194,7 @@
             "inventory_order" : 125,
             "OK_to_edit" : true,
             "display_as" : "image",
-            "display_via_github" : true,
+            "display_via_github" : false,
             "entry_text" : "image that might or might not be true"
         },
         {
@@ -202,7 +202,7 @@
             "inventory_order" : 125,
             "OK_to_edit" : true,
             "display_as" : "image",
-            "display_via_github" : true,
+            "display_via_github" : false,
             "entry_text" : "use a goto and this might happen"
         },
         {
@@ -210,7 +210,7 @@
             "inventory_order" : 125,
             "OK_to_edit" : true,
             "display_as" : "image",
-            "display_via_github" : true,
+            "display_via_github" : false,
             "entry_text" : "travel guide"
         },
         {

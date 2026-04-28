@@ -50,7 +50,7 @@
             "inventory_order" : 100,
             "OK_to_edit" : true,
             "display_as" : "image",
-            "display_via_github" : true,
+            "display_via_github" : false,
             "entry_text" : "quality24.jpg to restored.jpg difference"
         },
         {
@@ -58,7 +58,7 @@
             "inventory_order" : 100,
             "OK_to_edit" : true,
             "display_as" : "image",
-            "display_via_github" : true,
+            "display_via_github" : false,
             "entry_text" : "original gradient image"
         },
         {
@@ -66,7 +66,7 @@
             "inventory_order" : 100,
             "OK_to_edit" : true,
             "display_as" : "image",
-            "display_via_github" : true,
+            "display_via_github" : false,
             "entry_text" : "image with quality less than 100"
         },
         {
@@ -74,7 +74,7 @@
             "inventory_order" : 100,
             "OK_to_edit" : true,
             "display_as" : "image",
-            "display_via_github" : true,
+            "display_via_github" : false,
             "entry_text" : "icon image"
         },
         {
@@ -82,7 +82,7 @@
             "inventory_order" : 100,
             "OK_to_edit" : true,
             "display_as" : "image",
-            "display_via_github" : true,
+            "display_via_github" : false,
             "entry_text" : "color gradiant image with quality less than 100"
         },
         {
@@ -90,7 +90,7 @@
             "inventory_order" : 100,
             "OK_to_edit" : true,
             "display_as" : "image",
-            "display_via_github" : true,
+            "display_via_github" : false,
             "entry_text" : "restored quality24.png gradiant image"
         },
         {
