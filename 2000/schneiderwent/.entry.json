@@ -50,7 +50,7 @@
             "inventory_order" : 150,
             "OK_to_edit" : true,
             "display_as" : "binary",
-            "display_via_github" : true,
+            "display_via_github" : false,
             "entry_text" : "table lookups values"
         },
         {

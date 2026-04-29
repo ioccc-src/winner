@@ -30,7 +30,7 @@
 # For all other special tool options, pass them as additional tool options (i.e., command line arguments
 # that follow the 1st command line argument) OR consider simply running the tool directly.
 #
-# Copyright (c) 2024 by Landon Curt Noll.  All Rights Reserved.
+# Copyright (c) 2024,2026 by Landon Curt Noll.  All Rights Reserved.
 #
 # Permission to use, copy, modify, and distribute this software and
 # its documentation for any purpose and without fee is hereby granted,
@@ -170,32 +170,33 @@ declare -ag TOOL_OPTION
 # usage
 #
 export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
-			[-Q] [-t tagline] [-w site_url]
-			tool [more_options]
+                        [-Q] [-t tagline] [-w site_url]
+                        -- tool [more_options]
 
-	-h		print help message and exit
-	-v level	set verbosity level (def level: 0)
-			NOTE: The '-v level' is passed as leading options on tool command lines.
-	-V		print version string and exit
+        -h              print help message and exit
+        -v level        set verbosity level (def level: 0)
+                        NOTE: The '-v level' is passed as leading options on tool command lines.
+        -V              print version string and exit
 
-	-d topdir	set topdir (def: $TOPDIR)
-	-D docroot/	set the document root path followed by slash (def: $DOCROOT_SLASH)
-			NOTE: The '-D docroot/' is passed as leading options on tool command lines.
-			NOTE: 'docroot' must end in a slash
+        -d topdir       set topdir (def: $TOPDIR)
+        -D docroot/     set the document root path followed by slash (def: $DOCROOT_SLASH)
+                        NOTE: The '-D docroot/' is passed as leading options on tool command lines.
+                        NOTE: 'docroot' must end in a slash
 
-	-n		go thru the actions, but do not update any files (def: do the action)
-	-N		do not process anything, just parse arguments (def: process something)
+        -n              go thru the actions, but do not update any files (def: do the action)
+        -N              do not process anything, just parse arguments (def: process something)
 
-	-Q	        quick mode, do not run $MD2HTML_SH unless markdown is out of date (def: do)
+        -Q              quick mode, do not run $MD2HTML_SH unless markdown is out of date (def: do)
 
-	-t tagline	string to write about the tool that formed the markdown content (def: $TAGLINE)
-			NOTE: The '-t tagline' is passed as leading options on tool command lines.
+        -t tagline      string to write about the tool that formed the markdown content (def: $TAGLINE)
+                        NOTE: The '-t tagline' is passed as leading options on tool command lines.
 
-	-w site_url	Base URL of the website (def: $SITE_URL)
-			NOTE: The '-w site_url' is passed as leading options on tool command lines.
+        -w site_url     Base URL of the website (def: $SITE_URL)
+                        NOTE: The '-w site_url' is passed as leading options on tool command lines.
 
-	tool		the tool to run over all entries
-	[more_options]	additional tool command line options to use before the YYYY/dir argument
+        --              Recommended if you have more_options
+        tool            the tool to run over all entries
+        [more_options]  additional tool command line options to use before the YYYY/dir argument
 
 NOTE: Any '-D', '-Q', '-t tagline', '-w site_url'
       are passed to the 'tool' at the beginning of the command line, and
@@ -203,13 +204,13 @@ NOTE: Any '-D', '-Q', '-t tagline', '-w site_url'
 
 Exit codes:
      0         all OK
-     1	       some internal tool exited non-zero
+     1         some internal tool exited non-zero
      2         -h and help string printed or -V and version string printed
      3         command line error
      4         bash version is too old
-     5	       some internal tool is not found or not an executable file
-     6	       problems found with or in the topdir or topdir/YYYY directory
-     7	       problems found with or in the entry topdir/YYYY/dir directory
+     5         some internal tool is not found or not an executable file
+     6         problems found with or in the topdir or topdir/YYYY directory
+     7         problems found with or in the entry topdir/YYYY/dir directory
  >= 10         internal error
 
 $NAME version: $VERSION"

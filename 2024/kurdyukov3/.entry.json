@@ -122,7 +122,7 @@
             "inventory_order" : 4000000000,
             "OK_to_edit" : false,
             "display_as" : "path",
-            "display_via_github" : false,
+            "display_via_github" : true,
             "entry_text" : "directory path from top level directory"
         },
         {
@@ -138,7 +138,7 @@
             "inventory_order" : 4000000000,
             "OK_to_edit" : true,
             "display_as" : "binary",
-            "display_via_github" : true,
+            "display_via_github" : false,
             "entry_text" : "Doom1 WAD"
         },
         {
@@ -146,7 +146,7 @@
             "inventory_order" : 4000000000,
             "OK_to_edit" : true,
             "display_as" : "binary",
-            "display_via_github" : true,
+            "display_via_github" : false,
             "entry_text" : "compressed binary of doom.bin"
         },
         {
@@ -154,7 +154,7 @@
             "inventory_order" : 4000000000,
             "OK_to_edit" : true,
             "display_as" : "binary",
-            "display_via_github" : true,
+            "display_via_github" : false,
             "entry_text" : "Solution for well-known job interview task"
         },
         {
@@ -162,7 +162,7 @@
             "inventory_order" : 4000000000,
             "OK_to_edit" : true,
             "display_as" : "binary",
-            "display_via_github" : true,
+            "display_via_github" : false,
             "entry_text" : "Sample Hello World program"
         },
         {
@@ -170,7 +170,7 @@
             "inventory_order" : 4000000000,
             "OK_to_edit" : true,
             "display_as" : "binary",
-            "display_via_github" : true,
+            "display_via_github" : false,
             "entry_text" : "Loads another application from standard input"
         },
         {
@@ -178,7 +178,7 @@
             "inventory_order" : 4000000000,
             "OK_to_edit" : true,
             "display_as" : "binary",
-            "display_via_github" : true,
+            "display_via_github" : false,
             "entry_text" : "LZMA stream decoder"
         },
         {
@@ -186,7 +186,7 @@
             "inventory_order" : 4000000000,
             "OK_to_edit" : true,
             "display_as" : "binary",
-            "display_via_github" : true,
+            "display_via_github" : false,
             "entry_text" : "SDK in LZMA form"
         },
         {
@@ -194,7 +194,7 @@
             "inventory_order" : 4000000000,
             "OK_to_edit" : true,
             "display_as" : "binary",
-            "display_via_github" : true,
+            "display_via_github" : false,
             "entry_text" : "SDK to draw graphics and capture keyboard and mouse"
         },
         {

@@ -104,13 +104,13 @@ Run a command on all IOCCC years.
 Usage:
 
 ``` <!---sh-->
-    bin/all-years.sh -v 1 bin/gen-year-index.sh -v 1
+    bin/all-years.sh -v 1 -- bin/gen-year-index.sh -v 1
 ```
 
 If you wish to run instead, for example, [chk-entry.sh](#chk-entry), then do:
 
 ``` <!---sh-->
-    bin/all-years.sh -v 1 bin/chk-entry.sh
+    bin/all-years.sh -v 1 -- bin/chk-entry.sh
 ```
 
 
@@ -123,7 +123,7 @@ Run a command on all winning entries.
 Usage:
 
 ``` <!---sh-->
-    bin/all-run.sh -v 3 bin/quick-readme2index.sh -v 1
+    bin/all-run.sh -v 3 -- bin/quick-readme2index.sh -v 1
 ```
 
 If you wish to run instead, for example, [readme2index.sh](#readme2index), then
@@ -131,7 +131,32 @@ do:
 
 
 ``` <!---sh-->
-    bin/all-run.sh -v 3 bin/readme2index.sh -v 1
+    bin/all-run.sh -v 3 -- bin/readme2index.sh -v 1
+```
+
+
+<div id="bad-display-as">
+### [bad-display-as.sh](%%REPO_URL%%/bin/bad-display-as.sh)
+</div>
+
+Test for invalid `display_as` / `display_via_github` combos in `.entry.json` files.
+
+Usage:
+
+``` <!---sh-->
+    bin/bad-display-as.sh -v 1 YYYY/dir
+```
+
+To run over all `.entry.json` files:
+
+``` <!---sh-->
+    bin/all-run.sh -v 1 -- bin/bad-display-as.sh -v 1
+```
+
+Alternate usage:
+
+``` <!---sh-->
+    make find_bad_display_as
 ```
 
 
@@ -1033,7 +1058,7 @@ Usage:
 
 ``` <!---sh-->
     # For all entries:
-    bin/all-run.sh -v 3 bin/quick-readme2index.sh -v 1
+    bin/all-run.sh -v 3 -- bin/quick-readme2index.sh -v 1
 
     # For an individual entry:
     bin/quick-readme2index.sh -v 1 2020/ferguson2
@@ -1066,7 +1091,7 @@ Usage:
 To build `index.html` files for all entries:
 
 ``` <!---sh-->
-    bin/all-run.sh -v 3 bin/readme2index.sh -v 1
+    bin/all-run.sh -v 3 -- bin/readme2index.sh -v 1
 ```
 
 We recommend that this tool be invoked via the top level `Makefile`:
@@ -1105,7 +1130,7 @@ Usage:
 Suggested usage (for all `.gitignore` files):
 
 ``` <!---sh-->
-    bin/all-run.sh bin/sort.gitignore.sh -v 1
+    bin/all-run.sh -- bin/sort.gitignore.sh -v 1
 ```
 
 We recommend that this tool be invoked via the top level `Makefile`:
@@ -1185,7 +1210,7 @@ Usage:
 Suggested usage:
 
 ``` <!---sh-->
-    bin/all-run.sh -v 3 bin/tar-entry.sh -v 1 -W
+    bin/all-run.sh -v 3 -- bin/tar-entry.sh -v 1 -W
 ```
 
 
@@ -1204,7 +1229,7 @@ Usage:
 Suggested usage:
 
 ``` <!---sh-->
-    bin/all-years.sh -v 3 bin/tar-year.sh -v 1 -W
+    bin/all-years.sh -v 3 -- bin/tar-year.sh -v 1 -W
 ```
 
 We recommend that this tool be invoked via the top level `Makefile`:
@@ -1229,7 +1254,7 @@ Usage:
 Suggested usage:
 
 ``` <!---sh-->
-    bin/all-run.sh -v 3 bin/untar-entry.sh -v 1
+    bin/all-run.sh -v 3 -- bin/untar-entry.sh -v 1
 ```
 
 We recommend that this tool be invoked via the top level `Makefile`:
@@ -1254,7 +1279,7 @@ Usage:
 Suggested usage:
 
 ``` <!---sh-->
-    bin/all-years.sh -v 3 bin/untar-year.sh -v 1
+    bin/all-years.sh -v 3 -- bin/untar-year.sh -v 1
 ```
 
 We recommend that this tool be invoked via the top level `Makefile`:
@@ -1970,7 +1995,7 @@ The second field is the name of the award for a given `YYYY/dir` entry.
 
 <!--
 
-    Copyright © 1984-2025 by Landon Curt Noll. All Rights Reserved.
+    Copyright © 1984-2026 by Landon Curt Noll. All Rights Reserved.
 
     You are free to share and adapt this file under the terms of this license:
 

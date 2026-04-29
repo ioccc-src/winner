@@ -314,6 +314,16 @@ new_entry:
 	 ${FMT} | \
 	 ${SED} -e '2,$$s/^/\t/' -e 's/$$/ \\/' -e '$$s/ \\//'
 
+# submit_line - echo the list of winning entries on a single line
+#
+submit_line:
+	@echo ${ENTRIES}
+
+# submit_list - echo the list of winning entries, one per line
+#
+submit_list:
+	@for i in ${ENTRIES}; do echo "$$i" ; done
+
 
 ########################
 # extended utility rules

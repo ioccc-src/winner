@@ -49,6 +49,7 @@ include var.mk
 
 ALL_RUN= bin/all-run.sh
 ALL_YEARS= bin/all-years.sh
+BAD_DISPLAY_AS= bin/bad-display-as.sh
 GEN_AUTHORS= bin/gen-authors.sh
 GEN_LOCATION= bin/gen-location.sh
 GEN_YEARS= bin/gen-years.sh
@@ -280,7 +281,7 @@ clobber:
 	gen_location quick_location gen_years find_missing_links test entry_index gen_top_html \
 	gen_next thanks gen_other_html quick_other_html quick_entry_index find_invalid_json \
 	gen_year_index quick_year_index quick_www www untar_entry_tarball untar_year_tarball \
-	form_entry_tarball form_year_tarball tar gen_status gen_sitemap \
+	form_entry_tarball form_year_tarball tar gen_status gen_sitemap find_invalid_json \
 	sitemap timestamp update csv2entry entry2csv about contact pw_change submit news
 
 # Suggest rules in this section
@@ -327,8 +328,9 @@ help:
 	@echo 'make quick_entry_index	;: build winner index.html files that might be out of date'
 	@echo 'make find_missing_links	;: find markdown links to missing local files'
 	@echo 'make find_invalid_json	;; find invalid JSON files'
+	@echo 'make verify_display_as	;; find invalid display_as / display_via_github combos'
 	@echo
-	@echo 'make test		;: summary of mostly harmless tests'
+	@echo 'make test		;: run a collection of mostly harmless tests'
 	@echo
 	@echo 'make entry2csv		;: convert all .entry.json files into 3 CSV files'
 	@echo 'make csv2entry		;: rebuild all all .entry.json files from 3 CSV spreadsheets'
@@ -459,14 +461,14 @@ all_jfmt: ${ALL_RUN} ${CHK_ENTRY}
 #
 verify_entry_files: ${ALL_RUN} ${CHK_ENTRY}
 	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
-	${ALL_RUN} -v 1 ${CHK_ENTRY}
+	${ALL_RUN} -v 1 -- ${CHK_ENTRY}
 	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 # sort .gitignore files according to rules in bin/sgi.sh
 #
 sort_gitignore: ${ALL_RUN} ${SORT_GITIGNORE}
 	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
-	${ALL_RUN} -v 1 ${SORT_GITIGNORE} -v 1
+	${ALL_RUN} -v 1 -- ${SORT_GITIGNORE} -v 1
 	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 # generate the top level authors.html page using the
@@ -517,7 +519,7 @@ gen_years: ${GEN_YEARS}
 #
 entry_index readme2index: ${ALL_RUN} ${README2INDEX}
 	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
-	${ALL_RUN} -v 3 ${README2INDEX} -v 1
+	${ALL_RUN} -v 3 -- ${README2INDEX} -v 1
 	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 # generate a number of the top level HTML files from top level markdown files
@@ -561,7 +563,7 @@ quick_other_html: ${GEN_OTHER_HTML}
 #
 gen_year_index: ${ALL_YEARS} ${GEN_YEAR_INDEX}
 	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
-	${ALL_YEARS} -v 1 ${GEN_YEAR_INDEX} -v 1
+	${ALL_YEARS} -v 1 -- ${GEN_YEAR_INDEX} -v 1
 	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 # generate year level index.html files when year level README.md is newer
@@ -571,7 +573,7 @@ gen_year_index: ${ALL_YEARS} ${GEN_YEAR_INDEX}
 #
 quick_year_index: ${ALL_YEARS} ${GEN_YEAR_INDEX}
 	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
-	${ALL_YEARS} -v 1 -Q ${GEN_YEAR_INDEX} -v 1
+	${ALL_YEARS} -v 1 -Q -- ${GEN_YEAR_INDEX} -v 1
 	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 # build winner index.html files that might be out of date
@@ -583,7 +585,7 @@ quick_year_index: ${ALL_YEARS} ${GEN_YEAR_INDEX}
 #
 quick_entry_index quick_readme2index: ${ALL_RUN} ${QUICK_README2INDEX}
 	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
-	${ALL_RUN} -v 3 ${QUICK_README2INDEX} -v 1
+	${ALL_RUN} -v 3 -- ${QUICK_README2INDEX} -v 1
 	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 # find markdown links to missing local files
@@ -600,6 +602,13 @@ find_invalid_json:
 	${FIND_INVALID_JSON} -v 1
 	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
+
+# find invalid display_as / display_via_github combos
+#
+verify_display_as:
+	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
+	${ALL_RUN} -v 1 -- ${BAD_DISPLAY_AS} -v 1
+	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 # convert author_wins.csv, manifest.csv and year_prize.csv CSV files to
 # .entry.json files.
@@ -843,7 +852,7 @@ www:
 #
 untar_entry_tarball: ${ALL_RUN}
 	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
-	${ALL_RUN} -v 3 ${UNTAR_ENTRY} -v 1
+	${ALL_RUN} -v 3 -- ${UNTAR_ENTRY} -v 1
 	${MAKE} verify_entry_files
 	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
@@ -851,7 +860,7 @@ untar_entry_tarball: ${ALL_RUN}
 #
 untar_year_tarball: ${ALL_RUN}
 	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
-	${ALL_YEARS} -v 3 ${UNTAR_YEAR} -v 1
+	${ALL_YEARS} -v 3 -- ${UNTAR_YEAR} -v 1
 	${MAKE} verify_entry_files
 	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
@@ -859,14 +868,14 @@ untar_year_tarball: ${ALL_RUN}
 #
 form_entry_tarball: ${ALL_RUN} ${TAR_ENTRY}
 	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
-	${ALL_RUN} -v 3 ${TAR_ENTRY} -v 1
+	${ALL_RUN} -v 3 -- ${TAR_ENTRY} -v 1
 	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 # form all IOCCC year level compressed tarballs
 #
 form_year_tarball: ${ALL_YEARS} ${TAR_YEAR}
 	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
-	${ALL_YEARS} -v 3 ${TAR_YEAR} -v 1
+	${ALL_YEARS} -v 3 -- ${TAR_YEAR} -v 1
 	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 # build all tarballs

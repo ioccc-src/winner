@@ -42,7 +42,7 @@
             "inventory_order" : 100,
             "OK_to_edit" : false,
             "display_as" : "html",
-            "display_via_github" : true,
+            "display_via_github" : false,
             "entry_text" : "about deobfuscation"
         },
         {
@@ -242,7 +242,7 @@
             "inventory_order" : 4000000000,
             "OK_to_edit" : false,
             "display_as" : "path",
-            "display_via_github" : false,
+            "display_via_github" : true,
             "entry_text" : "directory path from top level directory"
         },
         {

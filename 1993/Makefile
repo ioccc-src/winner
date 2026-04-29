@@ -261,12 +261,41 @@ genpath:
 # NOTE: 'Don't Panic' if you don't understand the stuff below
 #############################################################
 
-# add ${NEW_ENTRY} to the list of ${ENTRIES} and output Makefile lines to set updated ${ENTRIES} value
+# new_entry - add a new entry directory name to the ${ENTRIES} Makefile variable
+#
+# Add ${NEW_ENTRY} to the list of ${ENTRIES} and output Makefile lines to set updated
+# ${ENTRIES} Makefile variable.
+#
+# If list of ${ENTRIES} is long, we format it into a multi-line value setting with required
+# backslashes and indentation.  Duplicate values are removed and the initial 'submit.[0-9]*' (used
+# during judging) is removed.  The words (directory names) in ${ENTRIES} are sorted in C dictionary order.
+#
+# This rule is used by the bin/new-dir.sh shell script via:
+#
+#	make -C ${YEAR} new_entry NEW_ENTRY=curds
 #
 new_entry:
-	@(echo 'ENTRIES= '; \
-	  (echo ${ENTRIES} ${NEW_ENTRY}) | ${TR} ' ' '\012' | ${SORT} -d -u) | \
-	  ${FMT} | ${SED} -e '2,$$s/^/\t/' -e 's/$$/ \\/' -e '$$s/ \\//'
+	@if [[ -z "${NEW_ENTRY}" ]]; then echo "$@: ERROR: NEW_ENTRY is empty" 1>&2; exit 1; fi
+	@if [[ ! -d "${NEW_ENTRY}" ]]; then echo "$@: ERROR: not a directory: ${YEAR}/${NEW_ENTRY}" 1>&2; exit 2; fi
+	@(echo -n 'ENTRIES= '; \
+	   (for dir in ${ENTRIES} ${NEW_ENTRY}; do \
+	      if [[ $$dir != 'submit.[0-9]*' ]]; then echo "$$dir"; fi; \
+	    done | \
+	    LANG=C ${SORT} -d -u; \
+	   ) \
+	 ) | \
+	 ${FMT} | \
+	 ${SED} -e '2,$$s/^/\t/' -e 's/$$/ \\/' -e '$$s/ \\//'
+
+# submit_line - echo the list of winning entries on a single line
+#
+submit_line:
+	@echo ${ENTRIES}
+
+# submit_list - echo the list of winning entries, one per line
+#
+submit_list:
+	@for i in ${ENTRIES}; do echo "$$i" ; done
 
 
 ########################

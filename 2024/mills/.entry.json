@@ -90,7 +90,7 @@
             "inventory_order" : 4000000000,
             "OK_to_edit" : false,
             "display_as" : "path",
-            "display_via_github" : false,
+            "display_via_github" : true,
             "entry_text" : "directory path from top level directory"
         },
         {
@@ -106,7 +106,7 @@
             "inventory_order" : 4000000000,
             "OK_to_edit" : true,
             "display_as" : "binary",
-            "display_via_github" : true,
+            "display_via_github" : false,
             "entry_text" : "Colossal Cave Adventure"
         },
         {
@@ -114,7 +114,7 @@
             "inventory_order" : 4000000000,
             "OK_to_edit" : true,
             "display_as" : "binary",
-            "display_via_github" : true,
+            "display_via_github" : false,
             "entry_text" : "Hunting about in the attic of your family home"
         },
         {
@@ -122,7 +122,7 @@
             "inventory_order" : 4000000000,
             "OK_to_edit" : true,
             "display_as" : "binary",
-            "display_via_github" : true,
+            "display_via_github" : false,
             "entry_text" : "Fantasy world adventure via an enigmatic airlock"
         },
         {
@@ -130,7 +130,7 @@
             "inventory_order" : 4000000000,
             "OK_to_edit" : true,
             "display_as" : "binary",
-            "display_via_github" : true,
+            "display_via_github" : false,
             "entry_text" : "Demo version of the original Zork"
         },
         {
@@ -138,7 +138,7 @@
             "inventory_order" : 4000000000,
             "OK_to_edit" : true,
             "display_as" : "binary",
-            "display_via_github" : true,
+            "display_via_github" : false,
             "entry_text" : "Spacecraft lands in a nearby corn field"
         },
         {
@@ -146,7 +146,7 @@
             "inventory_order" : 4000000000,
             "OK_to_edit" : true,
             "display_as" : "binary",
-            "display_via_github" : true,
+            "display_via_github" : false,
             "entry_text" : "1984 Infocom interactive fiction tutorial with 4 game samples"
         },
         {
@@ -154,7 +154,7 @@
             "inventory_order" : 4000000000,
             "OK_to_edit" : true,
             "display_as" : "binary",
-            "display_via_github" : true,
+            "display_via_github" : false,
             "entry_text" : "1997 Infocom interactive fiction tutorial with 3 game samples"
         },
         {
@@ -162,7 +162,7 @@
             "inventory_order" : 4000000000,
             "OK_to_edit" : true,
             "display_as" : "binary",
-            "display_via_github" : true,
+            "display_via_github" : false,
             "entry_text" : "Serving aboard top-secret Puny class submarine"
         },
         {
@@ -170,7 +170,7 @@
             "inventory_order" : 4000000000,
             "OK_to_edit" : true,
             "display_as" : "binary",
-            "display_via_github" : true,
+            "display_via_github" : false,
             "entry_text" : "Surviving on Tristam island after a crash"
         },
         {

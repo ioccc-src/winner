@@ -74,7 +74,7 @@
             "inventory_order" : 4000000000,
             "OK_to_edit" : false,
             "display_as" : "path",
-            "display_via_github" : false,
+            "display_via_github" : true,
             "entry_text" : "directory path from top level directory"
         },
         {
@@ -90,7 +90,7 @@
             "inventory_order" : 4000000000,
             "OK_to_edit" : true,
             "display_as" : "binary",
-            "display_via_github" : true,
+            "display_via_github" : false,
             "entry_text" : "4004 binary to slowly add pressed digits"
         },
         {
@@ -98,7 +98,7 @@
             "inventory_order" : 4000000000,
             "OK_to_edit" : true,
             "display_as" : "binary",
-            "display_via_github" : true,
+            "display_via_github" : false,
             "entry_text" : "4004 binary to slowly promt the Fibonacci numbers"
         },
         {
@@ -106,7 +106,7 @@
             "inventory_order" : 4000000000,
             "OK_to_edit" : true,
             "display_as" : "binary",
-            "display_via_github" : true,
+            "display_via_github" : false,
             "entry_text" : "4004 binary for slow Busicom calculator"
         },
         {

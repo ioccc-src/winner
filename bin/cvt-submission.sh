@@ -147,7 +147,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="2.3.3 2026-04-26"
+export VERSION="2.3.4 2026-04-28"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -2471,7 +2471,7 @@ if [[ -z $NOOP ]]; then
 	fi
 	export ENTRY_TEXT="$VALUE"
 
-	# write manifest csv line for original source code
+	# write manifest csv line for this extra file
 	#
 	((++count))
 	manifest_csv "$EXTRA_FILE" "$INVENTORY_ORDER" true "$DISPLAY_AS" true "$ENTRY_TEXT" >> "$TMP_MANIFEST_CSV"
@@ -2525,7 +2525,7 @@ if [[ -z $NOOP ]]; then
     # write manifest csv line for .path
     #
     ((++count))
-    manifest_csv .path 4000000000 false path false "directory path from top level directory" \
+    manifest_csv .path 4000000000 false path true "directory path from top level directory" \
 	>> "$TMP_MANIFEST_CSV"
 
     # form README.md if needed
@@ -2587,6 +2587,91 @@ if [[ -z $NOOP ]]; then
 	export COMMA="comma"
 	if [[ $line -ge $MANIFEST_CSV_LINES ]]; then
 	    COMMA=""
+	fi
+
+	# Force dot-files to display via GitHub repo file ("display_via_github" : true),
+	# regardless of "display_as" value because GitHub will not allow a dot-file to
+	# be displayed on the rendered website.
+	#
+	if [[ $FILE_PATH =~ ^[.] ]]; then
+	    DISPLAY_VIA_GITHUB="true"
+
+	else
+
+	    # use known "display_as" type to determine if
+	    #
+	    #	"display_via_github" : true
+	    #
+	    #	    Force the inventory file to be displayed as a GitHub repo file
+	    #
+	    #	"display_via_github" : false
+	    #
+	    #	    Let the browser fetch the file via the www.isthe.com web site,
+	    #	    or the browser to cause the file to be downloaded
+	    #
+	    case "$DISPLAY_AS" in
+
+	    # case: "display_via_github" : false
+	    #
+	    # browser fetch the file via www.isthe.com, or cause the browser to download
+	    #
+	    binary)
+		DISPLAY_VIA_GITHUB="false"
+		;;
+	    bz2)
+		DISPLAY_VIA_GITHUB="false"
+		;;
+	    bzip2)
+		DISPLAY_VIA_GITHUB="false"
+		;;
+	    gzip)
+		DISPLAY_VIA_GITHUB="false"
+		;;
+	    html)
+		DISPLAY_VIA_GITHUB="false"
+		;;
+	    image)
+		DISPLAY_VIA_GITHUB="false"
+		;;
+	    kernel)
+		DISPLAY_VIA_GITHUB="false"
+		;;
+	    midi)
+		DISPLAY_VIA_GITHUB="false"
+		;;
+	    mp3)
+		DISPLAY_VIA_GITHUB="false"
+		;;
+	    pdf)
+		DISPLAY_VIA_GITHUB="false"
+		;;
+	    rgb)
+		DISPLAY_VIA_GITHUB="false"
+		;;
+	    spreadsheet)
+		DISPLAY_VIA_GITHUB="false"
+		;;
+	    tarball)
+		DISPLAY_VIA_GITHUB="false"
+		;;
+	    tbz2)
+		DISPLAY_VIA_GITHUB="false"
+		;;
+	    wav)
+		DISPLAY_VIA_GITHUB="false"
+		;;
+	    zip)
+		DISPLAY_VIA_GITHUB="false"
+		;;
+
+	    # case: "display_via_github" : true
+	    #
+	    # display inventory contents via a GitHub repo file
+	    #
+	    *)
+		DISPLAY_VIA_GITHUB="true"
+		;;
+	    esac
 	fi
 
 	# write inventory item into temporary .entry.json file
@@ -2662,7 +2747,57 @@ fi
 
 # build HTML files based on extra_file markdown files
 #
-for EXTRA_FILE in $EXTRA_FILE_SET; do
+for EXTRA_FILE in $EXTRA_FILE_SET; do    # validate the JSON in the temporary .entry.json file
+    #
+    if [[ $V_FLAG -ge 3 ]]; then
+        echo "$0: debug[3]: about to: $JPARSE_TOOL -q -- $TMP_ENTRY_JSON" 1>&2
+    fi
+    "$JPARSE_TOOL" -q -- "$TMP_ENTRY_JSON" 1>&2
+    status="$?"
+    if [[ $status -ne 0 ]]; then
+        echo "$0: ERROR: $JPARSE_TOOL -q -- $TMP_ENTRY_JSON filed," \
+             "error code: $status" 1>&2
+        exit 63
+    elif [[ $V_FLAG -ge 3 ]]; then
+        echo "$0: debug[3]: valid JSON: $TMP_ENTRY_JSON" 1>&2
+    fi
+
+    # update .entry.json if needed
+    #
+    if cmp -s "$TMP_ENTRY_JSON" "$ENTRY_JSON"; then
+
+        # case: .entry.json did not change
+        #
+        if [[ $V_FLAG -ge 5 ]]; then
+            echo "$0: debug[5]: .entry.json file did not change: $ENTRY_JSON" 1>&2
+        fi
+
+    else
+
+        # case: .entry.json file changed, update the file
+        #
+        if [[ $V_FLAG -ge 5 ]]; then
+            echo "$0: debug[5]: about to: mv -f -- $TMP_ENTRY_JSON $ENTRY_JSON" 1>&2
+        fi
+        if [[ $V_FLAG -ge 3 ]]; then
+            mv -f -v -- "$TMP_ENTRY_JSON" "$ENTRY_JSON" 1>&2
+            status="$?"
+        else
+            mv -f -- "$TMP_ENTRY_JSON" "$ENTRY_JSON" 1>&2
+            status="$?"
+        fi
+        if [[ $status -ne 0 ]]; then
+            echo "$0: ERROR: mv -f -- $TMP_ENTRY_JSON $ENTRY_JSON filed," \
+                 "error code: $status" 1>&2
+            exit 64
+        elif [[ $V_FLAG -ge 1 ]]; then
+            echo "$0: debug[1]: updated .entry.json: $ENTRY_JSON" 1>&2
+        fi
+        if [[ ! -s $ENTRY_JSON ]]; then
+            echo "$0: ERROR: not a non-empty .entry.json: $ENTRY_JSON" 1>&2
+            exit 65
+        fi
+    fi
 
     # case: extra_file is a markdown file
     #
