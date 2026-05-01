@@ -111,7 +111,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="2.0.0 2026-04-28"
+export VERSION="2.0.1 2026-04-30"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -450,6 +450,18 @@ elif [[ $V_FLAG -ge 5 ]]; then
 		"$JPARSE_TOOL -q -- $ENTRY_JSON" 1>&2
 fi
 
+
+# ####################################################################################### #
+#                                                                                         #
+# SYNC: The effect of the following code block that assigns $DISPLAY_VIA_GITHUB based on  #
+#       the value of $FILE_PATH or $DISPLAY_AS must be synced with equivalent code blocks #
+#       from the following (look for this comment block:                                  #
+#                                                                                         #
+#           bin/bad-display-as.sh                                                         #
+#           bin/cvt-submission.sh                                                         #
+#           bin/update-entry.sh                                                           #
+#                                                                                         #
+# ####################################################################################### #
 
 # scan the .entry.json file for invalid "display_as" / "display_via_github" combos
 #

@@ -115,7 +115,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="2.0.0 2026-04-29"
+export VERSION="2.0.1 2026-04-30"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -1173,6 +1173,18 @@ fi
 printf "        },\n" >> "$TMP_ENTRY_JSON"
 
 
+# ####################################################################################### #
+#                                                                                         #
+# SYNC: The effect of the following code block that assigns $DISPLAY_VIA_GITHUB based on  #
+#       the value of $FILE_PATH or $DISPLAY_AS must be synced with equivalent code blocks #
+#       from the following (look for this comment block:                                  #
+#                                                                                         #
+#           bin/bad-display-as.sh                                                         #
+#           bin/cvt-submission.sh                                                         #
+#           bin/update-entry.sh                                                           #
+#                                                                                         #
+# ####################################################################################### #
+
 # process each file under git control that is missing from the manifest
 #
 export COUNT=0
@@ -1360,87 +1372,89 @@ for elem in "${GIT_NON_MANIFEST[@]}"; do
 	ENTRY_TEXT="$VALUE"
     fi
 
-    # use known "display_as" type to determine if
-    #
-    #	"display_via_github" : true
-    #
-    #	    Force the inventory file to be displayed as a GitHub repo file
-    #
-    #	"display_via_github" : false
-    #
-    #	    Let the browser fetch the file via the www.isthe.com web site,
-    #	    or the browser to cause the file to be downloaded
-    #
-    case "$DISPLAY_AS" in
-
-    # case: "display_via_github" : false
-    #
-    # browser fetch the file via www.isthe.com, or cause the browser to download
-    #
-    binary)
-	DISPLAY_VIA_GITHUB="false"
-	;;
-    bz2)
-	DISPLAY_VIA_GITHUB="false"
-	;;
-    bzip2)
-	DISPLAY_VIA_GITHUB="false"
-	;;
-    gzip)
-	DISPLAY_VIA_GITHUB="false"
-	;;
-    html)
-	DISPLAY_VIA_GITHUB="false"
-	;;
-    image)
-	DISPLAY_VIA_GITHUB="false"
-	;;
-    kernel)
-	DISPLAY_VIA_GITHUB="false"
-	;;
-    midi)
-	DISPLAY_VIA_GITHUB="false"
-	;;
-    mp3)
-	DISPLAY_VIA_GITHUB="false"
-	;;
-    pdf)
-	DISPLAY_VIA_GITHUB="false"
-	;;
-    rgb)
-	DISPLAY_VIA_GITHUB="false"
-	;;
-    spreadsheet)
-	DISPLAY_VIA_GITHUB="false"
-	;;
-    tarball)
-	DISPLAY_VIA_GITHUB="false"
-	;;
-    tbz2)
-	DISPLAY_VIA_GITHUB="false"
-	;;
-    wav)
-	DISPLAY_VIA_GITHUB="false"
-	;;
-    zip)
-	DISPLAY_VIA_GITHUB="false"
-	;;
-
-    # case: "display_via_github" : true
-    #
-    # display inventory contents via a GitHub repo file
-    #
-    *)
-	DISPLAY_VIA_GITHUB="true"
-	;;
-    esac
-
     # Force dot-files to display via GitHub repo file ("display_via_github" : true),
     # regardless of "display_as" value because GitHub will not allow a dot-file to
     # be displayed on the rendered website.
     #
     if [[ $FILE_PATH =~ ^[.] ]]; then
 	DISPLAY_VIA_GITHUB="true"
+
+    else
+
+	# use known "display_as" type to determine if
+	#
+	#	"display_via_github" : true
+	#
+	#	    Force the inventory file to be displayed as a GitHub repo file
+	#
+	#	"display_via_github" : false
+	#
+	#	    Let the browser fetch the file via the www.isthe.com web site,
+	#	    or the browser to cause the file to be downloaded
+	#
+	case "$DISPLAY_AS" in
+
+	# case: "display_via_github" : false
+	#
+	# browser fetch the file via www.isthe.com, or cause the browser to download
+	#
+	binary)
+	    DISPLAY_VIA_GITHUB="false"
+	    ;;
+	bz2)
+	    DISPLAY_VIA_GITHUB="false"
+	    ;;
+	bzip2)
+	    DISPLAY_VIA_GITHUB="false"
+	    ;;
+	gzip)
+	    DISPLAY_VIA_GITHUB="false"
+	    ;;
+	html)
+	    DISPLAY_VIA_GITHUB="false"
+	    ;;
+	image)
+	    DISPLAY_VIA_GITHUB="false"
+	    ;;
+	kernel)
+	    DISPLAY_VIA_GITHUB="false"
+	    ;;
+	midi)
+	    DISPLAY_VIA_GITHUB="false"
+	    ;;
+	mp3)
+	    DISPLAY_VIA_GITHUB="false"
+	    ;;
+	pdf)
+	    DISPLAY_VIA_GITHUB="false"
+	    ;;
+	rgb)
+	    DISPLAY_VIA_GITHUB="false"
+	    ;;
+	spreadsheet)
+	    DISPLAY_VIA_GITHUB="false"
+	    ;;
+	tarball)
+	    DISPLAY_VIA_GITHUB="false"
+	    ;;
+	tbz2)
+	    DISPLAY_VIA_GITHUB="false"
+	    ;;
+	wav)
+	    DISPLAY_VIA_GITHUB="false"
+	    ;;
+	zip)
+	    DISPLAY_VIA_GITHUB="false"
+	    ;;
+
+	# case: "display_via_github" : true
+	#
+	# display inventory contents via a GitHub repo file
+	#
+	*)
+	    DISPLAY_VIA_GITHUB="true"
+	    ;;
+	esac
     fi
 
     # determine if we are on the final member

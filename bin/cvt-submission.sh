@@ -147,7 +147,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="2.3.4 2026-04-28"
+export VERSION="2.3.5 2026-04-30"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -2588,6 +2588,18 @@ if [[ -z $NOOP ]]; then
 	if [[ $line -ge $MANIFEST_CSV_LINES ]]; then
 	    COMMA=""
 	fi
+
+        # ####################################################################################### #
+        #                                                                                         #
+        # SYNC: The effect of the following code block that assigns $DISPLAY_VIA_GITHUB based on  #
+        #       the value of $FILE_PATH or $DISPLAY_AS must be synced with equivalent code blocks #
+        #       from the following (look for this comment block:                                  #
+        #                                                                                         #
+        #           bin/bad-display-as.sh                                                         #
+        #           bin/cvt-submission.sh                                                         #
+        #           bin/update-entry.sh                                                           #
+        #                                                                                         #
+        # ####################################################################################### #
 
 	# Force dot-files to display via GitHub repo file ("display_via_github" : true),
 	# regardless of "display_as" value because GitHub will not allow a dot-file to
