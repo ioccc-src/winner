@@ -111,7 +111,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="2.0.1 2026-04-30"
+export VERSION="2.1.0 2026-05-01"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -131,9 +131,9 @@ export REPO_TOP_URL="https://github.com/ioccc-src/winner"
 # GitHub puts individual files under the "blob/master" sub-directory.
 export REPO_URL="$REPO_TOP_URL/blob/master"
 #
-export JSP_REPO="https://github.com/kjozsa/jsp"
-export JSP_TOOL=""
-JSP_TOOL=$(type -P jsp)
+export JP_REPO="https://github.com/davidhoo/jsonpath"
+export JP_TOOL=""
+JP_TOOL=$(type -P jp)
 #
 VERGE=$(type -P verge)
 export VERGE
@@ -197,7 +197,7 @@ Exit codes:
      5	       some internal tool is not found or not an executable file
      6	       problems found with or in the topdir or topdir/YYYY directory
      7	       problems found with or in the entry topdir/YYYY/dir directory
-     8	       jsp tool error
+     8	       jp tool error
  >= 10         internal error
 
 $NAME version: $VERSION"
@@ -343,12 +343,16 @@ if [[ ! -w $YYYY_DIR ]]; then
 fi
 
 
-# verify we have a jsp tool
+# verify we have a jp tool
 #
-if [[ -z $JSP_TOOL || ! -x $JSP_TOOL ]]; then
-    echo "$0: ERROR: jsp tool is not installed, is not executable, or not in \$PATH" 1>&2
-    echo "$0: notice: obtain jsp from: $JSP_REPO" 1>&2
-    echo "$0: notice: or obtain jsp via \"pipx install jsp\" and placing ~/.local/bin in \$PATH" 1>&2
+if [[ -z $JP_TOOL || ! -x $JP_TOOL ]]; then
+    echo "$0: ERROR: jp tool is not installed, is not executable, or not in \$PATH" 1>&2
+    echo 1>&2
+    echo "$0: notice: obtain jp from: $JP_REPO" 1>&2
+    echo 1>&2
+    echo "$0: notice: If on macOS, using homebrew, install via: brew tap davidhoo/tap ; brew install jsonpath" 1>&2
+    echo 1>&2
+    echo "$0: notice: or via go install: github.com/davidhoo/jsonpath/cmd/jp@latest" 1>&2
     exit 5
 fi
 
@@ -382,8 +386,8 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: TOPDIR=$TOPDIR" 1>&2
     echo "$0: debug[3]: REPO_TOP_URL=$REPO_TOP_URL" 1>&2
     echo "$0: debug[3]: REPO_URL=$REPO_URL" 1>&2
-    echo "$0: debug[3]: JSP_REPO=$JSP_REPO" 1>&2
-    echo "$0: debug[3]: JSP_TOOL=$JSP_TOOL" 1>&2
+    echo "$0: debug[3]: JP_REPO=$JP_REPO" 1>&2
+    echo "$0: debug[3]: JP_TOOL=$JP_TOOL" 1>&2
     echo "$0: debug[3]: VERGE=$VERGE" 1>&2
     echo "$0: debug[3]: JPARSE_TOOL=$JPARSE_TOOL" 1>&2
     echo "$0: debug[3]: MIN_JPARSE_VERSION=$MIN_JPARSE_VERSION" 1>&2
@@ -463,20 +467,107 @@ fi
 #                                                                                         #
 # ####################################################################################### #
 
-# scan the .entry.json file for invalid "display_as" / "display_via_github" combos
+# determine the types of "display_as" values in the manifest of the .entry.json file
 #
-for DISPLAY_AS in "binary" "bz2" "bzip2" "gzip" "html" "image" "kernel" "midi" \
-		  "mp3" "pdf" "rgb" "spreadsheet" "tarball" "tbz2" "wav" "zip"; do
+export PATTERN='$.manifest[*].display_as'
+unset DISPLAY_AS_SET
+DISPLAY_AS_SET=()
+readarray -t DISPLAY_AS_SET < <("$JP_TOOL" --no-color -p "$PATTERN" -f "$ENTRY_JSON" 2>/dev/null |
+				grep -E -v '^[][]|^null$' |
+				sed -e 's;^\s*";;' -e 's;",*$;;' |
+				LC_ALL=C sort |
+				uniq)
+status0="${PIPESTATUS[0]}"
+if [[ $status0 -ne 0 ]]; then
+    echo "$0: ERROR: $JP_TOOL --no-color -p $PATTERN -f $ENTRY_JSON failed," \
+	 "error code: $status" 1>&2
+    exit 1
+fi
+if [[ ${#DISPLAY_AS_SET[@]} -le 0 ]]; then
+    echo "$0: ERROR: no display_as members found in manifest array in: $ENTRY_JSON" 1>&2
+    exit 1
+fi
 
-    if [[ $V_FLAG -ge 3 ]]; then
-	echo "$0: debug[3]: test if display_as \"$DISPLAY_AS\" has an OK display_via_github: $ENTRY_JSON" 1>&2
+export GITHUB_VIEW_REQUIRED=""
+for DISPLAY_AS in "${DISPLAY_AS_SET[@]}"; do
+
+    case "$DISPLAY_AS" in
+
+    # determine if GitHub is required for known "display_as" value
+    #
+    # If $GITHUB_VIEW_REQUIRED == "true",  then "display_via_github" just be true
+    # If $GITHUB_VIEW_REQUIRED == "false", then "display_via_github" just be false
+    #
+    agrep)	GITHUB_VIEW_REQUIRED="true" ;;
+    asm)	GITHUB_VIEW_REQUIRED="true" ;;
+    basic)	GITHUB_VIEW_REQUIRED="true" ;;
+    bf)		GITHUB_VIEW_REQUIRED="true" ;;
+    binary)	GITHUB_VIEW_REQUIRED="false" ;;
+    bootimg)	GITHUB_VIEW_REQUIRED="false" ;;
+    bz2)	GITHUB_VIEW_REQUIRED="false" ;;
+    bzip2)	GITHUB_VIEW_REQUIRED="false" ;;
+    c)		GITHUB_VIEW_REQUIRED="true" ;;
+    cabbage)	GITHUB_VIEW_REQUIRED="true" ;;
+    css)	GITHUB_VIEW_REQUIRED="true" ;;
+    forth)	GITHUB_VIEW_REQUIRED="true" ;;
+    gitignore)	GITHUB_VIEW_REQUIRED="true" ;;
+    gzip)	GITHUB_VIEW_REQUIRED="false" ;;
+    haskell)	GITHUB_VIEW_REQUIRED="true" ;;
+    html)	GITHUB_VIEW_REQUIRED="false" ;;
+    image)	GITHUB_VIEW_REQUIRED="false" ;;
+    java)	GITHUB_VIEW_REQUIRED="true" ;;
+    javascript)	GITHUB_VIEW_REQUIRED="true" ;;
+    json)	GITHUB_VIEW_REQUIRED="true" ;;
+    lisp)	GITHUB_VIEW_REQUIRED="true" ;;
+    makefile)	GITHUB_VIEW_REQUIRED="true" ;;
+    man)	GITHUB_VIEW_REQUIRED="true" ;;
+    markdown)	GITHUB_VIEW_REQUIRED="true" ;;
+    midi)	GITHUB_VIEW_REQUIRED="false" ;;
+    mod)	GITHUB_VIEW_REQUIRED="false" ;;
+    mp3)	GITHUB_VIEW_REQUIRED="false" ;;
+    oc)		GITHUB_VIEW_REQUIRED="true" ;;
+    patch)	GITHUB_VIEW_REQUIRED="true" ;;
+    path)	GITHUB_VIEW_REQUIRED="true" ;;
+    pdf)	GITHUB_VIEW_REQUIRED="false" ;;
+    perl)	GITHUB_VIEW_REQUIRED="true" ;;
+    php)	GITHUB_VIEW_REQUIRED="true" ;;
+    python)	GITHUB_VIEW_REQUIRED="true" ;;
+    rgb)	GITHUB_VIEW_REQUIRED="false" ;;
+    ruby)	GITHUB_VIEW_REQUIRED="true" ;;
+    sed)	GITHUB_VIEW_REQUIRED="true" ;;
+    shellscript)GITHUB_VIEW_REQUIRED="true" ;;
+    sorta)	GITHUB_VIEW_REQUIRED="true" ;;
+    spec)	GITHUB_VIEW_REQUIRED="true" ;;
+    spreadsheet)GITHUB_VIEW_REQUIRED="false" ;;
+    tarball)	GITHUB_VIEW_REQUIRED="false" ;;
+    tbz2)	GITHUB_VIEW_REQUIRED="false" ;;
+    tex)	GITHUB_VIEW_REQUIRED="true" ;;
+    text)	GITHUB_VIEW_REQUIRED="true" ;;
+    wav)	GITHUB_VIEW_REQUIRED="false" ;;
+    xml)	GITHUB_VIEW_REQUIRED="true" ;;
+    zip)	GITHUB_VIEW_REQUIRED="false" ;;
+
+    *)  echo "$0: Warning: unknown display_as value: \"$DISPLAY_AS\" found in: $ENTRY_JSON" 1>&2
+	EXIT_CODE=1 # exit 1
+	echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+	;;
+    esac
+
+    # determine pattern that shouldn't be found
+    #
+    # If $GITHUB_VIEW_REQUIRED == "true",  then "display_via_github" just be true
+    # If $GITHUB_VIEW_REQUIRED == "false", then "display_via_github" just be false
+    #
+    if [[ $GITHUB_VIEW_REQUIRED == "true" ]]; then
+	PATTERN='$.manifest[?(@.display_as=="'"$DISPLAY_AS"'" && @.display_via_github==false)]'
+    else
+	PATTERN='$.manifest[?(@.display_as=="'"$DISPLAY_AS"'" && @.display_via_github==true)]'
     fi
-    PATTERN='$.manifest[?(@.display_as=="'"$DISPLAY_AS"'" & @.display_via_github==true)]'
 
-    # test "display_as" / "display_via_github" combos
+    # look for invalid "display_as" / "display_via_github" combos
     #
     if [[ -z $NOOP ]]; then
-	FOUND=$("$JSP_TOOL" --no-color --format --indent 0 -- "$PATTERN" < "$ENTRY_JSON" 2>&1)
+	FOUND=$("$JP_TOOL" --no-color -p "$PATTERN" -f "$ENTRY_JSON" 2>&1)
 	status="$?"
 
     # case: -n
@@ -485,23 +576,35 @@ for DISPLAY_AS in "binary" "bz2" "bzip2" "gzip" "html" "image" "kernel" "midi" \
 	FOUND=""
 	status=0
     fi
+    #
+    if [[ $FOUND == "null" ]]; then
+	FOUND=""
+    fi
 
     # report on test if needed
     #
     if [[ $status -ne 0 ]]; then
 	echo "$0: Warning:" \
-	    "$JSP_TOOL --no-color --format --indent 0 -- $PATTERN < $ENTRY_JSON failed, error: $status" 1>&2
+	    "$JP_TOOL --no-color -p $PATTERN -f $ENTRY_JSON failed, error: $status" 1>&2
 	EXIT_CODE=8 # exit 8
 	echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
 	continue
     fi
     if [[ -n $FOUND ]]; then
-	echo "$0: Warning: found display_as \"$DISPLAY_AS\" with display_via_github true in: $ENTRY_JSON" 1>&2
+	if [[ $GITHUB_VIEW_REQUIRED == "true" ]]; then
+	    echo "$0: Warning: found display_as \"$DISPLAY_AS\" with display_via_github false in: $ENTRY_JSON" 1>&2
+	else
+	    echo "$0: Warning: found display_as \"$DISPLAY_AS\" with display_via_github true in: $ENTRY_JSON" 1>&2
+	fi
 	EXIT_CODE=1 # exit 1
 	echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
 	continue
     fi
 done
+
+
+# process exit code
+#
 case "$EXIT_CODE" in
 0)
     if [[ $V_FLAG -ge 1 ]]; then
@@ -510,6 +613,9 @@ case "$EXIT_CODE" in
     ;;
 1)
     echo "$0: ERROR: invalid display_as / display_via_github combo(s) found in: $ENTRY_JSON" 1>&2
+    ;;
+8)
+    echo "$0: ERROR: jp: $JP_TOOL tool failed processing: $ENTRY_JSON" 1>&2
     ;;
 *)
     echo "$0: ERROR: unexpected EXIT_CODE value: $EXIT_CODE for $ENTRY_JSON" 1>&2

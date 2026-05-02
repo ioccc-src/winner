@@ -882,8 +882,14 @@ form_year_tarball: ${ALL_YEARS} ${TAR_YEAR}
 #
 tar:
 	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
-	${MAKE} clobber
-	${MAKE} genpath
+	@echo '=-=-=-=-= IOCCC begin make clobber =-=-=-=-='
+	@echo '... hiding verbose output on stdout ...'
+	@${MAKE} clobber >/dev/null
+	@echo '=-=-=-=-= IOCCC complete make clobber =-=-=-=-='
+	@echo '=-=-=-=-= IOCCC begin make genpath =-=-=-=-='
+	@echo '... hiding verbose output on stdout ...'
+	@${MAKE} genpath >/dev/null
+	@echo '=-=-=-=-= IOCCC complete make genpath =-=-=-=-='
 	${MAKE} genfilelist
 	${MAKE} all_jfmt
 	${MAKE} verify_entry_files

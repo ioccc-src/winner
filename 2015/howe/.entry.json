@@ -122,7 +122,7 @@
             "inventory_order" : 250,
             "OK_to_edit" : true,
             "display_as" : "text",
-            "display_via_github" : false,
+            "display_via_github" : true,
             "entry_text" : "War and Peace translated to English"
         },
         {

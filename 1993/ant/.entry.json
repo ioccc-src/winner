@@ -42,7 +42,7 @@
             "inventory_order" : 100,
             "OK_to_edit" : true,
             "display_as" : "text",
-            "display_via_github" : false,
+            "display_via_github" : true,
             "entry_text" : "ag man page in text format"
         },
         {
@@ -90,7 +90,7 @@
             "inventory_order" : 150,
             "OK_to_edit" : true,
             "display_as" : "text",
-            "display_via_github" : false,
+            "display_via_github" : true,
             "entry_text" : "lyrics of the Ants Go Marching song"
         },
         {

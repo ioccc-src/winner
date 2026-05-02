@@ -147,7 +147,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="2.3.5 2026-04-30"
+export VERSION="2.3.6 2026-05-01"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -2579,118 +2579,98 @@ if [[ -z $NOOP ]]; then
     export MANIFEST_CSV_LINES
     export line=0
     sed -e 's/,/ /g' "$TMP_MANIFEST_CSV" |
-      while read -r FILE_PATH INVENTORY_ORDER OK_TO_EDIT DISPLAY_AS DISPLAY_VIA_GITHUB ENTRY_TEXT; do
+	while read -r FILE_PATH INVENTORY_ORDER OK_TO_EDIT DISPLAY_AS DISPLAY_VIA_GITHUB ENTRY_TEXT; do
 
-	# determine if manifest needs a comma
-	#
-	((++line))
-	export COMMA="comma"
-	if [[ $line -ge $MANIFEST_CSV_LINES ]]; then
-	    COMMA=""
-	fi
+	    # determine if manifest needs a comma
+	    #
+	    ((++line))
+	    export COMMA="comma"
+	    if [[ $line -ge $MANIFEST_CSV_LINES ]]; then
+	       COMMA=""
+	    fi
 
-        # ####################################################################################### #
-        #                                                                                         #
-        # SYNC: The effect of the following code block that assigns $DISPLAY_VIA_GITHUB based on  #
-        #       the value of $FILE_PATH or $DISPLAY_AS must be synced with equivalent code blocks #
-        #       from the following (look for this comment block:                                  #
-        #                                                                                         #
-        #           bin/bad-display-as.sh                                                         #
-        #           bin/cvt-submission.sh                                                         #
-        #           bin/update-entry.sh                                                           #
-        #                                                                                         #
-        # ####################################################################################### #
+	    # ####################################################################################### #
+	    #                                                                                         #
+	    # SYNC: The effect of the following code block that assigns $DISPLAY_VIA_GITHUB based on  #
+	    #       the value of $FILE_PATH or $DISPLAY_AS must be synced with equivalent code blocks #
+	    #       from the following (look for this comment block:                                  #
+	    #                                                                                         #
+	    #           bin/bad-display-as.sh                                                         #
+	    #           bin/cvt-submission.sh                                                         #
+	    #           bin/update-entry.sh                                                           #
+	    #                                                                                         #
+	    # ####################################################################################### #
 
-	# Force dot-files to display via GitHub repo file ("display_via_github" : true),
-	# regardless of "display_as" value because GitHub will not allow a dot-file to
-	# be displayed on the rendered website.
-	#
-	if [[ $FILE_PATH =~ ^[.] ]]; then
-	    DISPLAY_VIA_GITHUB="true"
-
-	else
-
-	    # use known "display_as" type to determine if
+	    # process the "display_as" value, force a proper value of "display_via_github"
 	    #
-	    #	"display_via_github" : true
-	    #
-	    #	    Force the inventory file to be displayed as a GitHub repo file
-	    #
-	    #	"display_via_github" : false
-	    #
-	    #	    Let the browser fetch the file via the www.isthe.com web site,
-	    #	    or the browser to cause the file to be downloaded
-	    #
+	    export GITHUB_VIEW_REQUIRED=""
 	    case "$DISPLAY_AS" in
 
-	    # case: "display_via_github" : false
+	    # determine if GitHub is required for known "display_as" value
 	    #
-	    # browser fetch the file via www.isthe.com, or cause the browser to download
+	    # If $GITHUB_VIEW_REQUIRED == "true",  then "display_via_github" just be true
+	    # If $GITHUB_VIEW_REQUIRED == "false", then "display_via_github" just be false
 	    #
-	    binary)
-		DISPLAY_VIA_GITHUB="false"
-		;;
-	    bz2)
-		DISPLAY_VIA_GITHUB="false"
-		;;
-	    bzip2)
-		DISPLAY_VIA_GITHUB="false"
-		;;
-	    gzip)
-		DISPLAY_VIA_GITHUB="false"
-		;;
-	    html)
-		DISPLAY_VIA_GITHUB="false"
-		;;
-	    image)
-		DISPLAY_VIA_GITHUB="false"
-		;;
-	    kernel)
-		DISPLAY_VIA_GITHUB="false"
-		;;
-	    midi)
-		DISPLAY_VIA_GITHUB="false"
-		;;
-	    mp3)
-		DISPLAY_VIA_GITHUB="false"
-		;;
-	    pdf)
-		DISPLAY_VIA_GITHUB="false"
-		;;
-	    rgb)
-		DISPLAY_VIA_GITHUB="false"
-		;;
-	    spreadsheet)
-		DISPLAY_VIA_GITHUB="false"
-		;;
-	    tarball)
-		DISPLAY_VIA_GITHUB="false"
-		;;
-	    tbz2)
-		DISPLAY_VIA_GITHUB="false"
-		;;
-	    wav)
-		DISPLAY_VIA_GITHUB="false"
-		;;
-	    zip)
-		DISPLAY_VIA_GITHUB="false"
-		;;
+	    agrep)	GITHUB_VIEW_REQUIRED="true" ;;
+	    asm)	GITHUB_VIEW_REQUIRED="true" ;;
+	    basic)	GITHUB_VIEW_REQUIRED="true" ;;
+	    bf)		GITHUB_VIEW_REQUIRED="true" ;;
+	    binary)	GITHUB_VIEW_REQUIRED="false" ;;
+	    bootimg)	GITHUB_VIEW_REQUIRED="false" ;;
+	    bz2)	GITHUB_VIEW_REQUIRED="false" ;;
+	    bzip2)	GITHUB_VIEW_REQUIRED="false" ;;
+	    c)		GITHUB_VIEW_REQUIRED="true" ;;
+	    cabbage)	GITHUB_VIEW_REQUIRED="true" ;;
+	    css)	GITHUB_VIEW_REQUIRED="true" ;;
+	    forth)	GITHUB_VIEW_REQUIRED="true" ;;
+	    gitignore)	GITHUB_VIEW_REQUIRED="true" ;;
+	    gzip)	GITHUB_VIEW_REQUIRED="false" ;;
+	    haskell)	GITHUB_VIEW_REQUIRED="true" ;;
+	    html)	GITHUB_VIEW_REQUIRED="false" ;;
+	    image)	GITHUB_VIEW_REQUIRED="false" ;;
+	    java)	GITHUB_VIEW_REQUIRED="true" ;;
+	    javascript)	GITHUB_VIEW_REQUIRED="true" ;;
+	    json)	GITHUB_VIEW_REQUIRED="true" ;;
+	    lisp)	GITHUB_VIEW_REQUIRED="true" ;;
+	    makefile)	GITHUB_VIEW_REQUIRED="true" ;;
+	    man)	GITHUB_VIEW_REQUIRED="true" ;;
+	    markdown)	GITHUB_VIEW_REQUIRED="true" ;;
+	    midi)	GITHUB_VIEW_REQUIRED="false" ;;
+	    mod)	GITHUB_VIEW_REQUIRED="false" ;;
+	    mp3)	GITHUB_VIEW_REQUIRED="false" ;;
+	    oc)		GITHUB_VIEW_REQUIRED="true" ;;
+	    patch)	GITHUB_VIEW_REQUIRED="true" ;;
+	    path)	GITHUB_VIEW_REQUIRED="true" ;;
+	    pdf)	GITHUB_VIEW_REQUIRED="false" ;;
+	    perl)	GITHUB_VIEW_REQUIRED="true" ;;
+	    php)	GITHUB_VIEW_REQUIRED="true" ;;
+	    python)	GITHUB_VIEW_REQUIRED="true" ;;
+	    rgb)	GITHUB_VIEW_REQUIRED="false" ;;
+	    ruby)	GITHUB_VIEW_REQUIRED="true" ;;
+	    sed)	GITHUB_VIEW_REQUIRED="true" ;;
+	    shellscript)GITHUB_VIEW_REQUIRED="true" ;;
+	    sorta)	GITHUB_VIEW_REQUIRED="true" ;;
+	    spec)	GITHUB_VIEW_REQUIRED="true" ;;
+	    spreadsheet)GITHUB_VIEW_REQUIRED="false" ;;
+	    tarball)	GITHUB_VIEW_REQUIRED="false" ;;
+	    tbz2)	GITHUB_VIEW_REQUIRED="false" ;;
+	    tex)	GITHUB_VIEW_REQUIRED="true" ;;
+	    text)	GITHUB_VIEW_REQUIRED="true" ;;
+	    wav)	GITHUB_VIEW_REQUIRED="false" ;;
+	    xml)	GITHUB_VIEW_REQUIRED="true" ;;
+	    zip)	GITHUB_VIEW_REQUIRED="false" ;;
 
-	    # case: "display_via_github" : true
-	    #
-	    # display inventory contents via a GitHub repo file
-	    #
-	    *)
-		DISPLAY_VIA_GITHUB="true"
+	    *)  echo "$0: ERROR: unknown display_as value: \"$DISPLAY_AS\" found in: $ENTRY_JSON" 1>&2
+		exit 1
 		;;
 	    esac
-	fi
+	    DISPLAY_VIA_GITHUB="$GITHUB_VIEW_REQUIRED"
 
-	# write inventory item into temporary .entry.json file
-	#
-	manifest_entry "$FILE_PATH" "$INVENTORY_ORDER" "$OK_TO_EDIT" "$DISPLAY_AS" "$DISPLAY_VIA_GITHUB" \
-		       "$ENTRY_TEXT" "$COMMA" >> "$TMP_ENTRY_JSON"
-      done
+	    # write inventory item into temporary .entry.json file
+	    #
+	    manifest_entry "$FILE_PATH" "$INVENTORY_ORDER" "$OK_TO_EDIT" "$DISPLAY_AS" "$DISPLAY_VIA_GITHUB" \
+			   "$ENTRY_TEXT" "$COMMA" >> "$TMP_ENTRY_JSON"
+	done
 
     # end the manifest array and end of temporary .entry.json file
     #

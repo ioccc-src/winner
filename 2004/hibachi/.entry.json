@@ -138,7 +138,7 @@
             "inventory_order" : 125,
             "OK_to_edit" : true,
             "display_as" : "text",
-            "display_via_github" : false,
+            "display_via_github" : true,
             "entry_text" : "obfuscated changelog for hibachi"
         },
         {
@@ -242,7 +242,7 @@
             "inventory_order" : 200,
             "OK_to_edit" : true,
             "display_as" : "text",
-            "display_via_github" : false,
+            "display_via_github" : true,
             "entry_text" : "changelog for hibachi alt code"
         },
         {
@@ -266,7 +266,7 @@
             "inventory_order" : 200,
             "OK_to_edit" : true,
             "display_as" : "text",
-            "display_via_github" : false,
+            "display_via_github" : true,
             "entry_text" : "changelog for hibachi"
         },
         {

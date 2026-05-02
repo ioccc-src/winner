@@ -42,7 +42,7 @@
             "inventory_order" : 100,
             "OK_to_edit" : true,
             "display_as" : "text",
-            "display_via_github" : false,
+            "display_via_github" : true,
             "entry_text" : "sample input"
         },
         {
@@ -50,7 +50,7 @@
             "inventory_order" : 100,
             "OK_to_edit" : true,
             "display_as" : "text",
-            "display_via_github" : false,
+            "display_via_github" : true,
             "entry_text" : "sample input"
         },
         {
@@ -65,7 +65,7 @@
             "file_path" : "fib.hs",
             "inventory_order" : 200,
             "OK_to_edit" : true,
-            "display_as" : "text",
+            "display_as" : "haskell",
             "display_via_github" : true,
             "entry_text" : "example Haskell input source code"
         },
@@ -73,7 +73,7 @@
             "file_path" : "ghcfib.hs",
             "inventory_order" : 200,
             "OK_to_edit" : true,
-            "display_as" : "text",
+            "display_as" : "haskell",
             "display_via_github" : true,
             "entry_text" : "example Haskell input source code"
         },
@@ -81,7 +81,7 @@
             "file_path" : "ghclol.hs",
             "inventory_order" : 200,
             "OK_to_edit" : true,
-            "display_as" : "text",
+            "display_as" : "haskell",
             "display_via_github" : true,
             "entry_text" : "example Haskell input source code"
         },
@@ -89,7 +89,7 @@
             "file_path" : "ghcscc.hs",
             "inventory_order" : 200,
             "OK_to_edit" : true,
-            "display_as" : "text",
+            "display_as" : "haskell",
             "display_via_github" : true,
             "entry_text" : "example Haskell input source code"
         },
@@ -97,7 +97,7 @@
             "file_path" : "lol.hs",
             "inventory_order" : 200,
             "OK_to_edit" : true,
-            "display_as" : "text",
+            "display_as" : "haskell",
             "display_via_github" : true,
             "entry_text" : "example Haskell input source code"
         },
@@ -105,7 +105,7 @@
             "file_path" : "scc.hs",
             "inventory_order" : 200,
             "OK_to_edit" : true,
-            "display_as" : "text",
+            "display_as" : "haskell",
             "display_via_github" : true,
             "entry_text" : "example Haskell input source code"
         },
@@ -113,7 +113,7 @@
             "file_path" : "hint.hs",
             "inventory_order" : 250,
             "OK_to_edit" : true,
-            "display_as" : "text",
+            "display_as" : "haskell",
             "display_via_github" : true,
             "entry_text" : "self-hosting compiler stage output"
         },

@@ -81,7 +81,7 @@
             "file_path" : "img/kernel",
             "inventory_order" : 200,
             "OK_to_edit" : true,
-            "display_as" : "kernel",
+            "display_as" : "bootimg",
             "display_via_github" : false,
             "entry_text" : "x86 linux boot executable zImage"
         },
