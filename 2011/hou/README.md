@@ -132,7 +132,7 @@ it produces something resembling the bitmask hash table as part of its output.
 
 <!--
 
-    Copyright © 1984-2024 by Landon Curt Noll. All Rights Reserved.
+    Copyright © %%DATE_RANGE%% by Landon Curt Noll. All Rights Reserved.
 
     You are free to share and adapt this file under the terms of this license:
 

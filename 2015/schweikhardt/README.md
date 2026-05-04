@@ -487,7 +487,7 @@ pre-process code, so can be run without the `typ` macro being defined:
 
 ``` <!---sh-->
     $ flawfinder prog.c
-    Flawfinder version 1.31, (C) 2001-2014 David A. Wheeler.
+    Flawfinder version 1.31, (C) 2001—2014 David A. Wheeler.
     Number of rules (primarily dangerous function names) in C/C++ ruleset: 169
     Examining prog.c
     FINAL RESULTS:
@@ -549,7 +549,7 @@ So I `fclose(stdout)` before returning and now:
 ```
     valgrind --leak-check=full --show-leak-kinds=all ./prog 6
     ==14571== Memcheck, a memory error detector
-    ==14571== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
+    ==14571== Copyright (C) 2002—2013, and GNU GPL'd, by Julian Seward et al.
     ==14571== Using Valgrind-3.10.0 and LibVEX; rerun with -h for copyright info
     ==14571== Command: ./prog 6
     ==14571==
@@ -843,7 +843,7 @@ For all intents and purposes, the *Not Overflowing Type* keeps the promise!
 
 <!--
 
-    Copyright © 1984-2024 by Landon Curt Noll. All Rights Reserved.
+    Copyright © %%DATE_RANGE%% by Landon Curt Noll. All Rights Reserved.
 
     You are free to share and adapt this file under the terms of this license:
 

@@ -138,7 +138,9 @@ This is FAQ version **29.05 2025-12-02**.
 - **Q 10.8**: <a class="normal" href="#menus">How do the menus on the website work and what can I do if they don't work?</a>
 - **Q 10.9**: <a class="normal" href="#author-information">How do I find more information about a winning author of an entry?</a>
 - **Q 10.10**: <a class="normal" href="#cb">What is this cb tool that is mentioned in the IOCCC?</a>
-- **Q 10.11**: <a class="normal" href="status_json">What do the status.json JSON file indicate?</a>
+- **Q 10.11**: <a class="normal" href="#status_json">What do the status.json JSON file indicate?</a>
+- **Q 10.12**: <a class="normal" href="#date_range">What is the purpose of the `.date-range` files?</a>
+
 
 ## 11. [History of the IOCCC](#ioccc_history)
 - **Q 11.0**: <a class="normal" href="#ioccc_start">How did the IOCCC get started?</a>
@@ -7802,6 +7804,37 @@ the cases where this happen, we apologize in advance (Sorry tm Canada 🇨🇦) 
 Jump to: [top](#)
 
 
+<div id="date_range">
+### Q 10.12: What is the purpose of the `.date-range` files?
+</div>
+
+In each directory of the [IOCCC winner repo](https://github.com/ioccc-src/winner), a
+`.date-range` file may be found.  The contents of the `.date-range` file are
+the copyright date range for the constructed HTML files in that same directory.
+The [bin/md2html.sh](%%REPO_URL%%/bin/md2html.sh) tool substitutes strings
+of the form "<code>%</code><code>%DATE_RANGE%</code><code>%</code>" with the contents of the `.date-range` file.
+
+This allows a per-directory copyright date range, rather than a single
+global copyright date range for the entire web.  Thus when the calendar year
+changes, the entire website does **NOT** need to be rebuilt.
+
+See also the "[Special DATE_RANGE token](bin/index.html#date-range)" section
+of the [bin tools](bin/index.html) for information about how the
+"<code>%</code><code>%DATE_RANGE%</code><code>%</code>" is processed.
+
+
+<div id="making_changes">
+#### On making changes to the website
+</div>
+
+When a change is made to the content of the [IOCCC winner
+repo](https://github.com/ioccc-src/winner), simply update the `.date-range`
+files in the same directories where the changes are made: change the
+final year in the file to the current year.  When the website is rebuilt,
+the proper copyright date range will be picked up.
+
+
+
 <hr style="width:50%;text-align:left;margin-left:0">
 <hr style="width:50%;text-align:left;margin-left:0">
 
@@ -8280,7 +8313,7 @@ Jump to: [top](#)
 
 <!--
 
-    Copyright © 1984-2025 by Landon Curt Noll. All Rights Reserved.
+    Copyright © %%DATE_RANGE%% by Landon Curt Noll. All Rights Reserved.
 
     You are free to share and adapt this file under the terms of this license:
 

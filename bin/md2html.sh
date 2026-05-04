@@ -175,7 +175,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="2.0.0 2025-03-13"
+export VERSION="2.0.1 2026-05-03"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -377,6 +377,14 @@ function global_variable_setup
     for n in "${PHASE_NAME[@]}"; do
 	HTML_PHASE_NAME[$n]="default"
     done
+
+    # setup default copyright date range
+    #
+    DATE_YEAR=$(date '+%Y')
+    export DATE_YEAR
+    DATE_YEAR=${DATE_YEAR:-2026} # paranoia - use 2026 if date failed
+    export FIRST_YEAR="1984"
+    export DEFAULT_DATE_RANGE="$FIRST_YEAR-$DATE_YEAR"
 
     # initialize command line parse pass number
     #
@@ -783,6 +791,9 @@ function debug_parameters
 	echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: HTML_PHASE_NAME[$index]=${HTML_PHASE_NAME[$index]}" 1>&2
     done
     echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: GETOPT_PHASE=$GETOPT_PHASE" 1>&2
+    echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: DATE_YEAR=$DATE_YEAR" 1>&2
+    echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: FIRST_YEAR=$FIRST_YEAR" 1>&2
+    echo "$0: debug[$DEBUG_LEVEL]: $DBG_PREFIX: DEFAULT_DATE_RANGE=$DEFAULT_DATE_RANGE" 1>&2
     return 0
 }
 
@@ -1129,6 +1140,23 @@ fi
 #
 WORKING_DIR=$(dirname "$MATCH_MD")
 export WORKING_DIR
+
+
+# determine the copyright date range
+#
+# If $WORKING_DIR/.date-range is a readable non-empty file, use its contents for the copyright date range.
+# else use $DEFAULT_DATE_RANGE for the copyright date range.
+#
+if [[ -f $WORKING_DIR/.date-range && -r $WORKING_DIR/.date-range ]]; then
+    DATE_RANGE=$(< "$WORKING_DIR/.date-range")
+    if [[ $V_FLAG -ge 3 ]]; then
+	echo "$0: debug[3]: $WORKING_DIR/.date-range contents: $DATE_RANGE" 1>&2
+    fi
+fi
+export DATE_RANGE="${DATE_RANGE:-$DEFAULT_DATE_RANGE}"
+if [[ $V_FLAG -ge 3 ]]; then
+    echo "$0: debug[3]: DATE_RANGE=$DATE_RANGE" 1>&2
+fi
 
 
 # verify that we have a topdir directory
@@ -1684,6 +1712,8 @@ if [[ -z $NOOP ]]; then
     for n in "${!TOKEN[@]}"; do
 	echo "s|%%$n%%|${TOKEN[$n]}|g" >> "$TMP_SED_SCRIPT"
     done
+    # always add the date range sed commands as %%DATE_RANGE%% is directory dependent
+    echo "s|%%DATE_RANGE%%|$DATE_RANGE|g" >> "$TMP_SED_SCRIPT"
     if [[ $V_FLAG -ge 5 ]]; then
 	echo "$0: debug[5]: temporary sed script starts below: $TMP_SED_SCRIPT" 1>&2
 	cat "$TMP_SED_SCRIPT" 1>&2

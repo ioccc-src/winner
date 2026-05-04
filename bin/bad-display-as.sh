@@ -111,7 +111,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="2.1.0 2026-05-01"
+export VERSION="2.1.1 2026-05-03"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -509,6 +509,7 @@ for DISPLAY_AS in "${DISPLAY_AS_SET[@]}"; do
     c)		GITHUB_VIEW_REQUIRED="true" ;;
     cabbage)	GITHUB_VIEW_REQUIRED="true" ;;
     css)	GITHUB_VIEW_REQUIRED="true" ;;
+    daterange)	GITHUB_VIEW_REQUIRED="true" ;;
     forth)	GITHUB_VIEW_REQUIRED="true" ;;
     gitignore)	GITHUB_VIEW_REQUIRED="true" ;;
     gzip)	GITHUB_VIEW_REQUIRED="false" ;;

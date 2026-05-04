@@ -1276,6 +1276,86 @@
             "display_as" : "html",
             "display_via_github" : false,
             "entry_text" : "this web page"
+        },
+        {
+            "file_path" : ".date-range",
+            "inventory_order" : 4100000000,
+            "OK_to_edit" : true,
+            "display_as" : "daterange",
+            "display_via_github" : true,
+            "entry_text" : "copyright date range for this directory"
+        },
+        {
+            "file_path" : "solids/antiprism/.date-range",
+            "inventory_order" : 4100000000,
+            "OK_to_edit" : true,
+            "display_as" : "daterange",
+            "display_via_github" : true,
+            "entry_text" : "copyright date range for solids/antiprism sub-directory"
+        },
+        {
+            "file_path" : "solids/archimedian-solid/.date-range",
+            "inventory_order" : 4100000000,
+            "OK_to_edit" : true,
+            "display_as" : "daterange",
+            "display_via_github" : true,
+            "entry_text" : "copyright date range for solids/archimedian-solid sub-directory"
+        },
+        {
+            "file_path" : "solids/bipyramid/.date-range",
+            "inventory_order" : 4100000000,
+            "OK_to_edit" : true,
+            "display_as" : "daterange",
+            "display_via_github" : true,
+            "entry_text" : "copyright date range for solids/bipyramid sub-directory"
+        },
+        {
+            "file_path" : "solids/catalan-solid/.date-range",
+            "inventory_order" : 4100000000,
+            "OK_to_edit" : true,
+            "display_as" : "daterange",
+            "display_via_github" : true,
+            "entry_text" : "copyright date range for solids/catalan-solid sub-directory"
+        },
+        {
+            "file_path" : "solids/.date-range",
+            "inventory_order" : 4100000000,
+            "OK_to_edit" : true,
+            "display_as" : "daterange",
+            "display_via_github" : true,
+            "entry_text" : "copyright date range for solids sub-directory"
+        },
+        {
+            "file_path" : "solids/johnson-solid/.date-range",
+            "inventory_order" : 4100000000,
+            "OK_to_edit" : true,
+            "display_as" : "daterange",
+            "display_via_github" : true,
+            "entry_text" : "copyright date range for solids/johnson-solid sub-directory"
+        },
+        {
+            "file_path" : "solids/platonic-solid/.date-range",
+            "inventory_order" : 4100000000,
+            "OK_to_edit" : true,
+            "display_as" : "daterange",
+            "display_via_github" : true,
+            "entry_text" : "copyright date range for solids/platonic-solid sub-directory"
+        },
+        {
+            "file_path" : "solids/prism/.date-range",
+            "inventory_order" : 4100000000,
+            "OK_to_edit" : true,
+            "display_as" : "daterange",
+            "display_via_github" : true,
+            "entry_text" : "copyright date range for solids/prism sub-directory"
+        },
+        {
+            "file_path" : "solids/trapezohedron/.date-range",
+            "inventory_order" : 4100000000,
+            "OK_to_edit" : true,
+            "display_as" : "daterange",
+            "display_via_github" : true,
+            "entry_text" : "copyright date range for solids/trapezohedron sub-directory"
         }
     ]
 }

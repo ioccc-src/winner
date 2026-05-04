@@ -71,7 +71,7 @@ The purpose of `A/(x|1)` is probably obvious, but what does `(x|1)%2` do?
 
 <!--
 
-    Copyright © 1984-2024 by Landon Curt Noll. All Rights Reserved.
+    Copyright © %%DATE_RANGE%% by Landon Curt Noll. All Rights Reserved.
 
     You are free to share and adapt this file under the terms of this license:
 

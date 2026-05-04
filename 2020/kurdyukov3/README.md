@@ -71,7 +71,7 @@ as these letters are encoded in the higher part of the single-byte character set
 
 <!--
 
-    Copyright © 1984-2024 by Landon Curt Noll. All Rights Reserved.
+    Copyright © %%DATE_RANGE%% by Landon Curt Noll. All Rights Reserved.
 
     You are free to share and adapt this file under the terms of this license:
 

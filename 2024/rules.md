@@ -24,7 +24,7 @@ while the IOCCC was open.
 # 28th International Obfuscated C Code Contest Official Rules
 
 <p class="leftbar">
-Copyright &copy; 2024-2025 Leonid A. Broukhis and Landon Curt Noll.
+Copyright &copy; %%DATE_RANGE%% Leonid A. Broukhis and Landon Curt Noll.
 </p>
 
 All Rights Reserved.  Permission for personal, education or non-profit use is

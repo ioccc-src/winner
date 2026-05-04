@@ -716,6 +716,166 @@
             "display_as" : "html",
             "display_via_github" : false,
             "entry_text" : "this web page"
+        },
+        {
+            "file_path" : ".date-range",
+            "inventory_order" : 4100000000,
+            "OK_to_edit" : true,
+            "display_as" : "daterange",
+            "display_via_github" : true,
+            "entry_text" : "copyright date range for this directory"
+        },
+        {
+            "file_path" : "src-alt/IOCCC-2004/.date-range",
+            "inventory_order" : 4100000000,
+            "OK_to_edit" : true,
+            "display_as" : "daterange",
+            "display_via_github" : true,
+            "entry_text" : "copyright date range for src-alt/IOCCC-2004 sub-directory"
+        },
+        {
+            "file_path" : "src-alt/.date-range",
+            "inventory_order" : 4100000000,
+            "OK_to_edit" : true,
+            "display_as" : "daterange",
+            "display_via_github" : true,
+            "entry_text" : "copyright date range for src-alt sub-directory"
+        },
+        {
+            "file_path" : "src-alt/localhost/Img/.date-range",
+            "inventory_order" : 4100000000,
+            "OK_to_edit" : true,
+            "display_as" : "daterange",
+            "display_via_github" : true,
+            "entry_text" : "copyright date range for src-alt/localhost/Img sub-directory"
+        },
+        {
+            "file_path" : "src-alt/localhost/.date-range",
+            "inventory_order" : 4100000000,
+            "OK_to_edit" : true,
+            "display_as" : "daterange",
+            "display_via_github" : true,
+            "entry_text" : "copyright date range for src-alt/localhost sub-directory"
+        },
+        {
+            "file_path" : "src-alt/localhost/reference/.date-range",
+            "inventory_order" : 4100000000,
+            "OK_to_edit" : true,
+            "display_as" : "daterange",
+            "display_via_github" : true,
+            "entry_text" : "copyright date range for src-alt/localhost/reference sub-directory"
+        },
+        {
+            "file_path" : "src-alt/localhost/test/.date-range",
+            "inventory_order" : 4100000000,
+            "OK_to_edit" : true,
+            "display_as" : "daterange",
+            "display_via_github" : true,
+            "entry_text" : "copyright date range for src-alt/localhost/test sub-directory"
+        },
+        {
+            "file_path" : "src-alt/localhost/test/perl/.date-range",
+            "inventory_order" : 4100000000,
+            "OK_to_edit" : true,
+            "display_as" : "daterange",
+            "display_via_github" : true,
+            "entry_text" : "copyright date range for src-alt/localhost/test/perl sub-directory"
+        },
+        {
+            "file_path" : "src-alt/localhost/test/php/.date-range",
+            "inventory_order" : 4100000000,
+            "OK_to_edit" : true,
+            "display_as" : "daterange",
+            "display_via_github" : true,
+            "entry_text" : "copyright date range for src-alt/localhost/test/php sub-directory"
+        },
+        {
+            "file_path" : "src-alt/localhost/test/ruby/.date-range",
+            "inventory_order" : 4100000000,
+            "OK_to_edit" : true,
+            "display_as" : "daterange",
+            "display_via_github" : true,
+            "entry_text" : "copyright date range for src-alt/localhost/test/ruby sub-directory"
+        },
+        {
+            "file_path" : "src-alt/localhost/test/shell/.date-range",
+            "inventory_order" : 4100000000,
+            "OK_to_edit" : true,
+            "display_as" : "daterange",
+            "display_via_github" : true,
+            "entry_text" : "copyright date range for src-alt/localhost/test/shell sub-directory"
+        },
+        {
+            "file_path" : "src/.date-range",
+            "inventory_order" : 4100000000,
+            "OK_to_edit" : true,
+            "display_as" : "daterange",
+            "display_via_github" : true,
+            "entry_text" : "copyright date range for src sub-directory"
+        },
+        {
+            "file_path" : "src/localhost/Img/.date-range",
+            "inventory_order" : 4100000000,
+            "OK_to_edit" : true,
+            "display_as" : "daterange",
+            "display_via_github" : true,
+            "entry_text" : "copyright date range for src/localhost/Img sub-directory"
+        },
+        {
+            "file_path" : "src/localhost/.date-range",
+            "inventory_order" : 4100000000,
+            "OK_to_edit" : true,
+            "display_as" : "daterange",
+            "display_via_github" : true,
+            "entry_text" : "copyright date range for src/localhost sub-directory"
+        },
+        {
+            "file_path" : "src/localhost/reference/.date-range",
+            "inventory_order" : 4100000000,
+            "OK_to_edit" : true,
+            "display_as" : "daterange",
+            "display_via_github" : true,
+            "entry_text" : "copyright date range for src/localhost/reference sub-directory"
+        },
+        {
+            "file_path" : "src/localhost/test/.date-range",
+            "inventory_order" : 4100000000,
+            "OK_to_edit" : true,
+            "display_as" : "daterange",
+            "display_via_github" : true,
+            "entry_text" : "copyright date range for src/localhost/test sub-directory"
+        },
+        {
+            "file_path" : "src/localhost/test/perl/.date-range",
+            "inventory_order" : 4100000000,
+            "OK_to_edit" : true,
+            "display_as" : "daterange",
+            "display_via_github" : true,
+            "entry_text" : "copyright date range for src/localhost/test/perl sub-directory"
+        },
+        {
+            "file_path" : "src/localhost/test/php/.date-range",
+            "inventory_order" : 4100000000,
+            "OK_to_edit" : true,
+            "display_as" : "daterange",
+            "display_via_github" : true,
+            "entry_text" : "copyright date range for src/localhost/test/php sub-directory"
+        },
+        {
+            "file_path" : "src/localhost/test/ruby/.date-range",
+            "inventory_order" : 4100000000,
+            "OK_to_edit" : true,
+            "display_as" : "daterange",
+            "display_via_github" : true,
+            "entry_text" : "copyright date range for src/localhost/test/ruby sub-directory"
+        },
+        {
+            "file_path" : "src/localhost/test/shell/.date-range",
+            "inventory_order" : 4100000000,
+            "OK_to_edit" : true,
+            "display_as" : "daterange",
+            "display_via_github" : true,
+            "entry_text" : "copyright date range for src/localhost/test/shell sub-directory"
         }
     ]
 }

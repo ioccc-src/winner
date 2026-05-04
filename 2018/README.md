@@ -44,7 +44,7 @@ There are also nods to entries of the years [2000/bellard](../2000/bellard/index
 
 ### Historical note:
 
-In 2023-2024 the IOCCC website was drastically changed with the same look for
+In 2023&dash;2024 the IOCCC website was drastically changed with the same look for
 every year and this changed the styling as well. But in 2018 different years had
 different stylesheets and we noted that:
 
@@ -94,7 +94,7 @@ See also the [IOCCC FAQ](../faq.html) for additional information on the IOCCC.
 
 <!--
 
-    Copyright © 1984-2024 by Landon Curt Noll. All Rights Reserved.
+    Copyright © %%DATE_RANGE%% by Landon Curt Noll. All Rights Reserved.
 
     You are free to share and adapt this file under the terms of this license:
 

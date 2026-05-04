@@ -270,7 +270,7 @@ $ gcc -O3 -DW=120 -DH=24 -Ddt=0.01 -De=0.5 -Du=0.5 -Drpm=1000 -Dtilt=5 -o prog p
 
 <!--
 
-    Copyright © 1984-2025 by Landon Curt Noll and Leonid A. Broukhis.  All Rights Reserved.
+    Copyright © %%DATE_RANGE%% by Landon Curt Noll and Leonid A. Broukhis.  All Rights Reserved.
 
     You are free to share and adapt this file under the terms of this license:
 

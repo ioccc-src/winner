@@ -573,7 +573,7 @@ Note: we recommend GCC for performance; Clang is slower for C preprocessor-heavy
 
 <!--
 
-    Copyright © 1984-2025 by Landon Curt Noll and Leonid A. Broukhis.  All Rights Reserved.
+    Copyright © %%DATE_RANGE%% by Landon Curt Noll and Leonid A. Broukhis.  All Rights Reserved.
 
     You are free to share and adapt this file under the terms of this license:
 

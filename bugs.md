@@ -4978,6 +4978,9 @@ input sizes larger than 64K bytes.
 **PLEASE NOTE**: The above problems are **NOT** code bugs.  They represent compiler mis-features,
 linker limitations, and/or architecture limitations.
 
+For more information see the "**Large input size issues**" section of
+[2024/kurdyukov4/index.html](2024/kurdyukov4/index.html#large-input-size-issues).
+
 
 Jump to: [top](#)
 
@@ -4996,15 +4999,12 @@ request](https://github.com/ioccc-src/winner/pulls) or otherwise, we
 thank you as well for the help! We will happily add you to the
 [thanks](thanks-for-help.html) file as well.
 
-For more information see the "**Large input size issues**" section of
-[2024/kurdyukov4/index.html](2024/kurdyukov4/index.html#large-input-size-issues).
-
 Jump to: [top](#)
 
 
 <!--
 
-    Copyright © 1984-2025 by Landon Curt Noll. All Rights Reserved.
+    Copyright © %%DATE_RANGE%% by Landon Curt Noll. All Rights Reserved.
 
     You are free to share and adapt this file under the terms of this license:
 

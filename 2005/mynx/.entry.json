@@ -180,6 +180,30 @@
             "display_as" : "html",
             "display_via_github" : false,
             "entry_text" : "this web page"
+        },
+        {
+            "file_path" : ".date-range",
+            "inventory_order" : 4100000000,
+            "OK_to_edit" : true,
+            "display_as" : "daterange",
+            "display_via_github" : true,
+            "entry_text" : "copyright date range for this directory"
+        },
+        {
+            "file_path" : "source-alt/.date-range",
+            "inventory_order" : 4100000000,
+            "OK_to_edit" : true,
+            "display_as" : "daterange",
+            "display_via_github" : true,
+            "entry_text" : "copyright date range for source-alt sub-directory"
+        },
+        {
+            "file_path" : "source/.date-range",
+            "inventory_order" : 4100000000,
+            "OK_to_edit" : true,
+            "display_as" : "daterange",
+            "display_via_github" : true,
+            "entry_text" : "copyright date range for source sub-directory"
         }
     ]
 }

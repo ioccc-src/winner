@@ -21,7 +21,7 @@ XXX - add text here - XXX
 
 ### Rules and Guidelines for this contest
 
-Here are theadd text here - XXX final versions of the IOCCC rules and guidelines that were in effect for this contest:
+The final versions of the IOCCC rules and guidelines that were in effect for this contest were:
 
 * [%%YEAR%% rules](rules.html) version **XXX**
 * [%%YEAR%% guidelines](guidelines.html) version **XXX**
@@ -93,7 +93,7 @@ For additional information on how to submit fixes, see the FAQ on:
 
 <!--
 
-    Copyright © 1984-%%YEAR%% by Landon Curt Noll. All Rights Reserved.
+    Copyright © %%DATE_RANGE%% by Landon Curt Noll. All Rights Reserved.
 
     You are free to share and adapt this file under the terms of this license:
 

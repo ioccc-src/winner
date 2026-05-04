@@ -127,6 +127,13 @@ shopt -u extglob	# enable extended globbing patterns
 shopt -s globstar	# enable ** to match all files and zero or more directories and subdirectories
 
 
+# other required bash options
+#
+# Requires bash with a version 4.2 or later
+#
+shopt -s lastpipe	# run last command of a pipeline not executed in the background in the current shell environment
+
+
 # IOCCC requires use of C locale
 #
 export LANG="C"
@@ -147,7 +154,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="2.3.6 2026-05-01"
+export VERSION="2.3.7 2026-05-03"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -1207,6 +1214,39 @@ if [[ ! -w $YYYY_DIR ]]; then
 fi
 
 
+# verify we have a .date-range at the YYYY level
+#
+export YYYY_DATE_RANGE_PATH="$YEAR_DIR/.date-range"
+if [[ ! -e $YYYY_DATE_RANGE_PATH ]]; then
+    echo  "$0: ERROR: YYYY level date range file does not exist: $YYYY_DATE_RANGE_PATH" 1>&2
+    exit 6
+fi
+if [[ ! -f $YYYY_DATE_RANGE_PATH ]]; then
+    echo  "$0: ERROR: YYYY level date range is not a regular file: $YYYY_DATE_RANGE_PATH" 1>&2
+    exit 6
+fi
+if [[ ! -r $YYYY_DATE_RANGE_PATH ]]; then
+    echo  "$0: ERROR: YYYY level date range is not an readable file: $YYYY_DATE_RANGE_PATH" 1>&2
+    exit 6
+fi
+if [[ ! -s $YYYY_DATE_RANGE_PATH ]]; then
+    echo  "$0: ERROR: YYYY level date range is not a non-empty readable file: $YYYY_DATE_RANGE_PATH" 1>&2
+    exit 6
+fi
+
+
+# read the YYYY level copyright date range
+#
+DATE_RANGE=$(< "$YYYY_DATE_RANGE_PATH")
+if [[ $V_FLAG -ge 3 ]]; then
+    echo "$0: debug[3]: using date range from $YYYY_DATE_RANGE_PATH contents: $DATE_RANGE" 1>&2
+fi
+if [[ -z $DATE_RANGE ]]; then
+    echo "$0: ERROR: date range failed to be written to or read from: $YYYY_DATE_RANGE_PATH" 1>&2
+    exit 6
+fi
+
+
 # determine files that are found in and/or will be created in an entry
 #
 export INFO_JSON="$YYYY_DIR/.info.json"
@@ -1221,6 +1261,7 @@ export TRY_ALT_SH="$YYYY_DIR/try.alt.sh"
 export DOT_PATH="$YYYY_DIR/.path"
 export README_MD="$YYYY_DIR/README.md"
 export INDEX_HTML="$YYYY_DIR/index.html"
+export DATE_RANGE_PATH="$YYYY_DIR/.date-range"
 
 
 # determine template files
@@ -1302,6 +1343,8 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: ENTRY_ID=$ENTRY_ID" 1>&2
     echo "$0: debug[3]: DOT_YEAR=$DOT_YEAR" 1>&2
     echo "$0: debug[3]: YYYY_DIR=$YYYY_DIR" 1>&2
+    echo "$0: debug[3]: YYYY_DATE_RANGE_PATH=$YYYY_DATE_RANGE_PATH" 1>&2
+    echo "$0: debug[3]: DATE_RANGE=$DATE_RANGE" 1>&2
     echo "$0: debug[3]: INFO_JSON=$INFO_JSON" 1>&2
     echo "$0: debug[3]: AUTH_JSON=$AUTH_JSON" 1>&2
     echo "$0: debug[3]: AUTH_JSON_XZ=$AUTH_JSON_XZ" 1>&2
@@ -1314,6 +1357,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: DOT_PATH=$DOT_PATH" 1>&2
     echo "$0: debug[3]: README_MD=$README_MD" 1>&2
     echo "$0: debug[3]: INDEX_HTML=$INDEX_HTML" 1>&2
+    echo "$0: debug[3]: DATE_RANGE_PATH=$DATE_RANGE_PATH" 1>&2
     echo "$0: debug[3]: TEMPLATE_DIR=$TEMPLATE_DIR" 1>&2
     echo "$0: debug[3]: NEXT_DIR=$NEXT_DIR" 1>&2
     echo "$0: debug[3]: TEMPLATE_ENTRY_DIR=$TEMPLATE_ENTRY_DIR" 1>&2
@@ -2553,6 +2597,61 @@ if [[ -z $NOOP ]]; then
     manifest_csv README.md 4000000000 true markdown true "markdown source for this web page" \
 	>> "$TMP_MANIFEST_CSV"
 
+    # form .date-range if needed
+    #
+    if [[ ! -f $DATE_RANGE_PATH ]]; then
+	if [[ $V_FLAG -ge 3 ]]; then
+            echo "$0: debug[3]: about to write $DATE_RANGE into: $DATE_RANGE_PATH" 1>&2
+        fi
+	echo "$DATE_RANGE" > "$DATE_RANGE_PATH"
+	if [[ ! -s $DATE_RANGE_PATH ]]; then
+	    echo "$0: ERROR: failed write $DATE_RANGE into: $DATE_RANGE_PATH" 1>&2
+	    exit 62
+	fi
+    elif [[ $V_FLAG -ge 3 ]]; then
+	echo "$0: debug[3]: .date-range file already exists, skipping forming: $DATE_RANGE_PATH" 1>&2
+    fi
+
+    # write manifest csv line for .date-range
+    #
+    ((++count))
+    manifest_csv .date-range 4100000000 true daterange true "copyright date range for this directory" >> "$TMP_MANIFEST_CSV"
+
+    # form .date-range files in sub-directories if needed
+    #
+    # We know that $ENTRY_DIR exists, so the cd in the sub-directory is safe.
+    #
+    # SC2164 (warning): Use 'cd ... || exit' or 'cd ... || return' in case cd fails.
+    # https://www.shellcheck.net/wiki/SC2164
+    # shellcheck disable=SC2164
+    (cd "$ENTRY_DIR" ; find "$ENTRY_DIR" . -mindepth 1 -type d -print) | while read -r SUBDIR; do
+
+	# form .date-range in the sub-directory if needed
+	#
+	export SUBDIR_PATH=${SUBDIR##./}
+	export SUBDIR_DATE_RANGE_PATH="$SUBDIR_PATH/.date-range"
+
+	# form .date-range if needed
+	#
+	if [[ ! -f $ENTRY_DIR/$SUBDIR_DATE_RANGE_PATH ]]; then
+	    if [[ $V_FLAG -ge 3 ]]; then
+		echo "$0: debug[3]: about to write $DATE_RANGE into: $ENTRY_DIR/$SUBDIR_DATE_RANGE_PATH" 1>&2
+	    fi
+	    echo "$DATE_RANGE" > "$ENTRY_DIR/$SUBDIR_DATE_RANGE_PATH"
+	    if [[ ! -s $ENTRY_DIR/$SUBDIR_DATE_RANGE_PATH ]]; then
+		echo "$0: ERROR: failed write $DATE_RANGE into: $ENTRY_DIR/$SUBDIR_DATE_RANGE_PATH" 1>&2
+		exit 63
+	    fi
+	elif [[ $V_FLAG -ge 3 ]]; then
+	    echo "$0: debug[3]: .date-range file already exists, skipping forming: $ENTRY_DIR/$SUBDIR_DATE_RANGE_PATH" 1>&2
+	fi
+
+	# write manifest csv line for sub-directory .date-range
+	#
+	((++count))
+	manifest_csv "$SUBDIR_DATE_RANGE_PATH" 4100000000 true daterange true "copyright date range for $SUBDIR_PATH sub-directory" >> "$TMP_MANIFEST_CSV"
+    done
+
     # write manifest csv line for index.html
     #
     ((++count))
@@ -2568,7 +2667,7 @@ if [[ -z $NOOP ]]; then
     if [[ $status -ne 0 ]]; then
         echo "$0: ERROR: LC_ALL=C sort -t, -k2n -k1,1 -k3,6 $TMP_MANIFEST_CSV -o $TMP_MANIFEST_CSV failed," \
              "error code: $status" 1>&2
-        exit 62
+        exit 64
     elif [[ $V_FLAG -ge 3 ]]; then
         echo "$0: debug[3]: sorted temporary manifest csv file: $TMP_MANIFEST_CSV" 1>&2
     fi
@@ -2622,6 +2721,7 @@ if [[ -z $NOOP ]]; then
 	    c)		GITHUB_VIEW_REQUIRED="true" ;;
 	    cabbage)	GITHUB_VIEW_REQUIRED="true" ;;
 	    css)	GITHUB_VIEW_REQUIRED="true" ;;
+	    daterange)	GITHUB_VIEW_REQUIRED="true" ;;
 	    forth)	GITHUB_VIEW_REQUIRED="true" ;;
 	    gitignore)	GITHUB_VIEW_REQUIRED="true" ;;
 	    gzip)	GITHUB_VIEW_REQUIRED="false" ;;
@@ -2688,7 +2788,7 @@ if [[ -z $NOOP ]]; then
     if [[ $status -ne 0 ]]; then
 	echo "$0: ERROR: $JPARSE_TOOL -q -- $TMP_ENTRY_JSON filed," \
 	     "error code: $status" 1>&2
-	exit 63
+	exit 65
     elif [[ $V_FLAG -ge 3 ]]; then
 	echo "$0: debug[3]: valid JSON: $TMP_ENTRY_JSON" 1>&2
     fi
@@ -2720,13 +2820,13 @@ if [[ -z $NOOP ]]; then
         if [[ $status -ne 0 ]]; then
             echo "$0: ERROR: mv -f -- $TMP_ENTRY_JSON $ENTRY_JSON filed," \
 	         "error code: $status" 1>&2
-            exit 64
+            exit 66
         elif [[ $V_FLAG -ge 1 ]]; then
             echo "$0: debug[1]: updated .entry.json: $ENTRY_JSON" 1>&2
         fi
         if [[ ! -s $ENTRY_JSON ]]; then
             echo "$0: ERROR: not a non-empty .entry.json: $ENTRY_JSON" 1>&2
-            exit 65
+            exit 67
         fi
     fi
 
@@ -2749,7 +2849,7 @@ for EXTRA_FILE in $EXTRA_FILE_SET; do    # validate the JSON in the temporary .e
     if [[ $status -ne 0 ]]; then
         echo "$0: ERROR: $JPARSE_TOOL -q -- $TMP_ENTRY_JSON filed," \
              "error code: $status" 1>&2
-        exit 63
+        exit 68
     elif [[ $V_FLAG -ge 3 ]]; then
         echo "$0: debug[3]: valid JSON: $TMP_ENTRY_JSON" 1>&2
     fi
@@ -2781,13 +2881,13 @@ for EXTRA_FILE in $EXTRA_FILE_SET; do    # validate the JSON in the temporary .e
         if [[ $status -ne 0 ]]; then
             echo "$0: ERROR: mv -f -- $TMP_ENTRY_JSON $ENTRY_JSON filed," \
                  "error code: $status" 1>&2
-            exit 64
+            exit 69
         elif [[ $V_FLAG -ge 1 ]]; then
             echo "$0: debug[1]: updated .entry.json: $ENTRY_JSON" 1>&2
         fi
         if [[ ! -s $ENTRY_JSON ]]; then
             echo "$0: ERROR: not a non-empty .entry.json: $ENTRY_JSON" 1>&2
-            exit 65
+            exit 70
         fi
     fi
 
@@ -2810,7 +2910,7 @@ for EXTRA_FILE in $EXTRA_FILE_SET; do    # validate the JSON in the temporary .e
 		if [[ $status -ne 0 ]]; then
 		    echo "$0: ERROR: $OTHERMD2HTML_SH -v $V_FLAG -- $YYYY_DIR/$EXTRA_FILE filed," \
 			 "error code: $status" 1>&2
-		    exit 66
+		    exit 71
 		fi
 	    elif [[ $V_FLAG -ge 3 ]]; then
 		echo "$0: debug[3]: -n disabled forming HTML: $YYYY_DIR/$HTML_FILE" 1>&2
@@ -2843,7 +2943,7 @@ if [[ $status -ne 0 ]]; then
 	if [[ $status -ne 0 ]]; then
 	    echo "$0: ERROR: chmod +w $ALLYEAR filed," \
 		 "error code: $status" 1>&2
-	    exit 67
+	    exit 72
 	fi
 
 	# append YYYY_DIR to .allyear
@@ -2857,7 +2957,7 @@ if [[ $status -ne 0 ]]; then
 	if [[ $status -ne 0 ]]; then
 	    echo "$0: ERROR: sort -f -d -u $ALLYEAR -o $ALLYEAR filed," \
 		 "error code: $status" 1>&2
-	    exit 68
+	    exit 73
 	fi
 
     elif [[ $V_FLAG -ge 1 ]]; then
@@ -2882,7 +2982,7 @@ if [[ -z $NOOP ]]; then
 	if [[ $status -ne 0 ]]; then
 	    echo "$0: ERROR: $MD2HTML_SH -v $V_FLAG -- $README_MD $INDEX_HTML filed," \
 		 "error code: $status" 1>&2
-	    exit 69
+	    exit 74
 	fi
     fi
 
@@ -2908,7 +3008,7 @@ if [[ -z $NOOP ]]; then
 	echo "$0: ERROR: rm -f -v -- $INFO_JSON $AUTH_JSON $AUTH_JSON.xz $REMARKS_MD $YYYY_DIR/.prev" \
 	     "$YYYY_DIR/.submit.sh $YYYY_DIR/.txz $YYYY_DIR/.num.sh $YYYY_DIR/.orig filed," \
 	     "error code: $status" 1>&2
-	exit 70
+	exit 75
     fi
 
 # case: with -n

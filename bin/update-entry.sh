@@ -115,7 +115,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="2.0.2 2026-05-01"
+export VERSION="2.0.3 2026-05-03"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -1284,6 +1284,25 @@ for elem in "${GIT_NON_MANIFEST[@]}"; do
 	DISPLAY_VIA_GITHUB="true"
 	ENTRY_TEXT="directory path from top level directory"
 
+    # case: .date-range
+    #
+    elif [[ $FILE_PATH == ".date-range" ]]; then
+	INVENTORY_ORDER="4100000000"
+	OK_TO_EDIT="true"
+	DISPLAY_AS="daterange"
+	DISPLAY_VIA_GITHUB="true"
+	ENTRY_TEXT="copyright date range for this directory"
+
+    # case: sub-directory .date-range
+    #
+elif [[ $FILE_PATH =~ (.*)/.date-range ]]; then
+	DIR_PATH=$(dirname "$FILE_PATH")
+	INVENTORY_ORDER="4100000000"
+	OK_TO_EDIT="true"
+	DISPLAY_AS="daterange"
+	DISPLAY_VIA_GITHUB="true"
+	ENTRY_TEXT="copyright date range for $DIR_PATH sub-directory"
+
     # case: README.md
     #
     elif [[ $FILE_PATH == "README.md" ]]; then
@@ -1402,6 +1421,7 @@ for elem in "${GIT_NON_MANIFEST[@]}"; do
     c)		GITHUB_VIEW_REQUIRED="true" ;;
     cabbage)	GITHUB_VIEW_REQUIRED="true" ;;
     css)	GITHUB_VIEW_REQUIRED="true" ;;
+    daterange)	GITHUB_VIEW_REQUIRED="true" ;;
     forth)	GITHUB_VIEW_REQUIRED="true" ;;
     gitignore)	GITHUB_VIEW_REQUIRED="true" ;;
     gzip)	GITHUB_VIEW_REQUIRED="false" ;;

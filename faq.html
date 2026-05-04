@@ -596,7 +596,8 @@
 <li><strong>Q 10.8</strong>: <a class="normal" href="#menus">How do the menus on the website work and what can I do if they don’t work?</a></li>
 <li><strong>Q 10.9</strong>: <a class="normal" href="#author-information">How do I find more information about a winning author of an entry?</a></li>
 <li><strong>Q 10.10</strong>: <a class="normal" href="#cb">What is this cb tool that is mentioned in the IOCCC?</a></li>
-<li><strong>Q 10.11</strong>: <a class="normal" href="status_json">What do the status.json JSON file indicate?</a></li>
+<li><strong>Q 10.11</strong>: <a class="normal" href="#status_json">What do the status.json JSON file indicate?</a></li>
+<li><strong>Q 10.12</strong>: <a class="normal" href="#date_range">What is the purpose of the <code>.date-range</code> files?</a></li>
 </ul>
 <h2 id="history-of-the-ioccc">11. <a href="#ioccc_history">History of the IOCCC</a></h2>
 <ul>
@@ -6071,6 +6072,28 @@ of the following <code>ls(1)</code> command:</p>
 was modified without the content being changed. While we will try to minimize
 the cases where this happen, we apologize in advance (Sorry tm Canada 🇨🇦) when it does.</p>
 <p>Jump to: <a href="#">top</a></p>
+<div id="date_range">
+<h3 id="q-10.12-what-is-the-purpose-of-the-.date-range-files">Q 10.12: What is the purpose of the <code>.date-range</code> files?</h3>
+</div>
+<p>In each directory of the <a href="https://github.com/ioccc-src/winner">IOCCC winner repo</a>, a
+<code>.date-range</code> file may be found. The contents of the <code>.date-range</code> file are
+the copyright date range for the constructed HTML files in that same directory.
+The <a href="https://github.com/ioccc-src/winner/blob/master/bin/md2html.sh">bin/md2html.sh</a> tool substitutes strings
+of the form “<code>%</code><code>%DATE_RANGE%</code><code>%</code>” with the contents of the <code>.date-range</code> file.</p>
+<p>This allows a per-directory copyright date range, rather than a single
+global copyright date range for the entire web. Thus when the calendar year
+changes, the entire website does <strong>NOT</strong> need to be rebuilt.</p>
+<p>See also the “<a href="bin/index.html#date-range">Special DATE_RANGE token</a>” section
+of the <a href="bin/index.html">bin tools</a> for information about how the
+“<code>%</code><code>%DATE_RANGE%</code><code>%</code>” is processed.</p>
+<div id="making_changes">
+<h4 id="on-making-changes-to-the-website">On making changes to the website</h4>
+</div>
+<p>When a change is made to the content of the <a href="https://github.com/ioccc-src/winner">IOCCC winner
+repo</a>, simply update the <code>.date-range</code>
+files in the same directories where the changes are made: change the
+final year in the file to the current year. When the website is rebuilt,
+the proper copyright date range will be picked up.</p>
 <hr style="width:50%;text-align:left;margin-left:0">
 <hr style="width:50%;text-align:left;margin-left:0">
 <div id="history">
@@ -6433,7 +6456,7 @@ announced in the early years of the IOCCC.</p>
 <p>Jump to: <a href="#">top</a></p>
 <!--
 
-    Copyright © 1984-2025 by Landon Curt Noll. All Rights Reserved.
+    Copyright © 2020-2026 by Landon Curt Noll. All Rights Reserved.
 
     You are free to share and adapt this file under the terms of this license:
 
@@ -6456,7 +6479,7 @@ announced in the early years of the IOCCC.</p>
 
 <!--
 
-    Copyright © 1984-2025 by Landon Curt Noll. All Rights Reserved.
+    Copyright © 2020-2026 by Landon Curt Noll. All Rights Reserved.
 
     You are free to share and adapt this file under the terms of this license:
 
@@ -6470,7 +6493,7 @@ announced in the early years of the IOCCC.</p>
 
 <div class="footer">
 
-    <div id="copyright"><h3>Copyright &copy; 1984-2025 by Landon Curt Noll:
+    <div id="copyright"><h3>Copyright &copy; 2020-2026 by Landon Curt Noll:
 	<a href="https://creativecommons.org/faq/#what-does-some-rights-reserved-mean"
 	   target="_blank"
 	   rel="license noopener noreferrer">Some Rights Reserved</a></h3>

@@ -24,7 +24,7 @@ while the IOCCC was open.
 # 28th International Obfuscated C Code Contest Official Guidelines
 
 <p class="leftbar">
-Copyright &copy; 2024-2025 Leonid A. Broukhis and Landon Curt Noll.
+Copyright &copy; 2024&dash;2025 Leonid A. Broukhis and Landon Curt Noll.
 </p>
 
 All Rights Reserved.  Permission for personal, education or non-profit use is
@@ -721,7 +721,7 @@ details.
 <p class="leftbar">
 The `jparse` parser, library and tools were co-developed by [Cody Boone
 Ferguson](../authors.html#Cody_Boone_Ferguson) and [Landon Curt
-Noll](http://www.isthe.com/chongo/index.html) in 2022-2025 and come from the
+Noll](http://www.isthe.com/chongo/index.html) in 2022&dash;2025 and come from the
 [jparse repo](https://github.com/xexyl/jparse). However, the **mkiocccentry
 tools use a _clone_** of the [jparse repo](https://github.com/xexyl/jparse) **at
 a _specific_ release**.  Thus the `mkiocccentry` will at times be behind the

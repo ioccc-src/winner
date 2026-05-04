@@ -113,7 +113,7 @@ of [who won the IOCCC](../years.html).
 
 <!--
 
-    Copyright © 1984-2025 by Landon Curt Noll. All Rights Reserved.
+    Copyright © %%DATE_RANGE%% by Landon Curt Noll. All Rights Reserved.
 
     You are free to share and adapt this file under the terms of this license:
 

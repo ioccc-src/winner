@@ -476,6 +476,70 @@
             "display_as" : "html",
             "display_via_github" : false,
             "entry_text" : "this web page"
+        },
+        {
+            "file_path" : ".date-range",
+            "inventory_order" : 4100000000,
+            "OK_to_edit" : true,
+            "display_as" : "daterange",
+            "display_via_github" : true,
+            "entry_text" : "copyright date range for this directory"
+        },
+        {
+            "file_path" : "dlowe-aux-data/.date-range",
+            "inventory_order" : 4100000000,
+            "OK_to_edit" : true,
+            "display_as" : "daterange",
+            "display_via_github" : true,
+            "entry_text" : "copyright date range for dlowe-aux-data sub-directory"
+        },
+        {
+            "file_path" : "dlowe-aux-data/english-0/.date-range",
+            "inventory_order" : 4100000000,
+            "OK_to_edit" : true,
+            "display_as" : "daterange",
+            "display_via_github" : true,
+            "entry_text" : "copyright date range for dlowe-aux-data/english-0 sub-directory"
+        },
+        {
+            "file_path" : "dlowe-aux-data/english-1/.date-range",
+            "inventory_order" : 4100000000,
+            "OK_to_edit" : true,
+            "display_as" : "daterange",
+            "display_via_github" : true,
+            "entry_text" : "copyright date range for dlowe-aux-data/english-1 sub-directory"
+        },
+        {
+            "file_path" : "dlowe-aux-data/png-0/.date-range",
+            "inventory_order" : 4100000000,
+            "OK_to_edit" : true,
+            "display_as" : "daterange",
+            "display_via_github" : true,
+            "entry_text" : "copyright date range for dlowe-aux-data/png-0 sub-directory"
+        },
+        {
+            "file_path" : "dlowe-aux-data/png-1/.date-range",
+            "inventory_order" : 4100000000,
+            "OK_to_edit" : true,
+            "display_as" : "daterange",
+            "display_via_github" : true,
+            "entry_text" : "copyright date range for dlowe-aux-data/png-1 sub-directory"
+        },
+        {
+            "file_path" : "dlowe-aux-data/xor-0/.date-range",
+            "inventory_order" : 4100000000,
+            "OK_to_edit" : true,
+            "display_as" : "daterange",
+            "display_via_github" : true,
+            "entry_text" : "copyright date range for dlowe-aux-data/xor-0 sub-directory"
+        },
+        {
+            "file_path" : "dlowe-aux-data/xor-1/.date-range",
+            "inventory_order" : 4100000000,
+            "OK_to_edit" : true,
+            "display_as" : "daterange",
+            "display_via_github" : true,
+            "entry_text" : "copyright date range for dlowe-aux-data/xor-1 sub-directory"
         }
     ]
 }

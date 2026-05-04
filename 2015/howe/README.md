@@ -157,7 +157,7 @@ Algorithmica, 1986, pages. 251-266<br>
 <http://www.xmailserver.org/diff2.pdf>
 
 Webb Miller and Eugene W. Myers; "A File Comparison Program";<br>
-Software-Practice And Experience, Vol. 15(11). 1025-1040 (November 1985)<br>
+Software-Practice And Experience, Vol. 15(11). 1025&dash;1040 (November 1985)<br>
 <http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.189.70&rep=rep1&type=pdf>
 
 D.S. Hirschberg, "A linear space algorithm for computing maximal common subsequence problem";<br>
@@ -185,7 +185,7 @@ Which hashing algorithm is best for uniqueness and speed?<br>
 
 <!--
 
-    Copyright © 1984-2025 by Landon Curt Noll. All Rights Reserved.
+    Copyright © %%DATE_RANGE%% by Landon Curt Noll. All Rights Reserved.
 
     You are free to share and adapt this file under the terms of this license:
 
