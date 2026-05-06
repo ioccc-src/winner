@@ -1,3 +1,4 @@
+2011/1337.mk
 2011/2011.tar.bz2
 2011/.date-range
 2011/.filelist
@@ -6,4 +7,5 @@
 2011/Makefile
 2011/README.md
 2011/rules.txt
+2011/var.mk
 2011/.year

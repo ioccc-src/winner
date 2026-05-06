@@ -16,7 +16,7 @@
 #
 ################################################################################
 #
-# This file is Copyright (c) 2023 by Landon Curt Noll.  All Rights Reserved.
+# This file is Copyright (c) 2023,2026 by Landon Curt Noll.  All Rights Reserved.
 # You are free to share and adapt this file under the terms of this license:
 #
 #	Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
@@ -34,7 +34,7 @@ SHELL= bash
 # common tool locations
 #######################
 #
-include ../../var.mk
+include ../var.mk
 
 # Common C compiler warnings to silence
 #
@@ -42,7 +42,8 @@ CSILENCE= -Wno-char-subscripts -Wno-error -Wno-implicit-function-declaration \
 	  -Wno-unused-value -Wno-unused-variable -Wno-deprecated-non-prototype \
 	  -Wno-uninitialized -Wno-implicit-int -Wno-switch-unreachable \
 	  -Wno-builtin-declaration-mismatch -Wno-implicit-fallthrough \
-          -Wno-int-in-bool-context -Wno-overflow -Wno-parentheses -Wno-return-type
+          -Wno-int-in-bool-context -Wno-overflow -Wno-parentheses -Wno-return-type \
+	  -Wno-misleading-indentation
 
 # Attempt to silence unknown warning option
 #
@@ -91,7 +92,8 @@ ifeq "$(findstring $(CLANG),${CC})" "$(CLANG)"
 CSILENCE+= -Wno-comma -Wno-float-conversion -Wno-missing-variable-declarations \
 	   -Wno-poison-system-directories -Wno-shadow -Wno-sign-conversion \
 	   -Wno-string-conversion -Wno-unreachable-code -Wno-unsafe-buffer-usage \
-	   -Wno-unreachable-code-loop-increment -Wno-misleading-indentation
+	   -Wno-unreachable-code-loop-increment -Wno-misleading-indentation \
+	   -Wno-c++-keyword -Wno-jump-misses-init
 #
 CWARN+= -Weverything
 #
@@ -141,6 +143,11 @@ ${PROG}: ${PROG}.c
 alt: data ${ALT_TARGET}
 	@${TRUE}
 
+${PROG}.alt: ${PROG}.alt.c
+	@echo "NOTE: this will very likely crash without an arg"
+	@echo "NOTE: clang is known to fail to compile $@"
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
+
 # data files
 #
 data: ${DATA}
@@ -168,4 +175,4 @@ clobber: clean
 # optional include of 1337 hacker rulz
 ######################################
 
--include 1337.mk ../1337.mk ../../1337.mk
+-include ../1337.mk

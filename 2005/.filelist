@@ -1,3 +1,4 @@
+2005/1337.mk
 2005/2005.tar.bz2
 2005/.date-range
 2005/.filelist
@@ -6,4 +7,5 @@
 2005/Makefile
 2005/README.md
 2005/rules.txt
+2005/var.mk
 2005/.year

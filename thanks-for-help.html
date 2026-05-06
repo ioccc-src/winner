@@ -570,6 +570,10 @@ certain number of args (in some versions) and that the first arg is an <code>int
 the others are <code>char **</code>s. This is why the arg was removed and the call to
 <code>main()</code> was not updated beyond what had to be done to fix it for compilers that
 do not support <code>-traditional-cpp</code>.</p>
+<p>Cody also added missing variables like <code>BASH</code> and <code>PDFLATEX</code> to the <code>var.mk</code>
+variable set.</p>
+<p>In at least one case, like the <a href="https://github.com/ioccc-src/winner/blob/master/Makefile">top level Makefile</a>, raw
+commands were replaced with <code>${SOME_COMMAND}</code> make variables.</p>
 <p>If the ANSI C committee or a new version of <code>clang</code> messes this up (both of which
 seem possible) it is easy to fix but it is hoped that this won’t happen.</p>
 <p>Originally <a href="#yusuke">Yusuke</a> supplied a patch so that this entry would compile
@@ -5151,12 +5155,6 @@ optimiser to fix an entry, sometimes causing other problems that also had to be
 fixed, a good example being <a href="#1986_marshall">1986/marshall</a> (see the
 <a href="1986/marshall/compilers.html">compilers.html</a> for the amusing details and all that
 had to be done to fix it).</p>
-<p>Cody also added missing variables like <code>BASH</code> and <code>PDFLATEX</code> to the
-<a href="https://github.com/ioccc-src/winner/blob/master/var.mk">var.mk</a> file and removed another that was deemed problematic or
-undesired. Other variable names had typos in them.</p>
-<p>In at least one case, like the <a href="https://github.com/ioccc-src/winner/blob/master/Makefile">top level Makefile</a>, where raw
-commands that are in <a href="https://github.com/ioccc-src/winner/blob/master/var.mk">var.mk</a> were used, Cody updated them to use the
-variables.</p>
 <p>Some comments were fixed or added where it was deemed useful.</p>
 <p>Jump to: <a href="#">top</a></p>
 <div id="consistency_improvements">

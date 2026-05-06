@@ -1,3 +1,4 @@
+2020/1337.mk
 2020/2020.tar.bz2
 2020/.date-range
 2020/.filelist
@@ -10,4 +11,5 @@
 2020/Makefile
 2020/README.md
 2020/rules.txt
+2020/var.mk
 2020/.year

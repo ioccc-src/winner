@@ -16,7 +16,7 @@
 #
 ################################################################################
 #
-# This file is Copyright (c) 2023 by Landon Curt Noll.  All Rights Reserved.
+# This file is Copyright (c) 2023,2026 by Landon Curt Noll.  All Rights Reserved.
 # You are free to share and adapt this file under the terms of this license:
 #
 #	Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
@@ -34,12 +34,13 @@ SHELL= bash
 # common tool locations
 #######################
 #
-include ../../var.mk
+include ../var.mk
 
 # Common C compiler warnings to silence
 #
 CSILENCE= -Wno-pointer-sign -Wno-unused-parameter \
-	  -Wno-format-truncation -Wno-sign-compare -Wno-stringop-overflow
+	  -Wno-format-truncation -Wno-sign-compare -Wno-stringop-overflow \
+	  -Wno-deprecated-non-prototype -Wno-format-security
 
 # Attempt to silence unknown warning option
 #
@@ -88,7 +89,7 @@ ifeq "$(findstring $(CLANG),${CC})" "$(CLANG)"
 CSILENCE+= -Wno-format-nonliteral -Wno-implicit-int-conversion -Wno-missing-prototypes \
            -Wno-missing-variable-declarations -Wno-poison-system-directories \
 	   -Wno-disabled-macro-expansion -Wno-unsafe-buffer-usage -Wno-shorten-64-to-32 \
-	   -Wno-sign-conversion
+	   -Wno-sign-conversion -Wno-format -Wno-implicit-void-ptr-cast
 #
 CWARN+= -Weverything
 #
@@ -190,4 +191,4 @@ clobber: clean
 # optional include of 1337 hacker rulz
 ######################################
 
--include 1337.mk ../1337.mk ../../1337.mk
+-include ../1337.mk

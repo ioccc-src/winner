@@ -34,7 +34,7 @@ SHELL= bash
 # common tool locations
 #######################
 #
-include ../../var.mk
+include ../var.mk
 
 # Common C compiler warnings to silence
 #
@@ -175,4 +175,4 @@ clobber: clean
 # optional include of 1337 hacker rulz
 ######################################
 
--include 1337.mk ../1337.mk ../../1337.mk
+-include ../1337.mk

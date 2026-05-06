@@ -122,7 +122,7 @@ supernova: sandwich
 
 more_magic: supernova
 	@-if [[ -r .code_analysis ]]; then \
-	    ccode_analysis --more_magic dd268dbcaac550362d98c384c4e576ccc8b1536847b6bbb31023b4c8caee0535 \
+	    ccode_analysis --more_magic ade1ae44c7b4e2a85d15a91d1f9759e3b8f93a1ee38ffb19aa1f81e1f373f840 \
 			   --FNV1a_hash_256_bit -v3 "${PROG}" "${PROG}.c"; \
 	else \
 	    echo "Wrong! Do it again!"; \
@@ -153,4 +153,4 @@ pluto: charon
 	@echo "$@ is a dwarf planet 🪐"
 	@echo "Dwarf planets 🪐🪐 are a type of planet 🪐"
 	@echo "Therefore, $@ is a planet 🪐"
-	@echo "The geophysical definition of planet gives us ~110 planets 🪐🪐 in our solar system"
+	@echo "The geophysical definition of planet gives us 110 or more planets 🪐🪐 in our solar system"

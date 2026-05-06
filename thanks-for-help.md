@@ -150,6 +150,12 @@ the others are `char **`s. This is why the arg was removed and the call to
 `main()` was not updated beyond what had to be done to fix it for compilers that
 do not support `-traditional-cpp`.
 
+Cody also added missing variables like `BASH` and `PDFLATEX` to the `var.mk`
+variable set.
+
+In at least one case, like the [top level Makefile](%%REPO_URL%%/Makefile), raw
+commands were replaced with `${SOME_COMMAND}` make variables.
+
 If the ANSI C committee or a new version of `clang` messes this up (both of which
 seem possible) it is easy to fix but it is hoped that this won't happen.
 
@@ -7034,14 +7040,6 @@ optimiser to fix an entry, sometimes causing other problems that also had to be
 fixed, a good example being [1986/marshall](#1986_marshall) (see the
 [compilers.html](1986/marshall/compilers.html) for the amusing details and all that
 had to be done to fix it).
-
-Cody also added missing variables like `BASH` and `PDFLATEX` to the
-[var.mk](%%REPO_URL%%/var.mk) file and removed another that was deemed problematic or
-undesired. Other variable names had typos in them.
-
-In at least one case, like the [top level Makefile](%%REPO_URL%%/Makefile), where raw
-commands that are in [var.mk](%%REPO_URL%%/var.mk) were used, Cody updated them to use the
-variables.
 
 Some comments were fixed or added where it was deemed useful.
 

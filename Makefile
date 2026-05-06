@@ -16,7 +16,7 @@
 #
 ################################################################################
 #
-# This file is Copyright (c) 2023 by Landon Curt Noll.  All Rights Reserved.
+# This file is Copyright (c) 2023,2026 by Landon Curt Noll.  All Rights Reserved.
 # You are free to share and adapt this file under the terms this license:
 #
 #	Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
@@ -34,7 +34,7 @@ SHELL= bash
 # common tool locations
 #######################
 #
-include var.mk
+include template/var.mk
 
 #################################
 # IOCCC website maintenance tulz
@@ -47,30 +47,30 @@ include var.mk
 # We need only list those "tulz" that are invoked directly by the
 # "IOCCC website maintenance rulz" section below.
 
+ALL_JFMT= bin/all-jfmt.sh
 ALL_RUN= bin/all-run.sh
 ALL_YEARS= bin/all-years.sh
 BAD_DISPLAY_AS= bin/bad-display-as.sh
-GEN_AUTHORS= bin/gen-authors.sh
-GEN_LOCATION= bin/gen-location.sh
-GEN_YEARS= bin/gen-years.sh
-GEN_YEAR_INDEX= bin/gen-year-index.sh
-ALL_JFMT= bin/all-jfmt.sh
 CHK_ENTRY= bin/chk-entry.sh
-GEN_TOP_HTML= bin/gen-top-html.sh
-GEN_OTHER_HTML= bin/gen-other-html.sh
-README2INDEX= bin/readme2index.sh
-QUICK_README2INDEX= bin/quick-readme2index.sh
-UNTAR_ENTRY= bin/untar-entry.sh
-UNTAR_YEAR= bin/untar-year.sh
-TAR_ENTRY= bin/tar-entry.sh
-TAR_YEAR= bin/tar-year.sh
-GEN_STATUS= bin/gen-status.sh
-GEN_SITEMAP= bin/gen-sitemap.sh
-SORT_GITIGNORE= bin/sort.gitignore.sh
-FIND_MISSING_LINKS= bin/find-missing-links.sh
-FIND_INVALID_JSON= bin/find-invalid-json.sh
 CSV2ENTRY= bin/csv2entry.sh
 ENTRY2CSV= bin/entry2csv.sh
+FIND_INVALID_JSON= bin/find-invalid-json.sh
+FIND_MISSING_LINKS= bin/find-missing-links.sh
+GEN_AUTHORS= bin/gen-authors.sh
+GEN_LOCATION= bin/gen-location.sh
+GEN_OTHER_HTML= bin/gen-other-html.sh
+GEN_SITEMAP= bin/gen-sitemap.sh
+GEN_STATUS= bin/gen-status.sh
+GEN_TOP_HTML= bin/gen-top-html.sh
+GEN_YEAR_INDEX= bin/gen-year-index.sh
+GEN_YEARS= bin/gen-years.sh
+QUICK_README2INDEX= bin/quick-readme2index.sh
+README2INDEX= bin/readme2index.sh
+SORT_GITIGNORE= bin/sort.gitignore.sh
+TAR_ENTRY= bin/tar-entry.sh
+TAR_YEAR= bin/tar-year.sh
+UNTAR_ENTRY= bin/untar-entry.sh
+UNTAR_YEAR= bin/untar-year.sh
 
 
 #############
@@ -893,7 +893,6 @@ tar:
 	${MAKE} genfilelist
 	${MAKE} all_jfmt
 	${MAKE} verify_entry_files
-	${MAKE} sort_gitignore
 	${MAKE} form_entry_tarball
 	${MAKE} form_year_tarball
 	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='

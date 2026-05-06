@@ -116,7 +116,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="2.0.3 2025-08-23"
+export VERSION="2.0.4 2026-05-23"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -638,28 +638,28 @@ fi
 #
 # We do not include these files in the manifest list used to build the sitemap:
 #
+#	ads.txt		- fetched by web browsers and web crawlers as needed
 #	archive/historic/archive-*.tar.bz2	- historic purposes and are NOT RECOMMENDED for casual viewing
 #	author_wins.csv	- not part of the repo, generated as a local file by a tool
 #	bin/*.awk	- only used by IOCCC Judges to build the website
 #	bin/*.cfg	- only used by IOCCC Judges to build the website
 #	bin/*.sh	- only used by IOCCC Judges to build the website
 #	CNAME		- needed for only GitHub
-#	favicon.ico	- fetched by web browsers as needed
+#	favicon.ico	- fetched by web browsers and web crawlers as needed
 #	google*.html	- used for Google Site Verification
+#	ioccc.css	- fetched by web browsers and web crawlers as needed
 #	manifest.csv	- not part of the repo, generated as a local file by a tool
-#	png/*		- fetched by web browsers as needed
+#	png/*		- fetched by web browsers and web crawlers as needed
 #	sitemap.xml	- we are building the sitemap!
 #	summary.csv.csv	- not part of the repo, generated as a local file by a tool
-#	template/*	- template files used by tools and IOCCC judges
 #	year_prize.csv	- not part of the repo, generated as a local file by a tool
+#	((dot-files))   - files that begin with . ("dot") cannot appear in a sitemap
 #
 # Sort the list below with: sort -d -u
 #
 cat << EOF0 >> "$TMP_MANIFEST_LIST"
-1337.mk
 about.html
 about.md
-.allyear
 archive/historic/index.html
 archive/historic/README.md
 author/index.html
@@ -669,19 +669,16 @@ bin/index.html
 bin/README.md
 bugs.html
 bugs.md
-.clang-format
 CODE_OF_CONDUCT.html
 CODE_OF_CONDUCT.md
 contact.html
 contact.md
 faq.html
 faq.md
-.gitignore
 inc/index.html
 inc/README.md
 index.html
 index.md
-ioccc.css
 judges.html
 judges.md
 LICENSE
@@ -726,8 +723,6 @@ status.json
 status.md
 thanks-for-help.html
 thanks-for-help.md
-.top
-var.mk
 winners.html
 years.html
 EOF0

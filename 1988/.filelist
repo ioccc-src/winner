@@ -1,3 +1,4 @@
+1988/1337.mk
 1988/1988.tar.bz2
 1988/.date-range
 1988/.filelist
@@ -5,4 +6,5 @@
 1988/Makefile
 1988/README.md
 1988/rules.txt
+1988/var.mk
 1988/.year

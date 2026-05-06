@@ -74,7 +74,7 @@ GL_MODELVIEW); u=glGenLists(1); glNewList (u,GL_COMPILE);	       H X
 R(); glNormal3f(c,m,n); T(1,1); V T(1,0); V T(0,0); V T(0              ,1)
 ; V glEnd(); } glEndList(); XMapWindow L, w) ; c=0; for(;              ; )
 { if (XPending L)){ XNextEvent L, &e); if ((XLookupKeysym              ( (
-XKeyEvent *)&e,0))&1<<5){ h=10; i[c] =!i[c]; c++; c&=3; }             els
+XKeyEvent *)&e,0))&1<<5){ h=10; i[c] =!i[c]; c++; c&=3; }             else
 E(0) } glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT            ) ;
 glLoadIdentity (); gluLookAt ( -2 ,0 ,5 ,0,0 ,0,0 ,0 ,1 )          ; H
 GL_LIGHTING); H GL_LIGHT0 ); U GL_POSITION, i + 4 ); U O)        ; U

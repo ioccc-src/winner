@@ -5789,15 +5789,21 @@ _Secondary files_ list.
 
 These tarballs will have the following files:
 
-- `ioccc.css`                                   - stylesheet for the html files
-- `var.mk`                                              - the top level Makefile included by all the other Makefiles that holds variables used by the Makefiles
-- `YYYY/winner/.path`                   - directory path from top level directory
+- `YYYY/winner/.date-range`             - copyright date range for the given directory
+- `YYYY/winner/sub-dir/.date-range`     - copyright date range for the given sub-directory
 - `YYYY/winner/.entry.json`             - entry summary and manifest in JSON
 - `YYYY/winner/.gitignore`              - list of files that should not be committed under git
+- `YYYY/winner/.path`                   - directory path from top level directory
 
 plus the winning entry files like source code, the Makefile, supplementary data
 provided by the author and any other file in the winning entry, found under the
 entry's subdirectory.
+
+**NOTE**: The compressed tarball does **NOT** include files such as
+[ioccc.css](%%REPO_URL%%/ioccc.css), nor `png/` files needed to render
+an IOCCC web page.  You **MUST DOWNLOAD** those, as needed, in order to
+properly render an IOCCC web page.  The primary purpose of compressed
+tarballs is to provide the files needed to attempt to compile entries.
 
 If you downloaded `1984/mullender/1984_mullender.tar.bz2`, for instance, you might
 then do:
@@ -5990,20 +5996,20 @@ very easily. To do that `cd 1991/dds` and then do:
 
 and you'll see a single line changed and very simply.
 
-**NOTE**: The above mentioned `make` rules are located in the [1337.mk](%%REPO_URL%%/1337.mk)
-include Makefile via the optional include directive line:
+**NOTE**: The above mentioned `make` rules are located in the year level
+directory ([template/1337.mk](%%REPO_URL%%/template/1337.mk) holds
+a copy of current version) include Makefile via the optional include directive line:
 
 ``` <!---Makefile-->
-    -include 1337.mk ../1337.mk ../../1337.mk
+    -include ../1337.mk
 ```
 
-The [1337.mk](%%REPO_URL%%/1337.mk) file must exist in the current
-directory, or under the directory above, or under the directory 2 levels
-above in order for these rules to work.
+The `1337.mk` file must exist in the year level directory in order for
+these rules to work.
 
-If you're an IOCCC masochist :-), or you really want even more details, very often the
-[thanks file](thanks-for-help.html) has much more details on what had to be
-changed.
+If you're an IOCCC aficionado :-), or you really want even more details,
+very often the [thanks file](thanks-for-help.html) has much more details
+on what had to be changed.
 
 
 #### Tip: if you have `colordiff` installed it's a lot easier to see the differences

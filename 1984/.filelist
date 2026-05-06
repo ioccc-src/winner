@@ -1,3 +1,4 @@
+1984/1337.mk
 1984/1984.tar.bz2
 1984/.date-range
 1984/.filelist
@@ -5,4 +6,5 @@
 1984/Makefile
 1984/README.md
 1984/rules.txt
+1984/var.mk
 1984/.year

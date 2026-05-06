@@ -4679,15 +4679,20 @@ entry tarball is linked to in its <code>index.html</code> (e.g.
 <em>Secondary files</em> list.</p>
 <p>These tarballs will have the following files:</p>
 <ul>
-<li><code>ioccc.css</code> - stylesheet for the html files</li>
-<li><code>var.mk</code> - the top level Makefile included by all the other Makefiles that holds variables used by the Makefiles</li>
-<li><code>YYYY/winner/.path</code> - directory path from top level directory</li>
+<li><code>YYYY/winner/.date-range</code> - copyright date range for the given directory</li>
+<li><code>YYYY/winner/sub-dir/.date-range</code> - copyright date range for the given sub-directory</li>
 <li><code>YYYY/winner/.entry.json</code> - entry summary and manifest in JSON</li>
 <li><code>YYYY/winner/.gitignore</code> - list of files that should not be committed under git</li>
+<li><code>YYYY/winner/.path</code> - directory path from top level directory</li>
 </ul>
 <p>plus the winning entry files like source code, the Makefile, supplementary data
 provided by the author and any other file in the winning entry, found under the
 entry’s subdirectory.</p>
+<p><strong>NOTE</strong>: The compressed tarball does <strong>NOT</strong> include files such as
+<a href="https://github.com/ioccc-src/winner/blob/master/ioccc.css">ioccc.css</a>, nor <code>png/</code> files needed to render
+an IOCCC web page. You <strong>MUST DOWNLOAD</strong> those, as needed, in order to
+properly render an IOCCC web page. The primary purpose of compressed
+tarballs is to provide the files needed to attempt to compile entries.</p>
 <p>If you downloaded <code>1984/mullender/1984_mullender.tar.bz2</code>, for instance, you might
 then do:</p>
 <pre><code>        cd 1984/mullender
@@ -4836,15 +4841,15 @@ where it’s quite easy to see the differences).</p>
 very easily. To do that <code>cd 1991/dds</code> and then do:</p>
 <pre><code>    make diff_alt_prog</code></pre>
 <p>and you’ll see a single line changed and very simply.</p>
-<p><strong>NOTE</strong>: The above mentioned <code>make</code> rules are located in the <a href="https://github.com/ioccc-src/winner/blob/master/1337.mk">1337.mk</a>
-include Makefile via the optional include directive line:</p>
-<pre><code>    -include 1337.mk ../1337.mk ../../1337.mk</code></pre>
-<p>The <a href="https://github.com/ioccc-src/winner/blob/master/1337.mk">1337.mk</a> file must exist in the current
-directory, or under the directory above, or under the directory 2 levels
-above in order for these rules to work.</p>
-<p>If you’re an IOCCC masochist :-), or you really want even more details, very often the
-<a href="thanks-for-help.html">thanks file</a> has much more details on what had to be
-changed.</p>
+<p><strong>NOTE</strong>: The above mentioned <code>make</code> rules are located in the year level
+directory (<a href="https://github.com/ioccc-src/winner/blob/master/template/1337.mk">template/1337.mk</a> holds
+a copy of current version) include Makefile via the optional include directive line:</p>
+<pre><code>    -include ../1337.mk</code></pre>
+<p>The <code>1337.mk</code> file must exist in the year level directory in order for
+these rules to work.</p>
+<p>If you’re an IOCCC aficionado :-), or you really want even more details,
+very often the <a href="thanks-for-help.html">thanks file</a> has much more details
+on what had to be changed.</p>
 <h4 id="tip-if-you-have-colordiff-installed-its-a-lot-easier-to-see-the-differences">Tip: if you have <code>colordiff</code> installed it’s a lot easier to see the differences</h4>
 <p>To use these rules but provide a different <code>diff</code>, for instance <code>colordiff</code>,
 just do:</p>

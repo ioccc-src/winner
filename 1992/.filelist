@@ -1,3 +1,4 @@
+1992/1337.mk
 1992/1992.tar.bz2
 1992/.date-range
 1992/.filelist
@@ -8,4 +9,5 @@
 1992/mkentry.c
 1992/README.md
 1992/rules.txt
+1992/var.mk
 1992/.year

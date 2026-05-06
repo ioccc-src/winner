@@ -1,3 +1,4 @@
+1995/1337.mk
 1995/1995.tar.bz2
 1995/.date-range
 1995/.filelist
@@ -8,4 +9,5 @@
 1995/mkentry.c
 1995/README.md
 1995/rules.txt
+1995/var.mk
 1995/.year

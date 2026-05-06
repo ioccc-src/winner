@@ -104,7 +104,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 
-export VERSION="2.0.1 2025-08-23"
+export VERSION="2.0.2 2026-05-0"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -313,30 +313,9 @@ if [[ ! -s $FILELIST_ENTRY_JSON_AWK ]]; then
 fi
 
 
-# verify we have non-empty readable ioccc.css file
+# verify we have non-empty readable var.mk file
 #
-export IOCCC_CSS="ioccc.css"
-if [[ ! -e $IOCCC_CSS ]]; then
-    echo "$0: ERROR: ioccc.css does not exist: $IOCCC_CSS" 1>&2
-    exit 6
-fi
-if [[ ! -f $IOCCC_CSS ]]; then
-    echo "$0: ERROR: ioccc.css is not a file: $IOCCC_CSS" 1>&2
-    exit 6
-fi
-if [[ ! -r $IOCCC_CSS ]]; then
-    echo "$0: ERROR: ioccc.css is not a readable file: $IOCCC_CSS" 1>&2
-    exit 6
-fi
-if [[ ! -s $IOCCC_CSS ]]; then
-    echo "$0: ERROR: ioccc.css is not a not a non-empty readable file: $IOCCC_CSS" 1>&2
-    exit 6
-fi
-
-
-# verify we have non-empty readable ioccc.css file
-#
-export VAR_MK="var.mk"
+export VAR_MK="$YYYY/var.mk"
 if [[ ! -e $VAR_MK ]]; then
     echo "$0: ERROR: var.mk does not exist: $VAR_MK" 1>&2
     exit 6
@@ -357,7 +336,7 @@ fi
 
 # verify we have non-empty readable 1337.mk
 #
-export LEET_MK="1337.mk"
+export LEET_MK="$YYYY/1337.mk"
 if [[ ! -e $LEET_MK ]]; then
     echo "$0: ERROR: 1337.mk does not exist: $LEET_MK" 1>&2
     exit 6
@@ -442,7 +421,6 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: BIN_DIR=$BIN_DIR" 1>&2
     echo "$0: debug[3]: TARBALL=$TARBALL" 1>&2
     echo "$0: debug[3]: FILELIST_ENTRY_JSON_AWK=$FILELIST_ENTRY_JSON_AWK" 1>&2
-    echo "$0: debug[3]: IOCCC_CSS=$IOCCC_CSS" 1>&2
     echo "$0: debug[3]: VAR_MK=$VAR_MK" 1>&2
     echo "$0: debug[3]: LEET_MK=$LEET_MK" 1>&2
     echo "$0: debug[3]: FILELIST=$FILELIST" 1>&2
@@ -567,18 +545,7 @@ fi
 
 # generate sorted list of entry files from the IOCCC years manifest
 #
-# We also add ioccc.css and var.mk from the top level.
-#
 if [[ -z $NOOP ]]; then
-
-    # load the year level and top level files into the IOCCC year's manifest
-    #
-    {
-	grep -F -v "$TARBALL" "$FILELIST"
-	echo "$IOCCC_CSS"
-	echo "$VAR_MK"
-	echo "$LEET_MK"
-    } >> "$TMP_MANIFEST_LIST"
 
     # verify that YYYY is a readable directory
     #

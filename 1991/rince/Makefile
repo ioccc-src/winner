@@ -16,7 +16,7 @@
 #
 ################################################################################
 #
-# This file is Copyright (c) 2023 by Landon Curt Noll.  All Rights Reserved.
+# This file is Copyright (c) 2023,2026 by Landon Curt Noll.  All Rights Reserved.
 # You are free to share and adapt this file under the terms of this license:
 #
 #	Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
@@ -34,14 +34,14 @@ SHELL= bash
 # common tool locations
 #######################
 #
-include ../../var.mk
+include ../var.mk
 
 # Common C compiler warnings to silence
 #
 CSILENCE= -Wno-error -Wno-implicit-function-declaration -Wno-parentheses \
 	  -Wno-strict-prototypes -Wno-implicit-int -Wno-return-type \
 	  -Wno-unused-value -Wno-builtin-declaration-mismatch \
-	  -Wno-misleading-indentation
+	  -Wno-misleading-indentation -Wno-unterminated-string-initialization
 
 # Attempt to silence unknown warning option
 #
@@ -175,4 +175,4 @@ clobber: clean
 # optional include of 1337 hacker rulz
 ######################################
 
--include 1337.mk ../1337.mk ../../1337.mk
+-include ../1337.mk

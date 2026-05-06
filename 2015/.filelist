@@ -1,3 +1,4 @@
+2015/1337.mk
 2015/2015.tar.bz2
 2015/.date-range
 2015/.filelist
@@ -9,4 +10,5 @@
 2015/Makefile
 2015/README.md
 2015/rules.txt
+2015/var.mk
 2015/.year

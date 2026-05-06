@@ -27,14 +27,15 @@
 #############################
 # shell used by this Makefile
 #############################
-
+#
 SHELL= bash
+
 
 #######################
 # common tool locations
 #######################
-
-include ../var.mk
+#
+include var.mk
 
 
 ###############

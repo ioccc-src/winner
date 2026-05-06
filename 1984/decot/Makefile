@@ -16,7 +16,7 @@
 #
 ################################################################################
 #
-# This file is Copyright (c) 2023 by Landon Curt Noll.  All Rights Reserved.
+# This file is Copyright (c) 2023,2026 by Landon Curt Noll.  All Rights Reserved.
 # You are free to share and adapt this file under the terms of this license:
 #
 #	Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
@@ -34,7 +34,7 @@ SHELL= bash
 # common tool locations
 #######################
 #
-include ../../var.mk
+include ../var.mk
 
 # Common C compiler warnings to silence
 #
@@ -43,7 +43,7 @@ CSILENCE= -Wno-array-bounds -Wno-error -Wno-implicit-function-declaration \
 	  -Wno-unused-value -Wno-unused-variable -Wno-deprecated-non-prototype \
 	  -Wno-empty-body -Wno-int-conversion -Wno-int-to-pointer-cast -Wno-main \
 	  -Wno-pointer-to-int-cast -Wno-return-type -Wno-unused-label -Wno-implicit-int \
-	  -Wno-cast-function-type -Wno-format-extra-args
+	  -Wno-cast-function-type -Wno-format-extra-args -Wno-misleading-indentation
 
 # Attempt to silence unknown warning option
 #
@@ -145,7 +145,8 @@ alt: data ${ALT_TARGET}
 # We CANNOT have the ${CFLAGS} here as -traditional-cpp conflicts with them,
 # causing a compilation error in at least some versions of gcc.
 ${PROG}.alt: ${PROG}.alt.c
-	${CC} -traditional-cpp $< -o $@ ${LDFLAGS}
+	@echo "NOTE: clang is known to fail to compile $@ due to not supporting -traditional-cpp"
+	${CC} -traditional-cpp ${CSILENCE} $< -o $@ ${LDFLAGS}
 
 # data files
 #
@@ -174,4 +175,4 @@ clobber: clean
 # optional include of 1337 hacker rulz
 ######################################
 
--include 1337.mk ../1337.mk ../../1337.mk
+-include ../1337.mk
