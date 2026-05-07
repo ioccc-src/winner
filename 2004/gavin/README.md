@@ -155,6 +155,7 @@ For further usage information see [gavin.html](gavin.html).
 
 The filenames `vi` and `sh` are significant, and should not be changed.
 
+
 ### Known 'features':
 
 Known issues are really too plentiful to list.
@@ -195,6 +196,9 @@ data & code suitable for the new target platform.
 Accesses to data in the string are made relative to the define `V`,
 so these may need updating as appropriate (`0x90200` is the address
 at which a Linux bootloader loads an x86 kernel image).
+
+
+#### References
 
 [^1]: \* ;-)
 

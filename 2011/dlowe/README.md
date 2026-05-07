@@ -164,6 +164,7 @@ We created the [xor-trained.net](%%REPO_URL%%/2011/dlowe/dlowe-aux-data/xor-trai
 
 ## Author's remarks:
 
+
 ### Synopsis
 
 This is an [artificially
@@ -280,7 +281,7 @@ The [xor-0](%%REPO_URL%%/2011/dlowe/dlowe-aux-data/xor-0) corpus consists of two
 and `11` respectively.
 
 
-##### Results:
+#### Results:
 
 Using these corpora as a training set takes about 8000 iterations to learn xor
 to within a tolerance of `<0.01`.

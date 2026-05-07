@@ -163,6 +163,9 @@ cards; an 80-character line limit can be restricting, and
 the characters `^[]{}\` (these aren't found on every
 keypunch, and have various encodings).
 
+
+### The C program
+
 My C program entry does the following:
 
 1. Reads in lines.
@@ -222,6 +225,9 @@ With 28 lines of code (not counting the blank lines or the
 comment), there are technically `28!` different programs, or
 `304,888,344,611,713,860,501,504,000,000` different versions,
 all legal C.
+
+
+#### References
 
 [^1]: except in Florida voting machines
 

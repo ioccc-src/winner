@@ -19,6 +19,7 @@ Some terminal applications do not handle all Unicode characters adequately.
 
 On Linux, it is better to enjoy this entry on `gnome-terminal` or an equivalent modern terminal emulator.
 
+
 ## To use:
 
 ``` <!---sh-->
@@ -67,7 +68,7 @@ than simply employing this fun obfuscation trick!  :-)
 Salmon: a most fishy submission
 
 
-#### About
+### About
 
 This program obviously prints the squares of the numbers from 1 to 10. Or does it? The author got a little hungry for char-grilled salmon, and there's clearly something fishy going on with those unused #defines. Or is there? What the actual f*sh is going on here? Follow the three steps below for maximum enjoyment.
 

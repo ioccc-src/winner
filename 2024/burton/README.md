@@ -226,7 +226,9 @@ This code was written in mid January 2022, before the NYT purchased Wordle[tm].
 I have since used this assistant to play the game for more than a year,
 confirming my local experiments.
 
-![wordle stats](./2024_01_18_wordle_stats.png)
+<img src="2024_01_18_wordle_stats.png"
+alt="2024 Jan 18 wordle stats"
+width=362 height=422>
 
 The dictionary changed in 2023!  In late March 2023, I encountered the first
 word not in `dict`: `guano`.  In a bit of a surprise, I tried:

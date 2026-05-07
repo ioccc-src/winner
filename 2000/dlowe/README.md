@@ -54,6 +54,7 @@ of the submitters hidden until all winning entries have been selected.
 
 ## Author's remarks:
 
+
 ### Usage
 
 ```
@@ -66,7 +67,8 @@ This is a [Reverse Polish
 calculator](https://en.wikipedia.org/wiki/Reverse_Polish_notation), loosely
 based on the `dc(1)` unix calculator.
 
-# Syntax
+
+### Syntax
 
 This program understands the following `dc(1)` commands:
 
@@ -150,6 +152,7 @@ or EOF is encountered.
     poot
 ```
 
+
 ### Code Concept:
 
 We all know that Perl and other VHLLs (very high level languages)
@@ -168,6 +171,7 @@ In case that wasn't clear, in a nutshell: this program is C, calling
 embedded Perl (contained in a C string), which in turn calls back to
 C, which performs math on Perl data types and calls Perl functions for
 error reporting.
+
 
 ### Requirements:
 

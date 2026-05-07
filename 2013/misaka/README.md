@@ -43,7 +43,7 @@ There is more to cat than [mere cats](http://cheezburger.com/1680494336).  Be
 they tall, fat, long or squat, this source code is sure to amuse.
 
 
-#### Slight diversion
+### Slight diversion
 
 While one of the judges was reviewing this entry on the stern of the
 [Island Sky](http://www.noble-caledonia.co.uk/information/detail.asp?id=2&spid=76)
@@ -64,6 +64,7 @@ judging this entry.
 
 ## Author's remarks:
 
+
 ### Overview
 
 `Misaka` is a file concatenation utility, with at least two modes of
@@ -82,6 +83,7 @@ Where `[files...]` is a list of text file names.  Use `-` to read from `stdin`.
 
 
 ### Details
+
 
 ### Horizontal cat
 

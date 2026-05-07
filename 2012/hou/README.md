@@ -42,6 +42,7 @@ For extra credit: what is the meaning of the number `2321237`?
 
 ## Author's remarks:
 
+
 ### Disclaimer
 
 The reviewer may have already noticed that the 2nd page of this program is a
@@ -128,7 +129,7 @@ As an extra tweak, the text message actually does something useful. Remove the
 "Make a contract with me" catch line and the program would cease to function.
 
 
-### References
+#### References
 
 [^1]: [Russ Cox, Regular Expression Matching: the Virtual Machine Approach](http://swtch.com/~rsc/regexp/regexp2.html)
 

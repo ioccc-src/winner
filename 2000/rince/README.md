@@ -49,6 +49,7 @@ observation.
 
 ## Author's remarks:
 
+
 ### How to use it
 
 The simplest way to run it is with no arguments. Just type:
@@ -350,7 +351,8 @@ constants are integers. This hides the true meaning for the values.
 there to mislead the infirm of mind.  I've only tried to include such examples
 in places where at first glance the code appears to be executed.
 
-### References
+
+#### References
 
 [^1]: Astronomical algorithms (1st ed): page 59
 Jean Meeus. Published by Willmann-Bell Inc.

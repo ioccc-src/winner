@@ -225,7 +225,7 @@ field data to the browser on each frame.
 4. The browser receives and renders the field data onto the HTML5 canvas.
 
 
-### References
+#### References
 
 * [^1]: Turing, A. M., "The Chemical Basis of Morphogenesis", Philosophical Transactions of the Royal Society, 1952.
 * [^2]: The Ready Bunch, "Ready", A cross-platform implementation of various reaction-diffusion systems, since 2011, <https://github.com/GollyGang/ready>.

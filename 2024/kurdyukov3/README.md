@@ -88,7 +88,7 @@ See detailed story below build/run instructions.
 The instructions have been tested on a specific OS, on others they may differ in detail.
 
 
-##### X11 (Ubuntu):
+#### X11 (Ubuntu):
 
 ``` <!---sh-->
     cc -O3 prog.c -o prog -X11
@@ -97,14 +97,14 @@ The instructions have been tested on a specific OS, on others they may differ in
 * Needs "libx11-dev" package installed.
 
 
-##### WinAPI (Msys64):
+#### WinAPI (Msys64):
 
 ``` <!---sh-->
     cc -O3 prog.win.c -o prog.exe -s -lGDI32 -lwinmm
 ```
 
 
-##### SDL1.2 (Ubuntu):
+#### SDL1.2 (Ubuntu):
 
 ``` <!---sh-->
     cc -O3 -I/usr/include/SDL prog.sdl.c -o prog -lSDL
@@ -113,7 +113,7 @@ The instructions have been tested on a specific OS, on others they may differ in
 * Needs "libsdl1.2-dev" package installed.
 
 
-##### SDL2 (Ubuntu):
+#### SDL2 (Ubuntu):
 
 ``` <!---sh-->
     cc -O3 -I/usr/include/SDL2 prog.sdl.c -o prog -lSDL2

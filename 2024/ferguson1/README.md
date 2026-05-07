@@ -195,7 +195,7 @@ it works in C, namely near 200 NUL terminated `char *`s in a single flat `char
 *` - no, not an array of `char *[]` and not a `char **`!).
 
 See [obfuscation.html](obfuscation.html) and my [concluding
-remarks](#conclusions) for
+remarks](#conclusions1) for
 more details on just how many `goto`s I have but beware of monsters. But be careful
 if you have a heart condition. And if you're a computer scientist make sure
 you're not at risk of stroke. The [obfuscation.html](obfuscation.html) file has
@@ -1073,10 +1073,8 @@ The way a single `char *` holds all the strings, is a brilliant
 trick that offers **SO VERY MUCH**.
 
 
-<div id="scrollback">
 <div id="console">
 ### Scrollback
-</div>
 </div>
 
 Although I haven't tested this, it should work. This is for people like me who
@@ -1109,10 +1107,8 @@ Then press Ctrl + B and then [. Use the arrow keys or PageUp (maybe PageDown,
 not sure). Exit with 'q'.
 
 
-<div id="vomitory">
 <div id="vomit">
 ### Vomitory
-</div>
 </div>
 
 The judges say they **LIKE** (all caps and in bold is **THEIR** doing!) programs
@@ -1174,7 +1170,7 @@ different).
 encrypted version encrypts emojis).
 
 
-<div id="scrollback">
+<div id="issue_of_scrollback">
 ### The issue of scrollback
 </div>
 
@@ -1429,7 +1425,7 @@ the fact that original Oregon Trail (and my game is even worse) is a goto hell
 spaghetti code and my joke in the [obfuscation.html](obfuscation.html) file (not to
 mention the joke of using the obscene amount of `goto`s in a single small
 program (see the obfuscation file for more on that as well as [concluding
-remarks](#conclusions)).
+remarks](#conclusions2)).
 
 The message is full of irony for added effect, namely the 'WELCOME TO HELL!' and
 calling it your forever home, plus god wishing you a prosperous life ahead.
@@ -2940,7 +2936,7 @@ Trail, in 1847:
  width=640 height=640>
 
 
-<div id="conclusions">
+<div id="conclusions1">
 ### Concluding remarks - and things that might be worth remembering when judging
 </div>
 
@@ -4007,7 +4003,7 @@ emojis. Thus everyone ought to be covered. This was all carefully designed for
 maximum portability and I hope you appreciate this.
 
 
-<div id="conclusions">
+<div id="conclusions2">
 ### Concluding remarks - and things that might be worth remembering when judging
 </div>
 

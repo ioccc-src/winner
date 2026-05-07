@@ -63,7 +63,7 @@ One" refers to "NA1", the add-on to C89 which added some fairly
 crufty internationalization support.
 
 
-#### Historical note:
+### Historical note:
 
 Some non-`gcc` compilers that were not fully ANSI standard did not compile this
 entry correctly.  Using cc by default was not helpful most of the time on this
@@ -115,6 +115,7 @@ preprocessor can produce a list of defined macros in the format output by `gcc
 -dM`, i.e. lines of the form `#define MACRO value`.
 
 Edit the source at line 55 in this case.
+
 
 ### Background
 

@@ -7668,7 +7668,7 @@ The following **JSON** member value string may be one of the following **JSON** 
 
 
 <div id="pending">
-#### "**pending**"
+### "**pending**"
 </div>
 
 While the contest **[PENDING](#pending)** the contest is not yet [open](#open), however there is a tentative scheduled
@@ -7706,7 +7706,7 @@ for more information on the submission process when the IOCCC [reopens](#open).
 
 
 <div id="open">
-#### "**open**"
+### "**open**"
 </div>
 
 While contest is **[OPEN](#open)**, those who have [registered for the IOCCC](next/register.html)
@@ -7735,7 +7735,7 @@ for more information on the submission process when the IOCCC [reopens](#open).
 
 
 <div id="judging">
-#### "**judging**"
+### "**judging**"
 </div>
 
 While contest is **[JUDGING](#judging)**, you cannot [register](next/register.html)
@@ -7747,7 +7747,7 @@ Watch the [@IOCCC mastodon feed](https://fosstodon.org/@ioccc) for updates.
 
 
 <div id="closed">
-#### "**closed**"
+### "**closed**"
 </div>
 
 While contest is **[CLOSED](#closed)**, you cannot [register](next/register.html)

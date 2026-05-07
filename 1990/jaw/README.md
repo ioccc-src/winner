@@ -26,7 +26,7 @@ which should apply the identity transformation to a minimal holoalphabetic
 sentence.
 
 
-#### Also try:
+### Also try:
 
 ``` <!---sh-->
     ./try.sh

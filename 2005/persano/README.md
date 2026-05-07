@@ -156,6 +156,8 @@ smoother by increasing the number of polygons.
 [π](https://en.wikipedia.org/wiki/Pi) in the code.
 
 
+#### Footnotes
+
 [^1]: You can call such a transformation an "ambient isotopy" if you want to
 impress people at parties.
 

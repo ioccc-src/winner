@@ -103,11 +103,13 @@ Included files via Makefile (to reduce number of tokens, lower than 5006/2):
 Supported and unsupported features (everything else that is not listed is
 probably unsupported, but who knows...):
 
-- supported binary operators (in execution priority order from lower to higher);
-    <pre>, = == != & &= && | |= || > >= >> < <= << - -= + += * \*= / /= % %= [ ( .</pre>
+- supported binary operators (in execution priority order from lower to higher)
   this is not standard so keep in mind that the standard one can be found
   [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_precedence)
-  and the order of execution in this interpreter is slightly different.
+  and the order of execution in this interpreter is slightly different:
+```
+    , = == != & &= && | |= || > >= >> < <= << - -= + += * \*= / /= % %= [ ( .
+```
 - binary operator x() call functions. Ah, yes, the interpreter support both
   native and interpreted functions; inside this (light) obfuscated version of
   the program, only 1 native function has been included (print), to demonstrate
@@ -198,8 +200,8 @@ probably unsupported, but who knows...):
   this:
 
 ``` <!---js-->
-  var true = 1;
-  var false = 0;
+    var true = 1;
+    var false = 0;
 ```
 
 - **length** will return the number of properties inside an Object. This is
@@ -445,7 +447,9 @@ The following chart show the length of the two global linked lists (for
 variables and values) while executing the internal tests in C (see **Internal
 tests** chapter):
 
-![Garbage Collector actions inside internal tests](gc.png)
+<img src="gc.png"
+alt="Garbage Collector actions inside internal tests"
+width=937 height=291>
 
 
 #### Values and variables
@@ -621,17 +625,17 @@ Strange things can happen or can be found when using this interpreter:
 - functions are implemented as String, so you can do strange(r) things like this:
 
 ``` <!---js-->
-  var x = "{ print('x'); }";
-  x();
+    var x = "{ print('x'); }";
+    x();
 ```
 
   this also mean that you can implement an eval function that can evaluate
   dynamic generated code using this trick:
 
 ``` <!---js-->
-  var eval = function() {
-    arguments[0]();
-  }
+    var eval = function() {
+      arguments[0]();
+    }
 ```
 
   this technique can also work if you create a dynamic string (like normally is

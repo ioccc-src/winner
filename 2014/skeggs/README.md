@@ -33,6 +33,7 @@ written and compiled just in time for execution?
 
 ## Author's remarks:
 
+
 ### TABLE OF CONTENTS
 
  * Backstory
@@ -40,6 +41,7 @@ written and compiled just in time for execution?
  * Obfuscation
  * Troubleshooting guide (IMPORTANT!)
  * Q&A
+
 
 ### BACKSTORY
 
@@ -93,7 +95,8 @@ Due to this, it does LOTS of things that subtly annoy compilers!
 
 ## OBFUSCATION? WHAT OBFUSCATION? THIS IS A PERFECTLY NORMAL C PROGRAM!
 
-# THE COOL PART
+
+### THE COOL PART
 
 Take a close look at how it works. Notice that it's passing C code to certain
 macros...
@@ -122,7 +125,7 @@ available to the main program, so the main program's generated code will then
 enter itself where it's needed.
 
 
-# THE NOT-SO-COOL PART
+### THE NOT-SO-COOL PART
 
 There are also lots of `#defines`.
 
@@ -134,14 +137,14 @@ operator in a preprocessor macro) - this allows me to pass C code in arguments
 to the macros, meaning that it gets interpreted as C code instead of a string
 by the [iocccsize](%%REPO_URL%%/2014/iocccsize.c) tool, so it gets counted as smaller! :D
 
-# A SLIGHTLY COOL PART
+### A SLIGHTLY COOL PART
 
 As part of the JIT compiling, the program hides the fact that it needs ncurses:
 it just links ncurses with one of the generated shared libraries, and then can
 access the contents of the ncurses library!
 
 
-# WAIT WHAT
+### WAIT WHAT
 
 Also, note where functions start and end...
 
@@ -199,6 +202,7 @@ I've tested it on the following platforms, in case you need to try it on one:
 * 64-bit Arch Linux with clang 3.5.0 and standards c89 and c11.
 
 I ran out of time to test it on more systems.
+
 
 ### Q&A
 
