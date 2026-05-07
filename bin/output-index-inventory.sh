@@ -32,7 +32,7 @@
 #
 # "Because sometimes even the IOCCC Judges need some help." :-)
 #
-# Copyright (c) 2024 by Landon Curt Noll.  All Rights Reserved.
+# Copyright (c) 2024,2026 by Landon Curt Noll.  All Rights Reserved.
 #
 # Permission to use, copy, modify, and distribute this software and
 # its documentation for any purpose and without fee is hereby granted,
@@ -134,7 +134,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="2.0.2 2026-05-06"
+export VERSION="2.0.3 2026-05-07"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -628,7 +628,7 @@ if [[ -z $NOOP ]]; then
 	grep -E '^[1-9][0-9]{9,} ' "$TMP_MANIFEST" | LC_ALL=C sort -k 1n -k 3.2d | sed -f "$HTML_SED" -e 's/^[0-9][0-9]* //'
 	echo
 	echo '<hr style="width:10%;text-align:left;margin-left:0">'
-	echo '<h3>Jump to: <a href="#">top</a></h3>'
+	echo '&nbsp;**Jump to:** [top](#)'
 
     } >> "$TMP_FILE"
 elif [[ $V_FLAG -ge 3 ]]; then

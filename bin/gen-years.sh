@@ -106,7 +106,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="2.2.1 2026-04-26"
+export VERSION="2.2.2 2026-05-07"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -764,7 +764,6 @@ fi
     cat << EOF
 # IOCCC Winning Entries by Year
 
-### Jump to:
 EOF
 
     # write jump to table of years

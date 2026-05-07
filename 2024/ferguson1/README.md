@@ -4039,6 +4039,9 @@ follow as the other files will have shown - as will the code itself.
 
 Have fun and enjoy the jokes!
 
+
+#### References
+
 [^3]: See strings 2, 3, 11 and 12. This would be DEVASTATING to rule 2!
 
 

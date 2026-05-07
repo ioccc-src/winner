@@ -296,6 +296,33 @@ interval halving repeated until the precise value has been
 en/decoded[^5].
 
 
+### Photo Credit
+
+[Lavabus](lavabus.pgm) was taken by the judge, Landon Curt Noll.
+[Michael](michael.pgm) was provided by the author.  [Lenna](lenna.glic) is a
+1972 Playboy centerfold (doesn't show very much).
+
+- [michael.pgm](michael.pgm)
+
+    The author's Godchild and nephew.
+
+- [lavabus.pgm](lavabus.pgm)
+
+    A bus that was trapped by lava from [K&imacr;lauea
+    volcano](https://en.wikipedia.org/wiki/K&imacr;lauea) in Hawaii, US.  Nobody was
+    in the bus at the time, BTW.  Photo date: 1981.
+
+- [lenna.glic](lenna.glic)
+
+    A November 1972 Playboy centerfold was scanned in long ago and has been used
+    for image compression research since then.  Playboy originally threatened to
+    prosecute unauthorized use, but eventually granted that, having been in use
+    for image compression testing for so long, it was now a useful benchmark.
+    (Note:  This picture doesn't show very much.)
+
+
+#### References
+
 [^1]: Yes, this could be seen as a challenge....
 [^2]: Actually, the weight is `pow(0.8,D)/s`, where `s` is the sigma
     used for encoding/decoding the particular previous pixel. Dividing
@@ -319,31 +346,6 @@ en/decoded[^5].
     expected number of bits needed for coding). Also, the
     iteration ends as soon as the interval is small enough to
     guarantee decoding within the requested maximum error.
-
-
-### Photo Credit:
-
-[Lavabus](lavabus.pgm) was taken by the judge, Landon Curt Noll.
-[Michael](michael.pgm) was provided by the author.  [Lenna](lenna.glic) is a
-1972 Playboy centerfold (doesn't show very much).
-
-- [michael.pgm](michael.pgm)
-
-    The author's Godchild and nephew.
-
-- [lavabus.pgm](lavabus.pgm)
-
-    A bus that was trapped by lava from [K&imacr;lauea
-    volcano](https://en.wikipedia.org/wiki/K&imacr;lauea) in Hawaii, US.  Nobody was
-    in the bus at the time, BTW.  Photo date: 1981.
-
-- [lenna.glic](lenna.glic)
-
-    A November 1972 Playboy centerfold was scanned in long ago and has been used
-    for image compression research since then.  Playboy originally threatened to
-    prosecute unauthorized use, but eventually granted that, having been in use
-    for image compression testing for so long, it was now a useful benchmark.
-    (Note:  This picture doesn't show very much.)
 
 
 <!--

@@ -104,7 +104,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="2.0.2 2026-05-06"
+export VERSION="2.0.3 2026-05-07"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -800,7 +800,7 @@ done < "$TMP_LOC_WORD_HANDLE_NAME_SET" > "$TMP_LOC_MD"
 {
     echo
     echo '<hr style="width:10%;text-align:left;margin-left:0">'
-    echo '<h3>Jump to: <a href="#">top</a></h3>'
+    echo '&nbsp;**Jump to:** [top](#)'
 } >> "$TMP_LOC_MD"
 
 
