@@ -718,7 +718,7 @@ that for System V we had to do this) Cody added to the Makefile
 Jump to: [top](#)
 
 
-<div id="1987_heckbert">
+<div id="1987_heckbert_2">
 ## Winning entry: [1987/heckbert](1987/heckbert/index.html)
 ### Winning entry source code: [heckbert.c](%%REPO_URL%%/1987/heckbert/heckbert.c)
 </div>

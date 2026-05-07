@@ -116,7 +116,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="2.0.1 2026-04-26"
+export VERSION="2.0.2 2026-05-06"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -1031,7 +1031,7 @@ EOF
 	PREV_FILENAME="$filename"
     done < "$TMP_SORT_WORD"
     echo '<hr style="width:10%;text-align:left;margin-left:0">'
-    echo '<h4>Jump to: <a href="#">top</a></h4>'
+    echo '<h3>Jump to: <a href="#">top</a></h3>'
 } | if [[ -z $NOOP ]]; then
     cat >> "$TMP_AUTHORS_MD"
 else

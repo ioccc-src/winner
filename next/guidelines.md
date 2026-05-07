@@ -888,10 +888,8 @@ and/or `clang` do not support it.  We **suggest** that you not use any
 really obscure compiler flags if you can help it.
 
 
-<div id="about-nested-functions">
 <div id="nested-functions">
 ### About nested functions
-</div>
 </div>
 
 One side effect of the above is that you cannot assume the use of
@@ -1481,7 +1479,6 @@ The `mkiocccentry(1)` tool will reject any of the following files if
 they are found directly under the top level directory (`topdir`):
 </p>
 
-<p class="leftbar">
 * `README.md`
 * `index.html`
 * `prog`
@@ -1489,7 +1486,6 @@ they are found directly under the top level directory (`topdir`):
 * `prog.alt.o`
 * `prog.orig.c`
 * filenames matching the `[0-9][0-9][0-9][0-9]_*.tar.bz2` file glob
-</p>
 
 <p class="leftbar">
 The files listed in the above list are allowed to exist in
