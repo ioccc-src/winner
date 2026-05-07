@@ -141,7 +141,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="2.0.2 2026-06-07"
+export VERSION="2.0.3 2026-06-07"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -674,7 +674,7 @@ fi
 #
 {
     echo "<div id=\"inventory\"><div id=\"$YYYY\">"
-    echo "# Winning Entries of $YYYY - The $ORDINAL IOCCC"
+    echo "## Winning Entries of $YYYY - The $ORDINAL IOCCC"
     echo '</div></div>'
     echo
     echo "[**Download all winning entries from $YYYY**]($YYYY.tar.bz2)"

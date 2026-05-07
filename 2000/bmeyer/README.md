@@ -68,7 +68,7 @@ The [Makefile](%%REPO_URL%%/2000/bmeyer/Makefile) defaults to `-O3` and no `asm(
 This program is called `GLICBAWLS`
 
 
-#### Function
+### Function
 
 `GLICBAWLS` stands for "Grey Level Image Compression By Adaptive Weighted Least
 Squares".
