@@ -44,7 +44,7 @@ You are encouraged to review the following [FAQs](../faq.html):
 * [Obtaining and compiling the most recent mkiocccentry
 toolkit](../faq.html#mkiocccentry)
 
-* [How to upload your submission](./submit.html)
+* [How to upload your submission](../next/submit.html)
 
 While the contest is **[open](../faq.html#open)**, you may modify your
 previously uploaded submission by rebuilding your submission with the
@@ -209,7 +209,7 @@ request a reset.
 </p>
 
 See the
-FAQ on "[How to register for the IOCCC](register.html)".
+FAQ on "[How to register for the IOCCC](../next/register.html)".
 
 See the
 FAQ on "[Entering the IOCCC: the bare minimum you need to
@@ -456,7 +456,7 @@ in the building and compiling of your submission.
 
 <p class="leftbar">
 Your `Makefile` **MUST** be compatible with GNU `make` and we suggest
-you use [Makefile.example](Makefile.example) as a template, renamed as
+you use [Makefile.example](../next/Makefile.example) as a template, renamed as
 `Makefile` of course.
 </p>
 

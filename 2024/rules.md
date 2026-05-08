@@ -148,7 +148,7 @@ Jump to: [top](#)
 To help us with the volume of submissions, we ask that you follow the rules below.
 
 <div id="rule_abuse">
-#### A warning about rule abuse
+## A warning about rule abuse
 </div>
 
 <p class="leftbar">

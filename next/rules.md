@@ -67,13 +67,13 @@ This IOCCC runs from `2025-12-03 20:25:12.045045 UTC` to `2026-03-13
 <p class="leftbar">
 This contest will enter the [pending state](../faq.html#pending) on
 `2025-12-03 20:25:12.045045 UTC`, allowing people to [register for the
-IOCCC](register.html).
+IOCCC](../next/register.html).
 </p>
 
 <p class="leftbar">
 This contest will enter the [open state](../faq.html#open) on
 `2025-12-15 18:21:24.273033 UTC`, allowing people to [upload
-submissions](submit.html).
+submissions](../next/submit.html).
 </p>
 
 <p class="leftbar">
@@ -171,7 +171,7 @@ to the IOCCC. You may register while the contest is **pending** or
 A few days after registering, you'll receive your UUID username and
 temporary password, which you **MUST** change within 14 days.
 
-See [How to register for the IOCCC](register.html).
+See [How to register for the IOCCC](../next/register.html).
 
 See [Entering the IOCCC: the bare minimum you need to
 know](../quick-start.html#enter).
@@ -549,7 +549,7 @@ mention this in your `remarks.md` file as this **sometimes** helps.
 
 <p class="leftbar">
 The `Makefile` **MUST** adhere to GNU Makefile syntax. It's highly
-recommended that you copy the [Makefile.example](Makefile.example) as a
+recommended that you copy the [Makefile.example](../next/Makefile.example) as a
 template, renaming it to `Makefile`. The primary target of the
 `Makefile` **MUST** be `prog` and the source file is `prog.c`.  The C
 compiler and preprocessor **MUST** be invoked using `${CC}` and
