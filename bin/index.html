@@ -1196,6 +1196,11 @@ tarballs is to provide the files needed to attempt to compile entries.</p>
 <pre><code>    bin/all-years.sh -v 3 -- bin/tar-year.sh -v 1 -W</code></pre>
 <p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
 <pre><code>    make form_year_tarball</code></pre>
+<p><strong>NOTE</strong>: The compressed tarball does <strong>NOT</strong> include files such as
+<a href="https://github.com/ioccc-src/winner/blob/master/ioccc.css">ioccc.css</a>, nor <code>png/</code> files needed to render
+an IOCCC web page. You <strong>MUST DOWNLOAD</strong> those, as needed, in order to
+properly render an IOCCC web page. The primary purpose of compressed
+tarballs is to provide the files needed to attempt to compile entries.</p>
 <div id="untar-entry">
 <h2 id="untar-entry.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/untar-entry.sh">untar-entry.sh</a></h2>
 </div>
@@ -1216,11 +1221,6 @@ tarballs is to provide the files needed to attempt to compile entries.</p>
 <pre><code>    bin/all-years.sh -v 3 -- bin/untar-year.sh -v 1</code></pre>
 <p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
 <pre><code>    make untar_year_tarball</code></pre>
-<p><strong>NOTE</strong>: The compressed tarball does <strong>NOT</strong> include files such as
-<a href="https://github.com/ioccc-src/winner/blob/master/ioccc.css">ioccc.css</a>, nor <code>png/</code> files needed to render
-an IOCCC web page. You <strong>MUST DOWNLOAD</strong> those, as needed, in order to
-properly render an IOCCC web page. The primary purpose of compressed
-tarballs is to provide the files needed to attempt to compile entries.</p>
 <div id="how">
 <h1 id="how-ioccc-html-content-is-built">How IOCCC HTML content is built</h1>
 </div>

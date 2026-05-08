@@ -87,11 +87,11 @@ echo 1>&2
 # XXX - remove text above, including this line				    - XXX
 echo 'Let us try another example.  Observe the line count of output and the last line of data!' 1>&2
 echo 1>&2
-read -r -n 1 -p "Press any key to run: date | ./prog some command line | LANG=C sort > data: "
+read -r -n 1 -p "Press any key to run: date | ./prog some command line | LC_ALL=C  sort > data: "
 echo 1>&2
 echo 1>&2
 rm -f data
-date | ./prog some command line | LANG=C sort > data
+date | ./prog some command line | LC_ALL=C sort > data
 wc -l < data
 tail -n 1 data
 echo 1>&2

@@ -1292,6 +1292,12 @@ We recommend that this tool be invoked via the top level `Makefile`:
     make form_year_tarball
 ```
 
+**NOTE**: The compressed tarball does **NOT** include files such as
+[ioccc.css](%%REPO_URL%%/ioccc.css), nor `png/` files needed to render
+an IOCCC web page.  You **MUST DOWNLOAD** those, as needed, in order to
+properly render an IOCCC web page.  The primary purpose of compressed
+tarballs is to provide the files needed to attempt to compile entries.
+
 
 <div id="untar-entry">
 ## [untar-entry.sh](%%REPO_URL%%/bin/untar-entry.sh)
@@ -1341,12 +1347,6 @@ We recommend that this tool be invoked via the top level `Makefile`:
 ``` <!---sh-->
     make untar_year_tarball
 ```
-
-**NOTE**: The compressed tarball does **NOT** include files such as
-[ioccc.css](%%REPO_URL%%/ioccc.css), nor `png/` files needed to render
-an IOCCC web page.  You **MUST DOWNLOAD** those, as needed, in order to
-properly render an IOCCC web page.  The primary purpose of compressed
-tarballs is to provide the files needed to attempt to compile entries.
 
 
 <div id="how">

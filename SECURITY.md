@@ -34,10 +34,12 @@ instead.
 
 # Important Disclaimer
 
-IOCCC code is for **educational and entertainment purposes only**. We do **NOT**
-recommend installing any winning IOCCC entry code. Use code found in the
-[ioccc-src/winner GitHub repo](https://github.com/ioccc-src/winner)
-and in the [IOCCC website](index.html) **at your own risk!**
+The IOCCC code is intended solely for **educational and entertainment
+purposes only**. We strongly advise against installing any winning IOCCC
+entry code. Utilize IOCCC winning entry code, particularly any found
+on the [IOCCC winner repository](https://github.com/ioccc-src/winner) and,
+on the [IOCCC website](https://www.ioccc.org/index.html), at your own
+discretion as well as **at your own risk!**
 
 The [IOCCC](index.html) and the [IOCCC judges](judges.html) DISCLAIM ALL
 WARRANTIES WITH REGARD TO THIS SOFTWARE, INCLUDING ALL IMPLIED WARRANTIES OF
