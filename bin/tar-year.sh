@@ -104,7 +104,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 
-export VERSION="2.0.2 2026-05-0"
+export VERSION="2.0.3 2026-05-17"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -378,10 +378,12 @@ fi
 
 # determine the name of our tarball
 #
-# TARBALL - the same of the compressed tarball to verify and if needed re-build
+# TARBALL_BASENAME - basename of the compressed tarball to verify and if needed re-build
+# TARBALL - path of the compressed tarball to verify and if needed re-build
 # REBUILD_TARBALL - if non-empty, we need to re-build TARBALL and update tar timestamps
 #
-export TARBALL="$YYYY/$YYYY.tar.bz2"
+export TARBALL_BASENAME="$YYYY.tar.bz2"
+export TARBALL="$YYYY/$TARBALL_BASENAME"
 export REBUILD_TARBALL=
 
 
@@ -419,11 +421,11 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: CD_FAILED=$CD_FAILED" 1>&2
     echo "$0: debug[3]: BIN_PATH=$BIN_PATH" 1>&2
     echo "$0: debug[3]: BIN_DIR=$BIN_DIR" 1>&2
-    echo "$0: debug[3]: TARBALL=$TARBALL" 1>&2
     echo "$0: debug[3]: FILELIST_ENTRY_JSON_AWK=$FILELIST_ENTRY_JSON_AWK" 1>&2
     echo "$0: debug[3]: VAR_MK=$VAR_MK" 1>&2
     echo "$0: debug[3]: LEET_MK=$LEET_MK" 1>&2
     echo "$0: debug[3]: FILELIST=$FILELIST" 1>&2
+    echo "$0: debug[3]: TARBALL_BASENAME=$TARBALL_BASENAME" 1>&2
     echo "$0: debug[3]: TARBALL=$TARBALL" 1>&2
     echo "$0: debug[3]: REBUILD_TARBALL=$REBUILD_TARBALL" 1>&2
 fi
@@ -561,6 +563,53 @@ if [[ -z $NOOP ]]; then
 	echo  "$0: ERROR: YYYY is not an readable directory: $YYYY" 1>&2
 	exit 6
     fi
+
+    # verify that YYYY has a non-empty readable .filelist file
+    #
+    export YEAR_LIST="$YYYY/.filelist"
+    if [[ ! -e $YEAR_LIST ]]; then
+	echo  "$0: ERROR: YYYY/.filelist does not exist: $YEAR_LIST" 1>&2
+	exit 6
+    fi
+    if [[ ! -f $YEAR_LIST ]]; then
+	echo  "$0: ERROR: YYYY/.filelist is not a regular file: $YEAR_LIST" 1>&2
+	exit 6
+    fi
+    if [[ ! -r $YEAR_LIST ]]; then
+	echo  "$0: ERROR: YYYY/.filelist is not an readable file: $YEAR_LIST" 1>&2
+	exit 6
+    fi
+    if [[ ! -s $YEAR_LIST ]]; then
+	echo  "$0: ERROR: YYYY/.filelist is not a non-empty readable file: $YEAR_LIST" 1>&2
+	exit 6
+    fi
+
+    # process each file listed in the .filelist file
+    #
+    # Except for the YYYY.tar/bz2 file that we are forming
+    #
+    export YYYY_FILE
+    grep -F -v "$TARBALL" "$YEAR_LIST" | while read -r YYYY_FILE; do
+
+	# verify the file listed in the .filelist file is a readable .year file
+	#
+	if [[ ! -e $YYYY_FILE ]]; then
+	    echo  "$0: ERROR: .filelist: $YEAR_LIST listed file does not exist: $YYYY_FILE" 1>&2
+	    exit 6
+	fi
+	if [[ ! -f $YYYY_FILE ]]; then
+	    echo  "$0: ERROR: .filelist: $YEAR_LIST listed file is not a regular file: $YYYY_FILE" 1>&2
+	    exit 6
+	fi
+	if [[ ! -r $YYYY_FILE ]]; then
+	    echo  "$0: ERROR: .filelist: $YEAR_LIST listed file is not an readable file: $YYYY_FILE" 1>&2
+	    exit 6
+	fi
+
+	# add the file listed in the .filelist file
+	#
+	echo "$YYYY_FILE" >> "$TMP_MANIFEST_LIST"
+    done
 
     # verify that YYYY has a non-empty readable .year file
     #

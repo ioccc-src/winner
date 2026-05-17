@@ -452,7 +452,7 @@ genfilelist:
 
 # be sure that all JSON files are canonical
 #
-all_jfmt: ${ALL_RUN} ${CHK_ENTRY}
+all_jfmt: ${ALL_RUN} ${ALL_JFMT}
 	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
 	${ALL_JFMT} -v 1
 	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
@@ -799,6 +799,7 @@ quick_www:
 	@echo '=-=-=-=-= IOCCC complete make genpath =-=-=-=-='
 	${MAKE} genfilelist
 	${MAKE} sort_gitignore
+	${MAKE} all_jfmt
 	${MAKE} verify_entry_files
 	${MAKE} quick_authors
 	${MAKE} quick_location
@@ -829,6 +830,7 @@ www:
 	@echo '=-=-=-=-= IOCCC complete make genpath =-=-=-=-='
 	${MAKE} genfilelist
 	${MAKE} sort_gitignore
+	${MAKE} all_jfmt
 	${MAKE} verify_entry_files
 	${MAKE} gen_authors
 	${MAKE} gen_location
@@ -891,7 +893,6 @@ tar:
 	@${MAKE} genpath >/dev/null
 	@echo '=-=-=-=-= IOCCC complete make genpath =-=-=-=-='
 	${MAKE} genfilelist
-	${MAKE} all_jfmt
 	${MAKE} verify_entry_files
 	${MAKE} form_entry_tarball
 	${MAKE} form_year_tarball
@@ -925,7 +926,8 @@ timestamp:
 update:
 	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
 	${MAKE} www
-	${MAKE} tar
+	${MAKE} form_entry_tarball
+	${MAKE} form_year_tarball
 	${MAKE} timestamp
 	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
