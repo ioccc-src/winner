@@ -55,7 +55,60 @@
 </blockquote>
 
 
-<div id="202600313">
+<div id="20260527">
+## 2026-05-27
+</div>
+
+The winning entries for **IOCCC29** will be announced on the
+[Our Favorite Universe](https://www.youtube.com/@OurFavoriteUniverse) YouTube channel
+via our <a href="https://www.youtube.com/live/MoWCwZx1Swc">IOCCC29 Winning Entries</a> live show:
+currently scheduled for **2026 June 06 18:00:00 UTC**.
+
+Use this
+[www.timeanddate.com link](https://www.timeanddate.com/worldclock/converter.html?iso=20260606T180000&p1=234)
+to help you convert the show time into your local timezone.
+
+To be notified if there’s
+some last-minute need to reschedule, just click on the
+<a href="https://www.youtube.com/live/MoWCwZx1Swc">https://www.youtube.com/live/MoWCwZx1Swc</a>
+link and turn on notifications.
+
+Please consider clicking the **((Subscribe))** button as
+that helps the IOCCC. It’s not like some magazine subscription
+that is hard to get rid of, and it’s **totally free**!
+"Subscribing" just lets YouTube know you enjoy the
+[Our Favorite Universe](https://www.youtube.com/@OurFavoriteUniverse) YouTube channel.
+
+After the live <a href="https://www.youtube.com/live/MoWCwZx1Swc">IOCCC29 Winning Entries</a>
+YouTube show, we’ll upload the winning
+entries for **IOCCC29** source to our
+[IOCCC winner GitHub repo](https://github.com/ioccc-src/winner).
+After a moment or two, and once the GitHub "<i>pages build and deployment</i>" action finishes,
+the winning entries will go live on the
+[Official IOCCC website](https://www.ioccc.org/index.html) under a new
+[2025 sub-directory](https://www.ioccc.org/years.html#2025) for you to download and enjoy.
+
+If you’re not already a member, you might want to join the IOCCC
+Discord channel by clicking in the **free**
+[https://discord.com/invite/Wa42Qujwnw](https://discord.com/invite/Wa42Qujwnw) invite link.
+
+And if you’re interested, you can also watch our **free**
+[IOCCC Patreon videos](https://www.patreon.com/IOCCC).
+If you’d like to help fund the
+IOCCC "<i>servers, services, and software</i>" (all optional, of course),
+you can click on the "**See membership**" options.
+
+For those who are "<i>code curious</i>," you might want to check out our
+latest [IOCCC winner GitHub repo](https://github.com/ioccc-src/winner). If
+you’re interested, you can also become an
+[IOCCC GitHub sponsor](https://github.com/sponsors/ioccc-src),
+although it’s totally optional as you’ll always have **free** access
+to the [IOCCC winner GitHub repo](https://github.com/ioccc-src/winner)
+and to the [Official IOCCC website](https://www.ioccc.org/index.html).
+
+
+
+<div id="20260313">
 ## 2026-03-13
 </div>
 
