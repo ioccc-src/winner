@@ -106,7 +106,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="2.0.2 2026-05-03"
+export VERSION="2.1.0 2026-06-03"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -611,6 +611,114 @@ elif [[ $V_FLAG -ge 3 && ! -f $YEAR_MAKEFILE ]]; then
 fi
 
 
+# Add the template 1337.mk if there is no YYYY/1337.mk file
+#
+export YEAR_1337_MK="$YEAR/1337.mk"
+if [[ -z $NOOP ]]; then
+
+    # case: YYYY/1337.mk does not exist
+    #
+    if [[ ! -e $YEAR_1337_MK ]]; then
+
+	# verify that the template directory exists
+	#
+	if [[ ! -d $TEMPLATE ]]; then
+	    echo "$0: ERROR: YYYY/1337.mk: $YEAR_1337_MK does not exist and" \
+		 "template is missing: $TEMPLATE" 1>&2
+	    exit 21
+	fi
+
+	# verify that the YYYY/1337.mk template is a file
+	#
+	export YEAR_1337_MK_TEMPLATE="$TEMPLATE/1337.mk.year"
+	if [[ ! -f $YEAR_1337_MK_TEMPLATE ]]; then
+	    echo "$0: ERROR: YYYY/1337.mk: $YEAR_1337_MK does not exist and" \
+		 "template 1337.mk is missing: $YEAR_1337_MK_TEMPLATE" 1>&2
+	    exit 22
+	fi
+
+	# form year 1337.mk
+	#
+	if [[ $V_FLAG -ge 3 ]]; then
+	    echo "$0: debug[3]: about to: sed -e ... $YEAR_1337_MK_TEMPLATE > $YEAR_1337_MK" 0>&2
+	fi
+	sed -e "s|%%YEAR%%|$YEAR|g" \
+	    -e "s:%%DATE_RANGE%%|$DATE_RANGE|g" "$YEAR_1337_MK_TEMPLATE" > "$YEAR_1337_MK"
+	status="$?"
+        if [[ $status -ne 0 ]]; then
+            echo "$0: ERROR: sed -e .. $YEAR_1337_MK_TEMPLATE > $YEAR_1337_MK filed," \
+	         "error code: $status" 1>&2
+            exit 23
+        elif [[ $V_FLAG -ge 1 ]]; then
+            echo "$0: debug[1]: updated 1337.mk: $MAKE_FILE" 1>&2
+        fi
+
+    # case: YYYY exists but is not a file
+    #
+    elif [[ ! -d $YEAR ]]; then
+	echo "$0: ERROR: YYYY/1337.mk exists but is not a file: $YEAR_1337_MK" 1>&2
+	exit 24
+    fi
+
+elif [[ $V_FLAG -ge 3 && ! -f $YEAR_1337_MK ]]; then
+    echo "$0: debug[3]: -n disabled creating 1337.mk: $YEAR_1337_MK" 1>&2
+fi
+
+
+# Add the template var.mk if there is no YYYY/var.mk file
+#
+export YEAR_VAR_MK="$YEAR/var.mk"
+if [[ -z $NOOP ]]; then
+
+    # case: YYYY/var.mk does not exist
+    #
+    if [[ ! -e $YEAR_VAR_MK ]]; then
+
+	# verify that the template directory exists
+	#
+	if [[ ! -d $TEMPLATE ]]; then
+	    echo "$0: ERROR: YYYY/var.mk: $YEAR_VAR_MK does not exist and" \
+		 "template is missing: $TEMPLATE" 1>&2
+	    exit 25
+	fi
+
+	# verify that the YYYY/var.mk template is a file
+	#
+	export YEAR_VAR_MK_TEMPLATE="$TEMPLATE/var.mk.year"
+	if [[ ! -f $YEAR_VAR_MK_TEMPLATE ]]; then
+	    echo "$0: ERROR: YYYY/var.mk: $YEAR_VAR_MK does not exist and" \
+		 "template var.mk is missing: $YEAR_VAR_MK_TEMPLATE" 1>&2
+	    exit 26
+	fi
+
+	# form year var.mk
+	#
+	if [[ $V_FLAG -ge 3 ]]; then
+	    echo "$0: debug[3]: about to: sed -e ... $YEAR_VAR_MK_TEMPLATE > $YEAR_VAR_MK" 0>&2
+	fi
+	sed -e "s|%%YEAR%%|$YEAR|g" \
+	    -e "s:%%DATE_RANGE%%|$DATE_RANGE|g" "$YEAR_VAR_MK_TEMPLATE" > "$YEAR_VAR_MK"
+	status="$?"
+        if [[ $status -ne 0 ]]; then
+            echo "$0: ERROR: sed -e .. $YEAR_VAR_MK_TEMPLATE > $YEAR_VAR_MK filed," \
+	         "error code: $status" 1>&2
+            exit 27
+        elif [[ $V_FLAG -ge 1 ]]; then
+            echo "$0: debug[1]: updated var.mk: $MAKE_FILE" 1>&2
+        fi
+
+    # case: YYYY exists but is not a file
+    #
+    elif [[ ! -d $YEAR ]]; then
+	echo "$0: ERROR: YYYY/var.mk exists but is not a file: $YEAR_VAR_MK" 1>&2
+	exit 28
+    fi
+
+elif [[ $V_FLAG -ge 3 && ! -f $YEAR_VAR_MK ]]; then
+    echo "$0: debug[3]: -n disabled creating var.mk: $YEAR_VAR_MK" 1>&2
+fi
+
+
 # form an empty YYYY/.year file if needed
 #
 export YEAR_FILE="$YEAR/.year"
@@ -628,14 +736,14 @@ if [[ -z $NOOP ]]; then
         if [[ $status -ne 0 ]]; then
             echo "$0: ERROR: touch $YEAR_FILE filed," \
 	         "error code: $status" 1>&2
-            exit 21
+            exit 29
         elif [[ $V_FLAG -ge 1 ]]; then
             echo "$0: debug[1]: created: $YEAR_FILE" 1>&2
         fi
 
     elif [[ ! -f $YEAR_FILE ]]; then
 	echo "$0: ERROR: .year exists but is not a file: $YEAR_FILE" 1>&2
-	exit 22
+	exit 30
     fi
 
 elif [[ $V_FLAG -ge 3 && ! -e $YEAR_FILE ]]; then
@@ -653,12 +761,12 @@ trap 'rm -f $TMP_MAKEFILE; exit' 0 1 2 3 15
 rm -f "$TMP_MAKEFILE"
 if [[ -e $TMP_MAKEFILE ]]; then
     echo "$0: ERROR: cannot remove temporary Makefile: $TMP_MAKEFILE" 1>&2
-    exit 23
+    exit 31
 fi
 touch "$TMP_MAKEFILE"
 if [[ ! -e $TMP_MAKEFILE ]]; then
     echo "$0: ERROR: cannot create temporary Makefile: $TMP_MAKEFILE" 1>&2
-    exit 24
+    exit 32
 fi
 
 
@@ -673,7 +781,7 @@ status="$?"
 if [[ $status -ne 0 ]]; then
     echo "$0: ERROR: make new_year NEW_YEAR=\"$YEAR\" >> \"$TMP_MAKEFILE\" failed," \
 	 "error code: $status" 1>&2
-    exit 25
+    exit 33
 fi
 sed -n -e '/^# END - DO NOT REMOVE THIS LINE - make new_year also uses this #/,$p' "$MAKE_FILE" >> "$TMP_MAKEFILE"
 
@@ -707,13 +815,13 @@ if [[ -z $NOOP ]]; then
         if [[ $status -ne 0 ]]; then
             echo "$0: ERROR: mv -f -- $TMP_MAKEFILE $MAKE_FILE filed," \
 	         "error code: $status" 1>&2
-            exit 26
+            exit 34
         elif [[ $V_FLAG -ge 1 ]]; then
             echo "$0: debug[1]: updated Makefile: $MAKE_FILE" 1>&2
         fi
         if [[ ! -s $MAKE_FILE ]]; then
             echo "$0: ERROR: not a non-empty Makefile: $MAKE_FILE" 1>&2
-            exit 27
+            exit 35
         fi
 
 	# update .top
@@ -726,7 +834,7 @@ if [[ -z $NOOP ]]; then
         if [[ $status -ne 0 ]]; then
 	    echo "$0: ERROR: make -fC$YEAR genpath_top >/dev/null failed," \
 		 "error code: $status" 1>&2
-	    exit 28
+	    exit 36
         elif [[ $V_FLAG -ge 1 ]]; then
             echo "$0: debug[1]: updated .top" 1>&2
 	fi
@@ -753,7 +861,7 @@ if [[ -z $NOOP ]]; then
 	if [[ ! -d $TEMPLATE ]]; then
 	    echo "$0: ERROR: YYYY/README.md: $YEAR_README does not exist and" \
 		 "template is missing: $TEMPLATE" 1>&2
-	    exit 29
+	    exit 37
 	fi
 
 	# verify that the YYYY/README.md template is a file
@@ -762,7 +870,7 @@ if [[ -z $NOOP ]]; then
 	if [[ ! -f $YEAR_README_TEMPLATE ]]; then
 	    echo "$0: ERROR: YYYY/README.md: $YEAR_README does not exist and" \
 		 "template README.md.year is missing: $YEAR_README_TEMPLATE" 1>&2
-	    exit 30
+	    exit 38
 	fi
 
 	# determine the IOCCC ordinal
@@ -770,18 +878,18 @@ if [[ -z $NOOP ]]; then
 	CONTEST_NUMNER=$(sed -n "/$YEAR/=" "$TOP_FILE")
 	if [[ -z $CONTEST_NUMNER ]]; then
 	    echo "$0: ERROR: failed to determine content number for YYYY: $YEAR in: $TOP_FILE" 1>&2
-	    exit 31
+	    exit 39
 	fi
 	OUTPUT_ENGLISH_ORDINAL=$(output_english_ordinal "$CONTEST_NUMNER")
 	status="$?"
 	if [[ $status -ne 0 ]]; then
 	    echo "$0: ERROR: output_english_ordinal $CONTEST_NUMNER failed," \
 		 "error code: $status" 1>&2
-	    exit 32
+	    exit 40
 	fi
 	if [[ -z $OUTPUT_ENGLISH_ORDINAL ]]; then
 	    echo "$0: ERROR: failed to determine content orignal for YYYY: $YEAR for contest: $CONTEST_NUMNER" 1>&2
-	    exit 33
+	    exit 41
 	fi
 
 	# form year README.md
@@ -797,7 +905,7 @@ if [[ -z $NOOP ]]; then
         if [[ $status -ne 0 ]]; then
             echo "$0: ERROR: sed -e .. $YEAR_README_TEMPLATE > $YEAR_README filed," \
 	         "error code: $status" 1>&2
-            exit 34
+            exit 42
         elif [[ $V_FLAG -ge 1 ]]; then
             echo "$0: debug[1]: updated YYYY/README.md $YEAR_README" 1>&2
         fi
@@ -806,7 +914,7 @@ if [[ -z $NOOP ]]; then
     #
     elif [[ ! -d $YEAR ]]; then
 	echo "$0: ERROR: YYYY/README.md exists but is not a file: $YEAR_README" 1>&2
-	exit 35
+	exit 43
     fi
 
 elif [[ $V_FLAG -ge 3 && ! -f $YEAR_README ]]; then
@@ -831,7 +939,7 @@ if [[ -z $NOOP ]]; then
         if [[ $status -ne 0 ]]; then
             echo "$0: ERROR: touch $YEAR_FILELIST filed," \
 	         "error code: $status" 1>&2
-            exit 36
+            exit 44
         elif [[ $V_FLAG -ge 1 ]]; then
             echo "$0: debug[1]: created: $YEAR_FILELIST" 1>&2
         fi
@@ -844,14 +952,14 @@ if [[ -z $NOOP ]]; then
         if [[ $status -ne 0 ]]; then
             echo "$0: ERROR: make genfilelist YEARS=$YEAR filed," \
 	         "error code: $status" 1>&2
-            exit 37
+            exit 45
         elif [[ $V_FLAG -ge 1 ]]; then
             echo "$0: debug[1]: updated: $YEAR_FILELIST" 1>&2
         fi
 
     elif [[ ! -f $YEAR_FILE ]]; then
 	echo "$0: ERROR: .filelist exists but is not a file: $YEAR_FILELIST" 1>&2
-	exit 38
+	exit 46
     fi
 
 elif [[ $V_FLAG -ge 3 && ! -e $YEAR_FILELIST ]]; then
