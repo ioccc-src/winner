@@ -51,7 +51,7 @@
             "OK_to_edit" : true,
             "display_as" : "java",
             "display_via_github" : true,
-            "entry_text" : "original source code"
+            "entry_text" : "java source code"
         },
         {
             "file_path" : "try.alt.sh",
