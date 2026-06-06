@@ -8,7 +8,7 @@ See below for links to the [2025 winning IOCCC entries](#inventory).
 Check out the `index.html` web pages for each winning entry.  They have
 most of the information you need to compile and run the winning program.
 Take a look at the winning source code and try to figure out how it works.
-You might also want to check out the author’s remarks for even more details.
+You might also want to check out the author's remarks for even more details.
 
 You may [download all winning entries](2025.tar.bz2) in the form
 of a compressed tarball for this year's contest.
@@ -56,7 +56,7 @@ competition, under the "**Judges' remarks**" section. After you figure
 out what a given winning entry does, we encourage you to attempt the
 fun challenge.
 
-Some of these challenges are easier than others. In some cases, you’re
+Some of these challenges are easier than others. In some cases, you're
 asked to create an alternative version of `prog.c` or a related file.
 In some cases you are asked to produce an explanation about something.
 
@@ -145,22 +145,22 @@ Those are just a few of the **many amazing winners** of the **IOCCC29**, so be s
 ### Remarks on some of the submissions that did not win
 
 As we discussed above, there were quite a few excellent submissions that
-didn’t quite make the final cut. We truly appreciate the hard work
-each author put into their entries, but we’re sorry that we can’t
+didn't quite make the final cut. We truly appreciate the hard work
+each author put into their entries, but we're sorry that we can't
 award based solely on effort.
 
-We received many great submissions that didn’t quite make the cut
-as winners. If you submitted something for **IOCCC29** that didn’t
+We received many great submissions that didn't quite make the cut
+as winners. If you submitted something for **IOCCC29** that didn't
 win, think about polishing your code and giving it another shot for
 **IOCCC30**. Interestingly, more than one winner of **IOCCC29** was
-actually an improved version of code that didn’t win in a previous
+actually an improved version of code that didn't win in a previous
 contest.
 
 
 ### Encouragement for those who did not win this year
 
 We know many of you that submitted to the IOCCC put in a ton of effort
-into your submissions for this year’s IOCCC.  We can’t just give out
+into your submissions for this year's IOCCC.  We can't just give out
 awards to everyone.  That would mean taking away from the submissions
 that we think are the best and deserve to win.
 
@@ -174,13 +174,13 @@ submitted with revisions, multiple times before rising to the level of
 a winning IOCCC entry.  You might also want to try with a different type
 of submission altogether for the next IOCCC.
 
-If you’re not planning to improve and resubmit your non-winning entry
-for the next IOCCC, you’re welcome to publish it.
+If you're not planning to improve and resubmit your non-winning entry
+for the next IOCCC, you're welcome to publish it.
 
 
 ## On compiling and running winning entries
 
-Some C compilers aren’t as great as they could be. If yours isn’t
+Some C compilers aren't as great as they could be. If yours isn't
 working well, you might want to try compiling with an updated version
 of clang and/or gcc instead.
 
@@ -194,7 +194,7 @@ If you encounter problems in compiling and/or running the winning entries, see t
 For additional information on how to submit fixes, see the FAQ on:
 
 * [How to submit a fix](../faq.html#fix_an_entry) - how to submit a fix to an entry
-* [Update author information](../faq.html#fix_author) - how to correct or update an IOCCC author’s information
+* [Update author information](../faq.html#fix_author) - how to correct or update an IOCCC author's information
 
 
 ## For even more information
