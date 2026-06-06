@@ -482,7 +482,7 @@ Location: <a href="../../location.html#US">US</a> - <em>United States of America
 <pre><code>    ./try.sh</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>What’s better than winning entry that does something useful? An entry that does multiple useful things!
-Then when you consider that the code is a A polyglot, we think you will be even more impressed.</p>
+Then when you consider that the code is a polyglot, we think you will be even more impressed.</p>
 <p>As an added bonus, there are some real Perls and Ruby gems in the code.</p>
 <p>And while you are at it, open <a href="making.html">making.html</a> in your favorite browser to
 watch how the author created this excellent winning entry. To watch obfuscation in action,
@@ -530,7 +530,7 @@ See the “<a href="../index.html#fun_challenge_info">Fun challenge Info</a>” 
 <li>If line number is not specified, a help message is printed to stdout.</li>
 </ul>
 <p>The code will still compile when a single line is removed, but the program behavior will change, see the next sections.</p>
-<h3 id="head">Head</h3>
+<h4 id="head">Head</h4>
 <p>Removing a single line from lines 1..41 (i.e., the “head” portion of
 the code) will produce a tool that behaves similar to <code>head(1)</code>:</p>
 <pre><code>    ./prog 1 &lt; prog.c &gt; prog_head.c &amp;&amp; gcc prog_head.c -o prog_head
@@ -543,7 +543,7 @@ the code) will produce a tool that behaves similar to <code>head(1)</code>:</p>
 <li>If line count is zero, output will be empty.</li>
 <li>If line count is not specified, a help message is printed to stdout.</li>
 </ul>
-<h3 id="tail">Tail</h3>
+<h4 id="tail">Tail</h4>
 <p>Removing a single line from lines 42..62 or -1..-21 (i.e., the “tail”
 portion of the code, or the tip of the ponytail hair) will produce a
 tool that behaves similar to <code>tail(1)</code>:</p>
@@ -557,7 +557,7 @@ tool that behaves similar to <code>tail(1)</code>:</p>
 <li>If line count is zero, output will be empty.</li>
 <li>If line count is not specified, a help message is printed to stdout.</li>
 </ul>
-<h3 id="chop">Chop</h3>
+<h4 id="chop">Chop</h4>
 <p>Sometimes the complement behavior of head/tail is more convenient,
 i.e., specify how much to drop instead of how much to keep. This can
 be achieved by running the code with Ruby:</p>
@@ -569,7 +569,7 @@ be achieved by running the code with Ruby:</p>
 <li>If line count is zero, input is copied to output unchanged.</li>
 <li>If line count is not specified, a help message is printed to stdout.</li>
 </ul>
-<h3 id="prime-classifier">Prime classifier</h3>
+<h4 id="prime-classifier">Prime classifier</h4>
 <p>After having built all the tools for cutting files, naturally you might
 be looking for something to cut. You might have noticed that there is
 a complete C program embedded within <code>prog.c</code>, which can be extracted
