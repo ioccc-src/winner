@@ -84,8 +84,8 @@ as well as overall improved organization.
 
 ### Looking forward to the next contest
 
-We plan to open **IOCCC30** towards the end of 2025 and have the contest run
-for a similar amount of time, closing sometime towards the end of Q1 2026.
+We plan to open **IOCCC30** towards the end of 2026 and have the contest run
+for a similar amount of time, closing sometime towards the end of Q1 2027.
 
 As we perform the actions needed to open **IOCCC30**, we plan to internally
 document the process as we did during the closing of **IOCCC29**.
