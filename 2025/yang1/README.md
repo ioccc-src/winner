@@ -24,7 +24,7 @@ Award: Compound prize
 ## Judges' remarks:
 
 What's better than winning entry that does something useful?  An entry that does multiple useful things!
-Then when you consider that the code is a A polyglot, we think you will be even more impressed.
+Then when you consider that the code is a polyglot, we think you will be even more impressed.
 
 As an added bonus, there are some real Perls and Ruby gems in the code.
 
@@ -96,7 +96,7 @@ This program accepts a single command line argument, which specifies the line nu
 The code will still compile when a single line is removed, but the program behavior will change, see the next sections.
 
 
-### Head
+#### Head
 
 Removing a single line from lines 1..41 (i.e., the "head" portion of
 the code) will produce a tool that behaves similar to `head(1)`:
@@ -115,7 +115,7 @@ This program accepts a single command line argument, which specifies number of l
 * If line count is not specified, a help message is printed to stdout.
 
 
-### Tail
+#### Tail
 
 Removing a single line from lines 42..62 or -1..-21 (i.e., the "tail"
 portion of the code, or the tip of the ponytail hair) will produce a
@@ -135,7 +135,7 @@ This program accepts a single command line argument, which specifies number of l
 * If line count is not specified, a help message is printed to stdout.
 
 
-### Chop
+#### Chop
 
 Sometimes the complement behavior of head/tail is more convenient,
 i.e., specify how much to drop instead of how much to keep.  This can
@@ -153,7 +153,7 @@ This program accepts a single command line argument, which specifies number of l
 * If line count is not specified, a help message is printed to stdout.
 
 
-### Prime classifier
+#### Prime classifier
 
 After having built all the tools for cutting files, naturally you might
 be looking for something to cut.  You might have noticed that there is
