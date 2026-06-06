@@ -528,7 +528,9 @@ a version with indentation and newlines and without define compression
 (which you can run with try.alt.sh), and <a href="https://github.com/ioccc-src/winner/blob/master/2025/uellenberg/prog.int">prog.int</a> contains
 the original source code. <a href="https://github.com/ioccc-src/winner/blob/master/2025/uellenberg/prog.alt.c">prog.alt.c</a> is also a quine, and is otherwise
 identical to prog.c except for formatting, although it’s very long and
-doesn’t fit well in terminal windows, so playing it is difficult.</p>
+doesn’t fit well in terminal windows, so playing it is difficult. The quine
+compiler is available at <a href="https://github.com/uellenberg/Insert">https://github.com/uellenberg/Insert</a>, which
+you can use to modify the program and create your own quines!</p>
 <p>I’ve been informed that going into too much depth on how the obfuscated
 code works can be considered condescending, and considering that I’ve
 already directed you to the non-obfuscated source code, I have to assume
@@ -560,9 +562,9 @@ prog.c. Both gcc and clang compile cleanly on my machine (GNU compiler
 extensions for asprintf are required though), either with or without
 -O3, although -Wall complains about some missing parentheses. Then,
 call the resulting executable as follows: “./prog w” to move upwards,
-“./prog e” to move downards, and “./prog” to not move at all. Then
+“./prog e” to move downwards, and “./prog” to not move at all. Then
 compile the output and repeat.</p>
-<p>There are two games included in this program. The first is singe-player
+<p>There are two games included in this program. The first is single-player
 pong, where you play as the right paddle and the computer plays as the
 left paddle. While perfect pong path prediction is an invigorating field,
 I do want the user to see the second game, so you will always win against
@@ -664,7 +666,7 @@ quine variables and inject it into the program.</p>
 <h4 id="variable-merging">Variable Merging</h4>
 <p>Or, written more confusingly (but cooler!), variable reallocation. This
 is essentially the same as a standard compiler’s register allocation,
-except instead of we’re allocating variables. Take a look at this code:</p>
+except instead of registers, we’re allocating variables. Take a look at this code:</p>
 <pre><code>    int val1 = 1;
     printf(&quot;%i&quot;, val1);
 
@@ -734,7 +736,7 @@ transformation:</p>
 impactful. Liveness analysis in particular allows us to remove dead code,
 and when combined with inlining/constant folding, can further reduce the
 number of variables in the output (at the benefit of many magic numbers,
-which is of course conducive obfuscation).</p>
+which is of course conducive to obfuscation).</p>
 <h4 id="define-compression">Define Compression</h4>
 <p>This was one of the most daunting parts of the compiler, and I have
 to come clean and say that my implementation is far from optimal (both
