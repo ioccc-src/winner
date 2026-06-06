@@ -97,7 +97,9 @@ a version with indentation and newlines and without define compression
 (which you can run with try.alt.sh), and [prog.int](%%REPO_URL%%/2025/uellenberg/prog.int) contains
 the original source code. [prog.alt.c](%%REPO_URL%%/2025/uellenberg/prog.alt.c) is also a quine, and is otherwise
 identical to prog.c except for formatting, although it's very long and
-doesn't fit well in terminal windows, so playing it is difficult.
+doesn't fit well in terminal windows, so playing it is difficult. The quine
+compiler is available at [https://github.com/uellenberg/Insert](https://github.com/uellenberg/Insert), which
+you can use to modify the program and create your own quines!
 
 I've been informed that going into too much depth on how the obfuscated
 code works can be considered condescending, and considering that I've
@@ -136,10 +138,10 @@ prog.c. Both gcc and clang compile cleanly on my machine (GNU compiler
 extensions for asprintf are required though), either with or without
 -O3, although -Wall complains about some missing parentheses. Then,
 call the resulting executable as follows: "./prog w" to move upwards,
-"./prog e" to move downards, and "./prog" to not move at all. Then
+"./prog e" to move downwards, and "./prog" to not move at all. Then
 compile the output and repeat.
 
-There are two games included in this program. The first is singe-player
+There are two games included in this program. The first is single-player
 pong, where you play as the right paddle and the computer plays as the
 left paddle. While perfect pong path prediction is an invigorating field,
 I do want the user to see the second game, so you will always win against
@@ -277,7 +279,7 @@ quine variables and inject it into the program.
 
 Or, written more confusingly (but cooler!), variable reallocation. This
 is essentially the same as a standard compiler's register allocation,
-except instead of we're allocating variables. Take a look at this code:
+except instead of registers, we're allocating variables. Take a look at this code:
 
 ``` <!---c-->
     int val1 = 1;
@@ -368,7 +370,7 @@ Combined with other passes, these optimizations can be extremely
 impactful. Liveness analysis in particular allows us to remove dead code,
 and when combined with inlining/constant folding, can further reduce the
 number of variables in the output (at the benefit of many magic numbers,
-which is of course conducive obfuscation).
+which is of course conducive to obfuscation).
 
 
 #### Define Compression

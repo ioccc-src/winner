@@ -1,3 +1,8 @@
+// To compile this into prog.c (or learn more about the language),
+// visit https://github.com/uellenberg/Insert
+// If a future version of the compiler introduces breaking changes
+// and this no longer compiles, checkout the `ioccc29` branch
+
 raw "\n/* IOCCC29, w = up, e = down */\n\n";
 
 const WIDTH: i32 = 70;
