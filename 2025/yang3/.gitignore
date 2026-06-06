@@ -1,0 +1,16 @@
+#
+# sort with: ../../bin/sgi.sh
+*~
+*.dSYM
+*.o
+.DS_Store
+.*.swp
+output
+output1
+output1.c
+output1.o
+output2
+output2.c
+output2.o
+output.c
+output.o

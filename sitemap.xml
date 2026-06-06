@@ -14486,7 +14486,7 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/2024/2024.tar.bz2</loc>
-    <lastmod>2026-05-17T22:45:43+00:00</lastmod>
+    <lastmod>2026-05-27T14:16:22+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/2024/burton/2024_01_18_wordle_stats.png</loc>
@@ -15730,11 +15730,11 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/2024/weaver/2024_weaver.tar.bz2</loc>
-    <lastmod>2026-05-08T02:57:59+00:00</lastmod>
+    <lastmod>2026-05-27T14:16:05+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/2024/weaver/index.html</loc>
-    <lastmod>2026-05-07T23:54:41+00:00</lastmod>
+    <lastmod>2026-05-27T14:12:44+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/2024/weaver/Makefile</loc>
@@ -15763,6 +15763,1098 @@
 <url>
     <loc>https://www.ioccc.org/2024/weaver/try.sh</loc>
     <lastmod>2025-08-03T18:37:45+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/1337.mk</loc>
+    <lastmod>2026-05-06T21:40:27+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/2025.tar.bz2</loc>
+    <lastmod>2026-06-04T23:49:50+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/ayu/2025_ayu.tar.bz2</loc>
+    <lastmod>2026-06-04T05:48:18+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/ayu/arduino/serial_play/serial_play.ino</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/ayu/fuzz.c</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/ayu/index.html</loc>
+    <lastmod>2026-06-04T04:25:49+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/ayu/Makefile</loc>
+    <lastmod>2026-05-06T21:39:11+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/ayu/prog.c</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/ayu/prog.orig.c</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/ayu/README.md</loc>
+    <lastmod>2026-06-04T04:25:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/ayu/try.alt.sh</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/ayu/try.sh</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/cable/2025_cable.tar.bz2</loc>
+    <lastmod>2026-06-04T23:49:32+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/cable/index.html</loc>
+    <lastmod>2026-06-04T23:25:48+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/cable/Makefile</loc>
+    <lastmod>2026-05-06T21:39:11+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/cable/mandelbrot.bootimage</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/cable/pong.bootimage</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/cable/prog.c</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/cable/prog.orig.c</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/cable/README.md</loc>
+    <lastmod>2026-06-04T23:23:16+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/cable/try.sh</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/cesmoak/2025_cesmoak.tar.bz2</loc>
+    <lastmod>2026-06-02T15:25:37+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/cesmoak/a_suggestion_try_sh_before_README.txt</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/cesmoak/contour.c</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/cesmoak/convert.c</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/cesmoak/examples/lunar.deck</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/cesmoak/examples/mandelbrot.deck</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/cesmoak/examples/march.deck</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/cesmoak/examples/primes.deck</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/cesmoak/examples/test-control-all.deck</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/cesmoak/examples/test-format-all.deck</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/cesmoak/examples/test-logical.deck</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/cesmoak/examples/test-precedence.deck</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/cesmoak/examples/test-quirks.deck</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/cesmoak/examples/test-stdlib-all.deck</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/cesmoak/examples/tracer.deck</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/cesmoak/index.html</loc>
+    <lastmod>2026-06-02T05:40:36+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/cesmoak/interpret.c</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/cesmoak/Makefile</loc>
+    <lastmod>2026-05-06T21:39:11+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/cesmoak/out.contour_160x80.pgm</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/cesmoak/out.mandelbrot.ppm</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/cesmoak/out.march.ppm</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/cesmoak/out.paper.pgm</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/cesmoak/out.print_1200x600.pgm</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/cesmoak/out.print_160x80.pgm</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/cesmoak/out.print_480x240.pgm</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/cesmoak/out.print.pgm</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/cesmoak/out.prog.deck</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/cesmoak/out.render_60x30.pgm</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/cesmoak/out.tracer.pgm</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/cesmoak/prog.c</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/cesmoak/prog.orig.c</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/cesmoak/README.md</loc>
+    <lastmod>2026-06-02T05:39:17+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/cesmoak/try_examples.sh</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/cesmoak/try_rpg.sh</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/cesmoak/try.sh</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/cesmoak/try_tools.sh</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/diels-grabsch/2025_diels-grabsch.tar.bz2</loc>
+    <lastmod>2026-06-02T15:25:37+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/diels-grabsch/index.html</loc>
+    <lastmod>2026-06-02T05:40:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/diels-grabsch/Makefile</loc>
+    <lastmod>2026-05-06T21:39:11+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/diels-grabsch/prog.c</loc>
+    <lastmod>2026-06-05T20:54:05+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/diels-grabsch/prog.orig.c</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/diels-grabsch/README.md</loc>
+    <lastmod>2026-06-02T05:39:20+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/diels-grabsch/try.sh</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/dogon/2025_dogon.tar.bz2</loc>
+    <lastmod>2026-06-02T15:25:37+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/dogon/index.html</loc>
+    <lastmod>2026-06-02T05:40:40+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/dogon/Makefile</loc>
+    <lastmod>2026-05-06T21:39:11+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/dogon/prog.c</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/dogon/prog.orig.c</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/dogon/README.md</loc>
+    <lastmod>2026-06-02T05:39:30+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/dogon/try.sh</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/endoh1/2025_endoh1.tar.bz2</loc>
+    <lastmod>2026-06-02T15:25:37+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/endoh1/clock.sh</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/endoh1/colon.txt</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/endoh1/digits.sh</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/endoh1/index.html</loc>
+    <lastmod>2026-06-02T05:40:42+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/endoh1/Makefile</loc>
+    <lastmod>2026-05-06T21:39:11+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/endoh1/prog.alt.c</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/endoh1/prog.c</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/endoh1/prog.orig.c</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/endoh1/README.md</loc>
+    <lastmod>2026-06-02T05:39:34+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/endoh1/spaces.txt</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/endoh1/timer.sh</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/endoh1/try.alt.sh</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/endoh1/try.sh</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/endoh2/2025_endoh2.tar.bz2</loc>
+    <lastmod>2026-06-02T15:25:37+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/endoh2/index.html</loc>
+    <lastmod>2026-06-02T05:40:44+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/endoh2/Makefile</loc>
+    <lastmod>2026-05-06T21:39:11+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/endoh2/prog.c</loc>
+    <lastmod>2026-06-02T03:23:24+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/endoh2/prog.orig.c</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/endoh2/README.md</loc>
+    <lastmod>2026-06-02T05:39:39+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/endoh2/try.sh</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/endoh3/2025_endoh3.tar.bz2</loc>
+    <lastmod>2026-06-04T05:48:19+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/endoh3/index.html</loc>
+    <lastmod>2026-06-04T05:07:14+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/endoh3/ioccc.diff</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/endoh3/ioooo.txt.orig</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/endoh3/Makefile</loc>
+    <lastmod>2026-05-06T21:39:11+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/endoh3/prog.c</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/endoh3/prog.orig.c</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/endoh3/README.md</loc>
+    <lastmod>2026-06-04T05:07:05+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/endoh3/try.sh</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/ferguson/2025_ferguson.tar.bz2</loc>
+    <lastmod>2026-06-04T05:48:21+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/ferguson/antipode.c</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/ferguson/argentina.ppm</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/ferguson/arrows.c</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/ferguson/cats.jpg</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/ferguson/china.jpg</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/ferguson/china.ppm</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/ferguson/comments.html</loc>
+    <lastmod>2026-05-08T04:03:18+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/ferguson/comments.md</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/ferguson/continents.png</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/ferguson/coords.sh</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/ferguson/debug.c</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/ferguson/dms.c</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/ferguson/drain.jpg</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/ferguson/earth.png</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/ferguson/earth.ppm</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/ferguson/flat-earth.ppm</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/ferguson/flat.jpg</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/ferguson/index.html</loc>
+    <lastmod>2026-06-04T04:57:31+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/ferguson/Makefile</loc>
+    <lastmod>2026-05-06T21:39:11+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/ferguson/noclouds.ppm</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/ferguson/obfuscation.html</loc>
+    <lastmod>2026-05-08T04:03:18+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/ferguson/obfuscation.md</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/ferguson/prog.alt.c</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/ferguson/prog.c</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/ferguson/prog.orig.c</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/ferguson/prog.right.c</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/ferguson/prog.upside.down.c</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/ferguson/README.md</loc>
+    <lastmod>2026-06-04T04:57:14+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/ferguson/runes.jpg</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/ferguson/sealand.ppm</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/ferguson/silly.png</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/ferguson/small.c</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/ferguson/snaefellsjokull.png</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/ferguson/symmes.jpg</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/ferguson/test.sh</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/ferguson/try.alt.sh</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/ferguson/try.sh</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/ferguson/unformatted.c</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/ferguson/westley.c</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/ferguson/westley.sh</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/guidelines.html</loc>
+    <lastmod>2026-05-18T00:09:03+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/guidelines.md</loc>
+    <lastmod>2026-05-08T00:20:57+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/howe/2025_howe.tar.bz2</loc>
+    <lastmod>2026-06-04T05:48:21+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/howe/index.html</loc>
+    <lastmod>2026-06-04T04:17:46+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/howe/Makefile</loc>
+    <lastmod>2026-05-06T21:39:11+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/howe/prog.alt.c</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/howe/prog.c</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/howe/prog.html</loc>
+    <lastmod>2026-05-08T04:03:19+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/howe/prog.md</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/howe/prog.orig.c</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/howe/README.md</loc>
+    <lastmod>2026-06-04T04:17:17+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/howe/try.alt.sh</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/howe/try.sh</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/index.html</loc>
+    <lastmod>2026-06-04T04:10:10+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/jhshrvdp/2025_jhshrvdp.tar.bz2</loc>
+    <lastmod>2026-06-02T15:25:40+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/jhshrvdp/index.html</loc>
+    <lastmod>2026-06-02T05:40:54+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/jhshrvdp/Makefile</loc>
+    <lastmod>2026-05-06T21:39:11+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/jhshrvdp/prog.c</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/jhshrvdp/prog.orig.c</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/jhshrvdp/README.md</loc>
+    <lastmod>2026-06-02T05:39:53+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/jhshrvdp/try.sh</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/jingp49/2025_jingp49.tar.bz2</loc>
+    <lastmod>2026-06-02T15:25:40+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/jingp49/index.html</loc>
+    <lastmod>2026-06-02T05:40:56+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/jingp49/Makefile</loc>
+    <lastmod>2026-05-06T21:39:11+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/jingp49/prog.c</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/jingp49/prog.orig.c</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/jingp49/README.md</loc>
+    <lastmod>2026-06-02T05:39:56+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/jingp49/try.sh</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/kurdyukov/2025_kurdyukov.tar.bz2</loc>
+    <lastmod>2026-06-02T15:25:40+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/kurdyukov/index.html</loc>
+    <lastmod>2026-06-02T05:40:58+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/kurdyukov/Makefile</loc>
+    <lastmod>2026-05-06T21:39:11+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/kurdyukov/prog.c</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/kurdyukov/prog.orig.c</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/kurdyukov/README.md</loc>
+    <lastmod>2026-06-02T05:39:58+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/kurdyukov/try.sh</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/Makefile</loc>
+    <lastmod>2026-05-06T21:33:01+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/mattpep/1.txt</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/mattpep/2025_mattpep.tar.bz2</loc>
+    <lastmod>2026-06-02T15:25:40+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/mattpep/2.txt</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/mattpep/3.txt</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/mattpep/4.txt</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/mattpep/5.txt</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/mattpep/6.txt</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/mattpep/index.html</loc>
+    <lastmod>2026-06-02T05:41:00+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/mattpep/Makefile</loc>
+    <lastmod>2026-05-06T21:39:11+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/mattpep/prog.c</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/mattpep/prog.orig.c</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/mattpep/README.md</loc>
+    <lastmod>2026-06-02T05:40:00+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/mattpep/secret.txt</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/mattpep/test-100k.bin</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/mattpep/test-4k.bin</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/mattpep/try.sh</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/ncw1/2025_ncw1.tar.bz2</loc>
+    <lastmod>2026-06-04T05:48:22+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/ncw1/index.html</loc>
+    <lastmod>2026-06-04T05:22:43+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/ncw1/Makefile</loc>
+    <lastmod>2026-05-06T21:39:11+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/ncw1/prog.c</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/ncw1/prog.orig.c</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/ncw1/README.md</loc>
+    <lastmod>2026-06-04T05:22:37+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/ncw1/roms/2048.gb</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/ncw1/roms/Breakout.gb</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/ncw1/roms/GameOfLife.gb</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/ncw1/roms/GBChess.gb</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/ncw1/roms/Oxo3d.gb</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/ncw1/roms/Pi.gb</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/ncw1/roms/Test.gb</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/ncw1/roms/TicTacToe.gb</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/ncw1/try.sh</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/ncw2/2025_ncw2.tar.bz2</loc>
+    <lastmod>2026-06-04T05:48:22+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/ncw2/index.html</loc>
+    <lastmod>2026-06-04T05:11:10+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/ncw2/Makefile</loc>
+    <lastmod>2026-05-06T21:39:11+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/ncw2/prog.c</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/ncw2/prog.orig.c</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/ncw2/README.md</loc>
+    <lastmod>2026-06-04T05:10:29+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/ncw2/try.sh</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/ncw3/2025_ncw3.tar.bz2</loc>
+    <lastmod>2026-06-02T15:25:41+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/ncw3/index.html</loc>
+    <lastmod>2026-06-02T05:41:07+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/ncw3/Makefile</loc>
+    <lastmod>2026-05-06T21:39:11+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/ncw3/prog.c</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/ncw3/prog.orig.c</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/ncw3/README.md</loc>
+    <lastmod>2026-06-02T05:40:09+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/ncw3/try.sh</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/README.md</loc>
+    <lastmod>2026-06-04T04:09:33+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/rules.html</loc>
+    <lastmod>2026-05-18T00:09:02+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/rules.md</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/tompng/2025_tompng.tar.bz2</loc>
+    <lastmod>2026-06-04T05:48:22+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/tompng/index.html</loc>
+    <lastmod>2026-06-04T04:54:31+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/tompng/Makefile</loc>
+    <lastmod>2026-05-06T21:39:11+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/tompng/prog.c</loc>
+    <lastmod>2026-06-04T04:51:05+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/tompng/prog.orig.c</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/tompng/README.md</loc>
+    <lastmod>2026-06-04T04:54:21+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/tompng/try.sh</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/uellenberg/2025_uellenberg.tar.bz2</loc>
+    <lastmod>2026-06-04T05:48:22+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/uellenberg/index.html</loc>
+    <lastmod>2026-06-04T05:15:13+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/uellenberg/Makefile</loc>
+    <lastmod>2026-05-06T21:39:11+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/uellenberg/prog.alt.c</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/uellenberg/prog.c</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/uellenberg/prog.int</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/uellenberg/prog.orig.c</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/uellenberg/README.md</loc>
+    <lastmod>2026-06-04T05:15:08+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/uellenberg/try.alt.sh</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/uellenberg/try.sh</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/var.mk</loc>
+    <lastmod>2026-05-06T21:39:56+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/yang1/2025_yang1.tar.bz2</loc>
+    <lastmod>2026-06-03T16:24:36+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/yang1/bf.c</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/yang1/index.html</loc>
+    <lastmod>2026-06-03T16:22:23+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/yang1/Makefile</loc>
+    <lastmod>2026-05-06T21:39:11+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/yang1/making.html</loc>
+    <lastmod>2026-05-05T00:59:14+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/yang1/prog.c</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/yang1/prog.orig.c</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/yang1/README.md</loc>
+    <lastmod>2026-06-02T05:40:19+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/yang1/try.sh</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/yang2/2025_yang2.tar.bz2</loc>
+    <lastmod>2026-06-04T05:48:23+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/yang2/annotate_zoltraak.pl</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/yang2/index.html</loc>
+    <lastmod>2026-06-04T04:34:52+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/yang2/Makefile</loc>
+    <lastmod>2026-05-06T21:39:11+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/yang2/making_fern.html</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/yang2/making_spam.html</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/yang2/prog.alt.c</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/yang2/prog.c</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/yang2/prog.orig.c</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/yang2/README.md</loc>
+    <lastmod>2026-06-04T04:34:47+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/yang2/try.alt.sh</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/yang2/try.sh</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/yang3/2025_yang3.tar.bz2</loc>
+    <lastmod>2026-06-02T15:25:42+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/yang3/index.html</loc>
+    <lastmod>2026-06-02T05:41:17+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/yang3/Makefile</loc>
+    <lastmod>2026-05-06T21:39:11+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/yang3/making.html</loc>
+    <lastmod>2026-05-05T01:00:01+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/yang3/prog.c</loc>
+    <lastmod>2026-06-02T00:54:00+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/yang3/prog.orig.c</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/yang3/README.md</loc>
+    <lastmod>2026-06-02T05:40:25+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/yang3/try.sh</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/about.html</loc>
@@ -15910,7 +17002,7 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/author/Adrian_Cable.json</loc>
-    <lastmod>2025-07-05T06:08:06+00:00</lastmod>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/author/Adrian_Mariano.json</loc>
@@ -15986,7 +17078,7 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/author/Anthony_C_Howe.json</loc>
-    <lastmod>2025-07-05T06:08:22+00:00</lastmod>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/author/Anton_Algmyr.json</loc>
@@ -15999,6 +17091,10 @@
 <url>
     <loc>https://www.ioccc.org/author/Arne_Heizmann.json</loc>
     <lastmod>2025-01-10T06:06:40+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/author/Ayu.json</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/author/Baruch_Nissenbaum.json</loc>
@@ -16057,6 +17153,10 @@
     <lastmod>2025-01-10T06:06:40+00:00</lastmod>
 </url>
 <url>
+    <loc>https://www.ioccc.org/author/Chris_Smoak.json</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
     <loc>https://www.ioccc.org/author/Christian_Dupont.json</loc>
     <lastmod>2025-01-10T06:06:40+00:00</lastmod>
 </url>
@@ -16074,7 +17174,7 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/author/Cody_Boone_Ferguson.json</loc>
-    <lastmod>2025-08-03T18:17:15+00:00</lastmod>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/author/Col_G_L_Sicherman.json</loc>
@@ -16150,7 +17250,7 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/author/Don_Yang.json</loc>
-    <lastmod>2025-06-17T02:18:04+00:00</lastmod>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/author/Doron_Osovlanski.json</loc>
@@ -16230,7 +17330,7 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/author/Gil_Dogon.json</loc>
-    <lastmod>2025-01-10T06:06:40+00:00</lastmod>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/author/Glyn_Anderson.json</loc>
@@ -16258,7 +17358,7 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/author/Ilya_Kurdyukov.json</loc>
-    <lastmod>2025-07-05T06:08:22+00:00</lastmod>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/author/Immanuel_Herrmann.json</loc>
@@ -16283,6 +17383,10 @@
 <url>
     <loc>https://www.ioccc.org/author/James_Bonfield.json</loc>
     <lastmod>2025-01-10T06:06:40+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/author/Jan_Halsema.json</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/author/Jan_Stein.json</loc>
@@ -16325,6 +17429,10 @@
     <lastmod>2025-01-10T06:06:40+00:00</lastmod>
 </url>
 <url>
+    <loc>https://www.ioccc.org/author/jingp49.json</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
     <loc>https://www.ioccc.org/author/John_Dalbec.json</loc>
     <lastmod>2025-04-16T20:59:19+00:00</lastmod>
 </url>
@@ -16335,6 +17443,10 @@
 <url>
     <loc>https://www.ioccc.org/author/John_Williams.json</loc>
     <lastmod>2025-01-10T06:06:40+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/author/Jonah_Uellenberg.json</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/author/Jonathan_Hoyle.json</loc>
@@ -16421,6 +17533,10 @@
     <lastmod>2025-01-10T06:06:40+00:00</lastmod>
 </url>
 <url>
+    <loc>https://www.ioccc.org/author/Matt_Peperell.json</loc>
+    <lastmod>2026-05-05T01:27:49+00:00</lastmod>
+</url>
+<url>
     <loc>https://www.ioccc.org/author/Matt_Zucker.json</loc>
     <lastmod>2025-01-30T20:14:05+00:00</lastmod>
 </url>
@@ -16475,6 +17591,10 @@
 <url>
     <loc>https://www.ioccc.org/author/Nicholas_Carlini.json</loc>
     <lastmod>2025-07-05T06:08:06+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/author/Nick_Craig_Wood.json</loc>
+    <lastmod>2026-05-05T01:27:45+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/author/Nick_Johnson.json</loc>
@@ -16573,6 +17693,10 @@
     <lastmod>2025-01-10T06:06:40+00:00</lastmod>
 </url>
 <url>
+    <loc>https://www.ioccc.org/author/Roxanne_van_der_Pol.json</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
     <loc>https://www.ioccc.org/author/Sandro_Maffiodo.json</loc>
     <lastmod>2025-07-05T06:08:22+00:00</lastmod>
 </url>
@@ -16610,7 +17734,11 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/authors.html</loc>
-    <lastmod>2026-05-07T20:11:37+00:00</lastmod>
+    <lastmod>2026-06-03T16:06:49+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/author/Simon_Henniger.json</loc>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/author/Sjoerd_Mullender.json</loc>
@@ -16682,7 +17810,7 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/author/Tompng.json</loc>
-    <lastmod>2025-07-05T06:08:22+00:00</lastmod>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/author/Tom_Torfs.json</loc>
@@ -16722,7 +17850,7 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/author/Volker_Diels-Grabsch.json</loc>
-    <lastmod>2025-01-10T06:06:40+00:00</lastmod>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/author/Walter_Bright.json</loc>
@@ -16730,7 +17858,7 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/author/Yusuke_Endoh.json</loc>
-    <lastmod>2025-07-05T06:08:22+00:00</lastmod>
+    <lastmod>2026-05-02T05:29:38+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/author/Yves-Marie_Morgan.json</loc>
@@ -16834,11 +17962,11 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/index.html</loc>
-    <lastmod>2026-05-08T01:18:57+00:00</lastmod>
+    <lastmod>2026-05-18T00:09:05+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/index.html</loc>
-    <lastmod>2026-05-08T01:18:57+00:00</lastmod>
+    <lastmod>2026-05-18T00:09:05+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/jfmt-wrapper.sh</loc>
@@ -16874,7 +18002,7 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/new-year.sh</loc>
-    <lastmod>2026-05-04T07:14:41+00:00</lastmod>
+    <lastmod>2026-06-03T17:56:05+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/othermd2html.sh</loc>
@@ -16906,11 +18034,11 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/README.md</loc>
-    <lastmod>2026-05-08T01:00:09+00:00</lastmod>
+    <lastmod>2026-05-08T00:59:26+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/README.md</loc>
-    <lastmod>2026-05-08T01:00:09+00:00</lastmod>
+    <lastmod>2026-05-08T00:59:26+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/sgi.sh</loc>
@@ -17030,11 +18158,11 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/location.html</loc>
-    <lastmod>2026-05-07T20:12:35+00:00</lastmod>
+    <lastmod>2026-05-27T13:58:56+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/Makefile</loc>
-    <lastmod>2026-05-17T23:24:08+00:00</lastmod>
+    <lastmod>2026-05-18T00:14:10+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/markdown.html</loc>
@@ -17046,11 +18174,11 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/news.html</loc>
-    <lastmod>2026-05-27T22:32:15+00:00</lastmod>
+    <lastmod>2026-06-05T20:31:50+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/news.md</loc>
-    <lastmod>2026-05-27T22:32:08+00:00</lastmod>
+    <lastmod>2026-06-05T20:34:05+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/next/guidelines.html</loc>
@@ -17166,15 +18294,15 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/status.html</loc>
-    <lastmod>2026-05-27T22:32:11+00:00</lastmod>
+    <lastmod>2026-06-06T18:00:00+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/status.json</loc>
-    <lastmod>2026-05-27T22:32:11+00:00</lastmod>
+    <lastmod>2026-06-06T18:00:00+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/status.md</loc>
-    <lastmod>2026-05-04T08:50:47+00:00</lastmod>
+    <lastmod>2026-06-06T18:00:00+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/thanks-for-help.html</loc>
@@ -17190,6 +18318,6 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/years.html</loc>
-    <lastmod>2026-05-07T19:59:05+00:00</lastmod>
+    <lastmod>2026-06-03T16:09:33+00:00</lastmod>
 </url>
 </urlset>

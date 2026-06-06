@@ -1,0 +1,366 @@
+raw "\n/* IOCCC29, w = up, e = down */\n\n";
+
+const WIDTH: i32 = 70;
+const HEIGHT: i32 = 15;
+const BALL_WIDTH: i32 = 3;
+const BALL_HEIGHT: i32 = 2;
+const PADDLE_WIDTH: i32 = 3;
+const PADDLE_HEIGHT: i32 = 5;
+
+// Higher values means it moves slower.
+const ROBOT_SPEED: i32 = 2;
+
+// Velocity of the jump.
+const JUMP_HEIGHT: i32 = -4;
+
+// Subtract 1 so the first run generates a centered and formatted output.
+static ballX: i32 = binding ballXMarker (WIDTH / 2 - BALL_WIDTH / 2 - 1);
+static ballY: i32 = binding ballYMarker (HEIGHT / 2 - BALL_HEIGHT / 2 - 1);
+// If this is > 1, it encodes game state.
+// [2, 6] = jump, -1/1 = pong.
+static ballSpeedX: i32 = binding ballSpeedXMarker (-1);
+static ballSpeedY: i32 = binding ballSpeedYMarker (1);
+
+const STARTING_PADDLE_LEFT_X: i32 = 5;
+const STARTING_PADDLE_RIGHT_X: i32 = WIDTH - PADDLE_WIDTH - STARTING_PADDLE_LEFT_X;
+
+static paddleLeftX: i32 = binding paddleLeftXMarker (STARTING_PADDLE_LEFT_X);
+static paddleLeftY: i32 = binding paddleLeftYMarker (ROBOT_SPEED * (HEIGHT / 2 - PADDLE_HEIGHT / 2));
+static paddleRightX: i32 = binding paddleRightXMarker (STARTING_PADDLE_RIGHT_X);
+static paddleRightY: i32 = binding paddleRightYMarker (HEIGHT / 2 - PADDLE_HEIGHT / 2);
+
+// We need to break these out because the compiler is conservative
+// and assumes that statics are always modified.
+const JUMP_HEIGHT_0: i32 = 1;
+const JUMP_HEIGHT_1: i32 = 3;
+// The last jump height has to be 0 so that we get a clean
+// scene with no paddles during the transition back to pong.
+static jumpHeights: [i32; 6] = [JUMP_HEIGHT_0, JUMP_HEIGHT_1, 1, 4, 1, 0];
+
+static quineStr: &[string] = $quine;
+
+import "std/print.int";
+import "std/string.int";
+
+// Index of the quine array item we're reading from,
+// or $quineLen if we're done.
+static idx: i32 = 0;
+// Offset 0 is the comma (optional), 1 is the opening quote, and one past the end of the string
+// is the closing quote.
+// It's 1 initially to avoid printing the comma for the first item.
+static offset: i32 = 1;
+
+/**
+  * Tries to print a single character of the quine array, stepping idx and offset forward.
+  * Returns true if two characters were printed (needed to escape chars).
+  *
+  * This uses recursion to skip an offset while still printing out a character in the end.
+  */
+helper function printQuineArrayChar() -> bool {
+    offset += 1;
+
+    if offset == 1 {
+        // false
+        return putchar(',') == '\0';
+    }
+
+    if offset == 2 {
+        // false
+        return putchar('"') == '\0';
+    }
+
+    let c: char = quineStr[idx][offset - 3];
+
+    if c == '\0' {
+        offset = 0;
+        idx += 1;
+        // false
+        return putchar('"') == '\0';
+    }
+
+    if c == '"' {
+        putchar('\\');
+        // true
+        return putchar('\"') != '\0';
+    }
+
+    if c == '\\' {
+        putchar('\\');
+        // true
+        return putchar('\\') != '\0';
+    }
+
+    if c != ' ' && c != '\n' {
+        // false (c is never \0).
+        return putchar(c) == '\0';
+    }
+
+    return printQuineArrayChar();
+}
+
+/**
+  * Prints the quine array itself, and formats it to draw the ball and paddles.
+  */
+inline function printQuineArr() {
+    // Printing the first character here helps keep the
+    // backslashes at the end more consistent.
+    printQuineArrayChar();
+    putchar('\\');
+    putchar('\n');
+    // Separator.
+    putchar('\\');
+    putchar('\n');
+
+    for let row: i32 = 0; row < HEIGHT; row += 1; {
+        for let col: i32 = 0; col < WIDTH; col += 1; {
+            if idx >= $quineLen || (col >= ballX && row >= ballY && col - ballX < BALL_WIDTH && row - ballY < BALL_HEIGHT)
+               || (col >= paddleLeftX && row >= paddleLeftY / ROBOT_SPEED && col - paddleLeftX < PADDLE_WIDTH && row - paddleLeftY / ROBOT_SPEED < PADDLE_HEIGHT)
+               || (col >= paddleRightX && row >= paddleRightY && col - paddleRightX < PADDLE_WIDTH && row - paddleRightY < PADDLE_HEIGHT)
+            {
+                putchar(' ');
+            } else if printQuineArrayChar() {
+                col += 1;
+            }
+        }
+
+        // Offset 0 means we aren't in a string literal,
+        // so we need a backslash to continue it.
+        if offset != 0 {
+            putchar('\\');
+        }
+        putchar('\n');
+    }
+
+    // Separator.
+    if offset != 0 {
+        putchar('\\');
+    }
+    putchar('\n');
+
+    // Print the remaining characters.
+    while idx < $quineLen {
+        printQuineArrayChar();
+    }
+}
+
+/**
+  * Prints a single item of the quine array.
+  * On empty strings, this prints the quine array itself.
+  */
+inline function printQuineItem(s: string) {
+    // This is the quine part of the string if it's completely
+    // empty, except for spaces and newlines.
+    let quinePart: bool = true;
+    for let c: &[char] = s; c[0] != '\0'; c = &c[1]; {
+        if c[0] == $quineSpace {
+            putchar(' ');
+        } else if c[0] == $quineLine {
+            putchar('\n');
+        } else if c[0] != ' ' && c[0] != '\n' {
+            quinePart = false;
+            putchar(c[0]);
+
+            // iocccsize doesn't count these chars if they're
+            // followed by a space.
+            if c[0] == '{' || c[0] == '}' || c[0] == ';' {
+                putchar(' ');
+            }
+        }
+    }
+
+    if quinePart {
+        printQuineArr();
+    }
+}
+
+/**
+  * Prints the full program source code.
+  */
+inline function printQuine() {
+    for let i: i32 = 0; i < $quineLen; i += 1; {
+        if i != 0 {
+            putchar(' ');
+        }
+
+        printQuineItem(quineStr[i]);
+    }
+
+    // A trailing newline is needed for valid C.
+    putchar('\n');
+}
+
+/**
+  * Updates the given binding (index) to the value.
+  */
+helper function setQuineVar(index: i32, val: i32) {
+    asprintf(&quineStr[index], "%i", val);
+}
+
+/**
+ * Updates the game state for pong.
+ * Afterwards, the frame will be ready to be
+ * printed.
+ */
+inline function pongUpdates(argc: i32, argv: &[string], paddleLeftCollision: bool, paddleRightCollision: bool) {
+    // Paddle bounce.
+    // paddleLeftCollision is conditional, here we select
+    // for only right side collision, since we don't need collision on
+    // the left side.
+    if (ballX == paddleLeftX + (PADDLE_WIDTH - 1) && paddleLeftCollision) || paddleRightCollision {
+        ballX -= ballSpeedX;
+        ballY -= ballSpeedY;
+        ballSpeedX = -1 * ballSpeedX;
+    }
+
+    // Left and right walls means a player lost.
+    if ballX < 0 || ballX > WIDTH - BALL_WIDTH {
+        // The user won.
+        if ballX < 0 {
+            // ballSpeedX encodes gameState.
+            ballSpeedX = 2;
+            ballSpeedY = 0;
+        }
+
+        ballX = WIDTH / 2 - BALL_WIDTH / 2;
+        ballY = HEIGHT / 2 - BALL_HEIGHT / 2;
+    }
+
+    // Top and bottom walls should bounce.
+    if ballY < 0 || ballY > HEIGHT - BALL_HEIGHT {
+        ballY -= ballSpeedY;
+        ballSpeedY = -1 * ballSpeedY;
+    }
+
+    // Compute paddle updates.
+
+    if paddleLeftY / ROBOT_SPEED > HEIGHT - PADDLE_HEIGHT {
+        paddleLeftY -= ROBOT_SPEED;
+    }
+
+    if paddleRightY > HEIGHT - PADDLE_HEIGHT {
+        paddleRightY -= 1;
+    }
+
+    if argc > 1 {
+        if argv[1][0] == 'w' && paddleRightY > 0 {
+            paddleRightY -= 1;
+        }
+
+        if argv[1][0] == 'e' && paddleRightY < HEIGHT - PADDLE_HEIGHT {
+            paddleRightY += 1;
+        }
+    }
+
+    let robotDistance: i32 = paddleLeftY / ROBOT_SPEED - ballY + (PADDLE_HEIGHT / 2 - BALL_HEIGHT / 2);
+    if robotDistance < 0 {
+        paddleLeftY += 1;
+    }
+
+    if robotDistance > 0 {
+        paddleLeftY -= 1;
+    }
+}
+
+/**
+ * Updates the game state for jump.
+ * Afterwards, the frame will be ready to be
+ * printed.
+ */
+inline function jumpUpdates(argc: i32, argv: &[string], paddleLeftCollision: bool, paddleRightCollision: bool) {
+    // Gravity.
+    ballY += 1;
+    if ballSpeedY < 0 {
+        ballSpeedY += 1;
+    }
+
+    // Jump handling.
+    if ballY >= HEIGHT - BALL_HEIGHT {
+        if argc > 1 && argv[1][0] == 'w' {
+            ballSpeedY = JUMP_HEIGHT;
+        }
+
+        ballY = HEIGHT - BALL_HEIGHT;
+    }
+
+    // Transition the paddles down before we start moving them.
+    // This means the distance between paddles changes depending on the
+    // user and bot's starting positions, but not to a degree that
+    // matters.
+    //
+    // ballSpeedX encodes gameState.
+    if paddleLeftY / ROBOT_SPEED < HEIGHT - jumpHeights[ballSpeedX - 2] {
+        paddleLeftY += ROBOT_SPEED;
+    } else {
+        paddleLeftX -= 1;
+    }
+
+    if paddleRightY < HEIGHT - jumpHeights[ballSpeedX - 1] {
+        paddleRightY += 1;
+    } else {
+        paddleRightX -= 1;
+    }
+
+    // Swap out paddles when they reach the edge of the screen.
+    if paddleLeftX + PADDLE_WIDTH <= 0 {
+        // ballSpeedX encodes gameState.
+        ballSpeedX += 1;
+        if ballSpeedX < 7 {
+            paddleLeftX = paddleRightX;
+            paddleLeftY = paddleRightY * ROBOT_SPEED;
+            paddleRightX = WIDTH;
+            paddleRightY = HEIGHT - jumpHeights[ballSpeedX - 1];
+        } else {
+            paddleLeftX = STARTING_PADDLE_LEFT_X;
+            paddleRightX = STARTING_PADDLE_RIGHT_X;
+            ballSpeedX = 1;
+            ballSpeedY = 1;
+        }
+    }
+
+    // If we collide with the paddle, restart.
+    // paddleLeftCollision is conditional, here we select
+    // for only left side collision (since that's the only side
+    // the ball can collide with).
+    if (ballX + (BALL_WIDTH - 1) == paddleLeftX && paddleLeftCollision) || paddleRightCollision {
+        ballSpeedX = 2;
+        paddleLeftX = STARTING_PADDLE_LEFT_X;
+        paddleLeftY = ROBOT_SPEED * (HEIGHT - JUMP_HEIGHT_0);
+        paddleRightX = STARTING_PADDLE_RIGHT_X;
+        paddleRightY = HEIGHT - JUMP_HEIGHT_1;
+    }
+}
+
+function main(argc: i32, argv: &[string]) -> i32 {
+    // ballSpeedX > 1 means it encodes gameState.
+    if ballSpeedX < 2 {
+        ballX += ballSpeedX;
+    }
+    ballY += ballSpeedY;
+
+    // The left paddle needs conditional collision based on
+    // the game mode (pong always collides on the right, jump
+    // only on the left).
+    //
+    // Top collision is excluded both for efficiency and to
+    // make the games easier.
+    let paddleLeftCollision: bool = ballY + BALL_HEIGHT > paddleLeftY / ROBOT_SPEED && ballY < paddleLeftY / ROBOT_SPEED + PADDLE_HEIGHT;
+    let paddleRightCollision: bool = ballX + (BALL_WIDTH - 1) == paddleRightX && ballY + BALL_HEIGHT > paddleRightY && ballY < paddleRightY + PADDLE_HEIGHT;
+
+    // Must be else if since they update gameState.
+    // ballSpeedX is used as gameState here.
+    if ballSpeedX < 2 {
+        pongUpdates(argc, argv, paddleLeftCollision, paddleRightCollision);
+    } else {
+        jumpUpdates(argc, argv, paddleLeftCollision, paddleRightCollision);
+    }
+
+    setQuineVar(ballXMarker, ballX);
+    setQuineVar(ballYMarker, ballY);
+    setQuineVar(ballSpeedXMarker, ballSpeedX);
+    setQuineVar(ballSpeedYMarker, ballSpeedY);
+    setQuineVar(paddleLeftXMarker, paddleLeftX);
+    setQuineVar(paddleLeftYMarker, paddleLeftY);
+    setQuineVar(paddleRightXMarker, paddleRightX);
+    setQuineVar(paddleRightYMarker, paddleRightY);
+    printQuine();
+}

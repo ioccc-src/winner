@@ -6,11 +6,11 @@
     "sort_word" : "yang",
     "location_code" : "US",
     "email" : "omoikane@uguu.org",
-    "url" : "https://uguu.org",
-    "alt_url" : null,
+    "url" : "https://uguu.org/",
+    "alt_url" : "https://bsky.app/profile/omoikane.bsky.social",
     "deprecated_twitter_handle" : null,
     "mastodon" : "@omoikane@mastodon.social",
-    "mastodon_url" : "https://mastodon.social/@omoikane",
+    "mastodon_url" : null,
     "github" : "@uguu-org",
     "affiliation" : null,
     "winning_entry_set" : [
@@ -43,6 +43,15 @@
         },
         {
             "entry_id" : "2020_yang"
+        },
+        {
+            "entry_id" : "2025_yang1"
+        },
+        {
+            "entry_id" : "2025_yang2"
+        },
+        {
+            "entry_id" : "2025_yang3"
         }
     ]
 }

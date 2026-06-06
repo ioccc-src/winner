@@ -1,0 +1,27 @@
+#
+# sort with: ../../bin/sgi.sh
+*~
+*.dSYM
+*.o
+.DS_Store
+.*.swp
+file.b64
+file.bin
+infile.b64
+output
+output.c
+output.o
+prog_classify
+prog_classify.c
+prog_classify.o
+prog_generate
+prog_generate.c
+prog_generate.o
+prog_head
+prog_head.c
+prog_head.o
+prog_tail
+prog_tail.c
+prog_tail.o
+test-4k.b64
+test-4k.bin.new

@@ -6,7 +6,7 @@
     "sort_word" : "howe",
     "location_code" : "CA",
     "email" : "achowe@snert.com",
-    "url" : "http://nanozen.snert.com/",
+    "url" : "http://nanozen.snert.com",
     "alt_url" : null,
     "deprecated_twitter_handle" : "@SirWumpus",
     "mastodon" : "@sirwumpus@tilde.zone",
@@ -34,6 +34,9 @@
         },
         {
             "entry_id" : "2024_howe"
+        },
+        {
+            "entry_id" : "2025_howe"
         }
     ]
 }

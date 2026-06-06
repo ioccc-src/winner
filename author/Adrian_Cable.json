@@ -7,11 +7,11 @@
     "location_code" : "US",
     "email" : "adrian.cable@gmail.com",
     "url" : "https://www.linkedin.com/in/adrian-cable-91730221/",
-    "alt_url" : null,
+    "alt_url" : "https://eternal-software.org",
     "deprecated_twitter_handle" : null,
     "mastodon" : null,
     "mastodon_url" : null,
-    "github" : null,
+    "github" : "@adriancable",
     "affiliation" : null,
     "winning_entry_set" : [
         {
@@ -28,6 +28,9 @@
         },
         {
             "entry_id" : "2024_cable2"
+        },
+        {
+            "entry_id" : "2025_cable"
         }
     ]
 }

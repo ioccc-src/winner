@@ -1,0 +1,14 @@
+#
+# sort with: ../../bin/sgi.sh
+*~
+*.dSYM
+*.o
+.DS_Store
+.*.swp
+colon.out
+digit0.out
+digit1.out
+digit2.out
+digit3.out
+digit4.out
+digit5.out

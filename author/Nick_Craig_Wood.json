@@ -1,0 +1,27 @@
+{
+    "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
+    "author_JSON_format_version" : "1.1 2024-02-11",
+    "author_handle" : "Nick_Craig_Wood",
+    "full_name" : "Nick Craig-Wood",
+    "sort_word" : "craigwood",
+    "location_code" : "GB",
+    "email" : "nick@craig-wood.com",
+    "url" : "https://www.craig-wood.com/nick/",
+    "alt_url" : "https://rclone.org/",
+    "deprecated_twitter_handle" : null,
+    "mastodon" : null,
+    "mastodon_url" : null,
+    "github" : "@ncw",
+    "affiliation" : null,
+    "winning_entry_set" : [
+        {
+            "entry_id" : "2025_ncw1"
+        },
+        {
+            "entry_id" : "2025_ncw2"
+        },
+        {
+            "entry_id" : "2025_ncw3"
+        }
+    ]
+}

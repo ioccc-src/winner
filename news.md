@@ -55,6 +55,33 @@
 </blockquote>
 
 
+<div id="20260606">
+## 2026-06-06
+</div>
+
+The winning entries for **IOCCC29** have been released,
+and we are delighted to share the winning entry source code on our
+[IOCCC winner GitHub repo](https://github.com/ioccc-src/winner).
+
+See the [IOCCC29 contest page](2025/index.html) for an overview.
+
+See the [summary of the IOCCC29 winning entries](years.html#2025).
+
+**Congratulations** to the authors of these amazing winning entries!
+
+The winning entries of **IOCCC29** were presented live on the YouTube Channel
+"[Our Favorite Universe](https://www.youtube.com/@OurFavoriteUniverse)".
+
+In a few days, we plan to create individual segments for each of the **IOCCC29** winners,
+post them to the same YouTube Channel, and add links to
+[IOCCC29 web page](2025/index.html#inventory) for each entry.
+
+We kindly request that you **subscribe** to the
+"[Our Favorite Universe](https://www.youtube.com/@OurFavoriteUniverse)
+YouTube Channel, and enable notifications (**click on the “Notification Bell” 🔔**)
+to receive alerts when new content becomes available.
+
+
 <div id="20260527">
 ## 2026-05-27
 </div>

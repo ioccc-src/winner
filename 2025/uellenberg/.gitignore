@@ -1,0 +1,13 @@
+#
+# sort with: ../../bin/sgi.sh
+*~
+*.dSYM
+*.o
+.DS_Store
+.*.swp
+prog.alt.quine
+prog.alt.quine.c
+prog.alt.quine.o
+prog.quine
+prog.quine.c
+prog.quine.o

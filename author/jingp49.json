@@ -1,0 +1,21 @@
+{
+    "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
+    "author_JSON_format_version" : "1.1 2024-02-11",
+    "author_handle" : "jingp49",
+    "full_name" : "jingp49",
+    "sort_word" : "jingp49",
+    "location_code" : "TW",
+    "email" : "minejingpan0409@gmail.com",
+    "url" : null,
+    "alt_url" : null,
+    "deprecated_twitter_handle" : null,
+    "mastodon" : null,
+    "mastodon_url" : null,
+    "github" : "@jp0409hlh",
+    "affiliation" : null,
+    "winning_entry_set" : [
+        {
+            "entry_id" : "2025_jingp49"
+        }
+    ]
+}

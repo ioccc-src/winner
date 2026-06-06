@@ -1,0 +1,345 @@
+{
+    "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
+    "entry_JSON_format_version" : "1.2 2024-09-25",
+    "award" : "Retro space award",
+    "year" : 2025,
+    "dir" : "cesmoak",
+    "entry_id" : "2025_cesmoak",
+    "title" : "luminet",
+    "abstract" : "Black hole punch card Fortran",
+    "author_set" : [
+        {
+            "author_handle" : "Chris_Smoak"
+        }
+    ],
+    "manifest" : [
+        {
+            "file_path" : "prog.c",
+            "inventory_order" : 20,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "entry source code"
+        },
+        {
+            "file_path" : "Makefile",
+            "inventory_order" : 30,
+            "OK_to_edit" : true,
+            "display_as" : "makefile",
+            "display_via_github" : true,
+            "entry_text" : "entry Makefile"
+        },
+        {
+            "file_path" : "prog.orig.c",
+            "inventory_order" : 50,
+            "OK_to_edit" : false,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "original source code"
+        },
+        {
+            "file_path" : "a_suggestion_try_sh_before_README.txt",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : true,
+            "entry_text" : "a punny hint"
+        },
+        {
+            "file_path" : "contour.c",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "render contour image from flux data"
+        },
+        {
+            "file_path" : "convert.c",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "convert between Fortran and punch cards"
+        },
+        {
+            "file_path" : "examples/lunar.deck",
+            "inventory_order" : 120,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : true,
+            "entry_text" : "punch card Fortran deck Earth-to-Moon and lunar orbit insertion"
+        },
+        {
+            "file_path" : "examples/mandelbrot.deck",
+            "inventory_order" : 120,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : true,
+            "entry_text" : "punch card Fortran deck render Mandelbrot set to PPM"
+        },
+        {
+            "file_path" : "examples/march.deck",
+            "inventory_order" : 120,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : true,
+            "entry_text" : "punch card Fortran deck 3D SDF ray marcher of IOCCC"
+        },
+        {
+            "file_path" : "examples/primes.deck",
+            "inventory_order" : 120,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : true,
+            "entry_text" : "punch card Fortran deck find primes up to 100"
+        },
+        {
+            "file_path" : "examples/test-control-all.deck",
+            "inventory_order" : 120,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : true,
+            "entry_text" : "punch card Fortran deck test control flow"
+        },
+        {
+            "file_path" : "examples/test-format-all.deck",
+            "inventory_order" : 120,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : true,
+            "entry_text" : "punch card Fortran deck test format specifiers"
+        },
+        {
+            "file_path" : "examples/test-logical.deck",
+            "inventory_order" : 120,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : true,
+            "entry_text" : "punch card Fortran deck test logical operators"
+        },
+        {
+            "file_path" : "examples/test-precedence.deck",
+            "inventory_order" : 120,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : true,
+            "entry_text" : "punch card Fortran deck test operator precedence"
+        },
+        {
+            "file_path" : "examples/test-quirks.deck",
+            "inventory_order" : 120,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : true,
+            "entry_text" : "punch card Fortran deck test language quirks"
+        },
+        {
+            "file_path" : "examples/test-stdlib-all.deck",
+            "inventory_order" : 120,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : true,
+            "entry_text" : "punch card Fortran deck test standard library"
+        },
+        {
+            "file_path" : "examples/tracer.deck",
+            "inventory_order" : 120,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : true,
+            "entry_text" : "punch card Fortran deck black hole ray tracer"
+        },
+        {
+            "file_path" : "interpret.c",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "annotate punch cards with decoded source text"
+        },
+        {
+            "file_path" : "out.contour_160x80.pgm",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "image",
+            "display_via_github" : false,
+            "entry_text" : "compare with Fig 10 of Luminet's 1979 paper"
+        },
+        {
+            "file_path" : "out.mandelbrot.ppm",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "image",
+            "display_via_github" : false,
+            "entry_text" : "mandelbrot image"
+        },
+        {
+            "file_path" : "out.march.ppm",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "image",
+            "display_via_github" : false,
+            "entry_text" : "3D image of SDF ray marcher rendering of IOCCC"
+        },
+        {
+            "file_path" : "out.paper.pgm",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "image",
+            "display_via_github" : false,
+            "entry_text" : "black hole flux image on white paper"
+        },
+        {
+            "file_path" : "out.print.pgm",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "image",
+            "display_via_github" : false,
+            "entry_text" : "black hole flux image in white on black"
+        },
+        {
+            "file_path" : "out.print_1200x600.pgm",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "image",
+            "display_via_github" : false,
+            "entry_text" : "large black hole flux image"
+        },
+        {
+            "file_path" : "out.print_160x80.pgm",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "image",
+            "display_via_github" : false,
+            "entry_text" : "small black hole flux image"
+        },
+        {
+            "file_path" : "out.print_480x240.pgm",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "image",
+            "display_via_github" : false,
+            "entry_text" : "medium black hole flux image"
+        },
+        {
+            "file_path" : "out.prog.deck",
+            "inventory_order" : 120,
+            "OK_to_edit" : true,
+            "display_as" : "text",
+            "display_via_github" : true,
+            "entry_text" : "punch card Fortran deck from scribbled.notes"
+        },
+        {
+            "file_path" : "out.render_60x30.pgm",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "image",
+            "display_via_github" : false,
+            "entry_text" : "tiny black hole flux image"
+        },
+        {
+            "file_path" : "out.tracer.pgm",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "image",
+            "display_via_github" : false,
+            "entry_text" : "black hole ray tracer image"
+        },
+        {
+            "file_path" : "try.sh",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "shellscript",
+            "display_via_github" : true,
+            "entry_text" : "script to try entry"
+        },
+        {
+            "file_path" : "2025_cesmoak.tar.bz2",
+            "inventory_order" : 1415926535,
+            "OK_to_edit" : false,
+            "display_as" : "tbz2",
+            "display_via_github" : false,
+            "entry_text" : "download entry tarball"
+        },
+        {
+            "file_path" : ".entry.json",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "json",
+            "display_via_github" : true,
+            "entry_text" : "entry summary and manifest in JSON"
+        },
+        {
+            "file_path" : ".gitignore",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "gitignore",
+            "display_via_github" : true,
+            "entry_text" : "list of files that should not be committed under git"
+        },
+        {
+            "file_path" : ".path",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : false,
+            "display_as" : "path",
+            "display_via_github" : true,
+            "entry_text" : "directory path from top level directory"
+        },
+        {
+            "file_path" : "README.md",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "markdown",
+            "display_via_github" : true,
+            "entry_text" : "markdown source for this web page"
+        },
+        {
+            "file_path" : "index.html",
+            "inventory_order" : 4294967295,
+            "OK_to_edit" : false,
+            "display_as" : "html",
+            "display_via_github" : false,
+            "entry_text" : "this web page"
+        },
+        {
+            "file_path" : "try_examples.sh",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "shellscript",
+            "display_via_github" : true,
+            "entry_text" : "run example Fortran punchcard decks through the interpreter"
+        },
+        {
+            "file_path" : "try_rpg.sh",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "shellscript",
+            "display_via_github" : true,
+            "entry_text" : "demonstrate each step in turn"
+        },
+        {
+            "file_path" : "try_tools.sh",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "shellscript",
+            "display_via_github" : true,
+            "entry_text" : "demonstrate the convert, interpret, and contour tools"
+        },
+        {
+            "file_path" : ".date-range",
+            "inventory_order" : 4100000000,
+            "OK_to_edit" : true,
+            "display_as" : "daterange",
+            "display_via_github" : true,
+            "entry_text" : "copyright date range for this directory"
+        },
+        {
+            "file_path" : "examples/.date-range",
+            "inventory_order" : 4100000000,
+            "OK_to_edit" : true,
+            "display_as" : "daterange",
+            "display_via_github" : true,
+            "entry_text" : "copyright date range for examples sub-directory"
+        }
+    ]
+}

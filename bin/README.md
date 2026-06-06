@@ -460,8 +460,121 @@ Usage:
     awk -f bin/filelist.entry.json.awk 2020/ferguson1/.entry.json
 ```
 
-In this case the command will list all the files of the
-[2020/ferguson1](../2020/ferguson1/index.html) winning entry.
+In the above example, the command will print the paths from the top repo directory,
+of all the files of the
+[2020/ferguson1](../2020/ferguson1/index.html) winning entry, as in:
+
+- 2020/ferguson1/prog.c
+- 2020/ferguson1/Makefile
+- 2020/ferguson1/prog.alt.c
+- 2020/ferguson1/prog.orig.c
+- ...
+
+Usage:
+
+``` <!---sh-->
+    awk -v print_relative=true -f bin/filelist.entry.json.awk 2025/ayu/.entry.json
+```
+
+In this case the command will paths, relative to the winning entry directory,
+of all the files of the
+[2025/ayu](../2025/ayu/index.html) winning entry, as in:
+
+- prog.c
+- Makefile
+- prog.orig.c
+- arduino/serial_play/serial_play.ino
+- ...
+
+Usage:
+
+``` <!---sh-->
+    awk -v print_until=true -f bin/filelist.entry.json.awk 2025/tompng/.entry.json
+```
+
+In the above example, the command will print the contents of `2025/tompng/.entry.json`,
+from the start of the file, up until the final manifest array members, final line.
+The output lacks only the final lines of `2025/tompng/.entry.json`.  So the shell command:
+
+``` <!---sh-->
+    awk -v print_until=true -f bin/filelist.entry.json.awk 2025/tompng/.entry.json |
+        diff - 2025/cesmoak/.entry.json
+```
+
+will produce all but the final closing JSON structure lines, assuming that the
+given `.entry.json` line is in common form:
+
+```
+302a303,305
+>         }
+>     ]
+> }
+```
+
+This `-v print_until=true` form of `bin/filelist.entry.json.awk` is
+useful if you want to append additional manifest array elements to a
+winning entry's `.entry.json` line as this overcomes the **BOGOSITY**
+that the final JSON array element isn't allowed to have a trailing comma.
+**~sigh~**
+
+**NOTE**: Observe that using `print_relative=true` does **NOT** print the basename.
+In the above example, `arduino/serial_play/serial_play.ino` is a file in sub-directory
+of the entry.
+
+**NOTE**: While [filelist.entry.json.awk](%%REPO_URL%%/bin/filelist.entry.json.awk)
+is **MUCH FASTER** than [filelist.entry.json.sh](%%REPO_URL%%/bin/filelist.entry.json.sh),
+the [filelist.entry.json.awk](%%REPO_URL%%/bin/filelist.entry.json.awk) code does
+not truly parse the JSON file, but nevertheless the awk code does a reasonable job
+of scanning the typical `.entey.json` file format.
+
+
+<div id="filelist-entry-json-sh">
+### [filelist.entry.json.sh](%%REPO_URL%%/bin/filelist.entry.json.sh)
+</div>
+
+Generate a list of files in an entry's manifest in the `.entry.json` file.
+
+Usage:
+
+``` <!---sh-->
+    bin/filelist.entry.json.sh 2025/cesmoak
+```
+
+In the above example, the command will print the paths from the top repo directory,
+of all the files of the
+[2025/cesmoak](../2020/ferguson1/index.html) winning entry, as in:
+
+- 2025/cesmoak/prog.c
+- 2025/cesmoak/Makefile
+- 2025/cesmoak/prog.orig.c
+- 2025/cesmoak/a_suggestion_try_sh_before_README.txt
+- ...
+
+Usage:
+
+``` <!---sh-->
+    bin/filelist.entry.json.sh -p 2025/ncw1
+```
+
+In this case the command will paths, relative to the winning entry directory,
+of all the files of the
+[2025/ncw1](../2025/ncw1/index.html) winning entry, as in:
+
+- prog.c
+- Makefile
+- ...
+- roms/Test.gb
+- index.html
+
+**NOTE**: Observe that using `-p` does **NOT** print the basename.
+In the above example, `roms/Test.gb` is a file in sub-directory
+of the entry.
+
+**NOTE**: While [filelist.entry.json.sh](%%REPO_URL%%/bin/filelist.entry.json.sh)
+is **MUCH FASTER** than [filelist.entry.json.awk](%%REPO_URL%%/bin/filelist.entry.json.awk),
+the [filelist.entry.json.sh](%%REPO_URL%%/bin/filelist.entry.json.awk) code does
+a true parse of the JSON file.
+
 
 <div id="html-sed">
 ### [html.sed](%%REPO_URL%%/bin/html.sed)

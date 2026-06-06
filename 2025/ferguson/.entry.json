@@ -1,0 +1,377 @@
+{
+    "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
+    "entry_JSON_format_version" : "1.2 2024-09-25",
+    "award" : "Opposite award",
+    "year" : 2025,
+    "dir" : "ferguson",
+    "entry_id" : "2025_ferguson",
+    "title" : "antipodal",
+    "abstract" : "Antipodes map",
+    "author_set" : [
+        {
+            "author_handle" : "Cody_Boone_Ferguson"
+        }
+    ],
+    "manifest" : [
+        {
+            "file_path" : "prog.c",
+            "inventory_order" : 20,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "entry source code"
+        },
+        {
+            "file_path" : "Makefile",
+            "inventory_order" : 30,
+            "OK_to_edit" : true,
+            "display_as" : "makefile",
+            "display_via_github" : true,
+            "entry_text" : "entry Makefile"
+        },
+        {
+            "file_path" : "prog.alt.c",
+            "inventory_order" : 40,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "alternate source code"
+        },
+        {
+            "file_path" : "prog.orig.c",
+            "inventory_order" : 50,
+            "OK_to_edit" : false,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "original source code"
+        },
+        {
+            "file_path" : "antipode.c",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "wraparound tool source code"
+        },
+        {
+            "file_path" : "argentina.ppm",
+            "inventory_order" : 120,
+            "OK_to_edit" : true,
+            "display_as" : "image",
+            "display_via_github" : false,
+            "entry_text" : "image locating Argentina and its antipode"
+        },
+        {
+            "file_path" : "arrows.c",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "source code demo for how arrows are rendered"
+        },
+        {
+            "file_path" : "cats.jpg",
+            "inventory_order" : 150,
+            "OK_to_edit" : true,
+            "display_as" : "image",
+            "display_via_github" : false,
+            "entry_text" : "image of a cat on a flat Earth"
+        },
+        {
+            "file_path" : "china.jpg",
+            "inventory_order" : 150,
+            "OK_to_edit" : true,
+            "display_as" : "image",
+            "display_via_github" : false,
+            "entry_text" : "fun image points towards China"
+        },
+        {
+            "file_path" : "china.ppm",
+            "inventory_order" : 120,
+            "OK_to_edit" : true,
+            "display_as" : "image",
+            "display_via_github" : false,
+            "entry_text" : "image locating China and its antipode"
+        },
+        {
+            "file_path" : "comments.html",
+            "inventory_order" : 100,
+            "OK_to_edit" : false,
+            "display_as" : "html",
+            "display_via_github" : false,
+            "entry_text" : "on comments in PPM images"
+        },
+        {
+            "file_path" : "continents.png",
+            "inventory_order" : 120,
+            "OK_to_edit" : true,
+            "display_as" : "image",
+            "display_via_github" : false,
+            "entry_text" : "image locating various continents and their antipodes"
+        },
+        {
+            "file_path" : "debug.c",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "source code for an antipode debugging tool"
+        },
+        {
+            "file_path" : "dms.c",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "convert degree minute second to decimal degrees"
+        },
+        {
+            "file_path" : "drain.jpg",
+            "inventory_order" : 150,
+            "OK_to_edit" : true,
+            "display_as" : "image",
+            "display_via_github" : false,
+            "entry_text" : "flood drain image"
+        },
+        {
+            "file_path" : "earth.ppm",
+            "inventory_order" : 120,
+            "OK_to_edit" : true,
+            "display_as" : "image",
+            "display_via_github" : false,
+            "entry_text" : "Blue Marble equirectangular map of the Earth"
+        },
+        {
+            "file_path" : "earth.png",
+            "inventory_order" : 200,
+            "OK_to_edit" : true,
+            "display_as" : "image",
+            "display_via_github" : false,
+            "entry_text" : "Blue Marble equirectangular map of the Earth in png form"
+        },
+        {
+            "file_path" : "flat-earth.ppm",
+            "inventory_order" : 120,
+            "OK_to_edit" : true,
+            "display_as" : "image",
+            "display_via_github" : false,
+            "entry_text" : "flat Earth submerged under water"
+        },
+        {
+            "file_path" : "flat.jpg",
+            "inventory_order" : 150,
+            "OK_to_edit" : true,
+            "display_as" : "image",
+            "display_via_github" : false,
+            "entry_text" : "Flat Earth Society retirement village"
+        },
+        {
+            "file_path" : "noclouds.ppm",
+            "inventory_order" : 120,
+            "OK_to_edit" : true,
+            "display_as" : "image",
+            "display_via_github" : false,
+            "entry_text" : "Blue Marble Next Generation without clouds"
+        },
+        {
+            "file_path" : "obfuscation.html",
+            "inventory_order" : 100,
+            "OK_to_edit" : false,
+            "display_as" : "html",
+            "display_via_github" : false,
+            "entry_text" : "remarks on obfuscation and obnubilation"
+        },
+        {
+            "file_path" : "prog.right.c",
+            "inventory_order" : 200,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "prog.c as a right-angled triangle"
+        },
+        {
+            "file_path" : "prog.upside.down.c",
+            "inventory_order" : 200,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "prog.c upside down"
+        },
+        {
+            "file_path" : "runes.jpg",
+            "inventory_order" : 150,
+            "OK_to_edit" : true,
+            "display_as" : "image",
+            "display_via_github" : false,
+            "entry_text" : "famous runes from Journey to the Centre of the Earth"
+        },
+        {
+            "file_path" : "sealand.ppm",
+            "inventory_order" : 120,
+            "OK_to_edit" : true,
+            "display_as" : "image",
+            "display_via_github" : false,
+            "entry_text" : "image locating Sealand and its antipode"
+        },
+        {
+            "file_path" : "silly.png",
+            "inventory_order" : 150,
+            "OK_to_edit" : true,
+            "display_as" : "image",
+            "display_via_github" : false,
+            "entry_text" : "silly Earth image"
+        },
+        {
+            "file_path" : "small.c",
+            "inventory_order" : 200,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "small antipodes using longs instead of floating point"
+        },
+        {
+            "file_path" : "snaefellsjokull.png",
+            "inventory_order" : 120,
+            "OK_to_edit" : true,
+            "display_as" : "image",
+            "display_via_github" : false,
+            "entry_text" : "image locating Sn\u00e6fellsj\u00f6kull Iceland and its antipode"
+        },
+        {
+            "file_path" : "symmes.jpg",
+            "inventory_order" : 120,
+            "OK_to_edit" : true,
+            "display_as" : "image",
+            "display_via_github" : false,
+            "entry_text" : "John Cleves Symmes Jr's Circular No. 1%%COMMA%% 1818"
+        },
+        {
+            "file_path" : "try.alt.sh",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "shellscript",
+            "display_via_github" : true,
+            "entry_text" : "script to try alternate code"
+        },
+        {
+            "file_path" : "try.sh",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "shellscript",
+            "display_via_github" : true,
+            "entry_text" : "script to try entry"
+        },
+        {
+            "file_path" : "unformatted.c",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "prog.c unformatted"
+        },
+        {
+            "file_path" : "westley.c",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "Brian Westley's 1992/westley mapper source"
+        },
+        {
+            "file_path" : "2025_ferguson.tar.bz2",
+            "inventory_order" : 1415926535,
+            "OK_to_edit" : false,
+            "display_as" : "tbz2",
+            "display_via_github" : false,
+            "entry_text" : "download entry tarball"
+        },
+        {
+            "file_path" : ".entry.json",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "json",
+            "display_via_github" : true,
+            "entry_text" : "entry summary and manifest in JSON"
+        },
+        {
+            "file_path" : ".gitignore",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "gitignore",
+            "display_via_github" : true,
+            "entry_text" : "list of files that should not be committed under git"
+        },
+        {
+            "file_path" : ".path",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : false,
+            "display_as" : "path",
+            "display_via_github" : true,
+            "entry_text" : "directory path from top level directory"
+        },
+        {
+            "file_path" : "README.md",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "markdown",
+            "display_via_github" : true,
+            "entry_text" : "markdown source for this web page"
+        },
+        {
+            "file_path" : "comments.md",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "markdown",
+            "display_via_github" : true,
+            "entry_text" : "markdown source for comments.html"
+        },
+        {
+            "file_path" : "obfuscation.md",
+            "inventory_order" : 4000000000,
+            "OK_to_edit" : true,
+            "display_as" : "markdown",
+            "display_via_github" : true,
+            "entry_text" : "markdown source for obfuscation.html"
+        },
+        {
+            "file_path" : "index.html",
+            "inventory_order" : 4294967295,
+            "OK_to_edit" : false,
+            "display_as" : "html",
+            "display_via_github" : false,
+            "entry_text" : "this web page"
+        },
+        {
+            "file_path" : "coords.sh",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "shellscript",
+            "display_via_github" : true,
+            "entry_text" : "test every lat/long degree coordinate"
+        },
+        {
+            "file_path" : "test.sh",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "shellscript",
+            "display_via_github" : true,
+            "entry_text" : "test the coordinates featured in this entry"
+        },
+        {
+            "file_path" : "westley.sh",
+            "inventory_order" : 100,
+            "OK_to_edit" : true,
+            "display_as" : "shellscript",
+            "display_via_github" : true,
+            "entry_text" : "homage to 1992/westley for calculated coordinates featured in this entry"
+        },
+        {
+            "file_path" : ".date-range",
+            "inventory_order" : 4100000000,
+            "OK_to_edit" : true,
+            "display_as" : "daterange",
+            "display_via_github" : true,
+            "entry_text" : "copyright date range for this directory"
+        }
+    ]
+}

@@ -1,0 +1,11 @@
+#
+# sort with: ../../bin/sgi.sh
+*~
+*.dSYM
+*.o
+.DS_Store
+.*.swp
+diff
+ioooo.txt
+patch
+work/

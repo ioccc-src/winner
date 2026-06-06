@@ -1,0 +1,14 @@
+#
+# sort with: ../../bin/sgi.sh
+*~
+*.dSYM
+*.o
+.DS_Store
+.*.swp
+mills2-9bit
+mills2-9bit.c
+mills2-9bit.o
+outfile.Z
+remarks.md.Z
+spaces
+spaces.Z

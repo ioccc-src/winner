@@ -726,8 +726,89 @@ from the <code>TOPDIR</code>.</p>
 <p>Generate a list of files in an entry’s manifest (the <code>.entry.json</code> file).</p>
 <p>Usage:</p>
 <pre><code>    awk -f bin/filelist.entry.json.awk 2020/ferguson1/.entry.json</code></pre>
-<p>In this case the command will list all the files of the
-<a href="../2020/ferguson1/index.html">2020/ferguson1</a> winning entry.</p>
+<p>In the above example, the command will print the paths from the top repo directory,
+of all the files of the
+<a href="../2020/ferguson1/index.html">2020/ferguson1</a> winning entry, as in:</p>
+<ul>
+<li>2020/ferguson1/prog.c</li>
+<li>2020/ferguson1/Makefile</li>
+<li>2020/ferguson1/prog.alt.c</li>
+<li>2020/ferguson1/prog.orig.c</li>
+<li>…</li>
+</ul>
+<p>Usage:</p>
+<pre><code>    awk -v print_relative=true -f bin/filelist.entry.json.awk 2025/ayu/.entry.json</code></pre>
+<p>In this case the command will paths, relative to the winning entry directory,
+of all the files of the
+<a href="../2025/ayu/index.html">2025/ayu</a> winning entry, as in:</p>
+<ul>
+<li>prog.c</li>
+<li>Makefile</li>
+<li>prog.orig.c</li>
+<li>arduino/serial_play/serial_play.ino</li>
+<li>…</li>
+</ul>
+<p>Usage:</p>
+<pre><code>    awk -v print_until=true -f bin/filelist.entry.json.awk 2025/tompng/.entry.json</code></pre>
+<p>In the above example, the command will print the contents of <code>2025/tompng/.entry.json</code>,
+from the start of the file, up until the final manifest array members, final line.
+The output lacks only the final lines of <code>2025/tompng/.entry.json</code>. So the shell command:</p>
+<pre><code>    awk -v print_until=true -f bin/filelist.entry.json.awk 2025/tompng/.entry.json |
+        diff - 2025/cesmoak/.entry.json</code></pre>
+<p>will produce all but the final closing JSON structure lines, assuming that the
+given <code>.entry.json</code> line is in common form:</p>
+<pre><code>302a303,305
+&gt;         }
+&gt;     ]
+&gt; }</code></pre>
+<p>This <code>-v print_until=true</code> form of <code>bin/filelist.entry.json.awk</code> is
+useful if you want to append additional manifest array elements to a
+winning entry’s <code>.entry.json</code> line as this overcomes the <strong>BOGOSITY</strong>
+that the final JSON array element isn’t allowed to have a trailing comma.
+<strong><sub>sigh</sub></strong></p>
+<p><strong>NOTE</strong>: Observe that using <code>print_relative=true</code> does <strong>NOT</strong> print the basename.
+In the above example, <code>arduino/serial_play/serial_play.ino</code> is a file in sub-directory
+of the entry.</p>
+<p><strong>NOTE</strong>: While <a href="https://github.com/ioccc-src/winner/blob/master/bin/filelist.entry.json.awk">filelist.entry.json.awk</a>
+is <strong>MUCH FASTER</strong> than <a href="https://github.com/ioccc-src/winner/blob/master/bin/filelist.entry.json.sh">filelist.entry.json.sh</a>,
+the <a href="https://github.com/ioccc-src/winner/blob/master/bin/filelist.entry.json.awk">filelist.entry.json.awk</a> code does
+not truly parse the JSON file, but nevertheless the awk code does a reasonable job
+of scanning the typical <code>.entey.json</code> file format.</p>
+<div id="filelist-entry-json-sh">
+<h3 id="filelist.entry.json.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/filelist.entry.json.sh">filelist.entry.json.sh</a></h3>
+</div>
+<p>Generate a list of files in an entry’s manifest in the <code>.entry.json</code> file.</p>
+<p>Usage:</p>
+<pre><code>    bin/filelist.entry.json.sh 2025/cesmoak</code></pre>
+<p>In the above example, the command will print the paths from the top repo directory,
+of all the files of the
+<a href="../2020/ferguson1/index.html">2025/cesmoak</a> winning entry, as in:</p>
+<ul>
+<li>2025/cesmoak/prog.c</li>
+<li>2025/cesmoak/Makefile</li>
+<li>2025/cesmoak/prog.orig.c</li>
+<li>2025/cesmoak/a_suggestion_try_sh_before_README.txt</li>
+<li>…</li>
+</ul>
+<p>Usage:</p>
+<pre><code>    bin/filelist.entry.json.sh -p 2025/ncw1</code></pre>
+<p>In this case the command will paths, relative to the winning entry directory,
+of all the files of the
+<a href="../2025/ncw1/index.html">2025/ncw1</a> winning entry, as in:</p>
+<ul>
+<li>prog.c</li>
+<li>Makefile</li>
+<li>…</li>
+<li>roms/Test.gb</li>
+<li>index.html</li>
+</ul>
+<p><strong>NOTE</strong>: Observe that using <code>-p</code> does <strong>NOT</strong> print the basename.
+In the above example, <code>roms/Test.gb</code> is a file in sub-directory
+of the entry.</p>
+<p><strong>NOTE</strong>: While <a href="https://github.com/ioccc-src/winner/blob/master/bin/filelist.entry.json.sh">filelist.entry.json.sh</a>
+is <strong>MUCH FASTER</strong> than <a href="https://github.com/ioccc-src/winner/blob/master/bin/filelist.entry.json.awk">filelist.entry.json.awk</a>,
+the <a href="https://github.com/ioccc-src/winner/blob/master/bin/filelist.entry.json.awk">filelist.entry.json.sh</a> code does
+a true parse of the JSON file.</p>
 <div id="html-sed">
 <h3 id="html.sed"><a href="https://github.com/ioccc-src/winner/blob/master/bin/html.sed">html.sed</a></h3>
 </div>
