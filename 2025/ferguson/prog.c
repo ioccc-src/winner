@@ -41,15 +41,15 @@
 		       while(U<-90)U=-R-U; C"%f %f\n",L=-U,lo=tr<0?R+tr:-(R -
 		      tr)); if ( g > 3) { if(!(q=fopen(f [g -2] , "r")))E(f[ 3
 		     ]); if (m (lo,tr, (J=u,H=d +4,I=J -H,D =* (S +u-1)+1,d  -=
-		    *(*(S+7)+ 6),L))||b^j*2)X; c=calloc(1,(F=9,H**Q*j)),x=- (tr
+		    *(*(S+7)+ 6),L))||b^j*2)X; c=calloc(1,(F=9,H**Q*j)),x=-  (tr
 		   +R) **Q/T,d=c==e!=d,Y=(lo+R)**Q/T,d=c!=e!=d!=d==2*d,d*=2, y =-
 		  (-U +90) *j /R,x =- x,Z =(-L+90) *j /R,d=!-!(c!=e)!=d-1!=d+1,  x
 		 =-x ,Y=-Y,Y=-Y,d=-!-!(c!=e)==d,Y=-Y,d=-d,x=-x,x=-x,d=c==e!=d==!( c
 		==e)!=d/2,d=d/2; /* CHANGE != 1 AND PROVE d IS 1 */ if  (d=(c!=e==!d
 	       !=d!=d==1&&e!=c)!=1||/* NOW YOU KNOW d IS 1! */fread(c, -*(S[F])-d*3 ,
-	      b*j,q)^j *j *2)X; m(Y=-Y,Z,B=4); m(-x,- y,(--u,t+=F,++B,7)); fclose ( q
+	      b*j,q)^j *j *2)X; m(Y=-Y,Z,B=4); m(-x,- y,(--u,t+=F,++B,7)) ; fclose ( q
 	     ); q=fopen(f[--g],"w"); if(!q)E(f[4]); m(Y,Z, (++ u,--t,0)); if (fprintf (
-	    q, "P6 %zu %zu %zu ",b,j,n) <0||fwrite(e,3,*Q*j,q) ^b * j) l "Hollow Earth"
+	    q, "P6 %zu %zu %zu ",b,j,n) <0||fwrite(e,3,*Q*j,q) ^ b * j) l "Hollow Earth"
 	   ); free(e); fclose(q) ; } } int m ( double a, double p, long s ){ if (a - 64 <
 	  0) a=31; if(p-64 <0)p=31; if(p +64 >=j)p=j-31; if(a+64 >=b)a=b-31; for ( V = &S[
          u][(z=(*(S+4))[*(*(S+3)+1)],S[t][B])]; !(*(S+d)[*V]&*V)&&z<2-*(*(S+5)+3); ++z) for
