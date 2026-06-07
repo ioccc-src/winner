@@ -6,11 +6,20 @@ Award: Opposite award
     make all
 ```
 
+### Bugs and (Mis)features:
+
+The current status of this entry is:
+
+> **STATUS: INABIAF - please DO NOT fix**
+
+For more detailed information see [2025/ferguson in bugs.html](../../bugs.html#2025_ferguson).
+
+
 
 ## To use:
 
 ``` <!---sh-->
-    ./prog lat lon in.ppm out.ppm
+    ./prog lat lon [in.ppm out.ppm]
 ```
 
 
@@ -41,7 +50,7 @@ Award: Opposite award
 ## Judges' remarks:
 
 Digging the proverbial hole through the Earth can land up in some
-different places.  In this projection of a globe of Earth (because flat
+different places.  In this projection of a globe of Earth (because Flat
 Earth is an archaic and scientifically disproved concept) onto the screen,
 it can start in one place and find its antipode.
 

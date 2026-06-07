@@ -4,7 +4,7 @@
  * without floating point you have the problem of truncation. I also believe I
  * had (did not really look) this program clamp out of range coordinates but
  * despite my jokes our Earth is not flat (it's actually tetrahedral! Roundish
- * yes but still a tetrahedron) so when one goes to the edge of the world they
+ * yes but still a tetrahedron[0]) so when one goes to the edge of the world they
  * do not fall off the edge.
  *
  * The point of including this file is so you can see how small the arrows were
@@ -14,7 +14,12 @@
  * A program calculating antipodes simply MUST use floating points.
  *
  * Nonetheless you do get to see how the arrows were 'rendered' in that the
- * arrays are simple with ones and zeros and not interleaved.
+ * arrays are simple with ones and zeros and not interleaved. Even so I needed
+ * to make it so the arrows were a lot bigger so that I myself (and many others)
+ * could actually see it!
+ *
+ * [0]: yes this is also a joke. Obviously it's triangular. Or spherical. I
+ * think :-)
  */
 #include <stdio.h>
 #include <stdlib.h>

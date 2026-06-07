@@ -14,6 +14,7 @@ below and you wish to help with a year, you can use these links:
 - [2004 entries](#2004) |       [2005 entries](#2005)   |       [2006 entries](#2006)   |       [2011 entries](#2011)
 - [2012 entries](#2012) |       [2013 entries](#2013)   |       [2014 entries](#2014)   |       [2015 entries](#2015)
 - [2018 entries](#2018) |       [2019 entries](#2019)   |       [2020 entries](#2020)   |       [2024 entries](#2024)
+- [2025 entries](#2025)
 
 Jump to: [top](#)
 
@@ -4983,6 +4984,25 @@ For more information see the "**Large input size issues**" section of
 
 
 Jump to: [top](#)
+
+<hr style="width:10%;text-align:left;margin-left:0">
+<div id="2025">
+# 2025
+</div>
+<hr style="width:10%;text-align:left;margin-left:0">
+
+Jump to: [top](#)
+
+### STATUS: INABIAF - please **DO NOT** fix
+### Source code: [2025/ferguson/prog.c](%%REPO_URL%%/2025/ferguson/prog.c)
+### Information: [2025/ferguson/index.html](2025/ferguson/index.html)
+
+This program necessarily scales the arrows to a larger size for those who, like
+the author, cannot see them otherwise. This means that locations are a bit off
+**on the rendered map**, especially when coordinates are not on the edge of the
+map (even so it might or might not be that part of the arrow is in the 'right'
+place and in all cases obviously only a part of the arrow can be in the correct
+place).
 
 
 <hr style="width:10%;text-align:left;margin-left:0">

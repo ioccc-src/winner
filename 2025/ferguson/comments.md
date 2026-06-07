@@ -25,12 +25,17 @@ with you why **I** do not support comments and why I don't think I should if I
 even could (but can't, especially not with size constraints after what I have
 done).
 
-First of all though the spec (although this might be from the library but if
-that's not an authoritative source I don't know what is!) should tell you a lot:
+First of all: though the spec (yes this is from the library but if that's not an
+authoritative source I don't know what is!) should tell you a lot (emphasis
+added by me):
 
-> Strings starting with `"#"` may be comments, the same as with PBM.
+> Strings starting with `"#"` **may** be comments, the same as with PBM.
 
-MAY be comments? How exactly am I supposed to deal with THAT?
+MAY be comments? How exactly am I supposed to deal with THAT? That would imply
+that I have to deal with more than one mode and this is a parser without a
+library and with serious size constraints imposed. As I get to later and perhaps
+in [index.html](index.html) images do not need comments because images are
+viewed in image editors and they show the actual image not the data.
 
 As I note elsewhere later on: in files sometimes `#` exist and
 are not part of comments but actually data. The fact the spec is so ambiguous
@@ -60,10 +65,11 @@ like trailing spaces in some cases so I have vim remove them in markdown files).
 
 That is even more ambiguity and the more ambiguous a design (and the fact
 DOCUMENTATION says 'MAY be a comment' is hard to fathom) the worse the design
-is.
+is (that does not mean it's not a good design for the IOCCC though and this also
+is a nice excuse to not add even more code).
 
-It's not a terrible image format: obviously. But the idea of comments was not
-well thought out.
+It's actually not a terrible image format: obviously. But the idea of comments
+was not well thought out.
 
 But honestly images are not meant to be viewed in a text editor/viewer BECAUSE
 THEY ARE NOT TEXT FILES; they are meant to be viewed in a GRAPHICS/IMAGE viewer
