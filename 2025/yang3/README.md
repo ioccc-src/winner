@@ -10,7 +10,9 @@ Award: INABIAF award
 ## To use:
 
 ``` <!---sh-->
-    echo Message | ./prog > output.c; cc output.c; ./a.out
+    ./prog "message-for-gcc" "message-for-clang" > output.c
+    gcc output.c -o decode 2>/dev/null && gcc output.c -o /dev/null 2>&1 | ./decode
+    clang output.c -o decode 2>/dev/null && clang output.c -o /dev/null 2>&1 | ./decode
 ```
 
 
