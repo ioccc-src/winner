@@ -7043,6 +7043,9 @@ had to be done to fix it).
 
 Some comments were fixed or added where it was deemed useful.
 
+[Anthony](#sirwumpus) fixed the `var.mk` files to not set the `MAKE` macro, which is set
+by `make(1)` or `gmake(1)` on BSDs.
+
 Jump to: [top](#)
 
 <div id="consistency_improvements">
@@ -7252,6 +7255,7 @@ he enjoys the privilege of not being required to add, ™ Canada 🇨🇦, when 
 And if all that is not enough, Anthony has supplied fixes for:
 
 * [1989/tromp](thanks-for-help.html#1989_tromp)
+* [The var.mk files](#makefiles)
 
 Despite all that, we still welcome him as an IOCCC Helper!
 
