@@ -52,6 +52,12 @@ MG-880 Differences
 * There was no ammo counter.
 
 
+Thanks
+------
+
+Thanks to [Thomas Cort](https://github.com/tcort) for play testing.
+
+
 Issues
 ------
 
