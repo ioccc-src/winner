@@ -49,9 +49,9 @@
             "file_path" : "prog.int",
             "inventory_order" : 100,
             "OK_to_edit" : true,
-            "display_as" : "java",
+            "display_as" : "javascript",
             "display_via_github" : true,
-            "entry_text" : "java source code"
+            "entry_text" : "human-readable source code"
         },
         {
             "file_path" : "try.alt.sh",
