@@ -16026,7 +16026,7 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/2025/dogon/index.html</loc>
-    <lastmod>2026-06-02T05:40:40+00:00</lastmod>
+    <lastmod>2026-06-08T01:17:54+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/2025/dogon/Makefile</loc>
@@ -16042,7 +16042,7 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/2025/dogon/README.md</loc>
-    <lastmod>2026-06-02T05:39:30+00:00</lastmod>
+    <lastmod>2026-06-08T01:17:40+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/2025/dogon/try.sh</loc>
@@ -16110,11 +16110,15 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/2025/endoh2/index.html</loc>
-    <lastmod>2026-06-02T05:40:44+00:00</lastmod>
+    <lastmod>2026-06-08T00:18:19+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/2025/endoh2/Makefile</loc>
-    <lastmod>2026-05-06T21:39:11+00:00</lastmod>
+    <lastmod>2026-06-08T00:09:07+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/endoh2/prog.alt.c</loc>
+    <lastmod>2026-06-08T00:09:07+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/2025/endoh2/prog.c</loc>
@@ -16126,7 +16130,11 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/2025/endoh2/README.md</loc>
-    <lastmod>2026-06-02T05:39:39+00:00</lastmod>
+    <lastmod>2026-06-08T00:18:10+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/endoh2/try.alt.sh</loc>
+    <lastmod>2026-06-08T00:09:07+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/2025/endoh2/try.sh</loc>
