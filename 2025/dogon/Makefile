@@ -105,8 +105,8 @@ PROG= ${ENTRY}
 OBJ= ${PROG}.o
 TARGET= ${PROG}
 #
-ALT_OBJ=
-ALT_TARGET=
+ALT_OBJ= ${PROG}.alt.o
+ALT_TARGET= ${PROG}.alt
 
 # list any data files supplied with your submission
 #
