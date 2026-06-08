@@ -83,7 +83,7 @@ COTHER=
 
 # Optimization
 #
-OPT= -O3
+OPT= -O2
 
 # Default flags for ANSI C compilation
 #
