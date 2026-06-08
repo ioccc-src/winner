@@ -73,6 +73,7 @@ See the "[Fun challenge Info](../index.html#fun_challenge_info)" section for det
 
 Generate an alternative version of [prog.c](%%REPO_URL%%/2025/dogon/prog.c), named `prog.alt.c`,
 that prints **IOCCC 2025** at the very end, in honor of the contest year in which it won, instead of **IOCCC 2026**.
+Of course, the digits printed beforehand should remain the same.
 
 The above fun challenge is **still open**.
 See the "[Fun challenge Info](../index.html#fun_challenge_info)" section for details.
