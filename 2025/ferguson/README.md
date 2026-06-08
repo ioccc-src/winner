@@ -95,6 +95,23 @@ a `debug.alt4.c` that corresponds to the `prog.alt4.c`.
 The above fun challenge is **still open**.
 See the "[Fun challenge Info](../index.html#fun_challenge_info)" section for details.
 
+### Fun challenge 4
+
+Explain why `d` has to start at `-1` (bonus: experiment with different values
+and explain what happens and specifically why) and why you can't change
+the `!=1` in the code:
+
+``` <!---c-->
+    if  (d=(c!=e==!d!=d!=d==1&&e!=c)!=1||/* NOW YOU KNOW d IS 1! */fread(c, -*(S[F])-d*3 ,
+        b*j,q)^j *j *2)X;
+```
+
+Hint: the above are related to each other.
+
+The above fun challenge is **still open**.
+See the "[Fun challenge Info](../index.html#fun_challenge_info)" section for details.
+
+
 ## Author's remarks:
 
 
