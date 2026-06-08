@@ -32,7 +32,7 @@
                               FILE *q; size_t b,j,n,*Q = & b ; double
                              lo, tr, L,U,x, y, Y, Z  ; unsigned char *
                             c, * e; int m(double,double,long); int main
-                           (int g,char **f) { srand48 (time (0)); srand(
+                           (int g,char **f){ srand48(time (0)); srandom(
 			  time(0)); tr = drand48()*180;U=drand48()*90;if(
 		         random()%360<180)tr=-tr;while (tr <(t=6,-R))tr+=T
 		        ; while(tr>R)tr-=T; if (random()%180>90)U=-U; while
