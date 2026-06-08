@@ -162,7 +162,8 @@ LZLESS= lzless
 LZMA= lzma
 LZMORE= lzmore
 M4= m4
-MAKE= make
+# DO NOT SET.  Make assigns this variable as "make" or "gmake"
+#MAKE= make
 MAN= man
 MANDOC= mandoc
 MANPATH= manpath
