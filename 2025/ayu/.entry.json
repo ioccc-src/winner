@@ -38,6 +38,14 @@
             "entry_text" : "original source code"
         },
         {
+            "file_path" : "prog.alt.c",
+            "inventory_order" : 99,
+            "OK_to_edit" : true,
+            "display_as" : "c",
+            "display_via_github" : true,
+            "entry_text" : "modified source code for fun challenge"
+        },
+        {
             "file_path" : "arduino/serial_play/serial_play.ino",
             "inventory_order" : 100,
             "OK_to_edit" : true,
