@@ -48,12 +48,38 @@ IOCCC submission.
 
 ### A fun challenge
 
+
+#### Fun challenge 0
+
 Write alternate version of [try.sh](https://github.com/ioccc-src/winner/blob/master/2025/uellenberg/try.sh)
 that detects when the quasi-quine, left to its own iterative devices, starts to repeat.
 
 If you do not attempt to move the paddle, and let the game run on its
 own, the game will "evolve" to other "modes", and eventually cycle back
 to the original style of game play.
+
+The above fun challenge is **still open**.
+See the "[Fun challenge Info](../index.html#fun_challenge_info)" section for details.
+
+#### Fun challenge 1
+
+Implement an additional game mode using only the original game objects
+(the ball and two paddles).
+For example, you could implement a "flappy bird" game using the ball
+as the bird and the paddles as the pipes.
+
+As an extra challenge, try to keep the original behavior of the program
+the same, with this new game mode added on top.
+
+The above fun challenge is **still open**.
+See the "[Fun challenge Info](../index.html#fun_challenge_info)" section for details.
+
+
+#### Fun challenge 2
+
+Create a version of the game that "plays itself", running through all
+the gameplay without user input and returning to the exact source code
+it started with.
 
 The above fun challenge is **still open**.
 See the "[Fun challenge Info](../index.html#fun_challenge_info)" section for details.
@@ -89,7 +115,7 @@ and compile-time evaluation. And the best part? There's a source file
 out there, just waiting to be read. Comprehendible variable names,
 comments explaining the justification for every block of code, and not
 a magic number in sight (well, maybe a few - no one's perfect). Imagine
-that! Don't believe me? [Let me show you](./prog.int).
+that! Don't believe me? [Let me show you](%%REPO_URL%%/2025/uellenberg/prog.int).
 
 If you want to take a closer look at the code, [prog.c](%%REPO_URL%%/2025/uellenberg/prog.c)
 is the obfuscated version of the code, [prog.alt.c](%%REPO_URL%%/2025/uellenberg/prog.alt.c) is
