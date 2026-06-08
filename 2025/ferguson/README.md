@@ -57,11 +57,56 @@ it can start in one place and find its antipode.
 We think you will have fun to see what is on the other side.
 
 
-### A fun challenge
+### Fun challenge 0
 
 Create a second alternative form of [prog.c](%%REPO_URL%%/2025/ferguson/prog.c) (i.e., `prog.alt2.c`)
 that allows for different [map projections](https://en.wikipedia.org/wiki/List_of_map_projections).
-Add **-p projection** as a command line option to change the default projection.
+Add `-p projection` as a command line option to change the default projection.
+Add this to a debug.alt2.c as well for extra points.
+
+The above fun challenge is **still open**.
+See the "[Fun challenge Info](../index.html#fun_challenge_info)" section for details.
+
+### Fun challenge 1
+
+Explain why there are four args (in one invocation) but yet the value of argc, `g`, is
+only checked once, besides `g!= 3 && g < 5` (which should tell you the two forms of
+invocation).
+
+The above fun challenge is **still open**.
+See the "[Fun challenge Info](../index.html#fun_challenge_info)" section for details.
+
+### Fun challenge 2
+
+Add another alt version, `prog.alt3.c`, that renders smaller (or larger) sized
+arrows, making sure that coordinates at the edge of the map are placed
+correctly. Add a `debug.alt3.c` with the same updates.
+
+The above fun challenge is **still open**.
+See the "[Fun challenge Info](../index.html#fun_challenge_info)" section for details.
+
+
+### Fun challenge 3
+
+If you (or someone before you) solves challenge 2, add an additional alt
+version, `prog.alt4.c`, which has the `-p projection` option, making sure to add
+a `debug.alt4.c` that corresponds to the `prog.alt4.c`.
+
+The above fun challenge is **still open**.
+See the "[Fun challenge Info](../index.html#fun_challenge_info)" section for details.
+
+### Fun challenge 4
+
+Explain why `d` has to start at `-1` (bonus: experiment with different values
+and explain what happens and specifically why) and why you can't change
+the `!=1` in the code:
+
+``` <!---c-->
+    if  (d=(c!=e==!d!=d!=d==1&&e!=c)!=1||/* NOW YOU KNOW d IS 1! */fread(c, -*(S[F])-d*3 ,
+        b*j,q)^j *j *2)X;
+```
+
+Hint: the above are related to each other.
 
 The above fun challenge is **still open**.
 See the "[Fun challenge Info](../index.html#fun_challenge_info)" section for details.
