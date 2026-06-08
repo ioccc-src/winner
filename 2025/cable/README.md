@@ -64,7 +64,8 @@ to key presses, you may need to restart the WSL, or reboot your computer.
 
 #### Fun challenge 0
 
-Produce a C compiler for this VM.
+Use the [toolchain](https://github.com/adriancable/eternal) to compile your own
+software to run on this VM.
 
 The above fun challenge is **still open**.
 See the "[Fun challenge Info](../index.html#fun_challenge_info)" section for details.
@@ -200,8 +201,8 @@ To make this useful, you just need to do a couple of small things so the VM can 
 
 To save the reader a few moments, the author already did all the above so you can just enjoy.
 
-After the IOCCC winners are announced, the author will add links to repos for the full toolchain and Linux kernel
-port so interested readers can build and compile their own software to run on the VM under Linux.
+The complete toolchain (including instructions on how to build the compiler and Linux) can be found
+[here](https://github.com/adriancable/eternal).
 
 
 ## Background
