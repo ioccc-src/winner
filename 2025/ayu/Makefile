@@ -166,7 +166,7 @@ alt: data ${ALT_TARGET}
 	@${TRUE}
 
 ${PROG}.alt: ${PROG}.c
-	${CC} ${CFLAGS} ${PROG}.c -o $@ ${LDFLAGS}
+	${CC} ${CFLAGS} ${PROG}.alt.c -DN=15 -o $@ ${LDFLAGS}
 
 # data files
 #
