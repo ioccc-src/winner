@@ -2069,23 +2069,27 @@ Once the [IOCCC](index.html) closes, the judges will:
 
 * Judge the submissions.
 
-* Select the [winning entries](years.html) and announce them on the [@IOCCC
-mastodon feed](https://fosstodon.org/@ioccc).
+* Select the [winning entries](years.html) and announce them on
+a live show on the [Our Favorite Universe](https://www.youtube.com/@OurFavoriteUniverse)
+YouTube channel.
 
-* Notify the authors of entries that won the IOCCC via email using their previously
-registered email address.
-
-* Announce who are authors of this year's winning IOCCC entries via the [@IOCCC mastodon
-feed](https://fosstodon.org/@ioccc).
-
-* Upload the winning code to the [Official IOCCC winner
-repo](https://github.com/ioccc-src/winner).
-
-* Update the [Official IOCCC website](index.html), and in particular
-display this year's winning IOCCC entries at the top of the [IOCCC
-winning entries page](years.html). This is done by updating this repo.
+* At the end of the live show on the
+[Our Favorite Universe](https://www.youtube.com/@OurFavoriteUniverse) YouTube channel, the
+winning code will be pushed to the [Official IOCCC winner repo](https://github.com/ioccc-src/winner).
+A few moments later, GitHub will render the updated [Official IOCCC website](index.html).
 
 * Update the [IOCCC news](news.html) page, also by updating this repo.
+
+* We will announce via the [@IOCCC mastodon -feed](https://fosstodon.org/@ioccc)
+that the source for new winning entries has been uploaded.
+
+* After a few days, the longer
+[Our Favorite Universe](https://www.youtube.com/@OurFavoriteUniverse) show
+will be segmented into segments of a few minutes in length, one for
+each winning entry.  Then the [Official IOCCC website](index.html) will
+be updated so each new winning entry will be updated with a link
+to their specific announcement segment on the
+[Our Favorite Universe](https://www.youtube.com/@OurFavoriteUniverse) YouTube channel.
 
 
 Jump to: [top](#)
