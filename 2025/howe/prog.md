@@ -93,4 +93,7 @@ References
 * The Eve of the War, Jeff Wayne  
   <https://www.youtube.com/watch?v=Poii8JAbtng>
 
+* Invaders880 original unbofuscated source.  
+  <https://codeberg.org/SirWumpus/invaders880>
+
 -END-
