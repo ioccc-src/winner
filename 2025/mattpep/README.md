@@ -22,6 +22,27 @@ Award: Most obfuscated options
 ```
 
 
+## Alternate code:
+
+**NOTE**: Some environments may have a problem with the unusual way that `getchar(3)` is used.
+For such systems, we recommend using the alternate code.
+
+
+### Alternate build:
+
+``` <!---sh-->
+    make alt
+```
+
+
+### Alternate use:
+
+``` <!---sh-->
+    ./prog.alt decode < file.b64 > file.bin
+    ./prog.alt encode < file.bin > file.b64
+```
+
+
 ## Judges' remarks:
 
 Thankfully, the Cyrillic capital letter **Ч** is quite distinct from the digit 4.

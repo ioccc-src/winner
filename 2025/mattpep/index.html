@@ -481,6 +481,14 @@ Location: <a href="../../location.html#GB">GB</a> - <em>United Kingdom of Great 
     ./prog encode &lt; file.bin &gt; file.b64</code></pre>
 <h2 id="try">Try:</h2>
 <pre><code>    ./try.sh</code></pre>
+<h2 id="alternate-code">Alternate code:</h2>
+<p><strong>NOTE</strong>: Some environments may have a problem with the unusual way that <code>getchar(3)</code> is used.
+For such systems, we recommend using the alternate code.</p>
+<h3 id="alternate-build">Alternate build:</h3>
+<pre><code>    make alt</code></pre>
+<h3 id="alternate-use">Alternate use:</h3>
+<pre><code>    ./prog.alt decode &lt; file.b64 &gt; file.bin
+    ./prog.alt encode &lt; file.bin &gt; file.b64</code></pre>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>Thankfully, the Cyrillic capital letter <strong>Ч</strong> is quite distinct from the digit 4.
 That’s all we’ll say.</p>
@@ -604,6 +612,7 @@ achieved valid results up to 150k.</li>
 <ul>
 <li><a href="https://github.com/ioccc-src/winner/blob/master/2025/mattpep/prog.c">prog.c</a> - entry source code</li>
 <li><a href="https://github.com/ioccc-src/winner/blob/master/2025/mattpep/Makefile">Makefile</a> - entry Makefile</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2025/mattpep/prog.alt.c">prog.alt.c</a> - alternate source code</li>
 <li><a href="https://github.com/ioccc-src/winner/blob/master/2025/mattpep/prog.orig.c">prog.orig.c</a> - original source code</li>
 <li><a href="https://github.com/ioccc-src/winner/blob/master/2025/mattpep/1.txt">1.txt</a> - one 1</li>
 <li><a href="https://github.com/ioccc-src/winner/blob/master/2025/mattpep/2.txt">2.txt</a> - two 2s</li>
@@ -611,6 +620,7 @@ achieved valid results up to 150k.</li>
 <li><a href="https://github.com/ioccc-src/winner/blob/master/2025/mattpep/4.txt">4.txt</a> - four 4s</li>
 <li><a href="https://github.com/ioccc-src/winner/blob/master/2025/mattpep/5.txt">5.txt</a> - five 5s</li>
 <li><a href="https://github.com/ioccc-src/winner/blob/master/2025/mattpep/6.txt">6.txt</a> - six 6s</li>
+<li><a href="https://github.com/ioccc-src/winner/blob/master/2025/mattpep/try.alt.sh">try.alt.sh</a> - script to try alternate code</li>
 <li><a href="https://github.com/ioccc-src/winner/blob/master/2025/mattpep/try.sh">try.sh</a> - script to try entry</li>
 <li><a href="https://github.com/ioccc-src/winner/blob/master/2025/mattpep/secret.txt">secret.txt</a> - a secret string</li>
 </ul>

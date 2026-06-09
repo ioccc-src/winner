@@ -15818,7 +15818,7 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/2025/cable/index.html</loc>
-    <lastmod>2026-06-09T18:22:57+00:00</lastmod>
+    <lastmod>2026-06-09T18:26:50+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/2025/cable/Makefile</loc>
@@ -15842,7 +15842,7 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/2025/cable/README.md</loc>
-    <lastmod>2026-06-09T18:22:31+00:00</lastmod>
+    <lastmod>2026-06-09T18:26:50+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/2025/cable/try.sh</loc>
@@ -16034,7 +16034,7 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/2025/dogon/prog.c</loc>
-    <lastmod>2026-06-09T06:54:11+00:00</lastmod>
+    <lastmod>2026-06-09T18:26:01+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/2025/dogon/prog.orig.c</loc>
@@ -16514,11 +16514,15 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/2025/mattpep/index.html</loc>
-    <lastmod>2026-06-09T06:23:42+00:00</lastmod>
+    <lastmod>2026-06-09T18:46:03+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/2025/mattpep/Makefile</loc>
     <lastmod>2026-05-06T21:39:11+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/mattpep/prog.alt.c</loc>
+    <lastmod>2026-06-09T18:36:30+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/2025/mattpep/prog.c</loc>
@@ -16530,7 +16534,7 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/2025/mattpep/README.md</loc>
-    <lastmod>2026-06-09T05:51:35+00:00</lastmod>
+    <lastmod>2026-06-09T18:45:52+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/2025/mattpep/secret.txt</loc>
@@ -16543,6 +16547,10 @@
 <url>
     <loc>https://www.ioccc.org/2025/mattpep/test-4k.bin</loc>
     <lastmod>2026-05-02T05:29:38+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/2025/mattpep/try.alt.sh</loc>
+    <lastmod>2026-06-09T18:37:47+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/2025/mattpep/try.sh</loc>
@@ -18314,7 +18322,7 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/thanks-for-help.html</loc>
-    <lastmod>2026-05-07T04:43:58+00:00</lastmod>
+    <lastmod>2026-06-09T18:26:50+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/thanks-for-help.md</loc>
