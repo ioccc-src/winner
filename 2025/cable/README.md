@@ -59,6 +59,18 @@ IOCCC winners!  Moreover, you can do a lot with **just one instruction**!
 to key presses, you may need to restart the WSL, or reboot your computer.
 
 
+### On purposes
+
+Keep in mind that two of the purposes of this entry are to create a
+sense of surprise and wonder: This **wonderful winning entry** is
+[NOT intended for production use](../../SECURITY.html).  Adding bounds
+checks to [2025/cable/prog.c](%%REPO_URL%%/2025/cable/prog.c) would make
+it larger and slower, and diminish both of these attributes.
+
+See also the [Eternal Software Initiative](https://eternal-software.org).
+
+
+
 ### A fun challenge
 
 
