@@ -11,7 +11,7 @@ Award: Most likely to invade
 
 ``` <!---sh-->
     # Press TAB to aim:       Cycles through target choices before firing
-    # Press ENTRY to Fire:    Kill lowest matching invader
+    # Press ENTER to Fire:    Kill matching invader
     # Press ^C to quit early
 
     ./prog
@@ -45,7 +45,7 @@ For an ASCII only version:
 
 ``` <!---sh-->
     # Press TAB to aim:       Cycles through target choices before firing
-    # Press ENTRY to Fire:    Kill lowest matching invader
+    # Press ENTER to Fire:    Kill matching invader
     # Press ^C to quit early
 
     ./prog.alt
