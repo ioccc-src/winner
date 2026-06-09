@@ -342,6 +342,7 @@ help:
 	@echo 'make bugs		;: generate bugs.html'
 	@echo 'make contact		;: generate contact.html'
 	@echo 'make contributing	;: generate CONTRIBUTING.html'
+	@echo 'make pull_request	;: generate PULL_REQUEST_TEMPLATE.html'
 	@echo 'make faq		;: generate faq.html'
 	@echo 'make guidelines		;: generate next/guidelines.hmtl'
 	@echo 'make markdown		;: generate markdown.html'
@@ -704,6 +705,15 @@ contributing: ${GEN_TOP_HTML} CONTRIBUTING.md
 	@echo "You wish to make a contribution?"
 	${GEN_TOP_HTML} CONTRIBUTING
 	@echo "Thank you kindly, for your consideration!"
+	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
+
+# generate CONTRIBUTING.html
+#
+pull_request: ${GEN_TOP_HTML} PULL_REQUEST_TEMPLATE.md
+	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
+	@echo "You wish to pull?"
+	${GEN_TOP_HTML} PULL_REQUEST_TEMPLATE
+	@echo "Thanks in advance for pushing🫸 out the pull 🫷!"
 	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 faq: ${GEN_TOP_HTML} faq.md

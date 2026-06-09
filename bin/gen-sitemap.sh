@@ -116,7 +116,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="2.0.5 2026-06-09"
+export VERSION="2.0.6 2026-06-09"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -711,6 +711,8 @@ next/try.alt.sh
 next/try.sh
 nojs-menu.html
 nojs-menu.md
+PULL_REQUEST_TEMPLATE.html
+PULL_REQUEST_TEMPLATE.md
 quick-start.html
 quick-start.md
 README.html

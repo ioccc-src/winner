@@ -17954,7 +17954,7 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/gen-sitemap.sh</loc>
-    <lastmod>2026-06-09T20:31:59+00:00</lastmod>
+    <lastmod>2026-06-09T20:53:06+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/gen-status.sh</loc>
@@ -17962,7 +17962,7 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/gen-top-html.sh</loc>
-    <lastmod>2026-06-09T20:31:59+00:00</lastmod>
+    <lastmod>2026-06-09T20:57:17+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/gen-year-index.sh</loc>
@@ -18006,7 +18006,7 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/md2html.cfg</loc>
-    <lastmod>2026-06-09T20:31:59+00:00</lastmod>
+    <lastmod>2026-06-09T21:06:36+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/md2html.sh</loc>
@@ -18142,11 +18142,11 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/faq.html</loc>
-    <lastmod>2026-06-09T19:51:47+00:00</lastmod>
+    <lastmod>2026-06-09T21:03:05+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/faq.md</loc>
-    <lastmod>2026-06-09T19:51:35+00:00</lastmod>
+    <lastmod>2026-06-09T21:01:15+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/inc/index.html</loc>
@@ -18186,7 +18186,7 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/Makefile</loc>
-    <lastmod>2026-06-09T20:31:59+00:00</lastmod>
+    <lastmod>2026-06-09T21:02:45+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/markdown.html</loc>
@@ -18281,6 +18281,14 @@
     <lastmod>2025-07-26T15:32:52+00:00</lastmod>
 </url>
 <url>
+    <loc>https://www.ioccc.org/PULL_REQUEST_TEMPLATE.html</loc>
+    <lastmod>2026-06-09T21:06:50+00:00</lastmod>
+</url>
+<url>
+    <loc>https://www.ioccc.org/PULL_REQUEST_TEMPLATE.md</loc>
+    <lastmod>2026-06-09T20:50:05+00:00</lastmod>
+</url>
+<url>
     <loc>https://www.ioccc.org/quick-start.html</loc>
     <lastmod>2026-05-07T04:12:06+00:00</lastmod>
 </url>
@@ -18318,7 +18326,7 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/status.html</loc>
-    <lastmod>2026-06-09T20:38:05+00:00</lastmod>
+    <lastmod>2026-06-09T21:14:35+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/status.json</loc>

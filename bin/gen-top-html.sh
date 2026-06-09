@@ -124,7 +124,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="2.0.2 2026-06-09"
+export VERSION="2.0.3 2026-06-09"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -155,8 +155,8 @@ TOP_MD_SET+=("author/README")
 TOP_MD_SET+=("bin/README")
 TOP_MD_SET+=("bugs")
 TOP_MD_SET+=("CODE_OF_CONDUCT")
-TOP_MD_SET+=("CONTRIBUTING")
 TOP_MD_SET+=("contact")
+TOP_MD_SET+=("CONTRIBUTING")
 TOP_MD_SET+=("faq")
 TOP_MD_SET+=("inc/README")
 TOP_MD_SET+=("index")
@@ -172,6 +172,7 @@ TOP_MD_SET+=("next/remarks")
 TOP_MD_SET+=("next/rules")
 TOP_MD_SET+=("next/submit")
 TOP_MD_SET+=("nojs-menu")
+TOP_MD_SET+=("PULL_REQUEST_TEMPLATE")
 TOP_MD_SET+=("quick-start")
 TOP_MD_SET+=("README")
 TOP_MD_SET+=("SECURITY")

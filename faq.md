@@ -6687,6 +6687,8 @@ example, you would type:
 
 This will merge your pull request to your fork.
 
+p.s. This FAQ is referenced by the [GitHub PULL_REQUEST_TEMPLATE](PULL_REQUEST_TEMPLATE.html).
+
 
 Jump to: [top](#)
 
