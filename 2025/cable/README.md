@@ -67,16 +67,16 @@ to key presses, you may need to restart the WSL, or reboot your computer.
 Use the [toolchain](https://github.com/adriancable/eternal) to compile your own
 software to run on this VM.
 
-The above fun challenge is **still open**.
-See the "[Fun challenge Info](../index.html#fun_challenge_info)" section for details.
+**UPDATE**: We are in the process of changing how we present fun challenges,
+and present potential solutions to those challenges.  Please stay tuned for an update.
 
 
 #### Fun challenge 1
 
 Produce variant of the vmlinux bootimage that contains a C compiler for this VM.
 
-The above fun challenge is **still open**.
-See the "[Fun challenge Info](../index.html#fun_challenge_info)" section for details.
+**UPDATE**: We are in the process of changing how we present fun challenges,
+and present potential solutions to those challenges.  Please stay tuned for an update.
 
 
 ## Author's remarks:

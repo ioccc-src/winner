@@ -57,6 +57,9 @@ it can start in one place and find its antipode.
 We think you will have fun to see what is on the other side.
 
 
+### A fun challenge
+
+
 ### Fun challenge 0
 
 Create a second alternative form of [prog.c](%%REPO_URL%%/2025/ferguson/prog.c) (i.e., `prog.alt2.c`)
@@ -64,8 +67,9 @@ that allows for different [map projections](https://en.wikipedia.org/wiki/List_o
 Add `-p projection` as a command line option to change the default projection.
 Add this to a debug.alt2.c as well for extra points.
 
-The above fun challenge is **still open**.
-See the "[Fun challenge Info](../index.html#fun_challenge_info)" section for details.
+**UPDATE**: We are in the process of changing how we present fun challenges,
+and present potential solutions to those challenges.  Please stay tuned for an update.
+
 
 ### Fun challenge 1
 
@@ -73,8 +77,9 @@ Explain why there are four args (in one invocation) but yet the value of argc, `
 only checked once, besides `g!= 3 && g < 5` (which should tell you the two forms of
 invocation).
 
-The above fun challenge is **still open**.
-See the "[Fun challenge Info](../index.html#fun_challenge_info)" section for details.
+**UPDATE**: We are in the process of changing how we present fun challenges,
+and present potential solutions to those challenges.  Please stay tuned for an update.
+
 
 ### Fun challenge 2
 
@@ -82,8 +87,8 @@ Add another alt version, `prog.alt3.c`, that renders smaller (or larger) sized
 arrows, making sure that coordinates at the edge of the map are placed
 correctly. Add a `debug.alt3.c` with the same updates.
 
-The above fun challenge is **still open**.
-See the "[Fun challenge Info](../index.html#fun_challenge_info)" section for details.
+**UPDATE**: We are in the process of changing how we present fun challenges,
+and present potential solutions to those challenges.  Please stay tuned for an update.
 
 
 ### Fun challenge 3
@@ -92,8 +97,9 @@ If you (or someone before you) solves challenge 2, add an additional alt
 version, `prog.alt4.c`, which has the `-p projection` option, making sure to add
 a `debug.alt4.c` that corresponds to the `prog.alt4.c`.
 
-The above fun challenge is **still open**.
-See the "[Fun challenge Info](../index.html#fun_challenge_info)" section for details.
+**UPDATE**: We are in the process of changing how we present fun challenges,
+and present potential solutions to those challenges.  Please stay tuned for an update.
+
 
 ### Fun challenge 4
 
@@ -108,8 +114,8 @@ the `!=1` in the code:
 
 Hint: the above are related to each other.
 
-The above fun challenge is **still open**.
-See the "[Fun challenge Info](../index.html#fun_challenge_info)" section for details.
+**UPDATE**: We are in the process of changing how we present fun challenges,
+and present potential solutions to those challenges.  Please stay tuned for an update.
 
 
 ## Author's remarks:

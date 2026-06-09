@@ -67,8 +67,8 @@ the tube size to better distinguish individual letters and digits.
 Such code would be a [cromulent](https://en.wiktionary.org/wiki/cromulent#English)
 addition to [2025/endoh1](%%REPO_URL%%/2025/endoh1/index.html).
 
-The above fun challenge is **still open**.
-See the "[Fun challenge Info](../index.html#fun_challenge_info)" section for details.
+**UPDATE**: We are in the process of changing how we present fun challenges,
+and present potential solutions to those challenges.  Please stay tuned for an update.
 
 
 ## Author's remarks:

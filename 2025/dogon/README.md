@@ -53,8 +53,8 @@ something from us, for all to see:
 Are you able to explain why [prog.c](%%REPO_URL%%/2025/dogon/prog.c) prints
 only a limited number of digits of the **constant*?
 
-The above fun challenge is **still open**.
-See the "[Fun challenge Info](../index.html#fun_challenge_info)" section for details.
+**UPDATE**: We are in the process of changing how we present fun challenges,
+and present potential solutions to those challenges.  Please stay tuned for an update.
 
 
 #### Fun challenge 1
@@ -65,8 +65,8 @@ Given the "*constant*" that is printed, explain the last line of output:
     ./prog | tail -1
 ```
 
-The above fun challenge is **still open**.
-See the "[Fun challenge Info](../index.html#fun_challenge_info)" section for details.
+**UPDATE**: We are in the process of changing how we present fun challenges,
+and present potential solutions to those challenges.  Please stay tuned for an update.
 
 
 #### Fun challenge 2
@@ -75,8 +75,8 @@ Generate an alternative version of [prog.c](%%REPO_URL%%/2025/dogon/prog.c), nam
 that prints **IOCCC 2025** at the very end, in honor of the contest year in which it won, instead of **IOCCC 2026**.
 Of course, the digits printed beforehand should remain the same.
 
-The above fun challenge is **still open**.
-See the "[Fun challenge Info](../index.html#fun_challenge_info)" section for details.
+**UPDATE**: We are in the process of changing how we present fun challenges,
+and present potential solutions to those challenges.  Please stay tuned for an update.
 
 
 #### Fun challenge 3

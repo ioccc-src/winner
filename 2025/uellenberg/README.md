@@ -58,8 +58,9 @@ If you do not attempt to move the paddle, and let the game run on its
 own, the game will "evolve" to other "modes", and eventually cycle back
 to the original style of game play.
 
-The above fun challenge is **still open**.
-See the "[Fun challenge Info](../index.html#fun_challenge_info)" section for details.
+**UPDATE**: We are in the process of changing how we present fun challenges,
+and present potential solutions to those challenges.  Please stay tuned for an update.
+
 
 #### Fun challenge 1
 
@@ -71,8 +72,8 @@ as the bird and the paddles as the pipes.
 As an extra challenge, try to keep the original behavior of the program
 the same, with this new game mode added on top.
 
-The above fun challenge is **still open**.
-See the "[Fun challenge Info](../index.html#fun_challenge_info)" section for details.
+**UPDATE**: We are in the process of changing how we present fun challenges,
+and present potential solutions to those challenges.  Please stay tuned for an update.
 
 
 #### Fun challenge 2
@@ -81,8 +82,8 @@ Create a version of the game that "plays itself", running through all
 the gameplay without user input and returning to the exact source code
 it started with.
 
-The above fun challenge is **still open**.
-See the "[Fun challenge Info](../index.html#fun_challenge_info)" section for details.
+**UPDATE**: We are in the process of changing how we present fun challenges,
+and present potential solutions to those challenges.  Please stay tuned for an update.
 
 
 ## Author's remarks:

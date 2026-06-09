@@ -60,17 +60,8 @@ Some of these challenges are easier than others. In some cases, you're
 asked to create an alternative version of `prog.c` or a related file.
 In some cases you are asked to produce an explanation about something.
 
-If the fun challenge is **still open** (check the "**A fun challenge**"
-section for the given winning entry), consider submitting a
-[GitHub pull request](../faq.html#pull_request) as a contribution.
-
-If the fun challenge is closed, but you think you have a better solution,
-consider submitting a [GitHub pull request](../faq.html#pull_request) as a contribution.
-If the IOCCC Judges agree that you solution is better, we will consider it.
-
-If you believe you have an even better (or improvement) to winning entry's fun challenge,
-please consider submitting a [GitHub pull request](../faq.html#pull_request),
-for the IOCCC judges to consider.
+**UPDATE**: We are in the process of changing how we present fun challenges,
+and present potential solutions to those challenges.  Please stay tuned for an update.
 
 
 ### Rules and Guidelines for this contest

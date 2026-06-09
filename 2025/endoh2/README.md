@@ -65,12 +65,8 @@ and varying brightness of a yellow line, using
 [256 ANSI Color Codes](https://color-palette.hexdocs.pm/ansi_color_codes.html).
 Choose a colors/brightness palette to represent the charge intensity.
 
-The above fun challenge was partly solved by [GitHub user @uguu-org](https://github.com/uguu-org)
-via [pull request #265](https://github.com/ioccc-src/winner/pull/265).
-As such it is **still open**.
-Can you improve on [prog.alt.c](%%REPO_URL%%/2025/endoh2/prog.alt.c) by using a both full
-spectrum from red to violet, in addition to varying the brightness to indicate charge intensity?
-See the "[Fun challenge Info](../index.html#fun_challenge_info)" section for details.
+**UPDATE**: We are in the process of changing how we present fun challenges,
+and present potential solutions to those challenges.  Please stay tuned for an update.
 
 
 ## Author's remarks:

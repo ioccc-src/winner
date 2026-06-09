@@ -60,8 +60,8 @@ If might help you decode some of the intermediate output without having to compi
 Generate an alternative version of [prog.c](%%REPO_URL%%/2025/cesmoak/prog.c), named `prog.alt.c`,
 that supports the FORTRAN **READ** statement.
 
-The above fun challenge is **still open**.
-See the "[Fun challenge Info](../index.html#fun_challenge_info)" section for details.
+**UPDATE**: We are in the process of changing how we present fun challenges,
+and present potential solutions to those challenges.  Please stay tuned for an update.
 
 
 ### For the impatient

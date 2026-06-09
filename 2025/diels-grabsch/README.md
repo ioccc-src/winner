@@ -31,8 +31,8 @@ turn out prescient by a decade.
 
 Explain the purpose of the constant **9018655** in [prog.c](%%REPO_URL%%/2025/diels-grabsch/prog.c).
 
-The above fun challenge is **still open**.
-See the "[Fun challenge Info](../index.html#fun_challenge_info)" section for details.
+**UPDATE**: We are in the process of changing how we present fun challenges,
+and present potential solutions to those challenges.  Please stay tuned for an update.
 
 
 ## Author's remarks:

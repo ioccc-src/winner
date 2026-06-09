@@ -67,8 +67,8 @@ that is slightly harder to play by allowing the closest invader to be killed.
 Compensate slightly for that difficulty increase by allowing the **shift TAB** key
 to cycle in the opposite direction of the **TAB** key.
 
-The above fun challenge is **still open**.
-See the "[Fun challenge Info](../index.html#fun_challenge_info)" section for details.
+**UPDATE**: We are in the process of changing how we present fun challenges,
+and present potential solutions to those challenges.  Please stay tuned for an update.
 
 
 ## Author's remarks:

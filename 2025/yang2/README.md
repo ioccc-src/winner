@@ -51,8 +51,8 @@ Create an alternative form of [prog.c](%%REPO_URL%%/2025/yang2/prog.c) (i.e., `p
 that implements the compression algorithm used in the entry as a standalone
 program outputting a bitstream, and compare its performance with `gzip -1`.
 
-The above fun challenge is **still open**.
-See the "[Fun challenge Info](../index.html#fun_challenge_info)" section for details.
+**UPDATE**: We are in the process of changing how we present fun challenges,
+and present potential solutions to those challenges.  Please stay tuned for an update.
 
 
 ## Author's remarks:

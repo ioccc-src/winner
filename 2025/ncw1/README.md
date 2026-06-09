@@ -52,8 +52,8 @@ with a basename of the form: `[0-9A-Za-z]+\.gb`.
 Create a 32K ROM file that tests if **2^p-1**, is a Mersenne prime using the
 [Lucas–Lehmer primality test](https://en.wikipedia.org/wiki/Lucas–Lehmer_primality_test).
 
-The above fun challenge is **still open**.
-See the "[Fun challenge Info](../index.html#fun_challenge_info)" section for details.
+**UPDATE**: We are in the process of changing how we present fun challenges,
+and present potential solutions to those challenges.  Please stay tuned for an update.
 
 
 #### Fun challenge 1
@@ -64,8 +64,8 @@ You may find the pages related to the **Riesel Test** in the
 [A Grand Coding Challenge](http://www.isthe.com/chongo/tech/math/prime/prime-tutorial.pdf)
 helpful.
 
-The above fun challenge is **still open**.
-See the "[Fun challenge Info](../index.html#fun_challenge_info)" section for details.
+**UPDATE**: We are in the process of changing how we present fun challenges,
+and present potential solutions to those challenges.  Please stay tuned for an update.
 
 
 ## Author's remarks:

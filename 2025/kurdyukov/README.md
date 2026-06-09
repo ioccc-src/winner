@@ -34,8 +34,8 @@ of C code: that is impressive!
 Create an alternative form of [prog.c](%%REPO_URL%%/2025/kurdyukov/prog.c) (i.e., `prog.alt.c`)
 to allow the use of numbers in the interval **[1, 2^31)**, or even the interval **[1, 2^63)**.
 
-The above fun challenge is **still open**.
-See the "[Fun challenge Info](../index.html#fun_challenge_info)" section for details.
+**UPDATE**: We are in the process of changing how we present fun challenges,
+and present potential solutions to those challenges.  Please stay tuned for an update.
 
 
 ## Author's remarks:

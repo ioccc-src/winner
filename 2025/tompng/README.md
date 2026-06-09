@@ -48,8 +48,8 @@ This entry provided a welcome relief after several grueling judging sessions.  S
 Explain the purpose of the constant **.5**, used several times in [prog.c](%%REPO_URL%%/2025/tompng/prog.c).
 How does changing **.5** to a different value affect the generated sound?
 
-The above fun challenge is **still open**.
-See the "[Fun challenge Info](../index.html#fun_challenge_info)" section for details.
+**UPDATE**: We are in the process of changing how we present fun challenges,
+and present potential solutions to those challenges.  Please stay tuned for an update.
 
 
 ## Author's remarks:

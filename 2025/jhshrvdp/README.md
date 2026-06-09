@@ -49,8 +49,8 @@ floor until the player eventually acquires it. Block the player’s ascent
 (to a lower floor number) unless they possess the amulet. If the player
 returns to the top floor 0 with the amulet, display a winning message, and exit.
 
-The above fun challenge is **still open**.
-See the "[Fun challenge Info](../index.html#fun_challenge_info)" section for details.
+**UPDATE**: We are in the process of changing how we present fun challenges,
+and present potential solutions to those challenges.  Please stay tuned for an update.
 
 
 ## Author's remarks:
