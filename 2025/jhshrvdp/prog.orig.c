@@ -2,7 +2,7 @@
                                           #define m 1920
                                               #include<time.h>
                                                #include<stdlib.h>
-                                              # include <ncurses.h>
+                                              # include <curses.h>
                                            #define J for(i=l;i<m;++i)
                                         #define X i=N(),x=i %(l),y=i/l
                                 #define B(y,x) ((mvinch((y),(x))&255))
