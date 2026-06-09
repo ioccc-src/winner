@@ -2,21 +2,21 @@
 #define N 5
 #endif
 
-typedef char p[N * N - N];
+typedef unsigned char p[N * N - N];
 p A, B;
 signed char r0, o = 5, r, c, f;
 int Z;
 unsigned Y;
 
-#define c(a, b) for (char a = 0; a < b; a++)
+#define c(a, b) for (unsigned char a = 0; a < b; a++)
 void R(unsigned M)
 {
   c(r, (Z = ~-N * N)) A[r] = 0;
   r0 = (o = !(r = c[A], f = r--), c = ((Y = 1 + (Y - M) * 69069) / 2) % N, (Y + (Y & Z)) % N);
 }
-char M(unsigned R)
+unsigned char M(unsigned R)
 {
-  char h = 'h', C = R, t = R += C == h, H[] = "Aix6", *a = H, *b = A;
+  unsigned char h = 'h', C = R, t = R += C == h, H[] = "Aix6", *a = H, *b = A;
   4 > (R -= a++[t = h < t]) ? Y + (R = 1[t + a] >> 6 - R - R, 0[R%2 ? &r : &c] += ~-(2 & R)) : (R = !(R - 8) | Z);
   if (N +~( r += (h = !~(c -=- !~c + c / N)) < ~r) && ~r && !h[a = c + b + r * N]) {
     if (f *= o - 6 + o) {
