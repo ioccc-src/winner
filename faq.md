@@ -7000,9 +7000,13 @@ Jump to: [top](#)
 </div>
 </div>
 
+To run the IOCCC, there is a considerable amount of servers,
+services and software that is needed.
 The [IOCCC judges](judges.html) run the IOCCC entirely out of
 their own funds.  This includes paying for IOCCC related hardware,
-services, registration, software and related technical items.
+services, registration, software, related technical items,
+in addition to paying our [Our Favorite Universe](https://www.youtube.com/@OurFavoriteUniverse)
+YouTube channel producer, [Danni McInnis](https://www.alchemistproductiondesign.com).
 
 There is **NO** requirement for anyone to support the [IOCCC](index.html).
 Nevertheless, it has been shown that receiving  **anonymous** gifts
@@ -7011,9 +7015,32 @@ provides the [IOCCC judges](judges.html) with a nice
 boost, and happy [IOCCC judges](judges.html) help make the IOCCC
 better for everyone. :-)
 
-If you wish to express your support and/or appreciation for our
-efforts, we suggest making an **Anonymous** gift via the
-[IOCCC Amazon wishlist](https://www.amazon.com/hz/wishlist/ls/3HSNTEL8RQ1M0?ref_=wl_share).
+Here is how you may support the IOCCC:
+
+<blockquote>
+<table>
+
+<tr>
+<td colspan="3" style="padding-top: 12px;">
+<span class="pseudo_h3">&nbsp;&nbsp;Support the IOCCC</span>
+<span class="small_click_below">&nbsp;&nbsp;&nbsp;click below to support</span>
+</td>
+</tr>
+
+<tr>
+<td>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://patreon.com/IOCCC"><img src="png/patreon.128x19.png" alt="Patreon logo" width=128 height=19></a>
+</td>
+<td>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://coff.ee/ioccc"><img src="png/buymeacoffee.128x38.png" alt="Buy Me A Coffee logo" width=128 height=38></a>
+</td>
+<td>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/sponsors/ioccc-src"><img src="png/GitHub.128x51.png" alt="GitHub logo" width=128 height=51></a>
+</td>
+</tr>
+
+</table>
+</blockquote>
 
 
 Jump to: [top](#)
