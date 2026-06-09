@@ -22,7 +22,7 @@
 #
 # "Because sometimes even the IOCCC Judges need some help." :-)
 #
-# Copyright (c) 2024 by Landon Curt Noll.  All Rights Reserved.
+# Copyright (c) 2024,2026 by Landon Curt Noll.  All Rights Reserved.
 #
 # Permission to use, copy, modify, and distribute this software and
 # its documentation for any purpose and without fee is hereby granted,
@@ -124,7 +124,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="2.0.1 2025-07-25"
+export VERSION="2.0.2 2026-06-09"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -155,6 +155,7 @@ TOP_MD_SET+=("author/README")
 TOP_MD_SET+=("bin/README")
 TOP_MD_SET+=("bugs")
 TOP_MD_SET+=("CODE_OF_CONDUCT")
+TOP_MD_SET+=("CONTRIBUTING")
 TOP_MD_SET+=("contact")
 TOP_MD_SET+=("faq")
 TOP_MD_SET+=("inc/README")

@@ -14,7 +14,7 @@
 #
 # "Because sometimes even the IOCCC Judges need some help." :-)
 #
-# Copyright (c) 2024,2025 by Landon Curt Noll.  All Rights Reserved.
+# Copyright (c) 2024-2026 by Landon Curt Noll.  All Rights Reserved.
 #
 # Permission to use, copy, modify, and distribute this software and
 # its documentation for any purpose and without fee is hereby granted,
@@ -116,7 +116,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="2.0.4 2026-05-23"
+export VERSION="2.0.5 2026-06-09"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -673,6 +673,8 @@ CODE_OF_CONDUCT.html
 CODE_OF_CONDUCT.md
 contact.html
 contact.md
+CONTRIBUTING.html
+CONTRIBUTING.md
 faq.html
 faq.md
 inc/index.html

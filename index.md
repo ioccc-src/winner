@@ -73,6 +73,8 @@ FAQ on "[website menus](faq.html#menus)".
 </table>
 </blockquote>
 
+See also our [GitHub CONTRIBUTING](CONTRIBUTING.html) page.
+
 
 <div id="thanks">
 # Thank you
