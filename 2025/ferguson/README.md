@@ -276,10 +276,9 @@ Again this map MUST be equirectangular (and I do check this in code)! The Blue
 Marble map is exactly that and it's one of the most beautiful maps I have ever
 seen of our gorgeous Flat Earth.
 
-YES the map is flat because it's a map of our [Flat Earth](
-(https://en.wikipedia.org/wiki/Flat_Earth)! NASA even admits it's flat (okay so
-they admit the map is flat). But this seems rather odd because we
-also know we live <del>in</del> on [Hollow Earth](
+YES the map is flat because it's a map of our [Flat Earth](https://en.wikipedia.org/wiki/Flat_Earth)!
+NASA even admits it's flat (okay so they admit the map is flat). But this seems
+rather odd because we also know we live <del>in</del> on [Hollow Earth](
 (https://en.wikipedia.org/wiki/Hollow_Earth). We **know** this is true because
 the ever so admiral (it's a myth that Admiral Byrd claimed the Earth is hollow,
 btw) and totally credible [Edmond
