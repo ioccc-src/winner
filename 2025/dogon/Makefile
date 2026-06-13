@@ -83,7 +83,7 @@ COTHER=
 
 # Optimization
 #
-OPT= -O3
+OPT= -O2
 
 # Default flags for ANSI C compilation
 #
@@ -105,8 +105,8 @@ PROG= ${ENTRY}
 OBJ= ${PROG}.o
 TARGET= ${PROG}
 #
-ALT_OBJ=
-ALT_TARGET=
+ALT_OBJ= ${PROG}.alt.o
+ALT_TARGET= ${PROG}.alt
 
 # list any data files supplied with your submission
 #
