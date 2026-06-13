@@ -47,67 +47,7 @@ something from us, for all to see:
 
 ### A fun challenge
 
-
-#### Fun challenge 0
-
-Are you able to explain why [prog.c](%%REPO_URL%%/2025/dogon/prog.c) prints
-only a limited number of digits of the **constant*?
-
-**UPDATE**: We are in the process of changing how we present fun challenges,
-and present potential solutions to those challenges.  Please stay tuned for an update.
-
-
-#### Fun challenge 1
-
-Given the "*constant*" that is printed, explain the last line of output:
-
-``` <!---sh-->
-    ./prog | tail -1
-```
-
-**UPDATE**: We are in the process of changing how we present fun challenges,
-and present potential solutions to those challenges.  Please stay tuned for an update.
-
-
-#### Fun challenge 2
-
-Generate an alternative version of [prog.c](%%REPO_URL%%/2025/dogon/prog.c), named `prog.alt.c`,
-that prints **IOCCC 2025** at the very end, in honor of the contest year in which it won, instead of **IOCCC 2026**.
-Of course, the digits printed beforehand should remain the same.
-
-**UPDATE**: We are in the process of changing how we present fun challenges,
-and present potential solutions to those challenges.  Please stay tuned for an update.
-
-
-#### Fun challenge 3
-
-Additionally, observe the [try.sh](%%REPO_URL%%/2025/dogon/try.sh) script uses the
-following display the program's output:
-
-``` <!---sh-->
-    ./prog | cat
-```
-
-However, the following may, for some environments, will print what seems like garbage:
-
-``` <!---sh-->
-    ./prog
-```
-
-Explain why this command:
-
-``` <!---sh-->
-    ./prog | cat > foo
-```
-
-may produce, for some environments, different output than the following command:
-
-``` <!---sh-->
-    ./prog > bar
-```
-
-The above fun challenge is **still open**.
-See the "[Fun challenge Info](../index.html#fun_challenge_info)" section for details.
+Please checkout the [fun challenge&lpar;s&rpar;](../challenge.html#dogon) for this winning entry.
 
 
 ## Author's remarks:

@@ -21,7 +21,7 @@
 #
 #  See the IOCCC markdown best practices file, markdown.html, for more info.
 #
-# Copyright (c) 2024 by Landon Curt Noll.  All Rights Reserved.
+# Copyright (c) 2024,2026 by Landon Curt Noll.  All Rights Reserved.
 #
 # Permission to use, copy, modify, and distribute this software and
 # its documentation for any purpose and without fee is hereby granted,
@@ -104,7 +104,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.2.0 2025-04-16"
+export VERSION="1.2.1 2026-06-12"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -498,6 +498,7 @@ find . -name '*.md' ! -name markdown.md ! -path './tmp/*' ! -path './NOTES/*' -p
 	    -e "s;%%DOCROOT_SLASH%%/*;$TOPDIR/;" \
 	    -e "s;^([^/]);$TOPDIR/$MD_DIR/\1;" \
 	    -e '/%%TOKEN%%/d' \
+	    -e "s;%%YEAR%%;$MD_DIR;" \
 	    |
 
 	 # write to stderr, missing file messages

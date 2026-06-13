@@ -22,7 +22,7 @@
 #
 # IMPORTANT: Each command line option / argument MUST be printed on a separate line!
 #
-# Copyright (c) 2024 by Landon Curt Noll.  All Rights Reserved.
+# Copyright (c) 2024,2026 by Landon Curt Noll.  All Rights Reserved.
 #
 # Permission to use, copy, modify, and distribute this software and
 # its documentation for any purpose and without fee is hereby granted,
@@ -124,7 +124,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="2.0.0 2025-03-13"
+export VERSION="2.1.0 2026-06-12"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -575,6 +575,12 @@ echo "-s"
 echo "INVENTORY_LINK=#inventory"
 echo "-s"
 echo "INVENTORY_TEXT=Inventory"
+
+
+# output the YEAR substitution
+#
+echo "-s"
+echo "YEAR=$YEAR_ARG"
 
 
 # All Done!!! All Done!!! -- Jessica Noll, Age 2

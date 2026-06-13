@@ -60,15 +60,7 @@ may give your a hint.  :-)
 
 ### A fun challenge
 
-Create a second alternative form of [prog.c](%%REPO_URL%%/2025/endoh1/prog.c) (i.e., `prog.alt2.c`)
-that also works with UPPER CASE LETTERS.  You would certainly have to
-[embiggen](https://en.wiktionary.org/wiki/embiggen#English)
-the tube size to better distinguish individual letters and digits.
-Such code would be a [cromulent](https://en.wiktionary.org/wiki/cromulent#English)
-addition to [2025/endoh1](%%REPO_URL%%/2025/endoh1/index.html).
-
-**UPDATE**: We are in the process of changing how we present fun challenges,
-and present potential solutions to those challenges.  Please stay tuned for an update.
+Please checkout the [fun challenge&lpar;s&rpar;](../challenge.html#endoh1) for this winning entry.
 
 
 ## Author's remarks:

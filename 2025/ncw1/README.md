@@ -46,26 +46,7 @@ with a basename of the form: `[0-9A-Za-z]+\.gb`.
 
 ### A fun challenge
 
-
-#### Fun challenge 0
-
-Create a 32K ROM file that tests if **2^p-1**, is a Mersenne prime using the
-[Lucas–Lehmer primality test](https://en.wikipedia.org/wiki/Lucas–Lehmer_primality_test).
-
-**UPDATE**: We are in the process of changing how we present fun challenges,
-and present potential solutions to those challenges.  Please stay tuned for an update.
-
-
-#### Fun challenge 1
-
-Create 32K ROM file that tests if **h\*2^n-1** is prime, using the
-[Lucas–Lehmer–Riesel primality test](https://en.wikipedia.org/wiki/Lucas–Lehmer–Riesel_test).
-You may find the pages related to the **Riesel Test** in the
-[A Grand Coding Challenge](http://www.isthe.com/chongo/tech/math/prime/prime-tutorial.pdf)
-helpful.
-
-**UPDATE**: We are in the process of changing how we present fun challenges,
-and present potential solutions to those challenges.  Please stay tuned for an update.
+Please checkout the [fun challenge&lpar;s&rpar;](../challenge.html#ncw1) for this winning entry.
 
 
 ## Author's remarks:

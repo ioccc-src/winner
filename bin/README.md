@@ -858,13 +858,53 @@ We recommend that this tool be invoked via the top level `Makefile`:
 
 Generate an `index.html` page for a given IOCCC year.
 
+Generate an `rules.html` page for a given IOCCC year, if `rules.md` exists.
+
+Generate an `guidelines.html` page for a given IOCCC year, if `guidelines.md` exists.
+
+Generate an `challenge.html` page for a given IOCCC year, if `challenge.md` exists.
+
+
 Usage:
 
 ``` <!---sh-->
-    bin/gen-year-index.sh -v 1 2020
+    bin/gen-year-index.sh -v 1 2025
 ```
 
-This would create the [2020/index.html](../2020/index.html) file.
+This would create the [2025/index.html](../2025/index.html) file.
+
+This would create the [2025/rules.html](../2025/rules.html) file
+because  [2025/rules.md](%%REPO_URL%%/2025/rules.md) exists.
+
+This would create the [2025/guidelines.html](../2025/guidelines.html) file
+because  [2025/guidelines.md](%%REPO_URL%%/2025/guidelines.md) exists.
+
+This would create the [2025/challenge.html](../2025/challenge.html) file
+because  [2025/challenge.md](%%REPO_URL%%/2025/challenge.md) exists.
+
+To force the building of all year level html files using from the markdown files,
+via the top level `Makefile`:
+
+``` <!---sh-->
+    make gen_year_index
+```
+
+To update only the all year level html files that are missing, or of date
+from from the markdown files, via the top level `Makefile`:
+
+``` <!---sh-->
+    make quick_year_index
+```
+
+
+<div id="gen-years">
+### [gen-years.sh](%%REPO_URL%%/bin/gen-years.sh)
+</div>
+
+Generate the top level [years.html](../years.html) page.
+
+Usage:
+
 
 We recommend that this tool be invoked via the top level `Makefile`:
 
@@ -1064,7 +1104,8 @@ There are other shell scripts that will make additional token
 substitutions, such as [subst.default.sh](#subst.default.sh),
 [subst.entry-index.sh](#subst.entry-index.sh),
 [subst.entry-navbar.awk](#subst.entry-navbar.awk),
-[subst.year-index.sh](#subst.year-index.sh), and
+[subst.year-index.sh](#subst.year-index.sh),
+[subst.year-challenge.sh](#subst.year-challenge.sh), and
 [subst.year-navbar.awk](#subst.year-navbar.awk).
 
 The "<code>%</code><code>%DATE_RANGE%</code><code>%</code>" token
@@ -1072,6 +1113,29 @@ is special token has a special substitution process that is performed
 directly by the [md2html.sh](%%REPO_URL%%/bin/md2html.sh) script outside
 of the above-mentioned parameter substitution process.  See information
 on the "[Special DATE_RANGE token](#date-range)" section for more details.
+
+
+<div id="new-challenge-md">
+### [new-challenge-md.sh](%%REPO_URL%%/bin/new-challenge-md.sh)
+</div>
+
+This tool is used by the [Judges](../judges.html) as part of the final
+steps to announce a new set of winning IOCCC entries.
+
+This tool will generate an initial `challenge.md` file that
+the [Judges](../judges.html) will modify by adding individual
+**fun challenges** for each new winning entry.
+
+Usage:
+
+``` <!---sh-->
+    bin/new-challenge-md.sh -v 1 YYYY
+```
+
+Here, `YYYY` must be a new 4-digit (happy :-)) new IOCCC year.
+
+See also the
+FAQ on "[fun challenges](../faq.html#what_fun_challenge)".
 
 
 <div id="new-dir">
@@ -1336,6 +1400,15 @@ This tool is used in the [bin/md2html.cfg](%%REPO_URL%%/bin/md2html.cfg) file.
 Output substitutions for `navbar` on behalf of an entry.
 
 This tool is used in [subst.entry-index.sh](index.html#subst-entry-index).
+
+
+<div id="subst-year-challenge">
+### [subst.year-challenge.sh](%%REPO_URL%%/bin/subst.year-challenge.sh)
+</div>
+
+Print substitutions for a year level `challenge.html`.
+
+This tool is used in the [bin/md2html.cfg](%%REPO_URL%%/bin/md2html.cfg) file.
 
 
 <div id="subst-year-index">

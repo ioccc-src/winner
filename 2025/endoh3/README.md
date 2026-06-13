@@ -31,14 +31,7 @@ And in the case of this particular winning entry, it makes a difference!  :-)
 
 ### A fun challenge
 
-
-#### Fun challenge
-
-Explain why the git-am patch generator must be used about 25 times (see
-[try.sh](%%REPO_URL%%/2025/endoh3/try.sh) for details) to produce a unified diff tool.
-
-**UPDATE**: We are in the process of changing how we present fun challenges,
-and present potential solutions to those challenges.  Please stay tuned for an update.
+Please checkout the [fun challenge&lpar;s&rpar;](../challenge.html#endoh3) for this winning entry.
 
 
 ## Author's remarks:

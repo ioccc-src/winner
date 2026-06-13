@@ -39,11 +39,7 @@ we recommend that you:
 
 ### A fun challenge
 
-Create an alternative form of [prog.c](%%REPO_URL%%/2025/yang1/prog.c) (i.e., `prog.alt.c`)
-that also allows for integers, somewhat larger than **9999**, to be tested for primality.
-
-**UPDATE**: We are in the process of changing how we present fun challenges,
-and present potential solutions to those challenges.  Please stay tuned for an update.
+Please checkout the [fun challenge&lpar;s&rpar;](../challenge.html#yang1) for this winning entry.
 
 
 ## Author's remarks:

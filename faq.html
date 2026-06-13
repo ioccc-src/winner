@@ -453,7 +453,7 @@
 
 <!-- BEFORE: 1st line of markdown file: faq.md -->
 <h1 id="ioccc-faq-table-of-contents">IOCCC FAQ Table of Contents</h1>
-<p>This is FAQ version <strong>29.05 2025-12-02</strong>.</p>
+<p>This is FAQ version <strong>29.06 2026-06-12</strong>.</p>
 <h2 id="entering-the-ioccc-the-bare-minimum-you-need-to-know">0. <a href="#enter_questions">Entering the IOCCC: the bare minimum you need to know</a></h2>
 <ul>
 <li><strong>Q 0.0</strong>: <a class="normal" href="#enter">How can I enter the IOCCC?</a></li>
@@ -594,10 +594,12 @@
 <li><strong>Q 10.6</strong>: <a class="normal" href="#try_mastodon">What is Mastodon and why does the IOCCC use it?</a></li>
 <li><strong>Q 10.7</strong>: <a class="normal" href="#tabstops">How do I set certain tabstops for viewing source code in vi(m)?</a></li>
 <li><strong>Q 10.8</strong>: <a class="normal" href="#menus">How do the menus on the website work and what can I do if they don’t work?</a></li>
-<li><strong>Q 10.9</strong>: <a class="normal" href="#author-information">How do I find more information about a winning author of an entry?</a></li>
+<li><strong>Q 10.9</strong>: <a class="normal" href="#author_information">How do I find more information about a winning author of an entry?</a></li>
 <li><strong>Q 10.10</strong>: <a class="normal" href="#cb">What is this cb tool that is mentioned in the IOCCC?</a></li>
 <li><strong>Q 10.11</strong>: <a class="normal" href="#status_json">What do the status.json JSON file indicate?</a></li>
 <li><strong>Q 10.12</strong>: <a class="normal" href="#date_range">What is the purpose of the <code>.date-range</code> files?</a></li>
+<li><strong>Q 10.13</strong>: <a class="normal" href="#what_fun_challenge">What is a fun challenge?</a></li>
+<li><strong>Q 10.14</strong>: <a class="normal" href="#solve_fun_challenge">How do I submit a solution to a fun challenge?</a></li>
 </ul>
 <h2 id="history-of-the-ioccc">11. <a href="#ioccc_history">History of the IOCCC</a></h2>
 <ul>
@@ -1062,7 +1064,7 @@ For example, when <a href="next/submit.html">submitting to the IOCCC</a>, we hav
 submit remarks about their submission(s) in markdown format. Every
 <a href="years.html">winning IOCCC entry</a> uses a <code>README.md</code> markdown file
 as the basis for forming the <code>index.html</code> web page for that entry.
-All generated HTML pages on the <a href="https://www.ioccc.org/index.html">Official IOCCC website</a>
+All generated HTML pages on the <a href="index.html">Official IOCCC website</a>
 start with some markdown content.</p>
 <p><strong>IMPORTANT</strong>: Please read the <a href="markdown.html">IOCCC markdown guidelines</a>
 as it lists things you <strong>should NOT use</strong> in markdown files and things you
@@ -1152,7 +1154,7 @@ The <code>mkiocccentry(1)</code> tool creates a v7 format tarball to prevent thi
 <p>You are free to use whatever tools you wish to write your code.
 This includes tools that are AI based, LLM (large language model), Virtual
 coding assistants, code generators, or similar tools, as well as your own tools.
-The <a href="https://www.ioccc.org/judges.html">IOCCC judges</a> do not discriminate on the
+The <a href="judges.html">IOCCC judges</a> do not discriminate on the
 basis of the tools used to write obfuscated C code so long as you are the
 ultimate author of the code you submit.</p>
 <p>If you do use such tools, <strong>PLEASE mention</strong> in your <code>remarks.md</code> which tools
@@ -2955,7 +2957,7 @@ developed). See the
 FAQ on “<a href="#author_handle_faq">author handles</a>”
 for more information on author handles.</p>
 <p>The content of these JSON files are used by tools from the <a href="bin/index.html">bin directory</a>
-to help build HTML content for the <a href="https://www.ioccc.org">official IOCCC website</a>.</p>
+to help build HTML content for the <a href="index.html">official IOCCC website</a>.</p>
 <p>For example, the <code>index.html</code> file for each IOCCC entry contains selected
 information about the authors. Tools from the <a href="bin/index.html">bin directory</a>
 use the content of these JSON files to generate the <code>index.html</code> files for each
@@ -3042,7 +3044,7 @@ be the exact <em>JSON string</em> as shown above.</p>
 As of <em>Thu Nov 30 23:51:12 UTC 2023</em>, the <em>JSON value</em> <strong>MUST</strong> be <em>“1.0 2023-06-10”</em>.</p>
 <p>The <em>author_JSON_format_version</em> would only changed when the overall format
 of the these files is modified: and then only those who maintain the
-<a href="https://www.ioccc.org">official IOCCC website</a> would be the one to do this
+<a href="index.html">official IOCCC website</a> would be the one to do this
 in conjunction with changes to <a href="bin/index.html">bin directory tools</a>.</p>
 <h5 id="author_handle">author_handle</h5>
 <pre><code>    &quot;author_handle&quot; : &quot;Yusuke_Endoh&quot;</code></pre>
@@ -3197,7 +3199,7 @@ for more information on Mastodon.</p>
 be a <em>JSON string</em> or it <strong>MUST</strong> be a <em>JSON null</em>. The <code>github</code> <em>JSON string</em> <strong>MUST</strong>
 start with an at sign (_<span class="citation" data-cites="_">@_</span>) and <strong>MUST</strong> be a valid GitHub username.</p>
 <p>The IOCCC uses GitHub to hold the <a href="https://github.com/ioccc-src/winner">official winner repo of the IOCCC</a>,
-and hosts <a href="https://www.ioccc.org">official IOCCC website</a> on GitHub pages.</p>
+and hosts <a href="index.html">official IOCCC website</a> on GitHub pages.</p>
 <p>The IOCCC GitHub handle is <a href="https://github.com/ioccc-src/"><span class="citation" data-cites="ioccc-src">@ioccc-src</span></a>.</p>
 <p>If the author wishes to not specify an GitHub handle, or if the GitHub handle is
 unknown, it should be the <em>JSON null</em> as the <em>JSON value</em> of this <em>JSON member</em>.
@@ -3476,7 +3478,7 @@ be the exact <em>JSON string</em> as shown above.</p>
 <p>This is <strong>NOT</strong> the version of the contents!</p>
 <p>The <code>entry_JSON_format_version</code> would only changed when the overall format
 of the these files is modified: and then only those who maintain the
-<a href="https://www.ioccc.org">official IOCCC website</a> would be the one to do this
+<a href="index.html">official IOCCC website</a> would be the one to do this
 in conjunction with changes to <a href="bin/index.html">bin directory tools</a>.</p>
 <h5 id="award"><code>award</code></h5>
 <pre><code>    &quot;award&quot; : &quot;Third Place&quot;</code></pre>
@@ -3841,7 +3843,7 @@ were to do something like <code>make CC=gcc=mp-12</code> it would register as <c
 </div>
 </div>
 </div>
-<p>For the <a href="https://www.ioccc.org">IOCCC</a> <a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry submission
+<p>For the <a href="index.html">IOCCC</a> <a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry submission
 toolkit</a> and the <a href="years.html">winning IOCCC
 entries</a> we support <em>ONLY</em> GNU Makefile syntax. This means that if
 you only have Cygwin or a BSD <code>make(1)</code> (often <code>bmake(1)</code>) or some other
@@ -4668,7 +4670,7 @@ entries, we also provide, as a convenience, a way to download individual entries
 as well as a way to download a year’s winning entries.</p>
 <p>Please note that some of the links in the html files will not work! This is
 because you are not downloading the full website. If you want to view the entry
-with links intact you should clone the repo or view it on the <a href="https://www.ioccc.org">official IOCCC
+with links intact you should clone the repo or view it on the <a href="index.html">official IOCCC
 website</a> instead.</p>
 <h4 id="individual-winning-entry-tarballs">Individual winning entry tarballs</h4>
 <p>The individual entry tarballs are named in the form of
@@ -5300,9 +5302,9 @@ title</em> could have:</p>
 script that discusses this and gives supposed examples.</p>
 </blockquote>
 <p>Once you’ve done this you should click on <em>Create pull request</em>.</p>
-<p><strong>IMPORTANT NOTE</strong>: although the <a href="https://www.ioccc.org/judges.html">Judges</a> will
+<p><strong>IMPORTANT NOTE</strong>: although the <a href="judges.html">Judges</a> will
 give more deference to the authors of edited entries the
-<a href="https://www.ioccc.org/judges.html">Judges</a> also retain the final editorial say
+<a href="judges.html">Judges</a> also retain the final editorial say
 in the matter.</p>
 <h4 id="what-to-do-after-a-merge">What to do after a merge</h4>
 <p>When the judges have merged the pull request you now need to make sure your fork
@@ -5354,7 +5356,7 @@ See also the
 FAQ on “<a href="#pull_request">GitHub pull request</a>”
 for more information about pull requests.</p>
 <h4 id="actual-website-problems">Actual website problems</h4>
-<p>Nearly all HTML files on the <a href="https://www.ioccc.org">IOCCC website</a>
+<p>Nearly all HTML files on the <a href="index.html">IOCCC website</a>
 are built from <a href="https://daringfireball.net/projects/markdown/">markdown</a> files.
 If you see lines containing:</p>
 <pre><code>    &lt;!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! --&gt;
@@ -5569,7 +5571,7 @@ better for everyone. :-)</p>
 </div>
 <p><strong>PLEASE NOTE</strong>: <strong>many <a href="authors.html">winning authors</a></strong> have unobfuscated code
 of their <strong>own entries</strong> and you should look for this first, often on GitHub or on
-their website; see the FAQ on <a href="#author-information">how to find more information about a winning
+their website; see the FAQ on <a href="#author_information">how to find more information about a winning
 author of an entry</a> for how you might find this
 information. We ask you to, if you can find them, please ask them what they
 think as they can often provide invaluable information; this is less of an issue
@@ -5686,7 +5688,7 @@ this time, sorry. However you are free to fork the <a href="https://github.com/i
 repo</a>.</p>
 <p>Yes we are aware that some people have previously made their own repo of the
 winning entries but these <strong>ARE UNOFFICIAL</strong> and <strong>VERY LIKELY</strong> out of date or
-incorrect. What’s more, this repo is the source of the <a href="https://www.ioccc.org"><strong>Official</strong> IOCCC
+incorrect. What’s more, this repo is the source of the <a href="index.html"><strong>Official</strong> IOCCC
 website</a> so whenever a push is made to this repo the
 <strong>Official IOCCC website</strong> is updated. When new winners are announced, this will
 happen.</p>
@@ -5728,7 +5730,7 @@ the co-authorship of <a href="https://en.wikipedia.org/wiki/F._D._C._Willard">F.
 Willard</a> as well
 as the <a href="https://journals.aps.org/2014/04/01/aps-announces-a-new-open-access-initiative">APS New Open Access
 Initiative</a>.</p>
-<p>The number of <a href="https://www.ioccc.org/judges.html">IOCCC judges</a> has
+<p>The number of <a href="judges.html">IOCCC judges</a> has
 always been “&gt; 1” such that IOCCC judges often refer to themselves
 in the plural, sometimes <a href="https://en.wikipedia.org/wiki/Plural">in the common
 plural</a>, sometimes in the
@@ -5935,8 +5937,8 @@ the words:</p>
 <pre><code>        Please Enable JavaScript</code></pre>
 <p>at the top right corner; clicking on this will take you to the <a href="nojs-menu.html">no JavaScript
 menu</a> which is a plaintext menu. You of course can use this if
-you like, even if you do not have JavaScript enabled, by pointing your browser
-to <a href="https://www.ioccc.org/nojs-menu.html" class="uri">https://www.ioccc.org/nojs-menu.html</a>.</p>
+you like, even if you do not have JavaScript enabled, by pointing your browser to
+<a href="nojs-menu.html">https://www.ioccc.org/nojs-menu.html</a>.</p>
 <div id="tablet_menu">
 <h5 id="menus-on-tablet-devices-e.g.-ipads">Menus on tablet devices (e.g. iPads)</h5>
 </div>
@@ -5974,7 +5976,7 @@ least <a href="https://github.com/ioccc-src/winner/issues/new/choose">report it 
 issue</a> (choose
 the category <em>Website issue</em>).</p>
 <p>Jump to: <a href="#">top</a></p>
-<div id="author-information">
+<div id="author_information">
 <h3 id="q-10.9-how-do-i-find-more-information-about-a-winning-author-of-an-entry">Q 10.9: How do I find more information about a winning author of an entry?</h3>
 </div>
 <p>At the top of the index.html file of a winning entry with the author you want
@@ -6124,14 +6126,73 @@ repo</a>, simply update the <code>.date-range</code>
 files in the same directories where the changes are made: change the
 final year in the file to the current year. When the website is rebuilt,
 the proper copyright date range will be picked up.</p>
-<hr style="width:50%;text-align:left;margin-left:0">
-<hr style="width:50%;text-align:left;margin-left:0">
 <div id="history">
 <div id="ioccc_history">
 <h2 id="section-11-history-of-the-ioccc">Section 11: History of the IOCCC</h2>
 </div>
 </div>
 <p>Jump to: <a href="#">top</a></p>
+<div id="what_fun_challenge">
+<h3 id="q-10.13-what-is-a-fun-challenge">Q 10.13: What is a fun challenge?</h3>
+</div>
+<p>A “<strong>fun challenge</strong>” for a winning IOCCC entry is a puzzle or task
+that an <a href="judges.html">IOCCC judge</a> suggested people consider solving.
+After you figure out what a given winning entry does, we encourage you
+to attempt the fun challenge.</p>
+<p>Some “<strong>fun challenges</strong>” ask you to explain something about a winning
+IOCCC entry. Other fun challenges ask you to produce a variant of the
+<code>prog.c</code> program that has a different or enhanced behaviour. And still,
+other types of fun challenges may be posed.</p>
+<p><strong>NOTE</strong>: Some of these challenges are easier than others.</p>
+<p>You may find the “<strong>fun challenges</strong>” for a given IOCCC year, by visiting
+a given year link on the <a href="years.html">IOCCC Winning Entries by Year</a>
+page, clicking in the <strong>About the Xth IOCCC ((YEAR))</strong> link, and then
+clicking on the <strong>fun challenges for IOCCC ((YEAR))</strong> link.</p>
+<p><strong>NOTE</strong>: “<strong>Fun challenges</strong>” are available only for year <strong>2025 and later</strong>.</p>
+<p>See also the
+FAQ on “<a href="#solve_fun_challenge">submit a fun challenge solution</a>”.</p>
+<p>Jump to: <a href="#">top</a></p>
+<div id="solve_fun_challenge">
+<h3 id="q-10.14-how-do-i-submit-a-solution-to-a-fun-challenge">Q 10.14: How do I submit a solution to a fun challenge?</h3>
+</div>
+<p>Look at the given winning IOCCC entry’s “<strong>fun challenge</strong>” text for a
+given IOCCC year by visiting
+a given year link on the <a href="years.html">IOCCC Winning Entries by Year</a>
+page, clicking in the <strong>About the Xth IOCCC ((YEAR))</strong> link, and then
+clicking on the <strong>fun challenges for IOCCC ((YEAR))</strong> link.</p>
+<p><strong>NOTE</strong>: “<strong>Fun challenges</strong>” are available only for the year <strong>2025 and later</strong>.</p>
+<p>If the “<strong>fun challenge</strong>” is listed as still <strong>OPEN</strong>, and
+you believe you have a solution to a “<strong>fun challenge</strong>”,
+we recommend that you create a <a href="https://www.github.com">GitHub repo</a>
+(or other public git repository), containing your solution.</p>
+<p>You may wish to start with the given winning IOCCC entry’s compressed tarball.
+Modify files as needed, and finally discuss your solution by adding text to the top
+of your repo’s <code>README.md</code> file.</p>
+<p>Then consider submitting your solution by submitting a
+<a href="#pull_request">GitHub pull request</a> against the IOCCC year’s <code>challenge.md</code> file
+containing a link in <a href="markdown.html#links">markdown form link form</a> to your solution.
+Feel free to credit/identify yourself when you modify the <code>challeng.md</code> file
+in your <a href="#pull_request">GitHub pull request</a>.</p>
+<p><strong>SUGGESTION</strong>: Look at the <a href="https://github.com/ioccc-src/winner/blob/master/2025/challenge.md">2025/challenge.md file</a>
+for an example of both the markdown form, as well a how a few solutions are presented.</p>
+<p><strong>NOTE</strong>: If the “<strong>fun challenge</strong>” is listed as <strong>CLOSED</strong>,
+and you believe your solution is <strong>substantially better</strong> than any of
+the solution(s) listed, then please consider submitting your solution as well.</p>
+<p><strong>NOTE</strong>: If you have a suggestion for a “<strong>fun challenge</strong>” that is not already
+listed, please consider submitting it as an additional challenge.</p>
+<p><strong>NOTE</strong>: And to state the obvious: the <a href="judges.html">IOCCC judge</a> reserves
+the right to request modifications to your pull request, linked content,
+or to reject your pull request altogether.</p>
+<p>See also the
+FAQ on “<a href="#what_fun_challenge">fun challenges</a>”.</p>
+<p>See also the
+FAQ on “<a href="#pull_request">GitHub pull request</a>”
+for more information about pull requests.</p>
+<p>See also the
+FAQ on “<a href="#markdown">how to use markdown</a>”
+as well as the <a href="markdown.html">IOCCC markdown guidelines</a>.</p>
+<hr style="width:50%;text-align:left;margin-left:0">
+<hr style="width:50%;text-align:left;margin-left:0">
 <div id="ioccc_start">
 <div id="stormy_night">
 <div id="beginning">
@@ -6223,7 +6284,7 @@ a yearly basis.</p>
 </div>
 </div>
 <h4 id="in-the-beginning-of-www.ioccc.org">In the beginning of www.ioccc.org</h4>
-<p>The long history of the <a href="https://www.ioccc.org">official IOCCC website</a> can be
+<p>The long history of the <a href="index.html">official IOCCC website</a> can be
 viewed at the <a href="https://web.archive.org">Internet Wayback Machine Wayback Machine</a>.</p>
 <p>One can <a href="https://web.archive.org/web/20230000000000*/www.ioccc.org">view several thousand snapshots showing how the IOCCC website has
 evolved</a> going back
@@ -6231,7 +6292,7 @@ as far as <a href="https://web.archive.org/web/19981212030016/https://www.ioccc.
 www.ioccc.org</a>.</p>
 <p>On 2020 Dec 31, the IOCCC source tree was moved to the <a href="https://web.archive.org/web/20210101211346/https://www.ioccc.org/">IOCCC winner
 repo</a> on
-<a href="https://github.com">GitHub</a>. From this point on, the <a href="https://www.ioccc.org">official IOCCC web
+<a href="https://github.com">GitHub</a>. From this point on, the <a href="index.html">official IOCCC web
 site</a> became a <a href="https://pages.github.com">GitHub Pages</a>
 website.</p>
 <h4 id="dec-28-bzip2-compressed-tarball-archive">2020 Dec 28 bzip2 compressed tarball archive</h4>
@@ -6252,7 +6313,7 @@ details about these bzip2 compressed tarballs.</p>
 was <a href="https://github.com/ioccc-src/winner/commit/28efc67f5dd692a3544708bf7fa26286adb82dfb">created on 2020 Dec
 29</a>.</p>
 <h4 id="dec-30-ioccc-content-uploaded-to-github">2020 Dec 30 IOCCC content uploaded to GitHub</h4>
-<p>An <a href="https://www.ioccc.org/judges.html">IOCCC judge</a> formed a local
+<p>An <a href="judges.html">IOCCC judge</a> formed a local
 directory <a href="https://git-scm.com">git</a> repo on <strong>Tue Dec 29 23:48:30
 2020 -0800</strong> via <a href="https://github.com/ioccc-src/winner/commit/28efc67f5dd692a3544708bf7fa26286adb82dfb">commit
 28efc67f5dd692a3544708bf7fa26286adb82dfb</a>
@@ -6274,7 +6335,7 @@ after a far too long of a delay
 2021 Jan 04</a> commit)
 from their initial <a href="https://web.archive.org/web/20200726232505/http://www.ioccc.org:80/index.html">2020 Jul 25
 announcement</a>,
-were added by an <a href="https://www.ioccc.org/judges.html">IOCCC judge</a>
+were added by an <a href="judges.html">IOCCC judge</a>
 to their local <a href="https://git-scm.com">git</a> repository and then were
 merged into the <a href="https://github.com/ioccc-src/winner/commit/b1638ff0012964d79ab1c44aa815d3f824f35b6c">Official IOCCC winner repo on 2020 Dec
 31</a>.</p>
@@ -6288,7 +6349,7 @@ were the first IOCCC entries to have been released via
 30</a>
 edits to the <a href="https://github.com/ioccc-src/winner">Official IOCCC winner
 repo</a> began.</p>
-<p>The local <a href="https://git-scm.com">git</a> repository of an <a href="https://www.ioccc.org/judges.html">IOCCC
+<p>The local <a href="https://git-scm.com">git</a> repository of an <a href="judges.html">IOCCC
 judge</a> was <a href="https://github.com/ioccc-src/winner/commit/c0663537cb88d39b74285a930ff1a668c6d5968b">edited starting Wed
 Dec 30 16:57:03 2020
 -0800</a>
@@ -6302,13 +6363,13 @@ by <a href="authors.html#Yusuke_Endoh">Yusuke Endoh</a> on <a href="https://gith
 -0800</a>
 and <a href="https://github.com/ioccc-src/winner/commit/098a3e7e04d43e480ecc4b5482c83274e1434002">Sat Jan 29 21:56:53 2022
 -0800</a>,
-an <a href="https://www.ioccc.org/judges.html">IOCCC judge</a> made edits to
+an <a href="judges.html">IOCCC judge</a> made edits to
 their local repository with occasional pushes to the <a href="https://github.com/ioccc-src/winner">Official IOCCC winner
-repo</a> and the <a href="https://www.ioccc.org/index.html">Official
+repo</a> and the <a href="index.html">Official
 www.ioccc.org website</a>. After
 that time and until the <strong>Great Fork Merge</strong>, very few changes
 were made to the <a href="https://github.com/ioccc-src/winner">Official IOCCC winner
-repo</a> and the <a href="https://www.ioccc.org/index.html">Official
+repo</a> and the <a href="index.html">Official
 www.ioccc.org website</a> most of
 which were news updates.</p>
 <p>While the <a href="https://github.com/ioccc-src/temp-test-ioccc">temp-test-ioccc
@@ -6321,7 +6382,7 @@ repo</a>
 occurred on Sun Sep 18 11:15:49 2022 -0700, by <a href="authors.html#Cody_Boone_Ferguson">Cody Boone
 Ferguson</a>.</p>
 <p>At this same time, the <a href="https://ioccc-src.github.io/temp-test-ioccc/">temp-test-ioccc website</a> went live.</p>
-<p>Edits were made by an <a href="https://www.ioccc.org/judges.html">IOCCC judge</a>
+<p>Edits were made by an <a href="judges.html">IOCCC judge</a>
 to their local <a href="https://git-scm.com">git</a> repository and <a href="https://github.com/ioccc-src/temp-test-ioccc/commit/2f20ae8451ada03f4601ac727d10e1d8630861a8">were pushed into the temp-test-ioccc
 repo</a>
 and to the <a href="https://ioccc-src.github.io/temp-test-ioccc/">temp-test-ioccc website</a>.</p>
@@ -6340,7 +6401,7 @@ to improve the tractability of changes made to components of the
 IOCCC such as IOCCC entries although occasionally site wide updates
 were performed in order to address an issue common to many IOCCC
 entries. And while some people prefer infrequent updates to a repo
-the <a href="https://www.ioccc.org/judges.html">IOCCC judges</a> believe
+the <a href="judges.html">IOCCC judges</a> believe
 the ability to trace changes with commit messages is important.</p>
 <p>Changes to the IOCCC content included things such as:</p>
 <ul>
@@ -6376,7 +6437,7 @@ there were <a href="https://github.com/ioccc-src/winner/compare/master...ioccc-s
 of the <a href="https://github.com/ioccc-src/winner">IOCCC winner repo</a>.</p>
 <p>On 2024 Dec 28, the temporary repo was merged back into the <a href="https://github.com/ioccc-src/winner">IOCCC winner
 repo</a> resulting in many, many substantial improvements
-to the <a href="https://www.ioccc.org">official IOCCC website</a>.</p>
+to the <a href="index.html">official IOCCC website</a>.</p>
 <p>In particular, the <strong>Great Fork Merge</strong> was commit 0b6326676dc0d3c12cf3ba47958244fc34b4f32f
 and took place on 2024 Dec 29, a total span of <strong>833 days</strong> ‼️</p>
 <p>For details see <a href="https://github.com/ioccc-src/temp-test-ioccc/commit/0b6326676dc0d3c12cf3ba47958244fc34b4f32f">GH-commit/0b6326676dc0d3c12cf3ba47958244fc34b4f32f</a>

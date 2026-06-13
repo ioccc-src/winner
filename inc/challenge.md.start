@@ -1,0 +1,16 @@
+# Return to [%%DESCRIPTION%%](index.html)
+
+A "**fun challenge**" for a winning IOCCC entry is a puzzle or task
+that an [IOCCC judge](../judges.html) suggested people consider solving.
+After you figure out what a given winning entry does, we encourage you
+to attempt the fun challenge.
+
+Some fun challenges ask you to explain something about a winning
+IOCCC entry.  Other fun challenges ask you to produce a variant of the
+`prog.c` program that has a different or enhanced behaviour.  And still,
+other types of fun challenges may be posed.
+
+**NOTE**: Some of these challenges are easier than others.
+
+See also the
+FAQ on "[fun challenges](../faq.html#what_fun_challenge)".

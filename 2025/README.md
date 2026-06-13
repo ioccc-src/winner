@@ -3,15 +3,37 @@
 
 ## Where to start
 
-See below for links to the [2025 winning IOCCC entries](#inventory).
 
-Check out the `index.html` web pages for each winning entry.  They have
-most of the information you need to compile and run the winning program.
+### See below for links to the [%%YEAR%% winning IOCCC entries](#inventory)
+
+These links show all of the winning entries for IOCCC %%YEAR%%.
+
+They have most of the information you need to compile and run the winning program.
+
+You might also want to check out the author’s remarks for even more details.
+
+
+<div id="fun_challenge_info">
+### Check out the [fun challenges for IOCCC %%YEAR%%](challenge.html)
+</div>
+
+A "fun challenge" is a puzzle or task that involves figuring out what a
+specific winning IOCCC entry does.
+
+After reviewing an entry’s writeup and winning source code, try the "fun challenge".
+
+See also the
+FAQ on "[submit a fun challenge solution](../faq.html#solve_fun_challenge)".
+
+
+### Download the [source for the %%YEAR%% winning IOCCC entries](%%YEAR%%.tar.bz2)
+
+You may download all winning entries in the form of a compressed tarball, for this year's contest.
+
 Take a look at the winning source code and try to figure out how it works.
-You might also want to check out the author's remarks for even more details.
 
-You may [download all winning entries](2025.tar.bz2) in the form
-of a compressed tarball for this year's contest.
+See also the
+FAQ on "[compiling IOCCC entries](../faq.html#compiling)".
 
 
 ## General remarks on this contest
@@ -45,23 +67,6 @@ YouTube channel. The recording of the main show will be divided up into individu
 Then, each winning entry will be updated to include a link to a YouTube
 segment under a new **Award presentation** near the top of the winning
 entry's `index.html` page.
-
-
-<div id="fun_challenge_info">
-### Fun challenge info
-</div>
-
-We have added fun challenges to this year's winning entries
-competition, under the "**Judges' remarks**" section. After you figure
-out what a given winning entry does, we encourage you to attempt the
-fun challenge.
-
-Some of these challenges are easier than others. In some cases, you're
-asked to create an alternative version of `prog.c` or a related file.
-In some cases you are asked to produce an explanation about something.
-
-**UPDATE**: We are in the process of changing how we present fun challenges,
-and present potential solutions to those challenges.  Please stay tuned for an update.
 
 
 ### Rules and Guidelines for this contest

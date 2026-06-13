@@ -2,7 +2,7 @@
 #
 # subst.entry-index.sh - print substitutions for a entry's index.html
 #
-# This script was written in 2024 by:
+# This script was written in 2026 by:
 #
 #   chongo (Landon Curt Noll, http://www.isthe.com/chongo/index.html) /\oo/\
 #
@@ -34,7 +34,7 @@
 #
 # IMPORTANT: Each command line option / argument MUST be printed on a separate line!
 #
-# Copyright (c) 2024,2026 by Landon Curt Noll.  All Rights Reserved.
+# Copyright (c) 2026 by Landon Curt Noll.  All Rights Reserved.
 #
 # Permission to use, copy, modify, and distribute this software and
 # its documentation for any purpose and without fee is hereby granted,
@@ -136,7 +136,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="2.1.1 2026-04-26"
+export VERSION="2.1.2 2026-06-12"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -772,6 +772,12 @@ echo "-s"
 echo "INVENTORY_LINK=#inventory"
 echo "-s"
 echo "INVENTORY_TEXT=Inventory"
+
+
+# output the YEAR substitution
+#
+echo "-s"
+echo "YEAR=$YEAR_DIR"
 
 
 # All Done!!! All Done!!! -- Jessica Noll, Age 2

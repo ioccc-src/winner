@@ -47,12 +47,7 @@ Space matters in the output, but why does it also contain that single word?  And
 
 ### A fun challenge
 
-Create an alternative form of [prog.c](%%REPO_URL%%/2025/yang2/prog.c) (i.e., `prog.alt.c`)
-that implements the compression algorithm used in the entry as a standalone
-program outputting a bitstream, and compare its performance with `gzip -1`.
-
-**UPDATE**: We are in the process of changing how we present fun challenges,
-and present potential solutions to those challenges.  Please stay tuned for an update.
+Please checkout the [fun challenge&lpar;s&rpar;](../challenge.html#yang2) for this winning entry.
 
 
 ## Author's remarks:

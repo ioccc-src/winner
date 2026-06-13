@@ -3,7 +3,7 @@
 
 ## Markdown Guidelines Version
 
-These [Markdown Guidelines](markdown.html) are version **29.02 2025-11-28**.
+These [Markdown Guidelines](markdown.html) are version **29.03 2026-06-12**.
 
 
 ## Introduction
@@ -83,6 +83,24 @@ not apply to other markdown files), **PLEASE** start at level three up to level 
 <span style="color:green">&#x2714;</span> Correct.
 ``` <!---html-->
     [markdown link text](#link_target)
+```
+
+
+<div id="parentheses"></div>
+
+
+## Do not put a literal "`(`" or "`)`" in markdown link titles
+
+<span style="color:red">&#x274c;</span> Incorrect.
+``` <!---markdown-->
+    [some (text)](https://example.com/curds)
+    [ls(1)](https://example.com/ls-man-page.1)
+```
+
+<span style="color:green">&#x2714;</span> Correct.
+``` <!---markdown-->
+    [some &lpar;text&rpar;](https://example.com/curds)
+    [ls&lpar;1&rpar;](https://example.com/ls-man-page.1)
 ```
 
 
@@ -423,24 +441,6 @@ values.
 
     A short divider...
     <hr style="width:10%;text-align:left;margin-left:0">
-```
-
-
-<div id="parentheses"></div>
-
-
-## Do not put a literal "`(`" or "`)`" in markdown link titles
-
-<span style="color:red">&#x274c;</span> Incorrect.
-``` <!---markdown-->
-    [some (text)](https://example.com/curds)
-    [ls(1)](https://example.com/ls-man-page.1)
-```
-
-<span style="color:green">&#x2714;</span> Correct.
-``` <!---markdown-->
-    [some &lpar;text&rpar;](https://example.com/curds)
-    [ls&lpar;1&rpar;](https://example.com/ls-man-page.1)
 ```
 
 

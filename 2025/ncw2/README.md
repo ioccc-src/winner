@@ -31,11 +31,7 @@ color to your favorite one, if you can.
 
 ### A fun challenge
 
-Create an alternative form of [prog.c](%%REPO_URL%%/2025/ncw2/prog.c) (i.e., `prog.alt.c`)
-with a modified `p[]` array that prints the string **IOCCC 2025** followed by a newline.
-
-**UPDATE**: We are in the process of changing how we present fun challenges,
-and present potential solutions to those challenges.  Please stay tuned for an update.
+Please checkout the [fun challenge&lpar;s&rpar;](../challenge.html#ncw2) for this winning entry.
 
 
 ## Author's remarks:

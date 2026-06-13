@@ -40,11 +40,7 @@ we recommend that you:
 
 ### A fun challenge
 
-Explain the purpose of the constant **114** in [prog.c](%%REPO_URL%%/2025/yang3/prog.c).
-Are there any alternative values that could replace **114** without affecting the program’s functionality?
-
-**UPDATE**: We are in the process of changing how we present fun challenges,
-and present potential solutions to those challenges.  Please stay tuned for an update.
+Please checkout the [fun challenge&lpar;s&rpar;](../challenge.html#yang3) for this winning entry.
 
 
 ## Author's remarks:

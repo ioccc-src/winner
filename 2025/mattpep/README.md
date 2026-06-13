@@ -53,10 +53,7 @@ For the rest, it is [RTFS](https://en.wikipedia.org/wiki/RTFS). :-)
 
 ### A fun challenge
 
-Explain how the argument to `./prog` determines if input is encoded or decoded.
-
-**UPDATE**: We are in the process of changing how we present fun challenges,
-and present potential solutions to those challenges.  Please stay tuned for an update.
+Please checkout the [fun challenge&lpar;s&rpar;](../challenge.html#mattpep) for this winning entry.
 
 
 ## Author's remarks:

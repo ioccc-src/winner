@@ -28,11 +28,7 @@ We marveled at how few lines of code it takes to devolve (or to evolve?) C into 
 
 ### A fun challenge
 
-Create an alternative form of [prog.c](%%REPO_URL%%/2025/ncw3/prog.c) (i.e., `prog.alt.c`)
-that draws a Julia set.
-
-**UPDATE**: We are in the process of changing how we present fun challenges,
-and present potential solutions to those challenges.  Please stay tuned for an update.
+Please checkout the [fun challenge&lpar;s&rpar;](../challenge.html#ncw3) for this winning entry.
 
 
 ## Author's remarks:

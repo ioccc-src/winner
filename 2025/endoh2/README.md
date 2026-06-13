@@ -59,14 +59,7 @@ Lichtenberg-like patterns on the screen.
 
 ### A fun challenge
 
-Create an alternative form of [prog.c](%%REPO_URL%%/2025/endoh2/prog.c) (i.e., `prog.alt.c`)
-that prints a line instead of using varying spectral color,
-and varying brightness of a yellow line, using
-[256 ANSI Color Codes](https://color-palette.hexdocs.pm/ansi_color_codes.html).
-Choose a colors/brightness palette to represent the charge intensity.
-
-**UPDATE**: We are in the process of changing how we present fun challenges,
-and present potential solutions to those challenges.  Please stay tuned for an update.
+Please checkout the [fun challenge&lpar;s&rpar;](../challenge.html#endoh2) for this winning entry.
 
 
 ## Author's remarks:

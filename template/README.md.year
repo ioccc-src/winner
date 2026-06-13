@@ -3,15 +3,37 @@
 
 ## Where to start
 
-See below for links to the [%%YEAR%% winning IOCCC entries](#inventory).
 
-Check out the `index.html` web pages for each winning entry.  They have
-most of the information you need to compile and run the winning program.
-Take a look at the winning source code and try to figure out how it works.
+### See below for links to the [%%YEAR%% winning IOCCC entries](#inventory)
+
+These links show all of the winning entries for IOCCC %%YEAR%%.
+
+They have most of the information you need to compile and run the winning program.
+
 You might also want to check out the author’s remarks for even more details.
 
-You may [download all winning entries](%%YEAR%%.tar.bz2) in the form
-of a compressed tarball, for this year's contest.
+
+<div id="fun_challenge_info">
+### Check out the [fun challenges for IOCCC %%YEAR%%](challenge.html)
+</div>
+
+A "fun challenge" is a puzzle or task that involves figuring out what a
+specific winning IOCCC entry does.
+
+After reviewing an entry’s writeup and winning source code, try the "fun challenge".
+
+See also the
+FAQ on "[submit a fun challenge solution](../faq.html#solve_fun_challenge)".
+
+
+### Download the [source for the %%YEAR%% winning IOCCC entries](%%YEAR%%.tar.bz2)
+
+You may download all winning entries in the form of a compressed tarball, for this year's contest.
+
+Take a look at the winning source code and try to figure out how it works.
+
+See also the
+FAQ on "[compiling IOCCC entries](../faq.html#compiling)".
 
 
 ## General remarks on this contest

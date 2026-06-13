@@ -48,42 +48,7 @@ IOCCC submission.
 
 ### A fun challenge
 
-
-#### Fun challenge 0
-
-Write alternate version of [try.sh](https://github.com/ioccc-src/winner/blob/master/2025/uellenberg/try.sh)
-that detects when the quasi-quine, left to its own iterative devices, starts to repeat.
-
-If you do not attempt to move the paddle, and let the game run on its
-own, the game will "evolve" to other "modes", and eventually cycle back
-to the original style of game play.
-
-**UPDATE**: We are in the process of changing how we present fun challenges,
-and present potential solutions to those challenges.  Please stay tuned for an update.
-
-
-#### Fun challenge 1
-
-Implement an additional game mode using only the original game objects
-(the ball and two paddles).
-For example, you could implement a "flappy bird" game using the ball
-as the bird and the paddles as the pipes.
-
-As an extra challenge, try to keep the original behavior of the program
-the same, with this new game mode added on top.
-
-**UPDATE**: We are in the process of changing how we present fun challenges,
-and present potential solutions to those challenges.  Please stay tuned for an update.
-
-
-#### Fun challenge 2
-
-Create a version of the game that "plays itself", running through all
-the gameplay without user input and returning to the exact source code
-it started with.
-
-**UPDATE**: We are in the process of changing how we present fun challenges,
-and present potential solutions to those challenges.  Please stay tuned for an update.
+Please checkout the [fun challenge&lpar;s&rpar;](../challenge.html#uellenberg) for this winning entry.
 
 
 ## Author's remarks:

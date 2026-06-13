@@ -956,15 +956,35 @@ do that, that is not a problem.</p>
 <h3 id="gen-year-index.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/gen-year-index.sh">gen-year-index.sh</a></h3>
 </div>
 <p>Generate an <code>index.html</code> page for a given IOCCC year.</p>
+<p>Generate an <code>rules.html</code> page for a given IOCCC year, if <code>rules.md</code> exists.</p>
+<p>Generate an <code>guidelines.html</code> page for a given IOCCC year, if <code>guidelines.md</code> exists.</p>
+<p>Generate an <code>challenge.html</code> page for a given IOCCC year, if <code>challenge.md</code> exists.</p>
 <p>Usage:</p>
-<pre><code>    bin/gen-year-index.sh -v 1 2020</code></pre>
-<p>This would create the <a href="../2020/index.html">2020/index.html</a> file.</p>
+<pre><code>    bin/gen-year-index.sh -v 1 2025</code></pre>
+<p>This would create the <a href="../2025/index.html">2025/index.html</a> file.</p>
+<p>This would create the <a href="../2025/rules.html">2025/rules.html</a> file
+because <a href="https://github.com/ioccc-src/winner/blob/master/2025/rules.md">2025/rules.md</a> exists.</p>
+<p>This would create the <a href="../2025/guidelines.html">2025/guidelines.html</a> file
+because <a href="https://github.com/ioccc-src/winner/blob/master/2025/guidelines.md">2025/guidelines.md</a> exists.</p>
+<p>This would create the <a href="../2025/challenge.html">2025/challenge.html</a> file
+because <a href="https://github.com/ioccc-src/winner/blob/master/2025/challenge.md">2025/challenge.md</a> exists.</p>
+<p>To force the building of all year level html files using from the markdown files,
+via the top level <code>Makefile</code>:</p>
+<pre><code>    make gen_year_index</code></pre>
+<p>To update only the all year level html files that are missing, or of date
+from from the markdown files, via the top level <code>Makefile</code>:</p>
+<pre><code>    make quick_year_index</code></pre>
+<div id="gen-years">
+<h3 id="gen-years.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/gen-years.sh">gen-years.sh</a></h3>
+</div>
+<p>Generate the top level <a href="../years.html">years.html</a> page.</p>
+<p>Usage:</p>
 <p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
 <pre><code>    make gen_year_index</code></pre>
 <p>which will create the <code>index.html</code> for every IOCCC year (<code>1984/index.html</code>,
 <code>1985/index.html</code> etc.).</p>
 <div id="gen-years">
-<h3 id="gen-years.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/gen-years.sh">gen-years.sh</a></h3>
+<h3 id="gen-years.sh-1"><a href="https://github.com/ioccc-src/winner/blob/master/bin/gen-years.sh">gen-years.sh</a></h3>
 </div>
 <p>Generate the top level <a href="../years.html">years.html</a> page.</p>
 <p>Usage:</p>
@@ -1088,13 +1108,27 @@ There are other shell scripts that will make additional token
 substitutions, such as <a href="#subst.default.sh">subst.default.sh</a>,
 <a href="#subst.entry-index.sh">subst.entry-index.sh</a>,
 <a href="#subst.entry-navbar.awk">subst.entry-navbar.awk</a>,
-<a href="#subst.year-index.sh">subst.year-index.sh</a>, and
+<a href="#subst.year-index.sh">subst.year-index.sh</a>,
+<a href="#subst.year-challenge.sh">subst.year-challenge.sh</a>, and
 <a href="#subst.year-navbar.awk">subst.year-navbar.awk</a>.</p>
 <p>The “<code>%</code><code>%DATE_RANGE%</code><code>%</code>” token
 is special token has a special substitution process that is performed
 directly by the <a href="https://github.com/ioccc-src/winner/blob/master/bin/md2html.sh">md2html.sh</a> script outside
 of the above-mentioned parameter substitution process. See information
 on the “<a href="#date-range">Special DATE_RANGE token</a>” section for more details.</p>
+<div id="new-challenge-md">
+<h3 id="new-challenge-md.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/new-challenge-md.sh">new-challenge-md.sh</a></h3>
+</div>
+<p>This tool is used by the <a href="../judges.html">Judges</a> as part of the final
+steps to announce a new set of winning IOCCC entries.</p>
+<p>This tool will generate an initial <code>challenge.md</code> file that
+the <a href="../judges.html">Judges</a> will modify by adding individual
+<strong>fun challenges</strong> for each new winning entry.</p>
+<p>Usage:</p>
+<pre><code>    bin/new-challenge-md.sh -v 1 YYYY</code></pre>
+<p>Here, <code>YYYY</code> must be a new 4-digit (happy :-)) new IOCCC year.</p>
+<p>See also the
+FAQ on “<a href="../faq.html#what_fun_challenge">fun challenges</a>”.</p>
 <div id="new-dir">
 <h3 id="new-dir.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/new-dir.sh">new-dir.sh</a></h3>
 </div>
@@ -1244,6 +1278,11 @@ to be used by <a href="index.html#gen-status">gen-status.sh</a>.</p>
 </div>
 <p>Output substitutions for <code>navbar</code> on behalf of an entry.</p>
 <p>This tool is used in <a href="index.html#subst-entry-index">subst.entry-index.sh</a>.</p>
+<div id="subst-year-challenge">
+<h3 id="subst.year-challenge.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/subst.year-challenge.sh">subst.year-challenge.sh</a></h3>
+</div>
+<p>Print substitutions for a year level <code>challenge.html</code>.</p>
+<p>This tool is used in the <a href="https://github.com/ioccc-src/winner/blob/master/bin/md2html.cfg">bin/md2html.cfg</a> file.</p>
 <div id="subst-year-index">
 <h3 id="subst.year-index.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/subst.year-index.sh">subst.year-index.sh</a></h3>
 </div>

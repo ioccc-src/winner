@@ -29,10 +29,7 @@ turn out prescient by a decade.
 
 ### A fun challenge
 
-Explain the purpose of the constant **9018655** in [prog.c](%%REPO_URL%%/2025/diels-grabsch/prog.c).
-
-**UPDATE**: We are in the process of changing how we present fun challenges,
-and present potential solutions to those challenges.  Please stay tuned for an update.
+Please checkout the [fun challenge&lpar;s&rpar;](../challenge.html#diels-grabsch) for this winning entry.
 
 
 ## Author's remarks:

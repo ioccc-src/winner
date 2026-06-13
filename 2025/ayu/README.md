@@ -64,12 +64,7 @@ demonstrate the optional strategy so that you always win the game.
 
 ### A fun challenge
 
-Generate an alternative version of [prog.c](%%REPO_URL%%/2025/cesmoak/prog.c), named `prog.alt.c`,
-that allows for `N` to be defined for values larger than **11**?  I.e., that works with
-`-DN=12`, and up to some reasonable limit?
-
-**UPDATE**: We are in the process of changing how we present fun challenges,
-and present potential solutions to those challenges.  Please stay tuned for an update.
+Please checkout the [fun challenge&lpar;s&rpar;](../challenge.html#ayu) for this winning entry.
 
 
 ## Author's remarks:

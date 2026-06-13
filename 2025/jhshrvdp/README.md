@@ -39,18 +39,7 @@ will find an impressive maze of logic!
 
 ### A fun challenge
 
-Create an alternative form of [prog.c](%%REPO_URL%%/2025/jhshrvdp/prog.c) (i.e., `prog.alt.c`)
-that has a "**Amulet of Yendor**".
-
-In particular, add an "**Amulet of Yendor**" (similar to the "**,**" comma character in the
-[rogue 5.4](https://github.com/lcn2/rogue5.4) game) to floor 26. If the
-player descends below floor 26 without the amulet, place it on that lower
-floor until the player eventually acquires it. Block the player’s ascent
-(to a lower floor number) unless they possess the amulet. If the player
-returns to the top floor 0 with the amulet, display a winning message, and exit.
-
-**UPDATE**: We are in the process of changing how we present fun challenges,
-and present potential solutions to those challenges.  Please stay tuned for an update.
+Please checkout the [fun challenge&lpar;s&rpar;](../challenge.html#jhshrvdp) for this winning entry.
 
 
 ## Author's remarks:

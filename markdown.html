@@ -454,7 +454,7 @@
 <!-- BEFORE: 1st line of markdown file: markdown.md -->
 <h1 id="ioccc-29th-markdown-guidelines">IOCCC 29th Markdown Guidelines</h1>
 <h2 id="markdown-guidelines-version">Markdown Guidelines Version</h2>
-<p>These <a href="markdown.html">Markdown Guidelines</a> are version <strong>29.02 2025-11-28</strong>.</p>
+<p>These <a href="markdown.html">Markdown Guidelines</a> are version <strong>29.03 2026-06-12</strong>.</p>
 <h2 id="introduction">Introduction</h2>
 <p>The IOCCC makes extensive use of <a href="https://daringfireball.net/projects/markdown/">markdown</a>. For example, when
 submitting to the IOCCC we have people submit remarks about their
@@ -504,6 +504,16 @@ not apply to other markdown files), <strong>PLEASE</strong> start at level three
 <pre><code>    This &lt;a href=&quot;#link_target&gt;HTML link text&lt;/a&gt; works, but we prefer see below...</code></pre>
 <p><span style="color:green">✔</span> Correct.</p>
 <pre><code>    [markdown link text](#link_target)</code></pre>
+<div id="parentheses">
+
+</div>
+<h2 id="do-not-put-a-literal-or-in-markdown-link-titles">Do not put a literal “<code>(</code>” or “<code>)</code>” in markdown link titles</h2>
+<p><span style="color:red">❌</span> Incorrect.</p>
+<pre><code>    [some (text)](https://example.com/curds)
+    [ls(1)](https://example.com/ls-man-page.1)</code></pre>
+<p><span style="color:green">✔</span> Correct.</p>
+<pre><code>    [some &amp;lpar;text&amp;rpar;](https://example.com/curds)
+    [ls&amp;lpar;1&amp;rpar;](https://example.com/ls-man-page.1)</code></pre>
 <div id="del">
 
 </div>
@@ -743,16 +753,6 @@ values.</p>
 
     A short divider...
     &lt;hr style=&quot;width:10%;text-align:left;margin-left:0&quot;&gt;</code></pre>
-<div id="parentheses">
-
-</div>
-<h2 id="do-not-put-a-literal-or-in-markdown-link-titles">Do not put a literal “<code>(</code>” or “<code>)</code>” in markdown link titles</h2>
-<p><span style="color:red">❌</span> Incorrect.</p>
-<pre><code>    [some (text)](https://example.com/curds)
-    [ls(1)](https://example.com/ls-man-page.1)</code></pre>
-<p><span style="color:green">✔</span> Correct.</p>
-<pre><code>    [some &amp;lpar;text&amp;rpar;](https://example.com/curds)
-    [ls&amp;lpar;1&amp;rpar;](https://example.com/ls-man-page.1)</code></pre>
 <div id="closing-parentheses">
 
 </div>

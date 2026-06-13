@@ -62,13 +62,7 @@ What helps it to be smaller than it would have to be years ago?
 
 ### A fun challenge
 
-Create an alternative form of [prog.c](%%REPO_URL%%/2025/howe/prog.c) (i.e., `prog.alt.c`)
-that is slightly harder to play by allowing the closest invader to be killed.
-Compensate slightly for that difficulty increase by allowing the **shift TAB** key
-to cycle in the opposite direction of the **TAB** key.
-
-**UPDATE**: We are in the process of changing how we present fun challenges,
-and present potential solutions to those challenges.  Please stay tuned for an update.
+Please checkout the [fun challenge&lpar;s&rpar;](../challenge.html#howe) for this winning entry.
 
 
 ## Author's remarks:

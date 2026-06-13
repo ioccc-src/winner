@@ -73,22 +73,7 @@ See also the [Eternal Software Initiative](https://eternal-software.org).
 
 ### A fun challenge
 
-
-#### Fun challenge 0
-
-Use the [toolchain](https://github.com/adriancable/eternal) to compile your own
-software to run on this VM.
-
-**UPDATE**: We are in the process of changing how we present fun challenges,
-and present potential solutions to those challenges.  Please stay tuned for an update.
-
-
-#### Fun challenge 1
-
-Produce variant of the vmlinux bootimage that contains a C compiler for this VM.
-
-**UPDATE**: We are in the process of changing how we present fun challenges,
-and present potential solutions to those challenges.  Please stay tuned for an update.
+Please checkout the [fun challenge&lpar;s&rpar;](../challenge.html#cable) for this winning entry.
 
 
 ## Author's remarks:
