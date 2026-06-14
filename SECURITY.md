@@ -17,28 +17,30 @@ or any of the `mkiocccentry tools`:
 then please report any possible mkiocccentry vulnerability using the
 [mkiocccentry security advisory interface](https://github.com/ioccc-src/mkiocccentry/security/advisories/new).
 
+You may also **send email to the IOCCC judges** by consulting the bottom section
+of the "[How to contact the IOCCC](https://www.ioccc.org/contact.html)" web page,
+however the above mentioned advisory interface is **preferred**.
+
 
 ## Reporting an IOCCC Vulnerability
 
-The source code featured on [www.ioccc.org](https://www.ioccc.org/index.html) is published
-to create a sense of surprise and wonder.  The winning entry code
-is **NOT** intended for production use.  This source code is often
-extremely obfuscated, by design, and may be very difficult to analyze
-for code safety.
+The source code featured on
+[www.ioccc.org](https://www.ioccc.org/index.html) is published to create a
+sense of surprise and wonder.  The winning entry code is **NOT** intended
+for production use.  This source code is often extremely obfuscated,
+by design, and may be very difficult to analyze for code safety.
 
-Nevertheless, if you wish to discuss a security concern regarding this repo, then please
-[Open a draft IOCCC winner security advisory](https://github.com/ioccc-src/winner/security/advisories/new)
-for this repo.  You may also **send email to the IOCCC judges** by consulting the bottom section
-of the [How to contact the IOCCC](https://www.ioccc.org/contact.html) web page.
+Nevertheless, if you wish to discuss a security concern a winning IOCCC entry, then please use the
+[IOCCC winner security advisory interface](https://github.com/ioccc-src/winner/security/advisories/new).
 
-In summary: **ALL WINNING IOCCC ENTRY CODE IS UNSUPPORTED**.
+You may also **send email to the IOCCC judges** by consulting the bottom section
+of the "[How to contact the IOCCC](https://www.ioccc.org/contact.html)" web page,
+however the above mentioned advisory interface is **preferred**.
 
 
 ### Supported IOCCC Versions
 
-**ALL IOCCC ENTRY CODE IS UNSUPPORTED!!**
-
-We will **NOT** provide security updates to any IOCCC winning entry code!
+**ALL WINNING IOCCC ENTRY CODE VERSIONS ARE UNSUPPORTED!!**
 
 
 # Important Disclaimer
