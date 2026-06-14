@@ -97,6 +97,7 @@ Now go find some AA batteries and party like it's 1989!
 
 The following games have been tested with the emulator:
 
+```
     | Game        | Author         | Status       | License      | Homepage |
     |-------------|----------------|--------------|--------------|----------|
     | TicTacToe   | Fabien LOISON  | Included     | WTFPL        | [https://github.com/flozz/gameboy-examples](https://github.com/flozz/gameboy-examples) |
@@ -110,6 +111,7 @@ The following games have been tested with the emulator:
     | Pi          | [Nick Craig-Wood](../../authors.html#Nick_Craig_Wood) | Included     | CC BY-SA 4.0 | TBA |
     | Tetris      | Nintendo       | Not Included | Commercial   | [https://en.wikipedia.org/wiki/Tetris_&lpar;Game_Boy_video_game&rpar;](https://en.wikipedia.org/wiki/Tetris_&lpar;Game_Boy_video_game&rpar;) |
     | Dr. Mario   | Nintendo       | Not Included | Commercial   | [https://en.wikipedia.org/wiki/Dr.Mario](https://en.wikipedia.org/wiki/Dr._Mario) |
+```
 
 Games marked "Downloadable" are optionally fetched by `./try.sh`. The
 "Not Included" games you will have to source for yourself.
