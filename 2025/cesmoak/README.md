@@ -31,7 +31,7 @@ Award: Retro space award
 
     ./try_tools.sh
 
-    # NOTE: try.sh might might take 9 - 18 hours
+    # NOTE: try.sh might take 9 - 18 hours
 
     ./try.sh
 ```
@@ -40,7 +40,7 @@ Award: Retro space award
 ## Judges' remarks:
 
 Black holes are known to distort space and time.  Fortran depends on
-character spaces, and stool the test of time.  And with this marvelous
+character spaces, and stood the test of time.  And with this marvelous
 entry, you experience both, and more!
 
 Since the age of 4, back in 1964, one of the
@@ -52,7 +52,7 @@ many more of them too.
 
 Do you know your [punch card extended character
 set](https://en.wikipedia.org/wiki/Punched_card#/media/File:Blue-punch-card-front-horiz.png)?
-If might help you decode some of the intermediate output without having to compile.  ;-)
+It might help you decode some of the intermediate output without having to compile.  ;-)
 
 
 ### A fun challenge
@@ -71,7 +71,7 @@ To see what it may produce, see:
 
 * download mandelbrot.ppm as out.mandelbrot.ppm ==> [2025/cesmoak/out.mandelbrot.ppm](out.mandelbrot.ppm)
 * download march.ppm as out.march.ppm ==> [2025/cesmoak/out.march.ppm](out.march.ppm)
-* download tracer.ppm as out.tracer.pgm.tracer.ppm ==> [2025/cesmoak/out.tracer.pgm](out.tracer.pgm)
+* download tracer.pgm as out.tracer.pgm ==> [2025/cesmoak/out.tracer.pgm](out.tracer.pgm)
 
 View the downloaded ppm files with your favorite image viewer.
 
@@ -84,7 +84,7 @@ To see what it may produce, see:
 
 * view prog.deck ==> [2025/cesmoak/out.prog.deck](%%REPO_URL%%/2025/cesmoak/out.prog.deck)
 * download paper.pgm as out.paper.pgm ==> [2025/cesmoak/out.paper.pgm](out.paper.pgm)
-* download print.pgm as out.print.ppm ==> [2025/cesmoak/out.print.pgm](out.print.pgm)
+* download print.pgm as out.print.pgm ==> [2025/cesmoak/out.print.pgm](out.print.pgm)
 
 View the downloaded ppm files with your favorite image viewer.
 
@@ -107,14 +107,14 @@ To see what it may produce, see:
 * download render_60x30.pgm as out.render_60x30.pgm ==> [2025/cesmoak/out.render_60x30.pgm](out.render_60x30.pgm)
 * download print_160x80.pgm as out.print_160x80.pgm ==> [2025/cesmoak/out.print_160x80.pgm](out.print_160x80.pgm)
 * download print_480x240.pgm as out.print_480x240.pgm ==> [2025/cesmoak/out.print_480x240.pgm](out.print_480x240.pgm)
-* download print_1200x600.pgm as out_1200x600.pgm ==> [2025/cesmoak/out.print_1200x600.pgm](out.print_1200x600.pgm)
+* download print_1200x600.pgm as out.print_1200x600.pgm ==> [2025/cesmoak/out.print_1200x600.pgm](out.print_1200x600.pgm)
 
 View the downloaded pgm files with your favorite image viewer.
 
 
 ### A fun challenge
 
-Write a "textual Fortran" program to to something else interesting,
+Write a "textual Fortran" program to do something else interesting,
 such as to print a fractal curve, print the value of pi to 1000
 decimal places, or count the number of months ending in Tuesday
 for a given century.
@@ -264,6 +264,7 @@ flux program. Tools have been provided to convert to/from decks and to
 interpret (using the punch card meaning, i.e., annotate with text) decks.
 
 Supported features:
+
 - `REAL`, `COMPLEX`, and `LOGICAL` types
 - Variables and assignment statements (only the first 3 characters of variable names are significant)
 - Arithmetic operators: binary `+`,  `-`,  `*`,  `/`,  `**` (integer divide is not supported), and unary `-` (unary `+` is not supported)
@@ -290,7 +291,7 @@ Notable FORTRAN 66 features that have been faithfully replicated for your enjoym
 
 Missing from FORTRAN III.5: `READ`, `FUNCTION`, `SUBROUTINE`, arrays, `DATA` blocks, `INTEGER` type, etc.
 
-Fortran has a several unique behaviors:
+Fortran has several unique behaviors:
 
 - Unary `-` has an unusual precedence compared with most languages: it is lower precedence than `**`, and `*`, `/`
 - The spec says that `**` doesn't support left- or right-association and is not allowed to be chained without parentheses. This processor uses left-association for all operators and allows them to be chained.
