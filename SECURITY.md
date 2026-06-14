@@ -8,12 +8,23 @@
 We will **NOT** provide security updates to any IOCCC entry code!
 
 
-## Reporting a Vulnerability
+## Reporting an IOCCC Vulnerability
 
-Even though **ALL IOCCC ENTRY CODE IS UNSUPPORTED**,
-if you wish to discuss a security concern regarding this repo then
-please **send email the IOCCC judges** by consulting the bottom section
+The source code featured on [www.ioccc.org](index.html) is published
+to create a sense of surprise and wonder.  The winning entry code
+is **NOT** intended for production use.  This source code is often
+extremely obfuscated, by design, and may be very difficult to analyze
+for code safety.
+
+Nevertheless, if you wish to discuss a security concern regarding this repo, then please
+[Open a draft security advisory](https://github.com/ioccc-src/winner/security/advisories/new)
+for this repo.  You may also **send email to the IOCCC judges** by consulting the bottom section
 of the [How to contact the IOCCC](https://www.ioccc.org/contact.html) web page.
+
+In summary: **ALL WINNING IOCCC ENTRY CODE IS UNSUPPORTED**.
+
+
+## Reporting an mkiocccentry Vulnerability
 
 **NOTICE**: If you wish to discuss a possible vulnerability with
 the [mkiocccentry GitHub repo](https://github.com/ioccc-src/mkiocccentry)
