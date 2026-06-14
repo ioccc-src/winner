@@ -3136,6 +3136,9 @@ because, you see, it's not flat at all. It's a trigonal square Earth and it's
 flat. Didn't you see prog.c? No. NASA is right[^9] I'm just messing with the
 link names. Because shouldn't I?
 
+
+#### References
+
 [^1]: But if you do think I'm serious then you must either prescribe to Flat
 Earth and/or Hollow Earth or you're even more literal than I am. I really hope
 it's the latter, and yet on the other hand I kind of hope it's the former as it

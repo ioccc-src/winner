@@ -322,7 +322,7 @@ print and use more characters. FORTRAN 66 doesn't specify a behavior here,
 though other compilers often output `*****` in this case.
 
 
-##### Limits
+#### Limits
 
 - Punch card decks should support at least 4,140 cards (based on calculations), but likely more, depending on how many chads are present on the cards.
 - Numbers must be fewer than 32 characters long.

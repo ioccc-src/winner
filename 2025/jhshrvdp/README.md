@@ -81,35 +81,35 @@ after argv in the game hud as the program's first argument:
 
 ## What obfuscations are used.
 
-- [x] One letter or otherwise non-sensible variable and function names.
-- [x] Purposefully omitting curly braces, normal braces, etc.
-- [x] Operations / steps are liberally squished and nested into each other.
-- [x] Everything is a nice juicy global. Variables are (re)used for multiple purposes.
-- [x] Variable shadowing.
-- [x] Undressing all enums / constants into magic numbers. Everyone gets their Hogwarts letter.
-- [x] Constants are sometimes written in different number systems.
-- [x] Breaking up keywords across multiple lines.
-- [x] Macros. Macros inside macros.
-- [x] plain-text strings are encrypted with a [Caesar cipher](https://en.wikipedia.org/wiki/Caesar_cipher).
-- [x] Digraphs.
-- [x] Code that is just there for fluff / flavour. It does not do anything.
-- [x] Ternary statement = is ? love : life.
-- [x] Using comma operator like Uncle Roger uses MSG in egg fried rice.
-- [x] Substituting logical operators with bitwise operators.
-- [x] Labels instead of loops.
-- [x] bitwise f~cker& like it's Katy Perry's Hot N Cold.
-- [x] Reversing array access syntax order (i[a] instead of a[i])
-- [x] The code is formatted in a special way. What do you mean this is C code? It's just a lil' guy! :)
+- One letter or otherwise non-sensible variable and function names.
+- Purposefully omitting curly braces, normal braces, etc.
+- Operations / steps are liberally squished and nested into each other.
+- Everything is a nice juicy global. Variables are (re)used for multiple purposes.
+- Variable shadowing.
+- Undressing all enums / constants into magic numbers. Everyone gets their Hogwarts letter.
+- Constants are sometimes written in different number systems.
+- Breaking up keywords across multiple lines.
+- Macros. Macros inside macros.
+- plain-text strings are encrypted with a [Caesar cipher](https://en.wikipedia.org/wiki/Caesar_cipher).
+- Digraphs.
+- Code that is just there for fluff / flavour. It does not do anything.
+- Ternary statement = is ? love : life.
+- Using comma operator like Uncle Roger uses MSG in egg fried rice.
+- Substituting logical operators with bitwise operators.
+- Labels instead of loops.
+- bitwise f~cker& like it's Katy Perry's Hot N Cold.
+- Reversing array access syntax order (i[a] instead of a[i])
+- The code is formatted in a special way. What do you mean this is C code? It's just a lil' guy! :)
 
 
 ## What are the limitations of your entry in respect of portability and/or input data.
 
-- [x] You need to have ncurses installed to compile / run it.
-- [x] It runs in a terminal that needs a minimum width of 80 characters and a minimum height of 24 lines.
-- [x] Because of the ncurses dependency it is limited to Linux only.
-- [x] It does not depend on any compiler-specific tricks to work. Compiles without any warnings (tested with gcc).
-- [x] It can take one argument as input: a string describing the game state you wish to load in as 'save file'. Putting in a wrongly formatted string (incorrect start, incorrect number of arguments, incorrect values) will cause the program to reject it and continue as if you did not input anything. Manually editing it to give yourself more score or change your position is possible.
--  - [x] Example string = :69879ddb:00:0a:10:43:00:
+- You need to have ncurses installed to compile / run it.
+- It runs in a terminal that needs a minimum width of 80 characters and a minimum height of 24 lines.
+- Because of the ncurses dependency it is limited to Linux only.
+- It does not depend on any compiler-specific tricks to work. Compiles without any warnings (tested with gcc).
+- It can take one argument as input: a string describing the game state you wish to load in as 'save file'. Putting in a wrongly formatted string (incorrect start, incorrect number of arguments, incorrect values) will cause the program to reject it and continue as if you did not input anything. Manually editing it to give yourself more score or change your position is possible.
+- - Example string = :69879ddb:00:0a:10:43:00:
 
 
 <!--

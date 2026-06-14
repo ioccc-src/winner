@@ -526,36 +526,36 @@ after argv in the game hud as the program’s first argument:</p>
 Just run it without arguments. If you want to load a ‘save file’, pass it as the first argument. You can whisper sweet words to it if you want, it might like that. You need to have ncurses installed.
 </p>
 <h2 id="what-obfuscations-are-used.">What obfuscations are used.</h2>
-<ul class="task-list">
-<li><label><input type="checkbox" checked="" />One letter or otherwise non-sensible variable and function names.</label></li>
-<li><label><input type="checkbox" checked="" />Purposefully omitting curly braces, normal braces, etc.</label></li>
-<li><label><input type="checkbox" checked="" />Operations / steps are liberally squished and nested into each other.</label></li>
-<li><label><input type="checkbox" checked="" />Everything is a nice juicy global. Variables are (re)used for multiple purposes.</label></li>
-<li><label><input type="checkbox" checked="" />Variable shadowing.</label></li>
-<li><label><input type="checkbox" checked="" />Undressing all enums / constants into magic numbers. Everyone gets their Hogwarts letter.</label></li>
-<li><label><input type="checkbox" checked="" />Constants are sometimes written in different number systems.</label></li>
-<li><label><input type="checkbox" checked="" />Breaking up keywords across multiple lines.</label></li>
-<li><label><input type="checkbox" checked="" />Macros. Macros inside macros.</label></li>
-<li><label><input type="checkbox" checked="" />plain-text strings are encrypted with a <a href="https://en.wikipedia.org/wiki/Caesar_cipher">Caesar cipher</a>.</label></li>
-<li><label><input type="checkbox" checked="" />Digraphs.</label></li>
-<li><label><input type="checkbox" checked="" />Code that is just there for fluff / flavour. It does not do anything.</label></li>
-<li><label><input type="checkbox" checked="" />Ternary statement = is ? love : life.</label></li>
-<li><label><input type="checkbox" checked="" />Using comma operator like Uncle Roger uses MSG in egg fried rice.</label></li>
-<li><label><input type="checkbox" checked="" />Substituting logical operators with bitwise operators.</label></li>
-<li><label><input type="checkbox" checked="" />Labels instead of loops.</label></li>
-<li><label><input type="checkbox" checked="" />bitwise f~cker&amp; like it’s Katy Perry’s Hot N Cold.</label></li>
-<li><label><input type="checkbox" checked="" />Reversing array access syntax order (i[a] instead of a[i])</label></li>
-<li><label><input type="checkbox" checked="" />The code is formatted in a special way. What do you mean this is C code? It’s just a lil’ guy! :)</label></li>
+<ul>
+<li>One letter or otherwise non-sensible variable and function names.</li>
+<li>Purposefully omitting curly braces, normal braces, etc.</li>
+<li>Operations / steps are liberally squished and nested into each other.</li>
+<li>Everything is a nice juicy global. Variables are (re)used for multiple purposes.</li>
+<li>Variable shadowing.</li>
+<li>Undressing all enums / constants into magic numbers. Everyone gets their Hogwarts letter.</li>
+<li>Constants are sometimes written in different number systems.</li>
+<li>Breaking up keywords across multiple lines.</li>
+<li>Macros. Macros inside macros.</li>
+<li>plain-text strings are encrypted with a <a href="https://en.wikipedia.org/wiki/Caesar_cipher">Caesar cipher</a>.</li>
+<li>Digraphs.</li>
+<li>Code that is just there for fluff / flavour. It does not do anything.</li>
+<li>Ternary statement = is ? love : life.</li>
+<li>Using comma operator like Uncle Roger uses MSG in egg fried rice.</li>
+<li>Substituting logical operators with bitwise operators.</li>
+<li>Labels instead of loops.</li>
+<li>bitwise f~cker&amp; like it’s Katy Perry’s Hot N Cold.</li>
+<li>Reversing array access syntax order (i[a] instead of a[i])</li>
+<li>The code is formatted in a special way. What do you mean this is C code? It’s just a lil’ guy! :)</li>
 </ul>
 <h2 id="what-are-the-limitations-of-your-entry-in-respect-of-portability-andor-input-data.">What are the limitations of your entry in respect of portability and/or input data.</h2>
 <ul>
-<li><label><input type="checkbox" checked="" />You need to have ncurses installed to compile / run it.</label></li>
-<li><label><input type="checkbox" checked="" />It runs in a terminal that needs a minimum width of 80 characters and a minimum height of 24 lines.</label></li>
-<li><label><input type="checkbox" checked="" />Because of the ncurses dependency it is limited to Linux only.</label></li>
-<li><label><input type="checkbox" checked="" />It does not depend on any compiler-specific tricks to work. Compiles without any warnings (tested with gcc).</label></li>
-<li><label><input type="checkbox" checked="" />It can take one argument as input: a string describing the game state you wish to load in as ‘save file’. Putting in a wrongly formatted string (incorrect start, incorrect number of arguments, incorrect values) will cause the program to reject it and continue as if you did not input anything. Manually editing it to give yourself more score or change your position is possible.</label></li>
-<li><ul class="task-list">
-<li><label><input type="checkbox" checked="" />Example string = :69879ddb:00:0a:10:43:00:</label></li>
+<li>You need to have ncurses installed to compile / run it.</li>
+<li>It runs in a terminal that needs a minimum width of 80 characters and a minimum height of 24 lines.</li>
+<li>Because of the ncurses dependency it is limited to Linux only.</li>
+<li>It does not depend on any compiler-specific tricks to work. Compiles without any warnings (tested with gcc).</li>
+<li>It can take one argument as input: a string describing the game state you wish to load in as ‘save file’. Putting in a wrongly formatted string (incorrect start, incorrect number of arguments, incorrect values) will cause the program to reject it and continue as if you did not input anything. Manually editing it to give yourself more score or change your position is possible.</li>
+<li><ul>
+<li>Example string = :69879ddb:00:0a:10:43:00:</li>
 </ul></li>
 </ul>
 <!--
