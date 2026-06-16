@@ -316,15 +316,15 @@ export INC_DIR="inc"
 #
 export CHALLENGE_MD_START="$INC_DIR/challenge.md.start"
 if [[ ! -e $CHALLENGE_MD_START ]]; then
-    echo  "$0: ERROR: inc/cchallenge.md.start does not exist: $CHALLENGE_MD_START" 1>&2
+    echo  "$0: ERROR: inc/challenge.md.start does not exist: $CHALLENGE_MD_START" 1>&2
     exit 6
 fi
 if [[ ! -f $CHALLENGE_MD_START ]]; then
-    echo  "$0: ERROR: inc/cchallenge.md.start is not a regular file: $CHALLENGE_MD_START" 1>&2
+    echo  "$0: ERROR: inc/challenge.md.start is not a regular file: $CHALLENGE_MD_START" 1>&2
     exit 6
 fi
 if [[ ! -r $CHALLENGE_MD_START ]]; then
-    echo  "$0: ERROR: inc/cchallenge.md.start is not an readable file: $CHALLENGE_MD_START" 1>&2
+    echo  "$0: ERROR: inc/challenge.md.start is not an readable file: $CHALLENGE_MD_START" 1>&2
     exit 6
 fi
 
@@ -465,7 +465,7 @@ if [[ -z $NOOP ]]; then
 
     done >> "$TMP_CHALLENGE_MD"
 
-    # case: temporary challenge.md file created, move it in plave
+    # case: temporary challenge.md file created, move it in place
     #
     if [[ $V_FLAG -ge 5 ]]; then
 	echo "$0: debug[5]: about to: mv -f -- $TMP_CHALLENGE_MD $CHALLENGE_MD" 1>&2
