@@ -174,8 +174,8 @@ PROG= ${ENTRY}
 OBJ= ${PROG}.o
 TARGET= ${PROG}
 #
-ALT_OBJ=
-ALT_TARGET=
+ALT_OBJ= ${PROG}.alt.o
+ALT_TARGET= ${PROG}.alt
 
 # list any data files supplied with your submission
 #
@@ -185,7 +185,7 @@ DATA=
 
 # shell scripts
 #
-SH_TOOLS= try.sh
+SH_TOOLS= try.sh try.alt.sh
 
 #################
 # build the entry
