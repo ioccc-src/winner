@@ -7901,7 +7901,7 @@ other types of fun challenges may be posed.
 
 You may find the "**fun challenges**" for a given IOCCC year, by visiting
 a given year link on the [IOCCC Winning Entries by Year](years.html)
-page, clicking in the **About the Xth IOCCC ((YEAR))** link, and then
+page, clicking in the **About the Nth IOCCC ((YEAR))** link, and then
 clicking on the **fun challenges for IOCCC ((YEAR))** link.
 
 **NOTE**: "**Fun challenges**" are available only for year **2025 and later**.
@@ -7920,15 +7920,15 @@ Jump to: [top](#)
 Look at the given winning IOCCC entry's "**fun challenge**" text for a
 given IOCCC year by visiting
 a given year link on the [IOCCC Winning Entries by Year](years.html)
-page, clicking in the **About the Xth IOCCC ((YEAR))** link, and then
+page, clicking in the **About the Nth IOCCC ((YEAR))** link, and then
 clicking on the **fun challenges for IOCCC ((YEAR))** link.
 
 **NOTE**: "**Fun challenges**" are available only for the year **2025 and later**.
 
 If the "**fun challenge**" is listed as still **OPEN**, and
 you believe you have a solution to a "**fun challenge**",
-we recommend that you create a [GitHub repo](https://www.github.com)
-(or other public git repository), containing your solution.
+we ask that you create a [GitHub repo](https://www.github.com)
+(or a repo on another public git repository service), containing your solution.
 
 You may wish to start with the given winning IOCCC entry's compressed tarball.
 Modify files as needed, and finally discuss your solution by adding text to the top
@@ -7946,13 +7946,21 @@ for an example of both the markdown form, as well a how a few solutions are pres
 **NOTE**: If the "**fun challenge**" is listed as **CLOSED**,
 and you believe your solution is **substantially better** than any of
 the solution(s) listed, then please consider submitting your solution as well.
+Of course, even if it is not accepted, it is perfectly okay to keep it up for
+others to see, and you could certainly try and improve it more.
 
 **NOTE**: If you have a suggestion for a "**fun challenge**" that is not already
-listed,  please consider submitting it as an additional challenge.
+listed, please consider submitting it as an additional challenge.
 
 **NOTE**: And to state the obvious: the [IOCCC judge](judges.html) reserves
 the right to request modifications to your pull request, linked content,
 or to reject your pull request altogether.
+
+**NOTE**: if you are the author of the winning entry in question, we kindly ask
+you to wait until at least the following contest before you submit a solution.
+This is because as the winner you know it best and you might easily be able to
+answer the challenge(s) :-). By waiting you give others a chance at solving the
+challenge(s), which is kind of the point of the challenges in the first place.
 
 See also the
 FAQ on "[fun challenges](#what_fun_challenge)".

@@ -3,26 +3,29 @@
 A "**fun challenge**" for a winning IOCCC entry is a puzzle or task
 that an [IOCCC judge](../judges.html) suggested people consider solving.
 After you figure out what a given winning entry does, we encourage you
-to attempt the fun challenge.
+to attempt the fun challenge(s).
 
 Some fun challenges ask you to explain something about a winning
-IOCCC entry.  Other fun challenges ask you to produce a variant of the
-`prog.c` program that has a different or enhanced behaviour.  And still,
+IOCCC entry. Other fun challenges ask you to produce a variant of the
+`prog.c` program that has a different or enhanced behaviour. And still,
 other types of fun challenges may be posed.
 
 **NOTE**: Some of these challenges are easier than others.
 
 See also the
-FAQ on "[fun challenges](../faq.html#what_fun_challenge)".
+FAQ on "[fun challenges](../faq.html#what_fun_challenge)"
+and, to provide a solution, the
+FAQ on "[submitting a solution to a fun
+challenge](../faq.html#solve_fun_challenge)".
 
 
 <div id="ayu">
 ## Fun challenge for [2025/ayu](ayu/index.html)
 </div>
 
-Modify `prog.c` so that the code that allows for `N` to be
-defined for values larger than **11**?  I.e., that works with `-DN=12`,
-and up to some reasonable limit?
+Modify `prog.c` so that the code allows for `N` to be
+defined for values larger than `11` e.g. that works with `-DN=12`,
+and up to some reasonable limit.
 
 This fun challenge for **2025/ayu** is still **OPEN**.
 
@@ -52,7 +55,8 @@ FAQ on "[submit a fun challenge solution](../faq.html#solve_fun_challenge)".
 ### Fun challenge 1
 </div>
 
-Produce variant of the vmlinux bootimage that contains a C compiler for this VM.
+Produce a variant of the vmlinux bootimage that contains a C compiler for this
+VM.
 
 This fun challenge for **2025/cable** is still **OPEN**.
 
@@ -64,7 +68,7 @@ FAQ on "[submit a fun challenge solution](../faq.html#solve_fun_challenge)".
 ## Fun challenge for [2025/cesmoak](cesmoak/index.html)
 </div>
 
-Modify `prog.c` so that the code that supports the FORTRAN **READ** statement.
+Modify `prog.c` so that the code supports the FORTRAN **READ** statement.
 
 This fun challenge for **2025/cesmoak** is still **OPEN**.
 
@@ -76,7 +80,7 @@ FAQ on "[submit a fun challenge solution](../faq.html#solve_fun_challenge)".
 ## Fun challenge for [2025/diels-grabsch](diels-grabsch/index.html)
 </div>
 
-Explain the purpose of the constant **9018655** as used in `prog.c`.
+Explain the purpose of the constant `9018655` as used in `prog.c`.
 
 This fun challenge for **2025/diels-grabsch** is still **OPEN**.
 
@@ -93,7 +97,8 @@ FAQ on "[submit a fun challenge solution](../faq.html#solve_fun_challenge)".
 ### Fun challenge 0
 </div>
 
-Explain why `prog.c` prints the number of digits of the **constant* that it does?
+Explain why `prog.c` prints the number of digits of the **constant** that it
+prints.
 
 This fun challenge for **2025/dogon** is still **OPEN**.
 
@@ -115,7 +120,7 @@ This fun challenge for **2025/dogon** is still **OPEN**.
 ### Fun challenge 2
 </div>
 
-Modify `prog.c` so that the code that os that prints **IOCCC 2025** at
+Modify `prog.c` so that the code that prints **IOCCC 2025** at
 the very end, in honor of the contest year in which it won, instead of
 **IOCCC 2026**.  Of course, the digits printed beforehand should remain
 the same.
@@ -134,7 +139,7 @@ following display the program's output:
     ./prog | cat
 ```
 
-However, the following may, for some environments, will print what seems like garbage:
+However, the following may, for some environments, print what seems like garbage:
 
 ``` <!---sh-->
     ./prog
@@ -159,12 +164,12 @@ This fun challenge for **2025/dogon** is still **OPEN**.
 ## Fun challenge for [2025/endoh1](endoh1/index.html)
 </div>
 
-Modify `prog.c` so that the code that is also works with UPPER CASE LETTERS.
+Modify `prog.c` so that the code also works with UPPER CASE LETTERS.
 You would certainly have to
 [embiggen](https://en.wiktionary.org/wiki/embiggen#English)
 the tube size to better distinguish individual letters and digits.
 Such code would be a [cromulent](https://en.wiktionary.org/wiki/cromulent#English)
-addition to [2025/endoh1](%%REPO_URL%%/2025/endoh1/index.html).
+addition to [2025/endoh1](%%REPO_URL%%/2025/endoh1/index.html) code.
 
 This fun challenge for **2025/endoh1** is still **OPEN**.
 
@@ -237,9 +242,14 @@ FAQ on "[submit a fun challenge solution](../faq.html#solve_fun_challenge)".
 ### Fun challenge 2
 </div>
 
-Modify `prog.c` so that the code so that it renders smaller (or larger) sized
+Modify `prog.c` so that the code renders smaller (or larger) sized
 arrows, making sure that coordinates at the edge of the map are placed
-correctly. Add a `debug.alt3.c` with the same updates.
+correctly as well as the other coordinates. Add a `debug.alt3.c` with the same
+updates.
+
+**Hint**: to test that the arrows fit on the edge of the map, you should test
+coords such as `0 0`, `90 180` etc. i.e. coords that cause the arrows to be at
+the very edge of the map, both lat and lon.
 
 This fun challenge for **2025/ferguson** is still **OPEN**.
 
@@ -251,7 +261,7 @@ FAQ on "[submit a fun challenge solution](../faq.html#solve_fun_challenge)".
 ### Fun challenge 3
 </div>
 
-Modify `prog.c` so that the code it solves [challenge 2](#ferguson_2),
+Modify `prog.c` the code that solves [challenge 2](#ferguson_2),
 with a `-p projection` option.
 
 This fun challenge for **2025/ferguson** is still **OPEN**.
@@ -273,7 +283,7 @@ the `!=1` in the code:
         b*j,q)^j *j *2)X;
 ```
 
-Hint: the above are related to each other.
+**Hint**: the above are related to each other.
 
 This fun challenge for **2025/ferguson** is still **OPEN**.
 
@@ -285,8 +295,8 @@ FAQ on "[submit a fun challenge solution](../faq.html#solve_fun_challenge)".
 ## Fun challenge for [2025/howe](howe/index.html)
 </div>
 
-Modify `prog.c` so that the code so
-that it slightly harder to play by allowing the closest invader to be killed.
+Modify `prog.c` so that the code is
+slightly harder to play by allowing the closest invader to be killed.
 Compensate slightly for that difficulty increase by allowing the **shift TAB** key
 to cycle in the opposite direction of the **TAB** key.
 
@@ -300,9 +310,9 @@ FAQ on "[submit a fun challenge solution](../faq.html#solve_fun_challenge)".
 ## Fun challenge for [2025/jhshrvdp](jhshrvdp/index.html)
 </div>
 
-Modify `prog.c` so that the code that has a "**Amulet of Yendor**".
+Modify `prog.c` so that the code that has an "**Amulet of Yendor**".
 
-In particular, add an "**Amulet of Yendor**" (similar to the "**,**" comma character in the
+In particular, add an "**Amulet of Yendor**" (similar to the "`,`" comma character in the
 [rogue 5.4](https://github.com/lcn2/rogue5.4) game) to floor 26. If the
 player descends below floor 26 without the amulet, place it on that lower
 floor until the player eventually acquires it. Block the player’s ascent
@@ -332,7 +342,7 @@ FAQ on "[submit a fun challenge solution](../faq.html#solve_fun_challenge)".
 </div>
 
 Modify `prog.c` so that the code allows for the use of numbers in the
-interval **[1, 2^31)**, or even the interval **[1, 2^63)**.
+interval `[1, 2^31)`, or even the interval `[1, 2^63)`.
 
 This fun challenge for **2025/kurdyukov** is still **OPEN**.
 
@@ -343,6 +353,7 @@ FAQ on "[submit a fun challenge solution](../faq.html#solve_fun_challenge)".
 <div id="mattpep">
 ## Fun challenge for [2025/mattpep](mattpep/index.html)
 </div>
+
 Explain how the argument to `./prog` determines if input is encoded or decoded.
 
 This fun challenge for **2025/mattpep** is still **OPEN**.
@@ -360,7 +371,7 @@ FAQ on "[submit a fun challenge solution](../faq.html#solve_fun_challenge)".
 ### Fun challenge 0
 </div>
 
-Create a 32K ROM file that tests if **2^p-1**, is a Mersenne prime using the
+Create a 32K ROM file that tests if `2^p-1`, is a Mersenne prime using the
 [Lucas–Lehmer primality test](https://en.wikipedia.org/wiki/Lucas–Lehmer_primality_test).
 
 This fun challenge for **2025/ncw1** is still **OPEN**.
@@ -373,7 +384,7 @@ FAQ on "[submit a fun challenge solution](../faq.html#solve_fun_challenge)".
 ### Fun challenge 1
 </div>
 
-Create 32K ROM file that tests if **h\*2^n-1** is prime, using the
+Create a 32K ROM file that tests if `h*2^n-1` is prime, using the
 [Lucas–Lehmer–Riesel primality test](https://en.wikipedia.org/wiki/Lucas–Lehmer–Riesel_test).
 You may find the pages related to the **Riesel Test** in the
 [A Grand Coding Challenge](http://www.isthe.com/chongo/tech/math/prime/prime-tutorial.pdf)
@@ -389,8 +400,8 @@ FAQ on "[submit a fun challenge solution](../faq.html#solve_fun_challenge)".
 ## Fun challenge for [2025/ncw2](ncw2/index.html)
 </div>
 
-Modify `prog.c` so that the code with a modified `p[]` array that prints
-the string **IOCCC 2025** followed by a newline.
+Modify `prog.c` so that the code with a modified `p[]` array prints
+the string `IOCCC 2025` followed by a newline.
 
 This fun challenge for **2025/ncw2** is still **OPEN**.
 
@@ -402,7 +413,7 @@ FAQ on "[submit a fun challenge solution](../faq.html#solve_fun_challenge)".
 ## Fun challenge for [2025/ncw3](ncw3/index.html)
 </div>
 
-Modify `prog.c` so that the code that draws a Julia set.
+Modify `prog.c` so that the code draws a Julia set.
 
 This fun challenge for **2025/ncw3** is still **OPEN**.
 
@@ -414,8 +425,8 @@ FAQ on "[submit a fun challenge solution](../faq.html#solve_fun_challenge)".
 ## Fun challenge for [2025/tompng](tompng/index.html)
 </div>
 
-Explain the purpose of the constant **.5**, used several times in `prog.c`.
-How does changing **.5** to a different value affect the generated sound?
+Explain the purpose of the constant `.5`, used several times in `prog.c`.
+How does changing `.5` to a different value affect the generated sound?
 
 This fun challenge for **2025/tompng** is still **OPEN**.
 
@@ -432,11 +443,11 @@ FAQ on "[submit a fun challenge solution](../faq.html#solve_fun_challenge)".
 ### Fun challenge 0
 </div>
 
-Write alternate version of `try.sh` that detects when the quasi-quine,
+Write an alternate version of `try.sh` that detects when the quasi-quine,
 left to its own iterative devices, starts to repeat.
 
 If you do not attempt to move the paddle, and let the game run on its
-own, the game will "evolve" to other "modes", and eventually cycle back
+own, the game should "evolve" to other "modes", and eventually cycle back
 to the original style of game play.
 
 This fun challenge for **2025/uellenberg** is still **OPEN**.
@@ -451,6 +462,7 @@ FAQ on "[submit a fun challenge solution](../faq.html#solve_fun_challenge)".
 
 Implement an additional game mode using only the original game objects
 (the ball and two paddles).
+
 For example, you could implement a "flappy bird" game using the ball
 as the bird and the paddles as the pipes.
 
@@ -481,8 +493,8 @@ FAQ on "[submit a fun challenge solution](../faq.html#solve_fun_challenge)".
 ## Fun challenge for [2025/yang1](yang1/index.html)
 </div>
 
-Modify `prog.c` so that the code so that is allows for integers, somewhat
-larger than **9999**, to be tested for primality.
+Modify `prog.c` so that the code allows for integers, somewhat
+larger than `9999`, to be tested for primality.
 
 This fun challenge for **2025/yang1** is still **OPEN**.
 
@@ -508,8 +520,9 @@ FAQ on "[submit a fun challenge solution](../faq.html#solve_fun_challenge)".
 ## Fun challenge for [2025/yang3](yang3/index.html)
 </div>
 
-Explain the purpose of the constant **114** `prog.c`.
-Are there any alternative values that could replace **114** without affecting the program’s functionality?
+Explain the purpose of the constant `114` in `prog.c`.
+Are there any alternative values that could replace `114` without affecting the
+program’s functionality?
 
 This fun challenge for **2025/yang3** is still **OPEN**.
 
