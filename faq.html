@@ -974,7 +974,7 @@ FAQ on “<a href="#makefile">submission Makefiles</a>”.</p>
 <p>Files in your submission tarball <strong>MUST</strong> be
 specific permissions. In particular: directories <strong>MUST</strong> be <code>drwxr-xr-x</code> (i.e.
 <code>0755</code>), the optional files, files ending with <code>.sh</code>, if provided, <strong>MUST</strong> be
-<code>-r-xr-xr-x</code> (i.e. <code>0555</code>) and all other files <strong>MUST</strong> be <code>-r--r--r--</code> (i.e.
+<code>-r-xr-xr-x</code> (i.e., mode <code>0555</code>) and all other files <strong>MUST</strong> be <code>-r--r--r--</code> (i.e.
 <code>0444</code>).</p>
 <p>If you need a file to be executable, say a script, then make sure you do so in
 the appropriate place in your Makefile. See the
@@ -1316,8 +1316,8 @@ FAQ on “<a href="#chksubmit">chksubmit(1)</a>”
 for more details on this tool.</p>
 <p>Files and directories in your submission tarball <strong>MUST</strong> be specific
 permissions and <code>mkiocccentry(1)</code> does this for you. In particular: directories
-<strong>MUST</strong> be <code>drwxr-xr-x</code> (i.e. <code>0755</code>); any file ending with <code>.sh</code> <strong>MUST</strong> be
-<code>-r-xr-xr-x</code> (i.e. <code>0555</code>); and all other files <strong>MUST</strong> be <code>-r--r--r--</code> (i.e.
+<strong>MUST</strong> be <code>drwxr-xr-x</code> (i.e., mode <code>0755</code>); any file ending with <code>.sh</code> <strong>MUST</strong> be
+<code>-r-xr-xr-x</code> (i.e., mode <code>0555</code>); and all other files <strong>MUST</strong> be <code>-r--r--r--</code> (i.e.
 <code>0444</code>). If any file or directory does not have the correct permissions, your
 submission <strong>WILL</strong> be rejected for violating
 <a href="next/rules.html#rule17">Rule 17 - Use mkiocccentry</a>!</p>
@@ -2140,7 +2140,7 @@ or
 command:</p>
 <pre><code>    chksubmit 00000000-0000-4000-0000-000000000000-3</code></pre>
 <p>If there is a <a href="https://www.json.org/json-en.html">JSON</a> issue detected by the
-<code>jparse(3)</code> API (i.e. it is not valid JSON) it is an error and <code>chksubmit(1)</code>
+<code>jparse(3)</code> API (i.e., it is not valid JSON) it is an error and <code>chksubmit(1)</code>
 will report this, exiting with a non-zero exit code. If the parsing is OK (i.e.
 valid JSON) but there is an issue in one or both of the
 <a href="https://www.json.org/json-en.html">JSON</a> files in <strong>the context of the IOCCC</strong>,
@@ -2198,7 +2198,7 @@ in the <a href="https://github.com/ioccc-src/mkiocccentry/">mkiocccentry repo</a
 this is not the case your submission <strong>WILL BE</strong> rejected!</p></li>
 <li><p><code>IOCCC_contest</code> (double quoted string)</p>
 <ul>
-<li>Which contest number this is (e.g. 1 for 1984, 2 for 1985, 27 for 2020).</li>
+<li>Which contest number this is (e.g.: 1 for 1984, 2 for 1985, 27 for 2020).</li>
 </ul>
 <p><strong>IMPORTANT:</strong> this <strong>MUST</strong> match <strong>THIS</strong> IOCCC’s contest value, defined as
 <code>IOCCC_CONTEST</code> in
@@ -2499,7 +2499,7 @@ in the <a href="https://github.com/ioccc-src/mkiocccentry/">mkiocccentry repo</a
 this is not the case your submission <strong>WILL BE</strong> rejected!</p></li>
 <li><p><code>IOCCC_contest</code> (double quoted string)</p>
 <ul>
-<li>Which contest number this is (e.g. 1 for 1984, 2 for 1985, 27 for 2020).</li>
+<li>Which contest number this is (e.g.: 1 for 1984, 2 for 1985, 27 for 2020).</li>
 </ul>
 <p><strong>IMPORTANT:</strong> this <strong>MUST</strong> match <strong>THIS</strong> IOCCC’s contest value, defined as
 <code>IOCCC_CONTEST</code> in
@@ -3824,7 +3824,7 @@ not compiled)</li>
 <li><code>everything</code>: equivalent to <code>make all alt</code>.</li>
 </ul>
 <p>Are there any other rules? You tell us!</p>
-<p>The top level and the year (e.g. <code>1984/Makefile</code>, <code>1985/Makefile</code> etc.)
+<p>The top level and the year (e.g., <code>1984/Makefile</code>, <code>1985/Makefile</code>, <code>1986/Makefile</code>, etc.)
 <code>Makefile</code>s recurse into the subdirectories for each entry so you can compile
 individual entries, entries of a given year or all entries, based on what you
 wish to do.</p>
@@ -4422,7 +4422,7 @@ for more information installing <strong>ncurses</strong>.</p>
 </div>
 </div>
 <p>Some entries that won the IOCCC, particularly entries from long ago, might not
-compile on more modern systems because the C language has evolved (i.e. the
+compile on more modern systems because the C language has evolved (i.e., the
 modern C compilers are much more strict in what they accept as a valid program),
 or the entry depended on operation system and library features that where common
 back then but are different/missing today.</p>
@@ -4706,11 +4706,11 @@ a PDP-11 or VAX-11 you would be able to run the original version). For more help
 on compiling entries, see also the
 FAQ on “<a href="#make_rules">IOCCC Makefile rules</a>”.</p>
 <p>If you want to view the <code>index.html</code> file you can point your browser to the
-<code>index.html</code> file of the winning entry (e.g. <code>1984/mullender/index.html</code>) with the
+<code>index.html</code> file of the winning entry (e.g., <code>1984/mullender/index.html</code>) with the
 caveats noted above.</p>
 <h4 id="year-based-tarballs">Year based tarballs</h4>
 <p>The year based tarballs, which are under each year’s directory and are named in
-the form of <code>YYYY/YYYY.tar.bz2</code> (e.g. <a href="1984/1984.tar.bz2">1984/1984.tar.bz2</a>),
+the form of <code>YYYY/YYYY.tar.bz2</code> (e.g., <a href="1984/1984.tar.bz2">1984/1984.tar.bz2</a>),
 include all the winning entries of a given year.
 Each year’s tarball can be found under that year in the <a href="years.html">years.html</a>
 page and in the year’s <code>index.html</code> as well (e.g.
@@ -4735,10 +4735,10 @@ described above), the following files:</p>
 <li><code>iocccsize-test.sh</code> - test suite for the <code>iocccsize</code> tool</li>
 </ul>
 <p>.. and perhaps some others we have neglected to mention as well.</p>
-<p>If you extract a year’s tarball you can <code>cd YYYY</code> (e.g. <code>cd 1984</code>) and then run
+<p>If you extract a year’s tarball you can <code>cd YYYY</code> (e.g., <code>cd 1984</code>) and then run
 <code>make everything</code> to compile the entries and alternate code of every entry, as
 if you switched to each entry’s directory and ran <code>make everything</code> in each one.</p>
-<p>If you download the 1984 tarball, i.e. <code>1984/1984.tar.bz2</code>, then you might
+<p>If you download the 1984 tarball (i.e., <code>1984/1984.tar.bz2</code>), then you might
 extract it and then switch to the directory and compile everything of each
 entry:</p>
 <pre><code>    cd 1984
@@ -5940,11 +5940,11 @@ menu</a> which is a plaintext menu. You of course can use this if
 you like, even if you do not have JavaScript enabled, by pointing your browser to
 <a href="nojs-menu.html">https://www.ioccc.org/nojs-menu.html</a>.</p>
 <div id="tablet_menu">
-<h5 id="menus-on-tablet-devices-e.g.-ipads">Menus on tablet devices (e.g. iPads)</h5>
+<h5 id="menus-on-tablet-devices">Menus on tablet devices</h5>
 </div>
-<p>With tablets, it likely depends on the orientation you have your device in. If it’s
-in portrait mode you likely will see the <a href="#mobile_phone_menu">menu that one will get on a mobile
-phone</a>.</p>
+<p>With tablets (e.g., iPad, Galaxy Tab, Pixel Tablet, etc), it likely
+depends on the orientation you have your device in. If it’s in portrait
+mode you likely will see the <a href="#mobile_phone_menu">menu that one will get on a mobile phone</a>.</p>
 <p>If, on the other hand, you are using landscape mode, say on an iPad Pro 11 inch
 4th generation, then you will likely see the <a href="#desktop_menu">menu as you would on a desktop or
 laptop</a>.</p>

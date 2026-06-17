@@ -104,7 +104,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="2.0.0 2026-06-12"
+export VERSION="2.0.1 2026-06-16"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -447,15 +447,15 @@ if [[ -z $NOOP ]]; then
 	echo "## Fun challenge for [$YYYY_DIR]($ENTRY_DIR/index.html)"
 	echo '</div>'
 
-	# output placeholder for Judges to modify
-	#
-	echo
-	echo 'XXX - The IOCCC Judges will write stuff here - XXX'
-
 	# report that the fun challenge is open
 	#
 	echo
 	echo "This fun challenge for **$YYYY_DIR** is still **OPEN**."
+
+	# output placeholder for Judges to modify
+	#
+	echo
+	echo 'XXX - The IOCCC Judges will write stuff here - XXX'
 
 	# Add FAQ info
 	#

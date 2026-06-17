@@ -634,7 +634,7 @@ Jump to: [top](#)
 Files in your submission tarball **MUST** be
 specific permissions. In particular: directories **MUST** be `drwxr-xr-x` (i.e.
 `0755`), the optional files, files ending with `.sh`, if provided, **MUST** be
-`-r-xr-xr-x` (i.e. `0555`) and all other files **MUST** be `-r--r--r--` (i.e.
+`-r-xr-xr-x` (i.e., mode `0555`) and all other files **MUST** be `-r--r--r--` (i.e.
 `0444`).
 
 If you need a file to be executable, say a script, then make sure you do so in
@@ -1095,8 +1095,8 @@ for more details on this tool.
 
 Files and directories in your submission tarball **MUST** be specific
 permissions and `mkiocccentry(1)` does this for you. In particular: directories
-**MUST** be `drwxr-xr-x` (i.e. `0755`); any file ending with `.sh` **MUST** be
-`-r-xr-xr-x` (i.e. `0555`); and all other files **MUST** be `-r--r--r--` (i.e.
+**MUST** be `drwxr-xr-x` (i.e., mode `0755`); any file ending with `.sh` **MUST** be
+`-r-xr-xr-x` (i.e., mode `0555`); and all other files **MUST** be `-r--r--r--` (i.e.
 `0444`).  If any file or directory does not have the correct permissions, your
 submission **WILL** be rejected for violating
 [Rule 17 - Use mkiocccentry](next/rules.html#rule17)!
@@ -2242,7 +2242,7 @@ command:
 ```
 
 If there is a [JSON](https://www.json.org/json-en.html) issue detected by the
-`jparse(3)` API (i.e. it is not valid JSON) it is an error and `chksubmit(1)`
+`jparse(3)` API (i.e., it is not valid JSON) it is an error and `chksubmit(1)`
 will report this, exiting with a non-zero exit code. If the parsing is OK (i.e.
 valid JSON) but there is an issue in one or both of the
 [JSON](https://www.json.org/json-en.html) files in **the context of the IOCCC**,
@@ -2305,7 +2305,7 @@ In order of the file's contents we describe each required field, below:
     this is not the case your submission **WILL BE** rejected!
 
 - `IOCCC_contest` (double quoted string)
-    * Which contest number this is (e.g. 1 for 1984, 2 for 1985, 27 for 2020).
+    * Which contest number this is (e.g.: 1 for 1984, 2 for 1985, 27 for 2020).
 
     **IMPORTANT:** this **MUST** match **THIS** IOCCC's contest value, defined as
     `IOCCC_CONTEST` in
@@ -2603,7 +2603,7 @@ In order of the file's contents we describe each required field, below:
     this is not the case your submission **WILL BE** rejected!
 
 - `IOCCC_contest` (double quoted string)
-    * Which contest number this is (e.g. 1 for 1984, 2 for 1985, 27 for 2020).
+    * Which contest number this is (e.g.: 1 for 1984, 2 for 1985, 27 for 2020).
 
     **IMPORTANT:** this **MUST** match **THIS** IOCCC's contest value, defined as
     `IOCCC_CONTEST` in
@@ -4335,7 +4335,7 @@ clobber` depends on `clean` so running `make clobber` will invoke `make clean`.
 
 Are there any other rules? You tell us!
 
-The top level and the year (e.g. `1984/Makefile`, `1985/Makefile` etc.)
+The top level and the year (e.g., `1984/Makefile`, `1985/Makefile`, `1986/Makefile`, etc.)
 `Makefile`s recurse into the subdirectories for each entry so you can compile
 individual entries, entries of a given year or all entries, based on what you
 wish to do.
@@ -5440,7 +5440,7 @@ Jump to: [top](#)
 </div>
 
 Some entries that won the IOCCC, particularly entries from long ago, might not
-compile on more modern systems because the C language has evolved (i.e. the
+compile on more modern systems because the C language has evolved (i.e., the
 modern C compilers are much more strict in what they accept as a valid program),
 or the entry depended on operation system and library features that where common
 back then but are different/missing today.
@@ -5824,14 +5824,14 @@ on compiling entries, see also the
 FAQ on "[IOCCC Makefile rules](#make_rules)".
 
 If you want to view the `index.html` file you can point your browser to the
-`index.html` file of the winning entry (e.g. `1984/mullender/index.html`) with the
+`index.html` file of the winning entry (e.g., `1984/mullender/index.html`) with the
 caveats noted above.
 
 
 #### Year based tarballs
 
 The year based tarballs, which are under each year's directory and are named in
-the form of `YYYY/YYYY.tar.bz2` (e.g. [1984/1984.tar.bz2](1984/1984.tar.bz2)),
+the form of `YYYY/YYYY.tar.bz2` (e.g., [1984/1984.tar.bz2](1984/1984.tar.bz2)),
 include all the winning entries of a given year.
 Each year's tarball can be found under that year in the [years.html](years.html)
 page and in the year's `index.html` as well (e.g.
@@ -5859,11 +5859,11 @@ Additionally, some will have extra files like:
 
 .. and perhaps some others we have neglected to mention as well.
 
-If you extract a year's tarball you can `cd YYYY` (e.g. `cd 1984`) and then run
+If you extract a year's tarball you can `cd YYYY` (e.g., `cd 1984`) and then run
 `make everything` to compile the entries and alternate code of every entry, as
 if you switched to each entry's directory and ran `make everything` in each one.
 
-If you download the 1984 tarball, i.e. `1984/1984.tar.bz2`, then you might
+If you download the 1984 tarball (i.e., `1984/1984.tar.bz2`), then you might
 extract it and then switch to the directory and compile everything of each
 entry:
 
@@ -7569,12 +7569,12 @@ you like, even if you do not have JavaScript enabled, by pointing your browser t
 
 
 <div id="tablet_menu">
-##### Menus on tablet devices (e.g. iPads)
+##### Menus on tablet devices
 </div>
 
-With tablets, it likely depends on the orientation you have your device in. If it's
-in portrait mode you likely will see the [menu that one will get on a mobile
-phone](#mobile_phone_menu).
+With tablets (e.g., iPad, Galaxy Tab, Pixel Tablet, etc), it likely
+depends on the orientation you have your device in. If it's in portrait
+mode you likely will see the [menu that one will get on a mobile phone](#mobile_phone_menu).
 
 If, on the other hand, you are using landscape mode, say on an iPad Pro 11 inch
 4th generation, then you will likely see the [menu as you would on a desktop or
