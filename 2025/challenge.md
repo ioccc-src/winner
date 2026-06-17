@@ -193,17 +193,17 @@ In [2025/dogon/prog.c](%%REPO_URL%%/2025/dogon/prog.c) we find:
 The pointer to the integer `e` is uninitialized in the expressions that
 form both arguments to the `calloc(3)` library call.
 
-In some some environments, the clang compiler might compile that C code as:
+In some environments, the clang compiler might compile that C code as:
 
 ``` <!---c-->
     int *e; e=(int*)calloc(2, 1);
 
 ```
 
-In some some environments, the gcc compiler might compile that C code as:
+In some environments, the gcc compiler might compile that C code as:
 
 ``` <!---c-->
-    int *e; e=(int*)calloc(262144, 1);
+    int *e; e=(int*)calloc(262144, 2);
 
 ```
 

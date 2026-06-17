@@ -565,11 +565,11 @@ following display the program’s output:</p>
 </code></pre>
 <p>The pointer to the integer <code>e</code> is uninitialized in the expressions that
 form both arguments to the <code>calloc(3)</code> library call.</p>
-<p>In some some environments, the clang compiler might compile that C code as:</p>
+<p>In some environments, the clang compiler might compile that C code as:</p>
 <pre><code>    int *e; e=(int*)calloc(2, 1);
 </code></pre>
-<p>In some some environments, the gcc compiler might compile that C code as:</p>
-<pre><code>    int *e; e=(int*)calloc(262144, 1);
+<p>In some environments, the gcc compiler might compile that C code as:</p>
+<pre><code>    int *e; e=(int*)calloc(262144, 2);
 </code></pre>
 <p>If you move the declaration of the pointer to the integer <code>int*e;</code> out of
 <code>main()</code> and into global variable space where it will be initialized to 0,
