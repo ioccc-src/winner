@@ -7906,6 +7906,16 @@ clicking on the **fun challenges for IOCCC ((YEAR))** link.
 
 **NOTE**: "**Fun challenges**" are available only for year **2025 and later**.
 
+**SUGGESTION**: For an example of a "**fun challenges**" set for a given IOCCC year, see:
+
+- [Fun challenges for IOCCC year 2025](2025/challenge.html)
+
+**SUGGESTION**: For a few examples of a few **good solutions to fun challenges**", see:
+
+- [Fun challenge solution for 2025/ayu](2025/challenge.html#ayu_solution)
+- [Fun challenge solution 2 for 2025/dogon](2025/challenge.html#dogon_2_solution)
+- [Fun challenge solution for 2025/ncw2](2025/challenge.html#ncw2_solution)
+
 See also the
 FAQ on "[submit a fun challenge solution](#solve_fun_challenge)".
 
@@ -7939,6 +7949,12 @@ Then consider submitting your solution by submitting a
 containing a link in [markdown form link form](markdown.html#links) to your solution.
 Feel free to credit/identify yourself when you modify the `challeng.md` file
 in your [GitHub pull request](#pull_request).
+
+**SUGGESTION**: For a few examples of a few **good solutions to fun challenges**", see:
+
+- [Fun challenge solution for 2025/ayu](2025/challenge.html#ayu_solution)
+- [Fun challenge solution 2 for 2025/dogon](2025/challenge.html#dogon_2_solution)
+- [Fun challenge solution for 2025/ncw2](2025/challenge.html#ncw2_solution)
 
 **SUGGESTION**: Look at the [2025/challenge.md file](%%REPO_URL%%/2025/challenge.md)
 for an example of both the markdown form, as well a how a few solutions are presented.
