@@ -34,7 +34,7 @@ FAQ on "[submit a fun challenge solution](../faq.html#solve_fun_challenge)".
 
 
 <div id="ayu_solution">
-#### Fun challenge solution for [2025/ayu](ayu/index.html)
+### Fun challenge solution for [2025/ayu](ayu/index.html)
 </div>
 
 [Master-Hash](https://github.com/Master-Hash) on **2026 Jun 09** presented this
@@ -484,7 +484,7 @@ FAQ on "[submit a fun challenge solution](../faq.html#solve_fun_challenge)".
 
 
 <div id="ncw2_solution">
-#### Fun challenge solution for [2025/ncw2](ncw2/index.html)
+### Fun challenge solution for [2025/ncw2](ncw2/index.html)
 </div>
 
 [Antoine Mathys](https://github.com/antoine-mathys) on **2026 Jun 09** presented this
