@@ -2,11 +2,13 @@
 # Suggestions for visitors
 </div>
 
-Explore, under the **Entries** in the _topbar_ menu:
+* **[Most recent winning entries](%%LAST_YEAR%%/index.html)**
 
-* **[Winning Entries](years.html)**
+* **[All winning entries](years.html)**
+
 * **[People who have won](authors.html)**
-* Other parts of the IOCCC menu
+
+* Explore the other parts of the IOCCC menu in the top right corner
 
 <div id="menu-help"></div>
 

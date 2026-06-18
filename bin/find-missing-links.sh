@@ -104,7 +104,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.2.1 2026-06-12"
+export VERSION="1.2.2 2026-06-17"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -260,6 +260,16 @@ if [[ $V_FLAG -ge 1 ]]; then
 fi
 
 
+# note the current and next year
+#
+THIS_YEAR=$(date '+%Y')
+export THIS_YEAR
+((NEXT_YEAR = THIS_YEAR + 1))
+export NEXT_YEAR
+((LAST_YEAR = THIS_YEAR - 1))
+export LAST_YEAR
+
+
 # print running info if verbose
 #
 # If -v 3 or higher, print exported variables in order that they were exported.
@@ -270,6 +280,9 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: V_FLAG=$V_FLAG" 1>&2
     echo "$0: debug[3]: GIT_TOOL=$GIT_TOOL" 1>&2
     echo "$0: debug[3]: TOPDIR=$TOPDIR" 1>&2
+    echo "$0: debug[3]: THIS_YEAR=$THIS_YEAR" 1>&2
+    echo "$0: debug[3]: NEXT_YEAR=$NEXT_YEAR" 1>&2
+    echo "$0: debug[3]: LAST_YEAR=$LAST_YEAR" 1>&2
 fi
 
 
@@ -499,6 +512,9 @@ find . -name '*.md' ! -name markdown.md ! -path './tmp/*' ! -path './NOTES/*' -p
 	    -e "s;^([^/]);$TOPDIR/$MD_DIR/\1;" \
 	    -e '/%%TOKEN%%/d' \
 	    -e "s;%%YEAR%%;$MD_DIR;" \
+	    -e "s;%%LAST_YEAR%%;$LAST_YEAR;g" \
+	    -e "s;%%THIS_YEAR%%;$THIS_YEAR;g" \
+	    -e "s;%%NEXT_YEAR%%;$NEXT_YEAR;g" \
 	    |
 
 	 # write to stderr, missing file messages

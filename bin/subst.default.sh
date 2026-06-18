@@ -95,7 +95,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.4.0 2025-04-16"
+export VERSION="1.5.0 2025-04-17"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -236,6 +236,16 @@ VALIDATOR_ENCODED_URL=$(echo "$URL" | sed -e 's;/;%2F;g' -e 's;:;%3A;')
 export VALIDATOR_ENCODED_URL
 
 
+# note the current and next year
+#
+THIS_YEAR=$(date '+%Y')
+export THIS_YEAR
+((NEXT_YEAR = THIS_YEAR + 1))
+export NEXT_YEAR
+((LAST_YEAR = THIS_YEAR - 1))
+export LAST_YEAR
+
+
 # parameter debugging
 #
 if [[ $V_FLAG -ge 3 ]]; then
@@ -252,6 +262,9 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: NOOP=$NOOP" 1>&2
     echo "$0: debug[3]: DO_NOT_PROCESS=$DO_NOT_PROCESS" 1>&2
     echo "$0: debug[3]: VALIDATOR_ENCODED_URL=$VALIDATOR_ENCODED_URL" 1>&2
+    echo "$0: debug[3]: THIS_YEAR=$THIS_YEAR" 1>&2
+    echo "$0: debug[3]: NEXT_YEAR=$NEXT_YEAR" 1>&2
+    echo "$0: debug[3]: LAST_YEAR=$LAST_YEAR" 1>&2
 fi
 
 
@@ -300,6 +313,16 @@ export VALIDATOR_ENCODED_URL
 #
 echo "-s"
 echo "VALIDATOR_ENCODED_URL=$VALIDATOR_ENCODED_URL"
+
+
+# output last tear, this year, and next year
+#
+echo "-s"
+echo "LAST_YEAR=$LAST_YEAR"
+echo "-s"
+echo "THIS_YEAR=$THIS_YEAR"
+echo "-s"
+echo "NEXT_YEAR=$NEXT_YEAR"
 
 
 # All Done!!! All Done!!! -- Jessica Noll, Age 2

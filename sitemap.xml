@@ -17938,7 +17938,7 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/find-missing-links.sh</loc>
-    <lastmod>2026-06-12T16:26:07+00:00</lastmod>
+    <lastmod>2026-06-18T02:13:52+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/format-headers.sh</loc>
@@ -17978,7 +17978,7 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/gen-years.sh</loc>
-    <lastmod>2026-05-07T19:47:01+00:00</lastmod>
+    <lastmod>2026-06-18T01:43:16+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/html.sed</loc>
@@ -18082,7 +18082,7 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/subst.default.sh</loc>
-    <lastmod>2025-08-23T23:37:18+00:00</lastmod>
+    <lastmod>2026-06-18T01:49:55+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/bin/subst.entry-index.sh</loc>
@@ -18170,11 +18170,11 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/index.html</loc>
-    <lastmod>2026-06-09T20:32:00+00:00</lastmod>
+    <lastmod>2026-06-18T01:59:19+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/index.md</loc>
-    <lastmod>2026-06-09T20:36:22+00:00</lastmod>
+    <lastmod>2026-06-18T01:59:10+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/judges.html</loc>
@@ -18342,7 +18342,7 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/status.html</loc>
-    <lastmod>2026-06-17T07:31:25+00:00</lastmod>
+    <lastmod>2026-06-18T02:19:25+00:00</lastmod>
 </url>
 <url>
     <loc>https://www.ioccc.org/status.json</loc>
@@ -18366,6 +18366,6 @@
 </url>
 <url>
     <loc>https://www.ioccc.org/years.html</loc>
-    <lastmod>2026-06-03T16:09:33+00:00</lastmod>
+    <lastmod>2026-06-18T01:51:43+00:00</lastmod>
 </url>
 </urlset>
