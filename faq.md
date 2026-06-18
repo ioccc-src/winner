@@ -1,6 +1,6 @@
 # IOCCC FAQ Table of Contents
 
-This is FAQ version **29.06 2026-06-12**.
+This is FAQ version **29.07 2026-06-17**.
 
 
 ## 0. [Entering the IOCCC: the bare minimum you need to know](#enter_questions)
@@ -7988,6 +7988,9 @@ for more information about pull requests.
 See also the
 FAQ on "[how to use markdown](#markdown)"
 as well as the [IOCCC markdown guidelines](markdown.html).
+
+
+Jump to: [top](#)
 
 
 <hr style="width:50%;text-align:left;margin-left:0">
