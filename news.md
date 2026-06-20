@@ -55,6 +55,26 @@
 </blockquote>
 
 
+<div id="20260620">
+## 2026-06-20
+</div>
+
+The winning entries for **IOCCC29** have been updated.
+
+The way that [fun challenges](2025/challenge.html) are presented has been redesigned.
+Starting with **2025**, the **fun challenges** will appear on a single
+[fun challenges web page](2025/challenge.html) for the given contest.
+
+See also the FAQ on “[fun challenges](faq.html#what_fun_challenge)".
+
+There are a number of **fun challenges** for **IOCCC29** that are still **OPEN**.
+
+Are you able to solve any of them?  If the first has your solution accepted as valid,
+and **receive the credit**!
+
+See also the FAQ on “[submit a fun challenge solution](faq.html#solve_fun_challenge)”.
+
+
 <div id="20260606">
 ## 2026-06-06
 </div>
