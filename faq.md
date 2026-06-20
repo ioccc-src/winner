@@ -1,6 +1,6 @@
 # IOCCC FAQ Table of Contents
 
-This is FAQ version **29.07 2026-06-17**.
+This is FAQ version **29.08 2026-06-20**.
 
 
 ## 0. [Entering the IOCCC: the bare minimum you need to know](#enter_questions)
@@ -7872,28 +7872,20 @@ files in the same directories where the changes are made: change the
 final year in the file to the current year.  When the website is rebuilt,
 the proper copyright date range will be picked up.
 
-
-<div id="history">
-<div id="ioccc_history">
-## Section 11: History of the IOCCC
-</div>
-</div>
-
-
 Jump to: [top](#)
-
 
 <div id="what_fun_challenge">
 ### Q 10.13: What is a fun challenge?
 </div>
 
-A "**fun challenge**" for a winning IOCCC entry is a puzzle or task
-that an [IOCCC judge](judges.html) suggested people consider solving.
+A "**fun challenge**" for a winning IOCCC entry is a puzzle or task that an
+[IOCCC judge](judges.html) suggested people consider solving on winning entries.
+
 After you figure out what a given winning entry does, we encourage you
-to attempt the fun challenge.
+to attempt the fun challenge(s).
 
 Some "**fun challenges**" ask you to explain something about a winning
-IOCCC entry.  Other fun challenges ask you to produce a variant of the
+IOCCC entry. Other fun challenges ask you to produce a variant of the
 `prog.c` program that has a different or enhanced behaviour.  And still,
 other types of fun challenges may be posed.
 
@@ -7901,10 +7893,11 @@ other types of fun challenges may be posed.
 
 You may find the "**fun challenges**" for a given IOCCC year, by visiting
 a given year link on the [IOCCC Winning Entries by Year](years.html)
-page, clicking in the **About the Nth IOCCC ((YEAR))** link, and then
-clicking on the **fun challenges for IOCCC ((YEAR))** link.
+page, clicking on the **About the Nth IOCCC ((YYYY))** link, and then
+clicking on the **fun challenges for IOCCC ((YYYY))** link.
 
-**NOTE**: "**Fun challenges**" are available only for year **2025 and later**.
+**NOTE**: "**Fun challenges**" are available only for year **2025 and later**
+(IOCCC29 and onward).
 
 **SUGGESTION**: For an example of a "**fun challenges**" set for a given IOCCC year, see:
 
@@ -7930,10 +7923,11 @@ Jump to: [top](#)
 Look at the given winning IOCCC entry's "**fun challenge**" text for a
 given IOCCC year by visiting
 a given year link on the [IOCCC Winning Entries by Year](years.html)
-page, clicking in the **About the Nth IOCCC ((YEAR))** link, and then
-clicking on the **fun challenges for IOCCC ((YEAR))** link.
+page, clicking in the **About the Nth IOCCC ((YYYY))** link, and then
+clicking on the **fun challenges for IOCCC ((YYYY))** link.
 
-**NOTE**: "**Fun challenges**" are available only for the year **2025 and later**.
+**NOTE**: "**Fun challenges**" are available only for the year **2025 and
+later** (IOCCC29 and onward).
 
 If the "**fun challenge**" is listed as still **OPEN**, and
 you believe you have a solution to a "**fun challenge**",
@@ -7960,15 +7954,17 @@ in your [GitHub pull request](#pull_request).
 for an example of both the markdown form, as well a how a few solutions are presented.
 
 **NOTE**: If the "**fun challenge**" is listed as **CLOSED**,
-and you believe your solution is **substantially better** than any of
+**and** you believe your solution is **substantially better** than any of
 the solution(s) listed, then please consider submitting your solution as well.
 Of course, even if it is not accepted, it is perfectly okay to keep it up for
-others to see, and you could certainly try and improve it more.
+others to see, and you could certainly try and improve it more before trying
+again, just like some past IOCCC winning entries.
 
 **NOTE**: If you have a suggestion for a "**fun challenge**" that is not already
-listed, please consider submitting it as an additional challenge.
+listed, please consider submitting it as an additional challenge by making a
+pull request.
 
-**NOTE**: And to state the obvious: the [IOCCC judge](judges.html) reserves
+**NOTE**: And to state the obvious: the [IOCCC judges](judges.html) reserve
 the right to request modifications to your pull request, linked content,
 or to reject your pull request altogether.
 
@@ -7995,6 +7991,18 @@ Jump to: [top](#)
 
 <hr style="width:50%;text-align:left;margin-left:0">
 <hr style="width:50%;text-align:left;margin-left:0">
+
+
+
+<div id="history">
+<div id="ioccc_history">
+## Section 11: History of the IOCCC
+</div>
+</div>
+
+
+Jump to: [top](#)
+
 
 
 <div id="ioccc_start">
