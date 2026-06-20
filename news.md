@@ -69,8 +69,8 @@ See also the FAQ on “[fun challenges](faq.html#what_fun_challenge)".
 
 There are a number of **fun challenges** for **IOCCC29** that are still **OPEN**.
 
-Are you able to solve any of them?  If the first has your solution accepted as valid,
-and **receive the credit**!
+Are you able to solve any of them?  If your solution is the 1st to be accepted as valid,
+you will **receive the credit**!
 
 See also the FAQ on “[submit a fun challenge solution](faq.html#solve_fun_challenge)”.
 
