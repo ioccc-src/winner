@@ -55,6 +55,17 @@
 </blockquote>
 
 
+<div id="20260628">
+## 2026-06-28
+</div>
+
+The individual award presentation for each of the **IOCCC29** winning entries has been uploaded to the [Our Favorite Universe](https://www.youtube.com/@OurFavoriteUniverse) YouTube channel.
+
+Each of the **IOCCC29** winning entry websites has an **Award presentation** link near the top of their respective pages.
+
+You may also watch the [IOCCC29 presentation playlist](https://www.youtube.com/playlist?list=PLYwSJYGc74jI).
+
+
 <div id="20260620">
 ## 2026-06-20
 </div>
