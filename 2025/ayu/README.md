@@ -1,4 +1,10 @@
-Award: IMO award
+## Award presentation:
+
+Watch the [Our Favorite Universe](https://www.youtube.com/@OurFavoriteUniverse)
+YouTube show for this entry:
+
+> [IOCCC29 - 2025/ayu - IMO award](https://www.youtube.com/watch?v=ywsK3bm57-0)
+
 
 ## To build:
 

@@ -1,4 +1,10 @@
-Award: Consistently constant award
+## Award presentation:
+
+Watch the [Our Favorite Universe](https://www.youtube.com/@OurFavoriteUniverse)
+YouTube show for this entry:
+
+> [IOCCC29 - 2025/dogon - Consistently constant award](https://www.youtube.com/watch?v=PhQ7-OQGqnM)
+
 
 ## To build:
 

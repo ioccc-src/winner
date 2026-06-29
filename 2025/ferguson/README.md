@@ -1,4 +1,10 @@
-Award: Opposite award
+## Award presentation:
+
+Watch the [Our Favorite Universe](https://www.youtube.com/@OurFavoriteUniverse)
+YouTube show for this entry:
+
+> [IOCCC29 - 2025/ferguson - Opposite award](https://www.youtube.com/watch?v=wFdUnUqF0s0)
+
 
 ## To build:
 

@@ -1,4 +1,10 @@
-Award: Most likely to dazzle
+## Award presentation:
+
+Watch the [Our Favorite Universe](https://www.youtube.com/@OurFavoriteUniverse)
+YouTube show for this entry:
+
+> [IOCCC29 - 2025/endoh1 - Most likely to dazzle](https://www.youtube.com/watch?v=69ZIkdzVHLk)
+
 
 ## To build:
 

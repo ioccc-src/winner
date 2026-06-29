@@ -1,4 +1,10 @@
-Award: Most likely to count
+## Award presentation:
+
+Watch the [Our Favorite Universe](https://www.youtube.com/@OurFavoriteUniverse)
+YouTube show for this entry:
+
+> [IOCCC29 - 2025/kurdyukov - Most likely to count](https://www.youtube.com/watch?v=UTAluKAaJek)
+
 
 ## To build:
 

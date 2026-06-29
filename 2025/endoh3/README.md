@@ -1,4 +1,10 @@
-Award: Most resilient
+## Award presentation:
+
+Watch the [Our Favorite Universe](https://www.youtube.com/@OurFavoriteUniverse)
+YouTube show for this entry:
+
+> [IOCCC29 - 2025/endoh3 - Most resilient](https://www.youtube.com/watch?v=2Sbc46q9nNo)
+
 
 ## To build:
 

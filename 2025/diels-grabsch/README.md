@@ -1,4 +1,10 @@
-Award: Best one liner
+## Award presentation:
+
+Watch the [Our Favorite Universe](https://www.youtube.com/@OurFavoriteUniverse)
+YouTube show for this entry:
+
+> [IOCCC29 - 2025/diels-grabsch - Best one liner](https://www.youtube.com/watch?v=51ydoo9MqJ4)
+
 
 ## To build:
 

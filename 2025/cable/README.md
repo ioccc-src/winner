@@ -1,4 +1,10 @@
-Award: Best imaginary emulator
+## Award presentation:
+
+Watch the [Our Favorite Universe](https://www.youtube.com/@OurFavoriteUniverse)
+YouTube show for this entry:
+
+> [IOCCC29 - 2025/cable - Best imaginary emulator](https://www.youtube.com/watch?v=A5cWtqZ323o)
+
 
 ## To build:
 

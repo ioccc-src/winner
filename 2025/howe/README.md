@@ -1,4 +1,10 @@
-Award: Most likely to invade
+## Award presentation:
+
+Watch the [Our Favorite Universe](https://www.youtube.com/@OurFavoriteUniverse)
+YouTube show for this entry:
+
+> [IOCCC29 - 2025/howe - Most likely to invade](https://www.youtube.com/watch?v=gh5xuVZn0CQ)
+
 
 ## To build:
 

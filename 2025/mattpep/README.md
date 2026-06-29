@@ -1,4 +1,10 @@
-Award: Most obfuscated options
+## Award presentation:
+
+Watch the [Our Favorite Universe](https://www.youtube.com/@OurFavoriteUniverse)
+YouTube show for this entry:
+
+> [IOCCC29 - 2025/mattpep - Most obfuscated options](https://www.youtube.com/watch?v=lre80BUL_gk)
+
 
 ## To build:
 

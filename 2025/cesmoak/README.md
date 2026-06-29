@@ -1,4 +1,10 @@
-Award: Retro space award
+## Award presentation:
+
+Watch the [Our Favorite Universe](https://www.youtube.com/@OurFavoriteUniverse)
+YouTube show for this entry:
+
+> [IOCCC29 - 2025/cesmoak - Retro space award](https://www.youtube.com/watch?v=Nw2jLH0iB2o)
+
 
 ## To build:
 

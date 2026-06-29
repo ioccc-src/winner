@@ -1,4 +1,10 @@
-Award: Ping pong prize
+## Award presentation:
+
+Watch the [Our Favorite Universe](https://www.youtube.com/@OurFavoriteUniverse)
+YouTube show for this entry:
+
+> [IOCCC29 - 2025/uellenberg - Ping pong prize](https://www.youtube.com/watch?v=ELWZXrccuOo)
+
 
 ## To build:
 

@@ -1,4 +1,10 @@
-Award: Most magical word
+## Award presentation:
+
+Watch the [Our Favorite Universe](https://www.youtube.com/@OurFavoriteUniverse)
+YouTube show for this entry:
+
+> [IOCCC29 - 2025/yang2 - Most magical word](https://www.youtube.com/watch?v=5okUc5u7sBk)
+
 
 ## To build:
 

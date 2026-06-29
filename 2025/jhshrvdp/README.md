@@ -1,4 +1,10 @@
-Award: Most likely to teleport
+## Award presentation:
+
+Watch the [Our Favorite Universe](https://www.youtube.com/@OurFavoriteUniverse)
+YouTube show for this entry:
+
+> [IOCCC29 - 2025/jhshrvdp - Most likely to teleport](https://www.youtube.com/watch?v=_LSMQOuul20)
+
 
 ## To build:
 

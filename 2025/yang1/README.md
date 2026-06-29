@@ -1,4 +1,10 @@
-Award: Compound prize
+## Award presentation:
+
+Watch the [Our Favorite Universe](https://www.youtube.com/@OurFavoriteUniverse)
+YouTube show for this entry:
+
+> [IOCCC29 - 2025/yang1 - Compound prize](https://www.youtube.com/watch?v=U7ZTk5zd9Dk)
+
 
 ## To build:
 

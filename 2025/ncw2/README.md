@@ -1,4 +1,10 @@
-Award: Best rational emulator
+## Award presentation:
+
+Watch the [Our Favorite Universe](https://www.youtube.com/@OurFavoriteUniverse)
+YouTube show for this entry:
+
+> [IOCCC29 - 2025/ncw2 - Best fractional emulator](https://www.youtube.com/watch?v=iFQKw6JgszY)
+
 
 ## To build:
 

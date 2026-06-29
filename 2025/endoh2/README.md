@@ -1,4 +1,10 @@
-Award: Most likely to shock
+## Award presentation:
+
+Watch the [Our Favorite Universe](https://www.youtube.com/@OurFavoriteUniverse)
+YouTube show for this entry:
+
+> [IOCCC29 - 2025/endoh2 - Most likely to shock](https://www.youtube.com/watch?v=_dHlVjnosNA)
+
 
 ## To build:
 

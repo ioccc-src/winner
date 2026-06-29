@@ -1,4 +1,10 @@
-Award: Best use of Unicode
+## Award presentation:
+
+Watch the [Our Favorite Universe](https://www.youtube.com/@OurFavoriteUniverse)
+YouTube show for this entry:
+
+> [IOCCC29 - 2025/ncw3 - Best use of Unicode](https://www.youtube.com/watch?v=MJl6oUxtyFw)
+
 
 ## To build:
 
