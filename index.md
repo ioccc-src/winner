@@ -1,5 +1,5 @@
 <div id="suggestions">
-# Suggestions for visitors
+## Suggestions for visitors
 </div>
 
 * **[Most recent winning entries](%%LAST_YEAR%%/index.html)**

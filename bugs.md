@@ -4993,6 +4993,14 @@ Jump to: [top](#)
 
 Jump to: [top](#)
 
+
+<div id="2025_ferguson">
+### 2025/ferguson
+</div>
+
+Jump to: [top](#)
+
+
 #### STATUS: INABIAF - please **DO NOT** fix
 #### Source code: [2025/ferguson/prog.c](%%REPO_URL%%/2025/ferguson/prog.c)
 #### Information: [2025/ferguson/index.html](2025/ferguson/index.html)
