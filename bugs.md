@@ -103,10 +103,10 @@ Jump to: [top](#)
 <hr>
 
 
-# LIST OF STATUSES
+## LIST OF STATUSES
 
 
-## PLEASE READ BEFORE FIXING
+### PLEASE READ BEFORE FIXING
 
 **BTW**: You may skip if you're only interested in knowing about entries with known issues.
 
@@ -117,12 +117,12 @@ means that either they all apply or they complement each other.
 Jump to: [top](#)
 
 
-## General notes about the statuses and making fixes
+### General notes about the statuses and making fixes
 
 Jump to: [top](#)
 
 
-### Compiler warnings are very rarely a problem
+#### Compiler warnings are very rarely a problem
 
 In general warnings should NOT be addressed. The only time they should be
 CONSIDERED is when the entry does not work. However note that sometimes trying
@@ -165,7 +165,7 @@ Hopefully with the example entries listed above you get the idea.
 Jump to: [top](#)
 
 
-### General request on original code:
+#### General request on original code:
 
 If you're fixing an entry please make as _FEW CHANGES AS POSSIBLE_! This is to
 make it as close to the original but allowing it to work. This might be less of
@@ -175,7 +175,7 @@ it as close as possible to the original. See also below two points.
 Jump to: [top](#)
 
 
-### Request for one-liners:
+#### Request for one-liners:
 
 For one-liners _PLEASE KEEP THE FILE ONE LINE IF AT ALL POSSIBLE_! See the
 [guidelines](next/guidelines.html) for what constitutes a one-liner. If it needs an
@@ -188,7 +188,7 @@ consider a one-liner, at least within reason. Thank you!
 Jump to: [top](#)
 
 
-### On layout of program source:
+#### On layout of program source:
 
 If you make changes _PLEASE TRY AND KEEP THE SOURCE CODE LAYOUT AS CLOSE TO THE
 ORIGINAL AS POSSIBLE_. This might not always be possible and if you have an
@@ -204,7 +204,7 @@ that with:
 Jump to: [top](#)
 
 
-## STATUS: known bug
+### STATUS: known bug
 
 **Please help us fix**!
 
@@ -219,12 +219,12 @@ careful judgement when fixing bugs please!
 Jump to: [top](#)
 
 
-## STATUS: possible bug
+### STATUS: possible bug
 
 Jump to: [top](#)
 
 
-### System dependent bug possibly
+#### System dependent bug possibly
 
 **Please help test, and if necessary fix this bug**!
 
@@ -236,7 +236,7 @@ environment to test and fix any possible problems.
 Jump to: [top](#)
 
 
-### STATUS: might not be completely functional
+#### STATUS: might not be completely functional
 
 **Can you confirm there is a bug?**
 
@@ -247,12 +247,12 @@ can fix it!
 Jump to: [top](#)
 
 
-## STATUS: probable bug
+### STATUS: probable bug
 
 Jump to: [top](#)
 
 
-### Possible system dependent bug
+#### Possible system dependent bug
 
 **Please help test and if necessary fix this bug**!
 
@@ -263,7 +263,7 @@ bug (possibly depending on system)_.
 Jump to: [top](#)
 
 
-## STATUS: doesn't work with some platforms
+### STATUS: doesn't work with some platforms
 
 **Please help us fix this bug**!
 
@@ -273,7 +273,7 @@ something else?). Please help us to fix it!
 Jump to: [top](#)
 
 
-## STATUS: doesn't work with some compilers
+### STATUS: doesn't work with some compilers
 
 **Please provide alternative code or fix for more compilers**!
 
@@ -290,7 +290,7 @@ here as best you can manage.
 Jump to: [top](#)
 
 
-## STATUS: main() function args not allowed
+### STATUS: main() function args not allowed
 
 **Please help us fix the main() function**!
 
@@ -335,7 +335,7 @@ less strict.
 Jump to: [top](#)
 
 
-## STATUS: main() has only one arg
+### STATUS: main() has only one arg
 
 **Please help modify so that main() as 2 or 3 args**!
 
@@ -351,7 +351,7 @@ without breaking it.
 Jump to: [top](#)
 
 
-## STATUS: compiled executable crashes
+### STATUS: compiled executable crashes
 
 **Please help us fix this bug**!
 
@@ -367,7 +367,7 @@ or if you can `-ggdb3` when compiling as that will help with debugging symbols.
 Jump to: [top](#)
 
 
-## STATUS: uses gets()
+### STATUS: uses gets()
 
 **Please help us change use of gets() to fgets()**, if possible.
 
@@ -416,7 +416,7 @@ newline just like `fgets(3)`.
 Jump to: [top](#)
 
 
-## STATUS: missing file(s)
+### STATUS: missing file(s)
 
 **Please help is by finding missing file(s)**!
 
@@ -428,7 +428,7 @@ contact the author (unless you are the author! :-) ).
 Jump to: [top](#)
 
 
-## STATUS: missing or dead link
+### STATUS: missing or dead link
 
 **Please help is fix missing or dead link(s)**!
 
@@ -441,7 +441,7 @@ Wayback Machine with the orange status.
 Jump to: [top](#)
 
 
-### Statuses of Internet Wayback Machine archive:
+#### Statuses of Internet Wayback Machine archive:
 
 - Green (3xx): redirect (this has been used to find changes in URL).
 - Orange (4xx): not found etc.
@@ -452,8 +452,8 @@ The archive website will tell you if the link was never captured.
 Jump to: [top](#)
 
 
-## STATUS: INABIAF - please **DO NOT** fix
-### INABIAF: It's not a bug it's a feature :-)
+### STATUS: INABIAF - please **DO NOT** fix
+#### INABIAF: It's not a bug it's a feature :-)
 
 Entries with this status should NOT be touched (unless they have another status
 that suggests that _that_ issue can be changed): they are system specific by
@@ -491,7 +491,7 @@ was not the only fix made in that entry).
 Jump to: [top](#)
 
 
-### Exception: your own entries
+#### Exception: your own entries
 
 Of course if you're the author you're welcome to fix your own entry, prefer your
 own fix or suggest that they're fixed!
@@ -501,12 +501,12 @@ Jump to: [top](#)
 <hr>
 
 
-# List of entries by year, sorted in alphabetical order per year
+## List of entries by year, sorted in alphabetical order per year
 
 
 <hr style="width:10%;text-align:left;margin-left:0">
 <div id="1984">
-# 1984
+## 1984
 </div>
 <hr style="width:10%;text-align:left;margin-left:0">
 
@@ -514,15 +514,15 @@ Jump to: [top](#)
 
 
 <div id="1984_decot">
-## 1984/decot
+### 1984/decot
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [1984/decot/decot.c](%%REPO_URL%%/1984/decot/decot.c)
-### Information: [1984/decot/index.html](1984/decot/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [1984/decot/decot.c](%%REPO_URL%%/1984/decot/decot.c)
+#### Information: [1984/decot/index.html](1984/decot/index.html)
 
 The purpose of this program is to print out what looks like a fragment of C
 code. In particular you should see something like:
@@ -539,15 +539,15 @@ Jump to: [top](#)
 
 
 <div id="1984_laman">
-## 1984/laman
+### 1984/laman
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [1984/laman/laman.c](%%REPO_URL%%/1984/laman/laman.c)
-### Information: [1984/laman/index.html](1984/laman/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [1984/laman/laman.c](%%REPO_URL%%/1984/laman/laman.c)
+#### Information: [1984/laman/index.html](1984/laman/index.html)
 
 This program will very likely crash or do something funny without an arg.
 
@@ -555,15 +555,15 @@ Jump to: [top](#)
 
 
 <div id="1984_mullender">
-## 1984/mullender
+### 1984/mullender
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [1984/mullender/mullender.c](%%REPO_URL%%/1984/mullender/mullender.c)
-### Information: [1984/mullender/index.html](1984/mullender/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [1984/mullender/mullender.c](%%REPO_URL%%/1984/mullender/mullender.c)
+#### Information: [1984/mullender/index.html](1984/mullender/index.html)
 
 Although there is an alt version and supplementary program added, that
 will work in modern systems, if you do not have a
@@ -583,7 +583,7 @@ Jump to: [top](#)
 
 <hr style="width:10%;text-align:left;margin-left:0">
 <div id="1985">
-# 1985
+## 1985
 </div>
 <hr style="width:10%;text-align:left;margin-left:0">
 
@@ -594,7 +594,7 @@ Jump to: [top](#)
 
 <hr style="width:10%;text-align:left;margin-left:0">
 <div id="1986">
-# 1986
+## 1986
 </div>
 <hr style="width:10%;text-align:left;margin-left:0">
 
@@ -602,15 +602,15 @@ Jump to: [top](#)
 
 
 <div id="1986_august">
-## 1986/august
+### 1986/august
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [1986/august/august.c](%%REPO_URL%%/1986/august/august.c)
-### Information: [1986/august/index.html](1986/august/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [1986/august/august.c](%%REPO_URL%%/1986/august/august.c)
+#### Information: [1986/august/index.html](1986/august/index.html)
 
 
 This entry is known to segfault after printing its output. It was documented by
@@ -621,7 +621,7 @@ Jump to: [top](#)
 
 <hr style="width:10%;text-align:left;margin-left:0">
 <div id="1987">
-# 1987
+## 1987
 </div>
 <hr style="width:10%;text-align:left;margin-left:0">
 
@@ -632,7 +632,7 @@ Jump to: [top](#)
 
 <hr style="width:10%;text-align:left;margin-left:0">
 <div id="1988">
-# 1988
+## 1988
 </div>
 <hr style="width:10%;text-align:left;margin-left:0">
 
@@ -640,15 +640,15 @@ Jump to: [top](#)
 
 
 <div id="1988_dale">
-## 1988/dale
+### 1988/dale
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [1988/dale/dale.c](%%REPO_URL%%/1988/dale/dale.c)
-### Information: [1988/dale/index.html](1988/dale/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [1988/dale/dale.c](%%REPO_URL%%/1988/dale/dale.c)
+#### Information: [1988/dale/index.html](1988/dale/index.html)
 
 In linux it might happen that despite no error message or message about doing
 so, the program drops a core file into the directory even though the entry works
@@ -659,7 +659,7 @@ Jump to: [top](#)
 
 <hr style="width:10%;text-align:left;margin-left:0">
 <div id="1989">
-# 1989
+## 1989
 </div>
 <hr style="width:10%;text-align:left;margin-left:0">
 
@@ -667,15 +667,15 @@ Jump to: [top](#)
 
 
 <div id="1989_fubar">
-## 1989/fubar
+### 1989/fubar
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [1989/fubar/fubar.c](%%REPO_URL%%/1989/fubar/fubar.c)
-### Information: [1989/fubar/index.html](1989/fubar/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [1989/fubar/fubar.c](%%REPO_URL%%/1989/fubar/fubar.c)
+#### Information: [1989/fubar/index.html](1989/fubar/index.html)
 
 If you use either `fubar` or `ouroboros.c` (it's executable, see index.html for
 details) with a number < 0 or larger than, say 20, it's very likely that the
@@ -686,15 +686,15 @@ Jump to: [top](#)
 
 
 <div id="1989_robison">
-## 1989/robison
+### 1989/robison
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [1989/robison/robison.c](%%REPO_URL%%/1989/robison/robison.c)
-### Information: [1989/robison/index.html](1989/robison/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [1989/robison/robison.c](%%REPO_URL%%/1989/robison/robison.c)
+#### Information: [1989/robison/index.html](1989/robison/index.html)
 
 This program will very likely crash or break into tiny bits :-) if you feed it
 numbers with non-binary digits.
@@ -706,15 +706,15 @@ Jump to: [top](#)
 
 
 <div id="1989_westley">
-## 1989/westley
+### 1989/westley
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: known bug - please help us fix
-### Source code: [1989/westley/westley.c](%%REPO_URL%%/1989/westley/westley.c)
-### Information: [1989/westley/index.html](1989/westley/index.html)
+#### STATUS: known bug - please help us fix
+#### Source code: [1989/westley/westley.c](%%REPO_URL%%/1989/westley/westley.c)
+#### Information: [1989/westley/index.html](1989/westley/index.html)
 
 With version 2 it sometimes segfaults even with the same input where other times
 it does not. We don't believe this is because of the fix that lets some versions
@@ -727,7 +727,7 @@ be compiled with clang. An example invocation is:
 Jump to: [top](#)
 
 
-### A useful note on changing/fixing this program
+#### A useful note on changing/fixing this program
 
 It should be noted that in additional to rot13 names there is code that is the
 reverse of other code (also with respect to names). See the source file and the
@@ -748,7 +748,7 @@ the fix in fedora linux it failed to even compile!
 Jump to: [top](#)
 
 
-### Tips:
+#### Tips:
 
 The reason this is crashing is that the array `irk` is being accessed way out of
 bounds by the int `gnat`. For instance:
@@ -765,7 +765,7 @@ bounds by the int `gnat`. For instance:
 Jump to: [top](#)
 
 
-### Magic of the entry:
+#### Magic of the entry:
 
 The real trouble is that the code is generated and in a complex way or rather
 ways.
@@ -851,7 +851,7 @@ Jump to: [top](#)
 
 <hr style="width:10%;text-align:left;margin-left:0">
 <div id="1990">
-# 1990
+## 1990
 </div>
 <hr style="width:10%;text-align:left;margin-left:0">
 
@@ -859,15 +859,15 @@ Jump to: [top](#)
 
 
 <div id="1990_baruch">
-## 1990/baruch
+### 1990/baruch
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [1990/baruch/baruch.c](%%REPO_URL%%/1990/baruch/baruch.c)
-### Information: [1990/baruch/index.html](1990/baruch/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [1990/baruch/baruch.c](%%REPO_URL%%/1990/baruch/baruch.c)
+#### Information: [1990/baruch/index.html](1990/baruch/index.html)
 
 A point worth considering is that as the number passed into the program gets
 bigger the number of lines of output gets substantially larger and it takes much
@@ -905,15 +905,15 @@ Jump to: [top](#)
 
 
 <div id="1990_jaw">
-## 1990/jaw
+### 1990/jaw
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: known bug - please help us fix
-### Source code: [1990/jaw/jaw.c](%%REPO_URL%%/1990/jaw/jaw.c)
-### Information: [1990/jaw/index.html](1990/jaw/index.html)
+#### STATUS: known bug - please help us fix
+#### Source code: [1990/jaw/jaw.c](%%REPO_URL%%/1990/jaw/jaw.c)
+#### Information: [1990/jaw/index.html](1990/jaw/index.html)
 
 Some issues in this program were fixed and [Yusuke
 Endoh](authors.html#Yusuke_Endoh) then provided the `btoa` script but it appears
@@ -965,15 +965,15 @@ Jump to: [top](#)
 
 
 <div id="1990_tbr">
-## 1990/tbr
+### 1990/tbr
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [1990/tbr/tbr.c](%%REPO_URL%%/1990/tbr/tbr.c)
-### Information: [1990/tbr/index.html](1990/tbr/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [1990/tbr/tbr.c](%%REPO_URL%%/1990/tbr/tbr.c)
+#### Information: [1990/tbr/index.html](1990/tbr/index.html)
 
 The authors provided a list of features in the
 [BUGS](1990/tbr/index.html#bugs) section in their remarks.
@@ -982,15 +982,15 @@ Jump to: [top](#)
 
 
 <div id="1990_theorem">
-## 1990/theorem
+### 1990/theorem
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [1990/theorem/theorem.c](%%REPO_URL%%/1990/theorem/theorem.c)
-### Information: [1990/theorem/index.html](1990/theorem/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [1990/theorem/theorem.c](%%REPO_URL%%/1990/theorem/theorem.c)
+#### Information: [1990/theorem/index.html](1990/theorem/index.html)
 
 Many bugs that prevented this from working properly (including segfaults) were
 fixed but one thing to note is that if you pass two zeroes to `theorem_bkp` or
@@ -1002,15 +1002,15 @@ Jump to: [top](#)
 
 
 <div id="1990_westley">
-## 1990/westley
+### 1990/westley
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [1990/westley/westley.c](%%REPO_URL%%/1990/westley/westley.c)
-### Information: [1990/westley/index.html](1990/westley/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [1990/westley/westley.c](%%REPO_URL%%/1990/westley/westley.c)
+#### Information: [1990/westley/index.html](1990/westley/index.html)
 
 Although this was fixed to not enter an infinite loop if the arg (converted to
 a number) is < 0 the lack of an arg check at all was kept in to make it like the
@@ -1025,7 +1025,7 @@ Jump to: [top](#)
 
 <hr style="width:10%;text-align:left;margin-left:0">
 <div id="1991">
-# 1991
+## 1991
 </div>
 <hr style="width:10%;text-align:left;margin-left:0">
 
@@ -1033,15 +1033,15 @@ Jump to: [top](#)
 
 
 <div id="1991_buzzard">
-## 1991/buzzard
+### 1991/buzzard
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [1991/buzzard/buzzard.c](%%REPO_URL%%/1991/buzzard/buzzard.c)
-### Information: [1991/buzzard/index.html](1991/buzzard/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [1991/buzzard/buzzard.c](%%REPO_URL%%/1991/buzzard/buzzard.c)
+#### Information: [1991/buzzard/index.html](1991/buzzard/index.html)
 
 If the maze file cannot be opened, either because the path specified does not
 exist or because the default (whatever the source file was at compilation time)
@@ -1053,15 +1053,15 @@ Jump to: [top](#)
 
 
 <div id="1991_westley">
-## 1991/westley
+### 1991/westley
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [1991/westley/westley.c](%%REPO_URL%%/1991/westley/westley.c)
-### Information: [1991/westley/index.html](1991/westley/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [1991/westley/westley.c](%%REPO_URL%%/1991/westley/westley.c)
+#### Information: [1991/westley/index.html](1991/westley/index.html)
 
 There is a very simple way to always win. The program doesn't catch you and as
 someone called Cody's late grandmother said to him: '_it's not cheating unless
@@ -1076,7 +1076,7 @@ Jump to: [top](#)
 
 <hr style="width:10%;text-align:left;margin-left:0">
 <div id="1992">
-# 1992
+## 1992
 </div>
 <hr style="width:10%;text-align:left;margin-left:0">
 
@@ -1084,15 +1084,15 @@ Jump to: [top](#)
 
 
 <div id="1992_adrian">
-## 1992/adrian
+### 1992/adrian
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [1992/adrian/adrian.c](%%REPO_URL%%/1992/adrian/adrian.c)
-### Information: [1992/adrian/index.html](1992/adrian/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [1992/adrian/adrian.c](%%REPO_URL%%/1992/adrian/adrian.c)
+#### Information: [1992/adrian/index.html](1992/adrian/index.html)
 
 The author stated that if the file cannot be opened then it will print a system
 error but this is not the case unless it's showing a fault. This was fixed as
@@ -1121,15 +1121,15 @@ Jump to: [top](#)
 
 
 <div id="1992_albert">
-## 1992/albert
+### 1992/albert
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: known bug - please help us fix
-### Source code: [1992/albert/albert.c](%%REPO_URL%%/1992/albert/albert.c)
-### Information: [1992/albert/index.html](1992/albert/index.html)
+#### STATUS: known bug - please help us fix
+#### Source code: [1992/albert/albert.c](%%REPO_URL%%/1992/albert/albert.c)
+#### Information: [1992/albert/index.html](1992/albert/index.html)
 
 Leo Broukhis, before he was an IOCCC judge, sent the IOCCC judges an email:
 
@@ -1192,15 +1192,15 @@ Jump to: [top](#)
 
 
 <div id="1992_gson">
-## 1992/gson
+### 1992/gson
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: uses gets() - change to fgets() if possible
-### Source code: [1992/gson/gson.c](%%REPO_URL%%/1992/gson/gson.c)
-### Information: [1992/gson/index.html](1992/gson/index.html)
+#### STATUS: uses gets() - change to fgets() if possible
+#### Source code: [1992/gson/gson.c](%%REPO_URL%%/1992/gson/gson.c)
+#### Information: [1992/gson/index.html](1992/gson/index.html)
 
 This code uses `gets(3)` on a buffer size of 256 to read from the dictionary. It
 is highly unlikely that a line in a dictionary file will be this long but it
@@ -1214,7 +1214,7 @@ program.
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
+#### STATUS: INABIAF - please **DO NOT** fix
 
 On the other hand, the author noted the following bugs and limitations:
 
@@ -1235,15 +1235,15 @@ Jump to: [top](#)
 
 
 <div id="1992_kivinen">
-## 1992/kivinen
+### 1992/kivinen
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: known bug - please help us fix
-### Source code: [1992/kivinen/kivinen.c](%%REPO_URL%%/1992/kivinen/kivinen.c)
-### Information: [1992/kivinen/index.html](1992/kivinen/index.html)
+#### STATUS: known bug - please help us fix
+#### Source code: [1992/kivinen/kivinen.c](%%REPO_URL%%/1992/kivinen/kivinen.c)
+#### Information: [1992/kivinen/index.html](1992/kivinen/index.html)
 
 When you start the program everything starts to move over to the right side and
 then ends. [Yusuke Endoh](authors.html#Yusuke_Endoh) pointed out that if you
@@ -1253,15 +1253,15 @@ Jump to: [top](#)
 
 
 <div id="1992_lush">
-## 1992/lush
+### 1992/lush
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: doesn't work with some compilers - please provide alternative code or fix for more compilers
-### Source code: [1992/lush/lush.c](%%REPO_URL%%/1992/lush/lush.c)
-### Information: [1992/lush/index.html](1992/lush/index.html)
+#### STATUS: doesn't work with some compilers - please provide alternative code or fix for more compilers
+#### Source code: [1992/lush/lush.c](%%REPO_URL%%/1992/lush/lush.c)
+#### Information: [1992/lush/index.html](1992/lush/index.html)
 
 This was fixed but it only properly works with gcc; it was also changed to use
 `fgets()` instead of `gets()` and a script was provided to run the entry
@@ -1271,7 +1271,7 @@ Unfortunately due to the way the entry works and the fact that other compilers
 like clang have different warnings and errors this simply does not work with
 them.
 
-#### Some tips:
+##### Some tips:
 
 This entry relies on specific compiler warnings. With gcc it will look something
 like:
@@ -1341,15 +1341,15 @@ Jump to: [top](#)
 
 
 <div id="1992_vern">
-## 1992/vern
+### 1992/vern
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [1992/vern/vern.c](%%REPO_URL%%/1992/vern/vern.c)
-### Information: [1992/vern/index.html](1992/vern/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [1992/vern/vern.c](%%REPO_URL%%/1992/vern/vern.c)
+#### Information: [1992/vern/index.html](1992/vern/index.html)
 
 When your own checkmate is imminent it prints `"Har har"` but does not exit so
 it can '_rub your nose in defeat_', as the author puts it. You will have to exit
@@ -1359,15 +1359,15 @@ Jump to: [top](#)
 
 
 <div id="1992_westley">
-## 1992/westley
+### 1992/westley
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [1992/westley/westley.c](%%REPO_URL%%/1992/westley/westley.c)
-### Information: [1992/westley/index.html](1992/westley/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [1992/westley/westley.c](%%REPO_URL%%/1992/westley/westley.c)
+#### Information: [1992/westley/index.html](1992/westley/index.html)
 
 The usability of this program was improved by making it so that as long as the
 terminal columns is >= 80 it will display properly, rather than having to wrap
@@ -1384,7 +1384,7 @@ Jump to: [top](#)
 
 <hr style="width:10%;text-align:left;margin-left:0">
 <div id="1993">
-# 1993
+## 1993
 </div>
 <hr style="width:10%;text-align:left;margin-left:0">
 
@@ -1392,15 +1392,15 @@ Jump to: [top](#)
 
 
 <div id="1993_ant">
-## 1993/ant
+### 1993/ant
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [1993/ant/ant.c](%%REPO_URL%%/1993/ant/ant.c)
-### Information: [1993/ant/index.html](1993/ant/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [1993/ant/ant.c](%%REPO_URL%%/1993/ant/ant.c)
+#### Information: [1993/ant/index.html](1993/ant/index.html)
 
 The author stated that:
 
@@ -1415,15 +1415,15 @@ Jump to: [top](#)
 
 
 <div id="1993_cmills">
-## 1993/cmills
+### 1993/cmills
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: known bug - please help us fix
-### Source code: [1993/cmills/cmills.c](%%REPO_URL%%/1993/cmills/cmills.c)
-### Information: [1993/cmills/index.html](1993/cmills/index.html)
+#### STATUS: known bug - please help us fix
+#### Source code: [1993/cmills/cmills.c](%%REPO_URL%%/1993/cmills/cmills.c)
+#### Information: [1993/cmills/index.html](1993/cmills/index.html)
 
 In multiple platforms, both macOS and also linux (in particular a RHEL 9.3
 system), this entry just shows a blank screen.
@@ -1432,15 +1432,15 @@ Jump to: [top](#)
 
 
 <div id="1993_lmfjyh">
-## 1993/lmfjyh
+### 1993/lmfjyh
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [1993/lmfjyh/lmfjyh.c](%%REPO_URL%%/1993/lmfjyh/lmfjyh.c)
-### Information: [1993/lmfjyh/index.html](1993/lmfjyh/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [1993/lmfjyh/lmfjyh.c](%%REPO_URL%%/1993/lmfjyh/lmfjyh.c)
+#### Information: [1993/lmfjyh/index.html](1993/lmfjyh/index.html)
 
 This entry relied on a bug in gcc that was fixed with gcc version 2.3.3. This
 cannot be fixed for modern systems as the bug is long gone.
@@ -1452,15 +1452,15 @@ Jump to: [top](#)
 
 
 <div id="1993_rince">
-## 1993/rince
+### 1993/rince
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [1993/rince/rince.c](%%REPO_URL%%/1993/rince/rince.c)
-### Information: [1993/rince/index.html](1993/rince/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [1993/rince/rince.c](%%REPO_URL%%/1993/rince/rince.c)
+#### Information: [1993/rince/index.html](1993/rince/index.html)
 
 Although the code checks if the file can be opened or not, badly formatted files
 will cause problems. No other checks are performed either.
@@ -1472,15 +1472,15 @@ Jump to: [top](#)
 
 
 <div id="1993_schnitzi">
-## 1993/schnitzi
+### 1993/schnitzi
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [1993/schnitzi/schnitzi.c](%%REPO_URL%%/1993/schnitzi/schnitzi.c)
-### Information: [1993/schnitzi/index.html](1993/schnitzi/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [1993/schnitzi/schnitzi.c](%%REPO_URL%%/1993/schnitzi/schnitzi.c)
+#### Information: [1993/schnitzi/index.html](1993/schnitzi/index.html)
 
 If the file cannot be opened it will very likely segfault. This should not be
 fixed except for an exercise to yourself, should you wish to try.
@@ -1524,15 +1524,15 @@ Jump to: [top](#)
 
 
 <div id="1993_vanb">
-## 1993/vanb
+### 1993/vanb
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [1993/vanb/vanb.c](%%REPO_URL%%/1993/vanb/vanb.c)
-### Information: [1993/vanb/index.html](1993/vanb/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [1993/vanb/vanb.c](%%REPO_URL%%/1993/vanb/vanb.c)
+#### Information: [1993/vanb/index.html](1993/vanb/index.html)
 
 No spaces are allowed in the expression.
 
@@ -1547,7 +1547,7 @@ Jump to: [top](#)
 
 <hr style="width:10%;text-align:left;margin-left:0">
 <div id="1994">
-# 1994
+## 1994
 </div>
 <hr style="width:10%;text-align:left;margin-left:0">
 
@@ -1555,15 +1555,15 @@ Jump to: [top](#)
 
 
 <div id="1994_dodsond2">
-## 1994/dodsond2
+### 1994/dodsond2
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [1994/dodsond2/dodsond2.c](%%REPO_URL%%/1994/dodsond2/dodsond2.c)
-### Information: [1994/dodsond2/index.html](1994/dodsond2/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [1994/dodsond2/dodsond2.c](%%REPO_URL%%/1994/dodsond2/dodsond2.c)
+#### Information: [1994/dodsond2/index.html](1994/dodsond2/index.html)
 
 When you initiate shooting via the `s` command you immediately lose an arrow
 **before you choose _where to_ shoot**.
@@ -1576,15 +1576,15 @@ Jump to: [top](#)
 
 
 <div id="1994_ldb">
-## 1994/ldb
+### 1994/ldb
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [1994/ldb/ldb.c](%%REPO_URL%%/1994/ldb/ldb.c)
-### Information: [1994/ldb/index.html](1994/ldb/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [1994/ldb/ldb.c](%%REPO_URL%%/1994/ldb/ldb.c)
+#### Information: [1994/ldb/index.html](1994/ldb/index.html)
 
 This was fixed to compile with modern systems but the entry also used `gets(3)`
 which in some systems would print out a warning along with the output of the
@@ -1608,15 +1608,15 @@ Jump to: [top](#)
 
 
 <div id="1994_schnitzi">
-## 1994/schnitzi
+### 1994/schnitzi
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: uses gets() - change to fgets() if possible
-### Source code: [1994/schnitzi/schnitzi.c](%%REPO_URL%%/1994/schnitzi/schnitzi.c)
-### Information: [1994/schnitzi/index.html](1994/schnitzi/index.html)
+#### STATUS: uses gets() - change to fgets() if possible
+#### Source code: [1994/schnitzi/schnitzi.c](%%REPO_URL%%/1994/schnitzi/schnitzi.c)
+#### Information: [1994/schnitzi/index.html](1994/schnitzi/index.html)
 
 **NOTE**: the generated code of all versions, when fed its own source, will differ
 even when it works. See the author's remarks in the index.html for details.
@@ -1657,7 +1657,7 @@ For the alternate versions the other functionality is unaffected.
 Jump to: [top](#)
 
 
-### The magic of [1994/schnitzi](1994/schnitzi/index.html) and how it flips text
+#### The magic of [1994/schnitzi](1994/schnitzi/index.html) and how it flips text
 
 The problem is getting the generated code to use `fgets()` (once it even
 compiles which was easy to do) and also have the updated buffer size be the
@@ -1717,7 +1717,7 @@ changing the buffer size, see below).
 Jump to: [top](#)
 
 
-### Important points:
+#### Important points:
 
 Getting this entry to use `fgets(3)` is easy but the problem is you're supposed
 to be able to feed the source to the program and the output of that will be
@@ -1741,15 +1741,15 @@ Jump to: [top](#)
 
 
 <div id="1994_shapiro">
-## 1994/shapiro
+### 1994/shapiro
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [1994/shapiro/shapiro.c](%%REPO_URL%%/1994/shapiro/shapiro.c)
-### Information: [1994/shapiro/index.html](1994/shapiro/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [1994/shapiro/shapiro.c](%%REPO_URL%%/1994/shapiro/shapiro.c)
+#### Information: [1994/shapiro/index.html](1994/shapiro/index.html)
 
 This program will likely crash if the source code file (by the name of the file
 that's compiled) cannot be opened in the directory it is run from.
@@ -1757,7 +1757,7 @@ that's compiled) cannot be opened in the directory it is run from.
 Jump to: [top](#)
 
 
-### Important reminder and a note about the `-1` value check for `getc()`:
+#### Important reminder and a note about the `-1` value check for `getc()`:
 
 This code was fixed to not use `-1` for the return value of `getc()`; this is
 important because `EOF` is **NOT** guaranteed to be `-1` but rather any negative
@@ -1780,15 +1780,15 @@ Jump to: [top](#)
 
 
 <div id="1994_tvr">
-## 1994/tvr
+### 1994/tvr
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [1994/tvr/tvr.c](%%REPO_URL%%/1994/tvr/tvr.c)
-### Information: [1994/tvr/index.html](1994/tvr/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [1994/tvr/tvr.c](%%REPO_URL%%/1994/tvr/tvr.c)
+#### Information: [1994/tvr/index.html](1994/tvr/index.html)
 
 
 
@@ -1807,7 +1807,7 @@ Jump to: [top](#)
 
 <hr style="width:10%;text-align:left;margin-left:0">
 <div id="1995">
-# 1995
+## 1995
 </div>
 <hr style="width:10%;text-align:left;margin-left:0">
 
@@ -1815,15 +1815,15 @@ Jump to: [top](#)
 
 
 <div id="1995_cdua">
-## 1995/cdua
+### 1995/cdua
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [1995/cdua/cdua.c](%%REPO_URL%%/1995/cdua/cdua.c)
-### Information: [1995/cdua/index.html](1995/cdua/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [1995/cdua/cdua.c](%%REPO_URL%%/1995/cdua/cdua.c)
+#### Information: [1995/cdua/index.html](1995/cdua/index.html)
 
 This did not originally compile under macOS and after it did compile under
 macOS, it crashed. These problems were fixed.
@@ -1838,15 +1838,15 @@ Jump to: [top](#)
 
 
 <div id="1995_leo">
-## 1995/leo
+### 1995/leo
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: known bug - please help us fix
-### Source code: [1995/leo/leo.c](%%REPO_URL%%/1995/leo/leo.c)
-### Information: [1995/leo/index.html](1995/leo/index.html)
+#### STATUS: known bug - please help us fix
+#### Source code: [1995/leo/leo.c](%%REPO_URL%%/1995/leo/leo.c)
+#### Information: [1995/leo/index.html](1995/leo/index.html)
 
 The judges suggested that the following commands should result in output:
 
@@ -1875,15 +1875,15 @@ Jump to: [top](#)
 
 
 <div id="1995_savastio">
-## 1995/savastio
+### 1995/savastio
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [1995/savastio/savastio.c](%%REPO_URL%%/1995/savastio/savastio.c)
-### Information: [1995/savastio/index.html](1995/savastio/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [1995/savastio/savastio.c](%%REPO_URL%%/1995/savastio/savastio.c)
+#### Information: [1995/savastio/index.html](1995/savastio/index.html)
 
 This program expects a POSITIVE number. If you specify a negative number it will
 not show any output, stuck in a loop.
@@ -1892,15 +1892,15 @@ Jump to: [top](#)
 
 
 <div id="1995_vanschnitz">
-## 1995/vanschnitz
+### 1995/vanschnitz
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: missing file - please provide it
-### Source code: [1995/vanschnitz/vanschnitz.c](%%REPO_URL%%/1995/vanschnitz/vanschnitz.c)
-### Information: [1995/vanschnitz/index.html](1995/vanschnitz/index.html)
+#### STATUS: missing file - please provide it
+#### Source code: [1995/vanschnitz/vanschnitz.c](%%REPO_URL%%/1995/vanschnitz/vanschnitz.c)
+#### Information: [1995/vanschnitz/index.html](1995/vanschnitz/index.html)
 
 The authors stated that they included a version that allows people with just K&R
 compilers to use the program but this file is missing. Can you provide it?
@@ -1910,7 +1910,7 @@ Jump to: [top](#)
 
 <hr style="width:10%;text-align:left;margin-left:0">
 <div id="1996">
-# 1996
+## 1996
 </div>
 <hr style="width:10%;text-align:left;margin-left:0">
 
@@ -1918,15 +1918,15 @@ Jump to: [top](#)
 
 
 <div id="1996_gandalf">
-## 1996/gandalf
+### 1996/gandalf
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: missing or dead link or links - please provide it or them
-### Source code: [1996/gandalf/gandalf.c](%%REPO_URL%%/1996/gandalf/gandalf.c)
-### Information: [1996/gandalf/index.html](1996/gandalf/index.html)
+#### STATUS: missing or dead link or links - please provide it or them
+#### Source code: [1996/gandalf/gandalf.c](%%REPO_URL%%/1996/gandalf/gandalf.c)
+#### Information: [1996/gandalf/index.html](1996/gandalf/index.html)
 
 The link was `http://www.tc3.co.uk/~gandalf/G.HTML` but this no longer exists as
 it was instead requiring a login / password.
@@ -1937,15 +1937,15 @@ Jump to: [top](#)
 
 
 <div id="1996_huffman">
-## 1996/huffman
+### 1996/huffman
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: uses gets() - change to fgets() if possible
-### Source code: [1996/huffman/huffman.c](%%REPO_URL%%/1996/huffman/huffman.c)
-### Information: [1996/huffman/index.html](1996/huffman/index.html)
+#### STATUS: uses gets() - change to fgets() if possible
+#### Source code: [1996/huffman/huffman.c](%%REPO_URL%%/1996/huffman/huffman.c)
+#### Information: [1996/huffman/index.html](1996/huffman/index.html)
 
 The changing to using `fgets(3)` in this entry is a bit more complicated. It can
 almost be done except that some of the output of the
@@ -1985,15 +1985,15 @@ Jump to: [top](#)
 
 
 <div id="1996_jonth">
-## 1996/jonth
+### 1996/jonth
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [1996/jonth/jonth.c](%%REPO_URL%%/1996/jonth/jonth.c)
-### Information: [1996/jonth/index.html](1996/jonth/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [1996/jonth/jonth.c](%%REPO_URL%%/1996/jonth/jonth.c)
+#### Information: [1996/jonth/index.html](1996/jonth/index.html)
 
 If X is not running this program will very likely crash or do something funny.
 This should NOT be fixed.
@@ -2004,7 +2004,7 @@ off the other so that you can properly play.
 Jump to: [top](#)
 
 
-### STATUS: missing or dead link or links - please provide it or them
+#### STATUS: missing or dead link or links - please provide it or them
 
 As well: the link which was `http://www.uio.no/~jonth` is no longer valid and
 there's no archive on the Internet Wayback Machine. Do you know of a proper URL?
@@ -2015,7 +2015,7 @@ Jump to: [top](#)
 
 <hr style="width:10%;text-align:left;margin-left:0">
 <div id="1997">
-# 1997
+## 1997
 </div>
 <hr style="width:10%;text-align:left;margin-left:0">
 
@@ -2026,7 +2026,7 @@ Jump to: [top](#)
 
 <hr style="width:10%;text-align:left;margin-left:0">
 <div id="1998">
-# 1998
+## 1998
 </div>
 <hr style="width:10%;text-align:left;margin-left:0">
 
@@ -2034,15 +2034,15 @@ Jump to: [top](#)
 
 
 <div id="1998_chaos">
-## 1998/chaos
+### 1998/chaos
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [1998/chaos/chaos.c](%%REPO_URL%%/1998/chaos/chaos.c)
-### Information: [1998/chaos/index.html](1998/chaos/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [1998/chaos/chaos.c](%%REPO_URL%%/1998/chaos/chaos.c)
+#### Information: [1998/chaos/index.html](1998/chaos/index.html)
 
 The author stated the following:
 
@@ -2074,15 +2074,15 @@ Jump to: [top](#)
 
 
 <div id="1998_dlowe">
-## 1998/dlowe
+### 1998/dlowe
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: missing or dead link or links - please provide it or them
-### Source code: [1998/dlowe/dlowe.c](%%REPO_URL%%/1998/dlowe/dlowe.c)
-### Information: [1998/dlowe/index.html](1998/dlowe/index.html)
+#### STATUS: missing or dead link or links - please provide it or them
+#### Source code: [1998/dlowe/dlowe.c](%%REPO_URL%%/1998/dlowe/dlowe.c)
+#### Information: [1998/dlowe/index.html](1998/dlowe/index.html)
 
 The domain `http://pootpoot.com` no longer exists as it once did. The judges have
 given a script that can be used to make a similar page (**warning: not checked
@@ -2095,15 +2095,15 @@ Jump to: [top](#)
 
 
 <div id="1998_dloweneil">
-## 1998/dloweneil
+### 1998/dloweneil
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: missing or dead link or links - please provide it or them
-### Source code: [1998/dloweneil/dloweneil.c](%%REPO_URL%%/1998/dloweneil/dloweneil.c)
-### Information: [1998/dloweneil/index.html](1998/dloweneil/index.html)
+#### STATUS: missing or dead link or links - please provide it or them
+#### Source code: [1998/dloweneil/dloweneil.c](%%REPO_URL%%/1998/dloweneil/dloweneil.c)
+#### Information: [1998/dloweneil/index.html](1998/dloweneil/index.html)
 
 The domain `http://pootpoot.com` no longer exists as it once did. The judges have
 given a script that can be used to make a similar page (**warning: not checked
@@ -2117,15 +2117,15 @@ Jump to: [top](#)
 
 
 <div id="1998_schnitzi">
-## 1998/schnitzi
+### 1998/schnitzi
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [1998/schnitzi/schnitzi.c](%%REPO_URL%%/1998/schnitzi/schnitzi.c)
-### Information: [1998/schnitzi/index.html](1998/schnitzi/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [1998/schnitzi/schnitzi.c](%%REPO_URL%%/1998/schnitzi/schnitzi.c)
+#### Information: [1998/schnitzi/index.html](1998/schnitzi/index.html)
 
 A point worth considering is that as the number passed into the program gets
 bigger the number of lines of output gets substantially larger. For instance:
@@ -2148,7 +2148,7 @@ Jump to: [top](#)
 
 <hr style="width:10%;text-align:left;margin-left:0">
 <div id="1999">
-# 1999
+## 1999
 </div>
 <hr style="width:10%;text-align:left;margin-left:0">
 
@@ -2159,7 +2159,7 @@ Jump to: [top](#)
 
 <hr style="width:10%;text-align:left;margin-left:0">
 <div id="2000">
-# 2000
+## 2000
 </div>
 <hr style="width:10%;text-align:left;margin-left:0">
 
@@ -2167,13 +2167,13 @@ Jump to: [top](#)
 
 
 <div id="2000_dlowe">
-## 2000/dlowe
+### 2000/dlowe
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
+#### STATUS: INABIAF - please **DO NOT** fix
 
 The author states that in perl < 5.6.0 there is a bug with a core dump in what
 they said is in `Perl_sv_upgrade`. As this is documented it is not considered a
@@ -2232,15 +2232,15 @@ Jump to: [top](#)
 
 
 <div id="2000_primenum">
-## 2000/primenum
+### 2000/primenum
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2000/primenum/primenum.c](%%REPO_URL%%/2000/primenum/primenum.c)
-### Information: [2000/primenum/index.html](2000/primenum/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [2000/primenum/primenum.c](%%REPO_URL%%/2000/primenum/primenum.c)
+#### Information: [2000/primenum/index.html](2000/primenum/index.html)
 
 This program does not do what you might think it does! Running it like:
 
@@ -2265,15 +2265,15 @@ Jump to: [top](#)
 
 
 <div id="2000_rince">
-## 2000/rince
+### 2000/rince
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2000/rince/rince.c](%%REPO_URL%%/2000/rince/rince.c)
-### Information: [2000/rince/index.html](2000/rince/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [2000/rince/rince.c](%%REPO_URL%%/2000/rince/rince.c)
+#### Information: [2000/rince/index.html](2000/rince/index.html)
 
 If `DISPLAY` is not set the program will very likely crash, do something strange
 (or if you're very unlucky your computer might [halt and catch
@@ -2284,7 +2284,7 @@ Jump to: [top](#)
 
 <hr style="width:10%;text-align:left;margin-left:0">
 <div id="2001">
-# 2001
+## 2001
 </div>
 <hr style="width:10%;text-align:left;margin-left:0">
 
@@ -2292,15 +2292,15 @@ Jump to: [top](#)
 
 
 <div id="2001_anonymous">
-## 2001/anonymous
+### 2001/anonymous
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2001/anonymous/anonymous.c](%%REPO_URL%%/2001/anonymous/anonymous.c)
-### Information: [2001/anonymous/index.html](2001/anonymous/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [2001/anonymous/anonymous.c](%%REPO_URL%%/2001/anonymous/anonymous.c)
+#### Information: [2001/anonymous/index.html](2001/anonymous/index.html)
 
 This was fixed so that it doesn't segfault and then also fixed the functionality
 of it (but see below).
@@ -2324,15 +2324,15 @@ Jump to: [top](#)
 
 
 <div id="2001_bellard">
-## 2001/bellard
+### 2001/bellard
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2001/bellard/bellard.c](%%REPO_URL%%/2001/bellard/bellard.c)
-### Information: [2001/bellard/index.html](2001/bellard/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [2001/bellard/bellard.c](%%REPO_URL%%/2001/bellard/bellard.c)
+#### Information: [2001/bellard/index.html](2001/bellard/index.html)
 
 The author stated that it only works with i386 linux so the fact it doesn't work
 in modern systems is considered a feature and not a bug.
@@ -2365,7 +2365,7 @@ which might be of value to look at.
 Jump to: [top](#)
 
 
-#### Aside: why were there changes made if INABIAF ?
+##### Aside: why were there changes made if INABIAF ?
 
 This is a good question. The reason is we believe it better to fix some obvious
 problems: there were some bugs that would very possibly prevent it from working
@@ -2382,15 +2382,15 @@ Jump to: [top](#)
 
 
 <div id="2001_cheong">
-## 2001/cheong
+### 2001/cheong
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2001/cheong/cheong.c](%%REPO_URL%%/2001/cheong/cheong.c)
-### Information: [2001/cheong/index.html](2001/cheong/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [2001/cheong/cheong.c](%%REPO_URL%%/2001/cheong/cheong.c)
+#### Information: [2001/cheong/index.html](2001/cheong/index.html)
 
 This program will crash without an arg.
 
@@ -2398,15 +2398,15 @@ Jump to: [top](#)
 
 
 <div id="2001_dgbeards">
-## 2001/dgbeards
+### 2001/dgbeards
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2001/dgbeards/dgbeards.c](%%REPO_URL%%/2001/dgbeards/dgbeards.c)
-### Information: [2001/dgbeards/index.html](2001/dgbeards/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [2001/dgbeards/dgbeards.c](%%REPO_URL%%/2001/dgbeards/dgbeards.c)
+#### Information: [2001/dgbeards/index.html](2001/dgbeards/index.html)
 
 This program deliberately crashes if it loses (which is what it aims to do).
 
@@ -2414,13 +2414,13 @@ Jump to: [top](#)
 
 
 <div id="2001_herrmann1">
-## 2001/herrmann1
+### 2001/herrmann1
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: known bug - please help us fix
+#### STATUS: known bug - please help us fix
 
 During compilation you're supposed to see some animation but this does not seem
 to work with modern gcc versions. It appears that version 2.95 works but maybe
@@ -2431,15 +2431,15 @@ Jump to: [top](#)
 
 
 <div id="2001_kev">
-## 2001/kev
+### 2001/kev
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2001/kev/kev.c](%%REPO_URL%%/2001/kev/kev.c)
-### Information: [2001/kev/index.html](2001/kev/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [2001/kev/kev.c](%%REPO_URL%%/2001/kev/kev.c)
+#### Information: [2001/kev/index.html](2001/kev/index.html)
 
 Sometimes when one player presses `q` it will result in broken pipe on the other
 end.
@@ -2463,15 +2463,15 @@ Jump to: [top](#)
 
 
 <div id="2001_ollinger">
-## 2001/ollinger
+### 2001/ollinger
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2001/ollinger/ollinger.c](%%REPO_URL%%/2001/ollinger/ollinger.c)
-### Information: [2001/ollinger/index.html](2001/ollinger/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [2001/ollinger/ollinger.c](%%REPO_URL%%/2001/ollinger/ollinger.c)
+#### Information: [2001/ollinger/index.html](2001/ollinger/index.html)
 
 This program will very likely crash or do something unexpected if you do not
 provide enough args.
@@ -2480,15 +2480,15 @@ Jump to: [top](#)
 
 
 <div id="2001_rosten">
-## 2001/rosten
+### 2001/rosten
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2001/rosten/rosten.c](%%REPO_URL%%/2001/rosten/rosten.c)
-### Information: [2001/rosten/index.html](2001/rosten/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [2001/rosten/rosten.c](%%REPO_URL%%/2001/rosten/rosten.c)
+#### Information: [2001/rosten/index.html](2001/rosten/index.html)
 
 See list of bugs [here](2001/rosten/index.html#bugs).
 
@@ -2496,15 +2496,15 @@ Jump to: [top](#)
 
 
 <div id="2001_schweikh">
-## 2001/schweikh
+### 2001/schweikh
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2001/schweikh/schweikh.c](%%REPO_URL%%/2001/schweikh/schweikh.c)
-### Information: [2001/schweikh/index.html](2001/schweikh/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [2001/schweikh/schweikh.c](%%REPO_URL%%/2001/schweikh/schweikh.c)
+#### Information: [2001/schweikh/index.html](2001/schweikh/index.html)
 
 The glob pattern must match the whole string. See the author's comments for
 details and a workaround.
@@ -2517,15 +2517,15 @@ Jump to: [top](#)
 
 
 <div id="2001_westley">
-## 2001/westley
+### 2001/westley
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: uses gets() - change to fgets() if possible
-### Source code: [2001/westley/westley.c](%%REPO_URL%%/2001/westley/westley.c)
-### Information: [2001/westley/index.html](2001/westley/index.html)
+#### STATUS: uses gets() - change to fgets() if possible
+#### Source code: [2001/westley/westley.c](%%REPO_URL%%/2001/westley/westley.c)
+#### Information: [2001/westley/index.html](2001/westley/index.html)
 
 This function uses `gets(3)` but it would be ideal if it used `fgets(3)`. This
 one is rather complicated but you are welcome to try and fix this if you wish.
@@ -2533,7 +2533,7 @@ one is rather complicated but you are welcome to try and fix this if you wish.
 Jump to: [top](#)
 
 
-### STATUS: main() has only one arg - try and make it have 2 or 3
+#### STATUS: main() has only one arg - try and make it have 2 or 3
 
 This program only has one arg to `main()`. However changing it to have 2 is not
 as simple as it might seem. Doing this breaks things. If memory serves changing
@@ -2550,15 +2550,15 @@ Jump to: [top](#)
 
 
 <div id="2001_williams">
-## 2001/williams
+### 2001/williams
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: known bug - please help us fix
-### Source code: [2001/williams/williams.c](%%REPO_URL%%/2001/williams/williams.c)
-### Information: [2001/williams/index.html](2001/williams/index.html)
+#### STATUS: known bug - please help us fix
+#### Source code: [2001/williams/williams.c](%%REPO_URL%%/2001/williams/williams.c)
+#### Information: [2001/williams/index.html](2001/williams/index.html)
 
 There seem to be a couple bugs at least in this entry. The first one is that
 when it does reach a certain point it crashes. This is in the function `J()` (or
@@ -2620,7 +2620,7 @@ Jump to: [top](#)
 
 <hr style="width:10%;text-align:left;margin-left:0">
 <div id="2002">
-# 2002
+## 2002
 </div>
 <hr style="width:10%;text-align:left;margin-left:0">
 
@@ -2631,7 +2631,7 @@ Jump to: [top](#)
 
 <hr style="width:10%;text-align:left;margin-left:0">
 <div id="2003">
-# 2003
+## 2003
 </div>
 <hr style="width:10%;text-align:left;margin-left:0">
 
@@ -2642,7 +2642,7 @@ Jump to: [top](#)
 
 <hr style="width:10%;text-align:left;margin-left:0">
 <div id="2004">
-# 2004
+## 2004
 </div>
 <hr style="width:10%;text-align:left;margin-left:0">
 
@@ -2650,15 +2650,15 @@ Jump to: [top](#)
 
 
 <div id="2004_gavin">
-## 2004/gavin
+### 2004/gavin
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2004/gavin/gavin.c](%%REPO_URL%%/2004/gavin/gavin.c)
-### Information: [2004/gavin//index.html](2004/gavin//index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [2004/gavin/gavin.c](%%REPO_URL%%/2004/gavin/gavin.c)
+#### Information: [2004/gavin//index.html](2004/gavin//index.html)
 
 This program is x86 linux specific; it is extremely likely that a segmentation
 fault will occur in other systems but even if it does not it is highly unlikely
@@ -2684,7 +2684,7 @@ When trying to link `gavin.o` to produce `sh`, the linker generates:
 Jump to: [top](#)
 
 
-#### Recent 2004/gavin mods:
+##### Recent 2004/gavin mods:
 
 Although not related some recent changes were made to
 [2004/gavin](2004/gavin/index.html) to let it
@@ -2772,15 +2772,15 @@ Jump to: [top](#)
 
 
 <div id="2004_hibachi">
-## 2004/hibachi
+### 2004/hibachi
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2004/hibachi/hibachi.c](%%REPO_URL%%/2004/hibachi/hibachi.c)
-### Information: [2004/hibachi//index.html](2004/hibachi//index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [2004/hibachi/hibachi.c](%%REPO_URL%%/2004/hibachi/hibachi.c)
+#### Information: [2004/hibachi//index.html](2004/hibachi//index.html)
 
 The author stated that:
 
@@ -2791,15 +2791,15 @@ Jump to: [top](#)
 
 
 <div id="2004_jdalbec">
-## 2004/jdalbec
+### 2004/jdalbec
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2004/jdalbec/jdalbec.c](%%REPO_URL%%/2004/jdalbec/jdalbec.c)
-### Information: [2004/jdalbec/index.html](2004/jdalbec/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [2004/jdalbec/jdalbec.c](%%REPO_URL%%/2004/jdalbec/jdalbec.c)
+#### Information: [2004/jdalbec/index.html](2004/jdalbec/index.html)
 
 The author stated that:
 
@@ -2823,15 +2823,15 @@ Jump to: [top](#)
 
 
 <div id="2004_sds">
-## 2004/sds
+### 2004/sds
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2004/sds/sds.c](%%REPO_URL%%/2004/sds/sds.c)
-### Information: [2004/sds/index.html](2004/sds/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [2004/sds/sds.c](%%REPO_URL%%/2004/sds/sds.c)
+#### Information: [2004/sds/index.html](2004/sds/index.html)
 
 The generated code will very likely segfault or do something not intended if not
 given the right args. See the index.html file for the correct syntax.
@@ -2841,7 +2841,7 @@ Jump to: [top](#)
 
 <hr style="width:10%;text-align:left;margin-left:0">
 <div id="2005">
-# 2005
+## 2005
 </div>
 <hr style="width:10%;text-align:left;margin-left:0">
 
@@ -2849,15 +2849,15 @@ Jump to: [top](#)
 
 
 <div id="2005_anon">
-## 2005/anon
+### 2005/anon
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2005/anon/anon.c](%%REPO_URL%%/2005/anon/anon.c)
-### Information: [2005/anon/index.html](2005/anon/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [2005/anon/anon.c](%%REPO_URL%%/2005/anon/anon.c)
+#### Information: [2005/anon/index.html](2005/anon/index.html)
 
 This program sometimes will create unsolvable puzzles :-) just to hook you.
 As a protection against this - and to prevent you from spending too much time on
@@ -2873,15 +2873,15 @@ Jump to: [top](#)
 
 
 <div id="2005_giljade">
-## 2005/giljade
+### 2005/giljade
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2005/giljade/giljade.c](%%REPO_URL%%/2005/giljade/giljade.c)
-### Information: [2005/giljade/index.html](2005/giljade/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [2005/giljade/giljade.c](%%REPO_URL%%/2005/giljade/giljade.c)
+#### Information: [2005/giljade/index.html](2005/giljade/index.html)
 
 This entry will very likely segfault or do something strange if the source code
 does not exist.
@@ -2895,15 +2895,15 @@ Jump to: [top](#)
 
 
 <div id="2005_mikeash">
-## 2005/mikeash
+### 2005/mikeash
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2005/mikeash/mikeash.c](%%REPO_URL%%/2005/mikeash/mikeash.c)
-### Information: [2005/mikeash/index.html](2005/mikeash/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [2005/mikeash/mikeash.c](%%REPO_URL%%/2005/mikeash/mikeash.c)
+#### Information: [2005/mikeash/index.html](2005/mikeash/index.html)
 
 The author states:
 
@@ -2948,16 +2948,16 @@ Jump to: [top](#)
 
 
 <div id="2005_mynx">
-## 2005/mynx
+### 2005/mynx
 </div>
 
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2005/mynx/mynx.c](%%REPO_URL%%/2005/mynx/mynx.c)
-### Information: [2005/mynx/index.html](2005/mynx/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [2005/mynx/mynx.c](%%REPO_URL%%/2005/mynx/mynx.c)
+#### Information: [2005/mynx/index.html](2005/mynx/index.html)
 
 Probably this is obvious, but this entry will not work with https. An
 alt version exists that _SCANS_ for https in case someone wants to set up a pipeline or
@@ -2972,15 +2972,15 @@ Jump to: [top](#)
 
 
 <div id="2005_sykes">
-## 2005/sykes
+### 2005/sykes
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2005/sykes/sykes.c](%%REPO_URL%%/2005/sykes/sykes.c)
-### Information: [2005/sykes/index.html](2005/sykes/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [2005/sykes/sykes.c](%%REPO_URL%%/2005/sykes/sykes.c)
+#### Information: [2005/sykes/index.html](2005/sykes/index.html)
 
 The author stated the below points of interest.
 
@@ -3012,7 +3012,7 @@ Jump to: [top](#)
 
 <hr style="width:10%;text-align:left;margin-left:0">
 <div id="2006">
-# 2006
+## 2006
 </div>
 <hr style="width:10%;text-align:left;margin-left:0">
 
@@ -3020,16 +3020,16 @@ Jump to: [top](#)
 
 
 <div id="2006_birken">
-## 2006/birken
+### 2006/birken
 </div>
 
 
 Jump to: [top](#)
 
 
-### STATUS: uses gets() - change to fgets() if possible
-### Source code: [2006/birken/birken.c](%%REPO_URL%%/2006/birken/birken.c)
-### Information: [2006/birken/index.html](2006/birken/index.html)
+#### STATUS: uses gets() - change to fgets() if possible
+#### Source code: [2006/birken/birken.c](%%REPO_URL%%/2006/birken/birken.c)
+#### Information: [2006/birken/index.html](2006/birken/index.html)
 
 This entry uses `gets(3)` which is unsafe and provides annoying warnings, most
 obnoxious in macOS as it shows it at runtime (redirecting `stderr` to
@@ -3045,16 +3045,16 @@ Jump to: [top](#)
 
 
 <div id="2006_borsanyi">
-## 2006/borsanyi
+### 2006/borsanyi
 </div>
 
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2006/borsanyi/borsanyi.c](%%REPO_URL%%/2006/borsanyi/borsanyi.c)
-### Information: [2006/borsanyi/index.html](2006/borsanyi/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [2006/borsanyi/borsanyi.c](%%REPO_URL%%/2006/borsanyi/borsanyi.c)
+#### Information: [2006/borsanyi/index.html](2006/borsanyi/index.html)
 
 The string specified must be <= 42 characters and may only consist of the
 characters in the regex `a-z_A-Z0-9@.-`. Breaking these constraints will end up
@@ -3064,15 +3064,15 @@ Jump to: [top](#)
 
 
 <div id="2006_hamre">
-## 2006/hamre
+### 2006/hamre
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2006/hamre/hamre.c](%%REPO_URL%%/2006/hamre/hamre.c)
-### Information: [2006/hamre/index.html](2006/hamre/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [2006/hamre/hamre.c](%%REPO_URL%%/2006/hamre/hamre.c)
+#### Information: [2006/hamre/index.html](2006/hamre/index.html)
 
 This program will likely crash or do something funny without an arg.
 
@@ -3080,15 +3080,15 @@ Jump to: [top](#)
 
 
 <div id="2006_monge">
-## 2006/monge
+### 2006/monge
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: doesn't work with some platforms - please help us fix it
-### Source code: [2006/monge/monge.c](%%REPO_URL%%/2006/monge/monge.c)
-### Information: [2006/monge/index.html](2006/monge/index.html)
+#### STATUS: doesn't work with some platforms - please help us fix it
+#### Source code: [2006/monge/monge.c](%%REPO_URL%%/2006/monge/monge.c)
+#### Information: [2006/monge/index.html](2006/monge/index.html)
 
 This program requires x86 (with an x87 FPU) or x86_64 machine and it requires
 the SDL1 library.
@@ -3105,7 +3105,7 @@ welcome to try and fix it if you wish to!
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
+#### STATUS: INABIAF - please **DO NOT** fix
 
 Incorrect formulas will ungracefully crash the program.
 
@@ -3113,16 +3113,16 @@ Jump to: [top](#)
 
 
 <div id="2006_stewart">
-## 2006/stewart
+### 2006/stewart
 </div>
 
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2006/stewart/stewart.c](%%REPO_URL%%/2006/stewart/stewart.c)
-### Information: [2006/stewart/index.html](2006/stewart/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [2006/stewart/stewart.c](%%REPO_URL%%/2006/stewart/stewart.c)
+#### Information: [2006/stewart/index.html](2006/stewart/index.html)
 
 This program will likely crash or do something funny if the file cannot be
 opened. The number of args is however checked.
@@ -3131,16 +3131,16 @@ Jump to: [top](#)
 
 
 <div id="2006_sykes1">
-## 2006/sykes1
+### 2006/sykes1
 </div>
 
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2006/sykes1/sykes1.c](%%REPO_URL%%/2006/sykes1/sykes1.c)
-### Information: [2006/sykes1/index.html](2006/sykes1/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [2006/sykes1/sykes1.c](%%REPO_URL%%/2006/sykes1/sykes1.c)
+#### Information: [2006/sykes1/index.html](2006/sykes1/index.html)
 
 The author stated:
 
@@ -3158,16 +3158,16 @@ Jump to: [top](#)
 
 
 <div id="2006_toledo2">
-## 2006/toledo2
+### 2006/toledo2
 </div>
 
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2006/toledo2/toledo2.c](%%REPO_URL%%/2006/toledo2/toledo2.c)
-### Information: [2006/toledo2/index.html](2006/toledo2/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [2006/toledo2/toledo2.c](%%REPO_URL%%/2006/toledo2/toledo2.c)
+#### Information: [2006/toledo2/index.html](2006/toledo2/index.html)
 
 This was fixed to
 not crash in macOS (it appeared to work fine in fedora linux on an `x86_64`
@@ -3190,7 +3190,7 @@ Jump to: [top](#)
 
 <hr style="width:10%;text-align:left;margin-left:0">
 <div id="2007">
-# 2007
+## 2007
 </div>
 <hr style="width:10%;text-align:left;margin-left:0">
 
@@ -3202,7 +3202,7 @@ Jump to: [top](#)
 
 <hr style="width:10%;text-align:left;margin-left:0">
 <div id="2008">
-# 2008
+## 2008
 </div>
 <hr style="width:10%;text-align:left;margin-left:0">
 
@@ -3214,7 +3214,7 @@ Jump to: [top](#)
 
 <hr style="width:10%;text-align:left;margin-left:0">
 <div id="2009">
-# 2009
+## 2009
 </div>
 <hr style="width:10%;text-align:left;margin-left:0">
 
@@ -3225,7 +3225,7 @@ Jump to: [top](#)
 
 <hr style="width:10%;text-align:left;margin-left:0">
 <div id="2010">
-# 2010
+## 2010
 </div>
 <hr style="width:10%;text-align:left;margin-left:0">
 
@@ -3237,7 +3237,7 @@ Jump to: [top](#)
 
 <hr style="width:10%;text-align:left;margin-left:0">
 <div id="2011">
-# 2011
+## 2011
 </div>
 <hr style="width:10%;text-align:left;margin-left:0">
 
@@ -3245,15 +3245,15 @@ Jump to: [top](#)
 
 
 <div id="2011_borsanyi">
-## 2011/borsanyi
+### 2011/borsanyi
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2011/borsanyi/borsanyi.c](%%REPO_URL%%/2011/borsanyi/borsanyi.c)
-### Information: [2011/borsanyi/index.html](2011/borsanyi/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [2011/borsanyi/borsanyi.c](%%REPO_URL%%/2011/borsanyi/borsanyi.c)
+#### Information: [2011/borsanyi/index.html](2011/borsanyi/index.html)
 
 - For a great amount of data points the program will crash, depending on your
 available stack space.
@@ -3277,16 +3277,16 @@ Jump to: [top](#)
 
 
 <div id="2011_dlowe">
-## 2011/dlowe
+### 2011/dlowe
 </div>
 
 
 Jump to: [top](#)
 
 
-### STATUS: missing or dead link or links - please provide it or them
-### Source code: [2011/dlowe/dlowe.c](%%REPO_URL%%/2011/dlowe/dlowe.c)
-### Information: [2011/dlowe/index.html](2011/dlowe/index.html)
+#### STATUS: missing or dead link or links - please provide it or them
+#### Source code: [2011/dlowe/dlowe.c](%%REPO_URL%%/2011/dlowe/dlowe.c)
+#### Information: [2011/dlowe/index.html](2011/dlowe/index.html)
 
 The domain `http://pootpoot.com` no longer exists as it once did. The judges have
 given a script that can be used to make a similar page (**warning: not checked
@@ -3299,7 +3299,7 @@ IOCCC fame for reviving a pootifier! :-)
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
+#### STATUS: INABIAF - please **DO NOT** fix
 
 The author states the following:
 
@@ -3317,15 +3317,15 @@ Jump to: [top](#)
 
 
 <div id="2011_fredriksson">
-## 2011/fredriksson
+### 2011/fredriksson
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2011/fredriksson/fredriksson.c](%%REPO_URL%%/2011/fredriksson/fredriksson.c)
-### Information: [2011/fredriksson/index.html](2011/fredriksson/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [2011/fredriksson/fredriksson.c](%%REPO_URL%%/2011/fredriksson/fredriksson.c)
+#### Information: [2011/fredriksson/index.html](2011/fredriksson/index.html)
 
 The author stated that there are a number of features and limitations. As the
 list is rather long see [other
@@ -3336,15 +3336,15 @@ Jump to: [top](#)
 
 
 <div id="2011_konno">
-## 2011/konno
+### 2011/konno
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2011/konno/konno.c](%%REPO_URL%%/2011/konno/konno.c)
-### Information: [2011/konno/index.html](2011/konno/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [2011/konno/konno.c](%%REPO_URL%%/2011/konno/konno.c)
+#### Information: [2011/konno/index.html](2011/konno/index.html)
 
 This program will very likely crash or do something funny without an arg.
 
@@ -3353,12 +3353,12 @@ Jump to: [top](#)
 
 
 <div id="2011_richards">
-## 2011/richards
+### 2011/richards
 </div>
 
-### STATUS: doesn't work with some platforms - please help us fix it
-### Source code: [2011/richards/richards.c](%%REPO_URL%%/2011/richards/richards.c)
-### Information: [2011/richards/index.html](2011/richards/index.html)
+#### STATUS: doesn't work with some platforms - please help us fix it
+#### Source code: [2011/richards/richards.c](%%REPO_URL%%/2011/richards/richards.c)
+#### Information: [2011/richards/index.html](2011/richards/index.html)
 
 This does not appear to work with macOS, resulting in a segfault (and sometimes
 a bus error).
@@ -3377,7 +3377,7 @@ crack at it. A starting point might be in
 Jump to: [top](#)
 
 
-### Debugging
+#### Debugging
 
 At first glance it appeared to be that it might be the function pointers or the
 fact it is trying to execute code in memory (as noted above). The function
@@ -3544,7 +3544,7 @@ case.
 Jump to: [top](#)
 
 
-### Testing fixes
+#### Testing fixes
 
 It might be helpful to use the [try.alt.sh](%%REPO_URL%%/2011/richards/try.alt.sh) script to
 test that it does not crash and functions properly.
@@ -3552,12 +3552,12 @@ test that it does not crash and functions properly.
 
 Jump to: [top](#)
 
-### Resources
+#### Resources
 
 
 Jump to: [top](#)
 
-#### More from the author
+##### More from the author
 
 The author has more about the entry at
 <https://github.com/GregorR/ioccc2011>.
@@ -3565,7 +3565,7 @@ The author has more about the entry at
 Jump to: [top](#)
 
 
-#### Apple resources
+##### Apple resources
 
 [Porting Just-In-Time Compilers to Apple
 Silicon](https://developer.apple.com/documentation/apple-silicon/porting-just-in-time-compilers-to-apple-silicon?language=objc)
@@ -3585,15 +3585,15 @@ Jump to: [top](#)
 
 
 <div id="2011_vik">
-## 2011/vik
+### 2011/vik
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2011/vik/vik.c](%%REPO_URL%%/2011/vik/vik.c)
-### Information: [2011/vik/index.html](2011/vik/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [2011/vik/vik.c](%%REPO_URL%%/2011/vik/vik.c)
+#### Information: [2011/vik/index.html](2011/vik/index.html)
 
 The author stated that the program will crash if no argument is passed to the
 program though we note that your computer might also [halt and catch
@@ -3604,7 +3604,7 @@ Jump to: [top](#)
 
 <hr style="width:10%;text-align:left;margin-left:0">
 <div id="2012">
-# 2012
+## 2012
 </div>
 <hr style="width:10%;text-align:left;margin-left:0">
 
@@ -3612,15 +3612,15 @@ Jump to: [top](#)
 
 
 <div id="2012_blakely">
-## 2012/blakely
+### 2012/blakely
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2012/blakely/blakely.c](%%REPO_URL%%/2012/blakely/blakely.c)
-### Information: [2012/blakely/index.html](2012/blakely/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [2012/blakely/blakely.c](%%REPO_URL%%/2012/blakely/blakely.c)
+#### Information: [2012/blakely/index.html](2012/blakely/index.html)
 
 The author stated:
 
@@ -3631,15 +3631,15 @@ Jump to: [top](#)
 
 
 <div id="2012_deckmyn">
-## 2012/deckmyn
+### 2012/deckmyn
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2012/deckmyn/deckmyn.c](%%REPO_URL%%/2012/deckmyn/deckmyn.c)
-### Information: [2012/deckmyn/index.html](2012/deckmyn/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [2012/deckmyn/deckmyn.c](%%REPO_URL%%/2012/deckmyn/deckmyn.c)
+#### Information: [2012/deckmyn/index.html](2012/deckmyn/index.html)
 
 The author stated:
 
@@ -3675,15 +3675,15 @@ Jump to: [top](#)
 
 
 <div id="2012_dlowe">
-## 2012/dlowe
+### 2012/dlowe
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2012/dlowe/dlowe.c](%%REPO_URL%%/2012/dlowe/dlowe.c)
-### Information: [2012/dlowe/index.html](2012/dlowe/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [2012/dlowe/dlowe.c](%%REPO_URL%%/2012/dlowe/dlowe.c)
+#### Information: [2012/dlowe/index.html](2012/dlowe/index.html)
 
 The author stated:
 
@@ -3697,15 +3697,15 @@ Jump to: [top](#)
 
 
 <div id="2012_tromp">
-## 2012/tromp
+### 2012/tromp
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2012/tromp/tromp.c](%%REPO_URL%%/2012/tromp/tromp.c)
-### Information: [2012/tromp/index.html](2012/tromp/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [2012/tromp/tromp.c](%%REPO_URL%%/2012/tromp/tromp.c)
+#### Information: [2012/tromp/index.html](2012/tromp/index.html)
 
 The author stated:
 
@@ -3728,15 +3728,15 @@ Jump to: [top](#)
 
 
 <div id="2012_vik">
-## 2012/vik
+### 2012/vik
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2012/vik/vik.c](%%REPO_URL%%/2012/vik/vik.c)
-### Information: [2012/vik/index.html](2012/vik/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [2012/vik/vik.c](%%REPO_URL%%/2012/vik/vik.c)
+#### Information: [2012/vik/index.html](2012/vik/index.html)
 
 The author stated that the program will crash if no argument is passed to the
 program or if invalid arguments (e.g. file does not exist) or images of
@@ -3749,7 +3749,7 @@ Jump to: [top](#)
 
 <hr style="width:10%;text-align:left;margin-left:0">
 <div id="2013">
-# 2013
+## 2013
 </div>
 <hr style="width:10%;text-align:left;margin-left:0">
 
@@ -3757,15 +3757,15 @@ Jump to: [top](#)
 
 
 <div id="2013_cable2">
-## 2013/cable2
+### 2013/cable2
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2013/cable2/cable2.c](%%REPO_URL%%/2013/cable2/cable2.c)
-### Information: [2013/cable2/index.html](2013/cable2/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [2013/cable2/cable2.c](%%REPO_URL%%/2013/cable2/cable2.c)
+#### Information: [2013/cable2/index.html](2013/cable2/index.html)
 
 The author stated:
 
@@ -3785,16 +3785,16 @@ Jump to: [top](#)
 
 
 <div id="2013_dlowe">
-## 2013/dlowe
+### 2013/dlowe
 </div>
 
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2013/dlowe/dlowe.c](%%REPO_URL%%/2013/dlowe/dlowe.c)
-### Information: [2013/dlowe/index.html](2013/dlowe/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [2013/dlowe/dlowe.c](%%REPO_URL%%/2013/dlowe/dlowe.c)
+#### Information: [2013/dlowe/index.html](2013/dlowe/index.html)
 
 This program will possibly crash or draw something strange with 0 args. Then
 again it might not. :-) This is easy to fix but would add bytes and since the
@@ -3815,15 +3815,15 @@ Jump to: [top](#)
 
 
 <div id="2013_endoh1">
-## 2013/endoh1
+### 2013/endoh1
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2013/endoh1/endoh1.c](%%REPO_URL%%/2013/endoh1/endoh1.c)
-### Information: [2013/endoh1/index.html](2013/endoh1/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [2013/endoh1/endoh1.c](%%REPO_URL%%/2013/endoh1/endoh1.c)
+#### Information: [2013/endoh1/index.html](2013/endoh1/index.html)
 
 > This program supports only "Combinator-calculus style notation" of Lazy K.
 "Unlambda style" and "Iota and Jot" style are not supported.
@@ -3841,15 +3841,15 @@ Jump to: [top](#)
 
 
 <div id="2013_endoh3">
-## 2013/endoh3
+### 2013/endoh3
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2013/endoh3/endoh3.c](%%REPO_URL%%/2013/endoh3/endoh3.c)
-### Information: [2013/endoh3/index.html](2013/endoh3/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [2013/endoh3/endoh3.c](%%REPO_URL%%/2013/endoh3/endoh3.c)
+#### Information: [2013/endoh3/index.html](2013/endoh3/index.html)
 
 From the author:
 
@@ -3864,15 +3864,15 @@ Jump to: [top](#)
 
 
 <div id="2013_endoh4">
-## 2013/endoh4
+### 2013/endoh4
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2013/endoh4/endoh4.c](%%REPO_URL%%/2013/endoh4/endoh4.c)
-### Information: [2013/endoh4/index.html](2013/endoh4/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [2013/endoh4/endoh4.c](%%REPO_URL%%/2013/endoh4/endoh4.c)
+#### Information: [2013/endoh4/index.html](2013/endoh4/index.html)
 
 Invalid input files will very likely crash the program.
 
@@ -3880,15 +3880,15 @@ Jump to: [top](#)
 
 
 <div id="2013_hou">
-## 2013/hou
+### 2013/hou
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2013/hou/hou.c](%%REPO_URL%%/2013/hou/hou.c)
-### Information: [2013/hou/index.html](2013/hou/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [2013/hou/hou.c](%%REPO_URL%%/2013/hou/hou.c)
+#### Information: [2013/hou/index.html](2013/hou/index.html)
 
 This program will not terminate on its own; you must kill `hou` (but not Qiming
 Hou :-) ) yourself. This should not be fixed.
@@ -3897,15 +3897,15 @@ Jump to: [top](#)
 
 
 <div id="2013_mills">
-## 2013/mills
+### 2013/mills
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2013/mills/mills.c](%%REPO_URL%%/2013/mills/mills.c)
-### Information: [2013/mills/index.html](2013/mills/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [2013/mills/mills.c](%%REPO_URL%%/2013/mills/mills.c)
+#### Information: [2013/mills/index.html](2013/mills/index.html)
 
 The author reminds us that if you kill the program you will have to wait a short
 bit of time before you can start it again if you want it to be able to bind to
@@ -3919,7 +3919,7 @@ Jump to: [top](#)
 
 <hr style="width:10%;text-align:left;margin-left:0">
 <div id="2014">
-# 2014
+## 2014
 </div>
 <hr style="width:10%;text-align:left;margin-left:0">
 
@@ -3927,15 +3927,15 @@ Jump to: [top](#)
 
 
 <div id="2014_maffiodo1">
-## 2014/maffiodo1
+### 2014/maffiodo1
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2014/maffiodo1/prog.c](%%REPO_URL%%/2014/maffiodo1/prog.c)
-### Information: [2014/maffiodo1/index.html](2014/maffiodo1/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [2014/maffiodo1/prog.c](%%REPO_URL%%/2014/maffiodo1/prog.c)
+#### Information: [2014/maffiodo1/index.html](2014/maffiodo1/index.html)
 
 The author noted that in macOS the colours might be wrong and gives a solution,
 though it is unclear if this is still true or if there was any problem at all.
@@ -3957,16 +3957,16 @@ Jump to: [top](#)
 
 
 <div id="2014_maffiodo2">
-## 2014/maffiodo2
+### 2014/maffiodo2
 </div>
 
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2014/maffiodo2/prog.c](%%REPO_URL%%/2014/maffiodo2/prog.c)
-### Information: [2014/maffiodo2/index.html](2014/maffiodo2/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [2014/maffiodo2/prog.c](%%REPO_URL%%/2014/maffiodo2/prog.c)
+#### Information: [2014/maffiodo2/index.html](2014/maffiodo2/index.html)
 
 This program will very likely crash if no arg is given.
 
@@ -3974,15 +3974,15 @@ Jump to: [top](#)
 
 
 <div id="2014_vik">
-## 2014/vik
+### 2014/vik
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: known bug - please help us fix
-### Source code: [2014/vik/prog.c](%%REPO_URL%%/2014/vik/prog.c)
-### Information: [2014/vik/index.html](2014/vik/index.html)
+#### STATUS: known bug - please help us fix
+#### Source code: [2014/vik/prog.c](%%REPO_URL%%/2014/vik/prog.c)
+#### Information: [2014/vik/index.html](2014/vik/index.html)
 
 [Cody Boone Ferguson](authors.html#Cody_Boone_Ferguson) discovered a bug to do
 with translating sound to text that shows itself in some cases (it works in
@@ -4034,7 +4034,7 @@ Jump to: [top](#)
 
 <hr style="width:10%;text-align:left;margin-left:0">
 <div id="2015">
-# 2015
+## 2015
 </div>
 <hr style="width:10%;text-align:left;margin-left:0">
 
@@ -4042,15 +4042,15 @@ Jump to: [top](#)
 
 
 <div id="2015_duble">
-## 2015/duble
+### 2015/duble
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2015/duble/prog.c](%%REPO_URL%%/2015/duble/prog.c)
-### Information: [2015/duble/index.html](2015/duble/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [2015/duble/prog.c](%%REPO_URL%%/2015/duble/prog.c)
+#### Information: [2015/duble/index.html](2015/duble/index.html)
 
 This program is known to, in some cases, segfault, and as the judges and the
 author noted this, it should not be fixed.
@@ -4059,16 +4059,16 @@ Jump to: [top](#)
 
 
 <div id="2015_hou">
-## 2015/hou
+### 2015/hou
 </div>
 
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2015/hou/prog.c](%%REPO_URL%%/2015/hou/prog.c)
-### Information: [2015/hou/index.html](2015/hou/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [2015/hou/prog.c](%%REPO_URL%%/2015/hou/prog.c)
+#### Information: [2015/hou/index.html](2015/hou/index.html)
 
 The author stated:
 
@@ -4094,13 +4094,13 @@ Jump to: [top](#)
 
 
 <div id="2015_howe">
-## 2015/howe
+### 2015/howe
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: known bug - please help us fix
+#### STATUS: known bug - please help us fix
 
 The test scripts do not seem to work properly with bash but this would be ideal
 as not all systems have a compatible shell (they assume a POSIX compliant
@@ -4127,16 +4127,16 @@ Jump to: [top](#)
 
 
 <div id="2015_mills2">
-## 2015/mills2
+### 2015/mills2
 </div>
 
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2015/mills2/prog.c](%%REPO_URL%%/2015/mills2/prog.c)
-### Information: [2015/mills2/index.html](2015/mills2/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [2015/mills2/prog.c](%%REPO_URL%%/2015/mills2/prog.c)
+#### Information: [2015/mills2/index.html](2015/mills2/index.html)
 
 The program doesn't look at the header of files so if it's passed something hat
 is not compressed data it's likely to crash.
@@ -4148,15 +4148,15 @@ Jump to: [top](#)
 
 
 <div id="2015_schweikhardt">
-## 2015/schweikhardt
+### 2015/schweikhardt
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2015/schweikhardt/prog.c](%%REPO_URL%%/2015/schweikhardt/prog.c)
-### Information: [2015/schweikhardt/index.html](2015/schweikhardt/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [2015/schweikhardt/prog.c](%%REPO_URL%%/2015/schweikhardt/prog.c)
+#### Information: [2015/schweikhardt/index.html](2015/schweikhardt/index.html)
 
 The program assumes that `EOF` is `-1`. This can be fixed but at this time it is
 uncertain if it should be.
@@ -4174,7 +4174,7 @@ Jump to: [top](#)
 
 <hr style="width:10%;text-align:left;margin-left:0">
 <div id="2016">
-# 2016
+## 2016
 </div>
 <hr style="width:10%;text-align:left;margin-left:0">
 
@@ -4186,7 +4186,7 @@ Jump to: [top](#)
 
 <hr style="width:10%;text-align:left;margin-left:0">
 <div id="2017">
-# 2017
+## 2017
 </div>
 <hr style="width:10%;text-align:left;margin-left:0">
 
@@ -4197,7 +4197,7 @@ Jump to: [top](#)
 
 <hr style="width:10%;text-align:left;margin-left:0">
 <div id="2018">
-# 2018
+## 2018
 </div>
 <hr style="width:10%;text-align:left;margin-left:0">
 
@@ -4205,15 +4205,15 @@ Jump to: [top](#)
 
 
 <div id="2018_algmyr">
-## 2018/algmyr
+### 2018/algmyr
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2018/algmyr/prog.c](%%REPO_URL%%/2018/algmyr/prog.c)
-### Information: [2018/algmyr/index.html](2018/algmyr/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [2018/algmyr/prog.c](%%REPO_URL%%/2018/algmyr/prog.c)
+#### Information: [2018/algmyr/index.html](2018/algmyr/index.html)
 
 The author wrote:
 
@@ -4232,16 +4232,16 @@ Jump to: [top](#)
 
 
 <div id="2018_hou">
-## 2018/hou
+### 2018/hou
 </div>
 
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2018/hou/prog.c](%%REPO_URL%%/2018/hou/prog.c)
-### Information: [2018/hou/index.html](2018/hou/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [2018/hou/prog.c](%%REPO_URL%%/2018/hou/prog.c)
+#### Information: [2018/hou/index.html](2018/hou/index.html)
 
 When you run it on a JSON file you will see something like:
 
@@ -4262,15 +4262,15 @@ Jump to: [top](#)
 
 
 <div id="2018_mills">
-## 2018/mills
+### 2018/mills
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: known bug - please help us fix
-### Source code: [2018/mills/prog.c](%%REPO_URL%%/2018/mills/prog.c)
-### Information: [2018/mills/index.html](2018/mills/index.html)
+#### STATUS: known bug - please help us fix
+#### Source code: [2018/mills/prog.c](%%REPO_URL%%/2018/mills/prog.c)
+#### Information: [2018/mills/index.html](2018/mills/index.html)
 
 After exiting the program (with ctrl-e) if you try running it again you will
 likely see:
@@ -4287,7 +4287,7 @@ it'll be okay.
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
+#### STATUS: INABIAF - please **DO NOT** fix
 
 The author stated that if you make a typo it can happen that the boot loader can
 crash and halt. If this is the case type ctrl-e to quit the emulator and try
@@ -4308,15 +4308,15 @@ Jump to: [top](#)
 
 
 <div id="2018_vokes">
-## 2018/vokes
+### 2018/vokes
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2018/vokes/prog.c](%%REPO_URL%%/2018/vokes/prog.c)
-### Information: [2018/vokes/index.html](2018/vokes/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [2018/vokes/prog.c](%%REPO_URL%%/2018/vokes/prog.c)
+#### Information: [2018/vokes/index.html](2018/vokes/index.html)
 
 The author wrote the following:
 
@@ -4369,7 +4369,7 @@ Jump to: [top](#)
 
 <hr style="width:10%;text-align:left;margin-left:0">
 <div id="2019">
-# 2019
+## 2019
 </div>
 <hr style="width:10%;text-align:left;margin-left:0">
 
@@ -4377,15 +4377,15 @@ Jump to: [top](#)
 
 
 <div id="2019_adamovsky">
-## 2019/adamovsky
+### 2019/adamovsky
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2019/adamovsky/prog.c](%%REPO_URL%%/2019/adamovsky/prog.c)
-### Information: [2019/adamovsky/index.html](2019/adamovsky/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [2019/adamovsky/prog.c](%%REPO_URL%%/2019/adamovsky/prog.c)
+#### Information: [2019/adamovsky/index.html](2019/adamovsky/index.html)
 
 Certain input can crash this program. The file
 [crash.unl](%%REPO_URL%%/2019/adamovsky/crash.unl) is an example file.
@@ -4394,15 +4394,15 @@ Jump to: [top](#)
 
 
 <div id="2019_burton">
-## 2019/burton
+### 2019/burton
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2019/burton/prog.c](%%REPO_URL%%/2019/burton/prog.c)
-### Information: [2019/burton/index.html](2019/burton/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [2019/burton/prog.c](%%REPO_URL%%/2019/burton/prog.c)
+#### Information: [2019/burton/index.html](2019/burton/index.html)
 
 The author pointed out that some implementations of `wc(1)` show different
 values but his implementation matches that of macOS and FreeBSD.
@@ -4411,15 +4411,15 @@ Jump to: [top](#)
 
 
 <div id="2019_ciura">
-## 2019/ciura
+### 2019/ciura
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2019/ciura/prog.c](%%REPO_URL%%/2019/ciura/prog.c)
-### Information: [2019/ciura/index.html](2019/ciura/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [2019/ciura/prog.c](%%REPO_URL%%/2019/ciura/prog.c)
+#### Information: [2019/ciura/index.html](2019/ciura/index.html)
 
 The scripts were fixed so that they can work but it might end up that the
 scripts don't show any output anyway as they use the full alphabet. To test that
@@ -4454,15 +4454,15 @@ Jump to: [top](#)
 
 
 <div id="2019_dogon">
-## 2019/dogon
+### 2019/dogon
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: uses gets() - change to fgets() if possible
-### Source code: [2019/dogon/prog.c](%%REPO_URL%%/2019/dogon/prog.c)
-### Information: [2019/dogon/index.html](2019/dogon/index.html)
+#### STATUS: uses gets() - change to fgets() if possible
+#### Source code: [2019/dogon/prog.c](%%REPO_URL%%/2019/dogon/prog.c)
+#### Information: [2019/dogon/index.html](2019/dogon/index.html)
 
 The entry calls `gets(3)` and it would be better if the code called `fgets()` instead.
 
@@ -4474,15 +4474,15 @@ Jump to: [top](#)
 
 
 <div id="2019_duble">
-## 2019/duble
+### 2019/duble
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2019/duble/prog.c](%%REPO_URL%%/2019/duble/prog.c)
-### Information: [2019/duble/index.html](2019/duble/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [2019/duble/prog.c](%%REPO_URL%%/2019/duble/prog.c)
+#### Information: [2019/duble/index.html](2019/duble/index.html)
 
 There are two things to be aware of with this entry.
 
@@ -4526,15 +4526,15 @@ Jump to: [top](#)
 
 
 <div id="2019_endoh">
-## 2019/endoh
+### 2019/endoh
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2019/endoh/prog.c](%%REPO_URL%%/2019/endoh/prog.c)
-### Information: [2019/endoh/index.html](2019/endoh/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [2019/endoh/prog.c](%%REPO_URL%%/2019/endoh/prog.c)
+#### Information: [2019/endoh/index.html](2019/endoh/index.html)
 
 As a backtrace quine this entry is **SUPPOSED to segfault** so this should not be
 touched either.
@@ -4543,15 +4543,15 @@ Jump to: [top](#)
 
 
 <div id="2019_karns">
-## 2019/karns
+### 2019/karns
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2019/karns/prog.c](%%REPO_URL%%/2019/karns/prog.c)
-### Information: [2019/karns/index.html](2019/karns/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [2019/karns/prog.c](%%REPO_URL%%/2019/karns/prog.c)
+#### Information: [2019/karns/index.html](2019/karns/index.html)
 
 The author stated the following:
 
@@ -4577,15 +4577,15 @@ Jump to: [top](#)
 
 
 <div id="2019_lynn">
-## 2019/lynn
+### 2019/lynn
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2019/lynn/prog.c](%%REPO_URL%%/2019/lynn/prog.c)
-### Information: [2019/lynn/index.html](2019/lynn/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [2019/lynn/prog.c](%%REPO_URL%%/2019/lynn/prog.c)
+#### Information: [2019/lynn/index.html](2019/lynn/index.html)
 
 The author wrote that there are a number of differences from what one might
 expect. Rather than duplicate the information we refer you to the author's
@@ -4596,15 +4596,15 @@ Jump to: [top](#)
 
 
 <div id="2019_mills">
-## 2019/mills
+### 2019/mills
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2019/mills/prog.c](%%REPO_URL%%/2019/mills/prog.c)
-### Information: [2019/mills/index.html](2019/mills/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [2019/mills/prog.c](%%REPO_URL%%/2019/mills/prog.c)
+#### Information: [2019/mills/index.html](2019/mills/index.html)
 
 The author wrote that if you decide to change networks or use a different input
 file you should delete all the checkpoint files because the format depends on
@@ -4626,15 +4626,15 @@ Jump to: [top](#)
 
 
 <div id="2019_poikola">
-## 2019/poikola
+### 2019/poikola
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2019/poikola/prog.c](%%REPO_URL%%/2019/poikola/prog.c)
-### Information: [2019/poikola/index.html](2019/poikola/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [2019/poikola/prog.c](%%REPO_URL%%/2019/poikola/prog.c)
+#### Information: [2019/poikola/index.html](2019/poikola/index.html)
 
 This program will not validate input so it might fail or get stuck if invoked
 erroneously.
@@ -4645,15 +4645,15 @@ Jump to: [top](#)
 
 
 <div id="2019_yang">
-## 2019/yang
+### 2019/yang
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2019/yang/prog.c](%%REPO_URL%%/2019/yang/prog.c)
-### Information: [2019/yang/index.html](2019/yang/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [2019/yang/prog.c](%%REPO_URL%%/2019/yang/prog.c)
+#### Information: [2019/yang/index.html](2019/yang/index.html)
 
 The author noted that if the program runs out of memory it is likely to crash.
 
@@ -4666,7 +4666,7 @@ Jump to: [top](#)
 
 <hr style="width:10%;text-align:left;margin-left:0">
 <div id="2020">
-# 2020
+## 2020
 </div>
 <hr style="width:10%;text-align:left;margin-left:0">
 
@@ -4674,15 +4674,15 @@ Jump to: [top](#)
 
 
 <div id="2020_burton">
-## 2020/burton
+### 2020/burton
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2020/burton/prog.c](%%REPO_URL%%/2020/burton/prog.c)
-### Information: [2020/burton/index.html](2020/burton/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [2020/burton/prog.c](%%REPO_URL%%/2020/burton/prog.c)
+#### Information: [2020/burton/index.html](2020/burton/index.html)
 
 This entry is known to crash if no arg is specified. Although easy to fix it is
 documented and should not be fixed (of course you may fix it to see if you can
@@ -4695,15 +4695,15 @@ Jump to: [top](#)
 
 
 <div id="2020_carlini">
-## 2020/carlini
+### 2020/carlini
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2020/carlini/prog.c](%%REPO_URL%%/2020/carlini/prog.c)
-### Information: [2020/carlini/index.html](2020/carlini/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [2020/carlini/prog.c](%%REPO_URL%%/2020/carlini/prog.c)
+#### Information: [2020/carlini/index.html](2020/carlini/index.html)
 
 The author stated that bad things happen if the entered move is outside of the
 range [1..9]. We observed a crash but we also observed a tie and other things
@@ -4721,16 +4721,16 @@ Jump to: [top](#)
 
 
 <div id="2020_ferguson1">
-## 2020/ferguson1
+### 2020/ferguson1
 </div>
 
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2020/ferguson1/prog.c](%%REPO_URL%%/2020/ferguson1/prog.c)
-### Information: [2020/ferguson1/index.html](2020/ferguson1/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [2020/ferguson1/prog.c](%%REPO_URL%%/2020/ferguson1/prog.c)
+#### Information: [2020/ferguson1/index.html](2020/ferguson1/index.html)
 
 There are some things that might appear to be bugs but are actually features or
 things that are misinterpreted as bugs. See the
@@ -4741,15 +4741,15 @@ Jump to: [top](#)
 
 
 <div id="2020_giles">
-## 2020/giles
+### 2020/giles
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2020/giles/prog.c](%%REPO_URL%%/2020/giles/prog.c)
-### Information: [2020/giles/index.html](2020/giles/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [2020/giles/prog.c](%%REPO_URL%%/2020/giles/prog.c)
+#### Information: [2020/giles/index.html](2020/giles/index.html)
 
 The author noted that the program only supports WAV files that have
 exactly 16 bits per sample, but it allows any sample rate and any number of
@@ -4759,15 +4759,15 @@ Jump to: [top](#)
 
 
 <div id="2020_otterness">
-## 2020/otterness
+### 2020/otterness
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2020/otterness/prog.c](%%REPO_URL%%/2020/otterness/prog.c)
-### Information: [2020/otterness/index.html](2020/otterness/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [2020/otterness/prog.c](%%REPO_URL%%/2020/otterness/prog.c)
+#### Information: [2020/otterness/index.html](2020/otterness/index.html)
 
 The author listed the following limitations:
 
@@ -4793,7 +4793,7 @@ Jump to: [top](#)
 
 <hr style="width:10%;text-align:left;margin-left:0">
 <div id="2021">
-# 2021
+## 2021
 </div>
 <hr style="width:10%;text-align:left;margin-left:0">
 
@@ -4804,7 +4804,7 @@ Jump to: [top](#)
 
 <hr style="width:10%;text-align:left;margin-left:0">
 <div id="2022">
-# 2022
+## 2022
 </div>
 <hr style="width:10%;text-align:left;margin-left:0">
 
@@ -4815,7 +4815,7 @@ Jump to: [top](#)
 
 <hr style="width:10%;text-align:left;margin-left:0">
 <div id="2023">
-# 2023
+## 2023
 </div>
 <hr style="width:10%;text-align:left;margin-left:0">
 
@@ -4826,7 +4826,7 @@ Jump to: [top](#)
 
 <hr style="width:10%;text-align:left;margin-left:0">
 <div id="2024">
-# 2024
+## 2024
 </div>
 <hr style="width:10%;text-align:left;margin-left:0">
 
@@ -4834,15 +4834,15 @@ Jump to: [top](#)
 
 
 <div id="2024_carlini">
-## 2024/carlini
+### 2024/carlini
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: known bug - please help us fix
-### Source code: [2024/carlini/prog.c](%%REPO_URL%%/2024/carlini/prog.c)
-### Information: [2024/carlini/index.html](2024/carlini/index.html)
+#### STATUS: known bug - please help us fix
+#### Source code: [2024/carlini/prog.c](%%REPO_URL%%/2024/carlini/prog.c)
+#### Information: [2024/carlini/index.html](2024/carlini/index.html)
 
 When printing a 0 digit, the `fib.bin` 4004 program will print a space instead of a "0".
 
@@ -4850,14 +4850,14 @@ Jump to: [top](#)
 
 
 <div id="2024_ferguson2">
-## 2024/ferguson2
+### 2024/ferguson2
 </div>
 
 Jump to: [top](#)
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2024/ferguson2/prog.c](%%REPO_URL%%/2024/ferguson2/prog.c)
-### Information: [2024/ferguson2/index.html](2024/ferguson2/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [2024/ferguson2/prog.c](%%REPO_URL%%/2024/ferguson2/prog.c)
+#### Information: [2024/ferguson2/index.html](2024/ferguson2/index.html)
 
 As the language is a spoken language and as spaces are required to separate
 words and as words sometimes have to be spelt out (where each letter in the word
@@ -4899,15 +4899,15 @@ translation back to English is not perfect.
 
 
 <div id="2024_howe">
-## 2024/howe
+### 2024/howe
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: known bug - please help us fix
-### Source code: [2024/howe/prog.c](%%REPO_URL%%/2024/howe/prog.c)
-### Information: [2024/howe/index.html](2024/howe/index.html)
+#### STATUS: known bug - please help us fix
+#### Source code: [2024/howe/prog.c](%%REPO_URL%%/2024/howe/prog.c)
+#### Information: [2024/howe/index.html](2024/howe/index.html)
 
 NetBSD Curses `mvgetnstr()` does not display UTF-8 characters correctly
 with echo on, but the input is valid (see the program's `/search`
@@ -4923,15 +4923,15 @@ Jump to: [top](#)
 
 
 <div id="2024_kramer">
-## 2024/kramer
+### 2024/kramer
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: known bug - please help us fix
-### Source code: [2024/kramer/prog.c](%%REPO_URL%%/2024/kramer/prog.c)
-### Information: [2024/kramer/index.html](2024/kramer/index.html)
+#### STATUS: known bug - please help us fix
+#### Source code: [2024/kramer/prog.c](%%REPO_URL%%/2024/kramer/prog.c)
+#### Information: [2024/kramer/index.html](2024/kramer/index.html)
 
 
 This program computes using signed int values.  On a 64-bit processor
@@ -4961,15 +4961,15 @@ Jump to: [top](#)
 
 
 <div id="2024_kurdyukov4">
-## 2024/kurdyukov4
+### 2024/kurdyukov4
 </div>
 
 Jump to: [top](#)
 
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2024/kurdyukov4/prog.c](%%REPO_URL%%/2024/kurdyukov4/prog.c)
-### Information: [2024/kurdyukov4/index.html](2024/kurdyukov4/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [2024/kurdyukov4/prog.c](%%REPO_URL%%/2024/kurdyukov4/prog.c)
+#### Information: [2024/kurdyukov4/index.html](2024/kurdyukov4/index.html)
 
 The [2024/kurdyukov4/try.sh](%%REPO_URL%%/2024/kurdyukov4/try.sh) script
 will very likely run into problems such as compile taking a long time,
@@ -4987,15 +4987,15 @@ Jump to: [top](#)
 
 <hr style="width:10%;text-align:left;margin-left:0">
 <div id="2025">
-# 2025
+## 2025
 </div>
 <hr style="width:10%;text-align:left;margin-left:0">
 
 Jump to: [top](#)
 
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [2025/ferguson/prog.c](%%REPO_URL%%/2025/ferguson/prog.c)
-### Information: [2025/ferguson/index.html](2025/ferguson/index.html)
+#### STATUS: INABIAF - please **DO NOT** fix
+#### Source code: [2025/ferguson/prog.c](%%REPO_URL%%/2025/ferguson/prog.c)
+#### Information: [2025/ferguson/index.html](2025/ferguson/index.html)
 
 This program necessarily scales the arrows to a larger size for those who, like
 the author, cannot see them otherwise. This means that locations are a bit off
@@ -5007,7 +5007,7 @@ place).
 
 <hr style="width:10%;text-align:left;margin-left:0">
 <div id="final_words">
-# Final words
+## Final words
 </div>
 <hr style="width:10%;text-align:left;margin-left:0">
 

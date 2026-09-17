@@ -122,7 +122,7 @@ When the contest is [open](../faq.html#open), proceed with
 
 
 <div id="status_impact">
-# How the contest status impacts registration
+## How the contest status impacts registration
 </div>
 
 

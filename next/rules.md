@@ -586,16 +586,6 @@ judging](guidelines.html#guideline16-anonymous-judging).
 
 **TL;DR**: use `mkiocccentry(1)` to package your submission.
 
-
-
-<div id="rule17">
-<div id="rule17-mkiocccentry">
-## Rule 17 - Use `mkiocccentry`
-</div>
-</div>
-
-**TL;DR**: use `mkiocccentry(1)` to package your submission.
-
 The files, directories, and paths **MUST** conform to the limits
 imposed by `mkiocccentry(1)`, including but **NOT** limited to, their
 names, count, path length, directory tree depth, and permissions.

@@ -10,7 +10,7 @@ entirety and remains unaltered.  All other uses must receive prior
 permission in writing by [contacting the Judges](../contact.html).
 
 
-# Guidelines Version
+## Guidelines Version
 
 <p class="leftbar">
 These IOCCC Guidelines are version **30.00 2026-09-13**.
@@ -22,7 +22,7 @@ indicates an **change** from the previous IOCCC.
 </p>
 
 <div id="guidelines">
-# Guidelines
+## Guidelines
 </div>
 
 These [Guidelines](guidelines.html) are **hints** and **suggestions**,
@@ -52,7 +52,7 @@ Be sure to read the [Rules](rules.html).
 
 <div id="guideline1">
 <div id="guideline1-c">
-# Guidelines for [Rule 1 - C program](rules.html#rule1-c)
+## Guidelines for [Rule 1 - C program](rules.html#rule1-c)
 </div>
 </div>
 
@@ -91,7 +91,7 @@ Jump to: [top](#)
 
 <div id="guideline2">
 <div id="guideline2-size">
-# Guidelines for [Rule 2 - Size restrictions](rules.html#rule2-size)
+## Guidelines for [Rule 2 - Size restrictions](rules.html#rule2-size)
 </div>
 </div>
 
@@ -171,7 +171,7 @@ Jump to: [top](#)
 
 <div id="guideline3">
 <div id="guideline3-register">
-# Guidelines for [Rule 3 - Register for the IOCCC](rules.html#rule3-register)
+## Guidelines for [Rule 3 - Register for the IOCCC](rules.html#rule3-register)
 </div>
 </div>
 
@@ -211,7 +211,7 @@ Jump to: [top](#)
 
 <div id="guideline7">
 <div id="guideline7-original">
-# Guidelines for [Rule 7 - Original Work](rules.html#rule7-original-work)
+## Guidelines for [Rule 7 - Original Work](rules.html#rule7-original-work)
 </div>
 </div>
 
@@ -246,7 +246,7 @@ Jump to: [top](#)
 
 <div id="guideline8">
 <div id="guideline8-submitting">
-# Guidelines for [Rule 8 - Submitting requirements](rules.html#rule8-submitting-requirements)
+## Guidelines for [Rule 8 - Submitting requirements](rules.html#rule8-submitting-requirements)
 </div>
 </div>
 
@@ -262,7 +262,7 @@ Jump to: [top](#)
 <div id="guideline9">
 <div id="guideline9-no-interactive-compiling-allowed">
 <div id="guideline9-no-interactive">
-# Guidelines for [Rule 9 - No interactive compiling allowed](rules.html#rule9-no-interactive)
+## Guidelines for [Rule 9 - No interactive compiling allowed](rules.html#rule9-no-interactive)
 </div>
 </div>
 </div>
@@ -297,7 +297,7 @@ Jump to: [top](#)
 
 <div id="guideline11">
 <div id="guideline11-abuse">
-# Guidelines for [Rule 11 - Legal rule abuse](rules.html#rule11-legal-rule-abuse)
+## Guidelines for [Rule 11 - Legal rule abuse](rules.html#rule11-legal-rule-abuse)
 </div>
 </div>
 
@@ -381,7 +381,7 @@ Jump to: [top](#)
 
 <div id="guideline12">
 <div id="guideline12-utf8">
-# Guidelines for [Rule 12 - UTF-8](rules.html#rule12-utf8)
+## Guidelines for [Rule 12 - UTF-8](rules.html#rule12-utf8)
 </div>
 </div>
 
@@ -391,7 +391,7 @@ in `C` code.
 
 <div id="guideline13">
 <div id="guideline13-nocr">
-# Guidelines for [Rule 13 - No carriage returns in prog.c](rules.html#rule13-nocr)
+## Guidelines for [Rule 13 - No carriage returns in prog.c](rules.html#rule13-nocr)
 </div>
 </div>
 
@@ -420,7 +420,7 @@ Jump to: [top](#)
 
 <div id="guideline15">
 <div id="guideline15-gnu-makefile">
-# Guidelines for [Rule 15 - GNU Makefile](rules.html#rule15-gnu-makefile)
+## Guidelines for [Rule 15 - GNU Makefile](rules.html#rule15-gnu-makefile)
 </div>
 </div>
 
@@ -450,7 +450,7 @@ Jump to: [top](#)
 
 <div id="guideline16">
 <div id="guideline16-anonymous-judging">
-# Guidelines for [Rule 16 - Anonymous judging](rules.html#rule16-anonymous-judging)
+## Guidelines for [Rule 16 - Anonymous judging](rules.html#rule16-anonymous-judging)
 </div>
 </div>
 
@@ -478,7 +478,7 @@ Jump to: [top](#)
 
 <div id="guideline17">
 <div id="guideline17-mkiocccentry">
-# Guidelines for [Rule 17 - Use mkiocccentry](rules.html#rule17-mkiocccentry)
+## Guidelines for [Rule 17 - Use mkiocccentry](rules.html#rule17-mkiocccentry)
 </div>
 </div>
 
@@ -568,7 +568,7 @@ Jump to: [top](#)
 
 <div id="general">
 <div id="general-guidelines">
-# General Guidelines
+## General Guidelines
 </div>
 </div>
 
@@ -1694,7 +1694,7 @@ Jump to: [top](#)
 
 <div id="more-information">
 <div id="information">
-# Further Reading
+## Further Reading
 </div>
 </div>
 

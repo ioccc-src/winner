@@ -79,7 +79,7 @@ See also our [GitHub CONTRIBUTING](CONTRIBUTING.html) page.
 
 
 <div id="thanks">
-# Thank you
+## Thank you
 </div>
 
 The servers, services, and software used to build, manage, and maintain
@@ -93,7 +93,7 @@ width=262 height=142></a>
 
 
 <div id="obfuscate">
-# Obfuscate defined:
+## Obfuscate defined:
 </div>
 
 tr.v. -cated, -cating, -cates.
@@ -107,7 +107,7 @@ tr.v. -cated, -cating, -cates.
 
 
 <div id="goals">
-# Goals of the Contest
+## Goals of the Contest
 </div>
 
 The goals of the IOCCC:
@@ -123,7 +123,7 @@ The goals of the IOCCC:
 
 <div id="enter">
 <div id="participate">
-# Entering the Contest
+## Entering the Contest
 </div>
 </div>
 
@@ -135,7 +135,7 @@ for more information.
 
 
 <div id="mastodon">
-# Follow IOCCC on Mastodon
+## Follow IOCCC on Mastodon
 </div>
 
 The [IOCCC uses Mastodon](https://fosstodon.org/@ioccc) for news updates,
@@ -150,7 +150,7 @@ FAQ on "[What is Mastodon and why does IOCCC use it?](faq.html#try_mastodon)".
 
 <div id="discord">
 <div id="chat">
-# IOCCC Discord server
+## IOCCC Discord server
 </div>
 </div>
 
@@ -162,7 +162,7 @@ To join, click this link:
 [https://discord.gg/Wa42Qujwnw](https://discord.gg/Wa42Qujwnw).
 
 <div id="disclaimer">
-# Important Disclaimer
+## Important Disclaimer
 </div>
 
 The IOCCC code is intended solely for **educational and entertainment

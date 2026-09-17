@@ -1,4 +1,4 @@
-    # Thanks for all the help
+# Thanks for all the help
 
 
 <blockquote>
@@ -58,14 +58,14 @@ on an IOCCC entry by entry basis.
 
 
 <div id="1984">
-# [1984 - The 1st IOCCC](1984/index.html)
+## [1984 - The 1st IOCCC](1984/index.html)
 </div>
 
 Jump to: [top](#)
 
 <div id="1984_anonymous">
-## Winning entry: [1984/anonymous](1984/anonymous/index.html)
-### Winning entry source code: [anonymous.c](%%REPO_URL%%/1984/anonymous/anonymous.c)
+### Winning entry: [1984/anonymous](1984/anonymous/index.html)
+#### Winning entry source code: [anonymous.c](%%REPO_URL%%/1984/anonymous/anonymous.c)
 </div>
 
 [Cody](#cody) fixed this to work for macOS.
@@ -96,8 +96,8 @@ Scovell](https://web.archive.org/web/20070120220721/https://thomasscovell.com/ta
 Jump to: [top](#)
 
 <div id="1984_decot">
-## Winning entry: [1984/decot](1984/decot/index.html)
-### Winning entry source code: [decot.c](%%REPO_URL%%/1984/decot/decot.c)
+### Winning entry: [1984/decot](1984/decot/index.html)
+#### Winning entry source code: [decot.c](%%REPO_URL%%/1984/decot/decot.c)
 </div>
 
 [Cody](#cody) fixed this to not require `-traditional-cpp` which some compilers like
@@ -181,8 +181,8 @@ To see the diff between the original and the alternate code, try:
 Jump to: [top](#)
 
 <div id="1984_laman">
-## Winning entry: [1984/laman](1984/laman/index.html)
-### Winning entry source code: [laman.c](%%REPO_URL%%/1984/laman/laman.c)
+### Winning entry: [1984/laman](1984/laman/index.html)
+#### Winning entry source code: [laman.c](%%REPO_URL%%/1984/laman/laman.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/1984/laman/try.sh) script.
@@ -190,8 +190,8 @@ Jump to: [top](#)
 Jump to: [top](#)
 
 <div id="1984_mullender">
-## Winning entry: [1984/mullender](1984/mullender/index.html)
-### Winning entry source code: [mullender.c](%%REPO_URL%%/1984/mullender/mullender.c)
+### Winning entry: [1984/mullender](1984/mullender/index.html)
+#### Winning entry source code: [mullender.c](%%REPO_URL%%/1984/mullender/mullender.c)
 </div>
 
 [Cody](#cody) provided an [alternate version](%%REPO_URL%%/1984/mullender/mullender.alt.c),
@@ -217,14 +217,14 @@ Repo](https://github.com/dspinellis/unix-history-repo/tree/Research-Release).
 Jump to: [top](#)
 
 <div id="1985">
-# [1985 - The 2nd IOCCC](1985/index.html)
+## [1985 - The 2nd IOCCC](1985/index.html)
 </div>
 
 Jump to: [top](#)
 
 <div id="1985_applin">
-## Winning entry: [1984/applin](1985/applin/index.html)
-### Winning entry source code: [applin.c](%%REPO_URL%%/1985/applin/applin.c)
+### Winning entry: [1984/applin](1985/applin/index.html)
+#### Winning entry source code: [applin.c](%%REPO_URL%%/1985/applin/applin.c)
 </div>
 
 Both [Cody](#cody) and [Yusuke](#yusuke) fixed this; Yusuke got this to not crash and Cody fixed it
@@ -251,8 +251,8 @@ returning to the shell. The original code does not have this change.
 Jump to: [top](#)
 
 <div id="1985_august">
-## Winning entry: [1985/august](1985/august/index.html)
-### Winning entry source code: [august.c](%%REPO_URL%%/1985/august/august.c)
+### Winning entry: [1985/august](1985/august/index.html)
+#### Winning entry source code: [august.c](%%REPO_URL%%/1985/august/august.c)
 </div>
 
 [Cody](#cody), out of abundance of caution, added a second arg to `main()` because some
@@ -276,8 +276,8 @@ default value).
 Jump to: [top](#)
 
 <div id="1985_lycklama">
-## Winning entry: [1985/lycklama](1985/lycklama/index.html)
-### Winning entry source code: [lycklama.c](%%REPO_URL%%/1985/lycklama/lycklama.c)
+### Winning entry: [1985/lycklama](1985/lycklama/index.html)
+#### Winning entry source code: [lycklama.c](%%REPO_URL%%/1985/lycklama/lycklama.c)
 </div>
 
 [Cody](#cody) fixed this to compile with modern compilers. In the past one could get away
@@ -293,8 +293,8 @@ Cody also provided the [try.alt.sh](%%REPO_URL%%/1985/lycklama/try.alt.sh) scrip
 Jump to: [top](#)
 
 <div id="1985_shapiro">
-## Winning entry: [1985/shapiro](1985/shapiro/index.html)
-### Winning entry source code: [shapiro.c](%%REPO_URL%%/1985/shapiro/shapiro.c)
+### Winning entry: [1985/shapiro](1985/shapiro/index.html)
+#### Winning entry source code: [shapiro.c](%%REPO_URL%%/1985/shapiro/shapiro.c)
 </div>
 
 [Cody](#cody) added the [alternate code](%%REPO_URL%%/1985/shapiro/shapiro.alt.c)
@@ -308,8 +308,8 @@ input (this includes negative numbers which in the code actually sets it back to
 Jump to: [top](#)
 
 <div id="1985_sicherman">
-## Winning entry: [1985/sicherman](1985/sicherman/index.html)
-### Winning entry source code: [1985/sicherman](%%REPO_URL%%/1985/sicherman/sicherman.c)
+### Winning entry: [1985/sicherman](1985/sicherman/index.html)
+#### Winning entry source code: [1985/sicherman](%%REPO_URL%%/1985/sicherman/sicherman.c)
 </div>
 
 [Cody](#cody) fixed this _very twisted entry_ to not require `-traditional-cpp`.  Fixing
@@ -423,14 +423,14 @@ Cody also added the [try.sh](%%REPO_URL%%/1985/sicherman/try.sh) and
 Jump to: [top](#)
 
 <div id="1986">
-# [1986 - The 3rd IOCCC](1986/index.html)
+## [1986 - The 3rd IOCCC](1986/index.html)
 </div>
 
 Jump to: [top](#)
 
 <div id="1986_applin">
-## Winning entry: [1986/applin](1986/applin/index.html)
-### Winning entry source code: [applin.c](%%REPO_URL%%/1986/applin/applin.c)
+### Winning entry: [1986/applin](1986/applin/index.html)
+#### Winning entry source code: [applin.c](%%REPO_URL%%/1986/applin/applin.c)
 </div>
 
 [Cody](#cody) made the C file executable so one does not have to do `sh
@@ -439,8 +439,8 @@ Jump to: [top](#)
 Jump to: [top](#)
 
 <div id="1986_bright">
-## Winning entry: [1986/bright](1986/bright/index.html)
-### Winning entry source code: [bright.c](%%REPO_URL%%/1986/bright/bright.c)
+### Winning entry: [1986/bright](1986/bright/index.html)
+#### Winning entry source code: [bright.c](%%REPO_URL%%/1986/bright/bright.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/1986/bright/try.sh) script.
@@ -448,8 +448,8 @@ Jump to: [top](#)
 Jump to: [top](#)
 
 <div id="1986_hague">
-## Winning entry: [1986/hague](1986/hague/index.html)
-### Winning entry source code: [hague.c](%%REPO_URL%%/1986/hague/hague.c)
+### Winning entry: [1986/hague](1986/hague/index.html)
+#### Winning entry source code: [hague.c](%%REPO_URL%%/1986/hague/hague.c)
 </div>
 
 [Cody](#cody) made this use `fgets()`.
@@ -461,8 +461,8 @@ for why this was done.
 Jump to: [top](#)
 
 <div id="1986_holloway">
-## Winning entry: [1986/holloway](1986/holloway/index.html)
-### Winning entry source code: [holloway.c](%%REPO_URL%%/1986/holloway/holloway.c)
+### Winning entry: [1986/holloway](1986/holloway/index.html)
+#### Winning entry source code: [holloway.c](%%REPO_URL%%/1986/holloway/holloway.c)
 </div>
 
 [Cody](#cody) fixed this to compile and work with `clang` (it already worked with `gcc`).
@@ -476,8 +476,8 @@ and then using `t` instead of `s` it compiles and runs successfully under
 Jump to: [top](#)
 
 <div id="1986_marshall">
-## Winning entry: [1986/marshall](1986/marshall/index.html)
-### Winning entry source code: [marshall.c](%%REPO_URL%%/1986/marshall/marshall.c)
+### Winning entry: [1986/marshall](1986/marshall/index.html)
+#### Winning entry source code: [marshall.c](%%REPO_URL%%/1986/marshall/marshall.c)
 </div>
 
 [Cody](#cody) got this to compile and work with `clang` and `gcc`. He noted that he tried to
@@ -544,8 +544,8 @@ are produced.
 Jump to: [top](#)
 
 <div id="1986_pawka">
-## Winning entry: [1986/pawka](1986/pawka/index.html)
-### Winning entry source code: [pawka.c](%%REPO_URL%%/1986/pawka/pawka.c)
+### Winning entry: [1986/pawka](1986/pawka/index.html)
+#### Winning entry source code: [pawka.c](%%REPO_URL%%/1986/pawka/pawka.c)
 </div>
 
 [Cody](#cody) noticed and fixed a funny mistake in the `Makefile` where a
@@ -555,8 +555,8 @@ Jump to: [top](#)
 Jump to: [top](#)
 
 <div id="1986_stein">
-## Winning entry: [1986/stein](1986/stein/index.html)
-### Winning entry source code: [stein.c](%%REPO_URL%%/1986/stein/stein.c)
+### Winning entry: [1986/stein](1986/stein/index.html)
+#### Winning entry source code: [stein.c](%%REPO_URL%%/1986/stein/stein.c)
 </div>
 
 [Cody](#cody) restored the [original
@@ -571,8 +571,8 @@ commands that we suggest in order to get it to show clean output.
 Jump to: [top](#)
 
 <div id="1986_wall">
-## Winning entry: [1986/wall](1986/wall/index.html)
-### Winning entry source code: [wall.c](%%REPO_URL%%/1986/wall/wall.c)
+### Winning entry: [1986/wall](1986/wall/index.html)
+#### Winning entry source code: [wall.c](%%REPO_URL%%/1986/wall/wall.c)
 </div>
 
 [Cody](#cody) fixed this so that it does not require `-traditional-cpp`. This took a fair
@@ -684,14 +684,14 @@ There might have been other changes as well.
 Jump to: [top](#)
 
 <div id="1987">
-# [1987 - The 4th IOCCC](1987/index.html)
+## [1987 - The 4th IOCCC](1987/index.html)
 </div>
 
 Jump to: [top](#)
 
 <div id="1987_biggar">
-## Winning entry: [1987/biggar](1987/biggar/index.html)
-### Winning entry source code: [biggar.c](%%REPO_URL%%/1987/biggar/biggar.c)
+### Winning entry: [1987/biggar](1987/biggar/index.html)
+#### Winning entry source code: [biggar.c](%%REPO_URL%%/1987/biggar/biggar.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/1987/biggar/try.sh) script.
@@ -699,8 +699,8 @@ Jump to: [top](#)
 Jump to: [top](#)
 
 <div id="1987_heckbert">
-## Winning entry: [1987/heckbert](1987/heckbert/index.html)
-### Winning entry source code: [heckbert.c](%%REPO_URL%%/1987/heckbert/heckbert.c)
+### Winning entry: [1987/heckbert](1987/heckbert/index.html)
+#### Winning entry source code: [heckbert.c](%%REPO_URL%%/1987/heckbert/heckbert.c)
 </div>
 
 [Cody](#cody) made this look more like the [original
@@ -719,8 +719,8 @@ Jump to: [top](#)
 
 
 <div id="1987_heckbert_2">
-## Winning entry: [1987/heckbert](1987/heckbert/index.html)
-### Winning entry source code: [heckbert.c](%%REPO_URL%%/1987/heckbert/heckbert.c)
+### Winning entry: [1987/heckbert](1987/heckbert/index.html)
+#### Winning entry source code: [heckbert.c](%%REPO_URL%%/1987/heckbert/heckbert.c)
 </div>
 
 [Cody](#cody) fixed the Makefile. The `CSILENCE` had a `-D` which belongs in
@@ -731,8 +731,8 @@ Jump to: [top](#)
 
 
 <div id="1987_hines">
-## Winning entry: [1987/hines](1987/hines/index.html)
-### Winning entry source code: [hines.c](%%REPO_URL%%/1987/hines/hines.c)
+### Winning entry: [1987/hines](1987/hines/index.html)
+#### Winning entry source code: [hines.c](%%REPO_URL%%/1987/hines/hines.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/1987/hines/try.sh) script, the C file
@@ -744,8 +744,8 @@ Jump to: [top](#)
 
 
 <div id="1987_lievaart">
-## Winning entry: [1987/lievaart](1987/lievaart/index.html)
-### Winning entry source code: [lievaart.c](%%REPO_URL%%/1987/lievaart/lievaart.c)
+### Winning entry: [1987/lievaart](1987/lievaart/index.html)
+#### Winning entry source code: [lievaart.c](%%REPO_URL%%/1987/lievaart/lievaart.c)
 </div>
 
 [Cody](#cody) added back the documented checks for invalid input which no longer worked
@@ -793,8 +793,8 @@ size constraints of the contest).
 Jump to: [top](#)
 
 <div id="1987_wall">
-## Winning entry: [1987/wall](1987/wall/index.html)
-### Winning entry source code: [wall.c](%%REPO_URL%%/1987/wall/wall.c)
+### Winning entry: [1987/wall](1987/wall/index.html)
+#### Winning entry source code: [wall.c](%%REPO_URL%%/1987/wall/wall.c)
 </div>
 
 [Cody](#cody) made this use `fgets(3)`.  See the
@@ -806,8 +806,8 @@ Cody also added the [try.sh](%%REPO_URL%%/1987/wall/try.sh) script.
 Jump to: [top](#)
 
 <div id="1987_westley">
-## Winning entry: [1987/westley](1987/westley/index.html)
-### Winning entry source code: [westley.c](%%REPO_URL%%/1987/westley/westley.c)
+### Winning entry: [1987/westley](1987/westley/index.html)
+#### Winning entry source code: [westley.c](%%REPO_URL%%/1987/westley/westley.c)
 </div>
 
 [Cody](#cody) fixed this for modern systems. The problem was `'assignment to cast is
@@ -829,7 +829,7 @@ Jump to: [top](#)
 
 
 <div id="1988">
-# [1988 - The 5th IOCCC](1988/index.html)
+## [1988 - The 5th IOCCC](1988/index.html)
 </div>
 
 
@@ -837,8 +837,8 @@ Jump to: [top](#)
 
 
 <div id="1988_dale">
-## Winning entry: [1988/dale](1988/dale/index.html)
-### Winning entry source code: [dale.c](%%REPO_URL%%/1988/dale/dale.c)
+### Winning entry: [1988/dale](1988/dale/index.html)
+#### Winning entry source code: [dale.c](%%REPO_URL%%/1988/dale/dale.c)
 </div>
 
 [Cody](#cody) fixed this twisted entry (as we called it :-) ) for modern compilers,
@@ -920,8 +920,8 @@ Jump to: [top](#)
 
 
 <div id="1988_isaak">
-## Winning entry: [1988/isaak](1988/isaak/index.html)
-### Winning entry source code: [isaak.c](%%REPO_URL%%/1988/isaak/isaak.c)
+### Winning entry: [1988/isaak](1988/isaak/index.html)
+#### Winning entry source code: [isaak.c](%%REPO_URL%%/1988/isaak/isaak.c)
 </div>
 
 [Cody](#cody) fixed this to work for modern systems. The problem was that the important
@@ -939,8 +939,8 @@ Jump to: [top](#)
 
 
 <div id="1988_litmaath">
-## Winning entry: [1988/litmaath](1988/litmaath/index.html)
-### Winning entry source code: [litmaath.c](%%REPO_URL%%/1988/litmaath/litmaath.c)
+### Winning entry: [1988/litmaath](1988/litmaath/index.html)
+#### Winning entry source code: [litmaath.c](%%REPO_URL%%/1988/litmaath/litmaath.c)
 </div>
 
 [Cody](#cody) added the [alternate code](%%REPO_URL%%/1988/litmaath/litmaath.alt.c)
@@ -952,8 +952,8 @@ Jump to: [top](#)
 
 
 <div id="1988_phillipps">
-## Winning entry: [1988/phillipps](1988/phillipps/index.html)
-### Winning entry source code: [phillipps.c](%%REPO_URL%%/1988/phillipps/phillipps.c)
+### Winning entry: [1988/phillipps](1988/phillipps/index.html)
+#### Winning entry source code: [phillipps.c](%%REPO_URL%%/1988/phillipps/phillipps.c)
 </div>
 
 [Cody](#cody) fixed this for modern systems. It did not compile with `clang` because it
@@ -977,8 +977,8 @@ Jump to: [top](#)
 
 
 <div id="1988_reddy">
-## Winning entry: [1988/reddy](1988/reddy/index.html)
-### Winning entry source code: [reddy.c](%%REPO_URL%%/1988/reddy/reddy.c)
+### Winning entry: [1988/reddy](1988/reddy/index.html)
+#### Winning entry source code: [reddy.c](%%REPO_URL%%/1988/reddy/reddy.c)
 </div>
 
 [Cody](#cody) made this use `fgets(3)`.  See the
@@ -990,8 +990,8 @@ Jump to: [top](#)
 
 
 <div id="1988_spinellis">
-## Winning entry: [1988/spinellis](1988/spinellis/index.html)
-### Winning entry source code: [spinellis.c](%%REPO_URL%%/1988/spinellis/spinellis.c)
+### Winning entry: [1988/spinellis](1988/spinellis/index.html)
+#### Winning entry source code: [spinellis.c](%%REPO_URL%%/1988/spinellis/spinellis.c)
 </div>
 
 [Cody](#cody) provided an [alternate version](%%REPO_URL%%/1988/spinellis/spinellis.alt.c) so that
@@ -1012,8 +1012,8 @@ Jump to: [top](#)
 
 
 <div id="1988_westley">
-## Winning entry: [1988/westley](1988/westley/index.html)
-### Winning entry source code: [westley.c](%%REPO_URL%%/1988/westley/westley.c)
+### Winning entry: [1988/westley](1988/westley/index.html)
+#### Winning entry source code: [westley.c](%%REPO_URL%%/1988/westley/westley.c)
 </div>
 
 The [original version](%%REPO_URL%%/1988/westley/westley.alt.c), provided as alternate code,
@@ -1031,7 +1031,7 @@ Jump to: [top](#)
 
 
 <div id="1989">
-# [1989 - The 6th IOCCC](1989/index.html)
+## [1989 - The 6th IOCCC](1989/index.html)
 </div>
 
 
@@ -1039,8 +1039,8 @@ Jump to: [top](#)
 
 
 <div id="1989_fubar">
-## Winning entry: [1989/fubar](1989/fubar/index.html)
-### Winning entry source code: [fubar.c](%%REPO_URL%%/1989/fubar/fubar.c)
+### Winning entry: [1989/fubar](1989/fubar/index.html)
+#### Winning entry source code: [fubar.c](%%REPO_URL%%/1989/fubar/fubar.c)
 </div>
 
 [Cody](#cody) got this to work with modern systems. The main issues were that an
@@ -1082,8 +1082,8 @@ Jump to: [top](#)
 
 
 <div id="1989_jar.1">
-## Winning entry: [1989/jar.1](1989/jar.1/index.html)
-### Winning entry source code: [jar.1.c](%%REPO_URL%%/1989/jar.1/jar.1.c)
+### Winning entry: [1989/jar.1](1989/jar.1/index.html)
+#### Winning entry source code: [jar.1.c](%%REPO_URL%%/1989/jar.1/jar.1.c)
 </div>
 
 To prevent annoying output to `/dev/tty` we changed the code to simulate the
@@ -1105,8 +1105,8 @@ Jump to: [top](#)
 
 
 <div id="1989_jar.2">
-## Winning entry: [1989/jar.2](1989/jar.2/index.html)
-### Winning entry source code: [jar.2.c](%%REPO_URL%%/1989/jar.2/jar.2.c)
+### Winning entry: [1989/jar.2](1989/jar.2/index.html)
+#### Winning entry source code: [jar.2.c](%%REPO_URL%%/1989/jar.2/jar.2.c)
 </div>
 
 [Cody](#cody) fixed this to work with modern compilers. Modern compilers do not allow
@@ -1153,8 +1153,8 @@ Jump to: [top](#)
 
 
 <div id="1989_ovdluhe">
-## Winning entry: [1989/ovdluhe](1989/ovdluhe/index.html)
-### Winning entry source code: [ovdluhe.c](%%REPO_URL%%/1989/ovdluhe/ovdluhe.c)
+### Winning entry: [1989/ovdluhe](1989/ovdluhe/index.html)
+#### Winning entry source code: [ovdluhe.c](%%REPO_URL%%/1989/ovdluhe/ovdluhe.c)
 </div>
 
 [Cody](#cody) fixed an infinite loop where the program would print the same thing over
@@ -1179,8 +1179,8 @@ Jump to: [top](#)
 
 
 <div id="1989_paul">
-## Winning entry: [1989/paul](1989/paul/index.html)
-### Winning entry source code: [paul.c](%%REPO_URL%%/1989/paul/paul.c)
+### Winning entry: [1989/paul](1989/paul/index.html)
+#### Winning entry source code: [paul.c](%%REPO_URL%%/1989/paul/paul.c)
 </div>
 
 [Cody](#cody) fixed a segfault under macOS that prevented it from working. The problem
@@ -1196,8 +1196,8 @@ Jump to: [top](#)
 
 
 <div id="1989_robison">
-## Winning entry: [1989/robison](1989/robison/index.html)
-### Winning entry source code: [robison.c](%%REPO_URL%%/1989/robison/robison.c)
+### Winning entry: [1989/robison](1989/robison/index.html)
+#### Winning entry source code: [robison.c](%%REPO_URL%%/1989/robison/robison.c)
 </div>
 
 [Yusuke Endoh](#yusuke) fixed this to compile under modern systems. To see the changes
@@ -1217,8 +1217,8 @@ Jump to: [top](#)
 
 
 <div id="1989_tromp">
-## Winning entry: [1989/tromp](1989/tromp/index.html)
-### Winning entry source code: [tromp.c](%%REPO_URL%%/1989/tromp/tromp.c)
+### Winning entry: [1989/tromp](1989/tromp/index.html)
+#### Winning entry source code: [tromp.c](%%REPO_URL%%/1989/tromp/tromp.c)
 </div>
 
 [Cody](#cody) and [Yusuke](#yusuke) fixed this entry: Yusuke fixed this to compile with `gcc` and Cody
@@ -1255,8 +1255,8 @@ Jump to: [top](#)
 
 
 <div id="1989_vanb">
-## Winning entry: [1989/vanb](1989/vanb/index.html)
-### Winning entry source code: [vanb.c](%%REPO_URL%%/1989/vanb/vanb.c)
+### Winning entry: [1989/vanb](1989/vanb/index.html)
+#### Winning entry source code: [vanb.c](%%REPO_URL%%/1989/vanb/vanb.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/1989/vanb/try.sh) script.
@@ -1266,8 +1266,8 @@ Jump to: [top](#)
 
 
 <div id="1989_westley">
-## Winning entry: [1989/westley](1989/westley/index.html)
-### Winning entry source code: [westley.c](%%REPO_URL%%/1989/westley/westley.c)
+### Winning entry: [1989/westley](1989/westley/index.html)
+#### Winning entry source code: [westley.c](%%REPO_URL%%/1989/westley/westley.c)
 </div>
 
 [Cody](#cody) fixed this for `clang`, except that two versions generated by the
@@ -1346,7 +1346,7 @@ Jump to: [top](#)
 
 
 <div id="1990">
-# [1990 - The 7th IOCCC](1990/index.html)
+## [1990 - The 7th IOCCC](1990/index.html)
 </div>
 
 
@@ -1354,8 +1354,8 @@ Jump to: [top](#)
 
 
 <div id="1990_baruch">
-## Winning entry: [1990/baruch](1990/baruch/index.html)
-### Winning entry source code: [baruch.c](%%REPO_URL%%/1990/baruch/baruch.c)
+### Winning entry: [1990/baruch](1990/baruch/index.html)
+#### Winning entry source code: [baruch.c](%%REPO_URL%%/1990/baruch/baruch.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/1990/baruch/try.sh) script.
@@ -1375,8 +1375,8 @@ Jump to: [top](#)
 
 
 <div id="1990_cmills">
-## Winning entry: [1990/cmills](1990/cmills/index.html)
-### Winning entry source code: [cmills.c](%%REPO_URL%%/1990/cmills/cmills.c)
+### Winning entry: [1990/cmills](1990/cmills/index.html)
+#### Winning entry source code: [cmills.c](%%REPO_URL%%/1990/cmills/cmills.c)
 </div>
 
 [Yusuke](#yusuke) got this to work in modern systems (it previously resulted in a bus
@@ -1388,8 +1388,8 @@ Jump to: [top](#)
 
 
 <div id="1990_dds">
-## Winning entry: [1990/dds](1990/dds/index.html)
-### Winning entry source code: [dds.c](%%REPO_URL%%/1990/dds/dds.c)
+### Winning entry: [1990/dds](1990/dds/index.html)
+#### Winning entry source code: [dds.c](%%REPO_URL%%/1990/dds/dds.c)
 </div>
 
 [Yusuke](#yusuke) and [Cody](#cody) in conjunction fixed this for modern systems (both fixed a
@@ -1412,8 +1412,8 @@ Jump to: [top](#)
 
 
 <div id="1990_dg">
-## Winning entry: [1990/dg](1990/dg/index.html)
-### Winning entry source code: [dg.c](%%REPO_URL%%/1990/dg/dg.c)
+### Winning entry: [1990/dg](1990/dg/index.html)
+#### Winning entry source code: [dg.c](%%REPO_URL%%/1990/dg/dg.c)
 </div>
 
 [Cody](#cody) fixed this for modern systems. There were two problems to be resolved.
@@ -1441,8 +1441,8 @@ Jump to: [top](#)
 
 
 <div id="1990_jaw">
-## Winning entry: [1990/jaw](1990/jaw/index.html)
-### Winning entry source code: [jaw.c](%%REPO_URL%%/1990/jaw/jaw.c)
+### Winning entry: [1990/jaw](1990/jaw/index.html)
+#### Winning entry source code: [jaw.c](%%REPO_URL%%/1990/jaw/jaw.c)
 </div>
 
 [Cody](#cody) fixed the script to work properly in modern environments including writing
@@ -1465,8 +1465,8 @@ Jump to: [top](#)
 
 
 <div id="1990_pjr">
-## Winning entry: [1990/pjr](1990/pjr/index.html)
-### Winning entry source code: [pjr.c](%%REPO_URL%%/1990/pjr/pjr.c)
+### Winning entry: [1990/pjr](1990/pjr/index.html)
+#### Winning entry source code: [pjr.c](%%REPO_URL%%/1990/pjr/pjr.c)
 </div>
 
 [Cody](#cody) added the [alternate code](%%REPO_URL%%/1990/pjr/pjr.alt.c) which was suggested by the judges
@@ -1478,8 +1478,8 @@ Jump to: [top](#)
 
 
 <div id="1990_scjones">
-## Winning entry: [1990/scjones](1990/scjones/index.html)
-### Winning entry source code: [scjones.c](%%REPO_URL%%/1990/scjones/scjones.c)
+### Winning entry: [1990/scjones](1990/scjones/index.html)
+#### Winning entry source code: [scjones.c](%%REPO_URL%%/1990/scjones/scjones.c)
 </div>
 
 [Yusuke](#yusuke) suggested `-ansi` to get the entry to compile due to trigraphs and [Cody](#cody)
@@ -1494,8 +1494,8 @@ Jump to: [top](#)
 
 
 <div id="1990_tbr">
-## Winning entry: [1990/tbr](1990/tbr/index.html)
-### Winning entry source code: [tbr.c](%%REPO_URL%%/1990/tbr/tbr.c)
+### Winning entry: [1990/tbr](1990/tbr/index.html)
+#### Winning entry source code: [tbr.c](%%REPO_URL%%/1990/tbr/tbr.c)
 </div>
 
 [Cody](#cody) fixed this to work with modern compilers; `exit(3)` returns `void` but the
@@ -1516,8 +1516,8 @@ Jump to: [top](#)
 
 
 <div id="1990_theorem">
-## Winning entry: [1990/theorem](1990/theorem/index.html)
-### Winning entry source code: [theorem.c](%%REPO_URL%%/1990/theorem/theorem.c)
+### Winning entry: [1990/theorem](1990/theorem/index.html)
+#### Winning entry source code: [theorem.c](%%REPO_URL%%/1990/theorem/theorem.c)
 </div>
 
 [Cody](#cody) fixed this to compile with modern systems.
@@ -1567,8 +1567,8 @@ Jump to: [top](#)
 
 
 <div id="1990_stig">
-## Winning entry: [1990/stig](1990/stig/index.html)
-### Winning entry source code: [stig.c](%%REPO_URL%%/1990/stig/stig.c)
+### Winning entry: [1990/stig](1990/stig/index.html)
+#### Winning entry source code: [stig.c](%%REPO_URL%%/1990/stig/stig.c)
 </div>
 
 [Cody](#cody) fixed the paths in the `Makefile` so that this would build in Linux (it
@@ -1582,8 +1582,8 @@ Jump to: [top](#)
 
 
 <div id="1990_westley">
-## Winning entry: [1990/westley](1990/westley/index.html)
-### Winning entry source code: [westley.c](%%REPO_URL%%/1990/westley/westley.c)
+### Winning entry: [1990/westley](1990/westley/index.html)
+#### Winning entry source code: [westley.c](%%REPO_URL%%/1990/westley/westley.c)
 </div>
 
 [Cody](#cody) fixed this for modern systems. It had `1s` (digit one, letter s)
@@ -1611,7 +1611,7 @@ Jump to: [top](#)
 
 
 <div id="1991">
-# [1991 - The 8th IOCCC](1991/index.html)
+## [1991 - The 8th IOCCC](1991/index.html)
 </div>
 
 
@@ -1619,8 +1619,8 @@ Jump to: [top](#)
 
 
 <div id="1991_ant">
-## Winning entry: [1991/ant](1991/ant/index.html)
-### Winning entry source code: [ant.c](%%REPO_URL%%/1991/ant/ant.c)
+### Winning entry: [1991/ant](1991/ant/index.html)
+#### Winning entry source code: [ant.c](%%REPO_URL%%/1991/ant/ant.c)
 </div>
 
 
@@ -1653,8 +1653,8 @@ Jump to: [top](#)
 
 
 <div id="1991_brnstnd">
-## Winning entry: [1991/brnstnd](1991/brnstnd/index.html)
-### Winning entry source code: [brnstnd.c](%%REPO_URL%%/1991/brnstnd/brnstnd.c)
+### Winning entry: [1991/brnstnd](1991/brnstnd/index.html)
+#### Winning entry source code: [brnstnd.c](%%REPO_URL%%/1991/brnstnd/brnstnd.c)
 </div>
 
 [Cody](#cody) fixed this for modern systems. There were two invalid operands to binary
@@ -1677,8 +1677,8 @@ directory even after the target file was deleted (from make clobber).
 Jump to: [top](#)
 
 <div id="1991_buzzard">
-## Winning entry: [1991/buzzard](1991/buzzard/index.html)
-### Winning entry source code: [buzzard.c](%%REPO_URL%%/1991/buzzard/buzzard.c)
+### Winning entry: [1991/buzzard](1991/buzzard/index.html)
+#### Winning entry source code: [buzzard.c](%%REPO_URL%%/1991/buzzard/buzzard.c)
 </div>
 
 [Cody](#cody) fixed this so that the coordinates being specified, a documented
@@ -1703,8 +1703,8 @@ Jump to: [top](#)
 
 
 <div id="1991_davidguy">
-## Winning entry: [1991/davidguy](1991/davidguy/index.html)
-### Winning entry source code: [davidguy.c](%%REPO_URL%%/1991/davidguy/davidguy.c)
+### Winning entry: [1991/davidguy](1991/davidguy/index.html)
+#### Winning entry source code: [davidguy.c](%%REPO_URL%%/1991/davidguy/davidguy.c)
 </div>
 
 As some systems like macOS can be particular about not declaring functions
@@ -1717,8 +1717,8 @@ Jump to: [top](#)
 
 
 <div id="1991_dds">
-## Winning entry: [1991/dds](1991/dds/index.html)
-### Winning entry source code: [dds.c](%%REPO_URL%%/1991/dds/dds.c)
+### Winning entry: [1991/dds](1991/dds/index.html)
+#### Winning entry source code: [dds.c](%%REPO_URL%%/1991/dds/dds.c)
 </div>
 
 [Cody](#cody) fixed a segfault that prevented this entry from working in any
@@ -1864,8 +1864,8 @@ Jump to: [top](#)
 
 
 <div id="1991_fine">
-## Winning entry: [1991/fine](1991/fine/index.html)
-### Winning entry source code: [fine.c](%%REPO_URL%%/1991/fine/fine.c)
+### Winning entry: [1991/fine](1991/fine/index.html)
+#### Winning entry source code: [fine.c](%%REPO_URL%%/1991/fine/fine.c)
 </div>
 
 [Cody](#cody) made it look much more like the original entry even after the fix
@@ -1895,8 +1895,8 @@ Jump to: [top](#)
 
 
 <div id="1991_rince">
-## Winning entry: [1991/rince](1991/rince/index.html)
-### Winning entry source code: [rince.c](%%REPO_URL%%/1991/rince/rince.c)
+### Winning entry: [1991/rince](1991/rince/index.html)
+#### Winning entry source code: [rince.c](%%REPO_URL%%/1991/rince/rince.c)
 </div>
 
 [Cody](#cody) fixed it so that the messages that show if you won or lost will be seen
@@ -1920,8 +1920,8 @@ Jump to: [top](#)
 
 
 <div id="1991_westley">
-## Winning entry: [1991/westley](1991/westley/index.html)
-### Winning entry source code: [westley.c](%%REPO_URL%%/1991/westley/westley.c)
+### Winning entry: [1991/westley](1991/westley/index.html)
+#### Winning entry source code: [westley.c](%%REPO_URL%%/1991/westley/westley.c)
 </div>
 
 [Cody](#cody) fixed a segfault in this program which prevented it from working. The
@@ -1948,7 +1948,7 @@ Jump to: [top](#)
 
 
 <div id="1992">
-# [1992 - The 9th IOCCC](1992/index.html)
+## [1992 - The 9th IOCCC](1992/index.html)
 </div>
 
 
@@ -1956,8 +1956,8 @@ Jump to: [top](#)
 
 
 <div id="1992_adrian">
-## Winning entry: [1992/adrian](1992/adrian/index.html)
-### Winning entry source code: [adrian.c](%%REPO_URL%%/1992/adrian/adrian.c)
+### Winning entry: [1992/adrian](1992/adrian/index.html)
+#### Winning entry source code: [adrian.c](%%REPO_URL%%/1992/adrian/adrian.c)
 </div>
 
 [Cody](#cody) fixed the code so that it will try opening the file the code was compiled
@@ -2042,8 +2042,8 @@ Jump to: [top](#)
 
 
 <div id="1992_albert">
-## Winning entry: [1992/albert](1992/albert/index.html)
-### Winning entry source code: [albert.c](%%REPO_URL%%/1992/albert/albert.c)
+### Winning entry: [1992/albert](1992/albert/index.html)
+#### Winning entry source code: [albert.c](%%REPO_URL%%/1992/albert/albert.c)
 </div>
 
 [Cody](#cody) fixed this to compile with modern systems. Note that in 1996 a bug fix was
@@ -2064,8 +2064,8 @@ Jump to: [top](#)
 
 
 <div id="1992_ant">
-## Winning entry: [1992/ant](1992/ant/index.html)
-### Winning entry source code: [ant.c](%%REPO_URL%%/1992/ant/ant.c)
+### Winning entry: [1992/ant](1992/ant/index.html)
+#### Winning entry source code: [ant.c](%%REPO_URL%%/1992/ant/ant.c)
 </div>
 
 [Cody](#cody) fixed the `Makefile` so that the program will actually work with it (or at
@@ -2099,8 +2099,8 @@ updated to use `ant.alt`.
 Jump to: [top](#)
 
 <div id="1992_buzzard.1">
-## Winning entry: [1992/buzzard.1](1992/buzzard.1/index.html)
-### Winning entry source code: [buzzard.1.c](%%REPO_URL%%/1992/buzzard.1/buzzard.1.c)
+### Winning entry: [1992/buzzard.1](1992/buzzard.1/index.html)
+#### Winning entry source code: [buzzard.1.c](%%REPO_URL%%/1992/buzzard.1/buzzard.1.c)
 </div>
 
 [Cody](#cody) added a check for the right number of args, exiting 1 if not enough (2)
@@ -2116,8 +2116,8 @@ Jump to: [top](#)
 
 
 <div id="1992_buzzard.2">
-## Winning entry: [1992/buzzard.2](1992/buzzard.2/index.html)
-### Winning entry source code: [buzzard.2.c](%%REPO_URL%%/1992/buzzard.2/buzzard.2.c)
+### Winning entry: [1992/buzzard.2](1992/buzzard.2/index.html)
+#### Winning entry source code: [buzzard.2.c](%%REPO_URL%%/1992/buzzard.2/buzzard.2.c)
 </div>
 
 [Cody](#cody) fixed the alternate code to compile. The problem was it assumed that
@@ -2132,8 +2132,8 @@ Jump to: [top](#)
 
 
 <div id="1992_gson">
-## Winning entry: [1992/gson](1992/gson/index.html)
-### Winning entry source code: [gson.c](%%REPO_URL%%/1992/gson/gson.c)
+### Winning entry: [1992/gson](1992/gson/index.html)
+#### Winning entry source code: [gson.c](%%REPO_URL%%/1992/gson/gson.c)
 </div>
 
 [Cody](#cody) fixed a crash that prevented this entry from working in some cases in some
@@ -2152,8 +2152,8 @@ Jump to: [top](#)
 
 
 <div id="1992_imc">
-## Winning entry: [1992/imc](1992/imc/index.html)
-### Winning entry source code: [imc.c](%%REPO_URL%%/1992/imc/imc.c)
+### Winning entry: [1992/imc](1992/imc/index.html)
+#### Winning entry source code: [imc.c](%%REPO_URL%%/1992/imc/imc.c)
 </div>
 
 [Cody](#cody) provided the [try.sh](%%REPO_URL%%/1992/imc/try.sh) script.
@@ -2169,8 +2169,8 @@ Jump to: [top](#)
 
 
 <div id="1992_kivinen">
-## Winning entry: [1992/kivinen](1992/kivinen/index.html)
-### Winning entry source code: [kivinen.c](%%REPO_URL%%/1992/kivinen/kivinen.c)
+### Winning entry: [1992/kivinen](1992/kivinen/index.html)
+#### Winning entry source code: [kivinen.c](%%REPO_URL%%/1992/kivinen/kivinen.c)
 </div>
 
 It was observed that on modern systems this goes much too quick. [Yusuke](#yusuke) created
@@ -2204,8 +2204,8 @@ Jump to: [top](#)
 
 
 <div id="1992_lush">
-## Winning entry: [1992/lush](1992/lush/index.html)
-### Winning entry source code: [lush.c](%%REPO_URL%%/1992/lush/lush.c)
+### Winning entry: [1992/lush](1992/lush/index.html)
+#### Winning entry source code: [lush.c](%%REPO_URL%%/1992/lush/lush.c)
 </div>
 
 [Yusuke](#yusuke) supplied a patch which makes this work with `gcc`. Due to how
@@ -2228,8 +2228,8 @@ Jump to: [top](#)
 
 
 <div id="1992_marangon">
-## Winning entry: [1992/marangon](1992/marangon/index.html)
-### Winning entry source code: [marangon.c](%%REPO_URL%%/1992/marangon/marangon.c)
+### Winning entry: [1992/marangon](1992/marangon/index.html)
+#### Winning entry source code: [marangon.c](%%REPO_URL%%/1992/marangon/marangon.c)
 </div>
 
 [Cody](#cody) made this more portable by changing the `void main()` to be `int main()`.
@@ -2239,8 +2239,8 @@ Jump to: [top](#)
 
 
 <div id="1992_nathan">
-## Winning entry: [1992/nathan](1992/nathan/index.html)
-### Winning entry source code: [nathan.c](%%REPO_URL%%/1992/nathan/nathan.c)
+### Winning entry: [1992/nathan](1992/nathan/index.html)
+#### Winning entry source code: [nathan.c](%%REPO_URL%%/1992/nathan/nathan.c)
 </div>
 
 [Cody](#cody) added the original file back as it was deemed that the export
@@ -2260,8 +2260,8 @@ Jump to: [top](#)
 
 
 <div id="1992_vern">
-## Winning entry: [1992/vern](1992/vern/index.html)
-### Winning entry source code: [vern.c](%%REPO_URL%%/1992/vern/vern.c)
+### Winning entry: [1992/vern](1992/vern/index.html)
+#### Winning entry source code: [vern.c](%%REPO_URL%%/1992/vern/vern.c)
 </div>
 
 [Cody](#cody) fixed an infinite loop if one were to input numbers < `0` or > `077`. The
@@ -2283,8 +2283,8 @@ Jump to: [top](#)
 
 
 <div id="1992_westley">
-## Winning entry: [1992/westley](1992/westley/index.html)
-### Winning entry source code: [westley.c](%%REPO_URL%%/1992/westley/westley.c)
+### Winning entry: [1992/westley](1992/westley/index.html)
+#### Winning entry source code: [westley.c](%%REPO_URL%%/1992/westley/westley.c)
 </div>
 
 [Cody](#cody) fixed this to work for `clang` by changing the third and fourth arg of
@@ -2333,7 +2333,7 @@ Jump to: [top](#)
 
 
 <div id="1993">
-# [1993 - The 10th IOCCC](1993/index.html)
+## [1993 - The 10th IOCCC](1993/index.html)
 </div>
 
 
@@ -2341,8 +2341,8 @@ Jump to: [top](#)
 
 
 <div id="1993_ant">
-## Winning entry: [1993/ant](1993/ant/index.html)
-### Winning entry source code: [ant.c](%%REPO_URL%%/1993/ant/ant.c)
+### Winning entry: [1993/ant](1993/ant/index.html)
+#### Winning entry source code: [ant.c](%%REPO_URL%%/1993/ant/ant.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/1993/ant/try.sh) script and a data file,
@@ -2360,8 +2360,8 @@ Jump to: [top](#)
 
 
 <div id="1993_cmills">
-## Winning entry: [1993/cmills](1993/cmills/index.html)
-### Winning entry source code: [cmills.c](%%REPO_URL%%/1993/cmills/cmills.c)
+### Winning entry: [1993/cmills](1993/cmills/index.html)
+#### Winning entry source code: [cmills.c](%%REPO_URL%%/1993/cmills/cmills.c)
 </div>
 
 [Yusuke](#yusuke) suggested that with modern systems this goes too fast so he added a call
@@ -2375,8 +2375,8 @@ Jump to: [top](#)
 
 
 <div id="1993_dgibson">
-## Winning entry: [1993/dgibson](1993/dgibson/index.html)
-### Winning entry source code: [dgibson.c](%%REPO_URL%%/1993/dgibson/dgibson.c)
+### Winning entry: [1993/dgibson](1993/dgibson/index.html)
+#### Winning entry source code: [dgibson.c](%%REPO_URL%%/1993/dgibson/dgibson.c)
 </div>
 
 [Cody](#cody) fixed the [dgibson.sh](%%REPO_URL%%/1993/dgibson/dgibson.sh) script to work
@@ -2390,8 +2390,8 @@ Jump to: [top](#)
 
 
 <div id="1993_ejb">
-## Winning entry: [1993/ejb](1993/ejb/index.html)
-### Winning entry source code: [ejb.c](%%REPO_URL%%/1993/ejb/ejb.c)
+### Winning entry: [1993/ejb](1993/ejb/index.html)
+#### Winning entry source code: [ejb.c](%%REPO_URL%%/1993/ejb/ejb.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/1993/ejb/try.sh) script.
@@ -2401,8 +2401,8 @@ Jump to: [top](#)
 
 
 <div id="1993_jonth">
-## Winning entry: [1993/jonth](1993/jonth/index.html)
-### Winning entry source code: [jonth.c](%%REPO_URL%%/1993/jonth/jonth.c)
+### Winning entry: [1993/jonth](1993/jonth/index.html)
+#### Winning entry source code: [jonth.c](%%REPO_URL%%/1993/jonth/jonth.c)
 </div>
 
 Both [Cody](#cody) and [Yusuke](#yusuke) fixed this so that it will work with modern systems. Yusuke
@@ -2424,8 +2424,8 @@ Jump to: [top](#)
 
 
 <div id="1993_leo">
-## Winning entry: [1993/leo](1993/leo/index.html)
-### Winning entry source code: [leo.c](%%REPO_URL%%/1993/leo/leo.c)
+### Winning entry: [1993/leo](1993/leo/index.html)
+#### Winning entry source code: [leo.c](%%REPO_URL%%/1993/leo/leo.c)
 </div>
 
 [Cody](#cody) fixed this to work with modern compilers. This involved different header
@@ -2436,8 +2436,8 @@ Jump to: [top](#)
 
 
 <div id="1993_lmfjyh">
-## Winning entry: [1993/lmfjyh](1993/lmfjyh/index.html)
-### Winning entry source code: [lmfjyh.c](%%REPO_URL%%/1993/lmfjyh/lmfjyh.c)
+### Winning entry: [1993/lmfjyh](1993/lmfjyh/index.html)
+#### Winning entry source code: [lmfjyh.c](%%REPO_URL%%/1993/lmfjyh/lmfjyh.c)
 </div>
 
 [Cody](#cody) added an [alternate
@@ -2454,8 +2454,8 @@ Jump to: [top](#)
 
 
 <div id="1993_plummer">
-## Winning entry: [1993/plummer](1993/plummer/index.html)
-### Winning entry source code: [plummer.c](%%REPO_URL%%/1993/plummer/plummer.c)
+### Winning entry: [1993/plummer](1993/plummer/index.html)
+#### Winning entry source code: [plummer.c](%%REPO_URL%%/1993/plummer/plummer.c)
 </div>
 
 [Cody](#cody) added check for two args during a time that this was considered a
@@ -2476,8 +2476,8 @@ Jump to: [top](#)
 
 
 <div id="1993_rince">
-## Winning entry: [1993/rince](1993/rince/index.html)
-### Winning entry source code: [rince.c](%%REPO_URL%%/1993/rince/rince.c)
+### Winning entry: [1993/rince](1993/rince/index.html)
+#### Winning entry source code: [rince.c](%%REPO_URL%%/1993/rince/rince.c)
 </div>
 
 [Yusuke](#yusuke) supplied a patch to get this to work in modern systems. This fix also
@@ -2497,8 +2497,8 @@ Jump to: [top](#)
 
 
 <div id="1993_schnitzi">
-## Winning entry: [1993/schnitzi](1993/schnitzi/index.html)
-### Winning entry source code: [schnitzi.c](%%REPO_URL%%/1993/schnitzi/schnitzi.c)
+### Winning entry: [1993/schnitzi](1993/schnitzi/index.html)
+#### Winning entry source code: [schnitzi.c](%%REPO_URL%%/1993/schnitzi/schnitzi.c)
 </div>
 
 [Cody](#cody) made this use `fgets(3)` not `gets(3)`.  See the
@@ -2511,8 +2511,8 @@ Jump to: [top](#)
 
 
 <div id="1993_vanb">
-## Winning entry: [1993/vanb](1993/vanb/index.html)
-### Winning entry source code: [vanb.c](%%REPO_URL%%/1993/vanb/vanb.c)
+### Winning entry: [1993/vanb](1993/vanb/index.html)
+#### Winning entry source code: [vanb.c](%%REPO_URL%%/1993/vanb/vanb.c)
 </div>
 
 [Cody](#cody) fixed this to work with `clang`. The problem was that the third arg to main()
@@ -2545,7 +2545,7 @@ Jump to: [top](#)
 
 
 <div id="1994">
-# [1994 - The 11th IOCCC](1994/index.html)
+## [1994 - The 11th IOCCC](1994/index.html)
 </div>
 
 
@@ -2553,8 +2553,8 @@ Jump to: [top](#)
 
 
 <div id="1994_dodsond2">
-## Winning entry: [1994/dodsond2](1994/dodsond2/index.html)
-### Winning entry source code: [1994/dodsond2](%%REPO_URL%%/1994/dodsond2/dodsond2.c)
+### Winning entry: [1994/dodsond2](1994/dodsond2/index.html)
+#### Winning entry source code: [1994/dodsond2](%%REPO_URL%%/1994/dodsond2/dodsond2.c)
 </div>
 
 [Cody](#cody) fixed an infinite loop that could happen when you shoot an arrow
@@ -2590,8 +2590,8 @@ Jump to: [top](#)
 
 
 <div id="1994_horton">
-## Winning entry: [1994/horton](1994/horton/index.html)
-### Winning entry source code: [1994/horton](%%REPO_URL%%/1994/horton/horton.c)
+### Winning entry: [1994/horton](1994/horton/index.html)
+#### Winning entry source code: [1994/horton](%%REPO_URL%%/1994/horton/horton.c)
 </div>
 
 [Cody](#cody) fixed this to check that four args were specified (at a time it
@@ -2614,8 +2614,8 @@ Jump to: [top](#)
 
 
 <div id="1994_imc">
-## Winning entry: [1994/imc](1994/imc/index.html)
-### Winning entry source code: [imc.c](%%REPO_URL%%/1994/imc/imc.c)
+### Winning entry: [1994/imc](1994/imc/index.html)
+#### Winning entry source code: [imc.c](%%REPO_URL%%/1994/imc/imc.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/1994/imc/try.sh) script.
@@ -2630,8 +2630,8 @@ Jump to: [top](#)
 
 
 <div id="1994_ldb">
-## Winning entry: [1994/ldb](1994/ldb/index.html)
-### Winning entry source code: [ldb.c](%%REPO_URL%%/1994/ldb/ldb.c)
+### Winning entry: [1994/ldb](1994/ldb/index.html)
+#### Winning entry source code: [ldb.c](%%REPO_URL%%/1994/ldb/ldb.c)
 </div>
 
 [Cody](#cody) fixed this so it would compile and work with modern compilers. The problem
@@ -2664,8 +2664,8 @@ Jump to: [top](#)
 
 
 <div id="1994_schnitzi">
-## Winning entry: [1994/schnitzi](1994/schnitzi/index.html)
-### Winning entry source code: [schnitzi.c](%%REPO_URL%%/1994/schnitzi/schnitzi.c)
+### Winning entry: [1994/schnitzi](1994/schnitzi/index.html)
+#### Winning entry source code: [schnitzi.c](%%REPO_URL%%/1994/schnitzi/schnitzi.c)
 </div>
 
 [Cody](#cody) added two alt versions, [one which uses
@@ -2694,8 +2694,8 @@ Jump to: [top](#)
 
 
 <div id="1994_shapiro">
-## Winning entry: [1994/shapiro](1994/shapiro/index.html)
-### Winning entry source code: [shapiro.c](%%REPO_URL%%/1994/shapiro/shapiro.c)
+### Winning entry: [1994/shapiro](1994/shapiro/index.html)
+#### Winning entry source code: [shapiro.c](%%REPO_URL%%/1994/shapiro/shapiro.c)
 </div>
 
 [Cody](#cody) fixed a bug on systems where `EOF != -1`. The problem is that `getc()` and
@@ -2716,8 +2716,8 @@ Jump to: [top](#)
 
 
 <div id="1994_smr">
-## Winning entry: [1994/smr](1994/smr/index.html)
-### Winning entry source code: [smr.c](%%REPO_URL%%/1994/smr/smr.c)
+### Winning entry: [1994/smr](1994/smr/index.html)
+#### Winning entry source code: [smr.c](%%REPO_URL%%/1994/smr/smr.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/1994/smr/try.sh) script.
@@ -2727,8 +2727,8 @@ Jump to: [top](#)
 
 
 <div id="1994_tvr">
-## Winning entry: [1994/tvr](1994/tvr/index.html)
-### Winning entry source code: [1994/tvr](%%REPO_URL%%/1994/tvr/tvr.c)
+### Winning entry: [1994/tvr](1994/tvr/index.html)
+#### Winning entry source code: [1994/tvr](%%REPO_URL%%/1994/tvr/tvr.c)
 </div>
 
 [Cody](#cody) added the try scripts, four total, colour and black and white
@@ -2755,8 +2755,8 @@ Jump to: [top](#)
 
 
 <div id="1994_weisberg">
-## Winning entry: [1994/weisberg](1994/weisberg/index.html)
-### Winning entry source code: [weisberg.c](%%REPO_URL%%/1994/weisberg/weisberg.c)
+### Winning entry: [1994/weisberg](1994/weisberg/index.html)
+#### Winning entry source code: [weisberg.c](%%REPO_URL%%/1994/weisberg/weisberg.c)
 </div>
 
 [Cody](#cody) changed the `Makefile` to make this program more user friendly and easier to
@@ -2775,8 +2775,8 @@ Jump to: [top](#)
 
 
 <div id="1994_westley">
-## Winning entry: [1994/westley](1994/westley/index.html)
-### Winning entry source code: [westley.c](%%REPO_URL%%/1994/westley/westley.c)
+### Winning entry: [1994/westley](1994/westley/index.html)
+#### Winning entry source code: [westley.c](%%REPO_URL%%/1994/westley/westley.c)
 </div>
 
 [Cody](#cody) converted the deobfuscation compiler options (provided by the author) to be
@@ -2795,7 +2795,7 @@ Jump to: [top](#)
 
 
 <div id="1995">
-# [1995 - The 12th IOCCC](1995/index.html)
+## [1995 - The 12th IOCCC](1995/index.html)
 </div>
 
 
@@ -2803,8 +2803,8 @@ Jump to: [top](#)
 
 
 <div id="1995_cdua">
-## Winning entry: [1995/cdua](1995/cdua/index.html)
-### Winning entry source code: [cdua.c](%%REPO_URL%%/1995/cdua/cdua.c)
+### Winning entry: [1995/cdua](1995/cdua/index.html)
+#### Winning entry source code: [cdua.c](%%REPO_URL%%/1995/cdua/cdua.c)
 </div>
 
 [Cody](#cody) fixed this so that it would work with macOS. Once it could compile it
@@ -2829,8 +2829,8 @@ Jump to: [top](#)
 
 
 <div id="1995_dodsond1">
-## Winning entry: [1995/dodsond1](1995/dodsond1/index.html)
-### Winning entry source code: [dodsond1.c](%%REPO_URL%%/1995/dodsond1/dodsond1.c)
+### Winning entry: [1995/dodsond1](1995/dodsond1/index.html)
+#### Winning entry source code: [dodsond1.c](%%REPO_URL%%/1995/dodsond1/dodsond1.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/1995/dodsond1/try.sh) script that uses the text file he
@@ -2841,8 +2841,8 @@ Jump to: [top](#)
 
 
 <div id="1995_esde">
-## Winning entry: [1995/esde](1995/esde/index.html)
-### Winning entry source code: [esde.c](%%REPO_URL%%/1995/esde/esde.c)
+### Winning entry: [1995/esde](1995/esde/index.html)
+#### Winning entry source code: [esde.c](%%REPO_URL%%/1995/esde/esde.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/1995/esde/try.sh) script.
@@ -2852,8 +2852,8 @@ Jump to: [top](#)
 
 
 <div id="1995_garry">
-## Winning entry: [1995/garry](1995/garry/index.html)
-### Winning entry source code: [garry.c](%%REPO_URL%%/1995/garry/garry.c)
+### Winning entry: [1995/garry](1995/garry/index.html)
+#### Winning entry source code: [garry.c](%%REPO_URL%%/1995/garry/garry.c)
 </div>
 
 [Cody](#cody) fixed the alternate code so that it will compile with modern compilers. The
@@ -2875,8 +2875,8 @@ Jump to: [top](#)
 
 
 <div id="1995_heathbar">
-## Winning entry: [1995/heathbar](1995/heathbar/index.html)
-### Winning entry source code: [1995/heathbar](%%REPO_URL%%/1995/heathbar/heathbar.c)
+### Winning entry: [1995/heathbar](1995/heathbar/index.html)
+#### Winning entry source code: [1995/heathbar](%%REPO_URL%%/1995/heathbar/heathbar.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/1995/heathbar/try.sh) script.
@@ -2886,8 +2886,8 @@ Jump to: [top](#)
 
 
 <div id="1995_leo">
-## Winning entry: [1995/leo](1995/leo/index.html)
-### Winning entry source code: [leo.c](%%REPO_URL%%/1995/leo/leo.c)
+### Winning entry: [1995/leo](1995/leo/index.html)
+#### Winning entry source code: [leo.c](%%REPO_URL%%/1995/leo/leo.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/1995/leo/try.sh) script.
@@ -2901,8 +2901,8 @@ Jump to: [top](#)
 
 
 <div id="1995_makarios">
-## Winning entry: [1995/makarios](1995/makarios/index.html)
-### Winning entry source code: [makarios.c](%%REPO_URL%%/1995/makarios/makarios.c)
+### Winning entry: [1995/makarios](1995/makarios/index.html)
+#### Winning entry source code: [makarios.c](%%REPO_URL%%/1995/makarios/makarios.c)
 </div>
 
 [Cody](#cody) fixed this so that it will compile with versions of `clang` that has a defect
@@ -2915,8 +2915,8 @@ Jump to: [top](#)
 
 
 <div id="1995_savastio">
-## Winning entry: [1995/savastio](1995/savastio/index.html)
-### Winning entry source code: [savastio.c](%%REPO_URL%%/1995/savastio/savastio.c)
+### Winning entry: [1995/savastio](1995/savastio/index.html)
+#### Winning entry source code: [savastio.c](%%REPO_URL%%/1995/savastio/savastio.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/1995/savastio/try.sh) script.
@@ -2926,8 +2926,8 @@ Jump to: [top](#)
 Jump to: [top](#)
 
 <div id="1995_schnitzi">
-## Winning entry: [1995/schnitzi](1995/schnitzi/index.html)
-### Winning entry source code: [schnitzi.c](%%REPO_URL%%/1995/schnitzi/schnitzi.c)
+### Winning entry: [1995/schnitzi](1995/schnitzi/index.html)
+#### Winning entry source code: [schnitzi.c](%%REPO_URL%%/1995/schnitzi/schnitzi.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/1995/schnitzi/try.sh) script.
@@ -2937,8 +2937,8 @@ Jump to: [top](#)
 
 
 <div id="1995_vanschnitz">
-## Winning entry: [1995/vanschnitz](1995/vanschnitz/index.html)
-### Winning entry source code: [vanschnitz.c](%%REPO_URL%%/1995/vanschnitz/vanschnitz.c)
+### Winning entry: [1995/vanschnitz](1995/vanschnitz/index.html)
+#### Winning entry source code: [vanschnitz.c](%%REPO_URL%%/1995/vanschnitz/vanschnitz.c)
 </div>
 
 [Cody](#cody) added the authors' [deobfuscation source code](%%REPO_URL%%/1995/vanschnitz/vanschnitz.alt.c)
@@ -2954,7 +2954,7 @@ Jump to: [top](#)
 
 
 <div id="1996">
-# [1996 - The 13th IOCCC](1996/index.html)
+## [1996 - The 13th IOCCC](1996/index.html)
 </div>
 
 
@@ -2962,8 +2962,8 @@ Jump to: [top](#)
 
 
 <div id="1996_august">
-## Winning entry: [1996/august](1996/august/index.html)
-### Winning entry source code: [august.c](%%REPO_URL%%/1996/august/august.c)
+### Winning entry: [1996/august](1996/august/index.html)
+#### Winning entry source code: [august.c](%%REPO_URL%%/1996/august/august.c)
 </div>
 
 [Cody](#cody) fixed a segfault in this program that prevented it from working right and
@@ -2985,8 +2985,8 @@ Jump to: [top](#)
 
 
 <div id="1996_dalbec">
-## Winning entry: [1996/dalbec](1996/dalbec/index.html)
-### Winning entry source code: [dalbec.c](%%REPO_URL%%/1996/dalbec/dalbec.c)
+### Winning entry: [1996/dalbec](1996/dalbec/index.html)
+#### Winning entry source code: [dalbec.c](%%REPO_URL%%/1996/dalbec/dalbec.c)
 </div>
 
 [Cody](#cody) proposed a fix for this to compile with `clang` and Landon implemented it
@@ -3009,8 +3009,8 @@ Jump to: [top](#)
 
 
 <div id="1996_eldby">
-## Winning entry: [1996/eldby](1996/eldby/index.html)
-### Winning entry source code: [eldby.c](%%REPO_URL%%/1996/eldby/eldby.c)
+### Winning entry: [1996/eldby](1996/eldby/index.html)
+#### Winning entry source code: [eldby.c](%%REPO_URL%%/1996/eldby/eldby.c)
 </div>
 
 [Cody](#cody) provided an [alternate version](%%REPO_URL%%/1996/eldby/eldby.alt.c) which uses
@@ -3024,8 +3024,8 @@ Jump to: [top](#)
 
 
 <div id="1996_gandalf">
-## Winning entry: [1996/gandalf](1996/gandalf/index.html)
-### Winning entry source code: [gandalf.c](%%REPO_URL%%/1996/gandalf/gandalf.c)
+### Winning entry: [1996/gandalf](1996/gandalf/index.html)
+#### Winning entry source code: [gandalf.c](%%REPO_URL%%/1996/gandalf/gandalf.c)
 </div>
 
 [Cody](#cody) fixed this to compile and work with modern systems. As he loved the
@@ -3044,8 +3044,8 @@ Jump to: [top](#)
 
 
 <div id="1996_huffman">
-## Winning entry: [1996/huffman](1996/huffman/index.html)
-### Winning entry source code: [huffman.c](%%REPO_URL%%/1996/huffman/huffman.c)
+### Winning entry: [1996/huffman](1996/huffman/index.html)
+#### Winning entry source code: [huffman.c](%%REPO_URL%%/1996/huffman/huffman.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/1996/huffman/try.sh) script.
@@ -3055,8 +3055,8 @@ Jump to: [top](#)
 
 
 <div id="1996_jonth">
-## Winning entry: [1996/jonth](1996/jonth/index.html)
-### Winning entry source code: [jonth.c](%%REPO_URL%%/1996/jonth/jonth.c)
+### Winning entry: [1996/jonth](1996/jonth/index.html)
+#### Winning entry source code: [jonth.c](%%REPO_URL%%/1996/jonth/jonth.c)
 </div>
 
 [Cody](#cody) fixed this to not segfault under macOS. The problem was that the function
@@ -3070,8 +3070,8 @@ Jump to: [top](#)
 
 
 <div id="1996_rcm">
-## Winning entry: [1996/rcm](1996/rcm/index.html)
-### Winning entry source code: [rcm.c](%%REPO_URL%%/1996/rcm/rcm.c)
+### Winning entry: [1996/rcm](1996/rcm/index.html)
+#### Winning entry source code: [rcm.c](%%REPO_URL%%/1996/rcm/rcm.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/1996/rcm/try.sh) script.
@@ -3081,8 +3081,8 @@ Jump to: [top](#)
 
 
 <div id="1996_schweikh1">
-## Winning entry: [1996/schweikh1](1996/schweikh1/index.html)
-### Winning entry source code: [schweikh1.c](%%REPO_URL%%/1996/schweikh1/schweikh1.c)
+### Winning entry: [1996/schweikh1](1996/schweikh1/index.html)
+#### Winning entry source code: [schweikh1.c](%%REPO_URL%%/1996/schweikh1/schweikh1.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/1996/schweikh1/try.sh) script.
@@ -3100,8 +3100,8 @@ Jump to: [top](#)
 
 
 <div id="1996_schweikh2">
-## Winning entry: [1996/schweikh2](1996/schweikh2/index.html)
-### Winning entry source code: [schweikh2.c](%%REPO_URL%%/1996/schweikh2/schweikh2.c)
+### Winning entry: [1996/schweikh2](1996/schweikh2/index.html)
+#### Winning entry source code: [schweikh2.c](%%REPO_URL%%/1996/schweikh2/schweikh2.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/1996/schweikh2/try.sh) script with
@@ -3115,8 +3115,8 @@ Jump to: [top](#)
 
 
 <div id="1996_schweikh3">
-## Winning entry: [1996/schweikh3](1996/schweikh3/index.html)
-## Source code: [schweikh3.c](%%REPO_URL%%/1996/schweikh3/schweikh3.c)
+### Winning entry: [1996/schweikh3](1996/schweikh3/index.html)
+### Source code: [schweikh3.c](%%REPO_URL%%/1996/schweikh3/schweikh3.c)
 </div>
 
 [Cody](#cody) updated the `Makefile` so that if it fails to compile it will try the
@@ -3128,8 +3128,8 @@ Jump to: [top](#)
 
 
 <div id="1996_westley">
-## Winning entry: [1996/westley](1996/westley/index.html)
-### Winning entry source code: [westley.c](%%REPO_URL%%/1996/westley/westley.c)
+### Winning entry: [1996/westley](1996/westley/index.html)
+#### Winning entry source code: [westley.c](%%REPO_URL%%/1996/westley/westley.c)
 </div>
 
 [Cody](#cody) fixed a segfault in this entry as well as it displaying environmental
@@ -3157,7 +3157,7 @@ Jump to: [top](#)
 
 
 <div id="1998">
-# [1998 - The 14th IOCCC](1998/index.html)
+## [1998 - The 14th IOCCC](1998/index.html)
 </div>
 
 
@@ -3165,8 +3165,8 @@ Jump to: [top](#)
 
 
 <div id="1998_banks">
-## Winning entry: [1998/banks](1998/banks/index.html)
-### Winning entry source code: [banks.c](%%REPO_URL%%/1998/banks/banks.c)
+### Winning entry: [1998/banks](1998/banks/index.html)
+#### Winning entry source code: [banks.c](%%REPO_URL%%/1998/banks/banks.c)
 </div>
 
 [Cody](#cody) improved the `Makefile` to allow for easier redefining the control
@@ -3186,8 +3186,8 @@ Jump to: [top](#)
 
 
 <div id="1998_bas1">
-## Winning entry: [1998/bas1](1998/bas1/index.html)
-### Winning entry source code: [bas1.c](%%REPO_URL%%/1998/bas1/bas1.c)
+### Winning entry: [1998/bas1](1998/bas1/index.html)
+#### Winning entry source code: [bas1.c](%%REPO_URL%%/1998/bas1/bas1.c)
 </div>
 
 [Cody](#cody), out of an abundance of caution, added a second arg to `main()` as some
@@ -3208,8 +3208,8 @@ Jump to: [top](#)
 
 
 <div id="1998_bas2">
-## Winning entry: [1998/bas2](1998/bas2/index.html)
-### Winning entry source code: [bas2.c](%%REPO_URL%%/1998/bas2/bas2.c)
+### Winning entry: [1998/bas2](1998/bas2/index.html)
+#### Winning entry source code: [bas2.c](%%REPO_URL%%/1998/bas2/bas2.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/1998/bas2/try.sh) script which runs some default actions
@@ -3220,8 +3220,8 @@ Jump to: [top](#)
 
 
 <div id="1998_chaos">
-## Winning entry: [1998/chaos](1998/chaos/index.html)
-### Winning entry source code: [chaos.c](%%REPO_URL%%/1998/chaos/chaos.c)
+### Winning entry: [1998/chaos](1998/chaos/index.html)
+#### Winning entry source code: [chaos.c](%%REPO_URL%%/1998/chaos/chaos.c)
 </div>
 
 [Cody](#cody) added a call to `endwin()` to restore terminal sanity (echo etc.) when
@@ -3236,8 +3236,8 @@ Jump to: [top](#)
 
 
 <div id="1998_df">
-## Winning entry: [1998/df](1998/df/index.html)
-### Winning entry source code: [df.c](%%REPO_URL%%/1998/df/df.c)
+### Winning entry: [1998/df](1998/df/index.html)
+#### Winning entry source code: [df.c](%%REPO_URL%%/1998/df/df.c)
 </div>
 
 [Cody](#cody) changed a `int *` used for `fopen(3)` to be a `FILE *` to be more correct
@@ -3257,8 +3257,8 @@ Jump to: [top](#)
 
 
 <div id="1998_dlowe">
-## Winning entry: [1998/dlowe](1998/dlowe/index.html)
-### Winning entry source code: [dlowe.c](%%REPO_URL%%/1998/dlowe/dlowe.c)
+### Winning entry: [1998/dlowe](1998/dlowe/index.html)
+#### Winning entry source code: [dlowe.c](%%REPO_URL%%/1998/dlowe/dlowe.c)
 </div>
 
 [Cody](#cody) made the program more portable by changing the void return type of `main()`
@@ -3276,8 +3276,8 @@ Jump to: [top](#)
 
 
 <div id="1998_dloweneil">
-## Winning entry: [1998/dloweneil](1998/dloweneil/index.html)
-### Winning entry source code: [dloweneil.c](%%REPO_URL%%/1998/dloweneil/dloweneil.c)
+### Winning entry: [1998/dloweneil](1998/dloweneil/index.html)
+#### Winning entry source code: [dloweneil.c](%%REPO_URL%%/1998/dloweneil/dloweneil.c)
 </div>
 
 [Cody](#cody) added [alternate code](%%REPO_URL%%/1998/dloweneil/dloweneil.alt.c) which has vi(m) movement
@@ -3291,8 +3291,8 @@ Jump to: [top](#)
 
 
 <div id="1998_dorssel">
-## Winning entry: [1998/dorssel](1998/dorssel/index.html)
-### Winning entry source code: [dorssel.c](%%REPO_URL%%/1998/dorssel/dorssel.c)
+### Winning entry: [1998/dorssel](1998/dorssel/index.html)
+#### Winning entry source code: [dorssel.c](%%REPO_URL%%/1998/dorssel/dorssel.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/1998/dorssel/try.sh) script.
@@ -3302,8 +3302,8 @@ Jump to: [top](#)
 
 
 <div id="1998_fanf">
-## Winning entry: [1998/fanf](1998/fanf/index.html)
-### Winning entry source code: [fanf.c](%%REPO_URL%%/1998/fanf/fanf.c)
+### Winning entry: [1998/fanf](1998/fanf/index.html)
+#### Winning entry source code: [fanf.c](%%REPO_URL%%/1998/fanf/fanf.c)
 </div>
 
 [Cody](#cody) fixed this to compile. Tony Finch fixed it again to be
@@ -3343,8 +3343,8 @@ Jump to: [top](#)
 
 
 <div id="1998_schnitzi">
-## Winning entry: [1998/schnitzi](1998/schnitzi/index.html)
-### Winning entry source code: [schnitzi.c](%%REPO_URL%%/1998/schnitzi/schnitzi.c)
+### Winning entry: [1998/schnitzi](1998/schnitzi/index.html)
+#### Winning entry source code: [schnitzi.c](%%REPO_URL%%/1998/schnitzi/schnitzi.c)
 </div>
 
 [Cody](#cody) fixed invalid data types which prevented this entry from working, causing a
@@ -3374,8 +3374,8 @@ Jump to: [top](#)
 
 
 <div id="1998_schweikh1">
-## Winning entry: [1998/schweikh1](1998/schweikh1/index.html)
-### Winning entry source code: [1998/schweikh1](%%REPO_URL%%/1998/schweikh1/schweikh1.c)
+### Winning entry: [1998/schweikh1](1998/schweikh1/index.html)
+#### Winning entry source code: [1998/schweikh1](%%REPO_URL%%/1998/schweikh1/schweikh1.c)
 </div>
 
 [Cody](#cody) fixed this for modern systems (it did not work at all) and added an
@@ -3438,8 +3438,8 @@ Jump to: [top](#)
 
 
 <div id="1998_schweikh2">
-## Winning entry: [1998/schweikh2](1998/schweikh2/index.html)
-### Winning entry source code: [schweikh2.c](%%REPO_URL%%/1998/schweikh2/schweikh2.c)
+### Winning entry: [1998/schweikh2](1998/schweikh2/index.html)
+#### Winning entry source code: [schweikh2.c](%%REPO_URL%%/1998/schweikh2/schweikh2.c)
 </div>
 
 [Cody](#cody) fixed the code to not trigger an internal compiler error in `gcc`:
@@ -3467,8 +3467,8 @@ Jump to: [top](#)
 
 
 <div id="1998_schweikh3">
-## Winning entry: [1998/schweikh3](1998/schweikh3/index.html)
-### Winning entry source code: [schweikh3.c](%%REPO_URL%%/1998/schweikh3/schweikh3.c)
+### Winning entry: [1998/schweikh3](1998/schweikh3/index.html)
+#### Winning entry source code: [schweikh3.c](%%REPO_URL%%/1998/schweikh3/schweikh3.c)
 </div>
 
 [Cody](#cody) added the [alternate
@@ -3511,8 +3511,8 @@ Jump to: [top](#)
 
 
 <div id="1998_tomtorfs">
-## Winning entry: [1998/tomtorfs](1998/tomtorfs/index.html)
-### Winning entry source code: [tomtorfs.c](%%REPO_URL%%/1998/tomtorfs/tomtorfs.c)
+### Winning entry: [1998/tomtorfs](1998/tomtorfs/index.html)
+#### Winning entry source code: [tomtorfs.c](%%REPO_URL%%/1998/tomtorfs/tomtorfs.c)
 </div>
 
 [Cody](#cody) fixed the assumption that `EOF` is `-1` (the author noted that it assumes
@@ -3532,7 +3532,7 @@ Jump to: [top](#)
 
 
 <div id="2000">
-# [2000 - The 15th IOCCC](2000/index.html)
+## [2000 - The 15th IOCCC](2000/index.html)
 </div>
 
 
@@ -3540,8 +3540,8 @@ Jump to: [top](#)
 
 
 <div id="2000_anderson">
-## Winning entry: [2000/anderson](2000/anderson/index.html)
-### Winning entry source code: [anderson.c](%%REPO_URL%%/2000/anderson//anderson.c)
+### Winning entry: [2000/anderson](2000/anderson/index.html)
+#### Winning entry source code: [anderson.c](%%REPO_URL%%/2000/anderson//anderson.c)
 </div>
 
 [Cody](#cody) changed this entry to use `fgets(3)` instead of `gets(3)`.
@@ -3555,8 +3555,8 @@ Jump to: [top](#)
 
 
 <div id="2000_bmeyer">
-## Winning entry: [2000/bmeyer](2000/bmeyer/index.html)
-### Winning entry source code: [bmeyer.c](%%REPO_URL%%/2000/bmeyer//bmeyer.c)
+### Winning entry: [2000/bmeyer](2000/bmeyer/index.html)
+#### Winning entry source code: [bmeyer.c](%%REPO_URL%%/2000/bmeyer//bmeyer.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2000/bmeyer/try.sh) script with some improvements to the
@@ -3568,8 +3568,8 @@ Jump to: [top](#)
 
 
 <div id="2000_briddlebane">
-## Winning entry: [2000/briddlebane](2000/briddlebane/index.html)
-### Winning entry source code: [briddlebane.c](%%REPO_URL%%/2000/briddlebane//briddlebane.c)
+### Winning entry: [2000/briddlebane](2000/briddlebane/index.html)
+#### Winning entry source code: [briddlebane.c](%%REPO_URL%%/2000/briddlebane//briddlebane.c)
 </div>
 
 [Cody](#cody) fixed this to compile in systems that require one to explicitly link in
@@ -3583,8 +3583,8 @@ Jump to: [top](#)
 
 
 <div id="2000_dhyang">
-## Winning entry: [2000/dhyang](2000/dhyang/index.html)
-### Winning entry source code: [dhyang.c](%%REPO_URL%%/2000/dhyang//dhyang.c)
+### Winning entry: [2000/dhyang](2000/dhyang/index.html)
+#### Winning entry source code: [dhyang.c](%%REPO_URL%%/2000/dhyang//dhyang.c)
 </div>
 
 [Cody](#cody) made this more portable by changing the `void main` to `int main`.
@@ -3596,8 +3596,8 @@ Jump to: [top](#)
 
 
 <div id="2000_dlowe">
-## Winning entry: [2000/dlowe](2000/dlowe/index.html)
-### Winning entry source code: [dlowe.c](%%REPO_URL%%/2000/dlowe//dlowe.c)
+### Winning entry: [2000/dlowe](2000/dlowe/index.html)
+#### Winning entry source code: [dlowe.c](%%REPO_URL%%/2000/dlowe//dlowe.c)
 </div>
 
 [Cody](#cody) fixed this to compile with more recent perl versions; the symbol that's now
@@ -3616,8 +3616,8 @@ Jump to: [top](#)
 
 
 <div id="2000_jarijyrki">
-## Winning entry: [2000/jarijyrki](2000/jarijyrki/index.html)
-### Winning entry source code: [jarijyrki.c](%%REPO_URL%%/2000/jarijyrki//jarijyrki.c)
+### Winning entry: [2000/jarijyrki](2000/jarijyrki/index.html)
+#### Winning entry source code: [jarijyrki.c](%%REPO_URL%%/2000/jarijyrki//jarijyrki.c)
 </div>
 
 [Cody](#cody) made it easier to compile this in some cases by adding `X11/` to the
@@ -3628,8 +3628,8 @@ Jump to: [top](#)
 
 
 <div id="2000_natori">
-## Winning entry: [2000/natori](2000/natori/index.html)
-### Winning entry source code: [natori.c](%%REPO_URL%%/2000/natori//natori.c)
+### Winning entry: [2000/natori](2000/natori/index.html)
+#### Winning entry source code: [natori.c](%%REPO_URL%%/2000/natori//natori.c)
 </div>
 
 [Cody](#cody) fixed this for modern compilers. Depending on the compiler it would either
@@ -3661,8 +3661,8 @@ Jump to: [top](#)
 
 
 <div id="2000_primenum">
-## Winning entry: [2000/primenum](2000/primenum/index.html)
-### Winning entry source code: [primenum.c](%%REPO_URL%%/2000/primenum//primenum.c)
+### Winning entry: [2000/primenum](2000/primenum/index.html)
+#### Winning entry source code: [primenum.c](%%REPO_URL%%/2000/primenum//primenum.c)
 </div>
 
 [Cody](#cody) made this more portable by changing the `void main` to `int main`.
@@ -3674,8 +3674,8 @@ Jump to: [top](#)
 
 
 <div id="2000_rince">
-## Winning entry: [2000/rince](2000/rince/index.html)
-### Winning entry source code: [rince.c](%%REPO_URL%%/2000/rince//rince.c)
+### Winning entry: [2000/rince](2000/rince/index.html)
+#### Winning entry source code: [rince.c](%%REPO_URL%%/2000/rince//rince.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2000/rince/try.sh) script.
@@ -3685,8 +3685,8 @@ Jump to: [top](#)
 
 
 <div id="2000_robison">
-## Winning entry: [2000/robison](2000/robison/index.html)
-### Winning entry source code: [robison.c](%%REPO_URL%%/2000/robison//robison.c)
+### Winning entry: [2000/robison](2000/robison/index.html)
+#### Winning entry source code: [robison.c](%%REPO_URL%%/2000/robison//robison.c)
 </div>
 
 [Cody](#cody) fixed an infinite loop that occurred if invalid input was entered, flooding
@@ -3704,8 +3704,8 @@ Jump to: [top](#)
 
 
 <div id="2000_schneiderwent">
-## Winning entry: [2000/schneiderwent](2000/schneiderwent/index.html)
-### Winning entry source code: [schneiderwent.c](%%REPO_URL%%/2000/schneiderwent//schneiderwent.c)
+### Winning entry: [2000/schneiderwent](2000/schneiderwent/index.html)
+#### Winning entry source code: [schneiderwent.c](%%REPO_URL%%/2000/schneiderwent//schneiderwent.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2000/schneiderwent/try.sh) script.
@@ -3715,8 +3715,8 @@ Jump to: [top](#)
 
 
 <div id="2000_thadgavin">
-## Winning entry: [2000/thadgavin](2000/thadgavin/index.html)
-### Winning entry source code: [thadgavin.c](%%REPO_URL%%/2000/thadgavin//thadgavin.c)
+### Winning entry: [2000/thadgavin](2000/thadgavin/index.html)
+#### Winning entry source code: [thadgavin.c](%%REPO_URL%%/2000/thadgavin//thadgavin.c)
 </div>
 
 [Cody](#cody) fixed the code and added an appropriate make rule so that the
@@ -3763,8 +3763,8 @@ Jump to: [top](#)
 
 
 <div id="2000_tomx">
-## Winning entry: [2000/tomx](2000/tomx/index.html)
-### Winning entry source code: [tomx.c](%%REPO_URL%%/2000/tomx//tomx.c)
+### Winning entry: [2000/tomx](2000/tomx/index.html)
+#### Winning entry source code: [tomx.c](%%REPO_URL%%/2000/tomx//tomx.c)
 </div>
 
 [Cody](#cody) added the [alternate code](2000/tomx/index.html#alternate-code) based on the
@@ -3780,7 +3780,7 @@ Jump to: [top](#)
 
 
 <div id="2001">
-# [2001 - The 16th IOCCC](2001/index.html)
+## [2001 - The 16th IOCCC](2001/index.html)
 </div>
 
 
@@ -3788,8 +3788,8 @@ Jump to: [top](#)
 
 
 <div id="2001_anonymous">
-## Winning entry: [2001/anonymous](2001/anonymous/index.html)
-### Winning entry source code: [anonymous.c](%%REPO_URL%%/2001/anonymous//anonymous.c)
+### Winning entry: [2001/anonymous](2001/anonymous/index.html)
+#### Winning entry source code: [anonymous.c](%%REPO_URL%%/2001/anonymous//anonymous.c)
 </div>
 
 [Cody](#cody) fixed both the supplementary program and the program itself (both of which
@@ -3882,8 +3882,8 @@ Jump to: [top](#)
 
 
 <div id="2001_bellard">
-## Winning entry: [2001/bellard](2001/bellard/index.html)
-### Winning entry source code: [bellard.c](%%REPO_URL%%/2001/bellard//bellard.c)
+### Winning entry: [2001/bellard](2001/bellard/index.html)
+#### Winning entry source code: [bellard.c](%%REPO_URL%%/2001/bellard//bellard.c)
 </div>
 
 [Cody](#cody) fixed this to compile with `clang` but according to the author this will not
@@ -3919,7 +3919,7 @@ this entry by Yusuke.
 Jump to: [top](#)
 
 
-## Portability notes:
+### Portability notes:
 
 With a tip from Yusuke we rediscovered the author's [web page for this
 program](https://bellard.org/otcc/) where it is stated that this will only work
@@ -3937,8 +3937,8 @@ Jump to: [top](#)
 
 
 <div id="2001_cheong">
-## Winning entry: [2001/cheong](2001/cheong/index.html)
-### Winning entry source code: [cheong.c](%%REPO_URL%%/2001/cheong//cheong.c)
+### Winning entry: [2001/cheong](2001/cheong/index.html)
+#### Winning entry source code: [cheong.c](%%REPO_URL%%/2001/cheong//cheong.c)
 </div>
 
 [Cody](#cody) fixed this to compile with `clang` by adding another function that is allowed to
@@ -3954,8 +3954,8 @@ Jump to: [top](#)
 
 
 <div id="2001_coupard">
-## Winning entry: [2001/coupard](2001/coupard/index.html)
-### Winning entry source code: [coupard.c](%%REPO_URL%%/2001/coupard//coupard.c)
+### Winning entry: [2001/coupard](2001/coupard/index.html)
+#### Winning entry source code: [coupard.c](%%REPO_URL%%/2001/coupard//coupard.c)
 </div>
 
 [Cody](#cody) added a value to `return` in `main()` to make it more portable.
@@ -3989,8 +3989,8 @@ Jump to: [top](#)
 
 
 <div id="2001_ctk">
-## Winning entry: [2001/ctk](2001/ctk/index.html)
-### Winning entry source code: [ctk.c](%%REPO_URL%%/2001/ctk//ctk.c)
+### Winning entry: [2001/ctk](2001/ctk/index.html)
+#### Winning entry source code: [ctk.c](%%REPO_URL%%/2001/ctk//ctk.c)
 </div>
 
 The ANSI escape codes were no longer valid but [Yusuke](#yusuke) provided a patch to fix
@@ -4012,8 +4012,8 @@ Jump to: [top](#)
 
 
 <div id="2001_dgbeards">
-## Winning entry: [2001/dgbeards](2001/dgbeards/index.html)
-### Winning entry source code: [dgbeards.c](%%REPO_URL%%/2001/dgbeards//dgbeards.c)
+### Winning entry: [2001/dgbeards](2001/dgbeards/index.html)
+#### Winning entry source code: [dgbeards.c](%%REPO_URL%%/2001/dgbeards//dgbeards.c)
 </div>
 
 The author provided two changes: one to speed it up and one to make it not crash
@@ -4031,8 +4031,8 @@ Jump to: [top](#)
 
 
 <div id="2001_herrmann1">
-## Winning entry: [2001/herrmann1](2001/herrmann1/index.html)
-### Winning entry source code: [herrmann1.c](%%REPO_URL%%/2001/herrmann1//herrmann1.c)
+### Winning entry: [2001/herrmann1](2001/herrmann1/index.html)
+#### Winning entry source code: [herrmann1.c](%%REPO_URL%%/2001/herrmann1//herrmann1.c)
 </div>
 
 [Cody](#cody) fixed this so that the when compiling the code the program is not executed
@@ -4059,8 +4059,8 @@ Jump to: [top](#)
 
 
 <div id="2001_herrmann2">
-## Winning entry: [2001/herrmann2](2001/herrmann2/index.html)
-### Winning entry source code: [herrmann2.c](%%REPO_URL%%/2001/herrmann2//herrmann2.c)
+### Winning entry: [2001/herrmann2](2001/herrmann2/index.html)
+#### Winning entry source code: [herrmann2.c](%%REPO_URL%%/2001/herrmann2//herrmann2.c)
 </div>
 
 [Cody](#cody) fixed this to work with both 64-bit and 32-bit compilers by changing most
@@ -4080,8 +4080,8 @@ Jump to: [top](#)
 
 
 <div id="2001_kev">
-## Winning entry: [2001/kev](2001/kev/index.html)
-### Winning entry source code: [kev.c](%%REPO_URL%%/2001/kev//kev.c)
+### Winning entry: [2001/kev](2001/kev/index.html)
+#### Winning entry source code: [kev.c](%%REPO_URL%%/2001/kev//kev.c)
 </div>
 
 [Cody](#cody) improved the `Makefile` to allow one to more easily set up the port,
@@ -4108,8 +4108,8 @@ Jump to: [top](#)
 
 
 <div id="2001_ollinger">
-## Winning entry: [2001/ollinger](2001/ollinger/index.html)
-### Winning entry source code: [ollinger.c](%%REPO_URL%%/2001/ollinger//ollinger.c)
+### Winning entry: [2001/ollinger](2001/ollinger/index.html)
+#### Winning entry source code: [ollinger.c](%%REPO_URL%%/2001/ollinger//ollinger.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2001/ollinger/try.sh) script.
@@ -4120,8 +4120,8 @@ Jump to: [top](#)
 
 
 <div id="2001_schweikh">
-## Winning entry: [2001/schweikh](2001/schweikh/index.html)
-### Winning entry source code: [schweikh.c](%%REPO_URL%%/2001/schweikh//schweikh.c)
+### Winning entry: [2001/schweikh](2001/schweikh/index.html)
+#### Winning entry source code: [schweikh.c](%%REPO_URL%%/2001/schweikh//schweikh.c)
 </div>
 
 [Cody](#cody) fixed this to not crash if not enough args as this was not documented by
@@ -4135,8 +4135,8 @@ Jump to: [top](#)
 
 
 <div id="2001_westley">
-## Winning entry: [2001/westley](2001/westley/index.html)
-### Winning entry source code: [westley.c](%%REPO_URL%%/2001/westley//westley.c)
+### Winning entry: [2001/westley](2001/westley/index.html)
+#### Winning entry source code: [westley.c](%%REPO_URL%%/2001/westley//westley.c)
 </div>
 
 [Cody](#cody) added the script [try.sh](%%REPO_URL%%/2001/westley/try.sh) to
@@ -4151,7 +4151,7 @@ Jump to: [top](#)
 
 
 <div id="2004">
-# [2004 - The 17th IOCCC](2004/index.html)
+## [2004 - The 17th IOCCC](2004/index.html)
 </div>
 
 
@@ -4159,8 +4159,8 @@ Jump to: [top](#)
 
 
 <div id="2004_anonymous">
-## Winning entry: [2004/anonymous](2004/anonymous/index.html)
-### Winning entry source code: [anonymous.c](%%REPO_URL%%/2004/anonymous//anonymous.c)
+### Winning entry: [2004/anonymous](2004/anonymous/index.html)
+#### Winning entry source code: [anonymous.c](%%REPO_URL%%/2004/anonymous//anonymous.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2004/anonymous/try.sh) script.
@@ -4170,8 +4170,8 @@ Jump to: [top](#)
 
 
 <div id="2004_arachnid">
-## Winning entry: [2004/arachnid](2004/arachnid/index.html)
-### Winning entry source code: [arachnid.c](%%REPO_URL%%/2004/arachnid//arachnid.c)
+### Winning entry: [2004/arachnid](2004/arachnid/index.html)
+#### Winning entry source code: [arachnid.c](%%REPO_URL%%/2004/arachnid//arachnid.c)
 </div>
 
 [Cody](#cody) added an [alternate
@@ -4188,8 +4188,8 @@ Jump to: [top](#)
 
 
 <div id="2004_burley">
-## Winning entry: [2004/burley](2004/burley/index.html)
-### Winning entry source code: [burley.c](%%REPO_URL%%/2004/burley//burley.c)
+### Winning entry: [2004/burley](2004/burley/index.html)
+#### Winning entry source code: [burley.c](%%REPO_URL%%/2004/burley//burley.c)
 </div>
 
 [Cody](#cody) fixed this to compile with `clang` and to work with both `gcc` and
@@ -4224,8 +4224,8 @@ Jump to: [top](#)
 
 
 <div id="2004_gavare">
-## Winning entry: [2004/gavare](2004/gavare/index.html)
-### Winning entry source code: [gavare.c](%%REPO_URL%%/2004/gavare//gavare.c)
+### Winning entry: [2004/gavare](2004/gavare/index.html)
+#### Winning entry source code: [gavare.c](%%REPO_URL%%/2004/gavare//gavare.c)
 </div>
 
 [Cody](#cody) added three different [alternate
@@ -4247,8 +4247,8 @@ for more details.
 
 
 <div id="2004_gavin">
-## Winning entry: [2004/gavin](2004/gavin/index.html)
-### Winning entry source code: [gavin.c](%%REPO_URL%%/2004/gavin//gavin.c)
+### Winning entry: [2004/gavin](2004/gavin/index.html)
+#### Winning entry source code: [gavin.c](%%REPO_URL%%/2004/gavin//gavin.c)
 </div>
 
 [Cody](#cody) provided the [alternate code](2004/gavin/index.html#alternate-code) for
@@ -4267,8 +4267,8 @@ Jump to: [top](#)
 
 
 <div id="2004_hibachi">
-## Winning entry: [2004/hibachi](2004/hibachi/index.html)
-### Winning entry source code: [hibachi.c](%%REPO_URL%%/2004/hibachi//hibachi.c)
+### Winning entry: [2004/hibachi](2004/hibachi/index.html)
+#### Winning entry source code: [hibachi.c](%%REPO_URL%%/2004/hibachi//hibachi.c)
 </div>
 
 [Cody](#cody) fixed a bunch of links in the index.html provided with the entry
@@ -4291,8 +4291,8 @@ Jump to: [top](#)
 
 
 <div id="2004_hoyle">
-## Winning entry: [2004/hoyle](2004/hoyle/index.html)
-### Winning entry source code: [hoyle.c](%%REPO_URL%%/2004/hoyle//hoyle.c)
+### Winning entry: [2004/hoyle](2004/hoyle/index.html)
+#### Winning entry source code: [hoyle.c](%%REPO_URL%%/2004/hoyle//hoyle.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2004/hoyle/try.sh) script.
@@ -4302,8 +4302,8 @@ Jump to: [top](#)
 
 
 <div id="2004_jdalbec">
-## Winning entry: [2004/jdalbec](2004/jdalbec/index.html)
-### Winning entry source code: [jdalbec.c](%%REPO_URL%%/2004/jdalbec//jdalbec.c)
+### Winning entry: [2004/jdalbec](2004/jdalbec/index.html)
+#### Winning entry source code: [jdalbec.c](%%REPO_URL%%/2004/jdalbec//jdalbec.c)
 </div>
 
 [Cody](#cody) fixed this to compile with `gcc` (it worked with `clang`). The problem was the
@@ -4347,8 +4347,8 @@ Jump to: [top](#)
 
 
 <div id="2004_kopczynski">
-## Winning entry: [2004/kopczynski](2004/kopczynski/index.html)
-### Winning entry source code: [kopczynski.c](%%REPO_URL%%/2004/kopczynski//kopczynski.c)
+### Winning entry: [2004/kopczynski](2004/kopczynski/index.html)
+#### Winning entry source code: [kopczynski.c](%%REPO_URL%%/2004/kopczynski//kopczynski.c)
 </div>
 
 [Cody](#cody) force disabled the optimiser in the `Makefile` with `-O0` as he
@@ -4370,8 +4370,8 @@ Jump to: [top](#)
 
 
 <div id="2004_newbern">
-## Winning entry: [2004/newbern](2004/newbern/index.html)
-### Winning entry source code: [newbern.c](%%REPO_URL%%/2004/newbern//newbern.c)
+### Winning entry: [2004/newbern](2004/newbern/index.html)
+#### Winning entry source code: [newbern.c](%%REPO_URL%%/2004/newbern//newbern.c)
 </div>
 
 [Cody](#cody) and Landon individually fixed this to work with `clang`.
@@ -4385,8 +4385,8 @@ Jump to: [top](#)
 
 
 <div id="2004_omoikane">
-## Winning entry: [2004/omoikane](2004/omoikane/index.html)
-### Winning entry source code: [omoikane.c](%%REPO_URL%%/2004/omoikane//omoikane.c)
+### Winning entry: [2004/omoikane](2004/omoikane/index.html)
+#### Winning entry source code: [omoikane.c](%%REPO_URL%%/2004/omoikane//omoikane.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2004/omoikane/try.sh) script.
@@ -4396,8 +4396,8 @@ Jump to: [top](#)
 
 
 <div id="2004_schnitzi">
-## Winning entry: [2004/schnitzi](2004/schnitzi/index.html)
-### Winning entry source code: [schnitzi.c](%%REPO_URL%%/2004/schnitzi//schnitzi.c)
+### Winning entry: [2004/schnitzi](2004/schnitzi/index.html)
+#### Winning entry source code: [schnitzi.c](%%REPO_URL%%/2004/schnitzi//schnitzi.c)
 </div>
 
 [Cody](#cody) made this use `fgets(3)`. See the
@@ -4415,8 +4415,8 @@ Jump to: [top](#)
 
 
 <div id="2004_sds">
-## Winning entry: [2004/sds](2004/sds/index.html)
-### Winning entry source code: [sds.c](%%REPO_URL%%/2004/sds//sds.c)
+### Winning entry: [2004/sds](2004/sds/index.html)
+#### Winning entry source code: [sds.c](%%REPO_URL%%/2004/sds//sds.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2004/sds/try.sh) script.
@@ -4430,8 +4430,8 @@ Jump to: [top](#)
 
 
 <div id="2004_vik2">
-## Winning entry: [2004/vik2](2004/vik2/index.html)
-### Winning entry source code: [vik2.c](%%REPO_URL%%/2004/vik2//vik2.c)
+### Winning entry: [2004/vik2](2004/vik2/index.html)
+#### Winning entry source code: [vik2.c](%%REPO_URL%%/2004/vik2//vik2.c)
 </div>
 
 [Cody](#cody) fixed this to compile in Linux. Although it compiled cleanly in macOS (and
@@ -4495,7 +4495,7 @@ Jump to: [top](#)
 
 
 <div id="2005">
-# [2005 - The 18th IOCCC](2005/index.html)
+## [2005 - The 18th IOCCC](2005/index.html)
 </div>
 
 
@@ -4503,8 +4503,8 @@ Jump to: [top](#)
 
 
 <div id="2005_aidan">
-## Winning entry: [2005/aidan](2005/aidan/index.html)
-### Winning entry source code: [aidan.c](%%REPO_URL%%/2005/aidan//aidan.c)
+### Winning entry: [2005/aidan](2005/aidan/index.html)
+#### Winning entry source code: [aidan.c](%%REPO_URL%%/2005/aidan//aidan.c)
 </div>
 
 [Cody](#cody) fixed the test script, described by the author in their remarks, to refer
@@ -4530,8 +4530,8 @@ Jump to: [top](#)
 
 
 <div id="2005_anon">
-## Winning entry: [2005/anon](2005/anon/index.html)
-### Winning entry source code: [anon.c](%%REPO_URL%%/2005/anon//anon.c)
+### Winning entry: [2005/anon](2005/anon/index.html)
+#### Winning entry source code: [anon.c](%%REPO_URL%%/2005/anon//anon.c)
 </div>
 
 [Cody](#cody) fixed a problem where in some systems (like macOS) the `stty sane` would
@@ -4552,8 +4552,8 @@ Jump to: [top](#)
 
 
 <div id="2005_boutines">
-## Winning entry: [2005/boutines](2005/boutines/index.html)
-### Winning entry source code: [boutines.c](%%REPO_URL%%/2005/boutines//boutines.c)
+### Winning entry: [2005/boutines](2005/boutines/index.html)
+#### Winning entry source code: [boutines.c](%%REPO_URL%%/2005/boutines//boutines.c)
 </div>
 
 [Cody](#cody) added the [input.txt](2005/boutines/input.txt) data file based on suggested
@@ -4566,8 +4566,8 @@ Jump to: [top](#)
 
 
 <div id="2005_giljade">
-## Winning entry: [2005/giljade](2005/giljade/index.html)
-### Winning entry source code: [giljade.c](%%REPO_URL%%/2005/giljade//giljade.c)
+### Winning entry: [2005/giljade](2005/giljade/index.html)
+#### Winning entry source code: [giljade.c](%%REPO_URL%%/2005/giljade//giljade.c)
 </div>
 
 After Landon fixed the entry to compile with `clang` [Cody](#cody) noticed this
@@ -4640,8 +4640,8 @@ Jump to: [top](#)
 
 
 <div id="2005_jetro">
-## Winning entry: [2005/jetro](2005/jetro/index.html)
-### Winning entry source code: [jetro.c](%%REPO_URL%%/2005/jetro//jetro.c)
+### Winning entry: [2005/jetro](2005/jetro/index.html)
+#### Winning entry source code: [jetro.c](%%REPO_URL%%/2005/jetro//jetro.c)
 </div>
 
 [Cody](#cody) added explicit linking of libm (`-lm`) for systems like Linux that seem to
@@ -4653,8 +4653,8 @@ Jump to: [top](#)
 
 
 <div id="2005_klausler">
-## Winning entry: [2005/klausler](2005/klausler/index.html)
-### Winning entry source code: [klausler.c](%%REPO_URL%%/2005/klausler//klausler.c)
+### Winning entry: [2005/klausler](2005/klausler/index.html)
+#### Winning entry source code: [klausler.c](%%REPO_URL%%/2005/klausler//klausler.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2005/klausler/try.sh) script.
@@ -4664,8 +4664,8 @@ Jump to: [top](#)
 
 
 <div id="2005_mikeash">
-## Winning entry: [2005/mikeash](2005/mikeash/index.html)
-### Winning entry source code: [mikeash.c](%%REPO_URL%%/2005/mikeash//mikeash.c)
+### Winning entry: [2005/mikeash](2005/mikeash/index.html)
+#### Winning entry source code: [mikeash.c](%%REPO_URL%%/2005/mikeash//mikeash.c)
 </div>
 
 [Cody](#cody) fixed this to work in some versions of linux. The problem was an
@@ -4702,8 +4702,8 @@ Jump to: [top](#)
 
 
 <div id="2005_mynx">
-## Winning entry: [2005/mynx](2005/mynx/index.html)
-### Winning entry source code: [mynx.c](%%REPO_URL%%/2005/mynx//mynx.c)
+### Winning entry: [2005/mynx](2005/mynx/index.html)
+#### Winning entry source code: [mynx.c](%%REPO_URL%%/2005/mynx//mynx.c)
 </div>
 
 [Cody](#cody) fixed this so that the
@@ -4725,8 +4725,8 @@ Jump to: [top](#)
 
 
 <div id="2005_persano">
-## Winning entry: [2005/persano](2005/persano/index.html)
-### Winning entry source code: [persano.c](%%REPO_URL%%/2005/persano//persano.c)
+### Winning entry: [2005/persano](2005/persano/index.html)
+#### Winning entry source code: [persano.c](%%REPO_URL%%/2005/persano//persano.c)
 </div>
 
 [Cody](#cody) added the (untested) [alternate
@@ -4741,8 +4741,8 @@ Jump to: [top](#)
 
 
 <div id="2005_sykes">
-## Winning entry: [2005/sykes](2005/sykes/index.html)
-### Winning entry source code: [sykes.c](%%REPO_URL%%/2005/sykes//sykes.c)
+### Winning entry: [2005/sykes](2005/sykes/index.html)
+#### Winning entry source code: [sykes.c](%%REPO_URL%%/2005/sykes//sykes.c)
 </div>
 
 [Cody](#cody) added the saved (with the `SAVE` command) BASIC program `PET` which was:
@@ -4786,8 +4786,8 @@ Jump to: [top](#)
 
 
 <div id="2005_timwi">
-## Winning entry: [2005/timwi](2005/timwi/index.html)
-### Winning entry source code: [timwi.c](%%REPO_URL%%/2005/timwi//timwi.c)
+### Winning entry: [2005/timwi](2005/timwi/index.html)
+#### Winning entry source code: [timwi.c](%%REPO_URL%%/2005/timwi//timwi.c)
 </div>
 
 [Cody](#cody) added [try.sh](%%REPO_URL%%/2005/timwi/try.sh). It only has one command as he doesn't
@@ -4799,8 +4799,8 @@ Jump to: [top](#)
 
 
 <div id="2005_toledo">
-## Winning entry: [2005/toledo](2005/toledo/index.html)
-### Winning entry source code: [toledo.c](%%REPO_URL%%/2005/toledo//toledo.c)
+### Winning entry: [2005/toledo](2005/toledo/index.html)
+#### Winning entry source code: [toledo.c](%%REPO_URL%%/2005/toledo//toledo.c)
 </div>
 
 [Cody](#cody) fixed this to compile with some versions of `clang` which have an additional
@@ -4815,8 +4815,8 @@ Jump to: [top](#)
 
 
 <div id="2005_vince">
-## Winning entry: [2005/vince](2005/vince/index.html)
-### Winning entry source code: [vince.c](%%REPO_URL%%/2005/vince//vince.c)
+### Winning entry: [2005/vince](2005/vince/index.html)
+#### Winning entry source code: [vince.c](%%REPO_URL%%/2005/vince//vince.c)
 </div>
 
 [Cody](#cody) fixed this in the case that the program is compiled or linked/copied to
@@ -4834,7 +4834,7 @@ Jump to: [top](#)
 
 
 <div id="2006">
-# [2006 - The 19th IOCCC](2006/index.html)
+## [2006 - The 19th IOCCC](2006/index.html)
 </div>
 
 
@@ -4842,8 +4842,8 @@ Jump to: [top](#)
 
 
 <div id="2006_birken">
-## Winning entry: [2006/birken](2006/birken/index.html)
-### Winning entry source code: [birken.c](%%REPO_URL%%/2006/birken//birken.c)
+### Winning entry: [2006/birken](2006/birken/index.html)
+#### Winning entry source code: [birken.c](%%REPO_URL%%/2006/birken//birken.c)
 </div>
 
 [Cody](#cody) fixed a segfault that prevented this entry from working in macOS.
@@ -4857,8 +4857,8 @@ Jump to: [top](#)
 
 
 <div id="2006_borsanyi">
-## Winning entry: [2006/borsanyi](2006/borsanyi/index.html)
-### Winning entry source code: [borsanyi.c](%%REPO_URL%%/2006/borsanyi//borsanyi.c)
+### Winning entry: [2006/borsanyi](2006/borsanyi/index.html)
+#### Winning entry source code: [borsanyi.c](%%REPO_URL%%/2006/borsanyi//borsanyi.c)
 </div>
 
 [Cody](#cody) fixed the `Makefile` to work in systems where the `lpthread` is not
@@ -4871,8 +4871,8 @@ Jump to: [top](#)
 
 
 <div id="2006_grothe">
-## Winning entry: [2006/grothe](2006/grothe/index.html)
-### Winning entry source code: [grothe.c](%%REPO_URL%%/2006/grothe//grothe.c)
+### Winning entry: [2006/grothe](2006/grothe/index.html)
+#### Winning entry source code: [grothe.c](%%REPO_URL%%/2006/grothe//grothe.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2006/grothe/try.sh) script.
@@ -4882,8 +4882,8 @@ Jump to: [top](#)
 
 
 <div id="2006_hamre">
-## Winning entry: [2006/hamre](2006/hamre/index.html)
-### Winning entry source code: [hamre.c](%%REPO_URL%%/2006/hamre//hamre.c)
+### Winning entry: [2006/hamre](2006/hamre/index.html)
+#### Winning entry source code: [hamre.c](%%REPO_URL%%/2006/hamre//hamre.c)
 </div>
 
 Cody added the [try.sh](%%REPO_URL%%/2006/hamre/try.sh) script.
@@ -4893,8 +4893,8 @@ Jump to: [top](#)
 
 
 <div id="2006_monge">
-## Winning entry: [2006/monge](2006/monge/index.html)
-### Winning entry source code: [monge.c](%%REPO_URL%%/2006/monge//monge.c)
+### Winning entry: [2006/monge](2006/monge/index.html)
+#### Winning entry source code: [monge.c](%%REPO_URL%%/2006/monge//monge.c)
 </div>
 
 [Cody](#cody) added the [alternate code](2006/monge/index.html#alternate-code) that lets
@@ -4916,8 +4916,8 @@ Jump to: [top](#)
 
 
 <div id="2006_night">
-## Winning entry: [2006/night](2006/night/index.html)
-### Winning entry source code: [night.c](%%REPO_URL%%/2006/night//night.c)
+### Winning entry: [2006/night](2006/night/index.html)
+#### Winning entry source code: [night.c](%%REPO_URL%%/2006/night//night.c)
 </div>
 
 As [Cody](#cody) is a lost :-) `vim` user he took the author's remarks to add support
@@ -4928,8 +4928,8 @@ FAQ on "[alternate code](faq.html#alt_code)" for more details.
 Jump to: [top](#)
 
 <div id="2006_sloane">
-## Winning entry: [2006/sloane](2006/sloane/index.html)
-### Winning entry source code: [sloane.c](%%REPO_URL%%/2006/sloane//sloane.c)
+### Winning entry: [2006/sloane](2006/sloane/index.html)
+#### Winning entry source code: [sloane.c](%%REPO_URL%%/2006/sloane//sloane.c)
 </div>
 
 [Cody](#cody) fixed this entry to work with `clang` which has a defect with the args to
@@ -4954,8 +4954,8 @@ program in some systems he also added `-include ...` to the `Makefile` as well.
 
 
 <div id="2006_stewart">
-## Winning entry: [2006/stewart](2006/stewart/index.html)
-### Winning entry source code: [stewart.c](%%REPO_URL%%/2006/stewart//stewart.c)
+### Winning entry: [2006/stewart](2006/stewart/index.html)
+#### Winning entry source code: [stewart.c](%%REPO_URL%%/2006/stewart//stewart.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2006/stewart/try.sh) script.
@@ -4965,8 +4965,8 @@ Jump to: [top](#)
 
 
 <div id="2006_sykes1">
-## Winning entry: [2006/sykes1](2006/sykes1/index.html)
-### Winning entry source code: [sykes1.c](%%REPO_URL%%/2006/sykes1//sykes1.c)
+### Winning entry: [2006/sykes1](2006/sykes1/index.html)
+#### Winning entry source code: [sykes1.c](%%REPO_URL%%/2006/sykes1//sykes1.c)
 </div>
 
 [Cody](#cody) provided the [alternate
@@ -4983,8 +4983,8 @@ Jump to: [top](#)
 
 
 <div id="2006_sykes2">
-## Winning entry: [2006/sykes2](2006/sykes2/index.html)
-### Winning entry source code: [sykes2.c](%%REPO_URL%%/2006/sykes2//sykes2.c)
+### Winning entry: [2006/sykes2](2006/sykes2/index.html)
+#### Winning entry source code: [sykes2.c](%%REPO_URL%%/2006/sykes2//sykes2.c)
 </div>
 
 [Cody](#cody), out of an abundance of caution for `clang`'s defects, made `main()` have
@@ -5000,8 +5000,8 @@ Jump to: [top](#)
 
 
 <div id="2006_toledo1">
-## Winning entry: [2006/toledo1](2006/toledo1/index.html)
-### Winning entry source code: [toledo1.c](%%REPO_URL%%/2006/toledo1//toledo1.c)
+### Winning entry: [2006/toledo1](2006/toledo1/index.html)
+#### Winning entry source code: [toledo1.c](%%REPO_URL%%/2006/toledo1//toledo1.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2006/toledo1/try.sh) script.
@@ -5011,8 +5011,8 @@ Jump to: [top](#)
 
 
 <div id="2006_toledo2">
-## Winning entry: [2006/toledo2](2006/toledo2/index.html)
-### Winning entry source code: [toledo2.c](%%REPO_URL%%/2006/toledo2//toledo2.c)
+### Winning entry: [2006/toledo2](2006/toledo2/index.html)
+#### Winning entry source code: [toledo2.c](%%REPO_URL%%/2006/toledo2//toledo2.c)
 </div>
 
 [Cody](#cody) fixed a segfault in this program which was making it fail to work under
@@ -5037,8 +5037,8 @@ Jump to: [top](#)
 
 
 <div id="2006_toledo3">
-## Winning entry: [2006/toledo3](2006/toledo3/index.html)
-### Winning entry source code: [toledo3.c](%%REPO_URL%%/2006/toledo3//toledo3.c)
+### Winning entry: [2006/toledo3](2006/toledo3/index.html)
+#### Winning entry source code: [toledo3.c](%%REPO_URL%%/2006/toledo3//toledo3.c)
 </div>
 
 [Cody](#cody) fixed a crash and a display problem in this entry so that it now works in
@@ -5057,7 +5057,7 @@ Jump to: [top](#)
 
 
 <div id="2011">
-# [2011 - The 20th IOCCC](2011/index.html)
+## [2011 - The 20th IOCCC](2011/index.html)
 </div>
 
 
@@ -5065,8 +5065,8 @@ Jump to: [top](#)
 
 
 <div id="2011_akari">
-## Winning entry: [2011/akari](2011/akari/index.html)
-### Winning entry source code: [akari.c](%%REPO_URL%%/2011/akari//akari.c)
+### Winning entry: [2011/akari](2011/akari/index.html)
+#### Winning entry source code: [akari.c](%%REPO_URL%%/2011/akari//akari.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2011/akari/try.sh) script.
@@ -5076,8 +5076,8 @@ Jump to: [top](#)
 
 
 <div id="2011_blakely">
-## Winning entry: [2011/blakely](2011/blakely/index.html)
-### Winning entry source code: [blakely.c](%%REPO_URL%%/2011/blakely//blakely.c)
+### Winning entry: [2011/blakely](2011/blakely/index.html)
+#### Winning entry source code: [blakely.c](%%REPO_URL%%/2011/blakely//blakely.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2011/blakely/try.sh) script.
@@ -5087,8 +5087,8 @@ Jump to: [top](#)
 
 
 <div id="2011_borsanyi">
-## Winning entry: [2011/borsanyi](2011/borsanyi/index.html)
-### Winning entry source code: [borsanyi.c](%%REPO_URL%%/2011/borsanyi//borsanyi.c)
+### Winning entry: [2011/borsanyi](2011/borsanyi/index.html)
+#### Winning entry source code: [borsanyi.c](%%REPO_URL%%/2011/borsanyi//borsanyi.c)
 </div>
 
 [Cody](#cody), out of an abundance of caution, added a second arg to `main()` as some
@@ -5105,8 +5105,8 @@ Jump to: [top](#)
 
 
 <div id="2011_dlowe">
-## Winning entry: [2011/dlowe](2011/dlowe/index.html)
-### Winning entry source code: [dlowe.c](%%REPO_URL%%/2011/dlowe//dlowe.c)
+### Winning entry: [2011/dlowe](2011/dlowe/index.html)
+#### Winning entry source code: [dlowe.c](%%REPO_URL%%/2011/dlowe//dlowe.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2011/dlowe/try.sh) script.
@@ -5129,8 +5129,8 @@ Jump to: [top](#)
 
 
 <div id="2011_fredriksson">
-## Winning entry: [2011/fredriksson](2011/fredriksson/index.html)
-### Winning entry source code: [fredriksson.c](%%REPO_URL%%/2011/fredriksson//fredriksson.c)
+### Winning entry: [2011/fredriksson](2011/fredriksson/index.html)
+#### Winning entry source code: [fredriksson.c](%%REPO_URL%%/2011/fredriksson//fredriksson.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2011/fredriksson/try.sh) script.
@@ -5140,8 +5140,8 @@ Jump to: [top](#)
 
 
 <div id="2011_goren">
-## Winning entry: [2011/goren](2011/goren/index.html)
-### Winning entry source code: [goren.c](%%REPO_URL%%/2011/goren//goren.c)
+### Winning entry: [2011/goren](2011/goren/index.html)
+#### Winning entry source code: [goren.c](%%REPO_URL%%/2011/goren//goren.c)
 </div>
 
 [Cody](#cody) fixed this for macOS.  Before the fix it segfaulted. It worked fine under
@@ -5162,8 +5162,8 @@ Jump to: [top](#)
 
 
 <div id="2011_hamaji">
-## Winning entry: [2011/hamaji](2011/hamaji/index.html)
-### Winning entry source code: [hamaji.c](%%REPO_URL%%/2011/hamaji//hamaji.c)
+### Winning entry: [2011/hamaji](2011/hamaji/index.html)
+#### Winning entry source code: [hamaji.c](%%REPO_URL%%/2011/hamaji//hamaji.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2011/hamaji/try.sh) script and the `.nono` files
@@ -5180,8 +5180,8 @@ Jump to: [top](#)
 
 
 <div id="2011_hou">
-## Winning entry: [2011/hou](2011/hou/index.html)
-### Winning entry source code: [hou.c](%%REPO_URL%%/2011/hou//hou.c)
+### Winning entry: [2011/hou](2011/hou/index.html)
+#### Winning entry source code: [hou.c](%%REPO_URL%%/2011/hou//hou.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2011/hou/try.sh) script.
@@ -5191,8 +5191,8 @@ Jump to: [top](#)
 
 
 <div id="2011_konno">
-## Winning entry: [2011/konno](2011/konno/index.html)
-### Winning entry source code: [konno.c](%%REPO_URL%%/2011/konno//konno.c)
+### Winning entry: [2011/konno](2011/konno/index.html)
+#### Winning entry source code: [konno.c](%%REPO_URL%%/2011/konno//konno.c)
 </div>
 
 Cody added the [try.sh](%%REPO_URL%%/2011/konno/try.sh) script.
@@ -5202,8 +5202,8 @@ Jump to: [top](#)
 
 
 <div id="2011_richards">
-## Winning entry: [2011/richards](2011/richards/index.html)
-### Winning entry source code: [richards.c](%%REPO_URL%%/2011/richards//richards.c)
+### Winning entry: [2011/richards](2011/richards/index.html)
+#### Winning entry source code: [richards.c](%%REPO_URL%%/2011/richards//richards.c)
 </div>
 
 [Cody](#cody) fixed a minor problem that showed up in both Linux and macOS. He notes
@@ -5227,8 +5227,8 @@ bugs.html](bugs.html#2011_richards) for more details).
 Jump to: [top](#)
 
 <div id="2011_toledo">
-## Winning entry: [2011/toledo](2011/toledo/index.html)
-### Winning entry source code: [toledo.c](%%REPO_URL%%/2011/toledo//toledo.c)
+### Winning entry: [2011/toledo](2011/toledo/index.html)
+#### Winning entry source code: [toledo.c](%%REPO_URL%%/2011/toledo//toledo.c)
 </div>
 
 [Cody](#cody) added two [alternate versions](2011/toledo/index.html#alternate-code): one that
@@ -5244,8 +5244,8 @@ Jump to: [top](#)
 
 
 <div id="2011_vik">
-## Winning entry: [2011/vik](2011/vik/index.html)
-### Winning entry source code: [vik.c](%%REPO_URL%%/2011/vik//vik.c)
+### Winning entry: [2011/vik](2011/vik/index.html)
+#### Winning entry source code: [vik.c](%%REPO_URL%%/2011/vik//vik.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2011/vik/try.sh) script.
@@ -5259,8 +5259,8 @@ Jump to: [top](#)
 
 
 <div id="2011_zucker">
-## Winning entry: [2011/zucker](2011/zucker/index.html)
-### Winning entry source code: [zucker.c](%%REPO_URL%%/2011/zucker//zucker.c)
+### Winning entry: [2011/zucker](2011/zucker/index.html)
+#### Winning entry source code: [zucker.c](%%REPO_URL%%/2011/zucker//zucker.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2011/zucker/try.sh) script.
@@ -5279,7 +5279,7 @@ Jump to: [top](#)
 
 
 <div id="2012">
-# [2012 - The 21st IOCCC](2012/index.html)
+## [2012 - The 21st IOCCC](2012/index.html)
 </div>
 
 
@@ -5287,8 +5287,8 @@ Jump to: [top](#)
 
 
 <div id="2012_blakely">
-## Winning entry: [2012/blakely](2012/blakely/index.html)
-### Winning entry source code: [blakely.c](%%REPO_URL%%/2012/blakely//blakely.c)
+### Winning entry: [2012/blakely](2012/blakely/index.html)
+#### Winning entry source code: [blakely.c](%%REPO_URL%%/2012/blakely//blakely.c)
 </div>
 
 [Cody](#cody) added explicit linking of libm (`-lm`) as not all systems do this
@@ -5301,8 +5301,8 @@ Jump to: [top](#)
 
 
 <div id="2012_deckmyn">
-## Winning entry: [2012/deckmyn](2012/deckmyn/index.html)
-### Winning entry source code: [deckmyn.c](%%REPO_URL%%/2012/deckmyn//deckmyn.c)
+### Winning entry: [2012/deckmyn](2012/deckmyn/index.html)
+#### Winning entry source code: [deckmyn.c](%%REPO_URL%%/2012/deckmyn//deckmyn.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2012/deckmyn/try.sh) script.
@@ -5312,8 +5312,8 @@ Jump to: [top](#)
 
 
 <div id="2012_endoh1">
-## Winning entry: [2012/endoh1](2012/endoh1/index.html)
-### Winning entry source code: [endoh1.c](%%REPO_URL%%/2012/endoh1//endoh1.c)
+### Winning entry: [2012/endoh1](2012/endoh1/index.html)
+#### Winning entry source code: [endoh1.c](%%REPO_URL%%/2012/endoh1//endoh1.c)
 </div>
 
 [Cody](#cody) added explicit linking of libm (`-lm`) as not all systems do this
@@ -5355,8 +5355,8 @@ The [endoh1.alt2.c](%%REPO_URL%%/2012/endoh1/endoh1.alt2.c) was provided by the 
 Jump to: [top](#)
 
 <div id="2012_endoh2">
-## Winning entry: [2012/endoh2](2012/endoh2/index.html)
-### Winning entry source code: [endoh2.c](%%REPO_URL%%/2012/endoh2//endoh2.c)
+### Winning entry: [2012/endoh2](2012/endoh2/index.html)
+#### Winning entry source code: [endoh2.c](%%REPO_URL%%/2012/endoh2//endoh2.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2012/endoh2/try.sh) script that runs
@@ -5370,8 +5370,8 @@ Jump to: [top](#)
 
 
 <div id="2012_grothe">
-## Winning entry: [2012/grothe](2012/grothe/index.html)
-### Winning entry source code: [grothe.c](%%REPO_URL%%/2012/grothe//grothe.c)
+### Winning entry: [2012/grothe](2012/grothe/index.html)
+#### Winning entry source code: [grothe.c](%%REPO_URL%%/2012/grothe//grothe.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2012/grothe/try.sh) script.
@@ -5398,8 +5398,8 @@ Jump to: [top](#)
 
 
 <div id="2012_hamano">
-## Winning entry: [2012/hamano](2012/hamano/index.html)
-### Winning entry source code: [hamano.c](%%REPO_URL%%/2012/hamano//hamano.c)
+### Winning entry: [2012/hamano](2012/hamano/index.html)
+#### Winning entry source code: [hamano.c](%%REPO_URL%%/2012/hamano//hamano.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2012/hamano/try.sh) script and the helper
@@ -5411,8 +5411,8 @@ Jump to: [top](#)
 
 
 <div id="2012_hou">
-## Winning entry: [2012/hou](2012/hou/index.html)
-### Winning entry source code: [hou.c](%%REPO_URL%%/2012/hou//hou.c)
+### Winning entry: [2012/hou](2012/hou/index.html)
+#### Winning entry source code: [hou.c](%%REPO_URL%%/2012/hou//hou.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2012/hou/try.sh) script and restored the original [hint
@@ -5426,8 +5426,8 @@ Jump to: [top](#)
 
 
 <div id="2012_kang">
-## Winning entry: [2012/kang](2012/kang/index.html)
-### Winning entry source code: [kang.c](%%REPO_URL%%/2012/kang//kang.c)
+### Winning entry: [2012/kang](2012/kang/index.html)
+#### Winning entry source code: [kang.c](%%REPO_URL%%/2012/kang//kang.c)
 </div>
 
 [Cody](#cody) added the scripts
@@ -5443,8 +5443,8 @@ Jump to: [top](#)
 
 
 <div id="2012_konno">
-## Winning entry: [2012/konno](2012/konno/index.html)
-### Winning entry source code: [konno.c](%%REPO_URL%%/2012/konno//konno.c)
+### Winning entry: [2012/konno](2012/konno/index.html)
+#### Winning entry source code: [konno.c](%%REPO_URL%%/2012/konno//konno.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2012/konno/try.sh) script.
@@ -5454,8 +5454,8 @@ Jump to: [top](#)
 
 
 <div id="2012_tromp">
-## Winning entry: [2012/tromp](2012/tromp/index.html)
-### Winning entry source code: [tromp.c](%%REPO_URL%%/2012/tromp//tromp.c)
+### Winning entry: [2012/tromp](2012/tromp/index.html)
+#### Winning entry source code: [tromp.c](%%REPO_URL%%/2012/tromp//tromp.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2012/tromp/try.sh) script.
@@ -5465,8 +5465,8 @@ Jump to: [top](#)
 
 
 <div id="2012_vik">
-## Winning entry: [2012/vik](2012/vik/index.html)
-### Winning entry source code: [vik.c](%%REPO_URL%%/2012/vik//vik.c)
+### Winning entry: [2012/vik](2012/vik/index.html)
+#### Winning entry source code: [vik.c](%%REPO_URL%%/2012/vik//vik.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2012/vik/try.sh) script.
@@ -5480,8 +5480,8 @@ Jump to: [top](#)
 
 
 <div id="2012_zeitak">
-## Winning entry: [2012/zeitak](2012/zeitak/index.html)
-### Winning entry source code: [zeitak.c](%%REPO_URL%%/2012/zeitak//zeitak.c)
+### Winning entry: [2012/zeitak](2012/zeitak/index.html)
+#### Winning entry source code: [zeitak.c](%%REPO_URL%%/2012/zeitak//zeitak.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2012/zeitak/try.sh) script and the
@@ -5510,12 +5510,12 @@ Jump to: [top](#)
 
 
 <div id="2013">
-# [2013 - The 22nd IOCCC](2013/index.html)
+## [2013 - The 22nd IOCCC](2013/index.html)
 </div>
 
 <div id="2013_birken">
-## Winning entry: [2013/birken](2013/birken/index.html)
-### Winning entry source code: [birken.c](%%REPO_URL%%/2013/birken//birken.c)
+### Winning entry: [2013/birken](2013/birken/index.html)
+#### Winning entry source code: [birken.c](%%REPO_URL%%/2013/birken//birken.c)
 </div>
 
 [Cody](#cody) changed the `return 0;` at the end of the program to be `return
@@ -5539,8 +5539,8 @@ Jump to: [top](#)
 
 
 <div id="2013_cable1">
-## Winning entry: [2013/cable1](2013/cable1/index.html)
-### Winning entry source code: [cable1.c](%%REPO_URL%%/2013/cable1//cable1.c)
+### Winning entry: [2013/cable1](2013/cable1/index.html)
+#### Winning entry source code: [cable1.c](%%REPO_URL%%/2013/cable1//cable1.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2013/cable1/try.sh) script.
@@ -5550,8 +5550,8 @@ Jump to: [top](#)
 
 
 <div id="2013_cable2">
-## Winning entry: [2013/cable2](2013/cable2/index.html)
-### Winning entry source code: [cable2.c](%%REPO_URL%%/2013/cable2//cable2.c)
+### Winning entry: [2013/cable2](2013/cable2/index.html)
+#### Winning entry source code: [cable2.c](%%REPO_URL%%/2013/cable2//cable2.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2013/cable2/try.sh) script.
@@ -5561,8 +5561,8 @@ Jump to: [top](#)
 
 
 <div id="2013_cable3">
-## Winning entry: [2013/cable3](2013/cable3/index.html)
-### Winning entry source code: [cable3.c](%%REPO_URL%%/2013/cable3//cable3.c)
+### Winning entry: [2013/cable3](2013/cable3/index.html)
+#### Winning entry source code: [cable3.c](%%REPO_URL%%/2013/cable3//cable3.c)
 </div>
 
 [Cody](#cody) fixed this to compile with modern systems. The problems were that
@@ -5606,8 +5606,8 @@ Jump to: [top](#)
 
 
 <div id="2013_dlowe">
-## Winning entry: [2013/dlowe](2013/dlowe/index.html)
-### Winning entry source code: [dlowe.c](%%REPO_URL%%/2013/dlowe//dlowe.c)
+### Winning entry: [2013/dlowe](2013/dlowe/index.html)
+#### Winning entry source code: [dlowe.c](%%REPO_URL%%/2013/dlowe//dlowe.c)
 </div>
 
 [Cody](#cody) added the source code that we suggested one should compile and run with
@@ -5637,8 +5637,8 @@ Jump to: [top](#)
 
 
 <div id="2013_endoh1">
-## Winning entry: [2013/endoh1](2013/endoh1/index.html)
-### Winning entry source code: [endoh1.c](%%REPO_URL%%/2013/endoh1//endoh1.c)
+### Winning entry: [2013/endoh1](2013/endoh1/index.html)
+#### Winning entry source code: [endoh1.c](%%REPO_URL%%/2013/endoh1//endoh1.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2013/endoh1/try.sh) script.
@@ -5648,8 +5648,8 @@ Jump to: [top](#)
 
 
 <div id="2013_endoh2">
-## Winning entry: [2013/endoh2](2013/endoh2/index.html)
-### Winning entry source code: [endoh2.c](%%REPO_URL%%/2013/endoh2//endoh2.c)
+### Winning entry: [2013/endoh2](2013/endoh2/index.html)
+#### Winning entry source code: [endoh2.c](%%REPO_URL%%/2013/endoh2//endoh2.c)
 </div>
 
 [Cody](#cody) fixed the `Makefile` `check` rule so that it `checks` :-) that both
@@ -5672,8 +5672,8 @@ Jump to: [top](#)
 
 
 <div id="2013_endoh3">
-## Winning entry: [2013/endoh3](2013/endoh3/index.html)
-### Winning entry source code: [endoh3.c](%%REPO_URL%%/2013/endoh3//endoh3.c)
+### Winning entry: [2013/endoh3](2013/endoh3/index.html)
+#### Winning entry source code: [endoh3.c](%%REPO_URL%%/2013/endoh3//endoh3.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2013/endoh3/try.sh) script.
@@ -5688,8 +5688,8 @@ Jump to: [top](#)
 
 
 <div id="2013_endoh4">
-## Winning entry: [2013/endoh4](2013/endoh4/index.html)
-### Winning entry source code: [endoh4.c](%%REPO_URL%%/2013/endoh4//endoh4.c)
+### Winning entry: [2013/endoh4](2013/endoh4/index.html)
+#### Winning entry source code: [endoh4.c](%%REPO_URL%%/2013/endoh4//endoh4.c)
 </div>
 
 [Cody](#cody) added the [endoh4.sh](%%REPO_URL%%/2013/endoh4/endoh4.sh) script which temporarily
@@ -5708,8 +5708,8 @@ Jump to: [top](#)
 
 
 <div id="2013_hou">
-## Winning entry: [2013/hou](2013/hou/index.html)
-### Winning entry source code: [hou.c](%%REPO_URL%%/2013/hou//hou.c)
+### Winning entry: [2013/hou](2013/hou/index.html)
+#### Winning entry source code: [hou.c](%%REPO_URL%%/2013/hou//hou.c)
 </div>
 
 [Cody](#cody) fixed the `Makefile` so that this would work properly. Before this
@@ -5752,8 +5752,8 @@ Jump to: [top](#)
 
 
 <div id="2013_mills">
-## Winning entry: [2013/mills](2013/mills/index.html)
-## Source code: [mills.c](%%REPO_URL%%/2013/mills/mills.c)
+### Winning entry: [2013/mills](2013/mills/index.html)
+### Source code: [mills.c](%%REPO_URL%%/2013/mills/mills.c)
 </div>
 
 [Cody](#cody) fixed this so that the server would not refuse the connection
@@ -5768,8 +5768,8 @@ Jump to: [top](#)
 
 
 <div id="2013_misaka">
-## Winning entry: [2013/misaka](2013/misaka/index.html)
-### Winning entry source code: [misaka.c](%%REPO_URL%%/2013/misaka//misaka.c)
+### Winning entry: [2013/misaka](2013/misaka/index.html)
+#### Winning entry source code: [misaka.c](%%REPO_URL%%/2013/misaka//misaka.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2013/misaka/try.sh) script.
@@ -5779,8 +5779,8 @@ Jump to: [top](#)
 
 
 <div id="2013_morgan1">
-## Winning entry: [2013/morgan1](2013/morgan1/index.html)
-### Winning entry source code: [morgan1.c](%%REPO_URL%%/2013/morgan1//morgan1.c)
+### Winning entry: [2013/morgan1](2013/morgan1/index.html)
+#### Winning entry source code: [morgan1.c](%%REPO_URL%%/2013/morgan1//morgan1.c)
 </div>
 
 [Cody](#cody) added explicit linking of libm (`-lm`) as not all systems do this
@@ -5793,8 +5793,8 @@ Jump to: [top](#)
 
 
 <div id="2013_robison">
-## Winning entry: [2013/robison](2013/robison/index.html)
-### Winning entry source code: [robison.c](%%REPO_URL%%/2013/robison//robison.c)
+### Winning entry: [2013/robison](2013/robison/index.html)
+#### Winning entry source code: [robison.c](%%REPO_URL%%/2013/robison//robison.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2013/robison/try.sh) script.
@@ -5804,7 +5804,7 @@ Jump to: [top](#)
 
 
 <div id="2014">
-# [2014 - The 23rd IOCCC](2014/index.html)
+## [2014 - The 23rd IOCCC](2014/index.html)
 </div>
 
 [Yusuke](#yusuke) added the missing `rules.txt`, `iocccsize.c` and `
@@ -5815,8 +5815,8 @@ Jump to: [top](#)
 
 
 <div id="2014_birken">
-## Winning entry: [2014/birken](2014/birken/index.html)
-### Winning entry source code: [prog.c](%%REPO_URL%%/2014/birken//prog.c)
+### Winning entry: [2014/birken](2014/birken/index.html)
+#### Winning entry source code: [prog.c](%%REPO_URL%%/2014/birken//prog.c)
 </div>
 
 [Cody](#cody) provided the [alternate
@@ -5831,8 +5831,8 @@ Jump to: [top](#)
 
 
 <div id="2014_deak">
-## Winning entry: [2014/deak](2014/deak/index.html)
-### Winning entry source code: [prog.c](%%REPO_URL%%/2014/deak//prog.c)
+### Winning entry: [2014/deak](2014/deak/index.html)
+#### Winning entry source code: [prog.c](%%REPO_URL%%/2014/deak//prog.c)
 </div>
 
 [Cody](#cody) added [alternate code](2014/deak/index.html#alternate-code) that lets
@@ -5859,8 +5859,8 @@ Jump to: [top](#)
 
 
 <div id="2014_endoh1">
-## Winning entry: [2014/endoh1](2014/endoh1/index.html)
-### Winning entry source code: [prog.c](%%REPO_URL%%/2014/endoh1//prog.c)
+### Winning entry: [2014/endoh1](2014/endoh1/index.html)
+#### Winning entry source code: [prog.c](%%REPO_URL%%/2014/endoh1//prog.c)
 </div>
 
 [Cody](#cody) added the [rake.sh](%%REPO_URL%%/2014/endoh1/rake.sh) script and `make rake`
@@ -5884,8 +5884,8 @@ Jump to: [top](#)
 
 
 <div id="2014_endoh2">
-## Winning entry: [2014/endoh2](2014/endoh2/index.html)
-### Winning entry source code: [prog.c](%%REPO_URL%%/2014/endoh2//prog.c)
+### Winning entry: [2014/endoh2](2014/endoh2/index.html)
+#### Winning entry source code: [prog.c](%%REPO_URL%%/2014/endoh2//prog.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2014/endoh2/try.sh) script.
@@ -5895,8 +5895,8 @@ Jump to: [top](#)
 Jump to: [top](#)
 
 <div id="2014_maffiodo1">
-## Winning entry: [2014/maffiodo1](2014/maffiodo1/index.html)
-### Winning entry source code: [prog.c](%%REPO_URL%%/2014/maffiodo1//prog.c)
+### Winning entry: [2014/maffiodo1](2014/maffiodo1/index.html)
+#### Winning entry source code: [prog.c](%%REPO_URL%%/2014/maffiodo1//prog.c)
 </div>
 
 [Cody](#cody) fixed the `Makefile` for this entry: it does not require
@@ -5913,8 +5913,8 @@ Jump to: [top](#)
 
 
 <div id="2014_maffiodo2">
-## Winning entry: [2014/maffiodo2](2014/maffiodo2/index.html)
-### Winning entry source code: [prog.c](%%REPO_URL%%/2014/maffiodo2//prog.c)
+### Winning entry: [2014/maffiodo2](2014/maffiodo2/index.html)
+#### Winning entry source code: [prog.c](%%REPO_URL%%/2014/maffiodo2//prog.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2014/maffiodo2/try.sh) script.
@@ -5927,8 +5927,8 @@ Jump to: [top](#)
 
 
 <div id="2014_morgan">
-## Winning entry: [2014/morgan](2014/morgan/index.html)
-### Winning entry source code: [prog.c](%%REPO_URL%%/2014/morgan//prog.c)
+### Winning entry: [2014/morgan](2014/morgan/index.html)
+#### Winning entry source code: [prog.c](%%REPO_URL%%/2014/morgan//prog.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2014/morgan/try.sh) script.
@@ -5938,8 +5938,8 @@ Jump to: [top](#)
 
 
 <div id="2014_sinon">
-## Winning entry: [2014/sinon](2014/sinon/index.html)
-### Winning entry source code: [prog.c](%%REPO_URL%%/2014/sinon//prog.c)
+### Winning entry: [2014/sinon](2014/sinon/index.html)
+#### Winning entry source code: [prog.c](%%REPO_URL%%/2014/sinon//prog.c)
 </div>
 
 [Cody](#cody) fixed the code so that the game can play automatically like it
@@ -5961,8 +5961,8 @@ Jump to: [top](#)
 
 
 <div id="2014_skeggs">
-## Winning entry: [2014/skeggs](2014/skeggs/index.html)
-### Winning entry source code: [prog.c](%%REPO_URL%%/2014/skeggs//prog.c)
+### Winning entry: [2014/skeggs](2014/skeggs/index.html)
+#### Winning entry source code: [prog.c](%%REPO_URL%%/2014/skeggs//prog.c)
 </div>
 
 [Cody](#cody) fixed the `Makefile` to compile this entry in modern systems. The problem was
@@ -5985,8 +5985,8 @@ Jump to: [top](#)
 
 
 <div id="2014_vik">
-## Winning entry: [2014/vik](2014/vik/index.html)
-### Winning entry source code: [prog.c](%%REPO_URL%%/2014/vik//prog.c)
+### Winning entry: [2014/vik](2014/vik/index.html)
+#### Winning entry source code: [prog.c](%%REPO_URL%%/2014/vik//prog.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2014/vik/try.sh) script. Cody notes that there
@@ -6003,8 +6003,8 @@ Jump to: [top](#)
 
 
 <div id="2014_wiedijk">
-## Winning entry: [2014/wiedijk](2014/wiedijk/index.html)
-### Winning entry source code: [prog.c](%%REPO_URL%%/2014/wiedijk//prog.c)
+### Winning entry: [2014/wiedijk](2014/wiedijk/index.html)
+#### Winning entry source code: [prog.c](%%REPO_URL%%/2014/wiedijk//prog.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2014/wiedijk/try.sh) script which is based on
@@ -6019,7 +6019,7 @@ Jump to: [top](#)
 
 
 <div id="2015">
-# [2015 - The 24th IOCCC](2015/index.html)
+## [2015 - The 24th IOCCC](2015/index.html)
 </div>
 
 
@@ -6027,8 +6027,8 @@ Jump to: [top](#)
 
 
 <div id="2015_burton">
-## Winning entry: [2015/burton](2015/burton/index.html)
-### Winning entry source code: [prog.c](%%REPO_URL%%/2015/burton//prog.c)
+### Winning entry: [2015/burton](2015/burton/index.html)
+#### Winning entry source code: [prog.c](%%REPO_URL%%/2015/burton//prog.c)
 </div>
 
 
@@ -6074,8 +6074,8 @@ Jump to: [top](#)
 
 
 <div id="2015_dogon">
-## Winning entry: [2015/dogon](2015/dogon/index.html)
-### Winning entry source code: [prog.c](%%REPO_URL%%/2015/dogon//prog.c)
+### Winning entry: [2015/dogon](2015/dogon/index.html)
+#### Winning entry source code: [prog.c](%%REPO_URL%%/2015/dogon//prog.c)
 </div>
 
 [Cody](#cody) improved the `Makefile` so that one can easily change the dimensions
@@ -6090,8 +6090,8 @@ Jump to: [top](#)
 
 
 <div id="2015_duble">
-## Winning entry: [2015/duble](2015/duble/index.html)
-### Winning entry source code: [prog.c](%%REPO_URL%%/2015/duble//prog.c)
+### Winning entry: [2015/duble](2015/duble/index.html)
+#### Winning entry source code: [prog.c](%%REPO_URL%%/2015/duble//prog.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2015/duble/try.sh) script.
@@ -6101,8 +6101,8 @@ Jump to: [top](#)
 
 
 <div id="2015_endoh2">
-## Winning entry: [2015/endoh2](2015/endoh2/index.html)
-### Winning entry source code: [prog.c](%%REPO_URL%%/2015/endoh2//prog.c)
+### Winning entry: [2015/endoh2](2015/endoh2/index.html)
+#### Winning entry source code: [prog.c](%%REPO_URL%%/2015/endoh2//prog.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2015/endoh2/try.sh) script.
@@ -6112,8 +6112,8 @@ Jump to: [top](#)
 
 
 <div id="2015_endoh3">
-## Winning entry: [2015/endoh3](2015/endoh3/index.html)
-### Winning entry source code: [prog.c](%%REPO_URL%%/2015/endoh3//prog.c)
+### Winning entry: [2015/endoh3](2015/endoh3/index.html)
+#### Winning entry source code: [prog.c](%%REPO_URL%%/2015/endoh3//prog.c)
 </div>
 
 [Cody](#cody) fixed this to compile with Linux which was having a problem with duplicate
@@ -6131,8 +6131,8 @@ Jump to: [top](#)
 
 
 <div id="2015_endoh4">
-## Winning entry: [2015/endoh4](2015/endoh4/index.html)
-### Winning entry source code: [prog.c](%%REPO_URL%%/2015/endoh4//prog.c)
+### Winning entry: [2015/endoh4](2015/endoh4/index.html)
+#### Winning entry source code: [prog.c](%%REPO_URL%%/2015/endoh4//prog.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2015/endoh4/try.sh) script.
@@ -6142,8 +6142,8 @@ Jump to: [top](#)
 
 
 <div id="2015_hou">
-## Winning entry: [2015/hou](2015/hou/index.html)
-### Winning entry source code: [prog.c](%%REPO_URL%%/2015/hou//prog.c)
+### Winning entry: [2015/hou](2015/hou/index.html)
+#### Winning entry source code: [prog.c](%%REPO_URL%%/2015/hou//prog.c)
 </div>
 
 [Cody](#cody) added explicit linking of libm (`-lm`) for systems that do not do this
@@ -6161,8 +6161,8 @@ Jump to: [top](#)
 
 
 <div id="2015_howe">
-## Winning entry: [2015/howe](2015/howe/index.html)
-### Winning entry source code: [prog.c](%%REPO_URL%%/2015/howe//prog.c)
+### Winning entry: [2015/howe](2015/howe/index.html)
+#### Winning entry source code: [prog.c](%%REPO_URL%%/2015/howe//prog.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2015/howe/try.sh) script, downloaded the War
@@ -6186,8 +6186,8 @@ Jump to: [top](#)
 
 
 <div id="2015_mills1">
-## Winning entry: [2015/mills1](2015/mills1/index.html)
-### Winning entry source code: [prog.c](%%REPO_URL%%/2015/mills1//prog.c)
+### Winning entry: [2015/mills1](2015/mills1/index.html)
+#### Winning entry source code: [prog.c](%%REPO_URL%%/2015/mills1//prog.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2015/mills1/try.sh) script which changes the
@@ -6198,8 +6198,8 @@ Jump to: [top](#)
 
 
 <div id="2015_mills2">
-## Winning entry: [2015/mills2](2015/mills2/index.html)
-### Winning entry source code: [prog.c](%%REPO_URL%%/2015/mills2//prog.c)
+### Winning entry: [2015/mills2](2015/mills2/index.html)
+#### Winning entry source code: [prog.c](%%REPO_URL%%/2015/mills2//prog.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2015/mills2/try.sh) script.
@@ -6209,8 +6209,8 @@ Jump to: [top](#)
 
 
 <div id="2015_muth">
-## Winning entry: [2015/muth](2015/muth/index.html)
-### Winning entry source code: [prog.c](%%REPO_URL%%/2015/muth//prog.c)
+### Winning entry: [2015/muth](2015/muth/index.html)
+#### Winning entry source code: [prog.c](%%REPO_URL%%/2015/muth//prog.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2015/muth/try.sh) script.
@@ -6220,8 +6220,8 @@ Jump to: [top](#)
 
 
 <div id="2015_schweikhardt">
-## Winning entry: [2015/schweikhardt](2015/schweikhardt/index.html)
-### Winning entry source code: [prog.c](%%REPO_URL%%/2015/schweikhardt//prog.c)
+### Winning entry: [2015/schweikhardt](2015/schweikhardt/index.html)
+#### Winning entry source code: [prog.c](%%REPO_URL%%/2015/schweikhardt//prog.c)
 </div>
 
 [Cody](#cody) fixed the build so that `EOF` will be `-1` as the program assumes
@@ -6236,8 +6236,8 @@ Jump to: [top](#)
 
 
 <div id="2015_yang">
-## Winning entry: [2015/yang](2015/yang/index.html)
-### Winning entry source code: [prog.c](%%REPO_URL%%/2015/yang//prog.c)
+### Winning entry: [2015/yang](2015/yang/index.html)
+#### Winning entry source code: [prog.c](%%REPO_URL%%/2015/yang//prog.c)
 </div>
 
 [Cody](#cody) fixed an unfortunate typo in the `Makefile` that was preventing some of the
@@ -6253,7 +6253,7 @@ Jump to: [top](#)
 
 
 <div id="2018">
-# [2018 - The 25th IOCCC](2018/index.html)
+## [2018 - The 25th IOCCC](2018/index.html)
 </div>
 
 [Cody](#cody) added the missing `README.md` file from the winner archive back to
@@ -6264,8 +6264,8 @@ Jump to: [top](#)
 
 
 <div id="2018_anderson">
-## Winning entry: [2018/anderson](2018/anderson/index.html)
-### Winning entry source code: [prog.c](%%REPO_URL%%/2018/anderson//prog.c)
+### Winning entry: [2018/anderson](2018/anderson/index.html)
+#### Winning entry source code: [prog.c](%%REPO_URL%%/2018/anderson//prog.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2018/anderson/try.sh) and
@@ -6276,8 +6276,8 @@ Jump to: [top](#)
 
 
 <div id="2018_algmyr">
-## Winning entry: [2018/algmyr](2018/algmyr/index.html)
-### Winning entry source code: [prog.c](%%REPO_URL%%/2018/algmyr//prog.c)
+### Winning entry: [2018/algmyr](2018/algmyr/index.html)
+#### Winning entry source code: [prog.c](%%REPO_URL%%/2018/algmyr//prog.c)
 </div>
 
 
@@ -6288,8 +6288,8 @@ Jump to: [top](#)
 
 
 <div id="2018_bellard">
-## Winning entry: [2018/bellard](2018/bellard/index.html)
-### Winning entry source code: [prog.c](%%REPO_URL%%/2018/bellard//prog.c)
+### Winning entry: [2018/bellard](2018/bellard/index.html)
+#### Winning entry source code: [prog.c](%%REPO_URL%%/2018/bellard//prog.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2018/bellard/try.sh) script.
@@ -6316,8 +6316,8 @@ Jump to: [top](#)
 
 
 <div id="2018_burton1">
-## Winning entry: [2018/burton1](2018/burton1/index.html)
-### Winning entry source code: [prog.c](%%REPO_URL%%/2018/burton1//prog.c)
+### Winning entry: [2018/burton1](2018/burton1/index.html)
+#### Winning entry source code: [prog.c](%%REPO_URL%%/2018/burton1//prog.c)
 </div>
 
 [Cody](#cody) fixed the [scripthd.sh](%%REPO_URL%%/2018/burton1/scripthd.sh)
@@ -6331,8 +6331,8 @@ Jump to: [top](#)
 
 
 <div id="2018_burton2">
-## Winning entry: [2018/burton2](2018/burton2/index.html)
-### Winning entry source code: [prog.c](%%REPO_URL%%/2018/burton2//prog.c)
+### Winning entry: [2018/burton2](2018/burton2/index.html)
+#### Winning entry source code: [prog.c](%%REPO_URL%%/2018/burton2//prog.c)
 </div>
 
 [Cody](#cody) fixed the `make test` rule: it tried to run `tac(1)` (in systems
@@ -6352,8 +6352,8 @@ Jump to: [top](#)
 
 
 <div id="2018_ciura">
-## Winning entry: [2018/ciura](2018/ciura/index.html)
-### Winning entry source code: [prog.c](%%REPO_URL%%/2018/ciura//prog.c)
+### Winning entry: [2018/ciura](2018/ciura/index.html)
+#### Winning entry source code: [prog.c](%%REPO_URL%%/2018/ciura//prog.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2018/ciura/try.sh) and
@@ -6366,8 +6366,8 @@ Jump to: [top](#)
 
 
 <div id="2018_endoh1">
-## Winning entry: [2018/endoh1](2018/endoh1/index.html)
-### Winning entry source code: [prog.c](%%REPO_URL%%/2018/endoh1//prog.c)
+### Winning entry: [2018/endoh1](2018/endoh1/index.html)
+#### Winning entry source code: [prog.c](%%REPO_URL%%/2018/endoh1//prog.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2018/endoh1/try.sh) script which shows the
@@ -6383,8 +6383,8 @@ Jump to: [top](#)
 
 
 <div id="2018_endoh2">
-## Winning entry: [2018/endoh2](2018/endoh2/index.html)
-### Winning entry source code: [prog.c](%%REPO_URL%%/2018/endoh2//prog.c)
+### Winning entry: [2018/endoh2](2018/endoh2/index.html)
+#### Winning entry source code: [prog.c](%%REPO_URL%%/2018/endoh2//prog.c)
 </div>
 
 [Cody](#cody) fixed the [run.sh](%%REPO_URL%%/2018/endoh2/run.sh) script (had commands that didn't
@@ -6401,8 +6401,8 @@ Jump to: [top](#)
 
 
 <div id="2018_hou">
-## Winning entry: [2018/hou](2018/hou/index.html)
-### Winning entry source code: [prog.c](%%REPO_URL%%/2018/hou//prog.c)
+### Winning entry: [2018/hou](2018/hou/index.html)
+#### Winning entry source code: [prog.c](%%REPO_URL%%/2018/hou//prog.c)
 </div>
 
 [Cody](#cody) added explicit linking of libm (`-lm`) for systems that do not do this
@@ -6415,8 +6415,8 @@ Jump to: [top](#)
 
 
 <div id="2018_mills">
-## Winning entry: [2018/mills](2018/mills/index.html)
-### Winning entry source code: [prog.c](%%REPO_URL%%/2018/mills//prog.c)
+### Winning entry: [2018/mills](2018/mills/index.html)
+#### Winning entry source code: [prog.c](%%REPO_URL%%/2018/mills//prog.c)
 </div>
 
 [Cody](#cody), based on the author's remarks, made it possible to save state
@@ -6433,8 +6433,8 @@ Jump to: [top](#)
 
 
 <div id="2018_poikola">
-## Winning entry: [2018/poikola](2018/poikola/index.html)
-### Winning entry source code: [prog.c](%%REPO_URL%%/2018/poikola//prog.c)
+### Winning entry: [2018/poikola](2018/poikola/index.html)
+#### Winning entry source code: [prog.c](%%REPO_URL%%/2018/poikola//prog.c)
 </div>
 
 [Cody](#cody) added the missing `docs` rule to the `Makefile` that forms a PDF
@@ -6452,8 +6452,8 @@ Jump to: [top](#)
 
 
 <div id="2018_vokes">
-## Winning entry: [2018/vokes](2018/vokes/index.html)
-### Winning entry source code: [prog.c](%%REPO_URL%%/2018/vokes//prog.c)
+### Winning entry: [2018/vokes](2018/vokes/index.html)
+#### Winning entry source code: [prog.c](%%REPO_URL%%/2018/vokes//prog.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2018/vokes/try.sh) script.
@@ -6462,8 +6462,8 @@ Jump to: [top](#)
 Jump to: [top](#)
 
 <div id="2018_yang">
-## Winning entry: [2018/yang](2018/yang/index.html)
-### Winning entry source code: [prog.c](%%REPO_URL%%/2018/yang//prog.c)
+### Winning entry: [2018/yang](2018/yang/index.html)
+#### Winning entry source code: [prog.c](%%REPO_URL%%/2018/yang//prog.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2018/yang/try.sh) script. This script will ask
@@ -6476,7 +6476,7 @@ Jump to: [top](#)
 
 
 <div id="2019">
-# [2019 - The 26th IOCCC](2019/index.html)
+## [2019 - The 26th IOCCC](2019/index.html)
 </div>
 
 
@@ -6484,8 +6484,8 @@ Jump to: [top](#)
 
 
 <div id="2019_adamovsky">
-## Winning entry: [2019/adamovsky](2019/adamovsky/index.html)
-### Winning entry source code: [prog.c](%%REPO_URL%%/2019/adamovsky//prog.c)
+### Winning entry: [2019/adamovsky](2019/adamovsky/index.html)
+#### Winning entry source code: [prog.c](%%REPO_URL%%/2019/adamovsky//prog.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2019/adamovsky/try.sh) script and the Unlambda
@@ -6497,8 +6497,8 @@ Jump to: [top](#)
 
 
 <div id="2019_burton">
-## Winning entry: [2019/burton](2019/burton/index.html)
-### Winning entry source code: [prog.c](%%REPO_URL%%/2019/burton//prog.c)
+### Winning entry: [2019/burton](2019/burton/index.html)
+#### Winning entry source code: [prog.c](%%REPO_URL%%/2019/burton//prog.c)
 </div>
 
 [Cody](#cody) fixed the `Makefile` which had a bad character, a `%` instead of a `$` which
@@ -6521,8 +6521,8 @@ Jump to: [top](#)
 
 
 <div id="2019_ciura">
-## Winning entry: [2019/ciura](2019/ciura/index.html)
-### Winning entry source code: [prog.c](%%REPO_URL%%/2019/ciura//prog.c)
+### Winning entry: [2019/ciura](2019/ciura/index.html)
+#### Winning entry source code: [prog.c](%%REPO_URL%%/2019/ciura//prog.c)
 </div>
 
 [Cody](#cody) fixed an invalid bytes error in `tr` in the scripts. This does not
@@ -6550,8 +6550,8 @@ Jump to: [top](#)
 
 
 <div id="2019_diels-grabsch1">
-## Winning entry: [2019/diels-grabsch1](2019/diels-grabsch1/index.html)
-### Winning entry source code: [prog.c](%%REPO_URL%%/2019/diels-grabsch1//prog.c)
+### Winning entry: [2019/diels-grabsch1](2019/diels-grabsch1/index.html)
+#### Winning entry source code: [prog.c](%%REPO_URL%%/2019/diels-grabsch1//prog.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2019/diels-grabsch1/try.sh) script.
@@ -6566,8 +6566,8 @@ Jump to: [top](#)
 
 
 <div id="2019_diels-grabsch2">
-## Winning entry: [2019/diels-grabsch2](2019/diels-grabsch2/index.html)
-### Winning entry source code: [prog.c](%%REPO_URL%%/2019/diels-grabsch2//prog.c)
+### Winning entry: [2019/diels-grabsch2](2019/diels-grabsch2/index.html)
+#### Winning entry source code: [prog.c](%%REPO_URL%%/2019/diels-grabsch2//prog.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2019/diels-grabsch2/try.sh)
@@ -6581,8 +6581,8 @@ Jump to: [top](#)
 
 
 <div id="2019_dogon">
-## Winning entry: [2019/dogon](2019/dogon/index.html)
-### Winning entry source code: [prog.c](%%REPO_URL%%/2019/dogon//prog.c)
+### Winning entry: [2019/dogon](2019/dogon/index.html)
+#### Winning entry source code: [prog.c](%%REPO_URL%%/2019/dogon//prog.c)
 </div>
 
 [Cody](#cody) added explicit linking of libm (`-lm`) for systems that do not do this
@@ -6605,8 +6605,8 @@ Jump to: [top](#)
 
 
 <div id="2019_duble">
-## Winning entry: [2019/duble](2019/duble/index.html)
-### Winning entry source code: [prog.c](%%REPO_URL%%/2019/duble//prog.c)
+### Winning entry: [2019/duble](2019/duble/index.html)
+#### Winning entry source code: [prog.c](%%REPO_URL%%/2019/duble//prog.c)
 </div>
 
 [Cody](#cody) made the `make fullscreen` more portable by not relying on
@@ -6624,8 +6624,8 @@ Jump to: [top](#)
 
 
 <div id="2019_endoh">
-## Winning entry: [2019/endoh](2019/endoh/index.html)
-### Winning entry source code: [prog.c](%%REPO_URL%%/2019/endoh//prog.c)
+### Winning entry: [2019/endoh](2019/endoh/index.html)
+#### Winning entry source code: [prog.c](%%REPO_URL%%/2019/endoh//prog.c)
 </div>
 
 As this is a backtrace quine having the optimiser enabled is not a good idea so
@@ -6644,8 +6644,8 @@ Jump to: [top](#)
 
 
 <div id="2019_giles">
-## Winning entry: [2019/giles](2019/giles/index.html)
-### Winning entry source code: [prog.c](%%REPO_URL%%/2019/giles//prog.c)
+### Winning entry: [2019/giles](2019/giles/index.html)
+#### Winning entry source code: [prog.c](%%REPO_URL%%/2019/giles//prog.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2019/giles/try.sh) script.
@@ -6655,8 +6655,8 @@ Jump to: [top](#)
 
 
 <div id="2019_karns">
-## Winning entry: [2019/karns](2019/karns/index.html)
-### Winning entry source code: [prog.c](%%REPO_URL%%/2019/karns//prog.c)
+### Winning entry: [2019/karns](2019/karns/index.html)
+#### Winning entry source code: [prog.c](%%REPO_URL%%/2019/karns//prog.c)
 </div>
 
 [Cody](#cody) forced the `Makefile` to use `-O0` as he discovered that an
@@ -6672,8 +6672,8 @@ Jump to: [top](#)
 
 
 <div id="2019_lynn">
-## Winning entry: [2019/lynn](2019/lynn/index.html)
-### Winning entry source code: [prog.c](%%REPO_URL%%/2019/lynn//prog.c)
+### Winning entry: [2019/lynn](2019/lynn/index.html)
+#### Winning entry source code: [prog.c](%%REPO_URL%%/2019/lynn//prog.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2019/lynn/try.sh) script.
@@ -6688,8 +6688,8 @@ Jump to: [top](#)
 
 
 <div id="2019_mills">
-## Winning entry: [2019/mills](2019/mills/index.html)
-### Winning entry source code: [prog.c](%%REPO_URL%%/2019/mills//prog.c)
+### Winning entry: [2019/mills](2019/mills/index.html)
+#### Winning entry source code: [prog.c](%%REPO_URL%%/2019/mills//prog.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2019/mills/try.sh) script.
@@ -6699,8 +6699,8 @@ Jump to: [top](#)
 
 
 <div id="2019_poikola">
-## Winning entry: [2019/poikola](2019/poikola/index.html)
-### Winning entry source code: [prog.c](%%REPO_URL%%/2019/poikola//prog.c)
+### Winning entry: [2019/poikola](2019/poikola/index.html)
+#### Winning entry source code: [prog.c](%%REPO_URL%%/2019/poikola//prog.c)
 </div>
 
 [Cody](#cody) added the missing `docs` rule to the `Makefile` that forms a PDF
@@ -6727,8 +6727,8 @@ Jump to: [top](#)
 
 
 <div id="2019_yang">
-## Winning entry: [2019/yang](2019/yang/index.html)
-### Winning entry source code: [prog.c](%%REPO_URL%%/2019/yang//prog.c)
+### Winning entry: [2019/yang](2019/yang/index.html)
+#### Winning entry source code: [prog.c](%%REPO_URL%%/2019/yang//prog.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2019/yang/try.sh) script which also involved
@@ -6741,7 +6741,7 @@ Jump to: [top](#)
 
 
 <div id="2020">
-# [2020 - The 27th IOCCC](2020/index.html)
+## [2020 - The 27th IOCCC](2020/index.html)
 </div>
 
 
@@ -6749,8 +6749,8 @@ Jump to: [top](#)
 
 
 <div id="2020_burton">
-## Winning entry: [2020/burton](2020/burton/index.html)
-### Winning entry source code: [prog.c](%%REPO_URL%%/2020/burton//prog.c)
+### Winning entry: [2020/burton](2020/burton/index.html)
+#### Winning entry source code: [prog.c](%%REPO_URL%%/2020/burton//prog.c)
 </div>
 
 [Cody](#cody) fixed the script [check_be.sh](%%REPO_URL%%/2020/burton/check_be.sh): it
@@ -6768,8 +6768,8 @@ Jump to: [top](#)
 
 
 <div id="2020_carlini">
-## Winning entry: [2020/carlini](2020/carlini/index.html)
-### Winning entry source code: [prog.c](%%REPO_URL%%/2020/carlini//prog.c)
+### Winning entry: [2020/carlini](2020/carlini/index.html)
+#### Winning entry source code: [prog.c](%%REPO_URL%%/2020/carlini//prog.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2020/carlini/try.sh) script which although at
@@ -6782,8 +6782,8 @@ Jump to: [top](#)
 
 
 <div id="2020_endoh2">
-## Winning entry: [2020/endoh2](2020/endoh2/index.html)
-### Winning entry source code: [prog.c](%%REPO_URL%%/2020/endoh2//prog.c)
+### Winning entry: [2020/endoh2](2020/endoh2/index.html)
+#### Winning entry source code: [prog.c](%%REPO_URL%%/2020/endoh2//prog.c)
 </div>
 
 [Cody](#cody) copied the files from the `spoiler.zip` file (from his copy during
@@ -6799,8 +6799,8 @@ Jump to: [top](#)
 
 
 <div id="2020_endoh3">
-## Winning entry: [2020/endoh3](2020/endoh3/index.html)
-### Winning entry source code: [prog.c](%%REPO_URL%%/2020/endoh3//prog.c)
+### Winning entry: [2020/endoh3](2020/endoh3/index.html)
+#### Winning entry source code: [prog.c](%%REPO_URL%%/2020/endoh3//prog.c)
 </div>
 
 [Cody](#cody) fixed the script [run_clock.sh](%%REPO_URL%%/2020/endoh3/run_clock.sh) which gave a
@@ -6843,8 +6843,8 @@ Jump to: [top](#)
 
 
 <div id="2020_giles">
-## Winning entry: [2020/giles](2020/giles/index.html)
-### Winning entry source code: [prog.c](%%REPO_URL%%/2020/giles//prog.c)
+### Winning entry: [2020/giles](2020/giles/index.html)
+#### Winning entry source code: [prog.c](%%REPO_URL%%/2020/giles//prog.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2020/giles/try.sh) script. This script does
@@ -6863,8 +6863,8 @@ Jump to: [top](#)
 
 
 <div id="2020_kurdyukov1">
-## Winning entry: [2020/kurdyukov1](2020/kurdyukov1/index.html)
-### Winning entry source code: [prog.c](%%REPO_URL%%/2020/kurdyukov1//prog.c)
+### Winning entry: [2020/kurdyukov1](2020/kurdyukov1/index.html)
+#### Winning entry source code: [prog.c](%%REPO_URL%%/2020/kurdyukov1//prog.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2020/kurdyukov1/try.sh) script.
@@ -6874,8 +6874,8 @@ Jump to: [top](#)
 
 
 <div id="2020_kurdyukov2">
-## Winning entry: [2020/kurdyukov2](2020/kurdyukov2/index.html)
-### Winning entry source code: [prog.c](%%REPO_URL%%/2020/kurdyukov2//prog.c)
+### Winning entry: [2020/kurdyukov2](2020/kurdyukov2/index.html)
+#### Winning entry source code: [prog.c](%%REPO_URL%%/2020/kurdyukov2//prog.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2020/kurdyukov2/try.sh) script.
@@ -6896,8 +6896,8 @@ Jump to: [top](#)
 
 
 <div id="2020_kurdyukov3">
-## Winning entry: [2020/kurdyukov3](2020/kurdyukov3/index.html)
-### Winning entry source code: [prog.c](%%REPO_URL%%/2020/kurdyukov3//prog.c)
+### Winning entry: [2020/kurdyukov3](2020/kurdyukov3/index.html)
+#### Winning entry source code: [prog.c](%%REPO_URL%%/2020/kurdyukov3//prog.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2020/kurdyukov3/try.sh) script.
@@ -6909,8 +6909,8 @@ Jump to: [top](#)
 
 
 <div id="2020_kurdyukov4">
-## Winning entry: [2020/kurdyukov4](2020/kurdyukov4/index.html)
-### Winning entry source code: [prog.c](%%REPO_URL%%/2020/kurdyukov4//prog.c)
+### Winning entry: [2020/kurdyukov4](2020/kurdyukov4/index.html)
+#### Winning entry source code: [prog.c](%%REPO_URL%%/2020/kurdyukov4//prog.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2020/kurdyukov4/try.sh) script.
@@ -6934,8 +6934,8 @@ Jump to: [top](#)
 
 
 <div id="2020_otterness">
-## Winning entry: [2020/otterness](2020/otterness/index.html)
-### Winning entry source code: [prog.c](%%REPO_URL%%/2020/otterness//prog.c)
+### Winning entry: [2020/otterness](2020/otterness/index.html)
+#### Winning entry source code: [prog.c](%%REPO_URL%%/2020/otterness//prog.c)
 </div>
 
 
@@ -6954,8 +6954,8 @@ unobfuscated version that Cody added as
 Jump to: [top](#)
 
 <div id="2020_tsoj">
-## Winning entry: [2020/tsoj](2020/tsoj/index.html)
-### Winning entry source code: [prog.c](%%REPO_URL%%/2020/tsoj//prog.c)
+### Winning entry: [2020/tsoj](2020/tsoj/index.html)
+#### Winning entry source code: [prog.c](%%REPO_URL%%/2020/tsoj//prog.c)
 </div>
 
 [Cody](#cody) added [alternate code](2020/tsoj/index.html#alternate-code) that will feel
@@ -6969,8 +6969,8 @@ Jump to: [top](#)
 
 
 <div id="2020_yang">
-## Winning entry: [2020/yang](2020/yang/index.html)
-### Winning entry source code: [prog.c](%%REPO_URL%%/2020/yang//prog.c)
+### Winning entry: [2020/yang](2020/yang/index.html)
+#### Winning entry source code: [prog.c](%%REPO_URL%%/2020/yang//prog.c)
 </div>
 
 [Cody](#cody) added the [try.sh](%%REPO_URL%%/2020/yang/try.sh) script.
@@ -6984,7 +6984,7 @@ Jump to: [top](#)
 
 
 <div id="2024">
-# [2020 - The 28th IOCCC](2024/index.html)
+## [2020 - The 28th IOCCC](2024/index.html)
 </div>
 
 
@@ -6992,14 +6992,14 @@ Jump to: [top](#)
 
 
 <div id="general_thanks">
-# General thanks
+## General thanks
 </div>
 
 Jump to: [top](#)
 
 <div id="makefiles_fixes_improvements">
 <div id="makefiles">
-## Makefiles fixes and improvements
+### Makefiles fixes and improvements
 </div>
 </div>
 
@@ -7049,7 +7049,7 @@ by `make(1)` or `gmake(1)` on BSDs.
 Jump to: [top](#)
 
 <div id="consistency_improvements">
-## Consistency improvements
+### Consistency improvements
 </div>
 
 [Cody](#cody), being the IOCCC's resident corrections officer :-) (and a fine one at
@@ -7069,7 +7069,7 @@ Jump to: [top](#)
 
 
 <div id="try">
-## Try script system
+### Try script system
 </div>
 
 [Cody](#cody) devised the `try` script system (which we now use as part of
@@ -7087,7 +7087,7 @@ Jump to: [top](#)
 
 
 <div id="website_improvements">
-## Website and manifest improvements
+### Website and manifest improvements
 </div>
 
 [Cody](#cody) helped in many ways to make the website much more presentable by:
@@ -7111,7 +7111,7 @@ Jump to: [top](#)
 
 
 <div id="faq_improvements">
-## FAQ improvements
+### FAQ improvements
 </div>
 
 [Cody](#cody) greatly extended the FAQ to include much more information and he
@@ -7122,7 +7122,7 @@ Jump to: [top](#)
 
 
 <div id="thank_you_honor_roll">
-## Thank you honor roll
+### Thank you honor roll
 </div>
 
 There are a number of people who have contributed to **many many
@@ -7134,7 +7134,7 @@ Jump to: [top](#)
 
 
 <div id="authors">
-### Authors
+#### Authors
 </div>
 
 A good number of the [winning authors of the
@@ -7149,7 +7149,7 @@ Jump to: [top](#)
 
 
 <div id="johndalbec">
-### John Dalbec
+#### John Dalbec
 </div>
 
 [John Dalbec](authors.html#John_Dalbec) supplied a fix to
@@ -7164,7 +7164,7 @@ Jump to: [top](#)
 
 
 <div id="yusuke">
-### Yusuke Endoh
+#### Yusuke Endoh
 </div>
 
 [Yusuke Endoh](authors.html#Yusuke_Endoh) supplied a
@@ -7182,7 +7182,7 @@ Jump to: [top](#)
 
 
 <div id="cody">
-### Cody Boone Ferguson
+#### Cody Boone Ferguson
 </div>
 
 We call out the extensive contributions of [Cody Boone
@@ -7235,7 +7235,7 @@ Jump to: [top](#)
 
 
 <div id="sirwumpus">
-### Anthony C Howe
+#### Anthony C Howe
 </div>
 
 [Anthony C Howe](authors.html#Anthony_C_Howe) is the author of the
@@ -7264,7 +7264,7 @@ Jump to: [top](#)
 
 
 <div id="uellenberg">
-### Jonah Uellenberg
+#### Jonah Uellenberg
 </div>
 
 [Jonah Uellenberg](authors.html#Jonah_Uellenberg) provided some
@@ -7293,7 +7293,7 @@ Jump to: [top](#)
 
 
 <div id="bisqwit">
-### Joel Yliluoma
+#### Joel Yliluoma
 </div>
 
 **Joel Yliluoma** rendered a [pointillism image](2024/endoh1/index.html#larger) of
@@ -7311,7 +7311,7 @@ Jump to: [top](#)
 
 
 <div id="neglect">
-## Did we neglect to credit you?
+### Did we neglect to credit you?
 </div>
 
 If you submitted a fix to an entry for which you are not the author,

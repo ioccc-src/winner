@@ -51,7 +51,7 @@ See the above FAQ entries for more details.
 Jump to: [top](#)
 
 <div id="try_mastodon">
-# Try Mastodon
+## Try Mastodon
 </div>
 
 ## Please follow the [IOCCC on Mastodon](https://fosstodon.org/@ioccc)
@@ -65,7 +65,7 @@ for more information on Mastodon.
 
 Jump to: [top](#)
 
-# If you really need to send email the IOCCC judges
+## If you really need to send email the IOCCC judges
 
 Did you look at the above section?
 
