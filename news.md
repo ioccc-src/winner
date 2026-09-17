@@ -55,6 +55,56 @@
 </blockquote>
 
 
+<div id="20260916">
+## 2026-09-16
+</div>
+
+The next International Obfuscated C Code Contest, **IOCCC30**, is tentatively scheduled as follows:
+
+We propose that **IOCCC30** will enter the **PENDING** state on: **2026-11-07 21:20:15.193421 UTC**
+
+During the **PENDING** state, the preliminary
+[IOCCC30 rules](next/rules.html), the preliminary [IOCCC30
+guidelines](next/guidelines.html), and the [IOCCC30 mkiocccentry
+toolkit](https://github.com/ioccc-src/mkiocccentry) will become
+available for public review.  You may also register for **IOCCC30**
+when the **PENDING** state starts. For more information, see:
+[faq.html#pending](faq.html#pending)
+
+We propose that **IOCCC30** will enter the **OPEN** state on: **2026-12-08 02:00:02.102832 UTC**
+
+During the **OPEN** state, those who have registered for the **IOCCC30**
+may start to upload their submissions.  You may also register
+for **IOCCC30** during this period.  For more information, see:
+[faq.html#open](faq.html#open)
+
+We propose that **IOCCC30** will enter the **JUDGING** state on: *2027-04-02 06:00:04.240010 UTC**
+
+When **JUDGING** state starts, one can no longer register, nor may
+one upload submissions: the judging of submissions previously
+uploaded submissions starts.  For more information, see:
+[faq.html#judging](faq.html#judging)
+
+**PLEASE NOTE**: The above state timestamps are tentative.  The dates
+and times of a state may change beforehand.
+
+**IMPORTANT NOTE**: The [IOCCC30 rules](next/rules.html), and [IOCCC30
+guidelines](next/guidelines.html) are **tentative**, and may change
+prior to the start of the **OPEN** state: your feedback and/or corrections
+**is very welcome** while they are still tentative.  For information on
+how to provide feedback to the tentative rules and/or guidelines, see:
+[faq.html#questions](faq.html#questions)
+
+**IMPORTANT NOTE**: The [mkiocccentry
+toolkit](https://github.com/ioccc-src/mkiocccentry) has been updated
+for **IOCCC30**.  The **old IOCCC29** mkiocccentry toolkit will
+**NOT** work for **IOCCC30**.  If you have download and/or installed
+the mkiocccentry toolkit previously, you **MUST** update the toolkit in
+order for your submission to be accepted as valid.
+
+For information on how to enter **IOCCC30**, see: [quick-start.html#enter](quick-start.html#enter)
+
+
 <div id="20260628">
 ## 2026-06-28
 </div>
@@ -229,7 +279,7 @@ allowing people to [register for the IOCCC](next/register.html).
 Please [provide feedback](faq.html#feedback) on the [IOCCC rules](next/rules.html),
 [IOCCC guidelines](next/guidelines.html), and
 on the [IOCCC mkiocccentry tools](https://github.com/ioccc-src/mkiocccentry),
-especially while the [contest status](status.html) is **pending**.
+especially while the [contest status](status.html) is **PENDING**.
 
 This contest will enter the [open state](faq.html#open) on `2025-12-15 18:21:24.273033 UTC`,
 allowing people to [upload submissions](next/submit.html).

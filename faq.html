@@ -468,7 +468,7 @@
 
 <!-- BEFORE: 1st line of markdown file: faq.md -->
 <h1 id="ioccc-faq-table-of-contents">IOCCC FAQ Table of Contents</h1>
-<p>This is FAQ version <strong>29.08 2026-06-20</strong>.</p>
+<p>This is FAQ version <strong>30.00 2026-09-15</strong>.</p>
 <h2 id="entering-the-ioccc-the-bare-minimum-you-need-to-know">0. <a href="#enter_questions">Entering the IOCCC: the bare minimum you need to know</a></h2>
 <ul>
 <li><strong>Q 0.0</strong>: <a class="normal" href="#enter">How can I enter the IOCCC?</a></li>
@@ -847,7 +847,7 @@ entry’s <code>Makefile</code>:</p>
 </ul>
 <p>The <code>Makefile</code> is a file used by the <code>make(1)</code> command that contains
 rules and UNIX shell-style commands.</p>
-<p>The first and default rule should be the <code>all</code> rule and should build your
+<p>The first and default rule should be the <code>all</code> rule, and should build your
 entry’s executable file. There are other rules that should be present in your
 Makefile, and which mkiocccentry attempts to find; see below.</p>
 <p>If your entry depends on a particular source file name during compilation or execution,
@@ -871,7 +871,8 @@ for more details and help.</p>
 <ul>
 <li><code>all</code>
 <ul>
-<li>This rule should be the first rule and it should compile your submission.</li>
+<li>The <code>all</code> rule <strong>MUST be the first make rule</strong>, and it should compile your submission.
+The <code>all</code> rule <strong>MUST be the default rule</strong> when <code>make(1)</code> is invoked.</li>
 </ul></li>
 <li><code>clean</code>
 <ul>
@@ -894,8 +895,7 @@ FAQ on the “<a href="#try_scripts">try.sh scripts system</a>”
 for more details.</li>
 </ul></li>
 </ul>
-<p>Although the <code>mkiocccentry(1)</code> tool only checks for those rules, the most up to
-date
+<p>Although the <code>mkiocccentry(1)</code> tool only checks for those rules, the most up to date
 <code>Makefile.example</code>
 does have other rules like <code>everything</code> and <code>alt</code>, and we encourage you to use
 the one linked to above.</p>
@@ -1049,6 +1049,8 @@ may copy <code>prog.c</code> to a different filename as part of the compiling/bu
             rm -f desired_name.c desired_name
 
     # Makefile continues below ...</code></pre>
+<p><strong>IMPORANT</strong>: Observe that the <code>all</code> rule is the first make rule so that <code>make all</code>,
+and <code>make</code> both make everything for your submission.</p>
 <p>We recommend that the <code>make clobber</code> rule remove files that your entry
 creates as part of the compiling/building process.</p>
 <p>You may also copy the compiled <code>prog</code> into a different file as part of compiling process.
@@ -1081,7 +1083,7 @@ submit remarks about their submission(s) in markdown format. Every
 as the basis for forming the <code>index.html</code> web page for that entry.
 All generated HTML pages on the <a href="index.html">Official IOCCC website</a>
 start with some markdown content.</p>
-<p><strong>IMPORTANT</strong>: Please read the <a href="markdown.html">IOCCC markdown guidelines</a>
+<p><strong>IMPORTANT NOTE</strong>: Please read the <a href="markdown.html">IOCCC markdown guidelines</a>
 as it lists things you <strong>should NOT use</strong> in markdown files and things you
 <strong>should do</strong> as well.</p>
 <p>See the <a href="https://www.markdownguide.org/basic-syntax">markdown syntax</a> guide.
@@ -1287,7 +1289,7 @@ course if you manipulate the tarball to get past this you risk violating this
 rule.</p>
 <p>Your submission’s xz compressed tarball <strong>MUST</strong> pass the <code>txzchk(1)</code> tests. See
 the <a href="next/guidelines.html#txzchk">guidelines on txzchk(1)</a> for more details on this tool.</p>
-<p><strong>IMPORTANT</strong>: make <strong>SURE</strong> you have the most recent version of the
+<p><strong>IMPORTANT NOTE</strong>: make <strong>SURE</strong> you have the most recent version of the
 <code>mkiocccentry</code> toolkit! Not doing so will put you at a great risk of violating
 this rule! See the
 FAQs on “<a href="#mkiocccentry">obtaining, compiling, installing and using the mkiocccentry toolkit</a>”
@@ -1398,7 +1400,7 @@ yourself.</p>
 The <code>mkiocccentry(1)</code> tool uses the v7 format. For instance you might try:</p>
 <pre><code>    tar --format=v7 -cJf foo.txz directory</code></pre>
 <hr style="width:50%;text-align:left;margin-left:0">
-<p><strong>IMPORTANT</strong>: where
+<p><strong>IMPORTANT NOTE</strong>: where
 <a href="next/rules.html#rule4-required-files">Rule 4 - Required files</a>,
 and
 <a href="next/rules.html#rule17-mkiocccentry">Rule 17 - Use mkiocccentry</a>
@@ -1507,6 +1509,8 @@ as the starting point for your submission’s required <code>Makefile</code>:</p
 <li><a href="next/Makefile.example" download="Makefile">download example Makefile</a></li>
 </ul>
 <p>Feel free to modify the <code>Makefile</code> to suit your obfuscation needs.</p>
+<p><strong>IMPORTANT NOTE</strong>: Be sure that the <code>all</code> rule is the first make rule so <code>make all</code> is
+equivalent to just typing <code>make</code>.</p>
 <p><strong>Please</strong> add a space between the <code>=</code> and the value of variables, in the
 <code>Makefile</code>, making sure that the <code>=</code> comes immediately after the name. See the
 example <code>Makefile</code> for examples.</p>
@@ -3838,6 +3842,8 @@ not compiled)</li>
 <li><code>clean</code>: a simpler version of <code>clobber</code> that only removes object files. <code>make clobber</code> depends on <code>clean</code> so running <code>make clobber</code> will invoke <code>make clean</code>.</li>
 <li><code>everything</code>: equivalent to <code>make all alt</code>.</li>
 </ul>
+<p><strong>IMPORTANT NOTE</strong>: Be sure that the <code>all</code> rule is the first make rule so <code>make all</code> is
+equivalent to just typing <code>make</code>.</p>
 <p>Are there any other rules? You tell us!</p>
 <p>The top level and the year (e.g., <code>1984/Makefile</code>, <code>1985/Makefile</code>, <code>1986/Makefile</code>, etc.)
 <code>Makefile</code>s recurse into the subdirectories for each entry so you can compile
@@ -5405,7 +5411,7 @@ necessary to modify a JSON file, another data file, or, in rarer cases, a tool
 in the <a href="bin/index.html">bin directory</a>.</p>
 <p>If this happens, consider opening up an <a href="https://github.com/ioccc-src/winner/issues">IOCCC issue</a>
 and ask for help.</p>
-<p><strong>IMPORTANT</strong>: some entries have html files <strong>NOT</strong> generated by a markdown file
+<p><strong>IMPORTANT NOTE</strong>: some entries have html files <strong>NOT</strong> generated by a markdown file
 and these should <strong>NOT</strong> be changed. In at least one case, other files that are
 generated by markdown should <strong>ALSO NOT</strong> be updated as they are very specific
 and they should only be updated by the author; an example is <a href="authors.html#Cody_Boone_Ferguson">Cody Boone

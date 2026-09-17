@@ -467,9 +467,9 @@
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <!-- BEFORE: 1st line of markdown file: next/guidelines.md -->
-<h1 id="th-international-obfuscated-c-code-contest-official-guidelines">29th International Obfuscated C Code Contest Official Guidelines</h1>
+<h1 id="th-international-obfuscated-c-code-contest-official-guidelines">30th International Obfuscated C Code Contest Official Guidelines</h1>
 <p class="leftbar">
-Copyright © 2025 Leonid A. Broukhis and Landon Curt Noll.
+Copyright © 2026 Leonid A. Broukhis and Landon Curt Noll.
 </p>
 <p>All Rights Reserved. Permission for personal, education or non-profit
 use is granted provided this copyright and notice are included in its
@@ -477,15 +477,11 @@ entirety and remains unaltered. All other uses must receive prior
 permission in writing by <a href="../contact.html">contacting the Judges</a>.</p>
 <h1 id="guidelines-version">Guidelines Version</h1>
 <p class="leftbar">
-These Guidelines are version <strong>29.08 2025-12-02</strong>.
+These IOCCC Guidelines are version <strong>30.00 2026-09-13</strong>.
 </p>
 <p class="leftbar">
 The <span style="font-size:28px;"><b>|</b></span> symbol
 indicates an <strong>change</strong> from the previous IOCCC.
-</p>
-<p class="leftbar">
-Because the <strong>IOCCC29</strong> was a substantial rewrite, only <strong>important
-changes</strong> from <strong>IOCCC28</strong> have been marked.
 </p>
 <h1 id="guidelines">Guidelines</h1>
 <p>These <a href="guidelines.html">Guidelines</a> are <strong>hints</strong> and <strong>suggestions</strong>,
@@ -511,51 +507,37 @@ server</a>.</p>
 <h1 id="guidelines-for-rule-1---c-program">Guidelines for <a href="rules.html#rule1-c">Rule 1 - C program</a></h1>
 </section>
 </div>
-<p class="leftbar">
-While you submission <strong>MUST</strong> be a C program, there is nothing wrong if
+<p>While you submission <strong>MUST</strong> be a C program, there is nothing wrong if
 your <code>prog.c</code> file happens to also be a code for another language, say
-an interpreter of JavaScript.
-</p>
-<p class="leftbar">
-We would prefer if you do not use <code>#include</code> statements just to include
+an interpreter of JavaScript.</p>
+<p>We would prefer if you do not use <code>#include</code> statements just to include
 lots of data to circumvent <a href="rules.html#rule2-size">Rule 2 - Size
 restrictions</a> in an excessive way. This is what
-they invented <code>fopen(3)</code> for. :-)
-</p>
-<p class="leftbar">
-We would prefer if you do not require lots and lots of implicit defines
+they invented <code>fopen(3)</code> for. :-)</p>
+<p>We would prefer if you do not require lots and lots of implicit defines
 on the C compiler command line (i.e., lots of <code>-Dfoo</code>, and
 <code>-Dcurds=whey</code> style command line args to the C compiler in the
 Makefile) to get around the <a href="rules.html#rule2-size">Rule 2 - Size
-restrictions</a> in an excessive way.
-</p>
-<p class="leftbar">
-Some use of <code>#include</code> statements (i.e. <code>-include stdio.h</code>) and/or
+restrictions</a> in an excessive way.</p>
+<p>Some use of <code>#include</code> statements (i.e. <code>-include stdio.h</code>) and/or
 implicit <code>#define</code>s (i.e. <code>-Dfoo=bar</code>) on the C compiler command line
-is perfectly reasonable..
-</p>
-<p class="leftbar">
-As a guide, consider the level of <code>#include</code> statements and/or implicit
+is perfectly reasonable..</p>
+<p>As a guide, consider the level of <code>#include</code> statements and/or implicit
 defines on the C compiler command line that are found in <a href="https://www.ioccc.org/years.html">winning
 Entries</a>, and try to <strong>NOT</strong> set a
-new record.
-</p>
-<p class="leftbar">
-If you believe you need to significantly abuse <code>#include</code> statements
+new record.</p>
+<p>If you believe you need to significantly abuse <code>#include</code> statements
 and/or implicit defines on the C compiler command line, then try to
 make a case for why in your submission’s <code>remarks.md</code> file: maybe the
-Judges won’t reject your submission.
-</p>
+Judges won’t reject your submission.</p>
 <p>Jump to: <a href="#">top</a></p>
 <div id="guideline2">
 <section id="guideline2-size">
 <h1 id="guidelines-for-rule-2---size-restrictions">Guidelines for <a href="rules.html#rule2-size">Rule 2 - Size restrictions</a></h1>
 </section>
 </div>
-<p class="leftbar">
-You should pay attention to our observations on <a href="../2024/index.html#code-size-and-rule-2">code size and Rule 2
-remarks for IOCCC28</a>.
-</p>
+<p>You should pay attention to our observations on <a href="../2024/index.html#code-size-and-rule-2">code size and Rule 2
+remarks for IOCCC28</a>.</p>
 <p>Your submission must satisfy <strong>BOTH</strong> the
 <a href="rules.html#rule2a-gross-size">Rule 2a - Gross Size</a>
 <strong>AND</strong>
@@ -588,6 +570,20 @@ get around the size limits of <a href="rules.html#rule2-size">Rule 2 - Size
 restrictions</a> because of the <code>iocccsize(1)</code>
 algorithm.</p>
 <p>Yes Virginia, <strong>the previous guideline sentence is an important hint</strong>!</p>
+<p class="leftbar">
+Do <strong>NOT</strong> use the <code>Makefile</code> to copy or otherwise construct a larger <code>prog.c</code>
+than is allowed by <a href="rules.html#rule2-size">Rule 2 - Size restrictions</a>.
+</p>
+<p class="leftbar">
+Do <strong>NOT</strong> attempt to get around the size rule by including big files.
+</p>
+<p class="leftbar">
+Including a small extra file from your submission (plus the usual
+system include files) perfectly reasonable. On the other hand, including
+a large file just to make your <code>prog.c</code> fit under the size limits of
+<a href="rules.html#rule2-size">Rule 2 - Size restrictions</a> is <strong>NOT</strong>, and will
+very likely cause your submission to be rejected.
+</p>
 <p>Don’t expect the <a href="rules.html#rule2-size">Rule 2 - Size restrictions</a> to
 <a href="../faq.html#size_slow_change">change any time soon</a>.</p>
 <p>See the FAQ on “<a href="../faq.html#size_rule_history">How has the Rule 2 size restrictions rule changed over
@@ -598,32 +594,24 @@ the years?</a>”.</p>
 <h1 id="guidelines-for-rule-3---register-for-the-ioccc">Guidelines for <a href="rules.html#rule3-register">Rule 3 - Register for the IOCCC</a></h1>
 </section>
 </div>
-<p class="leftbar">
-If a group of people work on a submission, then they should <a href="../quick-start.html#enter">register
+<p>If a group of people work on a submission, then they should <a href="../quick-start.html#enter">register
 for the IOCCC</a> using either a valid group
-email address, or an email address for one of the authors.
-</p>
-<p class="leftbar">
-Processing your registration is an activity overseen by a Judge.
-Please be <strong>patient</strong> while a Judge processes your registration.
-</p>
+email address, or an email address for one of the authors.</p>
+<p>Processing your registration is an activity overseen by a Judge.
+Please be <strong>patient</strong> while a Judge processes your registration.</p>
 <p>It can take a few days to process your registration and for the server
 to email your details, therefore make sure to allow yourself ample time
 to register and submit your entries; <strong>DO NOT WAIT UNTIL THE FINAL
 DAYS</strong> to register! The Judges are <strong>NOT</strong> responsible for delayed or
 lost email or for those who wait until the last minute to try to
 register!</p>
-<p class="leftbar">
-If after a few days you believe your registration hasn’t been process,
-then <a href="../contact.html">contact the Judges</a>.
-</p>
-<p class="leftbar">
-After your UUID and temporary password are emailed to you, you have up
+<p>If after a few days you believe your registration hasn’t been process,
+then <a href="../contact.html">contact the Judges</a>.</p>
+<p>After your UUID and temporary password are emailed to you, you have up
 to fortnight (<strong>14 days</strong>) to login and change your temporary password.
 If you fail to change your temporary password by that deadline, then
 you’ll need to <a href="../contact.html">contact the Judges</a> by email to
-request a reset.
-</p>
+request a reset.</p>
 <p>See the
 FAQ on “<a href="../next/register.html">How to register for the IOCCC</a>”.</p>
 <p>See the
@@ -652,10 +640,8 @@ authors who skillfully employed various techniques (often their own
 tools) to develop their code. If you do make use of such tools or
 services, then we <strong>ENCOURAGE you to describe how you used such tools</strong>
 in your <code>remarks.md</code> file.</p>
-<p class="leftbar">
-In short: you created it, you own it, its an original work <strong>OR</strong> you have
-explicit permission to the work that you document in your remarks.
-</p>
+<p>In short: you created it, you own it, its an original work <strong>OR</strong> you have
+explicit permission to the work that you document in your remarks.</p>
 <p>See the
 FAQ on “<a href="../faq.html#ai">May I use AI, LLM, Virtual coding assistants, or similar tools
 to write my submission?</a>”.</p>
@@ -780,18 +766,14 @@ leave trailing control-M’s on lines. Users of such tools should strip
 off such control-M’s before submitting their submissions. In some
 cases tools have a “Save As” option that will prevent such trailing
 control-M’s being added.</p>
-<p class="leftbar">
-If your <code>prog.c</code> is near the <a href="rules.html#rule2a-gross-size">Rule 2a Gross
+<p>If your <code>prog.c</code> is near the <a href="rules.html#rule2a-gross-size">Rule 2a Gross
 Size</a> and/or <a href="rules.html#rule2b-net-size">Rule 2b Net
 Size</a> limit, you are permitted to <strong>NOT</strong>
 end source with a newline. If you need to do this, please document
-that in your <code>remarks.md</code> file.
-</p>
-<p class="leftbar">
-If your compiler complains about about not ending in a newline, please
+that in your <code>remarks.md</code> file.</p>
+<p>If your compiler complains about about not ending in a newline, please
 note this in your <code>remarks.md</code> file, and if possible add an appropriate
-<code>-Wno-</code> to the <code>CSILENCE</code> variable in your Makefile.
-</p>
+<code>-Wno-</code> to the <code>CSILENCE</code> variable in your Makefile.</p>
 <p>Jump to: <a href="#">top</a></p>
 <div id="guideline15">
 <section id="guideline15-gnu-makefile">
@@ -801,96 +783,87 @@ note this in your <code>remarks.md</code> file, and if possible add an appropria
 <p>Submissions will be judged in an environment that has no <strong>IDE</strong>. Any
 submission that fails to compile/build because it requires an <strong>IDE</strong>
 will be rejected.</p>
-<p class="leftbar">
-We will use the GNU <code>make(1)</code> tool, your <code>Makefile</code>, as well as tools
+<p>We will use the GNU <code>make(1)</code> tool, your <code>Makefile</code>, as well as tools
 found in the <a href="https://en.wikipedia.org/wiki/Single_UNIX_Specification">Single UNIX
 Specification</a>
 (UNIX-like) environments, and commonly found on systems that reasonably
 conform to the <a href="https://en.wikipedia.org/wiki/Single_UNIX_Specification">Single UNIX
 Specification</a>
-in the building and compiling of your submission.
-</p>
-<p class="leftbar">
-Your <code>Makefile</code> <strong>MUST</strong> be compatible with GNU <code>make</code> and we suggest
+in the building and compiling of your submission.</p>
+<p>Your <code>Makefile</code> <strong>MUST</strong> be compatible with GNU <code>make</code> and we suggest
 you use <a href="../next/Makefile.example">Makefile.example</a> as a template, renamed as
-<code>Makefile</code> of course.
-</p>
+<code>Makefile</code> of course.</p>
 <p>See the
 FAQ on “<a href="../faq.html#makefile_details">What are the detailed recommendations for a submission
 Makefile?</a>”.</p>
+<p>Jump to: <a href="#">top</a></p>
+<div id="guideline16">
+<section id="guideline16-anonymous-judging">
+<h1 id="guidelines-for-rule-16---anonymous-judging">Guidelines for <a href="rules.html#rule16-anonymous-judging">Rule 16 - Anonymous judging</a></h1>
+</section>
+</div>
+<p class="leftbar">
+The <a href="../judges.html">Judges</a> go to great lengths (as the expression goes)
+to be impartial when judging. We do <strong>NOT</strong> know the author of a
+submission unless that submission becomes a winning entry.
+</p>
+<p class="leftbar">
+If you are going to refer to some URL (such as to fetch something),
+consider using a domain and/or file path that doesn’t hint as to your
+identity.
+</p>
+<p class="leftbar">
+<strong>PLEASE</strong> be sure that your source code, comments, data files, URLs,
+and program output do <strong>NOT</strong> identify the author(s) of your code,
+unless you are <strong>Peter Honeyman</strong> or <strong>pretending to be Peter Honeyman</strong>.
+</p>
 <p>Jump to: <a href="#">top</a></p>
 <div id="guideline17">
 <section id="guideline17-mkiocccentry">
 <h1 id="guidelines-for-rule-17---use-mkiocccentry">Guidelines for <a href="rules.html#rule17-mkiocccentry">Rule 17 - Use mkiocccentry</a></h1>
 </section>
 </div>
-<p class="leftbar">
-We <strong>STRONGLY</strong> recommend you <strong>do</strong> install the most recent release of
+<p>We <strong>STRONGLY</strong> recommend you <strong>do</strong> install the most recent release of
 <a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry toolkit</a>
 because use of older versions of the mkiocccentry toolkit are <strong>HIGHLY
-LIKELY</strong> to be <strong>REJECTED</strong>!
-</p>
-<p class="leftbar">
-If you submit your own JSON files (<strong>OTHER THAN</strong> <code>.auth.json</code> and
-<code>.info.json</code>!) then they do <strong>NOT</strong> have to be valid JSON.
-</p>
-<p class="leftbar">
-However, if you do provide invalid JSON files, <strong>PLEASE</strong> document and
-<strong>clearly explain</strong> this in your <code>remarks.md</code> file.
-</p>
-<p class="leftbar">
-An <em>extra file</em> is defined as a file that is not <code>prog.c</code>,
+LIKELY</strong> to be <strong>REJECTED</strong>!</p>
+<p>If you submit your own JSON files (<strong>OTHER THAN</strong> <code>.auth.json</code> and
+<code>.info.json</code>!) then they do <strong>NOT</strong> have to be valid JSON.</p>
+<p>However, if you do provide invalid JSON files, <strong>PLEASE</strong> document and
+<strong>clearly explain</strong> this in your <code>remarks.md</code> file.</p>
+<p>An <em>extra file</em> is defined as a file that is not <code>prog.c</code>,
 <code>prog.alt.c</code>, <code>try.sh</code>, <code>try.alt.sh</code>, <code>remarks.md</code>, <code>Makefile</code>,
 <code>.auth.json</code> and <code>.info.json</code>: unless it’s not in the top level
-directory, in which case it <strong>IS</strong> an <em>extra file</em>.
-</p>
-<p class="leftbar">
-The <strong>non</strong>-extra files are considered <em>free files</em>, and do not count
+directory, in which case it <strong>IS</strong> an <em>extra file</em>.</p>
+<p>The <strong>non</strong>-extra files are considered <em>free files</em>, and do not count
 towards the <a href="rules.html#rule17-mkiocccentry">Rule 17 - Use
 mkiocccentry</a> limit of <strong>31</strong> <em>extra
-files</em>.
-</p>
-<p class="leftbar">
-If you use an optional filename for something other than their intended
+files</em>.</p>
+<p>If you use an optional filename for something other than their intended
 use in order to get past the file limit, we will consider that an abuse
-of rules.
-</p>
-<p class="leftbar">
-The <code>mkiocccentry</code> generated tarball does <strong>NOT</strong> reveal who you are!
-For this reason, the tarball <strong>MUST</strong> be a <strong>v7 format</strong> tarball.
-</p>
-<p class="leftbar">
-You should NOT use a tarball as an <em>extra file</em> for a test-suite unless
+of rules.</p>
+<p>The <code>mkiocccentry</code> generated tarball does <strong>NOT</strong> reveal who you are!
+For this reason, the tarball <strong>MUST</strong> be a <strong>v7 format</strong> tarball.</p>
+<p>You should NOT use a tarball as an <em>extra file</em> for a test-suite unless
 you have a very good reason for this: if you do include a tarball as an
-<em>extra file</em>, then you <strong>MUST</strong> specify why in your <code>remarks.md</code> file.
-</p>
-<p class="leftbar">
-If you <strong>DO</strong> include a tarball as an <em>extra file</em>, and the build
+<em>extra file</em>, then you <strong>MUST</strong> specify why in your <code>remarks.md</code> file.</p>
+<p>If you <strong>DO</strong> include a tarball as an <em>extra file</em>, and the build
 process or the program extracts said tarball(s), the make <code>clobber</code>
-rule <strong>MUST</strong> remove the extracted files.
-</p>
-<p class="leftbar">
-Instead of including a large test-suite that requires a lot of files as
+rule <strong>MUST</strong> remove the extracted files.</p>
+<p>Instead of including a large test-suite that requires a lot of files as
 part of your submission, if your submission doesn’t require the
 test-suite to be available to run, then in your <code>remarks.md</code> you could
 include URL where such a test-suite may be downloaded from and how to
 use the test-suite to test your submission, assuming it does not reveal
 who you are, i.e. <strong>DO NOT</strong> use a GitHub URL which contains your
 username, in case the judges know who you are. See <a href="rules.html#rule16-anonymous-judging">Rule 16 - Anonymous
-judging</a>.
-</p>
-<p class="leftbar">
-If you <strong>DO</strong> include a tarball then make sure it uses the v7 format.
-This is because it will not reveal who you are.
-</p>
-<p class="leftbar">
-See the FAQ on “<a href="../faq.html#extra-files">extra files</a>” for details on
-how to make a v7 tarball.
-</p>
-<p class="leftbar">
-We recommend that all markdown files in your submission observe our
-<a href="../markdown.html">IOCCC markdown guidelines</a>.
-</p>
+judging</a>.</p>
+<p>If you <strong>DO</strong> include a tarball then make sure it uses the v7 format.
+This is because it will not reveal who you are.</p>
+<p>See the FAQ on “<a href="../faq.html#extra-files">extra files</a>” for details on
+how to make a v7 tarball.</p>
+<p>We recommend that all markdown files in your submission observe our
+<a href="../markdown.html">IOCCC markdown guidelines</a>.</p>
 <p>See the
 FAQ on “<a href="../faq.html#try_scripts">What should I do with the <code>try.sh</code> and <code>try.alt.sh</code>
 scripts?</a>”.</p>
@@ -917,9 +890,7 @@ mkiocccentry?</a>”.</p>
 <div id="general-overall-guidelines">
 <h2 id="overall-guidelines">Overall Guidelines</h2>
 </div>
-<p class="leftbar">
-The <strong>official locale</strong> of the <strong>IOCCC</strong> is <strong>C</strong>.
-</p>
+<p>The <strong>official locale</strong> of the <strong>IOCCC</strong> is <strong>C</strong>.</p>
 <p>You are <strong>encouraged</strong> to examine the <a href="../years.html">winners of previous
 contests</a>.</p>
 <p>Because the <a href="rules.html">Rules</a> change from year to year, some <a href="../years.html">past
@@ -1051,23 +1022,15 @@ so it is not necessarily detrimental to your submission if you do not
 include one, though we do like interesting and creative uses of
 submissions. See also the FAQ on “<a href="../faq.html#try_scripts">submitting try.sh and try.alt.sh
 scripts</a>”.</p>
-<p class="leftbar">
-Even if it only has one invocation we still <strong>LIKE</strong> the try scripts
+<p>Even if it only has one invocation we still <strong>LIKE</strong> the try scripts
 because we use them during judging and in publishing the winning
-entries.
-</p>
-<p class="leftbar">
-If you do include a <code>try.sh</code> then <strong>PLEASE</strong> remove the <code>try</code> rule in
-the Makefile.
-</p>
-<p class="leftbar">
-If you do include a <code>try.alt.sh</code> then <strong>PLEASE</strong> remove the <code>try.alt</code>
-rule in the Makefile.
-</p>
-<p class="leftbar">
-If you don’t have a prog.alt.c, then <strong>PLEASE</strong> remove the <code>try.alt</code>
-rule as well.
-</p>
+entries.</p>
+<p>If you do include a <code>try.sh</code> then <strong>PLEASE</strong> remove the <code>try</code> rule in
+the Makefile.</p>
+<p>If you do include a <code>try.alt.sh</code> then <strong>PLEASE</strong> remove the <code>try.alt</code>
+rule in the Makefile.</p>
+<p>If you don’t have a prog.alt.c, then <strong>PLEASE</strong> remove the <code>try.alt</code>
+rule as well.</p>
 <p>We tend to <strong>DISLIKE</strong> programs that:</p>
 <ul>
 <li>are very hardware specific</li>
@@ -1085,7 +1048,7 @@ Specification</a></li>
 <li>obfuscate by use of ANSI trigraphs</li>
 <li>obfuscate by use of digraphs</li>
 <li><p class="leftbar">
-obfuscate by use of <code>goto</code>s
+obfuscate by excessive use of <code>goto</code>s
 </p></li>
 <li>are larger than they need to be</li>
 <li>have more lines than they need to have</li>
@@ -1099,6 +1062,19 @@ submissions that fail to build unless one is using an IDE. For example,
 do not mandate that one must use Microsoft Visual Studio to compile
 your submission.</p>
 <p>Jump to: <a href="#">top</a></p>
+<section id="about-types">
+<h3 id="c-types">C types</h3>
+</section>
+<p>When declaring local or global variables, you should declare the type:</p>
+<pre><code>|   int this_is_fine;
+|   this_is_not_so_file;       /* &lt;-- Try to avoid implicit type declarations, if possible */</code></pre>
+<p class="leftbar">
+We <strong>very slightly dislike</strong> variables that are implicitly defined as <code>int</code>.
+</p>
+<p class="leftbar">
+If you must use variables that are implicitly defined as <code>int</code>, <strong>PLEASE</strong> be sure to add <code>-Wno-implicit-int</code>
+in the <code>${CSILENCE}</code> make variable.
+</p>
 <section id="about-cpp">
 <h3 id="about-c-preprocessor">About C preprocessor</h3>
 </section>
@@ -1112,10 +1088,6 @@ far as a program that is more well rounded in confusion.</p>
 <p>In other words, it is a compilation error, and in order to get older
 IOCCC winning entries that did this to compile, we had to update them
 to not do this.</p>
-<p>When declaring local or global variables, you should declare the type:</p>
-<pre><code>    int this_is_fine;</code></pre>
-<p>and <strong>NOT</strong> like this:</p>
-<pre><code>    this_is_not;       /* &lt;-- Try to avoid implicit type declarations */</code></pre>
 <p>We really <strong>DISLIKE</strong> submissions that make blatant use of <code>#include</code>
 of large data files to get around the source code size limit. This does
 not mean <code>#include</code> of standard header files, just files you provide,
@@ -1137,10 +1109,10 @@ really obscure compiler flags if you can help it.</p>
 <p>One side effect of the above is that you cannot assume the use of
 nested functions such as:</p>
 <pre><code>     int main() {
-|        void please_dont_submit_this() {
-|           printf(&quot;The machine that goes BING!!\n&quot;);
+         void please_dont_submit_this() {
+|           printf(&quot;The machine that goes BING!!!\n&quot;);
          }
-|        please_dont_submit_this();
+         please_dont_submit_this();
      }</code></pre>
 <p>On 2012 July 20, the <a href="../judges.html">Judges</a> rescinded the
 encouragement of nested functions. Such constructions, while
@@ -1179,10 +1151,8 @@ file.</p>
 <h3 id="on-gotos">On <code>goto</code>s</h3>
 </section>
 </div>
-<p class="leftbar">
-Using a mass of <code>goto</code>s to obfuscate your code has become <em>old</em> and is
-unlikely to make it through the final rounds, if it even gets that far.
-</p>
+<p>Using a mass of <code>goto</code>s to obfuscate your code has become <em>old</em> and is
+unlikely to make it through the final rounds, if it even gets that far.</p>
 <div id="about-stdib">
 <section id="about-exit">
 <h3 id="about-exit3">About <code>exit(3)</code></h3>
@@ -1240,13 +1210,11 @@ Specification</a>
 <p>Other windows, on the other hand, might be OK: especially where “<strong>X
 marks the spot</strong>”. Yet on the third hand, windows are best when they
 are “unseen” (i.e., not dirty). :-)</p>
-<p class="leftbar">
-You should try to restrict commands used in the build file to commands
+<p>You should try to restrict commands used in the build file to commands
 found in <a href="https://en.wikipedia.org/wiki/Single_UNIX_Specification">Single UNIX
 Specification</a>
 (UNIX-like) environments and systems that conform to the <a href="https://en.wikipedia.org/wiki/Single_UNIX_Specification">Single UNIX
-Specification</a>.
-</p>
+Specification</a>.</p>
 <p>You may compile and use your own programs. If you do, try to build and
 execute from the current directory. This restriction is not a hard and
 absolute one. The intent is to ensure that the building of your
@@ -1299,9 +1267,34 @@ manager.</p>
 </section>
 <p>One should restrict libcurses to portable features found on both BSD
 and Linux curses.</p>
+<p>If you do <code>#include &lt;curses.h&gt;</code> make <strong>CERTAIN</strong> you link in curses
+(i.e. <code>-lcurses</code>) and not ncurses (i.e. <code>-lncurses</code>).</p>
+<p>Jump to: <a href="#">top</a></p>
+<h3 id="about-threads">About threads</h3>
 <p class="leftbar">
-If you do <code>#include &lt;curses.h&gt;</code> make <strong>CERTAIN</strong> you link in curses
-(i.e. <code>-lcurses</code>) and not ncurses (i.e. <code>-lncurses</code>).
+Do <strong>NOT</strong> assume availability of <code>&lt;threads.h&gt;</code>.
+Do <strong>NO</strong> assume availability of <code>Cxx threads</code> support
+</p>
+<p class="leftbar">
+<a href="https://pubs.opengroup.org/onlinepubs/9799919799/basedefs/threads.h.html">Quoting POSIX</a>:
+</p>
+<blockquote>
+<p>The features provided by <code>&lt;threads.h&gt;</code> are not as extensive
+as those provided by <code>&lt;pthread.h&gt;</code>. It is present on POSIX.1
+implementations in order to facilitate porting of ISO C programs
+that use it. It is recommended that applications intended for use
+on POSIX.1 implementations use <code>&lt;pthread.h&gt;</code> rather than <code>&lt;threads.h&gt;</code>
+even if none of the additional features are needed initially,
+to save the need to convert should the need to use them arise
+later in the application’s life cycle.</p>
+</blockquote>
+<p class="leftbar">
+As of 2026, The C standard threads aren’t widely supported for Unix-like systems,
+and so shouldn’t be used.
+</p>
+<p class="leftbar">
+If need threading, use POSIX <code>&lt;pthread.h&gt;</code>, and link the <code>-lpthread</code>
+library.
 </p>
 <p>Jump to: <a href="#">top</a></p>
 <section id="about_tab">
@@ -1358,6 +1351,17 @@ useful, informative, and even humorous content about your submission.
 Yes, this is a <strong>hint</strong>. :-)</p>
 <p>We <strong>RECOMMEND</strong> you put a reasonable amount effort into the content of
 the <code>remarks.md</code> file: it is a required file for a reason. :-)</p>
+<p>Jump to: <a href="#">top</a></p>
+<section id="try_sh_and_other_shell_scripts">
+<h3 id="try.sh-and-other-shell-scripts">try.sh and other shell scripts</h3>
+</section>
+<p class="leftbar">
+We <strong>strongly</strong> advise you to be sure that shell scripts, including
+<code>try.sh</code> and <code>try.alt.sh</code>, be tested with the <code>shellcheck(1)</code> tool to
+identify any problems, warnings, and information messages. Your shell
+scripts should be free of all errors, warnings, and info messages when
+tested with the <code>shellcheck(1)</code> tool.
+</p>
 <p>Jump to: <a href="#">top</a></p>
 <h3 id="miscellaneous">Miscellaneous</h3>
 <p>While we recognize that UNIX is not a universal operating system, the
@@ -1508,22 +1512,16 @@ valid UUID.</p>
 you can use the <code>-d</code> or <code>-s seed</code> option to <code>mkiocccentry</code> for the tool
 to pseudo-randomly create answers for you. For example:</p>
 <pre><code>    mkiocccentry -d workdir topdir</code></pre>
-<p class="leftbar">
-Do <strong>NOT</strong> submit a tarball formed by <code>mkiocccentry -d ...</code> <strong>OR</strong> by
-<code>mkiocccentry -s seed ...</code> <strong>OR</strong> by using the <code>test</code> UUID.
-</p>
-<p class="leftbar">
-The <code>mkiocccentry(1)</code> tool creates an <code>xz(1)</code> compressed <strong>v7 format</strong>
-tarball using a <code>tar(1)</code> command of the form:
-</p>
+<p>Do <strong>NOT</strong> submit a tarball formed by <code>mkiocccentry -d ...</code> <strong>OR</strong> by
+<code>mkiocccentry -s seed ...</code> <strong>OR</strong> by using the <code>test</code> UUID.</p>
+<p>The <code>mkiocccentry(1)</code> tool creates an <code>xz(1)</code> compressed <strong>v7 format</strong>
+tarball using a <code>tar(1)</code> command of the form:</p>
 <pre><code>    cd workdir/UUID-slot_num &amp;&amp; tar --format=v7 -cJf submit.UUID-slot_num.timestamp.txz UUID-slot_num</code></pre>
 <p>In many places the <code>mkiocccentry(1)</code> tool will prompt you to verify
 what you input, allowing you to correct details as you go along.</p>
-<p class="leftbar">
-Pressing the “<em>enter key</em>” at the <code>mkiocccentry(1)</code> tool prompts will
+<p>Pressing the “<em>enter key</em>” at the <code>mkiocccentry(1)</code> tool prompts will
 allow you to proceed with a default, however make sure the default is
-the <strong>CORRECT</strong> answer.
-</p>
+the <strong>CORRECT</strong> answer.</p>
 <p>The <code>mkiocccentry(1)</code> tool will use code from <code>iocccsize(1)</code> which
 detects a number of issues (such as <a href="rules.html#rule2-size">Rule 2 - Size
 restrictions</a>) that you may ignore, however
@@ -1533,42 +1531,30 @@ ignoring such issues <strong>comes with a SIGNIFICANT level of risk!</strong></p
 well, <strong>before</strong> forming the tarball.</p>
 <p>Once the tarball is formed <code>mkiocccentry(1)</code> will run <code>txzchk(1)</code>,
 which will also run <code>fnamchk(1)</code>, as part of its algorithm.</p>
-<p class="leftbar">
-The use of <code>mkiocccentry -W ...</code> is <strong>highly discouraged</strong> as this may
+<p>The use of <code>mkiocccentry -W ...</code> is <strong>highly discouraged</strong> as this may
 ignore warnings about a problem that may cause your submission to be
-<strong>REJECTED!</strong>
-</p>
-<p class="leftbar">
-The same can be said of <code>mkiocccentry -Y ...</code> , and to a lesser extent
+<strong>REJECTED!</strong></p>
+<p>The same can be said of <code>mkiocccentry -Y ...</code> , and to a lesser extent
 <code>mkiocccentry -y ...</code>: the <code>-y</code> is mostly for the test script and the
-<code>-Y</code> is like <code>-y</code> but even more aggressive.
-</p>
+<code>-Y</code> is like <code>-y</code> but even more aggressive.</p>
 <p>If <code>mkiocccentry</code> encounters an <strong>error</strong>, the program will exit and
 the xz compressed tarball <strong>will NOT be generated</strong>: this is a
 <strong>feature, not a bug</strong>!</p>
 <p>If you encounter a <strong>bug</strong> with the <a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry
 toolkit</a> <strong>PLEASE run the
 <code>bug_report.sh</code> script to help us out here!</strong></p>
-<p class="leftbar">
-While you don’t have to install the <a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry
+<p>While you don’t have to install the <a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry
 toolkit</a>, if you don’t, in
 order to run a tool outside the repo directory you will have to specify
 <code>mkiocccentry(1)</code> command line options to locate required tools such as
 <code>chkentry(1)</code> (<code>mkiocccentry -C chkentry ...</code>), <code>txzchk(1)</code>
-(<code>mkiocccentry -T txzchk ...</code>), and <code>fnamchk(1)</code> (<code>mkiocccentry -F fnamchk ...</code>).
-</p>
-<p class="leftbar">
-The <code>mkiocccentry(1)</code> tool will ignore any filename or directory that
-begins with a period (<code>.</code>).
-</p>
-<p class="leftbar">
-The <code>mkiocccentry(1)</code> tool will ignore all files that begin with
-<code>COPYING</code>, <code>COPYRIGHT</code>, and <code>LICENSE</code>, regardless of filename case.
-</p>
-<p class="leftbar">
-The <code>mkiocccentry(1)</code> tool will reject any of the following files if
-they are found directly under the top level directory (<code>topdir</code>):
-</p>
+(<code>mkiocccentry -T txzchk ...</code>), and <code>fnamchk(1)</code> (<code>mkiocccentry -F fnamchk ...</code>).</p>
+<p>The <code>mkiocccentry(1)</code> tool will ignore any filename or directory that
+begins with a period (<code>.</code>).</p>
+<p>The <code>mkiocccentry(1)</code> tool will ignore all files that begin with
+<code>COPYING</code>, <code>COPYRIGHT</code>, and <code>LICENSE</code>, regardless of filename case.</p>
+<p>The <code>mkiocccentry(1)</code> tool will reject any of the following files if
+they are found directly under the top level directory (<code>topdir</code>):</p>
 <ul>
 <li><code>README.md</code></li>
 <li><code>index.html</code></li>
@@ -1578,59 +1564,37 @@ they are found directly under the top level directory (<code>topdir</code>):
 <li><code>prog.orig.c</code></li>
 <li>filenames matching the <code>[0-9][0-9][0-9][0-9]_*.tar.bz2</code> file glob</li>
 </ul>
-<p class="leftbar">
-The files listed in the above list are allowed to exist in
+<p>The files listed in the above list are allowed to exist in
 sub-directories: just <strong>NOT</strong> directly under the top level directory
-(<code>topdir</code>).
-</p>
-<p class="leftbar">
-The <code>mkiocccentry(1)</code> tool evaluates all filenames and directory names
+(<code>topdir</code>).</p>
+<p>The <code>mkiocccentry(1)</code> tool evaluates all filenames and directory names
 in a case independent way: thus <code>FOO</code>, <code>Foo</code>, and <code>foo</code> are considered
-the <strong>SAME</strong> file even if your filesystem doesn’t do the same.
-</p>
-<p class="leftbar">
-Having two or more filenames that differ only by case <strong>WILL</strong> lead to
-problems because of the previous statement.
-</p>
-<p class="leftbar">
-When the <code>mkiocccentry(1)</code> tool ignores a file, that file is <strong>NOT</strong>
-included as part of your submission.
-</p>
-<p class="leftbar">
-When the <code>mkiocccentry(1)</code> tool ignores a directory, that directory,
+the <strong>SAME</strong> file even if your filesystem doesn’t do the same.</p>
+<p>Having two or more filenames that differ only by case <strong>WILL</strong> lead to
+problems because of the previous statement.</p>
+<p>When the <code>mkiocccentry(1)</code> tool ignores a file, that file is <strong>NOT</strong>
+included as part of your submission.</p>
+<p>When the <code>mkiocccentry(1)</code> tool ignores a directory, that directory,
 and everything under that directory is <strong>NOT</strong> included as part of your
-submission.
-</p>
-<p class="leftbar">
-The <code>mkiocccentry(1)</code> tool will ignore all symlinks.
-</p>
-<p class="leftbar">
-Creating a directory directly under the top level directory (<code>topdir</code>)
+submission.</p>
+<p>The <code>mkiocccentry(1)</code> tool will ignore all symlinks.</p>
+<p>Creating a directory directly under the top level directory (<code>topdir</code>)
 that is normally considered to be a regular file, such as a directory
 named <code>Makefile</code>, <code>prog.alt.c</code>, <code>prog.c</code>, <code>remarks.md</code>, <code>try.alt.sh</code>,
 or <code>try.sh</code> is <strong>NOT</strong> a good idea and will likely cause the
-<code>mkiocccentry(1)</code> tool to abort with a <strong>fatal error</strong>.
-</p>
-<p class="leftbar">
-The required <code>Makefile</code> and <code>remarks.md</code> files may <strong>NOT</strong> be empty.
+<code>mkiocccentry(1)</code> tool to abort with a <strong>fatal error</strong>.</p>
+<p>The required <code>Makefile</code> and <code>remarks.md</code> files may <strong>NOT</strong> be empty.
 This does not mean just 0 bytes but also that it <strong>MUST</strong> have
 <strong>content</strong>, and content that is relevant (e.g. a Makefile with just
 comments is <strong>NOT</strong> allowed). However, with the exception of the
-<code>Makefile</code>, the <code>mkiocccentry(1)</code> tool will <strong>ONLY</strong> check file size.
-</p>
-<p class="leftbar">
-On the other hand, <code>chksubmit(1)</code> will check that <code>.auth.json</code> and
-<code>.info.json</code> are valid.
-</p>
-<p class="leftbar">
-If the optional file <code>try.alt.sh</code>, or <code>try.sh</code> exists and is an empty
-file, the <code>mkiocccentry(1)</code> tool will abort with a <strong>fatal error</strong>.
-</p>
-<p class="leftbar">
-If the <code>mkiocccentry(1)</code> tool encounters anything that isn’t a file,
+<code>Makefile</code>, the <code>mkiocccentry(1)</code> tool will <strong>ONLY</strong> check file size.</p>
+<p>On the other hand, <code>chksubmit(1)</code> will check that <code>.auth.json</code> and
+<code>.info.json</code> are valid.</p>
+<p>If the optional file <code>try.alt.sh</code>, or <code>try.sh</code> exists and is an empty
+file, the <code>mkiocccentry(1)</code> tool will abort with a <strong>fatal error</strong>.</p>
+<p>If the <code>mkiocccentry(1)</code> tool encounters anything that isn’t a file,
 isn’t a directory, and isn’t a symlink (which the tool ignores), the
-<code>mkiocccentry(1)</code> tool to abort with a <strong>fatal error</strong>.
-</p>
+<code>mkiocccentry(1)</code> tool to abort with a <strong>fatal error</strong>.</p>
 <p>See the
 FAQ on “<a href="../faq.html#mkiocccentry_bugs">How do I report bugs in an <code>mkiocccentry</code>
 tool?</a>”.</p>
@@ -1657,11 +1621,11 @@ use it</a>”.</p>
 a decimal anagram of the number of the kernel disk pack of one of the
 judge’s <a href="https://en.wikipedia.org/wiki/BESM-6">BESM-6</a>.</p>
 <p class="leftbar">
-There may or may not be fewer than 2^7+1 reasons why these
+There may or may not be fewer than 2^7+3 reasons why these
 <a href="guidelines.html">Guidelines</a> seem obfuscated.
 </p>
 <p class="leftbar">
-Excessively “<em>dotty”</em> use of the <code>chksubmit(1)</code> or <code>chkentry(1)</code>
+Frequent “<em>dotty”</em> use of the <code>chksubmit(1)</code> or <code>chkentry(1)</code>
 commands suggests that either you like silly things, or that you
 <a href="https://en.wikipedia.org/wiki/RTFM">RTFS</a> with some level of care.
 </p>
@@ -1670,7 +1634,7 @@ given the state of the “<em>so-called</em>” JSON spec. :-)</p>
 <p>We prefer programs that do not require a fish license: crayons and cat
 detector vans not withstanding.</p>
 <p class="leftbar">
-This <em>guideline</em> has a change mark at the very start of this line.
+This <em>guideline</em> does have a change mark at the very start of this line.
 </p>
 <p>While those who are used to temperatures found on <a href="https://science.nasa.gov/dwarf-planets/">dwarf
 planets</a> (<strong>yes Virginia,
@@ -1697,7 +1661,7 @@ to do with the Judging process.</p>
 <p>All generalizations are false, including this one. – <strong>Mark Twain</strong></p>
 </blockquote>
 <p class="leftbar">
-There are more than about 1 typos in this very sentence.
+There might be about 1 typos in this very sentence.
 </p>
 <p>This could be the only <em>guideline</em> that contains the word
 <a href="https://en.wikipedia.org/wiki/List_of_games_in_Star_Trek#Fizzbin">fizzbin</a>.</p>
@@ -1714,15 +1678,15 @@ You very well might not be completely prohibited from failing to not
 partly misunderstand this particular <em>guideline</em>, but of course, we
 could not possibly comment! Nevertheless, you are neither prohibited,
 nor are you fully or partly required to determine that this or the
-previous sentence is either false and/or perhaps misleading.
+previous sentence is either false and/or is in fact misleading.
 Therefore, it might be wise for you to not fail to consider to not do
-so, accordingly. Thank you very much (allegedly).
+so, accordingly. Thank you, very much (allegedly).
 </p>
 <p>Any complaints about the above <em>guideline</em> could be addressed to the
 Speaker of the House of Commons, or to the speaker of your national
 parliament should you have one.</p>
 <p class="leftbar">
-Please try to avoid this specific individual <em>guideline</em>, if it is at
+Please try to avoid this very individual <em>guideline</em>, if it is at
 all possible.
 </p>
 <p>We believe that Mark Twain’s quote:</p>
@@ -1730,41 +1694,25 @@ all possible.
 <p>Get your facts first, then you can distort them as you please.</p>
 </blockquote>
 <p>… is a good motto for those writing code for the IOCCC.</p>
-<p class="leftbar">
-We do not recommend submitting <a href="https://systemd.io">systemd</a> source
+<p>We do not recommend submitting <a href="https://systemd.io">systemd</a> source
 code to the IOCCC, if nothing else because that code is likely to
 exceed <a href="rules.html#rule2-size">Rule 2 - Size restrictions</a>. This isn’t
 to say that another highly compact and obfuscated replacement of
-<code>init(8)</code> would not be an interesting submission.
-</p>
-<p class="leftbar">
-The IOCCC size tool
+<code>init(8)</code> would not be an interesting submission.</p>
+<p>The IOCCC size tool
 <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/iocccsize.c">iocccsize</a>
 is not an original work unless you are <a href="../authors.html#Anthony_C_Howe">Anthony C
 Howe</a>, in which case it is original.
-:-)
-</p>
-<p class="leftbar">
-The IOCCC tarball validator
+:-)</p>
+<p>The IOCCC tarball validator
 <a href="https://github.com/ioccc-src/mkiocccentry/blob/master/txzchk.c">txzchk</a>
 is not an original work unless you are <a href="../authors.html#Cody_Boone_Ferguson">Cody Boone
 Ferguson</a>, in which case it is
-original. :-)
-</p>
-<p class="leftbar">
-Even so, those tools exceed the <a href="rules.html#rule2-size">Rule 2 - Size
+original. :-)</p>
+<p>Even so, those tools exceed the <a href="rules.html#rule2-size">Rule 2 - Size
 restrictions</a> so they wouldn’t qualify for the
-contest anyway.
-</p>
-<p class="leftbar">
-If the <a href="../judges.html">IOCCC judges</a> are feeling like it, they might
-choose to compile your program for running on an Arduino or a PDP-11.
-Heck, should we ever find an emulator of 60-bit CDC Cyber CPU, we might
-just try your submission on that emulator as well :-)
-</p>
-<p class="leftbar">
-With respect to <a href="#nested-functions">nested functions</a>, try <code>chkentry -b</code>.
-</p>
+contest anyway.</p>
+<p>With respect to <a href="#nested-functions">nested functions</a>, try <code>chkentry -b</code>.</p>
 <p>Jump to: <a href="#">top</a></p>
 <div id="more-information">
 <section id="information">

@@ -1,7 +1,7 @@
-# 29th International Obfuscated C Code Contest Official Guidelines
+# 30th International Obfuscated C Code Contest Official Guidelines
 
 <p class="leftbar">
-Copyright &copy; 2025 Leonid A. Broukhis and Landon Curt Noll.
+Copyright &copy; 2026 Leonid A. Broukhis and Landon Curt Noll.
 </p>
 
 All Rights Reserved.  Permission for personal, education or non-profit
@@ -13,17 +13,12 @@ permission in writing by [contacting the Judges](../contact.html).
 # Guidelines Version
 
 <p class="leftbar">
-These Guidelines are version **29.08 2025-12-02**.
+These IOCCC Guidelines are version **30.00 2026-09-13**.
 </p>
 
 <p class="leftbar">
 The <span style='font-size:28px;'><b>&verbar;</b></span> symbol
 indicates an **change** from the previous IOCCC.
-</p>
-
-<p class="leftbar">
-Because the **IOCCC29**  was a substantial rewrite, only **important
-changes** from **IOCCC28** have been marked.
 </p>
 
 <div id="guidelines">
@@ -61,46 +56,34 @@ Be sure to read the [Rules](rules.html).
 </div>
 </div>
 
-<p class="leftbar">
 While you submission **MUST** be a C program, there is nothing wrong if
 your `prog.c` file happens to also be a code for another language, say
 an interpreter of JavaScript.
-</p>
 
-<p class="leftbar">
 We would prefer if you do not use `#include` statements just to include
 lots of data to circumvent [Rule 2 - Size
 restrictions](rules.html#rule2-size) in an excessive way. This is what
 they invented `fopen(3)` for. :-)
-</p>
 
-<p class="leftbar">
 We would prefer if you do not require lots and lots of implicit defines
 on the C compiler command line (i.e., lots of `-Dfoo`, and
 `-Dcurds=whey` style command line args to the C compiler in the
 Makefile) to get around the [Rule 2 - Size
 restrictions](rules.html#rule2-size) in an excessive way.
-</p>
 
-<p class="leftbar">
 Some use of `#include` statements (i.e. `-include stdio.h`) and/or
 implicit `#define`s (i.e.  `-Dfoo=bar`) on the C compiler command line
 is perfectly reasonable..
-</p>
 
-<p class="leftbar">
 As a guide, consider the level of `#include` statements and/or implicit
 defines on the C compiler command line that are found in [winning
 Entries](https://www.ioccc.org/years.html), and try to **NOT** set a
 new record.
-</p>
 
-<p class="leftbar">
 If you believe you need to significantly abuse `#include` statements
 and/or implicit defines on the C compiler command line, then try to
 make a case for why in your submission's `remarks.md` file: maybe the
 Judges won't reject your submission.
-</p>
 
 
 Jump to: [top](#)
@@ -112,10 +95,8 @@ Jump to: [top](#)
 </div>
 </div>
 
-<p class="leftbar">
 You should pay attention to our observations on [code size and Rule 2
 remarks for IOCCC28](../2024/index.html#code-size-and-rule-2).
-</p>
 
 Your submission must satisfy **BOTH** the
 [Rule 2a - Gross Size](rules.html#rule2a-gross-size)
@@ -161,6 +142,23 @@ algorithm.
 
 Yes Virginia, **the previous guideline sentence is an important hint**!
 
+<p class="leftbar">
+Do **NOT** use the `Makefile` to copy or otherwise construct a larger `prog.c`
+than is allowed by [Rule 2 - Size restrictions](rules.html#rule2-size).
+</p>
+
+<p class="leftbar">
+Do **NOT** attempt to get around the size rule by including big files.
+</p>
+
+<p class="leftbar">
+Including a small extra file from your submission (plus the usual
+system include files) perfectly reasonable.  On the other hand, including
+a large file just to make your `prog.c` fit under the size limits of
+[Rule 2 - Size restrictions](rules.html#rule2-size) is **NOT**, and will
+very likely cause your submission to be rejected.
+</p>
+
 Don't expect the [Rule 2 - Size restrictions](rules.html#rule2-size) to
 [change any time soon](../faq.html#size_slow_change).
 
@@ -177,16 +175,12 @@ Jump to: [top](#)
 </div>
 </div>
 
-<p class="leftbar">
 If a group of people work on a submission, then they should [register
 for the IOCCC](../quick-start.html#enter) using either a valid group
 email address, or an email address for one of the authors.
-</p>
 
-<p class="leftbar">
 Processing your registration is an activity overseen by a Judge.
 Please be **patient** while a Judge processes your registration.
-</p>
 
 It can take a few days to process your registration and for the server
 to email your details, therefore make sure to allow yourself ample time
@@ -195,18 +189,14 @@ DAYS** to register!  The Judges are **NOT** responsible for delayed or
 lost email or for those who wait until the last minute to try to
 register!
 
-<p class="leftbar">
 If after a few days you believe your registration hasn't been process,
 then [contact the Judges](../contact.html).
-</p>
 
-<p class="leftbar">
 After your UUID and temporary password are emailed to you, you have up
 to fortnight (**14 days**) to login and change your temporary password.
 If you fail to change your temporary password by that deadline, then
 you'll need to [contact the Judges](../contact.html) by email to
 request a reset.
-</p>
 
 See the
 FAQ on "[How to register for the IOCCC](../next/register.html)".
@@ -243,10 +233,8 @@ tools) to develop their code.  If you do make use of such tools or
 services, then we **ENCOURAGE you to describe how you used such tools**
 in your `remarks.md` file.
 
-<p class="leftbar">
 In short: you created it, you own it, its an original work **OR** you have
 explicit permission to the work that you document in your remarks.
-</p>
 
 See the
 FAQ on "[May I use AI, LLM, Virtual coding assistants, or similar tools
@@ -416,19 +404,15 @@ off such control-M's before submitting their submissions.  In some
 cases tools have a "Save As" option that will prevent such trailing
 control-M's being added.
 
-<p class="leftbar">
 If your `prog.c` is near the [Rule 2a Gross
 Size](rules.html#rule2a-gross-size) and/or [Rule 2b Net
 Size](rules.html#rule2b-net-size) limit, you are permitted to **NOT**
 end source with a newline.  If you need to do this, please document
 that in your `remarks.md` file.
-</p>
 
-<p class="leftbar">
 If your compiler complains about about not ending in a newline, please
 note this in your `remarks.md` file, and if possible add an appropriate
 `-Wno-` to the `CSILENCE` variable in your Makefile.
-</p>
 
 
 Jump to: [top](#)
@@ -444,7 +428,6 @@ Submissions will be judged in an environment that has no **IDE**.  Any
 submission that fails to compile/build because it requires an **IDE**
 will be rejected.
 
-<p class="leftbar">
 We will use the GNU `make(1)` tool, your `Makefile`, as well as tools
 found in the [Single UNIX
 Specification](https://en.wikipedia.org/wiki/Single_UNIX_Specification)
@@ -452,17 +435,42 @@ Specification](https://en.wikipedia.org/wiki/Single_UNIX_Specification)
 conform to the [Single UNIX
 Specification](https://en.wikipedia.org/wiki/Single_UNIX_Specification)
 in the building and compiling of your submission.
-</p>
 
-<p class="leftbar">
 Your `Makefile` **MUST** be compatible with GNU `make` and we suggest
 you use [Makefile.example](../next/Makefile.example) as a template, renamed as
 `Makefile` of course.
-</p>
 
 See the
 FAQ on "[What are the detailed recommendations for a submission
 Makefile?](../faq.html#makefile_details)".
+
+
+Jump to: [top](#)
+
+
+<div id="guideline16">
+<div id="guideline16-anonymous-judging">
+# Guidelines for [Rule 16 - Anonymous judging](rules.html#rule16-anonymous-judging)
+</div>
+</div>
+
+<p class="leftbar">
+The [Judges](../judges.html) go to great lengths (as the expression goes)
+to be impartial when judging.  We do **NOT** know the author of a
+submission unless that submission becomes a winning entry.
+</p>
+
+<p class="leftbar">
+If you are going to refer to some URL (such as to fetch something),
+consider using a domain and/or file path that doesn't hint as to your
+identity.
+</p>
+
+<p class="leftbar">
+**PLEASE** be sure that your source code, comments, data files, URLs,
+and program output do **NOT**  identify the author(s) of your code,
+unless you are **Peter Honeyman** or **pretending to be Peter Honeyman**.
+</p>
 
 
 Jump to: [top](#)
@@ -474,61 +482,42 @@ Jump to: [top](#)
 </div>
 </div>
 
-<p class="leftbar">
 We **STRONGLY** recommend you **do** install the most recent release of
 [mkiocccentry toolkit](https://github.com/ioccc-src/mkiocccentry)
 because use of older versions of the mkiocccentry toolkit are **HIGHLY
 LIKELY** to be **REJECTED**!
-</p>
 
-<p class="leftbar">
 If you submit your own JSON files (**OTHER THAN** `.auth.json` and
 `.info.json`!) then they do **NOT** have to be valid JSON.
-</p>
 
-<p class="leftbar">
 However, if you do provide invalid JSON files, **PLEASE** document and
 **clearly explain** this in your `remarks.md` file.
-</p>
 
-<p class="leftbar">
 An _extra file_ is defined as a file that is not `prog.c`,
 `prog.alt.c`, `try.sh`, `try.alt.sh`, `remarks.md`, `Makefile`,
 `.auth.json` and `.info.json`: unless it's not in the top level
 directory, in which case it **IS** an _extra file_.
-</p>
 
-<p class="leftbar">
 The **non**-extra files are considered _free files_, and do not count
 towards the [Rule 17 - Use
 mkiocccentry](rules.html#rule17-mkiocccentry) limit of **31** _extra
 files_.
-</p>
 
-<p class="leftbar">
 If you use an optional filename for something other than their intended
 use in order to get past the file limit, we will consider that an abuse
 of rules.
-</p>
 
-<p class="leftbar">
 The `mkiocccentry` generated tarball does **NOT** reveal who you are!
 For this reason, the tarball **MUST** be a **v7 format** tarball.
-</p>
 
-<p class="leftbar">
 You should NOT use a tarball as an _extra file_ for a test-suite unless
 you have a very good reason for this: if you do include a tarball as an
 _extra file_, then you **MUST** specify why in your `remarks.md` file.
-</p>
 
-<p class="leftbar">
 If you **DO** include a tarball as an _extra file_, and the build
 process or the program extracts said tarball(s), the make `clobber`
 rule **MUST** remove the extracted files.
-</p>
 
-<p class="leftbar">
 Instead of including a large test-suite that requires a lot of files as
 part of your submission, if your submission doesn't require the
 test-suite to be available to run, then in your `remarks.md` you could
@@ -537,22 +526,15 @@ use the test-suite to test your submission, assuming it does not reveal
 who you are, i.e. **DO NOT** use a GitHub URL which contains your
 username, in case the judges know who you are. See [Rule 16 - Anonymous
 judging](rules.html#rule16-anonymous-judging).
-</p>
 
-<p class="leftbar">
 If you **DO** include a tarball then make sure it uses the v7 format.
 This is because it will not reveal who you are.
-</p>
 
-<p class="leftbar">
 See the FAQ on "[extra files](../faq.html#extra-files)" for details on
 how to make a v7 tarball.
-</p>
 
-<p class="leftbar">
 We recommend that all markdown files in your submission observe our
 [IOCCC markdown guidelines](../markdown.html).
-</p>
 
 See the
 FAQ on "[What should I do with the `try.sh` and `try.alt.sh`
@@ -597,9 +579,7 @@ Jump to: [top](#)
 </div>
 </div>
 
-<p class="leftbar">
 The **official locale** of the **IOCCC** is **C**.
-</p>
 
 You are **encouraged** to examine the [winners of previous
 contests](../years.html).
@@ -775,26 +755,18 @@ submissions. See also the FAQ on "[submitting try.sh and try.alt.sh
 scripts](../faq.html#try_scripts)".
 
 
-<p class="leftbar">
 Even if it only has one invocation we still **LIKE** the try scripts
 because we use them during judging and in publishing the winning
 entries.
-</p>
 
-<p class="leftbar">
 If you do include a `try.sh` then **PLEASE** remove the `try` rule in
 the Makefile.
-</p>
 
-<p class="leftbar">
 If you do include a `try.alt.sh` then **PLEASE** remove the `try.alt`
 rule in the Makefile.
-</p>
 
-<p class="leftbar">
 If you don't have a prog.alt.c, then **PLEASE** remove the `try.alt`
 rule as well.
-</p>
 
 
 We tend to **DISLIKE** programs that:
@@ -813,7 +785,7 @@ Specification](https://en.wikipedia.org/wiki/Single_UNIX_Specification)
 * abuse the build file to get around the size limit
 * obfuscate by use of ANSI trigraphs
 * obfuscate by use of digraphs
-* <p class="leftbar">obfuscate by use of `goto`s</p>
+* <p class="leftbar">obfuscate by excessive use of `goto`s</p>
 * are larger than they need to be
 * have more lines than they need to have
 * are "blob-ier" (just a pile of unformatted C code) than they need to be
@@ -829,6 +801,27 @@ your submission.
 
 
 Jump to: [top](#)
+
+
+<div id="about-types">
+### C types
+</div>
+
+When declaring local or global variables, you should declare the type:
+
+``` <!---c-->
+|   int this_is_fine;
+|   this_is_not_so_file;       /* <-- Try to avoid implicit type declarations, if possible */
+```
+
+<p class="leftbar">
+We **very slightly dislike** variables that are implicitly defined as `int`.
+</p>
+
+<p class="leftbar">
+If you must use variables that are implicitly defined as `int`, **PLEASE** be sure to add `-Wno-implicit-int`
+in the `${CSILENCE}` make variable.
+</p>
 
 
 <div id="about-cpp">
@@ -850,18 +843,6 @@ far as a program that is more well rounded in confusion.
 In other words, it is a compilation error, and in order to get older
 IOCCC winning entries that did this to compile, we had to update them
 to not do this.
-
-When declaring local or global variables, you should declare the type:
-
-``` <!---c-->
-    int this_is_fine;
-```
-
-and **NOT** like this:
-
-``` <!---c-->
-    this_is_not;       /* <-- Try to avoid implicit type declarations */
-```
 
 We really **DISLIKE** submissions that make blatant use of `#include`
 of large data files to get around the source code size limit. This does
@@ -897,10 +878,10 @@ nested functions such as:
 
 ``` <!---c-->
      int main() {
-|        void please_dont_submit_this() {
-|           printf("The machine that goes BING!!\n");
+         void please_dont_submit_this() {
+|           printf("The machine that goes BING!!!\n");
          }
-|        please_dont_submit_this();
+         please_dont_submit_this();
      }
 ```
 
@@ -959,10 +940,8 @@ file.
 </div>
 </div>
 
-<p class="leftbar">
 Using a mass of `goto`s to obfuscate your code has become _old_ and is
 unlikely to make it through the final rounds, if it even gets that far.
-</p>
 
 
 <div id="about-stdib">
@@ -1046,13 +1025,11 @@ Other windows, on the other hand, might be OK: especially where "**X
 marks the spot**". Yet on the third hand, windows are best when they
 are "unseen" (i.e., not dirty). :-)
 
-<p class="leftbar">
 You should try to restrict commands used in the build file to commands
 found in [Single UNIX
 Specification](https://en.wikipedia.org/wiki/Single_UNIX_Specification)
 (UNIX-like) environments and systems that conform to the [Single UNIX
 Specification](https://en.wikipedia.org/wiki/Single_UNIX_Specification).
-</p>
 
 You may compile and use your own programs.  If you do, try to build and
 execute from the current directory.  This restriction is not a hard and
@@ -1133,9 +1110,42 @@ manager.
 One should restrict libcurses to portable features found on both BSD
 and Linux curses.
 
-<p class="leftbar">
 If you do `#include <curses.h>` make **CERTAIN** you link in curses
 (i.e.  `-lcurses`) and not ncurses (i.e. `-lncurses`).
+
+Jump to: [top](#)
+
+
+<div id="about-threads">
+### About threads
+</div>
+
+<p class="leftbar">
+Do **NOT** assume availability of `<threads.h>`.
+Do **NO** assume availability of `Cxx threads` support
+</p>
+
+<p class="leftbar">
+[Quoting POSIX](https://pubs.opengroup.org/onlinepubs/9799919799/basedefs/threads.h.html):
+</p>
+
+> The features provided by `<threads.h>` are not as extensive
+> as those provided by `<pthread.h>`. It is present on POSIX.1
+> implementations in order to facilitate porting of ISO C programs
+> that use it. It is recommended that applications intended for use
+> on POSIX.1 implementations use `<pthread.h>` rather than `<threads.h>`
+> even if none of the additional features are needed initially,
+> to save the need to convert should the need to use them arise
+> later in the application's life cycle.
+
+<p class="leftbar">
+As of 2026, The C standard threads aren't widely supported for Unix-like systems,
+and so shouldn't be used.
+</p>
+
+<p class="leftbar">
+If need threading, use POSIX `<pthread.h>`, and link the `-lpthread`
+library.
 </p>
 
 Jump to: [top](#)
@@ -1210,6 +1220,21 @@ Yes, this is a **hint**. :-)
 
 We **RECOMMEND** you put a reasonable amount effort into the content of
 the `remarks.md` file: it is a required file for a reason.  :-)
+
+Jump to: [top](#)
+
+
+<div id="try_sh_and_other_shell_scripts">
+### try.sh and other shell scripts
+</div>
+
+<p class="leftbar">
+We **strongly** advise you to be sure that shell scripts, including
+`try.sh` and ` try.alt.sh`, be tested with the `shellcheck(1)` tool to
+identify any problems, warnings, and information messages.  Your shell
+scripts should be free of all errors, warnings, and info messages when
+tested with the `shellcheck(1)` tool.
+</p>
 
 Jump to: [top](#)
 
@@ -1399,15 +1424,11 @@ to pseudo-randomly create answers for you.  For example:
     mkiocccentry -d workdir topdir
 ```
 
-<p class="leftbar">
 Do **NOT** submit a tarball formed by `mkiocccentry -d ...` **OR** by
 `mkiocccentry -s seed ...` **OR** by using the `test` UUID.
-</p>
 
-<p class="leftbar">
 The `mkiocccentry(1)` tool creates an `xz(1)` compressed **v7 format**
 tarball using a `tar(1)` command of the form:
-</p>
 
 ``` <!---sh-->
     cd workdir/UUID-slot_num && tar --format=v7 -cJf submit.UUID-slot_num.timestamp.txz UUID-slot_num
@@ -1416,11 +1437,9 @@ tarball using a `tar(1)` command of the form:
 In many places the `mkiocccentry(1)` tool will prompt you to verify
 what you input, allowing you to correct details as you go along.
 
-<p class="leftbar">
 Pressing the "_enter key_" at the `mkiocccentry(1)` tool prompts will
 allow you to proceed with a default, however make sure the default is
 the **CORRECT** answer.
-</p>
 
 The `mkiocccentry(1)` tool will use code from `iocccsize(1)` which
 detects a number of issues (such as [Rule 2 - Size
@@ -1434,17 +1453,13 @@ well, **before** forming the tarball.
 Once the tarball is formed `mkiocccentry(1)` will run `txzchk(1)`,
 which will also run `fnamchk(1)`, as part of its algorithm.
 
-<p class="leftbar">
 The use of `mkiocccentry -W ...` is **highly discouraged** as this may
 ignore warnings about a problem that may cause your submission to be
 **REJECTED!**
-</p>
 
-<p class="leftbar">
 The same can be said of `mkiocccentry -Y ...` , and to a lesser extent
 `mkiocccentry -y ...`: the `-y` is mostly for the test script and the
 `-Y` is like `-y` but even more aggressive.
-</p>
 
 If `mkiocccentry` encounters an **error**, the program will exit and
 the xz compressed tarball **will NOT be generated**: this is a
@@ -1454,7 +1469,6 @@ If you encounter a **bug** with the [mkiocccentry
 toolkit](https://github.com/ioccc-src/mkiocccentry) **PLEASE run the
 `bug_report.sh` script to help us out here!**
 
-<p class="leftbar">
 While you don't have to install the [mkiocccentry
 toolkit](https://github.com/ioccc-src/mkiocccentry), if you don't, in
 order to run a tool outside the repo directory you will have to specify
@@ -1462,22 +1476,15 @@ order to run a tool outside the repo directory you will have to specify
 `chkentry(1)` (`mkiocccentry -C chkentry ...`), `txzchk(1)`
 (`mkiocccentry -T txzchk ...`), and `fnamchk(1)` (`mkiocccentry
 -F fnamchk ...`).
-</p>
 
-<p class="leftbar">
 The `mkiocccentry(1)` tool will ignore any filename or directory that
 begins with a period (`.`).
-</p>
 
-<p class="leftbar">
 The `mkiocccentry(1)` tool will ignore all files that begin with
 `COPYING`, `COPYRIGHT`, and `LICENSE`, regardless of filename case.
-</p>
 
-<p class="leftbar">
 The `mkiocccentry(1)` tool will reject any of the following files if
 they are found directly under the top level directory (`topdir`):
-</p>
 
 * `README.md`
 * `index.html`
@@ -1487,69 +1494,47 @@ they are found directly under the top level directory (`topdir`):
 * `prog.orig.c`
 * filenames matching the `[0-9][0-9][0-9][0-9]_*.tar.bz2` file glob
 
-<p class="leftbar">
 The files listed in the above list are allowed to exist in
 sub-directories: just **NOT** directly under the top level directory
 (`topdir`).
-</p>
 
-<p class="leftbar">
 The `mkiocccentry(1)` tool evaluates all filenames and directory names
 in a case independent way: thus `FOO`, `Foo`, and `foo` are considered
 the **SAME** file even if your filesystem doesn't do the same.
-</p>
 
-<p class="leftbar">
 Having two or more filenames that differ only by case **WILL** lead to
 problems because of the previous statement.
-</p>
 
-<p class="leftbar">
 When the `mkiocccentry(1)` tool ignores a file, that file is **NOT**
 included as part of your submission.
-</p>
 
-<p class="leftbar">
 When the `mkiocccentry(1)` tool ignores a directory, that directory,
 and everything under that directory is **NOT** included as part of your
 submission.
-</p>
 
-<p class="leftbar">
 The `mkiocccentry(1)` tool will ignore all symlinks.
-</p>
 
-<p class="leftbar">
 Creating a directory directly under the top level directory (`topdir`)
 that is normally considered to be a regular file, such as a directory
 named `Makefile`, `prog.alt.c`, `prog.c`, `remarks.md`, `try.alt.sh`,
 or `try.sh` is **NOT** a good idea and will likely cause the
 `mkiocccentry(1)` tool to abort with a **fatal error**.
-</p>
 
-<p class="leftbar">
 The required `Makefile` and `remarks.md` files may **NOT** be empty.
 This does not mean just 0 bytes but also that it **MUST** have
 **content**, and content that is relevant (e.g. a Makefile with just
 comments is **NOT** allowed). However, with the exception of the
 `Makefile`, the `mkiocccentry(1)` tool will **ONLY** check file size.
-</p>
 
-<p class="leftbar">
 On the other hand, `chksubmit(1)` will check that `.auth.json` and
 `.info.json` are valid.
-</p>
 
-<p class="leftbar">
 If the optional file `try.alt.sh`, or `try.sh` exists and is an empty
 file, the `mkiocccentry(1)` tool will abort with a **fatal error**.
-</p>
 
-<p class="leftbar">
 If the `mkiocccentry(1)` tool encounters anything that isn't a file,
 isn't a directory, and isn't a symlink (which the tool ignores), the
 `mkiocccentry(1)` tool to abort with a **fatal error**.
-</p>
 
 See the
 FAQ on "[How do I report bugs in an `mkiocccentry`
@@ -1589,12 +1574,12 @@ a decimal anagram of the number of the kernel disk pack of one of the
 judge's [BESM-6](https://en.wikipedia.org/wiki/BESM-6).
 
 <p class="leftbar">
-There may or may not be fewer than 2^7+1 reasons why these
+There may or may not be fewer than 2^7+3 reasons why these
 [Guidelines](guidelines.html) seem obfuscated.
 </p>
 
 <p class="leftbar">
-Excessively "_dotty"_ use of the `chksubmit(1)` or `chkentry(1)`
+Frequent "_dotty"_ use of the `chksubmit(1)` or `chkentry(1)`
 commands suggests that either you like silly things, or that you
 [RTFS](https://en.wikipedia.org/wiki/RTFM) with some level of care.
 </p>
@@ -1606,7 +1591,7 @@ We prefer programs that do not require a fish license: crayons and cat
 detector vans not withstanding.
 
 <p class="leftbar">
-This _guideline_ has a change mark at the very start of this line.
+This _guideline_ does have a change mark at the very start of this line.
 </p>
 
 While those who are used to temperatures found on [dwarf
@@ -1636,7 +1621,7 @@ to do with the Judging process.
 > All generalizations are false, including this one. -- **Mark Twain**
 
 <p class="leftbar">
-There are more than about 1 typos in this very sentence.
+There might be about 1 typos in this very sentence.
 </p>
 
 This could be the only _guideline_ that contains the word
@@ -1658,9 +1643,9 @@ You very well might not be completely prohibited from failing to not
 partly misunderstand this particular _guideline_, but of course, we
 could not possibly comment!  Nevertheless, you are neither prohibited,
 nor are you fully or partly required to determine that this or the
-previous sentence is either false and/or perhaps misleading.
+previous sentence is either false and/or is in fact misleading.
 Therefore, it might be wise for you to not fail to consider to not do
-so, accordingly.  Thank you very much (allegedly).
+so, accordingly.  Thank you, very much (allegedly).
 </p>
 
 Any complaints about the above _guideline_ could be addressed to the
@@ -1668,7 +1653,7 @@ Speaker of the House of Commons, or to the speaker of your national
 parliament should you have one.
 
 <p class="leftbar">
-Please try to avoid this specific individual _guideline_, if it is at
+Please try to avoid this very individual _guideline_, if it is at
 all possible.
 </p>
 
@@ -1678,48 +1663,30 @@ We believe that Mark Twain's quote:
 
 ... is a good motto for those writing code for the IOCCC.
 
-<p class="leftbar">
 We do not recommend submitting [systemd](https://systemd.io) source
 code to the IOCCC, if nothing else because that code is likely to
 exceed [Rule 2 - Size restrictions](rules.html#rule2-size).  This isn't
 to say that another highly compact and obfuscated replacement of
 `init(8)` would not be an interesting submission.
-</p>
 
-<p class="leftbar">
 The IOCCC size tool
 [iocccsize](https://github.com/ioccc-src/mkiocccentry/blob/master/iocccsize.c)
 is not an original work unless you are [Anthony C
 Howe](../authors.html#Anthony_C_Howe), in which case it is original.
 :-)
-</p>
 
-<p class="leftbar">
 The IOCCC tarball validator
 [txzchk](https://github.com/ioccc-src/mkiocccentry/blob/master/txzchk.c)
 is not an original work unless you are [Cody Boone
 Ferguson](../authors.html#Cody_Boone_Ferguson), in which case it is
 original. :-)
-</p>
 
-<p class="leftbar">
 Even so, those tools exceed the [Rule 2 - Size
 restrictions](rules.html#rule2-size) so they wouldn't qualify for the
 contest anyway.
-</p>
 
-<p class="leftbar">
-If the [IOCCC judges](../judges.html) are feeling like it, they might
-choose to compile your program for running on an Arduino or a PDP-11.
-Heck, should we ever find an emulator of 60-bit CDC Cyber CPU, we might
-just try your submission on that emulator as well :-)
-</p>
-
-
-<p class="leftbar">
 With respect to [nested functions](#nested-functions), try `chkentry
 -b`.
-</p>
 
 
 Jump to: [top](#)
