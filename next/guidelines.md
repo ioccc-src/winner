@@ -13,7 +13,7 @@ permission in writing by [contacting the Judges](../contact.html).
 ## Guidelines Version
 
 <p class="leftbar">
-These IOCCC Guidelines are version **30.00 2026-09-13**.
+These IOCCC Guidelines are version **30.01 2026-09-18**.
 </p>
 
 <p class="leftbar">
@@ -468,10 +468,24 @@ identity.
 
 <p class="leftbar">
 **PLEASE** be sure that your source code, comments, data files, URLs,
-and program output do **NOT**  identify the author(s) of your code,
+and program output do **NOT obviously identify** the author(s) of your code,
 unless you are **Peter Honeyman** or **pretending to be Peter Honeyman**.
 </p>
 
+<p class="leftbar">
+**RECOMMENDATION**: Utilizing a URL redirection service such as
+[tinyurl](https://tinyurl.com) is one method to ensure that URL does
+not readily disclose the author(s).
+</p>
+
+<p class="leftbar">
+**IDEA**: If your submission simply needs an IOCCC judge to download
+some auxiliary data (e.g., a compressed tarball), for some auxiliary
+purpose (e.g., a test suite), then consider suggesting to the
+[Judges](../judges.html), in your `remarks.md` file, the use of a
+`curl(1)` command with a URL that uses a URL redirection service (e.g.,
+[tinyurl](https://tinyurl.com)).
+</p>
 
 Jump to: [top](#)
 
@@ -482,7 +496,7 @@ Jump to: [top](#)
 </div>
 </div>
 
-We **STRONGLY** recommend you **do** install the most recent release of
+We **STRONGLY** recommend you **DO install** the most recent release of
 [mkiocccentry toolkit](https://github.com/ioccc-src/mkiocccentry)
 because use of older versions of the mkiocccentry toolkit are **HIGHLY
 LIKELY** to be **REJECTED**!
@@ -529,6 +543,26 @@ judging](rules.html#rule16-anonymous-judging).
 
 If you **DO** include a tarball then make sure it uses the v7 format.
 This is because it will not reveal who you are.
+
+<p class="leftbar">
+**IMPORTANT NOTE**: Do **NOT** use downloading from a URL, as an excuse to try
+and get around [Rule 17 - use mkiocccentry](rules.html#rule17-mkiocccentry)
+in terms of limits on the number of files, nor in terms of the tarball
+size.  It is OK if the use of a URL is to download auxiliary data for
+some auxiliary purpose (e.g., a test suite) that isn't critical to
+the submission.  It is **NOT** OK to use a URL to evade [Rule 17 -
+use mkiocccentry](rules.html#rule17-mkiocccentry) limits.
+</p>
+
+<p class="leftbar">
+The above **IMPORTANT NOTE** about downloading from a URL doesn't apply
+to submissions that, as part of their `prog` execution, access URLs.
+Nevertheless, the `prog.c` should make use of a URL redirection service
+such as [tinyurl](https://tinyurl.com) in the source code, as the
+[Judges](../judges.html) will be looking at the source code in detail,
+and you do **NOT obviously identify** the author(s) of your code via
+the URLs that your submission uses!
+</p>
 
 See the FAQ on "[extra files](../faq.html#extra-files)" for details on
 how to make a v7 tarball.
@@ -614,7 +648,7 @@ layout**' need not do as well as others in terms of their algorithm.
 Given two submissions, we are more inclined to pick the submission that
 does something interesting when it's executed.
 
-**IMPORTANT:** Be sure that **your submission works** as documented in
+**IMPORTANT**: Be sure that **your submission works** as documented in
 your `remarks.md` file.
 
 We sometimes make an effort to debug a submission that has a slight

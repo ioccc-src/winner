@@ -40,7 +40,7 @@ writing by [contacting the judges](../contact.html).
 
 ## Rules Version
 
-These IOCCC Rules are version **30.00 2026-09-13**.
+These IOCCC Rules are version **30.01 2026-09-18**.
 
 <p class="leftbar">
 The <span style='font-size:28px;'><b>&verbar;</b></span> symbol
@@ -560,12 +560,12 @@ Makefile](guidelines.html#guideline15-gnu-makefile).
 </div>
 
 <p class="leftbar">
-Your source code, data files, remarks, URLs, and program output **MUST NOT**
-identify the author(s) of your code (unless you are **Peter Honeyman**
-or pretending to be **Peter Honeyman**). In order to be impartial the
-[Judges](https://www.ioccc.org/judges.html) do **NOT** know who is
-submitting programs to the IOCCC until final selection is made, and
-**only** submissions that won.
+Your source code, data files, remarks, URLs, and program output **MUST
+NOT obviously identify** the author(s) of your code (unless you are
+**Peter Honeyman** or pretending to be **Peter Honeyman**). In order to
+be impartial, the [Judges](https://www.ioccc.org/judges.html) do **NOT**
+know who is submitting programs to the IOCCC until final selection is
+made, and **ONLY** submissions that won.
 </p>
 
 Even if you are a past winner, you **MUST NOT** reveal your identity
