@@ -30,12 +30,18 @@ sense of surprise and wonder.  The winning entry code is **NOT** intended
 for production use.  This source code is often extremely obfuscated,
 by design, and may be very difficult to analyze for code safety.
 
-Nevertheless, if you wish to discuss a security concern a winning IOCCC entry, then please use the
-[IOCCC winner security advisory interface](https://github.com/ioccc-src/winner/security/advisories/new).
+Nevertheless, if you wish to discuss a security concern about a winning IOCCC entry, then please use the [IOCCC winner security advisory interface](https://github.com/ioccc-src/winner/security/advisories/new).
 
 You may also **send email to the IOCCC judges** by consulting the bottom section
 of the "[How to contact the IOCCC](https://www.ioccc.org/contact.html)" web page,
 however the above mentioned advisory interface is **preferred**.
+
+Even so, some winning entries **deliberately** exploit things that can cause
+security holes (potentially or not) and it is quite likely that the author will
+not want anything changed, if it can even be changed, which might not be
+possible without affecting the code. For instance there are at least two entries
+that deliberately segfault, and one of those is a backtrace quine which means it
+MUST dump core, which some systems do not allow on the grounds of security.
 
 
 ### Supported IOCCC Versions
