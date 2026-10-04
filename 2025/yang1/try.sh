@@ -36,25 +36,30 @@ echo 1>&2
 seq 5 | ./prog -2
 echo 1>&2
 
-# Demonstrate chop function
+# Demonstrate chop function if ruby is installed
 #
-read -r -n 1 -p "Press any key to see the usage message for: ruby prog.c "
-echo 1>&2
-echo 1>&2
-ruby prog.c
-echo 1>&2
+RUBY="$(type -P ruby)"
+if [[ -n "$RUBY" ]]; then
+    read -r -n 1 -p "Press any key to see the usage message for: ruby prog.c "
+    echo 1>&2
+    echo 1>&2
+    "$RUBY" prog.c
+    echo 1>&2
 
-read -r -n 1 -p "Press any key to run: seq 5 | ruby prog.c 2 "
-echo 1>&2
-echo 1>&2
-seq 5 | ruby prog.c 2
-echo 1>&2
+    read -r -n 1 -p "Press any key to run: seq 5 | ruby prog.c 2 "
+    echo 1>&2
+    echo 1>&2
+    seq 5 | "$RUBY" prog.c 2
+    echo 1>&2
 
-read -r -n 1 -p "Press any key to run: seq 5 | ruby prog.c -2 "
-echo 1>&2
-echo 1>&2
-seq 5 | ruby prog.c -2
-echo 1>&2
+    read -r -n 1 -p "Press any key to run: seq 5 | ruby prog.c -2 "
+    echo 1>&2
+    echo 1>&2
+    seq 5 | "$RUBY" prog.c -2
+    echo 1>&2
+else
+    echo "NOTICE: ruby was not found so we have skipped some commands." 1>&2
+fi
 
 # Demonstrate head function
 #
@@ -146,7 +151,7 @@ ${CC} prog_generate.c -o prog_generate && ./prog_generate > prog_classify.c
 
 while true; do
    while true; do
-      read -r -p "Enter an integer between 1 and 9999, or 0 to quit: " number
+      read -r -p "Enter an integer between 1 and 9999, or 0 to go to next step: " number
       echo 1>&2
 
       if ! [[ "$number" =~ ^[0-9]+$ ]]; then
@@ -180,12 +185,13 @@ while true; do
    echo 1>&2
 done
 
-# Final parting messages
+# Final parting messages if perl installed
 #
+PERL="$(type -P perl)"
 read -r -n 1 -p "Press any key to run: perl prog.c "
 echo 1>&2
 echo 1>&2
-perl prog.c
+"$PERL" prog.c
 echo 1>&2
 
 read -r -n 1 -p "Press any key to run: ./bf prog.c "
