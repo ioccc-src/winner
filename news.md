@@ -71,14 +71,14 @@ available for public review.  You may also register for **IOCCC30**
 when the **PENDING** state starts. For more information, see:
 [faq.html#pending](faq.html#pending)
 
-We propose that **IOCCC30** will enter the **OPEN** state on: **2026-12-08 02:00:02.102832 UTC**
+We propose that **IOCCC30** will enter the **OPEN** state on: **2026-12-08 02:00:02.102832 UTC**.
 
 During the **OPEN** state, those who have registered for the **IOCCC30**
 may start to upload their submissions.  You may also register
 for **IOCCC30** during this period.  For more information, see:
 [faq.html#open](faq.html#open)
 
-We propose that **IOCCC30** will enter the **JUDGING** state on: *2027-04-02 06:00:04.240010 UTC**
+We propose that **IOCCC30** will enter the **JUDGING** state on: **2027-04-02 06:00:04.240010 UTC**.
 
 When **JUDGING** state starts, one can no longer register, nor may
 one upload submissions: the judging of submissions previously
