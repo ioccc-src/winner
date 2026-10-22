@@ -55,6 +55,21 @@
 </blockquote>
 
 
+<div id="20261022">
+## 2026-10-22
+</div>
+
+We have greatly improved the back end of the IOCCC registration process.
+
+In the past, registrations were only processed when the contest was **OPEN**.
+
+Starting with **IOCCC30**, the email with your UUID username and temporary
+password will now typically **arrive within 2 hours**.
+
+Registrations submitted prior to the **PENDING** date of **2026-11-07
+21:20:15.193421 UTC** will only be processed when the contest is **PENDING**.
+
+
 <div id="20260916">
 ## 2026-09-16
 </div>

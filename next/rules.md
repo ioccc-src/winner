@@ -40,7 +40,7 @@ writing by [contacting the judges](../contact.html).
 
 ## Rules Version
 
-These IOCCC Rules are version **30.01 2026-09-18**.
+These IOCCC Rules are version **30.02 2026-10-22**.
 
 <p class="leftbar">
 The <span style='font-size:28px;'><b>&verbar;</b></span> symbol
@@ -50,8 +50,10 @@ indicates a **change** from the previous IOCCC.
 Reminder: be SURE to read the [IOCCC guidelines](guidelines.html).
 
 
+<div id="rule0-dates">
 <div id="rule0">
 ## Rule 0 - Dates
+</div>
 </div>
 
 <p class="leftbar">
@@ -154,12 +156,42 @@ See [Rule 17 - Use mkiocccentry](#rule17-mkiocccentry).
 </div>
 </div>
 
-You **MUST** register, using a valid email address, in order to submit
-to the IOCCC. You may register while the contest is **pending** or
-**open**.
+You **MUST** register, using a valid email address, in order
+to submit to the IOCCC. You may register while the contest is
+[pending](../faq.html#pending) or [open](../faq.html#open).
 
-A few days after registering, you'll receive your UUID username and
-temporary password, which you **MUST** change within 14 days.
+<p class="leftbar">
+Registrations submitted prior to the [pending](../faq.html#pending) will
+only be processed when the contest becomes [pending](../faq.html#pending).
+</p>
+
+<p class="leftbar">
+Following registration, you will receive an email containing your UUID
+username and a temporary password, typically within 2 hours.
+</p>
+
+<p class="leftbar">
+System load, maintenance, or service outages might stretch registration
+email delivery to several hours. In rare cases needing manual action
+from an IOCCC Judge, delivery could take several days.
+</p>
+
+<p class="leftbar">
+IOCCC Judges are **NOT** responsible for lost registration emails or
+missed deadlines due to registration delays.
+</p>
+
+<p class="leftbar">
+After you receive the registration email containing your
+UUID username and temporary password, you **MUST** sign in at
+[submit.ioccc.org](https://submit.ioccc.org), where you will be asked
+to change your password.
+</p>
+
+<p class="leftbar">
+Failure to **update your password within 14 days** of when the registration
+email was sent will result in account deletion, and you will have to re-register.
+</p>
 
 See [How to register for the IOCCC](../next/register.html).
 

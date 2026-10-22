@@ -13,7 +13,7 @@ permission in writing by [contacting the Judges](../contact.html).
 ## Guidelines Version
 
 <p class="leftbar">
-These IOCCC Guidelines are version **30.01 2026-09-18**.
+These IOCCC Guidelines are version **30.02 2026-10-22**.
 </p>
 
 <p class="leftbar">
@@ -179,27 +179,51 @@ If a group of people work on a submission, then they should [register
 for the IOCCC](../quick-start.html#enter) using either a valid group
 email address, or an email address for one of the authors.
 
-Processing your registration is an activity overseen by a Judge.
-Please be **patient** while a Judge processes your registration.
+<p class="leftbar">
+Registrations submitted prior to the [pending date](../faq.html#pending)
+will be processed subsequently. Registrations received after the
+[judging starts](../faq.html#judging) will be ignored. See
+[Rule 0](rules.html#rule0-dates) for the applicable deadlines.
+</p>
 
-It can take a few days to process your registration and for the server
-to email your details, therefore make sure to allow yourself ample time
-to register and submit your entries; **DO NOT WAIT UNTIL THE FINAL
-DAYS** to register!  The Judges are **NOT** responsible for delayed or
-lost email or for those who wait until the last minute to try to
-register!
+<p class="leftbar">
+Once you sign up, you’ll get an email with your UUID username and a
+temporary password—typically within about 2 hours.
+</p>
 
-If after a few days you believe your registration hasn't been process,
-then [contact the Judges](../contact.html).
+<p class="leftbar">
+System load, maintenance, or service outages may delay registration emails
+for several hours. In rare instances requiring manual intervention from
+an IOCCC Judge, delivery could extend to several days.
+</p>
 
-After your UUID and temporary password are emailed to you, you have up
-to fortnight (**14 days**) to login and change your temporary password.
-If you fail to change your temporary password by that deadline, then
-you'll need to [contact the Judges](../contact.html) by email to
-request a reset.
+<p class="leftbar">
+After your UUID and temporary password are emailed to you, you have up to
+a fortnight (**14 days**) to log in and change your temporary password.
+If you fail to change your password in time, your account will be deleted,
+and you must re-register.
+</p>
+
+<p class="leftbar">
+If several days have passed after registering, assuming the contest is
+[pending](../faq.html#pending) or [open](../faq.html#open), and you
+believe your registration hasn't been processed, then [contact the
+Judges](../contact.html).
+</p>
+
+<p class="leftbar">
+Allow sufficient time for registration. Avoid waiting until the contest’s
+final moments to sign up. The IOCCC Judges accept no responsibility for
+registration delays or lost emails.
+</p>
+
+See
+[Rule 0 - Dates](rules.html#rule0-dates)
+for the [pending date](../faq.html#pending), or
+when [judging starts](../faq.html#judging).
 
 See the
-FAQ on "[How to register for the IOCCC](../next/register.html)".
+FAQ on "[How to register for the IOCCC](register.html)".
 
 See the
 FAQ on "[Entering the IOCCC: the bare minimum you need to

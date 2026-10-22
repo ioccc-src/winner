@@ -1,6 +1,6 @@
 # IOCCC FAQ Table of Contents
 
-This is FAQ version **30.00 2026-09-15**.
+This is FAQ version **30.02 2026-10-22**.
 
 
 ## 0. [Entering the IOCCC: the bare minimum you need to know](#enter_questions)
@@ -7721,16 +7721,39 @@ A preliminary [IOCCC rules](next/rules.html), [IOCCC guidelines](next/guidelines
 and [IOCCC mkiocccentry tools](https://github.com/ioccc-src/mkiocccentry) have
 been released.
 
-You may [register for the IOCCC](next/register.html) while the contest is [pending](#pending),
-however you will **NOT** receive your own Email message containing your very own
-**Username and Initial Password until the contest is [open](#open)**.  You will need these
-to be able to [upload your submission](next/submit.html) to the [IOCCC submit
-server](https://submit.ioccc.org).
+<p class="leftbar">
+You may [register for the IOCCC](next/register.html) while the contest is [PENDING](#pending)
+(or [open](#open), BTW)..
+</p>
 
-Once contest moves from [pending](#pending") to [open](#open), an announcement
-Email will be sent out to the mailing list of those have successfully registered for the IOCCC.
-In addition, an announcement will be made to the [IOCCC news](news.html) in case you miss
-that announcement Email.
+<p class="leftbar">
+After registration, you should receive an email with your UUID username
+and a temporary password, usually within 2 hours.
+</p>
+
+<p class="leftbar">
+System load, maintenance, or service outages may delay registration emails
+for several hours. In rare instances requiring manual intervention from an
+IOCCC Judge, delivery of registration emails could extend to several days.
+</p>
+
+<p class="leftbar">
+Once you get your email with your UUID username and temporary password,
+visit [submit.ioccc.org](https://submit.ioccc.org) where you will be
+asked to set a password.
+</p>
+
+<p class="leftbar">
+**Friendly reminder**: If you don’t update it **within 14 days**
+of when the registration email was sent, your account will be removed,
+and you’ll need to register again.
+</p>
+
+<p class="leftbar">
+Allow sufficient time for registration. Avoid waiting until the contest’s
+final moments to sign up. The IOCCC Judges accept no responsibility for
+registration delays or lost emails.
+</p>
 
 While you are waiting for the contest to [open](#open), we **highly recommend**
 that you review the [IOCCC rules](next/rules.html), [IOCCC guidelines](next/guidelines.html),
@@ -7751,6 +7774,11 @@ for more information on the submission process when the IOCCC [reopens](#open).
 <div id="open">
 ### "**open**"
 </div>
+
+<p class="leftbar">
+You may [register for the IOCCC](next/register.html) while the contest is [OPEN](#open)
+(or [pending](#pending) BTW).
+</p>
 
 While contest is **[OPEN](#open)**, those who have [registered for the IOCCC](next/register.html)
 may [upload their submissions](next/submit.html) to the [IOCCC submit server](https://submit.ioccc.org).

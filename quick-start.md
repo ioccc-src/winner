@@ -17,6 +17,10 @@ First, check the "**[current status of the IOCCC](status.html)**" page to see cu
 You may **only register for the IOCCC when the IOCCC is either [pending](faq.html#pending)
 or [open](faq.html#open)**.
 
+<p class="leftbar">
+You may **only register for IOCCC when the IOCCC is [pending](faq.html#pending) or [open](faq.html#open)**.
+</p>
+
 You may **only submit your entries to the IOCCC when the IOCCC is [open](faq.html#open)**.
 
 See also the [IOCCC news](news.html#news) for more information.
@@ -39,40 +43,45 @@ suggestions, useful hints, and IOCCC humor.  :-)
 </div>
 </div>
 
-**IMPORTANT**: You may **only register for the IOCCC when the IOCCC is either [pending](faq.html#pending)
-or [open](faq.html#open)**.  See "**[current status of the IOCCC](status.html)**" page for details.
+<p class="leftbar">
+**IMPORTANT**: You may **only register for the IOCCC when the IOCCC is either [PENDING](faq.html#pending)
+or [OPEN](faq.html#open)**.  See "**[current status of the IOCCC](status.html)**" page for details.
+</p>
 
-If the contest is [pending](faq.html#pending) or [open](faq.html#open),
-then follow the directions on "**[how to register for the IOCCC](next/register.html)**".
+Follow the directions on "**[how to register for the IOCCC](next/register.html)**".
+
+<p class="leftbar">
+**Register early**; don't wait until it is close to the deadline. The
+IOCCC Judges are **NOT** responsible for delays or lost emails.
+</p>
 
 
 <div id="step_3">
 ## 3. Wait for your submit server username and initial password
 </div>
 
-Once you have [registered for the IOCCC](next/register.html),
-and once the contest is **[OPEN](faq.html#open)**, one of the
-[IOCCC judges](judges.html) will send via email within a few days,
-your [IOCCC submit server](https://submit.ioccc.org) **Username** and
-**Initial password**.
+<p class="leftbar">
+After registration, you will receive an email with your UUID username
+and a temporary password, usually within 2 hours.
+</p>
 
-**PLEASE NOTE**: After registering, it could take up to a **few days**
-before an [IOCCC judge](judges.html) sends the that email, so **PLEASE
-be patient**. This means that you should **GIVE YOURSELF TIME** before the
-contest closes!
+<p class="leftbar">
+System load, maintenance, or service outages may delay registration emails
+for several hours. In rare instances requiring manual intervention from
+an IOCCC Judge, delivery could extend to several days.
+</p>
 
-**IMPORTANT NOTE**: Unless the contest is [open](faq.html#open),
-then you will **NOT** receive your **Username** and **Initial password**
-by email.  For example, if the contest is [pending](faq.html#pending),
-you will have to **WAIT UNTIL THE CONTEST IS [OPEN](faq.html#open)**.
+<p class="leftbar">
+Once you receive the email with your UUID username and temporary password,
+please sign in at [submit.ioccc.org](https://submit.ioccc.org) where
+you will be asked to change your password.
+</p>
 
-Please check the "**[current status of the IOCCC](status.html)**" page and
-visit the "**[how to register for the IOCCC](next/register.html)**" page for detailed instructions.
-
-**NOTE**: If are having trouble receiving your **Username** and **Initial
-password**, and the **CONTEST IS [OPEN](faq.html#open)**, and
-have you checked your spam folder, [Contact the IOCCC](contact.html)
-for assistance.
+<p class="leftbar">
+If you do not update your password **within 14 days** of receiving the
+registration email, your account will be deleted and you will need to
+register again.
+</p>
 
 
 <div id="step_4">
@@ -82,11 +91,20 @@ for assistance.
 Using the **Username** and **Initial password** you receive via email in
 [step 3](#step_3), you need to login to the [IOCCC submit server](https://submit.ioccc.org).
 
-**IMPORTANT NOTE**: You must change your password **WITHIN 14 DAYS**
-from when one of the [IOCCC judges](judges.html) sent that email.
+<p class="leftbar">
+After registration, you’ll receive an email with your UUID username
+and temporary password—usually within two hours, but delays up to
+several days may occur due to system load, maintenance, or outages.
+</p>
 
-**NOTE**: The [IOCCC submit server](https://submit.ioccc.org)
-is ready for submissions **ONLY WHEN THE CONTEST IS [open](faq.html#open)**.
+<p class="leftbar">
+**IMPORTANT NOTE**: Upon receipt of the email containing your UUID username
+and temporary password, you are required to log in at
+[submit.ioccc.org](https://submit.ioccc.org) using those credentials and
+update your password. Failure to change your password **within 14 days**
+of the registration email will result in account deletion, necessitating
+re-registration.
+</p>
 
 Please visit the "**[change your submit server initial password](next/pw-change.html)**" page for detailed instructions.
 
@@ -203,6 +221,11 @@ contest.
 ## 7. Upload your submission to the IOCCC submit server
 </div>
 </div>
+
+<p class="leftbar">
+**NOTE**: The [IOCCC submit server](https://submit.ioccc.org)
+is ready for submissions **ONLY WHEN THE CONTEST IS [open](faq.html#open)**.
+</p>
 
 The screenshots on the "**[how to upload your submission to the IOCCC](next/submit.html)**" page
 might be a helpful guide when using the [IOCCC submit server](https://submit.ioccc.org).
