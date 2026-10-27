@@ -13,7 +13,7 @@ permission in writing by [contacting the Judges](../contact.html).
 ## Guidelines Version
 
 <p class="leftbar">
-These IOCCC Guidelines are version **30.02 2026-10-22**.
+These IOCCC Guidelines are version **30.03 2026-10-27**.
 </p>
 
 <p class="leftbar">
@@ -584,7 +584,7 @@ to submissions that, as part of their `prog` execution, access URLs.
 Nevertheless, the `prog.c` should make use of a URL redirection service
 such as [tinyurl](https://tinyurl.com) in the source code, as the
 [Judges](../judges.html) will be looking at the source code in detail,
-and you do **NOT obviously identify** the author(s) of your code via
+and you do **NOT obviously want to identify** the author(s) of your code via
 the URLs that your submission uses!
 </p>
 
