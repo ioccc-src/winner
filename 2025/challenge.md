@@ -81,9 +81,18 @@ Modify `prog.c` so that the code supports the
 ## Fun challenge for [2025/diels-grabsch](diels-grabsch/index.html)
 </div>
 
-This fun challenge is still **OPEN**.
+This fun challenge is **CLOSED**.
 
 Explain the purpose of the constant `9018655` as used in `prog.c`.
+
+
+<div id="diels-grabsch_solution">
+#### Fun challenge solution for [2025/diels-grabsch](diels-grabsch/index.html)
+</div>
+
+[Antoine Mathys](https://github.com/antoine-mathys) on **2026 Oct 31** presented this **2025/diels-grabsch fun challenge solution**:
+
+The constant `9018655` is `899D1F` in hexadecimal. Since the code assumes little endian encoding it is represented as the following byte sequence: `1F, 9D, 89`. This is the header of the compressed output. The first two bytes are magic numbers. The third one indicates 9 compression bits in block mode.
 
 
 <div id="dogon">
