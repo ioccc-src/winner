@@ -55,6 +55,39 @@
 </blockquote>
 
 
+<div id="20261106">
+## 2026-11-06
+</div>
+
+The next International Obfuscated C Code Contest, **IOCCC30**, will enter the **PENDING** state on: **2026-11-07 21:20:15.193421 UTC**
+
+During the **PENDING** state, the preliminary
+[IOCCC30 rules](next/rules.html), the preliminary [IOCCC30
+guidelines](next/guidelines.html), and the [IOCCC30 mkiocccentry
+toolkit](https://github.com/ioccc-src/mkiocccentry) will become
+available for public review.
+
+You may also register for **IOCCC30**
+when the **PENDING** state starts. For more information, see:
+[faq.html#pending](faq.html#pending)
+
+**IMPORTANT NOTE**: The [IOCCC30 rules](next/rules.html) and [IOCCC30
+guidelines](next/guidelines.html) are **tentative** and may change
+prior to the start of the **OPEN** state: your feedback and/or corrections
+**are very welcome** while they are still tentative.  For information on
+how to provide feedback to the tentative rules and/or guidelines, see:
+[faq.html#questions](faq.html#questions) and [faq.html#feedback](faq.html#feedback).
+
+**IMPORTANT NOTE**: The [mkiocccentry
+toolkit](https://github.com/ioccc-src/mkiocccentry) has been updated
+for **IOCCC30**.  The **old IOCCC29** mkiocccentry toolkit will
+**NOT** work for **IOCCC30**.  If you have downloaded and/or installed
+the mkiocccentry toolkit previously, you **MUST** update the toolkit in
+order for your submission to be accepted as valid.
+
+For information on how to enter **IOCCC30**, see: [quick-start.html#enter](quick-start.html#enter)
+
+
 <div id="20261022">
 ## 2026-10-22
 </div>
