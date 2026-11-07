@@ -734,8 +734,14 @@ interval <code>[1, 2^31)</code>, or even the interval <code>[1, 2^63)</code>.</p
 <section id="mattpep">
 <h2 id="fun-challenge-for-2025mattpep">Fun challenge for <a href="mattpep/index.html">2025/mattpep</a></h2>
 </section>
-<p>This fun challenge is still <strong>OPEN</strong>.</p>
+<p>This fun challenge is <strong>CLOSED</strong>.</p>
 <p>Explain how the argument to <code>./prog</code> determines if input is encoded or decoded.</p>
+<section id="mattpep_solution">
+<h4 id="fun-challenge-solution-for-2025mattpep">Fun challenge solution for <a href="mattpep/index.html">2025/mattpep</a></h4>
+</section>
+<p><a href="https://github.com/antoine-mathys">Antoine Mathys</a> on <strong>2026 Nov 7</strong> presented this <strong>2025/mattpep fun challenge solution</strong>:</p>
+<p>The input is encoded if and only if there is at least one argument and the first byte of the first argument is odd.</p>
+<p>For example, if there is no argument or if the first one is <code>decode</code> (<code>0x64</code>) or <code>2503</code> (<code>0x32</code>), the input is decoded; if the first argument is <code>encode</code> (<code>0x65</code>) or <code>3052</code> (<code>0x33</code>), the input is encoded.</p>
 <section id="ncw1">
 <h2 id="fun-challenge-for-2025ncw1">Fun challenge for <a href="ncw1/index.html">2025/ncw1</a></h2>
 </section>
