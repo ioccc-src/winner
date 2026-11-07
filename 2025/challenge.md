@@ -433,9 +433,20 @@ interval `[1, 2^31)`, or even the interval `[1, 2^63)`.
 ## Fun challenge for [2025/mattpep](mattpep/index.html)
 </div>
 
-This fun challenge is still **OPEN**.
+This fun challenge is **CLOSED**.
 
 Explain how the argument to `./prog` determines if input is encoded or decoded.
+
+
+<div id="mattpep_solution">
+#### Fun challenge solution for [2025/mattpep](mattpep/index.html)
+</div>
+
+[Antoine Mathys](https://github.com/antoine-mathys) on **2026 Nov 7** presented this **2025/mattpep fun challenge solution**:
+
+The input is encoded if and only if there is at least one argument and the first byte of the first argument is odd.
+
+For example, if there is no argument or if the first one is `decode` (`0x64`) or `2503` (`0x32`), the input is decoded; if the first argument is `encode` (`0x65`) or `3052` (`0x33`), the input is encoded.
 
 
 <div id="ncw1">
