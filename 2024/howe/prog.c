@@ -365,9 +365,12 @@ void
 	C();
 	mvgetnstr(0,1,g,h-g);
 	regfree(&e);
-	if (regcomp(&e,g,REG_EXTENDED bitor REG_NEWLINE))
+	if (regcomp(&e,g,REG_EXTENDED bitor REG_NEWLINE)) {
 		beep();
-	else {
+		regcomp(&e, "", 0);
+                w = 0;
+                l = 0;
+	} else {
 		w = g[0] == '$' and not g[1];
 		F();
 	}
@@ -410,6 +413,7 @@ main(int i,char **j)
 	if (not initscr())
 		return 1;
 	raw();
+	regcomp(&e, "", 0);
 	h = c = b + BUF;
 	if (0 < (i = open(f = *++j,0))) {
 		g += read(i,b,c-b);
