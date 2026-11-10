@@ -458,10 +458,19 @@ For example, if there is no argument or if the first one is `decode` (`0x64`) or
 ### Fun challenge 0 for [2025/ncw1](ncw1/index.html)
 </div>
 
-This fun challenge is still **OPEN**.
+This fun challenge is **CLOSED**.
 
 Create a 32K ROM file that tests if `2^p-1`, is a Mersenne prime using the
 [Lucas–Lehmer primality test](https://en.wikipedia.org/wiki/Lucas–Lehmer_primality_test).
+
+<div id="ncw1_0_solution">
+#### Fun challenge 0 solution for [2025/ncw1](ncw1/index.html)
+</div>
+
+GitHub user [mihkeymouse](https://github.com/mihkeymouse) on **2026 Nov 10** presented this
+[2025/ncw1 fun challenge 0 solution](https://github.com/mihkeymouse/MersenneBoy).
+
+**Mersenne Boy** is a 32 KiB Game Boy ROM implementing the Lucas–Lehmer primality test for Mersenne numbers.
 
 <div id="ncw1_1">
 ### Fun challenge 1 for [2025/ncw1](ncw1/index.html)
