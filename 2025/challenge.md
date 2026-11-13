@@ -104,23 +104,39 @@ The constant `9018655` is `899D1F` in hexadecimal. Since the code assumes little
 ### Fun challenge 0 for [2025/dogon](dogon/index.html)
 </div>
 
-This fun challenge is still **OPEN**.
+This fun challenge is **CLOSED**.
 
 Explain why `prog.c` prints the number of digits of the **constant** that it
 prints.
+
+
+<div id="dogon_0_solution">
+#### Fun challenge 0 solution for [2025/dogon](dogon/index.html)
+</div>
+
+[Antoine Mathys](https://github.com/antoine-mathys) on **2026 Nov 12** presented this
+[2025/dogon fun challenge 0 solution](https://github.com/antoine-mathys/IOCCC-2025-dogon-discussion).
 
 
 <div id="dogon_1">
 ### Fun challenge 1 for [2025/dogon](dogon/index.html)
 </div>
 
-This fun challenge is still **OPEN**.
+This fun challenge is **CLOSED**.
 
 Given the "*constant*" that is printed, explain the last line of output:
 
 ``` <!---sh-->
     ./prog | tail -1
 ```
+
+
+<div id="dogon_1_solution">
+#### Fun challenge 1 solution for [2025/dogon](dogon/index.html)
+</div>
+
+[Antoine Mathys](https://github.com/antoine-mathys) on **2026 Nov 12** presented this
+[2025/dogon fun challenge 1 solution](https://github.com/antoine-mathys/IOCCC-2025-dogon-discussion).
 
 
 <div id="dogon_2">
