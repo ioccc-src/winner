@@ -107,13 +107,13 @@ some odd need to do so.
 
 Canonically format all entry and author JSON files
 
-Usage:
+For example:
 
 ``` <!---sh-->
     bin/all-jfmt.sh -v 3
 ```
 
-Alternate usage:
+Suggested usage:
 
 ``` <!---sh-->
     make all_jfmt
@@ -126,7 +126,7 @@ Alternate usage:
 
 Run a command on all IOCCC years.
 
-Usage:
+For example:
 
 ``` <!---sh-->
     bin/all-years.sh -v 1 -- bin/gen-year-index.sh -v 1
@@ -145,7 +145,7 @@ If you wish to run instead, for example, [chk-entry.sh](#chk-entry), then do:
 
 Run a command on all winning entries.
 
-Usage:
+For example:
 
 ``` <!---sh-->
     bin/all-run.sh -v 3 -- bin/quick-readme2index.sh -v 1
@@ -166,7 +166,7 @@ do:
 
 Test for invalid `display_as` / `display_via_github` combos in `.entry.json` files.
 
-Usage:
+For example:
 
 ``` <!---sh-->
     bin/bad-display-as.sh -v 1 YYYY/dir
@@ -178,7 +178,7 @@ To run over all `.entry.json` files:
     bin/all-run.sh -v 1 -- bin/bad-display-as.sh -v 1
 ```
 
-Alternate usage:
+Alternate Example:
 
 ``` <!---sh-->
     make find_bad_display_as
@@ -192,7 +192,7 @@ Alternate usage:
 Check an entry directory to verify that all the files in its manifest
 (`.entry.json`) exist in the git repo.
 
-Usage:
+For example:
 
 ``` <!---sh-->
     bin/chk-entry.sh 2020/ferguson1
@@ -245,7 +245,7 @@ This will allow `jsp(1)` to print sort_word values.
 We also make sure that the last item from a given file ends in a comma (",)",
 due to the bogosity of the so-called JSON spec.
 
-Usage:
+For example:
 
 ``` <!---sh-->
     bin/combine_author_handle.sh > combined_author_handle.json
@@ -276,7 +276,7 @@ title
 
 This tool updates `.entry.json` files entries whose content is modified.
 
-Usage:
+For example:
 
 ``` <!---sh-->
     bin/csv2entry.sh -v 1
@@ -359,7 +359,7 @@ FAQ on "[author_handle](../faq.html#author_handle_faq)".
 See also the
 FAQ on "[.entry.json](../faq.html#entry_json)".
 
-Usage:
+For example:
 
 ``` <!---sh-->
     bin/cvt-submission.sh -v 1 YYYY/dir
@@ -454,7 +454,7 @@ from the `TOPDIR`.
 
 Generate a list of files in an entry's manifest (the `.entry.json` file).
 
-Usage:
+For example:
 
 ``` <!---sh-->
     awk -f bin/filelist.entry.json.awk 2020/ferguson1/.entry.json
@@ -470,7 +470,7 @@ of all the files of the
 - 2020/ferguson1/prog.orig.c
 - ...
 
-Usage:
+For example:
 
 ``` <!---sh-->
     awk -v print_relative=true -f bin/filelist.entry.json.awk 2025/ayu/.entry.json
@@ -486,7 +486,7 @@ of all the files of the
 - arduino/serial_play/serial_play.ino
 - ...
 
-Usage:
+For example:
 
 ``` <!---sh-->
     awk -v print_until=true -f bin/filelist.entry.json.awk 2025/tompng/.entry.json
@@ -534,7 +534,7 @@ of scanning the typical `.entey.json` file format.
 
 Generate a list of files in an entry's manifest in the `.entry.json` file.
 
-Usage:
+For example:
 
 ``` <!---sh-->
     bin/filelist.entry.json.sh 2025/cesmoak
@@ -550,7 +550,7 @@ of all the files of the
 - 2025/cesmoak/a_suggestion_try_sh_before_README.txt
 - ...
 
-Usage:
+For example:
 
 ``` <!---sh-->
     bin/filelist.entry.json.sh -p 2025/ncw1
@@ -588,7 +588,7 @@ This script is used in [md2html.sh](#md2html) via
 [output-index-inventory.sh](#output-index-inventory) and
 [subst.entry-index.sh](#subst-entry-index).
 
-Usage:
+For example:
 
 ``` <!---sh-->
     cmd | sed -f bin/html.sed
@@ -614,7 +614,7 @@ checks that local files linked by markdown actually exist.
 This tool does **NOT** check HTML file links, it checks markdown
 based links.
 
-Usage:
+For example:
 
 ``` <!---sh-->
     bin/find-missing-links.sh -v 1
@@ -649,7 +649,7 @@ JSON files in the tree.
 
 This is important because the IOCCC makes extensive use of JSON.
 
-Usage:
+For example:
 
 ``` <!---sh-->
     bin/find-invalid-json.sh -v 1
@@ -671,7 +671,7 @@ We recommend that this tool be invoked via the top level `Makefile`:
 
 Format select headers and preceding empty lines in entry README.md files.
 
-Usage:
+For example:
 
 ``` <!---sh-->
     bin/format-headers.sh
@@ -684,7 +684,7 @@ Usage:
 
 Generate the top level [authors.html](../authors.html) page.
 
-Usage:
+For example:
 
 ``` <!---sh-->
     bin/gen-authors.sh -v 1
@@ -703,7 +703,7 @@ We recommend that this tool be invoked via the top level `Makefile`:
 
 Generate the top level [location.html](../location.html) page.
 
-Usage:
+For example:
 
 ``` <!---sh-->
     bin/gen-location.sh -v 1
@@ -723,7 +723,7 @@ We recommend that this tool be invoked via the top level `Makefile`:
 Generate the HTML files (other than the README.md to index.html files) from
 markdown files, of all entries.
 
-Usage:
+For example:
 
 ``` <!---sh-->
     bin/gen-other-html.sh -v 1
@@ -744,7 +744,7 @@ Generate a `README.md` file a submission's `remarks.md` and the
 template files in [template/entry/README.md.head](%%REPO_URL%%/template/entry/README.md.head)
 and [template/entry/README.md.tail](%%REPO_URL%%/template/entry/README.md.tail).
 
-Usage:
+For example:
 
 ``` <!---sh-->
     bin/gen-readme.sh -v 1 YYYY template/entry/README.md.head YYYY/dir/remarks.md template/entry/README.md.tail YYYY/dir/README.md
@@ -760,7 +760,7 @@ be used by hand by the [Judges](../judges.html) during the final judging rounds.
 
 Generate an XML sitemap for the IOCCC website.
 
-Usage:
+For example:
 
 ``` <!---sh-->
     bin/gen-sitemap.sh -v 1
@@ -785,7 +785,7 @@ at the command line.
 
 Without an argument, the `contest_status` is unchanged.
 
-Usage:
+For example:
 
 ``` <!---sh-->
     bin/gen-status.sh -v 1
@@ -825,7 +825,7 @@ do that, that is not a problem.
 
 Generate a number of top level HTML pages for the IOCCC websites.
 
-Usage:
+For example:
 
 ``` <!---sh-->
     bin/gen-top-html.sh -v 1
@@ -865,7 +865,7 @@ Generate an `guidelines.html` page for a given IOCCC year, if `guidelines.md` ex
 Generate an `challenge.html` page for a given IOCCC year, if `challenge.md` exists.
 
 
-Usage:
+For example:
 
 ``` <!---sh-->
     bin/gen-year-index.sh -v 1 2025
@@ -903,9 +903,6 @@ from from the markdown files, via the top level `Makefile`:
 
 Generate the top level [years.html](../years.html) page.
 
-Usage:
-
-
 We recommend that this tool be invoked via the top level `Makefile`:
 
 ``` <!---sh-->
@@ -922,7 +919,7 @@ which will create the `index.html` for every IOCCC year (`1984/index.html`,
 
 Generate the top level [years.html](../years.html) page.
 
-Usage:
+For example:
 
 ``` <!---sh-->
     bin/gen-years.sh -v 1
@@ -940,14 +937,14 @@ We recommend that this tool be invoked via the top level `Makefile`:
 </div>
 
 The [jfmt-wrapper.sh](%%REPO_URL%%/bin/jfmt-wrapper.sh) tool is a wrapper
-tool for `jfmt(1)`, a tool that will format a JSON file into a canonical style.
+tool for [jprint-wrapper.sh](%%REPO_URL%%/bin/jprint-wrapper.sh),
+a tool that will format a JSON file into the IOCCC JSON style.
 
-**NOTE**: As of 2024 Oct 08 the `jfmt(1)` tool has not been written,
-so [jfmt-wrapper.sh](%%REPO_URL%%/bin/jfmt-wrapper.sh) uses the
-`JSONPath.sh(1)` tool from the recently forked and modified
-[JSONPath.sh tool](https://github.com/lcn2/JSONPath.sh).
+If the JSON file is already in the form of the IOCCC JSON style,
+then the JSON file is NOT modified, otherwise it will be updated
+to be in the IOCCC JSON style.
 
-Usage:
+For example:
 
 ``` <!---sh-->
     bin/jfmt-wrapper.sh .entry.json
@@ -959,16 +956,9 @@ Usage:
 </div>
 
 The [jprint-wrapper.sh](%%REPO_URL%%/bin/jprint-wrapper.sh) tool is a wrapper
-tool for `jprint(1)`, a tool that will format JSON in a canonical style
-to stdout.
+tool using python3 to format JSON in the IOCCC JSON style.
 
-**NOTE**: `jprint(1)` is a planned tool based on `jfmt(1)`.
-As of 2024 Oct 08 that tool has not been written, so
-[jprint-wrapper.sh](%%REPO_URL%%/bin/jprint-wrapper.sh) uses
-the `JSONPath.sh(1)` tool from the recently forked and modified
-[JSONPath.sh tool](https://github.com/lcn2/JSONPath.sh).
-
-Usage:
+For example:
 
 ``` <!---sh-->
     bin/jprint-wrapper.sh .entry.json
@@ -986,51 +976,37 @@ Or use in a pipe:
 </div>
 
 The [jval-wrapper.sh](%%REPO_URL%%/bin/jval-wrapper.sh) tool is a wrapper
-tool for `jval(1)`, a tool that will output a JSON value using the
-XPath for JSON mechanism.  For information in XPath for JSON see:
+tool using python3 to use the XPath method to extract JSON values.
 
-- [https://goessner.net/articles/JsonPath/](https://goessner.net/articles/JsonPath/)
-- [https://jsonpath.com](https://jsonpath.com)
-- [https://github.com/lcn2/JSONPath.sh?tab=readme-ov-file#jsonpath-patterns-and-extensions](https://github.com/lcn2/JSONPath.sh?tab=readme-ov-file#jsonpath-patterns-and-extensions)
-
-**NOTE**: As of 2024 Oct 08 the `jval(1)` tool has not been written,
-so [jval-wrapper.sh](%%REPO_URL%%/bin/jval-wrapper.sh) uses the
-`jsp(1)` tool from [https://github.com/kjozsa/jsp](https://github.com/kjozsa/jsp)
-or if not found, the `JSONPath.sh(1)` tool from the recently forked and modified
-[JSONPath.sh tool](https://github.com/lcn2/JSONPath.sh).
-
-Usage:
-
-``` <!---sh-->
-    bin/jval-wrapper.sh [-b] [-q] [-T] file.json [pattern]
-
-    -b        print only values (def: print both JSON member and JSON value)
-    -q        remove enclosing double quotes (def: keep any enclosing double quotes)
-    -T        trim all newlines (def: do not)
-
-    file.json JSON file to process, - ==> read stdin
-    pattern   Xpath for JSON query pattern
-```
+For information on XPath, see [https://www.w3.org/TR/xpath/](https://www.w3.org/TR/xpath/).
 
 For example:
 
-
 ``` <!---sh-->
-    bin/jval-wrapper.sh 1984/mullender/.entry.json '$.award'
-    bin/jval-wrapper.sh 1984/mullender/.entry.json '$..author_handle'
+    bin/jval-wrapper.sh 1984/mullender/.entry.json './/award'
+    bin/jval-wrapper.sh 1984/mullender/.entry.json './/author_handle'
 
-    bin/jval-wrapper.sh 1984/mullender/.entry.json '$.manifest[2]'
-    bin/jval-wrapper.sh -q 1984/mullender/.entry.json '$.manifest[2]'
+    bin/jval-wrapper.sh -e 1984/mullender/.entry.json './/award'
+    bin/jval-wrapper.sh -e 1984/mullender/.entry.json './/author_handle'
 
-    bin/jval-wrapper.sh -b 1984/mullender/.entry.json '$.manifest[2].entry_text'
-    bin/jval-wrapper.sh -b -q 1984/mullender/.entry.json '$.manifest[2].inventory_order'
+    bin/jval-wrapper.sh 1984/mullender/.entry.json './/manifest/item[3]/*'
+    bin/jval-wrapper.sh -q 1984/mullender/.entry.json './/manifest/item[3]/*'
 
-    bin/jval-wrapper.sh author/Anton_Algmyr.json '$.full_name'
-    bin/jval-wrapper.sh -q -T author/Anton_Algmyr.json '$.full_name' | jstrdecode -
+    bin/jval-wrapper.sh -b 1984/mullender/.entry.json './/manifest/item[3]//entry_text'
+    bin/jval-wrapper.sh -b -q 1984/mullender/.entry.json './/manifest/item[3]//inventory_order'
+
+    bin/jval-wrapper.sh author/Anton_Algmyr.json './/full_name'
+
+    bin/jval-wrapper.sh -q author/Anton_Algmyr.json './/full_name'
+    bin/jval-wrapper.sh -q -P author/Anton_Algmyr.json './/full_name'
+    bin/jval-wrapper.sh -b author/Anton_Algmyr.json './/full_name'
+    bin/jval-wrapper.sh -b -q author/Anton_Algmyr.json './/full_name'
+    bin/jval-wrapper.sh -b -P author/Anton_Algmyr.json './/full_name'
+    bin/jval-wrapper.sh -b -q -P author/Anton_Algmyr.json './/full_name'
+
+    bin/jval-wrapper.sh -e author/Anton_Algmyr.json './/full_name'
+    bin/jval-wrapper.sh -e -P author/Anton_Algmyr.json './/full_name'
 ```
-
-**NOTE**: With `jstrdecode(1)` version 1.2.3 or better, one can use `jstrdecode -N`
-and not have to use `-T` with `bin/jval-wrapper.sh`.
 
 
 <div id="manifest-csv-entry">
@@ -1126,7 +1102,7 @@ This tool will generate an initial `challenge.md` file that
 the [Judges](../judges.html) will modify by adding individual
 **fun challenges** for each new winning entry.
 
-Usage:
+For example:
 
 ``` <!---sh-->
     bin/new-challenge-md.sh -v 1 YYYY
@@ -1145,7 +1121,7 @@ FAQ on "[fun challenges](../faq.html#what_fun_challenge)".
 This tool is used by the [Judges](../judges.html) as one of the
 steps needed to announce a new winning IOCCC entry.
 
-Usage:
+For example:
 
 ``` <!---sh-->
     mkdir -p YYYY/dir
@@ -1183,7 +1159,7 @@ For example, files such as `YYYY/README.md` and/or `YYYY/index.html`
 might contain "_triple X_" comments indicating where the
 [Judges](../judges.html) need to add content.
 
-Usage:
+For example:
 
 ``` <!---sh-->
     bin/new-year.sh -v 1 YYYY
@@ -1198,7 +1174,7 @@ Here, `YYYY` must be a new 4-digit (happy :-)) new IOCCC year.
 
 Convert a non-README.md file in an entry to HTML.
 
-Usage:
+For example:
 
 ``` <!---sh-->
     bin/othermd2html.sh YYYY/dir/pathto.md
@@ -1279,7 +1255,7 @@ If only a few `index.hmtl` files need updating, then
 this command will only briefly pause while the
 [readme2index.sh](index.html#readme2index) can take much longer.
 
-Usage:
+For example:
 
 ``` <!---sh-->
     # For all entries:
@@ -1307,7 +1283,7 @@ We recommend that this tool be invoked via the top level `Makefile`:
 
 Convert an entry's `README.md` into its `index.html` file.
 
-Usage:
+For example:
 
 ``` <!---sh-->
     bin/readme2index.sh -v 3 1984/mullender
@@ -1346,7 +1322,7 @@ This tool is used by [sort.gitignore.sh](index.html#sort-gitignore).
 
 Sort a `.gitignore` in a entry directory.
 
-Usage:
+For example:
 
 ``` <!---sh-->
     bin/sort.gitignore.sh -v 1 YYYY/dir
@@ -1435,7 +1411,7 @@ This tool is used in [subst.year-index.sh](index.html#subst-year-index).
 
 Form a compressed tarball for an entry.
 
-Usage:
+For example:
 
 ``` <!---sh-->
     bin/tar-entry.sh -v 1 YYYY/dir
@@ -1460,7 +1436,7 @@ tarballs is to provide the files needed to attempt to compile entries.
 
 Form a compressed tarball for an IOCCC year.
 
-Usage:
+For example:
 
 ``` <!---sh-->
     bin/tar-year.sh -v 1 YYYY
@@ -1491,7 +1467,7 @@ tarballs is to provide the files needed to attempt to compile entries.
 
 Untar an entry's compressed tarball.
 
-Usage:
+For example:
 
 ``` <!---sh-->
     bin/untar-entry.sh -v 1 YYYY/dir
@@ -1516,7 +1492,7 @@ We recommend that this tool be invoked via the top level `Makefile`:
 
 Untar an IOCCC year's compressed tarball.
 
-Usage:
+For example:
 
 ``` <!---sh-->
     bin/untar-year.sh -v 1 YYYY

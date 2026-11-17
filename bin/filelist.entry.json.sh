@@ -114,7 +114,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="2.0.0 2026-04-26"
+export VERSION="2.2.0 2026-11-16"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -131,6 +131,16 @@ if [[ $status -eq 0 ]]; then
     TOPDIR=$("$GIT_TOOL" rev-parse --show-toplevel)
 fi
 export TOPDIR
+#
+JVAL_WRAPPER=$(type -P jval-wrapper.sh 2>/dev/null || true)
+if [[ -z $JVAL_WRAPPER ]]; then
+    if [[ -n $TOPDIR && -x "$TOPDIR/bin/jval-wrapper.sh" ]]; then
+	JVAL_WRAPPER="$TOPDIR/bin/jval-wrapper.sh"
+    else
+	JVAL_WRAPPER="bin/jval-wrapper.sh"
+    fi
+fi
+export JVAL_WRAPPER
 #
 VERGE=$(type -P verge)
 export VERGE
@@ -173,13 +183,14 @@ export PRINT_RELATIVE=
 
 # set usage message
 #
-export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-p] [-n] [-N] YYYY/dir
+export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-j jval] [-p] [-n] [-N] YYYY/dir
 
 	-h		print help message and exit
 	-v level	set verbosity level (def level: 0)
 	-V		print version string and exit
 
 	-d topdir	set topdir (def: $TOPDIR)
+	-j jval		path to jval-wrapper.sh tool (def: $JVAL_WRAPPER)
 
 	-p              print paths relative to YYYY/dir (def: print relative to repo)
 
@@ -211,7 +222,7 @@ export DO_NOT_PROCESS=
 
 # parse command line
 #
-while getopts :hv:Vd:pnN flag; do
+while getopts :hv:Vd:j:pnN flag; do
   case "$flag" in
     h) echo "$USAGE" 1>&2
 	exit 2
@@ -222,6 +233,8 @@ while getopts :hv:Vd:pnN flag; do
 	exit 2
 	;;
     d) TOPDIR="$OPTARG"
+	;;
+    j) JVAL_WRAPPER="$OPTARG"
 	;;
     p) PRINT_RELATIVE="true"
 	;;
@@ -324,17 +337,17 @@ export BIN_DIR="bin"
 
 # verify that the bin/jval-wrapper.sh tool is executable
 #
-JVAL_WRAPPER="$BIN_DIR/jval-wrapper.sh"
-if [[ ! -e $JVAL_WRAPPER ]]; then
-    echo  "$0: ERROR: bin/jval-wrapper.sh does not exist: $JVAL_WRAPPER" 1>&2
-    exit 5
+JVAL_TOOL=$(type -P "$JVAL_WRAPPER" 2>/dev/null || true)
+if [[ -z "$JVAL_TOOL" || ! -x "$JVAL_TOOL" ]]; then
+    if [[ ! -x "$JVAL_WRAPPER" ]]; then
+	echo "$0: ERROR: jval-wrapper.sh tool not found or not executable: $JVAL_WRAPPER" 1>&2
+	exit 5
+    fi
 fi
-if [[ ! -f $JVAL_WRAPPER ]]; then
-    echo  "$0: ERROR: bin/jval-wrapper.sh is not a regular file: $JVAL_WRAPPER" 1>&2
-    exit 5
-fi
-if [[ ! -x $JVAL_WRAPPER ]]; then
-    echo  "$0: ERROR: bin/jval-wrapper.sh is not an executable file: $JVAL_WRAPPER" 1>&2
+"$JVAL_WRAPPER" -Q
+status="$?"
+if [[ $status -ne 0 ]]; then
+    echo "$0: ERROR: jval-wrapper.sh tool failed quick check: $JVAL_WRAPPER -Q" 1>&2
     exit 5
 fi
 
@@ -401,7 +414,7 @@ fi
 "$JPARSE_TOOL" -q -- "$ENTRY_JSON" 1>&2
 status="$?"
 if [[ $status -ne 0 ]]; then
-    echo "$0: ERROR: $JPARSE_TOOL -q -- $ENTRY_JSON filed," \
+    echo "$0: ERROR: $JPARSE_TOOL -q -- $ENTRY_JSON failed," \
          "error code: $status" 1>&2
     exit 8
 fi
@@ -459,23 +472,27 @@ fi
 
 # use JVAL_WRAPPER to output JSON file_paths values, prepended with the $YYYY_DIR/
 #
-PATTERN='$..file_path'
-if [[ -z $PRINT_RELATIVE ]]; then
-    "$JVAL_WRAPPER" -b -q -- "$ENTRY_JSON" "$PATTERN" | sed -e 's;^;'"$YYYY_DIR/;"
-    status_codes=("${PIPESTATUS[@]}")
-    if [[ ${status_codes[*]} =~ [1-9] ]]; then
-	echo "$0: ERROR: JVAL_WRAPPER -b -q -- $ENTRY_JSON $ENTRY_JSON '$PATTERN' | sed -e 's;^;'$$YYYY_DIR/; failed," \
-	    "error codes: ${status_codes[*]}" 1>&2
-	exit 1
+PATTERN='.//manifest/item/file_path'
+if [[ -z $NOOP ]]; then
+    if [[ -z $PRINT_RELATIVE ]]; then
+	"$JVAL_WRAPPER" -b -q -P -- "$ENTRY_JSON" "$PATTERN" | sed -e 's;^;'"$YYYY_DIR/;"
+	status_codes=("${PIPESTATUS[@]}")
+	if [[ ${status_codes[*]} =~ [1-9] ]]; then
+	    echo "$0: ERROR: $JVAL_WRAPPER -b -q -P -- $ENTRY_JSON '$PATTERN' | sed -e 's;^;'$YYYY_DIR/; failed," \
+		"error codes: ${status_codes[*]}" 1>&2
+	    exit 1
+	fi
+    else
+	"$JVAL_WRAPPER" -b -q -P -- "$ENTRY_JSON" "$PATTERN"
+	status_codes=("${PIPESTATUS[@]}")
+	if [[ ${status_codes[*]} =~ [1-9] ]]; then
+	    echo "$0: ERROR: $JVAL_WRAPPER -b -q -P -- $ENTRY_JSON '$PATTERN' failed," \
+		"error codes: ${status_codes[*]}" 1>&2
+	    exit 1
+	fi
     fi
-else
-    "$JVAL_WRAPPER" -b -q -- "$ENTRY_JSON" "$PATTERN"
-    status_codes=("${PIPESTATUS[@]}")
-    if [[ ${status_codes[*]} =~ [1-9] ]]; then
-	echo "$0: ERROR: JVAL_WRAPPER -b -q -- $ENTRY_JSON $ENTRY_JSON '$PATTERN' failed," \
-	    "error codes: ${status_codes[*]}" 1>&2
-	exit 1
-    fi
+elif [[ $V_FLAG -ge 3 ]]; then
+    echo "$0: debug[3]: because of -n, suppressed printing filelist" 1>&2
 fi
 
 

@@ -525,15 +525,15 @@ some odd need to do so.</p>
 <h3 id="all-jfmt.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/all-jfmt.sh">all-jfmt.sh</a></h3>
 </section>
 <p>Canonically format all entry and author JSON files</p>
-<p>Usage:</p>
+<p>For example:</p>
 <pre><code>    bin/all-jfmt.sh -v 3</code></pre>
-<p>Alternate usage:</p>
+<p>Suggested usage:</p>
 <pre><code>    make all_jfmt</code></pre>
 <section id="all-years">
 <h3 id="all-years.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/all-years.sh">all-years.sh</a></h3>
 </section>
 <p>Run a command on all IOCCC years.</p>
-<p>Usage:</p>
+<p>For example:</p>
 <pre><code>    bin/all-years.sh -v 1 -- bin/gen-year-index.sh -v 1</code></pre>
 <p>If you wish to run instead, for example, <a href="#chk-entry">chk-entry.sh</a>, then do:</p>
 <pre><code>    bin/all-years.sh -v 1 -- bin/chk-entry.sh</code></pre>
@@ -541,7 +541,7 @@ some odd need to do so.</p>
 <h3 id="all-run.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/all-run.sh">all-run.sh</a></h3>
 </section>
 <p>Run a command on all winning entries.</p>
-<p>Usage:</p>
+<p>For example:</p>
 <pre><code>    bin/all-run.sh -v 3 -- bin/quick-readme2index.sh -v 1</code></pre>
 <p>If you wish to run instead, for example, <a href="#readme2index">readme2index.sh</a>, then
 do:</p>
@@ -550,18 +550,18 @@ do:</p>
 <h3 id="bad-display-as.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/bad-display-as.sh">bad-display-as.sh</a></h3>
 </section>
 <p>Test for invalid <code>display_as</code> / <code>display_via_github</code> combos in <code>.entry.json</code> files.</p>
-<p>Usage:</p>
+<p>For example:</p>
 <pre><code>    bin/bad-display-as.sh -v 1 YYYY/dir</code></pre>
 <p>To run over all <code>.entry.json</code> files:</p>
 <pre><code>    bin/all-run.sh -v 1 -- bin/bad-display-as.sh -v 1</code></pre>
-<p>Alternate usage:</p>
+<p>Alternate Example:</p>
 <pre><code>    make find_bad_display_as</code></pre>
 <section id="chk-entry">
 <h3 id="chk-entry.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/chk-entry.sh">chk-entry.sh</a></h3>
 </section>
 <p>Check an entry directory to verify that all the files in its manifest
 (<code>.entry.json</code>) exist in the git repo.</p>
-<p>Usage:</p>
+<p>For example:</p>
 <pre><code>    bin/chk-entry.sh 2020/ferguson1</code></pre>
 <p>If you wish to run it on all entries, we recommend that this tool be invoked via
 the top level <code>Makefile</code>:</p>
@@ -590,7 +590,7 @@ This the JSON member value will be preserved across all files.</p>
 <p>This will allow <code>jsp(1)</code> to print sort_word values.</p>
 <p>We also make sure that the last item from a given file ends in a comma (“,)”,
 due to the bogosity of the so-called JSON spec.</p>
-<p>Usage:</p>
+<p>For example:</p>
 <pre><code>    bin/combine_author_handle.sh &gt; combined_author_handle.json</code></pre>
 <p><strong>NOTE</strong>: This tool assume that all JSON files have been formatted with the
 <code>bin/jprint-wrapper.sh</code> tool. In particular the first line is just “{:,
@@ -611,7 +611,7 @@ for more details on <code>author_handle.json</code> files.</p>
 title</li>
 </ul>
 <p>This tool updates <code>.entry.json</code> files entries whose content is modified.</p>
-<p>Usage:</p>
+<p>For example:</p>
 <pre><code>    bin/csv2entry.sh -v 1</code></pre>
 <p>There is no requirement to sort the CSV files (say through the spreadsheet
 application prior to exporting), convert them to UNIX format, or append a final
@@ -673,7 +673,7 @@ for <a href="../authors.html">authors</a> who previously won. See also the
 FAQ on “<a href="../faq.html#author_handle_faq">author_handle</a>”.
 See also the
 FAQ on “<a href="../faq.html#entry_json">.entry.json</a>”.</p>
-<p>Usage:</p>
+<p>For example:</p>
 <pre><code>    bin/cvt-submission.sh -v 1 YYYY/dir</code></pre>
 <p>Here, <code>YYYY/dir</code> is the path of the submission under the <code>YYYY</code> year directory.</p>
 <p>This tool will form a compressed tarball of any files under <code>YYYY/dir</code>
@@ -739,7 +739,7 @@ from the <code>TOPDIR</code>.</p>
 <h3 id="filelist.entry.json.awk"><a href="https://github.com/ioccc-src/winner/blob/master/bin/filelist.entry.json.awk">filelist.entry.json.awk</a></h3>
 </section>
 <p>Generate a list of files in an entry’s manifest (the <code>.entry.json</code> file).</p>
-<p>Usage:</p>
+<p>For example:</p>
 <pre><code>    awk -f bin/filelist.entry.json.awk 2020/ferguson1/.entry.json</code></pre>
 <p>In the above example, the command will print the paths from the top repo directory,
 of all the files of the
@@ -751,7 +751,7 @@ of all the files of the
 <li>2020/ferguson1/prog.orig.c</li>
 <li>…</li>
 </ul>
-<p>Usage:</p>
+<p>For example:</p>
 <pre><code>    awk -v print_relative=true -f bin/filelist.entry.json.awk 2025/ayu/.entry.json</code></pre>
 <p>In this case the command will paths, relative to the winning entry directory,
 of all the files of the
@@ -763,7 +763,7 @@ of all the files of the
 <li>arduino/serial_play/serial_play.ino</li>
 <li>…</li>
 </ul>
-<p>Usage:</p>
+<p>For example:</p>
 <pre><code>    awk -v print_until=true -f bin/filelist.entry.json.awk 2025/tompng/.entry.json</code></pre>
 <p>In the above example, the command will print the contents of <code>2025/tompng/.entry.json</code>,
 from the start of the file, up until the final manifest array members, final line.
@@ -793,7 +793,7 @@ of scanning the typical <code>.entey.json</code> file format.</p>
 <h3 id="filelist.entry.json.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/filelist.entry.json.sh">filelist.entry.json.sh</a></h3>
 </section>
 <p>Generate a list of files in an entry’s manifest in the <code>.entry.json</code> file.</p>
-<p>Usage:</p>
+<p>For example:</p>
 <pre><code>    bin/filelist.entry.json.sh 2025/cesmoak</code></pre>
 <p>In the above example, the command will print the paths from the top repo directory,
 of all the files of the
@@ -805,7 +805,7 @@ of all the files of the
 <li>2025/cesmoak/a_suggestion_try_sh_before_README.txt</li>
 <li>…</li>
 </ul>
-<p>Usage:</p>
+<p>For example:</p>
 <pre><code>    bin/filelist.entry.json.sh -p 2025/ncw1</code></pre>
 <p>In this case the command will paths, relative to the winning entry directory,
 of all the files of the
@@ -833,7 +833,7 @@ satisfy html lints.</p>
 <p>This script is used in <a href="#md2html">md2html.sh</a> via
 <a href="#output-index-inventory">output-index-inventory.sh</a> and
 <a href="#subst-entry-index">subst.entry-index.sh</a>.</p>
-<p>Usage:</p>
+<p>For example:</p>
 <pre><code>    cmd | sed -f bin/html.sed
 
     sed -f bin/html.sed file &gt; output
@@ -849,7 +849,7 @@ links to local files.</p>
 checks that local files linked by markdown actually exist.</p>
 <p>This tool does <strong>NOT</strong> check HTML file links, it checks markdown
 based links.</p>
-<p>Usage:</p>
+<p>For example:</p>
 <pre><code>    bin/find-missing-links.sh -v 1</code></pre>
 <p>If no missing links are found, this tool exits 0 with no output
 (debug messages notwithstanding), otherwise this tool will exit non-zero.</p>
@@ -870,7 +870,7 @@ details.</p>
 <a href="https://github.com/xexyl/jparse/">jparse repo</a>, and searches for any invalid
 JSON files in the tree.</p>
 <p>This is important because the IOCCC makes extensive use of JSON.</p>
-<p>Usage:</p>
+<p>For example:</p>
 <pre><code>    bin/find-invalid-json.sh -v 1</code></pre>
 <p>If no invalid JSON files are found, this tool exits 0 with no output
 (debug messages notwithstanding), otherwise this tool will exit non-zero.</p>
@@ -880,13 +880,13 @@ JSON files in the tree.</p>
 <h3 id="format-headers.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/format-headers.sh">format-headers.sh</a></h3>
 </section>
 <p>Format select headers and preceding empty lines in entry README.md files.</p>
-<p>Usage:</p>
+<p>For example:</p>
 <pre><code>    bin/format-headers.sh</code></pre>
 <section id="gen-authors">
 <h3 id="gen-authors.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/gen-authors.sh">gen-authors.sh</a></h3>
 </section>
 <p>Generate the top level <a href="../authors.html">authors.html</a> page.</p>
-<p>Usage:</p>
+<p>For example:</p>
 <pre><code>    bin/gen-authors.sh -v 1</code></pre>
 <p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
 <pre><code>    make gen_authors</code></pre>
@@ -894,7 +894,7 @@ JSON files in the tree.</p>
 <h3 id="gen-location.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/gen-location.sh">gen-location.sh</a></h3>
 </section>
 <p>Generate the top level <a href="../location.html">location.html</a> page.</p>
-<p>Usage:</p>
+<p>For example:</p>
 <pre><code>    bin/gen-location.sh -v 1</code></pre>
 <p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
 <pre><code>    make gen_location</code></pre>
@@ -903,7 +903,7 @@ JSON files in the tree.</p>
 </section>
 <p>Generate the HTML files (other than the README.md to index.html files) from
 markdown files, of all entries.</p>
-<p>Usage:</p>
+<p>For example:</p>
 <pre><code>    bin/gen-other-html.sh -v 1</code></pre>
 <p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
 <pre><code>    make gen_other_html</code></pre>
@@ -913,7 +913,7 @@ markdown files, of all entries.</p>
 <p>Generate a <code>README.md</code> file a submission’s <code>remarks.md</code> and the
 template files in <a href="https://github.com/ioccc-src/winner/blob/master/template/entry/README.md.head">template/entry/README.md.head</a>
 and <a href="https://github.com/ioccc-src/winner/blob/master/template/entry/README.md.tail">template/entry/README.md.tail</a>.</p>
-<p>Usage:</p>
+<p>For example:</p>
 <pre><code>    bin/gen-readme.sh -v 1 YYYY template/entry/README.md.head YYYY/dir/remarks.md template/entry/README.md.tail YYYY/dir/README.md</code></pre>
 <p>While this tool is used by <a href="#cvt-submission">cvt-submission</a>, it may also
 be used by hand by the <a href="../judges.html">Judges</a> during the final judging rounds.</p>
@@ -921,7 +921,7 @@ be used by hand by the <a href="../judges.html">Judges</a> during the final judg
 <h3 id="gen-sitemap.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/gen-sitemap.sh">gen-sitemap.sh</a></h3>
 </section>
 <p>Generate an XML sitemap for the IOCCC website.</p>
-<p>Usage:</p>
+<p>For example:</p>
 <pre><code>    bin/gen-sitemap.sh -v 1</code></pre>
 <p>This would generate the <a href="../sitemap.xml">sitemap.xml</a> file.</p>
 <p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
@@ -933,7 +933,7 @@ be used by hand by the <a href="../judges.html">Judges</a> during the final judg
 <a href="https://github.com/ioccc-src/winner/blob/master/news.md">news.md</a> and/or whether the <code>contest_status</code> is changed
 at the command line.</p>
 <p>Without an argument, the <code>contest_status</code> is unchanged.</p>
-<p>Usage:</p>
+<p>For example:</p>
 <pre><code>    bin/gen-status.sh -v 1</code></pre>
 <p>To force the <code>contest_status</code> to be closed:</p>
 <pre><code>    bin/gen-status.sh -v 1 closed</code></pre>
@@ -949,7 +949,7 @@ do that, that is not a problem.</p>
 <h3 id="gen-top-html.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/gen-top-html.sh">gen-top-html.sh</a></h3>
 </section>
 <p>Generate a number of top level HTML pages for the IOCCC websites.</p>
-<p>Usage:</p>
+<p>For example:</p>
 <pre><code>    bin/gen-top-html.sh -v 1</code></pre>
 <p>Examples of top level HTML pages built by this tool include:</p>
 <ul>
@@ -974,7 +974,7 @@ do that, that is not a problem.</p>
 <p>Generate an <code>rules.html</code> page for a given IOCCC year, if <code>rules.md</code> exists.</p>
 <p>Generate an <code>guidelines.html</code> page for a given IOCCC year, if <code>guidelines.md</code> exists.</p>
 <p>Generate an <code>challenge.html</code> page for a given IOCCC year, if <code>challenge.md</code> exists.</p>
-<p>Usage:</p>
+<p>For example:</p>
 <pre><code>    bin/gen-year-index.sh -v 1 2025</code></pre>
 <p>This would create the <a href="../2025/index.html">2025/index.html</a> file.</p>
 <p>This would create the <a href="../2025/rules.html">2025/rules.html</a> file
@@ -993,7 +993,6 @@ from from the markdown files, via the top level <code>Makefile</code>:</p>
 <h3 id="gen-years.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/gen-years.sh">gen-years.sh</a></h3>
 </section>
 <p>Generate the top level <a href="../years.html">years.html</a> page.</p>
-<p>Usage:</p>
 <p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
 <pre><code>    make gen_year_index</code></pre>
 <p>which will create the <code>index.html</code> for every IOCCC year (<code>1984/index.html</code>,
@@ -1002,7 +1001,7 @@ from from the markdown files, via the top level <code>Makefile</code>:</p>
 <h3 id="gen-years.sh-1"><a href="https://github.com/ioccc-src/winner/blob/master/bin/gen-years.sh">gen-years.sh</a></h3>
 </section>
 <p>Generate the top level <a href="../years.html">years.html</a> page.</p>
-<p>Usage:</p>
+<p>For example:</p>
 <pre><code>    bin/gen-years.sh -v 1</code></pre>
 <p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
 <pre><code>    make gen_years</code></pre>
@@ -1010,25 +1009,19 @@ from from the markdown files, via the top level <code>Makefile</code>:</p>
 <h3 id="jfmt-wrapper.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/jfmt-wrapper.sh">jfmt-wrapper.sh</a></h3>
 </section>
 <p>The <a href="https://github.com/ioccc-src/winner/blob/master/bin/jfmt-wrapper.sh">jfmt-wrapper.sh</a> tool is a wrapper
-tool for <code>jfmt(1)</code>, a tool that will format a JSON file into a canonical style.</p>
-<p><strong>NOTE</strong>: As of 2024 Oct 08 the <code>jfmt(1)</code> tool has not been written,
-so <a href="https://github.com/ioccc-src/winner/blob/master/bin/jfmt-wrapper.sh">jfmt-wrapper.sh</a> uses the
-<code>JSONPath.sh(1)</code> tool from the recently forked and modified
-<a href="https://github.com/lcn2/JSONPath.sh">JSONPath.sh tool</a>.</p>
-<p>Usage:</p>
+tool for <a href="https://github.com/ioccc-src/winner/blob/master/bin/jprint-wrapper.sh">jprint-wrapper.sh</a>,
+a tool that will format a JSON file into the IOCCC JSON style.</p>
+<p>If the JSON file is already in the form of the IOCCC JSON style,
+then the JSON file is NOT modified, otherwise it will be updated
+to be in the IOCCC JSON style.</p>
+<p>For example:</p>
 <pre><code>    bin/jfmt-wrapper.sh .entry.json</code></pre>
 <section id="jprint-wrapper">
 <h3 id="jprint-wrapper.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/jprint-wrapper.sh">jprint-wrapper.sh</a></h3>
 </section>
 <p>The <a href="https://github.com/ioccc-src/winner/blob/master/bin/jprint-wrapper.sh">jprint-wrapper.sh</a> tool is a wrapper
-tool for <code>jprint(1)</code>, a tool that will format JSON in a canonical style
-to stdout.</p>
-<p><strong>NOTE</strong>: <code>jprint(1)</code> is a planned tool based on <code>jfmt(1)</code>.
-As of 2024 Oct 08 that tool has not been written, so
-<a href="https://github.com/ioccc-src/winner/blob/master/bin/jprint-wrapper.sh">jprint-wrapper.sh</a> uses
-the <code>JSONPath.sh(1)</code> tool from the recently forked and modified
-<a href="https://github.com/lcn2/JSONPath.sh">JSONPath.sh tool</a>.</p>
-<p>Usage:</p>
+tool using python3 to format JSON in the IOCCC JSON style.</p>
+<p>For example:</p>
 <pre><code>    bin/jprint-wrapper.sh .entry.json</code></pre>
 <p>Or use in a pipe:</p>
 <pre><code>    cat .info.json | bin/jprint-wrapper.sh</code></pre>
@@ -1036,41 +1029,32 @@ the <code>JSONPath.sh(1)</code> tool from the recently forked and modified
 <h3 id="jval-wrapper.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/jval-wrapper.sh">jval-wrapper.sh</a></h3>
 </section>
 <p>The <a href="https://github.com/ioccc-src/winner/blob/master/bin/jval-wrapper.sh">jval-wrapper.sh</a> tool is a wrapper
-tool for <code>jval(1)</code>, a tool that will output a JSON value using the
-XPath for JSON mechanism. For information in XPath for JSON see:</p>
-<ul>
-<li><a href="https://goessner.net/articles/JsonPath/">https://goessner.net/articles/JsonPath/</a></li>
-<li><a href="https://jsonpath.com">https://jsonpath.com</a></li>
-<li><a href="https://github.com/lcn2/JSONPath.sh?tab=readme-ov-file#jsonpath-patterns-and-extensions">https://github.com/lcn2/JSONPath.sh?tab=readme-ov-file#jsonpath-patterns-and-extensions</a></li>
-</ul>
-<p><strong>NOTE</strong>: As of 2024 Oct 08 the <code>jval(1)</code> tool has not been written,
-so <a href="https://github.com/ioccc-src/winner/blob/master/bin/jval-wrapper.sh">jval-wrapper.sh</a> uses the
-<code>jsp(1)</code> tool from <a href="https://github.com/kjozsa/jsp">https://github.com/kjozsa/jsp</a>
-or if not found, the <code>JSONPath.sh(1)</code> tool from the recently forked and modified
-<a href="https://github.com/lcn2/JSONPath.sh">JSONPath.sh tool</a>.</p>
-<p>Usage:</p>
-<pre><code>    bin/jval-wrapper.sh [-b] [-q] [-T] file.json [pattern]
-
-    -b        print only values (def: print both JSON member and JSON value)
-    -q        remove enclosing double quotes (def: keep any enclosing double quotes)
-    -T        trim all newlines (def: do not)
-
-    file.json JSON file to process, - ==&gt; read stdin
-    pattern   Xpath for JSON query pattern</code></pre>
+tool using python3 to use the XPath method to extract JSON values.</p>
+<p>For information on XPath, see <a href="https://www.w3.org/TR/xpath/">https://www.w3.org/TR/xpath/</a>.</p>
 <p>For example:</p>
-<pre><code>    bin/jval-wrapper.sh 1984/mullender/.entry.json &#39;$.award&#39;
-    bin/jval-wrapper.sh 1984/mullender/.entry.json &#39;$..author_handle&#39;
+<pre><code>    bin/jval-wrapper.sh 1984/mullender/.entry.json &#39;.//award&#39;
+    bin/jval-wrapper.sh 1984/mullender/.entry.json &#39;.//author_handle&#39;
 
-    bin/jval-wrapper.sh 1984/mullender/.entry.json &#39;$.manifest[2]&#39;
-    bin/jval-wrapper.sh -q 1984/mullender/.entry.json &#39;$.manifest[2]&#39;
+    bin/jval-wrapper.sh -e 1984/mullender/.entry.json &#39;.//award&#39;
+    bin/jval-wrapper.sh -e 1984/mullender/.entry.json &#39;.//author_handle&#39;
 
-    bin/jval-wrapper.sh -b 1984/mullender/.entry.json &#39;$.manifest[2].entry_text&#39;
-    bin/jval-wrapper.sh -b -q 1984/mullender/.entry.json &#39;$.manifest[2].inventory_order&#39;
+    bin/jval-wrapper.sh 1984/mullender/.entry.json &#39;.//manifest/item[3]/*&#39;
+    bin/jval-wrapper.sh -q 1984/mullender/.entry.json &#39;.//manifest/item[3]/*&#39;
 
-    bin/jval-wrapper.sh author/Anton_Algmyr.json &#39;$.full_name&#39;
-    bin/jval-wrapper.sh -q -T author/Anton_Algmyr.json &#39;$.full_name&#39; | jstrdecode -</code></pre>
-<p><strong>NOTE</strong>: With <code>jstrdecode(1)</code> version 1.2.3 or better, one can use <code>jstrdecode -N</code>
-and not have to use <code>-T</code> with <code>bin/jval-wrapper.sh</code>.</p>
+    bin/jval-wrapper.sh -b 1984/mullender/.entry.json &#39;.//manifest/item[3]//entry_text&#39;
+    bin/jval-wrapper.sh -b -q 1984/mullender/.entry.json &#39;.//manifest/item[3]//inventory_order&#39;
+
+    bin/jval-wrapper.sh author/Anton_Algmyr.json &#39;.//full_name&#39;
+
+    bin/jval-wrapper.sh -q author/Anton_Algmyr.json &#39;.//full_name&#39;
+    bin/jval-wrapper.sh -q -P author/Anton_Algmyr.json &#39;.//full_name&#39;
+    bin/jval-wrapper.sh -b author/Anton_Algmyr.json &#39;.//full_name&#39;
+    bin/jval-wrapper.sh -b -q author/Anton_Algmyr.json &#39;.//full_name&#39;
+    bin/jval-wrapper.sh -b -P author/Anton_Algmyr.json &#39;.//full_name&#39;
+    bin/jval-wrapper.sh -b -q -P author/Anton_Algmyr.json &#39;.//full_name&#39;
+
+    bin/jval-wrapper.sh -e author/Anton_Algmyr.json &#39;.//full_name&#39;
+    bin/jval-wrapper.sh -e -P author/Anton_Algmyr.json &#39;.//full_name&#39;</code></pre>
 <section id="manifest-csv-entry">
 <h3 id="manifest.csv.entry.awk"><a href="https://github.com/ioccc-src/winner/blob/master/bin/manifest.csv.entry.awk">manifest.csv.entry.awk</a></h3>
 </section>
@@ -1139,7 +1123,7 @@ steps to announce a new set of winning IOCCC entries.</p>
 <p>This tool will generate an initial <code>challenge.md</code> file that
 the <a href="../judges.html">Judges</a> will modify by adding individual
 <strong>fun challenges</strong> for each new winning entry.</p>
-<p>Usage:</p>
+<p>For example:</p>
 <pre><code>    bin/new-challenge-md.sh -v 1 YYYY</code></pre>
 <p>Here, <code>YYYY</code> must be a new 4-digit (happy :-)) new IOCCC year.</p>
 <p>See also the
@@ -1149,7 +1133,7 @@ FAQ on “<a href="../faq.html#what_fun_challenge">fun challenges</a>”.</p>
 </section>
 <p>This tool is used by the <a href="../judges.html">Judges</a> as one of the
 steps needed to announce a new winning IOCCC entry.</p>
-<p>Usage:</p>
+<p>For example:</p>
 <pre><code>    mkdir -p YYYY/dir
     bin/new-dir.sh YYYY/dir</code></pre>
 <p>Here, <code>YYYY/dir</code> must be the path to the winning IOCCC entry.</p>
@@ -1173,14 +1157,14 @@ It will form <code>YYYY/README.md</code> if needed, from <code>template/README.m
 For example, files such as <code>YYYY/README.md</code> and/or <code>YYYY/index.html</code>
 might contain “<em>triple X</em>” comments indicating where the
 <a href="../judges.html">Judges</a> need to add content.</p>
-<p>Usage:</p>
+<p>For example:</p>
 <pre><code>    bin/new-year.sh -v 1 YYYY</code></pre>
 <p>Here, <code>YYYY</code> must be a new 4-digit (happy :-)) new IOCCC year.</p>
 <section id="othermd2html">
 <h3 id="othermd2html.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/othermd2html.sh">othermd2html.sh</a></h3>
 </section>
 <p>Convert a non-README.md file in an entry to HTML.</p>
-<p>Usage:</p>
+<p>For example:</p>
 <pre><code>    bin/othermd2html.sh YYYY/dir/pathto.md</code></pre>
 <p>For example:</p>
 <pre><code>    bin/othermd2html.sh -v 1 2020/ferguson1/chocolate-cake.md</code></pre>
@@ -1231,7 +1215,7 @@ up.</p>
 <p>If only a few <code>index.hmtl</code> files need updating, then
 this command will only briefly pause while the
 <a href="index.html#readme2index">readme2index.sh</a> can take much longer.</p>
-<p>Usage:</p>
+<p>For example:</p>
 <pre><code>    # For all entries:
     bin/all-run.sh -v 3 -- bin/quick-readme2index.sh -v 1
 
@@ -1247,7 +1231,7 @@ and <code>index.html</code> are correct. If in doubt, use
 <h3 id="readme2index.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/readme2index.sh">readme2index.sh</a></h3>
 </section>
 <p>Convert an entry’s <code>README.md</code> into its <code>index.html</code> file.</p>
-<p>Usage:</p>
+<p>For example:</p>
 <pre><code>    bin/readme2index.sh -v 3 1984/mullender</code></pre>
 <p>To build <code>index.html</code> files for all entries:</p>
 <pre><code>    bin/all-run.sh -v 3 -- bin/readme2index.sh -v 1</code></pre>
@@ -1266,7 +1250,7 @@ We sort with lines starting with <code>!</code> fourth.</p>
 <h3 id="sort.gitignore.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/sort.gitignore.sh">sort.gitignore.sh</a></h3>
 </section>
 <p>Sort a <code>.gitignore</code> in a entry directory.</p>
-<p>Usage:</p>
+<p>For example:</p>
 <pre><code>    bin/sort.gitignore.sh -v 1 YYYY/dir</code></pre>
 <p>Suggested usage (for all <code>.gitignore</code> files):</p>
 <pre><code>    bin/all-run.sh -- bin/sort.gitignore.sh -v 1</code></pre>
@@ -1312,7 +1296,7 @@ to be used by <a href="index.html#gen-status">gen-status.sh</a>.</p>
 <h2 id="tar-entry.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/tar-entry.sh">tar-entry.sh</a></h2>
 </section>
 <p>Form a compressed tarball for an entry.</p>
-<p>Usage:</p>
+<p>For example:</p>
 <pre><code>    bin/tar-entry.sh -v 1 YYYY/dir</code></pre>
 <p>Suggested usage:</p>
 <pre><code>    bin/all-run.sh -v 3 -- bin/tar-entry.sh -v 1 -W</code></pre>
@@ -1325,7 +1309,7 @@ tarballs is to provide the files needed to attempt to compile entries.</p>
 <h2 id="tar-year.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/tar-year.sh">tar-year.sh</a></h2>
 </section>
 <p>Form a compressed tarball for an IOCCC year.</p>
-<p>Usage:</p>
+<p>For example:</p>
 <pre><code>    bin/tar-year.sh -v 1 YYYY</code></pre>
 <p>Suggested usage:</p>
 <pre><code>    bin/all-years.sh -v 3 -- bin/tar-year.sh -v 1 -W</code></pre>
@@ -1340,7 +1324,7 @@ tarballs is to provide the files needed to attempt to compile entries.</p>
 <h2 id="untar-entry.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/untar-entry.sh">untar-entry.sh</a></h2>
 </section>
 <p>Untar an entry’s compressed tarball.</p>
-<p>Usage:</p>
+<p>For example:</p>
 <pre><code>    bin/untar-entry.sh -v 1 YYYY/dir</code></pre>
 <p>Suggested usage:</p>
 <pre><code>    bin/all-run.sh -v 3 -- bin/untar-entry.sh -v 1</code></pre>
@@ -1350,7 +1334,7 @@ tarballs is to provide the files needed to attempt to compile entries.</p>
 <h2 id="untar-year.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/untar-year.sh">untar-year.sh</a></h2>
 </section>
 <p>Untar an IOCCC year’s compressed tarball.</p>
-<p>Usage:</p>
+<p>For example:</p>
 <pre><code>    bin/untar-year.sh -v 1 YYYY</code></pre>
 <p>Suggested usage:</p>
 <pre><code>    bin/all-years.sh -v 3 -- bin/untar-year.sh -v 1</code></pre>

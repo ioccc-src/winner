@@ -136,7 +136,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="2.1.3 2026-08-06"
+export VERSION="2.3.0 2026-11-16"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -153,37 +153,15 @@ if [[ $status -eq 0 ]]; then
 fi
 export TOPDIR
 #
-VERGE=$(type -P verge)
-export VERGE
-if [[ -z $VERGE ]]; then
-    echo "$0: FATAL: verge is not installed or not in \$PATH" 1>&2
-    echo "$0: notice: to install verge:" 1>&2
-    echo "$0: notice: run: git clone https://github.com/ioccc-src/mkiocccentry.git" 1>&2
-    echo "$0: notice: then: cd mkiocccentry && make clobber all" 1>&2
-    echo "$0: notice: then: cd jparse && sudo make install clobber" 1>&2
-    exit 5
+JVAL_WRAPPER=$(type -P jval-wrapper.sh 2>/dev/null || true)
+if [[ -z $JVAL_WRAPPER ]]; then
+    if [[ -n $TOPDIR && -x "$TOPDIR/bin/jval-wrapper.sh" ]]; then
+	JVAL_WRAPPER="$TOPDIR/bin/jval-wrapper.sh"
+    else
+	JVAL_WRAPPER="bin/jval-wrapper.sh"
+    fi
 fi
-#
-JSTRDECODE=$(type -P jstrdecode)
-export JSTRDECODE
-if [[ -z $JSTRDECODE ]]; then
-    echo "$0: FATAL: jstrdecode is not installed or not in \$PATH" 1>&2
-    echo "$0: notice: to install jstrdecode:" 1>&2
-    echo "$0: notice: run: git clone https://github.com/ioccc-src/mkiocccentry.git" 1>&2
-    echo "$0: notice: then: cd mkiocccentry && make clobber all" 1>&2
-    echo "$0: notice: then: cd jparse && sudo make install clobber" 1>&2
-    exit 5
-fi
-export MIN_JSTRDECODE_VERSION="2.2.3"
-JSTRDECODE_VERSION=$("$JSTRDECODE" -V | head -1 | awk '{print $3;}')
-if ! "$VERGE" "$JSTRDECODE_VERSION" "$MIN_JSTRDECODE_VERSION"; then
-    echo "$0: FATAL: jstrdecode version: $JSTRDECODE_VERSION < minimum version: $MIN_JSTRDECODE_VERSION" 1>&2
-    echo "$0: notice: consider updating jstrdecode from mkiocccentry repo" 1>&2
-    echo "$0: notice: run: git clone https://github.com/ioccc-src/mkiocccentry.git" 1>&2
-    echo "$0: notice: then: cd mkiocccentry && make clobber all" 1>&2
-    echo "$0: notice: then: cd jparse && sudo make install clobber" 1>&2
-    exit 5
-fi
+export JVAL_WRAPPER
 #
 export DOCROOT_SLASH="../../"
 export REPO_TOP_URL="https://github.com/ioccc-src/winner"
@@ -194,7 +172,7 @@ export SITE_URL="https://www.ioccc.org"
 
 # set usage message
 #
-export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-n] [-N]
+export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-j jval] [-n] [-N]
 			[-U URL] [-w site_url] [-e string ..] [-E exitcode]
 			YYYY/dir
 
@@ -205,6 +183,7 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-n] [-N]
 	-d topdir	set topdir (def: $TOPDIR)
 	-D docroot/	set the document root path followed by slash (def: $DOCROOT_SLASH)
 			NOTE: 'docroot' must end in a slash
+	-j jval		path to jval-wrapper.sh tool (def: $JVAL_WRAPPER)
 
 	-n		go thru the actions, but do not update any files (def: do the action)
 	-N		do not process file, just parse arguments and ignore the file (def: process the file)
@@ -242,7 +221,7 @@ $NAME version: $VERSION"
 function output_award
 {
     local ENTRY_JSON_PATH;	# the .entry.json path
-    local PATTERN;		# XPath for JSON pattern
+    local PATTERN;		# XPath pattern
 
     # parse args
     #
@@ -266,14 +245,14 @@ function output_award
 
     # obtain the award string
     #
-    PATTERN='$..award'
+    PATTERN='.//award'
     if [[ $V_FLAG -ge 5 ]]; then
-	echo  "$0: debug[5]: about to run: $JVAL_WRAPPER -b -q -- $ENTRY_JSON_PATH '$PATTERN' | $JSTRDECODE -d -q -N - | sed -f $HTML_SED" 1>&2
+	echo "$0: debug[5]: about to run: $JVAL_WRAPPER -b -q -P -- $ENTRY_JSON_PATH '$PATTERN' | sed -f $HTML_SED" 1>&2
     fi
-    "$JVAL_WRAPPER" -b -q "$ENTRY_JSON_PATH" "$PATTERN" | "$JSTRDECODE" -d -q -N - | sed -f "$HTML_SED"
+    "$JVAL_WRAPPER" -b -q -P -- "$ENTRY_JSON_PATH" "$PATTERN" | sed -f "$HTML_SED"
     status_codes=("${PIPESTATUS[@]}")
     if [[ ${status_codes[*]} =~ [1-9] ]]; then
-	echo "$0: ERROR: in output_award: $JVAL_WRAPPER -b -q -- $ENTRY_JSON_PATH '$PATTERN' | $JSTRDECODE -d -q -N - | sed -f $HTML_SED failed," \
+	echo "$0: ERROR: in output_award: $JVAL_WRAPPER -b -q -P -- $ENTRY_JSON_PATH '$PATTERN' | sed -f $HTML_SED failed," \
 	     "error codes: ${status_codes[*]}" 1>&2
 	return 5
     fi
@@ -293,7 +272,7 @@ function output_award
 function output_abstract
 {
     local ENTRY_JSON_PATH;	# the .entry.json path
-    local PATTERN;		# XPath for JSON pattern
+    local PATTERN;		# XPath pattern
 
     # parse args
     #
@@ -317,14 +296,14 @@ function output_abstract
 
     # obtain the abstract string
     #
-    PATTERN='$..abstract'
+    PATTERN='.//abstract'
     if [[ $V_FLAG -ge 5 ]]; then
-	echo  "$0: debug[5]: about to run: $JVAL_WRAPPER -b -q -- $ENTRY_JSON_PATH '$PATTERN' | $JSTRDECODE -d -q -N - | sed -f $HTML_SED" 1>&2
+	echo "$0: debug[5]: about to run: $JVAL_WRAPPER -b -q -P -- $ENTRY_JSON_PATH '$PATTERN' | sed -f $HTML_SED" 1>&2
     fi
-    "$JVAL_WRAPPER" -b -q "$ENTRY_JSON_PATH" "$PATTERN" | "$JSTRDECODE" -d -q -N - | sed -f "$HTML_SED"
+    "$JVAL_WRAPPER" -b -q -P -- "$ENTRY_JSON_PATH" "$PATTERN" | sed -f "$HTML_SED"
     status_codes=("${PIPESTATUS[@]}")
     if [[ ${status_codes[*]} =~ [1-9] ]]; then
-	echo "$0: ERROR: in output_abstract: $JVAL_WRAPPER -b -q -- $ENTRY_JSON_PATH '$PATTERN | $JSTRDECODE -d -q -N - | sed -f $HTML_SED failed," \
+	echo "$0: ERROR: in output_abstract: $JVAL_WRAPPER -b -q -P -- $ENTRY_JSON_PATH '$PATTERN' | sed -f $HTML_SED failed," \
 	     "error codes: ${status_codes[*]}" 1>&2
 	return 5
     fi
@@ -346,6 +325,7 @@ function output_youtube_img_id
 {
     local README_PATH; # YYYY/dir/README.md
     local VIDEO_ID;    # Extracted video ID (if it exists)
+    local ID;
 
     # Video IDs for which YouTube has no maxresdefault.jpg
     # This should only be old videos
@@ -384,7 +364,6 @@ function output_youtube_img_id
 
     # case: Video IDs for which YouTube has no maxresdefault.jpg
     #
-    local ID
     for ID in "${NO_MAXRES_ID_SET[@]}"; do
         if [[ $VIDEO_ID == "$ID" ]]; then
             return 0
@@ -406,7 +385,7 @@ export DO_NOT_PROCESS=
 
 # parse command line
 #
-while getopts :hv:Vd:D:nNU:w:e:E: flag; do
+while getopts :hv:Vd:D:j:nNU:w:e:E: flag; do
   case "$flag" in
     h) echo "$USAGE" 1>&2
 	exit 2
@@ -428,6 +407,8 @@ while getopts :hv:Vd:D:nNU:w:e:E: flag; do
 	   ;;
 	esac
 	DOCROOT_SLASH="$OPTARG"
+	;;
+    j) JVAL_WRAPPER="$OPTARG"
 	;;
     n) NOOP="-n"
 	;;
@@ -556,17 +537,17 @@ export BIN_DIR="bin"
 
 # verify that the bin/jval-wrapper.sh tool is executable
 #
-JVAL_WRAPPER="$BIN_DIR/jval-wrapper.sh"
-if [[ ! -e $JVAL_WRAPPER ]]; then
-    echo  "$0: ERROR: bin/jval-wrapper.sh does not exist: $JVAL_WRAPPER" 1>&2
-    exit 5
+JVAL_TOOL=$(type -P "$JVAL_WRAPPER" 2>/dev/null || true)
+if [[ -z "$JVAL_TOOL" || ! -x "$JVAL_TOOL" ]]; then
+    if [[ ! -x "$JVAL_WRAPPER" ]]; then
+	echo "$0: ERROR: jval-wrapper.sh tool not found or not executable: $JVAL_WRAPPER" 1>&2
+	exit 5
+    fi
 fi
-if [[ ! -f $JVAL_WRAPPER ]]; then
-    echo  "$0: ERROR: bin/jval-wrapper.sh is not a regular file: $JVAL_WRAPPER" 1>&2
-    exit 5
-fi
-if [[ ! -x $JVAL_WRAPPER ]]; then
-    echo  "$0: ERROR: bin/jval-wrapper.sh is not an executable file: $JVAL_WRAPPER" 1>&2
+"$JVAL_WRAPPER" -Q
+status="$?"
+if [[ $status -ne 0 ]]; then
+    echo "$0: ERROR: jval-wrapper.sh tool failed quick check: $JVAL_WRAPPER -Q" 1>&2
     exit 5
 fi
 
@@ -721,14 +702,11 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: V_FLAG=$V_FLAG" 1>&2
     echo "$0: debug[3]: GIT_TOOL=$GIT_TOOL" 1>&2
     echo "$0: debug[3]: TOPDIR=$TOPDIR" 1>&2
-    echo "$0: debug[3]: VERGE=$VERGE" 1>&2
-    echo "$0: debug[3]: JSTRDECODE=$JSTRDECODE" 1>&2
-    echo "$0: debug[3]: MIN_JSTRDECODE_VERSION=$MIN_JSTRDECODE_VERSION" 1>&2
-    echo "$0: debug[3]: JSTRDECODE_VERSION=$JSTRDECODE_VERSION" 1>&2
     echo "$0: debug[3]: DOCROOT_SLASH=$DOCROOT_SLASH" 1>&2
     echo "$0: debug[3]: REPO_TOP_URL=$REPO_TOP_URL" 1>&2
     echo "$0: debug[3]: REPO_URL=$REPO_URL" 1>&2
     echo "$0: debug[3]: SITE_URL=$SITE_URL" 1>&2
+    echo "$0: debug[3]: URL=$URL" 1>&2
     echo "$0: debug[3]: NOOP=$NOOP" 1>&2
     echo "$0: debug[3]: DO_NOT_PROCESS=$DO_NOT_PROCESS" 1>&2
     echo "$0: debug[3]: ENTRY_PATH=$ENTRY_PATH" 1>&2

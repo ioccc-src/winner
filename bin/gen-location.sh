@@ -104,7 +104,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="2.0.3 2026-05-07"
+export VERSION="2.2.0 2026-11-16"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -121,37 +121,15 @@ if [[ $status -eq 0 ]]; then
 fi
 export TOPDIR
 #
-VERGE=$(type -P verge)
-export VERGE
-if [[ -z $VERGE ]]; then
-    echo "$0: FATAL: verge is not installed or not in \$PATH" 1>&2
-    echo "$0: notice: to install verge:" 1>&2
-    echo "$0: notice: run: git clone https://github.com/ioccc-src/mkiocccentry.git" 1>&2
-    echo "$0: notice: then: cd mkiocccentry && make clobber all" 1>&2
-    echo "$0: notice: then: cd jparse && sudo make install clobber" 1>&2
-    exit 5
+JVAL_WRAPPER=$(type -P jval-wrapper.sh 2>/dev/null || true)
+if [[ -z $JVAL_WRAPPER ]]; then
+    if [[ -n $TOPDIR && -x "$TOPDIR/bin/jval-wrapper.sh" ]]; then
+	JVAL_WRAPPER="$TOPDIR/bin/jval-wrapper.sh"
+    else
+	JVAL_WRAPPER="bin/jval-wrapper.sh"
+    fi
 fi
-#
-JSTRDECODE=$(type -P jstrdecode)
-export JSTRDECODE
-if [[ -z $JSTRDECODE ]]; then
-    echo "$0: FATAL: jstrdecode is not installed or not in \$PATH" 1>&2
-    echo "$0: notice: to install jstrdecode:" 1>&2
-    echo "$0: notice: run: git clone https://github.com/ioccc-src/mkiocccentry.git" 1>&2
-    echo "$0: notice: then: cd mkiocccentry && make clobber all" 1>&2
-    echo "$0: notice: then: cd jparse && sudo make install clobber" 1>&2
-    exit 5
-fi
-export MIN_JSTRDECODE_VERSION="2.2.3"
-JSTRDECODE_VERSION=$("$JSTRDECODE" -V | head -1 | awk '{print $3;}')
-if ! "$VERGE" "$JSTRDECODE_VERSION" "$MIN_JSTRDECODE_VERSION"; then
-    echo "$0: FATAL: jstrdecode version: $JSTRDECODE_VERSION < minimum version: $MIN_JSTRDECODE_VERSION" 1>&2
-    echo "$0: notice: consider updating jstrdecode from mkiocccentry repo" 1>&2
-    echo "$0: notice: run: git clone https://github.com/ioccc-src/mkiocccentry.git" 1>&2
-    echo "$0: notice: then: cd mkiocccentry && make clobber all" 1>&2
-    echo "$0: notice: then: cd jparse && sudo make install clobber" 1>&2
-    exit 5
-fi
+export JVAL_WRAPPER
 #
 export DOCROOT_SLASH="./"
 export TAGLINE="bin/$NAME"
@@ -174,7 +152,7 @@ declare -ag TOOL_OPTION
 
 # usage
 #
-export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
+export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-j jval] [-n] [-N]
 			[-t tagline] [-Q] [-w site_url]
 
 	-h		print help message and exit
@@ -186,6 +164,7 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
 	-D docroot/	set the document root path followed by slash (def: $DOCROOT_SLASH)
 			NOTE: The '-D docroot/' is passed as leading options on tool command lines.
 			NOTE: 'docroot' must end in a slash
+	-j jval		path to jval-wrapper.sh tool (def: $JVAL_WRAPPER)
 
 	-n		go thru the actions, but do not update any files (def: do the action)
 			NOTE: -n is passed to tool
@@ -217,7 +196,7 @@ $NAME version: $VERSION"
 
 # parse command line
 #
-while getopts :hv:Vd:D:nNt:Qw: flag; do
+while getopts :hv:Vd:D:j:nNt:Qw: flag; do
   case "$flag" in
     h) echo "$USAGE" 1>&2
 	exit 2
@@ -242,6 +221,8 @@ while getopts :hv:Vd:D:nNt:Qw: flag; do
 	esac
 	DOCROOT_SLASH="$OPTARG"
 	# -D docroot/ always added after arg parsing
+	;;
+    j) JVAL_WRAPPER="$OPTARG"
 	;;
     n) NOOP="-n"
 	;;
@@ -418,17 +399,17 @@ fi
 
 # verify that the bin/jval-wrapper.sh tool is executable
 #
-JVAL_WRAPPER="$BIN_DIR/jval-wrapper.sh"
-if [[ ! -e $JVAL_WRAPPER ]]; then
-    echo  "$0: ERROR: bin/jval-wrapper.sh does not exist: $JVAL_WRAPPER" 1>&2
-    exit 5
+JVAL_TOOL=$(type -P "$JVAL_WRAPPER" 2>/dev/null || true)
+if [[ -z "$JVAL_TOOL" || ! -x "$JVAL_TOOL" ]]; then
+    if [[ ! -x "$JVAL_WRAPPER" ]]; then
+	echo "$0: ERROR: jval-wrapper.sh tool not found or not executable: $JVAL_WRAPPER" 1>&2
+	exit 5
+    fi
 fi
-if [[ ! -f $JVAL_WRAPPER ]]; then
-    echo  "$0: ERROR: bin/jval-wrapper.sh is not a regular file: $JVAL_WRAPPER" 1>&2
-    exit 5
-fi
-if [[ ! -x $JVAL_WRAPPER ]]; then
-    echo  "$0: ERROR: bin/jval-wrapper.sh is not an executable file: $JVAL_WRAPPER" 1>&2
+"$JVAL_WRAPPER" -Q
+status="$?"
+if [[ $status -ne 0 ]]; then
+    echo "$0: ERROR: jval-wrapper.sh tool failed quick check: $JVAL_WRAPPER -Q" 1>&2
     exit 5
 fi
 
@@ -473,10 +454,6 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: V_FLAG=$V_FLAG" 1>&2
     echo "$0: debug[3]: GIT_TOOL=$GIT_TOOL" 1>&2
     echo "$0: debug[3]: TOPDIR=$TOPDIR" 1>&2
-    echo "$0: debug[3]: VERGE=$VERGE" 1>&2
-    echo "$0: debug[3]: JSTRDECODE=$JSTRDECODE" 1>&2
-    echo "$0: debug[3]: MIN_JSTRDECODE_VERSION=$MIN_JSTRDECODE_VERSION" 1>&2
-    echo "$0: debug[3]: JSTRDECODE_VERSION=$JSTRDECODE_VERSION" 1>&2
     echo "$0: debug[3]: DOCROOT_SLASH=$DOCROOT_SLASH" 1>&2
     echo "$0: debug[3]: TAGLINE=$TAGLINE" 1>&2
     echo "$0: debug[3]: MD2HTML_SH=$MD2HTML_SH" 1>&2
@@ -514,7 +491,7 @@ fi
 
 # case: -Q (quick mode)
 #
-# Do nothing if authors.html is newer than all author/author_handle.json files.
+# Do nothing if location.html is newer than all author/author_handle.json files.
 #
 if [[ -n $QUICK_MODE ]]; then
     NEWER=$(find "$AUTHOR_DIR" -mindepth 1 -maxdepth 1 -type f -name '*.json' -newer "$LOCATION_HTML" 2>/dev/null)
@@ -531,7 +508,8 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo  "$0: debug[3]: temporary location markdown file: $TMP_LOC_MD" 1>&2
 fi
 if [[ -z $NOOP ]]; then
-    trap 'rm -f $TMP_LOC_MD; exit' 0 1 2 3 15
+    trap 'rm -f $TMP_LOC_MD $TMP_LOC_WORD_HANDLE_NAME_SET $TMP_LOC_COUNT; exit 1' 1 2 3 15
+    trap 'rm -f $TMP_LOC_MD $TMP_LOC_WORD_HANDLE_NAME_SET $TMP_LOC_COUNT' EXIT
     rm -f "$TMP_LOC_MD"
     if [[ -e $TMP_LOC_MD ]]; then
 	echo "$0: ERROR: cannot remove temporary location markdown file: $TMP_LOC_MD" 1>&2
@@ -554,7 +532,6 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo  "$0: debug[3]: temporary location sort_word handle name set: $TMP_LOC_WORD_HANDLE_NAME_SET" 1>&2
 fi
 if [[ -z $NOOP ]]; then
-    trap 'rm -f $TMP_LOC_MD $TMP_LOC_WORD_HANDLE_NAME_SET; exit' 0 1 2 3 15
     rm -f "$TMP_LOC_WORD_HANDLE_NAME_SET"
     if [[ -e $TMP_LOC_WORD_HANDLE_NAME_SET ]]; then
 	echo "$0: ERROR: cannot remove temporary location sort_word handle name set: $TMP_LOC_WORD_HANDLE_NAME_SET" 1>&2
@@ -577,7 +554,6 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo  "$0: debug[3]: temporary location count set: $TMP_LOC_COUNT" 1>&2
 fi
 if [[ -z $NOOP ]]; then
-    trap 'rm -f $TMP_LOC_MD $TMP_LOC_WORD_HANDLE_NAME_SET $TMP_LOC_COUNT; exit' 0 1 2 3 15
     rm -f "$TMP_LOC_COUNT"
     if [[ -e $TMP_LOC_COUNT ]]; then
 	echo "$0: ERROR: cannot remove temporary location count set: $TMP_LOC_COUNT" 1>&2
@@ -607,8 +583,8 @@ find "$AUTHOR_DIR" -mindepth 1 -maxdepth 1 -type f -name '*.json' -print |
 
 	# collect location_code
 	#
-	PATTERN='$..location_code'
-	LOCATION_CODE=$("$JVAL_WRAPPER" -b -q "$AUTHOR_HANDLE_JSON" "$PATTERN")
+	PATTERN='.//location_code'
+	LOCATION_CODE=$("$JVAL_WRAPPER" -b -q -P -- "$AUTHOR_HANDLE_JSON" "$PATTERN")
 	status="$?"
 	if [[ $status -ne 0 || -z $LOCATION_CODE ]]; then
 	    echo "$0: ERROR: cannot obtain location_code from: $AUTHOR_HANDLE_JSON" 1>&2
@@ -625,14 +601,14 @@ find "$AUTHOR_DIR" -mindepth 1 -maxdepth 1 -type f -name '*.json' -print |
 
 	# obtain the author full name
 	#
-	PATTERN='$..full_name'
+	PATTERN='.//full_name'
 	if [[ $V_FLAG -ge 5 ]]; then
-	    echo  "$0: debug[5]: about to run: $JVAL_WRAPPER -b -q -- $AUTHOR_HANDLE_JSON '$PATTERN' | $JSTRDECODE -d -q -N -" 1>&2
+	    echo  "$0: debug[5]: about to run: $JVAL_WRAPPER -b -q -P -- $AUTHOR_HANDLE_JSON '$PATTERN'" 1>&2
 	fi
-	FULL_NAME=$("$JVAL_WRAPPER" -b -q "$AUTHOR_HANDLE_JSON" "$PATTERN" | "$JSTRDECODE" -d -q -N -)
-	status_codes=("${PIPESTATUS[@]}")
-	if [[ ${status_codes[*]} =~ [1-9] || -z $FULL_NAME ]]; then
-	    echo "$0: ERROR: cannot full name from: $AUTHOR_HANDLE" 1>&2
+	FULL_NAME=$("$JVAL_WRAPPER" -b -q -P -- "$AUTHOR_HANDLE_JSON" "$PATTERN")
+	status="$?"
+	if [[ $status -ne 0 || -z $FULL_NAME ]]; then
+	    echo "$0: ERROR: cannot obtain full name from: $AUTHOR_HANDLE_JSON" 1>&2
 	    exit 1
 	fi
 
@@ -640,7 +616,7 @@ find "$AUTHOR_DIR" -mindepth 1 -maxdepth 1 -type f -name '*.json' -print |
 	#
 	SORT_WORD=$(echo "$FULL_NAME" | sed -e 's/^.* //' | tr '[:upper:]' '[:lower:]' | tr -d -c 'a-z0-9')
 	if [[ -z $SORT_WORD ]]; then
-	    echo "$0: ERROR: cannot sort word from author full name: $FULL_NAME" 1>&2
+	    echo "$0: ERROR: cannot determine sort word from author full name: $FULL_NAME" 1>&2
 	    exit 17
 	fi
 
@@ -826,7 +802,7 @@ if [[ -z $NOOP ]]; then
     # case -Q: (quick mode)
     #
     # If we are here, then the early quick mode test indicated that the prerequisite files are newer.
-    # We will force the authors.html file to be touched so that a later run with -Q will quickly exit.
+    # We will force the location.html file to be touched so that a later run with -Q will quickly exit.
     # We do this because by default, the md2html.sh tool does not modify the target HTML unless it was modified.
     #
     if [[ -n $QUICK_MODE ]]; then

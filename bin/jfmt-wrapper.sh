@@ -2,31 +2,12 @@
 #
 # jfmt-wrapper.sh - canonically format a JSON file
 #
-# We form a wrapper for the jprint(1), a tool that will format a JSON
-# file into a canonical JSON style.
+# We form a wrapper for the `bin/jprint-wrapper.sh` a tool that will format a JSON
+# file in IOCCC JSON style.
 #
 # If the JSON file is already on canonical form, the file is not modified.
 #
-# NOTE: As of 2024 Sep 10 the jprint(1) tool has not been written,
-#       so jfmt-wrapper.sh uses the jsp tool from:
-#
-#	    https://github.com/kjozsa/jsp
-#
-#   FYI: For macOS, use Homebrew to install pipx:
-#
-#	brew install pipx
-#
-#   Next, use pipx to install jsp:
-#
-#	pipx --global install jsp
-#
-#   ... and then be sure that ~/.local/bin is in your $PATH.
-#
-#   Alternately, you can use the JSONPath.sh(1) tool from:
-#
-#	https://github.com/lcn2/JSONPath.sh
-#
-# Copyright (c) 2024-2025 by Landon Curt Noll.  All Rights Reserved.
+# Copyright (c) 2024-2026 by Landon Curt Noll.  All Rights Reserved.
 #
 # Permission to use, copy, modify, and distribute this software and
 # its documentation for any purpose and without fee is hereby granted,
@@ -128,74 +109,58 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="2.0.2 2025-05-04"
+export VERSION="2.1.0 2026-11-16"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
-GIT_TOOL=$(type -P git)
-export GIT_TOOL
-if [[ -z "$GIT_TOOL" ]]; then
-    echo "$0: FATAL: git tool is not installed or not in \$PATH" 1>&2
-    exit 5
+#
+QUICK_CHECK=""
+#
+PYTHON3_TOOL=$(type -P python3 2>/dev/null || true)
+export PYTHON3_TOOL
+#
+JPRINT_WRAPPER=$(type -P jprint-wrapper.sh 2>/dev/null || true)
+if [[ -z $JPRINT_WRAPPER ]]; then
+    JPRINT_WRAPPER="bin/jprint-wrapper.sh"
 fi
-"$GIT_TOOL" rev-parse --is-inside-work-tree >/dev/null 2>&1
-status="$?"
-if [[ $status -eq 0 ]]; then
-    TOPDIR=$("$GIT_TOOL" rev-parse --show-toplevel)
-fi
-export TOPDIR
-export REPO_TOP_URL="https://github.com/ioccc-src/winner"
-# GitHub puts individual files under the "blob/master" sub-directory.
-export REPO_URL="$REPO_TOP_URL/blob/master"
 
 
-# Until we have a true jfmt tool, we will use wither jsp or the modified JSONPath.sh
+# clear options we will add to the jfmt-wrapper.sh tool
 #
-# XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
-# XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
-# XXX - until we have the jprint command, we must use external tools to parse JSON  - XXX
-# XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
-# XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
-#
-export JSP_REPO="https://github.com/kjozsa/jsp"
-export JSONPATH_REPO="https://github.com/lcn2/JSONPath.sh"
-export FIZZBIN_JSON='"fizzbin"'
-export JSP_TOOL=""
-JSP_TOOL=$(type -P jsp)
-export JSONPATH_SH=""
-JSONPATH_SH=$(type -P JSONPath.sh)
-# set the default XPath for JSON
-export XPATHJSON_USE="jsp"
-export QUICK_CHECK=""
+unset TOOL_OPTION
+declare -ag TOOL_OPTION
 
 
 # set usage message
 #
-export USAGE="usage: $0 [-h] [-v level] [-V] [-n] [-N] [-t tool] [-Q] file.json
+export USAGE="usage: $0 [-h] [-v level] [-V] [-n] [-N] [-j jprint] [-p python3] [-P] [-Q] [-s] file.json
 
-	-h		print help message and exit
-	-v level	set verbosity level (def level: 0)
-	-V		print version string and exit
+    -h              print help message and exit
+    -v level        set verbosity level (def level: 0)
+    -V              print version string and exit
 
-	-n		do not modify file.json (def: modify file.json is not canonical)
-	-N		do not process file, just parse arguments and ignore the file (def: process the file)
+    -n              do not modify file.json (def: reformat file.json if needed)
+    -N              do not process file, just parse arguments and ignore the file (def: process the file)
 
-	-t tool		tool to use: jsp or JSONPath.sh (def: try jsp, otherwise try JSONPath.sh)
-	-Q		quick check tool using trivial input and exit, ignore file.json and pattern (def: do not)
+    -j jprint       path to jprint-wrapper.sh tool (def: $JPRINT_WRAPPER)
+    -p python3      path to the python3 tool (def: $PYTHON3_TOOL)
+    -P              preserve literal UTF-8 output (def: non-ASCII characters are re-encoded as ASCII escape sequences)
+    -Q              quick check jprint-wrapper.sh tool using trivial input and exit, ignore file.json (def: do not)
+    -s              canonical key sorting as per RFC 8785 (def: print JSON in the IOCCC JSON style)
 
-	file.json	JSON file to read, - ==> read stdin (ignored if -Q)
+    file.json       JSON file to read, ignored if -Q or -N
 
 NOTE: file.json is not touched if it is already in canonical form
 
 Exit codes:
      0         all OK
-     1	       some internal tool exited non-zero
+     1         some internal tool exited non-zero
      2         -h and help string printed or -V and version string printed
      3         command line error
      4         bash version is too old
-     5	       some internal tool not found
-     6	       file.json does not exist or is not readable
-     7	       file.json is not valid JSON
+     5         some internal tool not found
+     6         file.json does not exist or is not readable
+     7         file.json is not valid JSON
  >= 10         internal error
 
 $NAME version: $VERSION"
@@ -209,12 +174,14 @@ export DO_NOT_PROCESS=
 
 # parse command line
 #
-while getopts :hv:VnNt:Q flag; do
+while getopts :hv:VnNj:p:PQs flag; do
   case "$flag" in
     h) echo "$USAGE" 1>&2
 	exit 2
 	;;
     v) V_FLAG="$OPTARG"
+	TOOL_OPTION+=("-v")
+	TOOL_OPTION+=("$V_FLAG")
 	;;
     V) echo "$VERSION"
 	exit 2
@@ -223,19 +190,18 @@ while getopts :hv:VnNt:Q flag; do
 	;;
     N) DO_NOT_PROCESS="-N"
 	;;
-    t) # validate -t tool
-       case "$OPTARG" in
-       jsp) XPATHJSON_USE="jsp" ;;
-       JSONPath.sh) XPATHJSON_USE="JSONPath.sh" ;;
-       *) echo "$0: ERROR: unknown -t option: $OPTARG" 1>&2
-	  echo 1>&2
-          echo "$USAGE" 1>&2
-          exit 3
-	  ;;
-       esac
-       ;;
-    Q) QUICK_CHECK="true"
-       ;;
+    j) JPRINT_WRAPPER="$OPTARG"
+	;;
+    p) PYTHON3_TOOL=$(type -P "$OPTARG" 2>/dev/null || echo "$OPTARG")
+	TOOL_OPTION+=("-p")
+	TOOL_OPTION+=("$PYTHON3_TOOL")
+        ;;
+    P) TOOL_OPTION+=("-P")
+	;;
+    Q) QUICK_CHECK="-Q"
+	;;
+    s) TOOL_OPTION+=("-s")
+	;;
     \?) echo "$0: ERROR: invalid option: -$OPTARG" 1>&2
 	echo 1>&2
 	echo "$USAGE" 1>&2
@@ -267,8 +233,8 @@ if [[ $V_FLAG -ge 1 ]]; then
 fi
 export JSON_FILE=
 case "$#" in
-0) if [[ -z $QUICK_CHECK ]]; then
-        echo "$0: ERROR: 0 args allowed only with -Q" 1>&2
+0) if [[ -z $QUICK_CHECK && -z $DO_NOT_PROCESS ]]; then
+        echo "$0: ERROR: 0 args allowed only with -Q or -N" 1>&2
 	echo "$USAGE" 1>&2
 	exit 3
    fi
@@ -280,81 +246,6 @@ case "$#" in
    exit 3
    ;;
 esac
-#
-# -Q ignores ignore file.json
-#
-if [[ -n $QUICK_CHECK ]]; then
-    JSON_FILE=""
-#
-else
-    if [[ ! -e $JSON_FILE ]]; then
-	echo  "$0: ERROR: JSON_FILE does not exist: $JSON_FILE" 1>&2
-	exit 6
-    fi
-    if [[ ! -f $JSON_FILE ]]; then
-	echo  "$0: ERROR: JSON_FILE is not a regular file: $JSON_FILE" 1>&2
-	exit 6
-    fi
-    if [[ ! -r $JSON_FILE ]]; then
-	echo  "$0: ERROR: JSON_FILE is not an readable file: $JSON_FILE" 1>&2
-	exit 6
-    fi
-fi
-
-
-# verify that we have a topdir directory
-#
-REPO_NAME=$(basename "$REPO_TOP_URL")
-export REPO_NAME
-if [[ -z $TOPDIR ]]; then
-    echo "$0: ERROR: cannot find top of git repo directory" 1>&2
-    echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_TOP_URL; cd $REPO_NAME" 1>&2
-    exit 6
-fi
-if [[ ! -e $TOPDIR ]]; then
-    echo "$0: ERROR: TOPDIR does not exist: $TOPDIR" 1>&2
-    echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_TOP_URL; cd $REPO_NAME" 1>&2
-    exit 6
-fi
-if [[ ! -d $TOPDIR ]]; then
-    echo "$0: ERROR: TOPDIR is not a directory: $TOPDIR" 1>&2
-    echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_TOP_URL; cd $REPO_NAME" 1>&2
-    exit 6
-fi
-
-
-# cd to topdir
-#
-if [[ ! -e $TOPDIR ]]; then
-    echo "$0: ERROR: cannot cd to non-existent path: $TOPDIR" 1>&2
-    exit 6
-fi
-if [[ ! -d $TOPDIR ]]; then
-    echo "$0: ERROR: cannot cd to a non-directory: $TOPDIR" 1>&2
-    exit 6
-fi
-export CD_FAILED
-if [[ $V_FLAG -ge 5 ]]; then
-    echo "$0: debug[5]: about to: cd $TOPDIR" 1>&2
-fi
-cd "$TOPDIR" || CD_FAILED="true"
-if [[ -n $CD_FAILED ]]; then
-    echo "$0: ERROR: cd $TOPDIR failed" 1>&2
-    exit 6
-fi
-if [[ $V_FLAG -ge 3 ]]; then
-    echo "$0: debug[3]: now in directory: $(/bin/pwd)" 1>&2
-fi
-
-
-# verify that we have a bin subdirectory
-#
-export BIN_PATH="$TOPDIR/bin"
-if [[ ! -d $BIN_PATH ]]; then
-    echo "$0: ERROR: bin is not a directory under topdir: $BIN_PATH" 1>&2
-    exit 6
-fi
-export BIN_DIR="bin"
 
 
 # print running info if verbose
@@ -379,24 +270,44 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: VERSION=$VERSION" 1>&2
     echo "$0: debug[3]: NAME=$NAME" 1>&2
     echo "$0: debug[3]: V_FLAG=$V_FLAG" 1>&2
-    echo "$0: debug[3]: GIT_TOOL=$GIT_TOOL" 1>&2
-    echo "$0: debug[3]: TOPDIR=$TOPDIR" 1>&2
-    echo "$0: debug[3]: REPO_TOP_URL=$REPO_TOP_URL" 1>&2
-    echo "$0: debug[3]: REPO_URL=$REPO_URL" 1>&2
-    echo "$0: debug[3]: JSP_REPO=$JSP_REPO" 1>&2
-    echo "$0: debug[3]: JSONPATH_REPO=$JSONPATH_REPO" 1>&2
-    echo "$0: debug[3]: FIZZBIN_JSON=$FIZZBIN_JSON" 1>&2
-    echo "$0: debug[3]: JSP_TOOL=$JSP_TOOL" 1>&2
-    echo "$0: debug[3]: JSONPATH_SH=$JSONPATH_SH" 1>&2
-    echo "$0: debug[3]: XPATHJSON_USE=$XPATHJSON_USE" 1>&2
     echo "$0: debug[3]: QUICK_CHECK=$QUICK_CHECK" 1>&2
+    echo "$0: debug[3]: PYTHON3_TOOL=$PYTHON3_TOOL" 1>&2
+    echo "$0: debug[3]: JPRINT_WRAPPER=$JPRINT_WRAPPER" 1>&2
+    for index in "${!TOOL_OPTION[@]}"; do
+	echo "$0: debug[3]: TOOL_OPTION[$index]=${TOOL_OPTION[$index]}" 1>&2
+    done
     echo "$0: debug[3]: NOOP=$NOOP" 1>&2
     echo "$0: debug[3]: DO_NOT_PROCESS=$DO_NOT_PROCESS" 1>&2
     echo "$0: debug[3]: JSON_FILE=$JSON_FILE" 1>&2
-    echo "$0: debug[3]: REPO_NAME=$REPO_NAME" 1>&2
-    echo "$0: debug[3]: CD_FAILED=$CD_FAILED" 1>&2
-    echo "$0: debug[3]: BIN_PATH=$BIN_PATH" 1>&2
-    echo "$0: debug[3]: BIN_DIR=$BIN_DIR" 1>&2
+fi
+
+
+# Validate JPRINT_WRAPPER executable
+#
+JPRINT_TOOL=$(type -P "$JPRINT_WRAPPER" 2>/dev/null || true)
+if [[ -z "$JPRINT_TOOL" || ! -x "$JPRINT_TOOL" ]]; then
+    if [[ ! -x "$JPRINT_WRAPPER" ]]; then
+        echo "$0: ERROR: jprint-wrapper.sh tool not found or not executable: $JPRINT_WRAPPER" 1>&2
+        exit 5
+    fi
+fi
+
+
+# -Q just performs a quick check on the bin/jprint-wrapper.sh tool
+#
+if [[ -n $QUICK_CHECK ]]; then
+
+    if [[ $V_FLAG -ge 3 ]]; then
+	echo "$0: debug[3]: about to: $JPRINT_WRAPPER -Q ${TOOL_OPTION[*]}" 1>&2
+    fi
+    "$JPRINT_WRAPPER" -Q "${TOOL_OPTION[@]}"
+    status="$?"
+    if [[ $status -ne 0 ]]; then
+	echo "$0: ERROR: $JPRINT_WRAPPER -Q ${TOOL_OPTION[*]} failed," \
+	     "error code: $status" 1>&2
+	exit 1
+    fi
+    exit 0
 fi
 
 
@@ -410,105 +321,34 @@ if [[ -n $DO_NOT_PROCESS ]]; then
 fi
 
 
-# validate the XPath for JSON tool
+# Verify $JSON_FILE existence, readability, and writability
 #
-case "$XPATHJSON_USE" in
-
-    # case: we will use JSONPath.sh
-    #
-    JSONPath.sh)
-
-	# try JSONPath.sh
-	#
-	if [[ -z $JSONPATH_SH || ! -x $JSONPATH_SH ]]; then
-	    echo "$0: ERROR: JSONPath.sh tool is not installed, is not executable, or not in \$PATH" 1>&2
-	    echo "$0: notice: obtain jsp from: $JSP_REPO" 1>&2
-	    echo "$0: notice: or obtain jsp via \"pipx install jsp\" and placing ~/.local/bin in \$PATH" 1>&2
-	    echo "$0: notice: obtain JSONPath.sh from: $JSONPATH_REPO" 1>&2
-	    echo "$0: notice: if possible install jsp instead of JSONPath.sh as jsp is faster" 1>&2
-	    exit 5
-	fi
-
-	# case: -Q - perform quick check
-	#
-	if [[ -n $QUICK_CHECK ]]; then
-	    # verify JSONPath.sh supports -S -4
-	    if [[ $V_FLAG -ge 1 ]]; then
-		echo "$0: debug[1]: about to: $JSONPATH_SH -S -4 >/dev/null 2>&1 <<< $FIZZBIN_JSON" 1>&2
-	    fi
-	    if ! "$JSONPATH_SH" -S -4 >/dev/null 2>&1; then
-		echo "$0: ERROR: JSONPath.sh tool does not support -S -4 $FIZZBIN_JSON" 1>&2
-		echo "$0: notice: we recommend you obtain and install jsp from: $JSP_REPO" 1>&2
-		echo "$0: notice: or obtain jsp via \"pipx install jsp\" and placing ~/.local/bin in \$PATH" 1>&2
-		echo "$0: notice: otherwise install JSONPath.sh from: $JSONPATH_REPO" 1>&2
-		echo "$0: notice: if possible install jsp instead of JSONPath.sh as jsp is faster" 1>&2
-		exit 5
-	    fi <<< "$FIZZBIN_JSON"
-	    if [[ $V_FLAG -ge 1 ]]; then
-		echo "$0: debug[1]: passed quick check: $JSONPATH_SH" 1>&2
-	    fi
-	    exit 0
-	fi
-	;;
-
-    # case: we will use jsp
-    #
-    jsp)
-
-	# try jsp
-	#
-	if [[ -z $JSP_TOOL || ! -x $JSP_TOOL ]]; then
-	    echo "$0: ERROR: jsp tool is not installed, is not executable, or not in \$PATH" 1>&2
-	    echo "$0: notice: obtain jsp from: $JSP_REPO" 1>&2
-	    echo "$0: notice: or obtain jsp via \"pipx install jsp\" and placing ~/.local/bin in \$PATH" 1>&2
-	    echo "$0: notice: obtain JSONPath.sh from: $JSONPATH_REPO" 1>&2
-	    echo "$0: notice: if possible install jsp instead of JSONPath.sh as jsp is faster" 1>&2
-	    exit 5
-	fi
-
-	# case: -Q - perform quick check
-	#
-	if [[ -n $QUICK_CHECK ]]; then
-	    # verify jsp
-	    if [[ $V_FLAG -ge 1 ]]; then
-		echo "$0: debug[1]: about to: $JSP_TOOL  --indent 4 --format --no-color >/dev/null 2>&1 <<< $FIZZBIN_JSON" 1>&2
-	    fi
-	    if ! "$JSP_TOOL" --indent 4 --format --no-color >/dev/null 2>&1; then
-		echo "$0: ERROR: jsp tool does not support --indent 4 --format --no-color: $FIZZBIN_JSON" 1>&2
-		echo "$0: notice: you might need to update and reinstall jsp from: $JSP_REPO" 1>&2
-		echo "$0: notice: or obtain jsp via \"pipx install jsp\" and placing ~/.local/bin in \$PATH" 1>&2
-		echo "$0: notice: or you might try to obtain and install JSONPath.sh from: $JSONPATH_REPO" 1>&2
-		echo "$0: notice: if possible install jsp instead of JSONPath.sh as jsp is faster" 1>&2
-		exit 5
-	    fi <<< "$FIZZBIN_JSON"
-	    if [[ $V_FLAG -ge 1 ]]; then
-		echo "$0: debug[1]: passed quick check: $JSP_TOOL" 1>&2
-	    fi
-	    exit 0
-	fi
-	;;
-
-    # case: we do not have an XPath for JSON tool
-    #
-    *)
-	echo "$0: ERROR: cannot find an XPath JSON tool to use" 1>&2
-	echo "$0: notice: we recommend you obtain and install jsp from: $JSP_REPO" 1>&2
-	echo "$0: notice: or obtain jsp via \"pipx install jsp\" and placing ~/.local/bin in \$PATH" 1>&2
-	echo "$0: notice: otherwise install JSONPath.sh from: $JSONPATH_REPO" 1>&2
-	echo "$0: notice: if possible install jsp instead of JSONPath.sh as jsp is faster" 1>&2
-	exit 5
-	;;
-esac
+if [[ -n "$JSON_FILE" ]]; then
+    if [[ ! -f "$JSON_FILE" ]]; then
+        echo "$0: ERROR: JSON_FILE is not a regular file: $JSON_FILE" 1>&2
+        exit 6
+    fi
+    if [[ ! -r "$JSON_FILE" ]]; then
+        echo "$0: ERROR: JSON_FILE is not a readable file: $JSON_FILE" 1>&2
+        exit 6
+    fi
+    if [[ -z "$NOOP" && ! -w "$JSON_FILE" ]]; then
+        echo "$0: ERROR: JSON_FILE is not a writable file: $JSON_FILE" 1>&2
+        exit 6
+    fi
+fi
 
 
 # create a temporary entry JSON file
 #
-export TMP_JSON_FILE=".tmp.$NAME.JSON_FILE.$$.tmp"
+JSON_DIR=$(dirname "$JSON_FILE")
+TMP_JSON_FILE="$JSON_DIR/.tmp.$NAME.$$.tmp"
 if [[ $V_FLAG -ge 3 ]]; then
     echo  "$0: debug[3]: temporary JSON file: $TMP_JSON_FILE" 1>&2
 fi
 if [[ -z $NOOP ]]; then
-    trap 'rm -f $TMP_JSON_FILE; exit' 0 1 2 3 15
+    trap 'rm -f $TMP_JSON_FILE' EXIT
+    trap 'rm -f $TMP_JSON_FILE; exit 1' 1 2 3 15
     rm -f "$TMP_JSON_FILE"
     if [[ -e $TMP_JSON_FILE ]]; then
 	echo "$0: ERROR: cannot remove temporary JSON file: $TMP_JSON_FILE" 1>&2
@@ -526,49 +366,25 @@ fi
 
 # canonically format the JSON file
 #
-case "$XPATHJSON_USE" in
-
-    # case: use jsp
-    #
-    jsp)
-
-	if [[ $V_FLAG -ge 3 ]]; then
-	    echo "$0: debug[3]: about to: $JSP_TOOL --indent 4 --format --no-color < $JSON_FILE | sed ..." 1>&2
+if [[ $V_FLAG -ge 3 ]]; then
+    echo "$0: debug[3]: about to: $JPRINT_WRAPPER ${TOOL_OPTION[*]} $JSON_FILE > $TMP_JSON_FILE" 1>&2
+fi
+if [[ -z $NOOP ]]; then
+    "$JPRINT_WRAPPER" "${TOOL_OPTION[@]}" "$JSON_FILE" > "$TMP_JSON_FILE"
+    status="$?"
+    if [[ $status -ne 0 ]]; then
+	echo "$0: ERROR: $JPRINT_WRAPPER ${TOOL_OPTION[*]} $JSON_FILE > $TMP_JSON_FILE failed," \
+	     "error code: $status" 1>&2
+	if [[ $status -eq 1 ]]; then
+	    exit 7
+	elif [[ $status -eq 6 ]]; then
+	    exit 6
 	fi
-	"$JSP_TOOL" --indent 4 --format --no-color < "$JSON_FILE" |
-	    sed -e 's/\(\S\): /\1 : /' > "$TMP_JSON_FILE"
-	status_codes=("${PIPESTATUS[@]}")
-	if [[ ${status_codes[*]} =~ [1-9] ]]; then
-	    echo "$0: ERROR: $JSP_TOOL --indent 4 --format --no-color < $JSON_FILE | sed ...  failed," \
-		 "error codes: ${status_codes[*]}" 1>&2
-	    exit 1
-	fi
-	;;
-
-    # case: use JSONPath.sh
-    #
-    JSONPath.sh)
-
-	if [[ $V_FLAG -ge 3 ]]; then
-	    echo "$0: debug[3]: about to: $JSONPATH_SH -S -4 -j -f $JSON_FILE > $TMP_JSON_FILE" 1>&2
-	fi
-	"$JSONPATH_SH" -S -4 -j -f "$JSON_FILE" > "$TMP_JSON_FILE"
-	status="$?"
-	if [[ $status -ne 0 ]]; then
-	    echo "$0: ERROR: $JSONPATH_SH -S -4 -j -f $JSON_FILE > $TMP_JSON_FILE failed," \
-		 "error code: $status" 1>&2
-	    exit 1
-	fi
-	;;
-
-    # case: we do not know which XPath JSON tool to use
-    #
-    *)
-
-	echo "$0: ERROR: XPATHJSON_USE is neither jsp nor JSONPath.sh: $XPATHJSON_USE" 1>&2
-	exit 12
-	;;
-esac
+	exit 1
+    fi
+elif [[ $V_FLAG -ge 3 ]]; then
+    echo "$0: debug[3]: because of -n, did not run: $JPRINT_WRAPPER ${TOOL_OPTION[*]} $JSON_FILE > $TMP_JSON_FILE" 1>&2
+fi
 
 
 # replace JSON_FILE file with canonically formatted TMP_JSON_FILE if different
@@ -597,7 +413,7 @@ if [[ -z $NOOP ]]; then
             status="$?"
         fi
         if [[ $status -ne 0 ]]; then
-            echo "$0: ERROR: mv -f -- $TMP_JSON_FILE $JSON_FILE filed," \
+            echo "$0: ERROR: mv -f -- $TMP_JSON_FILE $JSON_FILE failed," \
 	         "error code: $status" 1>&2
             exit 13
         elif [[ $V_FLAG -ge 1 ]]; then
@@ -610,7 +426,7 @@ if [[ -z $NOOP ]]; then
     fi
 
 elif [[ $V_FLAG -ge 3 ]]; then
-   echo "$0: debug[3]: because of -n, will not update $JSON_FILE"
+   echo "$0: debug[3]: because of -n, will not update $JSON_FILE" 1>&2
 fi
 
 

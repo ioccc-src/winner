@@ -26,7 +26,7 @@
 #     one **CANNOT** reapply this tool to a converted submission.
 #
 #     After processing a submission with cvt-submission.sh:
-#     For address new files that were **NOT** part of
+#     For addressing new files that were **NOT** part of
 #     the original `.info.json` manifest, **AND** that have
 #     been "git add"-ed to the local repo (but not necessarily
 #     "git commit"-ed to the repository), use the tool:
@@ -154,7 +154,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="2.3.7 2026-05-03"
+export VERSION="2.4.0 2026-11-16"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -176,27 +176,6 @@ export VERGE
 if [[ -z $VERGE ]]; then
     echo "$0: FATAL: verge is not installed or not in \$PATH" 1>&2
     echo "$0: notice: to install verge:" 1>&2
-    echo "$0: notice: run: git clone https://github.com/ioccc-src/mkiocccentry.git" 1>&2
-    echo "$0: notice: then: cd mkiocccentry && make clobber all" 1>&2
-    echo "$0: notice: then: cd jparse && sudo make install clobber" 1>&2
-    exit 5
-fi
-#
-JSTRDECODE=$(type -P jstrdecode)
-export JSTRDECODE
-if [[ -z $JSTRDECODE ]]; then
-    echo "$0: FATAL: jstrdecode is not installed or not in \$PATH" 1>&2
-    echo "$0: notice: to install jstrdecode:" 1>&2
-    echo "$0: notice: run: git clone https://github.com/ioccc-src/mkiocccentry.git" 1>&2
-    echo "$0: notice: then: cd mkiocccentry && make clobber all" 1>&2
-    echo "$0: notice: then: cd jparse && sudo make install clobber" 1>&2
-    exit 5
-fi
-export MIN_JSTRDECODE_VERSION="2.2.3"
-JSTRDECODE_VERSION=$("$JSTRDECODE" -V | head -1 | awk '{print $3;}')
-if ! "$VERGE" "$JSTRDECODE_VERSION" "$MIN_JSTRDECODE_VERSION"; then
-    echo "$0: FATAL: jstrdecode version: $JSTRDECODE_VERSION < minimum version: $MIN_JSTRDECODE_VERSION" 1>&2
-    echo "$0: notice: consider updating jstrdecode from mkiocccentry repo" 1>&2
     echo "$0: notice: run: git clone https://github.com/ioccc-src/mkiocccentry.git" 1>&2
     echo "$0: notice: then: cd mkiocccentry && make clobber all" 1>&2
     echo "$0: notice: then: cd jparse && sudo make install clobber" 1>&2
@@ -250,6 +229,16 @@ if [[ -z "$GIT_TOOL" ]]; then
     exit 5
 fi
 #
+JVAL_WRAPPER=$(type -P jval-wrapper.sh 2>/dev/null || true)
+if [[ -z $JVAL_WRAPPER ]]; then
+    if [[ -n $TOPDIR && -x "$TOPDIR/bin/jval-wrapper.sh" ]]; then
+	JVAL_WRAPPER="$TOPDIR/bin/jval-wrapper.sh"
+    else
+	JVAL_WRAPPER="bin/jval-wrapper.sh"
+    fi
+fi
+export JVAL_WRAPPER
+#
 export GEN_README_TOOL="$TOPDIR/bin/gen-readme.sh"
 export REPO_TOP_URL="https://github.com/ioccc-src/winner"
 # GitHub puts individual files under the "blob/master" sub-directory.
@@ -272,7 +261,7 @@ export X_3="X""X""X"
 # usage
 #
 export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir]
-	[-c chkentry] [-g gen-readme.sh] [-T tarball_dir]
+	[-c chkentry] [-g gen-readme.sh] [-j jval] [-T tarball_dir]
         [-i input_data] [-n] [-N] YYYY/dir
 
 	-h		print help message and exit
@@ -282,6 +271,7 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir]
 	-d topdir	set topdir (def: $TOPDIR)
 	-c chkentry	path to the chkentry tool (def: $CHKENTRY_TOOL)
 	-g gen-readme.sh	path to the gen-readme.sh tool (def: $GEN_README_TOOL)
+	-j jval		path to jval-wrapper.sh (def: $JVAL_WRAPPER)
 
 	-T tarball_dir	where to form the compressed tarball of modified files (def: $TARBALL_DIR)
 
@@ -308,9 +298,9 @@ $NAME version: $VERSION"
 
 # prompt_string
 #
-# Prompt the user for a string and output as a decoded JSON string.
+# Prompt the user for a string.
 #
-# If "-i input_data: is used, the printing of the prompt is disabled,
+# If "-i input_data" is used, the printing of the prompt is disabled,
 # and the query of correctness is also disabled.
 #
 # usage:
@@ -323,7 +313,6 @@ $NAME version: $VERSION"
 function prompt_string
 {
     local INPUT;		# user input
-    local DECODED;		# INPUT decoded as JSON string
     local Y_OR_N;		# y or n
     local ITEM_NAME;		# name of the item being prompted for
 
@@ -355,21 +344,11 @@ function prompt_string
 	    continue
 	fi
 
-	# JSON decode value
-	#
-	DECODED=$("$JSTRDECODE" -d -q -N -- "$INPUT")
-	status="$?"
-	if [[ $status -ne 0 || -z $DECODED ]]; then
-	    echo "$0: ERROR: in prompt_string: $JSTRDECODE -d -q -N -- $INPUT failed," \
-		 "error code: $status" 1>&2
-	    exit 1
-	fi
-
-	# verify JSON decoded value
+	# verify input value
 	#
 	if [[ -z $INPUT_DATA_FILE ]]; then
 	    echo
-	    echo "Verify decoded $ITEM_NAME: $DECODED" 1>&2
+	    echo "Verify $ITEM_NAME: $INPUT" 1>&2
 	    echo
 	    echo -n 'Is that correct? [Y,n]: '
 	    read -r Y_OR_N
@@ -385,23 +364,21 @@ function prompt_string
 	echo
     fi
 
-    # set VALUE to the JSON decoded string
-    #
-    VALUE="$DECODED"
+    VALUE="$INPUT"
     return 0
 }
 
 
 # prompt_word
 #
-# Prompt the user for a lower case word and output as a decoded JSON word.
+# Prompt the user for a lower case word.
 #
-# The input must start work a lower case letter followed by 0 or more
-# local case letters or digits:
+# The input must start with a lower case letter followed by 0 or more
+# lower case letters or digits:
 #
 #   ^[a-z][0-9a-z]*$
 #
-# If "-i input_data: is used, the printing of the prompt is disabled,
+# If "-i input_data" is used, the printing of the prompt is disabled,
 # and the query of correctness is also disabled.
 #
 # usage:
@@ -414,7 +391,6 @@ function prompt_string
 function prompt_word
 {
     local INPUT;		# user input
-    local DECODED;		# INPUT decoded as JSON string
     local Y_OR_N;		# y or n
     local ITEM_NAME;		# name of the item being prompted for
 
@@ -446,7 +422,7 @@ function prompt_word
 	    continue
 	fi
 
-	# must start with lower case lewtter and followed bu 0 or more lower case letters and digits
+	# must start with lower case letter and followed by 0 or more lower case letters and digits
 	#
 	if ! [[ $INPUT =~ ^[a-z][0-9a-z]*$ ]]; then
 	    echo "$0: Warning: in prompt_word: $ITEM_NAME must match "'^[a-z][0-9a-z]*$'" regex, try again" 1>&2
@@ -454,21 +430,11 @@ function prompt_word
 	    continue
 	fi
 
-	# JSON decode value
-	#
-	DECODED=$("$JSTRDECODE" -d -q -N -- "$INPUT")
-	status="$?"
-	if [[ $status -ne 0 || -z $DECODED ]]; then
-	    echo "$0: ERROR: in prompt_word: $JSTRDECODE -d -q -N -- $INPUT failed," \
-		 "error code: $status" 1>&2
-	    exit 1
-	fi
-
-	# verify JSON decoded value
+	# verify value
 	#
 	if [[ -z $INPUT_DATA_FILE ]]; then
 	    echo
-	    echo "Verify decoded $ITEM_NAME: $DECODED" 1>&2
+	    echo "Verify $ITEM_NAME: $INPUT" 1>&2
 	    echo
 	    echo -n 'Is that correct? [Y,n]: '
 	    read -r Y_OR_N
@@ -484,18 +450,16 @@ function prompt_word
 	echo
     fi
 
-    # set VALUE to the JSON decoded string
-    #
-    VALUE="$DECODED"
+    VALUE="$INPUT"
     return 0
 }
 
 
 # prompt_integer
 #
-# Prompt the user for an integer and output as a decoded JSON string.
+# Prompt the user for an integer.
 #
-# If "-i input_data: is used, the printing of the prompt is disabled,
+# If "-i input_data" is used, the printing of the prompt is disabled,
 # and the query of correctness is also disabled.
 #
 # usage:
@@ -508,7 +472,6 @@ function prompt_word
 function prompt_integer
 {
     local INPUT;		# user input
-    local DECODED;		# INPUT decoded as JSON string
     local Y_OR_N;		# y or n
     local ITEM_NAME;		# name of the item being prompted for
 
@@ -539,27 +502,17 @@ function prompt_integer
 	    echo 1>&2
 	    continue
 	fi
-	if [[ $INPUT =~ ^[[:digit:]]+$ && $INPUT -ge 0 && $INPUT -le 4294967295 ]]; then
-	    # JSON decode value
-	    #
-	    DECODED=$("$JSTRDECODE" -d -q -N -- "$INPUT")
-	    status="$?"
-	    if [[ $status -ne 0 || -z $DECODED ]]; then
-		echo "$0: ERROR: in prompt_integer: $JSTRDECODE -d -q -N -- $INPUT failed," \
-		     "error code: $status" 1>&2
-		exit 1
-	    fi
-	else
+	if ! [[ $INPUT =~ ^[[:digit:]]+$ && $INPUT -ge 0 && $INPUT -le 4294967295 ]]; then
 	    echo "$0: Warning: in prompt_integer: $ITEM_NAME must be an integer >= 0 and <= 4294967295, try again" 1>&2
 	    echo 1>&2
 	    continue
 	fi
 
-	# verify JSON decoded value
+	# verify value
 	#
 	if [[ -z $INPUT_DATA_FILE ]]; then
 	    echo
-	    echo "Verify decoded $ITEM_NAME: $DECODED" 1>&2
+	    echo "Verify $ITEM_NAME: $INPUT" 1>&2
 	    echo
 	    echo -n 'Is that correct? [Y,n]: '
 	    read -r Y_OR_N
@@ -575,9 +528,7 @@ function prompt_integer
 	echo
     fi
 
-    # set VALUE to the JSON decoded string
-    #
-    VALUE="$DECODED"
+    VALUE="$INPUT"
     return 0
 }
 
@@ -752,9 +703,6 @@ function manifest_entry
 
     # end of manifest entry
     #
-    # We do not issue a return, allowing either the next manifest entry or
-    # the end of the manifest array to close the array.
-    #
     if [[ $COMMA == "comma" ]]; then
 	printf "        },\n"
     else
@@ -788,7 +736,7 @@ function write_author_handle_file
     local JSON_FILENAME;	# author_handle JSON file to create or modify if needed
     local entry_set_length;	# length of the array of entry_id values
     local final_comma;		# 2nd to final index of the array of entry_id values
-    local i;
+    local j;
 
     # parse args
     #
@@ -859,7 +807,7 @@ function write_author_handle_file
 	printf "    \"winning_entry_set\" : [\n"
 	entry_set_length=${#ENTRY_SET[@]}
 	case "$entry_set_length" in
-	0)  echo "$0: ERROR: Array of entry_id values is empty";
+	0)  echo "$0: ERROR: Array of entry_id values is empty" 1>&2
 	    return 1
 	    ;;
 	1)  printf "        {\n"
@@ -890,15 +838,15 @@ function write_author_handle_file
     #
     if cmp -s "$TMP_FILENAME" "$JSON_FILENAME"; then
 
-	# case: .entry.json did not change
+	# case: author JSON file did not change
 	#
 	if [[ $V_FLAG -ge 5 ]]; then
-            echo "$0: debug[5]: author_handle JSON file file did not change: $JSON_FILENAME" 1>&2
+            echo "$0: debug[5]: author_handle JSON file did not change: $JSON_FILENAME" 1>&2
         fi
 
     else
 
-        # case: .entry.json file changed, update the file
+        # case: author JSON file changed, update the file
         #
         if [[ $V_FLAG -ge 5 ]]; then
             echo "$0: debug[5]: about to: mv -f -- $TMP_FILENAME $JSON_FILENAME" 1>&2
@@ -911,7 +859,7 @@ function write_author_handle_file
             status="$?"
         fi
         if [[ $status -ne 0 ]]; then
-            echo "$0: ERROR: in write_author_handle_file: mv -f -- $TMP_FILENAME $JSON_FILENAME filed," \
+            echo "$0: ERROR: in write_author_handle_file: mv -f -- $TMP_FILENAME $JSON_FILENAME failed," \
 	         "error code: $status" 1>&2
             return 2
         elif [[ $V_FLAG -ge 1 ]]; then
@@ -923,15 +871,13 @@ function write_author_handle_file
         fi
     fi
 
-    # all OK
-    #
     return 0
 }
 
 
 # parse command line
 #
-while getopts :hv:Vd:c:g:i:T:nN flag; do
+while getopts :hv:Vd:c:g:j:i:T:nN flag; do
   case "$flag" in
     h) echo "$USAGE" 1>&2
 	exit 2
@@ -946,6 +892,8 @@ while getopts :hv:Vd:c:g:i:T:nN flag; do
     c) CHKENTRY_TOOL="$OPTARG"
 	;;
     g) GEN_README_TOOL="$OPTARG"
+	;;
+    j) JVAL_WRAPPER="$OPTARG"
 	;;
     i) INPUT_DATA_FILE="$OPTARG"
 	;;
@@ -1005,15 +953,15 @@ if [[ -n $INPUT_DATA_FILE ]]; then
 	exit 3
     fi
     if [[ ! -f $INPUT_DATA_FILE ]]; then
-	echo  "$0: ERROR: input data filetop is not a regular file: $INPUT_DATA_FILE" 1>&2
+	echo  "$0: ERROR: input data file is not a regular file: $INPUT_DATA_FILE" 1>&2
 	exit 3
     fi
     if [[ ! -r $INPUT_DATA_FILE ]]; then
-	echo  "$0: ERROR: input data filetop is not a readable file: $INPUT_DATA_FILE" 1>&2
+	echo  "$0: ERROR: input data file is not a readable file: $INPUT_DATA_FILE" 1>&2
 	exit 3
     fi
     if [[ ! -s $INPUT_DATA_FILE ]]; then
-	echo  "$0: ERROR: input data filetop is not a non-empty readable file: $INPUT_DATA_FILE" 1>&2
+	echo  "$0: ERROR: input data file is not a non-empty readable file: $INPUT_DATA_FILE" 1>&2
 	exit 3
     fi
     exec 0<"$INPUT_DATA_FILE"
@@ -1151,19 +1099,19 @@ if [[ ! -x $OTHERMD2HTML_SH ]]; then
 fi
 
 
-# verify that the bin/jval-wrapper.sh tool is executable
+# verify that JVAL_WRAPPER is executable
 #
-export JVAL_WRAPPER="$BIN_DIR/jval-wrapper.sh"
-if [[ ! -e $JVAL_WRAPPER ]]; then
-    echo  "$0: ERROR: bin/jval-wrapper.sh does not exist: $JVAL_WRAPPER" 1>&2
-    exit 5
+JVAL_TOOL=$(type -P "$JVAL_WRAPPER" 2>/dev/null || true)
+if [[ -z "$JVAL_TOOL" || ! -x "$JVAL_TOOL" ]]; then
+    if [[ ! -x "$JVAL_WRAPPER" ]]; then
+	echo "$0: ERROR: jval-wrapper.sh tool not found or not executable: $JVAL_WRAPPER" 1>&2
+	exit 5
+    fi
 fi
-if [[ ! -f $JVAL_WRAPPER ]]; then
-    echo  "$0: ERROR: bin/jval-wrapper.sh is not a regular file: $JVAL_WRAPPER" 1>&2
-    exit 5
-fi
-if [[ ! -x $JVAL_WRAPPER ]]; then
-    echo  "$0: ERROR: bin/jval-wrapper.sh is not an executable file: $JVAL_WRAPPER" 1>&2
+"$JVAL_WRAPPER" -Q
+status="$?"
+if [[ $status -ne 0 ]]; then
+    echo "$0: ERROR: jval-wrapper.sh tool failed quick check: $JVAL_WRAPPER -Q" 1>&2
     exit 5
 fi
 
@@ -1226,7 +1174,7 @@ if [[ ! -f $YYYY_DATE_RANGE_PATH ]]; then
     exit 6
 fi
 if [[ ! -r $YYYY_DATE_RANGE_PATH ]]; then
-    echo  "$0: ERROR: YYYY level date range is not an readable file: $YYYY_DATE_RANGE_PATH" 1>&2
+    echo  "$0: ERROR: YYYY level date range is not a readable file: $YYYY_DATE_RANGE_PATH" 1>&2
     exit 6
 fi
 if [[ ! -s $YYYY_DATE_RANGE_PATH ]]; then
@@ -1308,9 +1256,6 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: GIT_TOOL=$GIT_TOOL" 1>&2
     echo "$0: debug[3]: TOPDIR=$TOPDIR" 1>&2
     echo "$0: debug[3]: VERGE=$VERGE" 1>&2
-    echo "$0: debug[3]: JSTRDECODE=$JSTRDECODE" 1>&2
-    echo "$0: debug[3]: MIN_JSTRDECODE_VERSION=$MIN_JSTRDECODE_VERSION" 1>&2
-    echo "$0: debug[3]: JSTRDECODE_VERSION=$JSTRDECODE_VERSION" 1>&2
     echo "$0: debug[3]: CHKENTRY_TOOL=$CHKENTRY_TOOL" 1>&2
     echo "$0: debug[3]: MIN_CHKENTRY_VERSION=$MIN_CHKENTRY_VERSION" 1>&2
     echo "$0: debug[3]: CHKENTRY_VERSION=$CHKENTRY_VERSION" 1>&2
@@ -1556,15 +1501,15 @@ unset AUTHOR_HANDLE_SET
 declare -ag AUTHOR_HANDLE_SET
 #
 export PATTERN
-PATTERN='$..author_handle'
+PATTERN='.//author_handle'
 if [[ $V_FLAG -ge 5 ]]; then
-    echo  "$0: debug[5]: about to run: $JVAL_WRAPPER -b -q -- $AUTH_JSON '$PATTERN'" 1>&2
+    echo  "$0: debug[5]: about to run: $JVAL_WRAPPER -b -q -P -- $AUTH_JSON '$PATTERN'" 1>&2
 fi
 export FOUND_AUTHOR_HANDLES
-FOUND_AUTHOR_HANDLES=$("$JVAL_WRAPPER" -b -q -- "$AUTH_JSON" "$PATTERN")
+FOUND_AUTHOR_HANDLES=$("$JVAL_WRAPPER" -b -q -P -- "$AUTH_JSON" "$PATTERN")
 status="$?"
 if [[ $status -ne 0 ]]; then
-    echo "$0: ERROR: $JVAL_WRAPPER -b -q -- $AUTH_JSON '$PATTERN' failed," \
+    echo "$0: ERROR: $JVAL_WRAPPER -b -q -P -- $AUTH_JSON '$PATTERN' failed," \
 	  "error code: $status" 1>&2
     exit 10
 fi
@@ -1727,23 +1672,23 @@ fi
 
 # obtain title from .info.json
 #
-export PATTERN='$..title'
-TITLE=$("$JVAL_WRAPPER" -b -q "$INFO_JSON" "$PATTERN")
+export PATTERN='.//title'
+TITLE=$("$JVAL_WRAPPER" -b -q -P "$INFO_JSON" "$PATTERN")
 export TITLE
 if [[ -z $TITLE ]]; then
     TITLE="${ENTRY_DIR}.${YEAR_DIR}"
-    echo "$0: Warning empty title for in $INFO_JSON, use $TITLE" 1>&2
+    echo "$0: Warning: empty title in $INFO_JSON, will use $TITLE" 1>&2
 fi
 
 
-# obtain title from .info.json
+# obtain abstract from .info.json
 #
-export ABSTRACT='$..abstract'
-ABSTRACT=$("$JVAL_WRAPPER" -b -q "$INFO_JSON" "$PATTERN")
+export PATTERN='.//abstract'
+ABSTRACT=$("$JVAL_WRAPPER" -b -q -P "$INFO_JSON" "$PATTERN")
 export ABSTRACT
 if [[ -z $ABSTRACT ]]; then
     ABSTRACT="default abstract for ${YEAR_DIR}/${ENTRY_DIR}"
-    echo "$0: Warning empty abstreact for in $INFO_JSON, will use $ABSTRACT" 1>&2
+    echo "$0: Warning: empty abstract in $INFO_JSON, will use $ABSTRACT" 1>&2
 fi
 
 
@@ -1825,17 +1770,17 @@ if [[ -z $NOOP ]]; then
 	AUTHOR_INFO[deprecated_twitter_handle]="null"
 	AUTHOR_INFO[author_handle]="$AUTHOR_HANDLE"
 
-	# parse an element value of the this particular author in the authors JSON array
+	# parse element values of this particular author in the authors JSON array
 	#
-	PATTERN='$.authors['"$i"']'
+	PATTERN=".//authors/item[$((i + 1))]/*"
 	if [[ $V_FLAG -ge 5 ]]; then
-	    echo  "$0: debug[5]: about to run: $JVAL_WRAPPER -b -q -- $AUTH_JSON '$PATTERN'" 1>&2
+	    echo  "$0: debug[5]: about to run: $JVAL_WRAPPER -q -P -- $AUTH_JSON '$PATTERN'" 1>&2
 	fi
 	export AUTHOR_DATA
-	AUTHOR_DATA=$("$JVAL_WRAPPER" -q -- "$AUTH_JSON" "$PATTERN")
+	AUTHOR_DATA=$("$JVAL_WRAPPER" -q -P -- "$AUTH_JSON" "$PATTERN")
 	status="$?"
 	if [[ $status -ne 0 ]]; then
-	    echo "$0: ERROR: $JVAL_WRAPPER -q -- $AUTH_JSON '$PATTERN' failed," \
+	    echo "$0: ERROR: $JVAL_WRAPPER -q -P -- $AUTH_JSON '$PATTERN' failed," \
 		  "error code: $status" 1>&2
 	    exit 20
 	fi
@@ -1846,7 +1791,7 @@ if [[ -z $NOOP ]]; then
 	export AUTHOR_PAST_WINNING_AUTHOR=
 	export AUTHOR_DEFAULT_HANDLE=
 	export AUTHOR_AUTHOR_NUMBER=
-	while read -r NAME VALUE; do
+	while IFS=$'\t' read -r NAME VALUE; do
 
 	    # parse name value
 	    #
@@ -1940,14 +1885,14 @@ if [[ -z $NOOP ]]; then
 	# determine the mastodon_url for non-null mastodon
 	#
 	case "${AUTHOR_INFO[mastodon]}" in
-	\"@*@*\")
+	@*@*)
 	    # We have a 2 phase swap and substitution.  As such it is simpler to use sed.
 	    #
 	    # SC2001 (style): See if you can use ${variable//search/replace} instead.
 	    # https://www.shellcheck.net/wiki/SC2001
 	    # shellcheck disable=SC2001
 	    AUTHOR_INFO[mastodon_url]=$(echo "${AUTHOR_INFO[mastodon]}" |
-			sed -e 's;^"@\([^@]*\)@\(.*\)"$;https://\2/\1;') ;;
+			sed -e 's;^@\([^@]*\)@\(.*\)$;https://\2/\1;') ;;
 	*) AUTHOR_INFO[mastodon_url]="null" ;;
 	esac
 
@@ -1979,27 +1924,27 @@ if [[ -z $NOOP ]]; then
 		exit 32
 	    fi
 
-	    # parse author/author_handle.json file other than the winning_entry_set
+	    # parse author/author_handle.json file excluding winning_entry_set
 	    #
+	    PATTERN="./*[not(self::winning_entry_set)]"
 	    if [[ $V_FLAG -ge 5 ]]; then
-		echo  "$0: debug[5]: about to run: $JVAL_WRAPPER -q -- $AUTHOR_HANDLE_JSON | sed -E -e ..." 1>&2
+		echo  "$0: debug[5]: about to run: $JVAL_WRAPPER -q -P -- $AUTHOR_HANDLE_JSON '$PATTERN'" 1>&2
 	    fi
 	    export AUTHOR_DATA
-	    AUTHOR_DATA=$("$JVAL_WRAPPER" -q -- "$AUTHOR_HANDLE_JSON" |
-			  sed -E -e '/^entry_id\t/d')
-	    status_codes=("${PIPESTATUS[@]}")
-	    if [[ ${status_codes[*]} =~ [1-9] ]]; then
-		echo "$0: ERROR: $JVAL_WRAPPER -q -- $AUTHOR_HANDLE_JSON | sed -E -e ... failed," \
-		     "error codes: ${status_codes[*]}" 1>&2
+	    AUTHOR_DATA=$("$JVAL_WRAPPER" -q -P -- "$AUTHOR_HANDLE_JSON" "$PATTERN")
+	    status="$?"
+	    if [[ $status -ne 0 ]]; then
+		echo "$0: ERROR: $JVAL_WRAPPER -q -P -- $AUTHOR_HANDLE_JSON '$PATTERN' failed," \
+		     "error code: $status" 1>&2
 		exit 33
 	    fi
 	    if [[ -z $AUTHOR_DATA ]]; then
-		echo "$0: ERROR: found entry_id's in: $AUTH_JSON" 1>&2
+		echo "$0: ERROR: found no author metadata in: $AUTHOR_HANDLE_JSON" 1>&2
 		exit 34
 	    fi
-	    while read -r NAME VALUE; do
+	    while IFS=$'\t' read -r NAME VALUE; do
 
-		# parse name value got non
+		# parse name value
 		#
 		case "$NAME" in
 		no_comment)
@@ -2106,24 +2051,20 @@ if [[ -z $NOOP ]]; then
 
 	    # collect the entry_ids from the winning_entry_set and add the new entry_id
 	    #
-	    PATTERN='$..entry_id'
+	    PATTERN='.//winning_entry_set/item/entry_id'
 	    if [[ $V_FLAG -ge 5 ]]; then
-		echo  "$0: debug[5]: about to run: $JVAL_WRAPPER -b -q -- $AUTHOR_HANDLE_JSON '$PATTERN'" 1>&2
+		echo  "$0: debug[5]: about to run: $JVAL_WRAPPER -b -q -P -- $AUTHOR_HANDLE_JSON '$PATTERN'" 1>&2
 	    fi
 	    export ENTRY_IDS
-	    ENTRY_IDS=$( { "$JVAL_WRAPPER" -b -q -- "$AUTHOR_HANDLE_JSON" "$PATTERN";
+	    ENTRY_IDS=$( { "$JVAL_WRAPPER" -b -q -P -- "$AUTHOR_HANDLE_JSON" "$PATTERN";
 			    status="$?"
 			    if [[ $status -ne 0 ]]; then
-				echo "$0: ERROR: $JVAL_WRAPPER -b -q -- $AUTHOR_HANDLE_JSON '$PATTERN' failed," \
+				echo "$0: ERROR: $JVAL_WRAPPER -b -q -P -- $AUTHOR_HANDLE_JSON '$PATTERN' failed," \
 				      "error code: $status" 1>&2
 				exit 39
 			    fi
 			    echo "$ENTRY_ID"
 			 } | LC_ALL=C sort -d -u )
-	    if [[ -z $AUTHOR_DATA ]]; then
-		echo "$0: ERROR: found no entry_id's in: $AUTHOR_HANDLE_JSON" 1>&2
-		exit 40
-	    fi
 	    while read -r ENTRY_ID_SET_VALUE; do
 		ENTRY_ID_SET+=("$ENTRY_ID_SET_VALUE")
 	    done <<< "$ENTRY_IDS"
@@ -2164,19 +2105,16 @@ if [[ -z $NOOP ]]; then
 
     # write manifest csv line for entry source code
     #
-    # This is the 1st manifest element of the array.  Moreover, we will
-    # leave out the trailing comma.
-    #
     ((++count))
-    PATTERN='$..c_src'
+    PATTERN='.//c_src'
     if [[ $V_FLAG -ge 5 ]]; then
-	echo  "$0: debug[5]: about to run: $JVAL_WRAPPER -b -q -- $INFO_JSON '$PATTERN'" 1>&2
+	echo  "$0: debug[5]: about to run: $JVAL_WRAPPER -b -q -P -- $INFO_JSON '$PATTERN'" 1>&2
     fi
     export FILE_PATH
-    FILE_PATH=$("$JVAL_WRAPPER" -b -q -- "$INFO_JSON" "$PATTERN")
+    FILE_PATH=$("$JVAL_WRAPPER" -b -q -P -- "$INFO_JSON" "$PATTERN")
     status="$?"
     if [[ $status -ne 0 ]]; then
-	echo "$0: ERROR: $JVAL_WRAPPER -b -q -- $INFO_JSON '$PATTERN' failed," \
+	echo "$0: ERROR: $JVAL_WRAPPER -b -q -P -- $INFO_JSON '$PATTERN' failed," \
 		 "error code: $status" 1>&2
 	exit 42
     fi
@@ -2198,15 +2136,15 @@ if [[ -z $NOOP ]]; then
     # write manifest csv line for entry Makefile
     #
     ((++count))
-    PATTERN='$..Makefile'
+    PATTERN='.//Makefile'
     if [[ $V_FLAG -ge 5 ]]; then
-	echo  "$0: debug[5]: about to run: $JVAL_WRAPPER -b -q -- $INFO_JSON '$PATTERN'" 1>&2
+	echo  "$0: debug[5]: about to run: $JVAL_WRAPPER -b -q -P -- $INFO_JSON '$PATTERN'" 1>&2
     fi
     export FILE_PATH
-    FILE_PATH=$("$JVAL_WRAPPER" -b -q -- "$INFO_JSON" "$PATTERN")
+    FILE_PATH=$("$JVAL_WRAPPER" -b -q -P -- "$INFO_JSON" "$PATTERN")
     status="$?"
     if [[ $status -ne 0 ]]; then
-	echo "$0: ERROR: $JVAL_WRAPPER -b -q -- $INFO_JSON '$PATTERN' failed," \
+	echo "$0: ERROR: $JVAL_WRAPPER -b -q -P -- $INFO_JSON '$PATTERN' failed," \
 		 "error code: $status" 1>&2
 	exit 45
     fi
@@ -2268,16 +2206,15 @@ if [[ -z $NOOP ]]; then
 
     # collect manifest for extra_file(s)
     #
-    export PATTERN
-    PATTERN='$..extra_file'
+    export PATTERN='.//extra_file'
     if [[ $V_FLAG -ge 5 ]]; then
-	echo  "$0: debug[5]: about to run: $JVAL_WRAPPER -b -q -- $INFO_JSON '$PATTERN' | ,,, sort ..." 1>&2
+	echo  "$0: debug[5]: about to run: $JVAL_WRAPPER -b -q -P -- $INFO_JSON '$PATTERN' | sort ..." 1>&2
     fi
     export EXTRA_FILE_SET
-    EXTRA_FILE_SET=$("$JVAL_WRAPPER" -b -q -- "$INFO_JSON" "$PATTERN" | LC_ALL=C sort -d -u)
+    EXTRA_FILE_SET=$("$JVAL_WRAPPER" -b -q -P -- "$INFO_JSON" "$PATTERN" | LC_ALL=C sort -d -u)
     status_codes=("${PIPESTATUS[@]}")
     if [[ ${status_codes[*]} =~ [1-9] ]]; then
-	echo "$0: ERROR: $JVAL_WRAPPER -b -q -- $INFO_JSON '$PATTERN' | ... sort ... failed," \
+	echo "$0: ERROR: $JVAL_WRAPPER -b -q -P -- $INFO_JSON '$PATTERN' | ... sort ... failed," \
 		 "error code: ${status_codes[*]}" 1>&2
 	exit 51
     fi
@@ -2305,7 +2242,7 @@ if [[ -z $NOOP ]]; then
 	fi
     fi
 
-    # if prog.alt.c exits, and try.alt.sh does not exist, copy example over, otherwise just update the manifest
+    # if prog.alt.c exists, and try.alt.sh does not exist, copy example over, otherwise just update the manifest
     #
     if [[ -f $YYYY_DIR/$ALT_C ]]; then
 	if [[ ! -f $TRY_ALT_SH ]]; then
@@ -2378,7 +2315,7 @@ if [[ -z $NOOP ]]; then
 	#
 	if [[ $EXTRA_FILE =~ (.*)\.md$ ]]; then
 
-	    # warn if there is a HTML file associated with the markdown file
+	    # warn if there is an HTML file associated with the markdown file
 	    #
 	    export HTML_FILE="${BASH_REMATCH[1]}.html"
 	    if [[ -e $YYYY_DIR/$HTML_FILE ]]; then
@@ -2434,7 +2371,7 @@ if [[ -z $NOOP ]]; then
 	    prompt_string "entry_text for $EXTRA_FILE"
 	    status="$?"
 	    if [[ $status -ne 0 || -z $VALUE ]]; then
-		echo "$0: ERROR: prompt_string inventory_order for $EXTRA_FILE failed," \
+		echo "$0: ERROR: prompt_string entry_text for $EXTRA_FILE failed," \
 			 "error code: $status" 1>&2
 		exit 1
 	    fi
@@ -2707,8 +2644,8 @@ if [[ -z $NOOP ]]; then
 
 	    # determine if GitHub is required for known "display_as" value
 	    #
-	    # If $GITHUB_VIEW_REQUIRED == "true",  then "display_via_github" just be true
-	    # If $GITHUB_VIEW_REQUIRED == "false", then "display_via_github" just be false
+	    # If $GITHUB_VIEW_REQUIRED == "true",  then "display_via_github" must be true
+	    # If $GITHUB_VIEW_REQUIRED == "false", then "display_via_github" must be false
 	    #
 	    agrep)	GITHUB_VIEW_REQUIRED="true" ;;
 	    asm)	GITHUB_VIEW_REQUIRED="true" ;;
@@ -2786,7 +2723,7 @@ if [[ -z $NOOP ]]; then
     "$JPARSE_TOOL" -q -- "$TMP_ENTRY_JSON" 1>&2
     status="$?"
     if [[ $status -ne 0 ]]; then
-	echo "$0: ERROR: $JPARSE_TOOL -q -- $TMP_ENTRY_JSON filed," \
+	echo "$0: ERROR: $JPARSE_TOOL -q -- $TMP_ENTRY_JSON failed," \
 	     "error code: $status" 1>&2
 	exit 65
     elif [[ $V_FLAG -ge 3 ]]; then
@@ -2818,7 +2755,7 @@ if [[ -z $NOOP ]]; then
             status="$?"
         fi
         if [[ $status -ne 0 ]]; then
-            echo "$0: ERROR: mv -f -- $TMP_ENTRY_JSON $ENTRY_JSON filed," \
+            echo "$0: ERROR: mv -f -- $TMP_ENTRY_JSON $ENTRY_JSON failed," \
 	         "error code: $status" 1>&2
             exit 66
         elif [[ $V_FLAG -ge 1 ]]; then
@@ -2839,57 +2776,7 @@ fi
 
 # build HTML files based on extra_file markdown files
 #
-for EXTRA_FILE in $EXTRA_FILE_SET; do    # validate the JSON in the temporary .entry.json file
-    #
-    if [[ $V_FLAG -ge 3 ]]; then
-        echo "$0: debug[3]: about to: $JPARSE_TOOL -q -- $TMP_ENTRY_JSON" 1>&2
-    fi
-    "$JPARSE_TOOL" -q -- "$TMP_ENTRY_JSON" 1>&2
-    status="$?"
-    if [[ $status -ne 0 ]]; then
-        echo "$0: ERROR: $JPARSE_TOOL -q -- $TMP_ENTRY_JSON filed," \
-             "error code: $status" 1>&2
-        exit 68
-    elif [[ $V_FLAG -ge 3 ]]; then
-        echo "$0: debug[3]: valid JSON: $TMP_ENTRY_JSON" 1>&2
-    fi
-
-    # update .entry.json if needed
-    #
-    if cmp -s "$TMP_ENTRY_JSON" "$ENTRY_JSON"; then
-
-        # case: .entry.json did not change
-        #
-        if [[ $V_FLAG -ge 5 ]]; then
-            echo "$0: debug[5]: .entry.json file did not change: $ENTRY_JSON" 1>&2
-        fi
-
-    else
-
-        # case: .entry.json file changed, update the file
-        #
-        if [[ $V_FLAG -ge 5 ]]; then
-            echo "$0: debug[5]: about to: mv -f -- $TMP_ENTRY_JSON $ENTRY_JSON" 1>&2
-        fi
-        if [[ $V_FLAG -ge 3 ]]; then
-            mv -f -v -- "$TMP_ENTRY_JSON" "$ENTRY_JSON" 1>&2
-            status="$?"
-        else
-            mv -f -- "$TMP_ENTRY_JSON" "$ENTRY_JSON" 1>&2
-            status="$?"
-        fi
-        if [[ $status -ne 0 ]]; then
-            echo "$0: ERROR: mv -f -- $TMP_ENTRY_JSON $ENTRY_JSON filed," \
-                 "error code: $status" 1>&2
-            exit 69
-        elif [[ $V_FLAG -ge 1 ]]; then
-            echo "$0: debug[1]: updated .entry.json: $ENTRY_JSON" 1>&2
-        fi
-        if [[ ! -s $ENTRY_JSON ]]; then
-            echo "$0: ERROR: not a non-empty .entry.json: $ENTRY_JSON" 1>&2
-            exit 70
-        fi
-    fi
+for EXTRA_FILE in $EXTRA_FILE_SET; do
 
     # case: extra_file is a markdown file
     #
@@ -2908,7 +2795,7 @@ for EXTRA_FILE in $EXTRA_FILE_SET; do    # validate the JSON in the temporary .e
 		"$OTHERMD2HTML_SH" -v "$V_FLAG" -- "$YYYY_DIR/$EXTRA_FILE"
 		status="$?"
 		if [[ $status -ne 0 ]]; then
-		    echo "$0: ERROR: $OTHERMD2HTML_SH -v $V_FLAG -- $YYYY_DIR/$EXTRA_FILE filed," \
+		    echo "$0: ERROR: $OTHERMD2HTML_SH -v $V_FLAG -- $YYYY_DIR/$EXTRA_FILE failed," \
 			 "error code: $status" 1>&2
 		    exit 71
 		fi
@@ -2941,7 +2828,7 @@ if [[ $status -ne 0 ]]; then
 	chmod +w "$ALLYEAR"
 	status="$?"
 	if [[ $status -ne 0 ]]; then
-	    echo "$0: ERROR: chmod +w $ALLYEAR filed," \
+	    echo "$0: ERROR: chmod +w $ALLYEAR failed," \
 		 "error code: $status" 1>&2
 	    exit 72
 	fi
@@ -2955,7 +2842,7 @@ if [[ $status -ne 0 ]]; then
 	sort -f -d -u "$ALLYEAR" -o "$ALLYEAR"
 	status="$?"
 	if [[ $status -ne 0 ]]; then
-	    echo "$0: ERROR: sort -f -d -u $ALLYEAR -o $ALLYEAR filed," \
+	    echo "$0: ERROR: sort -f -d -u $ALLYEAR -o $ALLYEAR failed," \
 		 "error code: $status" 1>&2
 	    exit 73
 	fi
@@ -2980,7 +2867,7 @@ if [[ -z $NOOP ]]; then
 	"$MD2HTML_SH" -v "$V_FLAG" -- "$README_MD" "$INDEX_HTML"
 	status="$?"
 	if [[ $status -ne 0 ]]; then
-	    echo "$0: ERROR: $MD2HTML_SH -v $V_FLAG -- $README_MD $INDEX_HTML filed," \
+	    echo "$0: ERROR: $MD2HTML_SH -v $V_FLAG -- $README_MD $INDEX_HTML failed," \
 		 "error code: $status" 1>&2
 	    exit 74
 	fi
@@ -3006,7 +2893,7 @@ if [[ -z $NOOP ]]; then
     status="$?"
     if [[ $status -ne 0 ]]; then
 	echo "$0: ERROR: rm -f -v -- $INFO_JSON $AUTH_JSON $AUTH_JSON.xz $REMARKS_MD $YYYY_DIR/.prev" \
-	     "$YYYY_DIR/.submit.sh $YYYY_DIR/.txz $YYYY_DIR/.num.sh $YYYY_DIR/.orig filed," \
+	     "$YYYY_DIR/.submit.sh $YYYY_DIR/.txz $YYYY_DIR/.num.sh $YYYY_DIR/.orig failed," \
 	     "error code: $status" 1>&2
 	exit 75
     fi

@@ -1,35 +1,20 @@
 #!/usr/bin/env bash
 #
-# jval-wrapper.sh - write JSON values to stdout using the XPath for JSON model
+# jval-wrapper.sh - write JSON values to stdout using XPath via python3
 #
-# We form a wrapper for the `jval(1)`, a tool that allow the printing JSON values to stdout
-# using the XPath for JSON model.
+# By default, this script will print both JSON member and JSON value separated
+# by an ASCII tab when processing a JSON member element, keep any enclosing double
+# quotes around JSON strings, and keep newlines.
 #
-# NOTE: As of 2024 Sep 09 the jval(1) tool has not been written, so jval-wrapper.sh uses with the jsp tool from:
+# Use '-b' to print values only.
+# Use '-e' to print shell-style assignments (tag=value) instead of tab separation.
+# Note: '-b' and '-e' are mutually exclusive.
 #
-#   https://github.com/kjozsa/jsp
+# For information on XPath, see:
 #
-#   FYI: For macOS, use homebrew to install pipx:
+#   https://www.w3.org/TR/xpath/
 #
-#		brew install pipx
-#
-#	 Next, use pipx to install jsp:
-#
-#		pipx --global install jsp
-#
-#	 and then be sure that ~/.local/bin is in your $PATH.
-#
-# or the JSONPath.sh(1) tool from:
-#
-#   https://github.com/lcn2/JSONPath.sh
-#
-# See the following on XPath for JSON model:
-#
-#   https://goessner.net/articles/JsonPath/
-#   https://jsonpath.com
-#   https://github.com/lcn2/JSONPath.sh?tab=readme-ov-file#jsonpath-patterns-and-extensions
-#
-# Copyright (c) 2024-2025 by Landon Curt Noll.  All Rights Reserved.
+# Copyright (c) 2024-2026 by Landon Curt Noll.  All Rights Reserved.
 #
 # Permission to use, copy, modify, and distribute this software and
 # its documentation for any purpose and without fee is hereby granted,
@@ -131,83 +116,58 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="2.0.2 2025-05-04"
+VERSION="2.1.0 2026-11-16"
 NAME=$(basename "$0")
-export NAME
-export V_FLAG=0
-GIT_TOOL=$(type -P git)
-export GIT_TOOL
-if [[ -z "$GIT_TOOL" ]]; then
-    echo "$0: FATAL: git tool is not installed or not in \$PATH" 1>&2
-    exit 5
-fi
-"$GIT_TOOL" rev-parse --is-inside-work-tree >/dev/null 2>&1
-status="$?"
-if [[ $status -eq 0 ]]; then
-    TOPDIR=$("$GIT_TOOL" rev-parse --show-toplevel)
-fi
-export TOPDIR
+V_FLAG=0
 #
-export REPO_TOP_URL="https://github.com/ioccc-src/winner"
-# GitHub puts individual files under the "blob/master" sub-directory.
-export REPO_URL="$REPO_TOP_URL/blob/master"
+QUICK_CHECK=""
+SORT_KEYS=""
+PRESERVE_UTF8=""
+PATTERN=""
+#
+PRINT_ONLY_VALUES=""
+SHELL_FORMAT=""
+REMOVE_QUOTES=""
 
 
-# Until we have a true jval tool, we will use either jsp or the modified JSONPath.sh
+# Locate python3 without aborting under 'set -e'
 #
-# XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
-# XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
-# XXX - until we have the jval command, we use external tools to get data from JSON - XXX
-# XXX - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - GROSS HACK - XXX
-# XXX - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - XXX
-#
-export JSP_REPO="https://github.com/kjozsa/jsp"
-export JSONPATH_REPO="https://github.com/lcn2/JSONPath.sh"
-export FIZZBIN_JSON='"fizzbin"'
-export JSP_TOOL=""
-JSP_TOOL=$(type -P jsp)
-export JSONPATH_SH=""
-JSONPATH_SH=$(type -P JSONPath.sh)
-# set the default XPath for JSON
-export XPATHJSON_USE="jsp"
-export JSONPATH_ARG
-export PATTERN=""
-#
-export PRINT_ONLY_VALUES=""
-export REMOVE_QUOTES=""
-export QUICK_CHECK=""
-export TRIM_NEWLINE=""
+PYTHON3_TOOL=$(type -P python3 2>/dev/null || true)
+export PYTHON3_TOOL
 
 
 # set usage message
 #
-export USAGE="usage: $0 [-h] [-v level] [-V] [-n] [-N] [-b] [-q] [-T] [-t tool] [-Q] file.json [pattern]
+export USAGE="usage: $0 [-h] [-v level] [-V] [-n] [-N] [-b | -e] [-q] [-p python3] [-P] [-Q] [-s] file.json [pattern]
 
-	-h		print help message and exit
-	-v level	set verbosity level (def level: 0)
-	-V		print version string and exit
+    -h              print help message and exit
+    -v level        set verbosity level (def level: 0)
+    -V              print version string and exit
 
-	-n		do nothing (same as -N) (def: do the action)
-	-N		do not process file, just parse arguments and ignore the file (def: process the file)
+    -n              do nothing (same as -N) (def: do the action)
+    -N              do not process file, just parse arguments and ignore the file (def: process the file)
 
-	-b		print only values (def: print both JSON member and JSON value)
-	-q		remove enclosing double quotes (def: keep any enclosing double quotes)
-	-T		trim all newlines (def: do not)
+    -b              print only values (def: print both JSON member and JSON value separated by TAB)
+    -e              print shell assignment: member=value (def: separated by TAB) (conflicts with -b)
+    -q              remove enclosing double quotes (def: keep any enclosing double quotes)
 
-	-t tool		tool to use: jsp or JSONPath.sh (def: try jsp, otherwise try JSONPath.sh)
-	-Q		quick check tool using trivial input and exit, ignore file.json and pattern (def: do not)
+    -p python3      path to the python3 tool (def: $PYTHON3_TOOL)
+    -P              preserve literal UTF-8 output (def: non-ASCII characters are re-encoded as ASCII escape sequences)
+    -Q              quick check python3 using trivial input and exit, ignore file.json (def: do not)
+    -s              canonical key sorting as per RFC 8785 (def: print JSON in the IOCCC JSON style)
 
-	file.json	JSON file to read, - ==> read stdin (ignored if -Q)
-	pattern		Xpath for JSON query pattern (def: $PATTERN) (ignored if -Q)
+    file.json       JSON file to read, - ==> read stdin (ignored if -Q)
+    pattern         XPath query pattern (def: .//* or pattern set in \$PATTERN) (ignored if -Q)
 
 Exit codes:
      0         all OK
-     1	       some internal tool exited non-zero
+     1         file or stdin not valid JSON, or invalid XPath pattern
      2         -h and help string printed or -V and version string printed
      3         command line error
      4         bash version is too old
-     5	       internal tool not found
-     6	       file.json does not exist or is not readable
+     5         python3 not found
+     6         file.json does not exist or is not readable
+     7         -Q used, and python3 failed quick check
  >= 10         internal error
 
 $NAME version: $VERSION"
@@ -215,13 +175,13 @@ $NAME version: $VERSION"
 
 # setup
 #
-export NOOP=
-export DO_NOT_PROCESS=
+NOOP=
+DO_NOT_PROCESS=
 
 
 # parse command line
 #
-while getopts :hv:VnNbqTt:Q flag; do
+while getopts :hv:VnNbeqp:PQs flag; do
   case "$flag" in
     h) echo "$USAGE" 1>&2
 	exit 2
@@ -235,25 +195,20 @@ while getopts :hv:VnNbqTt:Q flag; do
 	;;
     N) DO_NOT_PROCESS="-N"
 	;;
-    b) PRINT_ONLY_VALUES="-b"
+    b) PRINT_ONLY_VALUES="true"
+	;;
+    e) SHELL_FORMAT="true"
 	;;
     q) REMOVE_QUOTES="true"
-       ;;
-    T) TRIM_NEWLINE="true"
-       ;;
-    t) # validate -t tool
-       case "$OPTARG" in
-       jsp) XPATHJSON_USE="jsp" ;;
-       JSONPath.sh) XPATHJSON_USE="JSONPath.sh" ;;
-       *) echo "$0: ERROR: unknown -t option: $OPTARG" 1>&2
-	  echo 1>&2
-          echo "$USAGE" 1>&2
-          exit 3
-	  ;;
-       esac
-       ;;
-    Q) QUICK_CHECK="true"
-       ;;
+	;;
+    p) PYTHON3_TOOL=$(type -P "$OPTARG" 2>/dev/null || echo "$OPTARG")
+	;;
+    P) PRESERVE_UTF8="true"
+	;;
+    Q) QUICK_CHECK="-Q"
+	;;
+    s) SORT_KEYS="true"
+	;;
     \?) echo "$0: ERROR: invalid option: -$OPTARG" 1>&2
 	echo 1>&2
 	echo "$USAGE" 1>&2
@@ -272,6 +227,15 @@ while getopts :hv:VnNbqTt:Q flag; do
   esac
 done
 #
+# check for mutually exclusive options
+#
+if [[ -n $PRINT_ONLY_VALUES && -n $SHELL_FORMAT ]]; then
+    echo "$0: ERROR: -b and -e are mutually exclusive" 1>&2
+    echo 1>&2
+    echo "$USAGE" 1>&2
+    exit 3
+fi
+#
 # parse the command line arguments
 #
 if [[ $V_FLAG -ge 1 ]]; then
@@ -284,107 +248,73 @@ if [[ $V_FLAG -ge 1 ]]; then
     echo "$0: debug[5]: argument count: $#" 1>&2
 fi
 case "$#" in
-0) if [[ -z $QUICK_CHECK ]]; then
-        echo "$0: ERROR: 0 args allowed only with -Q" 1>&2
-	echo "$USAGE" 1>&2
-	exit 3
+0) if [[ -z $QUICK_CHECK && -z $DO_NOT_PROCESS ]]; then
+        echo "$0: ERROR: 0 args allowed only with -Q or -N" 1>&2
+        echo "$USAGE" 1>&2
+        exit 3
    fi
    ;;
 1) JSON_FILE="$1"
    ;;
 2) JSON_FILE="$1"
-    PATTERN="$2"
-    ;;
+   PATTERN="$2"
+   ;;
 *) echo "$0: ERROR: expected 1 or 2 args, found: $#" 1>&2
-    echo "$USAGE" 1>&2
-    exit 3
-    ;;
+   echo "$USAGE" 1>&2
+   exit 3
+   ;;
 esac
 #
-# -Q ignores ignore file.json and pattern
+# Default PATTERN if not provided on CLI or environment
 #
-if [[ -n $QUICK_CHECK ]]; then
-    JSON_FILE=""
-    PATTERN=""
+if [[ -z $PATTERN ]]; then
+    PATTERN=".//*"
 fi
+#
+# Canonicalize $JSON_FILE to an absolute path
 #
 if [[ $JSON_FILE == "-" ]]; then
     JSON_FILE=""
+elif [[ -n "$JSON_FILE" && "$JSON_FILE" != /* ]]; then
+    JSON_FILE="$PWD/$JSON_FILE"
 fi
-if [[ -n $JSON_FILE ]]; then
-    if [[ ! -e $JSON_FILE ]]; then
-	echo  "$0: ERROR: JSON_FILE does not exist: $JSON_FILE" 1>&2
-	exit 6
-    fi
-    if [[ ! -f $JSON_FILE ]]; then
-	echo  "$0: ERROR: JSON_FILE is not a regular file: $JSON_FILE" 1>&2
-	exit 6
-    fi
-    if [[ ! -r $JSON_FILE ]]; then
-	echo  "$0: ERROR: JSON_FILE is not an readable file: $JSON_FILE" 1>&2
-	exit 6
-    fi
-fi
-
-
-# verify that we have a topdir directory
 #
-REPO_NAME=$(basename "$REPO_TOP_URL")
-export REPO_NAME
-if [[ -z $TOPDIR ]]; then
-    echo "$0: ERROR: cannot find top of git repo directory" 1>&2
-    echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_TOP_URL; cd $REPO_NAME" 1>&2
-    exit 6
-fi
-if [[ ! -e $TOPDIR ]]; then
-    echo "$0: ERROR: TOPDIR does not exist: $TOPDIR" 1>&2
-    echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_TOP_URL; cd $REPO_NAME" 1>&2
-    exit 6
-fi
-if [[ ! -d $TOPDIR ]]; then
-    echo "$0: ERROR: TOPDIR is not a directory: $TOPDIR" 1>&2
-    echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_TOP_URL; cd $REPO_NAME" 1>&2
-    exit 6
-fi
-
-
-# cd to topdir
+# Verify $JSON_FILE readability
 #
-if [[ ! -e $TOPDIR ]]; then
-    echo "$0: ERROR: cannot cd to non-existent path: $TOPDIR" 1>&2
-    exit 6
-fi
-if [[ ! -d $TOPDIR ]]; then
-    echo "$0: ERROR: cannot cd to a non-directory: $TOPDIR" 1>&2
-    exit 6
-fi
-export CD_FAILED
-if [[ $V_FLAG -ge 5 ]]; then
-    echo "$0: debug[5]: about to: cd $TOPDIR" 1>&2
-fi
-cd "$TOPDIR" || CD_FAILED="true"
-if [[ -n $CD_FAILED ]]; then
-    echo "$0: ERROR: cd $TOPDIR failed" 1>&2
-    exit 6
-fi
-if [[ $V_FLAG -ge 3 ]]; then
-    echo "$0: debug[3]: now in directory: $(/bin/pwd)" 1>&2
+if [[ -n "$JSON_FILE" ]]; then
+    if [[ ! -f "$JSON_FILE" ]]; then
+        echo "$0: ERROR: JSON_FILE is not a regular file: $JSON_FILE" 1>&2
+        exit 6
+    fi
+    if [[ ! -r "$JSON_FILE" ]]; then
+        echo "$0: ERROR: JSON_FILE is not a readable file: $JSON_FILE" 1>&2
+        exit 6
+    fi
 fi
 
 
-# verify that we have a bin subdirectory
+# verify a python3 tool
 #
-export BIN_PATH="$TOPDIR/bin"
-if [[ ! -d $BIN_PATH ]]; then
-    echo "$0: ERROR: bin is not a directory under topdir: $BIN_PATH" 1>&2
-    exit 6
+if [[ -z "$PYTHON3_TOOL" ]]; then
+    echo "$0: FATAL: python3 tool is not installed or not in \$PATH" 1>&2
+    echo "$0: notice: install python3, or set \$PATH to find it, or use -p python3_path" 1>&2
+    exit 5
 fi
-export BIN_DIR="bin"
+if [[ ! -f "$PYTHON3_TOOL" ]]; then
+    echo "$0: FATAL: python3 is not a file: $PYTHON3_TOOL" 1>&2
+    echo "$0: notice: install python3, or set \$PATH to find it, or use -p python3_path" 1>&2
+    exit 5
+fi
+if [[ ! -x "$PYTHON3_TOOL" ]]; then
+    echo "$0: FATAL: python3 is not an executable file: $PYTHON3_TOOL" 1>&2
+    echo "$0: notice: install python3, or set \$PATH to find it, or use -p python3_path" 1>&2
+    exit 5
+fi
 
 
 # print running info if verbose
 #
-# If -v 3 or higher, print exported variables in order that they were exported.
+# If -v 3 or higher, print variables in order
 #
 if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: LANG=$LANG" 1>&2
@@ -404,28 +334,65 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: VERSION=$VERSION" 1>&2
     echo "$0: debug[3]: NAME=$NAME" 1>&2
     echo "$0: debug[3]: V_FLAG=$V_FLAG" 1>&2
-    echo "$0: debug[3]: GIT_TOOL=$GIT_TOOL" 1>&2
-    echo "$0: debug[3]: TOPDIR=$TOPDIR" 1>&2
-    echo "$0: debug[3]: REPO_TOP_URL=$REPO_TOP_URL" 1>&2
-    echo "$0: debug[3]: REPO_URL=$REPO_URL" 1>&2
-    echo "$0: debug[3]: JSP_REPO=$JSP_REPO" 1>&2
-    echo "$0: debug[3]: JSONPATH_REPO=$JSONPATH_REPO" 1>&2
-    echo "$0: debug[3]: FIZZBIN_JSON=$FIZZBIN_JSON" 1>&2
-    echo "$0: debug[3]: JSP_TOOL=$JSP_TOOL" 1>&2
-    echo "$0: debug[3]: JSONPATH_SH=$JSONPATH_SH" 1>&2
-    echo "$0: debug[3]: XPATHJSON_USE=$XPATHJSON_USE" 1>&2
+    echo "$0: debug[3]: QUICK_CHECK=$QUICK_CHECK" 1>&2
+    echo "$0: debug[3]: SORT_KEYS=$SORT_KEYS" 1>&2
+    echo "$0: debug[3]: PRESERVE_UTF8=$PRESERVE_UTF8" 1>&2
     echo "$0: debug[3]: PATTERN=$PATTERN" 1>&2
     echo "$0: debug[3]: PRINT_ONLY_VALUES=$PRINT_ONLY_VALUES" 1>&2
+    echo "$0: debug[3]: SHELL_FORMAT=$SHELL_FORMAT" 1>&2
     echo "$0: debug[3]: REMOVE_QUOTES=$REMOVE_QUOTES" 1>&2
-    echo "$0: debug[3]: QUICK_CHECK=$QUICK_CHECK" 1>&2
-    echo "$0: debug[3]: TRIM_NEWLINE=$TRIM_NEWLINE" 1>&2
+    echo "$0: debug[3]: PYTHON3_TOOL=$PYTHON3_TOOL" 1>&2
     echo "$0: debug[3]: NOOP=$NOOP" 1>&2
     echo "$0: debug[3]: DO_NOT_PROCESS=$DO_NOT_PROCESS" 1>&2
     echo "$0: debug[3]: JSON_FILE=$JSON_FILE" 1>&2
-    echo "$0: debug[3]: REPO_NAME=$REPO_NAME" 1>&2
-    echo "$0: debug[3]: CD_FAILED=$CD_FAILED" 1>&2
-    echo "$0: debug[3]: BIN_PATH=$BIN_PATH" 1>&2
-    echo "$0: debug[3]: BIN_DIR=$BIN_DIR" 1>&2
+fi
+
+
+# if -Q, verify we have a functional python3 tool that can process JSON and XPath
+#
+if [[ -n $QUICK_CHECK ]]; then
+
+    # try python3 tool on a trivial JSON and XPath check
+    #
+    CANARY_CHECK=$("$PYTHON3_TOOL" -c '
+import sys, json, re, xml.etree.ElementTree as ET
+try:
+    d = json.loads("{\"status\":\"ok\",\"curds\":\"whey²\"}")
+    root = ET.Element("root")
+    for k, v in d.items():
+        child = ET.SubElement(root, k)
+        child.text = str(v)
+    tree = ET.ElementTree(root)
+    node = tree.find(".//status")
+    if node is not None and node.text == "ok":
+        print("verified")
+        sys.exit(0)
+    sys.exit(1)
+except Exception as e:
+    sys.stderr.write(str(e) + "\n")
+    sys.exit(1)
+' 2>&1)
+    status="$?"
+    if [[ $status -ne 0 || "$CANARY_CHECK" != "verified" ]]; then
+	echo "$0: FATAL: python3 failed standard library validation for json/ElementTree: $PYTHON3_TOOL" 1>&2
+	echo "$0: CANARY_CHECK starts below" 1>&2
+	echo "$CANARY_CHECK" 1>&2
+	echo "$0: CANARY_CHECK ends above" 1>&2
+	echo "$0: notice: perhaps python3 import sys, json, re, or xml.etree.ElementTree failed?" 1>&2
+	exit 7
+    fi
+
+    # report success if verbose
+    #
+    if [[ $V_FLAG -ge 1 ]]; then
+	echo "$0: debug[1]: python3 tool on a trivial JSON and XPath check passed" 1>&2
+	if [[ $V_FLAG -ge 3 ]]; then
+	    echo "$0: debug[3]: CANARY_CHECK starts below" 1>&2
+	    echo "$CANARY_CHECK" 1>&2
+	    echo "$0: debug[3]: CANARY_CHECK ends above" 1>&2
+	fi
+    fi
+    exit 0
 fi
 
 
@@ -439,97 +406,6 @@ if [[ -n $DO_NOT_PROCESS ]]; then
 fi
 
 
-# validate the XPath for JSON tool
-#
-case "$XPATHJSON_USE" in
-
-    # case: we will use JSONPath.sh
-    #
-    JSONPath.sh)
-
-	# try JSONPath.sh
-	#
-	if [[ -z $JSONPATH_SH || ! -x $JSONPATH_SH ]]; then
-	    echo "$0: ERROR: JSONPath.sh tool is not installed, is not executable, or not in \$PATH" 1>&2
-	    echo "$0: notice: obtain jsp from: $JSP_REPO" 1>&2
-	    echo "$0: notice: or obtain jsp via \"pipx install jsp\" and placing ~/.local/bin in \$PATH" 1>&2
-	    echo "$0: notice: obtain JSONPath.sh from: $JSONPATH_REPO" 1>&2
-	    echo "$0: notice: if possible install jsp instead of JSONPath.sh as jsp is faster" 1>&2
-	    exit 5
-	fi
-
-	# case: -Q - perform quick check
-	#
-	if [[ -n $QUICK_CHECK ]]; then
-	    # verify JSONPath.sh supports -S -4
-	    if [[ $V_FLAG -ge 1 ]]; then
-		echo "$0: debug[1]: about to: $JSONPATH_SH -S -4 >/dev/null 2>&1 <<< $FIZZBIN_JSON" 1>&2
-	    fi
-	    if ! "$JSONPATH_SH" -S -4 >/dev/null 2>&1; then
-		echo "$0: ERROR: JSONPath.sh tool does not support -S -4 $FIZZBIN_JSON" 1>&2
-		echo "$0: notice: we recommend you obtain and install jsp from: $JSP_REPO" 1>&2
-		echo "$0: notice: or obtain jsp via \"pipx install jsp\" and placing ~/.local/bin in \$PATH" 1>&2
-		echo "$0: notice: otherwise install JSONPath.sh from: $JSONPATH_REPO" 1>&2
-		echo "$0: notice: if possible install jsp instead of JSONPath.sh as jsp is faster" 1>&2
-		exit 5
-	    fi <<< "$FIZZBIN_JSON"
-	    if [[ $V_FLAG -ge 1 ]]; then
-		echo "$0: debug[1]: passed quick check: $JSONPATH_SH" 1>&2
-	    fi
-	    exit 0
-	fi
-	;;
-
-    # case: we will use jsp
-    #
-    jsp)
-
-	# try jsp
-	#
-	if [[ -z $JSP_TOOL || ! -x $JSP_TOOL ]]; then
-	    echo "$0: ERROR: jsp tool is not installed, is not executable, or not in \$PATH" 1>&2
-	    echo "$0: notice: obtain jsp from: $JSP_REPO" 1>&2
-	    echo "$0: notice: or obtain jsp via \"pipx install jsp\" and placing ~/.local/bin in \$PATH" 1>&2
-	    echo "$0: notice: obtain JSONPath.sh from: $JSONPATH_REPO" 1>&2
-	    echo "$0: notice: if possible install jsp instead of JSONPath.sh as jsp is faster" 1>&2
-	    exit 5
-	fi
-
-	# case: -Q - perform quick check
-	#
-	if [[ -n $QUICK_CHECK ]]; then
-	    # verify jsp
-	    if [[ $V_FLAG -ge 1 ]]; then
-		echo "$0: debug[1]: about to: $JSP_TOOL  --indent 4 --format --no-color >/dev/null 2>&1 <<< $FIZZBIN_JSON" 1>&2
-	    fi
-	    if ! "$JSP_TOOL" --indent 4 --format --no-color >/dev/null 2>&1; then
-		echo "$0: ERROR: jsp tool does not support --indent 4 --format --no-color: $FIZZBIN_JSON" 1>&2
-		echo "$0: notice: you might need to update and reinstall jsp from: $JSP_REPO" 1>&2
-		echo "$0: notice: or obtain jsp via \"pipx install jsp\" and placing ~/.local/bin in \$PATH" 1>&2
-		echo "$0: notice: or you might try to obtain and install JSONPath.sh from: $JSONPATH_REPO" 1>&2
-		echo "$0: notice: if possible install jsp instead of JSONPath.sh as jsp is faster" 1>&2
-		exit 5
-	    fi <<< "$FIZZBIN_JSON"
-	    if [[ $V_FLAG -ge 1 ]]; then
-		echo "$0: debug[1]: passed quick check: $JSP_TOOL" 1>&2
-	    fi
-	    exit 0
-	fi
-	;;
-
-    # case: we do not have an XPath for JSON tool
-    #
-    *)
-	echo "$0: ERROR: cannot find an XPath JSON tool to use" 1>&2
-	echo "$0: notice: we recommend you obtain and install jsp from: $JSP_REPO" 1>&2
-	echo "$0: notice: or obtain jsp via \"pipx install jsp\" and placing ~/.local/bin in \$PATH" 1>&2
-	echo "$0: notice: otherwise install JSONPath.sh from: $JSONPATH_REPO" 1>&2
-	echo "$0: notice: if possible install jsp instead of JSONPath.sh as jsp is faster" 1>&2
-	exit 5
-	;;
-esac
-
-
 # -n means we have nothing to do
 #
 if [[ -n $NOOP ]]; then
@@ -540,331 +416,123 @@ if [[ -n $NOOP ]]; then
 fi
 
 
-# canonically process JSON from standard input via jsp
+# extract value(s) from JSON on stdin or from a file
 #
-case "$XPATHJSON_USE" in
-
-# case: use jsp
+if [[ $V_FLAG -ge 3 ]]; then
+    echo "$0: debug[3]: executing python3 XPath extractor (file: ${JSON_FILE:-stdin}, pattern: $PATTERN)" 1>&2
+fi
 #
-jsp)
+export JVAL_PATTERN="$PATTERN"
+export JVAL_ONLY_VALUES="$PRINT_ONLY_VALUES"
+export JVAL_SHELL_FORMAT="$SHELL_FORMAT"
+export JVAL_REMOVE_QUOTES="$REMOVE_QUOTES"
+export JVAL_SORT_KEYS="$SORT_KEYS"
+export JVAL_PRESERVE_UTF8="$PRESERVE_UTF8"
+#
+"$PYTHON3_TOOL" -c '
+import sys, os, json, re
+import xml.etree.ElementTree as ET
 
-    # if not set, set the default jsp pattern
-    #
-    PATTERN="${PATTERN:=$}"
+pattern = os.environ.get("JVAL_PATTERN", ".//*")
+only_values = bool(os.environ.get("JVAL_ONLY_VALUES", ""))
+shell_format = bool(os.environ.get("JVAL_SHELL_FORMAT", ""))
+remove_quotes = bool(os.environ.get("JVAL_REMOVE_QUOTES", ""))
+sort_keys = bool(os.environ.get("JVAL_SORT_KEYS", ""))
+ensure_ascii = not bool(os.environ.get("JVAL_PRESERVE_UTF8", ""))
 
-    # case: jsp processing from standard input
-    #
-    if [[ -z $JSON_FILE ]]; then
+# Read input JSON
+try:
+  if len(sys.argv) > 1 and sys.argv[1]:
+    with open(sys.argv[1], "r", encoding="utf-8") as f:
+      data = json.load(f)
+  else:
+    data = json.load(sys.stdin)
+except Exception as e:
+  sys.stderr.write(f"JSON parse error: {e}\n")
+  sys.exit(1)
 
-	if [[ -z $TRIM_NEWLINE ]]; then
+node_counter = 0
+val_map = {}
 
-	    # case: jsp w/o -T from standard input
-	    #
-	    if [[ $V_FLAG -ge 3 ]]; then
-		echo "$0: debug[3]: about to: $JSP_TOOL --no-color --format --indent 0 -- '$PATTERN'" 1>&2
-	    fi
-	    "$JSP_TOOL" --no-color --format --indent 0 -- "$PATTERN"
-	    status="$?"
-	    if [[ $status -ne 0 ]]; then
-		echo "$0: ERROR: $JSP_TOOL --no-color --format --indent 0 -- '$PATTERN' failed," \
-		     "error code: $status" 1>&2
-		exit 1
-	    fi
+def sanitize_tag(name):
+  # Replace characters that are invalid in XML element tags with underscores
+  s = re.sub(r"[^a-zA-Z0-9_\-\.]", "_", str(name))
+  if not s or (not s[0].isalpha() and s[0] != "_"):
+    s = "_" + s
+  return s
 
-	else
+def json_to_xml(tag_name, val):
+  global node_counter
+  xml_tag = sanitize_tag(tag_name)
+  elem = ET.Element(xml_tag)
+  node_counter += 1
+  elem.set("_nid", str(node_counter))
+  val_map[str(node_counter)] = (str(tag_name), val)
 
-	    # case: jsp -T from standard input
-	    #
-	    if [[ $V_FLAG -ge 3 ]]; then
-		NL='\\n'
-		echo "$0: debug[3]: about to: $JSP_TOOL --no-color --format --indent 0 -- '$PATTERN' | tr -d $NL" 1>&2
-	    fi
-	    "$JSP_TOOL" --no-color --format --indent 0 -- "$PATTERN" | tr -d '\n'
-	    status_codes=("${PIPESTATUS[@]}")
-	    if [[ ${status_codes[*]} =~ [1-9] ]]; then
-		echo "$0: ERROR: $JSP_TOOL --no-color --format --indent 0 -- '$PATTERN' failed," \
-		     "error codes: ${status_codes[*]}" 1>&2
-		exit 1
-	    fi
-	fi
+  if isinstance(val, dict):
+    for k, v in val.items():
+      elem.append(json_to_xml(k, v))
+  elif isinstance(val, list):
+    for item in val:
+      elem.append(json_to_xml("item", item))
+  else:
+    if val is None:
+      elem.text = "null"
+    elif isinstance(val, bool):
+      elem.text = "true" if val else "false"
+    else:
+      elem.text = str(val)
+  return elem
 
-    # case: jsp processing from a file
-    #
+def format_val(val):
+  if isinstance(val, str):
+    s = json.dumps(val, ensure_ascii=ensure_ascii)
+    if remove_quotes and len(s) >= 2 and s[0] == "\"" and s[-1] == "\"":
+      return s[1:-1]
+    return s
+  elif isinstance(val, (dict, list)):
+    return json.dumps(val, indent=4, separators=(",", " : "), sort_keys=sort_keys, ensure_ascii=ensure_ascii)
+  elif val is None:
+    return "null"
+  elif isinstance(val, bool):
+    return "true" if val else "false"
+  else:
+    return str(val)
+
+root = json_to_xml("root", data)
+tree = ET.ElementTree(root)
+
+try:
+  matches = tree.findall(pattern)
+except Exception as e:
+  sys.stderr.write(f"XPath evaluation error: {e}\n")
+  sys.exit(1)
+
+for node in matches:
+  nid = node.get("_nid")
+  orig_tag, val = val_map.get(nid, (node.tag, node.text))
+  formatted = format_val(val)
+  if only_values:
+    print(formatted)
+  elif shell_format:
+    print(f"{orig_tag}={formatted}")
+  else:
+    # Default: print original tag and value separated by an ASCII tab
+    if remove_quotes:
+      tag_str = orig_tag
+    else:
+      tag_str = json.dumps(orig_tag, ensure_ascii=ensure_ascii)
+    print(f"{tag_str}\t{formatted}")
+' "$JSON_FILE"
+status="$?"
+if [[ $status -ne 0 ]]; then
+    if [[ -n "$JSON_FILE" ]]; then
+        echo "$0: ERROR: invalid JSON or XPath pattern error: $JSON_FILE" 1>&2
     else
-
-	if [[ -z $TRIM_NEWLINE ]]; then
-
-	    # case: jsp w/o -T from file
-	    #
-	    if [[ $V_FLAG -ge 3 ]]; then
-		echo "$0: debug[3]: about to: $JSP_TOOL --no-color --format --indent 0 -- '$PATTERN' < $JSON_FILE" 1>&2
-	    fi
-	    "$JSP_TOOL" --no-color --format --indent 0 -- "$PATTERN" < "$JSON_FILE"
-	    status="$?"
-	    if [[ $status -ne 0 ]]; then
-		echo "$0: ERROR: $JSP_TOOL --no-color --format --indent 0 -- '$PATTERN' < $JSON_FILE failed," \
-		     "error code: $status" 1>&2
-		exit 1
-	    fi
-
-	else
-
-	    # case: jsp -T from file
-	    #
-	    if [[ $V_FLAG -ge 3 ]]; then
-		NL='\\n'
-		echo "$0: debug[3]: about to: $JSP_TOOL --no-color --format --indent 0 -- '$PATTERN' < $JSON_FILE | tr -d $NL" 1>&2
-	    fi
-	    "$JSP_TOOL" --no-color --format --indent 0 -- "$PATTERN" < "$JSON_FILE" | tr -d '\n'
-	    status_codes=("${PIPESTATUS[@]}")
-	    if [[ ${status_codes[*]} =~ [1-9] ]]; then
-		echo "$0: ERROR: $JSP_TOOL --no-color --format --indent 0 -- '$PATTERN' < $JSON_FILE failed," \
-		     "error codes: ${status_codes[*]}" 1>&2
-		exit 1
-	    fi
-	fi
-
-    # case: print only values from jsp output
-    #
-    fi | if [[ -n $PRINT_ONLY_VALUES ]]; then
-
-	# case: -q -b (print only values and remove double quotes) via jsp
-	#
-	if [[ -n $REMOVE_QUOTES ]]; then
-
-	    sed -E -e '/^\s*[]{}[],?\s*$/d' \
-		   -e 's/^\s*("[^"]*[^\\]*"):\s+/\1\t/' \
-		   -e 's/^"[^\t]*"\t//' \
-		   -e 's/,?$//' \
-		   -e 's/^"//' \
-		   -e 's/",?$//' \
-		   -e '/^\[$/d'
-	    status="$?"
-	    if [[ $status -ne 0 ]]; then
-		echo "$0: ERROR: pipe from -t jsp options: -q -b: sed -E -e ... failed," \
-		     "error code: $status" 1>&2
-		exit 1
-	    fi
-
-	# case: -b (print only values) via jsp
-	#
-	else
-
-	    sed -E -e '/^\s*[]{}[],?\s*$/d' \
-		   -e 's/^\s*("[^"]*[^\\]*"):\s+/\1\t/' \
-		   -e 's/^"[^\t]*"\t//' \
-		   -e 's/,?$//' \
-		   -e '/^\[$/d'
-	    status="$?"
-	    if [[ $status -ne 0 ]]; then
-		echo "$0: ERROR: pipe from -t jsp options: -b: sed -E -e ... failed," \
-		     "error code: $status" 1>&2
-		exit 1
-	    fi
-	fi
-
-    # case: print both JSON member and JSON value from jsp output
-    #
-    else
-
-	# case: -q without -b (print both JSON member and JSON value and remove double quotes) via jsp
-	#
-	if [[ -n $REMOVE_QUOTES ]]; then
-
-	    sed -E -e '/^\s*[]{}[],?\s*$/d' \
-		   -e 's/^\s*("[^"]*[^\\]*"):\s+/\1\t/' \
-		   -e 's/,?$//' \
-		   -e 's/^"//' \
-		   -e 's/"\t"?/\t/' \
-		   -e 's/"$//' \
-		   -e '/\t\[$/d'
-	    status="$?"
-	    if [[ $status -ne 0 ]]; then
-		echo "$0: ERROR: pipe from -t jsp options: -q: sed -E -e ... failed," \
-		     "error code: $status" 1>&2
-		exit 1
-	    fi
-
-	# case: without -b (print only values) via jsp
-	#
-	else
-
-	    sed -E -e '/^\s*[]{}[],?\s*$/d' \
-		   -e 's/^\s*("[^"]*[^\\]*"):\s+/\1\t/' \
-		   -e 's/,?$//' \
-		   -e '/\t\[$/d'
-	    status="$?"
-	    if [[ $status -ne 0 ]]; then
-		echo "$0: ERROR: pipe from -t jsp: sed -E -e ... failed," \
-		     "error code: $status" 1>&2
-		exit 1
-	    fi
-
-	fi
+        echo "$0: ERROR: stdin appears to not be valid JSON or XPath pattern error" 1>&2
     fi
-    ;;
-
-
-# case: use JSONPath.sh
-#
-JSONPath.sh)
-
-    # if not set, set the default JSONPath.sh pattern
-    #
-    PATTERN="${PATTERN:=$.*}"
-
-    # case: JSONPath.sh processing from standard input
-    #
-    if [[ -z $JSON_FILE ]]; then
-
-	if [[ -z $TRIM_NEWLINE ]]; then
-
-	    # case: JSONPath.sh w/o -T from standard input
-	    #
-	    if [[ $V_FLAG -ge 1 ]]; then
-		echo "$0: debug[1]: about to: $JSONPATH_SH -w -u -- '$PATTERN'" 1>&2
-	    fi
-	    "$JSONPATH_SH" -w -u -- "$PATTERN"
-	    status="$?"
-	    if [[ $status -ne 0 ]]; then
-		echo "$0: ERROR: $JSONPATH_SH -w -u -- '$PATTERN' failed," \
-		     "error code: $status" 1>&2
-		exit 1
-	    fi
-
-	else
-
-	    # case: JSONPath.sh -T from standard input
-	    #
-	    if [[ $V_FLAG -ge 1 ]]; then
-		NL='\\n'
-		echo "$0: debug[1]: about to: $JSONPATH_SH -w -u -- '$PATTERN' | tr -d $NL" 1>&2
-	    fi
-	    "$JSP_TOOL" --no-color --format --indent 0 -- "$PATTERN" | tr -d '\n'
-	    status_codes=("${PIPESTATUS[@]}")
-	    if [[ $status -ne 0 ]]; then
-		echo "$0: ERROR: $JSONPATH_SH -w -u -- '$PATTERN' failed," \
-		     "error codes: ${status_codes[*]}" 1>&2
-		exit 1
-	    fi
-	fi
-
-    # case: JSONPath.sh processing from a file
-    #
-    else
-
-	if [[ -z $TRIM_NEWLINE ]]; then
-
-	    # case: JSONPath.sh w/o -T from file
-	    #
-	    if [[ $V_FLAG -ge 1 ]]; then
-		echo "$0: debug[1]: about to: $JSONPATH_SH -w -u -f $JSON_FILE -- '$PATTERN'" 1>&2
-	    fi
-	    "$JSONPATH_SH" -w -u -f "$JSON_FILE" -- "$PATTERN"
-	    status="$?"
-	    if [[ $status -ne 0 ]]; then
-		echo "$0: ERROR: $JSONPATH_SH -w -u -f $JSON_FILE -- '$PATTERN' failed," \
-		     "error code: $status" 1>&2
-		exit 1
-	    fi
-
-	else
-
-	    # case: JSONPath.sh -T from file
-	    #
-	    if [[ $V_FLAG -ge 1 ]]; then
-		NL='\\n'
-		echo "$0: debug[1]: about to: $JSONPATH_SH -w -u -f $JSON_FILE -- '$PATTERN' | tr -d $NL" 1>&2
-	    fi
-	    "$JSONPATH_SH" -w -u -f "$JSON_FILE" -- "$PATTERN" | tr -d '\n'
-	    status="$?"
-	    if [[ $status -ne 0 ]]; then
-		echo "$0: ERROR: $JSONPATH_SH -w -u -f $JSON_FILE -- '$PATTERN' failed," \
-		     "error code: $status" 1>&2
-		exit 1
-	    fi
-
-	fi
-
-
-    # case: print only values from JSONPath.sh output
-    #
-    fi | if [[ -n $PRINT_ONLY_VALUES ]]; then
-
-	# case: -q -b (print only values and remove double quotes and []'s) via JSONPath.sh
-	#
-	if [[ -n $REMOVE_QUOTES ]]; then
-
-	     sed -E -e 's/^\S*\s*//' \
-		    -e 's/^"//' \
-		    -e 's/"$//'
-	    status="$?"
-	    if [[ $status -ne 0 ]]; then
-		echo "$0: ERROR: pipe from -t jJSONPath.sh options: -q -b: sed -E -e ... failed," \
-		     "error code: $status" 1>&2
-		exit 1
-	    fi
-
-	# case: -b (print only values) via JSONPath.sh
-	#
-	else
-
-	    sed -E -e 's/^\S*\s*//'
-	    status="$?"
-	    if [[ $status -ne 0 ]]; then
-		echo "$0: ERROR: pipe from -t jJSONPath.sh options: -b: sed -E -e ... failed," \
-		     "error code: $status" 1>&2
-		exit 1
-	    fi
-	fi
-
-    # case: print both JSON member and JSON value from JSONPath.sh output
-    #
-    else
-
-	# case: -q without -b (print both JSON member and JSON value and remove double quotes and []'s) via JSONPath.sh
-	#
-	if [[ -n $REMOVE_QUOTES ]]; then
-
-	    sed -E -e 's/^\s+//' \
-		   -e 's/\s+$//' \
-		   -e 's/^\["?//' \
-		   -e 's/^(\S*),"/\1,/' \
-		   -e 's/\]\t/\t/' \
-		   -e 's/"\t"?/\t/' \
-		   -e 's/"$//'
-	    status="$?"
-	    if [[ $status -ne 0 ]]; then
-		echo "$0: ERROR: pipe from -t JSONPath.sh options: -q: sed -E -e ... failed," \
-		     "error code: $status" 1>&2
-		exit 1
-	    fi
-
-	# case: without -b (print only values) via JSONPath.sh
-	#
-	else
-
-	    sed -E -e 's/^\s+//' \
-		   -e 's/\s+$//'
-	    status="$?"
-	    if [[ $status -ne 0 ]]; then
-		echo "$0: ERROR: pipe from -t JSONPath.sh: sed -E -e ... failed," \
-		     "error code: $status" 1>&2
-		exit 1
-	    fi
-	fi
-    fi
-    ;;
-
-
-# case: we do not know which XPath JSON tool to use
-#
-*)
-
-    echo "$0: ERROR: XPATHJSON_USE is neither jsp nor JSONPath.sh: $XPATHJSON_USE" 1>&2
-    exit 10
-    ;;
-esac
+    exit 1
+fi
 
 
 # All Done!!! All Done!!! -- Jessica Noll, Age 2

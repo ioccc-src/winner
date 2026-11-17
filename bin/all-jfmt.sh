@@ -2,7 +2,7 @@
 #
 # all-jfmt.sh - canonically format all entry and author JSON files
 #
-# Copyright (c) 2024 by Landon Curt Noll.  All Rights Reserved.
+# Copyright (c) 2024,2026 by Landon Curt Noll.  All Rights Reserved.
 #
 # Permission to use, copy, modify, and distribute this software and
 # its documentation for any purpose and without fee is hereby granted,
@@ -104,10 +104,18 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="2.0.0 2025-03-13"
+export VERSION="2.1.0 2026-11-16"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
+#
+QUICK_CHECK=""
+SORT_KEYS=""
+PRESERVE_UTF8=""
+#
+PYTHON3_TOOL=$(type -P python3 2>/dev/null || true)
+export PYTHON3_TOOL
+#
 GIT_TOOL=$(type -P git)
 export GIT_TOOL
 if [[ -z "$GIT_TOOL" ]]; then
@@ -132,7 +140,7 @@ export DO_NOT_PROCESS=
 export EXIT_CODE="0"
 
 
-# clear options we will add to tools
+# clear options we will add to the jfmt-wrapper.sh tool
 #
 unset TOOL_OPTION
 declare -ag TOOL_OPTION
@@ -140,29 +148,31 @@ declare -ag TOOL_OPTION
 
 # usage
 #
-export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
+export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-n] [-N] [-p python3] [-P] [-Q] [-s]
 
-	-h		print help message and exit
-	-v level	set verbosity level (def level: 0)
-	-V		print version string and exit
+    -h              print help message and exit
+    -v level        set verbosity level (def level: 0)
+    -V              print version string and exit
 
-	-d topdir	set topdir (def: $TOPDIR)
-	-D docroot/	set the document root path followed by slash (def: $DOCROOT_SLASH)
-			NOTE: The '-D docroot/' is passed as leading options on tool command lines.
-			NOTE: 'docroot' must end in a slash
+    -d topdir       set topdir (def: $TOPDIR)
 
-	-n		go thru the actions, but do not update any files (def: do the action)
-	-N		do not process anything, just parse arguments (def: process something)
+    -n              go thru the actions, but do not update any files (def: do the action)
+    -N              do not process anything, just parse arguments (def: process something)
+
+    -p python3      path the python3 tool (def: $PYTHON3_TOOL)
+    -P              preserve literal UTF-8 output (def: non-ASCII character are re-encoded as ASCII escape sequences)
+    -Q              quick check python3 using trivial input and exit, ignore file.json (def: do not)
+    -s              canonical key sorting as per RFC 8785 (def: print JSON in the IOCCC JSON style)
 
 Exit codes:
      0         all OK
-     1	       some internal tool exited non-zero
+     1         some internal tool exited non-zero
      2         -h and help string printed or -V and version string printed
      3         command line error
      4         bash version is too old
-     5	       some internal tool is not found or not an executable file
-     6	       problems found with or in the topdir or topdir/YYYY directory
-     7	       problems found with or in the entry topdir/YYYY/dir directory
+     5         some internal tool is not found or not an executable file
+     6         problems found with or in the topdir or topdir/YYYY directory
+     7         problems found with or in the entry topdir/YYYY/dir directory
  >= 10         internal error
 
 $NAME version: $VERSION"
@@ -170,7 +180,7 @@ $NAME version: $VERSION"
 
 # parse command line
 #
-while getopts :hv:Vd:D:j:nN flag; do
+while getopts :hv:Vd:j:nNp:PQs flag; do
   case "$flag" in
     h) echo "$USAGE" 1>&2
 	exit 2
@@ -182,22 +192,22 @@ while getopts :hv:Vd:D:j:nN flag; do
 	;;
     d) TOPDIR="$OPTARG"
 	;;
-    D) # parse -D docroot/
-	case "$OPTARG" in
-	*/) ;;
-	*) echo "$0: ERROR: in -D docroot/, the docroot must end in /" 1>&2
-	   echo 1>&2
-	   echo "$USAGE" 1>&2
-	   exit 3
-	   ;;
-	esac
-	DOCROOT_SLASH="$OPTARG"
-	TOOL_OPTION+=("-D")
-	TOOL_OPTION+=("$DOCROOT_SLASH")
-	;;
     n) NOOP="-n"
 	;;
     N) DO_NOT_PROCESS="-N"
+	;;
+    p) PYTHON3_TOOL=$(type -P "$OPTARG" 2>/dev/null || echo "$OPTARG")
+	TOOL_OPTION+=("-p")
+	TOOL_OPTION+=("$PYTHON3_TOOL")
+        ;;
+    Q) QUICK_CHECK="-Q"
+	TOOL_OPTION+=("-Q")
+	;;
+    s) SORT_KEYS=', sort_keys=True'
+	TOOL_OPTION+=("-s")
+	;;
+    P) PRESERVE_UTF8=', ensure_ascii=False'
+	TOOL_OPTION+=("-P")
 	;;
     \?) echo "$0: ERROR: invalid option: -$OPTARG" 1>&2
 	echo 1>&2
@@ -359,6 +369,10 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: VERSION=$VERSION" 1>&2
     echo "$0: debug[3]: NAME=$NAME" 1>&2
     echo "$0: debug[3]: V_FLAG=$V_FLAG" 1>&2
+    echo "$0: debug[3]: QUICK_CHECK=$QUICK_CHECK" 1>&2
+    echo "$0: debug[3]: SORT_KEYS=$SORT_KEYS" 1>&2
+    echo "$0: debug[3]: PRESERVE_UTF8=$PRESERVE_UTF8" 1>&2
+    echo "$0: debug[3]: PYTHON3_TOOL=$PYTHON3_TOOL" 1>&2
     echo "$0: debug[3]: GIT_TOOL=$GIT_TOOL" 1>&2
     echo "$0: debug[3]: TOPDIR=$TOPDIR" 1>&2
     echo "$0: debug[3]: DOCROOT_SLASH=$DOCROOT_SLASH" 1>&2

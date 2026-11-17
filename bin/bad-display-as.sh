@@ -111,7 +111,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="2.1.1 2026-05-03"
+export VERSION="2.2.0 2026-11-16"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -131,9 +131,15 @@ export REPO_TOP_URL="https://github.com/ioccc-src/winner"
 # GitHub puts individual files under the "blob/master" sub-directory.
 export REPO_URL="$REPO_TOP_URL/blob/master"
 #
-export JP_REPO="https://github.com/davidhoo/jsonpath"
-export JP_TOOL=""
-JP_TOOL=$(type -P jp)
+JVAL_WRAPPER=$(type -P jval-wrapper.sh 2>/dev/null || true)
+if [[ -z $JVAL_WRAPPER ]]; then
+    if [[ -n $TOPDIR && -x "$TOPDIR/bin/jval-wrapper.sh" ]]; then
+	JVAL_WRAPPER="$TOPDIR/bin/jval-wrapper.sh"
+    else
+	JVAL_WRAPPER="bin/jval-wrapper.sh"
+    fi
+fi
+export JVAL_WRAPPER
 #
 VERGE=$(type -P verge)
 export VERGE
@@ -174,14 +180,14 @@ export EXIT_CODE="0"
 
 # set usage message
 #
-export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-n] [-N]
-			YYYY/dir
+export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-j jval] [-n] [-N] YYYY/dir
 
 	-h		print help message and exit
 	-v level	set verbosity level (def level: 0)
 	-V		print version string and exit
 
 	-d topdir	set topdir (def: $TOPDIR)
+	-j jval		path to jval-wrapper.sh (def: $JVAL_WRAPPER)
 
 	-n		go thru the actions, but do not update any files (def: do the action)
 	-N		do not process file, just parse arguments and ignore the file (def: process the file)
@@ -197,7 +203,7 @@ Exit codes:
      5	       some internal tool is not found or not an executable file
      6	       problems found with or in the topdir or topdir/YYYY directory
      7	       problems found with or in the entry topdir/YYYY/dir directory
-     8	       jp tool error
+     8	       jval-wrapper.sh tool error
  >= 10         internal error
 
 $NAME version: $VERSION"
@@ -205,7 +211,7 @@ $NAME version: $VERSION"
 
 # parse command line
 #
-while getopts :hv:Vd: flag; do
+while getopts :hv:Vd:j:nN flag; do
   case "$flag" in
     h) echo "$USAGE" 1>&2
 	exit 2
@@ -216,6 +222,12 @@ while getopts :hv:Vd: flag; do
 	exit 2
 	;;
     d) TOPDIR="$OPTARG"
+	;;
+    j) JVAL_WRAPPER="$OPTARG"
+	;;
+    n) NOOP="-n"
+	;;
+    N) DO_NOT_PROCESS="-N"
 	;;
     \?) echo "$0: ERROR: invalid option: -$OPTARG" 1>&2
 	echo 1>&2
@@ -343,16 +355,19 @@ if [[ ! -w $YYYY_DIR ]]; then
 fi
 
 
-# verify we have a jp tool
+# verify JVAL_WRAPPER
 #
-if [[ -z $JP_TOOL || ! -x $JP_TOOL ]]; then
-    echo "$0: ERROR: jp tool is not installed, is not executable, or not in \$PATH" 1>&2
-    echo 1>&2
-    echo "$0: notice: obtain jp from: $JP_REPO" 1>&2
-    echo 1>&2
-    echo "$0: notice: If on macOS, using homebrew, install via: brew tap davidhoo/tap ; brew install jsonpath" 1>&2
-    echo 1>&2
-    echo "$0: notice: or via go install: github.com/davidhoo/jsonpath/cmd/jp@latest" 1>&2
+JVAL_TOOL=$(type -P "$JVAL_WRAPPER" 2>/dev/null || true)
+if [[ -z "$JVAL_TOOL" || ! -x "$JVAL_TOOL" ]]; then
+    if [[ ! -x "$JVAL_WRAPPER" ]]; then
+	echo "$0: ERROR: jval-wrapper.sh tool not found or not executable: $JVAL_WRAPPER" 1>&2
+	exit 5
+    fi
+fi
+"$JVAL_WRAPPER" -Q
+status="$?"
+if [[ $status -ne 0 ]]; then
+    echo "$0: ERROR: jval-wrapper.sh tool failed quick check: $JVAL_WRAPPER -Q" 1>&2
     exit 5
 fi
 
@@ -386,8 +401,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: TOPDIR=$TOPDIR" 1>&2
     echo "$0: debug[3]: REPO_TOP_URL=$REPO_TOP_URL" 1>&2
     echo "$0: debug[3]: REPO_URL=$REPO_URL" 1>&2
-    echo "$0: debug[3]: JP_REPO=$JP_REPO" 1>&2
-    echo "$0: debug[3]: JP_TOOL=$JP_TOOL" 1>&2
+    echo "$0: debug[3]: JVAL_WRAPPER=$JVAL_WRAPPER" 1>&2
     echo "$0: debug[3]: VERGE=$VERGE" 1>&2
     echo "$0: debug[3]: JPARSE_TOOL=$JPARSE_TOOL" 1>&2
     echo "$0: debug[3]: MIN_JPARSE_VERSION=$MIN_JPARSE_VERSION" 1>&2
@@ -415,7 +429,7 @@ if [[ -n $DO_NOT_PROCESS ]]; then
 fi
 
 
-# verify .entry.json is readable non-empty files
+# verify .entry.json is readable non-empty file
 #
 if [[ ! -e $ENTRY_JSON ]]; then
     echo  "$0: ERROR: .entry.json does not exist: $ENTRY_JSON" 1>&2
@@ -435,14 +449,13 @@ if [[ ! -s $ENTRY_JSON ]]; then
 fi
 
 
-
 # verify that .entry.json is valid JSON
 #
 if [[ -z $NOOP ]]; then
     "$JPARSE_TOOL" -q -- "$ENTRY_JSON" 1>&2
     status="$?"
     if [[ $status -ne 0 ]]; then
-	echo "$0: ERROR: $JPARSE_TOOL -q -- $ENTRY_JSON filed," \
+	echo "$0: ERROR: $JPARSE_TOOL -q -- $ENTRY_JSON failed," \
 	     "error code: $status" 1>&2
 	exit 1
     fi
@@ -469,18 +482,15 @@ fi
 
 # determine the types of "display_as" values in the manifest of the .entry.json file
 #
-export PATTERN='$.manifest[*].display_as'
+export PATTERN='.//manifest/item/display_as'
 unset DISPLAY_AS_SET
 DISPLAY_AS_SET=()
-readarray -t DISPLAY_AS_SET < <("$JP_TOOL" --no-color -p "$PATTERN" -f "$ENTRY_JSON" 2>/dev/null |
-				grep -E -v '^[][]|^null$' |
-				sed -e 's;^\s*";;' -e 's;",*$;;' |
-				LC_ALL=C sort |
-				uniq)
+readarray -t DISPLAY_AS_SET < <("$JVAL_WRAPPER" -b -q -P "$ENTRY_JSON" "$PATTERN" 2>/dev/null |
+				LC_ALL=C sort -u)
 status0="${PIPESTATUS[0]}"
 if [[ $status0 -ne 0 ]]; then
-    echo "$0: ERROR: $JP_TOOL --no-color -p $PATTERN -f $ENTRY_JSON failed," \
-	 "error code: $status" 1>&2
+    echo "$0: ERROR: $JVAL_WRAPPER -b -q -P $ENTRY_JSON $PATTERN failed," \
+	 "error code: $status0" 1>&2
     exit 1
 fi
 if [[ ${#DISPLAY_AS_SET[@]} -le 0 ]]; then
@@ -495,8 +505,8 @@ for DISPLAY_AS in "${DISPLAY_AS_SET[@]}"; do
 
     # determine if GitHub is required for known "display_as" value
     #
-    # If $GITHUB_VIEW_REQUIRED == "true",  then "display_via_github" just be true
-    # If $GITHUB_VIEW_REQUIRED == "false", then "display_via_github" just be false
+    # If $GITHUB_VIEW_REQUIRED == "true",  then "display_via_github" must be true
+    # If $GITHUB_VIEW_REQUIRED == "false", then "display_via_github" must be false
     #
     agrep)	GITHUB_VIEW_REQUIRED="true" ;;
     asm)	GITHUB_VIEW_REQUIRED="true" ;;
@@ -556,19 +566,19 @@ for DISPLAY_AS in "${DISPLAY_AS_SET[@]}"; do
 
     # determine pattern that shouldn't be found
     #
-    # If $GITHUB_VIEW_REQUIRED == "true",  then "display_via_github" just be true
-    # If $GITHUB_VIEW_REQUIRED == "false", then "display_via_github" just be false
+    # If $GITHUB_VIEW_REQUIRED == "true",  then "display_via_github" must be true
+    # If $GITHUB_VIEW_REQUIRED == "false", then "display_via_github" must be false
     #
     if [[ $GITHUB_VIEW_REQUIRED == "true" ]]; then
-	PATTERN='$.manifest[?(@.display_as=="'"$DISPLAY_AS"'" && @.display_via_github==false)]'
+	PATTERN=".//manifest/item[display_as='${DISPLAY_AS}'][display_via_github='false']"
     else
-	PATTERN='$.manifest[?(@.display_as=="'"$DISPLAY_AS"'" && @.display_via_github==true)]'
+	PATTERN=".//manifest/item[display_as='${DISPLAY_AS}'][display_via_github='true']"
     fi
 
     # look for invalid "display_as" / "display_via_github" combos
     #
     if [[ -z $NOOP ]]; then
-	FOUND=$("$JP_TOOL" --no-color -p "$PATTERN" -f "$ENTRY_JSON" 2>&1)
+	FOUND=$("$JVAL_WRAPPER" -b -q -P "$ENTRY_JSON" "$PATTERN" 2>&1)
 	status="$?"
 
     # case: -n
@@ -577,16 +587,12 @@ for DISPLAY_AS in "${DISPLAY_AS_SET[@]}"; do
 	FOUND=""
 	status=0
     fi
-    #
-    if [[ $FOUND == "null" ]]; then
-	FOUND=""
-    fi
 
     # report on test if needed
     #
     if [[ $status -ne 0 ]]; then
 	echo "$0: Warning:" \
-	    "$JP_TOOL --no-color -p $PATTERN -f $ENTRY_JSON failed, error: $status" 1>&2
+	    "$JVAL_WRAPPER -b -q -P $ENTRY_JSON $PATTERN failed, error: $status" 1>&2
 	EXIT_CODE=8 # exit 8
 	echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
 	continue
@@ -616,7 +622,7 @@ case "$EXIT_CODE" in
     echo "$0: ERROR: invalid display_as / display_via_github combo(s) found in: $ENTRY_JSON" 1>&2
     ;;
 8)
-    echo "$0: ERROR: jp: $JP_TOOL tool failed processing: $ENTRY_JSON" 1>&2
+    echo "$0: ERROR: jval-wrapper: $JVAL_WRAPPER tool failed processing: $ENTRY_JSON" 1>&2
     ;;
 *)
     echo "$0: ERROR: unexpected EXIT_CODE value: $EXIT_CODE for $ENTRY_JSON" 1>&2

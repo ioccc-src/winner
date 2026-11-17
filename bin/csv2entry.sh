@@ -58,7 +58,7 @@
 # files in the YYYY/dir directory, or even that the `.entry.json`
 # contains a manifest (or any of the other required JSON content).
 #
-# Copyright (c) 2024 by Landon Curt Noll.  All Rights Reserved.
+# Copyright (c) 2024,2026 by Landon Curt Noll.  All Rights Reserved.
 #
 # Permission to use, copy, modify, and distribute this software and
 # its documentation for any purpose and without fee is hereby granted,
@@ -167,7 +167,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="2.0.0 2025-03-13"
+export VERSION="2.1.0 2026-11-16"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -910,7 +910,7 @@ fi
 if [[ $V_FLAG -ge 1 ]]; then
     echo "$0: debug[1]: forming list of author handles from author/author_handle.json files" 1>&2
 fi
-PATTERN='$..entry_id'
+PATTERN='.//entry_id'
 "$COMBINE_AUTHOR" | "$JVAL_WRAPPER" -b -q - "$PATTERN" | LC_ALL=C sort -t _ -d -u > "$TMP_AUTHOR_HANDLE_FROM_FILES"
 status_codes=("${PIPESTATUS[@]}")
 if [[ ${status_codes[*]} =~ [1-9] ]]; then

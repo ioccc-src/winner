@@ -2,7 +2,7 @@
 #
 # gen-status.sh - create the top level status.md and status.html files
 #
-# Copyright (c) 2024 by Landon Curt Noll.  All Rights Reserved.
+# Copyright (c) 2024,2026 by Landon Curt Noll.  All Rights Reserved.
 #
 # Permission to use, copy, modify, and distribute this software and
 # its documentation for any purpose and without fee is hereby granted,
@@ -104,7 +104,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="2.1.0 2025-11-29"
+export VERSION="2.2.0 2026-11-16"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -126,6 +126,16 @@ export REPO_TOP_URL="https://github.com/ioccc-src/winner"
 # GitHub puts individual files under the "blob/master" sub-directory.
 export REPO_URL="$REPO_TOP_URL/blob/master"
 export SITE_URL="https://www.ioccc.org"
+#
+JVAL_WRAPPER=$(type -P jval-wrapper.sh 2>/dev/null || true)
+if [[ -z $JVAL_WRAPPER ]]; then
+    if [[ -n $TOPDIR && -x "$TOPDIR/bin/jval-wrapper.sh" ]]; then
+	JVAL_WRAPPER="$TOPDIR/bin/jval-wrapper.sh"
+    else
+	JVAL_WRAPPER="bin/jval-wrapper.sh"
+    fi
+fi
+export JVAL_WRAPPER
 #
 STAT_TOOL=$(type -P stat)
 if [[ -z "$STAT_TOOL" ]]; then
@@ -220,7 +230,7 @@ function output_modtime
 	fi
 	;;
 
-    *) echo "0: in output_modtime: unknown MODTIME_METHOD value: $MODTIME_METHOD" 1>&2
+    *) echo "$0: in output_modtime: unknown MODTIME_METHOD value: $MODTIME_METHOD" 1>&2
 	exit 9
 	;;
     esac
@@ -252,6 +262,7 @@ function output_status_json
     local NEW_CONTEST_STATUS;	# contest_status are and a potential new "contest_status"
     local OLD_STATUS_UPDATE;	# "status_update" that was in status.json
     local NEW_STATUS_UPDATE;	# a potential "status_update" string for now
+    local PATTERN;
 
     # parse args
     #
@@ -306,21 +317,21 @@ function output_status_json
 
     # determine the "contest_status" that was in status.json
     #
-    PATTERN='$..contest_status'
-    OLD_CONTEST_STATUS=$("$JVAL_WRAPPER" -b -q "$STATUS_PATH" "$PATTERN")
+    PATTERN='.//contest_status'
+    OLD_CONTEST_STATUS=$("$JVAL_WRAPPER" -b -q -P -- "$STATUS_PATH" "$PATTERN")
     status="$?"
     if [[ $status -ne 0 || -z $OLD_CONTEST_STATUS ]]; then
-	echo "$0: ERROR: cannot determine old contest_status from status.json: $STATUS_JSON" 1>&2
+	echo "$0: ERROR: cannot determine old contest_status from status.json: $STATUS_PATH" 1>&2
 	return 11
     fi
 
     # determine the "status_update" that was in status.json
     #
-    PATTERN='$..status_update'
-    OLD_STATUS_UPDATE=$("$JVAL_WRAPPER" -b -q "$STATUS_PATH" "$PATTERN")
+    PATTERN='.//status_update'
+    OLD_STATUS_UPDATE=$("$JVAL_WRAPPER" -b -q -P -- "$STATUS_PATH" "$PATTERN")
     status="$?"
     if [[ $status -ne 0 || -z $OLD_STATUS_UPDATE ]]; then
-	echo "$0: ERROR: cannot determine old status_update from status.json: $STATUS_JSON" 1>&2
+	echo "$0: ERROR: cannot determine old status_update from status.json: $STATUS_PATH" 1>&2
 	return 12
     fi
 
@@ -362,8 +373,8 @@ function output_status_json
 
 # usage
 #
-export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-n] [-N]
-			[-t tagline] [p | pending | o | open | j | judging | c | closed]
+export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-j jval] [-n] [-N]
+			[-t tagline] [-w site_url] [p | pending | o | open | j | judging | c | closed]
 
 	-h		print help message and exit
 	-v level	set verbosity level (def level: 0)
@@ -374,6 +385,7 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-n] [-N]
 	-D docroot/	set the document root path followed by slash (def: $DOCROOT_SLASH)
 			NOTE: The '-D docroot/' is passed as leading options on tool command lines.
 			NOTE: 'docroot' must end in a slash
+	-j jval		path to jval-wrapper.sh tool (def: $JVAL_WRAPPER)
 
 	-n		go thru the actions, but do not update any files (def: do the action)
 			NOTE: -n is passed to tool
@@ -408,7 +420,7 @@ $NAME version: $VERSION"
 
 # parse command line
 #
-while getopts :hv:Vd:D:nNt:w: flag; do
+while getopts :hv:Vd:D:j:nNt:w: flag; do
   case "$flag" in
     h) echo "$USAGE" 1>&2
 	exit 2
@@ -433,6 +445,8 @@ while getopts :hv:Vd:D:nNt:w: flag; do
 	esac
 	DOCROOT_SLASH="$OPTARG"
 	# -D docroot/ always added after arg parsing
+	;;
+    j) JVAL_WRAPPER="$OPTARG"
 	;;
     n) NOOP="-n"
 	;;
@@ -615,17 +629,17 @@ fi
 
 # verify that the bin/jval-wrapper.sh tool is executable
 #
-JVAL_WRAPPER="$BIN_DIR/jval-wrapper.sh"
-if [[ ! -e $JVAL_WRAPPER ]]; then
-    echo  "$0: ERROR: bin/jval-wrapper.sh does not exist: $JVAL_WRAPPER" 1>&2
-    exit 5
+JVAL_TOOL=$(type -P "$JVAL_WRAPPER" 2>/dev/null || true)
+if [[ -z "$JVAL_TOOL" || ! -x "$JVAL_TOOL" ]]; then
+    if [[ ! -x "$JVAL_WRAPPER" ]]; then
+	echo "$0: ERROR: jval-wrapper.sh tool not found or not executable: $JVAL_WRAPPER" 1>&2
+	exit 5
+    fi
 fi
-if [[ ! -f $JVAL_WRAPPER ]]; then
-    echo  "$0: ERROR: bin/jval-wrapper.sh is not a regular file: $JVAL_WRAPPER" 1>&2
-    exit 5
-fi
-if [[ ! -x $JVAL_WRAPPER ]]; then
-    echo  "$0: ERROR: bin/jval-wrapper.sh is not an executable file: $JVAL_WRAPPER" 1>&2
+"$JVAL_WRAPPER" -Q
+status="$?"
+if [[ $status -ne 0 ]]; then
+    echo "$0: ERROR: jval-wrapper.sh tool failed quick check: $JVAL_WRAPPER -Q" 1>&2
     exit 5
 fi
 
@@ -642,11 +656,11 @@ if [[ ! -f $NEWS_MD ]]; then
     exit 1
 fi
 if [[ ! -r $NEWS_MD ]]; then
-    echo  "$0: ERROR: news.md is not an readable file: $NEWS_MD" 1>&2
+    echo  "$0: ERROR: news.md is not a readable file: $NEWS_MD" 1>&2
     exit 1
 fi
 if [[ ! -s $NEWS_MD ]]; then
-    echo  "$0: ERROR: news.md is not an non-empty readable file: $NEWS_MD" 1>&2
+    echo  "$0: ERROR: news.md is not a non-empty readable file: $NEWS_MD" 1>&2
     exit 1
 fi
 
@@ -663,11 +677,11 @@ if [[ ! -f $STATUS_JSON ]]; then
     exit 1
 fi
 if [[ ! -r $STATUS_JSON ]]; then
-    echo  "$0: ERROR: status.json is not an readable file: $STATUS_JSON" 1>&2
+    echo  "$0: ERROR: status.json is not a readable file: $STATUS_JSON" 1>&2
     exit 1
 fi
 if [[ ! -s $STATUS_JSON ]]; then
-    echo  "$0: ERROR: status.json is not an non-empty readable file: $STATUS_JSON" 1>&2
+    echo  "$0: ERROR: status.json is not a non-empty readable file: $STATUS_JSON" 1>&2
     exit 1
 fi
 
@@ -684,11 +698,11 @@ if [[ ! -f $STATUS_MD ]]; then
     exit 1
 fi
 if [[ ! -r $STATUS_MD ]]; then
-    echo  "$0: ERROR: status.md is not an readable file: $STATUS_MD" 1>&2
+    echo  "$0: ERROR: status.md is not a readable file: $STATUS_MD" 1>&2
     exit 1
 fi
 if [[ ! -s $STATUS_MD ]]; then
-    echo  "$0: ERROR: status.md is not an non-empty readable file: $STATUS_MD" 1>&2
+    echo  "$0: ERROR: status.md is not a non-empty readable file: $STATUS_MD" 1>&2
     exit 1
 fi
 
@@ -710,7 +724,7 @@ if [[ ! -f $TOP_FILE ]]; then
     exit 6
 fi
 if [[ ! -r $TOP_FILE ]]; then
-    echo  "$0: ERROR: .top is not an readable file: $TOP_FILE" 1>&2
+    echo  "$0: ERROR: .top is not a readable file: $TOP_FILE" 1>&2
     exit 6
 fi
 if [[ ! -s $TOP_FILE ]]; then
@@ -729,7 +743,7 @@ fi
 export INC_DIR="inc"
 
 
-# verify that we have an next subdirectory
+# verify that we have a next subdirectory
 #
 export NEXT_PATH="$TOPDIR/next"
 if [[ ! -d $NEXT_PATH ]]; then
@@ -747,7 +761,7 @@ export NEXT_DIR="next"
 #
 #	https://www.sitemaps.org/protocol.html
 #
-# Unfortunately there is NO single widely available, but simple command produce a modification
+# Unfortunately there is NO single widely available, but simple command to produce a modification
 # time in W3C Datetime format.  At best we can try one of several methods in the hopes that
 # we can find a method for the system in question.
 #
@@ -790,7 +804,7 @@ else
 	    fi
 
 	else
-	    echo "$0: ERROR: we cannot determine how to form a file modification time in W3C Datetime formt" 1>&2
+	    echo "$0: ERROR: we cannot determine how to form a file modification time in W3C Datetime format" 1>&2
 	    exit 9
 	fi
     fi
@@ -859,8 +873,8 @@ fi
 # obtain the current contest status
 #
 export CURRENT_CONTEST_STATUS=""
-PATTERN='$..contest_status'
-CURRENT_CONTEST_STATUS=$("$JVAL_WRAPPER" -b -q "$STATUS_JSON" "$PATTERN")
+PATTERN='.//contest_status'
+CURRENT_CONTEST_STATUS=$("$JVAL_WRAPPER" -b -q -P -- "$STATUS_JSON" "$PATTERN")
 status="$?"
 if [[ $status -ne 0 || -z $CURRENT_CONTEST_STATUS ]]; then
     echo "$0: ERROR: cannot determine current contest status from status.json: $STATUS_JSON" 1>&2
@@ -881,7 +895,7 @@ judging) CURRENT_CONTEST_STATUS="judging"
     ;;
 closed) CURRENT_CONTEST_STATUS="closed"
     ;;
-*) echo "$0: ERROR: unexpected status from $status.json: $CURRENT_CONTEST_STATUS" 1>&2
+*) echo "$0: ERROR: unexpected status from $STATUS_JSON: $CURRENT_CONTEST_STATUS" 1>&2
     echo 1>&2
     echo "$USAGE" 1>&2
     exit 1
@@ -941,11 +955,11 @@ if [[ ! -f $RULES_MD ]]; then
     exit 1
 fi
 if [[ ! -r $RULES_MD ]]; then
-    echo  "$0: ERROR: rules.md is not an readable file: $RULES_MD" 1>&2
+    echo  "$0: ERROR: rules.md is not a readable file: $RULES_MD" 1>&2
     exit 1
 fi
 if [[ ! -s $RULES_MD ]]; then
-    echo  "$0: ERROR: rules.md is not an non-empty readable file: $RULES_MD" 1>&2
+    echo  "$0: ERROR: rules.md is not a non-empty readable file: $RULES_MD" 1>&2
     exit 1
 fi
 export RULES_HTML="$NEXT_DIR/rules.html"
@@ -963,11 +977,11 @@ if [[ ! -f $RULES_HDR ]]; then
     exit 1
 fi
 if [[ ! -r $RULES_HDR ]]; then
-    echo  "$0: ERROR: rules hdr file is not an readable file: $RULES_HDR" 1>&2
+    echo  "$0: ERROR: rules hdr file is not a readable file: $RULES_HDR" 1>&2
     exit 1
 fi
 if [[ ! -s $RULES_HDR ]]; then
-    echo  "$0: ERROR: rules hdr file is not an non-empty readable file: $RULES_HDR" 1>&2
+    echo  "$0: ERROR: rules hdr file is not a non-empty readable file: $RULES_HDR" 1>&2
     exit 1
 fi
 
@@ -989,7 +1003,8 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo  "$0: debug[3]: temporary status.json file: $TMP_STATUS_JSON" 1>&2
 fi
 if [[ -z $NOOP ]]; then
-    trap 'rm -f $TMP_STATUS_JSON; exit' 0 1 2 3 15
+    trap 'rm -f $TMP_STATUS_JSON $TMP_RULES_MD' EXIT
+    trap 'rm -f $TMP_STATUS_JSON $TMP_RULES_MD; exit 1' 1 2 3 15
     rm -f "$TMP_STATUS_JSON"
     if [[ -e $TMP_STATUS_JSON ]]; then
 	echo "$0: ERROR: cannot remove temporary status.json file: $TMP_STATUS_JSON" 1>&2
@@ -1012,7 +1027,6 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo  "$0: debug[3]: temporary rules.md file: $TMP_RULES_MD" 1>&2
 fi
 if [[ -z $NOOP ]]; then
-    trap 'rm -f $TMP_STATUS_JSON $TMP_RULES_MD; exit' 0 1 2 3 15
     rm -f "$TMP_RULES_MD"
     if [[ -e $TMP_RULES_MD ]]; then
 	echo "$0: ERROR: cannot remove temporary rules.md file: $TMP_RULES_MD" 1>&2
@@ -1047,7 +1061,7 @@ if [[ -z $NOOP ]]; then
         exit 17
     fi
 
-    # check if temporary status.json file if different from the actual status.json file
+    # check if temporary status.json file is different from the actual status.json file
     #
     if cmp -s "$STATUS_JSON" "$TMP_STATUS_JSON"; then
 
@@ -1057,7 +1071,7 @@ if [[ -z $NOOP ]]; then
 	    echo "$0: debug[3]: no change to status.json" 1>&2
 	fi
 
-    # case: temporary status.json file if different from the actual status.json
+    # case: temporary status.json file is different from the actual status.json
     #
     else
 
@@ -1192,7 +1206,7 @@ if [[ -z $NOOP ]]; then
             status="$?"
         fi
 	if [[ $status -ne 0 ]]; then
-            echo "$0: ERROR: mv -f -- $TMP_RULES_MD $RULES_MD filed, error code: $status" 1>&2
+            echo "$0: ERROR: mv -f -- $TMP_RULES_MD $RULES_MD failed, error code: $status" 1>&2
 	elif [[ $V_FLAG -ge 1 ]]; then
             echo "$0: debug[1]: built replaced rules.md: $RULES_MD" 1>&2
 	fi
@@ -1236,7 +1250,7 @@ fi
 if [[ -z $NOOP ]]; then
     rm -f -- "$TMP_STATUS_JSON" "$TMP_RULES_MD"
 elif [[ $V_FLAG -ge 3 ]]; then
-    echo "$0: debug[3]: because of -n, disabled: rm -f -- $TMP_STATUS_JSON" 1>&2
+    echo "$0: debug[3]: because of -n, disabled: rm -f -- $TMP_STATUS_JSON $TMP_RULES_MD" 1>&2
 fi
 
 

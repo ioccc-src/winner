@@ -11,7 +11,7 @@
 #
 # The CSV files are written in a canonical UNIX format form.
 #
-# Only those CSV files files whose content is modified are written.
+# Only those CSV files whose content is modified are written.
 #
 # Internal details of entry2csv.sh
 #
@@ -142,7 +142,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="2.0.1 2026-04-26"
+export VERSION="2.2.0 2026-11-16"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -159,37 +159,15 @@ if [[ $status -eq 0 ]]; then
 fi
 export TOPDIR
 #
-VERGE=$(type -P verge)
-export VERGE
-if [[ -z $VERGE ]]; then
-    echo "$0: FATAL: verge is not installed or not in \$PATH" 1>&2
-    echo "$0: notice: to install verge:" 1>&2
-    echo "$0: notice: run: git clone https://github.com/ioccc-src/mkiocccentry.git" 1>&2
-    echo "$0: notice: then: cd mkiocccentry && make clobber all" 1>&2
-    echo "$0: notice: then: cd jparse && sudo make install clobber" 1>&2
-    exit 5
+JVAL_WRAPPER=$(type -P jval-wrapper.sh 2>/dev/null || true)
+if [[ -z $JVAL_WRAPPER ]]; then
+    if [[ -n $TOPDIR && -x "$TOPDIR/bin/jval-wrapper.sh" ]]; then
+	JVAL_WRAPPER="$TOPDIR/bin/jval-wrapper.sh"
+    else
+	JVAL_WRAPPER="bin/jval-wrapper.sh"
+    fi
 fi
-#
-JSTRDECODE=$(type -P jstrdecode)
-export JSTRDECODE
-if [[ -z $JSTRDECODE ]]; then
-    echo "$0: FATAL: jstrdecode is not installed or not in \$PATH" 1>&2
-    echo "$0: notice: to install jstrdecode:" 1>&2
-    echo "$0: notice: run: git clone https://github.com/ioccc-src/mkiocccentry.git" 1>&2
-    echo "$0: notice: then: cd mkiocccentry && make clobber all" 1>&2
-    echo "$0: notice: then: cd jparse && sudo make install clobber" 1>&2
-    exit 5
-fi
-export MIN_JSTRDECODE_VERSION="2.2.3"
-JSTRDECODE_VERSION=$("$JSTRDECODE" -V | head -1 | awk '{print $3;}')
-if ! "$VERGE" "$JSTRDECODE_VERSION" "$MIN_JSTRDECODE_VERSION"; then
-    echo "$0: FATAL: jstrdecode version: $JSTRDECODE_VERSION < minimum version: $MIN_JSTRDECODE_VERSION" 1>&2
-    echo "$0: notice: consider updating jstrdecode from mkiocccentry repo" 1>&2
-    echo "$0: notice: run: git clone https://github.com/ioccc-src/mkiocccentry.git" 1>&2
-    echo "$0: notice: then: cd mkiocccentry && make clobber all" 1>&2
-    echo "$0: notice: then: cd jparse && sudo make install clobber" 1>&2
-    exit 5
-fi
+export JVAL_WRAPPER
 #
 export NOOP=
 export DO_NOT_PROCESS=
@@ -216,7 +194,7 @@ export AUTHOR_DIR="author"
 function output_award
 {
     local ENTRY_JSON_PATH;	# the .entry.json path
-    local PATTERN;		# XPath for JSON pattern
+    local PATTERN;		# XPath pattern
 
     # parse args
     #
@@ -240,15 +218,15 @@ function output_award
 
     # obtain the award string
     #
-    PATTERN='$..award'
+    PATTERN='.//award'
     if [[ $V_FLAG -ge 5 ]]; then
-	echo  "$0: debug[5]: about to run: $JVAL_WRAPPER -b -q -- $ENTRY_JSON_PATH '$PATTERN'" 1>&2
+	echo  "$0: debug[5]: about to run: $JVAL_WRAPPER -b -q -P -- $ENTRY_JSON_PATH '$PATTERN'" 1>&2
     fi
-    "$JVAL_WRAPPER" -b -q "$ENTRY_JSON_PATH" "$PATTERN"
-    status_codes=("${PIPESTATUS[@]}")
-    if [[ ${status_codes[*]} =~ [1-9] ]]; then
-	echo "$0: ERROR: in output_award: $JVAL_WRAPPER -b -q -- $ENTRY_JSON_PATH '$PATTERN' failed," \
-	     "error codes: ${status_codes[*]}" 1>&2
+    "$JVAL_WRAPPER" -b -q -P "$ENTRY_JSON_PATH" "$PATTERN"
+    status="$?"
+    if [[ $status -ne 0 ]]; then
+	echo "$0: ERROR: in output_award: $JVAL_WRAPPER -b -q -P -- $ENTRY_JSON_PATH '$PATTERN' failed," \
+	     "error code: $status" 1>&2
 	return 5
     fi
     return 0
@@ -269,7 +247,7 @@ function output_award
 function output_author_handles
 {
     local ENTRY_JSON_PATH;	# the .entry.json path
-    local PATTERN;		# XPath for JSON pattern
+    local PATTERN;		# XPath pattern
 
     # parse args
     #
@@ -293,14 +271,14 @@ function output_author_handles
 
     # extract author handles from .entry.json
     #
-    PATTERN='$..author_handle'
+    PATTERN='.//author_handle'
     if [[ $V_FLAG -ge 5 ]]; then
-	echo  "$0: debug[5]: about to run: $JVAL_WRAPPER -b -q -- $ENTRY_JSON_PATH '$PATTERN'" 1>&2
+	echo  "$0: debug[5]: about to run: $JVAL_WRAPPER -b -q -P -- $ENTRY_JSON_PATH '$PATTERN'" 1>&2
     fi
-    "$JVAL_WRAPPER" -b -q "$ENTRY_JSON_PATH" "$PATTERN"
+    "$JVAL_WRAPPER" -b -q -P "$ENTRY_JSON_PATH" "$PATTERN"
     status="$?"
     if [[ $status -ne 0 ]]; then
-	echo "$0: ERROR: in output_award: $JVAL_WRAPPER -b -q -- $ENTRY_JSON_PATH '$PATTERN' failed," \
+	echo "$0: ERROR: in output_author_handles: $JVAL_WRAPPER -b -q -P -- $ENTRY_JSON_PATH '$PATTERN' failed," \
 	     "error code: $status" 1>&2
 	return 5
     fi
@@ -322,7 +300,7 @@ function output_author_handles
 function output_title
 {
     local ENTRY_JSON_PATH;	# the .entry.json path
-    local PATTERN;		# XPath for JSON pattern
+    local PATTERN;		# XPath pattern
 
     # parse args
     #
@@ -346,14 +324,14 @@ function output_title
 
     # obtain the title string
     #
-    PATTERN='$..title'
+    PATTERN='.//title'
     if [[ $V_FLAG -ge 5 ]]; then
-	echo  "$0: debug[5]: about to run: $JVAL_WRAPPER -b -q -- $ENTRY_JSON_PATH '$PATTERN'" 1>&2
+	echo  "$0: debug[5]: about to run: $JVAL_WRAPPER -b -q -P -- $ENTRY_JSON_PATH '$PATTERN'" 1>&2
     fi
-    "$JVAL_WRAPPER" -b -q "$ENTRY_JSON_PATH" "$PATTERN"
+    "$JVAL_WRAPPER" -b -q -P "$ENTRY_JSON_PATH" "$PATTERN"
     status="$?"
     if [[ $status -ne 0 ]]; then
-	echo "$0: ERROR: in output_title: $JVAL_WRAPPER -b -q -- $ENTRY_JSON_PATH '$PATTERN' failed," \
+	echo "$0: ERROR: in output_title: $JVAL_WRAPPER -b -q -P -- $ENTRY_JSON_PATH '$PATTERN' failed," \
 	     "error code: $status" 1>&2
 	return 5
     fi
@@ -375,7 +353,7 @@ function output_title
 function output_abstract
 {
     local ENTRY_JSON_PATH;	# the .entry.json path
-    local PATTERN;		# XPath for JSON pattern
+    local PATTERN;		# XPath pattern
     local ABSTRACT;		# extracted abstract from .entry.json
 
     # parse args
@@ -400,16 +378,15 @@ function output_abstract
 
     # obtain the abstract string
     #
-    PATTERN='$..abstract'
+    PATTERN='.//abstract'
     if [[ $V_FLAG -ge 5 ]]; then
-	echo  "$0: debug[5]: about to run: $JVAL_WRAPPER -b -q -- $ENTRY_JSON_PATH '$PATTERN' | $JSTRDECODE -d -q -N -" 1>&2
+	echo  "$0: debug[5]: about to run: $JVAL_WRAPPER -b -q -P -- $ENTRY_JSON_PATH '$PATTERN'" 1>&2
     fi
-    export ABSTRACT
-    ABSTRACT=$("$JVAL_WRAPPER" -b -q "$ENTRY_JSON_PATH" "$PATTERN" | "$JSTRDECODE" -d -q -N -)
-    status_codes=("${PIPESTATUS[@]}")
-    if [[ ${status_codes[*]} =~ [1-9] || -z $ABSTRACT ]]; then
-	echo "$0: ERROR: in output_abstract: $JVAL_WRAPPER -b -q -- $ENTRY_JSON_PATH '$PATTERN' | $JSTRDECODE -d -q -N - failed," \
-	     "error codes: ${status_codes[*]}" 1>&2
+    ABSTRACT=$("$JVAL_WRAPPER" -b -q -P "$ENTRY_JSON_PATH" "$PATTERN")
+    status="$?"
+    if [[ $status -ne 0 || -z $ABSTRACT ]]; then
+	echo "$0: ERROR: in output_abstract: $JVAL_WRAPPER -b -q -P -- $ENTRY_JSON_PATH '$PATTERN' failed," \
+	     "error code: $status" 1>&2
 	return 5
     fi
     if [[ ${#ABSTRACT} -ge 65 ]]; then
@@ -427,33 +404,34 @@ function output_abstract
 
 # usage
 #
-export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-n] [-N]
+export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-j jval] [-n] [-N]
 			[author_wins.csv [manifest.csv [year_prize.csv]]]
 
-	-h		print help message and exit
-	-v level	set verbosity level (def level: 0)
-	-V		print version string and exit
+    -h          print help message and exit
+    -v level    set verbosity level (def level: 0)
+    -V          print version string and exit
 
-	-d topdir	set topdir (def: $TOPDIR)
+    -d topdir   set topdir (def: $TOPDIR)
+    -j jval     path to jval-wrapper.sh tool (def: $JVAL_WRAPPER)
 
-	-n		go thru the actions, but do not update any files (def: do the action)
-	-N		do not process anything, just parse arguments (def: process something)
+    -n          go thru the actions, but do not update any files (def: do the action)
+    -N          do not process anything, just parse arguments (def: process something)
 
-	author_wins.csv	where to form author_wins.csv (def: $AUTHOR_WINS_CSV)
-	manifest.csv	where to form manifest.csv (def: $MANIFEST_CSV)
-	year_prize.csv	where to form year_prize.csv (def: $YEAR_PRIZE_CSV)
+    author_wins.csv     where to form author_wins.csv (def: $AUTHOR_WINS_CSV)
+    manifest.csv        where to form manifest.csv (def: $MANIFEST_CSV)
+    year_prize.csv      where to form year_prize.csv (def: $YEAR_PRIZE_CSV)
 
 Exit codes:
      0         all OK
-     1	       invalid or missing .entry.json file
+     1         invalid or missing .entry.json file
      2         -h and help string printed or -V and version string printed
      3         command line error
      4         bash version is too old
-     5	       some internal tool is not found or not an executable file
-     6	       problems found with or in the topdir or topdir/YYYY directory
-     7	       problems found with or in the entry topdir/YYYY/dir directory
+     5         some internal tool is not found or not an executable file
+     6         problems found with or in the topdir or topdir/YYYY directory
+     7         problems found with or in the entry topdir/YYYY/dir directory
      8         unable to write a CSV or temporary file
-     9	       unknown author_handle found
+     9         unknown author_handle found
  >= 10         internal error
 
 $NAME version: $VERSION"
@@ -461,7 +439,7 @@ $NAME version: $VERSION"
 
 # parse command line
 #
-while getopts :hv:Vd:D:nN flag; do
+while getopts :hv:Vd:j:nN flag; do
   case "$flag" in
     h) echo "$USAGE" 1>&2
 	exit 2
@@ -472,6 +450,8 @@ while getopts :hv:Vd:D:nN flag; do
 	exit 2
 	;;
     d) TOPDIR="$OPTARG"
+	;;
+    j) JVAL_WRAPPER="$OPTARG"
 	;;
     n) NOOP="-n"
 	;;
@@ -507,8 +487,8 @@ case "$#" in
 1) AUTHOR_WINS_CSV="$1" ;;
 2) AUTHOR_WINS_CSV="$1" ; MANIFEST_CSV="$2" ;;
 3) AUTHOR_WINS_CSV="$1" ; MANIFEST_CSV="$2" ; YEAR_PRIZE_CSV="$3" ;;
-*) echo "$0: expected 0, 1, 2 or 3 args, found #$" 1>&2
-   echo 1>*2
+*) echo "$0: expected 0, 1, 2 or 3 args, found: $#" 1>&2
+   echo 1>&2
    echo  "$USAGE" 1>&2
    exit 3
    ;;
@@ -532,10 +512,10 @@ if [[ -z $MANIFEST_CSV ]]; then
     echo "$0: ERROR: MANIFEST_CSV is empty" 1>&2
     exit 8
 fi
-MANIFEST_WINS_CSV_DIR=$(dirname "$MANIFEST_CSV")
-export MANIFEST_WINS_CSV_DIR
-if [[ ! -w $MANIFEST_WINS_CSV_DIR ]]; then
-    echo "$0: ERROR: AUTHOR_WINS_CSV file: $MANIFEST_CSV in a non-writable directory: $MANIFEST_WINS_CSV_DIR" 1>&2
+MANIFEST_CSV_DIR=$(dirname "$MANIFEST_CSV")
+export MANIFEST_CSV_DIR
+if [[ ! -w $MANIFEST_CSV_DIR ]]; then
+    echo "$0: ERROR: MANIFEST_CSV file: $MANIFEST_CSV in a non-writable directory: $MANIFEST_CSV_DIR" 1>&2
     exit 8
 fi
 #
@@ -603,7 +583,7 @@ if [[ ! -f $TOP_FILE ]]; then
     exit 6
 fi
 if [[ ! -r $TOP_FILE ]]; then
-    echo  "$0: ERROR: .top is not an readable file: $TOP_FILE" 1>&2
+    echo  "$0: ERROR: .top is not a readable file: $TOP_FILE" 1>&2
     exit 6
 fi
 if [[ ! -s $TOP_FILE ]]; then
@@ -624,34 +604,17 @@ export BIN_DIR="bin"
 
 # verify that the bin/jval-wrapper.sh tool is executable
 #
-JVAL_WRAPPER="$BIN_DIR/jval-wrapper.sh"
-if [[ ! -e $JVAL_WRAPPER ]]; then
-    echo  "$0: ERROR: bin/jval-wrapper.sh does not exist: $JVAL_WRAPPER" 1>&2
-    exit 5
+JVAL_TOOL=$(type -P "$JVAL_WRAPPER" 2>/dev/null || true)
+if [[ -z "$JVAL_TOOL" || ! -x "$JVAL_TOOL" ]]; then
+    if [[ ! -x "$JVAL_WRAPPER" ]]; then
+	echo "$0: ERROR: jval-wrapper.sh tool not found or not executable: $JVAL_WRAPPER" 1>&2
+	exit 5
+    fi
 fi
-if [[ ! -f $JVAL_WRAPPER ]]; then
-    echo  "$0: ERROR: bin/jval-wrapper.sh is not a regular file: $JVAL_WRAPPER" 1>&2
-    exit 5
-fi
-if [[ ! -x $JVAL_WRAPPER ]]; then
-    echo  "$0: ERROR: bin/jval-wrapper.sh is not an executable file: $JVAL_WRAPPER" 1>&2
-    exit 5
-fi
-
-
-# verify that the bin/jfmt-wrapper.sh tool is executable
-#
-JFMT_WRAPPER="$BIN_DIR/jfmt-wrapper.sh"
-if [[ ! -e $JFMT_WRAPPER ]]; then
-    echo  "$0: ERROR: bin/jfmt-wrapper.sh does not exist: $JFMT_WRAPPER" 1>&2
-    exit 5
-fi
-if [[ ! -f $JFMT_WRAPPER ]]; then
-    echo  "$0: ERROR: bin/jfmt-wrapper.sh is not a regular file: $JFMT_WRAPPER" 1>&2
-    exit 5
-fi
-if [[ ! -x $JFMT_WRAPPER ]]; then
-    echo  "$0: ERROR: bin/jfmt-wrapper.sh is not an executable file: $JFMT_WRAPPER" 1>&2
+"$JVAL_WRAPPER" -Q
+status="$?"
+if [[ $status -ne 0 ]]; then
+    echo "$0: ERROR: jval-wrapper.sh tool failed quick check: $JVAL_WRAPPER -Q" 1>&2
     exit 5
 fi
 
@@ -697,10 +660,6 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: V_FLAG=$V_FLAG" 1>&2
     echo "$0: debug[3]: GIT_TOOL=$GIT_TOOL" 1>&2
     echo "$0: debug[3]: TOPDIR=$TOPDIR" 1>&2
-    echo "$0: debug[3]: VERGE=$VERGE" 1>&2
-    echo "$0: debug[3]: JSTRDECODE=$JSTRDECODE" 1>&2
-    echo "$0: debug[3]: MIN_JSTRDECODE_VERSION=$MIN_JSTRDECODE_VERSION" 1>&2
-    echo "$0: debug[3]: JSTRDECODE_VERSION=$JSTRDECODE_VERSION" 1>&2
     echo "$0: debug[3]: NOOP=$NOOP" 1>&2
     echo "$0: debug[3]: DO_NOT_PROCESS=$DO_NOT_PROCESS" 1>&2
     echo "$0: debug[3]: EXIT_CODE=$EXIT_CODE" 1>&2
@@ -709,12 +668,12 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: SUMMARY_CSV=$SUMMARY_CSV" 1>&2
     echo "$0: debug[3]: YEAR_PRIZE_CSV=$YEAR_PRIZE_CSV" 1>&2
     echo "$0: debug[3]: AUTHOR_WINS_CSV_DIR=$AUTHOR_WINS_CSV_DIR" 1>&2
-    echo "$0: debug[3]: MANIFEST_WINS_CSV_DIR=$MANIFEST_WINS_CSV_DIR" 1>&2
+    echo "$0: debug[3]: MANIFEST_CSV_DIR=$MANIFEST_CSV_DIR" 1>&2
     echo "$0: debug[3]: YEAR_PRIZE_CSV_DIR=$YEAR_PRIZE_CSV_DIR" 1>&2
     echo "$0: debug[3]: AUTHOR_DIR=$AUTHOR_DIR" 1>&2
     echo "$0: debug[3]: CD_FAILED=$CD_FAILED" 1>&2
     echo "$0: debug[3]: TOP_FILE=$TOP_FILE" 1>&2
-    echo "$0: debug[3]: BIN_PATH=$BIN_DIR" 1>&2
+    echo "$0: debug[3]: BIN_PATH=$BIN_PATH" 1>&2
     echo "$0: debug[3]: BIN_DIR=$BIN_DIR" 1>&2
     echo "$0: debug[3]: JVAL_WRAPPER=$JVAL_WRAPPER" 1>&2
     echo "$0: debug[3]: MANIFEST_ENTRY_CSV_ENTRY_AWK=$MANIFEST_ENTRY_CSV_ENTRY_AWK" 1>&2
@@ -833,9 +792,6 @@ fi
 
 # create a temporary exit code
 #
-# It is a pain to set the EXIT_CODE deep inside a loop, so we write the EXIT_CODE into a file
-# and read the file (setting EXIT_CODE again) after the loop.  A hack, but good enough for our needs.
-#
 export TMP_EXIT_CODE=".tmp.$NAME.EXIT_CODE.$$.tmp"
 if [[ $V_FLAG -ge 3 ]]; then
     echo  "$0: debug[3]: temporary exit code: $TMP_EXIT_CODE" 1>&2
@@ -902,7 +858,7 @@ for YYYY in $(< "$TOP_FILE"); do
 	continue
     fi
     if [[ ! -r $YYYY ]]; then
-	echo  "$0: ERROR: YYYY is not an readable directory: $YYYY" 1>&2
+	echo  "$0: ERROR: YYYY is not a readable directory: $YYYY" 1>&2
 	EXIT_CODE="6"  # exit 6
 	echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
 	echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
@@ -927,7 +883,7 @@ for YYYY in $(< "$TOP_FILE"); do
 	continue
     fi
     if [[ ! -r $YEAR_FILE ]]; then
-	echo  "$0: ERROR: YYYY/.year is not an readable file: $YEAR_FILE" 1>&2
+	echo  "$0: ERROR: YYYY/.year is not a readable file: $YEAR_FILE" 1>&2
 	EXIT_CODE="6"  # exit 6
 	echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
 	echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
@@ -1010,7 +966,7 @@ for YYYY in $(< "$TOP_FILE"); do
 	    continue
 	fi
 	if [[ ! -w $YYYY_DIR ]]; then
-	    echo  "$0: ERROR: YYYY_DIR is not an writable directory: $YYYY_DIR" 1>&2
+	    echo  "$0: ERROR: YYYY_DIR is not a writable directory: $YYYY_DIR" 1>&2
 	    EXIT_CODE="7"  # exit 7
 	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
 	    echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
@@ -1039,7 +995,7 @@ for YYYY in $(< "$TOP_FILE"); do
 	# process the entry .entry.json file
 	#
 	if [[ $V_FLAG -ge 5 ]]; then
-	    echo "$0: debug[5]: about process .entry.json: $ENTRY_JSON for: $YYYY_DIR" 1>&2
+	    echo "$0: debug[5]: about to process .entry.json for: $YYYY_DIR" 1>&2
 	fi
 
 	# verify .entry.json
@@ -1087,14 +1043,14 @@ for YYYY in $(< "$TOP_FILE"); do
 	if [[ -z $NOOP ]]; then
 	    echo "$ENTRY_ID,$AWARD" >> "$TMP_YEAR_PRIZE_CSV"
 	elif [[ $V_FLAG -ge 7 ]]; then
-	    echo "$0: debug[7]: because of -n, did append to year_prize.csv: $TMP_YEAR_PRIZE_CSV for: $ENTRY_JSON" 1>&2
+	    echo "$0: debug[7]: because of -n, did not append to year_prize.csv: $TMP_YEAR_PRIZE_CSV for: $ENTRY_JSON" 1>&2
 	fi
 
 	# record a win for each author_handle associated with this entry
 	#
 	AUTHOR_HANDLES=$(output_author_handles "$ENTRY_JSON")
 	if [[ -z $AUTHOR_HANDLES ]]; then
-	    echo "$0: ERROR: output_author_handles returned empty string for: $$ENTRY_JSON" 1>&2
+	    echo "$0: ERROR: output_author_handles returned empty string for: $ENTRY_JSON" 1>&2
 	    EXIT_CODE="1"  # exit 1
 	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
 	    echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
@@ -1111,7 +1067,7 @@ for YYYY in $(< "$TOP_FILE"); do
 		export AUTHOR_HANDLE_JSON="$AUTHOR_DIR/$AUTHOR_HANDLE.json"
 		if [[ ! -f $AUTHOR_DIR/$AUTHOR_HANDLE.json ]]; then
 		    echo "$0: Warning: .entry.json: $ENTRY_JSON refers to an unknown author_handle: $AUTHOR_HANDLE" 1>&2
-		    echo "$0: Warning: .entry.json: $ENTRY_JSON refers a missing author_handle file: $AUTHOR_HANDLE_JSON" 1>&2
+		    echo "$0: Warning: .entry.json: $ENTRY_JSON refers to a missing author_handle file: $AUTHOR_HANDLE_JSON" 1>&2
 		    echo "$0: ERROR: Flagging unknown author_handle as an error, but continuing anyway: $YYYY_DIR" 1>&2
 		    EXIT_CODE="9"  # exit 9
 		    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
@@ -1127,7 +1083,7 @@ for YYYY in $(< "$TOP_FILE"); do
 	    echo "$0: debug[9]: because of -n, did not append to the temporary author win file" 1>&2
 	fi
 
-	# append top temporary manifest file for this entry
+	# append to temporary manifest file for this entry
 	#
 	if [[ $V_FLAG -ge 5 ]]; then
 	    echo "$0: debug[5]: about to: awk -f $MANIFEST_ENTRY_CSV_ENTRY_AWK $ENTRY_JSON >> $TMP_MANIFEST_CSV" 1>&2
@@ -1168,18 +1124,18 @@ for YYYY in $(< "$TOP_FILE"); do
 	    continue
 	fi
 
-	# append title and abstract information into the summary.txt file
+	# append title and abstract information into the summary.csv file
 	#
 	if [[ -z $NOOP ]]; then
 	    echo "$YEAR_DIR,$ENTRY_DIR,$TITLE,$ABSTRACT" >> "$TMP_SUMMARY_CSV"
 	elif [[ $V_FLAG -ge 7 ]]; then
-	    echo "$0: debug[7]: because of -n, did append to summary.csv: $TMP_SUMMARY_CSV for: $ENTRY_JSON" 1>&2
+	    echo "$0: debug[7]: because of -n, did not append to summary.csv: $TMP_SUMMARY_CSV for: $ENTRY_JSON" 1>&2
 	fi
     done
 done
 
 
-# Convert temporary author win file lines in TMP_AUTHOR_WINS_CSV lines
+# Convert temporary author win file lines into TMP_AUTHOR_WINS_CSV lines
 #
 if [[ -z $NOOP ]]; then
 
@@ -1205,7 +1161,7 @@ if [[ -z $NOOP ]]; then
 	     "error code: $status" 1>&2
 	exit 8
     elif [[ $V_FLAG -ge 3 ]]; then
-	echo "$0: debug[3]: sorted temporary author win file file: $TMP_AUTHOR_WIN" 1>&2
+	echo "$0: debug[3]: sorted temporary author win file: $TMP_AUTHOR_WIN" 1>&2
     fi
 
     # convert consecutive author win file lines with the same author_handle into a single TMP_AUTHOR_WINS_CSV line
@@ -1225,7 +1181,7 @@ if [[ -z $NOOP ]]; then
 	    echo "$0: line $line of $TMP_AUTHOR_WIN has an empty 2nd field for ENTRY_ID" 1>&2
 	    exit 24
 	fi
-        if [[ ! -z $extra ]]; then
+        if [[ -n $extra ]]; then
 	    echo "$0: line $line of $TMP_AUTHOR_WIN has 3 or more fields" 1>&2
 	    exit 25
 	fi
@@ -1278,7 +1234,7 @@ if [[ -z $NOOP ]]; then
     fi
 
 elif [[ $V_FLAG -ge 3 ]]; then
-   echo "$0: debug[3]: because of -n, will not sort: $TMP_AUTHOR_WINS_CSV"
+   echo "$0: debug[3]: because of -n, will not sort: $TMP_AUTHOR_WINS_CSV" 1>&2
 fi
 
 
@@ -1308,7 +1264,7 @@ if [[ -z $NOOP ]]; then
             status="$?"
         fi
         if [[ $status -ne 0 ]]; then
-            echo "$0: ERROR: mv -f -- $TMP_AUTHOR_WINS_CSV $AUTHOR_WINS_CSV filed," \
+            echo "$0: ERROR: mv -f -- $TMP_AUTHOR_WINS_CSV $AUTHOR_WINS_CSV failed," \
 	         "error code: $status" 1>&2
             exit 8
         elif [[ $V_FLAG -ge 1 ]]; then
@@ -1321,7 +1277,7 @@ if [[ -z $NOOP ]]; then
     fi
 
 elif [[ $V_FLAG -ge 3 ]]; then
-   echo "$0: debug[3]: because of -n, will not update $AUTHOR_WINS_CSV"
+   echo "$0: debug[3]: because of -n, will not update $AUTHOR_WINS_CSV" 1>&2
 fi
 
 
@@ -1357,7 +1313,7 @@ sed -e 's/,/ /g' "$AUTHOR_WINS_CSV" | while read -r AUTHOR_HANDLE ENTRY_ID_SET; 
     # look for lines with no entry ids
     #
     elif [[ -z $ENTRY_ID_SET ]]; then
-	echo "$0: ERROR: line: $line of author_wins.csv: $AUTHOR_WINS_CSV as no entry ids on the line" 1>&2
+	echo "$0: ERROR: line: $line of author_wins.csv: $AUTHOR_WINS_CSV has no entry ids on the line" 1>&2
 	EXIT_CODE="8"  # exit 8
 	echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
 	echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
@@ -1397,8 +1353,8 @@ sed -e 's/,/ /g' "$AUTHOR_WINS_CSV" | while read -r AUTHOR_HANDLE ENTRY_ID_SET; 
 
 		# check if the author/author_handle.json file refers to the entry id
 		#
-		PATTERN='$..entry_id'
-		FOUND=$("$JVAL_WRAPPER" -b -q "$AUTHOR_HANDLE_JSON" "$PATTERN")
+		PATTERN='.//winning_entry_set/item/entry_id'
+		FOUND=$("$JVAL_WRAPPER" -b -q -P "$AUTHOR_HANDLE_JSON" "$PATTERN")
 		status="$?"
 		if [[ $status -ne 0 || -z $FOUND ]]; then
 		    echo "$0: ERROR: line: $line of author_wins.csv: $AUTHOR_WINS_CSV" \
@@ -1435,7 +1391,7 @@ if [[ -n $AUTHOR_DIFF ]]; then
     echo "$0: Warning: author directory differences start below" 1>&2
     echo "$AUTHOR_DIFF" 1>&2
     echo "$0: Warning: author directory differences end above" 1>&2
-    EXIT_CODE="9"  # exit 1
+    EXIT_CODE="9"  # exit 9
     echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
     echo "$EXIT_CODE" > "$TMP_EXIT_CODE"
     # NOTE: We do NOT want to stop processing via continue - proceeding instead
@@ -1463,7 +1419,7 @@ if [[ -z $NOOP ]]; then
     fi
 
 elif [[ $V_FLAG -ge 3 ]]; then
-   echo "$0: debug[3]: because of -n, will not sort: $TMP_MANIFEST_CSV"
+   echo "$0: debug[3]: because of -n, will not sort: $TMP_MANIFEST_CSV" 1>&2
 fi
 
 
@@ -1493,7 +1449,7 @@ if [[ -z $NOOP ]]; then
             status="$?"
         fi
         if [[ $status -ne 0 ]]; then
-            echo "$0: ERROR: mv -f -- $TMP_MANIFEST_CSV $MANIFEST_CSV filed," \
+            echo "$0: ERROR: mv -f -- $TMP_MANIFEST_CSV $MANIFEST_CSV failed," \
 	         "error code: $status" 1>&2
             exit 8
         elif [[ $V_FLAG -ge 1 ]]; then
@@ -1506,7 +1462,7 @@ if [[ -z $NOOP ]]; then
     fi
 
 elif [[ $V_FLAG -ge 3 ]]; then
-   echo "$0: debug[3]: because of -n, will not update $MANIFEST_CSV"
+   echo "$0: debug[3]: because of -n, will not update $MANIFEST_CSV" 1>&2
 fi
 
 
@@ -1531,7 +1487,7 @@ if [[ -z $NOOP ]]; then
     fi
 
 elif [[ $V_FLAG -ge 3 ]]; then
-   echo "$0: debug[3]: because of -n, will not sort: $TMP_SUMMARY_CSV"
+   echo "$0: debug[3]: because of -n, will not sort: $TMP_SUMMARY_CSV" 1>&2
 fi
 
 
@@ -1561,7 +1517,7 @@ if [[ -z $NOOP ]]; then
             status="$?"
         fi
         if [[ $status -ne 0 ]]; then
-            echo "$0: ERROR: mv -f -- $TMP_SUMMARY_CSV $SUMMARY_CSV filed," \
+            echo "$0: ERROR: mv -f -- $TMP_SUMMARY_CSV $SUMMARY_CSV failed," \
 	         "error code: $status" 1>&2
             exit 8
         elif [[ $V_FLAG -ge 1 ]]; then
@@ -1574,7 +1530,7 @@ if [[ -z $NOOP ]]; then
     fi
 
 elif [[ $V_FLAG -ge 3 ]]; then
-   echo "$0: debug[3]: because of -n, will not update $SUMMARY_CSV"
+   echo "$0: debug[3]: because of -n, will not update $SUMMARY_CSV" 1>&2
 fi
 
 
@@ -1599,7 +1555,7 @@ if [[ -z $NOOP ]]; then
     fi
 
 elif [[ $V_FLAG -ge 3 ]]; then
-   echo "$0: debug[3]: because of -n, will not sort: $TMP_YEAR_PRIZE_CSV"
+   echo "$0: debug[3]: because of -n, will not sort: $TMP_YEAR_PRIZE_CSV" 1>&2
 fi
 
 
@@ -1629,7 +1585,7 @@ if [[ -z $NOOP ]]; then
             status="$?"
         fi
         if [[ $status -ne 0 ]]; then
-            echo "$0: ERROR: mv -f -- $TMP_YEAR_PRIZE_CSV $YEAR_PRIZE_CSV filed," \
+            echo "$0: ERROR: mv -f -- $TMP_YEAR_PRIZE_CSV $YEAR_PRIZE_CSV failed," \
 	         "error code: $status" 1>&2
             exit 8
         elif [[ $V_FLAG -ge 1 ]]; then
@@ -1642,7 +1598,7 @@ if [[ -z $NOOP ]]; then
     fi
 
 elif [[ $V_FLAG -ge 3 ]]; then
-   echo "$0: debug[3]: because of -n, will not update $YEAR_PRIZE_CSV"
+   echo "$0: debug[3]: because of -n, will not update $YEAR_PRIZE_CSV" 1>&2
 fi
 
 
