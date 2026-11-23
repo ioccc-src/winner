@@ -56,6 +56,7 @@ you have tried a few times, [Contact the IOCCC](../contact.html) to ask the
 [IOCCC judges](../judges.html) for assistance.
 
 This email will contain a URL of the form:
+
 `https://www.freelists.org/v/ioccc30-reg/SOME-RANDOM-STUFF`.
 
 **NOTE**: If you prefer to **NOT** click links in email, simply copy that
@@ -99,7 +100,7 @@ You should receive an automated Welcome message from the FreeLists List Manager
 (_ecartis@freelists.org_) with the subject:
 
 ```
-    Welcome to 'ioccc30-reg'
+    IOCCC submit server account information
 ```
 
 Read the "Welcome" email.
