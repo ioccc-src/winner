@@ -106,7 +106,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="2.4.0 2026-11-16"
+export VERSION="2.5.0 2026-11-26"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -154,6 +154,7 @@ export SITE_URL="https://www.ioccc.org"
 #
 export NOOP=
 export DO_NOT_PROCESS=
+export QUICK_MODE=
 export EXIT_CODE="0"
 
 
@@ -165,7 +166,7 @@ declare -ag TOOL_OPTION
 
 # usage
 #
-export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-j jval] [-n] [-N]
+export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-j jval] [-n] [-N] [-Q]
 			[-t tagline] [-w site_url]
 
 	-h		print help message and exit
@@ -182,6 +183,7 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-j jval]
 	-n		go thru the actions, but do not update any files (def: do the action)
 			NOTE: -n is passed to tool
 	-N		do not process anything, just parse arguments (def: process something)
+	-Q		skip years.html when its prerequisites are not newer
 
 	-t tagline	string to write about the tool that formed the markdown content (def: $TAGLINE)
 			NOTE: 'tagline' may be enclosed within, but may NOT contain an internal single-quote, or double-quote.
@@ -387,7 +389,7 @@ function output_ordinal
 
 # parse command line
 #
-while getopts :hv:Vd:D:j:nNt:w: flag; do
+while getopts :hv:Vd:D:j:nNQt:w: flag; do
   case "$flag" in
     h) echo "$USAGE" 1>&2
 	exit 2
@@ -418,6 +420,8 @@ while getopts :hv:Vd:D:j:nNt:w: flag; do
     n) NOOP="-n"
 	;;
     N) DO_NOT_PROCESS="-N"
+	;;
+    Q) QUICK_MODE="-Q"
 	;;
     t) # parse -t tagline
 	case "$OPTARG" in
@@ -692,6 +696,29 @@ if [[ -n $DO_NOT_PROCESS ]]; then
 	echo "$0: debug[3]: arguments parsed, -N given, exiting 0" 1>&2
     fi
     exit 0
+fi
+
+# Follow the year manifests so missing data is still reported by the generator.
+#
+if [[ -n $QUICK_MODE ]]; then
+    # shellcheck source=bin/quick-deps.sh
+    . bin/quick-deps.sh || { echo "$0: ERROR: cannot load bin/quick-deps.sh" 1>&2; exit 1; }
+    QUICK_INPUTS=("$0" "$JVAL_WRAPPER")
+    QUICK_INVALID=""
+    while read -r YYYY; do
+	QUICK_INPUTS+=("$YYYY/.year")
+	if [[ -r $YYYY/.year ]]; then
+	    while read -r YYYY_DIR; do
+		QUICK_INPUTS+=("$YYYY_DIR/.entry.json")
+		# README contents do not affect years.html, but missing files must
+		# still be validated by the full generator.
+		[[ -s $YYYY_DIR/README.md ]] || QUICK_INVALID="true"
+	    done < "$YYYY/.year"
+	fi
+    done < "$TOP_FILE"
+    if [[ -z $QUICK_INVALID ]] && quick_html_current "$YEARS_HTML" years.md "${QUICK_INPUTS[@]}"; then
+	exit 0
+    fi
 fi
 
 
@@ -1137,6 +1164,8 @@ if [[ -z $NOOP ]]; then
 	     "failed, error: $status" 1>&2
 	EXIT_CODE="1"  # exit 1
 	echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+    elif [[ -n $QUICK_MODE ]]; then
+	touch "$YEARS_HTML" || exit 1
     elif [[ $V_FLAG -ge 3 ]]; then
 	echo "$0: debug[3]: now up to date: $YEARS_HTML" 1>&2
     fi

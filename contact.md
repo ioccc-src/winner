@@ -22,7 +22,7 @@ If you are trying to:
 * **Report a bug in an IOCCC winning entry** - See our
 FAQ on "[reporting an entry bug](faq.html#report_bug)"
 * **Report an IOCCC website problem** - See our
-FAQ on "[reporting a website problem](faq.html#report_web_problem)"
+FAQ on "[reporting a website problem](faq.html#report_website_problem)"
 * **Report a broken or wrong web link** - See our
 FAQ on "[reporting a broken link](faq.html#fix_link)"
 

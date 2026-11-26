@@ -124,7 +124,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="2.0.0 2026-06-10"
+export VERSION="2.1.0 2026-11-26"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -483,7 +483,6 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: DO_NOT_PROCESS=$DO_NOT_PROCESS" 1>&2
     echo "$0: debug[3]: YEAR_ARG=$YEAR_ARG" 1>&2
     echo "$0: debug[3]: REPO_NAME=$REPO_NAME" 1>&2
-    echo "$0: debug[3]: AUTHOR_PATH=$AUTHOR_PATH" 1>&2
     echo "$0: debug[3]: INC_PATH=$INC_PATH" 1>&2
     echo "$0: debug[3]: INC_DIR=$INC_DIR" 1>&2
     echo "$0: debug[3]: BIN_PATH=$BIN_PATH" 1>&2

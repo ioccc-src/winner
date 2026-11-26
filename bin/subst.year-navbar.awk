@@ -21,7 +21,7 @@ BEGIN {
 
     # setup
     #
-    VERSION="1.2.1 2025-05-17"
+    VERSION="1.3.0 2026-11-26"
     NAME = "subst.year-navbar.awk"
     process_next_line = 0;	# 1 ==> we found our year_arg, now process the next line
     found_year_arg = 0;		# 1 ==> we found our year_arg
@@ -99,7 +99,7 @@ BEGIN {
 
 END {
 
-    # error if github is not set via -v github=REPO_URL
+    # error if year_arg is not set via -v year_arg=YYYY
     #
     if (length(year_arg) == 0) {
 	print "-e";
@@ -117,7 +117,7 @@ END {
 	print "'" NAME ": did not find:", year_arg "'";
 	print "-E";
 	print "215";
-	exit
+	exit 215;
 
     } else if (process_next_line) {
 	# no next line year_arg is the last line

@@ -603,16 +603,13 @@ For example:
 ### [find-missing-links.sh](%%REPO_URL%%/bin/find-missing-links.sh)
 </div>
 
-Find all markdown links to local files that do not exist.
+Check links in Git-tracked markdown files against local files and generated
+HTML anchors. The tool uses `python3` and `pandoc` to parse markdown links,
+including reference links, while ignoring code blocks and inline code.
 
-This tool does **NOT** check that a remote URL exists, it checks on
-links to local files.
-
-This tool does **NOT** check links in a given place in a file, it
-checks that local files linked by markdown actually exist.
-
-This tool does **NOT** check HTML file links, it checks markdown
-based links.
+Published markdown targets are checked against their generated HTML. Same-page
+anchors in unpublished markdown are checked against the source headings.
+Remote URLs and links in HTML source files are **NOT** checked.
 
 For example:
 
@@ -1063,7 +1060,7 @@ This is the primary tool that forms IOCCC-generated HTML content from
 markdown files (permanent markdown files or temporarily generated
 markdown files) and HTML fragments from the [inc directory](%%REPO_URL%%/inc/index.html).
 
-The [md2html.cfg](index.html#md2html_cfg) configuration file is
+The [md2html.cfg](index.html#md2html-cfg) configuration file is
 used by [md2html.sh](%%REPO_URL%%/bin/md2html.sh) to drive the generation process.
 
 One key action that [md2html.sh](%%REPO_URL%%/bin/md2html.sh) performs is
@@ -1075,7 +1072,7 @@ The token string is substituted for the value of the token in the HTML
 file that is being formed.
 
 Often the value of the token is determined by the
-[md2html.cfg](index.html#md2html_cfg) configuration file.
+[md2html.cfg](index.html#md2html-cfg) configuration file.
 There are other shell scripts that will make additional token
 substitutions, such as [subst.default.sh](#subst.default.sh),
 [subst.entry-index.sh](#subst.entry-index.sh),

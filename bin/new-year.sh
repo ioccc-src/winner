@@ -106,7 +106,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="2.1.0 2026-06-03"
+export VERSION="2.2.0 2026-11-26"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -875,20 +875,20 @@ if [[ -z $NOOP ]]; then
 
 	# determine the IOCCC ordinal
 	#
-	CONTEST_NUMNER=$(sed -n "/$YEAR/=" "$TOP_FILE")
-	if [[ -z $CONTEST_NUMNER ]]; then
-	    echo "$0: ERROR: failed to determine content number for YYYY: $YEAR in: $TOP_FILE" 1>&2
+	CONTEST_NUMBER=$(sed -n "/^$YEAR$/=" "$TOP_FILE")
+	if [[ -z $CONTEST_NUMBER ]]; then
+	    echo "$0: ERROR: failed to determine contest number for YYYY: $YEAR in: $TOP_FILE" 1>&2
 	    exit 39
 	fi
-	OUTPUT_ENGLISH_ORDINAL=$(output_english_ordinal "$CONTEST_NUMNER")
+	OUTPUT_ENGLISH_ORDINAL=$(output_english_ordinal "$CONTEST_NUMBER")
 	status="$?"
 	if [[ $status -ne 0 ]]; then
-	    echo "$0: ERROR: output_english_ordinal $CONTEST_NUMNER failed," \
+	    echo "$0: ERROR: output_english_ordinal $CONTEST_NUMBER failed," \
 		 "error code: $status" 1>&2
 	    exit 40
 	fi
 	if [[ -z $OUTPUT_ENGLISH_ORDINAL ]]; then
-	    echo "$0: ERROR: failed to determine content orignal for YYYY: $YEAR for contest: $CONTEST_NUMNER" 1>&2
+	    echo "$0: ERROR: failed to determine contest ordinal for YYYY: $YEAR for contest: $CONTEST_NUMBER" 1>&2
 	    exit 41
 	fi
 

@@ -104,7 +104,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="2.0.0 2025-03-13"
+export VERSION="2.1.0 2026-11-26"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -631,15 +631,17 @@ for YYYY in $(< "$TOP_FILE"); do
 	    #
 	    # determine if we need to run the tool
 	    #
-	    # Check if the non-empty foo.html is newer than foo.md.
+	    # Check the source and conversion tools for this individual page.
 	    #
 	    if [[ -n $QUICK_MODE ]]; then
+		# shellcheck source=bin/quick-deps.sh
+		. bin/quick-deps.sh || { echo "$0: ERROR: cannot load bin/quick-deps.sh" 1>&2; exit 1; }
 		if [[ $V_FLAG -ge 5 ]]; then
 		    echo "$0: debug[5]: listing of important files, if they exist, starts below" 1>&2
 		    ls -lRt -- "$HTML_FILE" "$MD_FILE" 2>/dev/null
 		    echo "$0: debug[5]: listing of important files, if they exist, ends above" 1>&2
 		fi
-		if [[ -s $HTML_FILE && $HTML_FILE -nt $MD_FILE ]]; then
+		if quick_html_current "$HTML_FILE" "$MD_FILE" "$MD_FILE" "$0" "$OTHERMD2HTML_SH"; then
 		    if [[ $V_FLAG -ge 3 ]]; then
 			echo "$0: debug[3]: does not need to be updated: $HTML_FILE" 1>&2
 		    fi

@@ -707,7 +707,7 @@ contributing: ${GEN_TOP_HTML} CONTRIBUTING.md
 	@echo "Thank you kindly, for your consideration!"
 	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
-# generate CONTRIBUTING.html
+# generate PULL_REQUEST_TEMPLATE.html
 #
 pull_request: ${GEN_TOP_HTML} PULL_REQUEST_TEMPLATE.md
 	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
@@ -735,7 +735,7 @@ markdown: ${GEN_TOP_HTML} markdown.md
 	@echo "Careful that we don't mark down your submission!"
 	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
-news: gen_status ${GEN_TOP_HTML} markdown.md
+news: gen_status ${GEN_TOP_HTML} news.md
 	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
 	@echo "All the IOCCC news 📰 ..."
 	${GEN_TOP_HTML} news
@@ -778,7 +778,7 @@ social: social.md
 submit: next/submit.md
 	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
 	@echo "You wish to submit to the IOCCC?"
-	${GEN_TOP_HTML} next/pw-change
+	${GEN_TOP_HTML} next/submit
 	@echo "Be careful, we only have a pet fish 🐟"
 	@echo "called Eric, not a service dog 🐕‍🦺!"
 	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
@@ -824,9 +824,9 @@ quick_www:
 	${MAKE} verify_entry_files
 	${MAKE} quick_authors
 	${MAKE} quick_location
-	${MAKE} gen_years
+	${GEN_YEARS} -v 1 -Q
 	${MAKE} quick_year_index
-	${MAKE} gen_top_html
+	${GEN_TOP_HTML} -v 1 -Q
 	${MAKE} quick_entry_index
 	${MAKE} quick_other_html
 	${MAKE} gen_status
@@ -861,7 +861,9 @@ www:
 	${MAKE} entry_index
 	${MAKE} gen_other_html
 	${MAKE} gen_status
+ifneq (${UPDATE_DEFER_SITEMAP},1)
 	${MAKE} gen_sitemap
+endif
 	${MAKE} find_invalid_json
 	${MAKE} find_missing_links
 	@echo '=-=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-=-='
@@ -943,13 +945,14 @@ timestamp:
 	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 # update everything on the website
+# Defer the sitemap until after tarballs are built; www already generates status.
 #
 update:
 	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
-	${MAKE} www
+	${MAKE} www UPDATE_DEFER_SITEMAP=1
 	${MAKE} form_entry_tarball
 	${MAKE} form_year_tarball
-	${MAKE} timestamp
+	${MAKE} gen_sitemap
 	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 

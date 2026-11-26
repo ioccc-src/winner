@@ -106,7 +106,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="2.2.0 2026-06-10"
+export VERSION="2.3.0 2026-11-26"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -458,6 +458,37 @@ fi
 if [[ ! -s $YYYY/index.html || $YYYY/README.md -nt $YYYY/index.html ]]; then
     NEEDS_UPDATE="true"
     UPDATE_INDEX="true"
+fi
+
+# Quick mode must also account for the tools, templates and year data.
+#
+if [[ -n $QUICK_MODE ]]; then
+    # shellcheck source=bin/quick-deps.sh
+    . bin/quick-deps.sh || { echo "$0: ERROR: cannot load bin/quick-deps.sh" 1>&2; exit 1; }
+    NEEDS_UPDATE=""
+    UPDATE_INDEX=""
+    UPDATE_RULES=""
+    UPDATE_GUIDELINES=""
+    UPDATE_CHALLENGE=""
+    if ! quick_html_current "$YYYY/index.html" "$README_FILE" "$README_FILE" "$DOT_YEAR" \
+	"$YYYY"/*/.entry.json "$YYYY"/*/.path "$0" bin/subst.year-index.sh bin/subst.year-navbar.awk \
+	bin/output-year-index.sh bin/jval-wrapper.sh; then
+	NEEDS_UPDATE="true"
+	UPDATE_INDEX="true"
+    fi
+    if [[ -s $YYYY/rules.md ]] && ! quick_html_current "$YYYY/rules.html" "$YYYY/rules.md" "$YYYY/rules.md" "$0"; then
+	NEEDS_UPDATE="true"
+	UPDATE_RULES="true"
+    fi
+    if [[ -s $YYYY/guidelines.md ]] && ! quick_html_current "$YYYY/guidelines.html" "$YYYY/guidelines.md" "$YYYY/guidelines.md" "$0"; then
+	NEEDS_UPDATE="true"
+	UPDATE_GUIDELINES="true"
+    fi
+    if [[ -s $YYYY/challenge.md ]] && ! quick_html_current "$YYYY/challenge.html" "$YYYY/challenge.md" "$YYYY/challenge.md" \
+	"$0" bin/subst.year-challenge.sh; then
+	NEEDS_UPDATE="true"
+	UPDATE_CHALLENGE="true"
+    fi
 fi
 
 

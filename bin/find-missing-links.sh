@@ -1,23 +1,9 @@
 #!/usr/bin/env bash
 #
-# find-missing-links.sh - find markdown links to missing local files
+# find-missing-links.sh - check local Markdown links and HTML anchors
 #
-# Find all markdown links to local files that do not exist.
-#
-# This tool does **NOT** check that a remote URL exists.
-# This tool only checks on links to local files.
-#
-# This tool does **NOT** check links in a given place in a file.
-# This tool only checks that local files linked by markdown exist.
-#
-# This tool does **NOT** check HTML file links.
-# This tool only checks markdown based links.
-#
-# NOTE: If the markdown link is malformed, this tool
-# might generate an error about a file that does exist.
-# If this tool claims that a file is missing that does exist,
-# look for a malformed markdown line and/or use of markdown
-# that is **NOT** an IOCCC markdown best practice.
+# Check links in tracked Markdown files; remote URLs are not checked.
+# Published HTML targets are also checked for the requested anchors.
 #
 #  See the IOCCC markdown best practices file, markdown.html, for more info.
 #
@@ -104,7 +90,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.2.2 2026-06-17"
+export VERSION="1.3.0 2026-11-26"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -144,64 +130,6 @@ Exit codes:
  >= 10		internal error
 
 $NAME version: $VERSION"
-
-
-# fast_dirname - perform dirname(1) without calling a command
-#
-# This is very similar with dirname(1) except it is much faster.
-#
-# usage:
-#	fast_dirname path_name
-#
-#	path to obtain the directory from
-#
-function fast_dirname
-{
-    local PATH_NAME;	# path_name argument to be modified
-
-    # parse args
-    #
-    if [[ $# -ne 1 ]]; then
-	echo "$0: ERROR: in fast_dirname: debug_parameters requires 1 arg, found: $#" 1>&2
-	exit 10
-    fi
-    PATH_NAME="$1"
-
-    # firewall - reject empty paths
-    #
-    if [[ -z $PATH_NAME ]]; then
-	echo "$0: ERROR: in fast_dirname: pathname arg is empty" 1>&2
-	exit 11
-    fi
-
-    # reduce multiple consecutive /'s to just /
-    #
-    while :; do
-        case "$PATH_NAME" in
-	*//*) PATH_NAME="${PATH_NAME//\/\//\/}" ;;
-	*) break ;;
-	esac
-    done
-
-    # trim any trailing /
-    #
-    PATH_NAME=${PATH_NAME%%/}
-
-    # case: if we only had /'s return /
-    #
-    if [[ -z "$PATH_NAME" ]]; then
-	echo '/'
-	return;
-    fi
-
-    # case: PATH_NAME is an absolute path starting with /
-    #
-    case "$PATH_NAME" in
-    /*) echo "${PATH_NAME%/*}"; return ;;
-    */*) echo "${PATH_NAME%/*}"; return ;;
-    *) echo '.'; return ;;
-    esac
-}
 
 
 # parse command line
@@ -286,6 +214,11 @@ if [[ $V_FLAG -ge 3 ]]; then
 fi
 
 
+# Locate the checker before changing directories.
+#
+SCRIPT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P) || exit 10
+
+
 # cd to topdir
 #
 if [[ ! -e $TOPDIR ]]; then
@@ -310,252 +243,19 @@ if [[ $V_FLAG -ge 3 ]]; then
 fi
 
 
-# create a temporary missing link error message file
+# Use the Pandoc-based checker to parse Markdown and inspect local anchors.
 #
-export TMP_MISSING_LINK=".tmp.$NAME.MISSING_LINK.$$.tmp"
-if [[ $V_FLAG -ge 3 ]]; then
-    echo  "$0: debug[3]: temporary missing link error message file: $TMP_MISSING_LINK" 1>&2
+if ! command -v python3 >/dev/null 2>&1; then
+    echo "$0: ERROR: python3 not found in PATH" 1>&2
+    exit 10
 fi
-if [[ -z $NOOP ]]; then
-    trap 'rm -f $TMP_MISSING_LINK; exit' 0 1 2 3 15
-    rm -f "$TMP_MISSING_LINK"
-    if [[ -e $TMP_MISSING_LINK ]]; then
-	echo "$0: ERROR: cannot remove temporary missing link error message file: $TMP_MISSING_LINK" 1>&2
-	exit 12
-    fi
-    :> "$TMP_MISSING_LINK"
-    if [[ ! -e $TMP_MISSING_LINK ]]; then
-	echo "$0: ERROR: cannot create temporary missing link error message file: $TMP_MISSING_LINK" 1>&2
-	exit 13
-    fi
-elif [[ $V_FLAG -ge 3 ]]; then
-    echo "$0: debug[3]: because of -n, temporary missing link error message file is not used: $TMP_MISSING_LINK" 1>&2
+# The shell is already in topdir; using "." also supports a relative -d path.
+#
+python3 -B "$SCRIPT_DIR/check_local_links.py" --root .
+status=$?
+# Preserve this tool's documented internal-error exit code range.
+#
+if [[ $status -eq 2 ]]; then
+    exit 10
 fi
-
-
-# collect markdown links
-#
-#	Here be extended regular expression magic dragons! :-)
-#
-# We will try to explain, as best as we can, these complex regular expressions.
-#
-# After grep of markdown files (files in sorted dictionary order) for markdown line lines, we sed:
-#
-#	# remove any "[some string]" that is not immediately followed by "("
-#
-#	-e 's/\[[^]]*\]([^(])/\1/' \
-#
-#	# remove any trailing "[followed by text without a closing bracket"
-#
-#	-e 's/\[[^]]*$//' \
-#
-# Then processing the second file (after the filename field) we sed:
-#
-#	# remove any leading "..non-[-stuff..["
-#
-#	    -e 's/^[^[]()+\[/[/' \
-#
-#	# replace "beginning text stuff](" with "[text stuff]("
-#	#     because the previous line might have ended with "[beginning"
-#
-#	    -e 's/^([^][]*\]\()/[\1/g' \
-#
-#	# remove any "[..non-]-stuff..][..more-non-]-stuff..]"
-#
-#	    -e 's/(\[[^][]*\])+([^(])/\2/g' \
-#
-#	# remove any non-link before the first "[some string](path)"
-#
-#	    -e 's/^[^][]+(\[[^]]*\]\([^(]*\))/\1/' \
-#
-#	# remove any final "[..non-]-stuff..$"
-#
-#	    -e 's/\[[^]]*$//' \
-#
-#	# remove any final "(..non-)-stuff..)..non-[-stuff.."
-#
-#	    -e 's/(\([^)]*\))[^[]*$/\1/' \
-#
-#	# remove any trailing non-[-text after the final "[some string](path)"
-#
-#	    -e 's/(\[[^]]*\]\([^(]*\))[^[]+$/\1/' \
-#
-#	# replace ")..non-open-bracket-stuff.["  with ") ["
-#
-#	    -e 's/\)[^[]*\[/) [/g' \
-#
-#	# replace "[some string](apath) [other string](bpath)" with two lines:
-#	#
-#	#	"[some string](apath)"
-#	#	"[other string](bpath)"
-#
-#	    -e 's/(\[[^]]*\]\([^(]*\))/\1\n/g' \
-#
-#	# remove blank and empty lines
-#
-#	    -e '/^\s*$/d' \
-#
-# Then pipe the lines into another sed:
-#
-#	# replace multiple space with a single space
-#
-#	    -e 's/  +/ /g' \
-#
-#	# remove the leading "[pseudo title]("
-#
-#	    -e 's/\[[^]]*\]\(//' \
-#
-#	# remove trailing ")":
-#
-#	    -e 's/\)$//' \
-#
-#	# remove and trailing #name
-#
-#	    -e 's/#.*$//' \
-#
-#	# remove any leading whitespace
-#
-#	    -e 's/^ //' \
-#
-#	# remove blank and empty lines
-#
-#	    -e '/^\s*$/d' \
-#
-#	# delete all http: and https: URLs
-#
-#	    -e '/^https?:/d' \
-#
-#	# delete all mailto: URLs
-#
-#	    -e '/^mailto:/d' \
-#
-#	# add current directory in front of absolute paths
-#
-#	    -e "s;^/;$PWD;" \
-#
-#	# add current directory followed by / in front of relative paths
-#
-#	    -e "s;^([^/]);$PWD/\1;" \
-#
-#	# convert "%%REPO_URL%%/" into TOPDIR
-#
-#	    -e "s;%%REPO_URL%%/*;$TOPDIR/;" \
-#
-#	# delete all lines containing %%REPO_TOP_URL%%
-#
-#	    We cannot check as local files, URLs that generally under GitHub
-#	    However paths under REPO_URL=$REPO_TOP_URL/blob/master DO map to $TOPDIR,
-#	    so we only convert %%REPO_URL%% to $TOPDIR, but NOT %%REPO_TOP_URL%%.
-#
-#	    -e '/%%REPO_TOP_URL%%/d' \
-#
-#	# convert "%%DOCROOT_SLASH%%" into TOPDIR
-#
-#	    -e "s;%%DOCROOT_SLASH%%/*;$TOPDIR/;" \
-#
-#	# relative paths have the directory of the markdown file added to them
-#
-#	    -e "s;^([^/]);$TOPDIR/$MD_DIR/\1;" \
-#
-#	# delete all lines containing "%%TOKEN%%" as this is a just a test/example token
-#
-#	    -e '/%%TOKEN%%/d' \
-#
-# At this point in the pipe, we have absolute /-based paths to markdown linked local files.
-# We test if those file exist, and if not report a problem in the form:
-#
-#	# Missing file linked in: markdown_file_name.md
-#	# Markdown line: ..the markdown line containing the line..
-#	/missing/filename
-#
-find . -name '*.md' ! -name markdown.md ! -path './tmp/*' ! -path './NOTES/*' -print |
-    LANG=C sort -d |
-    xargs grep '\]([^)][^)]*)' /dev/null |
-    sed -E \
-	-e 's;^\.\/;;' \
-	-e 's/^([^:]+):\s*/\1 /' \
-	|
-    while read -r MD_PATH MD_LINE; do
-
-	# note directory containing the markdown file
-	#
-        MD_DIR=$(fast_dirname "$MD_PATH")
-	export MD_DIR
-
-	# extract markdown parts from the given markdown file
-	#
-	echo "$MD_LINE" |
-	sed -E \
-	    -e 's/^[^[]()+\[/[/' \
-	    -e 's/^([^][]*\]\()/[\1/g' \
-	    -e 's/(\[[^][]*\])+([^(])/\2/g' \
-	    -e 's/^[^][]+(\[[^]]*\]\([^(]*\))/\1/' \
-	    -e 's/\[[^]]*$//' \
-	    -e 's/(\([^)]*\))[^[]*$/\1/' \
-	    -e 's/(\[[^]]*\]\([^(]*\))[^[]+$/\1/' \
-	    -e 's/\)[^[]*\[/) [/g' \
-	    -e 's/(\[[^]]*\]\([^(]*\))/\1\n/g' \
-	    -e '/^\s*$/d' \
-	    |
-	sed -E \
-	    -e 's/  +/ /g' \
-	    -e 's/\[[^]]*\]\(//' \
-	    -e 's/\)$//' \
-	    -e 's/#.*$//' \
-	    -e 's/^ //' \
-	    -e '/^\s*$/d' \
-	    -e '/^https?:/d' \
-	    -e '/^mailto:/d' \
-	    -e "s;%%REPO_URL%%/*;$TOPDIR/;" \
-	    -e '/%%REPO_TOP_URL%%/d' \
-	    -e "s;%%DOCROOT_SLASH%%/*;$TOPDIR/;" \
-	    -e "s;^([^/]);$TOPDIR/$MD_DIR/\1;" \
-	    -e '/%%TOKEN%%/d' \
-	    -e "s;%%YEAR%%;$MD_DIR;" \
-	    -e "s;%%LAST_YEAR%%;$LAST_YEAR;g" \
-	    -e "s;%%THIS_YEAR%%;$THIS_YEAR;g" \
-	    -e "s;%%NEXT_YEAR%%;$NEXT_YEAR;g" \
-	    |
-
-	 # write to stderr, missing file messages
-	 #
-	 # The absolute path is written to stderr, while
-	 # info about the possible cause is written to stderr with lines starting with #
-	 #
-	 # We output exact 4 lines per missing link.
-	 #
-         while read -r ABS_LOCAL_FILE_PATH; do
-	    if [[ ! -e $ABS_LOCAL_FILE_PATH ]]; then
-		echo "# Missing file linked in: $MD_PATH"
-		echo "# Markdown line: $MD_LINE"
-		echo "$ABS_LOCAL_FILE_PATH"
-		echo
-	    fi
-	 done
-     done > "$TMP_MISSING_LINK"
-
-
-# count the missing links
-#
-MISSING_LINK_COUNT=$(wc -l < "$TMP_MISSING_LINK" | tr -d ' ')
-export MISSING_LINK_COUNT
-((MISSING_LINK_COUNT=MISSING_LINK_COUNT/4))
-
-
-# report on any missing links
-#
-if [[ -s $TMP_MISSING_LINK ]]; then
-    sed -e "s;^$TOPDIR/;;" "$TMP_MISSING_LINK" 1>&2
-fi
-
-
-# All Done!!! All Done!!! -- Jessica Noll, Age 2
-#
-if [[ -s $TMP_MISSING_LINK ]]; then
-    echo "$0: ERROR: $MISSING_LINK_COUNT missing link(s) found" 1>&2
-    exit 1
-fi
-if [[ $V_FLAG -ge 1 ]]; then
-    echo "$0: debug[1]: $MISSING_LINK_COUNT missing link(s) found" 1>&2
-fi
-exit 0
+exit "$status"

@@ -707,7 +707,7 @@ states that email will be sent.  Instead it talks about potential slot comment
 modifications as means to tell the submitter that their submission was received.
 
 All of the import IOCCC dates within the [IOCCC rules](next/rules.html)
-have been moved into the "[Important IOCCC dates](next/rules.html#dates)"
+have been moved into the "[Important IOCCC dates](next/rules.html#rule0-dates)"
 section.
 
 

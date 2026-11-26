@@ -52,7 +52,7 @@ however you will **NOT** receive your own Email message containing your very own
 **Username and Initial Password until the contest is [open](../faq.html#open)**.  You will need these
 to be able to [upload your submission](submit.html) when the contest is [open](../faq.html#open).
 
-Once contest moves from [pending](../faq.html#pending") to [open](../faq.html#open) an announcement
+Once contest moves from [pending](../faq.html#pending) to [open](../faq.html#open) an announcement
 Email will be sent out to the mailing list of those have successfully registered for the IOCCC.
 In addition, an announcement will be made to the [IOCCC news](../news.html) in case you miss
 that announcement Email.

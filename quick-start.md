@@ -205,16 +205,14 @@ FAQ on "[obtaining the latest mkiocccentry tools](faq.html#obtaining_mkiocccentr
 the
 FAQ on "[compiling the mkiocccentry tools](faq.html#compiling_mkiocccentry)",
 the
-FAQ on "[installing the mkiocccentry tools](faq.html#installing)"
+FAQ on "[installing the mkiocccentry tools](faq.html#install)"
 and the
 FAQ on "[using the mkiocccentry tools](faq.html#using_mkiocccentry)"
 for more help.
 
 See also the
-FAQ on "[what the minimum required versions are for this
-contest](faq.html#minimum_versions)"
-for more details on how to verify you have the correct versions for this
-contest.
+FAQ on "[obtaining the latest mkiocccentry toolkit](faq.html#obtaining_mkiocccentry)"
+for instructions on updating the toolkit.
 
 <div id="step_7">
 <div id="submit">
