@@ -852,7 +852,7 @@ change the rest of the text. If you wish to see how I went about this see
 [1998 ASCII / Morse code translator]: ../../1998/dorssel/index.html
 [2014 Morse audio transcoder]: ../../2014/vik/index.html
 [Enigma Message Procedures]: https://web.archive.org/web/20200710094321/http://users.telenet.be/d.rijmenants/en/enigmaproc.htm
-[Interactive Enigma Machine]: http://enigmaco.de/enigma/enigma.html
+[Interactive Enigma Machine]: https://shadowenigma.com/simulator
 [enigma.1]: enigma.1
 [recode.1]: recode.1
 [recode.html]: recode.html
