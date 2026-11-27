@@ -261,6 +261,7 @@ clobber:
 		echo "Warning: $$i/Makefile not found, skipping $$i for $@ processing" 1>&2 ; \
 	    fi; \
         done
+	${RM} -f .tmp.jfmt-wrapper.sh.JSON_FILE.*
 	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 
