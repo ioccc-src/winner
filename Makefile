@@ -51,6 +51,7 @@ ALL_JFMT= bin/all-jfmt.sh
 ALL_RUN= bin/all-run.sh
 ALL_YEARS= bin/all-years.sh
 BAD_DISPLAY_AS= bin/bad-display-as.sh
+CHECK_HTML= bin/check_html.sh
 CHK_ENTRY= bin/chk-entry.sh
 CSV2ENTRY= bin/csv2entry.sh
 ENTRY2CSV= bin/entry2csv.sh
@@ -279,7 +280,7 @@ clobber:
 #	   simple want to examine, run / test winning IOCCC entries.
 
 .PHONY: help genpath genfilelist all_jfmt verify_entry_files gen_authors quick_authors \
-	gen_location quick_location gen_years find_missing_links test entry_index gen_top_html \
+	gen_location quick_location gen_years find_missing_links verify_html test entry_index gen_top_html \
 	gen_next thanks gen_other_html quick_other_html quick_entry_index find_invalid_json \
 	gen_year_index quick_year_index quick_www www untar_entry_tarball untar_year_tarball \
 	form_entry_tarball form_year_tarball tar gen_status gen_sitemap find_invalid_json \
@@ -330,6 +331,7 @@ help:
 	@echo 'make find_missing_links	;: find markdown links to missing local files'
 	@echo 'make find_invalid_json	;; find invalid JSON files'
 	@echo 'make verify_display_as	;; find invalid display_as / display_via_github combos'
+	@echo 'make verify_html	;: validate HTML files using vnu'
 	@echo
 	@echo 'make test		;: run a collection of mostly harmless tests'
 	@echo
@@ -613,6 +615,13 @@ verify_display_as:
 	${ALL_RUN} -v 1 -- ${BAD_DISPLAY_AS} -v 1
 	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
+# validate HTML files, excluding the paths in bin/exclude.cfg
+#
+verify_html:
+	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
+	${CHECK_HTML} -v 1 .
+	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
+
 # convert author_wins.csv, manifest.csv and year_prize.csv CSV files to
 # .entry.json files.
 #
@@ -647,6 +656,7 @@ test:
 	${MAKE} verify_entry_files
 	${MAKE} find_missing_links
 	${MAKE} find_invalid_json
+	${MAKE} verify_html
 	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 
@@ -832,6 +842,7 @@ quick_www:
 	${MAKE} gen_status
 	${MAKE} gen_sitemap
 	${MAKE} find_missing_links
+	${MAKE} verify_html
 	@echo '=-=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-=-='
 
 # do everything needed to build HTML content for the website
@@ -866,6 +877,7 @@ ifneq (${UPDATE_DEFER_SITEMAP},1)
 endif
 	${MAKE} find_invalid_json
 	${MAKE} find_missing_links
+	${MAKE} verify_html
 	@echo '=-=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-=-='
 
 

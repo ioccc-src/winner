@@ -106,7 +106,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="1.1.0 2026-11-26"
+export VERSION="1.2.0 2026-11-26"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -127,27 +127,32 @@ declare -ag VNU_OPTION
 #
 VNU_OPTION+=("--html")
 VNU_OPTION+=("--Werror")
-VNU_OPTION+=("--format")
-VNU_OPTION+=("gnu")
 export REPO_TOP_URL="https://github.com/ioccc-src/winner"
 
 
 # set usage message
 #
-export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-n] [-N] [-p vnu_path] file.html ...
+export USAGE="usage: $0 [-h] [-v level] [-V] [-a] [-d topdir] [-e exclude_file] [-l] [-n] [-N] [-p vnu_path] file ...
 
     -h              print help message and exit
     -v level        set verbosity level (def level: 0)
     -V              print version string and exit
 
+    -a              check files regardless of their filename extension
     -d topdir       set topdir (def: $TOPDIR)
+    -e exclude_file set exclusion file relative to topdir; . disables exclusions
+                    (def: bin/exclude.cfg)
+    -l              list failing paths on stdout instead of vnu diagnostics
 
-    -n              check the environment and version, but do not run vnu on the files
+    -n              select inputs, but do not run vnu on the files
     -N              check arguments and environment, but do not validate files
 
     -p vnu_path     path to the vnu tool (not the wrapper) (def: $VNU_TOOL)
 
-    file.html ...   path to HTML files under topdir to validate
+    file ...        files or directories under topdir to validate; - reads stdin
+                    directories are scanned recursively without following directory symlinks
+                    default extensions: .html, .htm, .xhtml, .xht
+                    exclusions apply to both explicit files and directory scans
 
 Exit codes:
      0         all HTML file(s) are OK
@@ -166,11 +171,14 @@ $NAME version: $VERSION"
 #
 export NOOP=
 export DO_NOT_PROCESS=
+export ALL_FILES=
+export LIST_FAILURES=
+export EXCLUDE_FILE="bin/exclude.cfg"
 
 
 # parse command line
 #
-while getopts :hv:Vd:nNp: flag; do
+while getopts :hv:Vad:e:lnNp: flag; do
   case "$flag" in
     h) echo "$USAGE" 1>&2
 	exit 2
@@ -184,7 +192,13 @@ while getopts :hv:Vd:nNp: flag; do
     V) echo "$VERSION"
 	exit 2
 	;;
+    a) ALL_FILES="true"
+	;;
     d) TOPDIR="$OPTARG"
+	;;
+    e) EXCLUDE_FILE="$OPTARG"
+	;;
+    l) LIST_FAILURES="true"
 	;;
     n) NOOP="-n"
 	;;
@@ -209,6 +223,19 @@ while getopts :hv:Vd:nNp: flag; do
 	;;
   esac
 done
+#
+# Keep Nu's HTML extension filter unless all files were explicitly requested.
+# JSON diagnostics allow list mode to identify each failing document reliably.
+#
+if [[ -z $ALL_FILES ]]; then
+    VNU_OPTION+=("--skip-non-html")
+fi
+VNU_OPTION+=("--format")
+if [[ -n $LIST_FAILURES ]]; then
+    VNU_OPTION+=("json")
+else
+    VNU_OPTION+=("gnu")
+fi
 #
 # parse the command line arguments
 #
@@ -370,6 +397,9 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: REPO_TOP_URL=$REPO_TOP_URL" 1>&2
     echo "$0: debug[3]: NOOP=$NOOP" 1>&2
     echo "$0: debug[3]: DO_NOT_PROCESS=$DO_NOT_PROCESS" 1>&2
+    echo "$0: debug[3]: ALL_FILES=$ALL_FILES" 1>&2
+    echo "$0: debug[3]: LIST_FAILURES=$LIST_FAILURES" 1>&2
+    echo "$0: debug[3]: EXCLUDE_FILE=$EXCLUDE_FILE" 1>&2
     echo "$0: debug[3]: VNU_TOOL_VERSION=$VNU_TOOL_VERSION" 1>&2
     echo "$0: debug[3]: VNU_MIN_VERSION=$VNU_MIN_VERSION" 1>&2
     echo "$0: debug[3]: BIN_SUBDIR=$BIN_SUBDIR" 1>&2
@@ -397,19 +427,26 @@ if ! "$VERGE" "$VNU_TOOL_VERSION" "$VNU_MIN_VERSION"; then
 fi
 
 
-# execute vnu
+# Select local files, apply exclusions, and invoke vnu in bounded batches.
+# The helper handles stdin separately because Nu does not read it alongside files.
 #
-if [[ -z $NOOP ]]; then
-    if [[ $V_FLAG -ge 1 ]]; then
-	echo "$0: debug[1]: will execute vnu as: $VNU_TOOL ${VNU_OPTION[*]} -- $*" 1>&2
+HELPER_OPTION=(--root "$TOPDIR" --validator "$VNU_TOOL" --exclude "$EXCLUDE_FILE")
+for option in "${VNU_OPTION[@]}"; do
+    HELPER_OPTION+=("--vnu-option=$option")
+done
+[[ -n $ALL_FILES ]] && HELPER_OPTION+=(--all-files)
+[[ -n $LIST_FAILURES ]] && HELPER_OPTION+=(--list)
+[[ -n $NOOP ]] && HELPER_OPTION+=(--dry-run)
+if [[ $V_FLAG -ge 1 ]]; then
+    echo "$0: debug[1]: selecting files for vnu: $*" 1>&2
+fi
+python3 -B bin/check_html.py "${HELPER_OPTION[@]}" -- "$@"
+status=$?
+if [[ $status -ne 0 ]]; then
+    if [[ -z $LIST_FAILURES ]]; then
+	echo "$0: ERROR: HTML selection or validation failed: $status" 1>&2
     fi
-    "$VNU_TOOL" "${VNU_OPTION[@]}" -- "$@"
-    status="$?"
-    if [[ $status -ne 0 ]]; then
-	echo "$0: ERROR: vnu: $VNU_TOOL exited non-zero: $status" 1>&2
-	echo "$0: Warning: likely due to one or more HTML files having validation errors" 1>&2
-	exit 1
-    fi
+    exit 1
 fi
 
 
