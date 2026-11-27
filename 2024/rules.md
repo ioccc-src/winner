@@ -1,6 +1,6 @@
 <!-- START: this line starts content from: inc/rules.judging.hdr -->
 
-# The rules for the IOCCC that just closed
+## The rules for the IOCCC that just closed
 
 These rules are for the current IOCCC that is no longer open for new submissions.
 
@@ -14,14 +14,14 @@ mastodon feed](https://fosstodon.org/@ioccc) page and/or mastodon
 app from time to time to view IOCCC mastodon updates.
 
 
-# The IOCCC is closed to new submissions
+## The IOCCC is closed to new submissions
 
 The [IOCCC judges](../judges.html) are in the process of judging the submissions they received
 while the IOCCC was open.
 
 <!-- END: the next line ends content from: inc/rules.judging.hdr -->
 <!-- This is the last line modified by the tool: bin/gen-status.sh -->
-# 28th International Obfuscated C Code Contest Official Rules
+## 28th International Obfuscated C Code Contest Official Rules
 
 <p class="leftbar">
 Copyright &copy; %%DATE_RANGE%% Leonid A. Broukhis and Landon Curt Noll.
@@ -38,7 +38,7 @@ Jump to: [top](#)
 
 <div id="rules_version">
 <div id="version">
-## IOCCC Rules version
+### IOCCC Rules version
 </div>
 </div>
 
@@ -58,7 +58,7 @@ Jump to: [top](#)
 
 
 <div id="change_marks">
-### Change marks
+#### Change marks
 </div>
 
 <p class="leftbar">
@@ -77,7 +77,7 @@ Jump to: [top](#)
 
 
 <div id="obfuscate">
-# Obfuscate defined:
+## Obfuscate defined:
 </div>
 
 tr.v. -cated, -cating, -cates.
@@ -94,7 +94,7 @@ Jump to: [top](#)
 
 
 <div id="goals">
-# Goals of the IOCCC (International Obfuscated C Code Contest)
+## Goals of the IOCCC (International Obfuscated C Code Contest)
 </div>
 
 <p class="leftbar">
@@ -105,7 +105,7 @@ Jump to: [top](#)
 
 
 <div id="dates">
-# Important IOCCC dates
+## Important IOCCC dates
 </div>
 
 <p class="leftbar">
@@ -142,13 +142,13 @@ Jump to: [top](#)
 
 
 <div id="rules">
-# IOCCC RULES
+## IOCCC RULES
 </div>
 
 To help us with the volume of submissions, we ask that you follow the rules below.
 
 <div id="rule_abuse">
-## A warning about rule abuse
+### A warning about rule abuse
 </div>
 
 <p class="leftbar">
@@ -209,7 +209,7 @@ Jump to: [top](#)
 
 
 <div id="rule0">
-## Rule 0
+### Rule 0
 </div>
 
 <p class="leftbar">
@@ -225,7 +225,7 @@ Jump to: [top](#)
 
 
 <div id="rule1">
-## Rule 1
+### Rule 1
 </div>
 
 <p class="leftbar">
@@ -244,7 +244,7 @@ Jump to: [top](#)
 
 
 <div id="rule2">
-## Rule 2
+### Rule 2
 </div>
 
 [Rule 2](#rule2) requires that your submission satisfy **BOTH** [Rule
@@ -280,7 +280,7 @@ Jump to: [top](#)
 
 
 <div id="rule2a">
-## Rule 2a
+### Rule 2a
 </div>
 
 <p class="leftbar">
@@ -291,7 +291,7 @@ Jump to: [top](#)
 
 
 <div id="rule2b">
-## Rule 2b
+### Rule 2b
 </div>
 
 <p class="leftbar">
@@ -308,7 +308,7 @@ Jump to: [top](#)
 
 
 <div id="rule3">
-## Rule 3
+### Rule 3
 </div>
 
 <p class="leftbar">
@@ -368,7 +368,7 @@ Jump to: [top](#)
 
 
 <div id="rule4">
-## Rule 4
+### Rule 4
 </div>
 
 <p class="leftbar">
@@ -402,7 +402,7 @@ Jump to: [top](#)
 
 
 <div id="rule5">
-## Rule 5
+### Rule 5
 </div>
 
 Your submission must **NOT** modify the _content_ **OR** _filename_ of **ANY**
@@ -428,7 +428,7 @@ Jump to: [top](#)
 
 
 <div id="rule6">
-## Rule 6
+### Rule 6
 </div>
 
 <p class="leftbar">
@@ -446,7 +446,7 @@ Jump to: [top](#)
 
 
 <div id="rule7">
-## Rule 7
+### Rule 7
 </div>
 
 <p class="leftbar">
@@ -505,7 +505,7 @@ Jump to: [top](#)
 
 
 <div id="rule8">
-## Rule 8
+### Rule 8
 </div>
 
 <p class="leftbar">
@@ -572,7 +572,7 @@ Jump to: [top](#)
 
 
 <div id="rule9">
-## Rule 9
+### Rule 9
 </div>
 
 <p class="leftbar">
@@ -596,7 +596,7 @@ Jump to: [top](#)
 
 
 <div id="rule10">
-## Rule 10
+### Rule 10
 </div>
 
 Entries requiring human interaction to be initially compiled **are not
@@ -607,7 +607,7 @@ Jump to: [top](#)
 
 
 <div id="rule11">
-## Rule 11
+### Rule 11
 </div>
 
 Programs that require special privileges (`setuid(2)`, `setgid(2)`,
@@ -631,7 +631,7 @@ Jump to: [top](#)
 
 
 <div id="rule12">
-## Rule 12
+### Rule 12
 </div>
 
 **Legal** abuse of the rules is somewhat encouraged.  **A submission that, in
@@ -647,7 +647,7 @@ Jump to: [top](#)
 
 
 <div id="rule13">
-## Rule 13
+### Rule 13
 </div>
 
 <p class="leftbar">
@@ -664,7 +664,7 @@ Jump to: [top](#)
 
 
 <div id="rule14">
-## Rule 14
+### Rule 14
 </div>
 
 <p class="leftbar">
@@ -697,7 +697,7 @@ Jump to: [top](#)
 
 
 <div id="rule15">
-## Rule 15
+### Rule 15
 </div>
 
 <p class="leftbar">
@@ -720,7 +720,7 @@ Jump to: [top](#)
 
 
 <div id="rule16">
-## Rule 16
+### Rule 16
 </div>
 
 Submissions that are similar to previous winning IOCCC entries are discouraged.
@@ -746,7 +746,7 @@ Jump to: [top](#)
 
 
 <div id="rule17">
-## Rule 17
+### Rule 17
 </div>
 
 <p class="leftbar">
@@ -818,14 +818,14 @@ FAQ on "[what extra files are and how to include more](../faq.html#extra-files)"
 as well as the [guidelines on extra files](guidelines.html#extra-files)
 for more details.
 
-### TL;DR Rule 17 - Use `mkiocccentry(1)` to form your submission
+#### TL;DR Rule 17 - Use `mkiocccentry(1)` to form your submission
 
 <p class="leftbar">
 Let the current version of the `mkiocccentry(1)` tool form your **xz
 compressed tarball** submission file.
 </p>
 
-### Warning
+#### Warning
 
 <p class="leftbar">
 Using command line flags or input prompts to override checks and
@@ -851,7 +851,7 @@ Jump to: [top](#)
 
 
 <div id="rule18">
-## Rule 18
+### Rule 18
 </div>
 
 The entirety of your submission must be submitted under the following license:
@@ -867,7 +867,7 @@ Jump to: [top](#)
 
 
 <div id="rule19">
-## Rule 19
+### Rule 19
 </div>
 
 <p class="leftbar">
@@ -922,7 +922,7 @@ Jump to: [top](#)
 
 
 <div id="rule20">
-## Rule 20
+### Rule 20
 </div>
 
 The how to build instructions must be in GNU Makefile format. See the
@@ -970,7 +970,7 @@ Jump to: [top](#)
 
 
 <div id="rule21">
-## Rule 21
+### Rule 21
 </div>
 
 <p class="leftbar">
@@ -996,7 +996,7 @@ Jump to: [top](#)
 
 
 <div id="rule22">
-## Rule 22
+### Rule 22
 </div>
 
 Catch 22:
@@ -1025,7 +1025,7 @@ Jump to: [top](#)
 
 
 <div id="rule23">
-## Rule 23
+### Rule 23
 </div>
 
 This prime rule number is reserved for future use.
@@ -1035,7 +1035,7 @@ Jump to: [top](#)
 
 
 <div id="rule24">
-## Rule 24
+### Rule 24
 </div>
 
 Even though 24 is not prime, you should still see [Rule 23](#rule23).
@@ -1045,7 +1045,7 @@ Jump to: [top](#)
 
 
 <div id="rule25">
-## Rule 25
+### Rule 25
 </div>
 
 <p class="leftbar">
@@ -1057,7 +1057,7 @@ Jump to: [top](#)
 
 
 <div id="rule26">
-## Rule 26
+### Rule 26
 </div>
 
 > "The quick brown fox jumps over the lazy dog".<br>
@@ -1072,7 +1072,7 @@ Jump to: [top](#)
 
 
 <div id="rule27">
-## Rule 27
+### Rule 27
 </div>
 
 <p class="leftbar">
@@ -1084,7 +1084,7 @@ Jump to: [top](#)
 
 
 <div id="rule28">
-## Rule 28
+### Rule 28
 </div>
 
 <p class="leftbar">
@@ -1097,7 +1097,7 @@ Jump to: [top](#)
 
 <div id="more-information">
 <div id="information">
-# FOR MORE INFORMATION:
+## FOR MORE INFORMATION:
 </div>
 </div>
 
