@@ -476,6 +476,12 @@ using one of make rules is more effective, and more convenient. For example:</p>
 <pre><code>    make quick_www</code></pre>
 <p>or:</p>
 <pre><code>    make www</code></pre>
+<p>Quick HTML builds keep local, Git-ignored records in <code>.quick-html-cache/</code>.
+Pages without a record are rebuilt once; changed generation options, copyright
+date ranges, or independently replaced output also cause a rebuild. A new
+calendar year conservatively rebuilds all pages, including those with a fixed
+copyright range, because some substitutions depend on the year. The records are
+not part of the published site and may be deleted to force regeneration.</p>
 <h2 id="bin-tools">bin tools</h2>
 <blockquote>
 <p>“After 50+ years, the UNIX command line remains very powerful.” – Landon Noll</p>

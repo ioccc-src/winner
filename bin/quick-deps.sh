@@ -4,13 +4,74 @@
 #
 # Source this file from the repository top directory. quick_html_current takes
 # the HTML output, the Markdown name used to select md2html.cfg, and any
-# additional generator-specific inputs. It returns success only when the output
-# exists and no input is strictly newer. Equal timestamps are current.
+# additional generator-specific inputs. An output is current only when its
+# inputs are not newer and its local build record matches its content and the
+# current generation options and copyright date range.
 #
+function quick_html_fingerprint
+{
+    local output="$1" match="$2" source_dir date_range year fingerprint
+    source_dir="${match%/*}"
+    [[ $source_dir == "$match" ]] && source_dir="."
+    # md2html also honors an inherited DATE_RANGE unless a readable file
+    # overrides it, even when that file is empty.
+    date_range="${DATE_RANGE-}"
+    if [[ -f $source_dir/.date-range && -r $source_dir/.date-range ]]; then
+	date_range=$(< "$source_dir/.date-range")
+    fi
+    # subst.default.sh supplies THIS_YEAR, NEXT_YEAR, and LAST_YEAR even when
+    # the copyright range is fixed, so a year change is always significant.
+    year=$(date '+%Y') || { echo "quick-deps.sh: ERROR: cannot determine current year" 1>&2; return 1; }
+    date_range="${date_range:-1984-$year}"
+    fingerprint=$(
+	set -o pipefail
+	# TOOL_OPTION is supplied by the calling generator.
+	# shellcheck disable=SC2154
+	{ printf '%s\0' "$0" "$match" "${DOCROOT_SLASH-}" "${SITE_URL-}" "${TAGLINE-}" \
+	    "$date_range" "$year" "${TOOL_OPTION[@]}" && cat "$output"; } | shasum -a 256
+    ) || { echo "quick-deps.sh: ERROR: cannot fingerprint $output" 1>&2; return 1; }
+    printf '%s\n' "${fingerprint%% *}"
+}
+
+function quick_html_record
+{
+    local output="$1" match="$2" record=".quick-html-cache/$1.sig" fingerprint tmp year
+    year=$(date '+%Y') || { echo "quick-deps.sh: ERROR: cannot determine current year" 1>&2; return 1; }
+    if [[ $year != "$QUICK_HTML_BUILD_YEAR" ]]; then
+	echo "quick-deps.sh: ERROR: year changed during generation of $output; retry the build" 1>&2
+	return 1
+    fi
+    fingerprint=$(quick_html_fingerprint "$output" "$match") || return 1
+    year=$(date '+%Y') || { echo "quick-deps.sh: ERROR: cannot determine current year" 1>&2; return 1; }
+    if [[ $year != "$QUICK_HTML_BUILD_YEAR" ]]; then
+	echo "quick-deps.sh: ERROR: year changed during generation of $output; retry the build" 1>&2
+	return 1
+    fi
+    mkdir -p "${record%/*}" || { echo "quick-deps.sh: ERROR: cannot create cache directory for $output" 1>&2; return 1; }
+    tmp=$(mktemp "${record}.tmp.XXXXXX") || { echo "quick-deps.sh: ERROR: cannot create record for $output" 1>&2; return 1; }
+    if ! printf '%s\n' "$fingerprint" > "$tmp" || ! mv -f "$tmp" "$record"; then
+	echo "quick-deps.sh: ERROR: cannot write record for $output" 1>&2
+	rm -f "$tmp"
+	return 1
+    fi
+}
+
+function quick_html_invalidate
+{
+    rm -f ".quick-html-cache/$1.sig" || {
+	echo "quick-deps.sh: ERROR: cannot invalidate record for $1" 1>&2
+	return 1
+    }
+    QUICK_HTML_BUILD_YEAR=$(date '+%Y') || {
+	echo "quick-deps.sh: ERROR: cannot determine current year" 1>&2
+	return 1
+    }
+}
+
 function quick_html_current
 {
     local output="$1" match="$2" output_dir input line option="" active=0 found=0
-    local phase value item first="" last="" nav_name
+    local phase value item first="" last="" nav_name fingerprint recorded
     local -a inputs=()
     local -A phases=([top]=default [head]=default [body]=default [topbar]=default
 	[header]=default [navbar]=default [before-content]=default
@@ -92,5 +153,9 @@ function quick_html_current
 	    return 1
 	fi
     done
+    [[ -r .quick-html-cache/$output.sig ]] || return 1
+    recorded=$(< ".quick-html-cache/$output.sig")
+    fingerprint=$(quick_html_fingerprint "$output" "$match") || return 1
+    [[ $recorded == "$fingerprint" ]] || return 1
     return 0
 }

@@ -116,7 +116,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="2.3.0 2026-11-26"
+export VERSION="2.4.0 2026-11-26"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -1025,6 +1025,9 @@ if [[ -z $NOOP ]]; then
 
     # possibly update authors.html
     #
+    if [[ -n $QUICK_MODE ]]; then
+	quick_html_invalidate "$AUTHORS_HTML" || exit 1
+    fi
     if [[ $V_FLAG -ge 1 ]]; then
 	echo "$0: debug[1]: about to run: $MD2HTML_SH ${TOOL_OPTION[*]} -- authors.md $TMP_AUTHORS_MD $AUTHORS_HTML" 1>&2
     fi
@@ -1045,8 +1048,9 @@ if [[ -z $NOOP ]]; then
     # We will force the authors.html file to be touched so that a later run with -Q will quickly exit.
     # We do this because by default, the md2html.sh tool does not modify the target HTML unless it was modified.
     #
-    if [[ -n $QUICK_MODE ]]; then
-	touch "$AUTHORS_HTML"
+    if [[ -n $QUICK_MODE && $status -eq 0 ]]; then
+	touch "$AUTHORS_HTML" || exit 1
+	quick_html_record "$AUTHORS_HTML" authors.md || exit 1
     fi
 
 # report disabled by -n

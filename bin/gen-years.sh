@@ -106,7 +106,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="2.5.0 2026-11-26"
+export VERSION="2.6.0 2026-11-26"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -707,6 +707,7 @@ if [[ -n $QUICK_MODE ]]; then
     QUICK_INVALID=""
     while read -r YYYY; do
 	QUICK_INPUTS+=("$YYYY/.year")
+	[[ -e $YYYY/$YYYY.tar.bz2 ]] || QUICK_INVALID="true"
 	if [[ -r $YYYY/.year ]]; then
 	    while read -r YYYY_DIR; do
 		QUICK_INPUTS+=("$YYYY_DIR/.entry.json")
@@ -1154,6 +1155,9 @@ fi
 # use the md2html.sh tool to form a years HTML file, unless -n
 #
 if [[ -z $NOOP ]]; then
+    if [[ -n $QUICK_MODE ]]; then
+	quick_html_invalidate "$YEARS_HTML" || exit 1
+    fi
     if [[ $V_FLAG -ge 1 ]]; then
 	echo "$0: debug[1]: about to run: $MD2HTML_SH ${TOOL_OPTION[*]} -- years.md $TMP_YEARS_MD $YEARS_HTML" 1>&2
     fi
@@ -1164,8 +1168,9 @@ if [[ -z $NOOP ]]; then
 	     "failed, error: $status" 1>&2
 	EXIT_CODE="1"  # exit 1
 	echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-    elif [[ -n $QUICK_MODE ]]; then
+    elif [[ -n $QUICK_MODE && $EXIT_CODE -eq 0 ]]; then
 	touch "$YEARS_HTML" || exit 1
+	quick_html_record "$YEARS_HTML" years.md || exit 1
     elif [[ $V_FLAG -ge 3 ]]; then
 	echo "$0: debug[3]: now up to date: $YEARS_HTML" 1>&2
     fi

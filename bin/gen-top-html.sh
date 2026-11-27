@@ -124,7 +124,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="2.1.0 2026-11-26"
+export VERSION="2.2.0 2026-11-26"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -608,6 +608,9 @@ if (( ${#TOP_MD_SELECT_SET[@]} )); then
 	# use the md2html.sh tool to form the HTML file, unless -n
 	#
 	if [[ -z $NOOP ]]; then
+	    if [[ -n $QUICK_MODE ]]; then
+		quick_html_invalidate "$HTML_FILE" || exit 1
+	    fi
 	    if [[ $V_FLAG -ge 1 ]]; then
 		echo "$0: debug[1]: about to run: $MD2HTML_SH -U $SITE_URL/$HTML_FILE ${TOOL_OPTION[*]}" \
 		     "-m $MD_FILE -- $MD_FILE $HTML_FILE" 1>&2
@@ -623,6 +626,7 @@ if (( ${#TOP_MD_SELECT_SET[@]} )); then
 		echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
 	    elif [[ -n $QUICK_MODE ]]; then
 		touch "$HTML_FILE" || exit 1
+		quick_html_record "$HTML_FILE" "$MD_FILE" || exit 1
 	    elif [[ $V_FLAG -ge 3 ]]; then
 		echo "$0: debug[3]: now up to date: $HTML_FILE" 1>&2
 	    fi
@@ -695,6 +699,9 @@ else
 	# use the md2html.sh tool to form the HTML file, unless -n
 	#
 	if [[ -z $NOOP ]]; then
+	    if [[ -n $QUICK_MODE ]]; then
+		quick_html_invalidate "$HTML_FILE" || exit 1
+	    fi
 	    if [[ $V_FLAG -ge 1 ]]; then
 		echo "$0: debug[1]: about to run: $MD2HTML_SH -U $SITE_URL/$HTML_FILE ${TOOL_OPTION[*]}" \
 		     "-m $MD_FILE -- $MD_FILE $HTML_FILE" 1>&2
@@ -710,6 +717,7 @@ else
 		echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
 	    elif [[ -n $QUICK_MODE ]]; then
 		touch "$HTML_FILE" || exit 1
+		quick_html_record "$HTML_FILE" "$MD_FILE" || exit 1
 	    elif [[ $V_FLAG -ge 3 ]]; then
 		echo "$0: debug[3]: now up to date: $HTML_FILE" 1>&2
 	    fi

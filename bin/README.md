@@ -20,6 +20,13 @@ or:
     make www
 ```
 
+Quick HTML builds keep local, Git-ignored records in `.quick-html-cache/`.
+Pages without a record are rebuilt once; changed generation options, copyright
+date ranges, or independently replaced output also cause a rebuild. A new
+calendar year conservatively rebuilds all pages, including those with a fixed
+copyright range, because some substitutions depend on the year. The records are
+not part of the published site and may be deleted to force regeneration.
+
 
 <div id="bin-tools">
 ## bin tools

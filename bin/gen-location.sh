@@ -104,7 +104,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="2.3.0 2026-11-26"
+export VERSION="2.4.0 2026-11-26"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -788,6 +788,9 @@ if [[ -z $NOOP ]]; then
 
     # possibly update location.html
     #
+    if [[ -n $QUICK_MODE ]]; then
+	quick_html_invalidate "$LOCATION_HTML" || exit 1
+    fi
     if [[ $V_FLAG -ge 1 ]]; then
 	echo "$0: debug[1]: about to run: $MD2HTML_SH ${TOOL_OPTION[*]} -- location.md $TMP_LOC_MD $LOCATION_HTML" 1>&2
     fi
@@ -807,8 +810,9 @@ if [[ -z $NOOP ]]; then
     # We will force the location.html file to be touched so that a later run with -Q will quickly exit.
     # We do this because by default, the md2html.sh tool does not modify the target HTML unless it was modified.
     #
-    if [[ -n $QUICK_MODE ]]; then
-	touch "$LOCATION_HTML"
+    if [[ -n $QUICK_MODE && $status -eq 0 ]]; then
+	touch "$LOCATION_HTML" || exit 1
+	quick_html_record "$LOCATION_HTML" location.md || exit 1
     fi
 
 # report disabled by -n

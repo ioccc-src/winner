@@ -106,7 +106,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="2.3.0 2026-11-26"
+export VERSION="2.4.0 2026-11-26"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -569,6 +569,9 @@ if [[ -z $NOOP ]]; then
     # possibly update YYYY index.html
     #
     if [[ -n $UPDATE_INDEX ]]; then
+	if [[ -n $QUICK_MODE ]]; then
+	    quick_html_invalidate "$YYYY/index.html" || exit 1
+	fi
 
 	# update YYYY index.html
 	#
@@ -592,7 +595,8 @@ if [[ -z $NOOP ]]; then
 	# We do this because by default, the md2html.sh tool does not modify the target HTML unless it was modified.
 	#
 	if [[ -n $QUICK_MODE ]]; then
-	    touch "$YYYY/index.html"
+	    touch "$YYYY/index.html" || exit 1
+	    quick_html_record "$YYYY/index.html" "$README_FILE" || exit 1
 	fi
 
     # case: YYYY index.html does not need to be updated
@@ -620,6 +624,9 @@ if [[ -z $NOOP ]]; then
     # possibly update YYYY rules.html
     #
     if [[ -n $UPDATE_RULES ]]; then
+	if [[ -n $QUICK_MODE ]]; then
+	    quick_html_invalidate "$YYYY/rules.html" || exit 1
+	fi
 
 	# update YYYY rules.html
 	#
@@ -643,7 +650,8 @@ if [[ -z $NOOP ]]; then
 	# We do this because by default, the md2html.sh tool does not modify the target HTML unless it was modified.
 	#
 	if [[ -n $QUICK_MODE ]]; then
-	    touch "$YYYY/rules.html"
+	    touch "$YYYY/rules.html" || exit 1
+	    quick_html_record "$YYYY/rules.html" "$YYYY/rules.md" || exit 1
 	fi
 
     # case: YYYY index.html does not need to be updated
@@ -671,6 +679,9 @@ if [[ -z $NOOP ]]; then
     # possibly update YYYY guidelines.html
     #
     if [[ -n $UPDATE_GUIDELINES ]]; then
+	if [[ -n $QUICK_MODE ]]; then
+	    quick_html_invalidate "$YYYY/guidelines.html" || exit 1
+	fi
 
 	# update YYYY guidelines.html
 	#
@@ -694,7 +705,8 @@ if [[ -z $NOOP ]]; then
 	# We do this because by default, the md2html.sh tool does not modify the target HTML unless it was modified.
 	#
 	if [[ -n $QUICK_MODE ]]; then
-	    touch "$YYYY/guidelines.html"
+	    touch "$YYYY/guidelines.html" || exit 1
+	    quick_html_record "$YYYY/guidelines.html" "$YYYY/guidelines.md" || exit 1
 	fi
 
     # case: YYYY index.html does not need to be updated
@@ -722,6 +734,9 @@ if [[ -z $NOOP ]]; then
     # possibly update YYYY challenge.html
     #
     if [[ -n $UPDATE_CHALLENGE ]]; then
+	if [[ -n $QUICK_MODE ]]; then
+	    quick_html_invalidate "$YYYY/challenge.html" || exit 1
+	fi
 
 	# update YYYY challenge.html
 	#
@@ -745,7 +760,8 @@ if [[ -z $NOOP ]]; then
 	# We do this because by default, the md2html.sh tool does not modify the target HTML unless it was modified.
 	#
 	if [[ -n $QUICK_MODE ]]; then
-	    touch "$YYYY/challenge.html"
+	    touch "$YYYY/challenge.html" || exit 1
+	    quick_html_record "$YYYY/challenge.html" "$YYYY/challenge.md" || exit 1
 	fi
 
     # case: YYYY index.html does not need to be updated
