@@ -128,7 +128,9 @@ The instructions have been tested on a specific OS, on others they may differ in
     ./prog doomp.bin
 ```
 
-* You will need the game resources, which are a .wad archive that you can grab from Doom 1/2 or its expansion packs. Doom has a shareware version available for free, you can download doom1.wad from it [here](http://distro.ibiblio.org/pub/linux/distributions/slitaz/sources/packages/d/doom1.wad). The resource file must be in the current directory when you run the VM.
+* You will need the game resources, which are a .wad archive that you can grab from Doom 1/2 or its expansion packs. Doom has a shareware version available for free, you can download doom1.wad from it
+[here](https://www.wad-archive.com/wad/23a3a8bfafcfdc7c481f282cf2a3d03e5f386d43).
+The resource file must be in the current directory when you run the VM.
 
 * `doomp.bin` is a compressed binary of `doom.bin`, more on that below.
 
