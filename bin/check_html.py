@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
-"""Select local HTML inputs and run the Nu validator for check_html.sh."""
+"""Select local HTML inputs and run the Nu validator for check_html.sh.
+
+The shell wrapper checks the execution environment and builds validator options.
+This helper resolves the requested paths, applies exclusions, and invokes Nu in
+bounded batches. In list mode it converts Nu's JSON diagnostics into one
+repository-relative path per failing document.
+"""
 
 import argparse
 import json
@@ -11,12 +17,17 @@ from urllib.parse import unquote, urlsplit
 
 
 HTML_SUFFIXES = (".html", ".htm", ".xhtml", ".xht")
+VERSION = "1.0.0 2026-11-26"
+# Limit both argument count and argument bytes, leaving room for other options.
 BATCH_SIZE = 100
 BATCH_BYTES = 64 * 1024
 
 
 def inside(root, path):
-    """Resolve paths before checking containment, including file symlinks."""
+    """Return a resolved path within root, rejecting paths that escape it.
+
+    Resolving first makes the same containment check apply to symlink targets.
+    """
     resolved = path.resolve()
     if not resolved.is_relative_to(root):
         raise ValueError(f"path is outside topdir: {path}")
@@ -24,7 +35,11 @@ def inside(root, path):
 
 
 def exclusions(root, name):
-    """Read exact, topdir-relative paths; a single dot disables exclusions."""
+    """Read exact topdir-relative exclusions; a single dot disables the list.
+
+    Blank lines and comments are ignored. Absolute paths and paths resolving
+    outside the repository are errors rather than silently ignored entries.
+    """
     if name == ".":
         return set()
     config = Path(name)
@@ -43,11 +58,17 @@ def exclusions(root, name):
 
 
 def select_inputs(root, names, excluded, all_files):
-    """Expand directories without following directory symlinks or leaving root."""
+    """Expand input names into resolved files and a separate stdin flag.
+
+    Directory walks do not follow directory symlinks. By default only HTML-like
+    suffixes are selected; all_files disables this filter. Exclusions and
+    deduplication apply to resolved paths, including explicitly named files.
+    """
     selected = {}
     stdin = False
 
     def add(path):
+        """Filter, validate, and remember a file once using its resolved path."""
         if not all_files and not path.name.endswith(HTML_SUFFIXES):
             return
         resolved = inside(root, path)
@@ -61,6 +82,7 @@ def select_inputs(root, names, excluded, all_files):
         selected.setdefault(resolved, resolved.relative_to(root).as_posix())
 
     def walk_error(error):
+        """Make directory traversal errors abort selection instead of hiding them."""
         raise error
 
     for name in names:
@@ -90,7 +112,12 @@ def select_inputs(root, names, excluded, all_files):
 
 
 def list_results(result, paths, stdin):
-    """Report each failing document once, preserving operational failures."""
+    """Translate a Nu JSON result to failing paths and an overall failure flag.
+
+    The paths mapping associates resolved file paths with display names; stdin
+    identifies a separate validator invocation. Diagnostics without a known
+    document and malformed validator output are reported as operational errors.
+    """
     try:
         report = json.loads(result.stderr)
         messages = report["messages"]
@@ -122,6 +149,8 @@ def list_results(result, paths, stdin):
                 print(f"check_html.py: ERROR: {message.get('message', 'vnu error')}", file=sys.stderr)
                 operational = True
             continue
+        # Nu reports absolute file URLs; never accept an unrelated URL as a
+        # successful association with one of the files in this batch.
         url = message.get("url")
         if url:
             parsed = urlsplit(url)
@@ -151,7 +180,10 @@ def list_results(result, paths, stdin):
 
 
 def batches_for(paths):
-    """Keep both file counts and encoded command-line lengths bounded."""
+    """Yield batches bounded by file count and encoded command-line length.
+
+    Each item retains both the absolute input path and its display name.
+    """
     batch = []
     size = 0
     for path, name in paths.items():
@@ -167,7 +199,14 @@ def batches_for(paths):
 
 
 def main():
+    """Parse wrapper options, select inputs, and aggregate validator failures.
+
+    Exit 0 means every selected document passed; exit 1 covers selection,
+    validation, and validator execution or diagnostic errors. Argument parsing
+    errors use argparse's exit status 2.
+    """
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("-V", "--version", action="version", version=VERSION)
     parser.add_argument("--root", type=Path, required=True)
     parser.add_argument("--validator", required=True)
     parser.add_argument("--exclude", required=True)

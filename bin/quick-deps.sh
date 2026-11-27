@@ -8,6 +8,15 @@
 # inputs are not newer and its local build record matches its content and the
 # current generation options and copyright date range.
 #
+# This helper is sourced: keep its version separate from the caller's VERSION.
+# shellcheck disable=SC2034 # Available to callers that need the helper version.
+QUICK_DEPS_VERSION="1.0.0 2026-11-26"
+
+# Hash the generator context and current output bytes, printing the digest.
+# Arguments are the output path and the Markdown configuration match. The
+# record is not a hash of the source files: their modification times are
+# checked separately by quick_html_current.
+#
 function quick_html_fingerprint
 {
     local output="$1" match="$2" source_dir date_range year fingerprint generator="$0"
@@ -38,6 +47,10 @@ function quick_html_fingerprint
     printf '%s\n' "${fingerprint%% *}"
 }
 
+# Write a record atomically after successful generation, using the output path
+# and Markdown configuration match. quick_html_invalidate must have captured
+# the build year, which must still match before and after fingerprinting.
+#
 function quick_html_record
 {
     local output="$1" match="$2" record=".quick-html-cache/$1.sig" fingerprint tmp year
@@ -61,6 +74,10 @@ function quick_html_record
     fi
 }
 
+# Remove the output's old record before generating it and capture the build
+# year in QUICK_HTML_BUILD_YEAR. A failed generation must not leave the
+# previous record usable.
+#
 function quick_html_invalidate
 {
     rm -f ".quick-html-cache/$1.sig" || {
@@ -73,6 +90,10 @@ function quick_html_invalidate
     }
 }
 
+# Return success only when output, selected prerequisites, and provenance agree.
+# Arguments are output, Markdown configuration match, and additional inputs.
+# A nonzero return means the caller must regenerate rather than use the cache.
+#
 function quick_html_current
 {
     local output="$1" match="$2" output_dir input line option="" active=0 found=0

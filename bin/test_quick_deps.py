@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
-"""Regression tests for quick-build prerequisites and provenance."""
+"""Regression tests for quick-build prerequisites and provenance.
+
+The helper tests use synthetic timestamps and a controllable clock. Generator
+tests run real scripts on a disposable miniature site, comparing quick output
+with full builds without modifying the working repository.
+"""
 
 import json
 import os
@@ -10,6 +15,7 @@ import tempfile
 import unittest
 
 
+VERSION = "1.0.0 2026-11-26"
 HELPER = Path(__file__).with_name("quick-deps.sh").resolve()
 PHASES = (
     "top", "head", "body", "topbar", "header", "navbar",
@@ -21,6 +27,11 @@ class QuickDependenciesTest(unittest.TestCase):
     """Use a miniature site so timestamp checks never alter repository files."""
 
     def setUp(self):
+        """Create an old but internally consistent page and provenance record.
+
+        A fake date command allows year changes without altering the system
+        clock; timestamps are fixed so each test can isolate one dependency.
+        """
         self.temp = tempfile.TemporaryDirectory()
         self.addCleanup(self.temp.cleanup)
         self.root = Path(self.temp.name)
@@ -54,6 +65,11 @@ class QuickDependenciesTest(unittest.TestCase):
         self.record()
 
     def run_helper(self, action, match="source.md", source="source.md", options=()):
+        """Invoke a sourced helper in the fixture, passing options as an array.
+
+        Recording is preceded by invalidation, as in the actual generators.
+        Return the subprocess result so callers can inspect failures.
+        """
         return subprocess.run(
             ["bash", "-c", '. bin/quick-deps.sh; action="$1"; match="$2"; '
              'source="$3"; shift 3; TOOL_OPTION=("$@"); '
@@ -64,28 +80,45 @@ class QuickDependenciesTest(unittest.TestCase):
         )
 
     def current(self, match="source.md", source="source.md", options=()):
+        """Return whether the fixture output is accepted as current."""
         return self.run_helper("current", match, source, options).returncode == 0
 
     def record(self, match="source.md", options=()):
+        """Create a valid fixture record, failing the test on helper errors."""
         result = self.run_helper("record", match, options=options)
         self.assertEqual(result.returncode, 0, result.stderr.decode())
 
+    def test_helper_version_preserves_caller_version(self):
+        """Expose a separate helper version without changing the caller's version."""
+        result = subprocess.run(
+            ["bash", "-c", 'VERSION=caller; . bin/quick-deps.sh; '
+             'printf "%s\\n%s\\n" "$VERSION" "$QUICK_DEPS_VERSION"'],
+            cwd=self.root, env=self.env, check=True, capture_output=True, text=True,
+        )
+        caller, version = result.stdout.splitlines()
+        self.assertEqual(caller, "caller")
+        self.assertRegex(version, r"^\d+\.\d+\.\d+ \d{4}-\d{2}-\d{2}$")
+
     def test_equal_and_older_inputs_are_current(self):
+        """Accept dependencies with timestamps equal to or older than output."""
         self.assertTrue(self.current())
         os.utime(self.root / "source.md", (99, 99))
         self.assertTrue(self.current())
 
     def test_missing_or_newer_input_requires_rebuild(self):
+        """Reject a source that is newer than the output or no longer exists."""
         os.utime(self.root / "source.md", (101, 101))
         self.assertFalse(self.current())
         (self.root / "source.md").unlink()
         self.assertFalse(self.current())
 
     def test_missing_output_requires_rebuild(self):
+        """Reject a record when its HTML output has been removed."""
         (self.root / "page.html").unlink()
         self.assertFalse(self.current())
 
     def test_missing_or_corrupt_record_requires_rebuild(self):
+        """Require a readable, matching record rather than trusting timestamps."""
         record = self.root / ".quick-html-cache/page.html.sig"
         record.unlink()
         self.assertFalse(self.current())
@@ -93,17 +126,20 @@ class QuickDependenciesTest(unittest.TestCase):
         self.assertFalse(self.current())
 
     def test_options_changed_and_restored_require_rebuild(self):
+        """Distinguish records generated with different converter options."""
         self.assertFalse(self.current(options=("-t", "custom", "-w", "https://example.org")))
         self.record(options=("-t", "custom", "-w", "https://example.org"))
         self.assertTrue(self.current(options=("-t", "custom", "-w", "https://example.org")))
         self.assertFalse(self.current())
 
     def test_output_replacement_requires_rebuild_even_with_old_timestamp(self):
+        """Detect changed HTML bytes even when its timestamp is unchanged."""
         (self.root / "page.html").write_text("different output\n")
         os.utime(self.root / "page.html", (100, 100))
         self.assertFalse(self.current())
 
     def test_year_rollover_and_date_range_transitions(self):
+        """Invalidate on year changes and on changes to the date-range file."""
         self.env["FAKE_YEAR"] = "2027"
         self.assertFalse(self.current())
         date_range = self.root / ".date-range"
@@ -120,6 +156,7 @@ class QuickDependenciesTest(unittest.TestCase):
         self.assertFalse(self.current())
 
     def test_inherited_date_range_and_empty_file_override(self):
+        """Track inherited date ranges, except when an empty file overrides one."""
         self.env["DATE_RANGE"] = "1984-2000"
         self.assertFalse(self.current())
         self.record()
@@ -133,12 +170,14 @@ class QuickDependenciesTest(unittest.TestCase):
         self.assertTrue(self.current())
 
     def test_failed_record_does_not_create_valid_record(self):
+        """Leave no valid record if the generated output cannot be fingerprinted."""
         self.run_helper("invalidate")
         (self.root / "page.html").unlink()
         self.assertNotEqual(self.run_helper("record").returncode, 0)
         self.assertFalse((self.root / ".quick-html-cache/page.html.sig").exists())
 
     def test_year_change_during_build_does_not_create_record(self):
+        """Reject a record if the year changed between invalidation and recording."""
         result = subprocess.run(
             ["bash", "-c", '. bin/quick-deps.sh; TOOL_OPTION=(); '
              'quick_html_invalidate page.html; export FAKE_YEAR=2027; '
@@ -149,10 +188,12 @@ class QuickDependenciesTest(unittest.TestCase):
         self.assertFalse((self.root / ".quick-html-cache/page.html.sig").exists())
 
     def test_empty_output_requires_rebuild(self):
+        """Reject an empty HTML file even if an old record still exists."""
         (self.root / "page.html").write_text("")
         self.assertFalse(self.current())
 
     def test_newer_template_and_date_range_require_rebuild(self):
+        """Rebuild when a selected template or date-range file is newer."""
         os.utime(self.root / "inc/head.default.html", (101, 101))
         self.assertFalse(self.current())
         os.utime(self.root / "inc/head.default.html", (100, 100))
@@ -161,12 +202,14 @@ class QuickDependenciesTest(unittest.TestCase):
         self.assertFalse(self.current())
 
     def test_unselected_template_does_not_invalidate(self):
+        """Track the configured navbar template, not the unused default."""
         os.utime(self.root / "inc/navbar.default.html", (101, 101))
         self.assertTrue(self.current())
         os.utime(self.root / "inc/navbar.empty.html", (101, 101))
         self.assertFalse(self.current())
 
     def test_year_navigation_uses_the_selected_phase(self):
+        """Track the year navbar phase selected by position in the year list."""
         (self.root / ".top").write_text("1984\n1985\n")
         (self.root / "bin/md2html.cfg").write_text("[12][0-9][0-9][0-9]/README.md\n")
         for phase in ("first", "mid", "last"):
@@ -181,6 +224,7 @@ class QuickDependenciesTest(unittest.TestCase):
         self.assertFalse(self.current("1984/README.md"))
 
     def test_entry_navigation_tracks_the_entry_list(self):
+        """Invalidate an entry when its navigation ordering changes."""
         (self.root / ".allyear").write_text("1984/one\n1984/two\n")
         (self.root / "bin/md2html.cfg").write_text("[12][0-9][0-9][0-9]/*/README.md\n")
         for phase in ("first", "mid", "last"):
@@ -198,6 +242,7 @@ class QuickGeneratorTest(unittest.TestCase):
     """Compare real quick and full generation in a disposable miniature site."""
 
     def setUp(self):
+        """Copy generator inputs into a temporary site with a controllable year."""
         self.temp = tempfile.TemporaryDirectory()
         self.addCleanup(self.temp.cleanup)
         self.root = Path(self.temp.name)
@@ -221,6 +266,7 @@ class QuickGeneratorTest(unittest.TestCase):
         self.env["FAKE_YEAR"] = "2026"
 
     def generate(self, *args, page="about", success=True):
+        """Run the top-page generator and assert its expected exit status."""
         result = subprocess.run(
             ["bin/gen-top-html.sh", *args, page],
             cwd=self.root, env=self.env, capture_output=True,
@@ -232,6 +278,7 @@ class QuickGeneratorTest(unittest.TestCase):
         return result
 
     def test_quick_matches_full_across_options_and_year_rollover(self):
+        """Compare full and quick pages after option changes and year rollover."""
         output = self.root / "about.html"
         self.generate("-Q")
         original = output.read_bytes()
@@ -260,6 +307,7 @@ class QuickGeneratorTest(unittest.TestCase):
         self.assertEqual(output.read_bytes(), rollover)
 
     def test_fixed_copyright_still_tracks_year_substitutions(self):
+        """Rebuild year substitutions even when the copyright range is fixed."""
         (self.root / ".date-range").write_text("1984-2000\n")
         output = self.root / "index.html"
         self.generate("-Q", page="index")
@@ -272,6 +320,7 @@ class QuickGeneratorTest(unittest.TestCase):
         self.assertEqual(output.read_bytes(), rollover)
 
     def test_selected_page_options_leave_other_page_untouched(self):
+        """Keep a separate page current when only another page's options change."""
         self.generate("-Q", page="about")
         self.generate("-Q", page="index")
         index = self.root / "index.html"
@@ -281,6 +330,7 @@ class QuickGeneratorTest(unittest.TestCase):
         self.assertEqual(index.stat().st_mtime_ns, timestamp)
 
     def test_full_top_generation_populates_quick_record(self):
+        """Reuse full-build provenance only with matching top-page options."""
         output = self.root / "about.html"
         self.generate("-t", "custom tagline")
         self.assertTrue((self.root / ".quick-html-cache/about.html.sig").is_file())
@@ -291,6 +341,10 @@ class QuickGeneratorTest(unittest.TestCase):
         self.assertNotEqual(output.stat().st_mtime_ns, timestamp)
 
     def prepare_year(self):
+        """Copy a real year's metadata and entry inputs into the disposable site.
+
+        Return the year directory for tests that add their own fixture pages.
+        """
         repo = HELPER.parent.parent
         year = self.root / "1984"
         year.mkdir()
@@ -305,11 +359,13 @@ class QuickGeneratorTest(unittest.TestCase):
         return year
 
     def test_year_outputs_rebuild_independently_and_match_full(self):
+        """Rebuild changed year pages independently and match full generation."""
         year = self.prepare_year()
         for name in ("rules", "guidelines", "challenge"):
             (year / f"{name}.md").write_text(f"# {name.title()}\n\nFixture.\n")
 
         def generate_year(*args):
+            """Run the year generator with test options and require success."""
             result = subprocess.run(
                 ["bin/gen-year-index.sh", *args, "1984"],
                 cwd=self.root, env=self.env, capture_output=True,
@@ -341,6 +397,7 @@ class QuickGeneratorTest(unittest.TestCase):
         self.assertEqual([path.stat().st_mtime_ns for path in outputs], before)
 
     def test_full_entry_generation_populates_quick_record(self):
+        """Let the quick entry generator reuse matching full-build provenance."""
         self.prepare_year()
         repo = HELPER.parent.parent
         shutil.copyfile(repo / "author/Anonymous_1984.json", self.root / "author/Anonymous_1984.json")
@@ -350,6 +407,7 @@ class QuickGeneratorTest(unittest.TestCase):
         output = self.root / entry / "index.html"
 
         def generate_entry(script, *args):
+            """Run either entry generator for the fixture and require success."""
             result = subprocess.run(
                 [f"bin/{script}", *args, entry], cwd=self.root, env=self.env,
                 capture_output=True,
@@ -369,6 +427,7 @@ class QuickGeneratorTest(unittest.TestCase):
         self.assertNotEqual(output.stat().st_mtime_ns, before)
 
     def test_make_authors_and_location_populate_quick_records(self):
+        """Reuse full author and location builds, and invalidate failed builds."""
         self.prepare_year()
         repo = HELPER.parent.parent
         author = json.loads((repo / "author/Anonymous_1984.json").read_text())
@@ -403,6 +462,7 @@ class QuickGeneratorTest(unittest.TestCase):
         self.assertFalse((self.root / ".quick-html-cache/authors.html.sig").exists())
 
     def test_full_years_and_other_generation_populate_quick_records(self):
+        """Reuse full years and other-page builds; do not cache failed years."""
         year = self.prepare_year()
         (self.root / ".top").write_text("1984\n")
         (year / "1984.tar.bz2").write_bytes(b"fixture")
@@ -432,6 +492,7 @@ class QuickGeneratorTest(unittest.TestCase):
         self.assertEqual((self.root / "years.html").read_bytes(), original)
 
     def test_failed_years_build_never_becomes_a_cache_hit(self):
+        """Retry a failing years build rather than accepting its failed output."""
         self.prepare_year()
         (self.root / ".top").write_text("1984\n")
         for _ in range(2):
@@ -444,6 +505,7 @@ class QuickGeneratorTest(unittest.TestCase):
             self.assertFalse((self.root / ".quick-html-cache/years.html.sig").exists())
 
     def test_dry_run_and_failed_generation_do_not_record(self):
+        """Preserve records during dry runs and remove them after failed builds."""
         self.generate("-Q")
         record = self.root / ".quick-html-cache/about.html.sig"
         original = record.read_bytes()

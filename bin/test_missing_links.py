@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""Regression tests for local Markdown link checking."""
+"""Regression tests for local Markdown link checking.
+
+Each test stages Markdown in a disposable Git repository and checks it through
+the public wrapper, including generated-page, fragment, and ignored-link cases.
+"""
 
 import subprocess
 import tempfile
@@ -7,6 +11,7 @@ import unittest
 from pathlib import Path
 
 
+VERSION = "1.0.0 2026-11-26"
 CHECKER = Path(__file__).resolve().with_name("find-missing-links.sh")
 
 
@@ -14,6 +19,7 @@ class MissingLinksTest(unittest.TestCase):
     """Exercise the public shell entry point in a disposable Git repository."""
 
     def setUp(self):
+        """Create tracked-source fixtures in a temporary Git repository."""
         # A separate index ensures fixtures have the same tracked-file semantics.
         self.temp = tempfile.TemporaryDirectory()
         self.addCleanup(self.temp.cleanup)
@@ -28,11 +34,13 @@ class MissingLinksTest(unittest.TestCase):
         self.write("docs/other.md", "# Other\n")
 
     def write(self, name, content):
+        """Write one fixture, creating its parent directories as needed."""
         path = self.root / name
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(content, encoding="utf-8")
 
     def check(self, files):
+        """Write and stage Markdown fixtures, then return checker status and errors."""
         for name, content in files.items():
             self.write(name, content)
         subprocess.run(["git", "add", "--", "*.md"], cwd=self.root, check=True)
@@ -41,6 +49,16 @@ class MissingLinksTest(unittest.TestCase):
             cwd=self.root, capture_output=True, text=True,
         )
         return result.returncode, result.stderr
+
+    def test_backend_version_does_not_require_repository(self):
+        """Report the Python backend version without reading site configuration."""
+        backend = CHECKER.with_name("check_local_links.py")
+        result = subprocess.run(
+            ["python3", str(backend), "--version"], cwd=self.root,
+            capture_output=True, text=True,
+        )
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertRegex(result.stdout, r"^\d+\.\d+\.\d+ \d{4}-\d{2}-\d{2}\n$")
 
     def test_valid_links_and_ignored_code(self):
         """Cover supported link forms and Markdown code exclusions together."""

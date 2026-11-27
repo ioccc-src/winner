@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
-"""Check tracked Markdown links against the local site."""
+"""Check tracked Markdown links against the local site.
+
+Pandoc parses each tracked Markdown document so that reference links and heading
+IDs follow the same Markdown semantics as site generation. Local destinations
+are checked for existence and HTML fragments against generated pages; remote
+URLs are deliberately ignored.
+"""
 
 import argparse
 import datetime
@@ -13,14 +19,19 @@ from pathlib import Path
 from urllib.parse import unquote, urlsplit
 
 
+VERSION = "1.0.0 2026-11-26"
+
+
 class Anchors(HTMLParser):
     """Collect HTML IDs and legacy named anchors, decoding HTML entities."""
 
     def __init__(self):
+        """Initialize a set for anchors found in one HTML document."""
         super().__init__(convert_charrefs=True)
         self.values = set()
 
     def handle_starttag(self, tag, attrs):
+        """Collect every id and the legacy name attribute on anchor elements."""
         for key, value in attrs:
             if value is not None and (key == "id" or tag == "a" and key == "name"):
                 self.values.add(value)
@@ -29,7 +40,11 @@ class Anchors(HTMLParser):
 
 
 def walk(node):
-    """Visit Pandoc's AST, whose code nodes contain text rather than links."""
+    """Yield each dictionary in a Pandoc AST, recursively visiting its children.
+
+    Code blocks and inline code contain text, not Link nodes, so links written
+    as examples in code are not checked as real destinations.
+    """
     if isinstance(node, dict):
         yield node
         for value in node.values():
@@ -43,6 +58,7 @@ class Checker:
     """Resolve tracked source links using the site's published-page mappings."""
 
     def __init__(self, root):
+        """Load ordered page-mapping patterns and initialize the error count."""
         self.root = root.resolve()
         cfg = (self.root / "bin/md2html.cfg").read_text(encoding="utf-8")
         self.patterns = [
@@ -52,7 +68,11 @@ class Checker:
         self.errors = 0
 
     def published(self, path):
-        """Respect the first matching configuration rule and its error catchers."""
+        """Return whether a Markdown path matches a published-page rule.
+
+        Rules are checked in configuration order; the final wildcard rules
+        represent unsupported inputs rather than published pages.
+        """
         name = path.relative_to(self.root).as_posix()
         for pattern in self.patterns:
             if fnmatch.fnmatchcase(name, pattern):
@@ -60,7 +80,11 @@ class Checker:
         return False
 
     def html_path(self, path):
-        """Apply the special README-to-index mappings used by the generators."""
+        """Map a Markdown source to the HTML path emitted by the generators.
+
+        Selected directory and contest README files become index.html; other
+        published Markdown files retain their basename with an HTML suffix.
+        """
         name = path.relative_to(self.root).as_posix()
         special = {
             "bin/README.md", "inc/README.md", "next/README.md",
@@ -78,7 +102,7 @@ class Checker:
 
     @lru_cache(maxsize=None)
     def document(self, path):
-        """Let Pandoc resolve Markdown references and heading identifiers."""
+        """Parse one Markdown file with Pandoc and cache its JSON syntax tree."""
         result = subprocess.run(
             ["pandoc", "-f", "markdown", "-t", "json", str(path)],
             cwd=self.root, check=True, capture_output=True, text=True,
@@ -87,18 +111,25 @@ class Checker:
 
     @lru_cache(maxsize=None)
     def html_anchors(self, path):
-        """Cache each parsed target because many links refer to the same page."""
+        """Parse and cache HTML IDs and named anchors for a target page."""
         parser = Anchors()
         parser.feed(path.read_text(encoding="utf-8"))
         parser.close()
         return parser.values
 
     def error(self, source, url, message):
+        """Report a source-relative link error and count it for the exit status."""
         print(f"{source.relative_to(self.root)}: {url}: {message}", file=sys.stderr)
         self.errors += 1
 
     def check_link(self, source, url, headings):
-        """Resolve local links without making requests to remote services."""
+        """Validate one local destination and, when applicable, its fragment.
+
+        Site substitution tokens are expanded before resolving paths. Generated
+        HTML is checked for published targets, while fragment-only links in
+        unpublished Markdown are checked against Pandoc's heading IDs.
+        External URLs and repository URL tokens are outside this check's scope.
+        """
         # These tokens become GitHub URLs, not paths in the published site.
         if url.startswith(("%%REPO_URL%%", "%%REPO_TOP_URL%%")):
             return
@@ -140,7 +171,11 @@ class Checker:
                 self.error(source, url, f"missing anchor: {fragment}")
 
     def run(self):
-        """Scan tracked Markdown only, not transient or untracked test files."""
+        """Check links in tracked Markdown and return 1 if any are invalid.
+
+        Git supplies the source list; Pandoc provides both links and heading
+        identifiers, including resolved reference-style links.
+        """
         files = subprocess.run(
             ["git", "ls-files", "-z", "--", "*.md"],
             cwd=self.root, check=True, capture_output=True,
@@ -161,7 +196,9 @@ class Checker:
 
 
 def main():
+    """Run the checker for the requested root and report operational errors."""
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("-V", "--version", action="version", version=VERSION)
     parser.add_argument("--root", type=Path, default=Path.cwd())
     args = parser.parse_args()
     try:
