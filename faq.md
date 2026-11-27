@@ -4581,8 +4581,8 @@ for more information.
 First, see the
 FAQ on "[general X11](#X11_general)".
 
-For general documentation on installing  X11, this [Installing X11 on
-Ubuntu](https://linuxvox.com/blog/install-x11-ubuntu/).
+For general documentation on installing X11, see [Installing X11 on
+Linux](https://www.developnsolve.com/linux/how-to-install-x11-on-linux).
 
 See also:
 
