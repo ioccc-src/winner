@@ -4581,13 +4581,8 @@ for more information.
 First, see the
 FAQ on "[general X11](#X11_general)".
 
-For general documentation on installing  X11, this [ServerGUI for
-Ubuntu](https://help.ubuntu.com/community/ServerGUI), and in particular, these
-may be helpful:
-
-* [X11 Client Installation](https://help.ubuntu.com/community/ServerGUI#X11_Client_Installation)
-* [X11 Server Installation](https://help.ubuntu.com/community/ServerGUI#X11_Server_Installation)
-* [Full Desktop Environments](https://help.ubuntu.com/community/ServerGUI#Full_Desktop_Environments)
+For general documentation on installing  X11, this [Installing X11 on
+Ubuntu](https://linuxvox.com/blog/install-x11-ubuntu/).
 
 See also:
 
@@ -8288,12 +8283,12 @@ repo](https://github.com/ioccc-src/temp-test-ioccc/commit/edbc3089e1b755d85a020a
 occurred on Sun Sep 18 11:15:49 2022 -0700, by [Cody Boone
 Ferguson](authors.html#Cody_Boone_Ferguson).
 
-At this same time, the [temp-test-ioccc website](https://ioccc-src.github.io/temp-test-ioccc/) went live.
+At this same time, the **temp-test-ioccc** site went live.
 
 Edits were made by an [IOCCC judge](judges.html)
 to their local [git](https://git-scm.com) repository and [were pushed into the temp-test-ioccc
 repo](https://github.com/ioccc-src/temp-test-ioccc/commit/2f20ae8451ada03f4601ac727d10e1d8630861a8)
-and to the [temp-test-ioccc website](https://ioccc-src.github.io/temp-test-ioccc/).
+and to the **temp-test-ioccc** website.
 
 The [first accepted pull request](https://github.com/ioccc-src/temp-test-ioccc/pull/15)
 made directly to the [temp-test-ioccc

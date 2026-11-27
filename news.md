@@ -753,8 +753,7 @@ See [FAQ Section 0](quick-start.html#enter_questions) for more information on ho
 
 ## 2024-06-08
 
-We continue to make good progress on the
-[temp-test-ioccc website](https://ioccc-src.github.io/temp-test-ioccc/)
+We continue to make good progress on the **temp-test-ioccc** website
 via the [temp-test-ioccc](https://github.com/ioccc-src/temp-test-ioccc) repo.
 
 One of the [largest html
@@ -791,8 +790,7 @@ entry can be looked at alone.
 
 ## 2024-05-30
 
-A number of issues from minor fixes have been applied to the
-[temp-test-ioccc website](https://ioccc-src.github.io/temp-test-ioccc/)
+A number of issues from minor fixes have been applied to the **temp-test-ioccc** website
 via the [temp-test-ioccc](https://github.com/ioccc-src/temp-test-ioccc) repo.
 
 437 commits have been applied since 2024-04-20, bringing the total
@@ -865,7 +863,7 @@ _topbar_ are now HTML 5 conforming.
 
 ## 2024-04-20
 
-Nearly all of the [temp-test-ioccc website](https://ioccc-src.github.io/temp-test-ioccc/)
+Nearly all of the **temp-test-ioccc** website
 website has undergone editorial review.  Nearly all [IOCCC winning entries](years.html)
 compile on modern systems and many have `try.sh` scripts to help you run them.
 For those that cannot compile and/or do not work, we have made a
@@ -883,7 +881,7 @@ glaring "_dancing bears_" and other frivolous web features.
 
 We are working towards what we call the
 **[Great Fork Merge](https://github.com/ioccc-src/temp-test-ioccc/issues/2239)**
-where the contents of the [temp-test-ioccc website](https://ioccc-src.github.io/temp-test-ioccc/)
+where the contents of the **temp-test-ioccc** website
 will be merged into the [Official IOCCC website](https://www.ioccc.org/index.html).
 
 Stay tuned!
