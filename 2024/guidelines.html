@@ -24,6 +24,7 @@
 <meta property="og:image:width" content="1280">
 <meta property="og:image:height" content="720">
 <meta property="og:image:alt" content="The International Obfuscated C Code Contest">
+<!-- While many platforms use twitter:card, the IOCCC doesn't use Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -467,7 +468,7 @@
 
 <!-- BEFORE: 1st line of markdown file: 2024/guidelines.md -->
 <!-- START: this line starts content from: inc/guidelines.judging.hdr -->
-<h1 id="the-guidelines-for-the-ioccc-that-just-closed">The guidelines for the IOCCC that just closed</h1>
+<h2 id="the-guidelines-for-the-ioccc-that-just-closed">The guidelines for the IOCCC that just closed</h2>
 <p>These guidelines are for the current IOCCC that is no longer open for new submissions.</p>
 <p>See the <a href="../news.html">IOCCC news</a> and well as the
 <a href="https://fosstodon.org/@ioccc">IOCCC Mastodon</a> feed for updates
@@ -476,12 +477,12 @@ of <a href="../years.html">who won the IOCCC</a>.</p>
 <p><strong>HINT to mastodon users</strong>: You may wish to refresh the <a href="https://fosstodon.org/@ioccc"><span class="citation" data-cites="IOCCC">@IOCCC</span>
 mastodon feed</a> page and/or mastodon
 app from time to time to view IOCCC mastodon updates.</p>
-<h1 id="the-ioccc-is-closed-to-new-submissions">The IOCCC is closed to new submissions</h1>
+<h2 id="the-ioccc-is-closed-to-new-submissions">The IOCCC is closed to new submissions</h2>
 <p>The <a href="../judges.html">IOCCC judges</a> are in the process of judging the submissions they received
 while the IOCCC was open.</p>
 <!-- END: the next line ends content from: inc/guidelines.judging.hdr -->
 <!-- This is the last line modified by the tool: bin/gen-status.sh -->
-<h1 id="th-international-obfuscated-c-code-contest-official-guidelines">28th International Obfuscated C Code Contest Official Guidelines</h1>
+<h2 id="th-international-obfuscated-c-code-contest-official-guidelines">28th International Obfuscated C Code Contest Official Guidelines</h2>
 <p class="leftbar">
 Copyright © 2024‐2025 Leonid A. Broukhis and Landon Curt Noll.
 </p>
@@ -491,9 +492,9 @@ and remains unaltered. All other uses must receive prior permission in
 writing by <a href="../contact.html">contacting the judges</a>.</p>
 <p>Jump to: <a href="#">top</a></p>
 <div id="guidelines_version">
-<div id="version">
-<h1 id="ioccc-guidelines-version">IOCCC Guidelines version</h1>
-</div>
+<section id="version">
+<h2 id="ioccc-guidelines-version">IOCCC Guidelines version</h2>
+</section>
 </div>
 <p class="leftbar">
 These <a href="guidelines.html">IOCCC guidelines</a> are version <strong>28.47 2025-03-15</strong>.
@@ -504,9 +505,9 @@ download="guidelines.md">is available for download</a>.
 </p>
 <p><strong>IMPORTANT</strong>: Be <strong>SURE</strong> to read the <a href="rules.html">IOCCC rules</a>.</p>
 <p>Jump to: <a href="#">top</a></p>
-<div id="change_marks">
-<h1 id="change-marks">Change marks</h1>
-</div>
+<section id="change_marks">
+<h2 id="change-marks">Change marks</h2>
+</section>
 <p class="leftbar">
 <strong>← Lines that start with this symbol indicate a change from the
 previous IOCCC</strong>.
@@ -515,9 +516,9 @@ previous IOCCC</strong>.
 IOCCC start with a solid 4 pixel black left border (or, in the case of a code
 block or blockquote, just a vertical bar).</p>
 <p>Jump to: <a href="#">top</a></p>
-<div id="about_guidelines">
-<h1 id="about-this-file">ABOUT THIS FILE:</h1>
-</div>
+<section id="about_guidelines">
+<h2 id="about-this-file">ABOUT THIS FILE:</h2>
+</section>
 <p>This file contains <em>guidelines</em> intended to help people who wish to
 participate in the <a href="https://www.ioccc.org">International Obfuscated C Code Contest
 (IOCCC)</a>.</p>
@@ -535,9 +536,9 @@ rule, not the guideline.
 <p>You <strong>SHOULD read the CURRENT <a href="rules.html">IOCCC rules</a></strong>, <em>prior</em> to submitting
 code to the contest.</p>
 <p>Jump to: <a href="#">top</a></p>
-<div id="new">
-<h1 id="whats-new-this-ioccc">WHAT’S NEW THIS IOCCC</h1>
-</div>
+<section id="new">
+<h2 id="whats-new-this-ioccc">WHAT’S NEW THIS IOCCC</h2>
+</section>
 <p class="leftbar">
 This IOCCC runs from <strong>2024-12-29 23:58:13.213455 UTC</strong> to <strong>2025-06-05 04:03:02.010099 UTC</strong>.
 This IOCCC marks the <strong>40th anniversary</strong> of the contest!
@@ -572,13 +573,21 @@ official release and not updating the toolkit is <strong>PERFECTLY</strong> okay
 <strong>NOTE</strong>: the updates to these guidelines on 2025-03-12 also explain how the
 tools that require other tools now search under <code>$PATH</code>. It is perfectly fine to
 not use the newer versions so long as you use the minimum required version of
-the tools. See the
-FAQ on “<a href="../faq.html#minimum_versions">minimum required version of the tools</a>”
-for more details and the
-FAQ on “<a href="../faq.html#obtaining_mkiocccentry">obtaining the most recent release of the
+the tools listed below. See the FAQ on “<a href="../faq.html#obtaining_mkiocccentry">obtaining the most recent release of the
 toolkit</a>”
 for more help.
 </p>
+<div id="minimum_versions">
+
+</div>
+<p>The minimum official tool versions for IOCCC28 were:</p>
+<ul>
+<li><code>iocccsize</code>: <code>28.15 2024-06-27</code></li>
+<li><code>mkiocccentry</code>: <code>2.0.1 2025-03-02</code></li>
+<li><code>fnamchk</code>: <code>2.0.0 2025-02-28</code></li>
+<li><code>txzchk</code>: <code>2.0.1 2025-03-02</code></li>
+<li><code>chkentry</code>: <code>2.0.1 2025-03-02</code></li>
+</ul>
 <p class="leftbar">
 Until the contest status becomes <strong><a href="../faq.html#open">open</a></strong>,
 the <a href="rules.html">IOCCC rules</a>,
@@ -635,11 +644,7 @@ as well as
 <a href="../next/submit.html">how to upload your submission</a> to the IOCCC.
 </p>
 <p class="leftbar">
-See also the
-FAQ on “<a href="../faq.html#minimum_versions">what the minimum required versions are for this
-contest</a>”
-for more details on how to verify you have the correct versions for this
-contest.
+See also the <a href="#minimum_versions">minimum official tool versions for IOCCC28</a>.
 </p>
 <p class="leftbar">
 While the contest is <strong><a href="../faq.html#open">open</a></strong>, you may modify your
@@ -736,9 +741,9 @@ will run with a locale set to <strong>C</strong>.
 </p>
 <p>Jump to: <a href="#">top</a></p>
 <div id="hints">
-<div id="suggestions">
-<h1 id="hints-and-suggestions">HINTS AND SUGGESTIONS:</h1>
-</div>
+<section id="suggestions">
+<h2 id="hints-and-suggestions">HINTS AND SUGGESTIONS:</h2>
+</section>
 </div>
 <p>You are <strong>encouraged</strong> to examine the <a href="../years.html">winners of previous contests</a>.</p>
 <p>Keep in mind that <a href="rules.html">rules</a> change from year to year, so some <a href="../years.html">winning
@@ -851,7 +856,7 @@ appropriate level of obfuscation. A clean looking program with
 misleading comments and variable names might be a <strong>VERY GOOD START</strong>
 to a great submission!</p>
 <p>Jump to: <a href="#">top</a></p>
-<h1 id="mkiocccentry"><code>mkiocccentry</code></h1>
+<h2 id="mkiocccentry"><code>mkiocccentry</code></h2>
 <p class="leftbar">
 <a href="rules.html#rule17">Rule 17</a> (the <code>mkiocccentry(1)</code> rule) states that
 you <strong>REALLY SHOULD</strong> use the <code>mkiocccentry(1)</code> tool to package your submission tarball.
@@ -927,9 +932,9 @@ the latest version of of the <a href="https://github.com/ioccc-src/mkiocccentry"
 so that you do not violate <a href="rules.html#rule17">Rule 17</a> by mistake.
 </p>
 <p>Jump to: <a href="#">top</a></p>
-<div id="mkiocccentry-synopsis">
-<h2 id="mkiocccentry1-synopsis"><code>mkiocccentry(1)</code> synopsis</h2>
-</div>
+<section id="mkiocccentry-synopsis">
+<h3 id="mkiocccentry1-synopsis"><code>mkiocccentry(1)</code> synopsis</h3>
+</section>
 <p class="leftbar">
 The synopsis of the <code>mkiocccentry(1)</code> tool is:
 </p>
@@ -951,14 +956,14 @@ FAQ on the
 “<a href="../faq.html#mkiocccentry_details">finer details of mkiocccentry</a>”
 for even more information.
 </p>
-<div id="tools">
-<h1 id="other-mkiocccentry-tools">Other mkiocccentry tools</h1>
-</div>
+<section id="tools">
+<h2 id="other-mkiocccentry-tools">Other mkiocccentry tools</h2>
+</section>
 <p class="leftbar">
 The <code>mkiocccentry(1)</code> tool will execute a number of tools, some of which will
 execute one or more additional tools.
 </p>
-<h2 id="iocccsize"><code>iocccsize</code></h2>
+<h3 id="iocccsize"><code>iocccsize</code></h3>
 <p class="leftbar">
 <code>mkiocccentry(1)</code> will use code from <code>iocccsize(1)</code> which detects a number of
 issues (such as <a href="rules.html#rule2">Rule 2</a>) that you may ignore, if you wish, as
@@ -969,7 +974,7 @@ In other words, you no longer need to run <code>iocccsize</code> manually. Howev
 checks described above are still made but through the <code>mkiocccentry(1)</code> tool itself.
 </p>
 <p>Jump to: <a href="#">top</a></p>
-<h2 id="chkentry"><code>chkentry</code></h2>
+<h3 id="chkentry"><code>chkentry</code></h3>
 <p class="leftbar">
 <code>mkiocccentry(1)</code> will write two JSON files: <code>.auth.json</code> and
 <code>.info.json</code>. These files contain information about the author(s) and about the
@@ -1022,7 +1027,7 @@ FAQ on “<a href="../faq.html#auth_json">.auth.json</a>”.
 If you want to know what the <code>.info.json</code> file is, see the
 FAQ on “<a href="../faq.html#info_json">.info.json</a>”.
 On the other hand, if you want to know a bit more details about <code>chkentry(1)</code>, see the
-FAQ about “<a href="../faq.html#chkentry">chkentry</a>”.
+FAQ about “<a href="../faq.html#chksubmit">chkentry</a>”.
 </p>
 <p class="leftbar">
 <code>chkentry</code> uses the <code>jparse</code> library. See the
@@ -1070,7 +1075,7 @@ make sure that you’re using the correct versions, which is also verified by
 </p>
 <p class="leftbar">
 Please see the
-FAQ on “<a href="../faq.html#chkentry">validating your submission directory</a>
+FAQ on “<a href="../faq.html#chksubmit">validating your submission directory</a>
 for more details on <code>chkentry(1)</code>.
 </p>
 <p class="leftbar">
@@ -1081,7 +1086,7 @@ FAQ on “<a href="../faq.html#info_json">.info.json</a>”
 for much more information on these files.
 </p>
 <p>Jump to: <a href="#">top</a></p>
-<h2 id="txzchk"><code>txzchk</code></h2>
+<h3 id="txzchk"><code>txzchk</code></h3>
 <p class="leftbar">
 <code>txzchk(1)</code> performs a wide number of sanity checks on the xz compressed
 tarball; if any issues are found (‘<code>feathers are stuck in the tarball</code>’ :-) )
@@ -1110,9 +1115,9 @@ Of course, as <code>txzchk</code> does not extract the tarball, it is possible t
 manually package your submission tarball and/or find and exploit a missing
 check, you could still be violating <a href="rules.html#rule17">Rule 17</a>.
 </p>
-<div id="extra-files">
-<h2 id="including-optional-and-extra-files">Including optional and extra files</h2>
-</div>
+<section id="extra-files">
+<h3 id="including-optional-and-extra-files">Including optional and extra files</h3>
+</section>
 <p class="leftbar">
 The maximum total number of files that may be submitted has changed to <strong>39</strong> files.
 However, of those files, <strong>5</strong> are mandatory (<code>prog.c</code>, <code>Makefile</code>, <code>remarks.md</code> and
@@ -1138,7 +1143,7 @@ In other words, the actual amount of <strong>EXTRA</strong> files is <strong>31<
 If you use an optional filename for something other than their intended use
 in order to get past the file limit, we will consider that an
 abuse of rules. For more details on the optional files, see the
-FAQ on the “<a href="../faq.html#try_script">try.sh script system</a>”
+FAQ on the “<a href="../faq.html#try_scripts">try.sh script system</a>”
 and the
 FAQ on “<a href="../faq.html#alt_code">alt code</a>”.
 </p>
@@ -1176,9 +1181,9 @@ See also the
 FAQ on “<a href="../faq.html#txzchk">txzchk</a>”.
 </p>
 <p>Jump to: <a href="#">top</a></p>
-<div id="fnamchk">
-<h2 id="fnamchk1"><code>fnamchk(1)</code></h2>
-</div>
+<section id="fnamchk">
+<h3 id="fnamchk1"><code>fnamchk(1)</code></h3>
+</section>
 <p class="leftbar">
 As an important part of its algorithm, <a href="#txzchk">txzchk(1)</a> directly executes
 <code>fnamchk(1)</code>. If the filename is invalid (or the filename does not match the
@@ -1211,9 +1216,9 @@ file, the <code>mkiocccentry(1)</code> tool would not package it. But if you wer
 it manually, you would be violating <a href="rules.html#rule17">Rule 17</a>. But even if
 everything checks out OK you should <strong>NOT</strong> assume that everything <strong>IS</strong> OK.
 </p>
-<div id="bugs">
-<h1 id="problems-andor-bugs-in-tools">Problems and/or bugs in tools</h1>
-</div>
+<section id="bugs">
+<h2 id="problems-andor-bugs-in-tools">Problems and/or bugs in tools</h2>
+</section>
 <p class="leftbar">
 Although the tools have been tested extensively, it is nonetheless possible for bugs to
 exist in the code, as all programmers know. In this case, <strong>please</strong> ask for help or report what
@@ -1229,9 +1234,9 @@ bug; it is a judgement call: if it’s a bug it’ll be addressed and if it’s 
 that’s OK too!
 </p>
 <div id="make">
-<div id="makefile">
-<h1 id="makefiles">Makefiles</h1>
-</div>
+<section id="makefile">
+<h2 id="makefiles">Makefiles</h2>
+</section>
 </div>
 <p class="leftbar">
 We <strong>recommend</strong> AND <strong>encourage</strong> you to use the example Makefile,
@@ -1260,9 +1265,9 @@ We suggest that you compile your submission with a commonly available
 and/or <code>gcc(1)</code>.
 </p>
 <div id="cflags">
-<div id="flags">
-<h2 id="default-compiler-flags">Default compiler flags</h2>
-</div>
+<section id="flags">
+<h3 id="default-compiler-flags">Default compiler flags</h3>
+</section>
 </div>
 <p class="leftbar">
 Unless you <strong>clearly state</strong> otherwise in your <code>remarks.md</code> file, <strong>AND</strong> put in
@@ -1285,9 +1290,9 @@ flags.
 For more fun when it comes to optimisers breaking code, see
 <a href="../1986/marshall/compilers.html">1986/marshall/compilers.html</a>.
 </p>
-<div id="compilers">
-<h2 id="default-compiler">Default compiler</h2>
-</div>
+<section id="compilers">
+<h3 id="default-compiler">Default compiler</h3>
+</section>
 <p class="leftbar">
 <strong>IMPORTANT NOTE</strong>: The use of <code>-std=gnu17</code> does <strong>NOT</strong> imply the use of the <code>gcc</code>
 compiler! We often start by compiling using the <strong>clang</strong> C compiler instead.
@@ -1297,9 +1302,9 @@ compiler! We often start by compiling using the <strong>clang</strong> C compile
 in truth the <code>clang</code> compiler, as <code>/usr/bin/gcc --version</code> will show!
 </p>
 <div id="cstd">
-<div id="standard">
-<h2 id="c-standard">C standard</h2>
-</div>
+<section id="standard">
+<h3 id="c-standard">C standard</h3>
+</section>
 </div>
 <p class="leftbar">
 You may change the standard under which your submission is compiled
@@ -1310,9 +1315,9 @@ by modifying the <code>CSTD</code> Makefile variable. For example, to use <code>
 <div id="optimization">
 <div id="optimisation">
 <div id="optimizer">
-<div id="optimiser">
-<h2 id="default-optimisation-level">Default optimisation level</h2>
-</div>
+<section id="optimiser">
+<h3 id="default-optimisation-level">Default optimisation level</h3>
+</section>
 </div>
 </div>
 </div>
@@ -1324,9 +1329,9 @@ For example, to compile without optimization, and to include debug symbols:
 </p>
 <pre><code>    OPT= -O0 -g3</code></pre>
 <div id="warnings">
-<div id="cwarn">
-<h2 id="compiler-warnings">Compiler warnings</h2>
-</div>
+<section id="cwarn">
+<h3 id="compiler-warnings">Compiler warnings</h3>
+</section>
 </div>
 <p class="leftbar">
 The default warning flags are set via the <code>CWARN</code> variable, as shown in the
@@ -1339,9 +1344,9 @@ example <code>Makefile</code>:
 For details on <code>CSILENCE</code> and <code>CUNKNOWN</code>, see the <a href="#disabling-warnings">section on disabling
 warnings</a>.
 </p>
-<div id="weverything">
-<h3 id="the--weverything-option">The <code>-Weverything</code> option</h3>
-</div>
+<section id="weverything">
+<h4 id="the--weverything-option">The <code>-Weverything</code> option</h4>
+</section>
 <p class="leftbar">
 For compilers, such as <code>clang</code>, that have the <code>-Weverything</code> option,
 while you may wish to try it, you should read our
@@ -1403,7 +1408,7 @@ FAQ on “<a href="../faq.html#forced_warnings">forced warnings</a>”
 and the
 FAQ on “<a href="../faq.html#weverything">-Weverything</a>”.
 </p>
-<h2 id="disabling-warnings">Disabling warnings</h2>
+<h3 id="disabling-warnings">Disabling warnings</h3>
 <p class="leftbar">
 If you do have to disable warnings due to <code>-Weverything</code> automatically being
 included, you might wish to state this fact in your <code>remarks.md</code> file.
@@ -1443,9 +1448,9 @@ such a compiler you might want to not add it, or at least note in your
 <code>remarks.md</code> file, which OS, OS version, compiler and compiler version
 that has such a problem.
 </p>
-<div id="macros">
-<h2 id="defining-macros-in-the-makefile">Defining macros in the Makefile</h2>
-</div>
+<section id="macros">
+<h3 id="defining-macros-in-the-makefile">Defining macros in the Makefile</h3>
+</section>
 <p class="leftbar">
 If you need to define something on the compile line, use
 the <code>CDEFINE</code> Makefile variable. For example:
@@ -1456,17 +1461,17 @@ the <code>CDEFINE</code> Makefile variable. For example:
 do not like excess use of <code>-D</code> to get past size limits, especially since you
 could use <code>#define</code> in your code instead.
 </p>
-<div id="include">
-<h2 id="include-files-in-the-makefile">Include files in the Makefile</h2>
-</div>
+<section id="include">
+<h3 id="include-files-in-the-makefile">Include files in the Makefile</h3>
+</section>
 <p class="leftbar">
 If you need to include a file (as in <code>#include</code>) on the command line, use the
 <code>CINCLUDE</code> Makefile variable. For example:
 </p>
 <pre><code>    CINCLUDE= -include stdio.h</code></pre>
-<div id="magic">
-<h2 id="magic-in-the-makefile">Magic in the Makefile</h2>
-</div>
+<section id="magic">
+<h3 id="magic-in-the-makefile">Magic in the Makefile</h3>
+</section>
 <p class="leftbar">
 If you need to add other “<strong>magic</strong>” flags to your compile line,
 use the <code>COTHER</code> Makefile variable. For example:
@@ -1479,9 +1484,9 @@ use the <code>COTHER</code> Makefile variable. For example:
 <p class="leftbar">
 Again, please note that in macOS, <code>/usr/bin/gcc</code> is actually <code>clang</code>!
 </p>
-<div id="clobber">
-<h2 id="the-clobber-rule">The clobber rule</h2>
-</div>
+<section id="clobber">
+<h3 id="the-clobber-rule">The clobber rule</h3>
+</section>
 <p class="leftbar">
 When <code>make clobber</code> is invoked, we request that submissions be restored
 to their original submission state. For example, any temporary files
@@ -1546,9 +1551,9 @@ Makefile does not have a clobber rule, it will be flagged by <code>mkiocccentry(
 </p>
 <p>Jump to: <a href="#">top</a></p>
 <div id="likes">
-<div id="dislikes">
-<h1 id="our-likes-and-dislikes">OUR LIKES AND DISLIKES:</h1>
-</div>
+<section id="dislikes">
+<h2 id="our-likes-and-dislikes">OUR LIKES AND DISLIKES:</h2>
+</section>
 </div>
 <p class="leftbar">
 We <strong>VERY MUCH LIKE</strong> submissions that use an edited variant of the
@@ -2171,9 +2176,9 @@ We <strong>RECOMMEND</strong> you put a reasonable amount effort into the conten
 <p>Try to be even more creative!</p>
 <p>Jump to: <a href="#">top</a></p>
 <div id="rules_abuse">
-<div id="abusing_rules">
-<h1 id="abusing-the-rules">ABUSING THE RULES:</h1>
-</div>
+<section id="abusing_rules">
+<h2 id="abusing-the-rules">ABUSING THE RULES:</h2>
+</section>
 </div>
 <p>Legal abuse of the <a href="rules.html">IOCCC rules</a> is somewhat encouraged. Legal rule abuse
 may involve, but is not limited to, doing things that are technically allowed by
@@ -2237,9 +2242,9 @@ This is one of the reasons why the <a href="rules.html">IOCCC rules</a> and
 <a href="guidelines.html">IOCCC guidelines</a> are written in obfuscated form.
 </p>
 <p>Jump to: <a href="#">top</a></p>
-<div id="judging">
-<h1 id="judging-process">JUDGING PROCESS:</h1>
-</div>
+<section id="judging">
+<h2 id="judging-process">JUDGING PROCESS:</h2>
+</section>
 <p>Submissions are judged by Leonid A. Broukhis and Landon Curt Noll.</p>
 <p class="leftbar">
 Each submission submitted is given a random string and subdirectory. The
@@ -2297,9 +2302,9 @@ account</a>.
 are mentioned you will NOT get a push notification!</strong>
 </p>
 <p>Jump to: <a href="#">top</a></p>
-<div id="rounds">
-<h2 id="judging-rounds">JUDGING ROUNDS:</h2>
-</div>
+<section id="rounds">
+<h3 id="judging-rounds">JUDGING ROUNDS:</h3>
+</section>
 <p>Judging consists of a number of elimination rounds. During a round,
 the collection of submissions are divided into two roughly equal piles;
 the pile that advances on to the next round, and the pile that does
@@ -2307,9 +2312,9 @@ not. We also re-examine the submissions that were eliminated in the
 previous round. Thus, a submission gets at least two readings and
 often more than two.</p>
 <p>Jump to: <a href="#">top</a></p>
-<div id="readings">
-<h2 id="judging-readings">JUDGING READINGS:</h2>
-</div>
+<section id="readings">
+<h3 id="judging-readings">JUDGING READINGS:</h3>
+</section>
 <p>A reading consists of a number of actions:</p>
 <ul>
 <li><p class="leftbar">
@@ -2420,9 +2425,9 @@ a submission simply far exceeds any of the other submissions. More often, the
 name related to the author(s)’ names. This is no longer done.
 Winning source is called <code>prog.c</code>. A compiled binary is called <code>prog</code>.</p>
 <p>Jump to: <a href="#">top</a></p>
-<div id="announcements">
-<h1 id="announcement-of-winners">ANNOUNCEMENT OF WINNERS:</h1>
-</div>
+<section id="announcements">
+<h2 id="announcement-of-winners">ANNOUNCEMENT OF WINNERS:</h2>
+</section>
 <p class="leftbar">
 The <a href="../judges.html">IOCCC judges</a> will toot initial announcement of who won, the name
 of their award, and a very brief description (award title) of the winning entry
@@ -2434,9 +2439,9 @@ refresh the feed</strong> every so often (if not more often) because unless you 
 mentioned or someone boosts your post you will not get a push notification.
 </p>
 <p>Jump to: <a href="#">top</a></p>
-<div id="winners">
-<h2 id="how-the-new-ioccc-winners-will-be-announced">How the new IOCCC winners will be announced</h2>
-</div>
+<section id="winners">
+<h3 id="how-the-new-ioccc-winners-will-be-announced">How the new IOCCC winners will be announced</h3>
+</section>
 <p class="leftbar">
 The <a href="../status.html">current status of the IOCCC</a> will change from
 <strong><a href="../faq.html#judging">judging</a></strong> to <strong><a href="../faq.html#closed">closed</a></strong> .
@@ -2462,9 +2467,9 @@ The <a href="../judges.html">IOCCC judges</a> will commit the winning source to 
 The <a href="../news.html">IOCCC news</a> will also contain an announcement of the winners.
 </p>
 <p>Jump to: <a href="#">top</a></p>
-<div id="mastodon">
-<h2 id="an-important-update-to-how-winners-are-announced">An important update to how winners are announced</h2>
-</div>
+<section id="mastodon">
+<h3 id="an-important-update-to-how-winners-are-announced">An important update to how winners are announced</h3>
+</section>
 <p class="leftbar">
 The IOCCC no longer uses twitter. Winning IOCCC entries will be announced by a
 <code>git</code> commit to the <a href="https://github.com/ioccc-src/winner">IOCCC entries repo</a>
@@ -2482,9 +2487,9 @@ Consider joining the IOCCC discord community via this link:
 <a href="https://discord.gg/Wa42Qujwnw">https://discord.gg/Wa42Qujwnw</a>
 </p>
 <p>Jump to: <a href="#">top</a></p>
-<div id="entries">
-<h2 id="back-to-announcement-of-winners">Back to announcement of winners</h2>
-</div>
+<section id="entries">
+<h3 id="back-to-announcement-of-winners">Back to announcement of winners</h3>
+</section>
 <p class="leftbar">
 It is pointless to ask the <a href="../judges.html">IOCCC judges</a> how many
 submissions we receive. See <a href="../faq.html#how_many">How many submissions do the judges receive for a
@@ -2501,9 +2506,9 @@ into a tattoo!
 <p>Last, but not least, <a href="../authors.html">winners</a> receive international fame and flames! :-)</p>
 <p>Jump to: <a href="#">top</a></p>
 <div id="more-information">
-<div id="information">
-<h1 id="for-more-information">FOR MORE INFORMATION:</h1>
-</div>
+<section id="information">
+<h2 id="for-more-information">FOR MORE INFORMATION:</h2>
+</section>
 </div>
 <p class="leftbar">
 For questions or comments about the contest, see <a href="../contact.html">Contacting the IOCCC</a>.

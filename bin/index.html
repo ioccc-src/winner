@@ -467,7 +467,7 @@
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <!-- BEFORE: 1st line of markdown file: bin/README.md -->
-<h1 id="important-try-the-makefile-interface">IMPORTANT: Try the Makefile interface</h1>
+<h2 id="important-try-the-makefile-interface">IMPORTANT: Try the Makefile interface</h2>
 <p>The <a href="https://github.com/ioccc-src/winner/blob/master/Makefile">top level Makefile</a> as a fair number of make rules that
 drive these tools. For an extensive list of these make rules, try:</p>
 <pre><code>    make help</code></pre>
@@ -476,7 +476,7 @@ using one of make rules is more effective, and more convenient. For example:</p>
 <pre><code>    make quick_www</code></pre>
 <p>or:</p>
 <pre><code>    make www</code></pre>
-<h1 id="bin-tools">bin tools</h1>
+<h2 id="bin-tools">bin tools</h2>
 <blockquote>
 <p>“After 50+ years, the UNIX command line remains very powerful.” – Landon Noll</p>
 <p>An answer to (Monty)? Pythonesque question of why these tools
@@ -487,17 +487,17 @@ weren’t written in a certain language. :-)</p>
 <p>For HTML content, the <a href="index.html">bin directory</a> tools make use of HTML
 fragments from the <a href="https://github.com/ioccc-src/winner/blob/master/inc/index.html">inc directory</a> as well as various JSON
 files and other content from the <a href="https://github.com/ioccc-src/winner">official IOCCC winner repo</a>.</p>
-<h2 id="bin-tools-options"><a href="index.html">bin/</a> tools options</h2>
+<h3 id="bin-tools-options"><a href="index.html">bin/</a> tools options</h3>
 <p>With the exception of the <code>awk(1)</code> and <code>sed(1)</code> scripts, all the tools in this
 directory support a number of options that can be used to get help, diagnose
 problems, see progress etc. These options are described below.</p>
-<h3 id="get-help-usage-string-of-a-tool">Get help / usage string of a tool</h3>
+<h4 id="get-help-usage-string-of-a-tool">Get help / usage string of a tool</h4>
 <p>If you need to remember the syntax of the tool or get certain notes about
 different options, you can use the <code>-h</code> option.</p>
 <p>For instance if you want help on the <a href="index.html#all-run">all-run.sh</a> tool
 from the root directory (of the repo/website), you would do:</p>
 <pre><code>    bin/all-run.sh -h</code></pre>
-<h3 id="set-verbosity-level-of-a-tool">Set verbosity level of a tool</h3>
+<h4 id="set-verbosity-level-of-a-tool">Set verbosity level of a tool</h4>
 <p>If you want verbosity, say for debugging purposes or to see what is going on
 more (than the default), you should use the <code>-v level</code> option. For instance if
 you wish to see what is going on with the
@@ -506,12 +506,12 @@ you wish to see what is going on with the
 <p>to set the verbosity level to <code>3</code>. The default for verbosity is <code>0</code>, no
 verbosity, though using the <a href="https://github.com/ioccc-src/winner/blob/master/Makefile">top level Makefile</a> will,
 for some tools, set a verbosity level.</p>
-<h3 id="get-version-string-of-a-tool">Get version string of a tool</h3>
+<h4 id="get-version-string-of-a-tool">Get version string of a tool</h4>
 <p>If you just want to know what version the tool is, you can use the <code>-V</code> option.
 For instance to see what version the <a href="index.html#chk-entry">chk-entry.sh</a> tool
 is, you would do:</p>
 <pre><code>    bin/chk-entry.sh -V</code></pre>
-<h3 id="other-notes-about-some-of-the-common-options">Other notes about some of the common options</h3>
+<h4 id="other-notes-about-some-of-the-common-options">Other notes about some of the common options</h4>
 <p>These options, and especially <code>-h</code> and <code>-v level</code>, can be very useful to get
 basic usage information and to see what is going on when the tool is running.
 For more details on each tool, including the ones mentioned above, see below. As
@@ -522,7 +522,7 @@ that you use the <code>-h</code> option on it first.</p>
 be directly invoked as well, should you wish to see their output or if you have
 some odd need to do so.</p>
 <section id="all-jfmt">
-<h3 id="all-jfmt.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/all-jfmt.sh">all-jfmt.sh</a></h3>
+<h4 id="all-jfmt.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/all-jfmt.sh">all-jfmt.sh</a></h4>
 </section>
 <p>Canonically format all entry and author JSON files</p>
 <p>For example:</p>
@@ -530,7 +530,7 @@ some odd need to do so.</p>
 <p>Suggested usage:</p>
 <pre><code>    make all_jfmt</code></pre>
 <section id="all-years">
-<h3 id="all-years.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/all-years.sh">all-years.sh</a></h3>
+<h4 id="all-years.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/all-years.sh">all-years.sh</a></h4>
 </section>
 <p>Run a command on all IOCCC years.</p>
 <p>For example:</p>
@@ -538,7 +538,7 @@ some odd need to do so.</p>
 <p>If you wish to run instead, for example, <a href="#chk-entry">chk-entry.sh</a>, then do:</p>
 <pre><code>    bin/all-years.sh -v 1 -- bin/chk-entry.sh</code></pre>
 <section id="all-run">
-<h3 id="all-run.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/all-run.sh">all-run.sh</a></h3>
+<h4 id="all-run.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/all-run.sh">all-run.sh</a></h4>
 </section>
 <p>Run a command on all winning entries.</p>
 <p>For example:</p>
@@ -547,7 +547,7 @@ some odd need to do so.</p>
 do:</p>
 <pre><code>    bin/all-run.sh -v 3 -- bin/readme2index.sh -v 1</code></pre>
 <section id="bad-display-as">
-<h3 id="bad-display-as.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/bad-display-as.sh">bad-display-as.sh</a></h3>
+<h4 id="bad-display-as.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/bad-display-as.sh">bad-display-as.sh</a></h4>
 </section>
 <p>Test for invalid <code>display_as</code> / <code>display_via_github</code> combos in <code>.entry.json</code> files.</p>
 <p>For example:</p>
@@ -557,7 +557,7 @@ do:</p>
 <p>Alternate Example:</p>
 <pre><code>    make find_bad_display_as</code></pre>
 <section id="chk-entry">
-<h3 id="chk-entry.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/chk-entry.sh">chk-entry.sh</a></h3>
+<h4 id="chk-entry.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/chk-entry.sh">chk-entry.sh</a></h4>
 </section>
 <p>Check an entry directory to verify that all the files in its manifest
 (<code>.entry.json</code>) exist in the git repo.</p>
@@ -570,7 +570,7 @@ the top level <code>Makefile</code>:</p>
 FAQ on “<a href="../faq.html#entry_json">.entry.json files</a>”
 for more details on <code>.entry.json</code> files.</p>
 <section id="combine-author-handle">
-<h3 id="combine_author_handle.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/combine_author_handle.sh">combine_author_handle.sh</a></h3>
+<h4 id="combine_author_handle.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/combine_author_handle.sh">combine_author_handle.sh</a></h4>
 </section>
 <p>Combine all author/author_handle.json files as single JSON file.</p>
 <p>The purpose of this tool is to make looking for information across all
@@ -599,7 +599,7 @@ and the last line is just”}” and each JSON element is on its own line.</p>
 FAQ on “<a href="../faq.html#author_handle_json">author_handle.json</a>”
 for more details on <code>author_handle.json</code> files.</p>
 <section id="csv2entry">
-<h3 id="csv2entry.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/csv2entry.sh">csv2entry.sh</a></h3>
+<h4 id="csv2entry.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/csv2entry.sh">csv2entry.sh</a></h4>
 </section>
 <p>Convert CSV files into <code>.entry.json</code> for all winning IOCCC entries.</p>
 <p>This tool takes as input, the following CSV files:</p>
@@ -630,7 +630,7 @@ whitespace characters.</p>
 <p><strong>NOTE</strong>: see the
 FAQ on “<a href="../faq.html#entry_json">.entry.json files</a>”
 for more details on <code>.entry.json</code> files.</p>
-<h4 id="internal-details-of-bincsv2entry.sh">Internal details of <code>bin/csv2entry.sh</code></h4>
+<h5 id="internal-details-of-bincsv2entry.sh">Internal details of <code>bin/csv2entry.sh</code></h5>
 <p>We first canonicalize the CSV files by replacing any “carriage
 return line feeds” with “newlines”. We also make sure that the CSV
 files end in a newline. We do this because some spreadsheet
@@ -656,7 +656,7 @@ content). Another tool will be modified to do this, at a later date.</p>
 <a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry repo</a>’s copy of the
 <a href="https://github.com/xexyl/jparse/">jparse repo</a>.</p>
 <section id="cvt-submission">
-<h3 id="cvt-submission.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/cvt-submission.sh">cvt-submission.sh</a></h3>
+<h4 id="cvt-submission.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/cvt-submission.sh">cvt-submission.sh</a></h4>
 </section>
 <p>This tool is used by the <a href="../judges.html">Judges</a> as part of the final
 steps to announce a new set of winning IOCCC entries.</p>
@@ -712,7 +712,7 @@ need to add content. Moreover, the <code>Makefile</code> and <code>.gitignore</c
 need to be examined for suitability, etc.</p>
 <p><strong>HINT</strong>: Executing this tool on your submission will <strong>NOT</strong> make you an IOCCC winner. :-)</p>
 <section id="entry2csv">
-<h3 id="entry2csv.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/entry2csv.sh">entry2csv.sh</a></h3>
+<h4 id="entry2csv.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/entry2csv.sh">entry2csv.sh</a></h4>
 </section>
 <p>This tool takes as input, all entry <code>.entry.json</code> files
 and updates 3 CSV files:</p>
@@ -723,7 +723,7 @@ and updates 3 CSV files:</p>
 </ul>
 <p>The CSV files are written in a canonical UNIX format form.</p>
 <p>Only those CSV files files whose content is modified are written.</p>
-<h4 id="internal-details-of-binentry2csv.sh">Internal details of <code>bin/entry2csv.sh</code></h4>
+<h5 id="internal-details-of-binentry2csv.sh">Internal details of <code>bin/entry2csv.sh</code></h5>
 <p>We generate CSV files from the <code>.entry.json</code> files from winning
 IOCCC entries listed under years listed in the <code>.top</code> file,
 and in subdirectories listed in the <code>YYYY/.year</code> file for the
@@ -736,7 +736,7 @@ reference the directory of the new IOCCC entries. Each entry directory <strong>M
 also contain a <code>.path</code> file that contains the path of the IOCCC entry directory
 from the <code>TOPDIR</code>.</p>
 <section id="filelist-entry-json-awk">
-<h3 id="filelist.entry.json.awk"><a href="https://github.com/ioccc-src/winner/blob/master/bin/filelist.entry.json.awk">filelist.entry.json.awk</a></h3>
+<h4 id="filelist.entry.json.awk"><a href="https://github.com/ioccc-src/winner/blob/master/bin/filelist.entry.json.awk">filelist.entry.json.awk</a></h4>
 </section>
 <p>Generate a list of files in an entry’s manifest (the <code>.entry.json</code> file).</p>
 <p>For example:</p>
@@ -790,7 +790,7 @@ the <a href="https://github.com/ioccc-src/winner/blob/master/bin/filelist.entry.
 not truly parse the JSON file, but nevertheless the awk code does a reasonable job
 of scanning the typical <code>.entey.json</code> file format.</p>
 <section id="filelist-entry-json-sh">
-<h3 id="filelist.entry.json.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/filelist.entry.json.sh">filelist.entry.json.sh</a></h3>
+<h4 id="filelist.entry.json.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/filelist.entry.json.sh">filelist.entry.json.sh</a></h4>
 </section>
 <p>Generate a list of files in an entry’s manifest in the <code>.entry.json</code> file.</p>
 <p>For example:</p>
@@ -825,7 +825,7 @@ is <strong>MUCH FASTER</strong> than <a href="https://github.com/ioccc-src/winne
 the <a href="https://github.com/ioccc-src/winner/blob/master/bin/filelist.entry.json.awk">filelist.entry.json.sh</a> code does
 a true parse of the JSON file.</p>
 <section id="html-sed">
-<h3 id="html.sed"><a href="https://github.com/ioccc-src/winner/blob/master/bin/html.sed">html.sed</a></h3>
+<h4 id="html.sed"><a href="https://github.com/ioccc-src/winner/blob/master/bin/html.sed">html.sed</a></h4>
 </section>
 <p>Translates certain characters in their corresponding HTML entities. For example
 <code>&lt;</code> is converted to <code>&amp;lt;</code> and <code>&gt;</code> is converted to <code>&amp;gt;</code>. This is important to
@@ -840,15 +840,14 @@ satisfy html lints.</p>
 
     sed -i -f bin/html.sed file</code></pre>
 <section id="find-missing-links">
-<h3 id="find-missing-links.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/find-missing-links.sh">find-missing-links.sh</a></h3>
+<h4 id="find-missing-links.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/find-missing-links.sh">find-missing-links.sh</a></h4>
 </section>
-<p>Find all markdown links to local files that do not exist.</p>
-<p>This tool does <strong>NOT</strong> check that a remote URL exists, it checks on
-links to local files.</p>
-<p>This tool does <strong>NOT</strong> check links in a given place in a file, it
-checks that local files linked by markdown actually exist.</p>
-<p>This tool does <strong>NOT</strong> check HTML file links, it checks markdown
-based links.</p>
+<p>Check links in Git-tracked markdown files against local files and generated
+HTML anchors. The tool uses <code>python3</code> and <code>pandoc</code> to parse markdown links,
+including reference links, while ignoring code blocks and inline code.</p>
+<p>Published markdown targets are checked against their generated HTML. Same-page
+anchors in unpublished markdown are checked against the source headings.
+Remote URLs and links in HTML source files are <strong>NOT</strong> checked.</p>
 <p>For example:</p>
 <pre><code>    bin/find-missing-links.sh -v 1</code></pre>
 <p>If no missing links are found, this tool exits 0 with no output
@@ -863,7 +862,7 @@ details.</p>
 <p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
 <pre><code>    make find_missing_links</code></pre>
 <section id="find-invalid-json">
-<h3 id="find-invalid-json.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/find-invalid-json.sh">find-invalid-json.sh</a></h3>
+<h4 id="find-invalid-json.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/find-invalid-json.sh">find-invalid-json.sh</a></h4>
 </section>
 <p>This script uses the <code>jparse(1)</code> tool, which can be obtained from the
 <a href="https://github.com/ioccc-src/mkiocccentry">mkiocccentry repo</a>’s copy of the
@@ -877,13 +876,13 @@ JSON files in the tree.</p>
 <p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
 <pre><code>    make find_invalid_json</code></pre>
 <section id="format-headers">
-<h3 id="format-headers.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/format-headers.sh">format-headers.sh</a></h3>
+<h4 id="format-headers.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/format-headers.sh">format-headers.sh</a></h4>
 </section>
 <p>Format select headers and preceding empty lines in entry README.md files.</p>
 <p>For example:</p>
 <pre><code>    bin/format-headers.sh</code></pre>
 <section id="gen-authors">
-<h3 id="gen-authors.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/gen-authors.sh">gen-authors.sh</a></h3>
+<h4 id="gen-authors.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/gen-authors.sh">gen-authors.sh</a></h4>
 </section>
 <p>Generate the top level <a href="../authors.html">authors.html</a> page.</p>
 <p>For example:</p>
@@ -891,7 +890,7 @@ JSON files in the tree.</p>
 <p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
 <pre><code>    make gen_authors</code></pre>
 <section id="gen-location">
-<h3 id="gen-location.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/gen-location.sh">gen-location.sh</a></h3>
+<h4 id="gen-location.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/gen-location.sh">gen-location.sh</a></h4>
 </section>
 <p>Generate the top level <a href="../location.html">location.html</a> page.</p>
 <p>For example:</p>
@@ -899,7 +898,7 @@ JSON files in the tree.</p>
 <p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
 <pre><code>    make gen_location</code></pre>
 <section id="gen-other-html">
-<h3 id="gen-other-html.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/gen-other-html.sh">gen-other-html.sh</a></h3>
+<h4 id="gen-other-html.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/gen-other-html.sh">gen-other-html.sh</a></h4>
 </section>
 <p>Generate the HTML files (other than the README.md to index.html files) from
 markdown files, of all entries.</p>
@@ -908,7 +907,7 @@ markdown files, of all entries.</p>
 <p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
 <pre><code>    make gen_other_html</code></pre>
 <section id="gen-readme">
-<h3 id="gen-readme.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/gen-readme.sh">gen-readme.sh</a></h3>
+<h4 id="gen-readme.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/gen-readme.sh">gen-readme.sh</a></h4>
 </section>
 <p>Generate a <code>README.md</code> file a submission’s <code>remarks.md</code> and the
 template files in <a href="https://github.com/ioccc-src/winner/blob/master/template/entry/README.md.head">template/entry/README.md.head</a>
@@ -918,7 +917,7 @@ and <a href="https://github.com/ioccc-src/winner/blob/master/template/entry/READ
 <p>While this tool is used by <a href="#cvt-submission">cvt-submission</a>, it may also
 be used by hand by the <a href="../judges.html">Judges</a> during the final judging rounds.</p>
 <section id="gen-sitemap">
-<h3 id="gen-sitemap.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/gen-sitemap.sh">gen-sitemap.sh</a></h3>
+<h4 id="gen-sitemap.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/gen-sitemap.sh">gen-sitemap.sh</a></h4>
 </section>
 <p>Generate an XML sitemap for the IOCCC website.</p>
 <p>For example:</p>
@@ -927,7 +926,7 @@ be used by hand by the <a href="../judges.html">Judges</a> during the final judg
 <p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
 <pre><code>    make gen_sitemap</code></pre>
 <section id="gen-status">
-<h3 id="gen-status.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/gen-status.sh">gen-status.sh</a></h3>
+<h4 id="gen-status.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/gen-status.sh">gen-status.sh</a></h4>
 </section>
 <p>Generate <a href="../status.json">status.json</a> according to the modification date of
 <a href="https://github.com/ioccc-src/winner/blob/master/news.md">news.md</a> and/or whether the <code>contest_status</code> is changed
@@ -946,7 +945,7 @@ at the command line.</p>
 <p>unless the <code>contest_status</code> is to be changed, but since only the judges should
 do that, that is not a problem.</p>
 <section id="gen-top-html">
-<h3 id="gen-top-html.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/gen-top-html.sh">gen-top-html.sh</a></h3>
+<h4 id="gen-top-html.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/gen-top-html.sh">gen-top-html.sh</a></h4>
 </section>
 <p>Generate a number of top level HTML pages for the IOCCC websites.</p>
 <p>For example:</p>
@@ -968,7 +967,7 @@ do that, that is not a problem.</p>
 <p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
 <pre><code>    make gen_top_html</code></pre>
 <section id="gen-year-index">
-<h3 id="gen-year-index.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/gen-year-index.sh">gen-year-index.sh</a></h3>
+<h4 id="gen-year-index.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/gen-year-index.sh">gen-year-index.sh</a></h4>
 </section>
 <p>Generate an <code>index.html</code> page for a given IOCCC year.</p>
 <p>Generate an <code>rules.html</code> page for a given IOCCC year, if <code>rules.md</code> exists.</p>
@@ -989,8 +988,8 @@ via the top level <code>Makefile</code>:</p>
 <p>To update only the all year level html files that are missing, or of date
 from from the markdown files, via the top level <code>Makefile</code>:</p>
 <pre><code>    make quick_year_index</code></pre>
-<section id="gen-years">
-<h3 id="gen-years.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/gen-years.sh">gen-years.sh</a></h3>
+<section id="gen-years-index">
+<h4 id="gen-years.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/gen-years.sh">gen-years.sh</a></h4>
 </section>
 <p>Generate the top level <a href="../years.html">years.html</a> page.</p>
 <p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
@@ -998,7 +997,7 @@ from from the markdown files, via the top level <code>Makefile</code>:</p>
 <p>which will create the <code>index.html</code> for every IOCCC year (<code>1984/index.html</code>,
 <code>1985/index.html</code> etc.).</p>
 <section id="gen-years">
-<h3 id="gen-years.sh-1"><a href="https://github.com/ioccc-src/winner/blob/master/bin/gen-years.sh">gen-years.sh</a></h3>
+<h4 id="gen-years.sh-1"><a href="https://github.com/ioccc-src/winner/blob/master/bin/gen-years.sh">gen-years.sh</a></h4>
 </section>
 <p>Generate the top level <a href="../years.html">years.html</a> page.</p>
 <p>For example:</p>
@@ -1006,7 +1005,7 @@ from from the markdown files, via the top level <code>Makefile</code>:</p>
 <p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
 <pre><code>    make gen_years</code></pre>
 <section id="jfmt-wrapper">
-<h3 id="jfmt-wrapper.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/jfmt-wrapper.sh">jfmt-wrapper.sh</a></h3>
+<h4 id="jfmt-wrapper.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/jfmt-wrapper.sh">jfmt-wrapper.sh</a></h4>
 </section>
 <p>The <a href="https://github.com/ioccc-src/winner/blob/master/bin/jfmt-wrapper.sh">jfmt-wrapper.sh</a> tool is a wrapper
 tool for <a href="https://github.com/ioccc-src/winner/blob/master/bin/jprint-wrapper.sh">jprint-wrapper.sh</a>,
@@ -1017,7 +1016,7 @@ to be in the IOCCC JSON style.</p>
 <p>For example:</p>
 <pre><code>    bin/jfmt-wrapper.sh .entry.json</code></pre>
 <section id="jprint-wrapper">
-<h3 id="jprint-wrapper.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/jprint-wrapper.sh">jprint-wrapper.sh</a></h3>
+<h4 id="jprint-wrapper.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/jprint-wrapper.sh">jprint-wrapper.sh</a></h4>
 </section>
 <p>The <a href="https://github.com/ioccc-src/winner/blob/master/bin/jprint-wrapper.sh">jprint-wrapper.sh</a> tool is a wrapper
 tool using python3 to format JSON in the IOCCC JSON style.</p>
@@ -1026,7 +1025,7 @@ tool using python3 to format JSON in the IOCCC JSON style.</p>
 <p>Or use in a pipe:</p>
 <pre><code>    cat .info.json | bin/jprint-wrapper.sh</code></pre>
 <section id="jval-wrapper">
-<h3 id="jval-wrapper.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/jval-wrapper.sh">jval-wrapper.sh</a></h3>
+<h4 id="jval-wrapper.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/jval-wrapper.sh">jval-wrapper.sh</a></h4>
 </section>
 <p>The <a href="https://github.com/ioccc-src/winner/blob/master/bin/jval-wrapper.sh">jval-wrapper.sh</a> tool is a wrapper
 tool using python3 to use the XPath method to extract JSON values.</p>
@@ -1056,17 +1055,17 @@ tool using python3 to use the XPath method to extract JSON values.</p>
     bin/jval-wrapper.sh -e author/Anton_Algmyr.json &#39;.//full_name&#39;
     bin/jval-wrapper.sh -e -P author/Anton_Algmyr.json &#39;.//full_name&#39;</code></pre>
 <section id="manifest-csv-entry">
-<h3 id="manifest.csv.entry.awk"><a href="https://github.com/ioccc-src/winner/blob/master/bin/manifest.csv.entry.awk">manifest.csv.entry.awk</a></h3>
+<h4 id="manifest.csv.entry.awk"><a href="https://github.com/ioccc-src/winner/blob/master/bin/manifest.csv.entry.awk">manifest.csv.entry.awk</a></h4>
 </section>
 <p>Output <code>manifest.csv</code> from a entry’s manifest as found in its <code>.entry.json</code> file.</p>
 <pre><code>    awk -f bin/manifest.csv.entry.awk YYYY/dir/.entry.json</code></pre>
 <section id="manifest-csv-json">
-<h3 id="binmanifest.entry.json.awk"><a href="https://github.com/ioccc-src/winner/blob/master/bin/manifest.entry.json.awk">bin/manifest.entry.json.awk</a></h3>
+<h4 id="binmanifest.entry.json.awk"><a href="https://github.com/ioccc-src/winner/blob/master/bin/manifest.entry.json.awk">bin/manifest.entry.json.awk</a></h4>
 </section>
 <p>Output manifest table from an entry’s <code>.entry.json</code> file.</p>
 <pre><code>    awk -v github=REPO_URL -f bin/manifest.entry.json.awk YYYY/dir/.entry.json</code></pre>
 <section id="md2html-cfg">
-<h3 id="md2html.cfg"><a href="https://github.com/ioccc-src/winner/blob/master/bin/md2html.cfg">md2html.cfg</a></h3>
+<h4 id="md2html.cfg"><a href="https://github.com/ioccc-src/winner/blob/master/bin/md2html.cfg">md2html.cfg</a></h4>
 </section>
 <p>This is a configuration file for the <a href="index.html#md2html">md2html</a> tool.
 Although a configuration file it is also something of a script file.</p>
@@ -1087,12 +1086,12 @@ Baggins</a>’ famous words:</p>
 became a favourite saying of his later, and passed into a proverb.</p>
 </blockquote>
 <section id="md2html">
-<h3 id="md2html.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/md2html.sh">md2html.sh</a></h3>
+<h4 id="md2html.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/md2html.sh">md2html.sh</a></h4>
 </section>
 <p>This is the primary tool that forms IOCCC-generated HTML content from
 markdown files (permanent markdown files or temporarily generated
 markdown files) and HTML fragments from the <a href="https://github.com/ioccc-src/winner/blob/master/inc/index.html">inc directory</a>.</p>
-<p>The <a href="index.html#md2html_cfg">md2html.cfg</a> configuration file is
+<p>The <a href="index.html#md2html-cfg">md2html.cfg</a> configuration file is
 used by <a href="https://github.com/ioccc-src/winner/blob/master/bin/md2html.sh">md2html.sh</a> to drive the generation process.</p>
 <p>One key action that <a href="https://github.com/ioccc-src/winner/blob/master/bin/md2html.sh">md2html.sh</a> performs is
 parameter substitution when constructing HTML files for the
@@ -1102,7 +1101,7 @@ markdown file and various <a href="https://github.com/ioccc-src/winner/blob/mast
 The token string is substituted for the value of the token in the HTML
 file that is being formed.</p>
 <p>Often the value of the token is determined by the
-<a href="index.html#md2html_cfg">md2html.cfg</a> configuration file.
+<a href="index.html#md2html-cfg">md2html.cfg</a> configuration file.
 There are other shell scripts that will make additional token
 substitutions, such as <a href="#subst.default.sh">subst.default.sh</a>,
 <a href="#subst.entry-index.sh">subst.entry-index.sh</a>,
@@ -1116,7 +1115,7 @@ directly by the <a href="https://github.com/ioccc-src/winner/blob/master/bin/md2
 of the above-mentioned parameter substitution process. See information
 on the “<a href="#date-range">Special DATE_RANGE token</a>” section for more details.</p>
 <section id="new-challenge-md">
-<h3 id="new-challenge-md.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/new-challenge-md.sh">new-challenge-md.sh</a></h3>
+<h4 id="new-challenge-md.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/new-challenge-md.sh">new-challenge-md.sh</a></h4>
 </section>
 <p>This tool is used by the <a href="../judges.html">Judges</a> as part of the final
 steps to announce a new set of winning IOCCC entries.</p>
@@ -1129,7 +1128,7 @@ the <a href="../judges.html">Judges</a> will modify by adding individual
 <p>See also the
 FAQ on “<a href="../faq.html#what_fun_challenge">fun challenges</a>”.</p>
 <section id="new-dir">
-<h3 id="new-dir.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/new-dir.sh">new-dir.sh</a></h3>
+<h4 id="new-dir.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/new-dir.sh">new-dir.sh</a></h4>
 </section>
 <p>This tool is used by the <a href="../judges.html">Judges</a> as one of the
 steps needed to announce a new winning IOCCC entry.</p>
@@ -1146,7 +1145,7 @@ framework for doing so, creating a situation where the
 the prerequisite <code>YYYY</code> directory and related files.</p>
 <p><strong>HINT</strong>: Executing this tool on your submission will <strong>NOT</strong> make you an IOCCC winner. :-)</p>
 <section id="new-year">
-<h3 id="new-year.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/new-year.sh">new-year.sh</a></h3>
+<h4 id="new-year.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/new-year.sh">new-year.sh</a></h4>
 </section>
 <p>This tool is used by the <a href="../judges.html">Judges</a> as part of the final
 steps to announce a new set of winning IOCCC entries.</p>
@@ -1161,7 +1160,7 @@ might contain “<em>triple X</em>” comments indicating where the
 <pre><code>    bin/new-year.sh -v 1 YYYY</code></pre>
 <p>Here, <code>YYYY</code> must be a new 4-digit (happy :-)) new IOCCC year.</p>
 <section id="othermd2html">
-<h3 id="othermd2html.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/othermd2html.sh">othermd2html.sh</a></h3>
+<h4 id="othermd2html.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/othermd2html.sh">othermd2html.sh</a></h4>
 </section>
 <p>Convert a non-README.md file in an entry to HTML.</p>
 <p>For example:</p>
@@ -1171,7 +1170,7 @@ might contain “<em>triple X</em>” comments indicating where the
 <p>The <a href="#othermd2html">othermd2html.sh</a> tool is used by
 <a href="#gen-other-html">gen-other-html.sh</a>.</p>
 <section id="output-index-author">
-<h3 id="output-index-author.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/output-index-author.sh">output-index-author.sh</a></h3>
+<h4 id="output-index-author.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/output-index-author.sh">output-index-author.sh</a></h4>
 </section>
 <p>Output an author’s or authors’ related HTML details for an entry’s index.html
 page.</p>
@@ -1180,7 +1179,7 @@ page.</p>
 <p>This tool is used in the <a href="https://github.com/ioccc-src/winner/blob/master/bin/md2html.cfg">bin/md2html.cfg</a> file as part of
 the <a href="index.html#md2html">md2html tool</a>.</p>
 <section id="output-index-inventory">
-<h3 id="output-index-inventory.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/output-index-inventory.sh">output-index-inventory.sh</a></h3>
+<h4 id="output-index-inventory.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/output-index-inventory.sh">output-index-inventory.sh</a></h4>
 </section>
 <p>Output the inventory in HTML form for an entry’s index.html page. For an example
 inventory, see the <a href="../1984/anonymous/index.html#inventory">inventory in
@@ -1188,7 +1187,7 @@ inventory, see the <a href="../1984/anonymous/index.html#inventory">inventory in
 <p>This tool is used in the <a href="https://github.com/ioccc-src/winner/blob/master/bin/md2html.cfg">bin/md2html.cfg</a> file as part of
 the <a href="index.html#md2html">md2html tool</a>.</p>
 <section id="output-year-index">
-<h3 id="output-year-index.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/output-year-index.sh">output-year-index.sh</a></h3>
+<h4 id="output-year-index.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/output-year-index.sh">output-year-index.sh</a></h4>
 </section>
 <p>Output the inventory for a given year’s winning entries in HTML form. In other
 words in <a href="../1984/index.html">1984</a> it would list, as links, the four winning
@@ -1197,11 +1196,11 @@ inventory</a>.</p>
 <p>This tool is used in the <a href="https://github.com/ioccc-src/winner/blob/master/bin/md2html.cfg">bin/md2html.cfg</a> file as part of
 the <a href="index.html#md2html">md2html tool</a>.</p>
 <section id="pandoc-wrapper">
-<h3 id="pandoc-wrapper.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/pandoc-wrapper.sh">pandoc-wrapper.sh</a></h3>
+<h4 id="pandoc-wrapper.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/pandoc-wrapper.sh">pandoc-wrapper.sh</a></h4>
 </section>
 <p>Wrapper tool to run <code>pandoc(1)</code>.</p>
 <section id="quick-readme2index">
-<h3 id="quick-readme2index.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/quick-readme2index.sh">quick-readme2index.sh</a></h3>
+<h4 id="quick-readme2index.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/quick-readme2index.sh">quick-readme2index.sh</a></h4>
 </section>
 <p>Build an entry’s <code>index.html</code> file if the entry directory
 does not have a non-empty <code>index.hmtl</code> file, or if either
@@ -1228,7 +1227,7 @@ and <code>index.html</code> are correct. If in doubt, use
 <p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
 <pre><code>    make quick_readme2index</code></pre>
 <section id="readme2index">
-<h3 id="readme2index.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/readme2index.sh">readme2index.sh</a></h3>
+<h4 id="readme2index.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/readme2index.sh">readme2index.sh</a></h4>
 </section>
 <p>Convert an entry’s <code>README.md</code> into its <code>index.html</code> file.</p>
 <p>For example:</p>
@@ -1238,7 +1237,7 @@ and <code>index.html</code> are correct. If in doubt, use
 <p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
 <pre><code>    make entry_index</code></pre>
 <section id="sgi">
-<h3 id="sgi.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/sgi.sh">sgi.sh</a></h3>
+<h4 id="sgi.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/sgi.sh">sgi.sh</a></h4>
 </section>
 <p>Sort <code>.gitignore</code> content from <code>stdin</code> to <code>stdout</code>.</p>
 <p>We sort with lines starting with <code>#</code> first.
@@ -1247,7 +1246,7 @@ We sort with lines that do not start with <code>[#!*]</code> third.
 We sort with lines starting with <code>!</code> fourth.</p>
 <p>This tool is used by <a href="index.html#sort-gitignore">sort.gitignore.sh</a>.</p>
 <section id="sort-gitignore">
-<h3 id="sort.gitignore.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/sort.gitignore.sh">sort.gitignore.sh</a></h3>
+<h4 id="sort.gitignore.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/sort.gitignore.sh">sort.gitignore.sh</a></h4>
 </section>
 <p>Sort a <code>.gitignore</code> in a entry directory.</p>
 <p>For example:</p>
@@ -1257,43 +1256,43 @@ We sort with lines starting with <code>!</code> fourth.</p>
 <p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
 <pre><code>    make sort_gitignore</code></pre>
 <section id="status2html">
-<h3 id="status2html.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/status2html.sh">status2html.sh</a></h3>
+<h4 id="status2html.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/status2html.sh">status2html.sh</a></h4>
 </section>
 <p>Convert <a href="../status.json">status.json</a> into HTML.</p>
 <p>This tool is a ‘before tool’ (<code>-b tool</code>) that is intended
 to be used by <a href="index.html#gen-status">gen-status.sh</a>.</p>
 <section id="subst-default">
-<h3 id="subst.default.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/subst.default.sh">subst.default.sh</a></h3>
+<h4 id="subst.default.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/subst.default.sh">subst.default.sh</a></h4>
 </section>
 <p>Print default substitutions.</p>
 <p>This tool is used in the <a href="https://github.com/ioccc-src/winner/blob/master/bin/md2html.cfg">bin/md2html.cfg</a> file.</p>
 <section id="subst-entry-index">
-<h3 id="subst.entry-index.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/subst.entry-index.sh">subst.entry-index.sh</a></h3>
+<h4 id="subst.entry-index.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/subst.entry-index.sh">subst.entry-index.sh</a></h4>
 </section>
 <p>Print substitutions for an entry’s <code>index.html</code>.</p>
 <p>This tool is used in the <a href="https://github.com/ioccc-src/winner/blob/master/bin/md2html.cfg">bin/md2html.cfg</a> file.</p>
 <section id="subst-entry-navbar-awk">
-<h3 id="subst.entry-navbar.awk"><a href="https://github.com/ioccc-src/winner/blob/master/bin/subst.entry-navbar.awk">subst.entry-navbar.awk</a></h3>
+<h4 id="subst.entry-navbar.awk"><a href="https://github.com/ioccc-src/winner/blob/master/bin/subst.entry-navbar.awk">subst.entry-navbar.awk</a></h4>
 </section>
 <p>Output substitutions for <code>navbar</code> on behalf of an entry.</p>
 <p>This tool is used in <a href="index.html#subst-entry-index">subst.entry-index.sh</a>.</p>
 <section id="subst-year-challenge">
-<h3 id="subst.year-challenge.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/subst.year-challenge.sh">subst.year-challenge.sh</a></h3>
+<h4 id="subst.year-challenge.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/subst.year-challenge.sh">subst.year-challenge.sh</a></h4>
 </section>
 <p>Print substitutions for a year level <code>challenge.html</code>.</p>
 <p>This tool is used in the <a href="https://github.com/ioccc-src/winner/blob/master/bin/md2html.cfg">bin/md2html.cfg</a> file.</p>
 <section id="subst-year-index">
-<h3 id="subst.year-index.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/subst.year-index.sh">subst.year-index.sh</a></h3>
+<h4 id="subst.year-index.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/subst.year-index.sh">subst.year-index.sh</a></h4>
 </section>
 <p>Print substitutions for a year level <code>index.html</code>.</p>
 <p>This tool is used in the <a href="https://github.com/ioccc-src/winner/blob/master/bin/md2html.cfg">bin/md2html.cfg</a> file.</p>
 <section id="subst-year-navbar-awk">
-<h3 id="subst.year-navbar.awk"><a href="https://github.com/ioccc-src/winner/blob/master/bin/subst.year-navbar.awk">subst.year-navbar.awk</a></h3>
+<h4 id="subst.year-navbar.awk"><a href="https://github.com/ioccc-src/winner/blob/master/bin/subst.year-navbar.awk">subst.year-navbar.awk</a></h4>
 </section>
 <p>Output substitutions for <code>navbar</code> on behalf of a year level <code>index.html</code>.</p>
 <p>This tool is used in <a href="index.html#subst-year-index">subst.year-index.sh</a>.</p>
 <section id="tar-entry">
-<h2 id="tar-entry.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/tar-entry.sh">tar-entry.sh</a></h2>
+<h3 id="tar-entry.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/tar-entry.sh">tar-entry.sh</a></h3>
 </section>
 <p>Form a compressed tarball for an entry.</p>
 <p>For example:</p>
@@ -1306,7 +1305,7 @@ an IOCCC web page. You <strong>MUST DOWNLOAD</strong> those, as needed, in order
 properly render an IOCCC web page. The primary purpose of compressed
 tarballs is to provide the files needed to attempt to compile entries.</p>
 <section id="tar-year">
-<h2 id="tar-year.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/tar-year.sh">tar-year.sh</a></h2>
+<h3 id="tar-year.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/tar-year.sh">tar-year.sh</a></h3>
 </section>
 <p>Form a compressed tarball for an IOCCC year.</p>
 <p>For example:</p>
@@ -1321,7 +1320,7 @@ an IOCCC web page. You <strong>MUST DOWNLOAD</strong> those, as needed, in order
 properly render an IOCCC web page. The primary purpose of compressed
 tarballs is to provide the files needed to attempt to compile entries.</p>
 <section id="untar-entry">
-<h2 id="untar-entry.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/untar-entry.sh">untar-entry.sh</a></h2>
+<h3 id="untar-entry.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/untar-entry.sh">untar-entry.sh</a></h3>
 </section>
 <p>Untar an entry’s compressed tarball.</p>
 <p>For example:</p>
@@ -1331,7 +1330,7 @@ tarballs is to provide the files needed to attempt to compile entries.</p>
 <p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
 <pre><code>    make untar_entry_tarball</code></pre>
 <section id="untar-year">
-<h2 id="untar-year.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/untar-year.sh">untar-year.sh</a></h2>
+<h3 id="untar-year.sh"><a href="https://github.com/ioccc-src/winner/blob/master/bin/untar-year.sh">untar-year.sh</a></h3>
 </section>
 <p>Untar an IOCCC year’s compressed tarball.</p>
 <p>For example:</p>
@@ -1341,7 +1340,7 @@ tarballs is to provide the files needed to attempt to compile entries.</p>
 <p>We recommend that this tool be invoked via the top level <code>Makefile</code>:</p>
 <pre><code>    make untar_year_tarball</code></pre>
 <section id="how">
-<h1 id="how-ioccc-html-content-is-built">How IOCCC HTML content is built</h1>
+<h2 id="how-ioccc-html-content-is-built">How IOCCC HTML content is built</h2>
 </section>
 <p>The <a href="index.html#md2html">md2html.sh</a> tool is the primary tool that
 is used to form all IOCCC related HTML pages for the
@@ -1370,7 +1369,7 @@ For example:</p>
 <pre><code>    -H footer=.</code></pre>
 <p>will cause no HTML content to be produced during the <code>footer</code> HTML phase.</p>
 <section id="html">
-<h2 id="html-phases">HTML phases</h2>
+<h3 id="html-phases">HTML phases</h3>
 </section>
 <p>The following HTML phase files are used to build HTML content:</p>
 <ol start="0" type="1">
@@ -1407,11 +1406,11 @@ as well as the markdown content given to the <code>pandoc wrapper tool</code> (<
 <p>See the tool <a href="index.html#readme2index">readme2index.sh</a> for an example of
 how HTML phases are implemented.</p>
 <section id="getopt">
-<h2 id="getopt-phase-processing-of-the-command-line">getopt phase processing of the command line</h2>
+<h3 id="getopt-phase-processing-of-the-command-line">getopt phase processing of the command line</h3>
 </section>
 <p>The command options are evaluated in the following <code>getopt</code> phases:</p>
 <section id="getopt-0">
-<h3 id="getopt-phase-0"><code>getopt</code> phase 0</h3>
+<h4 id="getopt-phase-0"><code>getopt</code> phase 0</h4>
 </section>
 <p>In <code>getopt</code> phase 0 we parse command line options and save all arguments for the
 end of the final command line.</p>
@@ -1419,7 +1418,7 @@ end of the final command line.</p>
 it is a file under topdir.</p>
 <p><code>getopt</code> phase 0 is the only <code>getopt</code> phase where <code>-d topdir</code> and <code>-c md2html.cfg</code> may be used.</p>
 <section id="getopt-1">
-<h3 id="getopt-phase-1"><code>getopt</code> phase 1</h3>
+<h4 id="getopt-phase-1"><code>getopt</code> phase 1</h4>
 </section>
 <p>In <code>getopt</code> phase 1 we execute each <code>-o "output tool"</code> from <code>getopt</code> phase 0,
 parsing the output as a command line.</p>
@@ -1427,25 +1426,25 @@ parsing the output as a command line.</p>
 by the phase 0 argument.</p>
 <p>The <code>-o "output tool"</code> is not allowed to output another <code>"-o tool"</code> or a <code>"-O tool=optstr"</code>. Instead a <code>-o "output tool"</code> may execute another <code>-o "output tool"</code> and merge the output into its own.</p>
 <section id="getopt-2">
-<h3 id="getopt-phase-2"><code>getopt</code> phase 2</h3>
+<h4 id="getopt-phase-2"><code>getopt</code> phase 2</h4>
 </section>
 <p>In <code>getopt</code> phase 2 we parse the <code>cfg_options</code> from the first <code>md2html.cfg</code> line
 matched by a saved argument.</p>
 <p>The match is made with the (possibly modified) phase 0 argument.</p>
 <section id="getopt-3">
-<h3 id="getopt-phase-3"><code>getopt</code> phase 3</h3>
+<h4 id="getopt-phase-3"><code>getopt</code> phase 3</h4>
 </section>
 <p>In <code>getopt</code> phase 3 we execute each <code>-o "output tool"</code> from <code>getopt</code> phase 2,
 parsing the output as a command line.</p>
 <p>The <code>-o "output tool"</code> may be given <code>optstr</code> from <code>"-O tool=optstr"</code>, followed
 by the phase 0 argument.</p>
 <p>The <code>-o "output tool"</code> is not allowed to output another <code>"-o tool"</code> or a <code>"-O tool=optstr"</code>. Instead a <code>-o "output tool"</code> may execute another <code>-o "output tool"</code> and merge the output into its own.</p>
-<h3 id="command-line-option-order">Command line option order</h3>
+<h4 id="command-line-option-order">Command line option order</h4>
 <p>Most command line options override earlier copies of the same option. However
 in the case of <code>-H phase=name</code>, a later <code>-H phase=name</code> only overrides an
 earlier use of <code>-H</code> for the same <code>phase</code> <em>only</em>. Also in the case of <code>-s token=value</code>, a later <code>-s token=value</code> only overrides an earlier use of <code>-s</code> for
 the same <code>token</code> <em>only</em>.</p>
-<h3 id="output-tools">Output tools</h3>
+<h4 id="output-tools">Output tools</h4>
 <p>An “output tool” may be used to add certain additional command line options to be processed.</p>
 <p><strong>IMPORTANT</strong>: An “output tool” will print each command line option / argument on a separate line.
 So for example, if an “output tool” wishes to convey:</p>
@@ -1470,12 +1469,12 @@ options), then zero of more <code>filename_arg</code> filename arguments.</p>
 RECURSIVE</strong>. A <code>-o tool</code> is free, however, to execute other <code>-o tool</code> output
 tools and merge the output from those tools into its own.</p>
 <section id="special-exit-code">
-<h3 id="special--e-exitcode-option">Special <code>-E exitcode</code> option</h3>
+<h4 id="special--e-exitcode-option">Special <code>-E exitcode</code> option</h4>
 </section>
 <p>When <code>-E exitcode</code> is evaluated, the application will exit with the <code>exitcode</code>
 value. If one wishes to also output a message to <code>stderr</code>, the <code>-e string</code> must
 come <strong>BEFORE</strong> any <code>-E exitcode</code> in the command line.</p>
-<h3 id="substitution-tokens">Substitution tokens</h3>
+<h4 id="substitution-tokens">Substitution tokens</h4>
 <p>All tokens (i.e., strings of the form “<code>%</code><code>%TOKEN%</code><code>%</code>”) <strong>MUST</strong> be substituted (by
 some <code>-s token=value</code>) in all HTML output, except during phase numbers 20-29
 (i.e., except <code>before tool</code> output, pandoc wrapper output, and <code>after tool</code>
@@ -1501,7 +1500,7 @@ and furthermore, forming no HTML content from a given markdown file altogether.<
 See also, the tool <a href="index.html#readme2index">readme2index.sh</a> for an example of
 how such command lines are used.</p>
 <section id="date-range">
-<h4 id="special-date_range-token">Special DATE_RANGE token</h4>
+<h5 id="special-date_range-token">Special DATE_RANGE token</h5>
 </section>
 <p>The “<code>%</code><code>%DATE_RANGE%</code><code>%</code>” is a special token.</p>
 <p>This “<code>%</code><code>%DATE_RANGE%</code><code>%</code>”
@@ -1533,7 +1532,7 @@ any “<code>%</code><code>%[A-Z0-9_]+%</code><code>%</code>” tokens are repla
 HTML file that is being formed using the normal parameter substitution process.</p>
 <p><strong>NOTE</strong>: the “<a href="#copyright-date-range">copyright date range</a>” section for more details
 on “<strong>copyright date ranges</strong>’.</p>
-<h1 id="use-caution-when-modifying-inc-files">Use CAUTION when modifying <code>inc/</code> files</h1>
+<h2 id="use-caution-when-modifying-inc-files">Use CAUTION when modifying <code>inc/</code> files</h2>
 <p>Some of the files under this directory are used to form <strong>MOST</strong> of the HTML content
 on the <a href="https://www.ioccc.org">official IOCCC website</a>.</p>
 <p>… and in particular files under <a href="https://github.com/ioccc-src/winner/blob/master/inc/index.html">inc</a> that are of the form
@@ -1544,28 +1543,28 @@ on the <a href="https://www.ioccc.org">official IOCCC website</a>.</p>
 consider making a copy of the default file and modifying the <a href="https://github.com/ioccc-src/winner/blob/master/bin/md2html.cfg">md2html config
 file</a> to refer to the copy instead. That way your special case
 situation will not impact <strong>MOST</strong> of the HTML content.</p>
-<h1 id="why-we-do-not-use-certain-well-known-html-technologies">Why we do not use certain well-known HTML technologies</h1>
+<h2 id="why-we-do-not-use-certain-well-known-html-technologies">Why we do not use certain well-known HTML technologies</h2>
 <p>You may wonder why we need these files in the first place. You may wonder why
 we even need the tools in the <a href="index.html">bin</a> directory when there other
 solutions available to form web pages.</p>
 <section id="static-only">
-<h2 id="static-web-pages-only">Static web pages only</h2>
+<h3 id="static-web-pages-only">Static web pages only</h3>
 </section>
 <p>Here are some reasons why we are using these files and
 special tools to create HTML content / IOCCC web pages:</p>
 <p>We host the <a href="https://www.ioccc.org">official IOCCC website</a> via
 <a href="https://pages.github.com">GitHub pages</a>. As of the time this file written, <strong>only
 static web pages are supported</strong>.</p>
-<h2 id="we-cannot-use-server-side-include">We cannot use server side include</h2>
+<h3 id="we-cannot-use-server-side-include">We cannot use server side include</h3>
 <p>We use <a href="#static-only">static web pages</a>, so use of “server side include” is not
 available to the IOCCC.</p>
 <p>For example, Apache SSI <code>#include</code> does not work on <a href="https://pages.github.com">GitHub
 pages</a>.</p>
-<h2 id="we-cannot-use-a-back-end-database">We cannot use a back-end database</h2>
+<h3 id="we-cannot-use-a-back-end-database">We cannot use a back-end database</h3>
 <p>We use <a href="index.html#static-only">static web pages</a>, so use of a “back-end database” is not
 available to the IOCCC.</p>
 <section id="why-github">
-<h2 id="we-cannot-use-non-github-web-servers">We cannot use non-GitHub web servers</h2>
+<h3 id="we-cannot-use-non-github-web-servers">We cannot use non-GitHub web servers</h3>
 </section>
 <p>The <a href="https://pages.github.com">GitHub pages</a> have the distributed server capacity needed to handle
 the <strong>huge download volume</strong> or <a href="https://en.wikipedia.org/wiki/Slashdot_effect">Slashdot effect</a>
@@ -1581,12 +1580,12 @@ willing to host the IOCCC.</p>
 <p>The <a href="https://www.ioccc.org">official IOCCC website</a> is, after all, primarily C
 source code with some supporting documentation (sometimes :-) ). As such it is
 a natural fit for GitHub and <a href="https://pages.github.com">GitHub pages</a>.</p>
-<h2 id="we-cannot-use-the-html-object-element">We cannot use the HTML <code>&lt;object&gt;</code> element</h2>
+<h3 id="we-cannot-use-the-html-object-element">We cannot use the HTML <code>&lt;object&gt;</code> element</h3>
 <p>The <code>&lt;object&gt;</code> HTML element does not work for our needs.</p>
 <p>HTML elements do not extend into the content that they include.
 For example, menu bars (see the <a href="../ioccc.css">ioccc.css</a>
 stylesheet) will not operate under an HTML element.</p>
-<h2 id="we-cannot-use-the-html-embed-element">We cannot use the HTML <code>&lt;embed&gt;</code> element</h2>
+<h3 id="we-cannot-use-the-html-embed-element">We cannot use the HTML <code>&lt;embed&gt;</code> element</h3>
 <p>The <code>&lt;embed&gt;</code> HTML element does not work for our needs.</p>
 <p>This element wants one to specify the <code>width</code> and <code>height</code> in pixels.
 Use of a percentage is not officially supported even if some browsers
@@ -1596,7 +1595,7 @@ needs to be responsive to small-sized cell phone-like screens,
 mid-sized table-like screens, as well as large-sized desktop-like screens.
 Specifying a <code>width</code> and <code>height</code> in pixels will not work well in
 all of those screen size contexts.</p>
-<h2 id="we-cannot-use-the-html-iframe-element">We cannot use the HTML <code>&lt;iframe&gt;</code> element</h2>
+<h3 id="we-cannot-use-the-html-iframe-element">We cannot use the HTML <code>&lt;iframe&gt;</code> element</h3>
 <p>The <code>&lt;iframe&gt;</code> HTML element does not work for our needs.</p>
 <p>This element wants one to specify the <code>width</code> and <code>height</code> in pixels. Use of a
 percentage is not officially supported even if some browsers might do so. Our
@@ -1605,7 +1604,7 @@ needs to be responsive to small-sized cell phone-like screens, mid-sized
 table-like screens, as well as large-sized desktop-like screens. Specifying a
 <code>width</code> and <code>height</code> in pixels will not work well in all of those screen size
 contexts.</p>
-<h2 id="we-cannot-use-javascript-to-include-content">We cannot use JavaScript to include content</h2>
+<h3 id="we-cannot-use-javascript-to-include-content">We cannot use JavaScript to include content</h3>
 <p>We do not use JavaScript to include HTML content.</p>
 <p>While the IOCCC may use JavaScript in the future to directly render things like
 C source code, we will do so in such a way that someone will be able to view
@@ -1616,18 +1615,18 @@ disabled.</p>
 (except for some mobile devices for the menu).</p>
 <p>For this reason, we cannot use JavaScript to include HTML content.</p>
 <section id="terms">
-<h1 id="ioccc-terms">IOCCC Terms</h1>
+<h2 id="ioccc-terms">IOCCC Terms</h2>
 </section>
 <p>The following IOCCC terms apply to tools, JSON files, and the directory
 structure of this repo that forms the
 <a href="https://www.ioccc.org">official IOCCC website</a>.</p>
-<h2 id="author"><code>author</code></h2>
+<h3 id="author"><code>author</code></h3>
 <p>An <strong>individual</strong> who was won at least one winning IOCCC <a href="#entry">entry</a>.</p>
 <p>Some authors have submitted more than one IOCCC entry that won. Some winning
 IOCCC entries have more than one author; in that case we might use the word
 <code>authors</code>.</p>
 <section id="author-handle">
-<h2 id="author_handle"><code>author_handle</code></h2>
+<h3 id="author_handle"><code>author_handle</code></h3>
 </section>
 <p>An <code>author_handle</code> is string that refers to a given <a href="#author">author</a> and <strong>is unique to the
 IOCCC</strong>. Each <a href="#author">author</a> has <strong>EXACTLY ONE</strong> <code>author_handle</code>.</p>
@@ -1659,7 +1658,7 @@ year.</p>
 in the case of <a href="../2005/anon/index.html">2005/anon</a>.</p>
 <p>Anonymous <code>author_handle</code>’s match this regexp:</p>
 <pre><code>    Anonymous_[0-9][0-9][0-9][0-9][.0-9]*$</code></pre>
-<h2 id="copyright-date-range">copyright date range</h2>
+<h3 id="copyright-date-range">copyright date range</h3>
 <p>The content of the IOCCC is <a href="#copyright">Copyrighted and is under the CC BY-SA 4.0 License</a>.</p>
 <p>The “<strong>copyright date range</strong>” for a given content represents a <a href="#copyright">copyright</a> date range:
 from the year in which the content was first created or obtained by the IOCCC,
@@ -1671,7 +1670,7 @@ the same directory of the markdown source file is used to set the
 <p><strong>NOTE</strong>: see the
 FAQ on “<a href="../faq.html#licence">use IOCCC content</a>”
 for more details on the IOCCC <a href="#copyright">copyright and license</a>.</p>
-<h2 id="entry"><code>entry</code></h2>
+<h3 id="entry"><code>entry</code></h3>
 <p>An IOCCC <a href="#submission">submission</a> that won an award for a given IOCCC.</p>
 <p>An <code>entry</code> has one or more <code>author</code>s.</p>
 <p>Each <code>entry</code> is contained under its own directory. The parent of the entry
@@ -1682,15 +1681,15 @@ there are a few cases where an <code>entry</code> directory contains subdirector
 may be limited to previous entries that used them.</p>
 <p><strong>HISTORICAL NOTE</strong>: in the past, the term <code>winner</code> was used in instead of
 today’s term of <code>entry</code>.</p>
-<h2 id="submission"><code>submission</code></h2>
+<h3 id="submission"><code>submission</code></h3>
 <p>In the past, the IOCCC used the term <a href="#entry">entry</a> for both a hopeful
 <a href="#submission">submission</a> and a <a href="#entry">winning entry</a>. It was decided,
 however, in 2024, to remove this ambiguity by introducing the term
 <a href="#submission">submission</a>. This does mean that if one wishes to win the IOCCC they
 must submit to the <a href="../judges.html">Judges</a>! :-)</p>
-<h2 id="submitter"><code>submitter</code></h2>
+<h3 id="submitter"><code>submitter</code></h3>
 <p>A person who submits a <a href="#submission">submission</a>.</p>
-<h2 id="year"><code>year</code></h2>
+<h3 id="year"><code>year</code></h3>
 <p>A <code>year</code> is a 4 character string. Most years are 4-digit strings that
 represent the year. Some special <code>year</code> strings are possible, such as <code>mock</code>.
 Non-numeric <code>year</code> strings are lower case (hence <code>mock</code> and not <code>MOCK</code>).</p>
@@ -1699,7 +1698,7 @@ Non-numeric <code>year</code> strings are lower case (hence <code>mock</code> an
 <p>The <code>year</code> (<code>1984</code>, <code>1985</code>, …, <code>2020</code>, …) directories reside directly below
 the top level directory.</p>
 <section id="dot-year">
-<h2 id="year-1"><code>.year</code></h2>
+<h3 id="year-1"><code>.year</code></h3>
 </section>
 <p>Each <a href="#year">year</a> directory will have a file under it named <code>.year</code>.</p>
 <p>The content of each <code>.year</code> file is the <a href="#year">year string</a> of that year’s winning
@@ -1722,14 +1721,14 @@ lists, one directory per line, the directories of the winning entries of
         2020/otterness
         2020/tsoj
         2020/yang</code></pre>
-<h2 id="dir"><code>dir</code></h2>
+<h3 id="dir"><code>dir</code></h3>
 <p>A <code>dir</code> is a POSIX safe string (directory name) that holds an entry.</p>
 <p>A <code>dir</code> is a string that matches this regexp:</p>
 <pre><code>    ^[a-z][0-9a-z.-]*$</code></pre>
 <p>Each <a href="#entry">entry</a> is under its own individual directory. This directory
 is directly under a <a href="#year">year</a> directory.</p>
 <section id="entry-id">
-<h3 id="entry_id"><code>entry_id</code></h3>
+<h4 id="entry_id"><code>entry_id</code></h4>
 </section>
 <p>A string that identifies <a href="#entry">winning entries</a>. The string is of the form:</p>
 <pre><code>    year_dir</code></pre>
@@ -1738,21 +1737,21 @@ is directly under a <a href="#year">year</a> directory.</p>
 is:</p>
 <pre><code>    2020_endoh2</code></pre>
 <section id="csv">
-<h1 id="csv-files">CSV Files</h1>
+<h2 id="csv-files">CSV Files</h2>
 </section>
 <p>The <code>bin/csv2entry.sh</code> and <code>bin/entry2csv.sh</code> tools use the below
 three CSV files. In the case of <code>bin/entry2csv.sh</code>, these CSV files
 are created / updated; in the case of <code>bin/csv2entry.sh</code>, these
 CSV files are used as input.</p>
 <section id="author_wins_csv">
-<h2 id="author_wins.csv"><code>author_wins.csv</code></h2>
+<h3 id="author_wins.csv"><code>author_wins.csv</code></h3>
 </section>
 <p>A CSV file exported from a spreadsheet, one line per <a href="#author">author</a>.</p>
 <p>The first field is an <a href="#author-handle">author_handle</a>.</p>
 <p>The other fields are the <a href="#entry-id">entry_id</a>s of all <code>YYYY/dir</code>
 <a href="#entry">entries</a> won by the <a href="#author">author</a>.</p>
 <section id="manifest_csv">
-<h2 id="manifest.csv"><code>manifest.csv</code></h2>
+<h3 id="manifest.csv"><code>manifest.csv</code></h3>
 </section>
 <p>A CSV file exported from a spreadsheet that contains information about files in
 <code>YYYY/dir</code> entry directories under year directories. This file has the
@@ -1806,7 +1805,7 @@ JSON files), including the year.</p>
 <p><strong>NOTE</strong>: Do not put commas, or quotes, or newlines in fields as these are bound
 to cause problems.</p>
 <section id="year_prize_csv">
-<h2 id="year_prize.csv"><code>year_prize.csv</code></h2>
+<h3 id="year_prize.csv"><code>year_prize.csv</code></h3>
 </section>
 <p>A CSV spreadsheet, one line per <code>YYYY/dir</code> entry directory.</p>
 <p>The first field is an <a href="#entry-id">entry_id</a>.</p>

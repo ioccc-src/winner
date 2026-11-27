@@ -468,7 +468,7 @@
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <!-- BEFORE: 1st line of markdown file: 2020/ferguson1/bugs.md -->
-<h1 id="current-bugs-and-things-that-look-like-bugs-but-are-not">Current bugs and things that look like bugs but are not</h1>
+<h2 id="current-bugs-and-things-that-look-like-bugs-but-are-not">Current bugs and things that look like bugs but are not</h2>
 <p>.. as of 12 September 2020.</p>
 <div id="toc">
 <ul>
@@ -483,7 +483,7 @@
 </ul>
 </div>
 <section id="builtin-test-unit">
-<h1 id="built-in-test-unit-for-some-features"><a href="#toc">Built-in test unit for some features!</a></h1>
+<h2 id="built-in-test-unit-for-some-features"><a href="#toc">Built-in test unit for some features!</a></h2>
 </section>
 <p>Fun fact: There’s something of a built-in test unit for some features; much
 like some of the other features this was not intentionally designed but is
@@ -501,7 +501,7 @@ of size 20 yet).</p>
 <p>There probably are combinations that can test these types of things I just
 don’t at this time remember any I might have done.</p>
 <section id="stillsnake">
-<h1 id="the-snake-doesnt-seem-to-be-moving"><a href="#toc">The snake doesn’t seem to be moving</a></h1>
+<h2 id="the-snake-doesnt-seem-to-be-moving"><a href="#toc">The snake doesn’t seem to be moving</a></h2>
 </section>
 <p>One way to show this is in full is to set the initial size and growth size to a
 high value; then try each one individually. For example:</p>
@@ -527,13 +527,13 @@ occupied or not.</p>
 moving or growing and that’s the important point (if you have the default
 status line you can also see the coordinates being updated to show this).</p>
 <section id="getch">
-<h1 id="getch-also-accepts-input-from-some-input-hardware-other-than-keyboards"><a href="#toc">getch() also accepts input from some input hardware other than keyboards</a></h1>
+<h2 id="getch-also-accepts-input-from-some-input-hardware-other-than-keyboards"><a href="#toc">getch() also accepts input from some input hardware other than keyboards</a></h2>
 </section>
 <p>On my MacBook Pro the trackpad has actually triggered directions; if I were to
 swipe up and then down the snake would run into itself. I believe this has to do
 with the function call <code>keypad(v, 1);</code> which enables arrow keys.</p>
 <section id="size">
-<h1 id="size0-is-the-same-as-size1-and-other-oddities"><a href="#toc">SIZE=0 is the same as SIZE=1 and other oddities</a></h1>
+<h2 id="size0-is-the-same-as-size1-and-other-oddities"><a href="#toc">SIZE=0 is the same as SIZE=1 and other oddities</a></h2>
 </section>
 <p>What this means is that for both you will only have the snake head. At this point
 you can safely go back on yourself even without cannibalism enabled. This is
@@ -575,7 +575,7 @@ that if you get another bug you will be at the ‘max size’:</p>
 <pre><code>    YOU WIN!
     X:81/156 Y:35/41 S:997/997 B:2</code></pre>
 <section id="bitetail">
-<h1 id="i-was-a-few-places-behind-my-tail-and-i-ran-into-it"><a href="#toc">‘I was a few places behind my tail and I ran into it!’</a></h1>
+<h2 id="i-was-a-few-places-behind-my-tail-and-i-ran-into-it"><a href="#toc">‘I was a few places behind my tail and I ran into it!’</a></h2>
 </section>
 <p>I.e. what happens if you’re growing - for example after just eating a bug - and
 you’re racing towards your tail? If you’re behind it should be fine since you’re
@@ -585,7 +585,7 @@ grow and how far away from your tail)! This happened to me once and it surprised
 me and I figured I better note it.</p>
 <p><strong>Remember: the tail at that point isn’t moving yet; the snake is growing!</strong></p>
 <section id="middleofsnake">
-<h1 id="with-negative-growth-the-snake-drops-from-the-middle-of-the-body"><a href="#toc">With negative growth the snake drops from the middle of the body</a></h1>
+<h2 id="with-negative-growth-the-snake-drops-from-the-middle-of-the-body"><a href="#toc">With negative growth the snake drops from the middle of the body</a></h2>
 </section>
 <p>For instance it might look like this (the first line is as it happens, the
 second pointing to where it happens and the third being what’s left after the
@@ -610,7 +610,7 @@ that’s how they grow in the wild so it’s a misnomer. The shrinking was only
 ‘discovered’ because it’s an unsigned number but happily it allows for different
 gameplay modes.</p>
 <section id="buginsnake">
-<h1 id="it-looks-like-the-bug-is-in-the-snake"><a href="#toc">It looks like the bug is in the snake</a></h1>
+<h2 id="it-looks-like-the-bug-is-in-the-snake"><a href="#toc">It looks like the bug is in the snake</a></h2>
 </section>
 <p>I show a different example in the [crazy.log.md][] file but what defines a coordinate
 which the snake occupies? If the snake breaks apart then the only part
@@ -622,7 +622,7 @@ something like:</p>
 <p>This is because the snake is no longer there: in fact in this run the snake was
 quite a bit lower on the screen and 25 in length.</p>
 <section id="bugplacement">
-<h1 id="on-the-safety-of-the-bug-placement-loop"><a href="#toc">On the safety of the bug placement loop</a></h1>
+<h2 id="on-the-safety-of-the-bug-placement-loop"><a href="#toc">On the safety of the bug placement loop</a></h2>
 </section>
 <p>Ilya Kurdyukov shared concern for the loop in the bug placement routine: is it
 safe? What he refers to is that it’s a potential infinite loop. But is it? I
