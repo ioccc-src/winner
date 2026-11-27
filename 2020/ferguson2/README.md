@@ -886,7 +886,7 @@ Otterness](../../authors.html#Nathan_Otterness), [Nicholas
 Carlini](../../authors.html#Nicholas_Carlini) (your entry is an absolutely brilliant
 abuse of `printf` - and I totally agree with the judges remarks that your entry
 is so novel that it'll be worth special mention in the future Best of IOCCC
-list!) and [tsoj](../../authors.html#_tsoj) too.
+list!) and [tsoj](../../authors.html#Tsoj) too.
 
 Well done and congratulations to all of you again!  Thank you for submitting the
 wonderful entries and I'm honoured to have my two entries beside yours!

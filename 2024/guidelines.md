@@ -147,13 +147,20 @@ official release and not updating the toolkit is **PERFECTLY** okay.
 **NOTE**: the updates to these guidelines on 2025-03-12 also explain how the
 tools that require other tools now search under `$PATH`. It is perfectly fine to
 not use the newer versions so long as you use the minimum required version of
-the tools. See the
-FAQ on "[minimum required version of the tools](../faq.html#minimum_versions)"
-for more details and the
-FAQ on "[obtaining the most recent release of the
+the tools listed below. See the FAQ on "[obtaining the most recent release of the
 toolkit](../faq.html#obtaining_mkiocccentry)"
 for more help.
 </p>
+
+<div id="minimum_versions"></div>
+
+The minimum official tool versions for IOCCC28 were:
+
+- `iocccsize`: `28.15 2024-06-27`
+- `mkiocccentry`: `2.0.1 2025-03-02`
+- `fnamchk`: `2.0.0 2025-02-28`
+- `txzchk`: `2.0.1 2025-03-02`
+- `chkentry`: `2.0.1 2025-03-02`
 
 <p class="leftbar">
 Until the contest status becomes **[open](../faq.html#open)**,
@@ -218,11 +225,7 @@ as well as
 </p>
 
 <p class="leftbar">
-See also the
-FAQ on "[what the minimum required versions are for this
-contest](../faq.html#minimum_versions)"
-for more details on how to verify you have the correct versions for this
-contest.
+See also the [minimum official tool versions for IOCCC28](#minimum_versions).
 </p>
 
 <p class="leftbar">
@@ -702,7 +705,7 @@ FAQ on "[.auth.json](../faq.html#auth_json)".
 If you want to know what the `.info.json` file is, see the
 FAQ on "[.info.json](../faq.html#info_json)".
 On the other hand, if you want to know a bit more details about `chkentry(1)`, see the
-FAQ about "[chkentry](../faq.html#chkentry)".
+FAQ about "[chkentry](../faq.html#chksubmit)".
 </p>
 
 <p class="leftbar">
@@ -756,7 +759,7 @@ make sure that you're using the correct versions, which is also verified by
 
 <p class="leftbar">
 Please see the
-FAQ on "[validating your submission directory](../faq.html#chkentry)
+FAQ on "[validating your submission directory](../faq.html#chksubmit)
 for more details on `chkentry(1)`.
 </p>
 
@@ -841,7 +844,7 @@ In other words, the actual amount of **EXTRA** files is **31**.
 If you use an optional filename for something other than their intended use
 in order to get past the file limit, we will consider that an
 abuse of rules.  For more details on the optional files, see the
-FAQ on the "[try.sh script system](../faq.html#try_script)"
+FAQ on the "[try.sh script system](../faq.html#try_scripts)"
 and the
 FAQ on "[alt code](../faq.html#alt_code)".
 </p>

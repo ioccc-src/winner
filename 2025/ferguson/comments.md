@@ -97,7 +97,7 @@ the standard says that is not actually legal!
 
 I do scanning of the header quite nicely and simply using the `*` modifier to
 fscanf(): nice and clean and easy. Actually before I discovered that other entry
-[I even tried something](#conclusions).
+[I even tried something](#conclusion).
 
 I DO support one line headers and also two line headers as well plus the three
 (which that other entry corrupts - again no disrespect to it! I'm only bringing

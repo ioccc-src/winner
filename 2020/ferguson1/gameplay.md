@@ -918,7 +918,7 @@ years ago but I know it's true now. **Believe in yourself. Always.**
 [number of hertz (flashes) per second triggering seizures]: https://www.epilepsysociety.org.uk/photosensitive-epilepsy#.Xjgpwi2ZOgQ
 [termcaps.c]: %%REPO_URL%%/2020/ferguson1/termcaps.c
 [cannibalism.log.html]: cannibalism.log.html
-[crazy.log.html]: ferguson1/crazy.log.html
+[crazy.log.html]: crazy.log.html
 [play.sh]: %%REPO_URL%%/2020/ferguson1/play.sh
 
 
