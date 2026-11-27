@@ -13,6 +13,28 @@ jobs:
 
     steps:
     - uses: actions/checkout@v7
+    - uses: actions/setup-java@v4
+      with:
+        distribution: temurin
+        java-version: '17'
+    - name: Install Pandoc
+      run: |
+        curl -fsSL --retry 3 https://github.com/jgm/pandoc/releases/download/3.14/pandoc-3.14-1-amd64.deb -o "$RUNNER_TEMP/pandoc.deb"
+        echo "dedb81f20345b76d7168ba551d90abceb707977fece789a79874094fe3833915  $RUNNER_TEMP/pandoc.deb" | sha256sum --check
+        sudo dpkg -i "$RUNNER_TEMP/pandoc.deb"
+        pandoc --version
+    - name: Install Nu HTML Checker
+      run: |
+        npm install --prefix "$RUNNER_TEMP/vnu" --no-save --ignore-scripts --no-audit --no-fund vnu-jar@26.11.20
+        echo "a32c46948b7f8cde6a81cd708a1a7eecb598ec11085ad44d06406914bd737ad2  $RUNNER_TEMP/vnu/node_modules/vnu-jar/build/dist/vnu.jar" | sha256sum --check
+        mkdir -p "$RUNNER_TEMP/bin"
+        cat > "$RUNNER_TEMP/bin/vnu" <<'EOF'
+        #!/usr/bin/env bash
+        exec java -jar "$RUNNER_TEMP/vnu/node_modules/vnu-jar/build/dist/vnu.jar" "$@"
+        EOF
+        chmod +x "$RUNNER_TEMP/bin/vnu"
+        "$RUNNER_TEMP/bin/vnu" --version
+        echo "$RUNNER_TEMP/bin" >> "$GITHUB_PATH"
     - name: clone mkiocccentry
       run: git clone https://github.com/ioccc-src/mkiocccentry
     - name: install jparse
