@@ -373,7 +373,7 @@ help:
 	@echo 'make find_missing_links	;: find markdown links to missing local files'
 	@echo 'make find_invalid_json	;; find invalid JSON files'
 	@echo 'make verify_display_as	;; find invalid display_as / display_via_github combos'
-	@echo 'make list_bad_html	;: list HTML files with errors
+	@echo 'make list_bad_html	;: list HTML files with errors'
 	@echo 'make verify_html	;: validate HTML files using vnu'
 	@echo
 	@echo 'make test		;: run the fill collection of mostly harmless tests'
@@ -667,7 +667,7 @@ test:
 	${MAKE} verify_entry_files
 	${MAKE} find_missing_links
 	${MAKE} find_invalid_json
-	${MAKE} verify_html
+	${MAKE} list_bad_html
 	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 
@@ -853,7 +853,7 @@ quick_www:
 	${MAKE} gen_status
 	${MAKE} gen_sitemap
 	${MAKE} find_missing_links
-	${MAKE} verify_html
+	${MAKE} list_bad_html
 	@echo '=-=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-=-='
 
 # do everything needed to build HTML content for the website
@@ -888,7 +888,7 @@ ifneq (${UPDATE_DEFER_SITEMAP},1)
 endif
 	${MAKE} find_invalid_json
 	${MAKE} find_missing_links
-	${MAKE} verify_html
+	${MAKE} list_bad_html
 	@echo '=-=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-=-='
 
 
