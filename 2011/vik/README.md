@@ -93,8 +93,7 @@ and examine the resulting assembly file `vik.s`.  On some platforms
 the assembly file is about 128MB in size!
 
 **NOTE**: The [randowan.mod](%%REPO_URL%%/2011/vik/randowan.mod) and [mad_world.mod](%%REPO_URL%%/2011/vik/mad_world.mod) files were
-created by [Henrik Bertilsson](http://www.translucentboy.com) and are included
-with his permission.
+created by **Henrik Bertilsson** and are included with his permission.
 
 
 ## Author's remarks:
