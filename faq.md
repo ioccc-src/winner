@@ -432,10 +432,10 @@ Jump to: [top](#)
 
 Your submission must be able be compiled with **clang** or **gcc** and run under at least one flavor of a UNIX
 system that conforms to the [SUS](https://en.wikipedia.org/wiki/Single_UNIX_Specification),
-otherwise known as the [The Single UNIX Specification Version 4](https://unix.org/version4/overview.html).
-or [later SUS](https://unix.org/online.html).
+otherwise known as the [The Single UNIX Specification Version 4](https://publications.opengroup.org/standards/unix/t101).
+or [later SUS](https://www.unix.org/overview.html).
 
-[The Single UNIX Specification Version 4](https://unix.org/version4/overview.html) includes
+[The Single UNIX Specification Version 4](https://publications.opengroup.org/standards/unix/t101) includes
 [X/Open Curses, Issue 7](https://pubs.opengroup.org/onlinepubs/9699909599/toc.pdf), so your
 submission is free to use "**curses**" (i.e., the `curses` library and the `curses.h` include file).
 Your entry is also free to use
