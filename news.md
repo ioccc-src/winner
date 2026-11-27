@@ -863,8 +863,8 @@ _topbar_ are now HTML 5 conforming.
 
 ## 2024-04-20
 
-Nearly all of the **temp-test-ioccc** website
-website has undergone editorial review.  Nearly all [IOCCC winning entries](years.html)
+Nearly all of the **temp-test-ioccc** website has undergone editorial review.
+Nearly all [IOCCC winning entries](years.html)
 compile on modern systems and many have `try.sh` scripts to help you run them.
 For those that cannot compile and/or do not work, we have made a
 [Bugs and &lpar;Mis&rpar;features](bugs.html) page.
