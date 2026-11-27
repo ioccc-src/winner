@@ -113,7 +113,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="2.2.0 2026-11-26"
+export VERSION="2.3.0 2026-11-26"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -211,6 +211,8 @@ while getopts :hv:Vd:D:nNt:w: flag; do
 	exit 2
 	;;
     d) TOPDIR="$OPTARG"
+	TOOL_OPTION+=("-d")
+	TOOL_OPTION+=("$TOPDIR")
 	;;
     D) # parse -D docroot/
 	case "$OPTARG" in

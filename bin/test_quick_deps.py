@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Regression tests for quick-build prerequisites and provenance."""
 
+import json
 import os
 from pathlib import Path
 import shutil
@@ -279,6 +280,16 @@ class QuickGeneratorTest(unittest.TestCase):
         self.generate("-Q", page="index")
         self.assertEqual(index.stat().st_mtime_ns, timestamp)
 
+    def test_full_top_generation_populates_quick_record(self):
+        output = self.root / "about.html"
+        self.generate("-t", "custom tagline")
+        self.assertTrue((self.root / ".quick-html-cache/about.html.sig").is_file())
+        timestamp = output.stat().st_mtime_ns
+        self.generate("-Q", "-t", "custom tagline")
+        self.assertEqual(output.stat().st_mtime_ns, timestamp)
+        self.generate("-Q")
+        self.assertNotEqual(output.stat().st_mtime_ns, timestamp)
+
     def prepare_year(self):
         repo = HELPER.parent.parent
         year = self.root / "1984"
@@ -323,6 +334,102 @@ class QuickGeneratorTest(unittest.TestCase):
             path.unlink()
         generate_year("-t", "custom tagline")
         self.assertEqual([path.read_bytes() for path in outputs], quick)
+        (self.root / ".quick-html-cache/1984/rules.html.sig").unlink()
+        generate_year("-t", "custom tagline")
+        before = [path.stat().st_mtime_ns for path in outputs]
+        generate_year("-Q", "-t", "custom tagline")
+        self.assertEqual([path.stat().st_mtime_ns for path in outputs], before)
+
+    def test_full_entry_generation_populates_quick_record(self):
+        self.prepare_year()
+        repo = HELPER.parent.parent
+        shutil.copyfile(repo / "author/Anonymous_1984.json", self.root / "author/Anonymous_1984.json")
+        entry = "1984/anonymous"
+        for name in ("anonymous.c", "anonymous.orig.c"):
+            shutil.copyfile(repo / entry / name, self.root / entry / name)
+        output = self.root / entry / "index.html"
+
+        def generate_entry(script, *args):
+            result = subprocess.run(
+                [f"bin/{script}", *args, entry], cwd=self.root, env=self.env,
+                capture_output=True,
+            )
+            self.assertEqual(result.returncode, 0, result.stderr.decode())
+
+        generate_entry("readme2index.sh", "-v", "1")
+        self.assertTrue((self.root / ".quick-html-cache" / entry / "index.html.sig").is_file())
+        before = output.stat().st_mtime_ns
+        generate_entry("quick-readme2index.sh", "-v", "1")
+        self.assertEqual(output.stat().st_mtime_ns, before)
+        generate_entry("readme2index.sh", "-v", "1", "-d", str(self.root))
+        before = output.stat().st_mtime_ns
+        generate_entry("quick-readme2index.sh", "-v", "1", "-d", str(self.root))
+        self.assertEqual(output.stat().st_mtime_ns, before)
+        generate_entry("quick-readme2index.sh", "-v", "1", "-t", "different tagline")
+        self.assertNotEqual(output.stat().st_mtime_ns, before)
+
+    def test_make_authors_and_location_populate_quick_records(self):
+        self.prepare_year()
+        repo = HELPER.parent.parent
+        author = json.loads((repo / "author/Anonymous_1984.json").read_text())
+        for handle in ("Anonymous_1984", "Fixture"):
+            author["author_handle"] = handle
+            data = json.dumps(author, indent=4).replace('": ', '" : ')
+            (self.root / f"author/{handle}.json").write_text(data + "\n")
+        shutil.copyfile(repo / "Makefile", self.root / "Makefile")
+        (self.root / "template").mkdir()
+        shutil.copyfile(repo / "template/var.mk", self.root / "template/var.mk")
+        for target, output_name in (
+            ("gen_authors", "authors.html"), ("quick_authors", "authors.html"),
+            ("gen_location", "location.html"), ("quick_location", "location.html"),
+        ):
+            result = subprocess.run(
+                ["/usr/bin/make", target], cwd=self.root, env=self.env, capture_output=True,
+            )
+            self.assertEqual(result.returncode, 0, result.stderr.decode())
+            output = self.root / output_name
+            if target.startswith("gen_"):
+                before = output.stat().st_mtime_ns
+                self.assertTrue((self.root / f".quick-html-cache/{output_name}.sig").is_file())
+            else:
+                self.assertEqual(output.stat().st_mtime_ns, before)
+        failing_location = self.root / "clock/location"
+        failing_location.write_text("#!/bin/sh\nexit 1\n")
+        failing_location.chmod(0o755)
+        failed = subprocess.run(
+            ["/usr/bin/make", "gen_authors"], cwd=self.root, env=self.env, capture_output=True,
+        )
+        self.assertNotEqual(failed.returncode, 0)
+        self.assertFalse((self.root / ".quick-html-cache/authors.html.sig").exists())
+
+    def test_full_years_and_other_generation_populate_quick_records(self):
+        year = self.prepare_year()
+        (self.root / ".top").write_text("1984\n")
+        (year / "1984.tar.bz2").write_bytes(b"fixture")
+        (year / "anonymous/details.md").write_text("# Details\n\nFixture.\n")
+        for script, output in (
+            ("gen-years.sh", self.root / "years.html"),
+            ("gen-other-html.sh", year / "anonymous/details.html"),
+        ):
+            for args in ([], ["-Q"]):
+                result = subprocess.run(
+                    [f"bin/{script}", *args], cwd=self.root, env=self.env, capture_output=True,
+                )
+                self.assertEqual(result.returncode, 0, result.stderr.decode())
+                if not args:
+                    before = output.stat().st_mtime_ns
+                    record = self.root / ".quick-html-cache" / (str(output.relative_to(self.root)) + ".sig")
+                    self.assertTrue(record.is_file())
+                else:
+                    self.assertEqual(output.stat().st_mtime_ns, before)
+        original = (self.root / "years.html").read_bytes()
+        (year / "anonymous/.entry.json").unlink()
+        failed = subprocess.run(
+            ["bin/gen-years.sh"], cwd=self.root, env=self.env, capture_output=True,
+        )
+        self.assertNotEqual(failed.returncode, 0)
+        self.assertFalse((self.root / ".quick-html-cache/years.html.sig").exists())
+        self.assertEqual((self.root / "years.html").read_bytes(), original)
 
     def test_failed_years_build_never_becomes_a_cache_hit(self):
         self.prepare_year()
@@ -344,10 +451,12 @@ class QuickGeneratorTest(unittest.TestCase):
         self.assertEqual(record.read_bytes(), original)
         self.generate("-Q", "-N", "-t", "changed tagline")
         self.assertEqual(record.read_bytes(), original)
+        self.generate("-n", "-t", "changed tagline")
+        self.assertEqual(record.read_bytes(), original)
         pandoc = self.root / "clock/pandoc"
         pandoc.write_text("#!/bin/sh\nexit 1\n")
         pandoc.chmod(0o755)
-        self.generate("-Q", "-t", "changed tagline", success=False)
+        self.generate("-t", "changed tagline", success=False)
         self.assertFalse(record.exists())
 
 

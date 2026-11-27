@@ -106,7 +106,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="2.6.0 2026-11-26"
+export VERSION="2.7.0 2026-11-26"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -700,9 +700,9 @@ fi
 
 # Follow the year manifests so missing data is still reported by the generator.
 #
+# shellcheck source=bin/quick-deps.sh
+. bin/quick-deps.sh || { echo "$0: ERROR: cannot load bin/quick-deps.sh" 1>&2; exit 1; }
 if [[ -n $QUICK_MODE ]]; then
-    # shellcheck source=bin/quick-deps.sh
-    . bin/quick-deps.sh || { echo "$0: ERROR: cannot load bin/quick-deps.sh" 1>&2; exit 1; }
     QUICK_INPUTS=("$0" "$JVAL_WRAPPER")
     QUICK_INVALID=""
     while read -r YYYY; do
@@ -720,6 +720,9 @@ if [[ -n $QUICK_MODE ]]; then
     if [[ -z $QUICK_INVALID ]] && quick_html_current "$YEARS_HTML" years.md "${QUICK_INPUTS[@]}"; then
 	exit 0
     fi
+fi
+if [[ -z $NOOP ]]; then
+    quick_html_invalidate "$YEARS_HTML" || exit 1
 fi
 
 
@@ -958,6 +961,7 @@ for YYYY in $("$TAC_TOOL" "$TOP_FILE"); do
     # process each entry under YYYY
     #
     export YYYY_DIR
+    {
     for YYYY_DIR in $(< "$YEAR_FILE"); do
 
 	# debug YYYY
@@ -1096,13 +1100,22 @@ for YYYY in $("$TAC_TOOL" "$TOP_FILE"); do
 	# output markdown for this entry
 	#
 	echo "* <div id=\"${YEAR_DIR}_${ENTRY_DIR}\"><a class=\"normal\" href=\"$YYYY_DIR/index.html\">$YYYY_DIR</a> - $AWARD - <i>$ABSTRACT</i></div>"
-    done | if [[ -z $NOOP ]]; then
+    done
+    if [[ $EXIT_CODE -ne 0 ]]; then
+	exit "$EXIT_CODE"
+    fi
+    } | if [[ -z $NOOP ]]; then
         cat >> "$TMP_YEARS_MD"
     else
         cat > /dev/null
         if [[ $V_FLAG -ge 3 ]]; then
             echo "$0: debug[3]: because of -n, markdown data is NOT written into: $TMP_YEARS_MD" 1>&2
         fi
+    fi
+    status_codes=("${PIPESTATUS[@]}")
+    if [[ ${status_codes[*]} =~ [1-9] ]]; then
+	echo "$0: ERROR: unable to build entry list for $YYYY: ${status_codes[*]}" 1>&2
+	EXIT_CODE="1"
     fi
 
     # write trailing markdown for this IOCCC year
@@ -1154,10 +1167,7 @@ fi
 
 # use the md2html.sh tool to form a years HTML file, unless -n
 #
-if [[ -z $NOOP ]]; then
-    if [[ -n $QUICK_MODE ]]; then
-	quick_html_invalidate "$YEARS_HTML" || exit 1
-    fi
+if [[ -z $NOOP && $EXIT_CODE -eq 0 ]]; then
     if [[ $V_FLAG -ge 1 ]]; then
 	echo "$0: debug[1]: about to run: $MD2HTML_SH ${TOOL_OPTION[*]} -- years.md $TMP_YEARS_MD $YEARS_HTML" 1>&2
     fi
@@ -1168,16 +1178,14 @@ if [[ -z $NOOP ]]; then
 	     "failed, error: $status" 1>&2
 	EXIT_CODE="1"  # exit 1
 	echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-    elif [[ -n $QUICK_MODE && $EXIT_CODE -eq 0 ]]; then
+    else
 	touch "$YEARS_HTML" || exit 1
 	quick_html_record "$YEARS_HTML" years.md || exit 1
-    elif [[ $V_FLAG -ge 3 ]]; then
-	echo "$0: debug[3]: now up to date: $YEARS_HTML" 1>&2
     fi
 
 # report disabled by -n
 #
-elif [[ $V_FLAG -ge 5 ]]; then
+elif [[ -n $NOOP && $V_FLAG -ge 5 ]]; then
     echo "$0: debug[5]: because of -n, did not run: $MD2HTML_SH ${TOOL_OPTION[*]} -- years.md $TMP_YEARS_MD $YEARS_HTML" 1>&2
 fi
 

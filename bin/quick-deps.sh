@@ -10,7 +10,12 @@
 #
 function quick_html_fingerprint
 {
-    local output="$1" match="$2" source_dir date_range year fingerprint
+    local output="$1" match="$2" source_dir date_range year fingerprint generator="$0"
+    # The full and quick entry generators pass equivalent arguments to md2html.
+    case "$generator" in
+	*/readme2index.sh) generator="${generator%readme2index.sh}quick-readme2index.sh" ;;
+	*) ;;
+    esac
     source_dir="${match%/*}"
     [[ $source_dir == "$match" ]] && source_dir="."
     # md2html also honors an inherited DATE_RANGE unless a readable file
@@ -27,7 +32,7 @@ function quick_html_fingerprint
 	set -o pipefail
 	# TOOL_OPTION is supplied by the calling generator.
 	# shellcheck disable=SC2154
-	{ printf '%s\0' "$0" "$match" "${DOCROOT_SLASH-}" "${SITE_URL-}" "${TAGLINE-}" \
+	{ printf '%s\0' "$generator" "$match" "${DOCROOT_SLASH-}" "${SITE_URL-}" "${TAGLINE-}" \
 	    "$date_range" "$year" "${TOOL_OPTION[@]}" && cat "$output"; } | shasum -a 256
     ) || { echo "quick-deps.sh: ERROR: cannot fingerprint $output" 1>&2; return 1; }
     printf '%s\n' "${fingerprint%% *}"

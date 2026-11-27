@@ -104,7 +104,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="2.2.0 2026-11-26"
+export VERSION="2.3.0 2026-11-26"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -450,12 +450,10 @@ elif [[ $V_FLAG -ge 3 ]]; then
 fi
 
 
-# Load the shared quick-build checks before processing any pages.
+# Load the shared per-output prerequisite and record helpers.
 #
-if [[ -n $QUICK_MODE ]]; then
-    # shellcheck source=bin/quick-deps.sh
-    . bin/quick-deps.sh || { echo "$0: ERROR: cannot load bin/quick-deps.sh" 1>&2; exit 1; }
-fi
+# shellcheck source=bin/quick-deps.sh
+. bin/quick-deps.sh || { echo "$0: ERROR: cannot load bin/quick-deps.sh" 1>&2; exit 1; }
 
 # process each year
 #
@@ -657,7 +655,7 @@ for YYYY in $(< "$TOP_FILE"); do
 	    # run the OTHERMD2HTML_SH tool unless -n
 	    #
 	    if [[ -z $NOOP ]]; then
-		if [[ -n $QUICK_MODE ]] && ! quick_html_invalidate "$HTML_FILE"; then
+		if ! quick_html_invalidate "$HTML_FILE"; then
 		    echo "1" > "$TMP_EXIT_CODE"
 		    continue
 		fi
@@ -678,18 +676,10 @@ for YYYY in $(< "$TOP_FILE"); do
 		    continue
 		fi
 
-		# case -Q: (quick mode)
-		#
-		# If we are here, then the early quick mode test indicated that the prerequisite files are newer.
-		# We will force the authors.html file to be touched so that a later run with -Q will quickly exit.
-		# We do this because by default, the md2html.sh tool does not modify the target HTML unless it was modified.
-		#
-		if [[ -n $QUICK_MODE ]]; then
-		    if ! touch "$HTML_FILE" || ! quick_html_record "$HTML_FILE" "$MD_FILE"; then
-			echo "$0: ERROR: unable to record quick build for $HTML_FILE" 1>&2
-			echo "1" > "$TMP_EXIT_CODE"
-			continue
-		    fi
+		if ! touch "$HTML_FILE" || ! quick_html_record "$HTML_FILE" "$MD_FILE"; then
+		    echo "$0: ERROR: unable to record build for $HTML_FILE" 1>&2
+		    echo "1" > "$TMP_EXIT_CODE"
+		    continue
 		fi
 
 	    # report disabled by -n
