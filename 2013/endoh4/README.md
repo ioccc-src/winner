@@ -151,7 +151,7 @@ The `solids` directory includes various solid data:
 - [Johnson solids](http://en.wikipedia.org/wiki/Johnson_solid)
 
 I created the files by using the POV-Ray scripts
-([1](https://en.wikipedia.org/wiki/POV-Ray) and
+([1](https://www.povray.org/download/) and
 [2](http://en.wikipedia.org/wiki/User:AndrewKepert/poly.pov) in Wikipedia.
 They are copyrighted in CC BY-SA 3.0 by "User:Cyp" and "User:AndrewKepert".
 
