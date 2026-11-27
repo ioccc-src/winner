@@ -1821,7 +1821,7 @@ Specification](https://en.wikipedia.org/wiki/Single_UNIX_Specification).
 
 <p class="leftbar">
 You are **well advised** to submit code that conforms to the [Single UNIX
-Specification Version 4](https://unix.org/version4/overview.html).
+Specification Version 4](https://publications.opengroup.org/t101).
 </p>
 
 <p class="leftbar">

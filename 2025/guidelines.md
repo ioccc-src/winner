@@ -1225,7 +1225,7 @@ Specification](https://en.wikipedia.org/wiki/Single_UNIX_Specification)
 (UNIX-like).
 
 You are **well advised** to submit code that conforms to the [Single
-UNIX Specification Version 4](https://unix.org/version4/overview.html).
+UNIX Specification Version 4](https://publications.opengroup.org/t101).
 
 To quote the [Judges](../judges.html):
 
