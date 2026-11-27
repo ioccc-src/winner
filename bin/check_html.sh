@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# check_html.sh - check of HTML is valid
+# check_html.sh - check if HTML is valid
 #
 # Using the `vnu(1)` tool, check if one or more HTML files are valid.
 #
@@ -67,7 +67,7 @@ if [[ -z ${BASH_VERSINFO[0]} ||
     echo "$0: ERROR: bash version needs to be >= 5.1.8: $BASH_VERSION" 1>&2
     echo "$0: Warning: bash version >= 4.2 might work but 5.1.8 was the minimum we tested" 1>&2
     echo "$0: Notice: For macOS users: install Homebrew (see https://brew.sh), then run" \
-	 ""brew install bash" and then modify your \$PATH so that \"#!/usr/bin/env bash\"" \
+	 "\"brew install bash\" and then modify your \$PATH so that \"#!/usr/bin/env bash\"" \
 	 "finds the Homebrew installed (usually /opt/homebrew/bin/bash) version of bash" 1>&2
     exit 4
 fi
@@ -81,8 +81,8 @@ fi
 shopt -s nullglob	# enable expanded to nothing rather than remaining unexpanded
 shopt -u failglob	# disable error message if no matches are found
 shopt -u dotglob	# disable matching files starting with .
-shopt -u nocaseglob	# disable strict case matching
-shopt -u extglob	# enable extended globbing patterns
+shopt -u nocaseglob	# enable strict case matching
+shopt -u extglob	# disable extended globbing patterns
 shopt -s globstar	# enable ** to match all files and zero or more directories and subdirectories
 
 
@@ -106,7 +106,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="1.0.0 2026-11-26"
+export VERSION="1.1.0 2026-11-26"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -114,29 +114,17 @@ VNU_TOOL=$(type -P vnu)
 export VNU_TOOL
 GIT_TOOL=$(type -P git)
 export GIT_TOOL
-if [[ -z "$GIT_TOOL" ]]; then
-    echo "$0: FATAL: git tool is not installed or not in \$PATH" 1>&2
-    exit 5
-fi
-"$GIT_TOOL" rev-parse --is-inside-work-tree >/dev/null 2>&1
-status="$?"
-if [[ $status -eq 0 ]]; then
+if [[ -n $GIT_TOOL ]] && "$GIT_TOOL" rev-parse --is-inside-work-tree >/dev/null 2>&1; then
     TOPDIR=$("$GIT_TOOL" rev-parse --show-toplevel)
 fi
 export TOPDIR
 #
 VERGE=$(type -P verge)
 export VERGE
-if [[ -z $VERGE ]]; then
-    echo "$0: FATAL: verge is not installed or not in \$PATH" 1>&2
-    echo "$0: notice: to install verge:" 1>&2
-    echo "$0: notice: run: git clone https://github.com/ioccc-src/mkiocccentry.git" 1>&2
-    echo "$0: notice: then: cd mkiocccentry && make clobber all" 1>&2
-    echo "$0: notice: then: cd jparse && sudo make install clobber" 1>&2
-    exit 5
-fi
 unset VNU_OPTION
 declare -ag VNU_OPTION
+# Check HTML with warnings treated as errors and retain all diagnostics.
+#
 VNU_OPTION+=("--html")
 VNU_OPTION+=("--Werror")
 VNU_OPTION+=("--format")
@@ -154,8 +142,8 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-n] [-N] [-p vnu_path]
 
     -d topdir       set topdir (def: $TOPDIR)
 
-    -n              go thru the actions, but do not update any files (def: do the action)
-    -N              do not process file, just parse arguments and ignore the file (def: process the file)
+    -n              check the environment and version, but do not run vnu on the files
+    -N              check arguments and environment, but do not validate files
 
     -p vnu_path     path to the vnu tool (not the wrapper) (def: $VNU_TOOL)
 
@@ -163,12 +151,12 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-n] [-N] [-p vnu_path]
 
 Exit codes:
      0         all HTML file(s) are OK
-     1         some HTML file(s) had a HTML validation error
+     1         vnu reported a validation error, warning, or execution failure
      2         -h and help string printed or -V and version string printed
      3         command line error
      4         bash version is too old
      5         some internal tool is not found, version is too old, or not an executable file
-     6         problems found with or in the topdir or topdir/YYYY directory
+     6         problems found with or in the topdir directory
  >= 10         internal error
 
 $NAME version: $VERSION"
@@ -187,7 +175,11 @@ while getopts :hv:Vd:nNp: flag; do
     h) echo "$USAGE" 1>&2
 	exit 2
 	;;
-    v) V_FLAG="$OPTARG"
+    v) if [[ ! $OPTARG =~ ^[0-9]+$ ]]; then
+	    echo "$0: ERROR: verbosity level must be a non-negative integer: $OPTARG" 1>&2
+	    exit 3
+	fi
+	V_FLAG=$((10#$OPTARG))
 	;;
     V) echo "$VERSION"
 	exit 2
@@ -235,25 +227,59 @@ if [[ $# -lt 1 ]]; then
 fi
 
 
-# must have a executable vnu tool
+# Verify required tools after option parsing so -h and -V work without them.
 #
-if [[ -z $VNU_TOOL || ! -x $VNU_TOOL ]]; then
-    echo "$0: FATAL: vnu tool is not installed or not in in \$PATH" 1>&2
+if [[ -z $GIT_TOOL ]]; then
+    echo "$0: FATAL: git tool is not installed or not in \$PATH" 1>&2
+    exit 5
+fi
+if [[ -z $VERGE ]]; then
+    echo "$0: FATAL: verge is not installed or not in \$PATH" 1>&2
+    echo "$0: notice: to install verge:" 1>&2
+    echo "$0: notice: run: git clone https://github.com/ioccc-src/mkiocccentry.git" 1>&2
+    echo "$0: notice: then: cd mkiocccentry && make clobber all" 1>&2
+    echo "$0: notice: then: cd jparse && sudo make install clobber" 1>&2
+    exit 5
+fi
+
+
+# must have an executable vnu tool
+#
+if [[ -n $VNU_TOOL ]]; then
+    VNU_TOOL=$(type -P -- "$VNU_TOOL")
+fi
+if [[ -z $VNU_TOOL || ! -f $VNU_TOOL || ! -x $VNU_TOOL ]]; then
+    echo "$0: FATAL: vnu tool is not installed or not in \$PATH" 1>&2
     echo "$0: notice: for information on how to install vnu, visit" 1>&2
     echo "$0: notice: https://validator.github.io/validator/" 1>&2
     echo "$0: notice: macOS using HomeBrew may install vnu with:" 1>&2
     echo "$0: notice: brew install vnu" 1>&2
     exit 5
 fi
+# Resolve a relative -p before changing to topdir.
+#
+VNU_TOOL_DIR=$(cd -- "$(dirname -- "$VNU_TOOL")" && pwd -P) || {
+    echo "$0: ERROR: cannot resolve vnu tool directory: $VNU_TOOL" 1>&2
+    exit 5
+}
+VNU_TOOL="$VNU_TOOL_DIR/$(basename -- "$VNU_TOOL")"
 
 
 # set the minimum vnu version
 #
 # We tested vnu version 26.11.20 on 2026-11-26, which worked well.
-# Therefore 26.11.20 is the minimum version of pandoc that is allowed.
+# Therefore 26.11.20 is the minimum version of vnu that is allowed.
 #
 export VNU_MIN_VERSION="26.11.20"
-VNU_TOOL_VERSION=$("$VNU_TOOL" --version | head -1 | awk '{print $1;}')
+if ! VNU_TOOL_VERSION=$("$VNU_TOOL" --version); then
+    echo "$0: ERROR: unable to obtain vnu version from: $VNU_TOOL" 1>&2
+    exit 5
+fi
+VNU_TOOL_VERSION=${VNU_TOOL_VERSION%%[[:space:]]*}
+if [[ ! $VNU_TOOL_VERSION =~ ^[0-9]+(\.[0-9]+)+$ ]]; then
+    echo "$0: ERROR: invalid vnu version from $VNU_TOOL: $VNU_TOOL_VERSION" 1>&2
+    exit 5
+fi
 export VNU_TOOL_VERSION
 
 
@@ -300,9 +326,13 @@ fi
 if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: now in directory: $(/bin/pwd)" 1>&2
 fi
+TOPDIR=$(/bin/pwd -P) || {
+    echo "$0: ERROR: cannot determine topdir after changing directory" 1>&2
+    exit 6
+}
 
 
-# verify that we have an bin subdirectory
+# verify that we have a bin subdirectory
 #
 export BIN_SUBDIR="$TOPDIR/bin"
 if [[ ! -d $BIN_SUBDIR ]]; then
@@ -334,7 +364,6 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: GIT_TOOL=$GIT_TOOL" 1>&2
     echo "$0: debug[3]: VNU_TOOL=$VNU_TOOL" 1>&2
     echo "$0: debug[3]: TOPDIR=$TOPDIR" 1>&2
-    echo "$0: debug[3]: VNU_TOOL=$VNU_TOOL" 1>&2
     for index in "${!VNU_OPTION[@]}"; do
 	echo "$0: debug[3]: VNU_OPTION[$index]=${VNU_OPTION[$index]}" 1>&2
     done
@@ -357,10 +386,10 @@ if [[ -n $DO_NOT_PROCESS ]]; then
 fi
 
 
-# verify that the pandoc version is >= the minimum version
+# verify that the vnu version is >= the minimum version
 #
 if ! "$VERGE" "$VNU_TOOL_VERSION" "$VNU_MIN_VERSION"; then
-    echo "$0: ERROR: vnu: $VNU_TOOL version: $VNU_TOOL_VERSION <=" \
+    echo "$0: ERROR: vnu: $VNU_TOOL version: $VNU_TOOL_VERSION is below" \
 	 "minimum allowed: $VNU_MIN_VERSION" 1>&2
     echo "$0: Warning: vnu version must be >= $VNU_MIN_VERSION" 1>&2
     echo "$0: Warning: install a more up to date vnu and/or use -p vnu_tool to refer an up to date vnu" 1>&2
@@ -372,9 +401,9 @@ fi
 #
 if [[ -z $NOOP ]]; then
     if [[ $V_FLAG -ge 1 ]]; then
-	echo "$0: debug[1]: will execute pandoc as: $VNU_TOOL ${VNU_OPTION[*]} $*" 1>&2
+	echo "$0: debug[1]: will execute vnu as: $VNU_TOOL ${VNU_OPTION[*]} -- $*" 1>&2
     fi
-    "$VNU_TOOL" "${VNU_OPTION[@]}" "$@"
+    "$VNU_TOOL" "${VNU_OPTION[@]}" -- "$@"
     status="$?"
     if [[ $status -ne 0 ]]; then
 	echo "$0: ERROR: vnu: $VNU_TOOL exited non-zero: $status" 1>&2
