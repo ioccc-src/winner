@@ -206,7 +206,7 @@ below for more commentary here as well!) and even worse, [ichthyosaurs and
 plesiosaurs](https://en.wikipedia.org/wiki/Journey_to_the_Center_of_the_Earth)
 along with [countless other hazards](https://en.wikipedia.org/wiki/Ignorance).
 And even if you didn't you'd probably die of
-[DHMO](https://www.dhmo.org/facts.html) (let's face it: you've almost certainly
+[DHMO](https://www.dhmo.org/classic/facts.html) (let's face it: you've almost certainly
 been exposed to it and everyone who is exposed to it eventually dies, so much so
 that a [New Zealand MP tried to ban
 it](https://www.nzherald.co.nz/nz/mp-tries-to-ban-water/XM4GJ7XG3WC4ANBIFP2IVFNANE/).

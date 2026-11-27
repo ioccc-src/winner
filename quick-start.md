@@ -2,7 +2,7 @@ This quick start guide is version **29.0.0 2025-11-30**.
 
 <div id="enter_questions">
 <div id="enter">
-# Entering the IOCCC: the bare minimum you need to know
+## Entering the IOCCC: the bare minimum you need to know
 </div>
 </div>
 
@@ -10,7 +10,7 @@ To submit your code to the IOCCC, you **MUST** follow these steps:
 
 
 <div id="step_0">
-## 0. Verify that the IOCCC is pending or open for submissions
+### 0. Verify that the IOCCC is pending or open for submissions
 </div>
 
 First, check the "**[current status of the IOCCC](status.html)**" page to see current contest status.
@@ -27,7 +27,7 @@ See also the [IOCCC news](news.html#news) for more information.
 
 
 <div id="step_1">
-## 1. Read the latest IOCCC rules and review the IOCCC guidelines
+### 1. Read the latest IOCCC rules and review the IOCCC guidelines
 </div>
 
 Please pay close attention to the [official IOCCC rules](next/rules.html).
@@ -39,7 +39,7 @@ suggestions, useful hints, and IOCCC humor.  :-)
 
 <div id="step_2">
 <div id="register">
-## 2. Register for the IOCCC
+### 2. Register for the IOCCC
 </div>
 </div>
 
@@ -57,7 +57,7 @@ IOCCC Judges are **NOT** responsible for delays or lost emails.
 
 
 <div id="step_3">
-## 3. Wait for your submit server username and initial password
+### 3. Wait for your submit server username and initial password
 </div>
 
 <p class="leftbar">
@@ -85,7 +85,7 @@ register again.
 
 
 <div id="step_4">
-## 4. Login to the submit server and change your password
+### 4. Login to the submit server and change your password
 </div>
 
 Using the **Username** and **Initial password** you receive via email in
@@ -110,7 +110,7 @@ Please visit the "**[change your submit server initial password](next/pw-change.
 
 
 <div id="step_5">
-## 5. Obtain and compile the latest mkiocccentry toolkit
+### 5. Obtain and compile the latest mkiocccentry toolkit
 </div>
 
 Once the contest is [open](faq.html#open), download the most recent
@@ -131,7 +131,7 @@ for more details.
 
 
 <div id="step_6">
-## 6. Run the mkiocccentry tool to form your submission tarball
+### 6. Run the mkiocccentry tool to form your submission tarball
 </div>
 
 For more details on `mkiocccentry`, what it is, how to obtain it and how to use
@@ -205,20 +205,18 @@ FAQ on "[obtaining the latest mkiocccentry tools](faq.html#obtaining_mkiocccentr
 the
 FAQ on "[compiling the mkiocccentry tools](faq.html#compiling_mkiocccentry)",
 the
-FAQ on "[installing the mkiocccentry tools](faq.html#installing)"
+FAQ on "[installing the mkiocccentry tools](faq.html#install)"
 and the
 FAQ on "[using the mkiocccentry tools](faq.html#using_mkiocccentry)"
 for more help.
 
 See also the
-FAQ on "[what the minimum required versions are for this
-contest](faq.html#minimum_versions)"
-for more details on how to verify you have the correct versions for this
-contest.
+FAQ on "[obtaining the latest mkiocccentry toolkit](faq.html#obtaining_mkiocccentry)"
+for instructions on updating the toolkit.
 
 <div id="step_7">
 <div id="submit">
-## 7. Upload your submission to the IOCCC submit server
+### 7. Upload your submission to the IOCCC submit server
 </div>
 </div>
 

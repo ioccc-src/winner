@@ -1,4 +1,4 @@
-# 29th International Obfuscated C Code Contest Official Guidelines
+## 29th International Obfuscated C Code Contest Official Guidelines
 
 <p class="leftbar">
 Copyright &copy; 2025 Leonid A. Broukhis and Landon Curt Noll.
@@ -10,7 +10,7 @@ entirety and remains unaltered.  All other uses must receive prior
 permission in writing by [contacting the Judges](../contact.html).
 
 
-# Guidelines Version
+## Guidelines Version
 
 <p class="leftbar">
 These Guidelines are version **29.08 2025-12-02**.
@@ -27,7 +27,7 @@ changes** from **IOCCC28** have been marked.
 </p>
 
 <div id="guidelines">
-# Guidelines
+## Guidelines
 </div>
 
 These [Guidelines](guidelines.html) are **hints** and **suggestions**,
@@ -57,7 +57,7 @@ Be sure to read the [Rules](rules.html).
 
 <div id="guideline1">
 <div id="guideline1-c">
-# Guidelines for [Rule 1 - C program](rules.html#rule1-c)
+## Guidelines for [Rule 1 - C program](rules.html#rule1-c)
 </div>
 </div>
 
@@ -108,7 +108,7 @@ Jump to: [top](#)
 
 <div id="guideline2">
 <div id="guideline2-size">
-# Guidelines for [Rule 2 - Size restrictions](rules.html#rule2-size)
+## Guidelines for [Rule 2 - Size restrictions](rules.html#rule2-size)
 </div>
 </div>
 
@@ -173,7 +173,7 @@ Jump to: [top](#)
 
 <div id="guideline3">
 <div id="guideline3-register">
-# Guidelines for [Rule 3 - Register for the IOCCC](rules.html#rule3-register)
+## Guidelines for [Rule 3 - Register for the IOCCC](rules.html#rule3-register)
 </div>
 </div>
 
@@ -221,7 +221,7 @@ Jump to: [top](#)
 
 <div id="guideline7">
 <div id="guideline7-original">
-# Guidelines for [Rule 7 - Original Work](rules.html#rule7-original-work)
+## Guidelines for [Rule 7 - Original Work](rules.html#rule7-original-work)
 </div>
 </div>
 
@@ -258,7 +258,7 @@ Jump to: [top](#)
 
 <div id="guideline8">
 <div id="guideline8-submitting">
-# Guidelines for [Rule 8 - Submitting requirements](rules.html#rule8-submitting-requirements)
+## Guidelines for [Rule 8 - Submitting requirements](rules.html#rule8-submitting-requirements)
 </div>
 </div>
 
@@ -274,7 +274,7 @@ Jump to: [top](#)
 <div id="guideline9">
 <div id="guideline9-no-interactive-compiling-allowed">
 <div id="guideline9-no-interactive">
-# Guidelines for [Rule 9 - No interactive compiling allowed](rules.html#rule9-no-interactive)
+## Guidelines for [Rule 9 - No interactive compiling allowed](rules.html#rule9-no-interactive)
 </div>
 </div>
 </div>
@@ -309,7 +309,7 @@ Jump to: [top](#)
 
 <div id="guideline11">
 <div id="guideline11-abuse">
-# Guidelines for [Rule 11 - Legal rule abuse](rules.html#rule11-legal-rule-abuse)
+## Guidelines for [Rule 11 - Legal rule abuse](rules.html#rule11-legal-rule-abuse)
 </div>
 </div>
 
@@ -393,7 +393,7 @@ Jump to: [top](#)
 
 <div id="guideline12">
 <div id="guideline12-utf8">
-# Guidelines for [Rule 12 - UTF-8](rules.html#rule12-utf8)
+## Guidelines for [Rule 12 - UTF-8](rules.html#rule12-utf8)
 </div>
 </div>
 
@@ -403,7 +403,7 @@ in `C` code.
 
 <div id="guideline13">
 <div id="guideline13-nocr">
-# Guidelines for [Rule 13 - No carriage returns in prog.c](rules.html#rule13-nocr)
+## Guidelines for [Rule 13 - No carriage returns in prog.c](rules.html#rule13-nocr)
 </div>
 </div>
 
@@ -436,7 +436,7 @@ Jump to: [top](#)
 
 <div id="guideline15">
 <div id="guideline15-gnu-makefile">
-# Guidelines for [Rule 15 - GNU Makefile](rules.html#rule15-gnu-makefile)
+## Guidelines for [Rule 15 - GNU Makefile](rules.html#rule15-gnu-makefile)
 </div>
 </div>
 
@@ -470,7 +470,7 @@ Jump to: [top](#)
 
 <div id="guideline17">
 <div id="guideline17-mkiocccentry">
-# Guidelines for [Rule 17 - Use mkiocccentry](rules.html#rule17-mkiocccentry)
+## Guidelines for [Rule 17 - Use mkiocccentry](rules.html#rule17-mkiocccentry)
 </div>
 </div>
 
@@ -586,14 +586,14 @@ Jump to: [top](#)
 
 <div id="general">
 <div id="general-guidelines">
-# General Guidelines
+## General Guidelines
 </div>
 </div>
 
 
 <div id="general-overall-guidelines">
 <div id="overall-guidelines">
-## Overall Guidelines
+### Overall Guidelines
 </div>
 </div>
 
@@ -728,7 +728,7 @@ Jump to: [top](#)
 
 <div id="likes">
 <div id="dislikes">
-## Our Likes and Dislikes
+### Our Likes and Dislikes
 </div>
 </div>
 
@@ -832,7 +832,7 @@ Jump to: [top](#)
 
 
 <div id="about-cpp">
-### About C preprocessor
+#### About C preprocessor
 </div>
 
 Doing masses of `#define`s to obscure the source has become 'old'.  We
@@ -873,7 +873,7 @@ in a C preprocessor directive must be the 1st non-whitespace byte.
 
 
 <div id="about-compilers">
-### About compilers
+#### About compilers
 </div>
 
 We tend to **like _less_** a submission that requires either `gcc`
@@ -889,7 +889,7 @@ really obscure compiler flags if you can help it.
 
 
 <div id="nested-functions">
-### About nested functions
+#### About nested functions
 </div>
 
 One side effect of the above is that you cannot assume the use of
@@ -915,7 +915,7 @@ We **DISLIKE** submissions that require the use of
 
 
 <div id="about-variadic-functions">
-### About variadic functions
+#### About variadic functions
 </div>
 
 If your submission uses functions that have a variable number of
@@ -937,14 +937,14 @@ We **DISLIKE** the use of `varargs.h`.  Use `stdarg.h` instead.
 
 
 <div id="about-io">
-### About I/O functions
+#### About I/O functions
 </div>
 
 We **DISLIKE** the use of `gets(3)`.  Use `fgets(3)` instead.
 
 
 <div id="about-tarballs">
-### About tarballs
+#### About tarballs
 </div>
 
 We tend to **DISLIKE** the blatant use of tarballs in an attempt to
@@ -955,7 +955,7 @@ file.
 
 <div id="gotos">
 <div id="goto">
-### On `goto`s
+#### On `goto`s
 </div>
 </div>
 
@@ -967,7 +967,7 @@ unlikely to make it through the final rounds, if it even gets that far.
 
 <div id="about-stdib">
 <div id="about-exit">
-### About `exit(3)`
+#### About `exit(3)`
 </div>
 </div>
 
@@ -977,7 +977,7 @@ returns a `void`.
 
 
 <div id="small">
-### What it means to be small
+#### What it means to be small
 </div>
 
 Small programs are best when they are short, obscure and concise.
@@ -995,14 +995,14 @@ source.  The smallest, a [zero byte entry](../1994/smr/index.html), won in
 [1994](../years.html#1994).
 
 <div id="one-liner">
-## What a one-liner means
+### What a one-liner means
 </div>
 
 One line programs should be short one line programs: say around **80**
 to **132** bytes long.  Going well beyond **132** bytes is a bit too
 long to be called a one-liner in our vague opinion.
 <div id="blobs">
-## About blobs of code
+### About blobs of code
 </div>
 
 We want to get away from source that is simply a compact blob of
@@ -1013,7 +1013,7 @@ Unless you are cramped for space, or unless you are entering the
 in a more creative way than simply forming excessively long lines.
 
 <div id="size">
-## About size restrictions
+### About size restrictions
 </div>
 
 The `Makefile` should not be used to try and get around the size limit.
@@ -1030,7 +1030,7 @@ Your source code, post-pre-processing, should not exceed the size of
 
 
 <div id="about-environment">
-### About environment
+#### About environment
 </div>
 
 The program must compile and link cleanly in a [Single UNIX
@@ -1089,7 +1089,7 @@ support 32-bit, and more than zero Judges use it!
 
 
 <div id="about-x">
-### About X
+#### About X
 </div>
 
 X client submissions should be as portable as possible.  Submissions
@@ -1127,7 +1127,7 @@ manager.
 
 
 <div id="about-curses">
-### About libcurses
+#### About libcurses
 </div>
 
 One should restrict libcurses to portable features found on both BSD
@@ -1142,7 +1142,7 @@ Jump to: [top](#)
 
 
 <div id="about_tab">
-### About ASCII TAB
+#### About ASCII TAB
 </div>
 
 We **DISLIKE** the use of ASCII tab characters in markdown files, such
@@ -1170,7 +1170,7 @@ and the FAQ on "[markdown](../faq.html#markdown)".
 Jump to: [top](#)
 
 <div id="remarks">
-### About remarks.md
+#### About remarks.md
 </div>
 
 You are better off explaining what your submission does in your
@@ -1215,7 +1215,7 @@ Jump to: [top](#)
 
 
 <div id="miscellaneous">
-### Miscellaneous
+#### Miscellaneous
 </div>
 
 While we recognize that UNIX is not a universal operating system, the
@@ -1225,7 +1225,7 @@ Specification](https://en.wikipedia.org/wiki/Single_UNIX_Specification)
 (UNIX-like).
 
 You are **well advised** to submit code that conforms to the [Single
-UNIX Specification Version 4](https://unix.org/version4/overview.html).
+UNIX Specification Version 4](https://publications.opengroup.org/t101).
 
 To quote the [Judges](../judges.html):
 
@@ -1309,7 +1309,7 @@ Jump to: [top](#)
 
 <div id="mkiocccentry">
 <div id="mkiocccentry_toolkit">
-## Guidelines for the mkiocccentry toolkit
+### Guidelines for the mkiocccentry toolkit
 </div>
 </div>
 
@@ -1574,7 +1574,7 @@ Jump to: [top](#)
 
 
 <div id="fun">
-## Fun😄damental Guidelines
+### Fun😄damental Guidelines
 </div>
 
 The reason for the times of day are so that key IOCCC events are
@@ -1727,7 +1727,7 @@ Jump to: [top](#)
 
 <div id="more-information">
 <div id="information">
-# Further Reading
+## Further Reading
 </div>
 </div>
 

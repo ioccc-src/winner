@@ -2177,7 +2177,7 @@ It was observed that on modern systems this goes much too quick. [Yusuke](#yusuk
 a patch that calls `usleep(3)` but [Cody](#cody) thought the value was too slow so he
 made it a macro in the `Makefile` `Z` (which can be redefined with `make
 SLEEP=...`), defaulting at 15000. This was made an [alternate
-version](1992/kivinen/index.html#alternate-code) and it is recommended one use
+version](1992/kivinen/index.html#inventory) and it is recommended one use
 the alternate version first. See the index.html file to see how to reconfigure it.
 
 Cody also made the fixed version (the code relied on `exit(3)` returning to use
@@ -2674,7 +2674,7 @@ generate code that compile and another [one with a bigger buffer
 size](%%REPO_URL%%/1994/schnitzi/schnitzi.alt2.c) which, when fed its own source code, will
 generate compilable code but not with the same buffer size but rather the
 original buffer size. Cody explains this at [1994/schnitzi in
-bugs.html](bugs.html#1994-schnitzi). See also the
+bugs.html](bugs.html#1994_schnitzi). See also the
 FAQ on "[alternate code](faq.html#alt_code)"
 for more details.
 

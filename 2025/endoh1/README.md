@@ -57,7 +57,7 @@ with [Nixie tubes](https://en.wikipedia.org/wiki/Nixie_tube).
 Look at the [2025/endoh1/prog.c source
 code](%%REPO_URL%%/2025/endoh1/prog.c).  What else lies below the
 surface of the source code?  That is a significant challenge, even if you
-[clang-format](https://commandmasters.com/commands/clang-format-common/)
+[clang-format](https://clang.llvm.org/docs/ClangFormat.html)
 to view the code.
 
 Running the [2025/endoh1/try.sh shell script](%%REPO_URL%%/2025/endoh1/try.sh)

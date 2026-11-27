@@ -97,7 +97,7 @@ This program is quite portable, only requiring the following:
 * Overflow and underflow on `char` should wrap around, if your `char` is unsigned.
 * [A trustworthy compiler][trustingtrust].
 
-[trustingtrust]: http://cm.bell-labs.com/who/ken/trust.html
+[trustingtrust]: https://dn711005.ca.archive.org/0/items/reflections-on-trusting-trust/Image092317125507_text.pdf
 
 The design of the program explicitly allows for `EOF` even if it does not equal
 `-1` (it has to be negative per the standard but not necessarily `-1`) and both

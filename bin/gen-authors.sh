@@ -116,7 +116,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="2.2.0 2026-11-16"
+export VERSION="2.5.0 2026-11-26"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -610,13 +610,19 @@ fi
 
 # case: -Q (quick mode)
 #
-# Do nothing if authors.html is newer than all author/author_handle.json files.
+# Check metadata and all tools that contribute to authors.html.
 #
+# shellcheck source=bin/quick-deps.sh
+. bin/quick-deps.sh || { echo "$0: ERROR: cannot load bin/quick-deps.sh" 1>&2; exit 1; }
 if [[ -n $QUICK_MODE ]]; then
-    NEWER=$(find "$AUTHOR_DIR" -mindepth 1 -maxdepth 1 -type f -name '*.json' -newer "$AUTHORS_HTML" 2>/dev/null)
-    if [[ -z $NEWER ]]; then
+    if quick_html_current "$AUTHORS_HTML" authors.md "$AUTHOR_DIR" "$AUTHOR_DIR"/*.json \
+	 [12][0-9][0-9][0-9]/*/.entry.json "$0" "$JVAL_WRAPPER" "$COMBINE_AUTHOR" \
+	 "$LOCATION_TOOL"; then
 	exit 0
     fi
+fi
+if [[ -z $NOOP ]]; then
+    quick_html_invalidate "$AUTHORS_HTML" || exit 1
 fi
 
 
@@ -690,6 +696,11 @@ export PATTERN='.//sort_word'
 	exit 14
     fi
 } | LC_ALL=C sort -f -d > "$TMP_SORT_WORD"
+status_codes=("${PIPESTATUS[@]}")
+if [[ ${status_codes[*]} =~ [1-9] ]]; then
+    echo "$0: ERROR: unable to build author sort list: ${status_codes[*]}" 1>&2
+    exit 14
+fi
 
 
 # generate the temporary entry markdown file
@@ -1014,6 +1025,11 @@ else
         echo "$0: debug[3]: because of -n, temporary entry markdown file is NOT written into: $TMP_AUTHORS_MD" 1>&2
     fi
 fi
+status_codes=("${PIPESTATUS[@]}")
+if [[ ${status_codes[*]} =~ [1-9] ]]; then
+    echo "$0: ERROR: unable to build author Markdown: ${status_codes[*]}" 1>&2
+    exit 1
+fi
 
 
 # use the md2html.sh tool to update authors.html, unless -n
@@ -1036,14 +1052,11 @@ if [[ -z $NOOP ]]; then
 	echo "$0: debug[3]: now up to date: $AUTHORS_HTML" 1>&2
     fi
 
-    # case -Q: (quick mode)
+    # Mark successfully generated output current even when its contents did not change.
     #
-    # If we are here, then the early quick mode test indicated that the prerequisite files are newer.
-    # We will force the authors.html file to be touched so that a later run with -Q will quickly exit.
-    # We do this because by default, the md2html.sh tool does not modify the target HTML unless it was modified.
-    #
-    if [[ -n $QUICK_MODE ]]; then
-	touch "$AUTHORS_HTML"
+    if [[ $status -eq 0 && $EXIT_CODE -eq 0 ]]; then
+	touch "$AUTHORS_HTML" || exit 1
+	quick_html_record "$AUTHORS_HTML" authors.md || exit 1
     fi
 
 # report disabled by -n

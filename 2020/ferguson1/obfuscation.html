@@ -468,7 +468,7 @@
 <!-- START: this line starts content for HTML phase 21 by: bin/pandoc-wrapper.sh via bin/md2html.sh -->
 
 <!-- BEFORE: 1st line of markdown file: 2020/ferguson1/obfuscation.md -->
-<h1 id="introduction-and-deobfuscation">Introduction and Deobfuscation</h1>
+<h2 id="introduction-and-deobfuscation">Introduction and Deobfuscation</h2>
 <p>In the <a href="gameplay.html">gameplay.html</a> file I have given enough
 information to know how the game looks, how to move the snake, how to pause etc.
 In this file I am including (some) information on how the game actually works:
@@ -495,7 +495,7 @@ already knew that so no harm there, hey?</p>
 </ul>
 </div>
 <section id="works">
-<h1 id="how-does-it-work"><a href="#toc">How does it work?</a></h1>
+<h2 id="how-does-it-work"><a href="#toc">How does it work?</a></h2>
 </section>
 <p>The gameplay I have already described but this explains the way things are
 actually done in more detail.</p>
@@ -558,7 +558,7 @@ location is updated and redrawn.</p>
 bug the snake will not shed; if it sheds the snake will not move in the same
 manner as if it simply moved. Growth/movement can in some ways be conflated.</p>
 <section id="movement">
-<h1 id="how-does-the-snake-movement-work"><a href="#toc">How does the snake movement work?</a></h1>
+<h2 id="how-does-the-snake-movement-work"><a href="#toc">How does the snake movement work?</a></h2>
 </section>
 <p>The way the snake looks to move is that every time the snake moves the last
 position (the tail) is replaced with a space (<code>' '</code>). If the snake eats a bug
@@ -569,7 +569,7 @@ moving at the tail end; I have discussed this more than enough elsewhere.</p>
 positions that are shifted forward as the snake moves about the field looking
 for bugs.</p>
 <section id="manual-automatic">
-<h1 id="drawing-manual-and-computer-playing-automatic-modes"><a href="#toc">Drawing (manual) and computer playing (automatic) modes</a></h1>
+<h2 id="drawing-manual-and-computer-playing-automatic-modes"><a href="#toc">Drawing (manual) and computer playing (automatic) modes</a></h2>
 </section>
 <p>How do these modes work? The <code>timeout()</code> function takes a signed int: if it’s <code>&lt; 0</code> it waits indefinitely; if it’s <code>0</code> it returns immediately even if there’s no
 input waiting (if input is there then it’s used instead); and if it’s <code>&gt; 0</code> it
@@ -578,7 +578,7 @@ over the snake’s movement (speed and otherwise), a value of <code>0</code> mea
 will move as long as it’s not paused etc. and otherwise it waits up to that many
 milliseconds (which is how the <code>0</code> value comes into play).</p>
 <section id="collision">
-<h1 id="collision-detection"><a href="#toc">Collision detection</a></h1>
+<h2 id="collision-detection"><a href="#toc">Collision detection</a></h2>
 </section>
 <p>This was an interesting thing to work out. Because the snake could occupy more
 than one row and more than one column at a time the two arrays approach seemed
@@ -591,7 +591,7 @@ or the bug.</p>
 are very flexible and cunning who can tell what might happen? As I noted <em>these
 bugs are not bugs! :)</em></p>
 <section id="cannibalcollision">
-<h2 id="cannibal-collision-detection"><a href="#toc">Cannibal collision detection</a></h2>
+<h3 id="cannibal-collision-detection"><a href="#toc">Cannibal collision detection</a></h3>
 </section>
 <p>How does cannibalism change collision detection? The fact that each time the
 snake function is called there is a space printed at the tail end was a problem
@@ -617,7 +617,7 @@ mode exists for a different kind of play means it should look unnatural: for it
 other. This can also appear to defy physics!</p>
 <p>Choose your poison. Or rather your venom.</p>
 <section id="resizing">
-<h2 id="collision-detection-when-resizing-the-window-of-the-game"><a href="#toc">Collision detection when resizing the window of the game</a></h2>
+<h3 id="collision-detection-when-resizing-the-window-of-the-game"><a href="#toc">Collision detection when resizing the window of the game</a></h3>
 </section>
 <p>What happens if the window is resized during the game? If the size is increased
 then the border can (and will) stay the same; but if the window is shrunk then
@@ -632,7 +632,7 @@ remain the same. This GREATLY simplified things.</p>
 <p>There was another problem at some point where the snake would quickly grow if it
 was increased in size but I believe that’s resolved. Anyway what kind of field
 in real life increases in size like that so suddenly? :)</p>
-<h1 id="obfuscation"><a href="#toc">Obfuscation</a></h1>
+<h2 id="obfuscation"><a href="#toc">Obfuscation</a></h2>
 <ul>
 <li><p>I make use of the C token pasting operator. Although this is well known it’s
 probably less known and either way it’s not as simple as just having the code
@@ -1022,7 +1022,7 @@ then what is <code>V</code> anyway? It’s <code>U + 1</code>; and <code>U</code
 of the compound literal! So there are quite a lot of levels of indirection
 in this part alone (not to mention other places)!</p></li>
 </ul>
-<h1 id="obfuscation-in-prog.3.c-and-prog.3-j.c">Obfuscation in <a href="https://github.com/ioccc-src/winner/blob/master/2020/ferguson1/prog.3.c">prog.3.c</a> and <a href="https://github.com/ioccc-src/winner/blob/master/2020/ferguson1/prog.3-j.c">prog.3-j.c</a></h1>
+<h2 id="obfuscation-in-prog.3.c-and-prog.3-j.c">Obfuscation in <a href="https://github.com/ioccc-src/winner/blob/master/2020/ferguson1/prog.3.c">prog.3.c</a> and <a href="https://github.com/ioccc-src/winner/blob/master/2020/ferguson1/prog.3-j.c">prog.3-j.c</a></h2>
 <p>There are a few differences in this version that are worth noting. First of all
 is a define that’s in the compiler invocation Makefile is in the source file
 itself. Second are the following obfuscation techniques. To simplify integrating
@@ -1098,7 +1098,7 @@ the file based on the 120 columns total. I believe I have succeeded in that
 though again maybe I have an off by one or two here and/or there.</p>
 <p>Most of the primes above were intentional.</p>
 <section id="skinning">
-<h1 id="skinning-the-snake-i.e.-decreasing-the-iocccsize"><a href="#toc">Skinning the snake (i.e. decreasing the iocccsize)</a></h1>
+<h2 id="skinning-the-snake-i.e.-decreasing-the-iocccsize"><a href="#toc">Skinning the snake (i.e. decreasing the iocccsize)</a></h2>
 </section>
 <p>This happened in a number of ways and I have already documented some in other
 parts. Now there are a number of reasons to do this: amongst them to make it
@@ -1138,7 +1138,7 @@ add additional features and also to add proper error reporting (when <code>callo
 failed I called <code>abort()</code> and before that if initialising ncurses failed I also
 called <code>abort()</code> and did not report any errors in either event but I do now).</p>
 <section id="size">
-<h1 id="a-few-more-interesting-size-optimisations"><a href="#toc">A few more interesting size optimisations</a></h1>
+<h2 id="a-few-more-interesting-size-optimisations"><a href="#toc">A few more interesting size optimisations</a></h2>
 </section>
 <p>As I was getting to the end of obfuscation (wrt size available - and it was
 getting pretty obfuscated too - the majority of the techniques were already in

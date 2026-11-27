@@ -146,7 +146,7 @@ although it's actually something else entirely now, hence the name change (not
 Very early on (this took me two months to create) I was making this a C version
 of the BASIC game from 1978 that was published in the July-August 1978 issue of
 Creative Computing (see
-<https://raw.githubusercontent.com/clintmoyer/oregon-trail/master/OREGON.bas>)
+<https://archive.org/details/creative-computing-july-august-1978/Creative_Computing_July_August_1978/>)
 but that was FAR TOO BORING for the IOCCC - and for me, although part of that
 was thought up after I ran into the size restrictions (this was good because I
 came up with some really clever ways to save bytes, hide data and other things).

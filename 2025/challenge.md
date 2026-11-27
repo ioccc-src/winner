@@ -87,7 +87,7 @@ Explain the purpose of the constant `9018655` as used in `prog.c`.
 
 
 <div id="diels-grabsch_solution">
-#### Fun challenge solution for [2025/diels-grabsch](diels-grabsch/index.html)
+### Fun challenge solution for [2025/diels-grabsch](diels-grabsch/index.html)
 </div>
 
 [Antoine Mathys](https://github.com/antoine-mathys) on **2026 Oct 31** presented this **2025/diels-grabsch fun challenge solution**:
@@ -455,7 +455,7 @@ Explain how the argument to `./prog` determines if input is encoded or decoded.
 
 
 <div id="mattpep_solution">
-#### Fun challenge solution for [2025/mattpep](mattpep/index.html)
+### Fun challenge solution for [2025/mattpep](mattpep/index.html)
 </div>
 
 [Antoine Mathys](https://github.com/antoine-mathys) on **2026 Nov 7** presented this **2025/mattpep fun challenge solution**:

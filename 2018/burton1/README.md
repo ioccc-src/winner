@@ -215,7 +215,7 @@ but `pcc` handles them correctly, and neither compiler accepts `char o[]` or
 `char o[0]` and neither put the bytes in a zero-filled page (as a paged VM was
 not yet written for UNIX).
 
-[1]: http://minnie.tuhs.org/cgi-bin/utree.pl
+[1]: https://www.tuhs.org/cgi-bin/utree.pl?file=V7
 [2]: https://web.archive.org/web/20180521074522/http://www.computerworld.com.au/article/279011/a-z_programming_languages_bourne_shell_sh/?pp=4
 
 More significant is that v7 `printf(3)` does not report the number of characters

@@ -1954,7 +1954,7 @@ operator so that it could be used in binary expressions.</p>
 </section>
 <p>It was observed that on modern systems this goes much too quick. <a href="#yusuke">Yusuke</a> created
 a patch that calls <code>usleep(3)</code> but <a href="#cody">Cody</a> thought the value was too slow so he
-made it a macro in the <code>Makefile</code> <code>Z</code> (which can be redefined with <code>make SLEEP=...</code>), defaulting at 15000. This was made an <a href="1992/kivinen/index.html#alternate-code">alternate
+made it a macro in the <code>Makefile</code> <code>Z</code> (which can be redefined with <code>make SLEEP=...</code>), defaulting at 15000. This was made an <a href="1992/kivinen/index.html#inventory">alternate
 version</a> and it is recommended one use
 the alternate version first. See the index.html file to see how to reconfigure it.</p>
 <p>Cody also made the fixed version (the code relied on <code>exit(3)</code> returning to use
@@ -2294,7 +2294,7 @@ fgets_()</a> but when fed its own source code cannot
 generate code that compile and another <a href="https://github.com/ioccc-src/winner/blob/master/1994/schnitzi/schnitzi.alt2.c">one with a bigger buffer
 size</a> which, when fed its own source code, will
 generate compilable code but not with the same buffer size but rather the
-original buffer size. Cody explains this at <a href="bugs.html#1994-schnitzi">1994/schnitzi in
+original buffer size. Cody explains this at <a href="bugs.html#1994_schnitzi">1994/schnitzi in
 bugs.html</a>. See also the
 FAQ on “<a href="faq.html#alt_code">alternate code</a>”
 for more details.</p>

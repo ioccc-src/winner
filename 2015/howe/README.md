@@ -140,7 +140,7 @@ a region of edits are highly unlikely.
 
 Wu, Manber, Myers, and Miller; August 1989;<br>
 "An O(NP) Sequence Comparison Algorithm";<br>
-<http://myerslab.mpi-cbg.de/wp-content/uploads/2014/06/np_diff.pdf>
+<https://www.sciencedirect.com/science/article/abs/pii/002001909090035V>
 
 Fowler, Noll, Vo; 1994<br>
 <http://www.isthe.com/chongo/tech/comp/fnv/index.html>
@@ -167,7 +167,7 @@ Comm. of ACM, Vol. 18, June 1975, pages 341-343<br>
 Which hashing algorithm is best for uniqueness and speed?<br>
 <http://programmers.stackexchange.com/questions/49550/which-hashing-algorithm-is-best-for-uniqueness-and-speed>
 
-[Wu+89]: http://myerslab.mpi-cbg.de/wp-content/uploads/2014/06/np_diff.pdf
+[Wu+89]: https://www.sciencedirect.com/science/article/abs/pii/002001909090035V
 
 [FNV94]: http://www.isthe.com/chongo/tech/comp/fnv/index.html
 

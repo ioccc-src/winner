@@ -852,7 +852,7 @@ change the rest of the text. If you wish to see how I went about this see
 [1998 ASCII / Morse code translator]: ../../1998/dorssel/index.html
 [2014 Morse audio transcoder]: ../../2014/vik/index.html
 [Enigma Message Procedures]: https://web.archive.org/web/20200710094321/http://users.telenet.be/d.rijmenants/en/enigmaproc.htm
-[Interactive Enigma Machine]: http://enigmaco.de/enigma/enigma.html
+[Interactive Enigma Machine]: https://shadowenigma.com/simulator
 [enigma.1]: enigma.1
 [recode.1]: recode.1
 [recode.html]: recode.html
@@ -886,7 +886,7 @@ Otterness](../../authors.html#Nathan_Otterness), [Nicholas
 Carlini](../../authors.html#Nicholas_Carlini) (your entry is an absolutely brilliant
 abuse of `printf` - and I totally agree with the judges remarks that your entry
 is so novel that it'll be worth special mention in the future Best of IOCCC
-list!) and [tsoj](../../authors.html#_tsoj) too.
+list!) and [tsoj](../../authors.html#Tsoj) too.
 
 Well done and congratulations to all of you again!  Thank you for submitting the
 wonderful entries and I'm honoured to have my two entries beside yours!

@@ -34,7 +34,7 @@ where `file` is one of:
 
 **NOTE**: you cannot specify a different width from height; it's one number.
 
-**NOTE**: `convert(1)` belongs to [ImageMagick](https://imagemagick.org/index.php).
+**NOTE**: `convert(1)` belongs to [ImageMagick](https://imagemagick.org/#gsc.tab=0).
 
 
 ## Try:

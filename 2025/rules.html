@@ -14,6 +14,18 @@
 <link rel="icon" type="image/x-icon" href="../favicon.ico">
 <meta name="description" content="Archive of IOCCC Rules">
 <meta name="keywords" content="IOCCC, rules, Rules">
+<link rel="canonical" href="https://www.ioccc.org/2025/rules.html">
+<meta property="og:site_name" content="IOCCC">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.ioccc.org/2025/rules.html">
+<meta property="og:title" content="The International Obfuscated C Code Contest">
+<meta property="og:description" content="Archive of IOCCC Rules">
+<meta property="og:image" content="https://www.ioccc.org/png/ioccc-card-1280.png">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="720">
+<meta property="og:image:alt" content="The International Obfuscated C Code Contest">
+<!-- While many platforms use twitter:card, the IOCCC doesn't use Twitter -->
+<meta name="twitter:card" content="summary_large_image">
 </head>
 
 <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
@@ -429,8 +441,11 @@
   <a href="../2011/zucker/index.html">
       <img src="../png/ioccc.png"
 	   alt="IOCCC image by Matt Zucker"
-	   width=300
-	   height=110>
+	   width=400
+	   height=147
+       sizes="(max-width: 2000px) 400px, 20vw"
+       srcset="../png/ioccc.png 400w, ../png/ioccc-600.png 600w, ../png/ioccc-900.png 900w"
+      >
   </a>
   <h1>The International Obfuscated C Code Contest</h1>
   <h2>Archive of IOCCC Rules</h2>
@@ -491,9 +506,9 @@ Because the <strong>IOCCC29</strong> rules was a substantial rewrite, only
 <strong>important changes</strong> from <strong>IOCCC28</strong> have been marked.
 </p>
 <p>Reminder: be SURE to read the <a href="guidelines.html">IOCCC guidelines</a>.</p>
-<div id="rule0">
+<section id="rule0">
 <h2 id="rule-0---dates">Rule 0 - Dates</h2>
-</div>
+</section>
 <p class="leftbar">
 This IOCCC runs from <code>2025-12-03 20:25:12.045045 UTC</code> to <code>2026-03-13 17:19:23.293137 UTC</code>.
 </p>
@@ -523,9 +538,9 @@ know</a>.</p>
 FAQ on “<a href="../faq.html#feedback">How can I comment or make a suggestion on IOCCC rules,
 guidelines and tools?</a>”.</p>
 <div id="rule1">
-<div id="rule1-c">
+<section id="rule1-c">
 <h2 id="rule-1---c-program">Rule 1 - C program</h2>
-</div>
+</section>
 </div>
 <p class="leftbar">
 Your submission <strong>MUST</strong> be a C program.
@@ -534,9 +549,9 @@ Your submission <strong>MUST</strong> be a C program.
 program</a>.</p>
 <div id="rule2">
 <div id="rule2-size-restrictions">
-<div id="rule2-size">
+<section id="rule2-size">
 <h2 id="rule-2---size-restrictions">Rule 2 - Size restrictions</h2>
-</div>
+</section>
 </div>
 </div>
 <p><code>Rule 2</code> requires that your submission satisfy <strong>BOTH</strong> <a href="rules.html#rule2a">Rule 2a
@@ -547,26 +562,26 @@ Size)</a>.</p>
 <p>See the <a href="guidelines.html#guideline2-size">Guidelines for Rule 2 - Size
 restrictions</a>.</p>
 <div id="rule2a">
-<div id="rule2a-gross-size">
+<section id="rule2a-gross-size">
 <h3 id="rule-2a---gross-size">Rule 2a - Gross Size</h3>
-</div>
+</section>
 </div>
 <p>The overall maximum size of your <code>prog.c</code> program source <strong>MUST NOT</strong>
 exceed <strong>4993</strong> bytes.</p>
 <p>See <a href="../quick-start.html#enter">Entering the IOCCC: the bare minimum you need to
 know</a>.</p>
 <div id="rule2b">
-<div id="rule2b-net-size">
+<section id="rule2b-net-size">
 <h3 id="rule-2b---net-size">Rule 2b - Net Size</h3>
-</div>
+</section>
 </div>
 <p>Check your source code using the latest official IOCCC size tool,
 <code>iocccsize(1)</code>. The value printed <strong>MUST NOT</strong> exceed <strong>2503</strong>.</p>
 <p>See <a href="#rule17-mkiocccentry">Rule 17 - Use mkiocccentry</a>.</p>
 <div id="rule3">
-<div id="rule3-register">
+<section id="rule3-register">
 <h2 id="rule-3---register-for-the-ioccc">Rule 3 - Register for the IOCCC</h2>
-</div>
+</section>
 </div>
 <p>You <strong>MUST</strong> register, using a valid email address, in order to submit
 to the IOCCC. You may register while the contest is <strong>pending</strong> or
@@ -579,9 +594,9 @@ know</a>.</p>
 <p>See <a href="guidelines.html#guideline3-register">Guidelines for Rule 3 - Register for the
 IOCCC</a>.</p>
 <div id="rule4">
-<div id="rule4-required-files">
+<section id="rule4-required-files">
 <h2 id="rule-4---required-files">Rule 4 - Required files</h2>
-</div>
+</section>
 </div>
 <p class="leftbar">
 Your submission <strong>MUST</strong> include at least these files: <code>Makefile</code>,
@@ -680,9 +695,9 @@ Makefile?</a>”.</p>
 <p>See the <a href="guidelines.html#mkiocccentry_toolkit">Guidelines on the mkiocccentry
 toolkit</a>.</p>
 <div id="rule5">
-<div id="rule5-modifying-files">
+<section id="rule5-modifying-files">
 <h2 id="rule-5---do-not-modify-submitted-files-filenames-or-parent-directories">Rule 5 - Do NOT modify submitted files, filenames or parent directories</h2>
-</div>
+</section>
 </div>
 <p>Your submission <strong>MUST NOT</strong> modify the filenames or content of any of
 your original submission, such as <code>prog.c</code>, <code>Makefile</code>, or <strong>ANY</strong>
@@ -702,9 +717,9 @@ Your code should be able to run under a <a href="https://pubs.opengroup.org/onli
 environment</a>.
 </p>
 <div id="rule6">
-<div id="rule6-free-rule">
+<section id="rule6-free-rule">
 <h2 id="rule-6---free-rule">Rule 6 - Free Rule</h2>
-</div>
+</section>
 </div>
 <p>I am <strong>NOT</strong> a Rule, I am a <code>free(void *human);</code> ‼️</p>
 <pre><code>    while (!(ioccc(rule(you(are(number(6)))))) {
@@ -712,9 +727,9 @@ environment</a>.
     }</code></pre>
 <p>See <a href="rules.html#rule19-prime">Rule 19 - Prime</a>.</p>
 <div id="rule7">
-<div id="rule7-original-work">
+<section id="rule7-original-work">
 <h2 id="rule-7---original-work">Rule 7 - Original Work</h2>
-</div>
+</section>
 </div>
 <p class="leftbar">
 You, the author(s), <strong>MUST</strong> own the contents of your submission, <strong>OR</strong>, IF you
@@ -731,9 +746,9 @@ and
 <a href="guidelines.html#guideline7-original">Guidelines for Rule 7 - Original
 Work</a>.</p>
 <div id="rule8">
-<div id="rule8-submitting-requirements">
+<section id="rule8-submitting-requirements">
 <h2 id="rule-8---submitting-requirements">Rule 8 - Submitting requirements</h2>
-</div>
+</section>
 </div>
 <p>The submit server will accept submissions <strong>ONLY</strong> from those who have
 registered and <strong>ONLY</strong> while the contest is open and <strong>ONLY</strong> after
@@ -762,9 +777,9 @@ and
 <p>See <a href="guidelines.html#guideline8-submitting">Guidelines for Rule 8 - Submitting
 requirements</a>.</p>
 <div id="rule9">
-<div id="rule9-no-interactive">
+<section id="rule9-no-interactive">
 <h2 id="rule-9---no-interactive-compiling-allowed">Rule 9 - No interactive compiling allowed</h2>
-</div>
+</section>
 </div>
 <p>Entries requiring human interaction to be initially compiled are <strong>NOT</strong>
 permitted. However, see the <a href="guidelines.html#guideline9-no-interactive">guidelines on rule
@@ -783,9 +798,9 @@ this makes your program more portable.</p>
 <p>See <a href="rules.html#rule15-gnu-makefile">Rule 15 - GNU Makefile</a>.</p>
 <p>See <a href="guidelines.html#guideline9-no-interactive">Guidelines for Rule 9 - No interactive compiling
 allowed</a>.</p>
-<div id="rule10">
+<section id="rule10">
 <h2 id="rule-10---program-file-permissions">Rule 10 - Program file permissions</h2>
-</div>
+</section>
 <p>Programs that require special privileges (<code>setuid(2)</code>, <code>setgid(2)</code>,
 super-user, special owner, special group, etc.) are <strong>HIGHLY
 DISCOURAGED</strong>. We do <strong>NOT</strong> guarantee these functions will behave as
@@ -802,9 +817,9 @@ will <strong>NOT</strong> be copied by <code>mkiocccentry(1)</code> either.</p>
 and
 <a href="rules.html#rule5-modifying-files">Rule 5 - Do NOT modify files</a>.</p>
 <div id="rule11">
-<div id="rule11-legal-rule-abuse">
+<section id="rule11-legal-rule-abuse">
 <h2 id="rule-11---legal-rule-abuse">Rule 11 - Legal rule abuse</h2>
-</div>
+</section>
 </div>
 <p>Legal abuse of the rules is <strong>somewhat</strong> encouraged, but comes with
 risks. A submission that, in the opinion of the Judges, <strong>violates</strong>
@@ -830,17 +845,17 @@ duplicate into a wrong slot by mistake.</p>
 <p>See <a href="guidelines.html#guideline11-abuse">Guidelines for Rule 11 - Legal rule
 abuse</a>.</p>
 <div id="rule12">
-<div id="rule12-utf8">
+<section id="rule12-utf8">
 <h2 id="rule-12---utf-8">Rule 12 - UTF-8</h2>
-</div>
+</section>
 </div>
 <p>Use of UTF-8 is supported by <code>C11</code> standard and its updates and so too
 by the IOCCC.</p>
 <p>See <a href="guidelines.html#guideline12-utf8">Guidelines for Rule 12 - UTF-8</a>.</p>
 <div id="rule13">
-<div id="rule13-nocr">
+<section id="rule13-nocr">
 <h2 id="rule-13---no-carriage-returns-in-prog.c">Rule 13 - No carriage returns in prog.c</h2>
-</div>
+</section>
 </div>
 <p>Any C source that fails to compile because lines contain
 carriage-returns (CTRL+M, <code>\r</code>) in particular as part of DOS/Windows
@@ -855,9 +870,9 @@ newline. If you need to do this, please document that in your
 this too and update your <code>Makefile</code> to account for this.</p>
 <p>See <a href="guidelines.html#guideline13-nocr">Guidelines for Rule 13 - No carriage returns in
 prog.c</a>.</p>
-<div id="rule14">
+<section id="rule14">
 <h2 id="rule-14---resubmitting-lost-submissions">Rule 14 - Resubmitting lost submissions</h2>
-</div>
+</section>
 <p>Submissions that are substantially similar to previous winning IOCCC
 entries are discouraged. See the
 FAQ on “<a href="../faq.html#frequent-themes">What types of entries have been frequently submitted to the
@@ -868,9 +883,9 @@ to try and enhance and improve your submission. If you do resubmit
 something that didn’t previously win, then you are encouraged to
 mention this in your <code>remarks.md</code> file as this <strong>sometimes</strong> helps.</p>
 <div id="rule15">
-<div id="rule15-gnu-makefile">
+<section id="rule15-gnu-makefile">
 <h2 id="rule-15---gnu-makefile">Rule 15 - GNU Makefile</h2>
-</div>
+</section>
 </div>
 <p class="leftbar">
 The <code>Makefile</code> <strong>MUST</strong> adhere to GNU Makefile syntax. It’s highly
@@ -912,9 +927,9 @@ Makefile?</a>”.</p>
 <p>See <a href="guidelines.html#guideline15-gnu-makefile">Guidelines for Rule 15 - GNU
 Makefile</a>.</p>
 <div id="rule16">
-<div id="rule16-anonymous-judging">
+<section id="rule16-anonymous-judging">
 <h2 id="rule-16---anonymous-judging">Rule 16 - Anonymous judging</h2>
-</div>
+</section>
 </div>
 <p>Your source code, data files, remarks, and program output <strong>MUST NOT</strong>
 identify the author(s) of your code (unless you are <strong>Peter Honeyman</strong>
@@ -926,9 +941,9 @@ submitting programs to the IOCCC until final selection is made, and
 deliberately or by accident anywhere in your submission. <strong><em>Failure to
 comply may result in the submission being disqualified</em></strong>.</p>
 <div id="rule17">
-<div id="rule17-mkiocccentry">
+<section id="rule17-mkiocccentry">
 <h2 id="rule-17---use-mkiocccentry">Rule 17 - Use <code>mkiocccentry</code></h2>
-</div>
+</section>
 </div>
 <p><strong>TL;DR</strong>: use <code>mkiocccentry(1)</code> to package your submission.</p>
 <p>The files, directories, and paths <strong>MUST</strong> conform to the limits
@@ -997,18 +1012,18 @@ FAQ on “<a href="../faq.html#mkiocccentry">What is the mkiocccentry tool, how 
 use it?</a>”.</p>
 <p>See the <a href="guidelines.html#guideline17-mkiocccentry">Guidelines for Rule 17 - Use
 mkiocccentry</a>.</p>
-<div id="rule18">
+<section id="rule18">
 <h2 id="rule-18---submission-license">Rule 18 - Submission license</h2>
-</div>
+</section>
 <p>The entirety of your submission <strong>MUST</strong> be submitted under the
 following license:</p>
 <p><a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0 DEED Attribution-ShareAlike 4.0
 International</a>.</p>
 <p>See <a href="rules.html#rule7-original-work">Rule 7 - Original Work</a>.</p>
 <div id="rule19">
-<div id="rule19-prime">
+<section id="rule19-prime">
 <h2 id="rule-19---prime">Rule 19 - Prime</h2>
-</div>
+</section>
 </div>
 <p class="leftbar">
 This 19th rule, while prime, is reserved for future abuse 😁.
