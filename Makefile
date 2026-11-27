@@ -374,7 +374,7 @@ help:
 	@echo 'make find_missing_links	;: find markdown links to missing local files'
 	@echo 'make find_invalid_json	;; find invalid JSON files'
 	@echo 'make verify_display_as	;; find invalid display_as / display_via_github combos'
-	@echo 'make list_bad_html	;: list HTML files with errors'
+	@echo 'make list_bad_html	;: list HTML files with errors or warnings'
 	@echo 'make verify_html	;: validate HTML files using vnu, show HTML errors and warnings'
 	@echo
 	@echo 'make test		;: run the fill collection of mostly harmless tests'
@@ -627,13 +627,13 @@ verify_html:
 	${CHECK_HTML} -v 1 .
 	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
-# list HTML files with errors, excluding the paths in bin/exclude.cfg
+# list HTML files with errors or warnings, excluding the paths in bin/exclude.cfg
 #
 list_bad_html:
 	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
-	@echo '=-=-=-=-=-= HTML files with errors listed below =-=-=-=-=-='
+	@echo '=-=-=-=-=-= HTML files with errors or warnings listed below =-=-=-=-=-='
 	@${CHECK_HTML} -l .
-	@echo '=-=-=-=-=-= no HTML files with errors found =-=-=-=-=-='
+	@echo '=-=-=-=-=-= no HTML files with errors or warnings found =-=-=-=-=-='
 	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 # convert author_wins.csv, manifest.csv and year_prize.csv CSV files to
