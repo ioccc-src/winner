@@ -280,7 +280,7 @@ clobber:
 #	   simple want to examine, run / test winning IOCCC entries.
 
 .PHONY: help genpath genfilelist all_jfmt verify_entry_files gen_authors quick_authors \
-	gen_location quick_location gen_years find_missing_links verify_html test entry_index gen_top_html \
+	gen_location quick_location gen_years find_missing_links verify_html list_bad_html test entry_index gen_top_html \
 	gen_next thanks gen_other_html quick_other_html quick_entry_index find_invalid_json \
 	gen_year_index quick_year_index quick_www www untar_entry_tarball untar_year_tarball \
 	form_entry_tarball form_year_tarball tar gen_status gen_sitemap find_invalid_json \
@@ -308,9 +308,28 @@ help:
 	@echo 'make diff_alt_orig	;: diff alternative source and original source'
 	@echo 'make diff_orig_alt	;: diff original source and alternative source'
 	@echo
-	@echo '# Rules for building a local copy of the IOCCC website:'
+	@echo '# Rules for IOCCC judges who maintain the repo:'
 	@echo
-	@echo 'make tab_check		;: check for ASCII tabs in markdown files'
+	@echo 'make entry2csv		;: convert all .entry.json files into 3 CSV files'
+	@echo 'make csv2entry		;: rebuild all all .entry.json files from 3 CSV spreadsheets'
+	@echo 'make untar_entry_tarball;: untar all entry tarballs'
+	@echo 'make untar_year_tarball	;: untar all year level tarballs'
+	@echo 'make all_jfmt		;: convert all entry and author JSON files into canonical form'
+	@echo
+	@echo '# Rules for IOCCC judges who maintain the official IOCCC website:'
+	@echo
+	@echo 'make form_entry_tarball	;: form all entry compressed tarballs'
+	@echo 'make form_year_tarball	;: form all IOCCC year level compressed tarballs'
+	@echo 'make tar		;: build all tarballs'
+	@echo
+	@echo 'make gen_status		;: generate status.json and status.html'
+	@echo 'make gen_sitemap	;: generate the XML sitemap'
+	@echo 'make timestamp		;: generate things with timestamps (status, sitemap etc.)'
+	@echo
+	@echo 'make update		;: update everything in a local copy of the website'
+	@echo
+	@echo '# Rules for anyone building a local copy of the IOCCC website:'
+	@echo
 	@echo 'make genpath		;: form top level .top and .allyear, YYYY level .year and winner .path files'
 	@echo 'make genfilelist	;: generate YYYY level .filelist'
 	@echo 'make verify_entry_files	;: check to be sure all files in all entries exist'
@@ -328,17 +347,8 @@ help:
 	@echo 'make gen_top_html	;: generate a number of the top level HTML files from markdown'
 	@echo 'make gen_next		;: generate the HTML files in next/'
 	@echo 'make quick_entry_index	;: build winner index.html files that might be out of date'
-	@echo 'make find_missing_links	;: find markdown links to missing local files'
-	@echo 'make find_invalid_json	;; find invalid JSON files'
-	@echo 'make verify_display_as	;; find invalid display_as / display_via_github combos'
-	@echo 'make verify_html	;: validate HTML files using vnu'
 	@echo
-	@echo 'make test		;: run a collection of mostly harmless tests'
-	@echo
-	@echo 'make entry2csv		;: convert all .entry.json files into 3 CSV files'
-	@echo 'make csv2entry		;: rebuild all all .entry.json files from 3 CSV spreadsheets'
-	@echo
-	@echo '# Rules for building specific web pages, a subset of rules mentioned above:'
+	@echo '# Rules for anyone building specific web pages, a subset of rules mentioned above:'
 	@echo
 	@echo 'make about		;: generate about.html'
 	@echo 'make bugs		;: generate bugs.html'
@@ -357,27 +367,21 @@ help:
 	@echo 'make submit		;: generate next/submit.html'
 	@echo 'make thanks		;: generate thanks-for-help.html'
 	@echo
-	@echo '# Compound make rules for building a local copy of the IOCCC website:'
+	@echo '# harmless tests for anyone'
+	@echo
+	@echo 'make tab_check		;: check for ASCII tabs in markdown files'
+	@echo 'make find_missing_links	;: find markdown links to missing local files'
+	@echo 'make find_invalid_json	;; find invalid JSON files'
+	@echo 'make verify_display_as	;; find invalid display_as / display_via_github combos'
+	@echo 'make list_bad_html	;: list HTML files with errors
+	@echo 'make verify_html	;: validate HTML files using vnu'
+	@echo
+	@echo 'make test		;: run the fill collection of mostly harmless tests'
+	@echo
+	@echo '# Compound make rules for anyoone building a local copy of the IOCCC website:'
 	@echo
 	@echo 'make quick_www		;: generate html files more quickly, checking timestamps'
 	@echo 'make www		;: build html pages for website'
-	@echo
-	@echo '# Rules that are useful only for those IOCCC judges who maintain the official IOCCC website:'
-	@echo
-	@echo 'make untar_entry_tarball;: untar all entry tarballs'
-	@echo 'make untar_year_tarball	;: untar all year level tarballs'
-	@echo
-	@echo 'make all_jfmt		;: convert all entry and author JSON files into canonical form'
-	@echo
-	@echo 'make form_entry_tarball	;: form all entry compressed tarballs'
-	@echo 'make form_year_tarball	;: form all IOCCC year level compressed tarballs'
-	@echo 'make tar		;: build all tarballs'
-	@echo
-	@echo 'make gen_status		;: generate status.json and status.html'
-	@echo 'make gen_sitemap	;: generate the XML sitemap'
-	@echo 'make timestamp		;: generate things with timestamps (status, sitemap etc.)'
-	@echo
-	@echo 'make update		;: update everything in a local copy of the website'
 
 
 ######################################################
@@ -620,6 +624,13 @@ verify_display_as:
 verify_html:
 	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
 	${CHECK_HTML} -v 1 .
+	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
+
+# list HTML files with errors, excluding the paths in bin/exclude.cfg
+#
+list_bad_html:
+	@echo '=-=-=-=-= IOCCC begin ${MAKE} $@ =-=-=-=-='
+	${CHECK_HTML} -v 1 -l .
 	@echo '=-=-=-=-= IOCCC complete ${MAKE} $@ =-=-=-=-='
 
 # convert author_wins.csv, manifest.csv and year_prize.csv CSV files to
