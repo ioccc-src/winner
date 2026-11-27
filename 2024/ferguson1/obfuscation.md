@@ -540,7 +540,7 @@ it should not. This is NOT OKAY. This is a crime against C. It is a crime
 against computer science and could give computer scientists a stroke.
 
 And I won't be paying the bill because there's no point when they're in the
-vegetable garden[^1] from massive brain trauma. Besides, I might be in the pot next
+vegetable garden<sup><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref">1</a></sup> from massive brain trauma. Besides, I might be in the pot next
 to them. Just don't ask. I might go insane. If I'm not already.
 
 Go to line 22 instead. It'll make perfect sense if you do this. And frankly, if
@@ -1775,7 +1775,7 @@ Of course it shouldn't but it does.
 
 <div id="conclusions">
 <div id="conclusion">
-### Conclusions
+### Conclusions {#conclusions-heading}
 </div>
 </div>
 
@@ -1939,8 +1939,16 @@ the fear of frivolous lawsuits :-):
 
 
 
-[^1]: For those who do not know, vegetable garden is medical slang for the
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+## Footnotes {#footnotes-heading}
+
+<hr>
+<ol>
+<li id="fn1">For those who do not know, vegetable garden is medical slang for the
 comatose ward. Yes medical slang is horrible and yes I'm horrible for using it. But
 this is a minor one. Ask me if you want to know much worse ones. Or don't. You
 might find them too much and end up with an acute gravity attack, hitting your
 head and reaching room temperature.
+<a href="#fnref1" class="footnote-back" role="doc-backlink">&#8617;&#xFE0E;</a></li>
+</ol>
+</section>

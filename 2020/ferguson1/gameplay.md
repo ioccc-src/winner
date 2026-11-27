@@ -49,7 +49,7 @@ for the input keys.
 
 
 <div id="support">
-# 1. <a href="#toc">Testing terminal environment/capabilities</a>
+## 1. <a href="#toc">Testing terminal environment/capabilities</a>
 </div>
 
 Most people probably won't have any issue at all but for those who have any
@@ -62,7 +62,7 @@ and [bugs.html][].
 
 
 <div id="input">
-# 2. <a href="#toc">Input keys</a>
+## 2. <a href="#toc">Input keys</a>
 </div>
 
 -   Left, right, up and down **arrow keys**: move that direction.
@@ -74,7 +74,7 @@ and [bugs.html][].
 
 
 <div id="gameplay">
-# 3. <a href="#toc">Gameplay</a>
+## 3. <a href="#toc">Gameplay</a>
 </div>
 
 Here I will show the initial screen as well as what a few things look like. If
@@ -87,7 +87,7 @@ body colour is green. The walls are cyan.
 
 
 <div id="initial">
-## <a href="#toc">Gameplay: The initial screen</a>
+### <a href="#toc">Gameplay: The initial screen</a>
 </div>
 
 When you load the game you will see a screen that looks something like the
@@ -138,7 +138,7 @@ to the number in the diagram:
 
 
 <div id="playing">
-## <a href="#toc">Gameplay: Playing the game</a>
+### <a href="#toc">Gameplay: Playing the game</a>
 </div>
 
 
@@ -214,7 +214,7 @@ three and then up one and could slither on to the bug.
 
 
 <div id="walls">
-# <a href="#toc">Gameplay: Walls</a>
+## <a href="#toc">Gameplay: Walls</a>
 </div>
 
 By default walls are passable (**WALLS=1**). Let's get to full size and go
@@ -300,7 +300,7 @@ If I continue going up I will see:
 
 
 <div id="cannibalism">
-# <a href="#toc">Gameplay: Cannibalism</a>
+## <a href="#toc">Gameplay: Cannibalism</a>
 </div>
 
 By default cannibalism is disabled (**CANNIBAL=0**)  so if you run into yourself it might look
@@ -416,7 +416,7 @@ inside itself.
 
 
 <div id="shedding">
-# <a href="#toc">Gameplay: Shedding (stretching)</a>
+## <a href="#toc">Gameplay: Shedding (stretching)</a>
 </div>
 
 This feature will make you grow by the value of **SHEDS** for every **SHED**
@@ -425,7 +425,7 @@ without eating a bug (stretching would be better name here).
 
 
 <div id="winning">
-# <a href="#toc">Gameplay: Winning</a>
+## <a href="#toc">Gameplay: Winning</a>
 </div>
 
 If you ever get to the **MAXSIZE** the game is won. You can force a win by
@@ -465,7 +465,7 @@ the game is won is 199 - also a prime!
 
 
 <div id="quitting">
-# <a href="#toc">Gameplay: Quitting</a>
+## <a href="#toc">Gameplay: Quitting</a>
 </div>
 
 If you wish to quit you can hit 'q' (case-insensitive). For example:
@@ -476,7 +476,7 @@ If you wish to quit you can hit 'q' (case-insensitive). For example:
 
 
 <div id="modes">
-# 4. <a href="#toc">Gameplay modes</a>
+## 4. <a href="#toc">Gameplay modes</a>
 </div>
 
 Here I list a number of different modes of play. In the [bugs.html][]
@@ -491,7 +491,7 @@ the modes below.
 
 
 <div id="warning">
-## <a href="#toc">Photosensitive epilepsy/Stimulation overload trigger warnings</a>
+### <a href="#toc">Photosensitive epilepsy/Stimulation overload trigger warnings</a>
 </div>
 
 If you have **photosensitive epilepsy please be careful** especially with low values
@@ -508,7 +508,7 @@ you have any form of epilepsy. Thank you.**
 
 
 <div id="drawing">
-## <a href="#toc">Gameplay mode: Drawing / Practice mode</a>
+### <a href="#toc">Gameplay mode: Drawing / Practice mode</a>
 </div>
 
 If you want to draw the snake wherever you like on the screen you can do this by
@@ -571,7 +571,7 @@ for. But you can consider this mode drawing or practice mode.
 
 
 <div id="auto">
-## <a href="#toc">Gameplay mode: Computer playing / Automatic mode (Photosensitive epilepsy/Stimulation overload trigger)</a>
+### <a href="#toc">Gameplay mode: Computer playing / Automatic mode (Photosensitive epilepsy/Stimulation overload trigger)</a>
 </div>
 
 **Photosensitive epilepsy/stimulation overload trigger warning:**
@@ -609,7 +609,7 @@ so with fewer available it has a harder time finding a place in that one line.
 
 
 <div id="auto-variations">
-### <a href="#toc">Computer player variations</a>
+#### <a href="#toc">Computer player variations</a>
 </div>
 
 Here's how to make the bug move every time the snake moves:
@@ -619,7 +619,7 @@ Here's how to make the bug move every time the snake moves:
 ```
 
 
-#### Help the computer win fairly quickly
+##### Help the computer win fairly quickly
 
 If you want to see the game 'win' try something like:
 
@@ -628,7 +628,7 @@ If you want to see the game 'win' try something like:
 ```
 
 
-#### Negative growth (Shrink) Automatic mode
+##### Negative growth (Shrink) Automatic mode
 
 Here's a fun one I just thought of (a long time after these other modes were
 thought of):
@@ -644,7 +644,7 @@ then the head again (i.e. 1 then 0 in size) and then win! This is also in the
 [play.sh][] script.
 
 
-#### Adjusting the time/speed
+##### Adjusting the time/speed
 
 Of course you can also do something like:
 
@@ -654,13 +654,13 @@ Of course you can also do something like:
 
 Which although might not seem like it is significantly slower.
 
-#### Moving the snake about to create patterns
+##### Moving the snake about to create patterns
 
 If you press different direction keys in some pattern you will see a pattern
 form too (entirely dependent on how fast you react, what keys you press and I
 suppose also how much the bug moves and the chance of being eaten also).
 
-#### Other ideas
+##### Other ideas
 
 Here's an idea: how many moves is needed to make it possible to have some sort
 of success in catching bugs? Obviously the dimensions will affect this value.
@@ -684,7 +684,7 @@ other games to play with this feature!
 
 
 <div id="grow-shrink">
-## <a href="#toc">Gameplay mode: Grow-Shrink mode (Positive and Negative Winning)</a>
+### <a href="#toc">Gameplay mode: Grow-Shrink mode (Positive and Negative Winning)</a>
 </div>
 
 In this mode you're simultaneously growing and shrinking but because the max
@@ -728,7 +728,7 @@ are called Grow / Shrink).
 
 
 <div id="hypnotic">
-## <a href="#toc">Hypnotic / Sleepy mode &lpar;Photosensitive epilepsy/Stimulation overload trigger&rpar;</a>
+### <a href="#toc">Hypnotic / Sleepy mode &lpar;Photosensitive epilepsy/Stimulation overload trigger&rpar;</a>
 </div>
 
 **Photosensitive epilepsy/stimulation overload trigger warning:**
@@ -751,7 +751,7 @@ happens happen.
 
 
 <div id="stim">
-## <a href="#toc">Gameplay mode: Stimulation / Calming mode</a>
+### <a href="#toc">Gameplay mode: Stimulation / Calming mode</a>
 </div>
 
 If you just need something to stimulate your mind to keep you calm or simply you
@@ -766,7 +766,7 @@ worry about even running into yourself and losing:
 
 
 <div id="expansibility">
-## <a href="#toc">Gameplay mode: Expansibility</a>
+### <a href="#toc">Gameplay mode: Expansibility</a>
 </div>
 
 As I was writing this document and the game modes I have thought of other game
@@ -785,7 +785,7 @@ reason as well as I simply enjoy it and thinking up new modes.
 
 
 <div id="scripts">
-# 5. <a href="#toc">Scripts</a>
+## 5. <a href="#toc">Scripts</a>
 </div>
 
 The following scripts are provided to simplify and automate some of the things
@@ -793,7 +793,7 @@ this file discusses as well as allowing to easily change the colours.
 
 
 <div id="colours">
-## <a href="#toc">Colours selection: snake-colours</a>
+### <a href="#toc">Colours selection: snake-colours</a>
 </div>
 
 To do this use the [snake-colours.sh][] script like so:
@@ -813,7 +813,7 @@ bug.
 
 
 <div id="preset">
-## <a href="#toc">Automate the above gameplay modes</a>
+### <a href="#toc">Automate the above gameplay modes</a>
 </div>
 
 The [play.sh][] script has the gameplay modes described in this file and is menu
@@ -838,7 +838,7 @@ Or to make it so walls are an obstacle:
 
 
 <div id="variables">
-# 6. <a href="#toc">Notes about some of the game variables</a>
+## 6. <a href="#toc">Notes about some of the game variables</a>
 </div>
 
 The game variables can be used for a variety of things including different
@@ -846,7 +846,7 @@ gameplay modes (as shown above) but here are some general notes about a few of t
 
 
 <div id="wait">
-## <a href="#toc">WAIT: Snake speed</a>
+### <a href="#toc">WAIT: Snake speed</a>
 </div>
 
 Besides the different game modes, if you find it too fast/slow you can change it
@@ -855,7 +855,7 @@ snake to move slower you have to increase the wait time!
 
 
 <div id="evade">
-## <a href="#toc">EVADE: Bug evasion frequency</a>
+### <a href="#toc">EVADE: Bug evasion frequency</a>
 </div>
 
 For every **EVADE** snake movements the bug will try and find a new place to
@@ -869,7 +869,7 @@ This can help you get out of a trap but it can also sometimes make it harder.
 
 
 <div id="sizes">
-## <a href="#toc">SIZE / MAXSIZE: Initial / Max snake sizes</a>
+### <a href="#toc">SIZE / MAXSIZE: Initial / Max snake sizes</a>
 </div>
 
 997 might be a bit high for many people. Or maybe you don't have enough time. Or
@@ -884,7 +884,7 @@ says SIZE 29 doesn't mean it will instantly be 29 characters on the screen.
 
 
 <div id="growth">
-## <a href="#toc">GROW / SHEDS : Growth / Shedding sizes</a>
+### <a href="#toc">GROW / SHEDS : Growth / Shedding sizes</a>
 </div>
 
 Similar to the initial size. Notice that the above point on size applies here:
@@ -892,7 +892,7 @@ it will take the number of movements before it is 'its full size'.
 
 
 <div id="conclusions">
-# 7. <a href="#toc">Conclusion &lpar;and inspirational words for everyone&rpar;</a>
+## 7. <a href="#toc">Conclusion &lpar;and inspirational words for everyone&rpar;</a>
 </div>
 
 I believe that this file has given more than enough information for anyone to

@@ -1,4 +1,4 @@
-# Introduction and Deobfuscation
+## Introduction and Deobfuscation
 
 In the [gameplay.html][] file I have given enough
 information to know how the game looks, how to move the snake, how to pause etc.
@@ -26,7 +26,7 @@ already knew that so no harm there, hey?
 
 
 <div id="works">
-# <a href="#toc">How does it work?</a>
+## <a href="#toc">How does it work?</a>
 </div>
 
 The gameplay I have already described but this explains the way things are
@@ -108,7 +108,7 @@ manner as if it simply moved. Growth/movement can in some ways be conflated.
 
 
 <div id="movement">
-# <a href="#toc">How does the snake movement work?</a>
+## <a href="#toc">How does the snake movement work?</a>
 </div>
 
 The way the snake looks to move is that every time the snake moves the last
@@ -123,7 +123,7 @@ for bugs.
 
 
 <div id="manual-automatic">
-# <a href="#toc">Drawing (manual) and computer playing (automatic) modes</a>
+## <a href="#toc">Drawing (manual) and computer playing (automatic) modes</a>
 </div>
 
 How do these modes work? The `timeout()` function takes a signed int: if it's `<
@@ -136,7 +136,7 @@ milliseconds (which is how the `0` value comes into play).
 
 
 <div id="collision">
-# <a href="#toc">Collision detection</a>
+## <a href="#toc">Collision detection</a>
 </div>
 
 This was an interesting thing to work out. Because the snake could occupy more
@@ -154,7 +154,7 @@ bugs are not bugs! :)_
 
 
 <div id="cannibalcollision">
-## <a href="#toc">Cannibal collision detection</a>
+### <a href="#toc">Cannibal collision detection</a>
 </div>
 
 How does cannibalism change collision detection? The fact that each time the
@@ -188,7 +188,7 @@ Choose your poison. Or rather your venom.
 
 
 <div id="resizing">
-## <a href="#toc">Collision detection when resizing the window of the game</a>
+### <a href="#toc">Collision detection when resizing the window of the game</a>
 </div>
 
 What happens if the window is resized during the game? If the size is increased
@@ -209,7 +209,7 @@ in real life increases in size like that so suddenly? :)
 
 
 <div id="obfuscation">
-# <a href="#toc">Obfuscation</a>
+## <a href="#toc">Obfuscation</a>
 </div>
 
 - I make use of the C token pasting operator. Although this is well known it's
@@ -711,7 +711,7 @@ referring to another property: bitwise AND. For example consider the following:
     in this part alone (not to mention other places)!
 
 
-# Obfuscation in [prog.3.c](%%REPO_URL%%/2020/ferguson1/prog.3.c) and [prog.3-j.c](%%REPO_URL%%/2020/ferguson1/prog.3-j.c)
+## Obfuscation in [prog.3.c](%%REPO_URL%%/2020/ferguson1/prog.3.c) and [prog.3-j.c](%%REPO_URL%%/2020/ferguson1/prog.3-j.c)
 
 There are a few differences in this version that are worth noting. First of all
 is a define that's in the compiler invocation Makefile is in the source file
@@ -799,7 +799,7 @@ Most of the primes above were intentional.
 
 
 <div id="skinning">
-# <a href="#toc">Skinning the snake (i.e. decreasing the iocccsize)</a>
+## <a href="#toc">Skinning the snake (i.e. decreasing the iocccsize)</a>
 </div>
 
 This happened in a number of ways and I have already documented some in other
@@ -856,7 +856,7 @@ called `abort()` and did not report any errors in either event but I do now).
 
 
 <div id="size">
-# <a href="#toc">A few more interesting size optimisations</a>
+## <a href="#toc">A few more interesting size optimisations</a>
 </div>
 
 As I was getting to the end of obfuscation (wrt size available - and it was

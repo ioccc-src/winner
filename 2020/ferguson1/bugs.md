@@ -1,4 +1,4 @@
-# Current bugs and things that look like bugs but are not
+## Current bugs and things that look like bugs but are not
 
 .. as of 12 September 2020.
 
@@ -15,7 +15,7 @@
 
 
 <div id="builtin-test-unit">
-# <a href="#toc">Built-in test unit for some features!</a>
+## <a href="#toc">Built-in test unit for some features!</a>
 </div>
 
 Fun fact: There's something of a built-in test unit for some features; much
@@ -43,7 +43,7 @@ don't at this time remember any I might have done.
 
 
 <div id="stillsnake">
-# <a href="#toc">The snake doesn't seem to be moving</a>
+## <a href="#toc">The snake doesn't seem to be moving</a>
 </div>
 
 One way to show this is in full is to set the initial size and growth size to a
@@ -80,7 +80,7 @@ status line you can also see the coordinates being updated to show this).
 
 
 <div id="getch">
-# <a href="#toc">getch() also accepts input from some input hardware other than keyboards</a>
+## <a href="#toc">getch() also accepts input from some input hardware other than keyboards</a>
 </div>
 
 On my MacBook Pro the trackpad has actually triggered directions; if I were to
@@ -88,7 +88,7 @@ swipe up and then down the snake would run into itself. I believe this has to do
 with the function call `keypad(v, 1);` which enables arrow keys.
 
 <div id="size">
-# <a href="#toc">SIZE=0 is the same as SIZE=1 and other oddities</a>
+## <a href="#toc">SIZE=0 is the same as SIZE=1 and other oddities</a>
 </div>
 
 What this means is that for both you will only have the snake head. At this point
@@ -161,7 +161,7 @@ that if you get another bug you will be at the 'max size':
 ```
 
 <div id="bitetail">
-#  <a href="#toc">'I was a few places behind my tail and I ran into it!'</a>
+##  <a href="#toc">'I was a few places behind my tail and I ran into it!'</a>
 </div>
 
 I.e. what happens if you're growing - for example after just eating a bug - and
@@ -175,7 +175,7 @@ me and I figured I better note it.
 
 
 <div id="middleofsnake">
-# <a href="#toc">With negative growth the snake drops from the middle of the body</a>
+## <a href="#toc">With negative growth the snake drops from the middle of the body</a>
 </div>
 
 For instance it might look like this (the first line is as it happens, the
@@ -212,7 +212,7 @@ gameplay modes.
 
 
 <div id="buginsnake">
-# <a href="#toc">It looks like the bug is in the snake</a>
+## <a href="#toc">It looks like the bug is in the snake</a>
 </div>
 
 I show a different example in the [crazy.log.md][] file but what defines a coordinate
@@ -231,7 +231,7 @@ quite a bit lower on the screen and 25 in length.
 
 
 <div id="bugplacement">
-# <a href="#toc">On the safety of the bug placement loop</a>
+## <a href="#toc">On the safety of the bug placement loop</a>
 </div>
 
 Ilya Kurdyukov shared concern for the loop in the bug placement routine: is it

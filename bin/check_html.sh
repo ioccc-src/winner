@@ -106,7 +106,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="1.2.0 2026-11-26"
+export VERSION="1.3.0 2026-11-26"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0

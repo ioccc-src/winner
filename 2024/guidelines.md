@@ -1,6 +1,6 @@
 <!-- START: this line starts content from: inc/guidelines.judging.hdr -->
 
-# The guidelines for the IOCCC that just closed
+## The guidelines for the IOCCC that just closed
 
 These guidelines are for the current IOCCC that is no longer open for new submissions.
 
@@ -14,14 +14,14 @@ mastodon feed](https://fosstodon.org/@ioccc) page and/or mastodon
 app from time to time to view IOCCC mastodon updates.
 
 
-# The IOCCC is closed to new submissions
+## The IOCCC is closed to new submissions
 
 The [IOCCC judges](../judges.html) are in the process of judging the submissions they received
 while the IOCCC was open.
 
 <!-- END: the next line ends content from: inc/guidelines.judging.hdr -->
 <!-- This is the last line modified by the tool: bin/gen-status.sh -->
-# 28th International Obfuscated C Code Contest Official Guidelines
+## 28th International Obfuscated C Code Contest Official Guidelines
 
 <p class="leftbar">
 Copyright &copy; 2024&dash;2025 Leonid A. Broukhis and Landon Curt Noll.
@@ -38,7 +38,7 @@ Jump to: [top](#)
 
 <div id="guidelines_version">
 <div id="version">
-# IOCCC Guidelines version
+## IOCCC Guidelines version
 </div>
 </div>
 
@@ -58,7 +58,7 @@ Jump to: [top](#)
 
 
 <div id="change_marks">
-# Change marks
+## Change marks
 </div>
 
 <p class="leftbar">**&larr; Lines that start with this symbol indicate a change from the
@@ -74,7 +74,7 @@ Jump to: [top](#)
 
 
 <div id="about_guidelines">
-# ABOUT THIS FILE:
+## ABOUT THIS FILE:
 </div>
 
 This file contains _guidelines_ intended to help people who wish to
@@ -102,7 +102,7 @@ Jump to: [top](#)
 
 
 <div id="new">
-# WHAT'S NEW THIS IOCCC
+## WHAT'S NEW THIS IOCCC
 </div>
 
 <p class="leftbar">
@@ -347,7 +347,7 @@ Jump to: [top](#)
 
 <div id="hints">
 <div id="suggestions">
-# HINTS AND SUGGESTIONS:
+## HINTS AND SUGGESTIONS:
 </div>
 </div>
 
@@ -484,7 +484,7 @@ Jump to: [top](#)
 
 
 <div id="mkiocccentry">
-# `mkiocccentry`
+## `mkiocccentry`
 </div>
 
 <p class="leftbar">
@@ -581,7 +581,7 @@ Jump to: [top](#)
 
 
 <div id="mkiocccentry-synopsis">
-## `mkiocccentry(1)` synopsis
+### `mkiocccentry(1)` synopsis
 </div>
 
 <p class="leftbar">
@@ -613,7 +613,7 @@ for even more information.
 
 
 <div id="tools">
-# Other mkiocccentry tools
+## Other mkiocccentry tools
 </div>
 
 <p class="leftbar">
@@ -622,7 +622,7 @@ execute one or more additional tools.
 </p>
 
 <div id="iocccsize">
-## `iocccsize`
+### `iocccsize`
 </div>
 
 <p class="leftbar">
@@ -641,7 +641,7 @@ Jump to: [top](#)
 
 
 <div id="chkentry">
-## `chkentry`
+### `chkentry`
 </div>
 
 <p class="leftbar">`mkiocccentry(1)` will write two JSON files: `.auth.json` and
@@ -776,7 +776,7 @@ Jump to: [top](#)
 
 
 <div id="txzchk">
-## `txzchk`
+### `txzchk`
 </div>
 
 <p class="leftbar">
@@ -812,7 +812,7 @@ check, you could still be violating [Rule 17](rules.html#rule17).
 </p>
 
 <div id="extra-files">
-## Including optional and extra files
+### Including optional and extra files
 </div>
 
 <p class="leftbar">
@@ -897,7 +897,7 @@ Jump to: [top](#)
 
 
 <div id="fnamchk">
-## `fnamchk(1)`
+### `fnamchk(1)`
 </div>
 
 <p class="leftbar">
@@ -938,7 +938,7 @@ everything checks out OK you should **NOT** assume that everything **IS** OK.
 
 
 <div id="bugs">
-# Problems and/or bugs in tools
+## Problems and/or bugs in tools
 </div>
 
 <p class="leftbar">
@@ -960,7 +960,7 @@ that's OK too!
 
 <div id="make">
 <div id="makefile">
-# Makefiles
+## Makefiles
 </div>
 </div>
 
@@ -996,7 +996,7 @@ and/or `gcc(1)`.
 
 <div id="cflags">
 <div id="flags">
-## Default compiler flags
+### Default compiler flags
 </div>
 </div>
 
@@ -1027,7 +1027,7 @@ For more fun when it comes to optimisers breaking code, see
 
 
 <div id="compilers">
-## Default compiler
+### Default compiler
 </div>
 
 <p class="leftbar">
@@ -1043,7 +1043,7 @@ in truth the `clang` compiler, as `/usr/bin/gcc --version` will show!
 
 <div id="cstd">
 <div id="standard">
-## C standard
+### C standard
 </div>
 </div>
 
@@ -1062,7 +1062,7 @@ by modifying the `CSTD` Makefile variable.  For example, to use `c99` instead:
 <div id="optimisation">
 <div id="optimizer">
 <div id="optimiser">
-## Default optimisation level
+### Default optimisation level
 </div>
 </div>
 </div>
@@ -1081,7 +1081,7 @@ For example, to compile without optimization, and to include debug symbols:
 
 <div id="warnings">
 <div id="cwarn">
-## Compiler warnings
+### Compiler warnings
 </div>
 </div>
 
@@ -1102,7 +1102,7 @@ warnings](#disabling-warnings).
 </p>
 
 <div id="weverything">
-### The `-Weverything` option
+#### The `-Weverything` option
 </div>
 
 <p class="leftbar">
@@ -1179,7 +1179,7 @@ FAQ on "[-Weverything](../faq.html#weverything)".
 </p>
 
 <div id="disabling-warnings">
-## Disabling warnings
+### Disabling warnings
 </div>
 
 <p class="leftbar">
@@ -1242,7 +1242,7 @@ that has such a problem.
 </p>
 
 <div id="macros">
-## Defining macros in the Makefile
+### Defining macros in the Makefile
 </div>
 
 <p class="leftbar">
@@ -1261,7 +1261,7 @@ could use `#define` in your code instead.
 </p>
 
 <div id="include">
-## Include files in the Makefile
+### Include files in the Makefile
 </div>
 
 <p class="leftbar">
@@ -1275,7 +1275,7 @@ If you need to include a file (as in `#include`) on the command line, use the
 
 
 <div id="magic">
-## Magic in the Makefile
+### Magic in the Makefile
 </div>
 
 <p class="leftbar">
@@ -1298,7 +1298,7 @@ Again, please note that in macOS, `/usr/bin/gcc` is actually `clang`!
 
 
 <div id="clobber">
-## The clobber rule
+### The clobber rule
 </div>
 
 <p class="leftbar">
@@ -1388,7 +1388,7 @@ Jump to: [top](#)
 
 <div id="likes">
 <div id="dislikes">
-# OUR LIKES AND DISLIKES:
+## OUR LIKES AND DISLIKES:
 </div>
 </div>
 
@@ -2127,7 +2127,7 @@ Jump to: [top](#)
 
 <div id="rules_abuse">
 <div id="abusing_rules">
-# ABUSING THE RULES:
+## ABUSING THE RULES:
 </div>
 </div>
 
@@ -2205,7 +2205,7 @@ Jump to: [top](#)
 
 
 <div id="judging">
-# JUDGING PROCESS:
+## JUDGING PROCESS:
 </div>
 
 Submissions are judged by Leonid A. Broukhis and Landon Curt Noll.
@@ -2282,7 +2282,7 @@ Jump to: [top](#)
 
 
 <div id="rounds">
-## JUDGING ROUNDS:
+### JUDGING ROUNDS:
 </div>
 
 Judging consists of a number of elimination rounds.  During a round,
@@ -2297,7 +2297,7 @@ Jump to: [top](#)
 
 
 <div id="readings">
-## JUDGING READINGS:
+### JUDGING READINGS:
 </div>
 
 A reading consists of a number of actions:
@@ -2424,7 +2424,7 @@ Jump to: [top](#)
 
 
 <div id="announcements">
-# ANNOUNCEMENT OF WINNERS:
+## ANNOUNCEMENT OF WINNERS:
 </div>
 
 <p class="leftbar">
@@ -2444,7 +2444,7 @@ Jump to: [top](#)
 
 
 <div id="winners">
-## How the new IOCCC winners will be announced
+### How the new IOCCC winners will be announced
 </div>
 
 <p class="leftbar">
@@ -2482,7 +2482,7 @@ Jump to: [top](#)
 
 
 <div id="mastodon">
-## An important update to how winners are announced
+### An important update to how winners are announced
 </div>
 
 <p class="leftbar">
@@ -2510,7 +2510,7 @@ Jump to: [top](#)
 
 
 <div id="entries">
-## Back to announcement of winners
+### Back to announcement of winners
 </div>
 
 <p class="leftbar">
@@ -2536,7 +2536,7 @@ Jump to: [top](#)
 
 <div id="more-information">
 <div id="information">
-# FOR MORE INFORMATION:
+## FOR MORE INFORMATION:
 </div>
 </div>
 

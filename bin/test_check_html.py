@@ -176,6 +176,17 @@ class CheckHtmlTest(unittest.TestCase):
         self.assertIn("read failed", result.stderr)
         self.assertEqual(result.stdout, "")
 
+    def test_list_mode_reports_plain_info_with_werror(self):
+        report = {"messages": [
+            {"type": "error", "url": (self.root / "site/index.html").as_uri()},
+            {"type": "info", "url": (self.root / "site/file name.html").as_uri()},
+        ]}
+        result = self.run_script("-d", "site", "-l", "index.html", "file name.html",
+                                 TEST_JSON=json.dumps(report), TEST_VALIDATE_STATUS="1")
+        self.assertEqual(result.returncode, 1)
+        self.assertEqual(result.stdout.splitlines(), ["file name.html", "index.html"])
+        self.assertEqual(result.stderr, "")
+
     def test_list_mode_reports_malformed_validator_output(self):
         result = self.run_script("-d", "site", "-l", "index.html",
                                  TEST_JSON="not JSON", TEST_VALIDATE_STATUS="1")

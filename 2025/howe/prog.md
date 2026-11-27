@@ -75,25 +75,25 @@ Issues
 References
 ----------
 
-* Casio SL-880 Calculator  
+* Casio SL-880 Calculator<br>
   <https://www.casio.com/content/dam/casio/global/support/manuals/calculators/pdf/004-ja/s/SL-880_WA_JA.pdf>
 
-* Casio MG-880 V SL-880 Game Play  
+* Casio MG-880 V SL-880 Game Play<br>
   <https://www.youtube.com/shorts/igaKl4gdr5A>
 
-* Space Invaders, Wikipedia  
+* Space Invaders, Wikipedia<br>
   <https://en.wikipedia.org/wiki/Space_Invaders>
 
-* Space Invaders (1980), Player One  
+* Space Invaders (1980), Player One<br>
   <https://www.youtube.com/watch?v=8teuyCYeDxQ>
 
-* Operator, Real McCoy  
+* Operator, Real McCoy<br>
   <https://www.youtube.com/watch?v=lRyDPqZhhz8>
 
-* The Eve of the War, Jeff Wayne  
+* The Eve of the War, Jeff Wayne<br>
   <https://www.youtube.com/watch?v=Poii8JAbtng>
 
-* Invaders880 original unbofuscated source.  
+* Invaders880 original unbofuscated source.<br>
   <https://codeberg.org/SirWumpus/invaders880>
 
 -END-

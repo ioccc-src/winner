@@ -114,7 +114,10 @@ def list_results(result, paths, stdin):
             print(f"check_html.py: ERROR: unknown vnu diagnostic type: {kind}", file=sys.stderr)
             operational = True
             continue
-        if kind != "error" and not (kind == "info" and message.get("subType") == "warning"):
+        # With --Werror, Nu also exits nonzero for some plain info messages.
+        if kind != "error" and not (kind == "info" and
+                                    (message.get("subType") == "warning" or
+                                     result.returncode == 1)):
             if kind == "non-document-error":
                 print(f"check_html.py: ERROR: {message.get('message', 'vnu error')}", file=sys.stderr)
                 operational = True
