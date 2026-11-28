@@ -26,7 +26,7 @@ jobs:
     - name: Install Nu HTML Checker
       run: |
         npm install --prefix "$RUNNER_TEMP/vnu" --no-save --ignore-scripts --no-audit --no-fund vnu-jar@26.11.26
-        echo "a32c46948b7f8cde6a81cd708a1a7eecb598ec11085ad44d06406914bd737ad2  $RUNNER_TEMP/vnu/node_modules/vnu-jar/build/dist/vnu.jar" | sha256sum --check
+        echo "e895f6d428d34e955562b06d86291b3fed2ecc25f1737b213f7a5a9ad08cae74  $RUNNER_TEMP/vnu/node_modules/vnu-jar/build/dist/vnu.jar" | sha256sum --check
         mkdir -p "$RUNNER_TEMP/bin"
         cat > "$RUNNER_TEMP/bin/vnu" <<'EOF'
         #!/usr/bin/env bash
