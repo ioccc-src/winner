@@ -1,4 +1,4 @@
-# Terminals
+## Terminals
 
 Terminals are very easy to mess up and for that reason they deserve their own
 file. I discuss terminal capabilities, dimensions (setting and how to restore
@@ -22,7 +22,7 @@ sanity if it causes any problems) as well as colours (limitations etc.).
 
 
 <div id="termcaps">
-# <a href="#toc">Capabilities support testing program</a>
+## <a href="#toc">Capabilities support testing program</a>
 </div>
 
 Although it should be playable without the features I use (except that cursor
@@ -119,7 +119,7 @@ you can continue either way.
 
 
 <div id="dimensions">
-# <a href="#toc">Setting the game dimensions</a>
+## <a href="#toc">Setting the game dimensions</a>
 </div>
 
 There are a number of ways to do this and only one will keep the terminal sane
@@ -128,7 +128,7 @@ resize the window with first. But what if you want exacts?
 
 
 <div id="linescolumns">
-## <a href="#toc">The LINES and COLUMNS environmental variables</a>
+### <a href="#toc">The LINES and COLUMNS environmental variables</a>
 </div>
 
 To specify the lines/columns of curses program per instance use the `LINES` and
@@ -160,7 +160,7 @@ to lines.
 
 
 <div id="insanity">
-## <a href="#toc">Terminal insanity</a>
+### <a href="#toc">Terminal insanity</a>
 </div>
 
 Terminal sanity can be compromised and it can cause all sorts of output
@@ -171,7 +171,7 @@ etc. For the game you might not see the final score.
 
 
 <div id="restore">
-### <a href="#toc">Restoring the terminal</a>
+#### <a href="#toc">Restoring the terminal</a>
 </div>
 
 In my tests there is one thing that at least allows you to see the final score
@@ -213,7 +213,7 @@ Yes this works under macOS (at least it did for me).
 
 
 <div id="abuse">
-### <a href="#toc">Terminal size abuse</a>
+#### <a href="#toc">Terminal size abuse</a>
 </div>
 
 So players 1, 2 and 3 are content with not meddling with the terminal sizes
@@ -241,7 +241,7 @@ properly. Because that's what funny means in this context.
 
 
 <div id="termlimitations">
-# <a href="#toc">Terminal limitations</a>
+## <a href="#toc">Terminal limitations</a>
 </div>
 
 It'd be nice if curses could detect hitting more than one arrow key at the
@@ -257,7 +257,7 @@ nasty issues.
 
 
 <div id="colours">
-# <a href="#toc">Terminal colours</a>
+## <a href="#toc">Terminal colours</a>
 </div>
 
 N.B.: If all you're after is wanting to change the colours see the script
@@ -267,7 +267,7 @@ particular runtime limitations).
 
 
 <div id="background">
-## <a href="#toc">Curses background</a>
+### <a href="#toc">Curses background</a>
 </div>
 
 The documentation I have seen says that the background will always be black and
@@ -279,7 +279,7 @@ iocccsize; I talk about it in the [HACKING.html][].
 
 
 <div id="monochrome">
-## <a href="#toc">Monochrome terminals</a>
+### <a href="#toc">Monochrome terminals</a>
 </div>
 
 According to my tests for monochrome terminals the screen has the white and
@@ -298,7 +298,7 @@ support in the source code itself.
 
 
 <div id="colourlimitations">
-## <a href="#toc">Colour limitations</a>
+### <a href="#toc">Colour limitations</a>
 </div>
 
 According to X/Open Curses, Issue 7 (pg. 57):
@@ -392,7 +392,7 @@ earlier) there shouldn't be any problem here.
 
 
 <div id="disablecolour">
-## <a href="#toc">Disabling colour</a>
+### <a href="#toc">Disabling colour</a>
 </div>
 
 Nevertheless if it is a problem and you don't want to use a monochrome terminal

@@ -49,12 +49,12 @@ See also the FAQ on "[proper locations for IOCCC authors](faq.html#zz_help)".
 We would appreciate it if you try to fix the broken (the link goes nowhere) or wrong
 (the link goes to something that clearly is not the original intent) web link.
 If you wish to fix such links, you may open a GitHub pull request as described in
-FAQ on "[fixing the website](#fix_website)".
+FAQ on "[fixing the website](faq.html#fix_website)".
 In the case of dead links or invalid links, it doesn't matter
 if it's a specific winner or not; the procedure is the same: open a pull request
 to fix the problem.
 
-See also the FAQ on "[GitHub pull request](#pull_request)"
+See also the FAQ on "[GitHub pull request](faq.html#pull_request)"
 for more information about pull requests.
 
 See also the FAQ on "[Fixing a broken web link](faq.html#fix_link)".

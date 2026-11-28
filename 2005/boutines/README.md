@@ -5,7 +5,7 @@
 ```
 
 You will need an [SVG](https://www.w3.org/TR/SVG11/expanded-toc.html) viewer or
-a converter like [ImageMagick](https://imagemagick.org/index.php)'s `convert`.
+a converter like [ImageMagick](https://imagemagick.org/#gsc.tab=0)'s `convert`.
 See the FAQ on "[ImageMagick](../../faq.html#imagemagick)" for more details and
 this list of [SVG Viewer
 Implementations](https://www.w3.org/Graphics/SVG/WG/wiki/Implementations),

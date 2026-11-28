@@ -104,7 +104,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="2.0.0 2025-03-13"
+export VERSION="2.3.0 2026-11-26"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -450,6 +450,11 @@ elif [[ $V_FLAG -ge 3 ]]; then
 fi
 
 
+# Load the shared per-output prerequisite and record helpers.
+#
+# shellcheck source=bin/quick-deps.sh
+. bin/quick-deps.sh || { echo "$0: ERROR: cannot load bin/quick-deps.sh" 1>&2; exit 1; }
+
 # process each year
 #
 export YYYY
@@ -631,7 +636,7 @@ for YYYY in $(< "$TOP_FILE"); do
 	    #
 	    # determine if we need to run the tool
 	    #
-	    # Check if the non-empty foo.html is newer than foo.md.
+	    # Check the source and conversion tools for this individual page.
 	    #
 	    if [[ -n $QUICK_MODE ]]; then
 		if [[ $V_FLAG -ge 5 ]]; then
@@ -639,7 +644,7 @@ for YYYY in $(< "$TOP_FILE"); do
 		    ls -lRt -- "$HTML_FILE" "$MD_FILE" 2>/dev/null
 		    echo "$0: debug[5]: listing of important files, if they exist, ends above" 1>&2
 		fi
-		if [[ -s $HTML_FILE && $HTML_FILE -nt $MD_FILE ]]; then
+		if quick_html_current "$HTML_FILE" "$MD_FILE" "$MD_FILE" "$0" "$OTHERMD2HTML_SH"; then
 		    if [[ $V_FLAG -ge 3 ]]; then
 			echo "$0: debug[3]: does not need to be updated: $HTML_FILE" 1>&2
 		    fi
@@ -650,6 +655,10 @@ for YYYY in $(< "$TOP_FILE"); do
 	    # run the OTHERMD2HTML_SH tool unless -n
 	    #
 	    if [[ -z $NOOP ]]; then
+		if ! quick_html_invalidate "$HTML_FILE"; then
+		    echo "1" > "$TMP_EXIT_CODE"
+		    continue
+		fi
 
 		# possibly update the HTML file
 		#
@@ -667,14 +676,10 @@ for YYYY in $(< "$TOP_FILE"); do
 		    continue
 		fi
 
-		# case -Q: (quick mode)
-		#
-		# If we are here, then the early quick mode test indicated that the prerequisite files are newer.
-		# We will force the authors.html file to be touched so that a later run with -Q will quickly exit.
-		# We do this because by default, the md2html.sh tool does not modify the target HTML unless it was modified.
-		#
-		if [[ -n $QUICK_MODE ]]; then
-		    touch "$HTML_FILE"
+		if ! touch "$HTML_FILE" || ! quick_html_record "$HTML_FILE" "$MD_FILE"; then
+		    echo "$0: ERROR: unable to record build for $HTML_FILE" 1>&2
+		    echo "1" > "$TMP_EXIT_CODE"
+		    continue
 		fi
 
 	    # report disabled by -n

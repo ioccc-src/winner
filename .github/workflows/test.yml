@@ -13,6 +13,46 @@ jobs:
 
     steps:
     - uses: actions/checkout@v7
+    - uses: actions/setup-java@v4
+      with:
+        distribution: temurin
+        java-version: '17'
+    - name: Install Pandoc
+      #
+      # IMPORTANT: Coordinate the pandoc version in .github/workflows/test.yml with
+      #            $PANDOC_MIN_VERSION in bin/pandoc-wrapper.sh
+      #
+      # When changing pandoc version in .github/workflows/test.yml, use the following
+      # bash command to determine the SHA256 hash in the echo pipe into sha256sum --check:
+      #
+      #      export PANDOC_MIN_VERSION=3.14 ; curl -fsSL "https://github.com/jgm/pandoc/releases/download/${PANDOC_MIN_VERSION}/pandoc-${VERSION}-1-amd64.deb" | shasum -a 256
+      #
+      run: |
+        curl -fsSL --retry 3 https://github.com/jgm/pandoc/releases/download/3.14/pandoc-3.14-1-amd64.deb -o "$RUNNER_TEMP/pandoc.deb"
+        echo "dedb81f20345b76d7168ba551d90abceb707977fece789a79874094fe3833915  $RUNNER_TEMP/pandoc.deb" | sha256sum --check
+        sudo dpkg -i "$RUNNER_TEMP/pandoc.deb"
+        pandoc --version
+      #
+      # IMPORTANT: Coordinate the vnu version in .github/workflows/test.yml with
+      #            $VNU_MIN_VERSION in bin/check_html.sh
+      #
+      # When changing vnu version in .github/workflows/test.yml, use the following
+      # bash command to etermine the SHA256 hash in the echo echo pipe into sha256sum --check:
+      #
+      #   export VNU_MIN_VERSION=26.11.26 ; curl -fsSL "https://registry.npmjs.org/vnu-jar/-/vnu-jar-${VNU_MIN_VERSION}.tgz" | tar -xOzf - package/build/dist/vnu.jar | shasum -a 256
+      #
+    - name: Install Nu HTML Checker
+      run: |
+        npm install --prefix "$RUNNER_TEMP/vnu" --no-save --ignore-scripts --no-audit --no-fund vnu-jar@26.11.26
+        echo "e895f6d428d34e955562b06d86291b3fed2ecc25f1737b213f7a5a9ad08cae74  $RUNNER_TEMP/vnu/node_modules/vnu-jar/build/dist/vnu.jar" | sha256sum --check
+        mkdir -p "$RUNNER_TEMP/bin"
+        cat > "$RUNNER_TEMP/bin/vnu" <<'EOF'
+        #!/usr/bin/env bash
+        exec java -jar "$RUNNER_TEMP/vnu/node_modules/vnu-jar/build/dist/vnu.jar" "$@"
+        EOF
+        chmod +x "$RUNNER_TEMP/bin/vnu"
+        "$RUNNER_TEMP/bin/vnu" --version
+        echo "$RUNNER_TEMP/bin" >> "$GITHUB_PATH"
     - name: clone mkiocccentry
       run: git clone https://github.com/ioccc-src/mkiocccentry
     - name: install jparse

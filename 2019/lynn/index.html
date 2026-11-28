@@ -657,10 +657,10 @@ compressed.</li>
 <li>Relies on the inability of C comments to nest.</li>
 <li>Cheaper and more complicated to print comma-separated <code>int</code>s (and header and
 footer) in C.</li>
-<li>Primitive functions use a trick described in depth by <a href="https://www.cs.york.ac.uk/fp/reduceron/jfp-reduceron.pdf">Naylor and Runciman,
+<li>Primitive functions use a trick described in depth by <a href="https://www.cambridge.org/core/journals/journal-of-functional-programming/article/reduceron-reconfigured-and-reevaluated/9818E081664ADAFE9F61F1AEDAD0B043">Naylor and Runciman,
 “The Reduceron reconfigured and
-re-evaluated”</a>. We
-represent the integer <code>n</code> with a term equivalent to <code>Y(BT)n</code>; it works because
+re-evaluated”</a>.
+We represent the integer <code>n</code> with a term equivalent to <code>Y(BT)n</code>; it works because
 <code>Y(BT)ne = e(Y(BT)n)</code>.</li>
 <li>A sentinel in the heap often confused me, so ought to confuse others.</li>
 </ul>

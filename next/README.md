@@ -15,7 +15,7 @@ are official, to be sure you are **using an up to date official mkiocccentry too
 # Important disclaimers about contest status
 
 
-### When the IOCCC status is _closed_
+## When the IOCCC status is _closed_
 
 While the IOCCC status is **[CLOSED](../faq.html#closed)**,
 the [rules](rules.html) and [guidelines](guidelines.html)
@@ -33,7 +33,7 @@ Mastodon](https://fosstodon.org/@ioccc) feed as _sometimes_ the
 [IOCCC judges](../judges.html) **mention changes** there.
 
 
-### When the IOCCC status is _pending_
+## When the IOCCC status is _pending_
 
 While the IOCCC status is **[PENDING](../faq.html#pending)**,
 the [rules](rules.html) and [guidelines](guidelines.html) are **tentative**.
@@ -52,7 +52,7 @@ however you will **NOT** receive your own Email message containing your very own
 **Username and Initial Password until the contest is [open](../faq.html#open)**.  You will need these
 to be able to [upload your submission](submit.html) when the contest is [open](../faq.html#open).
 
-Once contest moves from [pending](../faq.html#pending") to [open](../faq.html#open) an announcement
+Once contest moves from [pending](../faq.html#pending) to [open](../faq.html#open) an announcement
 Email will be sent out to the mailing list of those have successfully registered for the IOCCC.
 In addition, an announcement will be made to the [IOCCC news](../news.html) in case you miss
 that announcement Email.
@@ -71,7 +71,7 @@ for how.
 See also about how [upload your submission](submit.html) when the contest is [open](../faq.html#open).
 
 
-### When the IOCCC status is _open_
+## When the IOCCC status is _open_
 
 While the IOCCC status is **[OPEN](../faq.html#open)**,
 the [rules](rules.html) and [guidelines](guidelines.html) are **OFFICIAL**.
@@ -99,7 +99,7 @@ FAQ on "[how to submit](submit.html)"
 for more information on the submission process when the IOCCC [reopens](../faq.html#open).
 
 
-### When the IOCCC status is _judging_
+## When the IOCCC status is _judging_
 
 While the IOCCC status is **[JUDGING](../faq.html#judging)**,
 the [rules](rules.html) and [guidelines](guidelines.html) are

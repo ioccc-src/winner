@@ -107,7 +107,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="2.0.0 2025-03-13"
+export VERSION="2.1.0 2026-11-26"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -562,6 +562,9 @@ fi
 # run the md2html.sh tool, unless -n
 #
 if [[ -z $NOOP ]]; then
+    # shellcheck source=bin/quick-deps.sh
+    . bin/quick-deps.sh || { echo "$0: ERROR: cannot load bin/quick-deps.sh" 1>&2; exit 1; }
+    quick_html_invalidate "$INDEX_PATH" || exit 1
     if [[ $V_FLAG -ge 3 ]]; then
 	echo "$0: debug[3]: about to run: $MD2HTML_SH ${TOOL_OPTION[*]} -m $README_PATH --" \
 	     "$README_PATH $INDEX_PATH" 1>&2
@@ -574,6 +577,9 @@ if [[ -z $NOOP ]]; then
 	     "$README_PATH $INDEX_PATH failed, error: $status" 1>&2
 	EXIT_CODE="1"  # exit 1
 	echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
+    else
+	touch "$INDEX_PATH" || exit 1
+	quick_html_record "$INDEX_PATH" "$README_PATH" || exit 1
     fi
     if [[ $V_FLAG -ge 3 ]]; then
 	echo "$0: debug[3]: now up to date: $INDEX_PATH" 1>&2

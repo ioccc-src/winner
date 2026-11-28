@@ -787,11 +787,11 @@ time...
 <hr style="width:10%;text-align:left;margin-left:0">
 
 [1]:  %%REPO_URL%%/1984/mullender/mullender.c            "mullender.c"
-[2]:  http://minnie.tuhs.org/cgi-bin/utree.pl?file=2.9BSD    "2.9 BSD"
-[3]:  https://www.bell-labs.com/usr/dmr/www/kbman.html       "B Language"
-[4]:  https://www.bell-labs.com/usr/dmr/www/hist.html        "UNIX history"
-[5]:  https://www.bell-labs.com/usr/dmr/www/spacetravel.html "Space Travel"
-[6]:  https://www.bell-labs.com/usr/dmr/www/chist.html       "C History"
+[2]:  https://www.tuhs.org/cgi-bin/utree.pl?file=2.9BSD    "2.9 BSD"
+[3]:  https://www.nokia.com/bell-labs/about/dennis-m-ritchie/bintro.html       "B Language"
+[4]:  https://www.nokia.com/bell-labs/about/history/innovation-stories/50-years-unix/        "UNIX history"
+[5]:  https://www.nokia.com/bell-labs/about/dennis-m-ritchie/spacetravel.html "Space Travel"
+[6]:  https://www.nokia.com/bell-labs/about/dennis-m-ritchie/chist.html       "C History"
 [7]:  http://www.tuhs.org/Archive/Distributions/Research/McIlroy_v0/ "V0 Scans"
 [8]:  https://web.archive.org/web/20180826162445/https://minnie.tuhs.org//Y5/wkt_hapop_paper.pdf          "UNIX v0"
 [9]:  https://github.com/DoctorWkt/pdp7-unix                 "PDP-7 UNIX"

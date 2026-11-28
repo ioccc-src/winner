@@ -2110,7 +2110,7 @@ My table/map abuse is far from what is expected. It holds coordinates on our
 beautiful Flat Earth (again if you think I'm serious I don't know what to tell
 you because it's not flat; our Earth is really a beautiful Hollow
 Tetrahedronic[^1] Earth) and the table is an actual map (hence having
-coordinates), obviously shaped like some twisted and mutilated square[^2]
+coordinates), obviously shaped like some twisted and mutilated square<sup><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref">1</a></sup>
 (because why not?).
 
 This map actually tells the program the location of HOW to
@@ -2489,4 +2489,12 @@ the same algorithm (just not as messed up in syntax).
 YOU'RE going to make up things about it being hollow or flat then why shouldn't
 I make up things too? Why shouldn't I get to have fun as well?
 
-[^2]: If you rip part of a square out you can form a triangle, after all.
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+## Footnotes {#footnotes-heading}
+
+<hr>
+<ol>
+<li id="fn1">If you rip part of a square out you can form a triangle, after all.
+<a href="#fnref1" class="footnote-back" role="doc-backlink">&#8617;&#xFE0E;</a></li>
+</ol>
+</section>

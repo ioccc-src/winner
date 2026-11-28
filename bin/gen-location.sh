@@ -104,7 +104,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="2.2.0 2026-11-16"
+export VERSION="2.5.0 2026-11-26"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -491,13 +491,18 @@ fi
 
 # case: -Q (quick mode)
 #
-# Do nothing if location.html is newer than all author/author_handle.json files.
+# Check location metadata, author metadata, and the generator tools.
 #
+# shellcheck source=bin/quick-deps.sh
+. bin/quick-deps.sh || { echo "$0: ERROR: cannot load bin/quick-deps.sh" 1>&2; exit 1; }
 if [[ -n $QUICK_MODE ]]; then
-    NEWER=$(find "$AUTHOR_DIR" -mindepth 1 -maxdepth 1 -type f -name '*.json' -newer "$LOCATION_HTML" 2>/dev/null)
-    if [[ -z $NEWER ]]; then
+    if quick_html_current "$LOCATION_HTML" location.md "$AUTHOR_DIR" "$AUTHOR_DIR"/*.json \
+	 "$0" "$JVAL_WRAPPER" "$LOCATION_TOOL"; then
 	exit 0
     fi
+fi
+if [[ -z $NOOP ]]; then
+    quick_html_invalidate "$LOCATION_HTML" || exit 1
 fi
 
 
@@ -799,14 +804,11 @@ if [[ -z $NOOP ]]; then
 	echo "$0: debug[3]: now up to date: $LOCATION_HTML" 1>&2
     fi
 
-    # case -Q: (quick mode)
+    # Mark successfully generated output current even when its contents did not change.
     #
-    # If we are here, then the early quick mode test indicated that the prerequisite files are newer.
-    # We will force the location.html file to be touched so that a later run with -Q will quickly exit.
-    # We do this because by default, the md2html.sh tool does not modify the target HTML unless it was modified.
-    #
-    if [[ -n $QUICK_MODE ]]; then
-	touch "$LOCATION_HTML"
+    if [[ $status -eq 0 ]]; then
+	touch "$LOCATION_HTML" || exit 1
+	quick_html_record "$LOCATION_HTML" location.md || exit 1
     fi
 
 # report disabled by -n

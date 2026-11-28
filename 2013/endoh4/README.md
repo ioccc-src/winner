@@ -150,10 +150,10 @@ The `solids` directory includes various solid data:
 - [Trapezohedrons](http://en.wikipedia.org/wiki/Trapezohedron)
 - [Johnson solids](http://en.wikipedia.org/wiki/Johnson_solid)
 
-I created the files by using the POV-Ray scripts
-([1](http://en.wikipedia.org/wiki/File:Poly.pov) and
-[2](http://en.wikipedia.org/wiki/User:AndrewKepert/poly.pov) in Wikipedia.
-They are copyrighted in CC BY-SA 3.0 by "User:Cyp" and "User:AndrewKepert".
+I created the files using POV-Ray scripts on Wikipedia by
+[Cyp](https://en.wikipedia.org/wiki/User:Cyp/Poly.pov) and
+[AndrewKepert](https://en.wikipedia.org/wiki/User:AndrewKepert/poly.pov).
+They are copyrighted under CC BY-SA 3.0.
 
 
 <!--

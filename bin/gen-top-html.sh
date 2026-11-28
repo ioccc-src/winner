@@ -124,7 +124,7 @@ export LC_ALL="C"
 
 # set variables referenced in the usage message
 #
-export VERSION="2.0.3 2026-06-09"
+export VERSION="2.3.0 2026-11-26"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -183,6 +183,7 @@ declare -ag TOP_MD_SELECT_SET
 #
 export NOOP=
 export DO_NOT_PROCESS=
+export QUICK_MODE=
 export EXIT_CODE="0"
 
 
@@ -194,7 +195,7 @@ declare -ag TOOL_OPTION
 
 # usage
 #
-export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
+export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N] [-Q]
 			[-t tagline] [file...]
 
 	-h		print help message and exit
@@ -210,6 +211,7 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-D docroot/] [-n] [-N]
 	-n		go thru the actions, but do not update any files (def: do the action)
 			NOTE: -n is passed to tool
 	-N		do not process anything, just parse arguments (def: process something)
+	-Q		skip HTML files whose prerequisites are not newer
 
 	-t tagline	string to write about the tool that formed the markdown content (def: $TAGLINE)
 			NOTE: 'tagline' may be enclosed within, but may NOT contain an internal single-quote, or double-quote.
@@ -235,7 +237,7 @@ $NAME version: $VERSION"
 
 # parse command line
 #
-while getopts :hv:Vd:D:nNt:w: flag; do
+while getopts :hv:Vd:D:nNQt:w: flag; do
   case "$flag" in
     h) echo "$USAGE" 1>&2
 	exit 2
@@ -264,6 +266,8 @@ while getopts :hv:Vd:D:nNt:w: flag; do
     n) NOOP="-n"
 	;;
     N) DO_NOT_PROCESS="-N"
+	;;
+    Q) QUICK_MODE="-Q"
 	;;
     t) # parse -t tagline
 	case "$OPTARG" in
@@ -533,6 +537,12 @@ if [[ -n $DO_NOT_PROCESS ]]; then
 fi
 
 
+# Load the shared per-output prerequisite and record helpers.
+#
+# shellcheck source=bin/quick-deps.sh
+. bin/quick-deps.sh || { echo "$0: ERROR: cannot load bin/quick-deps.sh" 1>&2; exit 1; }
+
+
 # process the entire markdown set
 #
 if (( ${#TOP_MD_SELECT_SET[@]} )); then
@@ -587,9 +597,16 @@ if (( ${#TOP_MD_SELECT_SET[@]} )); then
 	    HTML_FILE="archive/historic/index.html"
 	fi
 
+	# A quick build checks each selected output independently.
+	#
+	if [[ -n $QUICK_MODE ]] && quick_html_current "$HTML_FILE" "$MD_FILE" "$MD_FILE" "$0"; then
+	    continue
+	fi
+
 	# use the md2html.sh tool to form the HTML file, unless -n
 	#
 	if [[ -z $NOOP ]]; then
+	    quick_html_invalidate "$HTML_FILE" || exit 1
 	    if [[ $V_FLAG -ge 1 ]]; then
 		echo "$0: debug[1]: about to run: $MD2HTML_SH -U $SITE_URL/$HTML_FILE ${TOOL_OPTION[*]}" \
 		     "-m $MD_FILE -- $MD_FILE $HTML_FILE" 1>&2
@@ -603,8 +620,12 @@ if (( ${#TOP_MD_SELECT_SET[@]} )); then
 		     "failed, error: $status" 1>&2
 		EXIT_CODE="1"  # exit 1
 		echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	    elif [[ $V_FLAG -ge 3 ]]; then
-		echo "$0: debug[3]: now up to date: $HTML_FILE" 1>&2
+	    else
+		touch "$HTML_FILE" || exit 1
+		quick_html_record "$HTML_FILE" "$MD_FILE" || exit 1
+		if [[ $V_FLAG -ge 3 ]]; then
+		    echo "$0: debug[3]: now up to date: $HTML_FILE" 1>&2
+		fi
 	    fi
 
 	# report disabled by -n
@@ -666,9 +687,16 @@ else
 	    HTML_FILE="archive/historic/index.html"
 	fi
 
+	# A quick build checks each output independently.
+	#
+	if [[ -n $QUICK_MODE ]] && quick_html_current "$HTML_FILE" "$MD_FILE" "$MD_FILE" "$0"; then
+	    continue
+	fi
+
 	# use the md2html.sh tool to form the HTML file, unless -n
 	#
 	if [[ -z $NOOP ]]; then
+	    quick_html_invalidate "$HTML_FILE" || exit 1
 	    if [[ $V_FLAG -ge 1 ]]; then
 		echo "$0: debug[1]: about to run: $MD2HTML_SH -U $SITE_URL/$HTML_FILE ${TOOL_OPTION[*]}" \
 		     "-m $MD_FILE -- $MD_FILE $HTML_FILE" 1>&2
@@ -682,8 +710,12 @@ else
 		     "failed, error: $status" 1>&2
 		EXIT_CODE="1"  # exit 1
 		echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	    elif [[ $V_FLAG -ge 3 ]]; then
-		echo "$0: debug[3]: now up to date: $HTML_FILE" 1>&2
+	    else
+		touch "$HTML_FILE" || exit 1
+		quick_html_record "$HTML_FILE" "$MD_FILE" || exit 1
+		if [[ $V_FLAG -ge 3 ]]; then
+		    echo "$0: debug[3]: now up to date: $HTML_FILE" 1>&2
+		fi
 	    fi
 
 	# report disabled by -n

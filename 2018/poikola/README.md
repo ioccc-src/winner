@@ -29,7 +29,7 @@ It is said by some students of Astronomy:
 > Oh, Be A Fine Gal, Kiss Me!<br>
 > Oh, Be A Fine Gentleman, Kiss Me!
 
-Many [Mnemonic variations](http://www.star.ucl.ac.uk/%7Epac/obafgkmrns.html) exist.
+Many [Mnemonic variations](https://www.fact-archive.com/encyclopedia/List_of_mnemonics_for_star_classification) exist.
 You might wish, on a star, to better understand the colors being displayed.
 And those in the deep south might wish to go north for a better view.
 

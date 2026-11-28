@@ -103,7 +103,7 @@ This program simply prints the space-time diagram of some particular
 cellular automaton. The automaton is a 9-state automaton by [Ivan
 Korec](https://sk-m-wikipedia-org.translate.goog/wiki/Ivan_Korec?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en-US&_x_tr_pto=wapp) in 1998.
 It is an optimization of an old automaton for recognizing primes designed
-by [Fischer](http://richardallenfischer.com) in 1965.
+by **Fischer** in 1965.
 
 The table of the automaton is encoded into the string `e` and consists of
 345 transitions of the kind `ff(left,middle,right)`. This encoding into `e`

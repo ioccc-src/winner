@@ -281,8 +281,8 @@ compressed.
 footer) in C.
 * Primitive functions use a trick described in depth by [Naylor and Runciman,
 "The Reduceron reconfigured and
-re-evaluated"](https://www.cs.york.ac.uk/fp/reduceron/jfp-reduceron.pdf). We
-represent the integer `n` with a term equivalent to `Y(BT)n`; it works because
+re-evaluated"](https://www.cambridge.org/core/journals/journal-of-functional-programming/article/reduceron-reconfigured-and-reevaluated/9818E081664ADAFE9F61F1AEDAD0B043).
+We represent the integer `n` with a term equivalent to `Y(BT)n`; it works because
 `Y(BT)ne = e(Y(BT)n)`.
 * A sentinel in the heap often confused me, so ought to confuse others.
 

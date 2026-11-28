@@ -1,4 +1,4 @@
-# The recode configurator documentation (and a fun way to explore my 2020 IOCCC Enigma simulator)
+## The recode configurator documentation (and a fun way to explore my 2020 IOCCC Enigma simulator)
 
 N.B. At the end of this file I have given a fun exercise that can be used to
 explore my [Enigma machine](https://www.cryptomuseum.com/crypto/enigma/index.htm)
@@ -27,7 +27,7 @@ have to if you don't wish to.
 
 
 <div id="recode">
-# <a href="#toc">What is recode and why is it recommended?</a>
+## <a href="#toc">What is recode and why is it recommended?</a>
 </div>
 
 To demonstrate how to and why you should use the [recode.c](%%REPO_URL%%/2020/ferguson2/recode.c) program with
@@ -57,7 +57,7 @@ wonderful 'challenge' for everyone.
 
 
 <div id="options">
-# <a href="#toc">Options</a>
+## <a href="#toc">Options</a>
 </div>
 
 ``` <!---sh-->
@@ -132,7 +132,7 @@ in [recode.c](%%REPO_URL%%/2020/ferguson2/recode.c) `-R` option!
 
 
 <div id="samefile">
-## <a href="#toc">Protecting against the same I/O file</a>
+### <a href="#toc">Protecting against the same I/O file</a>
 </div>
 
 Because some file systems are case-insensitive I have implemented a
@@ -147,7 +147,7 @@ what about if one exists but the other does not?
 
 
 <div id="fileoptions">
-## <a href="#toc">File options parser limitation</a>
+### <a href="#toc">File options parser limitation</a>
 </div>
 
 Due to the way the parsing of options is done (no spaces between option char and
@@ -164,7 +164,7 @@ This limitation also applies to the `-f` and `-o` options!
 
 
 <div id="validation">
-## <a href="#toc">-R option validation?</a>
+### <a href="#toc">-R option validation?</a>
 </div>
 
 Again the `-R` option does not validate input. For validation you have to run
@@ -172,7 +172,7 @@ the program interactively.
 
 
 <div id="pipingtorecode">
-# <a href="#toc">Piping commands to recode</a>
+## <a href="#toc">Piping commands to recode</a>
 </div>
 
 If stdin is not a tty (`!isatty(0)`) and neither randomised mode nor reading in
@@ -198,7 +198,7 @@ job at this anyway).
 
 
 <div id="pipingtoenigma">
-# <a href="#toc">Piping recode to the Enigma simulator</a>
+## <a href="#toc">Piping recode to the Enigma simulator</a>
 </div>
 
 If you're using recode to recode the input so you don't have to type in the
@@ -220,7 +220,7 @@ That's why after I sent EOF it printed out the remaining strings to stderr.
 
 
 <div id="manuallytest">
-# <a href="#toc">Manually test the recode program with the Enigma program</a>
+## <a href="#toc">Manually test the recode program with the Enigma program</a>
 </div>
 
 ``` <!---sh-->
@@ -304,7 +304,7 @@ Also if you flip the order of the letters in the pair e.g. the AB as BA instead:
 ```
 
 <div id="onlyconfig">
-# <a href="#toc">Only write config file</a>
+## <a href="#toc">Only write config file</a>
 </div>
 
 ``` <!---sh-->
@@ -399,7 +399,7 @@ file. (Actually even if `getdelim()` fails you're supposed to free the buffer so
 set another variable to indicate if it should be printed.)
 
 <div id="reuseconfig">
-# <a href="#toc">Reusing a configuration</a>
+## <a href="#toc">Reusing a configuration</a>
 </div>
 
 ``` <!---sh-->
@@ -435,7 +435,7 @@ Alternatively you can just use the `-R` and `-f` options:
 
 
 <div id="passtoenigma">
-# <a href="#toc">Write config file, read data file and pass to Enigma simulator</a>
+## <a href="#toc">Write config file, read data file and pass to Enigma simulator</a>
 </div>
 
 ```
@@ -498,7 +498,7 @@ does is the output:
 
 
 <div id="directlytoenigma">
-# <a href="#toc">Piping directly to the Enigma code once (with randomised settings, saved)</a>
+## <a href="#toc">Piping directly to the Enigma code once (with randomised settings, saved)</a>
 </div>
 
 This is like the above only randomised:
@@ -537,7 +537,7 @@ actual pasting to demonstrate:
 
 
 <div id="conclusion">
-# <a href="#toc">Usage conclusion</a>
+## <a href="#toc">Usage conclusion</a>
 </div>
 
 That should give you an idea of how to use the `recode` program. I leave it as
@@ -547,7 +547,7 @@ delicious challenge).
 
 
 <div id="additions">
-# <a href="#toc">Example additions</a>
+## <a href="#toc">Example additions</a>
 </div>
 
 *   Add code, to [prog.c](%%REPO_URL%%/2020/ferguson2/prog.c), that tries to determine possible decipherments based on
@@ -555,7 +555,7 @@ a given crib (or set of cribs).
 
 
 <div id="exampleuses">
-# <a href="#toc">Example uses</a>
+## <a href="#toc">Example uses</a>
 </div>
 
 *   Take an actual key sheet and message for that day and try and decipher the
@@ -576,7 +576,7 @@ anyway?
 
 
 <div id="fun">
-# <a href="#toc">A fun way to explore my Enigma machine, with a surprise</a>
+## <a href="#toc">A fun way to explore my Enigma machine, with a surprise</a>
 </div>
 
 As I was making the above silly list something occurred to me. My [other
@@ -603,7 +603,7 @@ I can think of the best way to answer these and I think I need not even mention
 it. Have fun and enjoy!
 
 
-## Hints:
+### Hints:
 
 0.  It's not the middle one.
 

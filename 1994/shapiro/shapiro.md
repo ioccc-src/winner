@@ -38,7 +38,7 @@ second program is mostly included as a comment. However, some of the
 characters of the encoded program are also source code for the decoder.
 
 
-### For the second program (with time.h):
+## For the second program (with time.h):
 
 ```
      1  #include <stdio.h>
