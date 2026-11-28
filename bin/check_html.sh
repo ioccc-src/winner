@@ -297,8 +297,13 @@ VNU_TOOL="$VNU_TOOL_DIR/$(basename -- "$VNU_TOOL")"
 # We tested vnu version 26.11.26 on 2026-11-26, which worked well.
 # Therefore 26.11.26 is the minimum version of vnu that is allowed.
 #
-# IMPORTANT: Sync changes to $VNU_MIN_VERSION with .github/workflows/test.yml
-#	     See the vnu-jar@YY.MM.DD string in .github/workflows/test.yml
+# IMPORTANT: Coordinate the vnu version in .github/workflows/test.yml with
+#            $VNU_MIN_VERSION in bin/check_html.sh
+#
+# When changing vnu version in .github/workflows/test.yml, use the following
+# bash command to etermine the SHA256 hash in the echo echo pipe into sha256sum --check:
+#
+#   export VNU_MIN_VERSION=26.11.26 ; curl -fsSL "https://registry.npmjs.org/vnu-jar/-/vnu-jar-${VNU_MIN_VERSION}.tgz" | tar -xOzf - package/build/dist/vnu.jar | shasum -a 256
 #
 export VNU_MIN_VERSION="26.11.26"
 if ! VNU_TOOL_VERSION=$("$VNU_TOOL" --version); then

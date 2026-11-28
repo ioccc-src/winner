@@ -323,6 +323,14 @@ export PANDOC_TOOL_VERSION
 # We tested pandoc version 3.14 on 2026-11-26, which worked well.
 # Therefore 3.14 is the minimum version of pandoc that is allowed.
 #
+# IMPORTANT: Coordinate the pandoc version in .github/workflows/test.yml with
+#            $PANDOC_MIN_VERSION in bin/pandoc-wrapper.sh
+#
+# When changing pandoc version in .github/workflows/test.yml, use the following
+# bash command to determine the SHA256 hash in the echo pipe into sha256sum --check:
+#
+#      export PANDOC_MIN_VERSION=3.14 ; curl -fsSL "https://github.com/jgm/pandoc/releases/download/${PANDOC_MIN_VERSION}/pandoc-${VERSION}-1-amd64.deb" | shasum -a 256
+#
 export PANDOC_MIN_VERSION="3.14"
 
 
