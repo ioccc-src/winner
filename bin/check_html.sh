@@ -294,10 +294,13 @@ VNU_TOOL="$VNU_TOOL_DIR/$(basename -- "$VNU_TOOL")"
 
 # set the minimum vnu version
 #
-# We tested vnu version 26.11.20 on 2026-11-26, which worked well.
-# Therefore 26.11.20 is the minimum version of vnu that is allowed.
+# We tested vnu version 26.11.26 on 2026-11-26, which worked well.
+# Therefore 26.11.26 is the minimum version of vnu that is allowed.
 #
-export VNU_MIN_VERSION="26.11.20"
+# IMPORTANT: Sync changes to $VNU_MIN_VERSION with .github/workflows/test.yml
+#	     See the vnu-jar@YY.MM.DD string in .github/workflows/test.yml
+#
+export VNU_MIN_VERSION="26.11.26"
 if ! VNU_TOOL_VERSION=$("$VNU_TOOL" --version); then
     echo "$0: ERROR: unable to obtain vnu version from: $VNU_TOOL" 1>&2
     exit 5
